@@ -20,14 +20,14 @@ namespace Aws
       namespace ChangeTokenStatusMapper
       {
 
-        static const int PROVISIONED_HASH = HashingUtils::HashString("PROVISIONED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int INSYNC_HASH = HashingUtils::HashString("INSYNC");
+        static constexpr uint32_t PROVISIONED_HASH = ConstExprHashingUtils::HashString("PROVISIONED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t INSYNC_HASH = ConstExprHashingUtils::HashString("INSYNC");
 
 
         ChangeTokenStatus GetChangeTokenStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROVISIONED_HASH)
           {
             return ChangeTokenStatus::PROVISIONED;

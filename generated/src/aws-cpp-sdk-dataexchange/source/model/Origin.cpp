@@ -20,13 +20,13 @@ namespace Aws
       namespace OriginMapper
       {
 
-        static const int OWNED_HASH = HashingUtils::HashString("OWNED");
-        static const int ENTITLED_HASH = HashingUtils::HashString("ENTITLED");
+        static constexpr uint32_t OWNED_HASH = ConstExprHashingUtils::HashString("OWNED");
+        static constexpr uint32_t ENTITLED_HASH = ConstExprHashingUtils::HashString("ENTITLED");
 
 
         Origin GetOriginForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OWNED_HASH)
           {
             return Origin::OWNED;

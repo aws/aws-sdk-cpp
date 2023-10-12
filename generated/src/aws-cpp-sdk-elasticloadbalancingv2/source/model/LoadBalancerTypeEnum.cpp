@@ -20,14 +20,14 @@ namespace Aws
       namespace LoadBalancerTypeEnumMapper
       {
 
-        static const int application_HASH = HashingUtils::HashString("application");
-        static const int network_HASH = HashingUtils::HashString("network");
-        static const int gateway_HASH = HashingUtils::HashString("gateway");
+        static constexpr uint32_t application_HASH = ConstExprHashingUtils::HashString("application");
+        static constexpr uint32_t network_HASH = ConstExprHashingUtils::HashString("network");
+        static constexpr uint32_t gateway_HASH = ConstExprHashingUtils::HashString("gateway");
 
 
         LoadBalancerTypeEnum GetLoadBalancerTypeEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == application_HASH)
           {
             return LoadBalancerTypeEnum::application;

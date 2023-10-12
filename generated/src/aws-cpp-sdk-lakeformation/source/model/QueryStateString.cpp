@@ -20,16 +20,16 @@ namespace Aws
       namespace QueryStateStringMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int WORKUNITS_AVAILABLE_HASH = HashingUtils::HashString("WORKUNITS_AVAILABLE");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int FINISHED_HASH = HashingUtils::HashString("FINISHED");
-        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t WORKUNITS_AVAILABLE_HASH = ConstExprHashingUtils::HashString("WORKUNITS_AVAILABLE");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t FINISHED_HASH = ConstExprHashingUtils::HashString("FINISHED");
+        static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("EXPIRED");
 
 
         QueryStateString GetQueryStateStringForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return QueryStateString::PENDING;

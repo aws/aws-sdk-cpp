@@ -20,12 +20,12 @@ namespace Aws
       namespace EndPointTypeMapper
       {
 
-        static const int KAFKA_BOOTSTRAP_SERVERS_HASH = HashingUtils::HashString("KAFKA_BOOTSTRAP_SERVERS");
+        static constexpr uint32_t KAFKA_BOOTSTRAP_SERVERS_HASH = ConstExprHashingUtils::HashString("KAFKA_BOOTSTRAP_SERVERS");
 
 
         EndPointType GetEndPointTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KAFKA_BOOTSTRAP_SERVERS_HASH)
           {
             return EndPointType::KAFKA_BOOTSTRAP_SERVERS;

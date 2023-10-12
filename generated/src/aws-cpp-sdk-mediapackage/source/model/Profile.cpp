@@ -20,15 +20,15 @@ namespace Aws
       namespace ProfileMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int HBBTV_1_5_HASH = HashingUtils::HashString("HBBTV_1_5");
-        static const int HYBRIDCAST_HASH = HashingUtils::HashString("HYBRIDCAST");
-        static const int DVB_DASH_2014_HASH = HashingUtils::HashString("DVB_DASH_2014");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t HBBTV_1_5_HASH = ConstExprHashingUtils::HashString("HBBTV_1_5");
+        static constexpr uint32_t HYBRIDCAST_HASH = ConstExprHashingUtils::HashString("HYBRIDCAST");
+        static constexpr uint32_t DVB_DASH_2014_HASH = ConstExprHashingUtils::HashString("DVB_DASH_2014");
 
 
         Profile GetProfileForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return Profile::NONE;

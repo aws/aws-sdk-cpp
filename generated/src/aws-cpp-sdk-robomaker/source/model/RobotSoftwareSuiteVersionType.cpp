@@ -20,15 +20,15 @@ namespace Aws
       namespace RobotSoftwareSuiteVersionTypeMapper
       {
 
-        static const int Kinetic_HASH = HashingUtils::HashString("Kinetic");
-        static const int Melodic_HASH = HashingUtils::HashString("Melodic");
-        static const int Dashing_HASH = HashingUtils::HashString("Dashing");
-        static const int Foxy_HASH = HashingUtils::HashString("Foxy");
+        static constexpr uint32_t Kinetic_HASH = ConstExprHashingUtils::HashString("Kinetic");
+        static constexpr uint32_t Melodic_HASH = ConstExprHashingUtils::HashString("Melodic");
+        static constexpr uint32_t Dashing_HASH = ConstExprHashingUtils::HashString("Dashing");
+        static constexpr uint32_t Foxy_HASH = ConstExprHashingUtils::HashString("Foxy");
 
 
         RobotSoftwareSuiteVersionType GetRobotSoftwareSuiteVersionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Kinetic_HASH)
           {
             return RobotSoftwareSuiteVersionType::Kinetic;

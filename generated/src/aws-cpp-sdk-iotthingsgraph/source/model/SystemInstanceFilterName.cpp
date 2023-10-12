@@ -20,14 +20,14 @@ namespace Aws
       namespace SystemInstanceFilterNameMapper
       {
 
-        static const int SYSTEM_TEMPLATE_ID_HASH = HashingUtils::HashString("SYSTEM_TEMPLATE_ID");
-        static const int STATUS_HASH = HashingUtils::HashString("STATUS");
-        static const int GREENGRASS_GROUP_NAME_HASH = HashingUtils::HashString("GREENGRASS_GROUP_NAME");
+        static constexpr uint32_t SYSTEM_TEMPLATE_ID_HASH = ConstExprHashingUtils::HashString("SYSTEM_TEMPLATE_ID");
+        static constexpr uint32_t STATUS_HASH = ConstExprHashingUtils::HashString("STATUS");
+        static constexpr uint32_t GREENGRASS_GROUP_NAME_HASH = ConstExprHashingUtils::HashString("GREENGRASS_GROUP_NAME");
 
 
         SystemInstanceFilterName GetSystemInstanceFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SYSTEM_TEMPLATE_ID_HASH)
           {
             return SystemInstanceFilterName::SYSTEM_TEMPLATE_ID;

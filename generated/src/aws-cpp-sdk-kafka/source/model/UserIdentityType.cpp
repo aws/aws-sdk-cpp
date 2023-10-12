@@ -20,13 +20,13 @@ namespace Aws
       namespace UserIdentityTypeMapper
       {
 
-        static const int AWSACCOUNT_HASH = HashingUtils::HashString("AWSACCOUNT");
-        static const int AWSSERVICE_HASH = HashingUtils::HashString("AWSSERVICE");
+        static constexpr uint32_t AWSACCOUNT_HASH = ConstExprHashingUtils::HashString("AWSACCOUNT");
+        static constexpr uint32_t AWSSERVICE_HASH = ConstExprHashingUtils::HashString("AWSSERVICE");
 
 
         UserIdentityType GetUserIdentityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWSACCOUNT_HASH)
           {
             return UserIdentityType::AWSACCOUNT;

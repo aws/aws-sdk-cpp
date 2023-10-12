@@ -20,14 +20,14 @@ namespace Aws
       namespace ModelModalityMapper
       {
 
-        static const int TEXT_HASH = HashingUtils::HashString("TEXT");
-        static const int IMAGE_HASH = HashingUtils::HashString("IMAGE");
-        static const int EMBEDDING_HASH = HashingUtils::HashString("EMBEDDING");
+        static constexpr uint32_t TEXT_HASH = ConstExprHashingUtils::HashString("TEXT");
+        static constexpr uint32_t IMAGE_HASH = ConstExprHashingUtils::HashString("IMAGE");
+        static constexpr uint32_t EMBEDDING_HASH = ConstExprHashingUtils::HashString("EMBEDDING");
 
 
         ModelModality GetModelModalityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TEXT_HASH)
           {
             return ModelModality::TEXT;

@@ -20,13 +20,13 @@ namespace Aws
       namespace LogicalMapper
       {
 
-        static const int AND_HASH = HashingUtils::HashString("AND");
-        static const int ANY_HASH = HashingUtils::HashString("ANY");
+        static constexpr uint32_t AND_HASH = ConstExprHashingUtils::HashString("AND");
+        static constexpr uint32_t ANY_HASH = ConstExprHashingUtils::HashString("ANY");
 
 
         Logical GetLogicalForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AND_HASH)
           {
             return Logical::AND;

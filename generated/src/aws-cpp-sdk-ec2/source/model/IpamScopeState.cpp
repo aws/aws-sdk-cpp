@@ -20,23 +20,23 @@ namespace Aws
       namespace IpamScopeStateMapper
       {
 
-        static const int create_in_progress_HASH = HashingUtils::HashString("create-in-progress");
-        static const int create_complete_HASH = HashingUtils::HashString("create-complete");
-        static const int create_failed_HASH = HashingUtils::HashString("create-failed");
-        static const int modify_in_progress_HASH = HashingUtils::HashString("modify-in-progress");
-        static const int modify_complete_HASH = HashingUtils::HashString("modify-complete");
-        static const int modify_failed_HASH = HashingUtils::HashString("modify-failed");
-        static const int delete_in_progress_HASH = HashingUtils::HashString("delete-in-progress");
-        static const int delete_complete_HASH = HashingUtils::HashString("delete-complete");
-        static const int delete_failed_HASH = HashingUtils::HashString("delete-failed");
-        static const int isolate_in_progress_HASH = HashingUtils::HashString("isolate-in-progress");
-        static const int isolate_complete_HASH = HashingUtils::HashString("isolate-complete");
-        static const int restore_in_progress_HASH = HashingUtils::HashString("restore-in-progress");
+        static constexpr uint32_t create_in_progress_HASH = ConstExprHashingUtils::HashString("create-in-progress");
+        static constexpr uint32_t create_complete_HASH = ConstExprHashingUtils::HashString("create-complete");
+        static constexpr uint32_t create_failed_HASH = ConstExprHashingUtils::HashString("create-failed");
+        static constexpr uint32_t modify_in_progress_HASH = ConstExprHashingUtils::HashString("modify-in-progress");
+        static constexpr uint32_t modify_complete_HASH = ConstExprHashingUtils::HashString("modify-complete");
+        static constexpr uint32_t modify_failed_HASH = ConstExprHashingUtils::HashString("modify-failed");
+        static constexpr uint32_t delete_in_progress_HASH = ConstExprHashingUtils::HashString("delete-in-progress");
+        static constexpr uint32_t delete_complete_HASH = ConstExprHashingUtils::HashString("delete-complete");
+        static constexpr uint32_t delete_failed_HASH = ConstExprHashingUtils::HashString("delete-failed");
+        static constexpr uint32_t isolate_in_progress_HASH = ConstExprHashingUtils::HashString("isolate-in-progress");
+        static constexpr uint32_t isolate_complete_HASH = ConstExprHashingUtils::HashString("isolate-complete");
+        static constexpr uint32_t restore_in_progress_HASH = ConstExprHashingUtils::HashString("restore-in-progress");
 
 
         IpamScopeState GetIpamScopeStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == create_in_progress_HASH)
           {
             return IpamScopeState::create_in_progress;

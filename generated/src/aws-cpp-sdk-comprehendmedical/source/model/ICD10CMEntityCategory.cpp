@@ -20,12 +20,12 @@ namespace Aws
       namespace ICD10CMEntityCategoryMapper
       {
 
-        static const int MEDICAL_CONDITION_HASH = HashingUtils::HashString("MEDICAL_CONDITION");
+        static constexpr uint32_t MEDICAL_CONDITION_HASH = ConstExprHashingUtils::HashString("MEDICAL_CONDITION");
 
 
         ICD10CMEntityCategory GetICD10CMEntityCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MEDICAL_CONDITION_HASH)
           {
             return ICD10CMEntityCategory::MEDICAL_CONDITION;

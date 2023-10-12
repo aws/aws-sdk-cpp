@@ -20,21 +20,21 @@ namespace Aws
       namespace ConflictTypeMapper
       {
 
-        static const int ANOTHER_ACTIVE_STREAM_HASH = HashingUtils::HashString("ANOTHER_ACTIVE_STREAM");
-        static const int DOMAIN_NOT_ACTIVE_HASH = HashingUtils::HashString("DOMAIN_NOT_ACTIVE");
-        static const int CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT_HASH = HashingUtils::HashString("CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT");
-        static const int ENROLLMENT_ALREADY_EXISTS_HASH = HashingUtils::HashString("ENROLLMENT_ALREADY_EXISTS");
-        static const int SPEAKER_NOT_SET_HASH = HashingUtils::HashString("SPEAKER_NOT_SET");
-        static const int SPEAKER_OPTED_OUT_HASH = HashingUtils::HashString("SPEAKER_OPTED_OUT");
-        static const int CONCURRENT_CHANGES_HASH = HashingUtils::HashString("CONCURRENT_CHANGES");
-        static const int DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES_HASH = HashingUtils::HashString("DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES");
-        static const int CANNOT_DELETE_NON_EMPTY_WATCHLIST_HASH = HashingUtils::HashString("CANNOT_DELETE_NON_EMPTY_WATCHLIST");
-        static const int FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST_HASH = HashingUtils::HashString("FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST");
+        static constexpr uint32_t ANOTHER_ACTIVE_STREAM_HASH = ConstExprHashingUtils::HashString("ANOTHER_ACTIVE_STREAM");
+        static constexpr uint32_t DOMAIN_NOT_ACTIVE_HASH = ConstExprHashingUtils::HashString("DOMAIN_NOT_ACTIVE");
+        static constexpr uint32_t CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT_HASH = ConstExprHashingUtils::HashString("CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT");
+        static constexpr uint32_t ENROLLMENT_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ENROLLMENT_ALREADY_EXISTS");
+        static constexpr uint32_t SPEAKER_NOT_SET_HASH = ConstExprHashingUtils::HashString("SPEAKER_NOT_SET");
+        static constexpr uint32_t SPEAKER_OPTED_OUT_HASH = ConstExprHashingUtils::HashString("SPEAKER_OPTED_OUT");
+        static constexpr uint32_t CONCURRENT_CHANGES_HASH = ConstExprHashingUtils::HashString("CONCURRENT_CHANGES");
+        static constexpr uint32_t DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES_HASH = ConstExprHashingUtils::HashString("DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES");
+        static constexpr uint32_t CANNOT_DELETE_NON_EMPTY_WATCHLIST_HASH = ConstExprHashingUtils::HashString("CANNOT_DELETE_NON_EMPTY_WATCHLIST");
+        static constexpr uint32_t FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST_HASH = ConstExprHashingUtils::HashString("FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST");
 
 
         ConflictType GetConflictTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ANOTHER_ACTIVE_STREAM_HASH)
           {
             return ConflictType::ANOTHER_ACTIVE_STREAM;

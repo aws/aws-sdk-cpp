@@ -20,13 +20,13 @@ namespace Aws
       namespace SetStatOptionMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int ENABLE_NO_OP_HASH = HashingUtils::HashString("ENABLE_NO_OP");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t ENABLE_NO_OP_HASH = ConstExprHashingUtils::HashString("ENABLE_NO_OP");
 
 
         SetStatOption GetSetStatOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return SetStatOption::DEFAULT;

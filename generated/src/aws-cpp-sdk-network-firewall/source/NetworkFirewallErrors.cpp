@@ -18,20 +18,20 @@ namespace NetworkFirewall
 namespace NetworkFirewallErrorMapper
 {
 
-static const int INSUFFICIENT_CAPACITY_HASH = HashingUtils::HashString("InsufficientCapacityException");
-static const int INVALID_TOKEN_HASH = HashingUtils::HashString("InvalidTokenException");
-static const int RESOURCE_OWNER_CHECK_HASH = HashingUtils::HashString("ResourceOwnerCheckException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
-static const int INVALID_RESOURCE_POLICY_HASH = HashingUtils::HashString("InvalidResourcePolicyException");
-static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
-static const int LOG_DESTINATION_PERMISSION_HASH = HashingUtils::HashString("LogDestinationPermissionException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t INSUFFICIENT_CAPACITY_HASH = ConstExprHashingUtils::HashString("InsufficientCapacityException");
+static constexpr uint32_t INVALID_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidTokenException");
+static constexpr uint32_t RESOURCE_OWNER_CHECK_HASH = ConstExprHashingUtils::HashString("ResourceOwnerCheckException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t UNSUPPORTED_OPERATION_HASH = ConstExprHashingUtils::HashString("UnsupportedOperationException");
+static constexpr uint32_t INVALID_RESOURCE_POLICY_HASH = ConstExprHashingUtils::HashString("InvalidResourcePolicyException");
+static constexpr uint32_t INVALID_OPERATION_HASH = ConstExprHashingUtils::HashString("InvalidOperationException");
+static constexpr uint32_t LOG_DESTINATION_PERMISSION_HASH = ConstExprHashingUtils::HashString("LogDestinationPermissionException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INSUFFICIENT_CAPACITY_HASH)
   {

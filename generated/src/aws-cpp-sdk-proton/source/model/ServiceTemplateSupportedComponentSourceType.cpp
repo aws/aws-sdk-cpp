@@ -20,12 +20,12 @@ namespace Aws
       namespace ServiceTemplateSupportedComponentSourceTypeMapper
       {
 
-        static const int DIRECTLY_DEFINED_HASH = HashingUtils::HashString("DIRECTLY_DEFINED");
+        static constexpr uint32_t DIRECTLY_DEFINED_HASH = ConstExprHashingUtils::HashString("DIRECTLY_DEFINED");
 
 
         ServiceTemplateSupportedComponentSourceType GetServiceTemplateSupportedComponentSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DIRECTLY_DEFINED_HASH)
           {
             return ServiceTemplateSupportedComponentSourceType::DIRECTLY_DEFINED;

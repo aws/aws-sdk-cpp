@@ -20,18 +20,18 @@ namespace Aws
       namespace BundleTaskStateMapper
       {
 
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int waiting_for_shutdown_HASH = HashingUtils::HashString("waiting-for-shutdown");
-        static const int bundling_HASH = HashingUtils::HashString("bundling");
-        static const int storing_HASH = HashingUtils::HashString("storing");
-        static const int cancelling_HASH = HashingUtils::HashString("cancelling");
-        static const int complete_HASH = HashingUtils::HashString("complete");
-        static const int failed_HASH = HashingUtils::HashString("failed");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t waiting_for_shutdown_HASH = ConstExprHashingUtils::HashString("waiting-for-shutdown");
+        static constexpr uint32_t bundling_HASH = ConstExprHashingUtils::HashString("bundling");
+        static constexpr uint32_t storing_HASH = ConstExprHashingUtils::HashString("storing");
+        static constexpr uint32_t cancelling_HASH = ConstExprHashingUtils::HashString("cancelling");
+        static constexpr uint32_t complete_HASH = ConstExprHashingUtils::HashString("complete");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
 
 
         BundleTaskState GetBundleTaskStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pending_HASH)
           {
             return BundleTaskState::pending;

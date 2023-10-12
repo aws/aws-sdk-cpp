@@ -20,14 +20,14 @@ namespace Aws
       namespace EncryptionStatusMapper
       {
 
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int KMS_KEY_INACCESSIBLE_HASH = HashingUtils::HashString("KMS_KEY_INACCESSIBLE");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t KMS_KEY_INACCESSIBLE_HASH = ConstExprHashingUtils::HashString("KMS_KEY_INACCESSIBLE");
 
 
         EncryptionStatus GetEncryptionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLED_HASH)
           {
             return EncryptionStatus::ENABLED;

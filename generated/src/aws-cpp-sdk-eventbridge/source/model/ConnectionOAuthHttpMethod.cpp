@@ -20,14 +20,14 @@ namespace Aws
       namespace ConnectionOAuthHttpMethodMapper
       {
 
-        static const int GET__HASH = HashingUtils::HashString("GET");
-        static const int POST_HASH = HashingUtils::HashString("POST");
-        static const int PUT_HASH = HashingUtils::HashString("PUT");
+        static constexpr uint32_t GET__HASH = ConstExprHashingUtils::HashString("GET");
+        static constexpr uint32_t POST_HASH = ConstExprHashingUtils::HashString("POST");
+        static constexpr uint32_t PUT_HASH = ConstExprHashingUtils::HashString("PUT");
 
 
         ConnectionOAuthHttpMethod GetConnectionOAuthHttpMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GET__HASH)
           {
             return ConnectionOAuthHttpMethod::GET_;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ObjectLockModeMapper
       {
 
-        static const int GOVERNANCE_HASH = HashingUtils::HashString("GOVERNANCE");
-        static const int COMPLIANCE_HASH = HashingUtils::HashString("COMPLIANCE");
+        static constexpr uint32_t GOVERNANCE_HASH = ConstExprHashingUtils::HashString("GOVERNANCE");
+        static constexpr uint32_t COMPLIANCE_HASH = ConstExprHashingUtils::HashString("COMPLIANCE");
 
 
         ObjectLockMode GetObjectLockModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GOVERNANCE_HASH)
           {
             return ObjectLockMode::GOVERNANCE;

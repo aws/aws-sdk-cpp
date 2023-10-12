@@ -18,16 +18,16 @@ namespace ResourceGroupsTaggingAPI
 namespace ResourceGroupsTaggingAPIErrorMapper
 {
 
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int PAGINATION_TOKEN_EXPIRED_HASH = HashingUtils::HashString("PaginationTokenExpiredException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
-static const int CONSTRAINT_VIOLATION_HASH = HashingUtils::HashString("ConstraintViolationException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t PAGINATION_TOKEN_EXPIRED_HASH = ConstExprHashingUtils::HashString("PaginationTokenExpiredException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t INTERNAL_SERVICE_HASH = ConstExprHashingUtils::HashString("InternalServiceException");
+static constexpr uint32_t CONSTRAINT_VIOLATION_HASH = ConstExprHashingUtils::HashString("ConstraintViolationException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INVALID_PARAMETER_HASH)
   {

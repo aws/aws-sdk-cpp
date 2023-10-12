@@ -20,13 +20,13 @@ namespace Aws
       namespace UserTrustProviderTypeMapper
       {
 
-        static const int iam_identity_center_HASH = HashingUtils::HashString("iam-identity-center");
-        static const int oidc_HASH = HashingUtils::HashString("oidc");
+        static constexpr uint32_t iam_identity_center_HASH = ConstExprHashingUtils::HashString("iam-identity-center");
+        static constexpr uint32_t oidc_HASH = ConstExprHashingUtils::HashString("oidc");
 
 
         UserTrustProviderType GetUserTrustProviderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == iam_identity_center_HASH)
           {
             return UserTrustProviderType::iam_identity_center;

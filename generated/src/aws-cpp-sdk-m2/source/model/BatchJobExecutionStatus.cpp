@@ -20,20 +20,20 @@ namespace Aws
       namespace BatchJobExecutionStatusMapper
       {
 
-        static const int Submitting_HASH = HashingUtils::HashString("Submitting");
-        static const int Holding_HASH = HashingUtils::HashString("Holding");
-        static const int Dispatching_HASH = HashingUtils::HashString("Dispatching");
-        static const int Running_HASH = HashingUtils::HashString("Running");
-        static const int Cancelling_HASH = HashingUtils::HashString("Cancelling");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
-        static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Succeeded_With_Warning_HASH = HashingUtils::HashString("Succeeded With Warning");
+        static constexpr uint32_t Submitting_HASH = ConstExprHashingUtils::HashString("Submitting");
+        static constexpr uint32_t Holding_HASH = ConstExprHashingUtils::HashString("Holding");
+        static constexpr uint32_t Dispatching_HASH = ConstExprHashingUtils::HashString("Dispatching");
+        static constexpr uint32_t Running_HASH = ConstExprHashingUtils::HashString("Running");
+        static constexpr uint32_t Cancelling_HASH = ConstExprHashingUtils::HashString("Cancelling");
+        static constexpr uint32_t Cancelled_HASH = ConstExprHashingUtils::HashString("Cancelled");
+        static constexpr uint32_t Succeeded_HASH = ConstExprHashingUtils::HashString("Succeeded");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Succeeded_With_Warning_HASH = ConstExprHashingUtils::HashString("Succeeded With Warning");
 
 
         BatchJobExecutionStatus GetBatchJobExecutionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Submitting_HASH)
           {
             return BatchJobExecutionStatus::Submitting;

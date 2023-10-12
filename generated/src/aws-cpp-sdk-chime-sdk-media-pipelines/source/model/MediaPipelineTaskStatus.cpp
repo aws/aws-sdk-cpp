@@ -20,17 +20,17 @@ namespace Aws
       namespace MediaPipelineTaskStatusMapper
       {
 
-        static const int NotStarted_HASH = HashingUtils::HashString("NotStarted");
-        static const int Initializing_HASH = HashingUtils::HashString("Initializing");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Stopping_HASH = HashingUtils::HashString("Stopping");
-        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
+        static constexpr uint32_t NotStarted_HASH = ConstExprHashingUtils::HashString("NotStarted");
+        static constexpr uint32_t Initializing_HASH = ConstExprHashingUtils::HashString("Initializing");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Stopping_HASH = ConstExprHashingUtils::HashString("Stopping");
+        static constexpr uint32_t Stopped_HASH = ConstExprHashingUtils::HashString("Stopped");
 
 
         MediaPipelineTaskStatus GetMediaPipelineTaskStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NotStarted_HASH)
           {
             return MediaPipelineTaskStatus::NotStarted;

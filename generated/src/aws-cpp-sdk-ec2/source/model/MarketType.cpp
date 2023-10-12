@@ -20,12 +20,12 @@ namespace Aws
       namespace MarketTypeMapper
       {
 
-        static const int spot_HASH = HashingUtils::HashString("spot");
+        static constexpr uint32_t spot_HASH = ConstExprHashingUtils::HashString("spot");
 
 
         MarketType GetMarketTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == spot_HASH)
           {
             return MarketType::spot;

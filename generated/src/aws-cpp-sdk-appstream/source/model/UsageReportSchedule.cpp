@@ -20,12 +20,12 @@ namespace Aws
       namespace UsageReportScheduleMapper
       {
 
-        static const int DAILY_HASH = HashingUtils::HashString("DAILY");
+        static constexpr uint32_t DAILY_HASH = ConstExprHashingUtils::HashString("DAILY");
 
 
         UsageReportSchedule GetUsageReportScheduleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DAILY_HASH)
           {
             return UsageReportSchedule::DAILY;

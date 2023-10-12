@@ -20,13 +20,13 @@ namespace Aws
       namespace ImagePullCredentialsTypeMapper
       {
 
-        static const int CODEBUILD_HASH = HashingUtils::HashString("CODEBUILD");
-        static const int SERVICE_ROLE_HASH = HashingUtils::HashString("SERVICE_ROLE");
+        static constexpr uint32_t CODEBUILD_HASH = ConstExprHashingUtils::HashString("CODEBUILD");
+        static constexpr uint32_t SERVICE_ROLE_HASH = ConstExprHashingUtils::HashString("SERVICE_ROLE");
 
 
         ImagePullCredentialsType GetImagePullCredentialsTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CODEBUILD_HASH)
           {
             return ImagePullCredentialsType::CODEBUILD;

@@ -20,15 +20,15 @@ namespace Aws
       namespace EndpointSettingTypeValueMapper
       {
 
-        static const int string_HASH = HashingUtils::HashString("string");
-        static const int boolean_HASH = HashingUtils::HashString("boolean");
-        static const int integer_HASH = HashingUtils::HashString("integer");
-        static const int enum__HASH = HashingUtils::HashString("enum");
+        static constexpr uint32_t string_HASH = ConstExprHashingUtils::HashString("string");
+        static constexpr uint32_t boolean_HASH = ConstExprHashingUtils::HashString("boolean");
+        static constexpr uint32_t integer_HASH = ConstExprHashingUtils::HashString("integer");
+        static constexpr uint32_t enum__HASH = ConstExprHashingUtils::HashString("enum");
 
 
         EndpointSettingTypeValue GetEndpointSettingTypeValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == string_HASH)
           {
             return EndpointSettingTypeValue::string;

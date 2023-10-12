@@ -20,41 +20,41 @@ namespace Aws
       namespace LandmarkTypeMapper
       {
 
-        static const int eyeLeft_HASH = HashingUtils::HashString("eyeLeft");
-        static const int eyeRight_HASH = HashingUtils::HashString("eyeRight");
-        static const int nose_HASH = HashingUtils::HashString("nose");
-        static const int mouthLeft_HASH = HashingUtils::HashString("mouthLeft");
-        static const int mouthRight_HASH = HashingUtils::HashString("mouthRight");
-        static const int leftEyeBrowLeft_HASH = HashingUtils::HashString("leftEyeBrowLeft");
-        static const int leftEyeBrowRight_HASH = HashingUtils::HashString("leftEyeBrowRight");
-        static const int leftEyeBrowUp_HASH = HashingUtils::HashString("leftEyeBrowUp");
-        static const int rightEyeBrowLeft_HASH = HashingUtils::HashString("rightEyeBrowLeft");
-        static const int rightEyeBrowRight_HASH = HashingUtils::HashString("rightEyeBrowRight");
-        static const int rightEyeBrowUp_HASH = HashingUtils::HashString("rightEyeBrowUp");
-        static const int leftEyeLeft_HASH = HashingUtils::HashString("leftEyeLeft");
-        static const int leftEyeRight_HASH = HashingUtils::HashString("leftEyeRight");
-        static const int leftEyeUp_HASH = HashingUtils::HashString("leftEyeUp");
-        static const int leftEyeDown_HASH = HashingUtils::HashString("leftEyeDown");
-        static const int rightEyeLeft_HASH = HashingUtils::HashString("rightEyeLeft");
-        static const int rightEyeRight_HASH = HashingUtils::HashString("rightEyeRight");
-        static const int rightEyeUp_HASH = HashingUtils::HashString("rightEyeUp");
-        static const int rightEyeDown_HASH = HashingUtils::HashString("rightEyeDown");
-        static const int noseLeft_HASH = HashingUtils::HashString("noseLeft");
-        static const int noseRight_HASH = HashingUtils::HashString("noseRight");
-        static const int mouthUp_HASH = HashingUtils::HashString("mouthUp");
-        static const int mouthDown_HASH = HashingUtils::HashString("mouthDown");
-        static const int leftPupil_HASH = HashingUtils::HashString("leftPupil");
-        static const int rightPupil_HASH = HashingUtils::HashString("rightPupil");
-        static const int upperJawlineLeft_HASH = HashingUtils::HashString("upperJawlineLeft");
-        static const int midJawlineLeft_HASH = HashingUtils::HashString("midJawlineLeft");
-        static const int chinBottom_HASH = HashingUtils::HashString("chinBottom");
-        static const int midJawlineRight_HASH = HashingUtils::HashString("midJawlineRight");
-        static const int upperJawlineRight_HASH = HashingUtils::HashString("upperJawlineRight");
+        static constexpr uint32_t eyeLeft_HASH = ConstExprHashingUtils::HashString("eyeLeft");
+        static constexpr uint32_t eyeRight_HASH = ConstExprHashingUtils::HashString("eyeRight");
+        static constexpr uint32_t nose_HASH = ConstExprHashingUtils::HashString("nose");
+        static constexpr uint32_t mouthLeft_HASH = ConstExprHashingUtils::HashString("mouthLeft");
+        static constexpr uint32_t mouthRight_HASH = ConstExprHashingUtils::HashString("mouthRight");
+        static constexpr uint32_t leftEyeBrowLeft_HASH = ConstExprHashingUtils::HashString("leftEyeBrowLeft");
+        static constexpr uint32_t leftEyeBrowRight_HASH = ConstExprHashingUtils::HashString("leftEyeBrowRight");
+        static constexpr uint32_t leftEyeBrowUp_HASH = ConstExprHashingUtils::HashString("leftEyeBrowUp");
+        static constexpr uint32_t rightEyeBrowLeft_HASH = ConstExprHashingUtils::HashString("rightEyeBrowLeft");
+        static constexpr uint32_t rightEyeBrowRight_HASH = ConstExprHashingUtils::HashString("rightEyeBrowRight");
+        static constexpr uint32_t rightEyeBrowUp_HASH = ConstExprHashingUtils::HashString("rightEyeBrowUp");
+        static constexpr uint32_t leftEyeLeft_HASH = ConstExprHashingUtils::HashString("leftEyeLeft");
+        static constexpr uint32_t leftEyeRight_HASH = ConstExprHashingUtils::HashString("leftEyeRight");
+        static constexpr uint32_t leftEyeUp_HASH = ConstExprHashingUtils::HashString("leftEyeUp");
+        static constexpr uint32_t leftEyeDown_HASH = ConstExprHashingUtils::HashString("leftEyeDown");
+        static constexpr uint32_t rightEyeLeft_HASH = ConstExprHashingUtils::HashString("rightEyeLeft");
+        static constexpr uint32_t rightEyeRight_HASH = ConstExprHashingUtils::HashString("rightEyeRight");
+        static constexpr uint32_t rightEyeUp_HASH = ConstExprHashingUtils::HashString("rightEyeUp");
+        static constexpr uint32_t rightEyeDown_HASH = ConstExprHashingUtils::HashString("rightEyeDown");
+        static constexpr uint32_t noseLeft_HASH = ConstExprHashingUtils::HashString("noseLeft");
+        static constexpr uint32_t noseRight_HASH = ConstExprHashingUtils::HashString("noseRight");
+        static constexpr uint32_t mouthUp_HASH = ConstExprHashingUtils::HashString("mouthUp");
+        static constexpr uint32_t mouthDown_HASH = ConstExprHashingUtils::HashString("mouthDown");
+        static constexpr uint32_t leftPupil_HASH = ConstExprHashingUtils::HashString("leftPupil");
+        static constexpr uint32_t rightPupil_HASH = ConstExprHashingUtils::HashString("rightPupil");
+        static constexpr uint32_t upperJawlineLeft_HASH = ConstExprHashingUtils::HashString("upperJawlineLeft");
+        static constexpr uint32_t midJawlineLeft_HASH = ConstExprHashingUtils::HashString("midJawlineLeft");
+        static constexpr uint32_t chinBottom_HASH = ConstExprHashingUtils::HashString("chinBottom");
+        static constexpr uint32_t midJawlineRight_HASH = ConstExprHashingUtils::HashString("midJawlineRight");
+        static constexpr uint32_t upperJawlineRight_HASH = ConstExprHashingUtils::HashString("upperJawlineRight");
 
 
         LandmarkType GetLandmarkTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == eyeLeft_HASH)
           {
             return LandmarkType::eyeLeft;

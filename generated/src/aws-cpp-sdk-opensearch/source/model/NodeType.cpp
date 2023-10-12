@@ -20,14 +20,14 @@ namespace Aws
       namespace NodeTypeMapper
       {
 
-        static const int Data_HASH = HashingUtils::HashString("Data");
-        static const int Ultrawarm_HASH = HashingUtils::HashString("Ultrawarm");
-        static const int Master_HASH = HashingUtils::HashString("Master");
+        static constexpr uint32_t Data_HASH = ConstExprHashingUtils::HashString("Data");
+        static constexpr uint32_t Ultrawarm_HASH = ConstExprHashingUtils::HashString("Ultrawarm");
+        static constexpr uint32_t Master_HASH = ConstExprHashingUtils::HashString("Master");
 
 
         NodeType GetNodeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Data_HASH)
           {
             return NodeType::Data;

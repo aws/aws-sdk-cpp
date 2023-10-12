@@ -20,13 +20,13 @@ namespace Aws
       namespace TextWrapMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int WRAP_HASH = HashingUtils::HashString("WRAP");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t WRAP_HASH = ConstExprHashingUtils::HashString("WRAP");
 
 
         TextWrap GetTextWrapForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return TextWrap::NONE;

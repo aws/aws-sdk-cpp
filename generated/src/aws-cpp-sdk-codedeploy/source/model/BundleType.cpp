@@ -20,16 +20,16 @@ namespace Aws
       namespace BundleTypeMapper
       {
 
-        static const int tar_HASH = HashingUtils::HashString("tar");
-        static const int tgz_HASH = HashingUtils::HashString("tgz");
-        static const int zip_HASH = HashingUtils::HashString("zip");
-        static const int YAML_HASH = HashingUtils::HashString("YAML");
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
+        static constexpr uint32_t tar_HASH = ConstExprHashingUtils::HashString("tar");
+        static constexpr uint32_t tgz_HASH = ConstExprHashingUtils::HashString("tgz");
+        static constexpr uint32_t zip_HASH = ConstExprHashingUtils::HashString("zip");
+        static constexpr uint32_t YAML_HASH = ConstExprHashingUtils::HashString("YAML");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
 
 
         BundleType GetBundleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == tar_HASH)
           {
             return BundleType::tar;

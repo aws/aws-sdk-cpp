@@ -20,12 +20,12 @@ namespace Aws
       namespace ApplicationConfigTypeMapper
       {
 
-        static const int SemtechGeolocation_HASH = HashingUtils::HashString("SemtechGeolocation");
+        static constexpr uint32_t SemtechGeolocation_HASH = ConstExprHashingUtils::HashString("SemtechGeolocation");
 
 
         ApplicationConfigType GetApplicationConfigTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SemtechGeolocation_HASH)
           {
             return ApplicationConfigType::SemtechGeolocation;

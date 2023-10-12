@@ -20,13 +20,13 @@ namespace Aws
       namespace InventoryIncludedObjectVersionsMapper
       {
 
-        static const int All_HASH = HashingUtils::HashString("All");
-        static const int Current_HASH = HashingUtils::HashString("Current");
+        static constexpr uint32_t All_HASH = ConstExprHashingUtils::HashString("All");
+        static constexpr uint32_t Current_HASH = ConstExprHashingUtils::HashString("Current");
 
 
         InventoryIncludedObjectVersions GetInventoryIncludedObjectVersionsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == All_HASH)
           {
             return InventoryIncludedObjectVersions::All;

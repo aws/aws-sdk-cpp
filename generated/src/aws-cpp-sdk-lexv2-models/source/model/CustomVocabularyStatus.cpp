@@ -20,16 +20,16 @@ namespace Aws
       namespace CustomVocabularyStatusMapper
       {
 
-        static const int Ready_HASH = HashingUtils::HashString("Ready");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
-        static const int Exporting_HASH = HashingUtils::HashString("Exporting");
-        static const int Importing_HASH = HashingUtils::HashString("Importing");
-        static const int Creating_HASH = HashingUtils::HashString("Creating");
+        static constexpr uint32_t Ready_HASH = ConstExprHashingUtils::HashString("Ready");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
+        static constexpr uint32_t Exporting_HASH = ConstExprHashingUtils::HashString("Exporting");
+        static constexpr uint32_t Importing_HASH = ConstExprHashingUtils::HashString("Importing");
+        static constexpr uint32_t Creating_HASH = ConstExprHashingUtils::HashString("Creating");
 
 
         CustomVocabularyStatus GetCustomVocabularyStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Ready_HASH)
           {
             return CustomVocabularyStatus::Ready;

@@ -20,13 +20,13 @@ namespace Aws
       namespace IndexEditionMapper
       {
 
-        static const int DEVELOPER_EDITION_HASH = HashingUtils::HashString("DEVELOPER_EDITION");
-        static const int ENTERPRISE_EDITION_HASH = HashingUtils::HashString("ENTERPRISE_EDITION");
+        static constexpr uint32_t DEVELOPER_EDITION_HASH = ConstExprHashingUtils::HashString("DEVELOPER_EDITION");
+        static constexpr uint32_t ENTERPRISE_EDITION_HASH = ConstExprHashingUtils::HashString("ENTERPRISE_EDITION");
 
 
         IndexEdition GetIndexEditionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEVELOPER_EDITION_HASH)
           {
             return IndexEdition::DEVELOPER_EDITION;

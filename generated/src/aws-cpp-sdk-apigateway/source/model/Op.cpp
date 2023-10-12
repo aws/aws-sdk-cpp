@@ -20,17 +20,17 @@ namespace Aws
       namespace OpMapper
       {
 
-        static const int add_HASH = HashingUtils::HashString("add");
-        static const int remove_HASH = HashingUtils::HashString("remove");
-        static const int replace_HASH = HashingUtils::HashString("replace");
-        static const int move_HASH = HashingUtils::HashString("move");
-        static const int copy_HASH = HashingUtils::HashString("copy");
-        static const int test_HASH = HashingUtils::HashString("test");
+        static constexpr uint32_t add_HASH = ConstExprHashingUtils::HashString("add");
+        static constexpr uint32_t remove_HASH = ConstExprHashingUtils::HashString("remove");
+        static constexpr uint32_t replace_HASH = ConstExprHashingUtils::HashString("replace");
+        static constexpr uint32_t move_HASH = ConstExprHashingUtils::HashString("move");
+        static constexpr uint32_t copy_HASH = ConstExprHashingUtils::HashString("copy");
+        static constexpr uint32_t test_HASH = ConstExprHashingUtils::HashString("test");
 
 
         Op GetOpForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == add_HASH)
           {
             return Op::add;

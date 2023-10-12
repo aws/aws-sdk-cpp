@@ -20,14 +20,14 @@ namespace Aws
       namespace ServerSideEncryptionMapper
       {
 
-        static const int AES256_HASH = HashingUtils::HashString("AES256");
-        static const int aws_kms_HASH = HashingUtils::HashString("aws:kms");
-        static const int aws_kms_dsse_HASH = HashingUtils::HashString("aws:kms:dsse");
+        static constexpr uint32_t AES256_HASH = ConstExprHashingUtils::HashString("AES256");
+        static constexpr uint32_t aws_kms_HASH = ConstExprHashingUtils::HashString("aws:kms");
+        static constexpr uint32_t aws_kms_dsse_HASH = ConstExprHashingUtils::HashString("aws:kms:dsse");
 
 
         ServerSideEncryption GetServerSideEncryptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AES256_HASH)
           {
             return ServerSideEncryption::AES256;

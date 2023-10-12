@@ -20,13 +20,13 @@ namespace Aws
       namespace ICD10CMEntityTypeMapper
       {
 
-        static const int DX_NAME_HASH = HashingUtils::HashString("DX_NAME");
-        static const int TIME_EXPRESSION_HASH = HashingUtils::HashString("TIME_EXPRESSION");
+        static constexpr uint32_t DX_NAME_HASH = ConstExprHashingUtils::HashString("DX_NAME");
+        static constexpr uint32_t TIME_EXPRESSION_HASH = ConstExprHashingUtils::HashString("TIME_EXPRESSION");
 
 
         ICD10CMEntityType GetICD10CMEntityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DX_NAME_HASH)
           {
             return ICD10CMEntityType::DX_NAME;

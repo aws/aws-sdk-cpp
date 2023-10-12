@@ -20,13 +20,13 @@ namespace Aws
       namespace ProcessingS3DataDistributionTypeMapper
       {
 
-        static const int FullyReplicated_HASH = HashingUtils::HashString("FullyReplicated");
-        static const int ShardedByS3Key_HASH = HashingUtils::HashString("ShardedByS3Key");
+        static constexpr uint32_t FullyReplicated_HASH = ConstExprHashingUtils::HashString("FullyReplicated");
+        static constexpr uint32_t ShardedByS3Key_HASH = ConstExprHashingUtils::HashString("ShardedByS3Key");
 
 
         ProcessingS3DataDistributionType GetProcessingS3DataDistributionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FullyReplicated_HASH)
           {
             return ProcessingS3DataDistributionType::FullyReplicated;

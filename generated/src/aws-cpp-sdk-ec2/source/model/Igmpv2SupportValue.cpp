@@ -20,13 +20,13 @@ namespace Aws
       namespace Igmpv2SupportValueMapper
       {
 
-        static const int enable_HASH = HashingUtils::HashString("enable");
-        static const int disable_HASH = HashingUtils::HashString("disable");
+        static constexpr uint32_t enable_HASH = ConstExprHashingUtils::HashString("enable");
+        static constexpr uint32_t disable_HASH = ConstExprHashingUtils::HashString("disable");
 
 
         Igmpv2SupportValue GetIgmpv2SupportValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == enable_HASH)
           {
             return Igmpv2SupportValue::enable;

@@ -20,14 +20,14 @@ namespace Aws
       namespace IssueSubEntityMapper
       {
 
-        static const int COMMENTS_HASH = HashingUtils::HashString("COMMENTS");
-        static const int ATTACHMENTS_HASH = HashingUtils::HashString("ATTACHMENTS");
-        static const int WORKLOGS_HASH = HashingUtils::HashString("WORKLOGS");
+        static constexpr uint32_t COMMENTS_HASH = ConstExprHashingUtils::HashString("COMMENTS");
+        static constexpr uint32_t ATTACHMENTS_HASH = ConstExprHashingUtils::HashString("ATTACHMENTS");
+        static constexpr uint32_t WORKLOGS_HASH = ConstExprHashingUtils::HashString("WORKLOGS");
 
 
         IssueSubEntity GetIssueSubEntityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMMENTS_HASH)
           {
             return IssueSubEntity::COMMENTS;

@@ -20,15 +20,15 @@ namespace Aws
       namespace ShipmentCarrierMapper
       {
 
-        static const int DHL_HASH = HashingUtils::HashString("DHL");
-        static const int DBS_HASH = HashingUtils::HashString("DBS");
-        static const int FEDEX_HASH = HashingUtils::HashString("FEDEX");
-        static const int UPS_HASH = HashingUtils::HashString("UPS");
+        static constexpr uint32_t DHL_HASH = ConstExprHashingUtils::HashString("DHL");
+        static constexpr uint32_t DBS_HASH = ConstExprHashingUtils::HashString("DBS");
+        static constexpr uint32_t FEDEX_HASH = ConstExprHashingUtils::HashString("FEDEX");
+        static constexpr uint32_t UPS_HASH = ConstExprHashingUtils::HashString("UPS");
 
 
         ShipmentCarrier GetShipmentCarrierForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DHL_HASH)
           {
             return ShipmentCarrier::DHL;

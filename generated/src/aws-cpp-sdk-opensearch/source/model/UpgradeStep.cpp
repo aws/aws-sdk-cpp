@@ -20,14 +20,14 @@ namespace Aws
       namespace UpgradeStepMapper
       {
 
-        static const int PRE_UPGRADE_CHECK_HASH = HashingUtils::HashString("PRE_UPGRADE_CHECK");
-        static const int SNAPSHOT_HASH = HashingUtils::HashString("SNAPSHOT");
-        static const int UPGRADE_HASH = HashingUtils::HashString("UPGRADE");
+        static constexpr uint32_t PRE_UPGRADE_CHECK_HASH = ConstExprHashingUtils::HashString("PRE_UPGRADE_CHECK");
+        static constexpr uint32_t SNAPSHOT_HASH = ConstExprHashingUtils::HashString("SNAPSHOT");
+        static constexpr uint32_t UPGRADE_HASH = ConstExprHashingUtils::HashString("UPGRADE");
 
 
         UpgradeStep GetUpgradeStepForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRE_UPGRADE_CHECK_HASH)
           {
             return UpgradeStep::PRE_UPGRADE_CHECK;

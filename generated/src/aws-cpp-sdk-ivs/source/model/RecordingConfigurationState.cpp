@@ -20,14 +20,14 @@ namespace Aws
       namespace RecordingConfigurationStateMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t CREATE_FAILED_HASH = ConstExprHashingUtils::HashString("CREATE_FAILED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
 
 
         RecordingConfigurationState GetRecordingConfigurationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return RecordingConfigurationState::CREATING;

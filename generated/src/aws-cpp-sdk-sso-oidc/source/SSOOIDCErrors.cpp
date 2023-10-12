@@ -103,21 +103,21 @@ template<> AWS_SSOOIDC_API InvalidRequestException SSOOIDCError::GetModeledError
 namespace SSOOIDCErrorMapper
 {
 
-static const int INVALID_GRANT_HASH = HashingUtils::HashString("InvalidGrantException");
-static const int INVALID_SCOPE_HASH = HashingUtils::HashString("InvalidScopeException");
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int AUTHORIZATION_PENDING_HASH = HashingUtils::HashString("AuthorizationPendingException");
-static const int UNSUPPORTED_GRANT_TYPE_HASH = HashingUtils::HashString("UnsupportedGrantTypeException");
-static const int EXPIRED_TOKEN_HASH = HashingUtils::HashString("ExpiredTokenException");
-static const int UNAUTHORIZED_CLIENT_HASH = HashingUtils::HashString("UnauthorizedClientException");
-static const int INVALID_CLIENT_HASH = HashingUtils::HashString("InvalidClientException");
-static const int INVALID_CLIENT_METADATA_HASH = HashingUtils::HashString("InvalidClientMetadataException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t INVALID_GRANT_HASH = ConstExprHashingUtils::HashString("InvalidGrantException");
+static constexpr uint32_t INVALID_SCOPE_HASH = ConstExprHashingUtils::HashString("InvalidScopeException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
+static constexpr uint32_t AUTHORIZATION_PENDING_HASH = ConstExprHashingUtils::HashString("AuthorizationPendingException");
+static constexpr uint32_t UNSUPPORTED_GRANT_TYPE_HASH = ConstExprHashingUtils::HashString("UnsupportedGrantTypeException");
+static constexpr uint32_t EXPIRED_TOKEN_HASH = ConstExprHashingUtils::HashString("ExpiredTokenException");
+static constexpr uint32_t UNAUTHORIZED_CLIENT_HASH = ConstExprHashingUtils::HashString("UnauthorizedClientException");
+static constexpr uint32_t INVALID_CLIENT_HASH = ConstExprHashingUtils::HashString("InvalidClientException");
+static constexpr uint32_t INVALID_CLIENT_METADATA_HASH = ConstExprHashingUtils::HashString("InvalidClientMetadataException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INVALID_GRANT_HASH)
   {

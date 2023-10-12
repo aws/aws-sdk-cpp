@@ -20,13 +20,13 @@ namespace Aws
       namespace PerformanceModeMapper
       {
 
-        static const int generalPurpose_HASH = HashingUtils::HashString("generalPurpose");
-        static const int maxIO_HASH = HashingUtils::HashString("maxIO");
+        static constexpr uint32_t generalPurpose_HASH = ConstExprHashingUtils::HashString("generalPurpose");
+        static constexpr uint32_t maxIO_HASH = ConstExprHashingUtils::HashString("maxIO");
 
 
         PerformanceMode GetPerformanceModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == generalPurpose_HASH)
           {
             return PerformanceMode::generalPurpose;

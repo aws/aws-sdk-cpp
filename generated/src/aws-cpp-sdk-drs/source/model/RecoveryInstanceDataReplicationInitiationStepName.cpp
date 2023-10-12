@@ -20,29 +20,29 @@ namespace Aws
       namespace RecoveryInstanceDataReplicationInitiationStepNameMapper
       {
 
-        static const int LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE_HASH = HashingUtils::HashString("LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE");
-        static const int COMPLETE_VOLUME_MAPPING_HASH = HashingUtils::HashString("COMPLETE_VOLUME_MAPPING");
-        static const int ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION_HASH = HashingUtils::HashString("ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION");
-        static const int DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT_HASH = HashingUtils::HashString("DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT");
-        static const int CONFIGURE_REPLICATION_SOFTWARE_HASH = HashingUtils::HashString("CONFIGURE_REPLICATION_SOFTWARE");
-        static const int PAIR_AGENT_WITH_REPLICATION_SOFTWARE_HASH = HashingUtils::HashString("PAIR_AGENT_WITH_REPLICATION_SOFTWARE");
-        static const int ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION_HASH = HashingUtils::HashString("ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION");
-        static const int WAIT_HASH = HashingUtils::HashString("WAIT");
-        static const int CREATE_SECURITY_GROUP_HASH = HashingUtils::HashString("CREATE_SECURITY_GROUP");
-        static const int LAUNCH_REPLICATION_SERVER_HASH = HashingUtils::HashString("LAUNCH_REPLICATION_SERVER");
-        static const int BOOT_REPLICATION_SERVER_HASH = HashingUtils::HashString("BOOT_REPLICATION_SERVER");
-        static const int AUTHENTICATE_WITH_SERVICE_HASH = HashingUtils::HashString("AUTHENTICATE_WITH_SERVICE");
-        static const int DOWNLOAD_REPLICATION_SOFTWARE_HASH = HashingUtils::HashString("DOWNLOAD_REPLICATION_SOFTWARE");
-        static const int CREATE_STAGING_DISKS_HASH = HashingUtils::HashString("CREATE_STAGING_DISKS");
-        static const int ATTACH_STAGING_DISKS_HASH = HashingUtils::HashString("ATTACH_STAGING_DISKS");
-        static const int PAIR_REPLICATION_SERVER_WITH_AGENT_HASH = HashingUtils::HashString("PAIR_REPLICATION_SERVER_WITH_AGENT");
-        static const int CONNECT_AGENT_TO_REPLICATION_SERVER_HASH = HashingUtils::HashString("CONNECT_AGENT_TO_REPLICATION_SERVER");
-        static const int START_DATA_TRANSFER_HASH = HashingUtils::HashString("START_DATA_TRANSFER");
+        static constexpr uint32_t LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE_HASH = ConstExprHashingUtils::HashString("LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE");
+        static constexpr uint32_t COMPLETE_VOLUME_MAPPING_HASH = ConstExprHashingUtils::HashString("COMPLETE_VOLUME_MAPPING");
+        static constexpr uint32_t ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION_HASH = ConstExprHashingUtils::HashString("ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION");
+        static constexpr uint32_t DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT_HASH = ConstExprHashingUtils::HashString("DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT");
+        static constexpr uint32_t CONFIGURE_REPLICATION_SOFTWARE_HASH = ConstExprHashingUtils::HashString("CONFIGURE_REPLICATION_SOFTWARE");
+        static constexpr uint32_t PAIR_AGENT_WITH_REPLICATION_SOFTWARE_HASH = ConstExprHashingUtils::HashString("PAIR_AGENT_WITH_REPLICATION_SOFTWARE");
+        static constexpr uint32_t ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION_HASH = ConstExprHashingUtils::HashString("ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION");
+        static constexpr uint32_t WAIT_HASH = ConstExprHashingUtils::HashString("WAIT");
+        static constexpr uint32_t CREATE_SECURITY_GROUP_HASH = ConstExprHashingUtils::HashString("CREATE_SECURITY_GROUP");
+        static constexpr uint32_t LAUNCH_REPLICATION_SERVER_HASH = ConstExprHashingUtils::HashString("LAUNCH_REPLICATION_SERVER");
+        static constexpr uint32_t BOOT_REPLICATION_SERVER_HASH = ConstExprHashingUtils::HashString("BOOT_REPLICATION_SERVER");
+        static constexpr uint32_t AUTHENTICATE_WITH_SERVICE_HASH = ConstExprHashingUtils::HashString("AUTHENTICATE_WITH_SERVICE");
+        static constexpr uint32_t DOWNLOAD_REPLICATION_SOFTWARE_HASH = ConstExprHashingUtils::HashString("DOWNLOAD_REPLICATION_SOFTWARE");
+        static constexpr uint32_t CREATE_STAGING_DISKS_HASH = ConstExprHashingUtils::HashString("CREATE_STAGING_DISKS");
+        static constexpr uint32_t ATTACH_STAGING_DISKS_HASH = ConstExprHashingUtils::HashString("ATTACH_STAGING_DISKS");
+        static constexpr uint32_t PAIR_REPLICATION_SERVER_WITH_AGENT_HASH = ConstExprHashingUtils::HashString("PAIR_REPLICATION_SERVER_WITH_AGENT");
+        static constexpr uint32_t CONNECT_AGENT_TO_REPLICATION_SERVER_HASH = ConstExprHashingUtils::HashString("CONNECT_AGENT_TO_REPLICATION_SERVER");
+        static constexpr uint32_t START_DATA_TRANSFER_HASH = ConstExprHashingUtils::HashString("START_DATA_TRANSFER");
 
 
         RecoveryInstanceDataReplicationInitiationStepName GetRecoveryInstanceDataReplicationInitiationStepNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE_HASH)
           {
             return RecoveryInstanceDataReplicationInitiationStepName::LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE;

@@ -20,17 +20,17 @@ namespace Aws
       namespace RelationalDatabaseMetricNameMapper
       {
 
-        static const int CPUUtilization_HASH = HashingUtils::HashString("CPUUtilization");
-        static const int DatabaseConnections_HASH = HashingUtils::HashString("DatabaseConnections");
-        static const int DiskQueueDepth_HASH = HashingUtils::HashString("DiskQueueDepth");
-        static const int FreeStorageSpace_HASH = HashingUtils::HashString("FreeStorageSpace");
-        static const int NetworkReceiveThroughput_HASH = HashingUtils::HashString("NetworkReceiveThroughput");
-        static const int NetworkTransmitThroughput_HASH = HashingUtils::HashString("NetworkTransmitThroughput");
+        static constexpr uint32_t CPUUtilization_HASH = ConstExprHashingUtils::HashString("CPUUtilization");
+        static constexpr uint32_t DatabaseConnections_HASH = ConstExprHashingUtils::HashString("DatabaseConnections");
+        static constexpr uint32_t DiskQueueDepth_HASH = ConstExprHashingUtils::HashString("DiskQueueDepth");
+        static constexpr uint32_t FreeStorageSpace_HASH = ConstExprHashingUtils::HashString("FreeStorageSpace");
+        static constexpr uint32_t NetworkReceiveThroughput_HASH = ConstExprHashingUtils::HashString("NetworkReceiveThroughput");
+        static constexpr uint32_t NetworkTransmitThroughput_HASH = ConstExprHashingUtils::HashString("NetworkTransmitThroughput");
 
 
         RelationalDatabaseMetricName GetRelationalDatabaseMetricNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CPUUtilization_HASH)
           {
             return RelationalDatabaseMetricName::CPUUtilization;

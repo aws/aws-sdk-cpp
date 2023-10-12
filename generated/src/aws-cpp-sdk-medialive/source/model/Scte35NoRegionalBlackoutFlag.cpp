@@ -20,13 +20,13 @@ namespace Aws
       namespace Scte35NoRegionalBlackoutFlagMapper
       {
 
-        static const int REGIONAL_BLACKOUT_HASH = HashingUtils::HashString("REGIONAL_BLACKOUT");
-        static const int NO_REGIONAL_BLACKOUT_HASH = HashingUtils::HashString("NO_REGIONAL_BLACKOUT");
+        static constexpr uint32_t REGIONAL_BLACKOUT_HASH = ConstExprHashingUtils::HashString("REGIONAL_BLACKOUT");
+        static constexpr uint32_t NO_REGIONAL_BLACKOUT_HASH = ConstExprHashingUtils::HashString("NO_REGIONAL_BLACKOUT");
 
 
         Scte35NoRegionalBlackoutFlag GetScte35NoRegionalBlackoutFlagForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REGIONAL_BLACKOUT_HASH)
           {
             return Scte35NoRegionalBlackoutFlag::REGIONAL_BLACKOUT;

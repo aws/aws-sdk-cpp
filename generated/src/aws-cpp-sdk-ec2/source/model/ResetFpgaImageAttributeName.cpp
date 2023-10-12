@@ -20,12 +20,12 @@ namespace Aws
       namespace ResetFpgaImageAttributeNameMapper
       {
 
-        static const int loadPermission_HASH = HashingUtils::HashString("loadPermission");
+        static constexpr uint32_t loadPermission_HASH = ConstExprHashingUtils::HashString("loadPermission");
 
 
         ResetFpgaImageAttributeName GetResetFpgaImageAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == loadPermission_HASH)
           {
             return ResetFpgaImageAttributeName::loadPermission;

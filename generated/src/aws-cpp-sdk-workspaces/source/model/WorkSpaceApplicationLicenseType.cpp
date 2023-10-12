@@ -20,13 +20,13 @@ namespace Aws
       namespace WorkSpaceApplicationLicenseTypeMapper
       {
 
-        static const int LICENSED_HASH = HashingUtils::HashString("LICENSED");
-        static const int UNLICENSED_HASH = HashingUtils::HashString("UNLICENSED");
+        static constexpr uint32_t LICENSED_HASH = ConstExprHashingUtils::HashString("LICENSED");
+        static constexpr uint32_t UNLICENSED_HASH = ConstExprHashingUtils::HashString("UNLICENSED");
 
 
         WorkSpaceApplicationLicenseType GetWorkSpaceApplicationLicenseTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LICENSED_HASH)
           {
             return WorkSpaceApplicationLicenseType::LICENSED;

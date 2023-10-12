@@ -20,41 +20,41 @@ namespace Aws
       namespace FleetErrorCodeMapper
       {
 
-        static const int IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION_HASH = HashingUtils::HashString("IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION");
-        static const int IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION_HASH = HashingUtils::HashString("IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION");
-        static const int IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION_HASH = HashingUtils::HashString("IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION");
-        static const int NETWORK_INTERFACE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("NETWORK_INTERFACE_LIMIT_EXCEEDED");
-        static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("INTERNAL_SERVICE_ERROR");
-        static const int IAM_SERVICE_ROLE_IS_MISSING_HASH = HashingUtils::HashString("IAM_SERVICE_ROLE_IS_MISSING");
-        static const int MACHINE_ROLE_IS_MISSING_HASH = HashingUtils::HashString("MACHINE_ROLE_IS_MISSING");
-        static const int STS_DISABLED_IN_REGION_HASH = HashingUtils::HashString("STS_DISABLED_IN_REGION");
-        static const int SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES_HASH = HashingUtils::HashString("SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES");
-        static const int IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION_HASH = HashingUtils::HashString("IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION");
-        static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SUBNET_NOT_FOUND");
-        static const int IMAGE_NOT_FOUND_HASH = HashingUtils::HashString("IMAGE_NOT_FOUND");
-        static const int INVALID_SUBNET_CONFIGURATION_HASH = HashingUtils::HashString("INVALID_SUBNET_CONFIGURATION");
-        static const int SECURITY_GROUPS_NOT_FOUND_HASH = HashingUtils::HashString("SECURITY_GROUPS_NOT_FOUND");
-        static const int IGW_NOT_ATTACHED_HASH = HashingUtils::HashString("IGW_NOT_ATTACHED");
-        static const int IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION_HASH = HashingUtils::HashString("IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION");
-        static const int FLEET_STOPPED_HASH = HashingUtils::HashString("FLEET_STOPPED");
-        static const int FLEET_INSTANCE_PROVISIONING_FAILURE_HASH = HashingUtils::HashString("FLEET_INSTANCE_PROVISIONING_FAILURE");
-        static const int DOMAIN_JOIN_ERROR_FILE_NOT_FOUND_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_FILE_NOT_FOUND");
-        static const int DOMAIN_JOIN_ERROR_ACCESS_DENIED_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_ACCESS_DENIED");
-        static const int DOMAIN_JOIN_ERROR_LOGON_FAILURE_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_LOGON_FAILURE");
-        static const int DOMAIN_JOIN_ERROR_INVALID_PARAMETER_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_INVALID_PARAMETER");
-        static const int DOMAIN_JOIN_ERROR_MORE_DATA_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_MORE_DATA");
-        static const int DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN");
-        static const int DOMAIN_JOIN_ERROR_NOT_SUPPORTED_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_NOT_SUPPORTED");
-        static const int DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME_HASH = HashingUtils::HashString("DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME");
-        static const int DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED_HASH = HashingUtils::HashString("DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED");
-        static const int DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED");
-        static const int DOMAIN_JOIN_NERR_PASSWORD_EXPIRED_HASH = HashingUtils::HashString("DOMAIN_JOIN_NERR_PASSWORD_EXPIRED");
-        static const int DOMAIN_JOIN_INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("DOMAIN_JOIN_INTERNAL_SERVICE_ERROR");
+        static constexpr uint32_t IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION_HASH = ConstExprHashingUtils::HashString("IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION");
+        static constexpr uint32_t IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION_HASH = ConstExprHashingUtils::HashString("IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION");
+        static constexpr uint32_t IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION_HASH = ConstExprHashingUtils::HashString("IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION");
+        static constexpr uint32_t NETWORK_INTERFACE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("NETWORK_INTERFACE_LIMIT_EXCEEDED");
+        static constexpr uint32_t INTERNAL_SERVICE_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_SERVICE_ERROR");
+        static constexpr uint32_t IAM_SERVICE_ROLE_IS_MISSING_HASH = ConstExprHashingUtils::HashString("IAM_SERVICE_ROLE_IS_MISSING");
+        static constexpr uint32_t MACHINE_ROLE_IS_MISSING_HASH = ConstExprHashingUtils::HashString("MACHINE_ROLE_IS_MISSING");
+        static constexpr uint32_t STS_DISABLED_IN_REGION_HASH = ConstExprHashingUtils::HashString("STS_DISABLED_IN_REGION");
+        static constexpr uint32_t SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES_HASH = ConstExprHashingUtils::HashString("SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES");
+        static constexpr uint32_t IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION_HASH = ConstExprHashingUtils::HashString("IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION");
+        static constexpr uint32_t SUBNET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SUBNET_NOT_FOUND");
+        static constexpr uint32_t IMAGE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("IMAGE_NOT_FOUND");
+        static constexpr uint32_t INVALID_SUBNET_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("INVALID_SUBNET_CONFIGURATION");
+        static constexpr uint32_t SECURITY_GROUPS_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SECURITY_GROUPS_NOT_FOUND");
+        static constexpr uint32_t IGW_NOT_ATTACHED_HASH = ConstExprHashingUtils::HashString("IGW_NOT_ATTACHED");
+        static constexpr uint32_t IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION_HASH = ConstExprHashingUtils::HashString("IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION");
+        static constexpr uint32_t FLEET_STOPPED_HASH = ConstExprHashingUtils::HashString("FLEET_STOPPED");
+        static constexpr uint32_t FLEET_INSTANCE_PROVISIONING_FAILURE_HASH = ConstExprHashingUtils::HashString("FLEET_INSTANCE_PROVISIONING_FAILURE");
+        static constexpr uint32_t DOMAIN_JOIN_ERROR_FILE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("DOMAIN_JOIN_ERROR_FILE_NOT_FOUND");
+        static constexpr uint32_t DOMAIN_JOIN_ERROR_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("DOMAIN_JOIN_ERROR_ACCESS_DENIED");
+        static constexpr uint32_t DOMAIN_JOIN_ERROR_LOGON_FAILURE_HASH = ConstExprHashingUtils::HashString("DOMAIN_JOIN_ERROR_LOGON_FAILURE");
+        static constexpr uint32_t DOMAIN_JOIN_ERROR_INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("DOMAIN_JOIN_ERROR_INVALID_PARAMETER");
+        static constexpr uint32_t DOMAIN_JOIN_ERROR_MORE_DATA_HASH = ConstExprHashingUtils::HashString("DOMAIN_JOIN_ERROR_MORE_DATA");
+        static constexpr uint32_t DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN_HASH = ConstExprHashingUtils::HashString("DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN");
+        static constexpr uint32_t DOMAIN_JOIN_ERROR_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("DOMAIN_JOIN_ERROR_NOT_SUPPORTED");
+        static constexpr uint32_t DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME_HASH = ConstExprHashingUtils::HashString("DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME");
+        static constexpr uint32_t DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED_HASH = ConstExprHashingUtils::HashString("DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED");
+        static constexpr uint32_t DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED");
+        static constexpr uint32_t DOMAIN_JOIN_NERR_PASSWORD_EXPIRED_HASH = ConstExprHashingUtils::HashString("DOMAIN_JOIN_NERR_PASSWORD_EXPIRED");
+        static constexpr uint32_t DOMAIN_JOIN_INTERNAL_SERVICE_ERROR_HASH = ConstExprHashingUtils::HashString("DOMAIN_JOIN_INTERNAL_SERVICE_ERROR");
 
 
         FleetErrorCode GetFleetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION_HASH)
           {
             return FleetErrorCode::IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION;

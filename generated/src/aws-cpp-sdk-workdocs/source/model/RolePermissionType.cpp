@@ -20,13 +20,13 @@ namespace Aws
       namespace RolePermissionTypeMapper
       {
 
-        static const int DIRECT_HASH = HashingUtils::HashString("DIRECT");
-        static const int INHERITED_HASH = HashingUtils::HashString("INHERITED");
+        static constexpr uint32_t DIRECT_HASH = ConstExprHashingUtils::HashString("DIRECT");
+        static constexpr uint32_t INHERITED_HASH = ConstExprHashingUtils::HashString("INHERITED");
 
 
         RolePermissionType GetRolePermissionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DIRECT_HASH)
           {
             return RolePermissionType::DIRECT;

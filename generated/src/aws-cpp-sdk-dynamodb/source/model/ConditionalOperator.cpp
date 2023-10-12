@@ -20,13 +20,13 @@ namespace Aws
       namespace ConditionalOperatorMapper
       {
 
-        static const int AND_HASH = HashingUtils::HashString("AND");
-        static const int OR_HASH = HashingUtils::HashString("OR");
+        static constexpr uint32_t AND_HASH = ConstExprHashingUtils::HashString("AND");
+        static constexpr uint32_t OR_HASH = ConstExprHashingUtils::HashString("OR");
 
 
         ConditionalOperator GetConditionalOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AND_HASH)
           {
             return ConditionalOperator::AND;

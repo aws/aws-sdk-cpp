@@ -20,15 +20,15 @@ namespace Aws
       namespace S3ChecksumAlgorithmMapper
       {
 
-        static const int CRC32_HASH = HashingUtils::HashString("CRC32");
-        static const int CRC32C_HASH = HashingUtils::HashString("CRC32C");
-        static const int SHA1_HASH = HashingUtils::HashString("SHA1");
-        static const int SHA256_HASH = HashingUtils::HashString("SHA256");
+        static constexpr uint32_t CRC32_HASH = ConstExprHashingUtils::HashString("CRC32");
+        static constexpr uint32_t CRC32C_HASH = ConstExprHashingUtils::HashString("CRC32C");
+        static constexpr uint32_t SHA1_HASH = ConstExprHashingUtils::HashString("SHA1");
+        static constexpr uint32_t SHA256_HASH = ConstExprHashingUtils::HashString("SHA256");
 
 
         S3ChecksumAlgorithm GetS3ChecksumAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CRC32_HASH)
           {
             return S3ChecksumAlgorithm::CRC32;

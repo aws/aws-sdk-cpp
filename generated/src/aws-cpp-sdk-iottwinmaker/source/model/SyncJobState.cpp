@@ -20,16 +20,16 @@ namespace Aws
       namespace SyncJobStateMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int INITIALIZING_HASH = HashingUtils::HashString("INITIALIZING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t INITIALIZING_HASH = ConstExprHashingUtils::HashString("INITIALIZING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         SyncJobState GetSyncJobStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return SyncJobState::CREATING;

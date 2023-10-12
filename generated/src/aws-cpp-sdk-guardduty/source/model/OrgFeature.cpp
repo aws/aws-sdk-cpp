@@ -20,17 +20,17 @@ namespace Aws
       namespace OrgFeatureMapper
       {
 
-        static const int S3_DATA_EVENTS_HASH = HashingUtils::HashString("S3_DATA_EVENTS");
-        static const int EKS_AUDIT_LOGS_HASH = HashingUtils::HashString("EKS_AUDIT_LOGS");
-        static const int EBS_MALWARE_PROTECTION_HASH = HashingUtils::HashString("EBS_MALWARE_PROTECTION");
-        static const int RDS_LOGIN_EVENTS_HASH = HashingUtils::HashString("RDS_LOGIN_EVENTS");
-        static const int EKS_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EKS_RUNTIME_MONITORING");
-        static const int LAMBDA_NETWORK_LOGS_HASH = HashingUtils::HashString("LAMBDA_NETWORK_LOGS");
+        static constexpr uint32_t S3_DATA_EVENTS_HASH = ConstExprHashingUtils::HashString("S3_DATA_EVENTS");
+        static constexpr uint32_t EKS_AUDIT_LOGS_HASH = ConstExprHashingUtils::HashString("EKS_AUDIT_LOGS");
+        static constexpr uint32_t EBS_MALWARE_PROTECTION_HASH = ConstExprHashingUtils::HashString("EBS_MALWARE_PROTECTION");
+        static constexpr uint32_t RDS_LOGIN_EVENTS_HASH = ConstExprHashingUtils::HashString("RDS_LOGIN_EVENTS");
+        static constexpr uint32_t EKS_RUNTIME_MONITORING_HASH = ConstExprHashingUtils::HashString("EKS_RUNTIME_MONITORING");
+        static constexpr uint32_t LAMBDA_NETWORK_LOGS_HASH = ConstExprHashingUtils::HashString("LAMBDA_NETWORK_LOGS");
 
 
         OrgFeature GetOrgFeatureForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == S3_DATA_EVENTS_HASH)
           {
             return OrgFeature::S3_DATA_EVENTS;

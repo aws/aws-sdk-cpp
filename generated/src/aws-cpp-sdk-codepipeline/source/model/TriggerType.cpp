@@ -20,17 +20,17 @@ namespace Aws
       namespace TriggerTypeMapper
       {
 
-        static const int CreatePipeline_HASH = HashingUtils::HashString("CreatePipeline");
-        static const int StartPipelineExecution_HASH = HashingUtils::HashString("StartPipelineExecution");
-        static const int PollForSourceChanges_HASH = HashingUtils::HashString("PollForSourceChanges");
-        static const int Webhook_HASH = HashingUtils::HashString("Webhook");
-        static const int CloudWatchEvent_HASH = HashingUtils::HashString("CloudWatchEvent");
-        static const int PutActionRevision_HASH = HashingUtils::HashString("PutActionRevision");
+        static constexpr uint32_t CreatePipeline_HASH = ConstExprHashingUtils::HashString("CreatePipeline");
+        static constexpr uint32_t StartPipelineExecution_HASH = ConstExprHashingUtils::HashString("StartPipelineExecution");
+        static constexpr uint32_t PollForSourceChanges_HASH = ConstExprHashingUtils::HashString("PollForSourceChanges");
+        static constexpr uint32_t Webhook_HASH = ConstExprHashingUtils::HashString("Webhook");
+        static constexpr uint32_t CloudWatchEvent_HASH = ConstExprHashingUtils::HashString("CloudWatchEvent");
+        static constexpr uint32_t PutActionRevision_HASH = ConstExprHashingUtils::HashString("PutActionRevision");
 
 
         TriggerType GetTriggerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CreatePipeline_HASH)
           {
             return TriggerType::CreatePipeline;

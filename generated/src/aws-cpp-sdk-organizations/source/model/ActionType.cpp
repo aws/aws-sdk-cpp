@@ -20,15 +20,15 @@ namespace Aws
       namespace ActionTypeMapper
       {
 
-        static const int INVITE_HASH = HashingUtils::HashString("INVITE");
-        static const int ENABLE_ALL_FEATURES_HASH = HashingUtils::HashString("ENABLE_ALL_FEATURES");
-        static const int APPROVE_ALL_FEATURES_HASH = HashingUtils::HashString("APPROVE_ALL_FEATURES");
-        static const int ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE_HASH = HashingUtils::HashString("ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE");
+        static constexpr uint32_t INVITE_HASH = ConstExprHashingUtils::HashString("INVITE");
+        static constexpr uint32_t ENABLE_ALL_FEATURES_HASH = ConstExprHashingUtils::HashString("ENABLE_ALL_FEATURES");
+        static constexpr uint32_t APPROVE_ALL_FEATURES_HASH = ConstExprHashingUtils::HashString("APPROVE_ALL_FEATURES");
+        static constexpr uint32_t ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE_HASH = ConstExprHashingUtils::HashString("ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE");
 
 
         ActionType GetActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVITE_HASH)
           {
             return ActionType::INVITE;

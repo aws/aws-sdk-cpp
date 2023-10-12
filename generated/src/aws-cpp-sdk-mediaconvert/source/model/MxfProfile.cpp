@@ -20,16 +20,16 @@ namespace Aws
       namespace MxfProfileMapper
       {
 
-        static const int D_10_HASH = HashingUtils::HashString("D_10");
-        static const int XDCAM_HASH = HashingUtils::HashString("XDCAM");
-        static const int OP1A_HASH = HashingUtils::HashString("OP1A");
-        static const int XAVC_HASH = HashingUtils::HashString("XAVC");
-        static const int XDCAM_RDD9_HASH = HashingUtils::HashString("XDCAM_RDD9");
+        static constexpr uint32_t D_10_HASH = ConstExprHashingUtils::HashString("D_10");
+        static constexpr uint32_t XDCAM_HASH = ConstExprHashingUtils::HashString("XDCAM");
+        static constexpr uint32_t OP1A_HASH = ConstExprHashingUtils::HashString("OP1A");
+        static constexpr uint32_t XAVC_HASH = ConstExprHashingUtils::HashString("XAVC");
+        static constexpr uint32_t XDCAM_RDD9_HASH = ConstExprHashingUtils::HashString("XDCAM_RDD9");
 
 
         MxfProfile GetMxfProfileForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == D_10_HASH)
           {
             return MxfProfile::D_10;

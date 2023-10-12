@@ -20,12 +20,12 @@ namespace Aws
       namespace WirelessGatewayTypeMapper
       {
 
-        static const int LoRaWAN_HASH = HashingUtils::HashString("LoRaWAN");
+        static constexpr uint32_t LoRaWAN_HASH = ConstExprHashingUtils::HashString("LoRaWAN");
 
 
         WirelessGatewayType GetWirelessGatewayTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LoRaWAN_HASH)
           {
             return WirelessGatewayType::LoRaWAN;

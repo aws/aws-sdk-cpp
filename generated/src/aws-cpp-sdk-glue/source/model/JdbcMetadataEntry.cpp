@@ -20,13 +20,13 @@ namespace Aws
       namespace JdbcMetadataEntryMapper
       {
 
-        static const int COMMENTS_HASH = HashingUtils::HashString("COMMENTS");
-        static const int RAWTYPES_HASH = HashingUtils::HashString("RAWTYPES");
+        static constexpr uint32_t COMMENTS_HASH = ConstExprHashingUtils::HashString("COMMENTS");
+        static constexpr uint32_t RAWTYPES_HASH = ConstExprHashingUtils::HashString("RAWTYPES");
 
 
         JdbcMetadataEntry GetJdbcMetadataEntryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMMENTS_HASH)
           {
             return JdbcMetadataEntry::COMMENTS;

@@ -20,19 +20,19 @@ namespace Aws
       namespace ImportFileTaskStatusMapper
       {
 
-        static const int ImportInProgress_HASH = HashingUtils::HashString("ImportInProgress");
-        static const int ImportFailed_HASH = HashingUtils::HashString("ImportFailed");
-        static const int ImportPartialSuccess_HASH = HashingUtils::HashString("ImportPartialSuccess");
-        static const int ImportSuccess_HASH = HashingUtils::HashString("ImportSuccess");
-        static const int DeleteInProgress_HASH = HashingUtils::HashString("DeleteInProgress");
-        static const int DeleteFailed_HASH = HashingUtils::HashString("DeleteFailed");
-        static const int DeletePartialSuccess_HASH = HashingUtils::HashString("DeletePartialSuccess");
-        static const int DeleteSuccess_HASH = HashingUtils::HashString("DeleteSuccess");
+        static constexpr uint32_t ImportInProgress_HASH = ConstExprHashingUtils::HashString("ImportInProgress");
+        static constexpr uint32_t ImportFailed_HASH = ConstExprHashingUtils::HashString("ImportFailed");
+        static constexpr uint32_t ImportPartialSuccess_HASH = ConstExprHashingUtils::HashString("ImportPartialSuccess");
+        static constexpr uint32_t ImportSuccess_HASH = ConstExprHashingUtils::HashString("ImportSuccess");
+        static constexpr uint32_t DeleteInProgress_HASH = ConstExprHashingUtils::HashString("DeleteInProgress");
+        static constexpr uint32_t DeleteFailed_HASH = ConstExprHashingUtils::HashString("DeleteFailed");
+        static constexpr uint32_t DeletePartialSuccess_HASH = ConstExprHashingUtils::HashString("DeletePartialSuccess");
+        static constexpr uint32_t DeleteSuccess_HASH = ConstExprHashingUtils::HashString("DeleteSuccess");
 
 
         ImportFileTaskStatus GetImportFileTaskStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ImportInProgress_HASH)
           {
             return ImportFileTaskStatus::ImportInProgress;

@@ -68,16 +68,16 @@ template<> AWS_IOT1CLICKDEVICESSERVICE_API InternalFailureException IoT1ClickDev
 namespace IoT1ClickDevicesServiceErrorMapper
 {
 
-static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
-static const int PRECONDITION_FAILED_HASH = HashingUtils::HashString("PreconditionFailedException");
-static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
-static const int RANGE_NOT_SATISFIABLE_HASH = HashingUtils::HashString("RangeNotSatisfiableException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t FORBIDDEN_HASH = ConstExprHashingUtils::HashString("ForbiddenException");
+static constexpr uint32_t PRECONDITION_FAILED_HASH = ConstExprHashingUtils::HashString("PreconditionFailedException");
+static constexpr uint32_t RESOURCE_CONFLICT_HASH = ConstExprHashingUtils::HashString("ResourceConflictException");
+static constexpr uint32_t RANGE_NOT_SATISFIABLE_HASH = ConstExprHashingUtils::HashString("RangeNotSatisfiableException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == FORBIDDEN_HASH)
   {

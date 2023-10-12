@@ -20,13 +20,13 @@ namespace Aws
       namespace DryRunModeMapper
       {
 
-        static const int Basic_HASH = HashingUtils::HashString("Basic");
-        static const int Verbose_HASH = HashingUtils::HashString("Verbose");
+        static constexpr uint32_t Basic_HASH = ConstExprHashingUtils::HashString("Basic");
+        static constexpr uint32_t Verbose_HASH = ConstExprHashingUtils::HashString("Verbose");
 
 
         DryRunMode GetDryRunModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Basic_HASH)
           {
             return DryRunMode::Basic;

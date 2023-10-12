@@ -20,17 +20,17 @@ namespace Aws
       namespace HandshakeStateMapper
       {
 
-        static const int REQUESTED_HASH = HashingUtils::HashString("REQUESTED");
-        static const int OPEN_HASH = HashingUtils::HashString("OPEN");
-        static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
-        static const int ACCEPTED_HASH = HashingUtils::HashString("ACCEPTED");
-        static const int DECLINED_HASH = HashingUtils::HashString("DECLINED");
-        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
+        static constexpr uint32_t REQUESTED_HASH = ConstExprHashingUtils::HashString("REQUESTED");
+        static constexpr uint32_t OPEN_HASH = ConstExprHashingUtils::HashString("OPEN");
+        static constexpr uint32_t CANCELED_HASH = ConstExprHashingUtils::HashString("CANCELED");
+        static constexpr uint32_t ACCEPTED_HASH = ConstExprHashingUtils::HashString("ACCEPTED");
+        static constexpr uint32_t DECLINED_HASH = ConstExprHashingUtils::HashString("DECLINED");
+        static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("EXPIRED");
 
 
         HandshakeState GetHandshakeStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REQUESTED_HASH)
           {
             return HandshakeState::REQUESTED;

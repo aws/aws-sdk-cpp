@@ -20,16 +20,16 @@ namespace Aws
       namespace WorkforceStatusMapper
       {
 
-        static const int Initializing_HASH = HashingUtils::HashString("Initializing");
-        static const int Updating_HASH = HashingUtils::HashString("Updating");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Active_HASH = HashingUtils::HashString("Active");
+        static constexpr uint32_t Initializing_HASH = ConstExprHashingUtils::HashString("Initializing");
+        static constexpr uint32_t Updating_HASH = ConstExprHashingUtils::HashString("Updating");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
 
 
         WorkforceStatus GetWorkforceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Initializing_HASH)
           {
             return WorkforceStatus::Initializing;

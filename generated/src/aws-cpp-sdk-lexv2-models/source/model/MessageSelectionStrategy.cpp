@@ -20,13 +20,13 @@ namespace Aws
       namespace MessageSelectionStrategyMapper
       {
 
-        static const int Random_HASH = HashingUtils::HashString("Random");
-        static const int Ordered_HASH = HashingUtils::HashString("Ordered");
+        static constexpr uint32_t Random_HASH = ConstExprHashingUtils::HashString("Random");
+        static constexpr uint32_t Ordered_HASH = ConstExprHashingUtils::HashString("Ordered");
 
 
         MessageSelectionStrategy GetMessageSelectionStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Random_HASH)
           {
             return MessageSelectionStrategy::Random;

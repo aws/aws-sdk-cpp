@@ -20,16 +20,16 @@ namespace Aws
       namespace SessionKeyDerivationModeMapper
       {
 
-        static const int EMV_COMMON_SESSION_KEY_HASH = HashingUtils::HashString("EMV_COMMON_SESSION_KEY");
-        static const int EMV2000_HASH = HashingUtils::HashString("EMV2000");
-        static const int AMEX_HASH = HashingUtils::HashString("AMEX");
-        static const int MASTERCARD_SESSION_KEY_HASH = HashingUtils::HashString("MASTERCARD_SESSION_KEY");
-        static const int VISA_HASH = HashingUtils::HashString("VISA");
+        static constexpr uint32_t EMV_COMMON_SESSION_KEY_HASH = ConstExprHashingUtils::HashString("EMV_COMMON_SESSION_KEY");
+        static constexpr uint32_t EMV2000_HASH = ConstExprHashingUtils::HashString("EMV2000");
+        static constexpr uint32_t AMEX_HASH = ConstExprHashingUtils::HashString("AMEX");
+        static constexpr uint32_t MASTERCARD_SESSION_KEY_HASH = ConstExprHashingUtils::HashString("MASTERCARD_SESSION_KEY");
+        static constexpr uint32_t VISA_HASH = ConstExprHashingUtils::HashString("VISA");
 
 
         SessionKeyDerivationMode GetSessionKeyDerivationModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EMV_COMMON_SESSION_KEY_HASH)
           {
             return SessionKeyDerivationMode::EMV_COMMON_SESSION_KEY;

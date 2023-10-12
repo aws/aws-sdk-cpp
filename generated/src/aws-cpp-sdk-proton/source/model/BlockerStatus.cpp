@@ -20,13 +20,13 @@ namespace Aws
       namespace BlockerStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int RESOLVED_HASH = HashingUtils::HashString("RESOLVED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t RESOLVED_HASH = ConstExprHashingUtils::HashString("RESOLVED");
 
 
         BlockerStatus GetBlockerStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return BlockerStatus::ACTIVE;

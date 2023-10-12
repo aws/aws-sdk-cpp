@@ -20,15 +20,15 @@ namespace Aws
       namespace ReservationStateMapper
       {
 
-        static const int payment_pending_HASH = HashingUtils::HashString("payment-pending");
-        static const int payment_failed_HASH = HashingUtils::HashString("payment-failed");
-        static const int active_HASH = HashingUtils::HashString("active");
-        static const int retired_HASH = HashingUtils::HashString("retired");
+        static constexpr uint32_t payment_pending_HASH = ConstExprHashingUtils::HashString("payment-pending");
+        static constexpr uint32_t payment_failed_HASH = ConstExprHashingUtils::HashString("payment-failed");
+        static constexpr uint32_t active_HASH = ConstExprHashingUtils::HashString("active");
+        static constexpr uint32_t retired_HASH = ConstExprHashingUtils::HashString("retired");
 
 
         ReservationState GetReservationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == payment_pending_HASH)
           {
             return ReservationState::payment_pending;

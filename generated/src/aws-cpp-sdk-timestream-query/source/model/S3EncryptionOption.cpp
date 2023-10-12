@@ -20,13 +20,13 @@ namespace Aws
       namespace S3EncryptionOptionMapper
       {
 
-        static const int SSE_S3_HASH = HashingUtils::HashString("SSE_S3");
-        static const int SSE_KMS_HASH = HashingUtils::HashString("SSE_KMS");
+        static constexpr uint32_t SSE_S3_HASH = ConstExprHashingUtils::HashString("SSE_S3");
+        static constexpr uint32_t SSE_KMS_HASH = ConstExprHashingUtils::HashString("SSE_KMS");
 
 
         S3EncryptionOption GetS3EncryptionOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SSE_S3_HASH)
           {
             return S3EncryptionOption::SSE_S3;

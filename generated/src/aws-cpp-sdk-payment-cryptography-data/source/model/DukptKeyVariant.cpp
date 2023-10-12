@@ -20,14 +20,14 @@ namespace Aws
       namespace DukptKeyVariantMapper
       {
 
-        static const int BIDIRECTIONAL_HASH = HashingUtils::HashString("BIDIRECTIONAL");
-        static const int REQUEST_HASH = HashingUtils::HashString("REQUEST");
-        static const int RESPONSE_HASH = HashingUtils::HashString("RESPONSE");
+        static constexpr uint32_t BIDIRECTIONAL_HASH = ConstExprHashingUtils::HashString("BIDIRECTIONAL");
+        static constexpr uint32_t REQUEST_HASH = ConstExprHashingUtils::HashString("REQUEST");
+        static constexpr uint32_t RESPONSE_HASH = ConstExprHashingUtils::HashString("RESPONSE");
 
 
         DukptKeyVariant GetDukptKeyVariantForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BIDIRECTIONAL_HASH)
           {
             return DukptKeyVariant::BIDIRECTIONAL;

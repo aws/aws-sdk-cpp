@@ -20,13 +20,13 @@ namespace Aws
       namespace StorageTypeMapper
       {
 
-        static const int UNLIMITED_HASH = HashingUtils::HashString("UNLIMITED");
-        static const int QUOTA_HASH = HashingUtils::HashString("QUOTA");
+        static constexpr uint32_t UNLIMITED_HASH = ConstExprHashingUtils::HashString("UNLIMITED");
+        static constexpr uint32_t QUOTA_HASH = ConstExprHashingUtils::HashString("QUOTA");
 
 
         StorageType GetStorageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNLIMITED_HASH)
           {
             return StorageType::UNLIMITED;

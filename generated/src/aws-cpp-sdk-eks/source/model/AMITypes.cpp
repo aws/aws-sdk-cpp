@@ -20,23 +20,23 @@ namespace Aws
       namespace AMITypesMapper
       {
 
-        static const int AL2_x86_64_HASH = HashingUtils::HashString("AL2_x86_64");
-        static const int AL2_x86_64_GPU_HASH = HashingUtils::HashString("AL2_x86_64_GPU");
-        static const int AL2_ARM_64_HASH = HashingUtils::HashString("AL2_ARM_64");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
-        static const int BOTTLEROCKET_ARM_64_HASH = HashingUtils::HashString("BOTTLEROCKET_ARM_64");
-        static const int BOTTLEROCKET_x86_64_HASH = HashingUtils::HashString("BOTTLEROCKET_x86_64");
-        static const int BOTTLEROCKET_ARM_64_NVIDIA_HASH = HashingUtils::HashString("BOTTLEROCKET_ARM_64_NVIDIA");
-        static const int BOTTLEROCKET_x86_64_NVIDIA_HASH = HashingUtils::HashString("BOTTLEROCKET_x86_64_NVIDIA");
-        static const int WINDOWS_CORE_2019_x86_64_HASH = HashingUtils::HashString("WINDOWS_CORE_2019_x86_64");
-        static const int WINDOWS_FULL_2019_x86_64_HASH = HashingUtils::HashString("WINDOWS_FULL_2019_x86_64");
-        static const int WINDOWS_CORE_2022_x86_64_HASH = HashingUtils::HashString("WINDOWS_CORE_2022_x86_64");
-        static const int WINDOWS_FULL_2022_x86_64_HASH = HashingUtils::HashString("WINDOWS_FULL_2022_x86_64");
+        static constexpr uint32_t AL2_x86_64_HASH = ConstExprHashingUtils::HashString("AL2_x86_64");
+        static constexpr uint32_t AL2_x86_64_GPU_HASH = ConstExprHashingUtils::HashString("AL2_x86_64_GPU");
+        static constexpr uint32_t AL2_ARM_64_HASH = ConstExprHashingUtils::HashString("AL2_ARM_64");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t BOTTLEROCKET_ARM_64_HASH = ConstExprHashingUtils::HashString("BOTTLEROCKET_ARM_64");
+        static constexpr uint32_t BOTTLEROCKET_x86_64_HASH = ConstExprHashingUtils::HashString("BOTTLEROCKET_x86_64");
+        static constexpr uint32_t BOTTLEROCKET_ARM_64_NVIDIA_HASH = ConstExprHashingUtils::HashString("BOTTLEROCKET_ARM_64_NVIDIA");
+        static constexpr uint32_t BOTTLEROCKET_x86_64_NVIDIA_HASH = ConstExprHashingUtils::HashString("BOTTLEROCKET_x86_64_NVIDIA");
+        static constexpr uint32_t WINDOWS_CORE_2019_x86_64_HASH = ConstExprHashingUtils::HashString("WINDOWS_CORE_2019_x86_64");
+        static constexpr uint32_t WINDOWS_FULL_2019_x86_64_HASH = ConstExprHashingUtils::HashString("WINDOWS_FULL_2019_x86_64");
+        static constexpr uint32_t WINDOWS_CORE_2022_x86_64_HASH = ConstExprHashingUtils::HashString("WINDOWS_CORE_2022_x86_64");
+        static constexpr uint32_t WINDOWS_FULL_2022_x86_64_HASH = ConstExprHashingUtils::HashString("WINDOWS_FULL_2022_x86_64");
 
 
         AMITypes GetAMITypesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AL2_x86_64_HASH)
           {
             return AMITypes::AL2_x86_64;

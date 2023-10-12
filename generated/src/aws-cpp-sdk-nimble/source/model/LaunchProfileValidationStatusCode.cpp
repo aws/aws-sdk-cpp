@@ -20,20 +20,20 @@ namespace Aws
       namespace LaunchProfileValidationStatusCodeMapper
       {
 
-        static const int VALIDATION_NOT_STARTED_HASH = HashingUtils::HashString("VALIDATION_NOT_STARTED");
-        static const int VALIDATION_IN_PROGRESS_HASH = HashingUtils::HashString("VALIDATION_IN_PROGRESS");
-        static const int VALIDATION_SUCCESS_HASH = HashingUtils::HashString("VALIDATION_SUCCESS");
-        static const int VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION_HASH = HashingUtils::HashString("VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION");
-        static const int VALIDATION_FAILED_SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("VALIDATION_FAILED_SUBNET_NOT_FOUND");
-        static const int VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION_HASH = HashingUtils::HashString("VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION");
-        static const int VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY_HASH = HashingUtils::HashString("VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY");
-        static const int VALIDATION_FAILED_UNAUTHORIZED_HASH = HashingUtils::HashString("VALIDATION_FAILED_UNAUTHORIZED");
-        static const int VALIDATION_FAILED_INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("VALIDATION_FAILED_INTERNAL_SERVER_ERROR");
+        static constexpr uint32_t VALIDATION_NOT_STARTED_HASH = ConstExprHashingUtils::HashString("VALIDATION_NOT_STARTED");
+        static constexpr uint32_t VALIDATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("VALIDATION_IN_PROGRESS");
+        static constexpr uint32_t VALIDATION_SUCCESS_HASH = ConstExprHashingUtils::HashString("VALIDATION_SUCCESS");
+        static constexpr uint32_t VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION_HASH = ConstExprHashingUtils::HashString("VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION");
+        static constexpr uint32_t VALIDATION_FAILED_SUBNET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("VALIDATION_FAILED_SUBNET_NOT_FOUND");
+        static constexpr uint32_t VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION_HASH = ConstExprHashingUtils::HashString("VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION");
+        static constexpr uint32_t VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY_HASH = ConstExprHashingUtils::HashString("VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY");
+        static constexpr uint32_t VALIDATION_FAILED_UNAUTHORIZED_HASH = ConstExprHashingUtils::HashString("VALIDATION_FAILED_UNAUTHORIZED");
+        static constexpr uint32_t VALIDATION_FAILED_INTERNAL_SERVER_ERROR_HASH = ConstExprHashingUtils::HashString("VALIDATION_FAILED_INTERNAL_SERVER_ERROR");
 
 
         LaunchProfileValidationStatusCode GetLaunchProfileValidationStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VALIDATION_NOT_STARTED_HASH)
           {
             return LaunchProfileValidationStatusCode::VALIDATION_NOT_STARTED;

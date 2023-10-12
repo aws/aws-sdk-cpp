@@ -20,14 +20,14 @@ namespace Aws
       namespace TimeUnitMapper
       {
 
-        static const int HOURLY_HASH = HashingUtils::HashString("HOURLY");
-        static const int DAILY_HASH = HashingUtils::HashString("DAILY");
-        static const int MONTHLY_HASH = HashingUtils::HashString("MONTHLY");
+        static constexpr uint32_t HOURLY_HASH = ConstExprHashingUtils::HashString("HOURLY");
+        static constexpr uint32_t DAILY_HASH = ConstExprHashingUtils::HashString("DAILY");
+        static constexpr uint32_t MONTHLY_HASH = ConstExprHashingUtils::HashString("MONTHLY");
 
 
         TimeUnit GetTimeUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HOURLY_HASH)
           {
             return TimeUnit::HOURLY;

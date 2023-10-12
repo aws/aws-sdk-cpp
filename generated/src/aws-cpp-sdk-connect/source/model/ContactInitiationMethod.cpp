@@ -20,20 +20,20 @@ namespace Aws
       namespace ContactInitiationMethodMapper
       {
 
-        static const int INBOUND_HASH = HashingUtils::HashString("INBOUND");
-        static const int OUTBOUND_HASH = HashingUtils::HashString("OUTBOUND");
-        static const int TRANSFER_HASH = HashingUtils::HashString("TRANSFER");
-        static const int QUEUE_TRANSFER_HASH = HashingUtils::HashString("QUEUE_TRANSFER");
-        static const int CALLBACK_HASH = HashingUtils::HashString("CALLBACK");
-        static const int API_HASH = HashingUtils::HashString("API");
-        static const int DISCONNECT_HASH = HashingUtils::HashString("DISCONNECT");
-        static const int MONITOR_HASH = HashingUtils::HashString("MONITOR");
-        static const int EXTERNAL_OUTBOUND_HASH = HashingUtils::HashString("EXTERNAL_OUTBOUND");
+        static constexpr uint32_t INBOUND_HASH = ConstExprHashingUtils::HashString("INBOUND");
+        static constexpr uint32_t OUTBOUND_HASH = ConstExprHashingUtils::HashString("OUTBOUND");
+        static constexpr uint32_t TRANSFER_HASH = ConstExprHashingUtils::HashString("TRANSFER");
+        static constexpr uint32_t QUEUE_TRANSFER_HASH = ConstExprHashingUtils::HashString("QUEUE_TRANSFER");
+        static constexpr uint32_t CALLBACK_HASH = ConstExprHashingUtils::HashString("CALLBACK");
+        static constexpr uint32_t API_HASH = ConstExprHashingUtils::HashString("API");
+        static constexpr uint32_t DISCONNECT_HASH = ConstExprHashingUtils::HashString("DISCONNECT");
+        static constexpr uint32_t MONITOR_HASH = ConstExprHashingUtils::HashString("MONITOR");
+        static constexpr uint32_t EXTERNAL_OUTBOUND_HASH = ConstExprHashingUtils::HashString("EXTERNAL_OUTBOUND");
 
 
         ContactInitiationMethod GetContactInitiationMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INBOUND_HASH)
           {
             return ContactInitiationMethod::INBOUND;

@@ -20,20 +20,20 @@ namespace Aws
       namespace ScteFilterMapper
       {
 
-        static const int SPLICE_INSERT_HASH = HashingUtils::HashString("SPLICE_INSERT");
-        static const int BREAK_HASH = HashingUtils::HashString("BREAK");
-        static const int PROVIDER_ADVERTISEMENT_HASH = HashingUtils::HashString("PROVIDER_ADVERTISEMENT");
-        static const int DISTRIBUTOR_ADVERTISEMENT_HASH = HashingUtils::HashString("DISTRIBUTOR_ADVERTISEMENT");
-        static const int PROVIDER_PLACEMENT_OPPORTUNITY_HASH = HashingUtils::HashString("PROVIDER_PLACEMENT_OPPORTUNITY");
-        static const int DISTRIBUTOR_PLACEMENT_OPPORTUNITY_HASH = HashingUtils::HashString("DISTRIBUTOR_PLACEMENT_OPPORTUNITY");
-        static const int PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY_HASH = HashingUtils::HashString("PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY");
-        static const int DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY_HASH = HashingUtils::HashString("DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY");
-        static const int PROGRAM_HASH = HashingUtils::HashString("PROGRAM");
+        static constexpr uint32_t SPLICE_INSERT_HASH = ConstExprHashingUtils::HashString("SPLICE_INSERT");
+        static constexpr uint32_t BREAK_HASH = ConstExprHashingUtils::HashString("BREAK");
+        static constexpr uint32_t PROVIDER_ADVERTISEMENT_HASH = ConstExprHashingUtils::HashString("PROVIDER_ADVERTISEMENT");
+        static constexpr uint32_t DISTRIBUTOR_ADVERTISEMENT_HASH = ConstExprHashingUtils::HashString("DISTRIBUTOR_ADVERTISEMENT");
+        static constexpr uint32_t PROVIDER_PLACEMENT_OPPORTUNITY_HASH = ConstExprHashingUtils::HashString("PROVIDER_PLACEMENT_OPPORTUNITY");
+        static constexpr uint32_t DISTRIBUTOR_PLACEMENT_OPPORTUNITY_HASH = ConstExprHashingUtils::HashString("DISTRIBUTOR_PLACEMENT_OPPORTUNITY");
+        static constexpr uint32_t PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY_HASH = ConstExprHashingUtils::HashString("PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY");
+        static constexpr uint32_t DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY_HASH = ConstExprHashingUtils::HashString("DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY");
+        static constexpr uint32_t PROGRAM_HASH = ConstExprHashingUtils::HashString("PROGRAM");
 
 
         ScteFilter GetScteFilterForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SPLICE_INSERT_HASH)
           {
             return ScteFilter::SPLICE_INSERT;

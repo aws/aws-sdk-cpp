@@ -20,14 +20,14 @@ namespace Aws
       namespace TargetStateMapper
       {
 
-        static const int REGISTERING_HASH = HashingUtils::HashString("REGISTERING");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
+        static constexpr uint32_t REGISTERING_HASH = ConstExprHashingUtils::HashString("REGISTERING");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("UNAVAILABLE");
 
 
         TargetState GetTargetStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REGISTERING_HASH)
           {
             return TargetState::REGISTERING;

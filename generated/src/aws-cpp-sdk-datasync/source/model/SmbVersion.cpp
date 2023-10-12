@@ -20,16 +20,16 @@ namespace Aws
       namespace SmbVersionMapper
       {
 
-        static const int AUTOMATIC_HASH = HashingUtils::HashString("AUTOMATIC");
-        static const int SMB2_HASH = HashingUtils::HashString("SMB2");
-        static const int SMB3_HASH = HashingUtils::HashString("SMB3");
-        static const int SMB1_HASH = HashingUtils::HashString("SMB1");
-        static const int SMB2_0_HASH = HashingUtils::HashString("SMB2_0");
+        static constexpr uint32_t AUTOMATIC_HASH = ConstExprHashingUtils::HashString("AUTOMATIC");
+        static constexpr uint32_t SMB2_HASH = ConstExprHashingUtils::HashString("SMB2");
+        static constexpr uint32_t SMB3_HASH = ConstExprHashingUtils::HashString("SMB3");
+        static constexpr uint32_t SMB1_HASH = ConstExprHashingUtils::HashString("SMB1");
+        static constexpr uint32_t SMB2_0_HASH = ConstExprHashingUtils::HashString("SMB2_0");
 
 
         SmbVersion GetSmbVersionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTOMATIC_HASH)
           {
             return SmbVersion::AUTOMATIC;

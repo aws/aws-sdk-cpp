@@ -20,13 +20,13 @@ namespace Aws
       namespace KeyStorageSecurityStandardMapper
       {
 
-        static const int FIPS_140_2_LEVEL_2_OR_HIGHER_HASH = HashingUtils::HashString("FIPS_140_2_LEVEL_2_OR_HIGHER");
-        static const int FIPS_140_2_LEVEL_3_OR_HIGHER_HASH = HashingUtils::HashString("FIPS_140_2_LEVEL_3_OR_HIGHER");
+        static constexpr uint32_t FIPS_140_2_LEVEL_2_OR_HIGHER_HASH = ConstExprHashingUtils::HashString("FIPS_140_2_LEVEL_2_OR_HIGHER");
+        static constexpr uint32_t FIPS_140_2_LEVEL_3_OR_HIGHER_HASH = ConstExprHashingUtils::HashString("FIPS_140_2_LEVEL_3_OR_HIGHER");
 
 
         KeyStorageSecurityStandard GetKeyStorageSecurityStandardForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FIPS_140_2_LEVEL_2_OR_HIGHER_HASH)
           {
             return KeyStorageSecurityStandard::FIPS_140_2_LEVEL_2_OR_HIGHER;

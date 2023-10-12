@@ -20,14 +20,14 @@ namespace Aws
       namespace ProjectStateMapper
       {
 
-        static const int NORMAL_HASH = HashingUtils::HashString("NORMAL");
-        static const int SYNCING_HASH = HashingUtils::HashString("SYNCING");
-        static const int IMPORTING_HASH = HashingUtils::HashString("IMPORTING");
+        static constexpr uint32_t NORMAL_HASH = ConstExprHashingUtils::HashString("NORMAL");
+        static constexpr uint32_t SYNCING_HASH = ConstExprHashingUtils::HashString("SYNCING");
+        static constexpr uint32_t IMPORTING_HASH = ConstExprHashingUtils::HashString("IMPORTING");
 
 
         ProjectState GetProjectStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NORMAL_HASH)
           {
             return ProjectState::NORMAL;

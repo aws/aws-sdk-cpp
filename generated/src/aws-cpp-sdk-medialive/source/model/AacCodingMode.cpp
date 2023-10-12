@@ -20,16 +20,16 @@ namespace Aws
       namespace AacCodingModeMapper
       {
 
-        static const int AD_RECEIVER_MIX_HASH = HashingUtils::HashString("AD_RECEIVER_MIX");
-        static const int CODING_MODE_1_0_HASH = HashingUtils::HashString("CODING_MODE_1_0");
-        static const int CODING_MODE_1_1_HASH = HashingUtils::HashString("CODING_MODE_1_1");
-        static const int CODING_MODE_2_0_HASH = HashingUtils::HashString("CODING_MODE_2_0");
-        static const int CODING_MODE_5_1_HASH = HashingUtils::HashString("CODING_MODE_5_1");
+        static constexpr uint32_t AD_RECEIVER_MIX_HASH = ConstExprHashingUtils::HashString("AD_RECEIVER_MIX");
+        static constexpr uint32_t CODING_MODE_1_0_HASH = ConstExprHashingUtils::HashString("CODING_MODE_1_0");
+        static constexpr uint32_t CODING_MODE_1_1_HASH = ConstExprHashingUtils::HashString("CODING_MODE_1_1");
+        static constexpr uint32_t CODING_MODE_2_0_HASH = ConstExprHashingUtils::HashString("CODING_MODE_2_0");
+        static constexpr uint32_t CODING_MODE_5_1_HASH = ConstExprHashingUtils::HashString("CODING_MODE_5_1");
 
 
         AacCodingMode GetAacCodingModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AD_RECEIVER_MIX_HASH)
           {
             return AacCodingMode::AD_RECEIVER_MIX;

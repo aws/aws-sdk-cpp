@@ -20,15 +20,15 @@ namespace Aws
       namespace CategoryMapper
       {
 
-        static const int REGISTERED_HASH = HashingUtils::HashString("REGISTERED");
-        static const int ACTIVATED_HASH = HashingUtils::HashString("ACTIVATED");
-        static const int THIRD_PARTY_HASH = HashingUtils::HashString("THIRD_PARTY");
-        static const int AWS_TYPES_HASH = HashingUtils::HashString("AWS_TYPES");
+        static constexpr uint32_t REGISTERED_HASH = ConstExprHashingUtils::HashString("REGISTERED");
+        static constexpr uint32_t ACTIVATED_HASH = ConstExprHashingUtils::HashString("ACTIVATED");
+        static constexpr uint32_t THIRD_PARTY_HASH = ConstExprHashingUtils::HashString("THIRD_PARTY");
+        static constexpr uint32_t AWS_TYPES_HASH = ConstExprHashingUtils::HashString("AWS_TYPES");
 
 
         Category GetCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REGISTERED_HASH)
           {
             return Category::REGISTERED;

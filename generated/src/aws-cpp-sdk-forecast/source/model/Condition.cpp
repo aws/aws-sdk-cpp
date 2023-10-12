@@ -20,15 +20,15 @@ namespace Aws
       namespace ConditionMapper
       {
 
-        static const int EQUALS_HASH = HashingUtils::HashString("EQUALS");
-        static const int NOT_EQUALS_HASH = HashingUtils::HashString("NOT_EQUALS");
-        static const int LESS_THAN_HASH = HashingUtils::HashString("LESS_THAN");
-        static const int GREATER_THAN_HASH = HashingUtils::HashString("GREATER_THAN");
+        static constexpr uint32_t EQUALS_HASH = ConstExprHashingUtils::HashString("EQUALS");
+        static constexpr uint32_t NOT_EQUALS_HASH = ConstExprHashingUtils::HashString("NOT_EQUALS");
+        static constexpr uint32_t LESS_THAN_HASH = ConstExprHashingUtils::HashString("LESS_THAN");
+        static constexpr uint32_t GREATER_THAN_HASH = ConstExprHashingUtils::HashString("GREATER_THAN");
 
 
         Condition GetConditionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EQUALS_HASH)
           {
             return Condition::EQUALS;

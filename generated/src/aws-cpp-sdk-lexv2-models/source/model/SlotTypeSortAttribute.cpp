@@ -20,13 +20,13 @@ namespace Aws
       namespace SlotTypeSortAttributeMapper
       {
 
-        static const int SlotTypeName_HASH = HashingUtils::HashString("SlotTypeName");
-        static const int LastUpdatedDateTime_HASH = HashingUtils::HashString("LastUpdatedDateTime");
+        static constexpr uint32_t SlotTypeName_HASH = ConstExprHashingUtils::HashString("SlotTypeName");
+        static constexpr uint32_t LastUpdatedDateTime_HASH = ConstExprHashingUtils::HashString("LastUpdatedDateTime");
 
 
         SlotTypeSortAttribute GetSlotTypeSortAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SlotTypeName_HASH)
           {
             return SlotTypeSortAttribute::SlotTypeName;

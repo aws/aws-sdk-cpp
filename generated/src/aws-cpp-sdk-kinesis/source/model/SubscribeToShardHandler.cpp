@@ -192,11 +192,11 @@ namespace Model
 
 namespace SubscribeToShardEventMapper
 {
-    static const int SUBSCRIBETOSHARDEVENT_HASH = Aws::Utils::HashingUtils::HashString("SubscribeToShardEvent");
+    static constexpr uint32_t SUBSCRIBETOSHARDEVENT_HASH = Aws::Utils::ConstExprHashingUtils::HashString("SubscribeToShardEvent");
 
     SubscribeToShardEventType GetSubscribeToShardEventTypeForName(const Aws::String& name)
     {
-        int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
+        uint32_t hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
         if (hashCode == SUBSCRIBETOSHARDEVENT_HASH)
         {
             return SubscribeToShardEventType::SUBSCRIBETOSHARDEVENT;

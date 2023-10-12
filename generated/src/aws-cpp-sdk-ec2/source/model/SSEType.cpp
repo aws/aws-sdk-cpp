@@ -20,14 +20,14 @@ namespace Aws
       namespace SSETypeMapper
       {
 
-        static const int sse_ebs_HASH = HashingUtils::HashString("sse-ebs");
-        static const int sse_kms_HASH = HashingUtils::HashString("sse-kms");
-        static const int none_HASH = HashingUtils::HashString("none");
+        static constexpr uint32_t sse_ebs_HASH = ConstExprHashingUtils::HashString("sse-ebs");
+        static constexpr uint32_t sse_kms_HASH = ConstExprHashingUtils::HashString("sse-kms");
+        static constexpr uint32_t none_HASH = ConstExprHashingUtils::HashString("none");
 
 
         SSEType GetSSETypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == sse_ebs_HASH)
           {
             return SSEType::sse_ebs;

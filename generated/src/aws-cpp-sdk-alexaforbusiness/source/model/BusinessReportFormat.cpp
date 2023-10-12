@@ -20,13 +20,13 @@ namespace Aws
       namespace BusinessReportFormatMapper
       {
 
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
-        static const int CSV_ZIP_HASH = HashingUtils::HashString("CSV_ZIP");
+        static constexpr uint32_t CSV_HASH = ConstExprHashingUtils::HashString("CSV");
+        static constexpr uint32_t CSV_ZIP_HASH = ConstExprHashingUtils::HashString("CSV_ZIP");
 
 
         BusinessReportFormat GetBusinessReportFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CSV_HASH)
           {
             return BusinessReportFormat::CSV;

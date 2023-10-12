@@ -20,13 +20,13 @@ namespace Aws
       namespace LocationValuesMapper
       {
 
-        static const int CLOUD_HASH = HashingUtils::HashString("CLOUD");
-        static const int OUTPOST_LOCAL_HASH = HashingUtils::HashString("OUTPOST_LOCAL");
+        static constexpr uint32_t CLOUD_HASH = ConstExprHashingUtils::HashString("CLOUD");
+        static constexpr uint32_t OUTPOST_LOCAL_HASH = ConstExprHashingUtils::HashString("OUTPOST_LOCAL");
 
 
         LocationValues GetLocationValuesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLOUD_HASH)
           {
             return LocationValues::CLOUD;

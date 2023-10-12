@@ -20,12 +20,12 @@ namespace Aws
       namespace CustomEmailSenderLambdaVersionTypeMapper
       {
 
-        static const int V1_0_HASH = HashingUtils::HashString("V1_0");
+        static constexpr uint32_t V1_0_HASH = ConstExprHashingUtils::HashString("V1_0");
 
 
         CustomEmailSenderLambdaVersionType GetCustomEmailSenderLambdaVersionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == V1_0_HASH)
           {
             return CustomEmailSenderLambdaVersionType::V1_0;

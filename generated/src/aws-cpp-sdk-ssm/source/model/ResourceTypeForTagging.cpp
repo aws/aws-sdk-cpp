@@ -20,20 +20,20 @@ namespace Aws
       namespace ResourceTypeForTaggingMapper
       {
 
-        static const int Document_HASH = HashingUtils::HashString("Document");
-        static const int ManagedInstance_HASH = HashingUtils::HashString("ManagedInstance");
-        static const int MaintenanceWindow_HASH = HashingUtils::HashString("MaintenanceWindow");
-        static const int Parameter_HASH = HashingUtils::HashString("Parameter");
-        static const int PatchBaseline_HASH = HashingUtils::HashString("PatchBaseline");
-        static const int OpsItem_HASH = HashingUtils::HashString("OpsItem");
-        static const int OpsMetadata_HASH = HashingUtils::HashString("OpsMetadata");
-        static const int Automation_HASH = HashingUtils::HashString("Automation");
-        static const int Association_HASH = HashingUtils::HashString("Association");
+        static constexpr uint32_t Document_HASH = ConstExprHashingUtils::HashString("Document");
+        static constexpr uint32_t ManagedInstance_HASH = ConstExprHashingUtils::HashString("ManagedInstance");
+        static constexpr uint32_t MaintenanceWindow_HASH = ConstExprHashingUtils::HashString("MaintenanceWindow");
+        static constexpr uint32_t Parameter_HASH = ConstExprHashingUtils::HashString("Parameter");
+        static constexpr uint32_t PatchBaseline_HASH = ConstExprHashingUtils::HashString("PatchBaseline");
+        static constexpr uint32_t OpsItem_HASH = ConstExprHashingUtils::HashString("OpsItem");
+        static constexpr uint32_t OpsMetadata_HASH = ConstExprHashingUtils::HashString("OpsMetadata");
+        static constexpr uint32_t Automation_HASH = ConstExprHashingUtils::HashString("Automation");
+        static constexpr uint32_t Association_HASH = ConstExprHashingUtils::HashString("Association");
 
 
         ResourceTypeForTagging GetResourceTypeForTaggingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Document_HASH)
           {
             return ResourceTypeForTagging::Document;

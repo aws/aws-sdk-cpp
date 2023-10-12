@@ -20,12 +20,12 @@ namespace Aws
       namespace EventTypeMapper
       {
 
-        static const int STATE_CHANGE_HASH = HashingUtils::HashString("STATE_CHANGE");
+        static constexpr uint32_t STATE_CHANGE_HASH = ConstExprHashingUtils::HashString("STATE_CHANGE");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STATE_CHANGE_HASH)
           {
             return EventType::STATE_CHANGE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace DukptEncryptionModeMapper
       {
 
-        static const int ECB_HASH = HashingUtils::HashString("ECB");
-        static const int CBC_HASH = HashingUtils::HashString("CBC");
+        static constexpr uint32_t ECB_HASH = ConstExprHashingUtils::HashString("ECB");
+        static constexpr uint32_t CBC_HASH = ConstExprHashingUtils::HashString("CBC");
 
 
         DukptEncryptionMode GetDukptEncryptionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ECB_HASH)
           {
             return DukptEncryptionMode::ECB;

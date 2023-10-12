@@ -20,12 +20,12 @@ namespace Aws
       namespace ActionGroupMapper
       {
 
-        static const int agentPermissions_HASH = HashingUtils::HashString("agentPermissions");
+        static constexpr uint32_t agentPermissions_HASH = ConstExprHashingUtils::HashString("agentPermissions");
 
 
         ActionGroup GetActionGroupForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == agentPermissions_HASH)
           {
             return ActionGroup::agentPermissions;

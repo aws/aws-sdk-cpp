@@ -20,23 +20,23 @@ namespace Aws
       namespace DeploymentCommandNameMapper
       {
 
-        static const int install_dependencies_HASH = HashingUtils::HashString("install_dependencies");
-        static const int update_dependencies_HASH = HashingUtils::HashString("update_dependencies");
-        static const int update_custom_cookbooks_HASH = HashingUtils::HashString("update_custom_cookbooks");
-        static const int execute_recipes_HASH = HashingUtils::HashString("execute_recipes");
-        static const int configure_HASH = HashingUtils::HashString("configure");
-        static const int setup_HASH = HashingUtils::HashString("setup");
-        static const int deploy_HASH = HashingUtils::HashString("deploy");
-        static const int rollback_HASH = HashingUtils::HashString("rollback");
-        static const int start_HASH = HashingUtils::HashString("start");
-        static const int stop_HASH = HashingUtils::HashString("stop");
-        static const int restart_HASH = HashingUtils::HashString("restart");
-        static const int undeploy_HASH = HashingUtils::HashString("undeploy");
+        static constexpr uint32_t install_dependencies_HASH = ConstExprHashingUtils::HashString("install_dependencies");
+        static constexpr uint32_t update_dependencies_HASH = ConstExprHashingUtils::HashString("update_dependencies");
+        static constexpr uint32_t update_custom_cookbooks_HASH = ConstExprHashingUtils::HashString("update_custom_cookbooks");
+        static constexpr uint32_t execute_recipes_HASH = ConstExprHashingUtils::HashString("execute_recipes");
+        static constexpr uint32_t configure_HASH = ConstExprHashingUtils::HashString("configure");
+        static constexpr uint32_t setup_HASH = ConstExprHashingUtils::HashString("setup");
+        static constexpr uint32_t deploy_HASH = ConstExprHashingUtils::HashString("deploy");
+        static constexpr uint32_t rollback_HASH = ConstExprHashingUtils::HashString("rollback");
+        static constexpr uint32_t start_HASH = ConstExprHashingUtils::HashString("start");
+        static constexpr uint32_t stop_HASH = ConstExprHashingUtils::HashString("stop");
+        static constexpr uint32_t restart_HASH = ConstExprHashingUtils::HashString("restart");
+        static constexpr uint32_t undeploy_HASH = ConstExprHashingUtils::HashString("undeploy");
 
 
         DeploymentCommandName GetDeploymentCommandNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == install_dependencies_HASH)
           {
             return DeploymentCommandName::install_dependencies;

@@ -20,14 +20,14 @@ namespace Aws
       namespace CriticalityMapper
       {
 
-        static const int PREFERRED_HASH = HashingUtils::HashString("PREFERRED");
-        static const int REMOVED_HASH = HashingUtils::HashString("REMOVED");
-        static const int REQUIRED_HASH = HashingUtils::HashString("REQUIRED");
+        static constexpr uint32_t PREFERRED_HASH = ConstExprHashingUtils::HashString("PREFERRED");
+        static constexpr uint32_t REMOVED_HASH = ConstExprHashingUtils::HashString("REMOVED");
+        static constexpr uint32_t REQUIRED_HASH = ConstExprHashingUtils::HashString("REQUIRED");
 
 
         Criticality GetCriticalityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PREFERRED_HASH)
           {
             return Criticality::PREFERRED;

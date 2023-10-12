@@ -20,16 +20,16 @@ namespace Aws
       namespace ClusterStatusMapper
       {
 
-        static const int ONLINE_HASH = HashingUtils::HashString("ONLINE");
-        static const int STANDBY_HASH = HashingUtils::HashString("STANDBY");
-        static const int MAINTENANCE_HASH = HashingUtils::HashString("MAINTENANCE");
-        static const int OFFLINE_HASH = HashingUtils::HashString("OFFLINE");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t ONLINE_HASH = ConstExprHashingUtils::HashString("ONLINE");
+        static constexpr uint32_t STANDBY_HASH = ConstExprHashingUtils::HashString("STANDBY");
+        static constexpr uint32_t MAINTENANCE_HASH = ConstExprHashingUtils::HashString("MAINTENANCE");
+        static constexpr uint32_t OFFLINE_HASH = ConstExprHashingUtils::HashString("OFFLINE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         ClusterStatus GetClusterStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ONLINE_HASH)
           {
             return ClusterStatus::ONLINE;

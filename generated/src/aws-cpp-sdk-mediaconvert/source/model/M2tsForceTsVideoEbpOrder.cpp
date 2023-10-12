@@ -20,13 +20,13 @@ namespace Aws
       namespace M2tsForceTsVideoEbpOrderMapper
       {
 
-        static const int FORCE_HASH = HashingUtils::HashString("FORCE");
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t FORCE_HASH = ConstExprHashingUtils::HashString("FORCE");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
 
 
         M2tsForceTsVideoEbpOrder GetM2tsForceTsVideoEbpOrderForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FORCE_HASH)
           {
             return M2tsForceTsVideoEbpOrder::FORCE;

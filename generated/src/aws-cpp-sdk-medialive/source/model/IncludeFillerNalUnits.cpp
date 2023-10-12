@@ -20,14 +20,14 @@ namespace Aws
       namespace IncludeFillerNalUnitsMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int DROP_HASH = HashingUtils::HashString("DROP");
-        static const int INCLUDE_HASH = HashingUtils::HashString("INCLUDE");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t DROP_HASH = ConstExprHashingUtils::HashString("DROP");
+        static constexpr uint32_t INCLUDE_HASH = ConstExprHashingUtils::HashString("INCLUDE");
 
 
         IncludeFillerNalUnits GetIncludeFillerNalUnitsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return IncludeFillerNalUnits::AUTO;

@@ -20,12 +20,12 @@ namespace Aws
       namespace WarmPoolStatusMapper
       {
 
-        static const int PendingDelete_HASH = HashingUtils::HashString("PendingDelete");
+        static constexpr uint32_t PendingDelete_HASH = ConstExprHashingUtils::HashString("PendingDelete");
 
 
         WarmPoolStatus GetWarmPoolStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PendingDelete_HASH)
           {
             return WarmPoolStatus::PendingDelete;

@@ -20,30 +20,30 @@ namespace Aws
       namespace ConflictExceptionReasonMapper
       {
 
-        static const int DELETION_PROTECTION_ENABLED_HASH = HashingUtils::HashString("DELETION_PROTECTION_ENABLED");
-        static const int DESTINATION_PHONE_NUMBER_NOT_VERIFIED_HASH = HashingUtils::HashString("DESTINATION_PHONE_NUMBER_NOT_VERIFIED");
-        static const int DESTINATION_PHONE_NUMBER_OPTED_OUT_HASH = HashingUtils::HashString("DESTINATION_PHONE_NUMBER_OPTED_OUT");
-        static const int EVENT_DESTINATION_MISMATCH_HASH = HashingUtils::HashString("EVENT_DESTINATION_MISMATCH");
-        static const int KEYWORD_MISMATCH_HASH = HashingUtils::HashString("KEYWORD_MISMATCH");
-        static const int LAST_PHONE_NUMBER_HASH = HashingUtils::HashString("LAST_PHONE_NUMBER");
-        static const int SELF_MANAGED_OPT_OUTS_MISMATCH_HASH = HashingUtils::HashString("SELF_MANAGED_OPT_OUTS_MISMATCH");
-        static const int MESSAGE_TYPE_MISMATCH_HASH = HashingUtils::HashString("MESSAGE_TYPE_MISMATCH");
-        static const int NO_ORIGINATION_IDENTITIES_FOUND_HASH = HashingUtils::HashString("NO_ORIGINATION_IDENTITIES_FOUND");
-        static const int OPT_OUT_LIST_MISMATCH_HASH = HashingUtils::HashString("OPT_OUT_LIST_MISMATCH");
-        static const int PHONE_NUMBER_ASSOCIATED_TO_POOL_HASH = HashingUtils::HashString("PHONE_NUMBER_ASSOCIATED_TO_POOL");
-        static const int PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL_HASH = HashingUtils::HashString("PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL");
-        static const int PHONE_NUMBER_NOT_IN_REGISTRATION_REGION_HASH = HashingUtils::HashString("PHONE_NUMBER_NOT_IN_REGISTRATION_REGION");
-        static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("RESOURCE_ALREADY_EXISTS");
-        static const int RESOURCE_DELETION_NOT_ALLOWED_HASH = HashingUtils::HashString("RESOURCE_DELETION_NOT_ALLOWED");
-        static const int RESOURCE_MODIFICATION_NOT_ALLOWED_HASH = HashingUtils::HashString("RESOURCE_MODIFICATION_NOT_ALLOWED");
-        static const int RESOURCE_NOT_ACTIVE_HASH = HashingUtils::HashString("RESOURCE_NOT_ACTIVE");
-        static const int RESOURCE_NOT_EMPTY_HASH = HashingUtils::HashString("RESOURCE_NOT_EMPTY");
-        static const int TWO_WAY_CONFIG_MISMATCH_HASH = HashingUtils::HashString("TWO_WAY_CONFIG_MISMATCH");
+        static constexpr uint32_t DELETION_PROTECTION_ENABLED_HASH = ConstExprHashingUtils::HashString("DELETION_PROTECTION_ENABLED");
+        static constexpr uint32_t DESTINATION_PHONE_NUMBER_NOT_VERIFIED_HASH = ConstExprHashingUtils::HashString("DESTINATION_PHONE_NUMBER_NOT_VERIFIED");
+        static constexpr uint32_t DESTINATION_PHONE_NUMBER_OPTED_OUT_HASH = ConstExprHashingUtils::HashString("DESTINATION_PHONE_NUMBER_OPTED_OUT");
+        static constexpr uint32_t EVENT_DESTINATION_MISMATCH_HASH = ConstExprHashingUtils::HashString("EVENT_DESTINATION_MISMATCH");
+        static constexpr uint32_t KEYWORD_MISMATCH_HASH = ConstExprHashingUtils::HashString("KEYWORD_MISMATCH");
+        static constexpr uint32_t LAST_PHONE_NUMBER_HASH = ConstExprHashingUtils::HashString("LAST_PHONE_NUMBER");
+        static constexpr uint32_t SELF_MANAGED_OPT_OUTS_MISMATCH_HASH = ConstExprHashingUtils::HashString("SELF_MANAGED_OPT_OUTS_MISMATCH");
+        static constexpr uint32_t MESSAGE_TYPE_MISMATCH_HASH = ConstExprHashingUtils::HashString("MESSAGE_TYPE_MISMATCH");
+        static constexpr uint32_t NO_ORIGINATION_IDENTITIES_FOUND_HASH = ConstExprHashingUtils::HashString("NO_ORIGINATION_IDENTITIES_FOUND");
+        static constexpr uint32_t OPT_OUT_LIST_MISMATCH_HASH = ConstExprHashingUtils::HashString("OPT_OUT_LIST_MISMATCH");
+        static constexpr uint32_t PHONE_NUMBER_ASSOCIATED_TO_POOL_HASH = ConstExprHashingUtils::HashString("PHONE_NUMBER_ASSOCIATED_TO_POOL");
+        static constexpr uint32_t PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL_HASH = ConstExprHashingUtils::HashString("PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL");
+        static constexpr uint32_t PHONE_NUMBER_NOT_IN_REGISTRATION_REGION_HASH = ConstExprHashingUtils::HashString("PHONE_NUMBER_NOT_IN_REGISTRATION_REGION");
+        static constexpr uint32_t RESOURCE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("RESOURCE_ALREADY_EXISTS");
+        static constexpr uint32_t RESOURCE_DELETION_NOT_ALLOWED_HASH = ConstExprHashingUtils::HashString("RESOURCE_DELETION_NOT_ALLOWED");
+        static constexpr uint32_t RESOURCE_MODIFICATION_NOT_ALLOWED_HASH = ConstExprHashingUtils::HashString("RESOURCE_MODIFICATION_NOT_ALLOWED");
+        static constexpr uint32_t RESOURCE_NOT_ACTIVE_HASH = ConstExprHashingUtils::HashString("RESOURCE_NOT_ACTIVE");
+        static constexpr uint32_t RESOURCE_NOT_EMPTY_HASH = ConstExprHashingUtils::HashString("RESOURCE_NOT_EMPTY");
+        static constexpr uint32_t TWO_WAY_CONFIG_MISMATCH_HASH = ConstExprHashingUtils::HashString("TWO_WAY_CONFIG_MISMATCH");
 
 
         ConflictExceptionReason GetConflictExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DELETION_PROTECTION_ENABLED_HASH)
           {
             return ConflictExceptionReason::DELETION_PROTECTION_ENABLED;

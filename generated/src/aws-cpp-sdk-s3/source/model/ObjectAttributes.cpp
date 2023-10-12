@@ -20,16 +20,16 @@ namespace Aws
       namespace ObjectAttributesMapper
       {
 
-        static const int ETag_HASH = HashingUtils::HashString("ETag");
-        static const int Checksum_HASH = HashingUtils::HashString("Checksum");
-        static const int ObjectParts_HASH = HashingUtils::HashString("ObjectParts");
-        static const int StorageClass_HASH = HashingUtils::HashString("StorageClass");
-        static const int ObjectSize_HASH = HashingUtils::HashString("ObjectSize");
+        static constexpr uint32_t ETag_HASH = ConstExprHashingUtils::HashString("ETag");
+        static constexpr uint32_t Checksum_HASH = ConstExprHashingUtils::HashString("Checksum");
+        static constexpr uint32_t ObjectParts_HASH = ConstExprHashingUtils::HashString("ObjectParts");
+        static constexpr uint32_t StorageClass_HASH = ConstExprHashingUtils::HashString("StorageClass");
+        static constexpr uint32_t ObjectSize_HASH = ConstExprHashingUtils::HashString("ObjectSize");
 
 
         ObjectAttributes GetObjectAttributesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ETag_HASH)
           {
             return ObjectAttributes::ETag;

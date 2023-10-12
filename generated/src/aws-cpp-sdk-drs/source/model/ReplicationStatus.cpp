@@ -20,15 +20,15 @@ namespace Aws
       namespace ReplicationStatusMapper
       {
 
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int PROTECTED_HASH = HashingUtils::HashString("PROTECTED");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t PROTECTED_HASH = ConstExprHashingUtils::HashString("PROTECTED");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         ReplicationStatus GetReplicationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STOPPED_HASH)
           {
             return ReplicationStatus::STOPPED;

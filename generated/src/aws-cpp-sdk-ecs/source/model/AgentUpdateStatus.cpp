@@ -20,17 +20,17 @@ namespace Aws
       namespace AgentUpdateStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int STAGING_HASH = HashingUtils::HashString("STAGING");
-        static const int STAGED_HASH = HashingUtils::HashString("STAGED");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int UPDATED_HASH = HashingUtils::HashString("UPDATED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t STAGING_HASH = ConstExprHashingUtils::HashString("STAGING");
+        static constexpr uint32_t STAGED_HASH = ConstExprHashingUtils::HashString("STAGED");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t UPDATED_HASH = ConstExprHashingUtils::HashString("UPDATED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         AgentUpdateStatus GetAgentUpdateStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return AgentUpdateStatus::PENDING;

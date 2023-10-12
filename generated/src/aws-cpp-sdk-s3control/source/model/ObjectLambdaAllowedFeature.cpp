@@ -20,15 +20,15 @@ namespace Aws
       namespace ObjectLambdaAllowedFeatureMapper
       {
 
-        static const int GetObject_Range_HASH = HashingUtils::HashString("GetObject-Range");
-        static const int GetObject_PartNumber_HASH = HashingUtils::HashString("GetObject-PartNumber");
-        static const int HeadObject_Range_HASH = HashingUtils::HashString("HeadObject-Range");
-        static const int HeadObject_PartNumber_HASH = HashingUtils::HashString("HeadObject-PartNumber");
+        static constexpr uint32_t GetObject_Range_HASH = ConstExprHashingUtils::HashString("GetObject-Range");
+        static constexpr uint32_t GetObject_PartNumber_HASH = ConstExprHashingUtils::HashString("GetObject-PartNumber");
+        static constexpr uint32_t HeadObject_Range_HASH = ConstExprHashingUtils::HashString("HeadObject-Range");
+        static constexpr uint32_t HeadObject_PartNumber_HASH = ConstExprHashingUtils::HashString("HeadObject-PartNumber");
 
 
         ObjectLambdaAllowedFeature GetObjectLambdaAllowedFeatureForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GetObject_Range_HASH)
           {
             return ObjectLambdaAllowedFeature::GetObject_Range;

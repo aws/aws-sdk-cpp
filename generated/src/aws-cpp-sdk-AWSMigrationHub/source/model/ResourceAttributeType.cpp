@@ -20,21 +20,21 @@ namespace Aws
       namespace ResourceAttributeTypeMapper
       {
 
-        static const int IPV4_ADDRESS_HASH = HashingUtils::HashString("IPV4_ADDRESS");
-        static const int IPV6_ADDRESS_HASH = HashingUtils::HashString("IPV6_ADDRESS");
-        static const int MAC_ADDRESS_HASH = HashingUtils::HashString("MAC_ADDRESS");
-        static const int FQDN_HASH = HashingUtils::HashString("FQDN");
-        static const int VM_MANAGER_ID_HASH = HashingUtils::HashString("VM_MANAGER_ID");
-        static const int VM_MANAGED_OBJECT_REFERENCE_HASH = HashingUtils::HashString("VM_MANAGED_OBJECT_REFERENCE");
-        static const int VM_NAME_HASH = HashingUtils::HashString("VM_NAME");
-        static const int VM_PATH_HASH = HashingUtils::HashString("VM_PATH");
-        static const int BIOS_ID_HASH = HashingUtils::HashString("BIOS_ID");
-        static const int MOTHERBOARD_SERIAL_NUMBER_HASH = HashingUtils::HashString("MOTHERBOARD_SERIAL_NUMBER");
+        static constexpr uint32_t IPV4_ADDRESS_HASH = ConstExprHashingUtils::HashString("IPV4_ADDRESS");
+        static constexpr uint32_t IPV6_ADDRESS_HASH = ConstExprHashingUtils::HashString("IPV6_ADDRESS");
+        static constexpr uint32_t MAC_ADDRESS_HASH = ConstExprHashingUtils::HashString("MAC_ADDRESS");
+        static constexpr uint32_t FQDN_HASH = ConstExprHashingUtils::HashString("FQDN");
+        static constexpr uint32_t VM_MANAGER_ID_HASH = ConstExprHashingUtils::HashString("VM_MANAGER_ID");
+        static constexpr uint32_t VM_MANAGED_OBJECT_REFERENCE_HASH = ConstExprHashingUtils::HashString("VM_MANAGED_OBJECT_REFERENCE");
+        static constexpr uint32_t VM_NAME_HASH = ConstExprHashingUtils::HashString("VM_NAME");
+        static constexpr uint32_t VM_PATH_HASH = ConstExprHashingUtils::HashString("VM_PATH");
+        static constexpr uint32_t BIOS_ID_HASH = ConstExprHashingUtils::HashString("BIOS_ID");
+        static constexpr uint32_t MOTHERBOARD_SERIAL_NUMBER_HASH = ConstExprHashingUtils::HashString("MOTHERBOARD_SERIAL_NUMBER");
 
 
         ResourceAttributeType GetResourceAttributeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IPV4_ADDRESS_HASH)
           {
             return ResourceAttributeType::IPV4_ADDRESS;

@@ -20,14 +20,14 @@ namespace Aws
       namespace StandbyInstancesMapper
       {
 
-        static const int Terminate_HASH = HashingUtils::HashString("Terminate");
-        static const int Ignore_HASH = HashingUtils::HashString("Ignore");
-        static const int Wait_HASH = HashingUtils::HashString("Wait");
+        static constexpr uint32_t Terminate_HASH = ConstExprHashingUtils::HashString("Terminate");
+        static constexpr uint32_t Ignore_HASH = ConstExprHashingUtils::HashString("Ignore");
+        static constexpr uint32_t Wait_HASH = ConstExprHashingUtils::HashString("Wait");
 
 
         StandbyInstances GetStandbyInstancesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Terminate_HASH)
           {
             return StandbyInstances::Terminate;

@@ -20,13 +20,13 @@ namespace Aws
       namespace CertificateTypeMapper
       {
 
-        static const int ClientCertAuth_HASH = HashingUtils::HashString("ClientCertAuth");
-        static const int ClientLDAPS_HASH = HashingUtils::HashString("ClientLDAPS");
+        static constexpr uint32_t ClientCertAuth_HASH = ConstExprHashingUtils::HashString("ClientCertAuth");
+        static constexpr uint32_t ClientLDAPS_HASH = ConstExprHashingUtils::HashString("ClientLDAPS");
 
 
         CertificateType GetCertificateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ClientCertAuth_HASH)
           {
             return CertificateType::ClientCertAuth;

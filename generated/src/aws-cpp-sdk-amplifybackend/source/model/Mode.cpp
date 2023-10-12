@@ -20,15 +20,15 @@ namespace Aws
       namespace ModeMapper
       {
 
-        static const int API_KEY_HASH = HashingUtils::HashString("API_KEY");
-        static const int AWS_IAM_HASH = HashingUtils::HashString("AWS_IAM");
-        static const int AMAZON_COGNITO_USER_POOLS_HASH = HashingUtils::HashString("AMAZON_COGNITO_USER_POOLS");
-        static const int OPENID_CONNECT_HASH = HashingUtils::HashString("OPENID_CONNECT");
+        static constexpr uint32_t API_KEY_HASH = ConstExprHashingUtils::HashString("API_KEY");
+        static constexpr uint32_t AWS_IAM_HASH = ConstExprHashingUtils::HashString("AWS_IAM");
+        static constexpr uint32_t AMAZON_COGNITO_USER_POOLS_HASH = ConstExprHashingUtils::HashString("AMAZON_COGNITO_USER_POOLS");
+        static constexpr uint32_t OPENID_CONNECT_HASH = ConstExprHashingUtils::HashString("OPENID_CONNECT");
 
 
         Mode GetModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == API_KEY_HASH)
           {
             return Mode::API_KEY;

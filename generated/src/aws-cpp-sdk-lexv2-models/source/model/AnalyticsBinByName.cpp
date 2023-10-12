@@ -20,13 +20,13 @@ namespace Aws
       namespace AnalyticsBinByNameMapper
       {
 
-        static const int ConversationStartTime_HASH = HashingUtils::HashString("ConversationStartTime");
-        static const int UtteranceTimestamp_HASH = HashingUtils::HashString("UtteranceTimestamp");
+        static constexpr uint32_t ConversationStartTime_HASH = ConstExprHashingUtils::HashString("ConversationStartTime");
+        static constexpr uint32_t UtteranceTimestamp_HASH = ConstExprHashingUtils::HashString("UtteranceTimestamp");
 
 
         AnalyticsBinByName GetAnalyticsBinByNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ConversationStartTime_HASH)
           {
             return AnalyticsBinByName::ConversationStartTime;

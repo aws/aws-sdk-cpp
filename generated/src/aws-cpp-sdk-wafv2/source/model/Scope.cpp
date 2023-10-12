@@ -20,13 +20,13 @@ namespace Aws
       namespace ScopeMapper
       {
 
-        static const int CLOUDFRONT_HASH = HashingUtils::HashString("CLOUDFRONT");
-        static const int REGIONAL_HASH = HashingUtils::HashString("REGIONAL");
+        static constexpr uint32_t CLOUDFRONT_HASH = ConstExprHashingUtils::HashString("CLOUDFRONT");
+        static constexpr uint32_t REGIONAL_HASH = ConstExprHashingUtils::HashString("REGIONAL");
 
 
         Scope GetScopeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLOUDFRONT_HASH)
           {
             return Scope::CLOUDFRONT;

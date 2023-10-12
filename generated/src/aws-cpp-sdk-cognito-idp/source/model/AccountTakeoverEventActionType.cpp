@@ -20,15 +20,15 @@ namespace Aws
       namespace AccountTakeoverEventActionTypeMapper
       {
 
-        static const int BLOCK_HASH = HashingUtils::HashString("BLOCK");
-        static const int MFA_IF_CONFIGURED_HASH = HashingUtils::HashString("MFA_IF_CONFIGURED");
-        static const int MFA_REQUIRED_HASH = HashingUtils::HashString("MFA_REQUIRED");
-        static const int NO_ACTION_HASH = HashingUtils::HashString("NO_ACTION");
+        static constexpr uint32_t BLOCK_HASH = ConstExprHashingUtils::HashString("BLOCK");
+        static constexpr uint32_t MFA_IF_CONFIGURED_HASH = ConstExprHashingUtils::HashString("MFA_IF_CONFIGURED");
+        static constexpr uint32_t MFA_REQUIRED_HASH = ConstExprHashingUtils::HashString("MFA_REQUIRED");
+        static constexpr uint32_t NO_ACTION_HASH = ConstExprHashingUtils::HashString("NO_ACTION");
 
 
         AccountTakeoverEventActionType GetAccountTakeoverEventActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BLOCK_HASH)
           {
             return AccountTakeoverEventActionType::BLOCK;

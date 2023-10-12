@@ -20,12 +20,12 @@ namespace Aws
       namespace ElasticGpuStateMapper
       {
 
-        static const int ATTACHED_HASH = HashingUtils::HashString("ATTACHED");
+        static constexpr uint32_t ATTACHED_HASH = ConstExprHashingUtils::HashString("ATTACHED");
 
 
         ElasticGpuState GetElasticGpuStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ATTACHED_HASH)
           {
             return ElasticGpuState::ATTACHED;

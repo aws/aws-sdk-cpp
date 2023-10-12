@@ -20,16 +20,16 @@ namespace Aws
       namespace FunnelChartMeasureDataLabelStyleMapper
       {
 
-        static const int VALUE_ONLY_HASH = HashingUtils::HashString("VALUE_ONLY");
-        static const int PERCENTAGE_BY_FIRST_STAGE_HASH = HashingUtils::HashString("PERCENTAGE_BY_FIRST_STAGE");
-        static const int PERCENTAGE_BY_PREVIOUS_STAGE_HASH = HashingUtils::HashString("PERCENTAGE_BY_PREVIOUS_STAGE");
-        static const int VALUE_AND_PERCENTAGE_BY_FIRST_STAGE_HASH = HashingUtils::HashString("VALUE_AND_PERCENTAGE_BY_FIRST_STAGE");
-        static const int VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE_HASH = HashingUtils::HashString("VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE");
+        static constexpr uint32_t VALUE_ONLY_HASH = ConstExprHashingUtils::HashString("VALUE_ONLY");
+        static constexpr uint32_t PERCENTAGE_BY_FIRST_STAGE_HASH = ConstExprHashingUtils::HashString("PERCENTAGE_BY_FIRST_STAGE");
+        static constexpr uint32_t PERCENTAGE_BY_PREVIOUS_STAGE_HASH = ConstExprHashingUtils::HashString("PERCENTAGE_BY_PREVIOUS_STAGE");
+        static constexpr uint32_t VALUE_AND_PERCENTAGE_BY_FIRST_STAGE_HASH = ConstExprHashingUtils::HashString("VALUE_AND_PERCENTAGE_BY_FIRST_STAGE");
+        static constexpr uint32_t VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE_HASH = ConstExprHashingUtils::HashString("VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE");
 
 
         FunnelChartMeasureDataLabelStyle GetFunnelChartMeasureDataLabelStyleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VALUE_ONLY_HASH)
           {
             return FunnelChartMeasureDataLabelStyle::VALUE_ONLY;

@@ -96,20 +96,20 @@ template<> AWS_CHIME_API BadRequestException ChimeError::GetModeledError()
 namespace ChimeErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailureException");
-static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
-static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
-static const int THROTTLED_CLIENT_HASH = HashingUtils::HashString("ThrottledClientException");
-static const int UNPROCESSABLE_ENTITY_HASH = HashingUtils::HashString("UnprocessableEntityException");
-static const int UNAUTHORIZED_CLIENT_HASH = HashingUtils::HashString("UnauthorizedClientException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NotFoundException");
+static constexpr uint32_t SERVICE_FAILURE_HASH = ConstExprHashingUtils::HashString("ServiceFailureException");
+static constexpr uint32_t FORBIDDEN_HASH = ConstExprHashingUtils::HashString("ForbiddenException");
+static constexpr uint32_t RESOURCE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ResourceLimitExceededException");
+static constexpr uint32_t THROTTLED_CLIENT_HASH = ConstExprHashingUtils::HashString("ThrottledClientException");
+static constexpr uint32_t UNPROCESSABLE_ENTITY_HASH = ConstExprHashingUtils::HashString("UnprocessableEntityException");
+static constexpr uint32_t UNAUTHORIZED_CLIENT_HASH = ConstExprHashingUtils::HashString("UnauthorizedClientException");
+static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BadRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

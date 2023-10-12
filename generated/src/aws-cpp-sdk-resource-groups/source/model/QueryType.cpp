@@ -20,13 +20,13 @@ namespace Aws
       namespace QueryTypeMapper
       {
 
-        static const int TAG_FILTERS_1_0_HASH = HashingUtils::HashString("TAG_FILTERS_1_0");
-        static const int CLOUDFORMATION_STACK_1_0_HASH = HashingUtils::HashString("CLOUDFORMATION_STACK_1_0");
+        static constexpr uint32_t TAG_FILTERS_1_0_HASH = ConstExprHashingUtils::HashString("TAG_FILTERS_1_0");
+        static constexpr uint32_t CLOUDFORMATION_STACK_1_0_HASH = ConstExprHashingUtils::HashString("CLOUDFORMATION_STACK_1_0");
 
 
         QueryType GetQueryTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TAG_FILTERS_1_0_HASH)
           {
             return QueryType::TAG_FILTERS_1_0;

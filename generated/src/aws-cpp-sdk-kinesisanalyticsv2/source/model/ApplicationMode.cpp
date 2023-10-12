@@ -20,13 +20,13 @@ namespace Aws
       namespace ApplicationModeMapper
       {
 
-        static const int STREAMING_HASH = HashingUtils::HashString("STREAMING");
-        static const int INTERACTIVE_HASH = HashingUtils::HashString("INTERACTIVE");
+        static constexpr uint32_t STREAMING_HASH = ConstExprHashingUtils::HashString("STREAMING");
+        static constexpr uint32_t INTERACTIVE_HASH = ConstExprHashingUtils::HashString("INTERACTIVE");
 
 
         ApplicationMode GetApplicationModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STREAMING_HASH)
           {
             return ApplicationMode::STREAMING;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ComputeTypeMapper
       {
 
-        static const int ACU_1_HASH = HashingUtils::HashString("ACU_1");
-        static const int ACU_2_HASH = HashingUtils::HashString("ACU_2");
+        static constexpr uint32_t ACU_1_HASH = ConstExprHashingUtils::HashString("ACU_1");
+        static constexpr uint32_t ACU_2_HASH = ConstExprHashingUtils::HashString("ACU_2");
 
 
         ComputeType GetComputeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACU_1_HASH)
           {
             return ComputeType::ACU_1;

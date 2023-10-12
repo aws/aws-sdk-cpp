@@ -20,13 +20,13 @@ namespace Aws
       namespace DatabaseTypeMapper
       {
 
-        static const int SYSTEM_HASH = HashingUtils::HashString("SYSTEM");
-        static const int TENANT_HASH = HashingUtils::HashString("TENANT");
+        static constexpr uint32_t SYSTEM_HASH = ConstExprHashingUtils::HashString("SYSTEM");
+        static constexpr uint32_t TENANT_HASH = ConstExprHashingUtils::HashString("TENANT");
 
 
         DatabaseType GetDatabaseTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SYSTEM_HASH)
           {
             return DatabaseType::SYSTEM;

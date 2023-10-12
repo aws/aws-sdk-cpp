@@ -20,13 +20,13 @@ namespace Aws
       namespace FileShareTypeMapper
       {
 
-        static const int NFS_HASH = HashingUtils::HashString("NFS");
-        static const int SMB_HASH = HashingUtils::HashString("SMB");
+        static constexpr uint32_t NFS_HASH = ConstExprHashingUtils::HashString("NFS");
+        static constexpr uint32_t SMB_HASH = ConstExprHashingUtils::HashString("SMB");
 
 
         FileShareType GetFileShareTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NFS_HASH)
           {
             return FileShareType::NFS;

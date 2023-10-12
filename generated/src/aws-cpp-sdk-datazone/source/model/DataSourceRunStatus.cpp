@@ -20,16 +20,16 @@ namespace Aws
       namespace DataSourceRunStatusMapper
       {
 
-        static const int REQUESTED_HASH = HashingUtils::HashString("REQUESTED");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int PARTIALLY_SUCCEEDED_HASH = HashingUtils::HashString("PARTIALLY_SUCCEEDED");
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t REQUESTED_HASH = ConstExprHashingUtils::HashString("REQUESTED");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t PARTIALLY_SUCCEEDED_HASH = ConstExprHashingUtils::HashString("PARTIALLY_SUCCEEDED");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
 
 
         DataSourceRunStatus GetDataSourceRunStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REQUESTED_HASH)
           {
             return DataSourceRunStatus::REQUESTED;

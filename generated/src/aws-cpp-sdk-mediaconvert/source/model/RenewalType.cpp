@@ -20,13 +20,13 @@ namespace Aws
       namespace RenewalTypeMapper
       {
 
-        static const int AUTO_RENEW_HASH = HashingUtils::HashString("AUTO_RENEW");
-        static const int EXPIRE_HASH = HashingUtils::HashString("EXPIRE");
+        static constexpr uint32_t AUTO_RENEW_HASH = ConstExprHashingUtils::HashString("AUTO_RENEW");
+        static constexpr uint32_t EXPIRE_HASH = ConstExprHashingUtils::HashString("EXPIRE");
 
 
         RenewalType GetRenewalTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_RENEW_HASH)
           {
             return RenewalType::AUTO_RENEW;

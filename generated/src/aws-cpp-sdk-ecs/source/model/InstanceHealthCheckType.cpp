@@ -20,12 +20,12 @@ namespace Aws
       namespace InstanceHealthCheckTypeMapper
       {
 
-        static const int CONTAINER_RUNTIME_HASH = HashingUtils::HashString("CONTAINER_RUNTIME");
+        static constexpr uint32_t CONTAINER_RUNTIME_HASH = ConstExprHashingUtils::HashString("CONTAINER_RUNTIME");
 
 
         InstanceHealthCheckType GetInstanceHealthCheckTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONTAINER_RUNTIME_HASH)
           {
             return InstanceHealthCheckType::CONTAINER_RUNTIME;

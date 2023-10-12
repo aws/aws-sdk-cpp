@@ -20,13 +20,13 @@ namespace Aws
       namespace ExportFileFormatMapper
       {
 
-        static const int PARQUET_HASH = HashingUtils::HashString("PARQUET");
-        static const int DELIMITED_TEXT_HASH = HashingUtils::HashString("DELIMITED_TEXT");
+        static constexpr uint32_t PARQUET_HASH = ConstExprHashingUtils::HashString("PARQUET");
+        static constexpr uint32_t DELIMITED_TEXT_HASH = ConstExprHashingUtils::HashString("DELIMITED_TEXT");
 
 
         ExportFileFormat GetExportFileFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PARQUET_HASH)
           {
             return ExportFileFormat::PARQUET;

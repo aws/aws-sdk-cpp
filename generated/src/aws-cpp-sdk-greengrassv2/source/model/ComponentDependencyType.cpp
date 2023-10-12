@@ -20,13 +20,13 @@ namespace Aws
       namespace ComponentDependencyTypeMapper
       {
 
-        static const int HARD_HASH = HashingUtils::HashString("HARD");
-        static const int SOFT_HASH = HashingUtils::HashString("SOFT");
+        static constexpr uint32_t HARD_HASH = ConstExprHashingUtils::HashString("HARD");
+        static constexpr uint32_t SOFT_HASH = ConstExprHashingUtils::HashString("SOFT");
 
 
         ComponentDependencyType GetComponentDependencyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HARD_HASH)
           {
             return ComponentDependencyType::HARD;

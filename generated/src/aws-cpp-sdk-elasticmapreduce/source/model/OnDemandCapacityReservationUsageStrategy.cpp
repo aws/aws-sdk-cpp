@@ -20,12 +20,12 @@ namespace Aws
       namespace OnDemandCapacityReservationUsageStrategyMapper
       {
 
-        static const int use_capacity_reservations_first_HASH = HashingUtils::HashString("use-capacity-reservations-first");
+        static constexpr uint32_t use_capacity_reservations_first_HASH = ConstExprHashingUtils::HashString("use-capacity-reservations-first");
 
 
         OnDemandCapacityReservationUsageStrategy GetOnDemandCapacityReservationUsageStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == use_capacity_reservations_first_HASH)
           {
             return OnDemandCapacityReservationUsageStrategy::use_capacity_reservations_first;

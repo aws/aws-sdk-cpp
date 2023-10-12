@@ -20,15 +20,15 @@ namespace Aws
       namespace HlsImageBasedTrickPlayMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int THUMBNAIL_HASH = HashingUtils::HashString("THUMBNAIL");
-        static const int THUMBNAIL_AND_FULLFRAME_HASH = HashingUtils::HashString("THUMBNAIL_AND_FULLFRAME");
-        static const int ADVANCED_HASH = HashingUtils::HashString("ADVANCED");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t THUMBNAIL_HASH = ConstExprHashingUtils::HashString("THUMBNAIL");
+        static constexpr uint32_t THUMBNAIL_AND_FULLFRAME_HASH = ConstExprHashingUtils::HashString("THUMBNAIL_AND_FULLFRAME");
+        static constexpr uint32_t ADVANCED_HASH = ConstExprHashingUtils::HashString("ADVANCED");
 
 
         HlsImageBasedTrickPlay GetHlsImageBasedTrickPlayForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return HlsImageBasedTrickPlay::NONE;

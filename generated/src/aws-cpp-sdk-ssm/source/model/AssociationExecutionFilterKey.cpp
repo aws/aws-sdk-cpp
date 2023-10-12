@@ -20,14 +20,14 @@ namespace Aws
       namespace AssociationExecutionFilterKeyMapper
       {
 
-        static const int ExecutionId_HASH = HashingUtils::HashString("ExecutionId");
-        static const int Status_HASH = HashingUtils::HashString("Status");
-        static const int CreatedTime_HASH = HashingUtils::HashString("CreatedTime");
+        static constexpr uint32_t ExecutionId_HASH = ConstExprHashingUtils::HashString("ExecutionId");
+        static constexpr uint32_t Status_HASH = ConstExprHashingUtils::HashString("Status");
+        static constexpr uint32_t CreatedTime_HASH = ConstExprHashingUtils::HashString("CreatedTime");
 
 
         AssociationExecutionFilterKey GetAssociationExecutionFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ExecutionId_HASH)
           {
             return AssociationExecutionFilterKey::ExecutionId;

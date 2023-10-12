@@ -20,13 +20,13 @@ namespace Aws
       namespace TrainingRepositoryAccessModeMapper
       {
 
-        static const int Platform_HASH = HashingUtils::HashString("Platform");
-        static const int Vpc_HASH = HashingUtils::HashString("Vpc");
+        static constexpr uint32_t Platform_HASH = ConstExprHashingUtils::HashString("Platform");
+        static constexpr uint32_t Vpc_HASH = ConstExprHashingUtils::HashString("Vpc");
 
 
         TrainingRepositoryAccessMode GetTrainingRepositoryAccessModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Platform_HASH)
           {
             return TrainingRepositoryAccessMode::Platform;

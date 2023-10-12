@@ -20,18 +20,18 @@ namespace Aws
       namespace AnnotationTypeMapper
       {
 
-        static const int GENERIC_HASH = HashingUtils::HashString("GENERIC");
-        static const int CHR_POS_HASH = HashingUtils::HashString("CHR_POS");
-        static const int CHR_POS_REF_ALT_HASH = HashingUtils::HashString("CHR_POS_REF_ALT");
-        static const int CHR_START_END_ONE_BASE_HASH = HashingUtils::HashString("CHR_START_END_ONE_BASE");
-        static const int CHR_START_END_REF_ALT_ONE_BASE_HASH = HashingUtils::HashString("CHR_START_END_REF_ALT_ONE_BASE");
-        static const int CHR_START_END_ZERO_BASE_HASH = HashingUtils::HashString("CHR_START_END_ZERO_BASE");
-        static const int CHR_START_END_REF_ALT_ZERO_BASE_HASH = HashingUtils::HashString("CHR_START_END_REF_ALT_ZERO_BASE");
+        static constexpr uint32_t GENERIC_HASH = ConstExprHashingUtils::HashString("GENERIC");
+        static constexpr uint32_t CHR_POS_HASH = ConstExprHashingUtils::HashString("CHR_POS");
+        static constexpr uint32_t CHR_POS_REF_ALT_HASH = ConstExprHashingUtils::HashString("CHR_POS_REF_ALT");
+        static constexpr uint32_t CHR_START_END_ONE_BASE_HASH = ConstExprHashingUtils::HashString("CHR_START_END_ONE_BASE");
+        static constexpr uint32_t CHR_START_END_REF_ALT_ONE_BASE_HASH = ConstExprHashingUtils::HashString("CHR_START_END_REF_ALT_ONE_BASE");
+        static constexpr uint32_t CHR_START_END_ZERO_BASE_HASH = ConstExprHashingUtils::HashString("CHR_START_END_ZERO_BASE");
+        static constexpr uint32_t CHR_START_END_REF_ALT_ZERO_BASE_HASH = ConstExprHashingUtils::HashString("CHR_START_END_REF_ALT_ZERO_BASE");
 
 
         AnnotationType GetAnnotationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GENERIC_HASH)
           {
             return AnnotationType::GENERIC;

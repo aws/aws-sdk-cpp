@@ -20,13 +20,13 @@ namespace Aws
       namespace ComplianceUploadTypeMapper
       {
 
-        static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
-        static const int PARTIAL_HASH = HashingUtils::HashString("PARTIAL");
+        static constexpr uint32_t COMPLETE_HASH = ConstExprHashingUtils::HashString("COMPLETE");
+        static constexpr uint32_t PARTIAL_HASH = ConstExprHashingUtils::HashString("PARTIAL");
 
 
         ComplianceUploadType GetComplianceUploadTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPLETE_HASH)
           {
             return ComplianceUploadType::COMPLETE;

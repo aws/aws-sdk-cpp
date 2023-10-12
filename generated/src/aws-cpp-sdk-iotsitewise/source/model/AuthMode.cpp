@@ -20,13 +20,13 @@ namespace Aws
       namespace AuthModeMapper
       {
 
-        static const int IAM_HASH = HashingUtils::HashString("IAM");
-        static const int SSO_HASH = HashingUtils::HashString("SSO");
+        static constexpr uint32_t IAM_HASH = ConstExprHashingUtils::HashString("IAM");
+        static constexpr uint32_t SSO_HASH = ConstExprHashingUtils::HashString("SSO");
 
 
         AuthMode GetAuthModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IAM_HASH)
           {
             return AuthMode::IAM;

@@ -20,13 +20,13 @@ namespace Aws
       namespace InputLossActionForHlsOutMapper
       {
 
-        static const int EMIT_OUTPUT_HASH = HashingUtils::HashString("EMIT_OUTPUT");
-        static const int PAUSE_OUTPUT_HASH = HashingUtils::HashString("PAUSE_OUTPUT");
+        static constexpr uint32_t EMIT_OUTPUT_HASH = ConstExprHashingUtils::HashString("EMIT_OUTPUT");
+        static constexpr uint32_t PAUSE_OUTPUT_HASH = ConstExprHashingUtils::HashString("PAUSE_OUTPUT");
 
 
         InputLossActionForHlsOut GetInputLossActionForHlsOutForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EMIT_OUTPUT_HASH)
           {
             return InputLossActionForHlsOut::EMIT_OUTPUT;

@@ -20,12 +20,12 @@ namespace Aws
       namespace RespondsToMapper
       {
 
-        static const int STANDARD_MESSAGES_HASH = HashingUtils::HashString("STANDARD_MESSAGES");
+        static constexpr uint32_t STANDARD_MESSAGES_HASH = ConstExprHashingUtils::HashString("STANDARD_MESSAGES");
 
 
         RespondsTo GetRespondsToForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STANDARD_MESSAGES_HASH)
           {
             return RespondsTo::STANDARD_MESSAGES;

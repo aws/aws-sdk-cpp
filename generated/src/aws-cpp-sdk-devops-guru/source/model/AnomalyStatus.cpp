@@ -20,13 +20,13 @@ namespace Aws
       namespace AnomalyStatusMapper
       {
 
-        static const int ONGOING_HASH = HashingUtils::HashString("ONGOING");
-        static const int CLOSED_HASH = HashingUtils::HashString("CLOSED");
+        static constexpr uint32_t ONGOING_HASH = ConstExprHashingUtils::HashString("ONGOING");
+        static constexpr uint32_t CLOSED_HASH = ConstExprHashingUtils::HashString("CLOSED");
 
 
         AnomalyStatus GetAnomalyStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ONGOING_HASH)
           {
             return AnomalyStatus::ONGOING;

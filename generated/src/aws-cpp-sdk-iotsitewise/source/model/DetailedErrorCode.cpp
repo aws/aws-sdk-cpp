@@ -20,13 +20,13 @@ namespace Aws
       namespace DetailedErrorCodeMapper
       {
 
-        static const int INCOMPATIBLE_COMPUTE_LOCATION_HASH = HashingUtils::HashString("INCOMPATIBLE_COMPUTE_LOCATION");
-        static const int INCOMPATIBLE_FORWARDING_CONFIGURATION_HASH = HashingUtils::HashString("INCOMPATIBLE_FORWARDING_CONFIGURATION");
+        static constexpr uint32_t INCOMPATIBLE_COMPUTE_LOCATION_HASH = ConstExprHashingUtils::HashString("INCOMPATIBLE_COMPUTE_LOCATION");
+        static constexpr uint32_t INCOMPATIBLE_FORWARDING_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("INCOMPATIBLE_FORWARDING_CONFIGURATION");
 
 
         DetailedErrorCode GetDetailedErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INCOMPATIBLE_COMPUTE_LOCATION_HASH)
           {
             return DetailedErrorCode::INCOMPATIBLE_COMPUTE_LOCATION;

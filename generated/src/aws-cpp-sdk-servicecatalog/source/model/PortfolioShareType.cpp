@@ -20,14 +20,14 @@ namespace Aws
       namespace PortfolioShareTypeMapper
       {
 
-        static const int IMPORTED_HASH = HashingUtils::HashString("IMPORTED");
-        static const int AWS_SERVICECATALOG_HASH = HashingUtils::HashString("AWS_SERVICECATALOG");
-        static const int AWS_ORGANIZATIONS_HASH = HashingUtils::HashString("AWS_ORGANIZATIONS");
+        static constexpr uint32_t IMPORTED_HASH = ConstExprHashingUtils::HashString("IMPORTED");
+        static constexpr uint32_t AWS_SERVICECATALOG_HASH = ConstExprHashingUtils::HashString("AWS_SERVICECATALOG");
+        static constexpr uint32_t AWS_ORGANIZATIONS_HASH = ConstExprHashingUtils::HashString("AWS_ORGANIZATIONS");
 
 
         PortfolioShareType GetPortfolioShareTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IMPORTED_HASH)
           {
             return PortfolioShareType::IMPORTED;

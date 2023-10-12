@@ -20,12 +20,12 @@ namespace Aws
       namespace HostedZoneTypeMapper
       {
 
-        static const int PrivateHostedZone_HASH = HashingUtils::HashString("PrivateHostedZone");
+        static constexpr uint32_t PrivateHostedZone_HASH = ConstExprHashingUtils::HashString("PrivateHostedZone");
 
 
         HostedZoneType GetHostedZoneTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PrivateHostedZone_HASH)
           {
             return HostedZoneType::PrivateHostedZone;

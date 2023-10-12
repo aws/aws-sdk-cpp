@@ -20,14 +20,14 @@ namespace Aws
       namespace ControlSetStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int UNDER_REVIEW_HASH = HashingUtils::HashString("UNDER_REVIEW");
-        static const int REVIEWED_HASH = HashingUtils::HashString("REVIEWED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t UNDER_REVIEW_HASH = ConstExprHashingUtils::HashString("UNDER_REVIEW");
+        static constexpr uint32_t REVIEWED_HASH = ConstExprHashingUtils::HashString("REVIEWED");
 
 
         ControlSetStatus GetControlSetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return ControlSetStatus::ACTIVE;

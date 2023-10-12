@@ -20,14 +20,14 @@ namespace Aws
       namespace RelationalDatabasePasswordVersionMapper
       {
 
-        static const int CURRENT_HASH = HashingUtils::HashString("CURRENT");
-        static const int PREVIOUS_HASH = HashingUtils::HashString("PREVIOUS");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static constexpr uint32_t CURRENT_HASH = ConstExprHashingUtils::HashString("CURRENT");
+        static constexpr uint32_t PREVIOUS_HASH = ConstExprHashingUtils::HashString("PREVIOUS");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
 
 
         RelationalDatabasePasswordVersion GetRelationalDatabasePasswordVersionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CURRENT_HASH)
           {
             return RelationalDatabasePasswordVersion::CURRENT;

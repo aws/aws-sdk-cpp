@@ -20,13 +20,13 @@ namespace Aws
       namespace IndexTypeMapper
       {
 
-        static const int LOCAL_HASH = HashingUtils::HashString("LOCAL");
-        static const int AGGREGATOR_HASH = HashingUtils::HashString("AGGREGATOR");
+        static constexpr uint32_t LOCAL_HASH = ConstExprHashingUtils::HashString("LOCAL");
+        static constexpr uint32_t AGGREGATOR_HASH = ConstExprHashingUtils::HashString("AGGREGATOR");
 
 
         IndexType GetIndexTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LOCAL_HASH)
           {
             return IndexType::LOCAL;

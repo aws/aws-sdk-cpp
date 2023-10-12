@@ -20,17 +20,17 @@ namespace Aws
       namespace SessionStatusMapper
       {
 
-        static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int TIMEOUT_HASH = HashingUtils::HashString("TIMEOUT");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+        static constexpr uint32_t PROVISIONING_HASH = ConstExprHashingUtils::HashString("PROVISIONING");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t TIMEOUT_HASH = ConstExprHashingUtils::HashString("TIMEOUT");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
 
 
         SessionStatus GetSessionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROVISIONING_HASH)
           {
             return SessionStatus::PROVISIONING;

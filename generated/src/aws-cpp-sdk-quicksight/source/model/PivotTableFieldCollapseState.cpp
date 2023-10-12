@@ -20,13 +20,13 @@ namespace Aws
       namespace PivotTableFieldCollapseStateMapper
       {
 
-        static const int COLLAPSED_HASH = HashingUtils::HashString("COLLAPSED");
-        static const int EXPANDED_HASH = HashingUtils::HashString("EXPANDED");
+        static constexpr uint32_t COLLAPSED_HASH = ConstExprHashingUtils::HashString("COLLAPSED");
+        static constexpr uint32_t EXPANDED_HASH = ConstExprHashingUtils::HashString("EXPANDED");
 
 
         PivotTableFieldCollapseState GetPivotTableFieldCollapseStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COLLAPSED_HASH)
           {
             return PivotTableFieldCollapseState::COLLAPSED;

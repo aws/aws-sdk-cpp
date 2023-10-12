@@ -20,16 +20,16 @@ namespace Aws
       namespace UserRoleMapper
       {
 
-        static const int ADMIN_HASH = HashingUtils::HashString("ADMIN");
-        static const int AUTHOR_HASH = HashingUtils::HashString("AUTHOR");
-        static const int READER_HASH = HashingUtils::HashString("READER");
-        static const int RESTRICTED_AUTHOR_HASH = HashingUtils::HashString("RESTRICTED_AUTHOR");
-        static const int RESTRICTED_READER_HASH = HashingUtils::HashString("RESTRICTED_READER");
+        static constexpr uint32_t ADMIN_HASH = ConstExprHashingUtils::HashString("ADMIN");
+        static constexpr uint32_t AUTHOR_HASH = ConstExprHashingUtils::HashString("AUTHOR");
+        static constexpr uint32_t READER_HASH = ConstExprHashingUtils::HashString("READER");
+        static constexpr uint32_t RESTRICTED_AUTHOR_HASH = ConstExprHashingUtils::HashString("RESTRICTED_AUTHOR");
+        static constexpr uint32_t RESTRICTED_READER_HASH = ConstExprHashingUtils::HashString("RESTRICTED_READER");
 
 
         UserRole GetUserRoleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADMIN_HASH)
           {
             return UserRole::ADMIN;

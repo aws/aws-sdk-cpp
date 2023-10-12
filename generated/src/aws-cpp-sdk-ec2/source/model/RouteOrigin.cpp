@@ -20,14 +20,14 @@ namespace Aws
       namespace RouteOriginMapper
       {
 
-        static const int CreateRouteTable_HASH = HashingUtils::HashString("CreateRouteTable");
-        static const int CreateRoute_HASH = HashingUtils::HashString("CreateRoute");
-        static const int EnableVgwRoutePropagation_HASH = HashingUtils::HashString("EnableVgwRoutePropagation");
+        static constexpr uint32_t CreateRouteTable_HASH = ConstExprHashingUtils::HashString("CreateRouteTable");
+        static constexpr uint32_t CreateRoute_HASH = ConstExprHashingUtils::HashString("CreateRoute");
+        static constexpr uint32_t EnableVgwRoutePropagation_HASH = ConstExprHashingUtils::HashString("EnableVgwRoutePropagation");
 
 
         RouteOrigin GetRouteOriginForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CreateRouteTable_HASH)
           {
             return RouteOrigin::CreateRouteTable;

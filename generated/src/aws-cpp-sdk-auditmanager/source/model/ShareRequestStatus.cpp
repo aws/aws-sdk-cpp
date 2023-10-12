@@ -20,19 +20,19 @@ namespace Aws
       namespace ShareRequestStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int REPLICATING_HASH = HashingUtils::HashString("REPLICATING");
-        static const int SHARED_HASH = HashingUtils::HashString("SHARED");
-        static const int EXPIRING_HASH = HashingUtils::HashString("EXPIRING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
-        static const int DECLINED_HASH = HashingUtils::HashString("DECLINED");
-        static const int REVOKED_HASH = HashingUtils::HashString("REVOKED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t REPLICATING_HASH = ConstExprHashingUtils::HashString("REPLICATING");
+        static constexpr uint32_t SHARED_HASH = ConstExprHashingUtils::HashString("SHARED");
+        static constexpr uint32_t EXPIRING_HASH = ConstExprHashingUtils::HashString("EXPIRING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("EXPIRED");
+        static constexpr uint32_t DECLINED_HASH = ConstExprHashingUtils::HashString("DECLINED");
+        static constexpr uint32_t REVOKED_HASH = ConstExprHashingUtils::HashString("REVOKED");
 
 
         ShareRequestStatus GetShareRequestStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return ShareRequestStatus::ACTIVE;

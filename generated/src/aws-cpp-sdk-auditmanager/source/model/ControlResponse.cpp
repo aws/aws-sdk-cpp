@@ -20,15 +20,15 @@ namespace Aws
       namespace ControlResponseMapper
       {
 
-        static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
-        static const int AUTOMATE_HASH = HashingUtils::HashString("AUTOMATE");
-        static const int DEFER_HASH = HashingUtils::HashString("DEFER");
-        static const int IGNORE_HASH = HashingUtils::HashString("IGNORE");
+        static constexpr uint32_t MANUAL_HASH = ConstExprHashingUtils::HashString("MANUAL");
+        static constexpr uint32_t AUTOMATE_HASH = ConstExprHashingUtils::HashString("AUTOMATE");
+        static constexpr uint32_t DEFER_HASH = ConstExprHashingUtils::HashString("DEFER");
+        static constexpr uint32_t IGNORE_HASH = ConstExprHashingUtils::HashString("IGNORE");
 
 
         ControlResponse GetControlResponseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MANUAL_HASH)
           {
             return ControlResponse::MANUAL;

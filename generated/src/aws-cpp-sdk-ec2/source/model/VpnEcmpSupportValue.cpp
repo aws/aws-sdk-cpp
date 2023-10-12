@@ -20,13 +20,13 @@ namespace Aws
       namespace VpnEcmpSupportValueMapper
       {
 
-        static const int enable_HASH = HashingUtils::HashString("enable");
-        static const int disable_HASH = HashingUtils::HashString("disable");
+        static constexpr uint32_t enable_HASH = ConstExprHashingUtils::HashString("enable");
+        static constexpr uint32_t disable_HASH = ConstExprHashingUtils::HashString("disable");
 
 
         VpnEcmpSupportValue GetVpnEcmpSupportValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == enable_HASH)
           {
             return VpnEcmpSupportValue::enable;

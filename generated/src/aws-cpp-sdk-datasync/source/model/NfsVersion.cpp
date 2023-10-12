@@ -20,15 +20,15 @@ namespace Aws
       namespace NfsVersionMapper
       {
 
-        static const int AUTOMATIC_HASH = HashingUtils::HashString("AUTOMATIC");
-        static const int NFS3_HASH = HashingUtils::HashString("NFS3");
-        static const int NFS4_0_HASH = HashingUtils::HashString("NFS4_0");
-        static const int NFS4_1_HASH = HashingUtils::HashString("NFS4_1");
+        static constexpr uint32_t AUTOMATIC_HASH = ConstExprHashingUtils::HashString("AUTOMATIC");
+        static constexpr uint32_t NFS3_HASH = ConstExprHashingUtils::HashString("NFS3");
+        static constexpr uint32_t NFS4_0_HASH = ConstExprHashingUtils::HashString("NFS4_0");
+        static constexpr uint32_t NFS4_1_HASH = ConstExprHashingUtils::HashString("NFS4_1");
 
 
         NfsVersion GetNfsVersionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTOMATIC_HASH)
           {
             return NfsVersion::AUTOMATIC;

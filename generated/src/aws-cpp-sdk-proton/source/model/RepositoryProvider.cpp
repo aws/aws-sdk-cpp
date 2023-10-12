@@ -20,14 +20,14 @@ namespace Aws
       namespace RepositoryProviderMapper
       {
 
-        static const int GITHUB_HASH = HashingUtils::HashString("GITHUB");
-        static const int GITHUB_ENTERPRISE_HASH = HashingUtils::HashString("GITHUB_ENTERPRISE");
-        static const int BITBUCKET_HASH = HashingUtils::HashString("BITBUCKET");
+        static constexpr uint32_t GITHUB_HASH = ConstExprHashingUtils::HashString("GITHUB");
+        static constexpr uint32_t GITHUB_ENTERPRISE_HASH = ConstExprHashingUtils::HashString("GITHUB_ENTERPRISE");
+        static constexpr uint32_t BITBUCKET_HASH = ConstExprHashingUtils::HashString("BITBUCKET");
 
 
         RepositoryProvider GetRepositoryProviderForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GITHUB_HASH)
           {
             return RepositoryProvider::GITHUB;

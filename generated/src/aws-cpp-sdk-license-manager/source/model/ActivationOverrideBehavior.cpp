@@ -20,13 +20,13 @@ namespace Aws
       namespace ActivationOverrideBehaviorMapper
       {
 
-        static const int DISTRIBUTED_GRANTS_ONLY_HASH = HashingUtils::HashString("DISTRIBUTED_GRANTS_ONLY");
-        static const int ALL_GRANTS_PERMITTED_BY_ISSUER_HASH = HashingUtils::HashString("ALL_GRANTS_PERMITTED_BY_ISSUER");
+        static constexpr uint32_t DISTRIBUTED_GRANTS_ONLY_HASH = ConstExprHashingUtils::HashString("DISTRIBUTED_GRANTS_ONLY");
+        static constexpr uint32_t ALL_GRANTS_PERMITTED_BY_ISSUER_HASH = ConstExprHashingUtils::HashString("ALL_GRANTS_PERMITTED_BY_ISSUER");
 
 
         ActivationOverrideBehavior GetActivationOverrideBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISTRIBUTED_GRANTS_ONLY_HASH)
           {
             return ActivationOverrideBehavior::DISTRIBUTED_GRANTS_ONLY;

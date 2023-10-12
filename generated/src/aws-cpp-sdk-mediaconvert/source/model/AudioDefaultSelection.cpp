@@ -20,13 +20,13 @@ namespace Aws
       namespace AudioDefaultSelectionMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int NOT_DEFAULT_HASH = HashingUtils::HashString("NOT_DEFAULT");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t NOT_DEFAULT_HASH = ConstExprHashingUtils::HashString("NOT_DEFAULT");
 
 
         AudioDefaultSelection GetAudioDefaultSelectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return AudioDefaultSelection::DEFAULT;

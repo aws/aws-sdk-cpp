@@ -20,14 +20,14 @@ namespace Aws
       namespace HITAccessActionsMapper
       {
 
-        static const int Accept_HASH = HashingUtils::HashString("Accept");
-        static const int PreviewAndAccept_HASH = HashingUtils::HashString("PreviewAndAccept");
-        static const int DiscoverPreviewAndAccept_HASH = HashingUtils::HashString("DiscoverPreviewAndAccept");
+        static constexpr uint32_t Accept_HASH = ConstExprHashingUtils::HashString("Accept");
+        static constexpr uint32_t PreviewAndAccept_HASH = ConstExprHashingUtils::HashString("PreviewAndAccept");
+        static constexpr uint32_t DiscoverPreviewAndAccept_HASH = ConstExprHashingUtils::HashString("DiscoverPreviewAndAccept");
 
 
         HITAccessActions GetHITAccessActionsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Accept_HASH)
           {
             return HITAccessActions::Accept;

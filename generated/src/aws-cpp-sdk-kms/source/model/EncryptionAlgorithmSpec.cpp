@@ -20,15 +20,15 @@ namespace Aws
       namespace EncryptionAlgorithmSpecMapper
       {
 
-        static const int SYMMETRIC_DEFAULT_HASH = HashingUtils::HashString("SYMMETRIC_DEFAULT");
-        static const int RSAES_OAEP_SHA_1_HASH = HashingUtils::HashString("RSAES_OAEP_SHA_1");
-        static const int RSAES_OAEP_SHA_256_HASH = HashingUtils::HashString("RSAES_OAEP_SHA_256");
-        static const int SM2PKE_HASH = HashingUtils::HashString("SM2PKE");
+        static constexpr uint32_t SYMMETRIC_DEFAULT_HASH = ConstExprHashingUtils::HashString("SYMMETRIC_DEFAULT");
+        static constexpr uint32_t RSAES_OAEP_SHA_1_HASH = ConstExprHashingUtils::HashString("RSAES_OAEP_SHA_1");
+        static constexpr uint32_t RSAES_OAEP_SHA_256_HASH = ConstExprHashingUtils::HashString("RSAES_OAEP_SHA_256");
+        static constexpr uint32_t SM2PKE_HASH = ConstExprHashingUtils::HashString("SM2PKE");
 
 
         EncryptionAlgorithmSpec GetEncryptionAlgorithmSpecForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SYMMETRIC_DEFAULT_HASH)
           {
             return EncryptionAlgorithmSpec::SYMMETRIC_DEFAULT;

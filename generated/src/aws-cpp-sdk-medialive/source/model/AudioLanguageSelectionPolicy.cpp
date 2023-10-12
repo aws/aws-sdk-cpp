@@ -20,13 +20,13 @@ namespace Aws
       namespace AudioLanguageSelectionPolicyMapper
       {
 
-        static const int LOOSE_HASH = HashingUtils::HashString("LOOSE");
-        static const int STRICT_HASH = HashingUtils::HashString("STRICT");
+        static constexpr uint32_t LOOSE_HASH = ConstExprHashingUtils::HashString("LOOSE");
+        static constexpr uint32_t STRICT_HASH = ConstExprHashingUtils::HashString("STRICT");
 
 
         AudioLanguageSelectionPolicy GetAudioLanguageSelectionPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LOOSE_HASH)
           {
             return AudioLanguageSelectionPolicy::LOOSE;

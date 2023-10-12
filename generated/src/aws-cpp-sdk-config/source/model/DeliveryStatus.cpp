@@ -20,14 +20,14 @@ namespace Aws
       namespace DeliveryStatusMapper
       {
 
-        static const int Success_HASH = HashingUtils::HashString("Success");
-        static const int Failure_HASH = HashingUtils::HashString("Failure");
-        static const int Not_Applicable_HASH = HashingUtils::HashString("Not_Applicable");
+        static constexpr uint32_t Success_HASH = ConstExprHashingUtils::HashString("Success");
+        static constexpr uint32_t Failure_HASH = ConstExprHashingUtils::HashString("Failure");
+        static constexpr uint32_t Not_Applicable_HASH = ConstExprHashingUtils::HashString("Not_Applicable");
 
 
         DeliveryStatus GetDeliveryStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Success_HASH)
           {
             return DeliveryStatus::Success;

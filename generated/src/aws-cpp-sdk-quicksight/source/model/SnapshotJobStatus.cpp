@@ -20,15 +20,15 @@ namespace Aws
       namespace SnapshotJobStatusMapper
       {
 
-        static const int QUEUED_HASH = HashingUtils::HashString("QUEUED");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t QUEUED_HASH = ConstExprHashingUtils::HashString("QUEUED");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         SnapshotJobStatus GetSnapshotJobStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUEUED_HASH)
           {
             return SnapshotJobStatus::QUEUED;

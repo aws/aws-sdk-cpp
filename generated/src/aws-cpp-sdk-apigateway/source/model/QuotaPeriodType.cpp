@@ -20,14 +20,14 @@ namespace Aws
       namespace QuotaPeriodTypeMapper
       {
 
-        static const int DAY_HASH = HashingUtils::HashString("DAY");
-        static const int WEEK_HASH = HashingUtils::HashString("WEEK");
-        static const int MONTH_HASH = HashingUtils::HashString("MONTH");
+        static constexpr uint32_t DAY_HASH = ConstExprHashingUtils::HashString("DAY");
+        static constexpr uint32_t WEEK_HASH = ConstExprHashingUtils::HashString("WEEK");
+        static constexpr uint32_t MONTH_HASH = ConstExprHashingUtils::HashString("MONTH");
 
 
         QuotaPeriodType GetQuotaPeriodTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DAY_HASH)
           {
             return QuotaPeriodType::DAY;

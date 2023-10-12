@@ -20,14 +20,14 @@ namespace Aws
       namespace BatchJobTypeMapper
       {
 
-        static const int VSE_HASH = HashingUtils::HashString("VSE");
-        static const int JES2_HASH = HashingUtils::HashString("JES2");
-        static const int JES3_HASH = HashingUtils::HashString("JES3");
+        static constexpr uint32_t VSE_HASH = ConstExprHashingUtils::HashString("VSE");
+        static constexpr uint32_t JES2_HASH = ConstExprHashingUtils::HashString("JES2");
+        static constexpr uint32_t JES3_HASH = ConstExprHashingUtils::HashString("JES3");
 
 
         BatchJobType GetBatchJobTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VSE_HASH)
           {
             return BatchJobType::VSE;

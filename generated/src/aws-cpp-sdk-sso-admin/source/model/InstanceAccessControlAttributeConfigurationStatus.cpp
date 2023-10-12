@@ -20,14 +20,14 @@ namespace Aws
       namespace InstanceAccessControlAttributeConfigurationStatusMapper
       {
 
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int CREATION_IN_PROGRESS_HASH = HashingUtils::HashString("CREATION_IN_PROGRESS");
-        static const int CREATION_FAILED_HASH = HashingUtils::HashString("CREATION_FAILED");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
+        static constexpr uint32_t CREATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("CREATION_IN_PROGRESS");
+        static constexpr uint32_t CREATION_FAILED_HASH = ConstExprHashingUtils::HashString("CREATION_FAILED");
 
 
         InstanceAccessControlAttributeConfigurationStatus GetInstanceAccessControlAttributeConfigurationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLED_HASH)
           {
             return InstanceAccessControlAttributeConfigurationStatus::ENABLED;

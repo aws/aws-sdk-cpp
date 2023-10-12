@@ -20,22 +20,22 @@ namespace Aws
       namespace QueryTransactionEventTypeMapper
       {
 
-        static const int ERC20_TRANSFER_HASH = HashingUtils::HashString("ERC20_TRANSFER");
-        static const int ERC20_MINT_HASH = HashingUtils::HashString("ERC20_MINT");
-        static const int ERC20_BURN_HASH = HashingUtils::HashString("ERC20_BURN");
-        static const int ERC20_DEPOSIT_HASH = HashingUtils::HashString("ERC20_DEPOSIT");
-        static const int ERC20_WITHDRAWAL_HASH = HashingUtils::HashString("ERC20_WITHDRAWAL");
-        static const int ERC721_TRANSFER_HASH = HashingUtils::HashString("ERC721_TRANSFER");
-        static const int ERC1155_TRANSFER_HASH = HashingUtils::HashString("ERC1155_TRANSFER");
-        static const int BITCOIN_VIN_HASH = HashingUtils::HashString("BITCOIN_VIN");
-        static const int BITCOIN_VOUT_HASH = HashingUtils::HashString("BITCOIN_VOUT");
-        static const int INTERNAL_ETH_TRANSFER_HASH = HashingUtils::HashString("INTERNAL_ETH_TRANSFER");
-        static const int ETH_TRANSFER_HASH = HashingUtils::HashString("ETH_TRANSFER");
+        static constexpr uint32_t ERC20_TRANSFER_HASH = ConstExprHashingUtils::HashString("ERC20_TRANSFER");
+        static constexpr uint32_t ERC20_MINT_HASH = ConstExprHashingUtils::HashString("ERC20_MINT");
+        static constexpr uint32_t ERC20_BURN_HASH = ConstExprHashingUtils::HashString("ERC20_BURN");
+        static constexpr uint32_t ERC20_DEPOSIT_HASH = ConstExprHashingUtils::HashString("ERC20_DEPOSIT");
+        static constexpr uint32_t ERC20_WITHDRAWAL_HASH = ConstExprHashingUtils::HashString("ERC20_WITHDRAWAL");
+        static constexpr uint32_t ERC721_TRANSFER_HASH = ConstExprHashingUtils::HashString("ERC721_TRANSFER");
+        static constexpr uint32_t ERC1155_TRANSFER_HASH = ConstExprHashingUtils::HashString("ERC1155_TRANSFER");
+        static constexpr uint32_t BITCOIN_VIN_HASH = ConstExprHashingUtils::HashString("BITCOIN_VIN");
+        static constexpr uint32_t BITCOIN_VOUT_HASH = ConstExprHashingUtils::HashString("BITCOIN_VOUT");
+        static constexpr uint32_t INTERNAL_ETH_TRANSFER_HASH = ConstExprHashingUtils::HashString("INTERNAL_ETH_TRANSFER");
+        static constexpr uint32_t ETH_TRANSFER_HASH = ConstExprHashingUtils::HashString("ETH_TRANSFER");
 
 
         QueryTransactionEventType GetQueryTransactionEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ERC20_TRANSFER_HASH)
           {
             return QueryTransactionEventType::ERC20_TRANSFER;

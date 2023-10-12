@@ -20,16 +20,16 @@ namespace Aws
       namespace RunTimeAnalyzerNameMapper
       {
 
-        static const int A2C_ANALYZER_HASH = HashingUtils::HashString("A2C_ANALYZER");
-        static const int REHOST_ANALYZER_HASH = HashingUtils::HashString("REHOST_ANALYZER");
-        static const int EMP_PA_ANALYZER_HASH = HashingUtils::HashString("EMP_PA_ANALYZER");
-        static const int DATABASE_ANALYZER_HASH = HashingUtils::HashString("DATABASE_ANALYZER");
-        static const int SCT_ANALYZER_HASH = HashingUtils::HashString("SCT_ANALYZER");
+        static constexpr uint32_t A2C_ANALYZER_HASH = ConstExprHashingUtils::HashString("A2C_ANALYZER");
+        static constexpr uint32_t REHOST_ANALYZER_HASH = ConstExprHashingUtils::HashString("REHOST_ANALYZER");
+        static constexpr uint32_t EMP_PA_ANALYZER_HASH = ConstExprHashingUtils::HashString("EMP_PA_ANALYZER");
+        static constexpr uint32_t DATABASE_ANALYZER_HASH = ConstExprHashingUtils::HashString("DATABASE_ANALYZER");
+        static constexpr uint32_t SCT_ANALYZER_HASH = ConstExprHashingUtils::HashString("SCT_ANALYZER");
 
 
         RunTimeAnalyzerName GetRunTimeAnalyzerNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == A2C_ANALYZER_HASH)
           {
             return RunTimeAnalyzerName::A2C_ANALYZER;

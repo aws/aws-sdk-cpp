@@ -20,13 +20,13 @@ namespace Aws
       namespace ProcessingS3DataTypeMapper
       {
 
-        static const int ManifestFile_HASH = HashingUtils::HashString("ManifestFile");
-        static const int S3Prefix_HASH = HashingUtils::HashString("S3Prefix");
+        static constexpr uint32_t ManifestFile_HASH = ConstExprHashingUtils::HashString("ManifestFile");
+        static constexpr uint32_t S3Prefix_HASH = ConstExprHashingUtils::HashString("S3Prefix");
 
 
         ProcessingS3DataType GetProcessingS3DataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ManifestFile_HASH)
           {
             return ProcessingS3DataType::ManifestFile;

@@ -20,15 +20,15 @@ namespace Aws
       namespace ActivityStreamStatusMapper
       {
 
-        static const int stopped_HASH = HashingUtils::HashString("stopped");
-        static const int starting_HASH = HashingUtils::HashString("starting");
-        static const int started_HASH = HashingUtils::HashString("started");
-        static const int stopping_HASH = HashingUtils::HashString("stopping");
+        static constexpr uint32_t stopped_HASH = ConstExprHashingUtils::HashString("stopped");
+        static constexpr uint32_t starting_HASH = ConstExprHashingUtils::HashString("starting");
+        static constexpr uint32_t started_HASH = ConstExprHashingUtils::HashString("started");
+        static constexpr uint32_t stopping_HASH = ConstExprHashingUtils::HashString("stopping");
 
 
         ActivityStreamStatus GetActivityStreamStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == stopped_HASH)
           {
             return ActivityStreamStatus::stopped;

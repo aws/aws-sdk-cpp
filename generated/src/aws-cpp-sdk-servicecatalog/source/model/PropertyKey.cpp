@@ -20,13 +20,13 @@ namespace Aws
       namespace PropertyKeyMapper
       {
 
-        static const int OWNER_HASH = HashingUtils::HashString("OWNER");
-        static const int LAUNCH_ROLE_HASH = HashingUtils::HashString("LAUNCH_ROLE");
+        static constexpr uint32_t OWNER_HASH = ConstExprHashingUtils::HashString("OWNER");
+        static constexpr uint32_t LAUNCH_ROLE_HASH = ConstExprHashingUtils::HashString("LAUNCH_ROLE");
 
 
         PropertyKey GetPropertyKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OWNER_HASH)
           {
             return PropertyKey::OWNER;

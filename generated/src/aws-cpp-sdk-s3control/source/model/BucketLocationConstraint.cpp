@@ -20,22 +20,22 @@ namespace Aws
       namespace BucketLocationConstraintMapper
       {
 
-        static const int EU_HASH = HashingUtils::HashString("EU");
-        static const int eu_west_1_HASH = HashingUtils::HashString("eu-west-1");
-        static const int us_west_1_HASH = HashingUtils::HashString("us-west-1");
-        static const int us_west_2_HASH = HashingUtils::HashString("us-west-2");
-        static const int ap_south_1_HASH = HashingUtils::HashString("ap-south-1");
-        static const int ap_southeast_1_HASH = HashingUtils::HashString("ap-southeast-1");
-        static const int ap_southeast_2_HASH = HashingUtils::HashString("ap-southeast-2");
-        static const int ap_northeast_1_HASH = HashingUtils::HashString("ap-northeast-1");
-        static const int sa_east_1_HASH = HashingUtils::HashString("sa-east-1");
-        static const int cn_north_1_HASH = HashingUtils::HashString("cn-north-1");
-        static const int eu_central_1_HASH = HashingUtils::HashString("eu-central-1");
+        static constexpr uint32_t EU_HASH = ConstExprHashingUtils::HashString("EU");
+        static constexpr uint32_t eu_west_1_HASH = ConstExprHashingUtils::HashString("eu-west-1");
+        static constexpr uint32_t us_west_1_HASH = ConstExprHashingUtils::HashString("us-west-1");
+        static constexpr uint32_t us_west_2_HASH = ConstExprHashingUtils::HashString("us-west-2");
+        static constexpr uint32_t ap_south_1_HASH = ConstExprHashingUtils::HashString("ap-south-1");
+        static constexpr uint32_t ap_southeast_1_HASH = ConstExprHashingUtils::HashString("ap-southeast-1");
+        static constexpr uint32_t ap_southeast_2_HASH = ConstExprHashingUtils::HashString("ap-southeast-2");
+        static constexpr uint32_t ap_northeast_1_HASH = ConstExprHashingUtils::HashString("ap-northeast-1");
+        static constexpr uint32_t sa_east_1_HASH = ConstExprHashingUtils::HashString("sa-east-1");
+        static constexpr uint32_t cn_north_1_HASH = ConstExprHashingUtils::HashString("cn-north-1");
+        static constexpr uint32_t eu_central_1_HASH = ConstExprHashingUtils::HashString("eu-central-1");
 
 
         BucketLocationConstraint GetBucketLocationConstraintForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EU_HASH)
           {
             return BucketLocationConstraint::EU;

@@ -20,16 +20,16 @@ namespace Aws
       namespace ExperimentResultResponseTypeMapper
       {
 
-        static const int Mean_HASH = HashingUtils::HashString("Mean");
-        static const int TreatmentEffect_HASH = HashingUtils::HashString("TreatmentEffect");
-        static const int ConfidenceIntervalUpperBound_HASH = HashingUtils::HashString("ConfidenceIntervalUpperBound");
-        static const int ConfidenceIntervalLowerBound_HASH = HashingUtils::HashString("ConfidenceIntervalLowerBound");
-        static const int PValue_HASH = HashingUtils::HashString("PValue");
+        static constexpr uint32_t Mean_HASH = ConstExprHashingUtils::HashString("Mean");
+        static constexpr uint32_t TreatmentEffect_HASH = ConstExprHashingUtils::HashString("TreatmentEffect");
+        static constexpr uint32_t ConfidenceIntervalUpperBound_HASH = ConstExprHashingUtils::HashString("ConfidenceIntervalUpperBound");
+        static constexpr uint32_t ConfidenceIntervalLowerBound_HASH = ConstExprHashingUtils::HashString("ConfidenceIntervalLowerBound");
+        static constexpr uint32_t PValue_HASH = ConstExprHashingUtils::HashString("PValue");
 
 
         ExperimentResultResponseType GetExperimentResultResponseTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Mean_HASH)
           {
             return ExperimentResultResponseType::Mean;

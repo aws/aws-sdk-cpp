@@ -20,14 +20,14 @@ namespace Aws
       namespace CacheTypeMapper
       {
 
-        static const int NO_CACHE_HASH = HashingUtils::HashString("NO_CACHE");
-        static const int S3_HASH = HashingUtils::HashString("S3");
-        static const int LOCAL_HASH = HashingUtils::HashString("LOCAL");
+        static constexpr uint32_t NO_CACHE_HASH = ConstExprHashingUtils::HashString("NO_CACHE");
+        static constexpr uint32_t S3_HASH = ConstExprHashingUtils::HashString("S3");
+        static constexpr uint32_t LOCAL_HASH = ConstExprHashingUtils::HashString("LOCAL");
 
 
         CacheType GetCacheTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_CACHE_HASH)
           {
             return CacheType::NO_CACHE;

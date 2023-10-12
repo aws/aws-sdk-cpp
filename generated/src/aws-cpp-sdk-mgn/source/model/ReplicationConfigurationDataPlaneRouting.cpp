@@ -20,13 +20,13 @@ namespace Aws
       namespace ReplicationConfigurationDataPlaneRoutingMapper
       {
 
-        static const int PRIVATE_IP_HASH = HashingUtils::HashString("PRIVATE_IP");
-        static const int PUBLIC_IP_HASH = HashingUtils::HashString("PUBLIC_IP");
+        static constexpr uint32_t PRIVATE_IP_HASH = ConstExprHashingUtils::HashString("PRIVATE_IP");
+        static constexpr uint32_t PUBLIC_IP_HASH = ConstExprHashingUtils::HashString("PUBLIC_IP");
 
 
         ReplicationConfigurationDataPlaneRouting GetReplicationConfigurationDataPlaneRoutingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRIVATE_IP_HASH)
           {
             return ReplicationConfigurationDataPlaneRouting::PRIVATE_IP;

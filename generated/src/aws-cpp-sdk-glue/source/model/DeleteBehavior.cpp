@@ -20,14 +20,14 @@ namespace Aws
       namespace DeleteBehaviorMapper
       {
 
-        static const int LOG_HASH = HashingUtils::HashString("LOG");
-        static const int DELETE_FROM_DATABASE_HASH = HashingUtils::HashString("DELETE_FROM_DATABASE");
-        static const int DEPRECATE_IN_DATABASE_HASH = HashingUtils::HashString("DEPRECATE_IN_DATABASE");
+        static constexpr uint32_t LOG_HASH = ConstExprHashingUtils::HashString("LOG");
+        static constexpr uint32_t DELETE_FROM_DATABASE_HASH = ConstExprHashingUtils::HashString("DELETE_FROM_DATABASE");
+        static constexpr uint32_t DEPRECATE_IN_DATABASE_HASH = ConstExprHashingUtils::HashString("DEPRECATE_IN_DATABASE");
 
 
         DeleteBehavior GetDeleteBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LOG_HASH)
           {
             return DeleteBehavior::LOG;

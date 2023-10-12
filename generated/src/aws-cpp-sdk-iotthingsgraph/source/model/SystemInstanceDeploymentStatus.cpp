@@ -20,19 +20,19 @@ namespace Aws
       namespace SystemInstanceDeploymentStatusMapper
       {
 
-        static const int NOT_DEPLOYED_HASH = HashingUtils::HashString("NOT_DEPLOYED");
-        static const int BOOTSTRAP_HASH = HashingUtils::HashString("BOOTSTRAP");
-        static const int DEPLOY_IN_PROGRESS_HASH = HashingUtils::HashString("DEPLOY_IN_PROGRESS");
-        static const int DEPLOYED_IN_TARGET_HASH = HashingUtils::HashString("DEPLOYED_IN_TARGET");
-        static const int UNDEPLOY_IN_PROGRESS_HASH = HashingUtils::HashString("UNDEPLOY_IN_PROGRESS");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int PENDING_DELETE_HASH = HashingUtils::HashString("PENDING_DELETE");
-        static const int DELETED_IN_TARGET_HASH = HashingUtils::HashString("DELETED_IN_TARGET");
+        static constexpr uint32_t NOT_DEPLOYED_HASH = ConstExprHashingUtils::HashString("NOT_DEPLOYED");
+        static constexpr uint32_t BOOTSTRAP_HASH = ConstExprHashingUtils::HashString("BOOTSTRAP");
+        static constexpr uint32_t DEPLOY_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("DEPLOY_IN_PROGRESS");
+        static constexpr uint32_t DEPLOYED_IN_TARGET_HASH = ConstExprHashingUtils::HashString("DEPLOYED_IN_TARGET");
+        static constexpr uint32_t UNDEPLOY_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("UNDEPLOY_IN_PROGRESS");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t PENDING_DELETE_HASH = ConstExprHashingUtils::HashString("PENDING_DELETE");
+        static constexpr uint32_t DELETED_IN_TARGET_HASH = ConstExprHashingUtils::HashString("DELETED_IN_TARGET");
 
 
         SystemInstanceDeploymentStatus GetSystemInstanceDeploymentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOT_DEPLOYED_HASH)
           {
             return SystemInstanceDeploymentStatus::NOT_DEPLOYED;

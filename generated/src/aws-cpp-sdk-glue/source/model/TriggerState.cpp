@@ -20,19 +20,19 @@ namespace Aws
       namespace TriggerStateMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
-        static const int ACTIVATING_HASH = HashingUtils::HashString("ACTIVATING");
-        static const int ACTIVATED_HASH = HashingUtils::HashString("ACTIVATED");
-        static const int DEACTIVATING_HASH = HashingUtils::HashString("DEACTIVATING");
-        static const int DEACTIVATED_HASH = HashingUtils::HashString("DEACTIVATED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t CREATED_HASH = ConstExprHashingUtils::HashString("CREATED");
+        static constexpr uint32_t ACTIVATING_HASH = ConstExprHashingUtils::HashString("ACTIVATING");
+        static constexpr uint32_t ACTIVATED_HASH = ConstExprHashingUtils::HashString("ACTIVATED");
+        static constexpr uint32_t DEACTIVATING_HASH = ConstExprHashingUtils::HashString("DEACTIVATING");
+        static constexpr uint32_t DEACTIVATED_HASH = ConstExprHashingUtils::HashString("DEACTIVATED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
 
 
         TriggerState GetTriggerStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return TriggerState::CREATING;

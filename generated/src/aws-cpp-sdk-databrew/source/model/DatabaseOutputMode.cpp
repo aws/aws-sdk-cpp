@@ -20,12 +20,12 @@ namespace Aws
       namespace DatabaseOutputModeMapper
       {
 
-        static const int NEW_TABLE_HASH = HashingUtils::HashString("NEW_TABLE");
+        static constexpr uint32_t NEW_TABLE_HASH = ConstExprHashingUtils::HashString("NEW_TABLE");
 
 
         DatabaseOutputMode GetDatabaseOutputModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NEW_TABLE_HASH)
           {
             return DatabaseOutputMode::NEW_TABLE;

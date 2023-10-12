@@ -20,18 +20,18 @@ namespace Aws
       namespace H264AdaptiveQuantizationMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int HIGH_HASH = HashingUtils::HashString("HIGH");
-        static const int HIGHER_HASH = HashingUtils::HashString("HIGHER");
-        static const int LOW_HASH = HashingUtils::HashString("LOW");
-        static const int MAX_HASH = HashingUtils::HashString("MAX");
-        static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
-        static const int OFF_HASH = HashingUtils::HashString("OFF");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t HIGH_HASH = ConstExprHashingUtils::HashString("HIGH");
+        static constexpr uint32_t HIGHER_HASH = ConstExprHashingUtils::HashString("HIGHER");
+        static constexpr uint32_t LOW_HASH = ConstExprHashingUtils::HashString("LOW");
+        static constexpr uint32_t MAX_HASH = ConstExprHashingUtils::HashString("MAX");
+        static constexpr uint32_t MEDIUM_HASH = ConstExprHashingUtils::HashString("MEDIUM");
+        static constexpr uint32_t OFF_HASH = ConstExprHashingUtils::HashString("OFF");
 
 
         H264AdaptiveQuantization GetH264AdaptiveQuantizationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return H264AdaptiveQuantization::AUTO;

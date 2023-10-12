@@ -61,24 +61,24 @@ template<> AWS_ROUTE53RESOLVER_API ResourceUnavailableException Route53ResolverE
 namespace Route53ResolverErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int RESOURCE_EXISTS_HASH = HashingUtils::HashString("ResourceExistsException");
-static const int INVALID_POLICY_DOCUMENT_HASH = HashingUtils::HashString("InvalidPolicyDocument");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagException");
-static const int UNKNOWN_RESOURCE_HASH = HashingUtils::HashString("UnknownResourceException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("InternalServiceErrorException");
-static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t RESOURCE_EXISTS_HASH = ConstExprHashingUtils::HashString("ResourceExistsException");
+static constexpr uint32_t INVALID_POLICY_DOCUMENT_HASH = ConstExprHashingUtils::HashString("InvalidPolicyDocument");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t INVALID_TAG_HASH = ConstExprHashingUtils::HashString("InvalidTagException");
+static constexpr uint32_t UNKNOWN_RESOURCE_HASH = ConstExprHashingUtils::HashString("UnknownResourceException");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+static constexpr uint32_t SERVICE_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ServiceQuotaExceededException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t INTERNAL_SERVICE_ERROR_HASH = ConstExprHashingUtils::HashString("InternalServiceErrorException");
+static constexpr uint32_t RESOURCE_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("ResourceUnavailableException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

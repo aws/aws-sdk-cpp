@@ -20,13 +20,13 @@ namespace Aws
       namespace SubscriptionStatusMapper
       {
 
-        static const int OPT_IN_HASH = HashingUtils::HashString("OPT_IN");
-        static const int OPT_OUT_HASH = HashingUtils::HashString("OPT_OUT");
+        static constexpr uint32_t OPT_IN_HASH = ConstExprHashingUtils::HashString("OPT_IN");
+        static constexpr uint32_t OPT_OUT_HASH = ConstExprHashingUtils::HashString("OPT_OUT");
 
 
         SubscriptionStatus GetSubscriptionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OPT_IN_HASH)
           {
             return SubscriptionStatus::OPT_IN;

@@ -20,15 +20,15 @@ namespace Aws
       namespace OwnershipMapper
       {
 
-        static const int Self_HASH = HashingUtils::HashString("Self");
-        static const int Shared_HASH = HashingUtils::HashString("Shared");
-        static const int Amazon_HASH = HashingUtils::HashString("Amazon");
-        static const int ThirdParty_HASH = HashingUtils::HashString("ThirdParty");
+        static constexpr uint32_t Self_HASH = ConstExprHashingUtils::HashString("Self");
+        static constexpr uint32_t Shared_HASH = ConstExprHashingUtils::HashString("Shared");
+        static constexpr uint32_t Amazon_HASH = ConstExprHashingUtils::HashString("Amazon");
+        static constexpr uint32_t ThirdParty_HASH = ConstExprHashingUtils::HashString("ThirdParty");
 
 
         Ownership GetOwnershipForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Self_HASH)
           {
             return Ownership::Self;

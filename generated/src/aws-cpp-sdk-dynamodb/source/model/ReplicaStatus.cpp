@@ -20,18 +20,18 @@ namespace Aws
       namespace ReplicaStatusMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int CREATION_FAILED_HASH = HashingUtils::HashString("CREATION_FAILED");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int REGION_DISABLED_HASH = HashingUtils::HashString("REGION_DISABLED");
-        static const int INACCESSIBLE_ENCRYPTION_CREDENTIALS_HASH = HashingUtils::HashString("INACCESSIBLE_ENCRYPTION_CREDENTIALS");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t CREATION_FAILED_HASH = ConstExprHashingUtils::HashString("CREATION_FAILED");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t REGION_DISABLED_HASH = ConstExprHashingUtils::HashString("REGION_DISABLED");
+        static constexpr uint32_t INACCESSIBLE_ENCRYPTION_CREDENTIALS_HASH = ConstExprHashingUtils::HashString("INACCESSIBLE_ENCRYPTION_CREDENTIALS");
 
 
         ReplicaStatus GetReplicaStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return ReplicaStatus::CREATING;

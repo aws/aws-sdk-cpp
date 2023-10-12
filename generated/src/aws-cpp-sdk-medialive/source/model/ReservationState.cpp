@@ -20,15 +20,15 @@ namespace Aws
       namespace ReservationStateMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
-        static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("EXPIRED");
+        static constexpr uint32_t CANCELED_HASH = ConstExprHashingUtils::HashString("CANCELED");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         ReservationState GetReservationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return ReservationState::ACTIVE;

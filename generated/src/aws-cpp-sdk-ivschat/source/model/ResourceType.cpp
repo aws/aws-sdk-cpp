@@ -20,12 +20,12 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int ROOM_HASH = HashingUtils::HashString("ROOM");
+        static constexpr uint32_t ROOM_HASH = ConstExprHashingUtils::HashString("ROOM");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ROOM_HASH)
           {
             return ResourceType::ROOM;

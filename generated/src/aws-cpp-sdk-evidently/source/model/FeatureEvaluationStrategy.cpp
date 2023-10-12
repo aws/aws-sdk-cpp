@@ -20,13 +20,13 @@ namespace Aws
       namespace FeatureEvaluationStrategyMapper
       {
 
-        static const int ALL_RULES_HASH = HashingUtils::HashString("ALL_RULES");
-        static const int DEFAULT_VARIATION_HASH = HashingUtils::HashString("DEFAULT_VARIATION");
+        static constexpr uint32_t ALL_RULES_HASH = ConstExprHashingUtils::HashString("ALL_RULES");
+        static constexpr uint32_t DEFAULT_VARIATION_HASH = ConstExprHashingUtils::HashString("DEFAULT_VARIATION");
 
 
         FeatureEvaluationStrategy GetFeatureEvaluationStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_RULES_HASH)
           {
             return FeatureEvaluationStrategy::ALL_RULES;

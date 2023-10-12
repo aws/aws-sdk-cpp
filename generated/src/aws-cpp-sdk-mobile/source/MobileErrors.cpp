@@ -40,17 +40,17 @@ template<> AWS_MOBILE_API TooManyRequestsException MobileError::GetModeledError(
 namespace MobileErrorMapper
 {
 
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int ACCOUNT_ACTION_REQUIRED_HASH = HashingUtils::HashString("AccountActionRequiredException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
+static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NotFoundException");
+static constexpr uint32_t UNAUTHORIZED_HASH = ConstExprHashingUtils::HashString("UnauthorizedException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t TOO_MANY_REQUESTS_HASH = ConstExprHashingUtils::HashString("TooManyRequestsException");
+static constexpr uint32_t ACCOUNT_ACTION_REQUIRED_HASH = ConstExprHashingUtils::HashString("AccountActionRequiredException");
+static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BadRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == NOT_FOUND_HASH)
   {

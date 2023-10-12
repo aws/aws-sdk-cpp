@@ -20,17 +20,17 @@ namespace Aws
       namespace AgentHealthCodeMapper
       {
 
-        static const int IDLE_HASH = HashingUtils::HashString("IDLE");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int SHUTDOWN_HASH = HashingUtils::HashString("SHUTDOWN");
-        static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
-        static const int THROTTLED_HASH = HashingUtils::HashString("THROTTLED");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t IDLE_HASH = ConstExprHashingUtils::HashString("IDLE");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t SHUTDOWN_HASH = ConstExprHashingUtils::HashString("SHUTDOWN");
+        static constexpr uint32_t UNHEALTHY_HASH = ConstExprHashingUtils::HashString("UNHEALTHY");
+        static constexpr uint32_t THROTTLED_HASH = ConstExprHashingUtils::HashString("THROTTLED");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         AgentHealthCode GetAgentHealthCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IDLE_HASH)
           {
             return AgentHealthCode::IDLE;

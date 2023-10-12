@@ -20,13 +20,13 @@ namespace Aws
       namespace AuthorizationStrategyMapper
       {
 
-        static const int SMART_ON_FHIR_V1_HASH = HashingUtils::HashString("SMART_ON_FHIR_V1");
-        static const int AWS_AUTH_HASH = HashingUtils::HashString("AWS_AUTH");
+        static constexpr uint32_t SMART_ON_FHIR_V1_HASH = ConstExprHashingUtils::HashString("SMART_ON_FHIR_V1");
+        static constexpr uint32_t AWS_AUTH_HASH = ConstExprHashingUtils::HashString("AWS_AUTH");
 
 
         AuthorizationStrategy GetAuthorizationStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SMART_ON_FHIR_V1_HASH)
           {
             return AuthorizationStrategy::SMART_ON_FHIR_V1;

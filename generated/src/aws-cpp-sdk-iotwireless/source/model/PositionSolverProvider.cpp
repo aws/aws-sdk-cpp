@@ -20,12 +20,12 @@ namespace Aws
       namespace PositionSolverProviderMapper
       {
 
-        static const int Semtech_HASH = HashingUtils::HashString("Semtech");
+        static constexpr uint32_t Semtech_HASH = ConstExprHashingUtils::HashString("Semtech");
 
 
         PositionSolverProvider GetPositionSolverProviderForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Semtech_HASH)
           {
             return PositionSolverProvider::Semtech;

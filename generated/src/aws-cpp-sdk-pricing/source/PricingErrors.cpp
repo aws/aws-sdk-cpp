@@ -18,16 +18,16 @@ namespace Pricing
 namespace PricingErrorMapper
 {
 
-static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int EXPIRED_NEXT_TOKEN_HASH = HashingUtils::HashString("ExpiredNextTokenException");
+static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("InternalErrorException");
+static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NotFoundException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+static constexpr uint32_t EXPIRED_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("ExpiredNextTokenException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INTERNAL_ERROR_HASH)
   {

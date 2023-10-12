@@ -20,14 +20,14 @@ namespace Aws
       namespace ImageTypeValuesMapper
       {
 
-        static const int machine_HASH = HashingUtils::HashString("machine");
-        static const int kernel_HASH = HashingUtils::HashString("kernel");
-        static const int ramdisk_HASH = HashingUtils::HashString("ramdisk");
+        static constexpr uint32_t machine_HASH = ConstExprHashingUtils::HashString("machine");
+        static constexpr uint32_t kernel_HASH = ConstExprHashingUtils::HashString("kernel");
+        static constexpr uint32_t ramdisk_HASH = ConstExprHashingUtils::HashString("ramdisk");
 
 
         ImageTypeValues GetImageTypeValuesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == machine_HASH)
           {
             return ImageTypeValues::machine;

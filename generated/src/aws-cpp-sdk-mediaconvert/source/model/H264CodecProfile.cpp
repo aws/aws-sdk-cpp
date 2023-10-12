@@ -20,17 +20,17 @@ namespace Aws
       namespace H264CodecProfileMapper
       {
 
-        static const int BASELINE_HASH = HashingUtils::HashString("BASELINE");
-        static const int HIGH_HASH = HashingUtils::HashString("HIGH");
-        static const int HIGH_10BIT_HASH = HashingUtils::HashString("HIGH_10BIT");
-        static const int HIGH_422_HASH = HashingUtils::HashString("HIGH_422");
-        static const int HIGH_422_10BIT_HASH = HashingUtils::HashString("HIGH_422_10BIT");
-        static const int MAIN_HASH = HashingUtils::HashString("MAIN");
+        static constexpr uint32_t BASELINE_HASH = ConstExprHashingUtils::HashString("BASELINE");
+        static constexpr uint32_t HIGH_HASH = ConstExprHashingUtils::HashString("HIGH");
+        static constexpr uint32_t HIGH_10BIT_HASH = ConstExprHashingUtils::HashString("HIGH_10BIT");
+        static constexpr uint32_t HIGH_422_HASH = ConstExprHashingUtils::HashString("HIGH_422");
+        static constexpr uint32_t HIGH_422_10BIT_HASH = ConstExprHashingUtils::HashString("HIGH_422_10BIT");
+        static constexpr uint32_t MAIN_HASH = ConstExprHashingUtils::HashString("MAIN");
 
 
         H264CodecProfile GetH264CodecProfileForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BASELINE_HASH)
           {
             return H264CodecProfile::BASELINE;

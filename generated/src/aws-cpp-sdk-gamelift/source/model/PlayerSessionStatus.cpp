@@ -20,15 +20,15 @@ namespace Aws
       namespace PlayerSessionStatusMapper
       {
 
-        static const int RESERVED_HASH = HashingUtils::HashString("RESERVED");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int TIMEDOUT_HASH = HashingUtils::HashString("TIMEDOUT");
+        static constexpr uint32_t RESERVED_HASH = ConstExprHashingUtils::HashString("RESERVED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t TIMEDOUT_HASH = ConstExprHashingUtils::HashString("TIMEDOUT");
 
 
         PlayerSessionStatus GetPlayerSessionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESERVED_HASH)
           {
             return PlayerSessionStatus::RESERVED;

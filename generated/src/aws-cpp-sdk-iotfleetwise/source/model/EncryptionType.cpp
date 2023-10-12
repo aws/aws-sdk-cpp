@@ -20,13 +20,13 @@ namespace Aws
       namespace EncryptionTypeMapper
       {
 
-        static const int KMS_BASED_ENCRYPTION_HASH = HashingUtils::HashString("KMS_BASED_ENCRYPTION");
-        static const int FLEETWISE_DEFAULT_ENCRYPTION_HASH = HashingUtils::HashString("FLEETWISE_DEFAULT_ENCRYPTION");
+        static constexpr uint32_t KMS_BASED_ENCRYPTION_HASH = ConstExprHashingUtils::HashString("KMS_BASED_ENCRYPTION");
+        static constexpr uint32_t FLEETWISE_DEFAULT_ENCRYPTION_HASH = ConstExprHashingUtils::HashString("FLEETWISE_DEFAULT_ENCRYPTION");
 
 
         EncryptionType GetEncryptionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KMS_BASED_ENCRYPTION_HASH)
           {
             return EncryptionType::KMS_BASED_ENCRYPTION;

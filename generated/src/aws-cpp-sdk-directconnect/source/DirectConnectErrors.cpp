@@ -18,15 +18,15 @@ namespace DirectConnect
 namespace DirectConnectErrorMapper
 {
 
-static const int DUPLICATE_TAG_KEYS_HASH = HashingUtils::HashString("DuplicateTagKeysException");
-static const int DIRECT_CONNECT_CLIENT_HASH = HashingUtils::HashString("DirectConnectClientException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int DIRECT_CONNECT_SERVER_HASH = HashingUtils::HashString("DirectConnectServerException");
+static constexpr uint32_t DUPLICATE_TAG_KEYS_HASH = ConstExprHashingUtils::HashString("DuplicateTagKeysException");
+static constexpr uint32_t DIRECT_CONNECT_CLIENT_HASH = ConstExprHashingUtils::HashString("DirectConnectClientException");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t DIRECT_CONNECT_SERVER_HASH = ConstExprHashingUtils::HashString("DirectConnectServerException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == DUPLICATE_TAG_KEYS_HASH)
   {

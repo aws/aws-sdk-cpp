@@ -20,13 +20,13 @@ namespace Aws
       namespace DataSourceRunTypeMapper
       {
 
-        static const int PRIORITIZED_HASH = HashingUtils::HashString("PRIORITIZED");
-        static const int SCHEDULED_HASH = HashingUtils::HashString("SCHEDULED");
+        static constexpr uint32_t PRIORITIZED_HASH = ConstExprHashingUtils::HashString("PRIORITIZED");
+        static constexpr uint32_t SCHEDULED_HASH = ConstExprHashingUtils::HashString("SCHEDULED");
 
 
         DataSourceRunType GetDataSourceRunTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRIORITIZED_HASH)
           {
             return DataSourceRunType::PRIORITIZED;

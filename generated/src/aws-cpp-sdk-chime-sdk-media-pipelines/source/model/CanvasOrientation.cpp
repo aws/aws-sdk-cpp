@@ -20,13 +20,13 @@ namespace Aws
       namespace CanvasOrientationMapper
       {
 
-        static const int Landscape_HASH = HashingUtils::HashString("Landscape");
-        static const int Portrait_HASH = HashingUtils::HashString("Portrait");
+        static constexpr uint32_t Landscape_HASH = ConstExprHashingUtils::HashString("Landscape");
+        static constexpr uint32_t Portrait_HASH = ConstExprHashingUtils::HashString("Portrait");
 
 
         CanvasOrientation GetCanvasOrientationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Landscape_HASH)
           {
             return CanvasOrientation::Landscape;

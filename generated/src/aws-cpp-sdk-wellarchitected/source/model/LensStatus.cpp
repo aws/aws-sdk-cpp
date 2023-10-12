@@ -20,16 +20,16 @@ namespace Aws
       namespace LensStatusMapper
       {
 
-        static const int CURRENT_HASH = HashingUtils::HashString("CURRENT");
-        static const int NOT_CURRENT_HASH = HashingUtils::HashString("NOT_CURRENT");
-        static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int UNSHARED_HASH = HashingUtils::HashString("UNSHARED");
+        static constexpr uint32_t CURRENT_HASH = ConstExprHashingUtils::HashString("CURRENT");
+        static constexpr uint32_t NOT_CURRENT_HASH = ConstExprHashingUtils::HashString("NOT_CURRENT");
+        static constexpr uint32_t DEPRECATED_HASH = ConstExprHashingUtils::HashString("DEPRECATED");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t UNSHARED_HASH = ConstExprHashingUtils::HashString("UNSHARED");
 
 
         LensStatus GetLensStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CURRENT_HASH)
           {
             return LensStatus::CURRENT;

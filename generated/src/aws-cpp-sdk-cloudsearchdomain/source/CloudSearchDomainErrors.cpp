@@ -26,13 +26,13 @@ template<> AWS_CLOUDSEARCHDOMAIN_API DocumentServiceException CloudSearchDomainE
 namespace CloudSearchDomainErrorMapper
 {
 
-static const int DOCUMENT_SERVICE_HASH = HashingUtils::HashString("DocumentServiceException");
-static const int SEARCH_HASH = HashingUtils::HashString("SearchException");
+static constexpr uint32_t DOCUMENT_SERVICE_HASH = ConstExprHashingUtils::HashString("DocumentServiceException");
+static constexpr uint32_t SEARCH_HASH = ConstExprHashingUtils::HashString("SearchException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == DOCUMENT_SERVICE_HASH)
   {

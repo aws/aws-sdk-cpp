@@ -20,14 +20,14 @@ namespace Aws
       namespace OAuthFlowTypeMapper
       {
 
-        static const int code_HASH = HashingUtils::HashString("code");
-        static const int implicit_HASH = HashingUtils::HashString("implicit");
-        static const int client_credentials_HASH = HashingUtils::HashString("client_credentials");
+        static constexpr uint32_t code_HASH = ConstExprHashingUtils::HashString("code");
+        static constexpr uint32_t implicit_HASH = ConstExprHashingUtils::HashString("implicit");
+        static constexpr uint32_t client_credentials_HASH = ConstExprHashingUtils::HashString("client_credentials");
 
 
         OAuthFlowType GetOAuthFlowTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == code_HASH)
           {
             return OAuthFlowType::code;

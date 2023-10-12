@@ -20,13 +20,13 @@ namespace Aws
       namespace GlobalConfigurationInputEndActionMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int SWITCH_AND_LOOP_INPUTS_HASH = HashingUtils::HashString("SWITCH_AND_LOOP_INPUTS");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t SWITCH_AND_LOOP_INPUTS_HASH = ConstExprHashingUtils::HashString("SWITCH_AND_LOOP_INPUTS");
 
 
         GlobalConfigurationInputEndAction GetGlobalConfigurationInputEndActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return GlobalConfigurationInputEndAction::NONE;

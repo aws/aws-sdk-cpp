@@ -20,13 +20,13 @@ namespace Aws
       namespace DefaultRouteTableAssociationValueMapper
       {
 
-        static const int enable_HASH = HashingUtils::HashString("enable");
-        static const int disable_HASH = HashingUtils::HashString("disable");
+        static constexpr uint32_t enable_HASH = ConstExprHashingUtils::HashString("enable");
+        static constexpr uint32_t disable_HASH = ConstExprHashingUtils::HashString("disable");
 
 
         DefaultRouteTableAssociationValue GetDefaultRouteTableAssociationValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == enable_HASH)
           {
             return DefaultRouteTableAssociationValue::enable;

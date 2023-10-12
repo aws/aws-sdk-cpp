@@ -20,14 +20,14 @@ namespace Aws
       namespace MembershipStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int REMOVED_HASH = HashingUtils::HashString("REMOVED");
-        static const int COLLABORATION_DELETED_HASH = HashingUtils::HashString("COLLABORATION_DELETED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t REMOVED_HASH = ConstExprHashingUtils::HashString("REMOVED");
+        static constexpr uint32_t COLLABORATION_DELETED_HASH = ConstExprHashingUtils::HashString("COLLABORATION_DELETED");
 
 
         MembershipStatus GetMembershipStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return MembershipStatus::ACTIVE;

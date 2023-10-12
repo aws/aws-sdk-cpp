@@ -20,14 +20,14 @@ namespace Aws
       namespace DirectConnectGatewayAssociationProposalStateMapper
       {
 
-        static const int requested_HASH = HashingUtils::HashString("requested");
-        static const int accepted_HASH = HashingUtils::HashString("accepted");
-        static const int deleted_HASH = HashingUtils::HashString("deleted");
+        static constexpr uint32_t requested_HASH = ConstExprHashingUtils::HashString("requested");
+        static constexpr uint32_t accepted_HASH = ConstExprHashingUtils::HashString("accepted");
+        static constexpr uint32_t deleted_HASH = ConstExprHashingUtils::HashString("deleted");
 
 
         DirectConnectGatewayAssociationProposalState GetDirectConnectGatewayAssociationProposalStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == requested_HASH)
           {
             return DirectConnectGatewayAssociationProposalState::requested;

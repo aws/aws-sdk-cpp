@@ -20,14 +20,14 @@ namespace Aws
       namespace ModificationResourceEnumMapper
       {
 
-        static const int ROOT_VOLUME_HASH = HashingUtils::HashString("ROOT_VOLUME");
-        static const int USER_VOLUME_HASH = HashingUtils::HashString("USER_VOLUME");
-        static const int COMPUTE_TYPE_HASH = HashingUtils::HashString("COMPUTE_TYPE");
+        static constexpr uint32_t ROOT_VOLUME_HASH = ConstExprHashingUtils::HashString("ROOT_VOLUME");
+        static constexpr uint32_t USER_VOLUME_HASH = ConstExprHashingUtils::HashString("USER_VOLUME");
+        static constexpr uint32_t COMPUTE_TYPE_HASH = ConstExprHashingUtils::HashString("COMPUTE_TYPE");
 
 
         ModificationResourceEnum GetModificationResourceEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ROOT_VOLUME_HASH)
           {
             return ModificationResourceEnum::ROOT_VOLUME;

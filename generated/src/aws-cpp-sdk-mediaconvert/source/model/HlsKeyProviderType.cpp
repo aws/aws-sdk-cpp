@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsKeyProviderTypeMapper
       {
 
-        static const int SPEKE_HASH = HashingUtils::HashString("SPEKE");
-        static const int STATIC_KEY_HASH = HashingUtils::HashString("STATIC_KEY");
+        static constexpr uint32_t SPEKE_HASH = ConstExprHashingUtils::HashString("SPEKE");
+        static constexpr uint32_t STATIC_KEY_HASH = ConstExprHashingUtils::HashString("STATIC_KEY");
 
 
         HlsKeyProviderType GetHlsKeyProviderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SPEKE_HASH)
           {
             return HlsKeyProviderType::SPEKE;

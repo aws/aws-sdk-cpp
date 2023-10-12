@@ -20,13 +20,13 @@ namespace Aws
       namespace NetworkInterfaceTypeMapper
       {
 
-        static const int CAN_INTERFACE_HASH = HashingUtils::HashString("CAN_INTERFACE");
-        static const int OBD_INTERFACE_HASH = HashingUtils::HashString("OBD_INTERFACE");
+        static constexpr uint32_t CAN_INTERFACE_HASH = ConstExprHashingUtils::HashString("CAN_INTERFACE");
+        static constexpr uint32_t OBD_INTERFACE_HASH = ConstExprHashingUtils::HashString("OBD_INTERFACE");
 
 
         NetworkInterfaceType GetNetworkInterfaceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CAN_INTERFACE_HASH)
           {
             return NetworkInterfaceType::CAN_INTERFACE;

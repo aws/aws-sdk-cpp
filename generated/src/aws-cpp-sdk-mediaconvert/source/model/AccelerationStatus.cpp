@@ -20,15 +20,15 @@ namespace Aws
       namespace AccelerationStatusMapper
       {
 
-        static const int NOT_APPLICABLE_HASH = HashingUtils::HashString("NOT_APPLICABLE");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int ACCELERATED_HASH = HashingUtils::HashString("ACCELERATED");
-        static const int NOT_ACCELERATED_HASH = HashingUtils::HashString("NOT_ACCELERATED");
+        static constexpr uint32_t NOT_APPLICABLE_HASH = ConstExprHashingUtils::HashString("NOT_APPLICABLE");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t ACCELERATED_HASH = ConstExprHashingUtils::HashString("ACCELERATED");
+        static constexpr uint32_t NOT_ACCELERATED_HASH = ConstExprHashingUtils::HashString("NOT_ACCELERATED");
 
 
         AccelerationStatus GetAccelerationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOT_APPLICABLE_HASH)
           {
             return AccelerationStatus::NOT_APPLICABLE;

@@ -20,14 +20,14 @@ namespace Aws
       namespace RoleMapper
       {
 
-        static const int ADMIN_HASH = HashingUtils::HashString("ADMIN");
-        static const int EDITOR_HASH = HashingUtils::HashString("EDITOR");
-        static const int VIEWER_HASH = HashingUtils::HashString("VIEWER");
+        static constexpr uint32_t ADMIN_HASH = ConstExprHashingUtils::HashString("ADMIN");
+        static constexpr uint32_t EDITOR_HASH = ConstExprHashingUtils::HashString("EDITOR");
+        static constexpr uint32_t VIEWER_HASH = ConstExprHashingUtils::HashString("VIEWER");
 
 
         Role GetRoleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADMIN_HASH)
           {
             return Role::ADMIN;

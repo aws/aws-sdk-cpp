@@ -20,30 +20,30 @@ namespace Aws
       namespace PatchFilterKeyMapper
       {
 
-        static const int ARCH_HASH = HashingUtils::HashString("ARCH");
-        static const int ADVISORY_ID_HASH = HashingUtils::HashString("ADVISORY_ID");
-        static const int BUGZILLA_ID_HASH = HashingUtils::HashString("BUGZILLA_ID");
-        static const int PATCH_SET_HASH = HashingUtils::HashString("PATCH_SET");
-        static const int PRODUCT_HASH = HashingUtils::HashString("PRODUCT");
-        static const int PRODUCT_FAMILY_HASH = HashingUtils::HashString("PRODUCT_FAMILY");
-        static const int CLASSIFICATION_HASH = HashingUtils::HashString("CLASSIFICATION");
-        static const int CVE_ID_HASH = HashingUtils::HashString("CVE_ID");
-        static const int EPOCH_HASH = HashingUtils::HashString("EPOCH");
-        static const int MSRC_SEVERITY_HASH = HashingUtils::HashString("MSRC_SEVERITY");
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int PATCH_ID_HASH = HashingUtils::HashString("PATCH_ID");
-        static const int SECTION_HASH = HashingUtils::HashString("SECTION");
-        static const int PRIORITY_HASH = HashingUtils::HashString("PRIORITY");
-        static const int REPOSITORY_HASH = HashingUtils::HashString("REPOSITORY");
-        static const int RELEASE_HASH = HashingUtils::HashString("RELEASE");
-        static const int SEVERITY_HASH = HashingUtils::HashString("SEVERITY");
-        static const int SECURITY_HASH = HashingUtils::HashString("SECURITY");
-        static const int VERSION_HASH = HashingUtils::HashString("VERSION");
+        static constexpr uint32_t ARCH_HASH = ConstExprHashingUtils::HashString("ARCH");
+        static constexpr uint32_t ADVISORY_ID_HASH = ConstExprHashingUtils::HashString("ADVISORY_ID");
+        static constexpr uint32_t BUGZILLA_ID_HASH = ConstExprHashingUtils::HashString("BUGZILLA_ID");
+        static constexpr uint32_t PATCH_SET_HASH = ConstExprHashingUtils::HashString("PATCH_SET");
+        static constexpr uint32_t PRODUCT_HASH = ConstExprHashingUtils::HashString("PRODUCT");
+        static constexpr uint32_t PRODUCT_FAMILY_HASH = ConstExprHashingUtils::HashString("PRODUCT_FAMILY");
+        static constexpr uint32_t CLASSIFICATION_HASH = ConstExprHashingUtils::HashString("CLASSIFICATION");
+        static constexpr uint32_t CVE_ID_HASH = ConstExprHashingUtils::HashString("CVE_ID");
+        static constexpr uint32_t EPOCH_HASH = ConstExprHashingUtils::HashString("EPOCH");
+        static constexpr uint32_t MSRC_SEVERITY_HASH = ConstExprHashingUtils::HashString("MSRC_SEVERITY");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t PATCH_ID_HASH = ConstExprHashingUtils::HashString("PATCH_ID");
+        static constexpr uint32_t SECTION_HASH = ConstExprHashingUtils::HashString("SECTION");
+        static constexpr uint32_t PRIORITY_HASH = ConstExprHashingUtils::HashString("PRIORITY");
+        static constexpr uint32_t REPOSITORY_HASH = ConstExprHashingUtils::HashString("REPOSITORY");
+        static constexpr uint32_t RELEASE_HASH = ConstExprHashingUtils::HashString("RELEASE");
+        static constexpr uint32_t SEVERITY_HASH = ConstExprHashingUtils::HashString("SEVERITY");
+        static constexpr uint32_t SECURITY_HASH = ConstExprHashingUtils::HashString("SECURITY");
+        static constexpr uint32_t VERSION_HASH = ConstExprHashingUtils::HashString("VERSION");
 
 
         PatchFilterKey GetPatchFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ARCH_HASH)
           {
             return PatchFilterKey::ARCH;

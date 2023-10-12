@@ -20,17 +20,17 @@ namespace Aws
       namespace ImportTaskStatusMapper
       {
 
-        static const int INITIALIZING_HASH = HashingUtils::HashString("INITIALIZING");
-        static const int INITIALIZED_HASH = HashingUtils::HashString("INITIALIZED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static constexpr uint32_t INITIALIZING_HASH = ConstExprHashingUtils::HashString("INITIALIZING");
+        static constexpr uint32_t INITIALIZED_HASH = ConstExprHashingUtils::HashString("INITIALIZED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t COMPLETE_HASH = ConstExprHashingUtils::HashString("COMPLETE");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
 
 
         ImportTaskStatus GetImportTaskStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INITIALIZING_HASH)
           {
             return ImportTaskStatus::INITIALIZING;

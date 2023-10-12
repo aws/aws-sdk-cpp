@@ -20,12 +20,12 @@ namespace Aws
       namespace CredentialTypeMapper
       {
 
-        static const int ADMIN_HASH = HashingUtils::HashString("ADMIN");
+        static constexpr uint32_t ADMIN_HASH = ConstExprHashingUtils::HashString("ADMIN");
 
 
         CredentialType GetCredentialTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADMIN_HASH)
           {
             return CredentialType::ADMIN;

@@ -20,13 +20,13 @@ namespace Aws
       namespace RetentionTypeMapper
       {
 
-        static const int Retain_HASH = HashingUtils::HashString("Retain");
-        static const int Delete_HASH = HashingUtils::HashString("Delete");
+        static constexpr uint32_t Retain_HASH = ConstExprHashingUtils::HashString("Retain");
+        static constexpr uint32_t Delete_HASH = ConstExprHashingUtils::HashString("Delete");
 
 
         RetentionType GetRetentionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Retain_HASH)
           {
             return RetentionType::Retain;

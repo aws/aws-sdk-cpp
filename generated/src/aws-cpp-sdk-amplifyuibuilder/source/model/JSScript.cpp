@@ -20,14 +20,14 @@ namespace Aws
       namespace JSScriptMapper
       {
 
-        static const int jsx_HASH = HashingUtils::HashString("jsx");
-        static const int tsx_HASH = HashingUtils::HashString("tsx");
-        static const int js_HASH = HashingUtils::HashString("js");
+        static constexpr uint32_t jsx_HASH = ConstExprHashingUtils::HashString("jsx");
+        static constexpr uint32_t tsx_HASH = ConstExprHashingUtils::HashString("tsx");
+        static constexpr uint32_t js_HASH = ConstExprHashingUtils::HashString("js");
 
 
         JSScript GetJSScriptForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == jsx_HASH)
           {
             return JSScript::jsx;

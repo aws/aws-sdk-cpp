@@ -20,12 +20,12 @@ namespace Aws
       namespace JobReportFormatMapper
       {
 
-        static const int Report_CSV_20180820_HASH = HashingUtils::HashString("Report_CSV_20180820");
+        static constexpr uint32_t Report_CSV_20180820_HASH = ConstExprHashingUtils::HashString("Report_CSV_20180820");
 
 
         JobReportFormat GetJobReportFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Report_CSV_20180820_HASH)
           {
             return JobReportFormat::Report_CSV_20180820;

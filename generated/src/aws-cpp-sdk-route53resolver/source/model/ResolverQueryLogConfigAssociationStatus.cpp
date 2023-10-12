@@ -20,16 +20,16 @@ namespace Aws
       namespace ResolverQueryLogConfigAssociationStatusMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int ACTION_NEEDED_HASH = HashingUtils::HashString("ACTION_NEEDED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t ACTION_NEEDED_HASH = ConstExprHashingUtils::HashString("ACTION_NEEDED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         ResolverQueryLogConfigAssociationStatus GetResolverQueryLogConfigAssociationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return ResolverQueryLogConfigAssociationStatus::CREATING;

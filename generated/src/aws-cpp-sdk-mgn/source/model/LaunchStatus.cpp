@@ -20,16 +20,16 @@ namespace Aws
       namespace LaunchStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int LAUNCHED_HASH = HashingUtils::HashString("LAUNCHED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t LAUNCHED_HASH = ConstExprHashingUtils::HashString("LAUNCHED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t TERMINATED_HASH = ConstExprHashingUtils::HashString("TERMINATED");
 
 
         LaunchStatus GetLaunchStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return LaunchStatus::PENDING;

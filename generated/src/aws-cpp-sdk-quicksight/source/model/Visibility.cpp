@@ -20,13 +20,13 @@ namespace Aws
       namespace VisibilityMapper
       {
 
-        static const int HIDDEN_HASH = HashingUtils::HashString("HIDDEN");
-        static const int VISIBLE_HASH = HashingUtils::HashString("VISIBLE");
+        static constexpr uint32_t HIDDEN_HASH = ConstExprHashingUtils::HashString("HIDDEN");
+        static constexpr uint32_t VISIBLE_HASH = ConstExprHashingUtils::HashString("VISIBLE");
 
 
         Visibility GetVisibilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HIDDEN_HASH)
           {
             return Visibility::HIDDEN;

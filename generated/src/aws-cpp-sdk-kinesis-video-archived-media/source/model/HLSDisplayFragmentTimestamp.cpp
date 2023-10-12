@@ -20,13 +20,13 @@ namespace Aws
       namespace HLSDisplayFragmentTimestampMapper
       {
 
-        static const int ALWAYS_HASH = HashingUtils::HashString("ALWAYS");
-        static const int NEVER_HASH = HashingUtils::HashString("NEVER");
+        static constexpr uint32_t ALWAYS_HASH = ConstExprHashingUtils::HashString("ALWAYS");
+        static constexpr uint32_t NEVER_HASH = ConstExprHashingUtils::HashString("NEVER");
 
 
         HLSDisplayFragmentTimestamp GetHLSDisplayFragmentTimestampForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALWAYS_HASH)
           {
             return HLSDisplayFragmentTimestamp::ALWAYS;

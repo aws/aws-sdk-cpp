@@ -20,13 +20,13 @@ namespace Aws
       namespace BaseModelNameMapper
       {
 
-        static const int NarrowBand_HASH = HashingUtils::HashString("NarrowBand");
-        static const int WideBand_HASH = HashingUtils::HashString("WideBand");
+        static constexpr uint32_t NarrowBand_HASH = ConstExprHashingUtils::HashString("NarrowBand");
+        static constexpr uint32_t WideBand_HASH = ConstExprHashingUtils::HashString("WideBand");
 
 
         BaseModelName GetBaseModelNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NarrowBand_HASH)
           {
             return BaseModelName::NarrowBand;

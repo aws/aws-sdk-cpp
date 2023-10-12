@@ -20,13 +20,13 @@ namespace Aws
       namespace CancelTimerFailedCauseMapper
       {
 
-        static const int TIMER_ID_UNKNOWN_HASH = HashingUtils::HashString("TIMER_ID_UNKNOWN");
-        static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERATION_NOT_PERMITTED");
+        static constexpr uint32_t TIMER_ID_UNKNOWN_HASH = ConstExprHashingUtils::HashString("TIMER_ID_UNKNOWN");
+        static constexpr uint32_t OPERATION_NOT_PERMITTED_HASH = ConstExprHashingUtils::HashString("OPERATION_NOT_PERMITTED");
 
 
         CancelTimerFailedCause GetCancelTimerFailedCauseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TIMER_ID_UNKNOWN_HASH)
           {
             return CancelTimerFailedCause::TIMER_ID_UNKNOWN;

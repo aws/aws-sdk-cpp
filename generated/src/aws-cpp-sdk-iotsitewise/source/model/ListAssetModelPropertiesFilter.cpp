@@ -20,13 +20,13 @@ namespace Aws
       namespace ListAssetModelPropertiesFilterMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int BASE_HASH = HashingUtils::HashString("BASE");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t BASE_HASH = ConstExprHashingUtils::HashString("BASE");
 
 
         ListAssetModelPropertiesFilter GetListAssetModelPropertiesFilterForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return ListAssetModelPropertiesFilter::ALL;

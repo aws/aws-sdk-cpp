@@ -20,13 +20,13 @@ namespace Aws
       namespace TableFormatMapper
       {
 
-        static const int Glue_HASH = HashingUtils::HashString("Glue");
-        static const int Iceberg_HASH = HashingUtils::HashString("Iceberg");
+        static constexpr uint32_t Glue_HASH = ConstExprHashingUtils::HashString("Glue");
+        static constexpr uint32_t Iceberg_HASH = ConstExprHashingUtils::HashString("Iceberg");
 
 
         TableFormat GetTableFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Glue_HASH)
           {
             return TableFormat::Glue;

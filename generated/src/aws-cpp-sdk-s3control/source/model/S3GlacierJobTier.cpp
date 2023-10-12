@@ -20,13 +20,13 @@ namespace Aws
       namespace S3GlacierJobTierMapper
       {
 
-        static const int BULK_HASH = HashingUtils::HashString("BULK");
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
+        static constexpr uint32_t BULK_HASH = ConstExprHashingUtils::HashString("BULK");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
 
 
         S3GlacierJobTier GetS3GlacierJobTierForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BULK_HASH)
           {
             return S3GlacierJobTier::BULK;

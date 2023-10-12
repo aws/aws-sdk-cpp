@@ -20,13 +20,13 @@ namespace Aws
       namespace CaseSensitivityMapper
       {
 
-        static const int ClientSpecified_HASH = HashingUtils::HashString("ClientSpecified");
-        static const int CaseSensitive_HASH = HashingUtils::HashString("CaseSensitive");
+        static constexpr uint32_t ClientSpecified_HASH = ConstExprHashingUtils::HashString("ClientSpecified");
+        static constexpr uint32_t CaseSensitive_HASH = ConstExprHashingUtils::HashString("CaseSensitive");
 
 
         CaseSensitivity GetCaseSensitivityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ClientSpecified_HASH)
           {
             return CaseSensitivity::ClientSpecified;

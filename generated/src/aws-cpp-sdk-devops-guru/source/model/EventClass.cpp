@@ -20,16 +20,16 @@ namespace Aws
       namespace EventClassMapper
       {
 
-        static const int INFRASTRUCTURE_HASH = HashingUtils::HashString("INFRASTRUCTURE");
-        static const int DEPLOYMENT_HASH = HashingUtils::HashString("DEPLOYMENT");
-        static const int SECURITY_CHANGE_HASH = HashingUtils::HashString("SECURITY_CHANGE");
-        static const int CONFIG_CHANGE_HASH = HashingUtils::HashString("CONFIG_CHANGE");
-        static const int SCHEMA_CHANGE_HASH = HashingUtils::HashString("SCHEMA_CHANGE");
+        static constexpr uint32_t INFRASTRUCTURE_HASH = ConstExprHashingUtils::HashString("INFRASTRUCTURE");
+        static constexpr uint32_t DEPLOYMENT_HASH = ConstExprHashingUtils::HashString("DEPLOYMENT");
+        static constexpr uint32_t SECURITY_CHANGE_HASH = ConstExprHashingUtils::HashString("SECURITY_CHANGE");
+        static constexpr uint32_t CONFIG_CHANGE_HASH = ConstExprHashingUtils::HashString("CONFIG_CHANGE");
+        static constexpr uint32_t SCHEMA_CHANGE_HASH = ConstExprHashingUtils::HashString("SCHEMA_CHANGE");
 
 
         EventClass GetEventClassForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INFRASTRUCTURE_HASH)
           {
             return EventClass::INFRASTRUCTURE;

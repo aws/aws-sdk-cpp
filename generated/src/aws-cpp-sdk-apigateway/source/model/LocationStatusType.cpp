@@ -20,13 +20,13 @@ namespace Aws
       namespace LocationStatusTypeMapper
       {
 
-        static const int DOCUMENTED_HASH = HashingUtils::HashString("DOCUMENTED");
-        static const int UNDOCUMENTED_HASH = HashingUtils::HashString("UNDOCUMENTED");
+        static constexpr uint32_t DOCUMENTED_HASH = ConstExprHashingUtils::HashString("DOCUMENTED");
+        static constexpr uint32_t UNDOCUMENTED_HASH = ConstExprHashingUtils::HashString("UNDOCUMENTED");
 
 
         LocationStatusType GetLocationStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DOCUMENTED_HASH)
           {
             return LocationStatusType::DOCUMENTED;

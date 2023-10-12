@@ -20,15 +20,15 @@ namespace Aws
       namespace OperationMapper
       {
 
-        static const int ADD_HASH = HashingUtils::HashString("ADD");
-        static const int SUBTRACT_HASH = HashingUtils::HashString("SUBTRACT");
-        static const int MULTIPLY_HASH = HashingUtils::HashString("MULTIPLY");
-        static const int DIVIDE_HASH = HashingUtils::HashString("DIVIDE");
+        static constexpr uint32_t ADD_HASH = ConstExprHashingUtils::HashString("ADD");
+        static constexpr uint32_t SUBTRACT_HASH = ConstExprHashingUtils::HashString("SUBTRACT");
+        static constexpr uint32_t MULTIPLY_HASH = ConstExprHashingUtils::HashString("MULTIPLY");
+        static constexpr uint32_t DIVIDE_HASH = ConstExprHashingUtils::HashString("DIVIDE");
 
 
         Operation GetOperationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADD_HASH)
           {
             return Operation::ADD;

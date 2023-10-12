@@ -20,17 +20,17 @@ namespace Aws
       namespace FileFormatMapper
       {
 
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
-        static const int TSV_HASH = HashingUtils::HashString("TSV");
-        static const int CLF_HASH = HashingUtils::HashString("CLF");
-        static const int ELF_HASH = HashingUtils::HashString("ELF");
-        static const int XLSX_HASH = HashingUtils::HashString("XLSX");
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
+        static constexpr uint32_t CSV_HASH = ConstExprHashingUtils::HashString("CSV");
+        static constexpr uint32_t TSV_HASH = ConstExprHashingUtils::HashString("TSV");
+        static constexpr uint32_t CLF_HASH = ConstExprHashingUtils::HashString("CLF");
+        static constexpr uint32_t ELF_HASH = ConstExprHashingUtils::HashString("ELF");
+        static constexpr uint32_t XLSX_HASH = ConstExprHashingUtils::HashString("XLSX");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
 
 
         FileFormat GetFileFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CSV_HASH)
           {
             return FileFormat::CSV;

@@ -20,15 +20,15 @@ namespace Aws
       namespace RateBasedStatementAggregateKeyTypeMapper
       {
 
-        static const int IP_HASH = HashingUtils::HashString("IP");
-        static const int FORWARDED_IP_HASH = HashingUtils::HashString("FORWARDED_IP");
-        static const int CUSTOM_KEYS_HASH = HashingUtils::HashString("CUSTOM_KEYS");
-        static const int CONSTANT_HASH = HashingUtils::HashString("CONSTANT");
+        static constexpr uint32_t IP_HASH = ConstExprHashingUtils::HashString("IP");
+        static constexpr uint32_t FORWARDED_IP_HASH = ConstExprHashingUtils::HashString("FORWARDED_IP");
+        static constexpr uint32_t CUSTOM_KEYS_HASH = ConstExprHashingUtils::HashString("CUSTOM_KEYS");
+        static constexpr uint32_t CONSTANT_HASH = ConstExprHashingUtils::HashString("CONSTANT");
 
 
         RateBasedStatementAggregateKeyType GetRateBasedStatementAggregateKeyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IP_HASH)
           {
             return RateBasedStatementAggregateKeyType::IP;

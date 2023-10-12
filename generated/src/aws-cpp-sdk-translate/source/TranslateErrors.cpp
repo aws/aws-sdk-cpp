@@ -47,23 +47,23 @@ template<> AWS_TRANSLATE_API TooManyTagsException TranslateError::GetModeledErro
 namespace TranslateErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int UNSUPPORTED_LANGUAGE_PAIR_HASH = HashingUtils::HashString("UnsupportedLanguagePairException");
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int DETECTED_LANGUAGE_LOW_CONFIDENCE_HASH = HashingUtils::HashString("DetectedLanguageLowConfidenceException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int UNSUPPORTED_DISPLAY_LANGUAGE_CODE_HASH = HashingUtils::HashString("UnsupportedDisplayLanguageCodeException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int INVALID_FILTER_HASH = HashingUtils::HashString("InvalidFilterException");
-static const int TEXT_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TextSizeLimitExceededException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t UNSUPPORTED_LANGUAGE_PAIR_HASH = ConstExprHashingUtils::HashString("UnsupportedLanguagePairException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
+static constexpr uint32_t DETECTED_LANGUAGE_LOW_CONFIDENCE_HASH = ConstExprHashingUtils::HashString("DetectedLanguageLowConfidenceException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t UNSUPPORTED_DISPLAY_LANGUAGE_CODE_HASH = ConstExprHashingUtils::HashString("UnsupportedDisplayLanguageCodeException");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t TOO_MANY_REQUESTS_HASH = ConstExprHashingUtils::HashString("TooManyRequestsException");
+static constexpr uint32_t INVALID_FILTER_HASH = ConstExprHashingUtils::HashString("InvalidFilterException");
+static constexpr uint32_t TEXT_SIZE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("TextSizeLimitExceededException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

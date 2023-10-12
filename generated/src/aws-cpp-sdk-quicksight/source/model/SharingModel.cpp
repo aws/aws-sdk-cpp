@@ -20,13 +20,13 @@ namespace Aws
       namespace SharingModelMapper
       {
 
-        static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
-        static const int NAMESPACE_HASH = HashingUtils::HashString("NAMESPACE");
+        static constexpr uint32_t ACCOUNT_HASH = ConstExprHashingUtils::HashString("ACCOUNT");
+        static constexpr uint32_t NAMESPACE_HASH = ConstExprHashingUtils::HashString("NAMESPACE");
 
 
         SharingModel GetSharingModelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCOUNT_HASH)
           {
             return SharingModel::ACCOUNT;

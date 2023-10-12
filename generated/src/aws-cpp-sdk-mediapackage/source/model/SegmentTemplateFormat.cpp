@@ -20,14 +20,14 @@ namespace Aws
       namespace SegmentTemplateFormatMapper
       {
 
-        static const int NUMBER_WITH_TIMELINE_HASH = HashingUtils::HashString("NUMBER_WITH_TIMELINE");
-        static const int TIME_WITH_TIMELINE_HASH = HashingUtils::HashString("TIME_WITH_TIMELINE");
-        static const int NUMBER_WITH_DURATION_HASH = HashingUtils::HashString("NUMBER_WITH_DURATION");
+        static constexpr uint32_t NUMBER_WITH_TIMELINE_HASH = ConstExprHashingUtils::HashString("NUMBER_WITH_TIMELINE");
+        static constexpr uint32_t TIME_WITH_TIMELINE_HASH = ConstExprHashingUtils::HashString("TIME_WITH_TIMELINE");
+        static constexpr uint32_t NUMBER_WITH_DURATION_HASH = ConstExprHashingUtils::HashString("NUMBER_WITH_DURATION");
 
 
         SegmentTemplateFormat GetSegmentTemplateFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NUMBER_WITH_TIMELINE_HASH)
           {
             return SegmentTemplateFormat::NUMBER_WITH_TIMELINE;

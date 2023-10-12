@@ -20,13 +20,13 @@ namespace Aws
       namespace EffectMapper
       {
 
-        static const int Allow_HASH = HashingUtils::HashString("Allow");
-        static const int Deny_HASH = HashingUtils::HashString("Deny");
+        static constexpr uint32_t Allow_HASH = ConstExprHashingUtils::HashString("Allow");
+        static constexpr uint32_t Deny_HASH = ConstExprHashingUtils::HashString("Deny");
 
 
         Effect GetEffectForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Allow_HASH)
           {
             return Effect::Allow;

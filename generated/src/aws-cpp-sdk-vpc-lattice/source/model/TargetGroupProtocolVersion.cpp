@@ -20,14 +20,14 @@ namespace Aws
       namespace TargetGroupProtocolVersionMapper
       {
 
-        static const int HTTP1_HASH = HashingUtils::HashString("HTTP1");
-        static const int HTTP2_HASH = HashingUtils::HashString("HTTP2");
-        static const int GRPC_HASH = HashingUtils::HashString("GRPC");
+        static constexpr uint32_t HTTP1_HASH = ConstExprHashingUtils::HashString("HTTP1");
+        static constexpr uint32_t HTTP2_HASH = ConstExprHashingUtils::HashString("HTTP2");
+        static constexpr uint32_t GRPC_HASH = ConstExprHashingUtils::HashString("GRPC");
 
 
         TargetGroupProtocolVersion GetTargetGroupProtocolVersionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HTTP1_HASH)
           {
             return TargetGroupProtocolVersion::HTTP1;

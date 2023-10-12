@@ -20,12 +20,12 @@ namespace Aws
       namespace CommitmentMapper
       {
 
-        static const int ONE_YEAR_HASH = HashingUtils::HashString("ONE_YEAR");
+        static constexpr uint32_t ONE_YEAR_HASH = ConstExprHashingUtils::HashString("ONE_YEAR");
 
 
         Commitment GetCommitmentForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ONE_YEAR_HASH)
           {
             return Commitment::ONE_YEAR;

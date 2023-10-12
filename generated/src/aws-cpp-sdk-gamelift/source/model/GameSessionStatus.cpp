@@ -20,16 +20,16 @@ namespace Aws
       namespace GameSessionStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int ACTIVATING_HASH = HashingUtils::HashString("ACTIVATING");
-        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
-        static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t ACTIVATING_HASH = ConstExprHashingUtils::HashString("ACTIVATING");
+        static constexpr uint32_t TERMINATED_HASH = ConstExprHashingUtils::HashString("TERMINATED");
+        static constexpr uint32_t TERMINATING_HASH = ConstExprHashingUtils::HashString("TERMINATING");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         GameSessionStatus GetGameSessionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return GameSessionStatus::ACTIVE;

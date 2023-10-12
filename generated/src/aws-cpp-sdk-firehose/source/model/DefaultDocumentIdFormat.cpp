@@ -20,13 +20,13 @@ namespace Aws
       namespace DefaultDocumentIdFormatMapper
       {
 
-        static const int FIREHOSE_DEFAULT_HASH = HashingUtils::HashString("FIREHOSE_DEFAULT");
-        static const int NO_DOCUMENT_ID_HASH = HashingUtils::HashString("NO_DOCUMENT_ID");
+        static constexpr uint32_t FIREHOSE_DEFAULT_HASH = ConstExprHashingUtils::HashString("FIREHOSE_DEFAULT");
+        static constexpr uint32_t NO_DOCUMENT_ID_HASH = ConstExprHashingUtils::HashString("NO_DOCUMENT_ID");
 
 
         DefaultDocumentIdFormat GetDefaultDocumentIdFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FIREHOSE_DEFAULT_HASH)
           {
             return DefaultDocumentIdFormat::FIREHOSE_DEFAULT;

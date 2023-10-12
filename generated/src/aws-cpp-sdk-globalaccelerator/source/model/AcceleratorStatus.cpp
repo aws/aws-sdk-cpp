@@ -20,13 +20,13 @@ namespace Aws
       namespace AcceleratorStatusMapper
       {
 
-        static const int DEPLOYED_HASH = HashingUtils::HashString("DEPLOYED");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t DEPLOYED_HASH = ConstExprHashingUtils::HashString("DEPLOYED");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
 
 
         AcceleratorStatus GetAcceleratorStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEPLOYED_HASH)
           {
             return AcceleratorStatus::DEPLOYED;

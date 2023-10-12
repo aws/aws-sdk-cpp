@@ -20,12 +20,12 @@ namespace Aws
       namespace ServiceFilterNameMapper
       {
 
-        static const int NAMESPACE_ID_HASH = HashingUtils::HashString("NAMESPACE_ID");
+        static constexpr uint32_t NAMESPACE_ID_HASH = ConstExprHashingUtils::HashString("NAMESPACE_ID");
 
 
         ServiceFilterName GetServiceFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NAMESPACE_ID_HASH)
           {
             return ServiceFilterName::NAMESPACE_ID;

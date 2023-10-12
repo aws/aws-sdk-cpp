@@ -20,16 +20,16 @@ namespace Aws
       namespace OptimizationMetricMapper
       {
 
-        static const int WAPE_HASH = HashingUtils::HashString("WAPE");
-        static const int RMSE_HASH = HashingUtils::HashString("RMSE");
-        static const int AverageWeightedQuantileLoss_HASH = HashingUtils::HashString("AverageWeightedQuantileLoss");
-        static const int MASE_HASH = HashingUtils::HashString("MASE");
-        static const int MAPE_HASH = HashingUtils::HashString("MAPE");
+        static constexpr uint32_t WAPE_HASH = ConstExprHashingUtils::HashString("WAPE");
+        static constexpr uint32_t RMSE_HASH = ConstExprHashingUtils::HashString("RMSE");
+        static constexpr uint32_t AverageWeightedQuantileLoss_HASH = ConstExprHashingUtils::HashString("AverageWeightedQuantileLoss");
+        static constexpr uint32_t MASE_HASH = ConstExprHashingUtils::HashString("MASE");
+        static constexpr uint32_t MAPE_HASH = ConstExprHashingUtils::HashString("MAPE");
 
 
         OptimizationMetric GetOptimizationMetricForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WAPE_HASH)
           {
             return OptimizationMetric::WAPE;

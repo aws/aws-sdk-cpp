@@ -20,17 +20,17 @@ namespace Aws
       namespace BatchLoadStatusMapper
       {
 
-        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-        static const int PROGRESS_STOPPED_HASH = HashingUtils::HashString("PROGRESS_STOPPED");
-        static const int PENDING_RESUME_HASH = HashingUtils::HashString("PENDING_RESUME");
+        static constexpr uint32_t CREATED_HASH = ConstExprHashingUtils::HashString("CREATED");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t SUCCEEDED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED");
+        static constexpr uint32_t PROGRESS_STOPPED_HASH = ConstExprHashingUtils::HashString("PROGRESS_STOPPED");
+        static constexpr uint32_t PENDING_RESUME_HASH = ConstExprHashingUtils::HashString("PENDING_RESUME");
 
 
         BatchLoadStatus GetBatchLoadStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATED_HASH)
           {
             return BatchLoadStatus::CREATED;

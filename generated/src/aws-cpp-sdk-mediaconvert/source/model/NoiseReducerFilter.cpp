@@ -20,19 +20,19 @@ namespace Aws
       namespace NoiseReducerFilterMapper
       {
 
-        static const int BILATERAL_HASH = HashingUtils::HashString("BILATERAL");
-        static const int MEAN_HASH = HashingUtils::HashString("MEAN");
-        static const int GAUSSIAN_HASH = HashingUtils::HashString("GAUSSIAN");
-        static const int LANCZOS_HASH = HashingUtils::HashString("LANCZOS");
-        static const int SHARPEN_HASH = HashingUtils::HashString("SHARPEN");
-        static const int CONSERVE_HASH = HashingUtils::HashString("CONSERVE");
-        static const int SPATIAL_HASH = HashingUtils::HashString("SPATIAL");
-        static const int TEMPORAL_HASH = HashingUtils::HashString("TEMPORAL");
+        static constexpr uint32_t BILATERAL_HASH = ConstExprHashingUtils::HashString("BILATERAL");
+        static constexpr uint32_t MEAN_HASH = ConstExprHashingUtils::HashString("MEAN");
+        static constexpr uint32_t GAUSSIAN_HASH = ConstExprHashingUtils::HashString("GAUSSIAN");
+        static constexpr uint32_t LANCZOS_HASH = ConstExprHashingUtils::HashString("LANCZOS");
+        static constexpr uint32_t SHARPEN_HASH = ConstExprHashingUtils::HashString("SHARPEN");
+        static constexpr uint32_t CONSERVE_HASH = ConstExprHashingUtils::HashString("CONSERVE");
+        static constexpr uint32_t SPATIAL_HASH = ConstExprHashingUtils::HashString("SPATIAL");
+        static constexpr uint32_t TEMPORAL_HASH = ConstExprHashingUtils::HashString("TEMPORAL");
 
 
         NoiseReducerFilter GetNoiseReducerFilterForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BILATERAL_HASH)
           {
             return NoiseReducerFilter::BILATERAL;

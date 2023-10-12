@@ -20,14 +20,14 @@ namespace Aws
       namespace DatasourcePackageIngestStateMapper
       {
 
-        static const int STARTED_HASH = HashingUtils::HashString("STARTED");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static constexpr uint32_t STARTED_HASH = ConstExprHashingUtils::HashString("STARTED");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
 
 
         DatasourcePackageIngestState GetDatasourcePackageIngestStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STARTED_HASH)
           {
             return DatasourcePackageIngestState::STARTED;

@@ -20,12 +20,12 @@ namespace Aws
       namespace ProtocolTypeMapper
       {
 
-        static const int REST_HASH = HashingUtils::HashString("REST");
+        static constexpr uint32_t REST_HASH = ConstExprHashingUtils::HashString("REST");
 
 
         ProtocolType GetProtocolTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REST_HASH)
           {
             return ProtocolType::REST;

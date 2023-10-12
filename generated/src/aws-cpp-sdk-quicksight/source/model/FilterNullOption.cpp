@@ -20,14 +20,14 @@ namespace Aws
       namespace FilterNullOptionMapper
       {
 
-        static const int ALL_VALUES_HASH = HashingUtils::HashString("ALL_VALUES");
-        static const int NULLS_ONLY_HASH = HashingUtils::HashString("NULLS_ONLY");
-        static const int NON_NULLS_ONLY_HASH = HashingUtils::HashString("NON_NULLS_ONLY");
+        static constexpr uint32_t ALL_VALUES_HASH = ConstExprHashingUtils::HashString("ALL_VALUES");
+        static constexpr uint32_t NULLS_ONLY_HASH = ConstExprHashingUtils::HashString("NULLS_ONLY");
+        static constexpr uint32_t NON_NULLS_ONLY_HASH = ConstExprHashingUtils::HashString("NON_NULLS_ONLY");
 
 
         FilterNullOption GetFilterNullOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_VALUES_HASH)
           {
             return FilterNullOption::ALL_VALUES;

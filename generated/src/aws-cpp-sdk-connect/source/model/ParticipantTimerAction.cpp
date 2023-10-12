@@ -20,12 +20,12 @@ namespace Aws
       namespace ParticipantTimerActionMapper
       {
 
-        static const int Unset_HASH = HashingUtils::HashString("Unset");
+        static constexpr uint32_t Unset_HASH = ConstExprHashingUtils::HashString("Unset");
 
 
         ParticipantTimerAction GetParticipantTimerActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Unset_HASH)
           {
             return ParticipantTimerAction::Unset;

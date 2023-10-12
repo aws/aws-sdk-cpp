@@ -20,14 +20,14 @@ namespace Aws
       namespace FieldNameStringMapper
       {
 
-        static const int RESOURCE_ARN_HASH = HashingUtils::HashString("RESOURCE_ARN");
-        static const int ROLE_ARN_HASH = HashingUtils::HashString("ROLE_ARN");
-        static const int LAST_MODIFIED_HASH = HashingUtils::HashString("LAST_MODIFIED");
+        static constexpr uint32_t RESOURCE_ARN_HASH = ConstExprHashingUtils::HashString("RESOURCE_ARN");
+        static constexpr uint32_t ROLE_ARN_HASH = ConstExprHashingUtils::HashString("ROLE_ARN");
+        static constexpr uint32_t LAST_MODIFIED_HASH = ConstExprHashingUtils::HashString("LAST_MODIFIED");
 
 
         FieldNameString GetFieldNameStringForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESOURCE_ARN_HASH)
           {
             return FieldNameString::RESOURCE_ARN;

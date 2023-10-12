@@ -20,22 +20,22 @@ namespace Aws
       namespace InstancesHealthAttributeMapper
       {
 
-        static const int HealthStatus_HASH = HashingUtils::HashString("HealthStatus");
-        static const int Color_HASH = HashingUtils::HashString("Color");
-        static const int Causes_HASH = HashingUtils::HashString("Causes");
-        static const int ApplicationMetrics_HASH = HashingUtils::HashString("ApplicationMetrics");
-        static const int RefreshedAt_HASH = HashingUtils::HashString("RefreshedAt");
-        static const int LaunchedAt_HASH = HashingUtils::HashString("LaunchedAt");
-        static const int System_HASH = HashingUtils::HashString("System");
-        static const int Deployment_HASH = HashingUtils::HashString("Deployment");
-        static const int AvailabilityZone_HASH = HashingUtils::HashString("AvailabilityZone");
-        static const int InstanceType_HASH = HashingUtils::HashString("InstanceType");
-        static const int All_HASH = HashingUtils::HashString("All");
+        static constexpr uint32_t HealthStatus_HASH = ConstExprHashingUtils::HashString("HealthStatus");
+        static constexpr uint32_t Color_HASH = ConstExprHashingUtils::HashString("Color");
+        static constexpr uint32_t Causes_HASH = ConstExprHashingUtils::HashString("Causes");
+        static constexpr uint32_t ApplicationMetrics_HASH = ConstExprHashingUtils::HashString("ApplicationMetrics");
+        static constexpr uint32_t RefreshedAt_HASH = ConstExprHashingUtils::HashString("RefreshedAt");
+        static constexpr uint32_t LaunchedAt_HASH = ConstExprHashingUtils::HashString("LaunchedAt");
+        static constexpr uint32_t System_HASH = ConstExprHashingUtils::HashString("System");
+        static constexpr uint32_t Deployment_HASH = ConstExprHashingUtils::HashString("Deployment");
+        static constexpr uint32_t AvailabilityZone_HASH = ConstExprHashingUtils::HashString("AvailabilityZone");
+        static constexpr uint32_t InstanceType_HASH = ConstExprHashingUtils::HashString("InstanceType");
+        static constexpr uint32_t All_HASH = ConstExprHashingUtils::HashString("All");
 
 
         InstancesHealthAttribute GetInstancesHealthAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HealthStatus_HASH)
           {
             return InstancesHealthAttribute::HealthStatus;

@@ -20,13 +20,13 @@ namespace Aws
       namespace KafkaSaslMechanismMapper
       {
 
-        static const int scram_sha_512_HASH = HashingUtils::HashString("scram-sha-512");
-        static const int plain_HASH = HashingUtils::HashString("plain");
+        static constexpr uint32_t scram_sha_512_HASH = ConstExprHashingUtils::HashString("scram-sha-512");
+        static constexpr uint32_t plain_HASH = ConstExprHashingUtils::HashString("plain");
 
 
         KafkaSaslMechanism GetKafkaSaslMechanismForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == scram_sha_512_HASH)
           {
             return KafkaSaslMechanism::scram_sha_512;

@@ -20,12 +20,12 @@ namespace Aws
       namespace EventTypeValuesMapper
       {
 
-        static const int shareSnapshot_HASH = HashingUtils::HashString("shareSnapshot");
+        static constexpr uint32_t shareSnapshot_HASH = ConstExprHashingUtils::HashString("shareSnapshot");
 
 
         EventTypeValues GetEventTypeValuesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == shareSnapshot_HASH)
           {
             return EventTypeValues::shareSnapshot;

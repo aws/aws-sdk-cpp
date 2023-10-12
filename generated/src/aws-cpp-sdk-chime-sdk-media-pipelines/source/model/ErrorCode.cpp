@@ -20,18 +20,18 @@ namespace Aws
       namespace ErrorCodeMapper
       {
 
-        static const int BadRequest_HASH = HashingUtils::HashString("BadRequest");
-        static const int Forbidden_HASH = HashingUtils::HashString("Forbidden");
-        static const int NotFound_HASH = HashingUtils::HashString("NotFound");
-        static const int ResourceLimitExceeded_HASH = HashingUtils::HashString("ResourceLimitExceeded");
-        static const int ServiceFailure_HASH = HashingUtils::HashString("ServiceFailure");
-        static const int ServiceUnavailable_HASH = HashingUtils::HashString("ServiceUnavailable");
-        static const int Throttling_HASH = HashingUtils::HashString("Throttling");
+        static constexpr uint32_t BadRequest_HASH = ConstExprHashingUtils::HashString("BadRequest");
+        static constexpr uint32_t Forbidden_HASH = ConstExprHashingUtils::HashString("Forbidden");
+        static constexpr uint32_t NotFound_HASH = ConstExprHashingUtils::HashString("NotFound");
+        static constexpr uint32_t ResourceLimitExceeded_HASH = ConstExprHashingUtils::HashString("ResourceLimitExceeded");
+        static constexpr uint32_t ServiceFailure_HASH = ConstExprHashingUtils::HashString("ServiceFailure");
+        static constexpr uint32_t ServiceUnavailable_HASH = ConstExprHashingUtils::HashString("ServiceUnavailable");
+        static constexpr uint32_t Throttling_HASH = ConstExprHashingUtils::HashString("Throttling");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BadRequest_HASH)
           {
             return ErrorCode::BadRequest;

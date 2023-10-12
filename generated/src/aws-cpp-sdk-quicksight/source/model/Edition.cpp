@@ -20,14 +20,14 @@ namespace Aws
       namespace EditionMapper
       {
 
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
-        static const int ENTERPRISE_HASH = HashingUtils::HashString("ENTERPRISE");
-        static const int ENTERPRISE_AND_Q_HASH = HashingUtils::HashString("ENTERPRISE_AND_Q");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
+        static constexpr uint32_t ENTERPRISE_HASH = ConstExprHashingUtils::HashString("ENTERPRISE");
+        static constexpr uint32_t ENTERPRISE_AND_Q_HASH = ConstExprHashingUtils::HashString("ENTERPRISE_AND_Q");
 
 
         Edition GetEditionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STANDARD_HASH)
           {
             return Edition::STANDARD;

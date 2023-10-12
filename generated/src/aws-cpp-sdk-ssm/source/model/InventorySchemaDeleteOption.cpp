@@ -20,13 +20,13 @@ namespace Aws
       namespace InventorySchemaDeleteOptionMapper
       {
 
-        static const int DisableSchema_HASH = HashingUtils::HashString("DisableSchema");
-        static const int DeleteSchema_HASH = HashingUtils::HashString("DeleteSchema");
+        static constexpr uint32_t DisableSchema_HASH = ConstExprHashingUtils::HashString("DisableSchema");
+        static constexpr uint32_t DeleteSchema_HASH = ConstExprHashingUtils::HashString("DeleteSchema");
 
 
         InventorySchemaDeleteOption GetInventorySchemaDeleteOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DisableSchema_HASH)
           {
             return InventorySchemaDeleteOption::DisableSchema;

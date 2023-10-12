@@ -20,18 +20,18 @@ namespace Aws
       namespace TargetFormatMapper
       {
 
-        static const int json_HASH = HashingUtils::HashString("json");
-        static const int csv_HASH = HashingUtils::HashString("csv");
-        static const int avro_HASH = HashingUtils::HashString("avro");
-        static const int orc_HASH = HashingUtils::HashString("orc");
-        static const int parquet_HASH = HashingUtils::HashString("parquet");
-        static const int hudi_HASH = HashingUtils::HashString("hudi");
-        static const int delta_HASH = HashingUtils::HashString("delta");
+        static constexpr uint32_t json_HASH = ConstExprHashingUtils::HashString("json");
+        static constexpr uint32_t csv_HASH = ConstExprHashingUtils::HashString("csv");
+        static constexpr uint32_t avro_HASH = ConstExprHashingUtils::HashString("avro");
+        static constexpr uint32_t orc_HASH = ConstExprHashingUtils::HashString("orc");
+        static constexpr uint32_t parquet_HASH = ConstExprHashingUtils::HashString("parquet");
+        static constexpr uint32_t hudi_HASH = ConstExprHashingUtils::HashString("hudi");
+        static constexpr uint32_t delta_HASH = ConstExprHashingUtils::HashString("delta");
 
 
         TargetFormat GetTargetFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == json_HASH)
           {
             return TargetFormat::json;

@@ -20,14 +20,14 @@ namespace Aws
       namespace CloudHsmObjectStateMapper
       {
 
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int DEGRADED_HASH = HashingUtils::HashString("DEGRADED");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t DEGRADED_HASH = ConstExprHashingUtils::HashString("DEGRADED");
 
 
         CloudHsmObjectState GetCloudHsmObjectStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == READY_HASH)
           {
             return CloudHsmObjectState::READY;

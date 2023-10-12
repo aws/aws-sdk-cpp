@@ -20,17 +20,17 @@ namespace Aws
       namespace ImportDataCharacterEncodingMapper
       {
 
-        static const int UTF_8_HASH = HashingUtils::HashString("UTF-8");
-        static const int US_ASCII_HASH = HashingUtils::HashString("US-ASCII");
-        static const int ISO_8859_1_HASH = HashingUtils::HashString("ISO-8859-1");
-        static const int UTF_16BE_HASH = HashingUtils::HashString("UTF-16BE");
-        static const int UTF_16LE_HASH = HashingUtils::HashString("UTF-16LE");
-        static const int UTF_16_HASH = HashingUtils::HashString("UTF-16");
+        static constexpr uint32_t UTF_8_HASH = ConstExprHashingUtils::HashString("UTF-8");
+        static constexpr uint32_t US_ASCII_HASH = ConstExprHashingUtils::HashString("US-ASCII");
+        static constexpr uint32_t ISO_8859_1_HASH = ConstExprHashingUtils::HashString("ISO-8859-1");
+        static constexpr uint32_t UTF_16BE_HASH = ConstExprHashingUtils::HashString("UTF-16BE");
+        static constexpr uint32_t UTF_16LE_HASH = ConstExprHashingUtils::HashString("UTF-16LE");
+        static constexpr uint32_t UTF_16_HASH = ConstExprHashingUtils::HashString("UTF-16");
 
 
         ImportDataCharacterEncoding GetImportDataCharacterEncodingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UTF_8_HASH)
           {
             return ImportDataCharacterEncoding::UTF_8;

@@ -20,12 +20,12 @@ namespace Aws
       namespace NumericFilterSelectAllOptionsMapper
       {
 
-        static const int FILTER_ALL_VALUES_HASH = HashingUtils::HashString("FILTER_ALL_VALUES");
+        static constexpr uint32_t FILTER_ALL_VALUES_HASH = ConstExprHashingUtils::HashString("FILTER_ALL_VALUES");
 
 
         NumericFilterSelectAllOptions GetNumericFilterSelectAllOptionsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FILTER_ALL_VALUES_HASH)
           {
             return NumericFilterSelectAllOptions::FILTER_ALL_VALUES;

@@ -20,28 +20,28 @@ namespace Aws
       namespace SampleTypeMapper
       {
 
-        static const int CPU_HASH = HashingUtils::HashString("CPU");
-        static const int MEMORY_HASH = HashingUtils::HashString("MEMORY");
-        static const int THREADS_HASH = HashingUtils::HashString("THREADS");
-        static const int RX_RATE_HASH = HashingUtils::HashString("RX_RATE");
-        static const int TX_RATE_HASH = HashingUtils::HashString("TX_RATE");
-        static const int RX_HASH = HashingUtils::HashString("RX");
-        static const int TX_HASH = HashingUtils::HashString("TX");
-        static const int NATIVE_FRAMES_HASH = HashingUtils::HashString("NATIVE_FRAMES");
-        static const int NATIVE_FPS_HASH = HashingUtils::HashString("NATIVE_FPS");
-        static const int NATIVE_MIN_DRAWTIME_HASH = HashingUtils::HashString("NATIVE_MIN_DRAWTIME");
-        static const int NATIVE_AVG_DRAWTIME_HASH = HashingUtils::HashString("NATIVE_AVG_DRAWTIME");
-        static const int NATIVE_MAX_DRAWTIME_HASH = HashingUtils::HashString("NATIVE_MAX_DRAWTIME");
-        static const int OPENGL_FRAMES_HASH = HashingUtils::HashString("OPENGL_FRAMES");
-        static const int OPENGL_FPS_HASH = HashingUtils::HashString("OPENGL_FPS");
-        static const int OPENGL_MIN_DRAWTIME_HASH = HashingUtils::HashString("OPENGL_MIN_DRAWTIME");
-        static const int OPENGL_AVG_DRAWTIME_HASH = HashingUtils::HashString("OPENGL_AVG_DRAWTIME");
-        static const int OPENGL_MAX_DRAWTIME_HASH = HashingUtils::HashString("OPENGL_MAX_DRAWTIME");
+        static constexpr uint32_t CPU_HASH = ConstExprHashingUtils::HashString("CPU");
+        static constexpr uint32_t MEMORY_HASH = ConstExprHashingUtils::HashString("MEMORY");
+        static constexpr uint32_t THREADS_HASH = ConstExprHashingUtils::HashString("THREADS");
+        static constexpr uint32_t RX_RATE_HASH = ConstExprHashingUtils::HashString("RX_RATE");
+        static constexpr uint32_t TX_RATE_HASH = ConstExprHashingUtils::HashString("TX_RATE");
+        static constexpr uint32_t RX_HASH = ConstExprHashingUtils::HashString("RX");
+        static constexpr uint32_t TX_HASH = ConstExprHashingUtils::HashString("TX");
+        static constexpr uint32_t NATIVE_FRAMES_HASH = ConstExprHashingUtils::HashString("NATIVE_FRAMES");
+        static constexpr uint32_t NATIVE_FPS_HASH = ConstExprHashingUtils::HashString("NATIVE_FPS");
+        static constexpr uint32_t NATIVE_MIN_DRAWTIME_HASH = ConstExprHashingUtils::HashString("NATIVE_MIN_DRAWTIME");
+        static constexpr uint32_t NATIVE_AVG_DRAWTIME_HASH = ConstExprHashingUtils::HashString("NATIVE_AVG_DRAWTIME");
+        static constexpr uint32_t NATIVE_MAX_DRAWTIME_HASH = ConstExprHashingUtils::HashString("NATIVE_MAX_DRAWTIME");
+        static constexpr uint32_t OPENGL_FRAMES_HASH = ConstExprHashingUtils::HashString("OPENGL_FRAMES");
+        static constexpr uint32_t OPENGL_FPS_HASH = ConstExprHashingUtils::HashString("OPENGL_FPS");
+        static constexpr uint32_t OPENGL_MIN_DRAWTIME_HASH = ConstExprHashingUtils::HashString("OPENGL_MIN_DRAWTIME");
+        static constexpr uint32_t OPENGL_AVG_DRAWTIME_HASH = ConstExprHashingUtils::HashString("OPENGL_AVG_DRAWTIME");
+        static constexpr uint32_t OPENGL_MAX_DRAWTIME_HASH = ConstExprHashingUtils::HashString("OPENGL_MAX_DRAWTIME");
 
 
         SampleType GetSampleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CPU_HASH)
           {
             return SampleType::CPU;

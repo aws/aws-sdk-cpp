@@ -20,18 +20,18 @@ namespace Aws
       namespace AuthFlowTypeMapper
       {
 
-        static const int USER_SRP_AUTH_HASH = HashingUtils::HashString("USER_SRP_AUTH");
-        static const int REFRESH_TOKEN_AUTH_HASH = HashingUtils::HashString("REFRESH_TOKEN_AUTH");
-        static const int REFRESH_TOKEN_HASH = HashingUtils::HashString("REFRESH_TOKEN");
-        static const int CUSTOM_AUTH_HASH = HashingUtils::HashString("CUSTOM_AUTH");
-        static const int ADMIN_NO_SRP_AUTH_HASH = HashingUtils::HashString("ADMIN_NO_SRP_AUTH");
-        static const int USER_PASSWORD_AUTH_HASH = HashingUtils::HashString("USER_PASSWORD_AUTH");
-        static const int ADMIN_USER_PASSWORD_AUTH_HASH = HashingUtils::HashString("ADMIN_USER_PASSWORD_AUTH");
+        static constexpr uint32_t USER_SRP_AUTH_HASH = ConstExprHashingUtils::HashString("USER_SRP_AUTH");
+        static constexpr uint32_t REFRESH_TOKEN_AUTH_HASH = ConstExprHashingUtils::HashString("REFRESH_TOKEN_AUTH");
+        static constexpr uint32_t REFRESH_TOKEN_HASH = ConstExprHashingUtils::HashString("REFRESH_TOKEN");
+        static constexpr uint32_t CUSTOM_AUTH_HASH = ConstExprHashingUtils::HashString("CUSTOM_AUTH");
+        static constexpr uint32_t ADMIN_NO_SRP_AUTH_HASH = ConstExprHashingUtils::HashString("ADMIN_NO_SRP_AUTH");
+        static constexpr uint32_t USER_PASSWORD_AUTH_HASH = ConstExprHashingUtils::HashString("USER_PASSWORD_AUTH");
+        static constexpr uint32_t ADMIN_USER_PASSWORD_AUTH_HASH = ConstExprHashingUtils::HashString("ADMIN_USER_PASSWORD_AUTH");
 
 
         AuthFlowType GetAuthFlowTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USER_SRP_AUTH_HASH)
           {
             return AuthFlowType::USER_SRP_AUTH;

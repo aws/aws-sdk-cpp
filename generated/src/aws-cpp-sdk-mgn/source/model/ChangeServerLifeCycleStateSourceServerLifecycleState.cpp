@@ -20,14 +20,14 @@ namespace Aws
       namespace ChangeServerLifeCycleStateSourceServerLifecycleStateMapper
       {
 
-        static const int READY_FOR_TEST_HASH = HashingUtils::HashString("READY_FOR_TEST");
-        static const int READY_FOR_CUTOVER_HASH = HashingUtils::HashString("READY_FOR_CUTOVER");
-        static const int CUTOVER_HASH = HashingUtils::HashString("CUTOVER");
+        static constexpr uint32_t READY_FOR_TEST_HASH = ConstExprHashingUtils::HashString("READY_FOR_TEST");
+        static constexpr uint32_t READY_FOR_CUTOVER_HASH = ConstExprHashingUtils::HashString("READY_FOR_CUTOVER");
+        static constexpr uint32_t CUTOVER_HASH = ConstExprHashingUtils::HashString("CUTOVER");
 
 
         ChangeServerLifeCycleStateSourceServerLifecycleState GetChangeServerLifeCycleStateSourceServerLifecycleStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == READY_FOR_TEST_HASH)
           {
             return ChangeServerLifeCycleStateSourceServerLifecycleState::READY_FOR_TEST;

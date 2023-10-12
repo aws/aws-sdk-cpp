@@ -20,19 +20,19 @@ namespace Aws
       namespace ColorSpaceConversionMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int FORCE_601_HASH = HashingUtils::HashString("FORCE_601");
-        static const int FORCE_709_HASH = HashingUtils::HashString("FORCE_709");
-        static const int FORCE_HDR10_HASH = HashingUtils::HashString("FORCE_HDR10");
-        static const int FORCE_HLG_2020_HASH = HashingUtils::HashString("FORCE_HLG_2020");
-        static const int FORCE_P3DCI_HASH = HashingUtils::HashString("FORCE_P3DCI");
-        static const int FORCE_P3D65_SDR_HASH = HashingUtils::HashString("FORCE_P3D65_SDR");
-        static const int FORCE_P3D65_HDR_HASH = HashingUtils::HashString("FORCE_P3D65_HDR");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t FORCE_601_HASH = ConstExprHashingUtils::HashString("FORCE_601");
+        static constexpr uint32_t FORCE_709_HASH = ConstExprHashingUtils::HashString("FORCE_709");
+        static constexpr uint32_t FORCE_HDR10_HASH = ConstExprHashingUtils::HashString("FORCE_HDR10");
+        static constexpr uint32_t FORCE_HLG_2020_HASH = ConstExprHashingUtils::HashString("FORCE_HLG_2020");
+        static constexpr uint32_t FORCE_P3DCI_HASH = ConstExprHashingUtils::HashString("FORCE_P3DCI");
+        static constexpr uint32_t FORCE_P3D65_SDR_HASH = ConstExprHashingUtils::HashString("FORCE_P3D65_SDR");
+        static constexpr uint32_t FORCE_P3D65_HDR_HASH = ConstExprHashingUtils::HashString("FORCE_P3D65_HDR");
 
 
         ColorSpaceConversion GetColorSpaceConversionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return ColorSpaceConversion::NONE;

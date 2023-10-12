@@ -20,14 +20,14 @@ namespace Aws
       namespace RequestThrottledExceptionReasonMapper
       {
 
-        static const int ACCOUNT_THROTTLED_HASH = HashingUtils::HashString("ACCOUNT_THROTTLED");
-        static const int DEPENDENCY_REQUEST_THROTTLED_HASH = HashingUtils::HashString("DEPENDENCY_REQUEST_THROTTLED");
-        static const int RESOURCE_LEVEL_THROTTLE_HASH = HashingUtils::HashString("RESOURCE_LEVEL_THROTTLE");
+        static constexpr uint32_t ACCOUNT_THROTTLED_HASH = ConstExprHashingUtils::HashString("ACCOUNT_THROTTLED");
+        static constexpr uint32_t DEPENDENCY_REQUEST_THROTTLED_HASH = ConstExprHashingUtils::HashString("DEPENDENCY_REQUEST_THROTTLED");
+        static constexpr uint32_t RESOURCE_LEVEL_THROTTLE_HASH = ConstExprHashingUtils::HashString("RESOURCE_LEVEL_THROTTLE");
 
 
         RequestThrottledExceptionReason GetRequestThrottledExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCOUNT_THROTTLED_HASH)
           {
             return RequestThrottledExceptionReason::ACCOUNT_THROTTLED;

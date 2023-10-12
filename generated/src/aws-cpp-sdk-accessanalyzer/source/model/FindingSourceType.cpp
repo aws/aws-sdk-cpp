@@ -20,15 +20,15 @@ namespace Aws
       namespace FindingSourceTypeMapper
       {
 
-        static const int POLICY_HASH = HashingUtils::HashString("POLICY");
-        static const int BUCKET_ACL_HASH = HashingUtils::HashString("BUCKET_ACL");
-        static const int S3_ACCESS_POINT_HASH = HashingUtils::HashString("S3_ACCESS_POINT");
-        static const int S3_ACCESS_POINT_ACCOUNT_HASH = HashingUtils::HashString("S3_ACCESS_POINT_ACCOUNT");
+        static constexpr uint32_t POLICY_HASH = ConstExprHashingUtils::HashString("POLICY");
+        static constexpr uint32_t BUCKET_ACL_HASH = ConstExprHashingUtils::HashString("BUCKET_ACL");
+        static constexpr uint32_t S3_ACCESS_POINT_HASH = ConstExprHashingUtils::HashString("S3_ACCESS_POINT");
+        static constexpr uint32_t S3_ACCESS_POINT_ACCOUNT_HASH = ConstExprHashingUtils::HashString("S3_ACCESS_POINT_ACCOUNT");
 
 
         FindingSourceType GetFindingSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == POLICY_HASH)
           {
             return FindingSourceType::POLICY;

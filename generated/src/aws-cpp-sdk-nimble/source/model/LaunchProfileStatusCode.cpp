@@ -20,26 +20,26 @@ namespace Aws
       namespace LaunchProfileStatusCodeMapper
       {
 
-        static const int LAUNCH_PROFILE_CREATED_HASH = HashingUtils::HashString("LAUNCH_PROFILE_CREATED");
-        static const int LAUNCH_PROFILE_UPDATED_HASH = HashingUtils::HashString("LAUNCH_PROFILE_UPDATED");
-        static const int LAUNCH_PROFILE_DELETED_HASH = HashingUtils::HashString("LAUNCH_PROFILE_DELETED");
-        static const int LAUNCH_PROFILE_CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("LAUNCH_PROFILE_CREATE_IN_PROGRESS");
-        static const int LAUNCH_PROFILE_UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("LAUNCH_PROFILE_UPDATE_IN_PROGRESS");
-        static const int LAUNCH_PROFILE_DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("LAUNCH_PROFILE_DELETE_IN_PROGRESS");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int STREAMING_IMAGE_NOT_FOUND_HASH = HashingUtils::HashString("STREAMING_IMAGE_NOT_FOUND");
-        static const int STREAMING_IMAGE_NOT_READY_HASH = HashingUtils::HashString("STREAMING_IMAGE_NOT_READY");
-        static const int LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED_HASH = HashingUtils::HashString("LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED");
-        static const int ENCRYPTION_KEY_ACCESS_DENIED_HASH = HashingUtils::HashString("ENCRYPTION_KEY_ACCESS_DENIED");
-        static const int ENCRYPTION_KEY_NOT_FOUND_HASH = HashingUtils::HashString("ENCRYPTION_KEY_NOT_FOUND");
-        static const int INVALID_SUBNETS_PROVIDED_HASH = HashingUtils::HashString("INVALID_SUBNETS_PROVIDED");
-        static const int INVALID_INSTANCE_TYPES_PROVIDED_HASH = HashingUtils::HashString("INVALID_INSTANCE_TYPES_PROVIDED");
-        static const int INVALID_SUBNETS_COMBINATION_HASH = HashingUtils::HashString("INVALID_SUBNETS_COMBINATION");
+        static constexpr uint32_t LAUNCH_PROFILE_CREATED_HASH = ConstExprHashingUtils::HashString("LAUNCH_PROFILE_CREATED");
+        static constexpr uint32_t LAUNCH_PROFILE_UPDATED_HASH = ConstExprHashingUtils::HashString("LAUNCH_PROFILE_UPDATED");
+        static constexpr uint32_t LAUNCH_PROFILE_DELETED_HASH = ConstExprHashingUtils::HashString("LAUNCH_PROFILE_DELETED");
+        static constexpr uint32_t LAUNCH_PROFILE_CREATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("LAUNCH_PROFILE_CREATE_IN_PROGRESS");
+        static constexpr uint32_t LAUNCH_PROFILE_UPDATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("LAUNCH_PROFILE_UPDATE_IN_PROGRESS");
+        static constexpr uint32_t LAUNCH_PROFILE_DELETE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("LAUNCH_PROFILE_DELETE_IN_PROGRESS");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t STREAMING_IMAGE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("STREAMING_IMAGE_NOT_FOUND");
+        static constexpr uint32_t STREAMING_IMAGE_NOT_READY_HASH = ConstExprHashingUtils::HashString("STREAMING_IMAGE_NOT_READY");
+        static constexpr uint32_t LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED_HASH = ConstExprHashingUtils::HashString("LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED");
+        static constexpr uint32_t ENCRYPTION_KEY_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ENCRYPTION_KEY_ACCESS_DENIED");
+        static constexpr uint32_t ENCRYPTION_KEY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ENCRYPTION_KEY_NOT_FOUND");
+        static constexpr uint32_t INVALID_SUBNETS_PROVIDED_HASH = ConstExprHashingUtils::HashString("INVALID_SUBNETS_PROVIDED");
+        static constexpr uint32_t INVALID_INSTANCE_TYPES_PROVIDED_HASH = ConstExprHashingUtils::HashString("INVALID_INSTANCE_TYPES_PROVIDED");
+        static constexpr uint32_t INVALID_SUBNETS_COMBINATION_HASH = ConstExprHashingUtils::HashString("INVALID_SUBNETS_COMBINATION");
 
 
         LaunchProfileStatusCode GetLaunchProfileStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LAUNCH_PROFILE_CREATED_HASH)
           {
             return LaunchProfileStatusCode::LAUNCH_PROFILE_CREATED;

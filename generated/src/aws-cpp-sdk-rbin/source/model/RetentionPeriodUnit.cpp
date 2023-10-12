@@ -20,12 +20,12 @@ namespace Aws
       namespace RetentionPeriodUnitMapper
       {
 
-        static const int DAYS_HASH = HashingUtils::HashString("DAYS");
+        static constexpr uint32_t DAYS_HASH = ConstExprHashingUtils::HashString("DAYS");
 
 
         RetentionPeriodUnit GetRetentionPeriodUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DAYS_HASH)
           {
             return RetentionPeriodUnit::DAYS;

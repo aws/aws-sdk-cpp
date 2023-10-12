@@ -20,15 +20,15 @@ namespace Aws
       namespace SpotProvisioningAllocationStrategyMapper
       {
 
-        static const int capacity_optimized_HASH = HashingUtils::HashString("capacity-optimized");
-        static const int price_capacity_optimized_HASH = HashingUtils::HashString("price-capacity-optimized");
-        static const int lowest_price_HASH = HashingUtils::HashString("lowest-price");
-        static const int diversified_HASH = HashingUtils::HashString("diversified");
+        static constexpr uint32_t capacity_optimized_HASH = ConstExprHashingUtils::HashString("capacity-optimized");
+        static constexpr uint32_t price_capacity_optimized_HASH = ConstExprHashingUtils::HashString("price-capacity-optimized");
+        static constexpr uint32_t lowest_price_HASH = ConstExprHashingUtils::HashString("lowest-price");
+        static constexpr uint32_t diversified_HASH = ConstExprHashingUtils::HashString("diversified");
 
 
         SpotProvisioningAllocationStrategy GetSpotProvisioningAllocationStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == capacity_optimized_HASH)
           {
             return SpotProvisioningAllocationStrategy::capacity_optimized;

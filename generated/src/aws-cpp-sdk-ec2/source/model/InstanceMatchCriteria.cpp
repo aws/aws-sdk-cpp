@@ -20,13 +20,13 @@ namespace Aws
       namespace InstanceMatchCriteriaMapper
       {
 
-        static const int open_HASH = HashingUtils::HashString("open");
-        static const int targeted_HASH = HashingUtils::HashString("targeted");
+        static constexpr uint32_t open_HASH = ConstExprHashingUtils::HashString("open");
+        static constexpr uint32_t targeted_HASH = ConstExprHashingUtils::HashString("targeted");
 
 
         InstanceMatchCriteria GetInstanceMatchCriteriaForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == open_HASH)
           {
             return InstanceMatchCriteria::open;

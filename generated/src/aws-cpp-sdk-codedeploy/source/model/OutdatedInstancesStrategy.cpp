@@ -20,13 +20,13 @@ namespace Aws
       namespace OutdatedInstancesStrategyMapper
       {
 
-        static const int UPDATE_HASH = HashingUtils::HashString("UPDATE");
-        static const int IGNORE_HASH = HashingUtils::HashString("IGNORE");
+        static constexpr uint32_t UPDATE_HASH = ConstExprHashingUtils::HashString("UPDATE");
+        static constexpr uint32_t IGNORE_HASH = ConstExprHashingUtils::HashString("IGNORE");
 
 
         OutdatedInstancesStrategy GetOutdatedInstancesStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UPDATE_HASH)
           {
             return OutdatedInstancesStrategy::UPDATE;

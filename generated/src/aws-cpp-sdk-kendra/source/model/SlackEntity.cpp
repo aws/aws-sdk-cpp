@@ -20,15 +20,15 @@ namespace Aws
       namespace SlackEntityMapper
       {
 
-        static const int PUBLIC_CHANNEL_HASH = HashingUtils::HashString("PUBLIC_CHANNEL");
-        static const int PRIVATE_CHANNEL_HASH = HashingUtils::HashString("PRIVATE_CHANNEL");
-        static const int GROUP_MESSAGE_HASH = HashingUtils::HashString("GROUP_MESSAGE");
-        static const int DIRECT_MESSAGE_HASH = HashingUtils::HashString("DIRECT_MESSAGE");
+        static constexpr uint32_t PUBLIC_CHANNEL_HASH = ConstExprHashingUtils::HashString("PUBLIC_CHANNEL");
+        static constexpr uint32_t PRIVATE_CHANNEL_HASH = ConstExprHashingUtils::HashString("PRIVATE_CHANNEL");
+        static constexpr uint32_t GROUP_MESSAGE_HASH = ConstExprHashingUtils::HashString("GROUP_MESSAGE");
+        static constexpr uint32_t DIRECT_MESSAGE_HASH = ConstExprHashingUtils::HashString("DIRECT_MESSAGE");
 
 
         SlackEntity GetSlackEntityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUBLIC_CHANNEL_HASH)
           {
             return SlackEntity::PUBLIC_CHANNEL;

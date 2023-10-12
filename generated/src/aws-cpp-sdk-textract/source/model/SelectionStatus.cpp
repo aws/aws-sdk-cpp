@@ -20,13 +20,13 @@ namespace Aws
       namespace SelectionStatusMapper
       {
 
-        static const int SELECTED_HASH = HashingUtils::HashString("SELECTED");
-        static const int NOT_SELECTED_HASH = HashingUtils::HashString("NOT_SELECTED");
+        static constexpr uint32_t SELECTED_HASH = ConstExprHashingUtils::HashString("SELECTED");
+        static constexpr uint32_t NOT_SELECTED_HASH = ConstExprHashingUtils::HashString("NOT_SELECTED");
 
 
         SelectionStatus GetSelectionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SELECTED_HASH)
           {
             return SelectionStatus::SELECTED;

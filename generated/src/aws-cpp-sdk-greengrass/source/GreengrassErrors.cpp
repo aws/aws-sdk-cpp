@@ -33,13 +33,13 @@ template<> AWS_GREENGRASS_API InternalServerErrorException GreengrassError::GetM
 namespace GreengrassErrorMapper
 {
 
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
-static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerErrorException");
+static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BadRequestException");
+static constexpr uint32_t INTERNAL_SERVER_ERROR_HASH = ConstExprHashingUtils::HashString("InternalServerErrorException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == BAD_REQUEST_HASH)
   {

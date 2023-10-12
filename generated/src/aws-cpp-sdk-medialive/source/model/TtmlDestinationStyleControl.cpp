@@ -20,13 +20,13 @@ namespace Aws
       namespace TtmlDestinationStyleControlMapper
       {
 
-        static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
-        static const int USE_CONFIGURED_HASH = HashingUtils::HashString("USE_CONFIGURED");
+        static constexpr uint32_t PASSTHROUGH_HASH = ConstExprHashingUtils::HashString("PASSTHROUGH");
+        static constexpr uint32_t USE_CONFIGURED_HASH = ConstExprHashingUtils::HashString("USE_CONFIGURED");
 
 
         TtmlDestinationStyleControl GetTtmlDestinationStyleControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PASSTHROUGH_HASH)
           {
             return TtmlDestinationStyleControl::PASSTHROUGH;

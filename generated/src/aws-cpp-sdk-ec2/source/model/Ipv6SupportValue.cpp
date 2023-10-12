@@ -20,13 +20,13 @@ namespace Aws
       namespace Ipv6SupportValueMapper
       {
 
-        static const int enable_HASH = HashingUtils::HashString("enable");
-        static const int disable_HASH = HashingUtils::HashString("disable");
+        static constexpr uint32_t enable_HASH = ConstExprHashingUtils::HashString("enable");
+        static constexpr uint32_t disable_HASH = ConstExprHashingUtils::HashString("disable");
 
 
         Ipv6SupportValue GetIpv6SupportValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == enable_HASH)
           {
             return Ipv6SupportValue::enable;

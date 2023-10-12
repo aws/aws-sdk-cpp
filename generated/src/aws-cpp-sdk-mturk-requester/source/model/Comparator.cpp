@@ -20,21 +20,21 @@ namespace Aws
       namespace ComparatorMapper
       {
 
-        static const int LessThan_HASH = HashingUtils::HashString("LessThan");
-        static const int LessThanOrEqualTo_HASH = HashingUtils::HashString("LessThanOrEqualTo");
-        static const int GreaterThan_HASH = HashingUtils::HashString("GreaterThan");
-        static const int GreaterThanOrEqualTo_HASH = HashingUtils::HashString("GreaterThanOrEqualTo");
-        static const int EqualTo_HASH = HashingUtils::HashString("EqualTo");
-        static const int NotEqualTo_HASH = HashingUtils::HashString("NotEqualTo");
-        static const int Exists_HASH = HashingUtils::HashString("Exists");
-        static const int DoesNotExist_HASH = HashingUtils::HashString("DoesNotExist");
-        static const int In_HASH = HashingUtils::HashString("In");
-        static const int NotIn_HASH = HashingUtils::HashString("NotIn");
+        static constexpr uint32_t LessThan_HASH = ConstExprHashingUtils::HashString("LessThan");
+        static constexpr uint32_t LessThanOrEqualTo_HASH = ConstExprHashingUtils::HashString("LessThanOrEqualTo");
+        static constexpr uint32_t GreaterThan_HASH = ConstExprHashingUtils::HashString("GreaterThan");
+        static constexpr uint32_t GreaterThanOrEqualTo_HASH = ConstExprHashingUtils::HashString("GreaterThanOrEqualTo");
+        static constexpr uint32_t EqualTo_HASH = ConstExprHashingUtils::HashString("EqualTo");
+        static constexpr uint32_t NotEqualTo_HASH = ConstExprHashingUtils::HashString("NotEqualTo");
+        static constexpr uint32_t Exists_HASH = ConstExprHashingUtils::HashString("Exists");
+        static constexpr uint32_t DoesNotExist_HASH = ConstExprHashingUtils::HashString("DoesNotExist");
+        static constexpr uint32_t In_HASH = ConstExprHashingUtils::HashString("In");
+        static constexpr uint32_t NotIn_HASH = ConstExprHashingUtils::HashString("NotIn");
 
 
         Comparator GetComparatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LessThan_HASH)
           {
             return Comparator::LessThan;

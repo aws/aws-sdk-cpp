@@ -20,16 +20,16 @@ namespace Aws
       namespace XavcProfileMapper
       {
 
-        static const int XAVC_HD_INTRA_CBG_HASH = HashingUtils::HashString("XAVC_HD_INTRA_CBG");
-        static const int XAVC_4K_INTRA_CBG_HASH = HashingUtils::HashString("XAVC_4K_INTRA_CBG");
-        static const int XAVC_4K_INTRA_VBR_HASH = HashingUtils::HashString("XAVC_4K_INTRA_VBR");
-        static const int XAVC_HD_HASH = HashingUtils::HashString("XAVC_HD");
-        static const int XAVC_4K_HASH = HashingUtils::HashString("XAVC_4K");
+        static constexpr uint32_t XAVC_HD_INTRA_CBG_HASH = ConstExprHashingUtils::HashString("XAVC_HD_INTRA_CBG");
+        static constexpr uint32_t XAVC_4K_INTRA_CBG_HASH = ConstExprHashingUtils::HashString("XAVC_4K_INTRA_CBG");
+        static constexpr uint32_t XAVC_4K_INTRA_VBR_HASH = ConstExprHashingUtils::HashString("XAVC_4K_INTRA_VBR");
+        static constexpr uint32_t XAVC_HD_HASH = ConstExprHashingUtils::HashString("XAVC_HD");
+        static constexpr uint32_t XAVC_4K_HASH = ConstExprHashingUtils::HashString("XAVC_4K");
 
 
         XavcProfile GetXavcProfileForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == XAVC_HD_INTRA_CBG_HASH)
           {
             return XavcProfile::XAVC_HD_INTRA_CBG;

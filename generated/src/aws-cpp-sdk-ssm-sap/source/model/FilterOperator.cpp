@@ -20,14 +20,14 @@ namespace Aws
       namespace FilterOperatorMapper
       {
 
-        static const int Equals_HASH = HashingUtils::HashString("Equals");
-        static const int GreaterThanOrEquals_HASH = HashingUtils::HashString("GreaterThanOrEquals");
-        static const int LessThanOrEquals_HASH = HashingUtils::HashString("LessThanOrEquals");
+        static constexpr uint32_t Equals_HASH = ConstExprHashingUtils::HashString("Equals");
+        static constexpr uint32_t GreaterThanOrEquals_HASH = ConstExprHashingUtils::HashString("GreaterThanOrEquals");
+        static constexpr uint32_t LessThanOrEquals_HASH = ConstExprHashingUtils::HashString("LessThanOrEquals");
 
 
         FilterOperator GetFilterOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Equals_HASH)
           {
             return FilterOperator::Equals;

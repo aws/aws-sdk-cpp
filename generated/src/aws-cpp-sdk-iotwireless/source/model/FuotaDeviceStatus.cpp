@@ -20,22 +20,22 @@ namespace Aws
       namespace FuotaDeviceStatusMapper
       {
 
-        static const int Initial_HASH = HashingUtils::HashString("Initial");
-        static const int Package_Not_Supported_HASH = HashingUtils::HashString("Package_Not_Supported");
-        static const int FragAlgo_unsupported_HASH = HashingUtils::HashString("FragAlgo_unsupported");
-        static const int Not_enough_memory_HASH = HashingUtils::HashString("Not_enough_memory");
-        static const int FragIndex_unsupported_HASH = HashingUtils::HashString("FragIndex_unsupported");
-        static const int Wrong_descriptor_HASH = HashingUtils::HashString("Wrong_descriptor");
-        static const int SessionCnt_replay_HASH = HashingUtils::HashString("SessionCnt_replay");
-        static const int MissingFrag_HASH = HashingUtils::HashString("MissingFrag");
-        static const int MemoryError_HASH = HashingUtils::HashString("MemoryError");
-        static const int MICError_HASH = HashingUtils::HashString("MICError");
-        static const int Successful_HASH = HashingUtils::HashString("Successful");
+        static constexpr uint32_t Initial_HASH = ConstExprHashingUtils::HashString("Initial");
+        static constexpr uint32_t Package_Not_Supported_HASH = ConstExprHashingUtils::HashString("Package_Not_Supported");
+        static constexpr uint32_t FragAlgo_unsupported_HASH = ConstExprHashingUtils::HashString("FragAlgo_unsupported");
+        static constexpr uint32_t Not_enough_memory_HASH = ConstExprHashingUtils::HashString("Not_enough_memory");
+        static constexpr uint32_t FragIndex_unsupported_HASH = ConstExprHashingUtils::HashString("FragIndex_unsupported");
+        static constexpr uint32_t Wrong_descriptor_HASH = ConstExprHashingUtils::HashString("Wrong_descriptor");
+        static constexpr uint32_t SessionCnt_replay_HASH = ConstExprHashingUtils::HashString("SessionCnt_replay");
+        static constexpr uint32_t MissingFrag_HASH = ConstExprHashingUtils::HashString("MissingFrag");
+        static constexpr uint32_t MemoryError_HASH = ConstExprHashingUtils::HashString("MemoryError");
+        static constexpr uint32_t MICError_HASH = ConstExprHashingUtils::HashString("MICError");
+        static constexpr uint32_t Successful_HASH = ConstExprHashingUtils::HashString("Successful");
 
 
         FuotaDeviceStatus GetFuotaDeviceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Initial_HASH)
           {
             return FuotaDeviceStatus::Initial;

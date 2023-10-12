@@ -20,14 +20,14 @@ namespace Aws
       namespace UpdateRuntimeOnMapper
       {
 
-        static const int Auto_HASH = HashingUtils::HashString("Auto");
-        static const int Manual_HASH = HashingUtils::HashString("Manual");
-        static const int FunctionUpdate_HASH = HashingUtils::HashString("FunctionUpdate");
+        static constexpr uint32_t Auto_HASH = ConstExprHashingUtils::HashString("Auto");
+        static constexpr uint32_t Manual_HASH = ConstExprHashingUtils::HashString("Manual");
+        static constexpr uint32_t FunctionUpdate_HASH = ConstExprHashingUtils::HashString("FunctionUpdate");
 
 
         UpdateRuntimeOn GetUpdateRuntimeOnForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Auto_HASH)
           {
             return UpdateRuntimeOn::Auto;

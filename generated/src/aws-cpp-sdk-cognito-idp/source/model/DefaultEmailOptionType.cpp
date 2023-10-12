@@ -20,13 +20,13 @@ namespace Aws
       namespace DefaultEmailOptionTypeMapper
       {
 
-        static const int CONFIRM_WITH_LINK_HASH = HashingUtils::HashString("CONFIRM_WITH_LINK");
-        static const int CONFIRM_WITH_CODE_HASH = HashingUtils::HashString("CONFIRM_WITH_CODE");
+        static constexpr uint32_t CONFIRM_WITH_LINK_HASH = ConstExprHashingUtils::HashString("CONFIRM_WITH_LINK");
+        static constexpr uint32_t CONFIRM_WITH_CODE_HASH = ConstExprHashingUtils::HashString("CONFIRM_WITH_CODE");
 
 
         DefaultEmailOptionType GetDefaultEmailOptionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONFIRM_WITH_LINK_HASH)
           {
             return DefaultEmailOptionType::CONFIRM_WITH_LINK;

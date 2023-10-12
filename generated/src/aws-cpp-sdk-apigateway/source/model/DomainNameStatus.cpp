@@ -20,16 +20,16 @@ namespace Aws
       namespace DomainNameStatusMapper
       {
 
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int PENDING_CERTIFICATE_REIMPORT_HASH = HashingUtils::HashString("PENDING_CERTIFICATE_REIMPORT");
-        static const int PENDING_OWNERSHIP_VERIFICATION_HASH = HashingUtils::HashString("PENDING_OWNERSHIP_VERIFICATION");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t PENDING_CERTIFICATE_REIMPORT_HASH = ConstExprHashingUtils::HashString("PENDING_CERTIFICATE_REIMPORT");
+        static constexpr uint32_t PENDING_OWNERSHIP_VERIFICATION_HASH = ConstExprHashingUtils::HashString("PENDING_OWNERSHIP_VERIFICATION");
 
 
         DomainNameStatus GetDomainNameStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVAILABLE_HASH)
           {
             return DomainNameStatus::AVAILABLE;

@@ -20,15 +20,15 @@ namespace Aws
       namespace FleetStateMapper
       {
 
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+        static constexpr uint32_t STARTING_HASH = ConstExprHashingUtils::HashString("STARTING");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
 
 
         FleetState GetFleetStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STARTING_HASH)
           {
             return FleetState::STARTING;

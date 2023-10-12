@@ -20,14 +20,14 @@ namespace Aws
       namespace HashAlgorithmMapper
       {
 
-        static const int SHA256_HASH = HashingUtils::HashString("SHA256");
-        static const int SHA384_HASH = HashingUtils::HashString("SHA384");
-        static const int SHA512_HASH = HashingUtils::HashString("SHA512");
+        static constexpr uint32_t SHA256_HASH = ConstExprHashingUtils::HashString("SHA256");
+        static constexpr uint32_t SHA384_HASH = ConstExprHashingUtils::HashString("SHA384");
+        static constexpr uint32_t SHA512_HASH = ConstExprHashingUtils::HashString("SHA512");
 
 
         HashAlgorithm GetHashAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SHA256_HASH)
           {
             return HashAlgorithm::SHA256;

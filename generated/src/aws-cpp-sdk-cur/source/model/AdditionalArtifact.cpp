@@ -20,14 +20,14 @@ namespace Aws
       namespace AdditionalArtifactMapper
       {
 
-        static const int REDSHIFT_HASH = HashingUtils::HashString("REDSHIFT");
-        static const int QUICKSIGHT_HASH = HashingUtils::HashString("QUICKSIGHT");
-        static const int ATHENA_HASH = HashingUtils::HashString("ATHENA");
+        static constexpr uint32_t REDSHIFT_HASH = ConstExprHashingUtils::HashString("REDSHIFT");
+        static constexpr uint32_t QUICKSIGHT_HASH = ConstExprHashingUtils::HashString("QUICKSIGHT");
+        static constexpr uint32_t ATHENA_HASH = ConstExprHashingUtils::HashString("ATHENA");
 
 
         AdditionalArtifact GetAdditionalArtifactForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REDSHIFT_HASH)
           {
             return AdditionalArtifact::REDSHIFT;

@@ -20,13 +20,13 @@ namespace Aws
       namespace StudioComponentInitializationScriptRunContextMapper
       {
 
-        static const int SYSTEM_INITIALIZATION_HASH = HashingUtils::HashString("SYSTEM_INITIALIZATION");
-        static const int USER_INITIALIZATION_HASH = HashingUtils::HashString("USER_INITIALIZATION");
+        static constexpr uint32_t SYSTEM_INITIALIZATION_HASH = ConstExprHashingUtils::HashString("SYSTEM_INITIALIZATION");
+        static constexpr uint32_t USER_INITIALIZATION_HASH = ConstExprHashingUtils::HashString("USER_INITIALIZATION");
 
 
         StudioComponentInitializationScriptRunContext GetStudioComponentInitializationScriptRunContextForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SYSTEM_INITIALIZATION_HASH)
           {
             return StudioComponentInitializationScriptRunContext::SYSTEM_INITIALIZATION;

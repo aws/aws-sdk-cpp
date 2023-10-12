@@ -20,13 +20,13 @@ namespace Aws
       namespace GeoMatchLevelMapper
       {
 
-        static const int Country_HASH = HashingUtils::HashString("Country");
-        static const int AreaCode_HASH = HashingUtils::HashString("AreaCode");
+        static constexpr uint32_t Country_HASH = ConstExprHashingUtils::HashString("Country");
+        static constexpr uint32_t AreaCode_HASH = ConstExprHashingUtils::HashString("AreaCode");
 
 
         GeoMatchLevel GetGeoMatchLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Country_HASH)
           {
             return GeoMatchLevel::Country;

@@ -20,13 +20,13 @@ namespace Aws
       namespace InstanceTypeHypervisorMapper
       {
 
-        static const int nitro_HASH = HashingUtils::HashString("nitro");
-        static const int xen_HASH = HashingUtils::HashString("xen");
+        static constexpr uint32_t nitro_HASH = ConstExprHashingUtils::HashString("nitro");
+        static constexpr uint32_t xen_HASH = ConstExprHashingUtils::HashString("xen");
 
 
         InstanceTypeHypervisor GetInstanceTypeHypervisorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == nitro_HASH)
           {
             return InstanceTypeHypervisor::nitro;

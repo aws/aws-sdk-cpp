@@ -20,14 +20,14 @@ namespace Aws
       namespace IpcModeMapper
       {
 
-        static const int host_HASH = HashingUtils::HashString("host");
-        static const int task_HASH = HashingUtils::HashString("task");
-        static const int none_HASH = HashingUtils::HashString("none");
+        static constexpr uint32_t host_HASH = ConstExprHashingUtils::HashString("host");
+        static constexpr uint32_t task_HASH = ConstExprHashingUtils::HashString("task");
+        static constexpr uint32_t none_HASH = ConstExprHashingUtils::HashString("none");
 
 
         IpcMode GetIpcModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == host_HASH)
           {
             return IpcMode::host;

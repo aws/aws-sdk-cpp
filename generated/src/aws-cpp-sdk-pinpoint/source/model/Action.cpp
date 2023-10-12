@@ -20,14 +20,14 @@ namespace Aws
       namespace ActionMapper
       {
 
-        static const int OPEN_APP_HASH = HashingUtils::HashString("OPEN_APP");
-        static const int DEEP_LINK_HASH = HashingUtils::HashString("DEEP_LINK");
-        static const int URL_HASH = HashingUtils::HashString("URL");
+        static constexpr uint32_t OPEN_APP_HASH = ConstExprHashingUtils::HashString("OPEN_APP");
+        static constexpr uint32_t DEEP_LINK_HASH = ConstExprHashingUtils::HashString("DEEP_LINK");
+        static constexpr uint32_t URL_HASH = ConstExprHashingUtils::HashString("URL");
 
 
         Action GetActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OPEN_APP_HASH)
           {
             return Action::OPEN_APP;

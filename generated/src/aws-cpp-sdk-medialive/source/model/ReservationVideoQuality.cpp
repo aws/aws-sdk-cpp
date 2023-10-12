@@ -20,14 +20,14 @@ namespace Aws
       namespace ReservationVideoQualityMapper
       {
 
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
-        static const int ENHANCED_HASH = HashingUtils::HashString("ENHANCED");
-        static const int PREMIUM_HASH = HashingUtils::HashString("PREMIUM");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
+        static constexpr uint32_t ENHANCED_HASH = ConstExprHashingUtils::HashString("ENHANCED");
+        static constexpr uint32_t PREMIUM_HASH = ConstExprHashingUtils::HashString("PREMIUM");
 
 
         ReservationVideoQuality GetReservationVideoQualityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STANDARD_HASH)
           {
             return ReservationVideoQuality::STANDARD;

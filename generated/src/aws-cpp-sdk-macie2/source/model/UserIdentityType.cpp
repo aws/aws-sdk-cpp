@@ -20,17 +20,17 @@ namespace Aws
       namespace UserIdentityTypeMapper
       {
 
-        static const int AssumedRole_HASH = HashingUtils::HashString("AssumedRole");
-        static const int IAMUser_HASH = HashingUtils::HashString("IAMUser");
-        static const int FederatedUser_HASH = HashingUtils::HashString("FederatedUser");
-        static const int Root_HASH = HashingUtils::HashString("Root");
-        static const int AWSAccount_HASH = HashingUtils::HashString("AWSAccount");
-        static const int AWSService_HASH = HashingUtils::HashString("AWSService");
+        static constexpr uint32_t AssumedRole_HASH = ConstExprHashingUtils::HashString("AssumedRole");
+        static constexpr uint32_t IAMUser_HASH = ConstExprHashingUtils::HashString("IAMUser");
+        static constexpr uint32_t FederatedUser_HASH = ConstExprHashingUtils::HashString("FederatedUser");
+        static constexpr uint32_t Root_HASH = ConstExprHashingUtils::HashString("Root");
+        static constexpr uint32_t AWSAccount_HASH = ConstExprHashingUtils::HashString("AWSAccount");
+        static constexpr uint32_t AWSService_HASH = ConstExprHashingUtils::HashString("AWSService");
 
 
         UserIdentityType GetUserIdentityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AssumedRole_HASH)
           {
             return UserIdentityType::AssumedRole;

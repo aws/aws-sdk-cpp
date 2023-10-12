@@ -20,13 +20,13 @@ namespace Aws
       namespace H264EndOfStreamMarkersMapper
       {
 
-        static const int INCLUDE_HASH = HashingUtils::HashString("INCLUDE");
-        static const int SUPPRESS_HASH = HashingUtils::HashString("SUPPRESS");
+        static constexpr uint32_t INCLUDE_HASH = ConstExprHashingUtils::HashString("INCLUDE");
+        static constexpr uint32_t SUPPRESS_HASH = ConstExprHashingUtils::HashString("SUPPRESS");
 
 
         H264EndOfStreamMarkers GetH264EndOfStreamMarkersForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INCLUDE_HASH)
           {
             return H264EndOfStreamMarkers::INCLUDE;

@@ -20,14 +20,14 @@ namespace Aws
       namespace FailureCodeMapper
       {
 
-        static const int InvalidInput_HASH = HashingUtils::HashString("InvalidInput");
-        static const int RequestThrottled_HASH = HashingUtils::HashString("RequestThrottled");
-        static const int UnknownError_HASH = HashingUtils::HashString("UnknownError");
+        static constexpr uint32_t InvalidInput_HASH = ConstExprHashingUtils::HashString("InvalidInput");
+        static constexpr uint32_t RequestThrottled_HASH = ConstExprHashingUtils::HashString("RequestThrottled");
+        static constexpr uint32_t UnknownError_HASH = ConstExprHashingUtils::HashString("UnknownError");
 
 
         FailureCode GetFailureCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InvalidInput_HASH)
           {
             return FailureCode::InvalidInput;

@@ -20,15 +20,15 @@ namespace Aws
       namespace ReplicationConfigurationDefaultLargeStagingDiskTypeMapper
       {
 
-        static const int GP2_HASH = HashingUtils::HashString("GP2");
-        static const int GP3_HASH = HashingUtils::HashString("GP3");
-        static const int ST1_HASH = HashingUtils::HashString("ST1");
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
+        static constexpr uint32_t GP2_HASH = ConstExprHashingUtils::HashString("GP2");
+        static constexpr uint32_t GP3_HASH = ConstExprHashingUtils::HashString("GP3");
+        static constexpr uint32_t ST1_HASH = ConstExprHashingUtils::HashString("ST1");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
 
 
         ReplicationConfigurationDefaultLargeStagingDiskType GetReplicationConfigurationDefaultLargeStagingDiskTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GP2_HASH)
           {
             return ReplicationConfigurationDefaultLargeStagingDiskType::GP2;

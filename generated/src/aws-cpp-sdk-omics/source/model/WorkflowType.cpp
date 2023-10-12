@@ -20,13 +20,13 @@ namespace Aws
       namespace WorkflowTypeMapper
       {
 
-        static const int PRIVATE__HASH = HashingUtils::HashString("PRIVATE");
-        static const int READY2RUN_HASH = HashingUtils::HashString("READY2RUN");
+        static constexpr uint32_t PRIVATE__HASH = ConstExprHashingUtils::HashString("PRIVATE");
+        static constexpr uint32_t READY2RUN_HASH = ConstExprHashingUtils::HashString("READY2RUN");
 
 
         WorkflowType GetWorkflowTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRIVATE__HASH)
           {
             return WorkflowType::PRIVATE_;

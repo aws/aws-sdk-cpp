@@ -20,13 +20,13 @@ namespace Aws
       namespace RootDeviceTypeMapper
       {
 
-        static const int ebs_HASH = HashingUtils::HashString("ebs");
-        static const int instance_store_HASH = HashingUtils::HashString("instance-store");
+        static constexpr uint32_t ebs_HASH = ConstExprHashingUtils::HashString("ebs");
+        static constexpr uint32_t instance_store_HASH = ConstExprHashingUtils::HashString("instance-store");
 
 
         RootDeviceType GetRootDeviceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ebs_HASH)
           {
             return RootDeviceType::ebs;

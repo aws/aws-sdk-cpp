@@ -20,14 +20,14 @@ namespace Aws
       namespace TerminologyDataFormatMapper
       {
 
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
-        static const int TMX_HASH = HashingUtils::HashString("TMX");
-        static const int TSV_HASH = HashingUtils::HashString("TSV");
+        static constexpr uint32_t CSV_HASH = ConstExprHashingUtils::HashString("CSV");
+        static constexpr uint32_t TMX_HASH = ConstExprHashingUtils::HashString("TMX");
+        static constexpr uint32_t TSV_HASH = ConstExprHashingUtils::HashString("TSV");
 
 
         TerminologyDataFormat GetTerminologyDataFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CSV_HASH)
           {
             return TerminologyDataFormat::CSV;

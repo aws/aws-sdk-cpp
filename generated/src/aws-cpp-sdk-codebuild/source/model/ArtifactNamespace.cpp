@@ -20,13 +20,13 @@ namespace Aws
       namespace ArtifactNamespaceMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int BUILD_ID_HASH = HashingUtils::HashString("BUILD_ID");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t BUILD_ID_HASH = ConstExprHashingUtils::HashString("BUILD_ID");
 
 
         ArtifactNamespace GetArtifactNamespaceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return ArtifactNamespace::NONE;

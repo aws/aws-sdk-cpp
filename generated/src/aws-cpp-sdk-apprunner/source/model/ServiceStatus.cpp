@@ -20,17 +20,17 @@ namespace Aws
       namespace ServiceStatusMapper
       {
 
-        static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
-        static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
-        static const int OPERATION_IN_PROGRESS_HASH = HashingUtils::HashString("OPERATION_IN_PROGRESS");
+        static constexpr uint32_t CREATE_FAILED_HASH = ConstExprHashingUtils::HashString("CREATE_FAILED");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t DELETE_FAILED_HASH = ConstExprHashingUtils::HashString("DELETE_FAILED");
+        static constexpr uint32_t PAUSED_HASH = ConstExprHashingUtils::HashString("PAUSED");
+        static constexpr uint32_t OPERATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("OPERATION_IN_PROGRESS");
 
 
         ServiceStatus GetServiceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_FAILED_HASH)
           {
             return ServiceStatus::CREATE_FAILED;

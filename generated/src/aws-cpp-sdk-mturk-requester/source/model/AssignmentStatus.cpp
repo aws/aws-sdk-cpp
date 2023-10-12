@@ -20,14 +20,14 @@ namespace Aws
       namespace AssignmentStatusMapper
       {
 
-        static const int Submitted_HASH = HashingUtils::HashString("Submitted");
-        static const int Approved_HASH = HashingUtils::HashString("Approved");
-        static const int Rejected_HASH = HashingUtils::HashString("Rejected");
+        static constexpr uint32_t Submitted_HASH = ConstExprHashingUtils::HashString("Submitted");
+        static constexpr uint32_t Approved_HASH = ConstExprHashingUtils::HashString("Approved");
+        static constexpr uint32_t Rejected_HASH = ConstExprHashingUtils::HashString("Rejected");
 
 
         AssignmentStatus GetAssignmentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Submitted_HASH)
           {
             return AssignmentStatus::Submitted;

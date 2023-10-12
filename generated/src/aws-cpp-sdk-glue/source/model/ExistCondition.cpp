@@ -20,14 +20,14 @@ namespace Aws
       namespace ExistConditionMapper
       {
 
-        static const int MUST_EXIST_HASH = HashingUtils::HashString("MUST_EXIST");
-        static const int NOT_EXIST_HASH = HashingUtils::HashString("NOT_EXIST");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t MUST_EXIST_HASH = ConstExprHashingUtils::HashString("MUST_EXIST");
+        static constexpr uint32_t NOT_EXIST_HASH = ConstExprHashingUtils::HashString("NOT_EXIST");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         ExistCondition GetExistConditionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MUST_EXIST_HASH)
           {
             return ExistCondition::MUST_EXIST;

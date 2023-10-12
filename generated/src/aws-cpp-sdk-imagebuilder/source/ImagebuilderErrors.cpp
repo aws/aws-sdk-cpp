@@ -18,24 +18,24 @@ namespace imagebuilder
 namespace ImagebuilderErrorMapper
 {
 
-static const int CLIENT_HASH = HashingUtils::HashString("ClientException");
-static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
-static const int RESOURCE_DEPENDENCY_HASH = HashingUtils::HashString("ResourceDependencyException");
-static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
-static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
-static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("InvalidPaginationTokenException");
-static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
-static const int INVALID_VERSION_NUMBER_HASH = HashingUtils::HashString("InvalidVersionNumberException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int CALL_RATE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CallRateLimitExceededException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t CLIENT_HASH = ConstExprHashingUtils::HashString("ClientException");
+static constexpr uint32_t RESOURCE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ResourceAlreadyExistsException");
+static constexpr uint32_t RESOURCE_DEPENDENCY_HASH = ConstExprHashingUtils::HashString("ResourceDependencyException");
+static constexpr uint32_t FORBIDDEN_HASH = ConstExprHashingUtils::HashString("ForbiddenException");
+static constexpr uint32_t IDEMPOTENT_PARAMETER_MISMATCH_HASH = ConstExprHashingUtils::HashString("IdempotentParameterMismatchException");
+static constexpr uint32_t INVALID_PAGINATION_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidPaginationTokenException");
+static constexpr uint32_t SERVICE_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ServiceQuotaExceededException");
+static constexpr uint32_t INVALID_VERSION_NUMBER_HASH = ConstExprHashingUtils::HashString("InvalidVersionNumberException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t CALL_RATE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("CallRateLimitExceededException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t SERVICE_HASH = ConstExprHashingUtils::HashString("ServiceException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CLIENT_HASH)
   {

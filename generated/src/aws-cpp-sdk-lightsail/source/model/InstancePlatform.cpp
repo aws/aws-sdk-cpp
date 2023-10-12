@@ -20,13 +20,13 @@ namespace Aws
       namespace InstancePlatformMapper
       {
 
-        static const int LINUX_UNIX_HASH = HashingUtils::HashString("LINUX_UNIX");
-        static const int WINDOWS_HASH = HashingUtils::HashString("WINDOWS");
+        static constexpr uint32_t LINUX_UNIX_HASH = ConstExprHashingUtils::HashString("LINUX_UNIX");
+        static constexpr uint32_t WINDOWS_HASH = ConstExprHashingUtils::HashString("WINDOWS");
 
 
         InstancePlatform GetInstancePlatformForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LINUX_UNIX_HASH)
           {
             return InstancePlatform::LINUX_UNIX;

@@ -20,13 +20,13 @@ namespace Aws
       namespace RequiredAttributeBehaviorMapper
       {
 
-        static const int REQUIRED_ALWAYS_HASH = HashingUtils::HashString("REQUIRED_ALWAYS");
-        static const int NOT_REQUIRED_HASH = HashingUtils::HashString("NOT_REQUIRED");
+        static constexpr uint32_t REQUIRED_ALWAYS_HASH = ConstExprHashingUtils::HashString("REQUIRED_ALWAYS");
+        static constexpr uint32_t NOT_REQUIRED_HASH = ConstExprHashingUtils::HashString("NOT_REQUIRED");
 
 
         RequiredAttributeBehavior GetRequiredAttributeBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REQUIRED_ALWAYS_HASH)
           {
             return RequiredAttributeBehavior::REQUIRED_ALWAYS;

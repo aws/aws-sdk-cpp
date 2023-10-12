@@ -20,17 +20,17 @@ namespace Aws
       namespace AsyncJobStatusMapper
       {
 
-        static const int IN_PROGRESS_INITIALIZING_HASH = HashingUtils::HashString("IN_PROGRESS_INITIALIZING");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int CANCEL_IN_PROGRESS_HASH = HashingUtils::HashString("CANCEL_IN_PROGRESS");
-        static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
-        static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t IN_PROGRESS_INITIALIZING_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS_INITIALIZING");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t CANCEL_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("CANCEL_IN_PROGRESS");
+        static constexpr uint32_t CANCELED_HASH = ConstExprHashingUtils::HashString("CANCELED");
+        static constexpr uint32_t COMPLETE_HASH = ConstExprHashingUtils::HashString("COMPLETE");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         AsyncJobStatus GetAsyncJobStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IN_PROGRESS_INITIALIZING_HASH)
           {
             return AsyncJobStatus::IN_PROGRESS_INITIALIZING;

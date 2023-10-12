@@ -20,14 +20,14 @@ namespace Aws
       namespace StreamHealthMapper
       {
 
-        static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
-        static const int STARVING_HASH = HashingUtils::HashString("STARVING");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t HEALTHY_HASH = ConstExprHashingUtils::HashString("HEALTHY");
+        static constexpr uint32_t STARVING_HASH = ConstExprHashingUtils::HashString("STARVING");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         StreamHealth GetStreamHealthForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HEALTHY_HASH)
           {
             return StreamHealth::HEALTHY;

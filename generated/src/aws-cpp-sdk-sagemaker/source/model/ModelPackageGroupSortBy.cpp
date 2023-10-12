@@ -20,13 +20,13 @@ namespace Aws
       namespace ModelPackageGroupSortByMapper
       {
 
-        static const int Name_HASH = HashingUtils::HashString("Name");
-        static const int CreationTime_HASH = HashingUtils::HashString("CreationTime");
+        static constexpr uint32_t Name_HASH = ConstExprHashingUtils::HashString("Name");
+        static constexpr uint32_t CreationTime_HASH = ConstExprHashingUtils::HashString("CreationTime");
 
 
         ModelPackageGroupSortBy GetModelPackageGroupSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Name_HASH)
           {
             return ModelPackageGroupSortBy::Name;

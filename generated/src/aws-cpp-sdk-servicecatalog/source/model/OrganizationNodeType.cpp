@@ -20,14 +20,14 @@ namespace Aws
       namespace OrganizationNodeTypeMapper
       {
 
-        static const int ORGANIZATION_HASH = HashingUtils::HashString("ORGANIZATION");
-        static const int ORGANIZATIONAL_UNIT_HASH = HashingUtils::HashString("ORGANIZATIONAL_UNIT");
-        static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
+        static constexpr uint32_t ORGANIZATION_HASH = ConstExprHashingUtils::HashString("ORGANIZATION");
+        static constexpr uint32_t ORGANIZATIONAL_UNIT_HASH = ConstExprHashingUtils::HashString("ORGANIZATIONAL_UNIT");
+        static constexpr uint32_t ACCOUNT_HASH = ConstExprHashingUtils::HashString("ACCOUNT");
 
 
         OrganizationNodeType GetOrganizationNodeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ORGANIZATION_HASH)
           {
             return OrganizationNodeType::ORGANIZATION;

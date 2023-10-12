@@ -20,13 +20,13 @@ namespace Aws
       namespace IntelligentTieringStatusMapper
       {
 
-        static const int Enabled_HASH = HashingUtils::HashString("Enabled");
-        static const int Disabled_HASH = HashingUtils::HashString("Disabled");
+        static constexpr uint32_t Enabled_HASH = ConstExprHashingUtils::HashString("Enabled");
+        static constexpr uint32_t Disabled_HASH = ConstExprHashingUtils::HashString("Disabled");
 
 
         IntelligentTieringStatus GetIntelligentTieringStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Enabled_HASH)
           {
             return IntelligentTieringStatus::Enabled;

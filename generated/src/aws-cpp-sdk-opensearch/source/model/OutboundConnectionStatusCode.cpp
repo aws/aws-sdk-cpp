@@ -20,21 +20,21 @@ namespace Aws
       namespace OutboundConnectionStatusCodeMapper
       {
 
-        static const int VALIDATING_HASH = HashingUtils::HashString("VALIDATING");
-        static const int VALIDATION_FAILED_HASH = HashingUtils::HashString("VALIDATION_FAILED");
-        static const int PENDING_ACCEPTANCE_HASH = HashingUtils::HashString("PENDING_ACCEPTANCE");
-        static const int APPROVED_HASH = HashingUtils::HashString("APPROVED");
-        static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int REJECTING_HASH = HashingUtils::HashString("REJECTING");
-        static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t VALIDATING_HASH = ConstExprHashingUtils::HashString("VALIDATING");
+        static constexpr uint32_t VALIDATION_FAILED_HASH = ConstExprHashingUtils::HashString("VALIDATION_FAILED");
+        static constexpr uint32_t PENDING_ACCEPTANCE_HASH = ConstExprHashingUtils::HashString("PENDING_ACCEPTANCE");
+        static constexpr uint32_t APPROVED_HASH = ConstExprHashingUtils::HashString("APPROVED");
+        static constexpr uint32_t PROVISIONING_HASH = ConstExprHashingUtils::HashString("PROVISIONING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t REJECTING_HASH = ConstExprHashingUtils::HashString("REJECTING");
+        static constexpr uint32_t REJECTED_HASH = ConstExprHashingUtils::HashString("REJECTED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         OutboundConnectionStatusCode GetOutboundConnectionStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VALIDATING_HASH)
           {
             return OutboundConnectionStatusCode::VALIDATING;

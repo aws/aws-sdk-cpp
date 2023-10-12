@@ -20,16 +20,16 @@ namespace Aws
       namespace AttributeTypeMapper
       {
 
-        static const int string_HASH = HashingUtils::HashString("string");
-        static const int integer_HASH = HashingUtils::HashString("integer");
-        static const int float__HASH = HashingUtils::HashString("float");
-        static const int timestamp_HASH = HashingUtils::HashString("timestamp");
-        static const int geolocation_HASH = HashingUtils::HashString("geolocation");
+        static constexpr uint32_t string_HASH = ConstExprHashingUtils::HashString("string");
+        static constexpr uint32_t integer_HASH = ConstExprHashingUtils::HashString("integer");
+        static constexpr uint32_t float__HASH = ConstExprHashingUtils::HashString("float");
+        static constexpr uint32_t timestamp_HASH = ConstExprHashingUtils::HashString("timestamp");
+        static constexpr uint32_t geolocation_HASH = ConstExprHashingUtils::HashString("geolocation");
 
 
         AttributeType GetAttributeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == string_HASH)
           {
             return AttributeType::string;

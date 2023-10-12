@@ -20,13 +20,13 @@ namespace Aws
       namespace HomeDirectoryTypeMapper
       {
 
-        static const int PATH_HASH = HashingUtils::HashString("PATH");
-        static const int LOGICAL_HASH = HashingUtils::HashString("LOGICAL");
+        static constexpr uint32_t PATH_HASH = ConstExprHashingUtils::HashString("PATH");
+        static constexpr uint32_t LOGICAL_HASH = ConstExprHashingUtils::HashString("LOGICAL");
 
 
         HomeDirectoryType GetHomeDirectoryTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PATH_HASH)
           {
             return HomeDirectoryType::PATH;

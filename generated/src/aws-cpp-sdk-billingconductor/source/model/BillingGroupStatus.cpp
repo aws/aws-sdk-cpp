@@ -20,13 +20,13 @@ namespace Aws
       namespace BillingGroupStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int PRIMARY_ACCOUNT_MISSING_HASH = HashingUtils::HashString("PRIMARY_ACCOUNT_MISSING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t PRIMARY_ACCOUNT_MISSING_HASH = ConstExprHashingUtils::HashString("PRIMARY_ACCOUNT_MISSING");
 
 
         BillingGroupStatus GetBillingGroupStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return BillingGroupStatus::ACTIVE;

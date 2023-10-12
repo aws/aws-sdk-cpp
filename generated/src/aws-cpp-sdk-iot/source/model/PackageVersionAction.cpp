@@ -20,13 +20,13 @@ namespace Aws
       namespace PackageVersionActionMapper
       {
 
-        static const int PUBLISH_HASH = HashingUtils::HashString("PUBLISH");
-        static const int DEPRECATE_HASH = HashingUtils::HashString("DEPRECATE");
+        static constexpr uint32_t PUBLISH_HASH = ConstExprHashingUtils::HashString("PUBLISH");
+        static constexpr uint32_t DEPRECATE_HASH = ConstExprHashingUtils::HashString("DEPRECATE");
 
 
         PackageVersionAction GetPackageVersionActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUBLISH_HASH)
           {
             return PackageVersionAction::PUBLISH;

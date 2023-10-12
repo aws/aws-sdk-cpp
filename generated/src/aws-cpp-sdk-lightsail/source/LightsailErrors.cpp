@@ -68,17 +68,17 @@ template<> AWS_LIGHTSAIL_API AccountSetupInProgressException LightsailError::Get
 namespace LightsailErrorMapper
 {
 
-static const int OPERATION_FAILURE_HASH = HashingUtils::HashString("OperationFailureException");
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int UNAUTHENTICATED_HASH = HashingUtils::HashString("UnauthenticatedException");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
-static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
-static const int ACCOUNT_SETUP_IN_PROGRESS_HASH = HashingUtils::HashString("AccountSetupInProgressException");
+static constexpr uint32_t OPERATION_FAILURE_HASH = ConstExprHashingUtils::HashString("OperationFailureException");
+static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NotFoundException");
+static constexpr uint32_t UNAUTHENTICATED_HASH = ConstExprHashingUtils::HashString("UnauthenticatedException");
+static constexpr uint32_t INVALID_INPUT_HASH = ConstExprHashingUtils::HashString("InvalidInputException");
+static constexpr uint32_t SERVICE_HASH = ConstExprHashingUtils::HashString("ServiceException");
+static constexpr uint32_t ACCOUNT_SETUP_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("AccountSetupInProgressException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == OPERATION_FAILURE_HASH)
   {

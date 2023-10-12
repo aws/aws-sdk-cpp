@@ -20,16 +20,16 @@ namespace Aws
       namespace UserTypeMapper
       {
 
-        static const int USER_HASH = HashingUtils::HashString("USER");
-        static const int ADMIN_HASH = HashingUtils::HashString("ADMIN");
-        static const int POWERUSER_HASH = HashingUtils::HashString("POWERUSER");
-        static const int MINIMALUSER_HASH = HashingUtils::HashString("MINIMALUSER");
-        static const int WORKSPACESUSER_HASH = HashingUtils::HashString("WORKSPACESUSER");
+        static constexpr uint32_t USER_HASH = ConstExprHashingUtils::HashString("USER");
+        static constexpr uint32_t ADMIN_HASH = ConstExprHashingUtils::HashString("ADMIN");
+        static constexpr uint32_t POWERUSER_HASH = ConstExprHashingUtils::HashString("POWERUSER");
+        static constexpr uint32_t MINIMALUSER_HASH = ConstExprHashingUtils::HashString("MINIMALUSER");
+        static constexpr uint32_t WORKSPACESUSER_HASH = ConstExprHashingUtils::HashString("WORKSPACESUSER");
 
 
         UserType GetUserTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USER_HASH)
           {
             return UserType::USER;

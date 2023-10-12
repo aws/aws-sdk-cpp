@@ -20,15 +20,15 @@ namespace Aws
       namespace RecommendationTypeMapper
       {
 
-        static const int DKIM_HASH = HashingUtils::HashString("DKIM");
-        static const int DMARC_HASH = HashingUtils::HashString("DMARC");
-        static const int SPF_HASH = HashingUtils::HashString("SPF");
-        static const int BIMI_HASH = HashingUtils::HashString("BIMI");
+        static constexpr uint32_t DKIM_HASH = ConstExprHashingUtils::HashString("DKIM");
+        static constexpr uint32_t DMARC_HASH = ConstExprHashingUtils::HashString("DMARC");
+        static constexpr uint32_t SPF_HASH = ConstExprHashingUtils::HashString("SPF");
+        static constexpr uint32_t BIMI_HASH = ConstExprHashingUtils::HashString("BIMI");
 
 
         RecommendationType GetRecommendationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DKIM_HASH)
           {
             return RecommendationType::DKIM;

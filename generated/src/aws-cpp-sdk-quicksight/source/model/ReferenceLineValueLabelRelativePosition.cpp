@@ -20,13 +20,13 @@ namespace Aws
       namespace ReferenceLineValueLabelRelativePositionMapper
       {
 
-        static const int BEFORE_CUSTOM_LABEL_HASH = HashingUtils::HashString("BEFORE_CUSTOM_LABEL");
-        static const int AFTER_CUSTOM_LABEL_HASH = HashingUtils::HashString("AFTER_CUSTOM_LABEL");
+        static constexpr uint32_t BEFORE_CUSTOM_LABEL_HASH = ConstExprHashingUtils::HashString("BEFORE_CUSTOM_LABEL");
+        static constexpr uint32_t AFTER_CUSTOM_LABEL_HASH = ConstExprHashingUtils::HashString("AFTER_CUSTOM_LABEL");
 
 
         ReferenceLineValueLabelRelativePosition GetReferenceLineValueLabelRelativePositionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BEFORE_CUSTOM_LABEL_HASH)
           {
             return ReferenceLineValueLabelRelativePosition::BEFORE_CUSTOM_LABEL;

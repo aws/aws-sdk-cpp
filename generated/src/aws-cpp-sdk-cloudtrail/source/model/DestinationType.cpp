@@ -20,13 +20,13 @@ namespace Aws
       namespace DestinationTypeMapper
       {
 
-        static const int EVENT_DATA_STORE_HASH = HashingUtils::HashString("EVENT_DATA_STORE");
-        static const int AWS_SERVICE_HASH = HashingUtils::HashString("AWS_SERVICE");
+        static constexpr uint32_t EVENT_DATA_STORE_HASH = ConstExprHashingUtils::HashString("EVENT_DATA_STORE");
+        static constexpr uint32_t AWS_SERVICE_HASH = ConstExprHashingUtils::HashString("AWS_SERVICE");
 
 
         DestinationType GetDestinationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EVENT_DATA_STORE_HASH)
           {
             return DestinationType::EVENT_DATA_STORE;

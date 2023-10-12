@@ -20,14 +20,14 @@ namespace Aws
       namespace EncryptionStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int FAILURE_HASH = HashingUtils::HashString("FAILURE");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t FAILURE_HASH = ConstExprHashingUtils::HashString("FAILURE");
 
 
         EncryptionStatus GetEncryptionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return EncryptionStatus::PENDING;

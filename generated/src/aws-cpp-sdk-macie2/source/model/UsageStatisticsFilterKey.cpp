@@ -20,15 +20,15 @@ namespace Aws
       namespace UsageStatisticsFilterKeyMapper
       {
 
-        static const int accountId_HASH = HashingUtils::HashString("accountId");
-        static const int serviceLimit_HASH = HashingUtils::HashString("serviceLimit");
-        static const int freeTrialStartDate_HASH = HashingUtils::HashString("freeTrialStartDate");
-        static const int total_HASH = HashingUtils::HashString("total");
+        static constexpr uint32_t accountId_HASH = ConstExprHashingUtils::HashString("accountId");
+        static constexpr uint32_t serviceLimit_HASH = ConstExprHashingUtils::HashString("serviceLimit");
+        static constexpr uint32_t freeTrialStartDate_HASH = ConstExprHashingUtils::HashString("freeTrialStartDate");
+        static constexpr uint32_t total_HASH = ConstExprHashingUtils::HashString("total");
 
 
         UsageStatisticsFilterKey GetUsageStatisticsFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == accountId_HASH)
           {
             return UsageStatisticsFilterKey::accountId;

@@ -20,14 +20,14 @@ namespace Aws
       namespace AnalyticsIntentFieldMapper
       {
 
-        static const int IntentName_HASH = HashingUtils::HashString("IntentName");
-        static const int IntentEndState_HASH = HashingUtils::HashString("IntentEndState");
-        static const int IntentLevel_HASH = HashingUtils::HashString("IntentLevel");
+        static constexpr uint32_t IntentName_HASH = ConstExprHashingUtils::HashString("IntentName");
+        static constexpr uint32_t IntentEndState_HASH = ConstExprHashingUtils::HashString("IntentEndState");
+        static constexpr uint32_t IntentLevel_HASH = ConstExprHashingUtils::HashString("IntentLevel");
 
 
         AnalyticsIntentField GetAnalyticsIntentFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IntentName_HASH)
           {
             return AnalyticsIntentField::IntentName;

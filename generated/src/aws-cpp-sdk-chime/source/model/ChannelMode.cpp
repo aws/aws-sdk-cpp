@@ -20,13 +20,13 @@ namespace Aws
       namespace ChannelModeMapper
       {
 
-        static const int UNRESTRICTED_HASH = HashingUtils::HashString("UNRESTRICTED");
-        static const int RESTRICTED_HASH = HashingUtils::HashString("RESTRICTED");
+        static constexpr uint32_t UNRESTRICTED_HASH = ConstExprHashingUtils::HashString("UNRESTRICTED");
+        static constexpr uint32_t RESTRICTED_HASH = ConstExprHashingUtils::HashString("RESTRICTED");
 
 
         ChannelMode GetChannelModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNRESTRICTED_HASH)
           {
             return ChannelMode::UNRESTRICTED;

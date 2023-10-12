@@ -20,13 +20,13 @@ namespace Aws
       namespace ModelPromoteModeMapper
       {
 
-        static const int MANAGED_HASH = HashingUtils::HashString("MANAGED");
-        static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
+        static constexpr uint32_t MANAGED_HASH = ConstExprHashingUtils::HashString("MANAGED");
+        static constexpr uint32_t MANUAL_HASH = ConstExprHashingUtils::HashString("MANUAL");
 
 
         ModelPromoteMode GetModelPromoteModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MANAGED_HASH)
           {
             return ModelPromoteMode::MANAGED;

@@ -20,17 +20,17 @@ namespace Aws
       namespace ResolverEndpointStatusMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int OPERATIONAL_HASH = HashingUtils::HashString("OPERATIONAL");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int AUTO_RECOVERING_HASH = HashingUtils::HashString("AUTO_RECOVERING");
-        static const int ACTION_NEEDED_HASH = HashingUtils::HashString("ACTION_NEEDED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t OPERATIONAL_HASH = ConstExprHashingUtils::HashString("OPERATIONAL");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t AUTO_RECOVERING_HASH = ConstExprHashingUtils::HashString("AUTO_RECOVERING");
+        static constexpr uint32_t ACTION_NEEDED_HASH = ConstExprHashingUtils::HashString("ACTION_NEEDED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
 
 
         ResolverEndpointStatus GetResolverEndpointStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return ResolverEndpointStatus::CREATING;

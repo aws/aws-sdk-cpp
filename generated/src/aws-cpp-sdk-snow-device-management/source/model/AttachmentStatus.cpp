@@ -20,15 +20,15 @@ namespace Aws
       namespace AttachmentStatusMapper
       {
 
-        static const int ATTACHING_HASH = HashingUtils::HashString("ATTACHING");
-        static const int ATTACHED_HASH = HashingUtils::HashString("ATTACHED");
-        static const int DETACHING_HASH = HashingUtils::HashString("DETACHING");
-        static const int DETACHED_HASH = HashingUtils::HashString("DETACHED");
+        static constexpr uint32_t ATTACHING_HASH = ConstExprHashingUtils::HashString("ATTACHING");
+        static constexpr uint32_t ATTACHED_HASH = ConstExprHashingUtils::HashString("ATTACHED");
+        static constexpr uint32_t DETACHING_HASH = ConstExprHashingUtils::HashString("DETACHING");
+        static constexpr uint32_t DETACHED_HASH = ConstExprHashingUtils::HashString("DETACHED");
 
 
         AttachmentStatus GetAttachmentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ATTACHING_HASH)
           {
             return AttachmentStatus::ATTACHING;

@@ -20,13 +20,13 @@ namespace Aws
       namespace PolicyTypeMapper
       {
 
-        static const int RuleBased_HASH = HashingUtils::HashString("RuleBased");
-        static const int TargetBased_HASH = HashingUtils::HashString("TargetBased");
+        static constexpr uint32_t RuleBased_HASH = ConstExprHashingUtils::HashString("RuleBased");
+        static constexpr uint32_t TargetBased_HASH = ConstExprHashingUtils::HashString("TargetBased");
 
 
         PolicyType GetPolicyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RuleBased_HASH)
           {
             return PolicyType::RuleBased;

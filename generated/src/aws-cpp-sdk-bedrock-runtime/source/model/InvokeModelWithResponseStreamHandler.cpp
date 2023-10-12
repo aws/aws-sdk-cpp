@@ -186,11 +186,11 @@ namespace Model
 
 namespace InvokeModelWithResponseStreamEventMapper
 {
-    static const int CHUNK_HASH = Aws::Utils::HashingUtils::HashString("chunk");
+    static constexpr uint32_t CHUNK_HASH = Aws::Utils::ConstExprHashingUtils::HashString("chunk");
 
     InvokeModelWithResponseStreamEventType GetInvokeModelWithResponseStreamEventTypeForName(const Aws::String& name)
     {
-        int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
+        uint32_t hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
         if (hashCode == CHUNK_HASH)
         {
             return InvokeModelWithResponseStreamEventType::CHUNK;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ChannelRoleMapper
       {
 
-        static const int MASTER_HASH = HashingUtils::HashString("MASTER");
-        static const int VIEWER_HASH = HashingUtils::HashString("VIEWER");
+        static constexpr uint32_t MASTER_HASH = ConstExprHashingUtils::HashString("MASTER");
+        static constexpr uint32_t VIEWER_HASH = ConstExprHashingUtils::HashString("VIEWER");
 
 
         ChannelRole GetChannelRoleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MASTER_HASH)
           {
             return ChannelRole::MASTER;

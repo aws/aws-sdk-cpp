@@ -20,16 +20,16 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int domain_HASH = HashingUtils::HashString("domain");
-        static const int repository_HASH = HashingUtils::HashString("repository");
-        static const int package_HASH = HashingUtils::HashString("package");
-        static const int package_version_HASH = HashingUtils::HashString("package-version");
-        static const int asset_HASH = HashingUtils::HashString("asset");
+        static constexpr uint32_t domain_HASH = ConstExprHashingUtils::HashString("domain");
+        static constexpr uint32_t repository_HASH = ConstExprHashingUtils::HashString("repository");
+        static constexpr uint32_t package_HASH = ConstExprHashingUtils::HashString("package");
+        static constexpr uint32_t package_version_HASH = ConstExprHashingUtils::HashString("package-version");
+        static constexpr uint32_t asset_HASH = ConstExprHashingUtils::HashString("asset");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == domain_HASH)
           {
             return ResourceType::domain;

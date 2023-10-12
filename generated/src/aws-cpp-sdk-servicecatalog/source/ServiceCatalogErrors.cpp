@@ -18,18 +18,18 @@ namespace ServiceCatalog
 namespace ServiceCatalogErrorMapper
 {
 
-static const int TAG_OPTION_NOT_MIGRATED_HASH = HashingUtils::HashString("TagOptionNotMigratedException");
-static const int OPERATION_NOT_SUPPORTED_HASH = HashingUtils::HashString("OperationNotSupportedException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int DUPLICATE_RESOURCE_HASH = HashingUtils::HashString("DuplicateResourceException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int INVALID_PARAMETERS_HASH = HashingUtils::HashString("InvalidParametersException");
-static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
+static constexpr uint32_t TAG_OPTION_NOT_MIGRATED_HASH = ConstExprHashingUtils::HashString("TagOptionNotMigratedException");
+static constexpr uint32_t OPERATION_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("OperationNotSupportedException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t DUPLICATE_RESOURCE_HASH = ConstExprHashingUtils::HashString("DuplicateResourceException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t INVALID_PARAMETERS_HASH = ConstExprHashingUtils::HashString("InvalidParametersException");
+static constexpr uint32_t INVALID_STATE_HASH = ConstExprHashingUtils::HashString("InvalidStateException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == TAG_OPTION_NOT_MIGRATED_HASH)
   {

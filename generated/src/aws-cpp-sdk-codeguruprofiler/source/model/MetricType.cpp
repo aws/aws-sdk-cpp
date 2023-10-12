@@ -20,12 +20,12 @@ namespace Aws
       namespace MetricTypeMapper
       {
 
-        static const int AggregatedRelativeTotalTime_HASH = HashingUtils::HashString("AggregatedRelativeTotalTime");
+        static constexpr uint32_t AggregatedRelativeTotalTime_HASH = ConstExprHashingUtils::HashString("AggregatedRelativeTotalTime");
 
 
         MetricType GetMetricTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AggregatedRelativeTotalTime_HASH)
           {
             return MetricType::AggregatedRelativeTotalTime;

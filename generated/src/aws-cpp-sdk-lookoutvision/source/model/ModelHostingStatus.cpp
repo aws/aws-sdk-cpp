@@ -20,16 +20,16 @@ namespace Aws
       namespace ModelHostingStatusMapper
       {
 
-        static const int STARTING_HOSTING_HASH = HashingUtils::HashString("STARTING_HOSTING");
-        static const int HOSTED_HASH = HashingUtils::HashString("HOSTED");
-        static const int HOSTING_FAILED_HASH = HashingUtils::HashString("HOSTING_FAILED");
-        static const int STOPPING_HOSTING_HASH = HashingUtils::HashString("STOPPING_HOSTING");
-        static const int SYSTEM_UPDATING_HASH = HashingUtils::HashString("SYSTEM_UPDATING");
+        static constexpr uint32_t STARTING_HOSTING_HASH = ConstExprHashingUtils::HashString("STARTING_HOSTING");
+        static constexpr uint32_t HOSTED_HASH = ConstExprHashingUtils::HashString("HOSTED");
+        static constexpr uint32_t HOSTING_FAILED_HASH = ConstExprHashingUtils::HashString("HOSTING_FAILED");
+        static constexpr uint32_t STOPPING_HOSTING_HASH = ConstExprHashingUtils::HashString("STOPPING_HOSTING");
+        static constexpr uint32_t SYSTEM_UPDATING_HASH = ConstExprHashingUtils::HashString("SYSTEM_UPDATING");
 
 
         ModelHostingStatus GetModelHostingStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STARTING_HOSTING_HASH)
           {
             return ModelHostingStatus::STARTING_HOSTING;

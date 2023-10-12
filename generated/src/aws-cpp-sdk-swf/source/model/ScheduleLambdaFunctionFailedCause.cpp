@@ -20,15 +20,15 @@ namespace Aws
       namespace ScheduleLambdaFunctionFailedCauseMapper
       {
 
-        static const int ID_ALREADY_IN_USE_HASH = HashingUtils::HashString("ID_ALREADY_IN_USE");
-        static const int OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED");
-        static const int LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED_HASH = HashingUtils::HashString("LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED");
-        static const int LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION_HASH = HashingUtils::HashString("LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION");
+        static constexpr uint32_t ID_ALREADY_IN_USE_HASH = ConstExprHashingUtils::HashString("ID_ALREADY_IN_USE");
+        static constexpr uint32_t OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED");
+        static constexpr uint32_t LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED");
+        static constexpr uint32_t LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION_HASH = ConstExprHashingUtils::HashString("LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION");
 
 
         ScheduleLambdaFunctionFailedCause GetScheduleLambdaFunctionFailedCauseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ID_ALREADY_IN_USE_HASH)
           {
             return ScheduleLambdaFunctionFailedCause::ID_ALREADY_IN_USE;

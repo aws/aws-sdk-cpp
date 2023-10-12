@@ -18,29 +18,29 @@ namespace ElasticBeanstalk
 namespace ElasticBeanstalkErrorMapper
 {
 
-static const int ELASTIC_BEANSTALK_SERVICE_HASH = HashingUtils::HashString("ElasticBeanstalkServiceException");
-static const int S3_LOCATION_NOT_IN_SERVICE_REGION_HASH = HashingUtils::HashString("S3LocationNotInServiceRegionException");
-static const int TOO_MANY_APPLICATIONS_HASH = HashingUtils::HashString("TooManyApplicationsException");
-static const int CODE_BUILD_NOT_IN_SERVICE_REGION_HASH = HashingUtils::HashString("CodeBuildNotInServiceRegionException");
-static const int PLATFORM_VERSION_STILL_REFERENCED_HASH = HashingUtils::HashString("PlatformVersionStillReferencedException");
-static const int TOO_MANY_CONFIGURATION_TEMPLATES_HASH = HashingUtils::HashString("TooManyConfigurationTemplatesException");
-static const int MANAGED_ACTION_INVALID_STATE_HASH = HashingUtils::HashString("ManagedActionInvalidStateException");
-static const int TOO_MANY_APPLICATION_VERSIONS_HASH = HashingUtils::HashString("TooManyApplicationVersionsException");
-static const int OPERATION_IN_PROGRESS_HASH = HashingUtils::HashString("OperationInProgressFailure");
-static const int S3_SUBSCRIPTION_REQUIRED_HASH = HashingUtils::HashString("S3SubscriptionRequiredException");
-static const int INSUFFICIENT_PRIVILEGES_HASH = HashingUtils::HashString("InsufficientPrivilegesException");
-static const int RESOURCE_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("ResourceTypeNotSupportedException");
-static const int TOO_MANY_ENVIRONMENTS_HASH = HashingUtils::HashString("TooManyEnvironmentsException");
-static const int TOO_MANY_BUCKETS_HASH = HashingUtils::HashString("TooManyBucketsException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int SOURCE_BUNDLE_DELETION_HASH = HashingUtils::HashString("SourceBundleDeletionFailure");
-static const int TOO_MANY_PLATFORMS_HASH = HashingUtils::HashString("TooManyPlatformsException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t ELASTIC_BEANSTALK_SERVICE_HASH = ConstExprHashingUtils::HashString("ElasticBeanstalkServiceException");
+static constexpr uint32_t S3_LOCATION_NOT_IN_SERVICE_REGION_HASH = ConstExprHashingUtils::HashString("S3LocationNotInServiceRegionException");
+static constexpr uint32_t TOO_MANY_APPLICATIONS_HASH = ConstExprHashingUtils::HashString("TooManyApplicationsException");
+static constexpr uint32_t CODE_BUILD_NOT_IN_SERVICE_REGION_HASH = ConstExprHashingUtils::HashString("CodeBuildNotInServiceRegionException");
+static constexpr uint32_t PLATFORM_VERSION_STILL_REFERENCED_HASH = ConstExprHashingUtils::HashString("PlatformVersionStillReferencedException");
+static constexpr uint32_t TOO_MANY_CONFIGURATION_TEMPLATES_HASH = ConstExprHashingUtils::HashString("TooManyConfigurationTemplatesException");
+static constexpr uint32_t MANAGED_ACTION_INVALID_STATE_HASH = ConstExprHashingUtils::HashString("ManagedActionInvalidStateException");
+static constexpr uint32_t TOO_MANY_APPLICATION_VERSIONS_HASH = ConstExprHashingUtils::HashString("TooManyApplicationVersionsException");
+static constexpr uint32_t OPERATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("OperationInProgressFailure");
+static constexpr uint32_t S3_SUBSCRIPTION_REQUIRED_HASH = ConstExprHashingUtils::HashString("S3SubscriptionRequiredException");
+static constexpr uint32_t INSUFFICIENT_PRIVILEGES_HASH = ConstExprHashingUtils::HashString("InsufficientPrivilegesException");
+static constexpr uint32_t RESOURCE_TYPE_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("ResourceTypeNotSupportedException");
+static constexpr uint32_t TOO_MANY_ENVIRONMENTS_HASH = ConstExprHashingUtils::HashString("TooManyEnvironmentsException");
+static constexpr uint32_t TOO_MANY_BUCKETS_HASH = ConstExprHashingUtils::HashString("TooManyBucketsException");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t SOURCE_BUNDLE_DELETION_HASH = ConstExprHashingUtils::HashString("SourceBundleDeletionFailure");
+static constexpr uint32_t TOO_MANY_PLATFORMS_HASH = ConstExprHashingUtils::HashString("TooManyPlatformsException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == ELASTIC_BEANSTALK_SERVICE_HASH)
   {

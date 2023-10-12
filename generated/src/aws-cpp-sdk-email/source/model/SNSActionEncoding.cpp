@@ -20,13 +20,13 @@ namespace Aws
       namespace SNSActionEncodingMapper
       {
 
-        static const int UTF_8_HASH = HashingUtils::HashString("UTF-8");
-        static const int Base64_HASH = HashingUtils::HashString("Base64");
+        static constexpr uint32_t UTF_8_HASH = ConstExprHashingUtils::HashString("UTF-8");
+        static constexpr uint32_t Base64_HASH = ConstExprHashingUtils::HashString("Base64");
 
 
         SNSActionEncoding GetSNSActionEncodingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UTF_8_HASH)
           {
             return SNSActionEncoding::UTF_8;

@@ -20,13 +20,13 @@ namespace Aws
       namespace AlphaBehaviorMapper
       {
 
-        static const int DISCARD_HASH = HashingUtils::HashString("DISCARD");
-        static const int REMAP_TO_LUMA_HASH = HashingUtils::HashString("REMAP_TO_LUMA");
+        static constexpr uint32_t DISCARD_HASH = ConstExprHashingUtils::HashString("DISCARD");
+        static constexpr uint32_t REMAP_TO_LUMA_HASH = ConstExprHashingUtils::HashString("REMAP_TO_LUMA");
 
 
         AlphaBehavior GetAlphaBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISCARD_HASH)
           {
             return AlphaBehavior::DISCARD;

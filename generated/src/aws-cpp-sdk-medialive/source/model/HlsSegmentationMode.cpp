@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsSegmentationModeMapper
       {
 
-        static const int USE_INPUT_SEGMENTATION_HASH = HashingUtils::HashString("USE_INPUT_SEGMENTATION");
-        static const int USE_SEGMENT_DURATION_HASH = HashingUtils::HashString("USE_SEGMENT_DURATION");
+        static constexpr uint32_t USE_INPUT_SEGMENTATION_HASH = ConstExprHashingUtils::HashString("USE_INPUT_SEGMENTATION");
+        static constexpr uint32_t USE_SEGMENT_DURATION_HASH = ConstExprHashingUtils::HashString("USE_SEGMENT_DURATION");
 
 
         HlsSegmentationMode GetHlsSegmentationModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USE_INPUT_SEGMENTATION_HASH)
           {
             return HlsSegmentationMode::USE_INPUT_SEGMENTATION;

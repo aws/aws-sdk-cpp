@@ -20,18 +20,18 @@ namespace Aws
       namespace PredicateTypeMapper
       {
 
-        static const int IPMatch_HASH = HashingUtils::HashString("IPMatch");
-        static const int ByteMatch_HASH = HashingUtils::HashString("ByteMatch");
-        static const int SqlInjectionMatch_HASH = HashingUtils::HashString("SqlInjectionMatch");
-        static const int GeoMatch_HASH = HashingUtils::HashString("GeoMatch");
-        static const int SizeConstraint_HASH = HashingUtils::HashString("SizeConstraint");
-        static const int XssMatch_HASH = HashingUtils::HashString("XssMatch");
-        static const int RegexMatch_HASH = HashingUtils::HashString("RegexMatch");
+        static constexpr uint32_t IPMatch_HASH = ConstExprHashingUtils::HashString("IPMatch");
+        static constexpr uint32_t ByteMatch_HASH = ConstExprHashingUtils::HashString("ByteMatch");
+        static constexpr uint32_t SqlInjectionMatch_HASH = ConstExprHashingUtils::HashString("SqlInjectionMatch");
+        static constexpr uint32_t GeoMatch_HASH = ConstExprHashingUtils::HashString("GeoMatch");
+        static constexpr uint32_t SizeConstraint_HASH = ConstExprHashingUtils::HashString("SizeConstraint");
+        static constexpr uint32_t XssMatch_HASH = ConstExprHashingUtils::HashString("XssMatch");
+        static constexpr uint32_t RegexMatch_HASH = ConstExprHashingUtils::HashString("RegexMatch");
 
 
         PredicateType GetPredicateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IPMatch_HASH)
           {
             return PredicateType::IPMatch;

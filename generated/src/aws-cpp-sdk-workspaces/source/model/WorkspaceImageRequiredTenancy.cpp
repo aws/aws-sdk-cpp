@@ -20,13 +20,13 @@ namespace Aws
       namespace WorkspaceImageRequiredTenancyMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int DEDICATED_HASH = HashingUtils::HashString("DEDICATED");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t DEDICATED_HASH = ConstExprHashingUtils::HashString("DEDICATED");
 
 
         WorkspaceImageRequiredTenancy GetWorkspaceImageRequiredTenancyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return WorkspaceImageRequiredTenancy::DEFAULT;

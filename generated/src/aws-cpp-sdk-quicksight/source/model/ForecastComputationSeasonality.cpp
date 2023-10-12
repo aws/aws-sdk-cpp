@@ -20,13 +20,13 @@ namespace Aws
       namespace ForecastComputationSeasonalityMapper
       {
 
-        static const int AUTOMATIC_HASH = HashingUtils::HashString("AUTOMATIC");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t AUTOMATIC_HASH = ConstExprHashingUtils::HashString("AUTOMATIC");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
 
 
         ForecastComputationSeasonality GetForecastComputationSeasonalityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTOMATIC_HASH)
           {
             return ForecastComputationSeasonality::AUTOMATIC;

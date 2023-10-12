@@ -20,14 +20,14 @@ namespace Aws
       namespace MFAModeMapper
       {
 
-        static const int ON_HASH = HashingUtils::HashString("ON");
-        static const int OFF_HASH = HashingUtils::HashString("OFF");
-        static const int OPTIONAL_HASH = HashingUtils::HashString("OPTIONAL");
+        static constexpr uint32_t ON_HASH = ConstExprHashingUtils::HashString("ON");
+        static constexpr uint32_t OFF_HASH = ConstExprHashingUtils::HashString("OFF");
+        static constexpr uint32_t OPTIONAL_HASH = ConstExprHashingUtils::HashString("OPTIONAL");
 
 
         MFAMode GetMFAModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ON_HASH)
           {
             return MFAMode::ON;

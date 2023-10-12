@@ -20,14 +20,14 @@ namespace Aws
       namespace SubscriptionStatusMapper
       {
 
-        static const int APPROVED_HASH = HashingUtils::HashString("APPROVED");
-        static const int REVOKED_HASH = HashingUtils::HashString("REVOKED");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t APPROVED_HASH = ConstExprHashingUtils::HashString("APPROVED");
+        static constexpr uint32_t REVOKED_HASH = ConstExprHashingUtils::HashString("REVOKED");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
 
 
         SubscriptionStatus GetSubscriptionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APPROVED_HASH)
           {
             return SubscriptionStatus::APPROVED;

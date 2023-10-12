@@ -20,15 +20,15 @@ namespace Aws
       namespace AcceleratorManufacturerMapper
       {
 
-        static const int nvidia_HASH = HashingUtils::HashString("nvidia");
-        static const int amd_HASH = HashingUtils::HashString("amd");
-        static const int amazon_web_services_HASH = HashingUtils::HashString("amazon-web-services");
-        static const int xilinx_HASH = HashingUtils::HashString("xilinx");
+        static constexpr uint32_t nvidia_HASH = ConstExprHashingUtils::HashString("nvidia");
+        static constexpr uint32_t amd_HASH = ConstExprHashingUtils::HashString("amd");
+        static constexpr uint32_t amazon_web_services_HASH = ConstExprHashingUtils::HashString("amazon-web-services");
+        static constexpr uint32_t xilinx_HASH = ConstExprHashingUtils::HashString("xilinx");
 
 
         AcceleratorManufacturer GetAcceleratorManufacturerForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == nvidia_HASH)
           {
             return AcceleratorManufacturer::nvidia;

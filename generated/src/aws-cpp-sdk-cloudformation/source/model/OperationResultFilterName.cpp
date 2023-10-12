@@ -20,12 +20,12 @@ namespace Aws
       namespace OperationResultFilterNameMapper
       {
 
-        static const int OPERATION_RESULT_STATUS_HASH = HashingUtils::HashString("OPERATION_RESULT_STATUS");
+        static constexpr uint32_t OPERATION_RESULT_STATUS_HASH = ConstExprHashingUtils::HashString("OPERATION_RESULT_STATUS");
 
 
         OperationResultFilterName GetOperationResultFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OPERATION_RESULT_STATUS_HASH)
           {
             return OperationResultFilterName::OPERATION_RESULT_STATUS;

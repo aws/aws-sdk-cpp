@@ -20,14 +20,14 @@ namespace Aws
       namespace ActionOwnerMapper
       {
 
-        static const int AWS_HASH = HashingUtils::HashString("AWS");
-        static const int ThirdParty_HASH = HashingUtils::HashString("ThirdParty");
-        static const int Custom_HASH = HashingUtils::HashString("Custom");
+        static constexpr uint32_t AWS_HASH = ConstExprHashingUtils::HashString("AWS");
+        static constexpr uint32_t ThirdParty_HASH = ConstExprHashingUtils::HashString("ThirdParty");
+        static constexpr uint32_t Custom_HASH = ConstExprHashingUtils::HashString("Custom");
 
 
         ActionOwner GetActionOwnerForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_HASH)
           {
             return ActionOwner::AWS;

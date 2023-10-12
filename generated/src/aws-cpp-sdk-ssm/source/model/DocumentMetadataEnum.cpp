@@ -20,12 +20,12 @@ namespace Aws
       namespace DocumentMetadataEnumMapper
       {
 
-        static const int DocumentReviews_HASH = HashingUtils::HashString("DocumentReviews");
+        static constexpr uint32_t DocumentReviews_HASH = ConstExprHashingUtils::HashString("DocumentReviews");
 
 
         DocumentMetadataEnum GetDocumentMetadataEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DocumentReviews_HASH)
           {
             return DocumentMetadataEnum::DocumentReviews;

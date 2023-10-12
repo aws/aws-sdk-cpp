@@ -20,17 +20,17 @@ namespace Aws
       namespace ActionStatusMapper
       {
 
-        static const int PENDING_UPDATE_HASH = HashingUtils::HashString("PENDING_UPDATE");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int NOT_ELIGIBLE_HASH = HashingUtils::HashString("NOT_ELIGIBLE");
-        static const int ELIGIBLE_HASH = HashingUtils::HashString("ELIGIBLE");
+        static constexpr uint32_t PENDING_UPDATE_HASH = ConstExprHashingUtils::HashString("PENDING_UPDATE");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t NOT_ELIGIBLE_HASH = ConstExprHashingUtils::HashString("NOT_ELIGIBLE");
+        static constexpr uint32_t ELIGIBLE_HASH = ConstExprHashingUtils::HashString("ELIGIBLE");
 
 
         ActionStatus GetActionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_UPDATE_HASH)
           {
             return ActionStatus::PENDING_UPDATE;

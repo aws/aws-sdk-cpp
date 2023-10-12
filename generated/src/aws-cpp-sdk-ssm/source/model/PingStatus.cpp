@@ -20,14 +20,14 @@ namespace Aws
       namespace PingStatusMapper
       {
 
-        static const int Online_HASH = HashingUtils::HashString("Online");
-        static const int ConnectionLost_HASH = HashingUtils::HashString("ConnectionLost");
-        static const int Inactive_HASH = HashingUtils::HashString("Inactive");
+        static constexpr uint32_t Online_HASH = ConstExprHashingUtils::HashString("Online");
+        static constexpr uint32_t ConnectionLost_HASH = ConstExprHashingUtils::HashString("ConnectionLost");
+        static constexpr uint32_t Inactive_HASH = ConstExprHashingUtils::HashString("Inactive");
 
 
         PingStatus GetPingStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Online_HASH)
           {
             return PingStatus::Online;

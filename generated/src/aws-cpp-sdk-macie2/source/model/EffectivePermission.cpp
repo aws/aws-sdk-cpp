@@ -20,14 +20,14 @@ namespace Aws
       namespace EffectivePermissionMapper
       {
 
-        static const int PUBLIC__HASH = HashingUtils::HashString("PUBLIC");
-        static const int NOT_PUBLIC_HASH = HashingUtils::HashString("NOT_PUBLIC");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t PUBLIC__HASH = ConstExprHashingUtils::HashString("PUBLIC");
+        static constexpr uint32_t NOT_PUBLIC_HASH = ConstExprHashingUtils::HashString("NOT_PUBLIC");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         EffectivePermission GetEffectivePermissionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUBLIC__HASH)
           {
             return EffectivePermission::PUBLIC_;

@@ -20,15 +20,15 @@ namespace Aws
       namespace HashAlgorithmMapper
       {
 
-        static const int MD5_HASH = HashingUtils::HashString("MD5");
-        static const int SHA_1_HASH = HashingUtils::HashString("SHA-1");
-        static const int SHA_256_HASH = HashingUtils::HashString("SHA-256");
-        static const int SHA_512_HASH = HashingUtils::HashString("SHA-512");
+        static constexpr uint32_t MD5_HASH = ConstExprHashingUtils::HashString("MD5");
+        static constexpr uint32_t SHA_1_HASH = ConstExprHashingUtils::HashString("SHA-1");
+        static constexpr uint32_t SHA_256_HASH = ConstExprHashingUtils::HashString("SHA-256");
+        static constexpr uint32_t SHA_512_HASH = ConstExprHashingUtils::HashString("SHA-512");
 
 
         HashAlgorithm GetHashAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MD5_HASH)
           {
             return HashAlgorithm::MD5;

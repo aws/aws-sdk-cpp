@@ -20,13 +20,13 @@ namespace Aws
       namespace SubscriptionProtocolTypeMapper
       {
 
-        static const int HTTPS_HASH = HashingUtils::HashString("HTTPS");
-        static const int SQS_HASH = HashingUtils::HashString("SQS");
+        static constexpr uint32_t HTTPS_HASH = ConstExprHashingUtils::HashString("HTTPS");
+        static constexpr uint32_t SQS_HASH = ConstExprHashingUtils::HashString("SQS");
 
 
         SubscriptionProtocolType GetSubscriptionProtocolTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HTTPS_HASH)
           {
             return SubscriptionProtocolType::HTTPS;

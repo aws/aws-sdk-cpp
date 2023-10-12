@@ -20,16 +20,16 @@ namespace Aws
       namespace BurninSubtitleFallbackFontMapper
       {
 
-        static const int BEST_MATCH_HASH = HashingUtils::HashString("BEST_MATCH");
-        static const int MONOSPACED_SANSSERIF_HASH = HashingUtils::HashString("MONOSPACED_SANSSERIF");
-        static const int MONOSPACED_SERIF_HASH = HashingUtils::HashString("MONOSPACED_SERIF");
-        static const int PROPORTIONAL_SANSSERIF_HASH = HashingUtils::HashString("PROPORTIONAL_SANSSERIF");
-        static const int PROPORTIONAL_SERIF_HASH = HashingUtils::HashString("PROPORTIONAL_SERIF");
+        static constexpr uint32_t BEST_MATCH_HASH = ConstExprHashingUtils::HashString("BEST_MATCH");
+        static constexpr uint32_t MONOSPACED_SANSSERIF_HASH = ConstExprHashingUtils::HashString("MONOSPACED_SANSSERIF");
+        static constexpr uint32_t MONOSPACED_SERIF_HASH = ConstExprHashingUtils::HashString("MONOSPACED_SERIF");
+        static constexpr uint32_t PROPORTIONAL_SANSSERIF_HASH = ConstExprHashingUtils::HashString("PROPORTIONAL_SANSSERIF");
+        static constexpr uint32_t PROPORTIONAL_SERIF_HASH = ConstExprHashingUtils::HashString("PROPORTIONAL_SERIF");
 
 
         BurninSubtitleFallbackFont GetBurninSubtitleFallbackFontForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BEST_MATCH_HASH)
           {
             return BurninSubtitleFallbackFont::BEST_MATCH;

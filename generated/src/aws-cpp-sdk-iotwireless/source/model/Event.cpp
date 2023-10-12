@@ -20,16 +20,16 @@ namespace Aws
       namespace EventMapper
       {
 
-        static const int discovered_HASH = HashingUtils::HashString("discovered");
-        static const int lost_HASH = HashingUtils::HashString("lost");
-        static const int ack_HASH = HashingUtils::HashString("ack");
-        static const int nack_HASH = HashingUtils::HashString("nack");
-        static const int passthrough_HASH = HashingUtils::HashString("passthrough");
+        static constexpr uint32_t discovered_HASH = ConstExprHashingUtils::HashString("discovered");
+        static constexpr uint32_t lost_HASH = ConstExprHashingUtils::HashString("lost");
+        static constexpr uint32_t ack_HASH = ConstExprHashingUtils::HashString("ack");
+        static constexpr uint32_t nack_HASH = ConstExprHashingUtils::HashString("nack");
+        static constexpr uint32_t passthrough_HASH = ConstExprHashingUtils::HashString("passthrough");
 
 
         Event GetEventForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == discovered_HASH)
           {
             return Event::discovered;

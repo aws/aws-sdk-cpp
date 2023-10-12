@@ -20,13 +20,13 @@ namespace Aws
       namespace H264QualityLevelMapper
       {
 
-        static const int ENHANCED_QUALITY_HASH = HashingUtils::HashString("ENHANCED_QUALITY");
-        static const int STANDARD_QUALITY_HASH = HashingUtils::HashString("STANDARD_QUALITY");
+        static constexpr uint32_t ENHANCED_QUALITY_HASH = ConstExprHashingUtils::HashString("ENHANCED_QUALITY");
+        static constexpr uint32_t STANDARD_QUALITY_HASH = ConstExprHashingUtils::HashString("STANDARD_QUALITY");
 
 
         H264QualityLevel GetH264QualityLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENHANCED_QUALITY_HASH)
           {
             return H264QualityLevel::ENHANCED_QUALITY;

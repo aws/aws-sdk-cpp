@@ -20,12 +20,12 @@ namespace Aws
       namespace UnitMapper
       {
 
-        static const int METERS_HASH = HashingUtils::HashString("METERS");
+        static constexpr uint32_t METERS_HASH = ConstExprHashingUtils::HashString("METERS");
 
 
         Unit GetUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == METERS_HASH)
           {
             return Unit::METERS;

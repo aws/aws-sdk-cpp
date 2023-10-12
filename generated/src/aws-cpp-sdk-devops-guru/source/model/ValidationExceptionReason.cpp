@@ -20,17 +20,17 @@ namespace Aws
       namespace ValidationExceptionReasonMapper
       {
 
-        static const int UNKNOWN_OPERATION_HASH = HashingUtils::HashString("UNKNOWN_OPERATION");
-        static const int CANNOT_PARSE_HASH = HashingUtils::HashString("CANNOT_PARSE");
-        static const int FIELD_VALIDATION_FAILED_HASH = HashingUtils::HashString("FIELD_VALIDATION_FAILED");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
-        static const int INVALID_PARAMETER_COMBINATION_HASH = HashingUtils::HashString("INVALID_PARAMETER_COMBINATION");
-        static const int PARAMETER_INCONSISTENT_WITH_SERVICE_STATE_HASH = HashingUtils::HashString("PARAMETER_INCONSISTENT_WITH_SERVICE_STATE");
+        static constexpr uint32_t UNKNOWN_OPERATION_HASH = ConstExprHashingUtils::HashString("UNKNOWN_OPERATION");
+        static constexpr uint32_t CANNOT_PARSE_HASH = ConstExprHashingUtils::HashString("CANNOT_PARSE");
+        static constexpr uint32_t FIELD_VALIDATION_FAILED_HASH = ConstExprHashingUtils::HashString("FIELD_VALIDATION_FAILED");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
+        static constexpr uint32_t INVALID_PARAMETER_COMBINATION_HASH = ConstExprHashingUtils::HashString("INVALID_PARAMETER_COMBINATION");
+        static constexpr uint32_t PARAMETER_INCONSISTENT_WITH_SERVICE_STATE_HASH = ConstExprHashingUtils::HashString("PARAMETER_INCONSISTENT_WITH_SERVICE_STATE");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNKNOWN_OPERATION_HASH)
           {
             return ValidationExceptionReason::UNKNOWN_OPERATION;

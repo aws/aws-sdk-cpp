@@ -20,16 +20,16 @@ namespace Aws
       namespace ModelVariantStatusMapper
       {
 
-        static const int Creating_HASH = HashingUtils::HashString("Creating");
-        static const int Updating_HASH = HashingUtils::HashString("Updating");
-        static const int InService_HASH = HashingUtils::HashString("InService");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
-        static const int Deleted_HASH = HashingUtils::HashString("Deleted");
+        static constexpr uint32_t Creating_HASH = ConstExprHashingUtils::HashString("Creating");
+        static constexpr uint32_t Updating_HASH = ConstExprHashingUtils::HashString("Updating");
+        static constexpr uint32_t InService_HASH = ConstExprHashingUtils::HashString("InService");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
+        static constexpr uint32_t Deleted_HASH = ConstExprHashingUtils::HashString("Deleted");
 
 
         ModelVariantStatus GetModelVariantStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Creating_HASH)
           {
             return ModelVariantStatus::Creating;

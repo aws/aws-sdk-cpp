@@ -20,13 +20,13 @@ namespace Aws
       namespace AxisBindingMapper
       {
 
-        static const int PRIMARY_YAXIS_HASH = HashingUtils::HashString("PRIMARY_YAXIS");
-        static const int SECONDARY_YAXIS_HASH = HashingUtils::HashString("SECONDARY_YAXIS");
+        static constexpr uint32_t PRIMARY_YAXIS_HASH = ConstExprHashingUtils::HashString("PRIMARY_YAXIS");
+        static constexpr uint32_t SECONDARY_YAXIS_HASH = ConstExprHashingUtils::HashString("SECONDARY_YAXIS");
 
 
         AxisBinding GetAxisBindingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRIMARY_YAXIS_HASH)
           {
             return AxisBinding::PRIMARY_YAXIS;

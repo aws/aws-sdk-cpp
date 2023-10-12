@@ -20,13 +20,13 @@ namespace Aws
       namespace KeySpecMapper
       {
 
-        static const int KEY_EXCHANGE_HASH = HashingUtils::HashString("KEY_EXCHANGE");
-        static const int SIGNATURE_HASH = HashingUtils::HashString("SIGNATURE");
+        static constexpr uint32_t KEY_EXCHANGE_HASH = ConstExprHashingUtils::HashString("KEY_EXCHANGE");
+        static constexpr uint32_t SIGNATURE_HASH = ConstExprHashingUtils::HashString("SIGNATURE");
 
 
         KeySpec GetKeySpecForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KEY_EXCHANGE_HASH)
           {
             return KeySpec::KEY_EXCHANGE;

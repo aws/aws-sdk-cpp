@@ -20,14 +20,14 @@ namespace Aws
       namespace AccountGateStatusMapper
       {
 
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int SKIPPED_HASH = HashingUtils::HashString("SKIPPED");
+        static constexpr uint32_t SUCCEEDED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t SKIPPED_HASH = ConstExprHashingUtils::HashString("SKIPPED");
 
 
         AccountGateStatus GetAccountGateStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUCCEEDED_HASH)
           {
             return AccountGateStatus::SUCCEEDED;

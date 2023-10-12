@@ -20,15 +20,15 @@ namespace Aws
       namespace FeatureGroupSortByMapper
       {
 
-        static const int Name_HASH = HashingUtils::HashString("Name");
-        static const int FeatureGroupStatus_HASH = HashingUtils::HashString("FeatureGroupStatus");
-        static const int OfflineStoreStatus_HASH = HashingUtils::HashString("OfflineStoreStatus");
-        static const int CreationTime_HASH = HashingUtils::HashString("CreationTime");
+        static constexpr uint32_t Name_HASH = ConstExprHashingUtils::HashString("Name");
+        static constexpr uint32_t FeatureGroupStatus_HASH = ConstExprHashingUtils::HashString("FeatureGroupStatus");
+        static constexpr uint32_t OfflineStoreStatus_HASH = ConstExprHashingUtils::HashString("OfflineStoreStatus");
+        static constexpr uint32_t CreationTime_HASH = ConstExprHashingUtils::HashString("CreationTime");
 
 
         FeatureGroupSortBy GetFeatureGroupSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Name_HASH)
           {
             return FeatureGroupSortBy::Name;

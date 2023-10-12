@@ -20,14 +20,14 @@ namespace Aws
       namespace DnsRecordVerificationStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int VERIFIED_HASH = HashingUtils::HashString("VERIFIED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t VERIFIED_HASH = ConstExprHashingUtils::HashString("VERIFIED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         DnsRecordVerificationStatus GetDnsRecordVerificationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return DnsRecordVerificationStatus::PENDING;

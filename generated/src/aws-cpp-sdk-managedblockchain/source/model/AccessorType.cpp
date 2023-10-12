@@ -20,12 +20,12 @@ namespace Aws
       namespace AccessorTypeMapper
       {
 
-        static const int BILLING_TOKEN_HASH = HashingUtils::HashString("BILLING_TOKEN");
+        static constexpr uint32_t BILLING_TOKEN_HASH = ConstExprHashingUtils::HashString("BILLING_TOKEN");
 
 
         AccessorType GetAccessorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BILLING_TOKEN_HASH)
           {
             return AccessorType::BILLING_TOKEN;

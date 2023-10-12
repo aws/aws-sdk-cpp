@@ -20,14 +20,14 @@ namespace Aws
       namespace DeinterlacerModeMapper
       {
 
-        static const int DEINTERLACE_HASH = HashingUtils::HashString("DEINTERLACE");
-        static const int INVERSE_TELECINE_HASH = HashingUtils::HashString("INVERSE_TELECINE");
-        static const int ADAPTIVE_HASH = HashingUtils::HashString("ADAPTIVE");
+        static constexpr uint32_t DEINTERLACE_HASH = ConstExprHashingUtils::HashString("DEINTERLACE");
+        static constexpr uint32_t INVERSE_TELECINE_HASH = ConstExprHashingUtils::HashString("INVERSE_TELECINE");
+        static constexpr uint32_t ADAPTIVE_HASH = ConstExprHashingUtils::HashString("ADAPTIVE");
 
 
         DeinterlacerMode GetDeinterlacerModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEINTERLACE_HASH)
           {
             return DeinterlacerMode::DEINTERLACE;

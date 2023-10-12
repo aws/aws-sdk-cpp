@@ -20,15 +20,15 @@ namespace Aws
       namespace ExecutionTypeMapper
       {
 
-        static const int APPROVE_BUDGET_ACTION_HASH = HashingUtils::HashString("APPROVE_BUDGET_ACTION");
-        static const int RETRY_BUDGET_ACTION_HASH = HashingUtils::HashString("RETRY_BUDGET_ACTION");
-        static const int REVERSE_BUDGET_ACTION_HASH = HashingUtils::HashString("REVERSE_BUDGET_ACTION");
-        static const int RESET_BUDGET_ACTION_HASH = HashingUtils::HashString("RESET_BUDGET_ACTION");
+        static constexpr uint32_t APPROVE_BUDGET_ACTION_HASH = ConstExprHashingUtils::HashString("APPROVE_BUDGET_ACTION");
+        static constexpr uint32_t RETRY_BUDGET_ACTION_HASH = ConstExprHashingUtils::HashString("RETRY_BUDGET_ACTION");
+        static constexpr uint32_t REVERSE_BUDGET_ACTION_HASH = ConstExprHashingUtils::HashString("REVERSE_BUDGET_ACTION");
+        static constexpr uint32_t RESET_BUDGET_ACTION_HASH = ConstExprHashingUtils::HashString("RESET_BUDGET_ACTION");
 
 
         ExecutionType GetExecutionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APPROVE_BUDGET_ACTION_HASH)
           {
             return ExecutionType::APPROVE_BUDGET_ACTION;

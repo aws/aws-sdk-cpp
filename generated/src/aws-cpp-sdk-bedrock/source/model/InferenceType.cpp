@@ -20,13 +20,13 @@ namespace Aws
       namespace InferenceTypeMapper
       {
 
-        static const int ON_DEMAND_HASH = HashingUtils::HashString("ON_DEMAND");
-        static const int PROVISIONED_HASH = HashingUtils::HashString("PROVISIONED");
+        static constexpr uint32_t ON_DEMAND_HASH = ConstExprHashingUtils::HashString("ON_DEMAND");
+        static constexpr uint32_t PROVISIONED_HASH = ConstExprHashingUtils::HashString("PROVISIONED");
 
 
         InferenceType GetInferenceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ON_DEMAND_HASH)
           {
             return InferenceType::ON_DEMAND;

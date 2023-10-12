@@ -20,20 +20,20 @@ namespace Aws
       namespace JobStatusMapper
       {
 
-        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
-        static const int PREPARING_FOR_INITIALIZATION_HASH = HashingUtils::HashString("PREPARING_FOR_INITIALIZATION");
-        static const int INITIALIZING_HASH = HashingUtils::HashString("INITIALIZING");
-        static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
-        static const int PENDING_JOB_HASH = HashingUtils::HashString("PENDING_JOB");
-        static const int COMPLETING_HASH = HashingUtils::HashString("COMPLETING");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int FAILING_HASH = HashingUtils::HashString("FAILING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t CREATED_HASH = ConstExprHashingUtils::HashString("CREATED");
+        static constexpr uint32_t PREPARING_FOR_INITIALIZATION_HASH = ConstExprHashingUtils::HashString("PREPARING_FOR_INITIALIZATION");
+        static constexpr uint32_t INITIALIZING_HASH = ConstExprHashingUtils::HashString("INITIALIZING");
+        static constexpr uint32_t PROCESSING_HASH = ConstExprHashingUtils::HashString("PROCESSING");
+        static constexpr uint32_t PENDING_JOB_HASH = ConstExprHashingUtils::HashString("PENDING_JOB");
+        static constexpr uint32_t COMPLETING_HASH = ConstExprHashingUtils::HashString("COMPLETING");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t FAILING_HASH = ConstExprHashingUtils::HashString("FAILING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         JobStatus GetJobStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATED_HASH)
           {
             return JobStatus::CREATED;

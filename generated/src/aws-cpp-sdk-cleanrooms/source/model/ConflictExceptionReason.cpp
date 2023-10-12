@@ -20,14 +20,14 @@ namespace Aws
       namespace ConflictExceptionReasonMapper
       {
 
-        static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("ALREADY_EXISTS");
-        static const int SUBRESOURCES_EXIST_HASH = HashingUtils::HashString("SUBRESOURCES_EXIST");
-        static const int INVALID_STATE_HASH = HashingUtils::HashString("INVALID_STATE");
+        static constexpr uint32_t ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ALREADY_EXISTS");
+        static constexpr uint32_t SUBRESOURCES_EXIST_HASH = ConstExprHashingUtils::HashString("SUBRESOURCES_EXIST");
+        static constexpr uint32_t INVALID_STATE_HASH = ConstExprHashingUtils::HashString("INVALID_STATE");
 
 
         ConflictExceptionReason GetConflictExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALREADY_EXISTS_HASH)
           {
             return ConflictExceptionReason::ALREADY_EXISTS;

@@ -20,13 +20,13 @@ namespace Aws
       namespace PolicyTypeMapper
       {
 
-        static const int INLINE_HASH = HashingUtils::HashString("INLINE");
-        static const int MANAGED_HASH = HashingUtils::HashString("MANAGED");
+        static constexpr uint32_t INLINE_HASH = ConstExprHashingUtils::HashString("INLINE");
+        static constexpr uint32_t MANAGED_HASH = ConstExprHashingUtils::HashString("MANAGED");
 
 
         PolicyType GetPolicyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INLINE_HASH)
           {
             return PolicyType::INLINE;

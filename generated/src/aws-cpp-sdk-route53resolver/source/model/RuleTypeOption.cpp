@@ -20,14 +20,14 @@ namespace Aws
       namespace RuleTypeOptionMapper
       {
 
-        static const int FORWARD_HASH = HashingUtils::HashString("FORWARD");
-        static const int SYSTEM_HASH = HashingUtils::HashString("SYSTEM");
-        static const int RECURSIVE_HASH = HashingUtils::HashString("RECURSIVE");
+        static constexpr uint32_t FORWARD_HASH = ConstExprHashingUtils::HashString("FORWARD");
+        static constexpr uint32_t SYSTEM_HASH = ConstExprHashingUtils::HashString("SYSTEM");
+        static constexpr uint32_t RECURSIVE_HASH = ConstExprHashingUtils::HashString("RECURSIVE");
 
 
         RuleTypeOption GetRuleTypeOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FORWARD_HASH)
           {
             return RuleTypeOption::FORWARD;

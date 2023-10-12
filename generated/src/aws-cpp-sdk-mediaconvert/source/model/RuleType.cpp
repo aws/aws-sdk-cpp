@@ -20,15 +20,15 @@ namespace Aws
       namespace RuleTypeMapper
       {
 
-        static const int MIN_TOP_RENDITION_SIZE_HASH = HashingUtils::HashString("MIN_TOP_RENDITION_SIZE");
-        static const int MIN_BOTTOM_RENDITION_SIZE_HASH = HashingUtils::HashString("MIN_BOTTOM_RENDITION_SIZE");
-        static const int FORCE_INCLUDE_RENDITIONS_HASH = HashingUtils::HashString("FORCE_INCLUDE_RENDITIONS");
-        static const int ALLOWED_RENDITIONS_HASH = HashingUtils::HashString("ALLOWED_RENDITIONS");
+        static constexpr uint32_t MIN_TOP_RENDITION_SIZE_HASH = ConstExprHashingUtils::HashString("MIN_TOP_RENDITION_SIZE");
+        static constexpr uint32_t MIN_BOTTOM_RENDITION_SIZE_HASH = ConstExprHashingUtils::HashString("MIN_BOTTOM_RENDITION_SIZE");
+        static constexpr uint32_t FORCE_INCLUDE_RENDITIONS_HASH = ConstExprHashingUtils::HashString("FORCE_INCLUDE_RENDITIONS");
+        static constexpr uint32_t ALLOWED_RENDITIONS_HASH = ConstExprHashingUtils::HashString("ALLOWED_RENDITIONS");
 
 
         RuleType GetRuleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MIN_TOP_RENDITION_SIZE_HASH)
           {
             return RuleType::MIN_TOP_RENDITION_SIZE;

@@ -20,14 +20,14 @@ namespace Aws
       namespace LambdaFunctionRecommendationFindingMapper
       {
 
-        static const int Optimized_HASH = HashingUtils::HashString("Optimized");
-        static const int NotOptimized_HASH = HashingUtils::HashString("NotOptimized");
-        static const int Unavailable_HASH = HashingUtils::HashString("Unavailable");
+        static constexpr uint32_t Optimized_HASH = ConstExprHashingUtils::HashString("Optimized");
+        static constexpr uint32_t NotOptimized_HASH = ConstExprHashingUtils::HashString("NotOptimized");
+        static constexpr uint32_t Unavailable_HASH = ConstExprHashingUtils::HashString("Unavailable");
 
 
         LambdaFunctionRecommendationFinding GetLambdaFunctionRecommendationFindingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Optimized_HASH)
           {
             return LambdaFunctionRecommendationFinding::Optimized;

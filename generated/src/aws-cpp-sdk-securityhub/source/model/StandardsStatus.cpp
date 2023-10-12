@@ -20,16 +20,16 @@ namespace Aws
       namespace StandardsStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int INCOMPLETE_HASH = HashingUtils::HashString("INCOMPLETE");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t INCOMPLETE_HASH = ConstExprHashingUtils::HashString("INCOMPLETE");
 
 
         StandardsStatus GetStandardsStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return StandardsStatus::PENDING;

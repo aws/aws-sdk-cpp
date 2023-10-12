@@ -20,23 +20,23 @@ namespace Aws
       namespace ConfluencePageFieldNameMapper
       {
 
-        static const int AUTHOR_HASH = HashingUtils::HashString("AUTHOR");
-        static const int CONTENT_STATUS_HASH = HashingUtils::HashString("CONTENT_STATUS");
-        static const int CREATED_DATE_HASH = HashingUtils::HashString("CREATED_DATE");
-        static const int DISPLAY_URL_HASH = HashingUtils::HashString("DISPLAY_URL");
-        static const int ITEM_TYPE_HASH = HashingUtils::HashString("ITEM_TYPE");
-        static const int LABELS_HASH = HashingUtils::HashString("LABELS");
-        static const int MODIFIED_DATE_HASH = HashingUtils::HashString("MODIFIED_DATE");
-        static const int PARENT_ID_HASH = HashingUtils::HashString("PARENT_ID");
-        static const int SPACE_KEY_HASH = HashingUtils::HashString("SPACE_KEY");
-        static const int SPACE_NAME_HASH = HashingUtils::HashString("SPACE_NAME");
-        static const int URL_HASH = HashingUtils::HashString("URL");
-        static const int VERSION_HASH = HashingUtils::HashString("VERSION");
+        static constexpr uint32_t AUTHOR_HASH = ConstExprHashingUtils::HashString("AUTHOR");
+        static constexpr uint32_t CONTENT_STATUS_HASH = ConstExprHashingUtils::HashString("CONTENT_STATUS");
+        static constexpr uint32_t CREATED_DATE_HASH = ConstExprHashingUtils::HashString("CREATED_DATE");
+        static constexpr uint32_t DISPLAY_URL_HASH = ConstExprHashingUtils::HashString("DISPLAY_URL");
+        static constexpr uint32_t ITEM_TYPE_HASH = ConstExprHashingUtils::HashString("ITEM_TYPE");
+        static constexpr uint32_t LABELS_HASH = ConstExprHashingUtils::HashString("LABELS");
+        static constexpr uint32_t MODIFIED_DATE_HASH = ConstExprHashingUtils::HashString("MODIFIED_DATE");
+        static constexpr uint32_t PARENT_ID_HASH = ConstExprHashingUtils::HashString("PARENT_ID");
+        static constexpr uint32_t SPACE_KEY_HASH = ConstExprHashingUtils::HashString("SPACE_KEY");
+        static constexpr uint32_t SPACE_NAME_HASH = ConstExprHashingUtils::HashString("SPACE_NAME");
+        static constexpr uint32_t URL_HASH = ConstExprHashingUtils::HashString("URL");
+        static constexpr uint32_t VERSION_HASH = ConstExprHashingUtils::HashString("VERSION");
 
 
         ConfluencePageFieldName GetConfluencePageFieldNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTHOR_HASH)
           {
             return ConfluencePageFieldName::AUTHOR;

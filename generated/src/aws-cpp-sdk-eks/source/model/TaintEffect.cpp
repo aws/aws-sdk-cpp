@@ -20,14 +20,14 @@ namespace Aws
       namespace TaintEffectMapper
       {
 
-        static const int NO_SCHEDULE_HASH = HashingUtils::HashString("NO_SCHEDULE");
-        static const int NO_EXECUTE_HASH = HashingUtils::HashString("NO_EXECUTE");
-        static const int PREFER_NO_SCHEDULE_HASH = HashingUtils::HashString("PREFER_NO_SCHEDULE");
+        static constexpr uint32_t NO_SCHEDULE_HASH = ConstExprHashingUtils::HashString("NO_SCHEDULE");
+        static constexpr uint32_t NO_EXECUTE_HASH = ConstExprHashingUtils::HashString("NO_EXECUTE");
+        static constexpr uint32_t PREFER_NO_SCHEDULE_HASH = ConstExprHashingUtils::HashString("PREFER_NO_SCHEDULE");
 
 
         TaintEffect GetTaintEffectForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_SCHEDULE_HASH)
           {
             return TaintEffect::NO_SCHEDULE;

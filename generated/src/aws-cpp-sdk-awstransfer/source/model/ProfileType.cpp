@@ -20,13 +20,13 @@ namespace Aws
       namespace ProfileTypeMapper
       {
 
-        static const int LOCAL_HASH = HashingUtils::HashString("LOCAL");
-        static const int PARTNER_HASH = HashingUtils::HashString("PARTNER");
+        static constexpr uint32_t LOCAL_HASH = ConstExprHashingUtils::HashString("LOCAL");
+        static constexpr uint32_t PARTNER_HASH = ConstExprHashingUtils::HashString("PARTNER");
 
 
         ProfileType GetProfileTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LOCAL_HASH)
           {
             return ProfileType::LOCAL;

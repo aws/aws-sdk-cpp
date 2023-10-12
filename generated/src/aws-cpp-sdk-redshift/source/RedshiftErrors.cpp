@@ -18,134 +18,134 @@ namespace Redshift
 namespace RedshiftErrorMapper
 {
 
-static const int AUTHENTICATION_PROFILE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("AuthenticationProfileNotFoundFault");
-static const int TABLE_RESTORE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("TableRestoreNotFoundFault");
-static const int INVALID_S3_KEY_PREFIX_FAULT_HASH = HashingUtils::HashString("InvalidS3KeyPrefixFault");
-static const int SCHEDULED_ACTION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ScheduledActionAlreadyExists");
-static const int SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubscriptionCategoryNotFound");
-static const int HSM_CLIENT_CERTIFICATE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("HsmClientCertificateNotFoundFault");
-static const int INVALID_DATA_SHARE_FAULT_HASH = HashingUtils::HashString("InvalidDataShareFault");
-static const int CLUSTER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ClusterNotFound");
-static const int INVALID_TAG_FAULT_HASH = HashingUtils::HashString("InvalidTagFault");
-static const int CLUSTER_SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterSnapshotQuotaExceeded");
-static const int RESERVED_NODE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ReservedNodeQuotaExceeded");
-static const int TABLE_LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("TableLimitExceeded");
-static const int BATCH_DELETE_REQUEST_SIZE_EXCEEDED_FAULT_HASH = HashingUtils::HashString("BatchDeleteRequestSizeExceeded");
-static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet");
-static const int INVALID_CLUSTER_TRACK_FAULT_HASH = HashingUtils::HashString("InvalidClusterTrack");
-static const int INVALID_SNAPSHOT_COPY_GRANT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidSnapshotCopyGrantStateFault");
-static const int INVALID_ELASTIC_IP_FAULT_HASH = HashingUtils::HashString("InvalidElasticIpFault");
-static const int ENDPOINT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("EndpointAlreadyExists");
-static const int SNAPSHOT_COPY_GRANT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("SnapshotCopyGrantAlreadyExistsFault");
-static const int AUTHENTICATION_PROFILE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("AuthenticationProfileQuotaExceededFault");
-static const int SUBNET_ALREADY_IN_USE_HASH = HashingUtils::HashString("SubnetAlreadyInUse");
-static const int CUSTOM_CNAME_ASSOCIATION_FAULT_HASH = HashingUtils::HashString("CustomCnameAssociationFault");
-static const int SNAPSHOT_SCHEDULE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("SnapshotScheduleAlreadyExists");
-static const int CLUSTER_SUBNET_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterSubnetQuotaExceededFault");
-static const int CLUSTER_SECURITY_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ClusterSecurityGroupNotFound");
-static const int INVALID_SCHEDULE_FAULT_HASH = HashingUtils::HashString("InvalidSchedule");
-static const int ENDPOINT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("EndpointNotFound");
-static const int ENDPOINT_AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("EndpointAuthorizationAlreadyExists");
-static const int INVALID_CLUSTER_SNAPSHOT_SCHEDULE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterSnapshotScheduleState");
-static const int CLUSTER_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ClusterAlreadyExists");
-static const int INVALID_USAGE_LIMIT_FAULT_HASH = HashingUtils::HashString("InvalidUsageLimit");
-static const int CLUSTER_SNAPSHOT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ClusterSnapshotNotFound");
-static const int INVALID_CLUSTER_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterState");
-static const int INVALID_CLUSTER_SNAPSHOT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterSnapshotState");
-static const int SCHEDULE_DEFINITION_TYPE_UNSUPPORTED_FAULT_HASH = HashingUtils::HashString("ScheduleDefinitionTypeUnsupported");
-static const int AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("AuthorizationAlreadyExists");
-static const int SUBSCRIPTION_ALREADY_EXIST_FAULT_HASH = HashingUtils::HashString("SubscriptionAlreadyExist");
-static const int SNAPSHOT_SCHEDULE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SnapshotScheduleQuotaExceeded");
-static const int INCOMPATIBLE_ORDERABLE_OPTIONS_HASH = HashingUtils::HashString("IncompatibleOrderableOptions");
-static const int SNAPSHOT_COPY_ALREADY_ENABLED_FAULT_HASH = HashingUtils::HashString("SnapshotCopyAlreadyEnabledFault");
-static const int RESERVED_NODE_OFFERING_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedNodeOfferingNotFound");
-static const int UNAUTHORIZED_OPERATION_HASH = HashingUtils::HashString("UnauthorizedOperation");
-static const int SUBSCRIPTION_SEVERITY_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubscriptionSeverityNotFound");
-static const int SUBSCRIPTION_EVENT_ID_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubscriptionEventIdNotFound");
-static const int HSM_CLIENT_CERTIFICATE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("HsmClientCertificateAlreadyExistsFault");
-static const int IN_PROGRESS_TABLE_RESTORE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("InProgressTableRestoreQuotaExceededFault");
-static const int S_N_S_INVALID_TOPIC_FAULT_HASH = HashingUtils::HashString("SNSInvalidTopic");
-static const int BUCKET_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("BucketNotFoundFault");
-static const int INVALID_V_P_C_NETWORK_STATE_FAULT_HASH = HashingUtils::HashString("InvalidVPCNetworkStateFault");
-static const int AUTHORIZATION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("AuthorizationNotFound");
-static const int AUTHORIZATION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("AuthorizationQuotaExceeded");
-static const int HSM_CONFIGURATION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("HsmConfigurationAlreadyExistsFault");
-static const int UNAUTHORIZED_PARTNER_INTEGRATION_FAULT_HASH = HashingUtils::HashString("UnauthorizedPartnerIntegration");
-static const int RESERVED_NODE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ReservedNodeAlreadyExists");
-static const int HSM_CLIENT_CERTIFICATE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("HsmClientCertificateQuotaExceededFault");
-static const int HSM_CONFIGURATION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("HsmConfigurationQuotaExceededFault");
-static const int ENDPOINT_AUTHORIZATIONS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("EndpointAuthorizationsPerClusterLimitExceeded");
-static const int SUBSCRIPTION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubscriptionNotFound");
-static const int CLUSTER_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterSubnetGroupQuotaExceeded");
-static const int INVALID_SCHEDULED_ACTION_FAULT_HASH = HashingUtils::HashString("InvalidScheduledAction");
-static const int SNAPSHOT_COPY_ALREADY_DISABLED_FAULT_HASH = HashingUtils::HashString("SnapshotCopyAlreadyDisabledFault");
-static const int UNKNOWN_SNAPSHOT_COPY_REGION_FAULT_HASH = HashingUtils::HashString("UnknownSnapshotCopyRegionFault");
-static const int SNAPSHOT_SCHEDULE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SnapshotScheduleNotFound");
-static const int USAGE_LIMIT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("UsageLimitAlreadyExists");
-static const int INVALID_TABLE_RESTORE_ARGUMENT_FAULT_HASH = HashingUtils::HashString("InvalidTableRestoreArgument");
-static const int PARTNER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("PartnerNotFound");
-static const int ENDPOINT_AUTHORIZATION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("EndpointAuthorizationNotFound");
-static const int ACCESS_TO_CLUSTER_DENIED_FAULT_HASH = HashingUtils::HashString("AccessToClusterDenied");
-static const int UNSUPPORTED_OPTION_FAULT_HASH = HashingUtils::HashString("UnsupportedOptionFault");
-static const int SNAPSHOT_COPY_GRANT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SnapshotCopyGrantQuotaExceededFault");
-static const int INSUFFICIENT_S3_BUCKET_POLICY_FAULT_HASH = HashingUtils::HashString("InsufficientS3BucketPolicyFault");
-static const int RESERVED_NODE_EXCHANGE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedNodeExchangeNotFond");
-static const int RESIZE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ResizeNotFound");
-static const int INVALID_NAMESPACE_FAULT_HASH = HashingUtils::HashString("InvalidNamespaceFault");
-static const int INVALID_ENDPOINT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidEndpointState");
-static const int INVALID_HSM_CONFIGURATION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidHsmConfigurationStateFault");
-static const int INVALID_RETENTION_PERIOD_FAULT_HASH = HashingUtils::HashString("InvalidRetentionPeriodFault");
-static const int HSM_CONFIGURATION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("HsmConfigurationNotFoundFault");
-static const int ENDPOINTS_PER_AUTHORIZATION_LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("EndpointsPerAuthorizationLimitExceeded");
-static const int SCHEDULED_ACTION_TYPE_UNSUPPORTED_FAULT_HASH = HashingUtils::HashString("ScheduledActionTypeUnsupported");
-static const int CLUSTER_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterQuotaExceeded");
-static const int CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ClusterSnapshotAlreadyExists");
-static const int INSUFFICIENT_CLUSTER_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientClusterCapacity");
-static const int SNAPSHOT_SCHEDULE_UPDATE_IN_PROGRESS_FAULT_HASH = HashingUtils::HashString("SnapshotScheduleUpdateInProgress");
-static const int EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("EventSubscriptionQuotaExceeded");
-static const int INVALID_AUTHENTICATION_PROFILE_REQUEST_FAULT_HASH = HashingUtils::HashString("InvalidAuthenticationProfileRequestFault");
-static const int SCHEDULED_ACTION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ScheduledActionQuotaExceeded");
-static const int CUSTOM_DOMAIN_ASSOCIATION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("CustomDomainAssociationNotFoundFault");
-static const int SCHEDULED_ACTION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ScheduledActionNotFound");
-static const int INVALID_CLUSTER_SUBNET_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterSubnetStateFault");
-static const int INVALID_SUBSCRIPTION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidSubscriptionStateFault");
-static const int INVALID_AUTHORIZATION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidAuthorizationState");
-static const int CLUSTER_PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ClusterParameterGroupAlreadyExists");
-static const int INVALID_RESERVED_NODE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidReservedNodeState");
-static const int CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ClusterParameterGroupNotFound");
-static const int SNAPSHOT_COPY_GRANT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SnapshotCopyGrantNotFoundFault");
-static const int DEPENDENT_SERVICE_UNAVAILABLE_FAULT_HASH = HashingUtils::HashString("DependentServiceUnavailableFault");
-static const int INVALID_HSM_CLIENT_CERTIFICATE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidHsmClientCertificateStateFault");
-static const int ACCESS_TO_SNAPSHOT_DENIED_FAULT_HASH = HashingUtils::HashString("AccessToSnapshotDenied");
-static const int RESOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ResourceNotFoundFault");
-static const int AUTHENTICATION_PROFILE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("AuthenticationProfileAlreadyExistsFault");
-static const int SNAPSHOT_COPY_DISABLED_FAULT_HASH = HashingUtils::HashString("SnapshotCopyDisabledFault");
-static const int BATCH_MODIFY_CLUSTER_SNAPSHOTS_LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("BatchModifyClusterSnapshotsLimitExceededFault");
-static const int CLUSTER_ON_LATEST_REVISION_FAULT_HASH = HashingUtils::HashString("ClusterOnLatestRevision");
-static const int CLUSTER_SECURITY_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ClusterSecurityGroupAlreadyExists");
-static const int USAGE_LIMIT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("UsageLimitNotFound");
-static const int CLUSTER_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("QuotaExceeded.ClusterSecurityGroup");
-static const int COPY_TO_REGION_DISABLED_FAULT_HASH = HashingUtils::HashString("CopyToRegionDisabledFault");
-static const int NUMBER_OF_NODES_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("NumberOfNodesQuotaExceeded");
-static const int S_N_S_NO_AUTHORIZATION_FAULT_HASH = HashingUtils::HashString("SNSNoAuthorization");
-static const int INVALID_CLUSTER_PARAMETER_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterParameterGroupState");
-static const int INVALID_RESTORE_FAULT_HASH = HashingUtils::HashString("InvalidRestore");
-static const int LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("LimitExceededFault");
-static const int S_N_S_TOPIC_ARN_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SNSTopicArnNotFound");
-static const int INVALID_S3_BUCKET_NAME_FAULT_HASH = HashingUtils::HashString("InvalidS3BucketNameFault");
-static const int NUMBER_OF_NODES_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("NumberOfNodesPerClusterLimitExceeded");
-static const int CLUSTER_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterParameterGroupQuotaExceeded");
-static const int RESERVED_NODE_ALREADY_MIGRATED_FAULT_HASH = HashingUtils::HashString("ReservedNodeAlreadyMigrated");
-static const int ENDPOINTS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("EndpointsPerClusterLimitExceeded");
-static const int DEPENDENT_SERVICE_REQUEST_THROTTLING_FAULT_HASH = HashingUtils::HashString("DependentServiceRequestThrottlingFault");
-static const int INVALID_CLUSTER_SUBNET_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterSubnetGroupStateFault");
-static const int UNSUPPORTED_OPERATION_FAULT_HASH = HashingUtils::HashString("UnsupportedOperation");
-static const int TAG_LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("TagLimitExceededFault");
-static const int INVALID_CLUSTER_SECURITY_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterSecurityGroupState");
-static const int CLUSTER_SUBNET_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ClusterSubnetGroupNotFoundFault");
-static const int SOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SourceNotFound");
-static const int CLUSTER_SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ClusterSubnetGroupAlreadyExists");
-static const int RESERVED_NODE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedNodeNotFound");
+static constexpr uint32_t AUTHENTICATION_PROFILE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("AuthenticationProfileNotFoundFault");
+static constexpr uint32_t TABLE_RESTORE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("TableRestoreNotFoundFault");
+static constexpr uint32_t INVALID_S3_KEY_PREFIX_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidS3KeyPrefixFault");
+static constexpr uint32_t SCHEDULED_ACTION_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("ScheduledActionAlreadyExists");
+static constexpr uint32_t SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("SubscriptionCategoryNotFound");
+static constexpr uint32_t HSM_CLIENT_CERTIFICATE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("HsmClientCertificateNotFoundFault");
+static constexpr uint32_t INVALID_DATA_SHARE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidDataShareFault");
+static constexpr uint32_t CLUSTER_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterNotFound");
+static constexpr uint32_t INVALID_TAG_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidTagFault");
+static constexpr uint32_t CLUSTER_SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterSnapshotQuotaExceeded");
+static constexpr uint32_t RESERVED_NODE_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("ReservedNodeQuotaExceeded");
+static constexpr uint32_t TABLE_LIMIT_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("TableLimitExceeded");
+static constexpr uint32_t BATCH_DELETE_REQUEST_SIZE_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("BatchDeleteRequestSizeExceeded");
+static constexpr uint32_t INVALID_SUBNET_HASH = ConstExprHashingUtils::HashString("InvalidSubnet");
+static constexpr uint32_t INVALID_CLUSTER_TRACK_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidClusterTrack");
+static constexpr uint32_t INVALID_SNAPSHOT_COPY_GRANT_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidSnapshotCopyGrantStateFault");
+static constexpr uint32_t INVALID_ELASTIC_IP_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidElasticIpFault");
+static constexpr uint32_t ENDPOINT_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("EndpointAlreadyExists");
+static constexpr uint32_t SNAPSHOT_COPY_GRANT_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("SnapshotCopyGrantAlreadyExistsFault");
+static constexpr uint32_t AUTHENTICATION_PROFILE_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("AuthenticationProfileQuotaExceededFault");
+static constexpr uint32_t SUBNET_ALREADY_IN_USE_HASH = ConstExprHashingUtils::HashString("SubnetAlreadyInUse");
+static constexpr uint32_t CUSTOM_CNAME_ASSOCIATION_FAULT_HASH = ConstExprHashingUtils::HashString("CustomCnameAssociationFault");
+static constexpr uint32_t SNAPSHOT_SCHEDULE_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("SnapshotScheduleAlreadyExists");
+static constexpr uint32_t CLUSTER_SUBNET_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterSubnetQuotaExceededFault");
+static constexpr uint32_t CLUSTER_SECURITY_GROUP_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterSecurityGroupNotFound");
+static constexpr uint32_t INVALID_SCHEDULE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidSchedule");
+static constexpr uint32_t ENDPOINT_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("EndpointNotFound");
+static constexpr uint32_t ENDPOINT_AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("EndpointAuthorizationAlreadyExists");
+static constexpr uint32_t INVALID_CLUSTER_SNAPSHOT_SCHEDULE_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidClusterSnapshotScheduleState");
+static constexpr uint32_t CLUSTER_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterAlreadyExists");
+static constexpr uint32_t INVALID_USAGE_LIMIT_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidUsageLimit");
+static constexpr uint32_t CLUSTER_SNAPSHOT_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterSnapshotNotFound");
+static constexpr uint32_t INVALID_CLUSTER_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidClusterState");
+static constexpr uint32_t INVALID_CLUSTER_SNAPSHOT_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidClusterSnapshotState");
+static constexpr uint32_t SCHEDULE_DEFINITION_TYPE_UNSUPPORTED_FAULT_HASH = ConstExprHashingUtils::HashString("ScheduleDefinitionTypeUnsupported");
+static constexpr uint32_t AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("AuthorizationAlreadyExists");
+static constexpr uint32_t SUBSCRIPTION_ALREADY_EXIST_FAULT_HASH = ConstExprHashingUtils::HashString("SubscriptionAlreadyExist");
+static constexpr uint32_t SNAPSHOT_SCHEDULE_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("SnapshotScheduleQuotaExceeded");
+static constexpr uint32_t INCOMPATIBLE_ORDERABLE_OPTIONS_HASH = ConstExprHashingUtils::HashString("IncompatibleOrderableOptions");
+static constexpr uint32_t SNAPSHOT_COPY_ALREADY_ENABLED_FAULT_HASH = ConstExprHashingUtils::HashString("SnapshotCopyAlreadyEnabledFault");
+static constexpr uint32_t RESERVED_NODE_OFFERING_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ReservedNodeOfferingNotFound");
+static constexpr uint32_t UNAUTHORIZED_OPERATION_HASH = ConstExprHashingUtils::HashString("UnauthorizedOperation");
+static constexpr uint32_t SUBSCRIPTION_SEVERITY_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("SubscriptionSeverityNotFound");
+static constexpr uint32_t SUBSCRIPTION_EVENT_ID_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("SubscriptionEventIdNotFound");
+static constexpr uint32_t HSM_CLIENT_CERTIFICATE_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("HsmClientCertificateAlreadyExistsFault");
+static constexpr uint32_t IN_PROGRESS_TABLE_RESTORE_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("InProgressTableRestoreQuotaExceededFault");
+static constexpr uint32_t S_N_S_INVALID_TOPIC_FAULT_HASH = ConstExprHashingUtils::HashString("SNSInvalidTopic");
+static constexpr uint32_t BUCKET_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("BucketNotFoundFault");
+static constexpr uint32_t INVALID_V_P_C_NETWORK_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidVPCNetworkStateFault");
+static constexpr uint32_t AUTHORIZATION_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("AuthorizationNotFound");
+static constexpr uint32_t AUTHORIZATION_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("AuthorizationQuotaExceeded");
+static constexpr uint32_t HSM_CONFIGURATION_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("HsmConfigurationAlreadyExistsFault");
+static constexpr uint32_t UNAUTHORIZED_PARTNER_INTEGRATION_FAULT_HASH = ConstExprHashingUtils::HashString("UnauthorizedPartnerIntegration");
+static constexpr uint32_t RESERVED_NODE_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("ReservedNodeAlreadyExists");
+static constexpr uint32_t HSM_CLIENT_CERTIFICATE_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("HsmClientCertificateQuotaExceededFault");
+static constexpr uint32_t HSM_CONFIGURATION_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("HsmConfigurationQuotaExceededFault");
+static constexpr uint32_t ENDPOINT_AUTHORIZATIONS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("EndpointAuthorizationsPerClusterLimitExceeded");
+static constexpr uint32_t SUBSCRIPTION_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("SubscriptionNotFound");
+static constexpr uint32_t CLUSTER_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterSubnetGroupQuotaExceeded");
+static constexpr uint32_t INVALID_SCHEDULED_ACTION_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidScheduledAction");
+static constexpr uint32_t SNAPSHOT_COPY_ALREADY_DISABLED_FAULT_HASH = ConstExprHashingUtils::HashString("SnapshotCopyAlreadyDisabledFault");
+static constexpr uint32_t UNKNOWN_SNAPSHOT_COPY_REGION_FAULT_HASH = ConstExprHashingUtils::HashString("UnknownSnapshotCopyRegionFault");
+static constexpr uint32_t SNAPSHOT_SCHEDULE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("SnapshotScheduleNotFound");
+static constexpr uint32_t USAGE_LIMIT_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("UsageLimitAlreadyExists");
+static constexpr uint32_t INVALID_TABLE_RESTORE_ARGUMENT_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidTableRestoreArgument");
+static constexpr uint32_t PARTNER_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("PartnerNotFound");
+static constexpr uint32_t ENDPOINT_AUTHORIZATION_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("EndpointAuthorizationNotFound");
+static constexpr uint32_t ACCESS_TO_CLUSTER_DENIED_FAULT_HASH = ConstExprHashingUtils::HashString("AccessToClusterDenied");
+static constexpr uint32_t UNSUPPORTED_OPTION_FAULT_HASH = ConstExprHashingUtils::HashString("UnsupportedOptionFault");
+static constexpr uint32_t SNAPSHOT_COPY_GRANT_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("SnapshotCopyGrantQuotaExceededFault");
+static constexpr uint32_t INSUFFICIENT_S3_BUCKET_POLICY_FAULT_HASH = ConstExprHashingUtils::HashString("InsufficientS3BucketPolicyFault");
+static constexpr uint32_t RESERVED_NODE_EXCHANGE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ReservedNodeExchangeNotFond");
+static constexpr uint32_t RESIZE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ResizeNotFound");
+static constexpr uint32_t INVALID_NAMESPACE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidNamespaceFault");
+static constexpr uint32_t INVALID_ENDPOINT_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidEndpointState");
+static constexpr uint32_t INVALID_HSM_CONFIGURATION_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidHsmConfigurationStateFault");
+static constexpr uint32_t INVALID_RETENTION_PERIOD_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidRetentionPeriodFault");
+static constexpr uint32_t HSM_CONFIGURATION_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("HsmConfigurationNotFoundFault");
+static constexpr uint32_t ENDPOINTS_PER_AUTHORIZATION_LIMIT_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("EndpointsPerAuthorizationLimitExceeded");
+static constexpr uint32_t SCHEDULED_ACTION_TYPE_UNSUPPORTED_FAULT_HASH = ConstExprHashingUtils::HashString("ScheduledActionTypeUnsupported");
+static constexpr uint32_t CLUSTER_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterQuotaExceeded");
+static constexpr uint32_t CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterSnapshotAlreadyExists");
+static constexpr uint32_t INSUFFICIENT_CLUSTER_CAPACITY_FAULT_HASH = ConstExprHashingUtils::HashString("InsufficientClusterCapacity");
+static constexpr uint32_t SNAPSHOT_SCHEDULE_UPDATE_IN_PROGRESS_FAULT_HASH = ConstExprHashingUtils::HashString("SnapshotScheduleUpdateInProgress");
+static constexpr uint32_t EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("EventSubscriptionQuotaExceeded");
+static constexpr uint32_t INVALID_AUTHENTICATION_PROFILE_REQUEST_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidAuthenticationProfileRequestFault");
+static constexpr uint32_t SCHEDULED_ACTION_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("ScheduledActionQuotaExceeded");
+static constexpr uint32_t CUSTOM_DOMAIN_ASSOCIATION_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("CustomDomainAssociationNotFoundFault");
+static constexpr uint32_t SCHEDULED_ACTION_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ScheduledActionNotFound");
+static constexpr uint32_t INVALID_CLUSTER_SUBNET_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidClusterSubnetStateFault");
+static constexpr uint32_t INVALID_SUBSCRIPTION_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidSubscriptionStateFault");
+static constexpr uint32_t INVALID_AUTHORIZATION_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidAuthorizationState");
+static constexpr uint32_t CLUSTER_PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterParameterGroupAlreadyExists");
+static constexpr uint32_t INVALID_RESERVED_NODE_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidReservedNodeState");
+static constexpr uint32_t CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterParameterGroupNotFound");
+static constexpr uint32_t SNAPSHOT_COPY_GRANT_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("SnapshotCopyGrantNotFoundFault");
+static constexpr uint32_t DEPENDENT_SERVICE_UNAVAILABLE_FAULT_HASH = ConstExprHashingUtils::HashString("DependentServiceUnavailableFault");
+static constexpr uint32_t INVALID_HSM_CLIENT_CERTIFICATE_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidHsmClientCertificateStateFault");
+static constexpr uint32_t ACCESS_TO_SNAPSHOT_DENIED_FAULT_HASH = ConstExprHashingUtils::HashString("AccessToSnapshotDenied");
+static constexpr uint32_t RESOURCE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ResourceNotFoundFault");
+static constexpr uint32_t AUTHENTICATION_PROFILE_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("AuthenticationProfileAlreadyExistsFault");
+static constexpr uint32_t SNAPSHOT_COPY_DISABLED_FAULT_HASH = ConstExprHashingUtils::HashString("SnapshotCopyDisabledFault");
+static constexpr uint32_t BATCH_MODIFY_CLUSTER_SNAPSHOTS_LIMIT_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("BatchModifyClusterSnapshotsLimitExceededFault");
+static constexpr uint32_t CLUSTER_ON_LATEST_REVISION_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterOnLatestRevision");
+static constexpr uint32_t CLUSTER_SECURITY_GROUP_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterSecurityGroupAlreadyExists");
+static constexpr uint32_t USAGE_LIMIT_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("UsageLimitNotFound");
+static constexpr uint32_t CLUSTER_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("QuotaExceeded.ClusterSecurityGroup");
+static constexpr uint32_t COPY_TO_REGION_DISABLED_FAULT_HASH = ConstExprHashingUtils::HashString("CopyToRegionDisabledFault");
+static constexpr uint32_t NUMBER_OF_NODES_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("NumberOfNodesQuotaExceeded");
+static constexpr uint32_t S_N_S_NO_AUTHORIZATION_FAULT_HASH = ConstExprHashingUtils::HashString("SNSNoAuthorization");
+static constexpr uint32_t INVALID_CLUSTER_PARAMETER_GROUP_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidClusterParameterGroupState");
+static constexpr uint32_t INVALID_RESTORE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidRestore");
+static constexpr uint32_t LIMIT_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("LimitExceededFault");
+static constexpr uint32_t S_N_S_TOPIC_ARN_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("SNSTopicArnNotFound");
+static constexpr uint32_t INVALID_S3_BUCKET_NAME_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidS3BucketNameFault");
+static constexpr uint32_t NUMBER_OF_NODES_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("NumberOfNodesPerClusterLimitExceeded");
+static constexpr uint32_t CLUSTER_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterParameterGroupQuotaExceeded");
+static constexpr uint32_t RESERVED_NODE_ALREADY_MIGRATED_FAULT_HASH = ConstExprHashingUtils::HashString("ReservedNodeAlreadyMigrated");
+static constexpr uint32_t ENDPOINTS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("EndpointsPerClusterLimitExceeded");
+static constexpr uint32_t DEPENDENT_SERVICE_REQUEST_THROTTLING_FAULT_HASH = ConstExprHashingUtils::HashString("DependentServiceRequestThrottlingFault");
+static constexpr uint32_t INVALID_CLUSTER_SUBNET_GROUP_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidClusterSubnetGroupStateFault");
+static constexpr uint32_t UNSUPPORTED_OPERATION_FAULT_HASH = ConstExprHashingUtils::HashString("UnsupportedOperation");
+static constexpr uint32_t TAG_LIMIT_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("TagLimitExceededFault");
+static constexpr uint32_t INVALID_CLUSTER_SECURITY_GROUP_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidClusterSecurityGroupState");
+static constexpr uint32_t CLUSTER_SUBNET_GROUP_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterSubnetGroupNotFoundFault");
+static constexpr uint32_t SOURCE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("SourceNotFound");
+static constexpr uint32_t CLUSTER_SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterSubnetGroupAlreadyExists");
+static constexpr uint32_t RESERVED_NODE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ReservedNodeNotFound");
 
 
 /*
@@ -154,7 +154,7 @@ which allows constant time lookup. The chain has been broken into helper functio
 because MSVC has a maximum of 122 chained if-else blocks.
 */
 
-static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
+static bool GetErrorForNameHelper0(uint32_t hashCode, AWSError<CoreErrors>& error)
 {
   if (hashCode == AUTHENTICATION_PROFILE_NOT_FOUND_FAULT_HASH)
   {
@@ -769,7 +769,7 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   return false;
 }
 
-static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+static bool GetErrorForNameHelper1(uint32_t hashCode, AWSError<CoreErrors>& error)
 {
   if (hashCode == TAG_LIMIT_EXCEEDED_FAULT_HASH)
   {
@@ -806,7 +806,7 @@ static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
   AWSError<CoreErrors> error;
   if (GetErrorForNameHelper0(hashCode, error))
   {

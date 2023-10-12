@@ -20,14 +20,14 @@ namespace Aws
       namespace StatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int DEPLOYED_HASH = HashingUtils::HashString("DEPLOYED");
-        static const int PENDING_DELETION_HASH = HashingUtils::HashString("PENDING_DELETION");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t DEPLOYED_HASH = ConstExprHashingUtils::HashString("DEPLOYED");
+        static constexpr uint32_t PENDING_DELETION_HASH = ConstExprHashingUtils::HashString("PENDING_DELETION");
 
 
         Status GetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return Status::PENDING;

@@ -20,45 +20,45 @@ namespace Aws
       namespace DimensionMapper
       {
 
-        static const int AZ_HASH = HashingUtils::HashString("AZ");
-        static const int INSTANCE_TYPE_HASH = HashingUtils::HashString("INSTANCE_TYPE");
-        static const int LINKED_ACCOUNT_HASH = HashingUtils::HashString("LINKED_ACCOUNT");
-        static const int LINKED_ACCOUNT_NAME_HASH = HashingUtils::HashString("LINKED_ACCOUNT_NAME");
-        static const int OPERATION_HASH = HashingUtils::HashString("OPERATION");
-        static const int PURCHASE_TYPE_HASH = HashingUtils::HashString("PURCHASE_TYPE");
-        static const int REGION_HASH = HashingUtils::HashString("REGION");
-        static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
-        static const int SERVICE_CODE_HASH = HashingUtils::HashString("SERVICE_CODE");
-        static const int USAGE_TYPE_HASH = HashingUtils::HashString("USAGE_TYPE");
-        static const int USAGE_TYPE_GROUP_HASH = HashingUtils::HashString("USAGE_TYPE_GROUP");
-        static const int RECORD_TYPE_HASH = HashingUtils::HashString("RECORD_TYPE");
-        static const int OPERATING_SYSTEM_HASH = HashingUtils::HashString("OPERATING_SYSTEM");
-        static const int TENANCY_HASH = HashingUtils::HashString("TENANCY");
-        static const int SCOPE_HASH = HashingUtils::HashString("SCOPE");
-        static const int PLATFORM_HASH = HashingUtils::HashString("PLATFORM");
-        static const int SUBSCRIPTION_ID_HASH = HashingUtils::HashString("SUBSCRIPTION_ID");
-        static const int LEGAL_ENTITY_NAME_HASH = HashingUtils::HashString("LEGAL_ENTITY_NAME");
-        static const int DEPLOYMENT_OPTION_HASH = HashingUtils::HashString("DEPLOYMENT_OPTION");
-        static const int DATABASE_ENGINE_HASH = HashingUtils::HashString("DATABASE_ENGINE");
-        static const int CACHE_ENGINE_HASH = HashingUtils::HashString("CACHE_ENGINE");
-        static const int INSTANCE_TYPE_FAMILY_HASH = HashingUtils::HashString("INSTANCE_TYPE_FAMILY");
-        static const int BILLING_ENTITY_HASH = HashingUtils::HashString("BILLING_ENTITY");
-        static const int RESERVATION_ID_HASH = HashingUtils::HashString("RESERVATION_ID");
-        static const int RESOURCE_ID_HASH = HashingUtils::HashString("RESOURCE_ID");
-        static const int RIGHTSIZING_TYPE_HASH = HashingUtils::HashString("RIGHTSIZING_TYPE");
-        static const int SAVINGS_PLANS_TYPE_HASH = HashingUtils::HashString("SAVINGS_PLANS_TYPE");
-        static const int SAVINGS_PLAN_ARN_HASH = HashingUtils::HashString("SAVINGS_PLAN_ARN");
-        static const int PAYMENT_OPTION_HASH = HashingUtils::HashString("PAYMENT_OPTION");
-        static const int AGREEMENT_END_DATE_TIME_AFTER_HASH = HashingUtils::HashString("AGREEMENT_END_DATE_TIME_AFTER");
-        static const int AGREEMENT_END_DATE_TIME_BEFORE_HASH = HashingUtils::HashString("AGREEMENT_END_DATE_TIME_BEFORE");
-        static const int INVOICING_ENTITY_HASH = HashingUtils::HashString("INVOICING_ENTITY");
-        static const int ANOMALY_TOTAL_IMPACT_ABSOLUTE_HASH = HashingUtils::HashString("ANOMALY_TOTAL_IMPACT_ABSOLUTE");
-        static const int ANOMALY_TOTAL_IMPACT_PERCENTAGE_HASH = HashingUtils::HashString("ANOMALY_TOTAL_IMPACT_PERCENTAGE");
+        static constexpr uint32_t AZ_HASH = ConstExprHashingUtils::HashString("AZ");
+        static constexpr uint32_t INSTANCE_TYPE_HASH = ConstExprHashingUtils::HashString("INSTANCE_TYPE");
+        static constexpr uint32_t LINKED_ACCOUNT_HASH = ConstExprHashingUtils::HashString("LINKED_ACCOUNT");
+        static constexpr uint32_t LINKED_ACCOUNT_NAME_HASH = ConstExprHashingUtils::HashString("LINKED_ACCOUNT_NAME");
+        static constexpr uint32_t OPERATION_HASH = ConstExprHashingUtils::HashString("OPERATION");
+        static constexpr uint32_t PURCHASE_TYPE_HASH = ConstExprHashingUtils::HashString("PURCHASE_TYPE");
+        static constexpr uint32_t REGION_HASH = ConstExprHashingUtils::HashString("REGION");
+        static constexpr uint32_t SERVICE_HASH = ConstExprHashingUtils::HashString("SERVICE");
+        static constexpr uint32_t SERVICE_CODE_HASH = ConstExprHashingUtils::HashString("SERVICE_CODE");
+        static constexpr uint32_t USAGE_TYPE_HASH = ConstExprHashingUtils::HashString("USAGE_TYPE");
+        static constexpr uint32_t USAGE_TYPE_GROUP_HASH = ConstExprHashingUtils::HashString("USAGE_TYPE_GROUP");
+        static constexpr uint32_t RECORD_TYPE_HASH = ConstExprHashingUtils::HashString("RECORD_TYPE");
+        static constexpr uint32_t OPERATING_SYSTEM_HASH = ConstExprHashingUtils::HashString("OPERATING_SYSTEM");
+        static constexpr uint32_t TENANCY_HASH = ConstExprHashingUtils::HashString("TENANCY");
+        static constexpr uint32_t SCOPE_HASH = ConstExprHashingUtils::HashString("SCOPE");
+        static constexpr uint32_t PLATFORM_HASH = ConstExprHashingUtils::HashString("PLATFORM");
+        static constexpr uint32_t SUBSCRIPTION_ID_HASH = ConstExprHashingUtils::HashString("SUBSCRIPTION_ID");
+        static constexpr uint32_t LEGAL_ENTITY_NAME_HASH = ConstExprHashingUtils::HashString("LEGAL_ENTITY_NAME");
+        static constexpr uint32_t DEPLOYMENT_OPTION_HASH = ConstExprHashingUtils::HashString("DEPLOYMENT_OPTION");
+        static constexpr uint32_t DATABASE_ENGINE_HASH = ConstExprHashingUtils::HashString("DATABASE_ENGINE");
+        static constexpr uint32_t CACHE_ENGINE_HASH = ConstExprHashingUtils::HashString("CACHE_ENGINE");
+        static constexpr uint32_t INSTANCE_TYPE_FAMILY_HASH = ConstExprHashingUtils::HashString("INSTANCE_TYPE_FAMILY");
+        static constexpr uint32_t BILLING_ENTITY_HASH = ConstExprHashingUtils::HashString("BILLING_ENTITY");
+        static constexpr uint32_t RESERVATION_ID_HASH = ConstExprHashingUtils::HashString("RESERVATION_ID");
+        static constexpr uint32_t RESOURCE_ID_HASH = ConstExprHashingUtils::HashString("RESOURCE_ID");
+        static constexpr uint32_t RIGHTSIZING_TYPE_HASH = ConstExprHashingUtils::HashString("RIGHTSIZING_TYPE");
+        static constexpr uint32_t SAVINGS_PLANS_TYPE_HASH = ConstExprHashingUtils::HashString("SAVINGS_PLANS_TYPE");
+        static constexpr uint32_t SAVINGS_PLAN_ARN_HASH = ConstExprHashingUtils::HashString("SAVINGS_PLAN_ARN");
+        static constexpr uint32_t PAYMENT_OPTION_HASH = ConstExprHashingUtils::HashString("PAYMENT_OPTION");
+        static constexpr uint32_t AGREEMENT_END_DATE_TIME_AFTER_HASH = ConstExprHashingUtils::HashString("AGREEMENT_END_DATE_TIME_AFTER");
+        static constexpr uint32_t AGREEMENT_END_DATE_TIME_BEFORE_HASH = ConstExprHashingUtils::HashString("AGREEMENT_END_DATE_TIME_BEFORE");
+        static constexpr uint32_t INVOICING_ENTITY_HASH = ConstExprHashingUtils::HashString("INVOICING_ENTITY");
+        static constexpr uint32_t ANOMALY_TOTAL_IMPACT_ABSOLUTE_HASH = ConstExprHashingUtils::HashString("ANOMALY_TOTAL_IMPACT_ABSOLUTE");
+        static constexpr uint32_t ANOMALY_TOTAL_IMPACT_PERCENTAGE_HASH = ConstExprHashingUtils::HashString("ANOMALY_TOTAL_IMPACT_PERCENTAGE");
 
 
         Dimension GetDimensionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AZ_HASH)
           {
             return Dimension::AZ;

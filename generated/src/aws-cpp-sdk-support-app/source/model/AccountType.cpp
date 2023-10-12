@@ -20,13 +20,13 @@ namespace Aws
       namespace AccountTypeMapper
       {
 
-        static const int management_HASH = HashingUtils::HashString("management");
-        static const int member_HASH = HashingUtils::HashString("member");
+        static constexpr uint32_t management_HASH = ConstExprHashingUtils::HashString("management");
+        static constexpr uint32_t member_HASH = ConstExprHashingUtils::HashString("member");
 
 
         AccountType GetAccountTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == management_HASH)
           {
             return AccountType::management;

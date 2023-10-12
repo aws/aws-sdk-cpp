@@ -20,13 +20,13 @@ namespace Aws
       namespace WirelessGatewayServiceTypeMapper
       {
 
-        static const int CUPS_HASH = HashingUtils::HashString("CUPS");
-        static const int LNS_HASH = HashingUtils::HashString("LNS");
+        static constexpr uint32_t CUPS_HASH = ConstExprHashingUtils::HashString("CUPS");
+        static constexpr uint32_t LNS_HASH = ConstExprHashingUtils::HashString("LNS");
 
 
         WirelessGatewayServiceType GetWirelessGatewayServiceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CUPS_HASH)
           {
             return WirelessGatewayServiceType::CUPS;

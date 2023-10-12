@@ -20,13 +20,13 @@ namespace Aws
       namespace Scte35WebDeliveryAllowedFlagMapper
       {
 
-        static const int WEB_DELIVERY_NOT_ALLOWED_HASH = HashingUtils::HashString("WEB_DELIVERY_NOT_ALLOWED");
-        static const int WEB_DELIVERY_ALLOWED_HASH = HashingUtils::HashString("WEB_DELIVERY_ALLOWED");
+        static constexpr uint32_t WEB_DELIVERY_NOT_ALLOWED_HASH = ConstExprHashingUtils::HashString("WEB_DELIVERY_NOT_ALLOWED");
+        static constexpr uint32_t WEB_DELIVERY_ALLOWED_HASH = ConstExprHashingUtils::HashString("WEB_DELIVERY_ALLOWED");
 
 
         Scte35WebDeliveryAllowedFlag GetScte35WebDeliveryAllowedFlagForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WEB_DELIVERY_NOT_ALLOWED_HASH)
           {
             return Scte35WebDeliveryAllowedFlag::WEB_DELIVERY_NOT_ALLOWED;

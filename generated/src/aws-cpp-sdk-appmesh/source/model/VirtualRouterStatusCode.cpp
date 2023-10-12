@@ -20,14 +20,14 @@ namespace Aws
       namespace VirtualRouterStatusCodeMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t INACTIVE_HASH = ConstExprHashingUtils::HashString("INACTIVE");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         VirtualRouterStatusCode GetVirtualRouterStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return VirtualRouterStatusCode::ACTIVE;

@@ -20,14 +20,14 @@ namespace Aws
       namespace ModelVersionSourceTypeMapper
       {
 
-        static const int TRAINING_HASH = HashingUtils::HashString("TRAINING");
-        static const int RETRAINING_HASH = HashingUtils::HashString("RETRAINING");
-        static const int IMPORT_HASH = HashingUtils::HashString("IMPORT");
+        static constexpr uint32_t TRAINING_HASH = ConstExprHashingUtils::HashString("TRAINING");
+        static constexpr uint32_t RETRAINING_HASH = ConstExprHashingUtils::HashString("RETRAINING");
+        static constexpr uint32_t IMPORT_HASH = ConstExprHashingUtils::HashString("IMPORT");
 
 
         ModelVersionSourceType GetModelVersionSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRAINING_HASH)
           {
             return ModelVersionSourceType::TRAINING;

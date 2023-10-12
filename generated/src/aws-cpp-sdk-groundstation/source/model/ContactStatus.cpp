@@ -20,24 +20,24 @@ namespace Aws
       namespace ContactStatusMapper
       {
 
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int AWS_CANCELLED_HASH = HashingUtils::HashString("AWS_CANCELLED");
-        static const int AWS_FAILED_HASH = HashingUtils::HashString("AWS_FAILED");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-        static const int CANCELLING_HASH = HashingUtils::HashString("CANCELLING");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int FAILED_TO_SCHEDULE_HASH = HashingUtils::HashString("FAILED_TO_SCHEDULE");
-        static const int PASS_HASH = HashingUtils::HashString("PASS");
-        static const int POSTPASS_HASH = HashingUtils::HashString("POSTPASS");
-        static const int PREPASS_HASH = HashingUtils::HashString("PREPASS");
-        static const int SCHEDULED_HASH = HashingUtils::HashString("SCHEDULED");
-        static const int SCHEDULING_HASH = HashingUtils::HashString("SCHEDULING");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t AWS_CANCELLED_HASH = ConstExprHashingUtils::HashString("AWS_CANCELLED");
+        static constexpr uint32_t AWS_FAILED_HASH = ConstExprHashingUtils::HashString("AWS_FAILED");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t CANCELLING_HASH = ConstExprHashingUtils::HashString("CANCELLING");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t FAILED_TO_SCHEDULE_HASH = ConstExprHashingUtils::HashString("FAILED_TO_SCHEDULE");
+        static constexpr uint32_t PASS_HASH = ConstExprHashingUtils::HashString("PASS");
+        static constexpr uint32_t POSTPASS_HASH = ConstExprHashingUtils::HashString("POSTPASS");
+        static constexpr uint32_t PREPASS_HASH = ConstExprHashingUtils::HashString("PREPASS");
+        static constexpr uint32_t SCHEDULED_HASH = ConstExprHashingUtils::HashString("SCHEDULED");
+        static constexpr uint32_t SCHEDULING_HASH = ConstExprHashingUtils::HashString("SCHEDULING");
 
 
         ContactStatus GetContactStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVAILABLE_HASH)
           {
             return ContactStatus::AVAILABLE;

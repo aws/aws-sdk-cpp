@@ -20,17 +20,17 @@ namespace Aws
       namespace MitigationActionTypeMapper
       {
 
-        static const int UPDATE_DEVICE_CERTIFICATE_HASH = HashingUtils::HashString("UPDATE_DEVICE_CERTIFICATE");
-        static const int UPDATE_CA_CERTIFICATE_HASH = HashingUtils::HashString("UPDATE_CA_CERTIFICATE");
-        static const int ADD_THINGS_TO_THING_GROUP_HASH = HashingUtils::HashString("ADD_THINGS_TO_THING_GROUP");
-        static const int REPLACE_DEFAULT_POLICY_VERSION_HASH = HashingUtils::HashString("REPLACE_DEFAULT_POLICY_VERSION");
-        static const int ENABLE_IOT_LOGGING_HASH = HashingUtils::HashString("ENABLE_IOT_LOGGING");
-        static const int PUBLISH_FINDING_TO_SNS_HASH = HashingUtils::HashString("PUBLISH_FINDING_TO_SNS");
+        static constexpr uint32_t UPDATE_DEVICE_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("UPDATE_DEVICE_CERTIFICATE");
+        static constexpr uint32_t UPDATE_CA_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("UPDATE_CA_CERTIFICATE");
+        static constexpr uint32_t ADD_THINGS_TO_THING_GROUP_HASH = ConstExprHashingUtils::HashString("ADD_THINGS_TO_THING_GROUP");
+        static constexpr uint32_t REPLACE_DEFAULT_POLICY_VERSION_HASH = ConstExprHashingUtils::HashString("REPLACE_DEFAULT_POLICY_VERSION");
+        static constexpr uint32_t ENABLE_IOT_LOGGING_HASH = ConstExprHashingUtils::HashString("ENABLE_IOT_LOGGING");
+        static constexpr uint32_t PUBLISH_FINDING_TO_SNS_HASH = ConstExprHashingUtils::HashString("PUBLISH_FINDING_TO_SNS");
 
 
         MitigationActionType GetMitigationActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UPDATE_DEVICE_CERTIFICATE_HASH)
           {
             return MitigationActionType::UPDATE_DEVICE_CERTIFICATE;

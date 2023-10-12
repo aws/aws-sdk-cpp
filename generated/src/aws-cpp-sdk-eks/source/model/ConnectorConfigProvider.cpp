@@ -20,20 +20,20 @@ namespace Aws
       namespace ConnectorConfigProviderMapper
       {
 
-        static const int EKS_ANYWHERE_HASH = HashingUtils::HashString("EKS_ANYWHERE");
-        static const int ANTHOS_HASH = HashingUtils::HashString("ANTHOS");
-        static const int GKE_HASH = HashingUtils::HashString("GKE");
-        static const int AKS_HASH = HashingUtils::HashString("AKS");
-        static const int OPENSHIFT_HASH = HashingUtils::HashString("OPENSHIFT");
-        static const int TANZU_HASH = HashingUtils::HashString("TANZU");
-        static const int RANCHER_HASH = HashingUtils::HashString("RANCHER");
-        static const int EC2_HASH = HashingUtils::HashString("EC2");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
+        static constexpr uint32_t EKS_ANYWHERE_HASH = ConstExprHashingUtils::HashString("EKS_ANYWHERE");
+        static constexpr uint32_t ANTHOS_HASH = ConstExprHashingUtils::HashString("ANTHOS");
+        static constexpr uint32_t GKE_HASH = ConstExprHashingUtils::HashString("GKE");
+        static constexpr uint32_t AKS_HASH = ConstExprHashingUtils::HashString("AKS");
+        static constexpr uint32_t OPENSHIFT_HASH = ConstExprHashingUtils::HashString("OPENSHIFT");
+        static constexpr uint32_t TANZU_HASH = ConstExprHashingUtils::HashString("TANZU");
+        static constexpr uint32_t RANCHER_HASH = ConstExprHashingUtils::HashString("RANCHER");
+        static constexpr uint32_t EC2_HASH = ConstExprHashingUtils::HashString("EC2");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
 
 
         ConnectorConfigProvider GetConnectorConfigProviderForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EKS_ANYWHERE_HASH)
           {
             return ConnectorConfigProvider::EKS_ANYWHERE;

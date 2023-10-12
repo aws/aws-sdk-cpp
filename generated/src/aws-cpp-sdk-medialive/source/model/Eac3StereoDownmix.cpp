@@ -20,15 +20,15 @@ namespace Aws
       namespace Eac3StereoDownmixMapper
       {
 
-        static const int DPL2_HASH = HashingUtils::HashString("DPL2");
-        static const int LO_RO_HASH = HashingUtils::HashString("LO_RO");
-        static const int LT_RT_HASH = HashingUtils::HashString("LT_RT");
-        static const int NOT_INDICATED_HASH = HashingUtils::HashString("NOT_INDICATED");
+        static constexpr uint32_t DPL2_HASH = ConstExprHashingUtils::HashString("DPL2");
+        static constexpr uint32_t LO_RO_HASH = ConstExprHashingUtils::HashString("LO_RO");
+        static constexpr uint32_t LT_RT_HASH = ConstExprHashingUtils::HashString("LT_RT");
+        static constexpr uint32_t NOT_INDICATED_HASH = ConstExprHashingUtils::HashString("NOT_INDICATED");
 
 
         Eac3StereoDownmix GetEac3StereoDownmixForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DPL2_HASH)
           {
             return Eac3StereoDownmix::DPL2;

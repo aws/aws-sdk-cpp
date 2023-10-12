@@ -20,17 +20,17 @@ namespace Aws
       namespace ReferenceTypeMapper
       {
 
-        static const int URL_HASH = HashingUtils::HashString("URL");
-        static const int ATTACHMENT_HASH = HashingUtils::HashString("ATTACHMENT");
-        static const int NUMBER_HASH = HashingUtils::HashString("NUMBER");
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
-        static const int DATE_HASH = HashingUtils::HashString("DATE");
-        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
+        static constexpr uint32_t URL_HASH = ConstExprHashingUtils::HashString("URL");
+        static constexpr uint32_t ATTACHMENT_HASH = ConstExprHashingUtils::HashString("ATTACHMENT");
+        static constexpr uint32_t NUMBER_HASH = ConstExprHashingUtils::HashString("NUMBER");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
+        static constexpr uint32_t DATE_HASH = ConstExprHashingUtils::HashString("DATE");
+        static constexpr uint32_t EMAIL_HASH = ConstExprHashingUtils::HashString("EMAIL");
 
 
         ReferenceType GetReferenceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == URL_HASH)
           {
             return ReferenceType::URL;

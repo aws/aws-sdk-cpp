@@ -20,15 +20,15 @@ namespace Aws
       namespace PartitionLoadFrequencyMapper
       {
 
-        static const int none_HASH = HashingUtils::HashString("none");
-        static const int daily_HASH = HashingUtils::HashString("daily");
-        static const int weekly_HASH = HashingUtils::HashString("weekly");
-        static const int monthly_HASH = HashingUtils::HashString("monthly");
+        static constexpr uint32_t none_HASH = ConstExprHashingUtils::HashString("none");
+        static constexpr uint32_t daily_HASH = ConstExprHashingUtils::HashString("daily");
+        static constexpr uint32_t weekly_HASH = ConstExprHashingUtils::HashString("weekly");
+        static constexpr uint32_t monthly_HASH = ConstExprHashingUtils::HashString("monthly");
 
 
         PartitionLoadFrequency GetPartitionLoadFrequencyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == none_HASH)
           {
             return PartitionLoadFrequency::none;

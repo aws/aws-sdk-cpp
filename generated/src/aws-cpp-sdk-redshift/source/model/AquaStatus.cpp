@@ -20,14 +20,14 @@ namespace Aws
       namespace AquaStatusMapper
       {
 
-        static const int enabled_HASH = HashingUtils::HashString("enabled");
-        static const int disabled_HASH = HashingUtils::HashString("disabled");
-        static const int applying_HASH = HashingUtils::HashString("applying");
+        static constexpr uint32_t enabled_HASH = ConstExprHashingUtils::HashString("enabled");
+        static constexpr uint32_t disabled_HASH = ConstExprHashingUtils::HashString("disabled");
+        static constexpr uint32_t applying_HASH = ConstExprHashingUtils::HashString("applying");
 
 
         AquaStatus GetAquaStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == enabled_HASH)
           {
             return AquaStatus::enabled;

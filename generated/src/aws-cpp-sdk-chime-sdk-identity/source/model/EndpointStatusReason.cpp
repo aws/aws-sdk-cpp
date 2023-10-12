@@ -20,13 +20,13 @@ namespace Aws
       namespace EndpointStatusReasonMapper
       {
 
-        static const int INVALID_DEVICE_TOKEN_HASH = HashingUtils::HashString("INVALID_DEVICE_TOKEN");
-        static const int INVALID_PINPOINT_ARN_HASH = HashingUtils::HashString("INVALID_PINPOINT_ARN");
+        static constexpr uint32_t INVALID_DEVICE_TOKEN_HASH = ConstExprHashingUtils::HashString("INVALID_DEVICE_TOKEN");
+        static constexpr uint32_t INVALID_PINPOINT_ARN_HASH = ConstExprHashingUtils::HashString("INVALID_PINPOINT_ARN");
 
 
         EndpointStatusReason GetEndpointStatusReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVALID_DEVICE_TOKEN_HASH)
           {
             return EndpointStatusReason::INVALID_DEVICE_TOKEN;

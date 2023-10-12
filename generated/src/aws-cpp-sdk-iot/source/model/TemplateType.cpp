@@ -20,13 +20,13 @@ namespace Aws
       namespace TemplateTypeMapper
       {
 
-        static const int FLEET_PROVISIONING_HASH = HashingUtils::HashString("FLEET_PROVISIONING");
-        static const int JITP_HASH = HashingUtils::HashString("JITP");
+        static constexpr uint32_t FLEET_PROVISIONING_HASH = ConstExprHashingUtils::HashString("FLEET_PROVISIONING");
+        static constexpr uint32_t JITP_HASH = ConstExprHashingUtils::HashString("JITP");
 
 
         TemplateType GetTemplateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FLEET_PROVISIONING_HASH)
           {
             return TemplateType::FLEET_PROVISIONING;

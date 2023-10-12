@@ -20,14 +20,14 @@ namespace Aws
       namespace StackInstanceStatusMapper
       {
 
-        static const int CURRENT_HASH = HashingUtils::HashString("CURRENT");
-        static const int OUTDATED_HASH = HashingUtils::HashString("OUTDATED");
-        static const int INOPERABLE_HASH = HashingUtils::HashString("INOPERABLE");
+        static constexpr uint32_t CURRENT_HASH = ConstExprHashingUtils::HashString("CURRENT");
+        static constexpr uint32_t OUTDATED_HASH = ConstExprHashingUtils::HashString("OUTDATED");
+        static constexpr uint32_t INOPERABLE_HASH = ConstExprHashingUtils::HashString("INOPERABLE");
 
 
         StackInstanceStatus GetStackInstanceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CURRENT_HASH)
           {
             return StackInstanceStatus::CURRENT;

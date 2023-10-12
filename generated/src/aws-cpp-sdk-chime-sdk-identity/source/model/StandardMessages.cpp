@@ -20,15 +20,15 @@ namespace Aws
       namespace StandardMessagesMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int MENTIONS_HASH = HashingUtils::HashString("MENTIONS");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t MENTIONS_HASH = ConstExprHashingUtils::HashString("MENTIONS");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         StandardMessages GetStandardMessagesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return StandardMessages::AUTO;

@@ -20,14 +20,14 @@ namespace Aws
       namespace StreamOrderMapper
       {
 
-        static const int ORIGINAL_HASH = HashingUtils::HashString("ORIGINAL");
-        static const int VIDEO_BITRATE_ASCENDING_HASH = HashingUtils::HashString("VIDEO_BITRATE_ASCENDING");
-        static const int VIDEO_BITRATE_DESCENDING_HASH = HashingUtils::HashString("VIDEO_BITRATE_DESCENDING");
+        static constexpr uint32_t ORIGINAL_HASH = ConstExprHashingUtils::HashString("ORIGINAL");
+        static constexpr uint32_t VIDEO_BITRATE_ASCENDING_HASH = ConstExprHashingUtils::HashString("VIDEO_BITRATE_ASCENDING");
+        static constexpr uint32_t VIDEO_BITRATE_DESCENDING_HASH = ConstExprHashingUtils::HashString("VIDEO_BITRATE_DESCENDING");
 
 
         StreamOrder GetStreamOrderForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ORIGINAL_HASH)
           {
             return StreamOrder::ORIGINAL;

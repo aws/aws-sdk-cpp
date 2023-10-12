@@ -20,13 +20,13 @@ namespace Aws
       namespace CloudWatchLogsInitialPositionMapper
       {
 
-        static const int start_of_file_HASH = HashingUtils::HashString("start_of_file");
-        static const int end_of_file_HASH = HashingUtils::HashString("end_of_file");
+        static constexpr uint32_t start_of_file_HASH = ConstExprHashingUtils::HashString("start_of_file");
+        static constexpr uint32_t end_of_file_HASH = ConstExprHashingUtils::HashString("end_of_file");
 
 
         CloudWatchLogsInitialPosition GetCloudWatchLogsInitialPositionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == start_of_file_HASH)
           {
             return CloudWatchLogsInitialPosition::start_of_file;

@@ -20,13 +20,13 @@ namespace Aws
       namespace VerifiedAccessEndpointTypeMapper
       {
 
-        static const int load_balancer_HASH = HashingUtils::HashString("load-balancer");
-        static const int network_interface_HASH = HashingUtils::HashString("network-interface");
+        static constexpr uint32_t load_balancer_HASH = ConstExprHashingUtils::HashString("load-balancer");
+        static constexpr uint32_t network_interface_HASH = ConstExprHashingUtils::HashString("network-interface");
 
 
         VerifiedAccessEndpointType GetVerifiedAccessEndpointTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == load_balancer_HASH)
           {
             return VerifiedAccessEndpointType::load_balancer;

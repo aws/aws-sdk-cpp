@@ -20,12 +20,12 @@ namespace Aws
       namespace NetworkFirewallOverrideActionMapper
       {
 
-        static const int DROP_TO_ALERT_HASH = HashingUtils::HashString("DROP_TO_ALERT");
+        static constexpr uint32_t DROP_TO_ALERT_HASH = ConstExprHashingUtils::HashString("DROP_TO_ALERT");
 
 
         NetworkFirewallOverrideAction GetNetworkFirewallOverrideActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DROP_TO_ALERT_HASH)
           {
             return NetworkFirewallOverrideAction::DROP_TO_ALERT;

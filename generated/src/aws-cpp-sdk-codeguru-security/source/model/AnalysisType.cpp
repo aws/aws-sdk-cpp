@@ -20,13 +20,13 @@ namespace Aws
       namespace AnalysisTypeMapper
       {
 
-        static const int Security_HASH = HashingUtils::HashString("Security");
-        static const int All_HASH = HashingUtils::HashString("All");
+        static constexpr uint32_t Security_HASH = ConstExprHashingUtils::HashString("Security");
+        static constexpr uint32_t All_HASH = ConstExprHashingUtils::HashString("All");
 
 
         AnalysisType GetAnalysisTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Security_HASH)
           {
             return AnalysisType::Security;

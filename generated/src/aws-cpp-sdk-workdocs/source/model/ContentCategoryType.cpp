@@ -20,20 +20,20 @@ namespace Aws
       namespace ContentCategoryTypeMapper
       {
 
-        static const int IMAGE_HASH = HashingUtils::HashString("IMAGE");
-        static const int DOCUMENT_HASH = HashingUtils::HashString("DOCUMENT");
-        static const int PDF_HASH = HashingUtils::HashString("PDF");
-        static const int SPREADSHEET_HASH = HashingUtils::HashString("SPREADSHEET");
-        static const int PRESENTATION_HASH = HashingUtils::HashString("PRESENTATION");
-        static const int AUDIO_HASH = HashingUtils::HashString("AUDIO");
-        static const int VIDEO_HASH = HashingUtils::HashString("VIDEO");
-        static const int SOURCE_CODE_HASH = HashingUtils::HashString("SOURCE_CODE");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
+        static constexpr uint32_t IMAGE_HASH = ConstExprHashingUtils::HashString("IMAGE");
+        static constexpr uint32_t DOCUMENT_HASH = ConstExprHashingUtils::HashString("DOCUMENT");
+        static constexpr uint32_t PDF_HASH = ConstExprHashingUtils::HashString("PDF");
+        static constexpr uint32_t SPREADSHEET_HASH = ConstExprHashingUtils::HashString("SPREADSHEET");
+        static constexpr uint32_t PRESENTATION_HASH = ConstExprHashingUtils::HashString("PRESENTATION");
+        static constexpr uint32_t AUDIO_HASH = ConstExprHashingUtils::HashString("AUDIO");
+        static constexpr uint32_t VIDEO_HASH = ConstExprHashingUtils::HashString("VIDEO");
+        static constexpr uint32_t SOURCE_CODE_HASH = ConstExprHashingUtils::HashString("SOURCE_CODE");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
 
 
         ContentCategoryType GetContentCategoryTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IMAGE_HASH)
           {
             return ContentCategoryType::IMAGE;

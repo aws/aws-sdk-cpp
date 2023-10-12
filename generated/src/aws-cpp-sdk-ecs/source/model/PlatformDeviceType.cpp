@@ -20,12 +20,12 @@ namespace Aws
       namespace PlatformDeviceTypeMapper
       {
 
-        static const int GPU_HASH = HashingUtils::HashString("GPU");
+        static constexpr uint32_t GPU_HASH = ConstExprHashingUtils::HashString("GPU");
 
 
         PlatformDeviceType GetPlatformDeviceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GPU_HASH)
           {
             return PlatformDeviceType::GPU;

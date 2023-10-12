@@ -20,15 +20,15 @@ namespace Aws
       namespace ServiceUpdateSeverityMapper
       {
 
-        static const int critical_HASH = HashingUtils::HashString("critical");
-        static const int important_HASH = HashingUtils::HashString("important");
-        static const int medium_HASH = HashingUtils::HashString("medium");
-        static const int low_HASH = HashingUtils::HashString("low");
+        static constexpr uint32_t critical_HASH = ConstExprHashingUtils::HashString("critical");
+        static constexpr uint32_t important_HASH = ConstExprHashingUtils::HashString("important");
+        static constexpr uint32_t medium_HASH = ConstExprHashingUtils::HashString("medium");
+        static constexpr uint32_t low_HASH = ConstExprHashingUtils::HashString("low");
 
 
         ServiceUpdateSeverity GetServiceUpdateSeverityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == critical_HASH)
           {
             return ServiceUpdateSeverity::critical;

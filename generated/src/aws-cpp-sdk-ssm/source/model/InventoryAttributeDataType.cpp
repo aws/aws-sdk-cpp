@@ -20,13 +20,13 @@ namespace Aws
       namespace InventoryAttributeDataTypeMapper
       {
 
-        static const int string_HASH = HashingUtils::HashString("string");
-        static const int number_HASH = HashingUtils::HashString("number");
+        static constexpr uint32_t string_HASH = ConstExprHashingUtils::HashString("string");
+        static constexpr uint32_t number_HASH = ConstExprHashingUtils::HashString("number");
 
 
         InventoryAttributeDataType GetInventoryAttributeDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == string_HASH)
           {
             return InventoryAttributeDataType::string;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ReportFileFormatMapper
       {
 
-        static const int HTML_HASH = HashingUtils::HashString("HTML");
-        static const int PDF_HASH = HashingUtils::HashString("PDF");
+        static constexpr uint32_t HTML_HASH = ConstExprHashingUtils::HashString("HTML");
+        static constexpr uint32_t PDF_HASH = ConstExprHashingUtils::HashString("PDF");
 
 
         ReportFileFormat GetReportFileFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HTML_HASH)
           {
             return ReportFileFormat::HTML;

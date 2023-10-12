@@ -20,17 +20,17 @@ namespace Aws
       namespace DialogActionTypeMapper
       {
 
-        static const int Close_HASH = HashingUtils::HashString("Close");
-        static const int ConfirmIntent_HASH = HashingUtils::HashString("ConfirmIntent");
-        static const int Delegate_HASH = HashingUtils::HashString("Delegate");
-        static const int ElicitIntent_HASH = HashingUtils::HashString("ElicitIntent");
-        static const int ElicitSlot_HASH = HashingUtils::HashString("ElicitSlot");
-        static const int None_HASH = HashingUtils::HashString("None");
+        static constexpr uint32_t Close_HASH = ConstExprHashingUtils::HashString("Close");
+        static constexpr uint32_t ConfirmIntent_HASH = ConstExprHashingUtils::HashString("ConfirmIntent");
+        static constexpr uint32_t Delegate_HASH = ConstExprHashingUtils::HashString("Delegate");
+        static constexpr uint32_t ElicitIntent_HASH = ConstExprHashingUtils::HashString("ElicitIntent");
+        static constexpr uint32_t ElicitSlot_HASH = ConstExprHashingUtils::HashString("ElicitSlot");
+        static constexpr uint32_t None_HASH = ConstExprHashingUtils::HashString("None");
 
 
         DialogActionType GetDialogActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Close_HASH)
           {
             return DialogActionType::Close;

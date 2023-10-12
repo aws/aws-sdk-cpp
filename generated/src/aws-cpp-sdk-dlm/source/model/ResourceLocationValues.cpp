@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceLocationValuesMapper
       {
 
-        static const int CLOUD_HASH = HashingUtils::HashString("CLOUD");
-        static const int OUTPOST_HASH = HashingUtils::HashString("OUTPOST");
+        static constexpr uint32_t CLOUD_HASH = ConstExprHashingUtils::HashString("CLOUD");
+        static constexpr uint32_t OUTPOST_HASH = ConstExprHashingUtils::HashString("OUTPOST");
 
 
         ResourceLocationValues GetResourceLocationValuesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLOUD_HASH)
           {
             return ResourceLocationValues::CLOUD;

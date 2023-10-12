@@ -20,14 +20,14 @@ namespace Aws
       namespace FeatureTypeMapper
       {
 
-        static const int Integral_HASH = HashingUtils::HashString("Integral");
-        static const int Fractional_HASH = HashingUtils::HashString("Fractional");
-        static const int String_HASH = HashingUtils::HashString("String");
+        static constexpr uint32_t Integral_HASH = ConstExprHashingUtils::HashString("Integral");
+        static constexpr uint32_t Fractional_HASH = ConstExprHashingUtils::HashString("Fractional");
+        static constexpr uint32_t String_HASH = ConstExprHashingUtils::HashString("String");
 
 
         FeatureType GetFeatureTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Integral_HASH)
           {
             return FeatureType::Integral;

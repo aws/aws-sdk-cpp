@@ -20,13 +20,13 @@ namespace Aws
       namespace Scte35SpliceInsertWebDeliveryAllowedBehaviorMapper
       {
 
-        static const int FOLLOW_HASH = HashingUtils::HashString("FOLLOW");
-        static const int IGNORE_HASH = HashingUtils::HashString("IGNORE");
+        static constexpr uint32_t FOLLOW_HASH = ConstExprHashingUtils::HashString("FOLLOW");
+        static constexpr uint32_t IGNORE_HASH = ConstExprHashingUtils::HashString("IGNORE");
 
 
         Scte35SpliceInsertWebDeliveryAllowedBehavior GetScte35SpliceInsertWebDeliveryAllowedBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FOLLOW_HASH)
           {
             return Scte35SpliceInsertWebDeliveryAllowedBehavior::FOLLOW;

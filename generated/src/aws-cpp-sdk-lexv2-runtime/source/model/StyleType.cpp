@@ -20,14 +20,14 @@ namespace Aws
       namespace StyleTypeMapper
       {
 
-        static const int Default_HASH = HashingUtils::HashString("Default");
-        static const int SpellByLetter_HASH = HashingUtils::HashString("SpellByLetter");
-        static const int SpellByWord_HASH = HashingUtils::HashString("SpellByWord");
+        static constexpr uint32_t Default_HASH = ConstExprHashingUtils::HashString("Default");
+        static constexpr uint32_t SpellByLetter_HASH = ConstExprHashingUtils::HashString("SpellByLetter");
+        static constexpr uint32_t SpellByWord_HASH = ConstExprHashingUtils::HashString("SpellByWord");
 
 
         StyleType GetStyleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Default_HASH)
           {
             return StyleType::Default;

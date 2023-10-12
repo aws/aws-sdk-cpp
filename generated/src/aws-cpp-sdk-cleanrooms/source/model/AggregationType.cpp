@@ -20,12 +20,12 @@ namespace Aws
       namespace AggregationTypeMapper
       {
 
-        static const int COUNT_DISTINCT_HASH = HashingUtils::HashString("COUNT_DISTINCT");
+        static constexpr uint32_t COUNT_DISTINCT_HASH = ConstExprHashingUtils::HashString("COUNT_DISTINCT");
 
 
         AggregationType GetAggregationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COUNT_DISTINCT_HASH)
           {
             return AggregationType::COUNT_DISTINCT;

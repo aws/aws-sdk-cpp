@@ -20,13 +20,13 @@ namespace Aws
       namespace KeyLocationMapper
       {
 
-        static const int URL_HASH = HashingUtils::HashString("URL");
-        static const int SECRET_MANAGER_HASH = HashingUtils::HashString("SECRET_MANAGER");
+        static constexpr uint32_t URL_HASH = ConstExprHashingUtils::HashString("URL");
+        static constexpr uint32_t SECRET_MANAGER_HASH = ConstExprHashingUtils::HashString("SECRET_MANAGER");
 
 
         KeyLocation GetKeyLocationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == URL_HASH)
           {
             return KeyLocation::URL;

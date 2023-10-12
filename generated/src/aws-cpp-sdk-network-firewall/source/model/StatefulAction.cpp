@@ -20,15 +20,15 @@ namespace Aws
       namespace StatefulActionMapper
       {
 
-        static const int PASS_HASH = HashingUtils::HashString("PASS");
-        static const int DROP_HASH = HashingUtils::HashString("DROP");
-        static const int ALERT_HASH = HashingUtils::HashString("ALERT");
-        static const int REJECT_HASH = HashingUtils::HashString("REJECT");
+        static constexpr uint32_t PASS_HASH = ConstExprHashingUtils::HashString("PASS");
+        static constexpr uint32_t DROP_HASH = ConstExprHashingUtils::HashString("DROP");
+        static constexpr uint32_t ALERT_HASH = ConstExprHashingUtils::HashString("ALERT");
+        static constexpr uint32_t REJECT_HASH = ConstExprHashingUtils::HashString("REJECT");
 
 
         StatefulAction GetStatefulActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PASS_HASH)
           {
             return StatefulAction::PASS;

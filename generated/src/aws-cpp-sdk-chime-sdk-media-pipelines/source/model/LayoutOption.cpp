@@ -20,12 +20,12 @@ namespace Aws
       namespace LayoutOptionMapper
       {
 
-        static const int GridView_HASH = HashingUtils::HashString("GridView");
+        static constexpr uint32_t GridView_HASH = ConstExprHashingUtils::HashString("GridView");
 
 
         LayoutOption GetLayoutOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GridView_HASH)
           {
             return LayoutOption::GridView;

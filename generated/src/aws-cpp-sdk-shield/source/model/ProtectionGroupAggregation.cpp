@@ -20,14 +20,14 @@ namespace Aws
       namespace ProtectionGroupAggregationMapper
       {
 
-        static const int SUM_HASH = HashingUtils::HashString("SUM");
-        static const int MEAN_HASH = HashingUtils::HashString("MEAN");
-        static const int MAX_HASH = HashingUtils::HashString("MAX");
+        static constexpr uint32_t SUM_HASH = ConstExprHashingUtils::HashString("SUM");
+        static constexpr uint32_t MEAN_HASH = ConstExprHashingUtils::HashString("MEAN");
+        static constexpr uint32_t MAX_HASH = ConstExprHashingUtils::HashString("MAX");
 
 
         ProtectionGroupAggregation GetProtectionGroupAggregationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUM_HASH)
           {
             return ProtectionGroupAggregation::SUM;

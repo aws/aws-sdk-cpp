@@ -20,20 +20,20 @@ namespace Aws
       namespace CompressionFormatMapper
       {
 
-        static const int GZIP_HASH = HashingUtils::HashString("GZIP");
-        static const int LZ4_HASH = HashingUtils::HashString("LZ4");
-        static const int SNAPPY_HASH = HashingUtils::HashString("SNAPPY");
-        static const int BZIP2_HASH = HashingUtils::HashString("BZIP2");
-        static const int DEFLATE_HASH = HashingUtils::HashString("DEFLATE");
-        static const int LZO_HASH = HashingUtils::HashString("LZO");
-        static const int BROTLI_HASH = HashingUtils::HashString("BROTLI");
-        static const int ZSTD_HASH = HashingUtils::HashString("ZSTD");
-        static const int ZLIB_HASH = HashingUtils::HashString("ZLIB");
+        static constexpr uint32_t GZIP_HASH = ConstExprHashingUtils::HashString("GZIP");
+        static constexpr uint32_t LZ4_HASH = ConstExprHashingUtils::HashString("LZ4");
+        static constexpr uint32_t SNAPPY_HASH = ConstExprHashingUtils::HashString("SNAPPY");
+        static constexpr uint32_t BZIP2_HASH = ConstExprHashingUtils::HashString("BZIP2");
+        static constexpr uint32_t DEFLATE_HASH = ConstExprHashingUtils::HashString("DEFLATE");
+        static constexpr uint32_t LZO_HASH = ConstExprHashingUtils::HashString("LZO");
+        static constexpr uint32_t BROTLI_HASH = ConstExprHashingUtils::HashString("BROTLI");
+        static constexpr uint32_t ZSTD_HASH = ConstExprHashingUtils::HashString("ZSTD");
+        static constexpr uint32_t ZLIB_HASH = ConstExprHashingUtils::HashString("ZLIB");
 
 
         CompressionFormat GetCompressionFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GZIP_HASH)
           {
             return CompressionFormat::GZIP;

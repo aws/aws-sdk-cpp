@@ -20,19 +20,19 @@ namespace Aws
       namespace InferenceExperimentStatusMapper
       {
 
-        static const int Creating_HASH = HashingUtils::HashString("Creating");
-        static const int Created_HASH = HashingUtils::HashString("Created");
-        static const int Updating_HASH = HashingUtils::HashString("Updating");
-        static const int Running_HASH = HashingUtils::HashString("Running");
-        static const int Starting_HASH = HashingUtils::HashString("Starting");
-        static const int Stopping_HASH = HashingUtils::HashString("Stopping");
-        static const int Completed_HASH = HashingUtils::HashString("Completed");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
+        static constexpr uint32_t Creating_HASH = ConstExprHashingUtils::HashString("Creating");
+        static constexpr uint32_t Created_HASH = ConstExprHashingUtils::HashString("Created");
+        static constexpr uint32_t Updating_HASH = ConstExprHashingUtils::HashString("Updating");
+        static constexpr uint32_t Running_HASH = ConstExprHashingUtils::HashString("Running");
+        static constexpr uint32_t Starting_HASH = ConstExprHashingUtils::HashString("Starting");
+        static constexpr uint32_t Stopping_HASH = ConstExprHashingUtils::HashString("Stopping");
+        static constexpr uint32_t Completed_HASH = ConstExprHashingUtils::HashString("Completed");
+        static constexpr uint32_t Cancelled_HASH = ConstExprHashingUtils::HashString("Cancelled");
 
 
         InferenceExperimentStatus GetInferenceExperimentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Creating_HASH)
           {
             return InferenceExperimentStatus::Creating;

@@ -20,14 +20,14 @@ namespace Aws
       namespace PolicyTypeStatusMapper
       {
 
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int PENDING_ENABLE_HASH = HashingUtils::HashString("PENDING_ENABLE");
-        static const int PENDING_DISABLE_HASH = HashingUtils::HashString("PENDING_DISABLE");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
+        static constexpr uint32_t PENDING_ENABLE_HASH = ConstExprHashingUtils::HashString("PENDING_ENABLE");
+        static constexpr uint32_t PENDING_DISABLE_HASH = ConstExprHashingUtils::HashString("PENDING_DISABLE");
 
 
         PolicyTypeStatus GetPolicyTypeStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLED_HASH)
           {
             return PolicyTypeStatus::ENABLED;

@@ -20,13 +20,13 @@ namespace Aws
       namespace AlarmTypeMapper
       {
 
-        static const int CompositeAlarm_HASH = HashingUtils::HashString("CompositeAlarm");
-        static const int MetricAlarm_HASH = HashingUtils::HashString("MetricAlarm");
+        static constexpr uint32_t CompositeAlarm_HASH = ConstExprHashingUtils::HashString("CompositeAlarm");
+        static constexpr uint32_t MetricAlarm_HASH = ConstExprHashingUtils::HashString("MetricAlarm");
 
 
         AlarmType GetAlarmTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CompositeAlarm_HASH)
           {
             return AlarmType::CompositeAlarm;

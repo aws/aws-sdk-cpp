@@ -20,14 +20,14 @@ namespace Aws
       namespace UnAuthenticatedElementMapper
       {
 
-        static const int READ_HASH = HashingUtils::HashString("READ");
-        static const int CREATE_AND_UPDATE_HASH = HashingUtils::HashString("CREATE_AND_UPDATE");
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
+        static constexpr uint32_t READ_HASH = ConstExprHashingUtils::HashString("READ");
+        static constexpr uint32_t CREATE_AND_UPDATE_HASH = ConstExprHashingUtils::HashString("CREATE_AND_UPDATE");
+        static constexpr uint32_t DELETE__HASH = ConstExprHashingUtils::HashString("DELETE");
 
 
         UnAuthenticatedElement GetUnAuthenticatedElementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == READ_HASH)
           {
             return UnAuthenticatedElement::READ;

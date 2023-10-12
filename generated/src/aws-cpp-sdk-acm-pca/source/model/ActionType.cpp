@@ -20,14 +20,14 @@ namespace Aws
       namespace ActionTypeMapper
       {
 
-        static const int IssueCertificate_HASH = HashingUtils::HashString("IssueCertificate");
-        static const int GetCertificate_HASH = HashingUtils::HashString("GetCertificate");
-        static const int ListPermissions_HASH = HashingUtils::HashString("ListPermissions");
+        static constexpr uint32_t IssueCertificate_HASH = ConstExprHashingUtils::HashString("IssueCertificate");
+        static constexpr uint32_t GetCertificate_HASH = ConstExprHashingUtils::HashString("GetCertificate");
+        static constexpr uint32_t ListPermissions_HASH = ConstExprHashingUtils::HashString("ListPermissions");
 
 
         ActionType GetActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IssueCertificate_HASH)
           {
             return ActionType::IssueCertificate;

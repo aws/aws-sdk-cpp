@@ -20,12 +20,12 @@ namespace Aws
       namespace TunnelProtocolMapper
       {
 
-        static const int GRE_HASH = HashingUtils::HashString("GRE");
+        static constexpr uint32_t GRE_HASH = ConstExprHashingUtils::HashString("GRE");
 
 
         TunnelProtocol GetTunnelProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GRE_HASH)
           {
             return TunnelProtocol::GRE;

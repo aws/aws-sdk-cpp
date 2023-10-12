@@ -20,13 +20,13 @@ namespace Aws
       namespace SchemaMapper
       {
 
-        static const int ocsf_HASH = HashingUtils::HashString("ocsf");
-        static const int raw_HASH = HashingUtils::HashString("raw");
+        static constexpr uint32_t ocsf_HASH = ConstExprHashingUtils::HashString("ocsf");
+        static constexpr uint32_t raw_HASH = ConstExprHashingUtils::HashString("raw");
 
 
         Schema GetSchemaForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ocsf_HASH)
           {
             return Schema::ocsf;

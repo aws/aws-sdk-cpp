@@ -20,16 +20,16 @@ namespace Aws
       namespace TaskStatusMapper
       {
 
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int QUEUED_HASH = HashingUtils::HashString("QUEUED");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t QUEUED_HASH = ConstExprHashingUtils::HashString("QUEUED");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("UNAVAILABLE");
 
 
         TaskStatus GetTaskStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVAILABLE_HASH)
           {
             return TaskStatus::AVAILABLE;

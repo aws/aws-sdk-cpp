@@ -20,13 +20,13 @@ namespace Aws
       namespace M2tsNielsenId3Mapper
       {
 
-        static const int INSERT_HASH = HashingUtils::HashString("INSERT");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t INSERT_HASH = ConstExprHashingUtils::HashString("INSERT");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         M2tsNielsenId3 GetM2tsNielsenId3ForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSERT_HASH)
           {
             return M2tsNielsenId3::INSERT;

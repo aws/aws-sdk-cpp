@@ -20,13 +20,13 @@ namespace Aws
       namespace AffinityMapper
       {
 
-        static const int default__HASH = HashingUtils::HashString("default");
-        static const int host_HASH = HashingUtils::HashString("host");
+        static constexpr uint32_t default__HASH = ConstExprHashingUtils::HashString("default");
+        static constexpr uint32_t host_HASH = ConstExprHashingUtils::HashString("host");
 
 
         Affinity GetAffinityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == default__HASH)
           {
             return Affinity::default_;

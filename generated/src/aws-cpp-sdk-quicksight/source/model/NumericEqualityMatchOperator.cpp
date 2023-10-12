@@ -20,13 +20,13 @@ namespace Aws
       namespace NumericEqualityMatchOperatorMapper
       {
 
-        static const int EQUALS_HASH = HashingUtils::HashString("EQUALS");
-        static const int DOES_NOT_EQUAL_HASH = HashingUtils::HashString("DOES_NOT_EQUAL");
+        static constexpr uint32_t EQUALS_HASH = ConstExprHashingUtils::HashString("EQUALS");
+        static constexpr uint32_t DOES_NOT_EQUAL_HASH = ConstExprHashingUtils::HashString("DOES_NOT_EQUAL");
 
 
         NumericEqualityMatchOperator GetNumericEqualityMatchOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EQUALS_HASH)
           {
             return NumericEqualityMatchOperator::EQUALS;

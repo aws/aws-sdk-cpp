@@ -20,14 +20,14 @@ namespace Aws
       namespace LicenseRecommendationFilterNameMapper
       {
 
-        static const int Finding_HASH = HashingUtils::HashString("Finding");
-        static const int FindingReasonCode_HASH = HashingUtils::HashString("FindingReasonCode");
-        static const int LicenseName_HASH = HashingUtils::HashString("LicenseName");
+        static constexpr uint32_t Finding_HASH = ConstExprHashingUtils::HashString("Finding");
+        static constexpr uint32_t FindingReasonCode_HASH = ConstExprHashingUtils::HashString("FindingReasonCode");
+        static constexpr uint32_t LicenseName_HASH = ConstExprHashingUtils::HashString("LicenseName");
 
 
         LicenseRecommendationFilterName GetLicenseRecommendationFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Finding_HASH)
           {
             return LicenseRecommendationFilterName::Finding;

@@ -20,14 +20,14 @@ namespace Aws
       namespace PhoneNumberTypeMapper
       {
 
-        static const int MOBILE_HASH = HashingUtils::HashString("MOBILE");
-        static const int WORK_HASH = HashingUtils::HashString("WORK");
-        static const int HOME_HASH = HashingUtils::HashString("HOME");
+        static constexpr uint32_t MOBILE_HASH = ConstExprHashingUtils::HashString("MOBILE");
+        static constexpr uint32_t WORK_HASH = ConstExprHashingUtils::HashString("WORK");
+        static constexpr uint32_t HOME_HASH = ConstExprHashingUtils::HashString("HOME");
 
 
         PhoneNumberType GetPhoneNumberTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MOBILE_HASH)
           {
             return PhoneNumberType::MOBILE;

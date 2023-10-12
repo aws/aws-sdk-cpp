@@ -20,18 +20,18 @@ namespace Aws
       namespace CertificateAuthorityStatusMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int PENDING_CERTIFICATE_HASH = HashingUtils::HashString("PENDING_CERTIFICATE");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t PENDING_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("PENDING_CERTIFICATE");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("EXPIRED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         CertificateAuthorityStatus GetCertificateAuthorityStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return CertificateAuthorityStatus::CREATING;

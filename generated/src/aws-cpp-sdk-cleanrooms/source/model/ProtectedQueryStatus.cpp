@@ -20,18 +20,18 @@ namespace Aws
       namespace ProtectedQueryStatusMapper
       {
 
-        static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
-        static const int STARTED_HASH = HashingUtils::HashString("STARTED");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-        static const int CANCELLING_HASH = HashingUtils::HashString("CANCELLING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
+        static constexpr uint32_t SUBMITTED_HASH = ConstExprHashingUtils::HashString("SUBMITTED");
+        static constexpr uint32_t STARTED_HASH = ConstExprHashingUtils::HashString("STARTED");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t CANCELLING_HASH = ConstExprHashingUtils::HashString("CANCELLING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t TIMED_OUT_HASH = ConstExprHashingUtils::HashString("TIMED_OUT");
 
 
         ProtectedQueryStatus GetProtectedQueryStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUBMITTED_HASH)
           {
             return ProtectedQueryStatus::SUBMITTED;

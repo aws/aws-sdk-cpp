@@ -20,13 +20,13 @@ namespace Aws
       namespace SheetControlSliderTypeMapper
       {
 
-        static const int SINGLE_POINT_HASH = HashingUtils::HashString("SINGLE_POINT");
-        static const int RANGE_HASH = HashingUtils::HashString("RANGE");
+        static constexpr uint32_t SINGLE_POINT_HASH = ConstExprHashingUtils::HashString("SINGLE_POINT");
+        static constexpr uint32_t RANGE_HASH = ConstExprHashingUtils::HashString("RANGE");
 
 
         SheetControlSliderType GetSheetControlSliderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SINGLE_POINT_HASH)
           {
             return SheetControlSliderType::SINGLE_POINT;

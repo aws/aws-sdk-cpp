@@ -20,15 +20,15 @@ namespace Aws
       namespace AppAuthorizationStatusMapper
       {
 
-        static const int PendingConnect_HASH = HashingUtils::HashString("PendingConnect");
-        static const int Connected_HASH = HashingUtils::HashString("Connected");
-        static const int ConnectionValidationFailed_HASH = HashingUtils::HashString("ConnectionValidationFailed");
-        static const int TokenAutoRotationFailed_HASH = HashingUtils::HashString("TokenAutoRotationFailed");
+        static constexpr uint32_t PendingConnect_HASH = ConstExprHashingUtils::HashString("PendingConnect");
+        static constexpr uint32_t Connected_HASH = ConstExprHashingUtils::HashString("Connected");
+        static constexpr uint32_t ConnectionValidationFailed_HASH = ConstExprHashingUtils::HashString("ConnectionValidationFailed");
+        static constexpr uint32_t TokenAutoRotationFailed_HASH = ConstExprHashingUtils::HashString("TokenAutoRotationFailed");
 
 
         AppAuthorizationStatus GetAppAuthorizationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PendingConnect_HASH)
           {
             return AppAuthorizationStatus::PendingConnect;

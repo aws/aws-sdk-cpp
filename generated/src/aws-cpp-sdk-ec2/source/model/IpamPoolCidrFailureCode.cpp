@@ -20,13 +20,13 @@ namespace Aws
       namespace IpamPoolCidrFailureCodeMapper
       {
 
-        static const int cidr_not_available_HASH = HashingUtils::HashString("cidr-not-available");
-        static const int limit_exceeded_HASH = HashingUtils::HashString("limit-exceeded");
+        static constexpr uint32_t cidr_not_available_HASH = ConstExprHashingUtils::HashString("cidr-not-available");
+        static constexpr uint32_t limit_exceeded_HASH = ConstExprHashingUtils::HashString("limit-exceeded");
 
 
         IpamPoolCidrFailureCode GetIpamPoolCidrFailureCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == cidr_not_available_HASH)
           {
             return IpamPoolCidrFailureCode::cidr_not_available;

@@ -20,13 +20,13 @@ namespace Aws
       namespace CpuVendorArchitectureMapper
       {
 
-        static const int AWS_ARM64_HASH = HashingUtils::HashString("AWS_ARM64");
-        static const int CURRENT_HASH = HashingUtils::HashString("CURRENT");
+        static constexpr uint32_t AWS_ARM64_HASH = ConstExprHashingUtils::HashString("AWS_ARM64");
+        static constexpr uint32_t CURRENT_HASH = ConstExprHashingUtils::HashString("CURRENT");
 
 
         CpuVendorArchitecture GetCpuVendorArchitectureForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_ARM64_HASH)
           {
             return CpuVendorArchitecture::AWS_ARM64;

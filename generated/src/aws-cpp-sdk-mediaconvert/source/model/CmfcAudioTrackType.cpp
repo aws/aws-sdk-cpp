@@ -20,15 +20,15 @@ namespace Aws
       namespace CmfcAudioTrackTypeMapper
       {
 
-        static const int ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT_HASH = HashingUtils::HashString("ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT");
-        static const int ALTERNATE_AUDIO_AUTO_SELECT_HASH = HashingUtils::HashString("ALTERNATE_AUDIO_AUTO_SELECT");
-        static const int ALTERNATE_AUDIO_NOT_AUTO_SELECT_HASH = HashingUtils::HashString("ALTERNATE_AUDIO_NOT_AUTO_SELECT");
-        static const int AUDIO_ONLY_VARIANT_STREAM_HASH = HashingUtils::HashString("AUDIO_ONLY_VARIANT_STREAM");
+        static constexpr uint32_t ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT_HASH = ConstExprHashingUtils::HashString("ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT");
+        static constexpr uint32_t ALTERNATE_AUDIO_AUTO_SELECT_HASH = ConstExprHashingUtils::HashString("ALTERNATE_AUDIO_AUTO_SELECT");
+        static constexpr uint32_t ALTERNATE_AUDIO_NOT_AUTO_SELECT_HASH = ConstExprHashingUtils::HashString("ALTERNATE_AUDIO_NOT_AUTO_SELECT");
+        static constexpr uint32_t AUDIO_ONLY_VARIANT_STREAM_HASH = ConstExprHashingUtils::HashString("AUDIO_ONLY_VARIANT_STREAM");
 
 
         CmfcAudioTrackType GetCmfcAudioTrackTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT_HASH)
           {
             return CmfcAudioTrackType::ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT;

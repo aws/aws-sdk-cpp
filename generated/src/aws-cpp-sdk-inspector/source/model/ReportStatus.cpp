@@ -20,14 +20,14 @@ namespace Aws
       namespace ReportStatusMapper
       {
 
-        static const int WORK_IN_PROGRESS_HASH = HashingUtils::HashString("WORK_IN_PROGRESS");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t WORK_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("WORK_IN_PROGRESS");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
 
 
         ReportStatus GetReportStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WORK_IN_PROGRESS_HASH)
           {
             return ReportStatus::WORK_IN_PROGRESS;

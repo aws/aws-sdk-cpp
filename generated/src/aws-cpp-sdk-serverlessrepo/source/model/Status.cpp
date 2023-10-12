@@ -20,14 +20,14 @@ namespace Aws
       namespace StatusMapper
       {
 
-        static const int PREPARING_HASH = HashingUtils::HashString("PREPARING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
+        static constexpr uint32_t PREPARING_HASH = ConstExprHashingUtils::HashString("PREPARING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("EXPIRED");
 
 
         Status GetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PREPARING_HASH)
           {
             return Status::PREPARING;

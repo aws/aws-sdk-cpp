@@ -20,13 +20,13 @@ namespace Aws
       namespace ProresChromaSamplingMapper
       {
 
-        static const int PRESERVE_444_SAMPLING_HASH = HashingUtils::HashString("PRESERVE_444_SAMPLING");
-        static const int SUBSAMPLE_TO_422_HASH = HashingUtils::HashString("SUBSAMPLE_TO_422");
+        static constexpr uint32_t PRESERVE_444_SAMPLING_HASH = ConstExprHashingUtils::HashString("PRESERVE_444_SAMPLING");
+        static constexpr uint32_t SUBSAMPLE_TO_422_HASH = ConstExprHashingUtils::HashString("SUBSAMPLE_TO_422");
 
 
         ProresChromaSampling GetProresChromaSamplingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRESERVE_444_SAMPLING_HASH)
           {
             return ProresChromaSampling::PRESERVE_444_SAMPLING;

@@ -20,13 +20,13 @@ namespace Aws
       namespace IdentityTypeMapper
       {
 
-        static const int EmailAddress_HASH = HashingUtils::HashString("EmailAddress");
-        static const int Domain_HASH = HashingUtils::HashString("Domain");
+        static constexpr uint32_t EmailAddress_HASH = ConstExprHashingUtils::HashString("EmailAddress");
+        static constexpr uint32_t Domain_HASH = ConstExprHashingUtils::HashString("Domain");
 
 
         IdentityType GetIdentityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EmailAddress_HASH)
           {
             return IdentityType::EmailAddress;

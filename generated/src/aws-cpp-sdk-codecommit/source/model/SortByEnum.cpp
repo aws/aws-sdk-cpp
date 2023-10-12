@@ -20,13 +20,13 @@ namespace Aws
       namespace SortByEnumMapper
       {
 
-        static const int repositoryName_HASH = HashingUtils::HashString("repositoryName");
-        static const int lastModifiedDate_HASH = HashingUtils::HashString("lastModifiedDate");
+        static constexpr uint32_t repositoryName_HASH = ConstExprHashingUtils::HashString("repositoryName");
+        static constexpr uint32_t lastModifiedDate_HASH = ConstExprHashingUtils::HashString("lastModifiedDate");
 
 
         SortByEnum GetSortByEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == repositoryName_HASH)
           {
             return SortByEnum::repositoryName;

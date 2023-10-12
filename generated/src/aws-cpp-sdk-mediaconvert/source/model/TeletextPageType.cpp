@@ -20,16 +20,16 @@ namespace Aws
       namespace TeletextPageTypeMapper
       {
 
-        static const int PAGE_TYPE_INITIAL_HASH = HashingUtils::HashString("PAGE_TYPE_INITIAL");
-        static const int PAGE_TYPE_SUBTITLE_HASH = HashingUtils::HashString("PAGE_TYPE_SUBTITLE");
-        static const int PAGE_TYPE_ADDL_INFO_HASH = HashingUtils::HashString("PAGE_TYPE_ADDL_INFO");
-        static const int PAGE_TYPE_PROGRAM_SCHEDULE_HASH = HashingUtils::HashString("PAGE_TYPE_PROGRAM_SCHEDULE");
-        static const int PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE_HASH = HashingUtils::HashString("PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE");
+        static constexpr uint32_t PAGE_TYPE_INITIAL_HASH = ConstExprHashingUtils::HashString("PAGE_TYPE_INITIAL");
+        static constexpr uint32_t PAGE_TYPE_SUBTITLE_HASH = ConstExprHashingUtils::HashString("PAGE_TYPE_SUBTITLE");
+        static constexpr uint32_t PAGE_TYPE_ADDL_INFO_HASH = ConstExprHashingUtils::HashString("PAGE_TYPE_ADDL_INFO");
+        static constexpr uint32_t PAGE_TYPE_PROGRAM_SCHEDULE_HASH = ConstExprHashingUtils::HashString("PAGE_TYPE_PROGRAM_SCHEDULE");
+        static constexpr uint32_t PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE_HASH = ConstExprHashingUtils::HashString("PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE");
 
 
         TeletextPageType GetTeletextPageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PAGE_TYPE_INITIAL_HASH)
           {
             return TeletextPageType::PAGE_TYPE_INITIAL;

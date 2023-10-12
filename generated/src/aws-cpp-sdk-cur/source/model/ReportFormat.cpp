@@ -20,13 +20,13 @@ namespace Aws
       namespace ReportFormatMapper
       {
 
-        static const int textORcsv_HASH = HashingUtils::HashString("textORcsv");
-        static const int Parquet_HASH = HashingUtils::HashString("Parquet");
+        static constexpr uint32_t textORcsv_HASH = ConstExprHashingUtils::HashString("textORcsv");
+        static constexpr uint32_t Parquet_HASH = ConstExprHashingUtils::HashString("Parquet");
 
 
         ReportFormat GetReportFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == textORcsv_HASH)
           {
             return ReportFormat::textORcsv;

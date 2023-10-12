@@ -20,17 +20,17 @@ namespace Aws
       namespace OfferingTypeValuesMapper
       {
 
-        static const int Heavy_Utilization_HASH = HashingUtils::HashString("Heavy Utilization");
-        static const int Medium_Utilization_HASH = HashingUtils::HashString("Medium Utilization");
-        static const int Light_Utilization_HASH = HashingUtils::HashString("Light Utilization");
-        static const int No_Upfront_HASH = HashingUtils::HashString("No Upfront");
-        static const int Partial_Upfront_HASH = HashingUtils::HashString("Partial Upfront");
-        static const int All_Upfront_HASH = HashingUtils::HashString("All Upfront");
+        static constexpr uint32_t Heavy_Utilization_HASH = ConstExprHashingUtils::HashString("Heavy Utilization");
+        static constexpr uint32_t Medium_Utilization_HASH = ConstExprHashingUtils::HashString("Medium Utilization");
+        static constexpr uint32_t Light_Utilization_HASH = ConstExprHashingUtils::HashString("Light Utilization");
+        static constexpr uint32_t No_Upfront_HASH = ConstExprHashingUtils::HashString("No Upfront");
+        static constexpr uint32_t Partial_Upfront_HASH = ConstExprHashingUtils::HashString("Partial Upfront");
+        static constexpr uint32_t All_Upfront_HASH = ConstExprHashingUtils::HashString("All Upfront");
 
 
         OfferingTypeValues GetOfferingTypeValuesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Heavy_Utilization_HASH)
           {
             return OfferingTypeValues::Heavy_Utilization;

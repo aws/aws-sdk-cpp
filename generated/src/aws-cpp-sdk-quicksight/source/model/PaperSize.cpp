@@ -20,22 +20,22 @@ namespace Aws
       namespace PaperSizeMapper
       {
 
-        static const int US_LETTER_HASH = HashingUtils::HashString("US_LETTER");
-        static const int US_LEGAL_HASH = HashingUtils::HashString("US_LEGAL");
-        static const int US_TABLOID_LEDGER_HASH = HashingUtils::HashString("US_TABLOID_LEDGER");
-        static const int A0_HASH = HashingUtils::HashString("A0");
-        static const int A1_HASH = HashingUtils::HashString("A1");
-        static const int A2_HASH = HashingUtils::HashString("A2");
-        static const int A3_HASH = HashingUtils::HashString("A3");
-        static const int A4_HASH = HashingUtils::HashString("A4");
-        static const int A5_HASH = HashingUtils::HashString("A5");
-        static const int JIS_B4_HASH = HashingUtils::HashString("JIS_B4");
-        static const int JIS_B5_HASH = HashingUtils::HashString("JIS_B5");
+        static constexpr uint32_t US_LETTER_HASH = ConstExprHashingUtils::HashString("US_LETTER");
+        static constexpr uint32_t US_LEGAL_HASH = ConstExprHashingUtils::HashString("US_LEGAL");
+        static constexpr uint32_t US_TABLOID_LEDGER_HASH = ConstExprHashingUtils::HashString("US_TABLOID_LEDGER");
+        static constexpr uint32_t A0_HASH = ConstExprHashingUtils::HashString("A0");
+        static constexpr uint32_t A1_HASH = ConstExprHashingUtils::HashString("A1");
+        static constexpr uint32_t A2_HASH = ConstExprHashingUtils::HashString("A2");
+        static constexpr uint32_t A3_HASH = ConstExprHashingUtils::HashString("A3");
+        static constexpr uint32_t A4_HASH = ConstExprHashingUtils::HashString("A4");
+        static constexpr uint32_t A5_HASH = ConstExprHashingUtils::HashString("A5");
+        static constexpr uint32_t JIS_B4_HASH = ConstExprHashingUtils::HashString("JIS_B4");
+        static constexpr uint32_t JIS_B5_HASH = ConstExprHashingUtils::HashString("JIS_B5");
 
 
         PaperSize GetPaperSizeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == US_LETTER_HASH)
           {
             return PaperSize::US_LETTER;

@@ -20,16 +20,16 @@ namespace Aws
       namespace OperationFilterNameMapper
       {
 
-        static const int NAMESPACE_ID_HASH = HashingUtils::HashString("NAMESPACE_ID");
-        static const int SERVICE_ID_HASH = HashingUtils::HashString("SERVICE_ID");
-        static const int STATUS_HASH = HashingUtils::HashString("STATUS");
-        static const int TYPE_HASH = HashingUtils::HashString("TYPE");
-        static const int UPDATE_DATE_HASH = HashingUtils::HashString("UPDATE_DATE");
+        static constexpr uint32_t NAMESPACE_ID_HASH = ConstExprHashingUtils::HashString("NAMESPACE_ID");
+        static constexpr uint32_t SERVICE_ID_HASH = ConstExprHashingUtils::HashString("SERVICE_ID");
+        static constexpr uint32_t STATUS_HASH = ConstExprHashingUtils::HashString("STATUS");
+        static constexpr uint32_t TYPE_HASH = ConstExprHashingUtils::HashString("TYPE");
+        static constexpr uint32_t UPDATE_DATE_HASH = ConstExprHashingUtils::HashString("UPDATE_DATE");
 
 
         OperationFilterName GetOperationFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NAMESPACE_ID_HASH)
           {
             return OperationFilterName::NAMESPACE_ID;

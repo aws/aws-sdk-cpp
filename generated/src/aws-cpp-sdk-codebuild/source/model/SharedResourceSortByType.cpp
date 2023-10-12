@@ -20,13 +20,13 @@ namespace Aws
       namespace SharedResourceSortByTypeMapper
       {
 
-        static const int ARN_HASH = HashingUtils::HashString("ARN");
-        static const int MODIFIED_TIME_HASH = HashingUtils::HashString("MODIFIED_TIME");
+        static constexpr uint32_t ARN_HASH = ConstExprHashingUtils::HashString("ARN");
+        static constexpr uint32_t MODIFIED_TIME_HASH = ConstExprHashingUtils::HashString("MODIFIED_TIME");
 
 
         SharedResourceSortByType GetSharedResourceSortByTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ARN_HASH)
           {
             return SharedResourceSortByType::ARN;

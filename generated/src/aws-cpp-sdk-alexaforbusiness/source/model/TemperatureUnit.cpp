@@ -20,13 +20,13 @@ namespace Aws
       namespace TemperatureUnitMapper
       {
 
-        static const int FAHRENHEIT_HASH = HashingUtils::HashString("FAHRENHEIT");
-        static const int CELSIUS_HASH = HashingUtils::HashString("CELSIUS");
+        static constexpr uint32_t FAHRENHEIT_HASH = ConstExprHashingUtils::HashString("FAHRENHEIT");
+        static constexpr uint32_t CELSIUS_HASH = ConstExprHashingUtils::HashString("CELSIUS");
 
 
         TemperatureUnit GetTemperatureUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FAHRENHEIT_HASH)
           {
             return TemperatureUnit::FAHRENHEIT;

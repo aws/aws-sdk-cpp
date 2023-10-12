@@ -20,13 +20,13 @@ namespace Aws
       namespace ClusterTypeMapper
       {
 
-        static const int PROVISIONED_HASH = HashingUtils::HashString("PROVISIONED");
-        static const int SERVERLESS_HASH = HashingUtils::HashString("SERVERLESS");
+        static constexpr uint32_t PROVISIONED_HASH = ConstExprHashingUtils::HashString("PROVISIONED");
+        static constexpr uint32_t SERVERLESS_HASH = ConstExprHashingUtils::HashString("SERVERLESS");
 
 
         ClusterType GetClusterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROVISIONED_HASH)
           {
             return ClusterType::PROVISIONED;

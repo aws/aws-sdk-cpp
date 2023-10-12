@@ -20,18 +20,18 @@ namespace Aws
       namespace TaskStatusMapper
       {
 
-        static const int SCHEDULED_HASH = HashingUtils::HashString("SCHEDULED");
-        static const int STARTED_HASH = HashingUtils::HashString("STARTED");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int SKIPPED_HASH = HashingUtils::HashString("SKIPPED");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t SCHEDULED_HASH = ConstExprHashingUtils::HashString("SCHEDULED");
+        static constexpr uint32_t STARTED_HASH = ConstExprHashingUtils::HashString("STARTED");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t SKIPPED_HASH = ConstExprHashingUtils::HashString("SKIPPED");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
 
 
         TaskStatus GetTaskStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SCHEDULED_HASH)
           {
             return TaskStatus::SCHEDULED;

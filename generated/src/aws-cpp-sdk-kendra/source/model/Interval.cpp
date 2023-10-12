@@ -20,17 +20,17 @@ namespace Aws
       namespace IntervalMapper
       {
 
-        static const int THIS_MONTH_HASH = HashingUtils::HashString("THIS_MONTH");
-        static const int THIS_WEEK_HASH = HashingUtils::HashString("THIS_WEEK");
-        static const int ONE_WEEK_AGO_HASH = HashingUtils::HashString("ONE_WEEK_AGO");
-        static const int TWO_WEEKS_AGO_HASH = HashingUtils::HashString("TWO_WEEKS_AGO");
-        static const int ONE_MONTH_AGO_HASH = HashingUtils::HashString("ONE_MONTH_AGO");
-        static const int TWO_MONTHS_AGO_HASH = HashingUtils::HashString("TWO_MONTHS_AGO");
+        static constexpr uint32_t THIS_MONTH_HASH = ConstExprHashingUtils::HashString("THIS_MONTH");
+        static constexpr uint32_t THIS_WEEK_HASH = ConstExprHashingUtils::HashString("THIS_WEEK");
+        static constexpr uint32_t ONE_WEEK_AGO_HASH = ConstExprHashingUtils::HashString("ONE_WEEK_AGO");
+        static constexpr uint32_t TWO_WEEKS_AGO_HASH = ConstExprHashingUtils::HashString("TWO_WEEKS_AGO");
+        static constexpr uint32_t ONE_MONTH_AGO_HASH = ConstExprHashingUtils::HashString("ONE_MONTH_AGO");
+        static constexpr uint32_t TWO_MONTHS_AGO_HASH = ConstExprHashingUtils::HashString("TWO_MONTHS_AGO");
 
 
         Interval GetIntervalForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == THIS_MONTH_HASH)
           {
             return Interval::THIS_MONTH;

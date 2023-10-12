@@ -20,20 +20,20 @@ namespace Aws
       namespace ChangeTypeMapper
       {
 
-        static const int CORE_NETWORK_SEGMENT_HASH = HashingUtils::HashString("CORE_NETWORK_SEGMENT");
-        static const int CORE_NETWORK_EDGE_HASH = HashingUtils::HashString("CORE_NETWORK_EDGE");
-        static const int ATTACHMENT_MAPPING_HASH = HashingUtils::HashString("ATTACHMENT_MAPPING");
-        static const int ATTACHMENT_ROUTE_PROPAGATION_HASH = HashingUtils::HashString("ATTACHMENT_ROUTE_PROPAGATION");
-        static const int ATTACHMENT_ROUTE_STATIC_HASH = HashingUtils::HashString("ATTACHMENT_ROUTE_STATIC");
-        static const int CORE_NETWORK_CONFIGURATION_HASH = HashingUtils::HashString("CORE_NETWORK_CONFIGURATION");
-        static const int SEGMENTS_CONFIGURATION_HASH = HashingUtils::HashString("SEGMENTS_CONFIGURATION");
-        static const int SEGMENT_ACTIONS_CONFIGURATION_HASH = HashingUtils::HashString("SEGMENT_ACTIONS_CONFIGURATION");
-        static const int ATTACHMENT_POLICIES_CONFIGURATION_HASH = HashingUtils::HashString("ATTACHMENT_POLICIES_CONFIGURATION");
+        static constexpr uint32_t CORE_NETWORK_SEGMENT_HASH = ConstExprHashingUtils::HashString("CORE_NETWORK_SEGMENT");
+        static constexpr uint32_t CORE_NETWORK_EDGE_HASH = ConstExprHashingUtils::HashString("CORE_NETWORK_EDGE");
+        static constexpr uint32_t ATTACHMENT_MAPPING_HASH = ConstExprHashingUtils::HashString("ATTACHMENT_MAPPING");
+        static constexpr uint32_t ATTACHMENT_ROUTE_PROPAGATION_HASH = ConstExprHashingUtils::HashString("ATTACHMENT_ROUTE_PROPAGATION");
+        static constexpr uint32_t ATTACHMENT_ROUTE_STATIC_HASH = ConstExprHashingUtils::HashString("ATTACHMENT_ROUTE_STATIC");
+        static constexpr uint32_t CORE_NETWORK_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("CORE_NETWORK_CONFIGURATION");
+        static constexpr uint32_t SEGMENTS_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("SEGMENTS_CONFIGURATION");
+        static constexpr uint32_t SEGMENT_ACTIONS_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("SEGMENT_ACTIONS_CONFIGURATION");
+        static constexpr uint32_t ATTACHMENT_POLICIES_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("ATTACHMENT_POLICIES_CONFIGURATION");
 
 
         ChangeType GetChangeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CORE_NETWORK_SEGMENT_HASH)
           {
             return ChangeType::CORE_NETWORK_SEGMENT;

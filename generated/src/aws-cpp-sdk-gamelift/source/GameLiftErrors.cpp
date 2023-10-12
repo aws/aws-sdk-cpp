@@ -18,26 +18,26 @@ namespace GameLift
 namespace GameLiftErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int INVALID_GAME_SESSION_STATUS_HASH = HashingUtils::HashString("InvalidGameSessionStatusException");
-static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int FLEET_CAPACITY_EXCEEDED_HASH = HashingUtils::HashString("FleetCapacityExceededException");
-static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
-static const int UNSUPPORTED_REGION_HASH = HashingUtils::HashString("UnsupportedRegionException");
-static const int TAGGING_FAILED_HASH = HashingUtils::HashString("TaggingFailedException");
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int OUT_OF_CAPACITY_HASH = HashingUtils::HashString("OutOfCapacityException");
-static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
-static const int INVALID_FLEET_STATUS_HASH = HashingUtils::HashString("InvalidFleetStatusException");
-static const int GAME_SESSION_FULL_HASH = HashingUtils::HashString("GameSessionFullException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
-static const int TERMINAL_ROUTING_STRATEGY_HASH = HashingUtils::HashString("TerminalRoutingStrategyException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t INVALID_GAME_SESSION_STATUS_HASH = ConstExprHashingUtils::HashString("InvalidGameSessionStatusException");
+static constexpr uint32_t IDEMPOTENT_PARAMETER_MISMATCH_HASH = ConstExprHashingUtils::HashString("IdempotentParameterMismatchException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t FLEET_CAPACITY_EXCEEDED_HASH = ConstExprHashingUtils::HashString("FleetCapacityExceededException");
+static constexpr uint32_t INTERNAL_SERVICE_HASH = ConstExprHashingUtils::HashString("InternalServiceException");
+static constexpr uint32_t UNSUPPORTED_REGION_HASH = ConstExprHashingUtils::HashString("UnsupportedRegionException");
+static constexpr uint32_t TAGGING_FAILED_HASH = ConstExprHashingUtils::HashString("TaggingFailedException");
+static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NotFoundException");
+static constexpr uint32_t OUT_OF_CAPACITY_HASH = ConstExprHashingUtils::HashString("OutOfCapacityException");
+static constexpr uint32_t UNAUTHORIZED_HASH = ConstExprHashingUtils::HashString("UnauthorizedException");
+static constexpr uint32_t INVALID_FLEET_STATUS_HASH = ConstExprHashingUtils::HashString("InvalidFleetStatusException");
+static constexpr uint32_t GAME_SESSION_FULL_HASH = ConstExprHashingUtils::HashString("GameSessionFullException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t TERMINAL_ROUTING_STRATEGY_HASH = ConstExprHashingUtils::HashString("TerminalRoutingStrategyException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

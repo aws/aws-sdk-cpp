@@ -20,14 +20,14 @@ namespace Aws
       namespace ClarifyFeatureTypeMapper
       {
 
-        static const int numerical_HASH = HashingUtils::HashString("numerical");
-        static const int categorical_HASH = HashingUtils::HashString("categorical");
-        static const int text_HASH = HashingUtils::HashString("text");
+        static constexpr uint32_t numerical_HASH = ConstExprHashingUtils::HashString("numerical");
+        static constexpr uint32_t categorical_HASH = ConstExprHashingUtils::HashString("categorical");
+        static constexpr uint32_t text_HASH = ConstExprHashingUtils::HashString("text");
 
 
         ClarifyFeatureType GetClarifyFeatureTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == numerical_HASH)
           {
             return ClarifyFeatureType::numerical;

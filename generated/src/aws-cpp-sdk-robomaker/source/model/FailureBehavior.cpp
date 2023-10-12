@@ -20,13 +20,13 @@ namespace Aws
       namespace FailureBehaviorMapper
       {
 
-        static const int Fail_HASH = HashingUtils::HashString("Fail");
-        static const int Continue_HASH = HashingUtils::HashString("Continue");
+        static constexpr uint32_t Fail_HASH = ConstExprHashingUtils::HashString("Fail");
+        static constexpr uint32_t Continue_HASH = ConstExprHashingUtils::HashString("Continue");
 
 
         FailureBehavior GetFailureBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Fail_HASH)
           {
             return FailureBehavior::Fail;

@@ -20,14 +20,14 @@ namespace Aws
       namespace Mpeg2TelecineMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int SOFT_HASH = HashingUtils::HashString("SOFT");
-        static const int HARD_HASH = HashingUtils::HashString("HARD");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t SOFT_HASH = ConstExprHashingUtils::HashString("SOFT");
+        static constexpr uint32_t HARD_HASH = ConstExprHashingUtils::HashString("HARD");
 
 
         Mpeg2Telecine GetMpeg2TelecineForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return Mpeg2Telecine::NONE;

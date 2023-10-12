@@ -20,15 +20,15 @@ namespace Aws
       namespace DvbSubtitleShadowColorMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int BLACK_HASH = HashingUtils::HashString("BLACK");
-        static const int WHITE_HASH = HashingUtils::HashString("WHITE");
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t BLACK_HASH = ConstExprHashingUtils::HashString("BLACK");
+        static constexpr uint32_t WHITE_HASH = ConstExprHashingUtils::HashString("WHITE");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
 
 
         DvbSubtitleShadowColor GetDvbSubtitleShadowColorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return DvbSubtitleShadowColor::NONE;

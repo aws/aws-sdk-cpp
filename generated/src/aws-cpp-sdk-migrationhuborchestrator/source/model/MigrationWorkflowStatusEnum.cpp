@@ -20,25 +20,25 @@ namespace Aws
       namespace MigrationWorkflowStatusEnumMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int NOT_STARTED_HASH = HashingUtils::HashString("NOT_STARTED");
-        static const int CREATION_FAILED_HASH = HashingUtils::HashString("CREATION_FAILED");
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int WORKFLOW_FAILED_HASH = HashingUtils::HashString("WORKFLOW_FAILED");
-        static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
-        static const int PAUSING_HASH = HashingUtils::HashString("PAUSING");
-        static const int PAUSING_FAILED_HASH = HashingUtils::HashString("PAUSING_FAILED");
-        static const int USER_ATTENTION_REQUIRED_HASH = HashingUtils::HashString("USER_ATTENTION_REQUIRED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int DELETION_FAILED_HASH = HashingUtils::HashString("DELETION_FAILED");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t NOT_STARTED_HASH = ConstExprHashingUtils::HashString("NOT_STARTED");
+        static constexpr uint32_t CREATION_FAILED_HASH = ConstExprHashingUtils::HashString("CREATION_FAILED");
+        static constexpr uint32_t STARTING_HASH = ConstExprHashingUtils::HashString("STARTING");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t WORKFLOW_FAILED_HASH = ConstExprHashingUtils::HashString("WORKFLOW_FAILED");
+        static constexpr uint32_t PAUSED_HASH = ConstExprHashingUtils::HashString("PAUSED");
+        static constexpr uint32_t PAUSING_HASH = ConstExprHashingUtils::HashString("PAUSING");
+        static constexpr uint32_t PAUSING_FAILED_HASH = ConstExprHashingUtils::HashString("PAUSING_FAILED");
+        static constexpr uint32_t USER_ATTENTION_REQUIRED_HASH = ConstExprHashingUtils::HashString("USER_ATTENTION_REQUIRED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t DELETION_FAILED_HASH = ConstExprHashingUtils::HashString("DELETION_FAILED");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
 
 
         MigrationWorkflowStatusEnum GetMigrationWorkflowStatusEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return MigrationWorkflowStatusEnum::CREATING;

@@ -20,13 +20,13 @@ namespace Aws
       namespace LicenseModelMapper
       {
 
-        static const int LicenseIncluded_HASH = HashingUtils::HashString("LicenseIncluded");
-        static const int BringYourOwnLicense_HASH = HashingUtils::HashString("BringYourOwnLicense");
+        static constexpr uint32_t LicenseIncluded_HASH = ConstExprHashingUtils::HashString("LicenseIncluded");
+        static constexpr uint32_t BringYourOwnLicense_HASH = ConstExprHashingUtils::HashString("BringYourOwnLicense");
 
 
         LicenseModel GetLicenseModelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LicenseIncluded_HASH)
           {
             return LicenseModel::LicenseIncluded;

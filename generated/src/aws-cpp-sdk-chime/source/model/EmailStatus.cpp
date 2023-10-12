@@ -20,14 +20,14 @@ namespace Aws
       namespace EmailStatusMapper
       {
 
-        static const int NotSent_HASH = HashingUtils::HashString("NotSent");
-        static const int Sent_HASH = HashingUtils::HashString("Sent");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t NotSent_HASH = ConstExprHashingUtils::HashString("NotSent");
+        static constexpr uint32_t Sent_HASH = ConstExprHashingUtils::HashString("Sent");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         EmailStatus GetEmailStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NotSent_HASH)
           {
             return EmailStatus::NotSent;

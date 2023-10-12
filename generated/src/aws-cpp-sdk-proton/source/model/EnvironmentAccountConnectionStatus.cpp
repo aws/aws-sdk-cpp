@@ -20,14 +20,14 @@ namespace Aws
       namespace EnvironmentAccountConnectionStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int CONNECTED_HASH = HashingUtils::HashString("CONNECTED");
-        static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t CONNECTED_HASH = ConstExprHashingUtils::HashString("CONNECTED");
+        static constexpr uint32_t REJECTED_HASH = ConstExprHashingUtils::HashString("REJECTED");
 
 
         EnvironmentAccountConnectionStatus GetEnvironmentAccountConnectionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return EnvironmentAccountConnectionStatus::PENDING;

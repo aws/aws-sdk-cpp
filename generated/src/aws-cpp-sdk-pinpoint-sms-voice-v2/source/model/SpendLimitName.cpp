@@ -20,13 +20,13 @@ namespace Aws
       namespace SpendLimitNameMapper
       {
 
-        static const int TEXT_MESSAGE_MONTHLY_SPEND_LIMIT_HASH = HashingUtils::HashString("TEXT_MESSAGE_MONTHLY_SPEND_LIMIT");
-        static const int VOICE_MESSAGE_MONTHLY_SPEND_LIMIT_HASH = HashingUtils::HashString("VOICE_MESSAGE_MONTHLY_SPEND_LIMIT");
+        static constexpr uint32_t TEXT_MESSAGE_MONTHLY_SPEND_LIMIT_HASH = ConstExprHashingUtils::HashString("TEXT_MESSAGE_MONTHLY_SPEND_LIMIT");
+        static constexpr uint32_t VOICE_MESSAGE_MONTHLY_SPEND_LIMIT_HASH = ConstExprHashingUtils::HashString("VOICE_MESSAGE_MONTHLY_SPEND_LIMIT");
 
 
         SpendLimitName GetSpendLimitNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TEXT_MESSAGE_MONTHLY_SPEND_LIMIT_HASH)
           {
             return SpendLimitName::TEXT_MESSAGE_MONTHLY_SPEND_LIMIT;

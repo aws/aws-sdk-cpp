@@ -20,14 +20,14 @@ namespace Aws
       namespace AfdSignalingMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int FIXED_HASH = HashingUtils::HashString("FIXED");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t FIXED_HASH = ConstExprHashingUtils::HashString("FIXED");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         AfdSignaling GetAfdSignalingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return AfdSignaling::AUTO;

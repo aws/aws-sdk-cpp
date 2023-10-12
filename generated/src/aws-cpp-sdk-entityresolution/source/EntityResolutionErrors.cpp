@@ -26,14 +26,14 @@ template<> AWS_ENTITYRESOLUTION_API ExceedsLimitException EntityResolutionError:
 namespace EntityResolutionErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int EXCEEDS_LIMIT_HASH = HashingUtils::HashString("ExceedsLimitException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
+static constexpr uint32_t EXCEEDS_LIMIT_HASH = ConstExprHashingUtils::HashString("ExceedsLimitException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

@@ -20,13 +20,13 @@ namespace Aws
       namespace ThingConnectivityIndexingModeMapper
       {
 
-        static const int OFF_HASH = HashingUtils::HashString("OFF");
-        static const int STATUS_HASH = HashingUtils::HashString("STATUS");
+        static constexpr uint32_t OFF_HASH = ConstExprHashingUtils::HashString("OFF");
+        static constexpr uint32_t STATUS_HASH = ConstExprHashingUtils::HashString("STATUS");
 
 
         ThingConnectivityIndexingMode GetThingConnectivityIndexingModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OFF_HASH)
           {
             return ThingConnectivityIndexingMode::OFF;

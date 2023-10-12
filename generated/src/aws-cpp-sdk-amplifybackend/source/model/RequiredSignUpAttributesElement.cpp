@@ -20,28 +20,28 @@ namespace Aws
       namespace RequiredSignUpAttributesElementMapper
       {
 
-        static const int ADDRESS_HASH = HashingUtils::HashString("ADDRESS");
-        static const int BIRTHDATE_HASH = HashingUtils::HashString("BIRTHDATE");
-        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
-        static const int FAMILY_NAME_HASH = HashingUtils::HashString("FAMILY_NAME");
-        static const int GENDER_HASH = HashingUtils::HashString("GENDER");
-        static const int GIVEN_NAME_HASH = HashingUtils::HashString("GIVEN_NAME");
-        static const int LOCALE_HASH = HashingUtils::HashString("LOCALE");
-        static const int MIDDLE_NAME_HASH = HashingUtils::HashString("MIDDLE_NAME");
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int NICKNAME_HASH = HashingUtils::HashString("NICKNAME");
-        static const int PHONE_NUMBER_HASH = HashingUtils::HashString("PHONE_NUMBER");
-        static const int PICTURE_HASH = HashingUtils::HashString("PICTURE");
-        static const int PREFERRED_USERNAME_HASH = HashingUtils::HashString("PREFERRED_USERNAME");
-        static const int PROFILE_HASH = HashingUtils::HashString("PROFILE");
-        static const int UPDATED_AT_HASH = HashingUtils::HashString("UPDATED_AT");
-        static const int WEBSITE_HASH = HashingUtils::HashString("WEBSITE");
-        static const int ZONE_INFO_HASH = HashingUtils::HashString("ZONE_INFO");
+        static constexpr uint32_t ADDRESS_HASH = ConstExprHashingUtils::HashString("ADDRESS");
+        static constexpr uint32_t BIRTHDATE_HASH = ConstExprHashingUtils::HashString("BIRTHDATE");
+        static constexpr uint32_t EMAIL_HASH = ConstExprHashingUtils::HashString("EMAIL");
+        static constexpr uint32_t FAMILY_NAME_HASH = ConstExprHashingUtils::HashString("FAMILY_NAME");
+        static constexpr uint32_t GENDER_HASH = ConstExprHashingUtils::HashString("GENDER");
+        static constexpr uint32_t GIVEN_NAME_HASH = ConstExprHashingUtils::HashString("GIVEN_NAME");
+        static constexpr uint32_t LOCALE_HASH = ConstExprHashingUtils::HashString("LOCALE");
+        static constexpr uint32_t MIDDLE_NAME_HASH = ConstExprHashingUtils::HashString("MIDDLE_NAME");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t NICKNAME_HASH = ConstExprHashingUtils::HashString("NICKNAME");
+        static constexpr uint32_t PHONE_NUMBER_HASH = ConstExprHashingUtils::HashString("PHONE_NUMBER");
+        static constexpr uint32_t PICTURE_HASH = ConstExprHashingUtils::HashString("PICTURE");
+        static constexpr uint32_t PREFERRED_USERNAME_HASH = ConstExprHashingUtils::HashString("PREFERRED_USERNAME");
+        static constexpr uint32_t PROFILE_HASH = ConstExprHashingUtils::HashString("PROFILE");
+        static constexpr uint32_t UPDATED_AT_HASH = ConstExprHashingUtils::HashString("UPDATED_AT");
+        static constexpr uint32_t WEBSITE_HASH = ConstExprHashingUtils::HashString("WEBSITE");
+        static constexpr uint32_t ZONE_INFO_HASH = ConstExprHashingUtils::HashString("ZONE_INFO");
 
 
         RequiredSignUpAttributesElement GetRequiredSignUpAttributesElementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADDRESS_HASH)
           {
             return RequiredSignUpAttributesElement::ADDRESS;

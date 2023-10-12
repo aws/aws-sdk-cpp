@@ -20,13 +20,13 @@ namespace Aws
       namespace ExecutionResultCodeMapper
       {
 
-        static const int PARSING_FAILED_HASH = HashingUtils::HashString("PARSING_FAILED");
-        static const int VPC_ENDPOINT_SETUP_FAILED_HASH = HashingUtils::HashString("VPC_ENDPOINT_SETUP_FAILED");
+        static constexpr uint32_t PARSING_FAILED_HASH = ConstExprHashingUtils::HashString("PARSING_FAILED");
+        static constexpr uint32_t VPC_ENDPOINT_SETUP_FAILED_HASH = ConstExprHashingUtils::HashString("VPC_ENDPOINT_SETUP_FAILED");
 
 
         ExecutionResultCode GetExecutionResultCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PARSING_FAILED_HASH)
           {
             return ExecutionResultCode::PARSING_FAILED;

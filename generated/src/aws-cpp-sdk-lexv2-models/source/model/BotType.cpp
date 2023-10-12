@@ -20,13 +20,13 @@ namespace Aws
       namespace BotTypeMapper
       {
 
-        static const int Bot_HASH = HashingUtils::HashString("Bot");
-        static const int BotNetwork_HASH = HashingUtils::HashString("BotNetwork");
+        static constexpr uint32_t Bot_HASH = ConstExprHashingUtils::HashString("Bot");
+        static constexpr uint32_t BotNetwork_HASH = ConstExprHashingUtils::HashString("BotNetwork");
 
 
         BotType GetBotTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Bot_HASH)
           {
             return BotType::Bot;

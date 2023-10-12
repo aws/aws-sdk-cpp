@@ -20,13 +20,13 @@ namespace Aws
       namespace MessageTypeMapper
       {
 
-        static const int RAW_HASH = HashingUtils::HashString("RAW");
-        static const int DIGEST_HASH = HashingUtils::HashString("DIGEST");
+        static constexpr uint32_t RAW_HASH = ConstExprHashingUtils::HashString("RAW");
+        static constexpr uint32_t DIGEST_HASH = ConstExprHashingUtils::HashString("DIGEST");
 
 
         MessageType GetMessageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RAW_HASH)
           {
             return MessageType::RAW;

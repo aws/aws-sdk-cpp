@@ -20,13 +20,13 @@ namespace Aws
       namespace DocumentClassifierModeMapper
       {
 
-        static const int MULTI_CLASS_HASH = HashingUtils::HashString("MULTI_CLASS");
-        static const int MULTI_LABEL_HASH = HashingUtils::HashString("MULTI_LABEL");
+        static constexpr uint32_t MULTI_CLASS_HASH = ConstExprHashingUtils::HashString("MULTI_CLASS");
+        static constexpr uint32_t MULTI_LABEL_HASH = ConstExprHashingUtils::HashString("MULTI_LABEL");
 
 
         DocumentClassifierMode GetDocumentClassifierModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MULTI_CLASS_HASH)
           {
             return DocumentClassifierMode::MULTI_CLASS;

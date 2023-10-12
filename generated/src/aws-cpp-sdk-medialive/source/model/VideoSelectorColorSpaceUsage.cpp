@@ -20,13 +20,13 @@ namespace Aws
       namespace VideoSelectorColorSpaceUsageMapper
       {
 
-        static const int FALLBACK_HASH = HashingUtils::HashString("FALLBACK");
-        static const int FORCE_HASH = HashingUtils::HashString("FORCE");
+        static constexpr uint32_t FALLBACK_HASH = ConstExprHashingUtils::HashString("FALLBACK");
+        static constexpr uint32_t FORCE_HASH = ConstExprHashingUtils::HashString("FORCE");
 
 
         VideoSelectorColorSpaceUsage GetVideoSelectorColorSpaceUsageForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FALLBACK_HASH)
           {
             return VideoSelectorColorSpaceUsage::FALLBACK;

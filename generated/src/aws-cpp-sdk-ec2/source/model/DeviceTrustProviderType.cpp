@@ -20,13 +20,13 @@ namespace Aws
       namespace DeviceTrustProviderTypeMapper
       {
 
-        static const int jamf_HASH = HashingUtils::HashString("jamf");
-        static const int crowdstrike_HASH = HashingUtils::HashString("crowdstrike");
+        static constexpr uint32_t jamf_HASH = ConstExprHashingUtils::HashString("jamf");
+        static constexpr uint32_t crowdstrike_HASH = ConstExprHashingUtils::HashString("crowdstrike");
 
 
         DeviceTrustProviderType GetDeviceTrustProviderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == jamf_HASH)
           {
             return DeviceTrustProviderType::jamf;

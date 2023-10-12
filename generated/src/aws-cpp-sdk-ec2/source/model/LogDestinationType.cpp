@@ -20,14 +20,14 @@ namespace Aws
       namespace LogDestinationTypeMapper
       {
 
-        static const int cloud_watch_logs_HASH = HashingUtils::HashString("cloud-watch-logs");
-        static const int s3_HASH = HashingUtils::HashString("s3");
-        static const int kinesis_data_firehose_HASH = HashingUtils::HashString("kinesis-data-firehose");
+        static constexpr uint32_t cloud_watch_logs_HASH = ConstExprHashingUtils::HashString("cloud-watch-logs");
+        static constexpr uint32_t s3_HASH = ConstExprHashingUtils::HashString("s3");
+        static constexpr uint32_t kinesis_data_firehose_HASH = ConstExprHashingUtils::HashString("kinesis-data-firehose");
 
 
         LogDestinationType GetLogDestinationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == cloud_watch_logs_HASH)
           {
             return LogDestinationType::cloud_watch_logs;

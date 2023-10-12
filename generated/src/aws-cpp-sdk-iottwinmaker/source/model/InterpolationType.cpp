@@ -20,12 +20,12 @@ namespace Aws
       namespace InterpolationTypeMapper
       {
 
-        static const int LINEAR_HASH = HashingUtils::HashString("LINEAR");
+        static constexpr uint32_t LINEAR_HASH = ConstExprHashingUtils::HashString("LINEAR");
 
 
         InterpolationType GetInterpolationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LINEAR_HASH)
           {
             return InterpolationType::LINEAR;

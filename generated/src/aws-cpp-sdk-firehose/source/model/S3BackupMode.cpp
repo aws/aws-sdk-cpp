@@ -20,13 +20,13 @@ namespace Aws
       namespace S3BackupModeMapper
       {
 
-        static const int Disabled_HASH = HashingUtils::HashString("Disabled");
-        static const int Enabled_HASH = HashingUtils::HashString("Enabled");
+        static constexpr uint32_t Disabled_HASH = ConstExprHashingUtils::HashString("Disabled");
+        static constexpr uint32_t Enabled_HASH = ConstExprHashingUtils::HashString("Enabled");
 
 
         S3BackupMode GetS3BackupModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Disabled_HASH)
           {
             return S3BackupMode::Disabled;

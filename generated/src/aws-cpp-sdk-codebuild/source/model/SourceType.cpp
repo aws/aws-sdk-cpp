@@ -20,18 +20,18 @@ namespace Aws
       namespace SourceTypeMapper
       {
 
-        static const int CODECOMMIT_HASH = HashingUtils::HashString("CODECOMMIT");
-        static const int CODEPIPELINE_HASH = HashingUtils::HashString("CODEPIPELINE");
-        static const int GITHUB_HASH = HashingUtils::HashString("GITHUB");
-        static const int S3_HASH = HashingUtils::HashString("S3");
-        static const int BITBUCKET_HASH = HashingUtils::HashString("BITBUCKET");
-        static const int GITHUB_ENTERPRISE_HASH = HashingUtils::HashString("GITHUB_ENTERPRISE");
-        static const int NO_SOURCE_HASH = HashingUtils::HashString("NO_SOURCE");
+        static constexpr uint32_t CODECOMMIT_HASH = ConstExprHashingUtils::HashString("CODECOMMIT");
+        static constexpr uint32_t CODEPIPELINE_HASH = ConstExprHashingUtils::HashString("CODEPIPELINE");
+        static constexpr uint32_t GITHUB_HASH = ConstExprHashingUtils::HashString("GITHUB");
+        static constexpr uint32_t S3_HASH = ConstExprHashingUtils::HashString("S3");
+        static constexpr uint32_t BITBUCKET_HASH = ConstExprHashingUtils::HashString("BITBUCKET");
+        static constexpr uint32_t GITHUB_ENTERPRISE_HASH = ConstExprHashingUtils::HashString("GITHUB_ENTERPRISE");
+        static constexpr uint32_t NO_SOURCE_HASH = ConstExprHashingUtils::HashString("NO_SOURCE");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CODECOMMIT_HASH)
           {
             return SourceType::CODECOMMIT;

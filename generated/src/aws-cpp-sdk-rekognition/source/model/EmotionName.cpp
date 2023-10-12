@@ -20,20 +20,20 @@ namespace Aws
       namespace EmotionNameMapper
       {
 
-        static const int HAPPY_HASH = HashingUtils::HashString("HAPPY");
-        static const int SAD_HASH = HashingUtils::HashString("SAD");
-        static const int ANGRY_HASH = HashingUtils::HashString("ANGRY");
-        static const int CONFUSED_HASH = HashingUtils::HashString("CONFUSED");
-        static const int DISGUSTED_HASH = HashingUtils::HashString("DISGUSTED");
-        static const int SURPRISED_HASH = HashingUtils::HashString("SURPRISED");
-        static const int CALM_HASH = HashingUtils::HashString("CALM");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
-        static const int FEAR_HASH = HashingUtils::HashString("FEAR");
+        static constexpr uint32_t HAPPY_HASH = ConstExprHashingUtils::HashString("HAPPY");
+        static constexpr uint32_t SAD_HASH = ConstExprHashingUtils::HashString("SAD");
+        static constexpr uint32_t ANGRY_HASH = ConstExprHashingUtils::HashString("ANGRY");
+        static constexpr uint32_t CONFUSED_HASH = ConstExprHashingUtils::HashString("CONFUSED");
+        static constexpr uint32_t DISGUSTED_HASH = ConstExprHashingUtils::HashString("DISGUSTED");
+        static constexpr uint32_t SURPRISED_HASH = ConstExprHashingUtils::HashString("SURPRISED");
+        static constexpr uint32_t CALM_HASH = ConstExprHashingUtils::HashString("CALM");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t FEAR_HASH = ConstExprHashingUtils::HashString("FEAR");
 
 
         EmotionName GetEmotionNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HAPPY_HASH)
           {
             return EmotionName::HAPPY;

@@ -20,14 +20,14 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int BOT_HASH = HashingUtils::HashString("BOT");
-        static const int INTENT_HASH = HashingUtils::HashString("INTENT");
-        static const int SLOT_TYPE_HASH = HashingUtils::HashString("SLOT_TYPE");
+        static constexpr uint32_t BOT_HASH = ConstExprHashingUtils::HashString("BOT");
+        static constexpr uint32_t INTENT_HASH = ConstExprHashingUtils::HashString("INTENT");
+        static constexpr uint32_t SLOT_TYPE_HASH = ConstExprHashingUtils::HashString("SLOT_TYPE");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BOT_HASH)
           {
             return ResourceType::BOT;

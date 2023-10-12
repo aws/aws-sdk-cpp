@@ -20,13 +20,13 @@ namespace Aws
       namespace CollectorStatusMapper
       {
 
-        static const int UNREGISTERED_HASH = HashingUtils::HashString("UNREGISTERED");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t UNREGISTERED_HASH = ConstExprHashingUtils::HashString("UNREGISTERED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
 
 
         CollectorStatus GetCollectorStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNREGISTERED_HASH)
           {
             return CollectorStatus::UNREGISTERED;

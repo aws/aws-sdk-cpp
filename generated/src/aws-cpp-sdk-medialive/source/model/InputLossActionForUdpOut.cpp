@@ -20,14 +20,14 @@ namespace Aws
       namespace InputLossActionForUdpOutMapper
       {
 
-        static const int DROP_PROGRAM_HASH = HashingUtils::HashString("DROP_PROGRAM");
-        static const int DROP_TS_HASH = HashingUtils::HashString("DROP_TS");
-        static const int EMIT_PROGRAM_HASH = HashingUtils::HashString("EMIT_PROGRAM");
+        static constexpr uint32_t DROP_PROGRAM_HASH = ConstExprHashingUtils::HashString("DROP_PROGRAM");
+        static constexpr uint32_t DROP_TS_HASH = ConstExprHashingUtils::HashString("DROP_TS");
+        static constexpr uint32_t EMIT_PROGRAM_HASH = ConstExprHashingUtils::HashString("EMIT_PROGRAM");
 
 
         InputLossActionForUdpOut GetInputLossActionForUdpOutForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DROP_PROGRAM_HASH)
           {
             return InputLossActionForUdpOut::DROP_PROGRAM;

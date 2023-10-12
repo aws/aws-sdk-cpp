@@ -20,13 +20,13 @@ namespace Aws
       namespace TrainingModeMapper
       {
 
-        static const int FULL_HASH = HashingUtils::HashString("FULL");
-        static const int UPDATE_HASH = HashingUtils::HashString("UPDATE");
+        static constexpr uint32_t FULL_HASH = ConstExprHashingUtils::HashString("FULL");
+        static constexpr uint32_t UPDATE_HASH = ConstExprHashingUtils::HashString("UPDATE");
 
 
         TrainingMode GetTrainingModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FULL_HASH)
           {
             return TrainingMode::FULL;

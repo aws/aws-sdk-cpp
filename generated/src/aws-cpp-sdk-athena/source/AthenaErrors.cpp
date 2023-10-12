@@ -40,16 +40,16 @@ template<> AWS_ATHENA_API InvalidRequestException AthenaError::GetModeledError()
 namespace AthenaErrorMapper
 {
 
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int METADATA_HASH = HashingUtils::HashString("MetadataException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int SESSION_ALREADY_EXISTS_HASH = HashingUtils::HashString("SessionAlreadyExistsException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
+static constexpr uint32_t METADATA_HASH = ConstExprHashingUtils::HashString("MetadataException");
+static constexpr uint32_t TOO_MANY_REQUESTS_HASH = ConstExprHashingUtils::HashString("TooManyRequestsException");
+static constexpr uint32_t SESSION_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("SessionAlreadyExistsException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INTERNAL_SERVER_HASH)
   {

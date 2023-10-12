@@ -20,16 +20,16 @@ namespace Aws
       namespace SourceTypeMapper
       {
 
-        static const int cluster_HASH = HashingUtils::HashString("cluster");
-        static const int cluster_parameter_group_HASH = HashingUtils::HashString("cluster-parameter-group");
-        static const int cluster_security_group_HASH = HashingUtils::HashString("cluster-security-group");
-        static const int cluster_snapshot_HASH = HashingUtils::HashString("cluster-snapshot");
-        static const int scheduled_action_HASH = HashingUtils::HashString("scheduled-action");
+        static constexpr uint32_t cluster_HASH = ConstExprHashingUtils::HashString("cluster");
+        static constexpr uint32_t cluster_parameter_group_HASH = ConstExprHashingUtils::HashString("cluster-parameter-group");
+        static constexpr uint32_t cluster_security_group_HASH = ConstExprHashingUtils::HashString("cluster-security-group");
+        static constexpr uint32_t cluster_snapshot_HASH = ConstExprHashingUtils::HashString("cluster-snapshot");
+        static constexpr uint32_t scheduled_action_HASH = ConstExprHashingUtils::HashString("scheduled-action");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == cluster_HASH)
           {
             return SourceType::cluster;

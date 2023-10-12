@@ -20,15 +20,15 @@ namespace Aws
       namespace MethodNameMapper
       {
 
-        static const int PUT_HASH = HashingUtils::HashString("PUT");
-        static const int GET__HASH = HashingUtils::HashString("GET");
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
-        static const int HEAD_HASH = HashingUtils::HashString("HEAD");
+        static constexpr uint32_t PUT_HASH = ConstExprHashingUtils::HashString("PUT");
+        static constexpr uint32_t GET__HASH = ConstExprHashingUtils::HashString("GET");
+        static constexpr uint32_t DELETE__HASH = ConstExprHashingUtils::HashString("DELETE");
+        static constexpr uint32_t HEAD_HASH = ConstExprHashingUtils::HashString("HEAD");
 
 
         MethodName GetMethodNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUT_HASH)
           {
             return MethodName::PUT;

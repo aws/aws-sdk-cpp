@@ -20,18 +20,18 @@ namespace Aws
       namespace StatusMapper
       {
 
-        static const int STANDBY_HASH = HashingUtils::HashString("STANDBY");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t STANDBY_HASH = ConstExprHashingUtils::HashString("STANDBY");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t STARTING_HASH = ConstExprHashingUtils::HashString("STARTING");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         Status GetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STANDBY_HASH)
           {
             return Status::STANDBY;

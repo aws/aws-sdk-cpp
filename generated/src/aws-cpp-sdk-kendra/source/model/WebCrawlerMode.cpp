@@ -20,14 +20,14 @@ namespace Aws
       namespace WebCrawlerModeMapper
       {
 
-        static const int HOST_ONLY_HASH = HashingUtils::HashString("HOST_ONLY");
-        static const int SUBDOMAINS_HASH = HashingUtils::HashString("SUBDOMAINS");
-        static const int EVERYTHING_HASH = HashingUtils::HashString("EVERYTHING");
+        static constexpr uint32_t HOST_ONLY_HASH = ConstExprHashingUtils::HashString("HOST_ONLY");
+        static constexpr uint32_t SUBDOMAINS_HASH = ConstExprHashingUtils::HashString("SUBDOMAINS");
+        static constexpr uint32_t EVERYTHING_HASH = ConstExprHashingUtils::HashString("EVERYTHING");
 
 
         WebCrawlerMode GetWebCrawlerModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HOST_ONLY_HASH)
           {
             return WebCrawlerMode::HOST_ONLY;

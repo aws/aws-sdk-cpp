@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourcePermissionMapper
       {
 
-        static const int FULL_PERMISSION_HASH = HashingUtils::HashString("FULL_PERMISSION");
-        static const int MISSING_PERMISSION_HASH = HashingUtils::HashString("MISSING_PERMISSION");
+        static constexpr uint32_t FULL_PERMISSION_HASH = ConstExprHashingUtils::HashString("FULL_PERMISSION");
+        static constexpr uint32_t MISSING_PERMISSION_HASH = ConstExprHashingUtils::HashString("MISSING_PERMISSION");
 
 
         ResourcePermission GetResourcePermissionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FULL_PERMISSION_HASH)
           {
             return ResourcePermission::FULL_PERMISSION;

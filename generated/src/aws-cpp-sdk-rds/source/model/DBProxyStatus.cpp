@@ -20,20 +20,20 @@ namespace Aws
       namespace DBProxyStatusMapper
       {
 
-        static const int available_HASH = HashingUtils::HashString("available");
-        static const int modifying_HASH = HashingUtils::HashString("modifying");
-        static const int incompatible_network_HASH = HashingUtils::HashString("incompatible-network");
-        static const int insufficient_resource_limits_HASH = HashingUtils::HashString("insufficient-resource-limits");
-        static const int creating_HASH = HashingUtils::HashString("creating");
-        static const int deleting_HASH = HashingUtils::HashString("deleting");
-        static const int suspended_HASH = HashingUtils::HashString("suspended");
-        static const int suspending_HASH = HashingUtils::HashString("suspending");
-        static const int reactivating_HASH = HashingUtils::HashString("reactivating");
+        static constexpr uint32_t available_HASH = ConstExprHashingUtils::HashString("available");
+        static constexpr uint32_t modifying_HASH = ConstExprHashingUtils::HashString("modifying");
+        static constexpr uint32_t incompatible_network_HASH = ConstExprHashingUtils::HashString("incompatible-network");
+        static constexpr uint32_t insufficient_resource_limits_HASH = ConstExprHashingUtils::HashString("insufficient-resource-limits");
+        static constexpr uint32_t creating_HASH = ConstExprHashingUtils::HashString("creating");
+        static constexpr uint32_t deleting_HASH = ConstExprHashingUtils::HashString("deleting");
+        static constexpr uint32_t suspended_HASH = ConstExprHashingUtils::HashString("suspended");
+        static constexpr uint32_t suspending_HASH = ConstExprHashingUtils::HashString("suspending");
+        static constexpr uint32_t reactivating_HASH = ConstExprHashingUtils::HashString("reactivating");
 
 
         DBProxyStatus GetDBProxyStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == available_HASH)
           {
             return DBProxyStatus::available;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceBucketAccessMapper
       {
 
-        static const int allow_HASH = HashingUtils::HashString("allow");
-        static const int deny_HASH = HashingUtils::HashString("deny");
+        static constexpr uint32_t allow_HASH = ConstExprHashingUtils::HashString("allow");
+        static constexpr uint32_t deny_HASH = ConstExprHashingUtils::HashString("deny");
 
 
         ResourceBucketAccess GetResourceBucketAccessForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == allow_HASH)
           {
             return ResourceBucketAccess::allow;

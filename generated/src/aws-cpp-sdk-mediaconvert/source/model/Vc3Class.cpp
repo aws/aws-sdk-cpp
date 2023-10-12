@@ -20,14 +20,14 @@ namespace Aws
       namespace Vc3ClassMapper
       {
 
-        static const int CLASS_145_8BIT_HASH = HashingUtils::HashString("CLASS_145_8BIT");
-        static const int CLASS_220_8BIT_HASH = HashingUtils::HashString("CLASS_220_8BIT");
-        static const int CLASS_220_10BIT_HASH = HashingUtils::HashString("CLASS_220_10BIT");
+        static constexpr uint32_t CLASS_145_8BIT_HASH = ConstExprHashingUtils::HashString("CLASS_145_8BIT");
+        static constexpr uint32_t CLASS_220_8BIT_HASH = ConstExprHashingUtils::HashString("CLASS_220_8BIT");
+        static constexpr uint32_t CLASS_220_10BIT_HASH = ConstExprHashingUtils::HashString("CLASS_220_10BIT");
 
 
         Vc3Class GetVc3ClassForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLASS_145_8BIT_HASH)
           {
             return Vc3Class::CLASS_145_8BIT;

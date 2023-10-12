@@ -20,17 +20,17 @@ namespace Aws
       namespace HighlightColorMapper
       {
 
-        static const int Black_HASH = HashingUtils::HashString("Black");
-        static const int Blue_HASH = HashingUtils::HashString("Blue");
-        static const int Red_HASH = HashingUtils::HashString("Red");
-        static const int Green_HASH = HashingUtils::HashString("Green");
-        static const int White_HASH = HashingUtils::HashString("White");
-        static const int Yellow_HASH = HashingUtils::HashString("Yellow");
+        static constexpr uint32_t Black_HASH = ConstExprHashingUtils::HashString("Black");
+        static constexpr uint32_t Blue_HASH = ConstExprHashingUtils::HashString("Blue");
+        static constexpr uint32_t Red_HASH = ConstExprHashingUtils::HashString("Red");
+        static constexpr uint32_t Green_HASH = ConstExprHashingUtils::HashString("Green");
+        static constexpr uint32_t White_HASH = ConstExprHashingUtils::HashString("White");
+        static constexpr uint32_t Yellow_HASH = ConstExprHashingUtils::HashString("Yellow");
 
 
         HighlightColor GetHighlightColorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Black_HASH)
           {
             return HighlightColor::Black;

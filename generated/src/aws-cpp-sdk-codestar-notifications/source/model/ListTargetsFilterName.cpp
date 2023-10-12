@@ -20,14 +20,14 @@ namespace Aws
       namespace ListTargetsFilterNameMapper
       {
 
-        static const int TARGET_TYPE_HASH = HashingUtils::HashString("TARGET_TYPE");
-        static const int TARGET_ADDRESS_HASH = HashingUtils::HashString("TARGET_ADDRESS");
-        static const int TARGET_STATUS_HASH = HashingUtils::HashString("TARGET_STATUS");
+        static constexpr uint32_t TARGET_TYPE_HASH = ConstExprHashingUtils::HashString("TARGET_TYPE");
+        static constexpr uint32_t TARGET_ADDRESS_HASH = ConstExprHashingUtils::HashString("TARGET_ADDRESS");
+        static constexpr uint32_t TARGET_STATUS_HASH = ConstExprHashingUtils::HashString("TARGET_STATUS");
 
 
         ListTargetsFilterName GetListTargetsFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TARGET_TYPE_HASH)
           {
             return ListTargetsFilterName::TARGET_TYPE;

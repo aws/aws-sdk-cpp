@@ -20,15 +20,15 @@ namespace Aws
       namespace ReadinessMapper
       {
 
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int NOT_READY_HASH = HashingUtils::HashString("NOT_READY");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
-        static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NOT_AUTHORIZED");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
+        static constexpr uint32_t NOT_READY_HASH = ConstExprHashingUtils::HashString("NOT_READY");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t NOT_AUTHORIZED_HASH = ConstExprHashingUtils::HashString("NOT_AUTHORIZED");
 
 
         Readiness GetReadinessForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == READY_HASH)
           {
             return Readiness::READY;

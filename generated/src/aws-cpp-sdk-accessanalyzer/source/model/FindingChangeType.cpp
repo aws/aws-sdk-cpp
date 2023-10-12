@@ -20,14 +20,14 @@ namespace Aws
       namespace FindingChangeTypeMapper
       {
 
-        static const int CHANGED_HASH = HashingUtils::HashString("CHANGED");
-        static const int NEW__HASH = HashingUtils::HashString("NEW");
-        static const int UNCHANGED_HASH = HashingUtils::HashString("UNCHANGED");
+        static constexpr uint32_t CHANGED_HASH = ConstExprHashingUtils::HashString("CHANGED");
+        static constexpr uint32_t NEW__HASH = ConstExprHashingUtils::HashString("NEW");
+        static constexpr uint32_t UNCHANGED_HASH = ConstExprHashingUtils::HashString("UNCHANGED");
 
 
         FindingChangeType GetFindingChangeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CHANGED_HASH)
           {
             return FindingChangeType::CHANGED;

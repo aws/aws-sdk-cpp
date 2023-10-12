@@ -20,13 +20,13 @@ namespace Aws
       namespace RehydrationTypeMapper
       {
 
-        static const int ENTIRE_PAST_SESSION_HASH = HashingUtils::HashString("ENTIRE_PAST_SESSION");
-        static const int FROM_SEGMENT_HASH = HashingUtils::HashString("FROM_SEGMENT");
+        static constexpr uint32_t ENTIRE_PAST_SESSION_HASH = ConstExprHashingUtils::HashString("ENTIRE_PAST_SESSION");
+        static constexpr uint32_t FROM_SEGMENT_HASH = ConstExprHashingUtils::HashString("FROM_SEGMENT");
 
 
         RehydrationType GetRehydrationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENTIRE_PAST_SESSION_HASH)
           {
             return RehydrationType::ENTIRE_PAST_SESSION;

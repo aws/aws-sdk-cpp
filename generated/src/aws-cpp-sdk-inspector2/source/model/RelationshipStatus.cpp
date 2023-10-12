@@ -20,23 +20,23 @@ namespace Aws
       namespace RelationshipStatusMapper
       {
 
-        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
-        static const int INVITED_HASH = HashingUtils::HashString("INVITED");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int REMOVED_HASH = HashingUtils::HashString("REMOVED");
-        static const int RESIGNED_HASH = HashingUtils::HashString("RESIGNED");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int EMAIL_VERIFICATION_IN_PROGRESS_HASH = HashingUtils::HashString("EMAIL_VERIFICATION_IN_PROGRESS");
-        static const int EMAIL_VERIFICATION_FAILED_HASH = HashingUtils::HashString("EMAIL_VERIFICATION_FAILED");
-        static const int REGION_DISABLED_HASH = HashingUtils::HashString("REGION_DISABLED");
-        static const int ACCOUNT_SUSPENDED_HASH = HashingUtils::HashString("ACCOUNT_SUSPENDED");
-        static const int CANNOT_CREATE_DETECTOR_IN_ORG_MASTER_HASH = HashingUtils::HashString("CANNOT_CREATE_DETECTOR_IN_ORG_MASTER");
+        static constexpr uint32_t CREATED_HASH = ConstExprHashingUtils::HashString("CREATED");
+        static constexpr uint32_t INVITED_HASH = ConstExprHashingUtils::HashString("INVITED");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
+        static constexpr uint32_t REMOVED_HASH = ConstExprHashingUtils::HashString("REMOVED");
+        static constexpr uint32_t RESIGNED_HASH = ConstExprHashingUtils::HashString("RESIGNED");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t EMAIL_VERIFICATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("EMAIL_VERIFICATION_IN_PROGRESS");
+        static constexpr uint32_t EMAIL_VERIFICATION_FAILED_HASH = ConstExprHashingUtils::HashString("EMAIL_VERIFICATION_FAILED");
+        static constexpr uint32_t REGION_DISABLED_HASH = ConstExprHashingUtils::HashString("REGION_DISABLED");
+        static constexpr uint32_t ACCOUNT_SUSPENDED_HASH = ConstExprHashingUtils::HashString("ACCOUNT_SUSPENDED");
+        static constexpr uint32_t CANNOT_CREATE_DETECTOR_IN_ORG_MASTER_HASH = ConstExprHashingUtils::HashString("CANNOT_CREATE_DETECTOR_IN_ORG_MASTER");
 
 
         RelationshipStatus GetRelationshipStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATED_HASH)
           {
             return RelationshipStatus::CREATED;

@@ -20,14 +20,14 @@ namespace Aws
       namespace AllowNotificationsMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int FILTERED_HASH = HashingUtils::HashString("FILTERED");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t FILTERED_HASH = ConstExprHashingUtils::HashString("FILTERED");
 
 
         AllowNotifications GetAllowNotificationsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return AllowNotifications::ALL;

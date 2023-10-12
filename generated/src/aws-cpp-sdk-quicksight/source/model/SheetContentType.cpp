@@ -20,13 +20,13 @@ namespace Aws
       namespace SheetContentTypeMapper
       {
 
-        static const int PAGINATED_HASH = HashingUtils::HashString("PAGINATED");
-        static const int INTERACTIVE_HASH = HashingUtils::HashString("INTERACTIVE");
+        static constexpr uint32_t PAGINATED_HASH = ConstExprHashingUtils::HashString("PAGINATED");
+        static constexpr uint32_t INTERACTIVE_HASH = ConstExprHashingUtils::HashString("INTERACTIVE");
 
 
         SheetContentType GetSheetContentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PAGINATED_HASH)
           {
             return SheetContentType::PAGINATED;

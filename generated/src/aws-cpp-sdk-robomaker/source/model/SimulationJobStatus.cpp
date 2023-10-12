@@ -20,21 +20,21 @@ namespace Aws
       namespace SimulationJobStatusMapper
       {
 
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int Preparing_HASH = HashingUtils::HashString("Preparing");
-        static const int Running_HASH = HashingUtils::HashString("Running");
-        static const int Restarting_HASH = HashingUtils::HashString("Restarting");
-        static const int Completed_HASH = HashingUtils::HashString("Completed");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int RunningFailed_HASH = HashingUtils::HashString("RunningFailed");
-        static const int Terminating_HASH = HashingUtils::HashString("Terminating");
-        static const int Terminated_HASH = HashingUtils::HashString("Terminated");
-        static const int Canceled_HASH = HashingUtils::HashString("Canceled");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t Preparing_HASH = ConstExprHashingUtils::HashString("Preparing");
+        static constexpr uint32_t Running_HASH = ConstExprHashingUtils::HashString("Running");
+        static constexpr uint32_t Restarting_HASH = ConstExprHashingUtils::HashString("Restarting");
+        static constexpr uint32_t Completed_HASH = ConstExprHashingUtils::HashString("Completed");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t RunningFailed_HASH = ConstExprHashingUtils::HashString("RunningFailed");
+        static constexpr uint32_t Terminating_HASH = ConstExprHashingUtils::HashString("Terminating");
+        static constexpr uint32_t Terminated_HASH = ConstExprHashingUtils::HashString("Terminated");
+        static constexpr uint32_t Canceled_HASH = ConstExprHashingUtils::HashString("Canceled");
 
 
         SimulationJobStatus GetSimulationJobStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pending_HASH)
           {
             return SimulationJobStatus::Pending;

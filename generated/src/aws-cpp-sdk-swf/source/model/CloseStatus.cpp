@@ -20,17 +20,17 @@ namespace Aws
       namespace CloseStatusMapper
       {
 
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
-        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
-        static const int CONTINUED_AS_NEW_HASH = HashingUtils::HashString("CONTINUED_AS_NEW");
-        static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t CANCELED_HASH = ConstExprHashingUtils::HashString("CANCELED");
+        static constexpr uint32_t TERMINATED_HASH = ConstExprHashingUtils::HashString("TERMINATED");
+        static constexpr uint32_t CONTINUED_AS_NEW_HASH = ConstExprHashingUtils::HashString("CONTINUED_AS_NEW");
+        static constexpr uint32_t TIMED_OUT_HASH = ConstExprHashingUtils::HashString("TIMED_OUT");
 
 
         CloseStatus GetCloseStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPLETED_HASH)
           {
             return CloseStatus::COMPLETED;

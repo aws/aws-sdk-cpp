@@ -20,16 +20,16 @@ namespace Aws
       namespace WorkflowStateMapper
       {
 
-        static const int NEW__HASH = HashingUtils::HashString("NEW");
-        static const int ASSIGNED_HASH = HashingUtils::HashString("ASSIGNED");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int DEFERRED_HASH = HashingUtils::HashString("DEFERRED");
-        static const int RESOLVED_HASH = HashingUtils::HashString("RESOLVED");
+        static constexpr uint32_t NEW__HASH = ConstExprHashingUtils::HashString("NEW");
+        static constexpr uint32_t ASSIGNED_HASH = ConstExprHashingUtils::HashString("ASSIGNED");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t DEFERRED_HASH = ConstExprHashingUtils::HashString("DEFERRED");
+        static constexpr uint32_t RESOLVED_HASH = ConstExprHashingUtils::HashString("RESOLVED");
 
 
         WorkflowState GetWorkflowStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NEW__HASH)
           {
             return WorkflowState::NEW_;

@@ -20,15 +20,15 @@ namespace Aws
       namespace ShareResourceTypeMapper
       {
 
-        static const int WORKLOAD_HASH = HashingUtils::HashString("WORKLOAD");
-        static const int LENS_HASH = HashingUtils::HashString("LENS");
-        static const int PROFILE_HASH = HashingUtils::HashString("PROFILE");
-        static const int TEMPLATE_HASH = HashingUtils::HashString("TEMPLATE");
+        static constexpr uint32_t WORKLOAD_HASH = ConstExprHashingUtils::HashString("WORKLOAD");
+        static constexpr uint32_t LENS_HASH = ConstExprHashingUtils::HashString("LENS");
+        static constexpr uint32_t PROFILE_HASH = ConstExprHashingUtils::HashString("PROFILE");
+        static constexpr uint32_t TEMPLATE_HASH = ConstExprHashingUtils::HashString("TEMPLATE");
 
 
         ShareResourceType GetShareResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WORKLOAD_HASH)
           {
             return ShareResourceType::WORKLOAD;

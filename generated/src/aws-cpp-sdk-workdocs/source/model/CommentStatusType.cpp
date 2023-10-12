@@ -20,14 +20,14 @@ namespace Aws
       namespace CommentStatusTypeMapper
       {
 
-        static const int DRAFT_HASH = HashingUtils::HashString("DRAFT");
-        static const int PUBLISHED_HASH = HashingUtils::HashString("PUBLISHED");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t DRAFT_HASH = ConstExprHashingUtils::HashString("DRAFT");
+        static constexpr uint32_t PUBLISHED_HASH = ConstExprHashingUtils::HashString("PUBLISHED");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         CommentStatusType GetCommentStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DRAFT_HASH)
           {
             return CommentStatusType::DRAFT;

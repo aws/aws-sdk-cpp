@@ -18,13 +18,13 @@ namespace MarketplaceEntitlementService
 namespace MarketplaceEntitlementServiceErrorMapper
 {
 
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("InternalServiceErrorException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t INTERNAL_SERVICE_ERROR_HASH = ConstExprHashingUtils::HashString("InternalServiceErrorException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INVALID_PARAMETER_HASH)
   {

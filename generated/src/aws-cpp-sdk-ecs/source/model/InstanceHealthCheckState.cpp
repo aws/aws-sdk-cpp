@@ -20,15 +20,15 @@ namespace Aws
       namespace InstanceHealthCheckStateMapper
       {
 
-        static const int OK_HASH = HashingUtils::HashString("OK");
-        static const int IMPAIRED_HASH = HashingUtils::HashString("IMPAIRED");
-        static const int INSUFFICIENT_DATA_HASH = HashingUtils::HashString("INSUFFICIENT_DATA");
-        static const int INITIALIZING_HASH = HashingUtils::HashString("INITIALIZING");
+        static constexpr uint32_t OK_HASH = ConstExprHashingUtils::HashString("OK");
+        static constexpr uint32_t IMPAIRED_HASH = ConstExprHashingUtils::HashString("IMPAIRED");
+        static constexpr uint32_t INSUFFICIENT_DATA_HASH = ConstExprHashingUtils::HashString("INSUFFICIENT_DATA");
+        static constexpr uint32_t INITIALIZING_HASH = ConstExprHashingUtils::HashString("INITIALIZING");
 
 
         InstanceHealthCheckState GetInstanceHealthCheckStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OK_HASH)
           {
             return InstanceHealthCheckState::OK;

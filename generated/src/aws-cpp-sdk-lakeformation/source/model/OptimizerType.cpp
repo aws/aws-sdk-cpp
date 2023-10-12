@@ -20,14 +20,14 @@ namespace Aws
       namespace OptimizerTypeMapper
       {
 
-        static const int COMPACTION_HASH = HashingUtils::HashString("COMPACTION");
-        static const int GARBAGE_COLLECTION_HASH = HashingUtils::HashString("GARBAGE_COLLECTION");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t COMPACTION_HASH = ConstExprHashingUtils::HashString("COMPACTION");
+        static constexpr uint32_t GARBAGE_COLLECTION_HASH = ConstExprHashingUtils::HashString("GARBAGE_COLLECTION");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         OptimizerType GetOptimizerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPACTION_HASH)
           {
             return OptimizerType::COMPACTION;

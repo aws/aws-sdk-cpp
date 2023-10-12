@@ -20,13 +20,13 @@ namespace Aws
       namespace AppNetworkAccessTypeMapper
       {
 
-        static const int PublicInternetOnly_HASH = HashingUtils::HashString("PublicInternetOnly");
-        static const int VpcOnly_HASH = HashingUtils::HashString("VpcOnly");
+        static constexpr uint32_t PublicInternetOnly_HASH = ConstExprHashingUtils::HashString("PublicInternetOnly");
+        static constexpr uint32_t VpcOnly_HASH = ConstExprHashingUtils::HashString("VpcOnly");
 
 
         AppNetworkAccessType GetAppNetworkAccessTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PublicInternetOnly_HASH)
           {
             return AppNetworkAccessType::PublicInternetOnly;

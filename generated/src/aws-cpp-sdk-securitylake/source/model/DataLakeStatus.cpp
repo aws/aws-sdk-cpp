@@ -20,15 +20,15 @@ namespace Aws
       namespace DataLakeStatusMapper
       {
 
-        static const int INITIALIZED_HASH = HashingUtils::HashString("INITIALIZED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t INITIALIZED_HASH = ConstExprHashingUtils::HashString("INITIALIZED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         DataLakeStatus GetDataLakeStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INITIALIZED_HASH)
           {
             return DataLakeStatus::INITIALIZED;

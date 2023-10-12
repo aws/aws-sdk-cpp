@@ -20,13 +20,13 @@ namespace Aws
       namespace ParquetWriterVersionMapper
       {
 
-        static const int V1_HASH = HashingUtils::HashString("V1");
-        static const int V2_HASH = HashingUtils::HashString("V2");
+        static constexpr uint32_t V1_HASH = ConstExprHashingUtils::HashString("V1");
+        static constexpr uint32_t V2_HASH = ConstExprHashingUtils::HashString("V2");
 
 
         ParquetWriterVersion GetParquetWriterVersionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == V1_HASH)
           {
             return ParquetWriterVersion::V1;

@@ -20,13 +20,13 @@ namespace Aws
       namespace AccessDeniedExceptionReasonMapper
       {
 
-        static const int UNAUTHORIZED_ACCOUNT_HASH = HashingUtils::HashString("UNAUTHORIZED_ACCOUNT");
-        static const int DEPENDENCY_ACCESS_DENIED_HASH = HashingUtils::HashString("DEPENDENCY_ACCESS_DENIED");
+        static constexpr uint32_t UNAUTHORIZED_ACCOUNT_HASH = ConstExprHashingUtils::HashString("UNAUTHORIZED_ACCOUNT");
+        static constexpr uint32_t DEPENDENCY_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("DEPENDENCY_ACCESS_DENIED");
 
 
         AccessDeniedExceptionReason GetAccessDeniedExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNAUTHORIZED_ACCOUNT_HASH)
           {
             return AccessDeniedExceptionReason::UNAUTHORIZED_ACCOUNT;

@@ -20,12 +20,12 @@ namespace Aws
       namespace ResourceDataSyncS3FormatMapper
       {
 
-        static const int JsonSerDe_HASH = HashingUtils::HashString("JsonSerDe");
+        static constexpr uint32_t JsonSerDe_HASH = ConstExprHashingUtils::HashString("JsonSerDe");
 
 
         ResourceDataSyncS3Format GetResourceDataSyncS3FormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JsonSerDe_HASH)
           {
             return ResourceDataSyncS3Format::JsonSerDe;

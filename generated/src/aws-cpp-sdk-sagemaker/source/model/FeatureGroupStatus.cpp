@@ -20,16 +20,16 @@ namespace Aws
       namespace FeatureGroupStatusMapper
       {
 
-        static const int Creating_HASH = HashingUtils::HashString("Creating");
-        static const int Created_HASH = HashingUtils::HashString("Created");
-        static const int CreateFailed_HASH = HashingUtils::HashString("CreateFailed");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
-        static const int DeleteFailed_HASH = HashingUtils::HashString("DeleteFailed");
+        static constexpr uint32_t Creating_HASH = ConstExprHashingUtils::HashString("Creating");
+        static constexpr uint32_t Created_HASH = ConstExprHashingUtils::HashString("Created");
+        static constexpr uint32_t CreateFailed_HASH = ConstExprHashingUtils::HashString("CreateFailed");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
+        static constexpr uint32_t DeleteFailed_HASH = ConstExprHashingUtils::HashString("DeleteFailed");
 
 
         FeatureGroupStatus GetFeatureGroupStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Creating_HASH)
           {
             return FeatureGroupStatus::Creating;

@@ -20,12 +20,12 @@ namespace Aws
       namespace LicenseNameMapper
       {
 
-        static const int SQLServer_HASH = HashingUtils::HashString("SQLServer");
+        static constexpr uint32_t SQLServer_HASH = ConstExprHashingUtils::HashString("SQLServer");
 
 
         LicenseName GetLicenseNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SQLServer_HASH)
           {
             return LicenseName::SQLServer;

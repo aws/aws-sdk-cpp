@@ -20,13 +20,13 @@ namespace Aws
       namespace OAuth2CustomPropTypeMapper
       {
 
-        static const int TOKEN_URL_HASH = HashingUtils::HashString("TOKEN_URL");
-        static const int AUTH_URL_HASH = HashingUtils::HashString("AUTH_URL");
+        static constexpr uint32_t TOKEN_URL_HASH = ConstExprHashingUtils::HashString("TOKEN_URL");
+        static constexpr uint32_t AUTH_URL_HASH = ConstExprHashingUtils::HashString("AUTH_URL");
 
 
         OAuth2CustomPropType GetOAuth2CustomPropTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TOKEN_URL_HASH)
           {
             return OAuth2CustomPropType::TOKEN_URL;

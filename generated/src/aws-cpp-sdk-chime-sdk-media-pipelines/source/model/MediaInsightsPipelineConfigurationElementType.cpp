@@ -20,20 +20,20 @@ namespace Aws
       namespace MediaInsightsPipelineConfigurationElementTypeMapper
       {
 
-        static const int AmazonTranscribeCallAnalyticsProcessor_HASH = HashingUtils::HashString("AmazonTranscribeCallAnalyticsProcessor");
-        static const int VoiceAnalyticsProcessor_HASH = HashingUtils::HashString("VoiceAnalyticsProcessor");
-        static const int AmazonTranscribeProcessor_HASH = HashingUtils::HashString("AmazonTranscribeProcessor");
-        static const int KinesisDataStreamSink_HASH = HashingUtils::HashString("KinesisDataStreamSink");
-        static const int LambdaFunctionSink_HASH = HashingUtils::HashString("LambdaFunctionSink");
-        static const int SqsQueueSink_HASH = HashingUtils::HashString("SqsQueueSink");
-        static const int SnsTopicSink_HASH = HashingUtils::HashString("SnsTopicSink");
-        static const int S3RecordingSink_HASH = HashingUtils::HashString("S3RecordingSink");
-        static const int VoiceEnhancementSink_HASH = HashingUtils::HashString("VoiceEnhancementSink");
+        static constexpr uint32_t AmazonTranscribeCallAnalyticsProcessor_HASH = ConstExprHashingUtils::HashString("AmazonTranscribeCallAnalyticsProcessor");
+        static constexpr uint32_t VoiceAnalyticsProcessor_HASH = ConstExprHashingUtils::HashString("VoiceAnalyticsProcessor");
+        static constexpr uint32_t AmazonTranscribeProcessor_HASH = ConstExprHashingUtils::HashString("AmazonTranscribeProcessor");
+        static constexpr uint32_t KinesisDataStreamSink_HASH = ConstExprHashingUtils::HashString("KinesisDataStreamSink");
+        static constexpr uint32_t LambdaFunctionSink_HASH = ConstExprHashingUtils::HashString("LambdaFunctionSink");
+        static constexpr uint32_t SqsQueueSink_HASH = ConstExprHashingUtils::HashString("SqsQueueSink");
+        static constexpr uint32_t SnsTopicSink_HASH = ConstExprHashingUtils::HashString("SnsTopicSink");
+        static constexpr uint32_t S3RecordingSink_HASH = ConstExprHashingUtils::HashString("S3RecordingSink");
+        static constexpr uint32_t VoiceEnhancementSink_HASH = ConstExprHashingUtils::HashString("VoiceEnhancementSink");
 
 
         MediaInsightsPipelineConfigurationElementType GetMediaInsightsPipelineConfigurationElementTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AmazonTranscribeCallAnalyticsProcessor_HASH)
           {
             return MediaInsightsPipelineConfigurationElementType::AmazonTranscribeCallAnalyticsProcessor;

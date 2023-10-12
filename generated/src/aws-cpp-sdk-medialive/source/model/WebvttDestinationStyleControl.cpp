@@ -20,13 +20,13 @@ namespace Aws
       namespace WebvttDestinationStyleControlMapper
       {
 
-        static const int NO_STYLE_DATA_HASH = HashingUtils::HashString("NO_STYLE_DATA");
-        static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
+        static constexpr uint32_t NO_STYLE_DATA_HASH = ConstExprHashingUtils::HashString("NO_STYLE_DATA");
+        static constexpr uint32_t PASSTHROUGH_HASH = ConstExprHashingUtils::HashString("PASSTHROUGH");
 
 
         WebvttDestinationStyleControl GetWebvttDestinationStyleControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_STYLE_DATA_HASH)
           {
             return WebvttDestinationStyleControl::NO_STYLE_DATA;

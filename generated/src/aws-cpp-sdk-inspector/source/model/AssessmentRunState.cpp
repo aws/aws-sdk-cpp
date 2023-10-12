@@ -20,24 +20,24 @@ namespace Aws
       namespace AssessmentRunStateMapper
       {
 
-        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
-        static const int START_DATA_COLLECTION_PENDING_HASH = HashingUtils::HashString("START_DATA_COLLECTION_PENDING");
-        static const int START_DATA_COLLECTION_IN_PROGRESS_HASH = HashingUtils::HashString("START_DATA_COLLECTION_IN_PROGRESS");
-        static const int COLLECTING_DATA_HASH = HashingUtils::HashString("COLLECTING_DATA");
-        static const int STOP_DATA_COLLECTION_PENDING_HASH = HashingUtils::HashString("STOP_DATA_COLLECTION_PENDING");
-        static const int DATA_COLLECTED_HASH = HashingUtils::HashString("DATA_COLLECTED");
-        static const int START_EVALUATING_RULES_PENDING_HASH = HashingUtils::HashString("START_EVALUATING_RULES_PENDING");
-        static const int EVALUATING_RULES_HASH = HashingUtils::HashString("EVALUATING_RULES");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int COMPLETED_WITH_ERRORS_HASH = HashingUtils::HashString("COMPLETED_WITH_ERRORS");
-        static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
+        static constexpr uint32_t CREATED_HASH = ConstExprHashingUtils::HashString("CREATED");
+        static constexpr uint32_t START_DATA_COLLECTION_PENDING_HASH = ConstExprHashingUtils::HashString("START_DATA_COLLECTION_PENDING");
+        static constexpr uint32_t START_DATA_COLLECTION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("START_DATA_COLLECTION_IN_PROGRESS");
+        static constexpr uint32_t COLLECTING_DATA_HASH = ConstExprHashingUtils::HashString("COLLECTING_DATA");
+        static constexpr uint32_t STOP_DATA_COLLECTION_PENDING_HASH = ConstExprHashingUtils::HashString("STOP_DATA_COLLECTION_PENDING");
+        static constexpr uint32_t DATA_COLLECTED_HASH = ConstExprHashingUtils::HashString("DATA_COLLECTED");
+        static constexpr uint32_t START_EVALUATING_RULES_PENDING_HASH = ConstExprHashingUtils::HashString("START_EVALUATING_RULES_PENDING");
+        static constexpr uint32_t EVALUATING_RULES_HASH = ConstExprHashingUtils::HashString("EVALUATING_RULES");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t COMPLETED_WITH_ERRORS_HASH = ConstExprHashingUtils::HashString("COMPLETED_WITH_ERRORS");
+        static constexpr uint32_t CANCELED_HASH = ConstExprHashingUtils::HashString("CANCELED");
 
 
         AssessmentRunState GetAssessmentRunStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATED_HASH)
           {
             return AssessmentRunState::CREATED;

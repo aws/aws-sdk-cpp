@@ -20,14 +20,14 @@ namespace Aws
       namespace QualityMapper
       {
 
-        static const int GOOD_HASH = HashingUtils::HashString("GOOD");
-        static const int BAD_HASH = HashingUtils::HashString("BAD");
-        static const int UNCERTAIN_HASH = HashingUtils::HashString("UNCERTAIN");
+        static constexpr uint32_t GOOD_HASH = ConstExprHashingUtils::HashString("GOOD");
+        static constexpr uint32_t BAD_HASH = ConstExprHashingUtils::HashString("BAD");
+        static constexpr uint32_t UNCERTAIN_HASH = ConstExprHashingUtils::HashString("UNCERTAIN");
 
 
         Quality GetQualityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GOOD_HASH)
           {
             return Quality::GOOD;

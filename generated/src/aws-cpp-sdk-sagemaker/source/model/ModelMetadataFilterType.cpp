@@ -20,15 +20,15 @@ namespace Aws
       namespace ModelMetadataFilterTypeMapper
       {
 
-        static const int Domain_HASH = HashingUtils::HashString("Domain");
-        static const int Framework_HASH = HashingUtils::HashString("Framework");
-        static const int Task_HASH = HashingUtils::HashString("Task");
-        static const int FrameworkVersion_HASH = HashingUtils::HashString("FrameworkVersion");
+        static constexpr uint32_t Domain_HASH = ConstExprHashingUtils::HashString("Domain");
+        static constexpr uint32_t Framework_HASH = ConstExprHashingUtils::HashString("Framework");
+        static constexpr uint32_t Task_HASH = ConstExprHashingUtils::HashString("Task");
+        static constexpr uint32_t FrameworkVersion_HASH = ConstExprHashingUtils::HashString("FrameworkVersion");
 
 
         ModelMetadataFilterType GetModelMetadataFilterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Domain_HASH)
           {
             return ModelMetadataFilterType::Domain;

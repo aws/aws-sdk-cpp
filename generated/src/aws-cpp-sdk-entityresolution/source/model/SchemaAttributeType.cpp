@@ -20,30 +20,30 @@ namespace Aws
       namespace SchemaAttributeTypeMapper
       {
 
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int NAME_FIRST_HASH = HashingUtils::HashString("NAME_FIRST");
-        static const int NAME_MIDDLE_HASH = HashingUtils::HashString("NAME_MIDDLE");
-        static const int NAME_LAST_HASH = HashingUtils::HashString("NAME_LAST");
-        static const int ADDRESS_HASH = HashingUtils::HashString("ADDRESS");
-        static const int ADDRESS_STREET1_HASH = HashingUtils::HashString("ADDRESS_STREET1");
-        static const int ADDRESS_STREET2_HASH = HashingUtils::HashString("ADDRESS_STREET2");
-        static const int ADDRESS_STREET3_HASH = HashingUtils::HashString("ADDRESS_STREET3");
-        static const int ADDRESS_CITY_HASH = HashingUtils::HashString("ADDRESS_CITY");
-        static const int ADDRESS_STATE_HASH = HashingUtils::HashString("ADDRESS_STATE");
-        static const int ADDRESS_COUNTRY_HASH = HashingUtils::HashString("ADDRESS_COUNTRY");
-        static const int ADDRESS_POSTALCODE_HASH = HashingUtils::HashString("ADDRESS_POSTALCODE");
-        static const int PHONE_HASH = HashingUtils::HashString("PHONE");
-        static const int PHONE_NUMBER_HASH = HashingUtils::HashString("PHONE_NUMBER");
-        static const int PHONE_COUNTRYCODE_HASH = HashingUtils::HashString("PHONE_COUNTRYCODE");
-        static const int EMAIL_ADDRESS_HASH = HashingUtils::HashString("EMAIL_ADDRESS");
-        static const int UNIQUE_ID_HASH = HashingUtils::HashString("UNIQUE_ID");
-        static const int DATE_HASH = HashingUtils::HashString("DATE");
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t NAME_FIRST_HASH = ConstExprHashingUtils::HashString("NAME_FIRST");
+        static constexpr uint32_t NAME_MIDDLE_HASH = ConstExprHashingUtils::HashString("NAME_MIDDLE");
+        static constexpr uint32_t NAME_LAST_HASH = ConstExprHashingUtils::HashString("NAME_LAST");
+        static constexpr uint32_t ADDRESS_HASH = ConstExprHashingUtils::HashString("ADDRESS");
+        static constexpr uint32_t ADDRESS_STREET1_HASH = ConstExprHashingUtils::HashString("ADDRESS_STREET1");
+        static constexpr uint32_t ADDRESS_STREET2_HASH = ConstExprHashingUtils::HashString("ADDRESS_STREET2");
+        static constexpr uint32_t ADDRESS_STREET3_HASH = ConstExprHashingUtils::HashString("ADDRESS_STREET3");
+        static constexpr uint32_t ADDRESS_CITY_HASH = ConstExprHashingUtils::HashString("ADDRESS_CITY");
+        static constexpr uint32_t ADDRESS_STATE_HASH = ConstExprHashingUtils::HashString("ADDRESS_STATE");
+        static constexpr uint32_t ADDRESS_COUNTRY_HASH = ConstExprHashingUtils::HashString("ADDRESS_COUNTRY");
+        static constexpr uint32_t ADDRESS_POSTALCODE_HASH = ConstExprHashingUtils::HashString("ADDRESS_POSTALCODE");
+        static constexpr uint32_t PHONE_HASH = ConstExprHashingUtils::HashString("PHONE");
+        static constexpr uint32_t PHONE_NUMBER_HASH = ConstExprHashingUtils::HashString("PHONE_NUMBER");
+        static constexpr uint32_t PHONE_COUNTRYCODE_HASH = ConstExprHashingUtils::HashString("PHONE_COUNTRYCODE");
+        static constexpr uint32_t EMAIL_ADDRESS_HASH = ConstExprHashingUtils::HashString("EMAIL_ADDRESS");
+        static constexpr uint32_t UNIQUE_ID_HASH = ConstExprHashingUtils::HashString("UNIQUE_ID");
+        static constexpr uint32_t DATE_HASH = ConstExprHashingUtils::HashString("DATE");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
 
 
         SchemaAttributeType GetSchemaAttributeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NAME_HASH)
           {
             return SchemaAttributeType::NAME;

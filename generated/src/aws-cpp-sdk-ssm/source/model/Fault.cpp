@@ -20,14 +20,14 @@ namespace Aws
       namespace FaultMapper
       {
 
-        static const int Client_HASH = HashingUtils::HashString("Client");
-        static const int Server_HASH = HashingUtils::HashString("Server");
-        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
+        static constexpr uint32_t Client_HASH = ConstExprHashingUtils::HashString("Client");
+        static constexpr uint32_t Server_HASH = ConstExprHashingUtils::HashString("Server");
+        static constexpr uint32_t Unknown_HASH = ConstExprHashingUtils::HashString("Unknown");
 
 
         Fault GetFaultForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Client_HASH)
           {
             return Fault::Client;

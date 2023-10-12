@@ -20,13 +20,13 @@ namespace Aws
       namespace AssemblyTypeMapper
       {
 
-        static const int None_HASH = HashingUtils::HashString("None");
-        static const int Line_HASH = HashingUtils::HashString("Line");
+        static constexpr uint32_t None_HASH = ConstExprHashingUtils::HashString("None");
+        static constexpr uint32_t Line_HASH = ConstExprHashingUtils::HashString("Line");
 
 
         AssemblyType GetAssemblyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == None_HASH)
           {
             return AssemblyType::None;

@@ -33,40 +33,40 @@ template<> AWS_DYNAMODB_API TransactionCanceledException DynamoDBError::GetModel
 namespace DynamoDBErrorMapper
 {
 
-static const int CONDITIONAL_CHECK_FAILED_HASH = HashingUtils::HashString("ConditionalCheckFailedException");
-static const int TRANSACTION_CANCELED_HASH = HashingUtils::HashString("TransactionCanceledException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int REPLICA_ALREADY_EXISTS_HASH = HashingUtils::HashString("ReplicaAlreadyExistsException");
-static const int TRANSACTION_CONFLICT_HASH = HashingUtils::HashString("TransactionConflictException");
-static const int REPLICA_NOT_FOUND_HASH = HashingUtils::HashString("ReplicaNotFoundException");
-static const int IMPORT_CONFLICT_HASH = HashingUtils::HashString("ImportConflictException");
-static const int TABLE_NOT_FOUND_HASH = HashingUtils::HashString("TableNotFoundException");
-static const int EXPORT_NOT_FOUND_HASH = HashingUtils::HashString("ExportNotFoundException");
-static const int TRANSACTION_IN_PROGRESS_HASH = HashingUtils::HashString("TransactionInProgressException");
-static const int BACKUP_IN_USE_HASH = HashingUtils::HashString("BackupInUseException");
-static const int CONTINUOUS_BACKUPS_UNAVAILABLE_HASH = HashingUtils::HashString("ContinuousBackupsUnavailableException");
-static const int TABLE_IN_USE_HASH = HashingUtils::HashString("TableInUseException");
-static const int PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("ProvisionedThroughputExceededException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int INVALID_RESTORE_TIME_HASH = HashingUtils::HashString("InvalidRestoreTimeException");
-static const int ITEM_COLLECTION_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ItemCollectionSizeLimitExceededException");
-static const int BACKUP_NOT_FOUND_HASH = HashingUtils::HashString("BackupNotFoundException");
-static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
-static const int POINT_IN_TIME_RECOVERY_UNAVAILABLE_HASH = HashingUtils::HashString("PointInTimeRecoveryUnavailableException");
-static const int TABLE_ALREADY_EXISTS_HASH = HashingUtils::HashString("TableAlreadyExistsException");
-static const int EXPORT_CONFLICT_HASH = HashingUtils::HashString("ExportConflictException");
-static const int GLOBAL_TABLE_ALREADY_EXISTS_HASH = HashingUtils::HashString("GlobalTableAlreadyExistsException");
-static const int INVALID_EXPORT_TIME_HASH = HashingUtils::HashString("InvalidExportTimeException");
-static const int REQUEST_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("RequestLimitExceeded");
-static const int IMPORT_NOT_FOUND_HASH = HashingUtils::HashString("ImportNotFoundException");
-static const int GLOBAL_TABLE_NOT_FOUND_HASH = HashingUtils::HashString("GlobalTableNotFoundException");
-static const int DUPLICATE_ITEM_HASH = HashingUtils::HashString("DuplicateItemException");
-static const int INDEX_NOT_FOUND_HASH = HashingUtils::HashString("IndexNotFoundException");
+static constexpr uint32_t CONDITIONAL_CHECK_FAILED_HASH = ConstExprHashingUtils::HashString("ConditionalCheckFailedException");
+static constexpr uint32_t TRANSACTION_CANCELED_HASH = ConstExprHashingUtils::HashString("TransactionCanceledException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t REPLICA_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ReplicaAlreadyExistsException");
+static constexpr uint32_t TRANSACTION_CONFLICT_HASH = ConstExprHashingUtils::HashString("TransactionConflictException");
+static constexpr uint32_t REPLICA_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ReplicaNotFoundException");
+static constexpr uint32_t IMPORT_CONFLICT_HASH = ConstExprHashingUtils::HashString("ImportConflictException");
+static constexpr uint32_t TABLE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("TableNotFoundException");
+static constexpr uint32_t EXPORT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ExportNotFoundException");
+static constexpr uint32_t TRANSACTION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("TransactionInProgressException");
+static constexpr uint32_t BACKUP_IN_USE_HASH = ConstExprHashingUtils::HashString("BackupInUseException");
+static constexpr uint32_t CONTINUOUS_BACKUPS_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("ContinuousBackupsUnavailableException");
+static constexpr uint32_t TABLE_IN_USE_HASH = ConstExprHashingUtils::HashString("TableInUseException");
+static constexpr uint32_t PROVISIONED_THROUGHPUT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ProvisionedThroughputExceededException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t INVALID_RESTORE_TIME_HASH = ConstExprHashingUtils::HashString("InvalidRestoreTimeException");
+static constexpr uint32_t ITEM_COLLECTION_SIZE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ItemCollectionSizeLimitExceededException");
+static constexpr uint32_t BACKUP_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("BackupNotFoundException");
+static constexpr uint32_t IDEMPOTENT_PARAMETER_MISMATCH_HASH = ConstExprHashingUtils::HashString("IdempotentParameterMismatchException");
+static constexpr uint32_t POINT_IN_TIME_RECOVERY_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("PointInTimeRecoveryUnavailableException");
+static constexpr uint32_t TABLE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("TableAlreadyExistsException");
+static constexpr uint32_t EXPORT_CONFLICT_HASH = ConstExprHashingUtils::HashString("ExportConflictException");
+static constexpr uint32_t GLOBAL_TABLE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("GlobalTableAlreadyExistsException");
+static constexpr uint32_t INVALID_EXPORT_TIME_HASH = ConstExprHashingUtils::HashString("InvalidExportTimeException");
+static constexpr uint32_t REQUEST_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("RequestLimitExceeded");
+static constexpr uint32_t IMPORT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ImportNotFoundException");
+static constexpr uint32_t GLOBAL_TABLE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("GlobalTableNotFoundException");
+static constexpr uint32_t DUPLICATE_ITEM_HASH = ConstExprHashingUtils::HashString("DuplicateItemException");
+static constexpr uint32_t INDEX_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("IndexNotFoundException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONDITIONAL_CHECK_FAILED_HASH)
   {

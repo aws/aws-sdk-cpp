@@ -20,15 +20,15 @@ namespace Aws
       namespace KeyMaterialTypeMapper
       {
 
-        static const int TR34_KEY_BLOCK_HASH = HashingUtils::HashString("TR34_KEY_BLOCK");
-        static const int TR31_KEY_BLOCK_HASH = HashingUtils::HashString("TR31_KEY_BLOCK");
-        static const int ROOT_PUBLIC_KEY_CERTIFICATE_HASH = HashingUtils::HashString("ROOT_PUBLIC_KEY_CERTIFICATE");
-        static const int TRUSTED_PUBLIC_KEY_CERTIFICATE_HASH = HashingUtils::HashString("TRUSTED_PUBLIC_KEY_CERTIFICATE");
+        static constexpr uint32_t TR34_KEY_BLOCK_HASH = ConstExprHashingUtils::HashString("TR34_KEY_BLOCK");
+        static constexpr uint32_t TR31_KEY_BLOCK_HASH = ConstExprHashingUtils::HashString("TR31_KEY_BLOCK");
+        static constexpr uint32_t ROOT_PUBLIC_KEY_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("ROOT_PUBLIC_KEY_CERTIFICATE");
+        static constexpr uint32_t TRUSTED_PUBLIC_KEY_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("TRUSTED_PUBLIC_KEY_CERTIFICATE");
 
 
         KeyMaterialType GetKeyMaterialTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TR34_KEY_BLOCK_HASH)
           {
             return KeyMaterialType::TR34_KEY_BLOCK;

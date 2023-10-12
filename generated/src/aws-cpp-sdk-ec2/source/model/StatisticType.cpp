@@ -20,12 +20,12 @@ namespace Aws
       namespace StatisticTypeMapper
       {
 
-        static const int p50_HASH = HashingUtils::HashString("p50");
+        static constexpr uint32_t p50_HASH = ConstExprHashingUtils::HashString("p50");
 
 
         StatisticType GetStatisticTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == p50_HASH)
           {
             return StatisticType::p50;

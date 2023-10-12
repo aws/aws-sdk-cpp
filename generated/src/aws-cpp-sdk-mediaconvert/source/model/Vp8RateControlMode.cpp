@@ -20,12 +20,12 @@ namespace Aws
       namespace Vp8RateControlModeMapper
       {
 
-        static const int VBR_HASH = HashingUtils::HashString("VBR");
+        static constexpr uint32_t VBR_HASH = ConstExprHashingUtils::HashString("VBR");
 
 
         Vp8RateControlMode GetVp8RateControlModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VBR_HASH)
           {
             return Vp8RateControlMode::VBR;

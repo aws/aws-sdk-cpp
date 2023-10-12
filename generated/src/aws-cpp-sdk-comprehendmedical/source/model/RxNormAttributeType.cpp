@@ -20,18 +20,18 @@ namespace Aws
       namespace RxNormAttributeTypeMapper
       {
 
-        static const int DOSAGE_HASH = HashingUtils::HashString("DOSAGE");
-        static const int DURATION_HASH = HashingUtils::HashString("DURATION");
-        static const int FORM_HASH = HashingUtils::HashString("FORM");
-        static const int FREQUENCY_HASH = HashingUtils::HashString("FREQUENCY");
-        static const int RATE_HASH = HashingUtils::HashString("RATE");
-        static const int ROUTE_OR_MODE_HASH = HashingUtils::HashString("ROUTE_OR_MODE");
-        static const int STRENGTH_HASH = HashingUtils::HashString("STRENGTH");
+        static constexpr uint32_t DOSAGE_HASH = ConstExprHashingUtils::HashString("DOSAGE");
+        static constexpr uint32_t DURATION_HASH = ConstExprHashingUtils::HashString("DURATION");
+        static constexpr uint32_t FORM_HASH = ConstExprHashingUtils::HashString("FORM");
+        static constexpr uint32_t FREQUENCY_HASH = ConstExprHashingUtils::HashString("FREQUENCY");
+        static constexpr uint32_t RATE_HASH = ConstExprHashingUtils::HashString("RATE");
+        static constexpr uint32_t ROUTE_OR_MODE_HASH = ConstExprHashingUtils::HashString("ROUTE_OR_MODE");
+        static constexpr uint32_t STRENGTH_HASH = ConstExprHashingUtils::HashString("STRENGTH");
 
 
         RxNormAttributeType GetRxNormAttributeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DOSAGE_HASH)
           {
             return RxNormAttributeType::DOSAGE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ProcessingS3UploadModeMapper
       {
 
-        static const int Continuous_HASH = HashingUtils::HashString("Continuous");
-        static const int EndOfJob_HASH = HashingUtils::HashString("EndOfJob");
+        static constexpr uint32_t Continuous_HASH = ConstExprHashingUtils::HashString("Continuous");
+        static constexpr uint32_t EndOfJob_HASH = ConstExprHashingUtils::HashString("EndOfJob");
 
 
         ProcessingS3UploadMode GetProcessingS3UploadModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Continuous_HASH)
           {
             return ProcessingS3UploadMode::Continuous;

@@ -20,13 +20,13 @@ namespace Aws
       namespace DeploymentWaitTypeMapper
       {
 
-        static const int READY_WAIT_HASH = HashingUtils::HashString("READY_WAIT");
-        static const int TERMINATION_WAIT_HASH = HashingUtils::HashString("TERMINATION_WAIT");
+        static constexpr uint32_t READY_WAIT_HASH = ConstExprHashingUtils::HashString("READY_WAIT");
+        static constexpr uint32_t TERMINATION_WAIT_HASH = ConstExprHashingUtils::HashString("TERMINATION_WAIT");
 
 
         DeploymentWaitType GetDeploymentWaitTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == READY_WAIT_HASH)
           {
             return DeploymentWaitType::READY_WAIT;

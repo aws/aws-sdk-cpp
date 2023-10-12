@@ -20,13 +20,13 @@ namespace Aws
       namespace RouteTypeMapper
       {
 
-        static const int PROPAGATED_HASH = HashingUtils::HashString("PROPAGATED");
-        static const int STATIC__HASH = HashingUtils::HashString("STATIC");
+        static constexpr uint32_t PROPAGATED_HASH = ConstExprHashingUtils::HashString("PROPAGATED");
+        static constexpr uint32_t STATIC__HASH = ConstExprHashingUtils::HashString("STATIC");
 
 
         RouteType GetRouteTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROPAGATED_HASH)
           {
             return RouteType::PROPAGATED;

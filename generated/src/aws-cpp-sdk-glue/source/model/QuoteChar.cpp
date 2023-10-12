@@ -20,15 +20,15 @@ namespace Aws
       namespace QuoteCharMapper
       {
 
-        static const int quote_HASH = HashingUtils::HashString("quote");
-        static const int quillemet_HASH = HashingUtils::HashString("quillemet");
-        static const int single_quote_HASH = HashingUtils::HashString("single_quote");
-        static const int disabled_HASH = HashingUtils::HashString("disabled");
+        static constexpr uint32_t quote_HASH = ConstExprHashingUtils::HashString("quote");
+        static constexpr uint32_t quillemet_HASH = ConstExprHashingUtils::HashString("quillemet");
+        static constexpr uint32_t single_quote_HASH = ConstExprHashingUtils::HashString("single_quote");
+        static constexpr uint32_t disabled_HASH = ConstExprHashingUtils::HashString("disabled");
 
 
         QuoteChar GetQuoteCharForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == quote_HASH)
           {
             return QuoteChar::quote;

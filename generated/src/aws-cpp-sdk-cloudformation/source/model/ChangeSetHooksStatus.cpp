@@ -20,14 +20,14 @@ namespace Aws
       namespace ChangeSetHooksStatusMapper
       {
 
-        static const int PLANNING_HASH = HashingUtils::HashString("PLANNING");
-        static const int PLANNED_HASH = HashingUtils::HashString("PLANNED");
-        static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
+        static constexpr uint32_t PLANNING_HASH = ConstExprHashingUtils::HashString("PLANNING");
+        static constexpr uint32_t PLANNED_HASH = ConstExprHashingUtils::HashString("PLANNED");
+        static constexpr uint32_t UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("UNAVAILABLE");
 
 
         ChangeSetHooksStatus GetChangeSetHooksStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PLANNING_HASH)
           {
             return ChangeSetHooksStatus::PLANNING;

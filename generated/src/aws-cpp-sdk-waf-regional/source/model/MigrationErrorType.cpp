@@ -20,18 +20,18 @@ namespace Aws
       namespace MigrationErrorTypeMapper
       {
 
-        static const int ENTITY_NOT_SUPPORTED_HASH = HashingUtils::HashString("ENTITY_NOT_SUPPORTED");
-        static const int ENTITY_NOT_FOUND_HASH = HashingUtils::HashString("ENTITY_NOT_FOUND");
-        static const int S3_BUCKET_NO_PERMISSION_HASH = HashingUtils::HashString("S3_BUCKET_NO_PERMISSION");
-        static const int S3_BUCKET_NOT_ACCESSIBLE_HASH = HashingUtils::HashString("S3_BUCKET_NOT_ACCESSIBLE");
-        static const int S3_BUCKET_NOT_FOUND_HASH = HashingUtils::HashString("S3_BUCKET_NOT_FOUND");
-        static const int S3_BUCKET_INVALID_REGION_HASH = HashingUtils::HashString("S3_BUCKET_INVALID_REGION");
-        static const int S3_INTERNAL_ERROR_HASH = HashingUtils::HashString("S3_INTERNAL_ERROR");
+        static constexpr uint32_t ENTITY_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("ENTITY_NOT_SUPPORTED");
+        static constexpr uint32_t ENTITY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ENTITY_NOT_FOUND");
+        static constexpr uint32_t S3_BUCKET_NO_PERMISSION_HASH = ConstExprHashingUtils::HashString("S3_BUCKET_NO_PERMISSION");
+        static constexpr uint32_t S3_BUCKET_NOT_ACCESSIBLE_HASH = ConstExprHashingUtils::HashString("S3_BUCKET_NOT_ACCESSIBLE");
+        static constexpr uint32_t S3_BUCKET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("S3_BUCKET_NOT_FOUND");
+        static constexpr uint32_t S3_BUCKET_INVALID_REGION_HASH = ConstExprHashingUtils::HashString("S3_BUCKET_INVALID_REGION");
+        static constexpr uint32_t S3_INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("S3_INTERNAL_ERROR");
 
 
         MigrationErrorType GetMigrationErrorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENTITY_NOT_SUPPORTED_HASH)
           {
             return MigrationErrorType::ENTITY_NOT_SUPPORTED;

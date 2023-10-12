@@ -20,13 +20,13 @@ namespace Aws
       namespace IntentSortAttributeMapper
       {
 
-        static const int IntentName_HASH = HashingUtils::HashString("IntentName");
-        static const int LastUpdatedDateTime_HASH = HashingUtils::HashString("LastUpdatedDateTime");
+        static constexpr uint32_t IntentName_HASH = ConstExprHashingUtils::HashString("IntentName");
+        static constexpr uint32_t LastUpdatedDateTime_HASH = ConstExprHashingUtils::HashString("LastUpdatedDateTime");
 
 
         IntentSortAttribute GetIntentSortAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IntentName_HASH)
           {
             return IntentSortAttribute::IntentName;

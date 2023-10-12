@@ -20,15 +20,15 @@ namespace Aws
       namespace SNOMEDCTEntityTypeMapper
       {
 
-        static const int DX_NAME_HASH = HashingUtils::HashString("DX_NAME");
-        static const int TEST_NAME_HASH = HashingUtils::HashString("TEST_NAME");
-        static const int PROCEDURE_NAME_HASH = HashingUtils::HashString("PROCEDURE_NAME");
-        static const int TREATMENT_NAME_HASH = HashingUtils::HashString("TREATMENT_NAME");
+        static constexpr uint32_t DX_NAME_HASH = ConstExprHashingUtils::HashString("DX_NAME");
+        static constexpr uint32_t TEST_NAME_HASH = ConstExprHashingUtils::HashString("TEST_NAME");
+        static constexpr uint32_t PROCEDURE_NAME_HASH = ConstExprHashingUtils::HashString("PROCEDURE_NAME");
+        static constexpr uint32_t TREATMENT_NAME_HASH = ConstExprHashingUtils::HashString("TREATMENT_NAME");
 
 
         SNOMEDCTEntityType GetSNOMEDCTEntityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DX_NAME_HASH)
           {
             return SNOMEDCTEntityType::DX_NAME;

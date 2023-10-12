@@ -20,15 +20,15 @@ namespace Aws
       namespace UnlabeledEventsTreatmentMapper
       {
 
-        static const int IGNORE_HASH = HashingUtils::HashString("IGNORE");
-        static const int FRAUD_HASH = HashingUtils::HashString("FRAUD");
-        static const int LEGIT_HASH = HashingUtils::HashString("LEGIT");
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
+        static constexpr uint32_t IGNORE_HASH = ConstExprHashingUtils::HashString("IGNORE");
+        static constexpr uint32_t FRAUD_HASH = ConstExprHashingUtils::HashString("FRAUD");
+        static constexpr uint32_t LEGIT_HASH = ConstExprHashingUtils::HashString("LEGIT");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
 
 
         UnlabeledEventsTreatment GetUnlabeledEventsTreatmentForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IGNORE_HASH)
           {
             return UnlabeledEventsTreatment::IGNORE;

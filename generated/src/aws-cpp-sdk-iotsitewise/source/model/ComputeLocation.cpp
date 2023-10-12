@@ -20,13 +20,13 @@ namespace Aws
       namespace ComputeLocationMapper
       {
 
-        static const int EDGE_HASH = HashingUtils::HashString("EDGE");
-        static const int CLOUD_HASH = HashingUtils::HashString("CLOUD");
+        static constexpr uint32_t EDGE_HASH = ConstExprHashingUtils::HashString("EDGE");
+        static constexpr uint32_t CLOUD_HASH = ConstExprHashingUtils::HashString("CLOUD");
 
 
         ComputeLocation GetComputeLocationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EDGE_HASH)
           {
             return ComputeLocation::EDGE;

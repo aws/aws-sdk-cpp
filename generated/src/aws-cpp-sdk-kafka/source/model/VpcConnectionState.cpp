@@ -20,19 +20,19 @@ namespace Aws
       namespace VpcConnectionStateMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
-        static const int DEACTIVATING_HASH = HashingUtils::HashString("DEACTIVATING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
-        static const int REJECTING_HASH = HashingUtils::HashString("REJECTING");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t INACTIVE_HASH = ConstExprHashingUtils::HashString("INACTIVE");
+        static constexpr uint32_t DEACTIVATING_HASH = ConstExprHashingUtils::HashString("DEACTIVATING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t REJECTED_HASH = ConstExprHashingUtils::HashString("REJECTED");
+        static constexpr uint32_t REJECTING_HASH = ConstExprHashingUtils::HashString("REJECTING");
 
 
         VpcConnectionState GetVpcConnectionStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return VpcConnectionState::CREATING;

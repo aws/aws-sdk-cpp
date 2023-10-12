@@ -20,14 +20,14 @@ namespace Aws
       namespace ApplicationRestoreTypeMapper
       {
 
-        static const int SKIP_RESTORE_FROM_SNAPSHOT_HASH = HashingUtils::HashString("SKIP_RESTORE_FROM_SNAPSHOT");
-        static const int RESTORE_FROM_LATEST_SNAPSHOT_HASH = HashingUtils::HashString("RESTORE_FROM_LATEST_SNAPSHOT");
-        static const int RESTORE_FROM_CUSTOM_SNAPSHOT_HASH = HashingUtils::HashString("RESTORE_FROM_CUSTOM_SNAPSHOT");
+        static constexpr uint32_t SKIP_RESTORE_FROM_SNAPSHOT_HASH = ConstExprHashingUtils::HashString("SKIP_RESTORE_FROM_SNAPSHOT");
+        static constexpr uint32_t RESTORE_FROM_LATEST_SNAPSHOT_HASH = ConstExprHashingUtils::HashString("RESTORE_FROM_LATEST_SNAPSHOT");
+        static constexpr uint32_t RESTORE_FROM_CUSTOM_SNAPSHOT_HASH = ConstExprHashingUtils::HashString("RESTORE_FROM_CUSTOM_SNAPSHOT");
 
 
         ApplicationRestoreType GetApplicationRestoreTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SKIP_RESTORE_FROM_SNAPSHOT_HASH)
           {
             return ApplicationRestoreType::SKIP_RESTORE_FROM_SNAPSHOT;

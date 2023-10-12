@@ -20,15 +20,15 @@ namespace Aws
       namespace TimeUnitsTypeMapper
       {
 
-        static const int seconds_HASH = HashingUtils::HashString("seconds");
-        static const int minutes_HASH = HashingUtils::HashString("minutes");
-        static const int hours_HASH = HashingUtils::HashString("hours");
-        static const int days_HASH = HashingUtils::HashString("days");
+        static constexpr uint32_t seconds_HASH = ConstExprHashingUtils::HashString("seconds");
+        static constexpr uint32_t minutes_HASH = ConstExprHashingUtils::HashString("minutes");
+        static constexpr uint32_t hours_HASH = ConstExprHashingUtils::HashString("hours");
+        static constexpr uint32_t days_HASH = ConstExprHashingUtils::HashString("days");
 
 
         TimeUnitsType GetTimeUnitsTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == seconds_HASH)
           {
             return TimeUnitsType::seconds;

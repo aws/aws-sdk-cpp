@@ -20,13 +20,13 @@ namespace Aws
       namespace CmfcDescriptiveVideoServiceFlagMapper
       {
 
-        static const int DONT_FLAG_HASH = HashingUtils::HashString("DONT_FLAG");
-        static const int FLAG_HASH = HashingUtils::HashString("FLAG");
+        static constexpr uint32_t DONT_FLAG_HASH = ConstExprHashingUtils::HashString("DONT_FLAG");
+        static constexpr uint32_t FLAG_HASH = ConstExprHashingUtils::HashString("FLAG");
 
 
         CmfcDescriptiveVideoServiceFlag GetCmfcDescriptiveVideoServiceFlagForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DONT_FLAG_HASH)
           {
             return CmfcDescriptiveVideoServiceFlag::DONT_FLAG;

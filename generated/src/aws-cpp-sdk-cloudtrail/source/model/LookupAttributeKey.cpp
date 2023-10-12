@@ -20,19 +20,19 @@ namespace Aws
       namespace LookupAttributeKeyMapper
       {
 
-        static const int EventId_HASH = HashingUtils::HashString("EventId");
-        static const int EventName_HASH = HashingUtils::HashString("EventName");
-        static const int ReadOnly_HASH = HashingUtils::HashString("ReadOnly");
-        static const int Username_HASH = HashingUtils::HashString("Username");
-        static const int ResourceType_HASH = HashingUtils::HashString("ResourceType");
-        static const int ResourceName_HASH = HashingUtils::HashString("ResourceName");
-        static const int EventSource_HASH = HashingUtils::HashString("EventSource");
-        static const int AccessKeyId_HASH = HashingUtils::HashString("AccessKeyId");
+        static constexpr uint32_t EventId_HASH = ConstExprHashingUtils::HashString("EventId");
+        static constexpr uint32_t EventName_HASH = ConstExprHashingUtils::HashString("EventName");
+        static constexpr uint32_t ReadOnly_HASH = ConstExprHashingUtils::HashString("ReadOnly");
+        static constexpr uint32_t Username_HASH = ConstExprHashingUtils::HashString("Username");
+        static constexpr uint32_t ResourceType_HASH = ConstExprHashingUtils::HashString("ResourceType");
+        static constexpr uint32_t ResourceName_HASH = ConstExprHashingUtils::HashString("ResourceName");
+        static constexpr uint32_t EventSource_HASH = ConstExprHashingUtils::HashString("EventSource");
+        static constexpr uint32_t AccessKeyId_HASH = ConstExprHashingUtils::HashString("AccessKeyId");
 
 
         LookupAttributeKey GetLookupAttributeKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EventId_HASH)
           {
             return LookupAttributeKey::EventId;

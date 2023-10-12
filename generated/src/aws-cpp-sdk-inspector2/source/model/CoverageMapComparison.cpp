@@ -20,12 +20,12 @@ namespace Aws
       namespace CoverageMapComparisonMapper
       {
 
-        static const int EQUALS_HASH = HashingUtils::HashString("EQUALS");
+        static constexpr uint32_t EQUALS_HASH = ConstExprHashingUtils::HashString("EQUALS");
 
 
         CoverageMapComparison GetCoverageMapComparisonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EQUALS_HASH)
           {
             return CoverageMapComparison::EQUALS;

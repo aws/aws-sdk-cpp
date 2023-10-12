@@ -20,13 +20,13 @@ namespace Aws
       namespace ServiceNowAuthenticationTypeMapper
       {
 
-        static const int HTTP_BASIC_HASH = HashingUtils::HashString("HTTP_BASIC");
-        static const int OAUTH2_HASH = HashingUtils::HashString("OAUTH2");
+        static constexpr uint32_t HTTP_BASIC_HASH = ConstExprHashingUtils::HashString("HTTP_BASIC");
+        static constexpr uint32_t OAUTH2_HASH = ConstExprHashingUtils::HashString("OAUTH2");
 
 
         ServiceNowAuthenticationType GetServiceNowAuthenticationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HTTP_BASIC_HASH)
           {
             return ServiceNowAuthenticationType::HTTP_BASIC;

@@ -20,16 +20,16 @@ namespace Aws
       namespace ProposalStatusMapper
       {
 
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int APPROVED_HASH = HashingUtils::HashString("APPROVED");
-        static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
-        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
-        static const int ACTION_FAILED_HASH = HashingUtils::HashString("ACTION_FAILED");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t APPROVED_HASH = ConstExprHashingUtils::HashString("APPROVED");
+        static constexpr uint32_t REJECTED_HASH = ConstExprHashingUtils::HashString("REJECTED");
+        static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("EXPIRED");
+        static constexpr uint32_t ACTION_FAILED_HASH = ConstExprHashingUtils::HashString("ACTION_FAILED");
 
 
         ProposalStatus GetProposalStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IN_PROGRESS_HASH)
           {
             return ProposalStatus::IN_PROGRESS;

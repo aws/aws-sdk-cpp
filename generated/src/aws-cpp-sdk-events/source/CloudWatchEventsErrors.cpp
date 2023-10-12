@@ -18,21 +18,21 @@ namespace CloudWatchEvents
 namespace CloudWatchEventsErrorMapper
 {
 
-static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
-static const int OPERATION_DISABLED_HASH = HashingUtils::HashString("OperationDisabledException");
-static const int INVALID_EVENT_PATTERN_HASH = HashingUtils::HashString("InvalidEventPatternException");
-static const int MANAGED_RULE_HASH = HashingUtils::HashString("ManagedRuleException");
-static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
-static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int ILLEGAL_STATUS_HASH = HashingUtils::HashString("IllegalStatusException");
-static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
+static constexpr uint32_t INTERNAL_HASH = ConstExprHashingUtils::HashString("InternalException");
+static constexpr uint32_t OPERATION_DISABLED_HASH = ConstExprHashingUtils::HashString("OperationDisabledException");
+static constexpr uint32_t INVALID_EVENT_PATTERN_HASH = ConstExprHashingUtils::HashString("InvalidEventPatternException");
+static constexpr uint32_t MANAGED_RULE_HASH = ConstExprHashingUtils::HashString("ManagedRuleException");
+static constexpr uint32_t RESOURCE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ResourceAlreadyExistsException");
+static constexpr uint32_t POLICY_LENGTH_EXCEEDED_HASH = ConstExprHashingUtils::HashString("PolicyLengthExceededException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t ILLEGAL_STATUS_HASH = ConstExprHashingUtils::HashString("IllegalStatusException");
+static constexpr uint32_t INVALID_STATE_HASH = ConstExprHashingUtils::HashString("InvalidStateException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INTERNAL_HASH)
   {

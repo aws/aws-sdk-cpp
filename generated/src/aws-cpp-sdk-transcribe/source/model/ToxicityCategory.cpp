@@ -20,12 +20,12 @@ namespace Aws
       namespace ToxicityCategoryMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         ToxicityCategory GetToxicityCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return ToxicityCategory::ALL;

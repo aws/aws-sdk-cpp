@@ -20,13 +20,13 @@ namespace Aws
       namespace JobFilterNameMapper
       {
 
-        static const int ResourceType_HASH = HashingUtils::HashString("ResourceType");
-        static const int JobStatus_HASH = HashingUtils::HashString("JobStatus");
+        static constexpr uint32_t ResourceType_HASH = ConstExprHashingUtils::HashString("ResourceType");
+        static constexpr uint32_t JobStatus_HASH = ConstExprHashingUtils::HashString("JobStatus");
 
 
         JobFilterName GetJobFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ResourceType_HASH)
           {
             return JobFilterName::ResourceType;

@@ -20,13 +20,13 @@ namespace Aws
       namespace StorageTypeMapper
       {
 
-        static const int SITEWISE_DEFAULT_STORAGE_HASH = HashingUtils::HashString("SITEWISE_DEFAULT_STORAGE");
-        static const int MULTI_LAYER_STORAGE_HASH = HashingUtils::HashString("MULTI_LAYER_STORAGE");
+        static constexpr uint32_t SITEWISE_DEFAULT_STORAGE_HASH = ConstExprHashingUtils::HashString("SITEWISE_DEFAULT_STORAGE");
+        static constexpr uint32_t MULTI_LAYER_STORAGE_HASH = ConstExprHashingUtils::HashString("MULTI_LAYER_STORAGE");
 
 
         StorageType GetStorageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SITEWISE_DEFAULT_STORAGE_HASH)
           {
             return StorageType::SITEWISE_DEFAULT_STORAGE;

@@ -20,24 +20,24 @@ namespace Aws
       namespace ServiceQuotaExceededExceptionReasonMapper
       {
 
-        static const int CONFIGURATION_SETS_PER_ACCOUNT_HASH = HashingUtils::HashString("CONFIGURATION_SETS_PER_ACCOUNT");
-        static const int DAILY_DESTINATION_CALL_LIMIT_HASH = HashingUtils::HashString("DAILY_DESTINATION_CALL_LIMIT");
-        static const int EVENT_DESTINATIONS_PER_CONFIGURATION_SET_HASH = HashingUtils::HashString("EVENT_DESTINATIONS_PER_CONFIGURATION_SET");
-        static const int KEYWORDS_PER_PHONE_NUMBER_HASH = HashingUtils::HashString("KEYWORDS_PER_PHONE_NUMBER");
-        static const int KEYWORDS_PER_POOL_HASH = HashingUtils::HashString("KEYWORDS_PER_POOL");
-        static const int MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT_HASH = HashingUtils::HashString("MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT");
-        static const int MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE_HASH = HashingUtils::HashString("MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE");
-        static const int OPT_OUT_LISTS_PER_ACCOUNT_HASH = HashingUtils::HashString("OPT_OUT_LISTS_PER_ACCOUNT");
-        static const int ORIGINATION_IDENTITIES_PER_POOL_HASH = HashingUtils::HashString("ORIGINATION_IDENTITIES_PER_POOL");
-        static const int PHONE_NUMBERS_PER_ACCOUNT_HASH = HashingUtils::HashString("PHONE_NUMBERS_PER_ACCOUNT");
-        static const int PHONE_NUMBERS_PER_REGISTRATION_HASH = HashingUtils::HashString("PHONE_NUMBERS_PER_REGISTRATION");
-        static const int POOLS_PER_ACCOUNT_HASH = HashingUtils::HashString("POOLS_PER_ACCOUNT");
-        static const int TAGS_PER_RESOURCE_HASH = HashingUtils::HashString("TAGS_PER_RESOURCE");
+        static constexpr uint32_t CONFIGURATION_SETS_PER_ACCOUNT_HASH = ConstExprHashingUtils::HashString("CONFIGURATION_SETS_PER_ACCOUNT");
+        static constexpr uint32_t DAILY_DESTINATION_CALL_LIMIT_HASH = ConstExprHashingUtils::HashString("DAILY_DESTINATION_CALL_LIMIT");
+        static constexpr uint32_t EVENT_DESTINATIONS_PER_CONFIGURATION_SET_HASH = ConstExprHashingUtils::HashString("EVENT_DESTINATIONS_PER_CONFIGURATION_SET");
+        static constexpr uint32_t KEYWORDS_PER_PHONE_NUMBER_HASH = ConstExprHashingUtils::HashString("KEYWORDS_PER_PHONE_NUMBER");
+        static constexpr uint32_t KEYWORDS_PER_POOL_HASH = ConstExprHashingUtils::HashString("KEYWORDS_PER_POOL");
+        static constexpr uint32_t MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT_HASH = ConstExprHashingUtils::HashString("MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT");
+        static constexpr uint32_t MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE_HASH = ConstExprHashingUtils::HashString("MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE");
+        static constexpr uint32_t OPT_OUT_LISTS_PER_ACCOUNT_HASH = ConstExprHashingUtils::HashString("OPT_OUT_LISTS_PER_ACCOUNT");
+        static constexpr uint32_t ORIGINATION_IDENTITIES_PER_POOL_HASH = ConstExprHashingUtils::HashString("ORIGINATION_IDENTITIES_PER_POOL");
+        static constexpr uint32_t PHONE_NUMBERS_PER_ACCOUNT_HASH = ConstExprHashingUtils::HashString("PHONE_NUMBERS_PER_ACCOUNT");
+        static constexpr uint32_t PHONE_NUMBERS_PER_REGISTRATION_HASH = ConstExprHashingUtils::HashString("PHONE_NUMBERS_PER_REGISTRATION");
+        static constexpr uint32_t POOLS_PER_ACCOUNT_HASH = ConstExprHashingUtils::HashString("POOLS_PER_ACCOUNT");
+        static constexpr uint32_t TAGS_PER_RESOURCE_HASH = ConstExprHashingUtils::HashString("TAGS_PER_RESOURCE");
 
 
         ServiceQuotaExceededExceptionReason GetServiceQuotaExceededExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONFIGURATION_SETS_PER_ACCOUNT_HASH)
           {
             return ServiceQuotaExceededExceptionReason::CONFIGURATION_SETS_PER_ACCOUNT;

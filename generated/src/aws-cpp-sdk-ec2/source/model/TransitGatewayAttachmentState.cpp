@@ -20,24 +20,24 @@ namespace Aws
       namespace TransitGatewayAttachmentStateMapper
       {
 
-        static const int initiating_HASH = HashingUtils::HashString("initiating");
-        static const int initiatingRequest_HASH = HashingUtils::HashString("initiatingRequest");
-        static const int pendingAcceptance_HASH = HashingUtils::HashString("pendingAcceptance");
-        static const int rollingBack_HASH = HashingUtils::HashString("rollingBack");
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int available_HASH = HashingUtils::HashString("available");
-        static const int modifying_HASH = HashingUtils::HashString("modifying");
-        static const int deleting_HASH = HashingUtils::HashString("deleting");
-        static const int deleted_HASH = HashingUtils::HashString("deleted");
-        static const int failed_HASH = HashingUtils::HashString("failed");
-        static const int rejected_HASH = HashingUtils::HashString("rejected");
-        static const int rejecting_HASH = HashingUtils::HashString("rejecting");
-        static const int failing_HASH = HashingUtils::HashString("failing");
+        static constexpr uint32_t initiating_HASH = ConstExprHashingUtils::HashString("initiating");
+        static constexpr uint32_t initiatingRequest_HASH = ConstExprHashingUtils::HashString("initiatingRequest");
+        static constexpr uint32_t pendingAcceptance_HASH = ConstExprHashingUtils::HashString("pendingAcceptance");
+        static constexpr uint32_t rollingBack_HASH = ConstExprHashingUtils::HashString("rollingBack");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t available_HASH = ConstExprHashingUtils::HashString("available");
+        static constexpr uint32_t modifying_HASH = ConstExprHashingUtils::HashString("modifying");
+        static constexpr uint32_t deleting_HASH = ConstExprHashingUtils::HashString("deleting");
+        static constexpr uint32_t deleted_HASH = ConstExprHashingUtils::HashString("deleted");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
+        static constexpr uint32_t rejected_HASH = ConstExprHashingUtils::HashString("rejected");
+        static constexpr uint32_t rejecting_HASH = ConstExprHashingUtils::HashString("rejecting");
+        static constexpr uint32_t failing_HASH = ConstExprHashingUtils::HashString("failing");
 
 
         TransitGatewayAttachmentState GetTransitGatewayAttachmentStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == initiating_HASH)
           {
             return TransitGatewayAttachmentState::initiating;

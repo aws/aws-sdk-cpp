@@ -20,13 +20,13 @@ namespace Aws
       namespace OutputFormatMapper
       {
 
-        static const int Excel_HASH = HashingUtils::HashString("Excel");
-        static const int Json_HASH = HashingUtils::HashString("Json");
+        static constexpr uint32_t Excel_HASH = ConstExprHashingUtils::HashString("Excel");
+        static constexpr uint32_t Json_HASH = ConstExprHashingUtils::HashString("Json");
 
 
         OutputFormat GetOutputFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Excel_HASH)
           {
             return OutputFormat::Excel;

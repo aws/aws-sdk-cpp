@@ -20,13 +20,13 @@ namespace Aws
       namespace AggregationFunctionMapper
       {
 
-        static const int AVG_HASH = HashingUtils::HashString("AVG");
-        static const int SUM_HASH = HashingUtils::HashString("SUM");
+        static constexpr uint32_t AVG_HASH = ConstExprHashingUtils::HashString("AVG");
+        static constexpr uint32_t SUM_HASH = ConstExprHashingUtils::HashString("SUM");
 
 
         AggregationFunction GetAggregationFunctionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVG_HASH)
           {
             return AggregationFunction::AVG;

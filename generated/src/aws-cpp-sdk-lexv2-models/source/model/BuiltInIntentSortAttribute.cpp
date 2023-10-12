@@ -20,12 +20,12 @@ namespace Aws
       namespace BuiltInIntentSortAttributeMapper
       {
 
-        static const int IntentSignature_HASH = HashingUtils::HashString("IntentSignature");
+        static constexpr uint32_t IntentSignature_HASH = ConstExprHashingUtils::HashString("IntentSignature");
 
 
         BuiltInIntentSortAttribute GetBuiltInIntentSortAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IntentSignature_HASH)
           {
             return BuiltInIntentSortAttribute::IntentSignature;

@@ -20,12 +20,12 @@ namespace Aws
       namespace RequestChargedMapper
       {
 
-        static const int requester_HASH = HashingUtils::HashString("requester");
+        static constexpr uint32_t requester_HASH = ConstExprHashingUtils::HashString("requester");
 
 
         RequestCharged GetRequestChargedForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == requester_HASH)
           {
             return RequestCharged::requester;

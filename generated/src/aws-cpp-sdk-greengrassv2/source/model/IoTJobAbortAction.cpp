@@ -20,12 +20,12 @@ namespace Aws
       namespace IoTJobAbortActionMapper
       {
 
-        static const int CANCEL_HASH = HashingUtils::HashString("CANCEL");
+        static constexpr uint32_t CANCEL_HASH = ConstExprHashingUtils::HashString("CANCEL");
 
 
         IoTJobAbortAction GetIoTJobAbortActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CANCEL_HASH)
           {
             return IoTJobAbortAction::CANCEL;

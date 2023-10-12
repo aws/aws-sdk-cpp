@@ -20,14 +20,14 @@ namespace Aws
       namespace StackInstanceFilterNameMapper
       {
 
-        static const int DETAILED_STATUS_HASH = HashingUtils::HashString("DETAILED_STATUS");
-        static const int LAST_OPERATION_ID_HASH = HashingUtils::HashString("LAST_OPERATION_ID");
-        static const int DRIFT_STATUS_HASH = HashingUtils::HashString("DRIFT_STATUS");
+        static constexpr uint32_t DETAILED_STATUS_HASH = ConstExprHashingUtils::HashString("DETAILED_STATUS");
+        static constexpr uint32_t LAST_OPERATION_ID_HASH = ConstExprHashingUtils::HashString("LAST_OPERATION_ID");
+        static constexpr uint32_t DRIFT_STATUS_HASH = ConstExprHashingUtils::HashString("DRIFT_STATUS");
 
 
         StackInstanceFilterName GetStackInstanceFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DETAILED_STATUS_HASH)
           {
             return StackInstanceFilterName::DETAILED_STATUS;

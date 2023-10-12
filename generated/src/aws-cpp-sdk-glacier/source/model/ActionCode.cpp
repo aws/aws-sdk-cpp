@@ -20,14 +20,14 @@ namespace Aws
       namespace ActionCodeMapper
       {
 
-        static const int ArchiveRetrieval_HASH = HashingUtils::HashString("ArchiveRetrieval");
-        static const int InventoryRetrieval_HASH = HashingUtils::HashString("InventoryRetrieval");
-        static const int Select_HASH = HashingUtils::HashString("Select");
+        static constexpr uint32_t ArchiveRetrieval_HASH = ConstExprHashingUtils::HashString("ArchiveRetrieval");
+        static constexpr uint32_t InventoryRetrieval_HASH = ConstExprHashingUtils::HashString("InventoryRetrieval");
+        static constexpr uint32_t Select_HASH = ConstExprHashingUtils::HashString("Select");
 
 
         ActionCode GetActionCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ArchiveRetrieval_HASH)
           {
             return ActionCode::ArchiveRetrieval;

@@ -20,17 +20,17 @@ namespace Aws
       namespace MonitorProcessingStatusCodeMapper
       {
 
-        static const int OK_HASH = HashingUtils::HashString("OK");
-        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
-        static const int COLLECTING_DATA_HASH = HashingUtils::HashString("COLLECTING_DATA");
-        static const int INSUFFICIENT_DATA_HASH = HashingUtils::HashString("INSUFFICIENT_DATA");
-        static const int FAULT_SERVICE_HASH = HashingUtils::HashString("FAULT_SERVICE");
-        static const int FAULT_ACCESS_CLOUDWATCH_HASH = HashingUtils::HashString("FAULT_ACCESS_CLOUDWATCH");
+        static constexpr uint32_t OK_HASH = ConstExprHashingUtils::HashString("OK");
+        static constexpr uint32_t INACTIVE_HASH = ConstExprHashingUtils::HashString("INACTIVE");
+        static constexpr uint32_t COLLECTING_DATA_HASH = ConstExprHashingUtils::HashString("COLLECTING_DATA");
+        static constexpr uint32_t INSUFFICIENT_DATA_HASH = ConstExprHashingUtils::HashString("INSUFFICIENT_DATA");
+        static constexpr uint32_t FAULT_SERVICE_HASH = ConstExprHashingUtils::HashString("FAULT_SERVICE");
+        static constexpr uint32_t FAULT_ACCESS_CLOUDWATCH_HASH = ConstExprHashingUtils::HashString("FAULT_ACCESS_CLOUDWATCH");
 
 
         MonitorProcessingStatusCode GetMonitorProcessingStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OK_HASH)
           {
             return MonitorProcessingStatusCode::OK;

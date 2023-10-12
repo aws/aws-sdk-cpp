@@ -20,12 +20,12 @@ namespace Aws
       namespace MessageSystemAttributeNameForSendsMapper
       {
 
-        static const int AWSTraceHeader_HASH = HashingUtils::HashString("AWSTraceHeader");
+        static constexpr uint32_t AWSTraceHeader_HASH = ConstExprHashingUtils::HashString("AWSTraceHeader");
 
 
         MessageSystemAttributeNameForSends GetMessageSystemAttributeNameForSendsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWSTraceHeader_HASH)
           {
             return MessageSystemAttributeNameForSends::AWSTraceHeader;

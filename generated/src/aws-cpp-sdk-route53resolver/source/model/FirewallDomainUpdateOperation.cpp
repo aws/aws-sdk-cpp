@@ -20,14 +20,14 @@ namespace Aws
       namespace FirewallDomainUpdateOperationMapper
       {
 
-        static const int ADD_HASH = HashingUtils::HashString("ADD");
-        static const int REMOVE_HASH = HashingUtils::HashString("REMOVE");
-        static const int REPLACE_HASH = HashingUtils::HashString("REPLACE");
+        static constexpr uint32_t ADD_HASH = ConstExprHashingUtils::HashString("ADD");
+        static constexpr uint32_t REMOVE_HASH = ConstExprHashingUtils::HashString("REMOVE");
+        static constexpr uint32_t REPLACE_HASH = ConstExprHashingUtils::HashString("REPLACE");
 
 
         FirewallDomainUpdateOperation GetFirewallDomainUpdateOperationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADD_HASH)
           {
             return FirewallDomainUpdateOperation::ADD;

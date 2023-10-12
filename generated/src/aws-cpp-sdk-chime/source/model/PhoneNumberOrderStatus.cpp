@@ -20,15 +20,15 @@ namespace Aws
       namespace PhoneNumberOrderStatusMapper
       {
 
-        static const int Processing_HASH = HashingUtils::HashString("Processing");
-        static const int Successful_HASH = HashingUtils::HashString("Successful");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Partial_HASH = HashingUtils::HashString("Partial");
+        static constexpr uint32_t Processing_HASH = ConstExprHashingUtils::HashString("Processing");
+        static constexpr uint32_t Successful_HASH = ConstExprHashingUtils::HashString("Successful");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Partial_HASH = ConstExprHashingUtils::HashString("Partial");
 
 
         PhoneNumberOrderStatus GetPhoneNumberOrderStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Processing_HASH)
           {
             return PhoneNumberOrderStatus::Processing;

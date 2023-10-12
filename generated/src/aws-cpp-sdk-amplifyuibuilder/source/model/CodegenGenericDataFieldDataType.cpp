@@ -20,28 +20,28 @@ namespace Aws
       namespace CodegenGenericDataFieldDataTypeMapper
       {
 
-        static const int ID_HASH = HashingUtils::HashString("ID");
-        static const int String_HASH = HashingUtils::HashString("String");
-        static const int Int_HASH = HashingUtils::HashString("Int");
-        static const int Float_HASH = HashingUtils::HashString("Float");
-        static const int AWSDate_HASH = HashingUtils::HashString("AWSDate");
-        static const int AWSTime_HASH = HashingUtils::HashString("AWSTime");
-        static const int AWSDateTime_HASH = HashingUtils::HashString("AWSDateTime");
-        static const int AWSTimestamp_HASH = HashingUtils::HashString("AWSTimestamp");
-        static const int AWSEmail_HASH = HashingUtils::HashString("AWSEmail");
-        static const int AWSURL_HASH = HashingUtils::HashString("AWSURL");
-        static const int AWSIPAddress_HASH = HashingUtils::HashString("AWSIPAddress");
-        static const int Boolean_HASH = HashingUtils::HashString("Boolean");
-        static const int AWSJSON_HASH = HashingUtils::HashString("AWSJSON");
-        static const int AWSPhone_HASH = HashingUtils::HashString("AWSPhone");
-        static const int Enum_HASH = HashingUtils::HashString("Enum");
-        static const int Model_HASH = HashingUtils::HashString("Model");
-        static const int NonModel_HASH = HashingUtils::HashString("NonModel");
+        static constexpr uint32_t ID_HASH = ConstExprHashingUtils::HashString("ID");
+        static constexpr uint32_t String_HASH = ConstExprHashingUtils::HashString("String");
+        static constexpr uint32_t Int_HASH = ConstExprHashingUtils::HashString("Int");
+        static constexpr uint32_t Float_HASH = ConstExprHashingUtils::HashString("Float");
+        static constexpr uint32_t AWSDate_HASH = ConstExprHashingUtils::HashString("AWSDate");
+        static constexpr uint32_t AWSTime_HASH = ConstExprHashingUtils::HashString("AWSTime");
+        static constexpr uint32_t AWSDateTime_HASH = ConstExprHashingUtils::HashString("AWSDateTime");
+        static constexpr uint32_t AWSTimestamp_HASH = ConstExprHashingUtils::HashString("AWSTimestamp");
+        static constexpr uint32_t AWSEmail_HASH = ConstExprHashingUtils::HashString("AWSEmail");
+        static constexpr uint32_t AWSURL_HASH = ConstExprHashingUtils::HashString("AWSURL");
+        static constexpr uint32_t AWSIPAddress_HASH = ConstExprHashingUtils::HashString("AWSIPAddress");
+        static constexpr uint32_t Boolean_HASH = ConstExprHashingUtils::HashString("Boolean");
+        static constexpr uint32_t AWSJSON_HASH = ConstExprHashingUtils::HashString("AWSJSON");
+        static constexpr uint32_t AWSPhone_HASH = ConstExprHashingUtils::HashString("AWSPhone");
+        static constexpr uint32_t Enum_HASH = ConstExprHashingUtils::HashString("Enum");
+        static constexpr uint32_t Model_HASH = ConstExprHashingUtils::HashString("Model");
+        static constexpr uint32_t NonModel_HASH = ConstExprHashingUtils::HashString("NonModel");
 
 
         CodegenGenericDataFieldDataType GetCodegenGenericDataFieldDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ID_HASH)
           {
             return CodegenGenericDataFieldDataType::ID;

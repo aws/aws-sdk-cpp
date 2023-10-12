@@ -18,18 +18,18 @@ namespace Synthetics
 namespace SyntheticsErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
-static const int REQUEST_ENTITY_TOO_LARGE_HASH = HashingUtils::HashString("RequestEntityTooLargeException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t SERVICE_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ServiceQuotaExceededException");
+static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NotFoundException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
+static constexpr uint32_t TOO_MANY_REQUESTS_HASH = ConstExprHashingUtils::HashString("TooManyRequestsException");
+static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BadRequestException");
+static constexpr uint32_t REQUEST_ENTITY_TOO_LARGE_HASH = ConstExprHashingUtils::HashString("RequestEntityTooLargeException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

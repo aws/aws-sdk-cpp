@@ -20,14 +20,14 @@ namespace Aws
       namespace TranscribePartialResultsStabilityMapper
       {
 
-        static const int low_HASH = HashingUtils::HashString("low");
-        static const int medium_HASH = HashingUtils::HashString("medium");
-        static const int high_HASH = HashingUtils::HashString("high");
+        static constexpr uint32_t low_HASH = ConstExprHashingUtils::HashString("low");
+        static constexpr uint32_t medium_HASH = ConstExprHashingUtils::HashString("medium");
+        static constexpr uint32_t high_HASH = ConstExprHashingUtils::HashString("high");
 
 
         TranscribePartialResultsStability GetTranscribePartialResultsStabilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == low_HASH)
           {
             return TranscribePartialResultsStability::low;

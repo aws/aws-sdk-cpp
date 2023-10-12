@@ -20,19 +20,19 @@ namespace Aws
       namespace OutputFormatMapper
       {
 
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
-        static const int PARQUET_HASH = HashingUtils::HashString("PARQUET");
-        static const int GLUEPARQUET_HASH = HashingUtils::HashString("GLUEPARQUET");
-        static const int AVRO_HASH = HashingUtils::HashString("AVRO");
-        static const int ORC_HASH = HashingUtils::HashString("ORC");
-        static const int XML_HASH = HashingUtils::HashString("XML");
-        static const int TABLEAUHYPER_HASH = HashingUtils::HashString("TABLEAUHYPER");
+        static constexpr uint32_t CSV_HASH = ConstExprHashingUtils::HashString("CSV");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
+        static constexpr uint32_t PARQUET_HASH = ConstExprHashingUtils::HashString("PARQUET");
+        static constexpr uint32_t GLUEPARQUET_HASH = ConstExprHashingUtils::HashString("GLUEPARQUET");
+        static constexpr uint32_t AVRO_HASH = ConstExprHashingUtils::HashString("AVRO");
+        static constexpr uint32_t ORC_HASH = ConstExprHashingUtils::HashString("ORC");
+        static constexpr uint32_t XML_HASH = ConstExprHashingUtils::HashString("XML");
+        static constexpr uint32_t TABLEAUHYPER_HASH = ConstExprHashingUtils::HashString("TABLEAUHYPER");
 
 
         OutputFormat GetOutputFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CSV_HASH)
           {
             return OutputFormat::CSV;

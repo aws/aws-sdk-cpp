@@ -20,12 +20,12 @@ namespace Aws
       namespace AutomationRulesActionTypeMapper
       {
 
-        static const int FINDING_FIELDS_UPDATE_HASH = HashingUtils::HashString("FINDING_FIELDS_UPDATE");
+        static constexpr uint32_t FINDING_FIELDS_UPDATE_HASH = ConstExprHashingUtils::HashString("FINDING_FIELDS_UPDATE");
 
 
         AutomationRulesActionType GetAutomationRulesActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FINDING_FIELDS_UPDATE_HASH)
           {
             return AutomationRulesActionType::FINDING_FIELDS_UPDATE;

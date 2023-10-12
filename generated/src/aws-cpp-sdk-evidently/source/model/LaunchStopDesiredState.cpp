@@ -20,13 +20,13 @@ namespace Aws
       namespace LaunchStopDesiredStateMapper
       {
 
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
 
 
         LaunchStopDesiredState GetLaunchStopDesiredStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPLETED_HASH)
           {
             return LaunchStopDesiredState::COMPLETED;

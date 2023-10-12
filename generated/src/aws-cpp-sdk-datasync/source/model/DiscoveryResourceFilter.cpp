@@ -20,12 +20,12 @@ namespace Aws
       namespace DiscoveryResourceFilterMapper
       {
 
-        static const int SVM_HASH = HashingUtils::HashString("SVM");
+        static constexpr uint32_t SVM_HASH = ConstExprHashingUtils::HashString("SVM");
 
 
         DiscoveryResourceFilter GetDiscoveryResourceFilterForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SVM_HASH)
           {
             return DiscoveryResourceFilter::SVM;

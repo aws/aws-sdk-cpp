@@ -20,13 +20,13 @@ namespace Aws
       namespace PersonaMapper
       {
 
-        static const int OWNER_HASH = HashingUtils::HashString("OWNER");
-        static const int VIEWER_HASH = HashingUtils::HashString("VIEWER");
+        static constexpr uint32_t OWNER_HASH = ConstExprHashingUtils::HashString("OWNER");
+        static constexpr uint32_t VIEWER_HASH = ConstExprHashingUtils::HashString("VIEWER");
 
 
         Persona GetPersonaForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OWNER_HASH)
           {
             return Persona::OWNER;

@@ -278,47 +278,47 @@ template<> AWS_DIRECTORYSERVICE_API CertificateLimitExceededException DirectoryS
 namespace DirectoryServiceErrorMapper
 {
 
-static const int CLIENT_HASH = HashingUtils::HashString("ClientException");
-static const int ENTITY_ALREADY_EXISTS_HASH = HashingUtils::HashString("EntityAlreadyExistsException");
-static const int UNSUPPORTED_SETTINGS_HASH = HashingUtils::HashString("UnsupportedSettingsException");
-static const int DIRECTORY_ALREADY_SHARED_HASH = HashingUtils::HashString("DirectoryAlreadySharedException");
-static const int DIRECTORY_ALREADY_IN_REGION_HASH = HashingUtils::HashString("DirectoryAlreadyInRegionException");
-static const int INVALID_L_D_A_P_S_STATUS_HASH = HashingUtils::HashString("InvalidLDAPSStatusException");
-static const int DIRECTORY_UNAVAILABLE_HASH = HashingUtils::HashString("DirectoryUnavailableException");
-static const int USER_DOES_NOT_EXIST_HASH = HashingUtils::HashString("UserDoesNotExistException");
-static const int ENTITY_DOES_NOT_EXIST_HASH = HashingUtils::HashString("EntityDoesNotExistException");
-static const int AUTHENTICATION_FAILED_HASH = HashingUtils::HashString("AuthenticationFailedException");
-static const int INSUFFICIENT_PERMISSIONS_HASH = HashingUtils::HashString("InsufficientPermissionsException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int DIRECTORY_IN_DESIRED_STATE_HASH = HashingUtils::HashString("DirectoryInDesiredStateException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int TAG_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TagLimitExceededException");
-static const int INVALID_CERTIFICATE_HASH = HashingUtils::HashString("InvalidCertificateException");
-static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
-static const int CERTIFICATE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("CertificateDoesNotExistException");
-static const int CERTIFICATE_ALREADY_EXISTS_HASH = HashingUtils::HashString("CertificateAlreadyExistsException");
-static const int INVALID_PASSWORD_HASH = HashingUtils::HashString("InvalidPasswordException");
-static const int INCOMPATIBLE_SETTINGS_HASH = HashingUtils::HashString("IncompatibleSettingsException");
-static const int DIRECTORY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DirectoryLimitExceededException");
-static const int DIRECTORY_NOT_SHARED_HASH = HashingUtils::HashString("DirectoryNotSharedException");
-static const int CERTIFICATE_IN_USE_HASH = HashingUtils::HashString("CertificateInUseException");
-static const int SHARE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ShareLimitExceededException");
-static const int DIRECTORY_DOES_NOT_EXIST_HASH = HashingUtils::HashString("DirectoryDoesNotExistException");
-static const int NO_AVAILABLE_CERTIFICATE_HASH = HashingUtils::HashString("NoAvailableCertificateException");
-static const int INVALID_CLIENT_AUTH_STATUS_HASH = HashingUtils::HashString("InvalidClientAuthStatusException");
-static const int ORGANIZATIONS_HASH = HashingUtils::HashString("OrganizationsException");
-static const int INVALID_TARGET_HASH = HashingUtils::HashString("InvalidTargetException");
-static const int DOMAIN_CONTROLLER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DomainControllerLimitExceededException");
-static const int REGION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("RegionLimitExceededException");
-static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
-static const int IP_ROUTE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("IpRouteLimitExceededException");
-static const int SNAPSHOT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SnapshotLimitExceededException");
-static const int CERTIFICATE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CertificateLimitExceededException");
+static constexpr uint32_t CLIENT_HASH = ConstExprHashingUtils::HashString("ClientException");
+static constexpr uint32_t ENTITY_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("EntityAlreadyExistsException");
+static constexpr uint32_t UNSUPPORTED_SETTINGS_HASH = ConstExprHashingUtils::HashString("UnsupportedSettingsException");
+static constexpr uint32_t DIRECTORY_ALREADY_SHARED_HASH = ConstExprHashingUtils::HashString("DirectoryAlreadySharedException");
+static constexpr uint32_t DIRECTORY_ALREADY_IN_REGION_HASH = ConstExprHashingUtils::HashString("DirectoryAlreadyInRegionException");
+static constexpr uint32_t INVALID_L_D_A_P_S_STATUS_HASH = ConstExprHashingUtils::HashString("InvalidLDAPSStatusException");
+static constexpr uint32_t DIRECTORY_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("DirectoryUnavailableException");
+static constexpr uint32_t USER_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("UserDoesNotExistException");
+static constexpr uint32_t ENTITY_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("EntityDoesNotExistException");
+static constexpr uint32_t AUTHENTICATION_FAILED_HASH = ConstExprHashingUtils::HashString("AuthenticationFailedException");
+static constexpr uint32_t INSUFFICIENT_PERMISSIONS_HASH = ConstExprHashingUtils::HashString("InsufficientPermissionsException");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+static constexpr uint32_t DIRECTORY_IN_DESIRED_STATE_HASH = ConstExprHashingUtils::HashString("DirectoryInDesiredStateException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t TAG_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("TagLimitExceededException");
+static constexpr uint32_t INVALID_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("InvalidCertificateException");
+static constexpr uint32_t UNSUPPORTED_OPERATION_HASH = ConstExprHashingUtils::HashString("UnsupportedOperationException");
+static constexpr uint32_t CERTIFICATE_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("CertificateDoesNotExistException");
+static constexpr uint32_t CERTIFICATE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("CertificateAlreadyExistsException");
+static constexpr uint32_t INVALID_PASSWORD_HASH = ConstExprHashingUtils::HashString("InvalidPasswordException");
+static constexpr uint32_t INCOMPATIBLE_SETTINGS_HASH = ConstExprHashingUtils::HashString("IncompatibleSettingsException");
+static constexpr uint32_t DIRECTORY_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("DirectoryLimitExceededException");
+static constexpr uint32_t DIRECTORY_NOT_SHARED_HASH = ConstExprHashingUtils::HashString("DirectoryNotSharedException");
+static constexpr uint32_t CERTIFICATE_IN_USE_HASH = ConstExprHashingUtils::HashString("CertificateInUseException");
+static constexpr uint32_t SHARE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ShareLimitExceededException");
+static constexpr uint32_t DIRECTORY_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("DirectoryDoesNotExistException");
+static constexpr uint32_t NO_AVAILABLE_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("NoAvailableCertificateException");
+static constexpr uint32_t INVALID_CLIENT_AUTH_STATUS_HASH = ConstExprHashingUtils::HashString("InvalidClientAuthStatusException");
+static constexpr uint32_t ORGANIZATIONS_HASH = ConstExprHashingUtils::HashString("OrganizationsException");
+static constexpr uint32_t INVALID_TARGET_HASH = ConstExprHashingUtils::HashString("InvalidTargetException");
+static constexpr uint32_t DOMAIN_CONTROLLER_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("DomainControllerLimitExceededException");
+static constexpr uint32_t REGION_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("RegionLimitExceededException");
+static constexpr uint32_t SERVICE_HASH = ConstExprHashingUtils::HashString("ServiceException");
+static constexpr uint32_t IP_ROUTE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("IpRouteLimitExceededException");
+static constexpr uint32_t SNAPSHOT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("SnapshotLimitExceededException");
+static constexpr uint32_t CERTIFICATE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("CertificateLimitExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CLIENT_HASH)
   {

@@ -20,14 +20,14 @@ namespace Aws
       namespace AccessMethodTypeMapper
       {
 
-        static const int CA_REPOSITORY_HASH = HashingUtils::HashString("CA_REPOSITORY");
-        static const int RESOURCE_PKI_MANIFEST_HASH = HashingUtils::HashString("RESOURCE_PKI_MANIFEST");
-        static const int RESOURCE_PKI_NOTIFY_HASH = HashingUtils::HashString("RESOURCE_PKI_NOTIFY");
+        static constexpr uint32_t CA_REPOSITORY_HASH = ConstExprHashingUtils::HashString("CA_REPOSITORY");
+        static constexpr uint32_t RESOURCE_PKI_MANIFEST_HASH = ConstExprHashingUtils::HashString("RESOURCE_PKI_MANIFEST");
+        static constexpr uint32_t RESOURCE_PKI_NOTIFY_HASH = ConstExprHashingUtils::HashString("RESOURCE_PKI_NOTIFY");
 
 
         AccessMethodType GetAccessMethodTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CA_REPOSITORY_HASH)
           {
             return AccessMethodType::CA_REPOSITORY;

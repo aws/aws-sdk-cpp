@@ -20,12 +20,12 @@ namespace Aws
       namespace NetworkEapMethodMapper
       {
 
-        static const int EAP_TLS_HASH = HashingUtils::HashString("EAP_TLS");
+        static constexpr uint32_t EAP_TLS_HASH = ConstExprHashingUtils::HashString("EAP_TLS");
 
 
         NetworkEapMethod GetNetworkEapMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EAP_TLS_HASH)
           {
             return NetworkEapMethod::EAP_TLS;

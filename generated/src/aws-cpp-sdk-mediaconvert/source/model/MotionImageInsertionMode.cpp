@@ -20,13 +20,13 @@ namespace Aws
       namespace MotionImageInsertionModeMapper
       {
 
-        static const int MOV_HASH = HashingUtils::HashString("MOV");
-        static const int PNG_HASH = HashingUtils::HashString("PNG");
+        static constexpr uint32_t MOV_HASH = ConstExprHashingUtils::HashString("MOV");
+        static constexpr uint32_t PNG_HASH = ConstExprHashingUtils::HashString("PNG");
 
 
         MotionImageInsertionMode GetMotionImageInsertionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MOV_HASH)
           {
             return MotionImageInsertionMode::MOV;

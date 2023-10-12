@@ -20,13 +20,13 @@ namespace Aws
       namespace FindingReasonCodeMapper
       {
 
-        static const int MemoryOverprovisioned_HASH = HashingUtils::HashString("MemoryOverprovisioned");
-        static const int MemoryUnderprovisioned_HASH = HashingUtils::HashString("MemoryUnderprovisioned");
+        static constexpr uint32_t MemoryOverprovisioned_HASH = ConstExprHashingUtils::HashString("MemoryOverprovisioned");
+        static constexpr uint32_t MemoryUnderprovisioned_HASH = ConstExprHashingUtils::HashString("MemoryUnderprovisioned");
 
 
         FindingReasonCode GetFindingReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MemoryOverprovisioned_HASH)
           {
             return FindingReasonCode::MemoryOverprovisioned;

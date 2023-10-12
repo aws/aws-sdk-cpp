@@ -20,15 +20,15 @@ namespace Aws
       namespace TriggerTypeMapper
       {
 
-        static const int SCHEDULED_HASH = HashingUtils::HashString("SCHEDULED");
-        static const int CONDITIONAL_HASH = HashingUtils::HashString("CONDITIONAL");
-        static const int ON_DEMAND_HASH = HashingUtils::HashString("ON_DEMAND");
-        static const int EVENT_HASH = HashingUtils::HashString("EVENT");
+        static constexpr uint32_t SCHEDULED_HASH = ConstExprHashingUtils::HashString("SCHEDULED");
+        static constexpr uint32_t CONDITIONAL_HASH = ConstExprHashingUtils::HashString("CONDITIONAL");
+        static constexpr uint32_t ON_DEMAND_HASH = ConstExprHashingUtils::HashString("ON_DEMAND");
+        static constexpr uint32_t EVENT_HASH = ConstExprHashingUtils::HashString("EVENT");
 
 
         TriggerType GetTriggerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SCHEDULED_HASH)
           {
             return TriggerType::SCHEDULED;

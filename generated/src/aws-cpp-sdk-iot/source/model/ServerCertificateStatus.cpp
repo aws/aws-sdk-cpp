@@ -20,13 +20,13 @@ namespace Aws
       namespace ServerCertificateStatusMapper
       {
 
-        static const int INVALID_HASH = HashingUtils::HashString("INVALID");
-        static const int VALID_HASH = HashingUtils::HashString("VALID");
+        static constexpr uint32_t INVALID_HASH = ConstExprHashingUtils::HashString("INVALID");
+        static constexpr uint32_t VALID_HASH = ConstExprHashingUtils::HashString("VALID");
 
 
         ServerCertificateStatus GetServerCertificateStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVALID_HASH)
           {
             return ServerCertificateStatus::INVALID;

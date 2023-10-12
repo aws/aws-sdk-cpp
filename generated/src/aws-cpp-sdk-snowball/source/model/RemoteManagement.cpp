@@ -20,14 +20,14 @@ namespace Aws
       namespace RemoteManagementMapper
       {
 
-        static const int INSTALLED_ONLY_HASH = HashingUtils::HashString("INSTALLED_ONLY");
-        static const int INSTALLED_AUTOSTART_HASH = HashingUtils::HashString("INSTALLED_AUTOSTART");
-        static const int NOT_INSTALLED_HASH = HashingUtils::HashString("NOT_INSTALLED");
+        static constexpr uint32_t INSTALLED_ONLY_HASH = ConstExprHashingUtils::HashString("INSTALLED_ONLY");
+        static constexpr uint32_t INSTALLED_AUTOSTART_HASH = ConstExprHashingUtils::HashString("INSTALLED_AUTOSTART");
+        static constexpr uint32_t NOT_INSTALLED_HASH = ConstExprHashingUtils::HashString("NOT_INSTALLED");
 
 
         RemoteManagement GetRemoteManagementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSTALLED_ONLY_HASH)
           {
             return RemoteManagement::INSTALLED_ONLY;

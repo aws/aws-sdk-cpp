@@ -20,13 +20,13 @@ namespace Aws
       namespace ConsistencyLevelMapper
       {
 
-        static const int SERIALIZABLE_HASH = HashingUtils::HashString("SERIALIZABLE");
-        static const int EVENTUAL_HASH = HashingUtils::HashString("EVENTUAL");
+        static constexpr uint32_t SERIALIZABLE_HASH = ConstExprHashingUtils::HashString("SERIALIZABLE");
+        static constexpr uint32_t EVENTUAL_HASH = ConstExprHashingUtils::HashString("EVENTUAL");
 
 
         ConsistencyLevel GetConsistencyLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SERIALIZABLE_HASH)
           {
             return ConsistencyLevel::SERIALIZABLE;

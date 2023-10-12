@@ -20,15 +20,15 @@ namespace Aws
       namespace MessageFormatTypeMapper
       {
 
-        static const int PlainText_HASH = HashingUtils::HashString("PlainText");
-        static const int CustomPayload_HASH = HashingUtils::HashString("CustomPayload");
-        static const int SSML_HASH = HashingUtils::HashString("SSML");
-        static const int Composite_HASH = HashingUtils::HashString("Composite");
+        static constexpr uint32_t PlainText_HASH = ConstExprHashingUtils::HashString("PlainText");
+        static constexpr uint32_t CustomPayload_HASH = ConstExprHashingUtils::HashString("CustomPayload");
+        static constexpr uint32_t SSML_HASH = ConstExprHashingUtils::HashString("SSML");
+        static constexpr uint32_t Composite_HASH = ConstExprHashingUtils::HashString("Composite");
 
 
         MessageFormatType GetMessageFormatTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PlainText_HASH)
           {
             return MessageFormatType::PlainText;

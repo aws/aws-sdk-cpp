@@ -20,13 +20,13 @@ namespace Aws
       namespace VehicleWeightUnitMapper
       {
 
-        static const int Kilograms_HASH = HashingUtils::HashString("Kilograms");
-        static const int Pounds_HASH = HashingUtils::HashString("Pounds");
+        static constexpr uint32_t Kilograms_HASH = ConstExprHashingUtils::HashString("Kilograms");
+        static constexpr uint32_t Pounds_HASH = ConstExprHashingUtils::HashString("Pounds");
 
 
         VehicleWeightUnit GetVehicleWeightUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Kilograms_HASH)
           {
             return VehicleWeightUnit::Kilograms;

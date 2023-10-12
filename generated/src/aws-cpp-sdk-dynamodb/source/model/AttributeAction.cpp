@@ -20,14 +20,14 @@ namespace Aws
       namespace AttributeActionMapper
       {
 
-        static const int ADD_HASH = HashingUtils::HashString("ADD");
-        static const int PUT_HASH = HashingUtils::HashString("PUT");
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
+        static constexpr uint32_t ADD_HASH = ConstExprHashingUtils::HashString("ADD");
+        static constexpr uint32_t PUT_HASH = ConstExprHashingUtils::HashString("PUT");
+        static constexpr uint32_t DELETE__HASH = ConstExprHashingUtils::HashString("DELETE");
 
 
         AttributeAction GetAttributeActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADD_HASH)
           {
             return AttributeAction::ADD;

@@ -20,13 +20,13 @@ namespace Aws
       namespace EncryptionModeMapper
       {
 
-        static const int SSE_KMS_HASH = HashingUtils::HashString("SSE-KMS");
-        static const int SSE_S3_HASH = HashingUtils::HashString("SSE-S3");
+        static constexpr uint32_t SSE_KMS_HASH = ConstExprHashingUtils::HashString("SSE-KMS");
+        static constexpr uint32_t SSE_S3_HASH = ConstExprHashingUtils::HashString("SSE-S3");
 
 
         EncryptionMode GetEncryptionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SSE_KMS_HASH)
           {
             return EncryptionMode::SSE_KMS;

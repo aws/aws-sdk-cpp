@@ -20,13 +20,13 @@ namespace Aws
       namespace ReportPackagingTypeMapper
       {
 
-        static const int ZIP_HASH = HashingUtils::HashString("ZIP");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t ZIP_HASH = ConstExprHashingUtils::HashString("ZIP");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         ReportPackagingType GetReportPackagingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ZIP_HASH)
           {
             return ReportPackagingType::ZIP;

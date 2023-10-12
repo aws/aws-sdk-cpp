@@ -20,13 +20,13 @@ namespace Aws
       namespace TrafficMirrorRuleActionMapper
       {
 
-        static const int accept_HASH = HashingUtils::HashString("accept");
-        static const int reject_HASH = HashingUtils::HashString("reject");
+        static constexpr uint32_t accept_HASH = ConstExprHashingUtils::HashString("accept");
+        static constexpr uint32_t reject_HASH = ConstExprHashingUtils::HashString("reject");
 
 
         TrafficMirrorRuleAction GetTrafficMirrorRuleActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == accept_HASH)
           {
             return TrafficMirrorRuleAction::accept;

@@ -20,14 +20,14 @@ namespace Aws
       namespace AccessorStatusMapper
       {
 
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int PENDING_DELETION_HASH = HashingUtils::HashString("PENDING_DELETION");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t PENDING_DELETION_HASH = ConstExprHashingUtils::HashString("PENDING_DELETION");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         AccessorStatus GetAccessorStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVAILABLE_HASH)
           {
             return AccessorStatus::AVAILABLE;

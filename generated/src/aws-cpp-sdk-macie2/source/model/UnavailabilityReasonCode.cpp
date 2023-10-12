@@ -20,16 +20,16 @@ namespace Aws
       namespace UnavailabilityReasonCodeMapper
       {
 
-        static const int OBJECT_EXCEEDS_SIZE_QUOTA_HASH = HashingUtils::HashString("OBJECT_EXCEEDS_SIZE_QUOTA");
-        static const int UNSUPPORTED_OBJECT_TYPE_HASH = HashingUtils::HashString("UNSUPPORTED_OBJECT_TYPE");
-        static const int UNSUPPORTED_FINDING_TYPE_HASH = HashingUtils::HashString("UNSUPPORTED_FINDING_TYPE");
-        static const int INVALID_CLASSIFICATION_RESULT_HASH = HashingUtils::HashString("INVALID_CLASSIFICATION_RESULT");
-        static const int OBJECT_UNAVAILABLE_HASH = HashingUtils::HashString("OBJECT_UNAVAILABLE");
+        static constexpr uint32_t OBJECT_EXCEEDS_SIZE_QUOTA_HASH = ConstExprHashingUtils::HashString("OBJECT_EXCEEDS_SIZE_QUOTA");
+        static constexpr uint32_t UNSUPPORTED_OBJECT_TYPE_HASH = ConstExprHashingUtils::HashString("UNSUPPORTED_OBJECT_TYPE");
+        static constexpr uint32_t UNSUPPORTED_FINDING_TYPE_HASH = ConstExprHashingUtils::HashString("UNSUPPORTED_FINDING_TYPE");
+        static constexpr uint32_t INVALID_CLASSIFICATION_RESULT_HASH = ConstExprHashingUtils::HashString("INVALID_CLASSIFICATION_RESULT");
+        static constexpr uint32_t OBJECT_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("OBJECT_UNAVAILABLE");
 
 
         UnavailabilityReasonCode GetUnavailabilityReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OBJECT_EXCEEDS_SIZE_QUOTA_HASH)
           {
             return UnavailabilityReasonCode::OBJECT_EXCEEDS_SIZE_QUOTA;

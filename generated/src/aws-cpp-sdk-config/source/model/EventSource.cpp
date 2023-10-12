@@ -20,12 +20,12 @@ namespace Aws
       namespace EventSourceMapper
       {
 
-        static const int aws_config_HASH = HashingUtils::HashString("aws.config");
+        static constexpr uint32_t aws_config_HASH = ConstExprHashingUtils::HashString("aws.config");
 
 
         EventSource GetEventSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == aws_config_HASH)
           {
             return EventSource::aws_config;

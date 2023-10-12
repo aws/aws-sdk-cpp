@@ -20,18 +20,18 @@ namespace Aws
       namespace CodeMapper
       {
 
-        static const int ACCESS_DENIED_EXCEPTION_HASH = HashingUtils::HashString("ACCESS_DENIED_EXCEPTION");
-        static const int INTERNAL_SERVER_EXCEPTION_HASH = HashingUtils::HashString("INTERNAL_SERVER_EXCEPTION");
-        static const int MALWARE_DETECTED_HASH = HashingUtils::HashString("MALWARE_DETECTED");
-        static const int RESOURCE_NOT_FOUND_EXCEPTION_HASH = HashingUtils::HashString("RESOURCE_NOT_FOUND_EXCEPTION");
-        static const int SERVICE_QUOTA_EXCEEDED_EXCEPTION_HASH = HashingUtils::HashString("SERVICE_QUOTA_EXCEEDED_EXCEPTION");
-        static const int VALIDATION_EXCEPTION_HASH = HashingUtils::HashString("VALIDATION_EXCEPTION");
-        static const int MALWARE_SCAN_ENCRYPTED_FILE_HASH = HashingUtils::HashString("MALWARE_SCAN_ENCRYPTED_FILE");
+        static constexpr uint32_t ACCESS_DENIED_EXCEPTION_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED_EXCEPTION");
+        static constexpr uint32_t INTERNAL_SERVER_EXCEPTION_HASH = ConstExprHashingUtils::HashString("INTERNAL_SERVER_EXCEPTION");
+        static constexpr uint32_t MALWARE_DETECTED_HASH = ConstExprHashingUtils::HashString("MALWARE_DETECTED");
+        static constexpr uint32_t RESOURCE_NOT_FOUND_EXCEPTION_HASH = ConstExprHashingUtils::HashString("RESOURCE_NOT_FOUND_EXCEPTION");
+        static constexpr uint32_t SERVICE_QUOTA_EXCEEDED_EXCEPTION_HASH = ConstExprHashingUtils::HashString("SERVICE_QUOTA_EXCEEDED_EXCEPTION");
+        static constexpr uint32_t VALIDATION_EXCEPTION_HASH = ConstExprHashingUtils::HashString("VALIDATION_EXCEPTION");
+        static constexpr uint32_t MALWARE_SCAN_ENCRYPTED_FILE_HASH = ConstExprHashingUtils::HashString("MALWARE_SCAN_ENCRYPTED_FILE");
 
 
         Code GetCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCESS_DENIED_EXCEPTION_HASH)
           {
             return Code::ACCESS_DENIED_EXCEPTION;

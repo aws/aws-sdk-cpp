@@ -20,14 +20,14 @@ namespace Aws
       namespace ResourceSubTypeMapper
       {
 
-        static const int Database_HASH = HashingUtils::HashString("Database");
-        static const int Process_HASH = HashingUtils::HashString("Process");
-        static const int DatabaseProcess_HASH = HashingUtils::HashString("DatabaseProcess");
+        static constexpr uint32_t Database_HASH = ConstExprHashingUtils::HashString("Database");
+        static constexpr uint32_t Process_HASH = ConstExprHashingUtils::HashString("Process");
+        static constexpr uint32_t DatabaseProcess_HASH = ConstExprHashingUtils::HashString("DatabaseProcess");
 
 
         ResourceSubType GetResourceSubTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Database_HASH)
           {
             return ResourceSubType::Database;

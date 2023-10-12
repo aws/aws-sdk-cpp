@@ -20,13 +20,13 @@ namespace Aws
       namespace StabilityStatusMapper
       {
 
-        static const int STEADY_STATE_HASH = HashingUtils::HashString("STEADY_STATE");
-        static const int STABILIZING_HASH = HashingUtils::HashString("STABILIZING");
+        static constexpr uint32_t STEADY_STATE_HASH = ConstExprHashingUtils::HashString("STEADY_STATE");
+        static constexpr uint32_t STABILIZING_HASH = ConstExprHashingUtils::HashString("STABILIZING");
 
 
         StabilityStatus GetStabilityStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STEADY_STATE_HASH)
           {
             return StabilityStatus::STEADY_STATE;

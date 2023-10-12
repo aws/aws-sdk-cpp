@@ -20,13 +20,13 @@ namespace Aws
       namespace TrainingDataSourceEnumMapper
       {
 
-        static const int EXTERNAL_EVENTS_HASH = HashingUtils::HashString("EXTERNAL_EVENTS");
-        static const int INGESTED_EVENTS_HASH = HashingUtils::HashString("INGESTED_EVENTS");
+        static constexpr uint32_t EXTERNAL_EVENTS_HASH = ConstExprHashingUtils::HashString("EXTERNAL_EVENTS");
+        static constexpr uint32_t INGESTED_EVENTS_HASH = ConstExprHashingUtils::HashString("INGESTED_EVENTS");
 
 
         TrainingDataSourceEnum GetTrainingDataSourceEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXTERNAL_EVENTS_HASH)
           {
             return TrainingDataSourceEnum::EXTERNAL_EVENTS;

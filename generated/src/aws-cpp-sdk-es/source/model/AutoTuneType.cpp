@@ -20,12 +20,12 @@ namespace Aws
       namespace AutoTuneTypeMapper
       {
 
-        static const int SCHEDULED_ACTION_HASH = HashingUtils::HashString("SCHEDULED_ACTION");
+        static constexpr uint32_t SCHEDULED_ACTION_HASH = ConstExprHashingUtils::HashString("SCHEDULED_ACTION");
 
 
         AutoTuneType GetAutoTuneTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SCHEDULED_ACTION_HASH)
           {
             return AutoTuneType::SCHEDULED_ACTION;

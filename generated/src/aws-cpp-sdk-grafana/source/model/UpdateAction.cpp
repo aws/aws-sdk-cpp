@@ -20,13 +20,13 @@ namespace Aws
       namespace UpdateActionMapper
       {
 
-        static const int ADD_HASH = HashingUtils::HashString("ADD");
-        static const int REVOKE_HASH = HashingUtils::HashString("REVOKE");
+        static constexpr uint32_t ADD_HASH = ConstExprHashingUtils::HashString("ADD");
+        static constexpr uint32_t REVOKE_HASH = ConstExprHashingUtils::HashString("REVOKE");
 
 
         UpdateAction GetUpdateActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADD_HASH)
           {
             return UpdateAction::ADD;

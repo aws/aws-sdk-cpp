@@ -20,42 +20,42 @@ namespace Aws
       namespace ExportableVolumeFieldMapper
       {
 
-        static const int AccountId_HASH = HashingUtils::HashString("AccountId");
-        static const int VolumeArn_HASH = HashingUtils::HashString("VolumeArn");
-        static const int Finding_HASH = HashingUtils::HashString("Finding");
-        static const int UtilizationMetricsVolumeReadOpsPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsVolumeReadOpsPerSecondMaximum");
-        static const int UtilizationMetricsVolumeWriteOpsPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsVolumeWriteOpsPerSecondMaximum");
-        static const int UtilizationMetricsVolumeReadBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsVolumeReadBytesPerSecondMaximum");
-        static const int UtilizationMetricsVolumeWriteBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsVolumeWriteBytesPerSecondMaximum");
-        static const int LookbackPeriodInDays_HASH = HashingUtils::HashString("LookbackPeriodInDays");
-        static const int CurrentConfigurationVolumeType_HASH = HashingUtils::HashString("CurrentConfigurationVolumeType");
-        static const int CurrentConfigurationVolumeBaselineIOPS_HASH = HashingUtils::HashString("CurrentConfigurationVolumeBaselineIOPS");
-        static const int CurrentConfigurationVolumeBaselineThroughput_HASH = HashingUtils::HashString("CurrentConfigurationVolumeBaselineThroughput");
-        static const int CurrentConfigurationVolumeBurstIOPS_HASH = HashingUtils::HashString("CurrentConfigurationVolumeBurstIOPS");
-        static const int CurrentConfigurationVolumeBurstThroughput_HASH = HashingUtils::HashString("CurrentConfigurationVolumeBurstThroughput");
-        static const int CurrentConfigurationVolumeSize_HASH = HashingUtils::HashString("CurrentConfigurationVolumeSize");
-        static const int CurrentMonthlyPrice_HASH = HashingUtils::HashString("CurrentMonthlyPrice");
-        static const int RecommendationOptionsConfigurationVolumeType_HASH = HashingUtils::HashString("RecommendationOptionsConfigurationVolumeType");
-        static const int RecommendationOptionsConfigurationVolumeBaselineIOPS_HASH = HashingUtils::HashString("RecommendationOptionsConfigurationVolumeBaselineIOPS");
-        static const int RecommendationOptionsConfigurationVolumeBaselineThroughput_HASH = HashingUtils::HashString("RecommendationOptionsConfigurationVolumeBaselineThroughput");
-        static const int RecommendationOptionsConfigurationVolumeBurstIOPS_HASH = HashingUtils::HashString("RecommendationOptionsConfigurationVolumeBurstIOPS");
-        static const int RecommendationOptionsConfigurationVolumeBurstThroughput_HASH = HashingUtils::HashString("RecommendationOptionsConfigurationVolumeBurstThroughput");
-        static const int RecommendationOptionsConfigurationVolumeSize_HASH = HashingUtils::HashString("RecommendationOptionsConfigurationVolumeSize");
-        static const int RecommendationOptionsMonthlyPrice_HASH = HashingUtils::HashString("RecommendationOptionsMonthlyPrice");
-        static const int RecommendationOptionsPerformanceRisk_HASH = HashingUtils::HashString("RecommendationOptionsPerformanceRisk");
-        static const int LastRefreshTimestamp_HASH = HashingUtils::HashString("LastRefreshTimestamp");
-        static const int CurrentPerformanceRisk_HASH = HashingUtils::HashString("CurrentPerformanceRisk");
-        static const int RecommendationOptionsSavingsOpportunityPercentage_HASH = HashingUtils::HashString("RecommendationOptionsSavingsOpportunityPercentage");
-        static const int RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrency");
-        static const int RecommendationOptionsEstimatedMonthlySavingsValue_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValue");
-        static const int RootVolume_HASH = HashingUtils::HashString("RootVolume");
-        static const int Tags_HASH = HashingUtils::HashString("Tags");
-        static const int CurrentConfigurationRootVolume_HASH = HashingUtils::HashString("CurrentConfigurationRootVolume");
+        static constexpr uint32_t AccountId_HASH = ConstExprHashingUtils::HashString("AccountId");
+        static constexpr uint32_t VolumeArn_HASH = ConstExprHashingUtils::HashString("VolumeArn");
+        static constexpr uint32_t Finding_HASH = ConstExprHashingUtils::HashString("Finding");
+        static constexpr uint32_t UtilizationMetricsVolumeReadOpsPerSecondMaximum_HASH = ConstExprHashingUtils::HashString("UtilizationMetricsVolumeReadOpsPerSecondMaximum");
+        static constexpr uint32_t UtilizationMetricsVolumeWriteOpsPerSecondMaximum_HASH = ConstExprHashingUtils::HashString("UtilizationMetricsVolumeWriteOpsPerSecondMaximum");
+        static constexpr uint32_t UtilizationMetricsVolumeReadBytesPerSecondMaximum_HASH = ConstExprHashingUtils::HashString("UtilizationMetricsVolumeReadBytesPerSecondMaximum");
+        static constexpr uint32_t UtilizationMetricsVolumeWriteBytesPerSecondMaximum_HASH = ConstExprHashingUtils::HashString("UtilizationMetricsVolumeWriteBytesPerSecondMaximum");
+        static constexpr uint32_t LookbackPeriodInDays_HASH = ConstExprHashingUtils::HashString("LookbackPeriodInDays");
+        static constexpr uint32_t CurrentConfigurationVolumeType_HASH = ConstExprHashingUtils::HashString("CurrentConfigurationVolumeType");
+        static constexpr uint32_t CurrentConfigurationVolumeBaselineIOPS_HASH = ConstExprHashingUtils::HashString("CurrentConfigurationVolumeBaselineIOPS");
+        static constexpr uint32_t CurrentConfigurationVolumeBaselineThroughput_HASH = ConstExprHashingUtils::HashString("CurrentConfigurationVolumeBaselineThroughput");
+        static constexpr uint32_t CurrentConfigurationVolumeBurstIOPS_HASH = ConstExprHashingUtils::HashString("CurrentConfigurationVolumeBurstIOPS");
+        static constexpr uint32_t CurrentConfigurationVolumeBurstThroughput_HASH = ConstExprHashingUtils::HashString("CurrentConfigurationVolumeBurstThroughput");
+        static constexpr uint32_t CurrentConfigurationVolumeSize_HASH = ConstExprHashingUtils::HashString("CurrentConfigurationVolumeSize");
+        static constexpr uint32_t CurrentMonthlyPrice_HASH = ConstExprHashingUtils::HashString("CurrentMonthlyPrice");
+        static constexpr uint32_t RecommendationOptionsConfigurationVolumeType_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsConfigurationVolumeType");
+        static constexpr uint32_t RecommendationOptionsConfigurationVolumeBaselineIOPS_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsConfigurationVolumeBaselineIOPS");
+        static constexpr uint32_t RecommendationOptionsConfigurationVolumeBaselineThroughput_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsConfigurationVolumeBaselineThroughput");
+        static constexpr uint32_t RecommendationOptionsConfigurationVolumeBurstIOPS_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsConfigurationVolumeBurstIOPS");
+        static constexpr uint32_t RecommendationOptionsConfigurationVolumeBurstThroughput_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsConfigurationVolumeBurstThroughput");
+        static constexpr uint32_t RecommendationOptionsConfigurationVolumeSize_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsConfigurationVolumeSize");
+        static constexpr uint32_t RecommendationOptionsMonthlyPrice_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsMonthlyPrice");
+        static constexpr uint32_t RecommendationOptionsPerformanceRisk_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsPerformanceRisk");
+        static constexpr uint32_t LastRefreshTimestamp_HASH = ConstExprHashingUtils::HashString("LastRefreshTimestamp");
+        static constexpr uint32_t CurrentPerformanceRisk_HASH = ConstExprHashingUtils::HashString("CurrentPerformanceRisk");
+        static constexpr uint32_t RecommendationOptionsSavingsOpportunityPercentage_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsSavingsOpportunityPercentage");
+        static constexpr uint32_t RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrency");
+        static constexpr uint32_t RecommendationOptionsEstimatedMonthlySavingsValue_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValue");
+        static constexpr uint32_t RootVolume_HASH = ConstExprHashingUtils::HashString("RootVolume");
+        static constexpr uint32_t Tags_HASH = ConstExprHashingUtils::HashString("Tags");
+        static constexpr uint32_t CurrentConfigurationRootVolume_HASH = ConstExprHashingUtils::HashString("CurrentConfigurationRootVolume");
 
 
         ExportableVolumeField GetExportableVolumeFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AccountId_HASH)
           {
             return ExportableVolumeField::AccountId;

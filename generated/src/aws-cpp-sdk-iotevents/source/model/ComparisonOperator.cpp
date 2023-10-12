@@ -20,17 +20,17 @@ namespace Aws
       namespace ComparisonOperatorMapper
       {
 
-        static const int GREATER_HASH = HashingUtils::HashString("GREATER");
-        static const int GREATER_OR_EQUAL_HASH = HashingUtils::HashString("GREATER_OR_EQUAL");
-        static const int LESS_HASH = HashingUtils::HashString("LESS");
-        static const int LESS_OR_EQUAL_HASH = HashingUtils::HashString("LESS_OR_EQUAL");
-        static const int EQUAL_HASH = HashingUtils::HashString("EQUAL");
-        static const int NOT_EQUAL_HASH = HashingUtils::HashString("NOT_EQUAL");
+        static constexpr uint32_t GREATER_HASH = ConstExprHashingUtils::HashString("GREATER");
+        static constexpr uint32_t GREATER_OR_EQUAL_HASH = ConstExprHashingUtils::HashString("GREATER_OR_EQUAL");
+        static constexpr uint32_t LESS_HASH = ConstExprHashingUtils::HashString("LESS");
+        static constexpr uint32_t LESS_OR_EQUAL_HASH = ConstExprHashingUtils::HashString("LESS_OR_EQUAL");
+        static constexpr uint32_t EQUAL_HASH = ConstExprHashingUtils::HashString("EQUAL");
+        static constexpr uint32_t NOT_EQUAL_HASH = ConstExprHashingUtils::HashString("NOT_EQUAL");
 
 
         ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GREATER_HASH)
           {
             return ComparisonOperator::GREATER;

@@ -20,13 +20,13 @@ namespace Aws
       namespace JobTypeMapper
       {
 
-        static const int PROFILE_HASH = HashingUtils::HashString("PROFILE");
-        static const int RECIPE_HASH = HashingUtils::HashString("RECIPE");
+        static constexpr uint32_t PROFILE_HASH = ConstExprHashingUtils::HashString("PROFILE");
+        static constexpr uint32_t RECIPE_HASH = ConstExprHashingUtils::HashString("RECIPE");
 
 
         JobType GetJobTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROFILE_HASH)
           {
             return JobType::PROFILE;

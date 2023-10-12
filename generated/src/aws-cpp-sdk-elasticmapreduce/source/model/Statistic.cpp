@@ -20,16 +20,16 @@ namespace Aws
       namespace StatisticMapper
       {
 
-        static const int SAMPLE_COUNT_HASH = HashingUtils::HashString("SAMPLE_COUNT");
-        static const int AVERAGE_HASH = HashingUtils::HashString("AVERAGE");
-        static const int SUM_HASH = HashingUtils::HashString("SUM");
-        static const int MINIMUM_HASH = HashingUtils::HashString("MINIMUM");
-        static const int MAXIMUM_HASH = HashingUtils::HashString("MAXIMUM");
+        static constexpr uint32_t SAMPLE_COUNT_HASH = ConstExprHashingUtils::HashString("SAMPLE_COUNT");
+        static constexpr uint32_t AVERAGE_HASH = ConstExprHashingUtils::HashString("AVERAGE");
+        static constexpr uint32_t SUM_HASH = ConstExprHashingUtils::HashString("SUM");
+        static constexpr uint32_t MINIMUM_HASH = ConstExprHashingUtils::HashString("MINIMUM");
+        static constexpr uint32_t MAXIMUM_HASH = ConstExprHashingUtils::HashString("MAXIMUM");
 
 
         Statistic GetStatisticForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SAMPLE_COUNT_HASH)
           {
             return Statistic::SAMPLE_COUNT;

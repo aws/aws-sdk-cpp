@@ -20,13 +20,13 @@ namespace Aws
       namespace AgentAvailabilityTimerMapper
       {
 
-        static const int TIME_SINCE_LAST_ACTIVITY_HASH = HashingUtils::HashString("TIME_SINCE_LAST_ACTIVITY");
-        static const int TIME_SINCE_LAST_INBOUND_HASH = HashingUtils::HashString("TIME_SINCE_LAST_INBOUND");
+        static constexpr uint32_t TIME_SINCE_LAST_ACTIVITY_HASH = ConstExprHashingUtils::HashString("TIME_SINCE_LAST_ACTIVITY");
+        static constexpr uint32_t TIME_SINCE_LAST_INBOUND_HASH = ConstExprHashingUtils::HashString("TIME_SINCE_LAST_INBOUND");
 
 
         AgentAvailabilityTimer GetAgentAvailabilityTimerForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TIME_SINCE_LAST_ACTIVITY_HASH)
           {
             return AgentAvailabilityTimer::TIME_SINCE_LAST_ACTIVITY;

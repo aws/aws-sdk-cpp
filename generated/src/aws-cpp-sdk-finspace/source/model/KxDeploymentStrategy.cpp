@@ -20,13 +20,13 @@ namespace Aws
       namespace KxDeploymentStrategyMapper
       {
 
-        static const int NO_RESTART_HASH = HashingUtils::HashString("NO_RESTART");
-        static const int ROLLING_HASH = HashingUtils::HashString("ROLLING");
+        static constexpr uint32_t NO_RESTART_HASH = ConstExprHashingUtils::HashString("NO_RESTART");
+        static constexpr uint32_t ROLLING_HASH = ConstExprHashingUtils::HashString("ROLLING");
 
 
         KxDeploymentStrategy GetKxDeploymentStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_RESTART_HASH)
           {
             return KxDeploymentStrategy::NO_RESTART;

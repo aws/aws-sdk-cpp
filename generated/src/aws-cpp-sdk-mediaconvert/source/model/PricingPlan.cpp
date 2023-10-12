@@ -20,13 +20,13 @@ namespace Aws
       namespace PricingPlanMapper
       {
 
-        static const int ON_DEMAND_HASH = HashingUtils::HashString("ON_DEMAND");
-        static const int RESERVED_HASH = HashingUtils::HashString("RESERVED");
+        static constexpr uint32_t ON_DEMAND_HASH = ConstExprHashingUtils::HashString("ON_DEMAND");
+        static constexpr uint32_t RESERVED_HASH = ConstExprHashingUtils::HashString("RESERVED");
 
 
         PricingPlan GetPricingPlanForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ON_DEMAND_HASH)
           {
             return PricingPlan::ON_DEMAND;

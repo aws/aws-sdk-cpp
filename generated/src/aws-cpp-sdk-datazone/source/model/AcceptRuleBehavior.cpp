@@ -20,13 +20,13 @@ namespace Aws
       namespace AcceptRuleBehaviorMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         AcceptRuleBehavior GetAcceptRuleBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return AcceptRuleBehavior::ALL;

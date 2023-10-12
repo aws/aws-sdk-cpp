@@ -20,13 +20,13 @@ namespace Aws
       namespace MonitorCapabilityMapper
       {
 
-        static const int SILENT_MONITOR_HASH = HashingUtils::HashString("SILENT_MONITOR");
-        static const int BARGE_HASH = HashingUtils::HashString("BARGE");
+        static constexpr uint32_t SILENT_MONITOR_HASH = ConstExprHashingUtils::HashString("SILENT_MONITOR");
+        static constexpr uint32_t BARGE_HASH = ConstExprHashingUtils::HashString("BARGE");
 
 
         MonitorCapability GetMonitorCapabilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SILENT_MONITOR_HASH)
           {
             return MonitorCapability::SILENT_MONITOR;

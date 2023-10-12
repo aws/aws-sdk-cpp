@@ -20,13 +20,13 @@ namespace Aws
       namespace PadVideoMapper
       {
 
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int BLACK_HASH = HashingUtils::HashString("BLACK");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t BLACK_HASH = ConstExprHashingUtils::HashString("BLACK");
 
 
         PadVideo GetPadVideoForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISABLED_HASH)
           {
             return PadVideo::DISABLED;

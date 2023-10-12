@@ -20,14 +20,14 @@ namespace Aws
       namespace ForwardedIPPositionMapper
       {
 
-        static const int FIRST_HASH = HashingUtils::HashString("FIRST");
-        static const int LAST_HASH = HashingUtils::HashString("LAST");
-        static const int ANY_HASH = HashingUtils::HashString("ANY");
+        static constexpr uint32_t FIRST_HASH = ConstExprHashingUtils::HashString("FIRST");
+        static constexpr uint32_t LAST_HASH = ConstExprHashingUtils::HashString("LAST");
+        static constexpr uint32_t ANY_HASH = ConstExprHashingUtils::HashString("ANY");
 
 
         ForwardedIPPosition GetForwardedIPPositionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FIRST_HASH)
           {
             return ForwardedIPPosition::FIRST;

@@ -20,12 +20,12 @@ namespace Aws
       namespace ReplicationScopeMapper
       {
 
-        static const int Domain_HASH = HashingUtils::HashString("Domain");
+        static constexpr uint32_t Domain_HASH = ConstExprHashingUtils::HashString("Domain");
 
 
         ReplicationScope GetReplicationScopeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Domain_HASH)
           {
             return ReplicationScope::Domain;

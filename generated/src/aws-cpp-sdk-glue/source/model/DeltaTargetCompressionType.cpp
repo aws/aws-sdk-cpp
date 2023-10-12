@@ -20,13 +20,13 @@ namespace Aws
       namespace DeltaTargetCompressionTypeMapper
       {
 
-        static const int uncompressed_HASH = HashingUtils::HashString("uncompressed");
-        static const int snappy_HASH = HashingUtils::HashString("snappy");
+        static constexpr uint32_t uncompressed_HASH = ConstExprHashingUtils::HashString("uncompressed");
+        static constexpr uint32_t snappy_HASH = ConstExprHashingUtils::HashString("snappy");
 
 
         DeltaTargetCompressionType GetDeltaTargetCompressionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == uncompressed_HASH)
           {
             return DeltaTargetCompressionType::uncompressed;

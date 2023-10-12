@@ -20,12 +20,12 @@ namespace Aws
       namespace PreloadDataTypeMapper
       {
 
-        static const int SYNTHEA_HASH = HashingUtils::HashString("SYNTHEA");
+        static constexpr uint32_t SYNTHEA_HASH = ConstExprHashingUtils::HashString("SYNTHEA");
 
 
         PreloadDataType GetPreloadDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SYNTHEA_HASH)
           {
             return PreloadDataType::SYNTHEA;

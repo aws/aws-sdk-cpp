@@ -20,13 +20,13 @@ namespace Aws
       namespace H264SubGopLengthMapper
       {
 
-        static const int DYNAMIC_HASH = HashingUtils::HashString("DYNAMIC");
-        static const int FIXED_HASH = HashingUtils::HashString("FIXED");
+        static constexpr uint32_t DYNAMIC_HASH = ConstExprHashingUtils::HashString("DYNAMIC");
+        static constexpr uint32_t FIXED_HASH = ConstExprHashingUtils::HashString("FIXED");
 
 
         H264SubGopLength GetH264SubGopLengthForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DYNAMIC_HASH)
           {
             return H264SubGopLength::DYNAMIC;

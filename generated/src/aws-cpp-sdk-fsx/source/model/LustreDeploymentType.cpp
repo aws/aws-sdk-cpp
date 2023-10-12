@@ -20,15 +20,15 @@ namespace Aws
       namespace LustreDeploymentTypeMapper
       {
 
-        static const int SCRATCH_1_HASH = HashingUtils::HashString("SCRATCH_1");
-        static const int SCRATCH_2_HASH = HashingUtils::HashString("SCRATCH_2");
-        static const int PERSISTENT_1_HASH = HashingUtils::HashString("PERSISTENT_1");
-        static const int PERSISTENT_2_HASH = HashingUtils::HashString("PERSISTENT_2");
+        static constexpr uint32_t SCRATCH_1_HASH = ConstExprHashingUtils::HashString("SCRATCH_1");
+        static constexpr uint32_t SCRATCH_2_HASH = ConstExprHashingUtils::HashString("SCRATCH_2");
+        static constexpr uint32_t PERSISTENT_1_HASH = ConstExprHashingUtils::HashString("PERSISTENT_1");
+        static constexpr uint32_t PERSISTENT_2_HASH = ConstExprHashingUtils::HashString("PERSISTENT_2");
 
 
         LustreDeploymentType GetLustreDeploymentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SCRATCH_1_HASH)
           {
             return LustreDeploymentType::SCRATCH_1;

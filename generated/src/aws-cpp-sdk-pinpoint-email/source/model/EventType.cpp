@@ -20,19 +20,19 @@ namespace Aws
       namespace EventTypeMapper
       {
 
-        static const int SEND_HASH = HashingUtils::HashString("SEND");
-        static const int REJECT_HASH = HashingUtils::HashString("REJECT");
-        static const int BOUNCE_HASH = HashingUtils::HashString("BOUNCE");
-        static const int COMPLAINT_HASH = HashingUtils::HashString("COMPLAINT");
-        static const int DELIVERY_HASH = HashingUtils::HashString("DELIVERY");
-        static const int OPEN_HASH = HashingUtils::HashString("OPEN");
-        static const int CLICK_HASH = HashingUtils::HashString("CLICK");
-        static const int RENDERING_FAILURE_HASH = HashingUtils::HashString("RENDERING_FAILURE");
+        static constexpr uint32_t SEND_HASH = ConstExprHashingUtils::HashString("SEND");
+        static constexpr uint32_t REJECT_HASH = ConstExprHashingUtils::HashString("REJECT");
+        static constexpr uint32_t BOUNCE_HASH = ConstExprHashingUtils::HashString("BOUNCE");
+        static constexpr uint32_t COMPLAINT_HASH = ConstExprHashingUtils::HashString("COMPLAINT");
+        static constexpr uint32_t DELIVERY_HASH = ConstExprHashingUtils::HashString("DELIVERY");
+        static constexpr uint32_t OPEN_HASH = ConstExprHashingUtils::HashString("OPEN");
+        static constexpr uint32_t CLICK_HASH = ConstExprHashingUtils::HashString("CLICK");
+        static constexpr uint32_t RENDERING_FAILURE_HASH = ConstExprHashingUtils::HashString("RENDERING_FAILURE");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SEND_HASH)
           {
             return EventType::SEND;

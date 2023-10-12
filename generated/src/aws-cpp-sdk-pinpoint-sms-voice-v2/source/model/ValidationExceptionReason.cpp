@@ -20,35 +20,35 @@ namespace Aws
       namespace ValidationExceptionReasonMapper
       {
 
-        static const int UNKNOWN_OPERATION_HASH = HashingUtils::HashString("UNKNOWN_OPERATION");
-        static const int CANNOT_PARSE_HASH = HashingUtils::HashString("CANNOT_PARSE");
-        static const int FIELD_VALIDATION_FAILED_HASH = HashingUtils::HashString("FIELD_VALIDATION_FAILED");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
-        static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("INVALID_PARAMETER");
-        static const int INVALID_ARN_HASH = HashingUtils::HashString("INVALID_ARN");
-        static const int INVALID_IDENTITY_FOR_DESTINATION_COUNTRY_HASH = HashingUtils::HashString("INVALID_IDENTITY_FOR_DESTINATION_COUNTRY");
-        static const int DESTINATION_COUNTRY_BLOCKED_HASH = HashingUtils::HashString("DESTINATION_COUNTRY_BLOCKED");
-        static const int CANNOT_ADD_OPTED_OUT_NUMBER_HASH = HashingUtils::HashString("CANNOT_ADD_OPTED_OUT_NUMBER");
-        static const int COUNTRY_CODE_MISMATCH_HASH = HashingUtils::HashString("COUNTRY_CODE_MISMATCH");
-        static const int INVALID_FILTER_VALUES_HASH = HashingUtils::HashString("INVALID_FILTER_VALUES");
-        static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("INVALID_NEXT_TOKEN");
-        static const int MISSING_PARAMETER_HASH = HashingUtils::HashString("MISSING_PARAMETER");
-        static const int PARAMETERS_CANNOT_BE_USED_TOGETHER_HASH = HashingUtils::HashString("PARAMETERS_CANNOT_BE_USED_TOGETHER");
-        static const int PHONE_NUMBER_CANNOT_BE_OPTED_IN_HASH = HashingUtils::HashString("PHONE_NUMBER_CANNOT_BE_OPTED_IN");
-        static const int PHONE_NUMBER_CANNOT_BE_RELEASED_HASH = HashingUtils::HashString("PHONE_NUMBER_CANNOT_BE_RELEASED");
-        static const int PRICE_OVER_THRESHOLD_HASH = HashingUtils::HashString("PRICE_OVER_THRESHOLD");
-        static const int REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT_HASH = HashingUtils::HashString("REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT");
-        static const int SENDER_ID_NOT_REGISTERED_HASH = HashingUtils::HashString("SENDER_ID_NOT_REGISTERED");
-        static const int SENDER_ID_NOT_SUPPORTED_HASH = HashingUtils::HashString("SENDER_ID_NOT_SUPPORTED");
-        static const int TWO_WAY_NOT_ENABLED_HASH = HashingUtils::HashString("TWO_WAY_NOT_ENABLED");
-        static const int TWO_WAY_NOT_SUPPORTED_IN_COUNTRY_HASH = HashingUtils::HashString("TWO_WAY_NOT_SUPPORTED_IN_COUNTRY");
-        static const int TWO_WAY_NOT_SUPPORTED_IN_REGION_HASH = HashingUtils::HashString("TWO_WAY_NOT_SUPPORTED_IN_REGION");
-        static const int TWO_WAY_TOPIC_NOT_PRESENT_HASH = HashingUtils::HashString("TWO_WAY_TOPIC_NOT_PRESENT");
+        static constexpr uint32_t UNKNOWN_OPERATION_HASH = ConstExprHashingUtils::HashString("UNKNOWN_OPERATION");
+        static constexpr uint32_t CANNOT_PARSE_HASH = ConstExprHashingUtils::HashString("CANNOT_PARSE");
+        static constexpr uint32_t FIELD_VALIDATION_FAILED_HASH = ConstExprHashingUtils::HashString("FIELD_VALIDATION_FAILED");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
+        static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("INVALID_PARAMETER");
+        static constexpr uint32_t INVALID_ARN_HASH = ConstExprHashingUtils::HashString("INVALID_ARN");
+        static constexpr uint32_t INVALID_IDENTITY_FOR_DESTINATION_COUNTRY_HASH = ConstExprHashingUtils::HashString("INVALID_IDENTITY_FOR_DESTINATION_COUNTRY");
+        static constexpr uint32_t DESTINATION_COUNTRY_BLOCKED_HASH = ConstExprHashingUtils::HashString("DESTINATION_COUNTRY_BLOCKED");
+        static constexpr uint32_t CANNOT_ADD_OPTED_OUT_NUMBER_HASH = ConstExprHashingUtils::HashString("CANNOT_ADD_OPTED_OUT_NUMBER");
+        static constexpr uint32_t COUNTRY_CODE_MISMATCH_HASH = ConstExprHashingUtils::HashString("COUNTRY_CODE_MISMATCH");
+        static constexpr uint32_t INVALID_FILTER_VALUES_HASH = ConstExprHashingUtils::HashString("INVALID_FILTER_VALUES");
+        static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("INVALID_NEXT_TOKEN");
+        static constexpr uint32_t MISSING_PARAMETER_HASH = ConstExprHashingUtils::HashString("MISSING_PARAMETER");
+        static constexpr uint32_t PARAMETERS_CANNOT_BE_USED_TOGETHER_HASH = ConstExprHashingUtils::HashString("PARAMETERS_CANNOT_BE_USED_TOGETHER");
+        static constexpr uint32_t PHONE_NUMBER_CANNOT_BE_OPTED_IN_HASH = ConstExprHashingUtils::HashString("PHONE_NUMBER_CANNOT_BE_OPTED_IN");
+        static constexpr uint32_t PHONE_NUMBER_CANNOT_BE_RELEASED_HASH = ConstExprHashingUtils::HashString("PHONE_NUMBER_CANNOT_BE_RELEASED");
+        static constexpr uint32_t PRICE_OVER_THRESHOLD_HASH = ConstExprHashingUtils::HashString("PRICE_OVER_THRESHOLD");
+        static constexpr uint32_t REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT_HASH = ConstExprHashingUtils::HashString("REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT");
+        static constexpr uint32_t SENDER_ID_NOT_REGISTERED_HASH = ConstExprHashingUtils::HashString("SENDER_ID_NOT_REGISTERED");
+        static constexpr uint32_t SENDER_ID_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("SENDER_ID_NOT_SUPPORTED");
+        static constexpr uint32_t TWO_WAY_NOT_ENABLED_HASH = ConstExprHashingUtils::HashString("TWO_WAY_NOT_ENABLED");
+        static constexpr uint32_t TWO_WAY_NOT_SUPPORTED_IN_COUNTRY_HASH = ConstExprHashingUtils::HashString("TWO_WAY_NOT_SUPPORTED_IN_COUNTRY");
+        static constexpr uint32_t TWO_WAY_NOT_SUPPORTED_IN_REGION_HASH = ConstExprHashingUtils::HashString("TWO_WAY_NOT_SUPPORTED_IN_REGION");
+        static constexpr uint32_t TWO_WAY_TOPIC_NOT_PRESENT_HASH = ConstExprHashingUtils::HashString("TWO_WAY_TOPIC_NOT_PRESENT");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNKNOWN_OPERATION_HASH)
           {
             return ValidationExceptionReason::UNKNOWN_OPERATION;

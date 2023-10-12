@@ -20,14 +20,14 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int JAR_HASH = HashingUtils::HashString("JAR");
-        static const int FILE_HASH = HashingUtils::HashString("FILE");
-        static const int ARCHIVE_HASH = HashingUtils::HashString("ARCHIVE");
+        static constexpr uint32_t JAR_HASH = ConstExprHashingUtils::HashString("JAR");
+        static constexpr uint32_t FILE_HASH = ConstExprHashingUtils::HashString("FILE");
+        static constexpr uint32_t ARCHIVE_HASH = ConstExprHashingUtils::HashString("ARCHIVE");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JAR_HASH)
           {
             return ResourceType::JAR;

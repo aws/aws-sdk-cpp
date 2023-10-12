@@ -20,14 +20,14 @@ namespace Aws
       namespace EvaluationFormQuestionTypeMapper
       {
 
-        static const int TEXT_HASH = HashingUtils::HashString("TEXT");
-        static const int SINGLESELECT_HASH = HashingUtils::HashString("SINGLESELECT");
-        static const int NUMERIC_HASH = HashingUtils::HashString("NUMERIC");
+        static constexpr uint32_t TEXT_HASH = ConstExprHashingUtils::HashString("TEXT");
+        static constexpr uint32_t SINGLESELECT_HASH = ConstExprHashingUtils::HashString("SINGLESELECT");
+        static constexpr uint32_t NUMERIC_HASH = ConstExprHashingUtils::HashString("NUMERIC");
 
 
         EvaluationFormQuestionType GetEvaluationFormQuestionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TEXT_HASH)
           {
             return EvaluationFormQuestionType::TEXT;

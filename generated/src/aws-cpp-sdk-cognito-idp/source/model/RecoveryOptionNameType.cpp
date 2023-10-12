@@ -20,14 +20,14 @@ namespace Aws
       namespace RecoveryOptionNameTypeMapper
       {
 
-        static const int verified_email_HASH = HashingUtils::HashString("verified_email");
-        static const int verified_phone_number_HASH = HashingUtils::HashString("verified_phone_number");
-        static const int admin_only_HASH = HashingUtils::HashString("admin_only");
+        static constexpr uint32_t verified_email_HASH = ConstExprHashingUtils::HashString("verified_email");
+        static constexpr uint32_t verified_phone_number_HASH = ConstExprHashingUtils::HashString("verified_phone_number");
+        static constexpr uint32_t admin_only_HASH = ConstExprHashingUtils::HashString("admin_only");
 
 
         RecoveryOptionNameType GetRecoveryOptionNameTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == verified_email_HASH)
           {
             return RecoveryOptionNameType::verified_email;

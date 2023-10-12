@@ -20,13 +20,13 @@ namespace Aws
       namespace ChannelMessagePersistenceTypeMapper
       {
 
-        static const int PERSISTENT_HASH = HashingUtils::HashString("PERSISTENT");
-        static const int NON_PERSISTENT_HASH = HashingUtils::HashString("NON_PERSISTENT");
+        static constexpr uint32_t PERSISTENT_HASH = ConstExprHashingUtils::HashString("PERSISTENT");
+        static constexpr uint32_t NON_PERSISTENT_HASH = ConstExprHashingUtils::HashString("NON_PERSISTENT");
 
 
         ChannelMessagePersistenceType GetChannelMessagePersistenceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PERSISTENT_HASH)
           {
             return ChannelMessagePersistenceType::PERSISTENT;

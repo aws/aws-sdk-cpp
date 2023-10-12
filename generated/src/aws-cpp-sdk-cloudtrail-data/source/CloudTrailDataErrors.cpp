@@ -18,17 +18,17 @@ namespace CloudTrailData
 namespace CloudTrailDataErrorMapper
 {
 
-static const int CHANNEL_NOT_FOUND_HASH = HashingUtils::HashString("ChannelNotFound");
-static const int INVALID_CHANNEL_A_R_N_HASH = HashingUtils::HashString("InvalidChannelARN");
-static const int CHANNEL_UNSUPPORTED_SCHEMA_HASH = HashingUtils::HashString("ChannelUnsupportedSchema");
-static const int DUPLICATED_AUDIT_EVENT_ID_HASH = HashingUtils::HashString("DuplicatedAuditEventId");
-static const int CHANNEL_INSUFFICIENT_PERMISSION_HASH = HashingUtils::HashString("ChannelInsufficientPermission");
-static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
+static constexpr uint32_t CHANNEL_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ChannelNotFound");
+static constexpr uint32_t INVALID_CHANNEL_A_R_N_HASH = ConstExprHashingUtils::HashString("InvalidChannelARN");
+static constexpr uint32_t CHANNEL_UNSUPPORTED_SCHEMA_HASH = ConstExprHashingUtils::HashString("ChannelUnsupportedSchema");
+static constexpr uint32_t DUPLICATED_AUDIT_EVENT_ID_HASH = ConstExprHashingUtils::HashString("DuplicatedAuditEventId");
+static constexpr uint32_t CHANNEL_INSUFFICIENT_PERMISSION_HASH = ConstExprHashingUtils::HashString("ChannelInsufficientPermission");
+static constexpr uint32_t UNSUPPORTED_OPERATION_HASH = ConstExprHashingUtils::HashString("UnsupportedOperationException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CHANNEL_NOT_FOUND_HASH)
   {

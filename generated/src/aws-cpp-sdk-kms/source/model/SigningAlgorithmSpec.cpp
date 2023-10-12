@@ -20,21 +20,21 @@ namespace Aws
       namespace SigningAlgorithmSpecMapper
       {
 
-        static const int RSASSA_PSS_SHA_256_HASH = HashingUtils::HashString("RSASSA_PSS_SHA_256");
-        static const int RSASSA_PSS_SHA_384_HASH = HashingUtils::HashString("RSASSA_PSS_SHA_384");
-        static const int RSASSA_PSS_SHA_512_HASH = HashingUtils::HashString("RSASSA_PSS_SHA_512");
-        static const int RSASSA_PKCS1_V1_5_SHA_256_HASH = HashingUtils::HashString("RSASSA_PKCS1_V1_5_SHA_256");
-        static const int RSASSA_PKCS1_V1_5_SHA_384_HASH = HashingUtils::HashString("RSASSA_PKCS1_V1_5_SHA_384");
-        static const int RSASSA_PKCS1_V1_5_SHA_512_HASH = HashingUtils::HashString("RSASSA_PKCS1_V1_5_SHA_512");
-        static const int ECDSA_SHA_256_HASH = HashingUtils::HashString("ECDSA_SHA_256");
-        static const int ECDSA_SHA_384_HASH = HashingUtils::HashString("ECDSA_SHA_384");
-        static const int ECDSA_SHA_512_HASH = HashingUtils::HashString("ECDSA_SHA_512");
-        static const int SM2DSA_HASH = HashingUtils::HashString("SM2DSA");
+        static constexpr uint32_t RSASSA_PSS_SHA_256_HASH = ConstExprHashingUtils::HashString("RSASSA_PSS_SHA_256");
+        static constexpr uint32_t RSASSA_PSS_SHA_384_HASH = ConstExprHashingUtils::HashString("RSASSA_PSS_SHA_384");
+        static constexpr uint32_t RSASSA_PSS_SHA_512_HASH = ConstExprHashingUtils::HashString("RSASSA_PSS_SHA_512");
+        static constexpr uint32_t RSASSA_PKCS1_V1_5_SHA_256_HASH = ConstExprHashingUtils::HashString("RSASSA_PKCS1_V1_5_SHA_256");
+        static constexpr uint32_t RSASSA_PKCS1_V1_5_SHA_384_HASH = ConstExprHashingUtils::HashString("RSASSA_PKCS1_V1_5_SHA_384");
+        static constexpr uint32_t RSASSA_PKCS1_V1_5_SHA_512_HASH = ConstExprHashingUtils::HashString("RSASSA_PKCS1_V1_5_SHA_512");
+        static constexpr uint32_t ECDSA_SHA_256_HASH = ConstExprHashingUtils::HashString("ECDSA_SHA_256");
+        static constexpr uint32_t ECDSA_SHA_384_HASH = ConstExprHashingUtils::HashString("ECDSA_SHA_384");
+        static constexpr uint32_t ECDSA_SHA_512_HASH = ConstExprHashingUtils::HashString("ECDSA_SHA_512");
+        static constexpr uint32_t SM2DSA_HASH = ConstExprHashingUtils::HashString("SM2DSA");
 
 
         SigningAlgorithmSpec GetSigningAlgorithmSpecForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RSASSA_PSS_SHA_256_HASH)
           {
             return SigningAlgorithmSpec::RSASSA_PSS_SHA_256;

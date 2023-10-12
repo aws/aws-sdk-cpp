@@ -20,12 +20,12 @@ namespace Aws
       namespace AnalyticsUtteranceSortByNameMapper
       {
 
-        static const int UtteranceTimestamp_HASH = HashingUtils::HashString("UtteranceTimestamp");
+        static constexpr uint32_t UtteranceTimestamp_HASH = ConstExprHashingUtils::HashString("UtteranceTimestamp");
 
 
         AnalyticsUtteranceSortByName GetAnalyticsUtteranceSortByNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UtteranceTimestamp_HASH)
           {
             return AnalyticsUtteranceSortByName::UtteranceTimestamp;

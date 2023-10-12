@@ -20,12 +20,12 @@ namespace Aws
       namespace StorageVirtualMachineFilterNameMapper
       {
 
-        static const int file_system_id_HASH = HashingUtils::HashString("file-system-id");
+        static constexpr uint32_t file_system_id_HASH = ConstExprHashingUtils::HashString("file-system-id");
 
 
         StorageVirtualMachineFilterName GetStorageVirtualMachineFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == file_system_id_HASH)
           {
             return StorageVirtualMachineFilterName::file_system_id;

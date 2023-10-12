@@ -20,19 +20,19 @@ namespace Aws
       namespace MatchOptionMapper
       {
 
-        static const int EQUALS_HASH = HashingUtils::HashString("EQUALS");
-        static const int ABSENT_HASH = HashingUtils::HashString("ABSENT");
-        static const int STARTS_WITH_HASH = HashingUtils::HashString("STARTS_WITH");
-        static const int ENDS_WITH_HASH = HashingUtils::HashString("ENDS_WITH");
-        static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
-        static const int CASE_SENSITIVE_HASH = HashingUtils::HashString("CASE_SENSITIVE");
-        static const int CASE_INSENSITIVE_HASH = HashingUtils::HashString("CASE_INSENSITIVE");
-        static const int GREATER_THAN_OR_EQUAL_HASH = HashingUtils::HashString("GREATER_THAN_OR_EQUAL");
+        static constexpr uint32_t EQUALS_HASH = ConstExprHashingUtils::HashString("EQUALS");
+        static constexpr uint32_t ABSENT_HASH = ConstExprHashingUtils::HashString("ABSENT");
+        static constexpr uint32_t STARTS_WITH_HASH = ConstExprHashingUtils::HashString("STARTS_WITH");
+        static constexpr uint32_t ENDS_WITH_HASH = ConstExprHashingUtils::HashString("ENDS_WITH");
+        static constexpr uint32_t CONTAINS_HASH = ConstExprHashingUtils::HashString("CONTAINS");
+        static constexpr uint32_t CASE_SENSITIVE_HASH = ConstExprHashingUtils::HashString("CASE_SENSITIVE");
+        static constexpr uint32_t CASE_INSENSITIVE_HASH = ConstExprHashingUtils::HashString("CASE_INSENSITIVE");
+        static constexpr uint32_t GREATER_THAN_OR_EQUAL_HASH = ConstExprHashingUtils::HashString("GREATER_THAN_OR_EQUAL");
 
 
         MatchOption GetMatchOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EQUALS_HASH)
           {
             return MatchOption::EQUALS;

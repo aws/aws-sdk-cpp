@@ -20,14 +20,14 @@ namespace Aws
       namespace ConversationEndStateMapper
       {
 
-        static const int Success_HASH = HashingUtils::HashString("Success");
-        static const int Failure_HASH = HashingUtils::HashString("Failure");
-        static const int Dropped_HASH = HashingUtils::HashString("Dropped");
+        static constexpr uint32_t Success_HASH = ConstExprHashingUtils::HashString("Success");
+        static constexpr uint32_t Failure_HASH = ConstExprHashingUtils::HashString("Failure");
+        static constexpr uint32_t Dropped_HASH = ConstExprHashingUtils::HashString("Dropped");
 
 
         ConversationEndState GetConversationEndStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Success_HASH)
           {
             return ConversationEndState::Success;

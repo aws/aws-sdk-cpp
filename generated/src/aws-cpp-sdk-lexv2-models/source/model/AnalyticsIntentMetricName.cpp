@@ -20,16 +20,16 @@ namespace Aws
       namespace AnalyticsIntentMetricNameMapper
       {
 
-        static const int Count_HASH = HashingUtils::HashString("Count");
-        static const int Success_HASH = HashingUtils::HashString("Success");
-        static const int Failure_HASH = HashingUtils::HashString("Failure");
-        static const int Switched_HASH = HashingUtils::HashString("Switched");
-        static const int Dropped_HASH = HashingUtils::HashString("Dropped");
+        static constexpr uint32_t Count_HASH = ConstExprHashingUtils::HashString("Count");
+        static constexpr uint32_t Success_HASH = ConstExprHashingUtils::HashString("Success");
+        static constexpr uint32_t Failure_HASH = ConstExprHashingUtils::HashString("Failure");
+        static constexpr uint32_t Switched_HASH = ConstExprHashingUtils::HashString("Switched");
+        static constexpr uint32_t Dropped_HASH = ConstExprHashingUtils::HashString("Dropped");
 
 
         AnalyticsIntentMetricName GetAnalyticsIntentMetricNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Count_HASH)
           {
             return AnalyticsIntentMetricName::Count;

@@ -20,14 +20,14 @@ namespace Aws
       namespace SyncExecutionStatusMapper
       {
 
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
+        static constexpr uint32_t SUCCEEDED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t TIMED_OUT_HASH = ConstExprHashingUtils::HashString("TIMED_OUT");
 
 
         SyncExecutionStatus GetSyncExecutionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUCCEEDED_HASH)
           {
             return SyncExecutionStatus::SUCCEEDED;

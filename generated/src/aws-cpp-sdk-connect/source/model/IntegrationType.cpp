@@ -20,18 +20,18 @@ namespace Aws
       namespace IntegrationTypeMapper
       {
 
-        static const int EVENT_HASH = HashingUtils::HashString("EVENT");
-        static const int VOICE_ID_HASH = HashingUtils::HashString("VOICE_ID");
-        static const int PINPOINT_APP_HASH = HashingUtils::HashString("PINPOINT_APP");
-        static const int WISDOM_ASSISTANT_HASH = HashingUtils::HashString("WISDOM_ASSISTANT");
-        static const int WISDOM_KNOWLEDGE_BASE_HASH = HashingUtils::HashString("WISDOM_KNOWLEDGE_BASE");
-        static const int CASES_DOMAIN_HASH = HashingUtils::HashString("CASES_DOMAIN");
-        static const int APPLICATION_HASH = HashingUtils::HashString("APPLICATION");
+        static constexpr uint32_t EVENT_HASH = ConstExprHashingUtils::HashString("EVENT");
+        static constexpr uint32_t VOICE_ID_HASH = ConstExprHashingUtils::HashString("VOICE_ID");
+        static constexpr uint32_t PINPOINT_APP_HASH = ConstExprHashingUtils::HashString("PINPOINT_APP");
+        static constexpr uint32_t WISDOM_ASSISTANT_HASH = ConstExprHashingUtils::HashString("WISDOM_ASSISTANT");
+        static constexpr uint32_t WISDOM_KNOWLEDGE_BASE_HASH = ConstExprHashingUtils::HashString("WISDOM_KNOWLEDGE_BASE");
+        static constexpr uint32_t CASES_DOMAIN_HASH = ConstExprHashingUtils::HashString("CASES_DOMAIN");
+        static constexpr uint32_t APPLICATION_HASH = ConstExprHashingUtils::HashString("APPLICATION");
 
 
         IntegrationType GetIntegrationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EVENT_HASH)
           {
             return IntegrationType::EVENT;

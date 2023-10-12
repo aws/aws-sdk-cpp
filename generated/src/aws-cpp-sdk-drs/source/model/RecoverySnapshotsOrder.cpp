@@ -20,13 +20,13 @@ namespace Aws
       namespace RecoverySnapshotsOrderMapper
       {
 
-        static const int ASC_HASH = HashingUtils::HashString("ASC");
-        static const int DESC_HASH = HashingUtils::HashString("DESC");
+        static constexpr uint32_t ASC_HASH = ConstExprHashingUtils::HashString("ASC");
+        static constexpr uint32_t DESC_HASH = ConstExprHashingUtils::HashString("DESC");
 
 
         RecoverySnapshotsOrder GetRecoverySnapshotsOrderForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASC_HASH)
           {
             return RecoverySnapshotsOrder::ASC;

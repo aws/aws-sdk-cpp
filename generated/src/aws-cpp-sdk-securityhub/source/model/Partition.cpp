@@ -20,14 +20,14 @@ namespace Aws
       namespace PartitionMapper
       {
 
-        static const int aws_HASH = HashingUtils::HashString("aws");
-        static const int aws_cn_HASH = HashingUtils::HashString("aws-cn");
-        static const int aws_us_gov_HASH = HashingUtils::HashString("aws-us-gov");
+        static constexpr uint32_t aws_HASH = ConstExprHashingUtils::HashString("aws");
+        static constexpr uint32_t aws_cn_HASH = ConstExprHashingUtils::HashString("aws-cn");
+        static constexpr uint32_t aws_us_gov_HASH = ConstExprHashingUtils::HashString("aws-us-gov");
 
 
         Partition GetPartitionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == aws_HASH)
           {
             return Partition::aws;

@@ -20,12 +20,12 @@ namespace Aws
       namespace ChangeTypeMapper
       {
 
-        static const int Resource_HASH = HashingUtils::HashString("Resource");
+        static constexpr uint32_t Resource_HASH = ConstExprHashingUtils::HashString("Resource");
 
 
         ChangeType GetChangeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Resource_HASH)
           {
             return ChangeType::Resource;

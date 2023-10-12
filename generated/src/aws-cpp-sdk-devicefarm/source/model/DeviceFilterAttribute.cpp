@@ -20,23 +20,23 @@ namespace Aws
       namespace DeviceFilterAttributeMapper
       {
 
-        static const int ARN_HASH = HashingUtils::HashString("ARN");
-        static const int PLATFORM_HASH = HashingUtils::HashString("PLATFORM");
-        static const int OS_VERSION_HASH = HashingUtils::HashString("OS_VERSION");
-        static const int MODEL_HASH = HashingUtils::HashString("MODEL");
-        static const int AVAILABILITY_HASH = HashingUtils::HashString("AVAILABILITY");
-        static const int FORM_FACTOR_HASH = HashingUtils::HashString("FORM_FACTOR");
-        static const int MANUFACTURER_HASH = HashingUtils::HashString("MANUFACTURER");
-        static const int REMOTE_ACCESS_ENABLED_HASH = HashingUtils::HashString("REMOTE_ACCESS_ENABLED");
-        static const int REMOTE_DEBUG_ENABLED_HASH = HashingUtils::HashString("REMOTE_DEBUG_ENABLED");
-        static const int INSTANCE_ARN_HASH = HashingUtils::HashString("INSTANCE_ARN");
-        static const int INSTANCE_LABELS_HASH = HashingUtils::HashString("INSTANCE_LABELS");
-        static const int FLEET_TYPE_HASH = HashingUtils::HashString("FLEET_TYPE");
+        static constexpr uint32_t ARN_HASH = ConstExprHashingUtils::HashString("ARN");
+        static constexpr uint32_t PLATFORM_HASH = ConstExprHashingUtils::HashString("PLATFORM");
+        static constexpr uint32_t OS_VERSION_HASH = ConstExprHashingUtils::HashString("OS_VERSION");
+        static constexpr uint32_t MODEL_HASH = ConstExprHashingUtils::HashString("MODEL");
+        static constexpr uint32_t AVAILABILITY_HASH = ConstExprHashingUtils::HashString("AVAILABILITY");
+        static constexpr uint32_t FORM_FACTOR_HASH = ConstExprHashingUtils::HashString("FORM_FACTOR");
+        static constexpr uint32_t MANUFACTURER_HASH = ConstExprHashingUtils::HashString("MANUFACTURER");
+        static constexpr uint32_t REMOTE_ACCESS_ENABLED_HASH = ConstExprHashingUtils::HashString("REMOTE_ACCESS_ENABLED");
+        static constexpr uint32_t REMOTE_DEBUG_ENABLED_HASH = ConstExprHashingUtils::HashString("REMOTE_DEBUG_ENABLED");
+        static constexpr uint32_t INSTANCE_ARN_HASH = ConstExprHashingUtils::HashString("INSTANCE_ARN");
+        static constexpr uint32_t INSTANCE_LABELS_HASH = ConstExprHashingUtils::HashString("INSTANCE_LABELS");
+        static constexpr uint32_t FLEET_TYPE_HASH = ConstExprHashingUtils::HashString("FLEET_TYPE");
 
 
         DeviceFilterAttribute GetDeviceFilterAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ARN_HASH)
           {
             return DeviceFilterAttribute::ARN;

@@ -20,12 +20,12 @@ namespace Aws
       namespace AppBlockBuilderStateChangeReasonCodeMapper
       {
 
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
 
 
         AppBlockBuilderStateChangeReasonCode GetAppBlockBuilderStateChangeReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERNAL_ERROR_HASH)
           {
             return AppBlockBuilderStateChangeReasonCode::INTERNAL_ERROR;

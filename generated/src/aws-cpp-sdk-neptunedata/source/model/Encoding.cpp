@@ -20,12 +20,12 @@ namespace Aws
       namespace EncodingMapper
       {
 
-        static const int gzip_HASH = HashingUtils::HashString("gzip");
+        static constexpr uint32_t gzip_HASH = ConstExprHashingUtils::HashString("gzip");
 
 
         Encoding GetEncodingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == gzip_HASH)
           {
             return Encoding::gzip;

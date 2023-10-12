@@ -20,13 +20,13 @@ namespace Aws
       namespace Xavc4kProfileCodecProfileMapper
       {
 
-        static const int HIGH_HASH = HashingUtils::HashString("HIGH");
-        static const int HIGH_422_HASH = HashingUtils::HashString("HIGH_422");
+        static constexpr uint32_t HIGH_HASH = ConstExprHashingUtils::HashString("HIGH");
+        static constexpr uint32_t HIGH_422_HASH = ConstExprHashingUtils::HashString("HIGH_422");
 
 
         Xavc4kProfileCodecProfile GetXavc4kProfileCodecProfileForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HIGH_HASH)
           {
             return Xavc4kProfileCodecProfile::HIGH;

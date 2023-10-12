@@ -20,15 +20,15 @@ namespace Aws
       namespace SortKeyTypeMapper
       {
 
-        static const int SERVICE_NAMESPACE_ASCENDING_HASH = HashingUtils::HashString("SERVICE_NAMESPACE_ASCENDING");
-        static const int SERVICE_NAMESPACE_DESCENDING_HASH = HashingUtils::HashString("SERVICE_NAMESPACE_DESCENDING");
-        static const int LAST_AUTHENTICATED_TIME_ASCENDING_HASH = HashingUtils::HashString("LAST_AUTHENTICATED_TIME_ASCENDING");
-        static const int LAST_AUTHENTICATED_TIME_DESCENDING_HASH = HashingUtils::HashString("LAST_AUTHENTICATED_TIME_DESCENDING");
+        static constexpr uint32_t SERVICE_NAMESPACE_ASCENDING_HASH = ConstExprHashingUtils::HashString("SERVICE_NAMESPACE_ASCENDING");
+        static constexpr uint32_t SERVICE_NAMESPACE_DESCENDING_HASH = ConstExprHashingUtils::HashString("SERVICE_NAMESPACE_DESCENDING");
+        static constexpr uint32_t LAST_AUTHENTICATED_TIME_ASCENDING_HASH = ConstExprHashingUtils::HashString("LAST_AUTHENTICATED_TIME_ASCENDING");
+        static constexpr uint32_t LAST_AUTHENTICATED_TIME_DESCENDING_HASH = ConstExprHashingUtils::HashString("LAST_AUTHENTICATED_TIME_DESCENDING");
 
 
         SortKeyType GetSortKeyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SERVICE_NAMESPACE_ASCENDING_HASH)
           {
             return SortKeyType::SERVICE_NAMESPACE_ASCENDING;

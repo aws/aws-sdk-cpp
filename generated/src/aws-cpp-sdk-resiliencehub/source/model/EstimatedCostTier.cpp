@@ -20,15 +20,15 @@ namespace Aws
       namespace EstimatedCostTierMapper
       {
 
-        static const int L1_HASH = HashingUtils::HashString("L1");
-        static const int L2_HASH = HashingUtils::HashString("L2");
-        static const int L3_HASH = HashingUtils::HashString("L3");
-        static const int L4_HASH = HashingUtils::HashString("L4");
+        static constexpr uint32_t L1_HASH = ConstExprHashingUtils::HashString("L1");
+        static constexpr uint32_t L2_HASH = ConstExprHashingUtils::HashString("L2");
+        static constexpr uint32_t L3_HASH = ConstExprHashingUtils::HashString("L3");
+        static constexpr uint32_t L4_HASH = ConstExprHashingUtils::HashString("L4");
 
 
         EstimatedCostTier GetEstimatedCostTierForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == L1_HASH)
           {
             return EstimatedCostTier::L1;

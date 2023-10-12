@@ -20,19 +20,19 @@ namespace Aws
       namespace CloudWatchMetricsStatMapper
       {
 
-        static const int Sum_HASH = HashingUtils::HashString("Sum");
-        static const int Average_HASH = HashingUtils::HashString("Average");
-        static const int SampleCount_HASH = HashingUtils::HashString("SampleCount");
-        static const int Minimum_HASH = HashingUtils::HashString("Minimum");
-        static const int Maximum_HASH = HashingUtils::HashString("Maximum");
-        static const int p99_HASH = HashingUtils::HashString("p99");
-        static const int p90_HASH = HashingUtils::HashString("p90");
-        static const int p50_HASH = HashingUtils::HashString("p50");
+        static constexpr uint32_t Sum_HASH = ConstExprHashingUtils::HashString("Sum");
+        static constexpr uint32_t Average_HASH = ConstExprHashingUtils::HashString("Average");
+        static constexpr uint32_t SampleCount_HASH = ConstExprHashingUtils::HashString("SampleCount");
+        static constexpr uint32_t Minimum_HASH = ConstExprHashingUtils::HashString("Minimum");
+        static constexpr uint32_t Maximum_HASH = ConstExprHashingUtils::HashString("Maximum");
+        static constexpr uint32_t p99_HASH = ConstExprHashingUtils::HashString("p99");
+        static constexpr uint32_t p90_HASH = ConstExprHashingUtils::HashString("p90");
+        static constexpr uint32_t p50_HASH = ConstExprHashingUtils::HashString("p50");
 
 
         CloudWatchMetricsStat GetCloudWatchMetricsStatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Sum_HASH)
           {
             return CloudWatchMetricsStat::Sum;

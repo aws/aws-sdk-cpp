@@ -18,19 +18,19 @@ namespace Support
 namespace SupportErrorMapper
 {
 
-static const int CASE_ID_NOT_FOUND_HASH = HashingUtils::HashString("CaseIdNotFound");
-static const int CASE_CREATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CaseCreationLimitExceeded");
-static const int ATTACHMENT_SET_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AttachmentSetSizeLimitExceeded");
-static const int ATTACHMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AttachmentLimitExceeded");
-static const int ATTACHMENT_ID_NOT_FOUND_HASH = HashingUtils::HashString("AttachmentIdNotFound");
-static const int ATTACHMENT_SET_ID_NOT_FOUND_HASH = HashingUtils::HashString("AttachmentSetIdNotFound");
-static const int ATTACHMENT_SET_EXPIRED_HASH = HashingUtils::HashString("AttachmentSetExpired");
-static const int DESCRIBE_ATTACHMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DescribeAttachmentLimitExceeded");
+static constexpr uint32_t CASE_ID_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("CaseIdNotFound");
+static constexpr uint32_t CASE_CREATION_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("CaseCreationLimitExceeded");
+static constexpr uint32_t ATTACHMENT_SET_SIZE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("AttachmentSetSizeLimitExceeded");
+static constexpr uint32_t ATTACHMENT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("AttachmentLimitExceeded");
+static constexpr uint32_t ATTACHMENT_ID_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("AttachmentIdNotFound");
+static constexpr uint32_t ATTACHMENT_SET_ID_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("AttachmentSetIdNotFound");
+static constexpr uint32_t ATTACHMENT_SET_EXPIRED_HASH = ConstExprHashingUtils::HashString("AttachmentSetExpired");
+static constexpr uint32_t DESCRIBE_ATTACHMENT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("DescribeAttachmentLimitExceeded");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CASE_ID_NOT_FOUND_HASH)
   {

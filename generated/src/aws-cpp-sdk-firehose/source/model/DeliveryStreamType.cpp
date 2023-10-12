@@ -20,14 +20,14 @@ namespace Aws
       namespace DeliveryStreamTypeMapper
       {
 
-        static const int DirectPut_HASH = HashingUtils::HashString("DirectPut");
-        static const int KinesisStreamAsSource_HASH = HashingUtils::HashString("KinesisStreamAsSource");
-        static const int MSKAsSource_HASH = HashingUtils::HashString("MSKAsSource");
+        static constexpr uint32_t DirectPut_HASH = ConstExprHashingUtils::HashString("DirectPut");
+        static constexpr uint32_t KinesisStreamAsSource_HASH = ConstExprHashingUtils::HashString("KinesisStreamAsSource");
+        static constexpr uint32_t MSKAsSource_HASH = ConstExprHashingUtils::HashString("MSKAsSource");
 
 
         DeliveryStreamType GetDeliveryStreamTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DirectPut_HASH)
           {
             return DeliveryStreamType::DirectPut;

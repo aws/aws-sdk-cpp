@@ -20,16 +20,16 @@ namespace Aws
       namespace NsLcmOperationStateMapper
       {
 
-        static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int CANCELLING_HASH = HashingUtils::HashString("CANCELLING");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t PROCESSING_HASH = ConstExprHashingUtils::HashString("PROCESSING");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t CANCELLING_HASH = ConstExprHashingUtils::HashString("CANCELLING");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
 
 
         NsLcmOperationState GetNsLcmOperationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROCESSING_HASH)
           {
             return NsLcmOperationState::PROCESSING;

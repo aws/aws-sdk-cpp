@@ -20,19 +20,19 @@ namespace Aws
       namespace StandardIdentifierMapper
       {
 
-        static const int PROFILE_HASH = HashingUtils::HashString("PROFILE");
-        static const int ASSET_HASH = HashingUtils::HashString("ASSET");
-        static const int CASE_HASH = HashingUtils::HashString("CASE");
-        static const int UNIQUE_HASH = HashingUtils::HashString("UNIQUE");
-        static const int SECONDARY_HASH = HashingUtils::HashString("SECONDARY");
-        static const int LOOKUP_ONLY_HASH = HashingUtils::HashString("LOOKUP_ONLY");
-        static const int NEW_ONLY_HASH = HashingUtils::HashString("NEW_ONLY");
-        static const int ORDER_HASH = HashingUtils::HashString("ORDER");
+        static constexpr uint32_t PROFILE_HASH = ConstExprHashingUtils::HashString("PROFILE");
+        static constexpr uint32_t ASSET_HASH = ConstExprHashingUtils::HashString("ASSET");
+        static constexpr uint32_t CASE_HASH = ConstExprHashingUtils::HashString("CASE");
+        static constexpr uint32_t UNIQUE_HASH = ConstExprHashingUtils::HashString("UNIQUE");
+        static constexpr uint32_t SECONDARY_HASH = ConstExprHashingUtils::HashString("SECONDARY");
+        static constexpr uint32_t LOOKUP_ONLY_HASH = ConstExprHashingUtils::HashString("LOOKUP_ONLY");
+        static constexpr uint32_t NEW_ONLY_HASH = ConstExprHashingUtils::HashString("NEW_ONLY");
+        static constexpr uint32_t ORDER_HASH = ConstExprHashingUtils::HashString("ORDER");
 
 
         StandardIdentifier GetStandardIdentifierForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROFILE_HASH)
           {
             return StandardIdentifier::PROFILE;

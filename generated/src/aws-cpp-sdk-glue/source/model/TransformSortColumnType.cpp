@@ -20,16 +20,16 @@ namespace Aws
       namespace TransformSortColumnTypeMapper
       {
 
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int TRANSFORM_TYPE_HASH = HashingUtils::HashString("TRANSFORM_TYPE");
-        static const int STATUS_HASH = HashingUtils::HashString("STATUS");
-        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
-        static const int LAST_MODIFIED_HASH = HashingUtils::HashString("LAST_MODIFIED");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t TRANSFORM_TYPE_HASH = ConstExprHashingUtils::HashString("TRANSFORM_TYPE");
+        static constexpr uint32_t STATUS_HASH = ConstExprHashingUtils::HashString("STATUS");
+        static constexpr uint32_t CREATED_HASH = ConstExprHashingUtils::HashString("CREATED");
+        static constexpr uint32_t LAST_MODIFIED_HASH = ConstExprHashingUtils::HashString("LAST_MODIFIED");
 
 
         TransformSortColumnType GetTransformSortColumnTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NAME_HASH)
           {
             return TransformSortColumnType::NAME;

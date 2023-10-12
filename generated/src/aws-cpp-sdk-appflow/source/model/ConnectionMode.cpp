@@ -20,13 +20,13 @@ namespace Aws
       namespace ConnectionModeMapper
       {
 
-        static const int Public_HASH = HashingUtils::HashString("Public");
-        static const int Private_HASH = HashingUtils::HashString("Private");
+        static constexpr uint32_t Public_HASH = ConstExprHashingUtils::HashString("Public");
+        static constexpr uint32_t Private_HASH = ConstExprHashingUtils::HashString("Private");
 
 
         ConnectionMode GetConnectionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Public_HASH)
           {
             return ConnectionMode::Public;

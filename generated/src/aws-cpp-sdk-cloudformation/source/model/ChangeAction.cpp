@@ -20,16 +20,16 @@ namespace Aws
       namespace ChangeActionMapper
       {
 
-        static const int Add_HASH = HashingUtils::HashString("Add");
-        static const int Modify_HASH = HashingUtils::HashString("Modify");
-        static const int Remove_HASH = HashingUtils::HashString("Remove");
-        static const int Import_HASH = HashingUtils::HashString("Import");
-        static const int Dynamic_HASH = HashingUtils::HashString("Dynamic");
+        static constexpr uint32_t Add_HASH = ConstExprHashingUtils::HashString("Add");
+        static constexpr uint32_t Modify_HASH = ConstExprHashingUtils::HashString("Modify");
+        static constexpr uint32_t Remove_HASH = ConstExprHashingUtils::HashString("Remove");
+        static constexpr uint32_t Import_HASH = ConstExprHashingUtils::HashString("Import");
+        static constexpr uint32_t Dynamic_HASH = ConstExprHashingUtils::HashString("Dynamic");
 
 
         ChangeAction GetChangeActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Add_HASH)
           {
             return ChangeAction::Add;

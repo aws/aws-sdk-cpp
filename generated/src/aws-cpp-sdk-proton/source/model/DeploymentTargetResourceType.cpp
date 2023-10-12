@@ -20,15 +20,15 @@ namespace Aws
       namespace DeploymentTargetResourceTypeMapper
       {
 
-        static const int ENVIRONMENT_HASH = HashingUtils::HashString("ENVIRONMENT");
-        static const int SERVICE_PIPELINE_HASH = HashingUtils::HashString("SERVICE_PIPELINE");
-        static const int SERVICE_INSTANCE_HASH = HashingUtils::HashString("SERVICE_INSTANCE");
-        static const int COMPONENT_HASH = HashingUtils::HashString("COMPONENT");
+        static constexpr uint32_t ENVIRONMENT_HASH = ConstExprHashingUtils::HashString("ENVIRONMENT");
+        static constexpr uint32_t SERVICE_PIPELINE_HASH = ConstExprHashingUtils::HashString("SERVICE_PIPELINE");
+        static constexpr uint32_t SERVICE_INSTANCE_HASH = ConstExprHashingUtils::HashString("SERVICE_INSTANCE");
+        static constexpr uint32_t COMPONENT_HASH = ConstExprHashingUtils::HashString("COMPONENT");
 
 
         DeploymentTargetResourceType GetDeploymentTargetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENVIRONMENT_HASH)
           {
             return DeploymentTargetResourceType::ENVIRONMENT;

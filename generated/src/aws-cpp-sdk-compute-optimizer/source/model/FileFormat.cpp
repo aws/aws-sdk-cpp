@@ -20,12 +20,12 @@ namespace Aws
       namespace FileFormatMapper
       {
 
-        static const int Csv_HASH = HashingUtils::HashString("Csv");
+        static constexpr uint32_t Csv_HASH = ConstExprHashingUtils::HashString("Csv");
 
 
         FileFormat GetFileFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Csv_HASH)
           {
             return FileFormat::Csv;

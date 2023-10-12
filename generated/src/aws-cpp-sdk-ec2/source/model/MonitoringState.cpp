@@ -20,15 +20,15 @@ namespace Aws
       namespace MonitoringStateMapper
       {
 
-        static const int disabled_HASH = HashingUtils::HashString("disabled");
-        static const int disabling_HASH = HashingUtils::HashString("disabling");
-        static const int enabled_HASH = HashingUtils::HashString("enabled");
-        static const int pending_HASH = HashingUtils::HashString("pending");
+        static constexpr uint32_t disabled_HASH = ConstExprHashingUtils::HashString("disabled");
+        static constexpr uint32_t disabling_HASH = ConstExprHashingUtils::HashString("disabling");
+        static constexpr uint32_t enabled_HASH = ConstExprHashingUtils::HashString("enabled");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
 
 
         MonitoringState GetMonitoringStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == disabled_HASH)
           {
             return MonitoringState::disabled;

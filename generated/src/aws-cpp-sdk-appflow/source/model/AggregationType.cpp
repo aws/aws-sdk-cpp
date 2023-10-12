@@ -20,13 +20,13 @@ namespace Aws
       namespace AggregationTypeMapper
       {
 
-        static const int None_HASH = HashingUtils::HashString("None");
-        static const int SingleFile_HASH = HashingUtils::HashString("SingleFile");
+        static constexpr uint32_t None_HASH = ConstExprHashingUtils::HashString("None");
+        static constexpr uint32_t SingleFile_HASH = ConstExprHashingUtils::HashString("SingleFile");
 
 
         AggregationType GetAggregationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == None_HASH)
           {
             return AggregationType::None;

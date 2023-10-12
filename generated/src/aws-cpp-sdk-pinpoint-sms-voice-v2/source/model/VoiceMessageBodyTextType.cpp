@@ -20,13 +20,13 @@ namespace Aws
       namespace VoiceMessageBodyTextTypeMapper
       {
 
-        static const int TEXT_HASH = HashingUtils::HashString("TEXT");
-        static const int SSML_HASH = HashingUtils::HashString("SSML");
+        static constexpr uint32_t TEXT_HASH = ConstExprHashingUtils::HashString("TEXT");
+        static constexpr uint32_t SSML_HASH = ConstExprHashingUtils::HashString("SSML");
 
 
         VoiceMessageBodyTextType GetVoiceMessageBodyTextTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TEXT_HASH)
           {
             return VoiceMessageBodyTextType::TEXT;

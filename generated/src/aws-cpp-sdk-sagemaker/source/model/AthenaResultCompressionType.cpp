@@ -20,14 +20,14 @@ namespace Aws
       namespace AthenaResultCompressionTypeMapper
       {
 
-        static const int GZIP_HASH = HashingUtils::HashString("GZIP");
-        static const int SNAPPY_HASH = HashingUtils::HashString("SNAPPY");
-        static const int ZLIB_HASH = HashingUtils::HashString("ZLIB");
+        static constexpr uint32_t GZIP_HASH = ConstExprHashingUtils::HashString("GZIP");
+        static constexpr uint32_t SNAPPY_HASH = ConstExprHashingUtils::HashString("SNAPPY");
+        static constexpr uint32_t ZLIB_HASH = ConstExprHashingUtils::HashString("ZLIB");
 
 
         AthenaResultCompressionType GetAthenaResultCompressionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GZIP_HASH)
           {
             return AthenaResultCompressionType::GZIP;

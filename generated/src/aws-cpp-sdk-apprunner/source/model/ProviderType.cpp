@@ -20,13 +20,13 @@ namespace Aws
       namespace ProviderTypeMapper
       {
 
-        static const int GITHUB_HASH = HashingUtils::HashString("GITHUB");
-        static const int BITBUCKET_HASH = HashingUtils::HashString("BITBUCKET");
+        static constexpr uint32_t GITHUB_HASH = ConstExprHashingUtils::HashString("GITHUB");
+        static constexpr uint32_t BITBUCKET_HASH = ConstExprHashingUtils::HashString("BITBUCKET");
 
 
         ProviderType GetProviderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GITHUB_HASH)
           {
             return ProviderType::GITHUB;

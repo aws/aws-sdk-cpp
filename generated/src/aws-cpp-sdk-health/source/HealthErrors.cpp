@@ -18,14 +18,14 @@ namespace Health
 namespace HealthErrorMapper
 {
 
-static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("InvalidPaginationToken");
-static const int UNSUPPORTED_LOCALE_HASH = HashingUtils::HashString("UnsupportedLocale");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t INVALID_PAGINATION_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidPaginationToken");
+static constexpr uint32_t UNSUPPORTED_LOCALE_HASH = ConstExprHashingUtils::HashString("UnsupportedLocale");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
   {

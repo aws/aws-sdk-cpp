@@ -20,16 +20,16 @@ namespace Aws
       namespace LocalWriteForwardingStatusMapper
       {
 
-        static const int enabled_HASH = HashingUtils::HashString("enabled");
-        static const int disabled_HASH = HashingUtils::HashString("disabled");
-        static const int enabling_HASH = HashingUtils::HashString("enabling");
-        static const int disabling_HASH = HashingUtils::HashString("disabling");
-        static const int requested_HASH = HashingUtils::HashString("requested");
+        static constexpr uint32_t enabled_HASH = ConstExprHashingUtils::HashString("enabled");
+        static constexpr uint32_t disabled_HASH = ConstExprHashingUtils::HashString("disabled");
+        static constexpr uint32_t enabling_HASH = ConstExprHashingUtils::HashString("enabling");
+        static constexpr uint32_t disabling_HASH = ConstExprHashingUtils::HashString("disabling");
+        static constexpr uint32_t requested_HASH = ConstExprHashingUtils::HashString("requested");
 
 
         LocalWriteForwardingStatus GetLocalWriteForwardingStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == enabled_HASH)
           {
             return LocalWriteForwardingStatus::enabled;

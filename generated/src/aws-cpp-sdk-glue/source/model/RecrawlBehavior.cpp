@@ -20,14 +20,14 @@ namespace Aws
       namespace RecrawlBehaviorMapper
       {
 
-        static const int CRAWL_EVERYTHING_HASH = HashingUtils::HashString("CRAWL_EVERYTHING");
-        static const int CRAWL_NEW_FOLDERS_ONLY_HASH = HashingUtils::HashString("CRAWL_NEW_FOLDERS_ONLY");
-        static const int CRAWL_EVENT_MODE_HASH = HashingUtils::HashString("CRAWL_EVENT_MODE");
+        static constexpr uint32_t CRAWL_EVERYTHING_HASH = ConstExprHashingUtils::HashString("CRAWL_EVERYTHING");
+        static constexpr uint32_t CRAWL_NEW_FOLDERS_ONLY_HASH = ConstExprHashingUtils::HashString("CRAWL_NEW_FOLDERS_ONLY");
+        static constexpr uint32_t CRAWL_EVENT_MODE_HASH = ConstExprHashingUtils::HashString("CRAWL_EVENT_MODE");
 
 
         RecrawlBehavior GetRecrawlBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CRAWL_EVERYTHING_HASH)
           {
             return RecrawlBehavior::CRAWL_EVERYTHING;

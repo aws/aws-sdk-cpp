@@ -20,14 +20,14 @@ namespace Aws
       namespace DataSourceMapper
       {
 
-        static const int EVENT_HASH = HashingUtils::HashString("EVENT");
-        static const int MODEL_SCORE_HASH = HashingUtils::HashString("MODEL_SCORE");
-        static const int EXTERNAL_MODEL_SCORE_HASH = HashingUtils::HashString("EXTERNAL_MODEL_SCORE");
+        static constexpr uint32_t EVENT_HASH = ConstExprHashingUtils::HashString("EVENT");
+        static constexpr uint32_t MODEL_SCORE_HASH = ConstExprHashingUtils::HashString("MODEL_SCORE");
+        static constexpr uint32_t EXTERNAL_MODEL_SCORE_HASH = ConstExprHashingUtils::HashString("EXTERNAL_MODEL_SCORE");
 
 
         DataSource GetDataSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EVENT_HASH)
           {
             return DataSource::EVENT;

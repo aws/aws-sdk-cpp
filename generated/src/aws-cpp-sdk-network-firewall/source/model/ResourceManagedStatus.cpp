@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceManagedStatusMapper
       {
 
-        static const int MANAGED_HASH = HashingUtils::HashString("MANAGED");
-        static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
+        static constexpr uint32_t MANAGED_HASH = ConstExprHashingUtils::HashString("MANAGED");
+        static constexpr uint32_t ACCOUNT_HASH = ConstExprHashingUtils::HashString("ACCOUNT");
 
 
         ResourceManagedStatus GetResourceManagedStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MANAGED_HASH)
           {
             return ResourceManagedStatus::MANAGED;

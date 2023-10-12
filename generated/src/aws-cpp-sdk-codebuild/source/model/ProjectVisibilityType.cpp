@@ -20,13 +20,13 @@ namespace Aws
       namespace ProjectVisibilityTypeMapper
       {
 
-        static const int PUBLIC_READ_HASH = HashingUtils::HashString("PUBLIC_READ");
-        static const int PRIVATE__HASH = HashingUtils::HashString("PRIVATE");
+        static constexpr uint32_t PUBLIC_READ_HASH = ConstExprHashingUtils::HashString("PUBLIC_READ");
+        static constexpr uint32_t PRIVATE__HASH = ConstExprHashingUtils::HashString("PRIVATE");
 
 
         ProjectVisibilityType GetProjectVisibilityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUBLIC_READ_HASH)
           {
             return ProjectVisibilityType::PUBLIC_READ;

@@ -20,12 +20,12 @@ namespace Aws
       namespace CopyTagsFromSourceMapper
       {
 
-        static const int volume_HASH = HashingUtils::HashString("volume");
+        static constexpr uint32_t volume_HASH = ConstExprHashingUtils::HashString("volume");
 
 
         CopyTagsFromSource GetCopyTagsFromSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == volume_HASH)
           {
             return CopyTagsFromSource::volume;

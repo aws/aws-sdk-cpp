@@ -20,13 +20,13 @@ namespace Aws
       namespace PushNotificationTypeMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int VOIP_HASH = HashingUtils::HashString("VOIP");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t VOIP_HASH = ConstExprHashingUtils::HashString("VOIP");
 
 
         PushNotificationType GetPushNotificationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return PushNotificationType::DEFAULT;

@@ -20,20 +20,20 @@ namespace Aws
       namespace ItemTypeMapper
       {
 
-        static const int ANALYSIS_HASH = HashingUtils::HashString("ANALYSIS");
-        static const int INCIDENT_HASH = HashingUtils::HashString("INCIDENT");
-        static const int METRIC_HASH = HashingUtils::HashString("METRIC");
-        static const int PARENT_HASH = HashingUtils::HashString("PARENT");
-        static const int ATTACHMENT_HASH = HashingUtils::HashString("ATTACHMENT");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
-        static const int AUTOMATION_HASH = HashingUtils::HashString("AUTOMATION");
-        static const int INVOLVED_RESOURCE_HASH = HashingUtils::HashString("INVOLVED_RESOURCE");
-        static const int TASK_HASH = HashingUtils::HashString("TASK");
+        static constexpr uint32_t ANALYSIS_HASH = ConstExprHashingUtils::HashString("ANALYSIS");
+        static constexpr uint32_t INCIDENT_HASH = ConstExprHashingUtils::HashString("INCIDENT");
+        static constexpr uint32_t METRIC_HASH = ConstExprHashingUtils::HashString("METRIC");
+        static constexpr uint32_t PARENT_HASH = ConstExprHashingUtils::HashString("PARENT");
+        static constexpr uint32_t ATTACHMENT_HASH = ConstExprHashingUtils::HashString("ATTACHMENT");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
+        static constexpr uint32_t AUTOMATION_HASH = ConstExprHashingUtils::HashString("AUTOMATION");
+        static constexpr uint32_t INVOLVED_RESOURCE_HASH = ConstExprHashingUtils::HashString("INVOLVED_RESOURCE");
+        static constexpr uint32_t TASK_HASH = ConstExprHashingUtils::HashString("TASK");
 
 
         ItemType GetItemTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ANALYSIS_HASH)
           {
             return ItemType::ANALYSIS;

@@ -20,13 +20,13 @@ namespace Aws
       namespace HyperParameterTuningJobWarmStartTypeMapper
       {
 
-        static const int IdenticalDataAndAlgorithm_HASH = HashingUtils::HashString("IdenticalDataAndAlgorithm");
-        static const int TransferLearning_HASH = HashingUtils::HashString("TransferLearning");
+        static constexpr uint32_t IdenticalDataAndAlgorithm_HASH = ConstExprHashingUtils::HashString("IdenticalDataAndAlgorithm");
+        static constexpr uint32_t TransferLearning_HASH = ConstExprHashingUtils::HashString("TransferLearning");
 
 
         HyperParameterTuningJobWarmStartType GetHyperParameterTuningJobWarmStartTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IdenticalDataAndAlgorithm_HASH)
           {
             return HyperParameterTuningJobWarmStartType::IdenticalDataAndAlgorithm;

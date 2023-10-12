@@ -20,17 +20,17 @@ namespace Aws
       namespace DvbSubDestinationFontColorMapper
       {
 
-        static const int BLACK_HASH = HashingUtils::HashString("BLACK");
-        static const int BLUE_HASH = HashingUtils::HashString("BLUE");
-        static const int GREEN_HASH = HashingUtils::HashString("GREEN");
-        static const int RED_HASH = HashingUtils::HashString("RED");
-        static const int WHITE_HASH = HashingUtils::HashString("WHITE");
-        static const int YELLOW_HASH = HashingUtils::HashString("YELLOW");
+        static constexpr uint32_t BLACK_HASH = ConstExprHashingUtils::HashString("BLACK");
+        static constexpr uint32_t BLUE_HASH = ConstExprHashingUtils::HashString("BLUE");
+        static constexpr uint32_t GREEN_HASH = ConstExprHashingUtils::HashString("GREEN");
+        static constexpr uint32_t RED_HASH = ConstExprHashingUtils::HashString("RED");
+        static constexpr uint32_t WHITE_HASH = ConstExprHashingUtils::HashString("WHITE");
+        static constexpr uint32_t YELLOW_HASH = ConstExprHashingUtils::HashString("YELLOW");
 
 
         DvbSubDestinationFontColor GetDvbSubDestinationFontColorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BLACK_HASH)
           {
             return DvbSubDestinationFontColor::BLACK;

@@ -20,14 +20,14 @@ namespace Aws
       namespace EventErrorCodeMapper
       {
 
-        static const int INSUFFICIENT_CAPABILITIES_HASH = HashingUtils::HashString("INSUFFICIENT_CAPABILITIES");
-        static const int QUOTA_EXCEEDED_HASH = HashingUtils::HashString("QUOTA_EXCEEDED");
-        static const int PUBLISHER_NOT_FOUND_HASH = HashingUtils::HashString("PUBLISHER_NOT_FOUND");
+        static constexpr uint32_t INSUFFICIENT_CAPABILITIES_HASH = ConstExprHashingUtils::HashString("INSUFFICIENT_CAPABILITIES");
+        static constexpr uint32_t QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("QUOTA_EXCEEDED");
+        static constexpr uint32_t PUBLISHER_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("PUBLISHER_NOT_FOUND");
 
 
         EventErrorCode GetEventErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSUFFICIENT_CAPABILITIES_HASH)
           {
             return EventErrorCode::INSUFFICIENT_CAPABILITIES;

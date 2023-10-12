@@ -20,13 +20,13 @@ namespace Aws
       namespace SmoothGroupEventStopBehaviorMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int SEND_EOS_HASH = HashingUtils::HashString("SEND_EOS");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t SEND_EOS_HASH = ConstExprHashingUtils::HashString("SEND_EOS");
 
 
         SmoothGroupEventStopBehavior GetSmoothGroupEventStopBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return SmoothGroupEventStopBehavior::NONE;

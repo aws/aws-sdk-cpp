@@ -20,17 +20,17 @@ namespace Aws
       namespace ActionValueMapper
       {
 
-        static const int ALLOW_HASH = HashingUtils::HashString("ALLOW");
-        static const int BLOCK_HASH = HashingUtils::HashString("BLOCK");
-        static const int COUNT_HASH = HashingUtils::HashString("COUNT");
-        static const int CAPTCHA_HASH = HashingUtils::HashString("CAPTCHA");
-        static const int CHALLENGE_HASH = HashingUtils::HashString("CHALLENGE");
-        static const int EXCLUDED_AS_COUNT_HASH = HashingUtils::HashString("EXCLUDED_AS_COUNT");
+        static constexpr uint32_t ALLOW_HASH = ConstExprHashingUtils::HashString("ALLOW");
+        static constexpr uint32_t BLOCK_HASH = ConstExprHashingUtils::HashString("BLOCK");
+        static constexpr uint32_t COUNT_HASH = ConstExprHashingUtils::HashString("COUNT");
+        static constexpr uint32_t CAPTCHA_HASH = ConstExprHashingUtils::HashString("CAPTCHA");
+        static constexpr uint32_t CHALLENGE_HASH = ConstExprHashingUtils::HashString("CHALLENGE");
+        static constexpr uint32_t EXCLUDED_AS_COUNT_HASH = ConstExprHashingUtils::HashString("EXCLUDED_AS_COUNT");
 
 
         ActionValue GetActionValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALLOW_HASH)
           {
             return ActionValue::ALLOW;

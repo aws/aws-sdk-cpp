@@ -20,12 +20,12 @@ namespace Aws
       namespace DriftTypeMapper
       {
 
-        static const int ApplicationCompliance_HASH = HashingUtils::HashString("ApplicationCompliance");
+        static constexpr uint32_t ApplicationCompliance_HASH = ConstExprHashingUtils::HashString("ApplicationCompliance");
 
 
         DriftType GetDriftTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ApplicationCompliance_HASH)
           {
             return DriftType::ApplicationCompliance;

@@ -20,14 +20,14 @@ namespace Aws
       namespace PricingRuleTypeMapper
       {
 
-        static const int MARKUP_HASH = HashingUtils::HashString("MARKUP");
-        static const int DISCOUNT_HASH = HashingUtils::HashString("DISCOUNT");
-        static const int TIERING_HASH = HashingUtils::HashString("TIERING");
+        static constexpr uint32_t MARKUP_HASH = ConstExprHashingUtils::HashString("MARKUP");
+        static constexpr uint32_t DISCOUNT_HASH = ConstExprHashingUtils::HashString("DISCOUNT");
+        static constexpr uint32_t TIERING_HASH = ConstExprHashingUtils::HashString("TIERING");
 
 
         PricingRuleType GetPricingRuleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MARKUP_HASH)
           {
             return PricingRuleType::MARKUP;

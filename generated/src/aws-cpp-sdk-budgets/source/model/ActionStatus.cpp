@@ -20,21 +20,21 @@ namespace Aws
       namespace ActionStatusMapper
       {
 
-        static const int STANDBY_HASH = HashingUtils::HashString("STANDBY");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int EXECUTION_IN_PROGRESS_HASH = HashingUtils::HashString("EXECUTION_IN_PROGRESS");
-        static const int EXECUTION_SUCCESS_HASH = HashingUtils::HashString("EXECUTION_SUCCESS");
-        static const int EXECUTION_FAILURE_HASH = HashingUtils::HashString("EXECUTION_FAILURE");
-        static const int REVERSE_IN_PROGRESS_HASH = HashingUtils::HashString("REVERSE_IN_PROGRESS");
-        static const int REVERSE_SUCCESS_HASH = HashingUtils::HashString("REVERSE_SUCCESS");
-        static const int REVERSE_FAILURE_HASH = HashingUtils::HashString("REVERSE_FAILURE");
-        static const int RESET_IN_PROGRESS_HASH = HashingUtils::HashString("RESET_IN_PROGRESS");
-        static const int RESET_FAILURE_HASH = HashingUtils::HashString("RESET_FAILURE");
+        static constexpr uint32_t STANDBY_HASH = ConstExprHashingUtils::HashString("STANDBY");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t EXECUTION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("EXECUTION_IN_PROGRESS");
+        static constexpr uint32_t EXECUTION_SUCCESS_HASH = ConstExprHashingUtils::HashString("EXECUTION_SUCCESS");
+        static constexpr uint32_t EXECUTION_FAILURE_HASH = ConstExprHashingUtils::HashString("EXECUTION_FAILURE");
+        static constexpr uint32_t REVERSE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("REVERSE_IN_PROGRESS");
+        static constexpr uint32_t REVERSE_SUCCESS_HASH = ConstExprHashingUtils::HashString("REVERSE_SUCCESS");
+        static constexpr uint32_t REVERSE_FAILURE_HASH = ConstExprHashingUtils::HashString("REVERSE_FAILURE");
+        static constexpr uint32_t RESET_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("RESET_IN_PROGRESS");
+        static constexpr uint32_t RESET_FAILURE_HASH = ConstExprHashingUtils::HashString("RESET_FAILURE");
 
 
         ActionStatus GetActionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STANDBY_HASH)
           {
             return ActionStatus::STANDBY;

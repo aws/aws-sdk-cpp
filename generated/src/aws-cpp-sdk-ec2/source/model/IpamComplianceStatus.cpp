@@ -20,15 +20,15 @@ namespace Aws
       namespace IpamComplianceStatusMapper
       {
 
-        static const int compliant_HASH = HashingUtils::HashString("compliant");
-        static const int noncompliant_HASH = HashingUtils::HashString("noncompliant");
-        static const int unmanaged_HASH = HashingUtils::HashString("unmanaged");
-        static const int ignored_HASH = HashingUtils::HashString("ignored");
+        static constexpr uint32_t compliant_HASH = ConstExprHashingUtils::HashString("compliant");
+        static constexpr uint32_t noncompliant_HASH = ConstExprHashingUtils::HashString("noncompliant");
+        static constexpr uint32_t unmanaged_HASH = ConstExprHashingUtils::HashString("unmanaged");
+        static constexpr uint32_t ignored_HASH = ConstExprHashingUtils::HashString("ignored");
 
 
         IpamComplianceStatus GetIpamComplianceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == compliant_HASH)
           {
             return IpamComplianceStatus::compliant;

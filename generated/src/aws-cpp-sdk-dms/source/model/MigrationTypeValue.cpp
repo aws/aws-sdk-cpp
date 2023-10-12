@@ -20,14 +20,14 @@ namespace Aws
       namespace MigrationTypeValueMapper
       {
 
-        static const int full_load_HASH = HashingUtils::HashString("full-load");
-        static const int cdc_HASH = HashingUtils::HashString("cdc");
-        static const int full_load_and_cdc_HASH = HashingUtils::HashString("full-load-and-cdc");
+        static constexpr uint32_t full_load_HASH = ConstExprHashingUtils::HashString("full-load");
+        static constexpr uint32_t cdc_HASH = ConstExprHashingUtils::HashString("cdc");
+        static constexpr uint32_t full_load_and_cdc_HASH = ConstExprHashingUtils::HashString("full-load-and-cdc");
 
 
         MigrationTypeValue GetMigrationTypeValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == full_load_HASH)
           {
             return MigrationTypeValue::full_load;

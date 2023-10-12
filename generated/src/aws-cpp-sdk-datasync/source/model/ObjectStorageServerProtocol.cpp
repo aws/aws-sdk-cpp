@@ -20,13 +20,13 @@ namespace Aws
       namespace ObjectStorageServerProtocolMapper
       {
 
-        static const int HTTPS_HASH = HashingUtils::HashString("HTTPS");
-        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
+        static constexpr uint32_t HTTPS_HASH = ConstExprHashingUtils::HashString("HTTPS");
+        static constexpr uint32_t HTTP_HASH = ConstExprHashingUtils::HashString("HTTP");
 
 
         ObjectStorageServerProtocol GetObjectStorageServerProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HTTPS_HASH)
           {
             return ObjectStorageServerProtocol::HTTPS;

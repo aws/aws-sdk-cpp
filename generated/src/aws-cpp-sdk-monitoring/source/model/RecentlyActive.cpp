@@ -20,12 +20,12 @@ namespace Aws
       namespace RecentlyActiveMapper
       {
 
-        static const int PT3H_HASH = HashingUtils::HashString("PT3H");
+        static constexpr uint32_t PT3H_HASH = ConstExprHashingUtils::HashString("PT3H");
 
 
         RecentlyActive GetRecentlyActiveForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PT3H_HASH)
           {
             return RecentlyActive::PT3H;

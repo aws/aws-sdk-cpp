@@ -20,14 +20,14 @@ namespace Aws
       namespace ScanModeMapper
       {
 
-        static const int progressive_HASH = HashingUtils::HashString("progressive");
-        static const int interlace_HASH = HashingUtils::HashString("interlace");
-        static const int progressive_segmented_frame_HASH = HashingUtils::HashString("progressive-segmented-frame");
+        static constexpr uint32_t progressive_HASH = ConstExprHashingUtils::HashString("progressive");
+        static constexpr uint32_t interlace_HASH = ConstExprHashingUtils::HashString("interlace");
+        static constexpr uint32_t progressive_segmented_frame_HASH = ConstExprHashingUtils::HashString("progressive-segmented-frame");
 
 
         ScanMode GetScanModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == progressive_HASH)
           {
             return ScanMode::progressive;

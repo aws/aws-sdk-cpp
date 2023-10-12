@@ -20,14 +20,14 @@ namespace Aws
       namespace NamespaceStatusMapper
       {
 
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int MODIFYING_HASH = HashingUtils::HashString("MODIFYING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t MODIFYING_HASH = ConstExprHashingUtils::HashString("MODIFYING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
 
 
         NamespaceStatus GetNamespaceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVAILABLE_HASH)
           {
             return NamespaceStatus::AVAILABLE;

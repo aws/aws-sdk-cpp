@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceManagedTypeMapper
       {
 
-        static const int AWS_MANAGED_THREAT_SIGNATURES_HASH = HashingUtils::HashString("AWS_MANAGED_THREAT_SIGNATURES");
-        static const int AWS_MANAGED_DOMAIN_LISTS_HASH = HashingUtils::HashString("AWS_MANAGED_DOMAIN_LISTS");
+        static constexpr uint32_t AWS_MANAGED_THREAT_SIGNATURES_HASH = ConstExprHashingUtils::HashString("AWS_MANAGED_THREAT_SIGNATURES");
+        static constexpr uint32_t AWS_MANAGED_DOMAIN_LISTS_HASH = ConstExprHashingUtils::HashString("AWS_MANAGED_DOMAIN_LISTS");
 
 
         ResourceManagedType GetResourceManagedTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_MANAGED_THREAT_SIGNATURES_HASH)
           {
             return ResourceManagedType::AWS_MANAGED_THREAT_SIGNATURES;

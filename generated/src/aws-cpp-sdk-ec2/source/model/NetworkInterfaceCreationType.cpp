@@ -20,14 +20,14 @@ namespace Aws
       namespace NetworkInterfaceCreationTypeMapper
       {
 
-        static const int efa_HASH = HashingUtils::HashString("efa");
-        static const int branch_HASH = HashingUtils::HashString("branch");
-        static const int trunk_HASH = HashingUtils::HashString("trunk");
+        static constexpr uint32_t efa_HASH = ConstExprHashingUtils::HashString("efa");
+        static constexpr uint32_t branch_HASH = ConstExprHashingUtils::HashString("branch");
+        static constexpr uint32_t trunk_HASH = ConstExprHashingUtils::HashString("trunk");
 
 
         NetworkInterfaceCreationType GetNetworkInterfaceCreationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == efa_HASH)
           {
             return NetworkInterfaceCreationType::efa;

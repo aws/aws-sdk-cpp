@@ -20,14 +20,14 @@ namespace Aws
       namespace VPCConnectionAvailabilityStatusMapper
       {
 
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
-        static const int PARTIALLY_AVAILABLE_HASH = HashingUtils::HashString("PARTIALLY_AVAILABLE");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("UNAVAILABLE");
+        static constexpr uint32_t PARTIALLY_AVAILABLE_HASH = ConstExprHashingUtils::HashString("PARTIALLY_AVAILABLE");
 
 
         VPCConnectionAvailabilityStatus GetVPCConnectionAvailabilityStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVAILABLE_HASH)
           {
             return VPCConnectionAvailabilityStatus::AVAILABLE;

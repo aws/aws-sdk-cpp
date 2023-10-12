@@ -20,14 +20,14 @@ namespace Aws
       namespace RuleTypeMapper
       {
 
-        static const int ATLEAST_HASH = HashingUtils::HashString("ATLEAST");
-        static const int AND_HASH = HashingUtils::HashString("AND");
-        static const int OR_HASH = HashingUtils::HashString("OR");
+        static constexpr uint32_t ATLEAST_HASH = ConstExprHashingUtils::HashString("ATLEAST");
+        static constexpr uint32_t AND_HASH = ConstExprHashingUtils::HashString("AND");
+        static constexpr uint32_t OR_HASH = ConstExprHashingUtils::HashString("OR");
 
 
         RuleType GetRuleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ATLEAST_HASH)
           {
             return RuleType::ATLEAST;

@@ -20,13 +20,13 @@ namespace Aws
       namespace EngineTypeMapper
       {
 
-        static const int microfocus_HASH = HashingUtils::HashString("microfocus");
-        static const int bluage_HASH = HashingUtils::HashString("bluage");
+        static constexpr uint32_t microfocus_HASH = ConstExprHashingUtils::HashString("microfocus");
+        static constexpr uint32_t bluage_HASH = ConstExprHashingUtils::HashString("bluage");
 
 
         EngineType GetEngineTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == microfocus_HASH)
           {
             return EngineType::microfocus;

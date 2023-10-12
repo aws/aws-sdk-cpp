@@ -20,13 +20,13 @@ namespace Aws
       namespace ThresholdUnitMapper
       {
 
-        static const int COUNT_HASH = HashingUtils::HashString("COUNT");
-        static const int PERCENTAGE_HASH = HashingUtils::HashString("PERCENTAGE");
+        static constexpr uint32_t COUNT_HASH = ConstExprHashingUtils::HashString("COUNT");
+        static constexpr uint32_t PERCENTAGE_HASH = ConstExprHashingUtils::HashString("PERCENTAGE");
 
 
         ThresholdUnit GetThresholdUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COUNT_HASH)
           {
             return ThresholdUnit::COUNT;

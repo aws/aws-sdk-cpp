@@ -20,18 +20,18 @@ namespace Aws
       namespace CapabilityHealthReasonMapper
       {
 
-        static const int NO_REGISTERED_AGENT_HASH = HashingUtils::HashString("NO_REGISTERED_AGENT");
-        static const int INVALID_IP_OWNERSHIP_HASH = HashingUtils::HashString("INVALID_IP_OWNERSHIP");
-        static const int NOT_AUTHORIZED_TO_CREATE_SLR_HASH = HashingUtils::HashString("NOT_AUTHORIZED_TO_CREATE_SLR");
-        static const int UNVERIFIED_IP_OWNERSHIP_HASH = HashingUtils::HashString("UNVERIFIED_IP_OWNERSHIP");
-        static const int INITIALIZING_DATAPLANE_HASH = HashingUtils::HashString("INITIALIZING_DATAPLANE");
-        static const int DATAPLANE_FAILURE_HASH = HashingUtils::HashString("DATAPLANE_FAILURE");
-        static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
+        static constexpr uint32_t NO_REGISTERED_AGENT_HASH = ConstExprHashingUtils::HashString("NO_REGISTERED_AGENT");
+        static constexpr uint32_t INVALID_IP_OWNERSHIP_HASH = ConstExprHashingUtils::HashString("INVALID_IP_OWNERSHIP");
+        static constexpr uint32_t NOT_AUTHORIZED_TO_CREATE_SLR_HASH = ConstExprHashingUtils::HashString("NOT_AUTHORIZED_TO_CREATE_SLR");
+        static constexpr uint32_t UNVERIFIED_IP_OWNERSHIP_HASH = ConstExprHashingUtils::HashString("UNVERIFIED_IP_OWNERSHIP");
+        static constexpr uint32_t INITIALIZING_DATAPLANE_HASH = ConstExprHashingUtils::HashString("INITIALIZING_DATAPLANE");
+        static constexpr uint32_t DATAPLANE_FAILURE_HASH = ConstExprHashingUtils::HashString("DATAPLANE_FAILURE");
+        static constexpr uint32_t HEALTHY_HASH = ConstExprHashingUtils::HashString("HEALTHY");
 
 
         CapabilityHealthReason GetCapabilityHealthReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_REGISTERED_AGENT_HASH)
           {
             return CapabilityHealthReason::NO_REGISTERED_AGENT;

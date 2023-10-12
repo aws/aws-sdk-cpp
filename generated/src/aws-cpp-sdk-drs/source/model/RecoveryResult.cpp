@@ -20,18 +20,18 @@ namespace Aws
       namespace RecoveryResultMapper
       {
 
-        static const int NOT_STARTED_HASH = HashingUtils::HashString("NOT_STARTED");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int FAIL_HASH = HashingUtils::HashString("FAIL");
-        static const int PARTIAL_SUCCESS_HASH = HashingUtils::HashString("PARTIAL_SUCCESS");
-        static const int ASSOCIATE_SUCCESS_HASH = HashingUtils::HashString("ASSOCIATE_SUCCESS");
-        static const int ASSOCIATE_FAIL_HASH = HashingUtils::HashString("ASSOCIATE_FAIL");
+        static constexpr uint32_t NOT_STARTED_HASH = ConstExprHashingUtils::HashString("NOT_STARTED");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t FAIL_HASH = ConstExprHashingUtils::HashString("FAIL");
+        static constexpr uint32_t PARTIAL_SUCCESS_HASH = ConstExprHashingUtils::HashString("PARTIAL_SUCCESS");
+        static constexpr uint32_t ASSOCIATE_SUCCESS_HASH = ConstExprHashingUtils::HashString("ASSOCIATE_SUCCESS");
+        static constexpr uint32_t ASSOCIATE_FAIL_HASH = ConstExprHashingUtils::HashString("ASSOCIATE_FAIL");
 
 
         RecoveryResult GetRecoveryResultForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOT_STARTED_HASH)
           {
             return RecoveryResult::NOT_STARTED;

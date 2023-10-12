@@ -20,15 +20,15 @@ namespace Aws
       namespace WriteOperationTypeMapper
       {
 
-        static const int INSERT_HASH = HashingUtils::HashString("INSERT");
-        static const int UPSERT_HASH = HashingUtils::HashString("UPSERT");
-        static const int UPDATE_HASH = HashingUtils::HashString("UPDATE");
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
+        static constexpr uint32_t INSERT_HASH = ConstExprHashingUtils::HashString("INSERT");
+        static constexpr uint32_t UPSERT_HASH = ConstExprHashingUtils::HashString("UPSERT");
+        static constexpr uint32_t UPDATE_HASH = ConstExprHashingUtils::HashString("UPDATE");
+        static constexpr uint32_t DELETE__HASH = ConstExprHashingUtils::HashString("DELETE");
 
 
         WriteOperationType GetWriteOperationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSERT_HASH)
           {
             return WriteOperationType::INSERT;

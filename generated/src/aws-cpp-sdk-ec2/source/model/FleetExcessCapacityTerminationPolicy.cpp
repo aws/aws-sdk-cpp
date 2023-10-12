@@ -20,13 +20,13 @@ namespace Aws
       namespace FleetExcessCapacityTerminationPolicyMapper
       {
 
-        static const int no_termination_HASH = HashingUtils::HashString("no-termination");
-        static const int termination_HASH = HashingUtils::HashString("termination");
+        static constexpr uint32_t no_termination_HASH = ConstExprHashingUtils::HashString("no-termination");
+        static constexpr uint32_t termination_HASH = ConstExprHashingUtils::HashString("termination");
 
 
         FleetExcessCapacityTerminationPolicy GetFleetExcessCapacityTerminationPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == no_termination_HASH)
           {
             return FleetExcessCapacityTerminationPolicy::no_termination;

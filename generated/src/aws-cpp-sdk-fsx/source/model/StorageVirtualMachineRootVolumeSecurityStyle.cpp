@@ -20,14 +20,14 @@ namespace Aws
       namespace StorageVirtualMachineRootVolumeSecurityStyleMapper
       {
 
-        static const int UNIX_HASH = HashingUtils::HashString("UNIX");
-        static const int NTFS_HASH = HashingUtils::HashString("NTFS");
-        static const int MIXED_HASH = HashingUtils::HashString("MIXED");
+        static constexpr uint32_t UNIX_HASH = ConstExprHashingUtils::HashString("UNIX");
+        static constexpr uint32_t NTFS_HASH = ConstExprHashingUtils::HashString("NTFS");
+        static constexpr uint32_t MIXED_HASH = ConstExprHashingUtils::HashString("MIXED");
 
 
         StorageVirtualMachineRootVolumeSecurityStyle GetStorageVirtualMachineRootVolumeSecurityStyleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNIX_HASH)
           {
             return StorageVirtualMachineRootVolumeSecurityStyle::UNIX;

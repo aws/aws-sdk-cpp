@@ -20,13 +20,13 @@ namespace Aws
       namespace DomainMapper
       {
 
-        static const int ECOMMERCE_HASH = HashingUtils::HashString("ECOMMERCE");
-        static const int VIDEO_ON_DEMAND_HASH = HashingUtils::HashString("VIDEO_ON_DEMAND");
+        static constexpr uint32_t ECOMMERCE_HASH = ConstExprHashingUtils::HashString("ECOMMERCE");
+        static constexpr uint32_t VIDEO_ON_DEMAND_HASH = ConstExprHashingUtils::HashString("VIDEO_ON_DEMAND");
 
 
         Domain GetDomainForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ECOMMERCE_HASH)
           {
             return Domain::ECOMMERCE;

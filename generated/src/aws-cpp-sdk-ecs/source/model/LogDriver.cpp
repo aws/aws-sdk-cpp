@@ -20,19 +20,19 @@ namespace Aws
       namespace LogDriverMapper
       {
 
-        static const int json_file_HASH = HashingUtils::HashString("json-file");
-        static const int syslog_HASH = HashingUtils::HashString("syslog");
-        static const int journald_HASH = HashingUtils::HashString("journald");
-        static const int gelf_HASH = HashingUtils::HashString("gelf");
-        static const int fluentd_HASH = HashingUtils::HashString("fluentd");
-        static const int awslogs_HASH = HashingUtils::HashString("awslogs");
-        static const int splunk_HASH = HashingUtils::HashString("splunk");
-        static const int awsfirelens_HASH = HashingUtils::HashString("awsfirelens");
+        static constexpr uint32_t json_file_HASH = ConstExprHashingUtils::HashString("json-file");
+        static constexpr uint32_t syslog_HASH = ConstExprHashingUtils::HashString("syslog");
+        static constexpr uint32_t journald_HASH = ConstExprHashingUtils::HashString("journald");
+        static constexpr uint32_t gelf_HASH = ConstExprHashingUtils::HashString("gelf");
+        static constexpr uint32_t fluentd_HASH = ConstExprHashingUtils::HashString("fluentd");
+        static constexpr uint32_t awslogs_HASH = ConstExprHashingUtils::HashString("awslogs");
+        static constexpr uint32_t splunk_HASH = ConstExprHashingUtils::HashString("splunk");
+        static constexpr uint32_t awsfirelens_HASH = ConstExprHashingUtils::HashString("awsfirelens");
 
 
         LogDriver GetLogDriverForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == json_file_HASH)
           {
             return LogDriver::json_file;

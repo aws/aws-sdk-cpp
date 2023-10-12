@@ -20,21 +20,21 @@ namespace Aws
       namespace EntityTypeMapper
       {
 
-        static const int DEVICE_HASH = HashingUtils::HashString("DEVICE");
-        static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
-        static const int DEVICE_MODEL_HASH = HashingUtils::HashString("DEVICE_MODEL");
-        static const int CAPABILITY_HASH = HashingUtils::HashString("CAPABILITY");
-        static const int STATE_HASH = HashingUtils::HashString("STATE");
-        static const int ACTION_HASH = HashingUtils::HashString("ACTION");
-        static const int EVENT_HASH = HashingUtils::HashString("EVENT");
-        static const int PROPERTY_HASH = HashingUtils::HashString("PROPERTY");
-        static const int MAPPING_HASH = HashingUtils::HashString("MAPPING");
-        static const int ENUM_HASH = HashingUtils::HashString("ENUM");
+        static constexpr uint32_t DEVICE_HASH = ConstExprHashingUtils::HashString("DEVICE");
+        static constexpr uint32_t SERVICE_HASH = ConstExprHashingUtils::HashString("SERVICE");
+        static constexpr uint32_t DEVICE_MODEL_HASH = ConstExprHashingUtils::HashString("DEVICE_MODEL");
+        static constexpr uint32_t CAPABILITY_HASH = ConstExprHashingUtils::HashString("CAPABILITY");
+        static constexpr uint32_t STATE_HASH = ConstExprHashingUtils::HashString("STATE");
+        static constexpr uint32_t ACTION_HASH = ConstExprHashingUtils::HashString("ACTION");
+        static constexpr uint32_t EVENT_HASH = ConstExprHashingUtils::HashString("EVENT");
+        static constexpr uint32_t PROPERTY_HASH = ConstExprHashingUtils::HashString("PROPERTY");
+        static constexpr uint32_t MAPPING_HASH = ConstExprHashingUtils::HashString("MAPPING");
+        static constexpr uint32_t ENUM_HASH = ConstExprHashingUtils::HashString("ENUM");
 
 
         EntityType GetEntityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEVICE_HASH)
           {
             return EntityType::DEVICE;

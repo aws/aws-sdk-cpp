@@ -20,13 +20,13 @@ namespace Aws
       namespace BucketVersioningStatusMapper
       {
 
-        static const int Enabled_HASH = HashingUtils::HashString("Enabled");
-        static const int Suspended_HASH = HashingUtils::HashString("Suspended");
+        static constexpr uint32_t Enabled_HASH = ConstExprHashingUtils::HashString("Enabled");
+        static constexpr uint32_t Suspended_HASH = ConstExprHashingUtils::HashString("Suspended");
 
 
         BucketVersioningStatus GetBucketVersioningStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Enabled_HASH)
           {
             return BucketVersioningStatus::Enabled;

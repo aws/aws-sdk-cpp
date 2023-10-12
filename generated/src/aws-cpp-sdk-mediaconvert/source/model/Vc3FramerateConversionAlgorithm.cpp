@@ -20,14 +20,14 @@ namespace Aws
       namespace Vc3FramerateConversionAlgorithmMapper
       {
 
-        static const int DUPLICATE_DROP_HASH = HashingUtils::HashString("DUPLICATE_DROP");
-        static const int INTERPOLATE_HASH = HashingUtils::HashString("INTERPOLATE");
-        static const int FRAMEFORMER_HASH = HashingUtils::HashString("FRAMEFORMER");
+        static constexpr uint32_t DUPLICATE_DROP_HASH = ConstExprHashingUtils::HashString("DUPLICATE_DROP");
+        static constexpr uint32_t INTERPOLATE_HASH = ConstExprHashingUtils::HashString("INTERPOLATE");
+        static constexpr uint32_t FRAMEFORMER_HASH = ConstExprHashingUtils::HashString("FRAMEFORMER");
 
 
         Vc3FramerateConversionAlgorithm GetVc3FramerateConversionAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DUPLICATE_DROP_HASH)
           {
             return Vc3FramerateConversionAlgorithm::DUPLICATE_DROP;

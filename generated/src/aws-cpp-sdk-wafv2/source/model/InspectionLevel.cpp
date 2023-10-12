@@ -20,13 +20,13 @@ namespace Aws
       namespace InspectionLevelMapper
       {
 
-        static const int COMMON_HASH = HashingUtils::HashString("COMMON");
-        static const int TARGETED_HASH = HashingUtils::HashString("TARGETED");
+        static constexpr uint32_t COMMON_HASH = ConstExprHashingUtils::HashString("COMMON");
+        static constexpr uint32_t TARGETED_HASH = ConstExprHashingUtils::HashString("TARGETED");
 
 
         InspectionLevel GetInspectionLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMMON_HASH)
           {
             return InspectionLevel::COMMON;

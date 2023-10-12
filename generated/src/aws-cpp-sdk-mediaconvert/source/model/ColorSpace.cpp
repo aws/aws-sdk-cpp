@@ -20,19 +20,19 @@ namespace Aws
       namespace ColorSpaceMapper
       {
 
-        static const int FOLLOW_HASH = HashingUtils::HashString("FOLLOW");
-        static const int REC_601_HASH = HashingUtils::HashString("REC_601");
-        static const int REC_709_HASH = HashingUtils::HashString("REC_709");
-        static const int HDR10_HASH = HashingUtils::HashString("HDR10");
-        static const int HLG_2020_HASH = HashingUtils::HashString("HLG_2020");
-        static const int P3DCI_HASH = HashingUtils::HashString("P3DCI");
-        static const int P3D65_SDR_HASH = HashingUtils::HashString("P3D65_SDR");
-        static const int P3D65_HDR_HASH = HashingUtils::HashString("P3D65_HDR");
+        static constexpr uint32_t FOLLOW_HASH = ConstExprHashingUtils::HashString("FOLLOW");
+        static constexpr uint32_t REC_601_HASH = ConstExprHashingUtils::HashString("REC_601");
+        static constexpr uint32_t REC_709_HASH = ConstExprHashingUtils::HashString("REC_709");
+        static constexpr uint32_t HDR10_HASH = ConstExprHashingUtils::HashString("HDR10");
+        static constexpr uint32_t HLG_2020_HASH = ConstExprHashingUtils::HashString("HLG_2020");
+        static constexpr uint32_t P3DCI_HASH = ConstExprHashingUtils::HashString("P3DCI");
+        static constexpr uint32_t P3D65_SDR_HASH = ConstExprHashingUtils::HashString("P3D65_SDR");
+        static constexpr uint32_t P3D65_HDR_HASH = ConstExprHashingUtils::HashString("P3D65_HDR");
 
 
         ColorSpace GetColorSpaceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FOLLOW_HASH)
           {
             return ColorSpace::FOLLOW;

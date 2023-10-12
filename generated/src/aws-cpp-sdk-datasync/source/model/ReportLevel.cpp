@@ -20,13 +20,13 @@ namespace Aws
       namespace ReportLevelMapper
       {
 
-        static const int ERRORS_ONLY_HASH = HashingUtils::HashString("ERRORS_ONLY");
-        static const int SUCCESSES_AND_ERRORS_HASH = HashingUtils::HashString("SUCCESSES_AND_ERRORS");
+        static constexpr uint32_t ERRORS_ONLY_HASH = ConstExprHashingUtils::HashString("ERRORS_ONLY");
+        static constexpr uint32_t SUCCESSES_AND_ERRORS_HASH = ConstExprHashingUtils::HashString("SUCCESSES_AND_ERRORS");
 
 
         ReportLevel GetReportLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ERRORS_ONLY_HASH)
           {
             return ReportLevel::ERRORS_ONLY;

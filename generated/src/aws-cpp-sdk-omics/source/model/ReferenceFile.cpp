@@ -20,13 +20,13 @@ namespace Aws
       namespace ReferenceFileMapper
       {
 
-        static const int SOURCE_HASH = HashingUtils::HashString("SOURCE");
-        static const int INDEX_HASH = HashingUtils::HashString("INDEX");
+        static constexpr uint32_t SOURCE_HASH = ConstExprHashingUtils::HashString("SOURCE");
+        static constexpr uint32_t INDEX_HASH = ConstExprHashingUtils::HashString("INDEX");
 
 
         ReferenceFile GetReferenceFileForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SOURCE_HASH)
           {
             return ReferenceFile::SOURCE;

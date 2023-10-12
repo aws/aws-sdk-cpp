@@ -20,13 +20,13 @@ namespace Aws
       namespace SmallMultiplesAxisScaleMapper
       {
 
-        static const int SHARED_HASH = HashingUtils::HashString("SHARED");
-        static const int INDEPENDENT_HASH = HashingUtils::HashString("INDEPENDENT");
+        static constexpr uint32_t SHARED_HASH = ConstExprHashingUtils::HashString("SHARED");
+        static constexpr uint32_t INDEPENDENT_HASH = ConstExprHashingUtils::HashString("INDEPENDENT");
 
 
         SmallMultiplesAxisScale GetSmallMultiplesAxisScaleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SHARED_HASH)
           {
             return SmallMultiplesAxisScale::SHARED;

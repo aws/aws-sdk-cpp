@@ -20,13 +20,13 @@ namespace Aws
       namespace DeviceFormFactorMapper
       {
 
-        static const int PHONE_HASH = HashingUtils::HashString("PHONE");
-        static const int TABLET_HASH = HashingUtils::HashString("TABLET");
+        static constexpr uint32_t PHONE_HASH = ConstExprHashingUtils::HashString("PHONE");
+        static constexpr uint32_t TABLET_HASH = ConstExprHashingUtils::HashString("TABLET");
 
 
         DeviceFormFactor GetDeviceFormFactorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PHONE_HASH)
           {
             return DeviceFormFactor::PHONE;

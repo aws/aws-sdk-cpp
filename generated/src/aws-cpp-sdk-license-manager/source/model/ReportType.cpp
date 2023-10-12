@@ -20,13 +20,13 @@ namespace Aws
       namespace ReportTypeMapper
       {
 
-        static const int LicenseConfigurationSummaryReport_HASH = HashingUtils::HashString("LicenseConfigurationSummaryReport");
-        static const int LicenseConfigurationUsageReport_HASH = HashingUtils::HashString("LicenseConfigurationUsageReport");
+        static constexpr uint32_t LicenseConfigurationSummaryReport_HASH = ConstExprHashingUtils::HashString("LicenseConfigurationSummaryReport");
+        static constexpr uint32_t LicenseConfigurationUsageReport_HASH = ConstExprHashingUtils::HashString("LicenseConfigurationUsageReport");
 
 
         ReportType GetReportTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LicenseConfigurationSummaryReport_HASH)
           {
             return ReportType::LicenseConfigurationSummaryReport;

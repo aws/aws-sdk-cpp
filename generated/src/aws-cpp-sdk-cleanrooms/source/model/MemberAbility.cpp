@@ -20,13 +20,13 @@ namespace Aws
       namespace MemberAbilityMapper
       {
 
-        static const int CAN_QUERY_HASH = HashingUtils::HashString("CAN_QUERY");
-        static const int CAN_RECEIVE_RESULTS_HASH = HashingUtils::HashString("CAN_RECEIVE_RESULTS");
+        static constexpr uint32_t CAN_QUERY_HASH = ConstExprHashingUtils::HashString("CAN_QUERY");
+        static constexpr uint32_t CAN_RECEIVE_RESULTS_HASH = ConstExprHashingUtils::HashString("CAN_RECEIVE_RESULTS");
 
 
         MemberAbility GetMemberAbilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CAN_QUERY_HASH)
           {
             return MemberAbility::CAN_QUERY;

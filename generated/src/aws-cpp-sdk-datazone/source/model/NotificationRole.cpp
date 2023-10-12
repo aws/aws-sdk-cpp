@@ -20,16 +20,16 @@ namespace Aws
       namespace NotificationRoleMapper
       {
 
-        static const int PROJECT_OWNER_HASH = HashingUtils::HashString("PROJECT_OWNER");
-        static const int PROJECT_CONTRIBUTOR_HASH = HashingUtils::HashString("PROJECT_CONTRIBUTOR");
-        static const int PROJECT_VIEWER_HASH = HashingUtils::HashString("PROJECT_VIEWER");
-        static const int DOMAIN_OWNER_HASH = HashingUtils::HashString("DOMAIN_OWNER");
-        static const int PROJECT_SUBSCRIBER_HASH = HashingUtils::HashString("PROJECT_SUBSCRIBER");
+        static constexpr uint32_t PROJECT_OWNER_HASH = ConstExprHashingUtils::HashString("PROJECT_OWNER");
+        static constexpr uint32_t PROJECT_CONTRIBUTOR_HASH = ConstExprHashingUtils::HashString("PROJECT_CONTRIBUTOR");
+        static constexpr uint32_t PROJECT_VIEWER_HASH = ConstExprHashingUtils::HashString("PROJECT_VIEWER");
+        static constexpr uint32_t DOMAIN_OWNER_HASH = ConstExprHashingUtils::HashString("DOMAIN_OWNER");
+        static constexpr uint32_t PROJECT_SUBSCRIBER_HASH = ConstExprHashingUtils::HashString("PROJECT_SUBSCRIBER");
 
 
         NotificationRole GetNotificationRoleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROJECT_OWNER_HASH)
           {
             return NotificationRole::PROJECT_OWNER;

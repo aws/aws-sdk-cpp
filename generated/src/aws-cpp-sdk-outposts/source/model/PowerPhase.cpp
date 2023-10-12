@@ -20,13 +20,13 @@ namespace Aws
       namespace PowerPhaseMapper
       {
 
-        static const int SINGLE_PHASE_HASH = HashingUtils::HashString("SINGLE_PHASE");
-        static const int THREE_PHASE_HASH = HashingUtils::HashString("THREE_PHASE");
+        static constexpr uint32_t SINGLE_PHASE_HASH = ConstExprHashingUtils::HashString("SINGLE_PHASE");
+        static constexpr uint32_t THREE_PHASE_HASH = ConstExprHashingUtils::HashString("THREE_PHASE");
 
 
         PowerPhase GetPowerPhaseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SINGLE_PHASE_HASH)
           {
             return PowerPhase::SINGLE_PHASE;

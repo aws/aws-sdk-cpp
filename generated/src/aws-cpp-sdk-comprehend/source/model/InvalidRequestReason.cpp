@@ -20,12 +20,12 @@ namespace Aws
       namespace InvalidRequestReasonMapper
       {
 
-        static const int INVALID_DOCUMENT_HASH = HashingUtils::HashString("INVALID_DOCUMENT");
+        static constexpr uint32_t INVALID_DOCUMENT_HASH = ConstExprHashingUtils::HashString("INVALID_DOCUMENT");
 
 
         InvalidRequestReason GetInvalidRequestReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVALID_DOCUMENT_HASH)
           {
             return InvalidRequestReason::INVALID_DOCUMENT;

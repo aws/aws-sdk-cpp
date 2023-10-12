@@ -20,12 +20,12 @@ namespace Aws
       namespace ServiceTypeOptionMapper
       {
 
-        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
+        static constexpr uint32_t HTTP_HASH = ConstExprHashingUtils::HashString("HTTP");
 
 
         ServiceTypeOption GetServiceTypeOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HTTP_HASH)
           {
             return ServiceTypeOption::HTTP;

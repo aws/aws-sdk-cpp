@@ -20,13 +20,13 @@ namespace Aws
       namespace EncryptionAlgorithmMapper
       {
 
-        static const int RSA_HASH = HashingUtils::HashString("RSA");
-        static const int ECDSA_HASH = HashingUtils::HashString("ECDSA");
+        static constexpr uint32_t RSA_HASH = ConstExprHashingUtils::HashString("RSA");
+        static constexpr uint32_t ECDSA_HASH = ConstExprHashingUtils::HashString("ECDSA");
 
 
         EncryptionAlgorithm GetEncryptionAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RSA_HASH)
           {
             return EncryptionAlgorithm::RSA;

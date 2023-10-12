@@ -20,15 +20,15 @@ namespace Aws
       namespace PricingRuleScopeMapper
       {
 
-        static const int GLOBAL_HASH = HashingUtils::HashString("GLOBAL");
-        static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
-        static const int BILLING_ENTITY_HASH = HashingUtils::HashString("BILLING_ENTITY");
-        static const int SKU_HASH = HashingUtils::HashString("SKU");
+        static constexpr uint32_t GLOBAL_HASH = ConstExprHashingUtils::HashString("GLOBAL");
+        static constexpr uint32_t SERVICE_HASH = ConstExprHashingUtils::HashString("SERVICE");
+        static constexpr uint32_t BILLING_ENTITY_HASH = ConstExprHashingUtils::HashString("BILLING_ENTITY");
+        static constexpr uint32_t SKU_HASH = ConstExprHashingUtils::HashString("SKU");
 
 
         PricingRuleScope GetPricingRuleScopeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GLOBAL_HASH)
           {
             return PricingRuleScope::GLOBAL;

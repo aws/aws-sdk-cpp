@@ -20,13 +20,13 @@ namespace Aws
       namespace DiskTypeMapper
       {
 
-        static const int hdd_HASH = HashingUtils::HashString("hdd");
-        static const int ssd_HASH = HashingUtils::HashString("ssd");
+        static constexpr uint32_t hdd_HASH = ConstExprHashingUtils::HashString("hdd");
+        static constexpr uint32_t ssd_HASH = ConstExprHashingUtils::HashString("ssd");
 
 
         DiskType GetDiskTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == hdd_HASH)
           {
             return DiskType::hdd;

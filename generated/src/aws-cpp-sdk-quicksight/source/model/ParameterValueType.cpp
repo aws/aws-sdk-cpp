@@ -20,13 +20,13 @@ namespace Aws
       namespace ParameterValueTypeMapper
       {
 
-        static const int MULTI_VALUED_HASH = HashingUtils::HashString("MULTI_VALUED");
-        static const int SINGLE_VALUED_HASH = HashingUtils::HashString("SINGLE_VALUED");
+        static constexpr uint32_t MULTI_VALUED_HASH = ConstExprHashingUtils::HashString("MULTI_VALUED");
+        static constexpr uint32_t SINGLE_VALUED_HASH = ConstExprHashingUtils::HashString("SINGLE_VALUED");
 
 
         ParameterValueType GetParameterValueTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MULTI_VALUED_HASH)
           {
             return ParameterValueType::MULTI_VALUED;

@@ -20,16 +20,16 @@ namespace Aws
       namespace DeinterlaceAlgorithmMapper
       {
 
-        static const int INTERPOLATE_HASH = HashingUtils::HashString("INTERPOLATE");
-        static const int INTERPOLATE_TICKER_HASH = HashingUtils::HashString("INTERPOLATE_TICKER");
-        static const int BLEND_HASH = HashingUtils::HashString("BLEND");
-        static const int BLEND_TICKER_HASH = HashingUtils::HashString("BLEND_TICKER");
-        static const int LINEAR_INTERPOLATION_HASH = HashingUtils::HashString("LINEAR_INTERPOLATION");
+        static constexpr uint32_t INTERPOLATE_HASH = ConstExprHashingUtils::HashString("INTERPOLATE");
+        static constexpr uint32_t INTERPOLATE_TICKER_HASH = ConstExprHashingUtils::HashString("INTERPOLATE_TICKER");
+        static constexpr uint32_t BLEND_HASH = ConstExprHashingUtils::HashString("BLEND");
+        static constexpr uint32_t BLEND_TICKER_HASH = ConstExprHashingUtils::HashString("BLEND_TICKER");
+        static constexpr uint32_t LINEAR_INTERPOLATION_HASH = ConstExprHashingUtils::HashString("LINEAR_INTERPOLATION");
 
 
         DeinterlaceAlgorithm GetDeinterlaceAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERPOLATE_HASH)
           {
             return DeinterlaceAlgorithm::INTERPOLATE;

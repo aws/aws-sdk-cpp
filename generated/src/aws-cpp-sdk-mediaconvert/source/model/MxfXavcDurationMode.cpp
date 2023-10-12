@@ -20,13 +20,13 @@ namespace Aws
       namespace MxfXavcDurationModeMapper
       {
 
-        static const int ALLOW_ANY_DURATION_HASH = HashingUtils::HashString("ALLOW_ANY_DURATION");
-        static const int DROP_FRAMES_FOR_COMPLIANCE_HASH = HashingUtils::HashString("DROP_FRAMES_FOR_COMPLIANCE");
+        static constexpr uint32_t ALLOW_ANY_DURATION_HASH = ConstExprHashingUtils::HashString("ALLOW_ANY_DURATION");
+        static constexpr uint32_t DROP_FRAMES_FOR_COMPLIANCE_HASH = ConstExprHashingUtils::HashString("DROP_FRAMES_FOR_COMPLIANCE");
 
 
         MxfXavcDurationMode GetMxfXavcDurationModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALLOW_ANY_DURATION_HASH)
           {
             return MxfXavcDurationMode::ALLOW_ANY_DURATION;

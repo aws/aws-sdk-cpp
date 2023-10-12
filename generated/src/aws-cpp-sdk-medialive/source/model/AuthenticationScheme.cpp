@@ -20,13 +20,13 @@ namespace Aws
       namespace AuthenticationSchemeMapper
       {
 
-        static const int AKAMAI_HASH = HashingUtils::HashString("AKAMAI");
-        static const int COMMON_HASH = HashingUtils::HashString("COMMON");
+        static constexpr uint32_t AKAMAI_HASH = ConstExprHashingUtils::HashString("AKAMAI");
+        static constexpr uint32_t COMMON_HASH = ConstExprHashingUtils::HashString("COMMON");
 
 
         AuthenticationScheme GetAuthenticationSchemeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AKAMAI_HASH)
           {
             return AuthenticationScheme::AKAMAI;

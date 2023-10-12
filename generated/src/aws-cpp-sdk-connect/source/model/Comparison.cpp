@@ -20,12 +20,12 @@ namespace Aws
       namespace ComparisonMapper
       {
 
-        static const int LT_HASH = HashingUtils::HashString("LT");
+        static constexpr uint32_t LT_HASH = ConstExprHashingUtils::HashString("LT");
 
 
         Comparison GetComparisonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LT_HASH)
           {
             return Comparison::LT;

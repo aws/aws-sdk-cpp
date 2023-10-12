@@ -20,13 +20,13 @@ namespace Aws
       namespace MovMpeg2FourCCControlMapper
       {
 
-        static const int XDCAM_HASH = HashingUtils::HashString("XDCAM");
-        static const int MPEG_HASH = HashingUtils::HashString("MPEG");
+        static constexpr uint32_t XDCAM_HASH = ConstExprHashingUtils::HashString("XDCAM");
+        static constexpr uint32_t MPEG_HASH = ConstExprHashingUtils::HashString("MPEG");
 
 
         MovMpeg2FourCCControl GetMovMpeg2FourCCControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == XDCAM_HASH)
           {
             return MovMpeg2FourCCControl::XDCAM;

@@ -20,14 +20,14 @@ namespace Aws
       namespace OfflineStoreStatusValueMapper
       {
 
-        static const int Active_HASH = HashingUtils::HashString("Active");
-        static const int Blocked_HASH = HashingUtils::HashString("Blocked");
-        static const int Disabled_HASH = HashingUtils::HashString("Disabled");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
+        static constexpr uint32_t Blocked_HASH = ConstExprHashingUtils::HashString("Blocked");
+        static constexpr uint32_t Disabled_HASH = ConstExprHashingUtils::HashString("Disabled");
 
 
         OfflineStoreStatusValue GetOfflineStoreStatusValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Active_HASH)
           {
             return OfflineStoreStatusValue::Active;

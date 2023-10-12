@@ -20,15 +20,15 @@ namespace Aws
       namespace AvailabilityZoneStateMapper
       {
 
-        static const int available_HASH = HashingUtils::HashString("available");
-        static const int information_HASH = HashingUtils::HashString("information");
-        static const int impaired_HASH = HashingUtils::HashString("impaired");
-        static const int unavailable_HASH = HashingUtils::HashString("unavailable");
+        static constexpr uint32_t available_HASH = ConstExprHashingUtils::HashString("available");
+        static constexpr uint32_t information_HASH = ConstExprHashingUtils::HashString("information");
+        static constexpr uint32_t impaired_HASH = ConstExprHashingUtils::HashString("impaired");
+        static constexpr uint32_t unavailable_HASH = ConstExprHashingUtils::HashString("unavailable");
 
 
         AvailabilityZoneState GetAvailabilityZoneStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == available_HASH)
           {
             return AvailabilityZoneState::available;

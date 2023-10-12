@@ -20,14 +20,14 @@ namespace Aws
       namespace WrappingKeySpecMapper
       {
 
-        static const int RSA_2048_HASH = HashingUtils::HashString("RSA_2048");
-        static const int RSA_3072_HASH = HashingUtils::HashString("RSA_3072");
-        static const int RSA_4096_HASH = HashingUtils::HashString("RSA_4096");
+        static constexpr uint32_t RSA_2048_HASH = ConstExprHashingUtils::HashString("RSA_2048");
+        static constexpr uint32_t RSA_3072_HASH = ConstExprHashingUtils::HashString("RSA_3072");
+        static constexpr uint32_t RSA_4096_HASH = ConstExprHashingUtils::HashString("RSA_4096");
 
 
         WrappingKeySpec GetWrappingKeySpecForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RSA_2048_HASH)
           {
             return WrappingKeySpec::RSA_2048;

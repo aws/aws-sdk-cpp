@@ -20,14 +20,14 @@ namespace Aws
       namespace ECSServiceRecommendationFindingMapper
       {
 
-        static const int Optimized_HASH = HashingUtils::HashString("Optimized");
-        static const int Underprovisioned_HASH = HashingUtils::HashString("Underprovisioned");
-        static const int Overprovisioned_HASH = HashingUtils::HashString("Overprovisioned");
+        static constexpr uint32_t Optimized_HASH = ConstExprHashingUtils::HashString("Optimized");
+        static constexpr uint32_t Underprovisioned_HASH = ConstExprHashingUtils::HashString("Underprovisioned");
+        static constexpr uint32_t Overprovisioned_HASH = ConstExprHashingUtils::HashString("Overprovisioned");
 
 
         ECSServiceRecommendationFinding GetECSServiceRecommendationFindingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Optimized_HASH)
           {
             return ECSServiceRecommendationFinding::Optimized;

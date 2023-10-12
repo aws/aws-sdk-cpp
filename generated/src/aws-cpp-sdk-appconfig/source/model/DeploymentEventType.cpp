@@ -20,17 +20,17 @@ namespace Aws
       namespace DeploymentEventTypeMapper
       {
 
-        static const int PERCENTAGE_UPDATED_HASH = HashingUtils::HashString("PERCENTAGE_UPDATED");
-        static const int ROLLBACK_STARTED_HASH = HashingUtils::HashString("ROLLBACK_STARTED");
-        static const int ROLLBACK_COMPLETED_HASH = HashingUtils::HashString("ROLLBACK_COMPLETED");
-        static const int BAKE_TIME_STARTED_HASH = HashingUtils::HashString("BAKE_TIME_STARTED");
-        static const int DEPLOYMENT_STARTED_HASH = HashingUtils::HashString("DEPLOYMENT_STARTED");
-        static const int DEPLOYMENT_COMPLETED_HASH = HashingUtils::HashString("DEPLOYMENT_COMPLETED");
+        static constexpr uint32_t PERCENTAGE_UPDATED_HASH = ConstExprHashingUtils::HashString("PERCENTAGE_UPDATED");
+        static constexpr uint32_t ROLLBACK_STARTED_HASH = ConstExprHashingUtils::HashString("ROLLBACK_STARTED");
+        static constexpr uint32_t ROLLBACK_COMPLETED_HASH = ConstExprHashingUtils::HashString("ROLLBACK_COMPLETED");
+        static constexpr uint32_t BAKE_TIME_STARTED_HASH = ConstExprHashingUtils::HashString("BAKE_TIME_STARTED");
+        static constexpr uint32_t DEPLOYMENT_STARTED_HASH = ConstExprHashingUtils::HashString("DEPLOYMENT_STARTED");
+        static constexpr uint32_t DEPLOYMENT_COMPLETED_HASH = ConstExprHashingUtils::HashString("DEPLOYMENT_COMPLETED");
 
 
         DeploymentEventType GetDeploymentEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PERCENTAGE_UPDATED_HASH)
           {
             return DeploymentEventType::PERCENTAGE_UPDATED;

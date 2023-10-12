@@ -20,13 +20,13 @@ namespace Aws
       namespace GroupFilterNameMapper
       {
 
-        static const int resource_type_HASH = HashingUtils::HashString("resource-type");
-        static const int configuration_type_HASH = HashingUtils::HashString("configuration-type");
+        static constexpr uint32_t resource_type_HASH = ConstExprHashingUtils::HashString("resource-type");
+        static constexpr uint32_t configuration_type_HASH = ConstExprHashingUtils::HashString("configuration-type");
 
 
         GroupFilterName GetGroupFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == resource_type_HASH)
           {
             return GroupFilterName::resource_type;

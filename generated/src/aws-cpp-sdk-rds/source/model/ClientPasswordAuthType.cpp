@@ -20,15 +20,15 @@ namespace Aws
       namespace ClientPasswordAuthTypeMapper
       {
 
-        static const int MYSQL_NATIVE_PASSWORD_HASH = HashingUtils::HashString("MYSQL_NATIVE_PASSWORD");
-        static const int POSTGRES_SCRAM_SHA_256_HASH = HashingUtils::HashString("POSTGRES_SCRAM_SHA_256");
-        static const int POSTGRES_MD5_HASH = HashingUtils::HashString("POSTGRES_MD5");
-        static const int SQL_SERVER_AUTHENTICATION_HASH = HashingUtils::HashString("SQL_SERVER_AUTHENTICATION");
+        static constexpr uint32_t MYSQL_NATIVE_PASSWORD_HASH = ConstExprHashingUtils::HashString("MYSQL_NATIVE_PASSWORD");
+        static constexpr uint32_t POSTGRES_SCRAM_SHA_256_HASH = ConstExprHashingUtils::HashString("POSTGRES_SCRAM_SHA_256");
+        static constexpr uint32_t POSTGRES_MD5_HASH = ConstExprHashingUtils::HashString("POSTGRES_MD5");
+        static constexpr uint32_t SQL_SERVER_AUTHENTICATION_HASH = ConstExprHashingUtils::HashString("SQL_SERVER_AUTHENTICATION");
 
 
         ClientPasswordAuthType GetClientPasswordAuthTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MYSQL_NATIVE_PASSWORD_HASH)
           {
             return ClientPasswordAuthType::MYSQL_NATIVE_PASSWORD;

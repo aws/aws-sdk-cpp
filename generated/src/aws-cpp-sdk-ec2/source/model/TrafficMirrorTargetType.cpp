@@ -20,14 +20,14 @@ namespace Aws
       namespace TrafficMirrorTargetTypeMapper
       {
 
-        static const int network_interface_HASH = HashingUtils::HashString("network-interface");
-        static const int network_load_balancer_HASH = HashingUtils::HashString("network-load-balancer");
-        static const int gateway_load_balancer_endpoint_HASH = HashingUtils::HashString("gateway-load-balancer-endpoint");
+        static constexpr uint32_t network_interface_HASH = ConstExprHashingUtils::HashString("network-interface");
+        static constexpr uint32_t network_load_balancer_HASH = ConstExprHashingUtils::HashString("network-load-balancer");
+        static constexpr uint32_t gateway_load_balancer_endpoint_HASH = ConstExprHashingUtils::HashString("gateway-load-balancer-endpoint");
 
 
         TrafficMirrorTargetType GetTrafficMirrorTargetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == network_interface_HASH)
           {
             return TrafficMirrorTargetType::network_interface;

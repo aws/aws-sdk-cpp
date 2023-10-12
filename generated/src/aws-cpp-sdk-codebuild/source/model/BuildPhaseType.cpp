@@ -20,22 +20,22 @@ namespace Aws
       namespace BuildPhaseTypeMapper
       {
 
-        static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
-        static const int QUEUED_HASH = HashingUtils::HashString("QUEUED");
-        static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
-        static const int DOWNLOAD_SOURCE_HASH = HashingUtils::HashString("DOWNLOAD_SOURCE");
-        static const int INSTALL_HASH = HashingUtils::HashString("INSTALL");
-        static const int PRE_BUILD_HASH = HashingUtils::HashString("PRE_BUILD");
-        static const int BUILD_HASH = HashingUtils::HashString("BUILD");
-        static const int POST_BUILD_HASH = HashingUtils::HashString("POST_BUILD");
-        static const int UPLOAD_ARTIFACTS_HASH = HashingUtils::HashString("UPLOAD_ARTIFACTS");
-        static const int FINALIZING_HASH = HashingUtils::HashString("FINALIZING");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t SUBMITTED_HASH = ConstExprHashingUtils::HashString("SUBMITTED");
+        static constexpr uint32_t QUEUED_HASH = ConstExprHashingUtils::HashString("QUEUED");
+        static constexpr uint32_t PROVISIONING_HASH = ConstExprHashingUtils::HashString("PROVISIONING");
+        static constexpr uint32_t DOWNLOAD_SOURCE_HASH = ConstExprHashingUtils::HashString("DOWNLOAD_SOURCE");
+        static constexpr uint32_t INSTALL_HASH = ConstExprHashingUtils::HashString("INSTALL");
+        static constexpr uint32_t PRE_BUILD_HASH = ConstExprHashingUtils::HashString("PRE_BUILD");
+        static constexpr uint32_t BUILD_HASH = ConstExprHashingUtils::HashString("BUILD");
+        static constexpr uint32_t POST_BUILD_HASH = ConstExprHashingUtils::HashString("POST_BUILD");
+        static constexpr uint32_t UPLOAD_ARTIFACTS_HASH = ConstExprHashingUtils::HashString("UPLOAD_ARTIFACTS");
+        static constexpr uint32_t FINALIZING_HASH = ConstExprHashingUtils::HashString("FINALIZING");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
 
 
         BuildPhaseType GetBuildPhaseTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUBMITTED_HASH)
           {
             return BuildPhaseType::SUBMITTED;

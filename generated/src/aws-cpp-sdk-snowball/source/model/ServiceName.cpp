@@ -20,13 +20,13 @@ namespace Aws
       namespace ServiceNameMapper
       {
 
-        static const int KUBERNETES_HASH = HashingUtils::HashString("KUBERNETES");
-        static const int EKS_ANYWHERE_HASH = HashingUtils::HashString("EKS_ANYWHERE");
+        static constexpr uint32_t KUBERNETES_HASH = ConstExprHashingUtils::HashString("KUBERNETES");
+        static constexpr uint32_t EKS_ANYWHERE_HASH = ConstExprHashingUtils::HashString("EKS_ANYWHERE");
 
 
         ServiceName GetServiceNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KUBERNETES_HASH)
           {
             return ServiceName::KUBERNETES;

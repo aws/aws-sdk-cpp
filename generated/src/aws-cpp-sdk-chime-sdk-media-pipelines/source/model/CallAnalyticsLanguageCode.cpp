@@ -20,20 +20,20 @@ namespace Aws
       namespace CallAnalyticsLanguageCodeMapper
       {
 
-        static const int en_US_HASH = HashingUtils::HashString("en-US");
-        static const int en_GB_HASH = HashingUtils::HashString("en-GB");
-        static const int es_US_HASH = HashingUtils::HashString("es-US");
-        static const int fr_CA_HASH = HashingUtils::HashString("fr-CA");
-        static const int fr_FR_HASH = HashingUtils::HashString("fr-FR");
-        static const int en_AU_HASH = HashingUtils::HashString("en-AU");
-        static const int it_IT_HASH = HashingUtils::HashString("it-IT");
-        static const int de_DE_HASH = HashingUtils::HashString("de-DE");
-        static const int pt_BR_HASH = HashingUtils::HashString("pt-BR");
+        static constexpr uint32_t en_US_HASH = ConstExprHashingUtils::HashString("en-US");
+        static constexpr uint32_t en_GB_HASH = ConstExprHashingUtils::HashString("en-GB");
+        static constexpr uint32_t es_US_HASH = ConstExprHashingUtils::HashString("es-US");
+        static constexpr uint32_t fr_CA_HASH = ConstExprHashingUtils::HashString("fr-CA");
+        static constexpr uint32_t fr_FR_HASH = ConstExprHashingUtils::HashString("fr-FR");
+        static constexpr uint32_t en_AU_HASH = ConstExprHashingUtils::HashString("en-AU");
+        static constexpr uint32_t it_IT_HASH = ConstExprHashingUtils::HashString("it-IT");
+        static constexpr uint32_t de_DE_HASH = ConstExprHashingUtils::HashString("de-DE");
+        static constexpr uint32_t pt_BR_HASH = ConstExprHashingUtils::HashString("pt-BR");
 
 
         CallAnalyticsLanguageCode GetCallAnalyticsLanguageCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == en_US_HASH)
           {
             return CallAnalyticsLanguageCode::en_US;

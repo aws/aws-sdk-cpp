@@ -33,15 +33,15 @@ template<> AWS_AMPLIFYBACKEND_API TooManyRequestsException AmplifyBackendError::
 namespace AmplifyBackendErrorMapper
 {
 
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int GATEWAY_TIMEOUT_HASH = HashingUtils::HashString("GatewayTimeoutException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
+static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NotFoundException");
+static constexpr uint32_t GATEWAY_TIMEOUT_HASH = ConstExprHashingUtils::HashString("GatewayTimeoutException");
+static constexpr uint32_t TOO_MANY_REQUESTS_HASH = ConstExprHashingUtils::HashString("TooManyRequestsException");
+static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BadRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == NOT_FOUND_HASH)
   {

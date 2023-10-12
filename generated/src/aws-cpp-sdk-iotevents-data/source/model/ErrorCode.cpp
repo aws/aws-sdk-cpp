@@ -20,16 +20,16 @@ namespace Aws
       namespace ErrorCodeMapper
       {
 
-        static const int ResourceNotFoundException_HASH = HashingUtils::HashString("ResourceNotFoundException");
-        static const int InvalidRequestException_HASH = HashingUtils::HashString("InvalidRequestException");
-        static const int InternalFailureException_HASH = HashingUtils::HashString("InternalFailureException");
-        static const int ServiceUnavailableException_HASH = HashingUtils::HashString("ServiceUnavailableException");
-        static const int ThrottlingException_HASH = HashingUtils::HashString("ThrottlingException");
+        static constexpr uint32_t ResourceNotFoundException_HASH = ConstExprHashingUtils::HashString("ResourceNotFoundException");
+        static constexpr uint32_t InvalidRequestException_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
+        static constexpr uint32_t InternalFailureException_HASH = ConstExprHashingUtils::HashString("InternalFailureException");
+        static constexpr uint32_t ServiceUnavailableException_HASH = ConstExprHashingUtils::HashString("ServiceUnavailableException");
+        static constexpr uint32_t ThrottlingException_HASH = ConstExprHashingUtils::HashString("ThrottlingException");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ResourceNotFoundException_HASH)
           {
             return ErrorCode::ResourceNotFoundException;

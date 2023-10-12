@@ -20,16 +20,16 @@ namespace Aws
       namespace WatermarkingStrengthMapper
       {
 
-        static const int LIGHTEST_HASH = HashingUtils::HashString("LIGHTEST");
-        static const int LIGHTER_HASH = HashingUtils::HashString("LIGHTER");
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int STRONGER_HASH = HashingUtils::HashString("STRONGER");
-        static const int STRONGEST_HASH = HashingUtils::HashString("STRONGEST");
+        static constexpr uint32_t LIGHTEST_HASH = ConstExprHashingUtils::HashString("LIGHTEST");
+        static constexpr uint32_t LIGHTER_HASH = ConstExprHashingUtils::HashString("LIGHTER");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t STRONGER_HASH = ConstExprHashingUtils::HashString("STRONGER");
+        static constexpr uint32_t STRONGEST_HASH = ConstExprHashingUtils::HashString("STRONGEST");
 
 
         WatermarkingStrength GetWatermarkingStrengthForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LIGHTEST_HASH)
           {
             return WatermarkingStrength::LIGHTEST;

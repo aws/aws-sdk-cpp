@@ -20,22 +20,22 @@ namespace Aws
       namespace DirectoryStageMapper
       {
 
-        static const int Requested_HASH = HashingUtils::HashString("Requested");
-        static const int Creating_HASH = HashingUtils::HashString("Creating");
-        static const int Created_HASH = HashingUtils::HashString("Created");
-        static const int Active_HASH = HashingUtils::HashString("Active");
-        static const int Inoperable_HASH = HashingUtils::HashString("Inoperable");
-        static const int Impaired_HASH = HashingUtils::HashString("Impaired");
-        static const int Restoring_HASH = HashingUtils::HashString("Restoring");
-        static const int RestoreFailed_HASH = HashingUtils::HashString("RestoreFailed");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
-        static const int Deleted_HASH = HashingUtils::HashString("Deleted");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t Requested_HASH = ConstExprHashingUtils::HashString("Requested");
+        static constexpr uint32_t Creating_HASH = ConstExprHashingUtils::HashString("Creating");
+        static constexpr uint32_t Created_HASH = ConstExprHashingUtils::HashString("Created");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
+        static constexpr uint32_t Inoperable_HASH = ConstExprHashingUtils::HashString("Inoperable");
+        static constexpr uint32_t Impaired_HASH = ConstExprHashingUtils::HashString("Impaired");
+        static constexpr uint32_t Restoring_HASH = ConstExprHashingUtils::HashString("Restoring");
+        static constexpr uint32_t RestoreFailed_HASH = ConstExprHashingUtils::HashString("RestoreFailed");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
+        static constexpr uint32_t Deleted_HASH = ConstExprHashingUtils::HashString("Deleted");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         DirectoryStage GetDirectoryStageForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Requested_HASH)
           {
             return DirectoryStage::Requested;

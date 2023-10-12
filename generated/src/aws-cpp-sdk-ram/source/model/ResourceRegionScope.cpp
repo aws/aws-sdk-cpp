@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceRegionScopeMapper
       {
 
-        static const int REGIONAL_HASH = HashingUtils::HashString("REGIONAL");
-        static const int GLOBAL_HASH = HashingUtils::HashString("GLOBAL");
+        static constexpr uint32_t REGIONAL_HASH = ConstExprHashingUtils::HashString("REGIONAL");
+        static constexpr uint32_t GLOBAL_HASH = ConstExprHashingUtils::HashString("GLOBAL");
 
 
         ResourceRegionScope GetResourceRegionScopeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REGIONAL_HASH)
           {
             return ResourceRegionScope::REGIONAL;

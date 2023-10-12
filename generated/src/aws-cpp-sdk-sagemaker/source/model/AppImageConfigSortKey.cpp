@@ -20,14 +20,14 @@ namespace Aws
       namespace AppImageConfigSortKeyMapper
       {
 
-        static const int CreationTime_HASH = HashingUtils::HashString("CreationTime");
-        static const int LastModifiedTime_HASH = HashingUtils::HashString("LastModifiedTime");
-        static const int Name_HASH = HashingUtils::HashString("Name");
+        static constexpr uint32_t CreationTime_HASH = ConstExprHashingUtils::HashString("CreationTime");
+        static constexpr uint32_t LastModifiedTime_HASH = ConstExprHashingUtils::HashString("LastModifiedTime");
+        static constexpr uint32_t Name_HASH = ConstExprHashingUtils::HashString("Name");
 
 
         AppImageConfigSortKey GetAppImageConfigSortKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CreationTime_HASH)
           {
             return AppImageConfigSortKey::CreationTime;

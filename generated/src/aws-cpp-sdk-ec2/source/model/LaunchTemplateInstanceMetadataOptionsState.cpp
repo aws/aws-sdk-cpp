@@ -20,13 +20,13 @@ namespace Aws
       namespace LaunchTemplateInstanceMetadataOptionsStateMapper
       {
 
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int applied_HASH = HashingUtils::HashString("applied");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t applied_HASH = ConstExprHashingUtils::HashString("applied");
 
 
         LaunchTemplateInstanceMetadataOptionsState GetLaunchTemplateInstanceMetadataOptionsStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pending_HASH)
           {
             return LaunchTemplateInstanceMetadataOptionsState::pending;

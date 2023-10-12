@@ -20,16 +20,16 @@ namespace Aws
       namespace IntegrationTypeMapper
       {
 
-        static const int AWS_HASH = HashingUtils::HashString("AWS");
-        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
-        static const int MOCK_HASH = HashingUtils::HashString("MOCK");
-        static const int HTTP_PROXY_HASH = HashingUtils::HashString("HTTP_PROXY");
-        static const int AWS_PROXY_HASH = HashingUtils::HashString("AWS_PROXY");
+        static constexpr uint32_t AWS_HASH = ConstExprHashingUtils::HashString("AWS");
+        static constexpr uint32_t HTTP_HASH = ConstExprHashingUtils::HashString("HTTP");
+        static constexpr uint32_t MOCK_HASH = ConstExprHashingUtils::HashString("MOCK");
+        static constexpr uint32_t HTTP_PROXY_HASH = ConstExprHashingUtils::HashString("HTTP_PROXY");
+        static constexpr uint32_t AWS_PROXY_HASH = ConstExprHashingUtils::HashString("AWS_PROXY");
 
 
         IntegrationType GetIntegrationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_HASH)
           {
             return IntegrationType::AWS;

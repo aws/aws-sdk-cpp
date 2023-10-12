@@ -20,12 +20,12 @@ namespace Aws
       namespace ContainerTypeMapper
       {
 
-        static const int DOCKER_HASH = HashingUtils::HashString("DOCKER");
+        static constexpr uint32_t DOCKER_HASH = ConstExprHashingUtils::HashString("DOCKER");
 
 
         ContainerType GetContainerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DOCKER_HASH)
           {
             return ContainerType::DOCKER;

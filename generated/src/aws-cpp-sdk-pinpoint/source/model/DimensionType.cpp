@@ -20,13 +20,13 @@ namespace Aws
       namespace DimensionTypeMapper
       {
 
-        static const int INCLUSIVE_HASH = HashingUtils::HashString("INCLUSIVE");
-        static const int EXCLUSIVE_HASH = HashingUtils::HashString("EXCLUSIVE");
+        static constexpr uint32_t INCLUSIVE_HASH = ConstExprHashingUtils::HashString("INCLUSIVE");
+        static constexpr uint32_t EXCLUSIVE_HASH = ConstExprHashingUtils::HashString("EXCLUSIVE");
 
 
         DimensionType GetDimensionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INCLUSIVE_HASH)
           {
             return DimensionType::INCLUSIVE;

@@ -20,17 +20,17 @@ namespace Aws
       namespace TaskStopCodeMapper
       {
 
-        static const int TaskFailedToStart_HASH = HashingUtils::HashString("TaskFailedToStart");
-        static const int EssentialContainerExited_HASH = HashingUtils::HashString("EssentialContainerExited");
-        static const int UserInitiated_HASH = HashingUtils::HashString("UserInitiated");
-        static const int ServiceSchedulerInitiated_HASH = HashingUtils::HashString("ServiceSchedulerInitiated");
-        static const int SpotInterruption_HASH = HashingUtils::HashString("SpotInterruption");
-        static const int TerminationNotice_HASH = HashingUtils::HashString("TerminationNotice");
+        static constexpr uint32_t TaskFailedToStart_HASH = ConstExprHashingUtils::HashString("TaskFailedToStart");
+        static constexpr uint32_t EssentialContainerExited_HASH = ConstExprHashingUtils::HashString("EssentialContainerExited");
+        static constexpr uint32_t UserInitiated_HASH = ConstExprHashingUtils::HashString("UserInitiated");
+        static constexpr uint32_t ServiceSchedulerInitiated_HASH = ConstExprHashingUtils::HashString("ServiceSchedulerInitiated");
+        static constexpr uint32_t SpotInterruption_HASH = ConstExprHashingUtils::HashString("SpotInterruption");
+        static constexpr uint32_t TerminationNotice_HASH = ConstExprHashingUtils::HashString("TerminationNotice");
 
 
         TaskStopCode GetTaskStopCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TaskFailedToStart_HASH)
           {
             return TaskStopCode::TaskFailedToStart;

@@ -20,15 +20,15 @@ namespace Aws
       namespace ListingStateMapper
       {
 
-        static const int available_HASH = HashingUtils::HashString("available");
-        static const int sold_HASH = HashingUtils::HashString("sold");
-        static const int cancelled_HASH = HashingUtils::HashString("cancelled");
-        static const int pending_HASH = HashingUtils::HashString("pending");
+        static constexpr uint32_t available_HASH = ConstExprHashingUtils::HashString("available");
+        static constexpr uint32_t sold_HASH = ConstExprHashingUtils::HashString("sold");
+        static constexpr uint32_t cancelled_HASH = ConstExprHashingUtils::HashString("cancelled");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
 
 
         ListingState GetListingStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == available_HASH)
           {
             return ListingState::available;

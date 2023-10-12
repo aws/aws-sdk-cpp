@@ -20,13 +20,13 @@ namespace Aws
       namespace Mp3RateControlModeMapper
       {
 
-        static const int CBR_HASH = HashingUtils::HashString("CBR");
-        static const int VBR_HASH = HashingUtils::HashString("VBR");
+        static constexpr uint32_t CBR_HASH = ConstExprHashingUtils::HashString("CBR");
+        static constexpr uint32_t VBR_HASH = ConstExprHashingUtils::HashString("VBR");
 
 
         Mp3RateControlMode GetMp3RateControlModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CBR_HASH)
           {
             return Mp3RateControlMode::CBR;

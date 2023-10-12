@@ -20,13 +20,13 @@ namespace Aws
       namespace InsightTypeMapper
       {
 
-        static const int ApiCallRateInsight_HASH = HashingUtils::HashString("ApiCallRateInsight");
-        static const int ApiErrorRateInsight_HASH = HashingUtils::HashString("ApiErrorRateInsight");
+        static constexpr uint32_t ApiCallRateInsight_HASH = ConstExprHashingUtils::HashString("ApiCallRateInsight");
+        static constexpr uint32_t ApiErrorRateInsight_HASH = ConstExprHashingUtils::HashString("ApiErrorRateInsight");
 
 
         InsightType GetInsightTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ApiCallRateInsight_HASH)
           {
             return InsightType::ApiCallRateInsight;

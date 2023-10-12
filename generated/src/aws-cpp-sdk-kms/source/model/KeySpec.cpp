@@ -20,24 +20,24 @@ namespace Aws
       namespace KeySpecMapper
       {
 
-        static const int RSA_2048_HASH = HashingUtils::HashString("RSA_2048");
-        static const int RSA_3072_HASH = HashingUtils::HashString("RSA_3072");
-        static const int RSA_4096_HASH = HashingUtils::HashString("RSA_4096");
-        static const int ECC_NIST_P256_HASH = HashingUtils::HashString("ECC_NIST_P256");
-        static const int ECC_NIST_P384_HASH = HashingUtils::HashString("ECC_NIST_P384");
-        static const int ECC_NIST_P521_HASH = HashingUtils::HashString("ECC_NIST_P521");
-        static const int ECC_SECG_P256K1_HASH = HashingUtils::HashString("ECC_SECG_P256K1");
-        static const int SYMMETRIC_DEFAULT_HASH = HashingUtils::HashString("SYMMETRIC_DEFAULT");
-        static const int HMAC_224_HASH = HashingUtils::HashString("HMAC_224");
-        static const int HMAC_256_HASH = HashingUtils::HashString("HMAC_256");
-        static const int HMAC_384_HASH = HashingUtils::HashString("HMAC_384");
-        static const int HMAC_512_HASH = HashingUtils::HashString("HMAC_512");
-        static const int SM2_HASH = HashingUtils::HashString("SM2");
+        static constexpr uint32_t RSA_2048_HASH = ConstExprHashingUtils::HashString("RSA_2048");
+        static constexpr uint32_t RSA_3072_HASH = ConstExprHashingUtils::HashString("RSA_3072");
+        static constexpr uint32_t RSA_4096_HASH = ConstExprHashingUtils::HashString("RSA_4096");
+        static constexpr uint32_t ECC_NIST_P256_HASH = ConstExprHashingUtils::HashString("ECC_NIST_P256");
+        static constexpr uint32_t ECC_NIST_P384_HASH = ConstExprHashingUtils::HashString("ECC_NIST_P384");
+        static constexpr uint32_t ECC_NIST_P521_HASH = ConstExprHashingUtils::HashString("ECC_NIST_P521");
+        static constexpr uint32_t ECC_SECG_P256K1_HASH = ConstExprHashingUtils::HashString("ECC_SECG_P256K1");
+        static constexpr uint32_t SYMMETRIC_DEFAULT_HASH = ConstExprHashingUtils::HashString("SYMMETRIC_DEFAULT");
+        static constexpr uint32_t HMAC_224_HASH = ConstExprHashingUtils::HashString("HMAC_224");
+        static constexpr uint32_t HMAC_256_HASH = ConstExprHashingUtils::HashString("HMAC_256");
+        static constexpr uint32_t HMAC_384_HASH = ConstExprHashingUtils::HashString("HMAC_384");
+        static constexpr uint32_t HMAC_512_HASH = ConstExprHashingUtils::HashString("HMAC_512");
+        static constexpr uint32_t SM2_HASH = ConstExprHashingUtils::HashString("SM2");
 
 
         KeySpec GetKeySpecForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RSA_2048_HASH)
           {
             return KeySpec::RSA_2048;

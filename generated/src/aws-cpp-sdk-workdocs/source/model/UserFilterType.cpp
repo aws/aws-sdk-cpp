@@ -20,13 +20,13 @@ namespace Aws
       namespace UserFilterTypeMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int ACTIVE_PENDING_HASH = HashingUtils::HashString("ACTIVE_PENDING");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t ACTIVE_PENDING_HASH = ConstExprHashingUtils::HashString("ACTIVE_PENDING");
 
 
         UserFilterType GetUserFilterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return UserFilterType::ALL;

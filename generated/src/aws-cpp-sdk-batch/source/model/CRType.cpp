@@ -20,15 +20,15 @@ namespace Aws
       namespace CRTypeMapper
       {
 
-        static const int EC2_HASH = HashingUtils::HashString("EC2");
-        static const int SPOT_HASH = HashingUtils::HashString("SPOT");
-        static const int FARGATE_HASH = HashingUtils::HashString("FARGATE");
-        static const int FARGATE_SPOT_HASH = HashingUtils::HashString("FARGATE_SPOT");
+        static constexpr uint32_t EC2_HASH = ConstExprHashingUtils::HashString("EC2");
+        static constexpr uint32_t SPOT_HASH = ConstExprHashingUtils::HashString("SPOT");
+        static constexpr uint32_t FARGATE_HASH = ConstExprHashingUtils::HashString("FARGATE");
+        static constexpr uint32_t FARGATE_SPOT_HASH = ConstExprHashingUtils::HashString("FARGATE_SPOT");
 
 
         CRType GetCRTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EC2_HASH)
           {
             return CRType::EC2;

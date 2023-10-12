@@ -20,15 +20,15 @@ namespace Aws
       namespace ErrorCodeMapper
       {
 
-        static const int DEPENDENCY_ACCESS_DENIED_ERROR_HASH = HashingUtils::HashString("DEPENDENCY_ACCESS_DENIED_ERROR");
-        static const int DEPENDENCY_THROTTLING_ERROR_HASH = HashingUtils::HashString("DEPENDENCY_THROTTLING_ERROR");
-        static const int DEPENDENCY_SERVICE_ERROR_HASH = HashingUtils::HashString("DEPENDENCY_SERVICE_ERROR");
-        static const int SERVICE_QUOTA_NOT_AVAILABLE_ERROR_HASH = HashingUtils::HashString("SERVICE_QUOTA_NOT_AVAILABLE_ERROR");
+        static constexpr uint32_t DEPENDENCY_ACCESS_DENIED_ERROR_HASH = ConstExprHashingUtils::HashString("DEPENDENCY_ACCESS_DENIED_ERROR");
+        static constexpr uint32_t DEPENDENCY_THROTTLING_ERROR_HASH = ConstExprHashingUtils::HashString("DEPENDENCY_THROTTLING_ERROR");
+        static constexpr uint32_t DEPENDENCY_SERVICE_ERROR_HASH = ConstExprHashingUtils::HashString("DEPENDENCY_SERVICE_ERROR");
+        static constexpr uint32_t SERVICE_QUOTA_NOT_AVAILABLE_ERROR_HASH = ConstExprHashingUtils::HashString("SERVICE_QUOTA_NOT_AVAILABLE_ERROR");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEPENDENCY_ACCESS_DENIED_ERROR_HASH)
           {
             return ErrorCode::DEPENDENCY_ACCESS_DENIED_ERROR;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ComponentDeploymentUpdateTypeMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int CURRENT_VERSION_HASH = HashingUtils::HashString("CURRENT_VERSION");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t CURRENT_VERSION_HASH = ConstExprHashingUtils::HashString("CURRENT_VERSION");
 
 
         ComponentDeploymentUpdateType GetComponentDeploymentUpdateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return ComponentDeploymentUpdateType::NONE;

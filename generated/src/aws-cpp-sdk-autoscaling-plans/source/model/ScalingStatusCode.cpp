@@ -20,14 +20,14 @@ namespace Aws
       namespace ScalingStatusCodeMapper
       {
 
-        static const int Inactive_HASH = HashingUtils::HashString("Inactive");
-        static const int PartiallyActive_HASH = HashingUtils::HashString("PartiallyActive");
-        static const int Active_HASH = HashingUtils::HashString("Active");
+        static constexpr uint32_t Inactive_HASH = ConstExprHashingUtils::HashString("Inactive");
+        static constexpr uint32_t PartiallyActive_HASH = ConstExprHashingUtils::HashString("PartiallyActive");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
 
 
         ScalingStatusCode GetScalingStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Inactive_HASH)
           {
             return ScalingStatusCode::Inactive;

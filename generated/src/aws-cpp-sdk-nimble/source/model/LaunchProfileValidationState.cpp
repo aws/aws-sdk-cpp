@@ -20,16 +20,16 @@ namespace Aws
       namespace LaunchProfileValidationStateMapper
       {
 
-        static const int VALIDATION_NOT_STARTED_HASH = HashingUtils::HashString("VALIDATION_NOT_STARTED");
-        static const int VALIDATION_IN_PROGRESS_HASH = HashingUtils::HashString("VALIDATION_IN_PROGRESS");
-        static const int VALIDATION_SUCCESS_HASH = HashingUtils::HashString("VALIDATION_SUCCESS");
-        static const int VALIDATION_FAILED_HASH = HashingUtils::HashString("VALIDATION_FAILED");
-        static const int VALIDATION_FAILED_INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("VALIDATION_FAILED_INTERNAL_SERVER_ERROR");
+        static constexpr uint32_t VALIDATION_NOT_STARTED_HASH = ConstExprHashingUtils::HashString("VALIDATION_NOT_STARTED");
+        static constexpr uint32_t VALIDATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("VALIDATION_IN_PROGRESS");
+        static constexpr uint32_t VALIDATION_SUCCESS_HASH = ConstExprHashingUtils::HashString("VALIDATION_SUCCESS");
+        static constexpr uint32_t VALIDATION_FAILED_HASH = ConstExprHashingUtils::HashString("VALIDATION_FAILED");
+        static constexpr uint32_t VALIDATION_FAILED_INTERNAL_SERVER_ERROR_HASH = ConstExprHashingUtils::HashString("VALIDATION_FAILED_INTERNAL_SERVER_ERROR");
 
 
         LaunchProfileValidationState GetLaunchProfileValidationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VALIDATION_NOT_STARTED_HASH)
           {
             return LaunchProfileValidationState::VALIDATION_NOT_STARTED;

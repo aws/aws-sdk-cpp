@@ -20,13 +20,13 @@ namespace Aws
       namespace ParquetVersionValueMapper
       {
 
-        static const int parquet_1_0_HASH = HashingUtils::HashString("parquet-1-0");
-        static const int parquet_2_0_HASH = HashingUtils::HashString("parquet-2-0");
+        static constexpr uint32_t parquet_1_0_HASH = ConstExprHashingUtils::HashString("parquet-1-0");
+        static constexpr uint32_t parquet_2_0_HASH = ConstExprHashingUtils::HashString("parquet-2-0");
 
 
         ParquetVersionValue GetParquetVersionValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == parquet_1_0_HASH)
           {
             return ParquetVersionValue::parquet_1_0;

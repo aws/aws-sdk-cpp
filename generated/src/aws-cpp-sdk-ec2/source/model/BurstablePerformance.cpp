@@ -20,14 +20,14 @@ namespace Aws
       namespace BurstablePerformanceMapper
       {
 
-        static const int included_HASH = HashingUtils::HashString("included");
-        static const int required_HASH = HashingUtils::HashString("required");
-        static const int excluded_HASH = HashingUtils::HashString("excluded");
+        static constexpr uint32_t included_HASH = ConstExprHashingUtils::HashString("included");
+        static constexpr uint32_t required_HASH = ConstExprHashingUtils::HashString("required");
+        static constexpr uint32_t excluded_HASH = ConstExprHashingUtils::HashString("excluded");
 
 
         BurstablePerformance GetBurstablePerformanceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == included_HASH)
           {
             return BurstablePerformance::included;

@@ -20,14 +20,14 @@ namespace Aws
       namespace DashManifestStyleMapper
       {
 
-        static const int BASIC_HASH = HashingUtils::HashString("BASIC");
-        static const int COMPACT_HASH = HashingUtils::HashString("COMPACT");
-        static const int DISTINCT_HASH = HashingUtils::HashString("DISTINCT");
+        static constexpr uint32_t BASIC_HASH = ConstExprHashingUtils::HashString("BASIC");
+        static constexpr uint32_t COMPACT_HASH = ConstExprHashingUtils::HashString("COMPACT");
+        static constexpr uint32_t DISTINCT_HASH = ConstExprHashingUtils::HashString("DISTINCT");
 
 
         DashManifestStyle GetDashManifestStyleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BASIC_HASH)
           {
             return DashManifestStyle::BASIC;

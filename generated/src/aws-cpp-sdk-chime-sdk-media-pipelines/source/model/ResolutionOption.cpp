@@ -20,13 +20,13 @@ namespace Aws
       namespace ResolutionOptionMapper
       {
 
-        static const int HD_HASH = HashingUtils::HashString("HD");
-        static const int FHD_HASH = HashingUtils::HashString("FHD");
+        static constexpr uint32_t HD_HASH = ConstExprHashingUtils::HashString("HD");
+        static constexpr uint32_t FHD_HASH = ConstExprHashingUtils::HashString("FHD");
 
 
         ResolutionOption GetResolutionOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HD_HASH)
           {
             return ResolutionOption::HD;

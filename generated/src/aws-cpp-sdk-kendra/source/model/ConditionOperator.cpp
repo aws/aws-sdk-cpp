@@ -20,22 +20,22 @@ namespace Aws
       namespace ConditionOperatorMapper
       {
 
-        static const int GreaterThan_HASH = HashingUtils::HashString("GreaterThan");
-        static const int GreaterThanOrEquals_HASH = HashingUtils::HashString("GreaterThanOrEquals");
-        static const int LessThan_HASH = HashingUtils::HashString("LessThan");
-        static const int LessThanOrEquals_HASH = HashingUtils::HashString("LessThanOrEquals");
-        static const int Equals_HASH = HashingUtils::HashString("Equals");
-        static const int NotEquals_HASH = HashingUtils::HashString("NotEquals");
-        static const int Contains_HASH = HashingUtils::HashString("Contains");
-        static const int NotContains_HASH = HashingUtils::HashString("NotContains");
-        static const int Exists_HASH = HashingUtils::HashString("Exists");
-        static const int NotExists_HASH = HashingUtils::HashString("NotExists");
-        static const int BeginsWith_HASH = HashingUtils::HashString("BeginsWith");
+        static constexpr uint32_t GreaterThan_HASH = ConstExprHashingUtils::HashString("GreaterThan");
+        static constexpr uint32_t GreaterThanOrEquals_HASH = ConstExprHashingUtils::HashString("GreaterThanOrEquals");
+        static constexpr uint32_t LessThan_HASH = ConstExprHashingUtils::HashString("LessThan");
+        static constexpr uint32_t LessThanOrEquals_HASH = ConstExprHashingUtils::HashString("LessThanOrEquals");
+        static constexpr uint32_t Equals_HASH = ConstExprHashingUtils::HashString("Equals");
+        static constexpr uint32_t NotEquals_HASH = ConstExprHashingUtils::HashString("NotEquals");
+        static constexpr uint32_t Contains_HASH = ConstExprHashingUtils::HashString("Contains");
+        static constexpr uint32_t NotContains_HASH = ConstExprHashingUtils::HashString("NotContains");
+        static constexpr uint32_t Exists_HASH = ConstExprHashingUtils::HashString("Exists");
+        static constexpr uint32_t NotExists_HASH = ConstExprHashingUtils::HashString("NotExists");
+        static constexpr uint32_t BeginsWith_HASH = ConstExprHashingUtils::HashString("BeginsWith");
 
 
         ConditionOperator GetConditionOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GreaterThan_HASH)
           {
             return ConditionOperator::GreaterThan;

@@ -20,14 +20,14 @@ namespace Aws
       namespace ResponseContentTypeMapper
       {
 
-        static const int TEXT_PLAIN_HASH = HashingUtils::HashString("TEXT_PLAIN");
-        static const int TEXT_HTML_HASH = HashingUtils::HashString("TEXT_HTML");
-        static const int APPLICATION_JSON_HASH = HashingUtils::HashString("APPLICATION_JSON");
+        static constexpr uint32_t TEXT_PLAIN_HASH = ConstExprHashingUtils::HashString("TEXT_PLAIN");
+        static constexpr uint32_t TEXT_HTML_HASH = ConstExprHashingUtils::HashString("TEXT_HTML");
+        static constexpr uint32_t APPLICATION_JSON_HASH = ConstExprHashingUtils::HashString("APPLICATION_JSON");
 
 
         ResponseContentType GetResponseContentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TEXT_PLAIN_HASH)
           {
             return ResponseContentType::TEXT_PLAIN;

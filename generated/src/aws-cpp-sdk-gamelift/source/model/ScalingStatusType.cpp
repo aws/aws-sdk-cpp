@@ -20,18 +20,18 @@ namespace Aws
       namespace ScalingStatusTypeMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int UPDATE_REQUESTED_HASH = HashingUtils::HashString("UPDATE_REQUESTED");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int DELETE_REQUESTED_HASH = HashingUtils::HashString("DELETE_REQUESTED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t UPDATE_REQUESTED_HASH = ConstExprHashingUtils::HashString("UPDATE_REQUESTED");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t DELETE_REQUESTED_HASH = ConstExprHashingUtils::HashString("DELETE_REQUESTED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         ScalingStatusType GetScalingStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return ScalingStatusType::ACTIVE;

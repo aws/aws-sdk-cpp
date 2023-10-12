@@ -20,13 +20,13 @@ namespace Aws
       namespace ConfluenceAuthenticationTypeMapper
       {
 
-        static const int HTTP_BASIC_HASH = HashingUtils::HashString("HTTP_BASIC");
-        static const int PAT_HASH = HashingUtils::HashString("PAT");
+        static constexpr uint32_t HTTP_BASIC_HASH = ConstExprHashingUtils::HashString("HTTP_BASIC");
+        static constexpr uint32_t PAT_HASH = ConstExprHashingUtils::HashString("PAT");
 
 
         ConfluenceAuthenticationType GetConfluenceAuthenticationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HTTP_BASIC_HASH)
           {
             return ConfluenceAuthenticationType::HTTP_BASIC;

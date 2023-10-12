@@ -20,15 +20,15 @@ namespace Aws
       namespace OpsItemFilterOperatorMapper
       {
 
-        static const int Equal_HASH = HashingUtils::HashString("Equal");
-        static const int Contains_HASH = HashingUtils::HashString("Contains");
-        static const int GreaterThan_HASH = HashingUtils::HashString("GreaterThan");
-        static const int LessThan_HASH = HashingUtils::HashString("LessThan");
+        static constexpr uint32_t Equal_HASH = ConstExprHashingUtils::HashString("Equal");
+        static constexpr uint32_t Contains_HASH = ConstExprHashingUtils::HashString("Contains");
+        static constexpr uint32_t GreaterThan_HASH = ConstExprHashingUtils::HashString("GreaterThan");
+        static constexpr uint32_t LessThan_HASH = ConstExprHashingUtils::HashString("LessThan");
 
 
         OpsItemFilterOperator GetOpsItemFilterOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Equal_HASH)
           {
             return OpsItemFilterOperator::Equal;

@@ -20,14 +20,14 @@ namespace Aws
       namespace ConformancePackComplianceTypeMapper
       {
 
-        static const int COMPLIANT_HASH = HashingUtils::HashString("COMPLIANT");
-        static const int NON_COMPLIANT_HASH = HashingUtils::HashString("NON_COMPLIANT");
-        static const int INSUFFICIENT_DATA_HASH = HashingUtils::HashString("INSUFFICIENT_DATA");
+        static constexpr uint32_t COMPLIANT_HASH = ConstExprHashingUtils::HashString("COMPLIANT");
+        static constexpr uint32_t NON_COMPLIANT_HASH = ConstExprHashingUtils::HashString("NON_COMPLIANT");
+        static constexpr uint32_t INSUFFICIENT_DATA_HASH = ConstExprHashingUtils::HashString("INSUFFICIENT_DATA");
 
 
         ConformancePackComplianceType GetConformancePackComplianceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPLIANT_HASH)
           {
             return ConformancePackComplianceType::COMPLIANT;

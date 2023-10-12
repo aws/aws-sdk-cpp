@@ -20,14 +20,14 @@ namespace Aws
       namespace InteractionModeMapper
       {
 
-        static const int INTERACTIVE_HASH = HashingUtils::HashString("INTERACTIVE");
-        static const int NO_VIDEO_HASH = HashingUtils::HashString("NO_VIDEO");
-        static const int VIDEO_ONLY_HASH = HashingUtils::HashString("VIDEO_ONLY");
+        static constexpr uint32_t INTERACTIVE_HASH = ConstExprHashingUtils::HashString("INTERACTIVE");
+        static constexpr uint32_t NO_VIDEO_HASH = ConstExprHashingUtils::HashString("NO_VIDEO");
+        static constexpr uint32_t VIDEO_ONLY_HASH = ConstExprHashingUtils::HashString("VIDEO_ONLY");
 
 
         InteractionMode GetInteractionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERACTIVE_HASH)
           {
             return InteractionMode::INTERACTIVE;

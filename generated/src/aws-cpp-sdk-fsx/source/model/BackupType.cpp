@@ -20,14 +20,14 @@ namespace Aws
       namespace BackupTypeMapper
       {
 
-        static const int AUTOMATIC_HASH = HashingUtils::HashString("AUTOMATIC");
-        static const int USER_INITIATED_HASH = HashingUtils::HashString("USER_INITIATED");
-        static const int AWS_BACKUP_HASH = HashingUtils::HashString("AWS_BACKUP");
+        static constexpr uint32_t AUTOMATIC_HASH = ConstExprHashingUtils::HashString("AUTOMATIC");
+        static constexpr uint32_t USER_INITIATED_HASH = ConstExprHashingUtils::HashString("USER_INITIATED");
+        static constexpr uint32_t AWS_BACKUP_HASH = ConstExprHashingUtils::HashString("AWS_BACKUP");
 
 
         BackupType GetBackupTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTOMATIC_HASH)
           {
             return BackupType::AUTOMATIC;

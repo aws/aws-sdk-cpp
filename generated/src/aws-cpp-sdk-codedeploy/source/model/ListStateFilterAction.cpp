@@ -20,14 +20,14 @@ namespace Aws
       namespace ListStateFilterActionMapper
       {
 
-        static const int include_HASH = HashingUtils::HashString("include");
-        static const int exclude_HASH = HashingUtils::HashString("exclude");
-        static const int ignore_HASH = HashingUtils::HashString("ignore");
+        static constexpr uint32_t include_HASH = ConstExprHashingUtils::HashString("include");
+        static constexpr uint32_t exclude_HASH = ConstExprHashingUtils::HashString("exclude");
+        static constexpr uint32_t ignore_HASH = ConstExprHashingUtils::HashString("ignore");
 
 
         ListStateFilterAction GetListStateFilterActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == include_HASH)
           {
             return ListStateFilterAction::include;

@@ -20,13 +20,13 @@ namespace Aws
       namespace TunnelStatusMapper
       {
 
-        static const int OPEN_HASH = HashingUtils::HashString("OPEN");
-        static const int CLOSED_HASH = HashingUtils::HashString("CLOSED");
+        static constexpr uint32_t OPEN_HASH = ConstExprHashingUtils::HashString("OPEN");
+        static constexpr uint32_t CLOSED_HASH = ConstExprHashingUtils::HashString("CLOSED");
 
 
         TunnelStatus GetTunnelStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OPEN_HASH)
           {
             return TunnelStatus::OPEN;

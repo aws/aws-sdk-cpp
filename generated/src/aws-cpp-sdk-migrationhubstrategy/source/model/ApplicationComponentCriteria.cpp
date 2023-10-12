@@ -20,19 +20,19 @@ namespace Aws
       namespace ApplicationComponentCriteriaMapper
       {
 
-        static const int NOT_DEFINED_HASH = HashingUtils::HashString("NOT_DEFINED");
-        static const int APP_NAME_HASH = HashingUtils::HashString("APP_NAME");
-        static const int SERVER_ID_HASH = HashingUtils::HashString("SERVER_ID");
-        static const int APP_TYPE_HASH = HashingUtils::HashString("APP_TYPE");
-        static const int STRATEGY_HASH = HashingUtils::HashString("STRATEGY");
-        static const int DESTINATION_HASH = HashingUtils::HashString("DESTINATION");
-        static const int ANALYSIS_STATUS_HASH = HashingUtils::HashString("ANALYSIS_STATUS");
-        static const int ERROR_CATEGORY_HASH = HashingUtils::HashString("ERROR_CATEGORY");
+        static constexpr uint32_t NOT_DEFINED_HASH = ConstExprHashingUtils::HashString("NOT_DEFINED");
+        static constexpr uint32_t APP_NAME_HASH = ConstExprHashingUtils::HashString("APP_NAME");
+        static constexpr uint32_t SERVER_ID_HASH = ConstExprHashingUtils::HashString("SERVER_ID");
+        static constexpr uint32_t APP_TYPE_HASH = ConstExprHashingUtils::HashString("APP_TYPE");
+        static constexpr uint32_t STRATEGY_HASH = ConstExprHashingUtils::HashString("STRATEGY");
+        static constexpr uint32_t DESTINATION_HASH = ConstExprHashingUtils::HashString("DESTINATION");
+        static constexpr uint32_t ANALYSIS_STATUS_HASH = ConstExprHashingUtils::HashString("ANALYSIS_STATUS");
+        static constexpr uint32_t ERROR_CATEGORY_HASH = ConstExprHashingUtils::HashString("ERROR_CATEGORY");
 
 
         ApplicationComponentCriteria GetApplicationComponentCriteriaForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOT_DEFINED_HASH)
           {
             return ApplicationComponentCriteria::NOT_DEFINED;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ProvisionedResourceEngineMapper
       {
 
-        static const int CLOUDFORMATION_HASH = HashingUtils::HashString("CLOUDFORMATION");
-        static const int TERRAFORM_HASH = HashingUtils::HashString("TERRAFORM");
+        static constexpr uint32_t CLOUDFORMATION_HASH = ConstExprHashingUtils::HashString("CLOUDFORMATION");
+        static constexpr uint32_t TERRAFORM_HASH = ConstExprHashingUtils::HashString("TERRAFORM");
 
 
         ProvisionedResourceEngine GetProvisionedResourceEngineForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLOUDFORMATION_HASH)
           {
             return ProvisionedResourceEngine::CLOUDFORMATION;

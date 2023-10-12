@@ -20,19 +20,19 @@ namespace Aws
       namespace EventTypeMapper
       {
 
-        static const int send_HASH = HashingUtils::HashString("send");
-        static const int reject_HASH = HashingUtils::HashString("reject");
-        static const int bounce_HASH = HashingUtils::HashString("bounce");
-        static const int complaint_HASH = HashingUtils::HashString("complaint");
-        static const int delivery_HASH = HashingUtils::HashString("delivery");
-        static const int open_HASH = HashingUtils::HashString("open");
-        static const int click_HASH = HashingUtils::HashString("click");
-        static const int renderingFailure_HASH = HashingUtils::HashString("renderingFailure");
+        static constexpr uint32_t send_HASH = ConstExprHashingUtils::HashString("send");
+        static constexpr uint32_t reject_HASH = ConstExprHashingUtils::HashString("reject");
+        static constexpr uint32_t bounce_HASH = ConstExprHashingUtils::HashString("bounce");
+        static constexpr uint32_t complaint_HASH = ConstExprHashingUtils::HashString("complaint");
+        static constexpr uint32_t delivery_HASH = ConstExprHashingUtils::HashString("delivery");
+        static constexpr uint32_t open_HASH = ConstExprHashingUtils::HashString("open");
+        static constexpr uint32_t click_HASH = ConstExprHashingUtils::HashString("click");
+        static constexpr uint32_t renderingFailure_HASH = ConstExprHashingUtils::HashString("renderingFailure");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == send_HASH)
           {
             return EventType::send;

@@ -20,14 +20,14 @@ namespace Aws
       namespace SourceCollectionStatusMapper
       {
 
-        static const int COLLECTING_HASH = HashingUtils::HashString("COLLECTING");
-        static const int MISCONFIGURED_HASH = HashingUtils::HashString("MISCONFIGURED");
-        static const int NOT_COLLECTING_HASH = HashingUtils::HashString("NOT_COLLECTING");
+        static constexpr uint32_t COLLECTING_HASH = ConstExprHashingUtils::HashString("COLLECTING");
+        static constexpr uint32_t MISCONFIGURED_HASH = ConstExprHashingUtils::HashString("MISCONFIGURED");
+        static constexpr uint32_t NOT_COLLECTING_HASH = ConstExprHashingUtils::HashString("NOT_COLLECTING");
 
 
         SourceCollectionStatus GetSourceCollectionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COLLECTING_HASH)
           {
             return SourceCollectionStatus::COLLECTING;

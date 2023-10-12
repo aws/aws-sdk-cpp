@@ -20,15 +20,15 @@ namespace Aws
       namespace SavingsPlansDataTypeMapper
       {
 
-        static const int ATTRIBUTES_HASH = HashingUtils::HashString("ATTRIBUTES");
-        static const int UTILIZATION_HASH = HashingUtils::HashString("UTILIZATION");
-        static const int AMORTIZED_COMMITMENT_HASH = HashingUtils::HashString("AMORTIZED_COMMITMENT");
-        static const int SAVINGS_HASH = HashingUtils::HashString("SAVINGS");
+        static constexpr uint32_t ATTRIBUTES_HASH = ConstExprHashingUtils::HashString("ATTRIBUTES");
+        static constexpr uint32_t UTILIZATION_HASH = ConstExprHashingUtils::HashString("UTILIZATION");
+        static constexpr uint32_t AMORTIZED_COMMITMENT_HASH = ConstExprHashingUtils::HashString("AMORTIZED_COMMITMENT");
+        static constexpr uint32_t SAVINGS_HASH = ConstExprHashingUtils::HashString("SAVINGS");
 
 
         SavingsPlansDataType GetSavingsPlansDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ATTRIBUTES_HASH)
           {
             return SavingsPlansDataType::ATTRIBUTES;

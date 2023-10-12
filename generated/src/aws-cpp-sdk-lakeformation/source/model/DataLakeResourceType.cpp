@@ -20,19 +20,19 @@ namespace Aws
       namespace DataLakeResourceTypeMapper
       {
 
-        static const int CATALOG_HASH = HashingUtils::HashString("CATALOG");
-        static const int DATABASE_HASH = HashingUtils::HashString("DATABASE");
-        static const int TABLE_HASH = HashingUtils::HashString("TABLE");
-        static const int DATA_LOCATION_HASH = HashingUtils::HashString("DATA_LOCATION");
-        static const int LF_TAG_HASH = HashingUtils::HashString("LF_TAG");
-        static const int LF_TAG_POLICY_HASH = HashingUtils::HashString("LF_TAG_POLICY");
-        static const int LF_TAG_POLICY_DATABASE_HASH = HashingUtils::HashString("LF_TAG_POLICY_DATABASE");
-        static const int LF_TAG_POLICY_TABLE_HASH = HashingUtils::HashString("LF_TAG_POLICY_TABLE");
+        static constexpr uint32_t CATALOG_HASH = ConstExprHashingUtils::HashString("CATALOG");
+        static constexpr uint32_t DATABASE_HASH = ConstExprHashingUtils::HashString("DATABASE");
+        static constexpr uint32_t TABLE_HASH = ConstExprHashingUtils::HashString("TABLE");
+        static constexpr uint32_t DATA_LOCATION_HASH = ConstExprHashingUtils::HashString("DATA_LOCATION");
+        static constexpr uint32_t LF_TAG_HASH = ConstExprHashingUtils::HashString("LF_TAG");
+        static constexpr uint32_t LF_TAG_POLICY_HASH = ConstExprHashingUtils::HashString("LF_TAG_POLICY");
+        static constexpr uint32_t LF_TAG_POLICY_DATABASE_HASH = ConstExprHashingUtils::HashString("LF_TAG_POLICY_DATABASE");
+        static constexpr uint32_t LF_TAG_POLICY_TABLE_HASH = ConstExprHashingUtils::HashString("LF_TAG_POLICY_TABLE");
 
 
         DataLakeResourceType GetDataLakeResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CATALOG_HASH)
           {
             return DataLakeResourceType::CATALOG;

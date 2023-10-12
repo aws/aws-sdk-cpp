@@ -20,13 +20,13 @@ namespace Aws
       namespace UrlTypeMapper
       {
 
-        static const int FLINK_DASHBOARD_URL_HASH = HashingUtils::HashString("FLINK_DASHBOARD_URL");
-        static const int ZEPPELIN_UI_URL_HASH = HashingUtils::HashString("ZEPPELIN_UI_URL");
+        static constexpr uint32_t FLINK_DASHBOARD_URL_HASH = ConstExprHashingUtils::HashString("FLINK_DASHBOARD_URL");
+        static constexpr uint32_t ZEPPELIN_UI_URL_HASH = ConstExprHashingUtils::HashString("ZEPPELIN_UI_URL");
 
 
         UrlType GetUrlTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FLINK_DASHBOARD_URL_HASH)
           {
             return UrlType::FLINK_DASHBOARD_URL;

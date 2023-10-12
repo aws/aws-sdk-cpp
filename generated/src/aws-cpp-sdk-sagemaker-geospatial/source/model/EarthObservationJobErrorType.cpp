@@ -20,13 +20,13 @@ namespace Aws
       namespace EarthObservationJobErrorTypeMapper
       {
 
-        static const int CLIENT_ERROR_HASH = HashingUtils::HashString("CLIENT_ERROR");
-        static const int SERVER_ERROR_HASH = HashingUtils::HashString("SERVER_ERROR");
+        static constexpr uint32_t CLIENT_ERROR_HASH = ConstExprHashingUtils::HashString("CLIENT_ERROR");
+        static constexpr uint32_t SERVER_ERROR_HASH = ConstExprHashingUtils::HashString("SERVER_ERROR");
 
 
         EarthObservationJobErrorType GetEarthObservationJobErrorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLIENT_ERROR_HASH)
           {
             return EarthObservationJobErrorType::CLIENT_ERROR;

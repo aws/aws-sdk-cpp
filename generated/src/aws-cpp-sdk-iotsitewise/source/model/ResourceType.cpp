@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int PORTAL_HASH = HashingUtils::HashString("PORTAL");
-        static const int PROJECT_HASH = HashingUtils::HashString("PROJECT");
+        static constexpr uint32_t PORTAL_HASH = ConstExprHashingUtils::HashString("PORTAL");
+        static constexpr uint32_t PROJECT_HASH = ConstExprHashingUtils::HashString("PROJECT");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PORTAL_HASH)
           {
             return ResourceType::PORTAL;

@@ -20,14 +20,14 @@ namespace Aws
       namespace PermissionTypeFilterMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int AWS_MANAGED_HASH = HashingUtils::HashString("AWS_MANAGED");
-        static const int CUSTOMER_MANAGED_HASH = HashingUtils::HashString("CUSTOMER_MANAGED");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t AWS_MANAGED_HASH = ConstExprHashingUtils::HashString("AWS_MANAGED");
+        static constexpr uint32_t CUSTOMER_MANAGED_HASH = ConstExprHashingUtils::HashString("CUSTOMER_MANAGED");
 
 
         PermissionTypeFilter GetPermissionTypeFilterForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return PermissionTypeFilter::ALL;

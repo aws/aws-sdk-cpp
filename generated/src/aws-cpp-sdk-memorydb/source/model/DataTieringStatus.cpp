@@ -20,13 +20,13 @@ namespace Aws
       namespace DataTieringStatusMapper
       {
 
-        static const int true__HASH = HashingUtils::HashString("true");
-        static const int false__HASH = HashingUtils::HashString("false");
+        static constexpr uint32_t true__HASH = ConstExprHashingUtils::HashString("true");
+        static constexpr uint32_t false__HASH = ConstExprHashingUtils::HashString("false");
 
 
         DataTieringStatus GetDataTieringStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == true__HASH)
           {
             return DataTieringStatus::true_;

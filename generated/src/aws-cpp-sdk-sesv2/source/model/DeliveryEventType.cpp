@@ -20,17 +20,17 @@ namespace Aws
       namespace DeliveryEventTypeMapper
       {
 
-        static const int SEND_HASH = HashingUtils::HashString("SEND");
-        static const int DELIVERY_HASH = HashingUtils::HashString("DELIVERY");
-        static const int TRANSIENT_BOUNCE_HASH = HashingUtils::HashString("TRANSIENT_BOUNCE");
-        static const int PERMANENT_BOUNCE_HASH = HashingUtils::HashString("PERMANENT_BOUNCE");
-        static const int UNDETERMINED_BOUNCE_HASH = HashingUtils::HashString("UNDETERMINED_BOUNCE");
-        static const int COMPLAINT_HASH = HashingUtils::HashString("COMPLAINT");
+        static constexpr uint32_t SEND_HASH = ConstExprHashingUtils::HashString("SEND");
+        static constexpr uint32_t DELIVERY_HASH = ConstExprHashingUtils::HashString("DELIVERY");
+        static constexpr uint32_t TRANSIENT_BOUNCE_HASH = ConstExprHashingUtils::HashString("TRANSIENT_BOUNCE");
+        static constexpr uint32_t PERMANENT_BOUNCE_HASH = ConstExprHashingUtils::HashString("PERMANENT_BOUNCE");
+        static constexpr uint32_t UNDETERMINED_BOUNCE_HASH = ConstExprHashingUtils::HashString("UNDETERMINED_BOUNCE");
+        static constexpr uint32_t COMPLAINT_HASH = ConstExprHashingUtils::HashString("COMPLAINT");
 
 
         DeliveryEventType GetDeliveryEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SEND_HASH)
           {
             return DeliveryEventType::SEND;

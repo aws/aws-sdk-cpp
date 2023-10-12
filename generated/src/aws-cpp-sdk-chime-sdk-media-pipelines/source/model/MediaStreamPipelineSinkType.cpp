@@ -20,12 +20,12 @@ namespace Aws
       namespace MediaStreamPipelineSinkTypeMapper
       {
 
-        static const int KinesisVideoStreamPool_HASH = HashingUtils::HashString("KinesisVideoStreamPool");
+        static constexpr uint32_t KinesisVideoStreamPool_HASH = ConstExprHashingUtils::HashString("KinesisVideoStreamPool");
 
 
         MediaStreamPipelineSinkType GetMediaStreamPipelineSinkTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KinesisVideoStreamPool_HASH)
           {
             return MediaStreamPipelineSinkType::KinesisVideoStreamPool;

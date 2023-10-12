@@ -20,13 +20,13 @@ namespace Aws
       namespace FallbackBehaviorMapper
       {
 
-        static const int MATCH_HASH = HashingUtils::HashString("MATCH");
-        static const int NO_MATCH_HASH = HashingUtils::HashString("NO_MATCH");
+        static constexpr uint32_t MATCH_HASH = ConstExprHashingUtils::HashString("MATCH");
+        static constexpr uint32_t NO_MATCH_HASH = ConstExprHashingUtils::HashString("NO_MATCH");
 
 
         FallbackBehavior GetFallbackBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MATCH_HASH)
           {
             return FallbackBehavior::MATCH;

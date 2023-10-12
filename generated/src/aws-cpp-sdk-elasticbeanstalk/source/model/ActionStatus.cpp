@@ -20,15 +20,15 @@ namespace Aws
       namespace ActionStatusMapper
       {
 
-        static const int Scheduled_HASH = HashingUtils::HashString("Scheduled");
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int Running_HASH = HashingUtils::HashString("Running");
-        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
+        static constexpr uint32_t Scheduled_HASH = ConstExprHashingUtils::HashString("Scheduled");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t Running_HASH = ConstExprHashingUtils::HashString("Running");
+        static constexpr uint32_t Unknown_HASH = ConstExprHashingUtils::HashString("Unknown");
 
 
         ActionStatus GetActionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Scheduled_HASH)
           {
             return ActionStatus::Scheduled;

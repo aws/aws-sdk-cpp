@@ -20,13 +20,13 @@ namespace Aws
       namespace FullDocumentMapper
       {
 
-        static const int UpdateLookup_HASH = HashingUtils::HashString("UpdateLookup");
-        static const int Default_HASH = HashingUtils::HashString("Default");
+        static constexpr uint32_t UpdateLookup_HASH = ConstExprHashingUtils::HashString("UpdateLookup");
+        static constexpr uint32_t Default_HASH = ConstExprHashingUtils::HashString("Default");
 
 
         FullDocument GetFullDocumentForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UpdateLookup_HASH)
           {
             return FullDocument::UpdateLookup;

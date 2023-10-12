@@ -20,13 +20,13 @@ namespace Aws
       namespace DescribeEndpointsModeMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int GET_ONLY_HASH = HashingUtils::HashString("GET_ONLY");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t GET_ONLY_HASH = ConstExprHashingUtils::HashString("GET_ONLY");
 
 
         DescribeEndpointsMode GetDescribeEndpointsModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return DescribeEndpointsMode::DEFAULT;

@@ -20,12 +20,12 @@ namespace Aws
       namespace AnalyticsS3ExportFileFormatMapper
       {
 
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
+        static constexpr uint32_t CSV_HASH = ConstExprHashingUtils::HashString("CSV");
 
 
         AnalyticsS3ExportFileFormat GetAnalyticsS3ExportFileFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CSV_HASH)
           {
             return AnalyticsS3ExportFileFormat::CSV;

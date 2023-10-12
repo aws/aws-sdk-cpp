@@ -20,16 +20,16 @@ namespace Aws
       namespace AdapterVersionStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int AT_RISK_HASH = HashingUtils::HashString("AT_RISK");
-        static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
-        static const int CREATION_ERROR_HASH = HashingUtils::HashString("CREATION_ERROR");
-        static const int CREATION_IN_PROGRESS_HASH = HashingUtils::HashString("CREATION_IN_PROGRESS");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t AT_RISK_HASH = ConstExprHashingUtils::HashString("AT_RISK");
+        static constexpr uint32_t DEPRECATED_HASH = ConstExprHashingUtils::HashString("DEPRECATED");
+        static constexpr uint32_t CREATION_ERROR_HASH = ConstExprHashingUtils::HashString("CREATION_ERROR");
+        static constexpr uint32_t CREATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("CREATION_IN_PROGRESS");
 
 
         AdapterVersionStatus GetAdapterVersionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return AdapterVersionStatus::ACTIVE;

@@ -20,17 +20,17 @@ namespace Aws
       namespace IntervalPeriodMapper
       {
 
-        static const int FIFTEEN_MIN_HASH = HashingUtils::HashString("FIFTEEN_MIN");
-        static const int THIRTY_MIN_HASH = HashingUtils::HashString("THIRTY_MIN");
-        static const int HOUR_HASH = HashingUtils::HashString("HOUR");
-        static const int DAY_HASH = HashingUtils::HashString("DAY");
-        static const int WEEK_HASH = HashingUtils::HashString("WEEK");
-        static const int TOTAL_HASH = HashingUtils::HashString("TOTAL");
+        static constexpr uint32_t FIFTEEN_MIN_HASH = ConstExprHashingUtils::HashString("FIFTEEN_MIN");
+        static constexpr uint32_t THIRTY_MIN_HASH = ConstExprHashingUtils::HashString("THIRTY_MIN");
+        static constexpr uint32_t HOUR_HASH = ConstExprHashingUtils::HashString("HOUR");
+        static constexpr uint32_t DAY_HASH = ConstExprHashingUtils::HashString("DAY");
+        static constexpr uint32_t WEEK_HASH = ConstExprHashingUtils::HashString("WEEK");
+        static constexpr uint32_t TOTAL_HASH = ConstExprHashingUtils::HashString("TOTAL");
 
 
         IntervalPeriod GetIntervalPeriodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FIFTEEN_MIN_HASH)
           {
             return IntervalPeriod::FIFTEEN_MIN;

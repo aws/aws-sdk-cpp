@@ -20,13 +20,13 @@ namespace Aws
       namespace TypeMapper
       {
 
-        static const int DASH_HASH = HashingUtils::HashString("DASH");
-        static const int HLS_HASH = HashingUtils::HashString("HLS");
+        static constexpr uint32_t DASH_HASH = ConstExprHashingUtils::HashString("DASH");
+        static constexpr uint32_t HLS_HASH = ConstExprHashingUtils::HashString("HLS");
 
 
         Type GetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DASH_HASH)
           {
             return Type::DASH;

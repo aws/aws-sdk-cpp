@@ -20,12 +20,12 @@ namespace Aws
       namespace DimensionTypeMapper
       {
 
-        static const int TOPIC_FILTER_HASH = HashingUtils::HashString("TOPIC_FILTER");
+        static constexpr uint32_t TOPIC_FILTER_HASH = ConstExprHashingUtils::HashString("TOPIC_FILTER");
 
 
         DimensionType GetDimensionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TOPIC_FILTER_HASH)
           {
             return DimensionType::TOPIC_FILTER;

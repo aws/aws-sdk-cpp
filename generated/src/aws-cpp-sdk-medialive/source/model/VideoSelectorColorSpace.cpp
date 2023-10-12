@@ -20,16 +20,16 @@ namespace Aws
       namespace VideoSelectorColorSpaceMapper
       {
 
-        static const int FOLLOW_HASH = HashingUtils::HashString("FOLLOW");
-        static const int HDR10_HASH = HashingUtils::HashString("HDR10");
-        static const int HLG_2020_HASH = HashingUtils::HashString("HLG_2020");
-        static const int REC_601_HASH = HashingUtils::HashString("REC_601");
-        static const int REC_709_HASH = HashingUtils::HashString("REC_709");
+        static constexpr uint32_t FOLLOW_HASH = ConstExprHashingUtils::HashString("FOLLOW");
+        static constexpr uint32_t HDR10_HASH = ConstExprHashingUtils::HashString("HDR10");
+        static constexpr uint32_t HLG_2020_HASH = ConstExprHashingUtils::HashString("HLG_2020");
+        static constexpr uint32_t REC_601_HASH = ConstExprHashingUtils::HashString("REC_601");
+        static constexpr uint32_t REC_709_HASH = ConstExprHashingUtils::HashString("REC_709");
 
 
         VideoSelectorColorSpace GetVideoSelectorColorSpaceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FOLLOW_HASH)
           {
             return VideoSelectorColorSpace::FOLLOW;

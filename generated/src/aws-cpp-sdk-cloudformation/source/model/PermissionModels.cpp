@@ -20,13 +20,13 @@ namespace Aws
       namespace PermissionModelsMapper
       {
 
-        static const int SERVICE_MANAGED_HASH = HashingUtils::HashString("SERVICE_MANAGED");
-        static const int SELF_MANAGED_HASH = HashingUtils::HashString("SELF_MANAGED");
+        static constexpr uint32_t SERVICE_MANAGED_HASH = ConstExprHashingUtils::HashString("SERVICE_MANAGED");
+        static constexpr uint32_t SELF_MANAGED_HASH = ConstExprHashingUtils::HashString("SELF_MANAGED");
 
 
         PermissionModels GetPermissionModelsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SERVICE_MANAGED_HASH)
           {
             return PermissionModels::SERVICE_MANAGED;

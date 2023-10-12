@@ -20,56 +20,56 @@ namespace Aws
       namespace IngestionErrorTypeMapper
       {
 
-        static const int FAILURE_TO_ASSUME_ROLE_HASH = HashingUtils::HashString("FAILURE_TO_ASSUME_ROLE");
-        static const int INGESTION_SUPERSEDED_HASH = HashingUtils::HashString("INGESTION_SUPERSEDED");
-        static const int INGESTION_CANCELED_HASH = HashingUtils::HashString("INGESTION_CANCELED");
-        static const int DATA_SET_DELETED_HASH = HashingUtils::HashString("DATA_SET_DELETED");
-        static const int DATA_SET_NOT_SPICE_HASH = HashingUtils::HashString("DATA_SET_NOT_SPICE");
-        static const int S3_UPLOADED_FILE_DELETED_HASH = HashingUtils::HashString("S3_UPLOADED_FILE_DELETED");
-        static const int S3_MANIFEST_ERROR_HASH = HashingUtils::HashString("S3_MANIFEST_ERROR");
-        static const int DATA_TOLERANCE_EXCEPTION_HASH = HashingUtils::HashString("DATA_TOLERANCE_EXCEPTION");
-        static const int SPICE_TABLE_NOT_FOUND_HASH = HashingUtils::HashString("SPICE_TABLE_NOT_FOUND");
-        static const int DATA_SET_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DATA_SET_SIZE_LIMIT_EXCEEDED");
-        static const int ROW_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ROW_SIZE_LIMIT_EXCEEDED");
-        static const int ACCOUNT_CAPACITY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ACCOUNT_CAPACITY_LIMIT_EXCEEDED");
-        static const int CUSTOMER_ERROR_HASH = HashingUtils::HashString("CUSTOMER_ERROR");
-        static const int DATA_SOURCE_NOT_FOUND_HASH = HashingUtils::HashString("DATA_SOURCE_NOT_FOUND");
-        static const int IAM_ROLE_NOT_AVAILABLE_HASH = HashingUtils::HashString("IAM_ROLE_NOT_AVAILABLE");
-        static const int CONNECTION_FAILURE_HASH = HashingUtils::HashString("CONNECTION_FAILURE");
-        static const int SQL_TABLE_NOT_FOUND_HASH = HashingUtils::HashString("SQL_TABLE_NOT_FOUND");
-        static const int PERMISSION_DENIED_HASH = HashingUtils::HashString("PERMISSION_DENIED");
-        static const int SSL_CERTIFICATE_VALIDATION_FAILURE_HASH = HashingUtils::HashString("SSL_CERTIFICATE_VALIDATION_FAILURE");
-        static const int OAUTH_TOKEN_FAILURE_HASH = HashingUtils::HashString("OAUTH_TOKEN_FAILURE");
-        static const int SOURCE_API_LIMIT_EXCEEDED_FAILURE_HASH = HashingUtils::HashString("SOURCE_API_LIMIT_EXCEEDED_FAILURE");
-        static const int PASSWORD_AUTHENTICATION_FAILURE_HASH = HashingUtils::HashString("PASSWORD_AUTHENTICATION_FAILURE");
-        static const int SQL_SCHEMA_MISMATCH_ERROR_HASH = HashingUtils::HashString("SQL_SCHEMA_MISMATCH_ERROR");
-        static const int INVALID_DATE_FORMAT_HASH = HashingUtils::HashString("INVALID_DATE_FORMAT");
-        static const int INVALID_DATAPREP_SYNTAX_HASH = HashingUtils::HashString("INVALID_DATAPREP_SYNTAX");
-        static const int SOURCE_RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SOURCE_RESOURCE_LIMIT_EXCEEDED");
-        static const int SQL_INVALID_PARAMETER_VALUE_HASH = HashingUtils::HashString("SQL_INVALID_PARAMETER_VALUE");
-        static const int QUERY_TIMEOUT_HASH = HashingUtils::HashString("QUERY_TIMEOUT");
-        static const int SQL_NUMERIC_OVERFLOW_HASH = HashingUtils::HashString("SQL_NUMERIC_OVERFLOW");
-        static const int UNRESOLVABLE_HOST_HASH = HashingUtils::HashString("UNRESOLVABLE_HOST");
-        static const int UNROUTABLE_HOST_HASH = HashingUtils::HashString("UNROUTABLE_HOST");
-        static const int SQL_EXCEPTION_HASH = HashingUtils::HashString("SQL_EXCEPTION");
-        static const int S3_FILE_INACCESSIBLE_HASH = HashingUtils::HashString("S3_FILE_INACCESSIBLE");
-        static const int IOT_FILE_NOT_FOUND_HASH = HashingUtils::HashString("IOT_FILE_NOT_FOUND");
-        static const int IOT_DATA_SET_FILE_EMPTY_HASH = HashingUtils::HashString("IOT_DATA_SET_FILE_EMPTY");
-        static const int INVALID_DATA_SOURCE_CONFIG_HASH = HashingUtils::HashString("INVALID_DATA_SOURCE_CONFIG");
-        static const int DATA_SOURCE_AUTH_FAILED_HASH = HashingUtils::HashString("DATA_SOURCE_AUTH_FAILED");
-        static const int DATA_SOURCE_CONNECTION_FAILED_HASH = HashingUtils::HashString("DATA_SOURCE_CONNECTION_FAILED");
-        static const int FAILURE_TO_PROCESS_JSON_FILE_HASH = HashingUtils::HashString("FAILURE_TO_PROCESS_JSON_FILE");
-        static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("INTERNAL_SERVICE_ERROR");
-        static const int REFRESH_SUPPRESSED_BY_EDIT_HASH = HashingUtils::HashString("REFRESH_SUPPRESSED_BY_EDIT");
-        static const int PERMISSION_NOT_FOUND_HASH = HashingUtils::HashString("PERMISSION_NOT_FOUND");
-        static const int ELASTICSEARCH_CURSOR_NOT_ENABLED_HASH = HashingUtils::HashString("ELASTICSEARCH_CURSOR_NOT_ENABLED");
-        static const int CURSOR_NOT_ENABLED_HASH = HashingUtils::HashString("CURSOR_NOT_ENABLED");
-        static const int DUPLICATE_COLUMN_NAMES_FOUND_HASH = HashingUtils::HashString("DUPLICATE_COLUMN_NAMES_FOUND");
+        static constexpr uint32_t FAILURE_TO_ASSUME_ROLE_HASH = ConstExprHashingUtils::HashString("FAILURE_TO_ASSUME_ROLE");
+        static constexpr uint32_t INGESTION_SUPERSEDED_HASH = ConstExprHashingUtils::HashString("INGESTION_SUPERSEDED");
+        static constexpr uint32_t INGESTION_CANCELED_HASH = ConstExprHashingUtils::HashString("INGESTION_CANCELED");
+        static constexpr uint32_t DATA_SET_DELETED_HASH = ConstExprHashingUtils::HashString("DATA_SET_DELETED");
+        static constexpr uint32_t DATA_SET_NOT_SPICE_HASH = ConstExprHashingUtils::HashString("DATA_SET_NOT_SPICE");
+        static constexpr uint32_t S3_UPLOADED_FILE_DELETED_HASH = ConstExprHashingUtils::HashString("S3_UPLOADED_FILE_DELETED");
+        static constexpr uint32_t S3_MANIFEST_ERROR_HASH = ConstExprHashingUtils::HashString("S3_MANIFEST_ERROR");
+        static constexpr uint32_t DATA_TOLERANCE_EXCEPTION_HASH = ConstExprHashingUtils::HashString("DATA_TOLERANCE_EXCEPTION");
+        static constexpr uint32_t SPICE_TABLE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SPICE_TABLE_NOT_FOUND");
+        static constexpr uint32_t DATA_SET_SIZE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("DATA_SET_SIZE_LIMIT_EXCEEDED");
+        static constexpr uint32_t ROW_SIZE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ROW_SIZE_LIMIT_EXCEEDED");
+        static constexpr uint32_t ACCOUNT_CAPACITY_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ACCOUNT_CAPACITY_LIMIT_EXCEEDED");
+        static constexpr uint32_t CUSTOMER_ERROR_HASH = ConstExprHashingUtils::HashString("CUSTOMER_ERROR");
+        static constexpr uint32_t DATA_SOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("DATA_SOURCE_NOT_FOUND");
+        static constexpr uint32_t IAM_ROLE_NOT_AVAILABLE_HASH = ConstExprHashingUtils::HashString("IAM_ROLE_NOT_AVAILABLE");
+        static constexpr uint32_t CONNECTION_FAILURE_HASH = ConstExprHashingUtils::HashString("CONNECTION_FAILURE");
+        static constexpr uint32_t SQL_TABLE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SQL_TABLE_NOT_FOUND");
+        static constexpr uint32_t PERMISSION_DENIED_HASH = ConstExprHashingUtils::HashString("PERMISSION_DENIED");
+        static constexpr uint32_t SSL_CERTIFICATE_VALIDATION_FAILURE_HASH = ConstExprHashingUtils::HashString("SSL_CERTIFICATE_VALIDATION_FAILURE");
+        static constexpr uint32_t OAUTH_TOKEN_FAILURE_HASH = ConstExprHashingUtils::HashString("OAUTH_TOKEN_FAILURE");
+        static constexpr uint32_t SOURCE_API_LIMIT_EXCEEDED_FAILURE_HASH = ConstExprHashingUtils::HashString("SOURCE_API_LIMIT_EXCEEDED_FAILURE");
+        static constexpr uint32_t PASSWORD_AUTHENTICATION_FAILURE_HASH = ConstExprHashingUtils::HashString("PASSWORD_AUTHENTICATION_FAILURE");
+        static constexpr uint32_t SQL_SCHEMA_MISMATCH_ERROR_HASH = ConstExprHashingUtils::HashString("SQL_SCHEMA_MISMATCH_ERROR");
+        static constexpr uint32_t INVALID_DATE_FORMAT_HASH = ConstExprHashingUtils::HashString("INVALID_DATE_FORMAT");
+        static constexpr uint32_t INVALID_DATAPREP_SYNTAX_HASH = ConstExprHashingUtils::HashString("INVALID_DATAPREP_SYNTAX");
+        static constexpr uint32_t SOURCE_RESOURCE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("SOURCE_RESOURCE_LIMIT_EXCEEDED");
+        static constexpr uint32_t SQL_INVALID_PARAMETER_VALUE_HASH = ConstExprHashingUtils::HashString("SQL_INVALID_PARAMETER_VALUE");
+        static constexpr uint32_t QUERY_TIMEOUT_HASH = ConstExprHashingUtils::HashString("QUERY_TIMEOUT");
+        static constexpr uint32_t SQL_NUMERIC_OVERFLOW_HASH = ConstExprHashingUtils::HashString("SQL_NUMERIC_OVERFLOW");
+        static constexpr uint32_t UNRESOLVABLE_HOST_HASH = ConstExprHashingUtils::HashString("UNRESOLVABLE_HOST");
+        static constexpr uint32_t UNROUTABLE_HOST_HASH = ConstExprHashingUtils::HashString("UNROUTABLE_HOST");
+        static constexpr uint32_t SQL_EXCEPTION_HASH = ConstExprHashingUtils::HashString("SQL_EXCEPTION");
+        static constexpr uint32_t S3_FILE_INACCESSIBLE_HASH = ConstExprHashingUtils::HashString("S3_FILE_INACCESSIBLE");
+        static constexpr uint32_t IOT_FILE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("IOT_FILE_NOT_FOUND");
+        static constexpr uint32_t IOT_DATA_SET_FILE_EMPTY_HASH = ConstExprHashingUtils::HashString("IOT_DATA_SET_FILE_EMPTY");
+        static constexpr uint32_t INVALID_DATA_SOURCE_CONFIG_HASH = ConstExprHashingUtils::HashString("INVALID_DATA_SOURCE_CONFIG");
+        static constexpr uint32_t DATA_SOURCE_AUTH_FAILED_HASH = ConstExprHashingUtils::HashString("DATA_SOURCE_AUTH_FAILED");
+        static constexpr uint32_t DATA_SOURCE_CONNECTION_FAILED_HASH = ConstExprHashingUtils::HashString("DATA_SOURCE_CONNECTION_FAILED");
+        static constexpr uint32_t FAILURE_TO_PROCESS_JSON_FILE_HASH = ConstExprHashingUtils::HashString("FAILURE_TO_PROCESS_JSON_FILE");
+        static constexpr uint32_t INTERNAL_SERVICE_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_SERVICE_ERROR");
+        static constexpr uint32_t REFRESH_SUPPRESSED_BY_EDIT_HASH = ConstExprHashingUtils::HashString("REFRESH_SUPPRESSED_BY_EDIT");
+        static constexpr uint32_t PERMISSION_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("PERMISSION_NOT_FOUND");
+        static constexpr uint32_t ELASTICSEARCH_CURSOR_NOT_ENABLED_HASH = ConstExprHashingUtils::HashString("ELASTICSEARCH_CURSOR_NOT_ENABLED");
+        static constexpr uint32_t CURSOR_NOT_ENABLED_HASH = ConstExprHashingUtils::HashString("CURSOR_NOT_ENABLED");
+        static constexpr uint32_t DUPLICATE_COLUMN_NAMES_FOUND_HASH = ConstExprHashingUtils::HashString("DUPLICATE_COLUMN_NAMES_FOUND");
 
 
         IngestionErrorType GetIngestionErrorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FAILURE_TO_ASSUME_ROLE_HASH)
           {
             return IngestionErrorType::FAILURE_TO_ASSUME_ROLE;

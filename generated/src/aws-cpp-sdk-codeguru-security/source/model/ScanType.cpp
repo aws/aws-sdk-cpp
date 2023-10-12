@@ -20,13 +20,13 @@ namespace Aws
       namespace ScanTypeMapper
       {
 
-        static const int Standard_HASH = HashingUtils::HashString("Standard");
-        static const int Express_HASH = HashingUtils::HashString("Express");
+        static constexpr uint32_t Standard_HASH = ConstExprHashingUtils::HashString("Standard");
+        static constexpr uint32_t Express_HASH = ConstExprHashingUtils::HashString("Express");
 
 
         ScanType GetScanTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Standard_HASH)
           {
             return ScanType::Standard;

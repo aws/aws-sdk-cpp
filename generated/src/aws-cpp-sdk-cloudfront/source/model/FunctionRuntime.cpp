@@ -20,13 +20,13 @@ namespace Aws
       namespace FunctionRuntimeMapper
       {
 
-        static const int cloudfront_js_1_0_HASH = HashingUtils::HashString("cloudfront-js-1.0");
-        static const int cloudfront_js_2_0_HASH = HashingUtils::HashString("cloudfront-js-2.0");
+        static constexpr uint32_t cloudfront_js_1_0_HASH = ConstExprHashingUtils::HashString("cloudfront-js-1.0");
+        static constexpr uint32_t cloudfront_js_2_0_HASH = ConstExprHashingUtils::HashString("cloudfront-js-2.0");
 
 
         FunctionRuntime GetFunctionRuntimeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == cloudfront_js_1_0_HASH)
           {
             return FunctionRuntime::cloudfront_js_1_0;

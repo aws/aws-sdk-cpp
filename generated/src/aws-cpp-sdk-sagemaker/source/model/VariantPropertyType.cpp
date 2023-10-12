@@ -20,14 +20,14 @@ namespace Aws
       namespace VariantPropertyTypeMapper
       {
 
-        static const int DesiredInstanceCount_HASH = HashingUtils::HashString("DesiredInstanceCount");
-        static const int DesiredWeight_HASH = HashingUtils::HashString("DesiredWeight");
-        static const int DataCaptureConfig_HASH = HashingUtils::HashString("DataCaptureConfig");
+        static constexpr uint32_t DesiredInstanceCount_HASH = ConstExprHashingUtils::HashString("DesiredInstanceCount");
+        static constexpr uint32_t DesiredWeight_HASH = ConstExprHashingUtils::HashString("DesiredWeight");
+        static constexpr uint32_t DataCaptureConfig_HASH = ConstExprHashingUtils::HashString("DataCaptureConfig");
 
 
         VariantPropertyType GetVariantPropertyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DesiredInstanceCount_HASH)
           {
             return VariantPropertyType::DesiredInstanceCount;

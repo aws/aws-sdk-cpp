@@ -20,14 +20,14 @@ namespace Aws
       namespace TableTotalsPlacementMapper
       {
 
-        static const int START_HASH = HashingUtils::HashString("START");
-        static const int END_HASH = HashingUtils::HashString("END");
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
+        static constexpr uint32_t START_HASH = ConstExprHashingUtils::HashString("START");
+        static constexpr uint32_t END_HASH = ConstExprHashingUtils::HashString("END");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
 
 
         TableTotalsPlacement GetTableTotalsPlacementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == START_HASH)
           {
             return TableTotalsPlacement::START;

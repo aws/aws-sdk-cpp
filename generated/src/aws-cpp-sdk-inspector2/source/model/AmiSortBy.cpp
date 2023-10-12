@@ -20,15 +20,15 @@ namespace Aws
       namespace AmiSortByMapper
       {
 
-        static const int CRITICAL_HASH = HashingUtils::HashString("CRITICAL");
-        static const int HIGH_HASH = HashingUtils::HashString("HIGH");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int AFFECTED_INSTANCES_HASH = HashingUtils::HashString("AFFECTED_INSTANCES");
+        static constexpr uint32_t CRITICAL_HASH = ConstExprHashingUtils::HashString("CRITICAL");
+        static constexpr uint32_t HIGH_HASH = ConstExprHashingUtils::HashString("HIGH");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t AFFECTED_INSTANCES_HASH = ConstExprHashingUtils::HashString("AFFECTED_INSTANCES");
 
 
         AmiSortBy GetAmiSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CRITICAL_HASH)
           {
             return AmiSortBy::CRITICAL;

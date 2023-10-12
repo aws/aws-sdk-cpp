@@ -20,14 +20,14 @@ namespace Aws
       namespace RedisAuthTypeValueMapper
       {
 
-        static const int none_HASH = HashingUtils::HashString("none");
-        static const int auth_role_HASH = HashingUtils::HashString("auth-role");
-        static const int auth_token_HASH = HashingUtils::HashString("auth-token");
+        static constexpr uint32_t none_HASH = ConstExprHashingUtils::HashString("none");
+        static constexpr uint32_t auth_role_HASH = ConstExprHashingUtils::HashString("auth-role");
+        static constexpr uint32_t auth_token_HASH = ConstExprHashingUtils::HashString("auth-token");
 
 
         RedisAuthTypeValue GetRedisAuthTypeValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == none_HASH)
           {
             return RedisAuthTypeValue::none;

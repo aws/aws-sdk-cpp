@@ -20,14 +20,14 @@ namespace Aws
       namespace StringComparisonTypeMapper
       {
 
-        static const int STARTS_WITH_HASH = HashingUtils::HashString("STARTS_WITH");
-        static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
-        static const int EXACT_HASH = HashingUtils::HashString("EXACT");
+        static constexpr uint32_t STARTS_WITH_HASH = ConstExprHashingUtils::HashString("STARTS_WITH");
+        static constexpr uint32_t CONTAINS_HASH = ConstExprHashingUtils::HashString("CONTAINS");
+        static constexpr uint32_t EXACT_HASH = ConstExprHashingUtils::HashString("EXACT");
 
 
         StringComparisonType GetStringComparisonTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STARTS_WITH_HASH)
           {
             return StringComparisonType::STARTS_WITH;

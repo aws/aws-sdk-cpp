@@ -20,14 +20,14 @@ namespace Aws
       namespace IdentityProviderMapper
       {
 
-        static const int AWS_Marketplace_HASH = HashingUtils::HashString("AWS_Marketplace");
-        static const int GitHub_HASH = HashingUtils::HashString("GitHub");
-        static const int Bitbucket_HASH = HashingUtils::HashString("Bitbucket");
+        static constexpr uint32_t AWS_Marketplace_HASH = ConstExprHashingUtils::HashString("AWS_Marketplace");
+        static constexpr uint32_t GitHub_HASH = ConstExprHashingUtils::HashString("GitHub");
+        static constexpr uint32_t Bitbucket_HASH = ConstExprHashingUtils::HashString("Bitbucket");
 
 
         IdentityProvider GetIdentityProviderForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_Marketplace_HASH)
           {
             return IdentityProvider::AWS_Marketplace;

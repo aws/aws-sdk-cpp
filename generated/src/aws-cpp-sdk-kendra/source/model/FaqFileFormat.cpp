@@ -20,14 +20,14 @@ namespace Aws
       namespace FaqFileFormatMapper
       {
 
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
-        static const int CSV_WITH_HEADER_HASH = HashingUtils::HashString("CSV_WITH_HEADER");
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
+        static constexpr uint32_t CSV_HASH = ConstExprHashingUtils::HashString("CSV");
+        static constexpr uint32_t CSV_WITH_HEADER_HASH = ConstExprHashingUtils::HashString("CSV_WITH_HEADER");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
 
 
         FaqFileFormat GetFaqFileFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CSV_HASH)
           {
             return FaqFileFormat::CSV;

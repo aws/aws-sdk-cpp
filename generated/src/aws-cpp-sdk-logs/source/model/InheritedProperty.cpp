@@ -20,12 +20,12 @@ namespace Aws
       namespace InheritedPropertyMapper
       {
 
-        static const int ACCOUNT_DATA_PROTECTION_HASH = HashingUtils::HashString("ACCOUNT_DATA_PROTECTION");
+        static constexpr uint32_t ACCOUNT_DATA_PROTECTION_HASH = ConstExprHashingUtils::HashString("ACCOUNT_DATA_PROTECTION");
 
 
         InheritedProperty GetInheritedPropertyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCOUNT_DATA_PROTECTION_HASH)
           {
             return InheritedProperty::ACCOUNT_DATA_PROTECTION;

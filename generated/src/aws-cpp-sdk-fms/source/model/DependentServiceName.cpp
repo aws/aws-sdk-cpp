@@ -20,15 +20,15 @@ namespace Aws
       namespace DependentServiceNameMapper
       {
 
-        static const int AWSCONFIG_HASH = HashingUtils::HashString("AWSCONFIG");
-        static const int AWSWAF_HASH = HashingUtils::HashString("AWSWAF");
-        static const int AWSSHIELD_ADVANCED_HASH = HashingUtils::HashString("AWSSHIELD_ADVANCED");
-        static const int AWSVPC_HASH = HashingUtils::HashString("AWSVPC");
+        static constexpr uint32_t AWSCONFIG_HASH = ConstExprHashingUtils::HashString("AWSCONFIG");
+        static constexpr uint32_t AWSWAF_HASH = ConstExprHashingUtils::HashString("AWSWAF");
+        static constexpr uint32_t AWSSHIELD_ADVANCED_HASH = ConstExprHashingUtils::HashString("AWSSHIELD_ADVANCED");
+        static constexpr uint32_t AWSVPC_HASH = ConstExprHashingUtils::HashString("AWSVPC");
 
 
         DependentServiceName GetDependentServiceNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWSCONFIG_HASH)
           {
             return DependentServiceName::AWSCONFIG;

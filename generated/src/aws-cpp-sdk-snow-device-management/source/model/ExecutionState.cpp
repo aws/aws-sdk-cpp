@@ -20,18 +20,18 @@ namespace Aws
       namespace ExecutionStateMapper
       {
 
-        static const int QUEUED_HASH = HashingUtils::HashString("QUEUED");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-        static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
-        static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
+        static constexpr uint32_t QUEUED_HASH = ConstExprHashingUtils::HashString("QUEUED");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t CANCELED_HASH = ConstExprHashingUtils::HashString("CANCELED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t SUCCEEDED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED");
+        static constexpr uint32_t REJECTED_HASH = ConstExprHashingUtils::HashString("REJECTED");
+        static constexpr uint32_t TIMED_OUT_HASH = ConstExprHashingUtils::HashString("TIMED_OUT");
 
 
         ExecutionState GetExecutionStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUEUED_HASH)
           {
             return ExecutionState::QUEUED;

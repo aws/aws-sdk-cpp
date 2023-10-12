@@ -20,14 +20,14 @@ namespace Aws
       namespace DimensionValueSourceMapper
       {
 
-        static const int messageTag_HASH = HashingUtils::HashString("messageTag");
-        static const int emailHeader_HASH = HashingUtils::HashString("emailHeader");
-        static const int linkTag_HASH = HashingUtils::HashString("linkTag");
+        static constexpr uint32_t messageTag_HASH = ConstExprHashingUtils::HashString("messageTag");
+        static constexpr uint32_t emailHeader_HASH = ConstExprHashingUtils::HashString("emailHeader");
+        static constexpr uint32_t linkTag_HASH = ConstExprHashingUtils::HashString("linkTag");
 
 
         DimensionValueSource GetDimensionValueSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == messageTag_HASH)
           {
             return DimensionValueSource::messageTag;

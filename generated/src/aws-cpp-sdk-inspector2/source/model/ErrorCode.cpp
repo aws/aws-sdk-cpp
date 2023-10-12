@@ -20,25 +20,25 @@ namespace Aws
       namespace ErrorCodeMapper
       {
 
-        static const int ALREADY_ENABLED_HASH = HashingUtils::HashString("ALREADY_ENABLED");
-        static const int ENABLE_IN_PROGRESS_HASH = HashingUtils::HashString("ENABLE_IN_PROGRESS");
-        static const int DISABLE_IN_PROGRESS_HASH = HashingUtils::HashString("DISABLE_IN_PROGRESS");
-        static const int SUSPEND_IN_PROGRESS_HASH = HashingUtils::HashString("SUSPEND_IN_PROGRESS");
-        static const int RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("RESOURCE_NOT_FOUND");
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int SSM_UNAVAILABLE_HASH = HashingUtils::HashString("SSM_UNAVAILABLE");
-        static const int SSM_THROTTLED_HASH = HashingUtils::HashString("SSM_THROTTLED");
-        static const int EVENTBRIDGE_UNAVAILABLE_HASH = HashingUtils::HashString("EVENTBRIDGE_UNAVAILABLE");
-        static const int EVENTBRIDGE_THROTTLED_HASH = HashingUtils::HashString("EVENTBRIDGE_THROTTLED");
-        static const int RESOURCE_SCAN_NOT_DISABLED_HASH = HashingUtils::HashString("RESOURCE_SCAN_NOT_DISABLED");
-        static const int DISASSOCIATE_ALL_MEMBERS_HASH = HashingUtils::HashString("DISASSOCIATE_ALL_MEMBERS");
-        static const int ACCOUNT_IS_ISOLATED_HASH = HashingUtils::HashString("ACCOUNT_IS_ISOLATED");
+        static constexpr uint32_t ALREADY_ENABLED_HASH = ConstExprHashingUtils::HashString("ALREADY_ENABLED");
+        static constexpr uint32_t ENABLE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("ENABLE_IN_PROGRESS");
+        static constexpr uint32_t DISABLE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("DISABLE_IN_PROGRESS");
+        static constexpr uint32_t SUSPEND_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("SUSPEND_IN_PROGRESS");
+        static constexpr uint32_t RESOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("RESOURCE_NOT_FOUND");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t SSM_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("SSM_UNAVAILABLE");
+        static constexpr uint32_t SSM_THROTTLED_HASH = ConstExprHashingUtils::HashString("SSM_THROTTLED");
+        static constexpr uint32_t EVENTBRIDGE_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("EVENTBRIDGE_UNAVAILABLE");
+        static constexpr uint32_t EVENTBRIDGE_THROTTLED_HASH = ConstExprHashingUtils::HashString("EVENTBRIDGE_THROTTLED");
+        static constexpr uint32_t RESOURCE_SCAN_NOT_DISABLED_HASH = ConstExprHashingUtils::HashString("RESOURCE_SCAN_NOT_DISABLED");
+        static constexpr uint32_t DISASSOCIATE_ALL_MEMBERS_HASH = ConstExprHashingUtils::HashString("DISASSOCIATE_ALL_MEMBERS");
+        static constexpr uint32_t ACCOUNT_IS_ISOLATED_HASH = ConstExprHashingUtils::HashString("ACCOUNT_IS_ISOLATED");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALREADY_ENABLED_HASH)
           {
             return ErrorCode::ALREADY_ENABLED;

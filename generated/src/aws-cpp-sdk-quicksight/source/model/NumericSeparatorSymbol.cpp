@@ -20,14 +20,14 @@ namespace Aws
       namespace NumericSeparatorSymbolMapper
       {
 
-        static const int COMMA_HASH = HashingUtils::HashString("COMMA");
-        static const int DOT_HASH = HashingUtils::HashString("DOT");
-        static const int SPACE_HASH = HashingUtils::HashString("SPACE");
+        static constexpr uint32_t COMMA_HASH = ConstExprHashingUtils::HashString("COMMA");
+        static constexpr uint32_t DOT_HASH = ConstExprHashingUtils::HashString("DOT");
+        static constexpr uint32_t SPACE_HASH = ConstExprHashingUtils::HashString("SPACE");
 
 
         NumericSeparatorSymbol GetNumericSeparatorSymbolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMMA_HASH)
           {
             return NumericSeparatorSymbol::COMMA;

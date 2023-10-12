@@ -20,14 +20,14 @@ namespace Aws
       namespace PrimaryValueDisplayTypeMapper
       {
 
-        static const int HIDDEN_HASH = HashingUtils::HashString("HIDDEN");
-        static const int COMPARISON_HASH = HashingUtils::HashString("COMPARISON");
-        static const int ACTUAL_HASH = HashingUtils::HashString("ACTUAL");
+        static constexpr uint32_t HIDDEN_HASH = ConstExprHashingUtils::HashString("HIDDEN");
+        static constexpr uint32_t COMPARISON_HASH = ConstExprHashingUtils::HashString("COMPARISON");
+        static constexpr uint32_t ACTUAL_HASH = ConstExprHashingUtils::HashString("ACTUAL");
 
 
         PrimaryValueDisplayType GetPrimaryValueDisplayTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HIDDEN_HASH)
           {
             return PrimaryValueDisplayType::HIDDEN;

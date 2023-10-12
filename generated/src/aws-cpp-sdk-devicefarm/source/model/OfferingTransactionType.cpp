@@ -20,14 +20,14 @@ namespace Aws
       namespace OfferingTransactionTypeMapper
       {
 
-        static const int PURCHASE_HASH = HashingUtils::HashString("PURCHASE");
-        static const int RENEW_HASH = HashingUtils::HashString("RENEW");
-        static const int SYSTEM_HASH = HashingUtils::HashString("SYSTEM");
+        static constexpr uint32_t PURCHASE_HASH = ConstExprHashingUtils::HashString("PURCHASE");
+        static constexpr uint32_t RENEW_HASH = ConstExprHashingUtils::HashString("RENEW");
+        static constexpr uint32_t SYSTEM_HASH = ConstExprHashingUtils::HashString("SYSTEM");
 
 
         OfferingTransactionType GetOfferingTransactionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PURCHASE_HASH)
           {
             return OfferingTransactionType::PURCHASE;

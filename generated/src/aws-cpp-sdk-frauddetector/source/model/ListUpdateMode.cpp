@@ -20,14 +20,14 @@ namespace Aws
       namespace ListUpdateModeMapper
       {
 
-        static const int REPLACE_HASH = HashingUtils::HashString("REPLACE");
-        static const int APPEND_HASH = HashingUtils::HashString("APPEND");
-        static const int REMOVE_HASH = HashingUtils::HashString("REMOVE");
+        static constexpr uint32_t REPLACE_HASH = ConstExprHashingUtils::HashString("REPLACE");
+        static constexpr uint32_t APPEND_HASH = ConstExprHashingUtils::HashString("APPEND");
+        static constexpr uint32_t REMOVE_HASH = ConstExprHashingUtils::HashString("REMOVE");
 
 
         ListUpdateMode GetListUpdateModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REPLACE_HASH)
           {
             return ListUpdateMode::REPLACE;

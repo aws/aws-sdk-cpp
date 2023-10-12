@@ -20,14 +20,14 @@ namespace Aws
       namespace MetricSetSourceMapper
       {
 
-        static const int Train_HASH = HashingUtils::HashString("Train");
-        static const int Validation_HASH = HashingUtils::HashString("Validation");
-        static const int Test_HASH = HashingUtils::HashString("Test");
+        static constexpr uint32_t Train_HASH = ConstExprHashingUtils::HashString("Train");
+        static constexpr uint32_t Validation_HASH = ConstExprHashingUtils::HashString("Validation");
+        static constexpr uint32_t Test_HASH = ConstExprHashingUtils::HashString("Test");
 
 
         MetricSetSource GetMetricSetSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Train_HASH)
           {
             return MetricSetSource::Train;

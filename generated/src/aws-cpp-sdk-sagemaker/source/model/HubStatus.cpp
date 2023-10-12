@@ -20,18 +20,18 @@ namespace Aws
       namespace HubStatusMapper
       {
 
-        static const int InService_HASH = HashingUtils::HashString("InService");
-        static const int Creating_HASH = HashingUtils::HashString("Creating");
-        static const int Updating_HASH = HashingUtils::HashString("Updating");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
-        static const int CreateFailed_HASH = HashingUtils::HashString("CreateFailed");
-        static const int UpdateFailed_HASH = HashingUtils::HashString("UpdateFailed");
-        static const int DeleteFailed_HASH = HashingUtils::HashString("DeleteFailed");
+        static constexpr uint32_t InService_HASH = ConstExprHashingUtils::HashString("InService");
+        static constexpr uint32_t Creating_HASH = ConstExprHashingUtils::HashString("Creating");
+        static constexpr uint32_t Updating_HASH = ConstExprHashingUtils::HashString("Updating");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
+        static constexpr uint32_t CreateFailed_HASH = ConstExprHashingUtils::HashString("CreateFailed");
+        static constexpr uint32_t UpdateFailed_HASH = ConstExprHashingUtils::HashString("UpdateFailed");
+        static constexpr uint32_t DeleteFailed_HASH = ConstExprHashingUtils::HashString("DeleteFailed");
 
 
         HubStatus GetHubStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InService_HASH)
           {
             return HubStatus::InService;

@@ -20,14 +20,14 @@ namespace Aws
       namespace CanaryRunStateMapper
       {
 
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int PASSED_HASH = HashingUtils::HashString("PASSED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t PASSED_HASH = ConstExprHashingUtils::HashString("PASSED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         CanaryRunState GetCanaryRunStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RUNNING_HASH)
           {
             return CanaryRunState::RUNNING;

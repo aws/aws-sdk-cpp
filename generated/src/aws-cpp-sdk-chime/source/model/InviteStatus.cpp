@@ -20,14 +20,14 @@ namespace Aws
       namespace InviteStatusMapper
       {
 
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int Accepted_HASH = HashingUtils::HashString("Accepted");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t Accepted_HASH = ConstExprHashingUtils::HashString("Accepted");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         InviteStatus GetInviteStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pending_HASH)
           {
             return InviteStatus::Pending;

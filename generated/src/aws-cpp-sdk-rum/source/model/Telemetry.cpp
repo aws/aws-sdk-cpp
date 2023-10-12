@@ -20,14 +20,14 @@ namespace Aws
       namespace TelemetryMapper
       {
 
-        static const int errors_HASH = HashingUtils::HashString("errors");
-        static const int performance_HASH = HashingUtils::HashString("performance");
-        static const int http_HASH = HashingUtils::HashString("http");
+        static constexpr uint32_t errors_HASH = ConstExprHashingUtils::HashString("errors");
+        static constexpr uint32_t performance_HASH = ConstExprHashingUtils::HashString("performance");
+        static constexpr uint32_t http_HASH = ConstExprHashingUtils::HashString("http");
 
 
         Telemetry GetTelemetryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == errors_HASH)
           {
             return Telemetry::errors;

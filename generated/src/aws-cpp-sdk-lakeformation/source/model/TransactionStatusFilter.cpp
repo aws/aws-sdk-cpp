@@ -20,16 +20,16 @@ namespace Aws
       namespace TransactionStatusFilterMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int COMMITTED_HASH = HashingUtils::HashString("COMMITTED");
-        static const int ABORTED_HASH = HashingUtils::HashString("ABORTED");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t COMMITTED_HASH = ConstExprHashingUtils::HashString("COMMITTED");
+        static constexpr uint32_t ABORTED_HASH = ConstExprHashingUtils::HashString("ABORTED");
 
 
         TransactionStatusFilter GetTransactionStatusFilterForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return TransactionStatusFilter::ALL;

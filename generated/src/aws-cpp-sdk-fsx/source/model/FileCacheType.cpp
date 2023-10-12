@@ -20,12 +20,12 @@ namespace Aws
       namespace FileCacheTypeMapper
       {
 
-        static const int LUSTRE_HASH = HashingUtils::HashString("LUSTRE");
+        static constexpr uint32_t LUSTRE_HASH = ConstExprHashingUtils::HashString("LUSTRE");
 
 
         FileCacheType GetFileCacheTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LUSTRE_HASH)
           {
             return FileCacheType::LUSTRE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace DriveCacheTypeMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int READ_HASH = HashingUtils::HashString("READ");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t READ_HASH = ConstExprHashingUtils::HashString("READ");
 
 
         DriveCacheType GetDriveCacheTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return DriveCacheType::NONE;

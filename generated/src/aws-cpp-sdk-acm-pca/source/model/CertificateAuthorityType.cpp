@@ -20,13 +20,13 @@ namespace Aws
       namespace CertificateAuthorityTypeMapper
       {
 
-        static const int ROOT_HASH = HashingUtils::HashString("ROOT");
-        static const int SUBORDINATE_HASH = HashingUtils::HashString("SUBORDINATE");
+        static constexpr uint32_t ROOT_HASH = ConstExprHashingUtils::HashString("ROOT");
+        static constexpr uint32_t SUBORDINATE_HASH = ConstExprHashingUtils::HashString("SUBORDINATE");
 
 
         CertificateAuthorityType GetCertificateAuthorityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ROOT_HASH)
           {
             return CertificateAuthorityType::ROOT;

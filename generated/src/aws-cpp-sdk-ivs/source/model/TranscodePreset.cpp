@@ -20,13 +20,13 @@ namespace Aws
       namespace TranscodePresetMapper
       {
 
-        static const int HIGHER_BANDWIDTH_DELIVERY_HASH = HashingUtils::HashString("HIGHER_BANDWIDTH_DELIVERY");
-        static const int CONSTRAINED_BANDWIDTH_DELIVERY_HASH = HashingUtils::HashString("CONSTRAINED_BANDWIDTH_DELIVERY");
+        static constexpr uint32_t HIGHER_BANDWIDTH_DELIVERY_HASH = ConstExprHashingUtils::HashString("HIGHER_BANDWIDTH_DELIVERY");
+        static constexpr uint32_t CONSTRAINED_BANDWIDTH_DELIVERY_HASH = ConstExprHashingUtils::HashString("CONSTRAINED_BANDWIDTH_DELIVERY");
 
 
         TranscodePreset GetTranscodePresetForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HIGHER_BANDWIDTH_DELIVERY_HASH)
           {
             return TranscodePreset::HIGHER_BANDWIDTH_DELIVERY;

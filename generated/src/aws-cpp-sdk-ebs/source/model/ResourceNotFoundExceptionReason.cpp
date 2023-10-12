@@ -20,15 +20,15 @@ namespace Aws
       namespace ResourceNotFoundExceptionReasonMapper
       {
 
-        static const int SNAPSHOT_NOT_FOUND_HASH = HashingUtils::HashString("SNAPSHOT_NOT_FOUND");
-        static const int GRANT_NOT_FOUND_HASH = HashingUtils::HashString("GRANT_NOT_FOUND");
-        static const int DEPENDENCY_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("DEPENDENCY_RESOURCE_NOT_FOUND");
-        static const int IMAGE_NOT_FOUND_HASH = HashingUtils::HashString("IMAGE_NOT_FOUND");
+        static constexpr uint32_t SNAPSHOT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SNAPSHOT_NOT_FOUND");
+        static constexpr uint32_t GRANT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("GRANT_NOT_FOUND");
+        static constexpr uint32_t DEPENDENCY_RESOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("DEPENDENCY_RESOURCE_NOT_FOUND");
+        static constexpr uint32_t IMAGE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("IMAGE_NOT_FOUND");
 
 
         ResourceNotFoundExceptionReason GetResourceNotFoundExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SNAPSHOT_NOT_FOUND_HASH)
           {
             return ResourceNotFoundExceptionReason::SNAPSHOT_NOT_FOUND;

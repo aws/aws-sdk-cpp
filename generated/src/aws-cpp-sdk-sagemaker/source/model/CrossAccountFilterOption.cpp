@@ -20,13 +20,13 @@ namespace Aws
       namespace CrossAccountFilterOptionMapper
       {
 
-        static const int SameAccount_HASH = HashingUtils::HashString("SameAccount");
-        static const int CrossAccount_HASH = HashingUtils::HashString("CrossAccount");
+        static constexpr uint32_t SameAccount_HASH = ConstExprHashingUtils::HashString("SameAccount");
+        static constexpr uint32_t CrossAccount_HASH = ConstExprHashingUtils::HashString("CrossAccount");
 
 
         CrossAccountFilterOption GetCrossAccountFilterOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SameAccount_HASH)
           {
             return CrossAccountFilterOption::SameAccount;

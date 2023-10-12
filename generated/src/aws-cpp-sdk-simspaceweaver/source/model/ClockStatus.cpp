@@ -20,16 +20,16 @@ namespace Aws
       namespace ClockStatusMapper
       {
 
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int STARTED_HASH = HashingUtils::HashString("STARTED");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t STARTING_HASH = ConstExprHashingUtils::HashString("STARTING");
+        static constexpr uint32_t STARTED_HASH = ConstExprHashingUtils::HashString("STARTED");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
 
 
         ClockStatus GetClockStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNKNOWN_HASH)
           {
             return ClockStatus::UNKNOWN;

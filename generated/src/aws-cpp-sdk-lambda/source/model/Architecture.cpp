@@ -20,13 +20,13 @@ namespace Aws
       namespace ArchitectureMapper
       {
 
-        static const int x86_64_HASH = HashingUtils::HashString("x86_64");
-        static const int arm64_HASH = HashingUtils::HashString("arm64");
+        static constexpr uint32_t x86_64_HASH = ConstExprHashingUtils::HashString("x86_64");
+        static constexpr uint32_t arm64_HASH = ConstExprHashingUtils::HashString("arm64");
 
 
         Architecture GetArchitectureForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == x86_64_HASH)
           {
             return Architecture::x86_64;

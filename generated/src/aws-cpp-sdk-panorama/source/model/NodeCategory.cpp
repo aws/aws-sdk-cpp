@@ -20,15 +20,15 @@ namespace Aws
       namespace NodeCategoryMapper
       {
 
-        static const int BUSINESS_LOGIC_HASH = HashingUtils::HashString("BUSINESS_LOGIC");
-        static const int ML_MODEL_HASH = HashingUtils::HashString("ML_MODEL");
-        static const int MEDIA_SOURCE_HASH = HashingUtils::HashString("MEDIA_SOURCE");
-        static const int MEDIA_SINK_HASH = HashingUtils::HashString("MEDIA_SINK");
+        static constexpr uint32_t BUSINESS_LOGIC_HASH = ConstExprHashingUtils::HashString("BUSINESS_LOGIC");
+        static constexpr uint32_t ML_MODEL_HASH = ConstExprHashingUtils::HashString("ML_MODEL");
+        static constexpr uint32_t MEDIA_SOURCE_HASH = ConstExprHashingUtils::HashString("MEDIA_SOURCE");
+        static constexpr uint32_t MEDIA_SINK_HASH = ConstExprHashingUtils::HashString("MEDIA_SINK");
 
 
         NodeCategory GetNodeCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BUSINESS_LOGIC_HASH)
           {
             return NodeCategory::BUSINESS_LOGIC;

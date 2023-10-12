@@ -20,50 +20,50 @@ namespace Aws
       namespace JDBCDataTypeMapper
       {
 
-        static const int ARRAY_HASH = HashingUtils::HashString("ARRAY");
-        static const int BIGINT_HASH = HashingUtils::HashString("BIGINT");
-        static const int BINARY_HASH = HashingUtils::HashString("BINARY");
-        static const int BIT_HASH = HashingUtils::HashString("BIT");
-        static const int BLOB_HASH = HashingUtils::HashString("BLOB");
-        static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
-        static const int CHAR__HASH = HashingUtils::HashString("CHAR");
-        static const int CLOB_HASH = HashingUtils::HashString("CLOB");
-        static const int DATALINK_HASH = HashingUtils::HashString("DATALINK");
-        static const int DATE_HASH = HashingUtils::HashString("DATE");
-        static const int DECIMAL_HASH = HashingUtils::HashString("DECIMAL");
-        static const int DISTINCT_HASH = HashingUtils::HashString("DISTINCT");
-        static const int DOUBLE_HASH = HashingUtils::HashString("DOUBLE");
-        static const int FLOAT_HASH = HashingUtils::HashString("FLOAT");
-        static const int INTEGER_HASH = HashingUtils::HashString("INTEGER");
-        static const int JAVA_OBJECT_HASH = HashingUtils::HashString("JAVA_OBJECT");
-        static const int LONGNVARCHAR_HASH = HashingUtils::HashString("LONGNVARCHAR");
-        static const int LONGVARBINARY_HASH = HashingUtils::HashString("LONGVARBINARY");
-        static const int LONGVARCHAR_HASH = HashingUtils::HashString("LONGVARCHAR");
-        static const int NCHAR_HASH = HashingUtils::HashString("NCHAR");
-        static const int NCLOB_HASH = HashingUtils::HashString("NCLOB");
-        static const int NULL__HASH = HashingUtils::HashString("NULL");
-        static const int NUMERIC_HASH = HashingUtils::HashString("NUMERIC");
-        static const int NVARCHAR_HASH = HashingUtils::HashString("NVARCHAR");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
-        static const int REAL_HASH = HashingUtils::HashString("REAL");
-        static const int REF_HASH = HashingUtils::HashString("REF");
-        static const int REF_CURSOR_HASH = HashingUtils::HashString("REF_CURSOR");
-        static const int ROWID_HASH = HashingUtils::HashString("ROWID");
-        static const int SMALLINT_HASH = HashingUtils::HashString("SMALLINT");
-        static const int SQLXML_HASH = HashingUtils::HashString("SQLXML");
-        static const int STRUCT_HASH = HashingUtils::HashString("STRUCT");
-        static const int TIME_HASH = HashingUtils::HashString("TIME");
-        static const int TIME_WITH_TIMEZONE_HASH = HashingUtils::HashString("TIME_WITH_TIMEZONE");
-        static const int TIMESTAMP_HASH = HashingUtils::HashString("TIMESTAMP");
-        static const int TIMESTAMP_WITH_TIMEZONE_HASH = HashingUtils::HashString("TIMESTAMP_WITH_TIMEZONE");
-        static const int TINYINT_HASH = HashingUtils::HashString("TINYINT");
-        static const int VARBINARY_HASH = HashingUtils::HashString("VARBINARY");
-        static const int VARCHAR_HASH = HashingUtils::HashString("VARCHAR");
+        static constexpr uint32_t ARRAY_HASH = ConstExprHashingUtils::HashString("ARRAY");
+        static constexpr uint32_t BIGINT_HASH = ConstExprHashingUtils::HashString("BIGINT");
+        static constexpr uint32_t BINARY_HASH = ConstExprHashingUtils::HashString("BINARY");
+        static constexpr uint32_t BIT_HASH = ConstExprHashingUtils::HashString("BIT");
+        static constexpr uint32_t BLOB_HASH = ConstExprHashingUtils::HashString("BLOB");
+        static constexpr uint32_t BOOLEAN_HASH = ConstExprHashingUtils::HashString("BOOLEAN");
+        static constexpr uint32_t CHAR__HASH = ConstExprHashingUtils::HashString("CHAR");
+        static constexpr uint32_t CLOB_HASH = ConstExprHashingUtils::HashString("CLOB");
+        static constexpr uint32_t DATALINK_HASH = ConstExprHashingUtils::HashString("DATALINK");
+        static constexpr uint32_t DATE_HASH = ConstExprHashingUtils::HashString("DATE");
+        static constexpr uint32_t DECIMAL_HASH = ConstExprHashingUtils::HashString("DECIMAL");
+        static constexpr uint32_t DISTINCT_HASH = ConstExprHashingUtils::HashString("DISTINCT");
+        static constexpr uint32_t DOUBLE_HASH = ConstExprHashingUtils::HashString("DOUBLE");
+        static constexpr uint32_t FLOAT_HASH = ConstExprHashingUtils::HashString("FLOAT");
+        static constexpr uint32_t INTEGER_HASH = ConstExprHashingUtils::HashString("INTEGER");
+        static constexpr uint32_t JAVA_OBJECT_HASH = ConstExprHashingUtils::HashString("JAVA_OBJECT");
+        static constexpr uint32_t LONGNVARCHAR_HASH = ConstExprHashingUtils::HashString("LONGNVARCHAR");
+        static constexpr uint32_t LONGVARBINARY_HASH = ConstExprHashingUtils::HashString("LONGVARBINARY");
+        static constexpr uint32_t LONGVARCHAR_HASH = ConstExprHashingUtils::HashString("LONGVARCHAR");
+        static constexpr uint32_t NCHAR_HASH = ConstExprHashingUtils::HashString("NCHAR");
+        static constexpr uint32_t NCLOB_HASH = ConstExprHashingUtils::HashString("NCLOB");
+        static constexpr uint32_t NULL__HASH = ConstExprHashingUtils::HashString("NULL");
+        static constexpr uint32_t NUMERIC_HASH = ConstExprHashingUtils::HashString("NUMERIC");
+        static constexpr uint32_t NVARCHAR_HASH = ConstExprHashingUtils::HashString("NVARCHAR");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
+        static constexpr uint32_t REAL_HASH = ConstExprHashingUtils::HashString("REAL");
+        static constexpr uint32_t REF_HASH = ConstExprHashingUtils::HashString("REF");
+        static constexpr uint32_t REF_CURSOR_HASH = ConstExprHashingUtils::HashString("REF_CURSOR");
+        static constexpr uint32_t ROWID_HASH = ConstExprHashingUtils::HashString("ROWID");
+        static constexpr uint32_t SMALLINT_HASH = ConstExprHashingUtils::HashString("SMALLINT");
+        static constexpr uint32_t SQLXML_HASH = ConstExprHashingUtils::HashString("SQLXML");
+        static constexpr uint32_t STRUCT_HASH = ConstExprHashingUtils::HashString("STRUCT");
+        static constexpr uint32_t TIME_HASH = ConstExprHashingUtils::HashString("TIME");
+        static constexpr uint32_t TIME_WITH_TIMEZONE_HASH = ConstExprHashingUtils::HashString("TIME_WITH_TIMEZONE");
+        static constexpr uint32_t TIMESTAMP_HASH = ConstExprHashingUtils::HashString("TIMESTAMP");
+        static constexpr uint32_t TIMESTAMP_WITH_TIMEZONE_HASH = ConstExprHashingUtils::HashString("TIMESTAMP_WITH_TIMEZONE");
+        static constexpr uint32_t TINYINT_HASH = ConstExprHashingUtils::HashString("TINYINT");
+        static constexpr uint32_t VARBINARY_HASH = ConstExprHashingUtils::HashString("VARBINARY");
+        static constexpr uint32_t VARCHAR_HASH = ConstExprHashingUtils::HashString("VARCHAR");
 
 
         JDBCDataType GetJDBCDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ARRAY_HASH)
           {
             return JDBCDataType::ARRAY;

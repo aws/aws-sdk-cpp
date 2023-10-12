@@ -18,12 +18,12 @@ namespace MarketplaceCommerceAnalytics
 namespace MarketplaceCommerceAnalyticsErrorMapper
 {
 
-static const int MARKETPLACE_COMMERCE_ANALYTICS_HASH = HashingUtils::HashString("MarketplaceCommerceAnalyticsException");
+static constexpr uint32_t MARKETPLACE_COMMERCE_ANALYTICS_HASH = ConstExprHashingUtils::HashString("MarketplaceCommerceAnalyticsException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == MARKETPLACE_COMMERCE_ANALYTICS_HASH)
   {

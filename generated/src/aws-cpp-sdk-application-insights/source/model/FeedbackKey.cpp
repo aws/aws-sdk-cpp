@@ -20,12 +20,12 @@ namespace Aws
       namespace FeedbackKeyMapper
       {
 
-        static const int INSIGHTS_FEEDBACK_HASH = HashingUtils::HashString("INSIGHTS_FEEDBACK");
+        static constexpr uint32_t INSIGHTS_FEEDBACK_HASH = ConstExprHashingUtils::HashString("INSIGHTS_FEEDBACK");
 
 
         FeedbackKey GetFeedbackKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSIGHTS_FEEDBACK_HASH)
           {
             return FeedbackKey::INSIGHTS_FEEDBACK;

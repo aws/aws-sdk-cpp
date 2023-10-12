@@ -20,13 +20,13 @@ namespace Aws
       namespace Mpeg2ColorSpaceMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t PASSTHROUGH_HASH = ConstExprHashingUtils::HashString("PASSTHROUGH");
 
 
         Mpeg2ColorSpace GetMpeg2ColorSpaceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return Mpeg2ColorSpace::AUTO;

@@ -20,13 +20,13 @@ namespace Aws
       namespace RenewalEligibilityMapper
       {
 
-        static const int ELIGIBLE_HASH = HashingUtils::HashString("ELIGIBLE");
-        static const int INELIGIBLE_HASH = HashingUtils::HashString("INELIGIBLE");
+        static constexpr uint32_t ELIGIBLE_HASH = ConstExprHashingUtils::HashString("ELIGIBLE");
+        static constexpr uint32_t INELIGIBLE_HASH = ConstExprHashingUtils::HashString("INELIGIBLE");
 
 
         RenewalEligibility GetRenewalEligibilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ELIGIBLE_HASH)
           {
             return RenewalEligibility::ELIGIBLE;

@@ -20,15 +20,15 @@ namespace Aws
       namespace DatasetStatusMapper
       {
 
-        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
-        static const int INGESTION_IN_PROGRESS_HASH = HashingUtils::HashString("INGESTION_IN_PROGRESS");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int IMPORT_IN_PROGRESS_HASH = HashingUtils::HashString("IMPORT_IN_PROGRESS");
+        static constexpr uint32_t CREATED_HASH = ConstExprHashingUtils::HashString("CREATED");
+        static constexpr uint32_t INGESTION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("INGESTION_IN_PROGRESS");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t IMPORT_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IMPORT_IN_PROGRESS");
 
 
         DatasetStatus GetDatasetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATED_HASH)
           {
             return DatasetStatus::CREATED;

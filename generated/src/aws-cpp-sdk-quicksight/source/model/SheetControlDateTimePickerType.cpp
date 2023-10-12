@@ -20,13 +20,13 @@ namespace Aws
       namespace SheetControlDateTimePickerTypeMapper
       {
 
-        static const int SINGLE_VALUED_HASH = HashingUtils::HashString("SINGLE_VALUED");
-        static const int DATE_RANGE_HASH = HashingUtils::HashString("DATE_RANGE");
+        static constexpr uint32_t SINGLE_VALUED_HASH = ConstExprHashingUtils::HashString("SINGLE_VALUED");
+        static constexpr uint32_t DATE_RANGE_HASH = ConstExprHashingUtils::HashString("DATE_RANGE");
 
 
         SheetControlDateTimePickerType GetSheetControlDateTimePickerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SINGLE_VALUED_HASH)
           {
             return SheetControlDateTimePickerType::SINGLE_VALUED;

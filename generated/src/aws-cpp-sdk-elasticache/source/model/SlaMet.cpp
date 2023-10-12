@@ -20,14 +20,14 @@ namespace Aws
       namespace SlaMetMapper
       {
 
-        static const int yes_HASH = HashingUtils::HashString("yes");
-        static const int no_HASH = HashingUtils::HashString("no");
-        static const int n_a_HASH = HashingUtils::HashString("n/a");
+        static constexpr uint32_t yes_HASH = ConstExprHashingUtils::HashString("yes");
+        static constexpr uint32_t no_HASH = ConstExprHashingUtils::HashString("no");
+        static constexpr uint32_t n_a_HASH = ConstExprHashingUtils::HashString("n/a");
 
 
         SlaMet GetSlaMetForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == yes_HASH)
           {
             return SlaMet::yes;

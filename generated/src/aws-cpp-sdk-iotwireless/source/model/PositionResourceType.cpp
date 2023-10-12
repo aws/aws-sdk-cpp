@@ -20,13 +20,13 @@ namespace Aws
       namespace PositionResourceTypeMapper
       {
 
-        static const int WirelessDevice_HASH = HashingUtils::HashString("WirelessDevice");
-        static const int WirelessGateway_HASH = HashingUtils::HashString("WirelessGateway");
+        static constexpr uint32_t WirelessDevice_HASH = ConstExprHashingUtils::HashString("WirelessDevice");
+        static constexpr uint32_t WirelessGateway_HASH = ConstExprHashingUtils::HashString("WirelessGateway");
 
 
         PositionResourceType GetPositionResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WirelessDevice_HASH)
           {
             return PositionResourceType::WirelessDevice;

@@ -20,23 +20,23 @@ namespace Aws
       namespace TaskTemplateFieldTypeMapper
       {
 
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int DESCRIPTION_HASH = HashingUtils::HashString("DESCRIPTION");
-        static const int SCHEDULED_TIME_HASH = HashingUtils::HashString("SCHEDULED_TIME");
-        static const int QUICK_CONNECT_HASH = HashingUtils::HashString("QUICK_CONNECT");
-        static const int URL_HASH = HashingUtils::HashString("URL");
-        static const int NUMBER_HASH = HashingUtils::HashString("NUMBER");
-        static const int TEXT_HASH = HashingUtils::HashString("TEXT");
-        static const int TEXT_AREA_HASH = HashingUtils::HashString("TEXT_AREA");
-        static const int DATE_TIME_HASH = HashingUtils::HashString("DATE_TIME");
-        static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
-        static const int SINGLE_SELECT_HASH = HashingUtils::HashString("SINGLE_SELECT");
-        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t DESCRIPTION_HASH = ConstExprHashingUtils::HashString("DESCRIPTION");
+        static constexpr uint32_t SCHEDULED_TIME_HASH = ConstExprHashingUtils::HashString("SCHEDULED_TIME");
+        static constexpr uint32_t QUICK_CONNECT_HASH = ConstExprHashingUtils::HashString("QUICK_CONNECT");
+        static constexpr uint32_t URL_HASH = ConstExprHashingUtils::HashString("URL");
+        static constexpr uint32_t NUMBER_HASH = ConstExprHashingUtils::HashString("NUMBER");
+        static constexpr uint32_t TEXT_HASH = ConstExprHashingUtils::HashString("TEXT");
+        static constexpr uint32_t TEXT_AREA_HASH = ConstExprHashingUtils::HashString("TEXT_AREA");
+        static constexpr uint32_t DATE_TIME_HASH = ConstExprHashingUtils::HashString("DATE_TIME");
+        static constexpr uint32_t BOOLEAN_HASH = ConstExprHashingUtils::HashString("BOOLEAN");
+        static constexpr uint32_t SINGLE_SELECT_HASH = ConstExprHashingUtils::HashString("SINGLE_SELECT");
+        static constexpr uint32_t EMAIL_HASH = ConstExprHashingUtils::HashString("EMAIL");
 
 
         TaskTemplateFieldType GetTaskTemplateFieldTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NAME_HASH)
           {
             return TaskTemplateFieldType::NAME;

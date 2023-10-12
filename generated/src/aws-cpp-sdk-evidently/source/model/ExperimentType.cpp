@@ -20,12 +20,12 @@ namespace Aws
       namespace ExperimentTypeMapper
       {
 
-        static const int aws_evidently_onlineab_HASH = HashingUtils::HashString("aws.evidently.onlineab");
+        static constexpr uint32_t aws_evidently_onlineab_HASH = ConstExprHashingUtils::HashString("aws.evidently.onlineab");
 
 
         ExperimentType GetExperimentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == aws_evidently_onlineab_HASH)
           {
             return ExperimentType::aws_evidently_onlineab;

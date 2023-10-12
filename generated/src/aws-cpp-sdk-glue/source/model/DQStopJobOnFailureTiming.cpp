@@ -20,13 +20,13 @@ namespace Aws
       namespace DQStopJobOnFailureTimingMapper
       {
 
-        static const int Immediate_HASH = HashingUtils::HashString("Immediate");
-        static const int AfterDataLoad_HASH = HashingUtils::HashString("AfterDataLoad");
+        static constexpr uint32_t Immediate_HASH = ConstExprHashingUtils::HashString("Immediate");
+        static constexpr uint32_t AfterDataLoad_HASH = ConstExprHashingUtils::HashString("AfterDataLoad");
 
 
         DQStopJobOnFailureTiming GetDQStopJobOnFailureTimingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Immediate_HASH)
           {
             return DQStopJobOnFailureTiming::Immediate;

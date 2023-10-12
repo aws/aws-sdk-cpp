@@ -20,13 +20,13 @@ namespace Aws
       namespace AppAssessmentScheduleTypeMapper
       {
 
-        static const int Disabled_HASH = HashingUtils::HashString("Disabled");
-        static const int Daily_HASH = HashingUtils::HashString("Daily");
+        static constexpr uint32_t Disabled_HASH = ConstExprHashingUtils::HashString("Disabled");
+        static constexpr uint32_t Daily_HASH = ConstExprHashingUtils::HashString("Daily");
 
 
         AppAssessmentScheduleType GetAppAssessmentScheduleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Disabled_HASH)
           {
             return AppAssessmentScheduleType::Disabled;

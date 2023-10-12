@@ -18,19 +18,19 @@ namespace Budgets
 namespace BudgetsErrorMapper
 {
 
-static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int RESOURCE_LOCKED_HASH = HashingUtils::HashString("ResourceLockedException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int DUPLICATE_RECORD_HASH = HashingUtils::HashString("DuplicateRecordException");
-static const int CREATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CreationLimitExceededException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int EXPIRED_NEXT_TOKEN_HASH = HashingUtils::HashString("ExpiredNextTokenException");
+static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("InternalErrorException");
+static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NotFoundException");
+static constexpr uint32_t RESOURCE_LOCKED_HASH = ConstExprHashingUtils::HashString("ResourceLockedException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t DUPLICATE_RECORD_HASH = ConstExprHashingUtils::HashString("DuplicateRecordException");
+static constexpr uint32_t CREATION_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("CreationLimitExceededException");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+static constexpr uint32_t EXPIRED_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("ExpiredNextTokenException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INTERNAL_ERROR_HASH)
   {

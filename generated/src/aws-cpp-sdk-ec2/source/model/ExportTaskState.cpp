@@ -20,15 +20,15 @@ namespace Aws
       namespace ExportTaskStateMapper
       {
 
-        static const int active_HASH = HashingUtils::HashString("active");
-        static const int cancelling_HASH = HashingUtils::HashString("cancelling");
-        static const int cancelled_HASH = HashingUtils::HashString("cancelled");
-        static const int completed_HASH = HashingUtils::HashString("completed");
+        static constexpr uint32_t active_HASH = ConstExprHashingUtils::HashString("active");
+        static constexpr uint32_t cancelling_HASH = ConstExprHashingUtils::HashString("cancelling");
+        static constexpr uint32_t cancelled_HASH = ConstExprHashingUtils::HashString("cancelled");
+        static constexpr uint32_t completed_HASH = ConstExprHashingUtils::HashString("completed");
 
 
         ExportTaskState GetExportTaskStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == active_HASH)
           {
             return ExportTaskState::active;

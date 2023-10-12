@@ -20,13 +20,13 @@ namespace Aws
       namespace ExportTypeMapper
       {
 
-        static const int ALEXA_SKILLS_KIT_HASH = HashingUtils::HashString("ALEXA_SKILLS_KIT");
-        static const int LEX_HASH = HashingUtils::HashString("LEX");
+        static constexpr uint32_t ALEXA_SKILLS_KIT_HASH = ConstExprHashingUtils::HashString("ALEXA_SKILLS_KIT");
+        static constexpr uint32_t LEX_HASH = ConstExprHashingUtils::HashString("LEX");
 
 
         ExportType GetExportTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALEXA_SKILLS_KIT_HASH)
           {
             return ExportType::ALEXA_SKILLS_KIT;

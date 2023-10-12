@@ -20,48 +20,48 @@ namespace Aws
       namespace PiiEntityTypeMapper
       {
 
-        static const int BANK_ACCOUNT_NUMBER_HASH = HashingUtils::HashString("BANK_ACCOUNT_NUMBER");
-        static const int BANK_ROUTING_HASH = HashingUtils::HashString("BANK_ROUTING");
-        static const int CREDIT_DEBIT_NUMBER_HASH = HashingUtils::HashString("CREDIT_DEBIT_NUMBER");
-        static const int CREDIT_DEBIT_CVV_HASH = HashingUtils::HashString("CREDIT_DEBIT_CVV");
-        static const int CREDIT_DEBIT_EXPIRY_HASH = HashingUtils::HashString("CREDIT_DEBIT_EXPIRY");
-        static const int PIN_HASH = HashingUtils::HashString("PIN");
-        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
-        static const int ADDRESS_HASH = HashingUtils::HashString("ADDRESS");
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int PHONE_HASH = HashingUtils::HashString("PHONE");
-        static const int SSN_HASH = HashingUtils::HashString("SSN");
-        static const int DATE_TIME_HASH = HashingUtils::HashString("DATE_TIME");
-        static const int PASSPORT_NUMBER_HASH = HashingUtils::HashString("PASSPORT_NUMBER");
-        static const int DRIVER_ID_HASH = HashingUtils::HashString("DRIVER_ID");
-        static const int URL_HASH = HashingUtils::HashString("URL");
-        static const int AGE_HASH = HashingUtils::HashString("AGE");
-        static const int USERNAME_HASH = HashingUtils::HashString("USERNAME");
-        static const int PASSWORD_HASH = HashingUtils::HashString("PASSWORD");
-        static const int AWS_ACCESS_KEY_HASH = HashingUtils::HashString("AWS_ACCESS_KEY");
-        static const int AWS_SECRET_KEY_HASH = HashingUtils::HashString("AWS_SECRET_KEY");
-        static const int IP_ADDRESS_HASH = HashingUtils::HashString("IP_ADDRESS");
-        static const int MAC_ADDRESS_HASH = HashingUtils::HashString("MAC_ADDRESS");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int LICENSE_PLATE_HASH = HashingUtils::HashString("LICENSE_PLATE");
-        static const int VEHICLE_IDENTIFICATION_NUMBER_HASH = HashingUtils::HashString("VEHICLE_IDENTIFICATION_NUMBER");
-        static const int UK_NATIONAL_INSURANCE_NUMBER_HASH = HashingUtils::HashString("UK_NATIONAL_INSURANCE_NUMBER");
-        static const int CA_SOCIAL_INSURANCE_NUMBER_HASH = HashingUtils::HashString("CA_SOCIAL_INSURANCE_NUMBER");
-        static const int US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER_HASH = HashingUtils::HashString("US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER");
-        static const int UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER_HASH = HashingUtils::HashString("UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER");
-        static const int IN_PERMANENT_ACCOUNT_NUMBER_HASH = HashingUtils::HashString("IN_PERMANENT_ACCOUNT_NUMBER");
-        static const int IN_NREGA_HASH = HashingUtils::HashString("IN_NREGA");
-        static const int INTERNATIONAL_BANK_ACCOUNT_NUMBER_HASH = HashingUtils::HashString("INTERNATIONAL_BANK_ACCOUNT_NUMBER");
-        static const int SWIFT_CODE_HASH = HashingUtils::HashString("SWIFT_CODE");
-        static const int UK_NATIONAL_HEALTH_SERVICE_NUMBER_HASH = HashingUtils::HashString("UK_NATIONAL_HEALTH_SERVICE_NUMBER");
-        static const int CA_HEALTH_NUMBER_HASH = HashingUtils::HashString("CA_HEALTH_NUMBER");
-        static const int IN_AADHAAR_HASH = HashingUtils::HashString("IN_AADHAAR");
-        static const int IN_VOTER_NUMBER_HASH = HashingUtils::HashString("IN_VOTER_NUMBER");
+        static constexpr uint32_t BANK_ACCOUNT_NUMBER_HASH = ConstExprHashingUtils::HashString("BANK_ACCOUNT_NUMBER");
+        static constexpr uint32_t BANK_ROUTING_HASH = ConstExprHashingUtils::HashString("BANK_ROUTING");
+        static constexpr uint32_t CREDIT_DEBIT_NUMBER_HASH = ConstExprHashingUtils::HashString("CREDIT_DEBIT_NUMBER");
+        static constexpr uint32_t CREDIT_DEBIT_CVV_HASH = ConstExprHashingUtils::HashString("CREDIT_DEBIT_CVV");
+        static constexpr uint32_t CREDIT_DEBIT_EXPIRY_HASH = ConstExprHashingUtils::HashString("CREDIT_DEBIT_EXPIRY");
+        static constexpr uint32_t PIN_HASH = ConstExprHashingUtils::HashString("PIN");
+        static constexpr uint32_t EMAIL_HASH = ConstExprHashingUtils::HashString("EMAIL");
+        static constexpr uint32_t ADDRESS_HASH = ConstExprHashingUtils::HashString("ADDRESS");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t PHONE_HASH = ConstExprHashingUtils::HashString("PHONE");
+        static constexpr uint32_t SSN_HASH = ConstExprHashingUtils::HashString("SSN");
+        static constexpr uint32_t DATE_TIME_HASH = ConstExprHashingUtils::HashString("DATE_TIME");
+        static constexpr uint32_t PASSPORT_NUMBER_HASH = ConstExprHashingUtils::HashString("PASSPORT_NUMBER");
+        static constexpr uint32_t DRIVER_ID_HASH = ConstExprHashingUtils::HashString("DRIVER_ID");
+        static constexpr uint32_t URL_HASH = ConstExprHashingUtils::HashString("URL");
+        static constexpr uint32_t AGE_HASH = ConstExprHashingUtils::HashString("AGE");
+        static constexpr uint32_t USERNAME_HASH = ConstExprHashingUtils::HashString("USERNAME");
+        static constexpr uint32_t PASSWORD_HASH = ConstExprHashingUtils::HashString("PASSWORD");
+        static constexpr uint32_t AWS_ACCESS_KEY_HASH = ConstExprHashingUtils::HashString("AWS_ACCESS_KEY");
+        static constexpr uint32_t AWS_SECRET_KEY_HASH = ConstExprHashingUtils::HashString("AWS_SECRET_KEY");
+        static constexpr uint32_t IP_ADDRESS_HASH = ConstExprHashingUtils::HashString("IP_ADDRESS");
+        static constexpr uint32_t MAC_ADDRESS_HASH = ConstExprHashingUtils::HashString("MAC_ADDRESS");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t LICENSE_PLATE_HASH = ConstExprHashingUtils::HashString("LICENSE_PLATE");
+        static constexpr uint32_t VEHICLE_IDENTIFICATION_NUMBER_HASH = ConstExprHashingUtils::HashString("VEHICLE_IDENTIFICATION_NUMBER");
+        static constexpr uint32_t UK_NATIONAL_INSURANCE_NUMBER_HASH = ConstExprHashingUtils::HashString("UK_NATIONAL_INSURANCE_NUMBER");
+        static constexpr uint32_t CA_SOCIAL_INSURANCE_NUMBER_HASH = ConstExprHashingUtils::HashString("CA_SOCIAL_INSURANCE_NUMBER");
+        static constexpr uint32_t US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER_HASH = ConstExprHashingUtils::HashString("US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER");
+        static constexpr uint32_t UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER_HASH = ConstExprHashingUtils::HashString("UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER");
+        static constexpr uint32_t IN_PERMANENT_ACCOUNT_NUMBER_HASH = ConstExprHashingUtils::HashString("IN_PERMANENT_ACCOUNT_NUMBER");
+        static constexpr uint32_t IN_NREGA_HASH = ConstExprHashingUtils::HashString("IN_NREGA");
+        static constexpr uint32_t INTERNATIONAL_BANK_ACCOUNT_NUMBER_HASH = ConstExprHashingUtils::HashString("INTERNATIONAL_BANK_ACCOUNT_NUMBER");
+        static constexpr uint32_t SWIFT_CODE_HASH = ConstExprHashingUtils::HashString("SWIFT_CODE");
+        static constexpr uint32_t UK_NATIONAL_HEALTH_SERVICE_NUMBER_HASH = ConstExprHashingUtils::HashString("UK_NATIONAL_HEALTH_SERVICE_NUMBER");
+        static constexpr uint32_t CA_HEALTH_NUMBER_HASH = ConstExprHashingUtils::HashString("CA_HEALTH_NUMBER");
+        static constexpr uint32_t IN_AADHAAR_HASH = ConstExprHashingUtils::HashString("IN_AADHAAR");
+        static constexpr uint32_t IN_VOTER_NUMBER_HASH = ConstExprHashingUtils::HashString("IN_VOTER_NUMBER");
 
 
         PiiEntityType GetPiiEntityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BANK_ACCOUNT_NUMBER_HASH)
           {
             return PiiEntityType::BANK_ACCOUNT_NUMBER;

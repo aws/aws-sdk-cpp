@@ -20,14 +20,14 @@ namespace Aws
       namespace ReplacementMapper
       {
 
-        static const int TRUE_HASH = HashingUtils::HashString("TRUE");
-        static const int FALSE_HASH = HashingUtils::HashString("FALSE");
-        static const int CONDITIONAL_HASH = HashingUtils::HashString("CONDITIONAL");
+        static constexpr uint32_t TRUE_HASH = ConstExprHashingUtils::HashString("TRUE");
+        static constexpr uint32_t FALSE_HASH = ConstExprHashingUtils::HashString("FALSE");
+        static constexpr uint32_t CONDITIONAL_HASH = ConstExprHashingUtils::HashString("CONDITIONAL");
 
 
         Replacement GetReplacementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRUE_HASH)
           {
             return Replacement::TRUE;

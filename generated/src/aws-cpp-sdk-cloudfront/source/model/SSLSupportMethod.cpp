@@ -20,14 +20,14 @@ namespace Aws
       namespace SSLSupportMethodMapper
       {
 
-        static const int sni_only_HASH = HashingUtils::HashString("sni-only");
-        static const int vip_HASH = HashingUtils::HashString("vip");
-        static const int static_ip_HASH = HashingUtils::HashString("static-ip");
+        static constexpr uint32_t sni_only_HASH = ConstExprHashingUtils::HashString("sni-only");
+        static constexpr uint32_t vip_HASH = ConstExprHashingUtils::HashString("vip");
+        static constexpr uint32_t static_ip_HASH = ConstExprHashingUtils::HashString("static-ip");
 
 
         SSLSupportMethod GetSSLSupportMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == sni_only_HASH)
           {
             return SSLSupportMethod::sni_only;

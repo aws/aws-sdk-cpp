@@ -20,18 +20,18 @@ namespace Aws
       namespace ClusterStateMapper
       {
 
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int BOOTSTRAPPING_HASH = HashingUtils::HashString("BOOTSTRAPPING");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int WAITING_HASH = HashingUtils::HashString("WAITING");
-        static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
-        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
-        static const int TERMINATED_WITH_ERRORS_HASH = HashingUtils::HashString("TERMINATED_WITH_ERRORS");
+        static constexpr uint32_t STARTING_HASH = ConstExprHashingUtils::HashString("STARTING");
+        static constexpr uint32_t BOOTSTRAPPING_HASH = ConstExprHashingUtils::HashString("BOOTSTRAPPING");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t WAITING_HASH = ConstExprHashingUtils::HashString("WAITING");
+        static constexpr uint32_t TERMINATING_HASH = ConstExprHashingUtils::HashString("TERMINATING");
+        static constexpr uint32_t TERMINATED_HASH = ConstExprHashingUtils::HashString("TERMINATED");
+        static constexpr uint32_t TERMINATED_WITH_ERRORS_HASH = ConstExprHashingUtils::HashString("TERMINATED_WITH_ERRORS");
 
 
         ClusterState GetClusterStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STARTING_HASH)
           {
             return ClusterState::STARTING;

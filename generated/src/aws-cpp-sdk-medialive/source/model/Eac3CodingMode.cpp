@@ -20,14 +20,14 @@ namespace Aws
       namespace Eac3CodingModeMapper
       {
 
-        static const int CODING_MODE_1_0_HASH = HashingUtils::HashString("CODING_MODE_1_0");
-        static const int CODING_MODE_2_0_HASH = HashingUtils::HashString("CODING_MODE_2_0");
-        static const int CODING_MODE_3_2_HASH = HashingUtils::HashString("CODING_MODE_3_2");
+        static constexpr uint32_t CODING_MODE_1_0_HASH = ConstExprHashingUtils::HashString("CODING_MODE_1_0");
+        static constexpr uint32_t CODING_MODE_2_0_HASH = ConstExprHashingUtils::HashString("CODING_MODE_2_0");
+        static constexpr uint32_t CODING_MODE_3_2_HASH = ConstExprHashingUtils::HashString("CODING_MODE_3_2");
 
 
         Eac3CodingMode GetEac3CodingModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CODING_MODE_1_0_HASH)
           {
             return Eac3CodingMode::CODING_MODE_1_0;

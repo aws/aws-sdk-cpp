@@ -20,15 +20,15 @@ namespace Aws
       namespace ConflictResolutionStrategyTypeEnumMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int ACCEPT_SOURCE_HASH = HashingUtils::HashString("ACCEPT_SOURCE");
-        static const int ACCEPT_DESTINATION_HASH = HashingUtils::HashString("ACCEPT_DESTINATION");
-        static const int AUTOMERGE_HASH = HashingUtils::HashString("AUTOMERGE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t ACCEPT_SOURCE_HASH = ConstExprHashingUtils::HashString("ACCEPT_SOURCE");
+        static constexpr uint32_t ACCEPT_DESTINATION_HASH = ConstExprHashingUtils::HashString("ACCEPT_DESTINATION");
+        static constexpr uint32_t AUTOMERGE_HASH = ConstExprHashingUtils::HashString("AUTOMERGE");
 
 
         ConflictResolutionStrategyTypeEnum GetConflictResolutionStrategyTypeEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return ConflictResolutionStrategyTypeEnum::NONE;

@@ -20,14 +20,14 @@ namespace Aws
       namespace ClientVpnAuthenticationTypeMapper
       {
 
-        static const int certificate_authentication_HASH = HashingUtils::HashString("certificate-authentication");
-        static const int directory_service_authentication_HASH = HashingUtils::HashString("directory-service-authentication");
-        static const int federated_authentication_HASH = HashingUtils::HashString("federated-authentication");
+        static constexpr uint32_t certificate_authentication_HASH = ConstExprHashingUtils::HashString("certificate-authentication");
+        static constexpr uint32_t directory_service_authentication_HASH = ConstExprHashingUtils::HashString("directory-service-authentication");
+        static constexpr uint32_t federated_authentication_HASH = ConstExprHashingUtils::HashString("federated-authentication");
 
 
         ClientVpnAuthenticationType GetClientVpnAuthenticationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == certificate_authentication_HASH)
           {
             return ClientVpnAuthenticationType::certificate_authentication;

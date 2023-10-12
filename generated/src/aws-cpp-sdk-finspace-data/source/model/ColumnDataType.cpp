@@ -20,23 +20,23 @@ namespace Aws
       namespace ColumnDataTypeMapper
       {
 
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
-        static const int CHAR__HASH = HashingUtils::HashString("CHAR");
-        static const int INTEGER_HASH = HashingUtils::HashString("INTEGER");
-        static const int TINYINT_HASH = HashingUtils::HashString("TINYINT");
-        static const int SMALLINT_HASH = HashingUtils::HashString("SMALLINT");
-        static const int BIGINT_HASH = HashingUtils::HashString("BIGINT");
-        static const int FLOAT_HASH = HashingUtils::HashString("FLOAT");
-        static const int DOUBLE_HASH = HashingUtils::HashString("DOUBLE");
-        static const int DATE_HASH = HashingUtils::HashString("DATE");
-        static const int DATETIME_HASH = HashingUtils::HashString("DATETIME");
-        static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
-        static const int BINARY_HASH = HashingUtils::HashString("BINARY");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
+        static constexpr uint32_t CHAR__HASH = ConstExprHashingUtils::HashString("CHAR");
+        static constexpr uint32_t INTEGER_HASH = ConstExprHashingUtils::HashString("INTEGER");
+        static constexpr uint32_t TINYINT_HASH = ConstExprHashingUtils::HashString("TINYINT");
+        static constexpr uint32_t SMALLINT_HASH = ConstExprHashingUtils::HashString("SMALLINT");
+        static constexpr uint32_t BIGINT_HASH = ConstExprHashingUtils::HashString("BIGINT");
+        static constexpr uint32_t FLOAT_HASH = ConstExprHashingUtils::HashString("FLOAT");
+        static constexpr uint32_t DOUBLE_HASH = ConstExprHashingUtils::HashString("DOUBLE");
+        static constexpr uint32_t DATE_HASH = ConstExprHashingUtils::HashString("DATE");
+        static constexpr uint32_t DATETIME_HASH = ConstExprHashingUtils::HashString("DATETIME");
+        static constexpr uint32_t BOOLEAN_HASH = ConstExprHashingUtils::HashString("BOOLEAN");
+        static constexpr uint32_t BINARY_HASH = ConstExprHashingUtils::HashString("BINARY");
 
 
         ColumnDataType GetColumnDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STRING_HASH)
           {
             return ColumnDataType::STRING;

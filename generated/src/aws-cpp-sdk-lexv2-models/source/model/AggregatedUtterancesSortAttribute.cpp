@@ -20,13 +20,13 @@ namespace Aws
       namespace AggregatedUtterancesSortAttributeMapper
       {
 
-        static const int HitCount_HASH = HashingUtils::HashString("HitCount");
-        static const int MissedCount_HASH = HashingUtils::HashString("MissedCount");
+        static constexpr uint32_t HitCount_HASH = ConstExprHashingUtils::HashString("HitCount");
+        static constexpr uint32_t MissedCount_HASH = ConstExprHashingUtils::HashString("MissedCount");
 
 
         AggregatedUtterancesSortAttribute GetAggregatedUtterancesSortAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HitCount_HASH)
           {
             return AggregatedUtterancesSortAttribute::HitCount;

@@ -20,13 +20,13 @@ namespace Aws
       namespace EncoderProfileMapper
       {
 
-        static const int main_HASH = HashingUtils::HashString("main");
-        static const int high_HASH = HashingUtils::HashString("high");
+        static constexpr uint32_t main_HASH = ConstExprHashingUtils::HashString("main");
+        static constexpr uint32_t high_HASH = ConstExprHashingUtils::HashString("high");
 
 
         EncoderProfile GetEncoderProfileForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == main_HASH)
           {
             return EncoderProfile::main;

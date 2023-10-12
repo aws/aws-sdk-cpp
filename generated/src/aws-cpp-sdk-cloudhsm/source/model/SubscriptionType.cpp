@@ -20,12 +20,12 @@ namespace Aws
       namespace SubscriptionTypeMapper
       {
 
-        static const int PRODUCTION_HASH = HashingUtils::HashString("PRODUCTION");
+        static constexpr uint32_t PRODUCTION_HASH = ConstExprHashingUtils::HashString("PRODUCTION");
 
 
         SubscriptionType GetSubscriptionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRODUCTION_HASH)
           {
             return SubscriptionType::PRODUCTION;

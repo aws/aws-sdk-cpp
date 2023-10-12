@@ -20,13 +20,13 @@ namespace Aws
       namespace FormatMapper
       {
 
-        static const int json_HASH = HashingUtils::HashString("json");
-        static const int parquet_HASH = HashingUtils::HashString("parquet");
+        static constexpr uint32_t json_HASH = ConstExprHashingUtils::HashString("json");
+        static constexpr uint32_t parquet_HASH = ConstExprHashingUtils::HashString("parquet");
 
 
         Format GetFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == json_HASH)
           {
             return Format::json;

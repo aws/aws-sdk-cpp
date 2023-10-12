@@ -20,13 +20,13 @@ namespace Aws
       namespace PartitionKeyEnforcementLevelMapper
       {
 
-        static const int REQUIRED_HASH = HashingUtils::HashString("REQUIRED");
-        static const int OPTIONAL_HASH = HashingUtils::HashString("OPTIONAL");
+        static constexpr uint32_t REQUIRED_HASH = ConstExprHashingUtils::HashString("REQUIRED");
+        static constexpr uint32_t OPTIONAL_HASH = ConstExprHashingUtils::HashString("OPTIONAL");
 
 
         PartitionKeyEnforcementLevel GetPartitionKeyEnforcementLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REQUIRED_HASH)
           {
             return PartitionKeyEnforcementLevel::REQUIRED;

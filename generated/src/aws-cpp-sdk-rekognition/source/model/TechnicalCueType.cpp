@@ -20,18 +20,18 @@ namespace Aws
       namespace TechnicalCueTypeMapper
       {
 
-        static const int ColorBars_HASH = HashingUtils::HashString("ColorBars");
-        static const int EndCredits_HASH = HashingUtils::HashString("EndCredits");
-        static const int BlackFrames_HASH = HashingUtils::HashString("BlackFrames");
-        static const int OpeningCredits_HASH = HashingUtils::HashString("OpeningCredits");
-        static const int StudioLogo_HASH = HashingUtils::HashString("StudioLogo");
-        static const int Slate_HASH = HashingUtils::HashString("Slate");
-        static const int Content_HASH = HashingUtils::HashString("Content");
+        static constexpr uint32_t ColorBars_HASH = ConstExprHashingUtils::HashString("ColorBars");
+        static constexpr uint32_t EndCredits_HASH = ConstExprHashingUtils::HashString("EndCredits");
+        static constexpr uint32_t BlackFrames_HASH = ConstExprHashingUtils::HashString("BlackFrames");
+        static constexpr uint32_t OpeningCredits_HASH = ConstExprHashingUtils::HashString("OpeningCredits");
+        static constexpr uint32_t StudioLogo_HASH = ConstExprHashingUtils::HashString("StudioLogo");
+        static constexpr uint32_t Slate_HASH = ConstExprHashingUtils::HashString("Slate");
+        static constexpr uint32_t Content_HASH = ConstExprHashingUtils::HashString("Content");
 
 
         TechnicalCueType GetTechnicalCueTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ColorBars_HASH)
           {
             return TechnicalCueType::ColorBars;

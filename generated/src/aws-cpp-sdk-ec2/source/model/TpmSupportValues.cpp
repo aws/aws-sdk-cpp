@@ -20,12 +20,12 @@ namespace Aws
       namespace TpmSupportValuesMapper
       {
 
-        static const int v2_0_HASH = HashingUtils::HashString("v2.0");
+        static constexpr uint32_t v2_0_HASH = ConstExprHashingUtils::HashString("v2.0");
 
 
         TpmSupportValues GetTpmSupportValuesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == v2_0_HASH)
           {
             return TpmSupportValues::v2_0;

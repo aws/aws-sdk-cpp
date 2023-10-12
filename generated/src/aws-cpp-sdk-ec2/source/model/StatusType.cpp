@@ -20,15 +20,15 @@ namespace Aws
       namespace StatusTypeMapper
       {
 
-        static const int passed_HASH = HashingUtils::HashString("passed");
-        static const int failed_HASH = HashingUtils::HashString("failed");
-        static const int insufficient_data_HASH = HashingUtils::HashString("insufficient-data");
-        static const int initializing_HASH = HashingUtils::HashString("initializing");
+        static constexpr uint32_t passed_HASH = ConstExprHashingUtils::HashString("passed");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
+        static constexpr uint32_t insufficient_data_HASH = ConstExprHashingUtils::HashString("insufficient-data");
+        static constexpr uint32_t initializing_HASH = ConstExprHashingUtils::HashString("initializing");
 
 
         StatusType GetStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == passed_HASH)
           {
             return StatusType::passed;

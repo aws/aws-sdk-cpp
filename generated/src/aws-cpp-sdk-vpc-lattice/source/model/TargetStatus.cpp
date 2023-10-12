@@ -20,17 +20,17 @@ namespace Aws
       namespace TargetStatusMapper
       {
 
-        static const int DRAINING_HASH = HashingUtils::HashString("DRAINING");
-        static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
-        static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
-        static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
-        static const int INITIAL_HASH = HashingUtils::HashString("INITIAL");
-        static const int UNUSED_HASH = HashingUtils::HashString("UNUSED");
+        static constexpr uint32_t DRAINING_HASH = ConstExprHashingUtils::HashString("DRAINING");
+        static constexpr uint32_t UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("UNAVAILABLE");
+        static constexpr uint32_t HEALTHY_HASH = ConstExprHashingUtils::HashString("HEALTHY");
+        static constexpr uint32_t UNHEALTHY_HASH = ConstExprHashingUtils::HashString("UNHEALTHY");
+        static constexpr uint32_t INITIAL_HASH = ConstExprHashingUtils::HashString("INITIAL");
+        static constexpr uint32_t UNUSED_HASH = ConstExprHashingUtils::HashString("UNUSED");
 
 
         TargetStatus GetTargetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DRAINING_HASH)
           {
             return TargetStatus::DRAINING;

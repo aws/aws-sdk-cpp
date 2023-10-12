@@ -20,14 +20,14 @@ namespace Aws
       namespace OriginProtocolPolicyMapper
       {
 
-        static const int http_only_HASH = HashingUtils::HashString("http-only");
-        static const int match_viewer_HASH = HashingUtils::HashString("match-viewer");
-        static const int https_only_HASH = HashingUtils::HashString("https-only");
+        static constexpr uint32_t http_only_HASH = ConstExprHashingUtils::HashString("http-only");
+        static constexpr uint32_t match_viewer_HASH = ConstExprHashingUtils::HashString("match-viewer");
+        static constexpr uint32_t https_only_HASH = ConstExprHashingUtils::HashString("https-only");
 
 
         OriginProtocolPolicy GetOriginProtocolPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == http_only_HASH)
           {
             return OriginProtocolPolicy::http_only;

@@ -20,19 +20,19 @@ namespace Aws
       namespace ShareStatusMapper
       {
 
-        static const int ACCEPTED_HASH = HashingUtils::HashString("ACCEPTED");
-        static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int REVOKED_HASH = HashingUtils::HashString("REVOKED");
-        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
-        static const int ASSOCIATING_HASH = HashingUtils::HashString("ASSOCIATING");
-        static const int ASSOCIATED_HASH = HashingUtils::HashString("ASSOCIATED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t ACCEPTED_HASH = ConstExprHashingUtils::HashString("ACCEPTED");
+        static constexpr uint32_t REJECTED_HASH = ConstExprHashingUtils::HashString("REJECTED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t REVOKED_HASH = ConstExprHashingUtils::HashString("REVOKED");
+        static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("EXPIRED");
+        static constexpr uint32_t ASSOCIATING_HASH = ConstExprHashingUtils::HashString("ASSOCIATING");
+        static constexpr uint32_t ASSOCIATED_HASH = ConstExprHashingUtils::HashString("ASSOCIATED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         ShareStatus GetShareStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCEPTED_HASH)
           {
             return ShareStatus::ACCEPTED;

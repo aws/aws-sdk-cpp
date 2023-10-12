@@ -20,14 +20,14 @@ namespace Aws
       namespace PerObjectSyncStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int IN_SYNC_HASH = HashingUtils::HashString("IN_SYNC");
-        static const int CAPACITY_CONSTRAINED_HASH = HashingUtils::HashString("CAPACITY_CONSTRAINED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t IN_SYNC_HASH = ConstExprHashingUtils::HashString("IN_SYNC");
+        static constexpr uint32_t CAPACITY_CONSTRAINED_HASH = ConstExprHashingUtils::HashString("CAPACITY_CONSTRAINED");
 
 
         PerObjectSyncStatus GetPerObjectSyncStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return PerObjectSyncStatus::PENDING;

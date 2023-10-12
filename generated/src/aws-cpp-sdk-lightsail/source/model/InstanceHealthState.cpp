@@ -20,17 +20,17 @@ namespace Aws
       namespace InstanceHealthStateMapper
       {
 
-        static const int initial_HASH = HashingUtils::HashString("initial");
-        static const int healthy_HASH = HashingUtils::HashString("healthy");
-        static const int unhealthy_HASH = HashingUtils::HashString("unhealthy");
-        static const int unused_HASH = HashingUtils::HashString("unused");
-        static const int draining_HASH = HashingUtils::HashString("draining");
-        static const int unavailable_HASH = HashingUtils::HashString("unavailable");
+        static constexpr uint32_t initial_HASH = ConstExprHashingUtils::HashString("initial");
+        static constexpr uint32_t healthy_HASH = ConstExprHashingUtils::HashString("healthy");
+        static constexpr uint32_t unhealthy_HASH = ConstExprHashingUtils::HashString("unhealthy");
+        static constexpr uint32_t unused_HASH = ConstExprHashingUtils::HashString("unused");
+        static constexpr uint32_t draining_HASH = ConstExprHashingUtils::HashString("draining");
+        static constexpr uint32_t unavailable_HASH = ConstExprHashingUtils::HashString("unavailable");
 
 
         InstanceHealthState GetInstanceHealthStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == initial_HASH)
           {
             return InstanceHealthState::initial;

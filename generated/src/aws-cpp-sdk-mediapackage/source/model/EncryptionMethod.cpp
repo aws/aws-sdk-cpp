@@ -20,13 +20,13 @@ namespace Aws
       namespace EncryptionMethodMapper
       {
 
-        static const int AES_128_HASH = HashingUtils::HashString("AES_128");
-        static const int SAMPLE_AES_HASH = HashingUtils::HashString("SAMPLE_AES");
+        static constexpr uint32_t AES_128_HASH = ConstExprHashingUtils::HashString("AES_128");
+        static constexpr uint32_t SAMPLE_AES_HASH = ConstExprHashingUtils::HashString("SAMPLE_AES");
 
 
         EncryptionMethod GetEncryptionMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AES_128_HASH)
           {
             return EncryptionMethod::AES_128;

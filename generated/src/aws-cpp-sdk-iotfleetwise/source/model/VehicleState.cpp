@@ -20,16 +20,16 @@ namespace Aws
       namespace VehicleStateMapper
       {
 
-        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
-        static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static constexpr uint32_t CREATED_HASH = ConstExprHashingUtils::HashString("CREATED");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
+        static constexpr uint32_t HEALTHY_HASH = ConstExprHashingUtils::HashString("HEALTHY");
+        static constexpr uint32_t SUSPENDED_HASH = ConstExprHashingUtils::HashString("SUSPENDED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
 
 
         VehicleState GetVehicleStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATED_HASH)
           {
             return VehicleState::CREATED;

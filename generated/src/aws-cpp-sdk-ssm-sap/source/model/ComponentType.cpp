@@ -20,13 +20,13 @@ namespace Aws
       namespace ComponentTypeMapper
       {
 
-        static const int HANA_HASH = HashingUtils::HashString("HANA");
-        static const int HANA_NODE_HASH = HashingUtils::HashString("HANA_NODE");
+        static constexpr uint32_t HANA_HASH = ConstExprHashingUtils::HashString("HANA");
+        static constexpr uint32_t HANA_NODE_HASH = ConstExprHashingUtils::HashString("HANA_NODE");
 
 
         ComponentType GetComponentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HANA_HASH)
           {
             return ComponentType::HANA;

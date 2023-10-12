@@ -20,12 +20,12 @@ namespace Aws
       namespace AccessPolicyTypeMapper
       {
 
-        static const int data_HASH = HashingUtils::HashString("data");
+        static constexpr uint32_t data_HASH = ConstExprHashingUtils::HashString("data");
 
 
         AccessPolicyType GetAccessPolicyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == data_HASH)
           {
             return AccessPolicyType::data;

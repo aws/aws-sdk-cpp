@@ -20,14 +20,14 @@ namespace Aws
       namespace ChannelMapper
       {
 
-        static const int VOICE_HASH = HashingUtils::HashString("VOICE");
-        static const int CHAT_HASH = HashingUtils::HashString("CHAT");
-        static const int TASK_HASH = HashingUtils::HashString("TASK");
+        static constexpr uint32_t VOICE_HASH = ConstExprHashingUtils::HashString("VOICE");
+        static constexpr uint32_t CHAT_HASH = ConstExprHashingUtils::HashString("CHAT");
+        static constexpr uint32_t TASK_HASH = ConstExprHashingUtils::HashString("TASK");
 
 
         Channel GetChannelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VOICE_HASH)
           {
             return Channel::VOICE;

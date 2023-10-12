@@ -20,16 +20,16 @@ namespace Aws
       namespace StageMapper
       {
 
-        static const int PRODUCTION_HASH = HashingUtils::HashString("PRODUCTION");
-        static const int BETA_HASH = HashingUtils::HashString("BETA");
-        static const int DEVELOPMENT_HASH = HashingUtils::HashString("DEVELOPMENT");
-        static const int EXPERIMENTAL_HASH = HashingUtils::HashString("EXPERIMENTAL");
-        static const int PULL_REQUEST_HASH = HashingUtils::HashString("PULL_REQUEST");
+        static constexpr uint32_t PRODUCTION_HASH = ConstExprHashingUtils::HashString("PRODUCTION");
+        static constexpr uint32_t BETA_HASH = ConstExprHashingUtils::HashString("BETA");
+        static constexpr uint32_t DEVELOPMENT_HASH = ConstExprHashingUtils::HashString("DEVELOPMENT");
+        static constexpr uint32_t EXPERIMENTAL_HASH = ConstExprHashingUtils::HashString("EXPERIMENTAL");
+        static constexpr uint32_t PULL_REQUEST_HASH = ConstExprHashingUtils::HashString("PULL_REQUEST");
 
 
         Stage GetStageForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRODUCTION_HASH)
           {
             return Stage::PRODUCTION;

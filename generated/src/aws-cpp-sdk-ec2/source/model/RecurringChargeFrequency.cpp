@@ -20,12 +20,12 @@ namespace Aws
       namespace RecurringChargeFrequencyMapper
       {
 
-        static const int Hourly_HASH = HashingUtils::HashString("Hourly");
+        static constexpr uint32_t Hourly_HASH = ConstExprHashingUtils::HashString("Hourly");
 
 
         RecurringChargeFrequency GetRecurringChargeFrequencyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Hourly_HASH)
           {
             return RecurringChargeFrequency::Hourly;

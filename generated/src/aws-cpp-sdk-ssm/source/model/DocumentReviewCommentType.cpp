@@ -20,12 +20,12 @@ namespace Aws
       namespace DocumentReviewCommentTypeMapper
       {
 
-        static const int Comment_HASH = HashingUtils::HashString("Comment");
+        static constexpr uint32_t Comment_HASH = ConstExprHashingUtils::HashString("Comment");
 
 
         DocumentReviewCommentType GetDocumentReviewCommentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Comment_HASH)
           {
             return DocumentReviewCommentType::Comment;

@@ -20,13 +20,13 @@ namespace Aws
       namespace PhoneTypeMapper
       {
 
-        static const int SOFT_PHONE_HASH = HashingUtils::HashString("SOFT_PHONE");
-        static const int DESK_PHONE_HASH = HashingUtils::HashString("DESK_PHONE");
+        static constexpr uint32_t SOFT_PHONE_HASH = ConstExprHashingUtils::HashString("SOFT_PHONE");
+        static constexpr uint32_t DESK_PHONE_HASH = ConstExprHashingUtils::HashString("DESK_PHONE");
 
 
         PhoneType GetPhoneTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SOFT_PHONE_HASH)
           {
             return PhoneType::SOFT_PHONE;

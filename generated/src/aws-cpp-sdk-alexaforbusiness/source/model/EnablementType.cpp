@@ -20,13 +20,13 @@ namespace Aws
       namespace EnablementTypeMapper
       {
 
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
 
 
         EnablementType GetEnablementTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLED_HASH)
           {
             return EnablementType::ENABLED;

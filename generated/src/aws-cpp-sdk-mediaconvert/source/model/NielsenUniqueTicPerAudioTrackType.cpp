@@ -20,13 +20,13 @@ namespace Aws
       namespace NielsenUniqueTicPerAudioTrackTypeMapper
       {
 
-        static const int RESERVE_UNIQUE_TICS_PER_TRACK_HASH = HashingUtils::HashString("RESERVE_UNIQUE_TICS_PER_TRACK");
-        static const int SAME_TICS_PER_TRACK_HASH = HashingUtils::HashString("SAME_TICS_PER_TRACK");
+        static constexpr uint32_t RESERVE_UNIQUE_TICS_PER_TRACK_HASH = ConstExprHashingUtils::HashString("RESERVE_UNIQUE_TICS_PER_TRACK");
+        static constexpr uint32_t SAME_TICS_PER_TRACK_HASH = ConstExprHashingUtils::HashString("SAME_TICS_PER_TRACK");
 
 
         NielsenUniqueTicPerAudioTrackType GetNielsenUniqueTicPerAudioTrackTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESERVE_UNIQUE_TICS_PER_TRACK_HASH)
           {
             return NielsenUniqueTicPerAudioTrackType::RESERVE_UNIQUE_TICS_PER_TRACK;

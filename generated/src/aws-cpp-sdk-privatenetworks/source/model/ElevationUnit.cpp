@@ -20,12 +20,12 @@ namespace Aws
       namespace ElevationUnitMapper
       {
 
-        static const int FEET_HASH = HashingUtils::HashString("FEET");
+        static constexpr uint32_t FEET_HASH = ConstExprHashingUtils::HashString("FEET");
 
 
         ElevationUnit GetElevationUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FEET_HASH)
           {
             return ElevationUnit::FEET;

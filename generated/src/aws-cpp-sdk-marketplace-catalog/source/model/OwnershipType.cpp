@@ -20,13 +20,13 @@ namespace Aws
       namespace OwnershipTypeMapper
       {
 
-        static const int SELF_HASH = HashingUtils::HashString("SELF");
-        static const int SHARED_HASH = HashingUtils::HashString("SHARED");
+        static constexpr uint32_t SELF_HASH = ConstExprHashingUtils::HashString("SELF");
+        static constexpr uint32_t SHARED_HASH = ConstExprHashingUtils::HashString("SHARED");
 
 
         OwnershipType GetOwnershipTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SELF_HASH)
           {
             return OwnershipType::SELF;

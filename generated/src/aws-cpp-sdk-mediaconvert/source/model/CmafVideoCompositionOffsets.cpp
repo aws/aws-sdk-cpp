@@ -20,13 +20,13 @@ namespace Aws
       namespace CmafVideoCompositionOffsetsMapper
       {
 
-        static const int SIGNED_HASH = HashingUtils::HashString("SIGNED");
-        static const int UNSIGNED_HASH = HashingUtils::HashString("UNSIGNED");
+        static constexpr uint32_t SIGNED_HASH = ConstExprHashingUtils::HashString("SIGNED");
+        static constexpr uint32_t UNSIGNED_HASH = ConstExprHashingUtils::HashString("UNSIGNED");
 
 
         CmafVideoCompositionOffsets GetCmafVideoCompositionOffsetsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SIGNED_HASH)
           {
             return CmafVideoCompositionOffsets::SIGNED;

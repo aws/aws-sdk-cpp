@@ -20,21 +20,21 @@ namespace Aws
       namespace GlueRecordTypeMapper
       {
 
-        static const int DATE_HASH = HashingUtils::HashString("DATE");
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
-        static const int TIMESTAMP_HASH = HashingUtils::HashString("TIMESTAMP");
-        static const int INT_HASH = HashingUtils::HashString("INT");
-        static const int FLOAT_HASH = HashingUtils::HashString("FLOAT");
-        static const int LONG_HASH = HashingUtils::HashString("LONG");
-        static const int BIGDECIMAL_HASH = HashingUtils::HashString("BIGDECIMAL");
-        static const int BYTE_HASH = HashingUtils::HashString("BYTE");
-        static const int SHORT_HASH = HashingUtils::HashString("SHORT");
-        static const int DOUBLE_HASH = HashingUtils::HashString("DOUBLE");
+        static constexpr uint32_t DATE_HASH = ConstExprHashingUtils::HashString("DATE");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
+        static constexpr uint32_t TIMESTAMP_HASH = ConstExprHashingUtils::HashString("TIMESTAMP");
+        static constexpr uint32_t INT_HASH = ConstExprHashingUtils::HashString("INT");
+        static constexpr uint32_t FLOAT_HASH = ConstExprHashingUtils::HashString("FLOAT");
+        static constexpr uint32_t LONG_HASH = ConstExprHashingUtils::HashString("LONG");
+        static constexpr uint32_t BIGDECIMAL_HASH = ConstExprHashingUtils::HashString("BIGDECIMAL");
+        static constexpr uint32_t BYTE_HASH = ConstExprHashingUtils::HashString("BYTE");
+        static constexpr uint32_t SHORT_HASH = ConstExprHashingUtils::HashString("SHORT");
+        static constexpr uint32_t DOUBLE_HASH = ConstExprHashingUtils::HashString("DOUBLE");
 
 
         GlueRecordType GetGlueRecordTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DATE_HASH)
           {
             return GlueRecordType::DATE;

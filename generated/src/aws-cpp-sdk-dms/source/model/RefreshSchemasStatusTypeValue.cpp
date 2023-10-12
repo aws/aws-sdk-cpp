@@ -20,14 +20,14 @@ namespace Aws
       namespace RefreshSchemasStatusTypeValueMapper
       {
 
-        static const int successful_HASH = HashingUtils::HashString("successful");
-        static const int failed_HASH = HashingUtils::HashString("failed");
-        static const int refreshing_HASH = HashingUtils::HashString("refreshing");
+        static constexpr uint32_t successful_HASH = ConstExprHashingUtils::HashString("successful");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
+        static constexpr uint32_t refreshing_HASH = ConstExprHashingUtils::HashString("refreshing");
 
 
         RefreshSchemasStatusTypeValue GetRefreshSchemasStatusTypeValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == successful_HASH)
           {
             return RefreshSchemasStatusTypeValue::successful;

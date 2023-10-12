@@ -20,17 +20,17 @@ namespace Aws
       namespace ServiceActionAssociationErrorCodeMapper
       {
 
-        static const int DUPLICATE_RESOURCE_HASH = HashingUtils::HashString("DUPLICATE_RESOURCE");
-        static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
-        static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LIMIT_EXCEEDED");
-        static const int RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("RESOURCE_NOT_FOUND");
-        static const int THROTTLING_HASH = HashingUtils::HashString("THROTTLING");
-        static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("INVALID_PARAMETER");
+        static constexpr uint32_t DUPLICATE_RESOURCE_HASH = ConstExprHashingUtils::HashString("DUPLICATE_RESOURCE");
+        static constexpr uint32_t INTERNAL_FAILURE_HASH = ConstExprHashingUtils::HashString("INTERNAL_FAILURE");
+        static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LIMIT_EXCEEDED");
+        static constexpr uint32_t RESOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("RESOURCE_NOT_FOUND");
+        static constexpr uint32_t THROTTLING_HASH = ConstExprHashingUtils::HashString("THROTTLING");
+        static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("INVALID_PARAMETER");
 
 
         ServiceActionAssociationErrorCode GetServiceActionAssociationErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DUPLICATE_RESOURCE_HASH)
           {
             return ServiceActionAssociationErrorCode::DUPLICATE_RESOURCE;

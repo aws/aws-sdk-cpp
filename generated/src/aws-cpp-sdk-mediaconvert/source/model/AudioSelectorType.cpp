@@ -20,15 +20,15 @@ namespace Aws
       namespace AudioSelectorTypeMapper
       {
 
-        static const int PID_HASH = HashingUtils::HashString("PID");
-        static const int TRACK_HASH = HashingUtils::HashString("TRACK");
-        static const int LANGUAGE_CODE_HASH = HashingUtils::HashString("LANGUAGE_CODE");
-        static const int HLS_RENDITION_GROUP_HASH = HashingUtils::HashString("HLS_RENDITION_GROUP");
+        static constexpr uint32_t PID_HASH = ConstExprHashingUtils::HashString("PID");
+        static constexpr uint32_t TRACK_HASH = ConstExprHashingUtils::HashString("TRACK");
+        static constexpr uint32_t LANGUAGE_CODE_HASH = ConstExprHashingUtils::HashString("LANGUAGE_CODE");
+        static constexpr uint32_t HLS_RENDITION_GROUP_HASH = ConstExprHashingUtils::HashString("HLS_RENDITION_GROUP");
 
 
         AudioSelectorType GetAudioSelectorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PID_HASH)
           {
             return AudioSelectorType::PID;

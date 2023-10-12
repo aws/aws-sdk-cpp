@@ -20,13 +20,13 @@ namespace Aws
       namespace OverrideStatusMapper
       {
 
-        static const int OVERRIDE_HASH = HashingUtils::HashString("OVERRIDE");
-        static const int REVOKE_HASH = HashingUtils::HashString("REVOKE");
+        static constexpr uint32_t OVERRIDE_HASH = ConstExprHashingUtils::HashString("OVERRIDE");
+        static constexpr uint32_t REVOKE_HASH = ConstExprHashingUtils::HashString("REVOKE");
 
 
         OverrideStatus GetOverrideStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OVERRIDE_HASH)
           {
             return OverrideStatus::OVERRIDE;

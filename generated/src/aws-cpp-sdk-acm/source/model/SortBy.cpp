@@ -20,12 +20,12 @@ namespace Aws
       namespace SortByMapper
       {
 
-        static const int CREATED_AT_HASH = HashingUtils::HashString("CREATED_AT");
+        static constexpr uint32_t CREATED_AT_HASH = ConstExprHashingUtils::HashString("CREATED_AT");
 
 
         SortBy GetSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATED_AT_HASH)
           {
             return SortBy::CREATED_AT;

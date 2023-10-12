@@ -20,13 +20,13 @@ namespace Aws
       namespace InvokeModeMapper
       {
 
-        static const int BUFFERED_HASH = HashingUtils::HashString("BUFFERED");
-        static const int RESPONSE_STREAM_HASH = HashingUtils::HashString("RESPONSE_STREAM");
+        static constexpr uint32_t BUFFERED_HASH = ConstExprHashingUtils::HashString("BUFFERED");
+        static constexpr uint32_t RESPONSE_STREAM_HASH = ConstExprHashingUtils::HashString("RESPONSE_STREAM");
 
 
         InvokeMode GetInvokeModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BUFFERED_HASH)
           {
             return InvokeMode::BUFFERED;

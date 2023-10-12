@@ -20,15 +20,15 @@ namespace Aws
       namespace FlowExecutionStatusMapper
       {
 
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int ABORTED_HASH = HashingUtils::HashString("ABORTED");
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t ABORTED_HASH = ConstExprHashingUtils::HashString("ABORTED");
+        static constexpr uint32_t SUCCEEDED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         FlowExecutionStatus GetFlowExecutionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RUNNING_HASH)
           {
             return FlowExecutionStatus::RUNNING;

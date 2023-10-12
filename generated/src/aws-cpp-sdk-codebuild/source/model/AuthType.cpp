@@ -20,14 +20,14 @@ namespace Aws
       namespace AuthTypeMapper
       {
 
-        static const int OAUTH_HASH = HashingUtils::HashString("OAUTH");
-        static const int BASIC_AUTH_HASH = HashingUtils::HashString("BASIC_AUTH");
-        static const int PERSONAL_ACCESS_TOKEN_HASH = HashingUtils::HashString("PERSONAL_ACCESS_TOKEN");
+        static constexpr uint32_t OAUTH_HASH = ConstExprHashingUtils::HashString("OAUTH");
+        static constexpr uint32_t BASIC_AUTH_HASH = ConstExprHashingUtils::HashString("BASIC_AUTH");
+        static constexpr uint32_t PERSONAL_ACCESS_TOKEN_HASH = ConstExprHashingUtils::HashString("PERSONAL_ACCESS_TOKEN");
 
 
         AuthType GetAuthTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OAUTH_HASH)
           {
             return AuthType::OAUTH;

@@ -20,13 +20,13 @@ namespace Aws
       namespace InterfacePermissionTypeMapper
       {
 
-        static const int INSTANCE_ATTACH_HASH = HashingUtils::HashString("INSTANCE-ATTACH");
-        static const int EIP_ASSOCIATE_HASH = HashingUtils::HashString("EIP-ASSOCIATE");
+        static constexpr uint32_t INSTANCE_ATTACH_HASH = ConstExprHashingUtils::HashString("INSTANCE-ATTACH");
+        static constexpr uint32_t EIP_ASSOCIATE_HASH = ConstExprHashingUtils::HashString("EIP-ASSOCIATE");
 
 
         InterfacePermissionType GetInterfacePermissionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSTANCE_ATTACH_HASH)
           {
             return InterfacePermissionType::INSTANCE_ATTACH;

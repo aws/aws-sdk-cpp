@@ -20,19 +20,19 @@ namespace Aws
       namespace KeyStateMapper
       {
 
-        static const int Creating_HASH = HashingUtils::HashString("Creating");
-        static const int Enabled_HASH = HashingUtils::HashString("Enabled");
-        static const int Disabled_HASH = HashingUtils::HashString("Disabled");
-        static const int PendingDeletion_HASH = HashingUtils::HashString("PendingDeletion");
-        static const int PendingImport_HASH = HashingUtils::HashString("PendingImport");
-        static const int PendingReplicaDeletion_HASH = HashingUtils::HashString("PendingReplicaDeletion");
-        static const int Unavailable_HASH = HashingUtils::HashString("Unavailable");
-        static const int Updating_HASH = HashingUtils::HashString("Updating");
+        static constexpr uint32_t Creating_HASH = ConstExprHashingUtils::HashString("Creating");
+        static constexpr uint32_t Enabled_HASH = ConstExprHashingUtils::HashString("Enabled");
+        static constexpr uint32_t Disabled_HASH = ConstExprHashingUtils::HashString("Disabled");
+        static constexpr uint32_t PendingDeletion_HASH = ConstExprHashingUtils::HashString("PendingDeletion");
+        static constexpr uint32_t PendingImport_HASH = ConstExprHashingUtils::HashString("PendingImport");
+        static constexpr uint32_t PendingReplicaDeletion_HASH = ConstExprHashingUtils::HashString("PendingReplicaDeletion");
+        static constexpr uint32_t Unavailable_HASH = ConstExprHashingUtils::HashString("Unavailable");
+        static constexpr uint32_t Updating_HASH = ConstExprHashingUtils::HashString("Updating");
 
 
         KeyState GetKeyStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Creating_HASH)
           {
             return KeyState::Creating;

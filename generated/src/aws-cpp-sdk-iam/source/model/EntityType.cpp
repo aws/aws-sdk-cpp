@@ -20,16 +20,16 @@ namespace Aws
       namespace EntityTypeMapper
       {
 
-        static const int User_HASH = HashingUtils::HashString("User");
-        static const int Role_HASH = HashingUtils::HashString("Role");
-        static const int Group_HASH = HashingUtils::HashString("Group");
-        static const int LocalManagedPolicy_HASH = HashingUtils::HashString("LocalManagedPolicy");
-        static const int AWSManagedPolicy_HASH = HashingUtils::HashString("AWSManagedPolicy");
+        static constexpr uint32_t User_HASH = ConstExprHashingUtils::HashString("User");
+        static constexpr uint32_t Role_HASH = ConstExprHashingUtils::HashString("Role");
+        static constexpr uint32_t Group_HASH = ConstExprHashingUtils::HashString("Group");
+        static constexpr uint32_t LocalManagedPolicy_HASH = ConstExprHashingUtils::HashString("LocalManagedPolicy");
+        static constexpr uint32_t AWSManagedPolicy_HASH = ConstExprHashingUtils::HashString("AWSManagedPolicy");
 
 
         EntityType GetEntityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == User_HASH)
           {
             return EntityType::User;

@@ -20,12 +20,12 @@ namespace Aws
       namespace RecommendationTriggerTypeMapper
       {
 
-        static const int QUERY_HASH = HashingUtils::HashString("QUERY");
+        static constexpr uint32_t QUERY_HASH = ConstExprHashingUtils::HashString("QUERY");
 
 
         RecommendationTriggerType GetRecommendationTriggerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUERY_HASH)
           {
             return RecommendationTriggerType::QUERY;

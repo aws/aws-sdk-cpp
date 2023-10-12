@@ -20,14 +20,14 @@ namespace Aws
       namespace ShareStatusMapper
       {
 
-        static const int NOT_SHARED_HASH = HashingUtils::HashString("NOT_SHARED");
-        static const int SHARED_WITH_ME_HASH = HashingUtils::HashString("SHARED_WITH_ME");
-        static const int SHARED_BY_ME_HASH = HashingUtils::HashString("SHARED_BY_ME");
+        static constexpr uint32_t NOT_SHARED_HASH = ConstExprHashingUtils::HashString("NOT_SHARED");
+        static constexpr uint32_t SHARED_WITH_ME_HASH = ConstExprHashingUtils::HashString("SHARED_WITH_ME");
+        static constexpr uint32_t SHARED_BY_ME_HASH = ConstExprHashingUtils::HashString("SHARED_BY_ME");
 
 
         ShareStatus GetShareStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOT_SHARED_HASH)
           {
             return ShareStatus::NOT_SHARED;

@@ -20,13 +20,13 @@ namespace Aws
       namespace AddOnTypeMapper
       {
 
-        static const int AutoSnapshot_HASH = HashingUtils::HashString("AutoSnapshot");
-        static const int StopInstanceOnIdle_HASH = HashingUtils::HashString("StopInstanceOnIdle");
+        static constexpr uint32_t AutoSnapshot_HASH = ConstExprHashingUtils::HashString("AutoSnapshot");
+        static constexpr uint32_t StopInstanceOnIdle_HASH = ConstExprHashingUtils::HashString("StopInstanceOnIdle");
 
 
         AddOnType GetAddOnTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AutoSnapshot_HASH)
           {
             return AddOnType::AutoSnapshot;

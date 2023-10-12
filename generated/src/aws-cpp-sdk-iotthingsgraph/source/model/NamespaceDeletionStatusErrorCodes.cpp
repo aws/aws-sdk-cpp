@@ -20,12 +20,12 @@ namespace Aws
       namespace NamespaceDeletionStatusErrorCodesMapper
       {
 
-        static const int VALIDATION_FAILED_HASH = HashingUtils::HashString("VALIDATION_FAILED");
+        static constexpr uint32_t VALIDATION_FAILED_HASH = ConstExprHashingUtils::HashString("VALIDATION_FAILED");
 
 
         NamespaceDeletionStatusErrorCodes GetNamespaceDeletionStatusErrorCodesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VALIDATION_FAILED_HASH)
           {
             return NamespaceDeletionStatusErrorCodes::VALIDATION_FAILED;

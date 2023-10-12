@@ -20,12 +20,12 @@ namespace Aws
       namespace OverrideActionMapper
       {
 
-        static const int DROP_TO_ALERT_HASH = HashingUtils::HashString("DROP_TO_ALERT");
+        static constexpr uint32_t DROP_TO_ALERT_HASH = ConstExprHashingUtils::HashString("DROP_TO_ALERT");
 
 
         OverrideAction GetOverrideActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DROP_TO_ALERT_HASH)
           {
             return OverrideAction::DROP_TO_ALERT;

@@ -20,23 +20,23 @@ namespace Aws
       namespace MetricNameMapper
       {
 
-        static const int ActivatingGameSessions_HASH = HashingUtils::HashString("ActivatingGameSessions");
-        static const int ActiveGameSessions_HASH = HashingUtils::HashString("ActiveGameSessions");
-        static const int ActiveInstances_HASH = HashingUtils::HashString("ActiveInstances");
-        static const int AvailableGameSessions_HASH = HashingUtils::HashString("AvailableGameSessions");
-        static const int AvailablePlayerSessions_HASH = HashingUtils::HashString("AvailablePlayerSessions");
-        static const int CurrentPlayerSessions_HASH = HashingUtils::HashString("CurrentPlayerSessions");
-        static const int IdleInstances_HASH = HashingUtils::HashString("IdleInstances");
-        static const int PercentAvailableGameSessions_HASH = HashingUtils::HashString("PercentAvailableGameSessions");
-        static const int PercentIdleInstances_HASH = HashingUtils::HashString("PercentIdleInstances");
-        static const int QueueDepth_HASH = HashingUtils::HashString("QueueDepth");
-        static const int WaitTime_HASH = HashingUtils::HashString("WaitTime");
-        static const int ConcurrentActivatableGameSessions_HASH = HashingUtils::HashString("ConcurrentActivatableGameSessions");
+        static constexpr uint32_t ActivatingGameSessions_HASH = ConstExprHashingUtils::HashString("ActivatingGameSessions");
+        static constexpr uint32_t ActiveGameSessions_HASH = ConstExprHashingUtils::HashString("ActiveGameSessions");
+        static constexpr uint32_t ActiveInstances_HASH = ConstExprHashingUtils::HashString("ActiveInstances");
+        static constexpr uint32_t AvailableGameSessions_HASH = ConstExprHashingUtils::HashString("AvailableGameSessions");
+        static constexpr uint32_t AvailablePlayerSessions_HASH = ConstExprHashingUtils::HashString("AvailablePlayerSessions");
+        static constexpr uint32_t CurrentPlayerSessions_HASH = ConstExprHashingUtils::HashString("CurrentPlayerSessions");
+        static constexpr uint32_t IdleInstances_HASH = ConstExprHashingUtils::HashString("IdleInstances");
+        static constexpr uint32_t PercentAvailableGameSessions_HASH = ConstExprHashingUtils::HashString("PercentAvailableGameSessions");
+        static constexpr uint32_t PercentIdleInstances_HASH = ConstExprHashingUtils::HashString("PercentIdleInstances");
+        static constexpr uint32_t QueueDepth_HASH = ConstExprHashingUtils::HashString("QueueDepth");
+        static constexpr uint32_t WaitTime_HASH = ConstExprHashingUtils::HashString("WaitTime");
+        static constexpr uint32_t ConcurrentActivatableGameSessions_HASH = ConstExprHashingUtils::HashString("ConcurrentActivatableGameSessions");
 
 
         MetricName GetMetricNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ActivatingGameSessions_HASH)
           {
             return MetricName::ActivatingGameSessions;

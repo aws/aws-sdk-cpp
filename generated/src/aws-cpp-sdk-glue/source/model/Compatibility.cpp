@@ -20,19 +20,19 @@ namespace Aws
       namespace CompatibilityMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int BACKWARD_HASH = HashingUtils::HashString("BACKWARD");
-        static const int BACKWARD_ALL_HASH = HashingUtils::HashString("BACKWARD_ALL");
-        static const int FORWARD_HASH = HashingUtils::HashString("FORWARD");
-        static const int FORWARD_ALL_HASH = HashingUtils::HashString("FORWARD_ALL");
-        static const int FULL_HASH = HashingUtils::HashString("FULL");
-        static const int FULL_ALL_HASH = HashingUtils::HashString("FULL_ALL");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t BACKWARD_HASH = ConstExprHashingUtils::HashString("BACKWARD");
+        static constexpr uint32_t BACKWARD_ALL_HASH = ConstExprHashingUtils::HashString("BACKWARD_ALL");
+        static constexpr uint32_t FORWARD_HASH = ConstExprHashingUtils::HashString("FORWARD");
+        static constexpr uint32_t FORWARD_ALL_HASH = ConstExprHashingUtils::HashString("FORWARD_ALL");
+        static constexpr uint32_t FULL_HASH = ConstExprHashingUtils::HashString("FULL");
+        static constexpr uint32_t FULL_ALL_HASH = ConstExprHashingUtils::HashString("FULL_ALL");
 
 
         Compatibility GetCompatibilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return Compatibility::NONE;

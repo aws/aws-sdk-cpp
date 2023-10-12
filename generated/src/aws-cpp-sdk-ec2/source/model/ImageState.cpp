@@ -20,19 +20,19 @@ namespace Aws
       namespace ImageStateMapper
       {
 
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int available_HASH = HashingUtils::HashString("available");
-        static const int invalid_HASH = HashingUtils::HashString("invalid");
-        static const int deregistered_HASH = HashingUtils::HashString("deregistered");
-        static const int transient_HASH = HashingUtils::HashString("transient");
-        static const int failed_HASH = HashingUtils::HashString("failed");
-        static const int error_HASH = HashingUtils::HashString("error");
-        static const int disabled_HASH = HashingUtils::HashString("disabled");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t available_HASH = ConstExprHashingUtils::HashString("available");
+        static constexpr uint32_t invalid_HASH = ConstExprHashingUtils::HashString("invalid");
+        static constexpr uint32_t deregistered_HASH = ConstExprHashingUtils::HashString("deregistered");
+        static constexpr uint32_t transient_HASH = ConstExprHashingUtils::HashString("transient");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
+        static constexpr uint32_t error_HASH = ConstExprHashingUtils::HashString("error");
+        static constexpr uint32_t disabled_HASH = ConstExprHashingUtils::HashString("disabled");
 
 
         ImageState GetImageStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pending_HASH)
           {
             return ImageState::pending;

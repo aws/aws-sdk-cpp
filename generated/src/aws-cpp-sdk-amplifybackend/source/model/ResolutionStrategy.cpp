@@ -20,15 +20,15 @@ namespace Aws
       namespace ResolutionStrategyMapper
       {
 
-        static const int OPTIMISTIC_CONCURRENCY_HASH = HashingUtils::HashString("OPTIMISTIC_CONCURRENCY");
-        static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
-        static const int AUTOMERGE_HASH = HashingUtils::HashString("AUTOMERGE");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t OPTIMISTIC_CONCURRENCY_HASH = ConstExprHashingUtils::HashString("OPTIMISTIC_CONCURRENCY");
+        static constexpr uint32_t LAMBDA_HASH = ConstExprHashingUtils::HashString("LAMBDA");
+        static constexpr uint32_t AUTOMERGE_HASH = ConstExprHashingUtils::HashString("AUTOMERGE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         ResolutionStrategy GetResolutionStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OPTIMISTIC_CONCURRENCY_HASH)
           {
             return ResolutionStrategy::OPTIMISTIC_CONCURRENCY;

@@ -20,14 +20,14 @@ namespace Aws
       namespace TableCellImageScalingConfigurationMapper
       {
 
-        static const int FIT_TO_CELL_HEIGHT_HASH = HashingUtils::HashString("FIT_TO_CELL_HEIGHT");
-        static const int FIT_TO_CELL_WIDTH_HASH = HashingUtils::HashString("FIT_TO_CELL_WIDTH");
-        static const int DO_NOT_SCALE_HASH = HashingUtils::HashString("DO_NOT_SCALE");
+        static constexpr uint32_t FIT_TO_CELL_HEIGHT_HASH = ConstExprHashingUtils::HashString("FIT_TO_CELL_HEIGHT");
+        static constexpr uint32_t FIT_TO_CELL_WIDTH_HASH = ConstExprHashingUtils::HashString("FIT_TO_CELL_WIDTH");
+        static constexpr uint32_t DO_NOT_SCALE_HASH = ConstExprHashingUtils::HashString("DO_NOT_SCALE");
 
 
         TableCellImageScalingConfiguration GetTableCellImageScalingConfigurationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FIT_TO_CELL_HEIGHT_HASH)
           {
             return TableCellImageScalingConfiguration::FIT_TO_CELL_HEIGHT;

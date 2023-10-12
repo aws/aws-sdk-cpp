@@ -20,13 +20,13 @@ namespace Aws
       namespace OriginAccessControlOriginTypesMapper
       {
 
-        static const int s3_HASH = HashingUtils::HashString("s3");
-        static const int mediastore_HASH = HashingUtils::HashString("mediastore");
+        static constexpr uint32_t s3_HASH = ConstExprHashingUtils::HashString("s3");
+        static constexpr uint32_t mediastore_HASH = ConstExprHashingUtils::HashString("mediastore");
 
 
         OriginAccessControlOriginTypes GetOriginAccessControlOriginTypesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == s3_HASH)
           {
             return OriginAccessControlOriginTypes::s3;

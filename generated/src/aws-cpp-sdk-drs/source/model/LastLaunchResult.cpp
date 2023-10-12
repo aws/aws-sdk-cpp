@@ -20,15 +20,15 @@ namespace Aws
       namespace LastLaunchResultMapper
       {
 
-        static const int NOT_STARTED_HASH = HashingUtils::HashString("NOT_STARTED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t NOT_STARTED_HASH = ConstExprHashingUtils::HashString("NOT_STARTED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t SUCCEEDED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         LastLaunchResult GetLastLaunchResultForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOT_STARTED_HASH)
           {
             return LastLaunchResult::NOT_STARTED;

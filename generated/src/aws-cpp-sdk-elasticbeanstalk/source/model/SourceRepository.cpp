@@ -20,13 +20,13 @@ namespace Aws
       namespace SourceRepositoryMapper
       {
 
-        static const int CodeCommit_HASH = HashingUtils::HashString("CodeCommit");
-        static const int S3_HASH = HashingUtils::HashString("S3");
+        static constexpr uint32_t CodeCommit_HASH = ConstExprHashingUtils::HashString("CodeCommit");
+        static constexpr uint32_t S3_HASH = ConstExprHashingUtils::HashString("S3");
 
 
         SourceRepository GetSourceRepositoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CodeCommit_HASH)
           {
             return SourceRepository::CodeCommit;

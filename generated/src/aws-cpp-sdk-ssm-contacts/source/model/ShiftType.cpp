@@ -20,13 +20,13 @@ namespace Aws
       namespace ShiftTypeMapper
       {
 
-        static const int REGULAR_HASH = HashingUtils::HashString("REGULAR");
-        static const int OVERRIDDEN_HASH = HashingUtils::HashString("OVERRIDDEN");
+        static constexpr uint32_t REGULAR_HASH = ConstExprHashingUtils::HashString("REGULAR");
+        static constexpr uint32_t OVERRIDDEN_HASH = ConstExprHashingUtils::HashString("OVERRIDDEN");
 
 
         ShiftType GetShiftTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REGULAR_HASH)
           {
             return ShiftType::REGULAR;

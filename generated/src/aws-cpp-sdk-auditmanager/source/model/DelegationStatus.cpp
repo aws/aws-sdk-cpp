@@ -20,14 +20,14 @@ namespace Aws
       namespace DelegationStatusMapper
       {
 
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int UNDER_REVIEW_HASH = HashingUtils::HashString("UNDER_REVIEW");
-        static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t UNDER_REVIEW_HASH = ConstExprHashingUtils::HashString("UNDER_REVIEW");
+        static constexpr uint32_t COMPLETE_HASH = ConstExprHashingUtils::HashString("COMPLETE");
 
 
         DelegationStatus GetDelegationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IN_PROGRESS_HASH)
           {
             return DelegationStatus::IN_PROGRESS;

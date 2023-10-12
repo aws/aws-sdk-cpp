@@ -20,21 +20,21 @@ namespace Aws
       namespace TargetTypeMapper
       {
 
-        static const int GATEWAY_HASH = HashingUtils::HashString("GATEWAY");
-        static const int CARRIER_GATEWAY_HASH = HashingUtils::HashString("CARRIER_GATEWAY");
-        static const int INSTANCE_HASH = HashingUtils::HashString("INSTANCE");
-        static const int LOCAL_GATEWAY_HASH = HashingUtils::HashString("LOCAL_GATEWAY");
-        static const int NAT_GATEWAY_HASH = HashingUtils::HashString("NAT_GATEWAY");
-        static const int NETWORK_INTERFACE_HASH = HashingUtils::HashString("NETWORK_INTERFACE");
-        static const int VPC_ENDPOINT_HASH = HashingUtils::HashString("VPC_ENDPOINT");
-        static const int VPC_PEERING_CONNECTION_HASH = HashingUtils::HashString("VPC_PEERING_CONNECTION");
-        static const int EGRESS_ONLY_INTERNET_GATEWAY_HASH = HashingUtils::HashString("EGRESS_ONLY_INTERNET_GATEWAY");
-        static const int TRANSIT_GATEWAY_HASH = HashingUtils::HashString("TRANSIT_GATEWAY");
+        static constexpr uint32_t GATEWAY_HASH = ConstExprHashingUtils::HashString("GATEWAY");
+        static constexpr uint32_t CARRIER_GATEWAY_HASH = ConstExprHashingUtils::HashString("CARRIER_GATEWAY");
+        static constexpr uint32_t INSTANCE_HASH = ConstExprHashingUtils::HashString("INSTANCE");
+        static constexpr uint32_t LOCAL_GATEWAY_HASH = ConstExprHashingUtils::HashString("LOCAL_GATEWAY");
+        static constexpr uint32_t NAT_GATEWAY_HASH = ConstExprHashingUtils::HashString("NAT_GATEWAY");
+        static constexpr uint32_t NETWORK_INTERFACE_HASH = ConstExprHashingUtils::HashString("NETWORK_INTERFACE");
+        static constexpr uint32_t VPC_ENDPOINT_HASH = ConstExprHashingUtils::HashString("VPC_ENDPOINT");
+        static constexpr uint32_t VPC_PEERING_CONNECTION_HASH = ConstExprHashingUtils::HashString("VPC_PEERING_CONNECTION");
+        static constexpr uint32_t EGRESS_ONLY_INTERNET_GATEWAY_HASH = ConstExprHashingUtils::HashString("EGRESS_ONLY_INTERNET_GATEWAY");
+        static constexpr uint32_t TRANSIT_GATEWAY_HASH = ConstExprHashingUtils::HashString("TRANSIT_GATEWAY");
 
 
         TargetType GetTargetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GATEWAY_HASH)
           {
             return TargetType::GATEWAY;

@@ -20,13 +20,13 @@ namespace Aws
       namespace StandbyWorkspaceRelationshipTypeMapper
       {
 
-        static const int PRIMARY_HASH = HashingUtils::HashString("PRIMARY");
-        static const int STANDBY_HASH = HashingUtils::HashString("STANDBY");
+        static constexpr uint32_t PRIMARY_HASH = ConstExprHashingUtils::HashString("PRIMARY");
+        static constexpr uint32_t STANDBY_HASH = ConstExprHashingUtils::HashString("STANDBY");
 
 
         StandbyWorkspaceRelationshipType GetStandbyWorkspaceRelationshipTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRIMARY_HASH)
           {
             return StandbyWorkspaceRelationshipType::PRIMARY;

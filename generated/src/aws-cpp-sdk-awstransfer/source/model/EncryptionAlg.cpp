@@ -20,15 +20,15 @@ namespace Aws
       namespace EncryptionAlgMapper
       {
 
-        static const int AES128_CBC_HASH = HashingUtils::HashString("AES128_CBC");
-        static const int AES192_CBC_HASH = HashingUtils::HashString("AES192_CBC");
-        static const int AES256_CBC_HASH = HashingUtils::HashString("AES256_CBC");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t AES128_CBC_HASH = ConstExprHashingUtils::HashString("AES128_CBC");
+        static constexpr uint32_t AES192_CBC_HASH = ConstExprHashingUtils::HashString("AES192_CBC");
+        static constexpr uint32_t AES256_CBC_HASH = ConstExprHashingUtils::HashString("AES256_CBC");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         EncryptionAlg GetEncryptionAlgForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AES128_CBC_HASH)
           {
             return EncryptionAlg::AES128_CBC;

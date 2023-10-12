@@ -20,12 +20,12 @@ namespace Aws
       namespace SourceAuthTypeMapper
       {
 
-        static const int OAUTH_HASH = HashingUtils::HashString("OAUTH");
+        static constexpr uint32_t OAUTH_HASH = ConstExprHashingUtils::HashString("OAUTH");
 
 
         SourceAuthType GetSourceAuthTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OAUTH_HASH)
           {
             return SourceAuthType::OAUTH;

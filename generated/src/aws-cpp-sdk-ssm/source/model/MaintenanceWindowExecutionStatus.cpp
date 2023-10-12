@@ -20,19 +20,19 @@ namespace Aws
       namespace MaintenanceWindowExecutionStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
-        static const int CANCELLING_HASH = HashingUtils::HashString("CANCELLING");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-        static const int SKIPPED_OVERLAPPING_HASH = HashingUtils::HashString("SKIPPED_OVERLAPPING");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t TIMED_OUT_HASH = ConstExprHashingUtils::HashString("TIMED_OUT");
+        static constexpr uint32_t CANCELLING_HASH = ConstExprHashingUtils::HashString("CANCELLING");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t SKIPPED_OVERLAPPING_HASH = ConstExprHashingUtils::HashString("SKIPPED_OVERLAPPING");
 
 
         MaintenanceWindowExecutionStatus GetMaintenanceWindowExecutionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return MaintenanceWindowExecutionStatus::PENDING;

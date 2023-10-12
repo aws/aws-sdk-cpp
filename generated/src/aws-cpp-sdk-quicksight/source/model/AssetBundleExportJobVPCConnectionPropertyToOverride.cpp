@@ -20,14 +20,14 @@ namespace Aws
       namespace AssetBundleExportJobVPCConnectionPropertyToOverrideMapper
       {
 
-        static const int Name_HASH = HashingUtils::HashString("Name");
-        static const int DnsResolvers_HASH = HashingUtils::HashString("DnsResolvers");
-        static const int RoleArn_HASH = HashingUtils::HashString("RoleArn");
+        static constexpr uint32_t Name_HASH = ConstExprHashingUtils::HashString("Name");
+        static constexpr uint32_t DnsResolvers_HASH = ConstExprHashingUtils::HashString("DnsResolvers");
+        static constexpr uint32_t RoleArn_HASH = ConstExprHashingUtils::HashString("RoleArn");
 
 
         AssetBundleExportJobVPCConnectionPropertyToOverride GetAssetBundleExportJobVPCConnectionPropertyToOverrideForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Name_HASH)
           {
             return AssetBundleExportJobVPCConnectionPropertyToOverride::Name;

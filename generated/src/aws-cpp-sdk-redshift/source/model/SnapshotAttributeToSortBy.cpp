@@ -20,14 +20,14 @@ namespace Aws
       namespace SnapshotAttributeToSortByMapper
       {
 
-        static const int SOURCE_TYPE_HASH = HashingUtils::HashString("SOURCE_TYPE");
-        static const int TOTAL_SIZE_HASH = HashingUtils::HashString("TOTAL_SIZE");
-        static const int CREATE_TIME_HASH = HashingUtils::HashString("CREATE_TIME");
+        static constexpr uint32_t SOURCE_TYPE_HASH = ConstExprHashingUtils::HashString("SOURCE_TYPE");
+        static constexpr uint32_t TOTAL_SIZE_HASH = ConstExprHashingUtils::HashString("TOTAL_SIZE");
+        static constexpr uint32_t CREATE_TIME_HASH = ConstExprHashingUtils::HashString("CREATE_TIME");
 
 
         SnapshotAttributeToSortBy GetSnapshotAttributeToSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SOURCE_TYPE_HASH)
           {
             return SnapshotAttributeToSortBy::SOURCE_TYPE;

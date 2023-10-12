@@ -20,23 +20,23 @@ namespace Aws
       namespace ExtendedKeyUsageNameMapper
       {
 
-        static const int TLS_WEB_SERVER_AUTHENTICATION_HASH = HashingUtils::HashString("TLS_WEB_SERVER_AUTHENTICATION");
-        static const int TLS_WEB_CLIENT_AUTHENTICATION_HASH = HashingUtils::HashString("TLS_WEB_CLIENT_AUTHENTICATION");
-        static const int CODE_SIGNING_HASH = HashingUtils::HashString("CODE_SIGNING");
-        static const int EMAIL_PROTECTION_HASH = HashingUtils::HashString("EMAIL_PROTECTION");
-        static const int TIME_STAMPING_HASH = HashingUtils::HashString("TIME_STAMPING");
-        static const int OCSP_SIGNING_HASH = HashingUtils::HashString("OCSP_SIGNING");
-        static const int IPSEC_END_SYSTEM_HASH = HashingUtils::HashString("IPSEC_END_SYSTEM");
-        static const int IPSEC_TUNNEL_HASH = HashingUtils::HashString("IPSEC_TUNNEL");
-        static const int IPSEC_USER_HASH = HashingUtils::HashString("IPSEC_USER");
-        static const int ANY_HASH = HashingUtils::HashString("ANY");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t TLS_WEB_SERVER_AUTHENTICATION_HASH = ConstExprHashingUtils::HashString("TLS_WEB_SERVER_AUTHENTICATION");
+        static constexpr uint32_t TLS_WEB_CLIENT_AUTHENTICATION_HASH = ConstExprHashingUtils::HashString("TLS_WEB_CLIENT_AUTHENTICATION");
+        static constexpr uint32_t CODE_SIGNING_HASH = ConstExprHashingUtils::HashString("CODE_SIGNING");
+        static constexpr uint32_t EMAIL_PROTECTION_HASH = ConstExprHashingUtils::HashString("EMAIL_PROTECTION");
+        static constexpr uint32_t TIME_STAMPING_HASH = ConstExprHashingUtils::HashString("TIME_STAMPING");
+        static constexpr uint32_t OCSP_SIGNING_HASH = ConstExprHashingUtils::HashString("OCSP_SIGNING");
+        static constexpr uint32_t IPSEC_END_SYSTEM_HASH = ConstExprHashingUtils::HashString("IPSEC_END_SYSTEM");
+        static constexpr uint32_t IPSEC_TUNNEL_HASH = ConstExprHashingUtils::HashString("IPSEC_TUNNEL");
+        static constexpr uint32_t IPSEC_USER_HASH = ConstExprHashingUtils::HashString("IPSEC_USER");
+        static constexpr uint32_t ANY_HASH = ConstExprHashingUtils::HashString("ANY");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
 
 
         ExtendedKeyUsageName GetExtendedKeyUsageNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TLS_WEB_SERVER_AUTHENTICATION_HASH)
           {
             return ExtendedKeyUsageName::TLS_WEB_SERVER_AUTHENTICATION;

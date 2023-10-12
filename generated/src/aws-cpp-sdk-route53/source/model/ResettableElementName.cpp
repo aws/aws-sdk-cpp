@@ -20,15 +20,15 @@ namespace Aws
       namespace ResettableElementNameMapper
       {
 
-        static const int FullyQualifiedDomainName_HASH = HashingUtils::HashString("FullyQualifiedDomainName");
-        static const int Regions_HASH = HashingUtils::HashString("Regions");
-        static const int ResourcePath_HASH = HashingUtils::HashString("ResourcePath");
-        static const int ChildHealthChecks_HASH = HashingUtils::HashString("ChildHealthChecks");
+        static constexpr uint32_t FullyQualifiedDomainName_HASH = ConstExprHashingUtils::HashString("FullyQualifiedDomainName");
+        static constexpr uint32_t Regions_HASH = ConstExprHashingUtils::HashString("Regions");
+        static constexpr uint32_t ResourcePath_HASH = ConstExprHashingUtils::HashString("ResourcePath");
+        static constexpr uint32_t ChildHealthChecks_HASH = ConstExprHashingUtils::HashString("ChildHealthChecks");
 
 
         ResettableElementName GetResettableElementNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FullyQualifiedDomainName_HASH)
           {
             return ResettableElementName::FullyQualifiedDomainName;

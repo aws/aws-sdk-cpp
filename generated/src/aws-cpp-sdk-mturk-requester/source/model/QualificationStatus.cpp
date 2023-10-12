@@ -20,13 +20,13 @@ namespace Aws
       namespace QualificationStatusMapper
       {
 
-        static const int Granted_HASH = HashingUtils::HashString("Granted");
-        static const int Revoked_HASH = HashingUtils::HashString("Revoked");
+        static constexpr uint32_t Granted_HASH = ConstExprHashingUtils::HashString("Granted");
+        static constexpr uint32_t Revoked_HASH = ConstExprHashingUtils::HashString("Revoked");
 
 
         QualificationStatus GetQualificationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Granted_HASH)
           {
             return QualificationStatus::Granted;

@@ -20,13 +20,13 @@ namespace Aws
       namespace DQTransformOutputMapper
       {
 
-        static const int PrimaryInput_HASH = HashingUtils::HashString("PrimaryInput");
-        static const int EvaluationResults_HASH = HashingUtils::HashString("EvaluationResults");
+        static constexpr uint32_t PrimaryInput_HASH = ConstExprHashingUtils::HashString("PrimaryInput");
+        static constexpr uint32_t EvaluationResults_HASH = ConstExprHashingUtils::HashString("EvaluationResults");
 
 
         DQTransformOutput GetDQTransformOutputForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PrimaryInput_HASH)
           {
             return DQTransformOutput::PrimaryInput;

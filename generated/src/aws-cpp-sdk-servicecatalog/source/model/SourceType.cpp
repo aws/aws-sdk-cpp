@@ -20,12 +20,12 @@ namespace Aws
       namespace SourceTypeMapper
       {
 
-        static const int CODESTAR_HASH = HashingUtils::HashString("CODESTAR");
+        static constexpr uint32_t CODESTAR_HASH = ConstExprHashingUtils::HashString("CODESTAR");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CODESTAR_HASH)
           {
             return SourceType::CODESTAR;

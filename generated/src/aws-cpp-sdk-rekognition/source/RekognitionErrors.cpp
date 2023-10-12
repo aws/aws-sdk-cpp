@@ -26,29 +26,29 @@ template<> AWS_REKOGNITION_API HumanLoopQuotaExceededException RekognitionError:
 namespace RekognitionErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int IMAGE_TOO_LARGE_HASH = HashingUtils::HashString("ImageTooLargeException");
-static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
-static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
-static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INVALID_POLICY_REVISION_ID_HASH = HashingUtils::HashString("InvalidPolicyRevisionIdException");
-static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("InvalidPaginationTokenException");
-static const int SESSION_NOT_FOUND_HASH = HashingUtils::HashString("SessionNotFoundException");
-static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocumentException");
-static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("ProvisionedThroughputExceededException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int VIDEO_TOO_LARGE_HASH = HashingUtils::HashString("VideoTooLargeException");
-static const int INVALID_S3_OBJECT_HASH = HashingUtils::HashString("InvalidS3ObjectException");
-static const int INVALID_IMAGE_FORMAT_HASH = HashingUtils::HashString("InvalidImageFormatException");
-static const int HUMAN_LOOP_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("HumanLoopQuotaExceededException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t IMAGE_TOO_LARGE_HASH = ConstExprHashingUtils::HashString("ImageTooLargeException");
+static constexpr uint32_t RESOURCE_NOT_READY_HASH = ConstExprHashingUtils::HashString("ResourceNotReadyException");
+static constexpr uint32_t RESOURCE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ResourceAlreadyExistsException");
+static constexpr uint32_t IDEMPOTENT_PARAMETER_MISMATCH_HASH = ConstExprHashingUtils::HashString("IdempotentParameterMismatchException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t INVALID_POLICY_REVISION_ID_HASH = ConstExprHashingUtils::HashString("InvalidPolicyRevisionIdException");
+static constexpr uint32_t INVALID_PAGINATION_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidPaginationTokenException");
+static constexpr uint32_t SESSION_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SessionNotFoundException");
+static constexpr uint32_t MALFORMED_POLICY_DOCUMENT_HASH = ConstExprHashingUtils::HashString("MalformedPolicyDocumentException");
+static constexpr uint32_t SERVICE_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ServiceQuotaExceededException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t PROVISIONED_THROUGHPUT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ProvisionedThroughputExceededException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t VIDEO_TOO_LARGE_HASH = ConstExprHashingUtils::HashString("VideoTooLargeException");
+static constexpr uint32_t INVALID_S3_OBJECT_HASH = ConstExprHashingUtils::HashString("InvalidS3ObjectException");
+static constexpr uint32_t INVALID_IMAGE_FORMAT_HASH = ConstExprHashingUtils::HashString("InvalidImageFormatException");
+static constexpr uint32_t HUMAN_LOOP_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("HumanLoopQuotaExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

@@ -20,15 +20,15 @@ namespace Aws
       namespace HyperParameterTuningJobStrategyTypeMapper
       {
 
-        static const int Bayesian_HASH = HashingUtils::HashString("Bayesian");
-        static const int Random_HASH = HashingUtils::HashString("Random");
-        static const int Hyperband_HASH = HashingUtils::HashString("Hyperband");
-        static const int Grid_HASH = HashingUtils::HashString("Grid");
+        static constexpr uint32_t Bayesian_HASH = ConstExprHashingUtils::HashString("Bayesian");
+        static constexpr uint32_t Random_HASH = ConstExprHashingUtils::HashString("Random");
+        static constexpr uint32_t Hyperband_HASH = ConstExprHashingUtils::HashString("Hyperband");
+        static constexpr uint32_t Grid_HASH = ConstExprHashingUtils::HashString("Grid");
 
 
         HyperParameterTuningJobStrategyType GetHyperParameterTuningJobStrategyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Bayesian_HASH)
           {
             return HyperParameterTuningJobStrategyType::Bayesian;

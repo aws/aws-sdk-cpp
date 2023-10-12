@@ -20,13 +20,13 @@ namespace Aws
       namespace DBProxyEndpointTargetRoleMapper
       {
 
-        static const int READ_WRITE_HASH = HashingUtils::HashString("READ_WRITE");
-        static const int READ_ONLY_HASH = HashingUtils::HashString("READ_ONLY");
+        static constexpr uint32_t READ_WRITE_HASH = ConstExprHashingUtils::HashString("READ_WRITE");
+        static constexpr uint32_t READ_ONLY_HASH = ConstExprHashingUtils::HashString("READ_ONLY");
 
 
         DBProxyEndpointTargetRole GetDBProxyEndpointTargetRoleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == READ_WRITE_HASH)
           {
             return DBProxyEndpointTargetRole::READ_WRITE;

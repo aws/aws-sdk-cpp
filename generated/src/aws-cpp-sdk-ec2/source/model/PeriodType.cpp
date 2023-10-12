@@ -20,17 +20,17 @@ namespace Aws
       namespace PeriodTypeMapper
       {
 
-        static const int five_minutes_HASH = HashingUtils::HashString("five-minutes");
-        static const int fifteen_minutes_HASH = HashingUtils::HashString("fifteen-minutes");
-        static const int one_hour_HASH = HashingUtils::HashString("one-hour");
-        static const int three_hours_HASH = HashingUtils::HashString("three-hours");
-        static const int one_day_HASH = HashingUtils::HashString("one-day");
-        static const int one_week_HASH = HashingUtils::HashString("one-week");
+        static constexpr uint32_t five_minutes_HASH = ConstExprHashingUtils::HashString("five-minutes");
+        static constexpr uint32_t fifteen_minutes_HASH = ConstExprHashingUtils::HashString("fifteen-minutes");
+        static constexpr uint32_t one_hour_HASH = ConstExprHashingUtils::HashString("one-hour");
+        static constexpr uint32_t three_hours_HASH = ConstExprHashingUtils::HashString("three-hours");
+        static constexpr uint32_t one_day_HASH = ConstExprHashingUtils::HashString("one-day");
+        static constexpr uint32_t one_week_HASH = ConstExprHashingUtils::HashString("one-week");
 
 
         PeriodType GetPeriodTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == five_minutes_HASH)
           {
             return PeriodType::five_minutes;

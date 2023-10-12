@@ -20,14 +20,14 @@ namespace Aws
       namespace ColumnNullableMapper
       {
 
-        static const int NOT_NULL_HASH = HashingUtils::HashString("NOT_NULL");
-        static const int NULLABLE_HASH = HashingUtils::HashString("NULLABLE");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t NOT_NULL_HASH = ConstExprHashingUtils::HashString("NOT_NULL");
+        static constexpr uint32_t NULLABLE_HASH = ConstExprHashingUtils::HashString("NULLABLE");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         ColumnNullable GetColumnNullableForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOT_NULL_HASH)
           {
             return ColumnNullable::NOT_NULL;

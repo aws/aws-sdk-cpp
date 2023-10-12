@@ -20,23 +20,23 @@ namespace Aws
       namespace AutomationExecutionFilterKeyMapper
       {
 
-        static const int DocumentNamePrefix_HASH = HashingUtils::HashString("DocumentNamePrefix");
-        static const int ExecutionStatus_HASH = HashingUtils::HashString("ExecutionStatus");
-        static const int ExecutionId_HASH = HashingUtils::HashString("ExecutionId");
-        static const int ParentExecutionId_HASH = HashingUtils::HashString("ParentExecutionId");
-        static const int CurrentAction_HASH = HashingUtils::HashString("CurrentAction");
-        static const int StartTimeBefore_HASH = HashingUtils::HashString("StartTimeBefore");
-        static const int StartTimeAfter_HASH = HashingUtils::HashString("StartTimeAfter");
-        static const int AutomationType_HASH = HashingUtils::HashString("AutomationType");
-        static const int TagKey_HASH = HashingUtils::HashString("TagKey");
-        static const int TargetResourceGroup_HASH = HashingUtils::HashString("TargetResourceGroup");
-        static const int AutomationSubtype_HASH = HashingUtils::HashString("AutomationSubtype");
-        static const int OpsItemId_HASH = HashingUtils::HashString("OpsItemId");
+        static constexpr uint32_t DocumentNamePrefix_HASH = ConstExprHashingUtils::HashString("DocumentNamePrefix");
+        static constexpr uint32_t ExecutionStatus_HASH = ConstExprHashingUtils::HashString("ExecutionStatus");
+        static constexpr uint32_t ExecutionId_HASH = ConstExprHashingUtils::HashString("ExecutionId");
+        static constexpr uint32_t ParentExecutionId_HASH = ConstExprHashingUtils::HashString("ParentExecutionId");
+        static constexpr uint32_t CurrentAction_HASH = ConstExprHashingUtils::HashString("CurrentAction");
+        static constexpr uint32_t StartTimeBefore_HASH = ConstExprHashingUtils::HashString("StartTimeBefore");
+        static constexpr uint32_t StartTimeAfter_HASH = ConstExprHashingUtils::HashString("StartTimeAfter");
+        static constexpr uint32_t AutomationType_HASH = ConstExprHashingUtils::HashString("AutomationType");
+        static constexpr uint32_t TagKey_HASH = ConstExprHashingUtils::HashString("TagKey");
+        static constexpr uint32_t TargetResourceGroup_HASH = ConstExprHashingUtils::HashString("TargetResourceGroup");
+        static constexpr uint32_t AutomationSubtype_HASH = ConstExprHashingUtils::HashString("AutomationSubtype");
+        static constexpr uint32_t OpsItemId_HASH = ConstExprHashingUtils::HashString("OpsItemId");
 
 
         AutomationExecutionFilterKey GetAutomationExecutionFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DocumentNamePrefix_HASH)
           {
             return AutomationExecutionFilterKey::DocumentNamePrefix;

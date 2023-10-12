@@ -20,28 +20,28 @@ namespace Aws
       namespace OperatorPropertiesKeysMapper
       {
 
-        static const int VALUE_HASH = HashingUtils::HashString("VALUE");
-        static const int VALUES_HASH = HashingUtils::HashString("VALUES");
-        static const int DATA_TYPE_HASH = HashingUtils::HashString("DATA_TYPE");
-        static const int UPPER_BOUND_HASH = HashingUtils::HashString("UPPER_BOUND");
-        static const int LOWER_BOUND_HASH = HashingUtils::HashString("LOWER_BOUND");
-        static const int SOURCE_DATA_TYPE_HASH = HashingUtils::HashString("SOURCE_DATA_TYPE");
-        static const int DESTINATION_DATA_TYPE_HASH = HashingUtils::HashString("DESTINATION_DATA_TYPE");
-        static const int VALIDATION_ACTION_HASH = HashingUtils::HashString("VALIDATION_ACTION");
-        static const int MASK_VALUE_HASH = HashingUtils::HashString("MASK_VALUE");
-        static const int MASK_LENGTH_HASH = HashingUtils::HashString("MASK_LENGTH");
-        static const int TRUNCATE_LENGTH_HASH = HashingUtils::HashString("TRUNCATE_LENGTH");
-        static const int MATH_OPERATION_FIELDS_ORDER_HASH = HashingUtils::HashString("MATH_OPERATION_FIELDS_ORDER");
-        static const int CONCAT_FORMAT_HASH = HashingUtils::HashString("CONCAT_FORMAT");
-        static const int SUBFIELD_CATEGORY_MAP_HASH = HashingUtils::HashString("SUBFIELD_CATEGORY_MAP");
-        static const int EXCLUDE_SOURCE_FIELDS_LIST_HASH = HashingUtils::HashString("EXCLUDE_SOURCE_FIELDS_LIST");
-        static const int INCLUDE_NEW_FIELDS_HASH = HashingUtils::HashString("INCLUDE_NEW_FIELDS");
-        static const int ORDERED_PARTITION_KEYS_LIST_HASH = HashingUtils::HashString("ORDERED_PARTITION_KEYS_LIST");
+        static constexpr uint32_t VALUE_HASH = ConstExprHashingUtils::HashString("VALUE");
+        static constexpr uint32_t VALUES_HASH = ConstExprHashingUtils::HashString("VALUES");
+        static constexpr uint32_t DATA_TYPE_HASH = ConstExprHashingUtils::HashString("DATA_TYPE");
+        static constexpr uint32_t UPPER_BOUND_HASH = ConstExprHashingUtils::HashString("UPPER_BOUND");
+        static constexpr uint32_t LOWER_BOUND_HASH = ConstExprHashingUtils::HashString("LOWER_BOUND");
+        static constexpr uint32_t SOURCE_DATA_TYPE_HASH = ConstExprHashingUtils::HashString("SOURCE_DATA_TYPE");
+        static constexpr uint32_t DESTINATION_DATA_TYPE_HASH = ConstExprHashingUtils::HashString("DESTINATION_DATA_TYPE");
+        static constexpr uint32_t VALIDATION_ACTION_HASH = ConstExprHashingUtils::HashString("VALIDATION_ACTION");
+        static constexpr uint32_t MASK_VALUE_HASH = ConstExprHashingUtils::HashString("MASK_VALUE");
+        static constexpr uint32_t MASK_LENGTH_HASH = ConstExprHashingUtils::HashString("MASK_LENGTH");
+        static constexpr uint32_t TRUNCATE_LENGTH_HASH = ConstExprHashingUtils::HashString("TRUNCATE_LENGTH");
+        static constexpr uint32_t MATH_OPERATION_FIELDS_ORDER_HASH = ConstExprHashingUtils::HashString("MATH_OPERATION_FIELDS_ORDER");
+        static constexpr uint32_t CONCAT_FORMAT_HASH = ConstExprHashingUtils::HashString("CONCAT_FORMAT");
+        static constexpr uint32_t SUBFIELD_CATEGORY_MAP_HASH = ConstExprHashingUtils::HashString("SUBFIELD_CATEGORY_MAP");
+        static constexpr uint32_t EXCLUDE_SOURCE_FIELDS_LIST_HASH = ConstExprHashingUtils::HashString("EXCLUDE_SOURCE_FIELDS_LIST");
+        static constexpr uint32_t INCLUDE_NEW_FIELDS_HASH = ConstExprHashingUtils::HashString("INCLUDE_NEW_FIELDS");
+        static constexpr uint32_t ORDERED_PARTITION_KEYS_LIST_HASH = ConstExprHashingUtils::HashString("ORDERED_PARTITION_KEYS_LIST");
 
 
         OperatorPropertiesKeys GetOperatorPropertiesKeysForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VALUE_HASH)
           {
             return OperatorPropertiesKeys::VALUE;

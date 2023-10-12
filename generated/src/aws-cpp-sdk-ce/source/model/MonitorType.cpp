@@ -20,13 +20,13 @@ namespace Aws
       namespace MonitorTypeMapper
       {
 
-        static const int DIMENSIONAL_HASH = HashingUtils::HashString("DIMENSIONAL");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t DIMENSIONAL_HASH = ConstExprHashingUtils::HashString("DIMENSIONAL");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
 
 
         MonitorType GetMonitorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DIMENSIONAL_HASH)
           {
             return MonitorType::DIMENSIONAL;

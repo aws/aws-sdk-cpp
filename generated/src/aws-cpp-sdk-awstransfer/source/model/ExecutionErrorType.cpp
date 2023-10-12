@@ -20,19 +20,19 @@ namespace Aws
       namespace ExecutionErrorTypeMapper
       {
 
-        static const int PERMISSION_DENIED_HASH = HashingUtils::HashString("PERMISSION_DENIED");
-        static const int CUSTOM_STEP_FAILED_HASH = HashingUtils::HashString("CUSTOM_STEP_FAILED");
-        static const int THROTTLED_HASH = HashingUtils::HashString("THROTTLED");
-        static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("ALREADY_EXISTS");
-        static const int NOT_FOUND_HASH = HashingUtils::HashString("NOT_FOUND");
-        static const int BAD_REQUEST_HASH = HashingUtils::HashString("BAD_REQUEST");
-        static const int TIMEOUT_HASH = HashingUtils::HashString("TIMEOUT");
-        static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("INTERNAL_SERVER_ERROR");
+        static constexpr uint32_t PERMISSION_DENIED_HASH = ConstExprHashingUtils::HashString("PERMISSION_DENIED");
+        static constexpr uint32_t CUSTOM_STEP_FAILED_HASH = ConstExprHashingUtils::HashString("CUSTOM_STEP_FAILED");
+        static constexpr uint32_t THROTTLED_HASH = ConstExprHashingUtils::HashString("THROTTLED");
+        static constexpr uint32_t ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ALREADY_EXISTS");
+        static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NOT_FOUND");
+        static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BAD_REQUEST");
+        static constexpr uint32_t TIMEOUT_HASH = ConstExprHashingUtils::HashString("TIMEOUT");
+        static constexpr uint32_t INTERNAL_SERVER_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_SERVER_ERROR");
 
 
         ExecutionErrorType GetExecutionErrorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PERMISSION_DENIED_HASH)
           {
             return ExecutionErrorType::PERMISSION_DENIED;

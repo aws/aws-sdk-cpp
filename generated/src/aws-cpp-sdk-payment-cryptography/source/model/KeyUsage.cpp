@@ -20,33 +20,33 @@ namespace Aws
       namespace KeyUsageMapper
       {
 
-        static const int TR31_B0_BASE_DERIVATION_KEY_HASH = HashingUtils::HashString("TR31_B0_BASE_DERIVATION_KEY");
-        static const int TR31_C0_CARD_VERIFICATION_KEY_HASH = HashingUtils::HashString("TR31_C0_CARD_VERIFICATION_KEY");
-        static const int TR31_D0_SYMMETRIC_DATA_ENCRYPTION_KEY_HASH = HashingUtils::HashString("TR31_D0_SYMMETRIC_DATA_ENCRYPTION_KEY");
-        static const int TR31_D1_ASYMMETRIC_KEY_FOR_DATA_ENCRYPTION_HASH = HashingUtils::HashString("TR31_D1_ASYMMETRIC_KEY_FOR_DATA_ENCRYPTION");
-        static const int TR31_E0_EMV_MKEY_APP_CRYPTOGRAMS_HASH = HashingUtils::HashString("TR31_E0_EMV_MKEY_APP_CRYPTOGRAMS");
-        static const int TR31_E1_EMV_MKEY_CONFIDENTIALITY_HASH = HashingUtils::HashString("TR31_E1_EMV_MKEY_CONFIDENTIALITY");
-        static const int TR31_E2_EMV_MKEY_INTEGRITY_HASH = HashingUtils::HashString("TR31_E2_EMV_MKEY_INTEGRITY");
-        static const int TR31_E4_EMV_MKEY_DYNAMIC_NUMBERS_HASH = HashingUtils::HashString("TR31_E4_EMV_MKEY_DYNAMIC_NUMBERS");
-        static const int TR31_E5_EMV_MKEY_CARD_PERSONALIZATION_HASH = HashingUtils::HashString("TR31_E5_EMV_MKEY_CARD_PERSONALIZATION");
-        static const int TR31_E6_EMV_MKEY_OTHER_HASH = HashingUtils::HashString("TR31_E6_EMV_MKEY_OTHER");
-        static const int TR31_K0_KEY_ENCRYPTION_KEY_HASH = HashingUtils::HashString("TR31_K0_KEY_ENCRYPTION_KEY");
-        static const int TR31_K1_KEY_BLOCK_PROTECTION_KEY_HASH = HashingUtils::HashString("TR31_K1_KEY_BLOCK_PROTECTION_KEY");
-        static const int TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT_HASH = HashingUtils::HashString("TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT");
-        static const int TR31_M3_ISO_9797_3_MAC_KEY_HASH = HashingUtils::HashString("TR31_M3_ISO_9797_3_MAC_KEY");
-        static const int TR31_M6_ISO_9797_5_CMAC_KEY_HASH = HashingUtils::HashString("TR31_M6_ISO_9797_5_CMAC_KEY");
-        static const int TR31_M7_HMAC_KEY_HASH = HashingUtils::HashString("TR31_M7_HMAC_KEY");
-        static const int TR31_P0_PIN_ENCRYPTION_KEY_HASH = HashingUtils::HashString("TR31_P0_PIN_ENCRYPTION_KEY");
-        static const int TR31_P1_PIN_GENERATION_KEY_HASH = HashingUtils::HashString("TR31_P1_PIN_GENERATION_KEY");
-        static const int TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE_HASH = HashingUtils::HashString("TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE");
-        static const int TR31_V1_IBM3624_PIN_VERIFICATION_KEY_HASH = HashingUtils::HashString("TR31_V1_IBM3624_PIN_VERIFICATION_KEY");
-        static const int TR31_V2_VISA_PIN_VERIFICATION_KEY_HASH = HashingUtils::HashString("TR31_V2_VISA_PIN_VERIFICATION_KEY");
-        static const int TR31_K2_TR34_ASYMMETRIC_KEY_HASH = HashingUtils::HashString("TR31_K2_TR34_ASYMMETRIC_KEY");
+        static constexpr uint32_t TR31_B0_BASE_DERIVATION_KEY_HASH = ConstExprHashingUtils::HashString("TR31_B0_BASE_DERIVATION_KEY");
+        static constexpr uint32_t TR31_C0_CARD_VERIFICATION_KEY_HASH = ConstExprHashingUtils::HashString("TR31_C0_CARD_VERIFICATION_KEY");
+        static constexpr uint32_t TR31_D0_SYMMETRIC_DATA_ENCRYPTION_KEY_HASH = ConstExprHashingUtils::HashString("TR31_D0_SYMMETRIC_DATA_ENCRYPTION_KEY");
+        static constexpr uint32_t TR31_D1_ASYMMETRIC_KEY_FOR_DATA_ENCRYPTION_HASH = ConstExprHashingUtils::HashString("TR31_D1_ASYMMETRIC_KEY_FOR_DATA_ENCRYPTION");
+        static constexpr uint32_t TR31_E0_EMV_MKEY_APP_CRYPTOGRAMS_HASH = ConstExprHashingUtils::HashString("TR31_E0_EMV_MKEY_APP_CRYPTOGRAMS");
+        static constexpr uint32_t TR31_E1_EMV_MKEY_CONFIDENTIALITY_HASH = ConstExprHashingUtils::HashString("TR31_E1_EMV_MKEY_CONFIDENTIALITY");
+        static constexpr uint32_t TR31_E2_EMV_MKEY_INTEGRITY_HASH = ConstExprHashingUtils::HashString("TR31_E2_EMV_MKEY_INTEGRITY");
+        static constexpr uint32_t TR31_E4_EMV_MKEY_DYNAMIC_NUMBERS_HASH = ConstExprHashingUtils::HashString("TR31_E4_EMV_MKEY_DYNAMIC_NUMBERS");
+        static constexpr uint32_t TR31_E5_EMV_MKEY_CARD_PERSONALIZATION_HASH = ConstExprHashingUtils::HashString("TR31_E5_EMV_MKEY_CARD_PERSONALIZATION");
+        static constexpr uint32_t TR31_E6_EMV_MKEY_OTHER_HASH = ConstExprHashingUtils::HashString("TR31_E6_EMV_MKEY_OTHER");
+        static constexpr uint32_t TR31_K0_KEY_ENCRYPTION_KEY_HASH = ConstExprHashingUtils::HashString("TR31_K0_KEY_ENCRYPTION_KEY");
+        static constexpr uint32_t TR31_K1_KEY_BLOCK_PROTECTION_KEY_HASH = ConstExprHashingUtils::HashString("TR31_K1_KEY_BLOCK_PROTECTION_KEY");
+        static constexpr uint32_t TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT_HASH = ConstExprHashingUtils::HashString("TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT");
+        static constexpr uint32_t TR31_M3_ISO_9797_3_MAC_KEY_HASH = ConstExprHashingUtils::HashString("TR31_M3_ISO_9797_3_MAC_KEY");
+        static constexpr uint32_t TR31_M6_ISO_9797_5_CMAC_KEY_HASH = ConstExprHashingUtils::HashString("TR31_M6_ISO_9797_5_CMAC_KEY");
+        static constexpr uint32_t TR31_M7_HMAC_KEY_HASH = ConstExprHashingUtils::HashString("TR31_M7_HMAC_KEY");
+        static constexpr uint32_t TR31_P0_PIN_ENCRYPTION_KEY_HASH = ConstExprHashingUtils::HashString("TR31_P0_PIN_ENCRYPTION_KEY");
+        static constexpr uint32_t TR31_P1_PIN_GENERATION_KEY_HASH = ConstExprHashingUtils::HashString("TR31_P1_PIN_GENERATION_KEY");
+        static constexpr uint32_t TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE_HASH = ConstExprHashingUtils::HashString("TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE");
+        static constexpr uint32_t TR31_V1_IBM3624_PIN_VERIFICATION_KEY_HASH = ConstExprHashingUtils::HashString("TR31_V1_IBM3624_PIN_VERIFICATION_KEY");
+        static constexpr uint32_t TR31_V2_VISA_PIN_VERIFICATION_KEY_HASH = ConstExprHashingUtils::HashString("TR31_V2_VISA_PIN_VERIFICATION_KEY");
+        static constexpr uint32_t TR31_K2_TR34_ASYMMETRIC_KEY_HASH = ConstExprHashingUtils::HashString("TR31_K2_TR34_ASYMMETRIC_KEY");
 
 
         KeyUsage GetKeyUsageForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TR31_B0_BASE_DERIVATION_KEY_HASH)
           {
             return KeyUsage::TR31_B0_BASE_DERIVATION_KEY;

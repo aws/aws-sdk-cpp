@@ -20,14 +20,14 @@ namespace Aws
       namespace CRUpdateAllocationStrategyMapper
       {
 
-        static const int BEST_FIT_PROGRESSIVE_HASH = HashingUtils::HashString("BEST_FIT_PROGRESSIVE");
-        static const int SPOT_CAPACITY_OPTIMIZED_HASH = HashingUtils::HashString("SPOT_CAPACITY_OPTIMIZED");
-        static const int SPOT_PRICE_CAPACITY_OPTIMIZED_HASH = HashingUtils::HashString("SPOT_PRICE_CAPACITY_OPTIMIZED");
+        static constexpr uint32_t BEST_FIT_PROGRESSIVE_HASH = ConstExprHashingUtils::HashString("BEST_FIT_PROGRESSIVE");
+        static constexpr uint32_t SPOT_CAPACITY_OPTIMIZED_HASH = ConstExprHashingUtils::HashString("SPOT_CAPACITY_OPTIMIZED");
+        static constexpr uint32_t SPOT_PRICE_CAPACITY_OPTIMIZED_HASH = ConstExprHashingUtils::HashString("SPOT_PRICE_CAPACITY_OPTIMIZED");
 
 
         CRUpdateAllocationStrategy GetCRUpdateAllocationStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BEST_FIT_PROGRESSIVE_HASH)
           {
             return CRUpdateAllocationStrategy::BEST_FIT_PROGRESSIVE;

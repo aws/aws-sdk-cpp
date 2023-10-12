@@ -20,18 +20,18 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int CONTACT_HASH = HashingUtils::HashString("CONTACT");
-        static const int CONTACT_FLOW_HASH = HashingUtils::HashString("CONTACT_FLOW");
-        static const int INSTANCE_HASH = HashingUtils::HashString("INSTANCE");
-        static const int PARTICIPANT_HASH = HashingUtils::HashString("PARTICIPANT");
-        static const int HIERARCHY_LEVEL_HASH = HashingUtils::HashString("HIERARCHY_LEVEL");
-        static const int HIERARCHY_GROUP_HASH = HashingUtils::HashString("HIERARCHY_GROUP");
-        static const int USER_HASH = HashingUtils::HashString("USER");
+        static constexpr uint32_t CONTACT_HASH = ConstExprHashingUtils::HashString("CONTACT");
+        static constexpr uint32_t CONTACT_FLOW_HASH = ConstExprHashingUtils::HashString("CONTACT_FLOW");
+        static constexpr uint32_t INSTANCE_HASH = ConstExprHashingUtils::HashString("INSTANCE");
+        static constexpr uint32_t PARTICIPANT_HASH = ConstExprHashingUtils::HashString("PARTICIPANT");
+        static constexpr uint32_t HIERARCHY_LEVEL_HASH = ConstExprHashingUtils::HashString("HIERARCHY_LEVEL");
+        static constexpr uint32_t HIERARCHY_GROUP_HASH = ConstExprHashingUtils::HashString("HIERARCHY_GROUP");
+        static constexpr uint32_t USER_HASH = ConstExprHashingUtils::HashString("USER");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONTACT_HASH)
           {
             return ResourceType::CONTACT;

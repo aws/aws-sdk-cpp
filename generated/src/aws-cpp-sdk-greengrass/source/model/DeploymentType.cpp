@@ -20,15 +20,15 @@ namespace Aws
       namespace DeploymentTypeMapper
       {
 
-        static const int NewDeployment_HASH = HashingUtils::HashString("NewDeployment");
-        static const int Redeployment_HASH = HashingUtils::HashString("Redeployment");
-        static const int ResetDeployment_HASH = HashingUtils::HashString("ResetDeployment");
-        static const int ForceResetDeployment_HASH = HashingUtils::HashString("ForceResetDeployment");
+        static constexpr uint32_t NewDeployment_HASH = ConstExprHashingUtils::HashString("NewDeployment");
+        static constexpr uint32_t Redeployment_HASH = ConstExprHashingUtils::HashString("Redeployment");
+        static constexpr uint32_t ResetDeployment_HASH = ConstExprHashingUtils::HashString("ResetDeployment");
+        static constexpr uint32_t ForceResetDeployment_HASH = ConstExprHashingUtils::HashString("ForceResetDeployment");
 
 
         DeploymentType GetDeploymentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NewDeployment_HASH)
           {
             return DeploymentType::NewDeployment;

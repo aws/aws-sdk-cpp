@@ -20,13 +20,13 @@ namespace Aws
       namespace TaskFilterNameMapper
       {
 
-        static const int LocationId_HASH = HashingUtils::HashString("LocationId");
-        static const int CreationTime_HASH = HashingUtils::HashString("CreationTime");
+        static constexpr uint32_t LocationId_HASH = ConstExprHashingUtils::HashString("LocationId");
+        static constexpr uint32_t CreationTime_HASH = ConstExprHashingUtils::HashString("CreationTime");
 
 
         TaskFilterName GetTaskFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LocationId_HASH)
           {
             return TaskFilterName::LocationId;

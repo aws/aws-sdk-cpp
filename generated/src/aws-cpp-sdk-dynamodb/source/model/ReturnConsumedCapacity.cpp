@@ -20,14 +20,14 @@ namespace Aws
       namespace ReturnConsumedCapacityMapper
       {
 
-        static const int INDEXES_HASH = HashingUtils::HashString("INDEXES");
-        static const int TOTAL_HASH = HashingUtils::HashString("TOTAL");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t INDEXES_HASH = ConstExprHashingUtils::HashString("INDEXES");
+        static constexpr uint32_t TOTAL_HASH = ConstExprHashingUtils::HashString("TOTAL");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         ReturnConsumedCapacity GetReturnConsumedCapacityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INDEXES_HASH)
           {
             return ReturnConsumedCapacity::INDEXES;

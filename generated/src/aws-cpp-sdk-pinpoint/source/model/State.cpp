@@ -20,17 +20,17 @@ namespace Aws
       namespace StateMapper
       {
 
-        static const int DRAFT_HASH = HashingUtils::HashString("DRAFT");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-        static const int CLOSED_HASH = HashingUtils::HashString("CLOSED");
-        static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
+        static constexpr uint32_t DRAFT_HASH = ConstExprHashingUtils::HashString("DRAFT");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t CLOSED_HASH = ConstExprHashingUtils::HashString("CLOSED");
+        static constexpr uint32_t PAUSED_HASH = ConstExprHashingUtils::HashString("PAUSED");
 
 
         State GetStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DRAFT_HASH)
           {
             return State::DRAFT;

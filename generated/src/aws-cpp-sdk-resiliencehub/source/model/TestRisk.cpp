@@ -20,14 +20,14 @@ namespace Aws
       namespace TestRiskMapper
       {
 
-        static const int Small_HASH = HashingUtils::HashString("Small");
-        static const int Medium_HASH = HashingUtils::HashString("Medium");
-        static const int High_HASH = HashingUtils::HashString("High");
+        static constexpr uint32_t Small_HASH = ConstExprHashingUtils::HashString("Small");
+        static constexpr uint32_t Medium_HASH = ConstExprHashingUtils::HashString("Medium");
+        static constexpr uint32_t High_HASH = ConstExprHashingUtils::HashString("High");
 
 
         TestRisk GetTestRiskForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Small_HASH)
           {
             return TestRisk::Small;

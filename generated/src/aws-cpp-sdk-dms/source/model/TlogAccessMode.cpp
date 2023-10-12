@@ -20,15 +20,15 @@ namespace Aws
       namespace TlogAccessModeMapper
       {
 
-        static const int BackupOnly_HASH = HashingUtils::HashString("BackupOnly");
-        static const int PreferBackup_HASH = HashingUtils::HashString("PreferBackup");
-        static const int PreferTlog_HASH = HashingUtils::HashString("PreferTlog");
-        static const int TlogOnly_HASH = HashingUtils::HashString("TlogOnly");
+        static constexpr uint32_t BackupOnly_HASH = ConstExprHashingUtils::HashString("BackupOnly");
+        static constexpr uint32_t PreferBackup_HASH = ConstExprHashingUtils::HashString("PreferBackup");
+        static constexpr uint32_t PreferTlog_HASH = ConstExprHashingUtils::HashString("PreferTlog");
+        static constexpr uint32_t TlogOnly_HASH = ConstExprHashingUtils::HashString("TlogOnly");
 
 
         TlogAccessMode GetTlogAccessModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BackupOnly_HASH)
           {
             return TlogAccessMode::BackupOnly;

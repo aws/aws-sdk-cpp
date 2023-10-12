@@ -20,13 +20,13 @@ namespace Aws
       namespace ReservedNodeOfferingTypeMapper
       {
 
-        static const int Regular_HASH = HashingUtils::HashString("Regular");
-        static const int Upgradable_HASH = HashingUtils::HashString("Upgradable");
+        static constexpr uint32_t Regular_HASH = ConstExprHashingUtils::HashString("Regular");
+        static constexpr uint32_t Upgradable_HASH = ConstExprHashingUtils::HashString("Upgradable");
 
 
         ReservedNodeOfferingType GetReservedNodeOfferingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Regular_HASH)
           {
             return ReservedNodeOfferingType::Regular;

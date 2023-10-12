@@ -20,13 +20,13 @@ namespace Aws
       namespace AuditReportResponseFormatMapper
       {
 
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
+        static constexpr uint32_t CSV_HASH = ConstExprHashingUtils::HashString("CSV");
 
 
         AuditReportResponseFormat GetAuditReportResponseFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JSON_HASH)
           {
             return AuditReportResponseFormat::JSON;

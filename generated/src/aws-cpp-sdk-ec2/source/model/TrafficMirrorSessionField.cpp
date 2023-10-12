@@ -20,14 +20,14 @@ namespace Aws
       namespace TrafficMirrorSessionFieldMapper
       {
 
-        static const int packet_length_HASH = HashingUtils::HashString("packet-length");
-        static const int description_HASH = HashingUtils::HashString("description");
-        static const int virtual_network_id_HASH = HashingUtils::HashString("virtual-network-id");
+        static constexpr uint32_t packet_length_HASH = ConstExprHashingUtils::HashString("packet-length");
+        static constexpr uint32_t description_HASH = ConstExprHashingUtils::HashString("description");
+        static constexpr uint32_t virtual_network_id_HASH = ConstExprHashingUtils::HashString("virtual-network-id");
 
 
         TrafficMirrorSessionField GetTrafficMirrorSessionFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == packet_length_HASH)
           {
             return TrafficMirrorSessionField::packet_length;

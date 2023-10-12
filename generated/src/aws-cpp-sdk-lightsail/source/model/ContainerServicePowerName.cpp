@@ -20,17 +20,17 @@ namespace Aws
       namespace ContainerServicePowerNameMapper
       {
 
-        static const int nano_HASH = HashingUtils::HashString("nano");
-        static const int micro_HASH = HashingUtils::HashString("micro");
-        static const int small_HASH = HashingUtils::HashString("small");
-        static const int medium_HASH = HashingUtils::HashString("medium");
-        static const int large_HASH = HashingUtils::HashString("large");
-        static const int xlarge_HASH = HashingUtils::HashString("xlarge");
+        static constexpr uint32_t nano_HASH = ConstExprHashingUtils::HashString("nano");
+        static constexpr uint32_t micro_HASH = ConstExprHashingUtils::HashString("micro");
+        static constexpr uint32_t small_HASH = ConstExprHashingUtils::HashString("small");
+        static constexpr uint32_t medium_HASH = ConstExprHashingUtils::HashString("medium");
+        static constexpr uint32_t large_HASH = ConstExprHashingUtils::HashString("large");
+        static constexpr uint32_t xlarge_HASH = ConstExprHashingUtils::HashString("xlarge");
 
 
         ContainerServicePowerName GetContainerServicePowerNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == nano_HASH)
           {
             return ContainerServicePowerName::nano;

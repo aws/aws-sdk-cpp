@@ -20,12 +20,12 @@ namespace Aws
       namespace ExportSortAttributeMapper
       {
 
-        static const int LastUpdatedDateTime_HASH = HashingUtils::HashString("LastUpdatedDateTime");
+        static constexpr uint32_t LastUpdatedDateTime_HASH = ConstExprHashingUtils::HashString("LastUpdatedDateTime");
 
 
         ExportSortAttribute GetExportSortAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LastUpdatedDateTime_HASH)
           {
             return ExportSortAttribute::LastUpdatedDateTime;

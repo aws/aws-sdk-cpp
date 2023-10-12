@@ -20,15 +20,15 @@ namespace Aws
       namespace DeploymentUpdateTypeMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int CURRENT_VERSION_HASH = HashingUtils::HashString("CURRENT_VERSION");
-        static const int MINOR_VERSION_HASH = HashingUtils::HashString("MINOR_VERSION");
-        static const int MAJOR_VERSION_HASH = HashingUtils::HashString("MAJOR_VERSION");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t CURRENT_VERSION_HASH = ConstExprHashingUtils::HashString("CURRENT_VERSION");
+        static constexpr uint32_t MINOR_VERSION_HASH = ConstExprHashingUtils::HashString("MINOR_VERSION");
+        static constexpr uint32_t MAJOR_VERSION_HASH = ConstExprHashingUtils::HashString("MAJOR_VERSION");
 
 
         DeploymentUpdateType GetDeploymentUpdateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return DeploymentUpdateType::NONE;

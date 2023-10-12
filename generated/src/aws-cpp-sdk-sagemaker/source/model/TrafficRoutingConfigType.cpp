@@ -20,14 +20,14 @@ namespace Aws
       namespace TrafficRoutingConfigTypeMapper
       {
 
-        static const int ALL_AT_ONCE_HASH = HashingUtils::HashString("ALL_AT_ONCE");
-        static const int CANARY_HASH = HashingUtils::HashString("CANARY");
-        static const int LINEAR_HASH = HashingUtils::HashString("LINEAR");
+        static constexpr uint32_t ALL_AT_ONCE_HASH = ConstExprHashingUtils::HashString("ALL_AT_ONCE");
+        static constexpr uint32_t CANARY_HASH = ConstExprHashingUtils::HashString("CANARY");
+        static constexpr uint32_t LINEAR_HASH = ConstExprHashingUtils::HashString("LINEAR");
 
 
         TrafficRoutingConfigType GetTrafficRoutingConfigTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_AT_ONCE_HASH)
           {
             return TrafficRoutingConfigType::ALL_AT_ONCE;

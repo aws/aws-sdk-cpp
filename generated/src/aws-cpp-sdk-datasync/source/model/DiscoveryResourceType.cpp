@@ -20,14 +20,14 @@ namespace Aws
       namespace DiscoveryResourceTypeMapper
       {
 
-        static const int SVM_HASH = HashingUtils::HashString("SVM");
-        static const int VOLUME_HASH = HashingUtils::HashString("VOLUME");
-        static const int CLUSTER_HASH = HashingUtils::HashString("CLUSTER");
+        static constexpr uint32_t SVM_HASH = ConstExprHashingUtils::HashString("SVM");
+        static constexpr uint32_t VOLUME_HASH = ConstExprHashingUtils::HashString("VOLUME");
+        static constexpr uint32_t CLUSTER_HASH = ConstExprHashingUtils::HashString("CLUSTER");
 
 
         DiscoveryResourceType GetDiscoveryResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SVM_HASH)
           {
             return DiscoveryResourceType::SVM;

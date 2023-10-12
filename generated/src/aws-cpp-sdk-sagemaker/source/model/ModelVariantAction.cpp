@@ -20,14 +20,14 @@ namespace Aws
       namespace ModelVariantActionMapper
       {
 
-        static const int Retain_HASH = HashingUtils::HashString("Retain");
-        static const int Remove_HASH = HashingUtils::HashString("Remove");
-        static const int Promote_HASH = HashingUtils::HashString("Promote");
+        static constexpr uint32_t Retain_HASH = ConstExprHashingUtils::HashString("Retain");
+        static constexpr uint32_t Remove_HASH = ConstExprHashingUtils::HashString("Remove");
+        static constexpr uint32_t Promote_HASH = ConstExprHashingUtils::HashString("Promote");
 
 
         ModelVariantAction GetModelVariantActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Retain_HASH)
           {
             return ModelVariantAction::Retain;

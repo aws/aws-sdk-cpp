@@ -20,12 +20,12 @@ namespace Aws
       namespace ScanningRepositoryFilterTypeMapper
       {
 
-        static const int WILDCARD_HASH = HashingUtils::HashString("WILDCARD");
+        static constexpr uint32_t WILDCARD_HASH = ConstExprHashingUtils::HashString("WILDCARD");
 
 
         ScanningRepositoryFilterType GetScanningRepositoryFilterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WILDCARD_HASH)
           {
             return ScanningRepositoryFilterType::WILDCARD;

@@ -20,12 +20,12 @@ namespace Aws
       namespace FilterFieldMapper
       {
 
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
 
 
         FilterField GetFilterFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NAME_HASH)
           {
             return FilterField::NAME;

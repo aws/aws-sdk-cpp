@@ -18,18 +18,18 @@ namespace IoTTwinMaker
 namespace IoTTwinMakerErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int CONNECTOR_FAILURE_HASH = HashingUtils::HashString("ConnectorFailureException");
-static const int QUERY_TIMEOUT_HASH = HashingUtils::HashString("QueryTimeoutException");
-static const int CONNECTOR_TIMEOUT_HASH = HashingUtils::HashString("ConnectorTimeoutException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t SERVICE_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ServiceQuotaExceededException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
+static constexpr uint32_t CONNECTOR_FAILURE_HASH = ConstExprHashingUtils::HashString("ConnectorFailureException");
+static constexpr uint32_t QUERY_TIMEOUT_HASH = ConstExprHashingUtils::HashString("QueryTimeoutException");
+static constexpr uint32_t CONNECTOR_TIMEOUT_HASH = ConstExprHashingUtils::HashString("ConnectorTimeoutException");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

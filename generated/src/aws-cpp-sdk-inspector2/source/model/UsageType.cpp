@@ -20,16 +20,16 @@ namespace Aws
       namespace UsageTypeMapper
       {
 
-        static const int EC2_INSTANCE_HOURS_HASH = HashingUtils::HashString("EC2_INSTANCE_HOURS");
-        static const int ECR_INITIAL_SCAN_HASH = HashingUtils::HashString("ECR_INITIAL_SCAN");
-        static const int ECR_RESCAN_HASH = HashingUtils::HashString("ECR_RESCAN");
-        static const int LAMBDA_FUNCTION_HOURS_HASH = HashingUtils::HashString("LAMBDA_FUNCTION_HOURS");
-        static const int LAMBDA_FUNCTION_CODE_HOURS_HASH = HashingUtils::HashString("LAMBDA_FUNCTION_CODE_HOURS");
+        static constexpr uint32_t EC2_INSTANCE_HOURS_HASH = ConstExprHashingUtils::HashString("EC2_INSTANCE_HOURS");
+        static constexpr uint32_t ECR_INITIAL_SCAN_HASH = ConstExprHashingUtils::HashString("ECR_INITIAL_SCAN");
+        static constexpr uint32_t ECR_RESCAN_HASH = ConstExprHashingUtils::HashString("ECR_RESCAN");
+        static constexpr uint32_t LAMBDA_FUNCTION_HOURS_HASH = ConstExprHashingUtils::HashString("LAMBDA_FUNCTION_HOURS");
+        static constexpr uint32_t LAMBDA_FUNCTION_CODE_HOURS_HASH = ConstExprHashingUtils::HashString("LAMBDA_FUNCTION_CODE_HOURS");
 
 
         UsageType GetUsageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EC2_INSTANCE_HOURS_HASH)
           {
             return UsageType::EC2_INSTANCE_HOURS;

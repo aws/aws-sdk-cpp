@@ -20,12 +20,12 @@ namespace Aws
       namespace AutoScalingMetricMapper
       {
 
-        static const int CPU_UTILIZATION_PERCENTAGE_HASH = HashingUtils::HashString("CPU_UTILIZATION_PERCENTAGE");
+        static constexpr uint32_t CPU_UTILIZATION_PERCENTAGE_HASH = ConstExprHashingUtils::HashString("CPU_UTILIZATION_PERCENTAGE");
 
 
         AutoScalingMetric GetAutoScalingMetricForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CPU_UTILIZATION_PERCENTAGE_HASH)
           {
             return AutoScalingMetric::CPU_UTILIZATION_PERCENTAGE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ThumbnailTypeMapper
       {
 
-        static const int UNSPECIFIED_HASH = HashingUtils::HashString("UNSPECIFIED");
-        static const int CURRENT_ACTIVE_HASH = HashingUtils::HashString("CURRENT_ACTIVE");
+        static constexpr uint32_t UNSPECIFIED_HASH = ConstExprHashingUtils::HashString("UNSPECIFIED");
+        static constexpr uint32_t CURRENT_ACTIVE_HASH = ConstExprHashingUtils::HashString("CURRENT_ACTIVE");
 
 
         ThumbnailType GetThumbnailTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNSPECIFIED_HASH)
           {
             return ThumbnailType::UNSPECIFIED;

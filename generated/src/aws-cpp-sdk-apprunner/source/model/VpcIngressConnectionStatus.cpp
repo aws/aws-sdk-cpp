@@ -20,19 +20,19 @@ namespace Aws
       namespace VpcIngressConnectionStatusMapper
       {
 
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int PENDING_CREATION_HASH = HashingUtils::HashString("PENDING_CREATION");
-        static const int PENDING_UPDATE_HASH = HashingUtils::HashString("PENDING_UPDATE");
-        static const int PENDING_DELETION_HASH = HashingUtils::HashString("PENDING_DELETION");
-        static const int FAILED_CREATION_HASH = HashingUtils::HashString("FAILED_CREATION");
-        static const int FAILED_UPDATE_HASH = HashingUtils::HashString("FAILED_UPDATE");
-        static const int FAILED_DELETION_HASH = HashingUtils::HashString("FAILED_DELETION");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t PENDING_CREATION_HASH = ConstExprHashingUtils::HashString("PENDING_CREATION");
+        static constexpr uint32_t PENDING_UPDATE_HASH = ConstExprHashingUtils::HashString("PENDING_UPDATE");
+        static constexpr uint32_t PENDING_DELETION_HASH = ConstExprHashingUtils::HashString("PENDING_DELETION");
+        static constexpr uint32_t FAILED_CREATION_HASH = ConstExprHashingUtils::HashString("FAILED_CREATION");
+        static constexpr uint32_t FAILED_UPDATE_HASH = ConstExprHashingUtils::HashString("FAILED_UPDATE");
+        static constexpr uint32_t FAILED_DELETION_HASH = ConstExprHashingUtils::HashString("FAILED_DELETION");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         VpcIngressConnectionStatus GetVpcIngressConnectionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVAILABLE_HASH)
           {
             return VpcIngressConnectionStatus::AVAILABLE;

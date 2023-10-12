@@ -20,12 +20,12 @@ namespace Aws
       namespace EventCategoryMapper
       {
 
-        static const int insight_HASH = HashingUtils::HashString("insight");
+        static constexpr uint32_t insight_HASH = ConstExprHashingUtils::HashString("insight");
 
 
         EventCategory GetEventCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == insight_HASH)
           {
             return EventCategory::insight;

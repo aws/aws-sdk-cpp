@@ -20,15 +20,15 @@ namespace Aws
       namespace DmsSslModeValueMapper
       {
 
-        static const int none_HASH = HashingUtils::HashString("none");
-        static const int require_HASH = HashingUtils::HashString("require");
-        static const int verify_ca_HASH = HashingUtils::HashString("verify-ca");
-        static const int verify_full_HASH = HashingUtils::HashString("verify-full");
+        static constexpr uint32_t none_HASH = ConstExprHashingUtils::HashString("none");
+        static constexpr uint32_t require_HASH = ConstExprHashingUtils::HashString("require");
+        static constexpr uint32_t verify_ca_HASH = ConstExprHashingUtils::HashString("verify-ca");
+        static constexpr uint32_t verify_full_HASH = ConstExprHashingUtils::HashString("verify-full");
 
 
         DmsSslModeValue GetDmsSslModeValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == none_HASH)
           {
             return DmsSslModeValue::none;

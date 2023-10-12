@@ -20,14 +20,14 @@ namespace Aws
       namespace RenderRecommendationTypeMapper
       {
 
-        static const int Alarm_HASH = HashingUtils::HashString("Alarm");
-        static const int Sop_HASH = HashingUtils::HashString("Sop");
-        static const int Test_HASH = HashingUtils::HashString("Test");
+        static constexpr uint32_t Alarm_HASH = ConstExprHashingUtils::HashString("Alarm");
+        static constexpr uint32_t Sop_HASH = ConstExprHashingUtils::HashString("Sop");
+        static constexpr uint32_t Test_HASH = ConstExprHashingUtils::HashString("Test");
 
 
         RenderRecommendationType GetRenderRecommendationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Alarm_HASH)
           {
             return RenderRecommendationType::Alarm;

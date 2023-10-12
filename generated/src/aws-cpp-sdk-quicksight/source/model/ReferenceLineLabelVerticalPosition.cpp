@@ -20,13 +20,13 @@ namespace Aws
       namespace ReferenceLineLabelVerticalPositionMapper
       {
 
-        static const int ABOVE_HASH = HashingUtils::HashString("ABOVE");
-        static const int BELOW_HASH = HashingUtils::HashString("BELOW");
+        static constexpr uint32_t ABOVE_HASH = ConstExprHashingUtils::HashString("ABOVE");
+        static constexpr uint32_t BELOW_HASH = ConstExprHashingUtils::HashString("BELOW");
 
 
         ReferenceLineLabelVerticalPosition GetReferenceLineLabelVerticalPositionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ABOVE_HASH)
           {
             return ReferenceLineLabelVerticalPosition::ABOVE;

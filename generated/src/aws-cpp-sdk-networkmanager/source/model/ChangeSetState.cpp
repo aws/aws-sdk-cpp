@@ -20,17 +20,17 @@ namespace Aws
       namespace ChangeSetStateMapper
       {
 
-        static const int PENDING_GENERATION_HASH = HashingUtils::HashString("PENDING_GENERATION");
-        static const int FAILED_GENERATION_HASH = HashingUtils::HashString("FAILED_GENERATION");
-        static const int READY_TO_EXECUTE_HASH = HashingUtils::HashString("READY_TO_EXECUTE");
-        static const int EXECUTING_HASH = HashingUtils::HashString("EXECUTING");
-        static const int EXECUTION_SUCCEEDED_HASH = HashingUtils::HashString("EXECUTION_SUCCEEDED");
-        static const int OUT_OF_DATE_HASH = HashingUtils::HashString("OUT_OF_DATE");
+        static constexpr uint32_t PENDING_GENERATION_HASH = ConstExprHashingUtils::HashString("PENDING_GENERATION");
+        static constexpr uint32_t FAILED_GENERATION_HASH = ConstExprHashingUtils::HashString("FAILED_GENERATION");
+        static constexpr uint32_t READY_TO_EXECUTE_HASH = ConstExprHashingUtils::HashString("READY_TO_EXECUTE");
+        static constexpr uint32_t EXECUTING_HASH = ConstExprHashingUtils::HashString("EXECUTING");
+        static constexpr uint32_t EXECUTION_SUCCEEDED_HASH = ConstExprHashingUtils::HashString("EXECUTION_SUCCEEDED");
+        static constexpr uint32_t OUT_OF_DATE_HASH = ConstExprHashingUtils::HashString("OUT_OF_DATE");
 
 
         ChangeSetState GetChangeSetStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_GENERATION_HASH)
           {
             return ChangeSetState::PENDING_GENERATION;

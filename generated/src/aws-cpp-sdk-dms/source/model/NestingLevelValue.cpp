@@ -20,13 +20,13 @@ namespace Aws
       namespace NestingLevelValueMapper
       {
 
-        static const int none_HASH = HashingUtils::HashString("none");
-        static const int one_HASH = HashingUtils::HashString("one");
+        static constexpr uint32_t none_HASH = ConstExprHashingUtils::HashString("none");
+        static constexpr uint32_t one_HASH = ConstExprHashingUtils::HashString("one");
 
 
         NestingLevelValue GetNestingLevelValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == none_HASH)
           {
             return NestingLevelValue::none;

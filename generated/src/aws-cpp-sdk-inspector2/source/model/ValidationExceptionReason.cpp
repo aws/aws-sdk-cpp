@@ -20,14 +20,14 @@ namespace Aws
       namespace ValidationExceptionReasonMapper
       {
 
-        static const int CANNOT_PARSE_HASH = HashingUtils::HashString("CANNOT_PARSE");
-        static const int FIELD_VALIDATION_FAILED_HASH = HashingUtils::HashString("FIELD_VALIDATION_FAILED");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
+        static constexpr uint32_t CANNOT_PARSE_HASH = ConstExprHashingUtils::HashString("CANNOT_PARSE");
+        static constexpr uint32_t FIELD_VALIDATION_FAILED_HASH = ConstExprHashingUtils::HashString("FIELD_VALIDATION_FAILED");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CANNOT_PARSE_HASH)
           {
             return ValidationExceptionReason::CANNOT_PARSE;

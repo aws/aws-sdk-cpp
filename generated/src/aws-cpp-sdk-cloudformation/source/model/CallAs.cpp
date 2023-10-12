@@ -20,13 +20,13 @@ namespace Aws
       namespace CallAsMapper
       {
 
-        static const int SELF_HASH = HashingUtils::HashString("SELF");
-        static const int DELEGATED_ADMIN_HASH = HashingUtils::HashString("DELEGATED_ADMIN");
+        static constexpr uint32_t SELF_HASH = ConstExprHashingUtils::HashString("SELF");
+        static constexpr uint32_t DELEGATED_ADMIN_HASH = ConstExprHashingUtils::HashString("DELEGATED_ADMIN");
 
 
         CallAs GetCallAsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SELF_HASH)
           {
             return CallAs::SELF;

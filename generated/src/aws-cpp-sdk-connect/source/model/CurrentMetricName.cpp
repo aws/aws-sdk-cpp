@@ -20,24 +20,24 @@ namespace Aws
       namespace CurrentMetricNameMapper
       {
 
-        static const int AGENTS_ONLINE_HASH = HashingUtils::HashString("AGENTS_ONLINE");
-        static const int AGENTS_AVAILABLE_HASH = HashingUtils::HashString("AGENTS_AVAILABLE");
-        static const int AGENTS_ON_CALL_HASH = HashingUtils::HashString("AGENTS_ON_CALL");
-        static const int AGENTS_NON_PRODUCTIVE_HASH = HashingUtils::HashString("AGENTS_NON_PRODUCTIVE");
-        static const int AGENTS_AFTER_CONTACT_WORK_HASH = HashingUtils::HashString("AGENTS_AFTER_CONTACT_WORK");
-        static const int AGENTS_ERROR_HASH = HashingUtils::HashString("AGENTS_ERROR");
-        static const int AGENTS_STAFFED_HASH = HashingUtils::HashString("AGENTS_STAFFED");
-        static const int CONTACTS_IN_QUEUE_HASH = HashingUtils::HashString("CONTACTS_IN_QUEUE");
-        static const int OLDEST_CONTACT_AGE_HASH = HashingUtils::HashString("OLDEST_CONTACT_AGE");
-        static const int CONTACTS_SCHEDULED_HASH = HashingUtils::HashString("CONTACTS_SCHEDULED");
-        static const int AGENTS_ON_CONTACT_HASH = HashingUtils::HashString("AGENTS_ON_CONTACT");
-        static const int SLOTS_ACTIVE_HASH = HashingUtils::HashString("SLOTS_ACTIVE");
-        static const int SLOTS_AVAILABLE_HASH = HashingUtils::HashString("SLOTS_AVAILABLE");
+        static constexpr uint32_t AGENTS_ONLINE_HASH = ConstExprHashingUtils::HashString("AGENTS_ONLINE");
+        static constexpr uint32_t AGENTS_AVAILABLE_HASH = ConstExprHashingUtils::HashString("AGENTS_AVAILABLE");
+        static constexpr uint32_t AGENTS_ON_CALL_HASH = ConstExprHashingUtils::HashString("AGENTS_ON_CALL");
+        static constexpr uint32_t AGENTS_NON_PRODUCTIVE_HASH = ConstExprHashingUtils::HashString("AGENTS_NON_PRODUCTIVE");
+        static constexpr uint32_t AGENTS_AFTER_CONTACT_WORK_HASH = ConstExprHashingUtils::HashString("AGENTS_AFTER_CONTACT_WORK");
+        static constexpr uint32_t AGENTS_ERROR_HASH = ConstExprHashingUtils::HashString("AGENTS_ERROR");
+        static constexpr uint32_t AGENTS_STAFFED_HASH = ConstExprHashingUtils::HashString("AGENTS_STAFFED");
+        static constexpr uint32_t CONTACTS_IN_QUEUE_HASH = ConstExprHashingUtils::HashString("CONTACTS_IN_QUEUE");
+        static constexpr uint32_t OLDEST_CONTACT_AGE_HASH = ConstExprHashingUtils::HashString("OLDEST_CONTACT_AGE");
+        static constexpr uint32_t CONTACTS_SCHEDULED_HASH = ConstExprHashingUtils::HashString("CONTACTS_SCHEDULED");
+        static constexpr uint32_t AGENTS_ON_CONTACT_HASH = ConstExprHashingUtils::HashString("AGENTS_ON_CONTACT");
+        static constexpr uint32_t SLOTS_ACTIVE_HASH = ConstExprHashingUtils::HashString("SLOTS_ACTIVE");
+        static constexpr uint32_t SLOTS_AVAILABLE_HASH = ConstExprHashingUtils::HashString("SLOTS_AVAILABLE");
 
 
         CurrentMetricName GetCurrentMetricNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AGENTS_ONLINE_HASH)
           {
             return CurrentMetricName::AGENTS_ONLINE;

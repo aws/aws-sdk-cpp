@@ -20,14 +20,14 @@ namespace Aws
       namespace ExportStatusMapper
       {
 
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
 
 
         ExportStatus GetExportStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IN_PROGRESS_HASH)
           {
             return ExportStatus::IN_PROGRESS;

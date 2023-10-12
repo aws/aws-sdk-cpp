@@ -20,13 +20,13 @@ namespace Aws
       namespace EncryptionTypeMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int KMS_HASH = HashingUtils::HashString("KMS");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t KMS_HASH = ConstExprHashingUtils::HashString("KMS");
 
 
         EncryptionType GetEncryptionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return EncryptionType::NONE;

@@ -20,12 +20,12 @@ namespace Aws
       namespace OrderedByMapper
       {
 
-        static const int LAST_MODIFIED_DATE_HASH = HashingUtils::HashString("LAST_MODIFIED_DATE");
+        static constexpr uint32_t LAST_MODIFIED_DATE_HASH = ConstExprHashingUtils::HashString("LAST_MODIFIED_DATE");
 
 
         OrderedBy GetOrderedByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LAST_MODIFIED_DATE_HASH)
           {
             return OrderedBy::LAST_MODIFIED_DATE;

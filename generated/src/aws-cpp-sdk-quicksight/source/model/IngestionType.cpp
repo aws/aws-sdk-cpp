@@ -20,13 +20,13 @@ namespace Aws
       namespace IngestionTypeMapper
       {
 
-        static const int INCREMENTAL_REFRESH_HASH = HashingUtils::HashString("INCREMENTAL_REFRESH");
-        static const int FULL_REFRESH_HASH = HashingUtils::HashString("FULL_REFRESH");
+        static constexpr uint32_t INCREMENTAL_REFRESH_HASH = ConstExprHashingUtils::HashString("INCREMENTAL_REFRESH");
+        static constexpr uint32_t FULL_REFRESH_HASH = ConstExprHashingUtils::HashString("FULL_REFRESH");
 
 
         IngestionType GetIngestionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INCREMENTAL_REFRESH_HASH)
           {
             return IngestionType::INCREMENTAL_REFRESH;

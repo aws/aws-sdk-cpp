@@ -26,16 +26,16 @@ template<> AWS_MIGRATIONHUB_API ThrottlingException MigrationHubError::GetModele
 namespace MigrationHubErrorMapper
 {
 
-static const int DRY_RUN_OPERATION_HASH = HashingUtils::HashString("DryRunOperation");
-static const int UNAUTHORIZED_OPERATION_HASH = HashingUtils::HashString("UnauthorizedOperation");
-static const int POLICY_ERROR_HASH = HashingUtils::HashString("PolicyErrorException");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
-static const int HOME_REGION_NOT_SET_HASH = HashingUtils::HashString("HomeRegionNotSetException");
+static constexpr uint32_t DRY_RUN_OPERATION_HASH = ConstExprHashingUtils::HashString("DryRunOperation");
+static constexpr uint32_t UNAUTHORIZED_OPERATION_HASH = ConstExprHashingUtils::HashString("UnauthorizedOperation");
+static constexpr uint32_t POLICY_ERROR_HASH = ConstExprHashingUtils::HashString("PolicyErrorException");
+static constexpr uint32_t INVALID_INPUT_HASH = ConstExprHashingUtils::HashString("InvalidInputException");
+static constexpr uint32_t HOME_REGION_NOT_SET_HASH = ConstExprHashingUtils::HashString("HomeRegionNotSetException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == DRY_RUN_OPERATION_HASH)
   {

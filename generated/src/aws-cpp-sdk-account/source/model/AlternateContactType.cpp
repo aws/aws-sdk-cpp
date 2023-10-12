@@ -20,14 +20,14 @@ namespace Aws
       namespace AlternateContactTypeMapper
       {
 
-        static const int BILLING_HASH = HashingUtils::HashString("BILLING");
-        static const int OPERATIONS_HASH = HashingUtils::HashString("OPERATIONS");
-        static const int SECURITY_HASH = HashingUtils::HashString("SECURITY");
+        static constexpr uint32_t BILLING_HASH = ConstExprHashingUtils::HashString("BILLING");
+        static constexpr uint32_t OPERATIONS_HASH = ConstExprHashingUtils::HashString("OPERATIONS");
+        static constexpr uint32_t SECURITY_HASH = ConstExprHashingUtils::HashString("SECURITY");
 
 
         AlternateContactType GetAlternateContactTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BILLING_HASH)
           {
             return AlternateContactType::BILLING;

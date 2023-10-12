@@ -20,14 +20,14 @@ namespace Aws
       namespace RunningModeMapper
       {
 
-        static const int AUTO_STOP_HASH = HashingUtils::HashString("AUTO_STOP");
-        static const int ALWAYS_ON_HASH = HashingUtils::HashString("ALWAYS_ON");
-        static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
+        static constexpr uint32_t AUTO_STOP_HASH = ConstExprHashingUtils::HashString("AUTO_STOP");
+        static constexpr uint32_t ALWAYS_ON_HASH = ConstExprHashingUtils::HashString("ALWAYS_ON");
+        static constexpr uint32_t MANUAL_HASH = ConstExprHashingUtils::HashString("MANUAL");
 
 
         RunningMode GetRunningModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_STOP_HASH)
           {
             return RunningMode::AUTO_STOP;

@@ -20,18 +20,18 @@ namespace Aws
       namespace DomainMapper
       {
 
-        static const int RETAIL_HASH = HashingUtils::HashString("RETAIL");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
-        static const int INVENTORY_PLANNING_HASH = HashingUtils::HashString("INVENTORY_PLANNING");
-        static const int EC2_CAPACITY_HASH = HashingUtils::HashString("EC2_CAPACITY");
-        static const int WORK_FORCE_HASH = HashingUtils::HashString("WORK_FORCE");
-        static const int WEB_TRAFFIC_HASH = HashingUtils::HashString("WEB_TRAFFIC");
-        static const int METRICS_HASH = HashingUtils::HashString("METRICS");
+        static constexpr uint32_t RETAIL_HASH = ConstExprHashingUtils::HashString("RETAIL");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t INVENTORY_PLANNING_HASH = ConstExprHashingUtils::HashString("INVENTORY_PLANNING");
+        static constexpr uint32_t EC2_CAPACITY_HASH = ConstExprHashingUtils::HashString("EC2_CAPACITY");
+        static constexpr uint32_t WORK_FORCE_HASH = ConstExprHashingUtils::HashString("WORK_FORCE");
+        static constexpr uint32_t WEB_TRAFFIC_HASH = ConstExprHashingUtils::HashString("WEB_TRAFFIC");
+        static constexpr uint32_t METRICS_HASH = ConstExprHashingUtils::HashString("METRICS");
 
 
         Domain GetDomainForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RETAIL_HASH)
           {
             return Domain::RETAIL;

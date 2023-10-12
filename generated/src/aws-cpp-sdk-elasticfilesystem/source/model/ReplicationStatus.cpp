@@ -20,17 +20,17 @@ namespace Aws
       namespace ReplicationStatusMapper
       {
 
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int ENABLING_HASH = HashingUtils::HashString("ENABLING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
-        static const int PAUSING_HASH = HashingUtils::HashString("PAUSING");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
+        static constexpr uint32_t ENABLING_HASH = ConstExprHashingUtils::HashString("ENABLING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t PAUSED_HASH = ConstExprHashingUtils::HashString("PAUSED");
+        static constexpr uint32_t PAUSING_HASH = ConstExprHashingUtils::HashString("PAUSING");
 
 
         ReplicationStatus GetReplicationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLED_HASH)
           {
             return ReplicationStatus::ENABLED;

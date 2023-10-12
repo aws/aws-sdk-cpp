@@ -20,15 +20,15 @@ namespace Aws
       namespace ServiceActionDefinitionKeyMapper
       {
 
-        static const int Name_HASH = HashingUtils::HashString("Name");
-        static const int Version_HASH = HashingUtils::HashString("Version");
-        static const int AssumeRole_HASH = HashingUtils::HashString("AssumeRole");
-        static const int Parameters_HASH = HashingUtils::HashString("Parameters");
+        static constexpr uint32_t Name_HASH = ConstExprHashingUtils::HashString("Name");
+        static constexpr uint32_t Version_HASH = ConstExprHashingUtils::HashString("Version");
+        static constexpr uint32_t AssumeRole_HASH = ConstExprHashingUtils::HashString("AssumeRole");
+        static constexpr uint32_t Parameters_HASH = ConstExprHashingUtils::HashString("Parameters");
 
 
         ServiceActionDefinitionKey GetServiceActionDefinitionKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Name_HASH)
           {
             return ServiceActionDefinitionKey::Name;

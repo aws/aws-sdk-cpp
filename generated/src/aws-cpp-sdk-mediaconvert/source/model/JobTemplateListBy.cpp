@@ -20,14 +20,14 @@ namespace Aws
       namespace JobTemplateListByMapper
       {
 
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int CREATION_DATE_HASH = HashingUtils::HashString("CREATION_DATE");
-        static const int SYSTEM_HASH = HashingUtils::HashString("SYSTEM");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t CREATION_DATE_HASH = ConstExprHashingUtils::HashString("CREATION_DATE");
+        static constexpr uint32_t SYSTEM_HASH = ConstExprHashingUtils::HashString("SYSTEM");
 
 
         JobTemplateListBy GetJobTemplateListByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NAME_HASH)
           {
             return JobTemplateListBy::NAME;

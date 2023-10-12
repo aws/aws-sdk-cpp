@@ -18,23 +18,23 @@ namespace CognitoSync
 namespace CognitoSyncErrorMapper
 {
 
-static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
-static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateRequestException");
-static const int ALREADY_STREAMED_HASH = HashingUtils::HashString("AlreadyStreamedException");
-static const int INVALID_LAMBDA_FUNCTION_OUTPUT_HASH = HashingUtils::HashString("InvalidLambdaFunctionOutputException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int INVALID_CONFIGURATION_HASH = HashingUtils::HashString("InvalidConfigurationException");
-static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int LAMBDA_THROTTLED_HASH = HashingUtils::HashString("LambdaThrottledException");
+static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("InternalErrorException");
+static constexpr uint32_t DUPLICATE_REQUEST_HASH = ConstExprHashingUtils::HashString("DuplicateRequestException");
+static constexpr uint32_t ALREADY_STREAMED_HASH = ConstExprHashingUtils::HashString("AlreadyStreamedException");
+static constexpr uint32_t INVALID_LAMBDA_FUNCTION_OUTPUT_HASH = ConstExprHashingUtils::HashString("InvalidLambdaFunctionOutputException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t INVALID_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("InvalidConfigurationException");
+static constexpr uint32_t NOT_AUTHORIZED_HASH = ConstExprHashingUtils::HashString("NotAuthorizedException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t RESOURCE_CONFLICT_HASH = ConstExprHashingUtils::HashString("ResourceConflictException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t TOO_MANY_REQUESTS_HASH = ConstExprHashingUtils::HashString("TooManyRequestsException");
+static constexpr uint32_t LAMBDA_THROTTLED_HASH = ConstExprHashingUtils::HashString("LambdaThrottledException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INTERNAL_ERROR_HASH)
   {

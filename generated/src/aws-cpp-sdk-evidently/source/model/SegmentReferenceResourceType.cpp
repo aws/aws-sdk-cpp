@@ -20,13 +20,13 @@ namespace Aws
       namespace SegmentReferenceResourceTypeMapper
       {
 
-        static const int EXPERIMENT_HASH = HashingUtils::HashString("EXPERIMENT");
-        static const int LAUNCH_HASH = HashingUtils::HashString("LAUNCH");
+        static constexpr uint32_t EXPERIMENT_HASH = ConstExprHashingUtils::HashString("EXPERIMENT");
+        static constexpr uint32_t LAUNCH_HASH = ConstExprHashingUtils::HashString("LAUNCH");
 
 
         SegmentReferenceResourceType GetSegmentReferenceResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXPERIMENT_HASH)
           {
             return SegmentReferenceResourceType::EXPERIMENT;

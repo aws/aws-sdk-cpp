@@ -20,14 +20,14 @@ namespace Aws
       namespace AgentStatusTypeMapper
       {
 
-        static const int ROUTABLE_HASH = HashingUtils::HashString("ROUTABLE");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
-        static const int OFFLINE_HASH = HashingUtils::HashString("OFFLINE");
+        static constexpr uint32_t ROUTABLE_HASH = ConstExprHashingUtils::HashString("ROUTABLE");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t OFFLINE_HASH = ConstExprHashingUtils::HashString("OFFLINE");
 
 
         AgentStatusType GetAgentStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ROUTABLE_HASH)
           {
             return AgentStatusType::ROUTABLE;

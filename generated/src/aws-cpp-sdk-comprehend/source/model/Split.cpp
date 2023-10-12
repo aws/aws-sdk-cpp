@@ -20,13 +20,13 @@ namespace Aws
       namespace SplitMapper
       {
 
-        static const int TRAIN_HASH = HashingUtils::HashString("TRAIN");
-        static const int TEST_HASH = HashingUtils::HashString("TEST");
+        static constexpr uint32_t TRAIN_HASH = ConstExprHashingUtils::HashString("TRAIN");
+        static constexpr uint32_t TEST_HASH = ConstExprHashingUtils::HashString("TEST");
 
 
         Split GetSplitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRAIN_HASH)
           {
             return Split::TRAIN;

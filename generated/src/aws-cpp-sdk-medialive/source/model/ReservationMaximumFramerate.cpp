@@ -20,13 +20,13 @@ namespace Aws
       namespace ReservationMaximumFramerateMapper
       {
 
-        static const int MAX_30_FPS_HASH = HashingUtils::HashString("MAX_30_FPS");
-        static const int MAX_60_FPS_HASH = HashingUtils::HashString("MAX_60_FPS");
+        static constexpr uint32_t MAX_30_FPS_HASH = ConstExprHashingUtils::HashString("MAX_30_FPS");
+        static constexpr uint32_t MAX_60_FPS_HASH = ConstExprHashingUtils::HashString("MAX_60_FPS");
 
 
         ReservationMaximumFramerate GetReservationMaximumFramerateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MAX_30_FPS_HASH)
           {
             return ReservationMaximumFramerate::MAX_30_FPS;

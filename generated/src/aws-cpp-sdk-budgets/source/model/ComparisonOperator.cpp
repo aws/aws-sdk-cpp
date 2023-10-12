@@ -20,14 +20,14 @@ namespace Aws
       namespace ComparisonOperatorMapper
       {
 
-        static const int GREATER_THAN_HASH = HashingUtils::HashString("GREATER_THAN");
-        static const int LESS_THAN_HASH = HashingUtils::HashString("LESS_THAN");
-        static const int EQUAL_TO_HASH = HashingUtils::HashString("EQUAL_TO");
+        static constexpr uint32_t GREATER_THAN_HASH = ConstExprHashingUtils::HashString("GREATER_THAN");
+        static constexpr uint32_t LESS_THAN_HASH = ConstExprHashingUtils::HashString("LESS_THAN");
+        static constexpr uint32_t EQUAL_TO_HASH = ConstExprHashingUtils::HashString("EQUAL_TO");
 
 
         ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GREATER_THAN_HASH)
           {
             return ComparisonOperator::GREATER_THAN;

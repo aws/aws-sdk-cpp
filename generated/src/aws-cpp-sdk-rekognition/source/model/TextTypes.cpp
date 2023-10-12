@@ -20,13 +20,13 @@ namespace Aws
       namespace TextTypesMapper
       {
 
-        static const int LINE_HASH = HashingUtils::HashString("LINE");
-        static const int WORD_HASH = HashingUtils::HashString("WORD");
+        static constexpr uint32_t LINE_HASH = ConstExprHashingUtils::HashString("LINE");
+        static constexpr uint32_t WORD_HASH = ConstExprHashingUtils::HashString("WORD");
 
 
         TextTypes GetTextTypesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LINE_HASH)
           {
             return TextTypes::LINE;

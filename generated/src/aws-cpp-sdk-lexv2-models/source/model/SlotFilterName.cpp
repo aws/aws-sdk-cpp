@@ -20,12 +20,12 @@ namespace Aws
       namespace SlotFilterNameMapper
       {
 
-        static const int SlotName_HASH = HashingUtils::HashString("SlotName");
+        static constexpr uint32_t SlotName_HASH = ConstExprHashingUtils::HashString("SlotName");
 
 
         SlotFilterName GetSlotFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SlotName_HASH)
           {
             return SlotFilterName::SlotName;

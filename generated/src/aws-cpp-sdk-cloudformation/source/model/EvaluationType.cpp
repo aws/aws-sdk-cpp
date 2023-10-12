@@ -20,13 +20,13 @@ namespace Aws
       namespace EvaluationTypeMapper
       {
 
-        static const int Static_HASH = HashingUtils::HashString("Static");
-        static const int Dynamic_HASH = HashingUtils::HashString("Dynamic");
+        static constexpr uint32_t Static_HASH = ConstExprHashingUtils::HashString("Static");
+        static constexpr uint32_t Dynamic_HASH = ConstExprHashingUtils::HashString("Dynamic");
 
 
         EvaluationType GetEvaluationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Static_HASH)
           {
             return EvaluationType::Static;

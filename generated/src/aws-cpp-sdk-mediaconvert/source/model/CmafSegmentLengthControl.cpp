@@ -20,13 +20,13 @@ namespace Aws
       namespace CmafSegmentLengthControlMapper
       {
 
-        static const int EXACT_HASH = HashingUtils::HashString("EXACT");
-        static const int GOP_MULTIPLE_HASH = HashingUtils::HashString("GOP_MULTIPLE");
+        static constexpr uint32_t EXACT_HASH = ConstExprHashingUtils::HashString("EXACT");
+        static constexpr uint32_t GOP_MULTIPLE_HASH = ConstExprHashingUtils::HashString("GOP_MULTIPLE");
 
 
         CmafSegmentLengthControl GetCmafSegmentLengthControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXACT_HASH)
           {
             return CmafSegmentLengthControl::EXACT;

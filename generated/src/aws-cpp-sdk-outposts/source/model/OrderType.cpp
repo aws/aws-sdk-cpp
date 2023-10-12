@@ -20,13 +20,13 @@ namespace Aws
       namespace OrderTypeMapper
       {
 
-        static const int OUTPOST_HASH = HashingUtils::HashString("OUTPOST");
-        static const int REPLACEMENT_HASH = HashingUtils::HashString("REPLACEMENT");
+        static constexpr uint32_t OUTPOST_HASH = ConstExprHashingUtils::HashString("OUTPOST");
+        static constexpr uint32_t REPLACEMENT_HASH = ConstExprHashingUtils::HashString("REPLACEMENT");
 
 
         OrderType GetOrderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OUTPOST_HASH)
           {
             return OrderType::OUTPOST;

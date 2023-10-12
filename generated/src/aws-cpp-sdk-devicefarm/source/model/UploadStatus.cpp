@@ -20,15 +20,15 @@ namespace Aws
       namespace UploadStatusMapper
       {
 
-        static const int INITIALIZED_HASH = HashingUtils::HashString("INITIALIZED");
-        static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t INITIALIZED_HASH = ConstExprHashingUtils::HashString("INITIALIZED");
+        static constexpr uint32_t PROCESSING_HASH = ConstExprHashingUtils::HashString("PROCESSING");
+        static constexpr uint32_t SUCCEEDED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         UploadStatus GetUploadStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INITIALIZED_HASH)
           {
             return UploadStatus::INITIALIZED;

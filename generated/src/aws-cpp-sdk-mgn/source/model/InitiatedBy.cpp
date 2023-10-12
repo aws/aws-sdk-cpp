@@ -20,15 +20,15 @@ namespace Aws
       namespace InitiatedByMapper
       {
 
-        static const int START_TEST_HASH = HashingUtils::HashString("START_TEST");
-        static const int START_CUTOVER_HASH = HashingUtils::HashString("START_CUTOVER");
-        static const int DIAGNOSTIC_HASH = HashingUtils::HashString("DIAGNOSTIC");
-        static const int TERMINATE_HASH = HashingUtils::HashString("TERMINATE");
+        static constexpr uint32_t START_TEST_HASH = ConstExprHashingUtils::HashString("START_TEST");
+        static constexpr uint32_t START_CUTOVER_HASH = ConstExprHashingUtils::HashString("START_CUTOVER");
+        static constexpr uint32_t DIAGNOSTIC_HASH = ConstExprHashingUtils::HashString("DIAGNOSTIC");
+        static constexpr uint32_t TERMINATE_HASH = ConstExprHashingUtils::HashString("TERMINATE");
 
 
         InitiatedBy GetInitiatedByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == START_TEST_HASH)
           {
             return InitiatedBy::START_TEST;

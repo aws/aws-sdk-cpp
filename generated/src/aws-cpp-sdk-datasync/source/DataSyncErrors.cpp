@@ -33,13 +33,13 @@ template<> AWS_DATASYNC_API InvalidRequestException DataSyncError::GetModeledErr
 namespace DataSyncErrorMapper
 {
 
-static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t INTERNAL_HASH = ConstExprHashingUtils::HashString("InternalException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INTERNAL_HASH)
   {

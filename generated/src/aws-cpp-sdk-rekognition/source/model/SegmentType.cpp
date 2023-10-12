@@ -20,13 +20,13 @@ namespace Aws
       namespace SegmentTypeMapper
       {
 
-        static const int TECHNICAL_CUE_HASH = HashingUtils::HashString("TECHNICAL_CUE");
-        static const int SHOT_HASH = HashingUtils::HashString("SHOT");
+        static constexpr uint32_t TECHNICAL_CUE_HASH = ConstExprHashingUtils::HashString("TECHNICAL_CUE");
+        static constexpr uint32_t SHOT_HASH = ConstExprHashingUtils::HashString("SHOT");
 
 
         SegmentType GetSegmentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TECHNICAL_CUE_HASH)
           {
             return SegmentType::TECHNICAL_CUE;

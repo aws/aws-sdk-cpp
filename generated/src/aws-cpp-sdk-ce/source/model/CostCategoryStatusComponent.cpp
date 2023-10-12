@@ -20,12 +20,12 @@ namespace Aws
       namespace CostCategoryStatusComponentMapper
       {
 
-        static const int COST_EXPLORER_HASH = HashingUtils::HashString("COST_EXPLORER");
+        static constexpr uint32_t COST_EXPLORER_HASH = ConstExprHashingUtils::HashString("COST_EXPLORER");
 
 
         CostCategoryStatusComponent GetCostCategoryStatusComponentForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COST_EXPLORER_HASH)
           {
             return CostCategoryStatusComponent::COST_EXPLORER;

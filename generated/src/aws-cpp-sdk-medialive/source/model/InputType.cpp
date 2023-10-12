@@ -20,21 +20,21 @@ namespace Aws
       namespace InputTypeMapper
       {
 
-        static const int UDP_PUSH_HASH = HashingUtils::HashString("UDP_PUSH");
-        static const int RTP_PUSH_HASH = HashingUtils::HashString("RTP_PUSH");
-        static const int RTMP_PUSH_HASH = HashingUtils::HashString("RTMP_PUSH");
-        static const int RTMP_PULL_HASH = HashingUtils::HashString("RTMP_PULL");
-        static const int URL_PULL_HASH = HashingUtils::HashString("URL_PULL");
-        static const int MP4_FILE_HASH = HashingUtils::HashString("MP4_FILE");
-        static const int MEDIACONNECT_HASH = HashingUtils::HashString("MEDIACONNECT");
-        static const int INPUT_DEVICE_HASH = HashingUtils::HashString("INPUT_DEVICE");
-        static const int AWS_CDI_HASH = HashingUtils::HashString("AWS_CDI");
-        static const int TS_FILE_HASH = HashingUtils::HashString("TS_FILE");
+        static constexpr uint32_t UDP_PUSH_HASH = ConstExprHashingUtils::HashString("UDP_PUSH");
+        static constexpr uint32_t RTP_PUSH_HASH = ConstExprHashingUtils::HashString("RTP_PUSH");
+        static constexpr uint32_t RTMP_PUSH_HASH = ConstExprHashingUtils::HashString("RTMP_PUSH");
+        static constexpr uint32_t RTMP_PULL_HASH = ConstExprHashingUtils::HashString("RTMP_PULL");
+        static constexpr uint32_t URL_PULL_HASH = ConstExprHashingUtils::HashString("URL_PULL");
+        static constexpr uint32_t MP4_FILE_HASH = ConstExprHashingUtils::HashString("MP4_FILE");
+        static constexpr uint32_t MEDIACONNECT_HASH = ConstExprHashingUtils::HashString("MEDIACONNECT");
+        static constexpr uint32_t INPUT_DEVICE_HASH = ConstExprHashingUtils::HashString("INPUT_DEVICE");
+        static constexpr uint32_t AWS_CDI_HASH = ConstExprHashingUtils::HashString("AWS_CDI");
+        static constexpr uint32_t TS_FILE_HASH = ConstExprHashingUtils::HashString("TS_FILE");
 
 
         InputType GetInputTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UDP_PUSH_HASH)
           {
             return InputType::UDP_PUSH;

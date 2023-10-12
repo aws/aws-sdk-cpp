@@ -20,14 +20,14 @@ namespace Aws
       namespace DecryptionModeMapper
       {
 
-        static const int AES_CTR_HASH = HashingUtils::HashString("AES_CTR");
-        static const int AES_CBC_HASH = HashingUtils::HashString("AES_CBC");
-        static const int AES_GCM_HASH = HashingUtils::HashString("AES_GCM");
+        static constexpr uint32_t AES_CTR_HASH = ConstExprHashingUtils::HashString("AES_CTR");
+        static constexpr uint32_t AES_CBC_HASH = ConstExprHashingUtils::HashString("AES_CBC");
+        static constexpr uint32_t AES_GCM_HASH = ConstExprHashingUtils::HashString("AES_GCM");
 
 
         DecryptionMode GetDecryptionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AES_CTR_HASH)
           {
             return DecryptionMode::AES_CTR;

@@ -20,13 +20,13 @@ namespace Aws
       namespace PolicyUsageTypeMapper
       {
 
-        static const int PermissionsPolicy_HASH = HashingUtils::HashString("PermissionsPolicy");
-        static const int PermissionsBoundary_HASH = HashingUtils::HashString("PermissionsBoundary");
+        static constexpr uint32_t PermissionsPolicy_HASH = ConstExprHashingUtils::HashString("PermissionsPolicy");
+        static constexpr uint32_t PermissionsBoundary_HASH = ConstExprHashingUtils::HashString("PermissionsBoundary");
 
 
         PolicyUsageType GetPolicyUsageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PermissionsPolicy_HASH)
           {
             return PolicyUsageType::PermissionsPolicy;

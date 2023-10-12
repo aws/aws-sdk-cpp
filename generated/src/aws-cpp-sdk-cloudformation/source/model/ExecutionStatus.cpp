@@ -20,17 +20,17 @@ namespace Aws
       namespace ExecutionStatusMapper
       {
 
-        static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int EXECUTE_IN_PROGRESS_HASH = HashingUtils::HashString("EXECUTE_IN_PROGRESS");
-        static const int EXECUTE_COMPLETE_HASH = HashingUtils::HashString("EXECUTE_COMPLETE");
-        static const int EXECUTE_FAILED_HASH = HashingUtils::HashString("EXECUTE_FAILED");
-        static const int OBSOLETE_HASH = HashingUtils::HashString("OBSOLETE");
+        static constexpr uint32_t UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("UNAVAILABLE");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t EXECUTE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("EXECUTE_IN_PROGRESS");
+        static constexpr uint32_t EXECUTE_COMPLETE_HASH = ConstExprHashingUtils::HashString("EXECUTE_COMPLETE");
+        static constexpr uint32_t EXECUTE_FAILED_HASH = ConstExprHashingUtils::HashString("EXECUTE_FAILED");
+        static constexpr uint32_t OBSOLETE_HASH = ConstExprHashingUtils::HashString("OBSOLETE");
 
 
         ExecutionStatus GetExecutionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNAVAILABLE_HASH)
           {
             return ExecutionStatus::UNAVAILABLE;

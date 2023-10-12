@@ -20,21 +20,21 @@ namespace Aws
       namespace RelationshipStatusMapper
       {
 
-        static const int Enabled_HASH = HashingUtils::HashString("Enabled");
-        static const int Paused_HASH = HashingUtils::HashString("Paused");
-        static const int Invited_HASH = HashingUtils::HashString("Invited");
-        static const int Created_HASH = HashingUtils::HashString("Created");
-        static const int Removed_HASH = HashingUtils::HashString("Removed");
-        static const int Resigned_HASH = HashingUtils::HashString("Resigned");
-        static const int EmailVerificationInProgress_HASH = HashingUtils::HashString("EmailVerificationInProgress");
-        static const int EmailVerificationFailed_HASH = HashingUtils::HashString("EmailVerificationFailed");
-        static const int RegionDisabled_HASH = HashingUtils::HashString("RegionDisabled");
-        static const int AccountSuspended_HASH = HashingUtils::HashString("AccountSuspended");
+        static constexpr uint32_t Enabled_HASH = ConstExprHashingUtils::HashString("Enabled");
+        static constexpr uint32_t Paused_HASH = ConstExprHashingUtils::HashString("Paused");
+        static constexpr uint32_t Invited_HASH = ConstExprHashingUtils::HashString("Invited");
+        static constexpr uint32_t Created_HASH = ConstExprHashingUtils::HashString("Created");
+        static constexpr uint32_t Removed_HASH = ConstExprHashingUtils::HashString("Removed");
+        static constexpr uint32_t Resigned_HASH = ConstExprHashingUtils::HashString("Resigned");
+        static constexpr uint32_t EmailVerificationInProgress_HASH = ConstExprHashingUtils::HashString("EmailVerificationInProgress");
+        static constexpr uint32_t EmailVerificationFailed_HASH = ConstExprHashingUtils::HashString("EmailVerificationFailed");
+        static constexpr uint32_t RegionDisabled_HASH = ConstExprHashingUtils::HashString("RegionDisabled");
+        static constexpr uint32_t AccountSuspended_HASH = ConstExprHashingUtils::HashString("AccountSuspended");
 
 
         RelationshipStatus GetRelationshipStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Enabled_HASH)
           {
             return RelationshipStatus::Enabled;

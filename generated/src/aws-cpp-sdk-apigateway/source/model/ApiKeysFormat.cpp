@@ -20,12 +20,12 @@ namespace Aws
       namespace ApiKeysFormatMapper
       {
 
-        static const int csv_HASH = HashingUtils::HashString("csv");
+        static constexpr uint32_t csv_HASH = ConstExprHashingUtils::HashString("csv");
 
 
         ApiKeysFormat GetApiKeysFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == csv_HASH)
           {
             return ApiKeysFormat::csv;

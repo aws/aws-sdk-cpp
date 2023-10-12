@@ -20,13 +20,13 @@ namespace Aws
       namespace IncidentRecordStatusMapper
       {
 
-        static const int OPEN_HASH = HashingUtils::HashString("OPEN");
-        static const int RESOLVED_HASH = HashingUtils::HashString("RESOLVED");
+        static constexpr uint32_t OPEN_HASH = ConstExprHashingUtils::HashString("OPEN");
+        static constexpr uint32_t RESOLVED_HASH = ConstExprHashingUtils::HashString("RESOLVED");
 
 
         IncidentRecordStatus GetIncidentRecordStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OPEN_HASH)
           {
             return IncidentRecordStatus::OPEN;

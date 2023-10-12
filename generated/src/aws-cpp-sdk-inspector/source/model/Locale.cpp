@@ -20,12 +20,12 @@ namespace Aws
       namespace LocaleMapper
       {
 
-        static const int EN_US_HASH = HashingUtils::HashString("EN_US");
+        static constexpr uint32_t EN_US_HASH = ConstExprHashingUtils::HashString("EN_US");
 
 
         Locale GetLocaleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EN_US_HASH)
           {
             return Locale::EN_US;

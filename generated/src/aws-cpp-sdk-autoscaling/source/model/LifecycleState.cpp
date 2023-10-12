@@ -20,34 +20,34 @@ namespace Aws
       namespace LifecycleStateMapper
       {
 
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int Pending_Wait_HASH = HashingUtils::HashString("Pending:Wait");
-        static const int Pending_Proceed_HASH = HashingUtils::HashString("Pending:Proceed");
-        static const int Quarantined_HASH = HashingUtils::HashString("Quarantined");
-        static const int InService_HASH = HashingUtils::HashString("InService");
-        static const int Terminating_HASH = HashingUtils::HashString("Terminating");
-        static const int Terminating_Wait_HASH = HashingUtils::HashString("Terminating:Wait");
-        static const int Terminating_Proceed_HASH = HashingUtils::HashString("Terminating:Proceed");
-        static const int Terminated_HASH = HashingUtils::HashString("Terminated");
-        static const int Detaching_HASH = HashingUtils::HashString("Detaching");
-        static const int Detached_HASH = HashingUtils::HashString("Detached");
-        static const int EnteringStandby_HASH = HashingUtils::HashString("EnteringStandby");
-        static const int Standby_HASH = HashingUtils::HashString("Standby");
-        static const int Warmed_Pending_HASH = HashingUtils::HashString("Warmed:Pending");
-        static const int Warmed_Pending_Wait_HASH = HashingUtils::HashString("Warmed:Pending:Wait");
-        static const int Warmed_Pending_Proceed_HASH = HashingUtils::HashString("Warmed:Pending:Proceed");
-        static const int Warmed_Terminating_HASH = HashingUtils::HashString("Warmed:Terminating");
-        static const int Warmed_Terminating_Wait_HASH = HashingUtils::HashString("Warmed:Terminating:Wait");
-        static const int Warmed_Terminating_Proceed_HASH = HashingUtils::HashString("Warmed:Terminating:Proceed");
-        static const int Warmed_Terminated_HASH = HashingUtils::HashString("Warmed:Terminated");
-        static const int Warmed_Stopped_HASH = HashingUtils::HashString("Warmed:Stopped");
-        static const int Warmed_Running_HASH = HashingUtils::HashString("Warmed:Running");
-        static const int Warmed_Hibernated_HASH = HashingUtils::HashString("Warmed:Hibernated");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t Pending_Wait_HASH = ConstExprHashingUtils::HashString("Pending:Wait");
+        static constexpr uint32_t Pending_Proceed_HASH = ConstExprHashingUtils::HashString("Pending:Proceed");
+        static constexpr uint32_t Quarantined_HASH = ConstExprHashingUtils::HashString("Quarantined");
+        static constexpr uint32_t InService_HASH = ConstExprHashingUtils::HashString("InService");
+        static constexpr uint32_t Terminating_HASH = ConstExprHashingUtils::HashString("Terminating");
+        static constexpr uint32_t Terminating_Wait_HASH = ConstExprHashingUtils::HashString("Terminating:Wait");
+        static constexpr uint32_t Terminating_Proceed_HASH = ConstExprHashingUtils::HashString("Terminating:Proceed");
+        static constexpr uint32_t Terminated_HASH = ConstExprHashingUtils::HashString("Terminated");
+        static constexpr uint32_t Detaching_HASH = ConstExprHashingUtils::HashString("Detaching");
+        static constexpr uint32_t Detached_HASH = ConstExprHashingUtils::HashString("Detached");
+        static constexpr uint32_t EnteringStandby_HASH = ConstExprHashingUtils::HashString("EnteringStandby");
+        static constexpr uint32_t Standby_HASH = ConstExprHashingUtils::HashString("Standby");
+        static constexpr uint32_t Warmed_Pending_HASH = ConstExprHashingUtils::HashString("Warmed:Pending");
+        static constexpr uint32_t Warmed_Pending_Wait_HASH = ConstExprHashingUtils::HashString("Warmed:Pending:Wait");
+        static constexpr uint32_t Warmed_Pending_Proceed_HASH = ConstExprHashingUtils::HashString("Warmed:Pending:Proceed");
+        static constexpr uint32_t Warmed_Terminating_HASH = ConstExprHashingUtils::HashString("Warmed:Terminating");
+        static constexpr uint32_t Warmed_Terminating_Wait_HASH = ConstExprHashingUtils::HashString("Warmed:Terminating:Wait");
+        static constexpr uint32_t Warmed_Terminating_Proceed_HASH = ConstExprHashingUtils::HashString("Warmed:Terminating:Proceed");
+        static constexpr uint32_t Warmed_Terminated_HASH = ConstExprHashingUtils::HashString("Warmed:Terminated");
+        static constexpr uint32_t Warmed_Stopped_HASH = ConstExprHashingUtils::HashString("Warmed:Stopped");
+        static constexpr uint32_t Warmed_Running_HASH = ConstExprHashingUtils::HashString("Warmed:Running");
+        static constexpr uint32_t Warmed_Hibernated_HASH = ConstExprHashingUtils::HashString("Warmed:Hibernated");
 
 
         LifecycleState GetLifecycleStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pending_HASH)
           {
             return LifecycleState::Pending;

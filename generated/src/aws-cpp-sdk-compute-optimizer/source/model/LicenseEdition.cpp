@@ -20,15 +20,15 @@ namespace Aws
       namespace LicenseEditionMapper
       {
 
-        static const int Enterprise_HASH = HashingUtils::HashString("Enterprise");
-        static const int Standard_HASH = HashingUtils::HashString("Standard");
-        static const int Free_HASH = HashingUtils::HashString("Free");
-        static const int NoLicenseEditionFound_HASH = HashingUtils::HashString("NoLicenseEditionFound");
+        static constexpr uint32_t Enterprise_HASH = ConstExprHashingUtils::HashString("Enterprise");
+        static constexpr uint32_t Standard_HASH = ConstExprHashingUtils::HashString("Standard");
+        static constexpr uint32_t Free_HASH = ConstExprHashingUtils::HashString("Free");
+        static constexpr uint32_t NoLicenseEditionFound_HASH = ConstExprHashingUtils::HashString("NoLicenseEditionFound");
 
 
         LicenseEdition GetLicenseEditionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Enterprise_HASH)
           {
             return LicenseEdition::Enterprise;

@@ -20,12 +20,12 @@ namespace Aws
       namespace DimensionValueTypeMapper
       {
 
-        static const int VARCHAR_HASH = HashingUtils::HashString("VARCHAR");
+        static constexpr uint32_t VARCHAR_HASH = ConstExprHashingUtils::HashString("VARCHAR");
 
 
         DimensionValueType GetDimensionValueTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VARCHAR_HASH)
           {
             return DimensionValueType::VARCHAR;

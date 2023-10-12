@@ -20,16 +20,16 @@ namespace Aws
       namespace BackfillErrorCodeMapper
       {
 
-        static const int ENCRYPTED_PARTITION_ERROR_HASH = HashingUtils::HashString("ENCRYPTED_PARTITION_ERROR");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int INVALID_PARTITION_TYPE_DATA_ERROR_HASH = HashingUtils::HashString("INVALID_PARTITION_TYPE_DATA_ERROR");
-        static const int MISSING_PARTITION_VALUE_ERROR_HASH = HashingUtils::HashString("MISSING_PARTITION_VALUE_ERROR");
-        static const int UNSUPPORTED_PARTITION_CHARACTER_ERROR_HASH = HashingUtils::HashString("UNSUPPORTED_PARTITION_CHARACTER_ERROR");
+        static constexpr uint32_t ENCRYPTED_PARTITION_ERROR_HASH = ConstExprHashingUtils::HashString("ENCRYPTED_PARTITION_ERROR");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t INVALID_PARTITION_TYPE_DATA_ERROR_HASH = ConstExprHashingUtils::HashString("INVALID_PARTITION_TYPE_DATA_ERROR");
+        static constexpr uint32_t MISSING_PARTITION_VALUE_ERROR_HASH = ConstExprHashingUtils::HashString("MISSING_PARTITION_VALUE_ERROR");
+        static constexpr uint32_t UNSUPPORTED_PARTITION_CHARACTER_ERROR_HASH = ConstExprHashingUtils::HashString("UNSUPPORTED_PARTITION_CHARACTER_ERROR");
 
 
         BackfillErrorCode GetBackfillErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENCRYPTED_PARTITION_ERROR_HASH)
           {
             return BackfillErrorCode::ENCRYPTED_PARTITION_ERROR;

@@ -20,22 +20,22 @@ namespace Aws
       namespace TargetSamplingRateMapper
       {
 
-        static const int PT1S_HASH = HashingUtils::HashString("PT1S");
-        static const int PT5S_HASH = HashingUtils::HashString("PT5S");
-        static const int PT10S_HASH = HashingUtils::HashString("PT10S");
-        static const int PT15S_HASH = HashingUtils::HashString("PT15S");
-        static const int PT30S_HASH = HashingUtils::HashString("PT30S");
-        static const int PT1M_HASH = HashingUtils::HashString("PT1M");
-        static const int PT5M_HASH = HashingUtils::HashString("PT5M");
-        static const int PT10M_HASH = HashingUtils::HashString("PT10M");
-        static const int PT15M_HASH = HashingUtils::HashString("PT15M");
-        static const int PT30M_HASH = HashingUtils::HashString("PT30M");
-        static const int PT1H_HASH = HashingUtils::HashString("PT1H");
+        static constexpr uint32_t PT1S_HASH = ConstExprHashingUtils::HashString("PT1S");
+        static constexpr uint32_t PT5S_HASH = ConstExprHashingUtils::HashString("PT5S");
+        static constexpr uint32_t PT10S_HASH = ConstExprHashingUtils::HashString("PT10S");
+        static constexpr uint32_t PT15S_HASH = ConstExprHashingUtils::HashString("PT15S");
+        static constexpr uint32_t PT30S_HASH = ConstExprHashingUtils::HashString("PT30S");
+        static constexpr uint32_t PT1M_HASH = ConstExprHashingUtils::HashString("PT1M");
+        static constexpr uint32_t PT5M_HASH = ConstExprHashingUtils::HashString("PT5M");
+        static constexpr uint32_t PT10M_HASH = ConstExprHashingUtils::HashString("PT10M");
+        static constexpr uint32_t PT15M_HASH = ConstExprHashingUtils::HashString("PT15M");
+        static constexpr uint32_t PT30M_HASH = ConstExprHashingUtils::HashString("PT30M");
+        static constexpr uint32_t PT1H_HASH = ConstExprHashingUtils::HashString("PT1H");
 
 
         TargetSamplingRate GetTargetSamplingRateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PT1S_HASH)
           {
             return TargetSamplingRate::PT1S;

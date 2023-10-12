@@ -40,17 +40,17 @@ template<> AWS_IOTSITEWISE_API ConflictingOperationException IoTSiteWiseError::G
 namespace IoTSiteWiseErrorMapper
 {
 
-static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
-static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int CONFLICTING_OPERATION_HASH = HashingUtils::HashString("ConflictingOperationException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t RESOURCE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ResourceAlreadyExistsException");
+static constexpr uint32_t UNAUTHORIZED_HASH = ConstExprHashingUtils::HashString("UnauthorizedException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t CONFLICTING_OPERATION_HASH = ConstExprHashingUtils::HashString("ConflictingOperationException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {

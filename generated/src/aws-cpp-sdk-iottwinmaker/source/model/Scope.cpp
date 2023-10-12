@@ -20,13 +20,13 @@ namespace Aws
       namespace ScopeMapper
       {
 
-        static const int ENTITY_HASH = HashingUtils::HashString("ENTITY");
-        static const int WORKSPACE_HASH = HashingUtils::HashString("WORKSPACE");
+        static constexpr uint32_t ENTITY_HASH = ConstExprHashingUtils::HashString("ENTITY");
+        static constexpr uint32_t WORKSPACE_HASH = ConstExprHashingUtils::HashString("WORKSPACE");
 
 
         Scope GetScopeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENTITY_HASH)
           {
             return Scope::ENTITY;

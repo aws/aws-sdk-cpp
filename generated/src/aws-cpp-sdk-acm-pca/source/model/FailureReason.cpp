@@ -20,14 +20,14 @@ namespace Aws
       namespace FailureReasonMapper
       {
 
-        static const int REQUEST_TIMED_OUT_HASH = HashingUtils::HashString("REQUEST_TIMED_OUT");
-        static const int UNSUPPORTED_ALGORITHM_HASH = HashingUtils::HashString("UNSUPPORTED_ALGORITHM");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
+        static constexpr uint32_t REQUEST_TIMED_OUT_HASH = ConstExprHashingUtils::HashString("REQUEST_TIMED_OUT");
+        static constexpr uint32_t UNSUPPORTED_ALGORITHM_HASH = ConstExprHashingUtils::HashString("UNSUPPORTED_ALGORITHM");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
 
 
         FailureReason GetFailureReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REQUEST_TIMED_OUT_HASH)
           {
             return FailureReason::REQUEST_TIMED_OUT;

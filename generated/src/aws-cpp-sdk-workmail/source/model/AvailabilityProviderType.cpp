@@ -20,13 +20,13 @@ namespace Aws
       namespace AvailabilityProviderTypeMapper
       {
 
-        static const int EWS_HASH = HashingUtils::HashString("EWS");
-        static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
+        static constexpr uint32_t EWS_HASH = ConstExprHashingUtils::HashString("EWS");
+        static constexpr uint32_t LAMBDA_HASH = ConstExprHashingUtils::HashString("LAMBDA");
 
 
         AvailabilityProviderType GetAvailabilityProviderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EWS_HASH)
           {
             return AvailabilityProviderType::EWS;

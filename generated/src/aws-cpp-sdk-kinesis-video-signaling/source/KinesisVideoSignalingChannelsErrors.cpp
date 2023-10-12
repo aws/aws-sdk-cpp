@@ -18,16 +18,16 @@ namespace KinesisVideoSignalingChannels
 namespace KinesisVideoSignalingChannelsErrorMapper
 {
 
-static const int SESSION_EXPIRED_HASH = HashingUtils::HashString("SessionExpiredException");
-static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
-static const int INVALID_CLIENT_HASH = HashingUtils::HashString("InvalidClientException");
-static const int CLIENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ClientLimitExceededException");
-static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
+static constexpr uint32_t SESSION_EXPIRED_HASH = ConstExprHashingUtils::HashString("SessionExpiredException");
+static constexpr uint32_t NOT_AUTHORIZED_HASH = ConstExprHashingUtils::HashString("NotAuthorizedException");
+static constexpr uint32_t INVALID_CLIENT_HASH = ConstExprHashingUtils::HashString("InvalidClientException");
+static constexpr uint32_t CLIENT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ClientLimitExceededException");
+static constexpr uint32_t INVALID_ARGUMENT_HASH = ConstExprHashingUtils::HashString("InvalidArgumentException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == SESSION_EXPIRED_HASH)
   {

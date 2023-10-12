@@ -20,39 +20,39 @@ namespace Aws
       namespace ArtifactTypeMapper
       {
 
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
-        static const int SCREENSHOT_HASH = HashingUtils::HashString("SCREENSHOT");
-        static const int DEVICE_LOG_HASH = HashingUtils::HashString("DEVICE_LOG");
-        static const int MESSAGE_LOG_HASH = HashingUtils::HashString("MESSAGE_LOG");
-        static const int VIDEO_LOG_HASH = HashingUtils::HashString("VIDEO_LOG");
-        static const int RESULT_LOG_HASH = HashingUtils::HashString("RESULT_LOG");
-        static const int SERVICE_LOG_HASH = HashingUtils::HashString("SERVICE_LOG");
-        static const int WEBKIT_LOG_HASH = HashingUtils::HashString("WEBKIT_LOG");
-        static const int INSTRUMENTATION_OUTPUT_HASH = HashingUtils::HashString("INSTRUMENTATION_OUTPUT");
-        static const int EXERCISER_MONKEY_OUTPUT_HASH = HashingUtils::HashString("EXERCISER_MONKEY_OUTPUT");
-        static const int CALABASH_JSON_OUTPUT_HASH = HashingUtils::HashString("CALABASH_JSON_OUTPUT");
-        static const int CALABASH_PRETTY_OUTPUT_HASH = HashingUtils::HashString("CALABASH_PRETTY_OUTPUT");
-        static const int CALABASH_STANDARD_OUTPUT_HASH = HashingUtils::HashString("CALABASH_STANDARD_OUTPUT");
-        static const int CALABASH_JAVA_XML_OUTPUT_HASH = HashingUtils::HashString("CALABASH_JAVA_XML_OUTPUT");
-        static const int AUTOMATION_OUTPUT_HASH = HashingUtils::HashString("AUTOMATION_OUTPUT");
-        static const int APPIUM_SERVER_OUTPUT_HASH = HashingUtils::HashString("APPIUM_SERVER_OUTPUT");
-        static const int APPIUM_JAVA_OUTPUT_HASH = HashingUtils::HashString("APPIUM_JAVA_OUTPUT");
-        static const int APPIUM_JAVA_XML_OUTPUT_HASH = HashingUtils::HashString("APPIUM_JAVA_XML_OUTPUT");
-        static const int APPIUM_PYTHON_OUTPUT_HASH = HashingUtils::HashString("APPIUM_PYTHON_OUTPUT");
-        static const int APPIUM_PYTHON_XML_OUTPUT_HASH = HashingUtils::HashString("APPIUM_PYTHON_XML_OUTPUT");
-        static const int EXPLORER_EVENT_LOG_HASH = HashingUtils::HashString("EXPLORER_EVENT_LOG");
-        static const int EXPLORER_SUMMARY_LOG_HASH = HashingUtils::HashString("EXPLORER_SUMMARY_LOG");
-        static const int APPLICATION_CRASH_REPORT_HASH = HashingUtils::HashString("APPLICATION_CRASH_REPORT");
-        static const int XCTEST_LOG_HASH = HashingUtils::HashString("XCTEST_LOG");
-        static const int VIDEO_HASH = HashingUtils::HashString("VIDEO");
-        static const int CUSTOMER_ARTIFACT_HASH = HashingUtils::HashString("CUSTOMER_ARTIFACT");
-        static const int CUSTOMER_ARTIFACT_LOG_HASH = HashingUtils::HashString("CUSTOMER_ARTIFACT_LOG");
-        static const int TESTSPEC_OUTPUT_HASH = HashingUtils::HashString("TESTSPEC_OUTPUT");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t SCREENSHOT_HASH = ConstExprHashingUtils::HashString("SCREENSHOT");
+        static constexpr uint32_t DEVICE_LOG_HASH = ConstExprHashingUtils::HashString("DEVICE_LOG");
+        static constexpr uint32_t MESSAGE_LOG_HASH = ConstExprHashingUtils::HashString("MESSAGE_LOG");
+        static constexpr uint32_t VIDEO_LOG_HASH = ConstExprHashingUtils::HashString("VIDEO_LOG");
+        static constexpr uint32_t RESULT_LOG_HASH = ConstExprHashingUtils::HashString("RESULT_LOG");
+        static constexpr uint32_t SERVICE_LOG_HASH = ConstExprHashingUtils::HashString("SERVICE_LOG");
+        static constexpr uint32_t WEBKIT_LOG_HASH = ConstExprHashingUtils::HashString("WEBKIT_LOG");
+        static constexpr uint32_t INSTRUMENTATION_OUTPUT_HASH = ConstExprHashingUtils::HashString("INSTRUMENTATION_OUTPUT");
+        static constexpr uint32_t EXERCISER_MONKEY_OUTPUT_HASH = ConstExprHashingUtils::HashString("EXERCISER_MONKEY_OUTPUT");
+        static constexpr uint32_t CALABASH_JSON_OUTPUT_HASH = ConstExprHashingUtils::HashString("CALABASH_JSON_OUTPUT");
+        static constexpr uint32_t CALABASH_PRETTY_OUTPUT_HASH = ConstExprHashingUtils::HashString("CALABASH_PRETTY_OUTPUT");
+        static constexpr uint32_t CALABASH_STANDARD_OUTPUT_HASH = ConstExprHashingUtils::HashString("CALABASH_STANDARD_OUTPUT");
+        static constexpr uint32_t CALABASH_JAVA_XML_OUTPUT_HASH = ConstExprHashingUtils::HashString("CALABASH_JAVA_XML_OUTPUT");
+        static constexpr uint32_t AUTOMATION_OUTPUT_HASH = ConstExprHashingUtils::HashString("AUTOMATION_OUTPUT");
+        static constexpr uint32_t APPIUM_SERVER_OUTPUT_HASH = ConstExprHashingUtils::HashString("APPIUM_SERVER_OUTPUT");
+        static constexpr uint32_t APPIUM_JAVA_OUTPUT_HASH = ConstExprHashingUtils::HashString("APPIUM_JAVA_OUTPUT");
+        static constexpr uint32_t APPIUM_JAVA_XML_OUTPUT_HASH = ConstExprHashingUtils::HashString("APPIUM_JAVA_XML_OUTPUT");
+        static constexpr uint32_t APPIUM_PYTHON_OUTPUT_HASH = ConstExprHashingUtils::HashString("APPIUM_PYTHON_OUTPUT");
+        static constexpr uint32_t APPIUM_PYTHON_XML_OUTPUT_HASH = ConstExprHashingUtils::HashString("APPIUM_PYTHON_XML_OUTPUT");
+        static constexpr uint32_t EXPLORER_EVENT_LOG_HASH = ConstExprHashingUtils::HashString("EXPLORER_EVENT_LOG");
+        static constexpr uint32_t EXPLORER_SUMMARY_LOG_HASH = ConstExprHashingUtils::HashString("EXPLORER_SUMMARY_LOG");
+        static constexpr uint32_t APPLICATION_CRASH_REPORT_HASH = ConstExprHashingUtils::HashString("APPLICATION_CRASH_REPORT");
+        static constexpr uint32_t XCTEST_LOG_HASH = ConstExprHashingUtils::HashString("XCTEST_LOG");
+        static constexpr uint32_t VIDEO_HASH = ConstExprHashingUtils::HashString("VIDEO");
+        static constexpr uint32_t CUSTOMER_ARTIFACT_HASH = ConstExprHashingUtils::HashString("CUSTOMER_ARTIFACT");
+        static constexpr uint32_t CUSTOMER_ARTIFACT_LOG_HASH = ConstExprHashingUtils::HashString("CUSTOMER_ARTIFACT_LOG");
+        static constexpr uint32_t TESTSPEC_OUTPUT_HASH = ConstExprHashingUtils::HashString("TESTSPEC_OUTPUT");
 
 
         ArtifactType GetArtifactTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNKNOWN_HASH)
           {
             return ArtifactType::UNKNOWN;

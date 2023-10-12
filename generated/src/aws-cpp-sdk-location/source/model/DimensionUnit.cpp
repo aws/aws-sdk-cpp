@@ -20,13 +20,13 @@ namespace Aws
       namespace DimensionUnitMapper
       {
 
-        static const int Meters_HASH = HashingUtils::HashString("Meters");
-        static const int Feet_HASH = HashingUtils::HashString("Feet");
+        static constexpr uint32_t Meters_HASH = ConstExprHashingUtils::HashString("Meters");
+        static constexpr uint32_t Feet_HASH = ConstExprHashingUtils::HashString("Feet");
 
 
         DimensionUnit GetDimensionUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Meters_HASH)
           {
             return DimensionUnit::Meters;

@@ -20,15 +20,15 @@ namespace Aws
       namespace PlatformTypeMapper
       {
 
-        static const int WINDOWS_HASH = HashingUtils::HashString("WINDOWS");
-        static const int WINDOWS_SERVER_2016_HASH = HashingUtils::HashString("WINDOWS_SERVER_2016");
-        static const int WINDOWS_SERVER_2019_HASH = HashingUtils::HashString("WINDOWS_SERVER_2019");
-        static const int AMAZON_LINUX2_HASH = HashingUtils::HashString("AMAZON_LINUX2");
+        static constexpr uint32_t WINDOWS_HASH = ConstExprHashingUtils::HashString("WINDOWS");
+        static constexpr uint32_t WINDOWS_SERVER_2016_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2016");
+        static constexpr uint32_t WINDOWS_SERVER_2019_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2019");
+        static constexpr uint32_t AMAZON_LINUX2_HASH = ConstExprHashingUtils::HashString("AMAZON_LINUX2");
 
 
         PlatformType GetPlatformTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WINDOWS_HASH)
           {
             return PlatformType::WINDOWS;

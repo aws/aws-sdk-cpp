@@ -20,14 +20,14 @@ namespace Aws
       namespace InputResolutionMapper
       {
 
-        static const int SD_HASH = HashingUtils::HashString("SD");
-        static const int HD_HASH = HashingUtils::HashString("HD");
-        static const int UHD_HASH = HashingUtils::HashString("UHD");
+        static constexpr uint32_t SD_HASH = ConstExprHashingUtils::HashString("SD");
+        static constexpr uint32_t HD_HASH = ConstExprHashingUtils::HashString("HD");
+        static constexpr uint32_t UHD_HASH = ConstExprHashingUtils::HashString("UHD");
 
 
         InputResolution GetInputResolutionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SD_HASH)
           {
             return InputResolution::SD;

@@ -20,12 +20,12 @@ namespace Aws
       namespace ServiceQuotaExceededExceptionReasonMapper
       {
 
-        static const int DEPENDENCY_SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("DEPENDENCY_SERVICE_QUOTA_EXCEEDED");
+        static constexpr uint32_t DEPENDENCY_SERVICE_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("DEPENDENCY_SERVICE_QUOTA_EXCEEDED");
 
 
         ServiceQuotaExceededExceptionReason GetServiceQuotaExceededExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEPENDENCY_SERVICE_QUOTA_EXCEEDED_HASH)
           {
             return ServiceQuotaExceededExceptionReason::DEPENDENCY_SERVICE_QUOTA_EXCEEDED;

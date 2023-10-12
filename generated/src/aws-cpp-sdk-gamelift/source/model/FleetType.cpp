@@ -20,13 +20,13 @@ namespace Aws
       namespace FleetTypeMapper
       {
 
-        static const int ON_DEMAND_HASH = HashingUtils::HashString("ON_DEMAND");
-        static const int SPOT_HASH = HashingUtils::HashString("SPOT");
+        static constexpr uint32_t ON_DEMAND_HASH = ConstExprHashingUtils::HashString("ON_DEMAND");
+        static constexpr uint32_t SPOT_HASH = ConstExprHashingUtils::HashString("SPOT");
 
 
         FleetType GetFleetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ON_DEMAND_HASH)
           {
             return FleetType::ON_DEMAND;

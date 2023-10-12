@@ -20,23 +20,23 @@ namespace Aws
       namespace VideoCodecMapper
       {
 
-        static const int AV1_HASH = HashingUtils::HashString("AV1");
-        static const int AVC_INTRA_HASH = HashingUtils::HashString("AVC_INTRA");
-        static const int FRAME_CAPTURE_HASH = HashingUtils::HashString("FRAME_CAPTURE");
-        static const int H_264_HASH = HashingUtils::HashString("H_264");
-        static const int H_265_HASH = HashingUtils::HashString("H_265");
-        static const int MPEG2_HASH = HashingUtils::HashString("MPEG2");
-        static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
-        static const int PRORES_HASH = HashingUtils::HashString("PRORES");
-        static const int VC3_HASH = HashingUtils::HashString("VC3");
-        static const int VP8_HASH = HashingUtils::HashString("VP8");
-        static const int VP9_HASH = HashingUtils::HashString("VP9");
-        static const int XAVC_HASH = HashingUtils::HashString("XAVC");
+        static constexpr uint32_t AV1_HASH = ConstExprHashingUtils::HashString("AV1");
+        static constexpr uint32_t AVC_INTRA_HASH = ConstExprHashingUtils::HashString("AVC_INTRA");
+        static constexpr uint32_t FRAME_CAPTURE_HASH = ConstExprHashingUtils::HashString("FRAME_CAPTURE");
+        static constexpr uint32_t H_264_HASH = ConstExprHashingUtils::HashString("H_264");
+        static constexpr uint32_t H_265_HASH = ConstExprHashingUtils::HashString("H_265");
+        static constexpr uint32_t MPEG2_HASH = ConstExprHashingUtils::HashString("MPEG2");
+        static constexpr uint32_t PASSTHROUGH_HASH = ConstExprHashingUtils::HashString("PASSTHROUGH");
+        static constexpr uint32_t PRORES_HASH = ConstExprHashingUtils::HashString("PRORES");
+        static constexpr uint32_t VC3_HASH = ConstExprHashingUtils::HashString("VC3");
+        static constexpr uint32_t VP8_HASH = ConstExprHashingUtils::HashString("VP8");
+        static constexpr uint32_t VP9_HASH = ConstExprHashingUtils::HashString("VP9");
+        static constexpr uint32_t XAVC_HASH = ConstExprHashingUtils::HashString("XAVC");
 
 
         VideoCodec GetVideoCodecForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AV1_HASH)
           {
             return VideoCodec::AV1;

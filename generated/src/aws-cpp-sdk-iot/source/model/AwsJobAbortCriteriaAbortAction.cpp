@@ -20,12 +20,12 @@ namespace Aws
       namespace AwsJobAbortCriteriaAbortActionMapper
       {
 
-        static const int CANCEL_HASH = HashingUtils::HashString("CANCEL");
+        static constexpr uint32_t CANCEL_HASH = ConstExprHashingUtils::HashString("CANCEL");
 
 
         AwsJobAbortCriteriaAbortAction GetAwsJobAbortCriteriaAbortActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CANCEL_HASH)
           {
             return AwsJobAbortCriteriaAbortAction::CANCEL;

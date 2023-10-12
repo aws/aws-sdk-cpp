@@ -20,16 +20,16 @@ namespace Aws
       namespace ResourceShareAssociationStatusMapper
       {
 
-        static const int ASSOCIATING_HASH = HashingUtils::HashString("ASSOCIATING");
-        static const int ASSOCIATED_HASH = HashingUtils::HashString("ASSOCIATED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int DISASSOCIATING_HASH = HashingUtils::HashString("DISASSOCIATING");
-        static const int DISASSOCIATED_HASH = HashingUtils::HashString("DISASSOCIATED");
+        static constexpr uint32_t ASSOCIATING_HASH = ConstExprHashingUtils::HashString("ASSOCIATING");
+        static constexpr uint32_t ASSOCIATED_HASH = ConstExprHashingUtils::HashString("ASSOCIATED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t DISASSOCIATING_HASH = ConstExprHashingUtils::HashString("DISASSOCIATING");
+        static constexpr uint32_t DISASSOCIATED_HASH = ConstExprHashingUtils::HashString("DISASSOCIATED");
 
 
         ResourceShareAssociationStatus GetResourceShareAssociationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASSOCIATING_HASH)
           {
             return ResourceShareAssociationStatus::ASSOCIATING;

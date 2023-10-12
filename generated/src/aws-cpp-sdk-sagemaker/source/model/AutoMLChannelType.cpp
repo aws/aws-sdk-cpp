@@ -20,13 +20,13 @@ namespace Aws
       namespace AutoMLChannelTypeMapper
       {
 
-        static const int training_HASH = HashingUtils::HashString("training");
-        static const int validation_HASH = HashingUtils::HashString("validation");
+        static constexpr uint32_t training_HASH = ConstExprHashingUtils::HashString("training");
+        static constexpr uint32_t validation_HASH = ConstExprHashingUtils::HashString("validation");
 
 
         AutoMLChannelType GetAutoMLChannelTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == training_HASH)
           {
             return AutoMLChannelType::training;

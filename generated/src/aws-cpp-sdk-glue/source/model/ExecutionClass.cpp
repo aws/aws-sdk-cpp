@@ -20,13 +20,13 @@ namespace Aws
       namespace ExecutionClassMapper
       {
 
-        static const int FLEX_HASH = HashingUtils::HashString("FLEX");
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
+        static constexpr uint32_t FLEX_HASH = ConstExprHashingUtils::HashString("FLEX");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
 
 
         ExecutionClass GetExecutionClassForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FLEX_HASH)
           {
             return ExecutionClass::FLEX;

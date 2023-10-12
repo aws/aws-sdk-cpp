@@ -20,23 +20,23 @@ namespace Aws
       namespace BridgeStateMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int STANDBY_HASH = HashingUtils::HashString("STANDBY");
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int DEPLOYING_HASH = HashingUtils::HashString("DEPLOYING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int START_FAILED_HASH = HashingUtils::HashString("START_FAILED");
-        static const int START_PENDING_HASH = HashingUtils::HashString("START_PENDING");
-        static const int STOP_FAILED_HASH = HashingUtils::HashString("STOP_FAILED");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t STANDBY_HASH = ConstExprHashingUtils::HashString("STANDBY");
+        static constexpr uint32_t STARTING_HASH = ConstExprHashingUtils::HashString("STARTING");
+        static constexpr uint32_t DEPLOYING_HASH = ConstExprHashingUtils::HashString("DEPLOYING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t START_FAILED_HASH = ConstExprHashingUtils::HashString("START_FAILED");
+        static constexpr uint32_t START_PENDING_HASH = ConstExprHashingUtils::HashString("START_PENDING");
+        static constexpr uint32_t STOP_FAILED_HASH = ConstExprHashingUtils::HashString("STOP_FAILED");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
 
 
         BridgeState GetBridgeStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return BridgeState::CREATING;

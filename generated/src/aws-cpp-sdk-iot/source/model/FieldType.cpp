@@ -20,14 +20,14 @@ namespace Aws
       namespace FieldTypeMapper
       {
 
-        static const int Number_HASH = HashingUtils::HashString("Number");
-        static const int String_HASH = HashingUtils::HashString("String");
-        static const int Boolean_HASH = HashingUtils::HashString("Boolean");
+        static constexpr uint32_t Number_HASH = ConstExprHashingUtils::HashString("Number");
+        static constexpr uint32_t String_HASH = ConstExprHashingUtils::HashString("String");
+        static constexpr uint32_t Boolean_HASH = ConstExprHashingUtils::HashString("Boolean");
 
 
         FieldType GetFieldTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Number_HASH)
           {
             return FieldType::Number;

@@ -20,12 +20,12 @@ namespace Aws
       namespace OnPartialBatchItemFailureStreamsMapper
       {
 
-        static const int AUTOMATIC_BISECT_HASH = HashingUtils::HashString("AUTOMATIC_BISECT");
+        static constexpr uint32_t AUTOMATIC_BISECT_HASH = ConstExprHashingUtils::HashString("AUTOMATIC_BISECT");
 
 
         OnPartialBatchItemFailureStreams GetOnPartialBatchItemFailureStreamsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTOMATIC_BISECT_HASH)
           {
             return OnPartialBatchItemFailureStreams::AUTOMATIC_BISECT;

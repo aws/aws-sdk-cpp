@@ -20,13 +20,13 @@ namespace Aws
       namespace FaceAttributesMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         FaceAttributes GetFaceAttributesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return FaceAttributes::DEFAULT;

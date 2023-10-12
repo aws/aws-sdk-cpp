@@ -20,17 +20,17 @@ namespace Aws
       namespace LayoutMapper
       {
 
-        static const int BOTTOM_BANNER_HASH = HashingUtils::HashString("BOTTOM_BANNER");
-        static const int TOP_BANNER_HASH = HashingUtils::HashString("TOP_BANNER");
-        static const int OVERLAYS_HASH = HashingUtils::HashString("OVERLAYS");
-        static const int MOBILE_FEED_HASH = HashingUtils::HashString("MOBILE_FEED");
-        static const int MIDDLE_BANNER_HASH = HashingUtils::HashString("MIDDLE_BANNER");
-        static const int CAROUSEL_HASH = HashingUtils::HashString("CAROUSEL");
+        static constexpr uint32_t BOTTOM_BANNER_HASH = ConstExprHashingUtils::HashString("BOTTOM_BANNER");
+        static constexpr uint32_t TOP_BANNER_HASH = ConstExprHashingUtils::HashString("TOP_BANNER");
+        static constexpr uint32_t OVERLAYS_HASH = ConstExprHashingUtils::HashString("OVERLAYS");
+        static constexpr uint32_t MOBILE_FEED_HASH = ConstExprHashingUtils::HashString("MOBILE_FEED");
+        static constexpr uint32_t MIDDLE_BANNER_HASH = ConstExprHashingUtils::HashString("MIDDLE_BANNER");
+        static constexpr uint32_t CAROUSEL_HASH = ConstExprHashingUtils::HashString("CAROUSEL");
 
 
         Layout GetLayoutForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BOTTOM_BANNER_HASH)
           {
             return Layout::BOTTOM_BANNER;

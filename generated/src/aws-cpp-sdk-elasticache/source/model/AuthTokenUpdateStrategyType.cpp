@@ -20,14 +20,14 @@ namespace Aws
       namespace AuthTokenUpdateStrategyTypeMapper
       {
 
-        static const int SET_HASH = HashingUtils::HashString("SET");
-        static const int ROTATE_HASH = HashingUtils::HashString("ROTATE");
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
+        static constexpr uint32_t SET_HASH = ConstExprHashingUtils::HashString("SET");
+        static constexpr uint32_t ROTATE_HASH = ConstExprHashingUtils::HashString("ROTATE");
+        static constexpr uint32_t DELETE__HASH = ConstExprHashingUtils::HashString("DELETE");
 
 
         AuthTokenUpdateStrategyType GetAuthTokenUpdateStrategyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SET_HASH)
           {
             return AuthTokenUpdateStrategyType::SET;

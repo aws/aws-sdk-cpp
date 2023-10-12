@@ -20,13 +20,13 @@ namespace Aws
       namespace BgpStatusMapper
       {
 
-        static const int up_HASH = HashingUtils::HashString("up");
-        static const int down_HASH = HashingUtils::HashString("down");
+        static constexpr uint32_t up_HASH = ConstExprHashingUtils::HashString("up");
+        static constexpr uint32_t down_HASH = ConstExprHashingUtils::HashString("down");
 
 
         BgpStatus GetBgpStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == up_HASH)
           {
             return BgpStatus::up;

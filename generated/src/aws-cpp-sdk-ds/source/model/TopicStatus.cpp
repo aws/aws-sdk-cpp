@@ -20,15 +20,15 @@ namespace Aws
       namespace TopicStatusMapper
       {
 
-        static const int Registered_HASH = HashingUtils::HashString("Registered");
-        static const int Topic_not_found_HASH = HashingUtils::HashString("Topic not found");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Deleted_HASH = HashingUtils::HashString("Deleted");
+        static constexpr uint32_t Registered_HASH = ConstExprHashingUtils::HashString("Registered");
+        static constexpr uint32_t Topic_not_found_HASH = ConstExprHashingUtils::HashString("Topic not found");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Deleted_HASH = ConstExprHashingUtils::HashString("Deleted");
 
 
         TopicStatus GetTopicStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Registered_HASH)
           {
             return TopicStatus::Registered;

@@ -20,18 +20,18 @@ namespace Aws
       namespace StreamingImageStatusCodeMapper
       {
 
-        static const int STREAMING_IMAGE_CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("STREAMING_IMAGE_CREATE_IN_PROGRESS");
-        static const int STREAMING_IMAGE_READY_HASH = HashingUtils::HashString("STREAMING_IMAGE_READY");
-        static const int STREAMING_IMAGE_DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("STREAMING_IMAGE_DELETE_IN_PROGRESS");
-        static const int STREAMING_IMAGE_DELETED_HASH = HashingUtils::HashString("STREAMING_IMAGE_DELETED");
-        static const int STREAMING_IMAGE_UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("STREAMING_IMAGE_UPDATE_IN_PROGRESS");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t STREAMING_IMAGE_CREATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("STREAMING_IMAGE_CREATE_IN_PROGRESS");
+        static constexpr uint32_t STREAMING_IMAGE_READY_HASH = ConstExprHashingUtils::HashString("STREAMING_IMAGE_READY");
+        static constexpr uint32_t STREAMING_IMAGE_DELETE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("STREAMING_IMAGE_DELETE_IN_PROGRESS");
+        static constexpr uint32_t STREAMING_IMAGE_DELETED_HASH = ConstExprHashingUtils::HashString("STREAMING_IMAGE_DELETED");
+        static constexpr uint32_t STREAMING_IMAGE_UPDATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("STREAMING_IMAGE_UPDATE_IN_PROGRESS");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
 
 
         StreamingImageStatusCode GetStreamingImageStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STREAMING_IMAGE_CREATE_IN_PROGRESS_HASH)
           {
             return StreamingImageStatusCode::STREAMING_IMAGE_CREATE_IN_PROGRESS;

@@ -20,13 +20,13 @@ namespace Aws
       namespace RecommendationTargetMapper
       {
 
-        static const int SAME_INSTANCE_FAMILY_HASH = HashingUtils::HashString("SAME_INSTANCE_FAMILY");
-        static const int CROSS_INSTANCE_FAMILY_HASH = HashingUtils::HashString("CROSS_INSTANCE_FAMILY");
+        static constexpr uint32_t SAME_INSTANCE_FAMILY_HASH = ConstExprHashingUtils::HashString("SAME_INSTANCE_FAMILY");
+        static constexpr uint32_t CROSS_INSTANCE_FAMILY_HASH = ConstExprHashingUtils::HashString("CROSS_INSTANCE_FAMILY");
 
 
         RecommendationTarget GetRecommendationTargetForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SAME_INSTANCE_FAMILY_HASH)
           {
             return RecommendationTarget::SAME_INSTANCE_FAMILY;

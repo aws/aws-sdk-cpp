@@ -18,27 +18,27 @@ namespace LakeFormation
 namespace LakeFormationErrorMapper
 {
 
-static const int OPERATION_TIMEOUT_HASH = HashingUtils::HashString("OperationTimeoutException");
-static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
-static const int TRANSACTION_CANCELED_HASH = HashingUtils::HashString("TransactionCanceledException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
-static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
-static const int TRANSACTION_COMMIT_IN_PROGRESS_HASH = HashingUtils::HashString("TransactionCommitInProgressException");
-static const int ENTITY_NOT_FOUND_HASH = HashingUtils::HashString("EntityNotFoundException");
-static const int GLUE_ENCRYPTION_HASH = HashingUtils::HashString("GlueEncryptionException");
-static const int PERMISSION_TYPE_MISMATCH_HASH = HashingUtils::HashString("PermissionTypeMismatchException");
-static const int RESOURCE_NUMBER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceNumberLimitExceededException");
-static const int STATISTICS_NOT_READY_YET_HASH = HashingUtils::HashString("StatisticsNotReadyYetException");
-static const int EXPIRED_HASH = HashingUtils::HashString("ExpiredException");
-static const int WORK_UNITS_NOT_READY_YET_HASH = HashingUtils::HashString("WorkUnitsNotReadyYetException");
-static const int TRANSACTION_COMMITTED_HASH = HashingUtils::HashString("TransactionCommittedException");
+static constexpr uint32_t OPERATION_TIMEOUT_HASH = ConstExprHashingUtils::HashString("OperationTimeoutException");
+static constexpr uint32_t RESOURCE_NOT_READY_HASH = ConstExprHashingUtils::HashString("ResourceNotReadyException");
+static constexpr uint32_t TRANSACTION_CANCELED_HASH = ConstExprHashingUtils::HashString("TransactionCanceledException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("AlreadyExistsException");
+static constexpr uint32_t INVALID_INPUT_HASH = ConstExprHashingUtils::HashString("InvalidInputException");
+static constexpr uint32_t INTERNAL_SERVICE_HASH = ConstExprHashingUtils::HashString("InternalServiceException");
+static constexpr uint32_t TRANSACTION_COMMIT_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("TransactionCommitInProgressException");
+static constexpr uint32_t ENTITY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("EntityNotFoundException");
+static constexpr uint32_t GLUE_ENCRYPTION_HASH = ConstExprHashingUtils::HashString("GlueEncryptionException");
+static constexpr uint32_t PERMISSION_TYPE_MISMATCH_HASH = ConstExprHashingUtils::HashString("PermissionTypeMismatchException");
+static constexpr uint32_t RESOURCE_NUMBER_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ResourceNumberLimitExceededException");
+static constexpr uint32_t STATISTICS_NOT_READY_YET_HASH = ConstExprHashingUtils::HashString("StatisticsNotReadyYetException");
+static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("ExpiredException");
+static constexpr uint32_t WORK_UNITS_NOT_READY_YET_HASH = ConstExprHashingUtils::HashString("WorkUnitsNotReadyYetException");
+static constexpr uint32_t TRANSACTION_COMMITTED_HASH = ConstExprHashingUtils::HashString("TransactionCommittedException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == OPERATION_TIMEOUT_HASH)
   {

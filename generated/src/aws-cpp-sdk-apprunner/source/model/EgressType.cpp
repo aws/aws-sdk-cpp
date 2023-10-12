@@ -20,13 +20,13 @@ namespace Aws
       namespace EgressTypeMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int VPC_HASH = HashingUtils::HashString("VPC");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t VPC_HASH = ConstExprHashingUtils::HashString("VPC");
 
 
         EgressType GetEgressTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return EgressType::DEFAULT;

@@ -20,18 +20,18 @@ namespace Aws
       namespace ImageStateMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int COPYING_HASH = HashingUtils::HashString("COPYING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int IMPORTING_HASH = HashingUtils::HashString("IMPORTING");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t COPYING_HASH = ConstExprHashingUtils::HashString("COPYING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t IMPORTING_HASH = ConstExprHashingUtils::HashString("IMPORTING");
 
 
         ImageState GetImageStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return ImageState::PENDING;

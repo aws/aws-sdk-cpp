@@ -20,15 +20,15 @@ namespace Aws
       namespace HttpVersionMapper
       {
 
-        static const int http1_1_HASH = HashingUtils::HashString("http1.1");
-        static const int http2_HASH = HashingUtils::HashString("http2");
-        static const int http3_HASH = HashingUtils::HashString("http3");
-        static const int http2and3_HASH = HashingUtils::HashString("http2and3");
+        static constexpr uint32_t http1_1_HASH = ConstExprHashingUtils::HashString("http1.1");
+        static constexpr uint32_t http2_HASH = ConstExprHashingUtils::HashString("http2");
+        static constexpr uint32_t http3_HASH = ConstExprHashingUtils::HashString("http3");
+        static constexpr uint32_t http2and3_HASH = ConstExprHashingUtils::HashString("http2and3");
 
 
         HttpVersion GetHttpVersionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == http1_1_HASH)
           {
             return HttpVersion::http1_1;

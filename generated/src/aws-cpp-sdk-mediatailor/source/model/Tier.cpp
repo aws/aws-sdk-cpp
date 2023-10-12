@@ -20,13 +20,13 @@ namespace Aws
       namespace TierMapper
       {
 
-        static const int BASIC_HASH = HashingUtils::HashString("BASIC");
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
+        static constexpr uint32_t BASIC_HASH = ConstExprHashingUtils::HashString("BASIC");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
 
 
         Tier GetTierForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BASIC_HASH)
           {
             return Tier::BASIC;

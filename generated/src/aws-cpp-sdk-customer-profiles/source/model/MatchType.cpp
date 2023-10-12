@@ -20,13 +20,13 @@ namespace Aws
       namespace MatchTypeMapper
       {
 
-        static const int RULE_BASED_MATCHING_HASH = HashingUtils::HashString("RULE_BASED_MATCHING");
-        static const int ML_BASED_MATCHING_HASH = HashingUtils::HashString("ML_BASED_MATCHING");
+        static constexpr uint32_t RULE_BASED_MATCHING_HASH = ConstExprHashingUtils::HashString("RULE_BASED_MATCHING");
+        static constexpr uint32_t ML_BASED_MATCHING_HASH = ConstExprHashingUtils::HashString("ML_BASED_MATCHING");
 
 
         MatchType GetMatchTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RULE_BASED_MATCHING_HASH)
           {
             return MatchType::RULE_BASED_MATCHING;

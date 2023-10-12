@@ -20,17 +20,17 @@ namespace Aws
       namespace AlarmStateNameMapper
       {
 
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int NORMAL_HASH = HashingUtils::HashString("NORMAL");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int ACKNOWLEDGED_HASH = HashingUtils::HashString("ACKNOWLEDGED");
-        static const int SNOOZE_DISABLED_HASH = HashingUtils::HashString("SNOOZE_DISABLED");
-        static const int LATCHED_HASH = HashingUtils::HashString("LATCHED");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t NORMAL_HASH = ConstExprHashingUtils::HashString("NORMAL");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t ACKNOWLEDGED_HASH = ConstExprHashingUtils::HashString("ACKNOWLEDGED");
+        static constexpr uint32_t SNOOZE_DISABLED_HASH = ConstExprHashingUtils::HashString("SNOOZE_DISABLED");
+        static constexpr uint32_t LATCHED_HASH = ConstExprHashingUtils::HashString("LATCHED");
 
 
         AlarmStateName GetAlarmStateNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISABLED_HASH)
           {
             return AlarmStateName::DISABLED;

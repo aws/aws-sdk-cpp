@@ -20,13 +20,13 @@ namespace Aws
       namespace GetCampaignStateBatchFailureCodeMapper
       {
 
-        static const int ResourceNotFound_HASH = HashingUtils::HashString("ResourceNotFound");
-        static const int UnknownError_HASH = HashingUtils::HashString("UnknownError");
+        static constexpr uint32_t ResourceNotFound_HASH = ConstExprHashingUtils::HashString("ResourceNotFound");
+        static constexpr uint32_t UnknownError_HASH = ConstExprHashingUtils::HashString("UnknownError");
 
 
         GetCampaignStateBatchFailureCode GetGetCampaignStateBatchFailureCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ResourceNotFound_HASH)
           {
             return GetCampaignStateBatchFailureCode::ResourceNotFound;

@@ -20,19 +20,19 @@ namespace Aws
       namespace NoSuchEntityErrorCodeMapper
       {
 
-        static const int ASSESSMENT_TARGET_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ASSESSMENT_TARGET_DOES_NOT_EXIST");
-        static const int ASSESSMENT_TEMPLATE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ASSESSMENT_TEMPLATE_DOES_NOT_EXIST");
-        static const int ASSESSMENT_RUN_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ASSESSMENT_RUN_DOES_NOT_EXIST");
-        static const int FINDING_DOES_NOT_EXIST_HASH = HashingUtils::HashString("FINDING_DOES_NOT_EXIST");
-        static const int RESOURCE_GROUP_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RESOURCE_GROUP_DOES_NOT_EXIST");
-        static const int RULES_PACKAGE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RULES_PACKAGE_DOES_NOT_EXIST");
-        static const int SNS_TOPIC_DOES_NOT_EXIST_HASH = HashingUtils::HashString("SNS_TOPIC_DOES_NOT_EXIST");
-        static const int IAM_ROLE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("IAM_ROLE_DOES_NOT_EXIST");
+        static constexpr uint32_t ASSESSMENT_TARGET_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("ASSESSMENT_TARGET_DOES_NOT_EXIST");
+        static constexpr uint32_t ASSESSMENT_TEMPLATE_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("ASSESSMENT_TEMPLATE_DOES_NOT_EXIST");
+        static constexpr uint32_t ASSESSMENT_RUN_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("ASSESSMENT_RUN_DOES_NOT_EXIST");
+        static constexpr uint32_t FINDING_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("FINDING_DOES_NOT_EXIST");
+        static constexpr uint32_t RESOURCE_GROUP_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("RESOURCE_GROUP_DOES_NOT_EXIST");
+        static constexpr uint32_t RULES_PACKAGE_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("RULES_PACKAGE_DOES_NOT_EXIST");
+        static constexpr uint32_t SNS_TOPIC_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("SNS_TOPIC_DOES_NOT_EXIST");
+        static constexpr uint32_t IAM_ROLE_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("IAM_ROLE_DOES_NOT_EXIST");
 
 
         NoSuchEntityErrorCode GetNoSuchEntityErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASSESSMENT_TARGET_DOES_NOT_EXIST_HASH)
           {
             return NoSuchEntityErrorCode::ASSESSMENT_TARGET_DOES_NOT_EXIST;

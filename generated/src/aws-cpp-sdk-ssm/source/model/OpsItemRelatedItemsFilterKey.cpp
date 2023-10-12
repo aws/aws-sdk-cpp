@@ -20,14 +20,14 @@ namespace Aws
       namespace OpsItemRelatedItemsFilterKeyMapper
       {
 
-        static const int ResourceType_HASH = HashingUtils::HashString("ResourceType");
-        static const int AssociationId_HASH = HashingUtils::HashString("AssociationId");
-        static const int ResourceUri_HASH = HashingUtils::HashString("ResourceUri");
+        static constexpr uint32_t ResourceType_HASH = ConstExprHashingUtils::HashString("ResourceType");
+        static constexpr uint32_t AssociationId_HASH = ConstExprHashingUtils::HashString("AssociationId");
+        static constexpr uint32_t ResourceUri_HASH = ConstExprHashingUtils::HashString("ResourceUri");
 
 
         OpsItemRelatedItemsFilterKey GetOpsItemRelatedItemsFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ResourceType_HASH)
           {
             return OpsItemRelatedItemsFilterKey::ResourceType;

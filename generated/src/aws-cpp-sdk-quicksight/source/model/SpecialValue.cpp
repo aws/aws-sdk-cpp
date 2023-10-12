@@ -20,14 +20,14 @@ namespace Aws
       namespace SpecialValueMapper
       {
 
-        static const int EMPTY_HASH = HashingUtils::HashString("EMPTY");
-        static const int NULL__HASH = HashingUtils::HashString("NULL");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
+        static constexpr uint32_t EMPTY_HASH = ConstExprHashingUtils::HashString("EMPTY");
+        static constexpr uint32_t NULL__HASH = ConstExprHashingUtils::HashString("NULL");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
 
 
         SpecialValue GetSpecialValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EMPTY_HASH)
           {
             return SpecialValue::EMPTY;

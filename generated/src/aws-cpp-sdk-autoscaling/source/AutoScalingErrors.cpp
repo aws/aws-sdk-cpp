@@ -18,21 +18,21 @@ namespace AutoScaling
 namespace AutoScalingErrorMapper
 {
 
-static const int INSTANCE_REFRESH_IN_PROGRESS_FAULT_HASH = HashingUtils::HashString("InstanceRefreshInProgress");
-static const int ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("AlreadyExists");
-static const int LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("LimitExceeded");
-static const int RESOURCE_CONTENTION_FAULT_HASH = HashingUtils::HashString("ResourceContention");
-static const int SERVICE_LINKED_ROLE_FAILURE_HASH = HashingUtils::HashString("ServiceLinkedRoleFailure");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
-static const int SCALING_ACTIVITY_IN_PROGRESS_FAULT_HASH = HashingUtils::HashString("ScalingActivityInProgress");
-static const int IRREVERSIBLE_INSTANCE_REFRESH_FAULT_HASH = HashingUtils::HashString("IrreversibleInstanceRefresh");
-static const int ACTIVE_INSTANCE_REFRESH_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ActiveInstanceRefreshNotFound");
-static const int RESOURCE_IN_USE_FAULT_HASH = HashingUtils::HashString("ResourceInUse");
+static constexpr uint32_t INSTANCE_REFRESH_IN_PROGRESS_FAULT_HASH = ConstExprHashingUtils::HashString("InstanceRefreshInProgress");
+static constexpr uint32_t ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("AlreadyExists");
+static constexpr uint32_t LIMIT_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("LimitExceeded");
+static constexpr uint32_t RESOURCE_CONTENTION_FAULT_HASH = ConstExprHashingUtils::HashString("ResourceContention");
+static constexpr uint32_t SERVICE_LINKED_ROLE_FAILURE_HASH = ConstExprHashingUtils::HashString("ServiceLinkedRoleFailure");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextToken");
+static constexpr uint32_t SCALING_ACTIVITY_IN_PROGRESS_FAULT_HASH = ConstExprHashingUtils::HashString("ScalingActivityInProgress");
+static constexpr uint32_t IRREVERSIBLE_INSTANCE_REFRESH_FAULT_HASH = ConstExprHashingUtils::HashString("IrreversibleInstanceRefresh");
+static constexpr uint32_t ACTIVE_INSTANCE_REFRESH_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ActiveInstanceRefreshNotFound");
+static constexpr uint32_t RESOURCE_IN_USE_FAULT_HASH = ConstExprHashingUtils::HashString("ResourceInUse");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INSTANCE_REFRESH_IN_PROGRESS_FAULT_HASH)
   {

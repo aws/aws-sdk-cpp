@@ -18,15 +18,15 @@ namespace AppIntegrationsService
 namespace AppIntegrationsServiceErrorMapper
 {
 
-static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceError");
-static const int DUPLICATE_RESOURCE_HASH = HashingUtils::HashString("DuplicateResourceException");
-static const int RESOURCE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ResourceQuotaExceededException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t INTERNAL_SERVICE_HASH = ConstExprHashingUtils::HashString("InternalServiceError");
+static constexpr uint32_t DUPLICATE_RESOURCE_HASH = ConstExprHashingUtils::HashString("DuplicateResourceException");
+static constexpr uint32_t RESOURCE_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ResourceQuotaExceededException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INTERNAL_SERVICE_HASH)
   {

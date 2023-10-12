@@ -20,14 +20,14 @@ namespace Aws
       namespace ConnectionAuthorizationTypeMapper
       {
 
-        static const int BASIC_HASH = HashingUtils::HashString("BASIC");
-        static const int OAUTH_CLIENT_CREDENTIALS_HASH = HashingUtils::HashString("OAUTH_CLIENT_CREDENTIALS");
-        static const int API_KEY_HASH = HashingUtils::HashString("API_KEY");
+        static constexpr uint32_t BASIC_HASH = ConstExprHashingUtils::HashString("BASIC");
+        static constexpr uint32_t OAUTH_CLIENT_CREDENTIALS_HASH = ConstExprHashingUtils::HashString("OAUTH_CLIENT_CREDENTIALS");
+        static constexpr uint32_t API_KEY_HASH = ConstExprHashingUtils::HashString("API_KEY");
 
 
         ConnectionAuthorizationType GetConnectionAuthorizationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BASIC_HASH)
           {
             return ConnectionAuthorizationType::BASIC;

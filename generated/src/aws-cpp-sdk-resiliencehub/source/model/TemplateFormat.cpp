@@ -20,13 +20,13 @@ namespace Aws
       namespace TemplateFormatMapper
       {
 
-        static const int CfnYaml_HASH = HashingUtils::HashString("CfnYaml");
-        static const int CfnJson_HASH = HashingUtils::HashString("CfnJson");
+        static constexpr uint32_t CfnYaml_HASH = ConstExprHashingUtils::HashString("CfnYaml");
+        static constexpr uint32_t CfnJson_HASH = ConstExprHashingUtils::HashString("CfnJson");
 
 
         TemplateFormat GetTemplateFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CfnYaml_HASH)
           {
             return TemplateFormat::CfnYaml;

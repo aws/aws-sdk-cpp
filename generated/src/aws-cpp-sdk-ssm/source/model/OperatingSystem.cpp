@@ -20,26 +20,26 @@ namespace Aws
       namespace OperatingSystemMapper
       {
 
-        static const int WINDOWS_HASH = HashingUtils::HashString("WINDOWS");
-        static const int AMAZON_LINUX_HASH = HashingUtils::HashString("AMAZON_LINUX");
-        static const int AMAZON_LINUX_2_HASH = HashingUtils::HashString("AMAZON_LINUX_2");
-        static const int AMAZON_LINUX_2022_HASH = HashingUtils::HashString("AMAZON_LINUX_2022");
-        static const int UBUNTU_HASH = HashingUtils::HashString("UBUNTU");
-        static const int REDHAT_ENTERPRISE_LINUX_HASH = HashingUtils::HashString("REDHAT_ENTERPRISE_LINUX");
-        static const int SUSE_HASH = HashingUtils::HashString("SUSE");
-        static const int CENTOS_HASH = HashingUtils::HashString("CENTOS");
-        static const int ORACLE_LINUX_HASH = HashingUtils::HashString("ORACLE_LINUX");
-        static const int DEBIAN_HASH = HashingUtils::HashString("DEBIAN");
-        static const int MACOS_HASH = HashingUtils::HashString("MACOS");
-        static const int RASPBIAN_HASH = HashingUtils::HashString("RASPBIAN");
-        static const int ROCKY_LINUX_HASH = HashingUtils::HashString("ROCKY_LINUX");
-        static const int ALMA_LINUX_HASH = HashingUtils::HashString("ALMA_LINUX");
-        static const int AMAZON_LINUX_2023_HASH = HashingUtils::HashString("AMAZON_LINUX_2023");
+        static constexpr uint32_t WINDOWS_HASH = ConstExprHashingUtils::HashString("WINDOWS");
+        static constexpr uint32_t AMAZON_LINUX_HASH = ConstExprHashingUtils::HashString("AMAZON_LINUX");
+        static constexpr uint32_t AMAZON_LINUX_2_HASH = ConstExprHashingUtils::HashString("AMAZON_LINUX_2");
+        static constexpr uint32_t AMAZON_LINUX_2022_HASH = ConstExprHashingUtils::HashString("AMAZON_LINUX_2022");
+        static constexpr uint32_t UBUNTU_HASH = ConstExprHashingUtils::HashString("UBUNTU");
+        static constexpr uint32_t REDHAT_ENTERPRISE_LINUX_HASH = ConstExprHashingUtils::HashString("REDHAT_ENTERPRISE_LINUX");
+        static constexpr uint32_t SUSE_HASH = ConstExprHashingUtils::HashString("SUSE");
+        static constexpr uint32_t CENTOS_HASH = ConstExprHashingUtils::HashString("CENTOS");
+        static constexpr uint32_t ORACLE_LINUX_HASH = ConstExprHashingUtils::HashString("ORACLE_LINUX");
+        static constexpr uint32_t DEBIAN_HASH = ConstExprHashingUtils::HashString("DEBIAN");
+        static constexpr uint32_t MACOS_HASH = ConstExprHashingUtils::HashString("MACOS");
+        static constexpr uint32_t RASPBIAN_HASH = ConstExprHashingUtils::HashString("RASPBIAN");
+        static constexpr uint32_t ROCKY_LINUX_HASH = ConstExprHashingUtils::HashString("ROCKY_LINUX");
+        static constexpr uint32_t ALMA_LINUX_HASH = ConstExprHashingUtils::HashString("ALMA_LINUX");
+        static constexpr uint32_t AMAZON_LINUX_2023_HASH = ConstExprHashingUtils::HashString("AMAZON_LINUX_2023");
 
 
         OperatingSystem GetOperatingSystemForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WINDOWS_HASH)
           {
             return OperatingSystem::WINDOWS;

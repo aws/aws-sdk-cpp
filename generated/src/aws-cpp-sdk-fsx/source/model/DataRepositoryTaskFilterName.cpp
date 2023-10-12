@@ -20,15 +20,15 @@ namespace Aws
       namespace DataRepositoryTaskFilterNameMapper
       {
 
-        static const int file_system_id_HASH = HashingUtils::HashString("file-system-id");
-        static const int task_lifecycle_HASH = HashingUtils::HashString("task-lifecycle");
-        static const int data_repository_association_id_HASH = HashingUtils::HashString("data-repository-association-id");
-        static const int file_cache_id_HASH = HashingUtils::HashString("file-cache-id");
+        static constexpr uint32_t file_system_id_HASH = ConstExprHashingUtils::HashString("file-system-id");
+        static constexpr uint32_t task_lifecycle_HASH = ConstExprHashingUtils::HashString("task-lifecycle");
+        static constexpr uint32_t data_repository_association_id_HASH = ConstExprHashingUtils::HashString("data-repository-association-id");
+        static constexpr uint32_t file_cache_id_HASH = ConstExprHashingUtils::HashString("file-cache-id");
 
 
         DataRepositoryTaskFilterName GetDataRepositoryTaskFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == file_system_id_HASH)
           {
             return DataRepositoryTaskFilterName::file_system_id;

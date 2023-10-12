@@ -20,13 +20,13 @@ namespace Aws
       namespace CustomLineItemTypeMapper
       {
 
-        static const int CREDIT_HASH = HashingUtils::HashString("CREDIT");
-        static const int FEE_HASH = HashingUtils::HashString("FEE");
+        static constexpr uint32_t CREDIT_HASH = ConstExprHashingUtils::HashString("CREDIT");
+        static constexpr uint32_t FEE_HASH = ConstExprHashingUtils::HashString("FEE");
 
 
         CustomLineItemType GetCustomLineItemTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREDIT_HASH)
           {
             return CustomLineItemType::CREDIT;

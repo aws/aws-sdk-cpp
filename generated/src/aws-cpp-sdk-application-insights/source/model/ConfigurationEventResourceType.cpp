@@ -20,15 +20,15 @@ namespace Aws
       namespace ConfigurationEventResourceTypeMapper
       {
 
-        static const int CLOUDWATCH_ALARM_HASH = HashingUtils::HashString("CLOUDWATCH_ALARM");
-        static const int CLOUDWATCH_LOG_HASH = HashingUtils::HashString("CLOUDWATCH_LOG");
-        static const int CLOUDFORMATION_HASH = HashingUtils::HashString("CLOUDFORMATION");
-        static const int SSM_ASSOCIATION_HASH = HashingUtils::HashString("SSM_ASSOCIATION");
+        static constexpr uint32_t CLOUDWATCH_ALARM_HASH = ConstExprHashingUtils::HashString("CLOUDWATCH_ALARM");
+        static constexpr uint32_t CLOUDWATCH_LOG_HASH = ConstExprHashingUtils::HashString("CLOUDWATCH_LOG");
+        static constexpr uint32_t CLOUDFORMATION_HASH = ConstExprHashingUtils::HashString("CLOUDFORMATION");
+        static constexpr uint32_t SSM_ASSOCIATION_HASH = ConstExprHashingUtils::HashString("SSM_ASSOCIATION");
 
 
         ConfigurationEventResourceType GetConfigurationEventResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLOUDWATCH_ALARM_HASH)
           {
             return ConfigurationEventResourceType::CLOUDWATCH_ALARM;

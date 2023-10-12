@@ -20,13 +20,13 @@ namespace Aws
       namespace LabelDetectionAggregateByMapper
       {
 
-        static const int TIMESTAMPS_HASH = HashingUtils::HashString("TIMESTAMPS");
-        static const int SEGMENTS_HASH = HashingUtils::HashString("SEGMENTS");
+        static constexpr uint32_t TIMESTAMPS_HASH = ConstExprHashingUtils::HashString("TIMESTAMPS");
+        static constexpr uint32_t SEGMENTS_HASH = ConstExprHashingUtils::HashString("SEGMENTS");
 
 
         LabelDetectionAggregateBy GetLabelDetectionAggregateByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TIMESTAMPS_HASH)
           {
             return LabelDetectionAggregateBy::TIMESTAMPS;

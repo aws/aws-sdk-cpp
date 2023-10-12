@@ -20,14 +20,14 @@ namespace Aws
       namespace MediaStreamTypeMapper
       {
 
-        static const int video_HASH = HashingUtils::HashString("video");
-        static const int audio_HASH = HashingUtils::HashString("audio");
-        static const int ancillary_data_HASH = HashingUtils::HashString("ancillary-data");
+        static constexpr uint32_t video_HASH = ConstExprHashingUtils::HashString("video");
+        static constexpr uint32_t audio_HASH = ConstExprHashingUtils::HashString("audio");
+        static constexpr uint32_t ancillary_data_HASH = ConstExprHashingUtils::HashString("ancillary-data");
 
 
         MediaStreamType GetMediaStreamTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == video_HASH)
           {
             return MediaStreamType::video;

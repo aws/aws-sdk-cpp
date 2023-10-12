@@ -20,21 +20,21 @@ namespace Aws
       namespace SessionStatusMapper
       {
 
-        static const int ASSIGNED_HASH = HashingUtils::HashString("ASSIGNED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int INITIALIZING_HASH = HashingUtils::HashString("INITIALIZING");
-        static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int RECYCLING_HASH = HashingUtils::HashString("RECYCLING");
-        static const int ROTATING_HASH = HashingUtils::HashString("ROTATING");
-        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
-        static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static constexpr uint32_t ASSIGNED_HASH = ConstExprHashingUtils::HashString("ASSIGNED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t INITIALIZING_HASH = ConstExprHashingUtils::HashString("INITIALIZING");
+        static constexpr uint32_t PROVISIONING_HASH = ConstExprHashingUtils::HashString("PROVISIONING");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
+        static constexpr uint32_t RECYCLING_HASH = ConstExprHashingUtils::HashString("RECYCLING");
+        static constexpr uint32_t ROTATING_HASH = ConstExprHashingUtils::HashString("ROTATING");
+        static constexpr uint32_t TERMINATED_HASH = ConstExprHashingUtils::HashString("TERMINATED");
+        static constexpr uint32_t TERMINATING_HASH = ConstExprHashingUtils::HashString("TERMINATING");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
 
 
         SessionStatus GetSessionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASSIGNED_HASH)
           {
             return SessionStatus::ASSIGNED;

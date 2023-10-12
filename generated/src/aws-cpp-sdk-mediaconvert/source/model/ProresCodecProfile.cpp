@@ -20,17 +20,17 @@ namespace Aws
       namespace ProresCodecProfileMapper
       {
 
-        static const int APPLE_PRORES_422_HASH = HashingUtils::HashString("APPLE_PRORES_422");
-        static const int APPLE_PRORES_422_HQ_HASH = HashingUtils::HashString("APPLE_PRORES_422_HQ");
-        static const int APPLE_PRORES_422_LT_HASH = HashingUtils::HashString("APPLE_PRORES_422_LT");
-        static const int APPLE_PRORES_422_PROXY_HASH = HashingUtils::HashString("APPLE_PRORES_422_PROXY");
-        static const int APPLE_PRORES_4444_HASH = HashingUtils::HashString("APPLE_PRORES_4444");
-        static const int APPLE_PRORES_4444_XQ_HASH = HashingUtils::HashString("APPLE_PRORES_4444_XQ");
+        static constexpr uint32_t APPLE_PRORES_422_HASH = ConstExprHashingUtils::HashString("APPLE_PRORES_422");
+        static constexpr uint32_t APPLE_PRORES_422_HQ_HASH = ConstExprHashingUtils::HashString("APPLE_PRORES_422_HQ");
+        static constexpr uint32_t APPLE_PRORES_422_LT_HASH = ConstExprHashingUtils::HashString("APPLE_PRORES_422_LT");
+        static constexpr uint32_t APPLE_PRORES_422_PROXY_HASH = ConstExprHashingUtils::HashString("APPLE_PRORES_422_PROXY");
+        static constexpr uint32_t APPLE_PRORES_4444_HASH = ConstExprHashingUtils::HashString("APPLE_PRORES_4444");
+        static constexpr uint32_t APPLE_PRORES_4444_XQ_HASH = ConstExprHashingUtils::HashString("APPLE_PRORES_4444_XQ");
 
 
         ProresCodecProfile GetProresCodecProfileForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APPLE_PRORES_422_HASH)
           {
             return ProresCodecProfile::APPLE_PRORES_422;

@@ -20,14 +20,14 @@ namespace Aws
       namespace AdjustmentTypeMapper
       {
 
-        static const int ChangeInCapacity_HASH = HashingUtils::HashString("ChangeInCapacity");
-        static const int PercentChangeInCapacity_HASH = HashingUtils::HashString("PercentChangeInCapacity");
-        static const int ExactCapacity_HASH = HashingUtils::HashString("ExactCapacity");
+        static constexpr uint32_t ChangeInCapacity_HASH = ConstExprHashingUtils::HashString("ChangeInCapacity");
+        static constexpr uint32_t PercentChangeInCapacity_HASH = ConstExprHashingUtils::HashString("PercentChangeInCapacity");
+        static constexpr uint32_t ExactCapacity_HASH = ConstExprHashingUtils::HashString("ExactCapacity");
 
 
         AdjustmentType GetAdjustmentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ChangeInCapacity_HASH)
           {
             return AdjustmentType::ChangeInCapacity;

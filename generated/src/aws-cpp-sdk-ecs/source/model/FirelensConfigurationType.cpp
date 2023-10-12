@@ -20,13 +20,13 @@ namespace Aws
       namespace FirelensConfigurationTypeMapper
       {
 
-        static const int fluentd_HASH = HashingUtils::HashString("fluentd");
-        static const int fluentbit_HASH = HashingUtils::HashString("fluentbit");
+        static constexpr uint32_t fluentd_HASH = ConstExprHashingUtils::HashString("fluentd");
+        static constexpr uint32_t fluentbit_HASH = ConstExprHashingUtils::HashString("fluentbit");
 
 
         FirelensConfigurationType GetFirelensConfigurationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == fluentd_HASH)
           {
             return FirelensConfigurationType::fluentd;

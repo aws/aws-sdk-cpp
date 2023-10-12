@@ -20,22 +20,22 @@ namespace Aws
       namespace KeyUsageNameMapper
       {
 
-        static const int DIGITAL_SIGNATURE_HASH = HashingUtils::HashString("DIGITAL_SIGNATURE");
-        static const int NON_REPUDIATION_HASH = HashingUtils::HashString("NON_REPUDIATION");
-        static const int KEY_ENCIPHERMENT_HASH = HashingUtils::HashString("KEY_ENCIPHERMENT");
-        static const int DATA_ENCIPHERMENT_HASH = HashingUtils::HashString("DATA_ENCIPHERMENT");
-        static const int KEY_AGREEMENT_HASH = HashingUtils::HashString("KEY_AGREEMENT");
-        static const int CERTIFICATE_SIGNING_HASH = HashingUtils::HashString("CERTIFICATE_SIGNING");
-        static const int CRL_SIGNING_HASH = HashingUtils::HashString("CRL_SIGNING");
-        static const int ENCIPHER_ONLY_HASH = HashingUtils::HashString("ENCIPHER_ONLY");
-        static const int DECIPHER_ONLY_HASH = HashingUtils::HashString("DECIPHER_ONLY");
-        static const int ANY_HASH = HashingUtils::HashString("ANY");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t DIGITAL_SIGNATURE_HASH = ConstExprHashingUtils::HashString("DIGITAL_SIGNATURE");
+        static constexpr uint32_t NON_REPUDIATION_HASH = ConstExprHashingUtils::HashString("NON_REPUDIATION");
+        static constexpr uint32_t KEY_ENCIPHERMENT_HASH = ConstExprHashingUtils::HashString("KEY_ENCIPHERMENT");
+        static constexpr uint32_t DATA_ENCIPHERMENT_HASH = ConstExprHashingUtils::HashString("DATA_ENCIPHERMENT");
+        static constexpr uint32_t KEY_AGREEMENT_HASH = ConstExprHashingUtils::HashString("KEY_AGREEMENT");
+        static constexpr uint32_t CERTIFICATE_SIGNING_HASH = ConstExprHashingUtils::HashString("CERTIFICATE_SIGNING");
+        static constexpr uint32_t CRL_SIGNING_HASH = ConstExprHashingUtils::HashString("CRL_SIGNING");
+        static constexpr uint32_t ENCIPHER_ONLY_HASH = ConstExprHashingUtils::HashString("ENCIPHER_ONLY");
+        static constexpr uint32_t DECIPHER_ONLY_HASH = ConstExprHashingUtils::HashString("DECIPHER_ONLY");
+        static constexpr uint32_t ANY_HASH = ConstExprHashingUtils::HashString("ANY");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
 
 
         KeyUsageName GetKeyUsageNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DIGITAL_SIGNATURE_HASH)
           {
             return KeyUsageName::DIGITAL_SIGNATURE;

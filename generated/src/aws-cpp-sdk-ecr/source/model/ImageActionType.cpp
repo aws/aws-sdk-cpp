@@ -20,12 +20,12 @@ namespace Aws
       namespace ImageActionTypeMapper
       {
 
-        static const int EXPIRE_HASH = HashingUtils::HashString("EXPIRE");
+        static constexpr uint32_t EXPIRE_HASH = ConstExprHashingUtils::HashString("EXPIRE");
 
 
         ImageActionType GetImageActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXPIRE_HASH)
           {
             return ImageActionType::EXPIRE;

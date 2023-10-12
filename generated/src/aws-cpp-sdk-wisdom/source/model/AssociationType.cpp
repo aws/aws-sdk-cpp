@@ -20,12 +20,12 @@ namespace Aws
       namespace AssociationTypeMapper
       {
 
-        static const int KNOWLEDGE_BASE_HASH = HashingUtils::HashString("KNOWLEDGE_BASE");
+        static constexpr uint32_t KNOWLEDGE_BASE_HASH = ConstExprHashingUtils::HashString("KNOWLEDGE_BASE");
 
 
         AssociationType GetAssociationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KNOWLEDGE_BASE_HASH)
           {
             return AssociationType::KNOWLEDGE_BASE;

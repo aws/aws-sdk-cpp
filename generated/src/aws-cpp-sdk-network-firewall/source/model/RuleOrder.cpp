@@ -20,13 +20,13 @@ namespace Aws
       namespace RuleOrderMapper
       {
 
-        static const int DEFAULT_ACTION_ORDER_HASH = HashingUtils::HashString("DEFAULT_ACTION_ORDER");
-        static const int STRICT_ORDER_HASH = HashingUtils::HashString("STRICT_ORDER");
+        static constexpr uint32_t DEFAULT_ACTION_ORDER_HASH = ConstExprHashingUtils::HashString("DEFAULT_ACTION_ORDER");
+        static constexpr uint32_t STRICT_ORDER_HASH = ConstExprHashingUtils::HashString("STRICT_ORDER");
 
 
         RuleOrder GetRuleOrderForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_ACTION_ORDER_HASH)
           {
             return RuleOrder::DEFAULT_ACTION_ORDER;

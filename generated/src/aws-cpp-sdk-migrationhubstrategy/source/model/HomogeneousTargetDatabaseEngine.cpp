@@ -20,12 +20,12 @@ namespace Aws
       namespace HomogeneousTargetDatabaseEngineMapper
       {
 
-        static const int None_specified_HASH = HashingUtils::HashString("None specified");
+        static constexpr uint32_t None_specified_HASH = ConstExprHashingUtils::HashString("None specified");
 
 
         HomogeneousTargetDatabaseEngine GetHomogeneousTargetDatabaseEngineForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == None_specified_HASH)
           {
             return HomogeneousTargetDatabaseEngine::None_specified;

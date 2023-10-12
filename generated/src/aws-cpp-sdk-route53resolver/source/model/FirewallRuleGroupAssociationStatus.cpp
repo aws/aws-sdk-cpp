@@ -20,14 +20,14 @@ namespace Aws
       namespace FirewallRuleGroupAssociationStatusMapper
       {
 
-        static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static constexpr uint32_t COMPLETE_HASH = ConstExprHashingUtils::HashString("COMPLETE");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
 
 
         FirewallRuleGroupAssociationStatus GetFirewallRuleGroupAssociationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPLETE_HASH)
           {
             return FirewallRuleGroupAssociationStatus::COMPLETE;

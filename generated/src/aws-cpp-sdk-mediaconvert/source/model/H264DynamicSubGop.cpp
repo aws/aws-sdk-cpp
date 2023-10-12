@@ -20,13 +20,13 @@ namespace Aws
       namespace H264DynamicSubGopMapper
       {
 
-        static const int ADAPTIVE_HASH = HashingUtils::HashString("ADAPTIVE");
-        static const int STATIC__HASH = HashingUtils::HashString("STATIC");
+        static constexpr uint32_t ADAPTIVE_HASH = ConstExprHashingUtils::HashString("ADAPTIVE");
+        static constexpr uint32_t STATIC__HASH = ConstExprHashingUtils::HashString("STATIC");
 
 
         H264DynamicSubGop GetH264DynamicSubGopForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADAPTIVE_HASH)
           {
             return H264DynamicSubGop::ADAPTIVE;

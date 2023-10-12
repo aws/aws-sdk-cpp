@@ -20,14 +20,14 @@ namespace Aws
       namespace WorkflowExecutionTerminatedCauseMapper
       {
 
-        static const int CHILD_POLICY_APPLIED_HASH = HashingUtils::HashString("CHILD_POLICY_APPLIED");
-        static const int EVENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("EVENT_LIMIT_EXCEEDED");
-        static const int OPERATOR_INITIATED_HASH = HashingUtils::HashString("OPERATOR_INITIATED");
+        static constexpr uint32_t CHILD_POLICY_APPLIED_HASH = ConstExprHashingUtils::HashString("CHILD_POLICY_APPLIED");
+        static constexpr uint32_t EVENT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("EVENT_LIMIT_EXCEEDED");
+        static constexpr uint32_t OPERATOR_INITIATED_HASH = ConstExprHashingUtils::HashString("OPERATOR_INITIATED");
 
 
         WorkflowExecutionTerminatedCause GetWorkflowExecutionTerminatedCauseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CHILD_POLICY_APPLIED_HASH)
           {
             return WorkflowExecutionTerminatedCause::CHILD_POLICY_APPLIED;

@@ -20,20 +20,20 @@ namespace Aws
       namespace EnvironmentHealthStatusMapper
       {
 
-        static const int NoData_HASH = HashingUtils::HashString("NoData");
-        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int Ok_HASH = HashingUtils::HashString("Ok");
-        static const int Info_HASH = HashingUtils::HashString("Info");
-        static const int Warning_HASH = HashingUtils::HashString("Warning");
-        static const int Degraded_HASH = HashingUtils::HashString("Degraded");
-        static const int Severe_HASH = HashingUtils::HashString("Severe");
-        static const int Suspended_HASH = HashingUtils::HashString("Suspended");
+        static constexpr uint32_t NoData_HASH = ConstExprHashingUtils::HashString("NoData");
+        static constexpr uint32_t Unknown_HASH = ConstExprHashingUtils::HashString("Unknown");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t Ok_HASH = ConstExprHashingUtils::HashString("Ok");
+        static constexpr uint32_t Info_HASH = ConstExprHashingUtils::HashString("Info");
+        static constexpr uint32_t Warning_HASH = ConstExprHashingUtils::HashString("Warning");
+        static constexpr uint32_t Degraded_HASH = ConstExprHashingUtils::HashString("Degraded");
+        static constexpr uint32_t Severe_HASH = ConstExprHashingUtils::HashString("Severe");
+        static constexpr uint32_t Suspended_HASH = ConstExprHashingUtils::HashString("Suspended");
 
 
         EnvironmentHealthStatus GetEnvironmentHealthStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NoData_HASH)
           {
             return EnvironmentHealthStatus::NoData;

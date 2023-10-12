@@ -20,13 +20,13 @@ namespace Aws
       namespace GreenFleetProvisioningActionMapper
       {
 
-        static const int DISCOVER_EXISTING_HASH = HashingUtils::HashString("DISCOVER_EXISTING");
-        static const int COPY_AUTO_SCALING_GROUP_HASH = HashingUtils::HashString("COPY_AUTO_SCALING_GROUP");
+        static constexpr uint32_t DISCOVER_EXISTING_HASH = ConstExprHashingUtils::HashString("DISCOVER_EXISTING");
+        static constexpr uint32_t COPY_AUTO_SCALING_GROUP_HASH = ConstExprHashingUtils::HashString("COPY_AUTO_SCALING_GROUP");
 
 
         GreenFleetProvisioningAction GetGreenFleetProvisioningActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISCOVER_EXISTING_HASH)
           {
             return GreenFleetProvisioningAction::DISCOVER_EXISTING;

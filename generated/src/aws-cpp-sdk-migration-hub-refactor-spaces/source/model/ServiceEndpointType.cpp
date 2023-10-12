@@ -20,13 +20,13 @@ namespace Aws
       namespace ServiceEndpointTypeMapper
       {
 
-        static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
-        static const int URL_HASH = HashingUtils::HashString("URL");
+        static constexpr uint32_t LAMBDA_HASH = ConstExprHashingUtils::HashString("LAMBDA");
+        static constexpr uint32_t URL_HASH = ConstExprHashingUtils::HashString("URL");
 
 
         ServiceEndpointType GetServiceEndpointTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LAMBDA_HASH)
           {
             return ServiceEndpointType::LAMBDA;

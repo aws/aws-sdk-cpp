@@ -20,13 +20,13 @@ namespace Aws
       namespace LogFormatMapper
       {
 
-        static const int text_HASH = HashingUtils::HashString("text");
-        static const int json_HASH = HashingUtils::HashString("json");
+        static constexpr uint32_t text_HASH = ConstExprHashingUtils::HashString("text");
+        static constexpr uint32_t json_HASH = ConstExprHashingUtils::HashString("json");
 
 
         LogFormat GetLogFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == text_HASH)
           {
             return LogFormat::text;

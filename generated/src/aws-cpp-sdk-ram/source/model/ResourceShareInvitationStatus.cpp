@@ -20,15 +20,15 @@ namespace Aws
       namespace ResourceShareInvitationStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int ACCEPTED_HASH = HashingUtils::HashString("ACCEPTED");
-        static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
-        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t ACCEPTED_HASH = ConstExprHashingUtils::HashString("ACCEPTED");
+        static constexpr uint32_t REJECTED_HASH = ConstExprHashingUtils::HashString("REJECTED");
+        static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("EXPIRED");
 
 
         ResourceShareInvitationStatus GetResourceShareInvitationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return ResourceShareInvitationStatus::PENDING;

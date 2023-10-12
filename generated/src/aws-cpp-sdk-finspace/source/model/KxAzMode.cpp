@@ -20,13 +20,13 @@ namespace Aws
       namespace KxAzModeMapper
       {
 
-        static const int SINGLE_HASH = HashingUtils::HashString("SINGLE");
-        static const int MULTI_HASH = HashingUtils::HashString("MULTI");
+        static constexpr uint32_t SINGLE_HASH = ConstExprHashingUtils::HashString("SINGLE");
+        static constexpr uint32_t MULTI_HASH = ConstExprHashingUtils::HashString("MULTI");
 
 
         KxAzMode GetKxAzModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SINGLE_HASH)
           {
             return KxAzMode::SINGLE;

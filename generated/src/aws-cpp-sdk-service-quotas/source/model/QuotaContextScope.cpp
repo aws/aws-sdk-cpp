@@ -20,13 +20,13 @@ namespace Aws
       namespace QuotaContextScopeMapper
       {
 
-        static const int RESOURCE_HASH = HashingUtils::HashString("RESOURCE");
-        static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
+        static constexpr uint32_t RESOURCE_HASH = ConstExprHashingUtils::HashString("RESOURCE");
+        static constexpr uint32_t ACCOUNT_HASH = ConstExprHashingUtils::HashString("ACCOUNT");
 
 
         QuotaContextScope GetQuotaContextScopeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESOURCE_HASH)
           {
             return QuotaContextScope::RESOURCE;

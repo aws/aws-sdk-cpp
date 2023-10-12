@@ -20,14 +20,14 @@ namespace Aws
       namespace BodyParsingFallbackBehaviorMapper
       {
 
-        static const int MATCH_HASH = HashingUtils::HashString("MATCH");
-        static const int NO_MATCH_HASH = HashingUtils::HashString("NO_MATCH");
-        static const int EVALUATE_AS_STRING_HASH = HashingUtils::HashString("EVALUATE_AS_STRING");
+        static constexpr uint32_t MATCH_HASH = ConstExprHashingUtils::HashString("MATCH");
+        static constexpr uint32_t NO_MATCH_HASH = ConstExprHashingUtils::HashString("NO_MATCH");
+        static constexpr uint32_t EVALUATE_AS_STRING_HASH = ConstExprHashingUtils::HashString("EVALUATE_AS_STRING");
 
 
         BodyParsingFallbackBehavior GetBodyParsingFallbackBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MATCH_HASH)
           {
             return BodyParsingFallbackBehavior::MATCH;

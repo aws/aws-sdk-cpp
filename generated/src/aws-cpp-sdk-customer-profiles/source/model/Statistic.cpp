@@ -20,19 +20,19 @@ namespace Aws
       namespace StatisticMapper
       {
 
-        static const int FIRST_OCCURRENCE_HASH = HashingUtils::HashString("FIRST_OCCURRENCE");
-        static const int LAST_OCCURRENCE_HASH = HashingUtils::HashString("LAST_OCCURRENCE");
-        static const int COUNT_HASH = HashingUtils::HashString("COUNT");
-        static const int SUM_HASH = HashingUtils::HashString("SUM");
-        static const int MINIMUM_HASH = HashingUtils::HashString("MINIMUM");
-        static const int MAXIMUM_HASH = HashingUtils::HashString("MAXIMUM");
-        static const int AVERAGE_HASH = HashingUtils::HashString("AVERAGE");
-        static const int MAX_OCCURRENCE_HASH = HashingUtils::HashString("MAX_OCCURRENCE");
+        static constexpr uint32_t FIRST_OCCURRENCE_HASH = ConstExprHashingUtils::HashString("FIRST_OCCURRENCE");
+        static constexpr uint32_t LAST_OCCURRENCE_HASH = ConstExprHashingUtils::HashString("LAST_OCCURRENCE");
+        static constexpr uint32_t COUNT_HASH = ConstExprHashingUtils::HashString("COUNT");
+        static constexpr uint32_t SUM_HASH = ConstExprHashingUtils::HashString("SUM");
+        static constexpr uint32_t MINIMUM_HASH = ConstExprHashingUtils::HashString("MINIMUM");
+        static constexpr uint32_t MAXIMUM_HASH = ConstExprHashingUtils::HashString("MAXIMUM");
+        static constexpr uint32_t AVERAGE_HASH = ConstExprHashingUtils::HashString("AVERAGE");
+        static constexpr uint32_t MAX_OCCURRENCE_HASH = ConstExprHashingUtils::HashString("MAX_OCCURRENCE");
 
 
         Statistic GetStatisticForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FIRST_OCCURRENCE_HASH)
           {
             return Statistic::FIRST_OCCURRENCE;

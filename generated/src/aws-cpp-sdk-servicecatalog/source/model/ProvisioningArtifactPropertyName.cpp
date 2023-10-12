@@ -20,12 +20,12 @@ namespace Aws
       namespace ProvisioningArtifactPropertyNameMapper
       {
 
-        static const int Id_HASH = HashingUtils::HashString("Id");
+        static constexpr uint32_t Id_HASH = ConstExprHashingUtils::HashString("Id");
 
 
         ProvisioningArtifactPropertyName GetProvisioningArtifactPropertyNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Id_HASH)
           {
             return ProvisioningArtifactPropertyName::Id;

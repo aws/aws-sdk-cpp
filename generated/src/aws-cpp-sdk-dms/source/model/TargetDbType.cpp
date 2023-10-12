@@ -20,13 +20,13 @@ namespace Aws
       namespace TargetDbTypeMapper
       {
 
-        static const int specific_database_HASH = HashingUtils::HashString("specific-database");
-        static const int multiple_databases_HASH = HashingUtils::HashString("multiple-databases");
+        static constexpr uint32_t specific_database_HASH = ConstExprHashingUtils::HashString("specific-database");
+        static constexpr uint32_t multiple_databases_HASH = ConstExprHashingUtils::HashString("multiple-databases");
 
 
         TargetDbType GetTargetDbTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == specific_database_HASH)
           {
             return TargetDbType::specific_database;

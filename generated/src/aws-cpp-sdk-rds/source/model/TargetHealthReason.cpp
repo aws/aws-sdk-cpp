@@ -20,16 +20,16 @@ namespace Aws
       namespace TargetHealthReasonMapper
       {
 
-        static const int UNREACHABLE_HASH = HashingUtils::HashString("UNREACHABLE");
-        static const int CONNECTION_FAILED_HASH = HashingUtils::HashString("CONNECTION_FAILED");
-        static const int AUTH_FAILURE_HASH = HashingUtils::HashString("AUTH_FAILURE");
-        static const int PENDING_PROXY_CAPACITY_HASH = HashingUtils::HashString("PENDING_PROXY_CAPACITY");
-        static const int INVALID_REPLICATION_STATE_HASH = HashingUtils::HashString("INVALID_REPLICATION_STATE");
+        static constexpr uint32_t UNREACHABLE_HASH = ConstExprHashingUtils::HashString("UNREACHABLE");
+        static constexpr uint32_t CONNECTION_FAILED_HASH = ConstExprHashingUtils::HashString("CONNECTION_FAILED");
+        static constexpr uint32_t AUTH_FAILURE_HASH = ConstExprHashingUtils::HashString("AUTH_FAILURE");
+        static constexpr uint32_t PENDING_PROXY_CAPACITY_HASH = ConstExprHashingUtils::HashString("PENDING_PROXY_CAPACITY");
+        static constexpr uint32_t INVALID_REPLICATION_STATE_HASH = ConstExprHashingUtils::HashString("INVALID_REPLICATION_STATE");
 
 
         TargetHealthReason GetTargetHealthReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNREACHABLE_HASH)
           {
             return TargetHealthReason::UNREACHABLE;

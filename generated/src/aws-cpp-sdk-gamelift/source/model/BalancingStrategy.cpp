@@ -20,14 +20,14 @@ namespace Aws
       namespace BalancingStrategyMapper
       {
 
-        static const int SPOT_ONLY_HASH = HashingUtils::HashString("SPOT_ONLY");
-        static const int SPOT_PREFERRED_HASH = HashingUtils::HashString("SPOT_PREFERRED");
-        static const int ON_DEMAND_ONLY_HASH = HashingUtils::HashString("ON_DEMAND_ONLY");
+        static constexpr uint32_t SPOT_ONLY_HASH = ConstExprHashingUtils::HashString("SPOT_ONLY");
+        static constexpr uint32_t SPOT_PREFERRED_HASH = ConstExprHashingUtils::HashString("SPOT_PREFERRED");
+        static constexpr uint32_t ON_DEMAND_ONLY_HASH = ConstExprHashingUtils::HashString("ON_DEMAND_ONLY");
 
 
         BalancingStrategy GetBalancingStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SPOT_ONLY_HASH)
           {
             return BalancingStrategy::SPOT_ONLY;

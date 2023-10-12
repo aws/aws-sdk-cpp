@@ -20,15 +20,15 @@ namespace Aws
       namespace DeploymentTargetTypeMapper
       {
 
-        static const int InstanceTarget_HASH = HashingUtils::HashString("InstanceTarget");
-        static const int LambdaTarget_HASH = HashingUtils::HashString("LambdaTarget");
-        static const int ECSTarget_HASH = HashingUtils::HashString("ECSTarget");
-        static const int CloudFormationTarget_HASH = HashingUtils::HashString("CloudFormationTarget");
+        static constexpr uint32_t InstanceTarget_HASH = ConstExprHashingUtils::HashString("InstanceTarget");
+        static constexpr uint32_t LambdaTarget_HASH = ConstExprHashingUtils::HashString("LambdaTarget");
+        static constexpr uint32_t ECSTarget_HASH = ConstExprHashingUtils::HashString("ECSTarget");
+        static constexpr uint32_t CloudFormationTarget_HASH = ConstExprHashingUtils::HashString("CloudFormationTarget");
 
 
         DeploymentTargetType GetDeploymentTargetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InstanceTarget_HASH)
           {
             return DeploymentTargetType::InstanceTarget;

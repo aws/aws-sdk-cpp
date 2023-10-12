@@ -20,20 +20,20 @@ namespace Aws
       namespace ReportGroupTrendFieldTypeMapper
       {
 
-        static const int PASS_RATE_HASH = HashingUtils::HashString("PASS_RATE");
-        static const int DURATION_HASH = HashingUtils::HashString("DURATION");
-        static const int TOTAL_HASH = HashingUtils::HashString("TOTAL");
-        static const int LINE_COVERAGE_HASH = HashingUtils::HashString("LINE_COVERAGE");
-        static const int LINES_COVERED_HASH = HashingUtils::HashString("LINES_COVERED");
-        static const int LINES_MISSED_HASH = HashingUtils::HashString("LINES_MISSED");
-        static const int BRANCH_COVERAGE_HASH = HashingUtils::HashString("BRANCH_COVERAGE");
-        static const int BRANCHES_COVERED_HASH = HashingUtils::HashString("BRANCHES_COVERED");
-        static const int BRANCHES_MISSED_HASH = HashingUtils::HashString("BRANCHES_MISSED");
+        static constexpr uint32_t PASS_RATE_HASH = ConstExprHashingUtils::HashString("PASS_RATE");
+        static constexpr uint32_t DURATION_HASH = ConstExprHashingUtils::HashString("DURATION");
+        static constexpr uint32_t TOTAL_HASH = ConstExprHashingUtils::HashString("TOTAL");
+        static constexpr uint32_t LINE_COVERAGE_HASH = ConstExprHashingUtils::HashString("LINE_COVERAGE");
+        static constexpr uint32_t LINES_COVERED_HASH = ConstExprHashingUtils::HashString("LINES_COVERED");
+        static constexpr uint32_t LINES_MISSED_HASH = ConstExprHashingUtils::HashString("LINES_MISSED");
+        static constexpr uint32_t BRANCH_COVERAGE_HASH = ConstExprHashingUtils::HashString("BRANCH_COVERAGE");
+        static constexpr uint32_t BRANCHES_COVERED_HASH = ConstExprHashingUtils::HashString("BRANCHES_COVERED");
+        static constexpr uint32_t BRANCHES_MISSED_HASH = ConstExprHashingUtils::HashString("BRANCHES_MISSED");
 
 
         ReportGroupTrendFieldType GetReportGroupTrendFieldTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PASS_RATE_HASH)
           {
             return ReportGroupTrendFieldType::PASS_RATE;

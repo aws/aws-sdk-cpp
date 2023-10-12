@@ -20,34 +20,34 @@ namespace Aws
       namespace StackStatusMapper
       {
 
-        static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
-        static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
-        static const int CREATE_COMPLETE_HASH = HashingUtils::HashString("CREATE_COMPLETE");
-        static const int ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("ROLLBACK_IN_PROGRESS");
-        static const int ROLLBACK_FAILED_HASH = HashingUtils::HashString("ROLLBACK_FAILED");
-        static const int ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("ROLLBACK_COMPLETE");
-        static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
-        static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
-        static const int DELETE_COMPLETE_HASH = HashingUtils::HashString("DELETE_COMPLETE");
-        static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
-        static const int UPDATE_COMPLETE_CLEANUP_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_COMPLETE_CLEANUP_IN_PROGRESS");
-        static const int UPDATE_COMPLETE_HASH = HashingUtils::HashString("UPDATE_COMPLETE");
-        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
-        static const int UPDATE_ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_IN_PROGRESS");
-        static const int UPDATE_ROLLBACK_FAILED_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_FAILED");
-        static const int UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS");
-        static const int UPDATE_ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_COMPLETE");
-        static const int REVIEW_IN_PROGRESS_HASH = HashingUtils::HashString("REVIEW_IN_PROGRESS");
-        static const int IMPORT_IN_PROGRESS_HASH = HashingUtils::HashString("IMPORT_IN_PROGRESS");
-        static const int IMPORT_COMPLETE_HASH = HashingUtils::HashString("IMPORT_COMPLETE");
-        static const int IMPORT_ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("IMPORT_ROLLBACK_IN_PROGRESS");
-        static const int IMPORT_ROLLBACK_FAILED_HASH = HashingUtils::HashString("IMPORT_ROLLBACK_FAILED");
-        static const int IMPORT_ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("IMPORT_ROLLBACK_COMPLETE");
+        static constexpr uint32_t CREATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("CREATE_IN_PROGRESS");
+        static constexpr uint32_t CREATE_FAILED_HASH = ConstExprHashingUtils::HashString("CREATE_FAILED");
+        static constexpr uint32_t CREATE_COMPLETE_HASH = ConstExprHashingUtils::HashString("CREATE_COMPLETE");
+        static constexpr uint32_t ROLLBACK_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("ROLLBACK_IN_PROGRESS");
+        static constexpr uint32_t ROLLBACK_FAILED_HASH = ConstExprHashingUtils::HashString("ROLLBACK_FAILED");
+        static constexpr uint32_t ROLLBACK_COMPLETE_HASH = ConstExprHashingUtils::HashString("ROLLBACK_COMPLETE");
+        static constexpr uint32_t DELETE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("DELETE_IN_PROGRESS");
+        static constexpr uint32_t DELETE_FAILED_HASH = ConstExprHashingUtils::HashString("DELETE_FAILED");
+        static constexpr uint32_t DELETE_COMPLETE_HASH = ConstExprHashingUtils::HashString("DELETE_COMPLETE");
+        static constexpr uint32_t UPDATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("UPDATE_IN_PROGRESS");
+        static constexpr uint32_t UPDATE_COMPLETE_CLEANUP_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("UPDATE_COMPLETE_CLEANUP_IN_PROGRESS");
+        static constexpr uint32_t UPDATE_COMPLETE_HASH = ConstExprHashingUtils::HashString("UPDATE_COMPLETE");
+        static constexpr uint32_t UPDATE_FAILED_HASH = ConstExprHashingUtils::HashString("UPDATE_FAILED");
+        static constexpr uint32_t UPDATE_ROLLBACK_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("UPDATE_ROLLBACK_IN_PROGRESS");
+        static constexpr uint32_t UPDATE_ROLLBACK_FAILED_HASH = ConstExprHashingUtils::HashString("UPDATE_ROLLBACK_FAILED");
+        static constexpr uint32_t UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS");
+        static constexpr uint32_t UPDATE_ROLLBACK_COMPLETE_HASH = ConstExprHashingUtils::HashString("UPDATE_ROLLBACK_COMPLETE");
+        static constexpr uint32_t REVIEW_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("REVIEW_IN_PROGRESS");
+        static constexpr uint32_t IMPORT_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IMPORT_IN_PROGRESS");
+        static constexpr uint32_t IMPORT_COMPLETE_HASH = ConstExprHashingUtils::HashString("IMPORT_COMPLETE");
+        static constexpr uint32_t IMPORT_ROLLBACK_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IMPORT_ROLLBACK_IN_PROGRESS");
+        static constexpr uint32_t IMPORT_ROLLBACK_FAILED_HASH = ConstExprHashingUtils::HashString("IMPORT_ROLLBACK_FAILED");
+        static constexpr uint32_t IMPORT_ROLLBACK_COMPLETE_HASH = ConstExprHashingUtils::HashString("IMPORT_ROLLBACK_COMPLETE");
 
 
         StackStatus GetStackStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_IN_PROGRESS_HASH)
           {
             return StackStatus::CREATE_IN_PROGRESS;

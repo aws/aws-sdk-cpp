@@ -20,15 +20,15 @@ namespace Aws
       namespace LicenseCountingTypeMapper
       {
 
-        static const int vCPU_HASH = HashingUtils::HashString("vCPU");
-        static const int Instance_HASH = HashingUtils::HashString("Instance");
-        static const int Core_HASH = HashingUtils::HashString("Core");
-        static const int Socket_HASH = HashingUtils::HashString("Socket");
+        static constexpr uint32_t vCPU_HASH = ConstExprHashingUtils::HashString("vCPU");
+        static constexpr uint32_t Instance_HASH = ConstExprHashingUtils::HashString("Instance");
+        static constexpr uint32_t Core_HASH = ConstExprHashingUtils::HashString("Core");
+        static constexpr uint32_t Socket_HASH = ConstExprHashingUtils::HashString("Socket");
 
 
         LicenseCountingType GetLicenseCountingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == vCPU_HASH)
           {
             return LicenseCountingType::vCPU;

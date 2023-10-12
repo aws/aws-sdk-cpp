@@ -20,20 +20,20 @@ namespace Aws
       namespace BackupJobStateMapper
       {
 
-        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int ABORTING_HASH = HashingUtils::HashString("ABORTING");
-        static const int ABORTED_HASH = HashingUtils::HashString("ABORTED");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
-        static const int PARTIAL_HASH = HashingUtils::HashString("PARTIAL");
+        static constexpr uint32_t CREATED_HASH = ConstExprHashingUtils::HashString("CREATED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t ABORTING_HASH = ConstExprHashingUtils::HashString("ABORTING");
+        static constexpr uint32_t ABORTED_HASH = ConstExprHashingUtils::HashString("ABORTED");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("EXPIRED");
+        static constexpr uint32_t PARTIAL_HASH = ConstExprHashingUtils::HashString("PARTIAL");
 
 
         BackupJobState GetBackupJobStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATED_HASH)
           {
             return BackupJobState::CREATED;

@@ -20,17 +20,17 @@ namespace Aws
       namespace HostEnvironmentMapper
       {
 
-        static const int VMWARE_HASH = HashingUtils::HashString("VMWARE");
-        static const int HYPER_V_HASH = HashingUtils::HashString("HYPER-V");
-        static const int EC2_HASH = HashingUtils::HashString("EC2");
-        static const int KVM_HASH = HashingUtils::HashString("KVM");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
-        static const int SNOWBALL_HASH = HashingUtils::HashString("SNOWBALL");
+        static constexpr uint32_t VMWARE_HASH = ConstExprHashingUtils::HashString("VMWARE");
+        static constexpr uint32_t HYPER_V_HASH = ConstExprHashingUtils::HashString("HYPER-V");
+        static constexpr uint32_t EC2_HASH = ConstExprHashingUtils::HashString("EC2");
+        static constexpr uint32_t KVM_HASH = ConstExprHashingUtils::HashString("KVM");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
+        static constexpr uint32_t SNOWBALL_HASH = ConstExprHashingUtils::HashString("SNOWBALL");
 
 
         HostEnvironment GetHostEnvironmentForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VMWARE_HASH)
           {
             return HostEnvironment::VMWARE;

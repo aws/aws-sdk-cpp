@@ -20,15 +20,15 @@ namespace Aws
       namespace MetricsLevelMapper
       {
 
-        static const int APPLICATION_HASH = HashingUtils::HashString("APPLICATION");
-        static const int TASK_HASH = HashingUtils::HashString("TASK");
-        static const int OPERATOR_HASH = HashingUtils::HashString("OPERATOR");
-        static const int PARALLELISM_HASH = HashingUtils::HashString("PARALLELISM");
+        static constexpr uint32_t APPLICATION_HASH = ConstExprHashingUtils::HashString("APPLICATION");
+        static constexpr uint32_t TASK_HASH = ConstExprHashingUtils::HashString("TASK");
+        static constexpr uint32_t OPERATOR_HASH = ConstExprHashingUtils::HashString("OPERATOR");
+        static constexpr uint32_t PARALLELISM_HASH = ConstExprHashingUtils::HashString("PARALLELISM");
 
 
         MetricsLevel GetMetricsLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APPLICATION_HASH)
           {
             return MetricsLevel::APPLICATION;

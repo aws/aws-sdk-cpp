@@ -20,13 +20,13 @@ namespace Aws
       namespace MemberPermissionsMapper
       {
 
-        static const int read_write_HASH = HashingUtils::HashString("read-write");
-        static const int read_only_HASH = HashingUtils::HashString("read-only");
+        static constexpr uint32_t read_write_HASH = ConstExprHashingUtils::HashString("read-write");
+        static constexpr uint32_t read_only_HASH = ConstExprHashingUtils::HashString("read-only");
 
 
         MemberPermissions GetMemberPermissionsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == read_write_HASH)
           {
             return MemberPermissions::read_write;

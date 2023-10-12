@@ -20,13 +20,13 @@ namespace Aws
       namespace ValidationMethodMapper
       {
 
-        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
-        static const int DNS_HASH = HashingUtils::HashString("DNS");
+        static constexpr uint32_t EMAIL_HASH = ConstExprHashingUtils::HashString("EMAIL");
+        static constexpr uint32_t DNS_HASH = ConstExprHashingUtils::HashString("DNS");
 
 
         ValidationMethod GetValidationMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EMAIL_HASH)
           {
             return ValidationMethod::EMAIL;

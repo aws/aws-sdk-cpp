@@ -20,15 +20,15 @@ namespace Aws
       namespace StatusCodeMapper
       {
 
-        static const int Complete_HASH = HashingUtils::HashString("Complete");
-        static const int InternalError_HASH = HashingUtils::HashString("InternalError");
-        static const int PartialData_HASH = HashingUtils::HashString("PartialData");
-        static const int Forbidden_HASH = HashingUtils::HashString("Forbidden");
+        static constexpr uint32_t Complete_HASH = ConstExprHashingUtils::HashString("Complete");
+        static constexpr uint32_t InternalError_HASH = ConstExprHashingUtils::HashString("InternalError");
+        static constexpr uint32_t PartialData_HASH = ConstExprHashingUtils::HashString("PartialData");
+        static constexpr uint32_t Forbidden_HASH = ConstExprHashingUtils::HashString("Forbidden");
 
 
         StatusCode GetStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Complete_HASH)
           {
             return StatusCode::Complete;

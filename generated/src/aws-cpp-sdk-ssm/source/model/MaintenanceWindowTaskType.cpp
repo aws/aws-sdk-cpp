@@ -20,15 +20,15 @@ namespace Aws
       namespace MaintenanceWindowTaskTypeMapper
       {
 
-        static const int RUN_COMMAND_HASH = HashingUtils::HashString("RUN_COMMAND");
-        static const int AUTOMATION_HASH = HashingUtils::HashString("AUTOMATION");
-        static const int STEP_FUNCTIONS_HASH = HashingUtils::HashString("STEP_FUNCTIONS");
-        static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
+        static constexpr uint32_t RUN_COMMAND_HASH = ConstExprHashingUtils::HashString("RUN_COMMAND");
+        static constexpr uint32_t AUTOMATION_HASH = ConstExprHashingUtils::HashString("AUTOMATION");
+        static constexpr uint32_t STEP_FUNCTIONS_HASH = ConstExprHashingUtils::HashString("STEP_FUNCTIONS");
+        static constexpr uint32_t LAMBDA_HASH = ConstExprHashingUtils::HashString("LAMBDA");
 
 
         MaintenanceWindowTaskType GetMaintenanceWindowTaskTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RUN_COMMAND_HASH)
           {
             return MaintenanceWindowTaskType::RUN_COMMAND;

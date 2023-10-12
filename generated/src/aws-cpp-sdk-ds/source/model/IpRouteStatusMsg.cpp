@@ -20,17 +20,17 @@ namespace Aws
       namespace IpRouteStatusMsgMapper
       {
 
-        static const int Adding_HASH = HashingUtils::HashString("Adding");
-        static const int Added_HASH = HashingUtils::HashString("Added");
-        static const int Removing_HASH = HashingUtils::HashString("Removing");
-        static const int Removed_HASH = HashingUtils::HashString("Removed");
-        static const int AddFailed_HASH = HashingUtils::HashString("AddFailed");
-        static const int RemoveFailed_HASH = HashingUtils::HashString("RemoveFailed");
+        static constexpr uint32_t Adding_HASH = ConstExprHashingUtils::HashString("Adding");
+        static constexpr uint32_t Added_HASH = ConstExprHashingUtils::HashString("Added");
+        static constexpr uint32_t Removing_HASH = ConstExprHashingUtils::HashString("Removing");
+        static constexpr uint32_t Removed_HASH = ConstExprHashingUtils::HashString("Removed");
+        static constexpr uint32_t AddFailed_HASH = ConstExprHashingUtils::HashString("AddFailed");
+        static constexpr uint32_t RemoveFailed_HASH = ConstExprHashingUtils::HashString("RemoveFailed");
 
 
         IpRouteStatusMsg GetIpRouteStatusMsgForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Adding_HASH)
           {
             return IpRouteStatusMsg::Adding;

@@ -20,13 +20,13 @@ namespace Aws
       namespace FleetOnDemandAllocationStrategyMapper
       {
 
-        static const int lowest_price_HASH = HashingUtils::HashString("lowest-price");
-        static const int prioritized_HASH = HashingUtils::HashString("prioritized");
+        static constexpr uint32_t lowest_price_HASH = ConstExprHashingUtils::HashString("lowest-price");
+        static constexpr uint32_t prioritized_HASH = ConstExprHashingUtils::HashString("prioritized");
 
 
         FleetOnDemandAllocationStrategy GetFleetOnDemandAllocationStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == lowest_price_HASH)
           {
             return FleetOnDemandAllocationStrategy::lowest_price;

@@ -20,16 +20,16 @@ namespace Aws
       namespace DirectoryConfigurationStatusMapper
       {
 
-        static const int Requested_HASH = HashingUtils::HashString("Requested");
-        static const int Updating_HASH = HashingUtils::HashString("Updating");
-        static const int Updated_HASH = HashingUtils::HashString("Updated");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Default_HASH = HashingUtils::HashString("Default");
+        static constexpr uint32_t Requested_HASH = ConstExprHashingUtils::HashString("Requested");
+        static constexpr uint32_t Updating_HASH = ConstExprHashingUtils::HashString("Updating");
+        static constexpr uint32_t Updated_HASH = ConstExprHashingUtils::HashString("Updated");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Default_HASH = ConstExprHashingUtils::HashString("Default");
 
 
         DirectoryConfigurationStatus GetDirectoryConfigurationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Requested_HASH)
           {
             return DirectoryConfigurationStatus::Requested;

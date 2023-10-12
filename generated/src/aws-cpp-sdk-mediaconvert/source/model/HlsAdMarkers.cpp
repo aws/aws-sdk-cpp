@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsAdMarkersMapper
       {
 
-        static const int ELEMENTAL_HASH = HashingUtils::HashString("ELEMENTAL");
-        static const int ELEMENTAL_SCTE35_HASH = HashingUtils::HashString("ELEMENTAL_SCTE35");
+        static constexpr uint32_t ELEMENTAL_HASH = ConstExprHashingUtils::HashString("ELEMENTAL");
+        static constexpr uint32_t ELEMENTAL_SCTE35_HASH = ConstExprHashingUtils::HashString("ELEMENTAL_SCTE35");
 
 
         HlsAdMarkers GetHlsAdMarkersForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ELEMENTAL_HASH)
           {
             return HlsAdMarkers::ELEMENTAL;

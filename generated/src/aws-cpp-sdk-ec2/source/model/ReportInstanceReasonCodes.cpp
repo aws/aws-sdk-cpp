@@ -20,20 +20,20 @@ namespace Aws
       namespace ReportInstanceReasonCodesMapper
       {
 
-        static const int instance_stuck_in_state_HASH = HashingUtils::HashString("instance-stuck-in-state");
-        static const int unresponsive_HASH = HashingUtils::HashString("unresponsive");
-        static const int not_accepting_credentials_HASH = HashingUtils::HashString("not-accepting-credentials");
-        static const int password_not_available_HASH = HashingUtils::HashString("password-not-available");
-        static const int performance_network_HASH = HashingUtils::HashString("performance-network");
-        static const int performance_instance_store_HASH = HashingUtils::HashString("performance-instance-store");
-        static const int performance_ebs_volume_HASH = HashingUtils::HashString("performance-ebs-volume");
-        static const int performance_other_HASH = HashingUtils::HashString("performance-other");
-        static const int other_HASH = HashingUtils::HashString("other");
+        static constexpr uint32_t instance_stuck_in_state_HASH = ConstExprHashingUtils::HashString("instance-stuck-in-state");
+        static constexpr uint32_t unresponsive_HASH = ConstExprHashingUtils::HashString("unresponsive");
+        static constexpr uint32_t not_accepting_credentials_HASH = ConstExprHashingUtils::HashString("not-accepting-credentials");
+        static constexpr uint32_t password_not_available_HASH = ConstExprHashingUtils::HashString("password-not-available");
+        static constexpr uint32_t performance_network_HASH = ConstExprHashingUtils::HashString("performance-network");
+        static constexpr uint32_t performance_instance_store_HASH = ConstExprHashingUtils::HashString("performance-instance-store");
+        static constexpr uint32_t performance_ebs_volume_HASH = ConstExprHashingUtils::HashString("performance-ebs-volume");
+        static constexpr uint32_t performance_other_HASH = ConstExprHashingUtils::HashString("performance-other");
+        static constexpr uint32_t other_HASH = ConstExprHashingUtils::HashString("other");
 
 
         ReportInstanceReasonCodes GetReportInstanceReasonCodesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == instance_stuck_in_state_HASH)
           {
             return ReportInstanceReasonCodes::instance_stuck_in_state;

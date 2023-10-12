@@ -20,16 +20,16 @@ namespace Aws
       namespace EphemerisInvalidReasonMapper
       {
 
-        static const int METADATA_INVALID_HASH = HashingUtils::HashString("METADATA_INVALID");
-        static const int TIME_RANGE_INVALID_HASH = HashingUtils::HashString("TIME_RANGE_INVALID");
-        static const int TRAJECTORY_INVALID_HASH = HashingUtils::HashString("TRAJECTORY_INVALID");
-        static const int KMS_KEY_INVALID_HASH = HashingUtils::HashString("KMS_KEY_INVALID");
-        static const int VALIDATION_ERROR_HASH = HashingUtils::HashString("VALIDATION_ERROR");
+        static constexpr uint32_t METADATA_INVALID_HASH = ConstExprHashingUtils::HashString("METADATA_INVALID");
+        static constexpr uint32_t TIME_RANGE_INVALID_HASH = ConstExprHashingUtils::HashString("TIME_RANGE_INVALID");
+        static constexpr uint32_t TRAJECTORY_INVALID_HASH = ConstExprHashingUtils::HashString("TRAJECTORY_INVALID");
+        static constexpr uint32_t KMS_KEY_INVALID_HASH = ConstExprHashingUtils::HashString("KMS_KEY_INVALID");
+        static constexpr uint32_t VALIDATION_ERROR_HASH = ConstExprHashingUtils::HashString("VALIDATION_ERROR");
 
 
         EphemerisInvalidReason GetEphemerisInvalidReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == METADATA_INVALID_HASH)
           {
             return EphemerisInvalidReason::METADATA_INVALID;

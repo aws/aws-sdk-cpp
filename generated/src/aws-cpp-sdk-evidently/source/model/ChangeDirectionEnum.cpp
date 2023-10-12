@@ -20,13 +20,13 @@ namespace Aws
       namespace ChangeDirectionEnumMapper
       {
 
-        static const int INCREASE_HASH = HashingUtils::HashString("INCREASE");
-        static const int DECREASE_HASH = HashingUtils::HashString("DECREASE");
+        static constexpr uint32_t INCREASE_HASH = ConstExprHashingUtils::HashString("INCREASE");
+        static constexpr uint32_t DECREASE_HASH = ConstExprHashingUtils::HashString("DECREASE");
 
 
         ChangeDirectionEnum GetChangeDirectionEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INCREASE_HASH)
           {
             return ChangeDirectionEnum::INCREASE;

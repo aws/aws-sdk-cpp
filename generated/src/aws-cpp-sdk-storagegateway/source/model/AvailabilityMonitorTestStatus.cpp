@@ -20,14 +20,14 @@ namespace Aws
       namespace AvailabilityMonitorTestStatusMapper
       {
 
-        static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static constexpr uint32_t COMPLETE_HASH = ConstExprHashingUtils::HashString("COMPLETE");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
 
 
         AvailabilityMonitorTestStatus GetAvailabilityMonitorTestStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPLETE_HASH)
           {
             return AvailabilityMonitorTestStatus::COMPLETE;

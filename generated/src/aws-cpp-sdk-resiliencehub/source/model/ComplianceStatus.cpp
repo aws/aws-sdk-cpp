@@ -20,13 +20,13 @@ namespace Aws
       namespace ComplianceStatusMapper
       {
 
-        static const int PolicyBreached_HASH = HashingUtils::HashString("PolicyBreached");
-        static const int PolicyMet_HASH = HashingUtils::HashString("PolicyMet");
+        static constexpr uint32_t PolicyBreached_HASH = ConstExprHashingUtils::HashString("PolicyBreached");
+        static constexpr uint32_t PolicyMet_HASH = ConstExprHashingUtils::HashString("PolicyMet");
 
 
         ComplianceStatus GetComplianceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PolicyBreached_HASH)
           {
             return ComplianceStatus::PolicyBreached;

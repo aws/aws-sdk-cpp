@@ -20,15 +20,15 @@ namespace Aws
       namespace SourceControlProviderMapper
       {
 
-        static const int GITHUB_HASH = HashingUtils::HashString("GITHUB");
-        static const int GITLAB_HASH = HashingUtils::HashString("GITLAB");
-        static const int BITBUCKET_HASH = HashingUtils::HashString("BITBUCKET");
-        static const int AWS_CODE_COMMIT_HASH = HashingUtils::HashString("AWS_CODE_COMMIT");
+        static constexpr uint32_t GITHUB_HASH = ConstExprHashingUtils::HashString("GITHUB");
+        static constexpr uint32_t GITLAB_HASH = ConstExprHashingUtils::HashString("GITLAB");
+        static constexpr uint32_t BITBUCKET_HASH = ConstExprHashingUtils::HashString("BITBUCKET");
+        static constexpr uint32_t AWS_CODE_COMMIT_HASH = ConstExprHashingUtils::HashString("AWS_CODE_COMMIT");
 
 
         SourceControlProvider GetSourceControlProviderForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GITHUB_HASH)
           {
             return SourceControlProvider::GITHUB;

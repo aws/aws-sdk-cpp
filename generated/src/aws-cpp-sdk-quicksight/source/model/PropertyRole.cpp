@@ -20,13 +20,13 @@ namespace Aws
       namespace PropertyRoleMapper
       {
 
-        static const int PRIMARY_HASH = HashingUtils::HashString("PRIMARY");
-        static const int ID_HASH = HashingUtils::HashString("ID");
+        static constexpr uint32_t PRIMARY_HASH = ConstExprHashingUtils::HashString("PRIMARY");
+        static constexpr uint32_t ID_HASH = ConstExprHashingUtils::HashString("ID");
 
 
         PropertyRole GetPropertyRoleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRIMARY_HASH)
           {
             return PropertyRole::PRIMARY;

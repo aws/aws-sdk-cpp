@@ -20,16 +20,16 @@ namespace Aws
       namespace CacheClusterStatusMapper
       {
 
-        static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
-        static const int NOT_AVAILABLE_HASH = HashingUtils::HashString("NOT_AVAILABLE");
-        static const int FLUSH_IN_PROGRESS_HASH = HashingUtils::HashString("FLUSH_IN_PROGRESS");
+        static constexpr uint32_t CREATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("CREATE_IN_PROGRESS");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t DELETE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("DELETE_IN_PROGRESS");
+        static constexpr uint32_t NOT_AVAILABLE_HASH = ConstExprHashingUtils::HashString("NOT_AVAILABLE");
+        static constexpr uint32_t FLUSH_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("FLUSH_IN_PROGRESS");
 
 
         CacheClusterStatus GetCacheClusterStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_IN_PROGRESS_HASH)
           {
             return CacheClusterStatus::CREATE_IN_PROGRESS;

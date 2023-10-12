@@ -20,13 +20,13 @@ namespace Aws
       namespace UserGroupResolutionModeMapper
       {
 
-        static const int AWS_SSO_HASH = HashingUtils::HashString("AWS_SSO");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t AWS_SSO_HASH = ConstExprHashingUtils::HashString("AWS_SSO");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         UserGroupResolutionMode GetUserGroupResolutionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_SSO_HASH)
           {
             return UserGroupResolutionMode::AWS_SSO;

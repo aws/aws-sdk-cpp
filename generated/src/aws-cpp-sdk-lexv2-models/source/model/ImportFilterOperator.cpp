@@ -20,13 +20,13 @@ namespace Aws
       namespace ImportFilterOperatorMapper
       {
 
-        static const int CO_HASH = HashingUtils::HashString("CO");
-        static const int EQ_HASH = HashingUtils::HashString("EQ");
+        static constexpr uint32_t CO_HASH = ConstExprHashingUtils::HashString("CO");
+        static constexpr uint32_t EQ_HASH = ConstExprHashingUtils::HashString("EQ");
 
 
         ImportFilterOperator GetImportFilterOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CO_HASH)
           {
             return ImportFilterOperator::CO;

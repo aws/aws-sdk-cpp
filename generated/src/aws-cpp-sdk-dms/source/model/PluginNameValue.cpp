@@ -20,14 +20,14 @@ namespace Aws
       namespace PluginNameValueMapper
       {
 
-        static const int no_preference_HASH = HashingUtils::HashString("no-preference");
-        static const int test_decoding_HASH = HashingUtils::HashString("test-decoding");
-        static const int pglogical_HASH = HashingUtils::HashString("pglogical");
+        static constexpr uint32_t no_preference_HASH = ConstExprHashingUtils::HashString("no-preference");
+        static constexpr uint32_t test_decoding_HASH = ConstExprHashingUtils::HashString("test-decoding");
+        static constexpr uint32_t pglogical_HASH = ConstExprHashingUtils::HashString("pglogical");
 
 
         PluginNameValue GetPluginNameValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == no_preference_HASH)
           {
             return PluginNameValue::no_preference;

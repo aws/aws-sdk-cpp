@@ -20,14 +20,14 @@ namespace Aws
       namespace RenditionConfigurationRenditionSelectionMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
 
 
         RenditionConfigurationRenditionSelection GetRenditionConfigurationRenditionSelectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return RenditionConfigurationRenditionSelection::ALL;

@@ -20,19 +20,19 @@ namespace Aws
       namespace NumericQuestionPropertyAutomationLabelMapper
       {
 
-        static const int OVERALL_CUSTOMER_SENTIMENT_SCORE_HASH = HashingUtils::HashString("OVERALL_CUSTOMER_SENTIMENT_SCORE");
-        static const int OVERALL_AGENT_SENTIMENT_SCORE_HASH = HashingUtils::HashString("OVERALL_AGENT_SENTIMENT_SCORE");
-        static const int NON_TALK_TIME_HASH = HashingUtils::HashString("NON_TALK_TIME");
-        static const int NON_TALK_TIME_PERCENTAGE_HASH = HashingUtils::HashString("NON_TALK_TIME_PERCENTAGE");
-        static const int NUMBER_OF_INTERRUPTIONS_HASH = HashingUtils::HashString("NUMBER_OF_INTERRUPTIONS");
-        static const int CONTACT_DURATION_HASH = HashingUtils::HashString("CONTACT_DURATION");
-        static const int AGENT_INTERACTION_DURATION_HASH = HashingUtils::HashString("AGENT_INTERACTION_DURATION");
-        static const int CUSTOMER_HOLD_TIME_HASH = HashingUtils::HashString("CUSTOMER_HOLD_TIME");
+        static constexpr uint32_t OVERALL_CUSTOMER_SENTIMENT_SCORE_HASH = ConstExprHashingUtils::HashString("OVERALL_CUSTOMER_SENTIMENT_SCORE");
+        static constexpr uint32_t OVERALL_AGENT_SENTIMENT_SCORE_HASH = ConstExprHashingUtils::HashString("OVERALL_AGENT_SENTIMENT_SCORE");
+        static constexpr uint32_t NON_TALK_TIME_HASH = ConstExprHashingUtils::HashString("NON_TALK_TIME");
+        static constexpr uint32_t NON_TALK_TIME_PERCENTAGE_HASH = ConstExprHashingUtils::HashString("NON_TALK_TIME_PERCENTAGE");
+        static constexpr uint32_t NUMBER_OF_INTERRUPTIONS_HASH = ConstExprHashingUtils::HashString("NUMBER_OF_INTERRUPTIONS");
+        static constexpr uint32_t CONTACT_DURATION_HASH = ConstExprHashingUtils::HashString("CONTACT_DURATION");
+        static constexpr uint32_t AGENT_INTERACTION_DURATION_HASH = ConstExprHashingUtils::HashString("AGENT_INTERACTION_DURATION");
+        static constexpr uint32_t CUSTOMER_HOLD_TIME_HASH = ConstExprHashingUtils::HashString("CUSTOMER_HOLD_TIME");
 
 
         NumericQuestionPropertyAutomationLabel GetNumericQuestionPropertyAutomationLabelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OVERALL_CUSTOMER_SENTIMENT_SCORE_HASH)
           {
             return NumericQuestionPropertyAutomationLabel::OVERALL_CUSTOMER_SENTIMENT_SCORE;

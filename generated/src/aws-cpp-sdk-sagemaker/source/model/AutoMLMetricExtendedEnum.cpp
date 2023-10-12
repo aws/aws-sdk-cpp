@@ -20,30 +20,30 @@ namespace Aws
       namespace AutoMLMetricExtendedEnumMapper
       {
 
-        static const int Accuracy_HASH = HashingUtils::HashString("Accuracy");
-        static const int MSE_HASH = HashingUtils::HashString("MSE");
-        static const int F1_HASH = HashingUtils::HashString("F1");
-        static const int F1macro_HASH = HashingUtils::HashString("F1macro");
-        static const int AUC_HASH = HashingUtils::HashString("AUC");
-        static const int RMSE_HASH = HashingUtils::HashString("RMSE");
-        static const int MAE_HASH = HashingUtils::HashString("MAE");
-        static const int R2_HASH = HashingUtils::HashString("R2");
-        static const int BalancedAccuracy_HASH = HashingUtils::HashString("BalancedAccuracy");
-        static const int Precision_HASH = HashingUtils::HashString("Precision");
-        static const int PrecisionMacro_HASH = HashingUtils::HashString("PrecisionMacro");
-        static const int Recall_HASH = HashingUtils::HashString("Recall");
-        static const int RecallMacro_HASH = HashingUtils::HashString("RecallMacro");
-        static const int LogLoss_HASH = HashingUtils::HashString("LogLoss");
-        static const int InferenceLatency_HASH = HashingUtils::HashString("InferenceLatency");
-        static const int MAPE_HASH = HashingUtils::HashString("MAPE");
-        static const int MASE_HASH = HashingUtils::HashString("MASE");
-        static const int WAPE_HASH = HashingUtils::HashString("WAPE");
-        static const int AverageWeightedQuantileLoss_HASH = HashingUtils::HashString("AverageWeightedQuantileLoss");
+        static constexpr uint32_t Accuracy_HASH = ConstExprHashingUtils::HashString("Accuracy");
+        static constexpr uint32_t MSE_HASH = ConstExprHashingUtils::HashString("MSE");
+        static constexpr uint32_t F1_HASH = ConstExprHashingUtils::HashString("F1");
+        static constexpr uint32_t F1macro_HASH = ConstExprHashingUtils::HashString("F1macro");
+        static constexpr uint32_t AUC_HASH = ConstExprHashingUtils::HashString("AUC");
+        static constexpr uint32_t RMSE_HASH = ConstExprHashingUtils::HashString("RMSE");
+        static constexpr uint32_t MAE_HASH = ConstExprHashingUtils::HashString("MAE");
+        static constexpr uint32_t R2_HASH = ConstExprHashingUtils::HashString("R2");
+        static constexpr uint32_t BalancedAccuracy_HASH = ConstExprHashingUtils::HashString("BalancedAccuracy");
+        static constexpr uint32_t Precision_HASH = ConstExprHashingUtils::HashString("Precision");
+        static constexpr uint32_t PrecisionMacro_HASH = ConstExprHashingUtils::HashString("PrecisionMacro");
+        static constexpr uint32_t Recall_HASH = ConstExprHashingUtils::HashString("Recall");
+        static constexpr uint32_t RecallMacro_HASH = ConstExprHashingUtils::HashString("RecallMacro");
+        static constexpr uint32_t LogLoss_HASH = ConstExprHashingUtils::HashString("LogLoss");
+        static constexpr uint32_t InferenceLatency_HASH = ConstExprHashingUtils::HashString("InferenceLatency");
+        static constexpr uint32_t MAPE_HASH = ConstExprHashingUtils::HashString("MAPE");
+        static constexpr uint32_t MASE_HASH = ConstExprHashingUtils::HashString("MASE");
+        static constexpr uint32_t WAPE_HASH = ConstExprHashingUtils::HashString("WAPE");
+        static constexpr uint32_t AverageWeightedQuantileLoss_HASH = ConstExprHashingUtils::HashString("AverageWeightedQuantileLoss");
 
 
         AutoMLMetricExtendedEnum GetAutoMLMetricExtendedEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Accuracy_HASH)
           {
             return AutoMLMetricExtendedEnum::Accuracy;

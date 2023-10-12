@@ -20,14 +20,14 @@ namespace Aws
       namespace AlgorithmMapper
       {
 
-        static const int aes128_HASH = HashingUtils::HashString("aes128");
-        static const int aes192_HASH = HashingUtils::HashString("aes192");
-        static const int aes256_HASH = HashingUtils::HashString("aes256");
+        static constexpr uint32_t aes128_HASH = ConstExprHashingUtils::HashString("aes128");
+        static constexpr uint32_t aes192_HASH = ConstExprHashingUtils::HashString("aes192");
+        static constexpr uint32_t aes256_HASH = ConstExprHashingUtils::HashString("aes256");
 
 
         Algorithm GetAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == aes128_HASH)
           {
             return Algorithm::aes128;

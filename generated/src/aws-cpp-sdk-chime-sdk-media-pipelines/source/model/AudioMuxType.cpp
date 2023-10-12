@@ -20,14 +20,14 @@ namespace Aws
       namespace AudioMuxTypeMapper
       {
 
-        static const int AudioOnly_HASH = HashingUtils::HashString("AudioOnly");
-        static const int AudioWithActiveSpeakerVideo_HASH = HashingUtils::HashString("AudioWithActiveSpeakerVideo");
-        static const int AudioWithCompositedVideo_HASH = HashingUtils::HashString("AudioWithCompositedVideo");
+        static constexpr uint32_t AudioOnly_HASH = ConstExprHashingUtils::HashString("AudioOnly");
+        static constexpr uint32_t AudioWithActiveSpeakerVideo_HASH = ConstExprHashingUtils::HashString("AudioWithActiveSpeakerVideo");
+        static constexpr uint32_t AudioWithCompositedVideo_HASH = ConstExprHashingUtils::HashString("AudioWithCompositedVideo");
 
 
         AudioMuxType GetAudioMuxTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AudioOnly_HASH)
           {
             return AudioMuxType::AudioOnly;

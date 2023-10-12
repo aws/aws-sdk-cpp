@@ -20,13 +20,13 @@ namespace Aws
       namespace MfaTypesElementMapper
       {
 
-        static const int SMS_HASH = HashingUtils::HashString("SMS");
-        static const int TOTP_HASH = HashingUtils::HashString("TOTP");
+        static constexpr uint32_t SMS_HASH = ConstExprHashingUtils::HashString("SMS");
+        static constexpr uint32_t TOTP_HASH = ConstExprHashingUtils::HashString("TOTP");
 
 
         MfaTypesElement GetMfaTypesElementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SMS_HASH)
           {
             return MfaTypesElement::SMS;

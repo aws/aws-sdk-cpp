@@ -20,14 +20,14 @@ namespace Aws
       namespace LockStateMapper
       {
 
-        static const int locked_HASH = HashingUtils::HashString("locked");
-        static const int pending_unlock_HASH = HashingUtils::HashString("pending_unlock");
-        static const int unlocked_HASH = HashingUtils::HashString("unlocked");
+        static constexpr uint32_t locked_HASH = ConstExprHashingUtils::HashString("locked");
+        static constexpr uint32_t pending_unlock_HASH = ConstExprHashingUtils::HashString("pending_unlock");
+        static constexpr uint32_t unlocked_HASH = ConstExprHashingUtils::HashString("unlocked");
 
 
         LockState GetLockStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == locked_HASH)
           {
             return LockState::locked;

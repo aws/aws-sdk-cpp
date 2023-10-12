@@ -20,13 +20,13 @@ namespace Aws
       namespace WordCloudWordScalingMapper
       {
 
-        static const int EMPHASIZE_HASH = HashingUtils::HashString("EMPHASIZE");
-        static const int NORMAL_HASH = HashingUtils::HashString("NORMAL");
+        static constexpr uint32_t EMPHASIZE_HASH = ConstExprHashingUtils::HashString("EMPHASIZE");
+        static constexpr uint32_t NORMAL_HASH = ConstExprHashingUtils::HashString("NORMAL");
 
 
         WordCloudWordScaling GetWordCloudWordScalingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EMPHASIZE_HASH)
           {
             return WordCloudWordScaling::EMPHASIZE;

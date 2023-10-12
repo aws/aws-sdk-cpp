@@ -20,13 +20,13 @@ namespace Aws
       namespace AngleUnitsMapper
       {
 
-        static const int DEGREE_ANGLE_HASH = HashingUtils::HashString("DEGREE_ANGLE");
-        static const int RADIAN_HASH = HashingUtils::HashString("RADIAN");
+        static constexpr uint32_t DEGREE_ANGLE_HASH = ConstExprHashingUtils::HashString("DEGREE_ANGLE");
+        static constexpr uint32_t RADIAN_HASH = ConstExprHashingUtils::HashString("RADIAN");
 
 
         AngleUnits GetAngleUnitsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEGREE_ANGLE_HASH)
           {
             return AngleUnits::DEGREE_ANGLE;

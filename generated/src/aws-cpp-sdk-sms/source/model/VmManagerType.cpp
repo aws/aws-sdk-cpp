@@ -20,14 +20,14 @@ namespace Aws
       namespace VmManagerTypeMapper
       {
 
-        static const int VSPHERE_HASH = HashingUtils::HashString("VSPHERE");
-        static const int SCVMM_HASH = HashingUtils::HashString("SCVMM");
-        static const int HYPERV_MANAGER_HASH = HashingUtils::HashString("HYPERV-MANAGER");
+        static constexpr uint32_t VSPHERE_HASH = ConstExprHashingUtils::HashString("VSPHERE");
+        static constexpr uint32_t SCVMM_HASH = ConstExprHashingUtils::HashString("SCVMM");
+        static constexpr uint32_t HYPERV_MANAGER_HASH = ConstExprHashingUtils::HashString("HYPERV-MANAGER");
 
 
         VmManagerType GetVmManagerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VSPHERE_HASH)
           {
             return VmManagerType::VSPHERE;

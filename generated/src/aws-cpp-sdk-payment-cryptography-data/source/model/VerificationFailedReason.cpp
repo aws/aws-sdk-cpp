@@ -20,15 +20,15 @@ namespace Aws
       namespace VerificationFailedReasonMapper
       {
 
-        static const int INVALID_MAC_HASH = HashingUtils::HashString("INVALID_MAC");
-        static const int INVALID_PIN_HASH = HashingUtils::HashString("INVALID_PIN");
-        static const int INVALID_VALIDATION_DATA_HASH = HashingUtils::HashString("INVALID_VALIDATION_DATA");
-        static const int INVALID_AUTH_REQUEST_CRYPTOGRAM_HASH = HashingUtils::HashString("INVALID_AUTH_REQUEST_CRYPTOGRAM");
+        static constexpr uint32_t INVALID_MAC_HASH = ConstExprHashingUtils::HashString("INVALID_MAC");
+        static constexpr uint32_t INVALID_PIN_HASH = ConstExprHashingUtils::HashString("INVALID_PIN");
+        static constexpr uint32_t INVALID_VALIDATION_DATA_HASH = ConstExprHashingUtils::HashString("INVALID_VALIDATION_DATA");
+        static constexpr uint32_t INVALID_AUTH_REQUEST_CRYPTOGRAM_HASH = ConstExprHashingUtils::HashString("INVALID_AUTH_REQUEST_CRYPTOGRAM");
 
 
         VerificationFailedReason GetVerificationFailedReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVALID_MAC_HASH)
           {
             return VerificationFailedReason::INVALID_MAC;

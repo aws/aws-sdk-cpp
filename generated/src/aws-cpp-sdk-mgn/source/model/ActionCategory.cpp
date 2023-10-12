@@ -20,21 +20,21 @@ namespace Aws
       namespace ActionCategoryMapper
       {
 
-        static const int DISASTER_RECOVERY_HASH = HashingUtils::HashString("DISASTER_RECOVERY");
-        static const int OPERATING_SYSTEM_HASH = HashingUtils::HashString("OPERATING_SYSTEM");
-        static const int LICENSE_AND_SUBSCRIPTION_HASH = HashingUtils::HashString("LICENSE_AND_SUBSCRIPTION");
-        static const int VALIDATION_HASH = HashingUtils::HashString("VALIDATION");
-        static const int OBSERVABILITY_HASH = HashingUtils::HashString("OBSERVABILITY");
-        static const int SECURITY_HASH = HashingUtils::HashString("SECURITY");
-        static const int NETWORKING_HASH = HashingUtils::HashString("NETWORKING");
-        static const int CONFIGURATION_HASH = HashingUtils::HashString("CONFIGURATION");
-        static const int BACKUP_HASH = HashingUtils::HashString("BACKUP");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
+        static constexpr uint32_t DISASTER_RECOVERY_HASH = ConstExprHashingUtils::HashString("DISASTER_RECOVERY");
+        static constexpr uint32_t OPERATING_SYSTEM_HASH = ConstExprHashingUtils::HashString("OPERATING_SYSTEM");
+        static constexpr uint32_t LICENSE_AND_SUBSCRIPTION_HASH = ConstExprHashingUtils::HashString("LICENSE_AND_SUBSCRIPTION");
+        static constexpr uint32_t VALIDATION_HASH = ConstExprHashingUtils::HashString("VALIDATION");
+        static constexpr uint32_t OBSERVABILITY_HASH = ConstExprHashingUtils::HashString("OBSERVABILITY");
+        static constexpr uint32_t SECURITY_HASH = ConstExprHashingUtils::HashString("SECURITY");
+        static constexpr uint32_t NETWORKING_HASH = ConstExprHashingUtils::HashString("NETWORKING");
+        static constexpr uint32_t CONFIGURATION_HASH = ConstExprHashingUtils::HashString("CONFIGURATION");
+        static constexpr uint32_t BACKUP_HASH = ConstExprHashingUtils::HashString("BACKUP");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
 
 
         ActionCategory GetActionCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISASTER_RECOVERY_HASH)
           {
             return ActionCategory::DISASTER_RECOVERY;

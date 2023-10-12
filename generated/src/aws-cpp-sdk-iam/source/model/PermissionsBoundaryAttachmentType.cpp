@@ -20,12 +20,12 @@ namespace Aws
       namespace PermissionsBoundaryAttachmentTypeMapper
       {
 
-        static const int PermissionsBoundaryPolicy_HASH = HashingUtils::HashString("PermissionsBoundaryPolicy");
+        static constexpr uint32_t PermissionsBoundaryPolicy_HASH = ConstExprHashingUtils::HashString("PermissionsBoundaryPolicy");
 
 
         PermissionsBoundaryAttachmentType GetPermissionsBoundaryAttachmentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PermissionsBoundaryPolicy_HASH)
           {
             return PermissionsBoundaryAttachmentType::PermissionsBoundaryPolicy;

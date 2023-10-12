@@ -20,13 +20,13 @@ namespace Aws
       namespace DataSetImportModeMapper
       {
 
-        static const int SPICE_HASH = HashingUtils::HashString("SPICE");
-        static const int DIRECT_QUERY_HASH = HashingUtils::HashString("DIRECT_QUERY");
+        static constexpr uint32_t SPICE_HASH = ConstExprHashingUtils::HashString("SPICE");
+        static constexpr uint32_t DIRECT_QUERY_HASH = ConstExprHashingUtils::HashString("DIRECT_QUERY");
 
 
         DataSetImportMode GetDataSetImportModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SPICE_HASH)
           {
             return DataSetImportMode::SPICE;

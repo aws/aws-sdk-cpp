@@ -20,18 +20,18 @@ namespace Aws
       namespace LicenseStatusMapper
       {
 
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int PENDING_AVAILABLE_HASH = HashingUtils::HashString("PENDING_AVAILABLE");
-        static const int DEACTIVATED_HASH = HashingUtils::HashString("DEACTIVATED");
-        static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
-        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
-        static const int PENDING_DELETE_HASH = HashingUtils::HashString("PENDING_DELETE");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t PENDING_AVAILABLE_HASH = ConstExprHashingUtils::HashString("PENDING_AVAILABLE");
+        static constexpr uint32_t DEACTIVATED_HASH = ConstExprHashingUtils::HashString("DEACTIVATED");
+        static constexpr uint32_t SUSPENDED_HASH = ConstExprHashingUtils::HashString("SUSPENDED");
+        static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("EXPIRED");
+        static constexpr uint32_t PENDING_DELETE_HASH = ConstExprHashingUtils::HashString("PENDING_DELETE");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         LicenseStatus GetLicenseStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVAILABLE_HASH)
           {
             return LicenseStatus::AVAILABLE;

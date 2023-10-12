@@ -20,13 +20,13 @@ namespace Aws
       namespace KeyTypeMapper
       {
 
-        static const int rsa_HASH = HashingUtils::HashString("rsa");
-        static const int ed25519_HASH = HashingUtils::HashString("ed25519");
+        static constexpr uint32_t rsa_HASH = ConstExprHashingUtils::HashString("rsa");
+        static constexpr uint32_t ed25519_HASH = ConstExprHashingUtils::HashString("ed25519");
 
 
         KeyType GetKeyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == rsa_HASH)
           {
             return KeyType::rsa;

@@ -20,13 +20,13 @@ namespace Aws
       namespace __TimezoneEstimationMethodsElementMapper
       {
 
-        static const int PHONE_NUMBER_HASH = HashingUtils::HashString("PHONE_NUMBER");
-        static const int POSTAL_CODE_HASH = HashingUtils::HashString("POSTAL_CODE");
+        static constexpr uint32_t PHONE_NUMBER_HASH = ConstExprHashingUtils::HashString("PHONE_NUMBER");
+        static constexpr uint32_t POSTAL_CODE_HASH = ConstExprHashingUtils::HashString("POSTAL_CODE");
 
 
         __TimezoneEstimationMethodsElement Get__TimezoneEstimationMethodsElementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PHONE_NUMBER_HASH)
           {
             return __TimezoneEstimationMethodsElement::PHONE_NUMBER;

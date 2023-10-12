@@ -20,13 +20,13 @@ namespace Aws
       namespace AcceptCodeValidationMapper
       {
 
-        static const int IGNORE_HASH = HashingUtils::HashString("IGNORE");
-        static const int ENFORCE_HASH = HashingUtils::HashString("ENFORCE");
+        static constexpr uint32_t IGNORE_HASH = ConstExprHashingUtils::HashString("IGNORE");
+        static constexpr uint32_t ENFORCE_HASH = ConstExprHashingUtils::HashString("ENFORCE");
 
 
         AcceptCodeValidation GetAcceptCodeValidationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IGNORE_HASH)
           {
             return AcceptCodeValidation::IGNORE;

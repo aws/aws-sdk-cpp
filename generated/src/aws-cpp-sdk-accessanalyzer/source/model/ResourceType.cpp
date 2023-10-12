@@ -20,24 +20,24 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int AWS_S3_Bucket_HASH = HashingUtils::HashString("AWS::S3::Bucket");
-        static const int AWS_IAM_Role_HASH = HashingUtils::HashString("AWS::IAM::Role");
-        static const int AWS_SQS_Queue_HASH = HashingUtils::HashString("AWS::SQS::Queue");
-        static const int AWS_Lambda_Function_HASH = HashingUtils::HashString("AWS::Lambda::Function");
-        static const int AWS_Lambda_LayerVersion_HASH = HashingUtils::HashString("AWS::Lambda::LayerVersion");
-        static const int AWS_KMS_Key_HASH = HashingUtils::HashString("AWS::KMS::Key");
-        static const int AWS_SecretsManager_Secret_HASH = HashingUtils::HashString("AWS::SecretsManager::Secret");
-        static const int AWS_EFS_FileSystem_HASH = HashingUtils::HashString("AWS::EFS::FileSystem");
-        static const int AWS_EC2_Snapshot_HASH = HashingUtils::HashString("AWS::EC2::Snapshot");
-        static const int AWS_ECR_Repository_HASH = HashingUtils::HashString("AWS::ECR::Repository");
-        static const int AWS_RDS_DBSnapshot_HASH = HashingUtils::HashString("AWS::RDS::DBSnapshot");
-        static const int AWS_RDS_DBClusterSnapshot_HASH = HashingUtils::HashString("AWS::RDS::DBClusterSnapshot");
-        static const int AWS_SNS_Topic_HASH = HashingUtils::HashString("AWS::SNS::Topic");
+        static constexpr uint32_t AWS_S3_Bucket_HASH = ConstExprHashingUtils::HashString("AWS::S3::Bucket");
+        static constexpr uint32_t AWS_IAM_Role_HASH = ConstExprHashingUtils::HashString("AWS::IAM::Role");
+        static constexpr uint32_t AWS_SQS_Queue_HASH = ConstExprHashingUtils::HashString("AWS::SQS::Queue");
+        static constexpr uint32_t AWS_Lambda_Function_HASH = ConstExprHashingUtils::HashString("AWS::Lambda::Function");
+        static constexpr uint32_t AWS_Lambda_LayerVersion_HASH = ConstExprHashingUtils::HashString("AWS::Lambda::LayerVersion");
+        static constexpr uint32_t AWS_KMS_Key_HASH = ConstExprHashingUtils::HashString("AWS::KMS::Key");
+        static constexpr uint32_t AWS_SecretsManager_Secret_HASH = ConstExprHashingUtils::HashString("AWS::SecretsManager::Secret");
+        static constexpr uint32_t AWS_EFS_FileSystem_HASH = ConstExprHashingUtils::HashString("AWS::EFS::FileSystem");
+        static constexpr uint32_t AWS_EC2_Snapshot_HASH = ConstExprHashingUtils::HashString("AWS::EC2::Snapshot");
+        static constexpr uint32_t AWS_ECR_Repository_HASH = ConstExprHashingUtils::HashString("AWS::ECR::Repository");
+        static constexpr uint32_t AWS_RDS_DBSnapshot_HASH = ConstExprHashingUtils::HashString("AWS::RDS::DBSnapshot");
+        static constexpr uint32_t AWS_RDS_DBClusterSnapshot_HASH = ConstExprHashingUtils::HashString("AWS::RDS::DBClusterSnapshot");
+        static constexpr uint32_t AWS_SNS_Topic_HASH = ConstExprHashingUtils::HashString("AWS::SNS::Topic");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_S3_Bucket_HASH)
           {
             return ResourceType::AWS_S3_Bucket;

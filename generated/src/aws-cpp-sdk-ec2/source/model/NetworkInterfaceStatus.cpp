@@ -20,16 +20,16 @@ namespace Aws
       namespace NetworkInterfaceStatusMapper
       {
 
-        static const int available_HASH = HashingUtils::HashString("available");
-        static const int associated_HASH = HashingUtils::HashString("associated");
-        static const int attaching_HASH = HashingUtils::HashString("attaching");
-        static const int in_use_HASH = HashingUtils::HashString("in-use");
-        static const int detaching_HASH = HashingUtils::HashString("detaching");
+        static constexpr uint32_t available_HASH = ConstExprHashingUtils::HashString("available");
+        static constexpr uint32_t associated_HASH = ConstExprHashingUtils::HashString("associated");
+        static constexpr uint32_t attaching_HASH = ConstExprHashingUtils::HashString("attaching");
+        static constexpr uint32_t in_use_HASH = ConstExprHashingUtils::HashString("in-use");
+        static constexpr uint32_t detaching_HASH = ConstExprHashingUtils::HashString("detaching");
 
 
         NetworkInterfaceStatus GetNetworkInterfaceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == available_HASH)
           {
             return NetworkInterfaceStatus::available;

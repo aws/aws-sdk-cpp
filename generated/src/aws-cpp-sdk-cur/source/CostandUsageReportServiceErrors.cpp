@@ -18,14 +18,14 @@ namespace CostandUsageReportService
 namespace CostandUsageReportServiceErrorMapper
 {
 
-static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
-static const int REPORT_LIMIT_REACHED_HASH = HashingUtils::HashString("ReportLimitReachedException");
-static const int DUPLICATE_REPORT_NAME_HASH = HashingUtils::HashString("DuplicateReportNameException");
+static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("InternalErrorException");
+static constexpr uint32_t REPORT_LIMIT_REACHED_HASH = ConstExprHashingUtils::HashString("ReportLimitReachedException");
+static constexpr uint32_t DUPLICATE_REPORT_NAME_HASH = ConstExprHashingUtils::HashString("DuplicateReportNameException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INTERNAL_ERROR_HASH)
   {

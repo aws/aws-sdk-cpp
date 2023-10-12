@@ -20,27 +20,27 @@ namespace Aws
       namespace FindingReasonCodeMapper
       {
 
-        static const int CPU_OVER_PROVISIONED_HASH = HashingUtils::HashString("CPU_OVER_PROVISIONED");
-        static const int CPU_UNDER_PROVISIONED_HASH = HashingUtils::HashString("CPU_UNDER_PROVISIONED");
-        static const int MEMORY_OVER_PROVISIONED_HASH = HashingUtils::HashString("MEMORY_OVER_PROVISIONED");
-        static const int MEMORY_UNDER_PROVISIONED_HASH = HashingUtils::HashString("MEMORY_UNDER_PROVISIONED");
-        static const int EBS_THROUGHPUT_OVER_PROVISIONED_HASH = HashingUtils::HashString("EBS_THROUGHPUT_OVER_PROVISIONED");
-        static const int EBS_THROUGHPUT_UNDER_PROVISIONED_HASH = HashingUtils::HashString("EBS_THROUGHPUT_UNDER_PROVISIONED");
-        static const int EBS_IOPS_OVER_PROVISIONED_HASH = HashingUtils::HashString("EBS_IOPS_OVER_PROVISIONED");
-        static const int EBS_IOPS_UNDER_PROVISIONED_HASH = HashingUtils::HashString("EBS_IOPS_UNDER_PROVISIONED");
-        static const int NETWORK_BANDWIDTH_OVER_PROVISIONED_HASH = HashingUtils::HashString("NETWORK_BANDWIDTH_OVER_PROVISIONED");
-        static const int NETWORK_BANDWIDTH_UNDER_PROVISIONED_HASH = HashingUtils::HashString("NETWORK_BANDWIDTH_UNDER_PROVISIONED");
-        static const int NETWORK_PPS_OVER_PROVISIONED_HASH = HashingUtils::HashString("NETWORK_PPS_OVER_PROVISIONED");
-        static const int NETWORK_PPS_UNDER_PROVISIONED_HASH = HashingUtils::HashString("NETWORK_PPS_UNDER_PROVISIONED");
-        static const int DISK_IOPS_OVER_PROVISIONED_HASH = HashingUtils::HashString("DISK_IOPS_OVER_PROVISIONED");
-        static const int DISK_IOPS_UNDER_PROVISIONED_HASH = HashingUtils::HashString("DISK_IOPS_UNDER_PROVISIONED");
-        static const int DISK_THROUGHPUT_OVER_PROVISIONED_HASH = HashingUtils::HashString("DISK_THROUGHPUT_OVER_PROVISIONED");
-        static const int DISK_THROUGHPUT_UNDER_PROVISIONED_HASH = HashingUtils::HashString("DISK_THROUGHPUT_UNDER_PROVISIONED");
+        static constexpr uint32_t CPU_OVER_PROVISIONED_HASH = ConstExprHashingUtils::HashString("CPU_OVER_PROVISIONED");
+        static constexpr uint32_t CPU_UNDER_PROVISIONED_HASH = ConstExprHashingUtils::HashString("CPU_UNDER_PROVISIONED");
+        static constexpr uint32_t MEMORY_OVER_PROVISIONED_HASH = ConstExprHashingUtils::HashString("MEMORY_OVER_PROVISIONED");
+        static constexpr uint32_t MEMORY_UNDER_PROVISIONED_HASH = ConstExprHashingUtils::HashString("MEMORY_UNDER_PROVISIONED");
+        static constexpr uint32_t EBS_THROUGHPUT_OVER_PROVISIONED_HASH = ConstExprHashingUtils::HashString("EBS_THROUGHPUT_OVER_PROVISIONED");
+        static constexpr uint32_t EBS_THROUGHPUT_UNDER_PROVISIONED_HASH = ConstExprHashingUtils::HashString("EBS_THROUGHPUT_UNDER_PROVISIONED");
+        static constexpr uint32_t EBS_IOPS_OVER_PROVISIONED_HASH = ConstExprHashingUtils::HashString("EBS_IOPS_OVER_PROVISIONED");
+        static constexpr uint32_t EBS_IOPS_UNDER_PROVISIONED_HASH = ConstExprHashingUtils::HashString("EBS_IOPS_UNDER_PROVISIONED");
+        static constexpr uint32_t NETWORK_BANDWIDTH_OVER_PROVISIONED_HASH = ConstExprHashingUtils::HashString("NETWORK_BANDWIDTH_OVER_PROVISIONED");
+        static constexpr uint32_t NETWORK_BANDWIDTH_UNDER_PROVISIONED_HASH = ConstExprHashingUtils::HashString("NETWORK_BANDWIDTH_UNDER_PROVISIONED");
+        static constexpr uint32_t NETWORK_PPS_OVER_PROVISIONED_HASH = ConstExprHashingUtils::HashString("NETWORK_PPS_OVER_PROVISIONED");
+        static constexpr uint32_t NETWORK_PPS_UNDER_PROVISIONED_HASH = ConstExprHashingUtils::HashString("NETWORK_PPS_UNDER_PROVISIONED");
+        static constexpr uint32_t DISK_IOPS_OVER_PROVISIONED_HASH = ConstExprHashingUtils::HashString("DISK_IOPS_OVER_PROVISIONED");
+        static constexpr uint32_t DISK_IOPS_UNDER_PROVISIONED_HASH = ConstExprHashingUtils::HashString("DISK_IOPS_UNDER_PROVISIONED");
+        static constexpr uint32_t DISK_THROUGHPUT_OVER_PROVISIONED_HASH = ConstExprHashingUtils::HashString("DISK_THROUGHPUT_OVER_PROVISIONED");
+        static constexpr uint32_t DISK_THROUGHPUT_UNDER_PROVISIONED_HASH = ConstExprHashingUtils::HashString("DISK_THROUGHPUT_UNDER_PROVISIONED");
 
 
         FindingReasonCode GetFindingReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CPU_OVER_PROVISIONED_HASH)
           {
             return FindingReasonCode::CPU_OVER_PROVISIONED;

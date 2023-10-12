@@ -20,15 +20,15 @@ namespace Aws
       namespace StartingPositionMapper
       {
 
-        static const int latest_HASH = HashingUtils::HashString("latest");
-        static const int trim_horizon_HASH = HashingUtils::HashString("trim_horizon");
-        static const int earliest_HASH = HashingUtils::HashString("earliest");
-        static const int timestamp_HASH = HashingUtils::HashString("timestamp");
+        static constexpr uint32_t latest_HASH = ConstExprHashingUtils::HashString("latest");
+        static constexpr uint32_t trim_horizon_HASH = ConstExprHashingUtils::HashString("trim_horizon");
+        static constexpr uint32_t earliest_HASH = ConstExprHashingUtils::HashString("earliest");
+        static constexpr uint32_t timestamp_HASH = ConstExprHashingUtils::HashString("timestamp");
 
 
         StartingPosition GetStartingPositionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == latest_HASH)
           {
             return StartingPosition::latest;

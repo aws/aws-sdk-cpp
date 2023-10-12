@@ -20,13 +20,13 @@ namespace Aws
       namespace SupportedHardwareTypeMapper
       {
 
-        static const int RACK_HASH = HashingUtils::HashString("RACK");
-        static const int SERVER_HASH = HashingUtils::HashString("SERVER");
+        static constexpr uint32_t RACK_HASH = ConstExprHashingUtils::HashString("RACK");
+        static constexpr uint32_t SERVER_HASH = ConstExprHashingUtils::HashString("SERVER");
 
 
         SupportedHardwareType GetSupportedHardwareTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RACK_HASH)
           {
             return SupportedHardwareType::RACK;

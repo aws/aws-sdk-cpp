@@ -20,12 +20,12 @@ namespace Aws
       namespace OwnerOverrideMapper
       {
 
-        static const int Destination_HASH = HashingUtils::HashString("Destination");
+        static constexpr uint32_t Destination_HASH = ConstExprHashingUtils::HashString("Destination");
 
 
         OwnerOverride GetOwnerOverrideForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Destination_HASH)
           {
             return OwnerOverride::Destination;

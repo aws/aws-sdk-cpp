@@ -20,13 +20,13 @@ namespace Aws
       namespace SortDirectionTypeMapper
       {
 
-        static const int DESCENDING_HASH = HashingUtils::HashString("DESCENDING");
-        static const int ASCENDING_HASH = HashingUtils::HashString("ASCENDING");
+        static constexpr uint32_t DESCENDING_HASH = ConstExprHashingUtils::HashString("DESCENDING");
+        static constexpr uint32_t ASCENDING_HASH = ConstExprHashingUtils::HashString("ASCENDING");
 
 
         SortDirectionType GetSortDirectionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DESCENDING_HASH)
           {
             return SortDirectionType::DESCENDING;

@@ -20,13 +20,13 @@ namespace Aws
       namespace DnsResponseTypeMapper
       {
 
-        static const int LOADBALANCER_HASH = HashingUtils::HashString("LOADBALANCER");
-        static const int ENDPOINTS_HASH = HashingUtils::HashString("ENDPOINTS");
+        static constexpr uint32_t LOADBALANCER_HASH = ConstExprHashingUtils::HashString("LOADBALANCER");
+        static constexpr uint32_t ENDPOINTS_HASH = ConstExprHashingUtils::HashString("ENDPOINTS");
 
 
         DnsResponseType GetDnsResponseTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LOADBALANCER_HASH)
           {
             return DnsResponseType::LOADBALANCER;

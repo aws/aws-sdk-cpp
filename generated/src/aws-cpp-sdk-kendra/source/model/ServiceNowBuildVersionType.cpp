@@ -20,13 +20,13 @@ namespace Aws
       namespace ServiceNowBuildVersionTypeMapper
       {
 
-        static const int LONDON_HASH = HashingUtils::HashString("LONDON");
-        static const int OTHERS_HASH = HashingUtils::HashString("OTHERS");
+        static constexpr uint32_t LONDON_HASH = ConstExprHashingUtils::HashString("LONDON");
+        static constexpr uint32_t OTHERS_HASH = ConstExprHashingUtils::HashString("OTHERS");
 
 
         ServiceNowBuildVersionType GetServiceNowBuildVersionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LONDON_HASH)
           {
             return ServiceNowBuildVersionType::LONDON;

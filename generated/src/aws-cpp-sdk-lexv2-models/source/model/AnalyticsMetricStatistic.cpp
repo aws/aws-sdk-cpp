@@ -20,14 +20,14 @@ namespace Aws
       namespace AnalyticsMetricStatisticMapper
       {
 
-        static const int Sum_HASH = HashingUtils::HashString("Sum");
-        static const int Avg_HASH = HashingUtils::HashString("Avg");
-        static const int Max_HASH = HashingUtils::HashString("Max");
+        static constexpr uint32_t Sum_HASH = ConstExprHashingUtils::HashString("Sum");
+        static constexpr uint32_t Avg_HASH = ConstExprHashingUtils::HashString("Avg");
+        static constexpr uint32_t Max_HASH = ConstExprHashingUtils::HashString("Max");
 
 
         AnalyticsMetricStatistic GetAnalyticsMetricStatisticForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Sum_HASH)
           {
             return AnalyticsMetricStatistic::Sum;

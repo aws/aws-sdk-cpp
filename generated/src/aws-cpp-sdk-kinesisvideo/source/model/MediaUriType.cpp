@@ -20,13 +20,13 @@ namespace Aws
       namespace MediaUriTypeMapper
       {
 
-        static const int RTSP_URI_HASH = HashingUtils::HashString("RTSP_URI");
-        static const int FILE_URI_HASH = HashingUtils::HashString("FILE_URI");
+        static constexpr uint32_t RTSP_URI_HASH = ConstExprHashingUtils::HashString("RTSP_URI");
+        static constexpr uint32_t FILE_URI_HASH = ConstExprHashingUtils::HashString("FILE_URI");
 
 
         MediaUriType GetMediaUriTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RTSP_URI_HASH)
           {
             return MediaUriType::RTSP_URI;

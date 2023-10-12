@@ -20,13 +20,13 @@ namespace Aws
       namespace ProcessingS3InputModeMapper
       {
 
-        static const int Pipe_HASH = HashingUtils::HashString("Pipe");
-        static const int File_HASH = HashingUtils::HashString("File");
+        static constexpr uint32_t Pipe_HASH = ConstExprHashingUtils::HashString("Pipe");
+        static constexpr uint32_t File_HASH = ConstExprHashingUtils::HashString("File");
 
 
         ProcessingS3InputMode GetProcessingS3InputModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pipe_HASH)
           {
             return ProcessingS3InputMode::Pipe;

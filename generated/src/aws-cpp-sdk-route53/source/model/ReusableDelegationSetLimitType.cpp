@@ -20,12 +20,12 @@ namespace Aws
       namespace ReusableDelegationSetLimitTypeMapper
       {
 
-        static const int MAX_ZONES_BY_REUSABLE_DELEGATION_SET_HASH = HashingUtils::HashString("MAX_ZONES_BY_REUSABLE_DELEGATION_SET");
+        static constexpr uint32_t MAX_ZONES_BY_REUSABLE_DELEGATION_SET_HASH = ConstExprHashingUtils::HashString("MAX_ZONES_BY_REUSABLE_DELEGATION_SET");
 
 
         ReusableDelegationSetLimitType GetReusableDelegationSetLimitTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MAX_ZONES_BY_REUSABLE_DELEGATION_SET_HASH)
           {
             return ReusableDelegationSetLimitType::MAX_ZONES_BY_REUSABLE_DELEGATION_SET;

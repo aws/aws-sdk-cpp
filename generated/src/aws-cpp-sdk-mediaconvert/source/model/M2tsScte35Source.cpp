@@ -20,13 +20,13 @@ namespace Aws
       namespace M2tsScte35SourceMapper
       {
 
-        static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t PASSTHROUGH_HASH = ConstExprHashingUtils::HashString("PASSTHROUGH");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         M2tsScte35Source GetM2tsScte35SourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PASSTHROUGH_HASH)
           {
             return M2tsScte35Source::PASSTHROUGH;

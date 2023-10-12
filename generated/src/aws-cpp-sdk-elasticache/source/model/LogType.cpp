@@ -20,13 +20,13 @@ namespace Aws
       namespace LogTypeMapper
       {
 
-        static const int slow_log_HASH = HashingUtils::HashString("slow-log");
-        static const int engine_log_HASH = HashingUtils::HashString("engine-log");
+        static constexpr uint32_t slow_log_HASH = ConstExprHashingUtils::HashString("slow-log");
+        static constexpr uint32_t engine_log_HASH = ConstExprHashingUtils::HashString("engine-log");
 
 
         LogType GetLogTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == slow_log_HASH)
           {
             return LogType::slow_log;

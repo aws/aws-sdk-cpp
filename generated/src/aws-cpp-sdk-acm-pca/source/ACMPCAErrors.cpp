@@ -18,29 +18,29 @@ namespace ACMPCA
 namespace ACMPCAErrorMapper
 {
 
-static const int REQUEST_ALREADY_PROCESSED_HASH = HashingUtils::HashString("RequestAlreadyProcessedException");
-static const int PERMISSION_ALREADY_EXISTS_HASH = HashingUtils::HashString("PermissionAlreadyExistsException");
-static const int REQUEST_IN_PROGRESS_HASH = HashingUtils::HashString("RequestInProgressException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int REQUEST_FAILED_HASH = HashingUtils::HashString("RequestFailedException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagException");
-static const int CERTIFICATE_MISMATCH_HASH = HashingUtils::HashString("CertificateMismatchException");
-static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
-static const int LOCKOUT_PREVENTED_HASH = HashingUtils::HashString("LockoutPreventedException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int INVALID_ARGS_HASH = HashingUtils::HashString("InvalidArgsException");
-static const int MALFORMED_CERTIFICATE_HASH = HashingUtils::HashString("MalformedCertificateException");
-static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int MALFORMED_C_S_R_HASH = HashingUtils::HashString("MalformedCSRException");
-static const int INVALID_POLICY_HASH = HashingUtils::HashString("InvalidPolicyException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t REQUEST_ALREADY_PROCESSED_HASH = ConstExprHashingUtils::HashString("RequestAlreadyProcessedException");
+static constexpr uint32_t PERMISSION_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("PermissionAlreadyExistsException");
+static constexpr uint32_t REQUEST_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("RequestInProgressException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t REQUEST_FAILED_HASH = ConstExprHashingUtils::HashString("RequestFailedException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t INVALID_TAG_HASH = ConstExprHashingUtils::HashString("InvalidTagException");
+static constexpr uint32_t CERTIFICATE_MISMATCH_HASH = ConstExprHashingUtils::HashString("CertificateMismatchException");
+static constexpr uint32_t INVALID_STATE_HASH = ConstExprHashingUtils::HashString("InvalidStateException");
+static constexpr uint32_t LOCKOUT_PREVENTED_HASH = ConstExprHashingUtils::HashString("LockoutPreventedException");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+static constexpr uint32_t INVALID_ARGS_HASH = ConstExprHashingUtils::HashString("InvalidArgsException");
+static constexpr uint32_t MALFORMED_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("MalformedCertificateException");
+static constexpr uint32_t INVALID_ARN_HASH = ConstExprHashingUtils::HashString("InvalidArnException");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t MALFORMED_C_S_R_HASH = ConstExprHashingUtils::HashString("MalformedCSRException");
+static constexpr uint32_t INVALID_POLICY_HASH = ConstExprHashingUtils::HashString("InvalidPolicyException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == REQUEST_ALREADY_PROCESSED_HASH)
   {

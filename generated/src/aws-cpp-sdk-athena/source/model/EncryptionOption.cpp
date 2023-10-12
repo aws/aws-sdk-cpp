@@ -20,14 +20,14 @@ namespace Aws
       namespace EncryptionOptionMapper
       {
 
-        static const int SSE_S3_HASH = HashingUtils::HashString("SSE_S3");
-        static const int SSE_KMS_HASH = HashingUtils::HashString("SSE_KMS");
-        static const int CSE_KMS_HASH = HashingUtils::HashString("CSE_KMS");
+        static constexpr uint32_t SSE_S3_HASH = ConstExprHashingUtils::HashString("SSE_S3");
+        static constexpr uint32_t SSE_KMS_HASH = ConstExprHashingUtils::HashString("SSE_KMS");
+        static constexpr uint32_t CSE_KMS_HASH = ConstExprHashingUtils::HashString("CSE_KMS");
 
 
         EncryptionOption GetEncryptionOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SSE_S3_HASH)
           {
             return EncryptionOption::SSE_S3;

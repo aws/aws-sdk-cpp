@@ -20,19 +20,19 @@ namespace Aws
       namespace DataSourceStatusMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int FAILED_CREATION_HASH = HashingUtils::HashString("FAILED_CREATION");
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int FAILED_UPDATE_HASH = HashingUtils::HashString("FAILED_UPDATE");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int FAILED_DELETION_HASH = HashingUtils::HashString("FAILED_DELETION");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t FAILED_CREATION_HASH = ConstExprHashingUtils::HashString("FAILED_CREATION");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t FAILED_UPDATE_HASH = ConstExprHashingUtils::HashString("FAILED_UPDATE");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t FAILED_DELETION_HASH = ConstExprHashingUtils::HashString("FAILED_DELETION");
 
 
         DataSourceStatus GetDataSourceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return DataSourceStatus::CREATING;

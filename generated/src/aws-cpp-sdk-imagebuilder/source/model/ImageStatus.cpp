@@ -20,22 +20,22 @@ namespace Aws
       namespace ImageStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int BUILDING_HASH = HashingUtils::HashString("BUILDING");
-        static const int TESTING_HASH = HashingUtils::HashString("TESTING");
-        static const int DISTRIBUTING_HASH = HashingUtils::HashString("DISTRIBUTING");
-        static const int INTEGRATING_HASH = HashingUtils::HashString("INTEGRATING");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t BUILDING_HASH = ConstExprHashingUtils::HashString("BUILDING");
+        static constexpr uint32_t TESTING_HASH = ConstExprHashingUtils::HashString("TESTING");
+        static constexpr uint32_t DISTRIBUTING_HASH = ConstExprHashingUtils::HashString("DISTRIBUTING");
+        static constexpr uint32_t INTEGRATING_HASH = ConstExprHashingUtils::HashString("INTEGRATING");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t DEPRECATED_HASH = ConstExprHashingUtils::HashString("DEPRECATED");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         ImageStatus GetImageStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return ImageStatus::PENDING;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ScheduledAutoTuneActionTypeMapper
       {
 
-        static const int JVM_HEAP_SIZE_TUNING_HASH = HashingUtils::HashString("JVM_HEAP_SIZE_TUNING");
-        static const int JVM_YOUNG_GEN_TUNING_HASH = HashingUtils::HashString("JVM_YOUNG_GEN_TUNING");
+        static constexpr uint32_t JVM_HEAP_SIZE_TUNING_HASH = ConstExprHashingUtils::HashString("JVM_HEAP_SIZE_TUNING");
+        static constexpr uint32_t JVM_YOUNG_GEN_TUNING_HASH = ConstExprHashingUtils::HashString("JVM_YOUNG_GEN_TUNING");
 
 
         ScheduledAutoTuneActionType GetScheduledAutoTuneActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JVM_HEAP_SIZE_TUNING_HASH)
           {
             return ScheduledAutoTuneActionType::JVM_HEAP_SIZE_TUNING;

@@ -20,12 +20,12 @@ namespace Aws
       namespace GameServerClaimStatusMapper
       {
 
-        static const int CLAIMED_HASH = HashingUtils::HashString("CLAIMED");
+        static constexpr uint32_t CLAIMED_HASH = ConstExprHashingUtils::HashString("CLAIMED");
 
 
         GameServerClaimStatus GetGameServerClaimStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLAIMED_HASH)
           {
             return GameServerClaimStatus::CLAIMED;

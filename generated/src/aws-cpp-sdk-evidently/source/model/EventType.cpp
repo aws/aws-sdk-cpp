@@ -20,13 +20,13 @@ namespace Aws
       namespace EventTypeMapper
       {
 
-        static const int aws_evidently_evaluation_HASH = HashingUtils::HashString("aws.evidently.evaluation");
-        static const int aws_evidently_custom_HASH = HashingUtils::HashString("aws.evidently.custom");
+        static constexpr uint32_t aws_evidently_evaluation_HASH = ConstExprHashingUtils::HashString("aws.evidently.evaluation");
+        static constexpr uint32_t aws_evidently_custom_HASH = ConstExprHashingUtils::HashString("aws.evidently.custom");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == aws_evidently_evaluation_HASH)
           {
             return EventType::aws_evidently_evaluation;

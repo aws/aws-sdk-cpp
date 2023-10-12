@@ -20,15 +20,15 @@ namespace Aws
       namespace ConfigurationItemTypeMapper
       {
 
-        static const int SERVER_HASH = HashingUtils::HashString("SERVER");
-        static const int PROCESS_HASH = HashingUtils::HashString("PROCESS");
-        static const int CONNECTION_HASH = HashingUtils::HashString("CONNECTION");
-        static const int APPLICATION_HASH = HashingUtils::HashString("APPLICATION");
+        static constexpr uint32_t SERVER_HASH = ConstExprHashingUtils::HashString("SERVER");
+        static constexpr uint32_t PROCESS_HASH = ConstExprHashingUtils::HashString("PROCESS");
+        static constexpr uint32_t CONNECTION_HASH = ConstExprHashingUtils::HashString("CONNECTION");
+        static constexpr uint32_t APPLICATION_HASH = ConstExprHashingUtils::HashString("APPLICATION");
 
 
         ConfigurationItemType GetConfigurationItemTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SERVER_HASH)
           {
             return ConfigurationItemType::SERVER;

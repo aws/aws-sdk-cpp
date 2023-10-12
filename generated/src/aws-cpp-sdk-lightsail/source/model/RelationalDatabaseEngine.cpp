@@ -20,12 +20,12 @@ namespace Aws
       namespace RelationalDatabaseEngineMapper
       {
 
-        static const int mysql_HASH = HashingUtils::HashString("mysql");
+        static constexpr uint32_t mysql_HASH = ConstExprHashingUtils::HashString("mysql");
 
 
         RelationalDatabaseEngine GetRelationalDatabaseEngineForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == mysql_HASH)
           {
             return RelationalDatabaseEngine::mysql;

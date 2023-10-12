@@ -20,13 +20,13 @@ namespace Aws
       namespace SlotValueSelectionStrategyMapper
       {
 
-        static const int ORIGINAL_VALUE_HASH = HashingUtils::HashString("ORIGINAL_VALUE");
-        static const int TOP_RESOLUTION_HASH = HashingUtils::HashString("TOP_RESOLUTION");
+        static constexpr uint32_t ORIGINAL_VALUE_HASH = ConstExprHashingUtils::HashString("ORIGINAL_VALUE");
+        static constexpr uint32_t TOP_RESOLUTION_HASH = ConstExprHashingUtils::HashString("TOP_RESOLUTION");
 
 
         SlotValueSelectionStrategy GetSlotValueSelectionStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ORIGINAL_VALUE_HASH)
           {
             return SlotValueSelectionStrategy::ORIGINAL_VALUE;

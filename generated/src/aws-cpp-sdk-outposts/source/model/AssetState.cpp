@@ -20,14 +20,14 @@ namespace Aws
       namespace AssetStateMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int RETIRING_HASH = HashingUtils::HashString("RETIRING");
-        static const int ISOLATED_HASH = HashingUtils::HashString("ISOLATED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t RETIRING_HASH = ConstExprHashingUtils::HashString("RETIRING");
+        static constexpr uint32_t ISOLATED_HASH = ConstExprHashingUtils::HashString("ISOLATED");
 
 
         AssetState GetAssetStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return AssetState::ACTIVE;

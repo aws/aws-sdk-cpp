@@ -20,22 +20,22 @@ namespace Aws
       namespace ScalarTypeMapper
       {
 
-        static const int VARCHAR_HASH = HashingUtils::HashString("VARCHAR");
-        static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
-        static const int BIGINT_HASH = HashingUtils::HashString("BIGINT");
-        static const int DOUBLE_HASH = HashingUtils::HashString("DOUBLE");
-        static const int TIMESTAMP_HASH = HashingUtils::HashString("TIMESTAMP");
-        static const int DATE_HASH = HashingUtils::HashString("DATE");
-        static const int TIME_HASH = HashingUtils::HashString("TIME");
-        static const int INTERVAL_DAY_TO_SECOND_HASH = HashingUtils::HashString("INTERVAL_DAY_TO_SECOND");
-        static const int INTERVAL_YEAR_TO_MONTH_HASH = HashingUtils::HashString("INTERVAL_YEAR_TO_MONTH");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
-        static const int INTEGER_HASH = HashingUtils::HashString("INTEGER");
+        static constexpr uint32_t VARCHAR_HASH = ConstExprHashingUtils::HashString("VARCHAR");
+        static constexpr uint32_t BOOLEAN_HASH = ConstExprHashingUtils::HashString("BOOLEAN");
+        static constexpr uint32_t BIGINT_HASH = ConstExprHashingUtils::HashString("BIGINT");
+        static constexpr uint32_t DOUBLE_HASH = ConstExprHashingUtils::HashString("DOUBLE");
+        static constexpr uint32_t TIMESTAMP_HASH = ConstExprHashingUtils::HashString("TIMESTAMP");
+        static constexpr uint32_t DATE_HASH = ConstExprHashingUtils::HashString("DATE");
+        static constexpr uint32_t TIME_HASH = ConstExprHashingUtils::HashString("TIME");
+        static constexpr uint32_t INTERVAL_DAY_TO_SECOND_HASH = ConstExprHashingUtils::HashString("INTERVAL_DAY_TO_SECOND");
+        static constexpr uint32_t INTERVAL_YEAR_TO_MONTH_HASH = ConstExprHashingUtils::HashString("INTERVAL_YEAR_TO_MONTH");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t INTEGER_HASH = ConstExprHashingUtils::HashString("INTEGER");
 
 
         ScalarType GetScalarTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VARCHAR_HASH)
           {
             return ScalarType::VARCHAR;

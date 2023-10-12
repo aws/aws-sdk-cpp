@@ -20,13 +20,13 @@ namespace Aws
       namespace ContainerInstanceFieldMapper
       {
 
-        static const int TAGS_HASH = HashingUtils::HashString("TAGS");
-        static const int CONTAINER_INSTANCE_HEALTH_HASH = HashingUtils::HashString("CONTAINER_INSTANCE_HEALTH");
+        static constexpr uint32_t TAGS_HASH = ConstExprHashingUtils::HashString("TAGS");
+        static constexpr uint32_t CONTAINER_INSTANCE_HEALTH_HASH = ConstExprHashingUtils::HashString("CONTAINER_INSTANCE_HEALTH");
 
 
         ContainerInstanceField GetContainerInstanceFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TAGS_HASH)
           {
             return ContainerInstanceField::TAGS;

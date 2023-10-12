@@ -20,15 +20,15 @@ namespace Aws
       namespace ModelCardStatusMapper
       {
 
-        static const int Draft_HASH = HashingUtils::HashString("Draft");
-        static const int PendingReview_HASH = HashingUtils::HashString("PendingReview");
-        static const int Approved_HASH = HashingUtils::HashString("Approved");
-        static const int Archived_HASH = HashingUtils::HashString("Archived");
+        static constexpr uint32_t Draft_HASH = ConstExprHashingUtils::HashString("Draft");
+        static constexpr uint32_t PendingReview_HASH = ConstExprHashingUtils::HashString("PendingReview");
+        static constexpr uint32_t Approved_HASH = ConstExprHashingUtils::HashString("Approved");
+        static constexpr uint32_t Archived_HASH = ConstExprHashingUtils::HashString("Archived");
 
 
         ModelCardStatus GetModelCardStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Draft_HASH)
           {
             return ModelCardStatus::Draft;

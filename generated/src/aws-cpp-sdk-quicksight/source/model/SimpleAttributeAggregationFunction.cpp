@@ -20,12 +20,12 @@ namespace Aws
       namespace SimpleAttributeAggregationFunctionMapper
       {
 
-        static const int UNIQUE_VALUE_HASH = HashingUtils::HashString("UNIQUE_VALUE");
+        static constexpr uint32_t UNIQUE_VALUE_HASH = ConstExprHashingUtils::HashString("UNIQUE_VALUE");
 
 
         SimpleAttributeAggregationFunction GetSimpleAttributeAggregationFunctionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNIQUE_VALUE_HASH)
           {
             return SimpleAttributeAggregationFunction::UNIQUE_VALUE;

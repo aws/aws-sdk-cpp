@@ -20,13 +20,13 @@ namespace Aws
       namespace OrderFilterKeysMapper
       {
 
-        static const int STATUS_HASH = HashingUtils::HashString("STATUS");
-        static const int NETWORK_SITE_HASH = HashingUtils::HashString("NETWORK_SITE");
+        static constexpr uint32_t STATUS_HASH = ConstExprHashingUtils::HashString("STATUS");
+        static constexpr uint32_t NETWORK_SITE_HASH = ConstExprHashingUtils::HashString("NETWORK_SITE");
 
 
         OrderFilterKeys GetOrderFilterKeysForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STATUS_HASH)
           {
             return OrderFilterKeys::STATUS;

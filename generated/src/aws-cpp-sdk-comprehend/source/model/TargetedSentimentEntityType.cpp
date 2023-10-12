@@ -20,28 +20,28 @@ namespace Aws
       namespace TargetedSentimentEntityTypeMapper
       {
 
-        static const int PERSON_HASH = HashingUtils::HashString("PERSON");
-        static const int LOCATION_HASH = HashingUtils::HashString("LOCATION");
-        static const int ORGANIZATION_HASH = HashingUtils::HashString("ORGANIZATION");
-        static const int FACILITY_HASH = HashingUtils::HashString("FACILITY");
-        static const int BRAND_HASH = HashingUtils::HashString("BRAND");
-        static const int COMMERCIAL_ITEM_HASH = HashingUtils::HashString("COMMERCIAL_ITEM");
-        static const int MOVIE_HASH = HashingUtils::HashString("MOVIE");
-        static const int MUSIC_HASH = HashingUtils::HashString("MUSIC");
-        static const int BOOK_HASH = HashingUtils::HashString("BOOK");
-        static const int SOFTWARE_HASH = HashingUtils::HashString("SOFTWARE");
-        static const int GAME_HASH = HashingUtils::HashString("GAME");
-        static const int PERSONAL_TITLE_HASH = HashingUtils::HashString("PERSONAL_TITLE");
-        static const int EVENT_HASH = HashingUtils::HashString("EVENT");
-        static const int DATE_HASH = HashingUtils::HashString("DATE");
-        static const int QUANTITY_HASH = HashingUtils::HashString("QUANTITY");
-        static const int ATTRIBUTE_HASH = HashingUtils::HashString("ATTRIBUTE");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
+        static constexpr uint32_t PERSON_HASH = ConstExprHashingUtils::HashString("PERSON");
+        static constexpr uint32_t LOCATION_HASH = ConstExprHashingUtils::HashString("LOCATION");
+        static constexpr uint32_t ORGANIZATION_HASH = ConstExprHashingUtils::HashString("ORGANIZATION");
+        static constexpr uint32_t FACILITY_HASH = ConstExprHashingUtils::HashString("FACILITY");
+        static constexpr uint32_t BRAND_HASH = ConstExprHashingUtils::HashString("BRAND");
+        static constexpr uint32_t COMMERCIAL_ITEM_HASH = ConstExprHashingUtils::HashString("COMMERCIAL_ITEM");
+        static constexpr uint32_t MOVIE_HASH = ConstExprHashingUtils::HashString("MOVIE");
+        static constexpr uint32_t MUSIC_HASH = ConstExprHashingUtils::HashString("MUSIC");
+        static constexpr uint32_t BOOK_HASH = ConstExprHashingUtils::HashString("BOOK");
+        static constexpr uint32_t SOFTWARE_HASH = ConstExprHashingUtils::HashString("SOFTWARE");
+        static constexpr uint32_t GAME_HASH = ConstExprHashingUtils::HashString("GAME");
+        static constexpr uint32_t PERSONAL_TITLE_HASH = ConstExprHashingUtils::HashString("PERSONAL_TITLE");
+        static constexpr uint32_t EVENT_HASH = ConstExprHashingUtils::HashString("EVENT");
+        static constexpr uint32_t DATE_HASH = ConstExprHashingUtils::HashString("DATE");
+        static constexpr uint32_t QUANTITY_HASH = ConstExprHashingUtils::HashString("QUANTITY");
+        static constexpr uint32_t ATTRIBUTE_HASH = ConstExprHashingUtils::HashString("ATTRIBUTE");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
 
 
         TargetedSentimentEntityType GetTargetedSentimentEntityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PERSON_HASH)
           {
             return TargetedSentimentEntityType::PERSON;

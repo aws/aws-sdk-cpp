@@ -20,12 +20,12 @@ namespace Aws
       namespace StorageUnitMapper
       {
 
-        static const int TB_HASH = HashingUtils::HashString("TB");
+        static constexpr uint32_t TB_HASH = ConstExprHashingUtils::HashString("TB");
 
 
         StorageUnit GetStorageUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TB_HASH)
           {
             return StorageUnit::TB;

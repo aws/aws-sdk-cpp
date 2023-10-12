@@ -20,14 +20,14 @@ namespace Aws
       namespace ThroughputModeMapper
       {
 
-        static const int bursting_HASH = HashingUtils::HashString("bursting");
-        static const int provisioned_HASH = HashingUtils::HashString("provisioned");
-        static const int elastic_HASH = HashingUtils::HashString("elastic");
+        static constexpr uint32_t bursting_HASH = ConstExprHashingUtils::HashString("bursting");
+        static constexpr uint32_t provisioned_HASH = ConstExprHashingUtils::HashString("provisioned");
+        static constexpr uint32_t elastic_HASH = ConstExprHashingUtils::HashString("elastic");
 
 
         ThroughputMode GetThroughputModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == bursting_HASH)
           {
             return ThroughputMode::bursting;

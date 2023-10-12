@@ -20,13 +20,13 @@ namespace Aws
       namespace StrategyOnFullSizeMapper
       {
 
-        static const int DELETE_OLDEST_MEDIA_HASH = HashingUtils::HashString("DELETE_OLDEST_MEDIA");
-        static const int DENY_NEW_MEDIA_HASH = HashingUtils::HashString("DENY_NEW_MEDIA");
+        static constexpr uint32_t DELETE_OLDEST_MEDIA_HASH = ConstExprHashingUtils::HashString("DELETE_OLDEST_MEDIA");
+        static constexpr uint32_t DENY_NEW_MEDIA_HASH = ConstExprHashingUtils::HashString("DENY_NEW_MEDIA");
 
 
         StrategyOnFullSize GetStrategyOnFullSizeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DELETE_OLDEST_MEDIA_HASH)
           {
             return StrategyOnFullSize::DELETE_OLDEST_MEDIA;

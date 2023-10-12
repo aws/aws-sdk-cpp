@@ -20,13 +20,13 @@ namespace Aws
       namespace ChannelTypeMapper
       {
 
-        static const int SINGLE_MASTER_HASH = HashingUtils::HashString("SINGLE_MASTER");
-        static const int FULL_MESH_HASH = HashingUtils::HashString("FULL_MESH");
+        static constexpr uint32_t SINGLE_MASTER_HASH = ConstExprHashingUtils::HashString("SINGLE_MASTER");
+        static constexpr uint32_t FULL_MESH_HASH = ConstExprHashingUtils::HashString("FULL_MESH");
 
 
         ChannelType GetChannelTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SINGLE_MASTER_HASH)
           {
             return ChannelType::SINGLE_MASTER;

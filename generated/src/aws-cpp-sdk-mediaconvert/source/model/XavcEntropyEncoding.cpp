@@ -20,14 +20,14 @@ namespace Aws
       namespace XavcEntropyEncodingMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int CABAC_HASH = HashingUtils::HashString("CABAC");
-        static const int CAVLC_HASH = HashingUtils::HashString("CAVLC");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t CABAC_HASH = ConstExprHashingUtils::HashString("CABAC");
+        static constexpr uint32_t CAVLC_HASH = ConstExprHashingUtils::HashString("CAVLC");
 
 
         XavcEntropyEncoding GetXavcEntropyEncodingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return XavcEntropyEncoding::AUTO;

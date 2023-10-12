@@ -20,13 +20,13 @@ namespace Aws
       namespace InputScanTypeMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int PSF_HASH = HashingUtils::HashString("PSF");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t PSF_HASH = ConstExprHashingUtils::HashString("PSF");
 
 
         InputScanType GetInputScanTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return InputScanType::AUTO;

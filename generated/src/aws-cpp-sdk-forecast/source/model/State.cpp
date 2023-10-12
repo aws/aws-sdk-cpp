@@ -20,13 +20,13 @@ namespace Aws
       namespace StateMapper
       {
 
-        static const int Active_HASH = HashingUtils::HashString("Active");
-        static const int Deleted_HASH = HashingUtils::HashString("Deleted");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
+        static constexpr uint32_t Deleted_HASH = ConstExprHashingUtils::HashString("Deleted");
 
 
         State GetStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Active_HASH)
           {
             return State::Active;

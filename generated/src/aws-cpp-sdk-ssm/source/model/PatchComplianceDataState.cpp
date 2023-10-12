@@ -20,18 +20,18 @@ namespace Aws
       namespace PatchComplianceDataStateMapper
       {
 
-        static const int INSTALLED_HASH = HashingUtils::HashString("INSTALLED");
-        static const int INSTALLED_OTHER_HASH = HashingUtils::HashString("INSTALLED_OTHER");
-        static const int INSTALLED_PENDING_REBOOT_HASH = HashingUtils::HashString("INSTALLED_PENDING_REBOOT");
-        static const int INSTALLED_REJECTED_HASH = HashingUtils::HashString("INSTALLED_REJECTED");
-        static const int MISSING_HASH = HashingUtils::HashString("MISSING");
-        static const int NOT_APPLICABLE_HASH = HashingUtils::HashString("NOT_APPLICABLE");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t INSTALLED_HASH = ConstExprHashingUtils::HashString("INSTALLED");
+        static constexpr uint32_t INSTALLED_OTHER_HASH = ConstExprHashingUtils::HashString("INSTALLED_OTHER");
+        static constexpr uint32_t INSTALLED_PENDING_REBOOT_HASH = ConstExprHashingUtils::HashString("INSTALLED_PENDING_REBOOT");
+        static constexpr uint32_t INSTALLED_REJECTED_HASH = ConstExprHashingUtils::HashString("INSTALLED_REJECTED");
+        static constexpr uint32_t MISSING_HASH = ConstExprHashingUtils::HashString("MISSING");
+        static constexpr uint32_t NOT_APPLICABLE_HASH = ConstExprHashingUtils::HashString("NOT_APPLICABLE");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         PatchComplianceDataState GetPatchComplianceDataStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSTALLED_HASH)
           {
             return PatchComplianceDataState::INSTALLED;

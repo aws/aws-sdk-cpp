@@ -20,12 +20,12 @@ namespace Aws
       namespace ServiceCodeMapper
       {
 
-        static const int ssm_incidents_HASH = HashingUtils::HashString("ssm-incidents");
+        static constexpr uint32_t ssm_incidents_HASH = ConstExprHashingUtils::HashString("ssm-incidents");
 
 
         ServiceCode GetServiceCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ssm_incidents_HASH)
           {
             return ServiceCode::ssm_incidents;

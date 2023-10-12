@@ -20,13 +20,13 @@ namespace Aws
       namespace ThresholdTypeMapper
       {
 
-        static const int PERCENTAGE_HASH = HashingUtils::HashString("PERCENTAGE");
-        static const int ABSOLUTE_VALUE_HASH = HashingUtils::HashString("ABSOLUTE_VALUE");
+        static constexpr uint32_t PERCENTAGE_HASH = ConstExprHashingUtils::HashString("PERCENTAGE");
+        static constexpr uint32_t ABSOLUTE_VALUE_HASH = ConstExprHashingUtils::HashString("ABSOLUTE_VALUE");
 
 
         ThresholdType GetThresholdTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PERCENTAGE_HASH)
           {
             return ThresholdType::PERCENTAGE;

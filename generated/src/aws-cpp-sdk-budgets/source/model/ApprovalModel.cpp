@@ -20,13 +20,13 @@ namespace Aws
       namespace ApprovalModelMapper
       {
 
-        static const int AUTOMATIC_HASH = HashingUtils::HashString("AUTOMATIC");
-        static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
+        static constexpr uint32_t AUTOMATIC_HASH = ConstExprHashingUtils::HashString("AUTOMATIC");
+        static constexpr uint32_t MANUAL_HASH = ConstExprHashingUtils::HashString("MANUAL");
 
 
         ApprovalModel GetApprovalModelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTOMATIC_HASH)
           {
             return ApprovalModel::AUTOMATIC;

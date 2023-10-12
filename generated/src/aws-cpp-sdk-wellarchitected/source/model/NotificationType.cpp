@@ -20,13 +20,13 @@ namespace Aws
       namespace NotificationTypeMapper
       {
 
-        static const int LENS_VERSION_UPGRADED_HASH = HashingUtils::HashString("LENS_VERSION_UPGRADED");
-        static const int LENS_VERSION_DEPRECATED_HASH = HashingUtils::HashString("LENS_VERSION_DEPRECATED");
+        static constexpr uint32_t LENS_VERSION_UPGRADED_HASH = ConstExprHashingUtils::HashString("LENS_VERSION_UPGRADED");
+        static constexpr uint32_t LENS_VERSION_DEPRECATED_HASH = ConstExprHashingUtils::HashString("LENS_VERSION_DEPRECATED");
 
 
         NotificationType GetNotificationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LENS_VERSION_UPGRADED_HASH)
           {
             return NotificationType::LENS_VERSION_UPGRADED;

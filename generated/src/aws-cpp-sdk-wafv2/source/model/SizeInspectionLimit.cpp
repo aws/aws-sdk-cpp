@@ -20,15 +20,15 @@ namespace Aws
       namespace SizeInspectionLimitMapper
       {
 
-        static const int KB_16_HASH = HashingUtils::HashString("KB_16");
-        static const int KB_32_HASH = HashingUtils::HashString("KB_32");
-        static const int KB_48_HASH = HashingUtils::HashString("KB_48");
-        static const int KB_64_HASH = HashingUtils::HashString("KB_64");
+        static constexpr uint32_t KB_16_HASH = ConstExprHashingUtils::HashString("KB_16");
+        static constexpr uint32_t KB_32_HASH = ConstExprHashingUtils::HashString("KB_32");
+        static constexpr uint32_t KB_48_HASH = ConstExprHashingUtils::HashString("KB_48");
+        static constexpr uint32_t KB_64_HASH = ConstExprHashingUtils::HashString("KB_64");
 
 
         SizeInspectionLimit GetSizeInspectionLimitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KB_16_HASH)
           {
             return SizeInspectionLimit::KB_16;

@@ -20,14 +20,14 @@ namespace Aws
       namespace ActionTypeMapper
       {
 
-        static const int SERVICE_SOFTWARE_UPDATE_HASH = HashingUtils::HashString("SERVICE_SOFTWARE_UPDATE");
-        static const int JVM_HEAP_SIZE_TUNING_HASH = HashingUtils::HashString("JVM_HEAP_SIZE_TUNING");
-        static const int JVM_YOUNG_GEN_TUNING_HASH = HashingUtils::HashString("JVM_YOUNG_GEN_TUNING");
+        static constexpr uint32_t SERVICE_SOFTWARE_UPDATE_HASH = ConstExprHashingUtils::HashString("SERVICE_SOFTWARE_UPDATE");
+        static constexpr uint32_t JVM_HEAP_SIZE_TUNING_HASH = ConstExprHashingUtils::HashString("JVM_HEAP_SIZE_TUNING");
+        static constexpr uint32_t JVM_YOUNG_GEN_TUNING_HASH = ConstExprHashingUtils::HashString("JVM_YOUNG_GEN_TUNING");
 
 
         ActionType GetActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SERVICE_SOFTWARE_UPDATE_HASH)
           {
             return ActionType::SERVICE_SOFTWARE_UPDATE;

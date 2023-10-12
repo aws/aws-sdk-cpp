@@ -20,18 +20,18 @@ namespace Aws
       namespace FilterOperationMapper
       {
 
-        static const int EQ_HASH = HashingUtils::HashString("EQ");
-        static const int LT_HASH = HashingUtils::HashString("LT");
-        static const int GT_HASH = HashingUtils::HashString("GT");
-        static const int LTE_HASH = HashingUtils::HashString("LTE");
-        static const int GTE_HASH = HashingUtils::HashString("GTE");
-        static const int REGEX_HASH = HashingUtils::HashString("REGEX");
-        static const int ISNULL_HASH = HashingUtils::HashString("ISNULL");
+        static constexpr uint32_t EQ_HASH = ConstExprHashingUtils::HashString("EQ");
+        static constexpr uint32_t LT_HASH = ConstExprHashingUtils::HashString("LT");
+        static constexpr uint32_t GT_HASH = ConstExprHashingUtils::HashString("GT");
+        static constexpr uint32_t LTE_HASH = ConstExprHashingUtils::HashString("LTE");
+        static constexpr uint32_t GTE_HASH = ConstExprHashingUtils::HashString("GTE");
+        static constexpr uint32_t REGEX_HASH = ConstExprHashingUtils::HashString("REGEX");
+        static constexpr uint32_t ISNULL_HASH = ConstExprHashingUtils::HashString("ISNULL");
 
 
         FilterOperation GetFilterOperationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EQ_HASH)
           {
             return FilterOperation::EQ;

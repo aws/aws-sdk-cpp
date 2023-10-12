@@ -20,14 +20,14 @@ namespace Aws
       namespace PlatformTypeMapper
       {
 
-        static const int Windows_HASH = HashingUtils::HashString("Windows");
-        static const int Linux_HASH = HashingUtils::HashString("Linux");
-        static const int MacOS_HASH = HashingUtils::HashString("MacOS");
+        static constexpr uint32_t Windows_HASH = ConstExprHashingUtils::HashString("Windows");
+        static constexpr uint32_t Linux_HASH = ConstExprHashingUtils::HashString("Linux");
+        static constexpr uint32_t MacOS_HASH = ConstExprHashingUtils::HashString("MacOS");
 
 
         PlatformType GetPlatformTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Windows_HASH)
           {
             return PlatformType::Windows;

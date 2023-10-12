@@ -20,19 +20,19 @@ namespace Aws
       namespace ExplicitAuthFlowsTypeMapper
       {
 
-        static const int ADMIN_NO_SRP_AUTH_HASH = HashingUtils::HashString("ADMIN_NO_SRP_AUTH");
-        static const int CUSTOM_AUTH_FLOW_ONLY_HASH = HashingUtils::HashString("CUSTOM_AUTH_FLOW_ONLY");
-        static const int USER_PASSWORD_AUTH_HASH = HashingUtils::HashString("USER_PASSWORD_AUTH");
-        static const int ALLOW_ADMIN_USER_PASSWORD_AUTH_HASH = HashingUtils::HashString("ALLOW_ADMIN_USER_PASSWORD_AUTH");
-        static const int ALLOW_CUSTOM_AUTH_HASH = HashingUtils::HashString("ALLOW_CUSTOM_AUTH");
-        static const int ALLOW_USER_PASSWORD_AUTH_HASH = HashingUtils::HashString("ALLOW_USER_PASSWORD_AUTH");
-        static const int ALLOW_USER_SRP_AUTH_HASH = HashingUtils::HashString("ALLOW_USER_SRP_AUTH");
-        static const int ALLOW_REFRESH_TOKEN_AUTH_HASH = HashingUtils::HashString("ALLOW_REFRESH_TOKEN_AUTH");
+        static constexpr uint32_t ADMIN_NO_SRP_AUTH_HASH = ConstExprHashingUtils::HashString("ADMIN_NO_SRP_AUTH");
+        static constexpr uint32_t CUSTOM_AUTH_FLOW_ONLY_HASH = ConstExprHashingUtils::HashString("CUSTOM_AUTH_FLOW_ONLY");
+        static constexpr uint32_t USER_PASSWORD_AUTH_HASH = ConstExprHashingUtils::HashString("USER_PASSWORD_AUTH");
+        static constexpr uint32_t ALLOW_ADMIN_USER_PASSWORD_AUTH_HASH = ConstExprHashingUtils::HashString("ALLOW_ADMIN_USER_PASSWORD_AUTH");
+        static constexpr uint32_t ALLOW_CUSTOM_AUTH_HASH = ConstExprHashingUtils::HashString("ALLOW_CUSTOM_AUTH");
+        static constexpr uint32_t ALLOW_USER_PASSWORD_AUTH_HASH = ConstExprHashingUtils::HashString("ALLOW_USER_PASSWORD_AUTH");
+        static constexpr uint32_t ALLOW_USER_SRP_AUTH_HASH = ConstExprHashingUtils::HashString("ALLOW_USER_SRP_AUTH");
+        static constexpr uint32_t ALLOW_REFRESH_TOKEN_AUTH_HASH = ConstExprHashingUtils::HashString("ALLOW_REFRESH_TOKEN_AUTH");
 
 
         ExplicitAuthFlowsType GetExplicitAuthFlowsTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADMIN_NO_SRP_AUTH_HASH)
           {
             return ExplicitAuthFlowsType::ADMIN_NO_SRP_AUTH;

@@ -20,17 +20,17 @@ namespace Aws
       namespace FailedItemErrorCodeMapper
       {
 
-        static const int INVALID_ARN_HASH = HashingUtils::HashString("INVALID_ARN");
-        static const int DUPLICATE_ARN_HASH = HashingUtils::HashString("DUPLICATE_ARN");
-        static const int ITEM_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ITEM_DOES_NOT_EXIST");
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
-        static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LIMIT_EXCEEDED");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t INVALID_ARN_HASH = ConstExprHashingUtils::HashString("INVALID_ARN");
+        static constexpr uint32_t DUPLICATE_ARN_HASH = ConstExprHashingUtils::HashString("DUPLICATE_ARN");
+        static constexpr uint32_t ITEM_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("ITEM_DOES_NOT_EXIST");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LIMIT_EXCEEDED");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
 
 
         FailedItemErrorCode GetFailedItemErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVALID_ARN_HASH)
           {
             return FailedItemErrorCode::INVALID_ARN;

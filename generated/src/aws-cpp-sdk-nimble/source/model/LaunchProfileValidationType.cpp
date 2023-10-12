@@ -20,15 +20,15 @@ namespace Aws
       namespace LaunchProfileValidationTypeMapper
       {
 
-        static const int VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT_HASH = HashingUtils::HashString("VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT");
-        static const int VALIDATE_SUBNET_ASSOCIATION_HASH = HashingUtils::HashString("VALIDATE_SUBNET_ASSOCIATION");
-        static const int VALIDATE_NETWORK_ACL_ASSOCIATION_HASH = HashingUtils::HashString("VALIDATE_NETWORK_ACL_ASSOCIATION");
-        static const int VALIDATE_SECURITY_GROUP_ASSOCIATION_HASH = HashingUtils::HashString("VALIDATE_SECURITY_GROUP_ASSOCIATION");
+        static constexpr uint32_t VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT_HASH = ConstExprHashingUtils::HashString("VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT");
+        static constexpr uint32_t VALIDATE_SUBNET_ASSOCIATION_HASH = ConstExprHashingUtils::HashString("VALIDATE_SUBNET_ASSOCIATION");
+        static constexpr uint32_t VALIDATE_NETWORK_ACL_ASSOCIATION_HASH = ConstExprHashingUtils::HashString("VALIDATE_NETWORK_ACL_ASSOCIATION");
+        static constexpr uint32_t VALIDATE_SECURITY_GROUP_ASSOCIATION_HASH = ConstExprHashingUtils::HashString("VALIDATE_SECURITY_GROUP_ASSOCIATION");
 
 
         LaunchProfileValidationType GetLaunchProfileValidationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT_HASH)
           {
             return LaunchProfileValidationType::VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT;

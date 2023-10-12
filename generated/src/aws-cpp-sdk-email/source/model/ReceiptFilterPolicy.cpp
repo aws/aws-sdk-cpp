@@ -20,13 +20,13 @@ namespace Aws
       namespace ReceiptFilterPolicyMapper
       {
 
-        static const int Block_HASH = HashingUtils::HashString("Block");
-        static const int Allow_HASH = HashingUtils::HashString("Allow");
+        static constexpr uint32_t Block_HASH = ConstExprHashingUtils::HashString("Block");
+        static constexpr uint32_t Allow_HASH = ConstExprHashingUtils::HashString("Allow");
 
 
         ReceiptFilterPolicy GetReceiptFilterPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Block_HASH)
           {
             return ReceiptFilterPolicy::Block;

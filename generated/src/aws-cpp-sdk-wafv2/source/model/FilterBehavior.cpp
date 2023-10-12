@@ -20,13 +20,13 @@ namespace Aws
       namespace FilterBehaviorMapper
       {
 
-        static const int KEEP_HASH = HashingUtils::HashString("KEEP");
-        static const int DROP_HASH = HashingUtils::HashString("DROP");
+        static constexpr uint32_t KEEP_HASH = ConstExprHashingUtils::HashString("KEEP");
+        static constexpr uint32_t DROP_HASH = ConstExprHashingUtils::HashString("DROP");
 
 
         FilterBehavior GetFilterBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KEEP_HASH)
           {
             return FilterBehavior::KEEP;

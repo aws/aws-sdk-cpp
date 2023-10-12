@@ -20,15 +20,15 @@ namespace Aws
       namespace S3BucketRegionMapper
       {
 
-        static const int ap_east_1_HASH = HashingUtils::HashString("ap-east-1");
-        static const int me_south_1_HASH = HashingUtils::HashString("me-south-1");
-        static const int eu_south_1_HASH = HashingUtils::HashString("eu-south-1");
-        static const int af_south_1_HASH = HashingUtils::HashString("af-south-1");
+        static constexpr uint32_t ap_east_1_HASH = ConstExprHashingUtils::HashString("ap-east-1");
+        static constexpr uint32_t me_south_1_HASH = ConstExprHashingUtils::HashString("me-south-1");
+        static constexpr uint32_t eu_south_1_HASH = ConstExprHashingUtils::HashString("eu-south-1");
+        static constexpr uint32_t af_south_1_HASH = ConstExprHashingUtils::HashString("af-south-1");
 
 
         S3BucketRegion GetS3BucketRegionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ap_east_1_HASH)
           {
             return S3BucketRegion::ap_east_1;

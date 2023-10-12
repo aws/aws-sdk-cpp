@@ -20,13 +20,13 @@ namespace Aws
       namespace EndpointTypeMapper
       {
 
-        static const int REGIONAL_HASH = HashingUtils::HashString("REGIONAL");
-        static const int EDGE_HASH = HashingUtils::HashString("EDGE");
+        static constexpr uint32_t REGIONAL_HASH = ConstExprHashingUtils::HashString("REGIONAL");
+        static constexpr uint32_t EDGE_HASH = ConstExprHashingUtils::HashString("EDGE");
 
 
         EndpointType GetEndpointTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REGIONAL_HASH)
           {
             return EndpointType::REGIONAL;

@@ -20,19 +20,19 @@ namespace Aws
       namespace SessionStateMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
-        static const int IDLE_HASH = HashingUtils::HashString("IDLE");
-        static const int BUSY_HASH = HashingUtils::HashString("BUSY");
-        static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
-        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
-        static const int DEGRADED_HASH = HashingUtils::HashString("DEGRADED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t CREATED_HASH = ConstExprHashingUtils::HashString("CREATED");
+        static constexpr uint32_t IDLE_HASH = ConstExprHashingUtils::HashString("IDLE");
+        static constexpr uint32_t BUSY_HASH = ConstExprHashingUtils::HashString("BUSY");
+        static constexpr uint32_t TERMINATING_HASH = ConstExprHashingUtils::HashString("TERMINATING");
+        static constexpr uint32_t TERMINATED_HASH = ConstExprHashingUtils::HashString("TERMINATED");
+        static constexpr uint32_t DEGRADED_HASH = ConstExprHashingUtils::HashString("DEGRADED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         SessionState GetSessionStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return SessionState::CREATING;

@@ -20,14 +20,14 @@ namespace Aws
       namespace DvbddsHandlingMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int SPECIFIED_HASH = HashingUtils::HashString("SPECIFIED");
-        static const int NO_DISPLAY_WINDOW_HASH = HashingUtils::HashString("NO_DISPLAY_WINDOW");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t SPECIFIED_HASH = ConstExprHashingUtils::HashString("SPECIFIED");
+        static constexpr uint32_t NO_DISPLAY_WINDOW_HASH = ConstExprHashingUtils::HashString("NO_DISPLAY_WINDOW");
 
 
         DvbddsHandling GetDvbddsHandlingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return DvbddsHandling::NONE;

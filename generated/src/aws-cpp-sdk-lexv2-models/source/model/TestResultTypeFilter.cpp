@@ -20,16 +20,16 @@ namespace Aws
       namespace TestResultTypeFilterMapper
       {
 
-        static const int OverallTestResults_HASH = HashingUtils::HashString("OverallTestResults");
-        static const int ConversationLevelTestResults_HASH = HashingUtils::HashString("ConversationLevelTestResults");
-        static const int IntentClassificationTestResults_HASH = HashingUtils::HashString("IntentClassificationTestResults");
-        static const int SlotResolutionTestResults_HASH = HashingUtils::HashString("SlotResolutionTestResults");
-        static const int UtteranceLevelResults_HASH = HashingUtils::HashString("UtteranceLevelResults");
+        static constexpr uint32_t OverallTestResults_HASH = ConstExprHashingUtils::HashString("OverallTestResults");
+        static constexpr uint32_t ConversationLevelTestResults_HASH = ConstExprHashingUtils::HashString("ConversationLevelTestResults");
+        static constexpr uint32_t IntentClassificationTestResults_HASH = ConstExprHashingUtils::HashString("IntentClassificationTestResults");
+        static constexpr uint32_t SlotResolutionTestResults_HASH = ConstExprHashingUtils::HashString("SlotResolutionTestResults");
+        static constexpr uint32_t UtteranceLevelResults_HASH = ConstExprHashingUtils::HashString("UtteranceLevelResults");
 
 
         TestResultTypeFilter GetTestResultTypeFilterForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OverallTestResults_HASH)
           {
             return TestResultTypeFilter::OverallTestResults;

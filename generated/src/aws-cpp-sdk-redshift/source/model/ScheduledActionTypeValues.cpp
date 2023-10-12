@@ -20,14 +20,14 @@ namespace Aws
       namespace ScheduledActionTypeValuesMapper
       {
 
-        static const int ResizeCluster_HASH = HashingUtils::HashString("ResizeCluster");
-        static const int PauseCluster_HASH = HashingUtils::HashString("PauseCluster");
-        static const int ResumeCluster_HASH = HashingUtils::HashString("ResumeCluster");
+        static constexpr uint32_t ResizeCluster_HASH = ConstExprHashingUtils::HashString("ResizeCluster");
+        static constexpr uint32_t PauseCluster_HASH = ConstExprHashingUtils::HashString("PauseCluster");
+        static constexpr uint32_t ResumeCluster_HASH = ConstExprHashingUtils::HashString("ResumeCluster");
 
 
         ScheduledActionTypeValues GetScheduledActionTypeValuesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ResizeCluster_HASH)
           {
             return ScheduledActionTypeValues::ResizeCluster;

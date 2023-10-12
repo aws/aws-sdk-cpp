@@ -20,14 +20,14 @@ namespace Aws
       namespace DnsNameStateMapper
       {
 
-        static const int pendingVerification_HASH = HashingUtils::HashString("pendingVerification");
-        static const int verified_HASH = HashingUtils::HashString("verified");
-        static const int failed_HASH = HashingUtils::HashString("failed");
+        static constexpr uint32_t pendingVerification_HASH = ConstExprHashingUtils::HashString("pendingVerification");
+        static constexpr uint32_t verified_HASH = ConstExprHashingUtils::HashString("verified");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
 
 
         DnsNameState GetDnsNameStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pendingVerification_HASH)
           {
             return DnsNameState::pendingVerification;

@@ -20,13 +20,13 @@ namespace Aws
       namespace AutoScalingTypeMapper
       {
 
-        static const int load_HASH = HashingUtils::HashString("load");
-        static const int timer_HASH = HashingUtils::HashString("timer");
+        static constexpr uint32_t load_HASH = ConstExprHashingUtils::HashString("load");
+        static constexpr uint32_t timer_HASH = ConstExprHashingUtils::HashString("timer");
 
 
         AutoScalingType GetAutoScalingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == load_HASH)
           {
             return AutoScalingType::load;

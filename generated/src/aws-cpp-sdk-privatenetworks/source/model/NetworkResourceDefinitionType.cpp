@@ -20,13 +20,13 @@ namespace Aws
       namespace NetworkResourceDefinitionTypeMapper
       {
 
-        static const int RADIO_UNIT_HASH = HashingUtils::HashString("RADIO_UNIT");
-        static const int DEVICE_IDENTIFIER_HASH = HashingUtils::HashString("DEVICE_IDENTIFIER");
+        static constexpr uint32_t RADIO_UNIT_HASH = ConstExprHashingUtils::HashString("RADIO_UNIT");
+        static constexpr uint32_t DEVICE_IDENTIFIER_HASH = ConstExprHashingUtils::HashString("DEVICE_IDENTIFIER");
 
 
         NetworkResourceDefinitionType GetNetworkResourceDefinitionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RADIO_UNIT_HASH)
           {
             return NetworkResourceDefinitionType::RADIO_UNIT;

@@ -20,13 +20,13 @@ namespace Aws
       namespace LicenseConfigurationStatusMapper
       {
 
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
 
 
         LicenseConfigurationStatus GetLicenseConfigurationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVAILABLE_HASH)
           {
             return LicenseConfigurationStatus::AVAILABLE;

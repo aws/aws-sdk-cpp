@@ -20,14 +20,14 @@ namespace Aws
       namespace FirewallFailOpenStatusMapper
       {
 
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int USE_LOCAL_RESOURCE_SETTING_HASH = HashingUtils::HashString("USE_LOCAL_RESOURCE_SETTING");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t USE_LOCAL_RESOURCE_SETTING_HASH = ConstExprHashingUtils::HashString("USE_LOCAL_RESOURCE_SETTING");
 
 
         FirewallFailOpenStatus GetFirewallFailOpenStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLED_HASH)
           {
             return FirewallFailOpenStatus::ENABLED;

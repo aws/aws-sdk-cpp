@@ -20,14 +20,14 @@ namespace Aws
       namespace StatisticMapper
       {
 
-        static const int SUM_HASH = HashingUtils::HashString("SUM");
-        static const int MAX_HASH = HashingUtils::HashString("MAX");
-        static const int AVG_HASH = HashingUtils::HashString("AVG");
+        static constexpr uint32_t SUM_HASH = ConstExprHashingUtils::HashString("SUM");
+        static constexpr uint32_t MAX_HASH = ConstExprHashingUtils::HashString("MAX");
+        static constexpr uint32_t AVG_HASH = ConstExprHashingUtils::HashString("AVG");
 
 
         Statistic GetStatisticForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUM_HASH)
           {
             return Statistic::SUM;

@@ -20,13 +20,13 @@ namespace Aws
       namespace EncodingTypeMapper
       {
 
-        static const int SSH_HASH = HashingUtils::HashString("SSH");
-        static const int PEM_HASH = HashingUtils::HashString("PEM");
+        static constexpr uint32_t SSH_HASH = ConstExprHashingUtils::HashString("SSH");
+        static constexpr uint32_t PEM_HASH = ConstExprHashingUtils::HashString("PEM");
 
 
         EncodingType GetEncodingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SSH_HASH)
           {
             return EncodingType::SSH;

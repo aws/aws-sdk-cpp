@@ -20,12 +20,12 @@ namespace Aws
       namespace TargetStorageTierMapper
       {
 
-        static const int archive_HASH = HashingUtils::HashString("archive");
+        static constexpr uint32_t archive_HASH = ConstExprHashingUtils::HashString("archive");
 
 
         TargetStorageTier GetTargetStorageTierForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == archive_HASH)
           {
             return TargetStorageTier::archive;

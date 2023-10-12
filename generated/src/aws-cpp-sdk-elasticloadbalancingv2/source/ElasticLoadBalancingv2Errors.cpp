@@ -18,48 +18,48 @@ namespace ElasticLoadBalancingv2
 namespace ElasticLoadBalancingv2ErrorMapper
 {
 
-static const int AVAILABILITY_ZONE_NOT_SUPPORTED_HASH = HashingUtils::HashString("AvailabilityZoneNotSupported");
-static const int INVALID_SCHEME_HASH = HashingUtils::HashString("InvalidScheme");
-static const int INCOMPATIBLE_PROTOCOLS_HASH = HashingUtils::HashString("IncompatibleProtocols");
-static const int TOO_MANY_TARGETS_HASH = HashingUtils::HashString("TooManyTargets");
-static const int DUPLICATE_LISTENER_HASH = HashingUtils::HashString("DuplicateListener");
-static const int TOO_MANY_RULES_HASH = HashingUtils::HashString("TooManyRules");
-static const int LISTENER_NOT_FOUND_HASH = HashingUtils::HashString("ListenerNotFound");
-static const int A_L_P_N_POLICY_NOT_SUPPORTED_HASH = HashingUtils::HashString("ALPNPolicyNotFound");
-static const int HEALTH_UNAVAILABLE_HASH = HashingUtils::HashString("HealthUnavailable");
-static const int TOO_MANY_UNIQUE_TARGET_GROUPS_PER_LOAD_BALANCER_HASH = HashingUtils::HashString("TooManyUniqueTargetGroupsPerLoadBalancer");
-static const int TOO_MANY_ACTIONS_HASH = HashingUtils::HashString("TooManyActions");
-static const int ALLOCATION_ID_NOT_FOUND_HASH = HashingUtils::HashString("AllocationIdNotFound");
-static const int TOO_MANY_CERTIFICATES_HASH = HashingUtils::HashString("TooManyCertificates");
-static const int TARGET_GROUP_NOT_FOUND_HASH = HashingUtils::HashString("TargetGroupNotFound");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUse");
-static const int DUPLICATE_LOAD_BALANCER_NAME_HASH = HashingUtils::HashString("DuplicateLoadBalancerName");
-static const int LOAD_BALANCER_NOT_FOUND_HASH = HashingUtils::HashString("LoadBalancerNotFound");
-static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermitted");
-static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet");
-static const int INVALID_LOAD_BALANCER_ACTION_HASH = HashingUtils::HashString("InvalidLoadBalancerAction");
-static const int DUPLICATE_TARGET_GROUP_NAME_HASH = HashingUtils::HashString("DuplicateTargetGroupName");
-static const int S_S_L_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("SSLPolicyNotFound");
-static const int TOO_MANY_TARGET_GROUPS_HASH = HashingUtils::HashString("TooManyTargetGroups");
-static const int TOO_MANY_LISTENERS_HASH = HashingUtils::HashString("TooManyListeners");
-static const int DUPLICATE_TAG_KEYS_HASH = HashingUtils::HashString("DuplicateTagKeys");
-static const int RULE_NOT_FOUND_HASH = HashingUtils::HashString("RuleNotFound");
-static const int PRIORITY_IN_USE_HASH = HashingUtils::HashString("PriorityInUse");
-static const int TOO_MANY_REGISTRATIONS_FOR_TARGET_ID_HASH = HashingUtils::HashString("TooManyRegistrationsForTargetId");
-static const int INVALID_CONFIGURATION_REQUEST_HASH = HashingUtils::HashString("InvalidConfigurationRequest");
-static const int UNSUPPORTED_PROTOCOL_HASH = HashingUtils::HashString("UnsupportedProtocol");
-static const int INVALID_TARGET_HASH = HashingUtils::HashString("InvalidTarget");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTags");
-static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SubnetNotFound");
-static const int INVALID_SECURITY_GROUP_HASH = HashingUtils::HashString("InvalidSecurityGroup");
-static const int CERTIFICATE_NOT_FOUND_HASH = HashingUtils::HashString("CertificateNotFound");
-static const int TARGET_GROUP_ASSOCIATION_LIMIT_HASH = HashingUtils::HashString("TargetGroupAssociationLimit");
-static const int TOO_MANY_LOAD_BALANCERS_HASH = HashingUtils::HashString("TooManyLoadBalancers");
+static constexpr uint32_t AVAILABILITY_ZONE_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("AvailabilityZoneNotSupported");
+static constexpr uint32_t INVALID_SCHEME_HASH = ConstExprHashingUtils::HashString("InvalidScheme");
+static constexpr uint32_t INCOMPATIBLE_PROTOCOLS_HASH = ConstExprHashingUtils::HashString("IncompatibleProtocols");
+static constexpr uint32_t TOO_MANY_TARGETS_HASH = ConstExprHashingUtils::HashString("TooManyTargets");
+static constexpr uint32_t DUPLICATE_LISTENER_HASH = ConstExprHashingUtils::HashString("DuplicateListener");
+static constexpr uint32_t TOO_MANY_RULES_HASH = ConstExprHashingUtils::HashString("TooManyRules");
+static constexpr uint32_t LISTENER_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ListenerNotFound");
+static constexpr uint32_t A_L_P_N_POLICY_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("ALPNPolicyNotFound");
+static constexpr uint32_t HEALTH_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("HealthUnavailable");
+static constexpr uint32_t TOO_MANY_UNIQUE_TARGET_GROUPS_PER_LOAD_BALANCER_HASH = ConstExprHashingUtils::HashString("TooManyUniqueTargetGroupsPerLoadBalancer");
+static constexpr uint32_t TOO_MANY_ACTIONS_HASH = ConstExprHashingUtils::HashString("TooManyActions");
+static constexpr uint32_t ALLOCATION_ID_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("AllocationIdNotFound");
+static constexpr uint32_t TOO_MANY_CERTIFICATES_HASH = ConstExprHashingUtils::HashString("TooManyCertificates");
+static constexpr uint32_t TARGET_GROUP_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("TargetGroupNotFound");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUse");
+static constexpr uint32_t DUPLICATE_LOAD_BALANCER_NAME_HASH = ConstExprHashingUtils::HashString("DuplicateLoadBalancerName");
+static constexpr uint32_t LOAD_BALANCER_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("LoadBalancerNotFound");
+static constexpr uint32_t OPERATION_NOT_PERMITTED_HASH = ConstExprHashingUtils::HashString("OperationNotPermitted");
+static constexpr uint32_t INVALID_SUBNET_HASH = ConstExprHashingUtils::HashString("InvalidSubnet");
+static constexpr uint32_t INVALID_LOAD_BALANCER_ACTION_HASH = ConstExprHashingUtils::HashString("InvalidLoadBalancerAction");
+static constexpr uint32_t DUPLICATE_TARGET_GROUP_NAME_HASH = ConstExprHashingUtils::HashString("DuplicateTargetGroupName");
+static constexpr uint32_t S_S_L_POLICY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SSLPolicyNotFound");
+static constexpr uint32_t TOO_MANY_TARGET_GROUPS_HASH = ConstExprHashingUtils::HashString("TooManyTargetGroups");
+static constexpr uint32_t TOO_MANY_LISTENERS_HASH = ConstExprHashingUtils::HashString("TooManyListeners");
+static constexpr uint32_t DUPLICATE_TAG_KEYS_HASH = ConstExprHashingUtils::HashString("DuplicateTagKeys");
+static constexpr uint32_t RULE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("RuleNotFound");
+static constexpr uint32_t PRIORITY_IN_USE_HASH = ConstExprHashingUtils::HashString("PriorityInUse");
+static constexpr uint32_t TOO_MANY_REGISTRATIONS_FOR_TARGET_ID_HASH = ConstExprHashingUtils::HashString("TooManyRegistrationsForTargetId");
+static constexpr uint32_t INVALID_CONFIGURATION_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidConfigurationRequest");
+static constexpr uint32_t UNSUPPORTED_PROTOCOL_HASH = ConstExprHashingUtils::HashString("UnsupportedProtocol");
+static constexpr uint32_t INVALID_TARGET_HASH = ConstExprHashingUtils::HashString("InvalidTarget");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTags");
+static constexpr uint32_t SUBNET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SubnetNotFound");
+static constexpr uint32_t INVALID_SECURITY_GROUP_HASH = ConstExprHashingUtils::HashString("InvalidSecurityGroup");
+static constexpr uint32_t CERTIFICATE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("CertificateNotFound");
+static constexpr uint32_t TARGET_GROUP_ASSOCIATION_LIMIT_HASH = ConstExprHashingUtils::HashString("TargetGroupAssociationLimit");
+static constexpr uint32_t TOO_MANY_LOAD_BALANCERS_HASH = ConstExprHashingUtils::HashString("TooManyLoadBalancers");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == AVAILABILITY_ZONE_NOT_SUPPORTED_HASH)
   {

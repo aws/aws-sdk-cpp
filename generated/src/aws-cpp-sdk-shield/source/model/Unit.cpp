@@ -20,15 +20,15 @@ namespace Aws
       namespace UnitMapper
       {
 
-        static const int BITS_HASH = HashingUtils::HashString("BITS");
-        static const int BYTES_HASH = HashingUtils::HashString("BYTES");
-        static const int PACKETS_HASH = HashingUtils::HashString("PACKETS");
-        static const int REQUESTS_HASH = HashingUtils::HashString("REQUESTS");
+        static constexpr uint32_t BITS_HASH = ConstExprHashingUtils::HashString("BITS");
+        static constexpr uint32_t BYTES_HASH = ConstExprHashingUtils::HashString("BYTES");
+        static constexpr uint32_t PACKETS_HASH = ConstExprHashingUtils::HashString("PACKETS");
+        static constexpr uint32_t REQUESTS_HASH = ConstExprHashingUtils::HashString("REQUESTS");
 
 
         Unit GetUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BITS_HASH)
           {
             return Unit::BITS;

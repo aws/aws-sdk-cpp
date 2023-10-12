@@ -20,13 +20,13 @@ namespace Aws
       namespace ScanDirectionMapper
       {
 
-        static const int FORWARD_HASH = HashingUtils::HashString("FORWARD");
-        static const int BACKWARD_HASH = HashingUtils::HashString("BACKWARD");
+        static constexpr uint32_t FORWARD_HASH = ConstExprHashingUtils::HashString("FORWARD");
+        static constexpr uint32_t BACKWARD_HASH = ConstExprHashingUtils::HashString("BACKWARD");
 
 
         ScanDirection GetScanDirectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FORWARD_HASH)
           {
             return ScanDirection::FORWARD;

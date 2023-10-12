@@ -20,12 +20,12 @@ namespace Aws
       namespace DeploymentTypeMapper
       {
 
-        static const int Model_HASH = HashingUtils::HashString("Model");
+        static constexpr uint32_t Model_HASH = ConstExprHashingUtils::HashString("Model");
 
 
         DeploymentType GetDeploymentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Model_HASH)
           {
             return DeploymentType::Model;

@@ -20,14 +20,14 @@ namespace Aws
       namespace TargetIdTypeMapper
       {
 
-        static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
-        static const int OU_HASH = HashingUtils::HashString("OU");
-        static const int ROOT_HASH = HashingUtils::HashString("ROOT");
+        static constexpr uint32_t ACCOUNT_HASH = ConstExprHashingUtils::HashString("ACCOUNT");
+        static constexpr uint32_t OU_HASH = ConstExprHashingUtils::HashString("OU");
+        static constexpr uint32_t ROOT_HASH = ConstExprHashingUtils::HashString("ROOT");
 
 
         TargetIdType GetTargetIdTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCOUNT_HASH)
           {
             return TargetIdType::ACCOUNT;

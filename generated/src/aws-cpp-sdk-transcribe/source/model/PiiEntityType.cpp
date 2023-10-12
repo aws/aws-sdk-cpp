@@ -20,23 +20,23 @@ namespace Aws
       namespace PiiEntityTypeMapper
       {
 
-        static const int BANK_ACCOUNT_NUMBER_HASH = HashingUtils::HashString("BANK_ACCOUNT_NUMBER");
-        static const int BANK_ROUTING_HASH = HashingUtils::HashString("BANK_ROUTING");
-        static const int CREDIT_DEBIT_NUMBER_HASH = HashingUtils::HashString("CREDIT_DEBIT_NUMBER");
-        static const int CREDIT_DEBIT_CVV_HASH = HashingUtils::HashString("CREDIT_DEBIT_CVV");
-        static const int CREDIT_DEBIT_EXPIRY_HASH = HashingUtils::HashString("CREDIT_DEBIT_EXPIRY");
-        static const int PIN_HASH = HashingUtils::HashString("PIN");
-        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
-        static const int ADDRESS_HASH = HashingUtils::HashString("ADDRESS");
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int PHONE_HASH = HashingUtils::HashString("PHONE");
-        static const int SSN_HASH = HashingUtils::HashString("SSN");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t BANK_ACCOUNT_NUMBER_HASH = ConstExprHashingUtils::HashString("BANK_ACCOUNT_NUMBER");
+        static constexpr uint32_t BANK_ROUTING_HASH = ConstExprHashingUtils::HashString("BANK_ROUTING");
+        static constexpr uint32_t CREDIT_DEBIT_NUMBER_HASH = ConstExprHashingUtils::HashString("CREDIT_DEBIT_NUMBER");
+        static constexpr uint32_t CREDIT_DEBIT_CVV_HASH = ConstExprHashingUtils::HashString("CREDIT_DEBIT_CVV");
+        static constexpr uint32_t CREDIT_DEBIT_EXPIRY_HASH = ConstExprHashingUtils::HashString("CREDIT_DEBIT_EXPIRY");
+        static constexpr uint32_t PIN_HASH = ConstExprHashingUtils::HashString("PIN");
+        static constexpr uint32_t EMAIL_HASH = ConstExprHashingUtils::HashString("EMAIL");
+        static constexpr uint32_t ADDRESS_HASH = ConstExprHashingUtils::HashString("ADDRESS");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t PHONE_HASH = ConstExprHashingUtils::HashString("PHONE");
+        static constexpr uint32_t SSN_HASH = ConstExprHashingUtils::HashString("SSN");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         PiiEntityType GetPiiEntityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BANK_ACCOUNT_NUMBER_HASH)
           {
             return PiiEntityType::BANK_ACCOUNT_NUMBER;

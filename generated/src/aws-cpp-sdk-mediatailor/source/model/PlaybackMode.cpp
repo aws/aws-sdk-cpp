@@ -20,13 +20,13 @@ namespace Aws
       namespace PlaybackModeMapper
       {
 
-        static const int LOOP_HASH = HashingUtils::HashString("LOOP");
-        static const int LINEAR_HASH = HashingUtils::HashString("LINEAR");
+        static constexpr uint32_t LOOP_HASH = ConstExprHashingUtils::HashString("LOOP");
+        static constexpr uint32_t LINEAR_HASH = ConstExprHashingUtils::HashString("LINEAR");
 
 
         PlaybackMode GetPlaybackModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LOOP_HASH)
           {
             return PlaybackMode::LOOP;

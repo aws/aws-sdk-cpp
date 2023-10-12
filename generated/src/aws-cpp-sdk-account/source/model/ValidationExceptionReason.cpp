@@ -20,13 +20,13 @@ namespace Aws
       namespace ValidationExceptionReasonMapper
       {
 
-        static const int invalidRegionOptTarget_HASH = HashingUtils::HashString("invalidRegionOptTarget");
-        static const int fieldValidationFailed_HASH = HashingUtils::HashString("fieldValidationFailed");
+        static constexpr uint32_t invalidRegionOptTarget_HASH = ConstExprHashingUtils::HashString("invalidRegionOptTarget");
+        static constexpr uint32_t fieldValidationFailed_HASH = ConstExprHashingUtils::HashString("fieldValidationFailed");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == invalidRegionOptTarget_HASH)
           {
             return ValidationExceptionReason::invalidRegionOptTarget;

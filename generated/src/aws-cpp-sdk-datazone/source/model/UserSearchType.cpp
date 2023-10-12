@@ -20,15 +20,15 @@ namespace Aws
       namespace UserSearchTypeMapper
       {
 
-        static const int SSO_USER_HASH = HashingUtils::HashString("SSO_USER");
-        static const int DATAZONE_USER_HASH = HashingUtils::HashString("DATAZONE_USER");
-        static const int DATAZONE_SSO_USER_HASH = HashingUtils::HashString("DATAZONE_SSO_USER");
-        static const int DATAZONE_IAM_USER_HASH = HashingUtils::HashString("DATAZONE_IAM_USER");
+        static constexpr uint32_t SSO_USER_HASH = ConstExprHashingUtils::HashString("SSO_USER");
+        static constexpr uint32_t DATAZONE_USER_HASH = ConstExprHashingUtils::HashString("DATAZONE_USER");
+        static constexpr uint32_t DATAZONE_SSO_USER_HASH = ConstExprHashingUtils::HashString("DATAZONE_SSO_USER");
+        static constexpr uint32_t DATAZONE_IAM_USER_HASH = ConstExprHashingUtils::HashString("DATAZONE_IAM_USER");
 
 
         UserSearchType GetUserSearchTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SSO_USER_HASH)
           {
             return UserSearchType::SSO_USER;

@@ -20,14 +20,14 @@ namespace Aws
       namespace AnalyticsFilterOperatorMapper
       {
 
-        static const int EQ_HASH = HashingUtils::HashString("EQ");
-        static const int GT_HASH = HashingUtils::HashString("GT");
-        static const int LT_HASH = HashingUtils::HashString("LT");
+        static constexpr uint32_t EQ_HASH = ConstExprHashingUtils::HashString("EQ");
+        static constexpr uint32_t GT_HASH = ConstExprHashingUtils::HashString("GT");
+        static constexpr uint32_t LT_HASH = ConstExprHashingUtils::HashString("LT");
 
 
         AnalyticsFilterOperator GetAnalyticsFilterOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EQ_HASH)
           {
             return AnalyticsFilterOperator::EQ;

@@ -20,13 +20,13 @@ namespace Aws
       namespace InputTypeMapper
       {
 
-        static const int REAL_TIME_HASH = HashingUtils::HashString("REAL_TIME");
-        static const int POST_CALL_HASH = HashingUtils::HashString("POST_CALL");
+        static constexpr uint32_t REAL_TIME_HASH = ConstExprHashingUtils::HashString("REAL_TIME");
+        static constexpr uint32_t POST_CALL_HASH = ConstExprHashingUtils::HashString("POST_CALL");
 
 
         InputType GetInputTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REAL_TIME_HASH)
           {
             return InputType::REAL_TIME;

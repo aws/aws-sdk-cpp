@@ -20,14 +20,14 @@ namespace Aws
       namespace CacheModeMapper
       {
 
-        static const int LOCAL_DOCKER_LAYER_CACHE_HASH = HashingUtils::HashString("LOCAL_DOCKER_LAYER_CACHE");
-        static const int LOCAL_SOURCE_CACHE_HASH = HashingUtils::HashString("LOCAL_SOURCE_CACHE");
-        static const int LOCAL_CUSTOM_CACHE_HASH = HashingUtils::HashString("LOCAL_CUSTOM_CACHE");
+        static constexpr uint32_t LOCAL_DOCKER_LAYER_CACHE_HASH = ConstExprHashingUtils::HashString("LOCAL_DOCKER_LAYER_CACHE");
+        static constexpr uint32_t LOCAL_SOURCE_CACHE_HASH = ConstExprHashingUtils::HashString("LOCAL_SOURCE_CACHE");
+        static constexpr uint32_t LOCAL_CUSTOM_CACHE_HASH = ConstExprHashingUtils::HashString("LOCAL_CUSTOM_CACHE");
 
 
         CacheMode GetCacheModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LOCAL_DOCKER_LAYER_CACHE_HASH)
           {
             return CacheMode::LOCAL_DOCKER_LAYER_CACHE;

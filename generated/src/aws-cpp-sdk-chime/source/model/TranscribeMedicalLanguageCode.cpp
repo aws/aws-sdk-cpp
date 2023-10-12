@@ -20,12 +20,12 @@ namespace Aws
       namespace TranscribeMedicalLanguageCodeMapper
       {
 
-        static const int en_US_HASH = HashingUtils::HashString("en-US");
+        static constexpr uint32_t en_US_HASH = ConstExprHashingUtils::HashString("en-US");
 
 
         TranscribeMedicalLanguageCode GetTranscribeMedicalLanguageCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == en_US_HASH)
           {
             return TranscribeMedicalLanguageCode::en_US;

@@ -20,12 +20,12 @@ namespace Aws
       namespace JobResourceTypeMapper
       {
 
-        static const int PACKAGE_HASH = HashingUtils::HashString("PACKAGE");
+        static constexpr uint32_t PACKAGE_HASH = ConstExprHashingUtils::HashString("PACKAGE");
 
 
         JobResourceType GetJobResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PACKAGE_HASH)
           {
             return JobResourceType::PACKAGE;

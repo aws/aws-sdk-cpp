@@ -20,14 +20,14 @@ namespace Aws
       namespace CsvHeaderOptionMapper
       {
 
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
-        static const int PRESENT_HASH = HashingUtils::HashString("PRESENT");
-        static const int ABSENT_HASH = HashingUtils::HashString("ABSENT");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t PRESENT_HASH = ConstExprHashingUtils::HashString("PRESENT");
+        static constexpr uint32_t ABSENT_HASH = ConstExprHashingUtils::HashString("ABSENT");
 
 
         CsvHeaderOption GetCsvHeaderOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNKNOWN_HASH)
           {
             return CsvHeaderOption::UNKNOWN;

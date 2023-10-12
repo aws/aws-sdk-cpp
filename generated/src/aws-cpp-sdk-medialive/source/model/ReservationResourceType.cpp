@@ -20,15 +20,15 @@ namespace Aws
       namespace ReservationResourceTypeMapper
       {
 
-        static const int INPUT_HASH = HashingUtils::HashString("INPUT");
-        static const int OUTPUT_HASH = HashingUtils::HashString("OUTPUT");
-        static const int MULTIPLEX_HASH = HashingUtils::HashString("MULTIPLEX");
-        static const int CHANNEL_HASH = HashingUtils::HashString("CHANNEL");
+        static constexpr uint32_t INPUT_HASH = ConstExprHashingUtils::HashString("INPUT");
+        static constexpr uint32_t OUTPUT_HASH = ConstExprHashingUtils::HashString("OUTPUT");
+        static constexpr uint32_t MULTIPLEX_HASH = ConstExprHashingUtils::HashString("MULTIPLEX");
+        static constexpr uint32_t CHANNEL_HASH = ConstExprHashingUtils::HashString("CHANNEL");
 
 
         ReservationResourceType GetReservationResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INPUT_HASH)
           {
             return ReservationResourceType::INPUT;

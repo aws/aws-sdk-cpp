@@ -20,14 +20,14 @@ namespace Aws
       namespace AuthenticationTypeMapper
       {
 
-        static const int password_HASH = HashingUtils::HashString("password");
-        static const int no_password_HASH = HashingUtils::HashString("no-password");
-        static const int iam_HASH = HashingUtils::HashString("iam");
+        static constexpr uint32_t password_HASH = ConstExprHashingUtils::HashString("password");
+        static constexpr uint32_t no_password_HASH = ConstExprHashingUtils::HashString("no-password");
+        static constexpr uint32_t iam_HASH = ConstExprHashingUtils::HashString("iam");
 
 
         AuthenticationType GetAuthenticationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == password_HASH)
           {
             return AuthenticationType::password;

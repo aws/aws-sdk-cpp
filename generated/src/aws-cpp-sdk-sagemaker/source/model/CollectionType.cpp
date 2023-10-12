@@ -20,14 +20,14 @@ namespace Aws
       namespace CollectionTypeMapper
       {
 
-        static const int List_HASH = HashingUtils::HashString("List");
-        static const int Set_HASH = HashingUtils::HashString("Set");
-        static const int Vector_HASH = HashingUtils::HashString("Vector");
+        static constexpr uint32_t List_HASH = ConstExprHashingUtils::HashString("List");
+        static constexpr uint32_t Set_HASH = ConstExprHashingUtils::HashString("Set");
+        static constexpr uint32_t Vector_HASH = ConstExprHashingUtils::HashString("Vector");
 
 
         CollectionType GetCollectionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == List_HASH)
           {
             return CollectionType::List;

@@ -20,15 +20,15 @@ namespace Aws
       namespace ResponseItemTypeMapper
       {
 
-        static const int DOCUMENT_HASH = HashingUtils::HashString("DOCUMENT");
-        static const int FOLDER_HASH = HashingUtils::HashString("FOLDER");
-        static const int COMMENT_HASH = HashingUtils::HashString("COMMENT");
-        static const int DOCUMENT_VERSION_HASH = HashingUtils::HashString("DOCUMENT_VERSION");
+        static constexpr uint32_t DOCUMENT_HASH = ConstExprHashingUtils::HashString("DOCUMENT");
+        static constexpr uint32_t FOLDER_HASH = ConstExprHashingUtils::HashString("FOLDER");
+        static constexpr uint32_t COMMENT_HASH = ConstExprHashingUtils::HashString("COMMENT");
+        static constexpr uint32_t DOCUMENT_VERSION_HASH = ConstExprHashingUtils::HashString("DOCUMENT_VERSION");
 
 
         ResponseItemType GetResponseItemTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DOCUMENT_HASH)
           {
             return ResponseItemType::DOCUMENT;

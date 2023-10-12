@@ -20,13 +20,13 @@ namespace Aws
       namespace DashIsoHbbtvComplianceMapper
       {
 
-        static const int HBBTV_1_5_HASH = HashingUtils::HashString("HBBTV_1_5");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t HBBTV_1_5_HASH = ConstExprHashingUtils::HashString("HBBTV_1_5");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         DashIsoHbbtvCompliance GetDashIsoHbbtvComplianceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HBBTV_1_5_HASH)
           {
             return DashIsoHbbtvCompliance::HBBTV_1_5;

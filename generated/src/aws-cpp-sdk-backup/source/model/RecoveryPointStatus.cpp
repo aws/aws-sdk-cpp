@@ -20,15 +20,15 @@ namespace Aws
       namespace RecoveryPointStatusMapper
       {
 
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int PARTIAL_HASH = HashingUtils::HashString("PARTIAL");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t PARTIAL_HASH = ConstExprHashingUtils::HashString("PARTIAL");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("EXPIRED");
 
 
         RecoveryPointStatus GetRecoveryPointStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPLETED_HASH)
           {
             return RecoveryPointStatus::COMPLETED;

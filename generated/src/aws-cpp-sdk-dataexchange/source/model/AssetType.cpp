@@ -20,16 +20,16 @@ namespace Aws
       namespace AssetTypeMapper
       {
 
-        static const int S3_SNAPSHOT_HASH = HashingUtils::HashString("S3_SNAPSHOT");
-        static const int REDSHIFT_DATA_SHARE_HASH = HashingUtils::HashString("REDSHIFT_DATA_SHARE");
-        static const int API_GATEWAY_API_HASH = HashingUtils::HashString("API_GATEWAY_API");
-        static const int S3_DATA_ACCESS_HASH = HashingUtils::HashString("S3_DATA_ACCESS");
-        static const int LAKE_FORMATION_DATA_PERMISSION_HASH = HashingUtils::HashString("LAKE_FORMATION_DATA_PERMISSION");
+        static constexpr uint32_t S3_SNAPSHOT_HASH = ConstExprHashingUtils::HashString("S3_SNAPSHOT");
+        static constexpr uint32_t REDSHIFT_DATA_SHARE_HASH = ConstExprHashingUtils::HashString("REDSHIFT_DATA_SHARE");
+        static constexpr uint32_t API_GATEWAY_API_HASH = ConstExprHashingUtils::HashString("API_GATEWAY_API");
+        static constexpr uint32_t S3_DATA_ACCESS_HASH = ConstExprHashingUtils::HashString("S3_DATA_ACCESS");
+        static constexpr uint32_t LAKE_FORMATION_DATA_PERMISSION_HASH = ConstExprHashingUtils::HashString("LAKE_FORMATION_DATA_PERMISSION");
 
 
         AssetType GetAssetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == S3_SNAPSHOT_HASH)
           {
             return AssetType::S3_SNAPSHOT;

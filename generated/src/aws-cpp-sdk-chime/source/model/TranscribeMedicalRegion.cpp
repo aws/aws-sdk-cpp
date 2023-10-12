@@ -20,18 +20,18 @@ namespace Aws
       namespace TranscribeMedicalRegionMapper
       {
 
-        static const int us_east_1_HASH = HashingUtils::HashString("us-east-1");
-        static const int us_east_2_HASH = HashingUtils::HashString("us-east-2");
-        static const int us_west_2_HASH = HashingUtils::HashString("us-west-2");
-        static const int ap_southeast_2_HASH = HashingUtils::HashString("ap-southeast-2");
-        static const int ca_central_1_HASH = HashingUtils::HashString("ca-central-1");
-        static const int eu_west_1_HASH = HashingUtils::HashString("eu-west-1");
-        static const int auto__HASH = HashingUtils::HashString("auto");
+        static constexpr uint32_t us_east_1_HASH = ConstExprHashingUtils::HashString("us-east-1");
+        static constexpr uint32_t us_east_2_HASH = ConstExprHashingUtils::HashString("us-east-2");
+        static constexpr uint32_t us_west_2_HASH = ConstExprHashingUtils::HashString("us-west-2");
+        static constexpr uint32_t ap_southeast_2_HASH = ConstExprHashingUtils::HashString("ap-southeast-2");
+        static constexpr uint32_t ca_central_1_HASH = ConstExprHashingUtils::HashString("ca-central-1");
+        static constexpr uint32_t eu_west_1_HASH = ConstExprHashingUtils::HashString("eu-west-1");
+        static constexpr uint32_t auto__HASH = ConstExprHashingUtils::HashString("auto");
 
 
         TranscribeMedicalRegion GetTranscribeMedicalRegionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == us_east_1_HASH)
           {
             return TranscribeMedicalRegion::us_east_1;

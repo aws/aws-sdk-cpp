@@ -20,15 +20,15 @@ namespace Aws
       namespace StudioComponentSubtypeMapper
       {
 
-        static const int AWS_MANAGED_MICROSOFT_AD_HASH = HashingUtils::HashString("AWS_MANAGED_MICROSOFT_AD");
-        static const int AMAZON_FSX_FOR_WINDOWS_HASH = HashingUtils::HashString("AMAZON_FSX_FOR_WINDOWS");
-        static const int AMAZON_FSX_FOR_LUSTRE_HASH = HashingUtils::HashString("AMAZON_FSX_FOR_LUSTRE");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t AWS_MANAGED_MICROSOFT_AD_HASH = ConstExprHashingUtils::HashString("AWS_MANAGED_MICROSOFT_AD");
+        static constexpr uint32_t AMAZON_FSX_FOR_WINDOWS_HASH = ConstExprHashingUtils::HashString("AMAZON_FSX_FOR_WINDOWS");
+        static constexpr uint32_t AMAZON_FSX_FOR_LUSTRE_HASH = ConstExprHashingUtils::HashString("AMAZON_FSX_FOR_LUSTRE");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
 
 
         StudioComponentSubtype GetStudioComponentSubtypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_MANAGED_MICROSOFT_AD_HASH)
           {
             return StudioComponentSubtype::AWS_MANAGED_MICROSOFT_AD;

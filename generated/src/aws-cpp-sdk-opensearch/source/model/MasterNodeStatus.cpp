@@ -20,13 +20,13 @@ namespace Aws
       namespace MasterNodeStatusMapper
       {
 
-        static const int Available_HASH = HashingUtils::HashString("Available");
-        static const int UnAvailable_HASH = HashingUtils::HashString("UnAvailable");
+        static constexpr uint32_t Available_HASH = ConstExprHashingUtils::HashString("Available");
+        static constexpr uint32_t UnAvailable_HASH = ConstExprHashingUtils::HashString("UnAvailable");
 
 
         MasterNodeStatus GetMasterNodeStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Available_HASH)
           {
             return MasterNodeStatus::Available;

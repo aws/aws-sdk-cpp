@@ -20,13 +20,13 @@ namespace Aws
       namespace CoreNetworkPolicyAliasMapper
       {
 
-        static const int LIVE_HASH = HashingUtils::HashString("LIVE");
-        static const int LATEST_HASH = HashingUtils::HashString("LATEST");
+        static constexpr uint32_t LIVE_HASH = ConstExprHashingUtils::HashString("LIVE");
+        static constexpr uint32_t LATEST_HASH = ConstExprHashingUtils::HashString("LATEST");
 
 
         CoreNetworkPolicyAlias GetCoreNetworkPolicyAliasForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LIVE_HASH)
           {
             return CoreNetworkPolicyAlias::LIVE;

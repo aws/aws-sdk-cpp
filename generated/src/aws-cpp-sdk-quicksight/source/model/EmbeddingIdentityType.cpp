@@ -20,14 +20,14 @@ namespace Aws
       namespace EmbeddingIdentityTypeMapper
       {
 
-        static const int IAM_HASH = HashingUtils::HashString("IAM");
-        static const int QUICKSIGHT_HASH = HashingUtils::HashString("QUICKSIGHT");
-        static const int ANONYMOUS_HASH = HashingUtils::HashString("ANONYMOUS");
+        static constexpr uint32_t IAM_HASH = ConstExprHashingUtils::HashString("IAM");
+        static constexpr uint32_t QUICKSIGHT_HASH = ConstExprHashingUtils::HashString("QUICKSIGHT");
+        static constexpr uint32_t ANONYMOUS_HASH = ConstExprHashingUtils::HashString("ANONYMOUS");
 
 
         EmbeddingIdentityType GetEmbeddingIdentityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IAM_HASH)
           {
             return EmbeddingIdentityType::IAM;

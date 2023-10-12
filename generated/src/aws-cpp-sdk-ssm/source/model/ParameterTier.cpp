@@ -20,14 +20,14 @@ namespace Aws
       namespace ParameterTierMapper
       {
 
-        static const int Standard_HASH = HashingUtils::HashString("Standard");
-        static const int Advanced_HASH = HashingUtils::HashString("Advanced");
-        static const int Intelligent_Tiering_HASH = HashingUtils::HashString("Intelligent-Tiering");
+        static constexpr uint32_t Standard_HASH = ConstExprHashingUtils::HashString("Standard");
+        static constexpr uint32_t Advanced_HASH = ConstExprHashingUtils::HashString("Advanced");
+        static constexpr uint32_t Intelligent_Tiering_HASH = ConstExprHashingUtils::HashString("Intelligent-Tiering");
 
 
         ParameterTier GetParameterTierForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Standard_HASH)
           {
             return ParameterTier::Standard;

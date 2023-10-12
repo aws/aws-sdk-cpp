@@ -20,14 +20,14 @@ namespace Aws
       namespace CodegenJobStatusMapper
       {
 
-        static const int in_progress_HASH = HashingUtils::HashString("in_progress");
-        static const int failed_HASH = HashingUtils::HashString("failed");
-        static const int succeeded_HASH = HashingUtils::HashString("succeeded");
+        static constexpr uint32_t in_progress_HASH = ConstExprHashingUtils::HashString("in_progress");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
+        static constexpr uint32_t succeeded_HASH = ConstExprHashingUtils::HashString("succeeded");
 
 
         CodegenJobStatus GetCodegenJobStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == in_progress_HASH)
           {
             return CodegenJobStatus::in_progress;

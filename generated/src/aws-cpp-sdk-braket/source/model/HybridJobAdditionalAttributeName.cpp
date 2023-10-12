@@ -20,12 +20,12 @@ namespace Aws
       namespace HybridJobAdditionalAttributeNameMapper
       {
 
-        static const int QueueInfo_HASH = HashingUtils::HashString("QueueInfo");
+        static constexpr uint32_t QueueInfo_HASH = ConstExprHashingUtils::HashString("QueueInfo");
 
 
         HybridJobAdditionalAttributeName GetHybridJobAdditionalAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QueueInfo_HASH)
           {
             return HybridJobAdditionalAttributeName::QueueInfo;

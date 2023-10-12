@@ -20,16 +20,16 @@ namespace Aws
       namespace PrivateConnectionProvisioningFailureCauseMapper
       {
 
-        static const int CONNECTOR_AUTHENTICATION_HASH = HashingUtils::HashString("CONNECTOR_AUTHENTICATION");
-        static const int CONNECTOR_SERVER_HASH = HashingUtils::HashString("CONNECTOR_SERVER");
-        static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("INTERNAL_SERVER");
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
-        static const int VALIDATION_HASH = HashingUtils::HashString("VALIDATION");
+        static constexpr uint32_t CONNECTOR_AUTHENTICATION_HASH = ConstExprHashingUtils::HashString("CONNECTOR_AUTHENTICATION");
+        static constexpr uint32_t CONNECTOR_SERVER_HASH = ConstExprHashingUtils::HashString("CONNECTOR_SERVER");
+        static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("INTERNAL_SERVER");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t VALIDATION_HASH = ConstExprHashingUtils::HashString("VALIDATION");
 
 
         PrivateConnectionProvisioningFailureCause GetPrivateConnectionProvisioningFailureCauseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONNECTOR_AUTHENTICATION_HASH)
           {
             return PrivateConnectionProvisioningFailureCause::CONNECTOR_AUTHENTICATION;

@@ -20,12 +20,12 @@ namespace Aws
       namespace AssetTypeMapper
       {
 
-        static const int ec2_instance_HASH = HashingUtils::HashString("ec2-instance");
+        static constexpr uint32_t ec2_instance_HASH = ConstExprHashingUtils::HashString("ec2-instance");
 
 
         AssetType GetAssetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ec2_instance_HASH)
           {
             return AssetType::ec2_instance;

@@ -20,15 +20,15 @@ namespace Aws
       namespace HyperParameterScalingTypeMapper
       {
 
-        static const int Auto_HASH = HashingUtils::HashString("Auto");
-        static const int Linear_HASH = HashingUtils::HashString("Linear");
-        static const int Logarithmic_HASH = HashingUtils::HashString("Logarithmic");
-        static const int ReverseLogarithmic_HASH = HashingUtils::HashString("ReverseLogarithmic");
+        static constexpr uint32_t Auto_HASH = ConstExprHashingUtils::HashString("Auto");
+        static constexpr uint32_t Linear_HASH = ConstExprHashingUtils::HashString("Linear");
+        static constexpr uint32_t Logarithmic_HASH = ConstExprHashingUtils::HashString("Logarithmic");
+        static constexpr uint32_t ReverseLogarithmic_HASH = ConstExprHashingUtils::HashString("ReverseLogarithmic");
 
 
         HyperParameterScalingType GetHyperParameterScalingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Auto_HASH)
           {
             return HyperParameterScalingType::Auto;

@@ -20,15 +20,15 @@ namespace Aws
       namespace LogTypeMapper
       {
 
-        static const int INDEX_SLOW_LOGS_HASH = HashingUtils::HashString("INDEX_SLOW_LOGS");
-        static const int SEARCH_SLOW_LOGS_HASH = HashingUtils::HashString("SEARCH_SLOW_LOGS");
-        static const int ES_APPLICATION_LOGS_HASH = HashingUtils::HashString("ES_APPLICATION_LOGS");
-        static const int AUDIT_LOGS_HASH = HashingUtils::HashString("AUDIT_LOGS");
+        static constexpr uint32_t INDEX_SLOW_LOGS_HASH = ConstExprHashingUtils::HashString("INDEX_SLOW_LOGS");
+        static constexpr uint32_t SEARCH_SLOW_LOGS_HASH = ConstExprHashingUtils::HashString("SEARCH_SLOW_LOGS");
+        static constexpr uint32_t ES_APPLICATION_LOGS_HASH = ConstExprHashingUtils::HashString("ES_APPLICATION_LOGS");
+        static constexpr uint32_t AUDIT_LOGS_HASH = ConstExprHashingUtils::HashString("AUDIT_LOGS");
 
 
         LogType GetLogTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INDEX_SLOW_LOGS_HASH)
           {
             return LogType::INDEX_SLOW_LOGS;

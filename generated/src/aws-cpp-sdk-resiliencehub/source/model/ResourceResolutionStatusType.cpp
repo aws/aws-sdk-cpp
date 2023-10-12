@@ -20,15 +20,15 @@ namespace Aws
       namespace ResourceResolutionStatusTypeMapper
       {
 
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Success_HASH = HashingUtils::HashString("Success");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Success_HASH = ConstExprHashingUtils::HashString("Success");
 
 
         ResourceResolutionStatusType GetResourceResolutionStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pending_HASH)
           {
             return ResourceResolutionStatusType::Pending;

@@ -18,15 +18,15 @@ namespace ApiGatewayManagementApi
 namespace ApiGatewayManagementApiErrorMapper
 {
 
-static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
-static const int GONE_HASH = HashingUtils::HashString("GoneException");
-static const int PAYLOAD_TOO_LARGE_HASH = HashingUtils::HashString("PayloadTooLargeException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t FORBIDDEN_HASH = ConstExprHashingUtils::HashString("ForbiddenException");
+static constexpr uint32_t GONE_HASH = ConstExprHashingUtils::HashString("GoneException");
+static constexpr uint32_t PAYLOAD_TOO_LARGE_HASH = ConstExprHashingUtils::HashString("PayloadTooLargeException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == FORBIDDEN_HASH)
   {

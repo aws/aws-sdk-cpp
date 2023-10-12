@@ -20,15 +20,15 @@ namespace Aws
       namespace InstancePatchStateOperatorTypeMapper
       {
 
-        static const int Equal_HASH = HashingUtils::HashString("Equal");
-        static const int NotEqual_HASH = HashingUtils::HashString("NotEqual");
-        static const int LessThan_HASH = HashingUtils::HashString("LessThan");
-        static const int GreaterThan_HASH = HashingUtils::HashString("GreaterThan");
+        static constexpr uint32_t Equal_HASH = ConstExprHashingUtils::HashString("Equal");
+        static constexpr uint32_t NotEqual_HASH = ConstExprHashingUtils::HashString("NotEqual");
+        static constexpr uint32_t LessThan_HASH = ConstExprHashingUtils::HashString("LessThan");
+        static constexpr uint32_t GreaterThan_HASH = ConstExprHashingUtils::HashString("GreaterThan");
 
 
         InstancePatchStateOperatorType GetInstancePatchStateOperatorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Equal_HASH)
           {
             return InstancePatchStateOperatorType::Equal;

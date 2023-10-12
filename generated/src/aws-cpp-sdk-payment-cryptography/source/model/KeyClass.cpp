@@ -20,15 +20,15 @@ namespace Aws
       namespace KeyClassMapper
       {
 
-        static const int SYMMETRIC_KEY_HASH = HashingUtils::HashString("SYMMETRIC_KEY");
-        static const int ASYMMETRIC_KEY_PAIR_HASH = HashingUtils::HashString("ASYMMETRIC_KEY_PAIR");
-        static const int PRIVATE_KEY_HASH = HashingUtils::HashString("PRIVATE_KEY");
-        static const int PUBLIC_KEY_HASH = HashingUtils::HashString("PUBLIC_KEY");
+        static constexpr uint32_t SYMMETRIC_KEY_HASH = ConstExprHashingUtils::HashString("SYMMETRIC_KEY");
+        static constexpr uint32_t ASYMMETRIC_KEY_PAIR_HASH = ConstExprHashingUtils::HashString("ASYMMETRIC_KEY_PAIR");
+        static constexpr uint32_t PRIVATE_KEY_HASH = ConstExprHashingUtils::HashString("PRIVATE_KEY");
+        static constexpr uint32_t PUBLIC_KEY_HASH = ConstExprHashingUtils::HashString("PUBLIC_KEY");
 
 
         KeyClass GetKeyClassForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SYMMETRIC_KEY_HASH)
           {
             return KeyClass::SYMMETRIC_KEY;

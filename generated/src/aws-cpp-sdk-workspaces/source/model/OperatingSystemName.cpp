@@ -20,22 +20,22 @@ namespace Aws
       namespace OperatingSystemNameMapper
       {
 
-        static const int AMAZON_LINUX_2_HASH = HashingUtils::HashString("AMAZON_LINUX_2");
-        static const int UBUNTU_18_04_HASH = HashingUtils::HashString("UBUNTU_18_04");
-        static const int UBUNTU_20_04_HASH = HashingUtils::HashString("UBUNTU_20_04");
-        static const int UBUNTU_22_04_HASH = HashingUtils::HashString("UBUNTU_22_04");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
-        static const int WINDOWS_10_HASH = HashingUtils::HashString("WINDOWS_10");
-        static const int WINDOWS_11_HASH = HashingUtils::HashString("WINDOWS_11");
-        static const int WINDOWS_7_HASH = HashingUtils::HashString("WINDOWS_7");
-        static const int WINDOWS_SERVER_2016_HASH = HashingUtils::HashString("WINDOWS_SERVER_2016");
-        static const int WINDOWS_SERVER_2019_HASH = HashingUtils::HashString("WINDOWS_SERVER_2019");
-        static const int WINDOWS_SERVER_2022_HASH = HashingUtils::HashString("WINDOWS_SERVER_2022");
+        static constexpr uint32_t AMAZON_LINUX_2_HASH = ConstExprHashingUtils::HashString("AMAZON_LINUX_2");
+        static constexpr uint32_t UBUNTU_18_04_HASH = ConstExprHashingUtils::HashString("UBUNTU_18_04");
+        static constexpr uint32_t UBUNTU_20_04_HASH = ConstExprHashingUtils::HashString("UBUNTU_20_04");
+        static constexpr uint32_t UBUNTU_22_04_HASH = ConstExprHashingUtils::HashString("UBUNTU_22_04");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t WINDOWS_10_HASH = ConstExprHashingUtils::HashString("WINDOWS_10");
+        static constexpr uint32_t WINDOWS_11_HASH = ConstExprHashingUtils::HashString("WINDOWS_11");
+        static constexpr uint32_t WINDOWS_7_HASH = ConstExprHashingUtils::HashString("WINDOWS_7");
+        static constexpr uint32_t WINDOWS_SERVER_2016_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2016");
+        static constexpr uint32_t WINDOWS_SERVER_2019_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2019");
+        static constexpr uint32_t WINDOWS_SERVER_2022_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2022");
 
 
         OperatingSystemName GetOperatingSystemNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AMAZON_LINUX_2_HASH)
           {
             return OperatingSystemName::AMAZON_LINUX_2;

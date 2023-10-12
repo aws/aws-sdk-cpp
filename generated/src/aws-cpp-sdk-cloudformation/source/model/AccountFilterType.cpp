@@ -20,15 +20,15 @@ namespace Aws
       namespace AccountFilterTypeMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int INTERSECTION_HASH = HashingUtils::HashString("INTERSECTION");
-        static const int DIFFERENCE_HASH = HashingUtils::HashString("DIFFERENCE");
-        static const int UNION_HASH = HashingUtils::HashString("UNION");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t INTERSECTION_HASH = ConstExprHashingUtils::HashString("INTERSECTION");
+        static constexpr uint32_t DIFFERENCE_HASH = ConstExprHashingUtils::HashString("DIFFERENCE");
+        static constexpr uint32_t UNION_HASH = ConstExprHashingUtils::HashString("UNION");
 
 
         AccountFilterType GetAccountFilterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return AccountFilterType::NONE;

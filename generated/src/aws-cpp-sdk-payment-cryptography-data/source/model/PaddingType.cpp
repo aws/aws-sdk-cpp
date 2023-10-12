@@ -20,15 +20,15 @@ namespace Aws
       namespace PaddingTypeMapper
       {
 
-        static const int PKCS1_HASH = HashingUtils::HashString("PKCS1");
-        static const int OAEP_SHA1_HASH = HashingUtils::HashString("OAEP_SHA1");
-        static const int OAEP_SHA256_HASH = HashingUtils::HashString("OAEP_SHA256");
-        static const int OAEP_SHA512_HASH = HashingUtils::HashString("OAEP_SHA512");
+        static constexpr uint32_t PKCS1_HASH = ConstExprHashingUtils::HashString("PKCS1");
+        static constexpr uint32_t OAEP_SHA1_HASH = ConstExprHashingUtils::HashString("OAEP_SHA1");
+        static constexpr uint32_t OAEP_SHA256_HASH = ConstExprHashingUtils::HashString("OAEP_SHA256");
+        static constexpr uint32_t OAEP_SHA512_HASH = ConstExprHashingUtils::HashString("OAEP_SHA512");
 
 
         PaddingType GetPaddingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PKCS1_HASH)
           {
             return PaddingType::PKCS1;

@@ -20,13 +20,13 @@ namespace Aws
       namespace EnvironmentTypeMapper
       {
 
-        static const int ssh_HASH = HashingUtils::HashString("ssh");
-        static const int ec2_HASH = HashingUtils::HashString("ec2");
+        static constexpr uint32_t ssh_HASH = ConstExprHashingUtils::HashString("ssh");
+        static constexpr uint32_t ec2_HASH = ConstExprHashingUtils::HashString("ec2");
 
 
         EnvironmentType GetEnvironmentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ssh_HASH)
           {
             return EnvironmentType::ssh;

@@ -20,14 +20,14 @@ namespace Aws
       namespace FulfillmentStateMapper
       {
 
-        static const int Fulfilled_HASH = HashingUtils::HashString("Fulfilled");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int ReadyForFulfillment_HASH = HashingUtils::HashString("ReadyForFulfillment");
+        static constexpr uint32_t Fulfilled_HASH = ConstExprHashingUtils::HashString("Fulfilled");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t ReadyForFulfillment_HASH = ConstExprHashingUtils::HashString("ReadyForFulfillment");
 
 
         FulfillmentState GetFulfillmentStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Fulfilled_HASH)
           {
             return FulfillmentState::Fulfilled;

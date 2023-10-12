@@ -20,13 +20,13 @@ namespace Aws
       namespace FieldNamespaceMapper
       {
 
-        static const int System_HASH = HashingUtils::HashString("System");
-        static const int Custom_HASH = HashingUtils::HashString("Custom");
+        static constexpr uint32_t System_HASH = ConstExprHashingUtils::HashString("System");
+        static constexpr uint32_t Custom_HASH = ConstExprHashingUtils::HashString("Custom");
 
 
         FieldNamespace GetFieldNamespaceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == System_HASH)
           {
             return FieldNamespace::System;

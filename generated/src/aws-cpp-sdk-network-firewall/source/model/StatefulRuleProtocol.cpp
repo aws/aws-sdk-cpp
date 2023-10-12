@@ -20,30 +20,30 @@ namespace Aws
       namespace StatefulRuleProtocolMapper
       {
 
-        static const int IP_HASH = HashingUtils::HashString("IP");
-        static const int TCP_HASH = HashingUtils::HashString("TCP");
-        static const int UDP_HASH = HashingUtils::HashString("UDP");
-        static const int ICMP_HASH = HashingUtils::HashString("ICMP");
-        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
-        static const int FTP_HASH = HashingUtils::HashString("FTP");
-        static const int TLS_HASH = HashingUtils::HashString("TLS");
-        static const int SMB_HASH = HashingUtils::HashString("SMB");
-        static const int DNS_HASH = HashingUtils::HashString("DNS");
-        static const int DCERPC_HASH = HashingUtils::HashString("DCERPC");
-        static const int SSH_HASH = HashingUtils::HashString("SSH");
-        static const int SMTP_HASH = HashingUtils::HashString("SMTP");
-        static const int IMAP_HASH = HashingUtils::HashString("IMAP");
-        static const int MSN_HASH = HashingUtils::HashString("MSN");
-        static const int KRB5_HASH = HashingUtils::HashString("KRB5");
-        static const int IKEV2_HASH = HashingUtils::HashString("IKEV2");
-        static const int TFTP_HASH = HashingUtils::HashString("TFTP");
-        static const int NTP_HASH = HashingUtils::HashString("NTP");
-        static const int DHCP_HASH = HashingUtils::HashString("DHCP");
+        static constexpr uint32_t IP_HASH = ConstExprHashingUtils::HashString("IP");
+        static constexpr uint32_t TCP_HASH = ConstExprHashingUtils::HashString("TCP");
+        static constexpr uint32_t UDP_HASH = ConstExprHashingUtils::HashString("UDP");
+        static constexpr uint32_t ICMP_HASH = ConstExprHashingUtils::HashString("ICMP");
+        static constexpr uint32_t HTTP_HASH = ConstExprHashingUtils::HashString("HTTP");
+        static constexpr uint32_t FTP_HASH = ConstExprHashingUtils::HashString("FTP");
+        static constexpr uint32_t TLS_HASH = ConstExprHashingUtils::HashString("TLS");
+        static constexpr uint32_t SMB_HASH = ConstExprHashingUtils::HashString("SMB");
+        static constexpr uint32_t DNS_HASH = ConstExprHashingUtils::HashString("DNS");
+        static constexpr uint32_t DCERPC_HASH = ConstExprHashingUtils::HashString("DCERPC");
+        static constexpr uint32_t SSH_HASH = ConstExprHashingUtils::HashString("SSH");
+        static constexpr uint32_t SMTP_HASH = ConstExprHashingUtils::HashString("SMTP");
+        static constexpr uint32_t IMAP_HASH = ConstExprHashingUtils::HashString("IMAP");
+        static constexpr uint32_t MSN_HASH = ConstExprHashingUtils::HashString("MSN");
+        static constexpr uint32_t KRB5_HASH = ConstExprHashingUtils::HashString("KRB5");
+        static constexpr uint32_t IKEV2_HASH = ConstExprHashingUtils::HashString("IKEV2");
+        static constexpr uint32_t TFTP_HASH = ConstExprHashingUtils::HashString("TFTP");
+        static constexpr uint32_t NTP_HASH = ConstExprHashingUtils::HashString("NTP");
+        static constexpr uint32_t DHCP_HASH = ConstExprHashingUtils::HashString("DHCP");
 
 
         StatefulRuleProtocol GetStatefulRuleProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IP_HASH)
           {
             return StatefulRuleProtocol::IP;

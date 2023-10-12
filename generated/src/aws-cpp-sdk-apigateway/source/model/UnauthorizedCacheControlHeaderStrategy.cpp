@@ -20,14 +20,14 @@ namespace Aws
       namespace UnauthorizedCacheControlHeaderStrategyMapper
       {
 
-        static const int FAIL_WITH_403_HASH = HashingUtils::HashString("FAIL_WITH_403");
-        static const int SUCCEED_WITH_RESPONSE_HEADER_HASH = HashingUtils::HashString("SUCCEED_WITH_RESPONSE_HEADER");
-        static const int SUCCEED_WITHOUT_RESPONSE_HEADER_HASH = HashingUtils::HashString("SUCCEED_WITHOUT_RESPONSE_HEADER");
+        static constexpr uint32_t FAIL_WITH_403_HASH = ConstExprHashingUtils::HashString("FAIL_WITH_403");
+        static constexpr uint32_t SUCCEED_WITH_RESPONSE_HEADER_HASH = ConstExprHashingUtils::HashString("SUCCEED_WITH_RESPONSE_HEADER");
+        static constexpr uint32_t SUCCEED_WITHOUT_RESPONSE_HEADER_HASH = ConstExprHashingUtils::HashString("SUCCEED_WITHOUT_RESPONSE_HEADER");
 
 
         UnauthorizedCacheControlHeaderStrategy GetUnauthorizedCacheControlHeaderStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FAIL_WITH_403_HASH)
           {
             return UnauthorizedCacheControlHeaderStrategy::FAIL_WITH_403;

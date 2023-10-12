@@ -20,12 +20,12 @@ namespace Aws
       namespace EvaluationStateMapper
       {
 
-        static const int PARTIAL_DATA_HASH = HashingUtils::HashString("PARTIAL_DATA");
+        static constexpr uint32_t PARTIAL_DATA_HASH = ConstExprHashingUtils::HashString("PARTIAL_DATA");
 
 
         EvaluationState GetEvaluationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PARTIAL_DATA_HASH)
           {
             return EvaluationState::PARTIAL_DATA;

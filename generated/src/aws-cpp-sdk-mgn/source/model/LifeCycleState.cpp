@@ -20,21 +20,21 @@ namespace Aws
       namespace LifeCycleStateMapper
       {
 
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
-        static const int NOT_READY_HASH = HashingUtils::HashString("NOT_READY");
-        static const int READY_FOR_TEST_HASH = HashingUtils::HashString("READY_FOR_TEST");
-        static const int TESTING_HASH = HashingUtils::HashString("TESTING");
-        static const int READY_FOR_CUTOVER_HASH = HashingUtils::HashString("READY_FOR_CUTOVER");
-        static const int CUTTING_OVER_HASH = HashingUtils::HashString("CUTTING_OVER");
-        static const int CUTOVER_HASH = HashingUtils::HashString("CUTOVER");
-        static const int DISCONNECTED_HASH = HashingUtils::HashString("DISCONNECTED");
-        static const int DISCOVERED_HASH = HashingUtils::HashString("DISCOVERED");
-        static const int PENDING_INSTALLATION_HASH = HashingUtils::HashString("PENDING_INSTALLATION");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
+        static constexpr uint32_t NOT_READY_HASH = ConstExprHashingUtils::HashString("NOT_READY");
+        static constexpr uint32_t READY_FOR_TEST_HASH = ConstExprHashingUtils::HashString("READY_FOR_TEST");
+        static constexpr uint32_t TESTING_HASH = ConstExprHashingUtils::HashString("TESTING");
+        static constexpr uint32_t READY_FOR_CUTOVER_HASH = ConstExprHashingUtils::HashString("READY_FOR_CUTOVER");
+        static constexpr uint32_t CUTTING_OVER_HASH = ConstExprHashingUtils::HashString("CUTTING_OVER");
+        static constexpr uint32_t CUTOVER_HASH = ConstExprHashingUtils::HashString("CUTOVER");
+        static constexpr uint32_t DISCONNECTED_HASH = ConstExprHashingUtils::HashString("DISCONNECTED");
+        static constexpr uint32_t DISCOVERED_HASH = ConstExprHashingUtils::HashString("DISCOVERED");
+        static constexpr uint32_t PENDING_INSTALLATION_HASH = ConstExprHashingUtils::HashString("PENDING_INSTALLATION");
 
 
         LifeCycleState GetLifeCycleStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STOPPED_HASH)
           {
             return LifeCycleState::STOPPED;

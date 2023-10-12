@@ -20,13 +20,13 @@ namespace Aws
       namespace M3u8NielsenId3BehaviorMapper
       {
 
-        static const int NO_PASSTHROUGH_HASH = HashingUtils::HashString("NO_PASSTHROUGH");
-        static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
+        static constexpr uint32_t NO_PASSTHROUGH_HASH = ConstExprHashingUtils::HashString("NO_PASSTHROUGH");
+        static constexpr uint32_t PASSTHROUGH_HASH = ConstExprHashingUtils::HashString("PASSTHROUGH");
 
 
         M3u8NielsenId3Behavior GetM3u8NielsenId3BehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_PASSTHROUGH_HASH)
           {
             return M3u8NielsenId3Behavior::NO_PASSTHROUGH;

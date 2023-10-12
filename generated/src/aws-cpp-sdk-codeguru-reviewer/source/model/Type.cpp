@@ -20,13 +20,13 @@ namespace Aws
       namespace TypeMapper
       {
 
-        static const int PullRequest_HASH = HashingUtils::HashString("PullRequest");
-        static const int RepositoryAnalysis_HASH = HashingUtils::HashString("RepositoryAnalysis");
+        static constexpr uint32_t PullRequest_HASH = ConstExprHashingUtils::HashString("PullRequest");
+        static constexpr uint32_t RepositoryAnalysis_HASH = ConstExprHashingUtils::HashString("RepositoryAnalysis");
 
 
         Type GetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PullRequest_HASH)
           {
             return Type::PullRequest;

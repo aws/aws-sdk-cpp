@@ -20,24 +20,24 @@ namespace Aws
       namespace ScalarFunctionsMapper
       {
 
-        static const int TRUNC_HASH = HashingUtils::HashString("TRUNC");
-        static const int ABS_HASH = HashingUtils::HashString("ABS");
-        static const int CEILING_HASH = HashingUtils::HashString("CEILING");
-        static const int FLOOR_HASH = HashingUtils::HashString("FLOOR");
-        static const int LN_HASH = HashingUtils::HashString("LN");
-        static const int LOG_HASH = HashingUtils::HashString("LOG");
-        static const int ROUND_HASH = HashingUtils::HashString("ROUND");
-        static const int SQRT_HASH = HashingUtils::HashString("SQRT");
-        static const int CAST_HASH = HashingUtils::HashString("CAST");
-        static const int LOWER_HASH = HashingUtils::HashString("LOWER");
-        static const int RTRIM_HASH = HashingUtils::HashString("RTRIM");
-        static const int UPPER_HASH = HashingUtils::HashString("UPPER");
-        static const int COALESCE_HASH = HashingUtils::HashString("COALESCE");
+        static constexpr uint32_t TRUNC_HASH = ConstExprHashingUtils::HashString("TRUNC");
+        static constexpr uint32_t ABS_HASH = ConstExprHashingUtils::HashString("ABS");
+        static constexpr uint32_t CEILING_HASH = ConstExprHashingUtils::HashString("CEILING");
+        static constexpr uint32_t FLOOR_HASH = ConstExprHashingUtils::HashString("FLOOR");
+        static constexpr uint32_t LN_HASH = ConstExprHashingUtils::HashString("LN");
+        static constexpr uint32_t LOG_HASH = ConstExprHashingUtils::HashString("LOG");
+        static constexpr uint32_t ROUND_HASH = ConstExprHashingUtils::HashString("ROUND");
+        static constexpr uint32_t SQRT_HASH = ConstExprHashingUtils::HashString("SQRT");
+        static constexpr uint32_t CAST_HASH = ConstExprHashingUtils::HashString("CAST");
+        static constexpr uint32_t LOWER_HASH = ConstExprHashingUtils::HashString("LOWER");
+        static constexpr uint32_t RTRIM_HASH = ConstExprHashingUtils::HashString("RTRIM");
+        static constexpr uint32_t UPPER_HASH = ConstExprHashingUtils::HashString("UPPER");
+        static constexpr uint32_t COALESCE_HASH = ConstExprHashingUtils::HashString("COALESCE");
 
 
         ScalarFunctions GetScalarFunctionsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRUNC_HASH)
           {
             return ScalarFunctions::TRUNC;

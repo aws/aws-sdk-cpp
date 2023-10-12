@@ -20,16 +20,16 @@ namespace Aws
       namespace AthenaResultFormatMapper
       {
 
-        static const int PARQUET_HASH = HashingUtils::HashString("PARQUET");
-        static const int ORC_HASH = HashingUtils::HashString("ORC");
-        static const int AVRO_HASH = HashingUtils::HashString("AVRO");
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
-        static const int TEXTFILE_HASH = HashingUtils::HashString("TEXTFILE");
+        static constexpr uint32_t PARQUET_HASH = ConstExprHashingUtils::HashString("PARQUET");
+        static constexpr uint32_t ORC_HASH = ConstExprHashingUtils::HashString("ORC");
+        static constexpr uint32_t AVRO_HASH = ConstExprHashingUtils::HashString("AVRO");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
+        static constexpr uint32_t TEXTFILE_HASH = ConstExprHashingUtils::HashString("TEXTFILE");
 
 
         AthenaResultFormat GetAthenaResultFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PARQUET_HASH)
           {
             return AthenaResultFormat::PARQUET;

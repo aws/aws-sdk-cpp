@@ -20,13 +20,13 @@ namespace Aws
       namespace AdditionalResourceTypeMapper
       {
 
-        static const int HELPFUL_RESOURCE_HASH = HashingUtils::HashString("HELPFUL_RESOURCE");
-        static const int IMPROVEMENT_PLAN_HASH = HashingUtils::HashString("IMPROVEMENT_PLAN");
+        static constexpr uint32_t HELPFUL_RESOURCE_HASH = ConstExprHashingUtils::HashString("HELPFUL_RESOURCE");
+        static constexpr uint32_t IMPROVEMENT_PLAN_HASH = ConstExprHashingUtils::HashString("IMPROVEMENT_PLAN");
 
 
         AdditionalResourceType GetAdditionalResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HELPFUL_RESOURCE_HASH)
           {
             return AdditionalResourceType::HELPFUL_RESOURCE;

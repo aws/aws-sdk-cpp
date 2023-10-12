@@ -20,12 +20,12 @@ namespace Aws
       namespace MediaPipelineSourceTypeMapper
       {
 
-        static const int ChimeSdkMeeting_HASH = HashingUtils::HashString("ChimeSdkMeeting");
+        static constexpr uint32_t ChimeSdkMeeting_HASH = ConstExprHashingUtils::HashString("ChimeSdkMeeting");
 
 
         MediaPipelineSourceType GetMediaPipelineSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ChimeSdkMeeting_HASH)
           {
             return MediaPipelineSourceType::ChimeSdkMeeting;

@@ -20,19 +20,19 @@ namespace Aws
       namespace ExperimentActionStatusMapper
       {
 
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int initiating_HASH = HashingUtils::HashString("initiating");
-        static const int running_HASH = HashingUtils::HashString("running");
-        static const int completed_HASH = HashingUtils::HashString("completed");
-        static const int cancelled_HASH = HashingUtils::HashString("cancelled");
-        static const int stopping_HASH = HashingUtils::HashString("stopping");
-        static const int stopped_HASH = HashingUtils::HashString("stopped");
-        static const int failed_HASH = HashingUtils::HashString("failed");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t initiating_HASH = ConstExprHashingUtils::HashString("initiating");
+        static constexpr uint32_t running_HASH = ConstExprHashingUtils::HashString("running");
+        static constexpr uint32_t completed_HASH = ConstExprHashingUtils::HashString("completed");
+        static constexpr uint32_t cancelled_HASH = ConstExprHashingUtils::HashString("cancelled");
+        static constexpr uint32_t stopping_HASH = ConstExprHashingUtils::HashString("stopping");
+        static constexpr uint32_t stopped_HASH = ConstExprHashingUtils::HashString("stopped");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
 
 
         ExperimentActionStatus GetExperimentActionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pending_HASH)
           {
             return ExperimentActionStatus::pending;

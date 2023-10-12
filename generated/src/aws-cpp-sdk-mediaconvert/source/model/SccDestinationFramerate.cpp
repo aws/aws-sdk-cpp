@@ -20,16 +20,16 @@ namespace Aws
       namespace SccDestinationFramerateMapper
       {
 
-        static const int FRAMERATE_23_97_HASH = HashingUtils::HashString("FRAMERATE_23_97");
-        static const int FRAMERATE_24_HASH = HashingUtils::HashString("FRAMERATE_24");
-        static const int FRAMERATE_25_HASH = HashingUtils::HashString("FRAMERATE_25");
-        static const int FRAMERATE_29_97_DROPFRAME_HASH = HashingUtils::HashString("FRAMERATE_29_97_DROPFRAME");
-        static const int FRAMERATE_29_97_NON_DROPFRAME_HASH = HashingUtils::HashString("FRAMERATE_29_97_NON_DROPFRAME");
+        static constexpr uint32_t FRAMERATE_23_97_HASH = ConstExprHashingUtils::HashString("FRAMERATE_23_97");
+        static constexpr uint32_t FRAMERATE_24_HASH = ConstExprHashingUtils::HashString("FRAMERATE_24");
+        static constexpr uint32_t FRAMERATE_25_HASH = ConstExprHashingUtils::HashString("FRAMERATE_25");
+        static constexpr uint32_t FRAMERATE_29_97_DROPFRAME_HASH = ConstExprHashingUtils::HashString("FRAMERATE_29_97_DROPFRAME");
+        static constexpr uint32_t FRAMERATE_29_97_NON_DROPFRAME_HASH = ConstExprHashingUtils::HashString("FRAMERATE_29_97_NON_DROPFRAME");
 
 
         SccDestinationFramerate GetSccDestinationFramerateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FRAMERATE_23_97_HASH)
           {
             return SccDestinationFramerate::FRAMERATE_23_97;

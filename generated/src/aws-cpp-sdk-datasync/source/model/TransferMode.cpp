@@ -20,13 +20,13 @@ namespace Aws
       namespace TransferModeMapper
       {
 
-        static const int CHANGED_HASH = HashingUtils::HashString("CHANGED");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t CHANGED_HASH = ConstExprHashingUtils::HashString("CHANGED");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         TransferMode GetTransferModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CHANGED_HASH)
           {
             return TransferMode::CHANGED;

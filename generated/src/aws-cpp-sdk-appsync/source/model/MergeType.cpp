@@ -20,13 +20,13 @@ namespace Aws
       namespace MergeTypeMapper
       {
 
-        static const int MANUAL_MERGE_HASH = HashingUtils::HashString("MANUAL_MERGE");
-        static const int AUTO_MERGE_HASH = HashingUtils::HashString("AUTO_MERGE");
+        static constexpr uint32_t MANUAL_MERGE_HASH = ConstExprHashingUtils::HashString("MANUAL_MERGE");
+        static constexpr uint32_t AUTO_MERGE_HASH = ConstExprHashingUtils::HashString("AUTO_MERGE");
 
 
         MergeType GetMergeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MANUAL_MERGE_HASH)
           {
             return MergeType::MANUAL_MERGE;

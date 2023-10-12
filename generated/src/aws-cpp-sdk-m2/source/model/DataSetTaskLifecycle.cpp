@@ -20,14 +20,14 @@ namespace Aws
       namespace DataSetTaskLifecycleMapper
       {
 
-        static const int Creating_HASH = HashingUtils::HashString("Creating");
-        static const int Running_HASH = HashingUtils::HashString("Running");
-        static const int Completed_HASH = HashingUtils::HashString("Completed");
+        static constexpr uint32_t Creating_HASH = ConstExprHashingUtils::HashString("Creating");
+        static constexpr uint32_t Running_HASH = ConstExprHashingUtils::HashString("Running");
+        static constexpr uint32_t Completed_HASH = ConstExprHashingUtils::HashString("Completed");
 
 
         DataSetTaskLifecycle GetDataSetTaskLifecycleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Creating_HASH)
           {
             return DataSetTaskLifecycle::Creating;

@@ -20,14 +20,14 @@ namespace Aws
       namespace MLModelTypeMapper
       {
 
-        static const int REGRESSION_HASH = HashingUtils::HashString("REGRESSION");
-        static const int BINARY_HASH = HashingUtils::HashString("BINARY");
-        static const int MULTICLASS_HASH = HashingUtils::HashString("MULTICLASS");
+        static constexpr uint32_t REGRESSION_HASH = ConstExprHashingUtils::HashString("REGRESSION");
+        static constexpr uint32_t BINARY_HASH = ConstExprHashingUtils::HashString("BINARY");
+        static constexpr uint32_t MULTICLASS_HASH = ConstExprHashingUtils::HashString("MULTICLASS");
 
 
         MLModelType GetMLModelTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REGRESSION_HASH)
           {
             return MLModelType::REGRESSION;

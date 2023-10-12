@@ -20,15 +20,15 @@ namespace Aws
       namespace FlowDefinitionStatusMapper
       {
 
-        static const int Initializing_HASH = HashingUtils::HashString("Initializing");
-        static const int Active_HASH = HashingUtils::HashString("Active");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
+        static constexpr uint32_t Initializing_HASH = ConstExprHashingUtils::HashString("Initializing");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
 
 
         FlowDefinitionStatus GetFlowDefinitionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Initializing_HASH)
           {
             return FlowDefinitionStatus::Initializing;

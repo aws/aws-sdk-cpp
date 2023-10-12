@@ -20,26 +20,26 @@ namespace Aws
       namespace ApiCacheTypeMapper
       {
 
-        static const int T2_SMALL_HASH = HashingUtils::HashString("T2_SMALL");
-        static const int T2_MEDIUM_HASH = HashingUtils::HashString("T2_MEDIUM");
-        static const int R4_LARGE_HASH = HashingUtils::HashString("R4_LARGE");
-        static const int R4_XLARGE_HASH = HashingUtils::HashString("R4_XLARGE");
-        static const int R4_2XLARGE_HASH = HashingUtils::HashString("R4_2XLARGE");
-        static const int R4_4XLARGE_HASH = HashingUtils::HashString("R4_4XLARGE");
-        static const int R4_8XLARGE_HASH = HashingUtils::HashString("R4_8XLARGE");
-        static const int SMALL_HASH = HashingUtils::HashString("SMALL");
-        static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
-        static const int LARGE_HASH = HashingUtils::HashString("LARGE");
-        static const int XLARGE_HASH = HashingUtils::HashString("XLARGE");
-        static const int LARGE_2X_HASH = HashingUtils::HashString("LARGE_2X");
-        static const int LARGE_4X_HASH = HashingUtils::HashString("LARGE_4X");
-        static const int LARGE_8X_HASH = HashingUtils::HashString("LARGE_8X");
-        static const int LARGE_12X_HASH = HashingUtils::HashString("LARGE_12X");
+        static constexpr uint32_t T2_SMALL_HASH = ConstExprHashingUtils::HashString("T2_SMALL");
+        static constexpr uint32_t T2_MEDIUM_HASH = ConstExprHashingUtils::HashString("T2_MEDIUM");
+        static constexpr uint32_t R4_LARGE_HASH = ConstExprHashingUtils::HashString("R4_LARGE");
+        static constexpr uint32_t R4_XLARGE_HASH = ConstExprHashingUtils::HashString("R4_XLARGE");
+        static constexpr uint32_t R4_2XLARGE_HASH = ConstExprHashingUtils::HashString("R4_2XLARGE");
+        static constexpr uint32_t R4_4XLARGE_HASH = ConstExprHashingUtils::HashString("R4_4XLARGE");
+        static constexpr uint32_t R4_8XLARGE_HASH = ConstExprHashingUtils::HashString("R4_8XLARGE");
+        static constexpr uint32_t SMALL_HASH = ConstExprHashingUtils::HashString("SMALL");
+        static constexpr uint32_t MEDIUM_HASH = ConstExprHashingUtils::HashString("MEDIUM");
+        static constexpr uint32_t LARGE_HASH = ConstExprHashingUtils::HashString("LARGE");
+        static constexpr uint32_t XLARGE_HASH = ConstExprHashingUtils::HashString("XLARGE");
+        static constexpr uint32_t LARGE_2X_HASH = ConstExprHashingUtils::HashString("LARGE_2X");
+        static constexpr uint32_t LARGE_4X_HASH = ConstExprHashingUtils::HashString("LARGE_4X");
+        static constexpr uint32_t LARGE_8X_HASH = ConstExprHashingUtils::HashString("LARGE_8X");
+        static constexpr uint32_t LARGE_12X_HASH = ConstExprHashingUtils::HashString("LARGE_12X");
 
 
         ApiCacheType GetApiCacheTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == T2_SMALL_HASH)
           {
             return ApiCacheType::T2_SMALL;

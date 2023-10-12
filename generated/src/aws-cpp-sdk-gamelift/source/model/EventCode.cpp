@@ -20,45 +20,45 @@ namespace Aws
       namespace EventCodeMapper
       {
 
-        static const int GENERIC_EVENT_HASH = HashingUtils::HashString("GENERIC_EVENT");
-        static const int FLEET_CREATED_HASH = HashingUtils::HashString("FLEET_CREATED");
-        static const int FLEET_DELETED_HASH = HashingUtils::HashString("FLEET_DELETED");
-        static const int FLEET_SCALING_EVENT_HASH = HashingUtils::HashString("FLEET_SCALING_EVENT");
-        static const int FLEET_STATE_DOWNLOADING_HASH = HashingUtils::HashString("FLEET_STATE_DOWNLOADING");
-        static const int FLEET_STATE_VALIDATING_HASH = HashingUtils::HashString("FLEET_STATE_VALIDATING");
-        static const int FLEET_STATE_BUILDING_HASH = HashingUtils::HashString("FLEET_STATE_BUILDING");
-        static const int FLEET_STATE_ACTIVATING_HASH = HashingUtils::HashString("FLEET_STATE_ACTIVATING");
-        static const int FLEET_STATE_ACTIVE_HASH = HashingUtils::HashString("FLEET_STATE_ACTIVE");
-        static const int FLEET_STATE_ERROR_HASH = HashingUtils::HashString("FLEET_STATE_ERROR");
-        static const int FLEET_INITIALIZATION_FAILED_HASH = HashingUtils::HashString("FLEET_INITIALIZATION_FAILED");
-        static const int FLEET_BINARY_DOWNLOAD_FAILED_HASH = HashingUtils::HashString("FLEET_BINARY_DOWNLOAD_FAILED");
-        static const int FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND_HASH = HashingUtils::HashString("FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND");
-        static const int FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE_HASH = HashingUtils::HashString("FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE");
-        static const int FLEET_VALIDATION_TIMED_OUT_HASH = HashingUtils::HashString("FLEET_VALIDATION_TIMED_OUT");
-        static const int FLEET_ACTIVATION_FAILED_HASH = HashingUtils::HashString("FLEET_ACTIVATION_FAILED");
-        static const int FLEET_ACTIVATION_FAILED_NO_INSTANCES_HASH = HashingUtils::HashString("FLEET_ACTIVATION_FAILED_NO_INSTANCES");
-        static const int FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED_HASH = HashingUtils::HashString("FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED");
-        static const int SERVER_PROCESS_INVALID_PATH_HASH = HashingUtils::HashString("SERVER_PROCESS_INVALID_PATH");
-        static const int SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT_HASH = HashingUtils::HashString("SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT");
-        static const int SERVER_PROCESS_PROCESS_READY_TIMEOUT_HASH = HashingUtils::HashString("SERVER_PROCESS_PROCESS_READY_TIMEOUT");
-        static const int SERVER_PROCESS_CRASHED_HASH = HashingUtils::HashString("SERVER_PROCESS_CRASHED");
-        static const int SERVER_PROCESS_TERMINATED_UNHEALTHY_HASH = HashingUtils::HashString("SERVER_PROCESS_TERMINATED_UNHEALTHY");
-        static const int SERVER_PROCESS_FORCE_TERMINATED_HASH = HashingUtils::HashString("SERVER_PROCESS_FORCE_TERMINATED");
-        static const int SERVER_PROCESS_PROCESS_EXIT_TIMEOUT_HASH = HashingUtils::HashString("SERVER_PROCESS_PROCESS_EXIT_TIMEOUT");
-        static const int GAME_SESSION_ACTIVATION_TIMEOUT_HASH = HashingUtils::HashString("GAME_SESSION_ACTIVATION_TIMEOUT");
-        static const int FLEET_CREATION_EXTRACTING_BUILD_HASH = HashingUtils::HashString("FLEET_CREATION_EXTRACTING_BUILD");
-        static const int FLEET_CREATION_RUNNING_INSTALLER_HASH = HashingUtils::HashString("FLEET_CREATION_RUNNING_INSTALLER");
-        static const int FLEET_CREATION_VALIDATING_RUNTIME_CONFIG_HASH = HashingUtils::HashString("FLEET_CREATION_VALIDATING_RUNTIME_CONFIG");
-        static const int FLEET_VPC_PEERING_SUCCEEDED_HASH = HashingUtils::HashString("FLEET_VPC_PEERING_SUCCEEDED");
-        static const int FLEET_VPC_PEERING_FAILED_HASH = HashingUtils::HashString("FLEET_VPC_PEERING_FAILED");
-        static const int FLEET_VPC_PEERING_DELETED_HASH = HashingUtils::HashString("FLEET_VPC_PEERING_DELETED");
-        static const int INSTANCE_INTERRUPTED_HASH = HashingUtils::HashString("INSTANCE_INTERRUPTED");
-        static const int INSTANCE_RECYCLED_HASH = HashingUtils::HashString("INSTANCE_RECYCLED");
+        static constexpr uint32_t GENERIC_EVENT_HASH = ConstExprHashingUtils::HashString("GENERIC_EVENT");
+        static constexpr uint32_t FLEET_CREATED_HASH = ConstExprHashingUtils::HashString("FLEET_CREATED");
+        static constexpr uint32_t FLEET_DELETED_HASH = ConstExprHashingUtils::HashString("FLEET_DELETED");
+        static constexpr uint32_t FLEET_SCALING_EVENT_HASH = ConstExprHashingUtils::HashString("FLEET_SCALING_EVENT");
+        static constexpr uint32_t FLEET_STATE_DOWNLOADING_HASH = ConstExprHashingUtils::HashString("FLEET_STATE_DOWNLOADING");
+        static constexpr uint32_t FLEET_STATE_VALIDATING_HASH = ConstExprHashingUtils::HashString("FLEET_STATE_VALIDATING");
+        static constexpr uint32_t FLEET_STATE_BUILDING_HASH = ConstExprHashingUtils::HashString("FLEET_STATE_BUILDING");
+        static constexpr uint32_t FLEET_STATE_ACTIVATING_HASH = ConstExprHashingUtils::HashString("FLEET_STATE_ACTIVATING");
+        static constexpr uint32_t FLEET_STATE_ACTIVE_HASH = ConstExprHashingUtils::HashString("FLEET_STATE_ACTIVE");
+        static constexpr uint32_t FLEET_STATE_ERROR_HASH = ConstExprHashingUtils::HashString("FLEET_STATE_ERROR");
+        static constexpr uint32_t FLEET_INITIALIZATION_FAILED_HASH = ConstExprHashingUtils::HashString("FLEET_INITIALIZATION_FAILED");
+        static constexpr uint32_t FLEET_BINARY_DOWNLOAD_FAILED_HASH = ConstExprHashingUtils::HashString("FLEET_BINARY_DOWNLOAD_FAILED");
+        static constexpr uint32_t FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND");
+        static constexpr uint32_t FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE_HASH = ConstExprHashingUtils::HashString("FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE");
+        static constexpr uint32_t FLEET_VALIDATION_TIMED_OUT_HASH = ConstExprHashingUtils::HashString("FLEET_VALIDATION_TIMED_OUT");
+        static constexpr uint32_t FLEET_ACTIVATION_FAILED_HASH = ConstExprHashingUtils::HashString("FLEET_ACTIVATION_FAILED");
+        static constexpr uint32_t FLEET_ACTIVATION_FAILED_NO_INSTANCES_HASH = ConstExprHashingUtils::HashString("FLEET_ACTIVATION_FAILED_NO_INSTANCES");
+        static constexpr uint32_t FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED_HASH = ConstExprHashingUtils::HashString("FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED");
+        static constexpr uint32_t SERVER_PROCESS_INVALID_PATH_HASH = ConstExprHashingUtils::HashString("SERVER_PROCESS_INVALID_PATH");
+        static constexpr uint32_t SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT_HASH = ConstExprHashingUtils::HashString("SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT");
+        static constexpr uint32_t SERVER_PROCESS_PROCESS_READY_TIMEOUT_HASH = ConstExprHashingUtils::HashString("SERVER_PROCESS_PROCESS_READY_TIMEOUT");
+        static constexpr uint32_t SERVER_PROCESS_CRASHED_HASH = ConstExprHashingUtils::HashString("SERVER_PROCESS_CRASHED");
+        static constexpr uint32_t SERVER_PROCESS_TERMINATED_UNHEALTHY_HASH = ConstExprHashingUtils::HashString("SERVER_PROCESS_TERMINATED_UNHEALTHY");
+        static constexpr uint32_t SERVER_PROCESS_FORCE_TERMINATED_HASH = ConstExprHashingUtils::HashString("SERVER_PROCESS_FORCE_TERMINATED");
+        static constexpr uint32_t SERVER_PROCESS_PROCESS_EXIT_TIMEOUT_HASH = ConstExprHashingUtils::HashString("SERVER_PROCESS_PROCESS_EXIT_TIMEOUT");
+        static constexpr uint32_t GAME_SESSION_ACTIVATION_TIMEOUT_HASH = ConstExprHashingUtils::HashString("GAME_SESSION_ACTIVATION_TIMEOUT");
+        static constexpr uint32_t FLEET_CREATION_EXTRACTING_BUILD_HASH = ConstExprHashingUtils::HashString("FLEET_CREATION_EXTRACTING_BUILD");
+        static constexpr uint32_t FLEET_CREATION_RUNNING_INSTALLER_HASH = ConstExprHashingUtils::HashString("FLEET_CREATION_RUNNING_INSTALLER");
+        static constexpr uint32_t FLEET_CREATION_VALIDATING_RUNTIME_CONFIG_HASH = ConstExprHashingUtils::HashString("FLEET_CREATION_VALIDATING_RUNTIME_CONFIG");
+        static constexpr uint32_t FLEET_VPC_PEERING_SUCCEEDED_HASH = ConstExprHashingUtils::HashString("FLEET_VPC_PEERING_SUCCEEDED");
+        static constexpr uint32_t FLEET_VPC_PEERING_FAILED_HASH = ConstExprHashingUtils::HashString("FLEET_VPC_PEERING_FAILED");
+        static constexpr uint32_t FLEET_VPC_PEERING_DELETED_HASH = ConstExprHashingUtils::HashString("FLEET_VPC_PEERING_DELETED");
+        static constexpr uint32_t INSTANCE_INTERRUPTED_HASH = ConstExprHashingUtils::HashString("INSTANCE_INTERRUPTED");
+        static constexpr uint32_t INSTANCE_RECYCLED_HASH = ConstExprHashingUtils::HashString("INSTANCE_RECYCLED");
 
 
         EventCode GetEventCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GENERIC_EVENT_HASH)
           {
             return EventCode::GENERIC_EVENT;

@@ -20,14 +20,14 @@ namespace Aws
       namespace EntityTypeMapper
       {
 
-        static const int GROUP_HASH = HashingUtils::HashString("GROUP");
-        static const int USER_HASH = HashingUtils::HashString("USER");
-        static const int RESOURCE_HASH = HashingUtils::HashString("RESOURCE");
+        static constexpr uint32_t GROUP_HASH = ConstExprHashingUtils::HashString("GROUP");
+        static constexpr uint32_t USER_HASH = ConstExprHashingUtils::HashString("USER");
+        static constexpr uint32_t RESOURCE_HASH = ConstExprHashingUtils::HashString("RESOURCE");
 
 
         EntityType GetEntityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GROUP_HASH)
           {
             return EntityType::GROUP;

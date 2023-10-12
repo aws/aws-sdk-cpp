@@ -20,26 +20,26 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int TrainingJob_HASH = HashingUtils::HashString("TrainingJob");
-        static const int Experiment_HASH = HashingUtils::HashString("Experiment");
-        static const int ExperimentTrial_HASH = HashingUtils::HashString("ExperimentTrial");
-        static const int ExperimentTrialComponent_HASH = HashingUtils::HashString("ExperimentTrialComponent");
-        static const int Endpoint_HASH = HashingUtils::HashString("Endpoint");
-        static const int ModelPackage_HASH = HashingUtils::HashString("ModelPackage");
-        static const int ModelPackageGroup_HASH = HashingUtils::HashString("ModelPackageGroup");
-        static const int Pipeline_HASH = HashingUtils::HashString("Pipeline");
-        static const int PipelineExecution_HASH = HashingUtils::HashString("PipelineExecution");
-        static const int FeatureGroup_HASH = HashingUtils::HashString("FeatureGroup");
-        static const int Project_HASH = HashingUtils::HashString("Project");
-        static const int FeatureMetadata_HASH = HashingUtils::HashString("FeatureMetadata");
-        static const int HyperParameterTuningJob_HASH = HashingUtils::HashString("HyperParameterTuningJob");
-        static const int ModelCard_HASH = HashingUtils::HashString("ModelCard");
-        static const int Model_HASH = HashingUtils::HashString("Model");
+        static constexpr uint32_t TrainingJob_HASH = ConstExprHashingUtils::HashString("TrainingJob");
+        static constexpr uint32_t Experiment_HASH = ConstExprHashingUtils::HashString("Experiment");
+        static constexpr uint32_t ExperimentTrial_HASH = ConstExprHashingUtils::HashString("ExperimentTrial");
+        static constexpr uint32_t ExperimentTrialComponent_HASH = ConstExprHashingUtils::HashString("ExperimentTrialComponent");
+        static constexpr uint32_t Endpoint_HASH = ConstExprHashingUtils::HashString("Endpoint");
+        static constexpr uint32_t ModelPackage_HASH = ConstExprHashingUtils::HashString("ModelPackage");
+        static constexpr uint32_t ModelPackageGroup_HASH = ConstExprHashingUtils::HashString("ModelPackageGroup");
+        static constexpr uint32_t Pipeline_HASH = ConstExprHashingUtils::HashString("Pipeline");
+        static constexpr uint32_t PipelineExecution_HASH = ConstExprHashingUtils::HashString("PipelineExecution");
+        static constexpr uint32_t FeatureGroup_HASH = ConstExprHashingUtils::HashString("FeatureGroup");
+        static constexpr uint32_t Project_HASH = ConstExprHashingUtils::HashString("Project");
+        static constexpr uint32_t FeatureMetadata_HASH = ConstExprHashingUtils::HashString("FeatureMetadata");
+        static constexpr uint32_t HyperParameterTuningJob_HASH = ConstExprHashingUtils::HashString("HyperParameterTuningJob");
+        static constexpr uint32_t ModelCard_HASH = ConstExprHashingUtils::HashString("ModelCard");
+        static constexpr uint32_t Model_HASH = ConstExprHashingUtils::HashString("Model");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TrainingJob_HASH)
           {
             return ResourceType::TrainingJob;

@@ -20,15 +20,15 @@ namespace Aws
       namespace HypervisorStateMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int ONLINE_HASH = HashingUtils::HashString("ONLINE");
-        static const int OFFLINE_HASH = HashingUtils::HashString("OFFLINE");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t ONLINE_HASH = ConstExprHashingUtils::HashString("ONLINE");
+        static constexpr uint32_t OFFLINE_HASH = ConstExprHashingUtils::HashString("OFFLINE");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         HypervisorState GetHypervisorStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return HypervisorState::PENDING;

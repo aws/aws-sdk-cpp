@@ -20,12 +20,12 @@ namespace Aws
       namespace ComponentStatusMapper
       {
 
-        static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
+        static constexpr uint32_t DEPRECATED_HASH = ConstExprHashingUtils::HashString("DEPRECATED");
 
 
         ComponentStatus GetComponentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEPRECATED_HASH)
           {
             return ComponentStatus::DEPRECATED;

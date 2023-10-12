@@ -20,13 +20,13 @@ namespace Aws
       namespace RecordWrapperMapper
       {
 
-        static const int None_HASH = HashingUtils::HashString("None");
-        static const int RecordIO_HASH = HashingUtils::HashString("RecordIO");
+        static constexpr uint32_t None_HASH = ConstExprHashingUtils::HashString("None");
+        static constexpr uint32_t RecordIO_HASH = ConstExprHashingUtils::HashString("RecordIO");
 
 
         RecordWrapper GetRecordWrapperForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == None_HASH)
           {
             return RecordWrapper::None;

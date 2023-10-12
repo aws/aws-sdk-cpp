@@ -20,14 +20,14 @@ namespace Aws
       namespace PolicyTypeMapper
       {
 
-        static const int IDENTITY_POLICY_HASH = HashingUtils::HashString("IDENTITY_POLICY");
-        static const int RESOURCE_POLICY_HASH = HashingUtils::HashString("RESOURCE_POLICY");
-        static const int SERVICE_CONTROL_POLICY_HASH = HashingUtils::HashString("SERVICE_CONTROL_POLICY");
+        static constexpr uint32_t IDENTITY_POLICY_HASH = ConstExprHashingUtils::HashString("IDENTITY_POLICY");
+        static constexpr uint32_t RESOURCE_POLICY_HASH = ConstExprHashingUtils::HashString("RESOURCE_POLICY");
+        static constexpr uint32_t SERVICE_CONTROL_POLICY_HASH = ConstExprHashingUtils::HashString("SERVICE_CONTROL_POLICY");
 
 
         PolicyType GetPolicyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IDENTITY_POLICY_HASH)
           {
             return PolicyType::IDENTITY_POLICY;

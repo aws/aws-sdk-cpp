@@ -20,13 +20,13 @@ namespace Aws
       namespace ConflictDetailLevelTypeEnumMapper
       {
 
-        static const int FILE_LEVEL_HASH = HashingUtils::HashString("FILE_LEVEL");
-        static const int LINE_LEVEL_HASH = HashingUtils::HashString("LINE_LEVEL");
+        static constexpr uint32_t FILE_LEVEL_HASH = ConstExprHashingUtils::HashString("FILE_LEVEL");
+        static constexpr uint32_t LINE_LEVEL_HASH = ConstExprHashingUtils::HashString("LINE_LEVEL");
 
 
         ConflictDetailLevelTypeEnum GetConflictDetailLevelTypeEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FILE_LEVEL_HASH)
           {
             return ConflictDetailLevelTypeEnum::FILE_LEVEL;

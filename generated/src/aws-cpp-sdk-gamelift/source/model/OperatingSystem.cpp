@@ -20,16 +20,16 @@ namespace Aws
       namespace OperatingSystemMapper
       {
 
-        static const int WINDOWS_2012_HASH = HashingUtils::HashString("WINDOWS_2012");
-        static const int AMAZON_LINUX_HASH = HashingUtils::HashString("AMAZON_LINUX");
-        static const int AMAZON_LINUX_2_HASH = HashingUtils::HashString("AMAZON_LINUX_2");
-        static const int WINDOWS_2016_HASH = HashingUtils::HashString("WINDOWS_2016");
-        static const int AMAZON_LINUX_2023_HASH = HashingUtils::HashString("AMAZON_LINUX_2023");
+        static constexpr uint32_t WINDOWS_2012_HASH = ConstExprHashingUtils::HashString("WINDOWS_2012");
+        static constexpr uint32_t AMAZON_LINUX_HASH = ConstExprHashingUtils::HashString("AMAZON_LINUX");
+        static constexpr uint32_t AMAZON_LINUX_2_HASH = ConstExprHashingUtils::HashString("AMAZON_LINUX_2");
+        static constexpr uint32_t WINDOWS_2016_HASH = ConstExprHashingUtils::HashString("WINDOWS_2016");
+        static constexpr uint32_t AMAZON_LINUX_2023_HASH = ConstExprHashingUtils::HashString("AMAZON_LINUX_2023");
 
 
         OperatingSystem GetOperatingSystemForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WINDOWS_2012_HASH)
           {
             return OperatingSystem::WINDOWS_2012;

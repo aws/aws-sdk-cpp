@@ -20,15 +20,15 @@ namespace Aws
       namespace TieringPolicyNameMapper
       {
 
-        static const int SNAPSHOT_ONLY_HASH = HashingUtils::HashString("SNAPSHOT_ONLY");
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t SNAPSHOT_ONLY_HASH = ConstExprHashingUtils::HashString("SNAPSHOT_ONLY");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         TieringPolicyName GetTieringPolicyNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SNAPSHOT_ONLY_HASH)
           {
             return TieringPolicyName::SNAPSHOT_ONLY;

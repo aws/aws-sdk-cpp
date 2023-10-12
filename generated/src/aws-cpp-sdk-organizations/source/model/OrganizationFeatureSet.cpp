@@ -20,13 +20,13 @@ namespace Aws
       namespace OrganizationFeatureSetMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int CONSOLIDATED_BILLING_HASH = HashingUtils::HashString("CONSOLIDATED_BILLING");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t CONSOLIDATED_BILLING_HASH = ConstExprHashingUtils::HashString("CONSOLIDATED_BILLING");
 
 
         OrganizationFeatureSet GetOrganizationFeatureSetForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return OrganizationFeatureSet::ALL;

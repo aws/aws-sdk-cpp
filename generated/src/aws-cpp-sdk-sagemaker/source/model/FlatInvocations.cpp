@@ -20,13 +20,13 @@ namespace Aws
       namespace FlatInvocationsMapper
       {
 
-        static const int Continue_HASH = HashingUtils::HashString("Continue");
-        static const int Stop_HASH = HashingUtils::HashString("Stop");
+        static constexpr uint32_t Continue_HASH = ConstExprHashingUtils::HashString("Continue");
+        static constexpr uint32_t Stop_HASH = ConstExprHashingUtils::HashString("Stop");
 
 
         FlatInvocations GetFlatInvocationsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Continue_HASH)
           {
             return FlatInvocations::Continue;

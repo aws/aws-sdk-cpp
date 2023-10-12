@@ -20,14 +20,14 @@ namespace Aws
       namespace InputModeMapper
       {
 
-        static const int Text_HASH = HashingUtils::HashString("Text");
-        static const int Speech_HASH = HashingUtils::HashString("Speech");
-        static const int DTMF_HASH = HashingUtils::HashString("DTMF");
+        static constexpr uint32_t Text_HASH = ConstExprHashingUtils::HashString("Text");
+        static constexpr uint32_t Speech_HASH = ConstExprHashingUtils::HashString("Speech");
+        static constexpr uint32_t DTMF_HASH = ConstExprHashingUtils::HashString("DTMF");
 
 
         InputMode GetInputModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Text_HASH)
           {
             return InputMode::Text;

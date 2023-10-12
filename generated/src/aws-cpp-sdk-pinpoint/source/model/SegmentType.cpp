@@ -20,13 +20,13 @@ namespace Aws
       namespace SegmentTypeMapper
       {
 
-        static const int DIMENSIONAL_HASH = HashingUtils::HashString("DIMENSIONAL");
-        static const int IMPORT_HASH = HashingUtils::HashString("IMPORT");
+        static constexpr uint32_t DIMENSIONAL_HASH = ConstExprHashingUtils::HashString("DIMENSIONAL");
+        static constexpr uint32_t IMPORT_HASH = ConstExprHashingUtils::HashString("IMPORT");
 
 
         SegmentType GetSegmentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DIMENSIONAL_HASH)
           {
             return SegmentType::DIMENSIONAL;

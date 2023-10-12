@@ -20,14 +20,14 @@ namespace Aws
       namespace DvbSubtitleTeletextSpacingMapper
       {
 
-        static const int FIXED_GRID_HASH = HashingUtils::HashString("FIXED_GRID");
-        static const int PROPORTIONAL_HASH = HashingUtils::HashString("PROPORTIONAL");
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
+        static constexpr uint32_t FIXED_GRID_HASH = ConstExprHashingUtils::HashString("FIXED_GRID");
+        static constexpr uint32_t PROPORTIONAL_HASH = ConstExprHashingUtils::HashString("PROPORTIONAL");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
 
 
         DvbSubtitleTeletextSpacing GetDvbSubtitleTeletextSpacingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FIXED_GRID_HASH)
           {
             return DvbSubtitleTeletextSpacing::FIXED_GRID;

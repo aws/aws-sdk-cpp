@@ -20,13 +20,13 @@ namespace Aws
       namespace WirelessGatewayEventMapper
       {
 
-        static const int CUPS_Request_HASH = HashingUtils::HashString("CUPS_Request");
-        static const int Certificate_HASH = HashingUtils::HashString("Certificate");
+        static constexpr uint32_t CUPS_Request_HASH = ConstExprHashingUtils::HashString("CUPS_Request");
+        static constexpr uint32_t Certificate_HASH = ConstExprHashingUtils::HashString("Certificate");
 
 
         WirelessGatewayEvent GetWirelessGatewayEventForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CUPS_Request_HASH)
           {
             return WirelessGatewayEvent::CUPS_Request;

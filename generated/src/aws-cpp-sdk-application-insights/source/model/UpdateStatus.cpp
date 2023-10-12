@@ -20,12 +20,12 @@ namespace Aws
       namespace UpdateStatusMapper
       {
 
-        static const int RESOLVED_HASH = HashingUtils::HashString("RESOLVED");
+        static constexpr uint32_t RESOLVED_HASH = ConstExprHashingUtils::HashString("RESOLVED");
 
 
         UpdateStatus GetUpdateStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESOLVED_HASH)
           {
             return UpdateStatus::RESOLVED;

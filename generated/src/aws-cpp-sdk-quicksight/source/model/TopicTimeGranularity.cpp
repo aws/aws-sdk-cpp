@@ -20,19 +20,19 @@ namespace Aws
       namespace TopicTimeGranularityMapper
       {
 
-        static const int SECOND_HASH = HashingUtils::HashString("SECOND");
-        static const int MINUTE_HASH = HashingUtils::HashString("MINUTE");
-        static const int HOUR_HASH = HashingUtils::HashString("HOUR");
-        static const int DAY_HASH = HashingUtils::HashString("DAY");
-        static const int WEEK_HASH = HashingUtils::HashString("WEEK");
-        static const int MONTH_HASH = HashingUtils::HashString("MONTH");
-        static const int QUARTER_HASH = HashingUtils::HashString("QUARTER");
-        static const int YEAR_HASH = HashingUtils::HashString("YEAR");
+        static constexpr uint32_t SECOND_HASH = ConstExprHashingUtils::HashString("SECOND");
+        static constexpr uint32_t MINUTE_HASH = ConstExprHashingUtils::HashString("MINUTE");
+        static constexpr uint32_t HOUR_HASH = ConstExprHashingUtils::HashString("HOUR");
+        static constexpr uint32_t DAY_HASH = ConstExprHashingUtils::HashString("DAY");
+        static constexpr uint32_t WEEK_HASH = ConstExprHashingUtils::HashString("WEEK");
+        static constexpr uint32_t MONTH_HASH = ConstExprHashingUtils::HashString("MONTH");
+        static constexpr uint32_t QUARTER_HASH = ConstExprHashingUtils::HashString("QUARTER");
+        static constexpr uint32_t YEAR_HASH = ConstExprHashingUtils::HashString("YEAR");
 
 
         TopicTimeGranularity GetTopicTimeGranularityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SECOND_HASH)
           {
             return TopicTimeGranularity::SECOND;

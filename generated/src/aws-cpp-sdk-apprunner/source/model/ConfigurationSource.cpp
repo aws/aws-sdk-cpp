@@ -20,13 +20,13 @@ namespace Aws
       namespace ConfigurationSourceMapper
       {
 
-        static const int REPOSITORY_HASH = HashingUtils::HashString("REPOSITORY");
-        static const int API_HASH = HashingUtils::HashString("API");
+        static constexpr uint32_t REPOSITORY_HASH = ConstExprHashingUtils::HashString("REPOSITORY");
+        static constexpr uint32_t API_HASH = ConstExprHashingUtils::HashString("API");
 
 
         ConfigurationSource GetConfigurationSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REPOSITORY_HASH)
           {
             return ConfigurationSource::REPOSITORY;

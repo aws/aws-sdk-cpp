@@ -20,15 +20,15 @@ namespace Aws
       namespace SelectMapper
       {
 
-        static const int ALL_ATTRIBUTES_HASH = HashingUtils::HashString("ALL_ATTRIBUTES");
-        static const int ALL_PROJECTED_ATTRIBUTES_HASH = HashingUtils::HashString("ALL_PROJECTED_ATTRIBUTES");
-        static const int SPECIFIC_ATTRIBUTES_HASH = HashingUtils::HashString("SPECIFIC_ATTRIBUTES");
-        static const int COUNT_HASH = HashingUtils::HashString("COUNT");
+        static constexpr uint32_t ALL_ATTRIBUTES_HASH = ConstExprHashingUtils::HashString("ALL_ATTRIBUTES");
+        static constexpr uint32_t ALL_PROJECTED_ATTRIBUTES_HASH = ConstExprHashingUtils::HashString("ALL_PROJECTED_ATTRIBUTES");
+        static constexpr uint32_t SPECIFIC_ATTRIBUTES_HASH = ConstExprHashingUtils::HashString("SPECIFIC_ATTRIBUTES");
+        static constexpr uint32_t COUNT_HASH = ConstExprHashingUtils::HashString("COUNT");
 
 
         Select GetSelectForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_ATTRIBUTES_HASH)
           {
             return Select::ALL_ATTRIBUTES;

@@ -20,15 +20,15 @@ namespace Aws
       namespace WavCodingModeMapper
       {
 
-        static const int CODING_MODE_1_0_HASH = HashingUtils::HashString("CODING_MODE_1_0");
-        static const int CODING_MODE_2_0_HASH = HashingUtils::HashString("CODING_MODE_2_0");
-        static const int CODING_MODE_4_0_HASH = HashingUtils::HashString("CODING_MODE_4_0");
-        static const int CODING_MODE_8_0_HASH = HashingUtils::HashString("CODING_MODE_8_0");
+        static constexpr uint32_t CODING_MODE_1_0_HASH = ConstExprHashingUtils::HashString("CODING_MODE_1_0");
+        static constexpr uint32_t CODING_MODE_2_0_HASH = ConstExprHashingUtils::HashString("CODING_MODE_2_0");
+        static constexpr uint32_t CODING_MODE_4_0_HASH = ConstExprHashingUtils::HashString("CODING_MODE_4_0");
+        static constexpr uint32_t CODING_MODE_8_0_HASH = ConstExprHashingUtils::HashString("CODING_MODE_8_0");
 
 
         WavCodingMode GetWavCodingModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CODING_MODE_1_0_HASH)
           {
             return WavCodingMode::CODING_MODE_1_0;

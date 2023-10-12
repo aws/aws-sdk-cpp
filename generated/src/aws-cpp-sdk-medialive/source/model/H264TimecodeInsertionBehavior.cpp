@@ -20,13 +20,13 @@ namespace Aws
       namespace H264TimecodeInsertionBehaviorMapper
       {
 
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int PIC_TIMING_SEI_HASH = HashingUtils::HashString("PIC_TIMING_SEI");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t PIC_TIMING_SEI_HASH = ConstExprHashingUtils::HashString("PIC_TIMING_SEI");
 
 
         H264TimecodeInsertionBehavior GetH264TimecodeInsertionBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISABLED_HASH)
           {
             return H264TimecodeInsertionBehavior::DISABLED;

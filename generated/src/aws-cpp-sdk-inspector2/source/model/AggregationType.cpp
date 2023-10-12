@@ -20,22 +20,22 @@ namespace Aws
       namespace AggregationTypeMapper
       {
 
-        static const int FINDING_TYPE_HASH = HashingUtils::HashString("FINDING_TYPE");
-        static const int PACKAGE_HASH = HashingUtils::HashString("PACKAGE");
-        static const int TITLE_HASH = HashingUtils::HashString("TITLE");
-        static const int REPOSITORY_HASH = HashingUtils::HashString("REPOSITORY");
-        static const int AMI_HASH = HashingUtils::HashString("AMI");
-        static const int AWS_EC2_INSTANCE_HASH = HashingUtils::HashString("AWS_EC2_INSTANCE");
-        static const int AWS_ECR_CONTAINER_HASH = HashingUtils::HashString("AWS_ECR_CONTAINER");
-        static const int IMAGE_LAYER_HASH = HashingUtils::HashString("IMAGE_LAYER");
-        static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
-        static const int AWS_LAMBDA_FUNCTION_HASH = HashingUtils::HashString("AWS_LAMBDA_FUNCTION");
-        static const int LAMBDA_LAYER_HASH = HashingUtils::HashString("LAMBDA_LAYER");
+        static constexpr uint32_t FINDING_TYPE_HASH = ConstExprHashingUtils::HashString("FINDING_TYPE");
+        static constexpr uint32_t PACKAGE_HASH = ConstExprHashingUtils::HashString("PACKAGE");
+        static constexpr uint32_t TITLE_HASH = ConstExprHashingUtils::HashString("TITLE");
+        static constexpr uint32_t REPOSITORY_HASH = ConstExprHashingUtils::HashString("REPOSITORY");
+        static constexpr uint32_t AMI_HASH = ConstExprHashingUtils::HashString("AMI");
+        static constexpr uint32_t AWS_EC2_INSTANCE_HASH = ConstExprHashingUtils::HashString("AWS_EC2_INSTANCE");
+        static constexpr uint32_t AWS_ECR_CONTAINER_HASH = ConstExprHashingUtils::HashString("AWS_ECR_CONTAINER");
+        static constexpr uint32_t IMAGE_LAYER_HASH = ConstExprHashingUtils::HashString("IMAGE_LAYER");
+        static constexpr uint32_t ACCOUNT_HASH = ConstExprHashingUtils::HashString("ACCOUNT");
+        static constexpr uint32_t AWS_LAMBDA_FUNCTION_HASH = ConstExprHashingUtils::HashString("AWS_LAMBDA_FUNCTION");
+        static constexpr uint32_t LAMBDA_LAYER_HASH = ConstExprHashingUtils::HashString("LAMBDA_LAYER");
 
 
         AggregationType GetAggregationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FINDING_TYPE_HASH)
           {
             return AggregationType::FINDING_TYPE;

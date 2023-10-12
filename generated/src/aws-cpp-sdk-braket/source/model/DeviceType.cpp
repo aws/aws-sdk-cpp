@@ -20,13 +20,13 @@ namespace Aws
       namespace DeviceTypeMapper
       {
 
-        static const int QPU_HASH = HashingUtils::HashString("QPU");
-        static const int SIMULATOR_HASH = HashingUtils::HashString("SIMULATOR");
+        static constexpr uint32_t QPU_HASH = ConstExprHashingUtils::HashString("QPU");
+        static constexpr uint32_t SIMULATOR_HASH = ConstExprHashingUtils::HashString("SIMULATOR");
 
 
         DeviceType GetDeviceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QPU_HASH)
           {
             return DeviceType::QPU;

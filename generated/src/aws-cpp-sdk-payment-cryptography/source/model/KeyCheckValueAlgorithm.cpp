@@ -20,13 +20,13 @@ namespace Aws
       namespace KeyCheckValueAlgorithmMapper
       {
 
-        static const int CMAC_HASH = HashingUtils::HashString("CMAC");
-        static const int ANSI_X9_24_HASH = HashingUtils::HashString("ANSI_X9_24");
+        static constexpr uint32_t CMAC_HASH = ConstExprHashingUtils::HashString("CMAC");
+        static constexpr uint32_t ANSI_X9_24_HASH = ConstExprHashingUtils::HashString("ANSI_X9_24");
 
 
         KeyCheckValueAlgorithm GetKeyCheckValueAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CMAC_HASH)
           {
             return KeyCheckValueAlgorithm::CMAC;

@@ -26,21 +26,21 @@ template<> AWS_KINESISANALYTICS_API UnableToDetectSchemaException KinesisAnalyti
 namespace KinesisAnalyticsErrorMapper
 {
 
-static const int RESOURCE_PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("ResourceProvisionedThroughputExceededException");
-static const int CODE_VALIDATION_HASH = HashingUtils::HashString("CodeValidationException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
-static const int INVALID_APPLICATION_CONFIGURATION_HASH = HashingUtils::HashString("InvalidApplicationConfigurationException");
-static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
-static const int UNABLE_TO_DETECT_SCHEMA_HASH = HashingUtils::HashString("UnableToDetectSchemaException");
+static constexpr uint32_t RESOURCE_PROVISIONED_THROUGHPUT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ResourceProvisionedThroughputExceededException");
+static constexpr uint32_t CODE_VALIDATION_HASH = ConstExprHashingUtils::HashString("CodeValidationException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t UNSUPPORTED_OPERATION_HASH = ConstExprHashingUtils::HashString("UnsupportedOperationException");
+static constexpr uint32_t INVALID_APPLICATION_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("InvalidApplicationConfigurationException");
+static constexpr uint32_t INVALID_ARGUMENT_HASH = ConstExprHashingUtils::HashString("InvalidArgumentException");
+static constexpr uint32_t UNABLE_TO_DETECT_SCHEMA_HASH = ConstExprHashingUtils::HashString("UnableToDetectSchemaException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == RESOURCE_PROVISIONED_THROUGHPUT_EXCEEDED_HASH)
   {

@@ -20,14 +20,14 @@ namespace Aws
       namespace TargetCapacityUnitTypeMapper
       {
 
-        static const int vcpu_HASH = HashingUtils::HashString("vcpu");
-        static const int memory_mib_HASH = HashingUtils::HashString("memory-mib");
-        static const int units_HASH = HashingUtils::HashString("units");
+        static constexpr uint32_t vcpu_HASH = ConstExprHashingUtils::HashString("vcpu");
+        static constexpr uint32_t memory_mib_HASH = ConstExprHashingUtils::HashString("memory-mib");
+        static constexpr uint32_t units_HASH = ConstExprHashingUtils::HashString("units");
 
 
         TargetCapacityUnitType GetTargetCapacityUnitTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == vcpu_HASH)
           {
             return TargetCapacityUnitType::vcpu;

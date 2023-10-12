@@ -20,21 +20,21 @@ namespace Aws
       namespace SecurityServiceTypeMapper
       {
 
-        static const int WAF_HASH = HashingUtils::HashString("WAF");
-        static const int WAFV2_HASH = HashingUtils::HashString("WAFV2");
-        static const int SHIELD_ADVANCED_HASH = HashingUtils::HashString("SHIELD_ADVANCED");
-        static const int SECURITY_GROUPS_COMMON_HASH = HashingUtils::HashString("SECURITY_GROUPS_COMMON");
-        static const int SECURITY_GROUPS_CONTENT_AUDIT_HASH = HashingUtils::HashString("SECURITY_GROUPS_CONTENT_AUDIT");
-        static const int SECURITY_GROUPS_USAGE_AUDIT_HASH = HashingUtils::HashString("SECURITY_GROUPS_USAGE_AUDIT");
-        static const int NETWORK_FIREWALL_HASH = HashingUtils::HashString("NETWORK_FIREWALL");
-        static const int DNS_FIREWALL_HASH = HashingUtils::HashString("DNS_FIREWALL");
-        static const int THIRD_PARTY_FIREWALL_HASH = HashingUtils::HashString("THIRD_PARTY_FIREWALL");
-        static const int IMPORT_NETWORK_FIREWALL_HASH = HashingUtils::HashString("IMPORT_NETWORK_FIREWALL");
+        static constexpr uint32_t WAF_HASH = ConstExprHashingUtils::HashString("WAF");
+        static constexpr uint32_t WAFV2_HASH = ConstExprHashingUtils::HashString("WAFV2");
+        static constexpr uint32_t SHIELD_ADVANCED_HASH = ConstExprHashingUtils::HashString("SHIELD_ADVANCED");
+        static constexpr uint32_t SECURITY_GROUPS_COMMON_HASH = ConstExprHashingUtils::HashString("SECURITY_GROUPS_COMMON");
+        static constexpr uint32_t SECURITY_GROUPS_CONTENT_AUDIT_HASH = ConstExprHashingUtils::HashString("SECURITY_GROUPS_CONTENT_AUDIT");
+        static constexpr uint32_t SECURITY_GROUPS_USAGE_AUDIT_HASH = ConstExprHashingUtils::HashString("SECURITY_GROUPS_USAGE_AUDIT");
+        static constexpr uint32_t NETWORK_FIREWALL_HASH = ConstExprHashingUtils::HashString("NETWORK_FIREWALL");
+        static constexpr uint32_t DNS_FIREWALL_HASH = ConstExprHashingUtils::HashString("DNS_FIREWALL");
+        static constexpr uint32_t THIRD_PARTY_FIREWALL_HASH = ConstExprHashingUtils::HashString("THIRD_PARTY_FIREWALL");
+        static constexpr uint32_t IMPORT_NETWORK_FIREWALL_HASH = ConstExprHashingUtils::HashString("IMPORT_NETWORK_FIREWALL");
 
 
         SecurityServiceType GetSecurityServiceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WAF_HASH)
           {
             return SecurityServiceType::WAF;

@@ -20,13 +20,13 @@ namespace Aws
       namespace OrcFormatVersionMapper
       {
 
-        static const int V0_11_HASH = HashingUtils::HashString("V0_11");
-        static const int V0_12_HASH = HashingUtils::HashString("V0_12");
+        static constexpr uint32_t V0_11_HASH = ConstExprHashingUtils::HashString("V0_11");
+        static constexpr uint32_t V0_12_HASH = ConstExprHashingUtils::HashString("V0_12");
 
 
         OrcFormatVersion GetOrcFormatVersionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == V0_11_HASH)
           {
             return OrcFormatVersion::V0_11;

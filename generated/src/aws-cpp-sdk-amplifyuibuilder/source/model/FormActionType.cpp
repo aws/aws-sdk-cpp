@@ -20,13 +20,13 @@ namespace Aws
       namespace FormActionTypeMapper
       {
 
-        static const int create_HASH = HashingUtils::HashString("create");
-        static const int update_HASH = HashingUtils::HashString("update");
+        static constexpr uint32_t create_HASH = ConstExprHashingUtils::HashString("create");
+        static constexpr uint32_t update_HASH = ConstExprHashingUtils::HashString("update");
 
 
         FormActionType GetFormActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == create_HASH)
           {
             return FormActionType::create;

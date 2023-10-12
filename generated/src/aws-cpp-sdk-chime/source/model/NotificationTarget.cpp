@@ -20,14 +20,14 @@ namespace Aws
       namespace NotificationTargetMapper
       {
 
-        static const int EventBridge_HASH = HashingUtils::HashString("EventBridge");
-        static const int SNS_HASH = HashingUtils::HashString("SNS");
-        static const int SQS_HASH = HashingUtils::HashString("SQS");
+        static constexpr uint32_t EventBridge_HASH = ConstExprHashingUtils::HashString("EventBridge");
+        static constexpr uint32_t SNS_HASH = ConstExprHashingUtils::HashString("SNS");
+        static constexpr uint32_t SQS_HASH = ConstExprHashingUtils::HashString("SQS");
 
 
         NotificationTarget GetNotificationTargetForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EventBridge_HASH)
           {
             return NotificationTarget::EventBridge;

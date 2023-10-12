@@ -20,13 +20,13 @@ namespace Aws
       namespace FilterRuleNameMapper
       {
 
-        static const int prefix_HASH = HashingUtils::HashString("prefix");
-        static const int suffix_HASH = HashingUtils::HashString("suffix");
+        static constexpr uint32_t prefix_HASH = ConstExprHashingUtils::HashString("prefix");
+        static constexpr uint32_t suffix_HASH = ConstExprHashingUtils::HashString("suffix");
 
 
         FilterRuleName GetFilterRuleNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == prefix_HASH)
           {
             return FilterRuleName::prefix;

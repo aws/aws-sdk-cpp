@@ -20,13 +20,13 @@ namespace Aws
       namespace SupportedDataTransferTypeMapper
       {
 
-        static const int RECORD_HASH = HashingUtils::HashString("RECORD");
-        static const int FILE_HASH = HashingUtils::HashString("FILE");
+        static constexpr uint32_t RECORD_HASH = ConstExprHashingUtils::HashString("RECORD");
+        static constexpr uint32_t FILE_HASH = ConstExprHashingUtils::HashString("FILE");
 
 
         SupportedDataTransferType GetSupportedDataTransferTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RECORD_HASH)
           {
             return SupportedDataTransferType::RECORD;

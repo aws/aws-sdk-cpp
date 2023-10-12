@@ -20,12 +20,12 @@ namespace Aws
       namespace TranscriptFormatMapper
       {
 
-        static const int Lex_HASH = HashingUtils::HashString("Lex");
+        static constexpr uint32_t Lex_HASH = ConstExprHashingUtils::HashString("Lex");
 
 
         TranscriptFormat GetTranscriptFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Lex_HASH)
           {
             return TranscriptFormat::Lex;

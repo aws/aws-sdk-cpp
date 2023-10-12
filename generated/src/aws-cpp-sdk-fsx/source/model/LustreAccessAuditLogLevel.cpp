@@ -20,15 +20,15 @@ namespace Aws
       namespace LustreAccessAuditLogLevelMapper
       {
 
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int WARN_ONLY_HASH = HashingUtils::HashString("WARN_ONLY");
-        static const int ERROR_ONLY_HASH = HashingUtils::HashString("ERROR_ONLY");
-        static const int WARN_ERROR_HASH = HashingUtils::HashString("WARN_ERROR");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t WARN_ONLY_HASH = ConstExprHashingUtils::HashString("WARN_ONLY");
+        static constexpr uint32_t ERROR_ONLY_HASH = ConstExprHashingUtils::HashString("ERROR_ONLY");
+        static constexpr uint32_t WARN_ERROR_HASH = ConstExprHashingUtils::HashString("WARN_ERROR");
 
 
         LustreAccessAuditLogLevel GetLustreAccessAuditLogLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISABLED_HASH)
           {
             return LustreAccessAuditLogLevel::DISABLED;

@@ -20,19 +20,19 @@ namespace Aws
       namespace OSFamilyMapper
       {
 
-        static const int WINDOWS_SERVER_2019_FULL_HASH = HashingUtils::HashString("WINDOWS_SERVER_2019_FULL");
-        static const int WINDOWS_SERVER_2019_CORE_HASH = HashingUtils::HashString("WINDOWS_SERVER_2019_CORE");
-        static const int WINDOWS_SERVER_2016_FULL_HASH = HashingUtils::HashString("WINDOWS_SERVER_2016_FULL");
-        static const int WINDOWS_SERVER_2004_CORE_HASH = HashingUtils::HashString("WINDOWS_SERVER_2004_CORE");
-        static const int WINDOWS_SERVER_2022_CORE_HASH = HashingUtils::HashString("WINDOWS_SERVER_2022_CORE");
-        static const int WINDOWS_SERVER_2022_FULL_HASH = HashingUtils::HashString("WINDOWS_SERVER_2022_FULL");
-        static const int WINDOWS_SERVER_20H2_CORE_HASH = HashingUtils::HashString("WINDOWS_SERVER_20H2_CORE");
-        static const int LINUX_HASH = HashingUtils::HashString("LINUX");
+        static constexpr uint32_t WINDOWS_SERVER_2019_FULL_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2019_FULL");
+        static constexpr uint32_t WINDOWS_SERVER_2019_CORE_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2019_CORE");
+        static constexpr uint32_t WINDOWS_SERVER_2016_FULL_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2016_FULL");
+        static constexpr uint32_t WINDOWS_SERVER_2004_CORE_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2004_CORE");
+        static constexpr uint32_t WINDOWS_SERVER_2022_CORE_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2022_CORE");
+        static constexpr uint32_t WINDOWS_SERVER_2022_FULL_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2022_FULL");
+        static constexpr uint32_t WINDOWS_SERVER_20H2_CORE_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_20H2_CORE");
+        static constexpr uint32_t LINUX_HASH = ConstExprHashingUtils::HashString("LINUX");
 
 
         OSFamily GetOSFamilyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WINDOWS_SERVER_2019_FULL_HASH)
           {
             return OSFamily::WINDOWS_SERVER_2019_FULL;

@@ -20,16 +20,16 @@ namespace Aws
       namespace EnrollmentStatusMapper
       {
 
-        static const int INITIALIZED_HASH = HashingUtils::HashString("INITIALIZED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int REGISTERED_HASH = HashingUtils::HashString("REGISTERED");
-        static const int DISASSOCIATING_HASH = HashingUtils::HashString("DISASSOCIATING");
-        static const int DEREGISTERING_HASH = HashingUtils::HashString("DEREGISTERING");
+        static constexpr uint32_t INITIALIZED_HASH = ConstExprHashingUtils::HashString("INITIALIZED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t REGISTERED_HASH = ConstExprHashingUtils::HashString("REGISTERED");
+        static constexpr uint32_t DISASSOCIATING_HASH = ConstExprHashingUtils::HashString("DISASSOCIATING");
+        static constexpr uint32_t DEREGISTERING_HASH = ConstExprHashingUtils::HashString("DEREGISTERING");
 
 
         EnrollmentStatus GetEnrollmentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INITIALIZED_HASH)
           {
             return EnrollmentStatus::INITIALIZED;

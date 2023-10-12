@@ -20,14 +20,14 @@ namespace Aws
       namespace RevealRequestStatusMapper
       {
 
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t PROCESSING_HASH = ConstExprHashingUtils::HashString("PROCESSING");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         RevealRequestStatus GetRevealRequestStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUCCESS_HASH)
           {
             return RevealRequestStatus::SUCCESS;

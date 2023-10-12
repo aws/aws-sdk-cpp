@@ -20,13 +20,13 @@ namespace Aws
       namespace ProtocolMapper
       {
 
-        static const int PCOIP_HASH = HashingUtils::HashString("PCOIP");
-        static const int WSP_HASH = HashingUtils::HashString("WSP");
+        static constexpr uint32_t PCOIP_HASH = ConstExprHashingUtils::HashString("PCOIP");
+        static constexpr uint32_t WSP_HASH = ConstExprHashingUtils::HashString("WSP");
 
 
         Protocol GetProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PCOIP_HASH)
           {
             return Protocol::PCOIP;

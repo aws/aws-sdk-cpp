@@ -20,15 +20,15 @@ namespace Aws
       namespace FirstBootMapper
       {
 
-        static const int WAITING_HASH = HashingUtils::HashString("WAITING");
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+        static constexpr uint32_t WAITING_HASH = ConstExprHashingUtils::HashString("WAITING");
+        static constexpr uint32_t SUCCEEDED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
 
 
         FirstBoot GetFirstBootForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WAITING_HASH)
           {
             return FirstBoot::WAITING;

@@ -20,12 +20,12 @@ namespace Aws
       namespace SourceCodeVersionTypeMapper
       {
 
-        static const int BRANCH_HASH = HashingUtils::HashString("BRANCH");
+        static constexpr uint32_t BRANCH_HASH = ConstExprHashingUtils::HashString("BRANCH");
 
 
         SourceCodeVersionType GetSourceCodeVersionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BRANCH_HASH)
           {
             return SourceCodeVersionType::BRANCH;

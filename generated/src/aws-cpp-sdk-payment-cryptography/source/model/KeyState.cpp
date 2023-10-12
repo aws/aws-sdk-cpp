@@ -20,15 +20,15 @@ namespace Aws
       namespace KeyStateMapper
       {
 
-        static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
-        static const int CREATE_COMPLETE_HASH = HashingUtils::HashString("CREATE_COMPLETE");
-        static const int DELETE_PENDING_HASH = HashingUtils::HashString("DELETE_PENDING");
-        static const int DELETE_COMPLETE_HASH = HashingUtils::HashString("DELETE_COMPLETE");
+        static constexpr uint32_t CREATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("CREATE_IN_PROGRESS");
+        static constexpr uint32_t CREATE_COMPLETE_HASH = ConstExprHashingUtils::HashString("CREATE_COMPLETE");
+        static constexpr uint32_t DELETE_PENDING_HASH = ConstExprHashingUtils::HashString("DELETE_PENDING");
+        static constexpr uint32_t DELETE_COMPLETE_HASH = ConstExprHashingUtils::HashString("DELETE_COMPLETE");
 
 
         KeyState GetKeyStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_IN_PROGRESS_HASH)
           {
             return KeyState::CREATE_IN_PROGRESS;

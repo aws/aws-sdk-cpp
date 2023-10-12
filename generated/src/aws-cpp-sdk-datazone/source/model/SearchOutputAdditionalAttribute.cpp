@@ -20,12 +20,12 @@ namespace Aws
       namespace SearchOutputAdditionalAttributeMapper
       {
 
-        static const int FORMS_HASH = HashingUtils::HashString("FORMS");
+        static constexpr uint32_t FORMS_HASH = ConstExprHashingUtils::HashString("FORMS");
 
 
         SearchOutputAdditionalAttribute GetSearchOutputAdditionalAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FORMS_HASH)
           {
             return SearchOutputAdditionalAttribute::FORMS;

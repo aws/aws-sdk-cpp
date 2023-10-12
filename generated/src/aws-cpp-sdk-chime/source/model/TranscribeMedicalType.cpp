@@ -20,13 +20,13 @@ namespace Aws
       namespace TranscribeMedicalTypeMapper
       {
 
-        static const int CONVERSATION_HASH = HashingUtils::HashString("CONVERSATION");
-        static const int DICTATION_HASH = HashingUtils::HashString("DICTATION");
+        static constexpr uint32_t CONVERSATION_HASH = ConstExprHashingUtils::HashString("CONVERSATION");
+        static constexpr uint32_t DICTATION_HASH = ConstExprHashingUtils::HashString("DICTATION");
 
 
         TranscribeMedicalType GetTranscribeMedicalTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONVERSATION_HASH)
           {
             return TranscribeMedicalType::CONVERSATION;

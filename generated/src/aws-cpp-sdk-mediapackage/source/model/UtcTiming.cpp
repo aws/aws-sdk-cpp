@@ -20,15 +20,15 @@ namespace Aws
       namespace UtcTimingMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int HTTP_HEAD_HASH = HashingUtils::HashString("HTTP-HEAD");
-        static const int HTTP_ISO_HASH = HashingUtils::HashString("HTTP-ISO");
-        static const int HTTP_XSDATE_HASH = HashingUtils::HashString("HTTP-XSDATE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t HTTP_HEAD_HASH = ConstExprHashingUtils::HashString("HTTP-HEAD");
+        static constexpr uint32_t HTTP_ISO_HASH = ConstExprHashingUtils::HashString("HTTP-ISO");
+        static constexpr uint32_t HTTP_XSDATE_HASH = ConstExprHashingUtils::HashString("HTTP-XSDATE");
 
 
         UtcTiming GetUtcTimingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return UtcTiming::NONE;

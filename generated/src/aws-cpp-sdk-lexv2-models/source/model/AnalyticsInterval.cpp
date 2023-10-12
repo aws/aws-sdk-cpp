@@ -20,13 +20,13 @@ namespace Aws
       namespace AnalyticsIntervalMapper
       {
 
-        static const int OneHour_HASH = HashingUtils::HashString("OneHour");
-        static const int OneDay_HASH = HashingUtils::HashString("OneDay");
+        static constexpr uint32_t OneHour_HASH = ConstExprHashingUtils::HashString("OneHour");
+        static constexpr uint32_t OneDay_HASH = ConstExprHashingUtils::HashString("OneDay");
 
 
         AnalyticsInterval GetAnalyticsIntervalForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OneHour_HASH)
           {
             return AnalyticsInterval::OneHour;

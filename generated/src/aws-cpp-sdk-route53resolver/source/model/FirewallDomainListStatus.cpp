@@ -20,16 +20,16 @@ namespace Aws
       namespace FirewallDomainListStatusMapper
       {
 
-        static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
-        static const int COMPLETE_IMPORT_FAILED_HASH = HashingUtils::HashString("COMPLETE_IMPORT_FAILED");
-        static const int IMPORTING_HASH = HashingUtils::HashString("IMPORTING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static constexpr uint32_t COMPLETE_HASH = ConstExprHashingUtils::HashString("COMPLETE");
+        static constexpr uint32_t COMPLETE_IMPORT_FAILED_HASH = ConstExprHashingUtils::HashString("COMPLETE_IMPORT_FAILED");
+        static constexpr uint32_t IMPORTING_HASH = ConstExprHashingUtils::HashString("IMPORTING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
 
 
         FirewallDomainListStatus GetFirewallDomainListStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPLETE_HASH)
           {
             return FirewallDomainListStatus::COMPLETE;

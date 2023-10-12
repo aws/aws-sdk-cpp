@@ -20,24 +20,24 @@ namespace Aws
       namespace BatchReadExceptionTypeMapper
       {
 
-        static const int ValidationException_HASH = HashingUtils::HashString("ValidationException");
-        static const int InvalidArnException_HASH = HashingUtils::HashString("InvalidArnException");
-        static const int ResourceNotFoundException_HASH = HashingUtils::HashString("ResourceNotFoundException");
-        static const int InvalidNextTokenException_HASH = HashingUtils::HashString("InvalidNextTokenException");
-        static const int AccessDeniedException_HASH = HashingUtils::HashString("AccessDeniedException");
-        static const int NotNodeException_HASH = HashingUtils::HashString("NotNodeException");
-        static const int FacetValidationException_HASH = HashingUtils::HashString("FacetValidationException");
-        static const int CannotListParentOfRootException_HASH = HashingUtils::HashString("CannotListParentOfRootException");
-        static const int NotIndexException_HASH = HashingUtils::HashString("NotIndexException");
-        static const int NotPolicyException_HASH = HashingUtils::HashString("NotPolicyException");
-        static const int DirectoryNotEnabledException_HASH = HashingUtils::HashString("DirectoryNotEnabledException");
-        static const int LimitExceededException_HASH = HashingUtils::HashString("LimitExceededException");
-        static const int InternalServiceException_HASH = HashingUtils::HashString("InternalServiceException");
+        static constexpr uint32_t ValidationException_HASH = ConstExprHashingUtils::HashString("ValidationException");
+        static constexpr uint32_t InvalidArnException_HASH = ConstExprHashingUtils::HashString("InvalidArnException");
+        static constexpr uint32_t ResourceNotFoundException_HASH = ConstExprHashingUtils::HashString("ResourceNotFoundException");
+        static constexpr uint32_t InvalidNextTokenException_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+        static constexpr uint32_t AccessDeniedException_HASH = ConstExprHashingUtils::HashString("AccessDeniedException");
+        static constexpr uint32_t NotNodeException_HASH = ConstExprHashingUtils::HashString("NotNodeException");
+        static constexpr uint32_t FacetValidationException_HASH = ConstExprHashingUtils::HashString("FacetValidationException");
+        static constexpr uint32_t CannotListParentOfRootException_HASH = ConstExprHashingUtils::HashString("CannotListParentOfRootException");
+        static constexpr uint32_t NotIndexException_HASH = ConstExprHashingUtils::HashString("NotIndexException");
+        static constexpr uint32_t NotPolicyException_HASH = ConstExprHashingUtils::HashString("NotPolicyException");
+        static constexpr uint32_t DirectoryNotEnabledException_HASH = ConstExprHashingUtils::HashString("DirectoryNotEnabledException");
+        static constexpr uint32_t LimitExceededException_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+        static constexpr uint32_t InternalServiceException_HASH = ConstExprHashingUtils::HashString("InternalServiceException");
 
 
         BatchReadExceptionType GetBatchReadExceptionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ValidationException_HASH)
           {
             return BatchReadExceptionType::ValidationException;

@@ -20,15 +20,15 @@ namespace Aws
       namespace ReplacementTypeEnumMapper
       {
 
-        static const int KEEP_BASE_HASH = HashingUtils::HashString("KEEP_BASE");
-        static const int KEEP_SOURCE_HASH = HashingUtils::HashString("KEEP_SOURCE");
-        static const int KEEP_DESTINATION_HASH = HashingUtils::HashString("KEEP_DESTINATION");
-        static const int USE_NEW_CONTENT_HASH = HashingUtils::HashString("USE_NEW_CONTENT");
+        static constexpr uint32_t KEEP_BASE_HASH = ConstExprHashingUtils::HashString("KEEP_BASE");
+        static constexpr uint32_t KEEP_SOURCE_HASH = ConstExprHashingUtils::HashString("KEEP_SOURCE");
+        static constexpr uint32_t KEEP_DESTINATION_HASH = ConstExprHashingUtils::HashString("KEEP_DESTINATION");
+        static constexpr uint32_t USE_NEW_CONTENT_HASH = ConstExprHashingUtils::HashString("USE_NEW_CONTENT");
 
 
         ReplacementTypeEnum GetReplacementTypeEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KEEP_BASE_HASH)
           {
             return ReplacementTypeEnum::KEEP_BASE;

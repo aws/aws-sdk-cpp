@@ -20,12 +20,12 @@ namespace Aws
       namespace EntityTypeMapper
       {
 
-        static const int ASSET_HASH = HashingUtils::HashString("ASSET");
+        static constexpr uint32_t ASSET_HASH = ConstExprHashingUtils::HashString("ASSET");
 
 
         EntityType GetEntityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASSET_HASH)
           {
             return EntityType::ASSET;

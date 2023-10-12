@@ -20,13 +20,13 @@ namespace Aws
       namespace TestExecutionApiModeMapper
       {
 
-        static const int Streaming_HASH = HashingUtils::HashString("Streaming");
-        static const int NonStreaming_HASH = HashingUtils::HashString("NonStreaming");
+        static constexpr uint32_t Streaming_HASH = ConstExprHashingUtils::HashString("Streaming");
+        static constexpr uint32_t NonStreaming_HASH = ConstExprHashingUtils::HashString("NonStreaming");
 
 
         TestExecutionApiMode GetTestExecutionApiModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Streaming_HASH)
           {
             return TestExecutionApiMode::Streaming;

@@ -20,17 +20,17 @@ namespace Aws
       namespace DBProxyEndpointStatusMapper
       {
 
-        static const int available_HASH = HashingUtils::HashString("available");
-        static const int modifying_HASH = HashingUtils::HashString("modifying");
-        static const int incompatible_network_HASH = HashingUtils::HashString("incompatible-network");
-        static const int insufficient_resource_limits_HASH = HashingUtils::HashString("insufficient-resource-limits");
-        static const int creating_HASH = HashingUtils::HashString("creating");
-        static const int deleting_HASH = HashingUtils::HashString("deleting");
+        static constexpr uint32_t available_HASH = ConstExprHashingUtils::HashString("available");
+        static constexpr uint32_t modifying_HASH = ConstExprHashingUtils::HashString("modifying");
+        static constexpr uint32_t incompatible_network_HASH = ConstExprHashingUtils::HashString("incompatible-network");
+        static constexpr uint32_t insufficient_resource_limits_HASH = ConstExprHashingUtils::HashString("insufficient-resource-limits");
+        static constexpr uint32_t creating_HASH = ConstExprHashingUtils::HashString("creating");
+        static constexpr uint32_t deleting_HASH = ConstExprHashingUtils::HashString("deleting");
 
 
         DBProxyEndpointStatus GetDBProxyEndpointStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == available_HASH)
           {
             return DBProxyEndpointStatus::available;

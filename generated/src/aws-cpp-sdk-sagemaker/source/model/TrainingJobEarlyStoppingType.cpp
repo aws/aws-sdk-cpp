@@ -20,13 +20,13 @@ namespace Aws
       namespace TrainingJobEarlyStoppingTypeMapper
       {
 
-        static const int Off_HASH = HashingUtils::HashString("Off");
-        static const int Auto_HASH = HashingUtils::HashString("Auto");
+        static constexpr uint32_t Off_HASH = ConstExprHashingUtils::HashString("Off");
+        static constexpr uint32_t Auto_HASH = ConstExprHashingUtils::HashString("Auto");
 
 
         TrainingJobEarlyStoppingType GetTrainingJobEarlyStoppingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Off_HASH)
           {
             return TrainingJobEarlyStoppingType::Off;

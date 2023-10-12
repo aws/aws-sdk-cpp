@@ -20,13 +20,13 @@ namespace Aws
       namespace ConnectionTypeMapper
       {
 
-        static const int WEBSOCKET_HASH = HashingUtils::HashString("WEBSOCKET");
-        static const int CONNECTION_CREDENTIALS_HASH = HashingUtils::HashString("CONNECTION_CREDENTIALS");
+        static constexpr uint32_t WEBSOCKET_HASH = ConstExprHashingUtils::HashString("WEBSOCKET");
+        static constexpr uint32_t CONNECTION_CREDENTIALS_HASH = ConstExprHashingUtils::HashString("CONNECTION_CREDENTIALS");
 
 
         ConnectionType GetConnectionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WEBSOCKET_HASH)
           {
             return ConnectionType::WEBSOCKET;

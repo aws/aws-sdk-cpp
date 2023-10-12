@@ -20,13 +20,13 @@ namespace Aws
       namespace AuthResourcesMapper
       {
 
-        static const int USER_POOL_ONLY_HASH = HashingUtils::HashString("USER_POOL_ONLY");
-        static const int IDENTITY_POOL_AND_USER_POOL_HASH = HashingUtils::HashString("IDENTITY_POOL_AND_USER_POOL");
+        static constexpr uint32_t USER_POOL_ONLY_HASH = ConstExprHashingUtils::HashString("USER_POOL_ONLY");
+        static constexpr uint32_t IDENTITY_POOL_AND_USER_POOL_HASH = ConstExprHashingUtils::HashString("IDENTITY_POOL_AND_USER_POOL");
 
 
         AuthResources GetAuthResourcesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USER_POOL_ONLY_HASH)
           {
             return AuthResources::USER_POOL_ONLY;

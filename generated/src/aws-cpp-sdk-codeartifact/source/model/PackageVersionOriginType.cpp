@@ -20,14 +20,14 @@ namespace Aws
       namespace PackageVersionOriginTypeMapper
       {
 
-        static const int INTERNAL_HASH = HashingUtils::HashString("INTERNAL");
-        static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t INTERNAL_HASH = ConstExprHashingUtils::HashString("INTERNAL");
+        static constexpr uint32_t EXTERNAL_HASH = ConstExprHashingUtils::HashString("EXTERNAL");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         PackageVersionOriginType GetPackageVersionOriginTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERNAL_HASH)
           {
             return PackageVersionOriginType::INTERNAL;

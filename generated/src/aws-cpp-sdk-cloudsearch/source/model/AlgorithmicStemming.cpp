@@ -20,15 +20,15 @@ namespace Aws
       namespace AlgorithmicStemmingMapper
       {
 
-        static const int none_HASH = HashingUtils::HashString("none");
-        static const int minimal_HASH = HashingUtils::HashString("minimal");
-        static const int light_HASH = HashingUtils::HashString("light");
-        static const int full_HASH = HashingUtils::HashString("full");
+        static constexpr uint32_t none_HASH = ConstExprHashingUtils::HashString("none");
+        static constexpr uint32_t minimal_HASH = ConstExprHashingUtils::HashString("minimal");
+        static constexpr uint32_t light_HASH = ConstExprHashingUtils::HashString("light");
+        static constexpr uint32_t full_HASH = ConstExprHashingUtils::HashString("full");
 
 
         AlgorithmicStemming GetAlgorithmicStemmingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == none_HASH)
           {
             return AlgorithmicStemming::none;

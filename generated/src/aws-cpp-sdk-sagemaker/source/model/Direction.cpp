@@ -20,14 +20,14 @@ namespace Aws
       namespace DirectionMapper
       {
 
-        static const int Both_HASH = HashingUtils::HashString("Both");
-        static const int Ascendants_HASH = HashingUtils::HashString("Ascendants");
-        static const int Descendants_HASH = HashingUtils::HashString("Descendants");
+        static constexpr uint32_t Both_HASH = ConstExprHashingUtils::HashString("Both");
+        static constexpr uint32_t Ascendants_HASH = ConstExprHashingUtils::HashString("Ascendants");
+        static constexpr uint32_t Descendants_HASH = ConstExprHashingUtils::HashString("Descendants");
 
 
         Direction GetDirectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Both_HASH)
           {
             return Direction::Both;

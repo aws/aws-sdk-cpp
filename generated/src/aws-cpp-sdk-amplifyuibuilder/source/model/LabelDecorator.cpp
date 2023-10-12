@@ -20,14 +20,14 @@ namespace Aws
       namespace LabelDecoratorMapper
       {
 
-        static const int required_HASH = HashingUtils::HashString("required");
-        static const int optional_HASH = HashingUtils::HashString("optional");
-        static const int none_HASH = HashingUtils::HashString("none");
+        static constexpr uint32_t required_HASH = ConstExprHashingUtils::HashString("required");
+        static constexpr uint32_t optional_HASH = ConstExprHashingUtils::HashString("optional");
+        static constexpr uint32_t none_HASH = ConstExprHashingUtils::HashString("none");
 
 
         LabelDecorator GetLabelDecoratorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == required_HASH)
           {
             return LabelDecorator::required;

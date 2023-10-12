@@ -20,13 +20,13 @@ namespace Aws
       namespace CapacityReservationPreferenceMapper
       {
 
-        static const int open_HASH = HashingUtils::HashString("open");
-        static const int none_HASH = HashingUtils::HashString("none");
+        static constexpr uint32_t open_HASH = ConstExprHashingUtils::HashString("open");
+        static constexpr uint32_t none_HASH = ConstExprHashingUtils::HashString("none");
 
 
         CapacityReservationPreference GetCapacityReservationPreferenceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == open_HASH)
           {
             return CapacityReservationPreference::open;

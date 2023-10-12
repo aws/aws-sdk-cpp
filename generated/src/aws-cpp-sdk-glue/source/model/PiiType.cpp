@@ -20,15 +20,15 @@ namespace Aws
       namespace PiiTypeMapper
       {
 
-        static const int RowAudit_HASH = HashingUtils::HashString("RowAudit");
-        static const int RowMasking_HASH = HashingUtils::HashString("RowMasking");
-        static const int ColumnAudit_HASH = HashingUtils::HashString("ColumnAudit");
-        static const int ColumnMasking_HASH = HashingUtils::HashString("ColumnMasking");
+        static constexpr uint32_t RowAudit_HASH = ConstExprHashingUtils::HashString("RowAudit");
+        static constexpr uint32_t RowMasking_HASH = ConstExprHashingUtils::HashString("RowMasking");
+        static constexpr uint32_t ColumnAudit_HASH = ConstExprHashingUtils::HashString("ColumnAudit");
+        static constexpr uint32_t ColumnMasking_HASH = ConstExprHashingUtils::HashString("ColumnMasking");
 
 
         PiiType GetPiiTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RowAudit_HASH)
           {
             return PiiType::RowAudit;

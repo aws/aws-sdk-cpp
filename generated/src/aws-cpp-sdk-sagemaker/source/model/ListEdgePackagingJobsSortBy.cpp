@@ -20,16 +20,16 @@ namespace Aws
       namespace ListEdgePackagingJobsSortByMapper
       {
 
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int MODEL_NAME_HASH = HashingUtils::HashString("MODEL_NAME");
-        static const int CREATION_TIME_HASH = HashingUtils::HashString("CREATION_TIME");
-        static const int LAST_MODIFIED_TIME_HASH = HashingUtils::HashString("LAST_MODIFIED_TIME");
-        static const int STATUS_HASH = HashingUtils::HashString("STATUS");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t MODEL_NAME_HASH = ConstExprHashingUtils::HashString("MODEL_NAME");
+        static constexpr uint32_t CREATION_TIME_HASH = ConstExprHashingUtils::HashString("CREATION_TIME");
+        static constexpr uint32_t LAST_MODIFIED_TIME_HASH = ConstExprHashingUtils::HashString("LAST_MODIFIED_TIME");
+        static constexpr uint32_t STATUS_HASH = ConstExprHashingUtils::HashString("STATUS");
 
 
         ListEdgePackagingJobsSortBy GetListEdgePackagingJobsSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NAME_HASH)
           {
             return ListEdgePackagingJobsSortBy::NAME;

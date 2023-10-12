@@ -20,13 +20,13 @@ namespace Aws
       namespace OrderByMapper
       {
 
-        static const int TimestampDescending_HASH = HashingUtils::HashString("TimestampDescending");
-        static const int TimestampAscending_HASH = HashingUtils::HashString("TimestampAscending");
+        static constexpr uint32_t TimestampDescending_HASH = ConstExprHashingUtils::HashString("TimestampDescending");
+        static constexpr uint32_t TimestampAscending_HASH = ConstExprHashingUtils::HashString("TimestampAscending");
 
 
         OrderBy GetOrderByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TimestampDescending_HASH)
           {
             return OrderBy::TimestampDescending;

@@ -20,17 +20,17 @@ namespace Aws
       namespace ThrottleReasonMapper
       {
 
-        static const int ConcurrentInvocationLimitExceeded_HASH = HashingUtils::HashString("ConcurrentInvocationLimitExceeded");
-        static const int FunctionInvocationRateLimitExceeded_HASH = HashingUtils::HashString("FunctionInvocationRateLimitExceeded");
-        static const int ReservedFunctionConcurrentInvocationLimitExceeded_HASH = HashingUtils::HashString("ReservedFunctionConcurrentInvocationLimitExceeded");
-        static const int ReservedFunctionInvocationRateLimitExceeded_HASH = HashingUtils::HashString("ReservedFunctionInvocationRateLimitExceeded");
-        static const int CallerRateLimitExceeded_HASH = HashingUtils::HashString("CallerRateLimitExceeded");
-        static const int ConcurrentSnapshotCreateLimitExceeded_HASH = HashingUtils::HashString("ConcurrentSnapshotCreateLimitExceeded");
+        static constexpr uint32_t ConcurrentInvocationLimitExceeded_HASH = ConstExprHashingUtils::HashString("ConcurrentInvocationLimitExceeded");
+        static constexpr uint32_t FunctionInvocationRateLimitExceeded_HASH = ConstExprHashingUtils::HashString("FunctionInvocationRateLimitExceeded");
+        static constexpr uint32_t ReservedFunctionConcurrentInvocationLimitExceeded_HASH = ConstExprHashingUtils::HashString("ReservedFunctionConcurrentInvocationLimitExceeded");
+        static constexpr uint32_t ReservedFunctionInvocationRateLimitExceeded_HASH = ConstExprHashingUtils::HashString("ReservedFunctionInvocationRateLimitExceeded");
+        static constexpr uint32_t CallerRateLimitExceeded_HASH = ConstExprHashingUtils::HashString("CallerRateLimitExceeded");
+        static constexpr uint32_t ConcurrentSnapshotCreateLimitExceeded_HASH = ConstExprHashingUtils::HashString("ConcurrentSnapshotCreateLimitExceeded");
 
 
         ThrottleReason GetThrottleReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ConcurrentInvocationLimitExceeded_HASH)
           {
             return ThrottleReason::ConcurrentInvocationLimitExceeded;

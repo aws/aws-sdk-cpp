@@ -20,15 +20,15 @@ namespace Aws
       namespace RepositoryTriggerEventEnumMapper
       {
 
-        static const int all_HASH = HashingUtils::HashString("all");
-        static const int updateReference_HASH = HashingUtils::HashString("updateReference");
-        static const int createReference_HASH = HashingUtils::HashString("createReference");
-        static const int deleteReference_HASH = HashingUtils::HashString("deleteReference");
+        static constexpr uint32_t all_HASH = ConstExprHashingUtils::HashString("all");
+        static constexpr uint32_t updateReference_HASH = ConstExprHashingUtils::HashString("updateReference");
+        static constexpr uint32_t createReference_HASH = ConstExprHashingUtils::HashString("createReference");
+        static constexpr uint32_t deleteReference_HASH = ConstExprHashingUtils::HashString("deleteReference");
 
 
         RepositoryTriggerEventEnum GetRepositoryTriggerEventEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == all_HASH)
           {
             return RepositoryTriggerEventEnum::all;

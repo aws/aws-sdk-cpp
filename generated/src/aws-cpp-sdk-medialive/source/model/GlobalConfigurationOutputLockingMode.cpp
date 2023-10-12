@@ -20,13 +20,13 @@ namespace Aws
       namespace GlobalConfigurationOutputLockingModeMapper
       {
 
-        static const int EPOCH_LOCKING_HASH = HashingUtils::HashString("EPOCH_LOCKING");
-        static const int PIPELINE_LOCKING_HASH = HashingUtils::HashString("PIPELINE_LOCKING");
+        static constexpr uint32_t EPOCH_LOCKING_HASH = ConstExprHashingUtils::HashString("EPOCH_LOCKING");
+        static constexpr uint32_t PIPELINE_LOCKING_HASH = ConstExprHashingUtils::HashString("PIPELINE_LOCKING");
 
 
         GlobalConfigurationOutputLockingMode GetGlobalConfigurationOutputLockingModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EPOCH_LOCKING_HASH)
           {
             return GlobalConfigurationOutputLockingMode::EPOCH_LOCKING;

@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsModeMapper
       {
 
-        static const int LIVE_HASH = HashingUtils::HashString("LIVE");
-        static const int VOD_HASH = HashingUtils::HashString("VOD");
+        static constexpr uint32_t LIVE_HASH = ConstExprHashingUtils::HashString("LIVE");
+        static constexpr uint32_t VOD_HASH = ConstExprHashingUtils::HashString("VOD");
 
 
         HlsMode GetHlsModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LIVE_HASH)
           {
             return HlsMode::LIVE;

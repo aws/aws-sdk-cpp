@@ -20,15 +20,15 @@ namespace Aws
       namespace ClientVpnRouteStatusCodeMapper
       {
 
-        static const int creating_HASH = HashingUtils::HashString("creating");
-        static const int active_HASH = HashingUtils::HashString("active");
-        static const int failed_HASH = HashingUtils::HashString("failed");
-        static const int deleting_HASH = HashingUtils::HashString("deleting");
+        static constexpr uint32_t creating_HASH = ConstExprHashingUtils::HashString("creating");
+        static constexpr uint32_t active_HASH = ConstExprHashingUtils::HashString("active");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
+        static constexpr uint32_t deleting_HASH = ConstExprHashingUtils::HashString("deleting");
 
 
         ClientVpnRouteStatusCode GetClientVpnRouteStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == creating_HASH)
           {
             return ClientVpnRouteStatusCode::creating;

@@ -20,14 +20,14 @@ namespace Aws
       namespace RouteTypeMapper
       {
 
-        static const int Transactional_HASH = HashingUtils::HashString("Transactional");
-        static const int Promotional_HASH = HashingUtils::HashString("Promotional");
-        static const int Premium_HASH = HashingUtils::HashString("Premium");
+        static constexpr uint32_t Transactional_HASH = ConstExprHashingUtils::HashString("Transactional");
+        static constexpr uint32_t Promotional_HASH = ConstExprHashingUtils::HashString("Promotional");
+        static constexpr uint32_t Premium_HASH = ConstExprHashingUtils::HashString("Premium");
 
 
         RouteType GetRouteTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Transactional_HASH)
           {
             return RouteType::Transactional;

@@ -20,16 +20,16 @@ namespace Aws
       namespace NatGatewayStateMapper
       {
 
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int failed_HASH = HashingUtils::HashString("failed");
-        static const int available_HASH = HashingUtils::HashString("available");
-        static const int deleting_HASH = HashingUtils::HashString("deleting");
-        static const int deleted_HASH = HashingUtils::HashString("deleted");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
+        static constexpr uint32_t available_HASH = ConstExprHashingUtils::HashString("available");
+        static constexpr uint32_t deleting_HASH = ConstExprHashingUtils::HashString("deleting");
+        static constexpr uint32_t deleted_HASH = ConstExprHashingUtils::HashString("deleted");
 
 
         NatGatewayState GetNatGatewayStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pending_HASH)
           {
             return NatGatewayState::pending;

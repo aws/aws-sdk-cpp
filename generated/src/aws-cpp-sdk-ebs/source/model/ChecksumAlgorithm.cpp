@@ -20,12 +20,12 @@ namespace Aws
       namespace ChecksumAlgorithmMapper
       {
 
-        static const int SHA256_HASH = HashingUtils::HashString("SHA256");
+        static constexpr uint32_t SHA256_HASH = ConstExprHashingUtils::HashString("SHA256");
 
 
         ChecksumAlgorithm GetChecksumAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SHA256_HASH)
           {
             return ChecksumAlgorithm::SHA256;

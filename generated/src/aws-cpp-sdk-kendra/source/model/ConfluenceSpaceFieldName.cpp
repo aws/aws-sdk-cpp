@@ -20,15 +20,15 @@ namespace Aws
       namespace ConfluenceSpaceFieldNameMapper
       {
 
-        static const int DISPLAY_URL_HASH = HashingUtils::HashString("DISPLAY_URL");
-        static const int ITEM_TYPE_HASH = HashingUtils::HashString("ITEM_TYPE");
-        static const int SPACE_KEY_HASH = HashingUtils::HashString("SPACE_KEY");
-        static const int URL_HASH = HashingUtils::HashString("URL");
+        static constexpr uint32_t DISPLAY_URL_HASH = ConstExprHashingUtils::HashString("DISPLAY_URL");
+        static constexpr uint32_t ITEM_TYPE_HASH = ConstExprHashingUtils::HashString("ITEM_TYPE");
+        static constexpr uint32_t SPACE_KEY_HASH = ConstExprHashingUtils::HashString("SPACE_KEY");
+        static constexpr uint32_t URL_HASH = ConstExprHashingUtils::HashString("URL");
 
 
         ConfluenceSpaceFieldName GetConfluenceSpaceFieldNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISPLAY_URL_HASH)
           {
             return ConfluenceSpaceFieldName::DISPLAY_URL;

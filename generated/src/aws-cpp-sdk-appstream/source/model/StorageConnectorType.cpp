@@ -20,14 +20,14 @@ namespace Aws
       namespace StorageConnectorTypeMapper
       {
 
-        static const int HOMEFOLDERS_HASH = HashingUtils::HashString("HOMEFOLDERS");
-        static const int GOOGLE_DRIVE_HASH = HashingUtils::HashString("GOOGLE_DRIVE");
-        static const int ONE_DRIVE_HASH = HashingUtils::HashString("ONE_DRIVE");
+        static constexpr uint32_t HOMEFOLDERS_HASH = ConstExprHashingUtils::HashString("HOMEFOLDERS");
+        static constexpr uint32_t GOOGLE_DRIVE_HASH = ConstExprHashingUtils::HashString("GOOGLE_DRIVE");
+        static constexpr uint32_t ONE_DRIVE_HASH = ConstExprHashingUtils::HashString("ONE_DRIVE");
 
 
         StorageConnectorType GetStorageConnectorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HOMEFOLDERS_HASH)
           {
             return StorageConnectorType::HOMEFOLDERS;

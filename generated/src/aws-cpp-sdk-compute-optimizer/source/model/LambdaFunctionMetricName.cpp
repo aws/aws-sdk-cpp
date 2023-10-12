@@ -20,13 +20,13 @@ namespace Aws
       namespace LambdaFunctionMetricNameMapper
       {
 
-        static const int Duration_HASH = HashingUtils::HashString("Duration");
-        static const int Memory_HASH = HashingUtils::HashString("Memory");
+        static constexpr uint32_t Duration_HASH = ConstExprHashingUtils::HashString("Duration");
+        static constexpr uint32_t Memory_HASH = ConstExprHashingUtils::HashString("Memory");
 
 
         LambdaFunctionMetricName GetLambdaFunctionMetricNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Duration_HASH)
           {
             return LambdaFunctionMetricName::Duration;

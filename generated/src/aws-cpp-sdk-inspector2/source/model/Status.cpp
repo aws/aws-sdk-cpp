@@ -20,17 +20,17 @@ namespace Aws
       namespace StatusMapper
       {
 
-        static const int ENABLING_HASH = HashingUtils::HashString("ENABLING");
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int DISABLING_HASH = HashingUtils::HashString("DISABLING");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int SUSPENDING_HASH = HashingUtils::HashString("SUSPENDING");
-        static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
+        static constexpr uint32_t ENABLING_HASH = ConstExprHashingUtils::HashString("ENABLING");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
+        static constexpr uint32_t DISABLING_HASH = ConstExprHashingUtils::HashString("DISABLING");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t SUSPENDING_HASH = ConstExprHashingUtils::HashString("SUSPENDING");
+        static constexpr uint32_t SUSPENDED_HASH = ConstExprHashingUtils::HashString("SUSPENDED");
 
 
         Status GetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLING_HASH)
           {
             return Status::ENABLING;

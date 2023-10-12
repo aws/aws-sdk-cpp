@@ -20,24 +20,24 @@ namespace Aws
       namespace JobStatusMapper
       {
 
-        static const int Active_HASH = HashingUtils::HashString("Active");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
-        static const int Cancelling_HASH = HashingUtils::HashString("Cancelling");
-        static const int Complete_HASH = HashingUtils::HashString("Complete");
-        static const int Completing_HASH = HashingUtils::HashString("Completing");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Failing_HASH = HashingUtils::HashString("Failing");
-        static const int New_HASH = HashingUtils::HashString("New");
-        static const int Paused_HASH = HashingUtils::HashString("Paused");
-        static const int Pausing_HASH = HashingUtils::HashString("Pausing");
-        static const int Preparing_HASH = HashingUtils::HashString("Preparing");
-        static const int Ready_HASH = HashingUtils::HashString("Ready");
-        static const int Suspended_HASH = HashingUtils::HashString("Suspended");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
+        static constexpr uint32_t Cancelled_HASH = ConstExprHashingUtils::HashString("Cancelled");
+        static constexpr uint32_t Cancelling_HASH = ConstExprHashingUtils::HashString("Cancelling");
+        static constexpr uint32_t Complete_HASH = ConstExprHashingUtils::HashString("Complete");
+        static constexpr uint32_t Completing_HASH = ConstExprHashingUtils::HashString("Completing");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Failing_HASH = ConstExprHashingUtils::HashString("Failing");
+        static constexpr uint32_t New_HASH = ConstExprHashingUtils::HashString("New");
+        static constexpr uint32_t Paused_HASH = ConstExprHashingUtils::HashString("Paused");
+        static constexpr uint32_t Pausing_HASH = ConstExprHashingUtils::HashString("Pausing");
+        static constexpr uint32_t Preparing_HASH = ConstExprHashingUtils::HashString("Preparing");
+        static constexpr uint32_t Ready_HASH = ConstExprHashingUtils::HashString("Ready");
+        static constexpr uint32_t Suspended_HASH = ConstExprHashingUtils::HashString("Suspended");
 
 
         JobStatus GetJobStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Active_HASH)
           {
             return JobStatus::Active;

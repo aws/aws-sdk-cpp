@@ -20,14 +20,14 @@ namespace Aws
       namespace EventTypeMapper
       {
 
-        static const int NEW__HASH = HashingUtils::HashString("NEW");
-        static const int CHANGED_HASH = HashingUtils::HashString("CHANGED");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t NEW__HASH = ConstExprHashingUtils::HashString("NEW");
+        static constexpr uint32_t CHANGED_HASH = ConstExprHashingUtils::HashString("CHANGED");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NEW__HASH)
           {
             return EventType::NEW_;

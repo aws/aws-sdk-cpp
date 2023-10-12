@@ -20,12 +20,12 @@ namespace Aws
       namespace CopyOptionMapper
       {
 
-        static const int CopyTags_HASH = HashingUtils::HashString("CopyTags");
+        static constexpr uint32_t CopyTags_HASH = ConstExprHashingUtils::HashString("CopyTags");
 
 
         CopyOption GetCopyOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CopyTags_HASH)
           {
             return CopyOption::CopyTags;

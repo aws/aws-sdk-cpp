@@ -20,16 +20,16 @@ namespace Aws
       namespace AggregationTransformationValueMapper
       {
 
-        static const int sum_HASH = HashingUtils::HashString("sum");
-        static const int avg_HASH = HashingUtils::HashString("avg");
-        static const int first_HASH = HashingUtils::HashString("first");
-        static const int min_HASH = HashingUtils::HashString("min");
-        static const int max_HASH = HashingUtils::HashString("max");
+        static constexpr uint32_t sum_HASH = ConstExprHashingUtils::HashString("sum");
+        static constexpr uint32_t avg_HASH = ConstExprHashingUtils::HashString("avg");
+        static constexpr uint32_t first_HASH = ConstExprHashingUtils::HashString("first");
+        static constexpr uint32_t min_HASH = ConstExprHashingUtils::HashString("min");
+        static constexpr uint32_t max_HASH = ConstExprHashingUtils::HashString("max");
 
 
         AggregationTransformationValue GetAggregationTransformationValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == sum_HASH)
           {
             return AggregationTransformationValue::sum;

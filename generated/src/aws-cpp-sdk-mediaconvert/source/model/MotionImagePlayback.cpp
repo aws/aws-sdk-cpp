@@ -20,13 +20,13 @@ namespace Aws
       namespace MotionImagePlaybackMapper
       {
 
-        static const int ONCE_HASH = HashingUtils::HashString("ONCE");
-        static const int REPEAT_HASH = HashingUtils::HashString("REPEAT");
+        static constexpr uint32_t ONCE_HASH = ConstExprHashingUtils::HashString("ONCE");
+        static constexpr uint32_t REPEAT_HASH = ConstExprHashingUtils::HashString("REPEAT");
 
 
         MotionImagePlayback GetMotionImagePlaybackForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ONCE_HASH)
           {
             return MotionImagePlayback::ONCE;

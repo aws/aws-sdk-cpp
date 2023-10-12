@@ -20,14 +20,14 @@ namespace Aws
       namespace RobotSoftwareSuiteTypeMapper
       {
 
-        static const int ROS_HASH = HashingUtils::HashString("ROS");
-        static const int ROS2_HASH = HashingUtils::HashString("ROS2");
-        static const int General_HASH = HashingUtils::HashString("General");
+        static constexpr uint32_t ROS_HASH = ConstExprHashingUtils::HashString("ROS");
+        static constexpr uint32_t ROS2_HASH = ConstExprHashingUtils::HashString("ROS2");
+        static constexpr uint32_t General_HASH = ConstExprHashingUtils::HashString("General");
 
 
         RobotSoftwareSuiteType GetRobotSoftwareSuiteTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ROS_HASH)
           {
             return RobotSoftwareSuiteType::ROS;

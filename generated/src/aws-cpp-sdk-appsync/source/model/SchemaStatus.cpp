@@ -20,17 +20,17 @@ namespace Aws
       namespace SchemaStatusMapper
       {
 
-        static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int NOT_APPLICABLE_HASH = HashingUtils::HashString("NOT_APPLICABLE");
+        static constexpr uint32_t PROCESSING_HASH = ConstExprHashingUtils::HashString("PROCESSING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t NOT_APPLICABLE_HASH = ConstExprHashingUtils::HashString("NOT_APPLICABLE");
 
 
         SchemaStatus GetSchemaStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROCESSING_HASH)
           {
             return SchemaStatus::PROCESSING;

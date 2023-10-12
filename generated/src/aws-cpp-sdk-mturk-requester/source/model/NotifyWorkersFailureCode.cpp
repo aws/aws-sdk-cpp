@@ -20,13 +20,13 @@ namespace Aws
       namespace NotifyWorkersFailureCodeMapper
       {
 
-        static const int SoftFailure_HASH = HashingUtils::HashString("SoftFailure");
-        static const int HardFailure_HASH = HashingUtils::HashString("HardFailure");
+        static constexpr uint32_t SoftFailure_HASH = ConstExprHashingUtils::HashString("SoftFailure");
+        static constexpr uint32_t HardFailure_HASH = ConstExprHashingUtils::HashString("HardFailure");
 
 
         NotifyWorkersFailureCode GetNotifyWorkersFailureCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SoftFailure_HASH)
           {
             return NotifyWorkersFailureCode::SoftFailure;

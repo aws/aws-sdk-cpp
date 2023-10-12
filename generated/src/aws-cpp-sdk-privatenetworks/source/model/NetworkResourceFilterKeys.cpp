@@ -20,13 +20,13 @@ namespace Aws
       namespace NetworkResourceFilterKeysMapper
       {
 
-        static const int ORDER_HASH = HashingUtils::HashString("ORDER");
-        static const int STATUS_HASH = HashingUtils::HashString("STATUS");
+        static constexpr uint32_t ORDER_HASH = ConstExprHashingUtils::HashString("ORDER");
+        static constexpr uint32_t STATUS_HASH = ConstExprHashingUtils::HashString("STATUS");
 
 
         NetworkResourceFilterKeys GetNetworkResourceFilterKeysForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ORDER_HASH)
           {
             return NetworkResourceFilterKeys::ORDER;

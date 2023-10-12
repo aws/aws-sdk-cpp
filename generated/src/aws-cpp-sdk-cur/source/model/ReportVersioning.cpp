@@ -20,13 +20,13 @@ namespace Aws
       namespace ReportVersioningMapper
       {
 
-        static const int CREATE_NEW_REPORT_HASH = HashingUtils::HashString("CREATE_NEW_REPORT");
-        static const int OVERWRITE_REPORT_HASH = HashingUtils::HashString("OVERWRITE_REPORT");
+        static constexpr uint32_t CREATE_NEW_REPORT_HASH = ConstExprHashingUtils::HashString("CREATE_NEW_REPORT");
+        static constexpr uint32_t OVERWRITE_REPORT_HASH = ConstExprHashingUtils::HashString("OVERWRITE_REPORT");
 
 
         ReportVersioning GetReportVersioningForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_NEW_REPORT_HASH)
           {
             return ReportVersioning::CREATE_NEW_REPORT;

@@ -20,15 +20,15 @@ namespace Aws
       namespace OrganizationStatusMapper
       {
 
-        static const int ONBOARDING_HASH = HashingUtils::HashString("ONBOARDING");
-        static const int ONBOARDING_COMPLETE_HASH = HashingUtils::HashString("ONBOARDING_COMPLETE");
-        static const int OFFBOARDING_HASH = HashingUtils::HashString("OFFBOARDING");
-        static const int OFFBOARDING_COMPLETE_HASH = HashingUtils::HashString("OFFBOARDING_COMPLETE");
+        static constexpr uint32_t ONBOARDING_HASH = ConstExprHashingUtils::HashString("ONBOARDING");
+        static constexpr uint32_t ONBOARDING_COMPLETE_HASH = ConstExprHashingUtils::HashString("ONBOARDING_COMPLETE");
+        static constexpr uint32_t OFFBOARDING_HASH = ConstExprHashingUtils::HashString("OFFBOARDING");
+        static constexpr uint32_t OFFBOARDING_COMPLETE_HASH = ConstExprHashingUtils::HashString("OFFBOARDING_COMPLETE");
 
 
         OrganizationStatus GetOrganizationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ONBOARDING_HASH)
           {
             return OrganizationStatus::ONBOARDING;

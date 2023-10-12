@@ -20,14 +20,14 @@ namespace Aws
       namespace AliasAttributeTypeMapper
       {
 
-        static const int phone_number_HASH = HashingUtils::HashString("phone_number");
-        static const int email_HASH = HashingUtils::HashString("email");
-        static const int preferred_username_HASH = HashingUtils::HashString("preferred_username");
+        static constexpr uint32_t phone_number_HASH = ConstExprHashingUtils::HashString("phone_number");
+        static constexpr uint32_t email_HASH = ConstExprHashingUtils::HashString("email");
+        static constexpr uint32_t preferred_username_HASH = ConstExprHashingUtils::HashString("preferred_username");
 
 
         AliasAttributeType GetAliasAttributeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == phone_number_HASH)
           {
             return AliasAttributeType::phone_number;

@@ -20,15 +20,15 @@ namespace Aws
       namespace ListNotificationRulesFilterNameMapper
       {
 
-        static const int EVENT_TYPE_ID_HASH = HashingUtils::HashString("EVENT_TYPE_ID");
-        static const int CREATED_BY_HASH = HashingUtils::HashString("CREATED_BY");
-        static const int RESOURCE_HASH = HashingUtils::HashString("RESOURCE");
-        static const int TARGET_ADDRESS_HASH = HashingUtils::HashString("TARGET_ADDRESS");
+        static constexpr uint32_t EVENT_TYPE_ID_HASH = ConstExprHashingUtils::HashString("EVENT_TYPE_ID");
+        static constexpr uint32_t CREATED_BY_HASH = ConstExprHashingUtils::HashString("CREATED_BY");
+        static constexpr uint32_t RESOURCE_HASH = ConstExprHashingUtils::HashString("RESOURCE");
+        static constexpr uint32_t TARGET_ADDRESS_HASH = ConstExprHashingUtils::HashString("TARGET_ADDRESS");
 
 
         ListNotificationRulesFilterName GetListNotificationRulesFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EVENT_TYPE_ID_HASH)
           {
             return ListNotificationRulesFilterName::EVENT_TYPE_ID;

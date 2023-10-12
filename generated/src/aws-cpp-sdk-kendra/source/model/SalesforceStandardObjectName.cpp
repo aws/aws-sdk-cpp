@@ -20,28 +20,28 @@ namespace Aws
       namespace SalesforceStandardObjectNameMapper
       {
 
-        static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
-        static const int CAMPAIGN_HASH = HashingUtils::HashString("CAMPAIGN");
-        static const int CASE_HASH = HashingUtils::HashString("CASE");
-        static const int CONTACT_HASH = HashingUtils::HashString("CONTACT");
-        static const int CONTRACT_HASH = HashingUtils::HashString("CONTRACT");
-        static const int DOCUMENT_HASH = HashingUtils::HashString("DOCUMENT");
-        static const int GROUP_HASH = HashingUtils::HashString("GROUP");
-        static const int IDEA_HASH = HashingUtils::HashString("IDEA");
-        static const int LEAD_HASH = HashingUtils::HashString("LEAD");
-        static const int OPPORTUNITY_HASH = HashingUtils::HashString("OPPORTUNITY");
-        static const int PARTNER_HASH = HashingUtils::HashString("PARTNER");
-        static const int PRICEBOOK_HASH = HashingUtils::HashString("PRICEBOOK");
-        static const int PRODUCT_HASH = HashingUtils::HashString("PRODUCT");
-        static const int PROFILE_HASH = HashingUtils::HashString("PROFILE");
-        static const int SOLUTION_HASH = HashingUtils::HashString("SOLUTION");
-        static const int TASK_HASH = HashingUtils::HashString("TASK");
-        static const int USER_HASH = HashingUtils::HashString("USER");
+        static constexpr uint32_t ACCOUNT_HASH = ConstExprHashingUtils::HashString("ACCOUNT");
+        static constexpr uint32_t CAMPAIGN_HASH = ConstExprHashingUtils::HashString("CAMPAIGN");
+        static constexpr uint32_t CASE_HASH = ConstExprHashingUtils::HashString("CASE");
+        static constexpr uint32_t CONTACT_HASH = ConstExprHashingUtils::HashString("CONTACT");
+        static constexpr uint32_t CONTRACT_HASH = ConstExprHashingUtils::HashString("CONTRACT");
+        static constexpr uint32_t DOCUMENT_HASH = ConstExprHashingUtils::HashString("DOCUMENT");
+        static constexpr uint32_t GROUP_HASH = ConstExprHashingUtils::HashString("GROUP");
+        static constexpr uint32_t IDEA_HASH = ConstExprHashingUtils::HashString("IDEA");
+        static constexpr uint32_t LEAD_HASH = ConstExprHashingUtils::HashString("LEAD");
+        static constexpr uint32_t OPPORTUNITY_HASH = ConstExprHashingUtils::HashString("OPPORTUNITY");
+        static constexpr uint32_t PARTNER_HASH = ConstExprHashingUtils::HashString("PARTNER");
+        static constexpr uint32_t PRICEBOOK_HASH = ConstExprHashingUtils::HashString("PRICEBOOK");
+        static constexpr uint32_t PRODUCT_HASH = ConstExprHashingUtils::HashString("PRODUCT");
+        static constexpr uint32_t PROFILE_HASH = ConstExprHashingUtils::HashString("PROFILE");
+        static constexpr uint32_t SOLUTION_HASH = ConstExprHashingUtils::HashString("SOLUTION");
+        static constexpr uint32_t TASK_HASH = ConstExprHashingUtils::HashString("TASK");
+        static constexpr uint32_t USER_HASH = ConstExprHashingUtils::HashString("USER");
 
 
         SalesforceStandardObjectName GetSalesforceStandardObjectNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCOUNT_HASH)
           {
             return SalesforceStandardObjectName::ACCOUNT;

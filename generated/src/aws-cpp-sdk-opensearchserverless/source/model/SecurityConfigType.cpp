@@ -20,12 +20,12 @@ namespace Aws
       namespace SecurityConfigTypeMapper
       {
 
-        static const int saml_HASH = HashingUtils::HashString("saml");
+        static constexpr uint32_t saml_HASH = ConstExprHashingUtils::HashString("saml");
 
 
         SecurityConfigType GetSecurityConfigTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == saml_HASH)
           {
             return SecurityConfigType::saml;

@@ -20,20 +20,20 @@ namespace Aws
       namespace MessageSystemAttributeNameMapper
       {
 
-        static const int SenderId_HASH = HashingUtils::HashString("SenderId");
-        static const int SentTimestamp_HASH = HashingUtils::HashString("SentTimestamp");
-        static const int ApproximateReceiveCount_HASH = HashingUtils::HashString("ApproximateReceiveCount");
-        static const int ApproximateFirstReceiveTimestamp_HASH = HashingUtils::HashString("ApproximateFirstReceiveTimestamp");
-        static const int SequenceNumber_HASH = HashingUtils::HashString("SequenceNumber");
-        static const int MessageDeduplicationId_HASH = HashingUtils::HashString("MessageDeduplicationId");
-        static const int MessageGroupId_HASH = HashingUtils::HashString("MessageGroupId");
-        static const int AWSTraceHeader_HASH = HashingUtils::HashString("AWSTraceHeader");
-        static const int DeadLetterQueueSourceArn_HASH = HashingUtils::HashString("DeadLetterQueueSourceArn");
+        static constexpr uint32_t SenderId_HASH = ConstExprHashingUtils::HashString("SenderId");
+        static constexpr uint32_t SentTimestamp_HASH = ConstExprHashingUtils::HashString("SentTimestamp");
+        static constexpr uint32_t ApproximateReceiveCount_HASH = ConstExprHashingUtils::HashString("ApproximateReceiveCount");
+        static constexpr uint32_t ApproximateFirstReceiveTimestamp_HASH = ConstExprHashingUtils::HashString("ApproximateFirstReceiveTimestamp");
+        static constexpr uint32_t SequenceNumber_HASH = ConstExprHashingUtils::HashString("SequenceNumber");
+        static constexpr uint32_t MessageDeduplicationId_HASH = ConstExprHashingUtils::HashString("MessageDeduplicationId");
+        static constexpr uint32_t MessageGroupId_HASH = ConstExprHashingUtils::HashString("MessageGroupId");
+        static constexpr uint32_t AWSTraceHeader_HASH = ConstExprHashingUtils::HashString("AWSTraceHeader");
+        static constexpr uint32_t DeadLetterQueueSourceArn_HASH = ConstExprHashingUtils::HashString("DeadLetterQueueSourceArn");
 
 
         MessageSystemAttributeName GetMessageSystemAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SenderId_HASH)
           {
             return MessageSystemAttributeName::SenderId;

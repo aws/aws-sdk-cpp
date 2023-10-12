@@ -20,12 +20,12 @@ namespace Aws
       namespace ImageBlockPublicAccessDisabledStateMapper
       {
 
-        static const int unblocked_HASH = HashingUtils::HashString("unblocked");
+        static constexpr uint32_t unblocked_HASH = ConstExprHashingUtils::HashString("unblocked");
 
 
         ImageBlockPublicAccessDisabledState GetImageBlockPublicAccessDisabledStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == unblocked_HASH)
           {
             return ImageBlockPublicAccessDisabledState::unblocked;

@@ -20,12 +20,12 @@ namespace Aws
       namespace ProtocolValueMapper
       {
 
-        static const int gre_HASH = HashingUtils::HashString("gre");
+        static constexpr uint32_t gre_HASH = ConstExprHashingUtils::HashString("gre");
 
 
         ProtocolValue GetProtocolValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == gre_HASH)
           {
             return ProtocolValue::gre;

@@ -20,22 +20,22 @@ namespace Aws
       namespace TrustStateMapper
       {
 
-        static const int Creating_HASH = HashingUtils::HashString("Creating");
-        static const int Created_HASH = HashingUtils::HashString("Created");
-        static const int Verifying_HASH = HashingUtils::HashString("Verifying");
-        static const int VerifyFailed_HASH = HashingUtils::HashString("VerifyFailed");
-        static const int Verified_HASH = HashingUtils::HashString("Verified");
-        static const int Updating_HASH = HashingUtils::HashString("Updating");
-        static const int UpdateFailed_HASH = HashingUtils::HashString("UpdateFailed");
-        static const int Updated_HASH = HashingUtils::HashString("Updated");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
-        static const int Deleted_HASH = HashingUtils::HashString("Deleted");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t Creating_HASH = ConstExprHashingUtils::HashString("Creating");
+        static constexpr uint32_t Created_HASH = ConstExprHashingUtils::HashString("Created");
+        static constexpr uint32_t Verifying_HASH = ConstExprHashingUtils::HashString("Verifying");
+        static constexpr uint32_t VerifyFailed_HASH = ConstExprHashingUtils::HashString("VerifyFailed");
+        static constexpr uint32_t Verified_HASH = ConstExprHashingUtils::HashString("Verified");
+        static constexpr uint32_t Updating_HASH = ConstExprHashingUtils::HashString("Updating");
+        static constexpr uint32_t UpdateFailed_HASH = ConstExprHashingUtils::HashString("UpdateFailed");
+        static constexpr uint32_t Updated_HASH = ConstExprHashingUtils::HashString("Updated");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
+        static constexpr uint32_t Deleted_HASH = ConstExprHashingUtils::HashString("Deleted");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         TrustState GetTrustStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Creating_HASH)
           {
             return TrustState::Creating;

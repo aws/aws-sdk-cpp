@@ -20,14 +20,14 @@ namespace Aws
       namespace AssociationExecutionTargetsFilterKeyMapper
       {
 
-        static const int Status_HASH = HashingUtils::HashString("Status");
-        static const int ResourceId_HASH = HashingUtils::HashString("ResourceId");
-        static const int ResourceType_HASH = HashingUtils::HashString("ResourceType");
+        static constexpr uint32_t Status_HASH = ConstExprHashingUtils::HashString("Status");
+        static constexpr uint32_t ResourceId_HASH = ConstExprHashingUtils::HashString("ResourceId");
+        static constexpr uint32_t ResourceType_HASH = ConstExprHashingUtils::HashString("ResourceType");
 
 
         AssociationExecutionTargetsFilterKey GetAssociationExecutionTargetsFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Status_HASH)
           {
             return AssociationExecutionTargetsFilterKey::Status;

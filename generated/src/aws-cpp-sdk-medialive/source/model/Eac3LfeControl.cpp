@@ -20,13 +20,13 @@ namespace Aws
       namespace Eac3LfeControlMapper
       {
 
-        static const int LFE_HASH = HashingUtils::HashString("LFE");
-        static const int NO_LFE_HASH = HashingUtils::HashString("NO_LFE");
+        static constexpr uint32_t LFE_HASH = ConstExprHashingUtils::HashString("LFE");
+        static constexpr uint32_t NO_LFE_HASH = ConstExprHashingUtils::HashString("NO_LFE");
 
 
         Eac3LfeControl GetEac3LfeControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LFE_HASH)
           {
             return Eac3LfeControl::LFE;

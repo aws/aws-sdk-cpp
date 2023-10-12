@@ -20,15 +20,15 @@ namespace Aws
       namespace TransitGatewayAssociationStateMapper
       {
 
-        static const int associating_HASH = HashingUtils::HashString("associating");
-        static const int associated_HASH = HashingUtils::HashString("associated");
-        static const int disassociating_HASH = HashingUtils::HashString("disassociating");
-        static const int disassociated_HASH = HashingUtils::HashString("disassociated");
+        static constexpr uint32_t associating_HASH = ConstExprHashingUtils::HashString("associating");
+        static constexpr uint32_t associated_HASH = ConstExprHashingUtils::HashString("associated");
+        static constexpr uint32_t disassociating_HASH = ConstExprHashingUtils::HashString("disassociating");
+        static constexpr uint32_t disassociated_HASH = ConstExprHashingUtils::HashString("disassociated");
 
 
         TransitGatewayAssociationState GetTransitGatewayAssociationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == associating_HASH)
           {
             return TransitGatewayAssociationState::associating;

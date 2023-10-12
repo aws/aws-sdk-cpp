@@ -20,16 +20,16 @@ namespace Aws
       namespace Mpeg2IntraDcPrecisionMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int INTRA_DC_PRECISION_8_HASH = HashingUtils::HashString("INTRA_DC_PRECISION_8");
-        static const int INTRA_DC_PRECISION_9_HASH = HashingUtils::HashString("INTRA_DC_PRECISION_9");
-        static const int INTRA_DC_PRECISION_10_HASH = HashingUtils::HashString("INTRA_DC_PRECISION_10");
-        static const int INTRA_DC_PRECISION_11_HASH = HashingUtils::HashString("INTRA_DC_PRECISION_11");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t INTRA_DC_PRECISION_8_HASH = ConstExprHashingUtils::HashString("INTRA_DC_PRECISION_8");
+        static constexpr uint32_t INTRA_DC_PRECISION_9_HASH = ConstExprHashingUtils::HashString("INTRA_DC_PRECISION_9");
+        static constexpr uint32_t INTRA_DC_PRECISION_10_HASH = ConstExprHashingUtils::HashString("INTRA_DC_PRECISION_10");
+        static constexpr uint32_t INTRA_DC_PRECISION_11_HASH = ConstExprHashingUtils::HashString("INTRA_DC_PRECISION_11");
 
 
         Mpeg2IntraDcPrecision GetMpeg2IntraDcPrecisionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return Mpeg2IntraDcPrecision::AUTO;

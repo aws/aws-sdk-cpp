@@ -20,19 +20,19 @@ namespace Aws
       namespace KeyAlgorithmMapper
       {
 
-        static const int TDES_2KEY_HASH = HashingUtils::HashString("TDES_2KEY");
-        static const int TDES_3KEY_HASH = HashingUtils::HashString("TDES_3KEY");
-        static const int AES_128_HASH = HashingUtils::HashString("AES_128");
-        static const int AES_192_HASH = HashingUtils::HashString("AES_192");
-        static const int AES_256_HASH = HashingUtils::HashString("AES_256");
-        static const int RSA_2048_HASH = HashingUtils::HashString("RSA_2048");
-        static const int RSA_3072_HASH = HashingUtils::HashString("RSA_3072");
-        static const int RSA_4096_HASH = HashingUtils::HashString("RSA_4096");
+        static constexpr uint32_t TDES_2KEY_HASH = ConstExprHashingUtils::HashString("TDES_2KEY");
+        static constexpr uint32_t TDES_3KEY_HASH = ConstExprHashingUtils::HashString("TDES_3KEY");
+        static constexpr uint32_t AES_128_HASH = ConstExprHashingUtils::HashString("AES_128");
+        static constexpr uint32_t AES_192_HASH = ConstExprHashingUtils::HashString("AES_192");
+        static constexpr uint32_t AES_256_HASH = ConstExprHashingUtils::HashString("AES_256");
+        static constexpr uint32_t RSA_2048_HASH = ConstExprHashingUtils::HashString("RSA_2048");
+        static constexpr uint32_t RSA_3072_HASH = ConstExprHashingUtils::HashString("RSA_3072");
+        static constexpr uint32_t RSA_4096_HASH = ConstExprHashingUtils::HashString("RSA_4096");
 
 
         KeyAlgorithm GetKeyAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TDES_2KEY_HASH)
           {
             return KeyAlgorithm::TDES_2KEY;

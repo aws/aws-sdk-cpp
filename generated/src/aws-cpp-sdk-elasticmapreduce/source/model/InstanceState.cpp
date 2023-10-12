@@ -20,16 +20,16 @@ namespace Aws
       namespace InstanceStateMapper
       {
 
-        static const int AWAITING_FULFILLMENT_HASH = HashingUtils::HashString("AWAITING_FULFILLMENT");
-        static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
-        static const int BOOTSTRAPPING_HASH = HashingUtils::HashString("BOOTSTRAPPING");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
+        static constexpr uint32_t AWAITING_FULFILLMENT_HASH = ConstExprHashingUtils::HashString("AWAITING_FULFILLMENT");
+        static constexpr uint32_t PROVISIONING_HASH = ConstExprHashingUtils::HashString("PROVISIONING");
+        static constexpr uint32_t BOOTSTRAPPING_HASH = ConstExprHashingUtils::HashString("BOOTSTRAPPING");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t TERMINATED_HASH = ConstExprHashingUtils::HashString("TERMINATED");
 
 
         InstanceState GetInstanceStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWAITING_FULFILLMENT_HASH)
           {
             return InstanceState::AWAITING_FULFILLMENT;

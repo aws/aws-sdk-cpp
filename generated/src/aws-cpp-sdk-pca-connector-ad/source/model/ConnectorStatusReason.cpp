@@ -20,19 +20,19 @@ namespace Aws
       namespace ConnectorStatusReasonMapper
       {
 
-        static const int DIRECTORY_ACCESS_DENIED_HASH = HashingUtils::HashString("DIRECTORY_ACCESS_DENIED");
-        static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
-        static const int PRIVATECA_ACCESS_DENIED_HASH = HashingUtils::HashString("PRIVATECA_ACCESS_DENIED");
-        static const int PRIVATECA_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("PRIVATECA_RESOURCE_NOT_FOUND");
-        static const int SECURITY_GROUP_NOT_IN_VPC_HASH = HashingUtils::HashString("SECURITY_GROUP_NOT_IN_VPC");
-        static const int VPC_ACCESS_DENIED_HASH = HashingUtils::HashString("VPC_ACCESS_DENIED");
-        static const int VPC_ENDPOINT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("VPC_ENDPOINT_LIMIT_EXCEEDED");
-        static const int VPC_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("VPC_RESOURCE_NOT_FOUND");
+        static constexpr uint32_t DIRECTORY_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("DIRECTORY_ACCESS_DENIED");
+        static constexpr uint32_t INTERNAL_FAILURE_HASH = ConstExprHashingUtils::HashString("INTERNAL_FAILURE");
+        static constexpr uint32_t PRIVATECA_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("PRIVATECA_ACCESS_DENIED");
+        static constexpr uint32_t PRIVATECA_RESOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("PRIVATECA_RESOURCE_NOT_FOUND");
+        static constexpr uint32_t SECURITY_GROUP_NOT_IN_VPC_HASH = ConstExprHashingUtils::HashString("SECURITY_GROUP_NOT_IN_VPC");
+        static constexpr uint32_t VPC_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("VPC_ACCESS_DENIED");
+        static constexpr uint32_t VPC_ENDPOINT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("VPC_ENDPOINT_LIMIT_EXCEEDED");
+        static constexpr uint32_t VPC_RESOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("VPC_RESOURCE_NOT_FOUND");
 
 
         ConnectorStatusReason GetConnectorStatusReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DIRECTORY_ACCESS_DENIED_HASH)
           {
             return ConnectorStatusReason::DIRECTORY_ACCESS_DENIED;

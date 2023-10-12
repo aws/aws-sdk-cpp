@@ -20,15 +20,15 @@ namespace Aws
       namespace ObjectTypeMapper
       {
 
-        static const int NODE_HASH = HashingUtils::HashString("NODE");
-        static const int LEAF_NODE_HASH = HashingUtils::HashString("LEAF_NODE");
-        static const int POLICY_HASH = HashingUtils::HashString("POLICY");
-        static const int INDEX_HASH = HashingUtils::HashString("INDEX");
+        static constexpr uint32_t NODE_HASH = ConstExprHashingUtils::HashString("NODE");
+        static constexpr uint32_t LEAF_NODE_HASH = ConstExprHashingUtils::HashString("LEAF_NODE");
+        static constexpr uint32_t POLICY_HASH = ConstExprHashingUtils::HashString("POLICY");
+        static constexpr uint32_t INDEX_HASH = ConstExprHashingUtils::HashString("INDEX");
 
 
         ObjectType GetObjectTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NODE_HASH)
           {
             return ObjectType::NODE;

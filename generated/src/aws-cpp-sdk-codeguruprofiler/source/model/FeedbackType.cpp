@@ -20,13 +20,13 @@ namespace Aws
       namespace FeedbackTypeMapper
       {
 
-        static const int Positive_HASH = HashingUtils::HashString("Positive");
-        static const int Negative_HASH = HashingUtils::HashString("Negative");
+        static constexpr uint32_t Positive_HASH = ConstExprHashingUtils::HashString("Positive");
+        static constexpr uint32_t Negative_HASH = ConstExprHashingUtils::HashString("Negative");
 
 
         FeedbackType GetFeedbackTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Positive_HASH)
           {
             return FeedbackType::Positive;

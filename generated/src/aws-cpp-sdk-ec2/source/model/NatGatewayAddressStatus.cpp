@@ -20,17 +20,17 @@ namespace Aws
       namespace NatGatewayAddressStatusMapper
       {
 
-        static const int assigning_HASH = HashingUtils::HashString("assigning");
-        static const int unassigning_HASH = HashingUtils::HashString("unassigning");
-        static const int associating_HASH = HashingUtils::HashString("associating");
-        static const int disassociating_HASH = HashingUtils::HashString("disassociating");
-        static const int succeeded_HASH = HashingUtils::HashString("succeeded");
-        static const int failed_HASH = HashingUtils::HashString("failed");
+        static constexpr uint32_t assigning_HASH = ConstExprHashingUtils::HashString("assigning");
+        static constexpr uint32_t unassigning_HASH = ConstExprHashingUtils::HashString("unassigning");
+        static constexpr uint32_t associating_HASH = ConstExprHashingUtils::HashString("associating");
+        static constexpr uint32_t disassociating_HASH = ConstExprHashingUtils::HashString("disassociating");
+        static constexpr uint32_t succeeded_HASH = ConstExprHashingUtils::HashString("succeeded");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
 
 
         NatGatewayAddressStatus GetNatGatewayAddressStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == assigning_HASH)
           {
             return NatGatewayAddressStatus::assigning;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ParticipantTimerTypeMapper
       {
 
-        static const int IDLE_HASH = HashingUtils::HashString("IDLE");
-        static const int DISCONNECT_NONCUSTOMER_HASH = HashingUtils::HashString("DISCONNECT_NONCUSTOMER");
+        static constexpr uint32_t IDLE_HASH = ConstExprHashingUtils::HashString("IDLE");
+        static constexpr uint32_t DISCONNECT_NONCUSTOMER_HASH = ConstExprHashingUtils::HashString("DISCONNECT_NONCUSTOMER");
 
 
         ParticipantTimerType GetParticipantTimerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IDLE_HASH)
           {
             return ParticipantTimerType::IDLE;

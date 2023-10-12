@@ -20,15 +20,15 @@ namespace Aws
       namespace WirelessDeviceSidewalkStatusMapper
       {
 
-        static const int PROVISIONED_HASH = HashingUtils::HashString("PROVISIONED");
-        static const int REGISTERED_HASH = HashingUtils::HashString("REGISTERED");
-        static const int ACTIVATED_HASH = HashingUtils::HashString("ACTIVATED");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t PROVISIONED_HASH = ConstExprHashingUtils::HashString("PROVISIONED");
+        static constexpr uint32_t REGISTERED_HASH = ConstExprHashingUtils::HashString("REGISTERED");
+        static constexpr uint32_t ACTIVATED_HASH = ConstExprHashingUtils::HashString("ACTIVATED");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         WirelessDeviceSidewalkStatus GetWirelessDeviceSidewalkStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROVISIONED_HASH)
           {
             return WirelessDeviceSidewalkStatus::PROVISIONED;

@@ -20,19 +20,19 @@ namespace Aws
       namespace SubscriptionGrantStatusMapper
       {
 
-        static const int GRANT_PENDING_HASH = HashingUtils::HashString("GRANT_PENDING");
-        static const int REVOKE_PENDING_HASH = HashingUtils::HashString("REVOKE_PENDING");
-        static const int GRANT_IN_PROGRESS_HASH = HashingUtils::HashString("GRANT_IN_PROGRESS");
-        static const int REVOKE_IN_PROGRESS_HASH = HashingUtils::HashString("REVOKE_IN_PROGRESS");
-        static const int GRANTED_HASH = HashingUtils::HashString("GRANTED");
-        static const int REVOKED_HASH = HashingUtils::HashString("REVOKED");
-        static const int GRANT_FAILED_HASH = HashingUtils::HashString("GRANT_FAILED");
-        static const int REVOKE_FAILED_HASH = HashingUtils::HashString("REVOKE_FAILED");
+        static constexpr uint32_t GRANT_PENDING_HASH = ConstExprHashingUtils::HashString("GRANT_PENDING");
+        static constexpr uint32_t REVOKE_PENDING_HASH = ConstExprHashingUtils::HashString("REVOKE_PENDING");
+        static constexpr uint32_t GRANT_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("GRANT_IN_PROGRESS");
+        static constexpr uint32_t REVOKE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("REVOKE_IN_PROGRESS");
+        static constexpr uint32_t GRANTED_HASH = ConstExprHashingUtils::HashString("GRANTED");
+        static constexpr uint32_t REVOKED_HASH = ConstExprHashingUtils::HashString("REVOKED");
+        static constexpr uint32_t GRANT_FAILED_HASH = ConstExprHashingUtils::HashString("GRANT_FAILED");
+        static constexpr uint32_t REVOKE_FAILED_HASH = ConstExprHashingUtils::HashString("REVOKE_FAILED");
 
 
         SubscriptionGrantStatus GetSubscriptionGrantStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GRANT_PENDING_HASH)
           {
             return SubscriptionGrantStatus::GRANT_PENDING;

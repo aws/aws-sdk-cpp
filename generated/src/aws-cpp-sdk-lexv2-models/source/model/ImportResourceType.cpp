@@ -20,15 +20,15 @@ namespace Aws
       namespace ImportResourceTypeMapper
       {
 
-        static const int Bot_HASH = HashingUtils::HashString("Bot");
-        static const int BotLocale_HASH = HashingUtils::HashString("BotLocale");
-        static const int CustomVocabulary_HASH = HashingUtils::HashString("CustomVocabulary");
-        static const int TestSet_HASH = HashingUtils::HashString("TestSet");
+        static constexpr uint32_t Bot_HASH = ConstExprHashingUtils::HashString("Bot");
+        static constexpr uint32_t BotLocale_HASH = ConstExprHashingUtils::HashString("BotLocale");
+        static constexpr uint32_t CustomVocabulary_HASH = ConstExprHashingUtils::HashString("CustomVocabulary");
+        static constexpr uint32_t TestSet_HASH = ConstExprHashingUtils::HashString("TestSet");
 
 
         ImportResourceType GetImportResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Bot_HASH)
           {
             return ImportResourceType::Bot;

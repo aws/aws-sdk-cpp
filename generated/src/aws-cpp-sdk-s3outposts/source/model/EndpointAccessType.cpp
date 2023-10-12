@@ -20,13 +20,13 @@ namespace Aws
       namespace EndpointAccessTypeMapper
       {
 
-        static const int Private_HASH = HashingUtils::HashString("Private");
-        static const int CustomerOwnedIp_HASH = HashingUtils::HashString("CustomerOwnedIp");
+        static constexpr uint32_t Private_HASH = ConstExprHashingUtils::HashString("Private");
+        static constexpr uint32_t CustomerOwnedIp_HASH = ConstExprHashingUtils::HashString("CustomerOwnedIp");
 
 
         EndpointAccessType GetEndpointAccessTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Private_HASH)
           {
             return EndpointAccessType::Private;

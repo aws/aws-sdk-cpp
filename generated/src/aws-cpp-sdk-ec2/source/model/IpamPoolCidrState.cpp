@@ -20,19 +20,19 @@ namespace Aws
       namespace IpamPoolCidrStateMapper
       {
 
-        static const int pending_provision_HASH = HashingUtils::HashString("pending-provision");
-        static const int provisioned_HASH = HashingUtils::HashString("provisioned");
-        static const int failed_provision_HASH = HashingUtils::HashString("failed-provision");
-        static const int pending_deprovision_HASH = HashingUtils::HashString("pending-deprovision");
-        static const int deprovisioned_HASH = HashingUtils::HashString("deprovisioned");
-        static const int failed_deprovision_HASH = HashingUtils::HashString("failed-deprovision");
-        static const int pending_import_HASH = HashingUtils::HashString("pending-import");
-        static const int failed_import_HASH = HashingUtils::HashString("failed-import");
+        static constexpr uint32_t pending_provision_HASH = ConstExprHashingUtils::HashString("pending-provision");
+        static constexpr uint32_t provisioned_HASH = ConstExprHashingUtils::HashString("provisioned");
+        static constexpr uint32_t failed_provision_HASH = ConstExprHashingUtils::HashString("failed-provision");
+        static constexpr uint32_t pending_deprovision_HASH = ConstExprHashingUtils::HashString("pending-deprovision");
+        static constexpr uint32_t deprovisioned_HASH = ConstExprHashingUtils::HashString("deprovisioned");
+        static constexpr uint32_t failed_deprovision_HASH = ConstExprHashingUtils::HashString("failed-deprovision");
+        static constexpr uint32_t pending_import_HASH = ConstExprHashingUtils::HashString("pending-import");
+        static constexpr uint32_t failed_import_HASH = ConstExprHashingUtils::HashString("failed-import");
 
 
         IpamPoolCidrState GetIpamPoolCidrStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pending_provision_HASH)
           {
             return IpamPoolCidrState::pending_provision;

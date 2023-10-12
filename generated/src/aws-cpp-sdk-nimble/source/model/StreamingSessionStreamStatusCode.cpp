@@ -20,17 +20,17 @@ namespace Aws
       namespace StreamingSessionStreamStatusCodeMapper
       {
 
-        static const int STREAM_CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("STREAM_CREATE_IN_PROGRESS");
-        static const int STREAM_READY_HASH = HashingUtils::HashString("STREAM_READY");
-        static const int STREAM_DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("STREAM_DELETE_IN_PROGRESS");
-        static const int STREAM_DELETED_HASH = HashingUtils::HashString("STREAM_DELETED");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int NETWORK_CONNECTION_ERROR_HASH = HashingUtils::HashString("NETWORK_CONNECTION_ERROR");
+        static constexpr uint32_t STREAM_CREATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("STREAM_CREATE_IN_PROGRESS");
+        static constexpr uint32_t STREAM_READY_HASH = ConstExprHashingUtils::HashString("STREAM_READY");
+        static constexpr uint32_t STREAM_DELETE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("STREAM_DELETE_IN_PROGRESS");
+        static constexpr uint32_t STREAM_DELETED_HASH = ConstExprHashingUtils::HashString("STREAM_DELETED");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t NETWORK_CONNECTION_ERROR_HASH = ConstExprHashingUtils::HashString("NETWORK_CONNECTION_ERROR");
 
 
         StreamingSessionStreamStatusCode GetStreamingSessionStreamStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STREAM_CREATE_IN_PROGRESS_HASH)
           {
             return StreamingSessionStreamStatusCode::STREAM_CREATE_IN_PROGRESS;

@@ -20,20 +20,20 @@ namespace Aws
       namespace PermissionMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int SELECT_HASH = HashingUtils::HashString("SELECT");
-        static const int ALTER_HASH = HashingUtils::HashString("ALTER");
-        static const int DROP_HASH = HashingUtils::HashString("DROP");
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
-        static const int INSERT_HASH = HashingUtils::HashString("INSERT");
-        static const int CREATE_DATABASE_HASH = HashingUtils::HashString("CREATE_DATABASE");
-        static const int CREATE_TABLE_HASH = HashingUtils::HashString("CREATE_TABLE");
-        static const int DATA_LOCATION_ACCESS_HASH = HashingUtils::HashString("DATA_LOCATION_ACCESS");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t SELECT_HASH = ConstExprHashingUtils::HashString("SELECT");
+        static constexpr uint32_t ALTER_HASH = ConstExprHashingUtils::HashString("ALTER");
+        static constexpr uint32_t DROP_HASH = ConstExprHashingUtils::HashString("DROP");
+        static constexpr uint32_t DELETE__HASH = ConstExprHashingUtils::HashString("DELETE");
+        static constexpr uint32_t INSERT_HASH = ConstExprHashingUtils::HashString("INSERT");
+        static constexpr uint32_t CREATE_DATABASE_HASH = ConstExprHashingUtils::HashString("CREATE_DATABASE");
+        static constexpr uint32_t CREATE_TABLE_HASH = ConstExprHashingUtils::HashString("CREATE_TABLE");
+        static constexpr uint32_t DATA_LOCATION_ACCESS_HASH = ConstExprHashingUtils::HashString("DATA_LOCATION_ACCESS");
 
 
         Permission GetPermissionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return Permission::ALL;

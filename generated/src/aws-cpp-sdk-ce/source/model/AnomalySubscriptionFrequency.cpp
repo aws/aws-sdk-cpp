@@ -20,14 +20,14 @@ namespace Aws
       namespace AnomalySubscriptionFrequencyMapper
       {
 
-        static const int DAILY_HASH = HashingUtils::HashString("DAILY");
-        static const int IMMEDIATE_HASH = HashingUtils::HashString("IMMEDIATE");
-        static const int WEEKLY_HASH = HashingUtils::HashString("WEEKLY");
+        static constexpr uint32_t DAILY_HASH = ConstExprHashingUtils::HashString("DAILY");
+        static constexpr uint32_t IMMEDIATE_HASH = ConstExprHashingUtils::HashString("IMMEDIATE");
+        static constexpr uint32_t WEEKLY_HASH = ConstExprHashingUtils::HashString("WEEKLY");
 
 
         AnomalySubscriptionFrequency GetAnomalySubscriptionFrequencyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DAILY_HASH)
           {
             return AnomalySubscriptionFrequency::DAILY;

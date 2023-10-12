@@ -20,14 +20,14 @@ namespace Aws
       namespace LaunchTypeMapper
       {
 
-        static const int EC2_HASH = HashingUtils::HashString("EC2");
-        static const int FARGATE_HASH = HashingUtils::HashString("FARGATE");
-        static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
+        static constexpr uint32_t EC2_HASH = ConstExprHashingUtils::HashString("EC2");
+        static constexpr uint32_t FARGATE_HASH = ConstExprHashingUtils::HashString("FARGATE");
+        static constexpr uint32_t EXTERNAL_HASH = ConstExprHashingUtils::HashString("EXTERNAL");
 
 
         LaunchType GetLaunchTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EC2_HASH)
           {
             return LaunchType::EC2;

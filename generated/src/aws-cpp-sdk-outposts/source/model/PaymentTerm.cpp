@@ -20,13 +20,13 @@ namespace Aws
       namespace PaymentTermMapper
       {
 
-        static const int THREE_YEARS_HASH = HashingUtils::HashString("THREE_YEARS");
-        static const int ONE_YEAR_HASH = HashingUtils::HashString("ONE_YEAR");
+        static constexpr uint32_t THREE_YEARS_HASH = ConstExprHashingUtils::HashString("THREE_YEARS");
+        static constexpr uint32_t ONE_YEAR_HASH = ConstExprHashingUtils::HashString("ONE_YEAR");
 
 
         PaymentTerm GetPaymentTermForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == THREE_YEARS_HASH)
           {
             return PaymentTerm::THREE_YEARS;

@@ -20,12 +20,12 @@ namespace Aws
       namespace OptedOutFilterNameMapper
       {
 
-        static const int end_user_opted_out_HASH = HashingUtils::HashString("end-user-opted-out");
+        static constexpr uint32_t end_user_opted_out_HASH = ConstExprHashingUtils::HashString("end-user-opted-out");
 
 
         OptedOutFilterName GetOptedOutFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == end_user_opted_out_HASH)
           {
             return OptedOutFilterName::end_user_opted_out;

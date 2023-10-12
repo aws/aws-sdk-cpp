@@ -20,22 +20,22 @@ namespace Aws
       namespace JobEventTypeMapper
       {
 
-        static const int WAITING_FOR_PRIORITY_HASH = HashingUtils::HashString("WAITING_FOR_PRIORITY");
-        static const int QUEUED_FOR_EXECUTION_HASH = HashingUtils::HashString("QUEUED_FOR_EXECUTION");
-        static const int STARTING_INSTANCE_HASH = HashingUtils::HashString("STARTING_INSTANCE");
-        static const int DOWNLOADING_DATA_HASH = HashingUtils::HashString("DOWNLOADING_DATA");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int DEPRIORITIZED_DUE_TO_INACTIVITY_HASH = HashingUtils::HashString("DEPRIORITIZED_DUE_TO_INACTIVITY");
-        static const int UPLOADING_RESULTS_HASH = HashingUtils::HashString("UPLOADING_RESULTS");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int MAX_RUNTIME_EXCEEDED_HASH = HashingUtils::HashString("MAX_RUNTIME_EXCEEDED");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t WAITING_FOR_PRIORITY_HASH = ConstExprHashingUtils::HashString("WAITING_FOR_PRIORITY");
+        static constexpr uint32_t QUEUED_FOR_EXECUTION_HASH = ConstExprHashingUtils::HashString("QUEUED_FOR_EXECUTION");
+        static constexpr uint32_t STARTING_INSTANCE_HASH = ConstExprHashingUtils::HashString("STARTING_INSTANCE");
+        static constexpr uint32_t DOWNLOADING_DATA_HASH = ConstExprHashingUtils::HashString("DOWNLOADING_DATA");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t DEPRIORITIZED_DUE_TO_INACTIVITY_HASH = ConstExprHashingUtils::HashString("DEPRIORITIZED_DUE_TO_INACTIVITY");
+        static constexpr uint32_t UPLOADING_RESULTS_HASH = ConstExprHashingUtils::HashString("UPLOADING_RESULTS");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t MAX_RUNTIME_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MAX_RUNTIME_EXCEEDED");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
 
 
         JobEventType GetJobEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WAITING_FOR_PRIORITY_HASH)
           {
             return JobEventType::WAITING_FOR_PRIORITY;

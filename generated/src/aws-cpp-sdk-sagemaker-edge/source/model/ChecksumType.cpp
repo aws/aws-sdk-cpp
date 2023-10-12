@@ -20,12 +20,12 @@ namespace Aws
       namespace ChecksumTypeMapper
       {
 
-        static const int SHA1_HASH = HashingUtils::HashString("SHA1");
+        static constexpr uint32_t SHA1_HASH = ConstExprHashingUtils::HashString("SHA1");
 
 
         ChecksumType GetChecksumTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SHA1_HASH)
           {
             return ChecksumType::SHA1;

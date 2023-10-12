@@ -20,13 +20,13 @@ namespace Aws
       namespace TableOrientationMapper
       {
 
-        static const int VERTICAL_HASH = HashingUtils::HashString("VERTICAL");
-        static const int HORIZONTAL_HASH = HashingUtils::HashString("HORIZONTAL");
+        static constexpr uint32_t VERTICAL_HASH = ConstExprHashingUtils::HashString("VERTICAL");
+        static constexpr uint32_t HORIZONTAL_HASH = ConstExprHashingUtils::HashString("HORIZONTAL");
 
 
         TableOrientation GetTableOrientationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VERTICAL_HASH)
           {
             return TableOrientation::VERTICAL;

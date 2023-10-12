@@ -20,16 +20,16 @@ namespace Aws
       namespace WorkspaceDirectoryStateMapper
       {
 
-        static const int REGISTERING_HASH = HashingUtils::HashString("REGISTERING");
-        static const int REGISTERED_HASH = HashingUtils::HashString("REGISTERED");
-        static const int DEREGISTERING_HASH = HashingUtils::HashString("DEREGISTERING");
-        static const int DEREGISTERED_HASH = HashingUtils::HashString("DEREGISTERED");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t REGISTERING_HASH = ConstExprHashingUtils::HashString("REGISTERING");
+        static constexpr uint32_t REGISTERED_HASH = ConstExprHashingUtils::HashString("REGISTERED");
+        static constexpr uint32_t DEREGISTERING_HASH = ConstExprHashingUtils::HashString("DEREGISTERING");
+        static constexpr uint32_t DEREGISTERED_HASH = ConstExprHashingUtils::HashString("DEREGISTERED");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         WorkspaceDirectoryState GetWorkspaceDirectoryStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REGISTERING_HASH)
           {
             return WorkspaceDirectoryState::REGISTERING;

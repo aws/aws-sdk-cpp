@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsDiscontinuityTagsMapper
       {
 
-        static const int INSERT_HASH = HashingUtils::HashString("INSERT");
-        static const int NEVER_INSERT_HASH = HashingUtils::HashString("NEVER_INSERT");
+        static constexpr uint32_t INSERT_HASH = ConstExprHashingUtils::HashString("INSERT");
+        static constexpr uint32_t NEVER_INSERT_HASH = ConstExprHashingUtils::HashString("NEVER_INSERT");
 
 
         HlsDiscontinuityTags GetHlsDiscontinuityTagsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSERT_HASH)
           {
             return HlsDiscontinuityTags::INSERT;

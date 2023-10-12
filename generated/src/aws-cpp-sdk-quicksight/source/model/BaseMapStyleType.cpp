@@ -20,15 +20,15 @@ namespace Aws
       namespace BaseMapStyleTypeMapper
       {
 
-        static const int LIGHT_GRAY_HASH = HashingUtils::HashString("LIGHT_GRAY");
-        static const int DARK_GRAY_HASH = HashingUtils::HashString("DARK_GRAY");
-        static const int STREET_HASH = HashingUtils::HashString("STREET");
-        static const int IMAGERY_HASH = HashingUtils::HashString("IMAGERY");
+        static constexpr uint32_t LIGHT_GRAY_HASH = ConstExprHashingUtils::HashString("LIGHT_GRAY");
+        static constexpr uint32_t DARK_GRAY_HASH = ConstExprHashingUtils::HashString("DARK_GRAY");
+        static constexpr uint32_t STREET_HASH = ConstExprHashingUtils::HashString("STREET");
+        static constexpr uint32_t IMAGERY_HASH = ConstExprHashingUtils::HashString("IMAGERY");
 
 
         BaseMapStyleType GetBaseMapStyleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LIGHT_GRAY_HASH)
           {
             return BaseMapStyleType::LIGHT_GRAY;

@@ -20,13 +20,13 @@ namespace Aws
       namespace HighlightTypeMapper
       {
 
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
-        static const int THESAURUS_SYNONYM_HASH = HashingUtils::HashString("THESAURUS_SYNONYM");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
+        static constexpr uint32_t THESAURUS_SYNONYM_HASH = ConstExprHashingUtils::HashString("THESAURUS_SYNONYM");
 
 
         HighlightType GetHighlightTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STANDARD_HASH)
           {
             return HighlightType::STANDARD;

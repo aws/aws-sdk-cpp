@@ -20,13 +20,13 @@ namespace Aws
       namespace CertificateAuthorityUsageModeMapper
       {
 
-        static const int GENERAL_PURPOSE_HASH = HashingUtils::HashString("GENERAL_PURPOSE");
-        static const int SHORT_LIVED_CERTIFICATE_HASH = HashingUtils::HashString("SHORT_LIVED_CERTIFICATE");
+        static constexpr uint32_t GENERAL_PURPOSE_HASH = ConstExprHashingUtils::HashString("GENERAL_PURPOSE");
+        static constexpr uint32_t SHORT_LIVED_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("SHORT_LIVED_CERTIFICATE");
 
 
         CertificateAuthorityUsageMode GetCertificateAuthorityUsageModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GENERAL_PURPOSE_HASH)
           {
             return CertificateAuthorityUsageMode::GENERAL_PURPOSE;

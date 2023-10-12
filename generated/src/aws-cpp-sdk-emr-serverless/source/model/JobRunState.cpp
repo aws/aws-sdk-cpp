@@ -20,19 +20,19 @@ namespace Aws
       namespace JobRunStateMapper
       {
 
-        static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int SCHEDULED_HASH = HashingUtils::HashString("SCHEDULED");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int CANCELLING_HASH = HashingUtils::HashString("CANCELLING");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t SUBMITTED_HASH = ConstExprHashingUtils::HashString("SUBMITTED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t SCHEDULED_HASH = ConstExprHashingUtils::HashString("SCHEDULED");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t CANCELLING_HASH = ConstExprHashingUtils::HashString("CANCELLING");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
 
 
         JobRunState GetJobRunStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUBMITTED_HASH)
           {
             return JobRunState::SUBMITTED;

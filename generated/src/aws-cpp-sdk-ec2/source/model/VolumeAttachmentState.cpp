@@ -20,16 +20,16 @@ namespace Aws
       namespace VolumeAttachmentStateMapper
       {
 
-        static const int attaching_HASH = HashingUtils::HashString("attaching");
-        static const int attached_HASH = HashingUtils::HashString("attached");
-        static const int detaching_HASH = HashingUtils::HashString("detaching");
-        static const int detached_HASH = HashingUtils::HashString("detached");
-        static const int busy_HASH = HashingUtils::HashString("busy");
+        static constexpr uint32_t attaching_HASH = ConstExprHashingUtils::HashString("attaching");
+        static constexpr uint32_t attached_HASH = ConstExprHashingUtils::HashString("attached");
+        static constexpr uint32_t detaching_HASH = ConstExprHashingUtils::HashString("detaching");
+        static constexpr uint32_t detached_HASH = ConstExprHashingUtils::HashString("detached");
+        static constexpr uint32_t busy_HASH = ConstExprHashingUtils::HashString("busy");
 
 
         VolumeAttachmentState GetVolumeAttachmentStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == attaching_HASH)
           {
             return VolumeAttachmentState::attaching;

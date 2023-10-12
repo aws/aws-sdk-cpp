@@ -20,13 +20,13 @@ namespace Aws
       namespace AZStatusMapper
       {
 
-        static const int singleaz_HASH = HashingUtils::HashString("singleaz");
-        static const int multiaz_HASH = HashingUtils::HashString("multiaz");
+        static constexpr uint32_t singleaz_HASH = ConstExprHashingUtils::HashString("singleaz");
+        static constexpr uint32_t multiaz_HASH = ConstExprHashingUtils::HashString("multiaz");
 
 
         AZStatus GetAZStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == singleaz_HASH)
           {
             return AZStatus::singleaz;

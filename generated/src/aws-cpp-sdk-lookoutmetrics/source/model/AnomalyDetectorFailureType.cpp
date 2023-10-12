@@ -20,15 +20,15 @@ namespace Aws
       namespace AnomalyDetectorFailureTypeMapper
       {
 
-        static const int ACTIVATION_FAILURE_HASH = HashingUtils::HashString("ACTIVATION_FAILURE");
-        static const int BACK_TEST_ACTIVATION_FAILURE_HASH = HashingUtils::HashString("BACK_TEST_ACTIVATION_FAILURE");
-        static const int DELETION_FAILURE_HASH = HashingUtils::HashString("DELETION_FAILURE");
-        static const int DEACTIVATION_FAILURE_HASH = HashingUtils::HashString("DEACTIVATION_FAILURE");
+        static constexpr uint32_t ACTIVATION_FAILURE_HASH = ConstExprHashingUtils::HashString("ACTIVATION_FAILURE");
+        static constexpr uint32_t BACK_TEST_ACTIVATION_FAILURE_HASH = ConstExprHashingUtils::HashString("BACK_TEST_ACTIVATION_FAILURE");
+        static constexpr uint32_t DELETION_FAILURE_HASH = ConstExprHashingUtils::HashString("DELETION_FAILURE");
+        static constexpr uint32_t DEACTIVATION_FAILURE_HASH = ConstExprHashingUtils::HashString("DEACTIVATION_FAILURE");
 
 
         AnomalyDetectorFailureType GetAnomalyDetectorFailureTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVATION_FAILURE_HASH)
           {
             return AnomalyDetectorFailureType::ACTIVATION_FAILURE;

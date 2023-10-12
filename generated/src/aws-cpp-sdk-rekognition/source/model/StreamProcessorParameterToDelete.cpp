@@ -20,13 +20,13 @@ namespace Aws
       namespace StreamProcessorParameterToDeleteMapper
       {
 
-        static const int ConnectedHomeMinConfidence_HASH = HashingUtils::HashString("ConnectedHomeMinConfidence");
-        static const int RegionsOfInterest_HASH = HashingUtils::HashString("RegionsOfInterest");
+        static constexpr uint32_t ConnectedHomeMinConfidence_HASH = ConstExprHashingUtils::HashString("ConnectedHomeMinConfidence");
+        static constexpr uint32_t RegionsOfInterest_HASH = ConstExprHashingUtils::HashString("RegionsOfInterest");
 
 
         StreamProcessorParameterToDelete GetStreamProcessorParameterToDeleteForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ConnectedHomeMinConfidence_HASH)
           {
             return StreamProcessorParameterToDelete::ConnectedHomeMinConfidence;

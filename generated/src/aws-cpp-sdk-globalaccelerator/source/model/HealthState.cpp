@@ -20,14 +20,14 @@ namespace Aws
       namespace HealthStateMapper
       {
 
-        static const int INITIAL_HASH = HashingUtils::HashString("INITIAL");
-        static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
-        static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
+        static constexpr uint32_t INITIAL_HASH = ConstExprHashingUtils::HashString("INITIAL");
+        static constexpr uint32_t HEALTHY_HASH = ConstExprHashingUtils::HashString("HEALTHY");
+        static constexpr uint32_t UNHEALTHY_HASH = ConstExprHashingUtils::HashString("UNHEALTHY");
 
 
         HealthState GetHealthStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INITIAL_HASH)
           {
             return HealthState::INITIAL;

@@ -20,21 +20,21 @@ namespace Aws
       namespace TransformationToolNameMapper
       {
 
-        static const int App2Container_HASH = HashingUtils::HashString("App2Container");
-        static const int Porting_Assistant_For_NET_HASH = HashingUtils::HashString("Porting Assistant For .NET");
-        static const int End_of_Support_Migration_HASH = HashingUtils::HashString("End of Support Migration");
-        static const int Windows_Web_Application_Migration_Assistant_HASH = HashingUtils::HashString("Windows Web Application Migration Assistant");
-        static const int Application_Migration_Service_HASH = HashingUtils::HashString("Application Migration Service");
-        static const int Strategy_Recommendation_Support_HASH = HashingUtils::HashString("Strategy Recommendation Support");
-        static const int In_Place_Operating_System_Upgrade_HASH = HashingUtils::HashString("In Place Operating System Upgrade");
-        static const int Schema_Conversion_Tool_HASH = HashingUtils::HashString("Schema Conversion Tool");
-        static const int Database_Migration_Service_HASH = HashingUtils::HashString("Database Migration Service");
-        static const int Native_SQL_Server_Backup_Restore_HASH = HashingUtils::HashString("Native SQL Server Backup/Restore");
+        static constexpr uint32_t App2Container_HASH = ConstExprHashingUtils::HashString("App2Container");
+        static constexpr uint32_t Porting_Assistant_For_NET_HASH = ConstExprHashingUtils::HashString("Porting Assistant For .NET");
+        static constexpr uint32_t End_of_Support_Migration_HASH = ConstExprHashingUtils::HashString("End of Support Migration");
+        static constexpr uint32_t Windows_Web_Application_Migration_Assistant_HASH = ConstExprHashingUtils::HashString("Windows Web Application Migration Assistant");
+        static constexpr uint32_t Application_Migration_Service_HASH = ConstExprHashingUtils::HashString("Application Migration Service");
+        static constexpr uint32_t Strategy_Recommendation_Support_HASH = ConstExprHashingUtils::HashString("Strategy Recommendation Support");
+        static constexpr uint32_t In_Place_Operating_System_Upgrade_HASH = ConstExprHashingUtils::HashString("In Place Operating System Upgrade");
+        static constexpr uint32_t Schema_Conversion_Tool_HASH = ConstExprHashingUtils::HashString("Schema Conversion Tool");
+        static constexpr uint32_t Database_Migration_Service_HASH = ConstExprHashingUtils::HashString("Database Migration Service");
+        static constexpr uint32_t Native_SQL_Server_Backup_Restore_HASH = ConstExprHashingUtils::HashString("Native SQL Server Backup/Restore");
 
 
         TransformationToolName GetTransformationToolNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == App2Container_HASH)
           {
             return TransformationToolName::App2Container;

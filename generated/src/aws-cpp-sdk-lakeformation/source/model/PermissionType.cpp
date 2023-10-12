@@ -20,15 +20,15 @@ namespace Aws
       namespace PermissionTypeMapper
       {
 
-        static const int COLUMN_PERMISSION_HASH = HashingUtils::HashString("COLUMN_PERMISSION");
-        static const int CELL_FILTER_PERMISSION_HASH = HashingUtils::HashString("CELL_FILTER_PERMISSION");
-        static const int NESTED_PERMISSION_HASH = HashingUtils::HashString("NESTED_PERMISSION");
-        static const int NESTED_CELL_PERMISSION_HASH = HashingUtils::HashString("NESTED_CELL_PERMISSION");
+        static constexpr uint32_t COLUMN_PERMISSION_HASH = ConstExprHashingUtils::HashString("COLUMN_PERMISSION");
+        static constexpr uint32_t CELL_FILTER_PERMISSION_HASH = ConstExprHashingUtils::HashString("CELL_FILTER_PERMISSION");
+        static constexpr uint32_t NESTED_PERMISSION_HASH = ConstExprHashingUtils::HashString("NESTED_PERMISSION");
+        static constexpr uint32_t NESTED_CELL_PERMISSION_HASH = ConstExprHashingUtils::HashString("NESTED_CELL_PERMISSION");
 
 
         PermissionType GetPermissionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COLUMN_PERMISSION_HASH)
           {
             return PermissionType::COLUMN_PERMISSION;

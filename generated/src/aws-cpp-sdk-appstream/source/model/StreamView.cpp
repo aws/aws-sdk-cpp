@@ -20,13 +20,13 @@ namespace Aws
       namespace StreamViewMapper
       {
 
-        static const int APP_HASH = HashingUtils::HashString("APP");
-        static const int DESKTOP_HASH = HashingUtils::HashString("DESKTOP");
+        static constexpr uint32_t APP_HASH = ConstExprHashingUtils::HashString("APP");
+        static constexpr uint32_t DESKTOP_HASH = ConstExprHashingUtils::HashString("DESKTOP");
 
 
         StreamView GetStreamViewForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APP_HASH)
           {
             return StreamView::APP;

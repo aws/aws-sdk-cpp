@@ -20,21 +20,21 @@ namespace Aws
       namespace DataReplicationStateMapper
       {
 
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
-        static const int INITIATING_HASH = HashingUtils::HashString("INITIATING");
-        static const int INITIAL_SYNC_HASH = HashingUtils::HashString("INITIAL_SYNC");
-        static const int BACKLOG_HASH = HashingUtils::HashString("BACKLOG");
-        static const int CREATING_SNAPSHOT_HASH = HashingUtils::HashString("CREATING_SNAPSHOT");
-        static const int CONTINUOUS_HASH = HashingUtils::HashString("CONTINUOUS");
-        static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
-        static const int RESCAN_HASH = HashingUtils::HashString("RESCAN");
-        static const int STALLED_HASH = HashingUtils::HashString("STALLED");
-        static const int DISCONNECTED_HASH = HashingUtils::HashString("DISCONNECTED");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
+        static constexpr uint32_t INITIATING_HASH = ConstExprHashingUtils::HashString("INITIATING");
+        static constexpr uint32_t INITIAL_SYNC_HASH = ConstExprHashingUtils::HashString("INITIAL_SYNC");
+        static constexpr uint32_t BACKLOG_HASH = ConstExprHashingUtils::HashString("BACKLOG");
+        static constexpr uint32_t CREATING_SNAPSHOT_HASH = ConstExprHashingUtils::HashString("CREATING_SNAPSHOT");
+        static constexpr uint32_t CONTINUOUS_HASH = ConstExprHashingUtils::HashString("CONTINUOUS");
+        static constexpr uint32_t PAUSED_HASH = ConstExprHashingUtils::HashString("PAUSED");
+        static constexpr uint32_t RESCAN_HASH = ConstExprHashingUtils::HashString("RESCAN");
+        static constexpr uint32_t STALLED_HASH = ConstExprHashingUtils::HashString("STALLED");
+        static constexpr uint32_t DISCONNECTED_HASH = ConstExprHashingUtils::HashString("DISCONNECTED");
 
 
         DataReplicationState GetDataReplicationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STOPPED_HASH)
           {
             return DataReplicationState::STOPPED;

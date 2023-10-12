@@ -20,15 +20,15 @@ namespace Aws
       namespace DateAggregationFunctionMapper
       {
 
-        static const int COUNT_HASH = HashingUtils::HashString("COUNT");
-        static const int DISTINCT_COUNT_HASH = HashingUtils::HashString("DISTINCT_COUNT");
-        static const int MIN_HASH = HashingUtils::HashString("MIN");
-        static const int MAX_HASH = HashingUtils::HashString("MAX");
+        static constexpr uint32_t COUNT_HASH = ConstExprHashingUtils::HashString("COUNT");
+        static constexpr uint32_t DISTINCT_COUNT_HASH = ConstExprHashingUtils::HashString("DISTINCT_COUNT");
+        static constexpr uint32_t MIN_HASH = ConstExprHashingUtils::HashString("MIN");
+        static constexpr uint32_t MAX_HASH = ConstExprHashingUtils::HashString("MAX");
 
 
         DateAggregationFunction GetDateAggregationFunctionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COUNT_HASH)
           {
             return DateAggregationFunction::COUNT;

@@ -20,13 +20,13 @@ namespace Aws
       namespace FilterInstanceStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DRAINING_HASH = HashingUtils::HashString("DRAINING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t DRAINING_HASH = ConstExprHashingUtils::HashString("DRAINING");
 
 
         FilterInstanceStatus GetFilterInstanceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return FilterInstanceStatus::ACTIVE;

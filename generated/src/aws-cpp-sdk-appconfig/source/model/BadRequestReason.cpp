@@ -20,12 +20,12 @@ namespace Aws
       namespace BadRequestReasonMapper
       {
 
-        static const int InvalidConfiguration_HASH = HashingUtils::HashString("InvalidConfiguration");
+        static constexpr uint32_t InvalidConfiguration_HASH = ConstExprHashingUtils::HashString("InvalidConfiguration");
 
 
         BadRequestReason GetBadRequestReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InvalidConfiguration_HASH)
           {
             return BadRequestReason::InvalidConfiguration;

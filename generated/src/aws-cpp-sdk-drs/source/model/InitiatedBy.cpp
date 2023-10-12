@@ -20,20 +20,20 @@ namespace Aws
       namespace InitiatedByMapper
       {
 
-        static const int START_RECOVERY_HASH = HashingUtils::HashString("START_RECOVERY");
-        static const int START_DRILL_HASH = HashingUtils::HashString("START_DRILL");
-        static const int FAILBACK_HASH = HashingUtils::HashString("FAILBACK");
-        static const int DIAGNOSTIC_HASH = HashingUtils::HashString("DIAGNOSTIC");
-        static const int TERMINATE_RECOVERY_INSTANCES_HASH = HashingUtils::HashString("TERMINATE_RECOVERY_INSTANCES");
-        static const int TARGET_ACCOUNT_HASH = HashingUtils::HashString("TARGET_ACCOUNT");
-        static const int CREATE_NETWORK_RECOVERY_HASH = HashingUtils::HashString("CREATE_NETWORK_RECOVERY");
-        static const int UPDATE_NETWORK_RECOVERY_HASH = HashingUtils::HashString("UPDATE_NETWORK_RECOVERY");
-        static const int ASSOCIATE_NETWORK_RECOVERY_HASH = HashingUtils::HashString("ASSOCIATE_NETWORK_RECOVERY");
+        static constexpr uint32_t START_RECOVERY_HASH = ConstExprHashingUtils::HashString("START_RECOVERY");
+        static constexpr uint32_t START_DRILL_HASH = ConstExprHashingUtils::HashString("START_DRILL");
+        static constexpr uint32_t FAILBACK_HASH = ConstExprHashingUtils::HashString("FAILBACK");
+        static constexpr uint32_t DIAGNOSTIC_HASH = ConstExprHashingUtils::HashString("DIAGNOSTIC");
+        static constexpr uint32_t TERMINATE_RECOVERY_INSTANCES_HASH = ConstExprHashingUtils::HashString("TERMINATE_RECOVERY_INSTANCES");
+        static constexpr uint32_t TARGET_ACCOUNT_HASH = ConstExprHashingUtils::HashString("TARGET_ACCOUNT");
+        static constexpr uint32_t CREATE_NETWORK_RECOVERY_HASH = ConstExprHashingUtils::HashString("CREATE_NETWORK_RECOVERY");
+        static constexpr uint32_t UPDATE_NETWORK_RECOVERY_HASH = ConstExprHashingUtils::HashString("UPDATE_NETWORK_RECOVERY");
+        static constexpr uint32_t ASSOCIATE_NETWORK_RECOVERY_HASH = ConstExprHashingUtils::HashString("ASSOCIATE_NETWORK_RECOVERY");
 
 
         InitiatedBy GetInitiatedByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == START_RECOVERY_HASH)
           {
             return InitiatedBy::START_RECOVERY;

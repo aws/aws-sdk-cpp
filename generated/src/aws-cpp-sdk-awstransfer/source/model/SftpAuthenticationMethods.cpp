@@ -20,15 +20,15 @@ namespace Aws
       namespace SftpAuthenticationMethodsMapper
       {
 
-        static const int PASSWORD_HASH = HashingUtils::HashString("PASSWORD");
-        static const int PUBLIC_KEY_HASH = HashingUtils::HashString("PUBLIC_KEY");
-        static const int PUBLIC_KEY_OR_PASSWORD_HASH = HashingUtils::HashString("PUBLIC_KEY_OR_PASSWORD");
-        static const int PUBLIC_KEY_AND_PASSWORD_HASH = HashingUtils::HashString("PUBLIC_KEY_AND_PASSWORD");
+        static constexpr uint32_t PASSWORD_HASH = ConstExprHashingUtils::HashString("PASSWORD");
+        static constexpr uint32_t PUBLIC_KEY_HASH = ConstExprHashingUtils::HashString("PUBLIC_KEY");
+        static constexpr uint32_t PUBLIC_KEY_OR_PASSWORD_HASH = ConstExprHashingUtils::HashString("PUBLIC_KEY_OR_PASSWORD");
+        static constexpr uint32_t PUBLIC_KEY_AND_PASSWORD_HASH = ConstExprHashingUtils::HashString("PUBLIC_KEY_AND_PASSWORD");
 
 
         SftpAuthenticationMethods GetSftpAuthenticationMethodsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PASSWORD_HASH)
           {
             return SftpAuthenticationMethods::PASSWORD;

@@ -20,13 +20,13 @@ namespace Aws
       namespace TransactionTypeMapper
       {
 
-        static const int READ_AND_WRITE_HASH = HashingUtils::HashString("READ_AND_WRITE");
-        static const int READ_ONLY_HASH = HashingUtils::HashString("READ_ONLY");
+        static constexpr uint32_t READ_AND_WRITE_HASH = ConstExprHashingUtils::HashString("READ_AND_WRITE");
+        static constexpr uint32_t READ_ONLY_HASH = ConstExprHashingUtils::HashString("READ_ONLY");
 
 
         TransactionType GetTransactionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == READ_AND_WRITE_HASH)
           {
             return TransactionType::READ_AND_WRITE;

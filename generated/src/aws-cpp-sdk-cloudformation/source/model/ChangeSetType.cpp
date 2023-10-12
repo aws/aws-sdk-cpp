@@ -20,14 +20,14 @@ namespace Aws
       namespace ChangeSetTypeMapper
       {
 
-        static const int CREATE_HASH = HashingUtils::HashString("CREATE");
-        static const int UPDATE_HASH = HashingUtils::HashString("UPDATE");
-        static const int IMPORT_HASH = HashingUtils::HashString("IMPORT");
+        static constexpr uint32_t CREATE_HASH = ConstExprHashingUtils::HashString("CREATE");
+        static constexpr uint32_t UPDATE_HASH = ConstExprHashingUtils::HashString("UPDATE");
+        static constexpr uint32_t IMPORT_HASH = ConstExprHashingUtils::HashString("IMPORT");
 
 
         ChangeSetType GetChangeSetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_HASH)
           {
             return ChangeSetType::CREATE;

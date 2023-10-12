@@ -20,12 +20,12 @@ namespace Aws
       namespace TemplateTypeMapper
       {
 
-        static const int RTSP_CAMERA_STREAM_HASH = HashingUtils::HashString("RTSP_CAMERA_STREAM");
+        static constexpr uint32_t RTSP_CAMERA_STREAM_HASH = ConstExprHashingUtils::HashString("RTSP_CAMERA_STREAM");
 
 
         TemplateType GetTemplateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RTSP_CAMERA_STREAM_HASH)
           {
             return TemplateType::RTSP_CAMERA_STREAM;

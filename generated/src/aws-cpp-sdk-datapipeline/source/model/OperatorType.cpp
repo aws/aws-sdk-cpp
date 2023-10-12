@@ -20,16 +20,16 @@ namespace Aws
       namespace OperatorTypeMapper
       {
 
-        static const int EQ_HASH = HashingUtils::HashString("EQ");
-        static const int REF_EQ_HASH = HashingUtils::HashString("REF_EQ");
-        static const int LE_HASH = HashingUtils::HashString("LE");
-        static const int GE_HASH = HashingUtils::HashString("GE");
-        static const int BETWEEN_HASH = HashingUtils::HashString("BETWEEN");
+        static constexpr uint32_t EQ_HASH = ConstExprHashingUtils::HashString("EQ");
+        static constexpr uint32_t REF_EQ_HASH = ConstExprHashingUtils::HashString("REF_EQ");
+        static constexpr uint32_t LE_HASH = ConstExprHashingUtils::HashString("LE");
+        static constexpr uint32_t GE_HASH = ConstExprHashingUtils::HashString("GE");
+        static constexpr uint32_t BETWEEN_HASH = ConstExprHashingUtils::HashString("BETWEEN");
 
 
         OperatorType GetOperatorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EQ_HASH)
           {
             return OperatorType::EQ;

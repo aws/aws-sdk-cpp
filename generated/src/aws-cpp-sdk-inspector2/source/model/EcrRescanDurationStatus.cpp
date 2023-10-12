@@ -20,14 +20,14 @@ namespace Aws
       namespace EcrRescanDurationStatusMapper
       {
 
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         EcrRescanDurationStatus GetEcrRescanDurationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUCCESS_HASH)
           {
             return EcrRescanDurationStatus::SUCCESS;

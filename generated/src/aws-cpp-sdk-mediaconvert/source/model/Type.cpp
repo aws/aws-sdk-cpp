@@ -20,13 +20,13 @@ namespace Aws
       namespace TypeMapper
       {
 
-        static const int SYSTEM_HASH = HashingUtils::HashString("SYSTEM");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t SYSTEM_HASH = ConstExprHashingUtils::HashString("SYSTEM");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
 
 
         Type GetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SYSTEM_HASH)
           {
             return Type::SYSTEM;

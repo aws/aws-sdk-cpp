@@ -20,12 +20,12 @@ namespace Aws
       namespace TracingVendorMapper
       {
 
-        static const int AWSXRAY_HASH = HashingUtils::HashString("AWSXRAY");
+        static constexpr uint32_t AWSXRAY_HASH = ConstExprHashingUtils::HashString("AWSXRAY");
 
 
         TracingVendor GetTracingVendorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWSXRAY_HASH)
           {
             return TracingVendor::AWSXRAY;

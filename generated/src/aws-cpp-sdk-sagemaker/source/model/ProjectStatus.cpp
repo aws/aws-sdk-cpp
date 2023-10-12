@@ -20,21 +20,21 @@ namespace Aws
       namespace ProjectStatusMapper
       {
 
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int CreateInProgress_HASH = HashingUtils::HashString("CreateInProgress");
-        static const int CreateCompleted_HASH = HashingUtils::HashString("CreateCompleted");
-        static const int CreateFailed_HASH = HashingUtils::HashString("CreateFailed");
-        static const int DeleteInProgress_HASH = HashingUtils::HashString("DeleteInProgress");
-        static const int DeleteFailed_HASH = HashingUtils::HashString("DeleteFailed");
-        static const int DeleteCompleted_HASH = HashingUtils::HashString("DeleteCompleted");
-        static const int UpdateInProgress_HASH = HashingUtils::HashString("UpdateInProgress");
-        static const int UpdateCompleted_HASH = HashingUtils::HashString("UpdateCompleted");
-        static const int UpdateFailed_HASH = HashingUtils::HashString("UpdateFailed");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t CreateInProgress_HASH = ConstExprHashingUtils::HashString("CreateInProgress");
+        static constexpr uint32_t CreateCompleted_HASH = ConstExprHashingUtils::HashString("CreateCompleted");
+        static constexpr uint32_t CreateFailed_HASH = ConstExprHashingUtils::HashString("CreateFailed");
+        static constexpr uint32_t DeleteInProgress_HASH = ConstExprHashingUtils::HashString("DeleteInProgress");
+        static constexpr uint32_t DeleteFailed_HASH = ConstExprHashingUtils::HashString("DeleteFailed");
+        static constexpr uint32_t DeleteCompleted_HASH = ConstExprHashingUtils::HashString("DeleteCompleted");
+        static constexpr uint32_t UpdateInProgress_HASH = ConstExprHashingUtils::HashString("UpdateInProgress");
+        static constexpr uint32_t UpdateCompleted_HASH = ConstExprHashingUtils::HashString("UpdateCompleted");
+        static constexpr uint32_t UpdateFailed_HASH = ConstExprHashingUtils::HashString("UpdateFailed");
 
 
         ProjectStatus GetProjectStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pending_HASH)
           {
             return ProjectStatus::Pending;

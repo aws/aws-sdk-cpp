@@ -20,13 +20,13 @@ namespace Aws
       namespace VerifiedAccessLogDeliveryStatusCodeMapper
       {
 
-        static const int success_HASH = HashingUtils::HashString("success");
-        static const int failed_HASH = HashingUtils::HashString("failed");
+        static constexpr uint32_t success_HASH = ConstExprHashingUtils::HashString("success");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
 
 
         VerifiedAccessLogDeliveryStatusCode GetVerifiedAccessLogDeliveryStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == success_HASH)
           {
             return VerifiedAccessLogDeliveryStatusCode::success;

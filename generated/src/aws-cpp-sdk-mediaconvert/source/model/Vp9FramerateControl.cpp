@@ -20,13 +20,13 @@ namespace Aws
       namespace Vp9FramerateControlMapper
       {
 
-        static const int INITIALIZE_FROM_SOURCE_HASH = HashingUtils::HashString("INITIALIZE_FROM_SOURCE");
-        static const int SPECIFIED_HASH = HashingUtils::HashString("SPECIFIED");
+        static constexpr uint32_t INITIALIZE_FROM_SOURCE_HASH = ConstExprHashingUtils::HashString("INITIALIZE_FROM_SOURCE");
+        static constexpr uint32_t SPECIFIED_HASH = ConstExprHashingUtils::HashString("SPECIFIED");
 
 
         Vp9FramerateControl GetVp9FramerateControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INITIALIZE_FROM_SOURCE_HASH)
           {
             return Vp9FramerateControl::INITIALIZE_FROM_SOURCE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace CmfcAudioDurationMapper
       {
 
-        static const int DEFAULT_CODEC_DURATION_HASH = HashingUtils::HashString("DEFAULT_CODEC_DURATION");
-        static const int MATCH_VIDEO_DURATION_HASH = HashingUtils::HashString("MATCH_VIDEO_DURATION");
+        static constexpr uint32_t DEFAULT_CODEC_DURATION_HASH = ConstExprHashingUtils::HashString("DEFAULT_CODEC_DURATION");
+        static constexpr uint32_t MATCH_VIDEO_DURATION_HASH = ConstExprHashingUtils::HashString("MATCH_VIDEO_DURATION");
 
 
         CmfcAudioDuration GetCmfcAudioDurationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_CODEC_DURATION_HASH)
           {
             return CmfcAudioDuration::DEFAULT_CODEC_DURATION;

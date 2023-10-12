@@ -20,14 +20,14 @@ namespace Aws
       namespace DeviceCgroupPermissionMapper
       {
 
-        static const int read_HASH = HashingUtils::HashString("read");
-        static const int write_HASH = HashingUtils::HashString("write");
-        static const int mknod_HASH = HashingUtils::HashString("mknod");
+        static constexpr uint32_t read_HASH = ConstExprHashingUtils::HashString("read");
+        static constexpr uint32_t write_HASH = ConstExprHashingUtils::HashString("write");
+        static constexpr uint32_t mknod_HASH = ConstExprHashingUtils::HashString("mknod");
 
 
         DeviceCgroupPermission GetDeviceCgroupPermissionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == read_HASH)
           {
             return DeviceCgroupPermission::read;

@@ -20,13 +20,13 @@ namespace Aws
       namespace HubContentTypeMapper
       {
 
-        static const int Model_HASH = HashingUtils::HashString("Model");
-        static const int Notebook_HASH = HashingUtils::HashString("Notebook");
+        static constexpr uint32_t Model_HASH = ConstExprHashingUtils::HashString("Model");
+        static constexpr uint32_t Notebook_HASH = ConstExprHashingUtils::HashString("Notebook");
 
 
         HubContentType GetHubContentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Model_HASH)
           {
             return HubContentType::Model;

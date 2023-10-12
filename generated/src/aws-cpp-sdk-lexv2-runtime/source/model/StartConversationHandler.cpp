@@ -277,16 +277,16 @@ namespace Model
 
 namespace StartConversationEventMapper
 {
-    static const int PLAYBACKINTERRUPTIONEVENT_HASH = Aws::Utils::HashingUtils::HashString("PlaybackInterruptionEvent");
-    static const int TRANSCRIPTEVENT_HASH = Aws::Utils::HashingUtils::HashString("TranscriptEvent");
-    static const int INTENTRESULTEVENT_HASH = Aws::Utils::HashingUtils::HashString("IntentResultEvent");
-    static const int TEXTRESPONSEEVENT_HASH = Aws::Utils::HashingUtils::HashString("TextResponseEvent");
-    static const int AUDIORESPONSEEVENT_HASH = Aws::Utils::HashingUtils::HashString("AudioResponseEvent");
-    static const int HEARTBEATEVENT_HASH = Aws::Utils::HashingUtils::HashString("HeartbeatEvent");
+    static constexpr uint32_t PLAYBACKINTERRUPTIONEVENT_HASH = Aws::Utils::ConstExprHashingUtils::HashString("PlaybackInterruptionEvent");
+    static constexpr uint32_t TRANSCRIPTEVENT_HASH = Aws::Utils::ConstExprHashingUtils::HashString("TranscriptEvent");
+    static constexpr uint32_t INTENTRESULTEVENT_HASH = Aws::Utils::ConstExprHashingUtils::HashString("IntentResultEvent");
+    static constexpr uint32_t TEXTRESPONSEEVENT_HASH = Aws::Utils::ConstExprHashingUtils::HashString("TextResponseEvent");
+    static constexpr uint32_t AUDIORESPONSEEVENT_HASH = Aws::Utils::ConstExprHashingUtils::HashString("AudioResponseEvent");
+    static constexpr uint32_t HEARTBEATEVENT_HASH = Aws::Utils::ConstExprHashingUtils::HashString("HeartbeatEvent");
 
     StartConversationEventType GetStartConversationEventTypeForName(const Aws::String& name)
     {
-        int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
+        uint32_t hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
         if (hashCode == PLAYBACKINTERRUPTIONEVENT_HASH)
         {
             return StartConversationEventType::PLAYBACKINTERRUPTIONEVENT;

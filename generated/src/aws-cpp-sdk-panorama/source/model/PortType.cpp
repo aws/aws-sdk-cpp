@@ -20,16 +20,16 @@ namespace Aws
       namespace PortTypeMapper
       {
 
-        static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
-        static const int INT32_HASH = HashingUtils::HashString("INT32");
-        static const int FLOAT32_HASH = HashingUtils::HashString("FLOAT32");
-        static const int MEDIA_HASH = HashingUtils::HashString("MEDIA");
+        static constexpr uint32_t BOOLEAN_HASH = ConstExprHashingUtils::HashString("BOOLEAN");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
+        static constexpr uint32_t INT32_HASH = ConstExprHashingUtils::HashString("INT32");
+        static constexpr uint32_t FLOAT32_HASH = ConstExprHashingUtils::HashString("FLOAT32");
+        static constexpr uint32_t MEDIA_HASH = ConstExprHashingUtils::HashString("MEDIA");
 
 
         PortType GetPortTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BOOLEAN_HASH)
           {
             return PortType::BOOLEAN;

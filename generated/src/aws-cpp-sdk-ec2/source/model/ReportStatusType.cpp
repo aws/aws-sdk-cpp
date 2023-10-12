@@ -20,13 +20,13 @@ namespace Aws
       namespace ReportStatusTypeMapper
       {
 
-        static const int ok_HASH = HashingUtils::HashString("ok");
-        static const int impaired_HASH = HashingUtils::HashString("impaired");
+        static constexpr uint32_t ok_HASH = ConstExprHashingUtils::HashString("ok");
+        static constexpr uint32_t impaired_HASH = ConstExprHashingUtils::HashString("impaired");
 
 
         ReportStatusType GetReportStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ok_HASH)
           {
             return ReportStatusType::ok;

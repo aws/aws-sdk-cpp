@@ -20,15 +20,15 @@ namespace Aws
       namespace ContainerConditionMapper
       {
 
-        static const int START_HASH = HashingUtils::HashString("START");
-        static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
+        static constexpr uint32_t START_HASH = ConstExprHashingUtils::HashString("START");
+        static constexpr uint32_t COMPLETE_HASH = ConstExprHashingUtils::HashString("COMPLETE");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t HEALTHY_HASH = ConstExprHashingUtils::HashString("HEALTHY");
 
 
         ContainerCondition GetContainerConditionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == START_HASH)
           {
             return ContainerCondition::START;

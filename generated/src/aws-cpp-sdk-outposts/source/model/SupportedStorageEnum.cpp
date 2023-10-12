@@ -20,13 +20,13 @@ namespace Aws
       namespace SupportedStorageEnumMapper
       {
 
-        static const int EBS_HASH = HashingUtils::HashString("EBS");
-        static const int S3_HASH = HashingUtils::HashString("S3");
+        static constexpr uint32_t EBS_HASH = ConstExprHashingUtils::HashString("EBS");
+        static constexpr uint32_t S3_HASH = ConstExprHashingUtils::HashString("S3");
 
 
         SupportedStorageEnum GetSupportedStorageEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EBS_HASH)
           {
             return SupportedStorageEnum::EBS;

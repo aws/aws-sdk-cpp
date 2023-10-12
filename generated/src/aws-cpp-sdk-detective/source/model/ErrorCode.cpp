@@ -20,14 +20,14 @@ namespace Aws
       namespace ErrorCodeMapper
       {
 
-        static const int INVALID_GRAPH_ARN_HASH = HashingUtils::HashString("INVALID_GRAPH_ARN");
-        static const int INVALID_REQUEST_BODY_HASH = HashingUtils::HashString("INVALID_REQUEST_BODY");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t INVALID_GRAPH_ARN_HASH = ConstExprHashingUtils::HashString("INVALID_GRAPH_ARN");
+        static constexpr uint32_t INVALID_REQUEST_BODY_HASH = ConstExprHashingUtils::HashString("INVALID_REQUEST_BODY");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVALID_GRAPH_ARN_HASH)
           {
             return ErrorCode::INVALID_GRAPH_ARN;

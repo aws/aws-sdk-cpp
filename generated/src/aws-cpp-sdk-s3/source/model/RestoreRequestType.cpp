@@ -20,12 +20,12 @@ namespace Aws
       namespace RestoreRequestTypeMapper
       {
 
-        static const int SELECT_HASH = HashingUtils::HashString("SELECT");
+        static constexpr uint32_t SELECT_HASH = ConstExprHashingUtils::HashString("SELECT");
 
 
         RestoreRequestType GetRestoreRequestTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SELECT_HASH)
           {
             return RestoreRequestType::SELECT;

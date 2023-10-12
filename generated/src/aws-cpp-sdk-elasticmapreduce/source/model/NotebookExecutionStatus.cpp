@@ -20,21 +20,21 @@ namespace Aws
       namespace NotebookExecutionStatusMapper
       {
 
-        static const int START_PENDING_HASH = HashingUtils::HashString("START_PENDING");
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int FINISHING_HASH = HashingUtils::HashString("FINISHING");
-        static const int FINISHED_HASH = HashingUtils::HashString("FINISHED");
-        static const int FAILING_HASH = HashingUtils::HashString("FAILING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int STOP_PENDING_HASH = HashingUtils::HashString("STOP_PENDING");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+        static constexpr uint32_t START_PENDING_HASH = ConstExprHashingUtils::HashString("START_PENDING");
+        static constexpr uint32_t STARTING_HASH = ConstExprHashingUtils::HashString("STARTING");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t FINISHING_HASH = ConstExprHashingUtils::HashString("FINISHING");
+        static constexpr uint32_t FINISHED_HASH = ConstExprHashingUtils::HashString("FINISHED");
+        static constexpr uint32_t FAILING_HASH = ConstExprHashingUtils::HashString("FAILING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t STOP_PENDING_HASH = ConstExprHashingUtils::HashString("STOP_PENDING");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
 
 
         NotebookExecutionStatus GetNotebookExecutionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == START_PENDING_HASH)
           {
             return NotebookExecutionStatus::START_PENDING;

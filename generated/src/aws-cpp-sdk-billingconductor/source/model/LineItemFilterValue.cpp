@@ -20,12 +20,12 @@ namespace Aws
       namespace LineItemFilterValueMapper
       {
 
-        static const int SAVINGS_PLAN_NEGATION_HASH = HashingUtils::HashString("SAVINGS_PLAN_NEGATION");
+        static constexpr uint32_t SAVINGS_PLAN_NEGATION_HASH = ConstExprHashingUtils::HashString("SAVINGS_PLAN_NEGATION");
 
 
         LineItemFilterValue GetLineItemFilterValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SAVINGS_PLAN_NEGATION_HASH)
           {
             return LineItemFilterValue::SAVINGS_PLAN_NEGATION;

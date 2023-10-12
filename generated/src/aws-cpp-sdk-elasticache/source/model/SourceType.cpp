@@ -20,18 +20,18 @@ namespace Aws
       namespace SourceTypeMapper
       {
 
-        static const int cache_cluster_HASH = HashingUtils::HashString("cache-cluster");
-        static const int cache_parameter_group_HASH = HashingUtils::HashString("cache-parameter-group");
-        static const int cache_security_group_HASH = HashingUtils::HashString("cache-security-group");
-        static const int cache_subnet_group_HASH = HashingUtils::HashString("cache-subnet-group");
-        static const int replication_group_HASH = HashingUtils::HashString("replication-group");
-        static const int user_HASH = HashingUtils::HashString("user");
-        static const int user_group_HASH = HashingUtils::HashString("user-group");
+        static constexpr uint32_t cache_cluster_HASH = ConstExprHashingUtils::HashString("cache-cluster");
+        static constexpr uint32_t cache_parameter_group_HASH = ConstExprHashingUtils::HashString("cache-parameter-group");
+        static constexpr uint32_t cache_security_group_HASH = ConstExprHashingUtils::HashString("cache-security-group");
+        static constexpr uint32_t cache_subnet_group_HASH = ConstExprHashingUtils::HashString("cache-subnet-group");
+        static constexpr uint32_t replication_group_HASH = ConstExprHashingUtils::HashString("replication-group");
+        static constexpr uint32_t user_HASH = ConstExprHashingUtils::HashString("user");
+        static constexpr uint32_t user_group_HASH = ConstExprHashingUtils::HashString("user-group");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == cache_cluster_HASH)
           {
             return SourceType::cache_cluster;

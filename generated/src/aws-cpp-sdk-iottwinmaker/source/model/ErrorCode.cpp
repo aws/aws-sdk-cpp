@@ -20,16 +20,16 @@ namespace Aws
       namespace ErrorCodeMapper
       {
 
-        static const int VALIDATION_ERROR_HASH = HashingUtils::HashString("VALIDATION_ERROR");
-        static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
-        static const int SYNC_INITIALIZING_ERROR_HASH = HashingUtils::HashString("SYNC_INITIALIZING_ERROR");
-        static const int SYNC_CREATING_ERROR_HASH = HashingUtils::HashString("SYNC_CREATING_ERROR");
-        static const int SYNC_PROCESSING_ERROR_HASH = HashingUtils::HashString("SYNC_PROCESSING_ERROR");
+        static constexpr uint32_t VALIDATION_ERROR_HASH = ConstExprHashingUtils::HashString("VALIDATION_ERROR");
+        static constexpr uint32_t INTERNAL_FAILURE_HASH = ConstExprHashingUtils::HashString("INTERNAL_FAILURE");
+        static constexpr uint32_t SYNC_INITIALIZING_ERROR_HASH = ConstExprHashingUtils::HashString("SYNC_INITIALIZING_ERROR");
+        static constexpr uint32_t SYNC_CREATING_ERROR_HASH = ConstExprHashingUtils::HashString("SYNC_CREATING_ERROR");
+        static constexpr uint32_t SYNC_PROCESSING_ERROR_HASH = ConstExprHashingUtils::HashString("SYNC_PROCESSING_ERROR");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VALIDATION_ERROR_HASH)
           {
             return ErrorCode::VALIDATION_ERROR;

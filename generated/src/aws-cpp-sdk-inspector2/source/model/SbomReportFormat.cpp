@@ -20,13 +20,13 @@ namespace Aws
       namespace SbomReportFormatMapper
       {
 
-        static const int CYCLONEDX_1_4_HASH = HashingUtils::HashString("CYCLONEDX_1_4");
-        static const int SPDX_2_3_HASH = HashingUtils::HashString("SPDX_2_3");
+        static constexpr uint32_t CYCLONEDX_1_4_HASH = ConstExprHashingUtils::HashString("CYCLONEDX_1_4");
+        static constexpr uint32_t SPDX_2_3_HASH = ConstExprHashingUtils::HashString("SPDX_2_3");
 
 
         SbomReportFormat GetSbomReportFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CYCLONEDX_1_4_HASH)
           {
             return SbomReportFormat::CYCLONEDX_1_4;

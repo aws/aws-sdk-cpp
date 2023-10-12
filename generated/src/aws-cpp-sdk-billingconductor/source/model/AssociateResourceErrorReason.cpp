@@ -20,16 +20,16 @@ namespace Aws
       namespace AssociateResourceErrorReasonMapper
       {
 
-        static const int INVALID_ARN_HASH = HashingUtils::HashString("INVALID_ARN");
-        static const int SERVICE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SERVICE_LIMIT_EXCEEDED");
-        static const int ILLEGAL_CUSTOMLINEITEM_HASH = HashingUtils::HashString("ILLEGAL_CUSTOMLINEITEM");
-        static const int INTERNAL_SERVER_EXCEPTION_HASH = HashingUtils::HashString("INTERNAL_SERVER_EXCEPTION");
-        static const int INVALID_BILLING_PERIOD_RANGE_HASH = HashingUtils::HashString("INVALID_BILLING_PERIOD_RANGE");
+        static constexpr uint32_t INVALID_ARN_HASH = ConstExprHashingUtils::HashString("INVALID_ARN");
+        static constexpr uint32_t SERVICE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("SERVICE_LIMIT_EXCEEDED");
+        static constexpr uint32_t ILLEGAL_CUSTOMLINEITEM_HASH = ConstExprHashingUtils::HashString("ILLEGAL_CUSTOMLINEITEM");
+        static constexpr uint32_t INTERNAL_SERVER_EXCEPTION_HASH = ConstExprHashingUtils::HashString("INTERNAL_SERVER_EXCEPTION");
+        static constexpr uint32_t INVALID_BILLING_PERIOD_RANGE_HASH = ConstExprHashingUtils::HashString("INVALID_BILLING_PERIOD_RANGE");
 
 
         AssociateResourceErrorReason GetAssociateResourceErrorReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVALID_ARN_HASH)
           {
             return AssociateResourceErrorReason::INVALID_ARN;

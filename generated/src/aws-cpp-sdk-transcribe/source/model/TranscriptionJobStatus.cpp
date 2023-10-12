@@ -20,15 +20,15 @@ namespace Aws
       namespace TranscriptionJobStatusMapper
       {
 
-        static const int QUEUED_HASH = HashingUtils::HashString("QUEUED");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t QUEUED_HASH = ConstExprHashingUtils::HashString("QUEUED");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
 
 
         TranscriptionJobStatus GetTranscriptionJobStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUEUED_HASH)
           {
             return TranscriptionJobStatus::QUEUED;

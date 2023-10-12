@@ -47,28 +47,28 @@ template<> AWS_WORKSPACES_API ResourceUnavailableException WorkSpacesError::GetM
 namespace WorkSpacesErrorMapper
 {
 
-static const int COMPUTE_NOT_COMPATIBLE_HASH = HashingUtils::HashString("ComputeNotCompatibleException");
-static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
-static const int OPERATION_NOT_SUPPORTED_HASH = HashingUtils::HashString("OperationNotSupportedException");
-static const int UNSUPPORTED_WORKSPACE_CONFIGURATION_HASH = HashingUtils::HashString("UnsupportedWorkspaceConfigurationException");
-static const int OPERATION_IN_PROGRESS_HASH = HashingUtils::HashString("OperationInProgressException");
-static const int INVALID_RESOURCE_STATE_HASH = HashingUtils::HashString("InvalidResourceStateException");
-static const int OPERATING_SYSTEM_NOT_COMPATIBLE_HASH = HashingUtils::HashString("OperatingSystemNotCompatibleException");
-static const int RESOURCE_CREATION_FAILED_HASH = HashingUtils::HashString("ResourceCreationFailedException");
-static const int INVALID_PARAMETER_VALUES_HASH = HashingUtils::HashString("InvalidParameterValuesException");
-static const int UNSUPPORTED_NETWORK_CONFIGURATION_HASH = HashingUtils::HashString("UnsupportedNetworkConfigurationException");
-static const int INCOMPATIBLE_APPLICATIONS_HASH = HashingUtils::HashString("IncompatibleApplicationsException");
-static const int APPLICATION_NOT_SUPPORTED_HASH = HashingUtils::HashString("ApplicationNotSupportedException");
-static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
-static const int WORKSPACES_DEFAULT_ROLE_NOT_FOUND_HASH = HashingUtils::HashString("WorkspacesDefaultRoleNotFoundException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
-static const int RESOURCE_ASSOCIATED_HASH = HashingUtils::HashString("ResourceAssociatedException");
+static constexpr uint32_t COMPUTE_NOT_COMPATIBLE_HASH = ConstExprHashingUtils::HashString("ComputeNotCompatibleException");
+static constexpr uint32_t RESOURCE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ResourceAlreadyExistsException");
+static constexpr uint32_t OPERATION_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("OperationNotSupportedException");
+static constexpr uint32_t UNSUPPORTED_WORKSPACE_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("UnsupportedWorkspaceConfigurationException");
+static constexpr uint32_t OPERATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("OperationInProgressException");
+static constexpr uint32_t INVALID_RESOURCE_STATE_HASH = ConstExprHashingUtils::HashString("InvalidResourceStateException");
+static constexpr uint32_t OPERATING_SYSTEM_NOT_COMPATIBLE_HASH = ConstExprHashingUtils::HashString("OperatingSystemNotCompatibleException");
+static constexpr uint32_t RESOURCE_CREATION_FAILED_HASH = ConstExprHashingUtils::HashString("ResourceCreationFailedException");
+static constexpr uint32_t INVALID_PARAMETER_VALUES_HASH = ConstExprHashingUtils::HashString("InvalidParameterValuesException");
+static constexpr uint32_t UNSUPPORTED_NETWORK_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("UnsupportedNetworkConfigurationException");
+static constexpr uint32_t INCOMPATIBLE_APPLICATIONS_HASH = ConstExprHashingUtils::HashString("IncompatibleApplicationsException");
+static constexpr uint32_t APPLICATION_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("ApplicationNotSupportedException");
+static constexpr uint32_t RESOURCE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ResourceLimitExceededException");
+static constexpr uint32_t WORKSPACES_DEFAULT_ROLE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("WorkspacesDefaultRoleNotFoundException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t RESOURCE_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("ResourceUnavailableException");
+static constexpr uint32_t RESOURCE_ASSOCIATED_HASH = ConstExprHashingUtils::HashString("ResourceAssociatedException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == COMPUTE_NOT_COMPATIBLE_HASH)
   {

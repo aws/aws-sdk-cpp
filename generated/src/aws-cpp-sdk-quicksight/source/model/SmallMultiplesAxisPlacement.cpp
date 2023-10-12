@@ -20,13 +20,13 @@ namespace Aws
       namespace SmallMultiplesAxisPlacementMapper
       {
 
-        static const int OUTSIDE_HASH = HashingUtils::HashString("OUTSIDE");
-        static const int INSIDE_HASH = HashingUtils::HashString("INSIDE");
+        static constexpr uint32_t OUTSIDE_HASH = ConstExprHashingUtils::HashString("OUTSIDE");
+        static constexpr uint32_t INSIDE_HASH = ConstExprHashingUtils::HashString("INSIDE");
 
 
         SmallMultiplesAxisPlacement GetSmallMultiplesAxisPlacementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OUTSIDE_HASH)
           {
             return SmallMultiplesAxisPlacement::OUTSIDE;

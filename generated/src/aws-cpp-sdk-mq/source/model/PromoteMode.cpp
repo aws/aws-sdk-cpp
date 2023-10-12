@@ -20,13 +20,13 @@ namespace Aws
       namespace PromoteModeMapper
       {
 
-        static const int SWITCHOVER_HASH = HashingUtils::HashString("SWITCHOVER");
-        static const int FAILOVER_HASH = HashingUtils::HashString("FAILOVER");
+        static constexpr uint32_t SWITCHOVER_HASH = ConstExprHashingUtils::HashString("SWITCHOVER");
+        static constexpr uint32_t FAILOVER_HASH = ConstExprHashingUtils::HashString("FAILOVER");
 
 
         PromoteMode GetPromoteModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SWITCHOVER_HASH)
           {
             return PromoteMode::SWITCHOVER;

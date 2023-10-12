@@ -20,21 +20,21 @@ namespace Aws
       namespace NielsenWatermarkTimezonesMapper
       {
 
-        static const int AMERICA_PUERTO_RICO_HASH = HashingUtils::HashString("AMERICA_PUERTO_RICO");
-        static const int US_ALASKA_HASH = HashingUtils::HashString("US_ALASKA");
-        static const int US_ARIZONA_HASH = HashingUtils::HashString("US_ARIZONA");
-        static const int US_CENTRAL_HASH = HashingUtils::HashString("US_CENTRAL");
-        static const int US_EASTERN_HASH = HashingUtils::HashString("US_EASTERN");
-        static const int US_HAWAII_HASH = HashingUtils::HashString("US_HAWAII");
-        static const int US_MOUNTAIN_HASH = HashingUtils::HashString("US_MOUNTAIN");
-        static const int US_PACIFIC_HASH = HashingUtils::HashString("US_PACIFIC");
-        static const int US_SAMOA_HASH = HashingUtils::HashString("US_SAMOA");
-        static const int UTC_HASH = HashingUtils::HashString("UTC");
+        static constexpr uint32_t AMERICA_PUERTO_RICO_HASH = ConstExprHashingUtils::HashString("AMERICA_PUERTO_RICO");
+        static constexpr uint32_t US_ALASKA_HASH = ConstExprHashingUtils::HashString("US_ALASKA");
+        static constexpr uint32_t US_ARIZONA_HASH = ConstExprHashingUtils::HashString("US_ARIZONA");
+        static constexpr uint32_t US_CENTRAL_HASH = ConstExprHashingUtils::HashString("US_CENTRAL");
+        static constexpr uint32_t US_EASTERN_HASH = ConstExprHashingUtils::HashString("US_EASTERN");
+        static constexpr uint32_t US_HAWAII_HASH = ConstExprHashingUtils::HashString("US_HAWAII");
+        static constexpr uint32_t US_MOUNTAIN_HASH = ConstExprHashingUtils::HashString("US_MOUNTAIN");
+        static constexpr uint32_t US_PACIFIC_HASH = ConstExprHashingUtils::HashString("US_PACIFIC");
+        static constexpr uint32_t US_SAMOA_HASH = ConstExprHashingUtils::HashString("US_SAMOA");
+        static constexpr uint32_t UTC_HASH = ConstExprHashingUtils::HashString("UTC");
 
 
         NielsenWatermarkTimezones GetNielsenWatermarkTimezonesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AMERICA_PUERTO_RICO_HASH)
           {
             return NielsenWatermarkTimezones::AMERICA_PUERTO_RICO;

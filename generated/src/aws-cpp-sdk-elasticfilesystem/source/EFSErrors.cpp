@@ -229,38 +229,38 @@ template<> AWS_EFS_API BadRequest EFSError::GetModeledError()
 namespace EFSErrorMapper
 {
 
-static const int SECURITY_GROUP_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SecurityGroupLimitExceeded");
-static const int SECURITY_GROUP_NOT_FOUND_HASH = HashingUtils::HashString("SecurityGroupNotFound");
-static const int ACCESS_POINT_ALREADY_EXISTS_HASH = HashingUtils::HashString("AccessPointAlreadyExists");
-static const int NO_FREE_ADDRESSES_IN_SUBNET_HASH = HashingUtils::HashString("NoFreeAddressesInSubnet");
-static const int DEPENDENCY_TIMEOUT_HASH = HashingUtils::HashString("DependencyTimeout");
-static const int INSUFFICIENT_THROUGHPUT_CAPACITY_HASH = HashingUtils::HashString("InsufficientThroughputCapacity");
-static const int MOUNT_TARGET_NOT_FOUND_HASH = HashingUtils::HashString("MountTargetNotFound");
-static const int FILE_SYSTEM_NOT_FOUND_HASH = HashingUtils::HashString("FileSystemNotFound");
-static const int INCORRECT_FILE_SYSTEM_LIFE_CYCLE_STATE_HASH = HashingUtils::HashString("IncorrectFileSystemLifeCycleState");
-static const int FILE_SYSTEM_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("FileSystemLimitExceeded");
-static const int UNSUPPORTED_AVAILABILITY_ZONE_HASH = HashingUtils::HashString("UnsupportedAvailabilityZone");
-static const int FILE_SYSTEM_ALREADY_EXISTS_HASH = HashingUtils::HashString("FileSystemAlreadyExists");
-static const int POLICY_NOT_FOUND_HASH = HashingUtils::HashString("PolicyNotFound");
-static const int ACCESS_POINT_NOT_FOUND_HASH = HashingUtils::HashString("AccessPointNotFound");
-static const int ACCESS_POINT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AccessPointLimitExceeded");
-static const int IP_ADDRESS_IN_USE_HASH = HashingUtils::HashString("IpAddressInUse");
-static const int INCORRECT_MOUNT_TARGET_STATE_HASH = HashingUtils::HashString("IncorrectMountTargetState");
-static const int REPLICATION_NOT_FOUND_HASH = HashingUtils::HashString("ReplicationNotFound");
-static const int AVAILABILITY_ZONES_MISMATCH_HASH = HashingUtils::HashString("AvailabilityZonesMismatch");
-static const int MOUNT_TARGET_CONFLICT_HASH = HashingUtils::HashString("MountTargetConflict");
-static const int INVALID_POLICY_HASH = HashingUtils::HashString("InvalidPolicyException");
-static const int THROUGHPUT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ThroughputLimitExceeded");
-static const int FILE_SYSTEM_IN_USE_HASH = HashingUtils::HashString("FileSystemInUse");
-static const int NETWORK_INTERFACE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("NetworkInterfaceLimitExceeded");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequests");
-static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SubnetNotFound");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequest");
+static constexpr uint32_t SECURITY_GROUP_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("SecurityGroupLimitExceeded");
+static constexpr uint32_t SECURITY_GROUP_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SecurityGroupNotFound");
+static constexpr uint32_t ACCESS_POINT_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("AccessPointAlreadyExists");
+static constexpr uint32_t NO_FREE_ADDRESSES_IN_SUBNET_HASH = ConstExprHashingUtils::HashString("NoFreeAddressesInSubnet");
+static constexpr uint32_t DEPENDENCY_TIMEOUT_HASH = ConstExprHashingUtils::HashString("DependencyTimeout");
+static constexpr uint32_t INSUFFICIENT_THROUGHPUT_CAPACITY_HASH = ConstExprHashingUtils::HashString("InsufficientThroughputCapacity");
+static constexpr uint32_t MOUNT_TARGET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("MountTargetNotFound");
+static constexpr uint32_t FILE_SYSTEM_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("FileSystemNotFound");
+static constexpr uint32_t INCORRECT_FILE_SYSTEM_LIFE_CYCLE_STATE_HASH = ConstExprHashingUtils::HashString("IncorrectFileSystemLifeCycleState");
+static constexpr uint32_t FILE_SYSTEM_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("FileSystemLimitExceeded");
+static constexpr uint32_t UNSUPPORTED_AVAILABILITY_ZONE_HASH = ConstExprHashingUtils::HashString("UnsupportedAvailabilityZone");
+static constexpr uint32_t FILE_SYSTEM_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("FileSystemAlreadyExists");
+static constexpr uint32_t POLICY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("PolicyNotFound");
+static constexpr uint32_t ACCESS_POINT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("AccessPointNotFound");
+static constexpr uint32_t ACCESS_POINT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("AccessPointLimitExceeded");
+static constexpr uint32_t IP_ADDRESS_IN_USE_HASH = ConstExprHashingUtils::HashString("IpAddressInUse");
+static constexpr uint32_t INCORRECT_MOUNT_TARGET_STATE_HASH = ConstExprHashingUtils::HashString("IncorrectMountTargetState");
+static constexpr uint32_t REPLICATION_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ReplicationNotFound");
+static constexpr uint32_t AVAILABILITY_ZONES_MISMATCH_HASH = ConstExprHashingUtils::HashString("AvailabilityZonesMismatch");
+static constexpr uint32_t MOUNT_TARGET_CONFLICT_HASH = ConstExprHashingUtils::HashString("MountTargetConflict");
+static constexpr uint32_t INVALID_POLICY_HASH = ConstExprHashingUtils::HashString("InvalidPolicyException");
+static constexpr uint32_t THROUGHPUT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ThroughputLimitExceeded");
+static constexpr uint32_t FILE_SYSTEM_IN_USE_HASH = ConstExprHashingUtils::HashString("FileSystemInUse");
+static constexpr uint32_t NETWORK_INTERFACE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("NetworkInterfaceLimitExceeded");
+static constexpr uint32_t TOO_MANY_REQUESTS_HASH = ConstExprHashingUtils::HashString("TooManyRequests");
+static constexpr uint32_t SUBNET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SubnetNotFound");
+static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BadRequest");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == SECURITY_GROUP_LIMIT_EXCEEDED_HASH)
   {

@@ -20,13 +20,13 @@ namespace Aws
       namespace AmbiguousRoleResolutionTypeMapper
       {
 
-        static const int AuthenticatedRole_HASH = HashingUtils::HashString("AuthenticatedRole");
-        static const int Deny_HASH = HashingUtils::HashString("Deny");
+        static constexpr uint32_t AuthenticatedRole_HASH = ConstExprHashingUtils::HashString("AuthenticatedRole");
+        static constexpr uint32_t Deny_HASH = ConstExprHashingUtils::HashString("Deny");
 
 
         AmbiguousRoleResolutionType GetAmbiguousRoleResolutionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AuthenticatedRole_HASH)
           {
             return AmbiguousRoleResolutionType::AuthenticatedRole;

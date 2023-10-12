@@ -20,14 +20,14 @@ namespace Aws
       namespace ProxySessionStatusMapper
       {
 
-        static const int Open_HASH = HashingUtils::HashString("Open");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Closed_HASH = HashingUtils::HashString("Closed");
+        static constexpr uint32_t Open_HASH = ConstExprHashingUtils::HashString("Open");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Closed_HASH = ConstExprHashingUtils::HashString("Closed");
 
 
         ProxySessionStatus GetProxySessionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Open_HASH)
           {
             return ProxySessionStatus::Open;

@@ -20,18 +20,18 @@ namespace Aws
       namespace StrategyMapper
       {
 
-        static const int Rehost_HASH = HashingUtils::HashString("Rehost");
-        static const int Retirement_HASH = HashingUtils::HashString("Retirement");
-        static const int Refactor_HASH = HashingUtils::HashString("Refactor");
-        static const int Replatform_HASH = HashingUtils::HashString("Replatform");
-        static const int Retain_HASH = HashingUtils::HashString("Retain");
-        static const int Relocate_HASH = HashingUtils::HashString("Relocate");
-        static const int Repurchase_HASH = HashingUtils::HashString("Repurchase");
+        static constexpr uint32_t Rehost_HASH = ConstExprHashingUtils::HashString("Rehost");
+        static constexpr uint32_t Retirement_HASH = ConstExprHashingUtils::HashString("Retirement");
+        static constexpr uint32_t Refactor_HASH = ConstExprHashingUtils::HashString("Refactor");
+        static constexpr uint32_t Replatform_HASH = ConstExprHashingUtils::HashString("Replatform");
+        static constexpr uint32_t Retain_HASH = ConstExprHashingUtils::HashString("Retain");
+        static constexpr uint32_t Relocate_HASH = ConstExprHashingUtils::HashString("Relocate");
+        static constexpr uint32_t Repurchase_HASH = ConstExprHashingUtils::HashString("Repurchase");
 
 
         Strategy GetStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Rehost_HASH)
           {
             return Strategy::Rehost;

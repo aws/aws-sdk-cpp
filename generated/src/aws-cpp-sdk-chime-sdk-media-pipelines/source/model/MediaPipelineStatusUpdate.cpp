@@ -20,13 +20,13 @@ namespace Aws
       namespace MediaPipelineStatusUpdateMapper
       {
 
-        static const int Pause_HASH = HashingUtils::HashString("Pause");
-        static const int Resume_HASH = HashingUtils::HashString("Resume");
+        static constexpr uint32_t Pause_HASH = ConstExprHashingUtils::HashString("Pause");
+        static constexpr uint32_t Resume_HASH = ConstExprHashingUtils::HashString("Resume");
 
 
         MediaPipelineStatusUpdate GetMediaPipelineStatusUpdateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pause_HASH)
           {
             return MediaPipelineStatusUpdate::Pause;

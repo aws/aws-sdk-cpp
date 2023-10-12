@@ -20,14 +20,14 @@ namespace Aws
       namespace FontScriptMapper
       {
 
-        static const int AUTOMATIC_HASH = HashingUtils::HashString("AUTOMATIC");
-        static const int HANS_HASH = HashingUtils::HashString("HANS");
-        static const int HANT_HASH = HashingUtils::HashString("HANT");
+        static constexpr uint32_t AUTOMATIC_HASH = ConstExprHashingUtils::HashString("AUTOMATIC");
+        static constexpr uint32_t HANS_HASH = ConstExprHashingUtils::HashString("HANS");
+        static constexpr uint32_t HANT_HASH = ConstExprHashingUtils::HashString("HANT");
 
 
         FontScript GetFontScriptForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTOMATIC_HASH)
           {
             return FontScript::AUTOMATIC;

@@ -18,22 +18,22 @@ namespace SMS
 namespace SMSErrorMapper
 {
 
-static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
-static const int REPLICATION_RUN_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ReplicationRunLimitExceededException");
-static const int NO_CONNECTORS_AVAILABLE_HASH = HashingUtils::HashString("NoConnectorsAvailableException");
-static const int MISSING_REQUIRED_PARAMETER_HASH = HashingUtils::HashString("MissingRequiredParameterException");
-static const int SERVER_CANNOT_BE_REPLICATED_HASH = HashingUtils::HashString("ServerCannotBeReplicatedException");
-static const int TEMPORARILY_UNAVAILABLE_HASH = HashingUtils::HashString("TemporarilyUnavailableException");
-static const int UNAUTHORIZED_OPERATION_HASH = HashingUtils::HashString("UnauthorizedOperationException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int REPLICATION_JOB_ALREADY_EXISTS_HASH = HashingUtils::HashString("ReplicationJobAlreadyExistsException");
-static const int DRY_RUN_OPERATION_HASH = HashingUtils::HashString("DryRunOperationException");
-static const int REPLICATION_JOB_NOT_FOUND_HASH = HashingUtils::HashString("ReplicationJobNotFoundException");
+static constexpr uint32_t OPERATION_NOT_PERMITTED_HASH = ConstExprHashingUtils::HashString("OperationNotPermittedException");
+static constexpr uint32_t REPLICATION_RUN_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ReplicationRunLimitExceededException");
+static constexpr uint32_t NO_CONNECTORS_AVAILABLE_HASH = ConstExprHashingUtils::HashString("NoConnectorsAvailableException");
+static constexpr uint32_t MISSING_REQUIRED_PARAMETER_HASH = ConstExprHashingUtils::HashString("MissingRequiredParameterException");
+static constexpr uint32_t SERVER_CANNOT_BE_REPLICATED_HASH = ConstExprHashingUtils::HashString("ServerCannotBeReplicatedException");
+static constexpr uint32_t TEMPORARILY_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("TemporarilyUnavailableException");
+static constexpr uint32_t UNAUTHORIZED_OPERATION_HASH = ConstExprHashingUtils::HashString("UnauthorizedOperationException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t REPLICATION_JOB_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ReplicationJobAlreadyExistsException");
+static constexpr uint32_t DRY_RUN_OPERATION_HASH = ConstExprHashingUtils::HashString("DryRunOperationException");
+static constexpr uint32_t REPLICATION_JOB_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ReplicationJobNotFoundException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {

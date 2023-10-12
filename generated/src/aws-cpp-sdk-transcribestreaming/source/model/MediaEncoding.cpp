@@ -20,14 +20,14 @@ namespace Aws
       namespace MediaEncodingMapper
       {
 
-        static const int pcm_HASH = HashingUtils::HashString("pcm");
-        static const int ogg_opus_HASH = HashingUtils::HashString("ogg-opus");
-        static const int flac_HASH = HashingUtils::HashString("flac");
+        static constexpr uint32_t pcm_HASH = ConstExprHashingUtils::HashString("pcm");
+        static constexpr uint32_t ogg_opus_HASH = ConstExprHashingUtils::HashString("ogg-opus");
+        static constexpr uint32_t flac_HASH = ConstExprHashingUtils::HashString("flac");
 
 
         MediaEncoding GetMediaEncodingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pcm_HASH)
           {
             return MediaEncoding::pcm;

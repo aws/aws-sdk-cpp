@@ -20,14 +20,14 @@ namespace Aws
       namespace OriginAccessControlSigningBehaviorsMapper
       {
 
-        static const int never_HASH = HashingUtils::HashString("never");
-        static const int always_HASH = HashingUtils::HashString("always");
-        static const int no_override_HASH = HashingUtils::HashString("no-override");
+        static constexpr uint32_t never_HASH = ConstExprHashingUtils::HashString("never");
+        static constexpr uint32_t always_HASH = ConstExprHashingUtils::HashString("always");
+        static constexpr uint32_t no_override_HASH = ConstExprHashingUtils::HashString("no-override");
 
 
         OriginAccessControlSigningBehaviors GetOriginAccessControlSigningBehaviorsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == never_HASH)
           {
             return OriginAccessControlSigningBehaviors::never;

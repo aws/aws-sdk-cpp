@@ -20,13 +20,13 @@ namespace Aws
       namespace InstanceLifecycleTypeMapper
       {
 
-        static const int spot_HASH = HashingUtils::HashString("spot");
-        static const int scheduled_HASH = HashingUtils::HashString("scheduled");
+        static constexpr uint32_t spot_HASH = ConstExprHashingUtils::HashString("spot");
+        static constexpr uint32_t scheduled_HASH = ConstExprHashingUtils::HashString("scheduled");
 
 
         InstanceLifecycleType GetInstanceLifecycleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == spot_HASH)
           {
             return InstanceLifecycleType::spot;

@@ -20,15 +20,15 @@ namespace Aws
       namespace JobErrorCodeMapper
       {
 
-        static const int AUTHORIZATION_ERROR_HASH = HashingUtils::HashString("AUTHORIZATION_ERROR");
-        static const int RESOURCE_NOT_FOUND_ERROR_HASH = HashingUtils::HashString("RESOURCE_NOT_FOUND_ERROR");
-        static const int SERVICE_QUOTA_EXCEEDED_ERROR_HASH = HashingUtils::HashString("SERVICE_QUOTA_EXCEEDED_ERROR");
-        static const int SERVICE_ERROR_HASH = HashingUtils::HashString("SERVICE_ERROR");
+        static constexpr uint32_t AUTHORIZATION_ERROR_HASH = ConstExprHashingUtils::HashString("AUTHORIZATION_ERROR");
+        static constexpr uint32_t RESOURCE_NOT_FOUND_ERROR_HASH = ConstExprHashingUtils::HashString("RESOURCE_NOT_FOUND_ERROR");
+        static constexpr uint32_t SERVICE_QUOTA_EXCEEDED_ERROR_HASH = ConstExprHashingUtils::HashString("SERVICE_QUOTA_EXCEEDED_ERROR");
+        static constexpr uint32_t SERVICE_ERROR_HASH = ConstExprHashingUtils::HashString("SERVICE_ERROR");
 
 
         JobErrorCode GetJobErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTHORIZATION_ERROR_HASH)
           {
             return JobErrorCode::AUTHORIZATION_ERROR;

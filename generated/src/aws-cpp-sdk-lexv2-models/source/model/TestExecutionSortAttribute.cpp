@@ -20,13 +20,13 @@ namespace Aws
       namespace TestExecutionSortAttributeMapper
       {
 
-        static const int TestSetName_HASH = HashingUtils::HashString("TestSetName");
-        static const int CreationDateTime_HASH = HashingUtils::HashString("CreationDateTime");
+        static constexpr uint32_t TestSetName_HASH = ConstExprHashingUtils::HashString("TestSetName");
+        static constexpr uint32_t CreationDateTime_HASH = ConstExprHashingUtils::HashString("CreationDateTime");
 
 
         TestExecutionSortAttribute GetTestExecutionSortAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TestSetName_HASH)
           {
             return TestExecutionSortAttribute::TestSetName;

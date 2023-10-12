@@ -20,13 +20,13 @@ namespace Aws
       namespace InvitationTypeMapper
       {
 
-        static const int INVITATION_HASH = HashingUtils::HashString("INVITATION");
-        static const int ORGANIZATION_HASH = HashingUtils::HashString("ORGANIZATION");
+        static constexpr uint32_t INVITATION_HASH = ConstExprHashingUtils::HashString("INVITATION");
+        static constexpr uint32_t ORGANIZATION_HASH = ConstExprHashingUtils::HashString("ORGANIZATION");
 
 
         InvitationType GetInvitationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVITATION_HASH)
           {
             return InvitationType::INVITATION;

@@ -20,13 +20,13 @@ namespace Aws
       namespace DeploymentStatusMapper
       {
 
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int FAIL_HASH = HashingUtils::HashString("FAIL");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t FAIL_HASH = ConstExprHashingUtils::HashString("FAIL");
 
 
         DeploymentStatus GetDeploymentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUCCESS_HASH)
           {
             return DeploymentStatus::SUCCESS;

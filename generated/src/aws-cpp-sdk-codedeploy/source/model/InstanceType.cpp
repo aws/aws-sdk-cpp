@@ -20,13 +20,13 @@ namespace Aws
       namespace InstanceTypeMapper
       {
 
-        static const int Blue_HASH = HashingUtils::HashString("Blue");
-        static const int Green_HASH = HashingUtils::HashString("Green");
+        static constexpr uint32_t Blue_HASH = ConstExprHashingUtils::HashString("Blue");
+        static constexpr uint32_t Green_HASH = ConstExprHashingUtils::HashString("Green");
 
 
         InstanceType GetInstanceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Blue_HASH)
           {
             return InstanceType::Blue;

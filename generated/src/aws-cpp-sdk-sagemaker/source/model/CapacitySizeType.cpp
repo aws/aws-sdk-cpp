@@ -20,13 +20,13 @@ namespace Aws
       namespace CapacitySizeTypeMapper
       {
 
-        static const int INSTANCE_COUNT_HASH = HashingUtils::HashString("INSTANCE_COUNT");
-        static const int CAPACITY_PERCENT_HASH = HashingUtils::HashString("CAPACITY_PERCENT");
+        static constexpr uint32_t INSTANCE_COUNT_HASH = ConstExprHashingUtils::HashString("INSTANCE_COUNT");
+        static constexpr uint32_t CAPACITY_PERCENT_HASH = ConstExprHashingUtils::HashString("CAPACITY_PERCENT");
 
 
         CapacitySizeType GetCapacitySizeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSTANCE_COUNT_HASH)
           {
             return CapacitySizeType::INSTANCE_COUNT;

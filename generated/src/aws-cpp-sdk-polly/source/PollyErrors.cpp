@@ -18,32 +18,32 @@ namespace Polly
 namespace PollyErrorMapper
 {
 
-static const int SSML_MARKS_NOT_SUPPORTED_FOR_TEXT_TYPE_HASH = HashingUtils::HashString("SsmlMarksNotSupportedForTextTypeException");
-static const int LEXICON_NOT_FOUND_HASH = HashingUtils::HashString("LexiconNotFoundException");
-static const int INVALID_SNS_TOPIC_ARN_HASH = HashingUtils::HashString("InvalidSnsTopicArnException");
-static const int MARKS_NOT_SUPPORTED_FOR_FORMAT_HASH = HashingUtils::HashString("MarksNotSupportedForFormatException");
-static const int TEXT_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("TextLengthExceededException");
-static const int ENGINE_NOT_SUPPORTED_HASH = HashingUtils::HashString("EngineNotSupportedException");
-static const int UNSUPPORTED_PLS_LANGUAGE_HASH = HashingUtils::HashString("UnsupportedPlsLanguageException");
-static const int UNSUPPORTED_PLS_ALPHABET_HASH = HashingUtils::HashString("UnsupportedPlsAlphabetException");
-static const int LANGUAGE_NOT_SUPPORTED_HASH = HashingUtils::HashString("LanguageNotSupportedException");
-static const int MAX_LEXICONS_NUMBER_EXCEEDED_HASH = HashingUtils::HashString("MaxLexiconsNumberExceededException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int INVALID_S3_KEY_HASH = HashingUtils::HashString("InvalidS3KeyException");
-static const int INVALID_TASK_ID_HASH = HashingUtils::HashString("InvalidTaskIdException");
-static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailureException");
-static const int SYNTHESIS_TASK_NOT_FOUND_HASH = HashingUtils::HashString("SynthesisTaskNotFoundException");
-static const int INVALID_SAMPLE_RATE_HASH = HashingUtils::HashString("InvalidSampleRateException");
-static const int INVALID_LEXICON_HASH = HashingUtils::HashString("InvalidLexiconException");
-static const int INVALID_S3_BUCKET_HASH = HashingUtils::HashString("InvalidS3BucketException");
-static const int LEXICON_SIZE_EXCEEDED_HASH = HashingUtils::HashString("LexiconSizeExceededException");
-static const int MAX_LEXEME_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("MaxLexemeLengthExceededException");
-static const int INVALID_SSML_HASH = HashingUtils::HashString("InvalidSsmlException");
+static constexpr uint32_t SSML_MARKS_NOT_SUPPORTED_FOR_TEXT_TYPE_HASH = ConstExprHashingUtils::HashString("SsmlMarksNotSupportedForTextTypeException");
+static constexpr uint32_t LEXICON_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("LexiconNotFoundException");
+static constexpr uint32_t INVALID_SNS_TOPIC_ARN_HASH = ConstExprHashingUtils::HashString("InvalidSnsTopicArnException");
+static constexpr uint32_t MARKS_NOT_SUPPORTED_FOR_FORMAT_HASH = ConstExprHashingUtils::HashString("MarksNotSupportedForFormatException");
+static constexpr uint32_t TEXT_LENGTH_EXCEEDED_HASH = ConstExprHashingUtils::HashString("TextLengthExceededException");
+static constexpr uint32_t ENGINE_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("EngineNotSupportedException");
+static constexpr uint32_t UNSUPPORTED_PLS_LANGUAGE_HASH = ConstExprHashingUtils::HashString("UnsupportedPlsLanguageException");
+static constexpr uint32_t UNSUPPORTED_PLS_ALPHABET_HASH = ConstExprHashingUtils::HashString("UnsupportedPlsAlphabetException");
+static constexpr uint32_t LANGUAGE_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("LanguageNotSupportedException");
+static constexpr uint32_t MAX_LEXICONS_NUMBER_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MaxLexiconsNumberExceededException");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+static constexpr uint32_t INVALID_S3_KEY_HASH = ConstExprHashingUtils::HashString("InvalidS3KeyException");
+static constexpr uint32_t INVALID_TASK_ID_HASH = ConstExprHashingUtils::HashString("InvalidTaskIdException");
+static constexpr uint32_t SERVICE_FAILURE_HASH = ConstExprHashingUtils::HashString("ServiceFailureException");
+static constexpr uint32_t SYNTHESIS_TASK_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SynthesisTaskNotFoundException");
+static constexpr uint32_t INVALID_SAMPLE_RATE_HASH = ConstExprHashingUtils::HashString("InvalidSampleRateException");
+static constexpr uint32_t INVALID_LEXICON_HASH = ConstExprHashingUtils::HashString("InvalidLexiconException");
+static constexpr uint32_t INVALID_S3_BUCKET_HASH = ConstExprHashingUtils::HashString("InvalidS3BucketException");
+static constexpr uint32_t LEXICON_SIZE_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LexiconSizeExceededException");
+static constexpr uint32_t MAX_LEXEME_LENGTH_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MaxLexemeLengthExceededException");
+static constexpr uint32_t INVALID_SSML_HASH = ConstExprHashingUtils::HashString("InvalidSsmlException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == SSML_MARKS_NOT_SUPPORTED_FOR_TEXT_TYPE_HASH)
   {

@@ -20,14 +20,14 @@ namespace Aws
       namespace AuthDecisionMapper
       {
 
-        static const int ALLOWED_HASH = HashingUtils::HashString("ALLOWED");
-        static const int EXPLICIT_DENY_HASH = HashingUtils::HashString("EXPLICIT_DENY");
-        static const int IMPLICIT_DENY_HASH = HashingUtils::HashString("IMPLICIT_DENY");
+        static constexpr uint32_t ALLOWED_HASH = ConstExprHashingUtils::HashString("ALLOWED");
+        static constexpr uint32_t EXPLICIT_DENY_HASH = ConstExprHashingUtils::HashString("EXPLICIT_DENY");
+        static constexpr uint32_t IMPLICIT_DENY_HASH = ConstExprHashingUtils::HashString("IMPLICIT_DENY");
 
 
         AuthDecision GetAuthDecisionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALLOWED_HASH)
           {
             return AuthDecision::ALLOWED;

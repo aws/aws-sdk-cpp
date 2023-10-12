@@ -20,32 +20,32 @@ namespace Aws
       namespace GatewayResponseTypeMapper
       {
 
-        static const int DEFAULT_4XX_HASH = HashingUtils::HashString("DEFAULT_4XX");
-        static const int DEFAULT_5XX_HASH = HashingUtils::HashString("DEFAULT_5XX");
-        static const int RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("RESOURCE_NOT_FOUND");
-        static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UNAUTHORIZED");
-        static const int INVALID_API_KEY_HASH = HashingUtils::HashString("INVALID_API_KEY");
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
-        static const int AUTHORIZER_FAILURE_HASH = HashingUtils::HashString("AUTHORIZER_FAILURE");
-        static const int AUTHORIZER_CONFIGURATION_ERROR_HASH = HashingUtils::HashString("AUTHORIZER_CONFIGURATION_ERROR");
-        static const int INVALID_SIGNATURE_HASH = HashingUtils::HashString("INVALID_SIGNATURE");
-        static const int EXPIRED_TOKEN_HASH = HashingUtils::HashString("EXPIRED_TOKEN");
-        static const int MISSING_AUTHENTICATION_TOKEN_HASH = HashingUtils::HashString("MISSING_AUTHENTICATION_TOKEN");
-        static const int INTEGRATION_FAILURE_HASH = HashingUtils::HashString("INTEGRATION_FAILURE");
-        static const int INTEGRATION_TIMEOUT_HASH = HashingUtils::HashString("INTEGRATION_TIMEOUT");
-        static const int API_CONFIGURATION_ERROR_HASH = HashingUtils::HashString("API_CONFIGURATION_ERROR");
-        static const int UNSUPPORTED_MEDIA_TYPE_HASH = HashingUtils::HashString("UNSUPPORTED_MEDIA_TYPE");
-        static const int BAD_REQUEST_PARAMETERS_HASH = HashingUtils::HashString("BAD_REQUEST_PARAMETERS");
-        static const int BAD_REQUEST_BODY_HASH = HashingUtils::HashString("BAD_REQUEST_BODY");
-        static const int REQUEST_TOO_LARGE_HASH = HashingUtils::HashString("REQUEST_TOO_LARGE");
-        static const int THROTTLED_HASH = HashingUtils::HashString("THROTTLED");
-        static const int QUOTA_EXCEEDED_HASH = HashingUtils::HashString("QUOTA_EXCEEDED");
-        static const int WAF_FILTERED_HASH = HashingUtils::HashString("WAF_FILTERED");
+        static constexpr uint32_t DEFAULT_4XX_HASH = ConstExprHashingUtils::HashString("DEFAULT_4XX");
+        static constexpr uint32_t DEFAULT_5XX_HASH = ConstExprHashingUtils::HashString("DEFAULT_5XX");
+        static constexpr uint32_t RESOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("RESOURCE_NOT_FOUND");
+        static constexpr uint32_t UNAUTHORIZED_HASH = ConstExprHashingUtils::HashString("UNAUTHORIZED");
+        static constexpr uint32_t INVALID_API_KEY_HASH = ConstExprHashingUtils::HashString("INVALID_API_KEY");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t AUTHORIZER_FAILURE_HASH = ConstExprHashingUtils::HashString("AUTHORIZER_FAILURE");
+        static constexpr uint32_t AUTHORIZER_CONFIGURATION_ERROR_HASH = ConstExprHashingUtils::HashString("AUTHORIZER_CONFIGURATION_ERROR");
+        static constexpr uint32_t INVALID_SIGNATURE_HASH = ConstExprHashingUtils::HashString("INVALID_SIGNATURE");
+        static constexpr uint32_t EXPIRED_TOKEN_HASH = ConstExprHashingUtils::HashString("EXPIRED_TOKEN");
+        static constexpr uint32_t MISSING_AUTHENTICATION_TOKEN_HASH = ConstExprHashingUtils::HashString("MISSING_AUTHENTICATION_TOKEN");
+        static constexpr uint32_t INTEGRATION_FAILURE_HASH = ConstExprHashingUtils::HashString("INTEGRATION_FAILURE");
+        static constexpr uint32_t INTEGRATION_TIMEOUT_HASH = ConstExprHashingUtils::HashString("INTEGRATION_TIMEOUT");
+        static constexpr uint32_t API_CONFIGURATION_ERROR_HASH = ConstExprHashingUtils::HashString("API_CONFIGURATION_ERROR");
+        static constexpr uint32_t UNSUPPORTED_MEDIA_TYPE_HASH = ConstExprHashingUtils::HashString("UNSUPPORTED_MEDIA_TYPE");
+        static constexpr uint32_t BAD_REQUEST_PARAMETERS_HASH = ConstExprHashingUtils::HashString("BAD_REQUEST_PARAMETERS");
+        static constexpr uint32_t BAD_REQUEST_BODY_HASH = ConstExprHashingUtils::HashString("BAD_REQUEST_BODY");
+        static constexpr uint32_t REQUEST_TOO_LARGE_HASH = ConstExprHashingUtils::HashString("REQUEST_TOO_LARGE");
+        static constexpr uint32_t THROTTLED_HASH = ConstExprHashingUtils::HashString("THROTTLED");
+        static constexpr uint32_t QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("QUOTA_EXCEEDED");
+        static constexpr uint32_t WAF_FILTERED_HASH = ConstExprHashingUtils::HashString("WAF_FILTERED");
 
 
         GatewayResponseType GetGatewayResponseTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_4XX_HASH)
           {
             return GatewayResponseType::DEFAULT_4XX;

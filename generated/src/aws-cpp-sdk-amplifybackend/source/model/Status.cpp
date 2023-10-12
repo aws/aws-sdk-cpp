@@ -20,13 +20,13 @@ namespace Aws
       namespace StatusMapper
       {
 
-        static const int LATEST_HASH = HashingUtils::HashString("LATEST");
-        static const int STALE_HASH = HashingUtils::HashString("STALE");
+        static constexpr uint32_t LATEST_HASH = ConstExprHashingUtils::HashString("LATEST");
+        static constexpr uint32_t STALE_HASH = ConstExprHashingUtils::HashString("STALE");
 
 
         Status GetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LATEST_HASH)
           {
             return Status::LATEST;

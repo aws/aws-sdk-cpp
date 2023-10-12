@@ -20,13 +20,13 @@ namespace Aws
       namespace FragmentSelectorTypeMapper
       {
 
-        static const int ProducerTimestamp_HASH = HashingUtils::HashString("ProducerTimestamp");
-        static const int ServerTimestamp_HASH = HashingUtils::HashString("ServerTimestamp");
+        static constexpr uint32_t ProducerTimestamp_HASH = ConstExprHashingUtils::HashString("ProducerTimestamp");
+        static constexpr uint32_t ServerTimestamp_HASH = ConstExprHashingUtils::HashString("ServerTimestamp");
 
 
         FragmentSelectorType GetFragmentSelectorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ProducerTimestamp_HASH)
           {
             return FragmentSelectorType::ProducerTimestamp;

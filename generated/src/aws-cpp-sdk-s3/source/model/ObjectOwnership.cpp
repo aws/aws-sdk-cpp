@@ -20,14 +20,14 @@ namespace Aws
       namespace ObjectOwnershipMapper
       {
 
-        static const int BucketOwnerPreferred_HASH = HashingUtils::HashString("BucketOwnerPreferred");
-        static const int ObjectWriter_HASH = HashingUtils::HashString("ObjectWriter");
-        static const int BucketOwnerEnforced_HASH = HashingUtils::HashString("BucketOwnerEnforced");
+        static constexpr uint32_t BucketOwnerPreferred_HASH = ConstExprHashingUtils::HashString("BucketOwnerPreferred");
+        static constexpr uint32_t ObjectWriter_HASH = ConstExprHashingUtils::HashString("ObjectWriter");
+        static constexpr uint32_t BucketOwnerEnforced_HASH = ConstExprHashingUtils::HashString("BucketOwnerEnforced");
 
 
         ObjectOwnership GetObjectOwnershipForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BucketOwnerPreferred_HASH)
           {
             return ObjectOwnership::BucketOwnerPreferred;

@@ -20,14 +20,14 @@ namespace Aws
       namespace DataTransferApiTypeMapper
       {
 
-        static const int SYNC_HASH = HashingUtils::HashString("SYNC");
-        static const int ASYNC_HASH = HashingUtils::HashString("ASYNC");
-        static const int AUTOMATIC_HASH = HashingUtils::HashString("AUTOMATIC");
+        static constexpr uint32_t SYNC_HASH = ConstExprHashingUtils::HashString("SYNC");
+        static constexpr uint32_t ASYNC_HASH = ConstExprHashingUtils::HashString("ASYNC");
+        static constexpr uint32_t AUTOMATIC_HASH = ConstExprHashingUtils::HashString("AUTOMATIC");
 
 
         DataTransferApiType GetDataTransferApiTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SYNC_HASH)
           {
             return DataTransferApiType::SYNC;

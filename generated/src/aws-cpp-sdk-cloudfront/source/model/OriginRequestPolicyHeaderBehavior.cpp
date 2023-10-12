@@ -20,16 +20,16 @@ namespace Aws
       namespace OriginRequestPolicyHeaderBehaviorMapper
       {
 
-        static const int none_HASH = HashingUtils::HashString("none");
-        static const int whitelist_HASH = HashingUtils::HashString("whitelist");
-        static const int allViewer_HASH = HashingUtils::HashString("allViewer");
-        static const int allViewerAndWhitelistCloudFront_HASH = HashingUtils::HashString("allViewerAndWhitelistCloudFront");
-        static const int allExcept_HASH = HashingUtils::HashString("allExcept");
+        static constexpr uint32_t none_HASH = ConstExprHashingUtils::HashString("none");
+        static constexpr uint32_t whitelist_HASH = ConstExprHashingUtils::HashString("whitelist");
+        static constexpr uint32_t allViewer_HASH = ConstExprHashingUtils::HashString("allViewer");
+        static constexpr uint32_t allViewerAndWhitelistCloudFront_HASH = ConstExprHashingUtils::HashString("allViewerAndWhitelistCloudFront");
+        static constexpr uint32_t allExcept_HASH = ConstExprHashingUtils::HashString("allExcept");
 
 
         OriginRequestPolicyHeaderBehavior GetOriginRequestPolicyHeaderBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == none_HASH)
           {
             return OriginRequestPolicyHeaderBehavior::none;

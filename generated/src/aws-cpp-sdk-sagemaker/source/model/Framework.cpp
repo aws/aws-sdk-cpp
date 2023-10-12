@@ -20,20 +20,20 @@ namespace Aws
       namespace FrameworkMapper
       {
 
-        static const int TENSORFLOW_HASH = HashingUtils::HashString("TENSORFLOW");
-        static const int KERAS_HASH = HashingUtils::HashString("KERAS");
-        static const int MXNET_HASH = HashingUtils::HashString("MXNET");
-        static const int ONNX_HASH = HashingUtils::HashString("ONNX");
-        static const int PYTORCH_HASH = HashingUtils::HashString("PYTORCH");
-        static const int XGBOOST_HASH = HashingUtils::HashString("XGBOOST");
-        static const int TFLITE_HASH = HashingUtils::HashString("TFLITE");
-        static const int DARKNET_HASH = HashingUtils::HashString("DARKNET");
-        static const int SKLEARN_HASH = HashingUtils::HashString("SKLEARN");
+        static constexpr uint32_t TENSORFLOW_HASH = ConstExprHashingUtils::HashString("TENSORFLOW");
+        static constexpr uint32_t KERAS_HASH = ConstExprHashingUtils::HashString("KERAS");
+        static constexpr uint32_t MXNET_HASH = ConstExprHashingUtils::HashString("MXNET");
+        static constexpr uint32_t ONNX_HASH = ConstExprHashingUtils::HashString("ONNX");
+        static constexpr uint32_t PYTORCH_HASH = ConstExprHashingUtils::HashString("PYTORCH");
+        static constexpr uint32_t XGBOOST_HASH = ConstExprHashingUtils::HashString("XGBOOST");
+        static constexpr uint32_t TFLITE_HASH = ConstExprHashingUtils::HashString("TFLITE");
+        static constexpr uint32_t DARKNET_HASH = ConstExprHashingUtils::HashString("DARKNET");
+        static constexpr uint32_t SKLEARN_HASH = ConstExprHashingUtils::HashString("SKLEARN");
 
 
         Framework GetFrameworkForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TENSORFLOW_HASH)
           {
             return Framework::TENSORFLOW;

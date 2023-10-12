@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int APPLICATION_LOAD_BALANCER_HASH = HashingUtils::HashString("APPLICATION_LOAD_BALANCER");
-        static const int API_GATEWAY_HASH = HashingUtils::HashString("API_GATEWAY");
+        static constexpr uint32_t APPLICATION_LOAD_BALANCER_HASH = ConstExprHashingUtils::HashString("APPLICATION_LOAD_BALANCER");
+        static constexpr uint32_t API_GATEWAY_HASH = ConstExprHashingUtils::HashString("API_GATEWAY");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APPLICATION_LOAD_BALANCER_HASH)
           {
             return ResourceType::APPLICATION_LOAD_BALANCER;

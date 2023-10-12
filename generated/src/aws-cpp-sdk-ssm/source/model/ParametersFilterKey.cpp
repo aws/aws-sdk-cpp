@@ -20,14 +20,14 @@ namespace Aws
       namespace ParametersFilterKeyMapper
       {
 
-        static const int Name_HASH = HashingUtils::HashString("Name");
-        static const int Type_HASH = HashingUtils::HashString("Type");
-        static const int KeyId_HASH = HashingUtils::HashString("KeyId");
+        static constexpr uint32_t Name_HASH = ConstExprHashingUtils::HashString("Name");
+        static constexpr uint32_t Type_HASH = ConstExprHashingUtils::HashString("Type");
+        static constexpr uint32_t KeyId_HASH = ConstExprHashingUtils::HashString("KeyId");
 
 
         ParametersFilterKey GetParametersFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Name_HASH)
           {
             return ParametersFilterKey::Name;

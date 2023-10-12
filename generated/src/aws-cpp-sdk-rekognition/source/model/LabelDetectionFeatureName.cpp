@@ -20,12 +20,12 @@ namespace Aws
       namespace LabelDetectionFeatureNameMapper
       {
 
-        static const int GENERAL_LABELS_HASH = HashingUtils::HashString("GENERAL_LABELS");
+        static constexpr uint32_t GENERAL_LABELS_HASH = ConstExprHashingUtils::HashString("GENERAL_LABELS");
 
 
         LabelDetectionFeatureName GetLabelDetectionFeatureNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GENERAL_LABELS_HASH)
           {
             return LabelDetectionFeatureName::GENERAL_LABELS;

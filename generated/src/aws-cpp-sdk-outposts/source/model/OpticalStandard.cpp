@@ -20,24 +20,24 @@ namespace Aws
       namespace OpticalStandardMapper
       {
 
-        static const int OPTIC_10GBASE_SR_HASH = HashingUtils::HashString("OPTIC_10GBASE_SR");
-        static const int OPTIC_10GBASE_IR_HASH = HashingUtils::HashString("OPTIC_10GBASE_IR");
-        static const int OPTIC_10GBASE_LR_HASH = HashingUtils::HashString("OPTIC_10GBASE_LR");
-        static const int OPTIC_40GBASE_SR_HASH = HashingUtils::HashString("OPTIC_40GBASE_SR");
-        static const int OPTIC_40GBASE_ESR_HASH = HashingUtils::HashString("OPTIC_40GBASE_ESR");
-        static const int OPTIC_40GBASE_IR4_LR4L_HASH = HashingUtils::HashString("OPTIC_40GBASE_IR4_LR4L");
-        static const int OPTIC_40GBASE_LR4_HASH = HashingUtils::HashString("OPTIC_40GBASE_LR4");
-        static const int OPTIC_100GBASE_SR4_HASH = HashingUtils::HashString("OPTIC_100GBASE_SR4");
-        static const int OPTIC_100GBASE_CWDM4_HASH = HashingUtils::HashString("OPTIC_100GBASE_CWDM4");
-        static const int OPTIC_100GBASE_LR4_HASH = HashingUtils::HashString("OPTIC_100GBASE_LR4");
-        static const int OPTIC_100G_PSM4_MSA_HASH = HashingUtils::HashString("OPTIC_100G_PSM4_MSA");
-        static const int OPTIC_1000BASE_LX_HASH = HashingUtils::HashString("OPTIC_1000BASE_LX");
-        static const int OPTIC_1000BASE_SX_HASH = HashingUtils::HashString("OPTIC_1000BASE_SX");
+        static constexpr uint32_t OPTIC_10GBASE_SR_HASH = ConstExprHashingUtils::HashString("OPTIC_10GBASE_SR");
+        static constexpr uint32_t OPTIC_10GBASE_IR_HASH = ConstExprHashingUtils::HashString("OPTIC_10GBASE_IR");
+        static constexpr uint32_t OPTIC_10GBASE_LR_HASH = ConstExprHashingUtils::HashString("OPTIC_10GBASE_LR");
+        static constexpr uint32_t OPTIC_40GBASE_SR_HASH = ConstExprHashingUtils::HashString("OPTIC_40GBASE_SR");
+        static constexpr uint32_t OPTIC_40GBASE_ESR_HASH = ConstExprHashingUtils::HashString("OPTIC_40GBASE_ESR");
+        static constexpr uint32_t OPTIC_40GBASE_IR4_LR4L_HASH = ConstExprHashingUtils::HashString("OPTIC_40GBASE_IR4_LR4L");
+        static constexpr uint32_t OPTIC_40GBASE_LR4_HASH = ConstExprHashingUtils::HashString("OPTIC_40GBASE_LR4");
+        static constexpr uint32_t OPTIC_100GBASE_SR4_HASH = ConstExprHashingUtils::HashString("OPTIC_100GBASE_SR4");
+        static constexpr uint32_t OPTIC_100GBASE_CWDM4_HASH = ConstExprHashingUtils::HashString("OPTIC_100GBASE_CWDM4");
+        static constexpr uint32_t OPTIC_100GBASE_LR4_HASH = ConstExprHashingUtils::HashString("OPTIC_100GBASE_LR4");
+        static constexpr uint32_t OPTIC_100G_PSM4_MSA_HASH = ConstExprHashingUtils::HashString("OPTIC_100G_PSM4_MSA");
+        static constexpr uint32_t OPTIC_1000BASE_LX_HASH = ConstExprHashingUtils::HashString("OPTIC_1000BASE_LX");
+        static constexpr uint32_t OPTIC_1000BASE_SX_HASH = ConstExprHashingUtils::HashString("OPTIC_1000BASE_SX");
 
 
         OpticalStandard GetOpticalStandardForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OPTIC_10GBASE_SR_HASH)
           {
             return OpticalStandard::OPTIC_10GBASE_SR;

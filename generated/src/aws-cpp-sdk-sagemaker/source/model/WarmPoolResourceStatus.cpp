@@ -20,15 +20,15 @@ namespace Aws
       namespace WarmPoolResourceStatusMapper
       {
 
-        static const int Available_HASH = HashingUtils::HashString("Available");
-        static const int Terminated_HASH = HashingUtils::HashString("Terminated");
-        static const int Reused_HASH = HashingUtils::HashString("Reused");
-        static const int InUse_HASH = HashingUtils::HashString("InUse");
+        static constexpr uint32_t Available_HASH = ConstExprHashingUtils::HashString("Available");
+        static constexpr uint32_t Terminated_HASH = ConstExprHashingUtils::HashString("Terminated");
+        static constexpr uint32_t Reused_HASH = ConstExprHashingUtils::HashString("Reused");
+        static constexpr uint32_t InUse_HASH = ConstExprHashingUtils::HashString("InUse");
 
 
         WarmPoolResourceStatus GetWarmPoolResourceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Available_HASH)
           {
             return WarmPoolResourceStatus::Available;

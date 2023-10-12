@@ -20,13 +20,13 @@ namespace Aws
       namespace InventoryFrequencyMapper
       {
 
-        static const int Daily_HASH = HashingUtils::HashString("Daily");
-        static const int Weekly_HASH = HashingUtils::HashString("Weekly");
+        static constexpr uint32_t Daily_HASH = ConstExprHashingUtils::HashString("Daily");
+        static constexpr uint32_t Weekly_HASH = ConstExprHashingUtils::HashString("Weekly");
 
 
         InventoryFrequency GetInventoryFrequencyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Daily_HASH)
           {
             return InventoryFrequency::Daily;

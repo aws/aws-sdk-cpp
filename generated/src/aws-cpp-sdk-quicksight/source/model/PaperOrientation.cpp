@@ -20,13 +20,13 @@ namespace Aws
       namespace PaperOrientationMapper
       {
 
-        static const int PORTRAIT_HASH = HashingUtils::HashString("PORTRAIT");
-        static const int LANDSCAPE_HASH = HashingUtils::HashString("LANDSCAPE");
+        static constexpr uint32_t PORTRAIT_HASH = ConstExprHashingUtils::HashString("PORTRAIT");
+        static constexpr uint32_t LANDSCAPE_HASH = ConstExprHashingUtils::HashString("LANDSCAPE");
 
 
         PaperOrientation GetPaperOrientationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PORTRAIT_HASH)
           {
             return PaperOrientation::PORTRAIT;

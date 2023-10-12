@@ -20,14 +20,14 @@ namespace Aws
       namespace ClientBrokerMapper
       {
 
-        static const int TLS_HASH = HashingUtils::HashString("TLS");
-        static const int TLS_PLAINTEXT_HASH = HashingUtils::HashString("TLS_PLAINTEXT");
-        static const int PLAINTEXT_HASH = HashingUtils::HashString("PLAINTEXT");
+        static constexpr uint32_t TLS_HASH = ConstExprHashingUtils::HashString("TLS");
+        static constexpr uint32_t TLS_PLAINTEXT_HASH = ConstExprHashingUtils::HashString("TLS_PLAINTEXT");
+        static constexpr uint32_t PLAINTEXT_HASH = ConstExprHashingUtils::HashString("PLAINTEXT");
 
 
         ClientBroker GetClientBrokerForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TLS_HASH)
           {
             return ClientBroker::TLS;

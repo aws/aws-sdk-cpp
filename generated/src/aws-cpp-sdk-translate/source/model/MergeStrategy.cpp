@@ -20,12 +20,12 @@ namespace Aws
       namespace MergeStrategyMapper
       {
 
-        static const int OVERWRITE_HASH = HashingUtils::HashString("OVERWRITE");
+        static constexpr uint32_t OVERWRITE_HASH = ConstExprHashingUtils::HashString("OVERWRITE");
 
 
         MergeStrategy GetMergeStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OVERWRITE_HASH)
           {
             return MergeStrategy::OVERWRITE;

@@ -20,12 +20,12 @@ namespace Aws
       namespace MonitorDimensionMapper
       {
 
-        static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
+        static constexpr uint32_t SERVICE_HASH = ConstExprHashingUtils::HashString("SERVICE");
 
 
         MonitorDimension GetMonitorDimensionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SERVICE_HASH)
           {
             return MonitorDimension::SERVICE;

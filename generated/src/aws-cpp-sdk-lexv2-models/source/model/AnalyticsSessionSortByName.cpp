@@ -20,14 +20,14 @@ namespace Aws
       namespace AnalyticsSessionSortByNameMapper
       {
 
-        static const int ConversationStartTime_HASH = HashingUtils::HashString("ConversationStartTime");
-        static const int NumberOfTurns_HASH = HashingUtils::HashString("NumberOfTurns");
-        static const int Duration_HASH = HashingUtils::HashString("Duration");
+        static constexpr uint32_t ConversationStartTime_HASH = ConstExprHashingUtils::HashString("ConversationStartTime");
+        static constexpr uint32_t NumberOfTurns_HASH = ConstExprHashingUtils::HashString("NumberOfTurns");
+        static constexpr uint32_t Duration_HASH = ConstExprHashingUtils::HashString("Duration");
 
 
         AnalyticsSessionSortByName GetAnalyticsSessionSortByNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ConversationStartTime_HASH)
           {
             return AnalyticsSessionSortByName::ConversationStartTime;

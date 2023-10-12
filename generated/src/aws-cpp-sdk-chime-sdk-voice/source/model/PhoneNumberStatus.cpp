@@ -20,22 +20,22 @@ namespace Aws
       namespace PhoneNumberStatusMapper
       {
 
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
-        static const int PortinCancelRequested_HASH = HashingUtils::HashString("PortinCancelRequested");
-        static const int PortinInProgress_HASH = HashingUtils::HashString("PortinInProgress");
-        static const int AcquireInProgress_HASH = HashingUtils::HashString("AcquireInProgress");
-        static const int AcquireFailed_HASH = HashingUtils::HashString("AcquireFailed");
-        static const int Unassigned_HASH = HashingUtils::HashString("Unassigned");
-        static const int Assigned_HASH = HashingUtils::HashString("Assigned");
-        static const int ReleaseInProgress_HASH = HashingUtils::HashString("ReleaseInProgress");
-        static const int DeleteInProgress_HASH = HashingUtils::HashString("DeleteInProgress");
-        static const int ReleaseFailed_HASH = HashingUtils::HashString("ReleaseFailed");
-        static const int DeleteFailed_HASH = HashingUtils::HashString("DeleteFailed");
+        static constexpr uint32_t Cancelled_HASH = ConstExprHashingUtils::HashString("Cancelled");
+        static constexpr uint32_t PortinCancelRequested_HASH = ConstExprHashingUtils::HashString("PortinCancelRequested");
+        static constexpr uint32_t PortinInProgress_HASH = ConstExprHashingUtils::HashString("PortinInProgress");
+        static constexpr uint32_t AcquireInProgress_HASH = ConstExprHashingUtils::HashString("AcquireInProgress");
+        static constexpr uint32_t AcquireFailed_HASH = ConstExprHashingUtils::HashString("AcquireFailed");
+        static constexpr uint32_t Unassigned_HASH = ConstExprHashingUtils::HashString("Unassigned");
+        static constexpr uint32_t Assigned_HASH = ConstExprHashingUtils::HashString("Assigned");
+        static constexpr uint32_t ReleaseInProgress_HASH = ConstExprHashingUtils::HashString("ReleaseInProgress");
+        static constexpr uint32_t DeleteInProgress_HASH = ConstExprHashingUtils::HashString("DeleteInProgress");
+        static constexpr uint32_t ReleaseFailed_HASH = ConstExprHashingUtils::HashString("ReleaseFailed");
+        static constexpr uint32_t DeleteFailed_HASH = ConstExprHashingUtils::HashString("DeleteFailed");
 
 
         PhoneNumberStatus GetPhoneNumberStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Cancelled_HASH)
           {
             return PhoneNumberStatus::Cancelled;

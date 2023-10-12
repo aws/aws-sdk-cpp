@@ -20,12 +20,12 @@ namespace Aws
       namespace BadRequestReasonMapper
       {
 
-        static const int CODE_ERROR_HASH = HashingUtils::HashString("CODE_ERROR");
+        static constexpr uint32_t CODE_ERROR_HASH = ConstExprHashingUtils::HashString("CODE_ERROR");
 
 
         BadRequestReason GetBadRequestReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CODE_ERROR_HASH)
           {
             return BadRequestReason::CODE_ERROR;

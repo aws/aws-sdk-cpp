@@ -20,12 +20,12 @@ namespace Aws
       namespace WirelessGatewayTaskDefinitionTypeMapper
       {
 
-        static const int UPDATE_HASH = HashingUtils::HashString("UPDATE");
+        static constexpr uint32_t UPDATE_HASH = ConstExprHashingUtils::HashString("UPDATE");
 
 
         WirelessGatewayTaskDefinitionType GetWirelessGatewayTaskDefinitionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UPDATE_HASH)
           {
             return WirelessGatewayTaskDefinitionType::UPDATE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace MetricDestinationMapper
       {
 
-        static const int CloudWatch_HASH = HashingUtils::HashString("CloudWatch");
-        static const int Evidently_HASH = HashingUtils::HashString("Evidently");
+        static constexpr uint32_t CloudWatch_HASH = ConstExprHashingUtils::HashString("CloudWatch");
+        static constexpr uint32_t Evidently_HASH = ConstExprHashingUtils::HashString("Evidently");
 
 
         MetricDestination GetMetricDestinationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CloudWatch_HASH)
           {
             return MetricDestination::CloudWatch;

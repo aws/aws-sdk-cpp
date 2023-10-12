@@ -20,13 +20,13 @@ namespace Aws
       namespace RelatedItemTypeMapper
       {
 
-        static const int Contact_HASH = HashingUtils::HashString("Contact");
-        static const int Comment_HASH = HashingUtils::HashString("Comment");
+        static constexpr uint32_t Contact_HASH = ConstExprHashingUtils::HashString("Contact");
+        static constexpr uint32_t Comment_HASH = ConstExprHashingUtils::HashString("Comment");
 
 
         RelatedItemType GetRelatedItemTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Contact_HASH)
           {
             return RelatedItemType::Contact;

@@ -20,17 +20,17 @@ namespace Aws
       namespace TransferableMapper
       {
 
-        static const int TRANSFERABLE_HASH = HashingUtils::HashString("TRANSFERABLE");
-        static const int UNTRANSFERABLE_HASH = HashingUtils::HashString("UNTRANSFERABLE");
-        static const int DONT_KNOW_HASH = HashingUtils::HashString("DONT_KNOW");
-        static const int DOMAIN_IN_OWN_ACCOUNT_HASH = HashingUtils::HashString("DOMAIN_IN_OWN_ACCOUNT");
-        static const int DOMAIN_IN_ANOTHER_ACCOUNT_HASH = HashingUtils::HashString("DOMAIN_IN_ANOTHER_ACCOUNT");
-        static const int PREMIUM_DOMAIN_HASH = HashingUtils::HashString("PREMIUM_DOMAIN");
+        static constexpr uint32_t TRANSFERABLE_HASH = ConstExprHashingUtils::HashString("TRANSFERABLE");
+        static constexpr uint32_t UNTRANSFERABLE_HASH = ConstExprHashingUtils::HashString("UNTRANSFERABLE");
+        static constexpr uint32_t DONT_KNOW_HASH = ConstExprHashingUtils::HashString("DONT_KNOW");
+        static constexpr uint32_t DOMAIN_IN_OWN_ACCOUNT_HASH = ConstExprHashingUtils::HashString("DOMAIN_IN_OWN_ACCOUNT");
+        static constexpr uint32_t DOMAIN_IN_ANOTHER_ACCOUNT_HASH = ConstExprHashingUtils::HashString("DOMAIN_IN_ANOTHER_ACCOUNT");
+        static constexpr uint32_t PREMIUM_DOMAIN_HASH = ConstExprHashingUtils::HashString("PREMIUM_DOMAIN");
 
 
         Transferable GetTransferableForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRANSFERABLE_HASH)
           {
             return Transferable::TRANSFERABLE;

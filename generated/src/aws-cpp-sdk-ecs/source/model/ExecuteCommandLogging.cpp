@@ -20,14 +20,14 @@ namespace Aws
       namespace ExecuteCommandLoggingMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int OVERRIDE_HASH = HashingUtils::HashString("OVERRIDE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t OVERRIDE_HASH = ConstExprHashingUtils::HashString("OVERRIDE");
 
 
         ExecuteCommandLogging GetExecuteCommandLoggingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return ExecuteCommandLogging::NONE;

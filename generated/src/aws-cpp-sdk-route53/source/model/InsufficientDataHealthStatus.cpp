@@ -20,14 +20,14 @@ namespace Aws
       namespace InsufficientDataHealthStatusMapper
       {
 
-        static const int Healthy_HASH = HashingUtils::HashString("Healthy");
-        static const int Unhealthy_HASH = HashingUtils::HashString("Unhealthy");
-        static const int LastKnownStatus_HASH = HashingUtils::HashString("LastKnownStatus");
+        static constexpr uint32_t Healthy_HASH = ConstExprHashingUtils::HashString("Healthy");
+        static constexpr uint32_t Unhealthy_HASH = ConstExprHashingUtils::HashString("Unhealthy");
+        static constexpr uint32_t LastKnownStatus_HASH = ConstExprHashingUtils::HashString("LastKnownStatus");
 
 
         InsufficientDataHealthStatus GetInsufficientDataHealthStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Healthy_HASH)
           {
             return InsufficientDataHealthStatus::Healthy;

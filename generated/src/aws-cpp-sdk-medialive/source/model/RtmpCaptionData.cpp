@@ -20,14 +20,14 @@ namespace Aws
       namespace RtmpCaptionDataMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int FIELD1_608_HASH = HashingUtils::HashString("FIELD1_608");
-        static const int FIELD1_AND_FIELD2_608_HASH = HashingUtils::HashString("FIELD1_AND_FIELD2_608");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t FIELD1_608_HASH = ConstExprHashingUtils::HashString("FIELD1_608");
+        static constexpr uint32_t FIELD1_AND_FIELD2_608_HASH = ConstExprHashingUtils::HashString("FIELD1_AND_FIELD2_608");
 
 
         RtmpCaptionData GetRtmpCaptionDataForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return RtmpCaptionData::ALL;

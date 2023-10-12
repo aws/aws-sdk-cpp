@@ -20,16 +20,16 @@ namespace Aws
       namespace OperationModeMapper
       {
 
-        static const int PRIMARY_HASH = HashingUtils::HashString("PRIMARY");
-        static const int LOGREPLAY_HASH = HashingUtils::HashString("LOGREPLAY");
-        static const int DELTA_DATASHIPPING_HASH = HashingUtils::HashString("DELTA_DATASHIPPING");
-        static const int LOGREPLAY_READACCESS_HASH = HashingUtils::HashString("LOGREPLAY_READACCESS");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t PRIMARY_HASH = ConstExprHashingUtils::HashString("PRIMARY");
+        static constexpr uint32_t LOGREPLAY_HASH = ConstExprHashingUtils::HashString("LOGREPLAY");
+        static constexpr uint32_t DELTA_DATASHIPPING_HASH = ConstExprHashingUtils::HashString("DELTA_DATASHIPPING");
+        static constexpr uint32_t LOGREPLAY_READACCESS_HASH = ConstExprHashingUtils::HashString("LOGREPLAY_READACCESS");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         OperationMode GetOperationModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRIMARY_HASH)
           {
             return OperationMode::PRIMARY;

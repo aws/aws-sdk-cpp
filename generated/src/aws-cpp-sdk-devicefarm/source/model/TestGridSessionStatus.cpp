@@ -20,14 +20,14 @@ namespace Aws
       namespace TestGridSessionStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int CLOSED_HASH = HashingUtils::HashString("CLOSED");
-        static const int ERRORED_HASH = HashingUtils::HashString("ERRORED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t CLOSED_HASH = ConstExprHashingUtils::HashString("CLOSED");
+        static constexpr uint32_t ERRORED_HASH = ConstExprHashingUtils::HashString("ERRORED");
 
 
         TestGridSessionStatus GetTestGridSessionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return TestGridSessionStatus::ACTIVE;

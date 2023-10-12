@@ -20,18 +20,18 @@ namespace Aws
       namespace DataSourceSyncJobStatusMapper
       {
 
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-        static const int SYNCING_HASH = HashingUtils::HashString("SYNCING");
-        static const int INCOMPLETE_HASH = HashingUtils::HashString("INCOMPLETE");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int ABORTED_HASH = HashingUtils::HashString("ABORTED");
-        static const int SYNCING_INDEXING_HASH = HashingUtils::HashString("SYNCING_INDEXING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t SUCCEEDED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED");
+        static constexpr uint32_t SYNCING_HASH = ConstExprHashingUtils::HashString("SYNCING");
+        static constexpr uint32_t INCOMPLETE_HASH = ConstExprHashingUtils::HashString("INCOMPLETE");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
+        static constexpr uint32_t ABORTED_HASH = ConstExprHashingUtils::HashString("ABORTED");
+        static constexpr uint32_t SYNCING_INDEXING_HASH = ConstExprHashingUtils::HashString("SYNCING_INDEXING");
 
 
         DataSourceSyncJobStatus GetDataSourceSyncJobStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FAILED_HASH)
           {
             return DataSourceSyncJobStatus::FAILED;

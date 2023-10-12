@@ -20,29 +20,29 @@ namespace Aws
       namespace AutomationExecutionStatusMapper
       {
 
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Waiting_HASH = HashingUtils::HashString("Waiting");
-        static const int Success_HASH = HashingUtils::HashString("Success");
-        static const int TimedOut_HASH = HashingUtils::HashString("TimedOut");
-        static const int Cancelling_HASH = HashingUtils::HashString("Cancelling");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int PendingApproval_HASH = HashingUtils::HashString("PendingApproval");
-        static const int Approved_HASH = HashingUtils::HashString("Approved");
-        static const int Rejected_HASH = HashingUtils::HashString("Rejected");
-        static const int Scheduled_HASH = HashingUtils::HashString("Scheduled");
-        static const int RunbookInProgress_HASH = HashingUtils::HashString("RunbookInProgress");
-        static const int PendingChangeCalendarOverride_HASH = HashingUtils::HashString("PendingChangeCalendarOverride");
-        static const int ChangeCalendarOverrideApproved_HASH = HashingUtils::HashString("ChangeCalendarOverrideApproved");
-        static const int ChangeCalendarOverrideRejected_HASH = HashingUtils::HashString("ChangeCalendarOverrideRejected");
-        static const int CompletedWithSuccess_HASH = HashingUtils::HashString("CompletedWithSuccess");
-        static const int CompletedWithFailure_HASH = HashingUtils::HashString("CompletedWithFailure");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Waiting_HASH = ConstExprHashingUtils::HashString("Waiting");
+        static constexpr uint32_t Success_HASH = ConstExprHashingUtils::HashString("Success");
+        static constexpr uint32_t TimedOut_HASH = ConstExprHashingUtils::HashString("TimedOut");
+        static constexpr uint32_t Cancelling_HASH = ConstExprHashingUtils::HashString("Cancelling");
+        static constexpr uint32_t Cancelled_HASH = ConstExprHashingUtils::HashString("Cancelled");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t PendingApproval_HASH = ConstExprHashingUtils::HashString("PendingApproval");
+        static constexpr uint32_t Approved_HASH = ConstExprHashingUtils::HashString("Approved");
+        static constexpr uint32_t Rejected_HASH = ConstExprHashingUtils::HashString("Rejected");
+        static constexpr uint32_t Scheduled_HASH = ConstExprHashingUtils::HashString("Scheduled");
+        static constexpr uint32_t RunbookInProgress_HASH = ConstExprHashingUtils::HashString("RunbookInProgress");
+        static constexpr uint32_t PendingChangeCalendarOverride_HASH = ConstExprHashingUtils::HashString("PendingChangeCalendarOverride");
+        static constexpr uint32_t ChangeCalendarOverrideApproved_HASH = ConstExprHashingUtils::HashString("ChangeCalendarOverrideApproved");
+        static constexpr uint32_t ChangeCalendarOverrideRejected_HASH = ConstExprHashingUtils::HashString("ChangeCalendarOverrideRejected");
+        static constexpr uint32_t CompletedWithSuccess_HASH = ConstExprHashingUtils::HashString("CompletedWithSuccess");
+        static constexpr uint32_t CompletedWithFailure_HASH = ConstExprHashingUtils::HashString("CompletedWithFailure");
 
 
         AutomationExecutionStatus GetAutomationExecutionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pending_HASH)
           {
             return AutomationExecutionStatus::Pending;

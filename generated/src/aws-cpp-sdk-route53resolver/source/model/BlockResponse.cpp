@@ -20,14 +20,14 @@ namespace Aws
       namespace BlockResponseMapper
       {
 
-        static const int NODATA_HASH = HashingUtils::HashString("NODATA");
-        static const int NXDOMAIN_HASH = HashingUtils::HashString("NXDOMAIN");
-        static const int OVERRIDE_HASH = HashingUtils::HashString("OVERRIDE");
+        static constexpr uint32_t NODATA_HASH = ConstExprHashingUtils::HashString("NODATA");
+        static constexpr uint32_t NXDOMAIN_HASH = ConstExprHashingUtils::HashString("NXDOMAIN");
+        static constexpr uint32_t OVERRIDE_HASH = ConstExprHashingUtils::HashString("OVERRIDE");
 
 
         BlockResponse GetBlockResponseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NODATA_HASH)
           {
             return BlockResponse::NODATA;

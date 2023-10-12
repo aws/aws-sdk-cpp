@@ -20,13 +20,13 @@ namespace Aws
       namespace VersionBumpMapper
       {
 
-        static const int MAJOR_HASH = HashingUtils::HashString("MAJOR");
-        static const int MINOR_HASH = HashingUtils::HashString("MINOR");
+        static constexpr uint32_t MAJOR_HASH = ConstExprHashingUtils::HashString("MAJOR");
+        static constexpr uint32_t MINOR_HASH = ConstExprHashingUtils::HashString("MINOR");
 
 
         VersionBump GetVersionBumpForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MAJOR_HASH)
           {
             return VersionBump::MAJOR;

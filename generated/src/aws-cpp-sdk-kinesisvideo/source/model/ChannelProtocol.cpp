@@ -20,14 +20,14 @@ namespace Aws
       namespace ChannelProtocolMapper
       {
 
-        static const int WSS_HASH = HashingUtils::HashString("WSS");
-        static const int HTTPS_HASH = HashingUtils::HashString("HTTPS");
-        static const int WEBRTC_HASH = HashingUtils::HashString("WEBRTC");
+        static constexpr uint32_t WSS_HASH = ConstExprHashingUtils::HashString("WSS");
+        static constexpr uint32_t HTTPS_HASH = ConstExprHashingUtils::HashString("HTTPS");
+        static constexpr uint32_t WEBRTC_HASH = ConstExprHashingUtils::HashString("WEBRTC");
 
 
         ChannelProtocol GetChannelProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WSS_HASH)
           {
             return ChannelProtocol::WSS;

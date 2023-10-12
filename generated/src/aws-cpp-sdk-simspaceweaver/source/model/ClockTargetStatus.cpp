@@ -20,14 +20,14 @@ namespace Aws
       namespace ClockTargetStatusMapper
       {
 
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
-        static const int STARTED_HASH = HashingUtils::HashString("STARTED");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t STARTED_HASH = ConstExprHashingUtils::HashString("STARTED");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
 
 
         ClockTargetStatus GetClockTargetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNKNOWN_HASH)
           {
             return ClockTargetStatus::UNKNOWN;

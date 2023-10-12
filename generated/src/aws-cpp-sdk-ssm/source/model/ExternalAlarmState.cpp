@@ -20,13 +20,13 @@ namespace Aws
       namespace ExternalAlarmStateMapper
       {
 
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
-        static const int ALARM_HASH = HashingUtils::HashString("ALARM");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t ALARM_HASH = ConstExprHashingUtils::HashString("ALARM");
 
 
         ExternalAlarmState GetExternalAlarmStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNKNOWN_HASH)
           {
             return ExternalAlarmState::UNKNOWN;

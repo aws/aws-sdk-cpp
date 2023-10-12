@@ -20,13 +20,13 @@ namespace Aws
       namespace FeedbackValueTypeMapper
       {
 
-        static const int Valid_HASH = HashingUtils::HashString("Valid");
-        static const int Invalid_HASH = HashingUtils::HashString("Invalid");
+        static constexpr uint32_t Valid_HASH = ConstExprHashingUtils::HashString("Valid");
+        static constexpr uint32_t Invalid_HASH = ConstExprHashingUtils::HashString("Invalid");
 
 
         FeedbackValueType GetFeedbackValueTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Valid_HASH)
           {
             return FeedbackValueType::Valid;

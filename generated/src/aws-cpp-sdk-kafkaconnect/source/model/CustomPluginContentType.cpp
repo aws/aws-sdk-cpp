@@ -20,13 +20,13 @@ namespace Aws
       namespace CustomPluginContentTypeMapper
       {
 
-        static const int JAR_HASH = HashingUtils::HashString("JAR");
-        static const int ZIP_HASH = HashingUtils::HashString("ZIP");
+        static constexpr uint32_t JAR_HASH = ConstExprHashingUtils::HashString("JAR");
+        static constexpr uint32_t ZIP_HASH = ConstExprHashingUtils::HashString("ZIP");
 
 
         CustomPluginContentType GetCustomPluginContentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JAR_HASH)
           {
             return CustomPluginContentType::JAR;

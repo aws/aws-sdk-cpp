@@ -20,13 +20,13 @@ namespace Aws
       namespace LicenseTypeMapper
       {
 
-        static const int ENTERPRISE_HASH = HashingUtils::HashString("ENTERPRISE");
-        static const int ENTERPRISE_FREE_TRIAL_HASH = HashingUtils::HashString("ENTERPRISE_FREE_TRIAL");
+        static constexpr uint32_t ENTERPRISE_HASH = ConstExprHashingUtils::HashString("ENTERPRISE");
+        static constexpr uint32_t ENTERPRISE_FREE_TRIAL_HASH = ConstExprHashingUtils::HashString("ENTERPRISE_FREE_TRIAL");
 
 
         LicenseType GetLicenseTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENTERPRISE_HASH)
           {
             return LicenseType::ENTERPRISE;

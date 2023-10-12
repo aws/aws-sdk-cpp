@@ -20,15 +20,15 @@ namespace Aws
       namespace KnownGenderTypeMapper
       {
 
-        static const int Male_HASH = HashingUtils::HashString("Male");
-        static const int Female_HASH = HashingUtils::HashString("Female");
-        static const int Nonbinary_HASH = HashingUtils::HashString("Nonbinary");
-        static const int Unlisted_HASH = HashingUtils::HashString("Unlisted");
+        static constexpr uint32_t Male_HASH = ConstExprHashingUtils::HashString("Male");
+        static constexpr uint32_t Female_HASH = ConstExprHashingUtils::HashString("Female");
+        static constexpr uint32_t Nonbinary_HASH = ConstExprHashingUtils::HashString("Nonbinary");
+        static constexpr uint32_t Unlisted_HASH = ConstExprHashingUtils::HashString("Unlisted");
 
 
         KnownGenderType GetKnownGenderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Male_HASH)
           {
             return KnownGenderType::Male;

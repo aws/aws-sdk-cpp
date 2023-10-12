@@ -20,14 +20,14 @@ namespace Aws
       namespace DataLabelContentMapper
       {
 
-        static const int VALUE_HASH = HashingUtils::HashString("VALUE");
-        static const int PERCENT_HASH = HashingUtils::HashString("PERCENT");
-        static const int VALUE_AND_PERCENT_HASH = HashingUtils::HashString("VALUE_AND_PERCENT");
+        static constexpr uint32_t VALUE_HASH = ConstExprHashingUtils::HashString("VALUE");
+        static constexpr uint32_t PERCENT_HASH = ConstExprHashingUtils::HashString("PERCENT");
+        static constexpr uint32_t VALUE_AND_PERCENT_HASH = ConstExprHashingUtils::HashString("VALUE_AND_PERCENT");
 
 
         DataLabelContent GetDataLabelContentForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VALUE_HASH)
           {
             return DataLabelContent::VALUE;

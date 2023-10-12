@@ -20,13 +20,13 @@ namespace Aws
       namespace TlsPolicyMapper
       {
 
-        static const int REQUIRE_HASH = HashingUtils::HashString("REQUIRE");
-        static const int OPTIONAL_HASH = HashingUtils::HashString("OPTIONAL");
+        static constexpr uint32_t REQUIRE_HASH = ConstExprHashingUtils::HashString("REQUIRE");
+        static constexpr uint32_t OPTIONAL_HASH = ConstExprHashingUtils::HashString("OPTIONAL");
 
 
         TlsPolicy GetTlsPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REQUIRE_HASH)
           {
             return TlsPolicy::REQUIRE;

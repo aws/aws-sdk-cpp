@@ -20,45 +20,45 @@ namespace Aws
       namespace ConstraintViolationExceptionReasonMapper
       {
 
-        static const int ACCOUNT_NUMBER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ACCOUNT_NUMBER_LIMIT_EXCEEDED");
-        static const int HANDSHAKE_RATE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("HANDSHAKE_RATE_LIMIT_EXCEEDED");
-        static const int OU_NUMBER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OU_NUMBER_LIMIT_EXCEEDED");
-        static const int OU_DEPTH_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OU_DEPTH_LIMIT_EXCEEDED");
-        static const int POLICY_NUMBER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("POLICY_NUMBER_LIMIT_EXCEEDED");
-        static const int POLICY_CONTENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("POLICY_CONTENT_LIMIT_EXCEEDED");
-        static const int MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED");
-        static const int MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED");
-        static const int ACCOUNT_CANNOT_LEAVE_ORGANIZATION_HASH = HashingUtils::HashString("ACCOUNT_CANNOT_LEAVE_ORGANIZATION");
-        static const int ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA_HASH = HashingUtils::HashString("ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA");
-        static const int ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION_HASH = HashingUtils::HashString("ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION");
-        static const int MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED_HASH = HashingUtils::HashString("MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED");
-        static const int MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED_HASH = HashingUtils::HashString("MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED");
-        static const int ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED");
-        static const int MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE_HASH = HashingUtils::HashString("MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE");
-        static const int MASTER_ACCOUNT_MISSING_CONTACT_INFO_HASH = HashingUtils::HashString("MASTER_ACCOUNT_MISSING_CONTACT_INFO");
-        static const int MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED_HASH = HashingUtils::HashString("MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED");
-        static const int ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH = HashingUtils::HashString("ORGANIZATION_NOT_IN_ALL_FEATURES_MODE");
-        static const int CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION_HASH = HashingUtils::HashString("CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION");
-        static const int EMAIL_VERIFICATION_CODE_EXPIRED_HASH = HashingUtils::HashString("EMAIL_VERIFICATION_CODE_EXPIRED");
-        static const int WAIT_PERIOD_ACTIVE_HASH = HashingUtils::HashString("WAIT_PERIOD_ACTIVE");
-        static const int MAX_TAG_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("MAX_TAG_LIMIT_EXCEEDED");
-        static const int TAG_POLICY_VIOLATION_HASH = HashingUtils::HashString("TAG_POLICY_VIOLATION");
-        static const int MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED");
-        static const int CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR_HASH = HashingUtils::HashString("CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR");
-        static const int CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG_HASH = HashingUtils::HashString("CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG");
-        static const int DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE_HASH = HashingUtils::HashString("DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE");
-        static const int MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE_HASH = HashingUtils::HashString("MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE");
-        static const int CANNOT_CLOSE_MANAGEMENT_ACCOUNT_HASH = HashingUtils::HashString("CANNOT_CLOSE_MANAGEMENT_ACCOUNT");
-        static const int CLOSE_ACCOUNT_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("CLOSE_ACCOUNT_QUOTA_EXCEEDED");
-        static const int CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED");
-        static const int SERVICE_ACCESS_NOT_ENABLED_HASH = HashingUtils::HashString("SERVICE_ACCESS_NOT_ENABLED");
-        static const int INVALID_PAYMENT_INSTRUMENT_HASH = HashingUtils::HashString("INVALID_PAYMENT_INSTRUMENT");
-        static const int ACCOUNT_CREATION_NOT_COMPLETE_HASH = HashingUtils::HashString("ACCOUNT_CREATION_NOT_COMPLETE");
+        static constexpr uint32_t ACCOUNT_NUMBER_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ACCOUNT_NUMBER_LIMIT_EXCEEDED");
+        static constexpr uint32_t HANDSHAKE_RATE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("HANDSHAKE_RATE_LIMIT_EXCEEDED");
+        static constexpr uint32_t OU_NUMBER_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("OU_NUMBER_LIMIT_EXCEEDED");
+        static constexpr uint32_t OU_DEPTH_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("OU_DEPTH_LIMIT_EXCEEDED");
+        static constexpr uint32_t POLICY_NUMBER_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("POLICY_NUMBER_LIMIT_EXCEEDED");
+        static constexpr uint32_t POLICY_CONTENT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("POLICY_CONTENT_LIMIT_EXCEEDED");
+        static constexpr uint32_t MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED");
+        static constexpr uint32_t MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED");
+        static constexpr uint32_t ACCOUNT_CANNOT_LEAVE_ORGANIZATION_HASH = ConstExprHashingUtils::HashString("ACCOUNT_CANNOT_LEAVE_ORGANIZATION");
+        static constexpr uint32_t ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA_HASH = ConstExprHashingUtils::HashString("ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA");
+        static constexpr uint32_t ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION_HASH = ConstExprHashingUtils::HashString("ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION");
+        static constexpr uint32_t MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED_HASH = ConstExprHashingUtils::HashString("MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED");
+        static constexpr uint32_t MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED_HASH = ConstExprHashingUtils::HashString("MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED");
+        static constexpr uint32_t ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED");
+        static constexpr uint32_t MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE_HASH = ConstExprHashingUtils::HashString("MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE");
+        static constexpr uint32_t MASTER_ACCOUNT_MISSING_CONTACT_INFO_HASH = ConstExprHashingUtils::HashString("MASTER_ACCOUNT_MISSING_CONTACT_INFO");
+        static constexpr uint32_t MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED_HASH = ConstExprHashingUtils::HashString("MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED");
+        static constexpr uint32_t ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH = ConstExprHashingUtils::HashString("ORGANIZATION_NOT_IN_ALL_FEATURES_MODE");
+        static constexpr uint32_t CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION_HASH = ConstExprHashingUtils::HashString("CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION");
+        static constexpr uint32_t EMAIL_VERIFICATION_CODE_EXPIRED_HASH = ConstExprHashingUtils::HashString("EMAIL_VERIFICATION_CODE_EXPIRED");
+        static constexpr uint32_t WAIT_PERIOD_ACTIVE_HASH = ConstExprHashingUtils::HashString("WAIT_PERIOD_ACTIVE");
+        static constexpr uint32_t MAX_TAG_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MAX_TAG_LIMIT_EXCEEDED");
+        static constexpr uint32_t TAG_POLICY_VIOLATION_HASH = ConstExprHashingUtils::HashString("TAG_POLICY_VIOLATION");
+        static constexpr uint32_t MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED");
+        static constexpr uint32_t CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR_HASH = ConstExprHashingUtils::HashString("CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR");
+        static constexpr uint32_t CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG_HASH = ConstExprHashingUtils::HashString("CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG");
+        static constexpr uint32_t DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE_HASH = ConstExprHashingUtils::HashString("DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE");
+        static constexpr uint32_t MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE_HASH = ConstExprHashingUtils::HashString("MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE");
+        static constexpr uint32_t CANNOT_CLOSE_MANAGEMENT_ACCOUNT_HASH = ConstExprHashingUtils::HashString("CANNOT_CLOSE_MANAGEMENT_ACCOUNT");
+        static constexpr uint32_t CLOSE_ACCOUNT_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("CLOSE_ACCOUNT_QUOTA_EXCEEDED");
+        static constexpr uint32_t CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED");
+        static constexpr uint32_t SERVICE_ACCESS_NOT_ENABLED_HASH = ConstExprHashingUtils::HashString("SERVICE_ACCESS_NOT_ENABLED");
+        static constexpr uint32_t INVALID_PAYMENT_INSTRUMENT_HASH = ConstExprHashingUtils::HashString("INVALID_PAYMENT_INSTRUMENT");
+        static constexpr uint32_t ACCOUNT_CREATION_NOT_COMPLETE_HASH = ConstExprHashingUtils::HashString("ACCOUNT_CREATION_NOT_COMPLETE");
 
 
         ConstraintViolationExceptionReason GetConstraintViolationExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCOUNT_NUMBER_LIMIT_EXCEEDED_HASH)
           {
             return ConstraintViolationExceptionReason::ACCOUNT_NUMBER_LIMIT_EXCEEDED;

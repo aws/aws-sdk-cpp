@@ -20,26 +20,26 @@ namespace Aws
       namespace RuntimeMapper
       {
 
-        static const int NODEJS_HASH = HashingUtils::HashString("NODEJS");
-        static const int NODEJS_12_X_HASH = HashingUtils::HashString("NODEJS_12_X");
-        static const int NODEJS_14_X_HASH = HashingUtils::HashString("NODEJS_14_X");
-        static const int NODEJS_16_X_HASH = HashingUtils::HashString("NODEJS_16_X");
-        static const int JAVA_8_HASH = HashingUtils::HashString("JAVA_8");
-        static const int JAVA_8_AL2_HASH = HashingUtils::HashString("JAVA_8_AL2");
-        static const int JAVA_11_HASH = HashingUtils::HashString("JAVA_11");
-        static const int PYTHON_3_7_HASH = HashingUtils::HashString("PYTHON_3_7");
-        static const int PYTHON_3_8_HASH = HashingUtils::HashString("PYTHON_3_8");
-        static const int PYTHON_3_9_HASH = HashingUtils::HashString("PYTHON_3_9");
-        static const int UNSUPPORTED_HASH = HashingUtils::HashString("UNSUPPORTED");
-        static const int NODEJS_18_X_HASH = HashingUtils::HashString("NODEJS_18_X");
-        static const int GO_1_X_HASH = HashingUtils::HashString("GO_1_X");
-        static const int JAVA_17_HASH = HashingUtils::HashString("JAVA_17");
-        static const int PYTHON_3_10_HASH = HashingUtils::HashString("PYTHON_3_10");
+        static constexpr uint32_t NODEJS_HASH = ConstExprHashingUtils::HashString("NODEJS");
+        static constexpr uint32_t NODEJS_12_X_HASH = ConstExprHashingUtils::HashString("NODEJS_12_X");
+        static constexpr uint32_t NODEJS_14_X_HASH = ConstExprHashingUtils::HashString("NODEJS_14_X");
+        static constexpr uint32_t NODEJS_16_X_HASH = ConstExprHashingUtils::HashString("NODEJS_16_X");
+        static constexpr uint32_t JAVA_8_HASH = ConstExprHashingUtils::HashString("JAVA_8");
+        static constexpr uint32_t JAVA_8_AL2_HASH = ConstExprHashingUtils::HashString("JAVA_8_AL2");
+        static constexpr uint32_t JAVA_11_HASH = ConstExprHashingUtils::HashString("JAVA_11");
+        static constexpr uint32_t PYTHON_3_7_HASH = ConstExprHashingUtils::HashString("PYTHON_3_7");
+        static constexpr uint32_t PYTHON_3_8_HASH = ConstExprHashingUtils::HashString("PYTHON_3_8");
+        static constexpr uint32_t PYTHON_3_9_HASH = ConstExprHashingUtils::HashString("PYTHON_3_9");
+        static constexpr uint32_t UNSUPPORTED_HASH = ConstExprHashingUtils::HashString("UNSUPPORTED");
+        static constexpr uint32_t NODEJS_18_X_HASH = ConstExprHashingUtils::HashString("NODEJS_18_X");
+        static constexpr uint32_t GO_1_X_HASH = ConstExprHashingUtils::HashString("GO_1_X");
+        static constexpr uint32_t JAVA_17_HASH = ConstExprHashingUtils::HashString("JAVA_17");
+        static constexpr uint32_t PYTHON_3_10_HASH = ConstExprHashingUtils::HashString("PYTHON_3_10");
 
 
         Runtime GetRuntimeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NODEJS_HASH)
           {
             return Runtime::NODEJS;

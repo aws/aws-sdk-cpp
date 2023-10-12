@@ -20,13 +20,13 @@ namespace Aws
       namespace LocalGatewayRouteTableModeMapper
       {
 
-        static const int direct_vpc_routing_HASH = HashingUtils::HashString("direct-vpc-routing");
-        static const int coip_HASH = HashingUtils::HashString("coip");
+        static constexpr uint32_t direct_vpc_routing_HASH = ConstExprHashingUtils::HashString("direct-vpc-routing");
+        static constexpr uint32_t coip_HASH = ConstExprHashingUtils::HashString("coip");
 
 
         LocalGatewayRouteTableMode GetLocalGatewayRouteTableModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == direct_vpc_routing_HASH)
           {
             return LocalGatewayRouteTableMode::direct_vpc_routing;

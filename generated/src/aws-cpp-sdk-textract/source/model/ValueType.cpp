@@ -20,12 +20,12 @@ namespace Aws
       namespace ValueTypeMapper
       {
 
-        static const int DATE_HASH = HashingUtils::HashString("DATE");
+        static constexpr uint32_t DATE_HASH = ConstExprHashingUtils::HashString("DATE");
 
 
         ValueType GetValueTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DATE_HASH)
           {
             return ValueType::DATE;

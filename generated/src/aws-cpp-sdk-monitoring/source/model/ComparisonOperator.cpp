@@ -20,18 +20,18 @@ namespace Aws
       namespace ComparisonOperatorMapper
       {
 
-        static const int GreaterThanOrEqualToThreshold_HASH = HashingUtils::HashString("GreaterThanOrEqualToThreshold");
-        static const int GreaterThanThreshold_HASH = HashingUtils::HashString("GreaterThanThreshold");
-        static const int LessThanThreshold_HASH = HashingUtils::HashString("LessThanThreshold");
-        static const int LessThanOrEqualToThreshold_HASH = HashingUtils::HashString("LessThanOrEqualToThreshold");
-        static const int LessThanLowerOrGreaterThanUpperThreshold_HASH = HashingUtils::HashString("LessThanLowerOrGreaterThanUpperThreshold");
-        static const int LessThanLowerThreshold_HASH = HashingUtils::HashString("LessThanLowerThreshold");
-        static const int GreaterThanUpperThreshold_HASH = HashingUtils::HashString("GreaterThanUpperThreshold");
+        static constexpr uint32_t GreaterThanOrEqualToThreshold_HASH = ConstExprHashingUtils::HashString("GreaterThanOrEqualToThreshold");
+        static constexpr uint32_t GreaterThanThreshold_HASH = ConstExprHashingUtils::HashString("GreaterThanThreshold");
+        static constexpr uint32_t LessThanThreshold_HASH = ConstExprHashingUtils::HashString("LessThanThreshold");
+        static constexpr uint32_t LessThanOrEqualToThreshold_HASH = ConstExprHashingUtils::HashString("LessThanOrEqualToThreshold");
+        static constexpr uint32_t LessThanLowerOrGreaterThanUpperThreshold_HASH = ConstExprHashingUtils::HashString("LessThanLowerOrGreaterThanUpperThreshold");
+        static constexpr uint32_t LessThanLowerThreshold_HASH = ConstExprHashingUtils::HashString("LessThanLowerThreshold");
+        static constexpr uint32_t GreaterThanUpperThreshold_HASH = ConstExprHashingUtils::HashString("GreaterThanUpperThreshold");
 
 
         ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GreaterThanOrEqualToThreshold_HASH)
           {
             return ComparisonOperator::GreaterThanOrEqualToThreshold;

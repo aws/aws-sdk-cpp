@@ -20,14 +20,14 @@ namespace Aws
       namespace TypeMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int AES256_HASH = HashingUtils::HashString("AES256");
-        static const int aws_kms_HASH = HashingUtils::HashString("aws:kms");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t AES256_HASH = ConstExprHashingUtils::HashString("AES256");
+        static constexpr uint32_t aws_kms_HASH = ConstExprHashingUtils::HashString("aws:kms");
 
 
         Type GetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return Type::NONE;

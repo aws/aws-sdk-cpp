@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsManifestCompressionMapper
       {
 
-        static const int GZIP_HASH = HashingUtils::HashString("GZIP");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t GZIP_HASH = ConstExprHashingUtils::HashString("GZIP");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         HlsManifestCompression GetHlsManifestCompressionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GZIP_HASH)
           {
             return HlsManifestCompression::GZIP;

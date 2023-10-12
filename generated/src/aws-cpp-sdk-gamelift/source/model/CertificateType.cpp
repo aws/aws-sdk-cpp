@@ -20,13 +20,13 @@ namespace Aws
       namespace CertificateTypeMapper
       {
 
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int GENERATED_HASH = HashingUtils::HashString("GENERATED");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t GENERATED_HASH = ConstExprHashingUtils::HashString("GENERATED");
 
 
         CertificateType GetCertificateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISABLED_HASH)
           {
             return CertificateType::DISABLED;

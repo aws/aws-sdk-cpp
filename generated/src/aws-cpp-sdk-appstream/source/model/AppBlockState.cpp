@@ -20,13 +20,13 @@ namespace Aws
       namespace AppBlockStateMapper
       {
 
-        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t INACTIVE_HASH = ConstExprHashingUtils::HashString("INACTIVE");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
 
 
         AppBlockState GetAppBlockStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INACTIVE_HASH)
           {
             return AppBlockState::INACTIVE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ReplacementStrategyMapper
       {
 
-        static const int launch_HASH = HashingUtils::HashString("launch");
-        static const int launch_before_terminate_HASH = HashingUtils::HashString("launch-before-terminate");
+        static constexpr uint32_t launch_HASH = ConstExprHashingUtils::HashString("launch");
+        static constexpr uint32_t launch_before_terminate_HASH = ConstExprHashingUtils::HashString("launch-before-terminate");
 
 
         ReplacementStrategy GetReplacementStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == launch_HASH)
           {
             return ReplacementStrategy::launch;

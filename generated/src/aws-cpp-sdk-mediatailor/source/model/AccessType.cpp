@@ -20,14 +20,14 @@ namespace Aws
       namespace AccessTypeMapper
       {
 
-        static const int S3_SIGV4_HASH = HashingUtils::HashString("S3_SIGV4");
-        static const int SECRETS_MANAGER_ACCESS_TOKEN_HASH = HashingUtils::HashString("SECRETS_MANAGER_ACCESS_TOKEN");
-        static const int AUTODETECT_SIGV4_HASH = HashingUtils::HashString("AUTODETECT_SIGV4");
+        static constexpr uint32_t S3_SIGV4_HASH = ConstExprHashingUtils::HashString("S3_SIGV4");
+        static constexpr uint32_t SECRETS_MANAGER_ACCESS_TOKEN_HASH = ConstExprHashingUtils::HashString("SECRETS_MANAGER_ACCESS_TOKEN");
+        static constexpr uint32_t AUTODETECT_SIGV4_HASH = ConstExprHashingUtils::HashString("AUTODETECT_SIGV4");
 
 
         AccessType GetAccessTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == S3_SIGV4_HASH)
           {
             return AccessType::S3_SIGV4;

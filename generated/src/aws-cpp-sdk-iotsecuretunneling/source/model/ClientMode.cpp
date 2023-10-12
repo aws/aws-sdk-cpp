@@ -20,14 +20,14 @@ namespace Aws
       namespace ClientModeMapper
       {
 
-        static const int SOURCE_HASH = HashingUtils::HashString("SOURCE");
-        static const int DESTINATION_HASH = HashingUtils::HashString("DESTINATION");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t SOURCE_HASH = ConstExprHashingUtils::HashString("SOURCE");
+        static constexpr uint32_t DESTINATION_HASH = ConstExprHashingUtils::HashString("DESTINATION");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         ClientMode GetClientModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SOURCE_HASH)
           {
             return ClientMode::SOURCE;

@@ -20,12 +20,12 @@ namespace Aws
       namespace ListOperationsSortAttributeNameMapper
       {
 
-        static const int SubmittedDate_HASH = HashingUtils::HashString("SubmittedDate");
+        static constexpr uint32_t SubmittedDate_HASH = ConstExprHashingUtils::HashString("SubmittedDate");
 
 
         ListOperationsSortAttributeName GetListOperationsSortAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SubmittedDate_HASH)
           {
             return ListOperationsSortAttributeName::SubmittedDate;

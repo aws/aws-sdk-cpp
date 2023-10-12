@@ -20,13 +20,13 @@ namespace Aws
       namespace TextQualifierMapper
       {
 
-        static const int DOUBLE_QUOTE_HASH = HashingUtils::HashString("DOUBLE_QUOTE");
-        static const int SINGLE_QUOTE_HASH = HashingUtils::HashString("SINGLE_QUOTE");
+        static constexpr uint32_t DOUBLE_QUOTE_HASH = ConstExprHashingUtils::HashString("DOUBLE_QUOTE");
+        static constexpr uint32_t SINGLE_QUOTE_HASH = ConstExprHashingUtils::HashString("SINGLE_QUOTE");
 
 
         TextQualifier GetTextQualifierForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DOUBLE_QUOTE_HASH)
           {
             return TextQualifier::DOUBLE_QUOTE;

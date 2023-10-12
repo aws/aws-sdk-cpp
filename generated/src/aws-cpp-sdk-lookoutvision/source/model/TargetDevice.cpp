@@ -20,12 +20,12 @@ namespace Aws
       namespace TargetDeviceMapper
       {
 
-        static const int jetson_xavier_HASH = HashingUtils::HashString("jetson_xavier");
+        static constexpr uint32_t jetson_xavier_HASH = ConstExprHashingUtils::HashString("jetson_xavier");
 
 
         TargetDevice GetTargetDeviceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == jetson_xavier_HASH)
           {
             return TargetDevice::jetson_xavier;

@@ -20,13 +20,13 @@ namespace Aws
       namespace JobManifestFormatMapper
       {
 
-        static const int S3BatchOperations_CSV_20180820_HASH = HashingUtils::HashString("S3BatchOperations_CSV_20180820");
-        static const int S3InventoryReport_CSV_20161130_HASH = HashingUtils::HashString("S3InventoryReport_CSV_20161130");
+        static constexpr uint32_t S3BatchOperations_CSV_20180820_HASH = ConstExprHashingUtils::HashString("S3BatchOperations_CSV_20180820");
+        static constexpr uint32_t S3InventoryReport_CSV_20161130_HASH = ConstExprHashingUtils::HashString("S3InventoryReport_CSV_20161130");
 
 
         JobManifestFormat GetJobManifestFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == S3BatchOperations_CSV_20180820_HASH)
           {
             return JobManifestFormat::S3BatchOperations_CSV_20180820;

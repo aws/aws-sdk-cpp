@@ -20,12 +20,12 @@ namespace Aws
       namespace FilterTypeMapper
       {
 
-        static const int SIMPLE_PATTERN_HASH = HashingUtils::HashString("SIMPLE_PATTERN");
+        static constexpr uint32_t SIMPLE_PATTERN_HASH = ConstExprHashingUtils::HashString("SIMPLE_PATTERN");
 
 
         FilterType GetFilterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SIMPLE_PATTERN_HASH)
           {
             return FilterType::SIMPLE_PATTERN;

@@ -20,13 +20,13 @@ namespace Aws
       namespace Vp8QualityTuningLevelMapper
       {
 
-        static const int MULTI_PASS_HASH = HashingUtils::HashString("MULTI_PASS");
-        static const int MULTI_PASS_HQ_HASH = HashingUtils::HashString("MULTI_PASS_HQ");
+        static constexpr uint32_t MULTI_PASS_HASH = ConstExprHashingUtils::HashString("MULTI_PASS");
+        static constexpr uint32_t MULTI_PASS_HQ_HASH = ConstExprHashingUtils::HashString("MULTI_PASS_HQ");
 
 
         Vp8QualityTuningLevel GetVp8QualityTuningLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MULTI_PASS_HASH)
           {
             return Vp8QualityTuningLevel::MULTI_PASS;

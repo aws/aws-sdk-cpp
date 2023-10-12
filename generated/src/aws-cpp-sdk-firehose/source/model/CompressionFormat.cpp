@@ -20,16 +20,16 @@ namespace Aws
       namespace CompressionFormatMapper
       {
 
-        static const int UNCOMPRESSED_HASH = HashingUtils::HashString("UNCOMPRESSED");
-        static const int GZIP_HASH = HashingUtils::HashString("GZIP");
-        static const int ZIP_HASH = HashingUtils::HashString("ZIP");
-        static const int Snappy_HASH = HashingUtils::HashString("Snappy");
-        static const int HADOOP_SNAPPY_HASH = HashingUtils::HashString("HADOOP_SNAPPY");
+        static constexpr uint32_t UNCOMPRESSED_HASH = ConstExprHashingUtils::HashString("UNCOMPRESSED");
+        static constexpr uint32_t GZIP_HASH = ConstExprHashingUtils::HashString("GZIP");
+        static constexpr uint32_t ZIP_HASH = ConstExprHashingUtils::HashString("ZIP");
+        static constexpr uint32_t Snappy_HASH = ConstExprHashingUtils::HashString("Snappy");
+        static constexpr uint32_t HADOOP_SNAPPY_HASH = ConstExprHashingUtils::HashString("HADOOP_SNAPPY");
 
 
         CompressionFormat GetCompressionFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNCOMPRESSED_HASH)
           {
             return CompressionFormat::UNCOMPRESSED;

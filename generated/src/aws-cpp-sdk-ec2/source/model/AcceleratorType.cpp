@@ -20,14 +20,14 @@ namespace Aws
       namespace AcceleratorTypeMapper
       {
 
-        static const int gpu_HASH = HashingUtils::HashString("gpu");
-        static const int fpga_HASH = HashingUtils::HashString("fpga");
-        static const int inference_HASH = HashingUtils::HashString("inference");
+        static constexpr uint32_t gpu_HASH = ConstExprHashingUtils::HashString("gpu");
+        static constexpr uint32_t fpga_HASH = ConstExprHashingUtils::HashString("fpga");
+        static constexpr uint32_t inference_HASH = ConstExprHashingUtils::HashString("inference");
 
 
         AcceleratorType GetAcceleratorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == gpu_HASH)
           {
             return AcceleratorType::gpu;

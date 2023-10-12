@@ -20,20 +20,20 @@ namespace Aws
       namespace BotLocaleStatusMapper
       {
 
-        static const int Creating_HASH = HashingUtils::HashString("Creating");
-        static const int Building_HASH = HashingUtils::HashString("Building");
-        static const int Built_HASH = HashingUtils::HashString("Built");
-        static const int ReadyExpressTesting_HASH = HashingUtils::HashString("ReadyExpressTesting");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
-        static const int NotBuilt_HASH = HashingUtils::HashString("NotBuilt");
-        static const int Importing_HASH = HashingUtils::HashString("Importing");
-        static const int Processing_HASH = HashingUtils::HashString("Processing");
+        static constexpr uint32_t Creating_HASH = ConstExprHashingUtils::HashString("Creating");
+        static constexpr uint32_t Building_HASH = ConstExprHashingUtils::HashString("Building");
+        static constexpr uint32_t Built_HASH = ConstExprHashingUtils::HashString("Built");
+        static constexpr uint32_t ReadyExpressTesting_HASH = ConstExprHashingUtils::HashString("ReadyExpressTesting");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
+        static constexpr uint32_t NotBuilt_HASH = ConstExprHashingUtils::HashString("NotBuilt");
+        static constexpr uint32_t Importing_HASH = ConstExprHashingUtils::HashString("Importing");
+        static constexpr uint32_t Processing_HASH = ConstExprHashingUtils::HashString("Processing");
 
 
         BotLocaleStatus GetBotLocaleStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Creating_HASH)
           {
             return BotLocaleStatus::Creating;

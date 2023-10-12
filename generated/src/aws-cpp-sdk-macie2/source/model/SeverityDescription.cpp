@@ -20,14 +20,14 @@ namespace Aws
       namespace SeverityDescriptionMapper
       {
 
-        static const int Low_HASH = HashingUtils::HashString("Low");
-        static const int Medium_HASH = HashingUtils::HashString("Medium");
-        static const int High_HASH = HashingUtils::HashString("High");
+        static constexpr uint32_t Low_HASH = ConstExprHashingUtils::HashString("Low");
+        static constexpr uint32_t Medium_HASH = ConstExprHashingUtils::HashString("Medium");
+        static constexpr uint32_t High_HASH = ConstExprHashingUtils::HashString("High");
 
 
         SeverityDescription GetSeverityDescriptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Low_HASH)
           {
             return SeverityDescription::Low;

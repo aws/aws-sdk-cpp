@@ -20,13 +20,13 @@ namespace Aws
       namespace ProvisioningStatusMapper
       {
 
-        static const int LATEST_PERMISSION_SET_PROVISIONED_HASH = HashingUtils::HashString("LATEST_PERMISSION_SET_PROVISIONED");
-        static const int LATEST_PERMISSION_SET_NOT_PROVISIONED_HASH = HashingUtils::HashString("LATEST_PERMISSION_SET_NOT_PROVISIONED");
+        static constexpr uint32_t LATEST_PERMISSION_SET_PROVISIONED_HASH = ConstExprHashingUtils::HashString("LATEST_PERMISSION_SET_PROVISIONED");
+        static constexpr uint32_t LATEST_PERMISSION_SET_NOT_PROVISIONED_HASH = ConstExprHashingUtils::HashString("LATEST_PERMISSION_SET_NOT_PROVISIONED");
 
 
         ProvisioningStatus GetProvisioningStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LATEST_PERMISSION_SET_PROVISIONED_HASH)
           {
             return ProvisioningStatus::LATEST_PERMISSION_SET_PROVISIONED;

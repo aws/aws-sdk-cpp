@@ -20,13 +20,13 @@ namespace Aws
       namespace ElasticGpuStatusMapper
       {
 
-        static const int OK_HASH = HashingUtils::HashString("OK");
-        static const int IMPAIRED_HASH = HashingUtils::HashString("IMPAIRED");
+        static constexpr uint32_t OK_HASH = ConstExprHashingUtils::HashString("OK");
+        static constexpr uint32_t IMPAIRED_HASH = ConstExprHashingUtils::HashString("IMPAIRED");
 
 
         ElasticGpuStatus GetElasticGpuStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OK_HASH)
           {
             return ElasticGpuStatus::OK;

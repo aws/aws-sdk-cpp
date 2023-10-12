@@ -20,12 +20,12 @@ namespace Aws
       namespace FastLaunchResourceTypeMapper
       {
 
-        static const int snapshot_HASH = HashingUtils::HashString("snapshot");
+        static constexpr uint32_t snapshot_HASH = ConstExprHashingUtils::HashString("snapshot");
 
 
         FastLaunchResourceType GetFastLaunchResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == snapshot_HASH)
           {
             return FastLaunchResourceType::snapshot;

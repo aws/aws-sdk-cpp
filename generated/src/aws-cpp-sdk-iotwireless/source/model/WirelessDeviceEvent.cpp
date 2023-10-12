@@ -20,16 +20,16 @@ namespace Aws
       namespace WirelessDeviceEventMapper
       {
 
-        static const int Join_HASH = HashingUtils::HashString("Join");
-        static const int Rejoin_HASH = HashingUtils::HashString("Rejoin");
-        static const int Uplink_Data_HASH = HashingUtils::HashString("Uplink_Data");
-        static const int Downlink_Data_HASH = HashingUtils::HashString("Downlink_Data");
-        static const int Registration_HASH = HashingUtils::HashString("Registration");
+        static constexpr uint32_t Join_HASH = ConstExprHashingUtils::HashString("Join");
+        static constexpr uint32_t Rejoin_HASH = ConstExprHashingUtils::HashString("Rejoin");
+        static constexpr uint32_t Uplink_Data_HASH = ConstExprHashingUtils::HashString("Uplink_Data");
+        static constexpr uint32_t Downlink_Data_HASH = ConstExprHashingUtils::HashString("Downlink_Data");
+        static constexpr uint32_t Registration_HASH = ConstExprHashingUtils::HashString("Registration");
 
 
         WirelessDeviceEvent GetWirelessDeviceEventForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Join_HASH)
           {
             return WirelessDeviceEvent::Join;

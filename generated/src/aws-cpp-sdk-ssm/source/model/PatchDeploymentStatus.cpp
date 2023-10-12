@@ -20,15 +20,15 @@ namespace Aws
       namespace PatchDeploymentStatusMapper
       {
 
-        static const int APPROVED_HASH = HashingUtils::HashString("APPROVED");
-        static const int PENDING_APPROVAL_HASH = HashingUtils::HashString("PENDING_APPROVAL");
-        static const int EXPLICIT_APPROVED_HASH = HashingUtils::HashString("EXPLICIT_APPROVED");
-        static const int EXPLICIT_REJECTED_HASH = HashingUtils::HashString("EXPLICIT_REJECTED");
+        static constexpr uint32_t APPROVED_HASH = ConstExprHashingUtils::HashString("APPROVED");
+        static constexpr uint32_t PENDING_APPROVAL_HASH = ConstExprHashingUtils::HashString("PENDING_APPROVAL");
+        static constexpr uint32_t EXPLICIT_APPROVED_HASH = ConstExprHashingUtils::HashString("EXPLICIT_APPROVED");
+        static constexpr uint32_t EXPLICIT_REJECTED_HASH = ConstExprHashingUtils::HashString("EXPLICIT_REJECTED");
 
 
         PatchDeploymentStatus GetPatchDeploymentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APPROVED_HASH)
           {
             return PatchDeploymentStatus::APPROVED;

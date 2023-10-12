@@ -20,14 +20,14 @@ namespace Aws
       namespace HealthCheckTypeMapper
       {
 
-        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
-        static const int HTTPS_HASH = HashingUtils::HashString("HTTPS");
-        static const int TCP_HASH = HashingUtils::HashString("TCP");
+        static constexpr uint32_t HTTP_HASH = ConstExprHashingUtils::HashString("HTTP");
+        static constexpr uint32_t HTTPS_HASH = ConstExprHashingUtils::HashString("HTTPS");
+        static constexpr uint32_t TCP_HASH = ConstExprHashingUtils::HashString("TCP");
 
 
         HealthCheckType GetHealthCheckTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HTTP_HASH)
           {
             return HealthCheckType::HTTP;

@@ -20,13 +20,13 @@ namespace Aws
       namespace InstanceAccessProtocolMapper
       {
 
-        static const int ssh_HASH = HashingUtils::HashString("ssh");
-        static const int rdp_HASH = HashingUtils::HashString("rdp");
+        static constexpr uint32_t ssh_HASH = ConstExprHashingUtils::HashString("ssh");
+        static constexpr uint32_t rdp_HASH = ConstExprHashingUtils::HashString("rdp");
 
 
         InstanceAccessProtocol GetInstanceAccessProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ssh_HASH)
           {
             return InstanceAccessProtocol::ssh;

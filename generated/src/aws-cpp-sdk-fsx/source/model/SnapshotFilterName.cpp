@@ -20,13 +20,13 @@ namespace Aws
       namespace SnapshotFilterNameMapper
       {
 
-        static const int file_system_id_HASH = HashingUtils::HashString("file-system-id");
-        static const int volume_id_HASH = HashingUtils::HashString("volume-id");
+        static constexpr uint32_t file_system_id_HASH = ConstExprHashingUtils::HashString("file-system-id");
+        static constexpr uint32_t volume_id_HASH = ConstExprHashingUtils::HashString("volume-id");
 
 
         SnapshotFilterName GetSnapshotFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == file_system_id_HASH)
           {
             return SnapshotFilterName::file_system_id;

@@ -20,17 +20,17 @@ namespace Aws
       namespace FleetStatusMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int FAILED_TO_CREATE_HASH = HashingUtils::HashString("FAILED_TO_CREATE");
-        static const int FAILED_TO_DELETE_HASH = HashingUtils::HashString("FAILED_TO_DELETE");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t FAILED_TO_CREATE_HASH = ConstExprHashingUtils::HashString("FAILED_TO_CREATE");
+        static constexpr uint32_t FAILED_TO_DELETE_HASH = ConstExprHashingUtils::HashString("FAILED_TO_DELETE");
 
 
         FleetStatus GetFleetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return FleetStatus::CREATING;

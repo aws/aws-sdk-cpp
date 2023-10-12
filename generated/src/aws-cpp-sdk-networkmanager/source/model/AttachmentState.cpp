@@ -20,20 +20,20 @@ namespace Aws
       namespace AttachmentStateMapper
       {
 
-        static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
-        static const int PENDING_ATTACHMENT_ACCEPTANCE_HASH = HashingUtils::HashString("PENDING_ATTACHMENT_ACCEPTANCE");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int PENDING_NETWORK_UPDATE_HASH = HashingUtils::HashString("PENDING_NETWORK_UPDATE");
-        static const int PENDING_TAG_ACCEPTANCE_HASH = HashingUtils::HashString("PENDING_TAG_ACCEPTANCE");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static constexpr uint32_t REJECTED_HASH = ConstExprHashingUtils::HashString("REJECTED");
+        static constexpr uint32_t PENDING_ATTACHMENT_ACCEPTANCE_HASH = ConstExprHashingUtils::HashString("PENDING_ATTACHMENT_ACCEPTANCE");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t PENDING_NETWORK_UPDATE_HASH = ConstExprHashingUtils::HashString("PENDING_NETWORK_UPDATE");
+        static constexpr uint32_t PENDING_TAG_ACCEPTANCE_HASH = ConstExprHashingUtils::HashString("PENDING_TAG_ACCEPTANCE");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
 
 
         AttachmentState GetAttachmentStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REJECTED_HASH)
           {
             return AttachmentState::REJECTED;

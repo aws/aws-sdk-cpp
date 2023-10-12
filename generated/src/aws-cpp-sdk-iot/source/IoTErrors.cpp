@@ -33,39 +33,39 @@ template<> AWS_IOT_API ResourceAlreadyExistsException IoTError::GetModeledError(
 namespace IoTErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int VERSION_CONFLICT_HASH = HashingUtils::HashString("VersionConflictException");
-static const int DELETE_CONFLICT_HASH = HashingUtils::HashString("DeleteConflictException");
-static const int NOT_CONFIGURED_HASH = HashingUtils::HashString("NotConfiguredException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int MALFORMED_POLICY_HASH = HashingUtils::HashString("MalformedPolicyException");
-static const int INVALID_AGGREGATION_HASH = HashingUtils::HashString("InvalidAggregationException");
-static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
-static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
-static const int INVALID_RESPONSE_HASH = HashingUtils::HashString("InvalidResponseException");
-static const int TRANSFER_ALREADY_COMPLETED_HASH = HashingUtils::HashString("TransferAlreadyCompletedException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
-static const int INVALID_STATE_TRANSITION_HASH = HashingUtils::HashString("InvalidStateTransitionException");
-static const int CERTIFICATE_VALIDATION_HASH = HashingUtils::HashString("CertificateValidationException");
-static const int CONFLICTING_RESOURCE_UPDATE_HASH = HashingUtils::HashString("ConflictingResourceUpdateException");
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
-static const int TRANSFER_CONFLICT_HASH = HashingUtils::HashString("TransferConflictException");
-static const int SQL_PARSE_HASH = HashingUtils::HashString("SqlParseException");
-static const int REGISTRATION_CODE_VALIDATION_HASH = HashingUtils::HashString("RegistrationCodeValidationException");
-static const int CERTIFICATE_CONFLICT_HASH = HashingUtils::HashString("CertificateConflictException");
-static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
-static const int TASK_ALREADY_EXISTS_HASH = HashingUtils::HashString("TaskAlreadyExistsException");
-static const int RESOURCE_REGISTRATION_FAILURE_HASH = HashingUtils::HashString("ResourceRegistrationFailureException");
-static const int INVALID_QUERY_HASH = HashingUtils::HashString("InvalidQueryException");
-static const int INDEX_NOT_READY_HASH = HashingUtils::HashString("IndexNotReadyException");
-static const int VERSIONS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("VersionsLimitExceededException");
-static const int CERTIFICATE_STATE_HASH = HashingUtils::HashString("CertificateStateException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t VERSION_CONFLICT_HASH = ConstExprHashingUtils::HashString("VersionConflictException");
+static constexpr uint32_t DELETE_CONFLICT_HASH = ConstExprHashingUtils::HashString("DeleteConflictException");
+static constexpr uint32_t NOT_CONFIGURED_HASH = ConstExprHashingUtils::HashString("NotConfiguredException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t MALFORMED_POLICY_HASH = ConstExprHashingUtils::HashString("MalformedPolicyException");
+static constexpr uint32_t INVALID_AGGREGATION_HASH = ConstExprHashingUtils::HashString("InvalidAggregationException");
+static constexpr uint32_t SERVICE_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ServiceQuotaExceededException");
+static constexpr uint32_t UNAUTHORIZED_HASH = ConstExprHashingUtils::HashString("UnauthorizedException");
+static constexpr uint32_t INVALID_RESPONSE_HASH = ConstExprHashingUtils::HashString("InvalidResponseException");
+static constexpr uint32_t TRANSFER_ALREADY_COMPLETED_HASH = ConstExprHashingUtils::HashString("TransferAlreadyCompletedException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t INVALID_STATE_TRANSITION_HASH = ConstExprHashingUtils::HashString("InvalidStateTransitionException");
+static constexpr uint32_t CERTIFICATE_VALIDATION_HASH = ConstExprHashingUtils::HashString("CertificateValidationException");
+static constexpr uint32_t CONFLICTING_RESOURCE_UPDATE_HASH = ConstExprHashingUtils::HashString("ConflictingResourceUpdateException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
+static constexpr uint32_t RESOURCE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ResourceAlreadyExistsException");
+static constexpr uint32_t TRANSFER_CONFLICT_HASH = ConstExprHashingUtils::HashString("TransferConflictException");
+static constexpr uint32_t SQL_PARSE_HASH = ConstExprHashingUtils::HashString("SqlParseException");
+static constexpr uint32_t REGISTRATION_CODE_VALIDATION_HASH = ConstExprHashingUtils::HashString("RegistrationCodeValidationException");
+static constexpr uint32_t CERTIFICATE_CONFLICT_HASH = ConstExprHashingUtils::HashString("CertificateConflictException");
+static constexpr uint32_t INTERNAL_HASH = ConstExprHashingUtils::HashString("InternalException");
+static constexpr uint32_t TASK_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("TaskAlreadyExistsException");
+static constexpr uint32_t RESOURCE_REGISTRATION_FAILURE_HASH = ConstExprHashingUtils::HashString("ResourceRegistrationFailureException");
+static constexpr uint32_t INVALID_QUERY_HASH = ConstExprHashingUtils::HashString("InvalidQueryException");
+static constexpr uint32_t INDEX_NOT_READY_HASH = ConstExprHashingUtils::HashString("IndexNotReadyException");
+static constexpr uint32_t VERSIONS_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("VersionsLimitExceededException");
+static constexpr uint32_t CERTIFICATE_STATE_HASH = ConstExprHashingUtils::HashString("CertificateStateException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

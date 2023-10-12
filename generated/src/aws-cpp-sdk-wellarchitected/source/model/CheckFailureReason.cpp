@@ -20,15 +20,15 @@ namespace Aws
       namespace CheckFailureReasonMapper
       {
 
-        static const int ASSUME_ROLE_ERROR_HASH = HashingUtils::HashString("ASSUME_ROLE_ERROR");
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
-        static const int UNKNOWN_ERROR_HASH = HashingUtils::HashString("UNKNOWN_ERROR");
-        static const int PREMIUM_SUPPORT_REQUIRED_HASH = HashingUtils::HashString("PREMIUM_SUPPORT_REQUIRED");
+        static constexpr uint32_t ASSUME_ROLE_ERROR_HASH = ConstExprHashingUtils::HashString("ASSUME_ROLE_ERROR");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t UNKNOWN_ERROR_HASH = ConstExprHashingUtils::HashString("UNKNOWN_ERROR");
+        static constexpr uint32_t PREMIUM_SUPPORT_REQUIRED_HASH = ConstExprHashingUtils::HashString("PREMIUM_SUPPORT_REQUIRED");
 
 
         CheckFailureReason GetCheckFailureReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASSUME_ROLE_ERROR_HASH)
           {
             return CheckFailureReason::ASSUME_ROLE_ERROR;

@@ -20,13 +20,13 @@ namespace Aws
       namespace QueryNetworkMapper
       {
 
-        static const int ETHEREUM_MAINNET_HASH = HashingUtils::HashString("ETHEREUM_MAINNET");
-        static const int BITCOIN_MAINNET_HASH = HashingUtils::HashString("BITCOIN_MAINNET");
+        static constexpr uint32_t ETHEREUM_MAINNET_HASH = ConstExprHashingUtils::HashString("ETHEREUM_MAINNET");
+        static constexpr uint32_t BITCOIN_MAINNET_HASH = ConstExprHashingUtils::HashString("BITCOIN_MAINNET");
 
 
         QueryNetwork GetQueryNetworkForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ETHEREUM_MAINNET_HASH)
           {
             return QueryNetwork::ETHEREUM_MAINNET;

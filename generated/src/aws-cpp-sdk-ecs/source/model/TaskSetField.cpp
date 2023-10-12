@@ -20,12 +20,12 @@ namespace Aws
       namespace TaskSetFieldMapper
       {
 
-        static const int TAGS_HASH = HashingUtils::HashString("TAGS");
+        static constexpr uint32_t TAGS_HASH = ConstExprHashingUtils::HashString("TAGS");
 
 
         TaskSetField GetTaskSetFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TAGS_HASH)
           {
             return TaskSetField::TAGS;

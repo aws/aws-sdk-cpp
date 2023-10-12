@@ -20,12 +20,12 @@ namespace Aws
       namespace SelectAllValueOptionsMapper
       {
 
-        static const int ALL_VALUES_HASH = HashingUtils::HashString("ALL_VALUES");
+        static constexpr uint32_t ALL_VALUES_HASH = ConstExprHashingUtils::HashString("ALL_VALUES");
 
 
         SelectAllValueOptions GetSelectAllValueOptionsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_VALUES_HASH)
           {
             return SelectAllValueOptions::ALL_VALUES;

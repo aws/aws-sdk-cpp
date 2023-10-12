@@ -20,16 +20,16 @@ namespace Aws
       namespace ActionTypeEnumMapper
       {
 
-        static const int forward_HASH = HashingUtils::HashString("forward");
-        static const int authenticate_oidc_HASH = HashingUtils::HashString("authenticate-oidc");
-        static const int authenticate_cognito_HASH = HashingUtils::HashString("authenticate-cognito");
-        static const int redirect_HASH = HashingUtils::HashString("redirect");
-        static const int fixed_response_HASH = HashingUtils::HashString("fixed-response");
+        static constexpr uint32_t forward_HASH = ConstExprHashingUtils::HashString("forward");
+        static constexpr uint32_t authenticate_oidc_HASH = ConstExprHashingUtils::HashString("authenticate-oidc");
+        static constexpr uint32_t authenticate_cognito_HASH = ConstExprHashingUtils::HashString("authenticate-cognito");
+        static constexpr uint32_t redirect_HASH = ConstExprHashingUtils::HashString("redirect");
+        static constexpr uint32_t fixed_response_HASH = ConstExprHashingUtils::HashString("fixed-response");
 
 
         ActionTypeEnum GetActionTypeEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == forward_HASH)
           {
             return ActionTypeEnum::forward;

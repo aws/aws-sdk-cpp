@@ -20,17 +20,17 @@ namespace Aws
       namespace ThreatIntelIndicatorCategoryMapper
       {
 
-        static const int BACKDOOR_HASH = HashingUtils::HashString("BACKDOOR");
-        static const int CARD_STEALER_HASH = HashingUtils::HashString("CARD_STEALER");
-        static const int COMMAND_AND_CONTROL_HASH = HashingUtils::HashString("COMMAND_AND_CONTROL");
-        static const int DROP_SITE_HASH = HashingUtils::HashString("DROP_SITE");
-        static const int EXPLOIT_SITE_HASH = HashingUtils::HashString("EXPLOIT_SITE");
-        static const int KEYLOGGER_HASH = HashingUtils::HashString("KEYLOGGER");
+        static constexpr uint32_t BACKDOOR_HASH = ConstExprHashingUtils::HashString("BACKDOOR");
+        static constexpr uint32_t CARD_STEALER_HASH = ConstExprHashingUtils::HashString("CARD_STEALER");
+        static constexpr uint32_t COMMAND_AND_CONTROL_HASH = ConstExprHashingUtils::HashString("COMMAND_AND_CONTROL");
+        static constexpr uint32_t DROP_SITE_HASH = ConstExprHashingUtils::HashString("DROP_SITE");
+        static constexpr uint32_t EXPLOIT_SITE_HASH = ConstExprHashingUtils::HashString("EXPLOIT_SITE");
+        static constexpr uint32_t KEYLOGGER_HASH = ConstExprHashingUtils::HashString("KEYLOGGER");
 
 
         ThreatIntelIndicatorCategory GetThreatIntelIndicatorCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BACKDOOR_HASH)
           {
             return ThreatIntelIndicatorCategory::BACKDOOR;

@@ -18,62 +18,62 @@ namespace ConfigService
 namespace ConfigServiceErrorMapper
 {
 
-static const int MAX_NUMBER_OF_CONFIG_RULES_EXCEEDED_HASH = HashingUtils::HashString("MaxNumberOfConfigRulesExceededException");
-static const int OVERSIZED_CONFIGURATION_ITEM_HASH = HashingUtils::HashString("OversizedConfigurationItemException");
-static const int NO_SUCH_CONFORMANCE_PACK_HASH = HashingUtils::HashString("NoSuchConformancePackException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INVALID_S3_KMS_KEY_ARN_HASH = HashingUtils::HashString("InvalidS3KmsKeyArnException");
-static const int CONFORMANCE_PACK_TEMPLATE_VALIDATION_HASH = HashingUtils::HashString("ConformancePackTemplateValidationException");
-static const int INSUFFICIENT_PERMISSIONS_HASH = HashingUtils::HashString("InsufficientPermissionsException");
-static const int MAX_NUMBER_OF_CONFIGURATION_RECORDERS_EXCEEDED_HASH = HashingUtils::HashString("MaxNumberOfConfigurationRecordersExceededException");
-static const int INVALID_DELIVERY_CHANNEL_NAME_HASH = HashingUtils::HashString("InvalidDeliveryChannelNameException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int INSUFFICIENT_DELIVERY_POLICY_HASH = HashingUtils::HashString("InsufficientDeliveryPolicyException");
-static const int NO_AVAILABLE_CONFIGURATION_RECORDER_HASH = HashingUtils::HashString("NoAvailableConfigurationRecorderException");
-static const int REMEDIATION_IN_PROGRESS_HASH = HashingUtils::HashString("RemediationInProgressException");
-static const int RESOURCE_CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ResourceConcurrentModificationException");
-static const int NO_SUCH_CONFIGURATION_AGGREGATOR_HASH = HashingUtils::HashString("NoSuchConfigurationAggregatorException");
-static const int ORGANIZATION_ACCESS_DENIED_HASH = HashingUtils::HashString("OrganizationAccessDeniedException");
-static const int NO_SUCH_BUCKET_HASH = HashingUtils::HashString("NoSuchBucketException");
-static const int NO_SUCH_DELIVERY_CHANNEL_HASH = HashingUtils::HashString("NoSuchDeliveryChannelException");
-static const int MAX_NUMBER_OF_ORGANIZATION_CONFORMANCE_PACKS_EXCEEDED_HASH = HashingUtils::HashString("MaxNumberOfOrganizationConformancePacksExceededException");
-static const int NO_AVAILABLE_ORGANIZATION_HASH = HashingUtils::HashString("NoAvailableOrganizationException");
-static const int ORGANIZATION_CONFORMANCE_PACK_TEMPLATE_VALIDATION_HASH = HashingUtils::HashString("OrganizationConformancePackTemplateValidationException");
-static const int INVALID_RECORDING_GROUP_HASH = HashingUtils::HashString("InvalidRecordingGroupException");
-static const int INVALID_S3_KEY_PREFIX_HASH = HashingUtils::HashString("InvalidS3KeyPrefixException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int INVALID_CONFIGURATION_RECORDER_NAME_HASH = HashingUtils::HashString("InvalidConfigurationRecorderNameException");
-static const int NO_RUNNING_CONFIGURATION_RECORDER_HASH = HashingUtils::HashString("NoRunningConfigurationRecorderException");
-static const int INVALID_ROLE_HASH = HashingUtils::HashString("InvalidRoleException");
-static const int LAST_DELIVERY_CHANNEL_DELETE_FAILED_HASH = HashingUtils::HashString("LastDeliveryChannelDeleteFailedException");
-static const int ORGANIZATION_ALL_FEATURES_NOT_ENABLED_HASH = HashingUtils::HashString("OrganizationAllFeaturesNotEnabledException");
-static const int MAX_NUMBER_OF_ORGANIZATION_CONFIG_RULES_EXCEEDED_HASH = HashingUtils::HashString("MaxNumberOfOrganizationConfigRulesExceededException");
-static const int NO_SUCH_ORGANIZATION_CONFORMANCE_PACK_HASH = HashingUtils::HashString("NoSuchOrganizationConformancePackException");
-static const int NO_SUCH_REMEDIATION_CONFIGURATION_HASH = HashingUtils::HashString("NoSuchRemediationConfigurationException");
-static const int MAX_NUMBER_OF_RETENTION_CONFIGURATIONS_EXCEEDED_HASH = HashingUtils::HashString("MaxNumberOfRetentionConfigurationsExceededException");
-static const int NO_AVAILABLE_DELIVERY_CHANNEL_HASH = HashingUtils::HashString("NoAvailableDeliveryChannelException");
-static const int MAX_NUMBER_OF_CONFORMANCE_PACKS_EXCEEDED_HASH = HashingUtils::HashString("MaxNumberOfConformancePacksExceededException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int INVALID_TIME_RANGE_HASH = HashingUtils::HashString("InvalidTimeRangeException");
-static const int NO_SUCH_REMEDIATION_EXCEPTION_HASH = HashingUtils::HashString("NoSuchRemediationExceptionException");
-static const int MAX_NUMBER_OF_DELIVERY_CHANNELS_EXCEEDED_HASH = HashingUtils::HashString("MaxNumberOfDeliveryChannelsExceededException");
-static const int NO_SUCH_CONFIG_RULE_IN_CONFORMANCE_PACK_HASH = HashingUtils::HashString("NoSuchConfigRuleInConformancePackException");
-static const int NO_SUCH_CONFIG_RULE_HASH = HashingUtils::HashString("NoSuchConfigRuleException");
-static const int NO_SUCH_RETENTION_CONFIGURATION_HASH = HashingUtils::HashString("NoSuchRetentionConfigurationException");
-static const int MAX_ACTIVE_RESOURCES_EXCEEDED_HASH = HashingUtils::HashString("MaxActiveResourcesExceededException");
-static const int INVALID_EXPRESSION_HASH = HashingUtils::HashString("InvalidExpressionException");
-static const int INVALID_S_N_S_TOPIC_A_R_N_HASH = HashingUtils::HashString("InvalidSNSTopicARNException");
-static const int NO_SUCH_ORGANIZATION_CONFIG_RULE_HASH = HashingUtils::HashString("NoSuchOrganizationConfigRuleException");
-static const int RESOURCE_NOT_DISCOVERED_HASH = HashingUtils::HashString("ResourceNotDiscoveredException");
-static const int INVALID_RESULT_TOKEN_HASH = HashingUtils::HashString("InvalidResultTokenException");
-static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatch");
-static const int INVALID_LIMIT_HASH = HashingUtils::HashString("InvalidLimitException");
-static const int NO_SUCH_CONFIGURATION_RECORDER_HASH = HashingUtils::HashString("NoSuchConfigurationRecorderException");
+static constexpr uint32_t MAX_NUMBER_OF_CONFIG_RULES_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MaxNumberOfConfigRulesExceededException");
+static constexpr uint32_t OVERSIZED_CONFIGURATION_ITEM_HASH = ConstExprHashingUtils::HashString("OversizedConfigurationItemException");
+static constexpr uint32_t NO_SUCH_CONFORMANCE_PACK_HASH = ConstExprHashingUtils::HashString("NoSuchConformancePackException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t INVALID_S3_KMS_KEY_ARN_HASH = ConstExprHashingUtils::HashString("InvalidS3KmsKeyArnException");
+static constexpr uint32_t CONFORMANCE_PACK_TEMPLATE_VALIDATION_HASH = ConstExprHashingUtils::HashString("ConformancePackTemplateValidationException");
+static constexpr uint32_t INSUFFICIENT_PERMISSIONS_HASH = ConstExprHashingUtils::HashString("InsufficientPermissionsException");
+static constexpr uint32_t MAX_NUMBER_OF_CONFIGURATION_RECORDERS_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MaxNumberOfConfigurationRecordersExceededException");
+static constexpr uint32_t INVALID_DELIVERY_CHANNEL_NAME_HASH = ConstExprHashingUtils::HashString("InvalidDeliveryChannelNameException");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+static constexpr uint32_t INSUFFICIENT_DELIVERY_POLICY_HASH = ConstExprHashingUtils::HashString("InsufficientDeliveryPolicyException");
+static constexpr uint32_t NO_AVAILABLE_CONFIGURATION_RECORDER_HASH = ConstExprHashingUtils::HashString("NoAvailableConfigurationRecorderException");
+static constexpr uint32_t REMEDIATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("RemediationInProgressException");
+static constexpr uint32_t RESOURCE_CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ResourceConcurrentModificationException");
+static constexpr uint32_t NO_SUCH_CONFIGURATION_AGGREGATOR_HASH = ConstExprHashingUtils::HashString("NoSuchConfigurationAggregatorException");
+static constexpr uint32_t ORGANIZATION_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("OrganizationAccessDeniedException");
+static constexpr uint32_t NO_SUCH_BUCKET_HASH = ConstExprHashingUtils::HashString("NoSuchBucketException");
+static constexpr uint32_t NO_SUCH_DELIVERY_CHANNEL_HASH = ConstExprHashingUtils::HashString("NoSuchDeliveryChannelException");
+static constexpr uint32_t MAX_NUMBER_OF_ORGANIZATION_CONFORMANCE_PACKS_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MaxNumberOfOrganizationConformancePacksExceededException");
+static constexpr uint32_t NO_AVAILABLE_ORGANIZATION_HASH = ConstExprHashingUtils::HashString("NoAvailableOrganizationException");
+static constexpr uint32_t ORGANIZATION_CONFORMANCE_PACK_TEMPLATE_VALIDATION_HASH = ConstExprHashingUtils::HashString("OrganizationConformancePackTemplateValidationException");
+static constexpr uint32_t INVALID_RECORDING_GROUP_HASH = ConstExprHashingUtils::HashString("InvalidRecordingGroupException");
+static constexpr uint32_t INVALID_S3_KEY_PREFIX_HASH = ConstExprHashingUtils::HashString("InvalidS3KeyPrefixException");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t INVALID_CONFIGURATION_RECORDER_NAME_HASH = ConstExprHashingUtils::HashString("InvalidConfigurationRecorderNameException");
+static constexpr uint32_t NO_RUNNING_CONFIGURATION_RECORDER_HASH = ConstExprHashingUtils::HashString("NoRunningConfigurationRecorderException");
+static constexpr uint32_t INVALID_ROLE_HASH = ConstExprHashingUtils::HashString("InvalidRoleException");
+static constexpr uint32_t LAST_DELIVERY_CHANNEL_DELETE_FAILED_HASH = ConstExprHashingUtils::HashString("LastDeliveryChannelDeleteFailedException");
+static constexpr uint32_t ORGANIZATION_ALL_FEATURES_NOT_ENABLED_HASH = ConstExprHashingUtils::HashString("OrganizationAllFeaturesNotEnabledException");
+static constexpr uint32_t MAX_NUMBER_OF_ORGANIZATION_CONFIG_RULES_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MaxNumberOfOrganizationConfigRulesExceededException");
+static constexpr uint32_t NO_SUCH_ORGANIZATION_CONFORMANCE_PACK_HASH = ConstExprHashingUtils::HashString("NoSuchOrganizationConformancePackException");
+static constexpr uint32_t NO_SUCH_REMEDIATION_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("NoSuchRemediationConfigurationException");
+static constexpr uint32_t MAX_NUMBER_OF_RETENTION_CONFIGURATIONS_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MaxNumberOfRetentionConfigurationsExceededException");
+static constexpr uint32_t NO_AVAILABLE_DELIVERY_CHANNEL_HASH = ConstExprHashingUtils::HashString("NoAvailableDeliveryChannelException");
+static constexpr uint32_t MAX_NUMBER_OF_CONFORMANCE_PACKS_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MaxNumberOfConformancePacksExceededException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t INVALID_TIME_RANGE_HASH = ConstExprHashingUtils::HashString("InvalidTimeRangeException");
+static constexpr uint32_t NO_SUCH_REMEDIATION_EXCEPTION_HASH = ConstExprHashingUtils::HashString("NoSuchRemediationExceptionException");
+static constexpr uint32_t MAX_NUMBER_OF_DELIVERY_CHANNELS_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MaxNumberOfDeliveryChannelsExceededException");
+static constexpr uint32_t NO_SUCH_CONFIG_RULE_IN_CONFORMANCE_PACK_HASH = ConstExprHashingUtils::HashString("NoSuchConfigRuleInConformancePackException");
+static constexpr uint32_t NO_SUCH_CONFIG_RULE_HASH = ConstExprHashingUtils::HashString("NoSuchConfigRuleException");
+static constexpr uint32_t NO_SUCH_RETENTION_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("NoSuchRetentionConfigurationException");
+static constexpr uint32_t MAX_ACTIVE_RESOURCES_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MaxActiveResourcesExceededException");
+static constexpr uint32_t INVALID_EXPRESSION_HASH = ConstExprHashingUtils::HashString("InvalidExpressionException");
+static constexpr uint32_t INVALID_S_N_S_TOPIC_A_R_N_HASH = ConstExprHashingUtils::HashString("InvalidSNSTopicARNException");
+static constexpr uint32_t NO_SUCH_ORGANIZATION_CONFIG_RULE_HASH = ConstExprHashingUtils::HashString("NoSuchOrganizationConfigRuleException");
+static constexpr uint32_t RESOURCE_NOT_DISCOVERED_HASH = ConstExprHashingUtils::HashString("ResourceNotDiscoveredException");
+static constexpr uint32_t INVALID_RESULT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidResultTokenException");
+static constexpr uint32_t IDEMPOTENT_PARAMETER_MISMATCH_HASH = ConstExprHashingUtils::HashString("IdempotentParameterMismatch");
+static constexpr uint32_t INVALID_LIMIT_HASH = ConstExprHashingUtils::HashString("InvalidLimitException");
+static constexpr uint32_t NO_SUCH_CONFIGURATION_RECORDER_HASH = ConstExprHashingUtils::HashString("NoSuchConfigurationRecorderException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == MAX_NUMBER_OF_CONFIG_RULES_EXCEEDED_HASH)
   {

@@ -20,14 +20,14 @@ namespace Aws
       namespace TrainingInputModeMapper
       {
 
-        static const int Pipe_HASH = HashingUtils::HashString("Pipe");
-        static const int File_HASH = HashingUtils::HashString("File");
-        static const int FastFile_HASH = HashingUtils::HashString("FastFile");
+        static constexpr uint32_t Pipe_HASH = ConstExprHashingUtils::HashString("Pipe");
+        static constexpr uint32_t File_HASH = ConstExprHashingUtils::HashString("File");
+        static constexpr uint32_t FastFile_HASH = ConstExprHashingUtils::HashString("FastFile");
 
 
         TrainingInputMode GetTrainingInputModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pipe_HASH)
           {
             return TrainingInputMode::Pipe;

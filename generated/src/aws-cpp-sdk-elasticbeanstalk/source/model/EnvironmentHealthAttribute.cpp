@@ -20,19 +20,19 @@ namespace Aws
       namespace EnvironmentHealthAttributeMapper
       {
 
-        static const int Status_HASH = HashingUtils::HashString("Status");
-        static const int Color_HASH = HashingUtils::HashString("Color");
-        static const int Causes_HASH = HashingUtils::HashString("Causes");
-        static const int ApplicationMetrics_HASH = HashingUtils::HashString("ApplicationMetrics");
-        static const int InstancesHealth_HASH = HashingUtils::HashString("InstancesHealth");
-        static const int All_HASH = HashingUtils::HashString("All");
-        static const int HealthStatus_HASH = HashingUtils::HashString("HealthStatus");
-        static const int RefreshedAt_HASH = HashingUtils::HashString("RefreshedAt");
+        static constexpr uint32_t Status_HASH = ConstExprHashingUtils::HashString("Status");
+        static constexpr uint32_t Color_HASH = ConstExprHashingUtils::HashString("Color");
+        static constexpr uint32_t Causes_HASH = ConstExprHashingUtils::HashString("Causes");
+        static constexpr uint32_t ApplicationMetrics_HASH = ConstExprHashingUtils::HashString("ApplicationMetrics");
+        static constexpr uint32_t InstancesHealth_HASH = ConstExprHashingUtils::HashString("InstancesHealth");
+        static constexpr uint32_t All_HASH = ConstExprHashingUtils::HashString("All");
+        static constexpr uint32_t HealthStatus_HASH = ConstExprHashingUtils::HashString("HealthStatus");
+        static constexpr uint32_t RefreshedAt_HASH = ConstExprHashingUtils::HashString("RefreshedAt");
 
 
         EnvironmentHealthAttribute GetEnvironmentHealthAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Status_HASH)
           {
             return EnvironmentHealthAttribute::Status;

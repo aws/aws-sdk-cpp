@@ -20,13 +20,13 @@ namespace Aws
       namespace Eac3PhaseControlMapper
       {
 
-        static const int NO_SHIFT_HASH = HashingUtils::HashString("NO_SHIFT");
-        static const int SHIFT_90_DEGREES_HASH = HashingUtils::HashString("SHIFT_90_DEGREES");
+        static constexpr uint32_t NO_SHIFT_HASH = ConstExprHashingUtils::HashString("NO_SHIFT");
+        static constexpr uint32_t SHIFT_90_DEGREES_HASH = ConstExprHashingUtils::HashString("SHIFT_90_DEGREES");
 
 
         Eac3PhaseControl GetEac3PhaseControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_SHIFT_HASH)
           {
             return Eac3PhaseControl::NO_SHIFT;

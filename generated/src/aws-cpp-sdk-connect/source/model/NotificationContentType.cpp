@@ -20,12 +20,12 @@ namespace Aws
       namespace NotificationContentTypeMapper
       {
 
-        static const int PLAIN_TEXT_HASH = HashingUtils::HashString("PLAIN_TEXT");
+        static constexpr uint32_t PLAIN_TEXT_HASH = ConstExprHashingUtils::HashString("PLAIN_TEXT");
 
 
         NotificationContentType GetNotificationContentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PLAIN_TEXT_HASH)
           {
             return NotificationContentType::PLAIN_TEXT;

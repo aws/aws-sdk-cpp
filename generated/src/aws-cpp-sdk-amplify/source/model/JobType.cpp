@@ -20,15 +20,15 @@ namespace Aws
       namespace JobTypeMapper
       {
 
-        static const int RELEASE_HASH = HashingUtils::HashString("RELEASE");
-        static const int RETRY_HASH = HashingUtils::HashString("RETRY");
-        static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
-        static const int WEB_HOOK_HASH = HashingUtils::HashString("WEB_HOOK");
+        static constexpr uint32_t RELEASE_HASH = ConstExprHashingUtils::HashString("RELEASE");
+        static constexpr uint32_t RETRY_HASH = ConstExprHashingUtils::HashString("RETRY");
+        static constexpr uint32_t MANUAL_HASH = ConstExprHashingUtils::HashString("MANUAL");
+        static constexpr uint32_t WEB_HOOK_HASH = ConstExprHashingUtils::HashString("WEB_HOOK");
 
 
         JobType GetJobTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RELEASE_HASH)
           {
             return JobType::RELEASE;

@@ -20,14 +20,14 @@ namespace Aws
       namespace GenericDataRelationshipTypeMapper
       {
 
-        static const int HAS_MANY_HASH = HashingUtils::HashString("HAS_MANY");
-        static const int HAS_ONE_HASH = HashingUtils::HashString("HAS_ONE");
-        static const int BELONGS_TO_HASH = HashingUtils::HashString("BELONGS_TO");
+        static constexpr uint32_t HAS_MANY_HASH = ConstExprHashingUtils::HashString("HAS_MANY");
+        static constexpr uint32_t HAS_ONE_HASH = ConstExprHashingUtils::HashString("HAS_ONE");
+        static constexpr uint32_t BELONGS_TO_HASH = ConstExprHashingUtils::HashString("BELONGS_TO");
 
 
         GenericDataRelationshipType GetGenericDataRelationshipTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HAS_MANY_HASH)
           {
             return GenericDataRelationshipType::HAS_MANY;

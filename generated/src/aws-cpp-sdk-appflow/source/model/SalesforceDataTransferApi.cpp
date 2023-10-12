@@ -20,14 +20,14 @@ namespace Aws
       namespace SalesforceDataTransferApiMapper
       {
 
-        static const int AUTOMATIC_HASH = HashingUtils::HashString("AUTOMATIC");
-        static const int BULKV2_HASH = HashingUtils::HashString("BULKV2");
-        static const int REST_SYNC_HASH = HashingUtils::HashString("REST_SYNC");
+        static constexpr uint32_t AUTOMATIC_HASH = ConstExprHashingUtils::HashString("AUTOMATIC");
+        static constexpr uint32_t BULKV2_HASH = ConstExprHashingUtils::HashString("BULKV2");
+        static constexpr uint32_t REST_SYNC_HASH = ConstExprHashingUtils::HashString("REST_SYNC");
 
 
         SalesforceDataTransferApi GetSalesforceDataTransferApiForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTOMATIC_HASH)
           {
             return SalesforceDataTransferApi::AUTOMATIC;

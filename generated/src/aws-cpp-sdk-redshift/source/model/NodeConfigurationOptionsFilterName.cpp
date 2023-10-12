@@ -20,15 +20,15 @@ namespace Aws
       namespace NodeConfigurationOptionsFilterNameMapper
       {
 
-        static const int NodeType_HASH = HashingUtils::HashString("NodeType");
-        static const int NumberOfNodes_HASH = HashingUtils::HashString("NumberOfNodes");
-        static const int EstimatedDiskUtilizationPercent_HASH = HashingUtils::HashString("EstimatedDiskUtilizationPercent");
-        static const int Mode_HASH = HashingUtils::HashString("Mode");
+        static constexpr uint32_t NodeType_HASH = ConstExprHashingUtils::HashString("NodeType");
+        static constexpr uint32_t NumberOfNodes_HASH = ConstExprHashingUtils::HashString("NumberOfNodes");
+        static constexpr uint32_t EstimatedDiskUtilizationPercent_HASH = ConstExprHashingUtils::HashString("EstimatedDiskUtilizationPercent");
+        static constexpr uint32_t Mode_HASH = ConstExprHashingUtils::HashString("Mode");
 
 
         NodeConfigurationOptionsFilterName GetNodeConfigurationOptionsFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NodeType_HASH)
           {
             return NodeConfigurationOptionsFilterName::NodeType;

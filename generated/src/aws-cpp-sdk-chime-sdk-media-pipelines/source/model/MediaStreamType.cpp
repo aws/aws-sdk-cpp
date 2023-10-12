@@ -20,13 +20,13 @@ namespace Aws
       namespace MediaStreamTypeMapper
       {
 
-        static const int MixedAudio_HASH = HashingUtils::HashString("MixedAudio");
-        static const int IndividualAudio_HASH = HashingUtils::HashString("IndividualAudio");
+        static constexpr uint32_t MixedAudio_HASH = ConstExprHashingUtils::HashString("MixedAudio");
+        static constexpr uint32_t IndividualAudio_HASH = ConstExprHashingUtils::HashString("IndividualAudio");
 
 
         MediaStreamType GetMediaStreamTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MixedAudio_HASH)
           {
             return MediaStreamType::MixedAudio;

@@ -20,12 +20,12 @@ namespace Aws
       namespace IntentFilterNameMapper
       {
 
-        static const int IntentName_HASH = HashingUtils::HashString("IntentName");
+        static constexpr uint32_t IntentName_HASH = ConstExprHashingUtils::HashString("IntentName");
 
 
         IntentFilterName GetIntentFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IntentName_HASH)
           {
             return IntentFilterName::IntentName;

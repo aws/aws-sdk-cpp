@@ -20,13 +20,13 @@ namespace Aws
       namespace PolicyTypeMapper
       {
 
-        static const int STATIC__HASH = HashingUtils::HashString("STATIC");
-        static const int TEMPLATE_LINKED_HASH = HashingUtils::HashString("TEMPLATE_LINKED");
+        static constexpr uint32_t STATIC__HASH = ConstExprHashingUtils::HashString("STATIC");
+        static constexpr uint32_t TEMPLATE_LINKED_HASH = ConstExprHashingUtils::HashString("TEMPLATE_LINKED");
 
 
         PolicyType GetPolicyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STATIC__HASH)
           {
             return PolicyType::STATIC_;

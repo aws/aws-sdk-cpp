@@ -20,13 +20,13 @@ namespace Aws
       namespace PermissionTypeMapper
       {
 
-        static const int READONLY_HASH = HashingUtils::HashString("READONLY");
-        static const int CONTRIBUTOR_HASH = HashingUtils::HashString("CONTRIBUTOR");
+        static constexpr uint32_t READONLY_HASH = ConstExprHashingUtils::HashString("READONLY");
+        static constexpr uint32_t CONTRIBUTOR_HASH = ConstExprHashingUtils::HashString("CONTRIBUTOR");
 
 
         PermissionType GetPermissionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == READONLY_HASH)
           {
             return PermissionType::READONLY;

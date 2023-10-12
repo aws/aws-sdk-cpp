@@ -20,13 +20,13 @@ namespace Aws
       namespace DistanceUnitMapper
       {
 
-        static const int Kilometers_HASH = HashingUtils::HashString("Kilometers");
-        static const int Miles_HASH = HashingUtils::HashString("Miles");
+        static constexpr uint32_t Kilometers_HASH = ConstExprHashingUtils::HashString("Kilometers");
+        static constexpr uint32_t Miles_HASH = ConstExprHashingUtils::HashString("Miles");
 
 
         DistanceUnit GetDistanceUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Kilometers_HASH)
           {
             return DistanceUnit::Kilometers;

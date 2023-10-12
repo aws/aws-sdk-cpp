@@ -20,14 +20,14 @@ namespace Aws
       namespace CustomEngineVersionStatusMapper
       {
 
-        static const int available_HASH = HashingUtils::HashString("available");
-        static const int inactive_HASH = HashingUtils::HashString("inactive");
-        static const int inactive_except_restore_HASH = HashingUtils::HashString("inactive-except-restore");
+        static constexpr uint32_t available_HASH = ConstExprHashingUtils::HashString("available");
+        static constexpr uint32_t inactive_HASH = ConstExprHashingUtils::HashString("inactive");
+        static constexpr uint32_t inactive_except_restore_HASH = ConstExprHashingUtils::HashString("inactive-except-restore");
 
 
         CustomEngineVersionStatus GetCustomEngineVersionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == available_HASH)
           {
             return CustomEngineVersionStatus::available;

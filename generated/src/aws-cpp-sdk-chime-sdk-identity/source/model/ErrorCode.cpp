@@ -20,26 +20,26 @@ namespace Aws
       namespace ErrorCodeMapper
       {
 
-        static const int BadRequest_HASH = HashingUtils::HashString("BadRequest");
-        static const int Conflict_HASH = HashingUtils::HashString("Conflict");
-        static const int Forbidden_HASH = HashingUtils::HashString("Forbidden");
-        static const int NotFound_HASH = HashingUtils::HashString("NotFound");
-        static const int PreconditionFailed_HASH = HashingUtils::HashString("PreconditionFailed");
-        static const int ResourceLimitExceeded_HASH = HashingUtils::HashString("ResourceLimitExceeded");
-        static const int ServiceFailure_HASH = HashingUtils::HashString("ServiceFailure");
-        static const int AccessDenied_HASH = HashingUtils::HashString("AccessDenied");
-        static const int ServiceUnavailable_HASH = HashingUtils::HashString("ServiceUnavailable");
-        static const int Throttled_HASH = HashingUtils::HashString("Throttled");
-        static const int Throttling_HASH = HashingUtils::HashString("Throttling");
-        static const int Unauthorized_HASH = HashingUtils::HashString("Unauthorized");
-        static const int Unprocessable_HASH = HashingUtils::HashString("Unprocessable");
-        static const int VoiceConnectorGroupAssociationsExist_HASH = HashingUtils::HashString("VoiceConnectorGroupAssociationsExist");
-        static const int PhoneNumberAssociationsExist_HASH = HashingUtils::HashString("PhoneNumberAssociationsExist");
+        static constexpr uint32_t BadRequest_HASH = ConstExprHashingUtils::HashString("BadRequest");
+        static constexpr uint32_t Conflict_HASH = ConstExprHashingUtils::HashString("Conflict");
+        static constexpr uint32_t Forbidden_HASH = ConstExprHashingUtils::HashString("Forbidden");
+        static constexpr uint32_t NotFound_HASH = ConstExprHashingUtils::HashString("NotFound");
+        static constexpr uint32_t PreconditionFailed_HASH = ConstExprHashingUtils::HashString("PreconditionFailed");
+        static constexpr uint32_t ResourceLimitExceeded_HASH = ConstExprHashingUtils::HashString("ResourceLimitExceeded");
+        static constexpr uint32_t ServiceFailure_HASH = ConstExprHashingUtils::HashString("ServiceFailure");
+        static constexpr uint32_t AccessDenied_HASH = ConstExprHashingUtils::HashString("AccessDenied");
+        static constexpr uint32_t ServiceUnavailable_HASH = ConstExprHashingUtils::HashString("ServiceUnavailable");
+        static constexpr uint32_t Throttled_HASH = ConstExprHashingUtils::HashString("Throttled");
+        static constexpr uint32_t Throttling_HASH = ConstExprHashingUtils::HashString("Throttling");
+        static constexpr uint32_t Unauthorized_HASH = ConstExprHashingUtils::HashString("Unauthorized");
+        static constexpr uint32_t Unprocessable_HASH = ConstExprHashingUtils::HashString("Unprocessable");
+        static constexpr uint32_t VoiceConnectorGroupAssociationsExist_HASH = ConstExprHashingUtils::HashString("VoiceConnectorGroupAssociationsExist");
+        static constexpr uint32_t PhoneNumberAssociationsExist_HASH = ConstExprHashingUtils::HashString("PhoneNumberAssociationsExist");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BadRequest_HASH)
           {
             return ErrorCode::BadRequest;

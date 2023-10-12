@@ -20,13 +20,13 @@ namespace Aws
       namespace PermissionMapper
       {
 
-        static const int ADMINISTRATOR_HASH = HashingUtils::HashString("ADMINISTRATOR");
-        static const int VIEWER_HASH = HashingUtils::HashString("VIEWER");
+        static constexpr uint32_t ADMINISTRATOR_HASH = ConstExprHashingUtils::HashString("ADMINISTRATOR");
+        static constexpr uint32_t VIEWER_HASH = ConstExprHashingUtils::HashString("VIEWER");
 
 
         Permission GetPermissionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADMINISTRATOR_HASH)
           {
             return Permission::ADMINISTRATOR;

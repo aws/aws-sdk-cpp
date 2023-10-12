@@ -20,13 +20,13 @@ namespace Aws
       namespace RxNormEntityTypeMapper
       {
 
-        static const int BRAND_NAME_HASH = HashingUtils::HashString("BRAND_NAME");
-        static const int GENERIC_NAME_HASH = HashingUtils::HashString("GENERIC_NAME");
+        static constexpr uint32_t BRAND_NAME_HASH = ConstExprHashingUtils::HashString("BRAND_NAME");
+        static constexpr uint32_t GENERIC_NAME_HASH = ConstExprHashingUtils::HashString("GENERIC_NAME");
 
 
         RxNormEntityType GetRxNormEntityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BRAND_NAME_HASH)
           {
             return RxNormEntityType::BRAND_NAME;

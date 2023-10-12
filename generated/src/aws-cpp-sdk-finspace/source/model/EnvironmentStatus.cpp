@@ -20,24 +20,24 @@ namespace Aws
       namespace EnvironmentStatusMapper
       {
 
-        static const int CREATE_REQUESTED_HASH = HashingUtils::HashString("CREATE_REQUESTED");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
-        static const int DELETE_REQUESTED_HASH = HashingUtils::HashString("DELETE_REQUESTED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int FAILED_CREATION_HASH = HashingUtils::HashString("FAILED_CREATION");
-        static const int RETRY_DELETION_HASH = HashingUtils::HashString("RETRY_DELETION");
-        static const int FAILED_DELETION_HASH = HashingUtils::HashString("FAILED_DELETION");
-        static const int UPDATE_NETWORK_REQUESTED_HASH = HashingUtils::HashString("UPDATE_NETWORK_REQUESTED");
-        static const int UPDATING_NETWORK_HASH = HashingUtils::HashString("UPDATING_NETWORK");
-        static const int FAILED_UPDATING_NETWORK_HASH = HashingUtils::HashString("FAILED_UPDATING_NETWORK");
-        static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
+        static constexpr uint32_t CREATE_REQUESTED_HASH = ConstExprHashingUtils::HashString("CREATE_REQUESTED");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t CREATED_HASH = ConstExprHashingUtils::HashString("CREATED");
+        static constexpr uint32_t DELETE_REQUESTED_HASH = ConstExprHashingUtils::HashString("DELETE_REQUESTED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t FAILED_CREATION_HASH = ConstExprHashingUtils::HashString("FAILED_CREATION");
+        static constexpr uint32_t RETRY_DELETION_HASH = ConstExprHashingUtils::HashString("RETRY_DELETION");
+        static constexpr uint32_t FAILED_DELETION_HASH = ConstExprHashingUtils::HashString("FAILED_DELETION");
+        static constexpr uint32_t UPDATE_NETWORK_REQUESTED_HASH = ConstExprHashingUtils::HashString("UPDATE_NETWORK_REQUESTED");
+        static constexpr uint32_t UPDATING_NETWORK_HASH = ConstExprHashingUtils::HashString("UPDATING_NETWORK");
+        static constexpr uint32_t FAILED_UPDATING_NETWORK_HASH = ConstExprHashingUtils::HashString("FAILED_UPDATING_NETWORK");
+        static constexpr uint32_t SUSPENDED_HASH = ConstExprHashingUtils::HashString("SUSPENDED");
 
 
         EnvironmentStatus GetEnvironmentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_REQUESTED_HASH)
           {
             return EnvironmentStatus::CREATE_REQUESTED;

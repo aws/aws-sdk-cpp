@@ -20,15 +20,15 @@ namespace Aws
       namespace LicenseMapper
       {
 
-        static const int Basic_HASH = HashingUtils::HashString("Basic");
-        static const int Plus_HASH = HashingUtils::HashString("Plus");
-        static const int Pro_HASH = HashingUtils::HashString("Pro");
-        static const int ProTrial_HASH = HashingUtils::HashString("ProTrial");
+        static constexpr uint32_t Basic_HASH = ConstExprHashingUtils::HashString("Basic");
+        static constexpr uint32_t Plus_HASH = ConstExprHashingUtils::HashString("Plus");
+        static constexpr uint32_t Pro_HASH = ConstExprHashingUtils::HashString("Pro");
+        static constexpr uint32_t ProTrial_HASH = ConstExprHashingUtils::HashString("ProTrial");
 
 
         License GetLicenseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Basic_HASH)
           {
             return License::Basic;

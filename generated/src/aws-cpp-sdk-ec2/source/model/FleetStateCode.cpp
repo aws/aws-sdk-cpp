@@ -20,18 +20,18 @@ namespace Aws
       namespace FleetStateCodeMapper
       {
 
-        static const int submitted_HASH = HashingUtils::HashString("submitted");
-        static const int active_HASH = HashingUtils::HashString("active");
-        static const int deleted_HASH = HashingUtils::HashString("deleted");
-        static const int failed_HASH = HashingUtils::HashString("failed");
-        static const int deleted_running_HASH = HashingUtils::HashString("deleted_running");
-        static const int deleted_terminating_HASH = HashingUtils::HashString("deleted_terminating");
-        static const int modifying_HASH = HashingUtils::HashString("modifying");
+        static constexpr uint32_t submitted_HASH = ConstExprHashingUtils::HashString("submitted");
+        static constexpr uint32_t active_HASH = ConstExprHashingUtils::HashString("active");
+        static constexpr uint32_t deleted_HASH = ConstExprHashingUtils::HashString("deleted");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
+        static constexpr uint32_t deleted_running_HASH = ConstExprHashingUtils::HashString("deleted_running");
+        static constexpr uint32_t deleted_terminating_HASH = ConstExprHashingUtils::HashString("deleted_terminating");
+        static constexpr uint32_t modifying_HASH = ConstExprHashingUtils::HashString("modifying");
 
 
         FleetStateCode GetFleetStateCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == submitted_HASH)
           {
             return FleetStateCode::submitted;

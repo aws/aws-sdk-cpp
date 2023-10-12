@@ -20,15 +20,15 @@ namespace Aws
       namespace OutputFormatMapper
       {
 
-        static const int json_HASH = HashingUtils::HashString("json");
-        static const int mp3_HASH = HashingUtils::HashString("mp3");
-        static const int ogg_vorbis_HASH = HashingUtils::HashString("ogg_vorbis");
-        static const int pcm_HASH = HashingUtils::HashString("pcm");
+        static constexpr uint32_t json_HASH = ConstExprHashingUtils::HashString("json");
+        static constexpr uint32_t mp3_HASH = ConstExprHashingUtils::HashString("mp3");
+        static constexpr uint32_t ogg_vorbis_HASH = ConstExprHashingUtils::HashString("ogg_vorbis");
+        static constexpr uint32_t pcm_HASH = ConstExprHashingUtils::HashString("pcm");
 
 
         OutputFormat GetOutputFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == json_HASH)
           {
             return OutputFormat::json;

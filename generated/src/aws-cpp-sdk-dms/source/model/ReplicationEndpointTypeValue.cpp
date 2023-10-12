@@ -20,13 +20,13 @@ namespace Aws
       namespace ReplicationEndpointTypeValueMapper
       {
 
-        static const int source_HASH = HashingUtils::HashString("source");
-        static const int target_HASH = HashingUtils::HashString("target");
+        static constexpr uint32_t source_HASH = ConstExprHashingUtils::HashString("source");
+        static constexpr uint32_t target_HASH = ConstExprHashingUtils::HashString("target");
 
 
         ReplicationEndpointTypeValue GetReplicationEndpointTypeValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == source_HASH)
           {
             return ReplicationEndpointTypeValue::source;

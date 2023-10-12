@@ -20,13 +20,13 @@ namespace Aws
       namespace OrderMapper
       {
 
-        static const int Asc_HASH = HashingUtils::HashString("Asc");
-        static const int Desc_HASH = HashingUtils::HashString("Desc");
+        static constexpr uint32_t Asc_HASH = ConstExprHashingUtils::HashString("Asc");
+        static constexpr uint32_t Desc_HASH = ConstExprHashingUtils::HashString("Desc");
 
 
         Order GetOrderForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Asc_HASH)
           {
             return Order::Asc;

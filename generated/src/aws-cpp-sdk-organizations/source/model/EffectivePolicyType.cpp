@@ -20,14 +20,14 @@ namespace Aws
       namespace EffectivePolicyTypeMapper
       {
 
-        static const int TAG_POLICY_HASH = HashingUtils::HashString("TAG_POLICY");
-        static const int BACKUP_POLICY_HASH = HashingUtils::HashString("BACKUP_POLICY");
-        static const int AISERVICES_OPT_OUT_POLICY_HASH = HashingUtils::HashString("AISERVICES_OPT_OUT_POLICY");
+        static constexpr uint32_t TAG_POLICY_HASH = ConstExprHashingUtils::HashString("TAG_POLICY");
+        static constexpr uint32_t BACKUP_POLICY_HASH = ConstExprHashingUtils::HashString("BACKUP_POLICY");
+        static constexpr uint32_t AISERVICES_OPT_OUT_POLICY_HASH = ConstExprHashingUtils::HashString("AISERVICES_OPT_OUT_POLICY");
 
 
         EffectivePolicyType GetEffectivePolicyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TAG_POLICY_HASH)
           {
             return EffectivePolicyType::TAG_POLICY;

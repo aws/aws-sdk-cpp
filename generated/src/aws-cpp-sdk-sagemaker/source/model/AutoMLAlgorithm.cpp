@@ -20,20 +20,20 @@ namespace Aws
       namespace AutoMLAlgorithmMapper
       {
 
-        static const int xgboost_HASH = HashingUtils::HashString("xgboost");
-        static const int linear_learner_HASH = HashingUtils::HashString("linear-learner");
-        static const int mlp_HASH = HashingUtils::HashString("mlp");
-        static const int lightgbm_HASH = HashingUtils::HashString("lightgbm");
-        static const int catboost_HASH = HashingUtils::HashString("catboost");
-        static const int randomforest_HASH = HashingUtils::HashString("randomforest");
-        static const int extra_trees_HASH = HashingUtils::HashString("extra-trees");
-        static const int nn_torch_HASH = HashingUtils::HashString("nn-torch");
-        static const int fastai_HASH = HashingUtils::HashString("fastai");
+        static constexpr uint32_t xgboost_HASH = ConstExprHashingUtils::HashString("xgboost");
+        static constexpr uint32_t linear_learner_HASH = ConstExprHashingUtils::HashString("linear-learner");
+        static constexpr uint32_t mlp_HASH = ConstExprHashingUtils::HashString("mlp");
+        static constexpr uint32_t lightgbm_HASH = ConstExprHashingUtils::HashString("lightgbm");
+        static constexpr uint32_t catboost_HASH = ConstExprHashingUtils::HashString("catboost");
+        static constexpr uint32_t randomforest_HASH = ConstExprHashingUtils::HashString("randomforest");
+        static constexpr uint32_t extra_trees_HASH = ConstExprHashingUtils::HashString("extra-trees");
+        static constexpr uint32_t nn_torch_HASH = ConstExprHashingUtils::HashString("nn-torch");
+        static constexpr uint32_t fastai_HASH = ConstExprHashingUtils::HashString("fastai");
 
 
         AutoMLAlgorithm GetAutoMLAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == xgboost_HASH)
           {
             return AutoMLAlgorithm::xgboost;

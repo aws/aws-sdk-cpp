@@ -20,12 +20,12 @@ namespace Aws
       namespace ContentTypeMapper
       {
 
-        static const int application_vnd_amazonaws_card_generic_HASH = HashingUtils::HashString("application/vnd.amazonaws.card.generic");
+        static constexpr uint32_t application_vnd_amazonaws_card_generic_HASH = ConstExprHashingUtils::HashString("application/vnd.amazonaws.card.generic");
 
 
         ContentType GetContentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == application_vnd_amazonaws_card_generic_HASH)
           {
             return ContentType::application_vnd_amazonaws_card_generic;

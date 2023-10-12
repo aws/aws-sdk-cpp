@@ -20,14 +20,14 @@ namespace Aws
       namespace LensStatusTypeMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int DRAFT_HASH = HashingUtils::HashString("DRAFT");
-        static const int PUBLISHED_HASH = HashingUtils::HashString("PUBLISHED");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t DRAFT_HASH = ConstExprHashingUtils::HashString("DRAFT");
+        static constexpr uint32_t PUBLISHED_HASH = ConstExprHashingUtils::HashString("PUBLISHED");
 
 
         LensStatusType GetLensStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return LensStatusType::ALL;

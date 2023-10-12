@@ -20,18 +20,18 @@ namespace Aws
       namespace ICD10CMAttributeTypeMapper
       {
 
-        static const int ACUITY_HASH = HashingUtils::HashString("ACUITY");
-        static const int DIRECTION_HASH = HashingUtils::HashString("DIRECTION");
-        static const int SYSTEM_ORGAN_SITE_HASH = HashingUtils::HashString("SYSTEM_ORGAN_SITE");
-        static const int QUALITY_HASH = HashingUtils::HashString("QUALITY");
-        static const int QUANTITY_HASH = HashingUtils::HashString("QUANTITY");
-        static const int TIME_TO_DX_NAME_HASH = HashingUtils::HashString("TIME_TO_DX_NAME");
-        static const int TIME_EXPRESSION_HASH = HashingUtils::HashString("TIME_EXPRESSION");
+        static constexpr uint32_t ACUITY_HASH = ConstExprHashingUtils::HashString("ACUITY");
+        static constexpr uint32_t DIRECTION_HASH = ConstExprHashingUtils::HashString("DIRECTION");
+        static constexpr uint32_t SYSTEM_ORGAN_SITE_HASH = ConstExprHashingUtils::HashString("SYSTEM_ORGAN_SITE");
+        static constexpr uint32_t QUALITY_HASH = ConstExprHashingUtils::HashString("QUALITY");
+        static constexpr uint32_t QUANTITY_HASH = ConstExprHashingUtils::HashString("QUANTITY");
+        static constexpr uint32_t TIME_TO_DX_NAME_HASH = ConstExprHashingUtils::HashString("TIME_TO_DX_NAME");
+        static constexpr uint32_t TIME_EXPRESSION_HASH = ConstExprHashingUtils::HashString("TIME_EXPRESSION");
 
 
         ICD10CMAttributeType GetICD10CMAttributeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACUITY_HASH)
           {
             return ICD10CMAttributeType::ACUITY;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ProcessBehaviorMapper
       {
 
-        static const int SAVE_HASH = HashingUtils::HashString("SAVE");
-        static const int BUILD_HASH = HashingUtils::HashString("BUILD");
+        static constexpr uint32_t SAVE_HASH = ConstExprHashingUtils::HashString("SAVE");
+        static constexpr uint32_t BUILD_HASH = ConstExprHashingUtils::HashString("BUILD");
 
 
         ProcessBehavior GetProcessBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SAVE_HASH)
           {
             return ProcessBehavior::SAVE;

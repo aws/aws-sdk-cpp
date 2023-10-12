@@ -20,12 +20,12 @@ namespace Aws
       namespace AutomationSubtypeMapper
       {
 
-        static const int ChangeRequest_HASH = HashingUtils::HashString("ChangeRequest");
+        static constexpr uint32_t ChangeRequest_HASH = ConstExprHashingUtils::HashString("ChangeRequest");
 
 
         AutomationSubtype GetAutomationSubtypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ChangeRequest_HASH)
           {
             return AutomationSubtype::ChangeRequest;

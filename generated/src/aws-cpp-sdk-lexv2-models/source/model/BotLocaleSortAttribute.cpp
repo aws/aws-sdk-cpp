@@ -20,12 +20,12 @@ namespace Aws
       namespace BotLocaleSortAttributeMapper
       {
 
-        static const int BotLocaleName_HASH = HashingUtils::HashString("BotLocaleName");
+        static constexpr uint32_t BotLocaleName_HASH = ConstExprHashingUtils::HashString("BotLocaleName");
 
 
         BotLocaleSortAttribute GetBotLocaleSortAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BotLocaleName_HASH)
           {
             return BotLocaleSortAttribute::BotLocaleName;

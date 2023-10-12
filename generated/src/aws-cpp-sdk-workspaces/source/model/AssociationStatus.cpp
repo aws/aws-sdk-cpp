@@ -20,16 +20,16 @@ namespace Aws
       namespace AssociationStatusMapper
       {
 
-        static const int NOT_ASSOCIATED_HASH = HashingUtils::HashString("NOT_ASSOCIATED");
-        static const int ASSOCIATED_WITH_OWNER_ACCOUNT_HASH = HashingUtils::HashString("ASSOCIATED_WITH_OWNER_ACCOUNT");
-        static const int ASSOCIATED_WITH_SHARED_ACCOUNT_HASH = HashingUtils::HashString("ASSOCIATED_WITH_SHARED_ACCOUNT");
-        static const int PENDING_ASSOCIATION_HASH = HashingUtils::HashString("PENDING_ASSOCIATION");
-        static const int PENDING_DISASSOCIATION_HASH = HashingUtils::HashString("PENDING_DISASSOCIATION");
+        static constexpr uint32_t NOT_ASSOCIATED_HASH = ConstExprHashingUtils::HashString("NOT_ASSOCIATED");
+        static constexpr uint32_t ASSOCIATED_WITH_OWNER_ACCOUNT_HASH = ConstExprHashingUtils::HashString("ASSOCIATED_WITH_OWNER_ACCOUNT");
+        static constexpr uint32_t ASSOCIATED_WITH_SHARED_ACCOUNT_HASH = ConstExprHashingUtils::HashString("ASSOCIATED_WITH_SHARED_ACCOUNT");
+        static constexpr uint32_t PENDING_ASSOCIATION_HASH = ConstExprHashingUtils::HashString("PENDING_ASSOCIATION");
+        static constexpr uint32_t PENDING_DISASSOCIATION_HASH = ConstExprHashingUtils::HashString("PENDING_DISASSOCIATION");
 
 
         AssociationStatus GetAssociationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOT_ASSOCIATED_HASH)
           {
             return AssociationStatus::NOT_ASSOCIATED;

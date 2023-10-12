@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceSortTypeMapper
       {
 
-        static const int DATE_HASH = HashingUtils::HashString("DATE");
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
+        static constexpr uint32_t DATE_HASH = ConstExprHashingUtils::HashString("DATE");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
 
 
         ResourceSortType GetResourceSortTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DATE_HASH)
           {
             return ResourceSortType::DATE;

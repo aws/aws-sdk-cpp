@@ -20,13 +20,13 @@ namespace Aws
       namespace NotificationEventMapper
       {
 
-        static const int CA_CERTIFICATE_EXPIRY_HASH = HashingUtils::HashString("CA_CERTIFICATE_EXPIRY");
-        static const int END_ENTITY_CERTIFICATE_EXPIRY_HASH = HashingUtils::HashString("END_ENTITY_CERTIFICATE_EXPIRY");
+        static constexpr uint32_t CA_CERTIFICATE_EXPIRY_HASH = ConstExprHashingUtils::HashString("CA_CERTIFICATE_EXPIRY");
+        static constexpr uint32_t END_ENTITY_CERTIFICATE_EXPIRY_HASH = ConstExprHashingUtils::HashString("END_ENTITY_CERTIFICATE_EXPIRY");
 
 
         NotificationEvent GetNotificationEventForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CA_CERTIFICATE_EXPIRY_HASH)
           {
             return NotificationEvent::CA_CERTIFICATE_EXPIRY;

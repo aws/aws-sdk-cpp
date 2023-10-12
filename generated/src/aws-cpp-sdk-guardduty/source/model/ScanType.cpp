@@ -20,13 +20,13 @@ namespace Aws
       namespace ScanTypeMapper
       {
 
-        static const int GUARDDUTY_INITIATED_HASH = HashingUtils::HashString("GUARDDUTY_INITIATED");
-        static const int ON_DEMAND_HASH = HashingUtils::HashString("ON_DEMAND");
+        static constexpr uint32_t GUARDDUTY_INITIATED_HASH = ConstExprHashingUtils::HashString("GUARDDUTY_INITIATED");
+        static constexpr uint32_t ON_DEMAND_HASH = ConstExprHashingUtils::HashString("ON_DEMAND");
 
 
         ScanType GetScanTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GUARDDUTY_INITIATED_HASH)
           {
             return ScanType::GUARDDUTY_INITIATED;

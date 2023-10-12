@@ -20,13 +20,13 @@ namespace Aws
       namespace ErrorCodeMapper
       {
 
-        static const int AccessDenied_HASH = HashingUtils::HashString("AccessDenied");
-        static const int InternalServerError_HASH = HashingUtils::HashString("InternalServerError");
+        static constexpr uint32_t AccessDenied_HASH = ConstExprHashingUtils::HashString("AccessDenied");
+        static constexpr uint32_t InternalServerError_HASH = ConstExprHashingUtils::HashString("InternalServerError");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AccessDenied_HASH)
           {
             return ErrorCode::AccessDenied;

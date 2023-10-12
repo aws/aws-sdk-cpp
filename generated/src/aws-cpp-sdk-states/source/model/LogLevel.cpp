@@ -20,15 +20,15 @@ namespace Aws
       namespace LogLevelMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int FATAL_HASH = HashingUtils::HashString("FATAL");
-        static const int OFF_HASH = HashingUtils::HashString("OFF");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t FATAL_HASH = ConstExprHashingUtils::HashString("FATAL");
+        static constexpr uint32_t OFF_HASH = ConstExprHashingUtils::HashString("OFF");
 
 
         LogLevel GetLogLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return LogLevel::ALL;

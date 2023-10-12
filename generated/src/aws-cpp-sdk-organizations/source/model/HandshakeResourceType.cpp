@@ -20,19 +20,19 @@ namespace Aws
       namespace HandshakeResourceTypeMapper
       {
 
-        static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
-        static const int ORGANIZATION_HASH = HashingUtils::HashString("ORGANIZATION");
-        static const int ORGANIZATION_FEATURE_SET_HASH = HashingUtils::HashString("ORGANIZATION_FEATURE_SET");
-        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
-        static const int MASTER_EMAIL_HASH = HashingUtils::HashString("MASTER_EMAIL");
-        static const int MASTER_NAME_HASH = HashingUtils::HashString("MASTER_NAME");
-        static const int NOTES_HASH = HashingUtils::HashString("NOTES");
-        static const int PARENT_HANDSHAKE_HASH = HashingUtils::HashString("PARENT_HANDSHAKE");
+        static constexpr uint32_t ACCOUNT_HASH = ConstExprHashingUtils::HashString("ACCOUNT");
+        static constexpr uint32_t ORGANIZATION_HASH = ConstExprHashingUtils::HashString("ORGANIZATION");
+        static constexpr uint32_t ORGANIZATION_FEATURE_SET_HASH = ConstExprHashingUtils::HashString("ORGANIZATION_FEATURE_SET");
+        static constexpr uint32_t EMAIL_HASH = ConstExprHashingUtils::HashString("EMAIL");
+        static constexpr uint32_t MASTER_EMAIL_HASH = ConstExprHashingUtils::HashString("MASTER_EMAIL");
+        static constexpr uint32_t MASTER_NAME_HASH = ConstExprHashingUtils::HashString("MASTER_NAME");
+        static constexpr uint32_t NOTES_HASH = ConstExprHashingUtils::HashString("NOTES");
+        static constexpr uint32_t PARENT_HANDSHAKE_HASH = ConstExprHashingUtils::HashString("PARENT_HANDSHAKE");
 
 
         HandshakeResourceType GetHandshakeResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCOUNT_HASH)
           {
             return HandshakeResourceType::ACCOUNT;

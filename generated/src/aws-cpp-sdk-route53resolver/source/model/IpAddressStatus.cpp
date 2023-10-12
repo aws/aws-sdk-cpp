@@ -20,23 +20,23 @@ namespace Aws
       namespace IpAddressStatusMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int FAILED_CREATION_HASH = HashingUtils::HashString("FAILED_CREATION");
-        static const int ATTACHING_HASH = HashingUtils::HashString("ATTACHING");
-        static const int ATTACHED_HASH = HashingUtils::HashString("ATTACHED");
-        static const int REMAP_DETACHING_HASH = HashingUtils::HashString("REMAP_DETACHING");
-        static const int REMAP_ATTACHING_HASH = HashingUtils::HashString("REMAP_ATTACHING");
-        static const int DETACHING_HASH = HashingUtils::HashString("DETACHING");
-        static const int FAILED_RESOURCE_GONE_HASH = HashingUtils::HashString("FAILED_RESOURCE_GONE");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int DELETE_FAILED_FAS_EXPIRED_HASH = HashingUtils::HashString("DELETE_FAILED_FAS_EXPIRED");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t FAILED_CREATION_HASH = ConstExprHashingUtils::HashString("FAILED_CREATION");
+        static constexpr uint32_t ATTACHING_HASH = ConstExprHashingUtils::HashString("ATTACHING");
+        static constexpr uint32_t ATTACHED_HASH = ConstExprHashingUtils::HashString("ATTACHED");
+        static constexpr uint32_t REMAP_DETACHING_HASH = ConstExprHashingUtils::HashString("REMAP_DETACHING");
+        static constexpr uint32_t REMAP_ATTACHING_HASH = ConstExprHashingUtils::HashString("REMAP_ATTACHING");
+        static constexpr uint32_t DETACHING_HASH = ConstExprHashingUtils::HashString("DETACHING");
+        static constexpr uint32_t FAILED_RESOURCE_GONE_HASH = ConstExprHashingUtils::HashString("FAILED_RESOURCE_GONE");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t DELETE_FAILED_FAS_EXPIRED_HASH = ConstExprHashingUtils::HashString("DELETE_FAILED_FAS_EXPIRED");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t UPDATE_FAILED_HASH = ConstExprHashingUtils::HashString("UPDATE_FAILED");
 
 
         IpAddressStatus GetIpAddressStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return IpAddressStatus::CREATING;

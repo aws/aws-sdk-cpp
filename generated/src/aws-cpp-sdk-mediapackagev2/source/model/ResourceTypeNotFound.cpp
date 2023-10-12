@@ -20,14 +20,14 @@ namespace Aws
       namespace ResourceTypeNotFoundMapper
       {
 
-        static const int CHANNEL_GROUP_HASH = HashingUtils::HashString("CHANNEL_GROUP");
-        static const int CHANNEL_HASH = HashingUtils::HashString("CHANNEL");
-        static const int ORIGIN_ENDPOINT_HASH = HashingUtils::HashString("ORIGIN_ENDPOINT");
+        static constexpr uint32_t CHANNEL_GROUP_HASH = ConstExprHashingUtils::HashString("CHANNEL_GROUP");
+        static constexpr uint32_t CHANNEL_HASH = ConstExprHashingUtils::HashString("CHANNEL");
+        static constexpr uint32_t ORIGIN_ENDPOINT_HASH = ConstExprHashingUtils::HashString("ORIGIN_ENDPOINT");
 
 
         ResourceTypeNotFound GetResourceTypeNotFoundForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CHANNEL_GROUP_HASH)
           {
             return ResourceTypeNotFound::CHANNEL_GROUP;

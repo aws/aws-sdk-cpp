@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsTargetDurationCompatibilityModeMapper
       {
 
-        static const int LEGACY_HASH = HashingUtils::HashString("LEGACY");
-        static const int SPEC_COMPLIANT_HASH = HashingUtils::HashString("SPEC_COMPLIANT");
+        static constexpr uint32_t LEGACY_HASH = ConstExprHashingUtils::HashString("LEGACY");
+        static constexpr uint32_t SPEC_COMPLIANT_HASH = ConstExprHashingUtils::HashString("SPEC_COMPLIANT");
 
 
         HlsTargetDurationCompatibilityMode GetHlsTargetDurationCompatibilityModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LEGACY_HASH)
           {
             return HlsTargetDurationCompatibilityMode::LEGACY;

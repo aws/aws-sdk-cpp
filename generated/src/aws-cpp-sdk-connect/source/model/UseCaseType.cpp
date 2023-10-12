@@ -20,13 +20,13 @@ namespace Aws
       namespace UseCaseTypeMapper
       {
 
-        static const int RULES_EVALUATION_HASH = HashingUtils::HashString("RULES_EVALUATION");
-        static const int CONNECT_CAMPAIGNS_HASH = HashingUtils::HashString("CONNECT_CAMPAIGNS");
+        static constexpr uint32_t RULES_EVALUATION_HASH = ConstExprHashingUtils::HashString("RULES_EVALUATION");
+        static constexpr uint32_t CONNECT_CAMPAIGNS_HASH = ConstExprHashingUtils::HashString("CONNECT_CAMPAIGNS");
 
 
         UseCaseType GetUseCaseTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RULES_EVALUATION_HASH)
           {
             return UseCaseType::RULES_EVALUATION;

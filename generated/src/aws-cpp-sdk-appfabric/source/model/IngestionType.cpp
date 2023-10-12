@@ -20,12 +20,12 @@ namespace Aws
       namespace IngestionTypeMapper
       {
 
-        static const int auditLog_HASH = HashingUtils::HashString("auditLog");
+        static constexpr uint32_t auditLog_HASH = ConstExprHashingUtils::HashString("auditLog");
 
 
         IngestionType GetIngestionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == auditLog_HASH)
           {
             return IngestionType::auditLog;

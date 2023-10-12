@@ -20,18 +20,18 @@ namespace Aws
       namespace OutpostResolverStatusMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int OPERATIONAL_HASH = HashingUtils::HashString("OPERATIONAL");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int ACTION_NEEDED_HASH = HashingUtils::HashString("ACTION_NEEDED");
-        static const int FAILED_CREATION_HASH = HashingUtils::HashString("FAILED_CREATION");
-        static const int FAILED_DELETION_HASH = HashingUtils::HashString("FAILED_DELETION");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t OPERATIONAL_HASH = ConstExprHashingUtils::HashString("OPERATIONAL");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t ACTION_NEEDED_HASH = ConstExprHashingUtils::HashString("ACTION_NEEDED");
+        static constexpr uint32_t FAILED_CREATION_HASH = ConstExprHashingUtils::HashString("FAILED_CREATION");
+        static constexpr uint32_t FAILED_DELETION_HASH = ConstExprHashingUtils::HashString("FAILED_DELETION");
 
 
         OutpostResolverStatus GetOutpostResolverStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return OutpostResolverStatus::CREATING;

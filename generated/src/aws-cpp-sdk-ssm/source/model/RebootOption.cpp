@@ -20,13 +20,13 @@ namespace Aws
       namespace RebootOptionMapper
       {
 
-        static const int RebootIfNeeded_HASH = HashingUtils::HashString("RebootIfNeeded");
-        static const int NoReboot_HASH = HashingUtils::HashString("NoReboot");
+        static constexpr uint32_t RebootIfNeeded_HASH = ConstExprHashingUtils::HashString("RebootIfNeeded");
+        static constexpr uint32_t NoReboot_HASH = ConstExprHashingUtils::HashString("NoReboot");
 
 
         RebootOption GetRebootOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RebootIfNeeded_HASH)
           {
             return RebootOption::RebootIfNeeded;

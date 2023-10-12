@@ -20,15 +20,15 @@ namespace Aws
       namespace EnhancedMonitoringMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int PER_BROKER_HASH = HashingUtils::HashString("PER_BROKER");
-        static const int PER_TOPIC_PER_BROKER_HASH = HashingUtils::HashString("PER_TOPIC_PER_BROKER");
-        static const int PER_TOPIC_PER_PARTITION_HASH = HashingUtils::HashString("PER_TOPIC_PER_PARTITION");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t PER_BROKER_HASH = ConstExprHashingUtils::HashString("PER_BROKER");
+        static constexpr uint32_t PER_TOPIC_PER_BROKER_HASH = ConstExprHashingUtils::HashString("PER_TOPIC_PER_BROKER");
+        static constexpr uint32_t PER_TOPIC_PER_PARTITION_HASH = ConstExprHashingUtils::HashString("PER_TOPIC_PER_PARTITION");
 
 
         EnhancedMonitoring GetEnhancedMonitoringForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return EnhancedMonitoring::DEFAULT;

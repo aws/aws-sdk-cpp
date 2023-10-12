@@ -20,13 +20,13 @@ namespace Aws
       namespace TextFormatMapper
       {
 
-        static const int PLAIN_TEXT_HASH = HashingUtils::HashString("PLAIN_TEXT");
-        static const int MARKDOWN_HASH = HashingUtils::HashString("MARKDOWN");
+        static constexpr uint32_t PLAIN_TEXT_HASH = ConstExprHashingUtils::HashString("PLAIN_TEXT");
+        static constexpr uint32_t MARKDOWN_HASH = ConstExprHashingUtils::HashString("MARKDOWN");
 
 
         TextFormat GetTextFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PLAIN_TEXT_HASH)
           {
             return TextFormat::PLAIN_TEXT;

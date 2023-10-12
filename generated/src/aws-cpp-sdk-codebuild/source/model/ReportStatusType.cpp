@@ -20,16 +20,16 @@ namespace Aws
       namespace ReportStatusTypeMapper
       {
 
-        static const int GENERATING_HASH = HashingUtils::HashString("GENERATING");
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int INCOMPLETE_HASH = HashingUtils::HashString("INCOMPLETE");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static constexpr uint32_t GENERATING_HASH = ConstExprHashingUtils::HashString("GENERATING");
+        static constexpr uint32_t SUCCEEDED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t INCOMPLETE_HASH = ConstExprHashingUtils::HashString("INCOMPLETE");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
 
 
         ReportStatusType GetReportStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GENERATING_HASH)
           {
             return ReportStatusType::GENERATING;

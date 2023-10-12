@@ -20,14 +20,14 @@ namespace Aws
       namespace NsdOnboardingStateMapper
       {
 
-        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
-        static const int ONBOARDED_HASH = HashingUtils::HashString("ONBOARDED");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t CREATED_HASH = ConstExprHashingUtils::HashString("CREATED");
+        static constexpr uint32_t ONBOARDED_HASH = ConstExprHashingUtils::HashString("ONBOARDED");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         NsdOnboardingState GetNsdOnboardingStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATED_HASH)
           {
             return NsdOnboardingState::CREATED;

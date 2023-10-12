@@ -18,13 +18,13 @@ namespace KinesisVideoWebRTCStorage
 namespace KinesisVideoWebRTCStorageErrorMapper
 {
 
-static const int CLIENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ClientLimitExceededException");
-static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
+static constexpr uint32_t CLIENT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ClientLimitExceededException");
+static constexpr uint32_t INVALID_ARGUMENT_HASH = ConstExprHashingUtils::HashString("InvalidArgumentException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CLIENT_LIMIT_EXCEEDED_HASH)
   {

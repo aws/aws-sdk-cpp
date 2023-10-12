@@ -20,13 +20,13 @@ namespace Aws
       namespace DeploymentReadyActionMapper
       {
 
-        static const int CONTINUE_DEPLOYMENT_HASH = HashingUtils::HashString("CONTINUE_DEPLOYMENT");
-        static const int STOP_DEPLOYMENT_HASH = HashingUtils::HashString("STOP_DEPLOYMENT");
+        static constexpr uint32_t CONTINUE_DEPLOYMENT_HASH = ConstExprHashingUtils::HashString("CONTINUE_DEPLOYMENT");
+        static constexpr uint32_t STOP_DEPLOYMENT_HASH = ConstExprHashingUtils::HashString("STOP_DEPLOYMENT");
 
 
         DeploymentReadyAction GetDeploymentReadyActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONTINUE_DEPLOYMENT_HASH)
           {
             return DeploymentReadyAction::CONTINUE_DEPLOYMENT;

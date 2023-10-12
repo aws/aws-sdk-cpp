@@ -20,15 +20,15 @@ namespace Aws
       namespace DatePartitionDelimiterValueMapper
       {
 
-        static const int SLASH_HASH = HashingUtils::HashString("SLASH");
-        static const int UNDERSCORE_HASH = HashingUtils::HashString("UNDERSCORE");
-        static const int DASH_HASH = HashingUtils::HashString("DASH");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t SLASH_HASH = ConstExprHashingUtils::HashString("SLASH");
+        static constexpr uint32_t UNDERSCORE_HASH = ConstExprHashingUtils::HashString("UNDERSCORE");
+        static constexpr uint32_t DASH_HASH = ConstExprHashingUtils::HashString("DASH");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         DatePartitionDelimiterValue GetDatePartitionDelimiterValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SLASH_HASH)
           {
             return DatePartitionDelimiterValue::SLASH;

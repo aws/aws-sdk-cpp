@@ -20,17 +20,17 @@ namespace Aws
       namespace VpcCidrBlockStateCodeMapper
       {
 
-        static const int associating_HASH = HashingUtils::HashString("associating");
-        static const int associated_HASH = HashingUtils::HashString("associated");
-        static const int disassociating_HASH = HashingUtils::HashString("disassociating");
-        static const int disassociated_HASH = HashingUtils::HashString("disassociated");
-        static const int failing_HASH = HashingUtils::HashString("failing");
-        static const int failed_HASH = HashingUtils::HashString("failed");
+        static constexpr uint32_t associating_HASH = ConstExprHashingUtils::HashString("associating");
+        static constexpr uint32_t associated_HASH = ConstExprHashingUtils::HashString("associated");
+        static constexpr uint32_t disassociating_HASH = ConstExprHashingUtils::HashString("disassociating");
+        static constexpr uint32_t disassociated_HASH = ConstExprHashingUtils::HashString("disassociated");
+        static constexpr uint32_t failing_HASH = ConstExprHashingUtils::HashString("failing");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
 
 
         VpcCidrBlockStateCode GetVpcCidrBlockStateCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == associating_HASH)
           {
             return VpcCidrBlockStateCode::associating;

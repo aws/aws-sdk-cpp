@@ -20,12 +20,12 @@ namespace Aws
       namespace AccessDeniedForDependencyExceptionReasonMapper
       {
 
-        static const int ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE_HASH = HashingUtils::HashString("ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE");
+        static constexpr uint32_t ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE");
 
 
         AccessDeniedForDependencyExceptionReason GetAccessDeniedForDependencyExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE_HASH)
           {
             return AccessDeniedForDependencyExceptionReason::ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE;

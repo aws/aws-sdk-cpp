@@ -20,13 +20,13 @@ namespace Aws
       namespace DeinterlacerControlMapper
       {
 
-        static const int FORCE_ALL_FRAMES_HASH = HashingUtils::HashString("FORCE_ALL_FRAMES");
-        static const int NORMAL_HASH = HashingUtils::HashString("NORMAL");
+        static constexpr uint32_t FORCE_ALL_FRAMES_HASH = ConstExprHashingUtils::HashString("FORCE_ALL_FRAMES");
+        static constexpr uint32_t NORMAL_HASH = ConstExprHashingUtils::HashString("NORMAL");
 
 
         DeinterlacerControl GetDeinterlacerControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FORCE_ALL_FRAMES_HASH)
           {
             return DeinterlacerControl::FORCE_ALL_FRAMES;

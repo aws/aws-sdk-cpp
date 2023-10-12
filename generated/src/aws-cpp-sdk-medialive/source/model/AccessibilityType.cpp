@@ -20,13 +20,13 @@ namespace Aws
       namespace AccessibilityTypeMapper
       {
 
-        static const int DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES_HASH = HashingUtils::HashString("DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES");
-        static const int IMPLEMENTS_ACCESSIBILITY_FEATURES_HASH = HashingUtils::HashString("IMPLEMENTS_ACCESSIBILITY_FEATURES");
+        static constexpr uint32_t DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES_HASH = ConstExprHashingUtils::HashString("DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES");
+        static constexpr uint32_t IMPLEMENTS_ACCESSIBILITY_FEATURES_HASH = ConstExprHashingUtils::HashString("IMPLEMENTS_ACCESSIBILITY_FEATURES");
 
 
         AccessibilityType GetAccessibilityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES_HASH)
           {
             return AccessibilityType::DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES;

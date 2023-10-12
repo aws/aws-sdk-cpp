@@ -20,12 +20,12 @@ namespace Aws
       namespace UpdateSolNetworkTypeMapper
       {
 
-        static const int MODIFY_VNF_INFORMATION_HASH = HashingUtils::HashString("MODIFY_VNF_INFORMATION");
+        static constexpr uint32_t MODIFY_VNF_INFORMATION_HASH = ConstExprHashingUtils::HashString("MODIFY_VNF_INFORMATION");
 
 
         UpdateSolNetworkType GetUpdateSolNetworkTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MODIFY_VNF_INFORMATION_HASH)
           {
             return UpdateSolNetworkType::MODIFY_VNF_INFORMATION;

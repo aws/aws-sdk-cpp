@@ -20,12 +20,12 @@ namespace Aws
       namespace TransformTypeMapper
       {
 
-        static const int FIND_MATCHES_HASH = HashingUtils::HashString("FIND_MATCHES");
+        static constexpr uint32_t FIND_MATCHES_HASH = ConstExprHashingUtils::HashString("FIND_MATCHES");
 
 
         TransformType GetTransformTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FIND_MATCHES_HASH)
           {
             return TransformType::FIND_MATCHES;

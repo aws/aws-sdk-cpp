@@ -20,14 +20,14 @@ namespace Aws
       namespace BehaviorCriteriaTypeMapper
       {
 
-        static const int STATIC__HASH = HashingUtils::HashString("STATIC");
-        static const int STATISTICAL_HASH = HashingUtils::HashString("STATISTICAL");
-        static const int MACHINE_LEARNING_HASH = HashingUtils::HashString("MACHINE_LEARNING");
+        static constexpr uint32_t STATIC__HASH = ConstExprHashingUtils::HashString("STATIC");
+        static constexpr uint32_t STATISTICAL_HASH = ConstExprHashingUtils::HashString("STATISTICAL");
+        static constexpr uint32_t MACHINE_LEARNING_HASH = ConstExprHashingUtils::HashString("MACHINE_LEARNING");
 
 
         BehaviorCriteriaType GetBehaviorCriteriaTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STATIC__HASH)
           {
             return BehaviorCriteriaType::STATIC_;

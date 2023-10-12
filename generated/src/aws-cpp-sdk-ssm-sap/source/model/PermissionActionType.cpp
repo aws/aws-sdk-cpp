@@ -20,12 +20,12 @@ namespace Aws
       namespace PermissionActionTypeMapper
       {
 
-        static const int RESTORE_HASH = HashingUtils::HashString("RESTORE");
+        static constexpr uint32_t RESTORE_HASH = ConstExprHashingUtils::HashString("RESTORE");
 
 
         PermissionActionType GetPermissionActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESTORE_HASH)
           {
             return PermissionActionType::RESTORE;

@@ -33,19 +33,19 @@ template<> AWS_XRAY_API TooManyTagsException XRayError::GetModeledError()
 namespace XRayErrorMapper
 {
 
-static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocumentException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int LOCKOUT_PREVENTION_HASH = HashingUtils::HashString("LockoutPreventionException");
-static const int POLICY_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("PolicySizeLimitExceededException");
-static const int INVALID_POLICY_REVISION_ID_HASH = HashingUtils::HashString("InvalidPolicyRevisionIdException");
-static const int RULE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("RuleLimitExceededException");
-static const int POLICY_COUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("PolicyCountLimitExceededException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t MALFORMED_POLICY_DOCUMENT_HASH = ConstExprHashingUtils::HashString("MalformedPolicyDocumentException");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t LOCKOUT_PREVENTION_HASH = ConstExprHashingUtils::HashString("LockoutPreventionException");
+static constexpr uint32_t POLICY_SIZE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("PolicySizeLimitExceededException");
+static constexpr uint32_t INVALID_POLICY_REVISION_ID_HASH = ConstExprHashingUtils::HashString("InvalidPolicyRevisionIdException");
+static constexpr uint32_t RULE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("RuleLimitExceededException");
+static constexpr uint32_t POLICY_COUNT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("PolicyCountLimitExceededException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == MALFORMED_POLICY_DOCUMENT_HASH)
   {

@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsProgramDateTimeClockMapper
       {
 
-        static const int INITIALIZE_FROM_OUTPUT_TIMECODE_HASH = HashingUtils::HashString("INITIALIZE_FROM_OUTPUT_TIMECODE");
-        static const int SYSTEM_CLOCK_HASH = HashingUtils::HashString("SYSTEM_CLOCK");
+        static constexpr uint32_t INITIALIZE_FROM_OUTPUT_TIMECODE_HASH = ConstExprHashingUtils::HashString("INITIALIZE_FROM_OUTPUT_TIMECODE");
+        static constexpr uint32_t SYSTEM_CLOCK_HASH = ConstExprHashingUtils::HashString("SYSTEM_CLOCK");
 
 
         HlsProgramDateTimeClock GetHlsProgramDateTimeClockForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INITIALIZE_FROM_OUTPUT_TIMECODE_HASH)
           {
             return HlsProgramDateTimeClock::INITIALIZE_FROM_OUTPUT_TIMECODE;

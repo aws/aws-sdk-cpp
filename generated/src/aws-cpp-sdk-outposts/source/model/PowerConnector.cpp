@@ -20,15 +20,15 @@ namespace Aws
       namespace PowerConnectorMapper
       {
 
-        static const int L6_30P_HASH = HashingUtils::HashString("L6_30P");
-        static const int IEC309_HASH = HashingUtils::HashString("IEC309");
-        static const int AH530P7W_HASH = HashingUtils::HashString("AH530P7W");
-        static const int AH532P6W_HASH = HashingUtils::HashString("AH532P6W");
+        static constexpr uint32_t L6_30P_HASH = ConstExprHashingUtils::HashString("L6_30P");
+        static constexpr uint32_t IEC309_HASH = ConstExprHashingUtils::HashString("IEC309");
+        static constexpr uint32_t AH530P7W_HASH = ConstExprHashingUtils::HashString("AH530P7W");
+        static constexpr uint32_t AH532P6W_HASH = ConstExprHashingUtils::HashString("AH532P6W");
 
 
         PowerConnector GetPowerConnectorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == L6_30P_HASH)
           {
             return PowerConnector::L6_30P;

@@ -20,21 +20,21 @@ namespace Aws
       namespace DeviceAggregatedStatusMapper
       {
 
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int AWAITING_PROVISIONING_HASH = HashingUtils::HashString("AWAITING_PROVISIONING");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int ONLINE_HASH = HashingUtils::HashString("ONLINE");
-        static const int OFFLINE_HASH = HashingUtils::HashString("OFFLINE");
-        static const int LEASE_EXPIRED_HASH = HashingUtils::HashString("LEASE_EXPIRED");
-        static const int UPDATE_NEEDED_HASH = HashingUtils::HashString("UPDATE_NEEDED");
-        static const int REBOOTING_HASH = HashingUtils::HashString("REBOOTING");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t AWAITING_PROVISIONING_HASH = ConstExprHashingUtils::HashString("AWAITING_PROVISIONING");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t ONLINE_HASH = ConstExprHashingUtils::HashString("ONLINE");
+        static constexpr uint32_t OFFLINE_HASH = ConstExprHashingUtils::HashString("OFFLINE");
+        static constexpr uint32_t LEASE_EXPIRED_HASH = ConstExprHashingUtils::HashString("LEASE_EXPIRED");
+        static constexpr uint32_t UPDATE_NEEDED_HASH = ConstExprHashingUtils::HashString("UPDATE_NEEDED");
+        static constexpr uint32_t REBOOTING_HASH = ConstExprHashingUtils::HashString("REBOOTING");
 
 
         DeviceAggregatedStatus GetDeviceAggregatedStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ERROR__HASH)
           {
             return DeviceAggregatedStatus::ERROR_;

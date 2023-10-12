@@ -20,14 +20,14 @@ namespace Aws
       namespace RecommendationTypeMapper
       {
 
-        static const int INFRA_ONLY_HASH = HashingUtils::HashString("INFRA_ONLY");
-        static const int WORKLOAD_ONLY_HASH = HashingUtils::HashString("WORKLOAD_ONLY");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t INFRA_ONLY_HASH = ConstExprHashingUtils::HashString("INFRA_ONLY");
+        static constexpr uint32_t WORKLOAD_ONLY_HASH = ConstExprHashingUtils::HashString("WORKLOAD_ONLY");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         RecommendationType GetRecommendationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INFRA_ONLY_HASH)
           {
             return RecommendationType::INFRA_ONLY;

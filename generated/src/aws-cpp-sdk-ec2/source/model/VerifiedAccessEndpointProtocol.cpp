@@ -20,13 +20,13 @@ namespace Aws
       namespace VerifiedAccessEndpointProtocolMapper
       {
 
-        static const int http_HASH = HashingUtils::HashString("http");
-        static const int https_HASH = HashingUtils::HashString("https");
+        static constexpr uint32_t http_HASH = ConstExprHashingUtils::HashString("http");
+        static constexpr uint32_t https_HASH = ConstExprHashingUtils::HashString("https");
 
 
         VerifiedAccessEndpointProtocol GetVerifiedAccessEndpointProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == http_HASH)
           {
             return VerifiedAccessEndpointProtocol::http;

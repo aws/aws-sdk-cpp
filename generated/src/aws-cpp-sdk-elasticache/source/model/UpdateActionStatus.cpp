@@ -20,20 +20,20 @@ namespace Aws
       namespace UpdateActionStatusMapper
       {
 
-        static const int not_applied_HASH = HashingUtils::HashString("not-applied");
-        static const int waiting_to_start_HASH = HashingUtils::HashString("waiting-to-start");
-        static const int in_progress_HASH = HashingUtils::HashString("in-progress");
-        static const int stopping_HASH = HashingUtils::HashString("stopping");
-        static const int stopped_HASH = HashingUtils::HashString("stopped");
-        static const int complete_HASH = HashingUtils::HashString("complete");
-        static const int scheduling_HASH = HashingUtils::HashString("scheduling");
-        static const int scheduled_HASH = HashingUtils::HashString("scheduled");
-        static const int not_applicable_HASH = HashingUtils::HashString("not-applicable");
+        static constexpr uint32_t not_applied_HASH = ConstExprHashingUtils::HashString("not-applied");
+        static constexpr uint32_t waiting_to_start_HASH = ConstExprHashingUtils::HashString("waiting-to-start");
+        static constexpr uint32_t in_progress_HASH = ConstExprHashingUtils::HashString("in-progress");
+        static constexpr uint32_t stopping_HASH = ConstExprHashingUtils::HashString("stopping");
+        static constexpr uint32_t stopped_HASH = ConstExprHashingUtils::HashString("stopped");
+        static constexpr uint32_t complete_HASH = ConstExprHashingUtils::HashString("complete");
+        static constexpr uint32_t scheduling_HASH = ConstExprHashingUtils::HashString("scheduling");
+        static constexpr uint32_t scheduled_HASH = ConstExprHashingUtils::HashString("scheduled");
+        static constexpr uint32_t not_applicable_HASH = ConstExprHashingUtils::HashString("not-applicable");
 
 
         UpdateActionStatus GetUpdateActionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == not_applied_HASH)
           {
             return UpdateActionStatus::not_applied;

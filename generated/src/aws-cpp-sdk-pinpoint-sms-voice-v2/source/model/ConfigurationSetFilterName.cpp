@@ -20,15 +20,15 @@ namespace Aws
       namespace ConfigurationSetFilterNameMapper
       {
 
-        static const int event_destination_name_HASH = HashingUtils::HashString("event-destination-name");
-        static const int matching_event_types_HASH = HashingUtils::HashString("matching-event-types");
-        static const int default_message_type_HASH = HashingUtils::HashString("default-message-type");
-        static const int default_sender_id_HASH = HashingUtils::HashString("default-sender-id");
+        static constexpr uint32_t event_destination_name_HASH = ConstExprHashingUtils::HashString("event-destination-name");
+        static constexpr uint32_t matching_event_types_HASH = ConstExprHashingUtils::HashString("matching-event-types");
+        static constexpr uint32_t default_message_type_HASH = ConstExprHashingUtils::HashString("default-message-type");
+        static constexpr uint32_t default_sender_id_HASH = ConstExprHashingUtils::HashString("default-sender-id");
 
 
         ConfigurationSetFilterName GetConfigurationSetFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == event_destination_name_HASH)
           {
             return ConfigurationSetFilterName::event_destination_name;

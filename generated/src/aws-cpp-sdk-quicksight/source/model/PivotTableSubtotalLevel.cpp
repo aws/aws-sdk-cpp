@@ -20,14 +20,14 @@ namespace Aws
       namespace PivotTableSubtotalLevelMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
-        static const int LAST_HASH = HashingUtils::HashString("LAST");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t LAST_HASH = ConstExprHashingUtils::HashString("LAST");
 
 
         PivotTableSubtotalLevel GetPivotTableSubtotalLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return PivotTableSubtotalLevel::ALL;

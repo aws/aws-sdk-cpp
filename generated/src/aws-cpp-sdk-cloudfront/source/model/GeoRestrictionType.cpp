@@ -20,14 +20,14 @@ namespace Aws
       namespace GeoRestrictionTypeMapper
       {
 
-        static const int blacklist_HASH = HashingUtils::HashString("blacklist");
-        static const int whitelist_HASH = HashingUtils::HashString("whitelist");
-        static const int none_HASH = HashingUtils::HashString("none");
+        static constexpr uint32_t blacklist_HASH = ConstExprHashingUtils::HashString("blacklist");
+        static constexpr uint32_t whitelist_HASH = ConstExprHashingUtils::HashString("whitelist");
+        static constexpr uint32_t none_HASH = ConstExprHashingUtils::HashString("none");
 
 
         GeoRestrictionType GetGeoRestrictionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == blacklist_HASH)
           {
             return GeoRestrictionType::blacklist;

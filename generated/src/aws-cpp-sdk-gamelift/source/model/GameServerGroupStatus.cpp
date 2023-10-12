@@ -20,18 +20,18 @@ namespace Aws
       namespace GameServerGroupStatusMapper
       {
 
-        static const int NEW__HASH = HashingUtils::HashString("NEW");
-        static const int ACTIVATING_HASH = HashingUtils::HashString("ACTIVATING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DELETE_SCHEDULED_HASH = HashingUtils::HashString("DELETE_SCHEDULED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t NEW__HASH = ConstExprHashingUtils::HashString("NEW");
+        static constexpr uint32_t ACTIVATING_HASH = ConstExprHashingUtils::HashString("ACTIVATING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t DELETE_SCHEDULED_HASH = ConstExprHashingUtils::HashString("DELETE_SCHEDULED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         GameServerGroupStatus GetGameServerGroupStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NEW__HASH)
           {
             return GameServerGroupStatus::NEW_;

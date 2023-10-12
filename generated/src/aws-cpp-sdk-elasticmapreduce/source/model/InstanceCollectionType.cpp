@@ -20,13 +20,13 @@ namespace Aws
       namespace InstanceCollectionTypeMapper
       {
 
-        static const int INSTANCE_FLEET_HASH = HashingUtils::HashString("INSTANCE_FLEET");
-        static const int INSTANCE_GROUP_HASH = HashingUtils::HashString("INSTANCE_GROUP");
+        static constexpr uint32_t INSTANCE_FLEET_HASH = ConstExprHashingUtils::HashString("INSTANCE_FLEET");
+        static constexpr uint32_t INSTANCE_GROUP_HASH = ConstExprHashingUtils::HashString("INSTANCE_GROUP");
 
 
         InstanceCollectionType GetInstanceCollectionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSTANCE_FLEET_HASH)
           {
             return InstanceCollectionType::INSTANCE_FLEET;

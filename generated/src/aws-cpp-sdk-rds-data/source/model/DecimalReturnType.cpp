@@ -20,13 +20,13 @@ namespace Aws
       namespace DecimalReturnTypeMapper
       {
 
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
-        static const int DOUBLE_OR_LONG_HASH = HashingUtils::HashString("DOUBLE_OR_LONG");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
+        static constexpr uint32_t DOUBLE_OR_LONG_HASH = ConstExprHashingUtils::HashString("DOUBLE_OR_LONG");
 
 
         DecimalReturnType GetDecimalReturnTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STRING_HASH)
           {
             return DecimalReturnType::STRING;

@@ -20,13 +20,13 @@ namespace Aws
       namespace FulfillmentActivityTypeMapper
       {
 
-        static const int ReturnIntent_HASH = HashingUtils::HashString("ReturnIntent");
-        static const int CodeHook_HASH = HashingUtils::HashString("CodeHook");
+        static constexpr uint32_t ReturnIntent_HASH = ConstExprHashingUtils::HashString("ReturnIntent");
+        static constexpr uint32_t CodeHook_HASH = ConstExprHashingUtils::HashString("CodeHook");
 
 
         FulfillmentActivityType GetFulfillmentActivityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ReturnIntent_HASH)
           {
             return FulfillmentActivityType::ReturnIntent;

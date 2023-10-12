@@ -20,15 +20,15 @@ namespace Aws
       namespace AuthenticationMethodOptionMapper
       {
 
-        static const int IAM_AND_QUICKSIGHT_HASH = HashingUtils::HashString("IAM_AND_QUICKSIGHT");
-        static const int IAM_ONLY_HASH = HashingUtils::HashString("IAM_ONLY");
-        static const int ACTIVE_DIRECTORY_HASH = HashingUtils::HashString("ACTIVE_DIRECTORY");
-        static const int IAM_IDENTITY_CENTER_HASH = HashingUtils::HashString("IAM_IDENTITY_CENTER");
+        static constexpr uint32_t IAM_AND_QUICKSIGHT_HASH = ConstExprHashingUtils::HashString("IAM_AND_QUICKSIGHT");
+        static constexpr uint32_t IAM_ONLY_HASH = ConstExprHashingUtils::HashString("IAM_ONLY");
+        static constexpr uint32_t ACTIVE_DIRECTORY_HASH = ConstExprHashingUtils::HashString("ACTIVE_DIRECTORY");
+        static constexpr uint32_t IAM_IDENTITY_CENTER_HASH = ConstExprHashingUtils::HashString("IAM_IDENTITY_CENTER");
 
 
         AuthenticationMethodOption GetAuthenticationMethodOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IAM_AND_QUICKSIGHT_HASH)
           {
             return AuthenticationMethodOption::IAM_AND_QUICKSIGHT;

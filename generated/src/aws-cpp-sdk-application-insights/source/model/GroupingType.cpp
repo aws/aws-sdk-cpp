@@ -20,12 +20,12 @@ namespace Aws
       namespace GroupingTypeMapper
       {
 
-        static const int ACCOUNT_BASED_HASH = HashingUtils::HashString("ACCOUNT_BASED");
+        static constexpr uint32_t ACCOUNT_BASED_HASH = ConstExprHashingUtils::HashString("ACCOUNT_BASED");
 
 
         GroupingType GetGroupingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCOUNT_BASED_HASH)
           {
             return GroupingType::ACCOUNT_BASED;

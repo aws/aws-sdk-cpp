@@ -20,13 +20,13 @@ namespace Aws
       namespace IpAddressTypeMapper
       {
 
-        static const int dualstack_HASH = HashingUtils::HashString("dualstack");
-        static const int ipv4_HASH = HashingUtils::HashString("ipv4");
+        static constexpr uint32_t dualstack_HASH = ConstExprHashingUtils::HashString("dualstack");
+        static constexpr uint32_t ipv4_HASH = ConstExprHashingUtils::HashString("ipv4");
 
 
         IpAddressType GetIpAddressTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == dualstack_HASH)
           {
             return IpAddressType::dualstack;

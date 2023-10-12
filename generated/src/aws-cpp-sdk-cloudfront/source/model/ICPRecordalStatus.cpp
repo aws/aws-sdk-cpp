@@ -20,14 +20,14 @@ namespace Aws
       namespace ICPRecordalStatusMapper
       {
 
-        static const int APPROVED_HASH = HashingUtils::HashString("APPROVED");
-        static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static constexpr uint32_t APPROVED_HASH = ConstExprHashingUtils::HashString("APPROVED");
+        static constexpr uint32_t SUSPENDED_HASH = ConstExprHashingUtils::HashString("SUSPENDED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
 
 
         ICPRecordalStatus GetICPRecordalStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APPROVED_HASH)
           {
             return ICPRecordalStatus::APPROVED;

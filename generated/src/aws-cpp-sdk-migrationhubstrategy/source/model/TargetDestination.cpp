@@ -20,25 +20,25 @@ namespace Aws
       namespace TargetDestinationMapper
       {
 
-        static const int None_specified_HASH = HashingUtils::HashString("None specified");
-        static const int AWS_Elastic_BeanStalk_HASH = HashingUtils::HashString("AWS Elastic BeanStalk");
-        static const int AWS_Fargate_HASH = HashingUtils::HashString("AWS Fargate");
-        static const int Amazon_Elastic_Cloud_Compute_EC2_HASH = HashingUtils::HashString("Amazon Elastic Cloud Compute (EC2)");
-        static const int Amazon_Elastic_Container_Service_ECS_HASH = HashingUtils::HashString("Amazon Elastic Container Service (ECS)");
-        static const int Amazon_Elastic_Kubernetes_Service_EKS_HASH = HashingUtils::HashString("Amazon Elastic Kubernetes Service (EKS)");
-        static const int Aurora_MySQL_HASH = HashingUtils::HashString("Aurora MySQL");
-        static const int Aurora_PostgreSQL_HASH = HashingUtils::HashString("Aurora PostgreSQL");
-        static const int Amazon_Relational_Database_Service_on_MySQL_HASH = HashingUtils::HashString("Amazon Relational Database Service on MySQL");
-        static const int Amazon_Relational_Database_Service_on_PostgreSQL_HASH = HashingUtils::HashString("Amazon Relational Database Service on PostgreSQL");
-        static const int Amazon_DocumentDB_HASH = HashingUtils::HashString("Amazon DocumentDB");
-        static const int Amazon_DynamoDB_HASH = HashingUtils::HashString("Amazon DynamoDB");
-        static const int Amazon_Relational_Database_Service_HASH = HashingUtils::HashString("Amazon Relational Database Service");
-        static const int Babelfish_for_Aurora_PostgreSQL_HASH = HashingUtils::HashString("Babelfish for Aurora PostgreSQL");
+        static constexpr uint32_t None_specified_HASH = ConstExprHashingUtils::HashString("None specified");
+        static constexpr uint32_t AWS_Elastic_BeanStalk_HASH = ConstExprHashingUtils::HashString("AWS Elastic BeanStalk");
+        static constexpr uint32_t AWS_Fargate_HASH = ConstExprHashingUtils::HashString("AWS Fargate");
+        static constexpr uint32_t Amazon_Elastic_Cloud_Compute_EC2_HASH = ConstExprHashingUtils::HashString("Amazon Elastic Cloud Compute (EC2)");
+        static constexpr uint32_t Amazon_Elastic_Container_Service_ECS_HASH = ConstExprHashingUtils::HashString("Amazon Elastic Container Service (ECS)");
+        static constexpr uint32_t Amazon_Elastic_Kubernetes_Service_EKS_HASH = ConstExprHashingUtils::HashString("Amazon Elastic Kubernetes Service (EKS)");
+        static constexpr uint32_t Aurora_MySQL_HASH = ConstExprHashingUtils::HashString("Aurora MySQL");
+        static constexpr uint32_t Aurora_PostgreSQL_HASH = ConstExprHashingUtils::HashString("Aurora PostgreSQL");
+        static constexpr uint32_t Amazon_Relational_Database_Service_on_MySQL_HASH = ConstExprHashingUtils::HashString("Amazon Relational Database Service on MySQL");
+        static constexpr uint32_t Amazon_Relational_Database_Service_on_PostgreSQL_HASH = ConstExprHashingUtils::HashString("Amazon Relational Database Service on PostgreSQL");
+        static constexpr uint32_t Amazon_DocumentDB_HASH = ConstExprHashingUtils::HashString("Amazon DocumentDB");
+        static constexpr uint32_t Amazon_DynamoDB_HASH = ConstExprHashingUtils::HashString("Amazon DynamoDB");
+        static constexpr uint32_t Amazon_Relational_Database_Service_HASH = ConstExprHashingUtils::HashString("Amazon Relational Database Service");
+        static constexpr uint32_t Babelfish_for_Aurora_PostgreSQL_HASH = ConstExprHashingUtils::HashString("Babelfish for Aurora PostgreSQL");
 
 
         TargetDestination GetTargetDestinationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == None_specified_HASH)
           {
             return TargetDestination::None_specified;

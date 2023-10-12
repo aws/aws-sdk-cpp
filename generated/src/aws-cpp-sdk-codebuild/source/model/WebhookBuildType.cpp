@@ -20,13 +20,13 @@ namespace Aws
       namespace WebhookBuildTypeMapper
       {
 
-        static const int BUILD_HASH = HashingUtils::HashString("BUILD");
-        static const int BUILD_BATCH_HASH = HashingUtils::HashString("BUILD_BATCH");
+        static constexpr uint32_t BUILD_HASH = ConstExprHashingUtils::HashString("BUILD");
+        static constexpr uint32_t BUILD_BATCH_HASH = ConstExprHashingUtils::HashString("BUILD_BATCH");
 
 
         WebhookBuildType GetWebhookBuildTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BUILD_HASH)
           {
             return WebhookBuildType::BUILD;

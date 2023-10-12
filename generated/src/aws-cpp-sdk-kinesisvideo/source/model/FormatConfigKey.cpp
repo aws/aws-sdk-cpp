@@ -20,12 +20,12 @@ namespace Aws
       namespace FormatConfigKeyMapper
       {
 
-        static const int JPEGQuality_HASH = HashingUtils::HashString("JPEGQuality");
+        static constexpr uint32_t JPEGQuality_HASH = ConstExprHashingUtils::HashString("JPEGQuality");
 
 
         FormatConfigKey GetFormatConfigKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JPEGQuality_HASH)
           {
             return FormatConfigKey::JPEGQuality;

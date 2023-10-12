@@ -20,28 +20,28 @@ namespace Aws
       namespace AssetBundleExportJobDataSourcePropertyToOverrideMapper
       {
 
-        static const int Name_HASH = HashingUtils::HashString("Name");
-        static const int DisableSsl_HASH = HashingUtils::HashString("DisableSsl");
-        static const int SecretArn_HASH = HashingUtils::HashString("SecretArn");
-        static const int Username_HASH = HashingUtils::HashString("Username");
-        static const int Password_HASH = HashingUtils::HashString("Password");
-        static const int Domain_HASH = HashingUtils::HashString("Domain");
-        static const int WorkGroup_HASH = HashingUtils::HashString("WorkGroup");
-        static const int Host_HASH = HashingUtils::HashString("Host");
-        static const int Port_HASH = HashingUtils::HashString("Port");
-        static const int Database_HASH = HashingUtils::HashString("Database");
-        static const int DataSetName_HASH = HashingUtils::HashString("DataSetName");
-        static const int Catalog_HASH = HashingUtils::HashString("Catalog");
-        static const int InstanceId_HASH = HashingUtils::HashString("InstanceId");
-        static const int ClusterId_HASH = HashingUtils::HashString("ClusterId");
-        static const int ManifestFileLocation_HASH = HashingUtils::HashString("ManifestFileLocation");
-        static const int Warehouse_HASH = HashingUtils::HashString("Warehouse");
-        static const int RoleArn_HASH = HashingUtils::HashString("RoleArn");
+        static constexpr uint32_t Name_HASH = ConstExprHashingUtils::HashString("Name");
+        static constexpr uint32_t DisableSsl_HASH = ConstExprHashingUtils::HashString("DisableSsl");
+        static constexpr uint32_t SecretArn_HASH = ConstExprHashingUtils::HashString("SecretArn");
+        static constexpr uint32_t Username_HASH = ConstExprHashingUtils::HashString("Username");
+        static constexpr uint32_t Password_HASH = ConstExprHashingUtils::HashString("Password");
+        static constexpr uint32_t Domain_HASH = ConstExprHashingUtils::HashString("Domain");
+        static constexpr uint32_t WorkGroup_HASH = ConstExprHashingUtils::HashString("WorkGroup");
+        static constexpr uint32_t Host_HASH = ConstExprHashingUtils::HashString("Host");
+        static constexpr uint32_t Port_HASH = ConstExprHashingUtils::HashString("Port");
+        static constexpr uint32_t Database_HASH = ConstExprHashingUtils::HashString("Database");
+        static constexpr uint32_t DataSetName_HASH = ConstExprHashingUtils::HashString("DataSetName");
+        static constexpr uint32_t Catalog_HASH = ConstExprHashingUtils::HashString("Catalog");
+        static constexpr uint32_t InstanceId_HASH = ConstExprHashingUtils::HashString("InstanceId");
+        static constexpr uint32_t ClusterId_HASH = ConstExprHashingUtils::HashString("ClusterId");
+        static constexpr uint32_t ManifestFileLocation_HASH = ConstExprHashingUtils::HashString("ManifestFileLocation");
+        static constexpr uint32_t Warehouse_HASH = ConstExprHashingUtils::HashString("Warehouse");
+        static constexpr uint32_t RoleArn_HASH = ConstExprHashingUtils::HashString("RoleArn");
 
 
         AssetBundleExportJobDataSourcePropertyToOverride GetAssetBundleExportJobDataSourcePropertyToOverrideForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Name_HASH)
           {
             return AssetBundleExportJobDataSourcePropertyToOverride::Name;

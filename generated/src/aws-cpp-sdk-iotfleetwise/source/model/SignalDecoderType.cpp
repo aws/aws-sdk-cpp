@@ -20,13 +20,13 @@ namespace Aws
       namespace SignalDecoderTypeMapper
       {
 
-        static const int CAN_SIGNAL_HASH = HashingUtils::HashString("CAN_SIGNAL");
-        static const int OBD_SIGNAL_HASH = HashingUtils::HashString("OBD_SIGNAL");
+        static constexpr uint32_t CAN_SIGNAL_HASH = ConstExprHashingUtils::HashString("CAN_SIGNAL");
+        static constexpr uint32_t OBD_SIGNAL_HASH = ConstExprHashingUtils::HashString("OBD_SIGNAL");
 
 
         SignalDecoderType GetSignalDecoderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CAN_SIGNAL_HASH)
           {
             return SignalDecoderType::CAN_SIGNAL;

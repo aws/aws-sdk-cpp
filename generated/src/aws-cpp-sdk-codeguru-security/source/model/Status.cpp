@@ -20,14 +20,14 @@ namespace Aws
       namespace StatusMapper
       {
 
-        static const int Closed_HASH = HashingUtils::HashString("Closed");
-        static const int Open_HASH = HashingUtils::HashString("Open");
-        static const int All_HASH = HashingUtils::HashString("All");
+        static constexpr uint32_t Closed_HASH = ConstExprHashingUtils::HashString("Closed");
+        static constexpr uint32_t Open_HASH = ConstExprHashingUtils::HashString("Open");
+        static constexpr uint32_t All_HASH = ConstExprHashingUtils::HashString("All");
 
 
         Status GetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Closed_HASH)
           {
             return Status::Closed;

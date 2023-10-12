@@ -20,13 +20,13 @@ namespace Aws
       namespace RegionTypeMapper
       {
 
-        static const int Primary_HASH = HashingUtils::HashString("Primary");
-        static const int Additional_HASH = HashingUtils::HashString("Additional");
+        static constexpr uint32_t Primary_HASH = ConstExprHashingUtils::HashString("Primary");
+        static constexpr uint32_t Additional_HASH = ConstExprHashingUtils::HashString("Additional");
 
 
         RegionType GetRegionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Primary_HASH)
           {
             return RegionType::Primary;

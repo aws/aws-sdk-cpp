@@ -20,14 +20,14 @@ namespace Aws
       namespace RepositoryCloneMethodMapper
       {
 
-        static const int SSH_HASH = HashingUtils::HashString("SSH");
-        static const int TOKEN_HASH = HashingUtils::HashString("TOKEN");
-        static const int SIGV4_HASH = HashingUtils::HashString("SIGV4");
+        static constexpr uint32_t SSH_HASH = ConstExprHashingUtils::HashString("SSH");
+        static constexpr uint32_t TOKEN_HASH = ConstExprHashingUtils::HashString("TOKEN");
+        static constexpr uint32_t SIGV4_HASH = ConstExprHashingUtils::HashString("SIGV4");
 
 
         RepositoryCloneMethod GetRepositoryCloneMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SSH_HASH)
           {
             return RepositoryCloneMethod::SSH;

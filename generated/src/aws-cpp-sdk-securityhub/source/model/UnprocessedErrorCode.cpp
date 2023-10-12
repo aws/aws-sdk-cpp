@@ -20,15 +20,15 @@ namespace Aws
       namespace UnprocessedErrorCodeMapper
       {
 
-        static const int INVALID_INPUT_HASH = HashingUtils::HashString("INVALID_INPUT");
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
-        static const int NOT_FOUND_HASH = HashingUtils::HashString("NOT_FOUND");
-        static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LIMIT_EXCEEDED");
+        static constexpr uint32_t INVALID_INPUT_HASH = ConstExprHashingUtils::HashString("INVALID_INPUT");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NOT_FOUND");
+        static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LIMIT_EXCEEDED");
 
 
         UnprocessedErrorCode GetUnprocessedErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVALID_INPUT_HASH)
           {
             return UnprocessedErrorCode::INVALID_INPUT;

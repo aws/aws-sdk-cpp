@@ -20,14 +20,14 @@ namespace Aws
       namespace ApplicationRevisionSortByMapper
       {
 
-        static const int registerTime_HASH = HashingUtils::HashString("registerTime");
-        static const int firstUsedTime_HASH = HashingUtils::HashString("firstUsedTime");
-        static const int lastUsedTime_HASH = HashingUtils::HashString("lastUsedTime");
+        static constexpr uint32_t registerTime_HASH = ConstExprHashingUtils::HashString("registerTime");
+        static constexpr uint32_t firstUsedTime_HASH = ConstExprHashingUtils::HashString("firstUsedTime");
+        static constexpr uint32_t lastUsedTime_HASH = ConstExprHashingUtils::HashString("lastUsedTime");
 
 
         ApplicationRevisionSortBy GetApplicationRevisionSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == registerTime_HASH)
           {
             return ApplicationRevisionSortBy::registerTime;

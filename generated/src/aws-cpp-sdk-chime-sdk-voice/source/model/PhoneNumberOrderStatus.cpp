@@ -20,22 +20,22 @@ namespace Aws
       namespace PhoneNumberOrderStatusMapper
       {
 
-        static const int Processing_HASH = HashingUtils::HashString("Processing");
-        static const int Successful_HASH = HashingUtils::HashString("Successful");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Partial_HASH = HashingUtils::HashString("Partial");
-        static const int PendingDocuments_HASH = HashingUtils::HashString("PendingDocuments");
-        static const int Submitted_HASH = HashingUtils::HashString("Submitted");
-        static const int FOC_HASH = HashingUtils::HashString("FOC");
-        static const int ChangeRequested_HASH = HashingUtils::HashString("ChangeRequested");
-        static const int Exception_HASH = HashingUtils::HashString("Exception");
-        static const int CancelRequested_HASH = HashingUtils::HashString("CancelRequested");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
+        static constexpr uint32_t Processing_HASH = ConstExprHashingUtils::HashString("Processing");
+        static constexpr uint32_t Successful_HASH = ConstExprHashingUtils::HashString("Successful");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Partial_HASH = ConstExprHashingUtils::HashString("Partial");
+        static constexpr uint32_t PendingDocuments_HASH = ConstExprHashingUtils::HashString("PendingDocuments");
+        static constexpr uint32_t Submitted_HASH = ConstExprHashingUtils::HashString("Submitted");
+        static constexpr uint32_t FOC_HASH = ConstExprHashingUtils::HashString("FOC");
+        static constexpr uint32_t ChangeRequested_HASH = ConstExprHashingUtils::HashString("ChangeRequested");
+        static constexpr uint32_t Exception_HASH = ConstExprHashingUtils::HashString("Exception");
+        static constexpr uint32_t CancelRequested_HASH = ConstExprHashingUtils::HashString("CancelRequested");
+        static constexpr uint32_t Cancelled_HASH = ConstExprHashingUtils::HashString("Cancelled");
 
 
         PhoneNumberOrderStatus GetPhoneNumberOrderStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Processing_HASH)
           {
             return PhoneNumberOrderStatus::Processing;

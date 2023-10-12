@@ -20,16 +20,16 @@ namespace Aws
       namespace IdentifierTypeMapper
       {
 
-        static const int PartnerAccountId_HASH = HashingUtils::HashString("PartnerAccountId");
-        static const int DevEui_HASH = HashingUtils::HashString("DevEui");
-        static const int GatewayEui_HASH = HashingUtils::HashString("GatewayEui");
-        static const int WirelessDeviceId_HASH = HashingUtils::HashString("WirelessDeviceId");
-        static const int WirelessGatewayId_HASH = HashingUtils::HashString("WirelessGatewayId");
+        static constexpr uint32_t PartnerAccountId_HASH = ConstExprHashingUtils::HashString("PartnerAccountId");
+        static constexpr uint32_t DevEui_HASH = ConstExprHashingUtils::HashString("DevEui");
+        static constexpr uint32_t GatewayEui_HASH = ConstExprHashingUtils::HashString("GatewayEui");
+        static constexpr uint32_t WirelessDeviceId_HASH = ConstExprHashingUtils::HashString("WirelessDeviceId");
+        static constexpr uint32_t WirelessGatewayId_HASH = ConstExprHashingUtils::HashString("WirelessGatewayId");
 
 
         IdentifierType GetIdentifierTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PartnerAccountId_HASH)
           {
             return IdentifierType::PartnerAccountId;

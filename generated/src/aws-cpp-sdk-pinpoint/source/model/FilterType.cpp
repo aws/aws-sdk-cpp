@@ -20,13 +20,13 @@ namespace Aws
       namespace FilterTypeMapper
       {
 
-        static const int SYSTEM_HASH = HashingUtils::HashString("SYSTEM");
-        static const int ENDPOINT_HASH = HashingUtils::HashString("ENDPOINT");
+        static constexpr uint32_t SYSTEM_HASH = ConstExprHashingUtils::HashString("SYSTEM");
+        static constexpr uint32_t ENDPOINT_HASH = ConstExprHashingUtils::HashString("ENDPOINT");
 
 
         FilterType GetFilterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SYSTEM_HASH)
           {
             return FilterType::SYSTEM;

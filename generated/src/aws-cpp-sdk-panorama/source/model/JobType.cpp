@@ -20,13 +20,13 @@ namespace Aws
       namespace JobTypeMapper
       {
 
-        static const int OTA_HASH = HashingUtils::HashString("OTA");
-        static const int REBOOT_HASH = HashingUtils::HashString("REBOOT");
+        static constexpr uint32_t OTA_HASH = ConstExprHashingUtils::HashString("OTA");
+        static constexpr uint32_t REBOOT_HASH = ConstExprHashingUtils::HashString("REBOOT");
 
 
         JobType GetJobTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OTA_HASH)
           {
             return JobType::OTA;

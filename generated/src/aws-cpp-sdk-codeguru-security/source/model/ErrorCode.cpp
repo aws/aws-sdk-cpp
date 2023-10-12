@@ -20,16 +20,16 @@ namespace Aws
       namespace ErrorCodeMapper
       {
 
-        static const int DUPLICATE_IDENTIFIER_HASH = HashingUtils::HashString("DUPLICATE_IDENTIFIER");
-        static const int ITEM_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ITEM_DOES_NOT_EXIST");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int INVALID_FINDING_ID_HASH = HashingUtils::HashString("INVALID_FINDING_ID");
-        static const int INVALID_SCAN_NAME_HASH = HashingUtils::HashString("INVALID_SCAN_NAME");
+        static constexpr uint32_t DUPLICATE_IDENTIFIER_HASH = ConstExprHashingUtils::HashString("DUPLICATE_IDENTIFIER");
+        static constexpr uint32_t ITEM_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("ITEM_DOES_NOT_EXIST");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t INVALID_FINDING_ID_HASH = ConstExprHashingUtils::HashString("INVALID_FINDING_ID");
+        static constexpr uint32_t INVALID_SCAN_NAME_HASH = ConstExprHashingUtils::HashString("INVALID_SCAN_NAME");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DUPLICATE_IDENTIFIER_HASH)
           {
             return ErrorCode::DUPLICATE_IDENTIFIER;

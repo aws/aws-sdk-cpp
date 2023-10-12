@@ -20,13 +20,13 @@ namespace Aws
       namespace SourceTypeMapper
       {
 
-        static const int SALESFORCE_HASH = HashingUtils::HashString("SALESFORCE");
-        static const int ZENDESK_HASH = HashingUtils::HashString("ZENDESK");
+        static constexpr uint32_t SALESFORCE_HASH = ConstExprHashingUtils::HashString("SALESFORCE");
+        static constexpr uint32_t ZENDESK_HASH = ConstExprHashingUtils::HashString("ZENDESK");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SALESFORCE_HASH)
           {
             return SourceType::SALESFORCE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace UsageLimitLimitTypeMapper
       {
 
-        static const int time_HASH = HashingUtils::HashString("time");
-        static const int data_scanned_HASH = HashingUtils::HashString("data-scanned");
+        static constexpr uint32_t time_HASH = ConstExprHashingUtils::HashString("time");
+        static constexpr uint32_t data_scanned_HASH = ConstExprHashingUtils::HashString("data-scanned");
 
 
         UsageLimitLimitType GetUsageLimitLimitTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == time_HASH)
           {
             return UsageLimitLimitType::time;

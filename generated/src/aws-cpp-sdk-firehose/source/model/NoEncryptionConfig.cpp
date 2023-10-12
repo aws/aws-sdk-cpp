@@ -20,12 +20,12 @@ namespace Aws
       namespace NoEncryptionConfigMapper
       {
 
-        static const int NoEncryption_HASH = HashingUtils::HashString("NoEncryption");
+        static constexpr uint32_t NoEncryption_HASH = ConstExprHashingUtils::HashString("NoEncryption");
 
 
         NoEncryptionConfig GetNoEncryptionConfigForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NoEncryption_HASH)
           {
             return NoEncryptionConfig::NoEncryption;

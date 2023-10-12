@@ -20,14 +20,14 @@ namespace Aws
       namespace ExtensionStatusMapper
       {
 
-        static const int EXTENDED_HASH = HashingUtils::HashString("EXTENDED");
-        static const int EXTENSION_ERROR_HASH = HashingUtils::HashString("EXTENSION_ERROR");
-        static const int NOT_EXTENDED_HASH = HashingUtils::HashString("NOT_EXTENDED");
+        static constexpr uint32_t EXTENDED_HASH = ConstExprHashingUtils::HashString("EXTENDED");
+        static constexpr uint32_t EXTENSION_ERROR_HASH = ConstExprHashingUtils::HashString("EXTENSION_ERROR");
+        static constexpr uint32_t NOT_EXTENDED_HASH = ConstExprHashingUtils::HashString("NOT_EXTENDED");
 
 
         ExtensionStatus GetExtensionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXTENDED_HASH)
           {
             return ExtensionStatus::EXTENDED;

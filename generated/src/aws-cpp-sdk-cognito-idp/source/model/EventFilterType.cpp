@@ -20,14 +20,14 @@ namespace Aws
       namespace EventFilterTypeMapper
       {
 
-        static const int SIGN_IN_HASH = HashingUtils::HashString("SIGN_IN");
-        static const int PASSWORD_CHANGE_HASH = HashingUtils::HashString("PASSWORD_CHANGE");
-        static const int SIGN_UP_HASH = HashingUtils::HashString("SIGN_UP");
+        static constexpr uint32_t SIGN_IN_HASH = ConstExprHashingUtils::HashString("SIGN_IN");
+        static constexpr uint32_t PASSWORD_CHANGE_HASH = ConstExprHashingUtils::HashString("PASSWORD_CHANGE");
+        static constexpr uint32_t SIGN_UP_HASH = ConstExprHashingUtils::HashString("SIGN_UP");
 
 
         EventFilterType GetEventFilterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SIGN_IN_HASH)
           {
             return EventFilterType::SIGN_IN;

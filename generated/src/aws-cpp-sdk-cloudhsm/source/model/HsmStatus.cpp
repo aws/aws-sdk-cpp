@@ -20,18 +20,18 @@ namespace Aws
       namespace HsmStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
-        static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
-        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
-        static const int DEGRADED_HASH = HashingUtils::HashString("DEGRADED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t SUSPENDED_HASH = ConstExprHashingUtils::HashString("SUSPENDED");
+        static constexpr uint32_t TERMINATING_HASH = ConstExprHashingUtils::HashString("TERMINATING");
+        static constexpr uint32_t TERMINATED_HASH = ConstExprHashingUtils::HashString("TERMINATED");
+        static constexpr uint32_t DEGRADED_HASH = ConstExprHashingUtils::HashString("DEGRADED");
 
 
         HsmStatus GetHsmStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return HsmStatus::PENDING;

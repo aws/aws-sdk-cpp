@@ -40,23 +40,23 @@ template<> AWS_DEVICEFARM_API TagPolicyException DeviceFarmError::GetModeledErro
 namespace DeviceFarmErrorMapper
 {
 
-static const int IDEMPOTENCY_HASH = HashingUtils::HashString("IdempotencyException");
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int ARGUMENT_HASH = HashingUtils::HashString("ArgumentException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int SERVICE_ACCOUNT_HASH = HashingUtils::HashString("ServiceAccountException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int TAG_OPERATION_HASH = HashingUtils::HashString("TagOperationException");
-static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
-static const int TAG_POLICY_HASH = HashingUtils::HashString("TagPolicyException");
-static const int CANNOT_DELETE_HASH = HashingUtils::HashString("CannotDeleteException");
-static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
-static const int NOT_ELIGIBLE_HASH = HashingUtils::HashString("NotEligibleException");
+static constexpr uint32_t IDEMPOTENCY_HASH = ConstExprHashingUtils::HashString("IdempotencyException");
+static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NotFoundException");
+static constexpr uint32_t ARGUMENT_HASH = ConstExprHashingUtils::HashString("ArgumentException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t SERVICE_ACCOUNT_HASH = ConstExprHashingUtils::HashString("ServiceAccountException");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t TAG_OPERATION_HASH = ConstExprHashingUtils::HashString("TagOperationException");
+static constexpr uint32_t INTERNAL_SERVICE_HASH = ConstExprHashingUtils::HashString("InternalServiceException");
+static constexpr uint32_t TAG_POLICY_HASH = ConstExprHashingUtils::HashString("TagPolicyException");
+static constexpr uint32_t CANNOT_DELETE_HASH = ConstExprHashingUtils::HashString("CannotDeleteException");
+static constexpr uint32_t INVALID_OPERATION_HASH = ConstExprHashingUtils::HashString("InvalidOperationException");
+static constexpr uint32_t NOT_ELIGIBLE_HASH = ConstExprHashingUtils::HashString("NotEligibleException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == IDEMPOTENCY_HASH)
   {

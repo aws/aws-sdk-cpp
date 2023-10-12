@@ -20,13 +20,13 @@ namespace Aws
       namespace AsyncNotificationTopicTypesMapper
       {
 
-        static const int SUCCESS_NOTIFICATION_TOPIC_HASH = HashingUtils::HashString("SUCCESS_NOTIFICATION_TOPIC");
-        static const int ERROR_NOTIFICATION_TOPIC_HASH = HashingUtils::HashString("ERROR_NOTIFICATION_TOPIC");
+        static constexpr uint32_t SUCCESS_NOTIFICATION_TOPIC_HASH = ConstExprHashingUtils::HashString("SUCCESS_NOTIFICATION_TOPIC");
+        static constexpr uint32_t ERROR_NOTIFICATION_TOPIC_HASH = ConstExprHashingUtils::HashString("ERROR_NOTIFICATION_TOPIC");
 
 
         AsyncNotificationTopicTypes GetAsyncNotificationTopicTypesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUCCESS_NOTIFICATION_TOPIC_HASH)
           {
             return AsyncNotificationTopicTypes::SUCCESS_NOTIFICATION_TOPIC;

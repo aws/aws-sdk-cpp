@@ -20,12 +20,12 @@ namespace Aws
       namespace LaunchTypeMapper
       {
 
-        static const int aws_evidently_splits_HASH = HashingUtils::HashString("aws.evidently.splits");
+        static constexpr uint32_t aws_evidently_splits_HASH = ConstExprHashingUtils::HashString("aws.evidently.splits");
 
 
         LaunchType GetLaunchTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == aws_evidently_splits_HASH)
           {
             return LaunchType::aws_evidently_splits;

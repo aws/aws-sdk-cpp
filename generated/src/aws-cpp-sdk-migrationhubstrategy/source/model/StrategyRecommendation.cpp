@@ -20,15 +20,15 @@ namespace Aws
       namespace StrategyRecommendationMapper
       {
 
-        static const int recommended_HASH = HashingUtils::HashString("recommended");
-        static const int viableOption_HASH = HashingUtils::HashString("viableOption");
-        static const int notRecommended_HASH = HashingUtils::HashString("notRecommended");
-        static const int potential_HASH = HashingUtils::HashString("potential");
+        static constexpr uint32_t recommended_HASH = ConstExprHashingUtils::HashString("recommended");
+        static constexpr uint32_t viableOption_HASH = ConstExprHashingUtils::HashString("viableOption");
+        static constexpr uint32_t notRecommended_HASH = ConstExprHashingUtils::HashString("notRecommended");
+        static constexpr uint32_t potential_HASH = ConstExprHashingUtils::HashString("potential");
 
 
         StrategyRecommendation GetStrategyRecommendationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == recommended_HASH)
           {
             return StrategyRecommendation::recommended;

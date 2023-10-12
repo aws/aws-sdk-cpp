@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceShareAssociationTypeMapper
       {
 
-        static const int PRINCIPAL_HASH = HashingUtils::HashString("PRINCIPAL");
-        static const int RESOURCE_HASH = HashingUtils::HashString("RESOURCE");
+        static constexpr uint32_t PRINCIPAL_HASH = ConstExprHashingUtils::HashString("PRINCIPAL");
+        static constexpr uint32_t RESOURCE_HASH = ConstExprHashingUtils::HashString("RESOURCE");
 
 
         ResourceShareAssociationType GetResourceShareAssociationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRINCIPAL_HASH)
           {
             return ResourceShareAssociationType::PRINCIPAL;

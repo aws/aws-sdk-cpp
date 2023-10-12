@@ -20,30 +20,30 @@ namespace Aws
       namespace ErrorResourceTypeMapper
       {
 
-        static const int ENVIRONMENT_HASH = HashingUtils::HashString("ENVIRONMENT");
-        static const int APPLICATION_HASH = HashingUtils::HashString("APPLICATION");
-        static const int ROUTE_HASH = HashingUtils::HashString("ROUTE");
-        static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
-        static const int TRANSIT_GATEWAY_HASH = HashingUtils::HashString("TRANSIT_GATEWAY");
-        static const int TRANSIT_GATEWAY_ATTACHMENT_HASH = HashingUtils::HashString("TRANSIT_GATEWAY_ATTACHMENT");
-        static const int API_GATEWAY_HASH = HashingUtils::HashString("API_GATEWAY");
-        static const int NLB_HASH = HashingUtils::HashString("NLB");
-        static const int TARGET_GROUP_HASH = HashingUtils::HashString("TARGET_GROUP");
-        static const int LOAD_BALANCER_LISTENER_HASH = HashingUtils::HashString("LOAD_BALANCER_LISTENER");
-        static const int VPC_LINK_HASH = HashingUtils::HashString("VPC_LINK");
-        static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
-        static const int VPC_HASH = HashingUtils::HashString("VPC");
-        static const int SUBNET_HASH = HashingUtils::HashString("SUBNET");
-        static const int ROUTE_TABLE_HASH = HashingUtils::HashString("ROUTE_TABLE");
-        static const int SECURITY_GROUP_HASH = HashingUtils::HashString("SECURITY_GROUP");
-        static const int VPC_ENDPOINT_SERVICE_CONFIGURATION_HASH = HashingUtils::HashString("VPC_ENDPOINT_SERVICE_CONFIGURATION");
-        static const int RESOURCE_SHARE_HASH = HashingUtils::HashString("RESOURCE_SHARE");
-        static const int IAM_ROLE_HASH = HashingUtils::HashString("IAM_ROLE");
+        static constexpr uint32_t ENVIRONMENT_HASH = ConstExprHashingUtils::HashString("ENVIRONMENT");
+        static constexpr uint32_t APPLICATION_HASH = ConstExprHashingUtils::HashString("APPLICATION");
+        static constexpr uint32_t ROUTE_HASH = ConstExprHashingUtils::HashString("ROUTE");
+        static constexpr uint32_t SERVICE_HASH = ConstExprHashingUtils::HashString("SERVICE");
+        static constexpr uint32_t TRANSIT_GATEWAY_HASH = ConstExprHashingUtils::HashString("TRANSIT_GATEWAY");
+        static constexpr uint32_t TRANSIT_GATEWAY_ATTACHMENT_HASH = ConstExprHashingUtils::HashString("TRANSIT_GATEWAY_ATTACHMENT");
+        static constexpr uint32_t API_GATEWAY_HASH = ConstExprHashingUtils::HashString("API_GATEWAY");
+        static constexpr uint32_t NLB_HASH = ConstExprHashingUtils::HashString("NLB");
+        static constexpr uint32_t TARGET_GROUP_HASH = ConstExprHashingUtils::HashString("TARGET_GROUP");
+        static constexpr uint32_t LOAD_BALANCER_LISTENER_HASH = ConstExprHashingUtils::HashString("LOAD_BALANCER_LISTENER");
+        static constexpr uint32_t VPC_LINK_HASH = ConstExprHashingUtils::HashString("VPC_LINK");
+        static constexpr uint32_t LAMBDA_HASH = ConstExprHashingUtils::HashString("LAMBDA");
+        static constexpr uint32_t VPC_HASH = ConstExprHashingUtils::HashString("VPC");
+        static constexpr uint32_t SUBNET_HASH = ConstExprHashingUtils::HashString("SUBNET");
+        static constexpr uint32_t ROUTE_TABLE_HASH = ConstExprHashingUtils::HashString("ROUTE_TABLE");
+        static constexpr uint32_t SECURITY_GROUP_HASH = ConstExprHashingUtils::HashString("SECURITY_GROUP");
+        static constexpr uint32_t VPC_ENDPOINT_SERVICE_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("VPC_ENDPOINT_SERVICE_CONFIGURATION");
+        static constexpr uint32_t RESOURCE_SHARE_HASH = ConstExprHashingUtils::HashString("RESOURCE_SHARE");
+        static constexpr uint32_t IAM_ROLE_HASH = ConstExprHashingUtils::HashString("IAM_ROLE");
 
 
         ErrorResourceType GetErrorResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENVIRONMENT_HASH)
           {
             return ErrorResourceType::ENVIRONMENT;

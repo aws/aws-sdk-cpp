@@ -20,15 +20,15 @@ namespace Aws
       namespace ComputeTypeMapper
       {
 
-        static const int BUILD_GENERAL1_SMALL_HASH = HashingUtils::HashString("BUILD_GENERAL1_SMALL");
-        static const int BUILD_GENERAL1_MEDIUM_HASH = HashingUtils::HashString("BUILD_GENERAL1_MEDIUM");
-        static const int BUILD_GENERAL1_LARGE_HASH = HashingUtils::HashString("BUILD_GENERAL1_LARGE");
-        static const int BUILD_GENERAL1_2XLARGE_HASH = HashingUtils::HashString("BUILD_GENERAL1_2XLARGE");
+        static constexpr uint32_t BUILD_GENERAL1_SMALL_HASH = ConstExprHashingUtils::HashString("BUILD_GENERAL1_SMALL");
+        static constexpr uint32_t BUILD_GENERAL1_MEDIUM_HASH = ConstExprHashingUtils::HashString("BUILD_GENERAL1_MEDIUM");
+        static constexpr uint32_t BUILD_GENERAL1_LARGE_HASH = ConstExprHashingUtils::HashString("BUILD_GENERAL1_LARGE");
+        static constexpr uint32_t BUILD_GENERAL1_2XLARGE_HASH = ConstExprHashingUtils::HashString("BUILD_GENERAL1_2XLARGE");
 
 
         ComputeType GetComputeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BUILD_GENERAL1_SMALL_HASH)
           {
             return ComputeType::BUILD_GENERAL1_SMALL;

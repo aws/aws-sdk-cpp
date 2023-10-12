@@ -20,13 +20,13 @@ namespace Aws
       namespace ChangeStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int INSYNC_HASH = HashingUtils::HashString("INSYNC");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t INSYNC_HASH = ConstExprHashingUtils::HashString("INSYNC");
 
 
         ChangeStatus GetChangeStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return ChangeStatus::PENDING;

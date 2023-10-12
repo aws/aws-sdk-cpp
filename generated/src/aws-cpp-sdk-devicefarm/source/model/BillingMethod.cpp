@@ -20,13 +20,13 @@ namespace Aws
       namespace BillingMethodMapper
       {
 
-        static const int METERED_HASH = HashingUtils::HashString("METERED");
-        static const int UNMETERED_HASH = HashingUtils::HashString("UNMETERED");
+        static constexpr uint32_t METERED_HASH = ConstExprHashingUtils::HashString("METERED");
+        static constexpr uint32_t UNMETERED_HASH = ConstExprHashingUtils::HashString("UNMETERED");
 
 
         BillingMethod GetBillingMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == METERED_HASH)
           {
             return BillingMethod::METERED;

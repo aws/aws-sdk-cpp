@@ -20,13 +20,13 @@ namespace Aws
       namespace EventDataSourceMapper
       {
 
-        static const int AWS_CLOUD_TRAIL_HASH = HashingUtils::HashString("AWS_CLOUD_TRAIL");
-        static const int AWS_CODE_DEPLOY_HASH = HashingUtils::HashString("AWS_CODE_DEPLOY");
+        static constexpr uint32_t AWS_CLOUD_TRAIL_HASH = ConstExprHashingUtils::HashString("AWS_CLOUD_TRAIL");
+        static constexpr uint32_t AWS_CODE_DEPLOY_HASH = ConstExprHashingUtils::HashString("AWS_CODE_DEPLOY");
 
 
         EventDataSource GetEventDataSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_CLOUD_TRAIL_HASH)
           {
             return EventDataSource::AWS_CLOUD_TRAIL;

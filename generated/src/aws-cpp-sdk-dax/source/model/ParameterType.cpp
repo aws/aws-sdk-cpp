@@ -20,13 +20,13 @@ namespace Aws
       namespace ParameterTypeMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int NODE_TYPE_SPECIFIC_HASH = HashingUtils::HashString("NODE_TYPE_SPECIFIC");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t NODE_TYPE_SPECIFIC_HASH = ConstExprHashingUtils::HashString("NODE_TYPE_SPECIFIC");
 
 
         ParameterType GetParameterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return ParameterType::DEFAULT;

@@ -20,13 +20,13 @@ namespace Aws
       namespace PlacementConstraintTypeMapper
       {
 
-        static const int distinctInstance_HASH = HashingUtils::HashString("distinctInstance");
-        static const int memberOf_HASH = HashingUtils::HashString("memberOf");
+        static constexpr uint32_t distinctInstance_HASH = ConstExprHashingUtils::HashString("distinctInstance");
+        static constexpr uint32_t memberOf_HASH = ConstExprHashingUtils::HashString("memberOf");
 
 
         PlacementConstraintType GetPlacementConstraintTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == distinctInstance_HASH)
           {
             return PlacementConstraintType::distinctInstance;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ExportSourceTypeMapper
       {
 
-        static const int SNAPSHOT_HASH = HashingUtils::HashString("SNAPSHOT");
-        static const int CLUSTER_HASH = HashingUtils::HashString("CLUSTER");
+        static constexpr uint32_t SNAPSHOT_HASH = ConstExprHashingUtils::HashString("SNAPSHOT");
+        static constexpr uint32_t CLUSTER_HASH = ConstExprHashingUtils::HashString("CLUSTER");
 
 
         ExportSourceType GetExportSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SNAPSHOT_HASH)
           {
             return ExportSourceType::SNAPSHOT;

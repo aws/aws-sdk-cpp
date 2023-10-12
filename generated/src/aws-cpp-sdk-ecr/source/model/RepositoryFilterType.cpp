@@ -20,12 +20,12 @@ namespace Aws
       namespace RepositoryFilterTypeMapper
       {
 
-        static const int PREFIX_MATCH_HASH = HashingUtils::HashString("PREFIX_MATCH");
+        static constexpr uint32_t PREFIX_MATCH_HASH = ConstExprHashingUtils::HashString("PREFIX_MATCH");
 
 
         RepositoryFilterType GetRepositoryFilterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PREFIX_MATCH_HASH)
           {
             return RepositoryFilterType::PREFIX_MATCH;

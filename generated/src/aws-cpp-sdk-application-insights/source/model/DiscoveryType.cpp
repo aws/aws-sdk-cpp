@@ -20,13 +20,13 @@ namespace Aws
       namespace DiscoveryTypeMapper
       {
 
-        static const int RESOURCE_GROUP_BASED_HASH = HashingUtils::HashString("RESOURCE_GROUP_BASED");
-        static const int ACCOUNT_BASED_HASH = HashingUtils::HashString("ACCOUNT_BASED");
+        static constexpr uint32_t RESOURCE_GROUP_BASED_HASH = ConstExprHashingUtils::HashString("RESOURCE_GROUP_BASED");
+        static constexpr uint32_t ACCOUNT_BASED_HASH = ConstExprHashingUtils::HashString("ACCOUNT_BASED");
 
 
         DiscoveryType GetDiscoveryTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESOURCE_GROUP_BASED_HASH)
           {
             return DiscoveryType::RESOURCE_GROUP_BASED;

@@ -20,13 +20,13 @@ namespace Aws
       namespace BinaryAnalyzerNameMapper
       {
 
-        static const int DLL_ANALYZER_HASH = HashingUtils::HashString("DLL_ANALYZER");
-        static const int BYTECODE_ANALYZER_HASH = HashingUtils::HashString("BYTECODE_ANALYZER");
+        static constexpr uint32_t DLL_ANALYZER_HASH = ConstExprHashingUtils::HashString("DLL_ANALYZER");
+        static constexpr uint32_t BYTECODE_ANALYZER_HASH = ConstExprHashingUtils::HashString("BYTECODE_ANALYZER");
 
 
         BinaryAnalyzerName GetBinaryAnalyzerNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DLL_ANALYZER_HASH)
           {
             return BinaryAnalyzerName::DLL_ANALYZER;

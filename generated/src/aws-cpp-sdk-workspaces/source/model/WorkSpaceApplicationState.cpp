@@ -20,15 +20,15 @@ namespace Aws
       namespace WorkSpaceApplicationStateMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int UNINSTALL_ONLY_HASH = HashingUtils::HashString("UNINSTALL_ONLY");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t UNINSTALL_ONLY_HASH = ConstExprHashingUtils::HashString("UNINSTALL_ONLY");
 
 
         WorkSpaceApplicationState GetWorkSpaceApplicationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return WorkSpaceApplicationState::PENDING;

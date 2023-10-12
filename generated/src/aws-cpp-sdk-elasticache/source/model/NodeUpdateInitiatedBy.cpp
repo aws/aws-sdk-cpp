@@ -20,13 +20,13 @@ namespace Aws
       namespace NodeUpdateInitiatedByMapper
       {
 
-        static const int system_HASH = HashingUtils::HashString("system");
-        static const int customer_HASH = HashingUtils::HashString("customer");
+        static constexpr uint32_t system_HASH = ConstExprHashingUtils::HashString("system");
+        static constexpr uint32_t customer_HASH = ConstExprHashingUtils::HashString("customer");
 
 
         NodeUpdateInitiatedBy GetNodeUpdateInitiatedByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == system_HASH)
           {
             return NodeUpdateInitiatedBy::system;

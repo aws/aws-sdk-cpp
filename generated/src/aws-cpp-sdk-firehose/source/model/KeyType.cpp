@@ -20,13 +20,13 @@ namespace Aws
       namespace KeyTypeMapper
       {
 
-        static const int AWS_OWNED_CMK_HASH = HashingUtils::HashString("AWS_OWNED_CMK");
-        static const int CUSTOMER_MANAGED_CMK_HASH = HashingUtils::HashString("CUSTOMER_MANAGED_CMK");
+        static constexpr uint32_t AWS_OWNED_CMK_HASH = ConstExprHashingUtils::HashString("AWS_OWNED_CMK");
+        static constexpr uint32_t CUSTOMER_MANAGED_CMK_HASH = ConstExprHashingUtils::HashString("CUSTOMER_MANAGED_CMK");
 
 
         KeyType GetKeyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_OWNED_CMK_HASH)
           {
             return KeyType::AWS_OWNED_CMK;

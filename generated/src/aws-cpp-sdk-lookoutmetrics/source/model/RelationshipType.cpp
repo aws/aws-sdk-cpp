@@ -20,13 +20,13 @@ namespace Aws
       namespace RelationshipTypeMapper
       {
 
-        static const int CAUSE_OF_INPUT_ANOMALY_GROUP_HASH = HashingUtils::HashString("CAUSE_OF_INPUT_ANOMALY_GROUP");
-        static const int EFFECT_OF_INPUT_ANOMALY_GROUP_HASH = HashingUtils::HashString("EFFECT_OF_INPUT_ANOMALY_GROUP");
+        static constexpr uint32_t CAUSE_OF_INPUT_ANOMALY_GROUP_HASH = ConstExprHashingUtils::HashString("CAUSE_OF_INPUT_ANOMALY_GROUP");
+        static constexpr uint32_t EFFECT_OF_INPUT_ANOMALY_GROUP_HASH = ConstExprHashingUtils::HashString("EFFECT_OF_INPUT_ANOMALY_GROUP");
 
 
         RelationshipType GetRelationshipTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CAUSE_OF_INPUT_ANOMALY_GROUP_HASH)
           {
             return RelationshipType::CAUSE_OF_INPUT_ANOMALY_GROUP;

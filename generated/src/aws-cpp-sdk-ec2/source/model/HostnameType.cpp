@@ -20,13 +20,13 @@ namespace Aws
       namespace HostnameTypeMapper
       {
 
-        static const int ip_name_HASH = HashingUtils::HashString("ip-name");
-        static const int resource_name_HASH = HashingUtils::HashString("resource-name");
+        static constexpr uint32_t ip_name_HASH = ConstExprHashingUtils::HashString("ip-name");
+        static constexpr uint32_t resource_name_HASH = ConstExprHashingUtils::HashString("resource-name");
 
 
         HostnameType GetHostnameTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ip_name_HASH)
           {
             return HostnameType::ip_name;

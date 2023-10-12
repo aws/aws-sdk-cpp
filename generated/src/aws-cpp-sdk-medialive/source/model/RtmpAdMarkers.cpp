@@ -20,12 +20,12 @@ namespace Aws
       namespace RtmpAdMarkersMapper
       {
 
-        static const int ON_CUE_POINT_SCTE35_HASH = HashingUtils::HashString("ON_CUE_POINT_SCTE35");
+        static constexpr uint32_t ON_CUE_POINT_SCTE35_HASH = ConstExprHashingUtils::HashString("ON_CUE_POINT_SCTE35");
 
 
         RtmpAdMarkers GetRtmpAdMarkersForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ON_CUE_POINT_SCTE35_HASH)
           {
             return RtmpAdMarkers::ON_CUE_POINT_SCTE35;

@@ -20,12 +20,12 @@ namespace Aws
       namespace OpenIdIssuerMapper
       {
 
-        static const int COGNITO_HASH = HashingUtils::HashString("COGNITO");
+        static constexpr uint32_t COGNITO_HASH = ConstExprHashingUtils::HashString("COGNITO");
 
 
         OpenIdIssuer GetOpenIdIssuerForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COGNITO_HASH)
           {
             return OpenIdIssuer::COGNITO;

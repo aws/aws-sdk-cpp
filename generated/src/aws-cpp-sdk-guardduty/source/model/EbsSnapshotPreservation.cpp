@@ -20,13 +20,13 @@ namespace Aws
       namespace EbsSnapshotPreservationMapper
       {
 
-        static const int NO_RETENTION_HASH = HashingUtils::HashString("NO_RETENTION");
-        static const int RETENTION_WITH_FINDING_HASH = HashingUtils::HashString("RETENTION_WITH_FINDING");
+        static constexpr uint32_t NO_RETENTION_HASH = ConstExprHashingUtils::HashString("NO_RETENTION");
+        static constexpr uint32_t RETENTION_WITH_FINDING_HASH = ConstExprHashingUtils::HashString("RETENTION_WITH_FINDING");
 
 
         EbsSnapshotPreservation GetEbsSnapshotPreservationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_RETENTION_HASH)
           {
             return EbsSnapshotPreservation::NO_RETENTION;

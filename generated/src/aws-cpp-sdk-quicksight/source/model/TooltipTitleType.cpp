@@ -20,13 +20,13 @@ namespace Aws
       namespace TooltipTitleTypeMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int PRIMARY_VALUE_HASH = HashingUtils::HashString("PRIMARY_VALUE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t PRIMARY_VALUE_HASH = ConstExprHashingUtils::HashString("PRIMARY_VALUE");
 
 
         TooltipTitleType GetTooltipTitleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return TooltipTitleType::NONE;

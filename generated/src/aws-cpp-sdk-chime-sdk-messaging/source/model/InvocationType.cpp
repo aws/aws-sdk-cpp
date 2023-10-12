@@ -20,12 +20,12 @@ namespace Aws
       namespace InvocationTypeMapper
       {
 
-        static const int ASYNC_HASH = HashingUtils::HashString("ASYNC");
+        static constexpr uint32_t ASYNC_HASH = ConstExprHashingUtils::HashString("ASYNC");
 
 
         InvocationType GetInvocationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASYNC_HASH)
           {
             return InvocationType::ASYNC;

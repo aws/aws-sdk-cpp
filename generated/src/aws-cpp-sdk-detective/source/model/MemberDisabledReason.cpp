@@ -20,13 +20,13 @@ namespace Aws
       namespace MemberDisabledReasonMapper
       {
 
-        static const int VOLUME_TOO_HIGH_HASH = HashingUtils::HashString("VOLUME_TOO_HIGH");
-        static const int VOLUME_UNKNOWN_HASH = HashingUtils::HashString("VOLUME_UNKNOWN");
+        static constexpr uint32_t VOLUME_TOO_HIGH_HASH = ConstExprHashingUtils::HashString("VOLUME_TOO_HIGH");
+        static constexpr uint32_t VOLUME_UNKNOWN_HASH = ConstExprHashingUtils::HashString("VOLUME_UNKNOWN");
 
 
         MemberDisabledReason GetMemberDisabledReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VOLUME_TOO_HIGH_HASH)
           {
             return MemberDisabledReason::VOLUME_TOO_HIGH;

@@ -20,14 +20,14 @@ namespace Aws
       namespace StatementTypeMapper
       {
 
-        static const int DDL_HASH = HashingUtils::HashString("DDL");
-        static const int DML_HASH = HashingUtils::HashString("DML");
-        static const int UTILITY_HASH = HashingUtils::HashString("UTILITY");
+        static constexpr uint32_t DDL_HASH = ConstExprHashingUtils::HashString("DDL");
+        static constexpr uint32_t DML_HASH = ConstExprHashingUtils::HashString("DML");
+        static constexpr uint32_t UTILITY_HASH = ConstExprHashingUtils::HashString("UTILITY");
 
 
         StatementType GetStatementTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DDL_HASH)
           {
             return StatementType::DDL;

@@ -20,13 +20,13 @@ namespace Aws
       namespace JoinSourceMapper
       {
 
-        static const int Input_HASH = HashingUtils::HashString("Input");
-        static const int None_HASH = HashingUtils::HashString("None");
+        static constexpr uint32_t Input_HASH = ConstExprHashingUtils::HashString("Input");
+        static constexpr uint32_t None_HASH = ConstExprHashingUtils::HashString("None");
 
 
         JoinSource GetJoinSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Input_HASH)
           {
             return JoinSource::Input;

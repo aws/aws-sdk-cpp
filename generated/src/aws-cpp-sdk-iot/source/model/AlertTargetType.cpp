@@ -20,12 +20,12 @@ namespace Aws
       namespace AlertTargetTypeMapper
       {
 
-        static const int SNS_HASH = HashingUtils::HashString("SNS");
+        static constexpr uint32_t SNS_HASH = ConstExprHashingUtils::HashString("SNS");
 
 
         AlertTargetType GetAlertTargetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SNS_HASH)
           {
             return AlertTargetType::SNS;

@@ -82,17 +82,17 @@ template<> AWS_IOTFLEETWISE_API InvalidSignalsException IoTFleetWiseError::GetMo
 namespace IoTFleetWiseErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int DECODER_MANIFEST_VALIDATION_HASH = HashingUtils::HashString("DecoderManifestValidationException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INVALID_NODE_HASH = HashingUtils::HashString("InvalidNodeException");
-static const int INVALID_SIGNALS_HASH = HashingUtils::HashString("InvalidSignalsException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
+static constexpr uint32_t DECODER_MANIFEST_VALIDATION_HASH = ConstExprHashingUtils::HashString("DecoderManifestValidationException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t INVALID_NODE_HASH = ConstExprHashingUtils::HashString("InvalidNodeException");
+static constexpr uint32_t INVALID_SIGNALS_HASH = ConstExprHashingUtils::HashString("InvalidSignalsException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

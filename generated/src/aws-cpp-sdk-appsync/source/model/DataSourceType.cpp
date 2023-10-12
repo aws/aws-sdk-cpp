@@ -20,19 +20,19 @@ namespace Aws
       namespace DataSourceTypeMapper
       {
 
-        static const int AWS_LAMBDA_HASH = HashingUtils::HashString("AWS_LAMBDA");
-        static const int AMAZON_DYNAMODB_HASH = HashingUtils::HashString("AMAZON_DYNAMODB");
-        static const int AMAZON_ELASTICSEARCH_HASH = HashingUtils::HashString("AMAZON_ELASTICSEARCH");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
-        static const int RELATIONAL_DATABASE_HASH = HashingUtils::HashString("RELATIONAL_DATABASE");
-        static const int AMAZON_OPENSEARCH_SERVICE_HASH = HashingUtils::HashString("AMAZON_OPENSEARCH_SERVICE");
-        static const int AMAZON_EVENTBRIDGE_HASH = HashingUtils::HashString("AMAZON_EVENTBRIDGE");
+        static constexpr uint32_t AWS_LAMBDA_HASH = ConstExprHashingUtils::HashString("AWS_LAMBDA");
+        static constexpr uint32_t AMAZON_DYNAMODB_HASH = ConstExprHashingUtils::HashString("AMAZON_DYNAMODB");
+        static constexpr uint32_t AMAZON_ELASTICSEARCH_HASH = ConstExprHashingUtils::HashString("AMAZON_ELASTICSEARCH");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t HTTP_HASH = ConstExprHashingUtils::HashString("HTTP");
+        static constexpr uint32_t RELATIONAL_DATABASE_HASH = ConstExprHashingUtils::HashString("RELATIONAL_DATABASE");
+        static constexpr uint32_t AMAZON_OPENSEARCH_SERVICE_HASH = ConstExprHashingUtils::HashString("AMAZON_OPENSEARCH_SERVICE");
+        static constexpr uint32_t AMAZON_EVENTBRIDGE_HASH = ConstExprHashingUtils::HashString("AMAZON_EVENTBRIDGE");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_LAMBDA_HASH)
           {
             return DataSourceType::AWS_LAMBDA;

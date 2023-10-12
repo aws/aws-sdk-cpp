@@ -20,13 +20,13 @@ namespace Aws
       namespace JSModuleMapper
       {
 
-        static const int es2020_HASH = HashingUtils::HashString("es2020");
-        static const int esnext_HASH = HashingUtils::HashString("esnext");
+        static constexpr uint32_t es2020_HASH = ConstExprHashingUtils::HashString("es2020");
+        static constexpr uint32_t esnext_HASH = ConstExprHashingUtils::HashString("esnext");
 
 
         JSModule GetJSModuleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == es2020_HASH)
           {
             return JSModule::es2020;

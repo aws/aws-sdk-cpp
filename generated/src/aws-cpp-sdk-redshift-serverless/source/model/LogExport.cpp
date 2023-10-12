@@ -20,14 +20,14 @@ namespace Aws
       namespace LogExportMapper
       {
 
-        static const int useractivitylog_HASH = HashingUtils::HashString("useractivitylog");
-        static const int userlog_HASH = HashingUtils::HashString("userlog");
-        static const int connectionlog_HASH = HashingUtils::HashString("connectionlog");
+        static constexpr uint32_t useractivitylog_HASH = ConstExprHashingUtils::HashString("useractivitylog");
+        static constexpr uint32_t userlog_HASH = ConstExprHashingUtils::HashString("userlog");
+        static constexpr uint32_t connectionlog_HASH = ConstExprHashingUtils::HashString("connectionlog");
 
 
         LogExport GetLogExportForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == useractivitylog_HASH)
           {
             return LogExport::useractivitylog;

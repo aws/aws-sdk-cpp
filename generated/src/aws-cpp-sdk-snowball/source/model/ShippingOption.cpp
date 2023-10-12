@@ -20,15 +20,15 @@ namespace Aws
       namespace ShippingOptionMapper
       {
 
-        static const int SECOND_DAY_HASH = HashingUtils::HashString("SECOND_DAY");
-        static const int NEXT_DAY_HASH = HashingUtils::HashString("NEXT_DAY");
-        static const int EXPRESS_HASH = HashingUtils::HashString("EXPRESS");
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
+        static constexpr uint32_t SECOND_DAY_HASH = ConstExprHashingUtils::HashString("SECOND_DAY");
+        static constexpr uint32_t NEXT_DAY_HASH = ConstExprHashingUtils::HashString("NEXT_DAY");
+        static constexpr uint32_t EXPRESS_HASH = ConstExprHashingUtils::HashString("EXPRESS");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
 
 
         ShippingOption GetShippingOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SECOND_DAY_HASH)
           {
             return ShippingOption::SECOND_DAY;

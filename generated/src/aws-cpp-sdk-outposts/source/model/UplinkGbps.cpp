@@ -20,15 +20,15 @@ namespace Aws
       namespace UplinkGbpsMapper
       {
 
-        static const int UPLINK_1G_HASH = HashingUtils::HashString("UPLINK_1G");
-        static const int UPLINK_10G_HASH = HashingUtils::HashString("UPLINK_10G");
-        static const int UPLINK_40G_HASH = HashingUtils::HashString("UPLINK_40G");
-        static const int UPLINK_100G_HASH = HashingUtils::HashString("UPLINK_100G");
+        static constexpr uint32_t UPLINK_1G_HASH = ConstExprHashingUtils::HashString("UPLINK_1G");
+        static constexpr uint32_t UPLINK_10G_HASH = ConstExprHashingUtils::HashString("UPLINK_10G");
+        static constexpr uint32_t UPLINK_40G_HASH = ConstExprHashingUtils::HashString("UPLINK_40G");
+        static constexpr uint32_t UPLINK_100G_HASH = ConstExprHashingUtils::HashString("UPLINK_100G");
 
 
         UplinkGbps GetUplinkGbpsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UPLINK_1G_HASH)
           {
             return UplinkGbps::UPLINK_1G;

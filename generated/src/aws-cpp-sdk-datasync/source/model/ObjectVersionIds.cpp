@@ -20,13 +20,13 @@ namespace Aws
       namespace ObjectVersionIdsMapper
       {
 
-        static const int INCLUDE_HASH = HashingUtils::HashString("INCLUDE");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t INCLUDE_HASH = ConstExprHashingUtils::HashString("INCLUDE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         ObjectVersionIds GetObjectVersionIdsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INCLUDE_HASH)
           {
             return ObjectVersionIds::INCLUDE;

@@ -20,15 +20,15 @@ namespace Aws
       namespace OriginTypeMapper
       {
 
-        static const int AWS_KMS_HASH = HashingUtils::HashString("AWS_KMS");
-        static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
-        static const int AWS_CLOUDHSM_HASH = HashingUtils::HashString("AWS_CLOUDHSM");
-        static const int EXTERNAL_KEY_STORE_HASH = HashingUtils::HashString("EXTERNAL_KEY_STORE");
+        static constexpr uint32_t AWS_KMS_HASH = ConstExprHashingUtils::HashString("AWS_KMS");
+        static constexpr uint32_t EXTERNAL_HASH = ConstExprHashingUtils::HashString("EXTERNAL");
+        static constexpr uint32_t AWS_CLOUDHSM_HASH = ConstExprHashingUtils::HashString("AWS_CLOUDHSM");
+        static constexpr uint32_t EXTERNAL_KEY_STORE_HASH = ConstExprHashingUtils::HashString("EXTERNAL_KEY_STORE");
 
 
         OriginType GetOriginTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_KMS_HASH)
           {
             return OriginType::AWS_KMS;

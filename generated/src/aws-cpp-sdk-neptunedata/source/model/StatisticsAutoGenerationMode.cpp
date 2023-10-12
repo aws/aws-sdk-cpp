@@ -20,14 +20,14 @@ namespace Aws
       namespace StatisticsAutoGenerationModeMapper
       {
 
-        static const int disableAutoCompute_HASH = HashingUtils::HashString("disableAutoCompute");
-        static const int enableAutoCompute_HASH = HashingUtils::HashString("enableAutoCompute");
-        static const int refresh_HASH = HashingUtils::HashString("refresh");
+        static constexpr uint32_t disableAutoCompute_HASH = ConstExprHashingUtils::HashString("disableAutoCompute");
+        static constexpr uint32_t enableAutoCompute_HASH = ConstExprHashingUtils::HashString("enableAutoCompute");
+        static constexpr uint32_t refresh_HASH = ConstExprHashingUtils::HashString("refresh");
 
 
         StatisticsAutoGenerationMode GetStatisticsAutoGenerationModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == disableAutoCompute_HASH)
           {
             return StatisticsAutoGenerationMode::disableAutoCompute;

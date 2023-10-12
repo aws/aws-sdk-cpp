@@ -20,19 +20,19 @@ namespace Aws
       namespace MediaPipelineElementStatusMapper
       {
 
-        static const int NotStarted_HASH = HashingUtils::HashString("NotStarted");
-        static const int NotSupported_HASH = HashingUtils::HashString("NotSupported");
-        static const int Initializing_HASH = HashingUtils::HashString("Initializing");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Stopping_HASH = HashingUtils::HashString("Stopping");
-        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
-        static const int Paused_HASH = HashingUtils::HashString("Paused");
+        static constexpr uint32_t NotStarted_HASH = ConstExprHashingUtils::HashString("NotStarted");
+        static constexpr uint32_t NotSupported_HASH = ConstExprHashingUtils::HashString("NotSupported");
+        static constexpr uint32_t Initializing_HASH = ConstExprHashingUtils::HashString("Initializing");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Stopping_HASH = ConstExprHashingUtils::HashString("Stopping");
+        static constexpr uint32_t Stopped_HASH = ConstExprHashingUtils::HashString("Stopped");
+        static constexpr uint32_t Paused_HASH = ConstExprHashingUtils::HashString("Paused");
 
 
         MediaPipelineElementStatus GetMediaPipelineElementStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NotStarted_HASH)
           {
             return MediaPipelineElementStatus::NotStarted;

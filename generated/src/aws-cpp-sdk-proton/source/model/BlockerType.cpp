@@ -20,12 +20,12 @@ namespace Aws
       namespace BlockerTypeMapper
       {
 
-        static const int AUTOMATED_HASH = HashingUtils::HashString("AUTOMATED");
+        static constexpr uint32_t AUTOMATED_HASH = ConstExprHashingUtils::HashString("AUTOMATED");
 
 
         BlockerType GetBlockerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTOMATED_HASH)
           {
             return BlockerType::AUTOMATED;

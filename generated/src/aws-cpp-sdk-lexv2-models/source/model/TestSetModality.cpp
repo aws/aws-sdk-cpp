@@ -20,13 +20,13 @@ namespace Aws
       namespace TestSetModalityMapper
       {
 
-        static const int Text_HASH = HashingUtils::HashString("Text");
-        static const int Audio_HASH = HashingUtils::HashString("Audio");
+        static constexpr uint32_t Text_HASH = ConstExprHashingUtils::HashString("Text");
+        static constexpr uint32_t Audio_HASH = ConstExprHashingUtils::HashString("Audio");
 
 
         TestSetModality GetTestSetModalityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Text_HASH)
           {
             return TestSetModality::Text;

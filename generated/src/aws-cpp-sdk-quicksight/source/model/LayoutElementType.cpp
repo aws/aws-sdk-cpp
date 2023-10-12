@@ -20,15 +20,15 @@ namespace Aws
       namespace LayoutElementTypeMapper
       {
 
-        static const int VISUAL_HASH = HashingUtils::HashString("VISUAL");
-        static const int FILTER_CONTROL_HASH = HashingUtils::HashString("FILTER_CONTROL");
-        static const int PARAMETER_CONTROL_HASH = HashingUtils::HashString("PARAMETER_CONTROL");
-        static const int TEXT_BOX_HASH = HashingUtils::HashString("TEXT_BOX");
+        static constexpr uint32_t VISUAL_HASH = ConstExprHashingUtils::HashString("VISUAL");
+        static constexpr uint32_t FILTER_CONTROL_HASH = ConstExprHashingUtils::HashString("FILTER_CONTROL");
+        static constexpr uint32_t PARAMETER_CONTROL_HASH = ConstExprHashingUtils::HashString("PARAMETER_CONTROL");
+        static constexpr uint32_t TEXT_BOX_HASH = ConstExprHashingUtils::HashString("TEXT_BOX");
 
 
         LayoutElementType GetLayoutElementTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VISUAL_HASH)
           {
             return LayoutElementType::VISUAL;

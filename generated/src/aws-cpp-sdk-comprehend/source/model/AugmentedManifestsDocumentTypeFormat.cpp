@@ -20,13 +20,13 @@ namespace Aws
       namespace AugmentedManifestsDocumentTypeFormatMapper
       {
 
-        static const int PLAIN_TEXT_DOCUMENT_HASH = HashingUtils::HashString("PLAIN_TEXT_DOCUMENT");
-        static const int SEMI_STRUCTURED_DOCUMENT_HASH = HashingUtils::HashString("SEMI_STRUCTURED_DOCUMENT");
+        static constexpr uint32_t PLAIN_TEXT_DOCUMENT_HASH = ConstExprHashingUtils::HashString("PLAIN_TEXT_DOCUMENT");
+        static constexpr uint32_t SEMI_STRUCTURED_DOCUMENT_HASH = ConstExprHashingUtils::HashString("SEMI_STRUCTURED_DOCUMENT");
 
 
         AugmentedManifestsDocumentTypeFormat GetAugmentedManifestsDocumentTypeFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PLAIN_TEXT_DOCUMENT_HASH)
           {
             return AugmentedManifestsDocumentTypeFormat::PLAIN_TEXT_DOCUMENT;

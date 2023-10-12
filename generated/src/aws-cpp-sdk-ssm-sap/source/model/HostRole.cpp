@@ -20,15 +20,15 @@ namespace Aws
       namespace HostRoleMapper
       {
 
-        static const int LEADER_HASH = HashingUtils::HashString("LEADER");
-        static const int WORKER_HASH = HashingUtils::HashString("WORKER");
-        static const int STANDBY_HASH = HashingUtils::HashString("STANDBY");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t LEADER_HASH = ConstExprHashingUtils::HashString("LEADER");
+        static constexpr uint32_t WORKER_HASH = ConstExprHashingUtils::HashString("WORKER");
+        static constexpr uint32_t STANDBY_HASH = ConstExprHashingUtils::HashString("STANDBY");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         HostRole GetHostRoleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LEADER_HASH)
           {
             return HostRole::LEADER;

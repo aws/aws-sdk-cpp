@@ -20,13 +20,13 @@ namespace Aws
       namespace ConflictExceptionReasonMapper
       {
 
-        static const int UNIQUENESS_CONSTRAINT_VIOLATION_HASH = HashingUtils::HashString("UNIQUENESS_CONSTRAINT_VIOLATION");
-        static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("CONCURRENT_MODIFICATION");
+        static constexpr uint32_t UNIQUENESS_CONSTRAINT_VIOLATION_HASH = ConstExprHashingUtils::HashString("UNIQUENESS_CONSTRAINT_VIOLATION");
+        static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("CONCURRENT_MODIFICATION");
 
 
         ConflictExceptionReason GetConflictExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNIQUENESS_CONSTRAINT_VIOLATION_HASH)
           {
             return ConflictExceptionReason::UNIQUENESS_CONSTRAINT_VIOLATION;

@@ -20,18 +20,18 @@ namespace Aws
       namespace WorkspaceImageIngestionProcessMapper
       {
 
-        static const int BYOL_REGULAR_HASH = HashingUtils::HashString("BYOL_REGULAR");
-        static const int BYOL_GRAPHICS_HASH = HashingUtils::HashString("BYOL_GRAPHICS");
-        static const int BYOL_GRAPHICSPRO_HASH = HashingUtils::HashString("BYOL_GRAPHICSPRO");
-        static const int BYOL_GRAPHICS_G4DN_HASH = HashingUtils::HashString("BYOL_GRAPHICS_G4DN");
-        static const int BYOL_REGULAR_WSP_HASH = HashingUtils::HashString("BYOL_REGULAR_WSP");
-        static const int BYOL_REGULAR_BYOP_HASH = HashingUtils::HashString("BYOL_REGULAR_BYOP");
-        static const int BYOL_GRAPHICS_G4DN_BYOP_HASH = HashingUtils::HashString("BYOL_GRAPHICS_G4DN_BYOP");
+        static constexpr uint32_t BYOL_REGULAR_HASH = ConstExprHashingUtils::HashString("BYOL_REGULAR");
+        static constexpr uint32_t BYOL_GRAPHICS_HASH = ConstExprHashingUtils::HashString("BYOL_GRAPHICS");
+        static constexpr uint32_t BYOL_GRAPHICSPRO_HASH = ConstExprHashingUtils::HashString("BYOL_GRAPHICSPRO");
+        static constexpr uint32_t BYOL_GRAPHICS_G4DN_HASH = ConstExprHashingUtils::HashString("BYOL_GRAPHICS_G4DN");
+        static constexpr uint32_t BYOL_REGULAR_WSP_HASH = ConstExprHashingUtils::HashString("BYOL_REGULAR_WSP");
+        static constexpr uint32_t BYOL_REGULAR_BYOP_HASH = ConstExprHashingUtils::HashString("BYOL_REGULAR_BYOP");
+        static constexpr uint32_t BYOL_GRAPHICS_G4DN_BYOP_HASH = ConstExprHashingUtils::HashString("BYOL_GRAPHICS_G4DN_BYOP");
 
 
         WorkspaceImageIngestionProcess GetWorkspaceImageIngestionProcessForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BYOL_REGULAR_HASH)
           {
             return WorkspaceImageIngestionProcess::BYOL_REGULAR;

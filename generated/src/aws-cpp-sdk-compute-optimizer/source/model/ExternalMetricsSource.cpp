@@ -20,15 +20,15 @@ namespace Aws
       namespace ExternalMetricsSourceMapper
       {
 
-        static const int Datadog_HASH = HashingUtils::HashString("Datadog");
-        static const int Dynatrace_HASH = HashingUtils::HashString("Dynatrace");
-        static const int NewRelic_HASH = HashingUtils::HashString("NewRelic");
-        static const int Instana_HASH = HashingUtils::HashString("Instana");
+        static constexpr uint32_t Datadog_HASH = ConstExprHashingUtils::HashString("Datadog");
+        static constexpr uint32_t Dynatrace_HASH = ConstExprHashingUtils::HashString("Dynatrace");
+        static constexpr uint32_t NewRelic_HASH = ConstExprHashingUtils::HashString("NewRelic");
+        static constexpr uint32_t Instana_HASH = ConstExprHashingUtils::HashString("Instana");
 
 
         ExternalMetricsSource GetExternalMetricsSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Datadog_HASH)
           {
             return ExternalMetricsSource::Datadog;

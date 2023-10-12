@@ -20,12 +20,12 @@ namespace Aws
       namespace ConnectionNotificationTypeMapper
       {
 
-        static const int Topic_HASH = HashingUtils::HashString("Topic");
+        static constexpr uint32_t Topic_HASH = ConstExprHashingUtils::HashString("Topic");
 
 
         ConnectionNotificationType GetConnectionNotificationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Topic_HASH)
           {
             return ConnectionNotificationType::Topic;

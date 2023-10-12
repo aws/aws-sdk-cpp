@@ -20,13 +20,13 @@ namespace Aws
       namespace AssetBundleImportFailureActionMapper
       {
 
-        static const int DO_NOTHING_HASH = HashingUtils::HashString("DO_NOTHING");
-        static const int ROLLBACK_HASH = HashingUtils::HashString("ROLLBACK");
+        static constexpr uint32_t DO_NOTHING_HASH = ConstExprHashingUtils::HashString("DO_NOTHING");
+        static constexpr uint32_t ROLLBACK_HASH = ConstExprHashingUtils::HashString("ROLLBACK");
 
 
         AssetBundleImportFailureAction GetAssetBundleImportFailureActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DO_NOTHING_HASH)
           {
             return AssetBundleImportFailureAction::DO_NOTHING;

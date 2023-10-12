@@ -20,12 +20,12 @@ namespace Aws
       namespace AdditionalResultAttributeValueTypeMapper
       {
 
-        static const int TEXT_WITH_HIGHLIGHTS_VALUE_HASH = HashingUtils::HashString("TEXT_WITH_HIGHLIGHTS_VALUE");
+        static constexpr uint32_t TEXT_WITH_HIGHLIGHTS_VALUE_HASH = ConstExprHashingUtils::HashString("TEXT_WITH_HIGHLIGHTS_VALUE");
 
 
         AdditionalResultAttributeValueType GetAdditionalResultAttributeValueTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TEXT_WITH_HIGHLIGHTS_VALUE_HASH)
           {
             return AdditionalResultAttributeValueType::TEXT_WITH_HIGHLIGHTS_VALUE;

@@ -20,16 +20,16 @@ namespace Aws
       namespace ServerErrorCategoryMapper
       {
 
-        static const int CONNECTIVITY_ERROR_HASH = HashingUtils::HashString("CONNECTIVITY_ERROR");
-        static const int CREDENTIAL_ERROR_HASH = HashingUtils::HashString("CREDENTIAL_ERROR");
-        static const int PERMISSION_ERROR_HASH = HashingUtils::HashString("PERMISSION_ERROR");
-        static const int ARCHITECTURE_ERROR_HASH = HashingUtils::HashString("ARCHITECTURE_ERROR");
-        static const int OTHER_ERROR_HASH = HashingUtils::HashString("OTHER_ERROR");
+        static constexpr uint32_t CONNECTIVITY_ERROR_HASH = ConstExprHashingUtils::HashString("CONNECTIVITY_ERROR");
+        static constexpr uint32_t CREDENTIAL_ERROR_HASH = ConstExprHashingUtils::HashString("CREDENTIAL_ERROR");
+        static constexpr uint32_t PERMISSION_ERROR_HASH = ConstExprHashingUtils::HashString("PERMISSION_ERROR");
+        static constexpr uint32_t ARCHITECTURE_ERROR_HASH = ConstExprHashingUtils::HashString("ARCHITECTURE_ERROR");
+        static constexpr uint32_t OTHER_ERROR_HASH = ConstExprHashingUtils::HashString("OTHER_ERROR");
 
 
         ServerErrorCategory GetServerErrorCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONNECTIVITY_ERROR_HASH)
           {
             return ServerErrorCategory::CONNECTIVITY_ERROR;

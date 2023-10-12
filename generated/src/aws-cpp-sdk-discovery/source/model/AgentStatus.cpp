@@ -20,17 +20,17 @@ namespace Aws
       namespace AgentStatusMapper
       {
 
-        static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
-        static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
-        static const int BLACKLISTED_HASH = HashingUtils::HashString("BLACKLISTED");
-        static const int SHUTDOWN_HASH = HashingUtils::HashString("SHUTDOWN");
+        static constexpr uint32_t HEALTHY_HASH = ConstExprHashingUtils::HashString("HEALTHY");
+        static constexpr uint32_t UNHEALTHY_HASH = ConstExprHashingUtils::HashString("UNHEALTHY");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t BLACKLISTED_HASH = ConstExprHashingUtils::HashString("BLACKLISTED");
+        static constexpr uint32_t SHUTDOWN_HASH = ConstExprHashingUtils::HashString("SHUTDOWN");
 
 
         AgentStatus GetAgentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HEALTHY_HASH)
           {
             return AgentStatus::HEALTHY;

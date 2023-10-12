@@ -20,13 +20,13 @@ namespace Aws
       namespace AuthTypeMapper
       {
 
-        static const int IAM_IDC_HASH = HashingUtils::HashString("IAM_IDC");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static constexpr uint32_t IAM_IDC_HASH = ConstExprHashingUtils::HashString("IAM_IDC");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
 
 
         AuthType GetAuthTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IAM_IDC_HASH)
           {
             return AuthType::IAM_IDC;

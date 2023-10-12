@@ -20,17 +20,17 @@ namespace Aws
       namespace PhoneNumberTypeMapper
       {
 
-        static const int TOLL_FREE_HASH = HashingUtils::HashString("TOLL_FREE");
-        static const int DID_HASH = HashingUtils::HashString("DID");
-        static const int UIFN_HASH = HashingUtils::HashString("UIFN");
-        static const int SHARED_HASH = HashingUtils::HashString("SHARED");
-        static const int THIRD_PARTY_TF_HASH = HashingUtils::HashString("THIRD_PARTY_TF");
-        static const int THIRD_PARTY_DID_HASH = HashingUtils::HashString("THIRD_PARTY_DID");
+        static constexpr uint32_t TOLL_FREE_HASH = ConstExprHashingUtils::HashString("TOLL_FREE");
+        static constexpr uint32_t DID_HASH = ConstExprHashingUtils::HashString("DID");
+        static constexpr uint32_t UIFN_HASH = ConstExprHashingUtils::HashString("UIFN");
+        static constexpr uint32_t SHARED_HASH = ConstExprHashingUtils::HashString("SHARED");
+        static constexpr uint32_t THIRD_PARTY_TF_HASH = ConstExprHashingUtils::HashString("THIRD_PARTY_TF");
+        static constexpr uint32_t THIRD_PARTY_DID_HASH = ConstExprHashingUtils::HashString("THIRD_PARTY_DID");
 
 
         PhoneNumberType GetPhoneNumberTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TOLL_FREE_HASH)
           {
             return PhoneNumberType::TOLL_FREE;

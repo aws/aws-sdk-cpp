@@ -20,36 +20,36 @@ namespace Aws
       namespace LayerAttributesKeysMapper
       {
 
-        static const int EcsClusterArn_HASH = HashingUtils::HashString("EcsClusterArn");
-        static const int EnableHaproxyStats_HASH = HashingUtils::HashString("EnableHaproxyStats");
-        static const int HaproxyStatsUrl_HASH = HashingUtils::HashString("HaproxyStatsUrl");
-        static const int HaproxyStatsUser_HASH = HashingUtils::HashString("HaproxyStatsUser");
-        static const int HaproxyStatsPassword_HASH = HashingUtils::HashString("HaproxyStatsPassword");
-        static const int HaproxyHealthCheckUrl_HASH = HashingUtils::HashString("HaproxyHealthCheckUrl");
-        static const int HaproxyHealthCheckMethod_HASH = HashingUtils::HashString("HaproxyHealthCheckMethod");
-        static const int MysqlRootPassword_HASH = HashingUtils::HashString("MysqlRootPassword");
-        static const int MysqlRootPasswordUbiquitous_HASH = HashingUtils::HashString("MysqlRootPasswordUbiquitous");
-        static const int GangliaUrl_HASH = HashingUtils::HashString("GangliaUrl");
-        static const int GangliaUser_HASH = HashingUtils::HashString("GangliaUser");
-        static const int GangliaPassword_HASH = HashingUtils::HashString("GangliaPassword");
-        static const int MemcachedMemory_HASH = HashingUtils::HashString("MemcachedMemory");
-        static const int NodejsVersion_HASH = HashingUtils::HashString("NodejsVersion");
-        static const int RubyVersion_HASH = HashingUtils::HashString("RubyVersion");
-        static const int RubygemsVersion_HASH = HashingUtils::HashString("RubygemsVersion");
-        static const int ManageBundler_HASH = HashingUtils::HashString("ManageBundler");
-        static const int BundlerVersion_HASH = HashingUtils::HashString("BundlerVersion");
-        static const int RailsStack_HASH = HashingUtils::HashString("RailsStack");
-        static const int PassengerVersion_HASH = HashingUtils::HashString("PassengerVersion");
-        static const int Jvm_HASH = HashingUtils::HashString("Jvm");
-        static const int JvmVersion_HASH = HashingUtils::HashString("JvmVersion");
-        static const int JvmOptions_HASH = HashingUtils::HashString("JvmOptions");
-        static const int JavaAppServer_HASH = HashingUtils::HashString("JavaAppServer");
-        static const int JavaAppServerVersion_HASH = HashingUtils::HashString("JavaAppServerVersion");
+        static constexpr uint32_t EcsClusterArn_HASH = ConstExprHashingUtils::HashString("EcsClusterArn");
+        static constexpr uint32_t EnableHaproxyStats_HASH = ConstExprHashingUtils::HashString("EnableHaproxyStats");
+        static constexpr uint32_t HaproxyStatsUrl_HASH = ConstExprHashingUtils::HashString("HaproxyStatsUrl");
+        static constexpr uint32_t HaproxyStatsUser_HASH = ConstExprHashingUtils::HashString("HaproxyStatsUser");
+        static constexpr uint32_t HaproxyStatsPassword_HASH = ConstExprHashingUtils::HashString("HaproxyStatsPassword");
+        static constexpr uint32_t HaproxyHealthCheckUrl_HASH = ConstExprHashingUtils::HashString("HaproxyHealthCheckUrl");
+        static constexpr uint32_t HaproxyHealthCheckMethod_HASH = ConstExprHashingUtils::HashString("HaproxyHealthCheckMethod");
+        static constexpr uint32_t MysqlRootPassword_HASH = ConstExprHashingUtils::HashString("MysqlRootPassword");
+        static constexpr uint32_t MysqlRootPasswordUbiquitous_HASH = ConstExprHashingUtils::HashString("MysqlRootPasswordUbiquitous");
+        static constexpr uint32_t GangliaUrl_HASH = ConstExprHashingUtils::HashString("GangliaUrl");
+        static constexpr uint32_t GangliaUser_HASH = ConstExprHashingUtils::HashString("GangliaUser");
+        static constexpr uint32_t GangliaPassword_HASH = ConstExprHashingUtils::HashString("GangliaPassword");
+        static constexpr uint32_t MemcachedMemory_HASH = ConstExprHashingUtils::HashString("MemcachedMemory");
+        static constexpr uint32_t NodejsVersion_HASH = ConstExprHashingUtils::HashString("NodejsVersion");
+        static constexpr uint32_t RubyVersion_HASH = ConstExprHashingUtils::HashString("RubyVersion");
+        static constexpr uint32_t RubygemsVersion_HASH = ConstExprHashingUtils::HashString("RubygemsVersion");
+        static constexpr uint32_t ManageBundler_HASH = ConstExprHashingUtils::HashString("ManageBundler");
+        static constexpr uint32_t BundlerVersion_HASH = ConstExprHashingUtils::HashString("BundlerVersion");
+        static constexpr uint32_t RailsStack_HASH = ConstExprHashingUtils::HashString("RailsStack");
+        static constexpr uint32_t PassengerVersion_HASH = ConstExprHashingUtils::HashString("PassengerVersion");
+        static constexpr uint32_t Jvm_HASH = ConstExprHashingUtils::HashString("Jvm");
+        static constexpr uint32_t JvmVersion_HASH = ConstExprHashingUtils::HashString("JvmVersion");
+        static constexpr uint32_t JvmOptions_HASH = ConstExprHashingUtils::HashString("JvmOptions");
+        static constexpr uint32_t JavaAppServer_HASH = ConstExprHashingUtils::HashString("JavaAppServer");
+        static constexpr uint32_t JavaAppServerVersion_HASH = ConstExprHashingUtils::HashString("JavaAppServerVersion");
 
 
         LayerAttributesKeys GetLayerAttributesKeysForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EcsClusterArn_HASH)
           {
             return LayerAttributesKeys::EcsClusterArn;

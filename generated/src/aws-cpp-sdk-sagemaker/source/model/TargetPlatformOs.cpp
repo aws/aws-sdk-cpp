@@ -20,13 +20,13 @@ namespace Aws
       namespace TargetPlatformOsMapper
       {
 
-        static const int ANDROID__HASH = HashingUtils::HashString("ANDROID");
-        static const int LINUX_HASH = HashingUtils::HashString("LINUX");
+        static constexpr uint32_t ANDROID__HASH = ConstExprHashingUtils::HashString("ANDROID");
+        static constexpr uint32_t LINUX_HASH = ConstExprHashingUtils::HashString("LINUX");
 
 
         TargetPlatformOs GetTargetPlatformOsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ANDROID__HASH)
           {
             return TargetPlatformOs::ANDROID_;

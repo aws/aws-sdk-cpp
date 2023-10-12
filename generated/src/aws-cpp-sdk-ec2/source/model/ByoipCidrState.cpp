@@ -20,19 +20,19 @@ namespace Aws
       namespace ByoipCidrStateMapper
       {
 
-        static const int advertised_HASH = HashingUtils::HashString("advertised");
-        static const int deprovisioned_HASH = HashingUtils::HashString("deprovisioned");
-        static const int failed_deprovision_HASH = HashingUtils::HashString("failed-deprovision");
-        static const int failed_provision_HASH = HashingUtils::HashString("failed-provision");
-        static const int pending_deprovision_HASH = HashingUtils::HashString("pending-deprovision");
-        static const int pending_provision_HASH = HashingUtils::HashString("pending-provision");
-        static const int provisioned_HASH = HashingUtils::HashString("provisioned");
-        static const int provisioned_not_publicly_advertisable_HASH = HashingUtils::HashString("provisioned-not-publicly-advertisable");
+        static constexpr uint32_t advertised_HASH = ConstExprHashingUtils::HashString("advertised");
+        static constexpr uint32_t deprovisioned_HASH = ConstExprHashingUtils::HashString("deprovisioned");
+        static constexpr uint32_t failed_deprovision_HASH = ConstExprHashingUtils::HashString("failed-deprovision");
+        static constexpr uint32_t failed_provision_HASH = ConstExprHashingUtils::HashString("failed-provision");
+        static constexpr uint32_t pending_deprovision_HASH = ConstExprHashingUtils::HashString("pending-deprovision");
+        static constexpr uint32_t pending_provision_HASH = ConstExprHashingUtils::HashString("pending-provision");
+        static constexpr uint32_t provisioned_HASH = ConstExprHashingUtils::HashString("provisioned");
+        static constexpr uint32_t provisioned_not_publicly_advertisable_HASH = ConstExprHashingUtils::HashString("provisioned-not-publicly-advertisable");
 
 
         ByoipCidrState GetByoipCidrStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == advertised_HASH)
           {
             return ByoipCidrState::advertised;

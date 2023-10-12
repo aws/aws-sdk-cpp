@@ -18,22 +18,22 @@ namespace SecretsManager
 namespace SecretsManagerErrorMapper
 {
 
-static const int RESOURCE_EXISTS_HASH = HashingUtils::HashString("ResourceExistsException");
-static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocumentException");
-static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceError");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int DECRYPTION_FAILURE_HASH = HashingUtils::HashString("DecryptionFailure");
-static const int PUBLIC_POLICY_HASH = HashingUtils::HashString("PublicPolicyException");
-static const int PRECONDITION_NOT_MET_HASH = HashingUtils::HashString("PreconditionNotMetException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
-static const int ENCRYPTION_FAILURE_HASH = HashingUtils::HashString("EncryptionFailure");
+static constexpr uint32_t RESOURCE_EXISTS_HASH = ConstExprHashingUtils::HashString("ResourceExistsException");
+static constexpr uint32_t MALFORMED_POLICY_DOCUMENT_HASH = ConstExprHashingUtils::HashString("MalformedPolicyDocumentException");
+static constexpr uint32_t INTERNAL_SERVICE_HASH = ConstExprHashingUtils::HashString("InternalServiceError");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t DECRYPTION_FAILURE_HASH = ConstExprHashingUtils::HashString("DecryptionFailure");
+static constexpr uint32_t PUBLIC_POLICY_HASH = ConstExprHashingUtils::HashString("PublicPolicyException");
+static constexpr uint32_t PRECONDITION_NOT_MET_HASH = ConstExprHashingUtils::HashString("PreconditionNotMetException");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t ENCRYPTION_FAILURE_HASH = ConstExprHashingUtils::HashString("EncryptionFailure");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == RESOURCE_EXISTS_HASH)
   {

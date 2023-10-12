@@ -20,13 +20,13 @@ namespace Aws
       namespace PhysicalIdentifierTypeMapper
       {
 
-        static const int Arn_HASH = HashingUtils::HashString("Arn");
-        static const int Native_HASH = HashingUtils::HashString("Native");
+        static constexpr uint32_t Arn_HASH = ConstExprHashingUtils::HashString("Arn");
+        static constexpr uint32_t Native_HASH = ConstExprHashingUtils::HashString("Native");
 
 
         PhysicalIdentifierType GetPhysicalIdentifierTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Arn_HASH)
           {
             return PhysicalIdentifierType::Arn;

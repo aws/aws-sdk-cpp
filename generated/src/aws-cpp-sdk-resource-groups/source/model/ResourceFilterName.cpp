@@ -20,12 +20,12 @@ namespace Aws
       namespace ResourceFilterNameMapper
       {
 
-        static const int resource_type_HASH = HashingUtils::HashString("resource-type");
+        static constexpr uint32_t resource_type_HASH = ConstExprHashingUtils::HashString("resource-type");
 
 
         ResourceFilterName GetResourceFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == resource_type_HASH)
           {
             return ResourceFilterName::resource_type;

@@ -20,13 +20,13 @@ namespace Aws
       namespace FontWeightNameMapper
       {
 
-        static const int NORMAL_HASH = HashingUtils::HashString("NORMAL");
-        static const int BOLD_HASH = HashingUtils::HashString("BOLD");
+        static constexpr uint32_t NORMAL_HASH = ConstExprHashingUtils::HashString("NORMAL");
+        static constexpr uint32_t BOLD_HASH = ConstExprHashingUtils::HashString("BOLD");
 
 
         FontWeightName GetFontWeightNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NORMAL_HASH)
           {
             return FontWeightName::NORMAL;

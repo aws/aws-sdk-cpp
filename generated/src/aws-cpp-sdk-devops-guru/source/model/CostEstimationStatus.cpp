@@ -20,13 +20,13 @@ namespace Aws
       namespace CostEstimationStatusMapper
       {
 
-        static const int ONGOING_HASH = HashingUtils::HashString("ONGOING");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t ONGOING_HASH = ConstExprHashingUtils::HashString("ONGOING");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
 
 
         CostEstimationStatus GetCostEstimationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ONGOING_HASH)
           {
             return CostEstimationStatus::ONGOING;

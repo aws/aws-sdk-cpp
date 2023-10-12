@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceImportStrategyTypeMapper
       {
 
-        static const int AddOnly_HASH = HashingUtils::HashString("AddOnly");
-        static const int ReplaceAll_HASH = HashingUtils::HashString("ReplaceAll");
+        static constexpr uint32_t AddOnly_HASH = ConstExprHashingUtils::HashString("AddOnly");
+        static constexpr uint32_t ReplaceAll_HASH = ConstExprHashingUtils::HashString("ReplaceAll");
 
 
         ResourceImportStrategyType GetResourceImportStrategyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AddOnly_HASH)
           {
             return ResourceImportStrategyType::AddOnly;

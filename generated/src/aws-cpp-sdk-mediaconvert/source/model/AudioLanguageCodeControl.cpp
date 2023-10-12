@@ -20,13 +20,13 @@ namespace Aws
       namespace AudioLanguageCodeControlMapper
       {
 
-        static const int FOLLOW_INPUT_HASH = HashingUtils::HashString("FOLLOW_INPUT");
-        static const int USE_CONFIGURED_HASH = HashingUtils::HashString("USE_CONFIGURED");
+        static constexpr uint32_t FOLLOW_INPUT_HASH = ConstExprHashingUtils::HashString("FOLLOW_INPUT");
+        static constexpr uint32_t USE_CONFIGURED_HASH = ConstExprHashingUtils::HashString("USE_CONFIGURED");
 
 
         AudioLanguageCodeControl GetAudioLanguageCodeControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FOLLOW_INPUT_HASH)
           {
             return AudioLanguageCodeControl::FOLLOW_INPUT;

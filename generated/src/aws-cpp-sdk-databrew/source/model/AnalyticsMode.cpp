@@ -20,13 +20,13 @@ namespace Aws
       namespace AnalyticsModeMapper
       {
 
-        static const int ENABLE_HASH = HashingUtils::HashString("ENABLE");
-        static const int DISABLE_HASH = HashingUtils::HashString("DISABLE");
+        static constexpr uint32_t ENABLE_HASH = ConstExprHashingUtils::HashString("ENABLE");
+        static constexpr uint32_t DISABLE_HASH = ConstExprHashingUtils::HashString("DISABLE");
 
 
         AnalyticsMode GetAnalyticsModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLE_HASH)
           {
             return AnalyticsMode::ENABLE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace DeploymentComponentUpdatePolicyActionMapper
       {
 
-        static const int NOTIFY_COMPONENTS_HASH = HashingUtils::HashString("NOTIFY_COMPONENTS");
-        static const int SKIP_NOTIFY_COMPONENTS_HASH = HashingUtils::HashString("SKIP_NOTIFY_COMPONENTS");
+        static constexpr uint32_t NOTIFY_COMPONENTS_HASH = ConstExprHashingUtils::HashString("NOTIFY_COMPONENTS");
+        static constexpr uint32_t SKIP_NOTIFY_COMPONENTS_HASH = ConstExprHashingUtils::HashString("SKIP_NOTIFY_COMPONENTS");
 
 
         DeploymentComponentUpdatePolicyAction GetDeploymentComponentUpdatePolicyActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOTIFY_COMPONENTS_HASH)
           {
             return DeploymentComponentUpdatePolicyAction::NOTIFY_COMPONENTS;

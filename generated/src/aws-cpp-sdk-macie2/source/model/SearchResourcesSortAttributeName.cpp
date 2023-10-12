@@ -20,15 +20,15 @@ namespace Aws
       namespace SearchResourcesSortAttributeNameMapper
       {
 
-        static const int ACCOUNT_ID_HASH = HashingUtils::HashString("ACCOUNT_ID");
-        static const int RESOURCE_NAME_HASH = HashingUtils::HashString("RESOURCE_NAME");
-        static const int S3_CLASSIFIABLE_OBJECT_COUNT_HASH = HashingUtils::HashString("S3_CLASSIFIABLE_OBJECT_COUNT");
-        static const int S3_CLASSIFIABLE_SIZE_IN_BYTES_HASH = HashingUtils::HashString("S3_CLASSIFIABLE_SIZE_IN_BYTES");
+        static constexpr uint32_t ACCOUNT_ID_HASH = ConstExprHashingUtils::HashString("ACCOUNT_ID");
+        static constexpr uint32_t RESOURCE_NAME_HASH = ConstExprHashingUtils::HashString("RESOURCE_NAME");
+        static constexpr uint32_t S3_CLASSIFIABLE_OBJECT_COUNT_HASH = ConstExprHashingUtils::HashString("S3_CLASSIFIABLE_OBJECT_COUNT");
+        static constexpr uint32_t S3_CLASSIFIABLE_SIZE_IN_BYTES_HASH = ConstExprHashingUtils::HashString("S3_CLASSIFIABLE_SIZE_IN_BYTES");
 
 
         SearchResourcesSortAttributeName GetSearchResourcesSortAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCOUNT_ID_HASH)
           {
             return SearchResourcesSortAttributeName::ACCOUNT_ID;

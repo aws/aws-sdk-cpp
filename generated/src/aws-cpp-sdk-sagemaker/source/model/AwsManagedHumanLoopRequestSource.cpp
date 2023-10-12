@@ -20,13 +20,13 @@ namespace Aws
       namespace AwsManagedHumanLoopRequestSourceMapper
       {
 
-        static const int AWS_Rekognition_DetectModerationLabels_Image_V3_HASH = HashingUtils::HashString("AWS/Rekognition/DetectModerationLabels/Image/V3");
-        static const int AWS_Textract_AnalyzeDocument_Forms_V1_HASH = HashingUtils::HashString("AWS/Textract/AnalyzeDocument/Forms/V1");
+        static constexpr uint32_t AWS_Rekognition_DetectModerationLabels_Image_V3_HASH = ConstExprHashingUtils::HashString("AWS/Rekognition/DetectModerationLabels/Image/V3");
+        static constexpr uint32_t AWS_Textract_AnalyzeDocument_Forms_V1_HASH = ConstExprHashingUtils::HashString("AWS/Textract/AnalyzeDocument/Forms/V1");
 
 
         AwsManagedHumanLoopRequestSource GetAwsManagedHumanLoopRequestSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_Rekognition_DetectModerationLabels_Image_V3_HASH)
           {
             return AwsManagedHumanLoopRequestSource::AWS_Rekognition_DetectModerationLabels_Image_V3;

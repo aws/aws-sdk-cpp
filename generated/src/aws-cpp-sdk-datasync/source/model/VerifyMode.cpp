@@ -20,14 +20,14 @@ namespace Aws
       namespace VerifyModeMapper
       {
 
-        static const int POINT_IN_TIME_CONSISTENT_HASH = HashingUtils::HashString("POINT_IN_TIME_CONSISTENT");
-        static const int ONLY_FILES_TRANSFERRED_HASH = HashingUtils::HashString("ONLY_FILES_TRANSFERRED");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t POINT_IN_TIME_CONSISTENT_HASH = ConstExprHashingUtils::HashString("POINT_IN_TIME_CONSISTENT");
+        static constexpr uint32_t ONLY_FILES_TRANSFERRED_HASH = ConstExprHashingUtils::HashString("ONLY_FILES_TRANSFERRED");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         VerifyMode GetVerifyModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == POINT_IN_TIME_CONSISTENT_HASH)
           {
             return VerifyMode::POINT_IN_TIME_CONSISTENT;

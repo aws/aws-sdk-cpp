@@ -20,19 +20,19 @@ namespace Aws
       namespace UserImportJobStatusTypeMapper
       {
 
-        static const int Created_HASH = HashingUtils::HashString("Created");
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Stopping_HASH = HashingUtils::HashString("Stopping");
-        static const int Expired_HASH = HashingUtils::HashString("Expired");
-        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
+        static constexpr uint32_t Created_HASH = ConstExprHashingUtils::HashString("Created");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Stopping_HASH = ConstExprHashingUtils::HashString("Stopping");
+        static constexpr uint32_t Expired_HASH = ConstExprHashingUtils::HashString("Expired");
+        static constexpr uint32_t Stopped_HASH = ConstExprHashingUtils::HashString("Stopped");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Succeeded_HASH = ConstExprHashingUtils::HashString("Succeeded");
 
 
         UserImportJobStatusType GetUserImportJobStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Created_HASH)
           {
             return UserImportJobStatusType::Created;

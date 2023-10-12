@@ -18,29 +18,29 @@ namespace GlobalAccelerator
 namespace GlobalAcceleratorErrorMapper
 {
 
-static const int ENDPOINT_ALREADY_EXISTS_HASH = HashingUtils::HashString("EndpointAlreadyExistsException");
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int ACCELERATOR_NOT_FOUND_HASH = HashingUtils::HashString("AcceleratorNotFoundException");
-static const int INCORRECT_CIDR_STATE_HASH = HashingUtils::HashString("IncorrectCidrStateException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int TRANSACTION_IN_PROGRESS_HASH = HashingUtils::HashString("TransactionInProgressException");
-static const int BYOIP_CIDR_NOT_FOUND_HASH = HashingUtils::HashString("ByoipCidrNotFoundException");
-static const int LISTENER_NOT_FOUND_HASH = HashingUtils::HashString("ListenerNotFoundException");
-static const int ASSOCIATED_LISTENER_FOUND_HASH = HashingUtils::HashString("AssociatedListenerFoundException");
-static const int ENDPOINT_GROUP_NOT_FOUND_HASH = HashingUtils::HashString("EndpointGroupNotFoundException");
-static const int INVALID_PORT_RANGE_HASH = HashingUtils::HashString("InvalidPortRangeException");
-static const int ENDPOINT_NOT_FOUND_HASH = HashingUtils::HashString("EndpointNotFoundException");
-static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("InternalServiceErrorException");
-static const int ENDPOINT_GROUP_ALREADY_EXISTS_HASH = HashingUtils::HashString("EndpointGroupAlreadyExistsException");
-static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
-static const int ASSOCIATED_ENDPOINT_GROUP_FOUND_HASH = HashingUtils::HashString("AssociatedEndpointGroupFoundException");
-static const int ACCELERATOR_NOT_DISABLED_HASH = HashingUtils::HashString("AcceleratorNotDisabledException");
+static constexpr uint32_t ENDPOINT_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("EndpointAlreadyExistsException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t ACCELERATOR_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("AcceleratorNotFoundException");
+static constexpr uint32_t INCORRECT_CIDR_STATE_HASH = ConstExprHashingUtils::HashString("IncorrectCidrStateException");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+static constexpr uint32_t TRANSACTION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("TransactionInProgressException");
+static constexpr uint32_t BYOIP_CIDR_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ByoipCidrNotFoundException");
+static constexpr uint32_t LISTENER_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ListenerNotFoundException");
+static constexpr uint32_t ASSOCIATED_LISTENER_FOUND_HASH = ConstExprHashingUtils::HashString("AssociatedListenerFoundException");
+static constexpr uint32_t ENDPOINT_GROUP_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("EndpointGroupNotFoundException");
+static constexpr uint32_t INVALID_PORT_RANGE_HASH = ConstExprHashingUtils::HashString("InvalidPortRangeException");
+static constexpr uint32_t ENDPOINT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("EndpointNotFoundException");
+static constexpr uint32_t INTERNAL_SERVICE_ERROR_HASH = ConstExprHashingUtils::HashString("InternalServiceErrorException");
+static constexpr uint32_t ENDPOINT_GROUP_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("EndpointGroupAlreadyExistsException");
+static constexpr uint32_t INVALID_ARGUMENT_HASH = ConstExprHashingUtils::HashString("InvalidArgumentException");
+static constexpr uint32_t ASSOCIATED_ENDPOINT_GROUP_FOUND_HASH = ConstExprHashingUtils::HashString("AssociatedEndpointGroupFoundException");
+static constexpr uint32_t ACCELERATOR_NOT_DISABLED_HASH = ConstExprHashingUtils::HashString("AcceleratorNotDisabledException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == ENDPOINT_ALREADY_EXISTS_HASH)
   {

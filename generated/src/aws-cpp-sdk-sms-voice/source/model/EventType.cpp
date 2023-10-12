@@ -20,18 +20,18 @@ namespace Aws
       namespace EventTypeMapper
       {
 
-        static const int INITIATED_CALL_HASH = HashingUtils::HashString("INITIATED_CALL");
-        static const int RINGING_HASH = HashingUtils::HashString("RINGING");
-        static const int ANSWERED_HASH = HashingUtils::HashString("ANSWERED");
-        static const int COMPLETED_CALL_HASH = HashingUtils::HashString("COMPLETED_CALL");
-        static const int BUSY_HASH = HashingUtils::HashString("BUSY");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int NO_ANSWER_HASH = HashingUtils::HashString("NO_ANSWER");
+        static constexpr uint32_t INITIATED_CALL_HASH = ConstExprHashingUtils::HashString("INITIATED_CALL");
+        static constexpr uint32_t RINGING_HASH = ConstExprHashingUtils::HashString("RINGING");
+        static constexpr uint32_t ANSWERED_HASH = ConstExprHashingUtils::HashString("ANSWERED");
+        static constexpr uint32_t COMPLETED_CALL_HASH = ConstExprHashingUtils::HashString("COMPLETED_CALL");
+        static constexpr uint32_t BUSY_HASH = ConstExprHashingUtils::HashString("BUSY");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t NO_ANSWER_HASH = ConstExprHashingUtils::HashString("NO_ANSWER");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INITIATED_CALL_HASH)
           {
             return EventType::INITIATED_CALL;

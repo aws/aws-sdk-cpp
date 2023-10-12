@@ -20,14 +20,14 @@ namespace Aws
       namespace SnapshotFileFormatTypeMapper
       {
 
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
-        static const int PDF_HASH = HashingUtils::HashString("PDF");
-        static const int EXCEL_HASH = HashingUtils::HashString("EXCEL");
+        static constexpr uint32_t CSV_HASH = ConstExprHashingUtils::HashString("CSV");
+        static constexpr uint32_t PDF_HASH = ConstExprHashingUtils::HashString("PDF");
+        static constexpr uint32_t EXCEL_HASH = ConstExprHashingUtils::HashString("EXCEL");
 
 
         SnapshotFileFormatType GetSnapshotFileFormatTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CSV_HASH)
           {
             return SnapshotFileFormatType::CSV;

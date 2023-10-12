@@ -20,27 +20,27 @@ namespace Aws
       namespace MetricNameMapper
       {
 
-        static const int Cpu_HASH = HashingUtils::HashString("Cpu");
-        static const int Memory_HASH = HashingUtils::HashString("Memory");
-        static const int EBS_READ_OPS_PER_SECOND_HASH = HashingUtils::HashString("EBS_READ_OPS_PER_SECOND");
-        static const int EBS_WRITE_OPS_PER_SECOND_HASH = HashingUtils::HashString("EBS_WRITE_OPS_PER_SECOND");
-        static const int EBS_READ_BYTES_PER_SECOND_HASH = HashingUtils::HashString("EBS_READ_BYTES_PER_SECOND");
-        static const int EBS_WRITE_BYTES_PER_SECOND_HASH = HashingUtils::HashString("EBS_WRITE_BYTES_PER_SECOND");
-        static const int DISK_READ_OPS_PER_SECOND_HASH = HashingUtils::HashString("DISK_READ_OPS_PER_SECOND");
-        static const int DISK_WRITE_OPS_PER_SECOND_HASH = HashingUtils::HashString("DISK_WRITE_OPS_PER_SECOND");
-        static const int DISK_READ_BYTES_PER_SECOND_HASH = HashingUtils::HashString("DISK_READ_BYTES_PER_SECOND");
-        static const int DISK_WRITE_BYTES_PER_SECOND_HASH = HashingUtils::HashString("DISK_WRITE_BYTES_PER_SECOND");
-        static const int NETWORK_IN_BYTES_PER_SECOND_HASH = HashingUtils::HashString("NETWORK_IN_BYTES_PER_SECOND");
-        static const int NETWORK_OUT_BYTES_PER_SECOND_HASH = HashingUtils::HashString("NETWORK_OUT_BYTES_PER_SECOND");
-        static const int NETWORK_PACKETS_IN_PER_SECOND_HASH = HashingUtils::HashString("NETWORK_PACKETS_IN_PER_SECOND");
-        static const int NETWORK_PACKETS_OUT_PER_SECOND_HASH = HashingUtils::HashString("NETWORK_PACKETS_OUT_PER_SECOND");
-        static const int GPU_PERCENTAGE_HASH = HashingUtils::HashString("GPU_PERCENTAGE");
-        static const int GPU_MEMORY_PERCENTAGE_HASH = HashingUtils::HashString("GPU_MEMORY_PERCENTAGE");
+        static constexpr uint32_t Cpu_HASH = ConstExprHashingUtils::HashString("Cpu");
+        static constexpr uint32_t Memory_HASH = ConstExprHashingUtils::HashString("Memory");
+        static constexpr uint32_t EBS_READ_OPS_PER_SECOND_HASH = ConstExprHashingUtils::HashString("EBS_READ_OPS_PER_SECOND");
+        static constexpr uint32_t EBS_WRITE_OPS_PER_SECOND_HASH = ConstExprHashingUtils::HashString("EBS_WRITE_OPS_PER_SECOND");
+        static constexpr uint32_t EBS_READ_BYTES_PER_SECOND_HASH = ConstExprHashingUtils::HashString("EBS_READ_BYTES_PER_SECOND");
+        static constexpr uint32_t EBS_WRITE_BYTES_PER_SECOND_HASH = ConstExprHashingUtils::HashString("EBS_WRITE_BYTES_PER_SECOND");
+        static constexpr uint32_t DISK_READ_OPS_PER_SECOND_HASH = ConstExprHashingUtils::HashString("DISK_READ_OPS_PER_SECOND");
+        static constexpr uint32_t DISK_WRITE_OPS_PER_SECOND_HASH = ConstExprHashingUtils::HashString("DISK_WRITE_OPS_PER_SECOND");
+        static constexpr uint32_t DISK_READ_BYTES_PER_SECOND_HASH = ConstExprHashingUtils::HashString("DISK_READ_BYTES_PER_SECOND");
+        static constexpr uint32_t DISK_WRITE_BYTES_PER_SECOND_HASH = ConstExprHashingUtils::HashString("DISK_WRITE_BYTES_PER_SECOND");
+        static constexpr uint32_t NETWORK_IN_BYTES_PER_SECOND_HASH = ConstExprHashingUtils::HashString("NETWORK_IN_BYTES_PER_SECOND");
+        static constexpr uint32_t NETWORK_OUT_BYTES_PER_SECOND_HASH = ConstExprHashingUtils::HashString("NETWORK_OUT_BYTES_PER_SECOND");
+        static constexpr uint32_t NETWORK_PACKETS_IN_PER_SECOND_HASH = ConstExprHashingUtils::HashString("NETWORK_PACKETS_IN_PER_SECOND");
+        static constexpr uint32_t NETWORK_PACKETS_OUT_PER_SECOND_HASH = ConstExprHashingUtils::HashString("NETWORK_PACKETS_OUT_PER_SECOND");
+        static constexpr uint32_t GPU_PERCENTAGE_HASH = ConstExprHashingUtils::HashString("GPU_PERCENTAGE");
+        static constexpr uint32_t GPU_MEMORY_PERCENTAGE_HASH = ConstExprHashingUtils::HashString("GPU_MEMORY_PERCENTAGE");
 
 
         MetricName GetMetricNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Cpu_HASH)
           {
             return MetricName::Cpu;

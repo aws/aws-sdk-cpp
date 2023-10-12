@@ -20,13 +20,13 @@ namespace Aws
       namespace OriginManifestTypeMapper
       {
 
-        static const int SINGLE_PERIOD_HASH = HashingUtils::HashString("SINGLE_PERIOD");
-        static const int MULTI_PERIOD_HASH = HashingUtils::HashString("MULTI_PERIOD");
+        static constexpr uint32_t SINGLE_PERIOD_HASH = ConstExprHashingUtils::HashString("SINGLE_PERIOD");
+        static constexpr uint32_t MULTI_PERIOD_HASH = ConstExprHashingUtils::HashString("MULTI_PERIOD");
 
 
         OriginManifestType GetOriginManifestTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SINGLE_PERIOD_HASH)
           {
             return OriginManifestType::SINGLE_PERIOD;

@@ -20,13 +20,13 @@ namespace Aws
       namespace SheetControlListTypeMapper
       {
 
-        static const int MULTI_SELECT_HASH = HashingUtils::HashString("MULTI_SELECT");
-        static const int SINGLE_SELECT_HASH = HashingUtils::HashString("SINGLE_SELECT");
+        static constexpr uint32_t MULTI_SELECT_HASH = ConstExprHashingUtils::HashString("MULTI_SELECT");
+        static constexpr uint32_t SINGLE_SELECT_HASH = ConstExprHashingUtils::HashString("SINGLE_SELECT");
 
 
         SheetControlListType GetSheetControlListTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MULTI_SELECT_HASH)
           {
             return SheetControlListType::MULTI_SELECT;

@@ -20,13 +20,13 @@ namespace Aws
       namespace InstanceActionMapper
       {
 
-        static const int TERMINATE_HASH = HashingUtils::HashString("TERMINATE");
-        static const int KEEP_ALIVE_HASH = HashingUtils::HashString("KEEP_ALIVE");
+        static constexpr uint32_t TERMINATE_HASH = ConstExprHashingUtils::HashString("TERMINATE");
+        static constexpr uint32_t KEEP_ALIVE_HASH = ConstExprHashingUtils::HashString("KEEP_ALIVE");
 
 
         InstanceAction GetInstanceActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TERMINATE_HASH)
           {
             return InstanceAction::TERMINATE;

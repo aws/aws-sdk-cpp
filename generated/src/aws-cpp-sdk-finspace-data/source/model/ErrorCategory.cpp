@@ -20,19 +20,19 @@ namespace Aws
       namespace ErrorCategoryMapper
       {
 
-        static const int VALIDATION_HASH = HashingUtils::HashString("VALIDATION");
-        static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("SERVICE_QUOTA_EXCEEDED");
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
-        static const int RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("RESOURCE_NOT_FOUND");
-        static const int THROTTLING_HASH = HashingUtils::HashString("THROTTLING");
-        static const int INTERNAL_SERVICE_EXCEPTION_HASH = HashingUtils::HashString("INTERNAL_SERVICE_EXCEPTION");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-        static const int USER_RECOVERABLE_HASH = HashingUtils::HashString("USER_RECOVERABLE");
+        static constexpr uint32_t VALIDATION_HASH = ConstExprHashingUtils::HashString("VALIDATION");
+        static constexpr uint32_t SERVICE_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("SERVICE_QUOTA_EXCEEDED");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t RESOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("RESOURCE_NOT_FOUND");
+        static constexpr uint32_t THROTTLING_HASH = ConstExprHashingUtils::HashString("THROTTLING");
+        static constexpr uint32_t INTERNAL_SERVICE_EXCEPTION_HASH = ConstExprHashingUtils::HashString("INTERNAL_SERVICE_EXCEPTION");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t USER_RECOVERABLE_HASH = ConstExprHashingUtils::HashString("USER_RECOVERABLE");
 
 
         ErrorCategory GetErrorCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VALIDATION_HASH)
           {
             return ErrorCategory::VALIDATION;

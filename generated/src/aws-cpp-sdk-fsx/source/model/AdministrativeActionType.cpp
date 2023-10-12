@@ -20,23 +20,23 @@ namespace Aws
       namespace AdministrativeActionTypeMapper
       {
 
-        static const int FILE_SYSTEM_UPDATE_HASH = HashingUtils::HashString("FILE_SYSTEM_UPDATE");
-        static const int STORAGE_OPTIMIZATION_HASH = HashingUtils::HashString("STORAGE_OPTIMIZATION");
-        static const int FILE_SYSTEM_ALIAS_ASSOCIATION_HASH = HashingUtils::HashString("FILE_SYSTEM_ALIAS_ASSOCIATION");
-        static const int FILE_SYSTEM_ALIAS_DISASSOCIATION_HASH = HashingUtils::HashString("FILE_SYSTEM_ALIAS_DISASSOCIATION");
-        static const int VOLUME_UPDATE_HASH = HashingUtils::HashString("VOLUME_UPDATE");
-        static const int SNAPSHOT_UPDATE_HASH = HashingUtils::HashString("SNAPSHOT_UPDATE");
-        static const int RELEASE_NFS_V3_LOCKS_HASH = HashingUtils::HashString("RELEASE_NFS_V3_LOCKS");
-        static const int VOLUME_RESTORE_HASH = HashingUtils::HashString("VOLUME_RESTORE");
-        static const int THROUGHPUT_OPTIMIZATION_HASH = HashingUtils::HashString("THROUGHPUT_OPTIMIZATION");
-        static const int IOPS_OPTIMIZATION_HASH = HashingUtils::HashString("IOPS_OPTIMIZATION");
-        static const int STORAGE_TYPE_OPTIMIZATION_HASH = HashingUtils::HashString("STORAGE_TYPE_OPTIMIZATION");
-        static const int MISCONFIGURED_STATE_RECOVERY_HASH = HashingUtils::HashString("MISCONFIGURED_STATE_RECOVERY");
+        static constexpr uint32_t FILE_SYSTEM_UPDATE_HASH = ConstExprHashingUtils::HashString("FILE_SYSTEM_UPDATE");
+        static constexpr uint32_t STORAGE_OPTIMIZATION_HASH = ConstExprHashingUtils::HashString("STORAGE_OPTIMIZATION");
+        static constexpr uint32_t FILE_SYSTEM_ALIAS_ASSOCIATION_HASH = ConstExprHashingUtils::HashString("FILE_SYSTEM_ALIAS_ASSOCIATION");
+        static constexpr uint32_t FILE_SYSTEM_ALIAS_DISASSOCIATION_HASH = ConstExprHashingUtils::HashString("FILE_SYSTEM_ALIAS_DISASSOCIATION");
+        static constexpr uint32_t VOLUME_UPDATE_HASH = ConstExprHashingUtils::HashString("VOLUME_UPDATE");
+        static constexpr uint32_t SNAPSHOT_UPDATE_HASH = ConstExprHashingUtils::HashString("SNAPSHOT_UPDATE");
+        static constexpr uint32_t RELEASE_NFS_V3_LOCKS_HASH = ConstExprHashingUtils::HashString("RELEASE_NFS_V3_LOCKS");
+        static constexpr uint32_t VOLUME_RESTORE_HASH = ConstExprHashingUtils::HashString("VOLUME_RESTORE");
+        static constexpr uint32_t THROUGHPUT_OPTIMIZATION_HASH = ConstExprHashingUtils::HashString("THROUGHPUT_OPTIMIZATION");
+        static constexpr uint32_t IOPS_OPTIMIZATION_HASH = ConstExprHashingUtils::HashString("IOPS_OPTIMIZATION");
+        static constexpr uint32_t STORAGE_TYPE_OPTIMIZATION_HASH = ConstExprHashingUtils::HashString("STORAGE_TYPE_OPTIMIZATION");
+        static constexpr uint32_t MISCONFIGURED_STATE_RECOVERY_HASH = ConstExprHashingUtils::HashString("MISCONFIGURED_STATE_RECOVERY");
 
 
         AdministrativeActionType GetAdministrativeActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FILE_SYSTEM_UPDATE_HASH)
           {
             return AdministrativeActionType::FILE_SYSTEM_UPDATE;

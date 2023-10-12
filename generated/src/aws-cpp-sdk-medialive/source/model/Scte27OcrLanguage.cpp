@@ -20,17 +20,17 @@ namespace Aws
       namespace Scte27OcrLanguageMapper
       {
 
-        static const int DEU_HASH = HashingUtils::HashString("DEU");
-        static const int ENG_HASH = HashingUtils::HashString("ENG");
-        static const int FRA_HASH = HashingUtils::HashString("FRA");
-        static const int NLD_HASH = HashingUtils::HashString("NLD");
-        static const int POR_HASH = HashingUtils::HashString("POR");
-        static const int SPA_HASH = HashingUtils::HashString("SPA");
+        static constexpr uint32_t DEU_HASH = ConstExprHashingUtils::HashString("DEU");
+        static constexpr uint32_t ENG_HASH = ConstExprHashingUtils::HashString("ENG");
+        static constexpr uint32_t FRA_HASH = ConstExprHashingUtils::HashString("FRA");
+        static constexpr uint32_t NLD_HASH = ConstExprHashingUtils::HashString("NLD");
+        static constexpr uint32_t POR_HASH = ConstExprHashingUtils::HashString("POR");
+        static constexpr uint32_t SPA_HASH = ConstExprHashingUtils::HashString("SPA");
 
 
         Scte27OcrLanguage GetScte27OcrLanguageForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEU_HASH)
           {
             return Scte27OcrLanguage::DEU;

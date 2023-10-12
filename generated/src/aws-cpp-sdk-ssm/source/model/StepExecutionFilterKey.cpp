@@ -20,17 +20,17 @@ namespace Aws
       namespace StepExecutionFilterKeyMapper
       {
 
-        static const int StartTimeBefore_HASH = HashingUtils::HashString("StartTimeBefore");
-        static const int StartTimeAfter_HASH = HashingUtils::HashString("StartTimeAfter");
-        static const int StepExecutionStatus_HASH = HashingUtils::HashString("StepExecutionStatus");
-        static const int StepExecutionId_HASH = HashingUtils::HashString("StepExecutionId");
-        static const int StepName_HASH = HashingUtils::HashString("StepName");
-        static const int Action_HASH = HashingUtils::HashString("Action");
+        static constexpr uint32_t StartTimeBefore_HASH = ConstExprHashingUtils::HashString("StartTimeBefore");
+        static constexpr uint32_t StartTimeAfter_HASH = ConstExprHashingUtils::HashString("StartTimeAfter");
+        static constexpr uint32_t StepExecutionStatus_HASH = ConstExprHashingUtils::HashString("StepExecutionStatus");
+        static constexpr uint32_t StepExecutionId_HASH = ConstExprHashingUtils::HashString("StepExecutionId");
+        static constexpr uint32_t StepName_HASH = ConstExprHashingUtils::HashString("StepName");
+        static constexpr uint32_t Action_HASH = ConstExprHashingUtils::HashString("Action");
 
 
         StepExecutionFilterKey GetStepExecutionFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == StartTimeBefore_HASH)
           {
             return StepExecutionFilterKey::StartTimeBefore;

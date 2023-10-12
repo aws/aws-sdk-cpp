@@ -20,13 +20,13 @@ namespace Aws
       namespace CostAllocationTagTypeMapper
       {
 
-        static const int AWSGenerated_HASH = HashingUtils::HashString("AWSGenerated");
-        static const int UserDefined_HASH = HashingUtils::HashString("UserDefined");
+        static constexpr uint32_t AWSGenerated_HASH = ConstExprHashingUtils::HashString("AWSGenerated");
+        static constexpr uint32_t UserDefined_HASH = ConstExprHashingUtils::HashString("UserDefined");
 
 
         CostAllocationTagType GetCostAllocationTagTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWSGenerated_HASH)
           {
             return CostAllocationTagType::AWSGenerated;

@@ -20,18 +20,18 @@ namespace Aws
       namespace MaintenanceDayMapper
       {
 
-        static const int Monday_HASH = HashingUtils::HashString("Monday");
-        static const int Tuesday_HASH = HashingUtils::HashString("Tuesday");
-        static const int Wednesday_HASH = HashingUtils::HashString("Wednesday");
-        static const int Thursday_HASH = HashingUtils::HashString("Thursday");
-        static const int Friday_HASH = HashingUtils::HashString("Friday");
-        static const int Saturday_HASH = HashingUtils::HashString("Saturday");
-        static const int Sunday_HASH = HashingUtils::HashString("Sunday");
+        static constexpr uint32_t Monday_HASH = ConstExprHashingUtils::HashString("Monday");
+        static constexpr uint32_t Tuesday_HASH = ConstExprHashingUtils::HashString("Tuesday");
+        static constexpr uint32_t Wednesday_HASH = ConstExprHashingUtils::HashString("Wednesday");
+        static constexpr uint32_t Thursday_HASH = ConstExprHashingUtils::HashString("Thursday");
+        static constexpr uint32_t Friday_HASH = ConstExprHashingUtils::HashString("Friday");
+        static constexpr uint32_t Saturday_HASH = ConstExprHashingUtils::HashString("Saturday");
+        static constexpr uint32_t Sunday_HASH = ConstExprHashingUtils::HashString("Sunday");
 
 
         MaintenanceDay GetMaintenanceDayForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Monday_HASH)
           {
             return MaintenanceDay::Monday;

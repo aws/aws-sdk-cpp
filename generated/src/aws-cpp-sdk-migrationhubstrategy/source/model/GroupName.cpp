@@ -20,13 +20,13 @@ namespace Aws
       namespace GroupNameMapper
       {
 
-        static const int ExternalId_HASH = HashingUtils::HashString("ExternalId");
-        static const int ExternalSourceType_HASH = HashingUtils::HashString("ExternalSourceType");
+        static constexpr uint32_t ExternalId_HASH = ConstExprHashingUtils::HashString("ExternalId");
+        static constexpr uint32_t ExternalSourceType_HASH = ConstExprHashingUtils::HashString("ExternalSourceType");
 
 
         GroupName GetGroupNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ExternalId_HASH)
           {
             return GroupName::ExternalId;

@@ -20,17 +20,17 @@ namespace Aws
       namespace PackageVersionStatusMapper
       {
 
-        static const int Published_HASH = HashingUtils::HashString("Published");
-        static const int Unfinished_HASH = HashingUtils::HashString("Unfinished");
-        static const int Unlisted_HASH = HashingUtils::HashString("Unlisted");
-        static const int Archived_HASH = HashingUtils::HashString("Archived");
-        static const int Disposed_HASH = HashingUtils::HashString("Disposed");
-        static const int Deleted_HASH = HashingUtils::HashString("Deleted");
+        static constexpr uint32_t Published_HASH = ConstExprHashingUtils::HashString("Published");
+        static constexpr uint32_t Unfinished_HASH = ConstExprHashingUtils::HashString("Unfinished");
+        static constexpr uint32_t Unlisted_HASH = ConstExprHashingUtils::HashString("Unlisted");
+        static constexpr uint32_t Archived_HASH = ConstExprHashingUtils::HashString("Archived");
+        static constexpr uint32_t Disposed_HASH = ConstExprHashingUtils::HashString("Disposed");
+        static constexpr uint32_t Deleted_HASH = ConstExprHashingUtils::HashString("Deleted");
 
 
         PackageVersionStatus GetPackageVersionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Published_HASH)
           {
             return PackageVersionStatus::Published;

@@ -20,13 +20,13 @@ namespace Aws
       namespace CustomContentTypeMapper
       {
 
-        static const int IMAGE_HASH = HashingUtils::HashString("IMAGE");
-        static const int OTHER_EMBEDDED_CONTENT_HASH = HashingUtils::HashString("OTHER_EMBEDDED_CONTENT");
+        static constexpr uint32_t IMAGE_HASH = ConstExprHashingUtils::HashString("IMAGE");
+        static constexpr uint32_t OTHER_EMBEDDED_CONTENT_HASH = ConstExprHashingUtils::HashString("OTHER_EMBEDDED_CONTENT");
 
 
         CustomContentType GetCustomContentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IMAGE_HASH)
           {
             return CustomContentType::IMAGE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace AutomaticTerminationModeMapper
       {
 
-        static const int DEACTIVATED_HASH = HashingUtils::HashString("DEACTIVATED");
-        static const int ACTIVATED_HASH = HashingUtils::HashString("ACTIVATED");
+        static constexpr uint32_t DEACTIVATED_HASH = ConstExprHashingUtils::HashString("DEACTIVATED");
+        static constexpr uint32_t ACTIVATED_HASH = ConstExprHashingUtils::HashString("ACTIVATED");
 
 
         AutomaticTerminationMode GetAutomaticTerminationModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEACTIVATED_HASH)
           {
             return AutomaticTerminationMode::DEACTIVATED;

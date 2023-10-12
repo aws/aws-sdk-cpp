@@ -20,12 +20,12 @@ namespace Aws
       namespace ScanCriterionKeyMapper
       {
 
-        static const int EC2_INSTANCE_TAG_HASH = HashingUtils::HashString("EC2_INSTANCE_TAG");
+        static constexpr uint32_t EC2_INSTANCE_TAG_HASH = ConstExprHashingUtils::HashString("EC2_INSTANCE_TAG");
 
 
         ScanCriterionKey GetScanCriterionKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EC2_INSTANCE_TAG_HASH)
           {
             return ScanCriterionKey::EC2_INSTANCE_TAG;

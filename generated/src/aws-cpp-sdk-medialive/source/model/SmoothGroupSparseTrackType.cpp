@@ -20,14 +20,14 @@ namespace Aws
       namespace SmoothGroupSparseTrackTypeMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int SCTE_35_HASH = HashingUtils::HashString("SCTE_35");
-        static const int SCTE_35_WITHOUT_SEGMENTATION_HASH = HashingUtils::HashString("SCTE_35_WITHOUT_SEGMENTATION");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t SCTE_35_HASH = ConstExprHashingUtils::HashString("SCTE_35");
+        static constexpr uint32_t SCTE_35_WITHOUT_SEGMENTATION_HASH = ConstExprHashingUtils::HashString("SCTE_35_WITHOUT_SEGMENTATION");
 
 
         SmoothGroupSparseTrackType GetSmoothGroupSparseTrackTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return SmoothGroupSparseTrackType::NONE;

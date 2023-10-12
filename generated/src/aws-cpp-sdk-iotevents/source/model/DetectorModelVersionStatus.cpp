@@ -20,18 +20,18 @@ namespace Aws
       namespace DetectorModelVersionStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int ACTIVATING_HASH = HashingUtils::HashString("ACTIVATING");
-        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
-        static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
-        static const int DRAFT_HASH = HashingUtils::HashString("DRAFT");
-        static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t ACTIVATING_HASH = ConstExprHashingUtils::HashString("ACTIVATING");
+        static constexpr uint32_t INACTIVE_HASH = ConstExprHashingUtils::HashString("INACTIVE");
+        static constexpr uint32_t DEPRECATED_HASH = ConstExprHashingUtils::HashString("DEPRECATED");
+        static constexpr uint32_t DRAFT_HASH = ConstExprHashingUtils::HashString("DRAFT");
+        static constexpr uint32_t PAUSED_HASH = ConstExprHashingUtils::HashString("PAUSED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         DetectorModelVersionStatus GetDetectorModelVersionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return DetectorModelVersionStatus::ACTIVE;

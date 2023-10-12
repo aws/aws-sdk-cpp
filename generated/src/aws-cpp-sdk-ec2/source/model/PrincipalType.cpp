@@ -20,17 +20,17 @@ namespace Aws
       namespace PrincipalTypeMapper
       {
 
-        static const int All_HASH = HashingUtils::HashString("All");
-        static const int Service_HASH = HashingUtils::HashString("Service");
-        static const int OrganizationUnit_HASH = HashingUtils::HashString("OrganizationUnit");
-        static const int Account_HASH = HashingUtils::HashString("Account");
-        static const int User_HASH = HashingUtils::HashString("User");
-        static const int Role_HASH = HashingUtils::HashString("Role");
+        static constexpr uint32_t All_HASH = ConstExprHashingUtils::HashString("All");
+        static constexpr uint32_t Service_HASH = ConstExprHashingUtils::HashString("Service");
+        static constexpr uint32_t OrganizationUnit_HASH = ConstExprHashingUtils::HashString("OrganizationUnit");
+        static constexpr uint32_t Account_HASH = ConstExprHashingUtils::HashString("Account");
+        static constexpr uint32_t User_HASH = ConstExprHashingUtils::HashString("User");
+        static constexpr uint32_t Role_HASH = ConstExprHashingUtils::HashString("Role");
 
 
         PrincipalType GetPrincipalTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == All_HASH)
           {
             return PrincipalType::All;

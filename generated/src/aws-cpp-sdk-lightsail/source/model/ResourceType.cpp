@@ -20,31 +20,31 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int ContainerService_HASH = HashingUtils::HashString("ContainerService");
-        static const int Instance_HASH = HashingUtils::HashString("Instance");
-        static const int StaticIp_HASH = HashingUtils::HashString("StaticIp");
-        static const int KeyPair_HASH = HashingUtils::HashString("KeyPair");
-        static const int InstanceSnapshot_HASH = HashingUtils::HashString("InstanceSnapshot");
-        static const int Domain_HASH = HashingUtils::HashString("Domain");
-        static const int PeeredVpc_HASH = HashingUtils::HashString("PeeredVpc");
-        static const int LoadBalancer_HASH = HashingUtils::HashString("LoadBalancer");
-        static const int LoadBalancerTlsCertificate_HASH = HashingUtils::HashString("LoadBalancerTlsCertificate");
-        static const int Disk_HASH = HashingUtils::HashString("Disk");
-        static const int DiskSnapshot_HASH = HashingUtils::HashString("DiskSnapshot");
-        static const int RelationalDatabase_HASH = HashingUtils::HashString("RelationalDatabase");
-        static const int RelationalDatabaseSnapshot_HASH = HashingUtils::HashString("RelationalDatabaseSnapshot");
-        static const int ExportSnapshotRecord_HASH = HashingUtils::HashString("ExportSnapshotRecord");
-        static const int CloudFormationStackRecord_HASH = HashingUtils::HashString("CloudFormationStackRecord");
-        static const int Alarm_HASH = HashingUtils::HashString("Alarm");
-        static const int ContactMethod_HASH = HashingUtils::HashString("ContactMethod");
-        static const int Distribution_HASH = HashingUtils::HashString("Distribution");
-        static const int Certificate_HASH = HashingUtils::HashString("Certificate");
-        static const int Bucket_HASH = HashingUtils::HashString("Bucket");
+        static constexpr uint32_t ContainerService_HASH = ConstExprHashingUtils::HashString("ContainerService");
+        static constexpr uint32_t Instance_HASH = ConstExprHashingUtils::HashString("Instance");
+        static constexpr uint32_t StaticIp_HASH = ConstExprHashingUtils::HashString("StaticIp");
+        static constexpr uint32_t KeyPair_HASH = ConstExprHashingUtils::HashString("KeyPair");
+        static constexpr uint32_t InstanceSnapshot_HASH = ConstExprHashingUtils::HashString("InstanceSnapshot");
+        static constexpr uint32_t Domain_HASH = ConstExprHashingUtils::HashString("Domain");
+        static constexpr uint32_t PeeredVpc_HASH = ConstExprHashingUtils::HashString("PeeredVpc");
+        static constexpr uint32_t LoadBalancer_HASH = ConstExprHashingUtils::HashString("LoadBalancer");
+        static constexpr uint32_t LoadBalancerTlsCertificate_HASH = ConstExprHashingUtils::HashString("LoadBalancerTlsCertificate");
+        static constexpr uint32_t Disk_HASH = ConstExprHashingUtils::HashString("Disk");
+        static constexpr uint32_t DiskSnapshot_HASH = ConstExprHashingUtils::HashString("DiskSnapshot");
+        static constexpr uint32_t RelationalDatabase_HASH = ConstExprHashingUtils::HashString("RelationalDatabase");
+        static constexpr uint32_t RelationalDatabaseSnapshot_HASH = ConstExprHashingUtils::HashString("RelationalDatabaseSnapshot");
+        static constexpr uint32_t ExportSnapshotRecord_HASH = ConstExprHashingUtils::HashString("ExportSnapshotRecord");
+        static constexpr uint32_t CloudFormationStackRecord_HASH = ConstExprHashingUtils::HashString("CloudFormationStackRecord");
+        static constexpr uint32_t Alarm_HASH = ConstExprHashingUtils::HashString("Alarm");
+        static constexpr uint32_t ContactMethod_HASH = ConstExprHashingUtils::HashString("ContactMethod");
+        static constexpr uint32_t Distribution_HASH = ConstExprHashingUtils::HashString("Distribution");
+        static constexpr uint32_t Certificate_HASH = ConstExprHashingUtils::HashString("Certificate");
+        static constexpr uint32_t Bucket_HASH = ConstExprHashingUtils::HashString("Bucket");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ContainerService_HASH)
           {
             return ResourceType::ContainerService;

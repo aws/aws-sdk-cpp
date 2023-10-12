@@ -20,13 +20,13 @@ namespace Aws
       namespace TableTotalsScrollStatusMapper
       {
 
-        static const int PINNED_HASH = HashingUtils::HashString("PINNED");
-        static const int SCROLLED_HASH = HashingUtils::HashString("SCROLLED");
+        static constexpr uint32_t PINNED_HASH = ConstExprHashingUtils::HashString("PINNED");
+        static constexpr uint32_t SCROLLED_HASH = ConstExprHashingUtils::HashString("SCROLLED");
 
 
         TableTotalsScrollStatus GetTableTotalsScrollStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PINNED_HASH)
           {
             return TableTotalsScrollStatus::PINNED;

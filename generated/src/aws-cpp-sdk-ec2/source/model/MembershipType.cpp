@@ -20,13 +20,13 @@ namespace Aws
       namespace MembershipTypeMapper
       {
 
-        static const int static__HASH = HashingUtils::HashString("static");
-        static const int igmp_HASH = HashingUtils::HashString("igmp");
+        static constexpr uint32_t static__HASH = ConstExprHashingUtils::HashString("static");
+        static constexpr uint32_t igmp_HASH = ConstExprHashingUtils::HashString("igmp");
 
 
         MembershipType GetMembershipTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == static__HASH)
           {
             return MembershipType::static_;

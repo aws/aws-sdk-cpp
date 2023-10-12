@@ -20,14 +20,14 @@ namespace Aws
       namespace DataCollectionTypeMapper
       {
 
-        static const int PUBLIC__HASH = HashingUtils::HashString("PUBLIC");
-        static const int PREMIUM_HASH = HashingUtils::HashString("PREMIUM");
-        static const int USER_HASH = HashingUtils::HashString("USER");
+        static constexpr uint32_t PUBLIC__HASH = ConstExprHashingUtils::HashString("PUBLIC");
+        static constexpr uint32_t PREMIUM_HASH = ConstExprHashingUtils::HashString("PREMIUM");
+        static constexpr uint32_t USER_HASH = ConstExprHashingUtils::HashString("USER");
 
 
         DataCollectionType GetDataCollectionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUBLIC__HASH)
           {
             return DataCollectionType::PUBLIC_;

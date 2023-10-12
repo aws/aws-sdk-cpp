@@ -20,19 +20,19 @@ namespace Aws
       namespace AccessDeniedErrorCodeMapper
       {
 
-        static const int ACCESS_DENIED_TO_ASSESSMENT_TARGET_HASH = HashingUtils::HashString("ACCESS_DENIED_TO_ASSESSMENT_TARGET");
-        static const int ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE_HASH = HashingUtils::HashString("ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE");
-        static const int ACCESS_DENIED_TO_ASSESSMENT_RUN_HASH = HashingUtils::HashString("ACCESS_DENIED_TO_ASSESSMENT_RUN");
-        static const int ACCESS_DENIED_TO_FINDING_HASH = HashingUtils::HashString("ACCESS_DENIED_TO_FINDING");
-        static const int ACCESS_DENIED_TO_RESOURCE_GROUP_HASH = HashingUtils::HashString("ACCESS_DENIED_TO_RESOURCE_GROUP");
-        static const int ACCESS_DENIED_TO_RULES_PACKAGE_HASH = HashingUtils::HashString("ACCESS_DENIED_TO_RULES_PACKAGE");
-        static const int ACCESS_DENIED_TO_SNS_TOPIC_HASH = HashingUtils::HashString("ACCESS_DENIED_TO_SNS_TOPIC");
-        static const int ACCESS_DENIED_TO_IAM_ROLE_HASH = HashingUtils::HashString("ACCESS_DENIED_TO_IAM_ROLE");
+        static constexpr uint32_t ACCESS_DENIED_TO_ASSESSMENT_TARGET_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED_TO_ASSESSMENT_TARGET");
+        static constexpr uint32_t ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE");
+        static constexpr uint32_t ACCESS_DENIED_TO_ASSESSMENT_RUN_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED_TO_ASSESSMENT_RUN");
+        static constexpr uint32_t ACCESS_DENIED_TO_FINDING_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED_TO_FINDING");
+        static constexpr uint32_t ACCESS_DENIED_TO_RESOURCE_GROUP_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED_TO_RESOURCE_GROUP");
+        static constexpr uint32_t ACCESS_DENIED_TO_RULES_PACKAGE_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED_TO_RULES_PACKAGE");
+        static constexpr uint32_t ACCESS_DENIED_TO_SNS_TOPIC_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED_TO_SNS_TOPIC");
+        static constexpr uint32_t ACCESS_DENIED_TO_IAM_ROLE_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED_TO_IAM_ROLE");
 
 
         AccessDeniedErrorCode GetAccessDeniedErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCESS_DENIED_TO_ASSESSMENT_TARGET_HASH)
           {
             return AccessDeniedErrorCode::ACCESS_DENIED_TO_ASSESSMENT_TARGET;

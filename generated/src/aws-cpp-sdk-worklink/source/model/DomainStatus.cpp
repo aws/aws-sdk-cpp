@@ -20,19 +20,19 @@ namespace Aws
       namespace DomainStatusMapper
       {
 
-        static const int PENDING_VALIDATION_HASH = HashingUtils::HashString("PENDING_VALIDATION");
-        static const int ASSOCIATING_HASH = HashingUtils::HashString("ASSOCIATING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
-        static const int DISASSOCIATING_HASH = HashingUtils::HashString("DISASSOCIATING");
-        static const int DISASSOCIATED_HASH = HashingUtils::HashString("DISASSOCIATED");
-        static const int FAILED_TO_ASSOCIATE_HASH = HashingUtils::HashString("FAILED_TO_ASSOCIATE");
-        static const int FAILED_TO_DISASSOCIATE_HASH = HashingUtils::HashString("FAILED_TO_DISASSOCIATE");
+        static constexpr uint32_t PENDING_VALIDATION_HASH = ConstExprHashingUtils::HashString("PENDING_VALIDATION");
+        static constexpr uint32_t ASSOCIATING_HASH = ConstExprHashingUtils::HashString("ASSOCIATING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t INACTIVE_HASH = ConstExprHashingUtils::HashString("INACTIVE");
+        static constexpr uint32_t DISASSOCIATING_HASH = ConstExprHashingUtils::HashString("DISASSOCIATING");
+        static constexpr uint32_t DISASSOCIATED_HASH = ConstExprHashingUtils::HashString("DISASSOCIATED");
+        static constexpr uint32_t FAILED_TO_ASSOCIATE_HASH = ConstExprHashingUtils::HashString("FAILED_TO_ASSOCIATE");
+        static constexpr uint32_t FAILED_TO_DISASSOCIATE_HASH = ConstExprHashingUtils::HashString("FAILED_TO_DISASSOCIATE");
 
 
         DomainStatus GetDomainStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_VALIDATION_HASH)
           {
             return DomainStatus::PENDING_VALIDATION;

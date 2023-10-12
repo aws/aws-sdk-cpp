@@ -20,28 +20,28 @@ namespace Aws
       namespace ErrorCodeMapper
       {
 
-        static const int SubnetNotFound_HASH = HashingUtils::HashString("SubnetNotFound");
-        static const int SecurityGroupNotFound_HASH = HashingUtils::HashString("SecurityGroupNotFound");
-        static const int EniLimitReached_HASH = HashingUtils::HashString("EniLimitReached");
-        static const int IpNotAvailable_HASH = HashingUtils::HashString("IpNotAvailable");
-        static const int AccessDenied_HASH = HashingUtils::HashString("AccessDenied");
-        static const int OperationNotPermitted_HASH = HashingUtils::HashString("OperationNotPermitted");
-        static const int VpcIdNotFound_HASH = HashingUtils::HashString("VpcIdNotFound");
-        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
-        static const int NodeCreationFailure_HASH = HashingUtils::HashString("NodeCreationFailure");
-        static const int PodEvictionFailure_HASH = HashingUtils::HashString("PodEvictionFailure");
-        static const int InsufficientFreeAddresses_HASH = HashingUtils::HashString("InsufficientFreeAddresses");
-        static const int ClusterUnreachable_HASH = HashingUtils::HashString("ClusterUnreachable");
-        static const int InsufficientNumberOfReplicas_HASH = HashingUtils::HashString("InsufficientNumberOfReplicas");
-        static const int ConfigurationConflict_HASH = HashingUtils::HashString("ConfigurationConflict");
-        static const int AdmissionRequestDenied_HASH = HashingUtils::HashString("AdmissionRequestDenied");
-        static const int UnsupportedAddonModification_HASH = HashingUtils::HashString("UnsupportedAddonModification");
-        static const int K8sResourceNotFound_HASH = HashingUtils::HashString("K8sResourceNotFound");
+        static constexpr uint32_t SubnetNotFound_HASH = ConstExprHashingUtils::HashString("SubnetNotFound");
+        static constexpr uint32_t SecurityGroupNotFound_HASH = ConstExprHashingUtils::HashString("SecurityGroupNotFound");
+        static constexpr uint32_t EniLimitReached_HASH = ConstExprHashingUtils::HashString("EniLimitReached");
+        static constexpr uint32_t IpNotAvailable_HASH = ConstExprHashingUtils::HashString("IpNotAvailable");
+        static constexpr uint32_t AccessDenied_HASH = ConstExprHashingUtils::HashString("AccessDenied");
+        static constexpr uint32_t OperationNotPermitted_HASH = ConstExprHashingUtils::HashString("OperationNotPermitted");
+        static constexpr uint32_t VpcIdNotFound_HASH = ConstExprHashingUtils::HashString("VpcIdNotFound");
+        static constexpr uint32_t Unknown_HASH = ConstExprHashingUtils::HashString("Unknown");
+        static constexpr uint32_t NodeCreationFailure_HASH = ConstExprHashingUtils::HashString("NodeCreationFailure");
+        static constexpr uint32_t PodEvictionFailure_HASH = ConstExprHashingUtils::HashString("PodEvictionFailure");
+        static constexpr uint32_t InsufficientFreeAddresses_HASH = ConstExprHashingUtils::HashString("InsufficientFreeAddresses");
+        static constexpr uint32_t ClusterUnreachable_HASH = ConstExprHashingUtils::HashString("ClusterUnreachable");
+        static constexpr uint32_t InsufficientNumberOfReplicas_HASH = ConstExprHashingUtils::HashString("InsufficientNumberOfReplicas");
+        static constexpr uint32_t ConfigurationConflict_HASH = ConstExprHashingUtils::HashString("ConfigurationConflict");
+        static constexpr uint32_t AdmissionRequestDenied_HASH = ConstExprHashingUtils::HashString("AdmissionRequestDenied");
+        static constexpr uint32_t UnsupportedAddonModification_HASH = ConstExprHashingUtils::HashString("UnsupportedAddonModification");
+        static constexpr uint32_t K8sResourceNotFound_HASH = ConstExprHashingUtils::HashString("K8sResourceNotFound");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SubnetNotFound_HASH)
           {
             return ErrorCode::SubnetNotFound;

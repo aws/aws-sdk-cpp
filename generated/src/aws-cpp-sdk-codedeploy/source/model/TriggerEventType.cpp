@@ -20,21 +20,21 @@ namespace Aws
       namespace TriggerEventTypeMapper
       {
 
-        static const int DeploymentStart_HASH = HashingUtils::HashString("DeploymentStart");
-        static const int DeploymentSuccess_HASH = HashingUtils::HashString("DeploymentSuccess");
-        static const int DeploymentFailure_HASH = HashingUtils::HashString("DeploymentFailure");
-        static const int DeploymentStop_HASH = HashingUtils::HashString("DeploymentStop");
-        static const int DeploymentRollback_HASH = HashingUtils::HashString("DeploymentRollback");
-        static const int DeploymentReady_HASH = HashingUtils::HashString("DeploymentReady");
-        static const int InstanceStart_HASH = HashingUtils::HashString("InstanceStart");
-        static const int InstanceSuccess_HASH = HashingUtils::HashString("InstanceSuccess");
-        static const int InstanceFailure_HASH = HashingUtils::HashString("InstanceFailure");
-        static const int InstanceReady_HASH = HashingUtils::HashString("InstanceReady");
+        static constexpr uint32_t DeploymentStart_HASH = ConstExprHashingUtils::HashString("DeploymentStart");
+        static constexpr uint32_t DeploymentSuccess_HASH = ConstExprHashingUtils::HashString("DeploymentSuccess");
+        static constexpr uint32_t DeploymentFailure_HASH = ConstExprHashingUtils::HashString("DeploymentFailure");
+        static constexpr uint32_t DeploymentStop_HASH = ConstExprHashingUtils::HashString("DeploymentStop");
+        static constexpr uint32_t DeploymentRollback_HASH = ConstExprHashingUtils::HashString("DeploymentRollback");
+        static constexpr uint32_t DeploymentReady_HASH = ConstExprHashingUtils::HashString("DeploymentReady");
+        static constexpr uint32_t InstanceStart_HASH = ConstExprHashingUtils::HashString("InstanceStart");
+        static constexpr uint32_t InstanceSuccess_HASH = ConstExprHashingUtils::HashString("InstanceSuccess");
+        static constexpr uint32_t InstanceFailure_HASH = ConstExprHashingUtils::HashString("InstanceFailure");
+        static constexpr uint32_t InstanceReady_HASH = ConstExprHashingUtils::HashString("InstanceReady");
 
 
         TriggerEventType GetTriggerEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DeploymentStart_HASH)
           {
             return TriggerEventType::DeploymentStart;

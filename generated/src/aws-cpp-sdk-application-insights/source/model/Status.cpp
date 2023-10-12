@@ -20,16 +20,16 @@ namespace Aws
       namespace StatusMapper
       {
 
-        static const int IGNORE_HASH = HashingUtils::HashString("IGNORE");
-        static const int RESOLVED_HASH = HashingUtils::HashString("RESOLVED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int RECURRING_HASH = HashingUtils::HashString("RECURRING");
-        static const int RECOVERING_HASH = HashingUtils::HashString("RECOVERING");
+        static constexpr uint32_t IGNORE_HASH = ConstExprHashingUtils::HashString("IGNORE");
+        static constexpr uint32_t RESOLVED_HASH = ConstExprHashingUtils::HashString("RESOLVED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t RECURRING_HASH = ConstExprHashingUtils::HashString("RECURRING");
+        static constexpr uint32_t RECOVERING_HASH = ConstExprHashingUtils::HashString("RECOVERING");
 
 
         Status GetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IGNORE_HASH)
           {
             return Status::IGNORE;

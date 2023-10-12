@@ -20,17 +20,17 @@ namespace Aws
       namespace TextTransformationMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int COMPRESS_WHITE_SPACE_HASH = HashingUtils::HashString("COMPRESS_WHITE_SPACE");
-        static const int HTML_ENTITY_DECODE_HASH = HashingUtils::HashString("HTML_ENTITY_DECODE");
-        static const int LOWERCASE_HASH = HashingUtils::HashString("LOWERCASE");
-        static const int CMD_LINE_HASH = HashingUtils::HashString("CMD_LINE");
-        static const int URL_DECODE_HASH = HashingUtils::HashString("URL_DECODE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t COMPRESS_WHITE_SPACE_HASH = ConstExprHashingUtils::HashString("COMPRESS_WHITE_SPACE");
+        static constexpr uint32_t HTML_ENTITY_DECODE_HASH = ConstExprHashingUtils::HashString("HTML_ENTITY_DECODE");
+        static constexpr uint32_t LOWERCASE_HASH = ConstExprHashingUtils::HashString("LOWERCASE");
+        static constexpr uint32_t CMD_LINE_HASH = ConstExprHashingUtils::HashString("CMD_LINE");
+        static constexpr uint32_t URL_DECODE_HASH = ConstExprHashingUtils::HashString("URL_DECODE");
 
 
         TextTransformation GetTextTransformationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return TextTransformation::NONE;

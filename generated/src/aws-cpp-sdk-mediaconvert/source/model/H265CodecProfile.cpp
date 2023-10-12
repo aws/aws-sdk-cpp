@@ -20,19 +20,19 @@ namespace Aws
       namespace H265CodecProfileMapper
       {
 
-        static const int MAIN_MAIN_HASH = HashingUtils::HashString("MAIN_MAIN");
-        static const int MAIN_HIGH_HASH = HashingUtils::HashString("MAIN_HIGH");
-        static const int MAIN10_MAIN_HASH = HashingUtils::HashString("MAIN10_MAIN");
-        static const int MAIN10_HIGH_HASH = HashingUtils::HashString("MAIN10_HIGH");
-        static const int MAIN_422_8BIT_MAIN_HASH = HashingUtils::HashString("MAIN_422_8BIT_MAIN");
-        static const int MAIN_422_8BIT_HIGH_HASH = HashingUtils::HashString("MAIN_422_8BIT_HIGH");
-        static const int MAIN_422_10BIT_MAIN_HASH = HashingUtils::HashString("MAIN_422_10BIT_MAIN");
-        static const int MAIN_422_10BIT_HIGH_HASH = HashingUtils::HashString("MAIN_422_10BIT_HIGH");
+        static constexpr uint32_t MAIN_MAIN_HASH = ConstExprHashingUtils::HashString("MAIN_MAIN");
+        static constexpr uint32_t MAIN_HIGH_HASH = ConstExprHashingUtils::HashString("MAIN_HIGH");
+        static constexpr uint32_t MAIN10_MAIN_HASH = ConstExprHashingUtils::HashString("MAIN10_MAIN");
+        static constexpr uint32_t MAIN10_HIGH_HASH = ConstExprHashingUtils::HashString("MAIN10_HIGH");
+        static constexpr uint32_t MAIN_422_8BIT_MAIN_HASH = ConstExprHashingUtils::HashString("MAIN_422_8BIT_MAIN");
+        static constexpr uint32_t MAIN_422_8BIT_HIGH_HASH = ConstExprHashingUtils::HashString("MAIN_422_8BIT_HIGH");
+        static constexpr uint32_t MAIN_422_10BIT_MAIN_HASH = ConstExprHashingUtils::HashString("MAIN_422_10BIT_MAIN");
+        static constexpr uint32_t MAIN_422_10BIT_HIGH_HASH = ConstExprHashingUtils::HashString("MAIN_422_10BIT_HIGH");
 
 
         H265CodecProfile GetH265CodecProfileForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MAIN_MAIN_HASH)
           {
             return H265CodecProfile::MAIN_MAIN;

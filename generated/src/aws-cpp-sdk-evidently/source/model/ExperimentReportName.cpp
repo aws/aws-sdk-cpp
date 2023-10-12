@@ -20,12 +20,12 @@ namespace Aws
       namespace ExperimentReportNameMapper
       {
 
-        static const int BayesianInference_HASH = HashingUtils::HashString("BayesianInference");
+        static constexpr uint32_t BayesianInference_HASH = ConstExprHashingUtils::HashString("BayesianInference");
 
 
         ExperimentReportName GetExperimentReportNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BayesianInference_HASH)
           {
             return ExperimentReportName::BayesianInference;

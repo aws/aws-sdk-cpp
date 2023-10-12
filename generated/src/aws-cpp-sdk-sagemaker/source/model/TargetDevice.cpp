@@ -20,45 +20,45 @@ namespace Aws
       namespace TargetDeviceMapper
       {
 
-        static const int lambda_HASH = HashingUtils::HashString("lambda");
-        static const int ml_m4_HASH = HashingUtils::HashString("ml_m4");
-        static const int ml_m5_HASH = HashingUtils::HashString("ml_m5");
-        static const int ml_c4_HASH = HashingUtils::HashString("ml_c4");
-        static const int ml_c5_HASH = HashingUtils::HashString("ml_c5");
-        static const int ml_p2_HASH = HashingUtils::HashString("ml_p2");
-        static const int ml_p3_HASH = HashingUtils::HashString("ml_p3");
-        static const int ml_g4dn_HASH = HashingUtils::HashString("ml_g4dn");
-        static const int ml_inf1_HASH = HashingUtils::HashString("ml_inf1");
-        static const int ml_inf2_HASH = HashingUtils::HashString("ml_inf2");
-        static const int ml_trn1_HASH = HashingUtils::HashString("ml_trn1");
-        static const int ml_eia2_HASH = HashingUtils::HashString("ml_eia2");
-        static const int jetson_tx1_HASH = HashingUtils::HashString("jetson_tx1");
-        static const int jetson_tx2_HASH = HashingUtils::HashString("jetson_tx2");
-        static const int jetson_nano_HASH = HashingUtils::HashString("jetson_nano");
-        static const int jetson_xavier_HASH = HashingUtils::HashString("jetson_xavier");
-        static const int rasp3b_HASH = HashingUtils::HashString("rasp3b");
-        static const int imx8qm_HASH = HashingUtils::HashString("imx8qm");
-        static const int deeplens_HASH = HashingUtils::HashString("deeplens");
-        static const int rk3399_HASH = HashingUtils::HashString("rk3399");
-        static const int rk3288_HASH = HashingUtils::HashString("rk3288");
-        static const int aisage_HASH = HashingUtils::HashString("aisage");
-        static const int sbe_c_HASH = HashingUtils::HashString("sbe_c");
-        static const int qcs605_HASH = HashingUtils::HashString("qcs605");
-        static const int qcs603_HASH = HashingUtils::HashString("qcs603");
-        static const int sitara_am57x_HASH = HashingUtils::HashString("sitara_am57x");
-        static const int amba_cv2_HASH = HashingUtils::HashString("amba_cv2");
-        static const int amba_cv22_HASH = HashingUtils::HashString("amba_cv22");
-        static const int amba_cv25_HASH = HashingUtils::HashString("amba_cv25");
-        static const int x86_win32_HASH = HashingUtils::HashString("x86_win32");
-        static const int x86_win64_HASH = HashingUtils::HashString("x86_win64");
-        static const int coreml_HASH = HashingUtils::HashString("coreml");
-        static const int jacinto_tda4vm_HASH = HashingUtils::HashString("jacinto_tda4vm");
-        static const int imx8mplus_HASH = HashingUtils::HashString("imx8mplus");
+        static constexpr uint32_t lambda_HASH = ConstExprHashingUtils::HashString("lambda");
+        static constexpr uint32_t ml_m4_HASH = ConstExprHashingUtils::HashString("ml_m4");
+        static constexpr uint32_t ml_m5_HASH = ConstExprHashingUtils::HashString("ml_m5");
+        static constexpr uint32_t ml_c4_HASH = ConstExprHashingUtils::HashString("ml_c4");
+        static constexpr uint32_t ml_c5_HASH = ConstExprHashingUtils::HashString("ml_c5");
+        static constexpr uint32_t ml_p2_HASH = ConstExprHashingUtils::HashString("ml_p2");
+        static constexpr uint32_t ml_p3_HASH = ConstExprHashingUtils::HashString("ml_p3");
+        static constexpr uint32_t ml_g4dn_HASH = ConstExprHashingUtils::HashString("ml_g4dn");
+        static constexpr uint32_t ml_inf1_HASH = ConstExprHashingUtils::HashString("ml_inf1");
+        static constexpr uint32_t ml_inf2_HASH = ConstExprHashingUtils::HashString("ml_inf2");
+        static constexpr uint32_t ml_trn1_HASH = ConstExprHashingUtils::HashString("ml_trn1");
+        static constexpr uint32_t ml_eia2_HASH = ConstExprHashingUtils::HashString("ml_eia2");
+        static constexpr uint32_t jetson_tx1_HASH = ConstExprHashingUtils::HashString("jetson_tx1");
+        static constexpr uint32_t jetson_tx2_HASH = ConstExprHashingUtils::HashString("jetson_tx2");
+        static constexpr uint32_t jetson_nano_HASH = ConstExprHashingUtils::HashString("jetson_nano");
+        static constexpr uint32_t jetson_xavier_HASH = ConstExprHashingUtils::HashString("jetson_xavier");
+        static constexpr uint32_t rasp3b_HASH = ConstExprHashingUtils::HashString("rasp3b");
+        static constexpr uint32_t imx8qm_HASH = ConstExprHashingUtils::HashString("imx8qm");
+        static constexpr uint32_t deeplens_HASH = ConstExprHashingUtils::HashString("deeplens");
+        static constexpr uint32_t rk3399_HASH = ConstExprHashingUtils::HashString("rk3399");
+        static constexpr uint32_t rk3288_HASH = ConstExprHashingUtils::HashString("rk3288");
+        static constexpr uint32_t aisage_HASH = ConstExprHashingUtils::HashString("aisage");
+        static constexpr uint32_t sbe_c_HASH = ConstExprHashingUtils::HashString("sbe_c");
+        static constexpr uint32_t qcs605_HASH = ConstExprHashingUtils::HashString("qcs605");
+        static constexpr uint32_t qcs603_HASH = ConstExprHashingUtils::HashString("qcs603");
+        static constexpr uint32_t sitara_am57x_HASH = ConstExprHashingUtils::HashString("sitara_am57x");
+        static constexpr uint32_t amba_cv2_HASH = ConstExprHashingUtils::HashString("amba_cv2");
+        static constexpr uint32_t amba_cv22_HASH = ConstExprHashingUtils::HashString("amba_cv22");
+        static constexpr uint32_t amba_cv25_HASH = ConstExprHashingUtils::HashString("amba_cv25");
+        static constexpr uint32_t x86_win32_HASH = ConstExprHashingUtils::HashString("x86_win32");
+        static constexpr uint32_t x86_win64_HASH = ConstExprHashingUtils::HashString("x86_win64");
+        static constexpr uint32_t coreml_HASH = ConstExprHashingUtils::HashString("coreml");
+        static constexpr uint32_t jacinto_tda4vm_HASH = ConstExprHashingUtils::HashString("jacinto_tda4vm");
+        static constexpr uint32_t imx8mplus_HASH = ConstExprHashingUtils::HashString("imx8mplus");
 
 
         TargetDevice GetTargetDeviceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == lambda_HASH)
           {
             return TargetDevice::lambda;

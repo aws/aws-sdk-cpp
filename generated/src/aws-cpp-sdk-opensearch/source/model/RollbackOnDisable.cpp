@@ -20,13 +20,13 @@ namespace Aws
       namespace RollbackOnDisableMapper
       {
 
-        static const int NO_ROLLBACK_HASH = HashingUtils::HashString("NO_ROLLBACK");
-        static const int DEFAULT_ROLLBACK_HASH = HashingUtils::HashString("DEFAULT_ROLLBACK");
+        static constexpr uint32_t NO_ROLLBACK_HASH = ConstExprHashingUtils::HashString("NO_ROLLBACK");
+        static constexpr uint32_t DEFAULT_ROLLBACK_HASH = ConstExprHashingUtils::HashString("DEFAULT_ROLLBACK");
 
 
         RollbackOnDisable GetRollbackOnDisableForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_ROLLBACK_HASH)
           {
             return RollbackOnDisable::NO_ROLLBACK;

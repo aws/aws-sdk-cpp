@@ -20,12 +20,12 @@ namespace Aws
       namespace ExportFilterNameMapper
       {
 
-        static const int ExportResourceType_HASH = HashingUtils::HashString("ExportResourceType");
+        static constexpr uint32_t ExportResourceType_HASH = ConstExprHashingUtils::HashString("ExportResourceType");
 
 
         ExportFilterName GetExportFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ExportResourceType_HASH)
           {
             return ExportFilterName::ExportResourceType;

@@ -20,12 +20,12 @@ namespace Aws
       namespace ContentTypeMapper
       {
 
-        static const int image_jpeg_HASH = HashingUtils::HashString("image/jpeg");
+        static constexpr uint32_t image_jpeg_HASH = ConstExprHashingUtils::HashString("image/jpeg");
 
 
         ContentType GetContentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == image_jpeg_HASH)
           {
             return ContentType::image_jpeg;

@@ -20,14 +20,14 @@ namespace Aws
       namespace RecommendationPreferenceNameMapper
       {
 
-        static const int EnhancedInfrastructureMetrics_HASH = HashingUtils::HashString("EnhancedInfrastructureMetrics");
-        static const int InferredWorkloadTypes_HASH = HashingUtils::HashString("InferredWorkloadTypes");
-        static const int ExternalMetricsPreference_HASH = HashingUtils::HashString("ExternalMetricsPreference");
+        static constexpr uint32_t EnhancedInfrastructureMetrics_HASH = ConstExprHashingUtils::HashString("EnhancedInfrastructureMetrics");
+        static constexpr uint32_t InferredWorkloadTypes_HASH = ConstExprHashingUtils::HashString("InferredWorkloadTypes");
+        static constexpr uint32_t ExternalMetricsPreference_HASH = ConstExprHashingUtils::HashString("ExternalMetricsPreference");
 
 
         RecommendationPreferenceName GetRecommendationPreferenceNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EnhancedInfrastructureMetrics_HASH)
           {
             return RecommendationPreferenceName::EnhancedInfrastructureMetrics;

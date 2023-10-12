@@ -20,13 +20,13 @@ namespace Aws
       namespace ComputeTypeMapper
       {
 
-        static const int EC2_HASH = HashingUtils::HashString("EC2");
-        static const int ANYWHERE_HASH = HashingUtils::HashString("ANYWHERE");
+        static constexpr uint32_t EC2_HASH = ConstExprHashingUtils::HashString("EC2");
+        static constexpr uint32_t ANYWHERE_HASH = ConstExprHashingUtils::HashString("ANYWHERE");
 
 
         ComputeType GetComputeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EC2_HASH)
           {
             return ComputeType::EC2;

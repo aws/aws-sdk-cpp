@@ -20,13 +20,13 @@ namespace Aws
       namespace ListDomainsAttributeNameMapper
       {
 
-        static const int DomainName_HASH = HashingUtils::HashString("DomainName");
-        static const int Expiry_HASH = HashingUtils::HashString("Expiry");
+        static constexpr uint32_t DomainName_HASH = ConstExprHashingUtils::HashString("DomainName");
+        static constexpr uint32_t Expiry_HASH = ConstExprHashingUtils::HashString("Expiry");
 
 
         ListDomainsAttributeName GetListDomainsAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DomainName_HASH)
           {
             return ListDomainsAttributeName::DomainName;

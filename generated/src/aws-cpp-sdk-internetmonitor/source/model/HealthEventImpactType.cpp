@@ -20,15 +20,15 @@ namespace Aws
       namespace HealthEventImpactTypeMapper
       {
 
-        static const int AVAILABILITY_HASH = HashingUtils::HashString("AVAILABILITY");
-        static const int PERFORMANCE_HASH = HashingUtils::HashString("PERFORMANCE");
-        static const int LOCAL_AVAILABILITY_HASH = HashingUtils::HashString("LOCAL_AVAILABILITY");
-        static const int LOCAL_PERFORMANCE_HASH = HashingUtils::HashString("LOCAL_PERFORMANCE");
+        static constexpr uint32_t AVAILABILITY_HASH = ConstExprHashingUtils::HashString("AVAILABILITY");
+        static constexpr uint32_t PERFORMANCE_HASH = ConstExprHashingUtils::HashString("PERFORMANCE");
+        static constexpr uint32_t LOCAL_AVAILABILITY_HASH = ConstExprHashingUtils::HashString("LOCAL_AVAILABILITY");
+        static constexpr uint32_t LOCAL_PERFORMANCE_HASH = ConstExprHashingUtils::HashString("LOCAL_PERFORMANCE");
 
 
         HealthEventImpactType GetHealthEventImpactTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVAILABILITY_HASH)
           {
             return HealthEventImpactType::AVAILABILITY;

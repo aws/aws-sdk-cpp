@@ -20,15 +20,15 @@ namespace Aws
       namespace IpPreferenceMapper
       {
 
-        static const int IPv6_PREFERRED_HASH = HashingUtils::HashString("IPv6_PREFERRED");
-        static const int IPv4_PREFERRED_HASH = HashingUtils::HashString("IPv4_PREFERRED");
-        static const int IPv4_ONLY_HASH = HashingUtils::HashString("IPv4_ONLY");
-        static const int IPv6_ONLY_HASH = HashingUtils::HashString("IPv6_ONLY");
+        static constexpr uint32_t IPv6_PREFERRED_HASH = ConstExprHashingUtils::HashString("IPv6_PREFERRED");
+        static constexpr uint32_t IPv4_PREFERRED_HASH = ConstExprHashingUtils::HashString("IPv4_PREFERRED");
+        static constexpr uint32_t IPv4_ONLY_HASH = ConstExprHashingUtils::HashString("IPv4_ONLY");
+        static constexpr uint32_t IPv6_ONLY_HASH = ConstExprHashingUtils::HashString("IPv6_ONLY");
 
 
         IpPreference GetIpPreferenceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IPv6_PREFERRED_HASH)
           {
             return IpPreference::IPv6_PREFERRED;

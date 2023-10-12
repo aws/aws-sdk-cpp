@@ -20,20 +20,20 @@ namespace Aws
       namespace BatchPutAssetPropertyValueErrorCodeMapper
       {
 
-        static const int ResourceNotFoundException_HASH = HashingUtils::HashString("ResourceNotFoundException");
-        static const int InvalidRequestException_HASH = HashingUtils::HashString("InvalidRequestException");
-        static const int InternalFailureException_HASH = HashingUtils::HashString("InternalFailureException");
-        static const int ServiceUnavailableException_HASH = HashingUtils::HashString("ServiceUnavailableException");
-        static const int ThrottlingException_HASH = HashingUtils::HashString("ThrottlingException");
-        static const int LimitExceededException_HASH = HashingUtils::HashString("LimitExceededException");
-        static const int ConflictingOperationException_HASH = HashingUtils::HashString("ConflictingOperationException");
-        static const int TimestampOutOfRangeException_HASH = HashingUtils::HashString("TimestampOutOfRangeException");
-        static const int AccessDeniedException_HASH = HashingUtils::HashString("AccessDeniedException");
+        static constexpr uint32_t ResourceNotFoundException_HASH = ConstExprHashingUtils::HashString("ResourceNotFoundException");
+        static constexpr uint32_t InvalidRequestException_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
+        static constexpr uint32_t InternalFailureException_HASH = ConstExprHashingUtils::HashString("InternalFailureException");
+        static constexpr uint32_t ServiceUnavailableException_HASH = ConstExprHashingUtils::HashString("ServiceUnavailableException");
+        static constexpr uint32_t ThrottlingException_HASH = ConstExprHashingUtils::HashString("ThrottlingException");
+        static constexpr uint32_t LimitExceededException_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+        static constexpr uint32_t ConflictingOperationException_HASH = ConstExprHashingUtils::HashString("ConflictingOperationException");
+        static constexpr uint32_t TimestampOutOfRangeException_HASH = ConstExprHashingUtils::HashString("TimestampOutOfRangeException");
+        static constexpr uint32_t AccessDeniedException_HASH = ConstExprHashingUtils::HashString("AccessDeniedException");
 
 
         BatchPutAssetPropertyValueErrorCode GetBatchPutAssetPropertyValueErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ResourceNotFoundException_HASH)
           {
             return BatchPutAssetPropertyValueErrorCode::ResourceNotFoundException;

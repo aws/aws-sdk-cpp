@@ -20,15 +20,15 @@ namespace Aws
       namespace ListRecommendationsFilterKeyMapper
       {
 
-        static const int TYPE_HASH = HashingUtils::HashString("TYPE");
-        static const int IMPACT_HASH = HashingUtils::HashString("IMPACT");
-        static const int STATUS_HASH = HashingUtils::HashString("STATUS");
-        static const int RESOURCE_ARN_HASH = HashingUtils::HashString("RESOURCE_ARN");
+        static constexpr uint32_t TYPE_HASH = ConstExprHashingUtils::HashString("TYPE");
+        static constexpr uint32_t IMPACT_HASH = ConstExprHashingUtils::HashString("IMPACT");
+        static constexpr uint32_t STATUS_HASH = ConstExprHashingUtils::HashString("STATUS");
+        static constexpr uint32_t RESOURCE_ARN_HASH = ConstExprHashingUtils::HashString("RESOURCE_ARN");
 
 
         ListRecommendationsFilterKey GetListRecommendationsFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TYPE_HASH)
           {
             return ListRecommendationsFilterKey::TYPE;

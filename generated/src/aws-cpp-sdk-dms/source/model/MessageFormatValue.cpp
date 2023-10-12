@@ -20,13 +20,13 @@ namespace Aws
       namespace MessageFormatValueMapper
       {
 
-        static const int json_HASH = HashingUtils::HashString("json");
-        static const int json_unformatted_HASH = HashingUtils::HashString("json-unformatted");
+        static constexpr uint32_t json_HASH = ConstExprHashingUtils::HashString("json");
+        static constexpr uint32_t json_unformatted_HASH = ConstExprHashingUtils::HashString("json-unformatted");
 
 
         MessageFormatValue GetMessageFormatValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == json_HASH)
           {
             return MessageFormatValue::json;

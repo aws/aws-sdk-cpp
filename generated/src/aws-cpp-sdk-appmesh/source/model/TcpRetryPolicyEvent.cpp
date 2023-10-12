@@ -20,12 +20,12 @@ namespace Aws
       namespace TcpRetryPolicyEventMapper
       {
 
-        static const int connection_error_HASH = HashingUtils::HashString("connection-error");
+        static constexpr uint32_t connection_error_HASH = ConstExprHashingUtils::HashString("connection-error");
 
 
         TcpRetryPolicyEvent GetTcpRetryPolicyEventForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == connection_error_HASH)
           {
             return TcpRetryPolicyEvent::connection_error;

@@ -20,17 +20,17 @@ namespace Aws
       namespace SpecialtyMapper
       {
 
-        static const int PRIMARYCARE_HASH = HashingUtils::HashString("PRIMARYCARE");
-        static const int CARDIOLOGY_HASH = HashingUtils::HashString("CARDIOLOGY");
-        static const int NEUROLOGY_HASH = HashingUtils::HashString("NEUROLOGY");
-        static const int ONCOLOGY_HASH = HashingUtils::HashString("ONCOLOGY");
-        static const int RADIOLOGY_HASH = HashingUtils::HashString("RADIOLOGY");
-        static const int UROLOGY_HASH = HashingUtils::HashString("UROLOGY");
+        static constexpr uint32_t PRIMARYCARE_HASH = ConstExprHashingUtils::HashString("PRIMARYCARE");
+        static constexpr uint32_t CARDIOLOGY_HASH = ConstExprHashingUtils::HashString("CARDIOLOGY");
+        static constexpr uint32_t NEUROLOGY_HASH = ConstExprHashingUtils::HashString("NEUROLOGY");
+        static constexpr uint32_t ONCOLOGY_HASH = ConstExprHashingUtils::HashString("ONCOLOGY");
+        static constexpr uint32_t RADIOLOGY_HASH = ConstExprHashingUtils::HashString("RADIOLOGY");
+        static constexpr uint32_t UROLOGY_HASH = ConstExprHashingUtils::HashString("UROLOGY");
 
 
         Specialty GetSpecialtyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRIMARYCARE_HASH)
           {
             return Specialty::PRIMARYCARE;

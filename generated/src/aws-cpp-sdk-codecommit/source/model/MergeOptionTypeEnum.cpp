@@ -20,14 +20,14 @@ namespace Aws
       namespace MergeOptionTypeEnumMapper
       {
 
-        static const int FAST_FORWARD_MERGE_HASH = HashingUtils::HashString("FAST_FORWARD_MERGE");
-        static const int SQUASH_MERGE_HASH = HashingUtils::HashString("SQUASH_MERGE");
-        static const int THREE_WAY_MERGE_HASH = HashingUtils::HashString("THREE_WAY_MERGE");
+        static constexpr uint32_t FAST_FORWARD_MERGE_HASH = ConstExprHashingUtils::HashString("FAST_FORWARD_MERGE");
+        static constexpr uint32_t SQUASH_MERGE_HASH = ConstExprHashingUtils::HashString("SQUASH_MERGE");
+        static constexpr uint32_t THREE_WAY_MERGE_HASH = ConstExprHashingUtils::HashString("THREE_WAY_MERGE");
 
 
         MergeOptionTypeEnum GetMergeOptionTypeEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FAST_FORWARD_MERGE_HASH)
           {
             return MergeOptionTypeEnum::FAST_FORWARD_MERGE;

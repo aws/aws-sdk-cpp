@@ -20,13 +20,13 @@ namespace Aws
       namespace ControlOperationTypeMapper
       {
 
-        static const int ENABLE_CONTROL_HASH = HashingUtils::HashString("ENABLE_CONTROL");
-        static const int DISABLE_CONTROL_HASH = HashingUtils::HashString("DISABLE_CONTROL");
+        static constexpr uint32_t ENABLE_CONTROL_HASH = ConstExprHashingUtils::HashString("ENABLE_CONTROL");
+        static constexpr uint32_t DISABLE_CONTROL_HASH = ConstExprHashingUtils::HashString("DISABLE_CONTROL");
 
 
         ControlOperationType GetControlOperationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLE_CONTROL_HASH)
           {
             return ControlOperationType::ENABLE_CONTROL;

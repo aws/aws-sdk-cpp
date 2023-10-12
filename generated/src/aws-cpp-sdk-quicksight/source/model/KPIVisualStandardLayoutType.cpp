@@ -20,13 +20,13 @@ namespace Aws
       namespace KPIVisualStandardLayoutTypeMapper
       {
 
-        static const int CLASSIC_HASH = HashingUtils::HashString("CLASSIC");
-        static const int VERTICAL_HASH = HashingUtils::HashString("VERTICAL");
+        static constexpr uint32_t CLASSIC_HASH = ConstExprHashingUtils::HashString("CLASSIC");
+        static constexpr uint32_t VERTICAL_HASH = ConstExprHashingUtils::HashString("VERTICAL");
 
 
         KPIVisualStandardLayoutType GetKPIVisualStandardLayoutTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLASSIC_HASH)
           {
             return KPIVisualStandardLayoutType::CLASSIC;

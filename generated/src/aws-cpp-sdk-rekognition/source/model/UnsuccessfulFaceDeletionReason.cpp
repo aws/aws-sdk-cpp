@@ -20,13 +20,13 @@ namespace Aws
       namespace UnsuccessfulFaceDeletionReasonMapper
       {
 
-        static const int ASSOCIATED_TO_AN_EXISTING_USER_HASH = HashingUtils::HashString("ASSOCIATED_TO_AN_EXISTING_USER");
-        static const int FACE_NOT_FOUND_HASH = HashingUtils::HashString("FACE_NOT_FOUND");
+        static constexpr uint32_t ASSOCIATED_TO_AN_EXISTING_USER_HASH = ConstExprHashingUtils::HashString("ASSOCIATED_TO_AN_EXISTING_USER");
+        static constexpr uint32_t FACE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("FACE_NOT_FOUND");
 
 
         UnsuccessfulFaceDeletionReason GetUnsuccessfulFaceDeletionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASSOCIATED_TO_AN_EXISTING_USER_HASH)
           {
             return UnsuccessfulFaceDeletionReason::ASSOCIATED_TO_AN_EXISTING_USER;

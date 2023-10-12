@@ -20,12 +20,12 @@ namespace Aws
       namespace NetworkResourceTypeMapper
       {
 
-        static const int RADIO_UNIT_HASH = HashingUtils::HashString("RADIO_UNIT");
+        static constexpr uint32_t RADIO_UNIT_HASH = ConstExprHashingUtils::HashString("RADIO_UNIT");
 
 
         NetworkResourceType GetNetworkResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RADIO_UNIT_HASH)
           {
             return NetworkResourceType::RADIO_UNIT;

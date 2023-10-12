@@ -20,15 +20,15 @@ namespace Aws
       namespace RealtimeEndpointStatusMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         RealtimeEndpointStatus GetRealtimeEndpointStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return RealtimeEndpointStatus::NONE;

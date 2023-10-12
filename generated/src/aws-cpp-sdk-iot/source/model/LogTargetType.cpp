@@ -20,18 +20,18 @@ namespace Aws
       namespace LogTargetTypeMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int THING_GROUP_HASH = HashingUtils::HashString("THING_GROUP");
-        static const int CLIENT_ID_HASH = HashingUtils::HashString("CLIENT_ID");
-        static const int SOURCE_IP_HASH = HashingUtils::HashString("SOURCE_IP");
-        static const int PRINCIPAL_ID_HASH = HashingUtils::HashString("PRINCIPAL_ID");
-        static const int EVENT_TYPE_HASH = HashingUtils::HashString("EVENT_TYPE");
-        static const int DEVICE_DEFENDER_HASH = HashingUtils::HashString("DEVICE_DEFENDER");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t THING_GROUP_HASH = ConstExprHashingUtils::HashString("THING_GROUP");
+        static constexpr uint32_t CLIENT_ID_HASH = ConstExprHashingUtils::HashString("CLIENT_ID");
+        static constexpr uint32_t SOURCE_IP_HASH = ConstExprHashingUtils::HashString("SOURCE_IP");
+        static constexpr uint32_t PRINCIPAL_ID_HASH = ConstExprHashingUtils::HashString("PRINCIPAL_ID");
+        static constexpr uint32_t EVENT_TYPE_HASH = ConstExprHashingUtils::HashString("EVENT_TYPE");
+        static constexpr uint32_t DEVICE_DEFENDER_HASH = ConstExprHashingUtils::HashString("DEVICE_DEFENDER");
 
 
         LogTargetType GetLogTargetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return LogTargetType::DEFAULT;

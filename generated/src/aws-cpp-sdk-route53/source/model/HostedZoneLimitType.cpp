@@ -20,13 +20,13 @@ namespace Aws
       namespace HostedZoneLimitTypeMapper
       {
 
-        static const int MAX_RRSETS_BY_ZONE_HASH = HashingUtils::HashString("MAX_RRSETS_BY_ZONE");
-        static const int MAX_VPCS_ASSOCIATED_BY_ZONE_HASH = HashingUtils::HashString("MAX_VPCS_ASSOCIATED_BY_ZONE");
+        static constexpr uint32_t MAX_RRSETS_BY_ZONE_HASH = ConstExprHashingUtils::HashString("MAX_RRSETS_BY_ZONE");
+        static constexpr uint32_t MAX_VPCS_ASSOCIATED_BY_ZONE_HASH = ConstExprHashingUtils::HashString("MAX_VPCS_ASSOCIATED_BY_ZONE");
 
 
         HostedZoneLimitType GetHostedZoneLimitTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MAX_RRSETS_BY_ZONE_HASH)
           {
             return HostedZoneLimitType::MAX_RRSETS_BY_ZONE;

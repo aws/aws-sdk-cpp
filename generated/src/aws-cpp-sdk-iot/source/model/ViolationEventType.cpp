@@ -20,14 +20,14 @@ namespace Aws
       namespace ViolationEventTypeMapper
       {
 
-        static const int in_alarm_HASH = HashingUtils::HashString("in-alarm");
-        static const int alarm_cleared_HASH = HashingUtils::HashString("alarm-cleared");
-        static const int alarm_invalidated_HASH = HashingUtils::HashString("alarm-invalidated");
+        static constexpr uint32_t in_alarm_HASH = ConstExprHashingUtils::HashString("in-alarm");
+        static constexpr uint32_t alarm_cleared_HASH = ConstExprHashingUtils::HashString("alarm-cleared");
+        static constexpr uint32_t alarm_invalidated_HASH = ConstExprHashingUtils::HashString("alarm-invalidated");
 
 
         ViolationEventType GetViolationEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == in_alarm_HASH)
           {
             return ViolationEventType::in_alarm;

@@ -20,12 +20,12 @@ namespace Aws
       namespace TimelineEventSortMapper
       {
 
-        static const int EVENT_TIME_HASH = HashingUtils::HashString("EVENT_TIME");
+        static constexpr uint32_t EVENT_TIME_HASH = ConstExprHashingUtils::HashString("EVENT_TIME");
 
 
         TimelineEventSort GetTimelineEventSortForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EVENT_TIME_HASH)
           {
             return TimelineEventSort::EVENT_TIME;

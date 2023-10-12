@@ -20,14 +20,14 @@ namespace Aws
       namespace BucketOwnerAccessMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int READ_ONLY_HASH = HashingUtils::HashString("READ_ONLY");
-        static const int FULL_HASH = HashingUtils::HashString("FULL");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t READ_ONLY_HASH = ConstExprHashingUtils::HashString("READ_ONLY");
+        static constexpr uint32_t FULL_HASH = ConstExprHashingUtils::HashString("FULL");
 
 
         BucketOwnerAccess GetBucketOwnerAccessForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return BucketOwnerAccess::NONE;

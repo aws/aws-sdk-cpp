@@ -20,17 +20,17 @@ namespace Aws
       namespace FacetAttributeTypeMapper
       {
 
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
-        static const int BINARY_HASH = HashingUtils::HashString("BINARY");
-        static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
-        static const int NUMBER_HASH = HashingUtils::HashString("NUMBER");
-        static const int DATETIME_HASH = HashingUtils::HashString("DATETIME");
-        static const int VARIANT_HASH = HashingUtils::HashString("VARIANT");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
+        static constexpr uint32_t BINARY_HASH = ConstExprHashingUtils::HashString("BINARY");
+        static constexpr uint32_t BOOLEAN_HASH = ConstExprHashingUtils::HashString("BOOLEAN");
+        static constexpr uint32_t NUMBER_HASH = ConstExprHashingUtils::HashString("NUMBER");
+        static constexpr uint32_t DATETIME_HASH = ConstExprHashingUtils::HashString("DATETIME");
+        static constexpr uint32_t VARIANT_HASH = ConstExprHashingUtils::HashString("VARIANT");
 
 
         FacetAttributeType GetFacetAttributeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STRING_HASH)
           {
             return FacetAttributeType::STRING;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ContentTypeMapper
       {
 
-        static const int application_json_HASH = HashingUtils::HashString("application/json");
-        static const int application_xml_HASH = HashingUtils::HashString("application/xml");
+        static constexpr uint32_t application_json_HASH = ConstExprHashingUtils::HashString("application/json");
+        static constexpr uint32_t application_xml_HASH = ConstExprHashingUtils::HashString("application/xml");
 
 
         ContentType GetContentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == application_json_HASH)
           {
             return ContentType::application_json;

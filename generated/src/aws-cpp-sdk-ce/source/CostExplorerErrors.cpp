@@ -33,22 +33,22 @@ template<> AWS_COSTEXPLORER_API TooManyTagsException CostExplorerError::GetModel
 namespace CostExplorerErrorMapper
 {
 
-static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
-static const int REQUEST_CHANGED_HASH = HashingUtils::HashString("RequestChangedException");
-static const int UNRESOLVABLE_USAGE_UNIT_HASH = HashingUtils::HashString("UnresolvableUsageUnitException");
-static const int UNKNOWN_SUBSCRIPTION_HASH = HashingUtils::HashString("UnknownSubscriptionException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int UNKNOWN_MONITOR_HASH = HashingUtils::HashString("UnknownMonitorException");
-static const int BILL_EXPIRATION_HASH = HashingUtils::HashString("BillExpirationException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int DATA_UNAVAILABLE_HASH = HashingUtils::HashString("DataUnavailableException");
-static const int GENERATION_EXISTS_HASH = HashingUtils::HashString("GenerationExistsException");
+static constexpr uint32_t SERVICE_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ServiceQuotaExceededException");
+static constexpr uint32_t REQUEST_CHANGED_HASH = ConstExprHashingUtils::HashString("RequestChangedException");
+static constexpr uint32_t UNRESOLVABLE_USAGE_UNIT_HASH = ConstExprHashingUtils::HashString("UnresolvableUsageUnitException");
+static constexpr uint32_t UNKNOWN_SUBSCRIPTION_HASH = ConstExprHashingUtils::HashString("UnknownSubscriptionException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t UNKNOWN_MONITOR_HASH = ConstExprHashingUtils::HashString("UnknownMonitorException");
+static constexpr uint32_t BILL_EXPIRATION_HASH = ConstExprHashingUtils::HashString("BillExpirationException");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+static constexpr uint32_t DATA_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("DataUnavailableException");
+static constexpr uint32_t GENERATION_EXISTS_HASH = ConstExprHashingUtils::HashString("GenerationExistsException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {

@@ -20,22 +20,22 @@ namespace Aws
       namespace EventTypeMapper
       {
 
-        static const int THING_HASH = HashingUtils::HashString("THING");
-        static const int THING_GROUP_HASH = HashingUtils::HashString("THING_GROUP");
-        static const int THING_TYPE_HASH = HashingUtils::HashString("THING_TYPE");
-        static const int THING_GROUP_MEMBERSHIP_HASH = HashingUtils::HashString("THING_GROUP_MEMBERSHIP");
-        static const int THING_GROUP_HIERARCHY_HASH = HashingUtils::HashString("THING_GROUP_HIERARCHY");
-        static const int THING_TYPE_ASSOCIATION_HASH = HashingUtils::HashString("THING_TYPE_ASSOCIATION");
-        static const int JOB_HASH = HashingUtils::HashString("JOB");
-        static const int JOB_EXECUTION_HASH = HashingUtils::HashString("JOB_EXECUTION");
-        static const int POLICY_HASH = HashingUtils::HashString("POLICY");
-        static const int CERTIFICATE_HASH = HashingUtils::HashString("CERTIFICATE");
-        static const int CA_CERTIFICATE_HASH = HashingUtils::HashString("CA_CERTIFICATE");
+        static constexpr uint32_t THING_HASH = ConstExprHashingUtils::HashString("THING");
+        static constexpr uint32_t THING_GROUP_HASH = ConstExprHashingUtils::HashString("THING_GROUP");
+        static constexpr uint32_t THING_TYPE_HASH = ConstExprHashingUtils::HashString("THING_TYPE");
+        static constexpr uint32_t THING_GROUP_MEMBERSHIP_HASH = ConstExprHashingUtils::HashString("THING_GROUP_MEMBERSHIP");
+        static constexpr uint32_t THING_GROUP_HIERARCHY_HASH = ConstExprHashingUtils::HashString("THING_GROUP_HIERARCHY");
+        static constexpr uint32_t THING_TYPE_ASSOCIATION_HASH = ConstExprHashingUtils::HashString("THING_TYPE_ASSOCIATION");
+        static constexpr uint32_t JOB_HASH = ConstExprHashingUtils::HashString("JOB");
+        static constexpr uint32_t JOB_EXECUTION_HASH = ConstExprHashingUtils::HashString("JOB_EXECUTION");
+        static constexpr uint32_t POLICY_HASH = ConstExprHashingUtils::HashString("POLICY");
+        static constexpr uint32_t CERTIFICATE_HASH = ConstExprHashingUtils::HashString("CERTIFICATE");
+        static constexpr uint32_t CA_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("CA_CERTIFICATE");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == THING_HASH)
           {
             return EventType::THING;

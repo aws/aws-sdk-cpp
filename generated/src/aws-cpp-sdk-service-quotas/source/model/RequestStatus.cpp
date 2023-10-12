@@ -20,18 +20,18 @@ namespace Aws
       namespace RequestStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int CASE_OPENED_HASH = HashingUtils::HashString("CASE_OPENED");
-        static const int APPROVED_HASH = HashingUtils::HashString("APPROVED");
-        static const int DENIED_HASH = HashingUtils::HashString("DENIED");
-        static const int CASE_CLOSED_HASH = HashingUtils::HashString("CASE_CLOSED");
-        static const int NOT_APPROVED_HASH = HashingUtils::HashString("NOT_APPROVED");
-        static const int INVALID_REQUEST_HASH = HashingUtils::HashString("INVALID_REQUEST");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t CASE_OPENED_HASH = ConstExprHashingUtils::HashString("CASE_OPENED");
+        static constexpr uint32_t APPROVED_HASH = ConstExprHashingUtils::HashString("APPROVED");
+        static constexpr uint32_t DENIED_HASH = ConstExprHashingUtils::HashString("DENIED");
+        static constexpr uint32_t CASE_CLOSED_HASH = ConstExprHashingUtils::HashString("CASE_CLOSED");
+        static constexpr uint32_t NOT_APPROVED_HASH = ConstExprHashingUtils::HashString("NOT_APPROVED");
+        static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("INVALID_REQUEST");
 
 
         RequestStatus GetRequestStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return RequestStatus::PENDING;

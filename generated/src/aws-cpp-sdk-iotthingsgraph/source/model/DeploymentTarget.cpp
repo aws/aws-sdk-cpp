@@ -20,13 +20,13 @@ namespace Aws
       namespace DeploymentTargetMapper
       {
 
-        static const int GREENGRASS_HASH = HashingUtils::HashString("GREENGRASS");
-        static const int CLOUD_HASH = HashingUtils::HashString("CLOUD");
+        static constexpr uint32_t GREENGRASS_HASH = ConstExprHashingUtils::HashString("GREENGRASS");
+        static constexpr uint32_t CLOUD_HASH = ConstExprHashingUtils::HashString("CLOUD");
 
 
         DeploymentTarget GetDeploymentTargetForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GREENGRASS_HASH)
           {
             return DeploymentTarget::GREENGRASS;

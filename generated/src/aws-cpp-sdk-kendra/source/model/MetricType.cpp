@@ -20,17 +20,17 @@ namespace Aws
       namespace MetricTypeMapper
       {
 
-        static const int QUERIES_BY_COUNT_HASH = HashingUtils::HashString("QUERIES_BY_COUNT");
-        static const int QUERIES_BY_ZERO_CLICK_RATE_HASH = HashingUtils::HashString("QUERIES_BY_ZERO_CLICK_RATE");
-        static const int QUERIES_BY_ZERO_RESULT_RATE_HASH = HashingUtils::HashString("QUERIES_BY_ZERO_RESULT_RATE");
-        static const int DOCS_BY_CLICK_COUNT_HASH = HashingUtils::HashString("DOCS_BY_CLICK_COUNT");
-        static const int AGG_QUERY_DOC_METRICS_HASH = HashingUtils::HashString("AGG_QUERY_DOC_METRICS");
-        static const int TREND_QUERY_DOC_METRICS_HASH = HashingUtils::HashString("TREND_QUERY_DOC_METRICS");
+        static constexpr uint32_t QUERIES_BY_COUNT_HASH = ConstExprHashingUtils::HashString("QUERIES_BY_COUNT");
+        static constexpr uint32_t QUERIES_BY_ZERO_CLICK_RATE_HASH = ConstExprHashingUtils::HashString("QUERIES_BY_ZERO_CLICK_RATE");
+        static constexpr uint32_t QUERIES_BY_ZERO_RESULT_RATE_HASH = ConstExprHashingUtils::HashString("QUERIES_BY_ZERO_RESULT_RATE");
+        static constexpr uint32_t DOCS_BY_CLICK_COUNT_HASH = ConstExprHashingUtils::HashString("DOCS_BY_CLICK_COUNT");
+        static constexpr uint32_t AGG_QUERY_DOC_METRICS_HASH = ConstExprHashingUtils::HashString("AGG_QUERY_DOC_METRICS");
+        static constexpr uint32_t TREND_QUERY_DOC_METRICS_HASH = ConstExprHashingUtils::HashString("TREND_QUERY_DOC_METRICS");
 
 
         MetricType GetMetricTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUERIES_BY_COUNT_HASH)
           {
             return MetricType::QUERIES_BY_COUNT;

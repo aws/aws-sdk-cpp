@@ -20,15 +20,15 @@ namespace Aws
       namespace ObjectLambdaTransformationConfigurationActionMapper
       {
 
-        static const int GetObject_HASH = HashingUtils::HashString("GetObject");
-        static const int HeadObject_HASH = HashingUtils::HashString("HeadObject");
-        static const int ListObjects_HASH = HashingUtils::HashString("ListObjects");
-        static const int ListObjectsV2_HASH = HashingUtils::HashString("ListObjectsV2");
+        static constexpr uint32_t GetObject_HASH = ConstExprHashingUtils::HashString("GetObject");
+        static constexpr uint32_t HeadObject_HASH = ConstExprHashingUtils::HashString("HeadObject");
+        static constexpr uint32_t ListObjects_HASH = ConstExprHashingUtils::HashString("ListObjects");
+        static constexpr uint32_t ListObjectsV2_HASH = ConstExprHashingUtils::HashString("ListObjectsV2");
 
 
         ObjectLambdaTransformationConfigurationAction GetObjectLambdaTransformationConfigurationActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GetObject_HASH)
           {
             return ObjectLambdaTransformationConfigurationAction::GetObject;

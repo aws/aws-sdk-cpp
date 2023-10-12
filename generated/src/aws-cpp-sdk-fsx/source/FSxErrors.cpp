@@ -89,44 +89,44 @@ template<> AWS_FSX_API ResourceDoesNotSupportTagging FSxError::GetModeledError()
 namespace FSxErrorMapper
 {
 
-static const int INCOMPATIBLE_PARAMETER_HASH = HashingUtils::HashString("IncompatibleParameterError");
-static const int SNAPSHOT_NOT_FOUND_HASH = HashingUtils::HashString("SnapshotNotFound");
-static const int DATA_REPOSITORY_ASSOCIATION_NOT_FOUND_HASH = HashingUtils::HashString("DataRepositoryAssociationNotFound");
-static const int ACTIVE_DIRECTORY_HASH = HashingUtils::HashString("ActiveDirectoryError");
-static const int FILE_SYSTEM_NOT_FOUND_HASH = HashingUtils::HashString("FileSystemNotFound");
-static const int INVALID_DATA_REPOSITORY_TYPE_HASH = HashingUtils::HashString("InvalidDataRepositoryType");
-static const int INVALID_NETWORK_SETTINGS_HASH = HashingUtils::HashString("InvalidNetworkSettings");
-static const int INVALID_SOURCE_KMS_KEY_HASH = HashingUtils::HashString("InvalidSourceKmsKey");
-static const int INVALID_IMPORT_PATH_HASH = HashingUtils::HashString("InvalidImportPath");
-static const int SOURCE_BACKUP_UNAVAILABLE_HASH = HashingUtils::HashString("SourceBackupUnavailable");
-static const int BACKUP_BEING_COPIED_HASH = HashingUtils::HashString("BackupBeingCopied");
-static const int INVALID_PER_UNIT_STORAGE_THROUGHPUT_HASH = HashingUtils::HashString("InvalidPerUnitStorageThroughput");
-static const int INVALID_REGION_HASH = HashingUtils::HashString("InvalidRegion");
-static const int INVALID_EXPORT_PATH_HASH = HashingUtils::HashString("InvalidExportPath");
-static const int BACKUP_IN_PROGRESS_HASH = HashingUtils::HashString("BackupInProgress");
-static const int BACKUP_NOT_FOUND_HASH = HashingUtils::HashString("BackupNotFound");
-static const int DATA_REPOSITORY_TASK_NOT_FOUND_HASH = HashingUtils::HashString("DataRepositoryTaskNotFound");
-static const int MISSING_FILE_CACHE_CONFIGURATION_HASH = HashingUtils::HashString("MissingFileCacheConfiguration");
-static const int BACKUP_RESTORING_HASH = HashingUtils::HashString("BackupRestoring");
-static const int INCOMPATIBLE_REGION_FOR_MULTI_A_Z_HASH = HashingUtils::HashString("IncompatibleRegionForMultiAZ");
-static const int SERVICE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ServiceLimitExceeded");
-static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperation");
-static const int DATA_REPOSITORY_TASK_ENDED_HASH = HashingUtils::HashString("DataRepositoryTaskEnded");
-static const int NOT_SERVICE_RESOURCE_HASH = HashingUtils::HashString("NotServiceResourceError");
-static const int INVALID_DESTINATION_KMS_KEY_HASH = HashingUtils::HashString("InvalidDestinationKmsKey");
-static const int RESOURCE_DOES_NOT_SUPPORT_TAGGING_HASH = HashingUtils::HashString("ResourceDoesNotSupportTagging");
-static const int DATA_REPOSITORY_TASK_EXECUTING_HASH = HashingUtils::HashString("DataRepositoryTaskExecuting");
-static const int STORAGE_VIRTUAL_MACHINE_NOT_FOUND_HASH = HashingUtils::HashString("StorageVirtualMachineNotFound");
-static const int FILE_CACHE_NOT_FOUND_HASH = HashingUtils::HashString("FileCacheNotFound");
-static const int VOLUME_NOT_FOUND_HASH = HashingUtils::HashString("VolumeNotFound");
-static const int MISSING_VOLUME_CONFIGURATION_HASH = HashingUtils::HashString("MissingVolumeConfiguration");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequest");
-static const int MISSING_FILE_SYSTEM_CONFIGURATION_HASH = HashingUtils::HashString("MissingFileSystemConfiguration");
+static constexpr uint32_t INCOMPATIBLE_PARAMETER_HASH = ConstExprHashingUtils::HashString("IncompatibleParameterError");
+static constexpr uint32_t SNAPSHOT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SnapshotNotFound");
+static constexpr uint32_t DATA_REPOSITORY_ASSOCIATION_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("DataRepositoryAssociationNotFound");
+static constexpr uint32_t ACTIVE_DIRECTORY_HASH = ConstExprHashingUtils::HashString("ActiveDirectoryError");
+static constexpr uint32_t FILE_SYSTEM_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("FileSystemNotFound");
+static constexpr uint32_t INVALID_DATA_REPOSITORY_TYPE_HASH = ConstExprHashingUtils::HashString("InvalidDataRepositoryType");
+static constexpr uint32_t INVALID_NETWORK_SETTINGS_HASH = ConstExprHashingUtils::HashString("InvalidNetworkSettings");
+static constexpr uint32_t INVALID_SOURCE_KMS_KEY_HASH = ConstExprHashingUtils::HashString("InvalidSourceKmsKey");
+static constexpr uint32_t INVALID_IMPORT_PATH_HASH = ConstExprHashingUtils::HashString("InvalidImportPath");
+static constexpr uint32_t SOURCE_BACKUP_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("SourceBackupUnavailable");
+static constexpr uint32_t BACKUP_BEING_COPIED_HASH = ConstExprHashingUtils::HashString("BackupBeingCopied");
+static constexpr uint32_t INVALID_PER_UNIT_STORAGE_THROUGHPUT_HASH = ConstExprHashingUtils::HashString("InvalidPerUnitStorageThroughput");
+static constexpr uint32_t INVALID_REGION_HASH = ConstExprHashingUtils::HashString("InvalidRegion");
+static constexpr uint32_t INVALID_EXPORT_PATH_HASH = ConstExprHashingUtils::HashString("InvalidExportPath");
+static constexpr uint32_t BACKUP_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("BackupInProgress");
+static constexpr uint32_t BACKUP_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("BackupNotFound");
+static constexpr uint32_t DATA_REPOSITORY_TASK_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("DataRepositoryTaskNotFound");
+static constexpr uint32_t MISSING_FILE_CACHE_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("MissingFileCacheConfiguration");
+static constexpr uint32_t BACKUP_RESTORING_HASH = ConstExprHashingUtils::HashString("BackupRestoring");
+static constexpr uint32_t INCOMPATIBLE_REGION_FOR_MULTI_A_Z_HASH = ConstExprHashingUtils::HashString("IncompatibleRegionForMultiAZ");
+static constexpr uint32_t SERVICE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ServiceLimitExceeded");
+static constexpr uint32_t UNSUPPORTED_OPERATION_HASH = ConstExprHashingUtils::HashString("UnsupportedOperation");
+static constexpr uint32_t DATA_REPOSITORY_TASK_ENDED_HASH = ConstExprHashingUtils::HashString("DataRepositoryTaskEnded");
+static constexpr uint32_t NOT_SERVICE_RESOURCE_HASH = ConstExprHashingUtils::HashString("NotServiceResourceError");
+static constexpr uint32_t INVALID_DESTINATION_KMS_KEY_HASH = ConstExprHashingUtils::HashString("InvalidDestinationKmsKey");
+static constexpr uint32_t RESOURCE_DOES_NOT_SUPPORT_TAGGING_HASH = ConstExprHashingUtils::HashString("ResourceDoesNotSupportTagging");
+static constexpr uint32_t DATA_REPOSITORY_TASK_EXECUTING_HASH = ConstExprHashingUtils::HashString("DataRepositoryTaskExecuting");
+static constexpr uint32_t STORAGE_VIRTUAL_MACHINE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("StorageVirtualMachineNotFound");
+static constexpr uint32_t FILE_CACHE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("FileCacheNotFound");
+static constexpr uint32_t VOLUME_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("VolumeNotFound");
+static constexpr uint32_t MISSING_VOLUME_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("MissingVolumeConfiguration");
+static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BadRequest");
+static constexpr uint32_t MISSING_FILE_SYSTEM_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("MissingFileSystemConfiguration");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INCOMPATIBLE_PARAMETER_HASH)
   {

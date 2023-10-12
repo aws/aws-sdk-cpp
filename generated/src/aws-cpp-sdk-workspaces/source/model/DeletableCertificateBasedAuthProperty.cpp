@@ -20,12 +20,12 @@ namespace Aws
       namespace DeletableCertificateBasedAuthPropertyMapper
       {
 
-        static const int CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN_HASH = HashingUtils::HashString("CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN");
+        static constexpr uint32_t CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN_HASH = ConstExprHashingUtils::HashString("CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN");
 
 
         DeletableCertificateBasedAuthProperty GetDeletableCertificateBasedAuthPropertyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN_HASH)
           {
             return DeletableCertificateBasedAuthProperty::CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN;

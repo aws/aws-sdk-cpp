@@ -20,15 +20,15 @@ namespace Aws
       namespace HITReviewStatusMapper
       {
 
-        static const int NotReviewed_HASH = HashingUtils::HashString("NotReviewed");
-        static const int MarkedForReview_HASH = HashingUtils::HashString("MarkedForReview");
-        static const int ReviewedAppropriate_HASH = HashingUtils::HashString("ReviewedAppropriate");
-        static const int ReviewedInappropriate_HASH = HashingUtils::HashString("ReviewedInappropriate");
+        static constexpr uint32_t NotReviewed_HASH = ConstExprHashingUtils::HashString("NotReviewed");
+        static constexpr uint32_t MarkedForReview_HASH = ConstExprHashingUtils::HashString("MarkedForReview");
+        static constexpr uint32_t ReviewedAppropriate_HASH = ConstExprHashingUtils::HashString("ReviewedAppropriate");
+        static constexpr uint32_t ReviewedInappropriate_HASH = ConstExprHashingUtils::HashString("ReviewedInappropriate");
 
 
         HITReviewStatus GetHITReviewStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NotReviewed_HASH)
           {
             return HITReviewStatus::NotReviewed;

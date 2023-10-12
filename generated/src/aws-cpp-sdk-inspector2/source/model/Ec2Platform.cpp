@@ -20,15 +20,15 @@ namespace Aws
       namespace Ec2PlatformMapper
       {
 
-        static const int WINDOWS_HASH = HashingUtils::HashString("WINDOWS");
-        static const int LINUX_HASH = HashingUtils::HashString("LINUX");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
-        static const int MACOS_HASH = HashingUtils::HashString("MACOS");
+        static constexpr uint32_t WINDOWS_HASH = ConstExprHashingUtils::HashString("WINDOWS");
+        static constexpr uint32_t LINUX_HASH = ConstExprHashingUtils::HashString("LINUX");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t MACOS_HASH = ConstExprHashingUtils::HashString("MACOS");
 
 
         Ec2Platform GetEc2PlatformForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WINDOWS_HASH)
           {
             return Ec2Platform::WINDOWS;

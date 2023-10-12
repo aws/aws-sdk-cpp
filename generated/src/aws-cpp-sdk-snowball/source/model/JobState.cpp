@@ -20,24 +20,24 @@ namespace Aws
       namespace JobStateMapper
       {
 
-        static const int New_HASH = HashingUtils::HashString("New");
-        static const int PreparingAppliance_HASH = HashingUtils::HashString("PreparingAppliance");
-        static const int PreparingShipment_HASH = HashingUtils::HashString("PreparingShipment");
-        static const int InTransitToCustomer_HASH = HashingUtils::HashString("InTransitToCustomer");
-        static const int WithCustomer_HASH = HashingUtils::HashString("WithCustomer");
-        static const int InTransitToAWS_HASH = HashingUtils::HashString("InTransitToAWS");
-        static const int WithAWSSortingFacility_HASH = HashingUtils::HashString("WithAWSSortingFacility");
-        static const int WithAWS_HASH = HashingUtils::HashString("WithAWS");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Complete_HASH = HashingUtils::HashString("Complete");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
-        static const int Listing_HASH = HashingUtils::HashString("Listing");
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
+        static constexpr uint32_t New_HASH = ConstExprHashingUtils::HashString("New");
+        static constexpr uint32_t PreparingAppliance_HASH = ConstExprHashingUtils::HashString("PreparingAppliance");
+        static constexpr uint32_t PreparingShipment_HASH = ConstExprHashingUtils::HashString("PreparingShipment");
+        static constexpr uint32_t InTransitToCustomer_HASH = ConstExprHashingUtils::HashString("InTransitToCustomer");
+        static constexpr uint32_t WithCustomer_HASH = ConstExprHashingUtils::HashString("WithCustomer");
+        static constexpr uint32_t InTransitToAWS_HASH = ConstExprHashingUtils::HashString("InTransitToAWS");
+        static constexpr uint32_t WithAWSSortingFacility_HASH = ConstExprHashingUtils::HashString("WithAWSSortingFacility");
+        static constexpr uint32_t WithAWS_HASH = ConstExprHashingUtils::HashString("WithAWS");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Complete_HASH = ConstExprHashingUtils::HashString("Complete");
+        static constexpr uint32_t Cancelled_HASH = ConstExprHashingUtils::HashString("Cancelled");
+        static constexpr uint32_t Listing_HASH = ConstExprHashingUtils::HashString("Listing");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
 
 
         JobState GetJobStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == New_HASH)
           {
             return JobState::New;

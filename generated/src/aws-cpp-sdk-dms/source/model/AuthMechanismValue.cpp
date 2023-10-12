@@ -20,14 +20,14 @@ namespace Aws
       namespace AuthMechanismValueMapper
       {
 
-        static const int default__HASH = HashingUtils::HashString("default");
-        static const int mongodb_cr_HASH = HashingUtils::HashString("mongodb_cr");
-        static const int scram_sha_1_HASH = HashingUtils::HashString("scram_sha_1");
+        static constexpr uint32_t default__HASH = ConstExprHashingUtils::HashString("default");
+        static constexpr uint32_t mongodb_cr_HASH = ConstExprHashingUtils::HashString("mongodb_cr");
+        static constexpr uint32_t scram_sha_1_HASH = ConstExprHashingUtils::HashString("scram_sha_1");
 
 
         AuthMechanismValue GetAuthMechanismValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == default__HASH)
           {
             return AuthMechanismValue::default_;

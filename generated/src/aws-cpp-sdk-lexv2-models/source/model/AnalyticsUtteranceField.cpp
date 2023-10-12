@@ -20,13 +20,13 @@ namespace Aws
       namespace AnalyticsUtteranceFieldMapper
       {
 
-        static const int UtteranceText_HASH = HashingUtils::HashString("UtteranceText");
-        static const int UtteranceState_HASH = HashingUtils::HashString("UtteranceState");
+        static constexpr uint32_t UtteranceText_HASH = ConstExprHashingUtils::HashString("UtteranceText");
+        static constexpr uint32_t UtteranceState_HASH = ConstExprHashingUtils::HashString("UtteranceState");
 
 
         AnalyticsUtteranceField GetAnalyticsUtteranceFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UtteranceText_HASH)
           {
             return AnalyticsUtteranceField::UtteranceText;

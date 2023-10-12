@@ -20,35 +20,35 @@ namespace Aws
       namespace ExportableECSServiceFieldMapper
       {
 
-        static const int AccountId_HASH = HashingUtils::HashString("AccountId");
-        static const int ServiceArn_HASH = HashingUtils::HashString("ServiceArn");
-        static const int LookbackPeriodInDays_HASH = HashingUtils::HashString("LookbackPeriodInDays");
-        static const int LastRefreshTimestamp_HASH = HashingUtils::HashString("LastRefreshTimestamp");
-        static const int LaunchType_HASH = HashingUtils::HashString("LaunchType");
-        static const int CurrentPerformanceRisk_HASH = HashingUtils::HashString("CurrentPerformanceRisk");
-        static const int CurrentServiceConfigurationMemory_HASH = HashingUtils::HashString("CurrentServiceConfigurationMemory");
-        static const int CurrentServiceConfigurationCpu_HASH = HashingUtils::HashString("CurrentServiceConfigurationCpu");
-        static const int CurrentServiceConfigurationTaskDefinitionArn_HASH = HashingUtils::HashString("CurrentServiceConfigurationTaskDefinitionArn");
-        static const int CurrentServiceConfigurationAutoScalingConfiguration_HASH = HashingUtils::HashString("CurrentServiceConfigurationAutoScalingConfiguration");
-        static const int CurrentServiceContainerConfigurations_HASH = HashingUtils::HashString("CurrentServiceContainerConfigurations");
-        static const int UtilizationMetricsCpuMaximum_HASH = HashingUtils::HashString("UtilizationMetricsCpuMaximum");
-        static const int UtilizationMetricsMemoryMaximum_HASH = HashingUtils::HashString("UtilizationMetricsMemoryMaximum");
-        static const int Finding_HASH = HashingUtils::HashString("Finding");
-        static const int FindingReasonCodes_HASH = HashingUtils::HashString("FindingReasonCodes");
-        static const int RecommendationOptionsMemory_HASH = HashingUtils::HashString("RecommendationOptionsMemory");
-        static const int RecommendationOptionsCpu_HASH = HashingUtils::HashString("RecommendationOptionsCpu");
-        static const int RecommendationOptionsSavingsOpportunityPercentage_HASH = HashingUtils::HashString("RecommendationOptionsSavingsOpportunityPercentage");
-        static const int RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrency");
-        static const int RecommendationOptionsEstimatedMonthlySavingsValue_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValue");
-        static const int RecommendationOptionsContainerRecommendations_HASH = HashingUtils::HashString("RecommendationOptionsContainerRecommendations");
-        static const int RecommendationOptionsProjectedUtilizationMetricsCpuMaximum_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsCpuMaximum");
-        static const int RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum");
-        static const int Tags_HASH = HashingUtils::HashString("Tags");
+        static constexpr uint32_t AccountId_HASH = ConstExprHashingUtils::HashString("AccountId");
+        static constexpr uint32_t ServiceArn_HASH = ConstExprHashingUtils::HashString("ServiceArn");
+        static constexpr uint32_t LookbackPeriodInDays_HASH = ConstExprHashingUtils::HashString("LookbackPeriodInDays");
+        static constexpr uint32_t LastRefreshTimestamp_HASH = ConstExprHashingUtils::HashString("LastRefreshTimestamp");
+        static constexpr uint32_t LaunchType_HASH = ConstExprHashingUtils::HashString("LaunchType");
+        static constexpr uint32_t CurrentPerformanceRisk_HASH = ConstExprHashingUtils::HashString("CurrentPerformanceRisk");
+        static constexpr uint32_t CurrentServiceConfigurationMemory_HASH = ConstExprHashingUtils::HashString("CurrentServiceConfigurationMemory");
+        static constexpr uint32_t CurrentServiceConfigurationCpu_HASH = ConstExprHashingUtils::HashString("CurrentServiceConfigurationCpu");
+        static constexpr uint32_t CurrentServiceConfigurationTaskDefinitionArn_HASH = ConstExprHashingUtils::HashString("CurrentServiceConfigurationTaskDefinitionArn");
+        static constexpr uint32_t CurrentServiceConfigurationAutoScalingConfiguration_HASH = ConstExprHashingUtils::HashString("CurrentServiceConfigurationAutoScalingConfiguration");
+        static constexpr uint32_t CurrentServiceContainerConfigurations_HASH = ConstExprHashingUtils::HashString("CurrentServiceContainerConfigurations");
+        static constexpr uint32_t UtilizationMetricsCpuMaximum_HASH = ConstExprHashingUtils::HashString("UtilizationMetricsCpuMaximum");
+        static constexpr uint32_t UtilizationMetricsMemoryMaximum_HASH = ConstExprHashingUtils::HashString("UtilizationMetricsMemoryMaximum");
+        static constexpr uint32_t Finding_HASH = ConstExprHashingUtils::HashString("Finding");
+        static constexpr uint32_t FindingReasonCodes_HASH = ConstExprHashingUtils::HashString("FindingReasonCodes");
+        static constexpr uint32_t RecommendationOptionsMemory_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsMemory");
+        static constexpr uint32_t RecommendationOptionsCpu_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsCpu");
+        static constexpr uint32_t RecommendationOptionsSavingsOpportunityPercentage_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsSavingsOpportunityPercentage");
+        static constexpr uint32_t RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrency");
+        static constexpr uint32_t RecommendationOptionsEstimatedMonthlySavingsValue_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValue");
+        static constexpr uint32_t RecommendationOptionsContainerRecommendations_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsContainerRecommendations");
+        static constexpr uint32_t RecommendationOptionsProjectedUtilizationMetricsCpuMaximum_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsCpuMaximum");
+        static constexpr uint32_t RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum");
+        static constexpr uint32_t Tags_HASH = ConstExprHashingUtils::HashString("Tags");
 
 
         ExportableECSServiceField GetExportableECSServiceFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AccountId_HASH)
           {
             return ExportableECSServiceField::AccountId;

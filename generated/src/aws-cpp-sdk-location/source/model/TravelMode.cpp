@@ -20,16 +20,16 @@ namespace Aws
       namespace TravelModeMapper
       {
 
-        static const int Car_HASH = HashingUtils::HashString("Car");
-        static const int Truck_HASH = HashingUtils::HashString("Truck");
-        static const int Walking_HASH = HashingUtils::HashString("Walking");
-        static const int Bicycle_HASH = HashingUtils::HashString("Bicycle");
-        static const int Motorcycle_HASH = HashingUtils::HashString("Motorcycle");
+        static constexpr uint32_t Car_HASH = ConstExprHashingUtils::HashString("Car");
+        static constexpr uint32_t Truck_HASH = ConstExprHashingUtils::HashString("Truck");
+        static constexpr uint32_t Walking_HASH = ConstExprHashingUtils::HashString("Walking");
+        static constexpr uint32_t Bicycle_HASH = ConstExprHashingUtils::HashString("Bicycle");
+        static constexpr uint32_t Motorcycle_HASH = ConstExprHashingUtils::HashString("Motorcycle");
 
 
         TravelMode GetTravelModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Car_HASH)
           {
             return TravelMode::Car;

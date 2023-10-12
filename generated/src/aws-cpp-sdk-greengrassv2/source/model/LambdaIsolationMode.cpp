@@ -20,13 +20,13 @@ namespace Aws
       namespace LambdaIsolationModeMapper
       {
 
-        static const int GreengrassContainer_HASH = HashingUtils::HashString("GreengrassContainer");
-        static const int NoContainer_HASH = HashingUtils::HashString("NoContainer");
+        static constexpr uint32_t GreengrassContainer_HASH = ConstExprHashingUtils::HashString("GreengrassContainer");
+        static constexpr uint32_t NoContainer_HASH = ConstExprHashingUtils::HashString("NoContainer");
 
 
         LambdaIsolationMode GetLambdaIsolationModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GreengrassContainer_HASH)
           {
             return LambdaIsolationMode::GreengrassContainer;

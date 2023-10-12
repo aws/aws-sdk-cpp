@@ -18,14 +18,14 @@ namespace WorkMailMessageFlow
 namespace WorkMailMessageFlowErrorMapper
 {
 
-static const int MESSAGE_FROZEN_HASH = HashingUtils::HashString("MessageFrozen");
-static const int MESSAGE_REJECTED_HASH = HashingUtils::HashString("MessageRejected");
-static const int INVALID_CONTENT_LOCATION_HASH = HashingUtils::HashString("InvalidContentLocation");
+static constexpr uint32_t MESSAGE_FROZEN_HASH = ConstExprHashingUtils::HashString("MessageFrozen");
+static constexpr uint32_t MESSAGE_REJECTED_HASH = ConstExprHashingUtils::HashString("MessageRejected");
+static constexpr uint32_t INVALID_CONTENT_LOCATION_HASH = ConstExprHashingUtils::HashString("InvalidContentLocation");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == MESSAGE_FROZEN_HASH)
   {

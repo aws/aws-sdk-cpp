@@ -20,14 +20,14 @@ namespace Aws
       namespace ButtonActionMapper
       {
 
-        static const int LINK_HASH = HashingUtils::HashString("LINK");
-        static const int DEEP_LINK_HASH = HashingUtils::HashString("DEEP_LINK");
-        static const int CLOSE_HASH = HashingUtils::HashString("CLOSE");
+        static constexpr uint32_t LINK_HASH = ConstExprHashingUtils::HashString("LINK");
+        static constexpr uint32_t DEEP_LINK_HASH = ConstExprHashingUtils::HashString("DEEP_LINK");
+        static constexpr uint32_t CLOSE_HASH = ConstExprHashingUtils::HashString("CLOSE");
 
 
         ButtonAction GetButtonActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LINK_HASH)
           {
             return ButtonAction::LINK;

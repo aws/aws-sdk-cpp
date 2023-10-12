@@ -20,13 +20,13 @@ namespace Aws
       namespace SnapStartApplyOnMapper
       {
 
-        static const int PublishedVersions_HASH = HashingUtils::HashString("PublishedVersions");
-        static const int None_HASH = HashingUtils::HashString("None");
+        static constexpr uint32_t PublishedVersions_HASH = ConstExprHashingUtils::HashString("PublishedVersions");
+        static constexpr uint32_t None_HASH = ConstExprHashingUtils::HashString("None");
 
 
         SnapStartApplyOn GetSnapStartApplyOnForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PublishedVersions_HASH)
           {
             return SnapStartApplyOn::PublishedVersions;

@@ -20,13 +20,13 @@ namespace Aws
       namespace RuleGroupTypeMapper
       {
 
-        static const int STATELESS_HASH = HashingUtils::HashString("STATELESS");
-        static const int STATEFUL_HASH = HashingUtils::HashString("STATEFUL");
+        static constexpr uint32_t STATELESS_HASH = ConstExprHashingUtils::HashString("STATELESS");
+        static constexpr uint32_t STATEFUL_HASH = ConstExprHashingUtils::HashString("STATEFUL");
 
 
         RuleGroupType GetRuleGroupTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STATELESS_HASH)
           {
             return RuleGroupType::STATELESS;

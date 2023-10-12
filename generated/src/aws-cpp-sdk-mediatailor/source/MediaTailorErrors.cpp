@@ -18,12 +18,12 @@ namespace MediaTailor
 namespace MediaTailorErrorMapper
 {
 
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
+static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BadRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == BAD_REQUEST_HASH)
   {

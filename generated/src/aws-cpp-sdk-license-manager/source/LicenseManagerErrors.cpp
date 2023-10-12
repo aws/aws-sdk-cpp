@@ -33,24 +33,24 @@ template<> AWS_LICENSEMANAGER_API FailedDependencyException LicenseManagerError:
 namespace LicenseManagerErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int AUTHORIZATION_HASH = HashingUtils::HashString("AuthorizationException");
-static const int REDIRECT_HASH = HashingUtils::HashString("RedirectException");
-static const int FAILED_DEPENDENCY_HASH = HashingUtils::HashString("FailedDependencyException");
-static const int NO_ENTITLEMENTS_ALLOWED_HASH = HashingUtils::HashString("NoEntitlementsAllowedException");
-static const int UNSUPPORTED_DIGITAL_SIGNATURE_METHOD_HASH = HashingUtils::HashString("UnsupportedDigitalSignatureMethodException");
-static const int INVALID_RESOURCE_STATE_HASH = HashingUtils::HashString("InvalidResourceStateException");
-static const int SERVER_INTERNAL_HASH = HashingUtils::HashString("ServerInternalException");
-static const int ENTITLEMENT_NOT_ALLOWED_HASH = HashingUtils::HashString("EntitlementNotAllowedException");
-static const int LICENSE_USAGE_HASH = HashingUtils::HashString("LicenseUsageException");
-static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
-static const int RATE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("RateLimitExceededException");
-static const int FILTER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("FilterLimitExceededException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t AUTHORIZATION_HASH = ConstExprHashingUtils::HashString("AuthorizationException");
+static constexpr uint32_t REDIRECT_HASH = ConstExprHashingUtils::HashString("RedirectException");
+static constexpr uint32_t FAILED_DEPENDENCY_HASH = ConstExprHashingUtils::HashString("FailedDependencyException");
+static constexpr uint32_t NO_ENTITLEMENTS_ALLOWED_HASH = ConstExprHashingUtils::HashString("NoEntitlementsAllowedException");
+static constexpr uint32_t UNSUPPORTED_DIGITAL_SIGNATURE_METHOD_HASH = ConstExprHashingUtils::HashString("UnsupportedDigitalSignatureMethodException");
+static constexpr uint32_t INVALID_RESOURCE_STATE_HASH = ConstExprHashingUtils::HashString("InvalidResourceStateException");
+static constexpr uint32_t SERVER_INTERNAL_HASH = ConstExprHashingUtils::HashString("ServerInternalException");
+static constexpr uint32_t ENTITLEMENT_NOT_ALLOWED_HASH = ConstExprHashingUtils::HashString("EntitlementNotAllowedException");
+static constexpr uint32_t LICENSE_USAGE_HASH = ConstExprHashingUtils::HashString("LicenseUsageException");
+static constexpr uint32_t RESOURCE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ResourceLimitExceededException");
+static constexpr uint32_t RATE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("RateLimitExceededException");
+static constexpr uint32_t FILTER_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("FilterLimitExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

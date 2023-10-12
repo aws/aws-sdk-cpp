@@ -20,17 +20,17 @@ namespace Aws
       namespace ResourceAttributeMapper
       {
 
-        static const int Properties_HASH = HashingUtils::HashString("Properties");
-        static const int Metadata_HASH = HashingUtils::HashString("Metadata");
-        static const int CreationPolicy_HASH = HashingUtils::HashString("CreationPolicy");
-        static const int UpdatePolicy_HASH = HashingUtils::HashString("UpdatePolicy");
-        static const int DeletionPolicy_HASH = HashingUtils::HashString("DeletionPolicy");
-        static const int Tags_HASH = HashingUtils::HashString("Tags");
+        static constexpr uint32_t Properties_HASH = ConstExprHashingUtils::HashString("Properties");
+        static constexpr uint32_t Metadata_HASH = ConstExprHashingUtils::HashString("Metadata");
+        static constexpr uint32_t CreationPolicy_HASH = ConstExprHashingUtils::HashString("CreationPolicy");
+        static constexpr uint32_t UpdatePolicy_HASH = ConstExprHashingUtils::HashString("UpdatePolicy");
+        static constexpr uint32_t DeletionPolicy_HASH = ConstExprHashingUtils::HashString("DeletionPolicy");
+        static constexpr uint32_t Tags_HASH = ConstExprHashingUtils::HashString("Tags");
 
 
         ResourceAttribute GetResourceAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Properties_HASH)
           {
             return ResourceAttribute::Properties;

@@ -20,13 +20,13 @@ namespace Aws
       namespace TransitGatewayRouteTableAnnouncementDirectionMapper
       {
 
-        static const int outgoing_HASH = HashingUtils::HashString("outgoing");
-        static const int incoming_HASH = HashingUtils::HashString("incoming");
+        static constexpr uint32_t outgoing_HASH = ConstExprHashingUtils::HashString("outgoing");
+        static constexpr uint32_t incoming_HASH = ConstExprHashingUtils::HashString("incoming");
 
 
         TransitGatewayRouteTableAnnouncementDirection GetTransitGatewayRouteTableAnnouncementDirectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == outgoing_HASH)
           {
             return TransitGatewayRouteTableAnnouncementDirection::outgoing;

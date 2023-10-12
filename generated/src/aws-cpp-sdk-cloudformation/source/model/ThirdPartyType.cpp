@@ -20,14 +20,14 @@ namespace Aws
       namespace ThirdPartyTypeMapper
       {
 
-        static const int RESOURCE_HASH = HashingUtils::HashString("RESOURCE");
-        static const int MODULE_HASH = HashingUtils::HashString("MODULE");
-        static const int HOOK_HASH = HashingUtils::HashString("HOOK");
+        static constexpr uint32_t RESOURCE_HASH = ConstExprHashingUtils::HashString("RESOURCE");
+        static constexpr uint32_t MODULE_HASH = ConstExprHashingUtils::HashString("MODULE");
+        static constexpr uint32_t HOOK_HASH = ConstExprHashingUtils::HashString("HOOK");
 
 
         ThirdPartyType GetThirdPartyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESOURCE_HASH)
           {
             return ThirdPartyType::RESOURCE;

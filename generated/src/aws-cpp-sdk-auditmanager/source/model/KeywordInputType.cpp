@@ -20,14 +20,14 @@ namespace Aws
       namespace KeywordInputTypeMapper
       {
 
-        static const int SELECT_FROM_LIST_HASH = HashingUtils::HashString("SELECT_FROM_LIST");
-        static const int UPLOAD_FILE_HASH = HashingUtils::HashString("UPLOAD_FILE");
-        static const int INPUT_TEXT_HASH = HashingUtils::HashString("INPUT_TEXT");
+        static constexpr uint32_t SELECT_FROM_LIST_HASH = ConstExprHashingUtils::HashString("SELECT_FROM_LIST");
+        static constexpr uint32_t UPLOAD_FILE_HASH = ConstExprHashingUtils::HashString("UPLOAD_FILE");
+        static constexpr uint32_t INPUT_TEXT_HASH = ConstExprHashingUtils::HashString("INPUT_TEXT");
 
 
         KeywordInputType GetKeywordInputTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SELECT_FROM_LIST_HASH)
           {
             return KeywordInputType::SELECT_FROM_LIST;

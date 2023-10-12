@@ -20,20 +20,20 @@ namespace Aws
       namespace TypeMapper
       {
 
-        static const int IMPORT_ASSETS_FROM_S3_HASH = HashingUtils::HashString("IMPORT_ASSETS_FROM_S3");
-        static const int IMPORT_ASSET_FROM_SIGNED_URL_HASH = HashingUtils::HashString("IMPORT_ASSET_FROM_SIGNED_URL");
-        static const int EXPORT_ASSETS_TO_S3_HASH = HashingUtils::HashString("EXPORT_ASSETS_TO_S3");
-        static const int EXPORT_ASSET_TO_SIGNED_URL_HASH = HashingUtils::HashString("EXPORT_ASSET_TO_SIGNED_URL");
-        static const int EXPORT_REVISIONS_TO_S3_HASH = HashingUtils::HashString("EXPORT_REVISIONS_TO_S3");
-        static const int IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES_HASH = HashingUtils::HashString("IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES");
-        static const int IMPORT_ASSET_FROM_API_GATEWAY_API_HASH = HashingUtils::HashString("IMPORT_ASSET_FROM_API_GATEWAY_API");
-        static const int CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET_HASH = HashingUtils::HashString("CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET");
-        static const int IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY_HASH = HashingUtils::HashString("IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY");
+        static constexpr uint32_t IMPORT_ASSETS_FROM_S3_HASH = ConstExprHashingUtils::HashString("IMPORT_ASSETS_FROM_S3");
+        static constexpr uint32_t IMPORT_ASSET_FROM_SIGNED_URL_HASH = ConstExprHashingUtils::HashString("IMPORT_ASSET_FROM_SIGNED_URL");
+        static constexpr uint32_t EXPORT_ASSETS_TO_S3_HASH = ConstExprHashingUtils::HashString("EXPORT_ASSETS_TO_S3");
+        static constexpr uint32_t EXPORT_ASSET_TO_SIGNED_URL_HASH = ConstExprHashingUtils::HashString("EXPORT_ASSET_TO_SIGNED_URL");
+        static constexpr uint32_t EXPORT_REVISIONS_TO_S3_HASH = ConstExprHashingUtils::HashString("EXPORT_REVISIONS_TO_S3");
+        static constexpr uint32_t IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES_HASH = ConstExprHashingUtils::HashString("IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES");
+        static constexpr uint32_t IMPORT_ASSET_FROM_API_GATEWAY_API_HASH = ConstExprHashingUtils::HashString("IMPORT_ASSET_FROM_API_GATEWAY_API");
+        static constexpr uint32_t CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET_HASH = ConstExprHashingUtils::HashString("CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET");
+        static constexpr uint32_t IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY_HASH = ConstExprHashingUtils::HashString("IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY");
 
 
         Type GetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IMPORT_ASSETS_FROM_S3_HASH)
           {
             return Type::IMPORT_ASSETS_FROM_S3;

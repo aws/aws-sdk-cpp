@@ -20,12 +20,12 @@ namespace Aws
       namespace ProfanityMapper
       {
 
-        static const int MASK_HASH = HashingUtils::HashString("MASK");
+        static constexpr uint32_t MASK_HASH = ConstExprHashingUtils::HashString("MASK");
 
 
         Profanity GetProfanityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MASK_HASH)
           {
             return Profanity::MASK;

@@ -20,14 +20,14 @@ namespace Aws
       namespace AccelerationModeMapper
       {
 
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int PREFERRED_HASH = HashingUtils::HashString("PREFERRED");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
+        static constexpr uint32_t PREFERRED_HASH = ConstExprHashingUtils::HashString("PREFERRED");
 
 
         AccelerationMode GetAccelerationModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISABLED_HASH)
           {
             return AccelerationMode::DISABLED;

@@ -20,13 +20,13 @@ namespace Aws
       namespace LaunchActionTypeMapper
       {
 
-        static const int SSM_AUTOMATION_HASH = HashingUtils::HashString("SSM_AUTOMATION");
-        static const int SSM_COMMAND_HASH = HashingUtils::HashString("SSM_COMMAND");
+        static constexpr uint32_t SSM_AUTOMATION_HASH = ConstExprHashingUtils::HashString("SSM_AUTOMATION");
+        static constexpr uint32_t SSM_COMMAND_HASH = ConstExprHashingUtils::HashString("SSM_COMMAND");
 
 
         LaunchActionType GetLaunchActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SSM_AUTOMATION_HASH)
           {
             return LaunchActionType::SSM_AUTOMATION;

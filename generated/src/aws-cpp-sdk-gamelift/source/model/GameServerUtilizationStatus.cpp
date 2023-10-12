@@ -20,13 +20,13 @@ namespace Aws
       namespace GameServerUtilizationStatusMapper
       {
 
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int UTILIZED_HASH = HashingUtils::HashString("UTILIZED");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t UTILIZED_HASH = ConstExprHashingUtils::HashString("UTILIZED");
 
 
         GameServerUtilizationStatus GetGameServerUtilizationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVAILABLE_HASH)
           {
             return GameServerUtilizationStatus::AVAILABLE;

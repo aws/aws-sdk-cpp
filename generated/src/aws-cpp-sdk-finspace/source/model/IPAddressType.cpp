@@ -20,12 +20,12 @@ namespace Aws
       namespace IPAddressTypeMapper
       {
 
-        static const int IP_V4_HASH = HashingUtils::HashString("IP_V4");
+        static constexpr uint32_t IP_V4_HASH = ConstExprHashingUtils::HashString("IP_V4");
 
 
         IPAddressType GetIPAddressTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IP_V4_HASH)
           {
             return IPAddressType::IP_V4;

@@ -20,16 +20,16 @@ namespace Aws
       namespace NotificationMessageTypeMapper
       {
 
-        static const int NEW_INSIGHT_HASH = HashingUtils::HashString("NEW_INSIGHT");
-        static const int CLOSED_INSIGHT_HASH = HashingUtils::HashString("CLOSED_INSIGHT");
-        static const int NEW_ASSOCIATION_HASH = HashingUtils::HashString("NEW_ASSOCIATION");
-        static const int SEVERITY_UPGRADED_HASH = HashingUtils::HashString("SEVERITY_UPGRADED");
-        static const int NEW_RECOMMENDATION_HASH = HashingUtils::HashString("NEW_RECOMMENDATION");
+        static constexpr uint32_t NEW_INSIGHT_HASH = ConstExprHashingUtils::HashString("NEW_INSIGHT");
+        static constexpr uint32_t CLOSED_INSIGHT_HASH = ConstExprHashingUtils::HashString("CLOSED_INSIGHT");
+        static constexpr uint32_t NEW_ASSOCIATION_HASH = ConstExprHashingUtils::HashString("NEW_ASSOCIATION");
+        static constexpr uint32_t SEVERITY_UPGRADED_HASH = ConstExprHashingUtils::HashString("SEVERITY_UPGRADED");
+        static constexpr uint32_t NEW_RECOMMENDATION_HASH = ConstExprHashingUtils::HashString("NEW_RECOMMENDATION");
 
 
         NotificationMessageType GetNotificationMessageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NEW_INSIGHT_HASH)
           {
             return NotificationMessageType::NEW_INSIGHT;

@@ -20,13 +20,13 @@ namespace Aws
       namespace StorageTypeMapper
       {
 
-        static const int SSD_HASH = HashingUtils::HashString("SSD");
-        static const int HDD_HASH = HashingUtils::HashString("HDD");
+        static constexpr uint32_t SSD_HASH = ConstExprHashingUtils::HashString("SSD");
+        static constexpr uint32_t HDD_HASH = ConstExprHashingUtils::HashString("HDD");
 
 
         StorageType GetStorageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SSD_HASH)
           {
             return StorageType::SSD;

@@ -20,14 +20,14 @@ namespace Aws
       namespace OperationStatusMapper
       {
 
-        static const int INPROGRESS_HASH = HashingUtils::HashString("INPROGRESS");
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t INPROGRESS_HASH = ConstExprHashingUtils::HashString("INPROGRESS");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         OperationStatus GetOperationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INPROGRESS_HASH)
           {
             return OperationStatus::INPROGRESS;

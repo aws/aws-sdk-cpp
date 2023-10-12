@@ -20,14 +20,14 @@ namespace Aws
       namespace UserTypeMapper
       {
 
-        static const int USER_HASH = HashingUtils::HashString("USER");
-        static const int AWS_ACCOUNT_HASH = HashingUtils::HashString("AWS_ACCOUNT");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t USER_HASH = ConstExprHashingUtils::HashString("USER");
+        static constexpr uint32_t AWS_ACCOUNT_HASH = ConstExprHashingUtils::HashString("AWS_ACCOUNT");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         UserType GetUserTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USER_HASH)
           {
             return UserType::USER;

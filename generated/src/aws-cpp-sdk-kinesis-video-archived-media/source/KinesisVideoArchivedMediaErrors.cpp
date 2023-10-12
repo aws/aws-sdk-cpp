@@ -18,19 +18,19 @@ namespace KinesisVideoArchivedMedia
 namespace KinesisVideoArchivedMediaErrorMapper
 {
 
-static const int INVALID_CODEC_PRIVATE_DATA_HASH = HashingUtils::HashString("InvalidCodecPrivateDataException");
-static const int NO_DATA_RETENTION_HASH = HashingUtils::HashString("NoDataRetentionException");
-static const int MISSING_CODEC_PRIVATE_DATA_HASH = HashingUtils::HashString("MissingCodecPrivateDataException");
-static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
-static const int UNSUPPORTED_STREAM_MEDIA_TYPE_HASH = HashingUtils::HashString("UnsupportedStreamMediaTypeException");
-static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
-static const int CLIENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ClientLimitExceededException");
-static const int INVALID_MEDIA_FRAME_HASH = HashingUtils::HashString("InvalidMediaFrameException");
+static constexpr uint32_t INVALID_CODEC_PRIVATE_DATA_HASH = ConstExprHashingUtils::HashString("InvalidCodecPrivateDataException");
+static constexpr uint32_t NO_DATA_RETENTION_HASH = ConstExprHashingUtils::HashString("NoDataRetentionException");
+static constexpr uint32_t MISSING_CODEC_PRIVATE_DATA_HASH = ConstExprHashingUtils::HashString("MissingCodecPrivateDataException");
+static constexpr uint32_t NOT_AUTHORIZED_HASH = ConstExprHashingUtils::HashString("NotAuthorizedException");
+static constexpr uint32_t UNSUPPORTED_STREAM_MEDIA_TYPE_HASH = ConstExprHashingUtils::HashString("UnsupportedStreamMediaTypeException");
+static constexpr uint32_t INVALID_ARGUMENT_HASH = ConstExprHashingUtils::HashString("InvalidArgumentException");
+static constexpr uint32_t CLIENT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ClientLimitExceededException");
+static constexpr uint32_t INVALID_MEDIA_FRAME_HASH = ConstExprHashingUtils::HashString("InvalidMediaFrameException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INVALID_CODEC_PRIVATE_DATA_HASH)
   {

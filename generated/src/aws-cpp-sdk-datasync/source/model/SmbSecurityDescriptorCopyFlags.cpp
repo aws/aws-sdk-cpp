@@ -20,14 +20,14 @@ namespace Aws
       namespace SmbSecurityDescriptorCopyFlagsMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int OWNER_DACL_HASH = HashingUtils::HashString("OWNER_DACL");
-        static const int OWNER_DACL_SACL_HASH = HashingUtils::HashString("OWNER_DACL_SACL");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t OWNER_DACL_HASH = ConstExprHashingUtils::HashString("OWNER_DACL");
+        static constexpr uint32_t OWNER_DACL_SACL_HASH = ConstExprHashingUtils::HashString("OWNER_DACL_SACL");
 
 
         SmbSecurityDescriptorCopyFlags GetSmbSecurityDescriptorCopyFlagsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return SmbSecurityDescriptorCopyFlags::NONE;

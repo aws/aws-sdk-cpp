@@ -20,15 +20,15 @@ namespace Aws
       namespace OutputSdtMapper
       {
 
-        static const int SDT_FOLLOW_HASH = HashingUtils::HashString("SDT_FOLLOW");
-        static const int SDT_FOLLOW_IF_PRESENT_HASH = HashingUtils::HashString("SDT_FOLLOW_IF_PRESENT");
-        static const int SDT_MANUAL_HASH = HashingUtils::HashString("SDT_MANUAL");
-        static const int SDT_NONE_HASH = HashingUtils::HashString("SDT_NONE");
+        static constexpr uint32_t SDT_FOLLOW_HASH = ConstExprHashingUtils::HashString("SDT_FOLLOW");
+        static constexpr uint32_t SDT_FOLLOW_IF_PRESENT_HASH = ConstExprHashingUtils::HashString("SDT_FOLLOW_IF_PRESENT");
+        static constexpr uint32_t SDT_MANUAL_HASH = ConstExprHashingUtils::HashString("SDT_MANUAL");
+        static constexpr uint32_t SDT_NONE_HASH = ConstExprHashingUtils::HashString("SDT_NONE");
 
 
         OutputSdt GetOutputSdtForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SDT_FOLLOW_HASH)
           {
             return OutputSdt::SDT_FOLLOW;

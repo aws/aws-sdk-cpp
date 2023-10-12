@@ -20,15 +20,15 @@ namespace Aws
       namespace AccountLevelBpaSyncStatusMapper
       {
 
-        static const int InSync_HASH = HashingUtils::HashString("InSync");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int NeverSynced_HASH = HashingUtils::HashString("NeverSynced");
-        static const int Defaulted_HASH = HashingUtils::HashString("Defaulted");
+        static constexpr uint32_t InSync_HASH = ConstExprHashingUtils::HashString("InSync");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t NeverSynced_HASH = ConstExprHashingUtils::HashString("NeverSynced");
+        static constexpr uint32_t Defaulted_HASH = ConstExprHashingUtils::HashString("Defaulted");
 
 
         AccountLevelBpaSyncStatus GetAccountLevelBpaSyncStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InSync_HASH)
           {
             return AccountLevelBpaSyncStatus::InSync;

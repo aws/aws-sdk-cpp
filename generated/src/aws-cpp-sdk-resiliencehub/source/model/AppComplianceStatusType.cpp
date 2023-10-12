@@ -20,15 +20,15 @@ namespace Aws
       namespace AppComplianceStatusTypeMapper
       {
 
-        static const int PolicyBreached_HASH = HashingUtils::HashString("PolicyBreached");
-        static const int PolicyMet_HASH = HashingUtils::HashString("PolicyMet");
-        static const int NotAssessed_HASH = HashingUtils::HashString("NotAssessed");
-        static const int ChangesDetected_HASH = HashingUtils::HashString("ChangesDetected");
+        static constexpr uint32_t PolicyBreached_HASH = ConstExprHashingUtils::HashString("PolicyBreached");
+        static constexpr uint32_t PolicyMet_HASH = ConstExprHashingUtils::HashString("PolicyMet");
+        static constexpr uint32_t NotAssessed_HASH = ConstExprHashingUtils::HashString("NotAssessed");
+        static constexpr uint32_t ChangesDetected_HASH = ConstExprHashingUtils::HashString("ChangesDetected");
 
 
         AppComplianceStatusType GetAppComplianceStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PolicyBreached_HASH)
           {
             return AppComplianceStatusType::PolicyBreached;

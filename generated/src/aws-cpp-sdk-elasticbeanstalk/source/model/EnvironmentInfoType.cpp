@@ -20,13 +20,13 @@ namespace Aws
       namespace EnvironmentInfoTypeMapper
       {
 
-        static const int tail_HASH = HashingUtils::HashString("tail");
-        static const int bundle_HASH = HashingUtils::HashString("bundle");
+        static constexpr uint32_t tail_HASH = ConstExprHashingUtils::HashString("tail");
+        static constexpr uint32_t bundle_HASH = ConstExprHashingUtils::HashString("bundle");
 
 
         EnvironmentInfoType GetEnvironmentInfoTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == tail_HASH)
           {
             return EnvironmentInfoType::tail;

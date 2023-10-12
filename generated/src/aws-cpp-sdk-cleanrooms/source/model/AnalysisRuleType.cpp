@@ -20,14 +20,14 @@ namespace Aws
       namespace AnalysisRuleTypeMapper
       {
 
-        static const int AGGREGATION_HASH = HashingUtils::HashString("AGGREGATION");
-        static const int LIST_HASH = HashingUtils::HashString("LIST");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t AGGREGATION_HASH = ConstExprHashingUtils::HashString("AGGREGATION");
+        static constexpr uint32_t LIST_HASH = ConstExprHashingUtils::HashString("LIST");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
 
 
         AnalysisRuleType GetAnalysisRuleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AGGREGATION_HASH)
           {
             return AnalysisRuleType::AGGREGATION;

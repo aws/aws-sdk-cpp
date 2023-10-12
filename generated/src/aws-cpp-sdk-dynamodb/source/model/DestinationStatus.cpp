@@ -20,16 +20,16 @@ namespace Aws
       namespace DestinationStatusMapper
       {
 
-        static const int ENABLING_HASH = HashingUtils::HashString("ENABLING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DISABLING_HASH = HashingUtils::HashString("DISABLING");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int ENABLE_FAILED_HASH = HashingUtils::HashString("ENABLE_FAILED");
+        static constexpr uint32_t ENABLING_HASH = ConstExprHashingUtils::HashString("ENABLING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t DISABLING_HASH = ConstExprHashingUtils::HashString("DISABLING");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t ENABLE_FAILED_HASH = ConstExprHashingUtils::HashString("ENABLE_FAILED");
 
 
         DestinationStatus GetDestinationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLING_HASH)
           {
             return DestinationStatus::ENABLING;

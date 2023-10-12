@@ -20,13 +20,13 @@ namespace Aws
       namespace AppSecurityGroupManagementMapper
       {
 
-        static const int Service_HASH = HashingUtils::HashString("Service");
-        static const int Customer_HASH = HashingUtils::HashString("Customer");
+        static constexpr uint32_t Service_HASH = ConstExprHashingUtils::HashString("Service");
+        static constexpr uint32_t Customer_HASH = ConstExprHashingUtils::HashString("Customer");
 
 
         AppSecurityGroupManagement GetAppSecurityGroupManagementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Service_HASH)
           {
             return AppSecurityGroupManagement::Service;

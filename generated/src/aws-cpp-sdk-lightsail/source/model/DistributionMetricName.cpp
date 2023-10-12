@@ -20,17 +20,17 @@ namespace Aws
       namespace DistributionMetricNameMapper
       {
 
-        static const int Requests_HASH = HashingUtils::HashString("Requests");
-        static const int BytesDownloaded_HASH = HashingUtils::HashString("BytesDownloaded");
-        static const int BytesUploaded_HASH = HashingUtils::HashString("BytesUploaded");
-        static const int TotalErrorRate_HASH = HashingUtils::HashString("TotalErrorRate");
-        static const int Http4xxErrorRate_HASH = HashingUtils::HashString("Http4xxErrorRate");
-        static const int Http5xxErrorRate_HASH = HashingUtils::HashString("Http5xxErrorRate");
+        static constexpr uint32_t Requests_HASH = ConstExprHashingUtils::HashString("Requests");
+        static constexpr uint32_t BytesDownloaded_HASH = ConstExprHashingUtils::HashString("BytesDownloaded");
+        static constexpr uint32_t BytesUploaded_HASH = ConstExprHashingUtils::HashString("BytesUploaded");
+        static constexpr uint32_t TotalErrorRate_HASH = ConstExprHashingUtils::HashString("TotalErrorRate");
+        static constexpr uint32_t Http4xxErrorRate_HASH = ConstExprHashingUtils::HashString("Http4xxErrorRate");
+        static constexpr uint32_t Http5xxErrorRate_HASH = ConstExprHashingUtils::HashString("Http5xxErrorRate");
 
 
         DistributionMetricName GetDistributionMetricNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Requests_HASH)
           {
             return DistributionMetricName::Requests;

@@ -20,12 +20,12 @@ namespace Aws
       namespace AssetTypeMapper
       {
 
-        static const int COMPUTE_HASH = HashingUtils::HashString("COMPUTE");
+        static constexpr uint32_t COMPUTE_HASH = ConstExprHashingUtils::HashString("COMPUTE");
 
 
         AssetType GetAssetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPUTE_HASH)
           {
             return AssetType::COMPUTE;

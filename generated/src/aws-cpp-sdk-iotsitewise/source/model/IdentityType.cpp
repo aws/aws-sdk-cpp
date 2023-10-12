@@ -20,14 +20,14 @@ namespace Aws
       namespace IdentityTypeMapper
       {
 
-        static const int USER_HASH = HashingUtils::HashString("USER");
-        static const int GROUP_HASH = HashingUtils::HashString("GROUP");
-        static const int IAM_HASH = HashingUtils::HashString("IAM");
+        static constexpr uint32_t USER_HASH = ConstExprHashingUtils::HashString("USER");
+        static constexpr uint32_t GROUP_HASH = ConstExprHashingUtils::HashString("GROUP");
+        static constexpr uint32_t IAM_HASH = ConstExprHashingUtils::HashString("IAM");
 
 
         IdentityType GetIdentityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USER_HASH)
           {
             return IdentityType::USER;

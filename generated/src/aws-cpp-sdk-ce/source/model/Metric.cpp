@@ -20,18 +20,18 @@ namespace Aws
       namespace MetricMapper
       {
 
-        static const int BLENDED_COST_HASH = HashingUtils::HashString("BLENDED_COST");
-        static const int UNBLENDED_COST_HASH = HashingUtils::HashString("UNBLENDED_COST");
-        static const int AMORTIZED_COST_HASH = HashingUtils::HashString("AMORTIZED_COST");
-        static const int NET_UNBLENDED_COST_HASH = HashingUtils::HashString("NET_UNBLENDED_COST");
-        static const int NET_AMORTIZED_COST_HASH = HashingUtils::HashString("NET_AMORTIZED_COST");
-        static const int USAGE_QUANTITY_HASH = HashingUtils::HashString("USAGE_QUANTITY");
-        static const int NORMALIZED_USAGE_AMOUNT_HASH = HashingUtils::HashString("NORMALIZED_USAGE_AMOUNT");
+        static constexpr uint32_t BLENDED_COST_HASH = ConstExprHashingUtils::HashString("BLENDED_COST");
+        static constexpr uint32_t UNBLENDED_COST_HASH = ConstExprHashingUtils::HashString("UNBLENDED_COST");
+        static constexpr uint32_t AMORTIZED_COST_HASH = ConstExprHashingUtils::HashString("AMORTIZED_COST");
+        static constexpr uint32_t NET_UNBLENDED_COST_HASH = ConstExprHashingUtils::HashString("NET_UNBLENDED_COST");
+        static constexpr uint32_t NET_AMORTIZED_COST_HASH = ConstExprHashingUtils::HashString("NET_AMORTIZED_COST");
+        static constexpr uint32_t USAGE_QUANTITY_HASH = ConstExprHashingUtils::HashString("USAGE_QUANTITY");
+        static constexpr uint32_t NORMALIZED_USAGE_AMOUNT_HASH = ConstExprHashingUtils::HashString("NORMALIZED_USAGE_AMOUNT");
 
 
         Metric GetMetricForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BLENDED_COST_HASH)
           {
             return Metric::BLENDED_COST;

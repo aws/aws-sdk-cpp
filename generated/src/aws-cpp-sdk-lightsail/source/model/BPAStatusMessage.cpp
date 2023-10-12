@@ -20,15 +20,15 @@ namespace Aws
       namespace BPAStatusMessageMapper
       {
 
-        static const int DEFAULTED_FOR_SLR_MISSING_HASH = HashingUtils::HashString("DEFAULTED_FOR_SLR_MISSING");
-        static const int SYNC_ON_HOLD_HASH = HashingUtils::HashString("SYNC_ON_HOLD");
-        static const int DEFAULTED_FOR_SLR_MISSING_ON_HOLD_HASH = HashingUtils::HashString("DEFAULTED_FOR_SLR_MISSING_ON_HOLD");
-        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
+        static constexpr uint32_t DEFAULTED_FOR_SLR_MISSING_HASH = ConstExprHashingUtils::HashString("DEFAULTED_FOR_SLR_MISSING");
+        static constexpr uint32_t SYNC_ON_HOLD_HASH = ConstExprHashingUtils::HashString("SYNC_ON_HOLD");
+        static constexpr uint32_t DEFAULTED_FOR_SLR_MISSING_ON_HOLD_HASH = ConstExprHashingUtils::HashString("DEFAULTED_FOR_SLR_MISSING_ON_HOLD");
+        static constexpr uint32_t Unknown_HASH = ConstExprHashingUtils::HashString("Unknown");
 
 
         BPAStatusMessage GetBPAStatusMessageForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULTED_FOR_SLR_MISSING_HASH)
           {
             return BPAStatusMessage::DEFAULTED_FOR_SLR_MISSING;

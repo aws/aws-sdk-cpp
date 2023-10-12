@@ -20,13 +20,13 @@ namespace Aws
       namespace SupportDataSetTypeMapper
       {
 
-        static const int customer_support_contacts_data_HASH = HashingUtils::HashString("customer_support_contacts_data");
-        static const int test_customer_support_contacts_data_HASH = HashingUtils::HashString("test_customer_support_contacts_data");
+        static constexpr uint32_t customer_support_contacts_data_HASH = ConstExprHashingUtils::HashString("customer_support_contacts_data");
+        static constexpr uint32_t test_customer_support_contacts_data_HASH = ConstExprHashingUtils::HashString("test_customer_support_contacts_data");
 
 
         SupportDataSetType GetSupportDataSetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == customer_support_contacts_data_HASH)
           {
             return SupportDataSetType::customer_support_contacts_data;

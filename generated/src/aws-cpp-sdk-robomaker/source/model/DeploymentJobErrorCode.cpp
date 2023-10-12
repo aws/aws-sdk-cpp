@@ -20,35 +20,35 @@ namespace Aws
       namespace DeploymentJobErrorCodeMapper
       {
 
-        static const int ResourceNotFound_HASH = HashingUtils::HashString("ResourceNotFound");
-        static const int EnvironmentSetupError_HASH = HashingUtils::HashString("EnvironmentSetupError");
-        static const int EtagMismatch_HASH = HashingUtils::HashString("EtagMismatch");
-        static const int FailureThresholdBreached_HASH = HashingUtils::HashString("FailureThresholdBreached");
-        static const int RobotDeploymentAborted_HASH = HashingUtils::HashString("RobotDeploymentAborted");
-        static const int RobotDeploymentNoResponse_HASH = HashingUtils::HashString("RobotDeploymentNoResponse");
-        static const int RobotAgentConnectionTimeout_HASH = HashingUtils::HashString("RobotAgentConnectionTimeout");
-        static const int GreengrassDeploymentFailed_HASH = HashingUtils::HashString("GreengrassDeploymentFailed");
-        static const int InvalidGreengrassGroup_HASH = HashingUtils::HashString("InvalidGreengrassGroup");
-        static const int MissingRobotArchitecture_HASH = HashingUtils::HashString("MissingRobotArchitecture");
-        static const int MissingRobotApplicationArchitecture_HASH = HashingUtils::HashString("MissingRobotApplicationArchitecture");
-        static const int MissingRobotDeploymentResource_HASH = HashingUtils::HashString("MissingRobotDeploymentResource");
-        static const int GreengrassGroupVersionDoesNotExist_HASH = HashingUtils::HashString("GreengrassGroupVersionDoesNotExist");
-        static const int LambdaDeleted_HASH = HashingUtils::HashString("LambdaDeleted");
-        static const int ExtractingBundleFailure_HASH = HashingUtils::HashString("ExtractingBundleFailure");
-        static const int PreLaunchFileFailure_HASH = HashingUtils::HashString("PreLaunchFileFailure");
-        static const int PostLaunchFileFailure_HASH = HashingUtils::HashString("PostLaunchFileFailure");
-        static const int BadPermissionError_HASH = HashingUtils::HashString("BadPermissionError");
-        static const int DownloadConditionFailed_HASH = HashingUtils::HashString("DownloadConditionFailed");
-        static const int BadLambdaAssociated_HASH = HashingUtils::HashString("BadLambdaAssociated");
-        static const int InternalServerError_HASH = HashingUtils::HashString("InternalServerError");
-        static const int RobotApplicationDoesNotExist_HASH = HashingUtils::HashString("RobotApplicationDoesNotExist");
-        static const int DeploymentFleetDoesNotExist_HASH = HashingUtils::HashString("DeploymentFleetDoesNotExist");
-        static const int FleetDeploymentTimeout_HASH = HashingUtils::HashString("FleetDeploymentTimeout");
+        static constexpr uint32_t ResourceNotFound_HASH = ConstExprHashingUtils::HashString("ResourceNotFound");
+        static constexpr uint32_t EnvironmentSetupError_HASH = ConstExprHashingUtils::HashString("EnvironmentSetupError");
+        static constexpr uint32_t EtagMismatch_HASH = ConstExprHashingUtils::HashString("EtagMismatch");
+        static constexpr uint32_t FailureThresholdBreached_HASH = ConstExprHashingUtils::HashString("FailureThresholdBreached");
+        static constexpr uint32_t RobotDeploymentAborted_HASH = ConstExprHashingUtils::HashString("RobotDeploymentAborted");
+        static constexpr uint32_t RobotDeploymentNoResponse_HASH = ConstExprHashingUtils::HashString("RobotDeploymentNoResponse");
+        static constexpr uint32_t RobotAgentConnectionTimeout_HASH = ConstExprHashingUtils::HashString("RobotAgentConnectionTimeout");
+        static constexpr uint32_t GreengrassDeploymentFailed_HASH = ConstExprHashingUtils::HashString("GreengrassDeploymentFailed");
+        static constexpr uint32_t InvalidGreengrassGroup_HASH = ConstExprHashingUtils::HashString("InvalidGreengrassGroup");
+        static constexpr uint32_t MissingRobotArchitecture_HASH = ConstExprHashingUtils::HashString("MissingRobotArchitecture");
+        static constexpr uint32_t MissingRobotApplicationArchitecture_HASH = ConstExprHashingUtils::HashString("MissingRobotApplicationArchitecture");
+        static constexpr uint32_t MissingRobotDeploymentResource_HASH = ConstExprHashingUtils::HashString("MissingRobotDeploymentResource");
+        static constexpr uint32_t GreengrassGroupVersionDoesNotExist_HASH = ConstExprHashingUtils::HashString("GreengrassGroupVersionDoesNotExist");
+        static constexpr uint32_t LambdaDeleted_HASH = ConstExprHashingUtils::HashString("LambdaDeleted");
+        static constexpr uint32_t ExtractingBundleFailure_HASH = ConstExprHashingUtils::HashString("ExtractingBundleFailure");
+        static constexpr uint32_t PreLaunchFileFailure_HASH = ConstExprHashingUtils::HashString("PreLaunchFileFailure");
+        static constexpr uint32_t PostLaunchFileFailure_HASH = ConstExprHashingUtils::HashString("PostLaunchFileFailure");
+        static constexpr uint32_t BadPermissionError_HASH = ConstExprHashingUtils::HashString("BadPermissionError");
+        static constexpr uint32_t DownloadConditionFailed_HASH = ConstExprHashingUtils::HashString("DownloadConditionFailed");
+        static constexpr uint32_t BadLambdaAssociated_HASH = ConstExprHashingUtils::HashString("BadLambdaAssociated");
+        static constexpr uint32_t InternalServerError_HASH = ConstExprHashingUtils::HashString("InternalServerError");
+        static constexpr uint32_t RobotApplicationDoesNotExist_HASH = ConstExprHashingUtils::HashString("RobotApplicationDoesNotExist");
+        static constexpr uint32_t DeploymentFleetDoesNotExist_HASH = ConstExprHashingUtils::HashString("DeploymentFleetDoesNotExist");
+        static constexpr uint32_t FleetDeploymentTimeout_HASH = ConstExprHashingUtils::HashString("FleetDeploymentTimeout");
 
 
         DeploymentJobErrorCode GetDeploymentJobErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ResourceNotFound_HASH)
           {
             return DeploymentJobErrorCode::ResourceNotFound;

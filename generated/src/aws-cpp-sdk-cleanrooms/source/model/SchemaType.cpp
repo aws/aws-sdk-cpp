@@ -20,12 +20,12 @@ namespace Aws
       namespace SchemaTypeMapper
       {
 
-        static const int TABLE_HASH = HashingUtils::HashString("TABLE");
+        static constexpr uint32_t TABLE_HASH = ConstExprHashingUtils::HashString("TABLE");
 
 
         SchemaType GetSchemaTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TABLE_HASH)
           {
             return SchemaType::TABLE;

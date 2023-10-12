@@ -20,35 +20,35 @@ namespace Aws
       namespace ScanStatusReasonMapper
       {
 
-        static const int PENDING_INITIAL_SCAN_HASH = HashingUtils::HashString("PENDING_INITIAL_SCAN");
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int UNMANAGED_EC2_INSTANCE_HASH = HashingUtils::HashString("UNMANAGED_EC2_INSTANCE");
-        static const int UNSUPPORTED_OS_HASH = HashingUtils::HashString("UNSUPPORTED_OS");
-        static const int SCAN_ELIGIBILITY_EXPIRED_HASH = HashingUtils::HashString("SCAN_ELIGIBILITY_EXPIRED");
-        static const int RESOURCE_TERMINATED_HASH = HashingUtils::HashString("RESOURCE_TERMINATED");
-        static const int SUCCESSFUL_HASH = HashingUtils::HashString("SUCCESSFUL");
-        static const int NO_RESOURCES_FOUND_HASH = HashingUtils::HashString("NO_RESOURCES_FOUND");
-        static const int IMAGE_SIZE_EXCEEDED_HASH = HashingUtils::HashString("IMAGE_SIZE_EXCEEDED");
-        static const int SCAN_FREQUENCY_MANUAL_HASH = HashingUtils::HashString("SCAN_FREQUENCY_MANUAL");
-        static const int SCAN_FREQUENCY_SCAN_ON_PUSH_HASH = HashingUtils::HashString("SCAN_FREQUENCY_SCAN_ON_PUSH");
-        static const int EC2_INSTANCE_STOPPED_HASH = HashingUtils::HashString("EC2_INSTANCE_STOPPED");
-        static const int PENDING_DISABLE_HASH = HashingUtils::HashString("PENDING_DISABLE");
-        static const int NO_INVENTORY_HASH = HashingUtils::HashString("NO_INVENTORY");
-        static const int STALE_INVENTORY_HASH = HashingUtils::HashString("STALE_INVENTORY");
-        static const int EXCLUDED_BY_TAG_HASH = HashingUtils::HashString("EXCLUDED_BY_TAG");
-        static const int UNSUPPORTED_RUNTIME_HASH = HashingUtils::HashString("UNSUPPORTED_RUNTIME");
-        static const int UNSUPPORTED_MEDIA_TYPE_HASH = HashingUtils::HashString("UNSUPPORTED_MEDIA_TYPE");
-        static const int UNSUPPORTED_CONFIG_FILE_HASH = HashingUtils::HashString("UNSUPPORTED_CONFIG_FILE");
-        static const int DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED");
-        static const int DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED");
-        static const int DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED");
-        static const int DEEP_INSPECTION_NO_INVENTORY_HASH = HashingUtils::HashString("DEEP_INSPECTION_NO_INVENTORY");
+        static constexpr uint32_t PENDING_INITIAL_SCAN_HASH = ConstExprHashingUtils::HashString("PENDING_INITIAL_SCAN");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t UNMANAGED_EC2_INSTANCE_HASH = ConstExprHashingUtils::HashString("UNMANAGED_EC2_INSTANCE");
+        static constexpr uint32_t UNSUPPORTED_OS_HASH = ConstExprHashingUtils::HashString("UNSUPPORTED_OS");
+        static constexpr uint32_t SCAN_ELIGIBILITY_EXPIRED_HASH = ConstExprHashingUtils::HashString("SCAN_ELIGIBILITY_EXPIRED");
+        static constexpr uint32_t RESOURCE_TERMINATED_HASH = ConstExprHashingUtils::HashString("RESOURCE_TERMINATED");
+        static constexpr uint32_t SUCCESSFUL_HASH = ConstExprHashingUtils::HashString("SUCCESSFUL");
+        static constexpr uint32_t NO_RESOURCES_FOUND_HASH = ConstExprHashingUtils::HashString("NO_RESOURCES_FOUND");
+        static constexpr uint32_t IMAGE_SIZE_EXCEEDED_HASH = ConstExprHashingUtils::HashString("IMAGE_SIZE_EXCEEDED");
+        static constexpr uint32_t SCAN_FREQUENCY_MANUAL_HASH = ConstExprHashingUtils::HashString("SCAN_FREQUENCY_MANUAL");
+        static constexpr uint32_t SCAN_FREQUENCY_SCAN_ON_PUSH_HASH = ConstExprHashingUtils::HashString("SCAN_FREQUENCY_SCAN_ON_PUSH");
+        static constexpr uint32_t EC2_INSTANCE_STOPPED_HASH = ConstExprHashingUtils::HashString("EC2_INSTANCE_STOPPED");
+        static constexpr uint32_t PENDING_DISABLE_HASH = ConstExprHashingUtils::HashString("PENDING_DISABLE");
+        static constexpr uint32_t NO_INVENTORY_HASH = ConstExprHashingUtils::HashString("NO_INVENTORY");
+        static constexpr uint32_t STALE_INVENTORY_HASH = ConstExprHashingUtils::HashString("STALE_INVENTORY");
+        static constexpr uint32_t EXCLUDED_BY_TAG_HASH = ConstExprHashingUtils::HashString("EXCLUDED_BY_TAG");
+        static constexpr uint32_t UNSUPPORTED_RUNTIME_HASH = ConstExprHashingUtils::HashString("UNSUPPORTED_RUNTIME");
+        static constexpr uint32_t UNSUPPORTED_MEDIA_TYPE_HASH = ConstExprHashingUtils::HashString("UNSUPPORTED_MEDIA_TYPE");
+        static constexpr uint32_t UNSUPPORTED_CONFIG_FILE_HASH = ConstExprHashingUtils::HashString("UNSUPPORTED_CONFIG_FILE");
+        static constexpr uint32_t DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED");
+        static constexpr uint32_t DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED");
+        static constexpr uint32_t DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED");
+        static constexpr uint32_t DEEP_INSPECTION_NO_INVENTORY_HASH = ConstExprHashingUtils::HashString("DEEP_INSPECTION_NO_INVENTORY");
 
 
         ScanStatusReason GetScanStatusReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_INITIAL_SCAN_HASH)
           {
             return ScanStatusReason::PENDING_INITIAL_SCAN;

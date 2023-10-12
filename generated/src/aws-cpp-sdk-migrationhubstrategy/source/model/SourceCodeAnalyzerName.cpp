@@ -20,15 +20,15 @@ namespace Aws
       namespace SourceCodeAnalyzerNameMapper
       {
 
-        static const int CSHARP_ANALYZER_HASH = HashingUtils::HashString("CSHARP_ANALYZER");
-        static const int JAVA_ANALYZER_HASH = HashingUtils::HashString("JAVA_ANALYZER");
-        static const int BYTECODE_ANALYZER_HASH = HashingUtils::HashString("BYTECODE_ANALYZER");
-        static const int PORTING_ASSISTANT_HASH = HashingUtils::HashString("PORTING_ASSISTANT");
+        static constexpr uint32_t CSHARP_ANALYZER_HASH = ConstExprHashingUtils::HashString("CSHARP_ANALYZER");
+        static constexpr uint32_t JAVA_ANALYZER_HASH = ConstExprHashingUtils::HashString("JAVA_ANALYZER");
+        static constexpr uint32_t BYTECODE_ANALYZER_HASH = ConstExprHashingUtils::HashString("BYTECODE_ANALYZER");
+        static constexpr uint32_t PORTING_ASSISTANT_HASH = ConstExprHashingUtils::HashString("PORTING_ASSISTANT");
 
 
         SourceCodeAnalyzerName GetSourceCodeAnalyzerNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CSHARP_ANALYZER_HASH)
           {
             return SourceCodeAnalyzerName::CSHARP_ANALYZER;

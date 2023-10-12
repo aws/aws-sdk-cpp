@@ -20,12 +20,12 @@ namespace Aws
       namespace NetworkSiteFilterKeysMapper
       {
 
-        static const int STATUS_HASH = HashingUtils::HashString("STATUS");
+        static constexpr uint32_t STATUS_HASH = ConstExprHashingUtils::HashString("STATUS");
 
 
         NetworkSiteFilterKeys GetNetworkSiteFilterKeysForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STATUS_HASH)
           {
             return NetworkSiteFilterKeys::STATUS;

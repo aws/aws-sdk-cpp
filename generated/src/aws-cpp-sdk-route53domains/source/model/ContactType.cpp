@@ -20,16 +20,16 @@ namespace Aws
       namespace ContactTypeMapper
       {
 
-        static const int PERSON_HASH = HashingUtils::HashString("PERSON");
-        static const int COMPANY_HASH = HashingUtils::HashString("COMPANY");
-        static const int ASSOCIATION_HASH = HashingUtils::HashString("ASSOCIATION");
-        static const int PUBLIC_BODY_HASH = HashingUtils::HashString("PUBLIC_BODY");
-        static const int RESELLER_HASH = HashingUtils::HashString("RESELLER");
+        static constexpr uint32_t PERSON_HASH = ConstExprHashingUtils::HashString("PERSON");
+        static constexpr uint32_t COMPANY_HASH = ConstExprHashingUtils::HashString("COMPANY");
+        static constexpr uint32_t ASSOCIATION_HASH = ConstExprHashingUtils::HashString("ASSOCIATION");
+        static constexpr uint32_t PUBLIC_BODY_HASH = ConstExprHashingUtils::HashString("PUBLIC_BODY");
+        static constexpr uint32_t RESELLER_HASH = ConstExprHashingUtils::HashString("RESELLER");
 
 
         ContactType GetContactTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PERSON_HASH)
           {
             return ContactType::PERSON;

@@ -20,13 +20,13 @@ namespace Aws
       namespace EvaluationFormSingleSelectQuestionDisplayModeMapper
       {
 
-        static const int DROPDOWN_HASH = HashingUtils::HashString("DROPDOWN");
-        static const int RADIO_HASH = HashingUtils::HashString("RADIO");
+        static constexpr uint32_t DROPDOWN_HASH = ConstExprHashingUtils::HashString("DROPDOWN");
+        static constexpr uint32_t RADIO_HASH = ConstExprHashingUtils::HashString("RADIO");
 
 
         EvaluationFormSingleSelectQuestionDisplayMode GetEvaluationFormSingleSelectQuestionDisplayModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DROPDOWN_HASH)
           {
             return EvaluationFormSingleSelectQuestionDisplayMode::DROPDOWN;

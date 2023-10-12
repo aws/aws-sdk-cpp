@@ -20,16 +20,16 @@ namespace Aws
       namespace DsnActionMapper
       {
 
-        static const int failed_HASH = HashingUtils::HashString("failed");
-        static const int delayed_HASH = HashingUtils::HashString("delayed");
-        static const int delivered_HASH = HashingUtils::HashString("delivered");
-        static const int relayed_HASH = HashingUtils::HashString("relayed");
-        static const int expanded_HASH = HashingUtils::HashString("expanded");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
+        static constexpr uint32_t delayed_HASH = ConstExprHashingUtils::HashString("delayed");
+        static constexpr uint32_t delivered_HASH = ConstExprHashingUtils::HashString("delivered");
+        static constexpr uint32_t relayed_HASH = ConstExprHashingUtils::HashString("relayed");
+        static constexpr uint32_t expanded_HASH = ConstExprHashingUtils::HashString("expanded");
 
 
         DsnAction GetDsnActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == failed_HASH)
           {
             return DsnAction::failed;

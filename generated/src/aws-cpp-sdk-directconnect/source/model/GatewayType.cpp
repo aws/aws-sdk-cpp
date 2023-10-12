@@ -20,13 +20,13 @@ namespace Aws
       namespace GatewayTypeMapper
       {
 
-        static const int virtualPrivateGateway_HASH = HashingUtils::HashString("virtualPrivateGateway");
-        static const int transitGateway_HASH = HashingUtils::HashString("transitGateway");
+        static constexpr uint32_t virtualPrivateGateway_HASH = ConstExprHashingUtils::HashString("virtualPrivateGateway");
+        static constexpr uint32_t transitGateway_HASH = ConstExprHashingUtils::HashString("transitGateway");
 
 
         GatewayType GetGatewayTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == virtualPrivateGateway_HASH)
           {
             return GatewayType::virtualPrivateGateway;

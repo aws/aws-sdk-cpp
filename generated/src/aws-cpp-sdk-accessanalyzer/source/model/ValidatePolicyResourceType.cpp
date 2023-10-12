@@ -20,16 +20,16 @@ namespace Aws
       namespace ValidatePolicyResourceTypeMapper
       {
 
-        static const int AWS_S3_Bucket_HASH = HashingUtils::HashString("AWS::S3::Bucket");
-        static const int AWS_S3_AccessPoint_HASH = HashingUtils::HashString("AWS::S3::AccessPoint");
-        static const int AWS_S3_MultiRegionAccessPoint_HASH = HashingUtils::HashString("AWS::S3::MultiRegionAccessPoint");
-        static const int AWS_S3ObjectLambda_AccessPoint_HASH = HashingUtils::HashString("AWS::S3ObjectLambda::AccessPoint");
-        static const int AWS_IAM_AssumeRolePolicyDocument_HASH = HashingUtils::HashString("AWS::IAM::AssumeRolePolicyDocument");
+        static constexpr uint32_t AWS_S3_Bucket_HASH = ConstExprHashingUtils::HashString("AWS::S3::Bucket");
+        static constexpr uint32_t AWS_S3_AccessPoint_HASH = ConstExprHashingUtils::HashString("AWS::S3::AccessPoint");
+        static constexpr uint32_t AWS_S3_MultiRegionAccessPoint_HASH = ConstExprHashingUtils::HashString("AWS::S3::MultiRegionAccessPoint");
+        static constexpr uint32_t AWS_S3ObjectLambda_AccessPoint_HASH = ConstExprHashingUtils::HashString("AWS::S3ObjectLambda::AccessPoint");
+        static constexpr uint32_t AWS_IAM_AssumeRolePolicyDocument_HASH = ConstExprHashingUtils::HashString("AWS::IAM::AssumeRolePolicyDocument");
 
 
         ValidatePolicyResourceType GetValidatePolicyResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_S3_Bucket_HASH)
           {
             return ValidatePolicyResourceType::AWS_S3_Bucket;

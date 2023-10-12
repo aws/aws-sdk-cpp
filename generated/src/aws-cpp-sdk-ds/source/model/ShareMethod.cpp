@@ -20,13 +20,13 @@ namespace Aws
       namespace ShareMethodMapper
       {
 
-        static const int ORGANIZATIONS_HASH = HashingUtils::HashString("ORGANIZATIONS");
-        static const int HANDSHAKE_HASH = HashingUtils::HashString("HANDSHAKE");
+        static constexpr uint32_t ORGANIZATIONS_HASH = ConstExprHashingUtils::HashString("ORGANIZATIONS");
+        static constexpr uint32_t HANDSHAKE_HASH = ConstExprHashingUtils::HashString("HANDSHAKE");
 
 
         ShareMethod GetShareMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ORGANIZATIONS_HASH)
           {
             return ShareMethod::ORGANIZATIONS;

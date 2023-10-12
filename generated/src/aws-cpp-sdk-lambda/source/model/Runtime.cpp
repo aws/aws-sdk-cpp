@@ -20,43 +20,43 @@ namespace Aws
       namespace RuntimeMapper
       {
 
-        static const int nodejs_HASH = HashingUtils::HashString("nodejs");
-        static const int nodejs4_3_HASH = HashingUtils::HashString("nodejs4.3");
-        static const int nodejs6_10_HASH = HashingUtils::HashString("nodejs6.10");
-        static const int nodejs8_10_HASH = HashingUtils::HashString("nodejs8.10");
-        static const int nodejs10_x_HASH = HashingUtils::HashString("nodejs10.x");
-        static const int nodejs12_x_HASH = HashingUtils::HashString("nodejs12.x");
-        static const int nodejs14_x_HASH = HashingUtils::HashString("nodejs14.x");
-        static const int nodejs16_x_HASH = HashingUtils::HashString("nodejs16.x");
-        static const int java8_HASH = HashingUtils::HashString("java8");
-        static const int java8_al2_HASH = HashingUtils::HashString("java8.al2");
-        static const int java11_HASH = HashingUtils::HashString("java11");
-        static const int python2_7_HASH = HashingUtils::HashString("python2.7");
-        static const int python3_6_HASH = HashingUtils::HashString("python3.6");
-        static const int python3_7_HASH = HashingUtils::HashString("python3.7");
-        static const int python3_8_HASH = HashingUtils::HashString("python3.8");
-        static const int python3_9_HASH = HashingUtils::HashString("python3.9");
-        static const int dotnetcore1_0_HASH = HashingUtils::HashString("dotnetcore1.0");
-        static const int dotnetcore2_0_HASH = HashingUtils::HashString("dotnetcore2.0");
-        static const int dotnetcore2_1_HASH = HashingUtils::HashString("dotnetcore2.1");
-        static const int dotnetcore3_1_HASH = HashingUtils::HashString("dotnetcore3.1");
-        static const int dotnet6_HASH = HashingUtils::HashString("dotnet6");
-        static const int nodejs4_3_edge_HASH = HashingUtils::HashString("nodejs4.3-edge");
-        static const int go1_x_HASH = HashingUtils::HashString("go1.x");
-        static const int ruby2_5_HASH = HashingUtils::HashString("ruby2.5");
-        static const int ruby2_7_HASH = HashingUtils::HashString("ruby2.7");
-        static const int provided_HASH = HashingUtils::HashString("provided");
-        static const int provided_al2_HASH = HashingUtils::HashString("provided.al2");
-        static const int nodejs18_x_HASH = HashingUtils::HashString("nodejs18.x");
-        static const int python3_10_HASH = HashingUtils::HashString("python3.10");
-        static const int java17_HASH = HashingUtils::HashString("java17");
-        static const int ruby3_2_HASH = HashingUtils::HashString("ruby3.2");
-        static const int python3_11_HASH = HashingUtils::HashString("python3.11");
+        static constexpr uint32_t nodejs_HASH = ConstExprHashingUtils::HashString("nodejs");
+        static constexpr uint32_t nodejs4_3_HASH = ConstExprHashingUtils::HashString("nodejs4.3");
+        static constexpr uint32_t nodejs6_10_HASH = ConstExprHashingUtils::HashString("nodejs6.10");
+        static constexpr uint32_t nodejs8_10_HASH = ConstExprHashingUtils::HashString("nodejs8.10");
+        static constexpr uint32_t nodejs10_x_HASH = ConstExprHashingUtils::HashString("nodejs10.x");
+        static constexpr uint32_t nodejs12_x_HASH = ConstExprHashingUtils::HashString("nodejs12.x");
+        static constexpr uint32_t nodejs14_x_HASH = ConstExprHashingUtils::HashString("nodejs14.x");
+        static constexpr uint32_t nodejs16_x_HASH = ConstExprHashingUtils::HashString("nodejs16.x");
+        static constexpr uint32_t java8_HASH = ConstExprHashingUtils::HashString("java8");
+        static constexpr uint32_t java8_al2_HASH = ConstExprHashingUtils::HashString("java8.al2");
+        static constexpr uint32_t java11_HASH = ConstExprHashingUtils::HashString("java11");
+        static constexpr uint32_t python2_7_HASH = ConstExprHashingUtils::HashString("python2.7");
+        static constexpr uint32_t python3_6_HASH = ConstExprHashingUtils::HashString("python3.6");
+        static constexpr uint32_t python3_7_HASH = ConstExprHashingUtils::HashString("python3.7");
+        static constexpr uint32_t python3_8_HASH = ConstExprHashingUtils::HashString("python3.8");
+        static constexpr uint32_t python3_9_HASH = ConstExprHashingUtils::HashString("python3.9");
+        static constexpr uint32_t dotnetcore1_0_HASH = ConstExprHashingUtils::HashString("dotnetcore1.0");
+        static constexpr uint32_t dotnetcore2_0_HASH = ConstExprHashingUtils::HashString("dotnetcore2.0");
+        static constexpr uint32_t dotnetcore2_1_HASH = ConstExprHashingUtils::HashString("dotnetcore2.1");
+        static constexpr uint32_t dotnetcore3_1_HASH = ConstExprHashingUtils::HashString("dotnetcore3.1");
+        static constexpr uint32_t dotnet6_HASH = ConstExprHashingUtils::HashString("dotnet6");
+        static constexpr uint32_t nodejs4_3_edge_HASH = ConstExprHashingUtils::HashString("nodejs4.3-edge");
+        static constexpr uint32_t go1_x_HASH = ConstExprHashingUtils::HashString("go1.x");
+        static constexpr uint32_t ruby2_5_HASH = ConstExprHashingUtils::HashString("ruby2.5");
+        static constexpr uint32_t ruby2_7_HASH = ConstExprHashingUtils::HashString("ruby2.7");
+        static constexpr uint32_t provided_HASH = ConstExprHashingUtils::HashString("provided");
+        static constexpr uint32_t provided_al2_HASH = ConstExprHashingUtils::HashString("provided.al2");
+        static constexpr uint32_t nodejs18_x_HASH = ConstExprHashingUtils::HashString("nodejs18.x");
+        static constexpr uint32_t python3_10_HASH = ConstExprHashingUtils::HashString("python3.10");
+        static constexpr uint32_t java17_HASH = ConstExprHashingUtils::HashString("java17");
+        static constexpr uint32_t ruby3_2_HASH = ConstExprHashingUtils::HashString("ruby3.2");
+        static constexpr uint32_t python3_11_HASH = ConstExprHashingUtils::HashString("python3.11");
 
 
         Runtime GetRuntimeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == nodejs_HASH)
           {
             return Runtime::nodejs;

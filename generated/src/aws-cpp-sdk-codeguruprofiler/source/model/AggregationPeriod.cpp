@@ -20,14 +20,14 @@ namespace Aws
       namespace AggregationPeriodMapper
       {
 
-        static const int PT5M_HASH = HashingUtils::HashString("PT5M");
-        static const int PT1H_HASH = HashingUtils::HashString("PT1H");
-        static const int P1D_HASH = HashingUtils::HashString("P1D");
+        static constexpr uint32_t PT5M_HASH = ConstExprHashingUtils::HashString("PT5M");
+        static constexpr uint32_t PT1H_HASH = ConstExprHashingUtils::HashString("PT1H");
+        static constexpr uint32_t P1D_HASH = ConstExprHashingUtils::HashString("P1D");
 
 
         AggregationPeriod GetAggregationPeriodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PT5M_HASH)
           {
             return AggregationPeriod::PT5M;

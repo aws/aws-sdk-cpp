@@ -20,14 +20,14 @@ namespace Aws
       namespace ResultCodeMapper
       {
 
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int INVALID_ROLE_FAILURE_HASH = HashingUtils::HashString("INVALID_ROLE_FAILURE");
-        static const int UNSPECIFIED_FAILURE_HASH = HashingUtils::HashString("UNSPECIFIED_FAILURE");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t INVALID_ROLE_FAILURE_HASH = ConstExprHashingUtils::HashString("INVALID_ROLE_FAILURE");
+        static constexpr uint32_t UNSPECIFIED_FAILURE_HASH = ConstExprHashingUtils::HashString("UNSPECIFIED_FAILURE");
 
 
         ResultCode GetResultCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUCCESS_HASH)
           {
             return ResultCode::SUCCESS;

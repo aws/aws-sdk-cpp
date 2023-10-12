@@ -20,12 +20,12 @@ namespace Aws
       namespace EncodingTypeMapper
       {
 
-        static const int url_HASH = HashingUtils::HashString("url");
+        static constexpr uint32_t url_HASH = ConstExprHashingUtils::HashString("url");
 
 
         EncodingType GetEncodingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == url_HASH)
           {
             return EncodingType::url;

@@ -20,13 +20,13 @@ namespace Aws
       namespace GrowthTypeMapper
       {
 
-        static const int LINEAR_HASH = HashingUtils::HashString("LINEAR");
-        static const int EXPONENTIAL_HASH = HashingUtils::HashString("EXPONENTIAL");
+        static constexpr uint32_t LINEAR_HASH = ConstExprHashingUtils::HashString("LINEAR");
+        static constexpr uint32_t EXPONENTIAL_HASH = ConstExprHashingUtils::HashString("EXPONENTIAL");
 
 
         GrowthType GetGrowthTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LINEAR_HASH)
           {
             return GrowthType::LINEAR;

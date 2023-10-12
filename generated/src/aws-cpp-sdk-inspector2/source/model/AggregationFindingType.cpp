@@ -20,14 +20,14 @@ namespace Aws
       namespace AggregationFindingTypeMapper
       {
 
-        static const int NETWORK_REACHABILITY_HASH = HashingUtils::HashString("NETWORK_REACHABILITY");
-        static const int PACKAGE_VULNERABILITY_HASH = HashingUtils::HashString("PACKAGE_VULNERABILITY");
-        static const int CODE_VULNERABILITY_HASH = HashingUtils::HashString("CODE_VULNERABILITY");
+        static constexpr uint32_t NETWORK_REACHABILITY_HASH = ConstExprHashingUtils::HashString("NETWORK_REACHABILITY");
+        static constexpr uint32_t PACKAGE_VULNERABILITY_HASH = ConstExprHashingUtils::HashString("PACKAGE_VULNERABILITY");
+        static constexpr uint32_t CODE_VULNERABILITY_HASH = ConstExprHashingUtils::HashString("CODE_VULNERABILITY");
 
 
         AggregationFindingType GetAggregationFindingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NETWORK_REACHABILITY_HASH)
           {
             return AggregationFindingType::NETWORK_REACHABILITY;

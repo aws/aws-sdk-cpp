@@ -20,14 +20,14 @@ namespace Aws
       namespace PivotTableConditionalFormattingScopeRoleMapper
       {
 
-        static const int FIELD_HASH = HashingUtils::HashString("FIELD");
-        static const int FIELD_TOTAL_HASH = HashingUtils::HashString("FIELD_TOTAL");
-        static const int GRAND_TOTAL_HASH = HashingUtils::HashString("GRAND_TOTAL");
+        static constexpr uint32_t FIELD_HASH = ConstExprHashingUtils::HashString("FIELD");
+        static constexpr uint32_t FIELD_TOTAL_HASH = ConstExprHashingUtils::HashString("FIELD_TOTAL");
+        static constexpr uint32_t GRAND_TOTAL_HASH = ConstExprHashingUtils::HashString("GRAND_TOTAL");
 
 
         PivotTableConditionalFormattingScopeRole GetPivotTableConditionalFormattingScopeRoleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FIELD_HASH)
           {
             return PivotTableConditionalFormattingScopeRole::FIELD;

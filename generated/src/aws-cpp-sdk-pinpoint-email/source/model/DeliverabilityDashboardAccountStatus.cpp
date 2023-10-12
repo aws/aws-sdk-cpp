@@ -20,14 +20,14 @@ namespace Aws
       namespace DeliverabilityDashboardAccountStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int PENDING_EXPIRATION_HASH = HashingUtils::HashString("PENDING_EXPIRATION");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t PENDING_EXPIRATION_HASH = ConstExprHashingUtils::HashString("PENDING_EXPIRATION");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
 
 
         DeliverabilityDashboardAccountStatus GetDeliverabilityDashboardAccountStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return DeliverabilityDashboardAccountStatus::ACTIVE;

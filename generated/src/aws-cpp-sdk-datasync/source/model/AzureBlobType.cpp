@@ -20,12 +20,12 @@ namespace Aws
       namespace AzureBlobTypeMapper
       {
 
-        static const int BLOCK_HASH = HashingUtils::HashString("BLOCK");
+        static constexpr uint32_t BLOCK_HASH = ConstExprHashingUtils::HashString("BLOCK");
 
 
         AzureBlobType GetAzureBlobTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BLOCK_HASH)
           {
             return AzureBlobType::BLOCK;

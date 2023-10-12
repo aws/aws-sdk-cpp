@@ -20,12 +20,12 @@ namespace Aws
       namespace SceneErrorCodeMapper
       {
 
-        static const int MATTERPORT_ERROR_HASH = HashingUtils::HashString("MATTERPORT_ERROR");
+        static constexpr uint32_t MATTERPORT_ERROR_HASH = ConstExprHashingUtils::HashString("MATTERPORT_ERROR");
 
 
         SceneErrorCode GetSceneErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MATTERPORT_ERROR_HASH)
           {
             return SceneErrorCode::MATTERPORT_ERROR;

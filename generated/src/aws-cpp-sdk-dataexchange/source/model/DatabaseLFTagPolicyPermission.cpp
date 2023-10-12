@@ -20,12 +20,12 @@ namespace Aws
       namespace DatabaseLFTagPolicyPermissionMapper
       {
 
-        static const int DESCRIBE_HASH = HashingUtils::HashString("DESCRIBE");
+        static constexpr uint32_t DESCRIBE_HASH = ConstExprHashingUtils::HashString("DESCRIBE");
 
 
         DatabaseLFTagPolicyPermission GetDatabaseLFTagPolicyPermissionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DESCRIBE_HASH)
           {
             return DatabaseLFTagPolicyPermission::DESCRIBE;

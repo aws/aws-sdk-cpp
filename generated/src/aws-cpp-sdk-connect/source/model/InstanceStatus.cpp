@@ -20,14 +20,14 @@ namespace Aws
       namespace InstanceStatusMapper
       {
 
-        static const int CREATION_IN_PROGRESS_HASH = HashingUtils::HashString("CREATION_IN_PROGRESS");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int CREATION_FAILED_HASH = HashingUtils::HashString("CREATION_FAILED");
+        static constexpr uint32_t CREATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("CREATION_IN_PROGRESS");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t CREATION_FAILED_HASH = ConstExprHashingUtils::HashString("CREATION_FAILED");
 
 
         InstanceStatus GetInstanceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATION_IN_PROGRESS_HASH)
           {
             return InstanceStatus::CREATION_IN_PROGRESS;

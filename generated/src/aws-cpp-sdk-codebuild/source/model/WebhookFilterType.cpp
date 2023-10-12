@@ -20,17 +20,17 @@ namespace Aws
       namespace WebhookFilterTypeMapper
       {
 
-        static const int EVENT_HASH = HashingUtils::HashString("EVENT");
-        static const int BASE_REF_HASH = HashingUtils::HashString("BASE_REF");
-        static const int HEAD_REF_HASH = HashingUtils::HashString("HEAD_REF");
-        static const int ACTOR_ACCOUNT_ID_HASH = HashingUtils::HashString("ACTOR_ACCOUNT_ID");
-        static const int FILE_PATH_HASH = HashingUtils::HashString("FILE_PATH");
-        static const int COMMIT_MESSAGE_HASH = HashingUtils::HashString("COMMIT_MESSAGE");
+        static constexpr uint32_t EVENT_HASH = ConstExprHashingUtils::HashString("EVENT");
+        static constexpr uint32_t BASE_REF_HASH = ConstExprHashingUtils::HashString("BASE_REF");
+        static constexpr uint32_t HEAD_REF_HASH = ConstExprHashingUtils::HashString("HEAD_REF");
+        static constexpr uint32_t ACTOR_ACCOUNT_ID_HASH = ConstExprHashingUtils::HashString("ACTOR_ACCOUNT_ID");
+        static constexpr uint32_t FILE_PATH_HASH = ConstExprHashingUtils::HashString("FILE_PATH");
+        static constexpr uint32_t COMMIT_MESSAGE_HASH = ConstExprHashingUtils::HashString("COMMIT_MESSAGE");
 
 
         WebhookFilterType GetWebhookFilterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EVENT_HASH)
           {
             return WebhookFilterType::EVENT;

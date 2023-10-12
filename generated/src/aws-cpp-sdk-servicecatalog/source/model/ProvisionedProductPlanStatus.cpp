@@ -20,17 +20,17 @@ namespace Aws
       namespace ProvisionedProductPlanStatusMapper
       {
 
-        static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
-        static const int CREATE_SUCCESS_HASH = HashingUtils::HashString("CREATE_SUCCESS");
-        static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
-        static const int EXECUTE_IN_PROGRESS_HASH = HashingUtils::HashString("EXECUTE_IN_PROGRESS");
-        static const int EXECUTE_SUCCESS_HASH = HashingUtils::HashString("EXECUTE_SUCCESS");
-        static const int EXECUTE_FAILED_HASH = HashingUtils::HashString("EXECUTE_FAILED");
+        static constexpr uint32_t CREATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("CREATE_IN_PROGRESS");
+        static constexpr uint32_t CREATE_SUCCESS_HASH = ConstExprHashingUtils::HashString("CREATE_SUCCESS");
+        static constexpr uint32_t CREATE_FAILED_HASH = ConstExprHashingUtils::HashString("CREATE_FAILED");
+        static constexpr uint32_t EXECUTE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("EXECUTE_IN_PROGRESS");
+        static constexpr uint32_t EXECUTE_SUCCESS_HASH = ConstExprHashingUtils::HashString("EXECUTE_SUCCESS");
+        static constexpr uint32_t EXECUTE_FAILED_HASH = ConstExprHashingUtils::HashString("EXECUTE_FAILED");
 
 
         ProvisionedProductPlanStatus GetProvisionedProductPlanStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_IN_PROGRESS_HASH)
           {
             return ProvisionedProductPlanStatus::CREATE_IN_PROGRESS;

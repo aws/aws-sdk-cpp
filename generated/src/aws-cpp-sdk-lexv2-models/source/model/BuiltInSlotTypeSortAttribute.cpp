@@ -20,12 +20,12 @@ namespace Aws
       namespace BuiltInSlotTypeSortAttributeMapper
       {
 
-        static const int SlotTypeSignature_HASH = HashingUtils::HashString("SlotTypeSignature");
+        static constexpr uint32_t SlotTypeSignature_HASH = ConstExprHashingUtils::HashString("SlotTypeSignature");
 
 
         BuiltInSlotTypeSortAttribute GetBuiltInSlotTypeSortAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SlotTypeSignature_HASH)
           {
             return BuiltInSlotTypeSortAttribute::SlotTypeSignature;

@@ -20,13 +20,13 @@ namespace Aws
       namespace AuditPolicyStateMapper
       {
 
-        static const int locked_HASH = HashingUtils::HashString("locked");
-        static const int unlocked_HASH = HashingUtils::HashString("unlocked");
+        static constexpr uint32_t locked_HASH = ConstExprHashingUtils::HashString("locked");
+        static constexpr uint32_t unlocked_HASH = ConstExprHashingUtils::HashString("unlocked");
 
 
         AuditPolicyState GetAuditPolicyStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == locked_HASH)
           {
             return AuditPolicyState::locked;

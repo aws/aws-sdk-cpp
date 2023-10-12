@@ -20,15 +20,15 @@ namespace Aws
       namespace AutomaticFailoverStatusMapper
       {
 
-        static const int enabled_HASH = HashingUtils::HashString("enabled");
-        static const int disabled_HASH = HashingUtils::HashString("disabled");
-        static const int enabling_HASH = HashingUtils::HashString("enabling");
-        static const int disabling_HASH = HashingUtils::HashString("disabling");
+        static constexpr uint32_t enabled_HASH = ConstExprHashingUtils::HashString("enabled");
+        static constexpr uint32_t disabled_HASH = ConstExprHashingUtils::HashString("disabled");
+        static constexpr uint32_t enabling_HASH = ConstExprHashingUtils::HashString("enabling");
+        static constexpr uint32_t disabling_HASH = ConstExprHashingUtils::HashString("disabling");
 
 
         AutomaticFailoverStatus GetAutomaticFailoverStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == enabled_HASH)
           {
             return AutomaticFailoverStatus::enabled;

@@ -20,13 +20,13 @@ namespace Aws
       namespace KeyFormatMapper
       {
 
-        static const int pem_HASH = HashingUtils::HashString("pem");
-        static const int ppk_HASH = HashingUtils::HashString("ppk");
+        static constexpr uint32_t pem_HASH = ConstExprHashingUtils::HashString("pem");
+        static constexpr uint32_t ppk_HASH = ConstExprHashingUtils::HashString("ppk");
 
 
         KeyFormat GetKeyFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pem_HASH)
           {
             return KeyFormat::pem;

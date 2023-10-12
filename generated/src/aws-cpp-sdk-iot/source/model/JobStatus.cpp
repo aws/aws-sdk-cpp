@@ -20,16 +20,16 @@ namespace Aws
       namespace JobStatusMapper
       {
 
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int DELETION_IN_PROGRESS_HASH = HashingUtils::HashString("DELETION_IN_PROGRESS");
-        static const int SCHEDULED_HASH = HashingUtils::HashString("SCHEDULED");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t CANCELED_HASH = ConstExprHashingUtils::HashString("CANCELED");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t DELETION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("DELETION_IN_PROGRESS");
+        static constexpr uint32_t SCHEDULED_HASH = ConstExprHashingUtils::HashString("SCHEDULED");
 
 
         JobStatus GetJobStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IN_PROGRESS_HASH)
           {
             return JobStatus::IN_PROGRESS;

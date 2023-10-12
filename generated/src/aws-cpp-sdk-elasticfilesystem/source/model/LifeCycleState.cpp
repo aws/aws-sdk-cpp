@@ -20,17 +20,17 @@ namespace Aws
       namespace LifeCycleStateMapper
       {
 
-        static const int creating_HASH = HashingUtils::HashString("creating");
-        static const int available_HASH = HashingUtils::HashString("available");
-        static const int updating_HASH = HashingUtils::HashString("updating");
-        static const int deleting_HASH = HashingUtils::HashString("deleting");
-        static const int deleted_HASH = HashingUtils::HashString("deleted");
-        static const int error_HASH = HashingUtils::HashString("error");
+        static constexpr uint32_t creating_HASH = ConstExprHashingUtils::HashString("creating");
+        static constexpr uint32_t available_HASH = ConstExprHashingUtils::HashString("available");
+        static constexpr uint32_t updating_HASH = ConstExprHashingUtils::HashString("updating");
+        static constexpr uint32_t deleting_HASH = ConstExprHashingUtils::HashString("deleting");
+        static constexpr uint32_t deleted_HASH = ConstExprHashingUtils::HashString("deleted");
+        static constexpr uint32_t error_HASH = ConstExprHashingUtils::HashString("error");
 
 
         LifeCycleState GetLifeCycleStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == creating_HASH)
           {
             return LifeCycleState::creating;

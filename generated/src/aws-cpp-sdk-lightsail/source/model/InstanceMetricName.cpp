@@ -20,20 +20,20 @@ namespace Aws
       namespace InstanceMetricNameMapper
       {
 
-        static const int CPUUtilization_HASH = HashingUtils::HashString("CPUUtilization");
-        static const int NetworkIn_HASH = HashingUtils::HashString("NetworkIn");
-        static const int NetworkOut_HASH = HashingUtils::HashString("NetworkOut");
-        static const int StatusCheckFailed_HASH = HashingUtils::HashString("StatusCheckFailed");
-        static const int StatusCheckFailed_Instance_HASH = HashingUtils::HashString("StatusCheckFailed_Instance");
-        static const int StatusCheckFailed_System_HASH = HashingUtils::HashString("StatusCheckFailed_System");
-        static const int BurstCapacityTime_HASH = HashingUtils::HashString("BurstCapacityTime");
-        static const int BurstCapacityPercentage_HASH = HashingUtils::HashString("BurstCapacityPercentage");
-        static const int MetadataNoToken_HASH = HashingUtils::HashString("MetadataNoToken");
+        static constexpr uint32_t CPUUtilization_HASH = ConstExprHashingUtils::HashString("CPUUtilization");
+        static constexpr uint32_t NetworkIn_HASH = ConstExprHashingUtils::HashString("NetworkIn");
+        static constexpr uint32_t NetworkOut_HASH = ConstExprHashingUtils::HashString("NetworkOut");
+        static constexpr uint32_t StatusCheckFailed_HASH = ConstExprHashingUtils::HashString("StatusCheckFailed");
+        static constexpr uint32_t StatusCheckFailed_Instance_HASH = ConstExprHashingUtils::HashString("StatusCheckFailed_Instance");
+        static constexpr uint32_t StatusCheckFailed_System_HASH = ConstExprHashingUtils::HashString("StatusCheckFailed_System");
+        static constexpr uint32_t BurstCapacityTime_HASH = ConstExprHashingUtils::HashString("BurstCapacityTime");
+        static constexpr uint32_t BurstCapacityPercentage_HASH = ConstExprHashingUtils::HashString("BurstCapacityPercentage");
+        static constexpr uint32_t MetadataNoToken_HASH = ConstExprHashingUtils::HashString("MetadataNoToken");
 
 
         InstanceMetricName GetInstanceMetricNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CPUUtilization_HASH)
           {
             return InstanceMetricName::CPUUtilization;

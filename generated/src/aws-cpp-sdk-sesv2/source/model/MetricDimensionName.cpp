@@ -20,14 +20,14 @@ namespace Aws
       namespace MetricDimensionNameMapper
       {
 
-        static const int EMAIL_IDENTITY_HASH = HashingUtils::HashString("EMAIL_IDENTITY");
-        static const int CONFIGURATION_SET_HASH = HashingUtils::HashString("CONFIGURATION_SET");
-        static const int ISP_HASH = HashingUtils::HashString("ISP");
+        static constexpr uint32_t EMAIL_IDENTITY_HASH = ConstExprHashingUtils::HashString("EMAIL_IDENTITY");
+        static constexpr uint32_t CONFIGURATION_SET_HASH = ConstExprHashingUtils::HashString("CONFIGURATION_SET");
+        static constexpr uint32_t ISP_HASH = ConstExprHashingUtils::HashString("ISP");
 
 
         MetricDimensionName GetMetricDimensionNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EMAIL_IDENTITY_HASH)
           {
             return MetricDimensionName::EMAIL_IDENTITY;

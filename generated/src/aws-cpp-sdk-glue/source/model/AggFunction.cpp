@@ -20,26 +20,26 @@ namespace Aws
       namespace AggFunctionMapper
       {
 
-        static const int avg_HASH = HashingUtils::HashString("avg");
-        static const int countDistinct_HASH = HashingUtils::HashString("countDistinct");
-        static const int count_HASH = HashingUtils::HashString("count");
-        static const int first_HASH = HashingUtils::HashString("first");
-        static const int last_HASH = HashingUtils::HashString("last");
-        static const int kurtosis_HASH = HashingUtils::HashString("kurtosis");
-        static const int max_HASH = HashingUtils::HashString("max");
-        static const int min_HASH = HashingUtils::HashString("min");
-        static const int skewness_HASH = HashingUtils::HashString("skewness");
-        static const int stddev_samp_HASH = HashingUtils::HashString("stddev_samp");
-        static const int stddev_pop_HASH = HashingUtils::HashString("stddev_pop");
-        static const int sum_HASH = HashingUtils::HashString("sum");
-        static const int sumDistinct_HASH = HashingUtils::HashString("sumDistinct");
-        static const int var_samp_HASH = HashingUtils::HashString("var_samp");
-        static const int var_pop_HASH = HashingUtils::HashString("var_pop");
+        static constexpr uint32_t avg_HASH = ConstExprHashingUtils::HashString("avg");
+        static constexpr uint32_t countDistinct_HASH = ConstExprHashingUtils::HashString("countDistinct");
+        static constexpr uint32_t count_HASH = ConstExprHashingUtils::HashString("count");
+        static constexpr uint32_t first_HASH = ConstExprHashingUtils::HashString("first");
+        static constexpr uint32_t last_HASH = ConstExprHashingUtils::HashString("last");
+        static constexpr uint32_t kurtosis_HASH = ConstExprHashingUtils::HashString("kurtosis");
+        static constexpr uint32_t max_HASH = ConstExprHashingUtils::HashString("max");
+        static constexpr uint32_t min_HASH = ConstExprHashingUtils::HashString("min");
+        static constexpr uint32_t skewness_HASH = ConstExprHashingUtils::HashString("skewness");
+        static constexpr uint32_t stddev_samp_HASH = ConstExprHashingUtils::HashString("stddev_samp");
+        static constexpr uint32_t stddev_pop_HASH = ConstExprHashingUtils::HashString("stddev_pop");
+        static constexpr uint32_t sum_HASH = ConstExprHashingUtils::HashString("sum");
+        static constexpr uint32_t sumDistinct_HASH = ConstExprHashingUtils::HashString("sumDistinct");
+        static constexpr uint32_t var_samp_HASH = ConstExprHashingUtils::HashString("var_samp");
+        static constexpr uint32_t var_pop_HASH = ConstExprHashingUtils::HashString("var_pop");
 
 
         AggFunction GetAggFunctionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == avg_HASH)
           {
             return AggFunction::avg;

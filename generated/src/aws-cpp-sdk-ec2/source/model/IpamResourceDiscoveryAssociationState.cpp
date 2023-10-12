@@ -20,20 +20,20 @@ namespace Aws
       namespace IpamResourceDiscoveryAssociationStateMapper
       {
 
-        static const int associate_in_progress_HASH = HashingUtils::HashString("associate-in-progress");
-        static const int associate_complete_HASH = HashingUtils::HashString("associate-complete");
-        static const int associate_failed_HASH = HashingUtils::HashString("associate-failed");
-        static const int disassociate_in_progress_HASH = HashingUtils::HashString("disassociate-in-progress");
-        static const int disassociate_complete_HASH = HashingUtils::HashString("disassociate-complete");
-        static const int disassociate_failed_HASH = HashingUtils::HashString("disassociate-failed");
-        static const int isolate_in_progress_HASH = HashingUtils::HashString("isolate-in-progress");
-        static const int isolate_complete_HASH = HashingUtils::HashString("isolate-complete");
-        static const int restore_in_progress_HASH = HashingUtils::HashString("restore-in-progress");
+        static constexpr uint32_t associate_in_progress_HASH = ConstExprHashingUtils::HashString("associate-in-progress");
+        static constexpr uint32_t associate_complete_HASH = ConstExprHashingUtils::HashString("associate-complete");
+        static constexpr uint32_t associate_failed_HASH = ConstExprHashingUtils::HashString("associate-failed");
+        static constexpr uint32_t disassociate_in_progress_HASH = ConstExprHashingUtils::HashString("disassociate-in-progress");
+        static constexpr uint32_t disassociate_complete_HASH = ConstExprHashingUtils::HashString("disassociate-complete");
+        static constexpr uint32_t disassociate_failed_HASH = ConstExprHashingUtils::HashString("disassociate-failed");
+        static constexpr uint32_t isolate_in_progress_HASH = ConstExprHashingUtils::HashString("isolate-in-progress");
+        static constexpr uint32_t isolate_complete_HASH = ConstExprHashingUtils::HashString("isolate-complete");
+        static constexpr uint32_t restore_in_progress_HASH = ConstExprHashingUtils::HashString("restore-in-progress");
 
 
         IpamResourceDiscoveryAssociationState GetIpamResourceDiscoveryAssociationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == associate_in_progress_HASH)
           {
             return IpamResourceDiscoveryAssociationState::associate_in_progress;

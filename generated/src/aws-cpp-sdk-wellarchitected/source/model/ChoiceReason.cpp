@@ -20,16 +20,16 @@ namespace Aws
       namespace ChoiceReasonMapper
       {
 
-        static const int OUT_OF_SCOPE_HASH = HashingUtils::HashString("OUT_OF_SCOPE");
-        static const int BUSINESS_PRIORITIES_HASH = HashingUtils::HashString("BUSINESS_PRIORITIES");
-        static const int ARCHITECTURE_CONSTRAINTS_HASH = HashingUtils::HashString("ARCHITECTURE_CONSTRAINTS");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t OUT_OF_SCOPE_HASH = ConstExprHashingUtils::HashString("OUT_OF_SCOPE");
+        static constexpr uint32_t BUSINESS_PRIORITIES_HASH = ConstExprHashingUtils::HashString("BUSINESS_PRIORITIES");
+        static constexpr uint32_t ARCHITECTURE_CONSTRAINTS_HASH = ConstExprHashingUtils::HashString("ARCHITECTURE_CONSTRAINTS");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         ChoiceReason GetChoiceReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OUT_OF_SCOPE_HASH)
           {
             return ChoiceReason::OUT_OF_SCOPE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace WordCloudCloudLayoutMapper
       {
 
-        static const int FLUID_HASH = HashingUtils::HashString("FLUID");
-        static const int NORMAL_HASH = HashingUtils::HashString("NORMAL");
+        static constexpr uint32_t FLUID_HASH = ConstExprHashingUtils::HashString("FLUID");
+        static constexpr uint32_t NORMAL_HASH = ConstExprHashingUtils::HashString("NORMAL");
 
 
         WordCloudCloudLayout GetWordCloudCloudLayoutForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FLUID_HASH)
           {
             return WordCloudCloudLayout::FLUID;

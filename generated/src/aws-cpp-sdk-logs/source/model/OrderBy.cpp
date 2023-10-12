@@ -20,13 +20,13 @@ namespace Aws
       namespace OrderByMapper
       {
 
-        static const int LogStreamName_HASH = HashingUtils::HashString("LogStreamName");
-        static const int LastEventTime_HASH = HashingUtils::HashString("LastEventTime");
+        static constexpr uint32_t LogStreamName_HASH = ConstExprHashingUtils::HashString("LogStreamName");
+        static constexpr uint32_t LastEventTime_HASH = ConstExprHashingUtils::HashString("LastEventTime");
 
 
         OrderBy GetOrderByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LogStreamName_HASH)
           {
             return OrderBy::LogStreamName;

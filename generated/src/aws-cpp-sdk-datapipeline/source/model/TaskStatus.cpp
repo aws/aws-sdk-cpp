@@ -20,14 +20,14 @@ namespace Aws
       namespace TaskStatusMapper
       {
 
-        static const int FINISHED_HASH = HashingUtils::HashString("FINISHED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int FALSE_HASH = HashingUtils::HashString("FALSE");
+        static constexpr uint32_t FINISHED_HASH = ConstExprHashingUtils::HashString("FINISHED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t FALSE_HASH = ConstExprHashingUtils::HashString("FALSE");
 
 
         TaskStatus GetTaskStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FINISHED_HASH)
           {
             return TaskStatus::FINISHED;

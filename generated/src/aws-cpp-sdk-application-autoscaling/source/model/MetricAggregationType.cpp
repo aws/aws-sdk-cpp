@@ -20,14 +20,14 @@ namespace Aws
       namespace MetricAggregationTypeMapper
       {
 
-        static const int Average_HASH = HashingUtils::HashString("Average");
-        static const int Minimum_HASH = HashingUtils::HashString("Minimum");
-        static const int Maximum_HASH = HashingUtils::HashString("Maximum");
+        static constexpr uint32_t Average_HASH = ConstExprHashingUtils::HashString("Average");
+        static constexpr uint32_t Minimum_HASH = ConstExprHashingUtils::HashString("Minimum");
+        static constexpr uint32_t Maximum_HASH = ConstExprHashingUtils::HashString("Maximum");
 
 
         MetricAggregationType GetMetricAggregationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Average_HASH)
           {
             return MetricAggregationType::Average;

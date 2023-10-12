@@ -20,13 +20,13 @@ namespace Aws
       namespace DatasetParameterValueTypeMapper
       {
 
-        static const int MULTI_VALUED_HASH = HashingUtils::HashString("MULTI_VALUED");
-        static const int SINGLE_VALUED_HASH = HashingUtils::HashString("SINGLE_VALUED");
+        static constexpr uint32_t MULTI_VALUED_HASH = ConstExprHashingUtils::HashString("MULTI_VALUED");
+        static constexpr uint32_t SINGLE_VALUED_HASH = ConstExprHashingUtils::HashString("SINGLE_VALUED");
 
 
         DatasetParameterValueType GetDatasetParameterValueTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MULTI_VALUED_HASH)
           {
             return DatasetParameterValueType::MULTI_VALUED;

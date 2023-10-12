@@ -20,17 +20,17 @@ namespace Aws
       namespace AutocommitPeriodTypeMapper
       {
 
-        static const int MINUTES_HASH = HashingUtils::HashString("MINUTES");
-        static const int HOURS_HASH = HashingUtils::HashString("HOURS");
-        static const int DAYS_HASH = HashingUtils::HashString("DAYS");
-        static const int MONTHS_HASH = HashingUtils::HashString("MONTHS");
-        static const int YEARS_HASH = HashingUtils::HashString("YEARS");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t MINUTES_HASH = ConstExprHashingUtils::HashString("MINUTES");
+        static constexpr uint32_t HOURS_HASH = ConstExprHashingUtils::HashString("HOURS");
+        static constexpr uint32_t DAYS_HASH = ConstExprHashingUtils::HashString("DAYS");
+        static constexpr uint32_t MONTHS_HASH = ConstExprHashingUtils::HashString("MONTHS");
+        static constexpr uint32_t YEARS_HASH = ConstExprHashingUtils::HashString("YEARS");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         AutocommitPeriodType GetAutocommitPeriodTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MINUTES_HASH)
           {
             return AutocommitPeriodType::MINUTES;

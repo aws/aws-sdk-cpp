@@ -20,56 +20,56 @@ namespace Aws
       namespace EntitySubTypeMapper
       {
 
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int DX_NAME_HASH = HashingUtils::HashString("DX_NAME");
-        static const int DOSAGE_HASH = HashingUtils::HashString("DOSAGE");
-        static const int ROUTE_OR_MODE_HASH = HashingUtils::HashString("ROUTE_OR_MODE");
-        static const int FORM_HASH = HashingUtils::HashString("FORM");
-        static const int FREQUENCY_HASH = HashingUtils::HashString("FREQUENCY");
-        static const int DURATION_HASH = HashingUtils::HashString("DURATION");
-        static const int GENERIC_NAME_HASH = HashingUtils::HashString("GENERIC_NAME");
-        static const int BRAND_NAME_HASH = HashingUtils::HashString("BRAND_NAME");
-        static const int STRENGTH_HASH = HashingUtils::HashString("STRENGTH");
-        static const int RATE_HASH = HashingUtils::HashString("RATE");
-        static const int ACUITY_HASH = HashingUtils::HashString("ACUITY");
-        static const int TEST_NAME_HASH = HashingUtils::HashString("TEST_NAME");
-        static const int TEST_VALUE_HASH = HashingUtils::HashString("TEST_VALUE");
-        static const int TEST_UNITS_HASH = HashingUtils::HashString("TEST_UNITS");
-        static const int TEST_UNIT_HASH = HashingUtils::HashString("TEST_UNIT");
-        static const int PROCEDURE_NAME_HASH = HashingUtils::HashString("PROCEDURE_NAME");
-        static const int TREATMENT_NAME_HASH = HashingUtils::HashString("TREATMENT_NAME");
-        static const int DATE_HASH = HashingUtils::HashString("DATE");
-        static const int AGE_HASH = HashingUtils::HashString("AGE");
-        static const int CONTACT_POINT_HASH = HashingUtils::HashString("CONTACT_POINT");
-        static const int PHONE_OR_FAX_HASH = HashingUtils::HashString("PHONE_OR_FAX");
-        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
-        static const int IDENTIFIER_HASH = HashingUtils::HashString("IDENTIFIER");
-        static const int ID_HASH = HashingUtils::HashString("ID");
-        static const int URL_HASH = HashingUtils::HashString("URL");
-        static const int ADDRESS_HASH = HashingUtils::HashString("ADDRESS");
-        static const int PROFESSION_HASH = HashingUtils::HashString("PROFESSION");
-        static const int SYSTEM_ORGAN_SITE_HASH = HashingUtils::HashString("SYSTEM_ORGAN_SITE");
-        static const int DIRECTION_HASH = HashingUtils::HashString("DIRECTION");
-        static const int QUALITY_HASH = HashingUtils::HashString("QUALITY");
-        static const int QUANTITY_HASH = HashingUtils::HashString("QUANTITY");
-        static const int TIME_EXPRESSION_HASH = HashingUtils::HashString("TIME_EXPRESSION");
-        static const int TIME_TO_MEDICATION_NAME_HASH = HashingUtils::HashString("TIME_TO_MEDICATION_NAME");
-        static const int TIME_TO_DX_NAME_HASH = HashingUtils::HashString("TIME_TO_DX_NAME");
-        static const int TIME_TO_TEST_NAME_HASH = HashingUtils::HashString("TIME_TO_TEST_NAME");
-        static const int TIME_TO_PROCEDURE_NAME_HASH = HashingUtils::HashString("TIME_TO_PROCEDURE_NAME");
-        static const int TIME_TO_TREATMENT_NAME_HASH = HashingUtils::HashString("TIME_TO_TREATMENT_NAME");
-        static const int AMOUNT_HASH = HashingUtils::HashString("AMOUNT");
-        static const int GENDER_HASH = HashingUtils::HashString("GENDER");
-        static const int RACE_ETHNICITY_HASH = HashingUtils::HashString("RACE_ETHNICITY");
-        static const int ALLERGIES_HASH = HashingUtils::HashString("ALLERGIES");
-        static const int TOBACCO_USE_HASH = HashingUtils::HashString("TOBACCO_USE");
-        static const int ALCOHOL_CONSUMPTION_HASH = HashingUtils::HashString("ALCOHOL_CONSUMPTION");
-        static const int REC_DRUG_USE_HASH = HashingUtils::HashString("REC_DRUG_USE");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t DX_NAME_HASH = ConstExprHashingUtils::HashString("DX_NAME");
+        static constexpr uint32_t DOSAGE_HASH = ConstExprHashingUtils::HashString("DOSAGE");
+        static constexpr uint32_t ROUTE_OR_MODE_HASH = ConstExprHashingUtils::HashString("ROUTE_OR_MODE");
+        static constexpr uint32_t FORM_HASH = ConstExprHashingUtils::HashString("FORM");
+        static constexpr uint32_t FREQUENCY_HASH = ConstExprHashingUtils::HashString("FREQUENCY");
+        static constexpr uint32_t DURATION_HASH = ConstExprHashingUtils::HashString("DURATION");
+        static constexpr uint32_t GENERIC_NAME_HASH = ConstExprHashingUtils::HashString("GENERIC_NAME");
+        static constexpr uint32_t BRAND_NAME_HASH = ConstExprHashingUtils::HashString("BRAND_NAME");
+        static constexpr uint32_t STRENGTH_HASH = ConstExprHashingUtils::HashString("STRENGTH");
+        static constexpr uint32_t RATE_HASH = ConstExprHashingUtils::HashString("RATE");
+        static constexpr uint32_t ACUITY_HASH = ConstExprHashingUtils::HashString("ACUITY");
+        static constexpr uint32_t TEST_NAME_HASH = ConstExprHashingUtils::HashString("TEST_NAME");
+        static constexpr uint32_t TEST_VALUE_HASH = ConstExprHashingUtils::HashString("TEST_VALUE");
+        static constexpr uint32_t TEST_UNITS_HASH = ConstExprHashingUtils::HashString("TEST_UNITS");
+        static constexpr uint32_t TEST_UNIT_HASH = ConstExprHashingUtils::HashString("TEST_UNIT");
+        static constexpr uint32_t PROCEDURE_NAME_HASH = ConstExprHashingUtils::HashString("PROCEDURE_NAME");
+        static constexpr uint32_t TREATMENT_NAME_HASH = ConstExprHashingUtils::HashString("TREATMENT_NAME");
+        static constexpr uint32_t DATE_HASH = ConstExprHashingUtils::HashString("DATE");
+        static constexpr uint32_t AGE_HASH = ConstExprHashingUtils::HashString("AGE");
+        static constexpr uint32_t CONTACT_POINT_HASH = ConstExprHashingUtils::HashString("CONTACT_POINT");
+        static constexpr uint32_t PHONE_OR_FAX_HASH = ConstExprHashingUtils::HashString("PHONE_OR_FAX");
+        static constexpr uint32_t EMAIL_HASH = ConstExprHashingUtils::HashString("EMAIL");
+        static constexpr uint32_t IDENTIFIER_HASH = ConstExprHashingUtils::HashString("IDENTIFIER");
+        static constexpr uint32_t ID_HASH = ConstExprHashingUtils::HashString("ID");
+        static constexpr uint32_t URL_HASH = ConstExprHashingUtils::HashString("URL");
+        static constexpr uint32_t ADDRESS_HASH = ConstExprHashingUtils::HashString("ADDRESS");
+        static constexpr uint32_t PROFESSION_HASH = ConstExprHashingUtils::HashString("PROFESSION");
+        static constexpr uint32_t SYSTEM_ORGAN_SITE_HASH = ConstExprHashingUtils::HashString("SYSTEM_ORGAN_SITE");
+        static constexpr uint32_t DIRECTION_HASH = ConstExprHashingUtils::HashString("DIRECTION");
+        static constexpr uint32_t QUALITY_HASH = ConstExprHashingUtils::HashString("QUALITY");
+        static constexpr uint32_t QUANTITY_HASH = ConstExprHashingUtils::HashString("QUANTITY");
+        static constexpr uint32_t TIME_EXPRESSION_HASH = ConstExprHashingUtils::HashString("TIME_EXPRESSION");
+        static constexpr uint32_t TIME_TO_MEDICATION_NAME_HASH = ConstExprHashingUtils::HashString("TIME_TO_MEDICATION_NAME");
+        static constexpr uint32_t TIME_TO_DX_NAME_HASH = ConstExprHashingUtils::HashString("TIME_TO_DX_NAME");
+        static constexpr uint32_t TIME_TO_TEST_NAME_HASH = ConstExprHashingUtils::HashString("TIME_TO_TEST_NAME");
+        static constexpr uint32_t TIME_TO_PROCEDURE_NAME_HASH = ConstExprHashingUtils::HashString("TIME_TO_PROCEDURE_NAME");
+        static constexpr uint32_t TIME_TO_TREATMENT_NAME_HASH = ConstExprHashingUtils::HashString("TIME_TO_TREATMENT_NAME");
+        static constexpr uint32_t AMOUNT_HASH = ConstExprHashingUtils::HashString("AMOUNT");
+        static constexpr uint32_t GENDER_HASH = ConstExprHashingUtils::HashString("GENDER");
+        static constexpr uint32_t RACE_ETHNICITY_HASH = ConstExprHashingUtils::HashString("RACE_ETHNICITY");
+        static constexpr uint32_t ALLERGIES_HASH = ConstExprHashingUtils::HashString("ALLERGIES");
+        static constexpr uint32_t TOBACCO_USE_HASH = ConstExprHashingUtils::HashString("TOBACCO_USE");
+        static constexpr uint32_t ALCOHOL_CONSUMPTION_HASH = ConstExprHashingUtils::HashString("ALCOHOL_CONSUMPTION");
+        static constexpr uint32_t REC_DRUG_USE_HASH = ConstExprHashingUtils::HashString("REC_DRUG_USE");
 
 
         EntitySubType GetEntitySubTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NAME_HASH)
           {
             return EntitySubType::NAME;

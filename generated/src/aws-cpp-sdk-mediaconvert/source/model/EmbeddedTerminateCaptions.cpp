@@ -20,13 +20,13 @@ namespace Aws
       namespace EmbeddedTerminateCaptionsMapper
       {
 
-        static const int END_OF_INPUT_HASH = HashingUtils::HashString("END_OF_INPUT");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static constexpr uint32_t END_OF_INPUT_HASH = ConstExprHashingUtils::HashString("END_OF_INPUT");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
 
 
         EmbeddedTerminateCaptions GetEmbeddedTerminateCaptionsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == END_OF_INPUT_HASH)
           {
             return EmbeddedTerminateCaptions::END_OF_INPUT;

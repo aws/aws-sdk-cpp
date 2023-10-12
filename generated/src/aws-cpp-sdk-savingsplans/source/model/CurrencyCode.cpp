@@ -20,13 +20,13 @@ namespace Aws
       namespace CurrencyCodeMapper
       {
 
-        static const int CNY_HASH = HashingUtils::HashString("CNY");
-        static const int USD_HASH = HashingUtils::HashString("USD");
+        static constexpr uint32_t CNY_HASH = ConstExprHashingUtils::HashString("CNY");
+        static constexpr uint32_t USD_HASH = ConstExprHashingUtils::HashString("USD");
 
 
         CurrencyCode GetCurrencyCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CNY_HASH)
           {
             return CurrencyCode::CNY;

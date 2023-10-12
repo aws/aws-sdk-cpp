@@ -20,14 +20,14 @@ namespace Aws
       namespace CapabilityMapper
       {
 
-        static const int CAPABILITY_IAM_HASH = HashingUtils::HashString("CAPABILITY_IAM");
-        static const int CAPABILITY_NAMED_IAM_HASH = HashingUtils::HashString("CAPABILITY_NAMED_IAM");
-        static const int CAPABILITY_AUTO_EXPAND_HASH = HashingUtils::HashString("CAPABILITY_AUTO_EXPAND");
+        static constexpr uint32_t CAPABILITY_IAM_HASH = ConstExprHashingUtils::HashString("CAPABILITY_IAM");
+        static constexpr uint32_t CAPABILITY_NAMED_IAM_HASH = ConstExprHashingUtils::HashString("CAPABILITY_NAMED_IAM");
+        static constexpr uint32_t CAPABILITY_AUTO_EXPAND_HASH = ConstExprHashingUtils::HashString("CAPABILITY_AUTO_EXPAND");
 
 
         Capability GetCapabilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CAPABILITY_IAM_HASH)
           {
             return Capability::CAPABILITY_IAM;

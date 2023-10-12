@@ -20,17 +20,17 @@ namespace Aws
       namespace AttachmentStatusMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int SCALING_HASH = HashingUtils::HashString("SCALING");
-        static const int READY_HASH = HashingUtils::HashString("READY");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t SCALING_HASH = ConstExprHashingUtils::HashString("SCALING");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
 
 
         AttachmentStatus GetAttachmentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return AttachmentStatus::CREATING;

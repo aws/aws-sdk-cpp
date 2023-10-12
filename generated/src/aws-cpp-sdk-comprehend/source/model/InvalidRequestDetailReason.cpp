@@ -20,15 +20,15 @@ namespace Aws
       namespace InvalidRequestDetailReasonMapper
       {
 
-        static const int DOCUMENT_SIZE_EXCEEDED_HASH = HashingUtils::HashString("DOCUMENT_SIZE_EXCEEDED");
-        static const int UNSUPPORTED_DOC_TYPE_HASH = HashingUtils::HashString("UNSUPPORTED_DOC_TYPE");
-        static const int PAGE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("PAGE_LIMIT_EXCEEDED");
-        static const int TEXTRACT_ACCESS_DENIED_HASH = HashingUtils::HashString("TEXTRACT_ACCESS_DENIED");
+        static constexpr uint32_t DOCUMENT_SIZE_EXCEEDED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_SIZE_EXCEEDED");
+        static constexpr uint32_t UNSUPPORTED_DOC_TYPE_HASH = ConstExprHashingUtils::HashString("UNSUPPORTED_DOC_TYPE");
+        static constexpr uint32_t PAGE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("PAGE_LIMIT_EXCEEDED");
+        static constexpr uint32_t TEXTRACT_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("TEXTRACT_ACCESS_DENIED");
 
 
         InvalidRequestDetailReason GetInvalidRequestDetailReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DOCUMENT_SIZE_EXCEEDED_HASH)
           {
             return InvalidRequestDetailReason::DOCUMENT_SIZE_EXCEEDED;

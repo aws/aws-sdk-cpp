@@ -20,15 +20,15 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int AWS_CloudWatch_Metric_HASH = HashingUtils::HashString("AWS::CloudWatch::Metric");
-        static const int AWS_Logs_LogGroup_HASH = HashingUtils::HashString("AWS::Logs::LogGroup");
-        static const int AWS_XRay_Trace_HASH = HashingUtils::HashString("AWS::XRay::Trace");
-        static const int AWS_ApplicationInsights_Application_HASH = HashingUtils::HashString("AWS::ApplicationInsights::Application");
+        static constexpr uint32_t AWS_CloudWatch_Metric_HASH = ConstExprHashingUtils::HashString("AWS::CloudWatch::Metric");
+        static constexpr uint32_t AWS_Logs_LogGroup_HASH = ConstExprHashingUtils::HashString("AWS::Logs::LogGroup");
+        static constexpr uint32_t AWS_XRay_Trace_HASH = ConstExprHashingUtils::HashString("AWS::XRay::Trace");
+        static constexpr uint32_t AWS_ApplicationInsights_Application_HASH = ConstExprHashingUtils::HashString("AWS::ApplicationInsights::Application");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_CloudWatch_Metric_HASH)
           {
             return ResourceType::AWS_CloudWatch_Metric;

@@ -20,13 +20,13 @@ namespace Aws
       namespace EBSFindingMapper
       {
 
-        static const int Optimized_HASH = HashingUtils::HashString("Optimized");
-        static const int NotOptimized_HASH = HashingUtils::HashString("NotOptimized");
+        static constexpr uint32_t Optimized_HASH = ConstExprHashingUtils::HashString("Optimized");
+        static constexpr uint32_t NotOptimized_HASH = ConstExprHashingUtils::HashString("NotOptimized");
 
 
         EBSFinding GetEBSFindingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Optimized_HASH)
           {
             return EBSFinding::Optimized;

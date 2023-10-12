@@ -20,12 +20,12 @@ namespace Aws
       namespace TrafficMirrorNetworkServiceMapper
       {
 
-        static const int amazon_dns_HASH = HashingUtils::HashString("amazon-dns");
+        static constexpr uint32_t amazon_dns_HASH = ConstExprHashingUtils::HashString("amazon-dns");
 
 
         TrafficMirrorNetworkService GetTrafficMirrorNetworkServiceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == amazon_dns_HASH)
           {
             return TrafficMirrorNetworkService::amazon_dns;

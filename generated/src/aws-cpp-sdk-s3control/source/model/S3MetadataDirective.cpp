@@ -20,13 +20,13 @@ namespace Aws
       namespace S3MetadataDirectiveMapper
       {
 
-        static const int COPY_HASH = HashingUtils::HashString("COPY");
-        static const int REPLACE_HASH = HashingUtils::HashString("REPLACE");
+        static constexpr uint32_t COPY_HASH = ConstExprHashingUtils::HashString("COPY");
+        static constexpr uint32_t REPLACE_HASH = ConstExprHashingUtils::HashString("REPLACE");
 
 
         S3MetadataDirective GetS3MetadataDirectiveForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COPY_HASH)
           {
             return S3MetadataDirective::COPY;

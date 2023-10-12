@@ -20,13 +20,13 @@ namespace Aws
       namespace ConversationLogsInputModeFilterMapper
       {
 
-        static const int Speech_HASH = HashingUtils::HashString("Speech");
-        static const int Text_HASH = HashingUtils::HashString("Text");
+        static constexpr uint32_t Speech_HASH = ConstExprHashingUtils::HashString("Speech");
+        static constexpr uint32_t Text_HASH = ConstExprHashingUtils::HashString("Text");
 
 
         ConversationLogsInputModeFilter GetConversationLogsInputModeFilterForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Speech_HASH)
           {
             return ConversationLogsInputModeFilter::Speech;

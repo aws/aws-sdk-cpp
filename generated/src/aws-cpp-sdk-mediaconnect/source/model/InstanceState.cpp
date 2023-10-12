@@ -20,17 +20,17 @@ namespace Aws
       namespace InstanceStateMapper
       {
 
-        static const int REGISTERING_HASH = HashingUtils::HashString("REGISTERING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DEREGISTERING_HASH = HashingUtils::HashString("DEREGISTERING");
-        static const int DEREGISTERED_HASH = HashingUtils::HashString("DEREGISTERED");
-        static const int REGISTRATION_ERROR_HASH = HashingUtils::HashString("REGISTRATION_ERROR");
-        static const int DEREGISTRATION_ERROR_HASH = HashingUtils::HashString("DEREGISTRATION_ERROR");
+        static constexpr uint32_t REGISTERING_HASH = ConstExprHashingUtils::HashString("REGISTERING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t DEREGISTERING_HASH = ConstExprHashingUtils::HashString("DEREGISTERING");
+        static constexpr uint32_t DEREGISTERED_HASH = ConstExprHashingUtils::HashString("DEREGISTERED");
+        static constexpr uint32_t REGISTRATION_ERROR_HASH = ConstExprHashingUtils::HashString("REGISTRATION_ERROR");
+        static constexpr uint32_t DEREGISTRATION_ERROR_HASH = ConstExprHashingUtils::HashString("DEREGISTRATION_ERROR");
 
 
         InstanceState GetInstanceStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REGISTERING_HASH)
           {
             return InstanceState::REGISTERING;

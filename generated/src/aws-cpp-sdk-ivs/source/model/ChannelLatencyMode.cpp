@@ -20,13 +20,13 @@ namespace Aws
       namespace ChannelLatencyModeMapper
       {
 
-        static const int NORMAL_HASH = HashingUtils::HashString("NORMAL");
-        static const int LOW_HASH = HashingUtils::HashString("LOW");
+        static constexpr uint32_t NORMAL_HASH = ConstExprHashingUtils::HashString("NORMAL");
+        static constexpr uint32_t LOW_HASH = ConstExprHashingUtils::HashString("LOW");
 
 
         ChannelLatencyMode GetChannelLatencyModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NORMAL_HASH)
           {
             return ChannelLatencyMode::NORMAL;

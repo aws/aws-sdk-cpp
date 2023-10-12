@@ -20,15 +20,15 @@ namespace Aws
       namespace EventTypeMapper
       {
 
-        static const int viewer_request_HASH = HashingUtils::HashString("viewer-request");
-        static const int viewer_response_HASH = HashingUtils::HashString("viewer-response");
-        static const int origin_request_HASH = HashingUtils::HashString("origin-request");
-        static const int origin_response_HASH = HashingUtils::HashString("origin-response");
+        static constexpr uint32_t viewer_request_HASH = ConstExprHashingUtils::HashString("viewer-request");
+        static constexpr uint32_t viewer_response_HASH = ConstExprHashingUtils::HashString("viewer-response");
+        static constexpr uint32_t origin_request_HASH = ConstExprHashingUtils::HashString("origin-request");
+        static constexpr uint32_t origin_response_HASH = ConstExprHashingUtils::HashString("origin-response");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == viewer_request_HASH)
           {
             return EventType::viewer_request;

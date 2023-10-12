@@ -20,14 +20,14 @@ namespace Aws
       namespace NamespaceTypeMapper
       {
 
-        static const int DNS_PUBLIC_HASH = HashingUtils::HashString("DNS_PUBLIC");
-        static const int DNS_PRIVATE_HASH = HashingUtils::HashString("DNS_PRIVATE");
-        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
+        static constexpr uint32_t DNS_PUBLIC_HASH = ConstExprHashingUtils::HashString("DNS_PUBLIC");
+        static constexpr uint32_t DNS_PRIVATE_HASH = ConstExprHashingUtils::HashString("DNS_PRIVATE");
+        static constexpr uint32_t HTTP_HASH = ConstExprHashingUtils::HashString("HTTP");
 
 
         NamespaceType GetNamespaceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DNS_PUBLIC_HASH)
           {
             return NamespaceType::DNS_PUBLIC;

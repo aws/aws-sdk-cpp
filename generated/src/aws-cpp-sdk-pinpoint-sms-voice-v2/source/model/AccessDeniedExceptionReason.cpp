@@ -20,13 +20,13 @@ namespace Aws
       namespace AccessDeniedExceptionReasonMapper
       {
 
-        static const int INSUFFICIENT_ACCOUNT_REPUTATION_HASH = HashingUtils::HashString("INSUFFICIENT_ACCOUNT_REPUTATION");
-        static const int ACCOUNT_DISABLED_HASH = HashingUtils::HashString("ACCOUNT_DISABLED");
+        static constexpr uint32_t INSUFFICIENT_ACCOUNT_REPUTATION_HASH = ConstExprHashingUtils::HashString("INSUFFICIENT_ACCOUNT_REPUTATION");
+        static constexpr uint32_t ACCOUNT_DISABLED_HASH = ConstExprHashingUtils::HashString("ACCOUNT_DISABLED");
 
 
         AccessDeniedExceptionReason GetAccessDeniedExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSUFFICIENT_ACCOUNT_REPUTATION_HASH)
           {
             return AccessDeniedExceptionReason::INSUFFICIENT_ACCOUNT_REPUTATION;

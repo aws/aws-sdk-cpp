@@ -20,16 +20,16 @@ namespace Aws
       namespace ConnectionStateTypeMapper
       {
 
-        static const int CONNECTED_HASH = HashingUtils::HashString("CONNECTED");
-        static const int CONNECTING_HASH = HashingUtils::HashString("CONNECTING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int DISCONNECTED_HASH = HashingUtils::HashString("DISCONNECTED");
-        static const int DISCONNECTING_HASH = HashingUtils::HashString("DISCONNECTING");
+        static constexpr uint32_t CONNECTED_HASH = ConstExprHashingUtils::HashString("CONNECTED");
+        static constexpr uint32_t CONNECTING_HASH = ConstExprHashingUtils::HashString("CONNECTING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t DISCONNECTED_HASH = ConstExprHashingUtils::HashString("DISCONNECTED");
+        static constexpr uint32_t DISCONNECTING_HASH = ConstExprHashingUtils::HashString("DISCONNECTING");
 
 
         ConnectionStateType GetConnectionStateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONNECTED_HASH)
           {
             return ConnectionStateType::CONNECTED;

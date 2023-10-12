@@ -20,21 +20,21 @@ namespace Aws
       namespace RuntimeMapper
       {
 
-        static const int PYTHON_3_HASH = HashingUtils::HashString("PYTHON_3");
-        static const int NODEJS_12_HASH = HashingUtils::HashString("NODEJS_12");
-        static const int NODEJS_14_HASH = HashingUtils::HashString("NODEJS_14");
-        static const int CORRETTO_8_HASH = HashingUtils::HashString("CORRETTO_8");
-        static const int CORRETTO_11_HASH = HashingUtils::HashString("CORRETTO_11");
-        static const int NODEJS_16_HASH = HashingUtils::HashString("NODEJS_16");
-        static const int GO_1_HASH = HashingUtils::HashString("GO_1");
-        static const int DOTNET_6_HASH = HashingUtils::HashString("DOTNET_6");
-        static const int PHP_81_HASH = HashingUtils::HashString("PHP_81");
-        static const int RUBY_31_HASH = HashingUtils::HashString("RUBY_31");
+        static constexpr uint32_t PYTHON_3_HASH = ConstExprHashingUtils::HashString("PYTHON_3");
+        static constexpr uint32_t NODEJS_12_HASH = ConstExprHashingUtils::HashString("NODEJS_12");
+        static constexpr uint32_t NODEJS_14_HASH = ConstExprHashingUtils::HashString("NODEJS_14");
+        static constexpr uint32_t CORRETTO_8_HASH = ConstExprHashingUtils::HashString("CORRETTO_8");
+        static constexpr uint32_t CORRETTO_11_HASH = ConstExprHashingUtils::HashString("CORRETTO_11");
+        static constexpr uint32_t NODEJS_16_HASH = ConstExprHashingUtils::HashString("NODEJS_16");
+        static constexpr uint32_t GO_1_HASH = ConstExprHashingUtils::HashString("GO_1");
+        static constexpr uint32_t DOTNET_6_HASH = ConstExprHashingUtils::HashString("DOTNET_6");
+        static constexpr uint32_t PHP_81_HASH = ConstExprHashingUtils::HashString("PHP_81");
+        static constexpr uint32_t RUBY_31_HASH = ConstExprHashingUtils::HashString("RUBY_31");
 
 
         Runtime GetRuntimeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PYTHON_3_HASH)
           {
             return Runtime::PYTHON_3;

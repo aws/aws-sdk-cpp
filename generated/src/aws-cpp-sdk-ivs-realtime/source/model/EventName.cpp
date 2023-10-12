@@ -20,20 +20,20 @@ namespace Aws
       namespace EventNameMapper
       {
 
-        static const int JOINED_HASH = HashingUtils::HashString("JOINED");
-        static const int LEFT_HASH = HashingUtils::HashString("LEFT");
-        static const int PUBLISH_STARTED_HASH = HashingUtils::HashString("PUBLISH_STARTED");
-        static const int PUBLISH_STOPPED_HASH = HashingUtils::HashString("PUBLISH_STOPPED");
-        static const int SUBSCRIBE_STARTED_HASH = HashingUtils::HashString("SUBSCRIBE_STARTED");
-        static const int SUBSCRIBE_STOPPED_HASH = HashingUtils::HashString("SUBSCRIBE_STOPPED");
-        static const int PUBLISH_ERROR_HASH = HashingUtils::HashString("PUBLISH_ERROR");
-        static const int SUBSCRIBE_ERROR_HASH = HashingUtils::HashString("SUBSCRIBE_ERROR");
-        static const int JOIN_ERROR_HASH = HashingUtils::HashString("JOIN_ERROR");
+        static constexpr uint32_t JOINED_HASH = ConstExprHashingUtils::HashString("JOINED");
+        static constexpr uint32_t LEFT_HASH = ConstExprHashingUtils::HashString("LEFT");
+        static constexpr uint32_t PUBLISH_STARTED_HASH = ConstExprHashingUtils::HashString("PUBLISH_STARTED");
+        static constexpr uint32_t PUBLISH_STOPPED_HASH = ConstExprHashingUtils::HashString("PUBLISH_STOPPED");
+        static constexpr uint32_t SUBSCRIBE_STARTED_HASH = ConstExprHashingUtils::HashString("SUBSCRIBE_STARTED");
+        static constexpr uint32_t SUBSCRIBE_STOPPED_HASH = ConstExprHashingUtils::HashString("SUBSCRIBE_STOPPED");
+        static constexpr uint32_t PUBLISH_ERROR_HASH = ConstExprHashingUtils::HashString("PUBLISH_ERROR");
+        static constexpr uint32_t SUBSCRIBE_ERROR_HASH = ConstExprHashingUtils::HashString("SUBSCRIBE_ERROR");
+        static constexpr uint32_t JOIN_ERROR_HASH = ConstExprHashingUtils::HashString("JOIN_ERROR");
 
 
         EventName GetEventNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JOINED_HASH)
           {
             return EventName::JOINED;

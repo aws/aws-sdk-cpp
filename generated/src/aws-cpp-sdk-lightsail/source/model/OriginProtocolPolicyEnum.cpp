@@ -20,13 +20,13 @@ namespace Aws
       namespace OriginProtocolPolicyEnumMapper
       {
 
-        static const int http_only_HASH = HashingUtils::HashString("http-only");
-        static const int https_only_HASH = HashingUtils::HashString("https-only");
+        static constexpr uint32_t http_only_HASH = ConstExprHashingUtils::HashString("http-only");
+        static constexpr uint32_t https_only_HASH = ConstExprHashingUtils::HashString("https-only");
 
 
         OriginProtocolPolicyEnum GetOriginProtocolPolicyEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == http_only_HASH)
           {
             return OriginProtocolPolicyEnum::http_only;

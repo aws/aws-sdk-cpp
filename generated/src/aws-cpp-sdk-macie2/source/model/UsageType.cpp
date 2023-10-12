@@ -20,15 +20,15 @@ namespace Aws
       namespace UsageTypeMapper
       {
 
-        static const int DATA_INVENTORY_EVALUATION_HASH = HashingUtils::HashString("DATA_INVENTORY_EVALUATION");
-        static const int SENSITIVE_DATA_DISCOVERY_HASH = HashingUtils::HashString("SENSITIVE_DATA_DISCOVERY");
-        static const int AUTOMATED_SENSITIVE_DATA_DISCOVERY_HASH = HashingUtils::HashString("AUTOMATED_SENSITIVE_DATA_DISCOVERY");
-        static const int AUTOMATED_OBJECT_MONITORING_HASH = HashingUtils::HashString("AUTOMATED_OBJECT_MONITORING");
+        static constexpr uint32_t DATA_INVENTORY_EVALUATION_HASH = ConstExprHashingUtils::HashString("DATA_INVENTORY_EVALUATION");
+        static constexpr uint32_t SENSITIVE_DATA_DISCOVERY_HASH = ConstExprHashingUtils::HashString("SENSITIVE_DATA_DISCOVERY");
+        static constexpr uint32_t AUTOMATED_SENSITIVE_DATA_DISCOVERY_HASH = ConstExprHashingUtils::HashString("AUTOMATED_SENSITIVE_DATA_DISCOVERY");
+        static constexpr uint32_t AUTOMATED_OBJECT_MONITORING_HASH = ConstExprHashingUtils::HashString("AUTOMATED_OBJECT_MONITORING");
 
 
         UsageType GetUsageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DATA_INVENTORY_EVALUATION_HASH)
           {
             return UsageType::DATA_INVENTORY_EVALUATION;

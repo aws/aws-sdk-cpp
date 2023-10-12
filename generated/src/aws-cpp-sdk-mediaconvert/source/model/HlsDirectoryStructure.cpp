@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsDirectoryStructureMapper
       {
 
-        static const int SINGLE_DIRECTORY_HASH = HashingUtils::HashString("SINGLE_DIRECTORY");
-        static const int SUBDIRECTORY_PER_STREAM_HASH = HashingUtils::HashString("SUBDIRECTORY_PER_STREAM");
+        static constexpr uint32_t SINGLE_DIRECTORY_HASH = ConstExprHashingUtils::HashString("SINGLE_DIRECTORY");
+        static constexpr uint32_t SUBDIRECTORY_PER_STREAM_HASH = ConstExprHashingUtils::HashString("SUBDIRECTORY_PER_STREAM");
 
 
         HlsDirectoryStructure GetHlsDirectoryStructureForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SINGLE_DIRECTORY_HASH)
           {
             return HlsDirectoryStructure::SINGLE_DIRECTORY;

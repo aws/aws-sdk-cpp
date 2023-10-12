@@ -20,13 +20,13 @@ namespace Aws
       namespace MessageTypeMapper
       {
 
-        static const int SPLICE_INSERT_HASH = HashingUtils::HashString("SPLICE_INSERT");
-        static const int TIME_SIGNAL_HASH = HashingUtils::HashString("TIME_SIGNAL");
+        static constexpr uint32_t SPLICE_INSERT_HASH = ConstExprHashingUtils::HashString("SPLICE_INSERT");
+        static constexpr uint32_t TIME_SIGNAL_HASH = ConstExprHashingUtils::HashString("TIME_SIGNAL");
 
 
         MessageType GetMessageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SPLICE_INSERT_HASH)
           {
             return MessageType::SPLICE_INSERT;

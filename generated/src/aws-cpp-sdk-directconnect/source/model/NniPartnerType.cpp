@@ -20,14 +20,14 @@ namespace Aws
       namespace NniPartnerTypeMapper
       {
 
-        static const int v1_HASH = HashingUtils::HashString("v1");
-        static const int v2_HASH = HashingUtils::HashString("v2");
-        static const int nonPartner_HASH = HashingUtils::HashString("nonPartner");
+        static constexpr uint32_t v1_HASH = ConstExprHashingUtils::HashString("v1");
+        static constexpr uint32_t v2_HASH = ConstExprHashingUtils::HashString("v2");
+        static constexpr uint32_t nonPartner_HASH = ConstExprHashingUtils::HashString("nonPartner");
 
 
         NniPartnerType GetNniPartnerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == v1_HASH)
           {
             return NniPartnerType::v1;

@@ -20,13 +20,13 @@ namespace Aws
       namespace RtmpCacheFullBehaviorMapper
       {
 
-        static const int DISCONNECT_IMMEDIATELY_HASH = HashingUtils::HashString("DISCONNECT_IMMEDIATELY");
-        static const int WAIT_FOR_SERVER_HASH = HashingUtils::HashString("WAIT_FOR_SERVER");
+        static constexpr uint32_t DISCONNECT_IMMEDIATELY_HASH = ConstExprHashingUtils::HashString("DISCONNECT_IMMEDIATELY");
+        static constexpr uint32_t WAIT_FOR_SERVER_HASH = ConstExprHashingUtils::HashString("WAIT_FOR_SERVER");
 
 
         RtmpCacheFullBehavior GetRtmpCacheFullBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISCONNECT_IMMEDIATELY_HASH)
           {
             return RtmpCacheFullBehavior::DISCONNECT_IMMEDIATELY;

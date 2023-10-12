@@ -20,14 +20,14 @@ namespace Aws
       namespace DeviceIdentifierFilterKeysMapper
       {
 
-        static const int STATUS_HASH = HashingUtils::HashString("STATUS");
-        static const int ORDER_HASH = HashingUtils::HashString("ORDER");
-        static const int TRAFFIC_GROUP_HASH = HashingUtils::HashString("TRAFFIC_GROUP");
+        static constexpr uint32_t STATUS_HASH = ConstExprHashingUtils::HashString("STATUS");
+        static constexpr uint32_t ORDER_HASH = ConstExprHashingUtils::HashString("ORDER");
+        static constexpr uint32_t TRAFFIC_GROUP_HASH = ConstExprHashingUtils::HashString("TRAFFIC_GROUP");
 
 
         DeviceIdentifierFilterKeys GetDeviceIdentifierFilterKeysForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STATUS_HASH)
           {
             return DeviceIdentifierFilterKeys::STATUS;

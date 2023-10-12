@@ -20,13 +20,13 @@ namespace Aws
       namespace VoiceConnectorAwsRegionMapper
       {
 
-        static const int us_east_1_HASH = HashingUtils::HashString("us-east-1");
-        static const int us_west_2_HASH = HashingUtils::HashString("us-west-2");
+        static constexpr uint32_t us_east_1_HASH = ConstExprHashingUtils::HashString("us-east-1");
+        static constexpr uint32_t us_west_2_HASH = ConstExprHashingUtils::HashString("us-west-2");
 
 
         VoiceConnectorAwsRegion GetVoiceConnectorAwsRegionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == us_east_1_HASH)
           {
             return VoiceConnectorAwsRegion::us_east_1;

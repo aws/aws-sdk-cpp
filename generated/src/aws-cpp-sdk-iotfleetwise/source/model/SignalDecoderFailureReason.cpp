@@ -20,20 +20,20 @@ namespace Aws
       namespace SignalDecoderFailureReasonMapper
       {
 
-        static const int DUPLICATE_SIGNAL_HASH = HashingUtils::HashString("DUPLICATE_SIGNAL");
-        static const int CONFLICTING_SIGNAL_HASH = HashingUtils::HashString("CONFLICTING_SIGNAL");
-        static const int SIGNAL_TO_ADD_ALREADY_EXISTS_HASH = HashingUtils::HashString("SIGNAL_TO_ADD_ALREADY_EXISTS");
-        static const int SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE_HASH = HashingUtils::HashString("SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE");
-        static const int NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE_HASH = HashingUtils::HashString("NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE");
-        static const int SIGNAL_NOT_IN_MODEL_HASH = HashingUtils::HashString("SIGNAL_NOT_IN_MODEL");
-        static const int CAN_SIGNAL_INFO_IS_NULL_HASH = HashingUtils::HashString("CAN_SIGNAL_INFO_IS_NULL");
-        static const int OBD_SIGNAL_INFO_IS_NULL_HASH = HashingUtils::HashString("OBD_SIGNAL_INFO_IS_NULL");
-        static const int NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL_HASH = HashingUtils::HashString("NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL");
+        static constexpr uint32_t DUPLICATE_SIGNAL_HASH = ConstExprHashingUtils::HashString("DUPLICATE_SIGNAL");
+        static constexpr uint32_t CONFLICTING_SIGNAL_HASH = ConstExprHashingUtils::HashString("CONFLICTING_SIGNAL");
+        static constexpr uint32_t SIGNAL_TO_ADD_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("SIGNAL_TO_ADD_ALREADY_EXISTS");
+        static constexpr uint32_t SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE_HASH = ConstExprHashingUtils::HashString("SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE");
+        static constexpr uint32_t NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE_HASH = ConstExprHashingUtils::HashString("NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE");
+        static constexpr uint32_t SIGNAL_NOT_IN_MODEL_HASH = ConstExprHashingUtils::HashString("SIGNAL_NOT_IN_MODEL");
+        static constexpr uint32_t CAN_SIGNAL_INFO_IS_NULL_HASH = ConstExprHashingUtils::HashString("CAN_SIGNAL_INFO_IS_NULL");
+        static constexpr uint32_t OBD_SIGNAL_INFO_IS_NULL_HASH = ConstExprHashingUtils::HashString("OBD_SIGNAL_INFO_IS_NULL");
+        static constexpr uint32_t NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL_HASH = ConstExprHashingUtils::HashString("NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL");
 
 
         SignalDecoderFailureReason GetSignalDecoderFailureReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DUPLICATE_SIGNAL_HASH)
           {
             return SignalDecoderFailureReason::DUPLICATE_SIGNAL;

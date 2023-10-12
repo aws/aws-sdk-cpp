@@ -20,17 +20,17 @@ namespace Aws
       namespace SyntaxLanguageCodeMapper
       {
 
-        static const int en_HASH = HashingUtils::HashString("en");
-        static const int es_HASH = HashingUtils::HashString("es");
-        static const int fr_HASH = HashingUtils::HashString("fr");
-        static const int de_HASH = HashingUtils::HashString("de");
-        static const int it_HASH = HashingUtils::HashString("it");
-        static const int pt_HASH = HashingUtils::HashString("pt");
+        static constexpr uint32_t en_HASH = ConstExprHashingUtils::HashString("en");
+        static constexpr uint32_t es_HASH = ConstExprHashingUtils::HashString("es");
+        static constexpr uint32_t fr_HASH = ConstExprHashingUtils::HashString("fr");
+        static constexpr uint32_t de_HASH = ConstExprHashingUtils::HashString("de");
+        static constexpr uint32_t it_HASH = ConstExprHashingUtils::HashString("it");
+        static constexpr uint32_t pt_HASH = ConstExprHashingUtils::HashString("pt");
 
 
         SyntaxLanguageCode GetSyntaxLanguageCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == en_HASH)
           {
             return SyntaxLanguageCode::en;

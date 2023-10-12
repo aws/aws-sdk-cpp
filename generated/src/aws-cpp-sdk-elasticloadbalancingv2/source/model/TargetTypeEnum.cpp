@@ -20,15 +20,15 @@ namespace Aws
       namespace TargetTypeEnumMapper
       {
 
-        static const int instance_HASH = HashingUtils::HashString("instance");
-        static const int ip_HASH = HashingUtils::HashString("ip");
-        static const int lambda_HASH = HashingUtils::HashString("lambda");
-        static const int alb_HASH = HashingUtils::HashString("alb");
+        static constexpr uint32_t instance_HASH = ConstExprHashingUtils::HashString("instance");
+        static constexpr uint32_t ip_HASH = ConstExprHashingUtils::HashString("ip");
+        static constexpr uint32_t lambda_HASH = ConstExprHashingUtils::HashString("lambda");
+        static constexpr uint32_t alb_HASH = ConstExprHashingUtils::HashString("alb");
 
 
         TargetTypeEnum GetTargetTypeEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == instance_HASH)
           {
             return TargetTypeEnum::instance;

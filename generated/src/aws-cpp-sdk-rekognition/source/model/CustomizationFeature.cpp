@@ -20,13 +20,13 @@ namespace Aws
       namespace CustomizationFeatureMapper
       {
 
-        static const int CONTENT_MODERATION_HASH = HashingUtils::HashString("CONTENT_MODERATION");
-        static const int CUSTOM_LABELS_HASH = HashingUtils::HashString("CUSTOM_LABELS");
+        static constexpr uint32_t CONTENT_MODERATION_HASH = ConstExprHashingUtils::HashString("CONTENT_MODERATION");
+        static constexpr uint32_t CUSTOM_LABELS_HASH = ConstExprHashingUtils::HashString("CUSTOM_LABELS");
 
 
         CustomizationFeature GetCustomizationFeatureForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONTENT_MODERATION_HASH)
           {
             return CustomizationFeature::CONTENT_MODERATION;

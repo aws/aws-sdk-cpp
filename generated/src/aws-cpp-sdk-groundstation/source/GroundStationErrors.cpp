@@ -40,14 +40,14 @@ template<> AWS_GROUNDSTATION_API DependencyException GroundStationError::GetMode
 namespace GroundStationErrorMapper
 {
 
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
-static const int DEPENDENCY_HASH = HashingUtils::HashString("DependencyException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t RESOURCE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ResourceLimitExceededException");
+static constexpr uint32_t DEPENDENCY_HASH = ConstExprHashingUtils::HashString("DependencyException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INVALID_PARAMETER_HASH)
   {

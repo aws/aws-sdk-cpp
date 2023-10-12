@@ -20,13 +20,13 @@ namespace Aws
       namespace PinBlockFormatForPinDataMapper
       {
 
-        static const int ISO_FORMAT_0_HASH = HashingUtils::HashString("ISO_FORMAT_0");
-        static const int ISO_FORMAT_3_HASH = HashingUtils::HashString("ISO_FORMAT_3");
+        static constexpr uint32_t ISO_FORMAT_0_HASH = ConstExprHashingUtils::HashString("ISO_FORMAT_0");
+        static constexpr uint32_t ISO_FORMAT_3_HASH = ConstExprHashingUtils::HashString("ISO_FORMAT_3");
 
 
         PinBlockFormatForPinData GetPinBlockFormatForPinDataForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ISO_FORMAT_0_HASH)
           {
             return PinBlockFormatForPinData::ISO_FORMAT_0;

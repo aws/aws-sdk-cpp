@@ -20,12 +20,12 @@ namespace Aws
       namespace GeoSpatialCountryCodeMapper
       {
 
-        static const int US_HASH = HashingUtils::HashString("US");
+        static constexpr uint32_t US_HASH = ConstExprHashingUtils::HashString("US");
 
 
         GeoSpatialCountryCode GetGeoSpatialCountryCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == US_HASH)
           {
             return GeoSpatialCountryCode::US;

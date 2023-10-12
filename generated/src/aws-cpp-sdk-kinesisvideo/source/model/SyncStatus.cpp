@@ -20,18 +20,18 @@ namespace Aws
       namespace SyncStatusMapper
       {
 
-        static const int SYNCING_HASH = HashingUtils::HashString("SYNCING");
-        static const int ACKNOWLEDGED_HASH = HashingUtils::HashString("ACKNOWLEDGED");
-        static const int IN_SYNC_HASH = HashingUtils::HashString("IN_SYNC");
-        static const int SYNC_FAILED_HASH = HashingUtils::HashString("SYNC_FAILED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
-        static const int DELETING_ACKNOWLEDGED_HASH = HashingUtils::HashString("DELETING_ACKNOWLEDGED");
+        static constexpr uint32_t SYNCING_HASH = ConstExprHashingUtils::HashString("SYNCING");
+        static constexpr uint32_t ACKNOWLEDGED_HASH = ConstExprHashingUtils::HashString("ACKNOWLEDGED");
+        static constexpr uint32_t IN_SYNC_HASH = ConstExprHashingUtils::HashString("IN_SYNC");
+        static constexpr uint32_t SYNC_FAILED_HASH = ConstExprHashingUtils::HashString("SYNC_FAILED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t DELETE_FAILED_HASH = ConstExprHashingUtils::HashString("DELETE_FAILED");
+        static constexpr uint32_t DELETING_ACKNOWLEDGED_HASH = ConstExprHashingUtils::HashString("DELETING_ACKNOWLEDGED");
 
 
         SyncStatus GetSyncStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SYNCING_HASH)
           {
             return SyncStatus::SYNCING;

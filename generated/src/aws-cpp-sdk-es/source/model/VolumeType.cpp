@@ -20,15 +20,15 @@ namespace Aws
       namespace VolumeTypeMapper
       {
 
-        static const int standard_HASH = HashingUtils::HashString("standard");
-        static const int gp2_HASH = HashingUtils::HashString("gp2");
-        static const int io1_HASH = HashingUtils::HashString("io1");
-        static const int gp3_HASH = HashingUtils::HashString("gp3");
+        static constexpr uint32_t standard_HASH = ConstExprHashingUtils::HashString("standard");
+        static constexpr uint32_t gp2_HASH = ConstExprHashingUtils::HashString("gp2");
+        static constexpr uint32_t io1_HASH = ConstExprHashingUtils::HashString("io1");
+        static constexpr uint32_t gp3_HASH = ConstExprHashingUtils::HashString("gp3");
 
 
         VolumeType GetVolumeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == standard_HASH)
           {
             return VolumeType::standard;

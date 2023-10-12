@@ -20,17 +20,17 @@ namespace Aws
       namespace JoinTypeMapper
       {
 
-        static const int equijoin_HASH = HashingUtils::HashString("equijoin");
-        static const int left_HASH = HashingUtils::HashString("left");
-        static const int right_HASH = HashingUtils::HashString("right");
-        static const int outer_HASH = HashingUtils::HashString("outer");
-        static const int leftsemi_HASH = HashingUtils::HashString("leftsemi");
-        static const int leftanti_HASH = HashingUtils::HashString("leftanti");
+        static constexpr uint32_t equijoin_HASH = ConstExprHashingUtils::HashString("equijoin");
+        static constexpr uint32_t left_HASH = ConstExprHashingUtils::HashString("left");
+        static constexpr uint32_t right_HASH = ConstExprHashingUtils::HashString("right");
+        static constexpr uint32_t outer_HASH = ConstExprHashingUtils::HashString("outer");
+        static constexpr uint32_t leftsemi_HASH = ConstExprHashingUtils::HashString("leftsemi");
+        static constexpr uint32_t leftanti_HASH = ConstExprHashingUtils::HashString("leftanti");
 
 
         JoinType GetJoinTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == equijoin_HASH)
           {
             return JoinType::equijoin;

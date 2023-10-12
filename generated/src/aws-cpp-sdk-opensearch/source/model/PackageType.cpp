@@ -20,12 +20,12 @@ namespace Aws
       namespace PackageTypeMapper
       {
 
-        static const int TXT_DICTIONARY_HASH = HashingUtils::HashString("TXT-DICTIONARY");
+        static constexpr uint32_t TXT_DICTIONARY_HASH = ConstExprHashingUtils::HashString("TXT-DICTIONARY");
 
 
         PackageType GetPackageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TXT_DICTIONARY_HASH)
           {
             return PackageType::TXT_DICTIONARY;

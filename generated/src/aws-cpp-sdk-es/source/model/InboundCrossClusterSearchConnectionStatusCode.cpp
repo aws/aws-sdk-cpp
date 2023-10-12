@@ -20,17 +20,17 @@ namespace Aws
       namespace InboundCrossClusterSearchConnectionStatusCodeMapper
       {
 
-        static const int PENDING_ACCEPTANCE_HASH = HashingUtils::HashString("PENDING_ACCEPTANCE");
-        static const int APPROVED_HASH = HashingUtils::HashString("APPROVED");
-        static const int REJECTING_HASH = HashingUtils::HashString("REJECTING");
-        static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t PENDING_ACCEPTANCE_HASH = ConstExprHashingUtils::HashString("PENDING_ACCEPTANCE");
+        static constexpr uint32_t APPROVED_HASH = ConstExprHashingUtils::HashString("APPROVED");
+        static constexpr uint32_t REJECTING_HASH = ConstExprHashingUtils::HashString("REJECTING");
+        static constexpr uint32_t REJECTED_HASH = ConstExprHashingUtils::HashString("REJECTED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         InboundCrossClusterSearchConnectionStatusCode GetInboundCrossClusterSearchConnectionStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_ACCEPTANCE_HASH)
           {
             return InboundCrossClusterSearchConnectionStatusCode::PENDING_ACCEPTANCE;

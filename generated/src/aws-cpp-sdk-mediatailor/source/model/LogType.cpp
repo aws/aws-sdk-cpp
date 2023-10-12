@@ -20,12 +20,12 @@ namespace Aws
       namespace LogTypeMapper
       {
 
-        static const int AS_RUN_HASH = HashingUtils::HashString("AS_RUN");
+        static constexpr uint32_t AS_RUN_HASH = ConstExprHashingUtils::HashString("AS_RUN");
 
 
         LogType GetLogTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AS_RUN_HASH)
           {
             return LogType::AS_RUN;

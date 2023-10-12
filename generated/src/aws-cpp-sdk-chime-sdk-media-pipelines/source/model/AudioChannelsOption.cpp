@@ -20,13 +20,13 @@ namespace Aws
       namespace AudioChannelsOptionMapper
       {
 
-        static const int Stereo_HASH = HashingUtils::HashString("Stereo");
-        static const int Mono_HASH = HashingUtils::HashString("Mono");
+        static constexpr uint32_t Stereo_HASH = ConstExprHashingUtils::HashString("Stereo");
+        static constexpr uint32_t Mono_HASH = ConstExprHashingUtils::HashString("Mono");
 
 
         AudioChannelsOption GetAudioChannelsOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Stereo_HASH)
           {
             return AudioChannelsOption::Stereo;

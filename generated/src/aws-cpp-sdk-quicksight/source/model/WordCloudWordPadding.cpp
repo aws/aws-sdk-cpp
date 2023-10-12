@@ -20,15 +20,15 @@ namespace Aws
       namespace WordCloudWordPaddingMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int SMALL_HASH = HashingUtils::HashString("SMALL");
-        static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
-        static const int LARGE_HASH = HashingUtils::HashString("LARGE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t SMALL_HASH = ConstExprHashingUtils::HashString("SMALL");
+        static constexpr uint32_t MEDIUM_HASH = ConstExprHashingUtils::HashString("MEDIUM");
+        static constexpr uint32_t LARGE_HASH = ConstExprHashingUtils::HashString("LARGE");
 
 
         WordCloudWordPadding GetWordCloudWordPaddingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return WordCloudWordPadding::NONE;

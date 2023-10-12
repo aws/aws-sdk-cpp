@@ -215,15 +215,15 @@ namespace Model
 
 namespace SelectObjectContentEventMapper
 {
-    static const int RECORDS_HASH = Aws::Utils::HashingUtils::HashString("Records");
-    static const int STATS_HASH = Aws::Utils::HashingUtils::HashString("Stats");
-    static const int PROGRESS_HASH = Aws::Utils::HashingUtils::HashString("Progress");
-    static const int CONT_HASH = Aws::Utils::HashingUtils::HashString("Cont");
-    static const int END_HASH = Aws::Utils::HashingUtils::HashString("End");
+    static constexpr uint32_t RECORDS_HASH = Aws::Utils::ConstExprHashingUtils::HashString("Records");
+    static constexpr uint32_t STATS_HASH = Aws::Utils::ConstExprHashingUtils::HashString("Stats");
+    static constexpr uint32_t PROGRESS_HASH = Aws::Utils::ConstExprHashingUtils::HashString("Progress");
+    static constexpr uint32_t CONT_HASH = Aws::Utils::ConstExprHashingUtils::HashString("Cont");
+    static constexpr uint32_t END_HASH = Aws::Utils::ConstExprHashingUtils::HashString("End");
 
     SelectObjectContentEventType GetSelectObjectContentEventTypeForName(const Aws::String& name)
     {
-        int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
+        uint32_t hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
         if (hashCode == RECORDS_HASH)
         {
             return SelectObjectContentEventType::RECORDS;

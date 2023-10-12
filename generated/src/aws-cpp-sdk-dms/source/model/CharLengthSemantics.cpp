@@ -20,14 +20,14 @@ namespace Aws
       namespace CharLengthSemanticsMapper
       {
 
-        static const int default__HASH = HashingUtils::HashString("default");
-        static const int char__HASH = HashingUtils::HashString("char");
-        static const int byte_HASH = HashingUtils::HashString("byte");
+        static constexpr uint32_t default__HASH = ConstExprHashingUtils::HashString("default");
+        static constexpr uint32_t char__HASH = ConstExprHashingUtils::HashString("char");
+        static constexpr uint32_t byte_HASH = ConstExprHashingUtils::HashString("byte");
 
 
         CharLengthSemantics GetCharLengthSemanticsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == default__HASH)
           {
             return CharLengthSemantics::default_;

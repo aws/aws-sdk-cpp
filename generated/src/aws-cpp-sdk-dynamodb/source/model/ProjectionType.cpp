@@ -20,14 +20,14 @@ namespace Aws
       namespace ProjectionTypeMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int KEYS_ONLY_HASH = HashingUtils::HashString("KEYS_ONLY");
-        static const int INCLUDE_HASH = HashingUtils::HashString("INCLUDE");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t KEYS_ONLY_HASH = ConstExprHashingUtils::HashString("KEYS_ONLY");
+        static constexpr uint32_t INCLUDE_HASH = ConstExprHashingUtils::HashString("INCLUDE");
 
 
         ProjectionType GetProjectionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return ProjectionType::ALL;

@@ -20,14 +20,14 @@ namespace Aws
       namespace AnomalyDetectorStateValueMapper
       {
 
-        static const int PENDING_TRAINING_HASH = HashingUtils::HashString("PENDING_TRAINING");
-        static const int TRAINED_INSUFFICIENT_DATA_HASH = HashingUtils::HashString("TRAINED_INSUFFICIENT_DATA");
-        static const int TRAINED_HASH = HashingUtils::HashString("TRAINED");
+        static constexpr uint32_t PENDING_TRAINING_HASH = ConstExprHashingUtils::HashString("PENDING_TRAINING");
+        static constexpr uint32_t TRAINED_INSUFFICIENT_DATA_HASH = ConstExprHashingUtils::HashString("TRAINED_INSUFFICIENT_DATA");
+        static constexpr uint32_t TRAINED_HASH = ConstExprHashingUtils::HashString("TRAINED");
 
 
         AnomalyDetectorStateValue GetAnomalyDetectorStateValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_TRAINING_HASH)
           {
             return AnomalyDetectorStateValue::PENDING_TRAINING;

@@ -20,14 +20,14 @@ namespace Aws
       namespace ForwardValuesMapper
       {
 
-        static const int none_HASH = HashingUtils::HashString("none");
-        static const int allow_list_HASH = HashingUtils::HashString("allow-list");
-        static const int all_HASH = HashingUtils::HashString("all");
+        static constexpr uint32_t none_HASH = ConstExprHashingUtils::HashString("none");
+        static constexpr uint32_t allow_list_HASH = ConstExprHashingUtils::HashString("allow-list");
+        static constexpr uint32_t all_HASH = ConstExprHashingUtils::HashString("all");
 
 
         ForwardValues GetForwardValuesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == none_HASH)
           {
             return ForwardValues::none;

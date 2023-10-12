@@ -20,16 +20,16 @@ namespace Aws
       namespace PositionalConstraintMapper
       {
 
-        static const int EXACTLY_HASH = HashingUtils::HashString("EXACTLY");
-        static const int STARTS_WITH_HASH = HashingUtils::HashString("STARTS_WITH");
-        static const int ENDS_WITH_HASH = HashingUtils::HashString("ENDS_WITH");
-        static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
-        static const int CONTAINS_WORD_HASH = HashingUtils::HashString("CONTAINS_WORD");
+        static constexpr uint32_t EXACTLY_HASH = ConstExprHashingUtils::HashString("EXACTLY");
+        static constexpr uint32_t STARTS_WITH_HASH = ConstExprHashingUtils::HashString("STARTS_WITH");
+        static constexpr uint32_t ENDS_WITH_HASH = ConstExprHashingUtils::HashString("ENDS_WITH");
+        static constexpr uint32_t CONTAINS_HASH = ConstExprHashingUtils::HashString("CONTAINS");
+        static constexpr uint32_t CONTAINS_WORD_HASH = ConstExprHashingUtils::HashString("CONTAINS_WORD");
 
 
         PositionalConstraint GetPositionalConstraintForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXACTLY_HASH)
           {
             return PositionalConstraint::EXACTLY;

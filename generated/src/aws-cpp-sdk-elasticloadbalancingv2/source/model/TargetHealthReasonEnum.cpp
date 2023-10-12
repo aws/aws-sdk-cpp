@@ -20,23 +20,23 @@ namespace Aws
       namespace TargetHealthReasonEnumMapper
       {
 
-        static const int Elb_RegistrationInProgress_HASH = HashingUtils::HashString("Elb.RegistrationInProgress");
-        static const int Elb_InitialHealthChecking_HASH = HashingUtils::HashString("Elb.InitialHealthChecking");
-        static const int Target_ResponseCodeMismatch_HASH = HashingUtils::HashString("Target.ResponseCodeMismatch");
-        static const int Target_Timeout_HASH = HashingUtils::HashString("Target.Timeout");
-        static const int Target_FailedHealthChecks_HASH = HashingUtils::HashString("Target.FailedHealthChecks");
-        static const int Target_NotRegistered_HASH = HashingUtils::HashString("Target.NotRegistered");
-        static const int Target_NotInUse_HASH = HashingUtils::HashString("Target.NotInUse");
-        static const int Target_DeregistrationInProgress_HASH = HashingUtils::HashString("Target.DeregistrationInProgress");
-        static const int Target_InvalidState_HASH = HashingUtils::HashString("Target.InvalidState");
-        static const int Target_IpUnusable_HASH = HashingUtils::HashString("Target.IpUnusable");
-        static const int Target_HealthCheckDisabled_HASH = HashingUtils::HashString("Target.HealthCheckDisabled");
-        static const int Elb_InternalError_HASH = HashingUtils::HashString("Elb.InternalError");
+        static constexpr uint32_t Elb_RegistrationInProgress_HASH = ConstExprHashingUtils::HashString("Elb.RegistrationInProgress");
+        static constexpr uint32_t Elb_InitialHealthChecking_HASH = ConstExprHashingUtils::HashString("Elb.InitialHealthChecking");
+        static constexpr uint32_t Target_ResponseCodeMismatch_HASH = ConstExprHashingUtils::HashString("Target.ResponseCodeMismatch");
+        static constexpr uint32_t Target_Timeout_HASH = ConstExprHashingUtils::HashString("Target.Timeout");
+        static constexpr uint32_t Target_FailedHealthChecks_HASH = ConstExprHashingUtils::HashString("Target.FailedHealthChecks");
+        static constexpr uint32_t Target_NotRegistered_HASH = ConstExprHashingUtils::HashString("Target.NotRegistered");
+        static constexpr uint32_t Target_NotInUse_HASH = ConstExprHashingUtils::HashString("Target.NotInUse");
+        static constexpr uint32_t Target_DeregistrationInProgress_HASH = ConstExprHashingUtils::HashString("Target.DeregistrationInProgress");
+        static constexpr uint32_t Target_InvalidState_HASH = ConstExprHashingUtils::HashString("Target.InvalidState");
+        static constexpr uint32_t Target_IpUnusable_HASH = ConstExprHashingUtils::HashString("Target.IpUnusable");
+        static constexpr uint32_t Target_HealthCheckDisabled_HASH = ConstExprHashingUtils::HashString("Target.HealthCheckDisabled");
+        static constexpr uint32_t Elb_InternalError_HASH = ConstExprHashingUtils::HashString("Elb.InternalError");
 
 
         TargetHealthReasonEnum GetTargetHealthReasonEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Elb_RegistrationInProgress_HASH)
           {
             return TargetHealthReasonEnum::Elb_RegistrationInProgress;

@@ -20,18 +20,18 @@ namespace Aws
       namespace DomainControllerStatusMapper
       {
 
-        static const int Creating_HASH = HashingUtils::HashString("Creating");
-        static const int Active_HASH = HashingUtils::HashString("Active");
-        static const int Impaired_HASH = HashingUtils::HashString("Impaired");
-        static const int Restoring_HASH = HashingUtils::HashString("Restoring");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
-        static const int Deleted_HASH = HashingUtils::HashString("Deleted");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t Creating_HASH = ConstExprHashingUtils::HashString("Creating");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
+        static constexpr uint32_t Impaired_HASH = ConstExprHashingUtils::HashString("Impaired");
+        static constexpr uint32_t Restoring_HASH = ConstExprHashingUtils::HashString("Restoring");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
+        static constexpr uint32_t Deleted_HASH = ConstExprHashingUtils::HashString("Deleted");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         DomainControllerStatus GetDomainControllerStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Creating_HASH)
           {
             return DomainControllerStatus::Creating;

@@ -20,24 +20,24 @@ namespace Aws
       namespace WorkspaceStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int UPGRADING_HASH = HashingUtils::HashString("UPGRADING");
-        static const int DELETION_FAILED_HASH = HashingUtils::HashString("DELETION_FAILED");
-        static const int CREATION_FAILED_HASH = HashingUtils::HashString("CREATION_FAILED");
-        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
-        static const int UPGRADE_FAILED_HASH = HashingUtils::HashString("UPGRADE_FAILED");
-        static const int LICENSE_REMOVAL_FAILED_HASH = HashingUtils::HashString("LICENSE_REMOVAL_FAILED");
-        static const int VERSION_UPDATING_HASH = HashingUtils::HashString("VERSION_UPDATING");
-        static const int VERSION_UPDATE_FAILED_HASH = HashingUtils::HashString("VERSION_UPDATE_FAILED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t UPGRADING_HASH = ConstExprHashingUtils::HashString("UPGRADING");
+        static constexpr uint32_t DELETION_FAILED_HASH = ConstExprHashingUtils::HashString("DELETION_FAILED");
+        static constexpr uint32_t CREATION_FAILED_HASH = ConstExprHashingUtils::HashString("CREATION_FAILED");
+        static constexpr uint32_t UPDATE_FAILED_HASH = ConstExprHashingUtils::HashString("UPDATE_FAILED");
+        static constexpr uint32_t UPGRADE_FAILED_HASH = ConstExprHashingUtils::HashString("UPGRADE_FAILED");
+        static constexpr uint32_t LICENSE_REMOVAL_FAILED_HASH = ConstExprHashingUtils::HashString("LICENSE_REMOVAL_FAILED");
+        static constexpr uint32_t VERSION_UPDATING_HASH = ConstExprHashingUtils::HashString("VERSION_UPDATING");
+        static constexpr uint32_t VERSION_UPDATE_FAILED_HASH = ConstExprHashingUtils::HashString("VERSION_UPDATE_FAILED");
 
 
         WorkspaceStatus GetWorkspaceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return WorkspaceStatus::ACTIVE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsProgramDateTimeMapper
       {
 
-        static const int INCLUDE_HASH = HashingUtils::HashString("INCLUDE");
-        static const int EXCLUDE_HASH = HashingUtils::HashString("EXCLUDE");
+        static constexpr uint32_t INCLUDE_HASH = ConstExprHashingUtils::HashString("INCLUDE");
+        static constexpr uint32_t EXCLUDE_HASH = ConstExprHashingUtils::HashString("EXCLUDE");
 
 
         HlsProgramDateTime GetHlsProgramDateTimeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INCLUDE_HASH)
           {
             return HlsProgramDateTime::INCLUDE;

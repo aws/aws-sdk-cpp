@@ -20,13 +20,13 @@ namespace Aws
       namespace ConflictDetectionTypeMapper
       {
 
-        static const int VERSION_HASH = HashingUtils::HashString("VERSION");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t VERSION_HASH = ConstExprHashingUtils::HashString("VERSION");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         ConflictDetectionType GetConflictDetectionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VERSION_HASH)
           {
             return ConflictDetectionType::VERSION;

@@ -20,18 +20,18 @@ namespace Aws
       namespace ConnectionStateMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int AUTHORIZED_HASH = HashingUtils::HashString("AUTHORIZED");
-        static const int DEAUTHORIZED_HASH = HashingUtils::HashString("DEAUTHORIZED");
-        static const int AUTHORIZING_HASH = HashingUtils::HashString("AUTHORIZING");
-        static const int DEAUTHORIZING_HASH = HashingUtils::HashString("DEAUTHORIZING");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t AUTHORIZED_HASH = ConstExprHashingUtils::HashString("AUTHORIZED");
+        static constexpr uint32_t DEAUTHORIZED_HASH = ConstExprHashingUtils::HashString("DEAUTHORIZED");
+        static constexpr uint32_t AUTHORIZING_HASH = ConstExprHashingUtils::HashString("AUTHORIZING");
+        static constexpr uint32_t DEAUTHORIZING_HASH = ConstExprHashingUtils::HashString("DEAUTHORIZING");
 
 
         ConnectionState GetConnectionStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return ConnectionState::CREATING;

@@ -20,13 +20,13 @@ namespace Aws
       namespace M2tsAbsentInputAudioBehaviorMapper
       {
 
-        static const int DROP_HASH = HashingUtils::HashString("DROP");
-        static const int ENCODE_SILENCE_HASH = HashingUtils::HashString("ENCODE_SILENCE");
+        static constexpr uint32_t DROP_HASH = ConstExprHashingUtils::HashString("DROP");
+        static constexpr uint32_t ENCODE_SILENCE_HASH = ConstExprHashingUtils::HashString("ENCODE_SILENCE");
 
 
         M2tsAbsentInputAudioBehavior GetM2tsAbsentInputAudioBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DROP_HASH)
           {
             return M2tsAbsentInputAudioBehavior::DROP;

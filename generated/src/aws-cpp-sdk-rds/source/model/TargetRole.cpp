@@ -20,14 +20,14 @@ namespace Aws
       namespace TargetRoleMapper
       {
 
-        static const int READ_WRITE_HASH = HashingUtils::HashString("READ_WRITE");
-        static const int READ_ONLY_HASH = HashingUtils::HashString("READ_ONLY");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t READ_WRITE_HASH = ConstExprHashingUtils::HashString("READ_WRITE");
+        static constexpr uint32_t READ_ONLY_HASH = ConstExprHashingUtils::HashString("READ_ONLY");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         TargetRole GetTargetRoleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == READ_WRITE_HASH)
           {
             return TargetRole::READ_WRITE;

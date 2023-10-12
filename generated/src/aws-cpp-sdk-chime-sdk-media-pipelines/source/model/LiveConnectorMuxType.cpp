@@ -20,13 +20,13 @@ namespace Aws
       namespace LiveConnectorMuxTypeMapper
       {
 
-        static const int AudioWithCompositedVideo_HASH = HashingUtils::HashString("AudioWithCompositedVideo");
-        static const int AudioWithActiveSpeakerVideo_HASH = HashingUtils::HashString("AudioWithActiveSpeakerVideo");
+        static constexpr uint32_t AudioWithCompositedVideo_HASH = ConstExprHashingUtils::HashString("AudioWithCompositedVideo");
+        static constexpr uint32_t AudioWithActiveSpeakerVideo_HASH = ConstExprHashingUtils::HashString("AudioWithActiveSpeakerVideo");
 
 
         LiveConnectorMuxType GetLiveConnectorMuxTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AudioWithCompositedVideo_HASH)
           {
             return LiveConnectorMuxType::AudioWithCompositedVideo;

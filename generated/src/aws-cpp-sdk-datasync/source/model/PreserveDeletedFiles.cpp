@@ -20,13 +20,13 @@ namespace Aws
       namespace PreserveDeletedFilesMapper
       {
 
-        static const int PRESERVE_HASH = HashingUtils::HashString("PRESERVE");
-        static const int REMOVE_HASH = HashingUtils::HashString("REMOVE");
+        static constexpr uint32_t PRESERVE_HASH = ConstExprHashingUtils::HashString("PRESERVE");
+        static constexpr uint32_t REMOVE_HASH = ConstExprHashingUtils::HashString("REMOVE");
 
 
         PreserveDeletedFiles GetPreserveDeletedFilesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRESERVE_HASH)
           {
             return PreserveDeletedFiles::PRESERVE;

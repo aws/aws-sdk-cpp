@@ -20,13 +20,13 @@ namespace Aws
       namespace ModelInputDataFormatMapper
       {
 
-        static const int TEXT_CSV_HASH = HashingUtils::HashString("TEXT_CSV");
-        static const int APPLICATION_JSON_HASH = HashingUtils::HashString("APPLICATION_JSON");
+        static constexpr uint32_t TEXT_CSV_HASH = ConstExprHashingUtils::HashString("TEXT_CSV");
+        static constexpr uint32_t APPLICATION_JSON_HASH = ConstExprHashingUtils::HashString("APPLICATION_JSON");
 
 
         ModelInputDataFormat GetModelInputDataFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TEXT_CSV_HASH)
           {
             return ModelInputDataFormat::TEXT_CSV;

@@ -18,32 +18,32 @@ namespace WorkMail
 namespace WorkMailErrorMapper
 {
 
-static const int ENTITY_STATE_HASH = HashingUtils::HashString("EntityStateException");
-static const int DIRECTORY_SERVICE_AUTHENTICATION_FAILED_HASH = HashingUtils::HashString("DirectoryServiceAuthenticationFailedException");
-static const int NAME_AVAILABILITY_HASH = HashingUtils::HashString("NameAvailabilityException");
-static const int ORGANIZATION_NOT_FOUND_HASH = HashingUtils::HashString("OrganizationNotFoundException");
-static const int DIRECTORY_UNAVAILABLE_HASH = HashingUtils::HashString("DirectoryUnavailableException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int MAIL_DOMAIN_NOT_FOUND_HASH = HashingUtils::HashString("MailDomainNotFoundException");
-static const int INVALID_CUSTOM_SES_CONFIGURATION_HASH = HashingUtils::HashString("InvalidCustomSesConfigurationException");
-static const int EMAIL_ADDRESS_IN_USE_HASH = HashingUtils::HashString("EmailAddressInUseException");
-static const int RESERVED_NAME_HASH = HashingUtils::HashString("ReservedNameException");
-static const int ORGANIZATION_STATE_HASH = HashingUtils::HashString("OrganizationStateException");
-static const int ENTITY_NOT_FOUND_HASH = HashingUtils::HashString("EntityNotFoundException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int INVALID_CONFIGURATION_HASH = HashingUtils::HashString("InvalidConfigurationException");
-static const int MAIL_DOMAIN_IN_USE_HASH = HashingUtils::HashString("MailDomainInUseException");
-static const int ENTITY_ALREADY_REGISTERED_HASH = HashingUtils::HashString("EntityAlreadyRegisteredException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
-static const int INVALID_PASSWORD_HASH = HashingUtils::HashString("InvalidPasswordException");
-static const int DIRECTORY_IN_USE_HASH = HashingUtils::HashString("DirectoryInUseException");
-static const int MAIL_DOMAIN_STATE_HASH = HashingUtils::HashString("MailDomainStateException");
+static constexpr uint32_t ENTITY_STATE_HASH = ConstExprHashingUtils::HashString("EntityStateException");
+static constexpr uint32_t DIRECTORY_SERVICE_AUTHENTICATION_FAILED_HASH = ConstExprHashingUtils::HashString("DirectoryServiceAuthenticationFailedException");
+static constexpr uint32_t NAME_AVAILABILITY_HASH = ConstExprHashingUtils::HashString("NameAvailabilityException");
+static constexpr uint32_t ORGANIZATION_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("OrganizationNotFoundException");
+static constexpr uint32_t DIRECTORY_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("DirectoryUnavailableException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t MAIL_DOMAIN_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("MailDomainNotFoundException");
+static constexpr uint32_t INVALID_CUSTOM_SES_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("InvalidCustomSesConfigurationException");
+static constexpr uint32_t EMAIL_ADDRESS_IN_USE_HASH = ConstExprHashingUtils::HashString("EmailAddressInUseException");
+static constexpr uint32_t RESERVED_NAME_HASH = ConstExprHashingUtils::HashString("ReservedNameException");
+static constexpr uint32_t ORGANIZATION_STATE_HASH = ConstExprHashingUtils::HashString("OrganizationStateException");
+static constexpr uint32_t ENTITY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("EntityNotFoundException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t INVALID_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("InvalidConfigurationException");
+static constexpr uint32_t MAIL_DOMAIN_IN_USE_HASH = ConstExprHashingUtils::HashString("MailDomainInUseException");
+static constexpr uint32_t ENTITY_ALREADY_REGISTERED_HASH = ConstExprHashingUtils::HashString("EntityAlreadyRegisteredException");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t UNSUPPORTED_OPERATION_HASH = ConstExprHashingUtils::HashString("UnsupportedOperationException");
+static constexpr uint32_t INVALID_PASSWORD_HASH = ConstExprHashingUtils::HashString("InvalidPasswordException");
+static constexpr uint32_t DIRECTORY_IN_USE_HASH = ConstExprHashingUtils::HashString("DirectoryInUseException");
+static constexpr uint32_t MAIL_DOMAIN_STATE_HASH = ConstExprHashingUtils::HashString("MailDomainStateException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == ENTITY_STATE_HASH)
   {

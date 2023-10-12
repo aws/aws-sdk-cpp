@@ -20,15 +20,15 @@ namespace Aws
       namespace Ac3CodingModeMapper
       {
 
-        static const int CODING_MODE_1_0_HASH = HashingUtils::HashString("CODING_MODE_1_0");
-        static const int CODING_MODE_1_1_HASH = HashingUtils::HashString("CODING_MODE_1_1");
-        static const int CODING_MODE_2_0_HASH = HashingUtils::HashString("CODING_MODE_2_0");
-        static const int CODING_MODE_3_2_LFE_HASH = HashingUtils::HashString("CODING_MODE_3_2_LFE");
+        static constexpr uint32_t CODING_MODE_1_0_HASH = ConstExprHashingUtils::HashString("CODING_MODE_1_0");
+        static constexpr uint32_t CODING_MODE_1_1_HASH = ConstExprHashingUtils::HashString("CODING_MODE_1_1");
+        static constexpr uint32_t CODING_MODE_2_0_HASH = ConstExprHashingUtils::HashString("CODING_MODE_2_0");
+        static constexpr uint32_t CODING_MODE_3_2_LFE_HASH = ConstExprHashingUtils::HashString("CODING_MODE_3_2_LFE");
 
 
         Ac3CodingMode GetAc3CodingModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CODING_MODE_1_0_HASH)
           {
             return Ac3CodingMode::CODING_MODE_1_0;

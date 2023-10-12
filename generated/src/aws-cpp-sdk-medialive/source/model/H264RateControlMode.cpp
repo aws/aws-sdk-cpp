@@ -20,15 +20,15 @@ namespace Aws
       namespace H264RateControlModeMapper
       {
 
-        static const int CBR_HASH = HashingUtils::HashString("CBR");
-        static const int MULTIPLEX_HASH = HashingUtils::HashString("MULTIPLEX");
-        static const int QVBR_HASH = HashingUtils::HashString("QVBR");
-        static const int VBR_HASH = HashingUtils::HashString("VBR");
+        static constexpr uint32_t CBR_HASH = ConstExprHashingUtils::HashString("CBR");
+        static constexpr uint32_t MULTIPLEX_HASH = ConstExprHashingUtils::HashString("MULTIPLEX");
+        static constexpr uint32_t QVBR_HASH = ConstExprHashingUtils::HashString("QVBR");
+        static constexpr uint32_t VBR_HASH = ConstExprHashingUtils::HashString("VBR");
 
 
         H264RateControlMode GetH264RateControlModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CBR_HASH)
           {
             return H264RateControlMode::CBR;

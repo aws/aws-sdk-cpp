@@ -20,13 +20,13 @@ namespace Aws
       namespace InventoryDeletionStatusMapper
       {
 
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Complete_HASH = HashingUtils::HashString("Complete");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Complete_HASH = ConstExprHashingUtils::HashString("Complete");
 
 
         InventoryDeletionStatus GetInventoryDeletionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InProgress_HASH)
           {
             return InventoryDeletionStatus::InProgress;

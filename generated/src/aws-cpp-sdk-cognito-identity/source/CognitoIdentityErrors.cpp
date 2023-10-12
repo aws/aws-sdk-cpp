@@ -18,21 +18,21 @@ namespace CognitoIdentity
 namespace CognitoIdentityErrorMapper
 {
 
-static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
-static const int EXTERNAL_SERVICE_HASH = HashingUtils::HashString("ExternalServiceException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
-static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int INVALID_IDENTITY_POOL_CONFIGURATION_HASH = HashingUtils::HashString("InvalidIdentityPoolConfigurationException");
-static const int DEVELOPER_USER_ALREADY_REGISTERED_HASH = HashingUtils::HashString("DeveloperUserAlreadyRegisteredException");
+static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("InternalErrorException");
+static constexpr uint32_t EXTERNAL_SERVICE_HASH = ConstExprHashingUtils::HashString("ExternalServiceException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t NOT_AUTHORIZED_HASH = ConstExprHashingUtils::HashString("NotAuthorizedException");
+static constexpr uint32_t RESOURCE_CONFLICT_HASH = ConstExprHashingUtils::HashString("ResourceConflictException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t TOO_MANY_REQUESTS_HASH = ConstExprHashingUtils::HashString("TooManyRequestsException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t INVALID_IDENTITY_POOL_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("InvalidIdentityPoolConfigurationException");
+static constexpr uint32_t DEVELOPER_USER_ALREADY_REGISTERED_HASH = ConstExprHashingUtils::HashString("DeveloperUserAlreadyRegisteredException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INTERNAL_ERROR_HASH)
   {

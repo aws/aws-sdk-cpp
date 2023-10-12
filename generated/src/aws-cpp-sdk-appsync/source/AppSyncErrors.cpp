@@ -26,20 +26,20 @@ template<> AWS_APPSYNC_API BadRequestException AppSyncError::GetModeledError()
 namespace AppSyncErrorMapper
 {
 
-static const int GRAPH_Q_L_SCHEMA_HASH = HashingUtils::HashString("GraphQLSchemaException");
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int API_KEY_VALIDITY_OUT_OF_BOUNDS_HASH = HashingUtils::HashString("ApiKeyValidityOutOfBoundsException");
-static const int API_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ApiLimitExceededException");
-static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
-static const int API_KEY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ApiKeyLimitExceededException");
+static constexpr uint32_t GRAPH_Q_L_SCHEMA_HASH = ConstExprHashingUtils::HashString("GraphQLSchemaException");
+static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NotFoundException");
+static constexpr uint32_t API_KEY_VALIDITY_OUT_OF_BOUNDS_HASH = ConstExprHashingUtils::HashString("ApiKeyValidityOutOfBoundsException");
+static constexpr uint32_t API_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ApiLimitExceededException");
+static constexpr uint32_t UNAUTHORIZED_HASH = ConstExprHashingUtils::HashString("UnauthorizedException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BadRequestException");
+static constexpr uint32_t API_KEY_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ApiKeyLimitExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == GRAPH_Q_L_SCHEMA_HASH)
   {

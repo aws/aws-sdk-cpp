@@ -33,16 +33,16 @@ template<> AWS_SAGEMAKERRUNTIME_API ModelStreamError SageMakerRuntimeError::GetM
 namespace SageMakerRuntimeErrorMapper
 {
 
-static const int MODEL_HASH = HashingUtils::HashString("ModelError");
-static const int INTERNAL_DEPENDENCY_HASH = HashingUtils::HashString("InternalDependencyException");
-static const int INTERNAL_STREAM_FAILURE_HASH = HashingUtils::HashString("InternalStreamFailure");
-static const int MODEL_STREAM_HASH = HashingUtils::HashString("ModelStreamError");
-static const int MODEL_NOT_READY_HASH = HashingUtils::HashString("ModelNotReadyException");
+static constexpr uint32_t MODEL_HASH = ConstExprHashingUtils::HashString("ModelError");
+static constexpr uint32_t INTERNAL_DEPENDENCY_HASH = ConstExprHashingUtils::HashString("InternalDependencyException");
+static constexpr uint32_t INTERNAL_STREAM_FAILURE_HASH = ConstExprHashingUtils::HashString("InternalStreamFailure");
+static constexpr uint32_t MODEL_STREAM_HASH = ConstExprHashingUtils::HashString("ModelStreamError");
+static constexpr uint32_t MODEL_NOT_READY_HASH = ConstExprHashingUtils::HashString("ModelNotReadyException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == MODEL_HASH)
   {

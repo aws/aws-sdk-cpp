@@ -20,15 +20,15 @@ namespace Aws
       namespace JobManifestFieldNameMapper
       {
 
-        static const int Ignore_HASH = HashingUtils::HashString("Ignore");
-        static const int Bucket_HASH = HashingUtils::HashString("Bucket");
-        static const int Key_HASH = HashingUtils::HashString("Key");
-        static const int VersionId_HASH = HashingUtils::HashString("VersionId");
+        static constexpr uint32_t Ignore_HASH = ConstExprHashingUtils::HashString("Ignore");
+        static constexpr uint32_t Bucket_HASH = ConstExprHashingUtils::HashString("Bucket");
+        static constexpr uint32_t Key_HASH = ConstExprHashingUtils::HashString("Key");
+        static constexpr uint32_t VersionId_HASH = ConstExprHashingUtils::HashString("VersionId");
 
 
         JobManifestFieldName GetJobManifestFieldNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Ignore_HASH)
           {
             return JobManifestFieldName::Ignore;

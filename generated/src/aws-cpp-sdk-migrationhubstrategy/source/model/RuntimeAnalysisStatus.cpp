@@ -20,15 +20,15 @@ namespace Aws
       namespace RuntimeAnalysisStatusMapper
       {
 
-        static const int ANALYSIS_TO_BE_SCHEDULED_HASH = HashingUtils::HashString("ANALYSIS_TO_BE_SCHEDULED");
-        static const int ANALYSIS_STARTED_HASH = HashingUtils::HashString("ANALYSIS_STARTED");
-        static const int ANALYSIS_SUCCESS_HASH = HashingUtils::HashString("ANALYSIS_SUCCESS");
-        static const int ANALYSIS_FAILED_HASH = HashingUtils::HashString("ANALYSIS_FAILED");
+        static constexpr uint32_t ANALYSIS_TO_BE_SCHEDULED_HASH = ConstExprHashingUtils::HashString("ANALYSIS_TO_BE_SCHEDULED");
+        static constexpr uint32_t ANALYSIS_STARTED_HASH = ConstExprHashingUtils::HashString("ANALYSIS_STARTED");
+        static constexpr uint32_t ANALYSIS_SUCCESS_HASH = ConstExprHashingUtils::HashString("ANALYSIS_SUCCESS");
+        static constexpr uint32_t ANALYSIS_FAILED_HASH = ConstExprHashingUtils::HashString("ANALYSIS_FAILED");
 
 
         RuntimeAnalysisStatus GetRuntimeAnalysisStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ANALYSIS_TO_BE_SCHEDULED_HASH)
           {
             return RuntimeAnalysisStatus::ANALYSIS_TO_BE_SCHEDULED;

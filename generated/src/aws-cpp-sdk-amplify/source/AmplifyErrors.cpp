@@ -26,16 +26,16 @@ template<> AWS_AMPLIFY_API ResourceNotFoundException AmplifyError::GetModeledErr
 namespace AmplifyErrorMapper
 {
 
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int DEPENDENT_SERVICE_FAILURE_HASH = HashingUtils::HashString("DependentServiceFailureException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
+static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NotFoundException");
+static constexpr uint32_t UNAUTHORIZED_HASH = ConstExprHashingUtils::HashString("UnauthorizedException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t DEPENDENT_SERVICE_FAILURE_HASH = ConstExprHashingUtils::HashString("DependentServiceFailureException");
+static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BadRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == NOT_FOUND_HASH)
   {

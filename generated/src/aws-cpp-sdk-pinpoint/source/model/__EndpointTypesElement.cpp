@@ -20,24 +20,24 @@ namespace Aws
       namespace __EndpointTypesElementMapper
       {
 
-        static const int PUSH_HASH = HashingUtils::HashString("PUSH");
-        static const int GCM_HASH = HashingUtils::HashString("GCM");
-        static const int APNS_HASH = HashingUtils::HashString("APNS");
-        static const int APNS_SANDBOX_HASH = HashingUtils::HashString("APNS_SANDBOX");
-        static const int APNS_VOIP_HASH = HashingUtils::HashString("APNS_VOIP");
-        static const int APNS_VOIP_SANDBOX_HASH = HashingUtils::HashString("APNS_VOIP_SANDBOX");
-        static const int ADM_HASH = HashingUtils::HashString("ADM");
-        static const int SMS_HASH = HashingUtils::HashString("SMS");
-        static const int VOICE_HASH = HashingUtils::HashString("VOICE");
-        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
-        static const int BAIDU_HASH = HashingUtils::HashString("BAIDU");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
-        static const int IN_APP_HASH = HashingUtils::HashString("IN_APP");
+        static constexpr uint32_t PUSH_HASH = ConstExprHashingUtils::HashString("PUSH");
+        static constexpr uint32_t GCM_HASH = ConstExprHashingUtils::HashString("GCM");
+        static constexpr uint32_t APNS_HASH = ConstExprHashingUtils::HashString("APNS");
+        static constexpr uint32_t APNS_SANDBOX_HASH = ConstExprHashingUtils::HashString("APNS_SANDBOX");
+        static constexpr uint32_t APNS_VOIP_HASH = ConstExprHashingUtils::HashString("APNS_VOIP");
+        static constexpr uint32_t APNS_VOIP_SANDBOX_HASH = ConstExprHashingUtils::HashString("APNS_VOIP_SANDBOX");
+        static constexpr uint32_t ADM_HASH = ConstExprHashingUtils::HashString("ADM");
+        static constexpr uint32_t SMS_HASH = ConstExprHashingUtils::HashString("SMS");
+        static constexpr uint32_t VOICE_HASH = ConstExprHashingUtils::HashString("VOICE");
+        static constexpr uint32_t EMAIL_HASH = ConstExprHashingUtils::HashString("EMAIL");
+        static constexpr uint32_t BAIDU_HASH = ConstExprHashingUtils::HashString("BAIDU");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t IN_APP_HASH = ConstExprHashingUtils::HashString("IN_APP");
 
 
         __EndpointTypesElement Get__EndpointTypesElementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUSH_HASH)
           {
             return __EndpointTypesElement::PUSH;

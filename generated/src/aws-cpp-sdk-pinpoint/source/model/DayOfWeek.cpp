@@ -20,18 +20,18 @@ namespace Aws
       namespace DayOfWeekMapper
       {
 
-        static const int MONDAY_HASH = HashingUtils::HashString("MONDAY");
-        static const int TUESDAY_HASH = HashingUtils::HashString("TUESDAY");
-        static const int WEDNESDAY_HASH = HashingUtils::HashString("WEDNESDAY");
-        static const int THURSDAY_HASH = HashingUtils::HashString("THURSDAY");
-        static const int FRIDAY_HASH = HashingUtils::HashString("FRIDAY");
-        static const int SATURDAY_HASH = HashingUtils::HashString("SATURDAY");
-        static const int SUNDAY_HASH = HashingUtils::HashString("SUNDAY");
+        static constexpr uint32_t MONDAY_HASH = ConstExprHashingUtils::HashString("MONDAY");
+        static constexpr uint32_t TUESDAY_HASH = ConstExprHashingUtils::HashString("TUESDAY");
+        static constexpr uint32_t WEDNESDAY_HASH = ConstExprHashingUtils::HashString("WEDNESDAY");
+        static constexpr uint32_t THURSDAY_HASH = ConstExprHashingUtils::HashString("THURSDAY");
+        static constexpr uint32_t FRIDAY_HASH = ConstExprHashingUtils::HashString("FRIDAY");
+        static constexpr uint32_t SATURDAY_HASH = ConstExprHashingUtils::HashString("SATURDAY");
+        static constexpr uint32_t SUNDAY_HASH = ConstExprHashingUtils::HashString("SUNDAY");
 
 
         DayOfWeek GetDayOfWeekForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MONDAY_HASH)
           {
             return DayOfWeek::MONDAY;

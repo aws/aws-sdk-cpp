@@ -20,14 +20,14 @@ namespace Aws
       namespace S3EncryptionModeMapper
       {
 
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int SSE_KMS_HASH = HashingUtils::HashString("SSE-KMS");
-        static const int SSE_S3_HASH = HashingUtils::HashString("SSE-S3");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t SSE_KMS_HASH = ConstExprHashingUtils::HashString("SSE-KMS");
+        static constexpr uint32_t SSE_S3_HASH = ConstExprHashingUtils::HashString("SSE-S3");
 
 
         S3EncryptionMode GetS3EncryptionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISABLED_HASH)
           {
             return S3EncryptionMode::DISABLED;

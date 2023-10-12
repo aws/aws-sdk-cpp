@@ -20,18 +20,18 @@ namespace Aws
       namespace ParamTypeMapper
       {
 
-        static const int str_HASH = HashingUtils::HashString("str");
-        static const int int__HASH = HashingUtils::HashString("int");
-        static const int float__HASH = HashingUtils::HashString("float");
-        static const int complex_HASH = HashingUtils::HashString("complex");
-        static const int bool__HASH = HashingUtils::HashString("bool");
-        static const int list_HASH = HashingUtils::HashString("list");
-        static const int null_HASH = HashingUtils::HashString("null");
+        static constexpr uint32_t str_HASH = ConstExprHashingUtils::HashString("str");
+        static constexpr uint32_t int__HASH = ConstExprHashingUtils::HashString("int");
+        static constexpr uint32_t float__HASH = ConstExprHashingUtils::HashString("float");
+        static constexpr uint32_t complex_HASH = ConstExprHashingUtils::HashString("complex");
+        static constexpr uint32_t bool__HASH = ConstExprHashingUtils::HashString("bool");
+        static constexpr uint32_t list_HASH = ConstExprHashingUtils::HashString("list");
+        static constexpr uint32_t null_HASH = ConstExprHashingUtils::HashString("null");
 
 
         ParamType GetParamTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == str_HASH)
           {
             return ParamType::str;

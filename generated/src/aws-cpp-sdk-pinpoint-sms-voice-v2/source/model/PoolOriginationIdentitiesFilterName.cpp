@@ -20,13 +20,13 @@ namespace Aws
       namespace PoolOriginationIdentitiesFilterNameMapper
       {
 
-        static const int iso_country_code_HASH = HashingUtils::HashString("iso-country-code");
-        static const int number_capability_HASH = HashingUtils::HashString("number-capability");
+        static constexpr uint32_t iso_country_code_HASH = ConstExprHashingUtils::HashString("iso-country-code");
+        static constexpr uint32_t number_capability_HASH = ConstExprHashingUtils::HashString("number-capability");
 
 
         PoolOriginationIdentitiesFilterName GetPoolOriginationIdentitiesFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == iso_country_code_HASH)
           {
             return PoolOriginationIdentitiesFilterName::iso_country_code;

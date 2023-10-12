@@ -20,16 +20,16 @@ namespace Aws
       namespace ProvisioningArtifactTypeMapper
       {
 
-        static const int CLOUD_FORMATION_TEMPLATE_HASH = HashingUtils::HashString("CLOUD_FORMATION_TEMPLATE");
-        static const int MARKETPLACE_AMI_HASH = HashingUtils::HashString("MARKETPLACE_AMI");
-        static const int MARKETPLACE_CAR_HASH = HashingUtils::HashString("MARKETPLACE_CAR");
-        static const int TERRAFORM_OPEN_SOURCE_HASH = HashingUtils::HashString("TERRAFORM_OPEN_SOURCE");
-        static const int TERRAFORM_CLOUD_HASH = HashingUtils::HashString("TERRAFORM_CLOUD");
+        static constexpr uint32_t CLOUD_FORMATION_TEMPLATE_HASH = ConstExprHashingUtils::HashString("CLOUD_FORMATION_TEMPLATE");
+        static constexpr uint32_t MARKETPLACE_AMI_HASH = ConstExprHashingUtils::HashString("MARKETPLACE_AMI");
+        static constexpr uint32_t MARKETPLACE_CAR_HASH = ConstExprHashingUtils::HashString("MARKETPLACE_CAR");
+        static constexpr uint32_t TERRAFORM_OPEN_SOURCE_HASH = ConstExprHashingUtils::HashString("TERRAFORM_OPEN_SOURCE");
+        static constexpr uint32_t TERRAFORM_CLOUD_HASH = ConstExprHashingUtils::HashString("TERRAFORM_CLOUD");
 
 
         ProvisioningArtifactType GetProvisioningArtifactTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLOUD_FORMATION_TEMPLATE_HASH)
           {
             return ProvisioningArtifactType::CLOUD_FORMATION_TEMPLATE;

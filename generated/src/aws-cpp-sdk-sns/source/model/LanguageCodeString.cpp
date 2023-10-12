@@ -20,24 +20,24 @@ namespace Aws
       namespace LanguageCodeStringMapper
       {
 
-        static const int en_US_HASH = HashingUtils::HashString("en-US");
-        static const int en_GB_HASH = HashingUtils::HashString("en-GB");
-        static const int es_419_HASH = HashingUtils::HashString("es-419");
-        static const int es_ES_HASH = HashingUtils::HashString("es-ES");
-        static const int de_DE_HASH = HashingUtils::HashString("de-DE");
-        static const int fr_CA_HASH = HashingUtils::HashString("fr-CA");
-        static const int fr_FR_HASH = HashingUtils::HashString("fr-FR");
-        static const int it_IT_HASH = HashingUtils::HashString("it-IT");
-        static const int ja_JP_HASH = HashingUtils::HashString("ja-JP");
-        static const int pt_BR_HASH = HashingUtils::HashString("pt-BR");
-        static const int kr_KR_HASH = HashingUtils::HashString("kr-KR");
-        static const int zh_CN_HASH = HashingUtils::HashString("zh-CN");
-        static const int zh_TW_HASH = HashingUtils::HashString("zh-TW");
+        static constexpr uint32_t en_US_HASH = ConstExprHashingUtils::HashString("en-US");
+        static constexpr uint32_t en_GB_HASH = ConstExprHashingUtils::HashString("en-GB");
+        static constexpr uint32_t es_419_HASH = ConstExprHashingUtils::HashString("es-419");
+        static constexpr uint32_t es_ES_HASH = ConstExprHashingUtils::HashString("es-ES");
+        static constexpr uint32_t de_DE_HASH = ConstExprHashingUtils::HashString("de-DE");
+        static constexpr uint32_t fr_CA_HASH = ConstExprHashingUtils::HashString("fr-CA");
+        static constexpr uint32_t fr_FR_HASH = ConstExprHashingUtils::HashString("fr-FR");
+        static constexpr uint32_t it_IT_HASH = ConstExprHashingUtils::HashString("it-IT");
+        static constexpr uint32_t ja_JP_HASH = ConstExprHashingUtils::HashString("ja-JP");
+        static constexpr uint32_t pt_BR_HASH = ConstExprHashingUtils::HashString("pt-BR");
+        static constexpr uint32_t kr_KR_HASH = ConstExprHashingUtils::HashString("kr-KR");
+        static constexpr uint32_t zh_CN_HASH = ConstExprHashingUtils::HashString("zh-CN");
+        static constexpr uint32_t zh_TW_HASH = ConstExprHashingUtils::HashString("zh-TW");
 
 
         LanguageCodeString GetLanguageCodeStringForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == en_US_HASH)
           {
             return LanguageCodeString::en_US;

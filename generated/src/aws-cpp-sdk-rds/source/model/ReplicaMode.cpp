@@ -20,13 +20,13 @@ namespace Aws
       namespace ReplicaModeMapper
       {
 
-        static const int open_read_only_HASH = HashingUtils::HashString("open-read-only");
-        static const int mounted_HASH = HashingUtils::HashString("mounted");
+        static constexpr uint32_t open_read_only_HASH = ConstExprHashingUtils::HashString("open-read-only");
+        static constexpr uint32_t mounted_HASH = ConstExprHashingUtils::HashString("mounted");
 
 
         ReplicaMode GetReplicaModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == open_read_only_HASH)
           {
             return ReplicaMode::open_read_only;

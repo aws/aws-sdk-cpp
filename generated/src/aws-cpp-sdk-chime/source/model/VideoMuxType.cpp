@@ -20,12 +20,12 @@ namespace Aws
       namespace VideoMuxTypeMapper
       {
 
-        static const int VideoOnly_HASH = HashingUtils::HashString("VideoOnly");
+        static constexpr uint32_t VideoOnly_HASH = ConstExprHashingUtils::HashString("VideoOnly");
 
 
         VideoMuxType GetVideoMuxTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VideoOnly_HASH)
           {
             return VideoMuxType::VideoOnly;

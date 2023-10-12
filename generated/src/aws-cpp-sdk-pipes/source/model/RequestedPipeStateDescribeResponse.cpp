@@ -20,14 +20,14 @@ namespace Aws
       namespace RequestedPipeStateDescribeResponseMapper
       {
 
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         RequestedPipeStateDescribeResponse GetRequestedPipeStateDescribeResponseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RUNNING_HASH)
           {
             return RequestedPipeStateDescribeResponse::RUNNING;

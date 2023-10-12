@@ -20,18 +20,18 @@ namespace Aws
       namespace ColorimetryMapper
       {
 
-        static const int BT601_HASH = HashingUtils::HashString("BT601");
-        static const int BT709_HASH = HashingUtils::HashString("BT709");
-        static const int BT2020_HASH = HashingUtils::HashString("BT2020");
-        static const int BT2100_HASH = HashingUtils::HashString("BT2100");
-        static const int ST2065_1_HASH = HashingUtils::HashString("ST2065-1");
-        static const int ST2065_3_HASH = HashingUtils::HashString("ST2065-3");
-        static const int XYZ_HASH = HashingUtils::HashString("XYZ");
+        static constexpr uint32_t BT601_HASH = ConstExprHashingUtils::HashString("BT601");
+        static constexpr uint32_t BT709_HASH = ConstExprHashingUtils::HashString("BT709");
+        static constexpr uint32_t BT2020_HASH = ConstExprHashingUtils::HashString("BT2020");
+        static constexpr uint32_t BT2100_HASH = ConstExprHashingUtils::HashString("BT2100");
+        static constexpr uint32_t ST2065_1_HASH = ConstExprHashingUtils::HashString("ST2065-1");
+        static constexpr uint32_t ST2065_3_HASH = ConstExprHashingUtils::HashString("ST2065-3");
+        static constexpr uint32_t XYZ_HASH = ConstExprHashingUtils::HashString("XYZ");
 
 
         Colorimetry GetColorimetryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BT601_HASH)
           {
             return Colorimetry::BT601;

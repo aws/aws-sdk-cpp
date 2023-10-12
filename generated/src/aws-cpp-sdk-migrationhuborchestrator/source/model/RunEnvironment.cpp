@@ -20,13 +20,13 @@ namespace Aws
       namespace RunEnvironmentMapper
       {
 
-        static const int AWS_HASH = HashingUtils::HashString("AWS");
-        static const int ONPREMISE_HASH = HashingUtils::HashString("ONPREMISE");
+        static constexpr uint32_t AWS_HASH = ConstExprHashingUtils::HashString("AWS");
+        static constexpr uint32_t ONPREMISE_HASH = ConstExprHashingUtils::HashString("ONPREMISE");
 
 
         RunEnvironment GetRunEnvironmentForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_HASH)
           {
             return RunEnvironment::AWS;

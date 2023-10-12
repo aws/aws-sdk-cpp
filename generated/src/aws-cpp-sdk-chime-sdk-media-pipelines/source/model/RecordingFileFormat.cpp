@@ -20,13 +20,13 @@ namespace Aws
       namespace RecordingFileFormatMapper
       {
 
-        static const int Wav_HASH = HashingUtils::HashString("Wav");
-        static const int Opus_HASH = HashingUtils::HashString("Opus");
+        static constexpr uint32_t Wav_HASH = ConstExprHashingUtils::HashString("Wav");
+        static constexpr uint32_t Opus_HASH = ConstExprHashingUtils::HashString("Opus");
 
 
         RecordingFileFormat GetRecordingFileFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Wav_HASH)
           {
             return RecordingFileFormat::Wav;

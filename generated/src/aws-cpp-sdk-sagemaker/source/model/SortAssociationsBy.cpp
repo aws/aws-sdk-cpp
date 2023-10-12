@@ -20,16 +20,16 @@ namespace Aws
       namespace SortAssociationsByMapper
       {
 
-        static const int SourceArn_HASH = HashingUtils::HashString("SourceArn");
-        static const int DestinationArn_HASH = HashingUtils::HashString("DestinationArn");
-        static const int SourceType_HASH = HashingUtils::HashString("SourceType");
-        static const int DestinationType_HASH = HashingUtils::HashString("DestinationType");
-        static const int CreationTime_HASH = HashingUtils::HashString("CreationTime");
+        static constexpr uint32_t SourceArn_HASH = ConstExprHashingUtils::HashString("SourceArn");
+        static constexpr uint32_t DestinationArn_HASH = ConstExprHashingUtils::HashString("DestinationArn");
+        static constexpr uint32_t SourceType_HASH = ConstExprHashingUtils::HashString("SourceType");
+        static constexpr uint32_t DestinationType_HASH = ConstExprHashingUtils::HashString("DestinationType");
+        static constexpr uint32_t CreationTime_HASH = ConstExprHashingUtils::HashString("CreationTime");
 
 
         SortAssociationsBy GetSortAssociationsByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SourceArn_HASH)
           {
             return SortAssociationsBy::SourceArn;

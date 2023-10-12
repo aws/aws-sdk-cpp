@@ -20,18 +20,18 @@ namespace Aws
       namespace CLMLanguageCodeMapper
       {
 
-        static const int en_US_HASH = HashingUtils::HashString("en-US");
-        static const int hi_IN_HASH = HashingUtils::HashString("hi-IN");
-        static const int es_US_HASH = HashingUtils::HashString("es-US");
-        static const int en_GB_HASH = HashingUtils::HashString("en-GB");
-        static const int en_AU_HASH = HashingUtils::HashString("en-AU");
-        static const int de_DE_HASH = HashingUtils::HashString("de-DE");
-        static const int ja_JP_HASH = HashingUtils::HashString("ja-JP");
+        static constexpr uint32_t en_US_HASH = ConstExprHashingUtils::HashString("en-US");
+        static constexpr uint32_t hi_IN_HASH = ConstExprHashingUtils::HashString("hi-IN");
+        static constexpr uint32_t es_US_HASH = ConstExprHashingUtils::HashString("es-US");
+        static constexpr uint32_t en_GB_HASH = ConstExprHashingUtils::HashString("en-GB");
+        static constexpr uint32_t en_AU_HASH = ConstExprHashingUtils::HashString("en-AU");
+        static constexpr uint32_t de_DE_HASH = ConstExprHashingUtils::HashString("de-DE");
+        static constexpr uint32_t ja_JP_HASH = ConstExprHashingUtils::HashString("ja-JP");
 
 
         CLMLanguageCode GetCLMLanguageCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == en_US_HASH)
           {
             return CLMLanguageCode::en_US;

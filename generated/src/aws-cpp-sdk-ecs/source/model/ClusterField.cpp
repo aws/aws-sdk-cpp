@@ -20,16 +20,16 @@ namespace Aws
       namespace ClusterFieldMapper
       {
 
-        static const int ATTACHMENTS_HASH = HashingUtils::HashString("ATTACHMENTS");
-        static const int CONFIGURATIONS_HASH = HashingUtils::HashString("CONFIGURATIONS");
-        static const int SETTINGS_HASH = HashingUtils::HashString("SETTINGS");
-        static const int STATISTICS_HASH = HashingUtils::HashString("STATISTICS");
-        static const int TAGS_HASH = HashingUtils::HashString("TAGS");
+        static constexpr uint32_t ATTACHMENTS_HASH = ConstExprHashingUtils::HashString("ATTACHMENTS");
+        static constexpr uint32_t CONFIGURATIONS_HASH = ConstExprHashingUtils::HashString("CONFIGURATIONS");
+        static constexpr uint32_t SETTINGS_HASH = ConstExprHashingUtils::HashString("SETTINGS");
+        static constexpr uint32_t STATISTICS_HASH = ConstExprHashingUtils::HashString("STATISTICS");
+        static constexpr uint32_t TAGS_HASH = ConstExprHashingUtils::HashString("TAGS");
 
 
         ClusterField GetClusterFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ATTACHMENTS_HASH)
           {
             return ClusterField::ATTACHMENTS;

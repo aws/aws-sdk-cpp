@@ -20,12 +20,12 @@ namespace Aws
       namespace IpamPoolAwsServiceMapper
       {
 
-        static const int ec2_HASH = HashingUtils::HashString("ec2");
+        static constexpr uint32_t ec2_HASH = ConstExprHashingUtils::HashString("ec2");
 
 
         IpamPoolAwsService GetIpamPoolAwsServiceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ec2_HASH)
           {
             return IpamPoolAwsService::ec2;

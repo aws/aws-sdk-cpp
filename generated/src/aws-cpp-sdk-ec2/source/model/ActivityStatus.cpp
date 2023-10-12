@@ -20,15 +20,15 @@ namespace Aws
       namespace ActivityStatusMapper
       {
 
-        static const int error_HASH = HashingUtils::HashString("error");
-        static const int pending_fulfillment_HASH = HashingUtils::HashString("pending_fulfillment");
-        static const int pending_termination_HASH = HashingUtils::HashString("pending_termination");
-        static const int fulfilled_HASH = HashingUtils::HashString("fulfilled");
+        static constexpr uint32_t error_HASH = ConstExprHashingUtils::HashString("error");
+        static constexpr uint32_t pending_fulfillment_HASH = ConstExprHashingUtils::HashString("pending_fulfillment");
+        static constexpr uint32_t pending_termination_HASH = ConstExprHashingUtils::HashString("pending_termination");
+        static constexpr uint32_t fulfilled_HASH = ConstExprHashingUtils::HashString("fulfilled");
 
 
         ActivityStatus GetActivityStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == error_HASH)
           {
             return ActivityStatus::error;

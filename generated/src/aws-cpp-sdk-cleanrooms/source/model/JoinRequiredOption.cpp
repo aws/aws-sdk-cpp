@@ -20,12 +20,12 @@ namespace Aws
       namespace JoinRequiredOptionMapper
       {
 
-        static const int QUERY_RUNNER_HASH = HashingUtils::HashString("QUERY_RUNNER");
+        static constexpr uint32_t QUERY_RUNNER_HASH = ConstExprHashingUtils::HashString("QUERY_RUNNER");
 
 
         JoinRequiredOption GetJoinRequiredOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUERY_RUNNER_HASH)
           {
             return JoinRequiredOption::QUERY_RUNNER;

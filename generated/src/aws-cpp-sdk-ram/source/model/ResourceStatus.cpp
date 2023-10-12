@@ -20,16 +20,16 @@ namespace Aws
       namespace ResourceStatusMapper
       {
 
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int ZONAL_RESOURCE_INACCESSIBLE_HASH = HashingUtils::HashString("ZONAL_RESOURCE_INACCESSIBLE");
-        static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LIMIT_EXCEEDED");
-        static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t ZONAL_RESOURCE_INACCESSIBLE_HASH = ConstExprHashingUtils::HashString("ZONAL_RESOURCE_INACCESSIBLE");
+        static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LIMIT_EXCEEDED");
+        static constexpr uint32_t UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("UNAVAILABLE");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
 
 
         ResourceStatus GetResourceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVAILABLE_HASH)
           {
             return ResourceStatus::AVAILABLE;

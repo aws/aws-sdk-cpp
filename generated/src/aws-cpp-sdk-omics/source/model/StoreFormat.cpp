@@ -20,14 +20,14 @@ namespace Aws
       namespace StoreFormatMapper
       {
 
-        static const int GFF_HASH = HashingUtils::HashString("GFF");
-        static const int TSV_HASH = HashingUtils::HashString("TSV");
-        static const int VCF_HASH = HashingUtils::HashString("VCF");
+        static constexpr uint32_t GFF_HASH = ConstExprHashingUtils::HashString("GFF");
+        static constexpr uint32_t TSV_HASH = ConstExprHashingUtils::HashString("TSV");
+        static constexpr uint32_t VCF_HASH = ConstExprHashingUtils::HashString("VCF");
 
 
         StoreFormat GetStoreFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GFF_HASH)
           {
             return StoreFormat::GFF;

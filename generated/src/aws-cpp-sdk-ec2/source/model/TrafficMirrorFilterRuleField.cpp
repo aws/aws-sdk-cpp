@@ -20,15 +20,15 @@ namespace Aws
       namespace TrafficMirrorFilterRuleFieldMapper
       {
 
-        static const int destination_port_range_HASH = HashingUtils::HashString("destination-port-range");
-        static const int source_port_range_HASH = HashingUtils::HashString("source-port-range");
-        static const int protocol_HASH = HashingUtils::HashString("protocol");
-        static const int description_HASH = HashingUtils::HashString("description");
+        static constexpr uint32_t destination_port_range_HASH = ConstExprHashingUtils::HashString("destination-port-range");
+        static constexpr uint32_t source_port_range_HASH = ConstExprHashingUtils::HashString("source-port-range");
+        static constexpr uint32_t protocol_HASH = ConstExprHashingUtils::HashString("protocol");
+        static constexpr uint32_t description_HASH = ConstExprHashingUtils::HashString("description");
 
 
         TrafficMirrorFilterRuleField GetTrafficMirrorFilterRuleFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == destination_port_range_HASH)
           {
             return TrafficMirrorFilterRuleField::destination_port_range;

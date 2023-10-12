@@ -20,19 +20,19 @@ namespace Aws
       namespace HealthCheckRegionMapper
       {
 
-        static const int us_east_1_HASH = HashingUtils::HashString("us-east-1");
-        static const int us_west_1_HASH = HashingUtils::HashString("us-west-1");
-        static const int us_west_2_HASH = HashingUtils::HashString("us-west-2");
-        static const int eu_west_1_HASH = HashingUtils::HashString("eu-west-1");
-        static const int ap_southeast_1_HASH = HashingUtils::HashString("ap-southeast-1");
-        static const int ap_southeast_2_HASH = HashingUtils::HashString("ap-southeast-2");
-        static const int ap_northeast_1_HASH = HashingUtils::HashString("ap-northeast-1");
-        static const int sa_east_1_HASH = HashingUtils::HashString("sa-east-1");
+        static constexpr uint32_t us_east_1_HASH = ConstExprHashingUtils::HashString("us-east-1");
+        static constexpr uint32_t us_west_1_HASH = ConstExprHashingUtils::HashString("us-west-1");
+        static constexpr uint32_t us_west_2_HASH = ConstExprHashingUtils::HashString("us-west-2");
+        static constexpr uint32_t eu_west_1_HASH = ConstExprHashingUtils::HashString("eu-west-1");
+        static constexpr uint32_t ap_southeast_1_HASH = ConstExprHashingUtils::HashString("ap-southeast-1");
+        static constexpr uint32_t ap_southeast_2_HASH = ConstExprHashingUtils::HashString("ap-southeast-2");
+        static constexpr uint32_t ap_northeast_1_HASH = ConstExprHashingUtils::HashString("ap-northeast-1");
+        static constexpr uint32_t sa_east_1_HASH = ConstExprHashingUtils::HashString("sa-east-1");
 
 
         HealthCheckRegion GetHealthCheckRegionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == us_east_1_HASH)
           {
             return HealthCheckRegion::us_east_1;

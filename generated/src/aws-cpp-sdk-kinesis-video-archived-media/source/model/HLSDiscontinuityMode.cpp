@@ -20,14 +20,14 @@ namespace Aws
       namespace HLSDiscontinuityModeMapper
       {
 
-        static const int ALWAYS_HASH = HashingUtils::HashString("ALWAYS");
-        static const int NEVER_HASH = HashingUtils::HashString("NEVER");
-        static const int ON_DISCONTINUITY_HASH = HashingUtils::HashString("ON_DISCONTINUITY");
+        static constexpr uint32_t ALWAYS_HASH = ConstExprHashingUtils::HashString("ALWAYS");
+        static constexpr uint32_t NEVER_HASH = ConstExprHashingUtils::HashString("NEVER");
+        static constexpr uint32_t ON_DISCONTINUITY_HASH = ConstExprHashingUtils::HashString("ON_DISCONTINUITY");
 
 
         HLSDiscontinuityMode GetHLSDiscontinuityModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALWAYS_HASH)
           {
             return HLSDiscontinuityMode::ALWAYS;

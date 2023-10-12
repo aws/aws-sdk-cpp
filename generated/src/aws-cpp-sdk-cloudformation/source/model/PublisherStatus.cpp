@@ -20,13 +20,13 @@ namespace Aws
       namespace PublisherStatusMapper
       {
 
-        static const int VERIFIED_HASH = HashingUtils::HashString("VERIFIED");
-        static const int UNVERIFIED_HASH = HashingUtils::HashString("UNVERIFIED");
+        static constexpr uint32_t VERIFIED_HASH = ConstExprHashingUtils::HashString("VERIFIED");
+        static constexpr uint32_t UNVERIFIED_HASH = ConstExprHashingUtils::HashString("UNVERIFIED");
 
 
         PublisherStatus GetPublisherStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VERIFIED_HASH)
           {
             return PublisherStatus::VERIFIED;

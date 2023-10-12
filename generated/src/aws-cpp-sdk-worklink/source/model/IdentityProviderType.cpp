@@ -20,12 +20,12 @@ namespace Aws
       namespace IdentityProviderTypeMapper
       {
 
-        static const int SAML_HASH = HashingUtils::HashString("SAML");
+        static constexpr uint32_t SAML_HASH = ConstExprHashingUtils::HashString("SAML");
 
 
         IdentityProviderType GetIdentityProviderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SAML_HASH)
           {
             return IdentityProviderType::SAML;

@@ -20,20 +20,20 @@ namespace Aws
       namespace MetadataFieldMapper
       {
 
-        static const int ComputePlatform_HASH = HashingUtils::HashString("ComputePlatform");
-        static const int AgentId_HASH = HashingUtils::HashString("AgentId");
-        static const int AwsRequestId_HASH = HashingUtils::HashString("AwsRequestId");
-        static const int ExecutionEnvironment_HASH = HashingUtils::HashString("ExecutionEnvironment");
-        static const int LambdaFunctionArn_HASH = HashingUtils::HashString("LambdaFunctionArn");
-        static const int LambdaMemoryLimitInMB_HASH = HashingUtils::HashString("LambdaMemoryLimitInMB");
-        static const int LambdaRemainingTimeInMilliseconds_HASH = HashingUtils::HashString("LambdaRemainingTimeInMilliseconds");
-        static const int LambdaTimeGapBetweenInvokesInMilliseconds_HASH = HashingUtils::HashString("LambdaTimeGapBetweenInvokesInMilliseconds");
-        static const int LambdaPreviousExecutionTimeInMilliseconds_HASH = HashingUtils::HashString("LambdaPreviousExecutionTimeInMilliseconds");
+        static constexpr uint32_t ComputePlatform_HASH = ConstExprHashingUtils::HashString("ComputePlatform");
+        static constexpr uint32_t AgentId_HASH = ConstExprHashingUtils::HashString("AgentId");
+        static constexpr uint32_t AwsRequestId_HASH = ConstExprHashingUtils::HashString("AwsRequestId");
+        static constexpr uint32_t ExecutionEnvironment_HASH = ConstExprHashingUtils::HashString("ExecutionEnvironment");
+        static constexpr uint32_t LambdaFunctionArn_HASH = ConstExprHashingUtils::HashString("LambdaFunctionArn");
+        static constexpr uint32_t LambdaMemoryLimitInMB_HASH = ConstExprHashingUtils::HashString("LambdaMemoryLimitInMB");
+        static constexpr uint32_t LambdaRemainingTimeInMilliseconds_HASH = ConstExprHashingUtils::HashString("LambdaRemainingTimeInMilliseconds");
+        static constexpr uint32_t LambdaTimeGapBetweenInvokesInMilliseconds_HASH = ConstExprHashingUtils::HashString("LambdaTimeGapBetweenInvokesInMilliseconds");
+        static constexpr uint32_t LambdaPreviousExecutionTimeInMilliseconds_HASH = ConstExprHashingUtils::HashString("LambdaPreviousExecutionTimeInMilliseconds");
 
 
         MetadataField GetMetadataFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ComputePlatform_HASH)
           {
             return MetadataField::ComputePlatform;

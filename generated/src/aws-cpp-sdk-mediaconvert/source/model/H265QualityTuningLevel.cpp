@@ -20,14 +20,14 @@ namespace Aws
       namespace H265QualityTuningLevelMapper
       {
 
-        static const int SINGLE_PASS_HASH = HashingUtils::HashString("SINGLE_PASS");
-        static const int SINGLE_PASS_HQ_HASH = HashingUtils::HashString("SINGLE_PASS_HQ");
-        static const int MULTI_PASS_HQ_HASH = HashingUtils::HashString("MULTI_PASS_HQ");
+        static constexpr uint32_t SINGLE_PASS_HASH = ConstExprHashingUtils::HashString("SINGLE_PASS");
+        static constexpr uint32_t SINGLE_PASS_HQ_HASH = ConstExprHashingUtils::HashString("SINGLE_PASS_HQ");
+        static constexpr uint32_t MULTI_PASS_HQ_HASH = ConstExprHashingUtils::HashString("MULTI_PASS_HQ");
 
 
         H265QualityTuningLevel GetH265QualityTuningLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SINGLE_PASS_HASH)
           {
             return H265QualityTuningLevel::SINGLE_PASS;

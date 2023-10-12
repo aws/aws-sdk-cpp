@@ -20,12 +20,12 @@ namespace Aws
       namespace ImportSourceDataFormatMapper
       {
 
-        static const int DELIMITED_TEXT_HASH = HashingUtils::HashString("DELIMITED_TEXT");
+        static constexpr uint32_t DELIMITED_TEXT_HASH = ConstExprHashingUtils::HashString("DELIMITED_TEXT");
 
 
         ImportSourceDataFormat GetImportSourceDataFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DELIMITED_TEXT_HASH)
           {
             return ImportSourceDataFormat::DELIMITED_TEXT;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ImageTagMutabilityMapper
       {
 
-        static const int MUTABLE_HASH = HashingUtils::HashString("MUTABLE");
-        static const int IMMUTABLE_HASH = HashingUtils::HashString("IMMUTABLE");
+        static constexpr uint32_t MUTABLE_HASH = ConstExprHashingUtils::HashString("MUTABLE");
+        static constexpr uint32_t IMMUTABLE_HASH = ConstExprHashingUtils::HashString("IMMUTABLE");
 
 
         ImageTagMutability GetImageTagMutabilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MUTABLE_HASH)
           {
             return ImageTagMutability::MUTABLE;

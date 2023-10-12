@@ -20,14 +20,14 @@ namespace Aws
       namespace LookbackWindowSizeUnitMapper
       {
 
-        static const int HOUR_HASH = HashingUtils::HashString("HOUR");
-        static const int DAY_HASH = HashingUtils::HashString("DAY");
-        static const int WEEK_HASH = HashingUtils::HashString("WEEK");
+        static constexpr uint32_t HOUR_HASH = ConstExprHashingUtils::HashString("HOUR");
+        static constexpr uint32_t DAY_HASH = ConstExprHashingUtils::HashString("DAY");
+        static constexpr uint32_t WEEK_HASH = ConstExprHashingUtils::HashString("WEEK");
 
 
         LookbackWindowSizeUnit GetLookbackWindowSizeUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HOUR_HASH)
           {
             return LookbackWindowSizeUnit::HOUR;

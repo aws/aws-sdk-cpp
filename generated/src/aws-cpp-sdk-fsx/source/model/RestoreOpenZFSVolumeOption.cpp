@@ -20,13 +20,13 @@ namespace Aws
       namespace RestoreOpenZFSVolumeOptionMapper
       {
 
-        static const int DELETE_INTERMEDIATE_SNAPSHOTS_HASH = HashingUtils::HashString("DELETE_INTERMEDIATE_SNAPSHOTS");
-        static const int DELETE_CLONED_VOLUMES_HASH = HashingUtils::HashString("DELETE_CLONED_VOLUMES");
+        static constexpr uint32_t DELETE_INTERMEDIATE_SNAPSHOTS_HASH = ConstExprHashingUtils::HashString("DELETE_INTERMEDIATE_SNAPSHOTS");
+        static constexpr uint32_t DELETE_CLONED_VOLUMES_HASH = ConstExprHashingUtils::HashString("DELETE_CLONED_VOLUMES");
 
 
         RestoreOpenZFSVolumeOption GetRestoreOpenZFSVolumeOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DELETE_INTERMEDIATE_SNAPSHOTS_HASH)
           {
             return RestoreOpenZFSVolumeOption::DELETE_INTERMEDIATE_SNAPSHOTS;

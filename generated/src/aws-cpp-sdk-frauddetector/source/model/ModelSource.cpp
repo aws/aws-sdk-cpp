@@ -20,12 +20,12 @@ namespace Aws
       namespace ModelSourceMapper
       {
 
-        static const int SAGEMAKER_HASH = HashingUtils::HashString("SAGEMAKER");
+        static constexpr uint32_t SAGEMAKER_HASH = ConstExprHashingUtils::HashString("SAGEMAKER");
 
 
         ModelSource GetModelSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SAGEMAKER_HASH)
           {
             return ModelSource::SAGEMAKER;

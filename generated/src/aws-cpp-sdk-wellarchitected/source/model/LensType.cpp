@@ -20,14 +20,14 @@ namespace Aws
       namespace LensTypeMapper
       {
 
-        static const int AWS_OFFICIAL_HASH = HashingUtils::HashString("AWS_OFFICIAL");
-        static const int CUSTOM_SHARED_HASH = HashingUtils::HashString("CUSTOM_SHARED");
-        static const int CUSTOM_SELF_HASH = HashingUtils::HashString("CUSTOM_SELF");
+        static constexpr uint32_t AWS_OFFICIAL_HASH = ConstExprHashingUtils::HashString("AWS_OFFICIAL");
+        static constexpr uint32_t CUSTOM_SHARED_HASH = ConstExprHashingUtils::HashString("CUSTOM_SHARED");
+        static constexpr uint32_t CUSTOM_SELF_HASH = ConstExprHashingUtils::HashString("CUSTOM_SELF");
 
 
         LensType GetLensTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_OFFICIAL_HASH)
           {
             return LensType::AWS_OFFICIAL;

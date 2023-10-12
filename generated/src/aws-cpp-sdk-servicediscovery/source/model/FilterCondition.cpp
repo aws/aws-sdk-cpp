@@ -20,15 +20,15 @@ namespace Aws
       namespace FilterConditionMapper
       {
 
-        static const int EQ_HASH = HashingUtils::HashString("EQ");
-        static const int IN_HASH = HashingUtils::HashString("IN");
-        static const int BETWEEN_HASH = HashingUtils::HashString("BETWEEN");
-        static const int BEGINS_WITH_HASH = HashingUtils::HashString("BEGINS_WITH");
+        static constexpr uint32_t EQ_HASH = ConstExprHashingUtils::HashString("EQ");
+        static constexpr uint32_t IN_HASH = ConstExprHashingUtils::HashString("IN");
+        static constexpr uint32_t BETWEEN_HASH = ConstExprHashingUtils::HashString("BETWEEN");
+        static constexpr uint32_t BEGINS_WITH_HASH = ConstExprHashingUtils::HashString("BEGINS_WITH");
 
 
         FilterCondition GetFilterConditionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EQ_HASH)
           {
             return FilterCondition::EQ;

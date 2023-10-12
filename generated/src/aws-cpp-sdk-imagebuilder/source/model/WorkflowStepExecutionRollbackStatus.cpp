@@ -20,15 +20,15 @@ namespace Aws
       namespace WorkflowStepExecutionRollbackStatusMapper
       {
 
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int SKIPPED_HASH = HashingUtils::HashString("SKIPPED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t SKIPPED_HASH = ConstExprHashingUtils::HashString("SKIPPED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         WorkflowStepExecutionRollbackStatus GetWorkflowStepExecutionRollbackStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RUNNING_HASH)
           {
             return WorkflowStepExecutionRollbackStatus::RUNNING;

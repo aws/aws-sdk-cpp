@@ -20,13 +20,13 @@ namespace Aws
       namespace CertificateUsageTypeMapper
       {
 
-        static const int SIGNING_HASH = HashingUtils::HashString("SIGNING");
-        static const int ENCRYPTION_HASH = HashingUtils::HashString("ENCRYPTION");
+        static constexpr uint32_t SIGNING_HASH = ConstExprHashingUtils::HashString("SIGNING");
+        static constexpr uint32_t ENCRYPTION_HASH = ConstExprHashingUtils::HashString("ENCRYPTION");
 
 
         CertificateUsageType GetCertificateUsageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SIGNING_HASH)
           {
             return CertificateUsageType::SIGNING;

@@ -20,13 +20,13 @@ namespace Aws
       namespace CidrCollectionChangeActionMapper
       {
 
-        static const int PUT_HASH = HashingUtils::HashString("PUT");
-        static const int DELETE_IF_EXISTS_HASH = HashingUtils::HashString("DELETE_IF_EXISTS");
+        static constexpr uint32_t PUT_HASH = ConstExprHashingUtils::HashString("PUT");
+        static constexpr uint32_t DELETE_IF_EXISTS_HASH = ConstExprHashingUtils::HashString("DELETE_IF_EXISTS");
 
 
         CidrCollectionChangeAction GetCidrCollectionChangeActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUT_HASH)
           {
             return CidrCollectionChangeAction::PUT;

@@ -20,22 +20,22 @@ namespace Aws
       namespace ImageBuilderStateMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int UPDATING_AGENT_HASH = HashingUtils::HashString("UPDATING_AGENT");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
-        static const int REBOOTING_HASH = HashingUtils::HashString("REBOOTING");
-        static const int SNAPSHOTTING_HASH = HashingUtils::HashString("SNAPSHOTTING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int PENDING_QUALIFICATION_HASH = HashingUtils::HashString("PENDING_QUALIFICATION");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t UPDATING_AGENT_HASH = ConstExprHashingUtils::HashString("UPDATING_AGENT");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
+        static constexpr uint32_t REBOOTING_HASH = ConstExprHashingUtils::HashString("REBOOTING");
+        static constexpr uint32_t SNAPSHOTTING_HASH = ConstExprHashingUtils::HashString("SNAPSHOTTING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t PENDING_QUALIFICATION_HASH = ConstExprHashingUtils::HashString("PENDING_QUALIFICATION");
 
 
         ImageBuilderState GetImageBuilderStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return ImageBuilderState::PENDING;

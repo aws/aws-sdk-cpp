@@ -20,14 +20,14 @@ namespace Aws
       namespace LookbackPeriodInDaysMapper
       {
 
-        static const int SEVEN_DAYS_HASH = HashingUtils::HashString("SEVEN_DAYS");
-        static const int THIRTY_DAYS_HASH = HashingUtils::HashString("THIRTY_DAYS");
-        static const int SIXTY_DAYS_HASH = HashingUtils::HashString("SIXTY_DAYS");
+        static constexpr uint32_t SEVEN_DAYS_HASH = ConstExprHashingUtils::HashString("SEVEN_DAYS");
+        static constexpr uint32_t THIRTY_DAYS_HASH = ConstExprHashingUtils::HashString("THIRTY_DAYS");
+        static constexpr uint32_t SIXTY_DAYS_HASH = ConstExprHashingUtils::HashString("SIXTY_DAYS");
 
 
         LookbackPeriodInDays GetLookbackPeriodInDaysForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SEVEN_DAYS_HASH)
           {
             return LookbackPeriodInDays::SEVEN_DAYS;

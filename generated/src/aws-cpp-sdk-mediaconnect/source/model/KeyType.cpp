@@ -20,14 +20,14 @@ namespace Aws
       namespace KeyTypeMapper
       {
 
-        static const int speke_HASH = HashingUtils::HashString("speke");
-        static const int static_key_HASH = HashingUtils::HashString("static-key");
-        static const int srt_password_HASH = HashingUtils::HashString("srt-password");
+        static constexpr uint32_t speke_HASH = ConstExprHashingUtils::HashString("speke");
+        static constexpr uint32_t static_key_HASH = ConstExprHashingUtils::HashString("static-key");
+        static constexpr uint32_t srt_password_HASH = ConstExprHashingUtils::HashString("srt-password");
 
 
         KeyType GetKeyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == speke_HASH)
           {
             return KeyType::speke;

@@ -20,14 +20,14 @@ namespace Aws
       namespace ImageFormatMapper
       {
 
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
-        static const int JSONEmbedded_HASH = HashingUtils::HashString("JSONEmbedded");
-        static const int JSONDetached_HASH = HashingUtils::HashString("JSONDetached");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
+        static constexpr uint32_t JSONEmbedded_HASH = ConstExprHashingUtils::HashString("JSONEmbedded");
+        static constexpr uint32_t JSONDetached_HASH = ConstExprHashingUtils::HashString("JSONDetached");
 
 
         ImageFormat GetImageFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JSON_HASH)
           {
             return ImageFormat::JSON;

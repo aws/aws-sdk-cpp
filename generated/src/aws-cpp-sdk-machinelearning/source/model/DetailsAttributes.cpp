@@ -20,13 +20,13 @@ namespace Aws
       namespace DetailsAttributesMapper
       {
 
-        static const int PredictiveModelType_HASH = HashingUtils::HashString("PredictiveModelType");
-        static const int Algorithm_HASH = HashingUtils::HashString("Algorithm");
+        static constexpr uint32_t PredictiveModelType_HASH = ConstExprHashingUtils::HashString("PredictiveModelType");
+        static constexpr uint32_t Algorithm_HASH = ConstExprHashingUtils::HashString("Algorithm");
 
 
         DetailsAttributes GetDetailsAttributesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PredictiveModelType_HASH)
           {
             return DetailsAttributes::PredictiveModelType;

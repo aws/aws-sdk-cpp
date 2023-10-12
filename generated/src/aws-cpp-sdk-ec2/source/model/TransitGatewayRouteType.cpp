@@ -20,13 +20,13 @@ namespace Aws
       namespace TransitGatewayRouteTypeMapper
       {
 
-        static const int static__HASH = HashingUtils::HashString("static");
-        static const int propagated_HASH = HashingUtils::HashString("propagated");
+        static constexpr uint32_t static__HASH = ConstExprHashingUtils::HashString("static");
+        static constexpr uint32_t propagated_HASH = ConstExprHashingUtils::HashString("propagated");
 
 
         TransitGatewayRouteType GetTransitGatewayRouteTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == static__HASH)
           {
             return TransitGatewayRouteType::static_;

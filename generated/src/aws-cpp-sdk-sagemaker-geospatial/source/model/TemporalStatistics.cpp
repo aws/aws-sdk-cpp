@@ -20,14 +20,14 @@ namespace Aws
       namespace TemporalStatisticsMapper
       {
 
-        static const int MEAN_HASH = HashingUtils::HashString("MEAN");
-        static const int MEDIAN_HASH = HashingUtils::HashString("MEDIAN");
-        static const int STANDARD_DEVIATION_HASH = HashingUtils::HashString("STANDARD_DEVIATION");
+        static constexpr uint32_t MEAN_HASH = ConstExprHashingUtils::HashString("MEAN");
+        static constexpr uint32_t MEDIAN_HASH = ConstExprHashingUtils::HashString("MEDIAN");
+        static constexpr uint32_t STANDARD_DEVIATION_HASH = ConstExprHashingUtils::HashString("STANDARD_DEVIATION");
 
 
         TemporalStatistics GetTemporalStatisticsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MEAN_HASH)
           {
             return TemporalStatistics::MEAN;

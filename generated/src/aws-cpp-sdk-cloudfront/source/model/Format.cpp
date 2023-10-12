@@ -20,12 +20,12 @@ namespace Aws
       namespace FormatMapper
       {
 
-        static const int URLEncoded_HASH = HashingUtils::HashString("URLEncoded");
+        static constexpr uint32_t URLEncoded_HASH = ConstExprHashingUtils::HashString("URLEncoded");
 
 
         Format GetFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == URLEncoded_HASH)
           {
             return Format::URLEncoded;

@@ -20,21 +20,21 @@ namespace Aws
       namespace ChallengeNameTypeMapper
       {
 
-        static const int SMS_MFA_HASH = HashingUtils::HashString("SMS_MFA");
-        static const int SOFTWARE_TOKEN_MFA_HASH = HashingUtils::HashString("SOFTWARE_TOKEN_MFA");
-        static const int SELECT_MFA_TYPE_HASH = HashingUtils::HashString("SELECT_MFA_TYPE");
-        static const int MFA_SETUP_HASH = HashingUtils::HashString("MFA_SETUP");
-        static const int PASSWORD_VERIFIER_HASH = HashingUtils::HashString("PASSWORD_VERIFIER");
-        static const int CUSTOM_CHALLENGE_HASH = HashingUtils::HashString("CUSTOM_CHALLENGE");
-        static const int DEVICE_SRP_AUTH_HASH = HashingUtils::HashString("DEVICE_SRP_AUTH");
-        static const int DEVICE_PASSWORD_VERIFIER_HASH = HashingUtils::HashString("DEVICE_PASSWORD_VERIFIER");
-        static const int ADMIN_NO_SRP_AUTH_HASH = HashingUtils::HashString("ADMIN_NO_SRP_AUTH");
-        static const int NEW_PASSWORD_REQUIRED_HASH = HashingUtils::HashString("NEW_PASSWORD_REQUIRED");
+        static constexpr uint32_t SMS_MFA_HASH = ConstExprHashingUtils::HashString("SMS_MFA");
+        static constexpr uint32_t SOFTWARE_TOKEN_MFA_HASH = ConstExprHashingUtils::HashString("SOFTWARE_TOKEN_MFA");
+        static constexpr uint32_t SELECT_MFA_TYPE_HASH = ConstExprHashingUtils::HashString("SELECT_MFA_TYPE");
+        static constexpr uint32_t MFA_SETUP_HASH = ConstExprHashingUtils::HashString("MFA_SETUP");
+        static constexpr uint32_t PASSWORD_VERIFIER_HASH = ConstExprHashingUtils::HashString("PASSWORD_VERIFIER");
+        static constexpr uint32_t CUSTOM_CHALLENGE_HASH = ConstExprHashingUtils::HashString("CUSTOM_CHALLENGE");
+        static constexpr uint32_t DEVICE_SRP_AUTH_HASH = ConstExprHashingUtils::HashString("DEVICE_SRP_AUTH");
+        static constexpr uint32_t DEVICE_PASSWORD_VERIFIER_HASH = ConstExprHashingUtils::HashString("DEVICE_PASSWORD_VERIFIER");
+        static constexpr uint32_t ADMIN_NO_SRP_AUTH_HASH = ConstExprHashingUtils::HashString("ADMIN_NO_SRP_AUTH");
+        static constexpr uint32_t NEW_PASSWORD_REQUIRED_HASH = ConstExprHashingUtils::HashString("NEW_PASSWORD_REQUIRED");
 
 
         ChallengeNameType GetChallengeNameTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SMS_MFA_HASH)
           {
             return ChallengeNameType::SMS_MFA;

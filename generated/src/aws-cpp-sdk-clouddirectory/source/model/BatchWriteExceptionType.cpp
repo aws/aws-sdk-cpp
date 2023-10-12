@@ -20,29 +20,29 @@ namespace Aws
       namespace BatchWriteExceptionTypeMapper
       {
 
-        static const int InternalServiceException_HASH = HashingUtils::HashString("InternalServiceException");
-        static const int ValidationException_HASH = HashingUtils::HashString("ValidationException");
-        static const int InvalidArnException_HASH = HashingUtils::HashString("InvalidArnException");
-        static const int LinkNameAlreadyInUseException_HASH = HashingUtils::HashString("LinkNameAlreadyInUseException");
-        static const int StillContainsLinksException_HASH = HashingUtils::HashString("StillContainsLinksException");
-        static const int FacetValidationException_HASH = HashingUtils::HashString("FacetValidationException");
-        static const int ObjectNotDetachedException_HASH = HashingUtils::HashString("ObjectNotDetachedException");
-        static const int ResourceNotFoundException_HASH = HashingUtils::HashString("ResourceNotFoundException");
-        static const int AccessDeniedException_HASH = HashingUtils::HashString("AccessDeniedException");
-        static const int InvalidAttachmentException_HASH = HashingUtils::HashString("InvalidAttachmentException");
-        static const int NotIndexException_HASH = HashingUtils::HashString("NotIndexException");
-        static const int NotNodeException_HASH = HashingUtils::HashString("NotNodeException");
-        static const int IndexedAttributeMissingException_HASH = HashingUtils::HashString("IndexedAttributeMissingException");
-        static const int ObjectAlreadyDetachedException_HASH = HashingUtils::HashString("ObjectAlreadyDetachedException");
-        static const int NotPolicyException_HASH = HashingUtils::HashString("NotPolicyException");
-        static const int DirectoryNotEnabledException_HASH = HashingUtils::HashString("DirectoryNotEnabledException");
-        static const int LimitExceededException_HASH = HashingUtils::HashString("LimitExceededException");
-        static const int UnsupportedIndexTypeException_HASH = HashingUtils::HashString("UnsupportedIndexTypeException");
+        static constexpr uint32_t InternalServiceException_HASH = ConstExprHashingUtils::HashString("InternalServiceException");
+        static constexpr uint32_t ValidationException_HASH = ConstExprHashingUtils::HashString("ValidationException");
+        static constexpr uint32_t InvalidArnException_HASH = ConstExprHashingUtils::HashString("InvalidArnException");
+        static constexpr uint32_t LinkNameAlreadyInUseException_HASH = ConstExprHashingUtils::HashString("LinkNameAlreadyInUseException");
+        static constexpr uint32_t StillContainsLinksException_HASH = ConstExprHashingUtils::HashString("StillContainsLinksException");
+        static constexpr uint32_t FacetValidationException_HASH = ConstExprHashingUtils::HashString("FacetValidationException");
+        static constexpr uint32_t ObjectNotDetachedException_HASH = ConstExprHashingUtils::HashString("ObjectNotDetachedException");
+        static constexpr uint32_t ResourceNotFoundException_HASH = ConstExprHashingUtils::HashString("ResourceNotFoundException");
+        static constexpr uint32_t AccessDeniedException_HASH = ConstExprHashingUtils::HashString("AccessDeniedException");
+        static constexpr uint32_t InvalidAttachmentException_HASH = ConstExprHashingUtils::HashString("InvalidAttachmentException");
+        static constexpr uint32_t NotIndexException_HASH = ConstExprHashingUtils::HashString("NotIndexException");
+        static constexpr uint32_t NotNodeException_HASH = ConstExprHashingUtils::HashString("NotNodeException");
+        static constexpr uint32_t IndexedAttributeMissingException_HASH = ConstExprHashingUtils::HashString("IndexedAttributeMissingException");
+        static constexpr uint32_t ObjectAlreadyDetachedException_HASH = ConstExprHashingUtils::HashString("ObjectAlreadyDetachedException");
+        static constexpr uint32_t NotPolicyException_HASH = ConstExprHashingUtils::HashString("NotPolicyException");
+        static constexpr uint32_t DirectoryNotEnabledException_HASH = ConstExprHashingUtils::HashString("DirectoryNotEnabledException");
+        static constexpr uint32_t LimitExceededException_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+        static constexpr uint32_t UnsupportedIndexTypeException_HASH = ConstExprHashingUtils::HashString("UnsupportedIndexTypeException");
 
 
         BatchWriteExceptionType GetBatchWriteExceptionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InternalServiceException_HASH)
           {
             return BatchWriteExceptionType::InternalServiceException;

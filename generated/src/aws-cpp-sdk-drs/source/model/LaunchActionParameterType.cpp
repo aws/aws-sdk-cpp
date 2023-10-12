@@ -20,13 +20,13 @@ namespace Aws
       namespace LaunchActionParameterTypeMapper
       {
 
-        static const int SSM_STORE_HASH = HashingUtils::HashString("SSM_STORE");
-        static const int DYNAMIC_HASH = HashingUtils::HashString("DYNAMIC");
+        static constexpr uint32_t SSM_STORE_HASH = ConstExprHashingUtils::HashString("SSM_STORE");
+        static constexpr uint32_t DYNAMIC_HASH = ConstExprHashingUtils::HashString("DYNAMIC");
 
 
         LaunchActionParameterType GetLaunchActionParameterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SSM_STORE_HASH)
           {
             return LaunchActionParameterType::SSM_STORE;

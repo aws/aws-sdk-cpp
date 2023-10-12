@@ -20,19 +20,19 @@ namespace Aws
       namespace NsStateMapper
       {
 
-        static const int INSTANTIATED_HASH = HashingUtils::HashString("INSTANTIATED");
-        static const int NOT_INSTANTIATED_HASH = HashingUtils::HashString("NOT_INSTANTIATED");
-        static const int IMPAIRED_HASH = HashingUtils::HashString("IMPAIRED");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int INSTANTIATE_IN_PROGRESS_HASH = HashingUtils::HashString("INSTANTIATE_IN_PROGRESS");
-        static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
-        static const int TERMINATE_IN_PROGRESS_HASH = HashingUtils::HashString("TERMINATE_IN_PROGRESS");
+        static constexpr uint32_t INSTANTIATED_HASH = ConstExprHashingUtils::HashString("INSTANTIATED");
+        static constexpr uint32_t NOT_INSTANTIATED_HASH = ConstExprHashingUtils::HashString("NOT_INSTANTIATED");
+        static constexpr uint32_t IMPAIRED_HASH = ConstExprHashingUtils::HashString("IMPAIRED");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t INSTANTIATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("INSTANTIATE_IN_PROGRESS");
+        static constexpr uint32_t UPDATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("UPDATE_IN_PROGRESS");
+        static constexpr uint32_t TERMINATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("TERMINATE_IN_PROGRESS");
 
 
         NsState GetNsStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSTANTIATED_HASH)
           {
             return NsState::INSTANTIATED;

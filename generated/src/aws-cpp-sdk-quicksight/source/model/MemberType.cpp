@@ -20,16 +20,16 @@ namespace Aws
       namespace MemberTypeMapper
       {
 
-        static const int DASHBOARD_HASH = HashingUtils::HashString("DASHBOARD");
-        static const int ANALYSIS_HASH = HashingUtils::HashString("ANALYSIS");
-        static const int DATASET_HASH = HashingUtils::HashString("DATASET");
-        static const int DATASOURCE_HASH = HashingUtils::HashString("DATASOURCE");
-        static const int TOPIC_HASH = HashingUtils::HashString("TOPIC");
+        static constexpr uint32_t DASHBOARD_HASH = ConstExprHashingUtils::HashString("DASHBOARD");
+        static constexpr uint32_t ANALYSIS_HASH = ConstExprHashingUtils::HashString("ANALYSIS");
+        static constexpr uint32_t DATASET_HASH = ConstExprHashingUtils::HashString("DATASET");
+        static constexpr uint32_t DATASOURCE_HASH = ConstExprHashingUtils::HashString("DATASOURCE");
+        static constexpr uint32_t TOPIC_HASH = ConstExprHashingUtils::HashString("TOPIC");
 
 
         MemberType GetMemberTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DASHBOARD_HASH)
           {
             return MemberType::DASHBOARD;

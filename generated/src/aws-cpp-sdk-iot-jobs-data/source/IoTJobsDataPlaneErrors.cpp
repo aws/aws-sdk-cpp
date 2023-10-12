@@ -26,15 +26,15 @@ template<> AWS_IOTJOBSDATAPLANE_API ThrottlingException IoTJobsDataPlaneError::G
 namespace IoTJobsDataPlaneErrorMapper
 {
 
-static const int TERMINAL_STATE_HASH = HashingUtils::HashString("TerminalStateException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
-static const int CERTIFICATE_VALIDATION_HASH = HashingUtils::HashString("CertificateValidationException");
-static const int INVALID_STATE_TRANSITION_HASH = HashingUtils::HashString("InvalidStateTransitionException");
+static constexpr uint32_t TERMINAL_STATE_HASH = ConstExprHashingUtils::HashString("TerminalStateException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t CERTIFICATE_VALIDATION_HASH = ConstExprHashingUtils::HashString("CertificateValidationException");
+static constexpr uint32_t INVALID_STATE_TRANSITION_HASH = ConstExprHashingUtils::HashString("InvalidStateTransitionException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == TERMINAL_STATE_HASH)
   {

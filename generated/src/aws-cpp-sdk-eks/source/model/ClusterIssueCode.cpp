@@ -20,17 +20,17 @@ namespace Aws
       namespace ClusterIssueCodeMapper
       {
 
-        static const int AccessDenied_HASH = HashingUtils::HashString("AccessDenied");
-        static const int ClusterUnreachable_HASH = HashingUtils::HashString("ClusterUnreachable");
-        static const int ConfigurationConflict_HASH = HashingUtils::HashString("ConfigurationConflict");
-        static const int InternalFailure_HASH = HashingUtils::HashString("InternalFailure");
-        static const int ResourceLimitExceeded_HASH = HashingUtils::HashString("ResourceLimitExceeded");
-        static const int ResourceNotFound_HASH = HashingUtils::HashString("ResourceNotFound");
+        static constexpr uint32_t AccessDenied_HASH = ConstExprHashingUtils::HashString("AccessDenied");
+        static constexpr uint32_t ClusterUnreachable_HASH = ConstExprHashingUtils::HashString("ClusterUnreachable");
+        static constexpr uint32_t ConfigurationConflict_HASH = ConstExprHashingUtils::HashString("ConfigurationConflict");
+        static constexpr uint32_t InternalFailure_HASH = ConstExprHashingUtils::HashString("InternalFailure");
+        static constexpr uint32_t ResourceLimitExceeded_HASH = ConstExprHashingUtils::HashString("ResourceLimitExceeded");
+        static constexpr uint32_t ResourceNotFound_HASH = ConstExprHashingUtils::HashString("ResourceNotFound");
 
 
         ClusterIssueCode GetClusterIssueCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AccessDenied_HASH)
           {
             return ClusterIssueCode::AccessDenied;

@@ -20,23 +20,23 @@ namespace Aws
       namespace ContextKeyTypeEnumMapper
       {
 
-        static const int string_HASH = HashingUtils::HashString("string");
-        static const int stringList_HASH = HashingUtils::HashString("stringList");
-        static const int numeric_HASH = HashingUtils::HashString("numeric");
-        static const int numericList_HASH = HashingUtils::HashString("numericList");
-        static const int boolean_HASH = HashingUtils::HashString("boolean");
-        static const int booleanList_HASH = HashingUtils::HashString("booleanList");
-        static const int ip_HASH = HashingUtils::HashString("ip");
-        static const int ipList_HASH = HashingUtils::HashString("ipList");
-        static const int binary_HASH = HashingUtils::HashString("binary");
-        static const int binaryList_HASH = HashingUtils::HashString("binaryList");
-        static const int date_HASH = HashingUtils::HashString("date");
-        static const int dateList_HASH = HashingUtils::HashString("dateList");
+        static constexpr uint32_t string_HASH = ConstExprHashingUtils::HashString("string");
+        static constexpr uint32_t stringList_HASH = ConstExprHashingUtils::HashString("stringList");
+        static constexpr uint32_t numeric_HASH = ConstExprHashingUtils::HashString("numeric");
+        static constexpr uint32_t numericList_HASH = ConstExprHashingUtils::HashString("numericList");
+        static constexpr uint32_t boolean_HASH = ConstExprHashingUtils::HashString("boolean");
+        static constexpr uint32_t booleanList_HASH = ConstExprHashingUtils::HashString("booleanList");
+        static constexpr uint32_t ip_HASH = ConstExprHashingUtils::HashString("ip");
+        static constexpr uint32_t ipList_HASH = ConstExprHashingUtils::HashString("ipList");
+        static constexpr uint32_t binary_HASH = ConstExprHashingUtils::HashString("binary");
+        static constexpr uint32_t binaryList_HASH = ConstExprHashingUtils::HashString("binaryList");
+        static constexpr uint32_t date_HASH = ConstExprHashingUtils::HashString("date");
+        static constexpr uint32_t dateList_HASH = ConstExprHashingUtils::HashString("dateList");
 
 
         ContextKeyTypeEnum GetContextKeyTypeEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == string_HASH)
           {
             return ContextKeyTypeEnum::string;

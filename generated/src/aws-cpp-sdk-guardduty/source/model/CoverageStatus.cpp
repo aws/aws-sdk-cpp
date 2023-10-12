@@ -20,13 +20,13 @@ namespace Aws
       namespace CoverageStatusMapper
       {
 
-        static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
-        static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
+        static constexpr uint32_t HEALTHY_HASH = ConstExprHashingUtils::HashString("HEALTHY");
+        static constexpr uint32_t UNHEALTHY_HASH = ConstExprHashingUtils::HashString("UNHEALTHY");
 
 
         CoverageStatus GetCoverageStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HEALTHY_HASH)
           {
             return CoverageStatus::HEALTHY;

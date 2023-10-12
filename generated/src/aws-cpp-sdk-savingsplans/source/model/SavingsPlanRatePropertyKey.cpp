@@ -20,16 +20,16 @@ namespace Aws
       namespace SavingsPlanRatePropertyKeyMapper
       {
 
-        static const int region_HASH = HashingUtils::HashString("region");
-        static const int instanceType_HASH = HashingUtils::HashString("instanceType");
-        static const int instanceFamily_HASH = HashingUtils::HashString("instanceFamily");
-        static const int productDescription_HASH = HashingUtils::HashString("productDescription");
-        static const int tenancy_HASH = HashingUtils::HashString("tenancy");
+        static constexpr uint32_t region_HASH = ConstExprHashingUtils::HashString("region");
+        static constexpr uint32_t instanceType_HASH = ConstExprHashingUtils::HashString("instanceType");
+        static constexpr uint32_t instanceFamily_HASH = ConstExprHashingUtils::HashString("instanceFamily");
+        static constexpr uint32_t productDescription_HASH = ConstExprHashingUtils::HashString("productDescription");
+        static constexpr uint32_t tenancy_HASH = ConstExprHashingUtils::HashString("tenancy");
 
 
         SavingsPlanRatePropertyKey GetSavingsPlanRatePropertyKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == region_HASH)
           {
             return SavingsPlanRatePropertyKey::region;

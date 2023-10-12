@@ -20,12 +20,12 @@ namespace Aws
       namespace LambdaFunctionTimeoutTypeMapper
       {
 
-        static const int START_TO_CLOSE_HASH = HashingUtils::HashString("START_TO_CLOSE");
+        static constexpr uint32_t START_TO_CLOSE_HASH = ConstExprHashingUtils::HashString("START_TO_CLOSE");
 
 
         LambdaFunctionTimeoutType GetLambdaFunctionTimeoutTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == START_TO_CLOSE_HASH)
           {
             return LambdaFunctionTimeoutType::START_TO_CLOSE;

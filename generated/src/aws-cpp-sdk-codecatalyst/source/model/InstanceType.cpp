@@ -20,15 +20,15 @@ namespace Aws
       namespace InstanceTypeMapper
       {
 
-        static const int dev_standard1_small_HASH = HashingUtils::HashString("dev.standard1.small");
-        static const int dev_standard1_medium_HASH = HashingUtils::HashString("dev.standard1.medium");
-        static const int dev_standard1_large_HASH = HashingUtils::HashString("dev.standard1.large");
-        static const int dev_standard1_xlarge_HASH = HashingUtils::HashString("dev.standard1.xlarge");
+        static constexpr uint32_t dev_standard1_small_HASH = ConstExprHashingUtils::HashString("dev.standard1.small");
+        static constexpr uint32_t dev_standard1_medium_HASH = ConstExprHashingUtils::HashString("dev.standard1.medium");
+        static constexpr uint32_t dev_standard1_large_HASH = ConstExprHashingUtils::HashString("dev.standard1.large");
+        static constexpr uint32_t dev_standard1_xlarge_HASH = ConstExprHashingUtils::HashString("dev.standard1.xlarge");
 
 
         InstanceType GetInstanceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == dev_standard1_small_HASH)
           {
             return InstanceType::dev_standard1_small;

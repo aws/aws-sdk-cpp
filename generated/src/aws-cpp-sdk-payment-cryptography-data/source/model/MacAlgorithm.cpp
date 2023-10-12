@@ -20,18 +20,18 @@ namespace Aws
       namespace MacAlgorithmMapper
       {
 
-        static const int ISO9797_ALGORITHM1_HASH = HashingUtils::HashString("ISO9797_ALGORITHM1");
-        static const int ISO9797_ALGORITHM3_HASH = HashingUtils::HashString("ISO9797_ALGORITHM3");
-        static const int CMAC_HASH = HashingUtils::HashString("CMAC");
-        static const int HMAC_SHA224_HASH = HashingUtils::HashString("HMAC_SHA224");
-        static const int HMAC_SHA256_HASH = HashingUtils::HashString("HMAC_SHA256");
-        static const int HMAC_SHA384_HASH = HashingUtils::HashString("HMAC_SHA384");
-        static const int HMAC_SHA512_HASH = HashingUtils::HashString("HMAC_SHA512");
+        static constexpr uint32_t ISO9797_ALGORITHM1_HASH = ConstExprHashingUtils::HashString("ISO9797_ALGORITHM1");
+        static constexpr uint32_t ISO9797_ALGORITHM3_HASH = ConstExprHashingUtils::HashString("ISO9797_ALGORITHM3");
+        static constexpr uint32_t CMAC_HASH = ConstExprHashingUtils::HashString("CMAC");
+        static constexpr uint32_t HMAC_SHA224_HASH = ConstExprHashingUtils::HashString("HMAC_SHA224");
+        static constexpr uint32_t HMAC_SHA256_HASH = ConstExprHashingUtils::HashString("HMAC_SHA256");
+        static constexpr uint32_t HMAC_SHA384_HASH = ConstExprHashingUtils::HashString("HMAC_SHA384");
+        static constexpr uint32_t HMAC_SHA512_HASH = ConstExprHashingUtils::HashString("HMAC_SHA512");
 
 
         MacAlgorithm GetMacAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ISO9797_ALGORITHM1_HASH)
           {
             return MacAlgorithm::ISO9797_ALGORITHM1;

@@ -18,16 +18,16 @@ namespace MigrationHubStrategyRecommendations
 namespace MigrationHubStrategyRecommendationsErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int DEPENDENCY_HASH = HashingUtils::HashString("DependencyException");
-static const int SERVICE_LINKED_ROLE_LOCK_CLIENT_HASH = HashingUtils::HashString("ServiceLinkedRoleLockClientException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t SERVICE_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ServiceQuotaExceededException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
+static constexpr uint32_t DEPENDENCY_HASH = ConstExprHashingUtils::HashString("DependencyException");
+static constexpr uint32_t SERVICE_LINKED_ROLE_LOCK_CLIENT_HASH = ConstExprHashingUtils::HashString("ServiceLinkedRoleLockClientException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

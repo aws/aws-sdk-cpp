@@ -20,14 +20,14 @@ namespace Aws
       namespace InputSampleRangeMapper
       {
 
-        static const int FOLLOW_HASH = HashingUtils::HashString("FOLLOW");
-        static const int FULL_RANGE_HASH = HashingUtils::HashString("FULL_RANGE");
-        static const int LIMITED_RANGE_HASH = HashingUtils::HashString("LIMITED_RANGE");
+        static constexpr uint32_t FOLLOW_HASH = ConstExprHashingUtils::HashString("FOLLOW");
+        static constexpr uint32_t FULL_RANGE_HASH = ConstExprHashingUtils::HashString("FULL_RANGE");
+        static constexpr uint32_t LIMITED_RANGE_HASH = ConstExprHashingUtils::HashString("LIMITED_RANGE");
 
 
         InputSampleRange GetInputSampleRangeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FOLLOW_HASH)
           {
             return InputSampleRange::FOLLOW;

@@ -20,14 +20,14 @@ namespace Aws
       namespace TrustAnchorTypeMapper
       {
 
-        static const int AWS_ACM_PCA_HASH = HashingUtils::HashString("AWS_ACM_PCA");
-        static const int CERTIFICATE_BUNDLE_HASH = HashingUtils::HashString("CERTIFICATE_BUNDLE");
-        static const int SELF_SIGNED_REPOSITORY_HASH = HashingUtils::HashString("SELF_SIGNED_REPOSITORY");
+        static constexpr uint32_t AWS_ACM_PCA_HASH = ConstExprHashingUtils::HashString("AWS_ACM_PCA");
+        static constexpr uint32_t CERTIFICATE_BUNDLE_HASH = ConstExprHashingUtils::HashString("CERTIFICATE_BUNDLE");
+        static constexpr uint32_t SELF_SIGNED_REPOSITORY_HASH = ConstExprHashingUtils::HashString("SELF_SIGNED_REPOSITORY");
 
 
         TrustAnchorType GetTrustAnchorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_ACM_PCA_HASH)
           {
             return TrustAnchorType::AWS_ACM_PCA;

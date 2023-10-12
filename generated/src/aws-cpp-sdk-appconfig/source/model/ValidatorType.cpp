@@ -20,13 +20,13 @@ namespace Aws
       namespace ValidatorTypeMapper
       {
 
-        static const int JSON_SCHEMA_HASH = HashingUtils::HashString("JSON_SCHEMA");
-        static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
+        static constexpr uint32_t JSON_SCHEMA_HASH = ConstExprHashingUtils::HashString("JSON_SCHEMA");
+        static constexpr uint32_t LAMBDA_HASH = ConstExprHashingUtils::HashString("LAMBDA");
 
 
         ValidatorType GetValidatorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JSON_SCHEMA_HASH)
           {
             return ValidatorType::JSON_SCHEMA;

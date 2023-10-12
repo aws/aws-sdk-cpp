@@ -20,14 +20,14 @@ namespace Aws
       namespace JobErrorResourceTypesMapper
       {
 
-        static const int REVISION_HASH = HashingUtils::HashString("REVISION");
-        static const int ASSET_HASH = HashingUtils::HashString("ASSET");
-        static const int DATA_SET_HASH = HashingUtils::HashString("DATA_SET");
+        static constexpr uint32_t REVISION_HASH = ConstExprHashingUtils::HashString("REVISION");
+        static constexpr uint32_t ASSET_HASH = ConstExprHashingUtils::HashString("ASSET");
+        static constexpr uint32_t DATA_SET_HASH = ConstExprHashingUtils::HashString("DATA_SET");
 
 
         JobErrorResourceTypes GetJobErrorResourceTypesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REVISION_HASH)
           {
             return JobErrorResourceTypes::REVISION;

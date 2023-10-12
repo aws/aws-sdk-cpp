@@ -20,13 +20,13 @@ namespace Aws
       namespace NielsenWatermarksDistributionTypesMapper
       {
 
-        static const int FINAL_DISTRIBUTOR_HASH = HashingUtils::HashString("FINAL_DISTRIBUTOR");
-        static const int PROGRAM_CONTENT_HASH = HashingUtils::HashString("PROGRAM_CONTENT");
+        static constexpr uint32_t FINAL_DISTRIBUTOR_HASH = ConstExprHashingUtils::HashString("FINAL_DISTRIBUTOR");
+        static constexpr uint32_t PROGRAM_CONTENT_HASH = ConstExprHashingUtils::HashString("PROGRAM_CONTENT");
 
 
         NielsenWatermarksDistributionTypes GetNielsenWatermarksDistributionTypesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FINAL_DISTRIBUTOR_HASH)
           {
             return NielsenWatermarksDistributionTypes::FINAL_DISTRIBUTOR;

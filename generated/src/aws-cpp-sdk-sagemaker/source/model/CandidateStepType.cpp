@@ -20,14 +20,14 @@ namespace Aws
       namespace CandidateStepTypeMapper
       {
 
-        static const int AWS_SageMaker_TrainingJob_HASH = HashingUtils::HashString("AWS::SageMaker::TrainingJob");
-        static const int AWS_SageMaker_TransformJob_HASH = HashingUtils::HashString("AWS::SageMaker::TransformJob");
-        static const int AWS_SageMaker_ProcessingJob_HASH = HashingUtils::HashString("AWS::SageMaker::ProcessingJob");
+        static constexpr uint32_t AWS_SageMaker_TrainingJob_HASH = ConstExprHashingUtils::HashString("AWS::SageMaker::TrainingJob");
+        static constexpr uint32_t AWS_SageMaker_TransformJob_HASH = ConstExprHashingUtils::HashString("AWS::SageMaker::TransformJob");
+        static constexpr uint32_t AWS_SageMaker_ProcessingJob_HASH = ConstExprHashingUtils::HashString("AWS::SageMaker::ProcessingJob");
 
 
         CandidateStepType GetCandidateStepTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_SageMaker_TrainingJob_HASH)
           {
             return CandidateStepType::AWS_SageMaker_TrainingJob;

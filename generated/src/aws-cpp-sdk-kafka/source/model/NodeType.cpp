@@ -20,12 +20,12 @@ namespace Aws
       namespace NodeTypeMapper
       {
 
-        static const int BROKER_HASH = HashingUtils::HashString("BROKER");
+        static constexpr uint32_t BROKER_HASH = ConstExprHashingUtils::HashString("BROKER");
 
 
         NodeType GetNodeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BROKER_HASH)
           {
             return NodeType::BROKER;

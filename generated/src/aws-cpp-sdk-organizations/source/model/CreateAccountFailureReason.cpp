@@ -20,26 +20,26 @@ namespace Aws
       namespace CreateAccountFailureReasonMapper
       {
 
-        static const int ACCOUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ACCOUNT_LIMIT_EXCEEDED");
-        static const int EMAIL_ALREADY_EXISTS_HASH = HashingUtils::HashString("EMAIL_ALREADY_EXISTS");
-        static const int INVALID_ADDRESS_HASH = HashingUtils::HashString("INVALID_ADDRESS");
-        static const int INVALID_EMAIL_HASH = HashingUtils::HashString("INVALID_EMAIL");
-        static const int CONCURRENT_ACCOUNT_MODIFICATION_HASH = HashingUtils::HashString("CONCURRENT_ACCOUNT_MODIFICATION");
-        static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
-        static const int GOVCLOUD_ACCOUNT_ALREADY_EXISTS_HASH = HashingUtils::HashString("GOVCLOUD_ACCOUNT_ALREADY_EXISTS");
-        static const int MISSING_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("MISSING_BUSINESS_VALIDATION");
-        static const int FAILED_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("FAILED_BUSINESS_VALIDATION");
-        static const int PENDING_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("PENDING_BUSINESS_VALIDATION");
-        static const int INVALID_IDENTITY_FOR_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("INVALID_IDENTITY_FOR_BUSINESS_VALIDATION");
-        static const int UNKNOWN_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("UNKNOWN_BUSINESS_VALIDATION");
-        static const int MISSING_PAYMENT_INSTRUMENT_HASH = HashingUtils::HashString("MISSING_PAYMENT_INSTRUMENT");
-        static const int INVALID_PAYMENT_INSTRUMENT_HASH = HashingUtils::HashString("INVALID_PAYMENT_INSTRUMENT");
-        static const int UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED_HASH = HashingUtils::HashString("UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED");
+        static constexpr uint32_t ACCOUNT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ACCOUNT_LIMIT_EXCEEDED");
+        static constexpr uint32_t EMAIL_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("EMAIL_ALREADY_EXISTS");
+        static constexpr uint32_t INVALID_ADDRESS_HASH = ConstExprHashingUtils::HashString("INVALID_ADDRESS");
+        static constexpr uint32_t INVALID_EMAIL_HASH = ConstExprHashingUtils::HashString("INVALID_EMAIL");
+        static constexpr uint32_t CONCURRENT_ACCOUNT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("CONCURRENT_ACCOUNT_MODIFICATION");
+        static constexpr uint32_t INTERNAL_FAILURE_HASH = ConstExprHashingUtils::HashString("INTERNAL_FAILURE");
+        static constexpr uint32_t GOVCLOUD_ACCOUNT_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("GOVCLOUD_ACCOUNT_ALREADY_EXISTS");
+        static constexpr uint32_t MISSING_BUSINESS_VALIDATION_HASH = ConstExprHashingUtils::HashString("MISSING_BUSINESS_VALIDATION");
+        static constexpr uint32_t FAILED_BUSINESS_VALIDATION_HASH = ConstExprHashingUtils::HashString("FAILED_BUSINESS_VALIDATION");
+        static constexpr uint32_t PENDING_BUSINESS_VALIDATION_HASH = ConstExprHashingUtils::HashString("PENDING_BUSINESS_VALIDATION");
+        static constexpr uint32_t INVALID_IDENTITY_FOR_BUSINESS_VALIDATION_HASH = ConstExprHashingUtils::HashString("INVALID_IDENTITY_FOR_BUSINESS_VALIDATION");
+        static constexpr uint32_t UNKNOWN_BUSINESS_VALIDATION_HASH = ConstExprHashingUtils::HashString("UNKNOWN_BUSINESS_VALIDATION");
+        static constexpr uint32_t MISSING_PAYMENT_INSTRUMENT_HASH = ConstExprHashingUtils::HashString("MISSING_PAYMENT_INSTRUMENT");
+        static constexpr uint32_t INVALID_PAYMENT_INSTRUMENT_HASH = ConstExprHashingUtils::HashString("INVALID_PAYMENT_INSTRUMENT");
+        static constexpr uint32_t UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED");
 
 
         CreateAccountFailureReason GetCreateAccountFailureReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCOUNT_LIMIT_EXCEEDED_HASH)
           {
             return CreateAccountFailureReason::ACCOUNT_LIMIT_EXCEEDED;

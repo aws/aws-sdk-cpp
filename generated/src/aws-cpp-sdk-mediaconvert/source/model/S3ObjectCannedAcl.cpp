@@ -20,15 +20,15 @@ namespace Aws
       namespace S3ObjectCannedAclMapper
       {
 
-        static const int PUBLIC_READ_HASH = HashingUtils::HashString("PUBLIC_READ");
-        static const int AUTHENTICATED_READ_HASH = HashingUtils::HashString("AUTHENTICATED_READ");
-        static const int BUCKET_OWNER_READ_HASH = HashingUtils::HashString("BUCKET_OWNER_READ");
-        static const int BUCKET_OWNER_FULL_CONTROL_HASH = HashingUtils::HashString("BUCKET_OWNER_FULL_CONTROL");
+        static constexpr uint32_t PUBLIC_READ_HASH = ConstExprHashingUtils::HashString("PUBLIC_READ");
+        static constexpr uint32_t AUTHENTICATED_READ_HASH = ConstExprHashingUtils::HashString("AUTHENTICATED_READ");
+        static constexpr uint32_t BUCKET_OWNER_READ_HASH = ConstExprHashingUtils::HashString("BUCKET_OWNER_READ");
+        static constexpr uint32_t BUCKET_OWNER_FULL_CONTROL_HASH = ConstExprHashingUtils::HashString("BUCKET_OWNER_FULL_CONTROL");
 
 
         S3ObjectCannedAcl GetS3ObjectCannedAclForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUBLIC_READ_HASH)
           {
             return S3ObjectCannedAcl::PUBLIC_READ;

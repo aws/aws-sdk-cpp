@@ -20,17 +20,17 @@ namespace Aws
       namespace CertificateStateMapper
       {
 
-        static const int Registering_HASH = HashingUtils::HashString("Registering");
-        static const int Registered_HASH = HashingUtils::HashString("Registered");
-        static const int RegisterFailed_HASH = HashingUtils::HashString("RegisterFailed");
-        static const int Deregistering_HASH = HashingUtils::HashString("Deregistering");
-        static const int Deregistered_HASH = HashingUtils::HashString("Deregistered");
-        static const int DeregisterFailed_HASH = HashingUtils::HashString("DeregisterFailed");
+        static constexpr uint32_t Registering_HASH = ConstExprHashingUtils::HashString("Registering");
+        static constexpr uint32_t Registered_HASH = ConstExprHashingUtils::HashString("Registered");
+        static constexpr uint32_t RegisterFailed_HASH = ConstExprHashingUtils::HashString("RegisterFailed");
+        static constexpr uint32_t Deregistering_HASH = ConstExprHashingUtils::HashString("Deregistering");
+        static constexpr uint32_t Deregistered_HASH = ConstExprHashingUtils::HashString("Deregistered");
+        static constexpr uint32_t DeregisterFailed_HASH = ConstExprHashingUtils::HashString("DeregisterFailed");
 
 
         CertificateState GetCertificateStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Registering_HASH)
           {
             return CertificateState::Registering;

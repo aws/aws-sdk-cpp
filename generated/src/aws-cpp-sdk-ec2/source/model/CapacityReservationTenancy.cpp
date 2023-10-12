@@ -20,13 +20,13 @@ namespace Aws
       namespace CapacityReservationTenancyMapper
       {
 
-        static const int default__HASH = HashingUtils::HashString("default");
-        static const int dedicated_HASH = HashingUtils::HashString("dedicated");
+        static constexpr uint32_t default__HASH = ConstExprHashingUtils::HashString("default");
+        static constexpr uint32_t dedicated_HASH = ConstExprHashingUtils::HashString("dedicated");
 
 
         CapacityReservationTenancy GetCapacityReservationTenancyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == default__HASH)
           {
             return CapacityReservationTenancy::default_;

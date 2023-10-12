@@ -20,13 +20,13 @@ namespace Aws
       namespace TargetSelectionMapper
       {
 
-        static const int CONTINUOUS_HASH = HashingUtils::HashString("CONTINUOUS");
-        static const int SNAPSHOT_HASH = HashingUtils::HashString("SNAPSHOT");
+        static constexpr uint32_t CONTINUOUS_HASH = ConstExprHashingUtils::HashString("CONTINUOUS");
+        static constexpr uint32_t SNAPSHOT_HASH = ConstExprHashingUtils::HashString("SNAPSHOT");
 
 
         TargetSelection GetTargetSelectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONTINUOUS_HASH)
           {
             return TargetSelection::CONTINUOUS;

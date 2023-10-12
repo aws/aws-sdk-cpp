@@ -20,18 +20,18 @@ namespace Aws
       namespace CampaignStatusMapper
       {
 
-        static const int SCHEDULED_HASH = HashingUtils::HashString("SCHEDULED");
-        static const int EXECUTING_HASH = HashingUtils::HashString("EXECUTING");
-        static const int PENDING_NEXT_RUN_HASH = HashingUtils::HashString("PENDING_NEXT_RUN");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int INVALID_HASH = HashingUtils::HashString("INVALID");
+        static constexpr uint32_t SCHEDULED_HASH = ConstExprHashingUtils::HashString("SCHEDULED");
+        static constexpr uint32_t EXECUTING_HASH = ConstExprHashingUtils::HashString("EXECUTING");
+        static constexpr uint32_t PENDING_NEXT_RUN_HASH = ConstExprHashingUtils::HashString("PENDING_NEXT_RUN");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t PAUSED_HASH = ConstExprHashingUtils::HashString("PAUSED");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t INVALID_HASH = ConstExprHashingUtils::HashString("INVALID");
 
 
         CampaignStatus GetCampaignStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SCHEDULED_HASH)
           {
             return CampaignStatus::SCHEDULED;

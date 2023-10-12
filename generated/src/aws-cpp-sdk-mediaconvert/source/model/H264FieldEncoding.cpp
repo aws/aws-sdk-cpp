@@ -20,14 +20,14 @@ namespace Aws
       namespace H264FieldEncodingMapper
       {
 
-        static const int PAFF_HASH = HashingUtils::HashString("PAFF");
-        static const int FORCE_FIELD_HASH = HashingUtils::HashString("FORCE_FIELD");
-        static const int MBAFF_HASH = HashingUtils::HashString("MBAFF");
+        static constexpr uint32_t PAFF_HASH = ConstExprHashingUtils::HashString("PAFF");
+        static constexpr uint32_t FORCE_FIELD_HASH = ConstExprHashingUtils::HashString("FORCE_FIELD");
+        static constexpr uint32_t MBAFF_HASH = ConstExprHashingUtils::HashString("MBAFF");
 
 
         H264FieldEncoding GetH264FieldEncodingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PAFF_HASH)
           {
             return H264FieldEncoding::PAFF;

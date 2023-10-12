@@ -20,13 +20,13 @@ namespace Aws
       namespace ElevationReferenceMapper
       {
 
-        static const int AGL_HASH = HashingUtils::HashString("AGL");
-        static const int AMSL_HASH = HashingUtils::HashString("AMSL");
+        static constexpr uint32_t AGL_HASH = ConstExprHashingUtils::HashString("AGL");
+        static constexpr uint32_t AMSL_HASH = ConstExprHashingUtils::HashString("AMSL");
 
 
         ElevationReference GetElevationReferenceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AGL_HASH)
           {
             return ElevationReference::AGL;

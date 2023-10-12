@@ -20,13 +20,13 @@ namespace Aws
       namespace TableBorderStyleMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int SOLID_HASH = HashingUtils::HashString("SOLID");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t SOLID_HASH = ConstExprHashingUtils::HashString("SOLID");
 
 
         TableBorderStyle GetTableBorderStyleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return TableBorderStyle::NONE;

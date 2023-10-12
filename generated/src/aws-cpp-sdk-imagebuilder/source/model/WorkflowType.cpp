@@ -20,14 +20,14 @@ namespace Aws
       namespace WorkflowTypeMapper
       {
 
-        static const int BUILD_HASH = HashingUtils::HashString("BUILD");
-        static const int TEST_HASH = HashingUtils::HashString("TEST");
-        static const int DISTRIBUTION_HASH = HashingUtils::HashString("DISTRIBUTION");
+        static constexpr uint32_t BUILD_HASH = ConstExprHashingUtils::HashString("BUILD");
+        static constexpr uint32_t TEST_HASH = ConstExprHashingUtils::HashString("TEST");
+        static constexpr uint32_t DISTRIBUTION_HASH = ConstExprHashingUtils::HashString("DISTRIBUTION");
 
 
         WorkflowType GetWorkflowTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BUILD_HASH)
           {
             return WorkflowType::BUILD;

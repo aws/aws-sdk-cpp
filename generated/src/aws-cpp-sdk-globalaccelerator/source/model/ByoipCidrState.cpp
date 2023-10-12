@@ -20,22 +20,22 @@ namespace Aws
       namespace ByoipCidrStateMapper
       {
 
-        static const int PENDING_PROVISIONING_HASH = HashingUtils::HashString("PENDING_PROVISIONING");
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int PENDING_ADVERTISING_HASH = HashingUtils::HashString("PENDING_ADVERTISING");
-        static const int ADVERTISING_HASH = HashingUtils::HashString("ADVERTISING");
-        static const int PENDING_WITHDRAWING_HASH = HashingUtils::HashString("PENDING_WITHDRAWING");
-        static const int PENDING_DEPROVISIONING_HASH = HashingUtils::HashString("PENDING_DEPROVISIONING");
-        static const int DEPROVISIONED_HASH = HashingUtils::HashString("DEPROVISIONED");
-        static const int FAILED_PROVISION_HASH = HashingUtils::HashString("FAILED_PROVISION");
-        static const int FAILED_ADVERTISING_HASH = HashingUtils::HashString("FAILED_ADVERTISING");
-        static const int FAILED_WITHDRAW_HASH = HashingUtils::HashString("FAILED_WITHDRAW");
-        static const int FAILED_DEPROVISION_HASH = HashingUtils::HashString("FAILED_DEPROVISION");
+        static constexpr uint32_t PENDING_PROVISIONING_HASH = ConstExprHashingUtils::HashString("PENDING_PROVISIONING");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
+        static constexpr uint32_t PENDING_ADVERTISING_HASH = ConstExprHashingUtils::HashString("PENDING_ADVERTISING");
+        static constexpr uint32_t ADVERTISING_HASH = ConstExprHashingUtils::HashString("ADVERTISING");
+        static constexpr uint32_t PENDING_WITHDRAWING_HASH = ConstExprHashingUtils::HashString("PENDING_WITHDRAWING");
+        static constexpr uint32_t PENDING_DEPROVISIONING_HASH = ConstExprHashingUtils::HashString("PENDING_DEPROVISIONING");
+        static constexpr uint32_t DEPROVISIONED_HASH = ConstExprHashingUtils::HashString("DEPROVISIONED");
+        static constexpr uint32_t FAILED_PROVISION_HASH = ConstExprHashingUtils::HashString("FAILED_PROVISION");
+        static constexpr uint32_t FAILED_ADVERTISING_HASH = ConstExprHashingUtils::HashString("FAILED_ADVERTISING");
+        static constexpr uint32_t FAILED_WITHDRAW_HASH = ConstExprHashingUtils::HashString("FAILED_WITHDRAW");
+        static constexpr uint32_t FAILED_DEPROVISION_HASH = ConstExprHashingUtils::HashString("FAILED_DEPROVISION");
 
 
         ByoipCidrState GetByoipCidrStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_PROVISIONING_HASH)
           {
             return ByoipCidrState::PENDING_PROVISIONING;

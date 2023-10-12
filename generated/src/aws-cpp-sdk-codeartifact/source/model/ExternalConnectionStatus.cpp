@@ -20,12 +20,12 @@ namespace Aws
       namespace ExternalConnectionStatusMapper
       {
 
-        static const int Available_HASH = HashingUtils::HashString("Available");
+        static constexpr uint32_t Available_HASH = ConstExprHashingUtils::HashString("Available");
 
 
         ExternalConnectionStatus GetExternalConnectionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Available_HASH)
           {
             return ExternalConnectionStatus::Available;

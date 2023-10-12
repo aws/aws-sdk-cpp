@@ -20,16 +20,16 @@ namespace Aws
       namespace FederationSourceErrorCodeMapper
       {
 
-        static const int InvalidResponseException_HASH = HashingUtils::HashString("InvalidResponseException");
-        static const int OperationTimeoutException_HASH = HashingUtils::HashString("OperationTimeoutException");
-        static const int OperationNotSupportedException_HASH = HashingUtils::HashString("OperationNotSupportedException");
-        static const int InternalServiceException_HASH = HashingUtils::HashString("InternalServiceException");
-        static const int ThrottlingException_HASH = HashingUtils::HashString("ThrottlingException");
+        static constexpr uint32_t InvalidResponseException_HASH = ConstExprHashingUtils::HashString("InvalidResponseException");
+        static constexpr uint32_t OperationTimeoutException_HASH = ConstExprHashingUtils::HashString("OperationTimeoutException");
+        static constexpr uint32_t OperationNotSupportedException_HASH = ConstExprHashingUtils::HashString("OperationNotSupportedException");
+        static constexpr uint32_t InternalServiceException_HASH = ConstExprHashingUtils::HashString("InternalServiceException");
+        static constexpr uint32_t ThrottlingException_HASH = ConstExprHashingUtils::HashString("ThrottlingException");
 
 
         FederationSourceErrorCode GetFederationSourceErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InvalidResponseException_HASH)
           {
             return FederationSourceErrorCode::InvalidResponseException;

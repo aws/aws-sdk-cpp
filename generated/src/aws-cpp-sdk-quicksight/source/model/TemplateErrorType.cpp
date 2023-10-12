@@ -20,15 +20,15 @@ namespace Aws
       namespace TemplateErrorTypeMapper
       {
 
-        static const int SOURCE_NOT_FOUND_HASH = HashingUtils::HashString("SOURCE_NOT_FOUND");
-        static const int DATA_SET_NOT_FOUND_HASH = HashingUtils::HashString("DATA_SET_NOT_FOUND");
-        static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t SOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SOURCE_NOT_FOUND");
+        static constexpr uint32_t DATA_SET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("DATA_SET_NOT_FOUND");
+        static constexpr uint32_t INTERNAL_FAILURE_HASH = ConstExprHashingUtils::HashString("INTERNAL_FAILURE");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
 
 
         TemplateErrorType GetTemplateErrorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SOURCE_NOT_FOUND_HASH)
           {
             return TemplateErrorType::SOURCE_NOT_FOUND;

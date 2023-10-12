@@ -20,15 +20,15 @@ namespace Aws
       namespace ProtocolMapper
       {
 
-        static const int MqttV3_1_1_HASH = HashingUtils::HashString("MqttV3_1_1");
-        static const int MqttV5_HASH = HashingUtils::HashString("MqttV5");
-        static const int MqttV3_1_1_OverWebSocket_HASH = HashingUtils::HashString("MqttV3_1_1_OverWebSocket");
-        static const int MqttV5_OverWebSocket_HASH = HashingUtils::HashString("MqttV5_OverWebSocket");
+        static constexpr uint32_t MqttV3_1_1_HASH = ConstExprHashingUtils::HashString("MqttV3_1_1");
+        static constexpr uint32_t MqttV5_HASH = ConstExprHashingUtils::HashString("MqttV5");
+        static constexpr uint32_t MqttV3_1_1_OverWebSocket_HASH = ConstExprHashingUtils::HashString("MqttV3_1_1_OverWebSocket");
+        static constexpr uint32_t MqttV5_OverWebSocket_HASH = ConstExprHashingUtils::HashString("MqttV5_OverWebSocket");
 
 
         Protocol GetProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MqttV3_1_1_HASH)
           {
             return Protocol::MqttV3_1_1;

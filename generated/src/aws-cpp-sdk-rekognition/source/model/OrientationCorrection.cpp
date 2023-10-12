@@ -20,15 +20,15 @@ namespace Aws
       namespace OrientationCorrectionMapper
       {
 
-        static const int ROTATE_0_HASH = HashingUtils::HashString("ROTATE_0");
-        static const int ROTATE_90_HASH = HashingUtils::HashString("ROTATE_90");
-        static const int ROTATE_180_HASH = HashingUtils::HashString("ROTATE_180");
-        static const int ROTATE_270_HASH = HashingUtils::HashString("ROTATE_270");
+        static constexpr uint32_t ROTATE_0_HASH = ConstExprHashingUtils::HashString("ROTATE_0");
+        static constexpr uint32_t ROTATE_90_HASH = ConstExprHashingUtils::HashString("ROTATE_90");
+        static constexpr uint32_t ROTATE_180_HASH = ConstExprHashingUtils::HashString("ROTATE_180");
+        static constexpr uint32_t ROTATE_270_HASH = ConstExprHashingUtils::HashString("ROTATE_270");
 
 
         OrientationCorrection GetOrientationCorrectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ROTATE_0_HASH)
           {
             return OrientationCorrection::ROTATE_0;

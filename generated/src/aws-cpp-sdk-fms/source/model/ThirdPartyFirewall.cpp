@@ -20,13 +20,13 @@ namespace Aws
       namespace ThirdPartyFirewallMapper
       {
 
-        static const int PALO_ALTO_NETWORKS_CLOUD_NGFW_HASH = HashingUtils::HashString("PALO_ALTO_NETWORKS_CLOUD_NGFW");
-        static const int FORTIGATE_CLOUD_NATIVE_FIREWALL_HASH = HashingUtils::HashString("FORTIGATE_CLOUD_NATIVE_FIREWALL");
+        static constexpr uint32_t PALO_ALTO_NETWORKS_CLOUD_NGFW_HASH = ConstExprHashingUtils::HashString("PALO_ALTO_NETWORKS_CLOUD_NGFW");
+        static constexpr uint32_t FORTIGATE_CLOUD_NATIVE_FIREWALL_HASH = ConstExprHashingUtils::HashString("FORTIGATE_CLOUD_NATIVE_FIREWALL");
 
 
         ThirdPartyFirewall GetThirdPartyFirewallForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PALO_ALTO_NETWORKS_CLOUD_NGFW_HASH)
           {
             return ThirdPartyFirewall::PALO_ALTO_NETWORKS_CLOUD_NGFW;

@@ -20,17 +20,17 @@ namespace Aws
       namespace DataShareStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int PENDING_AUTHORIZATION_HASH = HashingUtils::HashString("PENDING_AUTHORIZATION");
-        static const int AUTHORIZED_HASH = HashingUtils::HashString("AUTHORIZED");
-        static const int DEAUTHORIZED_HASH = HashingUtils::HashString("DEAUTHORIZED");
-        static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t PENDING_AUTHORIZATION_HASH = ConstExprHashingUtils::HashString("PENDING_AUTHORIZATION");
+        static constexpr uint32_t AUTHORIZED_HASH = ConstExprHashingUtils::HashString("AUTHORIZED");
+        static constexpr uint32_t DEAUTHORIZED_HASH = ConstExprHashingUtils::HashString("DEAUTHORIZED");
+        static constexpr uint32_t REJECTED_HASH = ConstExprHashingUtils::HashString("REJECTED");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
 
 
         DataShareStatus GetDataShareStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return DataShareStatus::ACTIVE;

@@ -20,14 +20,14 @@ namespace Aws
       namespace ProvisioningTypeMapper
       {
 
-        static const int NON_PROVISIONABLE_HASH = HashingUtils::HashString("NON_PROVISIONABLE");
-        static const int IMMUTABLE_HASH = HashingUtils::HashString("IMMUTABLE");
-        static const int FULLY_MUTABLE_HASH = HashingUtils::HashString("FULLY_MUTABLE");
+        static constexpr uint32_t NON_PROVISIONABLE_HASH = ConstExprHashingUtils::HashString("NON_PROVISIONABLE");
+        static constexpr uint32_t IMMUTABLE_HASH = ConstExprHashingUtils::HashString("IMMUTABLE");
+        static constexpr uint32_t FULLY_MUTABLE_HASH = ConstExprHashingUtils::HashString("FULLY_MUTABLE");
 
 
         ProvisioningType GetProvisioningTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NON_PROVISIONABLE_HASH)
           {
             return ProvisioningType::NON_PROVISIONABLE;

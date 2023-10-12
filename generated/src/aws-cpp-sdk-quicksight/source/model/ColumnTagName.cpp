@@ -20,13 +20,13 @@ namespace Aws
       namespace ColumnTagNameMapper
       {
 
-        static const int COLUMN_GEOGRAPHIC_ROLE_HASH = HashingUtils::HashString("COLUMN_GEOGRAPHIC_ROLE");
-        static const int COLUMN_DESCRIPTION_HASH = HashingUtils::HashString("COLUMN_DESCRIPTION");
+        static constexpr uint32_t COLUMN_GEOGRAPHIC_ROLE_HASH = ConstExprHashingUtils::HashString("COLUMN_GEOGRAPHIC_ROLE");
+        static constexpr uint32_t COLUMN_DESCRIPTION_HASH = ConstExprHashingUtils::HashString("COLUMN_DESCRIPTION");
 
 
         ColumnTagName GetColumnTagNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COLUMN_GEOGRAPHIC_ROLE_HASH)
           {
             return ColumnTagName::COLUMN_GEOGRAPHIC_ROLE;

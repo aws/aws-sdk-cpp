@@ -20,13 +20,13 @@ namespace Aws
       namespace ConnectionTypeMapper
       {
 
-        static const int STATIC_IP_HASH = HashingUtils::HashString("STATIC_IP");
-        static const int DHCP_HASH = HashingUtils::HashString("DHCP");
+        static constexpr uint32_t STATIC_IP_HASH = ConstExprHashingUtils::HashString("STATIC_IP");
+        static constexpr uint32_t DHCP_HASH = ConstExprHashingUtils::HashString("DHCP");
 
 
         ConnectionType GetConnectionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STATIC_IP_HASH)
           {
             return ConnectionType::STATIC_IP;

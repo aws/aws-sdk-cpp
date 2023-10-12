@@ -20,14 +20,14 @@ namespace Aws
       namespace UpdateTypeMapper
       {
 
-        static const int REPLACE_HASH = HashingUtils::HashString("REPLACE");
-        static const int RETURN_HASH = HashingUtils::HashString("RETURN");
-        static const int COMMITMENT_HASH = HashingUtils::HashString("COMMITMENT");
+        static constexpr uint32_t REPLACE_HASH = ConstExprHashingUtils::HashString("REPLACE");
+        static constexpr uint32_t RETURN_HASH = ConstExprHashingUtils::HashString("RETURN");
+        static constexpr uint32_t COMMITMENT_HASH = ConstExprHashingUtils::HashString("COMMITMENT");
 
 
         UpdateType GetUpdateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REPLACE_HASH)
           {
             return UpdateType::REPLACE;

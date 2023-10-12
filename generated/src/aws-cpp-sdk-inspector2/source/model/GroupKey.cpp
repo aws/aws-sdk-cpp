@@ -20,16 +20,16 @@ namespace Aws
       namespace GroupKeyMapper
       {
 
-        static const int SCAN_STATUS_CODE_HASH = HashingUtils::HashString("SCAN_STATUS_CODE");
-        static const int SCAN_STATUS_REASON_HASH = HashingUtils::HashString("SCAN_STATUS_REASON");
-        static const int ACCOUNT_ID_HASH = HashingUtils::HashString("ACCOUNT_ID");
-        static const int RESOURCE_TYPE_HASH = HashingUtils::HashString("RESOURCE_TYPE");
-        static const int ECR_REPOSITORY_NAME_HASH = HashingUtils::HashString("ECR_REPOSITORY_NAME");
+        static constexpr uint32_t SCAN_STATUS_CODE_HASH = ConstExprHashingUtils::HashString("SCAN_STATUS_CODE");
+        static constexpr uint32_t SCAN_STATUS_REASON_HASH = ConstExprHashingUtils::HashString("SCAN_STATUS_REASON");
+        static constexpr uint32_t ACCOUNT_ID_HASH = ConstExprHashingUtils::HashString("ACCOUNT_ID");
+        static constexpr uint32_t RESOURCE_TYPE_HASH = ConstExprHashingUtils::HashString("RESOURCE_TYPE");
+        static constexpr uint32_t ECR_REPOSITORY_NAME_HASH = ConstExprHashingUtils::HashString("ECR_REPOSITORY_NAME");
 
 
         GroupKey GetGroupKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SCAN_STATUS_CODE_HASH)
           {
             return GroupKey::SCAN_STATUS_CODE;

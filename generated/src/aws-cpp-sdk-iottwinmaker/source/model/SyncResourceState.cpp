@@ -20,16 +20,16 @@ namespace Aws
       namespace SyncResourceStateMapper
       {
 
-        static const int INITIALIZING_HASH = HashingUtils::HashString("INITIALIZING");
-        static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int IN_SYNC_HASH = HashingUtils::HashString("IN_SYNC");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t INITIALIZING_HASH = ConstExprHashingUtils::HashString("INITIALIZING");
+        static constexpr uint32_t PROCESSING_HASH = ConstExprHashingUtils::HashString("PROCESSING");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t IN_SYNC_HASH = ConstExprHashingUtils::HashString("IN_SYNC");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         SyncResourceState GetSyncResourceStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INITIALIZING_HASH)
           {
             return SyncResourceState::INITIALIZING;

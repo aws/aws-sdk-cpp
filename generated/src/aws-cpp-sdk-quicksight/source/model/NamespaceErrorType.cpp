@@ -20,13 +20,13 @@ namespace Aws
       namespace NamespaceErrorTypeMapper
       {
 
-        static const int PERMISSION_DENIED_HASH = HashingUtils::HashString("PERMISSION_DENIED");
-        static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("INTERNAL_SERVICE_ERROR");
+        static constexpr uint32_t PERMISSION_DENIED_HASH = ConstExprHashingUtils::HashString("PERMISSION_DENIED");
+        static constexpr uint32_t INTERNAL_SERVICE_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_SERVICE_ERROR");
 
 
         NamespaceErrorType GetNamespaceErrorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PERMISSION_DENIED_HASH)
           {
             return NamespaceErrorType::PERMISSION_DENIED;

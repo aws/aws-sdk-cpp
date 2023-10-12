@@ -20,13 +20,13 @@ namespace Aws
       namespace RecommendationJobTypeMapper
       {
 
-        static const int Default_HASH = HashingUtils::HashString("Default");
-        static const int Advanced_HASH = HashingUtils::HashString("Advanced");
+        static constexpr uint32_t Default_HASH = ConstExprHashingUtils::HashString("Default");
+        static constexpr uint32_t Advanced_HASH = ConstExprHashingUtils::HashString("Advanced");
 
 
         RecommendationJobType GetRecommendationJobTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Default_HASH)
           {
             return RecommendationJobType::Default;

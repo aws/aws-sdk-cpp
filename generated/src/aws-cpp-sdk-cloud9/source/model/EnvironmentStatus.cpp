@@ -20,18 +20,18 @@ namespace Aws
       namespace EnvironmentStatusMapper
       {
 
-        static const int error_HASH = HashingUtils::HashString("error");
-        static const int creating_HASH = HashingUtils::HashString("creating");
-        static const int connecting_HASH = HashingUtils::HashString("connecting");
-        static const int ready_HASH = HashingUtils::HashString("ready");
-        static const int stopping_HASH = HashingUtils::HashString("stopping");
-        static const int stopped_HASH = HashingUtils::HashString("stopped");
-        static const int deleting_HASH = HashingUtils::HashString("deleting");
+        static constexpr uint32_t error_HASH = ConstExprHashingUtils::HashString("error");
+        static constexpr uint32_t creating_HASH = ConstExprHashingUtils::HashString("creating");
+        static constexpr uint32_t connecting_HASH = ConstExprHashingUtils::HashString("connecting");
+        static constexpr uint32_t ready_HASH = ConstExprHashingUtils::HashString("ready");
+        static constexpr uint32_t stopping_HASH = ConstExprHashingUtils::HashString("stopping");
+        static constexpr uint32_t stopped_HASH = ConstExprHashingUtils::HashString("stopped");
+        static constexpr uint32_t deleting_HASH = ConstExprHashingUtils::HashString("deleting");
 
 
         EnvironmentStatus GetEnvironmentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == error_HASH)
           {
             return EnvironmentStatus::error;

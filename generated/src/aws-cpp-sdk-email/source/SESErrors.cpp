@@ -187,45 +187,45 @@ template<> AWS_SES_API RuleDoesNotExistException SESError::GetModeledError()
 namespace SESErrorMapper
 {
 
-static const int CONFIGURATION_SET_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ConfigurationSetDoesNotExist");
-static const int INVALID_FIREHOSE_DESTINATION_HASH = HashingUtils::HashString("InvalidFirehoseDestination");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
-static const int INVALID_TRACKING_OPTIONS_HASH = HashingUtils::HashString("InvalidTrackingOptions");
-static const int INVALID_SNS_TOPIC_HASH = HashingUtils::HashString("InvalidSnsTopic");
-static const int PRODUCTION_ACCESS_NOT_GRANTED_HASH = HashingUtils::HashString("ProductionAccessNotGranted");
-static const int TRACKING_OPTIONS_DOES_NOT_EXIST_HASH = HashingUtils::HashString("TrackingOptionsDoesNotExistException");
-static const int CONFIGURATION_SET_SENDING_PAUSED_HASH = HashingUtils::HashString("ConfigurationSetSendingPausedException");
-static const int INVALID_S3_CONFIGURATION_HASH = HashingUtils::HashString("InvalidS3Configuration");
-static const int EVENT_DESTINATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("EventDestinationDoesNotExist");
-static const int TEMPLATE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("TemplateDoesNotExist");
-static const int MISSING_RENDERING_ATTRIBUTE_HASH = HashingUtils::HashString("MissingRenderingAttribute");
-static const int CONFIGURATION_SET_ALREADY_EXISTS_HASH = HashingUtils::HashString("ConfigurationSetAlreadyExists");
-static const int INVALID_DELIVERY_OPTIONS_HASH = HashingUtils::HashString("InvalidDeliveryOptions");
-static const int EVENT_DESTINATION_ALREADY_EXISTS_HASH = HashingUtils::HashString("EventDestinationAlreadyExists");
-static const int CUSTOM_VERIFICATION_EMAIL_TEMPLATE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("CustomVerificationEmailTemplateDoesNotExist");
-static const int INVALID_LAMBDA_FUNCTION_HASH = HashingUtils::HashString("InvalidLambdaFunction");
-static const int ACCOUNT_SENDING_PAUSED_HASH = HashingUtils::HashString("AccountSendingPausedException");
-static const int INVALID_CONFIGURATION_SET_HASH = HashingUtils::HashString("InvalidConfigurationSet");
-static const int INVALID_CLOUD_WATCH_DESTINATION_HASH = HashingUtils::HashString("InvalidCloudWatchDestination");
-static const int INVALID_POLICY_HASH = HashingUtils::HashString("InvalidPolicy");
-static const int INVALID_RENDERING_PARAMETER_HASH = HashingUtils::HashString("InvalidRenderingParameter");
-static const int INVALID_S_N_S_DESTINATION_HASH = HashingUtils::HashString("InvalidSNSDestination");
-static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExists");
-static const int TRACKING_OPTIONS_ALREADY_EXISTS_HASH = HashingUtils::HashString("TrackingOptionsAlreadyExistsException");
-static const int INVALID_TEMPLATE_HASH = HashingUtils::HashString("InvalidTemplate");
-static const int CUSTOM_VERIFICATION_EMAIL_INVALID_CONTENT_HASH = HashingUtils::HashString("CustomVerificationEmailInvalidContent");
-static const int MESSAGE_REJECTED_HASH = HashingUtils::HashString("MessageRejected");
-static const int FROM_EMAIL_ADDRESS_NOT_VERIFIED_HASH = HashingUtils::HashString("FromEmailAddressNotVerified");
-static const int MAIL_FROM_DOMAIN_NOT_VERIFIED_HASH = HashingUtils::HashString("MailFromDomainNotVerifiedException");
-static const int CANNOT_DELETE_HASH = HashingUtils::HashString("CannotDelete");
-static const int RULE_SET_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RuleSetDoesNotExist");
-static const int CUSTOM_VERIFICATION_EMAIL_TEMPLATE_ALREADY_EXISTS_HASH = HashingUtils::HashString("CustomVerificationEmailTemplateAlreadyExists");
-static const int RULE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RuleDoesNotExist");
+static constexpr uint32_t CONFIGURATION_SET_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("ConfigurationSetDoesNotExist");
+static constexpr uint32_t INVALID_FIREHOSE_DESTINATION_HASH = ConstExprHashingUtils::HashString("InvalidFirehoseDestination");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceeded");
+static constexpr uint32_t INVALID_TRACKING_OPTIONS_HASH = ConstExprHashingUtils::HashString("InvalidTrackingOptions");
+static constexpr uint32_t INVALID_SNS_TOPIC_HASH = ConstExprHashingUtils::HashString("InvalidSnsTopic");
+static constexpr uint32_t PRODUCTION_ACCESS_NOT_GRANTED_HASH = ConstExprHashingUtils::HashString("ProductionAccessNotGranted");
+static constexpr uint32_t TRACKING_OPTIONS_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("TrackingOptionsDoesNotExistException");
+static constexpr uint32_t CONFIGURATION_SET_SENDING_PAUSED_HASH = ConstExprHashingUtils::HashString("ConfigurationSetSendingPausedException");
+static constexpr uint32_t INVALID_S3_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("InvalidS3Configuration");
+static constexpr uint32_t EVENT_DESTINATION_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("EventDestinationDoesNotExist");
+static constexpr uint32_t TEMPLATE_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("TemplateDoesNotExist");
+static constexpr uint32_t MISSING_RENDERING_ATTRIBUTE_HASH = ConstExprHashingUtils::HashString("MissingRenderingAttribute");
+static constexpr uint32_t CONFIGURATION_SET_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ConfigurationSetAlreadyExists");
+static constexpr uint32_t INVALID_DELIVERY_OPTIONS_HASH = ConstExprHashingUtils::HashString("InvalidDeliveryOptions");
+static constexpr uint32_t EVENT_DESTINATION_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("EventDestinationAlreadyExists");
+static constexpr uint32_t CUSTOM_VERIFICATION_EMAIL_TEMPLATE_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("CustomVerificationEmailTemplateDoesNotExist");
+static constexpr uint32_t INVALID_LAMBDA_FUNCTION_HASH = ConstExprHashingUtils::HashString("InvalidLambdaFunction");
+static constexpr uint32_t ACCOUNT_SENDING_PAUSED_HASH = ConstExprHashingUtils::HashString("AccountSendingPausedException");
+static constexpr uint32_t INVALID_CONFIGURATION_SET_HASH = ConstExprHashingUtils::HashString("InvalidConfigurationSet");
+static constexpr uint32_t INVALID_CLOUD_WATCH_DESTINATION_HASH = ConstExprHashingUtils::HashString("InvalidCloudWatchDestination");
+static constexpr uint32_t INVALID_POLICY_HASH = ConstExprHashingUtils::HashString("InvalidPolicy");
+static constexpr uint32_t INVALID_RENDERING_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidRenderingParameter");
+static constexpr uint32_t INVALID_S_N_S_DESTINATION_HASH = ConstExprHashingUtils::HashString("InvalidSNSDestination");
+static constexpr uint32_t ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("AlreadyExists");
+static constexpr uint32_t TRACKING_OPTIONS_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("TrackingOptionsAlreadyExistsException");
+static constexpr uint32_t INVALID_TEMPLATE_HASH = ConstExprHashingUtils::HashString("InvalidTemplate");
+static constexpr uint32_t CUSTOM_VERIFICATION_EMAIL_INVALID_CONTENT_HASH = ConstExprHashingUtils::HashString("CustomVerificationEmailInvalidContent");
+static constexpr uint32_t MESSAGE_REJECTED_HASH = ConstExprHashingUtils::HashString("MessageRejected");
+static constexpr uint32_t FROM_EMAIL_ADDRESS_NOT_VERIFIED_HASH = ConstExprHashingUtils::HashString("FromEmailAddressNotVerified");
+static constexpr uint32_t MAIL_FROM_DOMAIN_NOT_VERIFIED_HASH = ConstExprHashingUtils::HashString("MailFromDomainNotVerifiedException");
+static constexpr uint32_t CANNOT_DELETE_HASH = ConstExprHashingUtils::HashString("CannotDelete");
+static constexpr uint32_t RULE_SET_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("RuleSetDoesNotExist");
+static constexpr uint32_t CUSTOM_VERIFICATION_EMAIL_TEMPLATE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("CustomVerificationEmailTemplateAlreadyExists");
+static constexpr uint32_t RULE_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("RuleDoesNotExist");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFIGURATION_SET_DOES_NOT_EXIST_HASH)
   {

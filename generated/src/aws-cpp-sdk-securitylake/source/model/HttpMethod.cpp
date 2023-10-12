@@ -20,13 +20,13 @@ namespace Aws
       namespace HttpMethodMapper
       {
 
-        static const int POST_HASH = HashingUtils::HashString("POST");
-        static const int PUT_HASH = HashingUtils::HashString("PUT");
+        static constexpr uint32_t POST_HASH = ConstExprHashingUtils::HashString("POST");
+        static constexpr uint32_t PUT_HASH = ConstExprHashingUtils::HashString("PUT");
 
 
         HttpMethod GetHttpMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == POST_HASH)
           {
             return HttpMethod::POST;

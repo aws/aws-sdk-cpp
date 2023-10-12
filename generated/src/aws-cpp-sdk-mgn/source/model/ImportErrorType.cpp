@@ -20,13 +20,13 @@ namespace Aws
       namespace ImportErrorTypeMapper
       {
 
-        static const int VALIDATION_ERROR_HASH = HashingUtils::HashString("VALIDATION_ERROR");
-        static const int PROCESSING_ERROR_HASH = HashingUtils::HashString("PROCESSING_ERROR");
+        static constexpr uint32_t VALIDATION_ERROR_HASH = ConstExprHashingUtils::HashString("VALIDATION_ERROR");
+        static constexpr uint32_t PROCESSING_ERROR_HASH = ConstExprHashingUtils::HashString("PROCESSING_ERROR");
 
 
         ImportErrorType GetImportErrorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VALIDATION_ERROR_HASH)
           {
             return ImportErrorType::VALIDATION_ERROR;

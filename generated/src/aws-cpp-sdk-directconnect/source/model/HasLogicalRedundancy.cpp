@@ -20,14 +20,14 @@ namespace Aws
       namespace HasLogicalRedundancyMapper
       {
 
-        static const int unknown_HASH = HashingUtils::HashString("unknown");
-        static const int yes_HASH = HashingUtils::HashString("yes");
-        static const int no_HASH = HashingUtils::HashString("no");
+        static constexpr uint32_t unknown_HASH = ConstExprHashingUtils::HashString("unknown");
+        static constexpr uint32_t yes_HASH = ConstExprHashingUtils::HashString("yes");
+        static constexpr uint32_t no_HASH = ConstExprHashingUtils::HashString("no");
 
 
         HasLogicalRedundancy GetHasLogicalRedundancyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == unknown_HASH)
           {
             return HasLogicalRedundancy::unknown;

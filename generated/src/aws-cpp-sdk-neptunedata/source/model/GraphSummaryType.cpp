@@ -20,13 +20,13 @@ namespace Aws
       namespace GraphSummaryTypeMapper
       {
 
-        static const int basic_HASH = HashingUtils::HashString("basic");
-        static const int detailed_HASH = HashingUtils::HashString("detailed");
+        static constexpr uint32_t basic_HASH = ConstExprHashingUtils::HashString("basic");
+        static constexpr uint32_t detailed_HASH = ConstExprHashingUtils::HashString("detailed");
 
 
         GraphSummaryType GetGraphSummaryTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == basic_HASH)
           {
             return GraphSummaryType::basic;

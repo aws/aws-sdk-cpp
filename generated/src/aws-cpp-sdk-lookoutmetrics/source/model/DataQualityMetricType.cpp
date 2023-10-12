@@ -20,21 +20,21 @@ namespace Aws
       namespace DataQualityMetricTypeMapper
       {
 
-        static const int COLUMN_COMPLETENESS_HASH = HashingUtils::HashString("COLUMN_COMPLETENESS");
-        static const int DIMENSION_UNIQUENESS_HASH = HashingUtils::HashString("DIMENSION_UNIQUENESS");
-        static const int TIME_SERIES_COUNT_HASH = HashingUtils::HashString("TIME_SERIES_COUNT");
-        static const int ROWS_PROCESSED_HASH = HashingUtils::HashString("ROWS_PROCESSED");
-        static const int ROWS_PARTIAL_COMPLIANCE_HASH = HashingUtils::HashString("ROWS_PARTIAL_COMPLIANCE");
-        static const int INVALID_ROWS_COMPLIANCE_HASH = HashingUtils::HashString("INVALID_ROWS_COMPLIANCE");
-        static const int BACKTEST_TRAINING_DATA_START_TIME_STAMP_HASH = HashingUtils::HashString("BACKTEST_TRAINING_DATA_START_TIME_STAMP");
-        static const int BACKTEST_TRAINING_DATA_END_TIME_STAMP_HASH = HashingUtils::HashString("BACKTEST_TRAINING_DATA_END_TIME_STAMP");
-        static const int BACKTEST_INFERENCE_DATA_START_TIME_STAMP_HASH = HashingUtils::HashString("BACKTEST_INFERENCE_DATA_START_TIME_STAMP");
-        static const int BACKTEST_INFERENCE_DATA_END_TIME_STAMP_HASH = HashingUtils::HashString("BACKTEST_INFERENCE_DATA_END_TIME_STAMP");
+        static constexpr uint32_t COLUMN_COMPLETENESS_HASH = ConstExprHashingUtils::HashString("COLUMN_COMPLETENESS");
+        static constexpr uint32_t DIMENSION_UNIQUENESS_HASH = ConstExprHashingUtils::HashString("DIMENSION_UNIQUENESS");
+        static constexpr uint32_t TIME_SERIES_COUNT_HASH = ConstExprHashingUtils::HashString("TIME_SERIES_COUNT");
+        static constexpr uint32_t ROWS_PROCESSED_HASH = ConstExprHashingUtils::HashString("ROWS_PROCESSED");
+        static constexpr uint32_t ROWS_PARTIAL_COMPLIANCE_HASH = ConstExprHashingUtils::HashString("ROWS_PARTIAL_COMPLIANCE");
+        static constexpr uint32_t INVALID_ROWS_COMPLIANCE_HASH = ConstExprHashingUtils::HashString("INVALID_ROWS_COMPLIANCE");
+        static constexpr uint32_t BACKTEST_TRAINING_DATA_START_TIME_STAMP_HASH = ConstExprHashingUtils::HashString("BACKTEST_TRAINING_DATA_START_TIME_STAMP");
+        static constexpr uint32_t BACKTEST_TRAINING_DATA_END_TIME_STAMP_HASH = ConstExprHashingUtils::HashString("BACKTEST_TRAINING_DATA_END_TIME_STAMP");
+        static constexpr uint32_t BACKTEST_INFERENCE_DATA_START_TIME_STAMP_HASH = ConstExprHashingUtils::HashString("BACKTEST_INFERENCE_DATA_START_TIME_STAMP");
+        static constexpr uint32_t BACKTEST_INFERENCE_DATA_END_TIME_STAMP_HASH = ConstExprHashingUtils::HashString("BACKTEST_INFERENCE_DATA_END_TIME_STAMP");
 
 
         DataQualityMetricType GetDataQualityMetricTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COLUMN_COMPLETENESS_HASH)
           {
             return DataQualityMetricType::COLUMN_COMPLETENESS;

@@ -20,14 +20,14 @@ namespace Aws
       namespace ClarifyTextGranularityMapper
       {
 
-        static const int token_HASH = HashingUtils::HashString("token");
-        static const int sentence_HASH = HashingUtils::HashString("sentence");
-        static const int paragraph_HASH = HashingUtils::HashString("paragraph");
+        static constexpr uint32_t token_HASH = ConstExprHashingUtils::HashString("token");
+        static constexpr uint32_t sentence_HASH = ConstExprHashingUtils::HashString("sentence");
+        static constexpr uint32_t paragraph_HASH = ConstExprHashingUtils::HashString("paragraph");
 
 
         ClarifyTextGranularity GetClarifyTextGranularityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == token_HASH)
           {
             return ClarifyTextGranularity::token;

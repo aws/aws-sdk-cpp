@@ -20,14 +20,14 @@ namespace Aws
       namespace ScalarAttributeTypeMapper
       {
 
-        static const int S_HASH = HashingUtils::HashString("S");
-        static const int N_HASH = HashingUtils::HashString("N");
-        static const int B_HASH = HashingUtils::HashString("B");
+        static constexpr uint32_t S_HASH = ConstExprHashingUtils::HashString("S");
+        static constexpr uint32_t N_HASH = ConstExprHashingUtils::HashString("N");
+        static constexpr uint32_t B_HASH = ConstExprHashingUtils::HashString("B");
 
 
         ScalarAttributeType GetScalarAttributeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == S_HASH)
           {
             return ScalarAttributeType::S;

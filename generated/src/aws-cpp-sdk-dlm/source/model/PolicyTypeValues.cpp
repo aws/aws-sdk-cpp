@@ -20,14 +20,14 @@ namespace Aws
       namespace PolicyTypeValuesMapper
       {
 
-        static const int EBS_SNAPSHOT_MANAGEMENT_HASH = HashingUtils::HashString("EBS_SNAPSHOT_MANAGEMENT");
-        static const int IMAGE_MANAGEMENT_HASH = HashingUtils::HashString("IMAGE_MANAGEMENT");
-        static const int EVENT_BASED_POLICY_HASH = HashingUtils::HashString("EVENT_BASED_POLICY");
+        static constexpr uint32_t EBS_SNAPSHOT_MANAGEMENT_HASH = ConstExprHashingUtils::HashString("EBS_SNAPSHOT_MANAGEMENT");
+        static constexpr uint32_t IMAGE_MANAGEMENT_HASH = ConstExprHashingUtils::HashString("IMAGE_MANAGEMENT");
+        static constexpr uint32_t EVENT_BASED_POLICY_HASH = ConstExprHashingUtils::HashString("EVENT_BASED_POLICY");
 
 
         PolicyTypeValues GetPolicyTypeValuesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EBS_SNAPSHOT_MANAGEMENT_HASH)
           {
             return PolicyTypeValues::EBS_SNAPSHOT_MANAGEMENT;

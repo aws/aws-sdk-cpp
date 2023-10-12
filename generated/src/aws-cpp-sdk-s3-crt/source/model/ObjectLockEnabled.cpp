@@ -20,12 +20,12 @@ namespace Aws
       namespace ObjectLockEnabledMapper
       {
 
-        static const int Enabled_HASH = HashingUtils::HashString("Enabled");
+        static constexpr uint32_t Enabled_HASH = ConstExprHashingUtils::HashString("Enabled");
 
 
         ObjectLockEnabled GetObjectLockEnabledForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Enabled_HASH)
           {
             return ObjectLockEnabled::Enabled;

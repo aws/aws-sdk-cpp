@@ -33,43 +33,43 @@ template<> AWS_ECR_API InvalidLayerPartException ECRError::GetModeledError()
 namespace ECRErrorMapper
 {
 
-static const int IMAGE_DIGEST_DOES_NOT_MATCH_HASH = HashingUtils::HashString("ImageDigestDoesNotMatchException");
-static const int IMAGE_TAG_ALREADY_EXISTS_HASH = HashingUtils::HashString("ImageTagAlreadyExistsException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int LAYER_INACCESSIBLE_HASH = HashingUtils::HashString("LayerInaccessibleException");
-static const int UNSUPPORTED_UPSTREAM_REGISTRY_HASH = HashingUtils::HashString("UnsupportedUpstreamRegistryException");
-static const int REPOSITORY_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("RepositoryPolicyNotFoundException");
-static const int SCAN_NOT_FOUND_HASH = HashingUtils::HashString("ScanNotFoundException");
-static const int LAYER_PART_TOO_SMALL_HASH = HashingUtils::HashString("LayerPartTooSmallException");
-static const int LIFECYCLE_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("LifecyclePolicyNotFoundException");
-static const int LIFECYCLE_POLICY_PREVIEW_NOT_FOUND_HASH = HashingUtils::HashString("LifecyclePolicyPreviewNotFoundException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int REGISTRY_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("RegistryPolicyNotFoundException");
-static const int INVALID_TAG_PARAMETER_HASH = HashingUtils::HashString("InvalidTagParameterException");
-static const int PULL_THROUGH_CACHE_RULE_NOT_FOUND_HASH = HashingUtils::HashString("PullThroughCacheRuleNotFoundException");
-static const int IMAGE_NOT_FOUND_HASH = HashingUtils::HashString("ImageNotFoundException");
-static const int INVALID_LAYER_HASH = HashingUtils::HashString("InvalidLayerException");
-static const int REFERENCED_IMAGES_NOT_FOUND_HASH = HashingUtils::HashString("ReferencedImagesNotFoundException");
-static const int REPOSITORY_NOT_EMPTY_HASH = HashingUtils::HashString("RepositoryNotEmptyException");
-static const int LAYERS_NOT_FOUND_HASH = HashingUtils::HashString("LayersNotFoundException");
-static const int SERVER_HASH = HashingUtils::HashString("ServerException");
-static const int REPOSITORY_NOT_FOUND_HASH = HashingUtils::HashString("RepositoryNotFoundException");
-static const int LIFECYCLE_POLICY_PREVIEW_IN_PROGRESS_HASH = HashingUtils::HashString("LifecyclePolicyPreviewInProgressException");
-static const int EMPTY_UPLOAD_HASH = HashingUtils::HashString("EmptyUploadException");
-static const int REPOSITORY_ALREADY_EXISTS_HASH = HashingUtils::HashString("RepositoryAlreadyExistsException");
-static const int UNSUPPORTED_IMAGE_TYPE_HASH = HashingUtils::HashString("UnsupportedImageTypeException");
-static const int KMS_HASH = HashingUtils::HashString("KmsException");
-static const int IMAGE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ImageAlreadyExistsException");
-static const int LAYER_ALREADY_EXISTS_HASH = HashingUtils::HashString("LayerAlreadyExistsException");
-static const int PULL_THROUGH_CACHE_RULE_ALREADY_EXISTS_HASH = HashingUtils::HashString("PullThroughCacheRuleAlreadyExistsException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int INVALID_LAYER_PART_HASH = HashingUtils::HashString("InvalidLayerPartException");
-static const int UPLOAD_NOT_FOUND_HASH = HashingUtils::HashString("UploadNotFoundException");
+static constexpr uint32_t IMAGE_DIGEST_DOES_NOT_MATCH_HASH = ConstExprHashingUtils::HashString("ImageDigestDoesNotMatchException");
+static constexpr uint32_t IMAGE_TAG_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ImageTagAlreadyExistsException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t LAYER_INACCESSIBLE_HASH = ConstExprHashingUtils::HashString("LayerInaccessibleException");
+static constexpr uint32_t UNSUPPORTED_UPSTREAM_REGISTRY_HASH = ConstExprHashingUtils::HashString("UnsupportedUpstreamRegistryException");
+static constexpr uint32_t REPOSITORY_POLICY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("RepositoryPolicyNotFoundException");
+static constexpr uint32_t SCAN_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ScanNotFoundException");
+static constexpr uint32_t LAYER_PART_TOO_SMALL_HASH = ConstExprHashingUtils::HashString("LayerPartTooSmallException");
+static constexpr uint32_t LIFECYCLE_POLICY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("LifecyclePolicyNotFoundException");
+static constexpr uint32_t LIFECYCLE_POLICY_PREVIEW_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("LifecyclePolicyPreviewNotFoundException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t REGISTRY_POLICY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("RegistryPolicyNotFoundException");
+static constexpr uint32_t INVALID_TAG_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidTagParameterException");
+static constexpr uint32_t PULL_THROUGH_CACHE_RULE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("PullThroughCacheRuleNotFoundException");
+static constexpr uint32_t IMAGE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ImageNotFoundException");
+static constexpr uint32_t INVALID_LAYER_HASH = ConstExprHashingUtils::HashString("InvalidLayerException");
+static constexpr uint32_t REFERENCED_IMAGES_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ReferencedImagesNotFoundException");
+static constexpr uint32_t REPOSITORY_NOT_EMPTY_HASH = ConstExprHashingUtils::HashString("RepositoryNotEmptyException");
+static constexpr uint32_t LAYERS_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("LayersNotFoundException");
+static constexpr uint32_t SERVER_HASH = ConstExprHashingUtils::HashString("ServerException");
+static constexpr uint32_t REPOSITORY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("RepositoryNotFoundException");
+static constexpr uint32_t LIFECYCLE_POLICY_PREVIEW_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("LifecyclePolicyPreviewInProgressException");
+static constexpr uint32_t EMPTY_UPLOAD_HASH = ConstExprHashingUtils::HashString("EmptyUploadException");
+static constexpr uint32_t REPOSITORY_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("RepositoryAlreadyExistsException");
+static constexpr uint32_t UNSUPPORTED_IMAGE_TYPE_HASH = ConstExprHashingUtils::HashString("UnsupportedImageTypeException");
+static constexpr uint32_t KMS_HASH = ConstExprHashingUtils::HashString("KmsException");
+static constexpr uint32_t IMAGE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ImageAlreadyExistsException");
+static constexpr uint32_t LAYER_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("LayerAlreadyExistsException");
+static constexpr uint32_t PULL_THROUGH_CACHE_RULE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("PullThroughCacheRuleAlreadyExistsException");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t INVALID_LAYER_PART_HASH = ConstExprHashingUtils::HashString("InvalidLayerPartException");
+static constexpr uint32_t UPLOAD_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("UploadNotFoundException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == IMAGE_DIGEST_DOES_NOT_MATCH_HASH)
   {

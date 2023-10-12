@@ -20,17 +20,17 @@ namespace Aws
       namespace FailureTypeMapper
       {
 
-        static const int JobFailed_HASH = HashingUtils::HashString("JobFailed");
-        static const int ConfigurationError_HASH = HashingUtils::HashString("ConfigurationError");
-        static const int PermissionError_HASH = HashingUtils::HashString("PermissionError");
-        static const int RevisionOutOfSync_HASH = HashingUtils::HashString("RevisionOutOfSync");
-        static const int RevisionUnavailable_HASH = HashingUtils::HashString("RevisionUnavailable");
-        static const int SystemUnavailable_HASH = HashingUtils::HashString("SystemUnavailable");
+        static constexpr uint32_t JobFailed_HASH = ConstExprHashingUtils::HashString("JobFailed");
+        static constexpr uint32_t ConfigurationError_HASH = ConstExprHashingUtils::HashString("ConfigurationError");
+        static constexpr uint32_t PermissionError_HASH = ConstExprHashingUtils::HashString("PermissionError");
+        static constexpr uint32_t RevisionOutOfSync_HASH = ConstExprHashingUtils::HashString("RevisionOutOfSync");
+        static constexpr uint32_t RevisionUnavailable_HASH = ConstExprHashingUtils::HashString("RevisionUnavailable");
+        static constexpr uint32_t SystemUnavailable_HASH = ConstExprHashingUtils::HashString("SystemUnavailable");
 
 
         FailureType GetFailureTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JobFailed_HASH)
           {
             return FailureType::JobFailed;

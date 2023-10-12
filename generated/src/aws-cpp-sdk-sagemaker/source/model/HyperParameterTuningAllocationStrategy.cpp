@@ -20,12 +20,12 @@ namespace Aws
       namespace HyperParameterTuningAllocationStrategyMapper
       {
 
-        static const int Prioritized_HASH = HashingUtils::HashString("Prioritized");
+        static constexpr uint32_t Prioritized_HASH = ConstExprHashingUtils::HashString("Prioritized");
 
 
         HyperParameterTuningAllocationStrategy GetHyperParameterTuningAllocationStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Prioritized_HASH)
           {
             return HyperParameterTuningAllocationStrategy::Prioritized;

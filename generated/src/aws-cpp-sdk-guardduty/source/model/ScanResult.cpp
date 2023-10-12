@@ -20,13 +20,13 @@ namespace Aws
       namespace ScanResultMapper
       {
 
-        static const int CLEAN_HASH = HashingUtils::HashString("CLEAN");
-        static const int INFECTED_HASH = HashingUtils::HashString("INFECTED");
+        static constexpr uint32_t CLEAN_HASH = ConstExprHashingUtils::HashString("CLEAN");
+        static constexpr uint32_t INFECTED_HASH = ConstExprHashingUtils::HashString("INFECTED");
 
 
         ScanResult GetScanResultForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLEAN_HASH)
           {
             return ScanResult::CLEAN;

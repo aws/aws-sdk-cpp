@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceIdTypeMapper
       {
 
-        static const int LONG_ID_HASH = HashingUtils::HashString("LONG_ID");
-        static const int SHORT_ID_HASH = HashingUtils::HashString("SHORT_ID");
+        static constexpr uint32_t LONG_ID_HASH = ConstExprHashingUtils::HashString("LONG_ID");
+        static constexpr uint32_t SHORT_ID_HASH = ConstExprHashingUtils::HashString("SHORT_ID");
 
 
         ResourceIdType GetResourceIdTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LONG_ID_HASH)
           {
             return ResourceIdType::LONG_ID;

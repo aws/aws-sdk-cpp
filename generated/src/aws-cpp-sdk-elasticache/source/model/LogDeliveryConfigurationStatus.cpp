@@ -20,16 +20,16 @@ namespace Aws
       namespace LogDeliveryConfigurationStatusMapper
       {
 
-        static const int active_HASH = HashingUtils::HashString("active");
-        static const int enabling_HASH = HashingUtils::HashString("enabling");
-        static const int modifying_HASH = HashingUtils::HashString("modifying");
-        static const int disabling_HASH = HashingUtils::HashString("disabling");
-        static const int error_HASH = HashingUtils::HashString("error");
+        static constexpr uint32_t active_HASH = ConstExprHashingUtils::HashString("active");
+        static constexpr uint32_t enabling_HASH = ConstExprHashingUtils::HashString("enabling");
+        static constexpr uint32_t modifying_HASH = ConstExprHashingUtils::HashString("modifying");
+        static constexpr uint32_t disabling_HASH = ConstExprHashingUtils::HashString("disabling");
+        static constexpr uint32_t error_HASH = ConstExprHashingUtils::HashString("error");
 
 
         LogDeliveryConfigurationStatus GetLogDeliveryConfigurationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == active_HASH)
           {
             return LogDeliveryConfigurationStatus::active;

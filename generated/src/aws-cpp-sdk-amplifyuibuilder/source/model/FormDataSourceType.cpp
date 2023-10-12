@@ -20,13 +20,13 @@ namespace Aws
       namespace FormDataSourceTypeMapper
       {
 
-        static const int DataStore_HASH = HashingUtils::HashString("DataStore");
-        static const int Custom_HASH = HashingUtils::HashString("Custom");
+        static constexpr uint32_t DataStore_HASH = ConstExprHashingUtils::HashString("DataStore");
+        static constexpr uint32_t Custom_HASH = ConstExprHashingUtils::HashString("Custom");
 
 
         FormDataSourceType GetFormDataSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DataStore_HASH)
           {
             return FormDataSourceType::DataStore;

@@ -20,12 +20,12 @@ namespace Aws
       namespace AccessDeniedExceptionReasonMapper
       {
 
-        static const int INSUFFICIENT_PERMISSIONS_HASH = HashingUtils::HashString("INSUFFICIENT_PERMISSIONS");
+        static constexpr uint32_t INSUFFICIENT_PERMISSIONS_HASH = ConstExprHashingUtils::HashString("INSUFFICIENT_PERMISSIONS");
 
 
         AccessDeniedExceptionReason GetAccessDeniedExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSUFFICIENT_PERMISSIONS_HASH)
           {
             return AccessDeniedExceptionReason::INSUFFICIENT_PERMISSIONS;

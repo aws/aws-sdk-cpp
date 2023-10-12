@@ -20,13 +20,13 @@ namespace Aws
       namespace DestinationTypeMapper
       {
 
-        static const int cloudwatch_logs_HASH = HashingUtils::HashString("cloudwatch-logs");
-        static const int kinesis_firehose_HASH = HashingUtils::HashString("kinesis-firehose");
+        static constexpr uint32_t cloudwatch_logs_HASH = ConstExprHashingUtils::HashString("cloudwatch-logs");
+        static constexpr uint32_t kinesis_firehose_HASH = ConstExprHashingUtils::HashString("kinesis-firehose");
 
 
         DestinationType GetDestinationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == cloudwatch_logs_HASH)
           {
             return DestinationType::cloudwatch_logs;

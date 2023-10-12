@@ -20,15 +20,15 @@ namespace Aws
       namespace RecordTypeMapper
       {
 
-        static const int SRV_HASH = HashingUtils::HashString("SRV");
-        static const int A_HASH = HashingUtils::HashString("A");
-        static const int AAAA_HASH = HashingUtils::HashString("AAAA");
-        static const int CNAME_HASH = HashingUtils::HashString("CNAME");
+        static constexpr uint32_t SRV_HASH = ConstExprHashingUtils::HashString("SRV");
+        static constexpr uint32_t A_HASH = ConstExprHashingUtils::HashString("A");
+        static constexpr uint32_t AAAA_HASH = ConstExprHashingUtils::HashString("AAAA");
+        static constexpr uint32_t CNAME_HASH = ConstExprHashingUtils::HashString("CNAME");
 
 
         RecordType GetRecordTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SRV_HASH)
           {
             return RecordType::SRV;

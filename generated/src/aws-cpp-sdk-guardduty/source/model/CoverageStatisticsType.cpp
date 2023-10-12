@@ -20,13 +20,13 @@ namespace Aws
       namespace CoverageStatisticsTypeMapper
       {
 
-        static const int COUNT_BY_RESOURCE_TYPE_HASH = HashingUtils::HashString("COUNT_BY_RESOURCE_TYPE");
-        static const int COUNT_BY_COVERAGE_STATUS_HASH = HashingUtils::HashString("COUNT_BY_COVERAGE_STATUS");
+        static constexpr uint32_t COUNT_BY_RESOURCE_TYPE_HASH = ConstExprHashingUtils::HashString("COUNT_BY_RESOURCE_TYPE");
+        static constexpr uint32_t COUNT_BY_COVERAGE_STATUS_HASH = ConstExprHashingUtils::HashString("COUNT_BY_COVERAGE_STATUS");
 
 
         CoverageStatisticsType GetCoverageStatisticsTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COUNT_BY_RESOURCE_TYPE_HASH)
           {
             return CoverageStatisticsType::COUNT_BY_RESOURCE_TYPE;

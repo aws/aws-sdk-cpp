@@ -20,20 +20,20 @@ namespace Aws
       namespace PullRequestEventTypeMapper
       {
 
-        static const int PULL_REQUEST_CREATED_HASH = HashingUtils::HashString("PULL_REQUEST_CREATED");
-        static const int PULL_REQUEST_STATUS_CHANGED_HASH = HashingUtils::HashString("PULL_REQUEST_STATUS_CHANGED");
-        static const int PULL_REQUEST_SOURCE_REFERENCE_UPDATED_HASH = HashingUtils::HashString("PULL_REQUEST_SOURCE_REFERENCE_UPDATED");
-        static const int PULL_REQUEST_MERGE_STATE_CHANGED_HASH = HashingUtils::HashString("PULL_REQUEST_MERGE_STATE_CHANGED");
-        static const int PULL_REQUEST_APPROVAL_RULE_CREATED_HASH = HashingUtils::HashString("PULL_REQUEST_APPROVAL_RULE_CREATED");
-        static const int PULL_REQUEST_APPROVAL_RULE_UPDATED_HASH = HashingUtils::HashString("PULL_REQUEST_APPROVAL_RULE_UPDATED");
-        static const int PULL_REQUEST_APPROVAL_RULE_DELETED_HASH = HashingUtils::HashString("PULL_REQUEST_APPROVAL_RULE_DELETED");
-        static const int PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN_HASH = HashingUtils::HashString("PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN");
-        static const int PULL_REQUEST_APPROVAL_STATE_CHANGED_HASH = HashingUtils::HashString("PULL_REQUEST_APPROVAL_STATE_CHANGED");
+        static constexpr uint32_t PULL_REQUEST_CREATED_HASH = ConstExprHashingUtils::HashString("PULL_REQUEST_CREATED");
+        static constexpr uint32_t PULL_REQUEST_STATUS_CHANGED_HASH = ConstExprHashingUtils::HashString("PULL_REQUEST_STATUS_CHANGED");
+        static constexpr uint32_t PULL_REQUEST_SOURCE_REFERENCE_UPDATED_HASH = ConstExprHashingUtils::HashString("PULL_REQUEST_SOURCE_REFERENCE_UPDATED");
+        static constexpr uint32_t PULL_REQUEST_MERGE_STATE_CHANGED_HASH = ConstExprHashingUtils::HashString("PULL_REQUEST_MERGE_STATE_CHANGED");
+        static constexpr uint32_t PULL_REQUEST_APPROVAL_RULE_CREATED_HASH = ConstExprHashingUtils::HashString("PULL_REQUEST_APPROVAL_RULE_CREATED");
+        static constexpr uint32_t PULL_REQUEST_APPROVAL_RULE_UPDATED_HASH = ConstExprHashingUtils::HashString("PULL_REQUEST_APPROVAL_RULE_UPDATED");
+        static constexpr uint32_t PULL_REQUEST_APPROVAL_RULE_DELETED_HASH = ConstExprHashingUtils::HashString("PULL_REQUEST_APPROVAL_RULE_DELETED");
+        static constexpr uint32_t PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN_HASH = ConstExprHashingUtils::HashString("PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN");
+        static constexpr uint32_t PULL_REQUEST_APPROVAL_STATE_CHANGED_HASH = ConstExprHashingUtils::HashString("PULL_REQUEST_APPROVAL_STATE_CHANGED");
 
 
         PullRequestEventType GetPullRequestEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PULL_REQUEST_CREATED_HASH)
           {
             return PullRequestEventType::PULL_REQUEST_CREATED;

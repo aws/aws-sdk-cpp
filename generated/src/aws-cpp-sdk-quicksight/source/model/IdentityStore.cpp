@@ -20,12 +20,12 @@ namespace Aws
       namespace IdentityStoreMapper
       {
 
-        static const int QUICKSIGHT_HASH = HashingUtils::HashString("QUICKSIGHT");
+        static constexpr uint32_t QUICKSIGHT_HASH = ConstExprHashingUtils::HashString("QUICKSIGHT");
 
 
         IdentityStore GetIdentityStoreForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUICKSIGHT_HASH)
           {
             return IdentityStore::QUICKSIGHT;

@@ -20,14 +20,14 @@ namespace Aws
       namespace LocationFilterNameMapper
       {
 
-        static const int LocationUri_HASH = HashingUtils::HashString("LocationUri");
-        static const int LocationType_HASH = HashingUtils::HashString("LocationType");
-        static const int CreationTime_HASH = HashingUtils::HashString("CreationTime");
+        static constexpr uint32_t LocationUri_HASH = ConstExprHashingUtils::HashString("LocationUri");
+        static constexpr uint32_t LocationType_HASH = ConstExprHashingUtils::HashString("LocationType");
+        static constexpr uint32_t CreationTime_HASH = ConstExprHashingUtils::HashString("CreationTime");
 
 
         LocationFilterName GetLocationFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LocationUri_HASH)
           {
             return LocationFilterName::LocationUri;

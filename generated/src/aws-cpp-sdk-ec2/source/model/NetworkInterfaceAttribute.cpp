@@ -20,15 +20,15 @@ namespace Aws
       namespace NetworkInterfaceAttributeMapper
       {
 
-        static const int description_HASH = HashingUtils::HashString("description");
-        static const int groupSet_HASH = HashingUtils::HashString("groupSet");
-        static const int sourceDestCheck_HASH = HashingUtils::HashString("sourceDestCheck");
-        static const int attachment_HASH = HashingUtils::HashString("attachment");
+        static constexpr uint32_t description_HASH = ConstExprHashingUtils::HashString("description");
+        static constexpr uint32_t groupSet_HASH = ConstExprHashingUtils::HashString("groupSet");
+        static constexpr uint32_t sourceDestCheck_HASH = ConstExprHashingUtils::HashString("sourceDestCheck");
+        static constexpr uint32_t attachment_HASH = ConstExprHashingUtils::HashString("attachment");
 
 
         NetworkInterfaceAttribute GetNetworkInterfaceAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == description_HASH)
           {
             return NetworkInterfaceAttribute::description;

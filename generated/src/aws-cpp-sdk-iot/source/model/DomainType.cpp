@@ -20,14 +20,14 @@ namespace Aws
       namespace DomainTypeMapper
       {
 
-        static const int ENDPOINT_HASH = HashingUtils::HashString("ENDPOINT");
-        static const int AWS_MANAGED_HASH = HashingUtils::HashString("AWS_MANAGED");
-        static const int CUSTOMER_MANAGED_HASH = HashingUtils::HashString("CUSTOMER_MANAGED");
+        static constexpr uint32_t ENDPOINT_HASH = ConstExprHashingUtils::HashString("ENDPOINT");
+        static constexpr uint32_t AWS_MANAGED_HASH = ConstExprHashingUtils::HashString("AWS_MANAGED");
+        static constexpr uint32_t CUSTOMER_MANAGED_HASH = ConstExprHashingUtils::HashString("CUSTOMER_MANAGED");
 
 
         DomainType GetDomainTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENDPOINT_HASH)
           {
             return DomainType::ENDPOINT;

@@ -20,13 +20,13 @@ namespace Aws
       namespace InputPreferenceMapper
       {
 
-        static const int EQUAL_INPUT_PREFERENCE_HASH = HashingUtils::HashString("EQUAL_INPUT_PREFERENCE");
-        static const int PRIMARY_INPUT_PREFERRED_HASH = HashingUtils::HashString("PRIMARY_INPUT_PREFERRED");
+        static constexpr uint32_t EQUAL_INPUT_PREFERENCE_HASH = ConstExprHashingUtils::HashString("EQUAL_INPUT_PREFERENCE");
+        static constexpr uint32_t PRIMARY_INPUT_PREFERRED_HASH = ConstExprHashingUtils::HashString("PRIMARY_INPUT_PREFERRED");
 
 
         InputPreference GetInputPreferenceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EQUAL_INPUT_PREFERENCE_HASH)
           {
             return InputPreference::EQUAL_INPUT_PREFERENCE;

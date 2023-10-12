@@ -20,12 +20,12 @@ namespace Aws
       namespace ProvisionedProductViewFilterByMapper
       {
 
-        static const int SearchQuery_HASH = HashingUtils::HashString("SearchQuery");
+        static constexpr uint32_t SearchQuery_HASH = ConstExprHashingUtils::HashString("SearchQuery");
 
 
         ProvisionedProductViewFilterBy GetProvisionedProductViewFilterByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SearchQuery_HASH)
           {
             return ProvisionedProductViewFilterBy::SearchQuery;

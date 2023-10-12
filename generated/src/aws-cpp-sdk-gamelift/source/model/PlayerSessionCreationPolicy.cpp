@@ -20,13 +20,13 @@ namespace Aws
       namespace PlayerSessionCreationPolicyMapper
       {
 
-        static const int ACCEPT_ALL_HASH = HashingUtils::HashString("ACCEPT_ALL");
-        static const int DENY_ALL_HASH = HashingUtils::HashString("DENY_ALL");
+        static constexpr uint32_t ACCEPT_ALL_HASH = ConstExprHashingUtils::HashString("ACCEPT_ALL");
+        static constexpr uint32_t DENY_ALL_HASH = ConstExprHashingUtils::HashString("DENY_ALL");
 
 
         PlayerSessionCreationPolicy GetPlayerSessionCreationPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCEPT_ALL_HASH)
           {
             return PlayerSessionCreationPolicy::ACCEPT_ALL;

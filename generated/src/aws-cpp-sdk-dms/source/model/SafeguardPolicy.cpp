@@ -20,14 +20,14 @@ namespace Aws
       namespace SafeguardPolicyMapper
       {
 
-        static const int rely_on_sql_server_replication_agent_HASH = HashingUtils::HashString("rely-on-sql-server-replication-agent");
-        static const int exclusive_automatic_truncation_HASH = HashingUtils::HashString("exclusive-automatic-truncation");
-        static const int shared_automatic_truncation_HASH = HashingUtils::HashString("shared-automatic-truncation");
+        static constexpr uint32_t rely_on_sql_server_replication_agent_HASH = ConstExprHashingUtils::HashString("rely-on-sql-server-replication-agent");
+        static constexpr uint32_t exclusive_automatic_truncation_HASH = ConstExprHashingUtils::HashString("exclusive-automatic-truncation");
+        static constexpr uint32_t shared_automatic_truncation_HASH = ConstExprHashingUtils::HashString("shared-automatic-truncation");
 
 
         SafeguardPolicy GetSafeguardPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == rely_on_sql_server_replication_agent_HASH)
           {
             return SafeguardPolicy::rely_on_sql_server_replication_agent;

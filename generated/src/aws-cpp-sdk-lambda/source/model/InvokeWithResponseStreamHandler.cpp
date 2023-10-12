@@ -203,12 +203,12 @@ namespace Model
 
 namespace InvokeWithResponseStreamEventMapper
 {
-    static const int PAYLOADCHUNK_HASH = Aws::Utils::HashingUtils::HashString("PayloadChunk");
-    static const int INVOKECOMPLETE_HASH = Aws::Utils::HashingUtils::HashString("InvokeComplete");
+    static constexpr uint32_t PAYLOADCHUNK_HASH = Aws::Utils::ConstExprHashingUtils::HashString("PayloadChunk");
+    static constexpr uint32_t INVOKECOMPLETE_HASH = Aws::Utils::ConstExprHashingUtils::HashString("InvokeComplete");
 
     InvokeWithResponseStreamEventType GetInvokeWithResponseStreamEventTypeForName(const Aws::String& name)
     {
-        int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
+        uint32_t hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
         if (hashCode == PAYLOADCHUNK_HASH)
         {
             return InvokeWithResponseStreamEventType::PAYLOADCHUNK;

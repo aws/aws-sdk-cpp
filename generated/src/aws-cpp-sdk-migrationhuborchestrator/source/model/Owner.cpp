@@ -20,13 +20,13 @@ namespace Aws
       namespace OwnerMapper
       {
 
-        static const int AWS_MANAGED_HASH = HashingUtils::HashString("AWS_MANAGED");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t AWS_MANAGED_HASH = ConstExprHashingUtils::HashString("AWS_MANAGED");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
 
 
         Owner GetOwnerForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_MANAGED_HASH)
           {
             return Owner::AWS_MANAGED;

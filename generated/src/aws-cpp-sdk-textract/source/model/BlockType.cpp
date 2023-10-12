@@ -20,35 +20,35 @@ namespace Aws
       namespace BlockTypeMapper
       {
 
-        static const int KEY_VALUE_SET_HASH = HashingUtils::HashString("KEY_VALUE_SET");
-        static const int PAGE_HASH = HashingUtils::HashString("PAGE");
-        static const int LINE_HASH = HashingUtils::HashString("LINE");
-        static const int WORD_HASH = HashingUtils::HashString("WORD");
-        static const int TABLE_HASH = HashingUtils::HashString("TABLE");
-        static const int CELL_HASH = HashingUtils::HashString("CELL");
-        static const int SELECTION_ELEMENT_HASH = HashingUtils::HashString("SELECTION_ELEMENT");
-        static const int MERGED_CELL_HASH = HashingUtils::HashString("MERGED_CELL");
-        static const int TITLE_HASH = HashingUtils::HashString("TITLE");
-        static const int QUERY_HASH = HashingUtils::HashString("QUERY");
-        static const int QUERY_RESULT_HASH = HashingUtils::HashString("QUERY_RESULT");
-        static const int SIGNATURE_HASH = HashingUtils::HashString("SIGNATURE");
-        static const int TABLE_TITLE_HASH = HashingUtils::HashString("TABLE_TITLE");
-        static const int TABLE_FOOTER_HASH = HashingUtils::HashString("TABLE_FOOTER");
-        static const int LAYOUT_TEXT_HASH = HashingUtils::HashString("LAYOUT_TEXT");
-        static const int LAYOUT_TITLE_HASH = HashingUtils::HashString("LAYOUT_TITLE");
-        static const int LAYOUT_HEADER_HASH = HashingUtils::HashString("LAYOUT_HEADER");
-        static const int LAYOUT_FOOTER_HASH = HashingUtils::HashString("LAYOUT_FOOTER");
-        static const int LAYOUT_SECTION_HEADER_HASH = HashingUtils::HashString("LAYOUT_SECTION_HEADER");
-        static const int LAYOUT_PAGE_NUMBER_HASH = HashingUtils::HashString("LAYOUT_PAGE_NUMBER");
-        static const int LAYOUT_LIST_HASH = HashingUtils::HashString("LAYOUT_LIST");
-        static const int LAYOUT_FIGURE_HASH = HashingUtils::HashString("LAYOUT_FIGURE");
-        static const int LAYOUT_TABLE_HASH = HashingUtils::HashString("LAYOUT_TABLE");
-        static const int LAYOUT_KEY_VALUE_HASH = HashingUtils::HashString("LAYOUT_KEY_VALUE");
+        static constexpr uint32_t KEY_VALUE_SET_HASH = ConstExprHashingUtils::HashString("KEY_VALUE_SET");
+        static constexpr uint32_t PAGE_HASH = ConstExprHashingUtils::HashString("PAGE");
+        static constexpr uint32_t LINE_HASH = ConstExprHashingUtils::HashString("LINE");
+        static constexpr uint32_t WORD_HASH = ConstExprHashingUtils::HashString("WORD");
+        static constexpr uint32_t TABLE_HASH = ConstExprHashingUtils::HashString("TABLE");
+        static constexpr uint32_t CELL_HASH = ConstExprHashingUtils::HashString("CELL");
+        static constexpr uint32_t SELECTION_ELEMENT_HASH = ConstExprHashingUtils::HashString("SELECTION_ELEMENT");
+        static constexpr uint32_t MERGED_CELL_HASH = ConstExprHashingUtils::HashString("MERGED_CELL");
+        static constexpr uint32_t TITLE_HASH = ConstExprHashingUtils::HashString("TITLE");
+        static constexpr uint32_t QUERY_HASH = ConstExprHashingUtils::HashString("QUERY");
+        static constexpr uint32_t QUERY_RESULT_HASH = ConstExprHashingUtils::HashString("QUERY_RESULT");
+        static constexpr uint32_t SIGNATURE_HASH = ConstExprHashingUtils::HashString("SIGNATURE");
+        static constexpr uint32_t TABLE_TITLE_HASH = ConstExprHashingUtils::HashString("TABLE_TITLE");
+        static constexpr uint32_t TABLE_FOOTER_HASH = ConstExprHashingUtils::HashString("TABLE_FOOTER");
+        static constexpr uint32_t LAYOUT_TEXT_HASH = ConstExprHashingUtils::HashString("LAYOUT_TEXT");
+        static constexpr uint32_t LAYOUT_TITLE_HASH = ConstExprHashingUtils::HashString("LAYOUT_TITLE");
+        static constexpr uint32_t LAYOUT_HEADER_HASH = ConstExprHashingUtils::HashString("LAYOUT_HEADER");
+        static constexpr uint32_t LAYOUT_FOOTER_HASH = ConstExprHashingUtils::HashString("LAYOUT_FOOTER");
+        static constexpr uint32_t LAYOUT_SECTION_HEADER_HASH = ConstExprHashingUtils::HashString("LAYOUT_SECTION_HEADER");
+        static constexpr uint32_t LAYOUT_PAGE_NUMBER_HASH = ConstExprHashingUtils::HashString("LAYOUT_PAGE_NUMBER");
+        static constexpr uint32_t LAYOUT_LIST_HASH = ConstExprHashingUtils::HashString("LAYOUT_LIST");
+        static constexpr uint32_t LAYOUT_FIGURE_HASH = ConstExprHashingUtils::HashString("LAYOUT_FIGURE");
+        static constexpr uint32_t LAYOUT_TABLE_HASH = ConstExprHashingUtils::HashString("LAYOUT_TABLE");
+        static constexpr uint32_t LAYOUT_KEY_VALUE_HASH = ConstExprHashingUtils::HashString("LAYOUT_KEY_VALUE");
 
 
         BlockType GetBlockTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KEY_VALUE_SET_HASH)
           {
             return BlockType::KEY_VALUE_SET;

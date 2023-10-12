@@ -20,15 +20,15 @@ namespace Aws
       namespace ClientVpnAuthorizationRuleStatusCodeMapper
       {
 
-        static const int authorizing_HASH = HashingUtils::HashString("authorizing");
-        static const int active_HASH = HashingUtils::HashString("active");
-        static const int failed_HASH = HashingUtils::HashString("failed");
-        static const int revoking_HASH = HashingUtils::HashString("revoking");
+        static constexpr uint32_t authorizing_HASH = ConstExprHashingUtils::HashString("authorizing");
+        static constexpr uint32_t active_HASH = ConstExprHashingUtils::HashString("active");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
+        static constexpr uint32_t revoking_HASH = ConstExprHashingUtils::HashString("revoking");
 
 
         ClientVpnAuthorizationRuleStatusCode GetClientVpnAuthorizationRuleStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == authorizing_HASH)
           {
             return ClientVpnAuthorizationRuleStatusCode::authorizing;

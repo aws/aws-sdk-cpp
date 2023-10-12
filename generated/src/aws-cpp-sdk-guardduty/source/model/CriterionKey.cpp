@@ -20,18 +20,18 @@ namespace Aws
       namespace CriterionKeyMapper
       {
 
-        static const int EC2_INSTANCE_ARN_HASH = HashingUtils::HashString("EC2_INSTANCE_ARN");
-        static const int SCAN_ID_HASH = HashingUtils::HashString("SCAN_ID");
-        static const int ACCOUNT_ID_HASH = HashingUtils::HashString("ACCOUNT_ID");
-        static const int GUARDDUTY_FINDING_ID_HASH = HashingUtils::HashString("GUARDDUTY_FINDING_ID");
-        static const int SCAN_START_TIME_HASH = HashingUtils::HashString("SCAN_START_TIME");
-        static const int SCAN_STATUS_HASH = HashingUtils::HashString("SCAN_STATUS");
-        static const int SCAN_TYPE_HASH = HashingUtils::HashString("SCAN_TYPE");
+        static constexpr uint32_t EC2_INSTANCE_ARN_HASH = ConstExprHashingUtils::HashString("EC2_INSTANCE_ARN");
+        static constexpr uint32_t SCAN_ID_HASH = ConstExprHashingUtils::HashString("SCAN_ID");
+        static constexpr uint32_t ACCOUNT_ID_HASH = ConstExprHashingUtils::HashString("ACCOUNT_ID");
+        static constexpr uint32_t GUARDDUTY_FINDING_ID_HASH = ConstExprHashingUtils::HashString("GUARDDUTY_FINDING_ID");
+        static constexpr uint32_t SCAN_START_TIME_HASH = ConstExprHashingUtils::HashString("SCAN_START_TIME");
+        static constexpr uint32_t SCAN_STATUS_HASH = ConstExprHashingUtils::HashString("SCAN_STATUS");
+        static constexpr uint32_t SCAN_TYPE_HASH = ConstExprHashingUtils::HashString("SCAN_TYPE");
 
 
         CriterionKey GetCriterionKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EC2_INSTANCE_ARN_HASH)
           {
             return CriterionKey::EC2_INSTANCE_ARN;

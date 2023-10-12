@@ -20,15 +20,15 @@ namespace Aws
       namespace KeyAlgorithmMapper
       {
 
-        static const int RSA_2048_HASH = HashingUtils::HashString("RSA_2048");
-        static const int RSA_4096_HASH = HashingUtils::HashString("RSA_4096");
-        static const int EC_prime256v1_HASH = HashingUtils::HashString("EC_prime256v1");
-        static const int EC_secp384r1_HASH = HashingUtils::HashString("EC_secp384r1");
+        static constexpr uint32_t RSA_2048_HASH = ConstExprHashingUtils::HashString("RSA_2048");
+        static constexpr uint32_t RSA_4096_HASH = ConstExprHashingUtils::HashString("RSA_4096");
+        static constexpr uint32_t EC_prime256v1_HASH = ConstExprHashingUtils::HashString("EC_prime256v1");
+        static constexpr uint32_t EC_secp384r1_HASH = ConstExprHashingUtils::HashString("EC_secp384r1");
 
 
         KeyAlgorithm GetKeyAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RSA_2048_HASH)
           {
             return KeyAlgorithm::RSA_2048;

@@ -20,14 +20,14 @@ namespace Aws
       namespace InstanceFleetTypeMapper
       {
 
-        static const int MASTER_HASH = HashingUtils::HashString("MASTER");
-        static const int CORE_HASH = HashingUtils::HashString("CORE");
-        static const int TASK_HASH = HashingUtils::HashString("TASK");
+        static constexpr uint32_t MASTER_HASH = ConstExprHashingUtils::HashString("MASTER");
+        static constexpr uint32_t CORE_HASH = ConstExprHashingUtils::HashString("CORE");
+        static constexpr uint32_t TASK_HASH = ConstExprHashingUtils::HashString("TASK");
 
 
         InstanceFleetType GetInstanceFleetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MASTER_HASH)
           {
             return InstanceFleetType::MASTER;

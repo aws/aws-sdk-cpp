@@ -20,14 +20,14 @@ namespace Aws
       namespace ActionHistoryStatusMapper
       {
 
-        static const int Completed_HASH = HashingUtils::HashString("Completed");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
+        static constexpr uint32_t Completed_HASH = ConstExprHashingUtils::HashString("Completed");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Unknown_HASH = ConstExprHashingUtils::HashString("Unknown");
 
 
         ActionHistoryStatus GetActionHistoryStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Completed_HASH)
           {
             return ActionHistoryStatus::Completed;

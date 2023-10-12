@@ -20,14 +20,14 @@ namespace Aws
       namespace OversizeHandlingMapper
       {
 
-        static const int CONTINUE_HASH = HashingUtils::HashString("CONTINUE");
-        static const int MATCH_HASH = HashingUtils::HashString("MATCH");
-        static const int NO_MATCH_HASH = HashingUtils::HashString("NO_MATCH");
+        static constexpr uint32_t CONTINUE_HASH = ConstExprHashingUtils::HashString("CONTINUE");
+        static constexpr uint32_t MATCH_HASH = ConstExprHashingUtils::HashString("MATCH");
+        static constexpr uint32_t NO_MATCH_HASH = ConstExprHashingUtils::HashString("NO_MATCH");
 
 
         OversizeHandling GetOversizeHandlingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONTINUE_HASH)
           {
             return OversizeHandling::CONTINUE;

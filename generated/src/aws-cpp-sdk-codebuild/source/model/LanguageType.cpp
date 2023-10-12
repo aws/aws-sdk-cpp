@@ -20,21 +20,21 @@ namespace Aws
       namespace LanguageTypeMapper
       {
 
-        static const int JAVA_HASH = HashingUtils::HashString("JAVA");
-        static const int PYTHON_HASH = HashingUtils::HashString("PYTHON");
-        static const int NODE_JS_HASH = HashingUtils::HashString("NODE_JS");
-        static const int RUBY_HASH = HashingUtils::HashString("RUBY");
-        static const int GOLANG_HASH = HashingUtils::HashString("GOLANG");
-        static const int DOCKER_HASH = HashingUtils::HashString("DOCKER");
-        static const int ANDROID__HASH = HashingUtils::HashString("ANDROID");
-        static const int DOTNET_HASH = HashingUtils::HashString("DOTNET");
-        static const int BASE_HASH = HashingUtils::HashString("BASE");
-        static const int PHP_HASH = HashingUtils::HashString("PHP");
+        static constexpr uint32_t JAVA_HASH = ConstExprHashingUtils::HashString("JAVA");
+        static constexpr uint32_t PYTHON_HASH = ConstExprHashingUtils::HashString("PYTHON");
+        static constexpr uint32_t NODE_JS_HASH = ConstExprHashingUtils::HashString("NODE_JS");
+        static constexpr uint32_t RUBY_HASH = ConstExprHashingUtils::HashString("RUBY");
+        static constexpr uint32_t GOLANG_HASH = ConstExprHashingUtils::HashString("GOLANG");
+        static constexpr uint32_t DOCKER_HASH = ConstExprHashingUtils::HashString("DOCKER");
+        static constexpr uint32_t ANDROID__HASH = ConstExprHashingUtils::HashString("ANDROID");
+        static constexpr uint32_t DOTNET_HASH = ConstExprHashingUtils::HashString("DOTNET");
+        static constexpr uint32_t BASE_HASH = ConstExprHashingUtils::HashString("BASE");
+        static constexpr uint32_t PHP_HASH = ConstExprHashingUtils::HashString("PHP");
 
 
         LanguageType GetLanguageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JAVA_HASH)
           {
             return LanguageType::JAVA;

@@ -20,13 +20,13 @@ namespace Aws
       namespace DefaultTargetCapacityTypeMapper
       {
 
-        static const int spot_HASH = HashingUtils::HashString("spot");
-        static const int on_demand_HASH = HashingUtils::HashString("on-demand");
+        static constexpr uint32_t spot_HASH = ConstExprHashingUtils::HashString("spot");
+        static constexpr uint32_t on_demand_HASH = ConstExprHashingUtils::HashString("on-demand");
 
 
         DefaultTargetCapacityType GetDefaultTargetCapacityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == spot_HASH)
           {
             return DefaultTargetCapacityType::spot;

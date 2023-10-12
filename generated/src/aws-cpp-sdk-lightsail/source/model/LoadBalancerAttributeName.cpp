@@ -20,16 +20,16 @@ namespace Aws
       namespace LoadBalancerAttributeNameMapper
       {
 
-        static const int HealthCheckPath_HASH = HashingUtils::HashString("HealthCheckPath");
-        static const int SessionStickinessEnabled_HASH = HashingUtils::HashString("SessionStickinessEnabled");
-        static const int SessionStickiness_LB_CookieDurationSeconds_HASH = HashingUtils::HashString("SessionStickiness_LB_CookieDurationSeconds");
-        static const int HttpsRedirectionEnabled_HASH = HashingUtils::HashString("HttpsRedirectionEnabled");
-        static const int TlsPolicyName_HASH = HashingUtils::HashString("TlsPolicyName");
+        static constexpr uint32_t HealthCheckPath_HASH = ConstExprHashingUtils::HashString("HealthCheckPath");
+        static constexpr uint32_t SessionStickinessEnabled_HASH = ConstExprHashingUtils::HashString("SessionStickinessEnabled");
+        static constexpr uint32_t SessionStickiness_LB_CookieDurationSeconds_HASH = ConstExprHashingUtils::HashString("SessionStickiness_LB_CookieDurationSeconds");
+        static constexpr uint32_t HttpsRedirectionEnabled_HASH = ConstExprHashingUtils::HashString("HttpsRedirectionEnabled");
+        static constexpr uint32_t TlsPolicyName_HASH = ConstExprHashingUtils::HashString("TlsPolicyName");
 
 
         LoadBalancerAttributeName GetLoadBalancerAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HealthCheckPath_HASH)
           {
             return LoadBalancerAttributeName::HealthCheckPath;

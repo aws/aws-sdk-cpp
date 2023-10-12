@@ -20,16 +20,16 @@ namespace Aws
       namespace LocalGatewayRouteStateMapper
       {
 
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int active_HASH = HashingUtils::HashString("active");
-        static const int blackhole_HASH = HashingUtils::HashString("blackhole");
-        static const int deleting_HASH = HashingUtils::HashString("deleting");
-        static const int deleted_HASH = HashingUtils::HashString("deleted");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t active_HASH = ConstExprHashingUtils::HashString("active");
+        static constexpr uint32_t blackhole_HASH = ConstExprHashingUtils::HashString("blackhole");
+        static constexpr uint32_t deleting_HASH = ConstExprHashingUtils::HashString("deleting");
+        static constexpr uint32_t deleted_HASH = ConstExprHashingUtils::HashString("deleted");
 
 
         LocalGatewayRouteState GetLocalGatewayRouteStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pending_HASH)
           {
             return LocalGatewayRouteState::pending;

@@ -20,13 +20,13 @@ namespace Aws
       namespace GameServerProtectionPolicyMapper
       {
 
-        static const int NO_PROTECTION_HASH = HashingUtils::HashString("NO_PROTECTION");
-        static const int FULL_PROTECTION_HASH = HashingUtils::HashString("FULL_PROTECTION");
+        static constexpr uint32_t NO_PROTECTION_HASH = ConstExprHashingUtils::HashString("NO_PROTECTION");
+        static constexpr uint32_t FULL_PROTECTION_HASH = ConstExprHashingUtils::HashString("FULL_PROTECTION");
 
 
         GameServerProtectionPolicy GetGameServerProtectionPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_PROTECTION_HASH)
           {
             return GameServerProtectionPolicy::NO_PROTECTION;

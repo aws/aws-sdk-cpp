@@ -20,19 +20,19 @@ namespace Aws
       namespace StepGroupStatusMapper
       {
 
-        static const int AWAITING_DEPENDENCIES_HASH = HashingUtils::HashString("AWAITING_DEPENDENCIES");
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
-        static const int PAUSING_HASH = HashingUtils::HashString("PAUSING");
-        static const int USER_ATTENTION_REQUIRED_HASH = HashingUtils::HashString("USER_ATTENTION_REQUIRED");
+        static constexpr uint32_t AWAITING_DEPENDENCIES_HASH = ConstExprHashingUtils::HashString("AWAITING_DEPENDENCIES");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t PAUSED_HASH = ConstExprHashingUtils::HashString("PAUSED");
+        static constexpr uint32_t PAUSING_HASH = ConstExprHashingUtils::HashString("PAUSING");
+        static constexpr uint32_t USER_ATTENTION_REQUIRED_HASH = ConstExprHashingUtils::HashString("USER_ATTENTION_REQUIRED");
 
 
         StepGroupStatus GetStepGroupStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWAITING_DEPENDENCIES_HASH)
           {
             return StepGroupStatus::AWAITING_DEPENDENCIES;

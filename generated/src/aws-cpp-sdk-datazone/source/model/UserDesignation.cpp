@@ -20,13 +20,13 @@ namespace Aws
       namespace UserDesignationMapper
       {
 
-        static const int PROJECT_OWNER_HASH = HashingUtils::HashString("PROJECT_OWNER");
-        static const int PROJECT_CONTRIBUTOR_HASH = HashingUtils::HashString("PROJECT_CONTRIBUTOR");
+        static constexpr uint32_t PROJECT_OWNER_HASH = ConstExprHashingUtils::HashString("PROJECT_OWNER");
+        static constexpr uint32_t PROJECT_CONTRIBUTOR_HASH = ConstExprHashingUtils::HashString("PROJECT_CONTRIBUTOR");
 
 
         UserDesignation GetUserDesignationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROJECT_OWNER_HASH)
           {
             return UserDesignation::PROJECT_OWNER;

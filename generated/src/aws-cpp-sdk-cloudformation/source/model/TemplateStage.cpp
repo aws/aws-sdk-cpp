@@ -20,13 +20,13 @@ namespace Aws
       namespace TemplateStageMapper
       {
 
-        static const int Original_HASH = HashingUtils::HashString("Original");
-        static const int Processed_HASH = HashingUtils::HashString("Processed");
+        static constexpr uint32_t Original_HASH = ConstExprHashingUtils::HashString("Original");
+        static constexpr uint32_t Processed_HASH = ConstExprHashingUtils::HashString("Processed");
 
 
         TemplateStage GetTemplateStageForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Original_HASH)
           {
             return TemplateStage::Original;

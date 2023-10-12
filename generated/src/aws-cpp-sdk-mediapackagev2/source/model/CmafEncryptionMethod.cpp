@@ -20,13 +20,13 @@ namespace Aws
       namespace CmafEncryptionMethodMapper
       {
 
-        static const int CENC_HASH = HashingUtils::HashString("CENC");
-        static const int CBCS_HASH = HashingUtils::HashString("CBCS");
+        static constexpr uint32_t CENC_HASH = ConstExprHashingUtils::HashString("CENC");
+        static constexpr uint32_t CBCS_HASH = ConstExprHashingUtils::HashString("CBCS");
 
 
         CmafEncryptionMethod GetCmafEncryptionMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CENC_HASH)
           {
             return CmafEncryptionMethod::CENC;

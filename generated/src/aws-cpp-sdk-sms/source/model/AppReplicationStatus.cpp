@@ -20,27 +20,27 @@ namespace Aws
       namespace AppReplicationStatusMapper
       {
 
-        static const int READY_FOR_CONFIGURATION_HASH = HashingUtils::HashString("READY_FOR_CONFIGURATION");
-        static const int CONFIGURATION_IN_PROGRESS_HASH = HashingUtils::HashString("CONFIGURATION_IN_PROGRESS");
-        static const int CONFIGURATION_INVALID_HASH = HashingUtils::HashString("CONFIGURATION_INVALID");
-        static const int READY_FOR_REPLICATION_HASH = HashingUtils::HashString("READY_FOR_REPLICATION");
-        static const int VALIDATION_IN_PROGRESS_HASH = HashingUtils::HashString("VALIDATION_IN_PROGRESS");
-        static const int REPLICATION_PENDING_HASH = HashingUtils::HashString("REPLICATION_PENDING");
-        static const int REPLICATION_IN_PROGRESS_HASH = HashingUtils::HashString("REPLICATION_IN_PROGRESS");
-        static const int REPLICATED_HASH = HashingUtils::HashString("REPLICATED");
-        static const int PARTIALLY_REPLICATED_HASH = HashingUtils::HashString("PARTIALLY_REPLICATED");
-        static const int DELTA_REPLICATION_IN_PROGRESS_HASH = HashingUtils::HashString("DELTA_REPLICATION_IN_PROGRESS");
-        static const int DELTA_REPLICATED_HASH = HashingUtils::HashString("DELTA_REPLICATED");
-        static const int DELTA_REPLICATION_FAILED_HASH = HashingUtils::HashString("DELTA_REPLICATION_FAILED");
-        static const int REPLICATION_FAILED_HASH = HashingUtils::HashString("REPLICATION_FAILED");
-        static const int REPLICATION_STOPPING_HASH = HashingUtils::HashString("REPLICATION_STOPPING");
-        static const int REPLICATION_STOP_FAILED_HASH = HashingUtils::HashString("REPLICATION_STOP_FAILED");
-        static const int REPLICATION_STOPPED_HASH = HashingUtils::HashString("REPLICATION_STOPPED");
+        static constexpr uint32_t READY_FOR_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("READY_FOR_CONFIGURATION");
+        static constexpr uint32_t CONFIGURATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("CONFIGURATION_IN_PROGRESS");
+        static constexpr uint32_t CONFIGURATION_INVALID_HASH = ConstExprHashingUtils::HashString("CONFIGURATION_INVALID");
+        static constexpr uint32_t READY_FOR_REPLICATION_HASH = ConstExprHashingUtils::HashString("READY_FOR_REPLICATION");
+        static constexpr uint32_t VALIDATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("VALIDATION_IN_PROGRESS");
+        static constexpr uint32_t REPLICATION_PENDING_HASH = ConstExprHashingUtils::HashString("REPLICATION_PENDING");
+        static constexpr uint32_t REPLICATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("REPLICATION_IN_PROGRESS");
+        static constexpr uint32_t REPLICATED_HASH = ConstExprHashingUtils::HashString("REPLICATED");
+        static constexpr uint32_t PARTIALLY_REPLICATED_HASH = ConstExprHashingUtils::HashString("PARTIALLY_REPLICATED");
+        static constexpr uint32_t DELTA_REPLICATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("DELTA_REPLICATION_IN_PROGRESS");
+        static constexpr uint32_t DELTA_REPLICATED_HASH = ConstExprHashingUtils::HashString("DELTA_REPLICATED");
+        static constexpr uint32_t DELTA_REPLICATION_FAILED_HASH = ConstExprHashingUtils::HashString("DELTA_REPLICATION_FAILED");
+        static constexpr uint32_t REPLICATION_FAILED_HASH = ConstExprHashingUtils::HashString("REPLICATION_FAILED");
+        static constexpr uint32_t REPLICATION_STOPPING_HASH = ConstExprHashingUtils::HashString("REPLICATION_STOPPING");
+        static constexpr uint32_t REPLICATION_STOP_FAILED_HASH = ConstExprHashingUtils::HashString("REPLICATION_STOP_FAILED");
+        static constexpr uint32_t REPLICATION_STOPPED_HASH = ConstExprHashingUtils::HashString("REPLICATION_STOPPED");
 
 
         AppReplicationStatus GetAppReplicationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == READY_FOR_CONFIGURATION_HASH)
           {
             return AppReplicationStatus::READY_FOR_CONFIGURATION;

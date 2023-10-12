@@ -20,14 +20,14 @@ namespace Aws
       namespace AsyncOperationNameMapper
       {
 
-        static const int CreateMultiRegionAccessPoint_HASH = HashingUtils::HashString("CreateMultiRegionAccessPoint");
-        static const int DeleteMultiRegionAccessPoint_HASH = HashingUtils::HashString("DeleteMultiRegionAccessPoint");
-        static const int PutMultiRegionAccessPointPolicy_HASH = HashingUtils::HashString("PutMultiRegionAccessPointPolicy");
+        static constexpr uint32_t CreateMultiRegionAccessPoint_HASH = ConstExprHashingUtils::HashString("CreateMultiRegionAccessPoint");
+        static constexpr uint32_t DeleteMultiRegionAccessPoint_HASH = ConstExprHashingUtils::HashString("DeleteMultiRegionAccessPoint");
+        static constexpr uint32_t PutMultiRegionAccessPointPolicy_HASH = ConstExprHashingUtils::HashString("PutMultiRegionAccessPointPolicy");
 
 
         AsyncOperationName GetAsyncOperationNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CreateMultiRegionAccessPoint_HASH)
           {
             return AsyncOperationName::CreateMultiRegionAccessPoint;

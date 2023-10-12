@@ -20,12 +20,12 @@ namespace Aws
       namespace FunctionResponseTypeMapper
       {
 
-        static const int ReportBatchItemFailures_HASH = HashingUtils::HashString("ReportBatchItemFailures");
+        static constexpr uint32_t ReportBatchItemFailures_HASH = ConstExprHashingUtils::HashString("ReportBatchItemFailures");
 
 
         FunctionResponseType GetFunctionResponseTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ReportBatchItemFailures_HASH)
           {
             return FunctionResponseType::ReportBatchItemFailures;

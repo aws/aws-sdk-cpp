@@ -20,13 +20,13 @@ namespace Aws
       namespace ContactProtocolMapper
       {
 
-        static const int Email_HASH = HashingUtils::HashString("Email");
-        static const int SMS_HASH = HashingUtils::HashString("SMS");
+        static constexpr uint32_t Email_HASH = ConstExprHashingUtils::HashString("Email");
+        static constexpr uint32_t SMS_HASH = ConstExprHashingUtils::HashString("SMS");
 
 
         ContactProtocol GetContactProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Email_HASH)
           {
             return ContactProtocol::Email;

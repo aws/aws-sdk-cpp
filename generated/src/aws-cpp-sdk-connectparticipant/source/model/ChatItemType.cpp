@@ -20,23 +20,23 @@ namespace Aws
       namespace ChatItemTypeMapper
       {
 
-        static const int TYPING_HASH = HashingUtils::HashString("TYPING");
-        static const int PARTICIPANT_JOINED_HASH = HashingUtils::HashString("PARTICIPANT_JOINED");
-        static const int PARTICIPANT_LEFT_HASH = HashingUtils::HashString("PARTICIPANT_LEFT");
-        static const int CHAT_ENDED_HASH = HashingUtils::HashString("CHAT_ENDED");
-        static const int TRANSFER_SUCCEEDED_HASH = HashingUtils::HashString("TRANSFER_SUCCEEDED");
-        static const int TRANSFER_FAILED_HASH = HashingUtils::HashString("TRANSFER_FAILED");
-        static const int MESSAGE_HASH = HashingUtils::HashString("MESSAGE");
-        static const int EVENT_HASH = HashingUtils::HashString("EVENT");
-        static const int ATTACHMENT_HASH = HashingUtils::HashString("ATTACHMENT");
-        static const int CONNECTION_ACK_HASH = HashingUtils::HashString("CONNECTION_ACK");
-        static const int MESSAGE_DELIVERED_HASH = HashingUtils::HashString("MESSAGE_DELIVERED");
-        static const int MESSAGE_READ_HASH = HashingUtils::HashString("MESSAGE_READ");
+        static constexpr uint32_t TYPING_HASH = ConstExprHashingUtils::HashString("TYPING");
+        static constexpr uint32_t PARTICIPANT_JOINED_HASH = ConstExprHashingUtils::HashString("PARTICIPANT_JOINED");
+        static constexpr uint32_t PARTICIPANT_LEFT_HASH = ConstExprHashingUtils::HashString("PARTICIPANT_LEFT");
+        static constexpr uint32_t CHAT_ENDED_HASH = ConstExprHashingUtils::HashString("CHAT_ENDED");
+        static constexpr uint32_t TRANSFER_SUCCEEDED_HASH = ConstExprHashingUtils::HashString("TRANSFER_SUCCEEDED");
+        static constexpr uint32_t TRANSFER_FAILED_HASH = ConstExprHashingUtils::HashString("TRANSFER_FAILED");
+        static constexpr uint32_t MESSAGE_HASH = ConstExprHashingUtils::HashString("MESSAGE");
+        static constexpr uint32_t EVENT_HASH = ConstExprHashingUtils::HashString("EVENT");
+        static constexpr uint32_t ATTACHMENT_HASH = ConstExprHashingUtils::HashString("ATTACHMENT");
+        static constexpr uint32_t CONNECTION_ACK_HASH = ConstExprHashingUtils::HashString("CONNECTION_ACK");
+        static constexpr uint32_t MESSAGE_DELIVERED_HASH = ConstExprHashingUtils::HashString("MESSAGE_DELIVERED");
+        static constexpr uint32_t MESSAGE_READ_HASH = ConstExprHashingUtils::HashString("MESSAGE_READ");
 
 
         ChatItemType GetChatItemTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TYPING_HASH)
           {
             return ChatItemType::TYPING;

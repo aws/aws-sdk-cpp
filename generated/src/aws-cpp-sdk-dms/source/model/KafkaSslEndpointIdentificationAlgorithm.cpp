@@ -20,13 +20,13 @@ namespace Aws
       namespace KafkaSslEndpointIdentificationAlgorithmMapper
       {
 
-        static const int none_HASH = HashingUtils::HashString("none");
-        static const int https_HASH = HashingUtils::HashString("https");
+        static constexpr uint32_t none_HASH = ConstExprHashingUtils::HashString("none");
+        static constexpr uint32_t https_HASH = ConstExprHashingUtils::HashString("https");
 
 
         KafkaSslEndpointIdentificationAlgorithm GetKafkaSslEndpointIdentificationAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == none_HASH)
           {
             return KafkaSslEndpointIdentificationAlgorithm::none;

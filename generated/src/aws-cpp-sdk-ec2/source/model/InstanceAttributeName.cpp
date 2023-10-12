@@ -20,27 +20,27 @@ namespace Aws
       namespace InstanceAttributeNameMapper
       {
 
-        static const int instanceType_HASH = HashingUtils::HashString("instanceType");
-        static const int kernel_HASH = HashingUtils::HashString("kernel");
-        static const int ramdisk_HASH = HashingUtils::HashString("ramdisk");
-        static const int userData_HASH = HashingUtils::HashString("userData");
-        static const int disableApiTermination_HASH = HashingUtils::HashString("disableApiTermination");
-        static const int instanceInitiatedShutdownBehavior_HASH = HashingUtils::HashString("instanceInitiatedShutdownBehavior");
-        static const int rootDeviceName_HASH = HashingUtils::HashString("rootDeviceName");
-        static const int blockDeviceMapping_HASH = HashingUtils::HashString("blockDeviceMapping");
-        static const int productCodes_HASH = HashingUtils::HashString("productCodes");
-        static const int sourceDestCheck_HASH = HashingUtils::HashString("sourceDestCheck");
-        static const int groupSet_HASH = HashingUtils::HashString("groupSet");
-        static const int ebsOptimized_HASH = HashingUtils::HashString("ebsOptimized");
-        static const int sriovNetSupport_HASH = HashingUtils::HashString("sriovNetSupport");
-        static const int enaSupport_HASH = HashingUtils::HashString("enaSupport");
-        static const int enclaveOptions_HASH = HashingUtils::HashString("enclaveOptions");
-        static const int disableApiStop_HASH = HashingUtils::HashString("disableApiStop");
+        static constexpr uint32_t instanceType_HASH = ConstExprHashingUtils::HashString("instanceType");
+        static constexpr uint32_t kernel_HASH = ConstExprHashingUtils::HashString("kernel");
+        static constexpr uint32_t ramdisk_HASH = ConstExprHashingUtils::HashString("ramdisk");
+        static constexpr uint32_t userData_HASH = ConstExprHashingUtils::HashString("userData");
+        static constexpr uint32_t disableApiTermination_HASH = ConstExprHashingUtils::HashString("disableApiTermination");
+        static constexpr uint32_t instanceInitiatedShutdownBehavior_HASH = ConstExprHashingUtils::HashString("instanceInitiatedShutdownBehavior");
+        static constexpr uint32_t rootDeviceName_HASH = ConstExprHashingUtils::HashString("rootDeviceName");
+        static constexpr uint32_t blockDeviceMapping_HASH = ConstExprHashingUtils::HashString("blockDeviceMapping");
+        static constexpr uint32_t productCodes_HASH = ConstExprHashingUtils::HashString("productCodes");
+        static constexpr uint32_t sourceDestCheck_HASH = ConstExprHashingUtils::HashString("sourceDestCheck");
+        static constexpr uint32_t groupSet_HASH = ConstExprHashingUtils::HashString("groupSet");
+        static constexpr uint32_t ebsOptimized_HASH = ConstExprHashingUtils::HashString("ebsOptimized");
+        static constexpr uint32_t sriovNetSupport_HASH = ConstExprHashingUtils::HashString("sriovNetSupport");
+        static constexpr uint32_t enaSupport_HASH = ConstExprHashingUtils::HashString("enaSupport");
+        static constexpr uint32_t enclaveOptions_HASH = ConstExprHashingUtils::HashString("enclaveOptions");
+        static constexpr uint32_t disableApiStop_HASH = ConstExprHashingUtils::HashString("disableApiStop");
 
 
         InstanceAttributeName GetInstanceAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == instanceType_HASH)
           {
             return InstanceAttributeName::instanceType;

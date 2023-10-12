@@ -20,13 +20,13 @@ namespace Aws
       namespace ConfigurationOptionValueTypeMapper
       {
 
-        static const int Scalar_HASH = HashingUtils::HashString("Scalar");
-        static const int List_HASH = HashingUtils::HashString("List");
+        static constexpr uint32_t Scalar_HASH = ConstExprHashingUtils::HashString("Scalar");
+        static constexpr uint32_t List_HASH = ConstExprHashingUtils::HashString("List");
 
 
         ConfigurationOptionValueType GetConfigurationOptionValueTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Scalar_HASH)
           {
             return ConfigurationOptionValueType::Scalar;

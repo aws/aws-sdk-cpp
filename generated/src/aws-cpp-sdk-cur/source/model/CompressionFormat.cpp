@@ -20,14 +20,14 @@ namespace Aws
       namespace CompressionFormatMapper
       {
 
-        static const int ZIP_HASH = HashingUtils::HashString("ZIP");
-        static const int GZIP_HASH = HashingUtils::HashString("GZIP");
-        static const int Parquet_HASH = HashingUtils::HashString("Parquet");
+        static constexpr uint32_t ZIP_HASH = ConstExprHashingUtils::HashString("ZIP");
+        static constexpr uint32_t GZIP_HASH = ConstExprHashingUtils::HashString("GZIP");
+        static constexpr uint32_t Parquet_HASH = ConstExprHashingUtils::HashString("Parquet");
 
 
         CompressionFormat GetCompressionFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ZIP_HASH)
           {
             return CompressionFormat::ZIP;

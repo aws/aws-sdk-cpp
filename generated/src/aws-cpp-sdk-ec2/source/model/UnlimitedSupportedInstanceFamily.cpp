@@ -20,15 +20,15 @@ namespace Aws
       namespace UnlimitedSupportedInstanceFamilyMapper
       {
 
-        static const int t2_HASH = HashingUtils::HashString("t2");
-        static const int t3_HASH = HashingUtils::HashString("t3");
-        static const int t3a_HASH = HashingUtils::HashString("t3a");
-        static const int t4g_HASH = HashingUtils::HashString("t4g");
+        static constexpr uint32_t t2_HASH = ConstExprHashingUtils::HashString("t2");
+        static constexpr uint32_t t3_HASH = ConstExprHashingUtils::HashString("t3");
+        static constexpr uint32_t t3a_HASH = ConstExprHashingUtils::HashString("t3a");
+        static constexpr uint32_t t4g_HASH = ConstExprHashingUtils::HashString("t4g");
 
 
         UnlimitedSupportedInstanceFamily GetUnlimitedSupportedInstanceFamilyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == t2_HASH)
           {
             return UnlimitedSupportedInstanceFamily::t2;

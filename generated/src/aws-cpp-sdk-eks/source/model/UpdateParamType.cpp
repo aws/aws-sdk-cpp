@@ -20,34 +20,34 @@ namespace Aws
       namespace UpdateParamTypeMapper
       {
 
-        static const int Version_HASH = HashingUtils::HashString("Version");
-        static const int PlatformVersion_HASH = HashingUtils::HashString("PlatformVersion");
-        static const int EndpointPrivateAccess_HASH = HashingUtils::HashString("EndpointPrivateAccess");
-        static const int EndpointPublicAccess_HASH = HashingUtils::HashString("EndpointPublicAccess");
-        static const int ClusterLogging_HASH = HashingUtils::HashString("ClusterLogging");
-        static const int DesiredSize_HASH = HashingUtils::HashString("DesiredSize");
-        static const int LabelsToAdd_HASH = HashingUtils::HashString("LabelsToAdd");
-        static const int LabelsToRemove_HASH = HashingUtils::HashString("LabelsToRemove");
-        static const int TaintsToAdd_HASH = HashingUtils::HashString("TaintsToAdd");
-        static const int TaintsToRemove_HASH = HashingUtils::HashString("TaintsToRemove");
-        static const int MaxSize_HASH = HashingUtils::HashString("MaxSize");
-        static const int MinSize_HASH = HashingUtils::HashString("MinSize");
-        static const int ReleaseVersion_HASH = HashingUtils::HashString("ReleaseVersion");
-        static const int PublicAccessCidrs_HASH = HashingUtils::HashString("PublicAccessCidrs");
-        static const int LaunchTemplateName_HASH = HashingUtils::HashString("LaunchTemplateName");
-        static const int LaunchTemplateVersion_HASH = HashingUtils::HashString("LaunchTemplateVersion");
-        static const int IdentityProviderConfig_HASH = HashingUtils::HashString("IdentityProviderConfig");
-        static const int EncryptionConfig_HASH = HashingUtils::HashString("EncryptionConfig");
-        static const int AddonVersion_HASH = HashingUtils::HashString("AddonVersion");
-        static const int ServiceAccountRoleArn_HASH = HashingUtils::HashString("ServiceAccountRoleArn");
-        static const int ResolveConflicts_HASH = HashingUtils::HashString("ResolveConflicts");
-        static const int MaxUnavailable_HASH = HashingUtils::HashString("MaxUnavailable");
-        static const int MaxUnavailablePercentage_HASH = HashingUtils::HashString("MaxUnavailablePercentage");
+        static constexpr uint32_t Version_HASH = ConstExprHashingUtils::HashString("Version");
+        static constexpr uint32_t PlatformVersion_HASH = ConstExprHashingUtils::HashString("PlatformVersion");
+        static constexpr uint32_t EndpointPrivateAccess_HASH = ConstExprHashingUtils::HashString("EndpointPrivateAccess");
+        static constexpr uint32_t EndpointPublicAccess_HASH = ConstExprHashingUtils::HashString("EndpointPublicAccess");
+        static constexpr uint32_t ClusterLogging_HASH = ConstExprHashingUtils::HashString("ClusterLogging");
+        static constexpr uint32_t DesiredSize_HASH = ConstExprHashingUtils::HashString("DesiredSize");
+        static constexpr uint32_t LabelsToAdd_HASH = ConstExprHashingUtils::HashString("LabelsToAdd");
+        static constexpr uint32_t LabelsToRemove_HASH = ConstExprHashingUtils::HashString("LabelsToRemove");
+        static constexpr uint32_t TaintsToAdd_HASH = ConstExprHashingUtils::HashString("TaintsToAdd");
+        static constexpr uint32_t TaintsToRemove_HASH = ConstExprHashingUtils::HashString("TaintsToRemove");
+        static constexpr uint32_t MaxSize_HASH = ConstExprHashingUtils::HashString("MaxSize");
+        static constexpr uint32_t MinSize_HASH = ConstExprHashingUtils::HashString("MinSize");
+        static constexpr uint32_t ReleaseVersion_HASH = ConstExprHashingUtils::HashString("ReleaseVersion");
+        static constexpr uint32_t PublicAccessCidrs_HASH = ConstExprHashingUtils::HashString("PublicAccessCidrs");
+        static constexpr uint32_t LaunchTemplateName_HASH = ConstExprHashingUtils::HashString("LaunchTemplateName");
+        static constexpr uint32_t LaunchTemplateVersion_HASH = ConstExprHashingUtils::HashString("LaunchTemplateVersion");
+        static constexpr uint32_t IdentityProviderConfig_HASH = ConstExprHashingUtils::HashString("IdentityProviderConfig");
+        static constexpr uint32_t EncryptionConfig_HASH = ConstExprHashingUtils::HashString("EncryptionConfig");
+        static constexpr uint32_t AddonVersion_HASH = ConstExprHashingUtils::HashString("AddonVersion");
+        static constexpr uint32_t ServiceAccountRoleArn_HASH = ConstExprHashingUtils::HashString("ServiceAccountRoleArn");
+        static constexpr uint32_t ResolveConflicts_HASH = ConstExprHashingUtils::HashString("ResolveConflicts");
+        static constexpr uint32_t MaxUnavailable_HASH = ConstExprHashingUtils::HashString("MaxUnavailable");
+        static constexpr uint32_t MaxUnavailablePercentage_HASH = ConstExprHashingUtils::HashString("MaxUnavailablePercentage");
 
 
         UpdateParamType GetUpdateParamTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Version_HASH)
           {
             return UpdateParamType::Version;

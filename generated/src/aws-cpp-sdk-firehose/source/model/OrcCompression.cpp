@@ -20,14 +20,14 @@ namespace Aws
       namespace OrcCompressionMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int ZLIB_HASH = HashingUtils::HashString("ZLIB");
-        static const int SNAPPY_HASH = HashingUtils::HashString("SNAPPY");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t ZLIB_HASH = ConstExprHashingUtils::HashString("ZLIB");
+        static constexpr uint32_t SNAPPY_HASH = ConstExprHashingUtils::HashString("SNAPPY");
 
 
         OrcCompression GetOrcCompressionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return OrcCompression::NONE;

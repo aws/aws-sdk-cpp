@@ -20,12 +20,12 @@ namespace Aws
       namespace ConditionalFormattingIconDisplayOptionMapper
       {
 
-        static const int ICON_ONLY_HASH = HashingUtils::HashString("ICON_ONLY");
+        static constexpr uint32_t ICON_ONLY_HASH = ConstExprHashingUtils::HashString("ICON_ONLY");
 
 
         ConditionalFormattingIconDisplayOption GetConditionalFormattingIconDisplayOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ICON_ONLY_HASH)
           {
             return ConditionalFormattingIconDisplayOption::ICON_ONLY;

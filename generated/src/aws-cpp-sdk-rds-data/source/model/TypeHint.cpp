@@ -20,17 +20,17 @@ namespace Aws
       namespace TypeHintMapper
       {
 
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
-        static const int UUID_HASH = HashingUtils::HashString("UUID");
-        static const int TIMESTAMP_HASH = HashingUtils::HashString("TIMESTAMP");
-        static const int DATE_HASH = HashingUtils::HashString("DATE");
-        static const int TIME_HASH = HashingUtils::HashString("TIME");
-        static const int DECIMAL_HASH = HashingUtils::HashString("DECIMAL");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
+        static constexpr uint32_t UUID_HASH = ConstExprHashingUtils::HashString("UUID");
+        static constexpr uint32_t TIMESTAMP_HASH = ConstExprHashingUtils::HashString("TIMESTAMP");
+        static constexpr uint32_t DATE_HASH = ConstExprHashingUtils::HashString("DATE");
+        static constexpr uint32_t TIME_HASH = ConstExprHashingUtils::HashString("TIME");
+        static constexpr uint32_t DECIMAL_HASH = ConstExprHashingUtils::HashString("DECIMAL");
 
 
         TypeHint GetTypeHintForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JSON_HASH)
           {
             return TypeHint::JSON;

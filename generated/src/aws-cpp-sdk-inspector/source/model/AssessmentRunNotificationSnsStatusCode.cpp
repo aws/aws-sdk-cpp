@@ -20,15 +20,15 @@ namespace Aws
       namespace AssessmentRunNotificationSnsStatusCodeMapper
       {
 
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int TOPIC_DOES_NOT_EXIST_HASH = HashingUtils::HashString("TOPIC_DOES_NOT_EXIST");
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t TOPIC_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("TOPIC_DOES_NOT_EXIST");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
 
 
         AssessmentRunNotificationSnsStatusCode GetAssessmentRunNotificationSnsStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUCCESS_HASH)
           {
             return AssessmentRunNotificationSnsStatusCode::SUCCESS;

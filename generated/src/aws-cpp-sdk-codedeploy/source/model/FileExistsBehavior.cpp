@@ -20,14 +20,14 @@ namespace Aws
       namespace FileExistsBehaviorMapper
       {
 
-        static const int DISALLOW_HASH = HashingUtils::HashString("DISALLOW");
-        static const int OVERWRITE_HASH = HashingUtils::HashString("OVERWRITE");
-        static const int RETAIN_HASH = HashingUtils::HashString("RETAIN");
+        static constexpr uint32_t DISALLOW_HASH = ConstExprHashingUtils::HashString("DISALLOW");
+        static constexpr uint32_t OVERWRITE_HASH = ConstExprHashingUtils::HashString("OVERWRITE");
+        static constexpr uint32_t RETAIN_HASH = ConstExprHashingUtils::HashString("RETAIN");
 
 
         FileExistsBehavior GetFileExistsBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISALLOW_HASH)
           {
             return FileExistsBehavior::DISALLOW;

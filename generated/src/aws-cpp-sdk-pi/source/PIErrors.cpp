@@ -18,14 +18,14 @@ namespace PI
 namespace PIErrorMapper
 {
 
-static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceError");
-static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
-static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
+static constexpr uint32_t INTERNAL_SERVICE_HASH = ConstExprHashingUtils::HashString("InternalServiceError");
+static constexpr uint32_t NOT_AUTHORIZED_HASH = ConstExprHashingUtils::HashString("NotAuthorizedException");
+static constexpr uint32_t INVALID_ARGUMENT_HASH = ConstExprHashingUtils::HashString("InvalidArgumentException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INTERNAL_SERVICE_HASH)
   {

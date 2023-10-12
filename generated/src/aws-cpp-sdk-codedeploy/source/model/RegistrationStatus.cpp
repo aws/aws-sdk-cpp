@@ -20,13 +20,13 @@ namespace Aws
       namespace RegistrationStatusMapper
       {
 
-        static const int Registered_HASH = HashingUtils::HashString("Registered");
-        static const int Deregistered_HASH = HashingUtils::HashString("Deregistered");
+        static constexpr uint32_t Registered_HASH = ConstExprHashingUtils::HashString("Registered");
+        static constexpr uint32_t Deregistered_HASH = ConstExprHashingUtils::HashString("Deregistered");
 
 
         RegistrationStatus GetRegistrationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Registered_HASH)
           {
             return RegistrationStatus::Registered;

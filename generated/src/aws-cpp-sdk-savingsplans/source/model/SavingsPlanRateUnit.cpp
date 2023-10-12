@@ -20,14 +20,14 @@ namespace Aws
       namespace SavingsPlanRateUnitMapper
       {
 
-        static const int Hrs_HASH = HashingUtils::HashString("Hrs");
-        static const int Lambda_GB_Second_HASH = HashingUtils::HashString("Lambda-GB-Second");
-        static const int Request_HASH = HashingUtils::HashString("Request");
+        static constexpr uint32_t Hrs_HASH = ConstExprHashingUtils::HashString("Hrs");
+        static constexpr uint32_t Lambda_GB_Second_HASH = ConstExprHashingUtils::HashString("Lambda-GB-Second");
+        static constexpr uint32_t Request_HASH = ConstExprHashingUtils::HashString("Request");
 
 
         SavingsPlanRateUnit GetSavingsPlanRateUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Hrs_HASH)
           {
             return SavingsPlanRateUnit::Hrs;

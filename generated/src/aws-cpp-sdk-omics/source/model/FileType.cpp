@@ -20,14 +20,14 @@ namespace Aws
       namespace FileTypeMapper
       {
 
-        static const int FASTQ_HASH = HashingUtils::HashString("FASTQ");
-        static const int BAM_HASH = HashingUtils::HashString("BAM");
-        static const int CRAM_HASH = HashingUtils::HashString("CRAM");
+        static constexpr uint32_t FASTQ_HASH = ConstExprHashingUtils::HashString("FASTQ");
+        static constexpr uint32_t BAM_HASH = ConstExprHashingUtils::HashString("BAM");
+        static constexpr uint32_t CRAM_HASH = ConstExprHashingUtils::HashString("CRAM");
 
 
         FileType GetFileTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FASTQ_HASH)
           {
             return FileType::FASTQ;

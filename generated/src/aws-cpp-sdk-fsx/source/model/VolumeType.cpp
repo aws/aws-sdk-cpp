@@ -20,13 +20,13 @@ namespace Aws
       namespace VolumeTypeMapper
       {
 
-        static const int ONTAP_HASH = HashingUtils::HashString("ONTAP");
-        static const int OPENZFS_HASH = HashingUtils::HashString("OPENZFS");
+        static constexpr uint32_t ONTAP_HASH = ConstExprHashingUtils::HashString("ONTAP");
+        static constexpr uint32_t OPENZFS_HASH = ConstExprHashingUtils::HashString("OPENZFS");
 
 
         VolumeType GetVolumeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ONTAP_HASH)
           {
             return VolumeType::ONTAP;

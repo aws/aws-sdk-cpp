@@ -20,15 +20,15 @@ namespace Aws
       namespace DrmSystemMapper
       {
 
-        static const int CLEAR_KEY_AES_128_HASH = HashingUtils::HashString("CLEAR_KEY_AES_128");
-        static const int FAIRPLAY_HASH = HashingUtils::HashString("FAIRPLAY");
-        static const int PLAYREADY_HASH = HashingUtils::HashString("PLAYREADY");
-        static const int WIDEVINE_HASH = HashingUtils::HashString("WIDEVINE");
+        static constexpr uint32_t CLEAR_KEY_AES_128_HASH = ConstExprHashingUtils::HashString("CLEAR_KEY_AES_128");
+        static constexpr uint32_t FAIRPLAY_HASH = ConstExprHashingUtils::HashString("FAIRPLAY");
+        static constexpr uint32_t PLAYREADY_HASH = ConstExprHashingUtils::HashString("PLAYREADY");
+        static constexpr uint32_t WIDEVINE_HASH = ConstExprHashingUtils::HashString("WIDEVINE");
 
 
         DrmSystem GetDrmSystemForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLEAR_KEY_AES_128_HASH)
           {
             return DrmSystem::CLEAR_KEY_AES_128;

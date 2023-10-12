@@ -20,13 +20,13 @@ namespace Aws
       namespace ReturnValuesOnConditionCheckFailureMapper
       {
 
-        static const int ALL_OLD_HASH = HashingUtils::HashString("ALL_OLD");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t ALL_OLD_HASH = ConstExprHashingUtils::HashString("ALL_OLD");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         ReturnValuesOnConditionCheckFailure GetReturnValuesOnConditionCheckFailureForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_OLD_HASH)
           {
             return ReturnValuesOnConditionCheckFailure::ALL_OLD;

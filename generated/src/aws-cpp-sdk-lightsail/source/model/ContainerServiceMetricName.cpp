@@ -20,13 +20,13 @@ namespace Aws
       namespace ContainerServiceMetricNameMapper
       {
 
-        static const int CPUUtilization_HASH = HashingUtils::HashString("CPUUtilization");
-        static const int MemoryUtilization_HASH = HashingUtils::HashString("MemoryUtilization");
+        static constexpr uint32_t CPUUtilization_HASH = ConstExprHashingUtils::HashString("CPUUtilization");
+        static constexpr uint32_t MemoryUtilization_HASH = ConstExprHashingUtils::HashString("MemoryUtilization");
 
 
         ContainerServiceMetricName GetContainerServiceMetricNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CPUUtilization_HASH)
           {
             return ContainerServiceMetricName::CPUUtilization;

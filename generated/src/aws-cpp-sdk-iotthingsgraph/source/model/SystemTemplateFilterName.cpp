@@ -20,12 +20,12 @@ namespace Aws
       namespace SystemTemplateFilterNameMapper
       {
 
-        static const int FLOW_TEMPLATE_ID_HASH = HashingUtils::HashString("FLOW_TEMPLATE_ID");
+        static constexpr uint32_t FLOW_TEMPLATE_ID_HASH = ConstExprHashingUtils::HashString("FLOW_TEMPLATE_ID");
 
 
         SystemTemplateFilterName GetSystemTemplateFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FLOW_TEMPLATE_ID_HASH)
           {
             return SystemTemplateFilterName::FLOW_TEMPLATE_ID;

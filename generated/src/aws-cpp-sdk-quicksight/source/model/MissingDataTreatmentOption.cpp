@@ -20,14 +20,14 @@ namespace Aws
       namespace MissingDataTreatmentOptionMapper
       {
 
-        static const int INTERPOLATE_HASH = HashingUtils::HashString("INTERPOLATE");
-        static const int SHOW_AS_ZERO_HASH = HashingUtils::HashString("SHOW_AS_ZERO");
-        static const int SHOW_AS_BLANK_HASH = HashingUtils::HashString("SHOW_AS_BLANK");
+        static constexpr uint32_t INTERPOLATE_HASH = ConstExprHashingUtils::HashString("INTERPOLATE");
+        static constexpr uint32_t SHOW_AS_ZERO_HASH = ConstExprHashingUtils::HashString("SHOW_AS_ZERO");
+        static constexpr uint32_t SHOW_AS_BLANK_HASH = ConstExprHashingUtils::HashString("SHOW_AS_BLANK");
 
 
         MissingDataTreatmentOption GetMissingDataTreatmentOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERPOLATE_HASH)
           {
             return MissingDataTreatmentOption::INTERPOLATE;

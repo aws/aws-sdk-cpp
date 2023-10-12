@@ -20,16 +20,16 @@ namespace Aws
       namespace AccountLimitTypeMapper
       {
 
-        static const int MAX_HEALTH_CHECKS_BY_OWNER_HASH = HashingUtils::HashString("MAX_HEALTH_CHECKS_BY_OWNER");
-        static const int MAX_HOSTED_ZONES_BY_OWNER_HASH = HashingUtils::HashString("MAX_HOSTED_ZONES_BY_OWNER");
-        static const int MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER_HASH = HashingUtils::HashString("MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER");
-        static const int MAX_REUSABLE_DELEGATION_SETS_BY_OWNER_HASH = HashingUtils::HashString("MAX_REUSABLE_DELEGATION_SETS_BY_OWNER");
-        static const int MAX_TRAFFIC_POLICIES_BY_OWNER_HASH = HashingUtils::HashString("MAX_TRAFFIC_POLICIES_BY_OWNER");
+        static constexpr uint32_t MAX_HEALTH_CHECKS_BY_OWNER_HASH = ConstExprHashingUtils::HashString("MAX_HEALTH_CHECKS_BY_OWNER");
+        static constexpr uint32_t MAX_HOSTED_ZONES_BY_OWNER_HASH = ConstExprHashingUtils::HashString("MAX_HOSTED_ZONES_BY_OWNER");
+        static constexpr uint32_t MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER_HASH = ConstExprHashingUtils::HashString("MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER");
+        static constexpr uint32_t MAX_REUSABLE_DELEGATION_SETS_BY_OWNER_HASH = ConstExprHashingUtils::HashString("MAX_REUSABLE_DELEGATION_SETS_BY_OWNER");
+        static constexpr uint32_t MAX_TRAFFIC_POLICIES_BY_OWNER_HASH = ConstExprHashingUtils::HashString("MAX_TRAFFIC_POLICIES_BY_OWNER");
 
 
         AccountLimitType GetAccountLimitTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MAX_HEALTH_CHECKS_BY_OWNER_HASH)
           {
             return AccountLimitType::MAX_HEALTH_CHECKS_BY_OWNER;

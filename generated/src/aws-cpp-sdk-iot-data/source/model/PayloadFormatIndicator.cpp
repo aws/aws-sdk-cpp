@@ -20,13 +20,13 @@ namespace Aws
       namespace PayloadFormatIndicatorMapper
       {
 
-        static const int UNSPECIFIED_BYTES_HASH = HashingUtils::HashString("UNSPECIFIED_BYTES");
-        static const int UTF8_DATA_HASH = HashingUtils::HashString("UTF8_DATA");
+        static constexpr uint32_t UNSPECIFIED_BYTES_HASH = ConstExprHashingUtils::HashString("UNSPECIFIED_BYTES");
+        static constexpr uint32_t UTF8_DATA_HASH = ConstExprHashingUtils::HashString("UTF8_DATA");
 
 
         PayloadFormatIndicator GetPayloadFormatIndicatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNSPECIFIED_BYTES_HASH)
           {
             return PayloadFormatIndicator::UNSPECIFIED_BYTES;

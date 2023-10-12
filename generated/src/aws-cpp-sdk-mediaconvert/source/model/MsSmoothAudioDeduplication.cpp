@@ -20,13 +20,13 @@ namespace Aws
       namespace MsSmoothAudioDeduplicationMapper
       {
 
-        static const int COMBINE_DUPLICATE_STREAMS_HASH = HashingUtils::HashString("COMBINE_DUPLICATE_STREAMS");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t COMBINE_DUPLICATE_STREAMS_HASH = ConstExprHashingUtils::HashString("COMBINE_DUPLICATE_STREAMS");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         MsSmoothAudioDeduplication GetMsSmoothAudioDeduplicationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMBINE_DUPLICATE_STREAMS_HASH)
           {
             return MsSmoothAudioDeduplication::COMBINE_DUPLICATE_STREAMS;

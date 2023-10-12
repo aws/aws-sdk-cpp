@@ -20,13 +20,13 @@ namespace Aws
       namespace TemplateTypeMapper
       {
 
-        static const int ENVIRONMENT_HASH = HashingUtils::HashString("ENVIRONMENT");
-        static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
+        static constexpr uint32_t ENVIRONMENT_HASH = ConstExprHashingUtils::HashString("ENVIRONMENT");
+        static constexpr uint32_t SERVICE_HASH = ConstExprHashingUtils::HashString("SERVICE");
 
 
         TemplateType GetTemplateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENVIRONMENT_HASH)
           {
             return TemplateType::ENVIRONMENT;

@@ -20,13 +20,13 @@ namespace Aws
       namespace SmoothGroupStreamManifestBehaviorMapper
       {
 
-        static const int DO_NOT_SEND_HASH = HashingUtils::HashString("DO_NOT_SEND");
-        static const int SEND_HASH = HashingUtils::HashString("SEND");
+        static constexpr uint32_t DO_NOT_SEND_HASH = ConstExprHashingUtils::HashString("DO_NOT_SEND");
+        static constexpr uint32_t SEND_HASH = ConstExprHashingUtils::HashString("SEND");
 
 
         SmoothGroupStreamManifestBehavior GetSmoothGroupStreamManifestBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DO_NOT_SEND_HASH)
           {
             return SmoothGroupStreamManifestBehavior::DO_NOT_SEND;

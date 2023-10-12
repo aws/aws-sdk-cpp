@@ -20,14 +20,14 @@ namespace Aws
       namespace PolicyScopeTypeMapper
       {
 
-        static const int All_HASH = HashingUtils::HashString("All");
-        static const int AWS_HASH = HashingUtils::HashString("AWS");
-        static const int Local_HASH = HashingUtils::HashString("Local");
+        static constexpr uint32_t All_HASH = ConstExprHashingUtils::HashString("All");
+        static constexpr uint32_t AWS_HASH = ConstExprHashingUtils::HashString("AWS");
+        static constexpr uint32_t Local_HASH = ConstExprHashingUtils::HashString("Local");
 
 
         PolicyScopeType GetPolicyScopeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == All_HASH)
           {
             return PolicyScopeType::All;

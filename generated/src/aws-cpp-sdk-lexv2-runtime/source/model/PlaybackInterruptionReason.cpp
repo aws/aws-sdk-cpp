@@ -20,14 +20,14 @@ namespace Aws
       namespace PlaybackInterruptionReasonMapper
       {
 
-        static const int DTMF_START_DETECTED_HASH = HashingUtils::HashString("DTMF_START_DETECTED");
-        static const int TEXT_DETECTED_HASH = HashingUtils::HashString("TEXT_DETECTED");
-        static const int VOICE_START_DETECTED_HASH = HashingUtils::HashString("VOICE_START_DETECTED");
+        static constexpr uint32_t DTMF_START_DETECTED_HASH = ConstExprHashingUtils::HashString("DTMF_START_DETECTED");
+        static constexpr uint32_t TEXT_DETECTED_HASH = ConstExprHashingUtils::HashString("TEXT_DETECTED");
+        static constexpr uint32_t VOICE_START_DETECTED_HASH = ConstExprHashingUtils::HashString("VOICE_START_DETECTED");
 
 
         PlaybackInterruptionReason GetPlaybackInterruptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DTMF_START_DETECTED_HASH)
           {
             return PlaybackInterruptionReason::DTMF_START_DETECTED;

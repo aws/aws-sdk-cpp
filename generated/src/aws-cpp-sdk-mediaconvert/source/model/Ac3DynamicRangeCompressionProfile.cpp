@@ -20,13 +20,13 @@ namespace Aws
       namespace Ac3DynamicRangeCompressionProfileMapper
       {
 
-        static const int FILM_STANDARD_HASH = HashingUtils::HashString("FILM_STANDARD");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t FILM_STANDARD_HASH = ConstExprHashingUtils::HashString("FILM_STANDARD");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         Ac3DynamicRangeCompressionProfile GetAc3DynamicRangeCompressionProfileForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FILM_STANDARD_HASH)
           {
             return Ac3DynamicRangeCompressionProfile::FILM_STANDARD;

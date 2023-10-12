@@ -20,13 +20,13 @@ namespace Aws
       namespace HierarchyGroupMatchTypeMapper
       {
 
-        static const int EXACT_HASH = HashingUtils::HashString("EXACT");
-        static const int WITH_CHILD_GROUPS_HASH = HashingUtils::HashString("WITH_CHILD_GROUPS");
+        static constexpr uint32_t EXACT_HASH = ConstExprHashingUtils::HashString("EXACT");
+        static constexpr uint32_t WITH_CHILD_GROUPS_HASH = ConstExprHashingUtils::HashString("WITH_CHILD_GROUPS");
 
 
         HierarchyGroupMatchType GetHierarchyGroupMatchTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXACT_HASH)
           {
             return HierarchyGroupMatchType::EXACT;

@@ -20,16 +20,16 @@ namespace Aws
       namespace GameSessionPlacementStateMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int FULFILLED_HASH = HashingUtils::HashString("FULFILLED");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-        static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t FULFILLED_HASH = ConstExprHashingUtils::HashString("FULFILLED");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t TIMED_OUT_HASH = ConstExprHashingUtils::HashString("TIMED_OUT");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         GameSessionPlacementState GetGameSessionPlacementStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return GameSessionPlacementState::PENDING;

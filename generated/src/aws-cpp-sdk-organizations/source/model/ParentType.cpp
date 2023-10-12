@@ -20,13 +20,13 @@ namespace Aws
       namespace ParentTypeMapper
       {
 
-        static const int ROOT_HASH = HashingUtils::HashString("ROOT");
-        static const int ORGANIZATIONAL_UNIT_HASH = HashingUtils::HashString("ORGANIZATIONAL_UNIT");
+        static constexpr uint32_t ROOT_HASH = ConstExprHashingUtils::HashString("ROOT");
+        static constexpr uint32_t ORGANIZATIONAL_UNIT_HASH = ConstExprHashingUtils::HashString("ORGANIZATIONAL_UNIT");
 
 
         ParentType GetParentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ROOT_HASH)
           {
             return ParentType::ROOT;

@@ -20,13 +20,13 @@ namespace Aws
       namespace SortPipelineExecutionsByMapper
       {
 
-        static const int CreationTime_HASH = HashingUtils::HashString("CreationTime");
-        static const int PipelineExecutionArn_HASH = HashingUtils::HashString("PipelineExecutionArn");
+        static constexpr uint32_t CreationTime_HASH = ConstExprHashingUtils::HashString("CreationTime");
+        static constexpr uint32_t PipelineExecutionArn_HASH = ConstExprHashingUtils::HashString("PipelineExecutionArn");
 
 
         SortPipelineExecutionsBy GetSortPipelineExecutionsByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CreationTime_HASH)
           {
             return SortPipelineExecutionsBy::CreationTime;

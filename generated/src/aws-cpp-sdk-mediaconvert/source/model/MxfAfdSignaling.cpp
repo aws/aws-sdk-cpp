@@ -20,13 +20,13 @@ namespace Aws
       namespace MxfAfdSignalingMapper
       {
 
-        static const int NO_COPY_HASH = HashingUtils::HashString("NO_COPY");
-        static const int COPY_FROM_VIDEO_HASH = HashingUtils::HashString("COPY_FROM_VIDEO");
+        static constexpr uint32_t NO_COPY_HASH = ConstExprHashingUtils::HashString("NO_COPY");
+        static constexpr uint32_t COPY_FROM_VIDEO_HASH = ConstExprHashingUtils::HashString("COPY_FROM_VIDEO");
 
 
         MxfAfdSignaling GetMxfAfdSignalingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_COPY_HASH)
           {
             return MxfAfdSignaling::NO_COPY;

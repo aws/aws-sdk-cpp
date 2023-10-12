@@ -20,14 +20,14 @@ namespace Aws
       namespace ReadSetFileMapper
       {
 
-        static const int SOURCE1_HASH = HashingUtils::HashString("SOURCE1");
-        static const int SOURCE2_HASH = HashingUtils::HashString("SOURCE2");
-        static const int INDEX_HASH = HashingUtils::HashString("INDEX");
+        static constexpr uint32_t SOURCE1_HASH = ConstExprHashingUtils::HashString("SOURCE1");
+        static constexpr uint32_t SOURCE2_HASH = ConstExprHashingUtils::HashString("SOURCE2");
+        static constexpr uint32_t INDEX_HASH = ConstExprHashingUtils::HashString("INDEX");
 
 
         ReadSetFile GetReadSetFileForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SOURCE1_HASH)
           {
             return ReadSetFile::SOURCE1;

@@ -20,19 +20,19 @@ namespace Aws
       namespace SourceAccessTypeMapper
       {
 
-        static const int BASIC_AUTH_HASH = HashingUtils::HashString("BASIC_AUTH");
-        static const int VPC_SUBNET_HASH = HashingUtils::HashString("VPC_SUBNET");
-        static const int VPC_SECURITY_GROUP_HASH = HashingUtils::HashString("VPC_SECURITY_GROUP");
-        static const int SASL_SCRAM_512_AUTH_HASH = HashingUtils::HashString("SASL_SCRAM_512_AUTH");
-        static const int SASL_SCRAM_256_AUTH_HASH = HashingUtils::HashString("SASL_SCRAM_256_AUTH");
-        static const int VIRTUAL_HOST_HASH = HashingUtils::HashString("VIRTUAL_HOST");
-        static const int CLIENT_CERTIFICATE_TLS_AUTH_HASH = HashingUtils::HashString("CLIENT_CERTIFICATE_TLS_AUTH");
-        static const int SERVER_ROOT_CA_CERTIFICATE_HASH = HashingUtils::HashString("SERVER_ROOT_CA_CERTIFICATE");
+        static constexpr uint32_t BASIC_AUTH_HASH = ConstExprHashingUtils::HashString("BASIC_AUTH");
+        static constexpr uint32_t VPC_SUBNET_HASH = ConstExprHashingUtils::HashString("VPC_SUBNET");
+        static constexpr uint32_t VPC_SECURITY_GROUP_HASH = ConstExprHashingUtils::HashString("VPC_SECURITY_GROUP");
+        static constexpr uint32_t SASL_SCRAM_512_AUTH_HASH = ConstExprHashingUtils::HashString("SASL_SCRAM_512_AUTH");
+        static constexpr uint32_t SASL_SCRAM_256_AUTH_HASH = ConstExprHashingUtils::HashString("SASL_SCRAM_256_AUTH");
+        static constexpr uint32_t VIRTUAL_HOST_HASH = ConstExprHashingUtils::HashString("VIRTUAL_HOST");
+        static constexpr uint32_t CLIENT_CERTIFICATE_TLS_AUTH_HASH = ConstExprHashingUtils::HashString("CLIENT_CERTIFICATE_TLS_AUTH");
+        static constexpr uint32_t SERVER_ROOT_CA_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("SERVER_ROOT_CA_CERTIFICATE");
 
 
         SourceAccessType GetSourceAccessTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BASIC_AUTH_HASH)
           {
             return SourceAccessType::BASIC_AUTH;

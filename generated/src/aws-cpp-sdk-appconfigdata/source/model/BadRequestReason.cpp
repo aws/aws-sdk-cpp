@@ -20,12 +20,12 @@ namespace Aws
       namespace BadRequestReasonMapper
       {
 
-        static const int InvalidParameters_HASH = HashingUtils::HashString("InvalidParameters");
+        static constexpr uint32_t InvalidParameters_HASH = ConstExprHashingUtils::HashString("InvalidParameters");
 
 
         BadRequestReason GetBadRequestReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InvalidParameters_HASH)
           {
             return BadRequestReason::InvalidParameters;

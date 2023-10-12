@@ -20,14 +20,14 @@ namespace Aws
       namespace FileModeTypeEnumMapper
       {
 
-        static const int EXECUTABLE_HASH = HashingUtils::HashString("EXECUTABLE");
-        static const int NORMAL_HASH = HashingUtils::HashString("NORMAL");
-        static const int SYMLINK_HASH = HashingUtils::HashString("SYMLINK");
+        static constexpr uint32_t EXECUTABLE_HASH = ConstExprHashingUtils::HashString("EXECUTABLE");
+        static constexpr uint32_t NORMAL_HASH = ConstExprHashingUtils::HashString("NORMAL");
+        static constexpr uint32_t SYMLINK_HASH = ConstExprHashingUtils::HashString("SYMLINK");
 
 
         FileModeTypeEnum GetFileModeTypeEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXECUTABLE_HASH)
           {
             return FileModeTypeEnum::EXECUTABLE;

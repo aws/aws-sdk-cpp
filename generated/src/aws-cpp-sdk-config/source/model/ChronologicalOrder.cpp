@@ -20,13 +20,13 @@ namespace Aws
       namespace ChronologicalOrderMapper
       {
 
-        static const int Reverse_HASH = HashingUtils::HashString("Reverse");
-        static const int Forward_HASH = HashingUtils::HashString("Forward");
+        static constexpr uint32_t Reverse_HASH = ConstExprHashingUtils::HashString("Reverse");
+        static constexpr uint32_t Forward_HASH = ConstExprHashingUtils::HashString("Forward");
 
 
         ChronologicalOrder GetChronologicalOrderForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Reverse_HASH)
           {
             return ChronologicalOrder::Reverse;

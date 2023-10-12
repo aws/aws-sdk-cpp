@@ -20,13 +20,13 @@ namespace Aws
       namespace StateDBTypeMapper
       {
 
-        static const int LevelDB_HASH = HashingUtils::HashString("LevelDB");
-        static const int CouchDB_HASH = HashingUtils::HashString("CouchDB");
+        static constexpr uint32_t LevelDB_HASH = ConstExprHashingUtils::HashString("LevelDB");
+        static constexpr uint32_t CouchDB_HASH = ConstExprHashingUtils::HashString("CouchDB");
 
 
         StateDBType GetStateDBTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LevelDB_HASH)
           {
             return StateDBType::LevelDB;

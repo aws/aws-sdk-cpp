@@ -20,16 +20,16 @@ namespace Aws
       namespace LimitExceededErrorCodeMapper
       {
 
-        static const int ASSESSMENT_TARGET_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ASSESSMENT_TARGET_LIMIT_EXCEEDED");
-        static const int ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED");
-        static const int ASSESSMENT_RUN_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ASSESSMENT_RUN_LIMIT_EXCEEDED");
-        static const int RESOURCE_GROUP_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("RESOURCE_GROUP_LIMIT_EXCEEDED");
-        static const int EVENT_SUBSCRIPTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("EVENT_SUBSCRIPTION_LIMIT_EXCEEDED");
+        static constexpr uint32_t ASSESSMENT_TARGET_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ASSESSMENT_TARGET_LIMIT_EXCEEDED");
+        static constexpr uint32_t ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED");
+        static constexpr uint32_t ASSESSMENT_RUN_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ASSESSMENT_RUN_LIMIT_EXCEEDED");
+        static constexpr uint32_t RESOURCE_GROUP_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("RESOURCE_GROUP_LIMIT_EXCEEDED");
+        static constexpr uint32_t EVENT_SUBSCRIPTION_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("EVENT_SUBSCRIPTION_LIMIT_EXCEEDED");
 
 
         LimitExceededErrorCode GetLimitExceededErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASSESSMENT_TARGET_LIMIT_EXCEEDED_HASH)
           {
             return LimitExceededErrorCode::ASSESSMENT_TARGET_LIMIT_EXCEEDED;

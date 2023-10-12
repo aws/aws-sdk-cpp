@@ -20,14 +20,14 @@ namespace Aws
       namespace SMBSecurityStrategyMapper
       {
 
-        static const int ClientSpecified_HASH = HashingUtils::HashString("ClientSpecified");
-        static const int MandatorySigning_HASH = HashingUtils::HashString("MandatorySigning");
-        static const int MandatoryEncryption_HASH = HashingUtils::HashString("MandatoryEncryption");
+        static constexpr uint32_t ClientSpecified_HASH = ConstExprHashingUtils::HashString("ClientSpecified");
+        static constexpr uint32_t MandatorySigning_HASH = ConstExprHashingUtils::HashString("MandatorySigning");
+        static constexpr uint32_t MandatoryEncryption_HASH = ConstExprHashingUtils::HashString("MandatoryEncryption");
 
 
         SMBSecurityStrategy GetSMBSecurityStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ClientSpecified_HASH)
           {
             return SMBSecurityStrategy::ClientSpecified;

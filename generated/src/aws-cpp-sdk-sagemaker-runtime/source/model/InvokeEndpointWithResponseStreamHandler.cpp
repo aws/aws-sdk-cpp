@@ -186,11 +186,11 @@ namespace Model
 
 namespace InvokeEndpointWithResponseStreamEventMapper
 {
-    static const int PAYLOADPART_HASH = Aws::Utils::HashingUtils::HashString("PayloadPart");
+    static constexpr uint32_t PAYLOADPART_HASH = Aws::Utils::ConstExprHashingUtils::HashString("PayloadPart");
 
     InvokeEndpointWithResponseStreamEventType GetInvokeEndpointWithResponseStreamEventTypeForName(const Aws::String& name)
     {
-        int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
+        uint32_t hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
         if (hashCode == PAYLOADPART_HASH)
         {
             return InvokeEndpointWithResponseStreamEventType::PAYLOADPART;

@@ -20,14 +20,14 @@ namespace Aws
       namespace ActionTypeMapper
       {
 
-        static const int APPLY_IAM_POLICY_HASH = HashingUtils::HashString("APPLY_IAM_POLICY");
-        static const int APPLY_SCP_POLICY_HASH = HashingUtils::HashString("APPLY_SCP_POLICY");
-        static const int RUN_SSM_DOCUMENTS_HASH = HashingUtils::HashString("RUN_SSM_DOCUMENTS");
+        static constexpr uint32_t APPLY_IAM_POLICY_HASH = ConstExprHashingUtils::HashString("APPLY_IAM_POLICY");
+        static constexpr uint32_t APPLY_SCP_POLICY_HASH = ConstExprHashingUtils::HashString("APPLY_SCP_POLICY");
+        static constexpr uint32_t RUN_SSM_DOCUMENTS_HASH = ConstExprHashingUtils::HashString("RUN_SSM_DOCUMENTS");
 
 
         ActionType GetActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APPLY_IAM_POLICY_HASH)
           {
             return ActionType::APPLY_IAM_POLICY;

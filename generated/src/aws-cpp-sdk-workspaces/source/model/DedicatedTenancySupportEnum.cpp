@@ -20,12 +20,12 @@ namespace Aws
       namespace DedicatedTenancySupportEnumMapper
       {
 
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
 
 
         DedicatedTenancySupportEnum GetDedicatedTenancySupportEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLED_HASH)
           {
             return DedicatedTenancySupportEnum::ENABLED;

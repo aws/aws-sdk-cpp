@@ -20,15 +20,15 @@ namespace Aws
       namespace DescribePortfolioShareTypeMapper
       {
 
-        static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
-        static const int ORGANIZATION_HASH = HashingUtils::HashString("ORGANIZATION");
-        static const int ORGANIZATIONAL_UNIT_HASH = HashingUtils::HashString("ORGANIZATIONAL_UNIT");
-        static const int ORGANIZATION_MEMBER_ACCOUNT_HASH = HashingUtils::HashString("ORGANIZATION_MEMBER_ACCOUNT");
+        static constexpr uint32_t ACCOUNT_HASH = ConstExprHashingUtils::HashString("ACCOUNT");
+        static constexpr uint32_t ORGANIZATION_HASH = ConstExprHashingUtils::HashString("ORGANIZATION");
+        static constexpr uint32_t ORGANIZATIONAL_UNIT_HASH = ConstExprHashingUtils::HashString("ORGANIZATIONAL_UNIT");
+        static constexpr uint32_t ORGANIZATION_MEMBER_ACCOUNT_HASH = ConstExprHashingUtils::HashString("ORGANIZATION_MEMBER_ACCOUNT");
 
 
         DescribePortfolioShareType GetDescribePortfolioShareTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCOUNT_HASH)
           {
             return DescribePortfolioShareType::ACCOUNT;

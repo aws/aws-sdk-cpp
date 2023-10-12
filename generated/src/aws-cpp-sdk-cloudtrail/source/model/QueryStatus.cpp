@@ -20,17 +20,17 @@ namespace Aws
       namespace QueryStatusMapper
       {
 
-        static const int QUEUED_HASH = HashingUtils::HashString("QUEUED");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int FINISHED_HASH = HashingUtils::HashString("FINISHED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-        static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
+        static constexpr uint32_t QUEUED_HASH = ConstExprHashingUtils::HashString("QUEUED");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t FINISHED_HASH = ConstExprHashingUtils::HashString("FINISHED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t TIMED_OUT_HASH = ConstExprHashingUtils::HashString("TIMED_OUT");
 
 
         QueryStatus GetQueryStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUEUED_HASH)
           {
             return QueryStatus::QUEUED;

@@ -20,13 +20,13 @@ namespace Aws
       namespace M2tsEbpAudioIntervalMapper
       {
 
-        static const int VIDEO_AND_FIXED_INTERVALS_HASH = HashingUtils::HashString("VIDEO_AND_FIXED_INTERVALS");
-        static const int VIDEO_INTERVAL_HASH = HashingUtils::HashString("VIDEO_INTERVAL");
+        static constexpr uint32_t VIDEO_AND_FIXED_INTERVALS_HASH = ConstExprHashingUtils::HashString("VIDEO_AND_FIXED_INTERVALS");
+        static constexpr uint32_t VIDEO_INTERVAL_HASH = ConstExprHashingUtils::HashString("VIDEO_INTERVAL");
 
 
         M2tsEbpAudioInterval GetM2tsEbpAudioIntervalForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VIDEO_AND_FIXED_INTERVALS_HASH)
           {
             return M2tsEbpAudioInterval::VIDEO_AND_FIXED_INTERVALS;

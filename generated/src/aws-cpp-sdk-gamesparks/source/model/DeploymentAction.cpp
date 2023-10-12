@@ -20,13 +20,13 @@ namespace Aws
       namespace DeploymentActionMapper
       {
 
-        static const int DEPLOY_HASH = HashingUtils::HashString("DEPLOY");
-        static const int UNDEPLOY_HASH = HashingUtils::HashString("UNDEPLOY");
+        static constexpr uint32_t DEPLOY_HASH = ConstExprHashingUtils::HashString("DEPLOY");
+        static constexpr uint32_t UNDEPLOY_HASH = ConstExprHashingUtils::HashString("UNDEPLOY");
 
 
         DeploymentAction GetDeploymentActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEPLOY_HASH)
           {
             return DeploymentAction::DEPLOY;

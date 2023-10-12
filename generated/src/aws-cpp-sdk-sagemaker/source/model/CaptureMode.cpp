@@ -20,13 +20,13 @@ namespace Aws
       namespace CaptureModeMapper
       {
 
-        static const int Input_HASH = HashingUtils::HashString("Input");
-        static const int Output_HASH = HashingUtils::HashString("Output");
+        static constexpr uint32_t Input_HASH = ConstExprHashingUtils::HashString("Input");
+        static constexpr uint32_t Output_HASH = ConstExprHashingUtils::HashString("Output");
 
 
         CaptureMode GetCaptureModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Input_HASH)
           {
             return CaptureMode::Input;

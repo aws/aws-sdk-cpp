@@ -20,14 +20,14 @@ namespace Aws
       namespace DeviceSubsetTypeMapper
       {
 
-        static const int PERCENTAGE_HASH = HashingUtils::HashString("PERCENTAGE");
-        static const int SELECTION_HASH = HashingUtils::HashString("SELECTION");
-        static const int NAMECONTAINS_HASH = HashingUtils::HashString("NAMECONTAINS");
+        static constexpr uint32_t PERCENTAGE_HASH = ConstExprHashingUtils::HashString("PERCENTAGE");
+        static constexpr uint32_t SELECTION_HASH = ConstExprHashingUtils::HashString("SELECTION");
+        static constexpr uint32_t NAMECONTAINS_HASH = ConstExprHashingUtils::HashString("NAMECONTAINS");
 
 
         DeviceSubsetType GetDeviceSubsetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PERCENTAGE_HASH)
           {
             return DeviceSubsetType::PERCENTAGE;

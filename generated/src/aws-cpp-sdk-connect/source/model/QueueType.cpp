@@ -20,13 +20,13 @@ namespace Aws
       namespace QueueTypeMapper
       {
 
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
-        static const int AGENT_HASH = HashingUtils::HashString("AGENT");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
+        static constexpr uint32_t AGENT_HASH = ConstExprHashingUtils::HashString("AGENT");
 
 
         QueueType GetQueueTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STANDARD_HASH)
           {
             return QueueType::STANDARD;

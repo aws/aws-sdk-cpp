@@ -20,26 +20,26 @@ namespace Aws
       namespace HeaderEnumMapper
       {
 
-        static const int Accept_HASH = HashingUtils::HashString("Accept");
-        static const int Accept_Charset_HASH = HashingUtils::HashString("Accept-Charset");
-        static const int Accept_Datetime_HASH = HashingUtils::HashString("Accept-Datetime");
-        static const int Accept_Encoding_HASH = HashingUtils::HashString("Accept-Encoding");
-        static const int Accept_Language_HASH = HashingUtils::HashString("Accept-Language");
-        static const int Authorization_HASH = HashingUtils::HashString("Authorization");
-        static const int CloudFront_Forwarded_Proto_HASH = HashingUtils::HashString("CloudFront-Forwarded-Proto");
-        static const int CloudFront_Is_Desktop_Viewer_HASH = HashingUtils::HashString("CloudFront-Is-Desktop-Viewer");
-        static const int CloudFront_Is_Mobile_Viewer_HASH = HashingUtils::HashString("CloudFront-Is-Mobile-Viewer");
-        static const int CloudFront_Is_SmartTV_Viewer_HASH = HashingUtils::HashString("CloudFront-Is-SmartTV-Viewer");
-        static const int CloudFront_Is_Tablet_Viewer_HASH = HashingUtils::HashString("CloudFront-Is-Tablet-Viewer");
-        static const int CloudFront_Viewer_Country_HASH = HashingUtils::HashString("CloudFront-Viewer-Country");
-        static const int Host_HASH = HashingUtils::HashString("Host");
-        static const int Origin_HASH = HashingUtils::HashString("Origin");
-        static const int Referer_HASH = HashingUtils::HashString("Referer");
+        static constexpr uint32_t Accept_HASH = ConstExprHashingUtils::HashString("Accept");
+        static constexpr uint32_t Accept_Charset_HASH = ConstExprHashingUtils::HashString("Accept-Charset");
+        static constexpr uint32_t Accept_Datetime_HASH = ConstExprHashingUtils::HashString("Accept-Datetime");
+        static constexpr uint32_t Accept_Encoding_HASH = ConstExprHashingUtils::HashString("Accept-Encoding");
+        static constexpr uint32_t Accept_Language_HASH = ConstExprHashingUtils::HashString("Accept-Language");
+        static constexpr uint32_t Authorization_HASH = ConstExprHashingUtils::HashString("Authorization");
+        static constexpr uint32_t CloudFront_Forwarded_Proto_HASH = ConstExprHashingUtils::HashString("CloudFront-Forwarded-Proto");
+        static constexpr uint32_t CloudFront_Is_Desktop_Viewer_HASH = ConstExprHashingUtils::HashString("CloudFront-Is-Desktop-Viewer");
+        static constexpr uint32_t CloudFront_Is_Mobile_Viewer_HASH = ConstExprHashingUtils::HashString("CloudFront-Is-Mobile-Viewer");
+        static constexpr uint32_t CloudFront_Is_SmartTV_Viewer_HASH = ConstExprHashingUtils::HashString("CloudFront-Is-SmartTV-Viewer");
+        static constexpr uint32_t CloudFront_Is_Tablet_Viewer_HASH = ConstExprHashingUtils::HashString("CloudFront-Is-Tablet-Viewer");
+        static constexpr uint32_t CloudFront_Viewer_Country_HASH = ConstExprHashingUtils::HashString("CloudFront-Viewer-Country");
+        static constexpr uint32_t Host_HASH = ConstExprHashingUtils::HashString("Host");
+        static constexpr uint32_t Origin_HASH = ConstExprHashingUtils::HashString("Origin");
+        static constexpr uint32_t Referer_HASH = ConstExprHashingUtils::HashString("Referer");
 
 
         HeaderEnum GetHeaderEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Accept_HASH)
           {
             return HeaderEnum::Accept;

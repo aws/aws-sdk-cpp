@@ -20,17 +20,17 @@ namespace Aws
       namespace SessionStatusMapper
       {
 
-        static const int Connected_HASH = HashingUtils::HashString("Connected");
-        static const int Connecting_HASH = HashingUtils::HashString("Connecting");
-        static const int Disconnected_HASH = HashingUtils::HashString("Disconnected");
-        static const int Terminated_HASH = HashingUtils::HashString("Terminated");
-        static const int Terminating_HASH = HashingUtils::HashString("Terminating");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t Connected_HASH = ConstExprHashingUtils::HashString("Connected");
+        static constexpr uint32_t Connecting_HASH = ConstExprHashingUtils::HashString("Connecting");
+        static constexpr uint32_t Disconnected_HASH = ConstExprHashingUtils::HashString("Disconnected");
+        static constexpr uint32_t Terminated_HASH = ConstExprHashingUtils::HashString("Terminated");
+        static constexpr uint32_t Terminating_HASH = ConstExprHashingUtils::HashString("Terminating");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         SessionStatus GetSessionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Connected_HASH)
           {
             return SessionStatus::Connected;

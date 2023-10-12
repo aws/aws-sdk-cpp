@@ -20,15 +20,15 @@ namespace Aws
       namespace ConflictExceptionTypeMapper
       {
 
-        static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("RESOURCE_IN_USE");
-        static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("RESOURCE_ALREADY_EXISTS");
-        static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IDEMPOTENT_PARAMETER_MISMATCH");
-        static const int CONFLICTING_OPERATION_HASH = HashingUtils::HashString("CONFLICTING_OPERATION");
+        static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("RESOURCE_IN_USE");
+        static constexpr uint32_t RESOURCE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("RESOURCE_ALREADY_EXISTS");
+        static constexpr uint32_t IDEMPOTENT_PARAMETER_MISMATCH_HASH = ConstExprHashingUtils::HashString("IDEMPOTENT_PARAMETER_MISMATCH");
+        static constexpr uint32_t CONFLICTING_OPERATION_HASH = ConstExprHashingUtils::HashString("CONFLICTING_OPERATION");
 
 
         ConflictExceptionType GetConflictExceptionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESOURCE_IN_USE_HASH)
           {
             return ConflictExceptionType::RESOURCE_IN_USE;

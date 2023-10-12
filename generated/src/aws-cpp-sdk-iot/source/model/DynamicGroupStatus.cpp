@@ -20,14 +20,14 @@ namespace Aws
       namespace DynamicGroupStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int BUILDING_HASH = HashingUtils::HashString("BUILDING");
-        static const int REBUILDING_HASH = HashingUtils::HashString("REBUILDING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t BUILDING_HASH = ConstExprHashingUtils::HashString("BUILDING");
+        static constexpr uint32_t REBUILDING_HASH = ConstExprHashingUtils::HashString("REBUILDING");
 
 
         DynamicGroupStatus GetDynamicGroupStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return DynamicGroupStatus::ACTIVE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace RemediationActionTypeMapper
       {
 
-        static const int REMOVE_HASH = HashingUtils::HashString("REMOVE");
-        static const int MODIFY_HASH = HashingUtils::HashString("MODIFY");
+        static constexpr uint32_t REMOVE_HASH = ConstExprHashingUtils::HashString("REMOVE");
+        static constexpr uint32_t MODIFY_HASH = ConstExprHashingUtils::HashString("MODIFY");
 
 
         RemediationActionType GetRemediationActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REMOVE_HASH)
           {
             return RemediationActionType::REMOVE;

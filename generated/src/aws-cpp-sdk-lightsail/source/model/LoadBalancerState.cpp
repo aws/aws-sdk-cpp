@@ -20,16 +20,16 @@ namespace Aws
       namespace LoadBalancerStateMapper
       {
 
-        static const int active_HASH = HashingUtils::HashString("active");
-        static const int provisioning_HASH = HashingUtils::HashString("provisioning");
-        static const int active_impaired_HASH = HashingUtils::HashString("active_impaired");
-        static const int failed_HASH = HashingUtils::HashString("failed");
-        static const int unknown_HASH = HashingUtils::HashString("unknown");
+        static constexpr uint32_t active_HASH = ConstExprHashingUtils::HashString("active");
+        static constexpr uint32_t provisioning_HASH = ConstExprHashingUtils::HashString("provisioning");
+        static constexpr uint32_t active_impaired_HASH = ConstExprHashingUtils::HashString("active_impaired");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
+        static constexpr uint32_t unknown_HASH = ConstExprHashingUtils::HashString("unknown");
 
 
         LoadBalancerState GetLoadBalancerStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == active_HASH)
           {
             return LoadBalancerState::active;

@@ -20,23 +20,23 @@ namespace Aws
       namespace ContentTypeMapper
       {
 
-        static const int PDF_HASH = HashingUtils::HashString("PDF");
-        static const int HTML_HASH = HashingUtils::HashString("HTML");
-        static const int MS_WORD_HASH = HashingUtils::HashString("MS_WORD");
-        static const int PLAIN_TEXT_HASH = HashingUtils::HashString("PLAIN_TEXT");
-        static const int PPT_HASH = HashingUtils::HashString("PPT");
-        static const int RTF_HASH = HashingUtils::HashString("RTF");
-        static const int XML_HASH = HashingUtils::HashString("XML");
-        static const int XSLT_HASH = HashingUtils::HashString("XSLT");
-        static const int MS_EXCEL_HASH = HashingUtils::HashString("MS_EXCEL");
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
-        static const int MD_HASH = HashingUtils::HashString("MD");
+        static constexpr uint32_t PDF_HASH = ConstExprHashingUtils::HashString("PDF");
+        static constexpr uint32_t HTML_HASH = ConstExprHashingUtils::HashString("HTML");
+        static constexpr uint32_t MS_WORD_HASH = ConstExprHashingUtils::HashString("MS_WORD");
+        static constexpr uint32_t PLAIN_TEXT_HASH = ConstExprHashingUtils::HashString("PLAIN_TEXT");
+        static constexpr uint32_t PPT_HASH = ConstExprHashingUtils::HashString("PPT");
+        static constexpr uint32_t RTF_HASH = ConstExprHashingUtils::HashString("RTF");
+        static constexpr uint32_t XML_HASH = ConstExprHashingUtils::HashString("XML");
+        static constexpr uint32_t XSLT_HASH = ConstExprHashingUtils::HashString("XSLT");
+        static constexpr uint32_t MS_EXCEL_HASH = ConstExprHashingUtils::HashString("MS_EXCEL");
+        static constexpr uint32_t CSV_HASH = ConstExprHashingUtils::HashString("CSV");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
+        static constexpr uint32_t MD_HASH = ConstExprHashingUtils::HashString("MD");
 
 
         ContentType GetContentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PDF_HASH)
           {
             return ContentType::PDF;

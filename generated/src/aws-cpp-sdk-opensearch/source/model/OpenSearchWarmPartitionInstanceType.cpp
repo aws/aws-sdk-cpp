@@ -20,14 +20,14 @@ namespace Aws
       namespace OpenSearchWarmPartitionInstanceTypeMapper
       {
 
-        static const int ultrawarm1_medium_search_HASH = HashingUtils::HashString("ultrawarm1.medium.search");
-        static const int ultrawarm1_large_search_HASH = HashingUtils::HashString("ultrawarm1.large.search");
-        static const int ultrawarm1_xlarge_search_HASH = HashingUtils::HashString("ultrawarm1.xlarge.search");
+        static constexpr uint32_t ultrawarm1_medium_search_HASH = ConstExprHashingUtils::HashString("ultrawarm1.medium.search");
+        static constexpr uint32_t ultrawarm1_large_search_HASH = ConstExprHashingUtils::HashString("ultrawarm1.large.search");
+        static constexpr uint32_t ultrawarm1_xlarge_search_HASH = ConstExprHashingUtils::HashString("ultrawarm1.xlarge.search");
 
 
         OpenSearchWarmPartitionInstanceType GetOpenSearchWarmPartitionInstanceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ultrawarm1_medium_search_HASH)
           {
             return OpenSearchWarmPartitionInstanceType::ultrawarm1_medium_search;

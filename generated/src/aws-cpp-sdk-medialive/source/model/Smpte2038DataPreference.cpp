@@ -20,13 +20,13 @@ namespace Aws
       namespace Smpte2038DataPreferenceMapper
       {
 
-        static const int IGNORE_HASH = HashingUtils::HashString("IGNORE");
-        static const int PREFER_HASH = HashingUtils::HashString("PREFER");
+        static constexpr uint32_t IGNORE_HASH = ConstExprHashingUtils::HashString("IGNORE");
+        static constexpr uint32_t PREFER_HASH = ConstExprHashingUtils::HashString("PREFER");
 
 
         Smpte2038DataPreference GetSmpte2038DataPreferenceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IGNORE_HASH)
           {
             return Smpte2038DataPreference::IGNORE;

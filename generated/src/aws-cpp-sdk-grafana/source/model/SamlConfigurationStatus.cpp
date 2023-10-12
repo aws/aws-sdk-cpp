@@ -20,13 +20,13 @@ namespace Aws
       namespace SamlConfigurationStatusMapper
       {
 
-        static const int CONFIGURED_HASH = HashingUtils::HashString("CONFIGURED");
-        static const int NOT_CONFIGURED_HASH = HashingUtils::HashString("NOT_CONFIGURED");
+        static constexpr uint32_t CONFIGURED_HASH = ConstExprHashingUtils::HashString("CONFIGURED");
+        static constexpr uint32_t NOT_CONFIGURED_HASH = ConstExprHashingUtils::HashString("NOT_CONFIGURED");
 
 
         SamlConfigurationStatus GetSamlConfigurationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONFIGURED_HASH)
           {
             return SamlConfigurationStatus::CONFIGURED;

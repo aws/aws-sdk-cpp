@@ -20,13 +20,13 @@ namespace Aws
       namespace VnfInstantiationStateMapper
       {
 
-        static const int INSTANTIATED_HASH = HashingUtils::HashString("INSTANTIATED");
-        static const int NOT_INSTANTIATED_HASH = HashingUtils::HashString("NOT_INSTANTIATED");
+        static constexpr uint32_t INSTANTIATED_HASH = ConstExprHashingUtils::HashString("INSTANTIATED");
+        static constexpr uint32_t NOT_INSTANTIATED_HASH = ConstExprHashingUtils::HashString("NOT_INSTANTIATED");
 
 
         VnfInstantiationState GetVnfInstantiationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSTANTIATED_HASH)
           {
             return VnfInstantiationState::INSTANTIATED;

@@ -20,13 +20,13 @@ namespace Aws
       namespace AuthorizationStatusMapper
       {
 
-        static const int Authorized_HASH = HashingUtils::HashString("Authorized");
-        static const int Revoking_HASH = HashingUtils::HashString("Revoking");
+        static constexpr uint32_t Authorized_HASH = ConstExprHashingUtils::HashString("Authorized");
+        static constexpr uint32_t Revoking_HASH = ConstExprHashingUtils::HashString("Revoking");
 
 
         AuthorizationStatus GetAuthorizationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Authorized_HASH)
           {
             return AuthorizationStatus::Authorized;

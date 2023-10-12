@@ -20,15 +20,15 @@ namespace Aws
       namespace AudioNormalizationAlgorithmMapper
       {
 
-        static const int ITU_BS_1770_1_HASH = HashingUtils::HashString("ITU_BS_1770_1");
-        static const int ITU_BS_1770_2_HASH = HashingUtils::HashString("ITU_BS_1770_2");
-        static const int ITU_BS_1770_3_HASH = HashingUtils::HashString("ITU_BS_1770_3");
-        static const int ITU_BS_1770_4_HASH = HashingUtils::HashString("ITU_BS_1770_4");
+        static constexpr uint32_t ITU_BS_1770_1_HASH = ConstExprHashingUtils::HashString("ITU_BS_1770_1");
+        static constexpr uint32_t ITU_BS_1770_2_HASH = ConstExprHashingUtils::HashString("ITU_BS_1770_2");
+        static constexpr uint32_t ITU_BS_1770_3_HASH = ConstExprHashingUtils::HashString("ITU_BS_1770_3");
+        static constexpr uint32_t ITU_BS_1770_4_HASH = ConstExprHashingUtils::HashString("ITU_BS_1770_4");
 
 
         AudioNormalizationAlgorithm GetAudioNormalizationAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ITU_BS_1770_1_HASH)
           {
             return AudioNormalizationAlgorithm::ITU_BS_1770_1;

@@ -20,13 +20,13 @@ namespace Aws
       namespace PayloadTypeMapper
       {
 
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
-        static const int FORM_ENCODED_HASH = HashingUtils::HashString("FORM_ENCODED");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
+        static constexpr uint32_t FORM_ENCODED_HASH = ConstExprHashingUtils::HashString("FORM_ENCODED");
 
 
         PayloadType GetPayloadTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JSON_HASH)
           {
             return PayloadType::JSON;

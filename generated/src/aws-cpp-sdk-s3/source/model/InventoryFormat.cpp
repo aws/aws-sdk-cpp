@@ -20,14 +20,14 @@ namespace Aws
       namespace InventoryFormatMapper
       {
 
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
-        static const int ORC_HASH = HashingUtils::HashString("ORC");
-        static const int Parquet_HASH = HashingUtils::HashString("Parquet");
+        static constexpr uint32_t CSV_HASH = ConstExprHashingUtils::HashString("CSV");
+        static constexpr uint32_t ORC_HASH = ConstExprHashingUtils::HashString("ORC");
+        static constexpr uint32_t Parquet_HASH = ConstExprHashingUtils::HashString("Parquet");
 
 
         InventoryFormat GetInventoryFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CSV_HASH)
           {
             return InventoryFormat::CSV;

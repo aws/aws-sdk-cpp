@@ -20,15 +20,15 @@ namespace Aws
       namespace ArcThicknessMapper
       {
 
-        static const int SMALL_HASH = HashingUtils::HashString("SMALL");
-        static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
-        static const int LARGE_HASH = HashingUtils::HashString("LARGE");
-        static const int WHOLE_HASH = HashingUtils::HashString("WHOLE");
+        static constexpr uint32_t SMALL_HASH = ConstExprHashingUtils::HashString("SMALL");
+        static constexpr uint32_t MEDIUM_HASH = ConstExprHashingUtils::HashString("MEDIUM");
+        static constexpr uint32_t LARGE_HASH = ConstExprHashingUtils::HashString("LARGE");
+        static constexpr uint32_t WHOLE_HASH = ConstExprHashingUtils::HashString("WHOLE");
 
 
         ArcThickness GetArcThicknessForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SMALL_HASH)
           {
             return ArcThickness::SMALL;

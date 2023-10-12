@@ -20,19 +20,19 @@ namespace Aws
       namespace ReferrerPolicyListMapper
       {
 
-        static const int no_referrer_HASH = HashingUtils::HashString("no-referrer");
-        static const int no_referrer_when_downgrade_HASH = HashingUtils::HashString("no-referrer-when-downgrade");
-        static const int origin_HASH = HashingUtils::HashString("origin");
-        static const int origin_when_cross_origin_HASH = HashingUtils::HashString("origin-when-cross-origin");
-        static const int same_origin_HASH = HashingUtils::HashString("same-origin");
-        static const int strict_origin_HASH = HashingUtils::HashString("strict-origin");
-        static const int strict_origin_when_cross_origin_HASH = HashingUtils::HashString("strict-origin-when-cross-origin");
-        static const int unsafe_url_HASH = HashingUtils::HashString("unsafe-url");
+        static constexpr uint32_t no_referrer_HASH = ConstExprHashingUtils::HashString("no-referrer");
+        static constexpr uint32_t no_referrer_when_downgrade_HASH = ConstExprHashingUtils::HashString("no-referrer-when-downgrade");
+        static constexpr uint32_t origin_HASH = ConstExprHashingUtils::HashString("origin");
+        static constexpr uint32_t origin_when_cross_origin_HASH = ConstExprHashingUtils::HashString("origin-when-cross-origin");
+        static constexpr uint32_t same_origin_HASH = ConstExprHashingUtils::HashString("same-origin");
+        static constexpr uint32_t strict_origin_HASH = ConstExprHashingUtils::HashString("strict-origin");
+        static constexpr uint32_t strict_origin_when_cross_origin_HASH = ConstExprHashingUtils::HashString("strict-origin-when-cross-origin");
+        static constexpr uint32_t unsafe_url_HASH = ConstExprHashingUtils::HashString("unsafe-url");
 
 
         ReferrerPolicyList GetReferrerPolicyListForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == no_referrer_HASH)
           {
             return ReferrerPolicyList::no_referrer;

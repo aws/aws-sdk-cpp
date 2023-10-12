@@ -18,23 +18,23 @@ namespace S3Control
 namespace S3ControlErrorMapper
 {
 
-static const int IDEMPOTENCY_HASH = HashingUtils::HashString("IdempotencyException");
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int BUCKET_ALREADY_OWNED_BY_YOU_HASH = HashingUtils::HashString("BucketAlreadyOwnedByYou");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
-static const int NO_SUCH_PUBLIC_ACCESS_BLOCK_CONFIGURATION_HASH = HashingUtils::HashString("NoSuchPublicAccessBlockConfiguration");
-static const int JOB_STATUS_HASH = HashingUtils::HashString("JobStatusException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int BUCKET_ALREADY_EXISTS_HASH = HashingUtils::HashString("BucketAlreadyExists");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t IDEMPOTENCY_HASH = ConstExprHashingUtils::HashString("IdempotencyException");
+static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NotFoundException");
+static constexpr uint32_t BUCKET_ALREADY_OWNED_BY_YOU_HASH = ConstExprHashingUtils::HashString("BucketAlreadyOwnedByYou");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t TOO_MANY_REQUESTS_HASH = ConstExprHashingUtils::HashString("TooManyRequestsException");
+static constexpr uint32_t INTERNAL_SERVICE_HASH = ConstExprHashingUtils::HashString("InternalServiceException");
+static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BadRequestException");
+static constexpr uint32_t NO_SUCH_PUBLIC_ACCESS_BLOCK_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("NoSuchPublicAccessBlockConfiguration");
+static constexpr uint32_t JOB_STATUS_HASH = ConstExprHashingUtils::HashString("JobStatusException");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+static constexpr uint32_t BUCKET_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("BucketAlreadyExists");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == IDEMPOTENCY_HASH)
   {

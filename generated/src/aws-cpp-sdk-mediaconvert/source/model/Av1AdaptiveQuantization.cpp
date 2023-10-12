@@ -20,17 +20,17 @@ namespace Aws
       namespace Av1AdaptiveQuantizationMapper
       {
 
-        static const int OFF_HASH = HashingUtils::HashString("OFF");
-        static const int LOW_HASH = HashingUtils::HashString("LOW");
-        static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
-        static const int HIGH_HASH = HashingUtils::HashString("HIGH");
-        static const int HIGHER_HASH = HashingUtils::HashString("HIGHER");
-        static const int MAX_HASH = HashingUtils::HashString("MAX");
+        static constexpr uint32_t OFF_HASH = ConstExprHashingUtils::HashString("OFF");
+        static constexpr uint32_t LOW_HASH = ConstExprHashingUtils::HashString("LOW");
+        static constexpr uint32_t MEDIUM_HASH = ConstExprHashingUtils::HashString("MEDIUM");
+        static constexpr uint32_t HIGH_HASH = ConstExprHashingUtils::HashString("HIGH");
+        static constexpr uint32_t HIGHER_HASH = ConstExprHashingUtils::HashString("HIGHER");
+        static constexpr uint32_t MAX_HASH = ConstExprHashingUtils::HashString("MAX");
 
 
         Av1AdaptiveQuantization GetAv1AdaptiveQuantizationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OFF_HASH)
           {
             return Av1AdaptiveQuantization::OFF;

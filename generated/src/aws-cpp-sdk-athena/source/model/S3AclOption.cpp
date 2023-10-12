@@ -20,12 +20,12 @@ namespace Aws
       namespace S3AclOptionMapper
       {
 
-        static const int BUCKET_OWNER_FULL_CONTROL_HASH = HashingUtils::HashString("BUCKET_OWNER_FULL_CONTROL");
+        static constexpr uint32_t BUCKET_OWNER_FULL_CONTROL_HASH = ConstExprHashingUtils::HashString("BUCKET_OWNER_FULL_CONTROL");
 
 
         S3AclOption GetS3AclOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BUCKET_OWNER_FULL_CONTROL_HASH)
           {
             return S3AclOption::BUCKET_OWNER_FULL_CONTROL;

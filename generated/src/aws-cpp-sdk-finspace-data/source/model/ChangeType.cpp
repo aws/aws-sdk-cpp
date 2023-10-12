@@ -20,14 +20,14 @@ namespace Aws
       namespace ChangeTypeMapper
       {
 
-        static const int REPLACE_HASH = HashingUtils::HashString("REPLACE");
-        static const int APPEND_HASH = HashingUtils::HashString("APPEND");
-        static const int MODIFY_HASH = HashingUtils::HashString("MODIFY");
+        static constexpr uint32_t REPLACE_HASH = ConstExprHashingUtils::HashString("REPLACE");
+        static constexpr uint32_t APPEND_HASH = ConstExprHashingUtils::HashString("APPEND");
+        static constexpr uint32_t MODIFY_HASH = ConstExprHashingUtils::HashString("MODIFY");
 
 
         ChangeType GetChangeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REPLACE_HASH)
           {
             return ChangeType::REPLACE;

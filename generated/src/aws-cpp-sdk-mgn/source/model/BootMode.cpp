@@ -20,13 +20,13 @@ namespace Aws
       namespace BootModeMapper
       {
 
-        static const int LEGACY_BIOS_HASH = HashingUtils::HashString("LEGACY_BIOS");
-        static const int UEFI_HASH = HashingUtils::HashString("UEFI");
+        static constexpr uint32_t LEGACY_BIOS_HASH = ConstExprHashingUtils::HashString("LEGACY_BIOS");
+        static constexpr uint32_t UEFI_HASH = ConstExprHashingUtils::HashString("UEFI");
 
 
         BootMode GetBootModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LEGACY_BIOS_HASH)
           {
             return BootMode::LEGACY_BIOS;

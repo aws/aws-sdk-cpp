@@ -20,12 +20,12 @@ namespace Aws
       namespace FeatureAdditionalConfigurationMapper
       {
 
-        static const int EKS_ADDON_MANAGEMENT_HASH = HashingUtils::HashString("EKS_ADDON_MANAGEMENT");
+        static constexpr uint32_t EKS_ADDON_MANAGEMENT_HASH = ConstExprHashingUtils::HashString("EKS_ADDON_MANAGEMENT");
 
 
         FeatureAdditionalConfiguration GetFeatureAdditionalConfigurationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EKS_ADDON_MANAGEMENT_HASH)
           {
             return FeatureAdditionalConfiguration::EKS_ADDON_MANAGEMENT;

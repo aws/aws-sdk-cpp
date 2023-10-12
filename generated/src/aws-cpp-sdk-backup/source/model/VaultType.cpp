@@ -20,13 +20,13 @@ namespace Aws
       namespace VaultTypeMapper
       {
 
-        static const int BACKUP_VAULT_HASH = HashingUtils::HashString("BACKUP_VAULT");
-        static const int LOGICALLY_AIR_GAPPED_BACKUP_VAULT_HASH = HashingUtils::HashString("LOGICALLY_AIR_GAPPED_BACKUP_VAULT");
+        static constexpr uint32_t BACKUP_VAULT_HASH = ConstExprHashingUtils::HashString("BACKUP_VAULT");
+        static constexpr uint32_t LOGICALLY_AIR_GAPPED_BACKUP_VAULT_HASH = ConstExprHashingUtils::HashString("LOGICALLY_AIR_GAPPED_BACKUP_VAULT");
 
 
         VaultType GetVaultTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BACKUP_VAULT_HASH)
           {
             return VaultType::BACKUP_VAULT;

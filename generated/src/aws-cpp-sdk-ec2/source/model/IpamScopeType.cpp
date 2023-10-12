@@ -20,13 +20,13 @@ namespace Aws
       namespace IpamScopeTypeMapper
       {
 
-        static const int public__HASH = HashingUtils::HashString("public");
-        static const int private__HASH = HashingUtils::HashString("private");
+        static constexpr uint32_t public__HASH = ConstExprHashingUtils::HashString("public");
+        static constexpr uint32_t private__HASH = ConstExprHashingUtils::HashString("private");
 
 
         IpamScopeType GetIpamScopeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == public__HASH)
           {
             return IpamScopeType::public_;

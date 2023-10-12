@@ -20,15 +20,15 @@ namespace Aws
       namespace RIProductDescriptionMapper
       {
 
-        static const int Linux_UNIX_HASH = HashingUtils::HashString("Linux/UNIX");
-        static const int Linux_UNIX_Amazon_VPC_HASH = HashingUtils::HashString("Linux/UNIX (Amazon VPC)");
-        static const int Windows_HASH = HashingUtils::HashString("Windows");
-        static const int Windows_Amazon_VPC_HASH = HashingUtils::HashString("Windows (Amazon VPC)");
+        static constexpr uint32_t Linux_UNIX_HASH = ConstExprHashingUtils::HashString("Linux/UNIX");
+        static constexpr uint32_t Linux_UNIX_Amazon_VPC_HASH = ConstExprHashingUtils::HashString("Linux/UNIX (Amazon VPC)");
+        static constexpr uint32_t Windows_HASH = ConstExprHashingUtils::HashString("Windows");
+        static constexpr uint32_t Windows_Amazon_VPC_HASH = ConstExprHashingUtils::HashString("Windows (Amazon VPC)");
 
 
         RIProductDescription GetRIProductDescriptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Linux_UNIX_HASH)
           {
             return RIProductDescription::Linux_UNIX;

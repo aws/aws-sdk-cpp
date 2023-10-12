@@ -20,13 +20,13 @@ namespace Aws
       namespace MetricStreamOutputFormatMapper
       {
 
-        static const int json_HASH = HashingUtils::HashString("json");
-        static const int opentelemetry0_7_HASH = HashingUtils::HashString("opentelemetry0.7");
+        static constexpr uint32_t json_HASH = ConstExprHashingUtils::HashString("json");
+        static constexpr uint32_t opentelemetry0_7_HASH = ConstExprHashingUtils::HashString("opentelemetry0.7");
 
 
         MetricStreamOutputFormat GetMetricStreamOutputFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == json_HASH)
           {
             return MetricStreamOutputFormat::json;

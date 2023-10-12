@@ -20,17 +20,17 @@ namespace Aws
       namespace NumericOperatorMapper
       {
 
-        static const int EQUAL_HASH = HashingUtils::HashString("EQUAL");
-        static const int GREATER_THAN_OR_EQUAL_HASH = HashingUtils::HashString("GREATER_THAN_OR_EQUAL");
-        static const int LESS_THAN_OR_EQUAL_HASH = HashingUtils::HashString("LESS_THAN_OR_EQUAL");
-        static const int GREATER_THAN_HASH = HashingUtils::HashString("GREATER_THAN");
-        static const int LESS_THAN_HASH = HashingUtils::HashString("LESS_THAN");
-        static const int BETWEEN_HASH = HashingUtils::HashString("BETWEEN");
+        static constexpr uint32_t EQUAL_HASH = ConstExprHashingUtils::HashString("EQUAL");
+        static constexpr uint32_t GREATER_THAN_OR_EQUAL_HASH = ConstExprHashingUtils::HashString("GREATER_THAN_OR_EQUAL");
+        static constexpr uint32_t LESS_THAN_OR_EQUAL_HASH = ConstExprHashingUtils::HashString("LESS_THAN_OR_EQUAL");
+        static constexpr uint32_t GREATER_THAN_HASH = ConstExprHashingUtils::HashString("GREATER_THAN");
+        static constexpr uint32_t LESS_THAN_HASH = ConstExprHashingUtils::HashString("LESS_THAN");
+        static constexpr uint32_t BETWEEN_HASH = ConstExprHashingUtils::HashString("BETWEEN");
 
 
         NumericOperator GetNumericOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EQUAL_HASH)
           {
             return NumericOperator::EQUAL;

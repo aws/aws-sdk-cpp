@@ -20,20 +20,20 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int DEVICE_CERTIFICATE_HASH = HashingUtils::HashString("DEVICE_CERTIFICATE");
-        static const int CA_CERTIFICATE_HASH = HashingUtils::HashString("CA_CERTIFICATE");
-        static const int IOT_POLICY_HASH = HashingUtils::HashString("IOT_POLICY");
-        static const int COGNITO_IDENTITY_POOL_HASH = HashingUtils::HashString("COGNITO_IDENTITY_POOL");
-        static const int CLIENT_ID_HASH = HashingUtils::HashString("CLIENT_ID");
-        static const int ACCOUNT_SETTINGS_HASH = HashingUtils::HashString("ACCOUNT_SETTINGS");
-        static const int ROLE_ALIAS_HASH = HashingUtils::HashString("ROLE_ALIAS");
-        static const int IAM_ROLE_HASH = HashingUtils::HashString("IAM_ROLE");
-        static const int ISSUER_CERTIFICATE_HASH = HashingUtils::HashString("ISSUER_CERTIFICATE");
+        static constexpr uint32_t DEVICE_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("DEVICE_CERTIFICATE");
+        static constexpr uint32_t CA_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("CA_CERTIFICATE");
+        static constexpr uint32_t IOT_POLICY_HASH = ConstExprHashingUtils::HashString("IOT_POLICY");
+        static constexpr uint32_t COGNITO_IDENTITY_POOL_HASH = ConstExprHashingUtils::HashString("COGNITO_IDENTITY_POOL");
+        static constexpr uint32_t CLIENT_ID_HASH = ConstExprHashingUtils::HashString("CLIENT_ID");
+        static constexpr uint32_t ACCOUNT_SETTINGS_HASH = ConstExprHashingUtils::HashString("ACCOUNT_SETTINGS");
+        static constexpr uint32_t ROLE_ALIAS_HASH = ConstExprHashingUtils::HashString("ROLE_ALIAS");
+        static constexpr uint32_t IAM_ROLE_HASH = ConstExprHashingUtils::HashString("IAM_ROLE");
+        static constexpr uint32_t ISSUER_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("ISSUER_CERTIFICATE");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEVICE_CERTIFICATE_HASH)
           {
             return ResourceType::DEVICE_CERTIFICATE;

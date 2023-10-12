@@ -20,12 +20,12 @@ namespace Aws
       namespace CatalogTypeMapper
       {
 
-        static const int GLUE_HASH = HashingUtils::HashString("GLUE");
+        static constexpr uint32_t GLUE_HASH = ConstExprHashingUtils::HashString("GLUE");
 
 
         CatalogType GetCatalogTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GLUE_HASH)
           {
             return CatalogType::GLUE;

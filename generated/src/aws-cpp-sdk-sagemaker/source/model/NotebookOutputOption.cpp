@@ -20,13 +20,13 @@ namespace Aws
       namespace NotebookOutputOptionMapper
       {
 
-        static const int Allowed_HASH = HashingUtils::HashString("Allowed");
-        static const int Disabled_HASH = HashingUtils::HashString("Disabled");
+        static constexpr uint32_t Allowed_HASH = ConstExprHashingUtils::HashString("Allowed");
+        static constexpr uint32_t Disabled_HASH = ConstExprHashingUtils::HashString("Disabled");
 
 
         NotebookOutputOption GetNotebookOutputOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Allowed_HASH)
           {
             return NotebookOutputOption::Allowed;

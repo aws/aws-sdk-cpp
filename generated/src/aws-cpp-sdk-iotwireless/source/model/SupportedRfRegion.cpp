@@ -20,24 +20,24 @@ namespace Aws
       namespace SupportedRfRegionMapper
       {
 
-        static const int EU868_HASH = HashingUtils::HashString("EU868");
-        static const int US915_HASH = HashingUtils::HashString("US915");
-        static const int AU915_HASH = HashingUtils::HashString("AU915");
-        static const int AS923_1_HASH = HashingUtils::HashString("AS923-1");
-        static const int AS923_2_HASH = HashingUtils::HashString("AS923-2");
-        static const int AS923_3_HASH = HashingUtils::HashString("AS923-3");
-        static const int AS923_4_HASH = HashingUtils::HashString("AS923-4");
-        static const int EU433_HASH = HashingUtils::HashString("EU433");
-        static const int CN470_HASH = HashingUtils::HashString("CN470");
-        static const int CN779_HASH = HashingUtils::HashString("CN779");
-        static const int RU864_HASH = HashingUtils::HashString("RU864");
-        static const int KR920_HASH = HashingUtils::HashString("KR920");
-        static const int IN865_HASH = HashingUtils::HashString("IN865");
+        static constexpr uint32_t EU868_HASH = ConstExprHashingUtils::HashString("EU868");
+        static constexpr uint32_t US915_HASH = ConstExprHashingUtils::HashString("US915");
+        static constexpr uint32_t AU915_HASH = ConstExprHashingUtils::HashString("AU915");
+        static constexpr uint32_t AS923_1_HASH = ConstExprHashingUtils::HashString("AS923-1");
+        static constexpr uint32_t AS923_2_HASH = ConstExprHashingUtils::HashString("AS923-2");
+        static constexpr uint32_t AS923_3_HASH = ConstExprHashingUtils::HashString("AS923-3");
+        static constexpr uint32_t AS923_4_HASH = ConstExprHashingUtils::HashString("AS923-4");
+        static constexpr uint32_t EU433_HASH = ConstExprHashingUtils::HashString("EU433");
+        static constexpr uint32_t CN470_HASH = ConstExprHashingUtils::HashString("CN470");
+        static constexpr uint32_t CN779_HASH = ConstExprHashingUtils::HashString("CN779");
+        static constexpr uint32_t RU864_HASH = ConstExprHashingUtils::HashString("RU864");
+        static constexpr uint32_t KR920_HASH = ConstExprHashingUtils::HashString("KR920");
+        static constexpr uint32_t IN865_HASH = ConstExprHashingUtils::HashString("IN865");
 
 
         SupportedRfRegion GetSupportedRfRegionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EU868_HASH)
           {
             return SupportedRfRegion::EU868;

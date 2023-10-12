@@ -20,21 +20,21 @@ namespace Aws
       namespace ExternalMetricStatusCodeMapper
       {
 
-        static const int NO_EXTERNAL_METRIC_SET_HASH = HashingUtils::HashString("NO_EXTERNAL_METRIC_SET");
-        static const int INTEGRATION_SUCCESS_HASH = HashingUtils::HashString("INTEGRATION_SUCCESS");
-        static const int DATADOG_INTEGRATION_ERROR_HASH = HashingUtils::HashString("DATADOG_INTEGRATION_ERROR");
-        static const int DYNATRACE_INTEGRATION_ERROR_HASH = HashingUtils::HashString("DYNATRACE_INTEGRATION_ERROR");
-        static const int NEWRELIC_INTEGRATION_ERROR_HASH = HashingUtils::HashString("NEWRELIC_INTEGRATION_ERROR");
-        static const int INSTANA_INTEGRATION_ERROR_HASH = HashingUtils::HashString("INSTANA_INTEGRATION_ERROR");
-        static const int INSUFFICIENT_DATADOG_METRICS_HASH = HashingUtils::HashString("INSUFFICIENT_DATADOG_METRICS");
-        static const int INSUFFICIENT_DYNATRACE_METRICS_HASH = HashingUtils::HashString("INSUFFICIENT_DYNATRACE_METRICS");
-        static const int INSUFFICIENT_NEWRELIC_METRICS_HASH = HashingUtils::HashString("INSUFFICIENT_NEWRELIC_METRICS");
-        static const int INSUFFICIENT_INSTANA_METRICS_HASH = HashingUtils::HashString("INSUFFICIENT_INSTANA_METRICS");
+        static constexpr uint32_t NO_EXTERNAL_METRIC_SET_HASH = ConstExprHashingUtils::HashString("NO_EXTERNAL_METRIC_SET");
+        static constexpr uint32_t INTEGRATION_SUCCESS_HASH = ConstExprHashingUtils::HashString("INTEGRATION_SUCCESS");
+        static constexpr uint32_t DATADOG_INTEGRATION_ERROR_HASH = ConstExprHashingUtils::HashString("DATADOG_INTEGRATION_ERROR");
+        static constexpr uint32_t DYNATRACE_INTEGRATION_ERROR_HASH = ConstExprHashingUtils::HashString("DYNATRACE_INTEGRATION_ERROR");
+        static constexpr uint32_t NEWRELIC_INTEGRATION_ERROR_HASH = ConstExprHashingUtils::HashString("NEWRELIC_INTEGRATION_ERROR");
+        static constexpr uint32_t INSTANA_INTEGRATION_ERROR_HASH = ConstExprHashingUtils::HashString("INSTANA_INTEGRATION_ERROR");
+        static constexpr uint32_t INSUFFICIENT_DATADOG_METRICS_HASH = ConstExprHashingUtils::HashString("INSUFFICIENT_DATADOG_METRICS");
+        static constexpr uint32_t INSUFFICIENT_DYNATRACE_METRICS_HASH = ConstExprHashingUtils::HashString("INSUFFICIENT_DYNATRACE_METRICS");
+        static constexpr uint32_t INSUFFICIENT_NEWRELIC_METRICS_HASH = ConstExprHashingUtils::HashString("INSUFFICIENT_NEWRELIC_METRICS");
+        static constexpr uint32_t INSUFFICIENT_INSTANA_METRICS_HASH = ConstExprHashingUtils::HashString("INSUFFICIENT_INSTANA_METRICS");
 
 
         ExternalMetricStatusCode GetExternalMetricStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_EXTERNAL_METRIC_SET_HASH)
           {
             return ExternalMetricStatusCode::NO_EXTERNAL_METRIC_SET;

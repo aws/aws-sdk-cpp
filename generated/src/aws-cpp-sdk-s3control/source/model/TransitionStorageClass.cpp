@@ -20,16 +20,16 @@ namespace Aws
       namespace TransitionStorageClassMapper
       {
 
-        static const int GLACIER_HASH = HashingUtils::HashString("GLACIER");
-        static const int STANDARD_IA_HASH = HashingUtils::HashString("STANDARD_IA");
-        static const int ONEZONE_IA_HASH = HashingUtils::HashString("ONEZONE_IA");
-        static const int INTELLIGENT_TIERING_HASH = HashingUtils::HashString("INTELLIGENT_TIERING");
-        static const int DEEP_ARCHIVE_HASH = HashingUtils::HashString("DEEP_ARCHIVE");
+        static constexpr uint32_t GLACIER_HASH = ConstExprHashingUtils::HashString("GLACIER");
+        static constexpr uint32_t STANDARD_IA_HASH = ConstExprHashingUtils::HashString("STANDARD_IA");
+        static constexpr uint32_t ONEZONE_IA_HASH = ConstExprHashingUtils::HashString("ONEZONE_IA");
+        static constexpr uint32_t INTELLIGENT_TIERING_HASH = ConstExprHashingUtils::HashString("INTELLIGENT_TIERING");
+        static constexpr uint32_t DEEP_ARCHIVE_HASH = ConstExprHashingUtils::HashString("DEEP_ARCHIVE");
 
 
         TransitionStorageClass GetTransitionStorageClassForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GLACIER_HASH)
           {
             return TransitionStorageClass::GLACIER;

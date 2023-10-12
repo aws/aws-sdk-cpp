@@ -20,12 +20,12 @@ namespace Aws
       namespace ScalingTypeMapper
       {
 
-        static const int UNIFORM_SCALING_HASH = HashingUtils::HashString("UNIFORM_SCALING");
+        static constexpr uint32_t UNIFORM_SCALING_HASH = ConstExprHashingUtils::HashString("UNIFORM_SCALING");
 
 
         ScalingType GetScalingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNIFORM_SCALING_HASH)
           {
             return ScalingType::UNIFORM_SCALING;

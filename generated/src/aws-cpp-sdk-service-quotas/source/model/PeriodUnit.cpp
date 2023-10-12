@@ -20,18 +20,18 @@ namespace Aws
       namespace PeriodUnitMapper
       {
 
-        static const int MICROSECOND_HASH = HashingUtils::HashString("MICROSECOND");
-        static const int MILLISECOND_HASH = HashingUtils::HashString("MILLISECOND");
-        static const int SECOND_HASH = HashingUtils::HashString("SECOND");
-        static const int MINUTE_HASH = HashingUtils::HashString("MINUTE");
-        static const int HOUR_HASH = HashingUtils::HashString("HOUR");
-        static const int DAY_HASH = HashingUtils::HashString("DAY");
-        static const int WEEK_HASH = HashingUtils::HashString("WEEK");
+        static constexpr uint32_t MICROSECOND_HASH = ConstExprHashingUtils::HashString("MICROSECOND");
+        static constexpr uint32_t MILLISECOND_HASH = ConstExprHashingUtils::HashString("MILLISECOND");
+        static constexpr uint32_t SECOND_HASH = ConstExprHashingUtils::HashString("SECOND");
+        static constexpr uint32_t MINUTE_HASH = ConstExprHashingUtils::HashString("MINUTE");
+        static constexpr uint32_t HOUR_HASH = ConstExprHashingUtils::HashString("HOUR");
+        static constexpr uint32_t DAY_HASH = ConstExprHashingUtils::HashString("DAY");
+        static constexpr uint32_t WEEK_HASH = ConstExprHashingUtils::HashString("WEEK");
 
 
         PeriodUnit GetPeriodUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MICROSECOND_HASH)
           {
             return PeriodUnit::MICROSECOND;

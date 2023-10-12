@@ -20,14 +20,14 @@ namespace Aws
       namespace QueryResultTypeMapper
       {
 
-        static const int DOCUMENT_HASH = HashingUtils::HashString("DOCUMENT");
-        static const int QUESTION_ANSWER_HASH = HashingUtils::HashString("QUESTION_ANSWER");
-        static const int ANSWER_HASH = HashingUtils::HashString("ANSWER");
+        static constexpr uint32_t DOCUMENT_HASH = ConstExprHashingUtils::HashString("DOCUMENT");
+        static constexpr uint32_t QUESTION_ANSWER_HASH = ConstExprHashingUtils::HashString("QUESTION_ANSWER");
+        static constexpr uint32_t ANSWER_HASH = ConstExprHashingUtils::HashString("ANSWER");
 
 
         QueryResultType GetQueryResultTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DOCUMENT_HASH)
           {
             return QueryResultType::DOCUMENT;

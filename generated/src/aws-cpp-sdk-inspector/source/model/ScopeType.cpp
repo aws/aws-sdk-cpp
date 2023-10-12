@@ -20,13 +20,13 @@ namespace Aws
       namespace ScopeTypeMapper
       {
 
-        static const int INSTANCE_ID_HASH = HashingUtils::HashString("INSTANCE_ID");
-        static const int RULES_PACKAGE_ARN_HASH = HashingUtils::HashString("RULES_PACKAGE_ARN");
+        static constexpr uint32_t INSTANCE_ID_HASH = ConstExprHashingUtils::HashString("INSTANCE_ID");
+        static constexpr uint32_t RULES_PACKAGE_ARN_HASH = ConstExprHashingUtils::HashString("RULES_PACKAGE_ARN");
 
 
         ScopeType GetScopeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSTANCE_ID_HASH)
           {
             return ScopeType::INSTANCE_ID;

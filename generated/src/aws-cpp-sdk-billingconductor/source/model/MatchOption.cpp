@@ -20,12 +20,12 @@ namespace Aws
       namespace MatchOptionMapper
       {
 
-        static const int NOT_EQUAL_HASH = HashingUtils::HashString("NOT_EQUAL");
+        static constexpr uint32_t NOT_EQUAL_HASH = ConstExprHashingUtils::HashString("NOT_EQUAL");
 
 
         MatchOption GetMatchOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOT_EQUAL_HASH)
           {
             return MatchOption::NOT_EQUAL;

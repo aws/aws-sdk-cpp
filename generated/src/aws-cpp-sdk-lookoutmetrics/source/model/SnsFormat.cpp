@@ -20,14 +20,14 @@ namespace Aws
       namespace SnsFormatMapper
       {
 
-        static const int LONG_TEXT_HASH = HashingUtils::HashString("LONG_TEXT");
-        static const int SHORT_TEXT_HASH = HashingUtils::HashString("SHORT_TEXT");
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
+        static constexpr uint32_t LONG_TEXT_HASH = ConstExprHashingUtils::HashString("LONG_TEXT");
+        static constexpr uint32_t SHORT_TEXT_HASH = ConstExprHashingUtils::HashString("SHORT_TEXT");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
 
 
         SnsFormat GetSnsFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LONG_TEXT_HASH)
           {
             return SnsFormat::LONG_TEXT;

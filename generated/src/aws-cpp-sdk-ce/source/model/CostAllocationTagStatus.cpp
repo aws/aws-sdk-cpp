@@ -20,13 +20,13 @@ namespace Aws
       namespace CostAllocationTagStatusMapper
       {
 
-        static const int Active_HASH = HashingUtils::HashString("Active");
-        static const int Inactive_HASH = HashingUtils::HashString("Inactive");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
+        static constexpr uint32_t Inactive_HASH = ConstExprHashingUtils::HashString("Inactive");
 
 
         CostAllocationTagStatus GetCostAllocationTagStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Active_HASH)
           {
             return CostAllocationTagStatus::Active;

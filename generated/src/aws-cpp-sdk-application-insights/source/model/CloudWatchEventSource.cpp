@@ -20,15 +20,15 @@ namespace Aws
       namespace CloudWatchEventSourceMapper
       {
 
-        static const int EC2_HASH = HashingUtils::HashString("EC2");
-        static const int CODE_DEPLOY_HASH = HashingUtils::HashString("CODE_DEPLOY");
-        static const int HEALTH_HASH = HashingUtils::HashString("HEALTH");
-        static const int RDS_HASH = HashingUtils::HashString("RDS");
+        static constexpr uint32_t EC2_HASH = ConstExprHashingUtils::HashString("EC2");
+        static constexpr uint32_t CODE_DEPLOY_HASH = ConstExprHashingUtils::HashString("CODE_DEPLOY");
+        static constexpr uint32_t HEALTH_HASH = ConstExprHashingUtils::HashString("HEALTH");
+        static constexpr uint32_t RDS_HASH = ConstExprHashingUtils::HashString("RDS");
 
 
         CloudWatchEventSource GetCloudWatchEventSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EC2_HASH)
           {
             return CloudWatchEventSource::EC2;

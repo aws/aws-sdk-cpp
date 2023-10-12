@@ -20,14 +20,14 @@ namespace Aws
       namespace ModeMapper
       {
 
-        static const int OFF_HASH = HashingUtils::HashString("OFF");
-        static const int BEHIND_LIVE_EDGE_HASH = HashingUtils::HashString("BEHIND_LIVE_EDGE");
-        static const int AFTER_LIVE_EDGE_HASH = HashingUtils::HashString("AFTER_LIVE_EDGE");
+        static constexpr uint32_t OFF_HASH = ConstExprHashingUtils::HashString("OFF");
+        static constexpr uint32_t BEHIND_LIVE_EDGE_HASH = ConstExprHashingUtils::HashString("BEHIND_LIVE_EDGE");
+        static constexpr uint32_t AFTER_LIVE_EDGE_HASH = ConstExprHashingUtils::HashString("AFTER_LIVE_EDGE");
 
 
         Mode GetModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OFF_HASH)
           {
             return Mode::OFF;

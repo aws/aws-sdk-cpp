@@ -20,13 +20,13 @@ namespace Aws
       namespace KnowledgeBaseTypeMapper
       {
 
-        static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t EXTERNAL_HASH = ConstExprHashingUtils::HashString("EXTERNAL");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
 
 
         KnowledgeBaseType GetKnowledgeBaseTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXTERNAL_HASH)
           {
             return KnowledgeBaseType::EXTERNAL;

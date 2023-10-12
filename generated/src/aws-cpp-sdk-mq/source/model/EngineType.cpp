@@ -20,13 +20,13 @@ namespace Aws
       namespace EngineTypeMapper
       {
 
-        static const int ACTIVEMQ_HASH = HashingUtils::HashString("ACTIVEMQ");
-        static const int RABBITMQ_HASH = HashingUtils::HashString("RABBITMQ");
+        static constexpr uint32_t ACTIVEMQ_HASH = ConstExprHashingUtils::HashString("ACTIVEMQ");
+        static constexpr uint32_t RABBITMQ_HASH = ConstExprHashingUtils::HashString("RABBITMQ");
 
 
         EngineType GetEngineTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVEMQ_HASH)
           {
             return EngineType::ACTIVEMQ;

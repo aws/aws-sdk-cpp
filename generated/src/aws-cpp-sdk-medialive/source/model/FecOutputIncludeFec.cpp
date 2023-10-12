@@ -20,13 +20,13 @@ namespace Aws
       namespace FecOutputIncludeFecMapper
       {
 
-        static const int COLUMN_HASH = HashingUtils::HashString("COLUMN");
-        static const int COLUMN_AND_ROW_HASH = HashingUtils::HashString("COLUMN_AND_ROW");
+        static constexpr uint32_t COLUMN_HASH = ConstExprHashingUtils::HashString("COLUMN");
+        static constexpr uint32_t COLUMN_AND_ROW_HASH = ConstExprHashingUtils::HashString("COLUMN_AND_ROW");
 
 
         FecOutputIncludeFec GetFecOutputIncludeFecForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COLUMN_HASH)
           {
             return FecOutputIncludeFec::COLUMN;

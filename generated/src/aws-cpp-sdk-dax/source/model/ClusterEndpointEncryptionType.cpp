@@ -20,13 +20,13 @@ namespace Aws
       namespace ClusterEndpointEncryptionTypeMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int TLS_HASH = HashingUtils::HashString("TLS");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t TLS_HASH = ConstExprHashingUtils::HashString("TLS");
 
 
         ClusterEndpointEncryptionType GetClusterEndpointEncryptionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return ClusterEndpointEncryptionType::NONE;

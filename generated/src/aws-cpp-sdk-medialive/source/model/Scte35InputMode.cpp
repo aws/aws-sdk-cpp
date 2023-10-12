@@ -20,13 +20,13 @@ namespace Aws
       namespace Scte35InputModeMapper
       {
 
-        static const int FIXED_HASH = HashingUtils::HashString("FIXED");
-        static const int FOLLOW_ACTIVE_HASH = HashingUtils::HashString("FOLLOW_ACTIVE");
+        static constexpr uint32_t FIXED_HASH = ConstExprHashingUtils::HashString("FIXED");
+        static constexpr uint32_t FOLLOW_ACTIVE_HASH = ConstExprHashingUtils::HashString("FOLLOW_ACTIVE");
 
 
         Scte35InputMode GetScte35InputModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FIXED_HASH)
           {
             return Scte35InputMode::FIXED;

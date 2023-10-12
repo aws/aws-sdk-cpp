@@ -20,12 +20,12 @@ namespace Aws
       namespace KeyEncryptionMechanismMapper
       {
 
-        static const int RSAES_OAEP_SHA_256_HASH = HashingUtils::HashString("RSAES_OAEP_SHA_256");
+        static constexpr uint32_t RSAES_OAEP_SHA_256_HASH = ConstExprHashingUtils::HashString("RSAES_OAEP_SHA_256");
 
 
         KeyEncryptionMechanism GetKeyEncryptionMechanismForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RSAES_OAEP_SHA_256_HASH)
           {
             return KeyEncryptionMechanism::RSAES_OAEP_SHA_256;

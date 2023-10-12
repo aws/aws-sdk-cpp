@@ -20,13 +20,13 @@ namespace Aws
       namespace FindingCategoryMapper
       {
 
-        static const int CLASSIFICATION_HASH = HashingUtils::HashString("CLASSIFICATION");
-        static const int POLICY_HASH = HashingUtils::HashString("POLICY");
+        static constexpr uint32_t CLASSIFICATION_HASH = ConstExprHashingUtils::HashString("CLASSIFICATION");
+        static constexpr uint32_t POLICY_HASH = ConstExprHashingUtils::HashString("POLICY");
 
 
         FindingCategory GetFindingCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLASSIFICATION_HASH)
           {
             return FindingCategory::CLASSIFICATION;

@@ -26,26 +26,26 @@ template<> AWS_COMPREHEND_API InvalidRequestException ComprehendError::GetModele
 namespace ComprehendErrorMapper
 {
 
-static const int UNSUPPORTED_LANGUAGE_HASH = HashingUtils::HashString("UnsupportedLanguageException");
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int BATCH_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("BatchSizeLimitExceededException");
-static const int KMS_KEY_VALIDATION_HASH = HashingUtils::HashString("KmsKeyValidationException");
-static const int JOB_NOT_FOUND_HASH = HashingUtils::HashString("JobNotFoundException");
-static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int TOO_MANY_TAG_KEYS_HASH = HashingUtils::HashString("TooManyTagKeysException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int INVALID_FILTER_HASH = HashingUtils::HashString("InvalidFilterException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
-static const int TEXT_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TextSizeLimitExceededException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t UNSUPPORTED_LANGUAGE_HASH = ConstExprHashingUtils::HashString("UnsupportedLanguageException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t BATCH_SIZE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("BatchSizeLimitExceededException");
+static constexpr uint32_t KMS_KEY_VALIDATION_HASH = ConstExprHashingUtils::HashString("KmsKeyValidationException");
+static constexpr uint32_t JOB_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("JobNotFoundException");
+static constexpr uint32_t RESOURCE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ResourceLimitExceededException");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t TOO_MANY_TAG_KEYS_HASH = ConstExprHashingUtils::HashString("TooManyTagKeysException");
+static constexpr uint32_t TOO_MANY_REQUESTS_HASH = ConstExprHashingUtils::HashString("TooManyRequestsException");
+static constexpr uint32_t INVALID_FILTER_HASH = ConstExprHashingUtils::HashString("InvalidFilterException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t RESOURCE_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("ResourceUnavailableException");
+static constexpr uint32_t TEXT_SIZE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("TextSizeLimitExceededException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == UNSUPPORTED_LANGUAGE_HASH)
   {

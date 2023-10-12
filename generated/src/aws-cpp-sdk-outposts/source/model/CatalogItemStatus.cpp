@@ -20,13 +20,13 @@ namespace Aws
       namespace CatalogItemStatusMapper
       {
 
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int DISCONTINUED_HASH = HashingUtils::HashString("DISCONTINUED");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t DISCONTINUED_HASH = ConstExprHashingUtils::HashString("DISCONTINUED");
 
 
         CatalogItemStatus GetCatalogItemStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVAILABLE_HASH)
           {
             return CatalogItemStatus::AVAILABLE;

@@ -20,17 +20,17 @@ namespace Aws
       namespace AllocationStateMapper
       {
 
-        static const int available_HASH = HashingUtils::HashString("available");
-        static const int under_assessment_HASH = HashingUtils::HashString("under-assessment");
-        static const int permanent_failure_HASH = HashingUtils::HashString("permanent-failure");
-        static const int released_HASH = HashingUtils::HashString("released");
-        static const int released_permanent_failure_HASH = HashingUtils::HashString("released-permanent-failure");
-        static const int pending_HASH = HashingUtils::HashString("pending");
+        static constexpr uint32_t available_HASH = ConstExprHashingUtils::HashString("available");
+        static constexpr uint32_t under_assessment_HASH = ConstExprHashingUtils::HashString("under-assessment");
+        static constexpr uint32_t permanent_failure_HASH = ConstExprHashingUtils::HashString("permanent-failure");
+        static constexpr uint32_t released_HASH = ConstExprHashingUtils::HashString("released");
+        static constexpr uint32_t released_permanent_failure_HASH = ConstExprHashingUtils::HashString("released-permanent-failure");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
 
 
         AllocationState GetAllocationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == available_HASH)
           {
             return AllocationState::available;

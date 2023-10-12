@@ -20,13 +20,13 @@ namespace Aws
       namespace AacSpecificationMapper
       {
 
-        static const int MPEG2_HASH = HashingUtils::HashString("MPEG2");
-        static const int MPEG4_HASH = HashingUtils::HashString("MPEG4");
+        static constexpr uint32_t MPEG2_HASH = ConstExprHashingUtils::HashString("MPEG2");
+        static constexpr uint32_t MPEG4_HASH = ConstExprHashingUtils::HashString("MPEG4");
 
 
         AacSpecification GetAacSpecificationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MPEG2_HASH)
           {
             return AacSpecification::MPEG2;

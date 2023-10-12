@@ -33,13 +33,13 @@ template<> AWS_MTURK_API RequestError MTurkError::GetModeledError()
 namespace MTurkErrorMapper
 {
 
-static const int SERVICE_FAULT_HASH = HashingUtils::HashString("ServiceFault");
-static const int REQUEST_HASH = HashingUtils::HashString("RequestError");
+static constexpr uint32_t SERVICE_FAULT_HASH = ConstExprHashingUtils::HashString("ServiceFault");
+static constexpr uint32_t REQUEST_HASH = ConstExprHashingUtils::HashString("RequestError");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == SERVICE_FAULT_HASH)
   {

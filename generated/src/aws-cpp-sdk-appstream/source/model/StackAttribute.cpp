@@ -20,23 +20,23 @@ namespace Aws
       namespace StackAttributeMapper
       {
 
-        static const int STORAGE_CONNECTORS_HASH = HashingUtils::HashString("STORAGE_CONNECTORS");
-        static const int STORAGE_CONNECTOR_HOMEFOLDERS_HASH = HashingUtils::HashString("STORAGE_CONNECTOR_HOMEFOLDERS");
-        static const int STORAGE_CONNECTOR_GOOGLE_DRIVE_HASH = HashingUtils::HashString("STORAGE_CONNECTOR_GOOGLE_DRIVE");
-        static const int STORAGE_CONNECTOR_ONE_DRIVE_HASH = HashingUtils::HashString("STORAGE_CONNECTOR_ONE_DRIVE");
-        static const int REDIRECT_URL_HASH = HashingUtils::HashString("REDIRECT_URL");
-        static const int FEEDBACK_URL_HASH = HashingUtils::HashString("FEEDBACK_URL");
-        static const int THEME_NAME_HASH = HashingUtils::HashString("THEME_NAME");
-        static const int USER_SETTINGS_HASH = HashingUtils::HashString("USER_SETTINGS");
-        static const int EMBED_HOST_DOMAINS_HASH = HashingUtils::HashString("EMBED_HOST_DOMAINS");
-        static const int IAM_ROLE_ARN_HASH = HashingUtils::HashString("IAM_ROLE_ARN");
-        static const int ACCESS_ENDPOINTS_HASH = HashingUtils::HashString("ACCESS_ENDPOINTS");
-        static const int STREAMING_EXPERIENCE_SETTINGS_HASH = HashingUtils::HashString("STREAMING_EXPERIENCE_SETTINGS");
+        static constexpr uint32_t STORAGE_CONNECTORS_HASH = ConstExprHashingUtils::HashString("STORAGE_CONNECTORS");
+        static constexpr uint32_t STORAGE_CONNECTOR_HOMEFOLDERS_HASH = ConstExprHashingUtils::HashString("STORAGE_CONNECTOR_HOMEFOLDERS");
+        static constexpr uint32_t STORAGE_CONNECTOR_GOOGLE_DRIVE_HASH = ConstExprHashingUtils::HashString("STORAGE_CONNECTOR_GOOGLE_DRIVE");
+        static constexpr uint32_t STORAGE_CONNECTOR_ONE_DRIVE_HASH = ConstExprHashingUtils::HashString("STORAGE_CONNECTOR_ONE_DRIVE");
+        static constexpr uint32_t REDIRECT_URL_HASH = ConstExprHashingUtils::HashString("REDIRECT_URL");
+        static constexpr uint32_t FEEDBACK_URL_HASH = ConstExprHashingUtils::HashString("FEEDBACK_URL");
+        static constexpr uint32_t THEME_NAME_HASH = ConstExprHashingUtils::HashString("THEME_NAME");
+        static constexpr uint32_t USER_SETTINGS_HASH = ConstExprHashingUtils::HashString("USER_SETTINGS");
+        static constexpr uint32_t EMBED_HOST_DOMAINS_HASH = ConstExprHashingUtils::HashString("EMBED_HOST_DOMAINS");
+        static constexpr uint32_t IAM_ROLE_ARN_HASH = ConstExprHashingUtils::HashString("IAM_ROLE_ARN");
+        static constexpr uint32_t ACCESS_ENDPOINTS_HASH = ConstExprHashingUtils::HashString("ACCESS_ENDPOINTS");
+        static constexpr uint32_t STREAMING_EXPERIENCE_SETTINGS_HASH = ConstExprHashingUtils::HashString("STREAMING_EXPERIENCE_SETTINGS");
 
 
         StackAttribute GetStackAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STORAGE_CONNECTORS_HASH)
           {
             return StackAttribute::STORAGE_CONNECTORS;

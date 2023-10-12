@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int ManagedInstance_HASH = HashingUtils::HashString("ManagedInstance");
-        static const int EC2Instance_HASH = HashingUtils::HashString("EC2Instance");
+        static constexpr uint32_t ManagedInstance_HASH = ConstExprHashingUtils::HashString("ManagedInstance");
+        static constexpr uint32_t EC2Instance_HASH = ConstExprHashingUtils::HashString("EC2Instance");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ManagedInstance_HASH)
           {
             return ResourceType::ManagedInstance;

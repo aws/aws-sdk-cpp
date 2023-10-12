@@ -20,14 +20,14 @@ namespace Aws
       namespace TestSetDiscrepancyReportStatusMapper
       {
 
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Completed_HASH = HashingUtils::HashString("Completed");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Completed_HASH = ConstExprHashingUtils::HashString("Completed");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         TestSetDiscrepancyReportStatus GetTestSetDiscrepancyReportStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InProgress_HASH)
           {
             return TestSetDiscrepancyReportStatus::InProgress;

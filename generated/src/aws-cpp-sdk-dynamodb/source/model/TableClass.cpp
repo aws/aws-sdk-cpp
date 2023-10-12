@@ -20,13 +20,13 @@ namespace Aws
       namespace TableClassMapper
       {
 
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
-        static const int STANDARD_INFREQUENT_ACCESS_HASH = HashingUtils::HashString("STANDARD_INFREQUENT_ACCESS");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
+        static constexpr uint32_t STANDARD_INFREQUENT_ACCESS_HASH = ConstExprHashingUtils::HashString("STANDARD_INFREQUENT_ACCESS");
 
 
         TableClass GetTableClassForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STANDARD_HASH)
           {
             return TableClass::STANDARD;

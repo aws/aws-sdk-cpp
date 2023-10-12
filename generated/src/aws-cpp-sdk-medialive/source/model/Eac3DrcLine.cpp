@@ -20,17 +20,17 @@ namespace Aws
       namespace Eac3DrcLineMapper
       {
 
-        static const int FILM_LIGHT_HASH = HashingUtils::HashString("FILM_LIGHT");
-        static const int FILM_STANDARD_HASH = HashingUtils::HashString("FILM_STANDARD");
-        static const int MUSIC_LIGHT_HASH = HashingUtils::HashString("MUSIC_LIGHT");
-        static const int MUSIC_STANDARD_HASH = HashingUtils::HashString("MUSIC_STANDARD");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int SPEECH_HASH = HashingUtils::HashString("SPEECH");
+        static constexpr uint32_t FILM_LIGHT_HASH = ConstExprHashingUtils::HashString("FILM_LIGHT");
+        static constexpr uint32_t FILM_STANDARD_HASH = ConstExprHashingUtils::HashString("FILM_STANDARD");
+        static constexpr uint32_t MUSIC_LIGHT_HASH = ConstExprHashingUtils::HashString("MUSIC_LIGHT");
+        static constexpr uint32_t MUSIC_STANDARD_HASH = ConstExprHashingUtils::HashString("MUSIC_STANDARD");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t SPEECH_HASH = ConstExprHashingUtils::HashString("SPEECH");
 
 
         Eac3DrcLine GetEac3DrcLineForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FILM_LIGHT_HASH)
           {
             return Eac3DrcLine::FILM_LIGHT;

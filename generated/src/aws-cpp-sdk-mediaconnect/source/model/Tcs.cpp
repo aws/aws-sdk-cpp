@@ -20,20 +20,20 @@ namespace Aws
       namespace TcsMapper
       {
 
-        static const int SDR_HASH = HashingUtils::HashString("SDR");
-        static const int PQ_HASH = HashingUtils::HashString("PQ");
-        static const int HLG_HASH = HashingUtils::HashString("HLG");
-        static const int LINEAR_HASH = HashingUtils::HashString("LINEAR");
-        static const int BT2100LINPQ_HASH = HashingUtils::HashString("BT2100LINPQ");
-        static const int BT2100LINHLG_HASH = HashingUtils::HashString("BT2100LINHLG");
-        static const int ST2065_1_HASH = HashingUtils::HashString("ST2065-1");
-        static const int ST428_1_HASH = HashingUtils::HashString("ST428-1");
-        static const int DENSITY_HASH = HashingUtils::HashString("DENSITY");
+        static constexpr uint32_t SDR_HASH = ConstExprHashingUtils::HashString("SDR");
+        static constexpr uint32_t PQ_HASH = ConstExprHashingUtils::HashString("PQ");
+        static constexpr uint32_t HLG_HASH = ConstExprHashingUtils::HashString("HLG");
+        static constexpr uint32_t LINEAR_HASH = ConstExprHashingUtils::HashString("LINEAR");
+        static constexpr uint32_t BT2100LINPQ_HASH = ConstExprHashingUtils::HashString("BT2100LINPQ");
+        static constexpr uint32_t BT2100LINHLG_HASH = ConstExprHashingUtils::HashString("BT2100LINHLG");
+        static constexpr uint32_t ST2065_1_HASH = ConstExprHashingUtils::HashString("ST2065-1");
+        static constexpr uint32_t ST428_1_HASH = ConstExprHashingUtils::HashString("ST428-1");
+        static constexpr uint32_t DENSITY_HASH = ConstExprHashingUtils::HashString("DENSITY");
 
 
         Tcs GetTcsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SDR_HASH)
           {
             return Tcs::SDR;

@@ -20,12 +20,12 @@ namespace Aws
       namespace LiveConnectorSourceTypeMapper
       {
 
-        static const int ChimeSdkMeeting_HASH = HashingUtils::HashString("ChimeSdkMeeting");
+        static constexpr uint32_t ChimeSdkMeeting_HASH = ConstExprHashingUtils::HashString("ChimeSdkMeeting");
 
 
         LiveConnectorSourceType GetLiveConnectorSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ChimeSdkMeeting_HASH)
           {
             return LiveConnectorSourceType::ChimeSdkMeeting;

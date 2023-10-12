@@ -20,13 +20,13 @@ namespace Aws
       namespace RoleTypeMapper
       {
 
-        static const int PROCESS_OWNER_HASH = HashingUtils::HashString("PROCESS_OWNER");
-        static const int RESOURCE_OWNER_HASH = HashingUtils::HashString("RESOURCE_OWNER");
+        static constexpr uint32_t PROCESS_OWNER_HASH = ConstExprHashingUtils::HashString("PROCESS_OWNER");
+        static constexpr uint32_t RESOURCE_OWNER_HASH = ConstExprHashingUtils::HashString("RESOURCE_OWNER");
 
 
         RoleType GetRoleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROCESS_OWNER_HASH)
           {
             return RoleType::PROCESS_OWNER;

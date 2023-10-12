@@ -20,17 +20,17 @@ namespace Aws
       namespace ClientDeviceTypeMapper
       {
 
-        static const int DeviceTypeWindows_HASH = HashingUtils::HashString("DeviceTypeWindows");
-        static const int DeviceTypeOsx_HASH = HashingUtils::HashString("DeviceTypeOsx");
-        static const int DeviceTypeAndroid_HASH = HashingUtils::HashString("DeviceTypeAndroid");
-        static const int DeviceTypeIos_HASH = HashingUtils::HashString("DeviceTypeIos");
-        static const int DeviceTypeLinux_HASH = HashingUtils::HashString("DeviceTypeLinux");
-        static const int DeviceTypeWeb_HASH = HashingUtils::HashString("DeviceTypeWeb");
+        static constexpr uint32_t DeviceTypeWindows_HASH = ConstExprHashingUtils::HashString("DeviceTypeWindows");
+        static constexpr uint32_t DeviceTypeOsx_HASH = ConstExprHashingUtils::HashString("DeviceTypeOsx");
+        static constexpr uint32_t DeviceTypeAndroid_HASH = ConstExprHashingUtils::HashString("DeviceTypeAndroid");
+        static constexpr uint32_t DeviceTypeIos_HASH = ConstExprHashingUtils::HashString("DeviceTypeIos");
+        static constexpr uint32_t DeviceTypeLinux_HASH = ConstExprHashingUtils::HashString("DeviceTypeLinux");
+        static constexpr uint32_t DeviceTypeWeb_HASH = ConstExprHashingUtils::HashString("DeviceTypeWeb");
 
 
         ClientDeviceType GetClientDeviceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DeviceTypeWindows_HASH)
           {
             return ClientDeviceType::DeviceTypeWindows;

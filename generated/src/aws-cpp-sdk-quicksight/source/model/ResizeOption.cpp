@@ -20,13 +20,13 @@ namespace Aws
       namespace ResizeOptionMapper
       {
 
-        static const int FIXED_HASH = HashingUtils::HashString("FIXED");
-        static const int RESPONSIVE_HASH = HashingUtils::HashString("RESPONSIVE");
+        static constexpr uint32_t FIXED_HASH = ConstExprHashingUtils::HashString("FIXED");
+        static constexpr uint32_t RESPONSIVE_HASH = ConstExprHashingUtils::HashString("RESPONSIVE");
 
 
         ResizeOption GetResizeOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FIXED_HASH)
           {
             return ResizeOption::FIXED;

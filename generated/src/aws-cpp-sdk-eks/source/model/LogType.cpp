@@ -20,16 +20,16 @@ namespace Aws
       namespace LogTypeMapper
       {
 
-        static const int api_HASH = HashingUtils::HashString("api");
-        static const int audit_HASH = HashingUtils::HashString("audit");
-        static const int authenticator_HASH = HashingUtils::HashString("authenticator");
-        static const int controllerManager_HASH = HashingUtils::HashString("controllerManager");
-        static const int scheduler_HASH = HashingUtils::HashString("scheduler");
+        static constexpr uint32_t api_HASH = ConstExprHashingUtils::HashString("api");
+        static constexpr uint32_t audit_HASH = ConstExprHashingUtils::HashString("audit");
+        static constexpr uint32_t authenticator_HASH = ConstExprHashingUtils::HashString("authenticator");
+        static constexpr uint32_t controllerManager_HASH = ConstExprHashingUtils::HashString("controllerManager");
+        static constexpr uint32_t scheduler_HASH = ConstExprHashingUtils::HashString("scheduler");
 
 
         LogType GetLogTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == api_HASH)
           {
             return LogType::api;

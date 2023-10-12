@@ -20,12 +20,12 @@ namespace Aws
       namespace GameSessionStatusReasonMapper
       {
 
-        static const int INTERRUPTED_HASH = HashingUtils::HashString("INTERRUPTED");
+        static constexpr uint32_t INTERRUPTED_HASH = ConstExprHashingUtils::HashString("INTERRUPTED");
 
 
         GameSessionStatusReason GetGameSessionStatusReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERRUPTED_HASH)
           {
             return GameSessionStatusReason::INTERRUPTED;

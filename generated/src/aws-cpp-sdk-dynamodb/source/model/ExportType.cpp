@@ -20,13 +20,13 @@ namespace Aws
       namespace ExportTypeMapper
       {
 
-        static const int FULL_EXPORT_HASH = HashingUtils::HashString("FULL_EXPORT");
-        static const int INCREMENTAL_EXPORT_HASH = HashingUtils::HashString("INCREMENTAL_EXPORT");
+        static constexpr uint32_t FULL_EXPORT_HASH = ConstExprHashingUtils::HashString("FULL_EXPORT");
+        static constexpr uint32_t INCREMENTAL_EXPORT_HASH = ConstExprHashingUtils::HashString("INCREMENTAL_EXPORT");
 
 
         ExportType GetExportTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FULL_EXPORT_HASH)
           {
             return ExportType::FULL_EXPORT;

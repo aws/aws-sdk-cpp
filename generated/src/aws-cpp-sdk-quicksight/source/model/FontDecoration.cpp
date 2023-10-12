@@ -20,13 +20,13 @@ namespace Aws
       namespace FontDecorationMapper
       {
 
-        static const int UNDERLINE_HASH = HashingUtils::HashString("UNDERLINE");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t UNDERLINE_HASH = ConstExprHashingUtils::HashString("UNDERLINE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         FontDecoration GetFontDecorationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNDERLINE_HASH)
           {
             return FontDecoration::UNDERLINE;

@@ -20,12 +20,12 @@ namespace Aws
       namespace ConditionTypeMapper
       {
 
-        static const int STRINGEQUALS_HASH = HashingUtils::HashString("STRINGEQUALS");
+        static constexpr uint32_t STRINGEQUALS_HASH = ConstExprHashingUtils::HashString("STRINGEQUALS");
 
 
         ConditionType GetConditionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STRINGEQUALS_HASH)
           {
             return ConditionType::STRINGEQUALS;

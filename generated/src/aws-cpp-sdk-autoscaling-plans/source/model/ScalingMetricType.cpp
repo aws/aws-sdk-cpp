@@ -20,24 +20,24 @@ namespace Aws
       namespace ScalingMetricTypeMapper
       {
 
-        static const int ASGAverageCPUUtilization_HASH = HashingUtils::HashString("ASGAverageCPUUtilization");
-        static const int ASGAverageNetworkIn_HASH = HashingUtils::HashString("ASGAverageNetworkIn");
-        static const int ASGAverageNetworkOut_HASH = HashingUtils::HashString("ASGAverageNetworkOut");
-        static const int DynamoDBReadCapacityUtilization_HASH = HashingUtils::HashString("DynamoDBReadCapacityUtilization");
-        static const int DynamoDBWriteCapacityUtilization_HASH = HashingUtils::HashString("DynamoDBWriteCapacityUtilization");
-        static const int ECSServiceAverageCPUUtilization_HASH = HashingUtils::HashString("ECSServiceAverageCPUUtilization");
-        static const int ECSServiceAverageMemoryUtilization_HASH = HashingUtils::HashString("ECSServiceAverageMemoryUtilization");
-        static const int ALBRequestCountPerTarget_HASH = HashingUtils::HashString("ALBRequestCountPerTarget");
-        static const int RDSReaderAverageCPUUtilization_HASH = HashingUtils::HashString("RDSReaderAverageCPUUtilization");
-        static const int RDSReaderAverageDatabaseConnections_HASH = HashingUtils::HashString("RDSReaderAverageDatabaseConnections");
-        static const int EC2SpotFleetRequestAverageCPUUtilization_HASH = HashingUtils::HashString("EC2SpotFleetRequestAverageCPUUtilization");
-        static const int EC2SpotFleetRequestAverageNetworkIn_HASH = HashingUtils::HashString("EC2SpotFleetRequestAverageNetworkIn");
-        static const int EC2SpotFleetRequestAverageNetworkOut_HASH = HashingUtils::HashString("EC2SpotFleetRequestAverageNetworkOut");
+        static constexpr uint32_t ASGAverageCPUUtilization_HASH = ConstExprHashingUtils::HashString("ASGAverageCPUUtilization");
+        static constexpr uint32_t ASGAverageNetworkIn_HASH = ConstExprHashingUtils::HashString("ASGAverageNetworkIn");
+        static constexpr uint32_t ASGAverageNetworkOut_HASH = ConstExprHashingUtils::HashString("ASGAverageNetworkOut");
+        static constexpr uint32_t DynamoDBReadCapacityUtilization_HASH = ConstExprHashingUtils::HashString("DynamoDBReadCapacityUtilization");
+        static constexpr uint32_t DynamoDBWriteCapacityUtilization_HASH = ConstExprHashingUtils::HashString("DynamoDBWriteCapacityUtilization");
+        static constexpr uint32_t ECSServiceAverageCPUUtilization_HASH = ConstExprHashingUtils::HashString("ECSServiceAverageCPUUtilization");
+        static constexpr uint32_t ECSServiceAverageMemoryUtilization_HASH = ConstExprHashingUtils::HashString("ECSServiceAverageMemoryUtilization");
+        static constexpr uint32_t ALBRequestCountPerTarget_HASH = ConstExprHashingUtils::HashString("ALBRequestCountPerTarget");
+        static constexpr uint32_t RDSReaderAverageCPUUtilization_HASH = ConstExprHashingUtils::HashString("RDSReaderAverageCPUUtilization");
+        static constexpr uint32_t RDSReaderAverageDatabaseConnections_HASH = ConstExprHashingUtils::HashString("RDSReaderAverageDatabaseConnections");
+        static constexpr uint32_t EC2SpotFleetRequestAverageCPUUtilization_HASH = ConstExprHashingUtils::HashString("EC2SpotFleetRequestAverageCPUUtilization");
+        static constexpr uint32_t EC2SpotFleetRequestAverageNetworkIn_HASH = ConstExprHashingUtils::HashString("EC2SpotFleetRequestAverageNetworkIn");
+        static constexpr uint32_t EC2SpotFleetRequestAverageNetworkOut_HASH = ConstExprHashingUtils::HashString("EC2SpotFleetRequestAverageNetworkOut");
 
 
         ScalingMetricType GetScalingMetricTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASGAverageCPUUtilization_HASH)
           {
             return ScalingMetricType::ASGAverageCPUUtilization;

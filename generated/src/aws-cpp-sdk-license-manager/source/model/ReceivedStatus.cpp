@@ -20,19 +20,19 @@ namespace Aws
       namespace ReceivedStatusMapper
       {
 
-        static const int PENDING_WORKFLOW_HASH = HashingUtils::HashString("PENDING_WORKFLOW");
-        static const int PENDING_ACCEPT_HASH = HashingUtils::HashString("PENDING_ACCEPT");
-        static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int FAILED_WORKFLOW_HASH = HashingUtils::HashString("FAILED_WORKFLOW");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int WORKFLOW_COMPLETED_HASH = HashingUtils::HashString("WORKFLOW_COMPLETED");
+        static constexpr uint32_t PENDING_WORKFLOW_HASH = ConstExprHashingUtils::HashString("PENDING_WORKFLOW");
+        static constexpr uint32_t PENDING_ACCEPT_HASH = ConstExprHashingUtils::HashString("PENDING_ACCEPT");
+        static constexpr uint32_t REJECTED_HASH = ConstExprHashingUtils::HashString("REJECTED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t FAILED_WORKFLOW_HASH = ConstExprHashingUtils::HashString("FAILED_WORKFLOW");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t WORKFLOW_COMPLETED_HASH = ConstExprHashingUtils::HashString("WORKFLOW_COMPLETED");
 
 
         ReceivedStatus GetReceivedStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_WORKFLOW_HASH)
           {
             return ReceivedStatus::PENDING_WORKFLOW;

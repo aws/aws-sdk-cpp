@@ -20,13 +20,13 @@ namespace Aws
       namespace ClientAuthenticationTypeMapper
       {
 
-        static const int SmartCard_HASH = HashingUtils::HashString("SmartCard");
-        static const int SmartCardOrPassword_HASH = HashingUtils::HashString("SmartCardOrPassword");
+        static constexpr uint32_t SmartCard_HASH = ConstExprHashingUtils::HashString("SmartCard");
+        static constexpr uint32_t SmartCardOrPassword_HASH = ConstExprHashingUtils::HashString("SmartCardOrPassword");
 
 
         ClientAuthenticationType GetClientAuthenticationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SmartCard_HASH)
           {
             return ClientAuthenticationType::SmartCard;

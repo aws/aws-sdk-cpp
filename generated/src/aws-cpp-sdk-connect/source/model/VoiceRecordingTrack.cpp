@@ -20,14 +20,14 @@ namespace Aws
       namespace VoiceRecordingTrackMapper
       {
 
-        static const int FROM_AGENT_HASH = HashingUtils::HashString("FROM_AGENT");
-        static const int TO_AGENT_HASH = HashingUtils::HashString("TO_AGENT");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t FROM_AGENT_HASH = ConstExprHashingUtils::HashString("FROM_AGENT");
+        static constexpr uint32_t TO_AGENT_HASH = ConstExprHashingUtils::HashString("TO_AGENT");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         VoiceRecordingTrack GetVoiceRecordingTrackForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FROM_AGENT_HASH)
           {
             return VoiceRecordingTrack::FROM_AGENT;

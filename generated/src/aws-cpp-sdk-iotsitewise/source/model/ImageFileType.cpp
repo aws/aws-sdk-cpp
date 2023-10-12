@@ -20,12 +20,12 @@ namespace Aws
       namespace ImageFileTypeMapper
       {
 
-        static const int PNG_HASH = HashingUtils::HashString("PNG");
+        static constexpr uint32_t PNG_HASH = ConstExprHashingUtils::HashString("PNG");
 
 
         ImageFileType GetImageFileTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PNG_HASH)
           {
             return ImageFileType::PNG;

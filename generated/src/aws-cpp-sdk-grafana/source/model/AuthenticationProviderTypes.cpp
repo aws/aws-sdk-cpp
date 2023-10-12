@@ -20,13 +20,13 @@ namespace Aws
       namespace AuthenticationProviderTypesMapper
       {
 
-        static const int AWS_SSO_HASH = HashingUtils::HashString("AWS_SSO");
-        static const int SAML_HASH = HashingUtils::HashString("SAML");
+        static constexpr uint32_t AWS_SSO_HASH = ConstExprHashingUtils::HashString("AWS_SSO");
+        static constexpr uint32_t SAML_HASH = ConstExprHashingUtils::HashString("SAML");
 
 
         AuthenticationProviderTypes GetAuthenticationProviderTypesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_SSO_HASH)
           {
             return AuthenticationProviderTypes::AWS_SSO;

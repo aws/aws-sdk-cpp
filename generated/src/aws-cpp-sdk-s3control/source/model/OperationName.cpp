@@ -20,20 +20,20 @@ namespace Aws
       namespace OperationNameMapper
       {
 
-        static const int LambdaInvoke_HASH = HashingUtils::HashString("LambdaInvoke");
-        static const int S3PutObjectCopy_HASH = HashingUtils::HashString("S3PutObjectCopy");
-        static const int S3PutObjectAcl_HASH = HashingUtils::HashString("S3PutObjectAcl");
-        static const int S3PutObjectTagging_HASH = HashingUtils::HashString("S3PutObjectTagging");
-        static const int S3DeleteObjectTagging_HASH = HashingUtils::HashString("S3DeleteObjectTagging");
-        static const int S3InitiateRestoreObject_HASH = HashingUtils::HashString("S3InitiateRestoreObject");
-        static const int S3PutObjectLegalHold_HASH = HashingUtils::HashString("S3PutObjectLegalHold");
-        static const int S3PutObjectRetention_HASH = HashingUtils::HashString("S3PutObjectRetention");
-        static const int S3ReplicateObject_HASH = HashingUtils::HashString("S3ReplicateObject");
+        static constexpr uint32_t LambdaInvoke_HASH = ConstExprHashingUtils::HashString("LambdaInvoke");
+        static constexpr uint32_t S3PutObjectCopy_HASH = ConstExprHashingUtils::HashString("S3PutObjectCopy");
+        static constexpr uint32_t S3PutObjectAcl_HASH = ConstExprHashingUtils::HashString("S3PutObjectAcl");
+        static constexpr uint32_t S3PutObjectTagging_HASH = ConstExprHashingUtils::HashString("S3PutObjectTagging");
+        static constexpr uint32_t S3DeleteObjectTagging_HASH = ConstExprHashingUtils::HashString("S3DeleteObjectTagging");
+        static constexpr uint32_t S3InitiateRestoreObject_HASH = ConstExprHashingUtils::HashString("S3InitiateRestoreObject");
+        static constexpr uint32_t S3PutObjectLegalHold_HASH = ConstExprHashingUtils::HashString("S3PutObjectLegalHold");
+        static constexpr uint32_t S3PutObjectRetention_HASH = ConstExprHashingUtils::HashString("S3PutObjectRetention");
+        static constexpr uint32_t S3ReplicateObject_HASH = ConstExprHashingUtils::HashString("S3ReplicateObject");
 
 
         OperationName GetOperationNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LambdaInvoke_HASH)
           {
             return OperationName::LambdaInvoke;

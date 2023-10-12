@@ -20,13 +20,13 @@ namespace Aws
       namespace PathPrefixMapper
       {
 
-        static const int EXECUTION_ID_HASH = HashingUtils::HashString("EXECUTION_ID");
-        static const int SCHEMA_VERSION_HASH = HashingUtils::HashString("SCHEMA_VERSION");
+        static constexpr uint32_t EXECUTION_ID_HASH = ConstExprHashingUtils::HashString("EXECUTION_ID");
+        static constexpr uint32_t SCHEMA_VERSION_HASH = ConstExprHashingUtils::HashString("SCHEMA_VERSION");
 
 
         PathPrefix GetPathPrefixForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXECUTION_ID_HASH)
           {
             return PathPrefix::EXECUTION_ID;

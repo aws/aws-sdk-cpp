@@ -20,18 +20,18 @@ namespace Aws
       namespace DeploymentCreatorMapper
       {
 
-        static const int user_HASH = HashingUtils::HashString("user");
-        static const int autoscaling_HASH = HashingUtils::HashString("autoscaling");
-        static const int codeDeployRollback_HASH = HashingUtils::HashString("codeDeployRollback");
-        static const int CodeDeploy_HASH = HashingUtils::HashString("CodeDeploy");
-        static const int CodeDeployAutoUpdate_HASH = HashingUtils::HashString("CodeDeployAutoUpdate");
-        static const int CloudFormation_HASH = HashingUtils::HashString("CloudFormation");
-        static const int CloudFormationRollback_HASH = HashingUtils::HashString("CloudFormationRollback");
+        static constexpr uint32_t user_HASH = ConstExprHashingUtils::HashString("user");
+        static constexpr uint32_t autoscaling_HASH = ConstExprHashingUtils::HashString("autoscaling");
+        static constexpr uint32_t codeDeployRollback_HASH = ConstExprHashingUtils::HashString("codeDeployRollback");
+        static constexpr uint32_t CodeDeploy_HASH = ConstExprHashingUtils::HashString("CodeDeploy");
+        static constexpr uint32_t CodeDeployAutoUpdate_HASH = ConstExprHashingUtils::HashString("CodeDeployAutoUpdate");
+        static constexpr uint32_t CloudFormation_HASH = ConstExprHashingUtils::HashString("CloudFormation");
+        static constexpr uint32_t CloudFormationRollback_HASH = ConstExprHashingUtils::HashString("CloudFormationRollback");
 
 
         DeploymentCreator GetDeploymentCreatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == user_HASH)
           {
             return DeploymentCreator::user;

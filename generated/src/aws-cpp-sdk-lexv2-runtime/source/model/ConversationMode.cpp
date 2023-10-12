@@ -20,13 +20,13 @@ namespace Aws
       namespace ConversationModeMapper
       {
 
-        static const int AUDIO_HASH = HashingUtils::HashString("AUDIO");
-        static const int TEXT_HASH = HashingUtils::HashString("TEXT");
+        static constexpr uint32_t AUDIO_HASH = ConstExprHashingUtils::HashString("AUDIO");
+        static constexpr uint32_t TEXT_HASH = ConstExprHashingUtils::HashString("TEXT");
 
 
         ConversationMode GetConversationModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUDIO_HASH)
           {
             return ConversationMode::AUDIO;

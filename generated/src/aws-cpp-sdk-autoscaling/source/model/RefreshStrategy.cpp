@@ -20,12 +20,12 @@ namespace Aws
       namespace RefreshStrategyMapper
       {
 
-        static const int Rolling_HASH = HashingUtils::HashString("Rolling");
+        static constexpr uint32_t Rolling_HASH = ConstExprHashingUtils::HashString("Rolling");
 
 
         RefreshStrategy GetRefreshStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Rolling_HASH)
           {
             return RefreshStrategy::Rolling;

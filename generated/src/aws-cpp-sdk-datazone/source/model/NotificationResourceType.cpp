@@ -20,12 +20,12 @@ namespace Aws
       namespace NotificationResourceTypeMapper
       {
 
-        static const int PROJECT_HASH = HashingUtils::HashString("PROJECT");
+        static constexpr uint32_t PROJECT_HASH = ConstExprHashingUtils::HashString("PROJECT");
 
 
         NotificationResourceType GetNotificationResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROJECT_HASH)
           {
             return NotificationResourceType::PROJECT;

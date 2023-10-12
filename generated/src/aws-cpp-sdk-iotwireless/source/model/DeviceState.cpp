@@ -20,15 +20,15 @@ namespace Aws
       namespace DeviceStateMapper
       {
 
-        static const int Provisioned_HASH = HashingUtils::HashString("Provisioned");
-        static const int RegisteredNotSeen_HASH = HashingUtils::HashString("RegisteredNotSeen");
-        static const int RegisteredReachable_HASH = HashingUtils::HashString("RegisteredReachable");
-        static const int RegisteredUnreachable_HASH = HashingUtils::HashString("RegisteredUnreachable");
+        static constexpr uint32_t Provisioned_HASH = ConstExprHashingUtils::HashString("Provisioned");
+        static constexpr uint32_t RegisteredNotSeen_HASH = ConstExprHashingUtils::HashString("RegisteredNotSeen");
+        static constexpr uint32_t RegisteredReachable_HASH = ConstExprHashingUtils::HashString("RegisteredReachable");
+        static constexpr uint32_t RegisteredUnreachable_HASH = ConstExprHashingUtils::HashString("RegisteredUnreachable");
 
 
         DeviceState GetDeviceStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Provisioned_HASH)
           {
             return DeviceState::Provisioned;

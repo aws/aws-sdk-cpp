@@ -20,19 +20,19 @@ namespace Aws
       namespace ScalableDimensionMapper
       {
 
-        static const int autoscaling_autoScalingGroup_DesiredCapacity_HASH = HashingUtils::HashString("autoscaling:autoScalingGroup:DesiredCapacity");
-        static const int ecs_service_DesiredCount_HASH = HashingUtils::HashString("ecs:service:DesiredCount");
-        static const int ec2_spot_fleet_request_TargetCapacity_HASH = HashingUtils::HashString("ec2:spot-fleet-request:TargetCapacity");
-        static const int rds_cluster_ReadReplicaCount_HASH = HashingUtils::HashString("rds:cluster:ReadReplicaCount");
-        static const int dynamodb_table_ReadCapacityUnits_HASH = HashingUtils::HashString("dynamodb:table:ReadCapacityUnits");
-        static const int dynamodb_table_WriteCapacityUnits_HASH = HashingUtils::HashString("dynamodb:table:WriteCapacityUnits");
-        static const int dynamodb_index_ReadCapacityUnits_HASH = HashingUtils::HashString("dynamodb:index:ReadCapacityUnits");
-        static const int dynamodb_index_WriteCapacityUnits_HASH = HashingUtils::HashString("dynamodb:index:WriteCapacityUnits");
+        static constexpr uint32_t autoscaling_autoScalingGroup_DesiredCapacity_HASH = ConstExprHashingUtils::HashString("autoscaling:autoScalingGroup:DesiredCapacity");
+        static constexpr uint32_t ecs_service_DesiredCount_HASH = ConstExprHashingUtils::HashString("ecs:service:DesiredCount");
+        static constexpr uint32_t ec2_spot_fleet_request_TargetCapacity_HASH = ConstExprHashingUtils::HashString("ec2:spot-fleet-request:TargetCapacity");
+        static constexpr uint32_t rds_cluster_ReadReplicaCount_HASH = ConstExprHashingUtils::HashString("rds:cluster:ReadReplicaCount");
+        static constexpr uint32_t dynamodb_table_ReadCapacityUnits_HASH = ConstExprHashingUtils::HashString("dynamodb:table:ReadCapacityUnits");
+        static constexpr uint32_t dynamodb_table_WriteCapacityUnits_HASH = ConstExprHashingUtils::HashString("dynamodb:table:WriteCapacityUnits");
+        static constexpr uint32_t dynamodb_index_ReadCapacityUnits_HASH = ConstExprHashingUtils::HashString("dynamodb:index:ReadCapacityUnits");
+        static constexpr uint32_t dynamodb_index_WriteCapacityUnits_HASH = ConstExprHashingUtils::HashString("dynamodb:index:WriteCapacityUnits");
 
 
         ScalableDimension GetScalableDimensionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == autoscaling_autoScalingGroup_DesiredCapacity_HASH)
           {
             return ScalableDimension::autoscaling_autoScalingGroup_DesiredCapacity;

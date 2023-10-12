@@ -20,14 +20,14 @@ namespace Aws
       namespace MonotonicityMapper
       {
 
-        static const int DECREASING_HASH = HashingUtils::HashString("DECREASING");
-        static const int INCREASING_HASH = HashingUtils::HashString("INCREASING");
-        static const int STATIC__HASH = HashingUtils::HashString("STATIC");
+        static constexpr uint32_t DECREASING_HASH = ConstExprHashingUtils::HashString("DECREASING");
+        static constexpr uint32_t INCREASING_HASH = ConstExprHashingUtils::HashString("INCREASING");
+        static constexpr uint32_t STATIC__HASH = ConstExprHashingUtils::HashString("STATIC");
 
 
         Monotonicity GetMonotonicityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DECREASING_HASH)
           {
             return Monotonicity::DECREASING;

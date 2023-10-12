@@ -20,45 +20,45 @@ namespace Aws
       namespace ValidationExceptionTypeMapper
       {
 
-        static const int CONTAINER_TYPE_IMMUTABLE_HASH = HashingUtils::HashString("CONTAINER_TYPE_IMMUTABLE");
-        static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("INVALID_PAGINATION_TOKEN");
-        static const int INVALID_PAGINATION_MAX_RESULTS_HASH = HashingUtils::HashString("INVALID_PAGINATION_MAX_RESULTS");
-        static const int INVALID_POLICY_HASH = HashingUtils::HashString("INVALID_POLICY");
-        static const int INVALID_ROLE_ARN_HASH = HashingUtils::HashString("INVALID_ROLE_ARN");
-        static const int MANIFEST_NAME_COLLISION_HASH = HashingUtils::HashString("MANIFEST_NAME_COLLISION");
-        static const int ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH_HASH = HashingUtils::HashString("ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH");
-        static const int CENC_IV_INCOMPATIBLE_HASH = HashingUtils::HashString("CENC_IV_INCOMPATIBLE");
-        static const int ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE_HASH = HashingUtils::HashString("ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE");
-        static const int ENCRYPTION_CONTRACT_UNENCRYPTED_HASH = HashingUtils::HashString("ENCRYPTION_CONTRACT_UNENCRYPTED");
-        static const int ENCRYPTION_CONTRACT_SHARED_HASH = HashingUtils::HashString("ENCRYPTION_CONTRACT_SHARED");
-        static const int NUM_MANIFESTS_LOW_HASH = HashingUtils::HashString("NUM_MANIFESTS_LOW");
-        static const int NUM_MANIFESTS_HIGH_HASH = HashingUtils::HashString("NUM_MANIFESTS_HIGH");
-        static const int DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE_HASH = HashingUtils::HashString("DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE");
-        static const int ROLE_ARN_NOT_ASSUMABLE_HASH = HashingUtils::HashString("ROLE_ARN_NOT_ASSUMABLE");
-        static const int ROLE_ARN_LENGTH_OUT_OF_RANGE_HASH = HashingUtils::HashString("ROLE_ARN_LENGTH_OUT_OF_RANGE");
-        static const int ROLE_ARN_INVALID_FORMAT_HASH = HashingUtils::HashString("ROLE_ARN_INVALID_FORMAT");
-        static const int URL_INVALID_HASH = HashingUtils::HashString("URL_INVALID");
-        static const int URL_SCHEME_HASH = HashingUtils::HashString("URL_SCHEME");
-        static const int URL_USER_INFO_HASH = HashingUtils::HashString("URL_USER_INFO");
-        static const int URL_PORT_HASH = HashingUtils::HashString("URL_PORT");
-        static const int URL_UNKNOWN_HOST_HASH = HashingUtils::HashString("URL_UNKNOWN_HOST");
-        static const int URL_LOCAL_ADDRESS_HASH = HashingUtils::HashString("URL_LOCAL_ADDRESS");
-        static const int URL_LOOPBACK_ADDRESS_HASH = HashingUtils::HashString("URL_LOOPBACK_ADDRESS");
-        static const int URL_LINK_LOCAL_ADDRESS_HASH = HashingUtils::HashString("URL_LINK_LOCAL_ADDRESS");
-        static const int URL_MULTICAST_ADDRESS_HASH = HashingUtils::HashString("URL_MULTICAST_ADDRESS");
-        static const int MEMBER_INVALID_HASH = HashingUtils::HashString("MEMBER_INVALID");
-        static const int MEMBER_MISSING_HASH = HashingUtils::HashString("MEMBER_MISSING");
-        static const int MEMBER_MIN_VALUE_HASH = HashingUtils::HashString("MEMBER_MIN_VALUE");
-        static const int MEMBER_MAX_VALUE_HASH = HashingUtils::HashString("MEMBER_MAX_VALUE");
-        static const int MEMBER_MIN_LENGTH_HASH = HashingUtils::HashString("MEMBER_MIN_LENGTH");
-        static const int MEMBER_MAX_LENGTH_HASH = HashingUtils::HashString("MEMBER_MAX_LENGTH");
-        static const int MEMBER_INVALID_ENUM_VALUE_HASH = HashingUtils::HashString("MEMBER_INVALID_ENUM_VALUE");
-        static const int MEMBER_DOES_NOT_MATCH_PATTERN_HASH = HashingUtils::HashString("MEMBER_DOES_NOT_MATCH_PATTERN");
+        static constexpr uint32_t CONTAINER_TYPE_IMMUTABLE_HASH = ConstExprHashingUtils::HashString("CONTAINER_TYPE_IMMUTABLE");
+        static constexpr uint32_t INVALID_PAGINATION_TOKEN_HASH = ConstExprHashingUtils::HashString("INVALID_PAGINATION_TOKEN");
+        static constexpr uint32_t INVALID_PAGINATION_MAX_RESULTS_HASH = ConstExprHashingUtils::HashString("INVALID_PAGINATION_MAX_RESULTS");
+        static constexpr uint32_t INVALID_POLICY_HASH = ConstExprHashingUtils::HashString("INVALID_POLICY");
+        static constexpr uint32_t INVALID_ROLE_ARN_HASH = ConstExprHashingUtils::HashString("INVALID_ROLE_ARN");
+        static constexpr uint32_t MANIFEST_NAME_COLLISION_HASH = ConstExprHashingUtils::HashString("MANIFEST_NAME_COLLISION");
+        static constexpr uint32_t ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH_HASH = ConstExprHashingUtils::HashString("ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH");
+        static constexpr uint32_t CENC_IV_INCOMPATIBLE_HASH = ConstExprHashingUtils::HashString("CENC_IV_INCOMPATIBLE");
+        static constexpr uint32_t ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE_HASH = ConstExprHashingUtils::HashString("ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE");
+        static constexpr uint32_t ENCRYPTION_CONTRACT_UNENCRYPTED_HASH = ConstExprHashingUtils::HashString("ENCRYPTION_CONTRACT_UNENCRYPTED");
+        static constexpr uint32_t ENCRYPTION_CONTRACT_SHARED_HASH = ConstExprHashingUtils::HashString("ENCRYPTION_CONTRACT_SHARED");
+        static constexpr uint32_t NUM_MANIFESTS_LOW_HASH = ConstExprHashingUtils::HashString("NUM_MANIFESTS_LOW");
+        static constexpr uint32_t NUM_MANIFESTS_HIGH_HASH = ConstExprHashingUtils::HashString("NUM_MANIFESTS_HIGH");
+        static constexpr uint32_t DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE_HASH = ConstExprHashingUtils::HashString("DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE");
+        static constexpr uint32_t ROLE_ARN_NOT_ASSUMABLE_HASH = ConstExprHashingUtils::HashString("ROLE_ARN_NOT_ASSUMABLE");
+        static constexpr uint32_t ROLE_ARN_LENGTH_OUT_OF_RANGE_HASH = ConstExprHashingUtils::HashString("ROLE_ARN_LENGTH_OUT_OF_RANGE");
+        static constexpr uint32_t ROLE_ARN_INVALID_FORMAT_HASH = ConstExprHashingUtils::HashString("ROLE_ARN_INVALID_FORMAT");
+        static constexpr uint32_t URL_INVALID_HASH = ConstExprHashingUtils::HashString("URL_INVALID");
+        static constexpr uint32_t URL_SCHEME_HASH = ConstExprHashingUtils::HashString("URL_SCHEME");
+        static constexpr uint32_t URL_USER_INFO_HASH = ConstExprHashingUtils::HashString("URL_USER_INFO");
+        static constexpr uint32_t URL_PORT_HASH = ConstExprHashingUtils::HashString("URL_PORT");
+        static constexpr uint32_t URL_UNKNOWN_HOST_HASH = ConstExprHashingUtils::HashString("URL_UNKNOWN_HOST");
+        static constexpr uint32_t URL_LOCAL_ADDRESS_HASH = ConstExprHashingUtils::HashString("URL_LOCAL_ADDRESS");
+        static constexpr uint32_t URL_LOOPBACK_ADDRESS_HASH = ConstExprHashingUtils::HashString("URL_LOOPBACK_ADDRESS");
+        static constexpr uint32_t URL_LINK_LOCAL_ADDRESS_HASH = ConstExprHashingUtils::HashString("URL_LINK_LOCAL_ADDRESS");
+        static constexpr uint32_t URL_MULTICAST_ADDRESS_HASH = ConstExprHashingUtils::HashString("URL_MULTICAST_ADDRESS");
+        static constexpr uint32_t MEMBER_INVALID_HASH = ConstExprHashingUtils::HashString("MEMBER_INVALID");
+        static constexpr uint32_t MEMBER_MISSING_HASH = ConstExprHashingUtils::HashString("MEMBER_MISSING");
+        static constexpr uint32_t MEMBER_MIN_VALUE_HASH = ConstExprHashingUtils::HashString("MEMBER_MIN_VALUE");
+        static constexpr uint32_t MEMBER_MAX_VALUE_HASH = ConstExprHashingUtils::HashString("MEMBER_MAX_VALUE");
+        static constexpr uint32_t MEMBER_MIN_LENGTH_HASH = ConstExprHashingUtils::HashString("MEMBER_MIN_LENGTH");
+        static constexpr uint32_t MEMBER_MAX_LENGTH_HASH = ConstExprHashingUtils::HashString("MEMBER_MAX_LENGTH");
+        static constexpr uint32_t MEMBER_INVALID_ENUM_VALUE_HASH = ConstExprHashingUtils::HashString("MEMBER_INVALID_ENUM_VALUE");
+        static constexpr uint32_t MEMBER_DOES_NOT_MATCH_PATTERN_HASH = ConstExprHashingUtils::HashString("MEMBER_DOES_NOT_MATCH_PATTERN");
 
 
         ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONTAINER_TYPE_IMMUTABLE_HASH)
           {
             return ValidationExceptionType::CONTAINER_TYPE_IMMUTABLE;

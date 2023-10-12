@@ -20,17 +20,17 @@ namespace Aws
       namespace DialogStateMapper
       {
 
-        static const int ElicitIntent_HASH = HashingUtils::HashString("ElicitIntent");
-        static const int ConfirmIntent_HASH = HashingUtils::HashString("ConfirmIntent");
-        static const int ElicitSlot_HASH = HashingUtils::HashString("ElicitSlot");
-        static const int Fulfilled_HASH = HashingUtils::HashString("Fulfilled");
-        static const int ReadyForFulfillment_HASH = HashingUtils::HashString("ReadyForFulfillment");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t ElicitIntent_HASH = ConstExprHashingUtils::HashString("ElicitIntent");
+        static constexpr uint32_t ConfirmIntent_HASH = ConstExprHashingUtils::HashString("ConfirmIntent");
+        static constexpr uint32_t ElicitSlot_HASH = ConstExprHashingUtils::HashString("ElicitSlot");
+        static constexpr uint32_t Fulfilled_HASH = ConstExprHashingUtils::HashString("Fulfilled");
+        static constexpr uint32_t ReadyForFulfillment_HASH = ConstExprHashingUtils::HashString("ReadyForFulfillment");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         DialogState GetDialogStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ElicitIntent_HASH)
           {
             return DialogState::ElicitIntent;

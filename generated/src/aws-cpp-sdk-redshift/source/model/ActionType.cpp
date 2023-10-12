@@ -20,14 +20,14 @@ namespace Aws
       namespace ActionTypeMapper
       {
 
-        static const int restore_cluster_HASH = HashingUtils::HashString("restore-cluster");
-        static const int recommend_node_config_HASH = HashingUtils::HashString("recommend-node-config");
-        static const int resize_cluster_HASH = HashingUtils::HashString("resize-cluster");
+        static constexpr uint32_t restore_cluster_HASH = ConstExprHashingUtils::HashString("restore-cluster");
+        static constexpr uint32_t recommend_node_config_HASH = ConstExprHashingUtils::HashString("recommend-node-config");
+        static constexpr uint32_t resize_cluster_HASH = ConstExprHashingUtils::HashString("resize-cluster");
 
 
         ActionType GetActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == restore_cluster_HASH)
           {
             return ActionType::restore_cluster;

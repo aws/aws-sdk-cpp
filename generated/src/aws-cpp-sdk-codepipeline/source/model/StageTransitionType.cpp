@@ -20,13 +20,13 @@ namespace Aws
       namespace StageTransitionTypeMapper
       {
 
-        static const int Inbound_HASH = HashingUtils::HashString("Inbound");
-        static const int Outbound_HASH = HashingUtils::HashString("Outbound");
+        static constexpr uint32_t Inbound_HASH = ConstExprHashingUtils::HashString("Inbound");
+        static constexpr uint32_t Outbound_HASH = ConstExprHashingUtils::HashString("Outbound");
 
 
         StageTransitionType GetStageTransitionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Inbound_HASH)
           {
             return StageTransitionType::Inbound;

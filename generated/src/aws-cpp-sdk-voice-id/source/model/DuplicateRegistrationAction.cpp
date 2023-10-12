@@ -20,13 +20,13 @@ namespace Aws
       namespace DuplicateRegistrationActionMapper
       {
 
-        static const int SKIP_HASH = HashingUtils::HashString("SKIP");
-        static const int REGISTER_AS_NEW_HASH = HashingUtils::HashString("REGISTER_AS_NEW");
+        static constexpr uint32_t SKIP_HASH = ConstExprHashingUtils::HashString("SKIP");
+        static constexpr uint32_t REGISTER_AS_NEW_HASH = ConstExprHashingUtils::HashString("REGISTER_AS_NEW");
 
 
         DuplicateRegistrationAction GetDuplicateRegistrationActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SKIP_HASH)
           {
             return DuplicateRegistrationAction::SKIP;

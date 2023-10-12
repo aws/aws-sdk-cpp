@@ -20,24 +20,24 @@ namespace Aws
       namespace RRTypeMapper
       {
 
-        static const int SOA_HASH = HashingUtils::HashString("SOA");
-        static const int A_HASH = HashingUtils::HashString("A");
-        static const int TXT_HASH = HashingUtils::HashString("TXT");
-        static const int NS_HASH = HashingUtils::HashString("NS");
-        static const int CNAME_HASH = HashingUtils::HashString("CNAME");
-        static const int MX_HASH = HashingUtils::HashString("MX");
-        static const int NAPTR_HASH = HashingUtils::HashString("NAPTR");
-        static const int PTR_HASH = HashingUtils::HashString("PTR");
-        static const int SRV_HASH = HashingUtils::HashString("SRV");
-        static const int SPF_HASH = HashingUtils::HashString("SPF");
-        static const int AAAA_HASH = HashingUtils::HashString("AAAA");
-        static const int CAA_HASH = HashingUtils::HashString("CAA");
-        static const int DS_HASH = HashingUtils::HashString("DS");
+        static constexpr uint32_t SOA_HASH = ConstExprHashingUtils::HashString("SOA");
+        static constexpr uint32_t A_HASH = ConstExprHashingUtils::HashString("A");
+        static constexpr uint32_t TXT_HASH = ConstExprHashingUtils::HashString("TXT");
+        static constexpr uint32_t NS_HASH = ConstExprHashingUtils::HashString("NS");
+        static constexpr uint32_t CNAME_HASH = ConstExprHashingUtils::HashString("CNAME");
+        static constexpr uint32_t MX_HASH = ConstExprHashingUtils::HashString("MX");
+        static constexpr uint32_t NAPTR_HASH = ConstExprHashingUtils::HashString("NAPTR");
+        static constexpr uint32_t PTR_HASH = ConstExprHashingUtils::HashString("PTR");
+        static constexpr uint32_t SRV_HASH = ConstExprHashingUtils::HashString("SRV");
+        static constexpr uint32_t SPF_HASH = ConstExprHashingUtils::HashString("SPF");
+        static constexpr uint32_t AAAA_HASH = ConstExprHashingUtils::HashString("AAAA");
+        static constexpr uint32_t CAA_HASH = ConstExprHashingUtils::HashString("CAA");
+        static constexpr uint32_t DS_HASH = ConstExprHashingUtils::HashString("DS");
 
 
         RRType GetRRTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SOA_HASH)
           {
             return RRType::SOA;

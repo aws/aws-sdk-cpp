@@ -20,37 +20,37 @@ namespace Aws
       namespace QueueAttributeNameMapper
       {
 
-        static const int All_HASH = HashingUtils::HashString("All");
-        static const int Policy_HASH = HashingUtils::HashString("Policy");
-        static const int VisibilityTimeout_HASH = HashingUtils::HashString("VisibilityTimeout");
-        static const int MaximumMessageSize_HASH = HashingUtils::HashString("MaximumMessageSize");
-        static const int MessageRetentionPeriod_HASH = HashingUtils::HashString("MessageRetentionPeriod");
-        static const int ApproximateNumberOfMessages_HASH = HashingUtils::HashString("ApproximateNumberOfMessages");
-        static const int ApproximateNumberOfMessagesNotVisible_HASH = HashingUtils::HashString("ApproximateNumberOfMessagesNotVisible");
-        static const int CreatedTimestamp_HASH = HashingUtils::HashString("CreatedTimestamp");
-        static const int LastModifiedTimestamp_HASH = HashingUtils::HashString("LastModifiedTimestamp");
-        static const int QueueArn_HASH = HashingUtils::HashString("QueueArn");
-        static const int ApproximateNumberOfMessagesDelayed_HASH = HashingUtils::HashString("ApproximateNumberOfMessagesDelayed");
-        static const int DelaySeconds_HASH = HashingUtils::HashString("DelaySeconds");
-        static const int ReceiveMessageWaitTimeSeconds_HASH = HashingUtils::HashString("ReceiveMessageWaitTimeSeconds");
-        static const int RedrivePolicy_HASH = HashingUtils::HashString("RedrivePolicy");
-        static const int FifoQueue_HASH = HashingUtils::HashString("FifoQueue");
-        static const int ContentBasedDeduplication_HASH = HashingUtils::HashString("ContentBasedDeduplication");
-        static const int KmsMasterKeyId_HASH = HashingUtils::HashString("KmsMasterKeyId");
-        static const int KmsDataKeyReusePeriodSeconds_HASH = HashingUtils::HashString("KmsDataKeyReusePeriodSeconds");
-        static const int DeduplicationScope_HASH = HashingUtils::HashString("DeduplicationScope");
-        static const int FifoThroughputLimit_HASH = HashingUtils::HashString("FifoThroughputLimit");
-        static const int RedriveAllowPolicy_HASH = HashingUtils::HashString("RedriveAllowPolicy");
-        static const int SqsManagedSseEnabled_HASH = HashingUtils::HashString("SqsManagedSseEnabled");
-        static const int SentTimestamp_HASH = HashingUtils::HashString("SentTimestamp");
-        static const int ApproximateFirstReceiveTimestamp_HASH = HashingUtils::HashString("ApproximateFirstReceiveTimestamp");
-        static const int ApproximateReceiveCount_HASH = HashingUtils::HashString("ApproximateReceiveCount");
-        static const int SenderId_HASH = HashingUtils::HashString("SenderId");
+        static constexpr uint32_t All_HASH = ConstExprHashingUtils::HashString("All");
+        static constexpr uint32_t Policy_HASH = ConstExprHashingUtils::HashString("Policy");
+        static constexpr uint32_t VisibilityTimeout_HASH = ConstExprHashingUtils::HashString("VisibilityTimeout");
+        static constexpr uint32_t MaximumMessageSize_HASH = ConstExprHashingUtils::HashString("MaximumMessageSize");
+        static constexpr uint32_t MessageRetentionPeriod_HASH = ConstExprHashingUtils::HashString("MessageRetentionPeriod");
+        static constexpr uint32_t ApproximateNumberOfMessages_HASH = ConstExprHashingUtils::HashString("ApproximateNumberOfMessages");
+        static constexpr uint32_t ApproximateNumberOfMessagesNotVisible_HASH = ConstExprHashingUtils::HashString("ApproximateNumberOfMessagesNotVisible");
+        static constexpr uint32_t CreatedTimestamp_HASH = ConstExprHashingUtils::HashString("CreatedTimestamp");
+        static constexpr uint32_t LastModifiedTimestamp_HASH = ConstExprHashingUtils::HashString("LastModifiedTimestamp");
+        static constexpr uint32_t QueueArn_HASH = ConstExprHashingUtils::HashString("QueueArn");
+        static constexpr uint32_t ApproximateNumberOfMessagesDelayed_HASH = ConstExprHashingUtils::HashString("ApproximateNumberOfMessagesDelayed");
+        static constexpr uint32_t DelaySeconds_HASH = ConstExprHashingUtils::HashString("DelaySeconds");
+        static constexpr uint32_t ReceiveMessageWaitTimeSeconds_HASH = ConstExprHashingUtils::HashString("ReceiveMessageWaitTimeSeconds");
+        static constexpr uint32_t RedrivePolicy_HASH = ConstExprHashingUtils::HashString("RedrivePolicy");
+        static constexpr uint32_t FifoQueue_HASH = ConstExprHashingUtils::HashString("FifoQueue");
+        static constexpr uint32_t ContentBasedDeduplication_HASH = ConstExprHashingUtils::HashString("ContentBasedDeduplication");
+        static constexpr uint32_t KmsMasterKeyId_HASH = ConstExprHashingUtils::HashString("KmsMasterKeyId");
+        static constexpr uint32_t KmsDataKeyReusePeriodSeconds_HASH = ConstExprHashingUtils::HashString("KmsDataKeyReusePeriodSeconds");
+        static constexpr uint32_t DeduplicationScope_HASH = ConstExprHashingUtils::HashString("DeduplicationScope");
+        static constexpr uint32_t FifoThroughputLimit_HASH = ConstExprHashingUtils::HashString("FifoThroughputLimit");
+        static constexpr uint32_t RedriveAllowPolicy_HASH = ConstExprHashingUtils::HashString("RedriveAllowPolicy");
+        static constexpr uint32_t SqsManagedSseEnabled_HASH = ConstExprHashingUtils::HashString("SqsManagedSseEnabled");
+        static constexpr uint32_t SentTimestamp_HASH = ConstExprHashingUtils::HashString("SentTimestamp");
+        static constexpr uint32_t ApproximateFirstReceiveTimestamp_HASH = ConstExprHashingUtils::HashString("ApproximateFirstReceiveTimestamp");
+        static constexpr uint32_t ApproximateReceiveCount_HASH = ConstExprHashingUtils::HashString("ApproximateReceiveCount");
+        static constexpr uint32_t SenderId_HASH = ConstExprHashingUtils::HashString("SenderId");
 
 
         QueueAttributeName GetQueueAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == All_HASH)
           {
             return QueueAttributeName::All;

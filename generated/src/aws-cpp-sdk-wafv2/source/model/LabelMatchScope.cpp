@@ -20,13 +20,13 @@ namespace Aws
       namespace LabelMatchScopeMapper
       {
 
-        static const int LABEL_HASH = HashingUtils::HashString("LABEL");
-        static const int NAMESPACE_HASH = HashingUtils::HashString("NAMESPACE");
+        static constexpr uint32_t LABEL_HASH = ConstExprHashingUtils::HashString("LABEL");
+        static constexpr uint32_t NAMESPACE_HASH = ConstExprHashingUtils::HashString("NAMESPACE");
 
 
         LabelMatchScope GetLabelMatchScopeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LABEL_HASH)
           {
             return LabelMatchScope::LABEL;

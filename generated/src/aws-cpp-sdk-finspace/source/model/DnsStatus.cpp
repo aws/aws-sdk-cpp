@@ -20,16 +20,16 @@ namespace Aws
       namespace DnsStatusMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int UPDATE_REQUESTED_HASH = HashingUtils::HashString("UPDATE_REQUESTED");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int FAILED_UPDATE_HASH = HashingUtils::HashString("FAILED_UPDATE");
-        static const int SUCCESSFULLY_UPDATED_HASH = HashingUtils::HashString("SUCCESSFULLY_UPDATED");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t UPDATE_REQUESTED_HASH = ConstExprHashingUtils::HashString("UPDATE_REQUESTED");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t FAILED_UPDATE_HASH = ConstExprHashingUtils::HashString("FAILED_UPDATE");
+        static constexpr uint32_t SUCCESSFULLY_UPDATED_HASH = ConstExprHashingUtils::HashString("SUCCESSFULLY_UPDATED");
 
 
         DnsStatus GetDnsStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return DnsStatus::NONE;

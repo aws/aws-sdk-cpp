@@ -20,13 +20,13 @@ namespace Aws
       namespace DetectLabelsFeatureNameMapper
       {
 
-        static const int GENERAL_LABELS_HASH = HashingUtils::HashString("GENERAL_LABELS");
-        static const int IMAGE_PROPERTIES_HASH = HashingUtils::HashString("IMAGE_PROPERTIES");
+        static constexpr uint32_t GENERAL_LABELS_HASH = ConstExprHashingUtils::HashString("GENERAL_LABELS");
+        static constexpr uint32_t IMAGE_PROPERTIES_HASH = ConstExprHashingUtils::HashString("IMAGE_PROPERTIES");
 
 
         DetectLabelsFeatureName GetDetectLabelsFeatureNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GENERAL_LABELS_HASH)
           {
             return DetectLabelsFeatureName::GENERAL_LABELS;

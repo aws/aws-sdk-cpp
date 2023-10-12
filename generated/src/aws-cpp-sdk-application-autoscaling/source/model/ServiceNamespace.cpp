@@ -20,25 +20,25 @@ namespace Aws
       namespace ServiceNamespaceMapper
       {
 
-        static const int ecs_HASH = HashingUtils::HashString("ecs");
-        static const int elasticmapreduce_HASH = HashingUtils::HashString("elasticmapreduce");
-        static const int ec2_HASH = HashingUtils::HashString("ec2");
-        static const int appstream_HASH = HashingUtils::HashString("appstream");
-        static const int dynamodb_HASH = HashingUtils::HashString("dynamodb");
-        static const int rds_HASH = HashingUtils::HashString("rds");
-        static const int sagemaker_HASH = HashingUtils::HashString("sagemaker");
-        static const int custom_resource_HASH = HashingUtils::HashString("custom-resource");
-        static const int comprehend_HASH = HashingUtils::HashString("comprehend");
-        static const int lambda_HASH = HashingUtils::HashString("lambda");
-        static const int cassandra_HASH = HashingUtils::HashString("cassandra");
-        static const int kafka_HASH = HashingUtils::HashString("kafka");
-        static const int elasticache_HASH = HashingUtils::HashString("elasticache");
-        static const int neptune_HASH = HashingUtils::HashString("neptune");
+        static constexpr uint32_t ecs_HASH = ConstExprHashingUtils::HashString("ecs");
+        static constexpr uint32_t elasticmapreduce_HASH = ConstExprHashingUtils::HashString("elasticmapreduce");
+        static constexpr uint32_t ec2_HASH = ConstExprHashingUtils::HashString("ec2");
+        static constexpr uint32_t appstream_HASH = ConstExprHashingUtils::HashString("appstream");
+        static constexpr uint32_t dynamodb_HASH = ConstExprHashingUtils::HashString("dynamodb");
+        static constexpr uint32_t rds_HASH = ConstExprHashingUtils::HashString("rds");
+        static constexpr uint32_t sagemaker_HASH = ConstExprHashingUtils::HashString("sagemaker");
+        static constexpr uint32_t custom_resource_HASH = ConstExprHashingUtils::HashString("custom-resource");
+        static constexpr uint32_t comprehend_HASH = ConstExprHashingUtils::HashString("comprehend");
+        static constexpr uint32_t lambda_HASH = ConstExprHashingUtils::HashString("lambda");
+        static constexpr uint32_t cassandra_HASH = ConstExprHashingUtils::HashString("cassandra");
+        static constexpr uint32_t kafka_HASH = ConstExprHashingUtils::HashString("kafka");
+        static constexpr uint32_t elasticache_HASH = ConstExprHashingUtils::HashString("elasticache");
+        static constexpr uint32_t neptune_HASH = ConstExprHashingUtils::HashString("neptune");
 
 
         ServiceNamespace GetServiceNamespaceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ecs_HASH)
           {
             return ServiceNamespace::ecs;

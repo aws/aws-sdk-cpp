@@ -20,16 +20,16 @@ namespace Aws
       namespace TtlDurationUnitMapper
       {
 
-        static const int Seconds_HASH = HashingUtils::HashString("Seconds");
-        static const int Minutes_HASH = HashingUtils::HashString("Minutes");
-        static const int Hours_HASH = HashingUtils::HashString("Hours");
-        static const int Days_HASH = HashingUtils::HashString("Days");
-        static const int Weeks_HASH = HashingUtils::HashString("Weeks");
+        static constexpr uint32_t Seconds_HASH = ConstExprHashingUtils::HashString("Seconds");
+        static constexpr uint32_t Minutes_HASH = ConstExprHashingUtils::HashString("Minutes");
+        static constexpr uint32_t Hours_HASH = ConstExprHashingUtils::HashString("Hours");
+        static constexpr uint32_t Days_HASH = ConstExprHashingUtils::HashString("Days");
+        static constexpr uint32_t Weeks_HASH = ConstExprHashingUtils::HashString("Weeks");
 
 
         TtlDurationUnit GetTtlDurationUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Seconds_HASH)
           {
             return TtlDurationUnit::Seconds;

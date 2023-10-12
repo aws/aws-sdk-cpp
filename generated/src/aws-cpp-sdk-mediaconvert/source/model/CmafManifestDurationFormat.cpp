@@ -20,13 +20,13 @@ namespace Aws
       namespace CmafManifestDurationFormatMapper
       {
 
-        static const int FLOATING_POINT_HASH = HashingUtils::HashString("FLOATING_POINT");
-        static const int INTEGER_HASH = HashingUtils::HashString("INTEGER");
+        static constexpr uint32_t FLOATING_POINT_HASH = ConstExprHashingUtils::HashString("FLOATING_POINT");
+        static constexpr uint32_t INTEGER_HASH = ConstExprHashingUtils::HashString("INTEGER");
 
 
         CmafManifestDurationFormat GetCmafManifestDurationFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FLOATING_POINT_HASH)
           {
             return CmafManifestDurationFormat::FLOATING_POINT;

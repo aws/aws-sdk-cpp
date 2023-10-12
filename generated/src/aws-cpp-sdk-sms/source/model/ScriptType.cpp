@@ -20,13 +20,13 @@ namespace Aws
       namespace ScriptTypeMapper
       {
 
-        static const int SHELL_SCRIPT_HASH = HashingUtils::HashString("SHELL_SCRIPT");
-        static const int POWERSHELL_SCRIPT_HASH = HashingUtils::HashString("POWERSHELL_SCRIPT");
+        static constexpr uint32_t SHELL_SCRIPT_HASH = ConstExprHashingUtils::HashString("SHELL_SCRIPT");
+        static constexpr uint32_t POWERSHELL_SCRIPT_HASH = ConstExprHashingUtils::HashString("POWERSHELL_SCRIPT");
 
 
         ScriptType GetScriptTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SHELL_SCRIPT_HASH)
           {
             return ScriptType::SHELL_SCRIPT;

@@ -20,22 +20,22 @@ namespace Aws
       namespace ConfluenceAttachmentFieldNameMapper
       {
 
-        static const int AUTHOR_HASH = HashingUtils::HashString("AUTHOR");
-        static const int CONTENT_TYPE_HASH = HashingUtils::HashString("CONTENT_TYPE");
-        static const int CREATED_DATE_HASH = HashingUtils::HashString("CREATED_DATE");
-        static const int DISPLAY_URL_HASH = HashingUtils::HashString("DISPLAY_URL");
-        static const int FILE_SIZE_HASH = HashingUtils::HashString("FILE_SIZE");
-        static const int ITEM_TYPE_HASH = HashingUtils::HashString("ITEM_TYPE");
-        static const int PARENT_ID_HASH = HashingUtils::HashString("PARENT_ID");
-        static const int SPACE_KEY_HASH = HashingUtils::HashString("SPACE_KEY");
-        static const int SPACE_NAME_HASH = HashingUtils::HashString("SPACE_NAME");
-        static const int URL_HASH = HashingUtils::HashString("URL");
-        static const int VERSION_HASH = HashingUtils::HashString("VERSION");
+        static constexpr uint32_t AUTHOR_HASH = ConstExprHashingUtils::HashString("AUTHOR");
+        static constexpr uint32_t CONTENT_TYPE_HASH = ConstExprHashingUtils::HashString("CONTENT_TYPE");
+        static constexpr uint32_t CREATED_DATE_HASH = ConstExprHashingUtils::HashString("CREATED_DATE");
+        static constexpr uint32_t DISPLAY_URL_HASH = ConstExprHashingUtils::HashString("DISPLAY_URL");
+        static constexpr uint32_t FILE_SIZE_HASH = ConstExprHashingUtils::HashString("FILE_SIZE");
+        static constexpr uint32_t ITEM_TYPE_HASH = ConstExprHashingUtils::HashString("ITEM_TYPE");
+        static constexpr uint32_t PARENT_ID_HASH = ConstExprHashingUtils::HashString("PARENT_ID");
+        static constexpr uint32_t SPACE_KEY_HASH = ConstExprHashingUtils::HashString("SPACE_KEY");
+        static constexpr uint32_t SPACE_NAME_HASH = ConstExprHashingUtils::HashString("SPACE_NAME");
+        static constexpr uint32_t URL_HASH = ConstExprHashingUtils::HashString("URL");
+        static constexpr uint32_t VERSION_HASH = ConstExprHashingUtils::HashString("VERSION");
 
 
         ConfluenceAttachmentFieldName GetConfluenceAttachmentFieldNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTHOR_HASH)
           {
             return ConfluenceAttachmentFieldName::AUTHOR;

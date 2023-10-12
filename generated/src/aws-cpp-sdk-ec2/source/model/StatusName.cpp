@@ -20,12 +20,12 @@ namespace Aws
       namespace StatusNameMapper
       {
 
-        static const int reachability_HASH = HashingUtils::HashString("reachability");
+        static constexpr uint32_t reachability_HASH = ConstExprHashingUtils::HashString("reachability");
 
 
         StatusName GetStatusNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == reachability_HASH)
           {
             return StatusName::reachability;

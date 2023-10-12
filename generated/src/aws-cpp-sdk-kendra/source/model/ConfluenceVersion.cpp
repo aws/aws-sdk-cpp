@@ -20,13 +20,13 @@ namespace Aws
       namespace ConfluenceVersionMapper
       {
 
-        static const int CLOUD_HASH = HashingUtils::HashString("CLOUD");
-        static const int SERVER_HASH = HashingUtils::HashString("SERVER");
+        static constexpr uint32_t CLOUD_HASH = ConstExprHashingUtils::HashString("CLOUD");
+        static constexpr uint32_t SERVER_HASH = ConstExprHashingUtils::HashString("SERVER");
 
 
         ConfluenceVersion GetConfluenceVersionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLOUD_HASH)
           {
             return ConfluenceVersion::CLOUD;

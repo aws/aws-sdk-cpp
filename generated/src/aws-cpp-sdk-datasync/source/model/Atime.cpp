@@ -20,13 +20,13 @@ namespace Aws
       namespace AtimeMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int BEST_EFFORT_HASH = HashingUtils::HashString("BEST_EFFORT");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t BEST_EFFORT_HASH = ConstExprHashingUtils::HashString("BEST_EFFORT");
 
 
         Atime GetAtimeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return Atime::NONE;

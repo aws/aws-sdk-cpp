@@ -20,15 +20,15 @@ namespace Aws
       namespace ScheduledQueryRunStatusMapper
       {
 
-        static const int AUTO_TRIGGER_SUCCESS_HASH = HashingUtils::HashString("AUTO_TRIGGER_SUCCESS");
-        static const int AUTO_TRIGGER_FAILURE_HASH = HashingUtils::HashString("AUTO_TRIGGER_FAILURE");
-        static const int MANUAL_TRIGGER_SUCCESS_HASH = HashingUtils::HashString("MANUAL_TRIGGER_SUCCESS");
-        static const int MANUAL_TRIGGER_FAILURE_HASH = HashingUtils::HashString("MANUAL_TRIGGER_FAILURE");
+        static constexpr uint32_t AUTO_TRIGGER_SUCCESS_HASH = ConstExprHashingUtils::HashString("AUTO_TRIGGER_SUCCESS");
+        static constexpr uint32_t AUTO_TRIGGER_FAILURE_HASH = ConstExprHashingUtils::HashString("AUTO_TRIGGER_FAILURE");
+        static constexpr uint32_t MANUAL_TRIGGER_SUCCESS_HASH = ConstExprHashingUtils::HashString("MANUAL_TRIGGER_SUCCESS");
+        static constexpr uint32_t MANUAL_TRIGGER_FAILURE_HASH = ConstExprHashingUtils::HashString("MANUAL_TRIGGER_FAILURE");
 
 
         ScheduledQueryRunStatus GetScheduledQueryRunStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_TRIGGER_SUCCESS_HASH)
           {
             return ScheduledQueryRunStatus::AUTO_TRIGGER_SUCCESS;

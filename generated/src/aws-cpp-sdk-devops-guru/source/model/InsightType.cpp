@@ -20,13 +20,13 @@ namespace Aws
       namespace InsightTypeMapper
       {
 
-        static const int REACTIVE_HASH = HashingUtils::HashString("REACTIVE");
-        static const int PROACTIVE_HASH = HashingUtils::HashString("PROACTIVE");
+        static constexpr uint32_t REACTIVE_HASH = ConstExprHashingUtils::HashString("REACTIVE");
+        static constexpr uint32_t PROACTIVE_HASH = ConstExprHashingUtils::HashString("PROACTIVE");
 
 
         InsightType GetInsightTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REACTIVE_HASH)
           {
             return InsightType::REACTIVE;

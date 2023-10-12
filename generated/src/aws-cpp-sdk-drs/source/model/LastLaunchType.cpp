@@ -20,13 +20,13 @@ namespace Aws
       namespace LastLaunchTypeMapper
       {
 
-        static const int RECOVERY_HASH = HashingUtils::HashString("RECOVERY");
-        static const int DRILL_HASH = HashingUtils::HashString("DRILL");
+        static constexpr uint32_t RECOVERY_HASH = ConstExprHashingUtils::HashString("RECOVERY");
+        static constexpr uint32_t DRILL_HASH = ConstExprHashingUtils::HashString("DRILL");
 
 
         LastLaunchType GetLastLaunchTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RECOVERY_HASH)
           {
             return LastLaunchType::RECOVERY;

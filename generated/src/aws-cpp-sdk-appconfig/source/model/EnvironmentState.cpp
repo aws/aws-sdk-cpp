@@ -20,15 +20,15 @@ namespace Aws
       namespace EnvironmentStateMapper
       {
 
-        static const int READY_FOR_DEPLOYMENT_HASH = HashingUtils::HashString("READY_FOR_DEPLOYMENT");
-        static const int DEPLOYING_HASH = HashingUtils::HashString("DEPLOYING");
-        static const int ROLLING_BACK_HASH = HashingUtils::HashString("ROLLING_BACK");
-        static const int ROLLED_BACK_HASH = HashingUtils::HashString("ROLLED_BACK");
+        static constexpr uint32_t READY_FOR_DEPLOYMENT_HASH = ConstExprHashingUtils::HashString("READY_FOR_DEPLOYMENT");
+        static constexpr uint32_t DEPLOYING_HASH = ConstExprHashingUtils::HashString("DEPLOYING");
+        static constexpr uint32_t ROLLING_BACK_HASH = ConstExprHashingUtils::HashString("ROLLING_BACK");
+        static constexpr uint32_t ROLLED_BACK_HASH = ConstExprHashingUtils::HashString("ROLLED_BACK");
 
 
         EnvironmentState GetEnvironmentStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == READY_FOR_DEPLOYMENT_HASH)
           {
             return EnvironmentState::READY_FOR_DEPLOYMENT;

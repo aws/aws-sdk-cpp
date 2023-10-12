@@ -20,19 +20,19 @@ namespace Aws
       namespace ActionEnumMapper
       {
 
-        static const int CREATE_HASH = HashingUtils::HashString("CREATE");
-        static const int UPDATE_METADATA_HASH = HashingUtils::HashString("UPDATE_METADATA");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
-        static const int UNDER_REVIEW_HASH = HashingUtils::HashString("UNDER_REVIEW");
-        static const int REVIEWED_HASH = HashingUtils::HashString("REVIEWED");
-        static const int IMPORT_EVIDENCE_HASH = HashingUtils::HashString("IMPORT_EVIDENCE");
+        static constexpr uint32_t CREATE_HASH = ConstExprHashingUtils::HashString("CREATE");
+        static constexpr uint32_t UPDATE_METADATA_HASH = ConstExprHashingUtils::HashString("UPDATE_METADATA");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t INACTIVE_HASH = ConstExprHashingUtils::HashString("INACTIVE");
+        static constexpr uint32_t DELETE__HASH = ConstExprHashingUtils::HashString("DELETE");
+        static constexpr uint32_t UNDER_REVIEW_HASH = ConstExprHashingUtils::HashString("UNDER_REVIEW");
+        static constexpr uint32_t REVIEWED_HASH = ConstExprHashingUtils::HashString("REVIEWED");
+        static constexpr uint32_t IMPORT_EVIDENCE_HASH = ConstExprHashingUtils::HashString("IMPORT_EVIDENCE");
 
 
         ActionEnum GetActionEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_HASH)
           {
             return ActionEnum::CREATE;

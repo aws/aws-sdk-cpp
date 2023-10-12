@@ -20,13 +20,13 @@ namespace Aws
       namespace Eac3MetadataControlMapper
       {
 
-        static const int FOLLOW_INPUT_HASH = HashingUtils::HashString("FOLLOW_INPUT");
-        static const int USE_CONFIGURED_HASH = HashingUtils::HashString("USE_CONFIGURED");
+        static constexpr uint32_t FOLLOW_INPUT_HASH = ConstExprHashingUtils::HashString("FOLLOW_INPUT");
+        static constexpr uint32_t USE_CONFIGURED_HASH = ConstExprHashingUtils::HashString("USE_CONFIGURED");
 
 
         Eac3MetadataControl GetEac3MetadataControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FOLLOW_INPUT_HASH)
           {
             return Eac3MetadataControl::FOLLOW_INPUT;

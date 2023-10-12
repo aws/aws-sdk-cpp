@@ -20,18 +20,18 @@ namespace Aws
       namespace ProtocolEnumMapper
       {
 
-        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
-        static const int HTTPS_HASH = HashingUtils::HashString("HTTPS");
-        static const int TCP_HASH = HashingUtils::HashString("TCP");
-        static const int TLS_HASH = HashingUtils::HashString("TLS");
-        static const int UDP_HASH = HashingUtils::HashString("UDP");
-        static const int TCP_UDP_HASH = HashingUtils::HashString("TCP_UDP");
-        static const int GENEVE_HASH = HashingUtils::HashString("GENEVE");
+        static constexpr uint32_t HTTP_HASH = ConstExprHashingUtils::HashString("HTTP");
+        static constexpr uint32_t HTTPS_HASH = ConstExprHashingUtils::HashString("HTTPS");
+        static constexpr uint32_t TCP_HASH = ConstExprHashingUtils::HashString("TCP");
+        static constexpr uint32_t TLS_HASH = ConstExprHashingUtils::HashString("TLS");
+        static constexpr uint32_t UDP_HASH = ConstExprHashingUtils::HashString("UDP");
+        static constexpr uint32_t TCP_UDP_HASH = ConstExprHashingUtils::HashString("TCP_UDP");
+        static constexpr uint32_t GENEVE_HASH = ConstExprHashingUtils::HashString("GENEVE");
 
 
         ProtocolEnum GetProtocolEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HTTP_HASH)
           {
             return ProtocolEnum::HTTP;

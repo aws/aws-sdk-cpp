@@ -20,13 +20,13 @@ namespace Aws
       namespace IpProtocolMapper
       {
 
-        static const int TCP_HASH = HashingUtils::HashString("TCP");
-        static const int UDP_HASH = HashingUtils::HashString("UDP");
+        static constexpr uint32_t TCP_HASH = ConstExprHashingUtils::HashString("TCP");
+        static constexpr uint32_t UDP_HASH = ConstExprHashingUtils::HashString("UDP");
 
 
         IpProtocol GetIpProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TCP_HASH)
           {
             return IpProtocol::TCP;

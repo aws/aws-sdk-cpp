@@ -20,14 +20,14 @@ namespace Aws
       namespace RenewTypeMapper
       {
 
-        static const int None_HASH = HashingUtils::HashString("None");
-        static const int Weekly_HASH = HashingUtils::HashString("Weekly");
-        static const int Monthly_HASH = HashingUtils::HashString("Monthly");
+        static constexpr uint32_t None_HASH = ConstExprHashingUtils::HashString("None");
+        static constexpr uint32_t Weekly_HASH = ConstExprHashingUtils::HashString("Weekly");
+        static constexpr uint32_t Monthly_HASH = ConstExprHashingUtils::HashString("Monthly");
 
 
         RenewType GetRenewTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == None_HASH)
           {
             return RenewType::None;

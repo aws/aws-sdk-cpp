@@ -20,13 +20,13 @@ namespace Aws
       namespace BarChartOrientationMapper
       {
 
-        static const int HORIZONTAL_HASH = HashingUtils::HashString("HORIZONTAL");
-        static const int VERTICAL_HASH = HashingUtils::HashString("VERTICAL");
+        static constexpr uint32_t HORIZONTAL_HASH = ConstExprHashingUtils::HashString("HORIZONTAL");
+        static constexpr uint32_t VERTICAL_HASH = ConstExprHashingUtils::HashString("VERTICAL");
 
 
         BarChartOrientation GetBarChartOrientationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HORIZONTAL_HASH)
           {
             return BarChartOrientation::HORIZONTAL;

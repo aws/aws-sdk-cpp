@@ -20,12 +20,12 @@ namespace Aws
       namespace HlsMediaStoreStorageClassMapper
       {
 
-        static const int TEMPORAL_HASH = HashingUtils::HashString("TEMPORAL");
+        static constexpr uint32_t TEMPORAL_HASH = ConstExprHashingUtils::HashString("TEMPORAL");
 
 
         HlsMediaStoreStorageClass GetHlsMediaStoreStorageClassForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TEMPORAL_HASH)
           {
             return HlsMediaStoreStorageClass::TEMPORAL;

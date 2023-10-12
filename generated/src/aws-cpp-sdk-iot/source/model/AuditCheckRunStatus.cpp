@@ -20,17 +20,17 @@ namespace Aws
       namespace AuditCheckRunStatusMapper
       {
 
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int WAITING_FOR_DATA_COLLECTION_HASH = HashingUtils::HashString("WAITING_FOR_DATA_COLLECTION");
-        static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
-        static const int COMPLETED_COMPLIANT_HASH = HashingUtils::HashString("COMPLETED_COMPLIANT");
-        static const int COMPLETED_NON_COMPLIANT_HASH = HashingUtils::HashString("COMPLETED_NON_COMPLIANT");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t WAITING_FOR_DATA_COLLECTION_HASH = ConstExprHashingUtils::HashString("WAITING_FOR_DATA_COLLECTION");
+        static constexpr uint32_t CANCELED_HASH = ConstExprHashingUtils::HashString("CANCELED");
+        static constexpr uint32_t COMPLETED_COMPLIANT_HASH = ConstExprHashingUtils::HashString("COMPLETED_COMPLIANT");
+        static constexpr uint32_t COMPLETED_NON_COMPLIANT_HASH = ConstExprHashingUtils::HashString("COMPLETED_NON_COMPLIANT");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         AuditCheckRunStatus GetAuditCheckRunStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IN_PROGRESS_HASH)
           {
             return AuditCheckRunStatus::IN_PROGRESS;

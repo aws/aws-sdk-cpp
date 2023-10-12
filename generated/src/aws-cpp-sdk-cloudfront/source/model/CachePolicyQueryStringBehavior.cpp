@@ -20,15 +20,15 @@ namespace Aws
       namespace CachePolicyQueryStringBehaviorMapper
       {
 
-        static const int none_HASH = HashingUtils::HashString("none");
-        static const int whitelist_HASH = HashingUtils::HashString("whitelist");
-        static const int allExcept_HASH = HashingUtils::HashString("allExcept");
-        static const int all_HASH = HashingUtils::HashString("all");
+        static constexpr uint32_t none_HASH = ConstExprHashingUtils::HashString("none");
+        static constexpr uint32_t whitelist_HASH = ConstExprHashingUtils::HashString("whitelist");
+        static constexpr uint32_t allExcept_HASH = ConstExprHashingUtils::HashString("allExcept");
+        static constexpr uint32_t all_HASH = ConstExprHashingUtils::HashString("all");
 
 
         CachePolicyQueryStringBehavior GetCachePolicyQueryStringBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == none_HASH)
           {
             return CachePolicyQueryStringBehavior::none;

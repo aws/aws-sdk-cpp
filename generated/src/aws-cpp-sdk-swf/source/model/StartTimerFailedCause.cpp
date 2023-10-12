@@ -20,15 +20,15 @@ namespace Aws
       namespace StartTimerFailedCauseMapper
       {
 
-        static const int TIMER_ID_ALREADY_IN_USE_HASH = HashingUtils::HashString("TIMER_ID_ALREADY_IN_USE");
-        static const int OPEN_TIMERS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OPEN_TIMERS_LIMIT_EXCEEDED");
-        static const int TIMER_CREATION_RATE_EXCEEDED_HASH = HashingUtils::HashString("TIMER_CREATION_RATE_EXCEEDED");
-        static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERATION_NOT_PERMITTED");
+        static constexpr uint32_t TIMER_ID_ALREADY_IN_USE_HASH = ConstExprHashingUtils::HashString("TIMER_ID_ALREADY_IN_USE");
+        static constexpr uint32_t OPEN_TIMERS_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("OPEN_TIMERS_LIMIT_EXCEEDED");
+        static constexpr uint32_t TIMER_CREATION_RATE_EXCEEDED_HASH = ConstExprHashingUtils::HashString("TIMER_CREATION_RATE_EXCEEDED");
+        static constexpr uint32_t OPERATION_NOT_PERMITTED_HASH = ConstExprHashingUtils::HashString("OPERATION_NOT_PERMITTED");
 
 
         StartTimerFailedCause GetStartTimerFailedCauseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TIMER_ID_ALREADY_IN_USE_HASH)
           {
             return StartTimerFailedCause::TIMER_ID_ALREADY_IN_USE;

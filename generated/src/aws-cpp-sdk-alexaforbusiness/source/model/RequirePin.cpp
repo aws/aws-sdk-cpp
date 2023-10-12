@@ -20,14 +20,14 @@ namespace Aws
       namespace RequirePinMapper
       {
 
-        static const int YES_HASH = HashingUtils::HashString("YES");
-        static const int NO_HASH = HashingUtils::HashString("NO");
-        static const int OPTIONAL_HASH = HashingUtils::HashString("OPTIONAL");
+        static constexpr uint32_t YES_HASH = ConstExprHashingUtils::HashString("YES");
+        static constexpr uint32_t NO_HASH = ConstExprHashingUtils::HashString("NO");
+        static constexpr uint32_t OPTIONAL_HASH = ConstExprHashingUtils::HashString("OPTIONAL");
 
 
         RequirePin GetRequirePinForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == YES_HASH)
           {
             return RequirePin::YES;

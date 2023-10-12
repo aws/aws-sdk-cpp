@@ -20,14 +20,14 @@ namespace Aws
       namespace CpuManufacturerMapper
       {
 
-        static const int intel_HASH = HashingUtils::HashString("intel");
-        static const int amd_HASH = HashingUtils::HashString("amd");
-        static const int amazon_web_services_HASH = HashingUtils::HashString("amazon-web-services");
+        static constexpr uint32_t intel_HASH = ConstExprHashingUtils::HashString("intel");
+        static constexpr uint32_t amd_HASH = ConstExprHashingUtils::HashString("amd");
+        static constexpr uint32_t amazon_web_services_HASH = ConstExprHashingUtils::HashString("amazon-web-services");
 
 
         CpuManufacturer GetCpuManufacturerForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == intel_HASH)
           {
             return CpuManufacturer::intel;

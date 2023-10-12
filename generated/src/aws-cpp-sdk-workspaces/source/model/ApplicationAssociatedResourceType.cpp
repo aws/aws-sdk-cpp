@@ -20,14 +20,14 @@ namespace Aws
       namespace ApplicationAssociatedResourceTypeMapper
       {
 
-        static const int WORKSPACE_HASH = HashingUtils::HashString("WORKSPACE");
-        static const int BUNDLE_HASH = HashingUtils::HashString("BUNDLE");
-        static const int IMAGE_HASH = HashingUtils::HashString("IMAGE");
+        static constexpr uint32_t WORKSPACE_HASH = ConstExprHashingUtils::HashString("WORKSPACE");
+        static constexpr uint32_t BUNDLE_HASH = ConstExprHashingUtils::HashString("BUNDLE");
+        static constexpr uint32_t IMAGE_HASH = ConstExprHashingUtils::HashString("IMAGE");
 
 
         ApplicationAssociatedResourceType GetApplicationAssociatedResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WORKSPACE_HASH)
           {
             return ApplicationAssociatedResourceType::WORKSPACE;

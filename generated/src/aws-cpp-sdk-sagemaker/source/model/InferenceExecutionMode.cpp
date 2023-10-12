@@ -20,13 +20,13 @@ namespace Aws
       namespace InferenceExecutionModeMapper
       {
 
-        static const int Serial_HASH = HashingUtils::HashString("Serial");
-        static const int Direct_HASH = HashingUtils::HashString("Direct");
+        static constexpr uint32_t Serial_HASH = ConstExprHashingUtils::HashString("Serial");
+        static constexpr uint32_t Direct_HASH = ConstExprHashingUtils::HashString("Direct");
 
 
         InferenceExecutionMode GetInferenceExecutionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Serial_HASH)
           {
             return InferenceExecutionMode::Serial;

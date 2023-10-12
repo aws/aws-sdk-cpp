@@ -20,13 +20,13 @@ namespace Aws
       namespace CallLegTypeMapper
       {
 
-        static const int Caller_HASH = HashingUtils::HashString("Caller");
-        static const int Callee_HASH = HashingUtils::HashString("Callee");
+        static constexpr uint32_t Caller_HASH = ConstExprHashingUtils::HashString("Caller");
+        static constexpr uint32_t Callee_HASH = ConstExprHashingUtils::HashString("Callee");
 
 
         CallLegType GetCallLegTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Caller_HASH)
           {
             return CallLegType::Caller;

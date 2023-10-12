@@ -20,13 +20,13 @@ namespace Aws
       namespace ClientVpnEndpointAttributeStatusCodeMapper
       {
 
-        static const int applying_HASH = HashingUtils::HashString("applying");
-        static const int applied_HASH = HashingUtils::HashString("applied");
+        static constexpr uint32_t applying_HASH = ConstExprHashingUtils::HashString("applying");
+        static constexpr uint32_t applied_HASH = ConstExprHashingUtils::HashString("applied");
 
 
         ClientVpnEndpointAttributeStatusCode GetClientVpnEndpointAttributeStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == applying_HASH)
           {
             return ClientVpnEndpointAttributeStatusCode::applying;

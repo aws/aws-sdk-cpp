@@ -20,13 +20,13 @@ namespace Aws
       namespace AttributeMatchingModelMapper
       {
 
-        static const int ONE_TO_ONE_HASH = HashingUtils::HashString("ONE_TO_ONE");
-        static const int MANY_TO_MANY_HASH = HashingUtils::HashString("MANY_TO_MANY");
+        static constexpr uint32_t ONE_TO_ONE_HASH = ConstExprHashingUtils::HashString("ONE_TO_ONE");
+        static constexpr uint32_t MANY_TO_MANY_HASH = ConstExprHashingUtils::HashString("MANY_TO_MANY");
 
 
         AttributeMatchingModel GetAttributeMatchingModelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ONE_TO_ONE_HASH)
           {
             return AttributeMatchingModel::ONE_TO_ONE;

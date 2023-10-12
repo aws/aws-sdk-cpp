@@ -20,14 +20,14 @@ namespace Aws
       namespace RequiresRecreationMapper
       {
 
-        static const int NEVER_HASH = HashingUtils::HashString("NEVER");
-        static const int CONDITIONALLY_HASH = HashingUtils::HashString("CONDITIONALLY");
-        static const int ALWAYS_HASH = HashingUtils::HashString("ALWAYS");
+        static constexpr uint32_t NEVER_HASH = ConstExprHashingUtils::HashString("NEVER");
+        static constexpr uint32_t CONDITIONALLY_HASH = ConstExprHashingUtils::HashString("CONDITIONALLY");
+        static constexpr uint32_t ALWAYS_HASH = ConstExprHashingUtils::HashString("ALWAYS");
 
 
         RequiresRecreation GetRequiresRecreationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NEVER_HASH)
           {
             return RequiresRecreation::NEVER;

@@ -20,13 +20,13 @@ namespace Aws
       namespace FindingStatisticsSortAttributeNameMapper
       {
 
-        static const int groupKey_HASH = HashingUtils::HashString("groupKey");
-        static const int count_HASH = HashingUtils::HashString("count");
+        static constexpr uint32_t groupKey_HASH = ConstExprHashingUtils::HashString("groupKey");
+        static constexpr uint32_t count_HASH = ConstExprHashingUtils::HashString("count");
 
 
         FindingStatisticsSortAttributeName GetFindingStatisticsSortAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == groupKey_HASH)
           {
             return FindingStatisticsSortAttributeName::groupKey;

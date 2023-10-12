@@ -20,14 +20,14 @@ namespace Aws
       namespace ColumnTypeMapper
       {
 
-        static const int NODE_HASH = HashingUtils::HashString("NODE");
-        static const int EDGE_HASH = HashingUtils::HashString("EDGE");
-        static const int VALUE_HASH = HashingUtils::HashString("VALUE");
+        static constexpr uint32_t NODE_HASH = ConstExprHashingUtils::HashString("NODE");
+        static constexpr uint32_t EDGE_HASH = ConstExprHashingUtils::HashString("EDGE");
+        static constexpr uint32_t VALUE_HASH = ConstExprHashingUtils::HashString("VALUE");
 
 
         ColumnType GetColumnTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NODE_HASH)
           {
             return ColumnType::NODE;

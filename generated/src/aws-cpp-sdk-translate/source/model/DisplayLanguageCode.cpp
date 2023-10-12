@@ -20,21 +20,21 @@ namespace Aws
       namespace DisplayLanguageCodeMapper
       {
 
-        static const int de_HASH = HashingUtils::HashString("de");
-        static const int en_HASH = HashingUtils::HashString("en");
-        static const int es_HASH = HashingUtils::HashString("es");
-        static const int fr_HASH = HashingUtils::HashString("fr");
-        static const int it_HASH = HashingUtils::HashString("it");
-        static const int ja_HASH = HashingUtils::HashString("ja");
-        static const int ko_HASH = HashingUtils::HashString("ko");
-        static const int pt_HASH = HashingUtils::HashString("pt");
-        static const int zh_HASH = HashingUtils::HashString("zh");
-        static const int zh_TW_HASH = HashingUtils::HashString("zh-TW");
+        static constexpr uint32_t de_HASH = ConstExprHashingUtils::HashString("de");
+        static constexpr uint32_t en_HASH = ConstExprHashingUtils::HashString("en");
+        static constexpr uint32_t es_HASH = ConstExprHashingUtils::HashString("es");
+        static constexpr uint32_t fr_HASH = ConstExprHashingUtils::HashString("fr");
+        static constexpr uint32_t it_HASH = ConstExprHashingUtils::HashString("it");
+        static constexpr uint32_t ja_HASH = ConstExprHashingUtils::HashString("ja");
+        static constexpr uint32_t ko_HASH = ConstExprHashingUtils::HashString("ko");
+        static constexpr uint32_t pt_HASH = ConstExprHashingUtils::HashString("pt");
+        static constexpr uint32_t zh_HASH = ConstExprHashingUtils::HashString("zh");
+        static constexpr uint32_t zh_TW_HASH = ConstExprHashingUtils::HashString("zh-TW");
 
 
         DisplayLanguageCode GetDisplayLanguageCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == de_HASH)
           {
             return DisplayLanguageCode::de;

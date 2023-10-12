@@ -20,13 +20,13 @@ namespace Aws
       namespace PreventUserExistenceErrorTypesMapper
       {
 
-        static const int LEGACY_HASH = HashingUtils::HashString("LEGACY");
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+        static constexpr uint32_t LEGACY_HASH = ConstExprHashingUtils::HashString("LEGACY");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
 
 
         PreventUserExistenceErrorTypes GetPreventUserExistenceErrorTypesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LEGACY_HASH)
           {
             return PreventUserExistenceErrorTypes::LEGACY;

@@ -20,13 +20,13 @@ namespace Aws
       namespace LambdaFilesystemPermissionMapper
       {
 
-        static const int ro_HASH = HashingUtils::HashString("ro");
-        static const int rw_HASH = HashingUtils::HashString("rw");
+        static constexpr uint32_t ro_HASH = ConstExprHashingUtils::HashString("ro");
+        static constexpr uint32_t rw_HASH = ConstExprHashingUtils::HashString("rw");
 
 
         LambdaFilesystemPermission GetLambdaFilesystemPermissionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ro_HASH)
           {
             return LambdaFilesystemPermission::ro;

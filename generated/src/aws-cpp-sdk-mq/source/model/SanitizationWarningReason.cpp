@@ -20,14 +20,14 @@ namespace Aws
       namespace SanitizationWarningReasonMapper
       {
 
-        static const int DISALLOWED_ELEMENT_REMOVED_HASH = HashingUtils::HashString("DISALLOWED_ELEMENT_REMOVED");
-        static const int DISALLOWED_ATTRIBUTE_REMOVED_HASH = HashingUtils::HashString("DISALLOWED_ATTRIBUTE_REMOVED");
-        static const int INVALID_ATTRIBUTE_VALUE_REMOVED_HASH = HashingUtils::HashString("INVALID_ATTRIBUTE_VALUE_REMOVED");
+        static constexpr uint32_t DISALLOWED_ELEMENT_REMOVED_HASH = ConstExprHashingUtils::HashString("DISALLOWED_ELEMENT_REMOVED");
+        static constexpr uint32_t DISALLOWED_ATTRIBUTE_REMOVED_HASH = ConstExprHashingUtils::HashString("DISALLOWED_ATTRIBUTE_REMOVED");
+        static constexpr uint32_t INVALID_ATTRIBUTE_VALUE_REMOVED_HASH = ConstExprHashingUtils::HashString("INVALID_ATTRIBUTE_VALUE_REMOVED");
 
 
         SanitizationWarningReason GetSanitizationWarningReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISALLOWED_ELEMENT_REMOVED_HASH)
           {
             return SanitizationWarningReason::DISALLOWED_ELEMENT_REMOVED;

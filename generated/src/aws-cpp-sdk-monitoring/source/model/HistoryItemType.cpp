@@ -20,14 +20,14 @@ namespace Aws
       namespace HistoryItemTypeMapper
       {
 
-        static const int ConfigurationUpdate_HASH = HashingUtils::HashString("ConfigurationUpdate");
-        static const int StateUpdate_HASH = HashingUtils::HashString("StateUpdate");
-        static const int Action_HASH = HashingUtils::HashString("Action");
+        static constexpr uint32_t ConfigurationUpdate_HASH = ConstExprHashingUtils::HashString("ConfigurationUpdate");
+        static constexpr uint32_t StateUpdate_HASH = ConstExprHashingUtils::HashString("StateUpdate");
+        static constexpr uint32_t Action_HASH = ConstExprHashingUtils::HashString("Action");
 
 
         HistoryItemType GetHistoryItemTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ConfigurationUpdate_HASH)
           {
             return HistoryItemType::ConfigurationUpdate;

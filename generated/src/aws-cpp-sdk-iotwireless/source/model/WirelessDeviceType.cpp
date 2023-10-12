@@ -20,13 +20,13 @@ namespace Aws
       namespace WirelessDeviceTypeMapper
       {
 
-        static const int Sidewalk_HASH = HashingUtils::HashString("Sidewalk");
-        static const int LoRaWAN_HASH = HashingUtils::HashString("LoRaWAN");
+        static constexpr uint32_t Sidewalk_HASH = ConstExprHashingUtils::HashString("Sidewalk");
+        static constexpr uint32_t LoRaWAN_HASH = ConstExprHashingUtils::HashString("LoRaWAN");
 
 
         WirelessDeviceType GetWirelessDeviceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Sidewalk_HASH)
           {
             return WirelessDeviceType::Sidewalk;

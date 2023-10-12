@@ -20,18 +20,18 @@ namespace Aws
       namespace AttributeTypeMapper
       {
 
-        static const int INCLUSIVE_HASH = HashingUtils::HashString("INCLUSIVE");
-        static const int EXCLUSIVE_HASH = HashingUtils::HashString("EXCLUSIVE");
-        static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
-        static const int BEFORE_HASH = HashingUtils::HashString("BEFORE");
-        static const int AFTER_HASH = HashingUtils::HashString("AFTER");
-        static const int ON_HASH = HashingUtils::HashString("ON");
-        static const int BETWEEN_HASH = HashingUtils::HashString("BETWEEN");
+        static constexpr uint32_t INCLUSIVE_HASH = ConstExprHashingUtils::HashString("INCLUSIVE");
+        static constexpr uint32_t EXCLUSIVE_HASH = ConstExprHashingUtils::HashString("EXCLUSIVE");
+        static constexpr uint32_t CONTAINS_HASH = ConstExprHashingUtils::HashString("CONTAINS");
+        static constexpr uint32_t BEFORE_HASH = ConstExprHashingUtils::HashString("BEFORE");
+        static constexpr uint32_t AFTER_HASH = ConstExprHashingUtils::HashString("AFTER");
+        static constexpr uint32_t ON_HASH = ConstExprHashingUtils::HashString("ON");
+        static constexpr uint32_t BETWEEN_HASH = ConstExprHashingUtils::HashString("BETWEEN");
 
 
         AttributeType GetAttributeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INCLUSIVE_HASH)
           {
             return AttributeType::INCLUSIVE;

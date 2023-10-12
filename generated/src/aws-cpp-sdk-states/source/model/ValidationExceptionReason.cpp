@@ -20,15 +20,15 @@ namespace Aws
       namespace ValidationExceptionReasonMapper
       {
 
-        static const int API_DOES_NOT_SUPPORT_LABELED_ARNS_HASH = HashingUtils::HashString("API_DOES_NOT_SUPPORT_LABELED_ARNS");
-        static const int MISSING_REQUIRED_PARAMETER_HASH = HashingUtils::HashString("MISSING_REQUIRED_PARAMETER");
-        static const int CANNOT_UPDATE_COMPLETED_MAP_RUN_HASH = HashingUtils::HashString("CANNOT_UPDATE_COMPLETED_MAP_RUN");
-        static const int INVALID_ROUTING_CONFIGURATION_HASH = HashingUtils::HashString("INVALID_ROUTING_CONFIGURATION");
+        static constexpr uint32_t API_DOES_NOT_SUPPORT_LABELED_ARNS_HASH = ConstExprHashingUtils::HashString("API_DOES_NOT_SUPPORT_LABELED_ARNS");
+        static constexpr uint32_t MISSING_REQUIRED_PARAMETER_HASH = ConstExprHashingUtils::HashString("MISSING_REQUIRED_PARAMETER");
+        static constexpr uint32_t CANNOT_UPDATE_COMPLETED_MAP_RUN_HASH = ConstExprHashingUtils::HashString("CANNOT_UPDATE_COMPLETED_MAP_RUN");
+        static constexpr uint32_t INVALID_ROUTING_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("INVALID_ROUTING_CONFIGURATION");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == API_DOES_NOT_SUPPORT_LABELED_ARNS_HASH)
           {
             return ValidationExceptionReason::API_DOES_NOT_SUPPORT_LABELED_ARNS;

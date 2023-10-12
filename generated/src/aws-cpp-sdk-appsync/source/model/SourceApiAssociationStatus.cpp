@@ -20,19 +20,19 @@ namespace Aws
       namespace SourceApiAssociationStatusMapper
       {
 
-        static const int MERGE_SCHEDULED_HASH = HashingUtils::HashString("MERGE_SCHEDULED");
-        static const int MERGE_FAILED_HASH = HashingUtils::HashString("MERGE_FAILED");
-        static const int MERGE_SUCCESS_HASH = HashingUtils::HashString("MERGE_SUCCESS");
-        static const int MERGE_IN_PROGRESS_HASH = HashingUtils::HashString("MERGE_IN_PROGRESS");
-        static const int AUTO_MERGE_SCHEDULE_FAILED_HASH = HashingUtils::HashString("AUTO_MERGE_SCHEDULE_FAILED");
-        static const int DELETION_SCHEDULED_HASH = HashingUtils::HashString("DELETION_SCHEDULED");
-        static const int DELETION_IN_PROGRESS_HASH = HashingUtils::HashString("DELETION_IN_PROGRESS");
-        static const int DELETION_FAILED_HASH = HashingUtils::HashString("DELETION_FAILED");
+        static constexpr uint32_t MERGE_SCHEDULED_HASH = ConstExprHashingUtils::HashString("MERGE_SCHEDULED");
+        static constexpr uint32_t MERGE_FAILED_HASH = ConstExprHashingUtils::HashString("MERGE_FAILED");
+        static constexpr uint32_t MERGE_SUCCESS_HASH = ConstExprHashingUtils::HashString("MERGE_SUCCESS");
+        static constexpr uint32_t MERGE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("MERGE_IN_PROGRESS");
+        static constexpr uint32_t AUTO_MERGE_SCHEDULE_FAILED_HASH = ConstExprHashingUtils::HashString("AUTO_MERGE_SCHEDULE_FAILED");
+        static constexpr uint32_t DELETION_SCHEDULED_HASH = ConstExprHashingUtils::HashString("DELETION_SCHEDULED");
+        static constexpr uint32_t DELETION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("DELETION_IN_PROGRESS");
+        static constexpr uint32_t DELETION_FAILED_HASH = ConstExprHashingUtils::HashString("DELETION_FAILED");
 
 
         SourceApiAssociationStatus GetSourceApiAssociationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MERGE_SCHEDULED_HASH)
           {
             return SourceApiAssociationStatus::MERGE_SCHEDULED;

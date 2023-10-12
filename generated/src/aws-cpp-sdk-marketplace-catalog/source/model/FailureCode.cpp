@@ -20,13 +20,13 @@ namespace Aws
       namespace FailureCodeMapper
       {
 
-        static const int CLIENT_ERROR_HASH = HashingUtils::HashString("CLIENT_ERROR");
-        static const int SERVER_FAULT_HASH = HashingUtils::HashString("SERVER_FAULT");
+        static constexpr uint32_t CLIENT_ERROR_HASH = ConstExprHashingUtils::HashString("CLIENT_ERROR");
+        static constexpr uint32_t SERVER_FAULT_HASH = ConstExprHashingUtils::HashString("SERVER_FAULT");
 
 
         FailureCode GetFailureCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLIENT_ERROR_HASH)
           {
             return FailureCode::CLIENT_ERROR;

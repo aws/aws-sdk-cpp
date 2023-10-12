@@ -20,13 +20,13 @@ namespace Aws
       namespace InputLossImageTypeMapper
       {
 
-        static const int COLOR_HASH = HashingUtils::HashString("COLOR");
-        static const int SLATE_HASH = HashingUtils::HashString("SLATE");
+        static constexpr uint32_t COLOR_HASH = ConstExprHashingUtils::HashString("COLOR");
+        static constexpr uint32_t SLATE_HASH = ConstExprHashingUtils::HashString("SLATE");
 
 
         InputLossImageType GetInputLossImageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COLOR_HASH)
           {
             return InputLossImageType::COLOR;

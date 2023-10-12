@@ -20,13 +20,13 @@ namespace Aws
       namespace DeviceTypeMapper
       {
 
-        static const int PANORAMA_APPLIANCE_DEVELOPER_KIT_HASH = HashingUtils::HashString("PANORAMA_APPLIANCE_DEVELOPER_KIT");
-        static const int PANORAMA_APPLIANCE_HASH = HashingUtils::HashString("PANORAMA_APPLIANCE");
+        static constexpr uint32_t PANORAMA_APPLIANCE_DEVELOPER_KIT_HASH = ConstExprHashingUtils::HashString("PANORAMA_APPLIANCE_DEVELOPER_KIT");
+        static constexpr uint32_t PANORAMA_APPLIANCE_HASH = ConstExprHashingUtils::HashString("PANORAMA_APPLIANCE");
 
 
         DeviceType GetDeviceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PANORAMA_APPLIANCE_DEVELOPER_KIT_HASH)
           {
             return DeviceType::PANORAMA_APPLIANCE_DEVELOPER_KIT;

@@ -20,17 +20,17 @@ namespace Aws
       namespace JobStatusMapper
       {
 
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-        static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
-        static const int IDLE_HASH = HashingUtils::HashString("IDLE");
-        static const int USER_PAUSED_HASH = HashingUtils::HashString("USER_PAUSED");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t PAUSED_HASH = ConstExprHashingUtils::HashString("PAUSED");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t COMPLETE_HASH = ConstExprHashingUtils::HashString("COMPLETE");
+        static constexpr uint32_t IDLE_HASH = ConstExprHashingUtils::HashString("IDLE");
+        static constexpr uint32_t USER_PAUSED_HASH = ConstExprHashingUtils::HashString("USER_PAUSED");
 
 
         JobStatus GetJobStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RUNNING_HASH)
           {
             return JobStatus::RUNNING;

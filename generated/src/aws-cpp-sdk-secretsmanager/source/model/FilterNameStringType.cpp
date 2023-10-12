@@ -20,18 +20,18 @@ namespace Aws
       namespace FilterNameStringTypeMapper
       {
 
-        static const int description_HASH = HashingUtils::HashString("description");
-        static const int name_HASH = HashingUtils::HashString("name");
-        static const int tag_key_HASH = HashingUtils::HashString("tag-key");
-        static const int tag_value_HASH = HashingUtils::HashString("tag-value");
-        static const int primary_region_HASH = HashingUtils::HashString("primary-region");
-        static const int owning_service_HASH = HashingUtils::HashString("owning-service");
-        static const int all_HASH = HashingUtils::HashString("all");
+        static constexpr uint32_t description_HASH = ConstExprHashingUtils::HashString("description");
+        static constexpr uint32_t name_HASH = ConstExprHashingUtils::HashString("name");
+        static constexpr uint32_t tag_key_HASH = ConstExprHashingUtils::HashString("tag-key");
+        static constexpr uint32_t tag_value_HASH = ConstExprHashingUtils::HashString("tag-value");
+        static constexpr uint32_t primary_region_HASH = ConstExprHashingUtils::HashString("primary-region");
+        static constexpr uint32_t owning_service_HASH = ConstExprHashingUtils::HashString("owning-service");
+        static constexpr uint32_t all_HASH = ConstExprHashingUtils::HashString("all");
 
 
         FilterNameStringType GetFilterNameStringTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == description_HASH)
           {
             return FilterNameStringType::description;

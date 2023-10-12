@@ -20,14 +20,14 @@ namespace Aws
       namespace AutodefinedReverseFlagMapper
       {
 
-        static const int ENABLE_HASH = HashingUtils::HashString("ENABLE");
-        static const int DISABLE_HASH = HashingUtils::HashString("DISABLE");
-        static const int USE_LOCAL_RESOURCE_SETTING_HASH = HashingUtils::HashString("USE_LOCAL_RESOURCE_SETTING");
+        static constexpr uint32_t ENABLE_HASH = ConstExprHashingUtils::HashString("ENABLE");
+        static constexpr uint32_t DISABLE_HASH = ConstExprHashingUtils::HashString("DISABLE");
+        static constexpr uint32_t USE_LOCAL_RESOURCE_SETTING_HASH = ConstExprHashingUtils::HashString("USE_LOCAL_RESOURCE_SETTING");
 
 
         AutodefinedReverseFlag GetAutodefinedReverseFlagForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLE_HASH)
           {
             return AutodefinedReverseFlag::ENABLE;

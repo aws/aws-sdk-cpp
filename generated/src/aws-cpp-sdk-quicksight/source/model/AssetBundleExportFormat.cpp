@@ -20,13 +20,13 @@ namespace Aws
       namespace AssetBundleExportFormatMapper
       {
 
-        static const int CLOUDFORMATION_JSON_HASH = HashingUtils::HashString("CLOUDFORMATION_JSON");
-        static const int QUICKSIGHT_JSON_HASH = HashingUtils::HashString("QUICKSIGHT_JSON");
+        static constexpr uint32_t CLOUDFORMATION_JSON_HASH = ConstExprHashingUtils::HashString("CLOUDFORMATION_JSON");
+        static constexpr uint32_t QUICKSIGHT_JSON_HASH = ConstExprHashingUtils::HashString("QUICKSIGHT_JSON");
 
 
         AssetBundleExportFormat GetAssetBundleExportFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLOUDFORMATION_JSON_HASH)
           {
             return AssetBundleExportFormat::CLOUDFORMATION_JSON;

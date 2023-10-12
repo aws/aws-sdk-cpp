@@ -20,13 +20,13 @@ namespace Aws
       namespace M2tsAribCaptionsPidControlMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int USE_CONFIGURED_HASH = HashingUtils::HashString("USE_CONFIGURED");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t USE_CONFIGURED_HASH = ConstExprHashingUtils::HashString("USE_CONFIGURED");
 
 
         M2tsAribCaptionsPidControl GetM2tsAribCaptionsPidControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return M2tsAribCaptionsPidControl::AUTO;

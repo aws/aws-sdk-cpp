@@ -20,14 +20,14 @@ namespace Aws
       namespace FlexCacheEndpointTypeMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int ORIGIN_HASH = HashingUtils::HashString("ORIGIN");
-        static const int CACHE_HASH = HashingUtils::HashString("CACHE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t ORIGIN_HASH = ConstExprHashingUtils::HashString("ORIGIN");
+        static constexpr uint32_t CACHE_HASH = ConstExprHashingUtils::HashString("CACHE");
 
 
         FlexCacheEndpointType GetFlexCacheEndpointTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return FlexCacheEndpointType::NONE;

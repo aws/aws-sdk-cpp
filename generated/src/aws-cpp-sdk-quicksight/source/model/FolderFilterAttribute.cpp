@@ -20,18 +20,18 @@ namespace Aws
       namespace FolderFilterAttributeMapper
       {
 
-        static const int PARENT_FOLDER_ARN_HASH = HashingUtils::HashString("PARENT_FOLDER_ARN");
-        static const int DIRECT_QUICKSIGHT_OWNER_HASH = HashingUtils::HashString("DIRECT_QUICKSIGHT_OWNER");
-        static const int DIRECT_QUICKSIGHT_SOLE_OWNER_HASH = HashingUtils::HashString("DIRECT_QUICKSIGHT_SOLE_OWNER");
-        static const int DIRECT_QUICKSIGHT_VIEWER_OR_OWNER_HASH = HashingUtils::HashString("DIRECT_QUICKSIGHT_VIEWER_OR_OWNER");
-        static const int QUICKSIGHT_OWNER_HASH = HashingUtils::HashString("QUICKSIGHT_OWNER");
-        static const int QUICKSIGHT_VIEWER_OR_OWNER_HASH = HashingUtils::HashString("QUICKSIGHT_VIEWER_OR_OWNER");
-        static const int FOLDER_NAME_HASH = HashingUtils::HashString("FOLDER_NAME");
+        static constexpr uint32_t PARENT_FOLDER_ARN_HASH = ConstExprHashingUtils::HashString("PARENT_FOLDER_ARN");
+        static constexpr uint32_t DIRECT_QUICKSIGHT_OWNER_HASH = ConstExprHashingUtils::HashString("DIRECT_QUICKSIGHT_OWNER");
+        static constexpr uint32_t DIRECT_QUICKSIGHT_SOLE_OWNER_HASH = ConstExprHashingUtils::HashString("DIRECT_QUICKSIGHT_SOLE_OWNER");
+        static constexpr uint32_t DIRECT_QUICKSIGHT_VIEWER_OR_OWNER_HASH = ConstExprHashingUtils::HashString("DIRECT_QUICKSIGHT_VIEWER_OR_OWNER");
+        static constexpr uint32_t QUICKSIGHT_OWNER_HASH = ConstExprHashingUtils::HashString("QUICKSIGHT_OWNER");
+        static constexpr uint32_t QUICKSIGHT_VIEWER_OR_OWNER_HASH = ConstExprHashingUtils::HashString("QUICKSIGHT_VIEWER_OR_OWNER");
+        static constexpr uint32_t FOLDER_NAME_HASH = ConstExprHashingUtils::HashString("FOLDER_NAME");
 
 
         FolderFilterAttribute GetFolderFilterAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PARENT_FOLDER_ARN_HASH)
           {
             return FolderFilterAttribute::PARENT_FOLDER_ARN;

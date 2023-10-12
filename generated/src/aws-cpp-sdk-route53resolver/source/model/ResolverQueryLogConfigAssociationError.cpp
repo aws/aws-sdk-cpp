@@ -20,15 +20,15 @@ namespace Aws
       namespace ResolverQueryLogConfigAssociationErrorMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int DESTINATION_NOT_FOUND_HASH = HashingUtils::HashString("DESTINATION_NOT_FOUND");
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
-        static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("INTERNAL_SERVICE_ERROR");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t DESTINATION_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("DESTINATION_NOT_FOUND");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t INTERNAL_SERVICE_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_SERVICE_ERROR");
 
 
         ResolverQueryLogConfigAssociationError GetResolverQueryLogConfigAssociationErrorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return ResolverQueryLogConfigAssociationError::NONE;

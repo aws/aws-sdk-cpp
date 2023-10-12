@@ -20,14 +20,14 @@ namespace Aws
       namespace ConfigurationEventStatusMapper
       {
 
-        static const int INFO_HASH = HashingUtils::HashString("INFO");
-        static const int WARN_HASH = HashingUtils::HashString("WARN");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t INFO_HASH = ConstExprHashingUtils::HashString("INFO");
+        static constexpr uint32_t WARN_HASH = ConstExprHashingUtils::HashString("WARN");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         ConfigurationEventStatus GetConfigurationEventStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INFO_HASH)
           {
             return ConfigurationEventStatus::INFO;

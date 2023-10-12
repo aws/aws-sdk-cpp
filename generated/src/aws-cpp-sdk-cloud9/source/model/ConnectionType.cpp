@@ -20,13 +20,13 @@ namespace Aws
       namespace ConnectionTypeMapper
       {
 
-        static const int CONNECT_SSH_HASH = HashingUtils::HashString("CONNECT_SSH");
-        static const int CONNECT_SSM_HASH = HashingUtils::HashString("CONNECT_SSM");
+        static constexpr uint32_t CONNECT_SSH_HASH = ConstExprHashingUtils::HashString("CONNECT_SSH");
+        static constexpr uint32_t CONNECT_SSM_HASH = ConstExprHashingUtils::HashString("CONNECT_SSM");
 
 
         ConnectionType GetConnectionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONNECT_SSH_HASH)
           {
             return ConnectionType::CONNECT_SSH;

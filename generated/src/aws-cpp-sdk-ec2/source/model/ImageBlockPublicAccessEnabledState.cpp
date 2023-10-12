@@ -20,12 +20,12 @@ namespace Aws
       namespace ImageBlockPublicAccessEnabledStateMapper
       {
 
-        static const int block_new_sharing_HASH = HashingUtils::HashString("block-new-sharing");
+        static constexpr uint32_t block_new_sharing_HASH = ConstExprHashingUtils::HashString("block-new-sharing");
 
 
         ImageBlockPublicAccessEnabledState GetImageBlockPublicAccessEnabledStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == block_new_sharing_HASH)
           {
             return ImageBlockPublicAccessEnabledState::block_new_sharing;

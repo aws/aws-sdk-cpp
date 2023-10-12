@@ -20,27 +20,27 @@ namespace Aws
       namespace JobLogEventMapper
       {
 
-        static const int JOB_START_HASH = HashingUtils::HashString("JOB_START");
-        static const int SERVER_SKIPPED_HASH = HashingUtils::HashString("SERVER_SKIPPED");
-        static const int CLEANUP_START_HASH = HashingUtils::HashString("CLEANUP_START");
-        static const int CLEANUP_END_HASH = HashingUtils::HashString("CLEANUP_END");
-        static const int CLEANUP_FAIL_HASH = HashingUtils::HashString("CLEANUP_FAIL");
-        static const int SNAPSHOT_START_HASH = HashingUtils::HashString("SNAPSHOT_START");
-        static const int SNAPSHOT_END_HASH = HashingUtils::HashString("SNAPSHOT_END");
-        static const int SNAPSHOT_FAIL_HASH = HashingUtils::HashString("SNAPSHOT_FAIL");
-        static const int USING_PREVIOUS_SNAPSHOT_HASH = HashingUtils::HashString("USING_PREVIOUS_SNAPSHOT");
-        static const int CONVERSION_START_HASH = HashingUtils::HashString("CONVERSION_START");
-        static const int CONVERSION_END_HASH = HashingUtils::HashString("CONVERSION_END");
-        static const int CONVERSION_FAIL_HASH = HashingUtils::HashString("CONVERSION_FAIL");
-        static const int LAUNCH_START_HASH = HashingUtils::HashString("LAUNCH_START");
-        static const int LAUNCH_FAILED_HASH = HashingUtils::HashString("LAUNCH_FAILED");
-        static const int JOB_CANCEL_HASH = HashingUtils::HashString("JOB_CANCEL");
-        static const int JOB_END_HASH = HashingUtils::HashString("JOB_END");
+        static constexpr uint32_t JOB_START_HASH = ConstExprHashingUtils::HashString("JOB_START");
+        static constexpr uint32_t SERVER_SKIPPED_HASH = ConstExprHashingUtils::HashString("SERVER_SKIPPED");
+        static constexpr uint32_t CLEANUP_START_HASH = ConstExprHashingUtils::HashString("CLEANUP_START");
+        static constexpr uint32_t CLEANUP_END_HASH = ConstExprHashingUtils::HashString("CLEANUP_END");
+        static constexpr uint32_t CLEANUP_FAIL_HASH = ConstExprHashingUtils::HashString("CLEANUP_FAIL");
+        static constexpr uint32_t SNAPSHOT_START_HASH = ConstExprHashingUtils::HashString("SNAPSHOT_START");
+        static constexpr uint32_t SNAPSHOT_END_HASH = ConstExprHashingUtils::HashString("SNAPSHOT_END");
+        static constexpr uint32_t SNAPSHOT_FAIL_HASH = ConstExprHashingUtils::HashString("SNAPSHOT_FAIL");
+        static constexpr uint32_t USING_PREVIOUS_SNAPSHOT_HASH = ConstExprHashingUtils::HashString("USING_PREVIOUS_SNAPSHOT");
+        static constexpr uint32_t CONVERSION_START_HASH = ConstExprHashingUtils::HashString("CONVERSION_START");
+        static constexpr uint32_t CONVERSION_END_HASH = ConstExprHashingUtils::HashString("CONVERSION_END");
+        static constexpr uint32_t CONVERSION_FAIL_HASH = ConstExprHashingUtils::HashString("CONVERSION_FAIL");
+        static constexpr uint32_t LAUNCH_START_HASH = ConstExprHashingUtils::HashString("LAUNCH_START");
+        static constexpr uint32_t LAUNCH_FAILED_HASH = ConstExprHashingUtils::HashString("LAUNCH_FAILED");
+        static constexpr uint32_t JOB_CANCEL_HASH = ConstExprHashingUtils::HashString("JOB_CANCEL");
+        static constexpr uint32_t JOB_END_HASH = ConstExprHashingUtils::HashString("JOB_END");
 
 
         JobLogEvent GetJobLogEventForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JOB_START_HASH)
           {
             return JobLogEvent::JOB_START;

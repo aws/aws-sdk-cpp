@@ -20,20 +20,20 @@ namespace Aws
       namespace ComputeMapper
       {
 
-        static const int VALUE_HASH = HashingUtils::HashString("VALUE");
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
-        static const int PERFORMANCE_HASH = HashingUtils::HashString("PERFORMANCE");
-        static const int POWER_HASH = HashingUtils::HashString("POWER");
-        static const int GRAPHICS_HASH = HashingUtils::HashString("GRAPHICS");
-        static const int POWERPRO_HASH = HashingUtils::HashString("POWERPRO");
-        static const int GRAPHICSPRO_HASH = HashingUtils::HashString("GRAPHICSPRO");
-        static const int GRAPHICS_G4DN_HASH = HashingUtils::HashString("GRAPHICS_G4DN");
-        static const int GRAPHICSPRO_G4DN_HASH = HashingUtils::HashString("GRAPHICSPRO_G4DN");
+        static constexpr uint32_t VALUE_HASH = ConstExprHashingUtils::HashString("VALUE");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
+        static constexpr uint32_t PERFORMANCE_HASH = ConstExprHashingUtils::HashString("PERFORMANCE");
+        static constexpr uint32_t POWER_HASH = ConstExprHashingUtils::HashString("POWER");
+        static constexpr uint32_t GRAPHICS_HASH = ConstExprHashingUtils::HashString("GRAPHICS");
+        static constexpr uint32_t POWERPRO_HASH = ConstExprHashingUtils::HashString("POWERPRO");
+        static constexpr uint32_t GRAPHICSPRO_HASH = ConstExprHashingUtils::HashString("GRAPHICSPRO");
+        static constexpr uint32_t GRAPHICS_G4DN_HASH = ConstExprHashingUtils::HashString("GRAPHICS_G4DN");
+        static constexpr uint32_t GRAPHICSPRO_G4DN_HASH = ConstExprHashingUtils::HashString("GRAPHICSPRO_G4DN");
 
 
         Compute GetComputeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VALUE_HASH)
           {
             return Compute::VALUE;

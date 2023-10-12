@@ -20,12 +20,12 @@ namespace Aws
       namespace StageRetryModeMapper
       {
 
-        static const int FAILED_ACTIONS_HASH = HashingUtils::HashString("FAILED_ACTIONS");
+        static constexpr uint32_t FAILED_ACTIONS_HASH = ConstExprHashingUtils::HashString("FAILED_ACTIONS");
 
 
         StageRetryMode GetStageRetryModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FAILED_ACTIONS_HASH)
           {
             return StageRetryMode::FAILED_ACTIONS;

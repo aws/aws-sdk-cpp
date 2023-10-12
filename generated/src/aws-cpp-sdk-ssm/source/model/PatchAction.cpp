@@ -20,13 +20,13 @@ namespace Aws
       namespace PatchActionMapper
       {
 
-        static const int ALLOW_AS_DEPENDENCY_HASH = HashingUtils::HashString("ALLOW_AS_DEPENDENCY");
-        static const int BLOCK_HASH = HashingUtils::HashString("BLOCK");
+        static constexpr uint32_t ALLOW_AS_DEPENDENCY_HASH = ConstExprHashingUtils::HashString("ALLOW_AS_DEPENDENCY");
+        static constexpr uint32_t BLOCK_HASH = ConstExprHashingUtils::HashString("BLOCK");
 
 
         PatchAction GetPatchActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALLOW_AS_DEPENDENCY_HASH)
           {
             return PatchAction::ALLOW_AS_DEPENDENCY;

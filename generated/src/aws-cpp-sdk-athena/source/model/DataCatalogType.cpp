@@ -20,14 +20,14 @@ namespace Aws
       namespace DataCatalogTypeMapper
       {
 
-        static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
-        static const int GLUE_HASH = HashingUtils::HashString("GLUE");
-        static const int HIVE_HASH = HashingUtils::HashString("HIVE");
+        static constexpr uint32_t LAMBDA_HASH = ConstExprHashingUtils::HashString("LAMBDA");
+        static constexpr uint32_t GLUE_HASH = ConstExprHashingUtils::HashString("GLUE");
+        static constexpr uint32_t HIVE_HASH = ConstExprHashingUtils::HashString("HIVE");
 
 
         DataCatalogType GetDataCatalogTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LAMBDA_HASH)
           {
             return DataCatalogType::LAMBDA;

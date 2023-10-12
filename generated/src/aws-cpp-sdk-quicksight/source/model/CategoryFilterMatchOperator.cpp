@@ -20,17 +20,17 @@ namespace Aws
       namespace CategoryFilterMatchOperatorMapper
       {
 
-        static const int EQUALS_HASH = HashingUtils::HashString("EQUALS");
-        static const int DOES_NOT_EQUAL_HASH = HashingUtils::HashString("DOES_NOT_EQUAL");
-        static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
-        static const int DOES_NOT_CONTAIN_HASH = HashingUtils::HashString("DOES_NOT_CONTAIN");
-        static const int STARTS_WITH_HASH = HashingUtils::HashString("STARTS_WITH");
-        static const int ENDS_WITH_HASH = HashingUtils::HashString("ENDS_WITH");
+        static constexpr uint32_t EQUALS_HASH = ConstExprHashingUtils::HashString("EQUALS");
+        static constexpr uint32_t DOES_NOT_EQUAL_HASH = ConstExprHashingUtils::HashString("DOES_NOT_EQUAL");
+        static constexpr uint32_t CONTAINS_HASH = ConstExprHashingUtils::HashString("CONTAINS");
+        static constexpr uint32_t DOES_NOT_CONTAIN_HASH = ConstExprHashingUtils::HashString("DOES_NOT_CONTAIN");
+        static constexpr uint32_t STARTS_WITH_HASH = ConstExprHashingUtils::HashString("STARTS_WITH");
+        static constexpr uint32_t ENDS_WITH_HASH = ConstExprHashingUtils::HashString("ENDS_WITH");
 
 
         CategoryFilterMatchOperator GetCategoryFilterMatchOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EQUALS_HASH)
           {
             return CategoryFilterMatchOperator::EQUALS;

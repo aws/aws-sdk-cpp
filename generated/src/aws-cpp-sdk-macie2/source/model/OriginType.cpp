@@ -20,13 +20,13 @@ namespace Aws
       namespace OriginTypeMapper
       {
 
-        static const int SENSITIVE_DATA_DISCOVERY_JOB_HASH = HashingUtils::HashString("SENSITIVE_DATA_DISCOVERY_JOB");
-        static const int AUTOMATED_SENSITIVE_DATA_DISCOVERY_HASH = HashingUtils::HashString("AUTOMATED_SENSITIVE_DATA_DISCOVERY");
+        static constexpr uint32_t SENSITIVE_DATA_DISCOVERY_JOB_HASH = ConstExprHashingUtils::HashString("SENSITIVE_DATA_DISCOVERY_JOB");
+        static constexpr uint32_t AUTOMATED_SENSITIVE_DATA_DISCOVERY_HASH = ConstExprHashingUtils::HashString("AUTOMATED_SENSITIVE_DATA_DISCOVERY");
 
 
         OriginType GetOriginTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SENSITIVE_DATA_DISCOVERY_JOB_HASH)
           {
             return OriginType::SENSITIVE_DATA_DISCOVERY_JOB;

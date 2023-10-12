@@ -20,17 +20,17 @@ namespace Aws
       namespace ThesaurusStatusMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int ACTIVE_BUT_UPDATE_FAILED_HASH = HashingUtils::HashString("ACTIVE_BUT_UPDATE_FAILED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t ACTIVE_BUT_UPDATE_FAILED_HASH = ConstExprHashingUtils::HashString("ACTIVE_BUT_UPDATE_FAILED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         ThesaurusStatus GetThesaurusStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return ThesaurusStatus::CREATING;

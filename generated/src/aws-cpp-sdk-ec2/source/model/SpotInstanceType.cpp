@@ -20,13 +20,13 @@ namespace Aws
       namespace SpotInstanceTypeMapper
       {
 
-        static const int one_time_HASH = HashingUtils::HashString("one-time");
-        static const int persistent_HASH = HashingUtils::HashString("persistent");
+        static constexpr uint32_t one_time_HASH = ConstExprHashingUtils::HashString("one-time");
+        static constexpr uint32_t persistent_HASH = ConstExprHashingUtils::HashString("persistent");
 
 
         SpotInstanceType GetSpotInstanceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == one_time_HASH)
           {
             return SpotInstanceType::one_time;

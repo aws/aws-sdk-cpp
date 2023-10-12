@@ -20,13 +20,13 @@ namespace Aws
       namespace IntendedUseMapper
       {
 
-        static const int SingleUse_HASH = HashingUtils::HashString("SingleUse");
-        static const int Storage_HASH = HashingUtils::HashString("Storage");
+        static constexpr uint32_t SingleUse_HASH = ConstExprHashingUtils::HashString("SingleUse");
+        static constexpr uint32_t Storage_HASH = ConstExprHashingUtils::HashString("Storage");
 
 
         IntendedUse GetIntendedUseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SingleUse_HASH)
           {
             return IntendedUse::SingleUse;

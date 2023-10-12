@@ -20,13 +20,13 @@ namespace Aws
       namespace SyncTypeMapper
       {
 
-        static const int TEMPLATE_SYNC_HASH = HashingUtils::HashString("TEMPLATE_SYNC");
-        static const int SERVICE_SYNC_HASH = HashingUtils::HashString("SERVICE_SYNC");
+        static constexpr uint32_t TEMPLATE_SYNC_HASH = ConstExprHashingUtils::HashString("TEMPLATE_SYNC");
+        static constexpr uint32_t SERVICE_SYNC_HASH = ConstExprHashingUtils::HashString("SERVICE_SYNC");
 
 
         SyncType GetSyncTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TEMPLATE_SYNC_HASH)
           {
             return SyncType::TEMPLATE_SYNC;

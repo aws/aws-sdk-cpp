@@ -20,19 +20,19 @@ namespace Aws
       namespace JobComparatorMapper
       {
 
-        static const int EQ_HASH = HashingUtils::HashString("EQ");
-        static const int GT_HASH = HashingUtils::HashString("GT");
-        static const int GTE_HASH = HashingUtils::HashString("GTE");
-        static const int LT_HASH = HashingUtils::HashString("LT");
-        static const int LTE_HASH = HashingUtils::HashString("LTE");
-        static const int NE_HASH = HashingUtils::HashString("NE");
-        static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
-        static const int STARTS_WITH_HASH = HashingUtils::HashString("STARTS_WITH");
+        static constexpr uint32_t EQ_HASH = ConstExprHashingUtils::HashString("EQ");
+        static constexpr uint32_t GT_HASH = ConstExprHashingUtils::HashString("GT");
+        static constexpr uint32_t GTE_HASH = ConstExprHashingUtils::HashString("GTE");
+        static constexpr uint32_t LT_HASH = ConstExprHashingUtils::HashString("LT");
+        static constexpr uint32_t LTE_HASH = ConstExprHashingUtils::HashString("LTE");
+        static constexpr uint32_t NE_HASH = ConstExprHashingUtils::HashString("NE");
+        static constexpr uint32_t CONTAINS_HASH = ConstExprHashingUtils::HashString("CONTAINS");
+        static constexpr uint32_t STARTS_WITH_HASH = ConstExprHashingUtils::HashString("STARTS_WITH");
 
 
         JobComparator GetJobComparatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EQ_HASH)
           {
             return JobComparator::EQ;

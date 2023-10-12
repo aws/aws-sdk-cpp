@@ -20,13 +20,13 @@ namespace Aws
       namespace InstanceHealthStatusMapper
       {
 
-        static const int healthy_HASH = HashingUtils::HashString("healthy");
-        static const int unhealthy_HASH = HashingUtils::HashString("unhealthy");
+        static constexpr uint32_t healthy_HASH = ConstExprHashingUtils::HashString("healthy");
+        static constexpr uint32_t unhealthy_HASH = ConstExprHashingUtils::HashString("unhealthy");
 
 
         InstanceHealthStatus GetInstanceHealthStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == healthy_HASH)
           {
             return InstanceHealthStatus::healthy;

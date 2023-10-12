@@ -33,22 +33,22 @@ template<> AWS_SNOWBALL_API InvalidResourceException SnowballError::GetModeledEr
 namespace SnowballErrorMapper
 {
 
-static const int CLUSTER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ClusterLimitExceededException");
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int INVALID_ADDRESS_HASH = HashingUtils::HashString("InvalidAddressException");
-static const int INVALID_JOB_STATE_HASH = HashingUtils::HashString("InvalidJobStateException");
-static const int K_M_S_REQUEST_FAILED_HASH = HashingUtils::HashString("KMSRequestFailedException");
-static const int EC2_REQUEST_FAILED_HASH = HashingUtils::HashString("Ec2RequestFailedException");
-static const int INVALID_INPUT_COMBINATION_HASH = HashingUtils::HashString("InvalidInputCombinationException");
-static const int UNSUPPORTED_ADDRESS_HASH = HashingUtils::HashString("UnsupportedAddressException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int INVALID_RESOURCE_HASH = HashingUtils::HashString("InvalidResourceException");
-static const int RETURN_SHIPPING_LABEL_ALREADY_EXISTS_HASH = HashingUtils::HashString("ReturnShippingLabelAlreadyExistsException");
+static constexpr uint32_t CLUSTER_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ClusterLimitExceededException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t INVALID_ADDRESS_HASH = ConstExprHashingUtils::HashString("InvalidAddressException");
+static constexpr uint32_t INVALID_JOB_STATE_HASH = ConstExprHashingUtils::HashString("InvalidJobStateException");
+static constexpr uint32_t K_M_S_REQUEST_FAILED_HASH = ConstExprHashingUtils::HashString("KMSRequestFailedException");
+static constexpr uint32_t EC2_REQUEST_FAILED_HASH = ConstExprHashingUtils::HashString("Ec2RequestFailedException");
+static constexpr uint32_t INVALID_INPUT_COMBINATION_HASH = ConstExprHashingUtils::HashString("InvalidInputCombinationException");
+static constexpr uint32_t UNSUPPORTED_ADDRESS_HASH = ConstExprHashingUtils::HashString("UnsupportedAddressException");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+static constexpr uint32_t INVALID_RESOURCE_HASH = ConstExprHashingUtils::HashString("InvalidResourceException");
+static constexpr uint32_t RETURN_SHIPPING_LABEL_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ReturnShippingLabelAlreadyExistsException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CLUSTER_LIMIT_EXCEEDED_HASH)
   {

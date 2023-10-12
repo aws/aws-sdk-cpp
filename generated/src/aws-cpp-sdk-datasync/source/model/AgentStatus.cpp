@@ -20,13 +20,13 @@ namespace Aws
       namespace AgentStatusMapper
       {
 
-        static const int ONLINE_HASH = HashingUtils::HashString("ONLINE");
-        static const int OFFLINE_HASH = HashingUtils::HashString("OFFLINE");
+        static constexpr uint32_t ONLINE_HASH = ConstExprHashingUtils::HashString("ONLINE");
+        static constexpr uint32_t OFFLINE_HASH = ConstExprHashingUtils::HashString("OFFLINE");
 
 
         AgentStatus GetAgentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ONLINE_HASH)
           {
             return AgentStatus::ONLINE;

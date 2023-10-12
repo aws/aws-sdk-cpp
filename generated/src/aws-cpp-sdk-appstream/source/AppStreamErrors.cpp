@@ -18,23 +18,23 @@ namespace AppStream
 namespace AppStreamErrorMapper
 {
 
-static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
-static const int ENTITLEMENT_NOT_FOUND_HASH = HashingUtils::HashString("EntitlementNotFoundException");
-static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
-static const int ENTITLEMENT_ALREADY_EXISTS_HASH = HashingUtils::HashString("EntitlementAlreadyExistsException");
-static const int INVALID_ROLE_HASH = HashingUtils::HashString("InvalidRoleException");
-static const int INVALID_ACCOUNT_STATUS_HASH = HashingUtils::HashString("InvalidAccountStatusException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int RESOURCE_NOT_AVAILABLE_HASH = HashingUtils::HashString("ResourceNotAvailableException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int REQUEST_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("RequestLimitExceededException");
-static const int INCOMPATIBLE_IMAGE_HASH = HashingUtils::HashString("IncompatibleImageException");
+static constexpr uint32_t OPERATION_NOT_PERMITTED_HASH = ConstExprHashingUtils::HashString("OperationNotPermittedException");
+static constexpr uint32_t ENTITLEMENT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("EntitlementNotFoundException");
+static constexpr uint32_t RESOURCE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ResourceAlreadyExistsException");
+static constexpr uint32_t ENTITLEMENT_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("EntitlementAlreadyExistsException");
+static constexpr uint32_t INVALID_ROLE_HASH = ConstExprHashingUtils::HashString("InvalidRoleException");
+static constexpr uint32_t INVALID_ACCOUNT_STATUS_HASH = ConstExprHashingUtils::HashString("InvalidAccountStatusException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t RESOURCE_NOT_AVAILABLE_HASH = ConstExprHashingUtils::HashString("ResourceNotAvailableException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t REQUEST_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("RequestLimitExceededException");
+static constexpr uint32_t INCOMPATIBLE_IMAGE_HASH = ConstExprHashingUtils::HashString("IncompatibleImageException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {

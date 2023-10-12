@@ -20,13 +20,13 @@ namespace Aws
       namespace OSTypeMapper
       {
 
-        static const int LINUX_HASH = HashingUtils::HashString("LINUX");
-        static const int WINDOWS_HASH = HashingUtils::HashString("WINDOWS");
+        static constexpr uint32_t LINUX_HASH = ConstExprHashingUtils::HashString("LINUX");
+        static constexpr uint32_t WINDOWS_HASH = ConstExprHashingUtils::HashString("WINDOWS");
 
 
         OSType GetOSTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LINUX_HASH)
           {
             return OSType::LINUX;

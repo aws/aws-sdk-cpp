@@ -20,14 +20,14 @@ namespace Aws
       namespace ThemeTypeMapper
       {
 
-        static const int QUICKSIGHT_HASH = HashingUtils::HashString("QUICKSIGHT");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t QUICKSIGHT_HASH = ConstExprHashingUtils::HashString("QUICKSIGHT");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         ThemeType GetThemeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUICKSIGHT_HASH)
           {
             return ThemeType::QUICKSIGHT;

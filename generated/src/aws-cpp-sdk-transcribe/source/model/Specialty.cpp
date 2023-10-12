@@ -20,12 +20,12 @@ namespace Aws
       namespace SpecialtyMapper
       {
 
-        static const int PRIMARYCARE_HASH = HashingUtils::HashString("PRIMARYCARE");
+        static constexpr uint32_t PRIMARYCARE_HASH = ConstExprHashingUtils::HashString("PRIMARYCARE");
 
 
         Specialty GetSpecialtyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRIMARYCARE_HASH)
           {
             return Specialty::PRIMARYCARE;

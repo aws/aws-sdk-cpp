@@ -20,15 +20,15 @@ namespace Aws
       namespace RetentionIntervalUnitValuesMapper
       {
 
-        static const int DAYS_HASH = HashingUtils::HashString("DAYS");
-        static const int WEEKS_HASH = HashingUtils::HashString("WEEKS");
-        static const int MONTHS_HASH = HashingUtils::HashString("MONTHS");
-        static const int YEARS_HASH = HashingUtils::HashString("YEARS");
+        static constexpr uint32_t DAYS_HASH = ConstExprHashingUtils::HashString("DAYS");
+        static constexpr uint32_t WEEKS_HASH = ConstExprHashingUtils::HashString("WEEKS");
+        static constexpr uint32_t MONTHS_HASH = ConstExprHashingUtils::HashString("MONTHS");
+        static constexpr uint32_t YEARS_HASH = ConstExprHashingUtils::HashString("YEARS");
 
 
         RetentionIntervalUnitValues GetRetentionIntervalUnitValuesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DAYS_HASH)
           {
             return RetentionIntervalUnitValues::DAYS;

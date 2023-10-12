@@ -20,13 +20,13 @@ namespace Aws
       namespace ContentClassifierMapper
       {
 
-        static const int FreeOfPersonallyIdentifiableInformation_HASH = HashingUtils::HashString("FreeOfPersonallyIdentifiableInformation");
-        static const int FreeOfAdultContent_HASH = HashingUtils::HashString("FreeOfAdultContent");
+        static constexpr uint32_t FreeOfPersonallyIdentifiableInformation_HASH = ConstExprHashingUtils::HashString("FreeOfPersonallyIdentifiableInformation");
+        static constexpr uint32_t FreeOfAdultContent_HASH = ConstExprHashingUtils::HashString("FreeOfAdultContent");
 
 
         ContentClassifier GetContentClassifierForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FreeOfPersonallyIdentifiableInformation_HASH)
           {
             return ContentClassifier::FreeOfPersonallyIdentifiableInformation;

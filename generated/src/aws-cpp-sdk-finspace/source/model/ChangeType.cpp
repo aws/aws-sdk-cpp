@@ -20,13 +20,13 @@ namespace Aws
       namespace ChangeTypeMapper
       {
 
-        static const int PUT_HASH = HashingUtils::HashString("PUT");
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
+        static constexpr uint32_t PUT_HASH = ConstExprHashingUtils::HashString("PUT");
+        static constexpr uint32_t DELETE__HASH = ConstExprHashingUtils::HashString("DELETE");
 
 
         ChangeType GetChangeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUT_HASH)
           {
             return ChangeType::PUT;

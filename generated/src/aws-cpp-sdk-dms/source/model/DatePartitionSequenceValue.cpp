@@ -20,16 +20,16 @@ namespace Aws
       namespace DatePartitionSequenceValueMapper
       {
 
-        static const int YYYYMMDD_HASH = HashingUtils::HashString("YYYYMMDD");
-        static const int YYYYMMDDHH_HASH = HashingUtils::HashString("YYYYMMDDHH");
-        static const int YYYYMM_HASH = HashingUtils::HashString("YYYYMM");
-        static const int MMYYYYDD_HASH = HashingUtils::HashString("MMYYYYDD");
-        static const int DDMMYYYY_HASH = HashingUtils::HashString("DDMMYYYY");
+        static constexpr uint32_t YYYYMMDD_HASH = ConstExprHashingUtils::HashString("YYYYMMDD");
+        static constexpr uint32_t YYYYMMDDHH_HASH = ConstExprHashingUtils::HashString("YYYYMMDDHH");
+        static constexpr uint32_t YYYYMM_HASH = ConstExprHashingUtils::HashString("YYYYMM");
+        static constexpr uint32_t MMYYYYDD_HASH = ConstExprHashingUtils::HashString("MMYYYYDD");
+        static constexpr uint32_t DDMMYYYY_HASH = ConstExprHashingUtils::HashString("DDMMYYYY");
 
 
         DatePartitionSequenceValue GetDatePartitionSequenceValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == YYYYMMDD_HASH)
           {
             return DatePartitionSequenceValue::YYYYMMDD;

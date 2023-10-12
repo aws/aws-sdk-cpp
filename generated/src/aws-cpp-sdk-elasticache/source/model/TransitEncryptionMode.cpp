@@ -20,13 +20,13 @@ namespace Aws
       namespace TransitEncryptionModeMapper
       {
 
-        static const int preferred_HASH = HashingUtils::HashString("preferred");
-        static const int required_HASH = HashingUtils::HashString("required");
+        static constexpr uint32_t preferred_HASH = ConstExprHashingUtils::HashString("preferred");
+        static constexpr uint32_t required_HASH = ConstExprHashingUtils::HashString("required");
 
 
         TransitEncryptionMode GetTransitEncryptionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == preferred_HASH)
           {
             return TransitEncryptionMode::preferred;

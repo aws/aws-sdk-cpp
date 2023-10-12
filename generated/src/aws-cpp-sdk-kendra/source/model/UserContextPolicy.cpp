@@ -20,13 +20,13 @@ namespace Aws
       namespace UserContextPolicyMapper
       {
 
-        static const int ATTRIBUTE_FILTER_HASH = HashingUtils::HashString("ATTRIBUTE_FILTER");
-        static const int USER_TOKEN_HASH = HashingUtils::HashString("USER_TOKEN");
+        static constexpr uint32_t ATTRIBUTE_FILTER_HASH = ConstExprHashingUtils::HashString("ATTRIBUTE_FILTER");
+        static constexpr uint32_t USER_TOKEN_HASH = ConstExprHashingUtils::HashString("USER_TOKEN");
 
 
         UserContextPolicy GetUserContextPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ATTRIBUTE_FILTER_HASH)
           {
             return UserContextPolicy::ATTRIBUTE_FILTER;

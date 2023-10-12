@@ -20,13 +20,13 @@ namespace Aws
       namespace AccountScopeMapper
       {
 
-        static const int PAYER_HASH = HashingUtils::HashString("PAYER");
-        static const int LINKED_HASH = HashingUtils::HashString("LINKED");
+        static constexpr uint32_t PAYER_HASH = ConstExprHashingUtils::HashString("PAYER");
+        static constexpr uint32_t LINKED_HASH = ConstExprHashingUtils::HashString("LINKED");
 
 
         AccountScope GetAccountScopeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PAYER_HASH)
           {
             return AccountScope::PAYER;

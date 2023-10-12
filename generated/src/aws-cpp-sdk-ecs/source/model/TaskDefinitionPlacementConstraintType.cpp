@@ -20,12 +20,12 @@ namespace Aws
       namespace TaskDefinitionPlacementConstraintTypeMapper
       {
 
-        static const int memberOf_HASH = HashingUtils::HashString("memberOf");
+        static constexpr uint32_t memberOf_HASH = ConstExprHashingUtils::HashString("memberOf");
 
 
         TaskDefinitionPlacementConstraintType GetTaskDefinitionPlacementConstraintTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == memberOf_HASH)
           {
             return TaskDefinitionPlacementConstraintType::memberOf;

@@ -20,19 +20,19 @@ namespace Aws
       namespace EncryptionModeMapper
       {
 
-        static const int ECB_HASH = HashingUtils::HashString("ECB");
-        static const int CBC_HASH = HashingUtils::HashString("CBC");
-        static const int CFB_HASH = HashingUtils::HashString("CFB");
-        static const int CFB1_HASH = HashingUtils::HashString("CFB1");
-        static const int CFB8_HASH = HashingUtils::HashString("CFB8");
-        static const int CFB64_HASH = HashingUtils::HashString("CFB64");
-        static const int CFB128_HASH = HashingUtils::HashString("CFB128");
-        static const int OFB_HASH = HashingUtils::HashString("OFB");
+        static constexpr uint32_t ECB_HASH = ConstExprHashingUtils::HashString("ECB");
+        static constexpr uint32_t CBC_HASH = ConstExprHashingUtils::HashString("CBC");
+        static constexpr uint32_t CFB_HASH = ConstExprHashingUtils::HashString("CFB");
+        static constexpr uint32_t CFB1_HASH = ConstExprHashingUtils::HashString("CFB1");
+        static constexpr uint32_t CFB8_HASH = ConstExprHashingUtils::HashString("CFB8");
+        static constexpr uint32_t CFB64_HASH = ConstExprHashingUtils::HashString("CFB64");
+        static constexpr uint32_t CFB128_HASH = ConstExprHashingUtils::HashString("CFB128");
+        static constexpr uint32_t OFB_HASH = ConstExprHashingUtils::HashString("OFB");
 
 
         EncryptionMode GetEncryptionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ECB_HASH)
           {
             return EncryptionMode::ECB;

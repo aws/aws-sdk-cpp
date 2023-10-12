@@ -20,12 +20,12 @@ namespace Aws
       namespace SubscriptionTypeMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         SubscriptionType GetSubscriptionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return SubscriptionType::ALL;

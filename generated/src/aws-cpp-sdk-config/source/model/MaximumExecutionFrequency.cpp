@@ -20,16 +20,16 @@ namespace Aws
       namespace MaximumExecutionFrequencyMapper
       {
 
-        static const int One_Hour_HASH = HashingUtils::HashString("One_Hour");
-        static const int Three_Hours_HASH = HashingUtils::HashString("Three_Hours");
-        static const int Six_Hours_HASH = HashingUtils::HashString("Six_Hours");
-        static const int Twelve_Hours_HASH = HashingUtils::HashString("Twelve_Hours");
-        static const int TwentyFour_Hours_HASH = HashingUtils::HashString("TwentyFour_Hours");
+        static constexpr uint32_t One_Hour_HASH = ConstExprHashingUtils::HashString("One_Hour");
+        static constexpr uint32_t Three_Hours_HASH = ConstExprHashingUtils::HashString("Three_Hours");
+        static constexpr uint32_t Six_Hours_HASH = ConstExprHashingUtils::HashString("Six_Hours");
+        static constexpr uint32_t Twelve_Hours_HASH = ConstExprHashingUtils::HashString("Twelve_Hours");
+        static constexpr uint32_t TwentyFour_Hours_HASH = ConstExprHashingUtils::HashString("TwentyFour_Hours");
 
 
         MaximumExecutionFrequency GetMaximumExecutionFrequencyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == One_Hour_HASH)
           {
             return MaximumExecutionFrequency::One_Hour;

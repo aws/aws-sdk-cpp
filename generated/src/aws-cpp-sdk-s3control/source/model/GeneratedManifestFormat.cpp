@@ -20,12 +20,12 @@ namespace Aws
       namespace GeneratedManifestFormatMapper
       {
 
-        static const int S3InventoryReport_CSV_20211130_HASH = HashingUtils::HashString("S3InventoryReport_CSV_20211130");
+        static constexpr uint32_t S3InventoryReport_CSV_20211130_HASH = ConstExprHashingUtils::HashString("S3InventoryReport_CSV_20211130");
 
 
         GeneratedManifestFormat GetGeneratedManifestFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == S3InventoryReport_CSV_20211130_HASH)
           {
             return GeneratedManifestFormat::S3InventoryReport_CSV_20211130;

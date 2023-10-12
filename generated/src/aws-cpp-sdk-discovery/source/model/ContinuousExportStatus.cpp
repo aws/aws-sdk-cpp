@@ -20,18 +20,18 @@ namespace Aws
       namespace ContinuousExportStatusMapper
       {
 
-        static const int START_IN_PROGRESS_HASH = HashingUtils::HashString("START_IN_PROGRESS");
-        static const int START_FAILED_HASH = HashingUtils::HashString("START_FAILED");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int STOP_IN_PROGRESS_HASH = HashingUtils::HashString("STOP_IN_PROGRESS");
-        static const int STOP_FAILED_HASH = HashingUtils::HashString("STOP_FAILED");
-        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
+        static constexpr uint32_t START_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("START_IN_PROGRESS");
+        static constexpr uint32_t START_FAILED_HASH = ConstExprHashingUtils::HashString("START_FAILED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t STOP_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("STOP_IN_PROGRESS");
+        static constexpr uint32_t STOP_FAILED_HASH = ConstExprHashingUtils::HashString("STOP_FAILED");
+        static constexpr uint32_t INACTIVE_HASH = ConstExprHashingUtils::HashString("INACTIVE");
 
 
         ContinuousExportStatus GetContinuousExportStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == START_IN_PROGRESS_HASH)
           {
             return ContinuousExportStatus::START_IN_PROGRESS;

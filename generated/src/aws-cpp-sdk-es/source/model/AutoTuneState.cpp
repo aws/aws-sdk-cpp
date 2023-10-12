@@ -20,20 +20,20 @@ namespace Aws
       namespace AutoTuneStateMapper
       {
 
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int ENABLE_IN_PROGRESS_HASH = HashingUtils::HashString("ENABLE_IN_PROGRESS");
-        static const int DISABLE_IN_PROGRESS_HASH = HashingUtils::HashString("DISABLE_IN_PROGRESS");
-        static const int DISABLED_AND_ROLLBACK_SCHEDULED_HASH = HashingUtils::HashString("DISABLED_AND_ROLLBACK_SCHEDULED");
-        static const int DISABLED_AND_ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("DISABLED_AND_ROLLBACK_IN_PROGRESS");
-        static const int DISABLED_AND_ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("DISABLED_AND_ROLLBACK_COMPLETE");
-        static const int DISABLED_AND_ROLLBACK_ERROR_HASH = HashingUtils::HashString("DISABLED_AND_ROLLBACK_ERROR");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t ENABLE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("ENABLE_IN_PROGRESS");
+        static constexpr uint32_t DISABLE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("DISABLE_IN_PROGRESS");
+        static constexpr uint32_t DISABLED_AND_ROLLBACK_SCHEDULED_HASH = ConstExprHashingUtils::HashString("DISABLED_AND_ROLLBACK_SCHEDULED");
+        static constexpr uint32_t DISABLED_AND_ROLLBACK_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("DISABLED_AND_ROLLBACK_IN_PROGRESS");
+        static constexpr uint32_t DISABLED_AND_ROLLBACK_COMPLETE_HASH = ConstExprHashingUtils::HashString("DISABLED_AND_ROLLBACK_COMPLETE");
+        static constexpr uint32_t DISABLED_AND_ROLLBACK_ERROR_HASH = ConstExprHashingUtils::HashString("DISABLED_AND_ROLLBACK_ERROR");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         AutoTuneState GetAutoTuneStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLED_HASH)
           {
             return AutoTuneState::ENABLED;

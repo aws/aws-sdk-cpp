@@ -20,13 +20,13 @@ namespace Aws
       namespace ValueWhenUnsetOptionMapper
       {
 
-        static const int RECOMMENDED_VALUE_HASH = HashingUtils::HashString("RECOMMENDED_VALUE");
-        static const int NULL__HASH = HashingUtils::HashString("NULL");
+        static constexpr uint32_t RECOMMENDED_VALUE_HASH = ConstExprHashingUtils::HashString("RECOMMENDED_VALUE");
+        static constexpr uint32_t NULL__HASH = ConstExprHashingUtils::HashString("NULL");
 
 
         ValueWhenUnsetOption GetValueWhenUnsetOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RECOMMENDED_VALUE_HASH)
           {
             return ValueWhenUnsetOption::RECOMMENDED_VALUE;

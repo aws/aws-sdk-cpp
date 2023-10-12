@@ -20,13 +20,13 @@ namespace Aws
       namespace PipelineExecutionStartConditionMapper
       {
 
-        static const int EXPRESSION_MATCH_ONLY_HASH = HashingUtils::HashString("EXPRESSION_MATCH_ONLY");
-        static const int EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE_HASH = HashingUtils::HashString("EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE");
+        static constexpr uint32_t EXPRESSION_MATCH_ONLY_HASH = ConstExprHashingUtils::HashString("EXPRESSION_MATCH_ONLY");
+        static constexpr uint32_t EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE_HASH = ConstExprHashingUtils::HashString("EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE");
 
 
         PipelineExecutionStartCondition GetPipelineExecutionStartConditionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXPRESSION_MATCH_ONLY_HASH)
           {
             return PipelineExecutionStartCondition::EXPRESSION_MATCH_ONLY;

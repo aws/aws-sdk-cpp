@@ -20,13 +20,13 @@ namespace Aws
       namespace ContainerTypeMapper
       {
 
-        static const int TS_HASH = HashingUtils::HashString("TS");
-        static const int CMAF_HASH = HashingUtils::HashString("CMAF");
+        static constexpr uint32_t TS_HASH = ConstExprHashingUtils::HashString("TS");
+        static constexpr uint32_t CMAF_HASH = ConstExprHashingUtils::HashString("CMAF");
 
 
         ContainerType GetContainerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TS_HASH)
           {
             return ContainerType::TS;

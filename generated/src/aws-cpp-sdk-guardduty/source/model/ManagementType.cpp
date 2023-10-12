@@ -20,13 +20,13 @@ namespace Aws
       namespace ManagementTypeMapper
       {
 
-        static const int AUTO_MANAGED_HASH = HashingUtils::HashString("AUTO_MANAGED");
-        static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
+        static constexpr uint32_t AUTO_MANAGED_HASH = ConstExprHashingUtils::HashString("AUTO_MANAGED");
+        static constexpr uint32_t MANUAL_HASH = ConstExprHashingUtils::HashString("MANUAL");
 
 
         ManagementType GetManagementTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_MANAGED_HASH)
           {
             return ManagementType::AUTO_MANAGED;

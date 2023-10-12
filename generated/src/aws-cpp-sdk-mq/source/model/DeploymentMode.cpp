@@ -20,14 +20,14 @@ namespace Aws
       namespace DeploymentModeMapper
       {
 
-        static const int SINGLE_INSTANCE_HASH = HashingUtils::HashString("SINGLE_INSTANCE");
-        static const int ACTIVE_STANDBY_MULTI_AZ_HASH = HashingUtils::HashString("ACTIVE_STANDBY_MULTI_AZ");
-        static const int CLUSTER_MULTI_AZ_HASH = HashingUtils::HashString("CLUSTER_MULTI_AZ");
+        static constexpr uint32_t SINGLE_INSTANCE_HASH = ConstExprHashingUtils::HashString("SINGLE_INSTANCE");
+        static constexpr uint32_t ACTIVE_STANDBY_MULTI_AZ_HASH = ConstExprHashingUtils::HashString("ACTIVE_STANDBY_MULTI_AZ");
+        static constexpr uint32_t CLUSTER_MULTI_AZ_HASH = ConstExprHashingUtils::HashString("CLUSTER_MULTI_AZ");
 
 
         DeploymentMode GetDeploymentModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SINGLE_INSTANCE_HASH)
           {
             return DeploymentMode::SINGLE_INSTANCE;

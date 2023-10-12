@@ -20,15 +20,15 @@ namespace Aws
       namespace TypeTestsStatusMapper
       {
 
-        static const int PASSED_HASH = HashingUtils::HashString("PASSED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int NOT_TESTED_HASH = HashingUtils::HashString("NOT_TESTED");
+        static constexpr uint32_t PASSED_HASH = ConstExprHashingUtils::HashString("PASSED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t NOT_TESTED_HASH = ConstExprHashingUtils::HashString("NOT_TESTED");
 
 
         TypeTestsStatus GetTypeTestsStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PASSED_HASH)
           {
             return TypeTestsStatus::PASSED;

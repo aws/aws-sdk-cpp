@@ -20,15 +20,15 @@ namespace Aws
       namespace OperationMapper
       {
 
-        static const int ENABLE_SCANNING_HASH = HashingUtils::HashString("ENABLE_SCANNING");
-        static const int DISABLE_SCANNING_HASH = HashingUtils::HashString("DISABLE_SCANNING");
-        static const int ENABLE_REPOSITORY_HASH = HashingUtils::HashString("ENABLE_REPOSITORY");
-        static const int DISABLE_REPOSITORY_HASH = HashingUtils::HashString("DISABLE_REPOSITORY");
+        static constexpr uint32_t ENABLE_SCANNING_HASH = ConstExprHashingUtils::HashString("ENABLE_SCANNING");
+        static constexpr uint32_t DISABLE_SCANNING_HASH = ConstExprHashingUtils::HashString("DISABLE_SCANNING");
+        static constexpr uint32_t ENABLE_REPOSITORY_HASH = ConstExprHashingUtils::HashString("ENABLE_REPOSITORY");
+        static constexpr uint32_t DISABLE_REPOSITORY_HASH = ConstExprHashingUtils::HashString("DISABLE_REPOSITORY");
 
 
         Operation GetOperationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLE_SCANNING_HASH)
           {
             return Operation::ENABLE_SCANNING;

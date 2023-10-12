@@ -20,16 +20,16 @@ namespace Aws
       namespace ServiceNamespaceMapper
       {
 
-        static const int autoscaling_HASH = HashingUtils::HashString("autoscaling");
-        static const int ecs_HASH = HashingUtils::HashString("ecs");
-        static const int ec2_HASH = HashingUtils::HashString("ec2");
-        static const int rds_HASH = HashingUtils::HashString("rds");
-        static const int dynamodb_HASH = HashingUtils::HashString("dynamodb");
+        static constexpr uint32_t autoscaling_HASH = ConstExprHashingUtils::HashString("autoscaling");
+        static constexpr uint32_t ecs_HASH = ConstExprHashingUtils::HashString("ecs");
+        static constexpr uint32_t ec2_HASH = ConstExprHashingUtils::HashString("ec2");
+        static constexpr uint32_t rds_HASH = ConstExprHashingUtils::HashString("rds");
+        static constexpr uint32_t dynamodb_HASH = ConstExprHashingUtils::HashString("dynamodb");
 
 
         ServiceNamespace GetServiceNamespaceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == autoscaling_HASH)
           {
             return ServiceNamespace::autoscaling;

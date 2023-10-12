@@ -285,47 +285,47 @@ template<> AWS_LAMBDA_API CodeStorageExceededException LambdaError::GetModeledEr
 namespace LambdaErrorMapper
 {
 
-static const int E_F_S_MOUNT_CONNECTIVITY_HASH = HashingUtils::HashString("EFSMountConnectivityException");
-static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
-static const int PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND_HASH = HashingUtils::HashString("ProvisionedConcurrencyConfigNotFoundException");
-static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidStateException");
-static const int RECURSIVE_INVOCATION_HASH = HashingUtils::HashString("RecursiveInvocationException");
-static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
-static const int K_M_S_NOT_FOUND_HASH = HashingUtils::HashString("KMSNotFoundException");
-static const int PRECONDITION_FAILED_HASH = HashingUtils::HashString("PreconditionFailedException");
-static const int CODE_VERIFICATION_FAILED_HASH = HashingUtils::HashString("CodeVerificationFailedException");
-static const int SNAP_START_HASH = HashingUtils::HashString("SnapStartException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int SUBNET_I_P_ADDRESS_LIMIT_REACHED_HASH = HashingUtils::HashString("SubnetIPAddressLimitReachedException");
-static const int SNAP_START_NOT_READY_HASH = HashingUtils::HashString("SnapStartNotReadyException");
-static const int INVALID_REQUEST_CONTENT_HASH = HashingUtils::HashString("InvalidRequestContentException");
-static const int E_C2_ACCESS_DENIED_HASH = HashingUtils::HashString("EC2AccessDeniedException");
-static const int REQUEST_TOO_LARGE_HASH = HashingUtils::HashString("RequestTooLargeException");
-static const int INVALID_CODE_SIGNATURE_HASH = HashingUtils::HashString("InvalidCodeSignatureException");
-static const int E_F_S_I_O_HASH = HashingUtils::HashString("EFSIOException");
-static const int INVALID_SECURITY_GROUP_I_D_HASH = HashingUtils::HashString("InvalidSecurityGroupIDException");
-static const int INVALID_SUBNET_I_D_HASH = HashingUtils::HashString("InvalidSubnetIDException");
-static const int CODE_SIGNING_CONFIG_NOT_FOUND_HASH = HashingUtils::HashString("CodeSigningConfigNotFoundException");
-static const int E_F_S_MOUNT_TIMEOUT_HASH = HashingUtils::HashString("EFSMountTimeoutException");
-static const int INVALID_RUNTIME_HASH = HashingUtils::HashString("InvalidRuntimeException");
-static const int E_C2_UNEXPECTED_HASH = HashingUtils::HashString("EC2UnexpectedException");
-static const int INVALID_ZIP_FILE_HASH = HashingUtils::HashString("InvalidZipFileException");
-static const int UNSUPPORTED_MEDIA_TYPE_HASH = HashingUtils::HashString("UnsupportedMediaTypeException");
-static const int E_F_S_MOUNT_FAILURE_HASH = HashingUtils::HashString("EFSMountFailureException");
-static const int K_M_S_DISABLED_HASH = HashingUtils::HashString("KMSDisabledException");
-static const int K_M_S_ACCESS_DENIED_HASH = HashingUtils::HashString("KMSAccessDeniedException");
-static const int E_C2_THROTTLED_HASH = HashingUtils::HashString("EC2ThrottledException");
-static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
-static const int E_N_I_LIMIT_REACHED_HASH = HashingUtils::HashString("ENILimitReachedException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
-static const int SNAP_START_TIMEOUT_HASH = HashingUtils::HashString("SnapStartTimeoutException");
-static const int CODE_STORAGE_EXCEEDED_HASH = HashingUtils::HashString("CodeStorageExceededException");
+static constexpr uint32_t E_F_S_MOUNT_CONNECTIVITY_HASH = ConstExprHashingUtils::HashString("EFSMountConnectivityException");
+static constexpr uint32_t RESOURCE_NOT_READY_HASH = ConstExprHashingUtils::HashString("ResourceNotReadyException");
+static constexpr uint32_t PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ProvisionedConcurrencyConfigNotFoundException");
+static constexpr uint32_t K_M_S_INVALID_STATE_HASH = ConstExprHashingUtils::HashString("KMSInvalidStateException");
+static constexpr uint32_t RECURSIVE_INVOCATION_HASH = ConstExprHashingUtils::HashString("RecursiveInvocationException");
+static constexpr uint32_t POLICY_LENGTH_EXCEEDED_HASH = ConstExprHashingUtils::HashString("PolicyLengthExceededException");
+static constexpr uint32_t K_M_S_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("KMSNotFoundException");
+static constexpr uint32_t PRECONDITION_FAILED_HASH = ConstExprHashingUtils::HashString("PreconditionFailedException");
+static constexpr uint32_t CODE_VERIFICATION_FAILED_HASH = ConstExprHashingUtils::HashString("CodeVerificationFailedException");
+static constexpr uint32_t SNAP_START_HASH = ConstExprHashingUtils::HashString("SnapStartException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t SUBNET_I_P_ADDRESS_LIMIT_REACHED_HASH = ConstExprHashingUtils::HashString("SubnetIPAddressLimitReachedException");
+static constexpr uint32_t SNAP_START_NOT_READY_HASH = ConstExprHashingUtils::HashString("SnapStartNotReadyException");
+static constexpr uint32_t INVALID_REQUEST_CONTENT_HASH = ConstExprHashingUtils::HashString("InvalidRequestContentException");
+static constexpr uint32_t E_C2_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("EC2AccessDeniedException");
+static constexpr uint32_t REQUEST_TOO_LARGE_HASH = ConstExprHashingUtils::HashString("RequestTooLargeException");
+static constexpr uint32_t INVALID_CODE_SIGNATURE_HASH = ConstExprHashingUtils::HashString("InvalidCodeSignatureException");
+static constexpr uint32_t E_F_S_I_O_HASH = ConstExprHashingUtils::HashString("EFSIOException");
+static constexpr uint32_t INVALID_SECURITY_GROUP_I_D_HASH = ConstExprHashingUtils::HashString("InvalidSecurityGroupIDException");
+static constexpr uint32_t INVALID_SUBNET_I_D_HASH = ConstExprHashingUtils::HashString("InvalidSubnetIDException");
+static constexpr uint32_t CODE_SIGNING_CONFIG_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("CodeSigningConfigNotFoundException");
+static constexpr uint32_t E_F_S_MOUNT_TIMEOUT_HASH = ConstExprHashingUtils::HashString("EFSMountTimeoutException");
+static constexpr uint32_t INVALID_RUNTIME_HASH = ConstExprHashingUtils::HashString("InvalidRuntimeException");
+static constexpr uint32_t E_C2_UNEXPECTED_HASH = ConstExprHashingUtils::HashString("EC2UnexpectedException");
+static constexpr uint32_t INVALID_ZIP_FILE_HASH = ConstExprHashingUtils::HashString("InvalidZipFileException");
+static constexpr uint32_t UNSUPPORTED_MEDIA_TYPE_HASH = ConstExprHashingUtils::HashString("UnsupportedMediaTypeException");
+static constexpr uint32_t E_F_S_MOUNT_FAILURE_HASH = ConstExprHashingUtils::HashString("EFSMountFailureException");
+static constexpr uint32_t K_M_S_DISABLED_HASH = ConstExprHashingUtils::HashString("KMSDisabledException");
+static constexpr uint32_t K_M_S_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("KMSAccessDeniedException");
+static constexpr uint32_t E_C2_THROTTLED_HASH = ConstExprHashingUtils::HashString("EC2ThrottledException");
+static constexpr uint32_t RESOURCE_CONFLICT_HASH = ConstExprHashingUtils::HashString("ResourceConflictException");
+static constexpr uint32_t E_N_I_LIMIT_REACHED_HASH = ConstExprHashingUtils::HashString("ENILimitReachedException");
+static constexpr uint32_t TOO_MANY_REQUESTS_HASH = ConstExprHashingUtils::HashString("TooManyRequestsException");
+static constexpr uint32_t SERVICE_HASH = ConstExprHashingUtils::HashString("ServiceException");
+static constexpr uint32_t SNAP_START_TIMEOUT_HASH = ConstExprHashingUtils::HashString("SnapStartTimeoutException");
+static constexpr uint32_t CODE_STORAGE_EXCEEDED_HASH = ConstExprHashingUtils::HashString("CodeStorageExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == E_F_S_MOUNT_CONNECTIVITY_HASH)
   {

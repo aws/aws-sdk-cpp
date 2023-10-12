@@ -20,15 +20,15 @@ namespace Aws
       namespace FpgaImageAttributeNameMapper
       {
 
-        static const int description_HASH = HashingUtils::HashString("description");
-        static const int name_HASH = HashingUtils::HashString("name");
-        static const int loadPermission_HASH = HashingUtils::HashString("loadPermission");
-        static const int productCodes_HASH = HashingUtils::HashString("productCodes");
+        static constexpr uint32_t description_HASH = ConstExprHashingUtils::HashString("description");
+        static constexpr uint32_t name_HASH = ConstExprHashingUtils::HashString("name");
+        static constexpr uint32_t loadPermission_HASH = ConstExprHashingUtils::HashString("loadPermission");
+        static constexpr uint32_t productCodes_HASH = ConstExprHashingUtils::HashString("productCodes");
 
 
         FpgaImageAttributeName GetFpgaImageAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == description_HASH)
           {
             return FpgaImageAttributeName::description;

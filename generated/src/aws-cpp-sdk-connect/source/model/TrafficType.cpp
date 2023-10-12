@@ -20,13 +20,13 @@ namespace Aws
       namespace TrafficTypeMapper
       {
 
-        static const int GENERAL_HASH = HashingUtils::HashString("GENERAL");
-        static const int CAMPAIGN_HASH = HashingUtils::HashString("CAMPAIGN");
+        static constexpr uint32_t GENERAL_HASH = ConstExprHashingUtils::HashString("GENERAL");
+        static constexpr uint32_t CAMPAIGN_HASH = ConstExprHashingUtils::HashString("CAMPAIGN");
 
 
         TrafficType GetTrafficTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GENERAL_HASH)
           {
             return TrafficType::GENERAL;

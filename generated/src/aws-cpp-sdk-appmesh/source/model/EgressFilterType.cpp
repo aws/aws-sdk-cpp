@@ -20,13 +20,13 @@ namespace Aws
       namespace EgressFilterTypeMapper
       {
 
-        static const int ALLOW_ALL_HASH = HashingUtils::HashString("ALLOW_ALL");
-        static const int DROP_ALL_HASH = HashingUtils::HashString("DROP_ALL");
+        static constexpr uint32_t ALLOW_ALL_HASH = ConstExprHashingUtils::HashString("ALLOW_ALL");
+        static constexpr uint32_t DROP_ALL_HASH = ConstExprHashingUtils::HashString("DROP_ALL");
 
 
         EgressFilterType GetEgressFilterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALLOW_ALL_HASH)
           {
             return EgressFilterType::ALLOW_ALL;

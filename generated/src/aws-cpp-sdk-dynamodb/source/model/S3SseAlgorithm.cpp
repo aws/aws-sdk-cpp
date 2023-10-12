@@ -20,13 +20,13 @@ namespace Aws
       namespace S3SseAlgorithmMapper
       {
 
-        static const int AES256_HASH = HashingUtils::HashString("AES256");
-        static const int KMS_HASH = HashingUtils::HashString("KMS");
+        static constexpr uint32_t AES256_HASH = ConstExprHashingUtils::HashString("AES256");
+        static constexpr uint32_t KMS_HASH = ConstExprHashingUtils::HashString("KMS");
 
 
         S3SseAlgorithm GetS3SseAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AES256_HASH)
           {
             return S3SseAlgorithm::AES256;

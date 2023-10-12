@@ -20,13 +20,13 @@ namespace Aws
       namespace ProtectionPolicyMapper
       {
 
-        static const int NoProtection_HASH = HashingUtils::HashString("NoProtection");
-        static const int FullProtection_HASH = HashingUtils::HashString("FullProtection");
+        static constexpr uint32_t NoProtection_HASH = ConstExprHashingUtils::HashString("NoProtection");
+        static constexpr uint32_t FullProtection_HASH = ConstExprHashingUtils::HashString("FullProtection");
 
 
         ProtectionPolicy GetProtectionPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NoProtection_HASH)
           {
             return ProtectionPolicy::NoProtection;

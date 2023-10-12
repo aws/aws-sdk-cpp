@@ -20,15 +20,15 @@ namespace Aws
       namespace MappingRuleMatchTypeMapper
       {
 
-        static const int Equals_HASH = HashingUtils::HashString("Equals");
-        static const int Contains_HASH = HashingUtils::HashString("Contains");
-        static const int StartsWith_HASH = HashingUtils::HashString("StartsWith");
-        static const int NotEqual_HASH = HashingUtils::HashString("NotEqual");
+        static constexpr uint32_t Equals_HASH = ConstExprHashingUtils::HashString("Equals");
+        static constexpr uint32_t Contains_HASH = ConstExprHashingUtils::HashString("Contains");
+        static constexpr uint32_t StartsWith_HASH = ConstExprHashingUtils::HashString("StartsWith");
+        static constexpr uint32_t NotEqual_HASH = ConstExprHashingUtils::HashString("NotEqual");
 
 
         MappingRuleMatchType GetMappingRuleMatchTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Equals_HASH)
           {
             return MappingRuleMatchType::Equals;

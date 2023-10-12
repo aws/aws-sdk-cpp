@@ -20,14 +20,14 @@ namespace Aws
       namespace LineInterpolationMapper
       {
 
-        static const int LINEAR_HASH = HashingUtils::HashString("LINEAR");
-        static const int SMOOTH_HASH = HashingUtils::HashString("SMOOTH");
-        static const int STEPPED_HASH = HashingUtils::HashString("STEPPED");
+        static constexpr uint32_t LINEAR_HASH = ConstExprHashingUtils::HashString("LINEAR");
+        static constexpr uint32_t SMOOTH_HASH = ConstExprHashingUtils::HashString("SMOOTH");
+        static constexpr uint32_t STEPPED_HASH = ConstExprHashingUtils::HashString("STEPPED");
 
 
         LineInterpolation GetLineInterpolationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LINEAR_HASH)
           {
             return LineInterpolation::LINEAR;

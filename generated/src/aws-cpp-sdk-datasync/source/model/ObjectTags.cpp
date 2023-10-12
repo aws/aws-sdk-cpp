@@ -20,13 +20,13 @@ namespace Aws
       namespace ObjectTagsMapper
       {
 
-        static const int PRESERVE_HASH = HashingUtils::HashString("PRESERVE");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t PRESERVE_HASH = ConstExprHashingUtils::HashString("PRESERVE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         ObjectTags GetObjectTagsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRESERVE_HASH)
           {
             return ObjectTags::PRESERVE;

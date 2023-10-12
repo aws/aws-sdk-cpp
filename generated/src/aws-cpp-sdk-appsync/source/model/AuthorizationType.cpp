@@ -20,12 +20,12 @@ namespace Aws
       namespace AuthorizationTypeMapper
       {
 
-        static const int AWS_IAM_HASH = HashingUtils::HashString("AWS_IAM");
+        static constexpr uint32_t AWS_IAM_HASH = ConstExprHashingUtils::HashString("AWS_IAM");
 
 
         AuthorizationType GetAuthorizationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_IAM_HASH)
           {
             return AuthorizationType::AWS_IAM;

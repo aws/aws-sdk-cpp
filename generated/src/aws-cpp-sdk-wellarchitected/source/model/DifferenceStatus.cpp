@@ -20,14 +20,14 @@ namespace Aws
       namespace DifferenceStatusMapper
       {
 
-        static const int UPDATED_HASH = HashingUtils::HashString("UPDATED");
-        static const int NEW__HASH = HashingUtils::HashString("NEW");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t UPDATED_HASH = ConstExprHashingUtils::HashString("UPDATED");
+        static constexpr uint32_t NEW__HASH = ConstExprHashingUtils::HashString("NEW");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         DifferenceStatus GetDifferenceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UPDATED_HASH)
           {
             return DifferenceStatus::UPDATED;

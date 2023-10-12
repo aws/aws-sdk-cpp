@@ -20,13 +20,13 @@ namespace Aws
       namespace ChannelMembershipTypeMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int HIDDEN_HASH = HashingUtils::HashString("HIDDEN");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t HIDDEN_HASH = ConstExprHashingUtils::HashString("HIDDEN");
 
 
         ChannelMembershipType GetChannelMembershipTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return ChannelMembershipType::DEFAULT;

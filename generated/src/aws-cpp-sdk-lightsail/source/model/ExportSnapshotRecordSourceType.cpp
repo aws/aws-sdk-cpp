@@ -20,13 +20,13 @@ namespace Aws
       namespace ExportSnapshotRecordSourceTypeMapper
       {
 
-        static const int InstanceSnapshot_HASH = HashingUtils::HashString("InstanceSnapshot");
-        static const int DiskSnapshot_HASH = HashingUtils::HashString("DiskSnapshot");
+        static constexpr uint32_t InstanceSnapshot_HASH = ConstExprHashingUtils::HashString("InstanceSnapshot");
+        static constexpr uint32_t DiskSnapshot_HASH = ConstExprHashingUtils::HashString("DiskSnapshot");
 
 
         ExportSnapshotRecordSourceType GetExportSnapshotRecordSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InstanceSnapshot_HASH)
           {
             return ExportSnapshotRecordSourceType::InstanceSnapshot;

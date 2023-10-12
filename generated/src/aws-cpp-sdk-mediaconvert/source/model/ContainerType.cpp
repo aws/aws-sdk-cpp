@@ -20,22 +20,22 @@ namespace Aws
       namespace ContainerTypeMapper
       {
 
-        static const int F4V_HASH = HashingUtils::HashString("F4V");
-        static const int ISMV_HASH = HashingUtils::HashString("ISMV");
-        static const int M2TS_HASH = HashingUtils::HashString("M2TS");
-        static const int M3U8_HASH = HashingUtils::HashString("M3U8");
-        static const int CMFC_HASH = HashingUtils::HashString("CMFC");
-        static const int MOV_HASH = HashingUtils::HashString("MOV");
-        static const int MP4_HASH = HashingUtils::HashString("MP4");
-        static const int MPD_HASH = HashingUtils::HashString("MPD");
-        static const int MXF_HASH = HashingUtils::HashString("MXF");
-        static const int WEBM_HASH = HashingUtils::HashString("WEBM");
-        static const int RAW_HASH = HashingUtils::HashString("RAW");
+        static constexpr uint32_t F4V_HASH = ConstExprHashingUtils::HashString("F4V");
+        static constexpr uint32_t ISMV_HASH = ConstExprHashingUtils::HashString("ISMV");
+        static constexpr uint32_t M2TS_HASH = ConstExprHashingUtils::HashString("M2TS");
+        static constexpr uint32_t M3U8_HASH = ConstExprHashingUtils::HashString("M3U8");
+        static constexpr uint32_t CMFC_HASH = ConstExprHashingUtils::HashString("CMFC");
+        static constexpr uint32_t MOV_HASH = ConstExprHashingUtils::HashString("MOV");
+        static constexpr uint32_t MP4_HASH = ConstExprHashingUtils::HashString("MP4");
+        static constexpr uint32_t MPD_HASH = ConstExprHashingUtils::HashString("MPD");
+        static constexpr uint32_t MXF_HASH = ConstExprHashingUtils::HashString("MXF");
+        static constexpr uint32_t WEBM_HASH = ConstExprHashingUtils::HashString("WEBM");
+        static constexpr uint32_t RAW_HASH = ConstExprHashingUtils::HashString("RAW");
 
 
         ContainerType GetContainerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == F4V_HASH)
           {
             return ContainerType::F4V;

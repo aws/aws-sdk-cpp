@@ -20,18 +20,18 @@ namespace Aws
       namespace ConnectionTypeMapper
       {
 
-        static const int JDBC_HASH = HashingUtils::HashString("JDBC");
-        static const int SFTP_HASH = HashingUtils::HashString("SFTP");
-        static const int MONGODB_HASH = HashingUtils::HashString("MONGODB");
-        static const int KAFKA_HASH = HashingUtils::HashString("KAFKA");
-        static const int NETWORK_HASH = HashingUtils::HashString("NETWORK");
-        static const int MARKETPLACE_HASH = HashingUtils::HashString("MARKETPLACE");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t JDBC_HASH = ConstExprHashingUtils::HashString("JDBC");
+        static constexpr uint32_t SFTP_HASH = ConstExprHashingUtils::HashString("SFTP");
+        static constexpr uint32_t MONGODB_HASH = ConstExprHashingUtils::HashString("MONGODB");
+        static constexpr uint32_t KAFKA_HASH = ConstExprHashingUtils::HashString("KAFKA");
+        static constexpr uint32_t NETWORK_HASH = ConstExprHashingUtils::HashString("NETWORK");
+        static constexpr uint32_t MARKETPLACE_HASH = ConstExprHashingUtils::HashString("MARKETPLACE");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
 
 
         ConnectionType GetConnectionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JDBC_HASH)
           {
             return ConnectionType::JDBC;

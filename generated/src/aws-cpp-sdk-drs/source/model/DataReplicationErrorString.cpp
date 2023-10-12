@@ -20,25 +20,25 @@ namespace Aws
       namespace DataReplicationErrorStringMapper
       {
 
-        static const int AGENT_NOT_SEEN_HASH = HashingUtils::HashString("AGENT_NOT_SEEN");
-        static const int SNAPSHOTS_FAILURE_HASH = HashingUtils::HashString("SNAPSHOTS_FAILURE");
-        static const int NOT_CONVERGING_HASH = HashingUtils::HashString("NOT_CONVERGING");
-        static const int UNSTABLE_NETWORK_HASH = HashingUtils::HashString("UNSTABLE_NETWORK");
-        static const int FAILED_TO_CREATE_SECURITY_GROUP_HASH = HashingUtils::HashString("FAILED_TO_CREATE_SECURITY_GROUP");
-        static const int FAILED_TO_LAUNCH_REPLICATION_SERVER_HASH = HashingUtils::HashString("FAILED_TO_LAUNCH_REPLICATION_SERVER");
-        static const int FAILED_TO_BOOT_REPLICATION_SERVER_HASH = HashingUtils::HashString("FAILED_TO_BOOT_REPLICATION_SERVER");
-        static const int FAILED_TO_AUTHENTICATE_WITH_SERVICE_HASH = HashingUtils::HashString("FAILED_TO_AUTHENTICATE_WITH_SERVICE");
-        static const int FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE_HASH = HashingUtils::HashString("FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE");
-        static const int FAILED_TO_CREATE_STAGING_DISKS_HASH = HashingUtils::HashString("FAILED_TO_CREATE_STAGING_DISKS");
-        static const int FAILED_TO_ATTACH_STAGING_DISKS_HASH = HashingUtils::HashString("FAILED_TO_ATTACH_STAGING_DISKS");
-        static const int FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT_HASH = HashingUtils::HashString("FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT");
-        static const int FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER_HASH = HashingUtils::HashString("FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER");
-        static const int FAILED_TO_START_DATA_TRANSFER_HASH = HashingUtils::HashString("FAILED_TO_START_DATA_TRANSFER");
+        static constexpr uint32_t AGENT_NOT_SEEN_HASH = ConstExprHashingUtils::HashString("AGENT_NOT_SEEN");
+        static constexpr uint32_t SNAPSHOTS_FAILURE_HASH = ConstExprHashingUtils::HashString("SNAPSHOTS_FAILURE");
+        static constexpr uint32_t NOT_CONVERGING_HASH = ConstExprHashingUtils::HashString("NOT_CONVERGING");
+        static constexpr uint32_t UNSTABLE_NETWORK_HASH = ConstExprHashingUtils::HashString("UNSTABLE_NETWORK");
+        static constexpr uint32_t FAILED_TO_CREATE_SECURITY_GROUP_HASH = ConstExprHashingUtils::HashString("FAILED_TO_CREATE_SECURITY_GROUP");
+        static constexpr uint32_t FAILED_TO_LAUNCH_REPLICATION_SERVER_HASH = ConstExprHashingUtils::HashString("FAILED_TO_LAUNCH_REPLICATION_SERVER");
+        static constexpr uint32_t FAILED_TO_BOOT_REPLICATION_SERVER_HASH = ConstExprHashingUtils::HashString("FAILED_TO_BOOT_REPLICATION_SERVER");
+        static constexpr uint32_t FAILED_TO_AUTHENTICATE_WITH_SERVICE_HASH = ConstExprHashingUtils::HashString("FAILED_TO_AUTHENTICATE_WITH_SERVICE");
+        static constexpr uint32_t FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE_HASH = ConstExprHashingUtils::HashString("FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE");
+        static constexpr uint32_t FAILED_TO_CREATE_STAGING_DISKS_HASH = ConstExprHashingUtils::HashString("FAILED_TO_CREATE_STAGING_DISKS");
+        static constexpr uint32_t FAILED_TO_ATTACH_STAGING_DISKS_HASH = ConstExprHashingUtils::HashString("FAILED_TO_ATTACH_STAGING_DISKS");
+        static constexpr uint32_t FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT_HASH = ConstExprHashingUtils::HashString("FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT");
+        static constexpr uint32_t FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER_HASH = ConstExprHashingUtils::HashString("FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER");
+        static constexpr uint32_t FAILED_TO_START_DATA_TRANSFER_HASH = ConstExprHashingUtils::HashString("FAILED_TO_START_DATA_TRANSFER");
 
 
         DataReplicationErrorString GetDataReplicationErrorStringForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AGENT_NOT_SEEN_HASH)
           {
             return DataReplicationErrorString::AGENT_NOT_SEEN;

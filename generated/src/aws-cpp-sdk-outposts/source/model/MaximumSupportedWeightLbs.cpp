@@ -20,16 +20,16 @@ namespace Aws
       namespace MaximumSupportedWeightLbsMapper
       {
 
-        static const int NO_LIMIT_HASH = HashingUtils::HashString("NO_LIMIT");
-        static const int MAX_1400_LBS_HASH = HashingUtils::HashString("MAX_1400_LBS");
-        static const int MAX_1600_LBS_HASH = HashingUtils::HashString("MAX_1600_LBS");
-        static const int MAX_1800_LBS_HASH = HashingUtils::HashString("MAX_1800_LBS");
-        static const int MAX_2000_LBS_HASH = HashingUtils::HashString("MAX_2000_LBS");
+        static constexpr uint32_t NO_LIMIT_HASH = ConstExprHashingUtils::HashString("NO_LIMIT");
+        static constexpr uint32_t MAX_1400_LBS_HASH = ConstExprHashingUtils::HashString("MAX_1400_LBS");
+        static constexpr uint32_t MAX_1600_LBS_HASH = ConstExprHashingUtils::HashString("MAX_1600_LBS");
+        static constexpr uint32_t MAX_1800_LBS_HASH = ConstExprHashingUtils::HashString("MAX_1800_LBS");
+        static constexpr uint32_t MAX_2000_LBS_HASH = ConstExprHashingUtils::HashString("MAX_2000_LBS");
 
 
         MaximumSupportedWeightLbs GetMaximumSupportedWeightLbsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_LIMIT_HASH)
           {
             return MaximumSupportedWeightLbs::NO_LIMIT;

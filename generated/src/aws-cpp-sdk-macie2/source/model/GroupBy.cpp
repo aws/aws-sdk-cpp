@@ -20,15 +20,15 @@ namespace Aws
       namespace GroupByMapper
       {
 
-        static const int resourcesAffected_s3Bucket_name_HASH = HashingUtils::HashString("resourcesAffected.s3Bucket.name");
-        static const int type_HASH = HashingUtils::HashString("type");
-        static const int classificationDetails_jobId_HASH = HashingUtils::HashString("classificationDetails.jobId");
-        static const int severity_description_HASH = HashingUtils::HashString("severity.description");
+        static constexpr uint32_t resourcesAffected_s3Bucket_name_HASH = ConstExprHashingUtils::HashString("resourcesAffected.s3Bucket.name");
+        static constexpr uint32_t type_HASH = ConstExprHashingUtils::HashString("type");
+        static constexpr uint32_t classificationDetails_jobId_HASH = ConstExprHashingUtils::HashString("classificationDetails.jobId");
+        static constexpr uint32_t severity_description_HASH = ConstExprHashingUtils::HashString("severity.description");
 
 
         GroupBy GetGroupByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == resourcesAffected_s3Bucket_name_HASH)
           {
             return GroupBy::resourcesAffected_s3Bucket_name;

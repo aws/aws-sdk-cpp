@@ -20,12 +20,12 @@ namespace Aws
       namespace RelationshipTypeMapper
       {
 
-        static const int CHILD_HASH = HashingUtils::HashString("CHILD");
+        static constexpr uint32_t CHILD_HASH = ConstExprHashingUtils::HashString("CHILD");
 
 
         RelationshipType GetRelationshipTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CHILD_HASH)
           {
             return RelationshipType::CHILD;

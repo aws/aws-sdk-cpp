@@ -20,14 +20,14 @@ namespace Aws
       namespace ResolveConflictsMapper
       {
 
-        static const int OVERWRITE_HASH = HashingUtils::HashString("OVERWRITE");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int PRESERVE_HASH = HashingUtils::HashString("PRESERVE");
+        static constexpr uint32_t OVERWRITE_HASH = ConstExprHashingUtils::HashString("OVERWRITE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t PRESERVE_HASH = ConstExprHashingUtils::HashString("PRESERVE");
 
 
         ResolveConflicts GetResolveConflictsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OVERWRITE_HASH)
           {
             return ResolveConflicts::OVERWRITE;

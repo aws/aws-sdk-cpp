@@ -20,22 +20,22 @@ namespace Aws
       namespace SnowballCapacityMapper
       {
 
-        static const int T50_HASH = HashingUtils::HashString("T50");
-        static const int T80_HASH = HashingUtils::HashString("T80");
-        static const int T100_HASH = HashingUtils::HashString("T100");
-        static const int T42_HASH = HashingUtils::HashString("T42");
-        static const int T98_HASH = HashingUtils::HashString("T98");
-        static const int T8_HASH = HashingUtils::HashString("T8");
-        static const int T14_HASH = HashingUtils::HashString("T14");
-        static const int T32_HASH = HashingUtils::HashString("T32");
-        static const int NoPreference_HASH = HashingUtils::HashString("NoPreference");
-        static const int T240_HASH = HashingUtils::HashString("T240");
-        static const int T13_HASH = HashingUtils::HashString("T13");
+        static constexpr uint32_t T50_HASH = ConstExprHashingUtils::HashString("T50");
+        static constexpr uint32_t T80_HASH = ConstExprHashingUtils::HashString("T80");
+        static constexpr uint32_t T100_HASH = ConstExprHashingUtils::HashString("T100");
+        static constexpr uint32_t T42_HASH = ConstExprHashingUtils::HashString("T42");
+        static constexpr uint32_t T98_HASH = ConstExprHashingUtils::HashString("T98");
+        static constexpr uint32_t T8_HASH = ConstExprHashingUtils::HashString("T8");
+        static constexpr uint32_t T14_HASH = ConstExprHashingUtils::HashString("T14");
+        static constexpr uint32_t T32_HASH = ConstExprHashingUtils::HashString("T32");
+        static constexpr uint32_t NoPreference_HASH = ConstExprHashingUtils::HashString("NoPreference");
+        static constexpr uint32_t T240_HASH = ConstExprHashingUtils::HashString("T240");
+        static constexpr uint32_t T13_HASH = ConstExprHashingUtils::HashString("T13");
 
 
         SnowballCapacity GetSnowballCapacityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == T50_HASH)
           {
             return SnowballCapacity::T50;

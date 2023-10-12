@@ -20,16 +20,16 @@ namespace Aws
       namespace HITStatusMapper
       {
 
-        static const int Assignable_HASH = HashingUtils::HashString("Assignable");
-        static const int Unassignable_HASH = HashingUtils::HashString("Unassignable");
-        static const int Reviewable_HASH = HashingUtils::HashString("Reviewable");
-        static const int Reviewing_HASH = HashingUtils::HashString("Reviewing");
-        static const int Disposed_HASH = HashingUtils::HashString("Disposed");
+        static constexpr uint32_t Assignable_HASH = ConstExprHashingUtils::HashString("Assignable");
+        static constexpr uint32_t Unassignable_HASH = ConstExprHashingUtils::HashString("Unassignable");
+        static constexpr uint32_t Reviewable_HASH = ConstExprHashingUtils::HashString("Reviewable");
+        static constexpr uint32_t Reviewing_HASH = ConstExprHashingUtils::HashString("Reviewing");
+        static constexpr uint32_t Disposed_HASH = ConstExprHashingUtils::HashString("Disposed");
 
 
         HITStatus GetHITStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Assignable_HASH)
           {
             return HITStatus::Assignable;

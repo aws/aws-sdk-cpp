@@ -20,13 +20,13 @@ namespace Aws
       namespace M2tsSegmentationStyleMapper
       {
 
-        static const int MAINTAIN_CADENCE_HASH = HashingUtils::HashString("MAINTAIN_CADENCE");
-        static const int RESET_CADENCE_HASH = HashingUtils::HashString("RESET_CADENCE");
+        static constexpr uint32_t MAINTAIN_CADENCE_HASH = ConstExprHashingUtils::HashString("MAINTAIN_CADENCE");
+        static constexpr uint32_t RESET_CADENCE_HASH = ConstExprHashingUtils::HashString("RESET_CADENCE");
 
 
         M2tsSegmentationStyle GetM2tsSegmentationStyleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MAINTAIN_CADENCE_HASH)
           {
             return M2tsSegmentationStyle::MAINTAIN_CADENCE;

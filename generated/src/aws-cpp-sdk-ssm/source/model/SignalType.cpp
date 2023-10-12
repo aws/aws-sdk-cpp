@@ -20,16 +20,16 @@ namespace Aws
       namespace SignalTypeMapper
       {
 
-        static const int Approve_HASH = HashingUtils::HashString("Approve");
-        static const int Reject_HASH = HashingUtils::HashString("Reject");
-        static const int StartStep_HASH = HashingUtils::HashString("StartStep");
-        static const int StopStep_HASH = HashingUtils::HashString("StopStep");
-        static const int Resume_HASH = HashingUtils::HashString("Resume");
+        static constexpr uint32_t Approve_HASH = ConstExprHashingUtils::HashString("Approve");
+        static constexpr uint32_t Reject_HASH = ConstExprHashingUtils::HashString("Reject");
+        static constexpr uint32_t StartStep_HASH = ConstExprHashingUtils::HashString("StartStep");
+        static constexpr uint32_t StopStep_HASH = ConstExprHashingUtils::HashString("StopStep");
+        static constexpr uint32_t Resume_HASH = ConstExprHashingUtils::HashString("Resume");
 
 
         SignalType GetSignalTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Approve_HASH)
           {
             return SignalType::Approve;

@@ -20,15 +20,15 @@ namespace Aws
       namespace ParameterTypeMapper
       {
 
-        static const int Integer_HASH = HashingUtils::HashString("Integer");
-        static const int Continuous_HASH = HashingUtils::HashString("Continuous");
-        static const int Categorical_HASH = HashingUtils::HashString("Categorical");
-        static const int FreeText_HASH = HashingUtils::HashString("FreeText");
+        static constexpr uint32_t Integer_HASH = ConstExprHashingUtils::HashString("Integer");
+        static constexpr uint32_t Continuous_HASH = ConstExprHashingUtils::HashString("Continuous");
+        static constexpr uint32_t Categorical_HASH = ConstExprHashingUtils::HashString("Categorical");
+        static constexpr uint32_t FreeText_HASH = ConstExprHashingUtils::HashString("FreeText");
 
 
         ParameterType GetParameterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Integer_HASH)
           {
             return ParameterType::Integer;

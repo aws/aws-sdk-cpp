@@ -20,13 +20,13 @@ namespace Aws
       namespace LayerFailureCodeMapper
       {
 
-        static const int InvalidLayerDigest_HASH = HashingUtils::HashString("InvalidLayerDigest");
-        static const int MissingLayerDigest_HASH = HashingUtils::HashString("MissingLayerDigest");
+        static constexpr uint32_t InvalidLayerDigest_HASH = ConstExprHashingUtils::HashString("InvalidLayerDigest");
+        static constexpr uint32_t MissingLayerDigest_HASH = ConstExprHashingUtils::HashString("MissingLayerDigest");
 
 
         LayerFailureCode GetLayerFailureCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InvalidLayerDigest_HASH)
           {
             return LayerFailureCode::InvalidLayerDigest;

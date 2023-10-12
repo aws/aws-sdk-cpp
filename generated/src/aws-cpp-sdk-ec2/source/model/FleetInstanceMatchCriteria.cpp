@@ -20,12 +20,12 @@ namespace Aws
       namespace FleetInstanceMatchCriteriaMapper
       {
 
-        static const int open_HASH = HashingUtils::HashString("open");
+        static constexpr uint32_t open_HASH = ConstExprHashingUtils::HashString("open");
 
 
         FleetInstanceMatchCriteria GetFleetInstanceMatchCriteriaForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == open_HASH)
           {
             return FleetInstanceMatchCriteria::open;

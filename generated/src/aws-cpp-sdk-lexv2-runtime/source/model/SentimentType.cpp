@@ -20,15 +20,15 @@ namespace Aws
       namespace SentimentTypeMapper
       {
 
-        static const int MIXED_HASH = HashingUtils::HashString("MIXED");
-        static const int NEGATIVE_HASH = HashingUtils::HashString("NEGATIVE");
-        static const int NEUTRAL_HASH = HashingUtils::HashString("NEUTRAL");
-        static const int POSITIVE_HASH = HashingUtils::HashString("POSITIVE");
+        static constexpr uint32_t MIXED_HASH = ConstExprHashingUtils::HashString("MIXED");
+        static constexpr uint32_t NEGATIVE_HASH = ConstExprHashingUtils::HashString("NEGATIVE");
+        static constexpr uint32_t NEUTRAL_HASH = ConstExprHashingUtils::HashString("NEUTRAL");
+        static constexpr uint32_t POSITIVE_HASH = ConstExprHashingUtils::HashString("POSITIVE");
 
 
         SentimentType GetSentimentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MIXED_HASH)
           {
             return SentimentType::MIXED;

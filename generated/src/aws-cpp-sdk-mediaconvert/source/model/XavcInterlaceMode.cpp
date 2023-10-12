@@ -20,16 +20,16 @@ namespace Aws
       namespace XavcInterlaceModeMapper
       {
 
-        static const int PROGRESSIVE_HASH = HashingUtils::HashString("PROGRESSIVE");
-        static const int TOP_FIELD_HASH = HashingUtils::HashString("TOP_FIELD");
-        static const int BOTTOM_FIELD_HASH = HashingUtils::HashString("BOTTOM_FIELD");
-        static const int FOLLOW_TOP_FIELD_HASH = HashingUtils::HashString("FOLLOW_TOP_FIELD");
-        static const int FOLLOW_BOTTOM_FIELD_HASH = HashingUtils::HashString("FOLLOW_BOTTOM_FIELD");
+        static constexpr uint32_t PROGRESSIVE_HASH = ConstExprHashingUtils::HashString("PROGRESSIVE");
+        static constexpr uint32_t TOP_FIELD_HASH = ConstExprHashingUtils::HashString("TOP_FIELD");
+        static constexpr uint32_t BOTTOM_FIELD_HASH = ConstExprHashingUtils::HashString("BOTTOM_FIELD");
+        static constexpr uint32_t FOLLOW_TOP_FIELD_HASH = ConstExprHashingUtils::HashString("FOLLOW_TOP_FIELD");
+        static constexpr uint32_t FOLLOW_BOTTOM_FIELD_HASH = ConstExprHashingUtils::HashString("FOLLOW_BOTTOM_FIELD");
 
 
         XavcInterlaceMode GetXavcInterlaceModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROGRESSIVE_HASH)
           {
             return XavcInterlaceMode::PROGRESSIVE;

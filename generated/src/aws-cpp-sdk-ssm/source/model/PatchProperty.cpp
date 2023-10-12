@@ -20,17 +20,17 @@ namespace Aws
       namespace PatchPropertyMapper
       {
 
-        static const int PRODUCT_HASH = HashingUtils::HashString("PRODUCT");
-        static const int PRODUCT_FAMILY_HASH = HashingUtils::HashString("PRODUCT_FAMILY");
-        static const int CLASSIFICATION_HASH = HashingUtils::HashString("CLASSIFICATION");
-        static const int MSRC_SEVERITY_HASH = HashingUtils::HashString("MSRC_SEVERITY");
-        static const int PRIORITY_HASH = HashingUtils::HashString("PRIORITY");
-        static const int SEVERITY_HASH = HashingUtils::HashString("SEVERITY");
+        static constexpr uint32_t PRODUCT_HASH = ConstExprHashingUtils::HashString("PRODUCT");
+        static constexpr uint32_t PRODUCT_FAMILY_HASH = ConstExprHashingUtils::HashString("PRODUCT_FAMILY");
+        static constexpr uint32_t CLASSIFICATION_HASH = ConstExprHashingUtils::HashString("CLASSIFICATION");
+        static constexpr uint32_t MSRC_SEVERITY_HASH = ConstExprHashingUtils::HashString("MSRC_SEVERITY");
+        static constexpr uint32_t PRIORITY_HASH = ConstExprHashingUtils::HashString("PRIORITY");
+        static constexpr uint32_t SEVERITY_HASH = ConstExprHashingUtils::HashString("SEVERITY");
 
 
         PatchProperty GetPatchPropertyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRODUCT_HASH)
           {
             return PatchProperty::PRODUCT;

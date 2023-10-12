@@ -20,14 +20,14 @@ namespace Aws
       namespace EncodingTypeValueMapper
       {
 
-        static const int plain_HASH = HashingUtils::HashString("plain");
-        static const int plain_dictionary_HASH = HashingUtils::HashString("plain-dictionary");
-        static const int rle_dictionary_HASH = HashingUtils::HashString("rle-dictionary");
+        static constexpr uint32_t plain_HASH = ConstExprHashingUtils::HashString("plain");
+        static constexpr uint32_t plain_dictionary_HASH = ConstExprHashingUtils::HashString("plain-dictionary");
+        static constexpr uint32_t rle_dictionary_HASH = ConstExprHashingUtils::HashString("rle-dictionary");
 
 
         EncodingTypeValue GetEncodingTypeValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == plain_HASH)
           {
             return EncodingTypeValue::plain;

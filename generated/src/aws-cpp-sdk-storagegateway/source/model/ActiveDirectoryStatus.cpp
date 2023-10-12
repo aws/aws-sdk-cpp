@@ -20,18 +20,18 @@ namespace Aws
       namespace ActiveDirectoryStatusMapper
       {
 
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
-        static const int DETACHED_HASH = HashingUtils::HashString("DETACHED");
-        static const int JOINED_HASH = HashingUtils::HashString("JOINED");
-        static const int JOINING_HASH = HashingUtils::HashString("JOINING");
-        static const int NETWORK_ERROR_HASH = HashingUtils::HashString("NETWORK_ERROR");
-        static const int TIMEOUT_HASH = HashingUtils::HashString("TIMEOUT");
-        static const int UNKNOWN_ERROR_HASH = HashingUtils::HashString("UNKNOWN_ERROR");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t DETACHED_HASH = ConstExprHashingUtils::HashString("DETACHED");
+        static constexpr uint32_t JOINED_HASH = ConstExprHashingUtils::HashString("JOINED");
+        static constexpr uint32_t JOINING_HASH = ConstExprHashingUtils::HashString("JOINING");
+        static constexpr uint32_t NETWORK_ERROR_HASH = ConstExprHashingUtils::HashString("NETWORK_ERROR");
+        static constexpr uint32_t TIMEOUT_HASH = ConstExprHashingUtils::HashString("TIMEOUT");
+        static constexpr uint32_t UNKNOWN_ERROR_HASH = ConstExprHashingUtils::HashString("UNKNOWN_ERROR");
 
 
         ActiveDirectoryStatus GetActiveDirectoryStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCESS_DENIED_HASH)
           {
             return ActiveDirectoryStatus::ACCESS_DENIED;

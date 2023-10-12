@@ -20,14 +20,14 @@ namespace Aws
       namespace RadarChartAxesRangeScaleMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int INDEPENDENT_HASH = HashingUtils::HashString("INDEPENDENT");
-        static const int SHARED_HASH = HashingUtils::HashString("SHARED");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t INDEPENDENT_HASH = ConstExprHashingUtils::HashString("INDEPENDENT");
+        static constexpr uint32_t SHARED_HASH = ConstExprHashingUtils::HashString("SHARED");
 
 
         RadarChartAxesRangeScale GetRadarChartAxesRangeScaleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return RadarChartAxesRangeScale::AUTO;

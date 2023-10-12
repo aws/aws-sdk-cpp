@@ -20,15 +20,15 @@ namespace Aws
       namespace ConnectionStatusMapper
       {
 
-        static const int PENDING_HANDSHAKE_HASH = HashingUtils::HashString("PENDING_HANDSHAKE");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t PENDING_HANDSHAKE_HASH = ConstExprHashingUtils::HashString("PENDING_HANDSHAKE");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         ConnectionStatus GetConnectionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HANDSHAKE_HASH)
           {
             return ConnectionStatus::PENDING_HANDSHAKE;

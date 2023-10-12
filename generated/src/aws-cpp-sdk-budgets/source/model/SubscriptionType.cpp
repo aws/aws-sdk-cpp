@@ -20,13 +20,13 @@ namespace Aws
       namespace SubscriptionTypeMapper
       {
 
-        static const int SNS_HASH = HashingUtils::HashString("SNS");
-        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
+        static constexpr uint32_t SNS_HASH = ConstExprHashingUtils::HashString("SNS");
+        static constexpr uint32_t EMAIL_HASH = ConstExprHashingUtils::HashString("EMAIL");
 
 
         SubscriptionType GetSubscriptionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SNS_HASH)
           {
             return SubscriptionType::SNS;

@@ -20,12 +20,12 @@ namespace Aws
       namespace SsmParameterStoreParameterTypeMapper
       {
 
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
 
 
         SsmParameterStoreParameterType GetSsmParameterStoreParameterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STRING_HASH)
           {
             return SsmParameterStoreParameterType::STRING;

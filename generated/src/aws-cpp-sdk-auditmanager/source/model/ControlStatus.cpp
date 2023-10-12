@@ -20,14 +20,14 @@ namespace Aws
       namespace ControlStatusMapper
       {
 
-        static const int UNDER_REVIEW_HASH = HashingUtils::HashString("UNDER_REVIEW");
-        static const int REVIEWED_HASH = HashingUtils::HashString("REVIEWED");
-        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
+        static constexpr uint32_t UNDER_REVIEW_HASH = ConstExprHashingUtils::HashString("UNDER_REVIEW");
+        static constexpr uint32_t REVIEWED_HASH = ConstExprHashingUtils::HashString("REVIEWED");
+        static constexpr uint32_t INACTIVE_HASH = ConstExprHashingUtils::HashString("INACTIVE");
 
 
         ControlStatus GetControlStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNDER_REVIEW_HASH)
           {
             return ControlStatus::UNDER_REVIEW;

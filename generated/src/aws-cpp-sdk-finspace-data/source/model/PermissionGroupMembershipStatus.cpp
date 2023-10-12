@@ -20,14 +20,14 @@ namespace Aws
       namespace PermissionGroupMembershipStatusMapper
       {
 
-        static const int ADDITION_IN_PROGRESS_HASH = HashingUtils::HashString("ADDITION_IN_PROGRESS");
-        static const int ADDITION_SUCCESS_HASH = HashingUtils::HashString("ADDITION_SUCCESS");
-        static const int REMOVAL_IN_PROGRESS_HASH = HashingUtils::HashString("REMOVAL_IN_PROGRESS");
+        static constexpr uint32_t ADDITION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("ADDITION_IN_PROGRESS");
+        static constexpr uint32_t ADDITION_SUCCESS_HASH = ConstExprHashingUtils::HashString("ADDITION_SUCCESS");
+        static constexpr uint32_t REMOVAL_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("REMOVAL_IN_PROGRESS");
 
 
         PermissionGroupMembershipStatus GetPermissionGroupMembershipStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADDITION_IN_PROGRESS_HASH)
           {
             return PermissionGroupMembershipStatus::ADDITION_IN_PROGRESS;

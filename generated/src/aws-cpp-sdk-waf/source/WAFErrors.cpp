@@ -33,30 +33,30 @@ template<> AWS_WAF_API WAFEntityMigrationException WAFError::GetModeledError()
 namespace WAFErrorMapper
 {
 
-static const int W_A_F_LIMITS_EXCEEDED_HASH = HashingUtils::HashString("WAFLimitsExceededException");
-static const int W_A_F_REFERENCED_ITEM_HASH = HashingUtils::HashString("WAFReferencedItemException");
-static const int W_A_F_NON_EMPTY_ENTITY_HASH = HashingUtils::HashString("WAFNonEmptyEntityException");
-static const int W_A_F_BAD_REQUEST_HASH = HashingUtils::HashString("WAFBadRequestException");
-static const int W_A_F_INVALID_PARAMETER_HASH = HashingUtils::HashString("WAFInvalidParameterException");
-static const int W_A_F_INVALID_OPERATION_HASH = HashingUtils::HashString("WAFInvalidOperationException");
-static const int W_A_F_DISALLOWED_NAME_HASH = HashingUtils::HashString("WAFDisallowedNameException");
-static const int W_A_F_NONEXISTENT_CONTAINER_HASH = HashingUtils::HashString("WAFNonexistentContainerException");
-static const int W_A_F_SUBSCRIPTION_NOT_FOUND_HASH = HashingUtils::HashString("WAFSubscriptionNotFoundException");
-static const int W_A_F_ENTITY_MIGRATION_HASH = HashingUtils::HashString("WAFEntityMigrationException");
-static const int W_A_F_INTERNAL_ERROR_HASH = HashingUtils::HashString("WAFInternalErrorException");
-static const int W_A_F_TAG_OPERATION_HASH = HashingUtils::HashString("WAFTagOperationException");
-static const int W_A_F_INVALID_PERMISSION_POLICY_HASH = HashingUtils::HashString("WAFInvalidPermissionPolicyException");
-static const int W_A_F_NONEXISTENT_ITEM_HASH = HashingUtils::HashString("WAFNonexistentItemException");
-static const int W_A_F_INVALID_ACCOUNT_HASH = HashingUtils::HashString("WAFInvalidAccountException");
-static const int W_A_F_STALE_DATA_HASH = HashingUtils::HashString("WAFStaleDataException");
-static const int W_A_F_INVALID_REGEX_PATTERN_HASH = HashingUtils::HashString("WAFInvalidRegexPatternException");
-static const int W_A_F_TAG_OPERATION_INTERNAL_ERROR_HASH = HashingUtils::HashString("WAFTagOperationInternalErrorException");
-static const int W_A_F_SERVICE_LINKED_ROLE_ERROR_HASH = HashingUtils::HashString("WAFServiceLinkedRoleErrorException");
+static constexpr uint32_t W_A_F_LIMITS_EXCEEDED_HASH = ConstExprHashingUtils::HashString("WAFLimitsExceededException");
+static constexpr uint32_t W_A_F_REFERENCED_ITEM_HASH = ConstExprHashingUtils::HashString("WAFReferencedItemException");
+static constexpr uint32_t W_A_F_NON_EMPTY_ENTITY_HASH = ConstExprHashingUtils::HashString("WAFNonEmptyEntityException");
+static constexpr uint32_t W_A_F_BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("WAFBadRequestException");
+static constexpr uint32_t W_A_F_INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("WAFInvalidParameterException");
+static constexpr uint32_t W_A_F_INVALID_OPERATION_HASH = ConstExprHashingUtils::HashString("WAFInvalidOperationException");
+static constexpr uint32_t W_A_F_DISALLOWED_NAME_HASH = ConstExprHashingUtils::HashString("WAFDisallowedNameException");
+static constexpr uint32_t W_A_F_NONEXISTENT_CONTAINER_HASH = ConstExprHashingUtils::HashString("WAFNonexistentContainerException");
+static constexpr uint32_t W_A_F_SUBSCRIPTION_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("WAFSubscriptionNotFoundException");
+static constexpr uint32_t W_A_F_ENTITY_MIGRATION_HASH = ConstExprHashingUtils::HashString("WAFEntityMigrationException");
+static constexpr uint32_t W_A_F_INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("WAFInternalErrorException");
+static constexpr uint32_t W_A_F_TAG_OPERATION_HASH = ConstExprHashingUtils::HashString("WAFTagOperationException");
+static constexpr uint32_t W_A_F_INVALID_PERMISSION_POLICY_HASH = ConstExprHashingUtils::HashString("WAFInvalidPermissionPolicyException");
+static constexpr uint32_t W_A_F_NONEXISTENT_ITEM_HASH = ConstExprHashingUtils::HashString("WAFNonexistentItemException");
+static constexpr uint32_t W_A_F_INVALID_ACCOUNT_HASH = ConstExprHashingUtils::HashString("WAFInvalidAccountException");
+static constexpr uint32_t W_A_F_STALE_DATA_HASH = ConstExprHashingUtils::HashString("WAFStaleDataException");
+static constexpr uint32_t W_A_F_INVALID_REGEX_PATTERN_HASH = ConstExprHashingUtils::HashString("WAFInvalidRegexPatternException");
+static constexpr uint32_t W_A_F_TAG_OPERATION_INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("WAFTagOperationInternalErrorException");
+static constexpr uint32_t W_A_F_SERVICE_LINKED_ROLE_ERROR_HASH = ConstExprHashingUtils::HashString("WAFServiceLinkedRoleErrorException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == W_A_F_LIMITS_EXCEEDED_HASH)
   {

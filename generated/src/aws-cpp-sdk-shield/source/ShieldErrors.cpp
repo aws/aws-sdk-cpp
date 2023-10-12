@@ -47,22 +47,22 @@ template<> AWS_SHIELD_API InvalidParameterException ShieldError::GetModeledError
 namespace ShieldErrorMapper
 {
 
-static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
-static const int LOCKED_SUBSCRIPTION_HASH = HashingUtils::HashString("LockedSubscriptionException");
-static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int ACCESS_DENIED_FOR_DEPENDENCY_HASH = HashingUtils::HashString("AccessDeniedForDependencyException");
-static const int NO_ASSOCIATED_ROLE_HASH = HashingUtils::HashString("NoAssociatedRoleException");
-static const int LIMITS_EXCEEDED_HASH = HashingUtils::HashString("LimitsExceededException");
-static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("InvalidPaginationTokenException");
-static const int OPTIMISTIC_LOCK_HASH = HashingUtils::HashString("OptimisticLockException");
-static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
-static const int INVALID_RESOURCE_HASH = HashingUtils::HashString("InvalidResourceException");
+static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("InternalErrorException");
+static constexpr uint32_t LOCKED_SUBSCRIPTION_HASH = ConstExprHashingUtils::HashString("LockedSubscriptionException");
+static constexpr uint32_t RESOURCE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ResourceAlreadyExistsException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t ACCESS_DENIED_FOR_DEPENDENCY_HASH = ConstExprHashingUtils::HashString("AccessDeniedForDependencyException");
+static constexpr uint32_t NO_ASSOCIATED_ROLE_HASH = ConstExprHashingUtils::HashString("NoAssociatedRoleException");
+static constexpr uint32_t LIMITS_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitsExceededException");
+static constexpr uint32_t INVALID_PAGINATION_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidPaginationTokenException");
+static constexpr uint32_t OPTIMISTIC_LOCK_HASH = ConstExprHashingUtils::HashString("OptimisticLockException");
+static constexpr uint32_t INVALID_OPERATION_HASH = ConstExprHashingUtils::HashString("InvalidOperationException");
+static constexpr uint32_t INVALID_RESOURCE_HASH = ConstExprHashingUtils::HashString("InvalidResourceException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INTERNAL_ERROR_HASH)
   {

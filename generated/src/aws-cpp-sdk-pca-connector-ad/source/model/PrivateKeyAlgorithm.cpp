@@ -20,15 +20,15 @@ namespace Aws
       namespace PrivateKeyAlgorithmMapper
       {
 
-        static const int RSA_HASH = HashingUtils::HashString("RSA");
-        static const int ECDH_P256_HASH = HashingUtils::HashString("ECDH_P256");
-        static const int ECDH_P384_HASH = HashingUtils::HashString("ECDH_P384");
-        static const int ECDH_P521_HASH = HashingUtils::HashString("ECDH_P521");
+        static constexpr uint32_t RSA_HASH = ConstExprHashingUtils::HashString("RSA");
+        static constexpr uint32_t ECDH_P256_HASH = ConstExprHashingUtils::HashString("ECDH_P256");
+        static constexpr uint32_t ECDH_P384_HASH = ConstExprHashingUtils::HashString("ECDH_P384");
+        static constexpr uint32_t ECDH_P521_HASH = ConstExprHashingUtils::HashString("ECDH_P521");
 
 
         PrivateKeyAlgorithm GetPrivateKeyAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RSA_HASH)
           {
             return PrivateKeyAlgorithm::RSA;

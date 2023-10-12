@@ -20,13 +20,13 @@ namespace Aws
       namespace DashIsoPtsOffsetHandlingForBFramesMapper
       {
 
-        static const int ZERO_BASED_HASH = HashingUtils::HashString("ZERO_BASED");
-        static const int MATCH_INITIAL_PTS_HASH = HashingUtils::HashString("MATCH_INITIAL_PTS");
+        static constexpr uint32_t ZERO_BASED_HASH = ConstExprHashingUtils::HashString("ZERO_BASED");
+        static constexpr uint32_t MATCH_INITIAL_PTS_HASH = ConstExprHashingUtils::HashString("MATCH_INITIAL_PTS");
 
 
         DashIsoPtsOffsetHandlingForBFrames GetDashIsoPtsOffsetHandlingForBFramesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ZERO_BASED_HASH)
           {
             return DashIsoPtsOffsetHandlingForBFrames::ZERO_BASED;

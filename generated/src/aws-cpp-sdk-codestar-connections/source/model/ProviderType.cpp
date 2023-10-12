@@ -20,15 +20,15 @@ namespace Aws
       namespace ProviderTypeMapper
       {
 
-        static const int Bitbucket_HASH = HashingUtils::HashString("Bitbucket");
-        static const int GitHub_HASH = HashingUtils::HashString("GitHub");
-        static const int GitHubEnterpriseServer_HASH = HashingUtils::HashString("GitHubEnterpriseServer");
-        static const int GitLab_HASH = HashingUtils::HashString("GitLab");
+        static constexpr uint32_t Bitbucket_HASH = ConstExprHashingUtils::HashString("Bitbucket");
+        static constexpr uint32_t GitHub_HASH = ConstExprHashingUtils::HashString("GitHub");
+        static constexpr uint32_t GitHubEnterpriseServer_HASH = ConstExprHashingUtils::HashString("GitHubEnterpriseServer");
+        static constexpr uint32_t GitLab_HASH = ConstExprHashingUtils::HashString("GitLab");
 
 
         ProviderType GetProviderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Bitbucket_HASH)
           {
             return ProviderType::Bitbucket;

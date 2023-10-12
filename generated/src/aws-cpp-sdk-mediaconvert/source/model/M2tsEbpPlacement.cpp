@@ -20,13 +20,13 @@ namespace Aws
       namespace M2tsEbpPlacementMapper
       {
 
-        static const int VIDEO_AND_AUDIO_PIDS_HASH = HashingUtils::HashString("VIDEO_AND_AUDIO_PIDS");
-        static const int VIDEO_PID_HASH = HashingUtils::HashString("VIDEO_PID");
+        static constexpr uint32_t VIDEO_AND_AUDIO_PIDS_HASH = ConstExprHashingUtils::HashString("VIDEO_AND_AUDIO_PIDS");
+        static constexpr uint32_t VIDEO_PID_HASH = ConstExprHashingUtils::HashString("VIDEO_PID");
 
 
         M2tsEbpPlacement GetM2tsEbpPlacementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VIDEO_AND_AUDIO_PIDS_HASH)
           {
             return M2tsEbpPlacement::VIDEO_AND_AUDIO_PIDS;

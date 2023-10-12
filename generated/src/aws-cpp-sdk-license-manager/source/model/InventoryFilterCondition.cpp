@@ -20,15 +20,15 @@ namespace Aws
       namespace InventoryFilterConditionMapper
       {
 
-        static const int EQUALS_HASH = HashingUtils::HashString("EQUALS");
-        static const int NOT_EQUALS_HASH = HashingUtils::HashString("NOT_EQUALS");
-        static const int BEGINS_WITH_HASH = HashingUtils::HashString("BEGINS_WITH");
-        static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
+        static constexpr uint32_t EQUALS_HASH = ConstExprHashingUtils::HashString("EQUALS");
+        static constexpr uint32_t NOT_EQUALS_HASH = ConstExprHashingUtils::HashString("NOT_EQUALS");
+        static constexpr uint32_t BEGINS_WITH_HASH = ConstExprHashingUtils::HashString("BEGINS_WITH");
+        static constexpr uint32_t CONTAINS_HASH = ConstExprHashingUtils::HashString("CONTAINS");
 
 
         InventoryFilterCondition GetInventoryFilterConditionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EQUALS_HASH)
           {
             return InventoryFilterCondition::EQUALS;

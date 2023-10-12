@@ -20,21 +20,21 @@ namespace Aws
       namespace ConferenceProviderTypeMapper
       {
 
-        static const int CHIME_HASH = HashingUtils::HashString("CHIME");
-        static const int BLUEJEANS_HASH = HashingUtils::HashString("BLUEJEANS");
-        static const int FUZE_HASH = HashingUtils::HashString("FUZE");
-        static const int GOOGLE_HANGOUTS_HASH = HashingUtils::HashString("GOOGLE_HANGOUTS");
-        static const int POLYCOM_HASH = HashingUtils::HashString("POLYCOM");
-        static const int RINGCENTRAL_HASH = HashingUtils::HashString("RINGCENTRAL");
-        static const int SKYPE_FOR_BUSINESS_HASH = HashingUtils::HashString("SKYPE_FOR_BUSINESS");
-        static const int WEBEX_HASH = HashingUtils::HashString("WEBEX");
-        static const int ZOOM_HASH = HashingUtils::HashString("ZOOM");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t CHIME_HASH = ConstExprHashingUtils::HashString("CHIME");
+        static constexpr uint32_t BLUEJEANS_HASH = ConstExprHashingUtils::HashString("BLUEJEANS");
+        static constexpr uint32_t FUZE_HASH = ConstExprHashingUtils::HashString("FUZE");
+        static constexpr uint32_t GOOGLE_HANGOUTS_HASH = ConstExprHashingUtils::HashString("GOOGLE_HANGOUTS");
+        static constexpr uint32_t POLYCOM_HASH = ConstExprHashingUtils::HashString("POLYCOM");
+        static constexpr uint32_t RINGCENTRAL_HASH = ConstExprHashingUtils::HashString("RINGCENTRAL");
+        static constexpr uint32_t SKYPE_FOR_BUSINESS_HASH = ConstExprHashingUtils::HashString("SKYPE_FOR_BUSINESS");
+        static constexpr uint32_t WEBEX_HASH = ConstExprHashingUtils::HashString("WEBEX");
+        static constexpr uint32_t ZOOM_HASH = ConstExprHashingUtils::HashString("ZOOM");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
 
 
         ConferenceProviderType GetConferenceProviderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CHIME_HASH)
           {
             return ConferenceProviderType::CHIME;

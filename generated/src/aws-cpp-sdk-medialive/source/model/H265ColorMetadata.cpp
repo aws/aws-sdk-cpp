@@ -20,13 +20,13 @@ namespace Aws
       namespace H265ColorMetadataMapper
       {
 
-        static const int IGNORE_HASH = HashingUtils::HashString("IGNORE");
-        static const int INSERT_HASH = HashingUtils::HashString("INSERT");
+        static constexpr uint32_t IGNORE_HASH = ConstExprHashingUtils::HashString("IGNORE");
+        static constexpr uint32_t INSERT_HASH = ConstExprHashingUtils::HashString("INSERT");
 
 
         H265ColorMetadata GetH265ColorMetadataForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IGNORE_HASH)
           {
             return H265ColorMetadata::IGNORE;

@@ -40,16 +40,16 @@ template<> AWS_TRANSFER_API ResourceNotFoundException TransferError::GetModeledE
 namespace TransferErrorMapper
 {
 
-static const int RESOURCE_EXISTS_HASH = HashingUtils::HashString("ResourceExistsException");
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceError");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t RESOURCE_EXISTS_HASH = ConstExprHashingUtils::HashString("ResourceExistsException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t INTERNAL_SERVICE_HASH = ConstExprHashingUtils::HashString("InternalServiceError");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == RESOURCE_EXISTS_HASH)
   {

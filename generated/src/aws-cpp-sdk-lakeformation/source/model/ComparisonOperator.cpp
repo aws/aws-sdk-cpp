@@ -20,22 +20,22 @@ namespace Aws
       namespace ComparisonOperatorMapper
       {
 
-        static const int EQ_HASH = HashingUtils::HashString("EQ");
-        static const int NE_HASH = HashingUtils::HashString("NE");
-        static const int LE_HASH = HashingUtils::HashString("LE");
-        static const int LT_HASH = HashingUtils::HashString("LT");
-        static const int GE_HASH = HashingUtils::HashString("GE");
-        static const int GT_HASH = HashingUtils::HashString("GT");
-        static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
-        static const int NOT_CONTAINS_HASH = HashingUtils::HashString("NOT_CONTAINS");
-        static const int BEGINS_WITH_HASH = HashingUtils::HashString("BEGINS_WITH");
-        static const int IN_HASH = HashingUtils::HashString("IN");
-        static const int BETWEEN_HASH = HashingUtils::HashString("BETWEEN");
+        static constexpr uint32_t EQ_HASH = ConstExprHashingUtils::HashString("EQ");
+        static constexpr uint32_t NE_HASH = ConstExprHashingUtils::HashString("NE");
+        static constexpr uint32_t LE_HASH = ConstExprHashingUtils::HashString("LE");
+        static constexpr uint32_t LT_HASH = ConstExprHashingUtils::HashString("LT");
+        static constexpr uint32_t GE_HASH = ConstExprHashingUtils::HashString("GE");
+        static constexpr uint32_t GT_HASH = ConstExprHashingUtils::HashString("GT");
+        static constexpr uint32_t CONTAINS_HASH = ConstExprHashingUtils::HashString("CONTAINS");
+        static constexpr uint32_t NOT_CONTAINS_HASH = ConstExprHashingUtils::HashString("NOT_CONTAINS");
+        static constexpr uint32_t BEGINS_WITH_HASH = ConstExprHashingUtils::HashString("BEGINS_WITH");
+        static constexpr uint32_t IN_HASH = ConstExprHashingUtils::HashString("IN");
+        static constexpr uint32_t BETWEEN_HASH = ConstExprHashingUtils::HashString("BETWEEN");
 
 
         ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EQ_HASH)
           {
             return ComparisonOperator::EQ;

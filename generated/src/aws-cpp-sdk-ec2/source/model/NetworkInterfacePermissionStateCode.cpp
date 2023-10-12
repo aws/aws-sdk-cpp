@@ -20,15 +20,15 @@ namespace Aws
       namespace NetworkInterfacePermissionStateCodeMapper
       {
 
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int granted_HASH = HashingUtils::HashString("granted");
-        static const int revoking_HASH = HashingUtils::HashString("revoking");
-        static const int revoked_HASH = HashingUtils::HashString("revoked");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t granted_HASH = ConstExprHashingUtils::HashString("granted");
+        static constexpr uint32_t revoking_HASH = ConstExprHashingUtils::HashString("revoking");
+        static constexpr uint32_t revoked_HASH = ConstExprHashingUtils::HashString("revoked");
 
 
         NetworkInterfacePermissionStateCode GetNetworkInterfacePermissionStateCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pending_HASH)
           {
             return NetworkInterfacePermissionStateCode::pending;

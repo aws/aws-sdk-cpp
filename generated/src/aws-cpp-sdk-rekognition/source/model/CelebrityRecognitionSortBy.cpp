@@ -20,13 +20,13 @@ namespace Aws
       namespace CelebrityRecognitionSortByMapper
       {
 
-        static const int ID_HASH = HashingUtils::HashString("ID");
-        static const int TIMESTAMP_HASH = HashingUtils::HashString("TIMESTAMP");
+        static constexpr uint32_t ID_HASH = ConstExprHashingUtils::HashString("ID");
+        static constexpr uint32_t TIMESTAMP_HASH = ConstExprHashingUtils::HashString("TIMESTAMP");
 
 
         CelebrityRecognitionSortBy GetCelebrityRecognitionSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ID_HASH)
           {
             return CelebrityRecognitionSortBy::ID;

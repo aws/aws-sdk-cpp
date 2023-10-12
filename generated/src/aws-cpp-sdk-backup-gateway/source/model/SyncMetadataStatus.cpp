@@ -20,16 +20,16 @@ namespace Aws
       namespace SyncMetadataStatusMapper
       {
 
-        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int PARTIALLY_FAILED_HASH = HashingUtils::HashString("PARTIALLY_FAILED");
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
+        static constexpr uint32_t CREATED_HASH = ConstExprHashingUtils::HashString("CREATED");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t PARTIALLY_FAILED_HASH = ConstExprHashingUtils::HashString("PARTIALLY_FAILED");
+        static constexpr uint32_t SUCCEEDED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED");
 
 
         SyncMetadataStatus GetSyncMetadataStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATED_HASH)
           {
             return SyncMetadataStatus::CREATED;

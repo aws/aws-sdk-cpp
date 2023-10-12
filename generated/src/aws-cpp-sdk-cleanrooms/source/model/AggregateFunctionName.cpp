@@ -20,16 +20,16 @@ namespace Aws
       namespace AggregateFunctionNameMapper
       {
 
-        static const int SUM_HASH = HashingUtils::HashString("SUM");
-        static const int SUM_DISTINCT_HASH = HashingUtils::HashString("SUM_DISTINCT");
-        static const int COUNT_HASH = HashingUtils::HashString("COUNT");
-        static const int COUNT_DISTINCT_HASH = HashingUtils::HashString("COUNT_DISTINCT");
-        static const int AVG_HASH = HashingUtils::HashString("AVG");
+        static constexpr uint32_t SUM_HASH = ConstExprHashingUtils::HashString("SUM");
+        static constexpr uint32_t SUM_DISTINCT_HASH = ConstExprHashingUtils::HashString("SUM_DISTINCT");
+        static constexpr uint32_t COUNT_HASH = ConstExprHashingUtils::HashString("COUNT");
+        static constexpr uint32_t COUNT_DISTINCT_HASH = ConstExprHashingUtils::HashString("COUNT_DISTINCT");
+        static constexpr uint32_t AVG_HASH = ConstExprHashingUtils::HashString("AVG");
 
 
         AggregateFunctionName GetAggregateFunctionNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUM_HASH)
           {
             return AggregateFunctionName::SUM;

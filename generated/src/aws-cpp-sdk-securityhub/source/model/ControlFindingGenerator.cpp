@@ -20,13 +20,13 @@ namespace Aws
       namespace ControlFindingGeneratorMapper
       {
 
-        static const int STANDARD_CONTROL_HASH = HashingUtils::HashString("STANDARD_CONTROL");
-        static const int SECURITY_CONTROL_HASH = HashingUtils::HashString("SECURITY_CONTROL");
+        static constexpr uint32_t STANDARD_CONTROL_HASH = ConstExprHashingUtils::HashString("STANDARD_CONTROL");
+        static constexpr uint32_t SECURITY_CONTROL_HASH = ConstExprHashingUtils::HashString("SECURITY_CONTROL");
 
 
         ControlFindingGenerator GetControlFindingGeneratorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STANDARD_CONTROL_HASH)
           {
             return ControlFindingGenerator::STANDARD_CONTROL;

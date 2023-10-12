@@ -20,43 +20,43 @@ namespace Aws
       namespace TransformInstanceTypeMapper
       {
 
-        static const int ml_m4_xlarge_HASH = HashingUtils::HashString("ml.m4.xlarge");
-        static const int ml_m4_2xlarge_HASH = HashingUtils::HashString("ml.m4.2xlarge");
-        static const int ml_m4_4xlarge_HASH = HashingUtils::HashString("ml.m4.4xlarge");
-        static const int ml_m4_10xlarge_HASH = HashingUtils::HashString("ml.m4.10xlarge");
-        static const int ml_m4_16xlarge_HASH = HashingUtils::HashString("ml.m4.16xlarge");
-        static const int ml_c4_xlarge_HASH = HashingUtils::HashString("ml.c4.xlarge");
-        static const int ml_c4_2xlarge_HASH = HashingUtils::HashString("ml.c4.2xlarge");
-        static const int ml_c4_4xlarge_HASH = HashingUtils::HashString("ml.c4.4xlarge");
-        static const int ml_c4_8xlarge_HASH = HashingUtils::HashString("ml.c4.8xlarge");
-        static const int ml_p2_xlarge_HASH = HashingUtils::HashString("ml.p2.xlarge");
-        static const int ml_p2_8xlarge_HASH = HashingUtils::HashString("ml.p2.8xlarge");
-        static const int ml_p2_16xlarge_HASH = HashingUtils::HashString("ml.p2.16xlarge");
-        static const int ml_p3_2xlarge_HASH = HashingUtils::HashString("ml.p3.2xlarge");
-        static const int ml_p3_8xlarge_HASH = HashingUtils::HashString("ml.p3.8xlarge");
-        static const int ml_p3_16xlarge_HASH = HashingUtils::HashString("ml.p3.16xlarge");
-        static const int ml_c5_xlarge_HASH = HashingUtils::HashString("ml.c5.xlarge");
-        static const int ml_c5_2xlarge_HASH = HashingUtils::HashString("ml.c5.2xlarge");
-        static const int ml_c5_4xlarge_HASH = HashingUtils::HashString("ml.c5.4xlarge");
-        static const int ml_c5_9xlarge_HASH = HashingUtils::HashString("ml.c5.9xlarge");
-        static const int ml_c5_18xlarge_HASH = HashingUtils::HashString("ml.c5.18xlarge");
-        static const int ml_m5_large_HASH = HashingUtils::HashString("ml.m5.large");
-        static const int ml_m5_xlarge_HASH = HashingUtils::HashString("ml.m5.xlarge");
-        static const int ml_m5_2xlarge_HASH = HashingUtils::HashString("ml.m5.2xlarge");
-        static const int ml_m5_4xlarge_HASH = HashingUtils::HashString("ml.m5.4xlarge");
-        static const int ml_m5_12xlarge_HASH = HashingUtils::HashString("ml.m5.12xlarge");
-        static const int ml_m5_24xlarge_HASH = HashingUtils::HashString("ml.m5.24xlarge");
-        static const int ml_g4dn_xlarge_HASH = HashingUtils::HashString("ml.g4dn.xlarge");
-        static const int ml_g4dn_2xlarge_HASH = HashingUtils::HashString("ml.g4dn.2xlarge");
-        static const int ml_g4dn_4xlarge_HASH = HashingUtils::HashString("ml.g4dn.4xlarge");
-        static const int ml_g4dn_8xlarge_HASH = HashingUtils::HashString("ml.g4dn.8xlarge");
-        static const int ml_g4dn_12xlarge_HASH = HashingUtils::HashString("ml.g4dn.12xlarge");
-        static const int ml_g4dn_16xlarge_HASH = HashingUtils::HashString("ml.g4dn.16xlarge");
+        static constexpr uint32_t ml_m4_xlarge_HASH = ConstExprHashingUtils::HashString("ml.m4.xlarge");
+        static constexpr uint32_t ml_m4_2xlarge_HASH = ConstExprHashingUtils::HashString("ml.m4.2xlarge");
+        static constexpr uint32_t ml_m4_4xlarge_HASH = ConstExprHashingUtils::HashString("ml.m4.4xlarge");
+        static constexpr uint32_t ml_m4_10xlarge_HASH = ConstExprHashingUtils::HashString("ml.m4.10xlarge");
+        static constexpr uint32_t ml_m4_16xlarge_HASH = ConstExprHashingUtils::HashString("ml.m4.16xlarge");
+        static constexpr uint32_t ml_c4_xlarge_HASH = ConstExprHashingUtils::HashString("ml.c4.xlarge");
+        static constexpr uint32_t ml_c4_2xlarge_HASH = ConstExprHashingUtils::HashString("ml.c4.2xlarge");
+        static constexpr uint32_t ml_c4_4xlarge_HASH = ConstExprHashingUtils::HashString("ml.c4.4xlarge");
+        static constexpr uint32_t ml_c4_8xlarge_HASH = ConstExprHashingUtils::HashString("ml.c4.8xlarge");
+        static constexpr uint32_t ml_p2_xlarge_HASH = ConstExprHashingUtils::HashString("ml.p2.xlarge");
+        static constexpr uint32_t ml_p2_8xlarge_HASH = ConstExprHashingUtils::HashString("ml.p2.8xlarge");
+        static constexpr uint32_t ml_p2_16xlarge_HASH = ConstExprHashingUtils::HashString("ml.p2.16xlarge");
+        static constexpr uint32_t ml_p3_2xlarge_HASH = ConstExprHashingUtils::HashString("ml.p3.2xlarge");
+        static constexpr uint32_t ml_p3_8xlarge_HASH = ConstExprHashingUtils::HashString("ml.p3.8xlarge");
+        static constexpr uint32_t ml_p3_16xlarge_HASH = ConstExprHashingUtils::HashString("ml.p3.16xlarge");
+        static constexpr uint32_t ml_c5_xlarge_HASH = ConstExprHashingUtils::HashString("ml.c5.xlarge");
+        static constexpr uint32_t ml_c5_2xlarge_HASH = ConstExprHashingUtils::HashString("ml.c5.2xlarge");
+        static constexpr uint32_t ml_c5_4xlarge_HASH = ConstExprHashingUtils::HashString("ml.c5.4xlarge");
+        static constexpr uint32_t ml_c5_9xlarge_HASH = ConstExprHashingUtils::HashString("ml.c5.9xlarge");
+        static constexpr uint32_t ml_c5_18xlarge_HASH = ConstExprHashingUtils::HashString("ml.c5.18xlarge");
+        static constexpr uint32_t ml_m5_large_HASH = ConstExprHashingUtils::HashString("ml.m5.large");
+        static constexpr uint32_t ml_m5_xlarge_HASH = ConstExprHashingUtils::HashString("ml.m5.xlarge");
+        static constexpr uint32_t ml_m5_2xlarge_HASH = ConstExprHashingUtils::HashString("ml.m5.2xlarge");
+        static constexpr uint32_t ml_m5_4xlarge_HASH = ConstExprHashingUtils::HashString("ml.m5.4xlarge");
+        static constexpr uint32_t ml_m5_12xlarge_HASH = ConstExprHashingUtils::HashString("ml.m5.12xlarge");
+        static constexpr uint32_t ml_m5_24xlarge_HASH = ConstExprHashingUtils::HashString("ml.m5.24xlarge");
+        static constexpr uint32_t ml_g4dn_xlarge_HASH = ConstExprHashingUtils::HashString("ml.g4dn.xlarge");
+        static constexpr uint32_t ml_g4dn_2xlarge_HASH = ConstExprHashingUtils::HashString("ml.g4dn.2xlarge");
+        static constexpr uint32_t ml_g4dn_4xlarge_HASH = ConstExprHashingUtils::HashString("ml.g4dn.4xlarge");
+        static constexpr uint32_t ml_g4dn_8xlarge_HASH = ConstExprHashingUtils::HashString("ml.g4dn.8xlarge");
+        static constexpr uint32_t ml_g4dn_12xlarge_HASH = ConstExprHashingUtils::HashString("ml.g4dn.12xlarge");
+        static constexpr uint32_t ml_g4dn_16xlarge_HASH = ConstExprHashingUtils::HashString("ml.g4dn.16xlarge");
 
 
         TransformInstanceType GetTransformInstanceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ml_m4_xlarge_HASH)
           {
             return TransformInstanceType::ml_m4_xlarge;

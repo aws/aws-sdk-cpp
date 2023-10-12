@@ -20,37 +20,37 @@ namespace Aws
       namespace IconMapper
       {
 
-        static const int CARET_UP_HASH = HashingUtils::HashString("CARET_UP");
-        static const int CARET_DOWN_HASH = HashingUtils::HashString("CARET_DOWN");
-        static const int PLUS_HASH = HashingUtils::HashString("PLUS");
-        static const int MINUS_HASH = HashingUtils::HashString("MINUS");
-        static const int ARROW_UP_HASH = HashingUtils::HashString("ARROW_UP");
-        static const int ARROW_DOWN_HASH = HashingUtils::HashString("ARROW_DOWN");
-        static const int ARROW_LEFT_HASH = HashingUtils::HashString("ARROW_LEFT");
-        static const int ARROW_UP_LEFT_HASH = HashingUtils::HashString("ARROW_UP_LEFT");
-        static const int ARROW_DOWN_LEFT_HASH = HashingUtils::HashString("ARROW_DOWN_LEFT");
-        static const int ARROW_RIGHT_HASH = HashingUtils::HashString("ARROW_RIGHT");
-        static const int ARROW_UP_RIGHT_HASH = HashingUtils::HashString("ARROW_UP_RIGHT");
-        static const int ARROW_DOWN_RIGHT_HASH = HashingUtils::HashString("ARROW_DOWN_RIGHT");
-        static const int FACE_UP_HASH = HashingUtils::HashString("FACE_UP");
-        static const int FACE_DOWN_HASH = HashingUtils::HashString("FACE_DOWN");
-        static const int FACE_FLAT_HASH = HashingUtils::HashString("FACE_FLAT");
-        static const int ONE_BAR_HASH = HashingUtils::HashString("ONE_BAR");
-        static const int TWO_BAR_HASH = HashingUtils::HashString("TWO_BAR");
-        static const int THREE_BAR_HASH = HashingUtils::HashString("THREE_BAR");
-        static const int CIRCLE_HASH = HashingUtils::HashString("CIRCLE");
-        static const int TRIANGLE_HASH = HashingUtils::HashString("TRIANGLE");
-        static const int SQUARE_HASH = HashingUtils::HashString("SQUARE");
-        static const int FLAG_HASH = HashingUtils::HashString("FLAG");
-        static const int THUMBS_UP_HASH = HashingUtils::HashString("THUMBS_UP");
-        static const int THUMBS_DOWN_HASH = HashingUtils::HashString("THUMBS_DOWN");
-        static const int CHECKMARK_HASH = HashingUtils::HashString("CHECKMARK");
-        static const int X_HASH = HashingUtils::HashString("X");
+        static constexpr uint32_t CARET_UP_HASH = ConstExprHashingUtils::HashString("CARET_UP");
+        static constexpr uint32_t CARET_DOWN_HASH = ConstExprHashingUtils::HashString("CARET_DOWN");
+        static constexpr uint32_t PLUS_HASH = ConstExprHashingUtils::HashString("PLUS");
+        static constexpr uint32_t MINUS_HASH = ConstExprHashingUtils::HashString("MINUS");
+        static constexpr uint32_t ARROW_UP_HASH = ConstExprHashingUtils::HashString("ARROW_UP");
+        static constexpr uint32_t ARROW_DOWN_HASH = ConstExprHashingUtils::HashString("ARROW_DOWN");
+        static constexpr uint32_t ARROW_LEFT_HASH = ConstExprHashingUtils::HashString("ARROW_LEFT");
+        static constexpr uint32_t ARROW_UP_LEFT_HASH = ConstExprHashingUtils::HashString("ARROW_UP_LEFT");
+        static constexpr uint32_t ARROW_DOWN_LEFT_HASH = ConstExprHashingUtils::HashString("ARROW_DOWN_LEFT");
+        static constexpr uint32_t ARROW_RIGHT_HASH = ConstExprHashingUtils::HashString("ARROW_RIGHT");
+        static constexpr uint32_t ARROW_UP_RIGHT_HASH = ConstExprHashingUtils::HashString("ARROW_UP_RIGHT");
+        static constexpr uint32_t ARROW_DOWN_RIGHT_HASH = ConstExprHashingUtils::HashString("ARROW_DOWN_RIGHT");
+        static constexpr uint32_t FACE_UP_HASH = ConstExprHashingUtils::HashString("FACE_UP");
+        static constexpr uint32_t FACE_DOWN_HASH = ConstExprHashingUtils::HashString("FACE_DOWN");
+        static constexpr uint32_t FACE_FLAT_HASH = ConstExprHashingUtils::HashString("FACE_FLAT");
+        static constexpr uint32_t ONE_BAR_HASH = ConstExprHashingUtils::HashString("ONE_BAR");
+        static constexpr uint32_t TWO_BAR_HASH = ConstExprHashingUtils::HashString("TWO_BAR");
+        static constexpr uint32_t THREE_BAR_HASH = ConstExprHashingUtils::HashString("THREE_BAR");
+        static constexpr uint32_t CIRCLE_HASH = ConstExprHashingUtils::HashString("CIRCLE");
+        static constexpr uint32_t TRIANGLE_HASH = ConstExprHashingUtils::HashString("TRIANGLE");
+        static constexpr uint32_t SQUARE_HASH = ConstExprHashingUtils::HashString("SQUARE");
+        static constexpr uint32_t FLAG_HASH = ConstExprHashingUtils::HashString("FLAG");
+        static constexpr uint32_t THUMBS_UP_HASH = ConstExprHashingUtils::HashString("THUMBS_UP");
+        static constexpr uint32_t THUMBS_DOWN_HASH = ConstExprHashingUtils::HashString("THUMBS_DOWN");
+        static constexpr uint32_t CHECKMARK_HASH = ConstExprHashingUtils::HashString("CHECKMARK");
+        static constexpr uint32_t X_HASH = ConstExprHashingUtils::HashString("X");
 
 
         Icon GetIconForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CARET_UP_HASH)
           {
             return Icon::CARET_UP;

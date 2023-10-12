@@ -20,15 +20,15 @@ namespace Aws
       namespace ArtifactSourceIdTypeMapper
       {
 
-        static const int MD5Hash_HASH = HashingUtils::HashString("MD5Hash");
-        static const int S3ETag_HASH = HashingUtils::HashString("S3ETag");
-        static const int S3Version_HASH = HashingUtils::HashString("S3Version");
-        static const int Custom_HASH = HashingUtils::HashString("Custom");
+        static constexpr uint32_t MD5Hash_HASH = ConstExprHashingUtils::HashString("MD5Hash");
+        static constexpr uint32_t S3ETag_HASH = ConstExprHashingUtils::HashString("S3ETag");
+        static constexpr uint32_t S3Version_HASH = ConstExprHashingUtils::HashString("S3Version");
+        static constexpr uint32_t Custom_HASH = ConstExprHashingUtils::HashString("Custom");
 
 
         ArtifactSourceIdType GetArtifactSourceIdTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MD5Hash_HASH)
           {
             return ArtifactSourceIdType::MD5Hash;

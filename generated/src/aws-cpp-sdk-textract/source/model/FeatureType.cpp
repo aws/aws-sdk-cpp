@@ -20,16 +20,16 @@ namespace Aws
       namespace FeatureTypeMapper
       {
 
-        static const int TABLES_HASH = HashingUtils::HashString("TABLES");
-        static const int FORMS_HASH = HashingUtils::HashString("FORMS");
-        static const int QUERIES_HASH = HashingUtils::HashString("QUERIES");
-        static const int SIGNATURES_HASH = HashingUtils::HashString("SIGNATURES");
-        static const int LAYOUT_HASH = HashingUtils::HashString("LAYOUT");
+        static constexpr uint32_t TABLES_HASH = ConstExprHashingUtils::HashString("TABLES");
+        static constexpr uint32_t FORMS_HASH = ConstExprHashingUtils::HashString("FORMS");
+        static constexpr uint32_t QUERIES_HASH = ConstExprHashingUtils::HashString("QUERIES");
+        static constexpr uint32_t SIGNATURES_HASH = ConstExprHashingUtils::HashString("SIGNATURES");
+        static constexpr uint32_t LAYOUT_HASH = ConstExprHashingUtils::HashString("LAYOUT");
 
 
         FeatureType GetFeatureTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TABLES_HASH)
           {
             return FeatureType::TABLES;

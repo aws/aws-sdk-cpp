@@ -20,15 +20,15 @@ namespace Aws
       namespace TriggeredByMapper
       {
 
-        static const int USER_HASH = HashingUtils::HashString("USER");
-        static const int APPCONFIG_HASH = HashingUtils::HashString("APPCONFIG");
-        static const int CLOUDWATCH_ALARM_HASH = HashingUtils::HashString("CLOUDWATCH_ALARM");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t USER_HASH = ConstExprHashingUtils::HashString("USER");
+        static constexpr uint32_t APPCONFIG_HASH = ConstExprHashingUtils::HashString("APPCONFIG");
+        static constexpr uint32_t CLOUDWATCH_ALARM_HASH = ConstExprHashingUtils::HashString("CLOUDWATCH_ALARM");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
 
 
         TriggeredBy GetTriggeredByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USER_HASH)
           {
             return TriggeredBy::USER;

@@ -20,12 +20,12 @@ namespace Aws
       namespace DiscoverySystemTypeMapper
       {
 
-        static const int NetAppONTAP_HASH = HashingUtils::HashString("NetAppONTAP");
+        static constexpr uint32_t NetAppONTAP_HASH = ConstExprHashingUtils::HashString("NetAppONTAP");
 
 
         DiscoverySystemType GetDiscoverySystemTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NetAppONTAP_HASH)
           {
             return DiscoverySystemType::NetAppONTAP;

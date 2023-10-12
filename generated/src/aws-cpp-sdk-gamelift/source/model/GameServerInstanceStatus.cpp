@@ -20,14 +20,14 @@ namespace Aws
       namespace GameServerInstanceStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DRAINING_HASH = HashingUtils::HashString("DRAINING");
-        static const int SPOT_TERMINATING_HASH = HashingUtils::HashString("SPOT_TERMINATING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t DRAINING_HASH = ConstExprHashingUtils::HashString("DRAINING");
+        static constexpr uint32_t SPOT_TERMINATING_HASH = ConstExprHashingUtils::HashString("SPOT_TERMINATING");
 
 
         GameServerInstanceStatus GetGameServerInstanceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return GameServerInstanceStatus::ACTIVE;

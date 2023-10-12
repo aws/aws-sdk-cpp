@@ -20,13 +20,13 @@ namespace Aws
       namespace ReferenceStatusMapper
       {
 
-        static const int APPROVED_HASH = HashingUtils::HashString("APPROVED");
-        static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
+        static constexpr uint32_t APPROVED_HASH = ConstExprHashingUtils::HashString("APPROVED");
+        static constexpr uint32_t REJECTED_HASH = ConstExprHashingUtils::HashString("REJECTED");
 
 
         ReferenceStatus GetReferenceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APPROVED_HASH)
           {
             return ReferenceStatus::APPROVED;

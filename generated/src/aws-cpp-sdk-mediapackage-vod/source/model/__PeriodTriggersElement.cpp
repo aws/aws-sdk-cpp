@@ -20,12 +20,12 @@ namespace Aws
       namespace __PeriodTriggersElementMapper
       {
 
-        static const int ADS_HASH = HashingUtils::HashString("ADS");
+        static constexpr uint32_t ADS_HASH = ConstExprHashingUtils::HashString("ADS");
 
 
         __PeriodTriggersElement Get__PeriodTriggersElementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADS_HASH)
           {
             return __PeriodTriggersElement::ADS;

@@ -20,36 +20,36 @@ namespace Aws
       namespace DataSetTypeMapper
       {
 
-        static const int customer_subscriber_hourly_monthly_subscriptions_HASH = HashingUtils::HashString("customer_subscriber_hourly_monthly_subscriptions");
-        static const int customer_subscriber_annual_subscriptions_HASH = HashingUtils::HashString("customer_subscriber_annual_subscriptions");
-        static const int daily_business_usage_by_instance_type_HASH = HashingUtils::HashString("daily_business_usage_by_instance_type");
-        static const int daily_business_fees_HASH = HashingUtils::HashString("daily_business_fees");
-        static const int daily_business_free_trial_conversions_HASH = HashingUtils::HashString("daily_business_free_trial_conversions");
-        static const int daily_business_new_instances_HASH = HashingUtils::HashString("daily_business_new_instances");
-        static const int daily_business_new_product_subscribers_HASH = HashingUtils::HashString("daily_business_new_product_subscribers");
-        static const int daily_business_canceled_product_subscribers_HASH = HashingUtils::HashString("daily_business_canceled_product_subscribers");
-        static const int monthly_revenue_billing_and_revenue_data_HASH = HashingUtils::HashString("monthly_revenue_billing_and_revenue_data");
-        static const int monthly_revenue_annual_subscriptions_HASH = HashingUtils::HashString("monthly_revenue_annual_subscriptions");
-        static const int monthly_revenue_field_demonstration_usage_HASH = HashingUtils::HashString("monthly_revenue_field_demonstration_usage");
-        static const int monthly_revenue_flexible_payment_schedule_HASH = HashingUtils::HashString("monthly_revenue_flexible_payment_schedule");
-        static const int disbursed_amount_by_product_HASH = HashingUtils::HashString("disbursed_amount_by_product");
-        static const int disbursed_amount_by_product_with_uncollected_funds_HASH = HashingUtils::HashString("disbursed_amount_by_product_with_uncollected_funds");
-        static const int disbursed_amount_by_instance_hours_HASH = HashingUtils::HashString("disbursed_amount_by_instance_hours");
-        static const int disbursed_amount_by_customer_geo_HASH = HashingUtils::HashString("disbursed_amount_by_customer_geo");
-        static const int disbursed_amount_by_age_of_uncollected_funds_HASH = HashingUtils::HashString("disbursed_amount_by_age_of_uncollected_funds");
-        static const int disbursed_amount_by_age_of_disbursed_funds_HASH = HashingUtils::HashString("disbursed_amount_by_age_of_disbursed_funds");
-        static const int disbursed_amount_by_age_of_past_due_funds_HASH = HashingUtils::HashString("disbursed_amount_by_age_of_past_due_funds");
-        static const int disbursed_amount_by_uncollected_funds_breakdown_HASH = HashingUtils::HashString("disbursed_amount_by_uncollected_funds_breakdown");
-        static const int customer_profile_by_industry_HASH = HashingUtils::HashString("customer_profile_by_industry");
-        static const int customer_profile_by_revenue_HASH = HashingUtils::HashString("customer_profile_by_revenue");
-        static const int customer_profile_by_geography_HASH = HashingUtils::HashString("customer_profile_by_geography");
-        static const int sales_compensation_billed_revenue_HASH = HashingUtils::HashString("sales_compensation_billed_revenue");
-        static const int us_sales_and_use_tax_records_HASH = HashingUtils::HashString("us_sales_and_use_tax_records");
+        static constexpr uint32_t customer_subscriber_hourly_monthly_subscriptions_HASH = ConstExprHashingUtils::HashString("customer_subscriber_hourly_monthly_subscriptions");
+        static constexpr uint32_t customer_subscriber_annual_subscriptions_HASH = ConstExprHashingUtils::HashString("customer_subscriber_annual_subscriptions");
+        static constexpr uint32_t daily_business_usage_by_instance_type_HASH = ConstExprHashingUtils::HashString("daily_business_usage_by_instance_type");
+        static constexpr uint32_t daily_business_fees_HASH = ConstExprHashingUtils::HashString("daily_business_fees");
+        static constexpr uint32_t daily_business_free_trial_conversions_HASH = ConstExprHashingUtils::HashString("daily_business_free_trial_conversions");
+        static constexpr uint32_t daily_business_new_instances_HASH = ConstExprHashingUtils::HashString("daily_business_new_instances");
+        static constexpr uint32_t daily_business_new_product_subscribers_HASH = ConstExprHashingUtils::HashString("daily_business_new_product_subscribers");
+        static constexpr uint32_t daily_business_canceled_product_subscribers_HASH = ConstExprHashingUtils::HashString("daily_business_canceled_product_subscribers");
+        static constexpr uint32_t monthly_revenue_billing_and_revenue_data_HASH = ConstExprHashingUtils::HashString("monthly_revenue_billing_and_revenue_data");
+        static constexpr uint32_t monthly_revenue_annual_subscriptions_HASH = ConstExprHashingUtils::HashString("monthly_revenue_annual_subscriptions");
+        static constexpr uint32_t monthly_revenue_field_demonstration_usage_HASH = ConstExprHashingUtils::HashString("monthly_revenue_field_demonstration_usage");
+        static constexpr uint32_t monthly_revenue_flexible_payment_schedule_HASH = ConstExprHashingUtils::HashString("monthly_revenue_flexible_payment_schedule");
+        static constexpr uint32_t disbursed_amount_by_product_HASH = ConstExprHashingUtils::HashString("disbursed_amount_by_product");
+        static constexpr uint32_t disbursed_amount_by_product_with_uncollected_funds_HASH = ConstExprHashingUtils::HashString("disbursed_amount_by_product_with_uncollected_funds");
+        static constexpr uint32_t disbursed_amount_by_instance_hours_HASH = ConstExprHashingUtils::HashString("disbursed_amount_by_instance_hours");
+        static constexpr uint32_t disbursed_amount_by_customer_geo_HASH = ConstExprHashingUtils::HashString("disbursed_amount_by_customer_geo");
+        static constexpr uint32_t disbursed_amount_by_age_of_uncollected_funds_HASH = ConstExprHashingUtils::HashString("disbursed_amount_by_age_of_uncollected_funds");
+        static constexpr uint32_t disbursed_amount_by_age_of_disbursed_funds_HASH = ConstExprHashingUtils::HashString("disbursed_amount_by_age_of_disbursed_funds");
+        static constexpr uint32_t disbursed_amount_by_age_of_past_due_funds_HASH = ConstExprHashingUtils::HashString("disbursed_amount_by_age_of_past_due_funds");
+        static constexpr uint32_t disbursed_amount_by_uncollected_funds_breakdown_HASH = ConstExprHashingUtils::HashString("disbursed_amount_by_uncollected_funds_breakdown");
+        static constexpr uint32_t customer_profile_by_industry_HASH = ConstExprHashingUtils::HashString("customer_profile_by_industry");
+        static constexpr uint32_t customer_profile_by_revenue_HASH = ConstExprHashingUtils::HashString("customer_profile_by_revenue");
+        static constexpr uint32_t customer_profile_by_geography_HASH = ConstExprHashingUtils::HashString("customer_profile_by_geography");
+        static constexpr uint32_t sales_compensation_billed_revenue_HASH = ConstExprHashingUtils::HashString("sales_compensation_billed_revenue");
+        static constexpr uint32_t us_sales_and_use_tax_records_HASH = ConstExprHashingUtils::HashString("us_sales_and_use_tax_records");
 
 
         DataSetType GetDataSetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == customer_subscriber_hourly_monthly_subscriptions_HASH)
           {
             return DataSetType::customer_subscriber_hourly_monthly_subscriptions;

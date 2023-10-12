@@ -20,12 +20,12 @@ namespace Aws
       namespace DeviceCertificateUpdateActionMapper
       {
 
-        static const int DEACTIVATE_HASH = HashingUtils::HashString("DEACTIVATE");
+        static constexpr uint32_t DEACTIVATE_HASH = ConstExprHashingUtils::HashString("DEACTIVATE");
 
 
         DeviceCertificateUpdateAction GetDeviceCertificateUpdateActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEACTIVATE_HASH)
           {
             return DeviceCertificateUpdateAction::DEACTIVATE;

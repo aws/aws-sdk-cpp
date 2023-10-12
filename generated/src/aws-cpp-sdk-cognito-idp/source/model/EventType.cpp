@@ -20,16 +20,16 @@ namespace Aws
       namespace EventTypeMapper
       {
 
-        static const int SignIn_HASH = HashingUtils::HashString("SignIn");
-        static const int SignUp_HASH = HashingUtils::HashString("SignUp");
-        static const int ForgotPassword_HASH = HashingUtils::HashString("ForgotPassword");
-        static const int PasswordChange_HASH = HashingUtils::HashString("PasswordChange");
-        static const int ResendCode_HASH = HashingUtils::HashString("ResendCode");
+        static constexpr uint32_t SignIn_HASH = ConstExprHashingUtils::HashString("SignIn");
+        static constexpr uint32_t SignUp_HASH = ConstExprHashingUtils::HashString("SignUp");
+        static constexpr uint32_t ForgotPassword_HASH = ConstExprHashingUtils::HashString("ForgotPassword");
+        static constexpr uint32_t PasswordChange_HASH = ConstExprHashingUtils::HashString("PasswordChange");
+        static constexpr uint32_t ResendCode_HASH = ConstExprHashingUtils::HashString("ResendCode");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SignIn_HASH)
           {
             return EventType::SignIn;

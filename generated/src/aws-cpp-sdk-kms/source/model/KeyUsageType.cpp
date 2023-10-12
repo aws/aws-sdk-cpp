@@ -20,14 +20,14 @@ namespace Aws
       namespace KeyUsageTypeMapper
       {
 
-        static const int SIGN_VERIFY_HASH = HashingUtils::HashString("SIGN_VERIFY");
-        static const int ENCRYPT_DECRYPT_HASH = HashingUtils::HashString("ENCRYPT_DECRYPT");
-        static const int GENERATE_VERIFY_MAC_HASH = HashingUtils::HashString("GENERATE_VERIFY_MAC");
+        static constexpr uint32_t SIGN_VERIFY_HASH = ConstExprHashingUtils::HashString("SIGN_VERIFY");
+        static constexpr uint32_t ENCRYPT_DECRYPT_HASH = ConstExprHashingUtils::HashString("ENCRYPT_DECRYPT");
+        static constexpr uint32_t GENERATE_VERIFY_MAC_HASH = ConstExprHashingUtils::HashString("GENERATE_VERIFY_MAC");
 
 
         KeyUsageType GetKeyUsageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SIGN_VERIFY_HASH)
           {
             return KeyUsageType::SIGN_VERIFY;

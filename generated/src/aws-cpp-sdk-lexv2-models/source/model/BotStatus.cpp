@@ -20,19 +20,19 @@ namespace Aws
       namespace BotStatusMapper
       {
 
-        static const int Creating_HASH = HashingUtils::HashString("Creating");
-        static const int Available_HASH = HashingUtils::HashString("Available");
-        static const int Inactive_HASH = HashingUtils::HashString("Inactive");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Versioning_HASH = HashingUtils::HashString("Versioning");
-        static const int Importing_HASH = HashingUtils::HashString("Importing");
-        static const int Updating_HASH = HashingUtils::HashString("Updating");
+        static constexpr uint32_t Creating_HASH = ConstExprHashingUtils::HashString("Creating");
+        static constexpr uint32_t Available_HASH = ConstExprHashingUtils::HashString("Available");
+        static constexpr uint32_t Inactive_HASH = ConstExprHashingUtils::HashString("Inactive");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Versioning_HASH = ConstExprHashingUtils::HashString("Versioning");
+        static constexpr uint32_t Importing_HASH = ConstExprHashingUtils::HashString("Importing");
+        static constexpr uint32_t Updating_HASH = ConstExprHashingUtils::HashString("Updating");
 
 
         BotStatus GetBotStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Creating_HASH)
           {
             return BotStatus::Creating;

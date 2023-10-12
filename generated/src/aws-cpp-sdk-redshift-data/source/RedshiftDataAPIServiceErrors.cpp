@@ -40,16 +40,16 @@ template<> AWS_REDSHIFTDATAAPISERVICE_API ResourceNotFoundException RedshiftData
 namespace RedshiftDataAPIServiceErrorMapper
 {
 
-static const int BATCH_EXECUTE_STATEMENT_HASH = HashingUtils::HashString("BatchExecuteStatementException");
-static const int EXECUTE_STATEMENT_HASH = HashingUtils::HashString("ExecuteStatementException");
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int DATABASE_CONNECTION_HASH = HashingUtils::HashString("DatabaseConnectionException");
-static const int ACTIVE_STATEMENTS_EXCEEDED_HASH = HashingUtils::HashString("ActiveStatementsExceededException");
+static constexpr uint32_t BATCH_EXECUTE_STATEMENT_HASH = ConstExprHashingUtils::HashString("BatchExecuteStatementException");
+static constexpr uint32_t EXECUTE_STATEMENT_HASH = ConstExprHashingUtils::HashString("ExecuteStatementException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
+static constexpr uint32_t DATABASE_CONNECTION_HASH = ConstExprHashingUtils::HashString("DatabaseConnectionException");
+static constexpr uint32_t ACTIVE_STATEMENTS_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ActiveStatementsExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == BATCH_EXECUTE_STATEMENT_HASH)
   {

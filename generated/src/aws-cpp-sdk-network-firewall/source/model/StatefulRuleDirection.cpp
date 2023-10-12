@@ -20,13 +20,13 @@ namespace Aws
       namespace StatefulRuleDirectionMapper
       {
 
-        static const int FORWARD_HASH = HashingUtils::HashString("FORWARD");
-        static const int ANY_HASH = HashingUtils::HashString("ANY");
+        static constexpr uint32_t FORWARD_HASH = ConstExprHashingUtils::HashString("FORWARD");
+        static constexpr uint32_t ANY_HASH = ConstExprHashingUtils::HashString("ANY");
 
 
         StatefulRuleDirection GetStatefulRuleDirectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FORWARD_HASH)
           {
             return StatefulRuleDirection::FORWARD;

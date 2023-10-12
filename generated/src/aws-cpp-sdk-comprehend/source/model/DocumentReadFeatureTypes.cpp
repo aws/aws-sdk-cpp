@@ -20,13 +20,13 @@ namespace Aws
       namespace DocumentReadFeatureTypesMapper
       {
 
-        static const int TABLES_HASH = HashingUtils::HashString("TABLES");
-        static const int FORMS_HASH = HashingUtils::HashString("FORMS");
+        static constexpr uint32_t TABLES_HASH = ConstExprHashingUtils::HashString("TABLES");
+        static constexpr uint32_t FORMS_HASH = ConstExprHashingUtils::HashString("FORMS");
 
 
         DocumentReadFeatureTypes GetDocumentReadFeatureTypesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TABLES_HASH)
           {
             return DocumentReadFeatureTypes::TABLES;

@@ -20,13 +20,13 @@ namespace Aws
       namespace MessageActionTypeMapper
       {
 
-        static const int RESEND_HASH = HashingUtils::HashString("RESEND");
-        static const int SUPPRESS_HASH = HashingUtils::HashString("SUPPRESS");
+        static constexpr uint32_t RESEND_HASH = ConstExprHashingUtils::HashString("RESEND");
+        static constexpr uint32_t SUPPRESS_HASH = ConstExprHashingUtils::HashString("SUPPRESS");
 
 
         MessageActionType GetMessageActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESEND_HASH)
           {
             return MessageActionType::RESEND;

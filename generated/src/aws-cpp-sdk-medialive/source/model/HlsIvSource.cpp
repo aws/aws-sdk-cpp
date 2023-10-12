@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsIvSourceMapper
       {
 
-        static const int EXPLICIT_HASH = HashingUtils::HashString("EXPLICIT");
-        static const int FOLLOWS_SEGMENT_NUMBER_HASH = HashingUtils::HashString("FOLLOWS_SEGMENT_NUMBER");
+        static constexpr uint32_t EXPLICIT_HASH = ConstExprHashingUtils::HashString("EXPLICIT");
+        static constexpr uint32_t FOLLOWS_SEGMENT_NUMBER_HASH = ConstExprHashingUtils::HashString("FOLLOWS_SEGMENT_NUMBER");
 
 
         HlsIvSource GetHlsIvSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXPLICIT_HASH)
           {
             return HlsIvSource::EXPLICIT;

@@ -20,17 +20,17 @@ namespace Aws
       namespace BudgetTypeMapper
       {
 
-        static const int USAGE_HASH = HashingUtils::HashString("USAGE");
-        static const int COST_HASH = HashingUtils::HashString("COST");
-        static const int RI_UTILIZATION_HASH = HashingUtils::HashString("RI_UTILIZATION");
-        static const int RI_COVERAGE_HASH = HashingUtils::HashString("RI_COVERAGE");
-        static const int SAVINGS_PLANS_UTILIZATION_HASH = HashingUtils::HashString("SAVINGS_PLANS_UTILIZATION");
-        static const int SAVINGS_PLANS_COVERAGE_HASH = HashingUtils::HashString("SAVINGS_PLANS_COVERAGE");
+        static constexpr uint32_t USAGE_HASH = ConstExprHashingUtils::HashString("USAGE");
+        static constexpr uint32_t COST_HASH = ConstExprHashingUtils::HashString("COST");
+        static constexpr uint32_t RI_UTILIZATION_HASH = ConstExprHashingUtils::HashString("RI_UTILIZATION");
+        static constexpr uint32_t RI_COVERAGE_HASH = ConstExprHashingUtils::HashString("RI_COVERAGE");
+        static constexpr uint32_t SAVINGS_PLANS_UTILIZATION_HASH = ConstExprHashingUtils::HashString("SAVINGS_PLANS_UTILIZATION");
+        static constexpr uint32_t SAVINGS_PLANS_COVERAGE_HASH = ConstExprHashingUtils::HashString("SAVINGS_PLANS_COVERAGE");
 
 
         BudgetType GetBudgetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USAGE_HASH)
           {
             return BudgetType::USAGE;

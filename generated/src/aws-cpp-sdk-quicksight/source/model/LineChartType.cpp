@@ -20,14 +20,14 @@ namespace Aws
       namespace LineChartTypeMapper
       {
 
-        static const int LINE_HASH = HashingUtils::HashString("LINE");
-        static const int AREA_HASH = HashingUtils::HashString("AREA");
-        static const int STACKED_AREA_HASH = HashingUtils::HashString("STACKED_AREA");
+        static constexpr uint32_t LINE_HASH = ConstExprHashingUtils::HashString("LINE");
+        static constexpr uint32_t AREA_HASH = ConstExprHashingUtils::HashString("AREA");
+        static constexpr uint32_t STACKED_AREA_HASH = ConstExprHashingUtils::HashString("STACKED_AREA");
 
 
         LineChartType GetLineChartTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LINE_HASH)
           {
             return LineChartType::LINE;

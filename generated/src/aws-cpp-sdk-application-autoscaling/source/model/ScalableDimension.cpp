@@ -20,32 +20,32 @@ namespace Aws
       namespace ScalableDimensionMapper
       {
 
-        static const int ecs_service_DesiredCount_HASH = HashingUtils::HashString("ecs:service:DesiredCount");
-        static const int ec2_spot_fleet_request_TargetCapacity_HASH = HashingUtils::HashString("ec2:spot-fleet-request:TargetCapacity");
-        static const int elasticmapreduce_instancegroup_InstanceCount_HASH = HashingUtils::HashString("elasticmapreduce:instancegroup:InstanceCount");
-        static const int appstream_fleet_DesiredCapacity_HASH = HashingUtils::HashString("appstream:fleet:DesiredCapacity");
-        static const int dynamodb_table_ReadCapacityUnits_HASH = HashingUtils::HashString("dynamodb:table:ReadCapacityUnits");
-        static const int dynamodb_table_WriteCapacityUnits_HASH = HashingUtils::HashString("dynamodb:table:WriteCapacityUnits");
-        static const int dynamodb_index_ReadCapacityUnits_HASH = HashingUtils::HashString("dynamodb:index:ReadCapacityUnits");
-        static const int dynamodb_index_WriteCapacityUnits_HASH = HashingUtils::HashString("dynamodb:index:WriteCapacityUnits");
-        static const int rds_cluster_ReadReplicaCount_HASH = HashingUtils::HashString("rds:cluster:ReadReplicaCount");
-        static const int sagemaker_variant_DesiredInstanceCount_HASH = HashingUtils::HashString("sagemaker:variant:DesiredInstanceCount");
-        static const int custom_resource_ResourceType_Property_HASH = HashingUtils::HashString("custom-resource:ResourceType:Property");
-        static const int comprehend_document_classifier_endpoint_DesiredInferenceUnits_HASH = HashingUtils::HashString("comprehend:document-classifier-endpoint:DesiredInferenceUnits");
-        static const int comprehend_entity_recognizer_endpoint_DesiredInferenceUnits_HASH = HashingUtils::HashString("comprehend:entity-recognizer-endpoint:DesiredInferenceUnits");
-        static const int lambda_function_ProvisionedConcurrency_HASH = HashingUtils::HashString("lambda:function:ProvisionedConcurrency");
-        static const int cassandra_table_ReadCapacityUnits_HASH = HashingUtils::HashString("cassandra:table:ReadCapacityUnits");
-        static const int cassandra_table_WriteCapacityUnits_HASH = HashingUtils::HashString("cassandra:table:WriteCapacityUnits");
-        static const int kafka_broker_storage_VolumeSize_HASH = HashingUtils::HashString("kafka:broker-storage:VolumeSize");
-        static const int elasticache_replication_group_NodeGroups_HASH = HashingUtils::HashString("elasticache:replication-group:NodeGroups");
-        static const int elasticache_replication_group_Replicas_HASH = HashingUtils::HashString("elasticache:replication-group:Replicas");
-        static const int neptune_cluster_ReadReplicaCount_HASH = HashingUtils::HashString("neptune:cluster:ReadReplicaCount");
-        static const int sagemaker_variant_DesiredProvisionedConcurrency_HASH = HashingUtils::HashString("sagemaker:variant:DesiredProvisionedConcurrency");
+        static constexpr uint32_t ecs_service_DesiredCount_HASH = ConstExprHashingUtils::HashString("ecs:service:DesiredCount");
+        static constexpr uint32_t ec2_spot_fleet_request_TargetCapacity_HASH = ConstExprHashingUtils::HashString("ec2:spot-fleet-request:TargetCapacity");
+        static constexpr uint32_t elasticmapreduce_instancegroup_InstanceCount_HASH = ConstExprHashingUtils::HashString("elasticmapreduce:instancegroup:InstanceCount");
+        static constexpr uint32_t appstream_fleet_DesiredCapacity_HASH = ConstExprHashingUtils::HashString("appstream:fleet:DesiredCapacity");
+        static constexpr uint32_t dynamodb_table_ReadCapacityUnits_HASH = ConstExprHashingUtils::HashString("dynamodb:table:ReadCapacityUnits");
+        static constexpr uint32_t dynamodb_table_WriteCapacityUnits_HASH = ConstExprHashingUtils::HashString("dynamodb:table:WriteCapacityUnits");
+        static constexpr uint32_t dynamodb_index_ReadCapacityUnits_HASH = ConstExprHashingUtils::HashString("dynamodb:index:ReadCapacityUnits");
+        static constexpr uint32_t dynamodb_index_WriteCapacityUnits_HASH = ConstExprHashingUtils::HashString("dynamodb:index:WriteCapacityUnits");
+        static constexpr uint32_t rds_cluster_ReadReplicaCount_HASH = ConstExprHashingUtils::HashString("rds:cluster:ReadReplicaCount");
+        static constexpr uint32_t sagemaker_variant_DesiredInstanceCount_HASH = ConstExprHashingUtils::HashString("sagemaker:variant:DesiredInstanceCount");
+        static constexpr uint32_t custom_resource_ResourceType_Property_HASH = ConstExprHashingUtils::HashString("custom-resource:ResourceType:Property");
+        static constexpr uint32_t comprehend_document_classifier_endpoint_DesiredInferenceUnits_HASH = ConstExprHashingUtils::HashString("comprehend:document-classifier-endpoint:DesiredInferenceUnits");
+        static constexpr uint32_t comprehend_entity_recognizer_endpoint_DesiredInferenceUnits_HASH = ConstExprHashingUtils::HashString("comprehend:entity-recognizer-endpoint:DesiredInferenceUnits");
+        static constexpr uint32_t lambda_function_ProvisionedConcurrency_HASH = ConstExprHashingUtils::HashString("lambda:function:ProvisionedConcurrency");
+        static constexpr uint32_t cassandra_table_ReadCapacityUnits_HASH = ConstExprHashingUtils::HashString("cassandra:table:ReadCapacityUnits");
+        static constexpr uint32_t cassandra_table_WriteCapacityUnits_HASH = ConstExprHashingUtils::HashString("cassandra:table:WriteCapacityUnits");
+        static constexpr uint32_t kafka_broker_storage_VolumeSize_HASH = ConstExprHashingUtils::HashString("kafka:broker-storage:VolumeSize");
+        static constexpr uint32_t elasticache_replication_group_NodeGroups_HASH = ConstExprHashingUtils::HashString("elasticache:replication-group:NodeGroups");
+        static constexpr uint32_t elasticache_replication_group_Replicas_HASH = ConstExprHashingUtils::HashString("elasticache:replication-group:Replicas");
+        static constexpr uint32_t neptune_cluster_ReadReplicaCount_HASH = ConstExprHashingUtils::HashString("neptune:cluster:ReadReplicaCount");
+        static constexpr uint32_t sagemaker_variant_DesiredProvisionedConcurrency_HASH = ConstExprHashingUtils::HashString("sagemaker:variant:DesiredProvisionedConcurrency");
 
 
         ScalableDimension GetScalableDimensionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ecs_service_DesiredCount_HASH)
           {
             return ScalableDimension::ecs_service_DesiredCount;

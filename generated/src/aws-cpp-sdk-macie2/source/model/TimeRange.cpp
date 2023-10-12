@@ -20,13 +20,13 @@ namespace Aws
       namespace TimeRangeMapper
       {
 
-        static const int MONTH_TO_DATE_HASH = HashingUtils::HashString("MONTH_TO_DATE");
-        static const int PAST_30_DAYS_HASH = HashingUtils::HashString("PAST_30_DAYS");
+        static constexpr uint32_t MONTH_TO_DATE_HASH = ConstExprHashingUtils::HashString("MONTH_TO_DATE");
+        static constexpr uint32_t PAST_30_DAYS_HASH = ConstExprHashingUtils::HashString("PAST_30_DAYS");
 
 
         TimeRange GetTimeRangeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MONTH_TO_DATE_HASH)
           {
             return TimeRange::MONTH_TO_DATE;

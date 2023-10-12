@@ -20,12 +20,12 @@ namespace Aws
       namespace AuthorizationProviderTypeMapper
       {
 
-        static const int SAML_HASH = HashingUtils::HashString("SAML");
+        static constexpr uint32_t SAML_HASH = ConstExprHashingUtils::HashString("SAML");
 
 
         AuthorizationProviderType GetAuthorizationProviderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SAML_HASH)
           {
             return AuthorizationProviderType::SAML;

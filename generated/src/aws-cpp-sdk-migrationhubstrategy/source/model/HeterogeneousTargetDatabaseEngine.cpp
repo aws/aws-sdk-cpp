@@ -20,21 +20,21 @@ namespace Aws
       namespace HeterogeneousTargetDatabaseEngineMapper
       {
 
-        static const int None_specified_HASH = HashingUtils::HashString("None specified");
-        static const int Amazon_Aurora_HASH = HashingUtils::HashString("Amazon Aurora");
-        static const int AWS_PostgreSQL_HASH = HashingUtils::HashString("AWS PostgreSQL");
-        static const int MySQL_HASH = HashingUtils::HashString("MySQL");
-        static const int Microsoft_SQL_Server_HASH = HashingUtils::HashString("Microsoft SQL Server");
-        static const int Oracle_Database_HASH = HashingUtils::HashString("Oracle Database");
-        static const int MariaDB_HASH = HashingUtils::HashString("MariaDB");
-        static const int SAP_HASH = HashingUtils::HashString("SAP");
-        static const int Db2_LUW_HASH = HashingUtils::HashString("Db2 LUW");
-        static const int MongoDB_HASH = HashingUtils::HashString("MongoDB");
+        static constexpr uint32_t None_specified_HASH = ConstExprHashingUtils::HashString("None specified");
+        static constexpr uint32_t Amazon_Aurora_HASH = ConstExprHashingUtils::HashString("Amazon Aurora");
+        static constexpr uint32_t AWS_PostgreSQL_HASH = ConstExprHashingUtils::HashString("AWS PostgreSQL");
+        static constexpr uint32_t MySQL_HASH = ConstExprHashingUtils::HashString("MySQL");
+        static constexpr uint32_t Microsoft_SQL_Server_HASH = ConstExprHashingUtils::HashString("Microsoft SQL Server");
+        static constexpr uint32_t Oracle_Database_HASH = ConstExprHashingUtils::HashString("Oracle Database");
+        static constexpr uint32_t MariaDB_HASH = ConstExprHashingUtils::HashString("MariaDB");
+        static constexpr uint32_t SAP_HASH = ConstExprHashingUtils::HashString("SAP");
+        static constexpr uint32_t Db2_LUW_HASH = ConstExprHashingUtils::HashString("Db2 LUW");
+        static constexpr uint32_t MongoDB_HASH = ConstExprHashingUtils::HashString("MongoDB");
 
 
         HeterogeneousTargetDatabaseEngine GetHeterogeneousTargetDatabaseEngineForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == None_specified_HASH)
           {
             return HeterogeneousTargetDatabaseEngine::None_specified;

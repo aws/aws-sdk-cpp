@@ -20,13 +20,13 @@ namespace Aws
       namespace StorageTypeMapper
       {
 
-        static const int Standard_HASH = HashingUtils::HashString("Standard");
-        static const int InMemory_HASH = HashingUtils::HashString("InMemory");
+        static constexpr uint32_t Standard_HASH = ConstExprHashingUtils::HashString("Standard");
+        static constexpr uint32_t InMemory_HASH = ConstExprHashingUtils::HashString("InMemory");
 
 
         StorageType GetStorageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Standard_HASH)
           {
             return StorageType::Standard;

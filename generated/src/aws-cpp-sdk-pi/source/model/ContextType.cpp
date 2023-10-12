@@ -20,13 +20,13 @@ namespace Aws
       namespace ContextTypeMapper
       {
 
-        static const int CAUSAL_HASH = HashingUtils::HashString("CAUSAL");
-        static const int CONTEXTUAL_HASH = HashingUtils::HashString("CONTEXTUAL");
+        static constexpr uint32_t CAUSAL_HASH = ConstExprHashingUtils::HashString("CAUSAL");
+        static constexpr uint32_t CONTEXTUAL_HASH = ConstExprHashingUtils::HashString("CONTEXTUAL");
 
 
         ContextType GetContextTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CAUSAL_HASH)
           {
             return ContextType::CAUSAL;

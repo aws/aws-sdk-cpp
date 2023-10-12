@@ -20,13 +20,13 @@ namespace Aws
       namespace VolumeFilterNameMapper
       {
 
-        static const int file_system_id_HASH = HashingUtils::HashString("file-system-id");
-        static const int storage_virtual_machine_id_HASH = HashingUtils::HashString("storage-virtual-machine-id");
+        static constexpr uint32_t file_system_id_HASH = ConstExprHashingUtils::HashString("file-system-id");
+        static constexpr uint32_t storage_virtual_machine_id_HASH = ConstExprHashingUtils::HashString("storage-virtual-machine-id");
 
 
         VolumeFilterName GetVolumeFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == file_system_id_HASH)
           {
             return VolumeFilterName::file_system_id;

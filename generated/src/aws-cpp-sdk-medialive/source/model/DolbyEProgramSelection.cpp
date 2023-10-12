@@ -20,20 +20,20 @@ namespace Aws
       namespace DolbyEProgramSelectionMapper
       {
 
-        static const int ALL_CHANNELS_HASH = HashingUtils::HashString("ALL_CHANNELS");
-        static const int PROGRAM_1_HASH = HashingUtils::HashString("PROGRAM_1");
-        static const int PROGRAM_2_HASH = HashingUtils::HashString("PROGRAM_2");
-        static const int PROGRAM_3_HASH = HashingUtils::HashString("PROGRAM_3");
-        static const int PROGRAM_4_HASH = HashingUtils::HashString("PROGRAM_4");
-        static const int PROGRAM_5_HASH = HashingUtils::HashString("PROGRAM_5");
-        static const int PROGRAM_6_HASH = HashingUtils::HashString("PROGRAM_6");
-        static const int PROGRAM_7_HASH = HashingUtils::HashString("PROGRAM_7");
-        static const int PROGRAM_8_HASH = HashingUtils::HashString("PROGRAM_8");
+        static constexpr uint32_t ALL_CHANNELS_HASH = ConstExprHashingUtils::HashString("ALL_CHANNELS");
+        static constexpr uint32_t PROGRAM_1_HASH = ConstExprHashingUtils::HashString("PROGRAM_1");
+        static constexpr uint32_t PROGRAM_2_HASH = ConstExprHashingUtils::HashString("PROGRAM_2");
+        static constexpr uint32_t PROGRAM_3_HASH = ConstExprHashingUtils::HashString("PROGRAM_3");
+        static constexpr uint32_t PROGRAM_4_HASH = ConstExprHashingUtils::HashString("PROGRAM_4");
+        static constexpr uint32_t PROGRAM_5_HASH = ConstExprHashingUtils::HashString("PROGRAM_5");
+        static constexpr uint32_t PROGRAM_6_HASH = ConstExprHashingUtils::HashString("PROGRAM_6");
+        static constexpr uint32_t PROGRAM_7_HASH = ConstExprHashingUtils::HashString("PROGRAM_7");
+        static constexpr uint32_t PROGRAM_8_HASH = ConstExprHashingUtils::HashString("PROGRAM_8");
 
 
         DolbyEProgramSelection GetDolbyEProgramSelectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_CHANNELS_HASH)
           {
             return DolbyEProgramSelection::ALL_CHANNELS;

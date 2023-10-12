@@ -20,17 +20,17 @@ namespace Aws
       namespace FeatureStatusMapper
       {
 
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int UNSUPPORTED_HASH = HashingUtils::HashString("UNSUPPORTED");
-        static const int ENABLED_PENDING_REBOOT_HASH = HashingUtils::HashString("ENABLED_PENDING_REBOOT");
-        static const int DISABLED_PENDING_REBOOT_HASH = HashingUtils::HashString("DISABLED_PENDING_REBOOT");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t UNSUPPORTED_HASH = ConstExprHashingUtils::HashString("UNSUPPORTED");
+        static constexpr uint32_t ENABLED_PENDING_REBOOT_HASH = ConstExprHashingUtils::HashString("ENABLED_PENDING_REBOOT");
+        static constexpr uint32_t DISABLED_PENDING_REBOOT_HASH = ConstExprHashingUtils::HashString("DISABLED_PENDING_REBOOT");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         FeatureStatus GetFeatureStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLED_HASH)
           {
             return FeatureStatus::ENABLED;

@@ -20,18 +20,18 @@ namespace Aws
       namespace OperatorTypeMapper
       {
 
-        static const int eq_HASH = HashingUtils::HashString("eq");
-        static const int lt_HASH = HashingUtils::HashString("lt");
-        static const int gt_HASH = HashingUtils::HashString("gt");
-        static const int le_HASH = HashingUtils::HashString("le");
-        static const int ge_HASH = HashingUtils::HashString("ge");
-        static const int in_HASH = HashingUtils::HashString("in");
-        static const int between_HASH = HashingUtils::HashString("between");
+        static constexpr uint32_t eq_HASH = ConstExprHashingUtils::HashString("eq");
+        static constexpr uint32_t lt_HASH = ConstExprHashingUtils::HashString("lt");
+        static constexpr uint32_t gt_HASH = ConstExprHashingUtils::HashString("gt");
+        static constexpr uint32_t le_HASH = ConstExprHashingUtils::HashString("le");
+        static constexpr uint32_t ge_HASH = ConstExprHashingUtils::HashString("ge");
+        static constexpr uint32_t in_HASH = ConstExprHashingUtils::HashString("in");
+        static constexpr uint32_t between_HASH = ConstExprHashingUtils::HashString("between");
 
 
         OperatorType GetOperatorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == eq_HASH)
           {
             return OperatorType::eq;

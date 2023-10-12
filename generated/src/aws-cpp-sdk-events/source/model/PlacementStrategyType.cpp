@@ -20,14 +20,14 @@ namespace Aws
       namespace PlacementStrategyTypeMapper
       {
 
-        static const int random_HASH = HashingUtils::HashString("random");
-        static const int spread_HASH = HashingUtils::HashString("spread");
-        static const int binpack_HASH = HashingUtils::HashString("binpack");
+        static constexpr uint32_t random_HASH = ConstExprHashingUtils::HashString("random");
+        static constexpr uint32_t spread_HASH = ConstExprHashingUtils::HashString("spread");
+        static constexpr uint32_t binpack_HASH = ConstExprHashingUtils::HashString("binpack");
 
 
         PlacementStrategyType GetPlacementStrategyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == random_HASH)
           {
             return PlacementStrategyType::random;

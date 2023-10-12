@@ -20,19 +20,19 @@ namespace Aws
       namespace DataSourceErrorInfoTypeMapper
       {
 
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
-        static const int COPY_SOURCE_NOT_FOUND_HASH = HashingUtils::HashString("COPY_SOURCE_NOT_FOUND");
-        static const int TIMEOUT_HASH = HashingUtils::HashString("TIMEOUT");
-        static const int ENGINE_VERSION_NOT_SUPPORTED_HASH = HashingUtils::HashString("ENGINE_VERSION_NOT_SUPPORTED");
-        static const int UNKNOWN_HOST_HASH = HashingUtils::HashString("UNKNOWN_HOST");
-        static const int GENERIC_SQL_FAILURE_HASH = HashingUtils::HashString("GENERIC_SQL_FAILURE");
-        static const int CONFLICT_HASH = HashingUtils::HashString("CONFLICT");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t COPY_SOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("COPY_SOURCE_NOT_FOUND");
+        static constexpr uint32_t TIMEOUT_HASH = ConstExprHashingUtils::HashString("TIMEOUT");
+        static constexpr uint32_t ENGINE_VERSION_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("ENGINE_VERSION_NOT_SUPPORTED");
+        static constexpr uint32_t UNKNOWN_HOST_HASH = ConstExprHashingUtils::HashString("UNKNOWN_HOST");
+        static constexpr uint32_t GENERIC_SQL_FAILURE_HASH = ConstExprHashingUtils::HashString("GENERIC_SQL_FAILURE");
+        static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("CONFLICT");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         DataSourceErrorInfoType GetDataSourceErrorInfoTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCESS_DENIED_HASH)
           {
             return DataSourceErrorInfoType::ACCESS_DENIED;

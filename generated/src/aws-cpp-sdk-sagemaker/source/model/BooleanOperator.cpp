@@ -20,13 +20,13 @@ namespace Aws
       namespace BooleanOperatorMapper
       {
 
-        static const int And_HASH = HashingUtils::HashString("And");
-        static const int Or_HASH = HashingUtils::HashString("Or");
+        static constexpr uint32_t And_HASH = ConstExprHashingUtils::HashString("And");
+        static constexpr uint32_t Or_HASH = ConstExprHashingUtils::HashString("Or");
 
 
         BooleanOperator GetBooleanOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == And_HASH)
           {
             return BooleanOperator::And;

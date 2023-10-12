@@ -20,13 +20,13 @@ namespace Aws
       namespace ContentModerationSortByMapper
       {
 
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int TIMESTAMP_HASH = HashingUtils::HashString("TIMESTAMP");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t TIMESTAMP_HASH = ConstExprHashingUtils::HashString("TIMESTAMP");
 
 
         ContentModerationSortBy GetContentModerationSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NAME_HASH)
           {
             return ContentModerationSortBy::NAME;

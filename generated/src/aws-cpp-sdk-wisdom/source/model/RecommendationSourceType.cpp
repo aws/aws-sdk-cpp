@@ -20,14 +20,14 @@ namespace Aws
       namespace RecommendationSourceTypeMapper
       {
 
-        static const int ISSUE_DETECTION_HASH = HashingUtils::HashString("ISSUE_DETECTION");
-        static const int RULE_EVALUATION_HASH = HashingUtils::HashString("RULE_EVALUATION");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
+        static constexpr uint32_t ISSUE_DETECTION_HASH = ConstExprHashingUtils::HashString("ISSUE_DETECTION");
+        static constexpr uint32_t RULE_EVALUATION_HASH = ConstExprHashingUtils::HashString("RULE_EVALUATION");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
 
 
         RecommendationSourceType GetRecommendationSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ISSUE_DETECTION_HASH)
           {
             return RecommendationSourceType::ISSUE_DETECTION;

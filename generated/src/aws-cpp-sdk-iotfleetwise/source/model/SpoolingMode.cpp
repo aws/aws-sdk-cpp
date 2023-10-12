@@ -20,13 +20,13 @@ namespace Aws
       namespace SpoolingModeMapper
       {
 
-        static const int OFF_HASH = HashingUtils::HashString("OFF");
-        static const int TO_DISK_HASH = HashingUtils::HashString("TO_DISK");
+        static constexpr uint32_t OFF_HASH = ConstExprHashingUtils::HashString("OFF");
+        static constexpr uint32_t TO_DISK_HASH = ConstExprHashingUtils::HashString("TO_DISK");
 
 
         SpoolingMode GetSpoolingModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OFF_HASH)
           {
             return SpoolingMode::OFF;

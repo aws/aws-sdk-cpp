@@ -20,13 +20,13 @@ namespace Aws
       namespace FirewallDeploymentModelMapper
       {
 
-        static const int CENTRALIZED_HASH = HashingUtils::HashString("CENTRALIZED");
-        static const int DISTRIBUTED_HASH = HashingUtils::HashString("DISTRIBUTED");
+        static constexpr uint32_t CENTRALIZED_HASH = ConstExprHashingUtils::HashString("CENTRALIZED");
+        static constexpr uint32_t DISTRIBUTED_HASH = ConstExprHashingUtils::HashString("DISTRIBUTED");
 
 
         FirewallDeploymentModel GetFirewallDeploymentModelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CENTRALIZED_HASH)
           {
             return FirewallDeploymentModel::CENTRALIZED;

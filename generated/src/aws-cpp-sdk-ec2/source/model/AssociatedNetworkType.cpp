@@ -20,12 +20,12 @@ namespace Aws
       namespace AssociatedNetworkTypeMapper
       {
 
-        static const int vpc_HASH = HashingUtils::HashString("vpc");
+        static constexpr uint32_t vpc_HASH = ConstExprHashingUtils::HashString("vpc");
 
 
         AssociatedNetworkType GetAssociatedNetworkTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == vpc_HASH)
           {
             return AssociatedNetworkType::vpc;

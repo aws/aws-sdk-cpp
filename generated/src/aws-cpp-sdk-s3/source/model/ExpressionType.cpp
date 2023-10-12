@@ -20,12 +20,12 @@ namespace Aws
       namespace ExpressionTypeMapper
       {
 
-        static const int SQL_HASH = HashingUtils::HashString("SQL");
+        static constexpr uint32_t SQL_HASH = ConstExprHashingUtils::HashString("SQL");
 
 
         ExpressionType GetExpressionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SQL_HASH)
           {
             return ExpressionType::SQL;

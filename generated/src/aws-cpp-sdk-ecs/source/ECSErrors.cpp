@@ -18,34 +18,34 @@ namespace ECS
 namespace ECSErrorMapper
 {
 
-static const int CLIENT_HASH = HashingUtils::HashString("ClientException");
-static const int NO_UPDATE_AVAILABLE_HASH = HashingUtils::HashString("NoUpdateAvailableException");
-static const int UNSUPPORTED_FEATURE_HASH = HashingUtils::HashString("UnsupportedFeatureException");
-static const int TARGET_NOT_FOUND_HASH = HashingUtils::HashString("TargetNotFoundException");
-static const int CLUSTER_CONTAINS_CONTAINER_INSTANCES_HASH = HashingUtils::HashString("ClusterContainsContainerInstancesException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int PLATFORM_TASK_DEFINITION_INCOMPATIBILITY_HASH = HashingUtils::HashString("PlatformTaskDefinitionIncompatibilityException");
-static const int MISSING_VERSION_HASH = HashingUtils::HashString("MissingVersionException");
-static const int SERVER_HASH = HashingUtils::HashString("ServerException");
-static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UpdateInProgressException");
-static const int NAMESPACE_NOT_FOUND_HASH = HashingUtils::HashString("NamespaceNotFoundException");
-static const int BLOCKED_HASH = HashingUtils::HashString("BlockedException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int PLATFORM_UNKNOWN_HASH = HashingUtils::HashString("PlatformUnknownException");
-static const int CLUSTER_NOT_FOUND_HASH = HashingUtils::HashString("ClusterNotFoundException");
-static const int CLUSTER_CONTAINS_SERVICES_HASH = HashingUtils::HashString("ClusterContainsServicesException");
-static const int TARGET_NOT_CONNECTED_HASH = HashingUtils::HashString("TargetNotConnectedException");
-static const int CLUSTER_CONTAINS_TASKS_HASH = HashingUtils::HashString("ClusterContainsTasksException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int TASK_SET_NOT_FOUND_HASH = HashingUtils::HashString("TaskSetNotFoundException");
-static const int SERVICE_NOT_FOUND_HASH = HashingUtils::HashString("ServiceNotFoundException");
-static const int SERVICE_NOT_ACTIVE_HASH = HashingUtils::HashString("ServiceNotActiveException");
-static const int ATTRIBUTE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AttributeLimitExceededException");
+static constexpr uint32_t CLIENT_HASH = ConstExprHashingUtils::HashString("ClientException");
+static constexpr uint32_t NO_UPDATE_AVAILABLE_HASH = ConstExprHashingUtils::HashString("NoUpdateAvailableException");
+static constexpr uint32_t UNSUPPORTED_FEATURE_HASH = ConstExprHashingUtils::HashString("UnsupportedFeatureException");
+static constexpr uint32_t TARGET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("TargetNotFoundException");
+static constexpr uint32_t CLUSTER_CONTAINS_CONTAINER_INSTANCES_HASH = ConstExprHashingUtils::HashString("ClusterContainsContainerInstancesException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t PLATFORM_TASK_DEFINITION_INCOMPATIBILITY_HASH = ConstExprHashingUtils::HashString("PlatformTaskDefinitionIncompatibilityException");
+static constexpr uint32_t MISSING_VERSION_HASH = ConstExprHashingUtils::HashString("MissingVersionException");
+static constexpr uint32_t SERVER_HASH = ConstExprHashingUtils::HashString("ServerException");
+static constexpr uint32_t UPDATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("UpdateInProgressException");
+static constexpr uint32_t NAMESPACE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NamespaceNotFoundException");
+static constexpr uint32_t BLOCKED_HASH = ConstExprHashingUtils::HashString("BlockedException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t PLATFORM_UNKNOWN_HASH = ConstExprHashingUtils::HashString("PlatformUnknownException");
+static constexpr uint32_t CLUSTER_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ClusterNotFoundException");
+static constexpr uint32_t CLUSTER_CONTAINS_SERVICES_HASH = ConstExprHashingUtils::HashString("ClusterContainsServicesException");
+static constexpr uint32_t TARGET_NOT_CONNECTED_HASH = ConstExprHashingUtils::HashString("TargetNotConnectedException");
+static constexpr uint32_t CLUSTER_CONTAINS_TASKS_HASH = ConstExprHashingUtils::HashString("ClusterContainsTasksException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t TASK_SET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("TaskSetNotFoundException");
+static constexpr uint32_t SERVICE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ServiceNotFoundException");
+static constexpr uint32_t SERVICE_NOT_ACTIVE_HASH = ConstExprHashingUtils::HashString("ServiceNotActiveException");
+static constexpr uint32_t ATTRIBUTE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("AttributeLimitExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CLIENT_HASH)
   {

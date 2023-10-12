@@ -20,14 +20,14 @@ namespace Aws
       namespace BusinessReportIntervalMapper
       {
 
-        static const int ONE_DAY_HASH = HashingUtils::HashString("ONE_DAY");
-        static const int ONE_WEEK_HASH = HashingUtils::HashString("ONE_WEEK");
-        static const int THIRTY_DAYS_HASH = HashingUtils::HashString("THIRTY_DAYS");
+        static constexpr uint32_t ONE_DAY_HASH = ConstExprHashingUtils::HashString("ONE_DAY");
+        static constexpr uint32_t ONE_WEEK_HASH = ConstExprHashingUtils::HashString("ONE_WEEK");
+        static constexpr uint32_t THIRTY_DAYS_HASH = ConstExprHashingUtils::HashString("THIRTY_DAYS");
 
 
         BusinessReportInterval GetBusinessReportIntervalForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ONE_DAY_HASH)
           {
             return BusinessReportInterval::ONE_DAY;

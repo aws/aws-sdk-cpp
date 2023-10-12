@@ -20,18 +20,18 @@ namespace Aws
       namespace AnalyticsSessionMetricNameMapper
       {
 
-        static const int Count_HASH = HashingUtils::HashString("Count");
-        static const int Success_HASH = HashingUtils::HashString("Success");
-        static const int Failure_HASH = HashingUtils::HashString("Failure");
-        static const int Dropped_HASH = HashingUtils::HashString("Dropped");
-        static const int Duration_HASH = HashingUtils::HashString("Duration");
-        static const int TurnsPerConversation_HASH = HashingUtils::HashString("TurnsPerConversation");
-        static const int Concurrency_HASH = HashingUtils::HashString("Concurrency");
+        static constexpr uint32_t Count_HASH = ConstExprHashingUtils::HashString("Count");
+        static constexpr uint32_t Success_HASH = ConstExprHashingUtils::HashString("Success");
+        static constexpr uint32_t Failure_HASH = ConstExprHashingUtils::HashString("Failure");
+        static constexpr uint32_t Dropped_HASH = ConstExprHashingUtils::HashString("Dropped");
+        static constexpr uint32_t Duration_HASH = ConstExprHashingUtils::HashString("Duration");
+        static constexpr uint32_t TurnsPerConversation_HASH = ConstExprHashingUtils::HashString("TurnsPerConversation");
+        static constexpr uint32_t Concurrency_HASH = ConstExprHashingUtils::HashString("Concurrency");
 
 
         AnalyticsSessionMetricName GetAnalyticsSessionMetricNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Count_HASH)
           {
             return AnalyticsSessionMetricName::Count;

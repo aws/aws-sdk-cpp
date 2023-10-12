@@ -20,13 +20,13 @@ namespace Aws
       namespace SchemaElementMapper
       {
 
-        static const int RESOURCES_HASH = HashingUtils::HashString("RESOURCES");
-        static const int SPLIT_COST_ALLOCATION_DATA_HASH = HashingUtils::HashString("SPLIT_COST_ALLOCATION_DATA");
+        static constexpr uint32_t RESOURCES_HASH = ConstExprHashingUtils::HashString("RESOURCES");
+        static constexpr uint32_t SPLIT_COST_ALLOCATION_DATA_HASH = ConstExprHashingUtils::HashString("SPLIT_COST_ALLOCATION_DATA");
 
 
         SchemaElement GetSchemaElementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESOURCES_HASH)
           {
             return SchemaElement::RESOURCES;

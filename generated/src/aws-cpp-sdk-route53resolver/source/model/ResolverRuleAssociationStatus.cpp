@@ -20,16 +20,16 @@ namespace Aws
       namespace ResolverRuleAssociationStatusMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int OVERRIDDEN_HASH = HashingUtils::HashString("OVERRIDDEN");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t COMPLETE_HASH = ConstExprHashingUtils::HashString("COMPLETE");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t OVERRIDDEN_HASH = ConstExprHashingUtils::HashString("OVERRIDDEN");
 
 
         ResolverRuleAssociationStatus GetResolverRuleAssociationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return ResolverRuleAssociationStatus::CREATING;

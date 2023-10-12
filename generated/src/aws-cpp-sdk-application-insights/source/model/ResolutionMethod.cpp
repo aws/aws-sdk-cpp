@@ -20,14 +20,14 @@ namespace Aws
       namespace ResolutionMethodMapper
       {
 
-        static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
-        static const int AUTOMATIC_HASH = HashingUtils::HashString("AUTOMATIC");
-        static const int UNRESOLVED_HASH = HashingUtils::HashString("UNRESOLVED");
+        static constexpr uint32_t MANUAL_HASH = ConstExprHashingUtils::HashString("MANUAL");
+        static constexpr uint32_t AUTOMATIC_HASH = ConstExprHashingUtils::HashString("AUTOMATIC");
+        static constexpr uint32_t UNRESOLVED_HASH = ConstExprHashingUtils::HashString("UNRESOLVED");
 
 
         ResolutionMethod GetResolutionMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MANUAL_HASH)
           {
             return ResolutionMethod::MANUAL;

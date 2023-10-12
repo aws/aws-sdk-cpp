@@ -20,13 +20,13 @@ namespace Aws
       namespace DashboardUIStateMapper
       {
 
-        static const int EXPANDED_HASH = HashingUtils::HashString("EXPANDED");
-        static const int COLLAPSED_HASH = HashingUtils::HashString("COLLAPSED");
+        static constexpr uint32_t EXPANDED_HASH = ConstExprHashingUtils::HashString("EXPANDED");
+        static constexpr uint32_t COLLAPSED_HASH = ConstExprHashingUtils::HashString("COLLAPSED");
 
 
         DashboardUIState GetDashboardUIStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXPANDED_HASH)
           {
             return DashboardUIState::EXPANDED;

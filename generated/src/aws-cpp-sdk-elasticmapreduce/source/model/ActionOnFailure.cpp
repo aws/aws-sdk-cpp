@@ -20,15 +20,15 @@ namespace Aws
       namespace ActionOnFailureMapper
       {
 
-        static const int TERMINATE_JOB_FLOW_HASH = HashingUtils::HashString("TERMINATE_JOB_FLOW");
-        static const int TERMINATE_CLUSTER_HASH = HashingUtils::HashString("TERMINATE_CLUSTER");
-        static const int CANCEL_AND_WAIT_HASH = HashingUtils::HashString("CANCEL_AND_WAIT");
-        static const int CONTINUE_HASH = HashingUtils::HashString("CONTINUE");
+        static constexpr uint32_t TERMINATE_JOB_FLOW_HASH = ConstExprHashingUtils::HashString("TERMINATE_JOB_FLOW");
+        static constexpr uint32_t TERMINATE_CLUSTER_HASH = ConstExprHashingUtils::HashString("TERMINATE_CLUSTER");
+        static constexpr uint32_t CANCEL_AND_WAIT_HASH = ConstExprHashingUtils::HashString("CANCEL_AND_WAIT");
+        static constexpr uint32_t CONTINUE_HASH = ConstExprHashingUtils::HashString("CONTINUE");
 
 
         ActionOnFailure GetActionOnFailureForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TERMINATE_JOB_FLOW_HASH)
           {
             return ActionOnFailure::TERMINATE_JOB_FLOW;

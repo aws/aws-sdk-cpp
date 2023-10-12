@@ -20,12 +20,12 @@ namespace Aws
       namespace CurrencyCodeValuesMapper
       {
 
-        static const int USD_HASH = HashingUtils::HashString("USD");
+        static constexpr uint32_t USD_HASH = ConstExprHashingUtils::HashString("USD");
 
 
         CurrencyCodeValues GetCurrencyCodeValuesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USD_HASH)
           {
             return CurrencyCodeValues::USD;

@@ -20,15 +20,15 @@ namespace Aws
       namespace LDAPSStatusMapper
       {
 
-        static const int Enabling_HASH = HashingUtils::HashString("Enabling");
-        static const int Enabled_HASH = HashingUtils::HashString("Enabled");
-        static const int EnableFailed_HASH = HashingUtils::HashString("EnableFailed");
-        static const int Disabled_HASH = HashingUtils::HashString("Disabled");
+        static constexpr uint32_t Enabling_HASH = ConstExprHashingUtils::HashString("Enabling");
+        static constexpr uint32_t Enabled_HASH = ConstExprHashingUtils::HashString("Enabled");
+        static constexpr uint32_t EnableFailed_HASH = ConstExprHashingUtils::HashString("EnableFailed");
+        static constexpr uint32_t Disabled_HASH = ConstExprHashingUtils::HashString("Disabled");
 
 
         LDAPSStatus GetLDAPSStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Enabling_HASH)
           {
             return LDAPSStatus::Enabling;

@@ -20,13 +20,13 @@ namespace Aws
       namespace CostCategoryInheritedValueDimensionNameMapper
       {
 
-        static const int LINKED_ACCOUNT_NAME_HASH = HashingUtils::HashString("LINKED_ACCOUNT_NAME");
-        static const int TAG_HASH = HashingUtils::HashString("TAG");
+        static constexpr uint32_t LINKED_ACCOUNT_NAME_HASH = ConstExprHashingUtils::HashString("LINKED_ACCOUNT_NAME");
+        static constexpr uint32_t TAG_HASH = ConstExprHashingUtils::HashString("TAG");
 
 
         CostCategoryInheritedValueDimensionName GetCostCategoryInheritedValueDimensionNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LINKED_ACCOUNT_NAME_HASH)
           {
             return CostCategoryInheritedValueDimensionName::LINKED_ACCOUNT_NAME;

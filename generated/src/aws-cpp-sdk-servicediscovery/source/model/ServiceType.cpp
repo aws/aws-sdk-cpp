@@ -20,14 +20,14 @@ namespace Aws
       namespace ServiceTypeMapper
       {
 
-        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
-        static const int DNS_HTTP_HASH = HashingUtils::HashString("DNS_HTTP");
-        static const int DNS_HASH = HashingUtils::HashString("DNS");
+        static constexpr uint32_t HTTP_HASH = ConstExprHashingUtils::HashString("HTTP");
+        static constexpr uint32_t DNS_HTTP_HASH = ConstExprHashingUtils::HashString("DNS_HTTP");
+        static constexpr uint32_t DNS_HASH = ConstExprHashingUtils::HashString("DNS");
 
 
         ServiceType GetServiceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HTTP_HASH)
           {
             return ServiceType::HTTP;

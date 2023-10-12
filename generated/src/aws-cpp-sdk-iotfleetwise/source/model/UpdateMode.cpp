@@ -20,13 +20,13 @@ namespace Aws
       namespace UpdateModeMapper
       {
 
-        static const int Overwrite_HASH = HashingUtils::HashString("Overwrite");
-        static const int Merge_HASH = HashingUtils::HashString("Merge");
+        static constexpr uint32_t Overwrite_HASH = ConstExprHashingUtils::HashString("Overwrite");
+        static constexpr uint32_t Merge_HASH = ConstExprHashingUtils::HashString("Merge");
 
 
         UpdateMode GetUpdateModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Overwrite_HASH)
           {
             return UpdateMode::Overwrite;

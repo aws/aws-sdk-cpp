@@ -20,16 +20,16 @@ namespace Aws
       namespace SnapshotStateMapper
       {
 
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int completed_HASH = HashingUtils::HashString("completed");
-        static const int error_HASH = HashingUtils::HashString("error");
-        static const int recoverable_HASH = HashingUtils::HashString("recoverable");
-        static const int recovering_HASH = HashingUtils::HashString("recovering");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t completed_HASH = ConstExprHashingUtils::HashString("completed");
+        static constexpr uint32_t error_HASH = ConstExprHashingUtils::HashString("error");
+        static constexpr uint32_t recoverable_HASH = ConstExprHashingUtils::HashString("recoverable");
+        static constexpr uint32_t recovering_HASH = ConstExprHashingUtils::HashString("recovering");
 
 
         SnapshotState GetSnapshotStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pending_HASH)
           {
             return SnapshotState::pending;

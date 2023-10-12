@@ -20,13 +20,13 @@ namespace Aws
       namespace WorkspaceDirectoryTypeMapper
       {
 
-        static const int SIMPLE_AD_HASH = HashingUtils::HashString("SIMPLE_AD");
-        static const int AD_CONNECTOR_HASH = HashingUtils::HashString("AD_CONNECTOR");
+        static constexpr uint32_t SIMPLE_AD_HASH = ConstExprHashingUtils::HashString("SIMPLE_AD");
+        static constexpr uint32_t AD_CONNECTOR_HASH = ConstExprHashingUtils::HashString("AD_CONNECTOR");
 
 
         WorkspaceDirectoryType GetWorkspaceDirectoryTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SIMPLE_AD_HASH)
           {
             return WorkspaceDirectoryType::SIMPLE_AD;

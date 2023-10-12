@@ -20,13 +20,13 @@ namespace Aws
       namespace DkimSigningKeyLengthMapper
       {
 
-        static const int RSA_1024_BIT_HASH = HashingUtils::HashString("RSA_1024_BIT");
-        static const int RSA_2048_BIT_HASH = HashingUtils::HashString("RSA_2048_BIT");
+        static constexpr uint32_t RSA_1024_BIT_HASH = ConstExprHashingUtils::HashString("RSA_1024_BIT");
+        static constexpr uint32_t RSA_2048_BIT_HASH = ConstExprHashingUtils::HashString("RSA_2048_BIT");
 
 
         DkimSigningKeyLength GetDkimSigningKeyLengthForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RSA_1024_BIT_HASH)
           {
             return DkimSigningKeyLength::RSA_1024_BIT;

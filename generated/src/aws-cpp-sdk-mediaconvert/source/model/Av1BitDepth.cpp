@@ -20,13 +20,13 @@ namespace Aws
       namespace Av1BitDepthMapper
       {
 
-        static const int BIT_8_HASH = HashingUtils::HashString("BIT_8");
-        static const int BIT_10_HASH = HashingUtils::HashString("BIT_10");
+        static constexpr uint32_t BIT_8_HASH = ConstExprHashingUtils::HashString("BIT_8");
+        static constexpr uint32_t BIT_10_HASH = ConstExprHashingUtils::HashString("BIT_10");
 
 
         Av1BitDepth GetAv1BitDepthForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BIT_8_HASH)
           {
             return Av1BitDepth::BIT_8;

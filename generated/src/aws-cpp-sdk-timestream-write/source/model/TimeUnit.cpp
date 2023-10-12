@@ -20,15 +20,15 @@ namespace Aws
       namespace TimeUnitMapper
       {
 
-        static const int MILLISECONDS_HASH = HashingUtils::HashString("MILLISECONDS");
-        static const int SECONDS_HASH = HashingUtils::HashString("SECONDS");
-        static const int MICROSECONDS_HASH = HashingUtils::HashString("MICROSECONDS");
-        static const int NANOSECONDS_HASH = HashingUtils::HashString("NANOSECONDS");
+        static constexpr uint32_t MILLISECONDS_HASH = ConstExprHashingUtils::HashString("MILLISECONDS");
+        static constexpr uint32_t SECONDS_HASH = ConstExprHashingUtils::HashString("SECONDS");
+        static constexpr uint32_t MICROSECONDS_HASH = ConstExprHashingUtils::HashString("MICROSECONDS");
+        static constexpr uint32_t NANOSECONDS_HASH = ConstExprHashingUtils::HashString("NANOSECONDS");
 
 
         TimeUnit GetTimeUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MILLISECONDS_HASH)
           {
             return TimeUnit::MILLISECONDS;

@@ -20,16 +20,16 @@ namespace Aws
       namespace CustomerActionNameMapper
       {
 
-        static const int SNOOZE_HASH = HashingUtils::HashString("SNOOZE");
-        static const int ENABLE_HASH = HashingUtils::HashString("ENABLE");
-        static const int DISABLE_HASH = HashingUtils::HashString("DISABLE");
-        static const int ACKNOWLEDGE_HASH = HashingUtils::HashString("ACKNOWLEDGE");
-        static const int RESET_HASH = HashingUtils::HashString("RESET");
+        static constexpr uint32_t SNOOZE_HASH = ConstExprHashingUtils::HashString("SNOOZE");
+        static constexpr uint32_t ENABLE_HASH = ConstExprHashingUtils::HashString("ENABLE");
+        static constexpr uint32_t DISABLE_HASH = ConstExprHashingUtils::HashString("DISABLE");
+        static constexpr uint32_t ACKNOWLEDGE_HASH = ConstExprHashingUtils::HashString("ACKNOWLEDGE");
+        static constexpr uint32_t RESET_HASH = ConstExprHashingUtils::HashString("RESET");
 
 
         CustomerActionName GetCustomerActionNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SNOOZE_HASH)
           {
             return CustomerActionName::SNOOZE;

@@ -20,15 +20,15 @@ namespace Aws
       namespace EnvironmentHealthMapper
       {
 
-        static const int Green_HASH = HashingUtils::HashString("Green");
-        static const int Yellow_HASH = HashingUtils::HashString("Yellow");
-        static const int Red_HASH = HashingUtils::HashString("Red");
-        static const int Grey_HASH = HashingUtils::HashString("Grey");
+        static constexpr uint32_t Green_HASH = ConstExprHashingUtils::HashString("Green");
+        static constexpr uint32_t Yellow_HASH = ConstExprHashingUtils::HashString("Yellow");
+        static constexpr uint32_t Red_HASH = ConstExprHashingUtils::HashString("Red");
+        static constexpr uint32_t Grey_HASH = ConstExprHashingUtils::HashString("Grey");
 
 
         EnvironmentHealth GetEnvironmentHealthForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Green_HASH)
           {
             return EnvironmentHealth::Green;

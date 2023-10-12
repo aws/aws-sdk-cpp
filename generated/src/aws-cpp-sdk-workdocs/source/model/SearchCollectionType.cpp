@@ -20,13 +20,13 @@ namespace Aws
       namespace SearchCollectionTypeMapper
       {
 
-        static const int OWNED_HASH = HashingUtils::HashString("OWNED");
-        static const int SHARED_WITH_ME_HASH = HashingUtils::HashString("SHARED_WITH_ME");
+        static constexpr uint32_t OWNED_HASH = ConstExprHashingUtils::HashString("OWNED");
+        static constexpr uint32_t SHARED_WITH_ME_HASH = ConstExprHashingUtils::HashString("SHARED_WITH_ME");
 
 
         SearchCollectionType GetSearchCollectionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OWNED_HASH)
           {
             return SearchCollectionType::OWNED;

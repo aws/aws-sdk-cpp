@@ -20,13 +20,13 @@ namespace Aws
       namespace SubResourceTypeMapper
       {
 
-        static const int IP_HASH = HashingUtils::HashString("IP");
-        static const int URL_HASH = HashingUtils::HashString("URL");
+        static constexpr uint32_t IP_HASH = ConstExprHashingUtils::HashString("IP");
+        static constexpr uint32_t URL_HASH = ConstExprHashingUtils::HashString("URL");
 
 
         SubResourceType GetSubResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IP_HASH)
           {
             return SubResourceType::IP;

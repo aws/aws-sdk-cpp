@@ -20,20 +20,20 @@ namespace Aws
       namespace LineItemStatusMapper
       {
 
-        static const int PREPARING_HASH = HashingUtils::HashString("PREPARING");
-        static const int BUILDING_HASH = HashingUtils::HashString("BUILDING");
-        static const int SHIPPED_HASH = HashingUtils::HashString("SHIPPED");
-        static const int DELIVERED_HASH = HashingUtils::HashString("DELIVERED");
-        static const int INSTALLING_HASH = HashingUtils::HashString("INSTALLING");
-        static const int INSTALLED_HASH = HashingUtils::HashString("INSTALLED");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-        static const int REPLACED_HASH = HashingUtils::HashString("REPLACED");
+        static constexpr uint32_t PREPARING_HASH = ConstExprHashingUtils::HashString("PREPARING");
+        static constexpr uint32_t BUILDING_HASH = ConstExprHashingUtils::HashString("BUILDING");
+        static constexpr uint32_t SHIPPED_HASH = ConstExprHashingUtils::HashString("SHIPPED");
+        static constexpr uint32_t DELIVERED_HASH = ConstExprHashingUtils::HashString("DELIVERED");
+        static constexpr uint32_t INSTALLING_HASH = ConstExprHashingUtils::HashString("INSTALLING");
+        static constexpr uint32_t INSTALLED_HASH = ConstExprHashingUtils::HashString("INSTALLED");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t REPLACED_HASH = ConstExprHashingUtils::HashString("REPLACED");
 
 
         LineItemStatus GetLineItemStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PREPARING_HASH)
           {
             return LineItemStatus::PREPARING;

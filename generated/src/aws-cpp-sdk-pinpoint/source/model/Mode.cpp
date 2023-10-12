@@ -20,13 +20,13 @@ namespace Aws
       namespace ModeMapper
       {
 
-        static const int DELIVERY_HASH = HashingUtils::HashString("DELIVERY");
-        static const int FILTER_HASH = HashingUtils::HashString("FILTER");
+        static constexpr uint32_t DELIVERY_HASH = ConstExprHashingUtils::HashString("DELIVERY");
+        static constexpr uint32_t FILTER_HASH = ConstExprHashingUtils::HashString("FILTER");
 
 
         Mode GetModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DELIVERY_HASH)
           {
             return Mode::DELIVERY;

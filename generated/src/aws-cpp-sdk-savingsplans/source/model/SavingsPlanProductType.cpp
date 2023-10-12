@@ -20,15 +20,15 @@ namespace Aws
       namespace SavingsPlanProductTypeMapper
       {
 
-        static const int EC2_HASH = HashingUtils::HashString("EC2");
-        static const int Fargate_HASH = HashingUtils::HashString("Fargate");
-        static const int Lambda_HASH = HashingUtils::HashString("Lambda");
-        static const int SageMaker_HASH = HashingUtils::HashString("SageMaker");
+        static constexpr uint32_t EC2_HASH = ConstExprHashingUtils::HashString("EC2");
+        static constexpr uint32_t Fargate_HASH = ConstExprHashingUtils::HashString("Fargate");
+        static constexpr uint32_t Lambda_HASH = ConstExprHashingUtils::HashString("Lambda");
+        static constexpr uint32_t SageMaker_HASH = ConstExprHashingUtils::HashString("SageMaker");
 
 
         SavingsPlanProductType GetSavingsPlanProductTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EC2_HASH)
           {
             return SavingsPlanProductType::EC2;

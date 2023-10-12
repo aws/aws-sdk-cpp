@@ -20,14 +20,14 @@ namespace Aws
       namespace ETagAlgorithmMapper
       {
 
-        static const int FASTQ_MD5up_HASH = HashingUtils::HashString("FASTQ_MD5up");
-        static const int BAM_MD5up_HASH = HashingUtils::HashString("BAM_MD5up");
-        static const int CRAM_MD5up_HASH = HashingUtils::HashString("CRAM_MD5up");
+        static constexpr uint32_t FASTQ_MD5up_HASH = ConstExprHashingUtils::HashString("FASTQ_MD5up");
+        static constexpr uint32_t BAM_MD5up_HASH = ConstExprHashingUtils::HashString("BAM_MD5up");
+        static constexpr uint32_t CRAM_MD5up_HASH = ConstExprHashingUtils::HashString("CRAM_MD5up");
 
 
         ETagAlgorithm GetETagAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FASTQ_MD5up_HASH)
           {
             return ETagAlgorithm::FASTQ_MD5up;

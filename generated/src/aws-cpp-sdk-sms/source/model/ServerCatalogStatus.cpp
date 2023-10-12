@@ -20,16 +20,16 @@ namespace Aws
       namespace ServerCatalogStatusMapper
       {
 
-        static const int NOT_IMPORTED_HASH = HashingUtils::HashString("NOT_IMPORTED");
-        static const int IMPORTING_HASH = HashingUtils::HashString("IMPORTING");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
+        static constexpr uint32_t NOT_IMPORTED_HASH = ConstExprHashingUtils::HashString("NOT_IMPORTED");
+        static constexpr uint32_t IMPORTING_HASH = ConstExprHashingUtils::HashString("IMPORTING");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("EXPIRED");
 
 
         ServerCatalogStatus GetServerCatalogStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOT_IMPORTED_HASH)
           {
             return ServerCatalogStatus::NOT_IMPORTED;

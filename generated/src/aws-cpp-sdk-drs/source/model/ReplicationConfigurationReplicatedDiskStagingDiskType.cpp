@@ -20,18 +20,18 @@ namespace Aws
       namespace ReplicationConfigurationReplicatedDiskStagingDiskTypeMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int GP2_HASH = HashingUtils::HashString("GP2");
-        static const int GP3_HASH = HashingUtils::HashString("GP3");
-        static const int IO1_HASH = HashingUtils::HashString("IO1");
-        static const int SC1_HASH = HashingUtils::HashString("SC1");
-        static const int ST1_HASH = HashingUtils::HashString("ST1");
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t GP2_HASH = ConstExprHashingUtils::HashString("GP2");
+        static constexpr uint32_t GP3_HASH = ConstExprHashingUtils::HashString("GP3");
+        static constexpr uint32_t IO1_HASH = ConstExprHashingUtils::HashString("IO1");
+        static constexpr uint32_t SC1_HASH = ConstExprHashingUtils::HashString("SC1");
+        static constexpr uint32_t ST1_HASH = ConstExprHashingUtils::HashString("ST1");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
 
 
         ReplicationConfigurationReplicatedDiskStagingDiskType GetReplicationConfigurationReplicatedDiskStagingDiskTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return ReplicationConfigurationReplicatedDiskStagingDiskType::AUTO;

@@ -20,15 +20,15 @@ namespace Aws
       namespace VerificationStateMapper
       {
 
-        static const int FALSE_POSITIVE_HASH = HashingUtils::HashString("FALSE_POSITIVE");
-        static const int BENIGN_POSITIVE_HASH = HashingUtils::HashString("BENIGN_POSITIVE");
-        static const int TRUE_POSITIVE_HASH = HashingUtils::HashString("TRUE_POSITIVE");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t FALSE_POSITIVE_HASH = ConstExprHashingUtils::HashString("FALSE_POSITIVE");
+        static constexpr uint32_t BENIGN_POSITIVE_HASH = ConstExprHashingUtils::HashString("BENIGN_POSITIVE");
+        static constexpr uint32_t TRUE_POSITIVE_HASH = ConstExprHashingUtils::HashString("TRUE_POSITIVE");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         VerificationState GetVerificationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FALSE_POSITIVE_HASH)
           {
             return VerificationState::FALSE_POSITIVE;

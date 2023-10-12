@@ -20,15 +20,15 @@ namespace Aws
       namespace ClientVpnConnectionStatusCodeMapper
       {
 
-        static const int active_HASH = HashingUtils::HashString("active");
-        static const int failed_to_terminate_HASH = HashingUtils::HashString("failed-to-terminate");
-        static const int terminating_HASH = HashingUtils::HashString("terminating");
-        static const int terminated_HASH = HashingUtils::HashString("terminated");
+        static constexpr uint32_t active_HASH = ConstExprHashingUtils::HashString("active");
+        static constexpr uint32_t failed_to_terminate_HASH = ConstExprHashingUtils::HashString("failed-to-terminate");
+        static constexpr uint32_t terminating_HASH = ConstExprHashingUtils::HashString("terminating");
+        static constexpr uint32_t terminated_HASH = ConstExprHashingUtils::HashString("terminated");
 
 
         ClientVpnConnectionStatusCode GetClientVpnConnectionStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == active_HASH)
           {
             return ClientVpnConnectionStatusCode::active;

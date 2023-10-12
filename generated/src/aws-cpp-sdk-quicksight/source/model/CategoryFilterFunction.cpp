@@ -20,13 +20,13 @@ namespace Aws
       namespace CategoryFilterFunctionMapper
       {
 
-        static const int EXACT_HASH = HashingUtils::HashString("EXACT");
-        static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
+        static constexpr uint32_t EXACT_HASH = ConstExprHashingUtils::HashString("EXACT");
+        static constexpr uint32_t CONTAINS_HASH = ConstExprHashingUtils::HashString("CONTAINS");
 
 
         CategoryFilterFunction GetCategoryFilterFunctionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXACT_HASH)
           {
             return CategoryFilterFunction::EXACT;

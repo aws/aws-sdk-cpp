@@ -20,17 +20,17 @@ namespace Aws
       namespace FleetAttributeMapper
       {
 
-        static const int VPC_CONFIGURATION_HASH = HashingUtils::HashString("VPC_CONFIGURATION");
-        static const int VPC_CONFIGURATION_SECURITY_GROUP_IDS_HASH = HashingUtils::HashString("VPC_CONFIGURATION_SECURITY_GROUP_IDS");
-        static const int DOMAIN_JOIN_INFO_HASH = HashingUtils::HashString("DOMAIN_JOIN_INFO");
-        static const int IAM_ROLE_ARN_HASH = HashingUtils::HashString("IAM_ROLE_ARN");
-        static const int USB_DEVICE_FILTER_STRINGS_HASH = HashingUtils::HashString("USB_DEVICE_FILTER_STRINGS");
-        static const int SESSION_SCRIPT_S3_LOCATION_HASH = HashingUtils::HashString("SESSION_SCRIPT_S3_LOCATION");
+        static constexpr uint32_t VPC_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("VPC_CONFIGURATION");
+        static constexpr uint32_t VPC_CONFIGURATION_SECURITY_GROUP_IDS_HASH = ConstExprHashingUtils::HashString("VPC_CONFIGURATION_SECURITY_GROUP_IDS");
+        static constexpr uint32_t DOMAIN_JOIN_INFO_HASH = ConstExprHashingUtils::HashString("DOMAIN_JOIN_INFO");
+        static constexpr uint32_t IAM_ROLE_ARN_HASH = ConstExprHashingUtils::HashString("IAM_ROLE_ARN");
+        static constexpr uint32_t USB_DEVICE_FILTER_STRINGS_HASH = ConstExprHashingUtils::HashString("USB_DEVICE_FILTER_STRINGS");
+        static constexpr uint32_t SESSION_SCRIPT_S3_LOCATION_HASH = ConstExprHashingUtils::HashString("SESSION_SCRIPT_S3_LOCATION");
 
 
         FleetAttribute GetFleetAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VPC_CONFIGURATION_HASH)
           {
             return FleetAttribute::VPC_CONFIGURATION;

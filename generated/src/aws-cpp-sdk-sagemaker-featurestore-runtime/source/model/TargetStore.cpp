@@ -20,13 +20,13 @@ namespace Aws
       namespace TargetStoreMapper
       {
 
-        static const int OnlineStore_HASH = HashingUtils::HashString("OnlineStore");
-        static const int OfflineStore_HASH = HashingUtils::HashString("OfflineStore");
+        static constexpr uint32_t OnlineStore_HASH = ConstExprHashingUtils::HashString("OnlineStore");
+        static constexpr uint32_t OfflineStore_HASH = ConstExprHashingUtils::HashString("OfflineStore");
 
 
         TargetStore GetTargetStoreForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OnlineStore_HASH)
           {
             return TargetStore::OnlineStore;

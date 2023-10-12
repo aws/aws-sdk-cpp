@@ -20,14 +20,14 @@ namespace Aws
       namespace ReferenceLineLabelHorizontalPositionMapper
       {
 
-        static const int LEFT_HASH = HashingUtils::HashString("LEFT");
-        static const int CENTER_HASH = HashingUtils::HashString("CENTER");
-        static const int RIGHT_HASH = HashingUtils::HashString("RIGHT");
+        static constexpr uint32_t LEFT_HASH = ConstExprHashingUtils::HashString("LEFT");
+        static constexpr uint32_t CENTER_HASH = ConstExprHashingUtils::HashString("CENTER");
+        static constexpr uint32_t RIGHT_HASH = ConstExprHashingUtils::HashString("RIGHT");
 
 
         ReferenceLineLabelHorizontalPosition GetReferenceLineLabelHorizontalPositionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LEFT_HASH)
           {
             return ReferenceLineLabelHorizontalPosition::LEFT;

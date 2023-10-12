@@ -20,13 +20,13 @@ namespace Aws
       namespace DeploymentOptionMapper
       {
 
-        static const int WITH_TRAFFIC_CONTROL_HASH = HashingUtils::HashString("WITH_TRAFFIC_CONTROL");
-        static const int WITHOUT_TRAFFIC_CONTROL_HASH = HashingUtils::HashString("WITHOUT_TRAFFIC_CONTROL");
+        static constexpr uint32_t WITH_TRAFFIC_CONTROL_HASH = ConstExprHashingUtils::HashString("WITH_TRAFFIC_CONTROL");
+        static constexpr uint32_t WITHOUT_TRAFFIC_CONTROL_HASH = ConstExprHashingUtils::HashString("WITHOUT_TRAFFIC_CONTROL");
 
 
         DeploymentOption GetDeploymentOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WITH_TRAFFIC_CONTROL_HASH)
           {
             return DeploymentOption::WITH_TRAFFIC_CONTROL;

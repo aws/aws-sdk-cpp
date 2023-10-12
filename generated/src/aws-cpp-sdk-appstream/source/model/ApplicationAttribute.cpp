@@ -20,13 +20,13 @@ namespace Aws
       namespace ApplicationAttributeMapper
       {
 
-        static const int LAUNCH_PARAMETERS_HASH = HashingUtils::HashString("LAUNCH_PARAMETERS");
-        static const int WORKING_DIRECTORY_HASH = HashingUtils::HashString("WORKING_DIRECTORY");
+        static constexpr uint32_t LAUNCH_PARAMETERS_HASH = ConstExprHashingUtils::HashString("LAUNCH_PARAMETERS");
+        static constexpr uint32_t WORKING_DIRECTORY_HASH = ConstExprHashingUtils::HashString("WORKING_DIRECTORY");
 
 
         ApplicationAttribute GetApplicationAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LAUNCH_PARAMETERS_HASH)
           {
             return ApplicationAttribute::LAUNCH_PARAMETERS;

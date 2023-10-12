@@ -20,12 +20,12 @@ namespace Aws
       namespace TriggerTypeMapper
       {
 
-        static const int SNOOZE_TIMEOUT_HASH = HashingUtils::HashString("SNOOZE_TIMEOUT");
+        static constexpr uint32_t SNOOZE_TIMEOUT_HASH = ConstExprHashingUtils::HashString("SNOOZE_TIMEOUT");
 
 
         TriggerType GetTriggerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SNOOZE_TIMEOUT_HASH)
           {
             return TriggerType::SNOOZE_TIMEOUT;

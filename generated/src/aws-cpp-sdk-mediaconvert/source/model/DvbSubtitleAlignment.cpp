@@ -20,14 +20,14 @@ namespace Aws
       namespace DvbSubtitleAlignmentMapper
       {
 
-        static const int CENTERED_HASH = HashingUtils::HashString("CENTERED");
-        static const int LEFT_HASH = HashingUtils::HashString("LEFT");
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
+        static constexpr uint32_t CENTERED_HASH = ConstExprHashingUtils::HashString("CENTERED");
+        static constexpr uint32_t LEFT_HASH = ConstExprHashingUtils::HashString("LEFT");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
 
 
         DvbSubtitleAlignment GetDvbSubtitleAlignmentForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CENTERED_HASH)
           {
             return DvbSubtitleAlignment::CENTERED;

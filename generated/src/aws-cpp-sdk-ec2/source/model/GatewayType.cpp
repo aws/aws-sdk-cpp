@@ -20,12 +20,12 @@ namespace Aws
       namespace GatewayTypeMapper
       {
 
-        static const int ipsec_1_HASH = HashingUtils::HashString("ipsec.1");
+        static constexpr uint32_t ipsec_1_HASH = ConstExprHashingUtils::HashString("ipsec.1");
 
 
         GatewayType GetGatewayTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ipsec_1_HASH)
           {
             return GatewayType::ipsec_1;

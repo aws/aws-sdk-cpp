@@ -20,13 +20,13 @@ namespace Aws
       namespace VideoDescriptionScalingBehaviorMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int STRETCH_TO_OUTPUT_HASH = HashingUtils::HashString("STRETCH_TO_OUTPUT");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t STRETCH_TO_OUTPUT_HASH = ConstExprHashingUtils::HashString("STRETCH_TO_OUTPUT");
 
 
         VideoDescriptionScalingBehavior GetVideoDescriptionScalingBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return VideoDescriptionScalingBehavior::DEFAULT;

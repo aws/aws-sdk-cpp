@@ -20,14 +20,14 @@ namespace Aws
       namespace PredefinedResolutionMapper
       {
 
-        static const int HIGHEST_HASH = HashingUtils::HashString("HIGHEST");
-        static const int LOWEST_HASH = HashingUtils::HashString("LOWEST");
-        static const int AVERAGE_HASH = HashingUtils::HashString("AVERAGE");
+        static constexpr uint32_t HIGHEST_HASH = ConstExprHashingUtils::HashString("HIGHEST");
+        static constexpr uint32_t LOWEST_HASH = ConstExprHashingUtils::HashString("LOWEST");
+        static constexpr uint32_t AVERAGE_HASH = ConstExprHashingUtils::HashString("AVERAGE");
 
 
         PredefinedResolution GetPredefinedResolutionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HIGHEST_HASH)
           {
             return PredefinedResolution::HIGHEST;

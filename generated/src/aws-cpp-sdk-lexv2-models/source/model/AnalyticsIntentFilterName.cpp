@@ -20,20 +20,20 @@ namespace Aws
       namespace AnalyticsIntentFilterNameMapper
       {
 
-        static const int BotAliasId_HASH = HashingUtils::HashString("BotAliasId");
-        static const int BotVersion_HASH = HashingUtils::HashString("BotVersion");
-        static const int LocaleId_HASH = HashingUtils::HashString("LocaleId");
-        static const int Modality_HASH = HashingUtils::HashString("Modality");
-        static const int Channel_HASH = HashingUtils::HashString("Channel");
-        static const int SessionId_HASH = HashingUtils::HashString("SessionId");
-        static const int OriginatingRequestId_HASH = HashingUtils::HashString("OriginatingRequestId");
-        static const int IntentName_HASH = HashingUtils::HashString("IntentName");
-        static const int IntentEndState_HASH = HashingUtils::HashString("IntentEndState");
+        static constexpr uint32_t BotAliasId_HASH = ConstExprHashingUtils::HashString("BotAliasId");
+        static constexpr uint32_t BotVersion_HASH = ConstExprHashingUtils::HashString("BotVersion");
+        static constexpr uint32_t LocaleId_HASH = ConstExprHashingUtils::HashString("LocaleId");
+        static constexpr uint32_t Modality_HASH = ConstExprHashingUtils::HashString("Modality");
+        static constexpr uint32_t Channel_HASH = ConstExprHashingUtils::HashString("Channel");
+        static constexpr uint32_t SessionId_HASH = ConstExprHashingUtils::HashString("SessionId");
+        static constexpr uint32_t OriginatingRequestId_HASH = ConstExprHashingUtils::HashString("OriginatingRequestId");
+        static constexpr uint32_t IntentName_HASH = ConstExprHashingUtils::HashString("IntentName");
+        static constexpr uint32_t IntentEndState_HASH = ConstExprHashingUtils::HashString("IntentEndState");
 
 
         AnalyticsIntentFilterName GetAnalyticsIntentFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BotAliasId_HASH)
           {
             return AnalyticsIntentFilterName::BotAliasId;

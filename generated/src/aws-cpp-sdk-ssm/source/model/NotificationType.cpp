@@ -20,13 +20,13 @@ namespace Aws
       namespace NotificationTypeMapper
       {
 
-        static const int Command_HASH = HashingUtils::HashString("Command");
-        static const int Invocation_HASH = HashingUtils::HashString("Invocation");
+        static constexpr uint32_t Command_HASH = ConstExprHashingUtils::HashString("Command");
+        static constexpr uint32_t Invocation_HASH = ConstExprHashingUtils::HashString("Invocation");
 
 
         NotificationType GetNotificationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Command_HASH)
           {
             return NotificationType::Command;

@@ -20,14 +20,14 @@ namespace Aws
       namespace PartyTypeMapper
       {
 
-        static const int INDIVIDUAL_HASH = HashingUtils::HashString("INDIVIDUAL");
-        static const int BUSINESS_HASH = HashingUtils::HashString("BUSINESS");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
+        static constexpr uint32_t INDIVIDUAL_HASH = ConstExprHashingUtils::HashString("INDIVIDUAL");
+        static constexpr uint32_t BUSINESS_HASH = ConstExprHashingUtils::HashString("BUSINESS");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
 
 
         PartyType GetPartyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INDIVIDUAL_HASH)
           {
             return PartyType::INDIVIDUAL;

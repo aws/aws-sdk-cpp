@@ -20,19 +20,19 @@ namespace Aws
       namespace UpdateTypeMapper
       {
 
-        static const int VersionUpdate_HASH = HashingUtils::HashString("VersionUpdate");
-        static const int EndpointAccessUpdate_HASH = HashingUtils::HashString("EndpointAccessUpdate");
-        static const int LoggingUpdate_HASH = HashingUtils::HashString("LoggingUpdate");
-        static const int ConfigUpdate_HASH = HashingUtils::HashString("ConfigUpdate");
-        static const int AssociateIdentityProviderConfig_HASH = HashingUtils::HashString("AssociateIdentityProviderConfig");
-        static const int DisassociateIdentityProviderConfig_HASH = HashingUtils::HashString("DisassociateIdentityProviderConfig");
-        static const int AssociateEncryptionConfig_HASH = HashingUtils::HashString("AssociateEncryptionConfig");
-        static const int AddonUpdate_HASH = HashingUtils::HashString("AddonUpdate");
+        static constexpr uint32_t VersionUpdate_HASH = ConstExprHashingUtils::HashString("VersionUpdate");
+        static constexpr uint32_t EndpointAccessUpdate_HASH = ConstExprHashingUtils::HashString("EndpointAccessUpdate");
+        static constexpr uint32_t LoggingUpdate_HASH = ConstExprHashingUtils::HashString("LoggingUpdate");
+        static constexpr uint32_t ConfigUpdate_HASH = ConstExprHashingUtils::HashString("ConfigUpdate");
+        static constexpr uint32_t AssociateIdentityProviderConfig_HASH = ConstExprHashingUtils::HashString("AssociateIdentityProviderConfig");
+        static constexpr uint32_t DisassociateIdentityProviderConfig_HASH = ConstExprHashingUtils::HashString("DisassociateIdentityProviderConfig");
+        static constexpr uint32_t AssociateEncryptionConfig_HASH = ConstExprHashingUtils::HashString("AssociateEncryptionConfig");
+        static constexpr uint32_t AddonUpdate_HASH = ConstExprHashingUtils::HashString("AddonUpdate");
 
 
         UpdateType GetUpdateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VersionUpdate_HASH)
           {
             return UpdateType::VersionUpdate;

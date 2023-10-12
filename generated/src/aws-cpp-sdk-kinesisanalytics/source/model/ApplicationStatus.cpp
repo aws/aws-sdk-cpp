@@ -20,17 +20,17 @@ namespace Aws
       namespace ApplicationStatusMapper
       {
 
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t STARTING_HASH = ConstExprHashingUtils::HashString("STARTING");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
 
 
         ApplicationStatus GetApplicationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DELETING_HASH)
           {
             return ApplicationStatus::DELETING;

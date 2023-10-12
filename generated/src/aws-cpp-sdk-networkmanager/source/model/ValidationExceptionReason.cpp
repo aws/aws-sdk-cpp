@@ -20,15 +20,15 @@ namespace Aws
       namespace ValidationExceptionReasonMapper
       {
 
-        static const int UnknownOperation_HASH = HashingUtils::HashString("UnknownOperation");
-        static const int CannotParse_HASH = HashingUtils::HashString("CannotParse");
-        static const int FieldValidationFailed_HASH = HashingUtils::HashString("FieldValidationFailed");
-        static const int Other_HASH = HashingUtils::HashString("Other");
+        static constexpr uint32_t UnknownOperation_HASH = ConstExprHashingUtils::HashString("UnknownOperation");
+        static constexpr uint32_t CannotParse_HASH = ConstExprHashingUtils::HashString("CannotParse");
+        static constexpr uint32_t FieldValidationFailed_HASH = ConstExprHashingUtils::HashString("FieldValidationFailed");
+        static constexpr uint32_t Other_HASH = ConstExprHashingUtils::HashString("Other");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UnknownOperation_HASH)
           {
             return ValidationExceptionReason::UnknownOperation;

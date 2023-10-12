@@ -20,13 +20,13 @@ namespace Aws
       namespace CanaryRunStateReasonCodeMapper
       {
 
-        static const int CANARY_FAILURE_HASH = HashingUtils::HashString("CANARY_FAILURE");
-        static const int EXECUTION_FAILURE_HASH = HashingUtils::HashString("EXECUTION_FAILURE");
+        static constexpr uint32_t CANARY_FAILURE_HASH = ConstExprHashingUtils::HashString("CANARY_FAILURE");
+        static constexpr uint32_t EXECUTION_FAILURE_HASH = ConstExprHashingUtils::HashString("EXECUTION_FAILURE");
 
 
         CanaryRunStateReasonCode GetCanaryRunStateReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CANARY_FAILURE_HASH)
           {
             return CanaryRunStateReasonCode::CANARY_FAILURE;

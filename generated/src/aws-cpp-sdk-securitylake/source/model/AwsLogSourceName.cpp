@@ -20,17 +20,17 @@ namespace Aws
       namespace AwsLogSourceNameMapper
       {
 
-        static const int ROUTE53_HASH = HashingUtils::HashString("ROUTE53");
-        static const int VPC_FLOW_HASH = HashingUtils::HashString("VPC_FLOW");
-        static const int SH_FINDINGS_HASH = HashingUtils::HashString("SH_FINDINGS");
-        static const int CLOUD_TRAIL_MGMT_HASH = HashingUtils::HashString("CLOUD_TRAIL_MGMT");
-        static const int LAMBDA_EXECUTION_HASH = HashingUtils::HashString("LAMBDA_EXECUTION");
-        static const int S3_DATA_HASH = HashingUtils::HashString("S3_DATA");
+        static constexpr uint32_t ROUTE53_HASH = ConstExprHashingUtils::HashString("ROUTE53");
+        static constexpr uint32_t VPC_FLOW_HASH = ConstExprHashingUtils::HashString("VPC_FLOW");
+        static constexpr uint32_t SH_FINDINGS_HASH = ConstExprHashingUtils::HashString("SH_FINDINGS");
+        static constexpr uint32_t CLOUD_TRAIL_MGMT_HASH = ConstExprHashingUtils::HashString("CLOUD_TRAIL_MGMT");
+        static constexpr uint32_t LAMBDA_EXECUTION_HASH = ConstExprHashingUtils::HashString("LAMBDA_EXECUTION");
+        static constexpr uint32_t S3_DATA_HASH = ConstExprHashingUtils::HashString("S3_DATA");
 
 
         AwsLogSourceName GetAwsLogSourceNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ROUTE53_HASH)
           {
             return AwsLogSourceName::ROUTE53;

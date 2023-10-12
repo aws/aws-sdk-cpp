@@ -20,13 +20,13 @@ namespace Aws
       namespace LoggerComponentMapper
       {
 
-        static const int GreengrassSystem_HASH = HashingUtils::HashString("GreengrassSystem");
-        static const int Lambda_HASH = HashingUtils::HashString("Lambda");
+        static constexpr uint32_t GreengrassSystem_HASH = ConstExprHashingUtils::HashString("GreengrassSystem");
+        static constexpr uint32_t Lambda_HASH = ConstExprHashingUtils::HashString("Lambda");
 
 
         LoggerComponent GetLoggerComponentForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GreengrassSystem_HASH)
           {
             return LoggerComponent::GreengrassSystem;

@@ -20,20 +20,20 @@ namespace Aws
       namespace DataSourceTypeMapper
       {
 
-        static const int AMAZON_OPENSEARCH_SERVICE_HASH = HashingUtils::HashString("AMAZON_OPENSEARCH_SERVICE");
-        static const int CLOUDWATCH_HASH = HashingUtils::HashString("CLOUDWATCH");
-        static const int PROMETHEUS_HASH = HashingUtils::HashString("PROMETHEUS");
-        static const int XRAY_HASH = HashingUtils::HashString("XRAY");
-        static const int TIMESTREAM_HASH = HashingUtils::HashString("TIMESTREAM");
-        static const int SITEWISE_HASH = HashingUtils::HashString("SITEWISE");
-        static const int ATHENA_HASH = HashingUtils::HashString("ATHENA");
-        static const int REDSHIFT_HASH = HashingUtils::HashString("REDSHIFT");
-        static const int TWINMAKER_HASH = HashingUtils::HashString("TWINMAKER");
+        static constexpr uint32_t AMAZON_OPENSEARCH_SERVICE_HASH = ConstExprHashingUtils::HashString("AMAZON_OPENSEARCH_SERVICE");
+        static constexpr uint32_t CLOUDWATCH_HASH = ConstExprHashingUtils::HashString("CLOUDWATCH");
+        static constexpr uint32_t PROMETHEUS_HASH = ConstExprHashingUtils::HashString("PROMETHEUS");
+        static constexpr uint32_t XRAY_HASH = ConstExprHashingUtils::HashString("XRAY");
+        static constexpr uint32_t TIMESTREAM_HASH = ConstExprHashingUtils::HashString("TIMESTREAM");
+        static constexpr uint32_t SITEWISE_HASH = ConstExprHashingUtils::HashString("SITEWISE");
+        static constexpr uint32_t ATHENA_HASH = ConstExprHashingUtils::HashString("ATHENA");
+        static constexpr uint32_t REDSHIFT_HASH = ConstExprHashingUtils::HashString("REDSHIFT");
+        static constexpr uint32_t TWINMAKER_HASH = ConstExprHashingUtils::HashString("TWINMAKER");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AMAZON_OPENSEARCH_SERVICE_HASH)
           {
             return DataSourceType::AMAZON_OPENSEARCH_SERVICE;

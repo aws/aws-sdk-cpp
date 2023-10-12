@@ -20,15 +20,15 @@ namespace Aws
       namespace ThresholdTypeMapper
       {
 
-        static const int GREATER_THAN_OR_EQUAL_HASH = HashingUtils::HashString("GREATER_THAN_OR_EQUAL");
-        static const int LESS_THAN_OR_EQUAL_HASH = HashingUtils::HashString("LESS_THAN_OR_EQUAL");
-        static const int GREATER_THAN_HASH = HashingUtils::HashString("GREATER_THAN");
-        static const int LESS_THAN_HASH = HashingUtils::HashString("LESS_THAN");
+        static constexpr uint32_t GREATER_THAN_OR_EQUAL_HASH = ConstExprHashingUtils::HashString("GREATER_THAN_OR_EQUAL");
+        static constexpr uint32_t LESS_THAN_OR_EQUAL_HASH = ConstExprHashingUtils::HashString("LESS_THAN_OR_EQUAL");
+        static constexpr uint32_t GREATER_THAN_HASH = ConstExprHashingUtils::HashString("GREATER_THAN");
+        static constexpr uint32_t LESS_THAN_HASH = ConstExprHashingUtils::HashString("LESS_THAN");
 
 
         ThresholdType GetThresholdTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GREATER_THAN_OR_EQUAL_HASH)
           {
             return ThresholdType::GREATER_THAN_OR_EQUAL;

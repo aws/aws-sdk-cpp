@@ -20,13 +20,13 @@ namespace Aws
       namespace DirectConnectGatewayAttachmentTypeMapper
       {
 
-        static const int TransitVirtualInterface_HASH = HashingUtils::HashString("TransitVirtualInterface");
-        static const int PrivateVirtualInterface_HASH = HashingUtils::HashString("PrivateVirtualInterface");
+        static constexpr uint32_t TransitVirtualInterface_HASH = ConstExprHashingUtils::HashString("TransitVirtualInterface");
+        static constexpr uint32_t PrivateVirtualInterface_HASH = ConstExprHashingUtils::HashString("PrivateVirtualInterface");
 
 
         DirectConnectGatewayAttachmentType GetDirectConnectGatewayAttachmentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TransitVirtualInterface_HASH)
           {
             return DirectConnectGatewayAttachmentType::TransitVirtualInterface;

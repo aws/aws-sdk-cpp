@@ -20,25 +20,25 @@ namespace Aws
       namespace ErrorCodeMapper
       {
 
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
-        static const int INVALID_URL_ERROR_HASH = HashingUtils::HashString("INVALID_URL_ERROR");
-        static const int INVALID_IMPORT_OPTIONS_ERROR_HASH = HashingUtils::HashString("INVALID_IMPORT_OPTIONS_ERROR");
-        static const int INVALID_TABLE_ID_ERROR_HASH = HashingUtils::HashString("INVALID_TABLE_ID_ERROR");
-        static const int INVALID_TABLE_COLUMN_ID_ERROR_HASH = HashingUtils::HashString("INVALID_TABLE_COLUMN_ID_ERROR");
-        static const int TABLE_NOT_FOUND_ERROR_HASH = HashingUtils::HashString("TABLE_NOT_FOUND_ERROR");
-        static const int FILE_EMPTY_ERROR_HASH = HashingUtils::HashString("FILE_EMPTY_ERROR");
-        static const int INVALID_FILE_TYPE_ERROR_HASH = HashingUtils::HashString("INVALID_FILE_TYPE_ERROR");
-        static const int FILE_PARSING_ERROR_HASH = HashingUtils::HashString("FILE_PARSING_ERROR");
-        static const int FILE_SIZE_LIMIT_ERROR_HASH = HashingUtils::HashString("FILE_SIZE_LIMIT_ERROR");
-        static const int FILE_NOT_FOUND_ERROR_HASH = HashingUtils::HashString("FILE_NOT_FOUND_ERROR");
-        static const int UNKNOWN_ERROR_HASH = HashingUtils::HashString("UNKNOWN_ERROR");
-        static const int RESOURCE_NOT_FOUND_ERROR_HASH = HashingUtils::HashString("RESOURCE_NOT_FOUND_ERROR");
-        static const int SYSTEM_LIMIT_ERROR_HASH = HashingUtils::HashString("SYSTEM_LIMIT_ERROR");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t INVALID_URL_ERROR_HASH = ConstExprHashingUtils::HashString("INVALID_URL_ERROR");
+        static constexpr uint32_t INVALID_IMPORT_OPTIONS_ERROR_HASH = ConstExprHashingUtils::HashString("INVALID_IMPORT_OPTIONS_ERROR");
+        static constexpr uint32_t INVALID_TABLE_ID_ERROR_HASH = ConstExprHashingUtils::HashString("INVALID_TABLE_ID_ERROR");
+        static constexpr uint32_t INVALID_TABLE_COLUMN_ID_ERROR_HASH = ConstExprHashingUtils::HashString("INVALID_TABLE_COLUMN_ID_ERROR");
+        static constexpr uint32_t TABLE_NOT_FOUND_ERROR_HASH = ConstExprHashingUtils::HashString("TABLE_NOT_FOUND_ERROR");
+        static constexpr uint32_t FILE_EMPTY_ERROR_HASH = ConstExprHashingUtils::HashString("FILE_EMPTY_ERROR");
+        static constexpr uint32_t INVALID_FILE_TYPE_ERROR_HASH = ConstExprHashingUtils::HashString("INVALID_FILE_TYPE_ERROR");
+        static constexpr uint32_t FILE_PARSING_ERROR_HASH = ConstExprHashingUtils::HashString("FILE_PARSING_ERROR");
+        static constexpr uint32_t FILE_SIZE_LIMIT_ERROR_HASH = ConstExprHashingUtils::HashString("FILE_SIZE_LIMIT_ERROR");
+        static constexpr uint32_t FILE_NOT_FOUND_ERROR_HASH = ConstExprHashingUtils::HashString("FILE_NOT_FOUND_ERROR");
+        static constexpr uint32_t UNKNOWN_ERROR_HASH = ConstExprHashingUtils::HashString("UNKNOWN_ERROR");
+        static constexpr uint32_t RESOURCE_NOT_FOUND_ERROR_HASH = ConstExprHashingUtils::HashString("RESOURCE_NOT_FOUND_ERROR");
+        static constexpr uint32_t SYSTEM_LIMIT_ERROR_HASH = ConstExprHashingUtils::HashString("SYSTEM_LIMIT_ERROR");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCESS_DENIED_HASH)
           {
             return ErrorCode::ACCESS_DENIED;

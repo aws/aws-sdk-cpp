@@ -20,17 +20,17 @@ namespace Aws
       namespace NotificationEventMapper
       {
 
-        static const int All_HASH = HashingUtils::HashString("All");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Success_HASH = HashingUtils::HashString("Success");
-        static const int TimedOut_HASH = HashingUtils::HashString("TimedOut");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t All_HASH = ConstExprHashingUtils::HashString("All");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Success_HASH = ConstExprHashingUtils::HashString("Success");
+        static constexpr uint32_t TimedOut_HASH = ConstExprHashingUtils::HashString("TimedOut");
+        static constexpr uint32_t Cancelled_HASH = ConstExprHashingUtils::HashString("Cancelled");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         NotificationEvent GetNotificationEventForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == All_HASH)
           {
             return NotificationEvent::All;

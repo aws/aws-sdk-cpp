@@ -26,17 +26,17 @@ template<> AWS_BACKUPSTORAGE_API DataAlreadyExistsException BackupStorageError::
 namespace BackupStorageErrorMapper
 {
 
-static const int NOT_READABLE_INPUT_STREAM_HASH = HashingUtils::HashString("NotReadableInputStreamException");
-static const int ILLEGAL_ARGUMENT_HASH = HashingUtils::HashString("IllegalArgumentException");
-static const int RETRYABLE_HASH = HashingUtils::HashString("RetryableException");
-static const int DATA_ALREADY_EXISTS_HASH = HashingUtils::HashString("DataAlreadyExistsException");
-static const int SERVICE_INTERNAL_HASH = HashingUtils::HashString("ServiceInternalException");
-static const int K_M_S_INVALID_KEY_USAGE_HASH = HashingUtils::HashString("KMSInvalidKeyUsageException");
+static constexpr uint32_t NOT_READABLE_INPUT_STREAM_HASH = ConstExprHashingUtils::HashString("NotReadableInputStreamException");
+static constexpr uint32_t ILLEGAL_ARGUMENT_HASH = ConstExprHashingUtils::HashString("IllegalArgumentException");
+static constexpr uint32_t RETRYABLE_HASH = ConstExprHashingUtils::HashString("RetryableException");
+static constexpr uint32_t DATA_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("DataAlreadyExistsException");
+static constexpr uint32_t SERVICE_INTERNAL_HASH = ConstExprHashingUtils::HashString("ServiceInternalException");
+static constexpr uint32_t K_M_S_INVALID_KEY_USAGE_HASH = ConstExprHashingUtils::HashString("KMSInvalidKeyUsageException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == NOT_READABLE_INPUT_STREAM_HASH)
   {

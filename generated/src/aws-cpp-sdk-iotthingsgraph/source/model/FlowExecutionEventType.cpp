@@ -20,28 +20,28 @@ namespace Aws
       namespace FlowExecutionEventTypeMapper
       {
 
-        static const int EXECUTION_STARTED_HASH = HashingUtils::HashString("EXECUTION_STARTED");
-        static const int EXECUTION_FAILED_HASH = HashingUtils::HashString("EXECUTION_FAILED");
-        static const int EXECUTION_ABORTED_HASH = HashingUtils::HashString("EXECUTION_ABORTED");
-        static const int EXECUTION_SUCCEEDED_HASH = HashingUtils::HashString("EXECUTION_SUCCEEDED");
-        static const int STEP_STARTED_HASH = HashingUtils::HashString("STEP_STARTED");
-        static const int STEP_FAILED_HASH = HashingUtils::HashString("STEP_FAILED");
-        static const int STEP_SUCCEEDED_HASH = HashingUtils::HashString("STEP_SUCCEEDED");
-        static const int ACTIVITY_SCHEDULED_HASH = HashingUtils::HashString("ACTIVITY_SCHEDULED");
-        static const int ACTIVITY_STARTED_HASH = HashingUtils::HashString("ACTIVITY_STARTED");
-        static const int ACTIVITY_FAILED_HASH = HashingUtils::HashString("ACTIVITY_FAILED");
-        static const int ACTIVITY_SUCCEEDED_HASH = HashingUtils::HashString("ACTIVITY_SUCCEEDED");
-        static const int START_FLOW_EXECUTION_TASK_HASH = HashingUtils::HashString("START_FLOW_EXECUTION_TASK");
-        static const int SCHEDULE_NEXT_READY_STEPS_TASK_HASH = HashingUtils::HashString("SCHEDULE_NEXT_READY_STEPS_TASK");
-        static const int THING_ACTION_TASK_HASH = HashingUtils::HashString("THING_ACTION_TASK");
-        static const int THING_ACTION_TASK_FAILED_HASH = HashingUtils::HashString("THING_ACTION_TASK_FAILED");
-        static const int THING_ACTION_TASK_SUCCEEDED_HASH = HashingUtils::HashString("THING_ACTION_TASK_SUCCEEDED");
-        static const int ACKNOWLEDGE_TASK_MESSAGE_HASH = HashingUtils::HashString("ACKNOWLEDGE_TASK_MESSAGE");
+        static constexpr uint32_t EXECUTION_STARTED_HASH = ConstExprHashingUtils::HashString("EXECUTION_STARTED");
+        static constexpr uint32_t EXECUTION_FAILED_HASH = ConstExprHashingUtils::HashString("EXECUTION_FAILED");
+        static constexpr uint32_t EXECUTION_ABORTED_HASH = ConstExprHashingUtils::HashString("EXECUTION_ABORTED");
+        static constexpr uint32_t EXECUTION_SUCCEEDED_HASH = ConstExprHashingUtils::HashString("EXECUTION_SUCCEEDED");
+        static constexpr uint32_t STEP_STARTED_HASH = ConstExprHashingUtils::HashString("STEP_STARTED");
+        static constexpr uint32_t STEP_FAILED_HASH = ConstExprHashingUtils::HashString("STEP_FAILED");
+        static constexpr uint32_t STEP_SUCCEEDED_HASH = ConstExprHashingUtils::HashString("STEP_SUCCEEDED");
+        static constexpr uint32_t ACTIVITY_SCHEDULED_HASH = ConstExprHashingUtils::HashString("ACTIVITY_SCHEDULED");
+        static constexpr uint32_t ACTIVITY_STARTED_HASH = ConstExprHashingUtils::HashString("ACTIVITY_STARTED");
+        static constexpr uint32_t ACTIVITY_FAILED_HASH = ConstExprHashingUtils::HashString("ACTIVITY_FAILED");
+        static constexpr uint32_t ACTIVITY_SUCCEEDED_HASH = ConstExprHashingUtils::HashString("ACTIVITY_SUCCEEDED");
+        static constexpr uint32_t START_FLOW_EXECUTION_TASK_HASH = ConstExprHashingUtils::HashString("START_FLOW_EXECUTION_TASK");
+        static constexpr uint32_t SCHEDULE_NEXT_READY_STEPS_TASK_HASH = ConstExprHashingUtils::HashString("SCHEDULE_NEXT_READY_STEPS_TASK");
+        static constexpr uint32_t THING_ACTION_TASK_HASH = ConstExprHashingUtils::HashString("THING_ACTION_TASK");
+        static constexpr uint32_t THING_ACTION_TASK_FAILED_HASH = ConstExprHashingUtils::HashString("THING_ACTION_TASK_FAILED");
+        static constexpr uint32_t THING_ACTION_TASK_SUCCEEDED_HASH = ConstExprHashingUtils::HashString("THING_ACTION_TASK_SUCCEEDED");
+        static constexpr uint32_t ACKNOWLEDGE_TASK_MESSAGE_HASH = ConstExprHashingUtils::HashString("ACKNOWLEDGE_TASK_MESSAGE");
 
 
         FlowExecutionEventType GetFlowExecutionEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXECUTION_STARTED_HASH)
           {
             return FlowExecutionEventType::EXECUTION_STARTED;

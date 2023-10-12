@@ -20,13 +20,13 @@ namespace Aws
       namespace RadarChartShapeMapper
       {
 
-        static const int CIRCLE_HASH = HashingUtils::HashString("CIRCLE");
-        static const int POLYGON_HASH = HashingUtils::HashString("POLYGON");
+        static constexpr uint32_t CIRCLE_HASH = ConstExprHashingUtils::HashString("CIRCLE");
+        static constexpr uint32_t POLYGON_HASH = ConstExprHashingUtils::HashString("POLYGON");
 
 
         RadarChartShape GetRadarChartShapeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CIRCLE_HASH)
           {
             return RadarChartShape::CIRCLE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace OperationTypeMapper
       {
 
-        static const int add_HASH = HashingUtils::HashString("add");
-        static const int remove_HASH = HashingUtils::HashString("remove");
+        static constexpr uint32_t add_HASH = ConstExprHashingUtils::HashString("add");
+        static constexpr uint32_t remove_HASH = ConstExprHashingUtils::HashString("remove");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == add_HASH)
           {
             return OperationType::add;

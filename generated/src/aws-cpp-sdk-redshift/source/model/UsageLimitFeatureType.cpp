@@ -20,14 +20,14 @@ namespace Aws
       namespace UsageLimitFeatureTypeMapper
       {
 
-        static const int spectrum_HASH = HashingUtils::HashString("spectrum");
-        static const int concurrency_scaling_HASH = HashingUtils::HashString("concurrency-scaling");
-        static const int cross_region_datasharing_HASH = HashingUtils::HashString("cross-region-datasharing");
+        static constexpr uint32_t spectrum_HASH = ConstExprHashingUtils::HashString("spectrum");
+        static constexpr uint32_t concurrency_scaling_HASH = ConstExprHashingUtils::HashString("concurrency-scaling");
+        static constexpr uint32_t cross_region_datasharing_HASH = ConstExprHashingUtils::HashString("cross-region-datasharing");
 
 
         UsageLimitFeatureType GetUsageLimitFeatureTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == spectrum_HASH)
           {
             return UsageLimitFeatureType::spectrum;

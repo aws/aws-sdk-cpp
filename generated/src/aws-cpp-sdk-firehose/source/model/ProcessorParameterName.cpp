@@ -20,21 +20,21 @@ namespace Aws
       namespace ProcessorParameterNameMapper
       {
 
-        static const int LambdaArn_HASH = HashingUtils::HashString("LambdaArn");
-        static const int NumberOfRetries_HASH = HashingUtils::HashString("NumberOfRetries");
-        static const int MetadataExtractionQuery_HASH = HashingUtils::HashString("MetadataExtractionQuery");
-        static const int JsonParsingEngine_HASH = HashingUtils::HashString("JsonParsingEngine");
-        static const int RoleArn_HASH = HashingUtils::HashString("RoleArn");
-        static const int BufferSizeInMBs_HASH = HashingUtils::HashString("BufferSizeInMBs");
-        static const int BufferIntervalInSeconds_HASH = HashingUtils::HashString("BufferIntervalInSeconds");
-        static const int SubRecordType_HASH = HashingUtils::HashString("SubRecordType");
-        static const int Delimiter_HASH = HashingUtils::HashString("Delimiter");
-        static const int CompressionFormat_HASH = HashingUtils::HashString("CompressionFormat");
+        static constexpr uint32_t LambdaArn_HASH = ConstExprHashingUtils::HashString("LambdaArn");
+        static constexpr uint32_t NumberOfRetries_HASH = ConstExprHashingUtils::HashString("NumberOfRetries");
+        static constexpr uint32_t MetadataExtractionQuery_HASH = ConstExprHashingUtils::HashString("MetadataExtractionQuery");
+        static constexpr uint32_t JsonParsingEngine_HASH = ConstExprHashingUtils::HashString("JsonParsingEngine");
+        static constexpr uint32_t RoleArn_HASH = ConstExprHashingUtils::HashString("RoleArn");
+        static constexpr uint32_t BufferSizeInMBs_HASH = ConstExprHashingUtils::HashString("BufferSizeInMBs");
+        static constexpr uint32_t BufferIntervalInSeconds_HASH = ConstExprHashingUtils::HashString("BufferIntervalInSeconds");
+        static constexpr uint32_t SubRecordType_HASH = ConstExprHashingUtils::HashString("SubRecordType");
+        static constexpr uint32_t Delimiter_HASH = ConstExprHashingUtils::HashString("Delimiter");
+        static constexpr uint32_t CompressionFormat_HASH = ConstExprHashingUtils::HashString("CompressionFormat");
 
 
         ProcessorParameterName GetProcessorParameterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LambdaArn_HASH)
           {
             return ProcessorParameterName::LambdaArn;

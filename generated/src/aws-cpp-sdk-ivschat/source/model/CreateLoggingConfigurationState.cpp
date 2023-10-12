@@ -20,12 +20,12 @@ namespace Aws
       namespace CreateLoggingConfigurationStateMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
 
 
         CreateLoggingConfigurationState GetCreateLoggingConfigurationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return CreateLoggingConfigurationState::ACTIVE;

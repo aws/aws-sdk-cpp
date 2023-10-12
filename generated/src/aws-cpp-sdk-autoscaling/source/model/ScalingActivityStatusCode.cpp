@@ -20,24 +20,24 @@ namespace Aws
       namespace ScalingActivityStatusCodeMapper
       {
 
-        static const int PendingSpotBidPlacement_HASH = HashingUtils::HashString("PendingSpotBidPlacement");
-        static const int WaitingForSpotInstanceRequestId_HASH = HashingUtils::HashString("WaitingForSpotInstanceRequestId");
-        static const int WaitingForSpotInstanceId_HASH = HashingUtils::HashString("WaitingForSpotInstanceId");
-        static const int WaitingForInstanceId_HASH = HashingUtils::HashString("WaitingForInstanceId");
-        static const int PreInService_HASH = HashingUtils::HashString("PreInService");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int WaitingForELBConnectionDraining_HASH = HashingUtils::HashString("WaitingForELBConnectionDraining");
-        static const int MidLifecycleAction_HASH = HashingUtils::HashString("MidLifecycleAction");
-        static const int WaitingForInstanceWarmup_HASH = HashingUtils::HashString("WaitingForInstanceWarmup");
-        static const int Successful_HASH = HashingUtils::HashString("Successful");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
-        static const int WaitingForConnectionDraining_HASH = HashingUtils::HashString("WaitingForConnectionDraining");
+        static constexpr uint32_t PendingSpotBidPlacement_HASH = ConstExprHashingUtils::HashString("PendingSpotBidPlacement");
+        static constexpr uint32_t WaitingForSpotInstanceRequestId_HASH = ConstExprHashingUtils::HashString("WaitingForSpotInstanceRequestId");
+        static constexpr uint32_t WaitingForSpotInstanceId_HASH = ConstExprHashingUtils::HashString("WaitingForSpotInstanceId");
+        static constexpr uint32_t WaitingForInstanceId_HASH = ConstExprHashingUtils::HashString("WaitingForInstanceId");
+        static constexpr uint32_t PreInService_HASH = ConstExprHashingUtils::HashString("PreInService");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t WaitingForELBConnectionDraining_HASH = ConstExprHashingUtils::HashString("WaitingForELBConnectionDraining");
+        static constexpr uint32_t MidLifecycleAction_HASH = ConstExprHashingUtils::HashString("MidLifecycleAction");
+        static constexpr uint32_t WaitingForInstanceWarmup_HASH = ConstExprHashingUtils::HashString("WaitingForInstanceWarmup");
+        static constexpr uint32_t Successful_HASH = ConstExprHashingUtils::HashString("Successful");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Cancelled_HASH = ConstExprHashingUtils::HashString("Cancelled");
+        static constexpr uint32_t WaitingForConnectionDraining_HASH = ConstExprHashingUtils::HashString("WaitingForConnectionDraining");
 
 
         ScalingActivityStatusCode GetScalingActivityStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PendingSpotBidPlacement_HASH)
           {
             return ScalingActivityStatusCode::PendingSpotBidPlacement;

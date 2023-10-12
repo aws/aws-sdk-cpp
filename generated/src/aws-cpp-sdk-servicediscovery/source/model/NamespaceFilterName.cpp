@@ -20,14 +20,14 @@ namespace Aws
       namespace NamespaceFilterNameMapper
       {
 
-        static const int TYPE_HASH = HashingUtils::HashString("TYPE");
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int HTTP_NAME_HASH = HashingUtils::HashString("HTTP_NAME");
+        static constexpr uint32_t TYPE_HASH = ConstExprHashingUtils::HashString("TYPE");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t HTTP_NAME_HASH = ConstExprHashingUtils::HashString("HTTP_NAME");
 
 
         NamespaceFilterName GetNamespaceFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TYPE_HASH)
           {
             return NamespaceFilterName::TYPE;

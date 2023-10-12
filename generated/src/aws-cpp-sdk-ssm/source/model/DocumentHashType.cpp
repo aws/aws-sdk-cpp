@@ -20,13 +20,13 @@ namespace Aws
       namespace DocumentHashTypeMapper
       {
 
-        static const int Sha256_HASH = HashingUtils::HashString("Sha256");
-        static const int Sha1_HASH = HashingUtils::HashString("Sha1");
+        static constexpr uint32_t Sha256_HASH = ConstExprHashingUtils::HashString("Sha256");
+        static constexpr uint32_t Sha1_HASH = ConstExprHashingUtils::HashString("Sha1");
 
 
         DocumentHashType GetDocumentHashTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Sha256_HASH)
           {
             return DocumentHashType::Sha256;

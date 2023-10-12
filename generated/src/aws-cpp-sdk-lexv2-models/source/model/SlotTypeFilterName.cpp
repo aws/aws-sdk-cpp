@@ -20,13 +20,13 @@ namespace Aws
       namespace SlotTypeFilterNameMapper
       {
 
-        static const int SlotTypeName_HASH = HashingUtils::HashString("SlotTypeName");
-        static const int ExternalSourceType_HASH = HashingUtils::HashString("ExternalSourceType");
+        static constexpr uint32_t SlotTypeName_HASH = ConstExprHashingUtils::HashString("SlotTypeName");
+        static constexpr uint32_t ExternalSourceType_HASH = ConstExprHashingUtils::HashString("ExternalSourceType");
 
 
         SlotTypeFilterName GetSlotTypeFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SlotTypeName_HASH)
           {
             return SlotTypeFilterName::SlotTypeName;

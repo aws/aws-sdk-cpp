@@ -20,14 +20,14 @@ namespace Aws
       namespace LambdaFunctionMemoryMetricStatisticMapper
       {
 
-        static const int LowerBound_HASH = HashingUtils::HashString("LowerBound");
-        static const int UpperBound_HASH = HashingUtils::HashString("UpperBound");
-        static const int Expected_HASH = HashingUtils::HashString("Expected");
+        static constexpr uint32_t LowerBound_HASH = ConstExprHashingUtils::HashString("LowerBound");
+        static constexpr uint32_t UpperBound_HASH = ConstExprHashingUtils::HashString("UpperBound");
+        static constexpr uint32_t Expected_HASH = ConstExprHashingUtils::HashString("Expected");
 
 
         LambdaFunctionMemoryMetricStatistic GetLambdaFunctionMemoryMetricStatisticForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LowerBound_HASH)
           {
             return LambdaFunctionMemoryMetricStatistic::LowerBound;

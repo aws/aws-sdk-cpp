@@ -20,13 +20,13 @@ namespace Aws
       namespace ActionMapper
       {
 
-        static const int initiateDatabaseReset_HASH = HashingUtils::HashString("initiateDatabaseReset");
-        static const int performDatabaseReset_HASH = HashingUtils::HashString("performDatabaseReset");
+        static constexpr uint32_t initiateDatabaseReset_HASH = ConstExprHashingUtils::HashString("initiateDatabaseReset");
+        static constexpr uint32_t performDatabaseReset_HASH = ConstExprHashingUtils::HashString("performDatabaseReset");
 
 
         Action GetActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == initiateDatabaseReset_HASH)
           {
             return Action::initiateDatabaseReset;

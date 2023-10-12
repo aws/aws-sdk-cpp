@@ -20,14 +20,14 @@ namespace Aws
       namespace RangeMapper
       {
 
-        static const int NARROW_HASH = HashingUtils::HashString("NARROW");
-        static const int FULL_HASH = HashingUtils::HashString("FULL");
-        static const int FULLPROTECT_HASH = HashingUtils::HashString("FULLPROTECT");
+        static constexpr uint32_t NARROW_HASH = ConstExprHashingUtils::HashString("NARROW");
+        static constexpr uint32_t FULL_HASH = ConstExprHashingUtils::HashString("FULL");
+        static constexpr uint32_t FULLPROTECT_HASH = ConstExprHashingUtils::HashString("FULLPROTECT");
 
 
         Range GetRangeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NARROW_HASH)
           {
             return Range::NARROW;

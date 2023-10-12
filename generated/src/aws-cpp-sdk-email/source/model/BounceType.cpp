@@ -20,17 +20,17 @@ namespace Aws
       namespace BounceTypeMapper
       {
 
-        static const int DoesNotExist_HASH = HashingUtils::HashString("DoesNotExist");
-        static const int MessageTooLarge_HASH = HashingUtils::HashString("MessageTooLarge");
-        static const int ExceededQuota_HASH = HashingUtils::HashString("ExceededQuota");
-        static const int ContentRejected_HASH = HashingUtils::HashString("ContentRejected");
-        static const int Undefined_HASH = HashingUtils::HashString("Undefined");
-        static const int TemporaryFailure_HASH = HashingUtils::HashString("TemporaryFailure");
+        static constexpr uint32_t DoesNotExist_HASH = ConstExprHashingUtils::HashString("DoesNotExist");
+        static constexpr uint32_t MessageTooLarge_HASH = ConstExprHashingUtils::HashString("MessageTooLarge");
+        static constexpr uint32_t ExceededQuota_HASH = ConstExprHashingUtils::HashString("ExceededQuota");
+        static constexpr uint32_t ContentRejected_HASH = ConstExprHashingUtils::HashString("ContentRejected");
+        static constexpr uint32_t Undefined_HASH = ConstExprHashingUtils::HashString("Undefined");
+        static constexpr uint32_t TemporaryFailure_HASH = ConstExprHashingUtils::HashString("TemporaryFailure");
 
 
         BounceType GetBounceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DoesNotExist_HASH)
           {
             return BounceType::DoesNotExist;

@@ -20,13 +20,13 @@ namespace Aws
       namespace MdnResponseMapper
       {
 
-        static const int SYNC_HASH = HashingUtils::HashString("SYNC");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t SYNC_HASH = ConstExprHashingUtils::HashString("SYNC");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         MdnResponse GetMdnResponseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SYNC_HASH)
           {
             return MdnResponse::SYNC;

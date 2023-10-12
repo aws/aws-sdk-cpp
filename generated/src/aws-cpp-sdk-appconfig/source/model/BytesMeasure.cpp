@@ -20,12 +20,12 @@ namespace Aws
       namespace BytesMeasureMapper
       {
 
-        static const int KILOBYTES_HASH = HashingUtils::HashString("KILOBYTES");
+        static constexpr uint32_t KILOBYTES_HASH = ConstExprHashingUtils::HashString("KILOBYTES");
 
 
         BytesMeasure GetBytesMeasureForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KILOBYTES_HASH)
           {
             return BytesMeasure::KILOBYTES;

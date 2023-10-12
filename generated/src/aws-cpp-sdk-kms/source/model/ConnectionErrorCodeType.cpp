@@ -20,29 +20,29 @@ namespace Aws
       namespace ConnectionErrorCodeTypeMapper
       {
 
-        static const int INVALID_CREDENTIALS_HASH = HashingUtils::HashString("INVALID_CREDENTIALS");
-        static const int CLUSTER_NOT_FOUND_HASH = HashingUtils::HashString("CLUSTER_NOT_FOUND");
-        static const int NETWORK_ERRORS_HASH = HashingUtils::HashString("NETWORK_ERRORS");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int INSUFFICIENT_CLOUDHSM_HSMS_HASH = HashingUtils::HashString("INSUFFICIENT_CLOUDHSM_HSMS");
-        static const int USER_LOCKED_OUT_HASH = HashingUtils::HashString("USER_LOCKED_OUT");
-        static const int USER_NOT_FOUND_HASH = HashingUtils::HashString("USER_NOT_FOUND");
-        static const int USER_LOGGED_IN_HASH = HashingUtils::HashString("USER_LOGGED_IN");
-        static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SUBNET_NOT_FOUND");
-        static const int INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET_HASH = HashingUtils::HashString("INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET");
-        static const int XKS_PROXY_ACCESS_DENIED_HASH = HashingUtils::HashString("XKS_PROXY_ACCESS_DENIED");
-        static const int XKS_PROXY_NOT_REACHABLE_HASH = HashingUtils::HashString("XKS_PROXY_NOT_REACHABLE");
-        static const int XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND_HASH = HashingUtils::HashString("XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND");
-        static const int XKS_PROXY_INVALID_RESPONSE_HASH = HashingUtils::HashString("XKS_PROXY_INVALID_RESPONSE");
-        static const int XKS_PROXY_INVALID_CONFIGURATION_HASH = HashingUtils::HashString("XKS_PROXY_INVALID_CONFIGURATION");
-        static const int XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION_HASH = HashingUtils::HashString("XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION");
-        static const int XKS_PROXY_TIMED_OUT_HASH = HashingUtils::HashString("XKS_PROXY_TIMED_OUT");
-        static const int XKS_PROXY_INVALID_TLS_CONFIGURATION_HASH = HashingUtils::HashString("XKS_PROXY_INVALID_TLS_CONFIGURATION");
+        static constexpr uint32_t INVALID_CREDENTIALS_HASH = ConstExprHashingUtils::HashString("INVALID_CREDENTIALS");
+        static constexpr uint32_t CLUSTER_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("CLUSTER_NOT_FOUND");
+        static constexpr uint32_t NETWORK_ERRORS_HASH = ConstExprHashingUtils::HashString("NETWORK_ERRORS");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t INSUFFICIENT_CLOUDHSM_HSMS_HASH = ConstExprHashingUtils::HashString("INSUFFICIENT_CLOUDHSM_HSMS");
+        static constexpr uint32_t USER_LOCKED_OUT_HASH = ConstExprHashingUtils::HashString("USER_LOCKED_OUT");
+        static constexpr uint32_t USER_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("USER_NOT_FOUND");
+        static constexpr uint32_t USER_LOGGED_IN_HASH = ConstExprHashingUtils::HashString("USER_LOGGED_IN");
+        static constexpr uint32_t SUBNET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SUBNET_NOT_FOUND");
+        static constexpr uint32_t INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET_HASH = ConstExprHashingUtils::HashString("INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET");
+        static constexpr uint32_t XKS_PROXY_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("XKS_PROXY_ACCESS_DENIED");
+        static constexpr uint32_t XKS_PROXY_NOT_REACHABLE_HASH = ConstExprHashingUtils::HashString("XKS_PROXY_NOT_REACHABLE");
+        static constexpr uint32_t XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND");
+        static constexpr uint32_t XKS_PROXY_INVALID_RESPONSE_HASH = ConstExprHashingUtils::HashString("XKS_PROXY_INVALID_RESPONSE");
+        static constexpr uint32_t XKS_PROXY_INVALID_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("XKS_PROXY_INVALID_CONFIGURATION");
+        static constexpr uint32_t XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION");
+        static constexpr uint32_t XKS_PROXY_TIMED_OUT_HASH = ConstExprHashingUtils::HashString("XKS_PROXY_TIMED_OUT");
+        static constexpr uint32_t XKS_PROXY_INVALID_TLS_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("XKS_PROXY_INVALID_TLS_CONFIGURATION");
 
 
         ConnectionErrorCodeType GetConnectionErrorCodeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVALID_CREDENTIALS_HASH)
           {
             return ConnectionErrorCodeType::INVALID_CREDENTIALS;

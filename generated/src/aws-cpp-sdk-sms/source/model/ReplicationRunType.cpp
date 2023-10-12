@@ -20,13 +20,13 @@ namespace Aws
       namespace ReplicationRunTypeMapper
       {
 
-        static const int ON_DEMAND_HASH = HashingUtils::HashString("ON_DEMAND");
-        static const int AUTOMATIC_HASH = HashingUtils::HashString("AUTOMATIC");
+        static constexpr uint32_t ON_DEMAND_HASH = ConstExprHashingUtils::HashString("ON_DEMAND");
+        static constexpr uint32_t AUTOMATIC_HASH = ConstExprHashingUtils::HashString("AUTOMATIC");
 
 
         ReplicationRunType GetReplicationRunTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ON_DEMAND_HASH)
           {
             return ReplicationRunType::ON_DEMAND;

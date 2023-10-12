@@ -20,23 +20,23 @@ namespace Aws
       namespace LayerTypeMapper
       {
 
-        static const int aws_flow_ruby_HASH = HashingUtils::HashString("aws-flow-ruby");
-        static const int ecs_cluster_HASH = HashingUtils::HashString("ecs-cluster");
-        static const int java_app_HASH = HashingUtils::HashString("java-app");
-        static const int lb_HASH = HashingUtils::HashString("lb");
-        static const int web_HASH = HashingUtils::HashString("web");
-        static const int php_app_HASH = HashingUtils::HashString("php-app");
-        static const int rails_app_HASH = HashingUtils::HashString("rails-app");
-        static const int nodejs_app_HASH = HashingUtils::HashString("nodejs-app");
-        static const int memcached_HASH = HashingUtils::HashString("memcached");
-        static const int db_master_HASH = HashingUtils::HashString("db-master");
-        static const int monitoring_master_HASH = HashingUtils::HashString("monitoring-master");
-        static const int custom_HASH = HashingUtils::HashString("custom");
+        static constexpr uint32_t aws_flow_ruby_HASH = ConstExprHashingUtils::HashString("aws-flow-ruby");
+        static constexpr uint32_t ecs_cluster_HASH = ConstExprHashingUtils::HashString("ecs-cluster");
+        static constexpr uint32_t java_app_HASH = ConstExprHashingUtils::HashString("java-app");
+        static constexpr uint32_t lb_HASH = ConstExprHashingUtils::HashString("lb");
+        static constexpr uint32_t web_HASH = ConstExprHashingUtils::HashString("web");
+        static constexpr uint32_t php_app_HASH = ConstExprHashingUtils::HashString("php-app");
+        static constexpr uint32_t rails_app_HASH = ConstExprHashingUtils::HashString("rails-app");
+        static constexpr uint32_t nodejs_app_HASH = ConstExprHashingUtils::HashString("nodejs-app");
+        static constexpr uint32_t memcached_HASH = ConstExprHashingUtils::HashString("memcached");
+        static constexpr uint32_t db_master_HASH = ConstExprHashingUtils::HashString("db-master");
+        static constexpr uint32_t monitoring_master_HASH = ConstExprHashingUtils::HashString("monitoring-master");
+        static constexpr uint32_t custom_HASH = ConstExprHashingUtils::HashString("custom");
 
 
         LayerType GetLayerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == aws_flow_ruby_HASH)
           {
             return LayerType::aws_flow_ruby;

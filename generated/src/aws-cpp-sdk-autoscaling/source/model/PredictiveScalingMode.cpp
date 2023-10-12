@@ -20,13 +20,13 @@ namespace Aws
       namespace PredictiveScalingModeMapper
       {
 
-        static const int ForecastAndScale_HASH = HashingUtils::HashString("ForecastAndScale");
-        static const int ForecastOnly_HASH = HashingUtils::HashString("ForecastOnly");
+        static constexpr uint32_t ForecastAndScale_HASH = ConstExprHashingUtils::HashString("ForecastAndScale");
+        static constexpr uint32_t ForecastOnly_HASH = ConstExprHashingUtils::HashString("ForecastOnly");
 
 
         PredictiveScalingMode GetPredictiveScalingModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ForecastAndScale_HASH)
           {
             return PredictiveScalingMode::ForecastAndScale;

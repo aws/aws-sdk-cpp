@@ -20,13 +20,13 @@ namespace Aws
       namespace ChallengeNameMapper
       {
 
-        static const int Password_HASH = HashingUtils::HashString("Password");
-        static const int Mfa_HASH = HashingUtils::HashString("Mfa");
+        static constexpr uint32_t Password_HASH = ConstExprHashingUtils::HashString("Password");
+        static constexpr uint32_t Mfa_HASH = ConstExprHashingUtils::HashString("Mfa");
 
 
         ChallengeName GetChallengeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Password_HASH)
           {
             return ChallengeName::Password;

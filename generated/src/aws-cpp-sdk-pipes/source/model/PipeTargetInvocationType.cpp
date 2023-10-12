@@ -20,13 +20,13 @@ namespace Aws
       namespace PipeTargetInvocationTypeMapper
       {
 
-        static const int REQUEST_RESPONSE_HASH = HashingUtils::HashString("REQUEST_RESPONSE");
-        static const int FIRE_AND_FORGET_HASH = HashingUtils::HashString("FIRE_AND_FORGET");
+        static constexpr uint32_t REQUEST_RESPONSE_HASH = ConstExprHashingUtils::HashString("REQUEST_RESPONSE");
+        static constexpr uint32_t FIRE_AND_FORGET_HASH = ConstExprHashingUtils::HashString("FIRE_AND_FORGET");
 
 
         PipeTargetInvocationType GetPipeTargetInvocationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REQUEST_RESPONSE_HASH)
           {
             return PipeTargetInvocationType::REQUEST_RESPONSE;

@@ -20,29 +20,29 @@ namespace Aws
       namespace PartOfSpeechTagTypeMapper
       {
 
-        static const int ADJ_HASH = HashingUtils::HashString("ADJ");
-        static const int ADP_HASH = HashingUtils::HashString("ADP");
-        static const int ADV_HASH = HashingUtils::HashString("ADV");
-        static const int AUX_HASH = HashingUtils::HashString("AUX");
-        static const int CONJ_HASH = HashingUtils::HashString("CONJ");
-        static const int CCONJ_HASH = HashingUtils::HashString("CCONJ");
-        static const int DET_HASH = HashingUtils::HashString("DET");
-        static const int INTJ_HASH = HashingUtils::HashString("INTJ");
-        static const int NOUN_HASH = HashingUtils::HashString("NOUN");
-        static const int NUM_HASH = HashingUtils::HashString("NUM");
-        static const int O_HASH = HashingUtils::HashString("O");
-        static const int PART_HASH = HashingUtils::HashString("PART");
-        static const int PRON_HASH = HashingUtils::HashString("PRON");
-        static const int PROPN_HASH = HashingUtils::HashString("PROPN");
-        static const int PUNCT_HASH = HashingUtils::HashString("PUNCT");
-        static const int SCONJ_HASH = HashingUtils::HashString("SCONJ");
-        static const int SYM_HASH = HashingUtils::HashString("SYM");
-        static const int VERB_HASH = HashingUtils::HashString("VERB");
+        static constexpr uint32_t ADJ_HASH = ConstExprHashingUtils::HashString("ADJ");
+        static constexpr uint32_t ADP_HASH = ConstExprHashingUtils::HashString("ADP");
+        static constexpr uint32_t ADV_HASH = ConstExprHashingUtils::HashString("ADV");
+        static constexpr uint32_t AUX_HASH = ConstExprHashingUtils::HashString("AUX");
+        static constexpr uint32_t CONJ_HASH = ConstExprHashingUtils::HashString("CONJ");
+        static constexpr uint32_t CCONJ_HASH = ConstExprHashingUtils::HashString("CCONJ");
+        static constexpr uint32_t DET_HASH = ConstExprHashingUtils::HashString("DET");
+        static constexpr uint32_t INTJ_HASH = ConstExprHashingUtils::HashString("INTJ");
+        static constexpr uint32_t NOUN_HASH = ConstExprHashingUtils::HashString("NOUN");
+        static constexpr uint32_t NUM_HASH = ConstExprHashingUtils::HashString("NUM");
+        static constexpr uint32_t O_HASH = ConstExprHashingUtils::HashString("O");
+        static constexpr uint32_t PART_HASH = ConstExprHashingUtils::HashString("PART");
+        static constexpr uint32_t PRON_HASH = ConstExprHashingUtils::HashString("PRON");
+        static constexpr uint32_t PROPN_HASH = ConstExprHashingUtils::HashString("PROPN");
+        static constexpr uint32_t PUNCT_HASH = ConstExprHashingUtils::HashString("PUNCT");
+        static constexpr uint32_t SCONJ_HASH = ConstExprHashingUtils::HashString("SCONJ");
+        static constexpr uint32_t SYM_HASH = ConstExprHashingUtils::HashString("SYM");
+        static constexpr uint32_t VERB_HASH = ConstExprHashingUtils::HashString("VERB");
 
 
         PartOfSpeechTagType GetPartOfSpeechTagTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADJ_HASH)
           {
             return PartOfSpeechTagType::ADJ;

@@ -20,13 +20,13 @@ namespace Aws
       namespace DataLabelOverlapMapper
       {
 
-        static const int DISABLE_OVERLAP_HASH = HashingUtils::HashString("DISABLE_OVERLAP");
-        static const int ENABLE_OVERLAP_HASH = HashingUtils::HashString("ENABLE_OVERLAP");
+        static constexpr uint32_t DISABLE_OVERLAP_HASH = ConstExprHashingUtils::HashString("DISABLE_OVERLAP");
+        static constexpr uint32_t ENABLE_OVERLAP_HASH = ConstExprHashingUtils::HashString("ENABLE_OVERLAP");
 
 
         DataLabelOverlap GetDataLabelOverlapForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISABLE_OVERLAP_HASH)
           {
             return DataLabelOverlap::DISABLE_OVERLAP;

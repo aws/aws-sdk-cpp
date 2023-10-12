@@ -20,13 +20,13 @@ namespace Aws
       namespace PowerFeedDropMapper
       {
 
-        static const int ABOVE_RACK_HASH = HashingUtils::HashString("ABOVE_RACK");
-        static const int BELOW_RACK_HASH = HashingUtils::HashString("BELOW_RACK");
+        static constexpr uint32_t ABOVE_RACK_HASH = ConstExprHashingUtils::HashString("ABOVE_RACK");
+        static constexpr uint32_t BELOW_RACK_HASH = ConstExprHashingUtils::HashString("BELOW_RACK");
 
 
         PowerFeedDrop GetPowerFeedDropForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ABOVE_RACK_HASH)
           {
             return PowerFeedDrop::ABOVE_RACK;

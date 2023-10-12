@@ -33,13 +33,13 @@ template<> AWS_AUDITMANAGER_API ValidationException AuditManagerError::GetModele
 namespace AuditManagerErrorMapper
 {
 
-static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static constexpr uint32_t SERVICE_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ServiceQuotaExceededException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {

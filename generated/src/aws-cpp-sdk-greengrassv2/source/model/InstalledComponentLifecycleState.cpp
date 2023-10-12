@@ -20,19 +20,19 @@ namespace Aws
       namespace InstalledComponentLifecycleStateMapper
       {
 
-        static const int NEW__HASH = HashingUtils::HashString("NEW");
-        static const int INSTALLED_HASH = HashingUtils::HashString("INSTALLED");
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int ERRORED_HASH = HashingUtils::HashString("ERRORED");
-        static const int BROKEN_HASH = HashingUtils::HashString("BROKEN");
-        static const int FINISHED_HASH = HashingUtils::HashString("FINISHED");
+        static constexpr uint32_t NEW__HASH = ConstExprHashingUtils::HashString("NEW");
+        static constexpr uint32_t INSTALLED_HASH = ConstExprHashingUtils::HashString("INSTALLED");
+        static constexpr uint32_t STARTING_HASH = ConstExprHashingUtils::HashString("STARTING");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
+        static constexpr uint32_t ERRORED_HASH = ConstExprHashingUtils::HashString("ERRORED");
+        static constexpr uint32_t BROKEN_HASH = ConstExprHashingUtils::HashString("BROKEN");
+        static constexpr uint32_t FINISHED_HASH = ConstExprHashingUtils::HashString("FINISHED");
 
 
         InstalledComponentLifecycleState GetInstalledComponentLifecycleStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NEW__HASH)
           {
             return InstalledComponentLifecycleState::NEW_;

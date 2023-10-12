@@ -20,25 +20,25 @@ namespace Aws
       namespace ProjectVersionStatusMapper
       {
 
-        static const int TRAINING_IN_PROGRESS_HASH = HashingUtils::HashString("TRAINING_IN_PROGRESS");
-        static const int TRAINING_COMPLETED_HASH = HashingUtils::HashString("TRAINING_COMPLETED");
-        static const int TRAINING_FAILED_HASH = HashingUtils::HashString("TRAINING_FAILED");
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int COPYING_IN_PROGRESS_HASH = HashingUtils::HashString("COPYING_IN_PROGRESS");
-        static const int COPYING_COMPLETED_HASH = HashingUtils::HashString("COPYING_COMPLETED");
-        static const int COPYING_FAILED_HASH = HashingUtils::HashString("COPYING_FAILED");
-        static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
-        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
+        static constexpr uint32_t TRAINING_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("TRAINING_IN_PROGRESS");
+        static constexpr uint32_t TRAINING_COMPLETED_HASH = ConstExprHashingUtils::HashString("TRAINING_COMPLETED");
+        static constexpr uint32_t TRAINING_FAILED_HASH = ConstExprHashingUtils::HashString("TRAINING_FAILED");
+        static constexpr uint32_t STARTING_HASH = ConstExprHashingUtils::HashString("STARTING");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t COPYING_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("COPYING_IN_PROGRESS");
+        static constexpr uint32_t COPYING_COMPLETED_HASH = ConstExprHashingUtils::HashString("COPYING_COMPLETED");
+        static constexpr uint32_t COPYING_FAILED_HASH = ConstExprHashingUtils::HashString("COPYING_FAILED");
+        static constexpr uint32_t DEPRECATED_HASH = ConstExprHashingUtils::HashString("DEPRECATED");
+        static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("EXPIRED");
 
 
         ProjectVersionStatus GetProjectVersionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRAINING_IN_PROGRESS_HASH)
           {
             return ProjectVersionStatus::TRAINING_IN_PROGRESS;

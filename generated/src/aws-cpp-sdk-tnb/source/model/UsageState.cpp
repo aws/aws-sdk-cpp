@@ -20,13 +20,13 @@ namespace Aws
       namespace UsageStateMapper
       {
 
-        static const int IN_USE_HASH = HashingUtils::HashString("IN_USE");
-        static const int NOT_IN_USE_HASH = HashingUtils::HashString("NOT_IN_USE");
+        static constexpr uint32_t IN_USE_HASH = ConstExprHashingUtils::HashString("IN_USE");
+        static constexpr uint32_t NOT_IN_USE_HASH = ConstExprHashingUtils::HashString("NOT_IN_USE");
 
 
         UsageState GetUsageStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IN_USE_HASH)
           {
             return UsageState::IN_USE;

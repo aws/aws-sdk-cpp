@@ -20,16 +20,16 @@ namespace Aws
       namespace DataTypeMapper
       {
 
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
-        static const int INTEGER_HASH = HashingUtils::HashString("INTEGER");
-        static const int FLOAT_HASH = HashingUtils::HashString("FLOAT");
-        static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
-        static const int DATETIME_HASH = HashingUtils::HashString("DATETIME");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
+        static constexpr uint32_t INTEGER_HASH = ConstExprHashingUtils::HashString("INTEGER");
+        static constexpr uint32_t FLOAT_HASH = ConstExprHashingUtils::HashString("FLOAT");
+        static constexpr uint32_t BOOLEAN_HASH = ConstExprHashingUtils::HashString("BOOLEAN");
+        static constexpr uint32_t DATETIME_HASH = ConstExprHashingUtils::HashString("DATETIME");
 
 
         DataType GetDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STRING_HASH)
           {
             return DataType::STRING;

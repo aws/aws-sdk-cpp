@@ -20,21 +20,21 @@ namespace Aws
       namespace HandshakeConstraintViolationExceptionReasonMapper
       {
 
-        static const int ACCOUNT_NUMBER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ACCOUNT_NUMBER_LIMIT_EXCEEDED");
-        static const int HANDSHAKE_RATE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("HANDSHAKE_RATE_LIMIT_EXCEEDED");
-        static const int ALREADY_IN_AN_ORGANIZATION_HASH = HashingUtils::HashString("ALREADY_IN_AN_ORGANIZATION");
-        static const int ORGANIZATION_ALREADY_HAS_ALL_FEATURES_HASH = HashingUtils::HashString("ORGANIZATION_ALREADY_HAS_ALL_FEATURES");
-        static const int ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION_HASH = HashingUtils::HashString("ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION");
-        static const int INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES_HASH = HashingUtils::HashString("INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES");
-        static const int PAYMENT_INSTRUMENT_REQUIRED_HASH = HashingUtils::HashString("PAYMENT_INSTRUMENT_REQUIRED");
-        static const int ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD_HASH = HashingUtils::HashString("ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD");
-        static const int ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED");
-        static const int MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED_HASH = HashingUtils::HashString("MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED");
+        static constexpr uint32_t ACCOUNT_NUMBER_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ACCOUNT_NUMBER_LIMIT_EXCEEDED");
+        static constexpr uint32_t HANDSHAKE_RATE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("HANDSHAKE_RATE_LIMIT_EXCEEDED");
+        static constexpr uint32_t ALREADY_IN_AN_ORGANIZATION_HASH = ConstExprHashingUtils::HashString("ALREADY_IN_AN_ORGANIZATION");
+        static constexpr uint32_t ORGANIZATION_ALREADY_HAS_ALL_FEATURES_HASH = ConstExprHashingUtils::HashString("ORGANIZATION_ALREADY_HAS_ALL_FEATURES");
+        static constexpr uint32_t ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION_HASH = ConstExprHashingUtils::HashString("ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION");
+        static constexpr uint32_t INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES_HASH = ConstExprHashingUtils::HashString("INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES");
+        static constexpr uint32_t PAYMENT_INSTRUMENT_REQUIRED_HASH = ConstExprHashingUtils::HashString("PAYMENT_INSTRUMENT_REQUIRED");
+        static constexpr uint32_t ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD_HASH = ConstExprHashingUtils::HashString("ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD");
+        static constexpr uint32_t ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED");
+        static constexpr uint32_t MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED_HASH = ConstExprHashingUtils::HashString("MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED");
 
 
         HandshakeConstraintViolationExceptionReason GetHandshakeConstraintViolationExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCOUNT_NUMBER_LIMIT_EXCEEDED_HASH)
           {
             return HandshakeConstraintViolationExceptionReason::ACCOUNT_NUMBER_LIMIT_EXCEEDED;

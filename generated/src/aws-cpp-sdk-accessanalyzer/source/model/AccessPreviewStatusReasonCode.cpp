@@ -20,13 +20,13 @@ namespace Aws
       namespace AccessPreviewStatusReasonCodeMapper
       {
 
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int INVALID_CONFIGURATION_HASH = HashingUtils::HashString("INVALID_CONFIGURATION");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t INVALID_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("INVALID_CONFIGURATION");
 
 
         AccessPreviewStatusReasonCode GetAccessPreviewStatusReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERNAL_ERROR_HASH)
           {
             return AccessPreviewStatusReasonCode::INTERNAL_ERROR;

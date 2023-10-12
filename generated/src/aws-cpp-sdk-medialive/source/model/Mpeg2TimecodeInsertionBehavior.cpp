@@ -20,13 +20,13 @@ namespace Aws
       namespace Mpeg2TimecodeInsertionBehaviorMapper
       {
 
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int GOP_TIMECODE_HASH = HashingUtils::HashString("GOP_TIMECODE");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t GOP_TIMECODE_HASH = ConstExprHashingUtils::HashString("GOP_TIMECODE");
 
 
         Mpeg2TimecodeInsertionBehavior GetMpeg2TimecodeInsertionBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISABLED_HASH)
           {
             return Mpeg2TimecodeInsertionBehavior::DISABLED;

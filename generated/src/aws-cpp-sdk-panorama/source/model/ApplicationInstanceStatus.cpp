@@ -20,22 +20,22 @@ namespace Aws
       namespace ApplicationInstanceStatusMapper
       {
 
-        static const int DEPLOYMENT_PENDING_HASH = HashingUtils::HashString("DEPLOYMENT_PENDING");
-        static const int DEPLOYMENT_REQUESTED_HASH = HashingUtils::HashString("DEPLOYMENT_REQUESTED");
-        static const int DEPLOYMENT_IN_PROGRESS_HASH = HashingUtils::HashString("DEPLOYMENT_IN_PROGRESS");
-        static const int DEPLOYMENT_ERROR_HASH = HashingUtils::HashString("DEPLOYMENT_ERROR");
-        static const int DEPLOYMENT_SUCCEEDED_HASH = HashingUtils::HashString("DEPLOYMENT_SUCCEEDED");
-        static const int REMOVAL_PENDING_HASH = HashingUtils::HashString("REMOVAL_PENDING");
-        static const int REMOVAL_REQUESTED_HASH = HashingUtils::HashString("REMOVAL_REQUESTED");
-        static const int REMOVAL_IN_PROGRESS_HASH = HashingUtils::HashString("REMOVAL_IN_PROGRESS");
-        static const int REMOVAL_FAILED_HASH = HashingUtils::HashString("REMOVAL_FAILED");
-        static const int REMOVAL_SUCCEEDED_HASH = HashingUtils::HashString("REMOVAL_SUCCEEDED");
-        static const int DEPLOYMENT_FAILED_HASH = HashingUtils::HashString("DEPLOYMENT_FAILED");
+        static constexpr uint32_t DEPLOYMENT_PENDING_HASH = ConstExprHashingUtils::HashString("DEPLOYMENT_PENDING");
+        static constexpr uint32_t DEPLOYMENT_REQUESTED_HASH = ConstExprHashingUtils::HashString("DEPLOYMENT_REQUESTED");
+        static constexpr uint32_t DEPLOYMENT_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("DEPLOYMENT_IN_PROGRESS");
+        static constexpr uint32_t DEPLOYMENT_ERROR_HASH = ConstExprHashingUtils::HashString("DEPLOYMENT_ERROR");
+        static constexpr uint32_t DEPLOYMENT_SUCCEEDED_HASH = ConstExprHashingUtils::HashString("DEPLOYMENT_SUCCEEDED");
+        static constexpr uint32_t REMOVAL_PENDING_HASH = ConstExprHashingUtils::HashString("REMOVAL_PENDING");
+        static constexpr uint32_t REMOVAL_REQUESTED_HASH = ConstExprHashingUtils::HashString("REMOVAL_REQUESTED");
+        static constexpr uint32_t REMOVAL_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("REMOVAL_IN_PROGRESS");
+        static constexpr uint32_t REMOVAL_FAILED_HASH = ConstExprHashingUtils::HashString("REMOVAL_FAILED");
+        static constexpr uint32_t REMOVAL_SUCCEEDED_HASH = ConstExprHashingUtils::HashString("REMOVAL_SUCCEEDED");
+        static constexpr uint32_t DEPLOYMENT_FAILED_HASH = ConstExprHashingUtils::HashString("DEPLOYMENT_FAILED");
 
 
         ApplicationInstanceStatus GetApplicationInstanceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEPLOYMENT_PENDING_HASH)
           {
             return ApplicationInstanceStatus::DEPLOYMENT_PENDING;

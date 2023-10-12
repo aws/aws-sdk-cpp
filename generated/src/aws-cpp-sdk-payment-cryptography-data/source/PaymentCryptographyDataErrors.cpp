@@ -40,13 +40,13 @@ template<> AWS_PAYMENTCRYPTOGRAPHYDATA_API VerificationFailedException PaymentCr
 namespace PaymentCryptographyDataErrorMapper
 {
 
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int VERIFICATION_FAILED_HASH = HashingUtils::HashString("VerificationFailedException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
+static constexpr uint32_t VERIFICATION_FAILED_HASH = ConstExprHashingUtils::HashString("VerificationFailedException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INTERNAL_SERVER_HASH)
   {

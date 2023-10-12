@@ -20,19 +20,19 @@ namespace Aws
       namespace AddonIssueCodeMapper
       {
 
-        static const int AccessDenied_HASH = HashingUtils::HashString("AccessDenied");
-        static const int InternalFailure_HASH = HashingUtils::HashString("InternalFailure");
-        static const int ClusterUnreachable_HASH = HashingUtils::HashString("ClusterUnreachable");
-        static const int InsufficientNumberOfReplicas_HASH = HashingUtils::HashString("InsufficientNumberOfReplicas");
-        static const int ConfigurationConflict_HASH = HashingUtils::HashString("ConfigurationConflict");
-        static const int AdmissionRequestDenied_HASH = HashingUtils::HashString("AdmissionRequestDenied");
-        static const int UnsupportedAddonModification_HASH = HashingUtils::HashString("UnsupportedAddonModification");
-        static const int K8sResourceNotFound_HASH = HashingUtils::HashString("K8sResourceNotFound");
+        static constexpr uint32_t AccessDenied_HASH = ConstExprHashingUtils::HashString("AccessDenied");
+        static constexpr uint32_t InternalFailure_HASH = ConstExprHashingUtils::HashString("InternalFailure");
+        static constexpr uint32_t ClusterUnreachable_HASH = ConstExprHashingUtils::HashString("ClusterUnreachable");
+        static constexpr uint32_t InsufficientNumberOfReplicas_HASH = ConstExprHashingUtils::HashString("InsufficientNumberOfReplicas");
+        static constexpr uint32_t ConfigurationConflict_HASH = ConstExprHashingUtils::HashString("ConfigurationConflict");
+        static constexpr uint32_t AdmissionRequestDenied_HASH = ConstExprHashingUtils::HashString("AdmissionRequestDenied");
+        static constexpr uint32_t UnsupportedAddonModification_HASH = ConstExprHashingUtils::HashString("UnsupportedAddonModification");
+        static constexpr uint32_t K8sResourceNotFound_HASH = ConstExprHashingUtils::HashString("K8sResourceNotFound");
 
 
         AddonIssueCode GetAddonIssueCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AccessDenied_HASH)
           {
             return AddonIssueCode::AccessDenied;

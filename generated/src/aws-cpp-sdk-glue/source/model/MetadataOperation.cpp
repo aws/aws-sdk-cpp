@@ -20,12 +20,12 @@ namespace Aws
       namespace MetadataOperationMapper
       {
 
-        static const int CREATE_HASH = HashingUtils::HashString("CREATE");
+        static constexpr uint32_t CREATE_HASH = ConstExprHashingUtils::HashString("CREATE");
 
 
         MetadataOperation GetMetadataOperationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_HASH)
           {
             return MetadataOperation::CREATE;

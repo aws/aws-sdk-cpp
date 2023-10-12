@@ -20,12 +20,12 @@ namespace Aws
       namespace ComponentFormatMapper
       {
 
-        static const int SHELL_HASH = HashingUtils::HashString("SHELL");
+        static constexpr uint32_t SHELL_HASH = ConstExprHashingUtils::HashString("SHELL");
 
 
         ComponentFormat GetComponentFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SHELL_HASH)
           {
             return ComponentFormat::SHELL;

@@ -20,16 +20,16 @@ namespace Aws
       namespace FuotaTaskStatusMapper
       {
 
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int FuotaSession_Waiting_HASH = HashingUtils::HashString("FuotaSession_Waiting");
-        static const int In_FuotaSession_HASH = HashingUtils::HashString("In_FuotaSession");
-        static const int FuotaDone_HASH = HashingUtils::HashString("FuotaDone");
-        static const int Delete_Waiting_HASH = HashingUtils::HashString("Delete_Waiting");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t FuotaSession_Waiting_HASH = ConstExprHashingUtils::HashString("FuotaSession_Waiting");
+        static constexpr uint32_t In_FuotaSession_HASH = ConstExprHashingUtils::HashString("In_FuotaSession");
+        static constexpr uint32_t FuotaDone_HASH = ConstExprHashingUtils::HashString("FuotaDone");
+        static constexpr uint32_t Delete_Waiting_HASH = ConstExprHashingUtils::HashString("Delete_Waiting");
 
 
         FuotaTaskStatus GetFuotaTaskStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pending_HASH)
           {
             return FuotaTaskStatus::Pending;

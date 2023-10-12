@@ -20,16 +20,16 @@ namespace Aws
       namespace AmazonopensearchserviceIndexRotationPeriodMapper
       {
 
-        static const int NoRotation_HASH = HashingUtils::HashString("NoRotation");
-        static const int OneHour_HASH = HashingUtils::HashString("OneHour");
-        static const int OneDay_HASH = HashingUtils::HashString("OneDay");
-        static const int OneWeek_HASH = HashingUtils::HashString("OneWeek");
-        static const int OneMonth_HASH = HashingUtils::HashString("OneMonth");
+        static constexpr uint32_t NoRotation_HASH = ConstExprHashingUtils::HashString("NoRotation");
+        static constexpr uint32_t OneHour_HASH = ConstExprHashingUtils::HashString("OneHour");
+        static constexpr uint32_t OneDay_HASH = ConstExprHashingUtils::HashString("OneDay");
+        static constexpr uint32_t OneWeek_HASH = ConstExprHashingUtils::HashString("OneWeek");
+        static constexpr uint32_t OneMonth_HASH = ConstExprHashingUtils::HashString("OneMonth");
 
 
         AmazonopensearchserviceIndexRotationPeriod GetAmazonopensearchserviceIndexRotationPeriodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NoRotation_HASH)
           {
             return AmazonopensearchserviceIndexRotationPeriod::NoRotation;

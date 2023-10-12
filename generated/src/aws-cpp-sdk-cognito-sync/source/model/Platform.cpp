@@ -20,15 +20,15 @@ namespace Aws
       namespace PlatformMapper
       {
 
-        static const int APNS_HASH = HashingUtils::HashString("APNS");
-        static const int APNS_SANDBOX_HASH = HashingUtils::HashString("APNS_SANDBOX");
-        static const int GCM_HASH = HashingUtils::HashString("GCM");
-        static const int ADM_HASH = HashingUtils::HashString("ADM");
+        static constexpr uint32_t APNS_HASH = ConstExprHashingUtils::HashString("APNS");
+        static constexpr uint32_t APNS_SANDBOX_HASH = ConstExprHashingUtils::HashString("APNS_SANDBOX");
+        static constexpr uint32_t GCM_HASH = ConstExprHashingUtils::HashString("GCM");
+        static constexpr uint32_t ADM_HASH = ConstExprHashingUtils::HashString("ADM");
 
 
         Platform GetPlatformForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APNS_HASH)
           {
             return Platform::APNS;

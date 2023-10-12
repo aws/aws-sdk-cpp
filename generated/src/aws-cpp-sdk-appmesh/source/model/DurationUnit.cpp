@@ -20,13 +20,13 @@ namespace Aws
       namespace DurationUnitMapper
       {
 
-        static const int s_HASH = HashingUtils::HashString("s");
-        static const int ms_HASH = HashingUtils::HashString("ms");
+        static constexpr uint32_t s_HASH = ConstExprHashingUtils::HashString("s");
+        static constexpr uint32_t ms_HASH = ConstExprHashingUtils::HashString("ms");
 
 
         DurationUnit GetDurationUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == s_HASH)
           {
             return DurationUnit::s;

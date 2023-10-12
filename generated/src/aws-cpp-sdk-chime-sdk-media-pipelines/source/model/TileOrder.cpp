@@ -20,13 +20,13 @@ namespace Aws
       namespace TileOrderMapper
       {
 
-        static const int JoinSequence_HASH = HashingUtils::HashString("JoinSequence");
-        static const int SpeakerSequence_HASH = HashingUtils::HashString("SpeakerSequence");
+        static constexpr uint32_t JoinSequence_HASH = ConstExprHashingUtils::HashString("JoinSequence");
+        static constexpr uint32_t SpeakerSequence_HASH = ConstExprHashingUtils::HashString("SpeakerSequence");
 
 
         TileOrder GetTileOrderForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JoinSequence_HASH)
           {
             return TileOrder::JoinSequence;

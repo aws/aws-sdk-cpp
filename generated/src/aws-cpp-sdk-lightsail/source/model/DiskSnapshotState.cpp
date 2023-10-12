@@ -20,15 +20,15 @@ namespace Aws
       namespace DiskSnapshotStateMapper
       {
 
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int completed_HASH = HashingUtils::HashString("completed");
-        static const int error_HASH = HashingUtils::HashString("error");
-        static const int unknown_HASH = HashingUtils::HashString("unknown");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t completed_HASH = ConstExprHashingUtils::HashString("completed");
+        static constexpr uint32_t error_HASH = ConstExprHashingUtils::HashString("error");
+        static constexpr uint32_t unknown_HASH = ConstExprHashingUtils::HashString("unknown");
 
 
         DiskSnapshotState GetDiskSnapshotStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pending_HASH)
           {
             return DiskSnapshotState::pending;

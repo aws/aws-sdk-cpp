@@ -20,13 +20,13 @@ namespace Aws
       namespace DataIdentifierTypeMapper
       {
 
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
-        static const int MANAGED_HASH = HashingUtils::HashString("MANAGED");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t MANAGED_HASH = ConstExprHashingUtils::HashString("MANAGED");
 
 
         DataIdentifierType GetDataIdentifierTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CUSTOM_HASH)
           {
             return DataIdentifierType::CUSTOM;

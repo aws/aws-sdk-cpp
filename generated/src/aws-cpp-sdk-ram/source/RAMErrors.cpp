@@ -18,37 +18,37 @@ namespace RAM
 namespace RAMErrorMapper
 {
 
-static const int RESOURCE_SHARE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceShareLimitExceededException");
-static const int RESOURCE_ARN_NOT_FOUND_HASH = HashingUtils::HashString("ResourceArnNotFoundException");
-static const int INVALID_CLIENT_TOKEN_HASH = HashingUtils::HashString("InvalidClientTokenException");
-static const int INVALID_MAX_RESULTS_HASH = HashingUtils::HashString("InvalidMaxResultsException");
-static const int MISSING_REQUIRED_PARAMETER_HASH = HashingUtils::HashString("MissingRequiredParameterException");
-static const int PERMISSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("PermissionLimitExceededException");
-static const int UNKNOWN_RESOURCE_HASH = HashingUtils::HashString("UnknownResourceException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int INVALID_RESOURCE_TYPE_HASH = HashingUtils::HashString("InvalidResourceTypeException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int RESOURCE_SHARE_INVITATION_EXPIRED_HASH = HashingUtils::HashString("ResourceShareInvitationExpiredException");
-static const int TAG_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TagLimitExceededException");
-static const int RESOURCE_SHARE_INVITATION_ALREADY_REJECTED_HASH = HashingUtils::HashString("ResourceShareInvitationAlreadyRejectedException");
-static const int INVALID_STATE_TRANSITION_HASH = HashingUtils::HashString("InvalidStateTransitionException");
-static const int INVALID_POLICY_HASH = HashingUtils::HashString("InvalidPolicyException");
-static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
-static const int PERMISSION_VERSIONS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("PermissionVersionsLimitExceededException");
-static const int UNMATCHED_POLICY_PERMISSION_HASH = HashingUtils::HashString("UnmatchedPolicyPermissionException");
-static const int PERMISSION_ALREADY_EXISTS_HASH = HashingUtils::HashString("PermissionAlreadyExistsException");
-static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
-static const int MALFORMED_ARN_HASH = HashingUtils::HashString("MalformedArnException");
-static const int RESOURCE_SHARE_INVITATION_ALREADY_ACCEPTED_HASH = HashingUtils::HashString("ResourceShareInvitationAlreadyAcceptedException");
-static const int RESOURCE_SHARE_INVITATION_ARN_NOT_FOUND_HASH = HashingUtils::HashString("ResourceShareInvitationArnNotFoundException");
-static const int SERVER_INTERNAL_HASH = HashingUtils::HashString("ServerInternalException");
-static const int TAG_POLICY_VIOLATION_HASH = HashingUtils::HashString("TagPolicyViolationException");
-static const int MALFORMED_POLICY_TEMPLATE_HASH = HashingUtils::HashString("MalformedPolicyTemplateException");
+static constexpr uint32_t RESOURCE_SHARE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ResourceShareLimitExceededException");
+static constexpr uint32_t RESOURCE_ARN_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ResourceArnNotFoundException");
+static constexpr uint32_t INVALID_CLIENT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidClientTokenException");
+static constexpr uint32_t INVALID_MAX_RESULTS_HASH = ConstExprHashingUtils::HashString("InvalidMaxResultsException");
+static constexpr uint32_t MISSING_REQUIRED_PARAMETER_HASH = ConstExprHashingUtils::HashString("MissingRequiredParameterException");
+static constexpr uint32_t PERMISSION_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("PermissionLimitExceededException");
+static constexpr uint32_t UNKNOWN_RESOURCE_HASH = ConstExprHashingUtils::HashString("UnknownResourceException");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+static constexpr uint32_t INVALID_RESOURCE_TYPE_HASH = ConstExprHashingUtils::HashString("InvalidResourceTypeException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t RESOURCE_SHARE_INVITATION_EXPIRED_HASH = ConstExprHashingUtils::HashString("ResourceShareInvitationExpiredException");
+static constexpr uint32_t TAG_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("TagLimitExceededException");
+static constexpr uint32_t RESOURCE_SHARE_INVITATION_ALREADY_REJECTED_HASH = ConstExprHashingUtils::HashString("ResourceShareInvitationAlreadyRejectedException");
+static constexpr uint32_t INVALID_STATE_TRANSITION_HASH = ConstExprHashingUtils::HashString("InvalidStateTransitionException");
+static constexpr uint32_t INVALID_POLICY_HASH = ConstExprHashingUtils::HashString("InvalidPolicyException");
+static constexpr uint32_t OPERATION_NOT_PERMITTED_HASH = ConstExprHashingUtils::HashString("OperationNotPermittedException");
+static constexpr uint32_t PERMISSION_VERSIONS_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("PermissionVersionsLimitExceededException");
+static constexpr uint32_t UNMATCHED_POLICY_PERMISSION_HASH = ConstExprHashingUtils::HashString("UnmatchedPolicyPermissionException");
+static constexpr uint32_t PERMISSION_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("PermissionAlreadyExistsException");
+static constexpr uint32_t IDEMPOTENT_PARAMETER_MISMATCH_HASH = ConstExprHashingUtils::HashString("IdempotentParameterMismatchException");
+static constexpr uint32_t MALFORMED_ARN_HASH = ConstExprHashingUtils::HashString("MalformedArnException");
+static constexpr uint32_t RESOURCE_SHARE_INVITATION_ALREADY_ACCEPTED_HASH = ConstExprHashingUtils::HashString("ResourceShareInvitationAlreadyAcceptedException");
+static constexpr uint32_t RESOURCE_SHARE_INVITATION_ARN_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ResourceShareInvitationArnNotFoundException");
+static constexpr uint32_t SERVER_INTERNAL_HASH = ConstExprHashingUtils::HashString("ServerInternalException");
+static constexpr uint32_t TAG_POLICY_VIOLATION_HASH = ConstExprHashingUtils::HashString("TagPolicyViolationException");
+static constexpr uint32_t MALFORMED_POLICY_TEMPLATE_HASH = ConstExprHashingUtils::HashString("MalformedPolicyTemplateException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == RESOURCE_SHARE_LIMIT_EXCEEDED_HASH)
   {

@@ -20,13 +20,13 @@ namespace Aws
       namespace AuthorizerTypeMapper
       {
 
-        static const int REQUEST_HASH = HashingUtils::HashString("REQUEST");
-        static const int JWT_HASH = HashingUtils::HashString("JWT");
+        static constexpr uint32_t REQUEST_HASH = ConstExprHashingUtils::HashString("REQUEST");
+        static constexpr uint32_t JWT_HASH = ConstExprHashingUtils::HashString("JWT");
 
 
         AuthorizerType GetAuthorizerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REQUEST_HASH)
           {
             return AuthorizerType::REQUEST;

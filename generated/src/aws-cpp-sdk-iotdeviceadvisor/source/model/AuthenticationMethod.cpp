@@ -20,13 +20,13 @@ namespace Aws
       namespace AuthenticationMethodMapper
       {
 
-        static const int X509ClientCertificate_HASH = HashingUtils::HashString("X509ClientCertificate");
-        static const int SignatureVersion4_HASH = HashingUtils::HashString("SignatureVersion4");
+        static constexpr uint32_t X509ClientCertificate_HASH = ConstExprHashingUtils::HashString("X509ClientCertificate");
+        static constexpr uint32_t SignatureVersion4_HASH = ConstExprHashingUtils::HashString("SignatureVersion4");
 
 
         AuthenticationMethod GetAuthenticationMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == X509ClientCertificate_HASH)
           {
             return AuthenticationMethod::X509ClientCertificate;

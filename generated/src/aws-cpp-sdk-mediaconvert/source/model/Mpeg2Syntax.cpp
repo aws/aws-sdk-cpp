@@ -20,13 +20,13 @@ namespace Aws
       namespace Mpeg2SyntaxMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int D_10_HASH = HashingUtils::HashString("D_10");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t D_10_HASH = ConstExprHashingUtils::HashString("D_10");
 
 
         Mpeg2Syntax GetMpeg2SyntaxForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return Mpeg2Syntax::DEFAULT;

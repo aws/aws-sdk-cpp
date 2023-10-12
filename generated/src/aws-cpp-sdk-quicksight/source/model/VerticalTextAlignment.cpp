@@ -20,15 +20,15 @@ namespace Aws
       namespace VerticalTextAlignmentMapper
       {
 
-        static const int TOP_HASH = HashingUtils::HashString("TOP");
-        static const int MIDDLE_HASH = HashingUtils::HashString("MIDDLE");
-        static const int BOTTOM_HASH = HashingUtils::HashString("BOTTOM");
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
+        static constexpr uint32_t TOP_HASH = ConstExprHashingUtils::HashString("TOP");
+        static constexpr uint32_t MIDDLE_HASH = ConstExprHashingUtils::HashString("MIDDLE");
+        static constexpr uint32_t BOTTOM_HASH = ConstExprHashingUtils::HashString("BOTTOM");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
 
 
         VerticalTextAlignment GetVerticalTextAlignmentForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TOP_HASH)
           {
             return VerticalTextAlignment::TOP;

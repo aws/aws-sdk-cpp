@@ -20,14 +20,14 @@ namespace Aws
       namespace ReportFrequencyMapper
       {
 
-        static const int MONTHLY_HASH = HashingUtils::HashString("MONTHLY");
-        static const int DAILY_HASH = HashingUtils::HashString("DAILY");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t MONTHLY_HASH = ConstExprHashingUtils::HashString("MONTHLY");
+        static constexpr uint32_t DAILY_HASH = ConstExprHashingUtils::HashString("DAILY");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         ReportFrequency GetReportFrequencyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MONTHLY_HASH)
           {
             return ReportFrequency::MONTHLY;

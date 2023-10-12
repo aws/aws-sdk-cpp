@@ -20,14 +20,14 @@ namespace Aws
       namespace AssignmentStatusTypeMapper
       {
 
-        static const int Assigned_HASH = HashingUtils::HashString("Assigned");
-        static const int Unassigned_HASH = HashingUtils::HashString("Unassigned");
-        static const int Any_HASH = HashingUtils::HashString("Any");
+        static constexpr uint32_t Assigned_HASH = ConstExprHashingUtils::HashString("Assigned");
+        static constexpr uint32_t Unassigned_HASH = ConstExprHashingUtils::HashString("Unassigned");
+        static constexpr uint32_t Any_HASH = ConstExprHashingUtils::HashString("Any");
 
 
         AssignmentStatusType GetAssignmentStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Assigned_HASH)
           {
             return AssignmentStatusType::Assigned;

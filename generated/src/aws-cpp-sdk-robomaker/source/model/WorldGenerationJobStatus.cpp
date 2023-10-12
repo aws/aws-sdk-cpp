@@ -20,18 +20,18 @@ namespace Aws
       namespace WorldGenerationJobStatusMapper
       {
 
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int Running_HASH = HashingUtils::HashString("Running");
-        static const int Completed_HASH = HashingUtils::HashString("Completed");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int PartialFailed_HASH = HashingUtils::HashString("PartialFailed");
-        static const int Canceling_HASH = HashingUtils::HashString("Canceling");
-        static const int Canceled_HASH = HashingUtils::HashString("Canceled");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t Running_HASH = ConstExprHashingUtils::HashString("Running");
+        static constexpr uint32_t Completed_HASH = ConstExprHashingUtils::HashString("Completed");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t PartialFailed_HASH = ConstExprHashingUtils::HashString("PartialFailed");
+        static constexpr uint32_t Canceling_HASH = ConstExprHashingUtils::HashString("Canceling");
+        static constexpr uint32_t Canceled_HASH = ConstExprHashingUtils::HashString("Canceled");
 
 
         WorldGenerationJobStatus GetWorldGenerationJobStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pending_HASH)
           {
             return WorldGenerationJobStatus::Pending;

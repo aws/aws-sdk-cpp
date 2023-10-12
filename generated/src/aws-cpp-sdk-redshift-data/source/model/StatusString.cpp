@@ -20,18 +20,18 @@ namespace Aws
       namespace StatusStringMapper
       {
 
-        static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
-        static const int PICKED_HASH = HashingUtils::HashString("PICKED");
-        static const int STARTED_HASH = HashingUtils::HashString("STARTED");
-        static const int FINISHED_HASH = HashingUtils::HashString("FINISHED");
-        static const int ABORTED_HASH = HashingUtils::HashString("ABORTED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t SUBMITTED_HASH = ConstExprHashingUtils::HashString("SUBMITTED");
+        static constexpr uint32_t PICKED_HASH = ConstExprHashingUtils::HashString("PICKED");
+        static constexpr uint32_t STARTED_HASH = ConstExprHashingUtils::HashString("STARTED");
+        static constexpr uint32_t FINISHED_HASH = ConstExprHashingUtils::HashString("FINISHED");
+        static constexpr uint32_t ABORTED_HASH = ConstExprHashingUtils::HashString("ABORTED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         StatusString GetStatusStringForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUBMITTED_HASH)
           {
             return StatusString::SUBMITTED;

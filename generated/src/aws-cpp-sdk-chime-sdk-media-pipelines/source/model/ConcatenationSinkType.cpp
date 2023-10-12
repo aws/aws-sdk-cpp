@@ -20,12 +20,12 @@ namespace Aws
       namespace ConcatenationSinkTypeMapper
       {
 
-        static const int S3Bucket_HASH = HashingUtils::HashString("S3Bucket");
+        static constexpr uint32_t S3Bucket_HASH = ConstExprHashingUtils::HashString("S3Bucket");
 
 
         ConcatenationSinkType GetConcatenationSinkTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == S3Bucket_HASH)
           {
             return ConcatenationSinkType::S3Bucket;

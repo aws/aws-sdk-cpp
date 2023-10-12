@@ -20,13 +20,13 @@ namespace Aws
       namespace H264ScanTypeMapper
       {
 
-        static const int INTERLACED_HASH = HashingUtils::HashString("INTERLACED");
-        static const int PROGRESSIVE_HASH = HashingUtils::HashString("PROGRESSIVE");
+        static constexpr uint32_t INTERLACED_HASH = ConstExprHashingUtils::HashString("INTERLACED");
+        static constexpr uint32_t PROGRESSIVE_HASH = ConstExprHashingUtils::HashString("PROGRESSIVE");
 
 
         H264ScanType GetH264ScanTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERLACED_HASH)
           {
             return H264ScanType::INTERLACED;

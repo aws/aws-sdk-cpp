@@ -20,13 +20,13 @@ namespace Aws
       namespace SMSSandboxPhoneNumberVerificationStatusMapper
       {
 
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int Verified_HASH = HashingUtils::HashString("Verified");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t Verified_HASH = ConstExprHashingUtils::HashString("Verified");
 
 
         SMSSandboxPhoneNumberVerificationStatus GetSMSSandboxPhoneNumberVerificationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pending_HASH)
           {
             return SMSSandboxPhoneNumberVerificationStatus::Pending;

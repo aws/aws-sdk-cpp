@@ -20,19 +20,19 @@ namespace Aws
       namespace HealthCheckTypeMapper
       {
 
-        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
-        static const int HTTPS_HASH = HashingUtils::HashString("HTTPS");
-        static const int HTTP_STR_MATCH_HASH = HashingUtils::HashString("HTTP_STR_MATCH");
-        static const int HTTPS_STR_MATCH_HASH = HashingUtils::HashString("HTTPS_STR_MATCH");
-        static const int TCP_HASH = HashingUtils::HashString("TCP");
-        static const int CALCULATED_HASH = HashingUtils::HashString("CALCULATED");
-        static const int CLOUDWATCH_METRIC_HASH = HashingUtils::HashString("CLOUDWATCH_METRIC");
-        static const int RECOVERY_CONTROL_HASH = HashingUtils::HashString("RECOVERY_CONTROL");
+        static constexpr uint32_t HTTP_HASH = ConstExprHashingUtils::HashString("HTTP");
+        static constexpr uint32_t HTTPS_HASH = ConstExprHashingUtils::HashString("HTTPS");
+        static constexpr uint32_t HTTP_STR_MATCH_HASH = ConstExprHashingUtils::HashString("HTTP_STR_MATCH");
+        static constexpr uint32_t HTTPS_STR_MATCH_HASH = ConstExprHashingUtils::HashString("HTTPS_STR_MATCH");
+        static constexpr uint32_t TCP_HASH = ConstExprHashingUtils::HashString("TCP");
+        static constexpr uint32_t CALCULATED_HASH = ConstExprHashingUtils::HashString("CALCULATED");
+        static constexpr uint32_t CLOUDWATCH_METRIC_HASH = ConstExprHashingUtils::HashString("CLOUDWATCH_METRIC");
+        static constexpr uint32_t RECOVERY_CONTROL_HASH = ConstExprHashingUtils::HashString("RECOVERY_CONTROL");
 
 
         HealthCheckType GetHealthCheckTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HTTP_HASH)
           {
             return HealthCheckType::HTTP;

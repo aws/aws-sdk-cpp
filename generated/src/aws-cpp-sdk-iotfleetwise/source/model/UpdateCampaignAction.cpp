@@ -20,15 +20,15 @@ namespace Aws
       namespace UpdateCampaignActionMapper
       {
 
-        static const int APPROVE_HASH = HashingUtils::HashString("APPROVE");
-        static const int SUSPEND_HASH = HashingUtils::HashString("SUSPEND");
-        static const int RESUME_HASH = HashingUtils::HashString("RESUME");
-        static const int UPDATE_HASH = HashingUtils::HashString("UPDATE");
+        static constexpr uint32_t APPROVE_HASH = ConstExprHashingUtils::HashString("APPROVE");
+        static constexpr uint32_t SUSPEND_HASH = ConstExprHashingUtils::HashString("SUSPEND");
+        static constexpr uint32_t RESUME_HASH = ConstExprHashingUtils::HashString("RESUME");
+        static constexpr uint32_t UPDATE_HASH = ConstExprHashingUtils::HashString("UPDATE");
 
 
         UpdateCampaignAction GetUpdateCampaignActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APPROVE_HASH)
           {
             return UpdateCampaignAction::APPROVE;

@@ -20,16 +20,16 @@ namespace Aws
       namespace IpamResourceTypeMapper
       {
 
-        static const int vpc_HASH = HashingUtils::HashString("vpc");
-        static const int subnet_HASH = HashingUtils::HashString("subnet");
-        static const int eip_HASH = HashingUtils::HashString("eip");
-        static const int public_ipv4_pool_HASH = HashingUtils::HashString("public-ipv4-pool");
-        static const int ipv6_pool_HASH = HashingUtils::HashString("ipv6-pool");
+        static constexpr uint32_t vpc_HASH = ConstExprHashingUtils::HashString("vpc");
+        static constexpr uint32_t subnet_HASH = ConstExprHashingUtils::HashString("subnet");
+        static constexpr uint32_t eip_HASH = ConstExprHashingUtils::HashString("eip");
+        static constexpr uint32_t public_ipv4_pool_HASH = ConstExprHashingUtils::HashString("public-ipv4-pool");
+        static constexpr uint32_t ipv6_pool_HASH = ConstExprHashingUtils::HashString("ipv6-pool");
 
 
         IpamResourceType GetIpamResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == vpc_HASH)
           {
             return IpamResourceType::vpc;

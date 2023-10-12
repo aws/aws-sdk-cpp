@@ -20,12 +20,12 @@ namespace Aws
       namespace ResetImageAttributeNameMapper
       {
 
-        static const int launchPermission_HASH = HashingUtils::HashString("launchPermission");
+        static constexpr uint32_t launchPermission_HASH = ConstExprHashingUtils::HashString("launchPermission");
 
 
         ResetImageAttributeName GetResetImageAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == launchPermission_HASH)
           {
             return ResetImageAttributeName::launchPermission;

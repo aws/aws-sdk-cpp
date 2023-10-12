@@ -20,13 +20,13 @@ namespace Aws
       namespace RetryActionMapper
       {
 
-        static const int RETRY_HASH = HashingUtils::HashString("RETRY");
-        static const int EXIT_HASH = HashingUtils::HashString("EXIT");
+        static constexpr uint32_t RETRY_HASH = ConstExprHashingUtils::HashString("RETRY");
+        static constexpr uint32_t EXIT_HASH = ConstExprHashingUtils::HashString("EXIT");
 
 
         RetryAction GetRetryActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RETRY_HASH)
           {
             return RetryAction::RETRY;

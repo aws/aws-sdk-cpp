@@ -20,12 +20,12 @@ namespace Aws
       namespace FixedPositionMapper
       {
 
-        static const int first_HASH = HashingUtils::HashString("first");
+        static constexpr uint32_t first_HASH = ConstExprHashingUtils::HashString("first");
 
 
         FixedPosition GetFixedPositionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == first_HASH)
           {
             return FixedPosition::first;

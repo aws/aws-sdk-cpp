@@ -20,14 +20,14 @@ namespace Aws
       namespace OperationTargetTypeMapper
       {
 
-        static const int NAMESPACE_HASH = HashingUtils::HashString("NAMESPACE");
-        static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
-        static const int INSTANCE_HASH = HashingUtils::HashString("INSTANCE");
+        static constexpr uint32_t NAMESPACE_HASH = ConstExprHashingUtils::HashString("NAMESPACE");
+        static constexpr uint32_t SERVICE_HASH = ConstExprHashingUtils::HashString("SERVICE");
+        static constexpr uint32_t INSTANCE_HASH = ConstExprHashingUtils::HashString("INSTANCE");
 
 
         OperationTargetType GetOperationTargetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NAMESPACE_HASH)
           {
             return OperationTargetType::NAMESPACE;

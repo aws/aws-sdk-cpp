@@ -20,13 +20,13 @@ namespace Aws
       namespace PatchSetMapper
       {
 
-        static const int OS_HASH = HashingUtils::HashString("OS");
-        static const int APPLICATION_HASH = HashingUtils::HashString("APPLICATION");
+        static constexpr uint32_t OS_HASH = ConstExprHashingUtils::HashString("OS");
+        static constexpr uint32_t APPLICATION_HASH = ConstExprHashingUtils::HashString("APPLICATION");
 
 
         PatchSet GetPatchSetForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OS_HASH)
           {
             return PatchSet::OS;

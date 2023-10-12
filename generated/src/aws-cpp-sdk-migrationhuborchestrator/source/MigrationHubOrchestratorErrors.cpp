@@ -18,12 +18,12 @@ namespace MigrationHubOrchestrator
 namespace MigrationHubOrchestratorErrorMapper
 {
 
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INTERNAL_SERVER_HASH)
   {

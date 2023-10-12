@@ -20,12 +20,12 @@ namespace Aws
       namespace OptionalObjectAttributesMapper
       {
 
-        static const int RestoreStatus_HASH = HashingUtils::HashString("RestoreStatus");
+        static constexpr uint32_t RestoreStatus_HASH = ConstExprHashingUtils::HashString("RestoreStatus");
 
 
         OptionalObjectAttributes GetOptionalObjectAttributesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RestoreStatus_HASH)
           {
             return OptionalObjectAttributes::RestoreStatus;

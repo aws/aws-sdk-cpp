@@ -20,13 +20,13 @@ namespace Aws
       namespace InputAuthenticationTypeMapper
       {
 
-        static const int password_HASH = HashingUtils::HashString("password");
-        static const int iam_HASH = HashingUtils::HashString("iam");
+        static constexpr uint32_t password_HASH = ConstExprHashingUtils::HashString("password");
+        static constexpr uint32_t iam_HASH = ConstExprHashingUtils::HashString("iam");
 
 
         InputAuthenticationType GetInputAuthenticationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == password_HASH)
           {
             return InputAuthenticationType::password;

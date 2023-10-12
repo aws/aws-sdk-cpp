@@ -20,18 +20,18 @@ namespace Aws
       namespace WorkerTypeMapper
       {
 
-        static const int Standard_HASH = HashingUtils::HashString("Standard");
-        static const int G_1X_HASH = HashingUtils::HashString("G.1X");
-        static const int G_2X_HASH = HashingUtils::HashString("G.2X");
-        static const int G_025X_HASH = HashingUtils::HashString("G.025X");
-        static const int G_4X_HASH = HashingUtils::HashString("G.4X");
-        static const int G_8X_HASH = HashingUtils::HashString("G.8X");
-        static const int Z_2X_HASH = HashingUtils::HashString("Z.2X");
+        static constexpr uint32_t Standard_HASH = ConstExprHashingUtils::HashString("Standard");
+        static constexpr uint32_t G_1X_HASH = ConstExprHashingUtils::HashString("G.1X");
+        static constexpr uint32_t G_2X_HASH = ConstExprHashingUtils::HashString("G.2X");
+        static constexpr uint32_t G_025X_HASH = ConstExprHashingUtils::HashString("G.025X");
+        static constexpr uint32_t G_4X_HASH = ConstExprHashingUtils::HashString("G.4X");
+        static constexpr uint32_t G_8X_HASH = ConstExprHashingUtils::HashString("G.8X");
+        static constexpr uint32_t Z_2X_HASH = ConstExprHashingUtils::HashString("Z.2X");
 
 
         WorkerType GetWorkerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Standard_HASH)
           {
             return WorkerType::Standard;

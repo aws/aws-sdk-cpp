@@ -20,13 +20,13 @@ namespace Aws
       namespace ResolverEndpointDirectionMapper
       {
 
-        static const int INBOUND_HASH = HashingUtils::HashString("INBOUND");
-        static const int OUTBOUND_HASH = HashingUtils::HashString("OUTBOUND");
+        static constexpr uint32_t INBOUND_HASH = ConstExprHashingUtils::HashString("INBOUND");
+        static constexpr uint32_t OUTBOUND_HASH = ConstExprHashingUtils::HashString("OUTBOUND");
 
 
         ResolverEndpointDirection GetResolverEndpointDirectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INBOUND_HASH)
           {
             return ResolverEndpointDirection::INBOUND;

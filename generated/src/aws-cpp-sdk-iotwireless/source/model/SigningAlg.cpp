@@ -20,13 +20,13 @@ namespace Aws
       namespace SigningAlgMapper
       {
 
-        static const int Ed25519_HASH = HashingUtils::HashString("Ed25519");
-        static const int P256r1_HASH = HashingUtils::HashString("P256r1");
+        static constexpr uint32_t Ed25519_HASH = ConstExprHashingUtils::HashString("Ed25519");
+        static constexpr uint32_t P256r1_HASH = ConstExprHashingUtils::HashString("P256r1");
 
 
         SigningAlg GetSigningAlgForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Ed25519_HASH)
           {
             return SigningAlg::Ed25519;

@@ -20,13 +20,13 @@ namespace Aws
       namespace PrincipalTypeMapper
       {
 
-        static const int IAM_HASH = HashingUtils::HashString("IAM");
-        static const int IAM_PATTERN_HASH = HashingUtils::HashString("IAM_PATTERN");
+        static constexpr uint32_t IAM_HASH = ConstExprHashingUtils::HashString("IAM");
+        static constexpr uint32_t IAM_PATTERN_HASH = ConstExprHashingUtils::HashString("IAM_PATTERN");
 
 
         PrincipalType GetPrincipalTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IAM_HASH)
           {
             return PrincipalType::IAM;

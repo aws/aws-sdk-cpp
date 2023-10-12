@@ -20,28 +20,28 @@ namespace Aws
       namespace BackupVaultEventMapper
       {
 
-        static const int BACKUP_JOB_STARTED_HASH = HashingUtils::HashString("BACKUP_JOB_STARTED");
-        static const int BACKUP_JOB_COMPLETED_HASH = HashingUtils::HashString("BACKUP_JOB_COMPLETED");
-        static const int BACKUP_JOB_SUCCESSFUL_HASH = HashingUtils::HashString("BACKUP_JOB_SUCCESSFUL");
-        static const int BACKUP_JOB_FAILED_HASH = HashingUtils::HashString("BACKUP_JOB_FAILED");
-        static const int BACKUP_JOB_EXPIRED_HASH = HashingUtils::HashString("BACKUP_JOB_EXPIRED");
-        static const int RESTORE_JOB_STARTED_HASH = HashingUtils::HashString("RESTORE_JOB_STARTED");
-        static const int RESTORE_JOB_COMPLETED_HASH = HashingUtils::HashString("RESTORE_JOB_COMPLETED");
-        static const int RESTORE_JOB_SUCCESSFUL_HASH = HashingUtils::HashString("RESTORE_JOB_SUCCESSFUL");
-        static const int RESTORE_JOB_FAILED_HASH = HashingUtils::HashString("RESTORE_JOB_FAILED");
-        static const int COPY_JOB_STARTED_HASH = HashingUtils::HashString("COPY_JOB_STARTED");
-        static const int COPY_JOB_SUCCESSFUL_HASH = HashingUtils::HashString("COPY_JOB_SUCCESSFUL");
-        static const int COPY_JOB_FAILED_HASH = HashingUtils::HashString("COPY_JOB_FAILED");
-        static const int RECOVERY_POINT_MODIFIED_HASH = HashingUtils::HashString("RECOVERY_POINT_MODIFIED");
-        static const int BACKUP_PLAN_CREATED_HASH = HashingUtils::HashString("BACKUP_PLAN_CREATED");
-        static const int BACKUP_PLAN_MODIFIED_HASH = HashingUtils::HashString("BACKUP_PLAN_MODIFIED");
-        static const int S3_BACKUP_OBJECT_FAILED_HASH = HashingUtils::HashString("S3_BACKUP_OBJECT_FAILED");
-        static const int S3_RESTORE_OBJECT_FAILED_HASH = HashingUtils::HashString("S3_RESTORE_OBJECT_FAILED");
+        static constexpr uint32_t BACKUP_JOB_STARTED_HASH = ConstExprHashingUtils::HashString("BACKUP_JOB_STARTED");
+        static constexpr uint32_t BACKUP_JOB_COMPLETED_HASH = ConstExprHashingUtils::HashString("BACKUP_JOB_COMPLETED");
+        static constexpr uint32_t BACKUP_JOB_SUCCESSFUL_HASH = ConstExprHashingUtils::HashString("BACKUP_JOB_SUCCESSFUL");
+        static constexpr uint32_t BACKUP_JOB_FAILED_HASH = ConstExprHashingUtils::HashString("BACKUP_JOB_FAILED");
+        static constexpr uint32_t BACKUP_JOB_EXPIRED_HASH = ConstExprHashingUtils::HashString("BACKUP_JOB_EXPIRED");
+        static constexpr uint32_t RESTORE_JOB_STARTED_HASH = ConstExprHashingUtils::HashString("RESTORE_JOB_STARTED");
+        static constexpr uint32_t RESTORE_JOB_COMPLETED_HASH = ConstExprHashingUtils::HashString("RESTORE_JOB_COMPLETED");
+        static constexpr uint32_t RESTORE_JOB_SUCCESSFUL_HASH = ConstExprHashingUtils::HashString("RESTORE_JOB_SUCCESSFUL");
+        static constexpr uint32_t RESTORE_JOB_FAILED_HASH = ConstExprHashingUtils::HashString("RESTORE_JOB_FAILED");
+        static constexpr uint32_t COPY_JOB_STARTED_HASH = ConstExprHashingUtils::HashString("COPY_JOB_STARTED");
+        static constexpr uint32_t COPY_JOB_SUCCESSFUL_HASH = ConstExprHashingUtils::HashString("COPY_JOB_SUCCESSFUL");
+        static constexpr uint32_t COPY_JOB_FAILED_HASH = ConstExprHashingUtils::HashString("COPY_JOB_FAILED");
+        static constexpr uint32_t RECOVERY_POINT_MODIFIED_HASH = ConstExprHashingUtils::HashString("RECOVERY_POINT_MODIFIED");
+        static constexpr uint32_t BACKUP_PLAN_CREATED_HASH = ConstExprHashingUtils::HashString("BACKUP_PLAN_CREATED");
+        static constexpr uint32_t BACKUP_PLAN_MODIFIED_HASH = ConstExprHashingUtils::HashString("BACKUP_PLAN_MODIFIED");
+        static constexpr uint32_t S3_BACKUP_OBJECT_FAILED_HASH = ConstExprHashingUtils::HashString("S3_BACKUP_OBJECT_FAILED");
+        static constexpr uint32_t S3_RESTORE_OBJECT_FAILED_HASH = ConstExprHashingUtils::HashString("S3_RESTORE_OBJECT_FAILED");
 
 
         BackupVaultEvent GetBackupVaultEventForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BACKUP_JOB_STARTED_HASH)
           {
             return BackupVaultEvent::BACKUP_JOB_STARTED;

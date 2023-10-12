@@ -20,39 +20,39 @@ namespace Aws
       namespace ViolationReasonMapper
       {
 
-        static const int WEB_ACL_MISSING_RULE_GROUP_HASH = HashingUtils::HashString("WEB_ACL_MISSING_RULE_GROUP");
-        static const int RESOURCE_MISSING_WEB_ACL_HASH = HashingUtils::HashString("RESOURCE_MISSING_WEB_ACL");
-        static const int RESOURCE_INCORRECT_WEB_ACL_HASH = HashingUtils::HashString("RESOURCE_INCORRECT_WEB_ACL");
-        static const int RESOURCE_MISSING_SHIELD_PROTECTION_HASH = HashingUtils::HashString("RESOURCE_MISSING_SHIELD_PROTECTION");
-        static const int RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION_HASH = HashingUtils::HashString("RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION");
-        static const int RESOURCE_MISSING_SECURITY_GROUP_HASH = HashingUtils::HashString("RESOURCE_MISSING_SECURITY_GROUP");
-        static const int RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP_HASH = HashingUtils::HashString("RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP");
-        static const int SECURITY_GROUP_UNUSED_HASH = HashingUtils::HashString("SECURITY_GROUP_UNUSED");
-        static const int SECURITY_GROUP_REDUNDANT_HASH = HashingUtils::HashString("SECURITY_GROUP_REDUNDANT");
-        static const int FMS_CREATED_SECURITY_GROUP_EDITED_HASH = HashingUtils::HashString("FMS_CREATED_SECURITY_GROUP_EDITED");
-        static const int MISSING_FIREWALL_HASH = HashingUtils::HashString("MISSING_FIREWALL");
-        static const int MISSING_FIREWALL_SUBNET_IN_AZ_HASH = HashingUtils::HashString("MISSING_FIREWALL_SUBNET_IN_AZ");
-        static const int MISSING_EXPECTED_ROUTE_TABLE_HASH = HashingUtils::HashString("MISSING_EXPECTED_ROUTE_TABLE");
-        static const int NETWORK_FIREWALL_POLICY_MODIFIED_HASH = HashingUtils::HashString("NETWORK_FIREWALL_POLICY_MODIFIED");
-        static const int FIREWALL_SUBNET_IS_OUT_OF_SCOPE_HASH = HashingUtils::HashString("FIREWALL_SUBNET_IS_OUT_OF_SCOPE");
-        static const int INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE_HASH = HashingUtils::HashString("INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE");
-        static const int FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE_HASH = HashingUtils::HashString("FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE");
-        static const int UNEXPECTED_FIREWALL_ROUTES_HASH = HashingUtils::HashString("UNEXPECTED_FIREWALL_ROUTES");
-        static const int UNEXPECTED_TARGET_GATEWAY_ROUTES_HASH = HashingUtils::HashString("UNEXPECTED_TARGET_GATEWAY_ROUTES");
-        static const int TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY_HASH = HashingUtils::HashString("TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY");
-        static const int INVALID_ROUTE_CONFIGURATION_HASH = HashingUtils::HashString("INVALID_ROUTE_CONFIGURATION");
-        static const int MISSING_TARGET_GATEWAY_HASH = HashingUtils::HashString("MISSING_TARGET_GATEWAY");
-        static const int INTERNET_TRAFFIC_NOT_INSPECTED_HASH = HashingUtils::HashString("INTERNET_TRAFFIC_NOT_INSPECTED");
-        static const int BLACK_HOLE_ROUTE_DETECTED_HASH = HashingUtils::HashString("BLACK_HOLE_ROUTE_DETECTED");
-        static const int BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET_HASH = HashingUtils::HashString("BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET");
-        static const int RESOURCE_MISSING_DNS_FIREWALL_HASH = HashingUtils::HashString("RESOURCE_MISSING_DNS_FIREWALL");
-        static const int ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT_HASH = HashingUtils::HashString("ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT");
-        static const int FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT_HASH = HashingUtils::HashString("FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT");
+        static constexpr uint32_t WEB_ACL_MISSING_RULE_GROUP_HASH = ConstExprHashingUtils::HashString("WEB_ACL_MISSING_RULE_GROUP");
+        static constexpr uint32_t RESOURCE_MISSING_WEB_ACL_HASH = ConstExprHashingUtils::HashString("RESOURCE_MISSING_WEB_ACL");
+        static constexpr uint32_t RESOURCE_INCORRECT_WEB_ACL_HASH = ConstExprHashingUtils::HashString("RESOURCE_INCORRECT_WEB_ACL");
+        static constexpr uint32_t RESOURCE_MISSING_SHIELD_PROTECTION_HASH = ConstExprHashingUtils::HashString("RESOURCE_MISSING_SHIELD_PROTECTION");
+        static constexpr uint32_t RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION_HASH = ConstExprHashingUtils::HashString("RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION");
+        static constexpr uint32_t RESOURCE_MISSING_SECURITY_GROUP_HASH = ConstExprHashingUtils::HashString("RESOURCE_MISSING_SECURITY_GROUP");
+        static constexpr uint32_t RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP_HASH = ConstExprHashingUtils::HashString("RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP");
+        static constexpr uint32_t SECURITY_GROUP_UNUSED_HASH = ConstExprHashingUtils::HashString("SECURITY_GROUP_UNUSED");
+        static constexpr uint32_t SECURITY_GROUP_REDUNDANT_HASH = ConstExprHashingUtils::HashString("SECURITY_GROUP_REDUNDANT");
+        static constexpr uint32_t FMS_CREATED_SECURITY_GROUP_EDITED_HASH = ConstExprHashingUtils::HashString("FMS_CREATED_SECURITY_GROUP_EDITED");
+        static constexpr uint32_t MISSING_FIREWALL_HASH = ConstExprHashingUtils::HashString("MISSING_FIREWALL");
+        static constexpr uint32_t MISSING_FIREWALL_SUBNET_IN_AZ_HASH = ConstExprHashingUtils::HashString("MISSING_FIREWALL_SUBNET_IN_AZ");
+        static constexpr uint32_t MISSING_EXPECTED_ROUTE_TABLE_HASH = ConstExprHashingUtils::HashString("MISSING_EXPECTED_ROUTE_TABLE");
+        static constexpr uint32_t NETWORK_FIREWALL_POLICY_MODIFIED_HASH = ConstExprHashingUtils::HashString("NETWORK_FIREWALL_POLICY_MODIFIED");
+        static constexpr uint32_t FIREWALL_SUBNET_IS_OUT_OF_SCOPE_HASH = ConstExprHashingUtils::HashString("FIREWALL_SUBNET_IS_OUT_OF_SCOPE");
+        static constexpr uint32_t INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE_HASH = ConstExprHashingUtils::HashString("INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE");
+        static constexpr uint32_t FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE_HASH = ConstExprHashingUtils::HashString("FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE");
+        static constexpr uint32_t UNEXPECTED_FIREWALL_ROUTES_HASH = ConstExprHashingUtils::HashString("UNEXPECTED_FIREWALL_ROUTES");
+        static constexpr uint32_t UNEXPECTED_TARGET_GATEWAY_ROUTES_HASH = ConstExprHashingUtils::HashString("UNEXPECTED_TARGET_GATEWAY_ROUTES");
+        static constexpr uint32_t TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY_HASH = ConstExprHashingUtils::HashString("TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY");
+        static constexpr uint32_t INVALID_ROUTE_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("INVALID_ROUTE_CONFIGURATION");
+        static constexpr uint32_t MISSING_TARGET_GATEWAY_HASH = ConstExprHashingUtils::HashString("MISSING_TARGET_GATEWAY");
+        static constexpr uint32_t INTERNET_TRAFFIC_NOT_INSPECTED_HASH = ConstExprHashingUtils::HashString("INTERNET_TRAFFIC_NOT_INSPECTED");
+        static constexpr uint32_t BLACK_HOLE_ROUTE_DETECTED_HASH = ConstExprHashingUtils::HashString("BLACK_HOLE_ROUTE_DETECTED");
+        static constexpr uint32_t BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET_HASH = ConstExprHashingUtils::HashString("BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET");
+        static constexpr uint32_t RESOURCE_MISSING_DNS_FIREWALL_HASH = ConstExprHashingUtils::HashString("RESOURCE_MISSING_DNS_FIREWALL");
+        static constexpr uint32_t ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT_HASH = ConstExprHashingUtils::HashString("ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT");
+        static constexpr uint32_t FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT_HASH = ConstExprHashingUtils::HashString("FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT");
 
 
         ViolationReason GetViolationReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WEB_ACL_MISSING_RULE_GROUP_HASH)
           {
             return ViolationReason::WEB_ACL_MISSING_RULE_GROUP;

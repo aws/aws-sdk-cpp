@@ -20,13 +20,13 @@ namespace Aws
       namespace TimeRangeTypeMapper
       {
 
-        static const int TraceId_HASH = HashingUtils::HashString("TraceId");
-        static const int Event_HASH = HashingUtils::HashString("Event");
+        static constexpr uint32_t TraceId_HASH = ConstExprHashingUtils::HashString("TraceId");
+        static constexpr uint32_t Event_HASH = ConstExprHashingUtils::HashString("Event");
 
 
         TimeRangeType GetTimeRangeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TraceId_HASH)
           {
             return TimeRangeType::TraceId;

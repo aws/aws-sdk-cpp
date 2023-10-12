@@ -20,17 +20,17 @@ namespace Aws
       namespace StepStatusMapper
       {
 
-        static const int Starting_HASH = HashingUtils::HashString("Starting");
-        static const int Executing_HASH = HashingUtils::HashString("Executing");
-        static const int Stopping_HASH = HashingUtils::HashString("Stopping");
-        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
+        static constexpr uint32_t Starting_HASH = ConstExprHashingUtils::HashString("Starting");
+        static constexpr uint32_t Executing_HASH = ConstExprHashingUtils::HashString("Executing");
+        static constexpr uint32_t Stopping_HASH = ConstExprHashingUtils::HashString("Stopping");
+        static constexpr uint32_t Stopped_HASH = ConstExprHashingUtils::HashString("Stopped");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Succeeded_HASH = ConstExprHashingUtils::HashString("Succeeded");
 
 
         StepStatus GetStepStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Starting_HASH)
           {
             return StepStatus::Starting;

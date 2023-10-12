@@ -20,13 +20,13 @@ namespace Aws
       namespace M2tsPcrControlMapper
       {
 
-        static const int CONFIGURED_PCR_PERIOD_HASH = HashingUtils::HashString("CONFIGURED_PCR_PERIOD");
-        static const int PCR_EVERY_PES_PACKET_HASH = HashingUtils::HashString("PCR_EVERY_PES_PACKET");
+        static constexpr uint32_t CONFIGURED_PCR_PERIOD_HASH = ConstExprHashingUtils::HashString("CONFIGURED_PCR_PERIOD");
+        static constexpr uint32_t PCR_EVERY_PES_PACKET_HASH = ConstExprHashingUtils::HashString("PCR_EVERY_PES_PACKET");
 
 
         M2tsPcrControl GetM2tsPcrControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONFIGURED_PCR_PERIOD_HASH)
           {
             return M2tsPcrControl::CONFIGURED_PCR_PERIOD;

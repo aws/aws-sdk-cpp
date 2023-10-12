@@ -20,13 +20,13 @@ namespace Aws
       namespace AacInputTypeMapper
       {
 
-        static const int BROADCASTER_MIXED_AD_HASH = HashingUtils::HashString("BROADCASTER_MIXED_AD");
-        static const int NORMAL_HASH = HashingUtils::HashString("NORMAL");
+        static constexpr uint32_t BROADCASTER_MIXED_AD_HASH = ConstExprHashingUtils::HashString("BROADCASTER_MIXED_AD");
+        static constexpr uint32_t NORMAL_HASH = ConstExprHashingUtils::HashString("NORMAL");
 
 
         AacInputType GetAacInputTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BROADCASTER_MIXED_AD_HASH)
           {
             return AacInputType::BROADCASTER_MIXED_AD;

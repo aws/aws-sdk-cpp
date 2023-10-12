@@ -20,15 +20,15 @@ namespace Aws
       namespace PackageVersionStatusMapper
       {
 
-        static const int REGISTER_PENDING_HASH = HashingUtils::HashString("REGISTER_PENDING");
-        static const int REGISTER_COMPLETED_HASH = HashingUtils::HashString("REGISTER_COMPLETED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static constexpr uint32_t REGISTER_PENDING_HASH = ConstExprHashingUtils::HashString("REGISTER_PENDING");
+        static constexpr uint32_t REGISTER_COMPLETED_HASH = ConstExprHashingUtils::HashString("REGISTER_COMPLETED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
 
 
         PackageVersionStatus GetPackageVersionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REGISTER_PENDING_HASH)
           {
             return PackageVersionStatus::REGISTER_PENDING;

@@ -20,12 +20,12 @@ namespace Aws
       namespace SentimentTypeMapper
       {
 
-        static const int NEGATIVE_HASH = HashingUtils::HashString("NEGATIVE");
+        static constexpr uint32_t NEGATIVE_HASH = ConstExprHashingUtils::HashString("NEGATIVE");
 
 
         SentimentType GetSentimentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NEGATIVE_HASH)
           {
             return SentimentType::NEGATIVE;

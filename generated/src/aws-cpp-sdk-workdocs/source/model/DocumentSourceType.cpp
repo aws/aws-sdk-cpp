@@ -20,13 +20,13 @@ namespace Aws
       namespace DocumentSourceTypeMapper
       {
 
-        static const int ORIGINAL_HASH = HashingUtils::HashString("ORIGINAL");
-        static const int WITH_COMMENTS_HASH = HashingUtils::HashString("WITH_COMMENTS");
+        static constexpr uint32_t ORIGINAL_HASH = ConstExprHashingUtils::HashString("ORIGINAL");
+        static constexpr uint32_t WITH_COMMENTS_HASH = ConstExprHashingUtils::HashString("WITH_COMMENTS");
 
 
         DocumentSourceType GetDocumentSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ORIGINAL_HASH)
           {
             return DocumentSourceType::ORIGINAL;

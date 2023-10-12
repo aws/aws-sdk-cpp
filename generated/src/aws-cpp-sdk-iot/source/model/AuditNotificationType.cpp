@@ -20,12 +20,12 @@ namespace Aws
       namespace AuditNotificationTypeMapper
       {
 
-        static const int SNS_HASH = HashingUtils::HashString("SNS");
+        static constexpr uint32_t SNS_HASH = ConstExprHashingUtils::HashString("SNS");
 
 
         AuditNotificationType GetAuditNotificationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SNS_HASH)
           {
             return AuditNotificationType::SNS;

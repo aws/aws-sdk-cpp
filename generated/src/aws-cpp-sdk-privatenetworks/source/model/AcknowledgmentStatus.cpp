@@ -20,14 +20,14 @@ namespace Aws
       namespace AcknowledgmentStatusMapper
       {
 
-        static const int ACKNOWLEDGING_HASH = HashingUtils::HashString("ACKNOWLEDGING");
-        static const int ACKNOWLEDGED_HASH = HashingUtils::HashString("ACKNOWLEDGED");
-        static const int UNACKNOWLEDGED_HASH = HashingUtils::HashString("UNACKNOWLEDGED");
+        static constexpr uint32_t ACKNOWLEDGING_HASH = ConstExprHashingUtils::HashString("ACKNOWLEDGING");
+        static constexpr uint32_t ACKNOWLEDGED_HASH = ConstExprHashingUtils::HashString("ACKNOWLEDGED");
+        static constexpr uint32_t UNACKNOWLEDGED_HASH = ConstExprHashingUtils::HashString("UNACKNOWLEDGED");
 
 
         AcknowledgmentStatus GetAcknowledgmentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACKNOWLEDGING_HASH)
           {
             return AcknowledgmentStatus::ACKNOWLEDGING;

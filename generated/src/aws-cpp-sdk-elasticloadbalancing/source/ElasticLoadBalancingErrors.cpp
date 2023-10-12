@@ -18,33 +18,33 @@ namespace ElasticLoadBalancing
 namespace ElasticLoadBalancingErrorMapper
 {
 
-static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermitted");
-static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet");
-static const int INVALID_SCHEME_HASH = HashingUtils::HashString("InvalidScheme");
-static const int POLICY_TYPE_NOT_FOUND_HASH = HashingUtils::HashString("PolicyTypeNotFound");
-static const int DUPLICATE_ACCESS_POINT_NAME_HASH = HashingUtils::HashString("DuplicateLoadBalancerName");
-static const int INVALID_END_POINT_HASH = HashingUtils::HashString("InvalidInstance");
-static const int DUPLICATE_LISTENER_HASH = HashingUtils::HashString("DuplicateListener");
-static const int LOAD_BALANCER_ATTRIBUTE_NOT_FOUND_HASH = HashingUtils::HashString("LoadBalancerAttributeNotFound");
-static const int POLICY_NOT_FOUND_HASH = HashingUtils::HashString("PolicyNotFound");
-static const int TOO_MANY_ACCESS_POINTS_HASH = HashingUtils::HashString("TooManyLoadBalancers");
-static const int DUPLICATE_TAG_KEYS_HASH = HashingUtils::HashString("DuplicateTagKeys");
-static const int LISTENER_NOT_FOUND_HASH = HashingUtils::HashString("ListenerNotFound");
-static const int DUPLICATE_POLICY_NAME_HASH = HashingUtils::HashString("DuplicatePolicyName");
-static const int DEPENDENCY_THROTTLE_HASH = HashingUtils::HashString("DependencyThrottle");
-static const int INVALID_CONFIGURATION_REQUEST_HASH = HashingUtils::HashString("InvalidConfigurationRequest");
-static const int UNSUPPORTED_PROTOCOL_HASH = HashingUtils::HashString("UnsupportedProtocol");
-static const int ACCESS_POINT_NOT_FOUND_HASH = HashingUtils::HashString("LoadBalancerNotFound");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTags");
-static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SubnetNotFound");
-static const int INVALID_SECURITY_GROUP_HASH = HashingUtils::HashString("InvalidSecurityGroup");
-static const int TOO_MANY_POLICIES_HASH = HashingUtils::HashString("TooManyPolicies");
-static const int CERTIFICATE_NOT_FOUND_HASH = HashingUtils::HashString("CertificateNotFound");
+static constexpr uint32_t OPERATION_NOT_PERMITTED_HASH = ConstExprHashingUtils::HashString("OperationNotPermitted");
+static constexpr uint32_t INVALID_SUBNET_HASH = ConstExprHashingUtils::HashString("InvalidSubnet");
+static constexpr uint32_t INVALID_SCHEME_HASH = ConstExprHashingUtils::HashString("InvalidScheme");
+static constexpr uint32_t POLICY_TYPE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("PolicyTypeNotFound");
+static constexpr uint32_t DUPLICATE_ACCESS_POINT_NAME_HASH = ConstExprHashingUtils::HashString("DuplicateLoadBalancerName");
+static constexpr uint32_t INVALID_END_POINT_HASH = ConstExprHashingUtils::HashString("InvalidInstance");
+static constexpr uint32_t DUPLICATE_LISTENER_HASH = ConstExprHashingUtils::HashString("DuplicateListener");
+static constexpr uint32_t LOAD_BALANCER_ATTRIBUTE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("LoadBalancerAttributeNotFound");
+static constexpr uint32_t POLICY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("PolicyNotFound");
+static constexpr uint32_t TOO_MANY_ACCESS_POINTS_HASH = ConstExprHashingUtils::HashString("TooManyLoadBalancers");
+static constexpr uint32_t DUPLICATE_TAG_KEYS_HASH = ConstExprHashingUtils::HashString("DuplicateTagKeys");
+static constexpr uint32_t LISTENER_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ListenerNotFound");
+static constexpr uint32_t DUPLICATE_POLICY_NAME_HASH = ConstExprHashingUtils::HashString("DuplicatePolicyName");
+static constexpr uint32_t DEPENDENCY_THROTTLE_HASH = ConstExprHashingUtils::HashString("DependencyThrottle");
+static constexpr uint32_t INVALID_CONFIGURATION_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidConfigurationRequest");
+static constexpr uint32_t UNSUPPORTED_PROTOCOL_HASH = ConstExprHashingUtils::HashString("UnsupportedProtocol");
+static constexpr uint32_t ACCESS_POINT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("LoadBalancerNotFound");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTags");
+static constexpr uint32_t SUBNET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SubnetNotFound");
+static constexpr uint32_t INVALID_SECURITY_GROUP_HASH = ConstExprHashingUtils::HashString("InvalidSecurityGroup");
+static constexpr uint32_t TOO_MANY_POLICIES_HASH = ConstExprHashingUtils::HashString("TooManyPolicies");
+static constexpr uint32_t CERTIFICATE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("CertificateNotFound");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {

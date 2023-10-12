@@ -20,15 +20,15 @@ namespace Aws
       namespace AutoImportPolicyTypeMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int NEW__HASH = HashingUtils::HashString("NEW");
-        static const int NEW_CHANGED_HASH = HashingUtils::HashString("NEW_CHANGED");
-        static const int NEW_CHANGED_DELETED_HASH = HashingUtils::HashString("NEW_CHANGED_DELETED");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t NEW__HASH = ConstExprHashingUtils::HashString("NEW");
+        static constexpr uint32_t NEW_CHANGED_HASH = ConstExprHashingUtils::HashString("NEW_CHANGED");
+        static constexpr uint32_t NEW_CHANGED_DELETED_HASH = ConstExprHashingUtils::HashString("NEW_CHANGED_DELETED");
 
 
         AutoImportPolicyType GetAutoImportPolicyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return AutoImportPolicyType::NONE;

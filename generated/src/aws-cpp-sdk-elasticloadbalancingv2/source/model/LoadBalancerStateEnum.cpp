@@ -20,15 +20,15 @@ namespace Aws
       namespace LoadBalancerStateEnumMapper
       {
 
-        static const int active_HASH = HashingUtils::HashString("active");
-        static const int provisioning_HASH = HashingUtils::HashString("provisioning");
-        static const int active_impaired_HASH = HashingUtils::HashString("active_impaired");
-        static const int failed_HASH = HashingUtils::HashString("failed");
+        static constexpr uint32_t active_HASH = ConstExprHashingUtils::HashString("active");
+        static constexpr uint32_t provisioning_HASH = ConstExprHashingUtils::HashString("provisioning");
+        static constexpr uint32_t active_impaired_HASH = ConstExprHashingUtils::HashString("active_impaired");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
 
 
         LoadBalancerStateEnum GetLoadBalancerStateEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == active_HASH)
           {
             return LoadBalancerStateEnum::active;

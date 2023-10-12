@@ -20,13 +20,13 @@ namespace Aws
       namespace SamplingStrategyNameMapper
       {
 
-        static const int PartialScan_HASH = HashingUtils::HashString("PartialScan");
-        static const int FixedRate_HASH = HashingUtils::HashString("FixedRate");
+        static constexpr uint32_t PartialScan_HASH = ConstExprHashingUtils::HashString("PartialScan");
+        static constexpr uint32_t FixedRate_HASH = ConstExprHashingUtils::HashString("FixedRate");
 
 
         SamplingStrategyName GetSamplingStrategyNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PartialScan_HASH)
           {
             return SamplingStrategyName::PartialScan;

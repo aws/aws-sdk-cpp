@@ -20,15 +20,15 @@ namespace Aws
       namespace DomainHealthMapper
       {
 
-        static const int Red_HASH = HashingUtils::HashString("Red");
-        static const int Yellow_HASH = HashingUtils::HashString("Yellow");
-        static const int Green_HASH = HashingUtils::HashString("Green");
-        static const int NotAvailable_HASH = HashingUtils::HashString("NotAvailable");
+        static constexpr uint32_t Red_HASH = ConstExprHashingUtils::HashString("Red");
+        static constexpr uint32_t Yellow_HASH = ConstExprHashingUtils::HashString("Yellow");
+        static constexpr uint32_t Green_HASH = ConstExprHashingUtils::HashString("Green");
+        static constexpr uint32_t NotAvailable_HASH = ConstExprHashingUtils::HashString("NotAvailable");
 
 
         DomainHealth GetDomainHealthForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Red_HASH)
           {
             return DomainHealth::Red;

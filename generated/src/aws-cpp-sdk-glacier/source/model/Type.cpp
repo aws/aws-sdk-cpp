@@ -20,14 +20,14 @@ namespace Aws
       namespace TypeMapper
       {
 
-        static const int AmazonCustomerByEmail_HASH = HashingUtils::HashString("AmazonCustomerByEmail");
-        static const int CanonicalUser_HASH = HashingUtils::HashString("CanonicalUser");
-        static const int Group_HASH = HashingUtils::HashString("Group");
+        static constexpr uint32_t AmazonCustomerByEmail_HASH = ConstExprHashingUtils::HashString("AmazonCustomerByEmail");
+        static constexpr uint32_t CanonicalUser_HASH = ConstExprHashingUtils::HashString("CanonicalUser");
+        static constexpr uint32_t Group_HASH = ConstExprHashingUtils::HashString("Group");
 
 
         Type GetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AmazonCustomerByEmail_HASH)
           {
             return Type::AmazonCustomerByEmail;

@@ -18,51 +18,51 @@ namespace CognitoIdentityProvider
 namespace CognitoIdentityProviderErrorMapper
 {
 
-static const int USER_NOT_FOUND_HASH = HashingUtils::HashString("UserNotFoundException");
-static const int ENABLE_SOFTWARE_TOKEN_M_F_A_HASH = HashingUtils::HashString("EnableSoftwareTokenMFAException");
-static const int UNSUPPORTED_USER_STATE_HASH = HashingUtils::HashString("UnsupportedUserStateException");
-static const int ALIAS_EXISTS_HASH = HashingUtils::HashString("AliasExistsException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int M_F_A_METHOD_NOT_FOUND_HASH = HashingUtils::HashString("MFAMethodNotFoundException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int PASSWORD_RESET_REQUIRED_HASH = HashingUtils::HashString("PasswordResetRequiredException");
-static const int UNEXPECTED_LAMBDA_HASH = HashingUtils::HashString("UnexpectedLambdaException");
-static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
-static const int INVALID_SMS_ROLE_TRUST_RELATIONSHIP_HASH = HashingUtils::HashString("InvalidSmsRoleTrustRelationshipException");
-static const int GROUP_EXISTS_HASH = HashingUtils::HashString("GroupExistsException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int USER_NOT_CONFIRMED_HASH = HashingUtils::HashString("UserNotConfirmedException");
-static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
-static const int DUPLICATE_PROVIDER_HASH = HashingUtils::HashString("DuplicateProviderException");
-static const int TOO_MANY_FAILED_ATTEMPTS_HASH = HashingUtils::HashString("TooManyFailedAttemptsException");
-static const int INVALID_SMS_ROLE_ACCESS_POLICY_HASH = HashingUtils::HashString("InvalidSmsRoleAccessPolicyException");
-static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
-static const int INVALID_PASSWORD_HASH = HashingUtils::HashString("InvalidPasswordException");
-static const int INVALID_LAMBDA_RESPONSE_HASH = HashingUtils::HashString("InvalidLambdaResponseException");
-static const int EXPIRED_CODE_HASH = HashingUtils::HashString("ExpiredCodeException");
-static const int UNSUPPORTED_IDENTITY_PROVIDER_HASH = HashingUtils::HashString("UnsupportedIdentityProviderException");
-static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
-static const int CODE_MISMATCH_HASH = HashingUtils::HashString("CodeMismatchException");
-static const int INVALID_O_AUTH_FLOW_HASH = HashingUtils::HashString("InvalidOAuthFlowException");
-static const int USER_POOL_ADD_ON_NOT_ENABLED_HASH = HashingUtils::HashString("UserPoolAddOnNotEnabledException");
-static const int UNSUPPORTED_TOKEN_TYPE_HASH = HashingUtils::HashString("UnsupportedTokenTypeException");
-static const int USER_LAMBDA_VALIDATION_HASH = HashingUtils::HashString("UserLambdaValidationException");
-static const int CODE_DELIVERY_FAILURE_HASH = HashingUtils::HashString("CodeDeliveryFailureException");
-static const int INVALID_USER_POOL_CONFIGURATION_HASH = HashingUtils::HashString("InvalidUserPoolConfigurationException");
-static const int INVALID_EMAIL_ROLE_ACCESS_POLICY_HASH = HashingUtils::HashString("InvalidEmailRoleAccessPolicyException");
-static const int USERNAME_EXISTS_HASH = HashingUtils::HashString("UsernameExistsException");
-static const int SCOPE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ScopeDoesNotExistException");
-static const int USER_IMPORT_IN_PROGRESS_HASH = HashingUtils::HashString("UserImportInProgressException");
-static const int USER_POOL_TAGGING_HASH = HashingUtils::HashString("UserPoolTaggingException");
-static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int PRECONDITION_NOT_MET_HASH = HashingUtils::HashString("PreconditionNotMetException");
-static const int SOFTWARE_TOKEN_M_F_A_NOT_FOUND_HASH = HashingUtils::HashString("SoftwareTokenMFANotFoundException");
+static constexpr uint32_t USER_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("UserNotFoundException");
+static constexpr uint32_t ENABLE_SOFTWARE_TOKEN_M_F_A_HASH = ConstExprHashingUtils::HashString("EnableSoftwareTokenMFAException");
+static constexpr uint32_t UNSUPPORTED_USER_STATE_HASH = ConstExprHashingUtils::HashString("UnsupportedUserStateException");
+static constexpr uint32_t ALIAS_EXISTS_HASH = ConstExprHashingUtils::HashString("AliasExistsException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t M_F_A_METHOD_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("MFAMethodNotFoundException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t PASSWORD_RESET_REQUIRED_HASH = ConstExprHashingUtils::HashString("PasswordResetRequiredException");
+static constexpr uint32_t UNEXPECTED_LAMBDA_HASH = ConstExprHashingUtils::HashString("UnexpectedLambdaException");
+static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("InternalErrorException");
+static constexpr uint32_t INVALID_SMS_ROLE_TRUST_RELATIONSHIP_HASH = ConstExprHashingUtils::HashString("InvalidSmsRoleTrustRelationshipException");
+static constexpr uint32_t GROUP_EXISTS_HASH = ConstExprHashingUtils::HashString("GroupExistsException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t USER_NOT_CONFIRMED_HASH = ConstExprHashingUtils::HashString("UserNotConfirmedException");
+static constexpr uint32_t UNAUTHORIZED_HASH = ConstExprHashingUtils::HashString("UnauthorizedException");
+static constexpr uint32_t DUPLICATE_PROVIDER_HASH = ConstExprHashingUtils::HashString("DuplicateProviderException");
+static constexpr uint32_t TOO_MANY_FAILED_ATTEMPTS_HASH = ConstExprHashingUtils::HashString("TooManyFailedAttemptsException");
+static constexpr uint32_t INVALID_SMS_ROLE_ACCESS_POLICY_HASH = ConstExprHashingUtils::HashString("InvalidSmsRoleAccessPolicyException");
+static constexpr uint32_t UNSUPPORTED_OPERATION_HASH = ConstExprHashingUtils::HashString("UnsupportedOperationException");
+static constexpr uint32_t INVALID_PASSWORD_HASH = ConstExprHashingUtils::HashString("InvalidPasswordException");
+static constexpr uint32_t INVALID_LAMBDA_RESPONSE_HASH = ConstExprHashingUtils::HashString("InvalidLambdaResponseException");
+static constexpr uint32_t EXPIRED_CODE_HASH = ConstExprHashingUtils::HashString("ExpiredCodeException");
+static constexpr uint32_t UNSUPPORTED_IDENTITY_PROVIDER_HASH = ConstExprHashingUtils::HashString("UnsupportedIdentityProviderException");
+static constexpr uint32_t FORBIDDEN_HASH = ConstExprHashingUtils::HashString("ForbiddenException");
+static constexpr uint32_t CODE_MISMATCH_HASH = ConstExprHashingUtils::HashString("CodeMismatchException");
+static constexpr uint32_t INVALID_O_AUTH_FLOW_HASH = ConstExprHashingUtils::HashString("InvalidOAuthFlowException");
+static constexpr uint32_t USER_POOL_ADD_ON_NOT_ENABLED_HASH = ConstExprHashingUtils::HashString("UserPoolAddOnNotEnabledException");
+static constexpr uint32_t UNSUPPORTED_TOKEN_TYPE_HASH = ConstExprHashingUtils::HashString("UnsupportedTokenTypeException");
+static constexpr uint32_t USER_LAMBDA_VALIDATION_HASH = ConstExprHashingUtils::HashString("UserLambdaValidationException");
+static constexpr uint32_t CODE_DELIVERY_FAILURE_HASH = ConstExprHashingUtils::HashString("CodeDeliveryFailureException");
+static constexpr uint32_t INVALID_USER_POOL_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("InvalidUserPoolConfigurationException");
+static constexpr uint32_t INVALID_EMAIL_ROLE_ACCESS_POLICY_HASH = ConstExprHashingUtils::HashString("InvalidEmailRoleAccessPolicyException");
+static constexpr uint32_t USERNAME_EXISTS_HASH = ConstExprHashingUtils::HashString("UsernameExistsException");
+static constexpr uint32_t SCOPE_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("ScopeDoesNotExistException");
+static constexpr uint32_t USER_IMPORT_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("UserImportInProgressException");
+static constexpr uint32_t USER_POOL_TAGGING_HASH = ConstExprHashingUtils::HashString("UserPoolTaggingException");
+static constexpr uint32_t NOT_AUTHORIZED_HASH = ConstExprHashingUtils::HashString("NotAuthorizedException");
+static constexpr uint32_t TOO_MANY_REQUESTS_HASH = ConstExprHashingUtils::HashString("TooManyRequestsException");
+static constexpr uint32_t PRECONDITION_NOT_MET_HASH = ConstExprHashingUtils::HashString("PreconditionNotMetException");
+static constexpr uint32_t SOFTWARE_TOKEN_M_F_A_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SoftwareTokenMFANotFoundException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == USER_NOT_FOUND_HASH)
   {

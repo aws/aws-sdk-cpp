@@ -20,21 +20,21 @@ namespace Aws
       namespace StatusMapper
       {
 
-        static const int startExpired_HASH = HashingUtils::HashString("startExpired");
-        static const int notStarted_HASH = HashingUtils::HashString("notStarted");
-        static const int started_HASH = HashingUtils::HashString("started");
-        static const int starting_HASH = HashingUtils::HashString("starting");
-        static const int stopped_HASH = HashingUtils::HashString("stopped");
-        static const int stopping_HASH = HashingUtils::HashString("stopping");
-        static const int settingUpInstance_HASH = HashingUtils::HashString("settingUpInstance");
-        static const int failedInstanceCreation_HASH = HashingUtils::HashString("failedInstanceCreation");
-        static const int failedStartingGUISession_HASH = HashingUtils::HashString("failedStartingGUISession");
-        static const int failedStoppingGUISession_HASH = HashingUtils::HashString("failedStoppingGUISession");
+        static constexpr uint32_t startExpired_HASH = ConstExprHashingUtils::HashString("startExpired");
+        static constexpr uint32_t notStarted_HASH = ConstExprHashingUtils::HashString("notStarted");
+        static constexpr uint32_t started_HASH = ConstExprHashingUtils::HashString("started");
+        static constexpr uint32_t starting_HASH = ConstExprHashingUtils::HashString("starting");
+        static constexpr uint32_t stopped_HASH = ConstExprHashingUtils::HashString("stopped");
+        static constexpr uint32_t stopping_HASH = ConstExprHashingUtils::HashString("stopping");
+        static constexpr uint32_t settingUpInstance_HASH = ConstExprHashingUtils::HashString("settingUpInstance");
+        static constexpr uint32_t failedInstanceCreation_HASH = ConstExprHashingUtils::HashString("failedInstanceCreation");
+        static constexpr uint32_t failedStartingGUISession_HASH = ConstExprHashingUtils::HashString("failedStartingGUISession");
+        static constexpr uint32_t failedStoppingGUISession_HASH = ConstExprHashingUtils::HashString("failedStoppingGUISession");
 
 
         Status GetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == startExpired_HASH)
           {
             return Status::startExpired;

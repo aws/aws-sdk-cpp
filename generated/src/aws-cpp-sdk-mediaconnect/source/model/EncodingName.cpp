@@ -20,15 +20,15 @@ namespace Aws
       namespace EncodingNameMapper
       {
 
-        static const int jxsv_HASH = HashingUtils::HashString("jxsv");
-        static const int raw_HASH = HashingUtils::HashString("raw");
-        static const int smpte291_HASH = HashingUtils::HashString("smpte291");
-        static const int pcm_HASH = HashingUtils::HashString("pcm");
+        static constexpr uint32_t jxsv_HASH = ConstExprHashingUtils::HashString("jxsv");
+        static constexpr uint32_t raw_HASH = ConstExprHashingUtils::HashString("raw");
+        static constexpr uint32_t smpte291_HASH = ConstExprHashingUtils::HashString("smpte291");
+        static constexpr uint32_t pcm_HASH = ConstExprHashingUtils::HashString("pcm");
 
 
         EncodingName GetEncodingNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == jxsv_HASH)
           {
             return EncodingName::jxsv;

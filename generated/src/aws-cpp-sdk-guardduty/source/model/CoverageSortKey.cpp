@@ -20,18 +20,18 @@ namespace Aws
       namespace CoverageSortKeyMapper
       {
 
-        static const int ACCOUNT_ID_HASH = HashingUtils::HashString("ACCOUNT_ID");
-        static const int CLUSTER_NAME_HASH = HashingUtils::HashString("CLUSTER_NAME");
-        static const int COVERAGE_STATUS_HASH = HashingUtils::HashString("COVERAGE_STATUS");
-        static const int ISSUE_HASH = HashingUtils::HashString("ISSUE");
-        static const int ADDON_VERSION_HASH = HashingUtils::HashString("ADDON_VERSION");
-        static const int UPDATED_AT_HASH = HashingUtils::HashString("UPDATED_AT");
-        static const int EKS_CLUSTER_NAME_HASH = HashingUtils::HashString("EKS_CLUSTER_NAME");
+        static constexpr uint32_t ACCOUNT_ID_HASH = ConstExprHashingUtils::HashString("ACCOUNT_ID");
+        static constexpr uint32_t CLUSTER_NAME_HASH = ConstExprHashingUtils::HashString("CLUSTER_NAME");
+        static constexpr uint32_t COVERAGE_STATUS_HASH = ConstExprHashingUtils::HashString("COVERAGE_STATUS");
+        static constexpr uint32_t ISSUE_HASH = ConstExprHashingUtils::HashString("ISSUE");
+        static constexpr uint32_t ADDON_VERSION_HASH = ConstExprHashingUtils::HashString("ADDON_VERSION");
+        static constexpr uint32_t UPDATED_AT_HASH = ConstExprHashingUtils::HashString("UPDATED_AT");
+        static constexpr uint32_t EKS_CLUSTER_NAME_HASH = ConstExprHashingUtils::HashString("EKS_CLUSTER_NAME");
 
 
         CoverageSortKey GetCoverageSortKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCOUNT_ID_HASH)
           {
             return CoverageSortKey::ACCOUNT_ID;

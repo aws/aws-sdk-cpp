@@ -20,16 +20,16 @@ namespace Aws
       namespace EnvironmentTypeMapper
       {
 
-        static const int WINDOWS_CONTAINER_HASH = HashingUtils::HashString("WINDOWS_CONTAINER");
-        static const int LINUX_CONTAINER_HASH = HashingUtils::HashString("LINUX_CONTAINER");
-        static const int LINUX_GPU_CONTAINER_HASH = HashingUtils::HashString("LINUX_GPU_CONTAINER");
-        static const int ARM_CONTAINER_HASH = HashingUtils::HashString("ARM_CONTAINER");
-        static const int WINDOWS_SERVER_2019_CONTAINER_HASH = HashingUtils::HashString("WINDOWS_SERVER_2019_CONTAINER");
+        static constexpr uint32_t WINDOWS_CONTAINER_HASH = ConstExprHashingUtils::HashString("WINDOWS_CONTAINER");
+        static constexpr uint32_t LINUX_CONTAINER_HASH = ConstExprHashingUtils::HashString("LINUX_CONTAINER");
+        static constexpr uint32_t LINUX_GPU_CONTAINER_HASH = ConstExprHashingUtils::HashString("LINUX_GPU_CONTAINER");
+        static constexpr uint32_t ARM_CONTAINER_HASH = ConstExprHashingUtils::HashString("ARM_CONTAINER");
+        static constexpr uint32_t WINDOWS_SERVER_2019_CONTAINER_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2019_CONTAINER");
 
 
         EnvironmentType GetEnvironmentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WINDOWS_CONTAINER_HASH)
           {
             return EnvironmentType::WINDOWS_CONTAINER;

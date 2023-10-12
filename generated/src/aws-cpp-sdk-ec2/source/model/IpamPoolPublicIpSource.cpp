@@ -20,13 +20,13 @@ namespace Aws
       namespace IpamPoolPublicIpSourceMapper
       {
 
-        static const int amazon_HASH = HashingUtils::HashString("amazon");
-        static const int byoip_HASH = HashingUtils::HashString("byoip");
+        static constexpr uint32_t amazon_HASH = ConstExprHashingUtils::HashString("amazon");
+        static constexpr uint32_t byoip_HASH = ConstExprHashingUtils::HashString("byoip");
 
 
         IpamPoolPublicIpSource GetIpamPoolPublicIpSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == amazon_HASH)
           {
             return IpamPoolPublicIpSource::amazon;

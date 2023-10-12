@@ -20,13 +20,13 @@ namespace Aws
       namespace AssessmentInvokerMapper
       {
 
-        static const int User_HASH = HashingUtils::HashString("User");
-        static const int System_HASH = HashingUtils::HashString("System");
+        static constexpr uint32_t User_HASH = ConstExprHashingUtils::HashString("User");
+        static constexpr uint32_t System_HASH = ConstExprHashingUtils::HashString("System");
 
 
         AssessmentInvoker GetAssessmentInvokerForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == User_HASH)
           {
             return AssessmentInvoker::User;

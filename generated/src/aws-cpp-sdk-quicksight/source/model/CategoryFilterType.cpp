@@ -20,14 +20,14 @@ namespace Aws
       namespace CategoryFilterTypeMapper
       {
 
-        static const int CUSTOM_FILTER_HASH = HashingUtils::HashString("CUSTOM_FILTER");
-        static const int CUSTOM_FILTER_LIST_HASH = HashingUtils::HashString("CUSTOM_FILTER_LIST");
-        static const int FILTER_LIST_HASH = HashingUtils::HashString("FILTER_LIST");
+        static constexpr uint32_t CUSTOM_FILTER_HASH = ConstExprHashingUtils::HashString("CUSTOM_FILTER");
+        static constexpr uint32_t CUSTOM_FILTER_LIST_HASH = ConstExprHashingUtils::HashString("CUSTOM_FILTER_LIST");
+        static constexpr uint32_t FILTER_LIST_HASH = ConstExprHashingUtils::HashString("FILTER_LIST");
 
 
         CategoryFilterType GetCategoryFilterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CUSTOM_FILTER_HASH)
           {
             return CategoryFilterType::CUSTOM_FILTER;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ImpersonationRoleTypeMapper
       {
 
-        static const int FULL_ACCESS_HASH = HashingUtils::HashString("FULL_ACCESS");
-        static const int READ_ONLY_HASH = HashingUtils::HashString("READ_ONLY");
+        static constexpr uint32_t FULL_ACCESS_HASH = ConstExprHashingUtils::HashString("FULL_ACCESS");
+        static constexpr uint32_t READ_ONLY_HASH = ConstExprHashingUtils::HashString("READ_ONLY");
 
 
         ImpersonationRoleType GetImpersonationRoleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FULL_ACCESS_HASH)
           {
             return ImpersonationRoleType::FULL_ACCESS;

@@ -20,16 +20,16 @@ namespace Aws
       namespace ContainerInstanceStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DRAINING_HASH = HashingUtils::HashString("DRAINING");
-        static const int REGISTERING_HASH = HashingUtils::HashString("REGISTERING");
-        static const int DEREGISTERING_HASH = HashingUtils::HashString("DEREGISTERING");
-        static const int REGISTRATION_FAILED_HASH = HashingUtils::HashString("REGISTRATION_FAILED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t DRAINING_HASH = ConstExprHashingUtils::HashString("DRAINING");
+        static constexpr uint32_t REGISTERING_HASH = ConstExprHashingUtils::HashString("REGISTERING");
+        static constexpr uint32_t DEREGISTERING_HASH = ConstExprHashingUtils::HashString("DEREGISTERING");
+        static constexpr uint32_t REGISTRATION_FAILED_HASH = ConstExprHashingUtils::HashString("REGISTRATION_FAILED");
 
 
         ContainerInstanceStatus GetContainerInstanceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return ContainerInstanceStatus::ACTIVE;

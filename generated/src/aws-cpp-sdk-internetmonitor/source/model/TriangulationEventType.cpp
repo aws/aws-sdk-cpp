@@ -20,13 +20,13 @@ namespace Aws
       namespace TriangulationEventTypeMapper
       {
 
-        static const int AWS_HASH = HashingUtils::HashString("AWS");
-        static const int Internet_HASH = HashingUtils::HashString("Internet");
+        static constexpr uint32_t AWS_HASH = ConstExprHashingUtils::HashString("AWS");
+        static constexpr uint32_t Internet_HASH = ConstExprHashingUtils::HashString("Internet");
 
 
         TriangulationEventType GetTriangulationEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_HASH)
           {
             return TriangulationEventType::AWS;

@@ -20,15 +20,15 @@ namespace Aws
       namespace ImageSourceMapper
       {
 
-        static const int AMAZON_MANAGED_HASH = HashingUtils::HashString("AMAZON_MANAGED");
-        static const int AWS_MARKETPLACE_HASH = HashingUtils::HashString("AWS_MARKETPLACE");
-        static const int IMPORTED_HASH = HashingUtils::HashString("IMPORTED");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t AMAZON_MANAGED_HASH = ConstExprHashingUtils::HashString("AMAZON_MANAGED");
+        static constexpr uint32_t AWS_MARKETPLACE_HASH = ConstExprHashingUtils::HashString("AWS_MARKETPLACE");
+        static constexpr uint32_t IMPORTED_HASH = ConstExprHashingUtils::HashString("IMPORTED");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
 
 
         ImageSource GetImageSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AMAZON_MANAGED_HASH)
           {
             return ImageSource::AMAZON_MANAGED;

@@ -20,14 +20,14 @@ namespace Aws
       namespace IpamDiscoveryFailureCodeMapper
       {
 
-        static const int assume_role_failure_HASH = HashingUtils::HashString("assume-role-failure");
-        static const int throttling_failure_HASH = HashingUtils::HashString("throttling-failure");
-        static const int unauthorized_failure_HASH = HashingUtils::HashString("unauthorized-failure");
+        static constexpr uint32_t assume_role_failure_HASH = ConstExprHashingUtils::HashString("assume-role-failure");
+        static constexpr uint32_t throttling_failure_HASH = ConstExprHashingUtils::HashString("throttling-failure");
+        static constexpr uint32_t unauthorized_failure_HASH = ConstExprHashingUtils::HashString("unauthorized-failure");
 
 
         IpamDiscoveryFailureCode GetIpamDiscoveryFailureCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == assume_role_failure_HASH)
           {
             return IpamDiscoveryFailureCode::assume_role_failure;

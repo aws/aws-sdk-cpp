@@ -20,13 +20,13 @@ namespace Aws
       namespace RoomMembershipRoleMapper
       {
 
-        static const int Administrator_HASH = HashingUtils::HashString("Administrator");
-        static const int Member_HASH = HashingUtils::HashString("Member");
+        static constexpr uint32_t Administrator_HASH = ConstExprHashingUtils::HashString("Administrator");
+        static constexpr uint32_t Member_HASH = ConstExprHashingUtils::HashString("Member");
 
 
         RoomMembershipRole GetRoomMembershipRoleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Administrator_HASH)
           {
             return RoomMembershipRole::Administrator;

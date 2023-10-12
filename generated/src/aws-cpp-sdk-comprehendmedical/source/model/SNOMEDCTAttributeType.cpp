@@ -20,17 +20,17 @@ namespace Aws
       namespace SNOMEDCTAttributeTypeMapper
       {
 
-        static const int ACUITY_HASH = HashingUtils::HashString("ACUITY");
-        static const int QUALITY_HASH = HashingUtils::HashString("QUALITY");
-        static const int DIRECTION_HASH = HashingUtils::HashString("DIRECTION");
-        static const int SYSTEM_ORGAN_SITE_HASH = HashingUtils::HashString("SYSTEM_ORGAN_SITE");
-        static const int TEST_VALUE_HASH = HashingUtils::HashString("TEST_VALUE");
-        static const int TEST_UNIT_HASH = HashingUtils::HashString("TEST_UNIT");
+        static constexpr uint32_t ACUITY_HASH = ConstExprHashingUtils::HashString("ACUITY");
+        static constexpr uint32_t QUALITY_HASH = ConstExprHashingUtils::HashString("QUALITY");
+        static constexpr uint32_t DIRECTION_HASH = ConstExprHashingUtils::HashString("DIRECTION");
+        static constexpr uint32_t SYSTEM_ORGAN_SITE_HASH = ConstExprHashingUtils::HashString("SYSTEM_ORGAN_SITE");
+        static constexpr uint32_t TEST_VALUE_HASH = ConstExprHashingUtils::HashString("TEST_VALUE");
+        static constexpr uint32_t TEST_UNIT_HASH = ConstExprHashingUtils::HashString("TEST_UNIT");
 
 
         SNOMEDCTAttributeType GetSNOMEDCTAttributeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACUITY_HASH)
           {
             return SNOMEDCTAttributeType::ACUITY;

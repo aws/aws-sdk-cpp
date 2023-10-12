@@ -20,18 +20,18 @@ namespace Aws
       namespace StepStateMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int CANCEL_PENDING_HASH = HashingUtils::HashString("CANCEL_PENDING");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int INTERRUPTED_HASH = HashingUtils::HashString("INTERRUPTED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t CANCEL_PENDING_HASH = ConstExprHashingUtils::HashString("CANCEL_PENDING");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t INTERRUPTED_HASH = ConstExprHashingUtils::HashString("INTERRUPTED");
 
 
         StepState GetStepStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return StepState::PENDING;

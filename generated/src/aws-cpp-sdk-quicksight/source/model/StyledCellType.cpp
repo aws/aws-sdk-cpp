@@ -20,14 +20,14 @@ namespace Aws
       namespace StyledCellTypeMapper
       {
 
-        static const int TOTAL_HASH = HashingUtils::HashString("TOTAL");
-        static const int METRIC_HEADER_HASH = HashingUtils::HashString("METRIC_HEADER");
-        static const int VALUE_HASH = HashingUtils::HashString("VALUE");
+        static constexpr uint32_t TOTAL_HASH = ConstExprHashingUtils::HashString("TOTAL");
+        static constexpr uint32_t METRIC_HEADER_HASH = ConstExprHashingUtils::HashString("METRIC_HEADER");
+        static constexpr uint32_t VALUE_HASH = ConstExprHashingUtils::HashString("VALUE");
 
 
         StyledCellType GetStyledCellTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TOTAL_HASH)
           {
             return StyledCellType::TOTAL;

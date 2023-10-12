@@ -20,13 +20,13 @@ namespace Aws
       namespace SipRuleTriggerTypeMapper
       {
 
-        static const int ToPhoneNumber_HASH = HashingUtils::HashString("ToPhoneNumber");
-        static const int RequestUriHostname_HASH = HashingUtils::HashString("RequestUriHostname");
+        static constexpr uint32_t ToPhoneNumber_HASH = ConstExprHashingUtils::HashString("ToPhoneNumber");
+        static constexpr uint32_t RequestUriHostname_HASH = ConstExprHashingUtils::HashString("RequestUriHostname");
 
 
         SipRuleTriggerType GetSipRuleTriggerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ToPhoneNumber_HASH)
           {
             return SipRuleTriggerType::ToPhoneNumber;

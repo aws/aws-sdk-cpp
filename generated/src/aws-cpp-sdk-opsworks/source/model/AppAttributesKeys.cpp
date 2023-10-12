@@ -20,15 +20,15 @@ namespace Aws
       namespace AppAttributesKeysMapper
       {
 
-        static const int DocumentRoot_HASH = HashingUtils::HashString("DocumentRoot");
-        static const int RailsEnv_HASH = HashingUtils::HashString("RailsEnv");
-        static const int AutoBundleOnDeploy_HASH = HashingUtils::HashString("AutoBundleOnDeploy");
-        static const int AwsFlowRubySettings_HASH = HashingUtils::HashString("AwsFlowRubySettings");
+        static constexpr uint32_t DocumentRoot_HASH = ConstExprHashingUtils::HashString("DocumentRoot");
+        static constexpr uint32_t RailsEnv_HASH = ConstExprHashingUtils::HashString("RailsEnv");
+        static constexpr uint32_t AutoBundleOnDeploy_HASH = ConstExprHashingUtils::HashString("AutoBundleOnDeploy");
+        static constexpr uint32_t AwsFlowRubySettings_HASH = ConstExprHashingUtils::HashString("AwsFlowRubySettings");
 
 
         AppAttributesKeys GetAppAttributesKeysForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DocumentRoot_HASH)
           {
             return AppAttributesKeys::DocumentRoot;

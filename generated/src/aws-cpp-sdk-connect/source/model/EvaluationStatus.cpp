@@ -20,13 +20,13 @@ namespace Aws
       namespace EvaluationStatusMapper
       {
 
-        static const int DRAFT_HASH = HashingUtils::HashString("DRAFT");
-        static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
+        static constexpr uint32_t DRAFT_HASH = ConstExprHashingUtils::HashString("DRAFT");
+        static constexpr uint32_t SUBMITTED_HASH = ConstExprHashingUtils::HashString("SUBMITTED");
 
 
         EvaluationStatus GetEvaluationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DRAFT_HASH)
           {
             return EvaluationStatus::DRAFT;

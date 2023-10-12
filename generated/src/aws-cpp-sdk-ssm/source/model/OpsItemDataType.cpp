@@ -20,13 +20,13 @@ namespace Aws
       namespace OpsItemDataTypeMapper
       {
 
-        static const int SearchableString_HASH = HashingUtils::HashString("SearchableString");
-        static const int String_HASH = HashingUtils::HashString("String");
+        static constexpr uint32_t SearchableString_HASH = ConstExprHashingUtils::HashString("SearchableString");
+        static constexpr uint32_t String_HASH = ConstExprHashingUtils::HashString("String");
 
 
         OpsItemDataType GetOpsItemDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SearchableString_HASH)
           {
             return OpsItemDataType::SearchableString;

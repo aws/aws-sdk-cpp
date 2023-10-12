@@ -20,17 +20,17 @@ namespace Aws
       namespace FailedItemReasonMapper
       {
 
-        static const int NOT_VALID_ARN_HASH = HashingUtils::HashString("NOT_VALID_ARN");
-        static const int NOT_VALID_PARTITION_HASH = HashingUtils::HashString("NOT_VALID_PARTITION");
-        static const int NOT_VALID_REGION_HASH = HashingUtils::HashString("NOT_VALID_REGION");
-        static const int NOT_VALID_SERVICE_HASH = HashingUtils::HashString("NOT_VALID_SERVICE");
-        static const int NOT_VALID_RESOURCE_TYPE_HASH = HashingUtils::HashString("NOT_VALID_RESOURCE_TYPE");
-        static const int NOT_VALID_ACCOUNT_ID_HASH = HashingUtils::HashString("NOT_VALID_ACCOUNT_ID");
+        static constexpr uint32_t NOT_VALID_ARN_HASH = ConstExprHashingUtils::HashString("NOT_VALID_ARN");
+        static constexpr uint32_t NOT_VALID_PARTITION_HASH = ConstExprHashingUtils::HashString("NOT_VALID_PARTITION");
+        static constexpr uint32_t NOT_VALID_REGION_HASH = ConstExprHashingUtils::HashString("NOT_VALID_REGION");
+        static constexpr uint32_t NOT_VALID_SERVICE_HASH = ConstExprHashingUtils::HashString("NOT_VALID_SERVICE");
+        static constexpr uint32_t NOT_VALID_RESOURCE_TYPE_HASH = ConstExprHashingUtils::HashString("NOT_VALID_RESOURCE_TYPE");
+        static constexpr uint32_t NOT_VALID_ACCOUNT_ID_HASH = ConstExprHashingUtils::HashString("NOT_VALID_ACCOUNT_ID");
 
 
         FailedItemReason GetFailedItemReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOT_VALID_ARN_HASH)
           {
             return FailedItemReason::NOT_VALID_ARN;

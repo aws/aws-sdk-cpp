@@ -20,14 +20,14 @@ namespace Aws
       namespace ModeMapper
       {
 
-        static const int RESUME_HASH = HashingUtils::HashString("RESUME");
-        static const int NEW__HASH = HashingUtils::HashString("NEW");
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
+        static constexpr uint32_t RESUME_HASH = ConstExprHashingUtils::HashString("RESUME");
+        static constexpr uint32_t NEW__HASH = ConstExprHashingUtils::HashString("NEW");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
 
 
         Mode GetModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESUME_HASH)
           {
             return Mode::RESUME;

@@ -47,24 +47,24 @@ template<> AWS_SERVICEDISCOVERY_API TooManyTagsException ServiceDiscoveryError::
 namespace ServiceDiscoveryErrorMapper
 {
 
-static const int NAMESPACE_ALREADY_EXISTS_HASH = HashingUtils::HashString("NamespaceAlreadyExists");
-static const int NAMESPACE_NOT_FOUND_HASH = HashingUtils::HashString("NamespaceNotFound");
-static const int OPERATION_NOT_FOUND_HASH = HashingUtils::HashString("OperationNotFound");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUse");
-static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateRequest");
-static const int SERVICE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ServiceAlreadyExists");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInput");
-static const int INSTANCE_NOT_FOUND_HASH = HashingUtils::HashString("InstanceNotFound");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int REQUEST_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("RequestLimitExceeded");
-static const int SERVICE_NOT_FOUND_HASH = HashingUtils::HashString("ServiceNotFound");
-static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceeded");
-static const int CUSTOM_HEALTH_NOT_FOUND_HASH = HashingUtils::HashString("CustomHealthNotFound");
+static constexpr uint32_t NAMESPACE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("NamespaceAlreadyExists");
+static constexpr uint32_t NAMESPACE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NamespaceNotFound");
+static constexpr uint32_t OPERATION_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("OperationNotFound");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUse");
+static constexpr uint32_t DUPLICATE_REQUEST_HASH = ConstExprHashingUtils::HashString("DuplicateRequest");
+static constexpr uint32_t SERVICE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ServiceAlreadyExists");
+static constexpr uint32_t INVALID_INPUT_HASH = ConstExprHashingUtils::HashString("InvalidInput");
+static constexpr uint32_t INSTANCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("InstanceNotFound");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t REQUEST_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("RequestLimitExceeded");
+static constexpr uint32_t SERVICE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ServiceNotFound");
+static constexpr uint32_t RESOURCE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ResourceLimitExceeded");
+static constexpr uint32_t CUSTOM_HEALTH_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("CustomHealthNotFound");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == NAMESPACE_ALREADY_EXISTS_HASH)
   {

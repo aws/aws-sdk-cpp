@@ -20,20 +20,20 @@ namespace Aws
       namespace JobStatusMapper
       {
 
-        static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int COMPLETED_WITH_ERRORS_HASH = HashingUtils::HashString("COMPLETED_WITH_ERRORS");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int CANCEL_SUBMITTED_HASH = HashingUtils::HashString("CANCEL_SUBMITTED");
-        static const int CANCEL_IN_PROGRESS_HASH = HashingUtils::HashString("CANCEL_IN_PROGRESS");
-        static const int CANCEL_COMPLETED_HASH = HashingUtils::HashString("CANCEL_COMPLETED");
-        static const int CANCEL_FAILED_HASH = HashingUtils::HashString("CANCEL_FAILED");
+        static constexpr uint32_t SUBMITTED_HASH = ConstExprHashingUtils::HashString("SUBMITTED");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t COMPLETED_WITH_ERRORS_HASH = ConstExprHashingUtils::HashString("COMPLETED_WITH_ERRORS");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t CANCEL_SUBMITTED_HASH = ConstExprHashingUtils::HashString("CANCEL_SUBMITTED");
+        static constexpr uint32_t CANCEL_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("CANCEL_IN_PROGRESS");
+        static constexpr uint32_t CANCEL_COMPLETED_HASH = ConstExprHashingUtils::HashString("CANCEL_COMPLETED");
+        static constexpr uint32_t CANCEL_FAILED_HASH = ConstExprHashingUtils::HashString("CANCEL_FAILED");
 
 
         JobStatus GetJobStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUBMITTED_HASH)
           {
             return JobStatus::SUBMITTED;

@@ -20,16 +20,16 @@ namespace Aws
       namespace ImpactLevelMapper
       {
 
-        static const int IL2_HASH = HashingUtils::HashString("IL2");
-        static const int IL4_HASH = HashingUtils::HashString("IL4");
-        static const int IL5_HASH = HashingUtils::HashString("IL5");
-        static const int IL6_HASH = HashingUtils::HashString("IL6");
-        static const int IL99_HASH = HashingUtils::HashString("IL99");
+        static constexpr uint32_t IL2_HASH = ConstExprHashingUtils::HashString("IL2");
+        static constexpr uint32_t IL4_HASH = ConstExprHashingUtils::HashString("IL4");
+        static constexpr uint32_t IL5_HASH = ConstExprHashingUtils::HashString("IL5");
+        static constexpr uint32_t IL6_HASH = ConstExprHashingUtils::HashString("IL6");
+        static constexpr uint32_t IL99_HASH = ConstExprHashingUtils::HashString("IL99");
 
 
         ImpactLevel GetImpactLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IL2_HASH)
           {
             return ImpactLevel::IL2;

@@ -20,13 +20,13 @@ namespace Aws
       namespace LogTypeMapper
       {
 
-        static const int None_HASH = HashingUtils::HashString("None");
-        static const int Tail_HASH = HashingUtils::HashString("Tail");
+        static constexpr uint32_t None_HASH = ConstExprHashingUtils::HashString("None");
+        static constexpr uint32_t Tail_HASH = ConstExprHashingUtils::HashString("Tail");
 
 
         LogType GetLogTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == None_HASH)
           {
             return LogType::None;

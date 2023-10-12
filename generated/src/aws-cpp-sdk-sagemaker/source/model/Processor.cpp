@@ -20,13 +20,13 @@ namespace Aws
       namespace ProcessorMapper
       {
 
-        static const int CPU_HASH = HashingUtils::HashString("CPU");
-        static const int GPU_HASH = HashingUtils::HashString("GPU");
+        static constexpr uint32_t CPU_HASH = ConstExprHashingUtils::HashString("CPU");
+        static constexpr uint32_t GPU_HASH = ConstExprHashingUtils::HashString("GPU");
 
 
         Processor GetProcessorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CPU_HASH)
           {
             return Processor::CPU;

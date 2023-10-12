@@ -20,15 +20,15 @@ namespace Aws
       namespace TestTypeMapper
       {
 
-        static const int Software_HASH = HashingUtils::HashString("Software");
-        static const int Hardware_HASH = HashingUtils::HashString("Hardware");
-        static const int AZ_HASH = HashingUtils::HashString("AZ");
-        static const int Region_HASH = HashingUtils::HashString("Region");
+        static constexpr uint32_t Software_HASH = ConstExprHashingUtils::HashString("Software");
+        static constexpr uint32_t Hardware_HASH = ConstExprHashingUtils::HashString("Hardware");
+        static constexpr uint32_t AZ_HASH = ConstExprHashingUtils::HashString("AZ");
+        static constexpr uint32_t Region_HASH = ConstExprHashingUtils::HashString("Region");
 
 
         TestType GetTestTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Software_HASH)
           {
             return TestType::Software;

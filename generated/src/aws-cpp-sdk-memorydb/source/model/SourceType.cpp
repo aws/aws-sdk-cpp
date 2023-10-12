@@ -20,17 +20,17 @@ namespace Aws
       namespace SourceTypeMapper
       {
 
-        static const int node_HASH = HashingUtils::HashString("node");
-        static const int parameter_group_HASH = HashingUtils::HashString("parameter-group");
-        static const int subnet_group_HASH = HashingUtils::HashString("subnet-group");
-        static const int cluster_HASH = HashingUtils::HashString("cluster");
-        static const int user_HASH = HashingUtils::HashString("user");
-        static const int acl_HASH = HashingUtils::HashString("acl");
+        static constexpr uint32_t node_HASH = ConstExprHashingUtils::HashString("node");
+        static constexpr uint32_t parameter_group_HASH = ConstExprHashingUtils::HashString("parameter-group");
+        static constexpr uint32_t subnet_group_HASH = ConstExprHashingUtils::HashString("subnet-group");
+        static constexpr uint32_t cluster_HASH = ConstExprHashingUtils::HashString("cluster");
+        static constexpr uint32_t user_HASH = ConstExprHashingUtils::HashString("user");
+        static constexpr uint32_t acl_HASH = ConstExprHashingUtils::HashString("acl");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == node_HASH)
           {
             return SourceType::node;

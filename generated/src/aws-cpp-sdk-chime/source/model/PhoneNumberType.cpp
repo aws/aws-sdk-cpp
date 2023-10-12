@@ -20,13 +20,13 @@ namespace Aws
       namespace PhoneNumberTypeMapper
       {
 
-        static const int Local_HASH = HashingUtils::HashString("Local");
-        static const int TollFree_HASH = HashingUtils::HashString("TollFree");
+        static constexpr uint32_t Local_HASH = ConstExprHashingUtils::HashString("Local");
+        static constexpr uint32_t TollFree_HASH = ConstExprHashingUtils::HashString("TollFree");
 
 
         PhoneNumberType GetPhoneNumberTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Local_HASH)
           {
             return PhoneNumberType::Local;

@@ -20,13 +20,13 @@ namespace Aws
       namespace LanguageMapper
       {
 
-        static const int PYTHON_HASH = HashingUtils::HashString("PYTHON");
-        static const int SCALA_HASH = HashingUtils::HashString("SCALA");
+        static constexpr uint32_t PYTHON_HASH = ConstExprHashingUtils::HashString("PYTHON");
+        static constexpr uint32_t SCALA_HASH = ConstExprHashingUtils::HashString("SCALA");
 
 
         Language GetLanguageForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PYTHON_HASH)
           {
             return Language::PYTHON;

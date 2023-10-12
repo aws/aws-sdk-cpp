@@ -26,20 +26,20 @@ template<> AWS_LEXRUNTIMESERVICE_API LimitExceededException LexRuntimeServiceErr
 namespace LexRuntimeServiceErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int BAD_GATEWAY_HASH = HashingUtils::HashString("BadGatewayException");
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int UNSUPPORTED_MEDIA_TYPE_HASH = HashingUtils::HashString("UnsupportedMediaTypeException");
-static const int LOOP_DETECTED_HASH = HashingUtils::HashString("LoopDetectedException");
-static const int DEPENDENCY_FAILED_HASH = HashingUtils::HashString("DependencyFailedException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int NOT_ACCEPTABLE_HASH = HashingUtils::HashString("NotAcceptableException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t BAD_GATEWAY_HASH = ConstExprHashingUtils::HashString("BadGatewayException");
+static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NotFoundException");
+static constexpr uint32_t UNSUPPORTED_MEDIA_TYPE_HASH = ConstExprHashingUtils::HashString("UnsupportedMediaTypeException");
+static constexpr uint32_t LOOP_DETECTED_HASH = ConstExprHashingUtils::HashString("LoopDetectedException");
+static constexpr uint32_t DEPENDENCY_FAILED_HASH = ConstExprHashingUtils::HashString("DependencyFailedException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t NOT_ACCEPTABLE_HASH = ConstExprHashingUtils::HashString("NotAcceptableException");
+static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BadRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

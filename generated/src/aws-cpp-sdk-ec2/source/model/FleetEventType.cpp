@@ -20,14 +20,14 @@ namespace Aws
       namespace FleetEventTypeMapper
       {
 
-        static const int instance_change_HASH = HashingUtils::HashString("instance-change");
-        static const int fleet_change_HASH = HashingUtils::HashString("fleet-change");
-        static const int service_error_HASH = HashingUtils::HashString("service-error");
+        static constexpr uint32_t instance_change_HASH = ConstExprHashingUtils::HashString("instance-change");
+        static constexpr uint32_t fleet_change_HASH = ConstExprHashingUtils::HashString("fleet-change");
+        static constexpr uint32_t service_error_HASH = ConstExprHashingUtils::HashString("service-error");
 
 
         FleetEventType GetFleetEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == instance_change_HASH)
           {
             return FleetEventType::instance_change;

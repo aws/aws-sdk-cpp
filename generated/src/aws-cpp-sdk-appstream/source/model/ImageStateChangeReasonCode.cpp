@@ -20,14 +20,14 @@ namespace Aws
       namespace ImageStateChangeReasonCodeMapper
       {
 
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int IMAGE_BUILDER_NOT_AVAILABLE_HASH = HashingUtils::HashString("IMAGE_BUILDER_NOT_AVAILABLE");
-        static const int IMAGE_COPY_FAILURE_HASH = HashingUtils::HashString("IMAGE_COPY_FAILURE");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t IMAGE_BUILDER_NOT_AVAILABLE_HASH = ConstExprHashingUtils::HashString("IMAGE_BUILDER_NOT_AVAILABLE");
+        static constexpr uint32_t IMAGE_COPY_FAILURE_HASH = ConstExprHashingUtils::HashString("IMAGE_COPY_FAILURE");
 
 
         ImageStateChangeReasonCode GetImageStateChangeReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERNAL_ERROR_HASH)
           {
             return ImageStateChangeReasonCode::INTERNAL_ERROR;

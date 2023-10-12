@@ -20,13 +20,13 @@ namespace Aws
       namespace MaintenanceWindowResourceTypeMapper
       {
 
-        static const int INSTANCE_HASH = HashingUtils::HashString("INSTANCE");
-        static const int RESOURCE_GROUP_HASH = HashingUtils::HashString("RESOURCE_GROUP");
+        static constexpr uint32_t INSTANCE_HASH = ConstExprHashingUtils::HashString("INSTANCE");
+        static constexpr uint32_t RESOURCE_GROUP_HASH = ConstExprHashingUtils::HashString("RESOURCE_GROUP");
 
 
         MaintenanceWindowResourceType GetMaintenanceWindowResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSTANCE_HASH)
           {
             return MaintenanceWindowResourceType::INSTANCE;

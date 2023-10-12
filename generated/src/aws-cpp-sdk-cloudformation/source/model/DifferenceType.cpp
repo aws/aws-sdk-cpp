@@ -20,14 +20,14 @@ namespace Aws
       namespace DifferenceTypeMapper
       {
 
-        static const int ADD_HASH = HashingUtils::HashString("ADD");
-        static const int REMOVE_HASH = HashingUtils::HashString("REMOVE");
-        static const int NOT_EQUAL_HASH = HashingUtils::HashString("NOT_EQUAL");
+        static constexpr uint32_t ADD_HASH = ConstExprHashingUtils::HashString("ADD");
+        static constexpr uint32_t REMOVE_HASH = ConstExprHashingUtils::HashString("REMOVE");
+        static constexpr uint32_t NOT_EQUAL_HASH = ConstExprHashingUtils::HashString("NOT_EQUAL");
 
 
         DifferenceType GetDifferenceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADD_HASH)
           {
             return DifferenceType::ADD;

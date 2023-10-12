@@ -20,14 +20,14 @@ namespace Aws
       namespace FleetTypeMapper
       {
 
-        static const int request_HASH = HashingUtils::HashString("request");
-        static const int maintain_HASH = HashingUtils::HashString("maintain");
-        static const int instant_HASH = HashingUtils::HashString("instant");
+        static constexpr uint32_t request_HASH = ConstExprHashingUtils::HashString("request");
+        static constexpr uint32_t maintain_HASH = ConstExprHashingUtils::HashString("maintain");
+        static constexpr uint32_t instant_HASH = ConstExprHashingUtils::HashString("instant");
 
 
         FleetType GetFleetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == request_HASH)
           {
             return FleetType::request;

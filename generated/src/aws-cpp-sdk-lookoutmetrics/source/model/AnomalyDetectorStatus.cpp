@@ -20,22 +20,22 @@ namespace Aws
       namespace AnomalyDetectorStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int ACTIVATING_HASH = HashingUtils::HashString("ACTIVATING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
-        static const int LEARNING_HASH = HashingUtils::HashString("LEARNING");
-        static const int BACK_TEST_ACTIVATING_HASH = HashingUtils::HashString("BACK_TEST_ACTIVATING");
-        static const int BACK_TEST_ACTIVE_HASH = HashingUtils::HashString("BACK_TEST_ACTIVE");
-        static const int BACK_TEST_COMPLETE_HASH = HashingUtils::HashString("BACK_TEST_COMPLETE");
-        static const int DEACTIVATED_HASH = HashingUtils::HashString("DEACTIVATED");
-        static const int DEACTIVATING_HASH = HashingUtils::HashString("DEACTIVATING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t ACTIVATING_HASH = ConstExprHashingUtils::HashString("ACTIVATING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t INACTIVE_HASH = ConstExprHashingUtils::HashString("INACTIVE");
+        static constexpr uint32_t LEARNING_HASH = ConstExprHashingUtils::HashString("LEARNING");
+        static constexpr uint32_t BACK_TEST_ACTIVATING_HASH = ConstExprHashingUtils::HashString("BACK_TEST_ACTIVATING");
+        static constexpr uint32_t BACK_TEST_ACTIVE_HASH = ConstExprHashingUtils::HashString("BACK_TEST_ACTIVE");
+        static constexpr uint32_t BACK_TEST_COMPLETE_HASH = ConstExprHashingUtils::HashString("BACK_TEST_COMPLETE");
+        static constexpr uint32_t DEACTIVATED_HASH = ConstExprHashingUtils::HashString("DEACTIVATED");
+        static constexpr uint32_t DEACTIVATING_HASH = ConstExprHashingUtils::HashString("DEACTIVATING");
 
 
         AnomalyDetectorStatus GetAnomalyDetectorStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return AnomalyDetectorStatus::ACTIVE;

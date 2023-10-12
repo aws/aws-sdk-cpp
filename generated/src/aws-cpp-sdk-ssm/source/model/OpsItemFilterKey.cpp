@@ -20,39 +20,39 @@ namespace Aws
       namespace OpsItemFilterKeyMapper
       {
 
-        static const int Status_HASH = HashingUtils::HashString("Status");
-        static const int CreatedBy_HASH = HashingUtils::HashString("CreatedBy");
-        static const int Source_HASH = HashingUtils::HashString("Source");
-        static const int Priority_HASH = HashingUtils::HashString("Priority");
-        static const int Title_HASH = HashingUtils::HashString("Title");
-        static const int OpsItemId_HASH = HashingUtils::HashString("OpsItemId");
-        static const int CreatedTime_HASH = HashingUtils::HashString("CreatedTime");
-        static const int LastModifiedTime_HASH = HashingUtils::HashString("LastModifiedTime");
-        static const int ActualStartTime_HASH = HashingUtils::HashString("ActualStartTime");
-        static const int ActualEndTime_HASH = HashingUtils::HashString("ActualEndTime");
-        static const int PlannedStartTime_HASH = HashingUtils::HashString("PlannedStartTime");
-        static const int PlannedEndTime_HASH = HashingUtils::HashString("PlannedEndTime");
-        static const int OperationalData_HASH = HashingUtils::HashString("OperationalData");
-        static const int OperationalDataKey_HASH = HashingUtils::HashString("OperationalDataKey");
-        static const int OperationalDataValue_HASH = HashingUtils::HashString("OperationalDataValue");
-        static const int ResourceId_HASH = HashingUtils::HashString("ResourceId");
-        static const int AutomationId_HASH = HashingUtils::HashString("AutomationId");
-        static const int Category_HASH = HashingUtils::HashString("Category");
-        static const int Severity_HASH = HashingUtils::HashString("Severity");
-        static const int OpsItemType_HASH = HashingUtils::HashString("OpsItemType");
-        static const int ChangeRequestByRequesterArn_HASH = HashingUtils::HashString("ChangeRequestByRequesterArn");
-        static const int ChangeRequestByRequesterName_HASH = HashingUtils::HashString("ChangeRequestByRequesterName");
-        static const int ChangeRequestByApproverArn_HASH = HashingUtils::HashString("ChangeRequestByApproverArn");
-        static const int ChangeRequestByApproverName_HASH = HashingUtils::HashString("ChangeRequestByApproverName");
-        static const int ChangeRequestByTemplate_HASH = HashingUtils::HashString("ChangeRequestByTemplate");
-        static const int ChangeRequestByTargetsResourceGroup_HASH = HashingUtils::HashString("ChangeRequestByTargetsResourceGroup");
-        static const int InsightByType_HASH = HashingUtils::HashString("InsightByType");
-        static const int AccountId_HASH = HashingUtils::HashString("AccountId");
+        static constexpr uint32_t Status_HASH = ConstExprHashingUtils::HashString("Status");
+        static constexpr uint32_t CreatedBy_HASH = ConstExprHashingUtils::HashString("CreatedBy");
+        static constexpr uint32_t Source_HASH = ConstExprHashingUtils::HashString("Source");
+        static constexpr uint32_t Priority_HASH = ConstExprHashingUtils::HashString("Priority");
+        static constexpr uint32_t Title_HASH = ConstExprHashingUtils::HashString("Title");
+        static constexpr uint32_t OpsItemId_HASH = ConstExprHashingUtils::HashString("OpsItemId");
+        static constexpr uint32_t CreatedTime_HASH = ConstExprHashingUtils::HashString("CreatedTime");
+        static constexpr uint32_t LastModifiedTime_HASH = ConstExprHashingUtils::HashString("LastModifiedTime");
+        static constexpr uint32_t ActualStartTime_HASH = ConstExprHashingUtils::HashString("ActualStartTime");
+        static constexpr uint32_t ActualEndTime_HASH = ConstExprHashingUtils::HashString("ActualEndTime");
+        static constexpr uint32_t PlannedStartTime_HASH = ConstExprHashingUtils::HashString("PlannedStartTime");
+        static constexpr uint32_t PlannedEndTime_HASH = ConstExprHashingUtils::HashString("PlannedEndTime");
+        static constexpr uint32_t OperationalData_HASH = ConstExprHashingUtils::HashString("OperationalData");
+        static constexpr uint32_t OperationalDataKey_HASH = ConstExprHashingUtils::HashString("OperationalDataKey");
+        static constexpr uint32_t OperationalDataValue_HASH = ConstExprHashingUtils::HashString("OperationalDataValue");
+        static constexpr uint32_t ResourceId_HASH = ConstExprHashingUtils::HashString("ResourceId");
+        static constexpr uint32_t AutomationId_HASH = ConstExprHashingUtils::HashString("AutomationId");
+        static constexpr uint32_t Category_HASH = ConstExprHashingUtils::HashString("Category");
+        static constexpr uint32_t Severity_HASH = ConstExprHashingUtils::HashString("Severity");
+        static constexpr uint32_t OpsItemType_HASH = ConstExprHashingUtils::HashString("OpsItemType");
+        static constexpr uint32_t ChangeRequestByRequesterArn_HASH = ConstExprHashingUtils::HashString("ChangeRequestByRequesterArn");
+        static constexpr uint32_t ChangeRequestByRequesterName_HASH = ConstExprHashingUtils::HashString("ChangeRequestByRequesterName");
+        static constexpr uint32_t ChangeRequestByApproverArn_HASH = ConstExprHashingUtils::HashString("ChangeRequestByApproverArn");
+        static constexpr uint32_t ChangeRequestByApproverName_HASH = ConstExprHashingUtils::HashString("ChangeRequestByApproverName");
+        static constexpr uint32_t ChangeRequestByTemplate_HASH = ConstExprHashingUtils::HashString("ChangeRequestByTemplate");
+        static constexpr uint32_t ChangeRequestByTargetsResourceGroup_HASH = ConstExprHashingUtils::HashString("ChangeRequestByTargetsResourceGroup");
+        static constexpr uint32_t InsightByType_HASH = ConstExprHashingUtils::HashString("InsightByType");
+        static constexpr uint32_t AccountId_HASH = ConstExprHashingUtils::HashString("AccountId");
 
 
         OpsItemFilterKey GetOpsItemFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Status_HASH)
           {
             return OpsItemFilterKey::Status;

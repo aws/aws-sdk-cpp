@@ -20,20 +20,20 @@ namespace Aws
       namespace EndpointStatusMapper
       {
 
-        static const int OutOfService_HASH = HashingUtils::HashString("OutOfService");
-        static const int Creating_HASH = HashingUtils::HashString("Creating");
-        static const int Updating_HASH = HashingUtils::HashString("Updating");
-        static const int SystemUpdating_HASH = HashingUtils::HashString("SystemUpdating");
-        static const int RollingBack_HASH = HashingUtils::HashString("RollingBack");
-        static const int InService_HASH = HashingUtils::HashString("InService");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int UpdateRollbackFailed_HASH = HashingUtils::HashString("UpdateRollbackFailed");
+        static constexpr uint32_t OutOfService_HASH = ConstExprHashingUtils::HashString("OutOfService");
+        static constexpr uint32_t Creating_HASH = ConstExprHashingUtils::HashString("Creating");
+        static constexpr uint32_t Updating_HASH = ConstExprHashingUtils::HashString("Updating");
+        static constexpr uint32_t SystemUpdating_HASH = ConstExprHashingUtils::HashString("SystemUpdating");
+        static constexpr uint32_t RollingBack_HASH = ConstExprHashingUtils::HashString("RollingBack");
+        static constexpr uint32_t InService_HASH = ConstExprHashingUtils::HashString("InService");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t UpdateRollbackFailed_HASH = ConstExprHashingUtils::HashString("UpdateRollbackFailed");
 
 
         EndpointStatus GetEndpointStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OutOfService_HASH)
           {
             return EndpointStatus::OutOfService;

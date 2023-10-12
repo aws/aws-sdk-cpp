@@ -20,13 +20,13 @@ namespace Aws
       namespace DashIsoPlaybackDeviceCompatibilityMapper
       {
 
-        static const int CENC_V1_HASH = HashingUtils::HashString("CENC_V1");
-        static const int UNENCRYPTED_SEI_HASH = HashingUtils::HashString("UNENCRYPTED_SEI");
+        static constexpr uint32_t CENC_V1_HASH = ConstExprHashingUtils::HashString("CENC_V1");
+        static constexpr uint32_t UNENCRYPTED_SEI_HASH = ConstExprHashingUtils::HashString("UNENCRYPTED_SEI");
 
 
         DashIsoPlaybackDeviceCompatibility GetDashIsoPlaybackDeviceCompatibilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CENC_V1_HASH)
           {
             return DashIsoPlaybackDeviceCompatibility::CENC_V1;

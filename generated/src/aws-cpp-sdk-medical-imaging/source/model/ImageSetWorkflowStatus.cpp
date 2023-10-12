@@ -20,21 +20,21 @@ namespace Aws
       namespace ImageSetWorkflowStatusMapper
       {
 
-        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
-        static const int COPIED_HASH = HashingUtils::HashString("COPIED");
-        static const int COPYING_HASH = HashingUtils::HashString("COPYING");
-        static const int COPYING_WITH_READ_ONLY_ACCESS_HASH = HashingUtils::HashString("COPYING_WITH_READ_ONLY_ACCESS");
-        static const int COPY_FAILED_HASH = HashingUtils::HashString("COPY_FAILED");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int UPDATED_HASH = HashingUtils::HashString("UPDATED");
-        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t CREATED_HASH = ConstExprHashingUtils::HashString("CREATED");
+        static constexpr uint32_t COPIED_HASH = ConstExprHashingUtils::HashString("COPIED");
+        static constexpr uint32_t COPYING_HASH = ConstExprHashingUtils::HashString("COPYING");
+        static constexpr uint32_t COPYING_WITH_READ_ONLY_ACCESS_HASH = ConstExprHashingUtils::HashString("COPYING_WITH_READ_ONLY_ACCESS");
+        static constexpr uint32_t COPY_FAILED_HASH = ConstExprHashingUtils::HashString("COPY_FAILED");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t UPDATED_HASH = ConstExprHashingUtils::HashString("UPDATED");
+        static constexpr uint32_t UPDATE_FAILED_HASH = ConstExprHashingUtils::HashString("UPDATE_FAILED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         ImageSetWorkflowStatus GetImageSetWorkflowStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATED_HASH)
           {
             return ImageSetWorkflowStatus::CREATED;

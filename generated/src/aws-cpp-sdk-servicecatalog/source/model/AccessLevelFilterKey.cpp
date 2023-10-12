@@ -20,14 +20,14 @@ namespace Aws
       namespace AccessLevelFilterKeyMapper
       {
 
-        static const int Account_HASH = HashingUtils::HashString("Account");
-        static const int Role_HASH = HashingUtils::HashString("Role");
-        static const int User_HASH = HashingUtils::HashString("User");
+        static constexpr uint32_t Account_HASH = ConstExprHashingUtils::HashString("Account");
+        static constexpr uint32_t Role_HASH = ConstExprHashingUtils::HashString("Role");
+        static constexpr uint32_t User_HASH = ConstExprHashingUtils::HashString("User");
 
 
         AccessLevelFilterKey GetAccessLevelFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Account_HASH)
           {
             return AccessLevelFilterKey::Account;

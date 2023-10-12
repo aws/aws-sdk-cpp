@@ -20,14 +20,14 @@ namespace Aws
       namespace InputDeviceOutputTypeMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int MEDIALIVE_INPUT_HASH = HashingUtils::HashString("MEDIALIVE_INPUT");
-        static const int MEDIACONNECT_FLOW_HASH = HashingUtils::HashString("MEDIACONNECT_FLOW");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t MEDIALIVE_INPUT_HASH = ConstExprHashingUtils::HashString("MEDIALIVE_INPUT");
+        static constexpr uint32_t MEDIACONNECT_FLOW_HASH = ConstExprHashingUtils::HashString("MEDIACONNECT_FLOW");
 
 
         InputDeviceOutputType GetInputDeviceOutputTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return InputDeviceOutputType::NONE;

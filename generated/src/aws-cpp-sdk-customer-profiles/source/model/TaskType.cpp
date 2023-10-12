@@ -20,18 +20,18 @@ namespace Aws
       namespace TaskTypeMapper
       {
 
-        static const int Arithmetic_HASH = HashingUtils::HashString("Arithmetic");
-        static const int Filter_HASH = HashingUtils::HashString("Filter");
-        static const int Map_HASH = HashingUtils::HashString("Map");
-        static const int Mask_HASH = HashingUtils::HashString("Mask");
-        static const int Merge_HASH = HashingUtils::HashString("Merge");
-        static const int Truncate_HASH = HashingUtils::HashString("Truncate");
-        static const int Validate_HASH = HashingUtils::HashString("Validate");
+        static constexpr uint32_t Arithmetic_HASH = ConstExprHashingUtils::HashString("Arithmetic");
+        static constexpr uint32_t Filter_HASH = ConstExprHashingUtils::HashString("Filter");
+        static constexpr uint32_t Map_HASH = ConstExprHashingUtils::HashString("Map");
+        static constexpr uint32_t Mask_HASH = ConstExprHashingUtils::HashString("Mask");
+        static constexpr uint32_t Merge_HASH = ConstExprHashingUtils::HashString("Merge");
+        static constexpr uint32_t Truncate_HASH = ConstExprHashingUtils::HashString("Truncate");
+        static constexpr uint32_t Validate_HASH = ConstExprHashingUtils::HashString("Validate");
 
 
         TaskType GetTaskTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Arithmetic_HASH)
           {
             return TaskType::Arithmetic;

@@ -20,13 +20,13 @@ namespace Aws
       namespace Eac3AtmosDownmixControlMapper
       {
 
-        static const int SPECIFIED_HASH = HashingUtils::HashString("SPECIFIED");
-        static const int INITIALIZE_FROM_SOURCE_HASH = HashingUtils::HashString("INITIALIZE_FROM_SOURCE");
+        static constexpr uint32_t SPECIFIED_HASH = ConstExprHashingUtils::HashString("SPECIFIED");
+        static constexpr uint32_t INITIALIZE_FROM_SOURCE_HASH = ConstExprHashingUtils::HashString("INITIALIZE_FROM_SOURCE");
 
 
         Eac3AtmosDownmixControl GetEac3AtmosDownmixControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SPECIFIED_HASH)
           {
             return Eac3AtmosDownmixControl::SPECIFIED;

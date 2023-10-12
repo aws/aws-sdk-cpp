@@ -20,14 +20,14 @@ namespace Aws
       namespace ConfirmationStateMapper
       {
 
-        static const int Confirmed_HASH = HashingUtils::HashString("Confirmed");
-        static const int Denied_HASH = HashingUtils::HashString("Denied");
-        static const int None_HASH = HashingUtils::HashString("None");
+        static constexpr uint32_t Confirmed_HASH = ConstExprHashingUtils::HashString("Confirmed");
+        static constexpr uint32_t Denied_HASH = ConstExprHashingUtils::HashString("Denied");
+        static constexpr uint32_t None_HASH = ConstExprHashingUtils::HashString("None");
 
 
         ConfirmationState GetConfirmationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Confirmed_HASH)
           {
             return ConfirmationState::Confirmed;

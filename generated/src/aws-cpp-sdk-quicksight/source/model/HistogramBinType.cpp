@@ -20,13 +20,13 @@ namespace Aws
       namespace HistogramBinTypeMapper
       {
 
-        static const int BIN_COUNT_HASH = HashingUtils::HashString("BIN_COUNT");
-        static const int BIN_WIDTH_HASH = HashingUtils::HashString("BIN_WIDTH");
+        static constexpr uint32_t BIN_COUNT_HASH = ConstExprHashingUtils::HashString("BIN_COUNT");
+        static constexpr uint32_t BIN_WIDTH_HASH = ConstExprHashingUtils::HashString("BIN_WIDTH");
 
 
         HistogramBinType GetHistogramBinTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BIN_COUNT_HASH)
           {
             return HistogramBinType::BIN_COUNT;

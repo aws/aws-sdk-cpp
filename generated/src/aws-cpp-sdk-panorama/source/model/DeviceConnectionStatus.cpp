@@ -20,16 +20,16 @@ namespace Aws
       namespace DeviceConnectionStatusMapper
       {
 
-        static const int ONLINE_HASH = HashingUtils::HashString("ONLINE");
-        static const int OFFLINE_HASH = HashingUtils::HashString("OFFLINE");
-        static const int AWAITING_CREDENTIALS_HASH = HashingUtils::HashString("AWAITING_CREDENTIALS");
-        static const int NOT_AVAILABLE_HASH = HashingUtils::HashString("NOT_AVAILABLE");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t ONLINE_HASH = ConstExprHashingUtils::HashString("ONLINE");
+        static constexpr uint32_t OFFLINE_HASH = ConstExprHashingUtils::HashString("OFFLINE");
+        static constexpr uint32_t AWAITING_CREDENTIALS_HASH = ConstExprHashingUtils::HashString("AWAITING_CREDENTIALS");
+        static constexpr uint32_t NOT_AVAILABLE_HASH = ConstExprHashingUtils::HashString("NOT_AVAILABLE");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         DeviceConnectionStatus GetDeviceConnectionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ONLINE_HASH)
           {
             return DeviceConnectionStatus::ONLINE;

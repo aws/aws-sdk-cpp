@@ -20,12 +20,12 @@ namespace Aws
       namespace ProxyTypeMapper
       {
 
-        static const int API_GATEWAY_HASH = HashingUtils::HashString("API_GATEWAY");
+        static constexpr uint32_t API_GATEWAY_HASH = ConstExprHashingUtils::HashString("API_GATEWAY");
 
 
         ProxyType GetProxyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == API_GATEWAY_HASH)
           {
             return ProxyType::API_GATEWAY;

@@ -20,17 +20,17 @@ namespace Aws
       namespace DisplayFormatMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int PERCENT_HASH = HashingUtils::HashString("PERCENT");
-        static const int CURRENCY_HASH = HashingUtils::HashString("CURRENCY");
-        static const int NUMBER_HASH = HashingUtils::HashString("NUMBER");
-        static const int DATE_HASH = HashingUtils::HashString("DATE");
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t PERCENT_HASH = ConstExprHashingUtils::HashString("PERCENT");
+        static constexpr uint32_t CURRENCY_HASH = ConstExprHashingUtils::HashString("CURRENCY");
+        static constexpr uint32_t NUMBER_HASH = ConstExprHashingUtils::HashString("NUMBER");
+        static constexpr uint32_t DATE_HASH = ConstExprHashingUtils::HashString("DATE");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
 
 
         DisplayFormat GetDisplayFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return DisplayFormat::AUTO;

@@ -20,14 +20,14 @@ namespace Aws
       namespace S3ObjectEncryptionTypeMapper
       {
 
-        static const int SSE_KMS_HASH = HashingUtils::HashString("SSE_KMS");
-        static const int SSE_S3_HASH = HashingUtils::HashString("SSE_S3");
-        static const int NO_ENCRYPTION_HASH = HashingUtils::HashString("NO_ENCRYPTION");
+        static constexpr uint32_t SSE_KMS_HASH = ConstExprHashingUtils::HashString("SSE_KMS");
+        static constexpr uint32_t SSE_S3_HASH = ConstExprHashingUtils::HashString("SSE_S3");
+        static constexpr uint32_t NO_ENCRYPTION_HASH = ConstExprHashingUtils::HashString("NO_ENCRYPTION");
 
 
         S3ObjectEncryptionType GetS3ObjectEncryptionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SSE_KMS_HASH)
           {
             return S3ObjectEncryptionType::SSE_KMS;

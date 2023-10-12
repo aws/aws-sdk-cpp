@@ -20,13 +20,13 @@ namespace Aws
       namespace VpcEndpointErrorCodeMapper
       {
 
-        static const int ENDPOINT_NOT_FOUND_HASH = HashingUtils::HashString("ENDPOINT_NOT_FOUND");
-        static const int SERVER_ERROR_HASH = HashingUtils::HashString("SERVER_ERROR");
+        static constexpr uint32_t ENDPOINT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ENDPOINT_NOT_FOUND");
+        static constexpr uint32_t SERVER_ERROR_HASH = ConstExprHashingUtils::HashString("SERVER_ERROR");
 
 
         VpcEndpointErrorCode GetVpcEndpointErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENDPOINT_NOT_FOUND_HASH)
           {
             return VpcEndpointErrorCode::ENDPOINT_NOT_FOUND;

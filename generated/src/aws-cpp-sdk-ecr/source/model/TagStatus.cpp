@@ -20,14 +20,14 @@ namespace Aws
       namespace TagStatusMapper
       {
 
-        static const int TAGGED_HASH = HashingUtils::HashString("TAGGED");
-        static const int UNTAGGED_HASH = HashingUtils::HashString("UNTAGGED");
-        static const int ANY_HASH = HashingUtils::HashString("ANY");
+        static constexpr uint32_t TAGGED_HASH = ConstExprHashingUtils::HashString("TAGGED");
+        static constexpr uint32_t UNTAGGED_HASH = ConstExprHashingUtils::HashString("UNTAGGED");
+        static constexpr uint32_t ANY_HASH = ConstExprHashingUtils::HashString("ANY");
 
 
         TagStatus GetTagStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TAGGED_HASH)
           {
             return TagStatus::TAGGED;

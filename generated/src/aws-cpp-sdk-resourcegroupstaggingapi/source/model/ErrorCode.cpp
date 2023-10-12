@@ -20,13 +20,13 @@ namespace Aws
       namespace ErrorCodeMapper
       {
 
-        static const int InternalServiceException_HASH = HashingUtils::HashString("InternalServiceException");
-        static const int InvalidParameterException_HASH = HashingUtils::HashString("InvalidParameterException");
+        static constexpr uint32_t InternalServiceException_HASH = ConstExprHashingUtils::HashString("InternalServiceException");
+        static constexpr uint32_t InvalidParameterException_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InternalServiceException_HASH)
           {
             return ErrorCode::InternalServiceException;

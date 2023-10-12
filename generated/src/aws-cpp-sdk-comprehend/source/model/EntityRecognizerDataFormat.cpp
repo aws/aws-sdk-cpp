@@ -20,13 +20,13 @@ namespace Aws
       namespace EntityRecognizerDataFormatMapper
       {
 
-        static const int COMPREHEND_CSV_HASH = HashingUtils::HashString("COMPREHEND_CSV");
-        static const int AUGMENTED_MANIFEST_HASH = HashingUtils::HashString("AUGMENTED_MANIFEST");
+        static constexpr uint32_t COMPREHEND_CSV_HASH = ConstExprHashingUtils::HashString("COMPREHEND_CSV");
+        static constexpr uint32_t AUGMENTED_MANIFEST_HASH = ConstExprHashingUtils::HashString("AUGMENTED_MANIFEST");
 
 
         EntityRecognizerDataFormat GetEntityRecognizerDataFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPREHEND_CSV_HASH)
           {
             return EntityRecognizerDataFormat::COMPREHEND_CSV;

@@ -20,15 +20,15 @@ namespace Aws
       namespace FailureReasonMapper
       {
 
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int USER_ERROR_HASH = HashingUtils::HashString("USER_ERROR");
-        static const int VALIDATION_ERROR_HASH = HashingUtils::HashString("VALIDATION_ERROR");
-        static const int CLUSTER_UNAVAILABLE_HASH = HashingUtils::HashString("CLUSTER_UNAVAILABLE");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t USER_ERROR_HASH = ConstExprHashingUtils::HashString("USER_ERROR");
+        static constexpr uint32_t VALIDATION_ERROR_HASH = ConstExprHashingUtils::HashString("VALIDATION_ERROR");
+        static constexpr uint32_t CLUSTER_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("CLUSTER_UNAVAILABLE");
 
 
         FailureReason GetFailureReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERNAL_ERROR_HASH)
           {
             return FailureReason::INTERNAL_ERROR;

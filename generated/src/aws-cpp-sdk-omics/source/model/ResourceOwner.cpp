@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceOwnerMapper
       {
 
-        static const int SELF_HASH = HashingUtils::HashString("SELF");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
+        static constexpr uint32_t SELF_HASH = ConstExprHashingUtils::HashString("SELF");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
 
 
         ResourceOwner GetResourceOwnerForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SELF_HASH)
           {
             return ResourceOwner::SELF;

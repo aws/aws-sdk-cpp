@@ -20,14 +20,14 @@ namespace Aws
       namespace FolderContentTypeMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int DOCUMENT_HASH = HashingUtils::HashString("DOCUMENT");
-        static const int FOLDER_HASH = HashingUtils::HashString("FOLDER");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t DOCUMENT_HASH = ConstExprHashingUtils::HashString("DOCUMENT");
+        static constexpr uint32_t FOLDER_HASH = ConstExprHashingUtils::HashString("FOLDER");
 
 
         FolderContentType GetFolderContentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return FolderContentType::ALL;

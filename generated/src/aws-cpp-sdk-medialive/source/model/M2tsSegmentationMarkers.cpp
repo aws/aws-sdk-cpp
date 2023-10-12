@@ -20,17 +20,17 @@ namespace Aws
       namespace M2tsSegmentationMarkersMapper
       {
 
-        static const int EBP_HASH = HashingUtils::HashString("EBP");
-        static const int EBP_LEGACY_HASH = HashingUtils::HashString("EBP_LEGACY");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int PSI_SEGSTART_HASH = HashingUtils::HashString("PSI_SEGSTART");
-        static const int RAI_ADAPT_HASH = HashingUtils::HashString("RAI_ADAPT");
-        static const int RAI_SEGSTART_HASH = HashingUtils::HashString("RAI_SEGSTART");
+        static constexpr uint32_t EBP_HASH = ConstExprHashingUtils::HashString("EBP");
+        static constexpr uint32_t EBP_LEGACY_HASH = ConstExprHashingUtils::HashString("EBP_LEGACY");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t PSI_SEGSTART_HASH = ConstExprHashingUtils::HashString("PSI_SEGSTART");
+        static constexpr uint32_t RAI_ADAPT_HASH = ConstExprHashingUtils::HashString("RAI_ADAPT");
+        static constexpr uint32_t RAI_SEGSTART_HASH = ConstExprHashingUtils::HashString("RAI_SEGSTART");
 
 
         M2tsSegmentationMarkers GetM2tsSegmentationMarkersForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EBP_HASH)
           {
             return M2tsSegmentationMarkers::EBP;

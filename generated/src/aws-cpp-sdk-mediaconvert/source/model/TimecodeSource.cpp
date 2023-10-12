@@ -20,14 +20,14 @@ namespace Aws
       namespace TimecodeSourceMapper
       {
 
-        static const int EMBEDDED_HASH = HashingUtils::HashString("EMBEDDED");
-        static const int ZEROBASED_HASH = HashingUtils::HashString("ZEROBASED");
-        static const int SPECIFIEDSTART_HASH = HashingUtils::HashString("SPECIFIEDSTART");
+        static constexpr uint32_t EMBEDDED_HASH = ConstExprHashingUtils::HashString("EMBEDDED");
+        static constexpr uint32_t ZEROBASED_HASH = ConstExprHashingUtils::HashString("ZEROBASED");
+        static constexpr uint32_t SPECIFIEDSTART_HASH = ConstExprHashingUtils::HashString("SPECIFIEDSTART");
 
 
         TimecodeSource GetTimecodeSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EMBEDDED_HASH)
           {
             return TimecodeSource::EMBEDDED;

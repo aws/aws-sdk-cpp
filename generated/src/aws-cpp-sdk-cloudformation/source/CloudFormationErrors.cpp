@@ -18,33 +18,33 @@ namespace CloudFormation
 namespace CloudFormationErrorMapper
 {
 
-static const int STACK_INSTANCE_NOT_FOUND_HASH = HashingUtils::HashString("StackInstanceNotFoundException");
-static const int TYPE_CONFIGURATION_NOT_FOUND_HASH = HashingUtils::HashString("TypeConfigurationNotFoundException");
-static const int STACK_SET_NOT_FOUND_HASH = HashingUtils::HashString("StackSetNotFoundException");
-static const int OPERATION_STATUS_CHECK_FAILED_HASH = HashingUtils::HashString("ConditionalCheckFailed");
-static const int C_F_N_REGISTRY_HASH = HashingUtils::HashString("CFNRegistryException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
-static const int OPERATION_IN_PROGRESS_HASH = HashingUtils::HashString("OperationInProgressException");
-static const int CHANGE_SET_NOT_FOUND_HASH = HashingUtils::HashString("ChangeSetNotFound");
-static const int OPERATION_ID_ALREADY_EXISTS_HASH = HashingUtils::HashString("OperationIdAlreadyExistsException");
-static const int STALE_REQUEST_HASH = HashingUtils::HashString("StaleRequestException");
-static const int OPERATION_NOT_FOUND_HASH = HashingUtils::HashString("OperationNotFoundException");
-static const int TYPE_NOT_FOUND_HASH = HashingUtils::HashString("TypeNotFoundException");
-static const int INVALID_CHANGE_SET_STATUS_HASH = HashingUtils::HashString("InvalidChangeSetStatus");
-static const int STACK_NOT_FOUND_HASH = HashingUtils::HashString("StackNotFoundException");
-static const int INSUFFICIENT_CAPABILITIES_HASH = HashingUtils::HashString("InsufficientCapabilitiesException");
-static const int CREATED_BUT_MODIFIED_HASH = HashingUtils::HashString("CreatedButModifiedException");
-static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
-static const int TOKEN_ALREADY_EXISTS_HASH = HashingUtils::HashString("TokenAlreadyExistsException");
-static const int NAME_ALREADY_EXISTS_HASH = HashingUtils::HashString("NameAlreadyExistsException");
-static const int STACK_SET_NOT_EMPTY_HASH = HashingUtils::HashString("StackSetNotEmptyException");
-static const int INVALID_STATE_TRANSITION_HASH = HashingUtils::HashString("InvalidStateTransition");
+static constexpr uint32_t STACK_INSTANCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("StackInstanceNotFoundException");
+static constexpr uint32_t TYPE_CONFIGURATION_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("TypeConfigurationNotFoundException");
+static constexpr uint32_t STACK_SET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("StackSetNotFoundException");
+static constexpr uint32_t OPERATION_STATUS_CHECK_FAILED_HASH = ConstExprHashingUtils::HashString("ConditionalCheckFailed");
+static constexpr uint32_t C_F_N_REGISTRY_HASH = ConstExprHashingUtils::HashString("CFNRegistryException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("AlreadyExistsException");
+static constexpr uint32_t OPERATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("OperationInProgressException");
+static constexpr uint32_t CHANGE_SET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ChangeSetNotFound");
+static constexpr uint32_t OPERATION_ID_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("OperationIdAlreadyExistsException");
+static constexpr uint32_t STALE_REQUEST_HASH = ConstExprHashingUtils::HashString("StaleRequestException");
+static constexpr uint32_t OPERATION_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("OperationNotFoundException");
+static constexpr uint32_t TYPE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("TypeNotFoundException");
+static constexpr uint32_t INVALID_CHANGE_SET_STATUS_HASH = ConstExprHashingUtils::HashString("InvalidChangeSetStatus");
+static constexpr uint32_t STACK_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("StackNotFoundException");
+static constexpr uint32_t INSUFFICIENT_CAPABILITIES_HASH = ConstExprHashingUtils::HashString("InsufficientCapabilitiesException");
+static constexpr uint32_t CREATED_BUT_MODIFIED_HASH = ConstExprHashingUtils::HashString("CreatedButModifiedException");
+static constexpr uint32_t INVALID_OPERATION_HASH = ConstExprHashingUtils::HashString("InvalidOperationException");
+static constexpr uint32_t TOKEN_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("TokenAlreadyExistsException");
+static constexpr uint32_t NAME_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("NameAlreadyExistsException");
+static constexpr uint32_t STACK_SET_NOT_EMPTY_HASH = ConstExprHashingUtils::HashString("StackSetNotEmptyException");
+static constexpr uint32_t INVALID_STATE_TRANSITION_HASH = ConstExprHashingUtils::HashString("InvalidStateTransition");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == STACK_INSTANCE_NOT_FOUND_HASH)
   {

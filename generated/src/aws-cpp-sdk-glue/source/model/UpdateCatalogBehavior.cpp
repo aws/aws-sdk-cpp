@@ -20,13 +20,13 @@ namespace Aws
       namespace UpdateCatalogBehaviorMapper
       {
 
-        static const int UPDATE_IN_DATABASE_HASH = HashingUtils::HashString("UPDATE_IN_DATABASE");
-        static const int LOG_HASH = HashingUtils::HashString("LOG");
+        static constexpr uint32_t UPDATE_IN_DATABASE_HASH = ConstExprHashingUtils::HashString("UPDATE_IN_DATABASE");
+        static constexpr uint32_t LOG_HASH = ConstExprHashingUtils::HashString("LOG");
 
 
         UpdateCatalogBehavior GetUpdateCatalogBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UPDATE_IN_DATABASE_HASH)
           {
             return UpdateCatalogBehavior::UPDATE_IN_DATABASE;

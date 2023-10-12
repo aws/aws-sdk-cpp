@@ -20,12 +20,12 @@ namespace Aws
       namespace WorkflowExportMapper
       {
 
-        static const int DEFINITION_HASH = HashingUtils::HashString("DEFINITION");
+        static constexpr uint32_t DEFINITION_HASH = ConstExprHashingUtils::HashString("DEFINITION");
 
 
         WorkflowExport GetWorkflowExportForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFINITION_HASH)
           {
             return WorkflowExport::DEFINITION;

@@ -20,13 +20,13 @@ namespace Aws
       namespace AnalyticsIntentStageFieldMapper
       {
 
-        static const int IntentStageName_HASH = HashingUtils::HashString("IntentStageName");
-        static const int SwitchedToIntent_HASH = HashingUtils::HashString("SwitchedToIntent");
+        static constexpr uint32_t IntentStageName_HASH = ConstExprHashingUtils::HashString("IntentStageName");
+        static constexpr uint32_t SwitchedToIntent_HASH = ConstExprHashingUtils::HashString("SwitchedToIntent");
 
 
         AnalyticsIntentStageField GetAnalyticsIntentStageFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IntentStageName_HASH)
           {
             return AnalyticsIntentStageField::IntentStageName;

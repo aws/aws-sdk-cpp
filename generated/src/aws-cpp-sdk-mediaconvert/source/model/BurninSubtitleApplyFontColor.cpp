@@ -20,13 +20,13 @@ namespace Aws
       namespace BurninSubtitleApplyFontColorMapper
       {
 
-        static const int WHITE_TEXT_ONLY_HASH = HashingUtils::HashString("WHITE_TEXT_ONLY");
-        static const int ALL_TEXT_HASH = HashingUtils::HashString("ALL_TEXT");
+        static constexpr uint32_t WHITE_TEXT_ONLY_HASH = ConstExprHashingUtils::HashString("WHITE_TEXT_ONLY");
+        static constexpr uint32_t ALL_TEXT_HASH = ConstExprHashingUtils::HashString("ALL_TEXT");
 
 
         BurninSubtitleApplyFontColor GetBurninSubtitleApplyFontColorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WHITE_TEXT_ONLY_HASH)
           {
             return BurninSubtitleApplyFontColor::WHITE_TEXT_ONLY;

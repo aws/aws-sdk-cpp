@@ -20,13 +20,13 @@ namespace Aws
       namespace EngineMapper
       {
 
-        static const int standard_HASH = HashingUtils::HashString("standard");
-        static const int neural_HASH = HashingUtils::HashString("neural");
+        static constexpr uint32_t standard_HASH = ConstExprHashingUtils::HashString("standard");
+        static constexpr uint32_t neural_HASH = ConstExprHashingUtils::HashString("neural");
 
 
         Engine GetEngineForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == standard_HASH)
           {
             return Engine::standard;

@@ -20,12 +20,12 @@ namespace Aws
       namespace TargetProtectedQueryStatusMapper
       {
 
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
 
 
         TargetProtectedQueryStatus GetTargetProtectedQueryStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CANCELLED_HASH)
           {
             return TargetProtectedQueryStatus::CANCELLED;

@@ -20,39 +20,39 @@ namespace Aws
       namespace AudioChannelTagMapper
       {
 
-        static const int L_HASH = HashingUtils::HashString("L");
-        static const int R_HASH = HashingUtils::HashString("R");
-        static const int C_HASH = HashingUtils::HashString("C");
-        static const int LFE_HASH = HashingUtils::HashString("LFE");
-        static const int LS_HASH = HashingUtils::HashString("LS");
-        static const int RS_HASH = HashingUtils::HashString("RS");
-        static const int LC_HASH = HashingUtils::HashString("LC");
-        static const int RC_HASH = HashingUtils::HashString("RC");
-        static const int CS_HASH = HashingUtils::HashString("CS");
-        static const int LSD_HASH = HashingUtils::HashString("LSD");
-        static const int RSD_HASH = HashingUtils::HashString("RSD");
-        static const int TCS_HASH = HashingUtils::HashString("TCS");
-        static const int VHL_HASH = HashingUtils::HashString("VHL");
-        static const int VHC_HASH = HashingUtils::HashString("VHC");
-        static const int VHR_HASH = HashingUtils::HashString("VHR");
-        static const int TBL_HASH = HashingUtils::HashString("TBL");
-        static const int TBC_HASH = HashingUtils::HashString("TBC");
-        static const int TBR_HASH = HashingUtils::HashString("TBR");
-        static const int RSL_HASH = HashingUtils::HashString("RSL");
-        static const int RSR_HASH = HashingUtils::HashString("RSR");
-        static const int LW_HASH = HashingUtils::HashString("LW");
-        static const int RW_HASH = HashingUtils::HashString("RW");
-        static const int LFE2_HASH = HashingUtils::HashString("LFE2");
-        static const int LT_HASH = HashingUtils::HashString("LT");
-        static const int RT_HASH = HashingUtils::HashString("RT");
-        static const int HI_HASH = HashingUtils::HashString("HI");
-        static const int NAR_HASH = HashingUtils::HashString("NAR");
-        static const int M_HASH = HashingUtils::HashString("M");
+        static constexpr uint32_t L_HASH = ConstExprHashingUtils::HashString("L");
+        static constexpr uint32_t R_HASH = ConstExprHashingUtils::HashString("R");
+        static constexpr uint32_t C_HASH = ConstExprHashingUtils::HashString("C");
+        static constexpr uint32_t LFE_HASH = ConstExprHashingUtils::HashString("LFE");
+        static constexpr uint32_t LS_HASH = ConstExprHashingUtils::HashString("LS");
+        static constexpr uint32_t RS_HASH = ConstExprHashingUtils::HashString("RS");
+        static constexpr uint32_t LC_HASH = ConstExprHashingUtils::HashString("LC");
+        static constexpr uint32_t RC_HASH = ConstExprHashingUtils::HashString("RC");
+        static constexpr uint32_t CS_HASH = ConstExprHashingUtils::HashString("CS");
+        static constexpr uint32_t LSD_HASH = ConstExprHashingUtils::HashString("LSD");
+        static constexpr uint32_t RSD_HASH = ConstExprHashingUtils::HashString("RSD");
+        static constexpr uint32_t TCS_HASH = ConstExprHashingUtils::HashString("TCS");
+        static constexpr uint32_t VHL_HASH = ConstExprHashingUtils::HashString("VHL");
+        static constexpr uint32_t VHC_HASH = ConstExprHashingUtils::HashString("VHC");
+        static constexpr uint32_t VHR_HASH = ConstExprHashingUtils::HashString("VHR");
+        static constexpr uint32_t TBL_HASH = ConstExprHashingUtils::HashString("TBL");
+        static constexpr uint32_t TBC_HASH = ConstExprHashingUtils::HashString("TBC");
+        static constexpr uint32_t TBR_HASH = ConstExprHashingUtils::HashString("TBR");
+        static constexpr uint32_t RSL_HASH = ConstExprHashingUtils::HashString("RSL");
+        static constexpr uint32_t RSR_HASH = ConstExprHashingUtils::HashString("RSR");
+        static constexpr uint32_t LW_HASH = ConstExprHashingUtils::HashString("LW");
+        static constexpr uint32_t RW_HASH = ConstExprHashingUtils::HashString("RW");
+        static constexpr uint32_t LFE2_HASH = ConstExprHashingUtils::HashString("LFE2");
+        static constexpr uint32_t LT_HASH = ConstExprHashingUtils::HashString("LT");
+        static constexpr uint32_t RT_HASH = ConstExprHashingUtils::HashString("RT");
+        static constexpr uint32_t HI_HASH = ConstExprHashingUtils::HashString("HI");
+        static constexpr uint32_t NAR_HASH = ConstExprHashingUtils::HashString("NAR");
+        static constexpr uint32_t M_HASH = ConstExprHashingUtils::HashString("M");
 
 
         AudioChannelTag GetAudioChannelTagForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == L_HASH)
           {
             return AudioChannelTag::L;

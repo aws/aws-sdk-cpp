@@ -20,13 +20,13 @@ namespace Aws
       namespace M2tsBufferModelMapper
       {
 
-        static const int MULTIPLEX_HASH = HashingUtils::HashString("MULTIPLEX");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t MULTIPLEX_HASH = ConstExprHashingUtils::HashString("MULTIPLEX");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         M2tsBufferModel GetM2tsBufferModelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MULTIPLEX_HASH)
           {
             return M2tsBufferModel::MULTIPLEX;

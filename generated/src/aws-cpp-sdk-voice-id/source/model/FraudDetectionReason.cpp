@@ -20,13 +20,13 @@ namespace Aws
       namespace FraudDetectionReasonMapper
       {
 
-        static const int KNOWN_FRAUDSTER_HASH = HashingUtils::HashString("KNOWN_FRAUDSTER");
-        static const int VOICE_SPOOFING_HASH = HashingUtils::HashString("VOICE_SPOOFING");
+        static constexpr uint32_t KNOWN_FRAUDSTER_HASH = ConstExprHashingUtils::HashString("KNOWN_FRAUDSTER");
+        static constexpr uint32_t VOICE_SPOOFING_HASH = ConstExprHashingUtils::HashString("VOICE_SPOOFING");
 
 
         FraudDetectionReason GetFraudDetectionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KNOWN_FRAUDSTER_HASH)
           {
             return FraudDetectionReason::KNOWN_FRAUDSTER;

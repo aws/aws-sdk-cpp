@@ -20,17 +20,17 @@ namespace Aws
       namespace IdentityProviderTypeTypeMapper
       {
 
-        static const int SAML_HASH = HashingUtils::HashString("SAML");
-        static const int Facebook_HASH = HashingUtils::HashString("Facebook");
-        static const int Google_HASH = HashingUtils::HashString("Google");
-        static const int LoginWithAmazon_HASH = HashingUtils::HashString("LoginWithAmazon");
-        static const int SignInWithApple_HASH = HashingUtils::HashString("SignInWithApple");
-        static const int OIDC_HASH = HashingUtils::HashString("OIDC");
+        static constexpr uint32_t SAML_HASH = ConstExprHashingUtils::HashString("SAML");
+        static constexpr uint32_t Facebook_HASH = ConstExprHashingUtils::HashString("Facebook");
+        static constexpr uint32_t Google_HASH = ConstExprHashingUtils::HashString("Google");
+        static constexpr uint32_t LoginWithAmazon_HASH = ConstExprHashingUtils::HashString("LoginWithAmazon");
+        static constexpr uint32_t SignInWithApple_HASH = ConstExprHashingUtils::HashString("SignInWithApple");
+        static constexpr uint32_t OIDC_HASH = ConstExprHashingUtils::HashString("OIDC");
 
 
         IdentityProviderTypeType GetIdentityProviderTypeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SAML_HASH)
           {
             return IdentityProviderTypeType::SAML;

@@ -20,13 +20,13 @@ namespace Aws
       namespace HttpEndpointS3BackupModeMapper
       {
 
-        static const int FailedDataOnly_HASH = HashingUtils::HashString("FailedDataOnly");
-        static const int AllData_HASH = HashingUtils::HashString("AllData");
+        static constexpr uint32_t FailedDataOnly_HASH = ConstExprHashingUtils::HashString("FailedDataOnly");
+        static constexpr uint32_t AllData_HASH = ConstExprHashingUtils::HashString("AllData");
 
 
         HttpEndpointS3BackupMode GetHttpEndpointS3BackupModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FailedDataOnly_HASH)
           {
             return HttpEndpointS3BackupMode::FailedDataOnly;

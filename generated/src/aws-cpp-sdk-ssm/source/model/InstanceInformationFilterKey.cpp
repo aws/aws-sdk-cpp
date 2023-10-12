@@ -20,19 +20,19 @@ namespace Aws
       namespace InstanceInformationFilterKeyMapper
       {
 
-        static const int InstanceIds_HASH = HashingUtils::HashString("InstanceIds");
-        static const int AgentVersion_HASH = HashingUtils::HashString("AgentVersion");
-        static const int PingStatus_HASH = HashingUtils::HashString("PingStatus");
-        static const int PlatformTypes_HASH = HashingUtils::HashString("PlatformTypes");
-        static const int ActivationIds_HASH = HashingUtils::HashString("ActivationIds");
-        static const int IamRole_HASH = HashingUtils::HashString("IamRole");
-        static const int ResourceType_HASH = HashingUtils::HashString("ResourceType");
-        static const int AssociationStatus_HASH = HashingUtils::HashString("AssociationStatus");
+        static constexpr uint32_t InstanceIds_HASH = ConstExprHashingUtils::HashString("InstanceIds");
+        static constexpr uint32_t AgentVersion_HASH = ConstExprHashingUtils::HashString("AgentVersion");
+        static constexpr uint32_t PingStatus_HASH = ConstExprHashingUtils::HashString("PingStatus");
+        static constexpr uint32_t PlatformTypes_HASH = ConstExprHashingUtils::HashString("PlatformTypes");
+        static constexpr uint32_t ActivationIds_HASH = ConstExprHashingUtils::HashString("ActivationIds");
+        static constexpr uint32_t IamRole_HASH = ConstExprHashingUtils::HashString("IamRole");
+        static constexpr uint32_t ResourceType_HASH = ConstExprHashingUtils::HashString("ResourceType");
+        static constexpr uint32_t AssociationStatus_HASH = ConstExprHashingUtils::HashString("AssociationStatus");
 
 
         InstanceInformationFilterKey GetInstanceInformationFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InstanceIds_HASH)
           {
             return InstanceInformationFilterKey::InstanceIds;

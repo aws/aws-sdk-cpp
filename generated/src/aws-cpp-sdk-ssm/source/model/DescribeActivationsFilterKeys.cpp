@@ -20,14 +20,14 @@ namespace Aws
       namespace DescribeActivationsFilterKeysMapper
       {
 
-        static const int ActivationIds_HASH = HashingUtils::HashString("ActivationIds");
-        static const int DefaultInstanceName_HASH = HashingUtils::HashString("DefaultInstanceName");
-        static const int IamRole_HASH = HashingUtils::HashString("IamRole");
+        static constexpr uint32_t ActivationIds_HASH = ConstExprHashingUtils::HashString("ActivationIds");
+        static constexpr uint32_t DefaultInstanceName_HASH = ConstExprHashingUtils::HashString("DefaultInstanceName");
+        static constexpr uint32_t IamRole_HASH = ConstExprHashingUtils::HashString("IamRole");
 
 
         DescribeActivationsFilterKeys GetDescribeActivationsFilterKeysForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ActivationIds_HASH)
           {
             return DescribeActivationsFilterKeys::ActivationIds;

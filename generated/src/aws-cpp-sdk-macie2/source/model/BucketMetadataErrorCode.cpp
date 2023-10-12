@@ -20,12 +20,12 @@ namespace Aws
       namespace BucketMetadataErrorCodeMapper
       {
 
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
 
 
         BucketMetadataErrorCode GetBucketMetadataErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCESS_DENIED_HASH)
           {
             return BucketMetadataErrorCode::ACCESS_DENIED;

@@ -20,12 +20,12 @@ namespace Aws
       namespace TransitionToPrimaryStorageClassRulesMapper
       {
 
-        static const int AFTER_1_ACCESS_HASH = HashingUtils::HashString("AFTER_1_ACCESS");
+        static constexpr uint32_t AFTER_1_ACCESS_HASH = ConstExprHashingUtils::HashString("AFTER_1_ACCESS");
 
 
         TransitionToPrimaryStorageClassRules GetTransitionToPrimaryStorageClassRulesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AFTER_1_ACCESS_HASH)
           {
             return TransitionToPrimaryStorageClassRules::AFTER_1_ACCESS;

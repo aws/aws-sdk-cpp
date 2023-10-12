@@ -20,15 +20,15 @@ namespace Aws
       namespace DataTypeMapper
       {
 
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
-        static const int INTEGER_HASH = HashingUtils::HashString("INTEGER");
-        static const int STRINGLIST_HASH = HashingUtils::HashString("STRINGLIST");
-        static const int STRINGMAP_HASH = HashingUtils::HashString("STRINGMAP");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
+        static constexpr uint32_t INTEGER_HASH = ConstExprHashingUtils::HashString("INTEGER");
+        static constexpr uint32_t STRINGLIST_HASH = ConstExprHashingUtils::HashString("STRINGLIST");
+        static constexpr uint32_t STRINGMAP_HASH = ConstExprHashingUtils::HashString("STRINGMAP");
 
 
         DataType GetDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STRING_HASH)
           {
             return DataType::STRING;

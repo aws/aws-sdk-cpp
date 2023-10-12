@@ -20,12 +20,12 @@ namespace Aws
       namespace GroupTypeMapper
       {
 
-        static const int TABULAR_HASH = HashingUtils::HashString("TABULAR");
+        static constexpr uint32_t TABULAR_HASH = ConstExprHashingUtils::HashString("TABULAR");
 
 
         GroupType GetGroupTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TABULAR_HASH)
           {
             return GroupType::TABULAR;

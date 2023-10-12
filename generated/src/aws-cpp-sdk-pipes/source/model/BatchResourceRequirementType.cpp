@@ -20,14 +20,14 @@ namespace Aws
       namespace BatchResourceRequirementTypeMapper
       {
 
-        static const int GPU_HASH = HashingUtils::HashString("GPU");
-        static const int MEMORY_HASH = HashingUtils::HashString("MEMORY");
-        static const int VCPU_HASH = HashingUtils::HashString("VCPU");
+        static constexpr uint32_t GPU_HASH = ConstExprHashingUtils::HashString("GPU");
+        static constexpr uint32_t MEMORY_HASH = ConstExprHashingUtils::HashString("MEMORY");
+        static constexpr uint32_t VCPU_HASH = ConstExprHashingUtils::HashString("VCPU");
 
 
         BatchResourceRequirementType GetBatchResourceRequirementTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GPU_HASH)
           {
             return BatchResourceRequirementType::GPU;

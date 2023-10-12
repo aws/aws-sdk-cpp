@@ -18,62 +18,62 @@ namespace MemoryDB
 namespace MemoryDBErrorMapper
 {
 
-static const int SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("SubnetGroupAlreadyExistsFault");
-static const int INVALID_A_R_N_FAULT_HASH = HashingUtils::HashString("InvalidARNFault");
-static const int A_C_L_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ACLQuotaExceededFault");
-static const int CLUSTER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ClusterNotFoundFault");
-static const int PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ParameterGroupQuotaExceededFault");
-static const int RESERVED_NODE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ReservedNodeQuotaExceededFault");
-static const int SNAPSHOT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("SnapshotAlreadyExistsFault");
-static const int SUBNET_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SubnetQuotaExceededFault");
-static const int DEFAULT_USER_REQUIRED_HASH = HashingUtils::HashString("DefaultUserRequired");
-static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet");
-static const int USER_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("UserAlreadyExistsFault");
-static const int USER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("UserNotFoundFault");
-static const int INVALID_K_M_S_KEY_FAULT_HASH = HashingUtils::HashString("InvalidKMSKeyFault");
-static const int SHARDS_PER_CLUSTER_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ShardsPerClusterQuotaExceededFault");
-static const int INVALID_NODE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidNodeStateFault");
-static const int SNAPSHOT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SnapshotNotFoundFault");
-static const int SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SnapshotQuotaExceededFault");
-static const int SERVICE_UPDATE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ServiceUpdateNotFoundFault");
-static const int INSUFFICIENT_CLUSTER_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientClusterCapacityFault");
-static const int SUBNET_NOT_ALLOWED_FAULT_HASH = HashingUtils::HashString("SubnetNotAllowedFault");
-static const int USER_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("UserQuotaExceededFault");
-static const int INVALID_SNAPSHOT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidSnapshotStateFault");
-static const int CLUSTER_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ClusterAlreadyExistsFault");
-static const int TAG_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("TagNotFoundFault");
-static const int A_C_L_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ACLNotFoundFault");
-static const int INVALID_CLUSTER_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterStateFault");
-static const int NODE_QUOTA_FOR_CLUSTER_EXCEEDED_FAULT_HASH = HashingUtils::HashString("NodeQuotaForClusterExceededFault");
-static const int SUBNET_IN_USE_HASH = HashingUtils::HashString("SubnetInUse");
-static const int CLUSTER_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterQuotaForCustomerExceededFault");
-static const int SUBNET_GROUP_IN_USE_FAULT_HASH = HashingUtils::HashString("SubnetGroupInUseFault");
-static const int SHARD_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ShardNotFoundFault");
-static const int INVALID_USER_STATE_FAULT_HASH = HashingUtils::HashString("InvalidUserStateFault");
-static const int A_C_L_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ACLAlreadyExistsFault");
-static const int SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SubnetGroupQuotaExceededFault");
-static const int A_P_I_CALL_RATE_FOR_CUSTOMER_EXCEEDED_FAULT_HASH = HashingUtils::HashString("APICallRateForCustomerExceededFault");
-static const int PARAMETER_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ParameterGroupNotFoundFault");
-static const int PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ParameterGroupAlreadyExistsFault");
-static const int SUBNET_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubnetGroupNotFoundFault");
-static const int INVALID_PARAMETER_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidParameterGroupStateFault");
-static const int SERVICE_LINKED_ROLE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ServiceLinkedRoleNotFoundFault");
-static const int INVALID_V_P_C_NETWORK_STATE_FAULT_HASH = HashingUtils::HashString("InvalidVPCNetworkStateFault");
-static const int TAG_QUOTA_PER_RESOURCE_EXCEEDED_HASH = HashingUtils::HashString("TagQuotaPerResourceExceeded");
-static const int TEST_FAILOVER_NOT_AVAILABLE_FAULT_HASH = HashingUtils::HashString("TestFailoverNotAvailableFault");
-static const int NODE_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT_HASH = HashingUtils::HashString("NodeQuotaForCustomerExceededFault");
-static const int RESERVED_NODES_OFFERING_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedNodesOfferingNotFoundFault");
-static const int RESERVED_NODE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ReservedNodeAlreadyExistsFault");
-static const int INVALID_CREDENTIALS_HASH = HashingUtils::HashString("InvalidCredentialsException");
-static const int DUPLICATE_USER_NAME_FAULT_HASH = HashingUtils::HashString("DuplicateUserNameFault");
-static const int INVALID_A_C_L_STATE_FAULT_HASH = HashingUtils::HashString("InvalidACLStateFault");
-static const int NO_OPERATION_FAULT_HASH = HashingUtils::HashString("NoOperationFault");
-static const int RESERVED_NODE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedNodeNotFoundFault");
+static constexpr uint32_t SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("SubnetGroupAlreadyExistsFault");
+static constexpr uint32_t INVALID_A_R_N_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidARNFault");
+static constexpr uint32_t A_C_L_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("ACLQuotaExceededFault");
+static constexpr uint32_t CLUSTER_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterNotFoundFault");
+static constexpr uint32_t PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("ParameterGroupQuotaExceededFault");
+static constexpr uint32_t RESERVED_NODE_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("ReservedNodeQuotaExceededFault");
+static constexpr uint32_t SNAPSHOT_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("SnapshotAlreadyExistsFault");
+static constexpr uint32_t SUBNET_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("SubnetQuotaExceededFault");
+static constexpr uint32_t DEFAULT_USER_REQUIRED_HASH = ConstExprHashingUtils::HashString("DefaultUserRequired");
+static constexpr uint32_t INVALID_SUBNET_HASH = ConstExprHashingUtils::HashString("InvalidSubnet");
+static constexpr uint32_t USER_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("UserAlreadyExistsFault");
+static constexpr uint32_t USER_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("UserNotFoundFault");
+static constexpr uint32_t INVALID_K_M_S_KEY_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidKMSKeyFault");
+static constexpr uint32_t SHARDS_PER_CLUSTER_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("ShardsPerClusterQuotaExceededFault");
+static constexpr uint32_t INVALID_NODE_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidNodeStateFault");
+static constexpr uint32_t SNAPSHOT_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("SnapshotNotFoundFault");
+static constexpr uint32_t SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("SnapshotQuotaExceededFault");
+static constexpr uint32_t SERVICE_UPDATE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ServiceUpdateNotFoundFault");
+static constexpr uint32_t INSUFFICIENT_CLUSTER_CAPACITY_FAULT_HASH = ConstExprHashingUtils::HashString("InsufficientClusterCapacityFault");
+static constexpr uint32_t SUBNET_NOT_ALLOWED_FAULT_HASH = ConstExprHashingUtils::HashString("SubnetNotAllowedFault");
+static constexpr uint32_t USER_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("UserQuotaExceededFault");
+static constexpr uint32_t INVALID_SNAPSHOT_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidSnapshotStateFault");
+static constexpr uint32_t CLUSTER_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterAlreadyExistsFault");
+static constexpr uint32_t TAG_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("TagNotFoundFault");
+static constexpr uint32_t A_C_L_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ACLNotFoundFault");
+static constexpr uint32_t INVALID_CLUSTER_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidClusterStateFault");
+static constexpr uint32_t NODE_QUOTA_FOR_CLUSTER_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("NodeQuotaForClusterExceededFault");
+static constexpr uint32_t SUBNET_IN_USE_HASH = ConstExprHashingUtils::HashString("SubnetInUse");
+static constexpr uint32_t CLUSTER_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterQuotaForCustomerExceededFault");
+static constexpr uint32_t SUBNET_GROUP_IN_USE_FAULT_HASH = ConstExprHashingUtils::HashString("SubnetGroupInUseFault");
+static constexpr uint32_t SHARD_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ShardNotFoundFault");
+static constexpr uint32_t INVALID_USER_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidUserStateFault");
+static constexpr uint32_t A_C_L_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("ACLAlreadyExistsFault");
+static constexpr uint32_t SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("SubnetGroupQuotaExceededFault");
+static constexpr uint32_t A_P_I_CALL_RATE_FOR_CUSTOMER_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("APICallRateForCustomerExceededFault");
+static constexpr uint32_t PARAMETER_GROUP_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ParameterGroupNotFoundFault");
+static constexpr uint32_t PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("ParameterGroupAlreadyExistsFault");
+static constexpr uint32_t SUBNET_GROUP_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("SubnetGroupNotFoundFault");
+static constexpr uint32_t INVALID_PARAMETER_GROUP_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidParameterGroupStateFault");
+static constexpr uint32_t SERVICE_LINKED_ROLE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ServiceLinkedRoleNotFoundFault");
+static constexpr uint32_t INVALID_V_P_C_NETWORK_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidVPCNetworkStateFault");
+static constexpr uint32_t TAG_QUOTA_PER_RESOURCE_EXCEEDED_HASH = ConstExprHashingUtils::HashString("TagQuotaPerResourceExceeded");
+static constexpr uint32_t TEST_FAILOVER_NOT_AVAILABLE_FAULT_HASH = ConstExprHashingUtils::HashString("TestFailoverNotAvailableFault");
+static constexpr uint32_t NODE_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("NodeQuotaForCustomerExceededFault");
+static constexpr uint32_t RESERVED_NODES_OFFERING_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ReservedNodesOfferingNotFoundFault");
+static constexpr uint32_t RESERVED_NODE_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("ReservedNodeAlreadyExistsFault");
+static constexpr uint32_t INVALID_CREDENTIALS_HASH = ConstExprHashingUtils::HashString("InvalidCredentialsException");
+static constexpr uint32_t DUPLICATE_USER_NAME_FAULT_HASH = ConstExprHashingUtils::HashString("DuplicateUserNameFault");
+static constexpr uint32_t INVALID_A_C_L_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidACLStateFault");
+static constexpr uint32_t NO_OPERATION_FAULT_HASH = ConstExprHashingUtils::HashString("NoOperationFault");
+static constexpr uint32_t RESERVED_NODE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ReservedNodeNotFoundFault");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH)
   {

@@ -20,14 +20,14 @@ namespace Aws
       namespace AzureAccessTierMapper
       {
 
-        static const int HOT_HASH = HashingUtils::HashString("HOT");
-        static const int COOL_HASH = HashingUtils::HashString("COOL");
-        static const int ARCHIVE_HASH = HashingUtils::HashString("ARCHIVE");
+        static constexpr uint32_t HOT_HASH = ConstExprHashingUtils::HashString("HOT");
+        static constexpr uint32_t COOL_HASH = ConstExprHashingUtils::HashString("COOL");
+        static constexpr uint32_t ARCHIVE_HASH = ConstExprHashingUtils::HashString("ARCHIVE");
 
 
         AzureAccessTier GetAzureAccessTierForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HOT_HASH)
           {
             return AzureAccessTier::HOT;

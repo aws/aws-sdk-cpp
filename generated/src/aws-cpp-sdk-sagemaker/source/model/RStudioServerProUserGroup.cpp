@@ -20,13 +20,13 @@ namespace Aws
       namespace RStudioServerProUserGroupMapper
       {
 
-        static const int R_STUDIO_ADMIN_HASH = HashingUtils::HashString("R_STUDIO_ADMIN");
-        static const int R_STUDIO_USER_HASH = HashingUtils::HashString("R_STUDIO_USER");
+        static constexpr uint32_t R_STUDIO_ADMIN_HASH = ConstExprHashingUtils::HashString("R_STUDIO_ADMIN");
+        static constexpr uint32_t R_STUDIO_USER_HASH = ConstExprHashingUtils::HashString("R_STUDIO_USER");
 
 
         RStudioServerProUserGroup GetRStudioServerProUserGroupForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == R_STUDIO_ADMIN_HASH)
           {
             return RStudioServerProUserGroup::R_STUDIO_ADMIN;

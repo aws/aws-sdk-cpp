@@ -20,12 +20,12 @@ namespace Aws
       namespace StartLambdaFunctionFailedCauseMapper
       {
 
-        static const int ASSUME_ROLE_FAILED_HASH = HashingUtils::HashString("ASSUME_ROLE_FAILED");
+        static constexpr uint32_t ASSUME_ROLE_FAILED_HASH = ConstExprHashingUtils::HashString("ASSUME_ROLE_FAILED");
 
 
         StartLambdaFunctionFailedCause GetStartLambdaFunctionFailedCauseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASSUME_ROLE_FAILED_HASH)
           {
             return StartLambdaFunctionFailedCause::ASSUME_ROLE_FAILED;

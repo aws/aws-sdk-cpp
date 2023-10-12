@@ -20,13 +20,13 @@ namespace Aws
       namespace StudioLifecycleConfigAppTypeMapper
       {
 
-        static const int JupyterServer_HASH = HashingUtils::HashString("JupyterServer");
-        static const int KernelGateway_HASH = HashingUtils::HashString("KernelGateway");
+        static constexpr uint32_t JupyterServer_HASH = ConstExprHashingUtils::HashString("JupyterServer");
+        static constexpr uint32_t KernelGateway_HASH = ConstExprHashingUtils::HashString("KernelGateway");
 
 
         StudioLifecycleConfigAppType GetStudioLifecycleConfigAppTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JupyterServer_HASH)
           {
             return StudioLifecycleConfigAppType::JupyterServer;

@@ -20,12 +20,12 @@ namespace Aws
       namespace ExperimentBaseStatMapper
       {
 
-        static const int Mean_HASH = HashingUtils::HashString("Mean");
+        static constexpr uint32_t Mean_HASH = ConstExprHashingUtils::HashString("Mean");
 
 
         ExperimentBaseStat GetExperimentBaseStatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Mean_HASH)
           {
             return ExperimentBaseStat::Mean;

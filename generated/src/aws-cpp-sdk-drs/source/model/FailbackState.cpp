@@ -20,18 +20,18 @@ namespace Aws
       namespace FailbackStateMapper
       {
 
-        static const int FAILBACK_NOT_STARTED_HASH = HashingUtils::HashString("FAILBACK_NOT_STARTED");
-        static const int FAILBACK_IN_PROGRESS_HASH = HashingUtils::HashString("FAILBACK_IN_PROGRESS");
-        static const int FAILBACK_READY_FOR_LAUNCH_HASH = HashingUtils::HashString("FAILBACK_READY_FOR_LAUNCH");
-        static const int FAILBACK_COMPLETED_HASH = HashingUtils::HashString("FAILBACK_COMPLETED");
-        static const int FAILBACK_ERROR_HASH = HashingUtils::HashString("FAILBACK_ERROR");
-        static const int FAILBACK_NOT_READY_FOR_LAUNCH_HASH = HashingUtils::HashString("FAILBACK_NOT_READY_FOR_LAUNCH");
-        static const int FAILBACK_LAUNCH_STATE_NOT_AVAILABLE_HASH = HashingUtils::HashString("FAILBACK_LAUNCH_STATE_NOT_AVAILABLE");
+        static constexpr uint32_t FAILBACK_NOT_STARTED_HASH = ConstExprHashingUtils::HashString("FAILBACK_NOT_STARTED");
+        static constexpr uint32_t FAILBACK_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("FAILBACK_IN_PROGRESS");
+        static constexpr uint32_t FAILBACK_READY_FOR_LAUNCH_HASH = ConstExprHashingUtils::HashString("FAILBACK_READY_FOR_LAUNCH");
+        static constexpr uint32_t FAILBACK_COMPLETED_HASH = ConstExprHashingUtils::HashString("FAILBACK_COMPLETED");
+        static constexpr uint32_t FAILBACK_ERROR_HASH = ConstExprHashingUtils::HashString("FAILBACK_ERROR");
+        static constexpr uint32_t FAILBACK_NOT_READY_FOR_LAUNCH_HASH = ConstExprHashingUtils::HashString("FAILBACK_NOT_READY_FOR_LAUNCH");
+        static constexpr uint32_t FAILBACK_LAUNCH_STATE_NOT_AVAILABLE_HASH = ConstExprHashingUtils::HashString("FAILBACK_LAUNCH_STATE_NOT_AVAILABLE");
 
 
         FailbackState GetFailbackStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FAILBACK_NOT_STARTED_HASH)
           {
             return FailbackState::FAILBACK_NOT_STARTED;

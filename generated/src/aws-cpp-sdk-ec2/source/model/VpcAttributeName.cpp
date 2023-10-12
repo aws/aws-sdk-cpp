@@ -20,14 +20,14 @@ namespace Aws
       namespace VpcAttributeNameMapper
       {
 
-        static const int enableDnsSupport_HASH = HashingUtils::HashString("enableDnsSupport");
-        static const int enableDnsHostnames_HASH = HashingUtils::HashString("enableDnsHostnames");
-        static const int enableNetworkAddressUsageMetrics_HASH = HashingUtils::HashString("enableNetworkAddressUsageMetrics");
+        static constexpr uint32_t enableDnsSupport_HASH = ConstExprHashingUtils::HashString("enableDnsSupport");
+        static constexpr uint32_t enableDnsHostnames_HASH = ConstExprHashingUtils::HashString("enableDnsHostnames");
+        static constexpr uint32_t enableNetworkAddressUsageMetrics_HASH = ConstExprHashingUtils::HashString("enableNetworkAddressUsageMetrics");
 
 
         VpcAttributeName GetVpcAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == enableDnsSupport_HASH)
           {
             return VpcAttributeName::enableDnsSupport;

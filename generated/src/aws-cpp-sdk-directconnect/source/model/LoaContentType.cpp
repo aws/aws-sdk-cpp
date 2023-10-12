@@ -20,12 +20,12 @@ namespace Aws
       namespace LoaContentTypeMapper
       {
 
-        static const int application_pdf_HASH = HashingUtils::HashString("application/pdf");
+        static constexpr uint32_t application_pdf_HASH = ConstExprHashingUtils::HashString("application/pdf");
 
 
         LoaContentType GetLoaContentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == application_pdf_HASH)
           {
             return LoaContentType::application_pdf;

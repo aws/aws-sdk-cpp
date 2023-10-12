@@ -20,13 +20,13 @@ namespace Aws
       namespace RxNormTraitNameMapper
       {
 
-        static const int NEGATION_HASH = HashingUtils::HashString("NEGATION");
-        static const int PAST_HISTORY_HASH = HashingUtils::HashString("PAST_HISTORY");
+        static constexpr uint32_t NEGATION_HASH = ConstExprHashingUtils::HashString("NEGATION");
+        static constexpr uint32_t PAST_HISTORY_HASH = ConstExprHashingUtils::HashString("PAST_HISTORY");
 
 
         RxNormTraitName GetRxNormTraitNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NEGATION_HASH)
           {
             return RxNormTraitName::NEGATION;

@@ -20,13 +20,13 @@ namespace Aws
       namespace MajorKeyDerivationModeMapper
       {
 
-        static const int EMV_OPTION_A_HASH = HashingUtils::HashString("EMV_OPTION_A");
-        static const int EMV_OPTION_B_HASH = HashingUtils::HashString("EMV_OPTION_B");
+        static constexpr uint32_t EMV_OPTION_A_HASH = ConstExprHashingUtils::HashString("EMV_OPTION_A");
+        static constexpr uint32_t EMV_OPTION_B_HASH = ConstExprHashingUtils::HashString("EMV_OPTION_B");
 
 
         MajorKeyDerivationMode GetMajorKeyDerivationModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EMV_OPTION_A_HASH)
           {
             return MajorKeyDerivationMode::EMV_OPTION_A;

@@ -20,16 +20,16 @@ namespace Aws
       namespace CancelSpotInstanceRequestStateMapper
       {
 
-        static const int active_HASH = HashingUtils::HashString("active");
-        static const int open_HASH = HashingUtils::HashString("open");
-        static const int closed_HASH = HashingUtils::HashString("closed");
-        static const int cancelled_HASH = HashingUtils::HashString("cancelled");
-        static const int completed_HASH = HashingUtils::HashString("completed");
+        static constexpr uint32_t active_HASH = ConstExprHashingUtils::HashString("active");
+        static constexpr uint32_t open_HASH = ConstExprHashingUtils::HashString("open");
+        static constexpr uint32_t closed_HASH = ConstExprHashingUtils::HashString("closed");
+        static constexpr uint32_t cancelled_HASH = ConstExprHashingUtils::HashString("cancelled");
+        static constexpr uint32_t completed_HASH = ConstExprHashingUtils::HashString("completed");
 
 
         CancelSpotInstanceRequestState GetCancelSpotInstanceRequestStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == active_HASH)
           {
             return CancelSpotInstanceRequestState::active;

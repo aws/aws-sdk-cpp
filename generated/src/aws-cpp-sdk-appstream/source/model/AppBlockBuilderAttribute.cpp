@@ -20,14 +20,14 @@ namespace Aws
       namespace AppBlockBuilderAttributeMapper
       {
 
-        static const int IAM_ROLE_ARN_HASH = HashingUtils::HashString("IAM_ROLE_ARN");
-        static const int ACCESS_ENDPOINTS_HASH = HashingUtils::HashString("ACCESS_ENDPOINTS");
-        static const int VPC_CONFIGURATION_SECURITY_GROUP_IDS_HASH = HashingUtils::HashString("VPC_CONFIGURATION_SECURITY_GROUP_IDS");
+        static constexpr uint32_t IAM_ROLE_ARN_HASH = ConstExprHashingUtils::HashString("IAM_ROLE_ARN");
+        static constexpr uint32_t ACCESS_ENDPOINTS_HASH = ConstExprHashingUtils::HashString("ACCESS_ENDPOINTS");
+        static constexpr uint32_t VPC_CONFIGURATION_SECURITY_GROUP_IDS_HASH = ConstExprHashingUtils::HashString("VPC_CONFIGURATION_SECURITY_GROUP_IDS");
 
 
         AppBlockBuilderAttribute GetAppBlockBuilderAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IAM_ROLE_ARN_HASH)
           {
             return AppBlockBuilderAttribute::IAM_ROLE_ARN;

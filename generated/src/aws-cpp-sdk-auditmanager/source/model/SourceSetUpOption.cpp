@@ -20,13 +20,13 @@ namespace Aws
       namespace SourceSetUpOptionMapper
       {
 
-        static const int System_Controls_Mapping_HASH = HashingUtils::HashString("System_Controls_Mapping");
-        static const int Procedural_Controls_Mapping_HASH = HashingUtils::HashString("Procedural_Controls_Mapping");
+        static constexpr uint32_t System_Controls_Mapping_HASH = ConstExprHashingUtils::HashString("System_Controls_Mapping");
+        static constexpr uint32_t Procedural_Controls_Mapping_HASH = ConstExprHashingUtils::HashString("Procedural_Controls_Mapping");
 
 
         SourceSetUpOption GetSourceSetUpOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == System_Controls_Mapping_HASH)
           {
             return SourceSetUpOption::System_Controls_Mapping;

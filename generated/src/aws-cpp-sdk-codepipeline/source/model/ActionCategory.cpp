@@ -20,17 +20,17 @@ namespace Aws
       namespace ActionCategoryMapper
       {
 
-        static const int Source_HASH = HashingUtils::HashString("Source");
-        static const int Build_HASH = HashingUtils::HashString("Build");
-        static const int Deploy_HASH = HashingUtils::HashString("Deploy");
-        static const int Test_HASH = HashingUtils::HashString("Test");
-        static const int Invoke_HASH = HashingUtils::HashString("Invoke");
-        static const int Approval_HASH = HashingUtils::HashString("Approval");
+        static constexpr uint32_t Source_HASH = ConstExprHashingUtils::HashString("Source");
+        static constexpr uint32_t Build_HASH = ConstExprHashingUtils::HashString("Build");
+        static constexpr uint32_t Deploy_HASH = ConstExprHashingUtils::HashString("Deploy");
+        static constexpr uint32_t Test_HASH = ConstExprHashingUtils::HashString("Test");
+        static constexpr uint32_t Invoke_HASH = ConstExprHashingUtils::HashString("Invoke");
+        static constexpr uint32_t Approval_HASH = ConstExprHashingUtils::HashString("Approval");
 
 
         ActionCategory GetActionCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Source_HASH)
           {
             return ActionCategory::Source;

@@ -20,14 +20,14 @@ namespace Aws
       namespace UnsuccessfulFaceAssociationReasonMapper
       {
 
-        static const int FACE_NOT_FOUND_HASH = HashingUtils::HashString("FACE_NOT_FOUND");
-        static const int ASSOCIATED_TO_A_DIFFERENT_USER_HASH = HashingUtils::HashString("ASSOCIATED_TO_A_DIFFERENT_USER");
-        static const int LOW_MATCH_CONFIDENCE_HASH = HashingUtils::HashString("LOW_MATCH_CONFIDENCE");
+        static constexpr uint32_t FACE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("FACE_NOT_FOUND");
+        static constexpr uint32_t ASSOCIATED_TO_A_DIFFERENT_USER_HASH = ConstExprHashingUtils::HashString("ASSOCIATED_TO_A_DIFFERENT_USER");
+        static constexpr uint32_t LOW_MATCH_CONFIDENCE_HASH = ConstExprHashingUtils::HashString("LOW_MATCH_CONFIDENCE");
 
 
         UnsuccessfulFaceAssociationReason GetUnsuccessfulFaceAssociationReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FACE_NOT_FOUND_HASH)
           {
             return UnsuccessfulFaceAssociationReason::FACE_NOT_FOUND;

@@ -20,15 +20,15 @@ namespace Aws
       namespace PredefinedLoadMetricTypeMapper
       {
 
-        static const int ASGTotalCPUUtilization_HASH = HashingUtils::HashString("ASGTotalCPUUtilization");
-        static const int ASGTotalNetworkIn_HASH = HashingUtils::HashString("ASGTotalNetworkIn");
-        static const int ASGTotalNetworkOut_HASH = HashingUtils::HashString("ASGTotalNetworkOut");
-        static const int ALBTargetGroupRequestCount_HASH = HashingUtils::HashString("ALBTargetGroupRequestCount");
+        static constexpr uint32_t ASGTotalCPUUtilization_HASH = ConstExprHashingUtils::HashString("ASGTotalCPUUtilization");
+        static constexpr uint32_t ASGTotalNetworkIn_HASH = ConstExprHashingUtils::HashString("ASGTotalNetworkIn");
+        static constexpr uint32_t ASGTotalNetworkOut_HASH = ConstExprHashingUtils::HashString("ASGTotalNetworkOut");
+        static constexpr uint32_t ALBTargetGroupRequestCount_HASH = ConstExprHashingUtils::HashString("ALBTargetGroupRequestCount");
 
 
         PredefinedLoadMetricType GetPredefinedLoadMetricTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASGTotalCPUUtilization_HASH)
           {
             return PredefinedLoadMetricType::ASGTotalCPUUtilization;

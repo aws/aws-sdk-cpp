@@ -20,14 +20,14 @@ namespace Aws
       namespace AnalysisResultLevelMapper
       {
 
-        static const int INFO_HASH = HashingUtils::HashString("INFO");
-        static const int WARNING_HASH = HashingUtils::HashString("WARNING");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t INFO_HASH = ConstExprHashingUtils::HashString("INFO");
+        static constexpr uint32_t WARNING_HASH = ConstExprHashingUtils::HashString("WARNING");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         AnalysisResultLevel GetAnalysisResultLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INFO_HASH)
           {
             return AnalysisResultLevel::INFO;

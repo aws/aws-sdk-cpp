@@ -20,13 +20,13 @@ namespace Aws
       namespace ScheduledActionFilterNameMapper
       {
 
-        static const int cluster_identifier_HASH = HashingUtils::HashString("cluster-identifier");
-        static const int iam_role_HASH = HashingUtils::HashString("iam-role");
+        static constexpr uint32_t cluster_identifier_HASH = ConstExprHashingUtils::HashString("cluster-identifier");
+        static constexpr uint32_t iam_role_HASH = ConstExprHashingUtils::HashString("iam-role");
 
 
         ScheduledActionFilterName GetScheduledActionFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == cluster_identifier_HASH)
           {
             return ScheduledActionFilterName::cluster_identifier;

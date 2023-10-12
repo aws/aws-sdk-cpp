@@ -20,16 +20,16 @@ namespace Aws
       namespace ApplicationDiscoveryStatusMapper
       {
 
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int REGISTRATION_FAILED_HASH = HashingUtils::HashString("REGISTRATION_FAILED");
-        static const int REFRESH_FAILED_HASH = HashingUtils::HashString("REFRESH_FAILED");
-        static const int REGISTERING_HASH = HashingUtils::HashString("REGISTERING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t REGISTRATION_FAILED_HASH = ConstExprHashingUtils::HashString("REGISTRATION_FAILED");
+        static constexpr uint32_t REFRESH_FAILED_HASH = ConstExprHashingUtils::HashString("REFRESH_FAILED");
+        static constexpr uint32_t REGISTERING_HASH = ConstExprHashingUtils::HashString("REGISTERING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
 
 
         ApplicationDiscoveryStatus GetApplicationDiscoveryStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUCCESS_HASH)
           {
             return ApplicationDiscoveryStatus::SUCCESS;

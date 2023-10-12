@@ -20,13 +20,13 @@ namespace Aws
       namespace MovReferenceMapper
       {
 
-        static const int SELF_CONTAINED_HASH = HashingUtils::HashString("SELF_CONTAINED");
-        static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
+        static constexpr uint32_t SELF_CONTAINED_HASH = ConstExprHashingUtils::HashString("SELF_CONTAINED");
+        static constexpr uint32_t EXTERNAL_HASH = ConstExprHashingUtils::HashString("EXTERNAL");
 
 
         MovReference GetMovReferenceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SELF_CONTAINED_HASH)
           {
             return MovReference::SELF_CONTAINED;

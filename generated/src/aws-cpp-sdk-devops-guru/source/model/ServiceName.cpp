@@ -20,36 +20,36 @@ namespace Aws
       namespace ServiceNameMapper
       {
 
-        static const int API_GATEWAY_HASH = HashingUtils::HashString("API_GATEWAY");
-        static const int APPLICATION_ELB_HASH = HashingUtils::HashString("APPLICATION_ELB");
-        static const int AUTO_SCALING_GROUP_HASH = HashingUtils::HashString("AUTO_SCALING_GROUP");
-        static const int CLOUD_FRONT_HASH = HashingUtils::HashString("CLOUD_FRONT");
-        static const int DYNAMO_DB_HASH = HashingUtils::HashString("DYNAMO_DB");
-        static const int EC2_HASH = HashingUtils::HashString("EC2");
-        static const int ECS_HASH = HashingUtils::HashString("ECS");
-        static const int EKS_HASH = HashingUtils::HashString("EKS");
-        static const int ELASTIC_BEANSTALK_HASH = HashingUtils::HashString("ELASTIC_BEANSTALK");
-        static const int ELASTI_CACHE_HASH = HashingUtils::HashString("ELASTI_CACHE");
-        static const int ELB_HASH = HashingUtils::HashString("ELB");
-        static const int ES_HASH = HashingUtils::HashString("ES");
-        static const int KINESIS_HASH = HashingUtils::HashString("KINESIS");
-        static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
-        static const int NAT_GATEWAY_HASH = HashingUtils::HashString("NAT_GATEWAY");
-        static const int NETWORK_ELB_HASH = HashingUtils::HashString("NETWORK_ELB");
-        static const int RDS_HASH = HashingUtils::HashString("RDS");
-        static const int REDSHIFT_HASH = HashingUtils::HashString("REDSHIFT");
-        static const int ROUTE_53_HASH = HashingUtils::HashString("ROUTE_53");
-        static const int S3_HASH = HashingUtils::HashString("S3");
-        static const int SAGE_MAKER_HASH = HashingUtils::HashString("SAGE_MAKER");
-        static const int SNS_HASH = HashingUtils::HashString("SNS");
-        static const int SQS_HASH = HashingUtils::HashString("SQS");
-        static const int STEP_FUNCTIONS_HASH = HashingUtils::HashString("STEP_FUNCTIONS");
-        static const int SWF_HASH = HashingUtils::HashString("SWF");
+        static constexpr uint32_t API_GATEWAY_HASH = ConstExprHashingUtils::HashString("API_GATEWAY");
+        static constexpr uint32_t APPLICATION_ELB_HASH = ConstExprHashingUtils::HashString("APPLICATION_ELB");
+        static constexpr uint32_t AUTO_SCALING_GROUP_HASH = ConstExprHashingUtils::HashString("AUTO_SCALING_GROUP");
+        static constexpr uint32_t CLOUD_FRONT_HASH = ConstExprHashingUtils::HashString("CLOUD_FRONT");
+        static constexpr uint32_t DYNAMO_DB_HASH = ConstExprHashingUtils::HashString("DYNAMO_DB");
+        static constexpr uint32_t EC2_HASH = ConstExprHashingUtils::HashString("EC2");
+        static constexpr uint32_t ECS_HASH = ConstExprHashingUtils::HashString("ECS");
+        static constexpr uint32_t EKS_HASH = ConstExprHashingUtils::HashString("EKS");
+        static constexpr uint32_t ELASTIC_BEANSTALK_HASH = ConstExprHashingUtils::HashString("ELASTIC_BEANSTALK");
+        static constexpr uint32_t ELASTI_CACHE_HASH = ConstExprHashingUtils::HashString("ELASTI_CACHE");
+        static constexpr uint32_t ELB_HASH = ConstExprHashingUtils::HashString("ELB");
+        static constexpr uint32_t ES_HASH = ConstExprHashingUtils::HashString("ES");
+        static constexpr uint32_t KINESIS_HASH = ConstExprHashingUtils::HashString("KINESIS");
+        static constexpr uint32_t LAMBDA_HASH = ConstExprHashingUtils::HashString("LAMBDA");
+        static constexpr uint32_t NAT_GATEWAY_HASH = ConstExprHashingUtils::HashString("NAT_GATEWAY");
+        static constexpr uint32_t NETWORK_ELB_HASH = ConstExprHashingUtils::HashString("NETWORK_ELB");
+        static constexpr uint32_t RDS_HASH = ConstExprHashingUtils::HashString("RDS");
+        static constexpr uint32_t REDSHIFT_HASH = ConstExprHashingUtils::HashString("REDSHIFT");
+        static constexpr uint32_t ROUTE_53_HASH = ConstExprHashingUtils::HashString("ROUTE_53");
+        static constexpr uint32_t S3_HASH = ConstExprHashingUtils::HashString("S3");
+        static constexpr uint32_t SAGE_MAKER_HASH = ConstExprHashingUtils::HashString("SAGE_MAKER");
+        static constexpr uint32_t SNS_HASH = ConstExprHashingUtils::HashString("SNS");
+        static constexpr uint32_t SQS_HASH = ConstExprHashingUtils::HashString("SQS");
+        static constexpr uint32_t STEP_FUNCTIONS_HASH = ConstExprHashingUtils::HashString("STEP_FUNCTIONS");
+        static constexpr uint32_t SWF_HASH = ConstExprHashingUtils::HashString("SWF");
 
 
         ServiceName GetServiceNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == API_GATEWAY_HASH)
           {
             return ServiceName::API_GATEWAY;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceMapper
       {
 
-        static const int FILE_SYSTEM_HASH = HashingUtils::HashString("FILE_SYSTEM");
-        static const int MOUNT_TARGET_HASH = HashingUtils::HashString("MOUNT_TARGET");
+        static constexpr uint32_t FILE_SYSTEM_HASH = ConstExprHashingUtils::HashString("FILE_SYSTEM");
+        static constexpr uint32_t MOUNT_TARGET_HASH = ConstExprHashingUtils::HashString("MOUNT_TARGET");
 
 
         Resource GetResourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FILE_SYSTEM_HASH)
           {
             return Resource::FILE_SYSTEM;

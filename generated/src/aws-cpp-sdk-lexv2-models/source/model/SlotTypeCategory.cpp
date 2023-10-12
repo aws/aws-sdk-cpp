@@ -20,15 +20,15 @@ namespace Aws
       namespace SlotTypeCategoryMapper
       {
 
-        static const int Custom_HASH = HashingUtils::HashString("Custom");
-        static const int Extended_HASH = HashingUtils::HashString("Extended");
-        static const int ExternalGrammar_HASH = HashingUtils::HashString("ExternalGrammar");
-        static const int Composite_HASH = HashingUtils::HashString("Composite");
+        static constexpr uint32_t Custom_HASH = ConstExprHashingUtils::HashString("Custom");
+        static constexpr uint32_t Extended_HASH = ConstExprHashingUtils::HashString("Extended");
+        static constexpr uint32_t ExternalGrammar_HASH = ConstExprHashingUtils::HashString("ExternalGrammar");
+        static constexpr uint32_t Composite_HASH = ConstExprHashingUtils::HashString("Composite");
 
 
         SlotTypeCategory GetSlotTypeCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Custom_HASH)
           {
             return SlotTypeCategory::Custom;

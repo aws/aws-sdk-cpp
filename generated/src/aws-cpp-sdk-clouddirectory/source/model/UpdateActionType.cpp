@@ -20,13 +20,13 @@ namespace Aws
       namespace UpdateActionTypeMapper
       {
 
-        static const int CREATE_OR_UPDATE_HASH = HashingUtils::HashString("CREATE_OR_UPDATE");
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
+        static constexpr uint32_t CREATE_OR_UPDATE_HASH = ConstExprHashingUtils::HashString("CREATE_OR_UPDATE");
+        static constexpr uint32_t DELETE__HASH = ConstExprHashingUtils::HashString("DELETE");
 
 
         UpdateActionType GetUpdateActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_OR_UPDATE_HASH)
           {
             return UpdateActionType::CREATE_OR_UPDATE;

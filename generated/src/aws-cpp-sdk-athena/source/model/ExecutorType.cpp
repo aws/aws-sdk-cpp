@@ -20,14 +20,14 @@ namespace Aws
       namespace ExecutorTypeMapper
       {
 
-        static const int COORDINATOR_HASH = HashingUtils::HashString("COORDINATOR");
-        static const int GATEWAY_HASH = HashingUtils::HashString("GATEWAY");
-        static const int WORKER_HASH = HashingUtils::HashString("WORKER");
+        static constexpr uint32_t COORDINATOR_HASH = ConstExprHashingUtils::HashString("COORDINATOR");
+        static constexpr uint32_t GATEWAY_HASH = ConstExprHashingUtils::HashString("GATEWAY");
+        static constexpr uint32_t WORKER_HASH = ConstExprHashingUtils::HashString("WORKER");
 
 
         ExecutorType GetExecutorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COORDINATOR_HASH)
           {
             return ExecutorType::COORDINATOR;

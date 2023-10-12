@@ -20,12 +20,12 @@ namespace Aws
       namespace AmplitudeConnectorOperatorMapper
       {
 
-        static const int BETWEEN_HASH = HashingUtils::HashString("BETWEEN");
+        static constexpr uint32_t BETWEEN_HASH = ConstExprHashingUtils::HashString("BETWEEN");
 
 
         AmplitudeConnectorOperator GetAmplitudeConnectorOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BETWEEN_HASH)
           {
             return AmplitudeConnectorOperator::BETWEEN;

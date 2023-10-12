@@ -20,15 +20,15 @@ namespace Aws
       namespace InstanceEventWindowStateMapper
       {
 
-        static const int creating_HASH = HashingUtils::HashString("creating");
-        static const int deleting_HASH = HashingUtils::HashString("deleting");
-        static const int active_HASH = HashingUtils::HashString("active");
-        static const int deleted_HASH = HashingUtils::HashString("deleted");
+        static constexpr uint32_t creating_HASH = ConstExprHashingUtils::HashString("creating");
+        static constexpr uint32_t deleting_HASH = ConstExprHashingUtils::HashString("deleting");
+        static constexpr uint32_t active_HASH = ConstExprHashingUtils::HashString("active");
+        static constexpr uint32_t deleted_HASH = ConstExprHashingUtils::HashString("deleted");
 
 
         InstanceEventWindowState GetInstanceEventWindowStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == creating_HASH)
           {
             return InstanceEventWindowState::creating;

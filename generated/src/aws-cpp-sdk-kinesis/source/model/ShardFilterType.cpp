@@ -20,17 +20,17 @@ namespace Aws
       namespace ShardFilterTypeMapper
       {
 
-        static const int AFTER_SHARD_ID_HASH = HashingUtils::HashString("AFTER_SHARD_ID");
-        static const int AT_TRIM_HORIZON_HASH = HashingUtils::HashString("AT_TRIM_HORIZON");
-        static const int FROM_TRIM_HORIZON_HASH = HashingUtils::HashString("FROM_TRIM_HORIZON");
-        static const int AT_LATEST_HASH = HashingUtils::HashString("AT_LATEST");
-        static const int AT_TIMESTAMP_HASH = HashingUtils::HashString("AT_TIMESTAMP");
-        static const int FROM_TIMESTAMP_HASH = HashingUtils::HashString("FROM_TIMESTAMP");
+        static constexpr uint32_t AFTER_SHARD_ID_HASH = ConstExprHashingUtils::HashString("AFTER_SHARD_ID");
+        static constexpr uint32_t AT_TRIM_HORIZON_HASH = ConstExprHashingUtils::HashString("AT_TRIM_HORIZON");
+        static constexpr uint32_t FROM_TRIM_HORIZON_HASH = ConstExprHashingUtils::HashString("FROM_TRIM_HORIZON");
+        static constexpr uint32_t AT_LATEST_HASH = ConstExprHashingUtils::HashString("AT_LATEST");
+        static constexpr uint32_t AT_TIMESTAMP_HASH = ConstExprHashingUtils::HashString("AT_TIMESTAMP");
+        static constexpr uint32_t FROM_TIMESTAMP_HASH = ConstExprHashingUtils::HashString("FROM_TIMESTAMP");
 
 
         ShardFilterType GetShardFilterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AFTER_SHARD_ID_HASH)
           {
             return ShardFilterType::AFTER_SHARD_ID;

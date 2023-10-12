@@ -20,25 +20,25 @@ namespace Aws
       namespace ServiceStatusMapper
       {
 
-        static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
-        static const int CREATE_FAILED_CLEANUP_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_FAILED_CLEANUP_IN_PROGRESS");
-        static const int CREATE_FAILED_CLEANUP_COMPLETE_HASH = HashingUtils::HashString("CREATE_FAILED_CLEANUP_COMPLETE");
-        static const int CREATE_FAILED_CLEANUP_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED_CLEANUP_FAILED");
-        static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
-        static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
-        static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
-        static const int UPDATE_FAILED_CLEANUP_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_FAILED_CLEANUP_IN_PROGRESS");
-        static const int UPDATE_FAILED_CLEANUP_COMPLETE_HASH = HashingUtils::HashString("UPDATE_FAILED_CLEANUP_COMPLETE");
-        static const int UPDATE_FAILED_CLEANUP_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED_CLEANUP_FAILED");
-        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
-        static const int UPDATE_COMPLETE_CLEANUP_FAILED_HASH = HashingUtils::HashString("UPDATE_COMPLETE_CLEANUP_FAILED");
+        static constexpr uint32_t CREATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("CREATE_IN_PROGRESS");
+        static constexpr uint32_t CREATE_FAILED_CLEANUP_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("CREATE_FAILED_CLEANUP_IN_PROGRESS");
+        static constexpr uint32_t CREATE_FAILED_CLEANUP_COMPLETE_HASH = ConstExprHashingUtils::HashString("CREATE_FAILED_CLEANUP_COMPLETE");
+        static constexpr uint32_t CREATE_FAILED_CLEANUP_FAILED_HASH = ConstExprHashingUtils::HashString("CREATE_FAILED_CLEANUP_FAILED");
+        static constexpr uint32_t CREATE_FAILED_HASH = ConstExprHashingUtils::HashString("CREATE_FAILED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t DELETE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("DELETE_IN_PROGRESS");
+        static constexpr uint32_t DELETE_FAILED_HASH = ConstExprHashingUtils::HashString("DELETE_FAILED");
+        static constexpr uint32_t UPDATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("UPDATE_IN_PROGRESS");
+        static constexpr uint32_t UPDATE_FAILED_CLEANUP_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("UPDATE_FAILED_CLEANUP_IN_PROGRESS");
+        static constexpr uint32_t UPDATE_FAILED_CLEANUP_COMPLETE_HASH = ConstExprHashingUtils::HashString("UPDATE_FAILED_CLEANUP_COMPLETE");
+        static constexpr uint32_t UPDATE_FAILED_CLEANUP_FAILED_HASH = ConstExprHashingUtils::HashString("UPDATE_FAILED_CLEANUP_FAILED");
+        static constexpr uint32_t UPDATE_FAILED_HASH = ConstExprHashingUtils::HashString("UPDATE_FAILED");
+        static constexpr uint32_t UPDATE_COMPLETE_CLEANUP_FAILED_HASH = ConstExprHashingUtils::HashString("UPDATE_COMPLETE_CLEANUP_FAILED");
 
 
         ServiceStatus GetServiceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_IN_PROGRESS_HASH)
           {
             return ServiceStatus::CREATE_IN_PROGRESS;

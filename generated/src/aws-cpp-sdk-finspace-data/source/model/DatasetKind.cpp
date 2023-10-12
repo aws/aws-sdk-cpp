@@ -20,13 +20,13 @@ namespace Aws
       namespace DatasetKindMapper
       {
 
-        static const int TABULAR_HASH = HashingUtils::HashString("TABULAR");
-        static const int NON_TABULAR_HASH = HashingUtils::HashString("NON_TABULAR");
+        static constexpr uint32_t TABULAR_HASH = ConstExprHashingUtils::HashString("TABULAR");
+        static constexpr uint32_t NON_TABULAR_HASH = ConstExprHashingUtils::HashString("NON_TABULAR");
 
 
         DatasetKind GetDatasetKindForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TABULAR_HASH)
           {
             return DatasetKind::TABULAR;

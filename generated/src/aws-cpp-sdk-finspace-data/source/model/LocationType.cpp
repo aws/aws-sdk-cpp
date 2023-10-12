@@ -20,13 +20,13 @@ namespace Aws
       namespace LocationTypeMapper
       {
 
-        static const int INGESTION_HASH = HashingUtils::HashString("INGESTION");
-        static const int SAGEMAKER_HASH = HashingUtils::HashString("SAGEMAKER");
+        static constexpr uint32_t INGESTION_HASH = ConstExprHashingUtils::HashString("INGESTION");
+        static constexpr uint32_t SAGEMAKER_HASH = ConstExprHashingUtils::HashString("SAGEMAKER");
 
 
         LocationType GetLocationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INGESTION_HASH)
           {
             return LocationType::INGESTION;

@@ -20,13 +20,13 @@ namespace Aws
       namespace CheckoutTypeMapper
       {
 
-        static const int PROVISIONAL_HASH = HashingUtils::HashString("PROVISIONAL");
-        static const int PERPETUAL_HASH = HashingUtils::HashString("PERPETUAL");
+        static constexpr uint32_t PROVISIONAL_HASH = ConstExprHashingUtils::HashString("PROVISIONAL");
+        static constexpr uint32_t PERPETUAL_HASH = ConstExprHashingUtils::HashString("PERPETUAL");
 
 
         CheckoutType GetCheckoutTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROVISIONAL_HASH)
           {
             return CheckoutType::PROVISIONAL;

@@ -20,20 +20,20 @@ namespace Aws
       namespace EntityTypeMapper
       {
 
-        static const int KEY_HASH = HashingUtils::HashString("KEY");
-        static const int VALUE_HASH = HashingUtils::HashString("VALUE");
-        static const int COLUMN_HEADER_HASH = HashingUtils::HashString("COLUMN_HEADER");
-        static const int TABLE_TITLE_HASH = HashingUtils::HashString("TABLE_TITLE");
-        static const int TABLE_FOOTER_HASH = HashingUtils::HashString("TABLE_FOOTER");
-        static const int TABLE_SECTION_TITLE_HASH = HashingUtils::HashString("TABLE_SECTION_TITLE");
-        static const int TABLE_SUMMARY_HASH = HashingUtils::HashString("TABLE_SUMMARY");
-        static const int STRUCTURED_TABLE_HASH = HashingUtils::HashString("STRUCTURED_TABLE");
-        static const int SEMI_STRUCTURED_TABLE_HASH = HashingUtils::HashString("SEMI_STRUCTURED_TABLE");
+        static constexpr uint32_t KEY_HASH = ConstExprHashingUtils::HashString("KEY");
+        static constexpr uint32_t VALUE_HASH = ConstExprHashingUtils::HashString("VALUE");
+        static constexpr uint32_t COLUMN_HEADER_HASH = ConstExprHashingUtils::HashString("COLUMN_HEADER");
+        static constexpr uint32_t TABLE_TITLE_HASH = ConstExprHashingUtils::HashString("TABLE_TITLE");
+        static constexpr uint32_t TABLE_FOOTER_HASH = ConstExprHashingUtils::HashString("TABLE_FOOTER");
+        static constexpr uint32_t TABLE_SECTION_TITLE_HASH = ConstExprHashingUtils::HashString("TABLE_SECTION_TITLE");
+        static constexpr uint32_t TABLE_SUMMARY_HASH = ConstExprHashingUtils::HashString("TABLE_SUMMARY");
+        static constexpr uint32_t STRUCTURED_TABLE_HASH = ConstExprHashingUtils::HashString("STRUCTURED_TABLE");
+        static constexpr uint32_t SEMI_STRUCTURED_TABLE_HASH = ConstExprHashingUtils::HashString("SEMI_STRUCTURED_TABLE");
 
 
         EntityType GetEntityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KEY_HASH)
           {
             return EntityType::KEY;

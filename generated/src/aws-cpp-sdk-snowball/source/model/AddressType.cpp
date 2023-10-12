@@ -20,13 +20,13 @@ namespace Aws
       namespace AddressTypeMapper
       {
 
-        static const int CUST_PICKUP_HASH = HashingUtils::HashString("CUST_PICKUP");
-        static const int AWS_SHIP_HASH = HashingUtils::HashString("AWS_SHIP");
+        static constexpr uint32_t CUST_PICKUP_HASH = ConstExprHashingUtils::HashString("CUST_PICKUP");
+        static constexpr uint32_t AWS_SHIP_HASH = ConstExprHashingUtils::HashString("AWS_SHIP");
 
 
         AddressType GetAddressTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CUST_PICKUP_HASH)
           {
             return AddressType::CUST_PICKUP;

@@ -20,12 +20,12 @@ namespace Aws
       namespace HookInvocationPointMapper
       {
 
-        static const int PRE_PROVISION_HASH = HashingUtils::HashString("PRE_PROVISION");
+        static constexpr uint32_t PRE_PROVISION_HASH = ConstExprHashingUtils::HashString("PRE_PROVISION");
 
 
         HookInvocationPoint GetHookInvocationPointForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRE_PROVISION_HASH)
           {
             return HookInvocationPoint::PRE_PROVISION;

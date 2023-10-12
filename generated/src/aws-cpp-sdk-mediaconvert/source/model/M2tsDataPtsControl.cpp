@@ -20,13 +20,13 @@ namespace Aws
       namespace M2tsDataPtsControlMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int ALIGN_TO_VIDEO_HASH = HashingUtils::HashString("ALIGN_TO_VIDEO");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t ALIGN_TO_VIDEO_HASH = ConstExprHashingUtils::HashString("ALIGN_TO_VIDEO");
 
 
         M2tsDataPtsControl GetM2tsDataPtsControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return M2tsDataPtsControl::AUTO;

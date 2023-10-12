@@ -20,14 +20,14 @@ namespace Aws
       namespace GroupDefinitionTypeMapper
       {
 
-        static const int DIMENSION_HASH = HashingUtils::HashString("DIMENSION");
-        static const int TAG_HASH = HashingUtils::HashString("TAG");
-        static const int COST_CATEGORY_HASH = HashingUtils::HashString("COST_CATEGORY");
+        static constexpr uint32_t DIMENSION_HASH = ConstExprHashingUtils::HashString("DIMENSION");
+        static constexpr uint32_t TAG_HASH = ConstExprHashingUtils::HashString("TAG");
+        static constexpr uint32_t COST_CATEGORY_HASH = ConstExprHashingUtils::HashString("COST_CATEGORY");
 
 
         GroupDefinitionType GetGroupDefinitionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DIMENSION_HASH)
           {
             return GroupDefinitionType::DIMENSION;

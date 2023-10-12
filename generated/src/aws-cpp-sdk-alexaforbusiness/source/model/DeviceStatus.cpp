@@ -20,16 +20,16 @@ namespace Aws
       namespace DeviceStatusMapper
       {
 
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int WAS_OFFLINE_HASH = HashingUtils::HashString("WAS_OFFLINE");
-        static const int DEREGISTERED_HASH = HashingUtils::HashString("DEREGISTERED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t WAS_OFFLINE_HASH = ConstExprHashingUtils::HashString("WAS_OFFLINE");
+        static constexpr uint32_t DEREGISTERED_HASH = ConstExprHashingUtils::HashString("DEREGISTERED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         DeviceStatus GetDeviceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == READY_HASH)
           {
             return DeviceStatus::READY;

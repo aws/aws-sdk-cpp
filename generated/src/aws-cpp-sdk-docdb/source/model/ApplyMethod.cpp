@@ -20,13 +20,13 @@ namespace Aws
       namespace ApplyMethodMapper
       {
 
-        static const int immediate_HASH = HashingUtils::HashString("immediate");
-        static const int pending_reboot_HASH = HashingUtils::HashString("pending-reboot");
+        static constexpr uint32_t immediate_HASH = ConstExprHashingUtils::HashString("immediate");
+        static constexpr uint32_t pending_reboot_HASH = ConstExprHashingUtils::HashString("pending-reboot");
 
 
         ApplyMethod GetApplyMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == immediate_HASH)
           {
             return ApplyMethod::immediate;

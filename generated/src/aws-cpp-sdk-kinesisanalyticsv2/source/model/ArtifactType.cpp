@@ -20,13 +20,13 @@ namespace Aws
       namespace ArtifactTypeMapper
       {
 
-        static const int UDF_HASH = HashingUtils::HashString("UDF");
-        static const int DEPENDENCY_JAR_HASH = HashingUtils::HashString("DEPENDENCY_JAR");
+        static constexpr uint32_t UDF_HASH = ConstExprHashingUtils::HashString("UDF");
+        static constexpr uint32_t DEPENDENCY_JAR_HASH = ConstExprHashingUtils::HashString("DEPENDENCY_JAR");
 
 
         ArtifactType GetArtifactTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UDF_HASH)
           {
             return ArtifactType::UDF;

@@ -20,12 +20,12 @@ namespace Aws
       namespace TokenProvidersMapper
       {
 
-        static const int figma_HASH = HashingUtils::HashString("figma");
+        static constexpr uint32_t figma_HASH = ConstExprHashingUtils::HashString("figma");
 
 
         TokenProviders GetTokenProvidersForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == figma_HASH)
           {
             return TokenProviders::figma;

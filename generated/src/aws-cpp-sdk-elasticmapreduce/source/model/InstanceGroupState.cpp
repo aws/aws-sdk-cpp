@@ -20,22 +20,22 @@ namespace Aws
       namespace InstanceGroupStateMapper
       {
 
-        static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
-        static const int BOOTSTRAPPING_HASH = HashingUtils::HashString("BOOTSTRAPPING");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int RECONFIGURING_HASH = HashingUtils::HashString("RECONFIGURING");
-        static const int RESIZING_HASH = HashingUtils::HashString("RESIZING");
-        static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
-        static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
-        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
-        static const int ARRESTED_HASH = HashingUtils::HashString("ARRESTED");
-        static const int SHUTTING_DOWN_HASH = HashingUtils::HashString("SHUTTING_DOWN");
-        static const int ENDED_HASH = HashingUtils::HashString("ENDED");
+        static constexpr uint32_t PROVISIONING_HASH = ConstExprHashingUtils::HashString("PROVISIONING");
+        static constexpr uint32_t BOOTSTRAPPING_HASH = ConstExprHashingUtils::HashString("BOOTSTRAPPING");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t RECONFIGURING_HASH = ConstExprHashingUtils::HashString("RECONFIGURING");
+        static constexpr uint32_t RESIZING_HASH = ConstExprHashingUtils::HashString("RESIZING");
+        static constexpr uint32_t SUSPENDED_HASH = ConstExprHashingUtils::HashString("SUSPENDED");
+        static constexpr uint32_t TERMINATING_HASH = ConstExprHashingUtils::HashString("TERMINATING");
+        static constexpr uint32_t TERMINATED_HASH = ConstExprHashingUtils::HashString("TERMINATED");
+        static constexpr uint32_t ARRESTED_HASH = ConstExprHashingUtils::HashString("ARRESTED");
+        static constexpr uint32_t SHUTTING_DOWN_HASH = ConstExprHashingUtils::HashString("SHUTTING_DOWN");
+        static constexpr uint32_t ENDED_HASH = ConstExprHashingUtils::HashString("ENDED");
 
 
         InstanceGroupState GetInstanceGroupStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROVISIONING_HASH)
           {
             return InstanceGroupState::PROVISIONING;

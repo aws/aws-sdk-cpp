@@ -20,13 +20,13 @@ namespace Aws
       namespace CategoricalAggregationFunctionMapper
       {
 
-        static const int COUNT_HASH = HashingUtils::HashString("COUNT");
-        static const int DISTINCT_COUNT_HASH = HashingUtils::HashString("DISTINCT_COUNT");
+        static constexpr uint32_t COUNT_HASH = ConstExprHashingUtils::HashString("COUNT");
+        static constexpr uint32_t DISTINCT_COUNT_HASH = ConstExprHashingUtils::HashString("DISTINCT_COUNT");
 
 
         CategoricalAggregationFunction GetCategoricalAggregationFunctionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COUNT_HASH)
           {
             return CategoricalAggregationFunction::COUNT;

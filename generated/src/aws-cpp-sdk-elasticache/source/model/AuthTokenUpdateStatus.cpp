@@ -20,13 +20,13 @@ namespace Aws
       namespace AuthTokenUpdateStatusMapper
       {
 
-        static const int SETTING_HASH = HashingUtils::HashString("SETTING");
-        static const int ROTATING_HASH = HashingUtils::HashString("ROTATING");
+        static constexpr uint32_t SETTING_HASH = ConstExprHashingUtils::HashString("SETTING");
+        static constexpr uint32_t ROTATING_HASH = ConstExprHashingUtils::HashString("ROTATING");
 
 
         AuthTokenUpdateStatus GetAuthTokenUpdateStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SETTING_HASH)
           {
             return AuthTokenUpdateStatus::SETTING;

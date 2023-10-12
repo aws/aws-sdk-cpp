@@ -20,15 +20,15 @@ namespace Aws
       namespace Scte35DeviceRestrictionsMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int RESTRICT_GROUP0_HASH = HashingUtils::HashString("RESTRICT_GROUP0");
-        static const int RESTRICT_GROUP1_HASH = HashingUtils::HashString("RESTRICT_GROUP1");
-        static const int RESTRICT_GROUP2_HASH = HashingUtils::HashString("RESTRICT_GROUP2");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t RESTRICT_GROUP0_HASH = ConstExprHashingUtils::HashString("RESTRICT_GROUP0");
+        static constexpr uint32_t RESTRICT_GROUP1_HASH = ConstExprHashingUtils::HashString("RESTRICT_GROUP1");
+        static constexpr uint32_t RESTRICT_GROUP2_HASH = ConstExprHashingUtils::HashString("RESTRICT_GROUP2");
 
 
         Scte35DeviceRestrictions GetScte35DeviceRestrictionsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return Scte35DeviceRestrictions::NONE;

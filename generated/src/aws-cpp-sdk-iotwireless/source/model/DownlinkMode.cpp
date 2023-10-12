@@ -20,14 +20,14 @@ namespace Aws
       namespace DownlinkModeMapper
       {
 
-        static const int SEQUENTIAL_HASH = HashingUtils::HashString("SEQUENTIAL");
-        static const int CONCURRENT_HASH = HashingUtils::HashString("CONCURRENT");
-        static const int USING_UPLINK_GATEWAY_HASH = HashingUtils::HashString("USING_UPLINK_GATEWAY");
+        static constexpr uint32_t SEQUENTIAL_HASH = ConstExprHashingUtils::HashString("SEQUENTIAL");
+        static constexpr uint32_t CONCURRENT_HASH = ConstExprHashingUtils::HashString("CONCURRENT");
+        static constexpr uint32_t USING_UPLINK_GATEWAY_HASH = ConstExprHashingUtils::HashString("USING_UPLINK_GATEWAY");
 
 
         DownlinkMode GetDownlinkModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SEQUENTIAL_HASH)
           {
             return DownlinkMode::SEQUENTIAL;

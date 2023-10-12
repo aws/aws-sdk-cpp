@@ -20,12 +20,12 @@ namespace Aws
       namespace BrowserTypeMapper
       {
 
-        static const int Chrome_HASH = HashingUtils::HashString("Chrome");
+        static constexpr uint32_t Chrome_HASH = ConstExprHashingUtils::HashString("Chrome");
 
 
         BrowserType GetBrowserTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Chrome_HASH)
           {
             return BrowserType::Chrome;

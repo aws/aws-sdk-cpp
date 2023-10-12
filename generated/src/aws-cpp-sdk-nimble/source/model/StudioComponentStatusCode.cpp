@@ -20,21 +20,21 @@ namespace Aws
       namespace StudioComponentStatusCodeMapper
       {
 
-        static const int ACTIVE_DIRECTORY_ALREADY_EXISTS_HASH = HashingUtils::HashString("ACTIVE_DIRECTORY_ALREADY_EXISTS");
-        static const int STUDIO_COMPONENT_CREATED_HASH = HashingUtils::HashString("STUDIO_COMPONENT_CREATED");
-        static const int STUDIO_COMPONENT_UPDATED_HASH = HashingUtils::HashString("STUDIO_COMPONENT_UPDATED");
-        static const int STUDIO_COMPONENT_DELETED_HASH = HashingUtils::HashString("STUDIO_COMPONENT_DELETED");
-        static const int ENCRYPTION_KEY_ACCESS_DENIED_HASH = HashingUtils::HashString("ENCRYPTION_KEY_ACCESS_DENIED");
-        static const int ENCRYPTION_KEY_NOT_FOUND_HASH = HashingUtils::HashString("ENCRYPTION_KEY_NOT_FOUND");
-        static const int STUDIO_COMPONENT_CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("STUDIO_COMPONENT_CREATE_IN_PROGRESS");
-        static const int STUDIO_COMPONENT_UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("STUDIO_COMPONENT_UPDATE_IN_PROGRESS");
-        static const int STUDIO_COMPONENT_DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("STUDIO_COMPONENT_DELETE_IN_PROGRESS");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t ACTIVE_DIRECTORY_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ACTIVE_DIRECTORY_ALREADY_EXISTS");
+        static constexpr uint32_t STUDIO_COMPONENT_CREATED_HASH = ConstExprHashingUtils::HashString("STUDIO_COMPONENT_CREATED");
+        static constexpr uint32_t STUDIO_COMPONENT_UPDATED_HASH = ConstExprHashingUtils::HashString("STUDIO_COMPONENT_UPDATED");
+        static constexpr uint32_t STUDIO_COMPONENT_DELETED_HASH = ConstExprHashingUtils::HashString("STUDIO_COMPONENT_DELETED");
+        static constexpr uint32_t ENCRYPTION_KEY_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ENCRYPTION_KEY_ACCESS_DENIED");
+        static constexpr uint32_t ENCRYPTION_KEY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ENCRYPTION_KEY_NOT_FOUND");
+        static constexpr uint32_t STUDIO_COMPONENT_CREATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("STUDIO_COMPONENT_CREATE_IN_PROGRESS");
+        static constexpr uint32_t STUDIO_COMPONENT_UPDATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("STUDIO_COMPONENT_UPDATE_IN_PROGRESS");
+        static constexpr uint32_t STUDIO_COMPONENT_DELETE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("STUDIO_COMPONENT_DELETE_IN_PROGRESS");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
 
 
         StudioComponentStatusCode GetStudioComponentStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_DIRECTORY_ALREADY_EXISTS_HASH)
           {
             return StudioComponentStatusCode::ACTIVE_DIRECTORY_ALREADY_EXISTS;

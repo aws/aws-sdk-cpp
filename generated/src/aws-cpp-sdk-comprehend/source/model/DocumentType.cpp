@@ -20,18 +20,18 @@ namespace Aws
       namespace DocumentTypeMapper
       {
 
-        static const int NATIVE_PDF_HASH = HashingUtils::HashString("NATIVE_PDF");
-        static const int SCANNED_PDF_HASH = HashingUtils::HashString("SCANNED_PDF");
-        static const int MS_WORD_HASH = HashingUtils::HashString("MS_WORD");
-        static const int IMAGE_HASH = HashingUtils::HashString("IMAGE");
-        static const int PLAIN_TEXT_HASH = HashingUtils::HashString("PLAIN_TEXT");
-        static const int TEXTRACT_DETECT_DOCUMENT_TEXT_JSON_HASH = HashingUtils::HashString("TEXTRACT_DETECT_DOCUMENT_TEXT_JSON");
-        static const int TEXTRACT_ANALYZE_DOCUMENT_JSON_HASH = HashingUtils::HashString("TEXTRACT_ANALYZE_DOCUMENT_JSON");
+        static constexpr uint32_t NATIVE_PDF_HASH = ConstExprHashingUtils::HashString("NATIVE_PDF");
+        static constexpr uint32_t SCANNED_PDF_HASH = ConstExprHashingUtils::HashString("SCANNED_PDF");
+        static constexpr uint32_t MS_WORD_HASH = ConstExprHashingUtils::HashString("MS_WORD");
+        static constexpr uint32_t IMAGE_HASH = ConstExprHashingUtils::HashString("IMAGE");
+        static constexpr uint32_t PLAIN_TEXT_HASH = ConstExprHashingUtils::HashString("PLAIN_TEXT");
+        static constexpr uint32_t TEXTRACT_DETECT_DOCUMENT_TEXT_JSON_HASH = ConstExprHashingUtils::HashString("TEXTRACT_DETECT_DOCUMENT_TEXT_JSON");
+        static constexpr uint32_t TEXTRACT_ANALYZE_DOCUMENT_JSON_HASH = ConstExprHashingUtils::HashString("TEXTRACT_ANALYZE_DOCUMENT_JSON");
 
 
         DocumentType GetDocumentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NATIVE_PDF_HASH)
           {
             return DocumentType::NATIVE_PDF;

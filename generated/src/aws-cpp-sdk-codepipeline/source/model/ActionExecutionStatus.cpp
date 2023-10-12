@@ -20,15 +20,15 @@ namespace Aws
       namespace ActionExecutionStatusMapper
       {
 
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Abandoned_HASH = HashingUtils::HashString("Abandoned");
-        static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Abandoned_HASH = ConstExprHashingUtils::HashString("Abandoned");
+        static constexpr uint32_t Succeeded_HASH = ConstExprHashingUtils::HashString("Succeeded");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         ActionExecutionStatus GetActionExecutionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InProgress_HASH)
           {
             return ActionExecutionStatus::InProgress;

@@ -20,14 +20,14 @@ namespace Aws
       namespace TestResultMatchStatusMapper
       {
 
-        static const int Matched_HASH = HashingUtils::HashString("Matched");
-        static const int Mismatched_HASH = HashingUtils::HashString("Mismatched");
-        static const int ExecutionError_HASH = HashingUtils::HashString("ExecutionError");
+        static constexpr uint32_t Matched_HASH = ConstExprHashingUtils::HashString("Matched");
+        static constexpr uint32_t Mismatched_HASH = ConstExprHashingUtils::HashString("Mismatched");
+        static constexpr uint32_t ExecutionError_HASH = ConstExprHashingUtils::HashString("ExecutionError");
 
 
         TestResultMatchStatus GetTestResultMatchStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Matched_HASH)
           {
             return TestResultMatchStatus::Matched;

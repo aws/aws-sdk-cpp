@@ -20,13 +20,13 @@ namespace Aws
       namespace MailTypeMapper
       {
 
-        static const int MARKETING_HASH = HashingUtils::HashString("MARKETING");
-        static const int TRANSACTIONAL_HASH = HashingUtils::HashString("TRANSACTIONAL");
+        static constexpr uint32_t MARKETING_HASH = ConstExprHashingUtils::HashString("MARKETING");
+        static constexpr uint32_t TRANSACTIONAL_HASH = ConstExprHashingUtils::HashString("TRANSACTIONAL");
 
 
         MailType GetMailTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MARKETING_HASH)
           {
             return MailType::MARKETING;

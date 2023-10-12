@@ -20,13 +20,13 @@ namespace Aws
       namespace SlotConstraintMapper
       {
 
-        static const int Required_HASH = HashingUtils::HashString("Required");
-        static const int Optional_HASH = HashingUtils::HashString("Optional");
+        static constexpr uint32_t Required_HASH = ConstExprHashingUtils::HashString("Required");
+        static constexpr uint32_t Optional_HASH = ConstExprHashingUtils::HashString("Optional");
 
 
         SlotConstraint GetSlotConstraintForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Required_HASH)
           {
             return SlotConstraint::Required;

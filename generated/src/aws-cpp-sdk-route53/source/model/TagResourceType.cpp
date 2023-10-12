@@ -20,13 +20,13 @@ namespace Aws
       namespace TagResourceTypeMapper
       {
 
-        static const int healthcheck_HASH = HashingUtils::HashString("healthcheck");
-        static const int hostedzone_HASH = HashingUtils::HashString("hostedzone");
+        static constexpr uint32_t healthcheck_HASH = ConstExprHashingUtils::HashString("healthcheck");
+        static constexpr uint32_t hostedzone_HASH = ConstExprHashingUtils::HashString("hostedzone");
 
 
         TagResourceType GetTagResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == healthcheck_HASH)
           {
             return TagResourceType::healthcheck;

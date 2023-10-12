@@ -20,13 +20,13 @@ namespace Aws
       namespace ActivityStreamModeMapper
       {
 
-        static const int sync_HASH = HashingUtils::HashString("sync");
-        static const int async_HASH = HashingUtils::HashString("async");
+        static constexpr uint32_t sync_HASH = ConstExprHashingUtils::HashString("sync");
+        static constexpr uint32_t async_HASH = ConstExprHashingUtils::HashString("async");
 
 
         ActivityStreamMode GetActivityStreamModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == sync_HASH)
           {
             return ActivityStreamMode::sync;

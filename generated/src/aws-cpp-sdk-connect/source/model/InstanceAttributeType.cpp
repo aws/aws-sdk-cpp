@@ -20,21 +20,21 @@ namespace Aws
       namespace InstanceAttributeTypeMapper
       {
 
-        static const int INBOUND_CALLS_HASH = HashingUtils::HashString("INBOUND_CALLS");
-        static const int OUTBOUND_CALLS_HASH = HashingUtils::HashString("OUTBOUND_CALLS");
-        static const int CONTACTFLOW_LOGS_HASH = HashingUtils::HashString("CONTACTFLOW_LOGS");
-        static const int CONTACT_LENS_HASH = HashingUtils::HashString("CONTACT_LENS");
-        static const int AUTO_RESOLVE_BEST_VOICES_HASH = HashingUtils::HashString("AUTO_RESOLVE_BEST_VOICES");
-        static const int USE_CUSTOM_TTS_VOICES_HASH = HashingUtils::HashString("USE_CUSTOM_TTS_VOICES");
-        static const int EARLY_MEDIA_HASH = HashingUtils::HashString("EARLY_MEDIA");
-        static const int MULTI_PARTY_CONFERENCE_HASH = HashingUtils::HashString("MULTI_PARTY_CONFERENCE");
-        static const int HIGH_VOLUME_OUTBOUND_HASH = HashingUtils::HashString("HIGH_VOLUME_OUTBOUND");
-        static const int ENHANCED_CONTACT_MONITORING_HASH = HashingUtils::HashString("ENHANCED_CONTACT_MONITORING");
+        static constexpr uint32_t INBOUND_CALLS_HASH = ConstExprHashingUtils::HashString("INBOUND_CALLS");
+        static constexpr uint32_t OUTBOUND_CALLS_HASH = ConstExprHashingUtils::HashString("OUTBOUND_CALLS");
+        static constexpr uint32_t CONTACTFLOW_LOGS_HASH = ConstExprHashingUtils::HashString("CONTACTFLOW_LOGS");
+        static constexpr uint32_t CONTACT_LENS_HASH = ConstExprHashingUtils::HashString("CONTACT_LENS");
+        static constexpr uint32_t AUTO_RESOLVE_BEST_VOICES_HASH = ConstExprHashingUtils::HashString("AUTO_RESOLVE_BEST_VOICES");
+        static constexpr uint32_t USE_CUSTOM_TTS_VOICES_HASH = ConstExprHashingUtils::HashString("USE_CUSTOM_TTS_VOICES");
+        static constexpr uint32_t EARLY_MEDIA_HASH = ConstExprHashingUtils::HashString("EARLY_MEDIA");
+        static constexpr uint32_t MULTI_PARTY_CONFERENCE_HASH = ConstExprHashingUtils::HashString("MULTI_PARTY_CONFERENCE");
+        static constexpr uint32_t HIGH_VOLUME_OUTBOUND_HASH = ConstExprHashingUtils::HashString("HIGH_VOLUME_OUTBOUND");
+        static constexpr uint32_t ENHANCED_CONTACT_MONITORING_HASH = ConstExprHashingUtils::HashString("ENHANCED_CONTACT_MONITORING");
 
 
         InstanceAttributeType GetInstanceAttributeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INBOUND_CALLS_HASH)
           {
             return InstanceAttributeType::INBOUND_CALLS;

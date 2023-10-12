@@ -20,14 +20,14 @@ namespace Aws
       namespace AacCodecProfileMapper
       {
 
-        static const int LC_HASH = HashingUtils::HashString("LC");
-        static const int HEV1_HASH = HashingUtils::HashString("HEV1");
-        static const int HEV2_HASH = HashingUtils::HashString("HEV2");
+        static constexpr uint32_t LC_HASH = ConstExprHashingUtils::HashString("LC");
+        static constexpr uint32_t HEV1_HASH = ConstExprHashingUtils::HashString("HEV1");
+        static constexpr uint32_t HEV2_HASH = ConstExprHashingUtils::HashString("HEV2");
 
 
         AacCodecProfile GetAacCodecProfileForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LC_HASH)
           {
             return AacCodecProfile::LC;

@@ -20,13 +20,13 @@ namespace Aws
       namespace LogTypeMapper
       {
 
-        static const int ALERT_HASH = HashingUtils::HashString("ALERT");
-        static const int FLOW_HASH = HashingUtils::HashString("FLOW");
+        static constexpr uint32_t ALERT_HASH = ConstExprHashingUtils::HashString("ALERT");
+        static constexpr uint32_t FLOW_HASH = ConstExprHashingUtils::HashString("FLOW");
 
 
         LogType GetLogTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALERT_HASH)
           {
             return LogType::ALERT;

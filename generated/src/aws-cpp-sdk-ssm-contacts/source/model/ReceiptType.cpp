@@ -20,16 +20,16 @@ namespace Aws
       namespace ReceiptTypeMapper
       {
 
-        static const int DELIVERED_HASH = HashingUtils::HashString("DELIVERED");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int READ_HASH = HashingUtils::HashString("READ");
-        static const int SENT_HASH = HashingUtils::HashString("SENT");
-        static const int STOP_HASH = HashingUtils::HashString("STOP");
+        static constexpr uint32_t DELIVERED_HASH = ConstExprHashingUtils::HashString("DELIVERED");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t READ_HASH = ConstExprHashingUtils::HashString("READ");
+        static constexpr uint32_t SENT_HASH = ConstExprHashingUtils::HashString("SENT");
+        static constexpr uint32_t STOP_HASH = ConstExprHashingUtils::HashString("STOP");
 
 
         ReceiptType GetReceiptTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DELIVERED_HASH)
           {
             return ReceiptType::DELIVERED;

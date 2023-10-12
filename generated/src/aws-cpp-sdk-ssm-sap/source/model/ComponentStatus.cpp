@@ -20,18 +20,18 @@ namespace Aws
       namespace ComponentStatusMapper
       {
 
-        static const int ACTIVATED_HASH = HashingUtils::HashString("ACTIVATED");
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int RUNNING_WITH_ERROR_HASH = HashingUtils::HashString("RUNNING_WITH_ERROR");
-        static const int UNDEFINED_HASH = HashingUtils::HashString("UNDEFINED");
+        static constexpr uint32_t ACTIVATED_HASH = ConstExprHashingUtils::HashString("ACTIVATED");
+        static constexpr uint32_t STARTING_HASH = ConstExprHashingUtils::HashString("STARTING");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t RUNNING_WITH_ERROR_HASH = ConstExprHashingUtils::HashString("RUNNING_WITH_ERROR");
+        static constexpr uint32_t UNDEFINED_HASH = ConstExprHashingUtils::HashString("UNDEFINED");
 
 
         ComponentStatus GetComponentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVATED_HASH)
           {
             return ComponentStatus::ACTIVATED;

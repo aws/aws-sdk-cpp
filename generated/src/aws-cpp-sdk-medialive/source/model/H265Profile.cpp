@@ -20,13 +20,13 @@ namespace Aws
       namespace H265ProfileMapper
       {
 
-        static const int MAIN_HASH = HashingUtils::HashString("MAIN");
-        static const int MAIN_10BIT_HASH = HashingUtils::HashString("MAIN_10BIT");
+        static constexpr uint32_t MAIN_HASH = ConstExprHashingUtils::HashString("MAIN");
+        static constexpr uint32_t MAIN_10BIT_HASH = ConstExprHashingUtils::HashString("MAIN_10BIT");
 
 
         H265Profile GetH265ProfileForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MAIN_HASH)
           {
             return H265Profile::MAIN;

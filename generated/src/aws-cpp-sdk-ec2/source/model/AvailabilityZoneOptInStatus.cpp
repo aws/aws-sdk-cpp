@@ -20,14 +20,14 @@ namespace Aws
       namespace AvailabilityZoneOptInStatusMapper
       {
 
-        static const int opt_in_not_required_HASH = HashingUtils::HashString("opt-in-not-required");
-        static const int opted_in_HASH = HashingUtils::HashString("opted-in");
-        static const int not_opted_in_HASH = HashingUtils::HashString("not-opted-in");
+        static constexpr uint32_t opt_in_not_required_HASH = ConstExprHashingUtils::HashString("opt-in-not-required");
+        static constexpr uint32_t opted_in_HASH = ConstExprHashingUtils::HashString("opted-in");
+        static constexpr uint32_t not_opted_in_HASH = ConstExprHashingUtils::HashString("not-opted-in");
 
 
         AvailabilityZoneOptInStatus GetAvailabilityZoneOptInStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == opt_in_not_required_HASH)
           {
             return AvailabilityZoneOptInStatus::opt_in_not_required;

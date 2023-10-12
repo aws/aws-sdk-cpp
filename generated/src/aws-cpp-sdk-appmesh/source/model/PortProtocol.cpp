@@ -20,15 +20,15 @@ namespace Aws
       namespace PortProtocolMapper
       {
 
-        static const int http_HASH = HashingUtils::HashString("http");
-        static const int tcp_HASH = HashingUtils::HashString("tcp");
-        static const int http2_HASH = HashingUtils::HashString("http2");
-        static const int grpc_HASH = HashingUtils::HashString("grpc");
+        static constexpr uint32_t http_HASH = ConstExprHashingUtils::HashString("http");
+        static constexpr uint32_t tcp_HASH = ConstExprHashingUtils::HashString("tcp");
+        static constexpr uint32_t http2_HASH = ConstExprHashingUtils::HashString("http2");
+        static constexpr uint32_t grpc_HASH = ConstExprHashingUtils::HashString("grpc");
 
 
         PortProtocol GetPortProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == http_HASH)
           {
             return PortProtocol::http;

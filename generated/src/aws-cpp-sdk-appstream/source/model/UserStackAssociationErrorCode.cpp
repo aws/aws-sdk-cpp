@@ -20,15 +20,15 @@ namespace Aws
       namespace UserStackAssociationErrorCodeMapper
       {
 
-        static const int STACK_NOT_FOUND_HASH = HashingUtils::HashString("STACK_NOT_FOUND");
-        static const int USER_NAME_NOT_FOUND_HASH = HashingUtils::HashString("USER_NAME_NOT_FOUND");
-        static const int DIRECTORY_NOT_FOUND_HASH = HashingUtils::HashString("DIRECTORY_NOT_FOUND");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t STACK_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("STACK_NOT_FOUND");
+        static constexpr uint32_t USER_NAME_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("USER_NAME_NOT_FOUND");
+        static constexpr uint32_t DIRECTORY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("DIRECTORY_NOT_FOUND");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
 
 
         UserStackAssociationErrorCode GetUserStackAssociationErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STACK_NOT_FOUND_HASH)
           {
             return UserStackAssociationErrorCode::STACK_NOT_FOUND;

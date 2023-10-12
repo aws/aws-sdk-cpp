@@ -20,14 +20,14 @@ namespace Aws
       namespace IntegrationTypeMapper
       {
 
-        static const int SEND_FINDINGS_TO_SECURITY_HUB_HASH = HashingUtils::HashString("SEND_FINDINGS_TO_SECURITY_HUB");
-        static const int RECEIVE_FINDINGS_FROM_SECURITY_HUB_HASH = HashingUtils::HashString("RECEIVE_FINDINGS_FROM_SECURITY_HUB");
-        static const int UPDATE_FINDINGS_IN_SECURITY_HUB_HASH = HashingUtils::HashString("UPDATE_FINDINGS_IN_SECURITY_HUB");
+        static constexpr uint32_t SEND_FINDINGS_TO_SECURITY_HUB_HASH = ConstExprHashingUtils::HashString("SEND_FINDINGS_TO_SECURITY_HUB");
+        static constexpr uint32_t RECEIVE_FINDINGS_FROM_SECURITY_HUB_HASH = ConstExprHashingUtils::HashString("RECEIVE_FINDINGS_FROM_SECURITY_HUB");
+        static constexpr uint32_t UPDATE_FINDINGS_IN_SECURITY_HUB_HASH = ConstExprHashingUtils::HashString("UPDATE_FINDINGS_IN_SECURITY_HUB");
 
 
         IntegrationType GetIntegrationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SEND_FINDINGS_TO_SECURITY_HUB_HASH)
           {
             return IntegrationType::SEND_FINDINGS_TO_SECURITY_HUB;

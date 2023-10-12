@@ -20,14 +20,14 @@ namespace Aws
       namespace AuthenticateOidcActionConditionalBehaviorEnumMapper
       {
 
-        static const int deny_HASH = HashingUtils::HashString("deny");
-        static const int allow_HASH = HashingUtils::HashString("allow");
-        static const int authenticate_HASH = HashingUtils::HashString("authenticate");
+        static constexpr uint32_t deny_HASH = ConstExprHashingUtils::HashString("deny");
+        static constexpr uint32_t allow_HASH = ConstExprHashingUtils::HashString("allow");
+        static constexpr uint32_t authenticate_HASH = ConstExprHashingUtils::HashString("authenticate");
 
 
         AuthenticateOidcActionConditionalBehaviorEnum GetAuthenticateOidcActionConditionalBehaviorEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == deny_HASH)
           {
             return AuthenticateOidcActionConditionalBehaviorEnum::deny;

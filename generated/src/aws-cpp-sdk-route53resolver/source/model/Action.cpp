@@ -20,14 +20,14 @@ namespace Aws
       namespace ActionMapper
       {
 
-        static const int ALLOW_HASH = HashingUtils::HashString("ALLOW");
-        static const int BLOCK_HASH = HashingUtils::HashString("BLOCK");
-        static const int ALERT_HASH = HashingUtils::HashString("ALERT");
+        static constexpr uint32_t ALLOW_HASH = ConstExprHashingUtils::HashString("ALLOW");
+        static constexpr uint32_t BLOCK_HASH = ConstExprHashingUtils::HashString("BLOCK");
+        static constexpr uint32_t ALERT_HASH = ConstExprHashingUtils::HashString("ALERT");
 
 
         Action GetActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALLOW_HASH)
           {
             return Action::ALLOW;

@@ -20,15 +20,15 @@ namespace Aws
       namespace CustomContentImageScalingConfigurationMapper
       {
 
-        static const int FIT_TO_HEIGHT_HASH = HashingUtils::HashString("FIT_TO_HEIGHT");
-        static const int FIT_TO_WIDTH_HASH = HashingUtils::HashString("FIT_TO_WIDTH");
-        static const int DO_NOT_SCALE_HASH = HashingUtils::HashString("DO_NOT_SCALE");
-        static const int SCALE_TO_VISUAL_HASH = HashingUtils::HashString("SCALE_TO_VISUAL");
+        static constexpr uint32_t FIT_TO_HEIGHT_HASH = ConstExprHashingUtils::HashString("FIT_TO_HEIGHT");
+        static constexpr uint32_t FIT_TO_WIDTH_HASH = ConstExprHashingUtils::HashString("FIT_TO_WIDTH");
+        static constexpr uint32_t DO_NOT_SCALE_HASH = ConstExprHashingUtils::HashString("DO_NOT_SCALE");
+        static constexpr uint32_t SCALE_TO_VISUAL_HASH = ConstExprHashingUtils::HashString("SCALE_TO_VISUAL");
 
 
         CustomContentImageScalingConfiguration GetCustomContentImageScalingConfigurationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FIT_TO_HEIGHT_HASH)
           {
             return CustomContentImageScalingConfiguration::FIT_TO_HEIGHT;

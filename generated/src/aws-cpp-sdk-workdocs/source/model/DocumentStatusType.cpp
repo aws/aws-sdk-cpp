@@ -20,13 +20,13 @@ namespace Aws
       namespace DocumentStatusTypeMapper
       {
 
-        static const int INITIALIZED_HASH = HashingUtils::HashString("INITIALIZED");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t INITIALIZED_HASH = ConstExprHashingUtils::HashString("INITIALIZED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
 
 
         DocumentStatusType GetDocumentStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INITIALIZED_HASH)
           {
             return DocumentStatusType::INITIALIZED;

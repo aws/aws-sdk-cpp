@@ -20,12 +20,12 @@ namespace Aws
       namespace ConcatenationSourceTypeMapper
       {
 
-        static const int MediaCapturePipeline_HASH = HashingUtils::HashString("MediaCapturePipeline");
+        static constexpr uint32_t MediaCapturePipeline_HASH = ConstExprHashingUtils::HashString("MediaCapturePipeline");
 
 
         ConcatenationSourceType GetConcatenationSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MediaCapturePipeline_HASH)
           {
             return ConcatenationSourceType::MediaCapturePipeline;

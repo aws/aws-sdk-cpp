@@ -20,12 +20,12 @@ namespace Aws
       namespace AutotuneModeMapper
       {
 
-        static const int Enabled_HASH = HashingUtils::HashString("Enabled");
+        static constexpr uint32_t Enabled_HASH = ConstExprHashingUtils::HashString("Enabled");
 
 
         AutotuneMode GetAutotuneModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Enabled_HASH)
           {
             return AutotuneMode::Enabled;

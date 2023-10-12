@@ -20,19 +20,19 @@ namespace Aws
       namespace ScanStatusMapper
       {
 
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int UNSUPPORTED_IMAGE_HASH = HashingUtils::HashString("UNSUPPORTED_IMAGE");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int SCAN_ELIGIBILITY_EXPIRED_HASH = HashingUtils::HashString("SCAN_ELIGIBILITY_EXPIRED");
-        static const int FINDINGS_UNAVAILABLE_HASH = HashingUtils::HashString("FINDINGS_UNAVAILABLE");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t COMPLETE_HASH = ConstExprHashingUtils::HashString("COMPLETE");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t UNSUPPORTED_IMAGE_HASH = ConstExprHashingUtils::HashString("UNSUPPORTED_IMAGE");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t SCAN_ELIGIBILITY_EXPIRED_HASH = ConstExprHashingUtils::HashString("SCAN_ELIGIBILITY_EXPIRED");
+        static constexpr uint32_t FINDINGS_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("FINDINGS_UNAVAILABLE");
 
 
         ScanStatus GetScanStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IN_PROGRESS_HASH)
           {
             return ScanStatus::IN_PROGRESS;

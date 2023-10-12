@@ -20,20 +20,20 @@ namespace Aws
       namespace RelationshipTypeMapper
       {
 
-        static const int VALUE_HASH = HashingUtils::HashString("VALUE");
-        static const int CHILD_HASH = HashingUtils::HashString("CHILD");
-        static const int COMPLEX_FEATURES_HASH = HashingUtils::HashString("COMPLEX_FEATURES");
-        static const int MERGED_CELL_HASH = HashingUtils::HashString("MERGED_CELL");
-        static const int TITLE_HASH = HashingUtils::HashString("TITLE");
-        static const int ANSWER_HASH = HashingUtils::HashString("ANSWER");
-        static const int TABLE_HASH = HashingUtils::HashString("TABLE");
-        static const int TABLE_TITLE_HASH = HashingUtils::HashString("TABLE_TITLE");
-        static const int TABLE_FOOTER_HASH = HashingUtils::HashString("TABLE_FOOTER");
+        static constexpr uint32_t VALUE_HASH = ConstExprHashingUtils::HashString("VALUE");
+        static constexpr uint32_t CHILD_HASH = ConstExprHashingUtils::HashString("CHILD");
+        static constexpr uint32_t COMPLEX_FEATURES_HASH = ConstExprHashingUtils::HashString("COMPLEX_FEATURES");
+        static constexpr uint32_t MERGED_CELL_HASH = ConstExprHashingUtils::HashString("MERGED_CELL");
+        static constexpr uint32_t TITLE_HASH = ConstExprHashingUtils::HashString("TITLE");
+        static constexpr uint32_t ANSWER_HASH = ConstExprHashingUtils::HashString("ANSWER");
+        static constexpr uint32_t TABLE_HASH = ConstExprHashingUtils::HashString("TABLE");
+        static constexpr uint32_t TABLE_TITLE_HASH = ConstExprHashingUtils::HashString("TABLE_TITLE");
+        static constexpr uint32_t TABLE_FOOTER_HASH = ConstExprHashingUtils::HashString("TABLE_FOOTER");
 
 
         RelationshipType GetRelationshipTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VALUE_HASH)
           {
             return RelationshipType::VALUE;

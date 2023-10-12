@@ -20,12 +20,12 @@ namespace Aws
       namespace OpsItemRelatedItemsFilterOperatorMapper
       {
 
-        static const int Equal_HASH = HashingUtils::HashString("Equal");
+        static constexpr uint32_t Equal_HASH = ConstExprHashingUtils::HashString("Equal");
 
 
         OpsItemRelatedItemsFilterOperator GetOpsItemRelatedItemsFilterOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Equal_HASH)
           {
             return OpsItemRelatedItemsFilterOperator::Equal;

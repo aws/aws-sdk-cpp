@@ -20,13 +20,13 @@ namespace Aws
       namespace GenderTypeMapper
       {
 
-        static const int Male_HASH = HashingUtils::HashString("Male");
-        static const int Female_HASH = HashingUtils::HashString("Female");
+        static constexpr uint32_t Male_HASH = ConstExprHashingUtils::HashString("Male");
+        static constexpr uint32_t Female_HASH = ConstExprHashingUtils::HashString("Female");
 
 
         GenderType GetGenderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Male_HASH)
           {
             return GenderType::Male;

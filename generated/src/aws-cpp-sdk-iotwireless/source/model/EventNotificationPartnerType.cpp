@@ -20,12 +20,12 @@ namespace Aws
       namespace EventNotificationPartnerTypeMapper
       {
 
-        static const int Sidewalk_HASH = HashingUtils::HashString("Sidewalk");
+        static constexpr uint32_t Sidewalk_HASH = ConstExprHashingUtils::HashString("Sidewalk");
 
 
         EventNotificationPartnerType GetEventNotificationPartnerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Sidewalk_HASH)
           {
             return EventNotificationPartnerType::Sidewalk;

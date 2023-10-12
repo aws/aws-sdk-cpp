@@ -20,17 +20,17 @@ namespace Aws
       namespace MdnSigningAlgMapper
       {
 
-        static const int SHA256_HASH = HashingUtils::HashString("SHA256");
-        static const int SHA384_HASH = HashingUtils::HashString("SHA384");
-        static const int SHA512_HASH = HashingUtils::HashString("SHA512");
-        static const int SHA1_HASH = HashingUtils::HashString("SHA1");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t SHA256_HASH = ConstExprHashingUtils::HashString("SHA256");
+        static constexpr uint32_t SHA384_HASH = ConstExprHashingUtils::HashString("SHA384");
+        static constexpr uint32_t SHA512_HASH = ConstExprHashingUtils::HashString("SHA512");
+        static constexpr uint32_t SHA1_HASH = ConstExprHashingUtils::HashString("SHA1");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
 
 
         MdnSigningAlg GetMdnSigningAlgForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SHA256_HASH)
           {
             return MdnSigningAlg::SHA256;

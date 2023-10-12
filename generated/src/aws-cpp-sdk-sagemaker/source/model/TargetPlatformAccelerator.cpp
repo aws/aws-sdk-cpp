@@ -20,15 +20,15 @@ namespace Aws
       namespace TargetPlatformAcceleratorMapper
       {
 
-        static const int INTEL_GRAPHICS_HASH = HashingUtils::HashString("INTEL_GRAPHICS");
-        static const int MALI_HASH = HashingUtils::HashString("MALI");
-        static const int NVIDIA_HASH = HashingUtils::HashString("NVIDIA");
-        static const int NNA_HASH = HashingUtils::HashString("NNA");
+        static constexpr uint32_t INTEL_GRAPHICS_HASH = ConstExprHashingUtils::HashString("INTEL_GRAPHICS");
+        static constexpr uint32_t MALI_HASH = ConstExprHashingUtils::HashString("MALI");
+        static constexpr uint32_t NVIDIA_HASH = ConstExprHashingUtils::HashString("NVIDIA");
+        static constexpr uint32_t NNA_HASH = ConstExprHashingUtils::HashString("NNA");
 
 
         TargetPlatformAccelerator GetTargetPlatformAcceleratorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTEL_GRAPHICS_HASH)
           {
             return TargetPlatformAccelerator::INTEL_GRAPHICS;

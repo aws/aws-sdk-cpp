@@ -20,14 +20,14 @@ namespace Aws
       namespace DeleteQueuedReservedInstancesErrorCodeMapper
       {
 
-        static const int reserved_instances_id_invalid_HASH = HashingUtils::HashString("reserved-instances-id-invalid");
-        static const int reserved_instances_not_in_queued_state_HASH = HashingUtils::HashString("reserved-instances-not-in-queued-state");
-        static const int unexpected_error_HASH = HashingUtils::HashString("unexpected-error");
+        static constexpr uint32_t reserved_instances_id_invalid_HASH = ConstExprHashingUtils::HashString("reserved-instances-id-invalid");
+        static constexpr uint32_t reserved_instances_not_in_queued_state_HASH = ConstExprHashingUtils::HashString("reserved-instances-not-in-queued-state");
+        static constexpr uint32_t unexpected_error_HASH = ConstExprHashingUtils::HashString("unexpected-error");
 
 
         DeleteQueuedReservedInstancesErrorCode GetDeleteQueuedReservedInstancesErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == reserved_instances_id_invalid_HASH)
           {
             return DeleteQueuedReservedInstancesErrorCode::reserved_instances_id_invalid;

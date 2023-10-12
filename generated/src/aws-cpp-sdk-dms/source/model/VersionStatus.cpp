@@ -20,14 +20,14 @@ namespace Aws
       namespace VersionStatusMapper
       {
 
-        static const int UP_TO_DATE_HASH = HashingUtils::HashString("UP_TO_DATE");
-        static const int OUTDATED_HASH = HashingUtils::HashString("OUTDATED");
-        static const int UNSUPPORTED_HASH = HashingUtils::HashString("UNSUPPORTED");
+        static constexpr uint32_t UP_TO_DATE_HASH = ConstExprHashingUtils::HashString("UP_TO_DATE");
+        static constexpr uint32_t OUTDATED_HASH = ConstExprHashingUtils::HashString("OUTDATED");
+        static constexpr uint32_t UNSUPPORTED_HASH = ConstExprHashingUtils::HashString("UNSUPPORTED");
 
 
         VersionStatus GetVersionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UP_TO_DATE_HASH)
           {
             return VersionStatus::UP_TO_DATE;

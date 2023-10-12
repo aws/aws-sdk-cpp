@@ -20,13 +20,13 @@ namespace Aws
       namespace SelectedTooltipTypeMapper
       {
 
-        static const int BASIC_HASH = HashingUtils::HashString("BASIC");
-        static const int DETAILED_HASH = HashingUtils::HashString("DETAILED");
+        static constexpr uint32_t BASIC_HASH = ConstExprHashingUtils::HashString("BASIC");
+        static constexpr uint32_t DETAILED_HASH = ConstExprHashingUtils::HashString("DETAILED");
 
 
         SelectedTooltipType GetSelectedTooltipTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BASIC_HASH)
           {
             return SelectedTooltipType::BASIC;

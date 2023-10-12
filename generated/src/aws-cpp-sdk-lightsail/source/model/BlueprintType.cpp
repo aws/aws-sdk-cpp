@@ -20,13 +20,13 @@ namespace Aws
       namespace BlueprintTypeMapper
       {
 
-        static const int os_HASH = HashingUtils::HashString("os");
-        static const int app_HASH = HashingUtils::HashString("app");
+        static constexpr uint32_t os_HASH = ConstExprHashingUtils::HashString("os");
+        static constexpr uint32_t app_HASH = ConstExprHashingUtils::HashString("app");
 
 
         BlueprintType GetBlueprintTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == os_HASH)
           {
             return BlueprintType::os;

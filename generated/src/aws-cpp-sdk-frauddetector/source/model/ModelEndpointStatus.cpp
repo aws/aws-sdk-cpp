@@ -20,13 +20,13 @@ namespace Aws
       namespace ModelEndpointStatusMapper
       {
 
-        static const int ASSOCIATED_HASH = HashingUtils::HashString("ASSOCIATED");
-        static const int DISSOCIATED_HASH = HashingUtils::HashString("DISSOCIATED");
+        static constexpr uint32_t ASSOCIATED_HASH = ConstExprHashingUtils::HashString("ASSOCIATED");
+        static constexpr uint32_t DISSOCIATED_HASH = ConstExprHashingUtils::HashString("DISSOCIATED");
 
 
         ModelEndpointStatus GetModelEndpointStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASSOCIATED_HASH)
           {
             return ModelEndpointStatus::ASSOCIATED;

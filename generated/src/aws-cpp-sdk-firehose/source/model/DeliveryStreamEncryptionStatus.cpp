@@ -20,17 +20,17 @@ namespace Aws
       namespace DeliveryStreamEncryptionStatusMapper
       {
 
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int ENABLING_HASH = HashingUtils::HashString("ENABLING");
-        static const int ENABLING_FAILED_HASH = HashingUtils::HashString("ENABLING_FAILED");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int DISABLING_HASH = HashingUtils::HashString("DISABLING");
-        static const int DISABLING_FAILED_HASH = HashingUtils::HashString("DISABLING_FAILED");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
+        static constexpr uint32_t ENABLING_HASH = ConstExprHashingUtils::HashString("ENABLING");
+        static constexpr uint32_t ENABLING_FAILED_HASH = ConstExprHashingUtils::HashString("ENABLING_FAILED");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t DISABLING_HASH = ConstExprHashingUtils::HashString("DISABLING");
+        static constexpr uint32_t DISABLING_FAILED_HASH = ConstExprHashingUtils::HashString("DISABLING_FAILED");
 
 
         DeliveryStreamEncryptionStatus GetDeliveryStreamEncryptionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLED_HASH)
           {
             return DeliveryStreamEncryptionStatus::ENABLED;

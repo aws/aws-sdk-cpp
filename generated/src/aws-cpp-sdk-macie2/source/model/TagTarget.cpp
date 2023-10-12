@@ -20,12 +20,12 @@ namespace Aws
       namespace TagTargetMapper
       {
 
-        static const int S3_OBJECT_HASH = HashingUtils::HashString("S3_OBJECT");
+        static constexpr uint32_t S3_OBJECT_HASH = ConstExprHashingUtils::HashString("S3_OBJECT");
 
 
         TagTarget GetTagTargetForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == S3_OBJECT_HASH)
           {
             return TagTarget::S3_OBJECT;

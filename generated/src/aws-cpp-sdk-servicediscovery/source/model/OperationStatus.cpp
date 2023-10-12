@@ -20,15 +20,15 @@ namespace Aws
       namespace OperationStatusMapper
       {
 
-        static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int FAIL_HASH = HashingUtils::HashString("FAIL");
+        static constexpr uint32_t SUBMITTED_HASH = ConstExprHashingUtils::HashString("SUBMITTED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t FAIL_HASH = ConstExprHashingUtils::HashString("FAIL");
 
 
         OperationStatus GetOperationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUBMITTED_HASH)
           {
             return OperationStatus::SUBMITTED;

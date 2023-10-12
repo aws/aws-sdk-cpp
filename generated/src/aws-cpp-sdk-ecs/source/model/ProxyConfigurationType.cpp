@@ -20,12 +20,12 @@ namespace Aws
       namespace ProxyConfigurationTypeMapper
       {
 
-        static const int APPMESH_HASH = HashingUtils::HashString("APPMESH");
+        static constexpr uint32_t APPMESH_HASH = ConstExprHashingUtils::HashString("APPMESH");
 
 
         ProxyConfigurationType GetProxyConfigurationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APPMESH_HASH)
           {
             return ProxyConfigurationType::APPMESH;

@@ -20,16 +20,16 @@ namespace Aws
       namespace InspectorEventMapper
       {
 
-        static const int ASSESSMENT_RUN_STARTED_HASH = HashingUtils::HashString("ASSESSMENT_RUN_STARTED");
-        static const int ASSESSMENT_RUN_COMPLETED_HASH = HashingUtils::HashString("ASSESSMENT_RUN_COMPLETED");
-        static const int ASSESSMENT_RUN_STATE_CHANGED_HASH = HashingUtils::HashString("ASSESSMENT_RUN_STATE_CHANGED");
-        static const int FINDING_REPORTED_HASH = HashingUtils::HashString("FINDING_REPORTED");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
+        static constexpr uint32_t ASSESSMENT_RUN_STARTED_HASH = ConstExprHashingUtils::HashString("ASSESSMENT_RUN_STARTED");
+        static constexpr uint32_t ASSESSMENT_RUN_COMPLETED_HASH = ConstExprHashingUtils::HashString("ASSESSMENT_RUN_COMPLETED");
+        static constexpr uint32_t ASSESSMENT_RUN_STATE_CHANGED_HASH = ConstExprHashingUtils::HashString("ASSESSMENT_RUN_STATE_CHANGED");
+        static constexpr uint32_t FINDING_REPORTED_HASH = ConstExprHashingUtils::HashString("FINDING_REPORTED");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
 
 
         InspectorEvent GetInspectorEventForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASSESSMENT_RUN_STARTED_HASH)
           {
             return InspectorEvent::ASSESSMENT_RUN_STARTED;

@@ -20,14 +20,14 @@ namespace Aws
       namespace EventNotificationResourceTypeMapper
       {
 
-        static const int SidewalkAccount_HASH = HashingUtils::HashString("SidewalkAccount");
-        static const int WirelessDevice_HASH = HashingUtils::HashString("WirelessDevice");
-        static const int WirelessGateway_HASH = HashingUtils::HashString("WirelessGateway");
+        static constexpr uint32_t SidewalkAccount_HASH = ConstExprHashingUtils::HashString("SidewalkAccount");
+        static constexpr uint32_t WirelessDevice_HASH = ConstExprHashingUtils::HashString("WirelessDevice");
+        static constexpr uint32_t WirelessGateway_HASH = ConstExprHashingUtils::HashString("WirelessGateway");
 
 
         EventNotificationResourceType GetEventNotificationResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SidewalkAccount_HASH)
           {
             return EventNotificationResourceType::SidewalkAccount;

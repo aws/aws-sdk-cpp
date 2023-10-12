@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceRecordSetFailoverMapper
       {
 
-        static const int PRIMARY_HASH = HashingUtils::HashString("PRIMARY");
-        static const int SECONDARY_HASH = HashingUtils::HashString("SECONDARY");
+        static constexpr uint32_t PRIMARY_HASH = ConstExprHashingUtils::HashString("PRIMARY");
+        static constexpr uint32_t SECONDARY_HASH = ConstExprHashingUtils::HashString("SECONDARY");
 
 
         ResourceRecordSetFailover GetResourceRecordSetFailoverForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRIMARY_HASH)
           {
             return ResourceRecordSetFailover::PRIMARY;

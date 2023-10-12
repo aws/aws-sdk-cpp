@@ -20,13 +20,13 @@ namespace Aws
       namespace WarmupStatusMapper
       {
 
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int DONE_HASH = HashingUtils::HashString("DONE");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t DONE_HASH = ConstExprHashingUtils::HashString("DONE");
 
 
         WarmupStatus GetWarmupStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IN_PROGRESS_HASH)
           {
             return WarmupStatus::IN_PROGRESS;

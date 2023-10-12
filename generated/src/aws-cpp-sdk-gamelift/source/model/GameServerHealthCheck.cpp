@@ -20,12 +20,12 @@ namespace Aws
       namespace GameServerHealthCheckMapper
       {
 
-        static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
+        static constexpr uint32_t HEALTHY_HASH = ConstExprHashingUtils::HashString("HEALTHY");
 
 
         GameServerHealthCheck GetGameServerHealthCheckForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HEALTHY_HASH)
           {
             return GameServerHealthCheck::HEALTHY;

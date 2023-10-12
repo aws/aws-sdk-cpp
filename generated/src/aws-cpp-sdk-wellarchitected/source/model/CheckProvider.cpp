@@ -20,12 +20,12 @@ namespace Aws
       namespace CheckProviderMapper
       {
 
-        static const int TRUSTED_ADVISOR_HASH = HashingUtils::HashString("TRUSTED_ADVISOR");
+        static constexpr uint32_t TRUSTED_ADVISOR_HASH = ConstExprHashingUtils::HashString("TRUSTED_ADVISOR");
 
 
         CheckProvider GetCheckProviderForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRUSTED_ADVISOR_HASH)
           {
             return CheckProvider::TRUSTED_ADVISOR;

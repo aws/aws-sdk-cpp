@@ -20,15 +20,15 @@ namespace Aws
       namespace BodyPartMapper
       {
 
-        static const int FACE_HASH = HashingUtils::HashString("FACE");
-        static const int HEAD_HASH = HashingUtils::HashString("HEAD");
-        static const int LEFT_HAND_HASH = HashingUtils::HashString("LEFT_HAND");
-        static const int RIGHT_HAND_HASH = HashingUtils::HashString("RIGHT_HAND");
+        static constexpr uint32_t FACE_HASH = ConstExprHashingUtils::HashString("FACE");
+        static constexpr uint32_t HEAD_HASH = ConstExprHashingUtils::HashString("HEAD");
+        static constexpr uint32_t LEFT_HAND_HASH = ConstExprHashingUtils::HashString("LEFT_HAND");
+        static constexpr uint32_t RIGHT_HAND_HASH = ConstExprHashingUtils::HashString("RIGHT_HAND");
 
 
         BodyPart GetBodyPartForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FACE_HASH)
           {
             return BodyPart::FACE;

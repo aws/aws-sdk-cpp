@@ -20,13 +20,13 @@ namespace Aws
       namespace ReportExportConfigTypeMapper
       {
 
-        static const int S3_HASH = HashingUtils::HashString("S3");
-        static const int NO_EXPORT_HASH = HashingUtils::HashString("NO_EXPORT");
+        static constexpr uint32_t S3_HASH = ConstExprHashingUtils::HashString("S3");
+        static constexpr uint32_t NO_EXPORT_HASH = ConstExprHashingUtils::HashString("NO_EXPORT");
 
 
         ReportExportConfigType GetReportExportConfigTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == S3_HASH)
           {
             return ReportExportConfigType::S3;

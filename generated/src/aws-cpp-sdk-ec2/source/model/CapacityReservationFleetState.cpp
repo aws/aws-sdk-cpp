@@ -20,20 +20,20 @@ namespace Aws
       namespace CapacityReservationFleetStateMapper
       {
 
-        static const int submitted_HASH = HashingUtils::HashString("submitted");
-        static const int modifying_HASH = HashingUtils::HashString("modifying");
-        static const int active_HASH = HashingUtils::HashString("active");
-        static const int partially_fulfilled_HASH = HashingUtils::HashString("partially_fulfilled");
-        static const int expiring_HASH = HashingUtils::HashString("expiring");
-        static const int expired_HASH = HashingUtils::HashString("expired");
-        static const int cancelling_HASH = HashingUtils::HashString("cancelling");
-        static const int cancelled_HASH = HashingUtils::HashString("cancelled");
-        static const int failed_HASH = HashingUtils::HashString("failed");
+        static constexpr uint32_t submitted_HASH = ConstExprHashingUtils::HashString("submitted");
+        static constexpr uint32_t modifying_HASH = ConstExprHashingUtils::HashString("modifying");
+        static constexpr uint32_t active_HASH = ConstExprHashingUtils::HashString("active");
+        static constexpr uint32_t partially_fulfilled_HASH = ConstExprHashingUtils::HashString("partially_fulfilled");
+        static constexpr uint32_t expiring_HASH = ConstExprHashingUtils::HashString("expiring");
+        static constexpr uint32_t expired_HASH = ConstExprHashingUtils::HashString("expired");
+        static constexpr uint32_t cancelling_HASH = ConstExprHashingUtils::HashString("cancelling");
+        static constexpr uint32_t cancelled_HASH = ConstExprHashingUtils::HashString("cancelled");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
 
 
         CapacityReservationFleetState GetCapacityReservationFleetStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == submitted_HASH)
           {
             return CapacityReservationFleetState::submitted;

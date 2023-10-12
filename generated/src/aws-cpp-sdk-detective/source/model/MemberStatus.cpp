@@ -20,16 +20,16 @@ namespace Aws
       namespace MemberStatusMapper
       {
 
-        static const int INVITED_HASH = HashingUtils::HashString("INVITED");
-        static const int VERIFICATION_IN_PROGRESS_HASH = HashingUtils::HashString("VERIFICATION_IN_PROGRESS");
-        static const int VERIFICATION_FAILED_HASH = HashingUtils::HashString("VERIFICATION_FAILED");
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int ACCEPTED_BUT_DISABLED_HASH = HashingUtils::HashString("ACCEPTED_BUT_DISABLED");
+        static constexpr uint32_t INVITED_HASH = ConstExprHashingUtils::HashString("INVITED");
+        static constexpr uint32_t VERIFICATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("VERIFICATION_IN_PROGRESS");
+        static constexpr uint32_t VERIFICATION_FAILED_HASH = ConstExprHashingUtils::HashString("VERIFICATION_FAILED");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
+        static constexpr uint32_t ACCEPTED_BUT_DISABLED_HASH = ConstExprHashingUtils::HashString("ACCEPTED_BUT_DISABLED");
 
 
         MemberStatus GetMemberStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVITED_HASH)
           {
             return MemberStatus::INVITED;

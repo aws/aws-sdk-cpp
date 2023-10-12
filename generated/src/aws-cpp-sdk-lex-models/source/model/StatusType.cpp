@@ -20,13 +20,13 @@ namespace Aws
       namespace StatusTypeMapper
       {
 
-        static const int Detected_HASH = HashingUtils::HashString("Detected");
-        static const int Missed_HASH = HashingUtils::HashString("Missed");
+        static constexpr uint32_t Detected_HASH = ConstExprHashingUtils::HashString("Detected");
+        static constexpr uint32_t Missed_HASH = ConstExprHashingUtils::HashString("Missed");
 
 
         StatusType GetStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Detected_HASH)
           {
             return StatusType::Detected;

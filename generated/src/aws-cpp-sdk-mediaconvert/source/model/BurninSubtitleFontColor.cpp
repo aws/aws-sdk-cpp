@@ -20,19 +20,19 @@ namespace Aws
       namespace BurninSubtitleFontColorMapper
       {
 
-        static const int WHITE_HASH = HashingUtils::HashString("WHITE");
-        static const int BLACK_HASH = HashingUtils::HashString("BLACK");
-        static const int YELLOW_HASH = HashingUtils::HashString("YELLOW");
-        static const int RED_HASH = HashingUtils::HashString("RED");
-        static const int GREEN_HASH = HashingUtils::HashString("GREEN");
-        static const int BLUE_HASH = HashingUtils::HashString("BLUE");
-        static const int HEX_HASH = HashingUtils::HashString("HEX");
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
+        static constexpr uint32_t WHITE_HASH = ConstExprHashingUtils::HashString("WHITE");
+        static constexpr uint32_t BLACK_HASH = ConstExprHashingUtils::HashString("BLACK");
+        static constexpr uint32_t YELLOW_HASH = ConstExprHashingUtils::HashString("YELLOW");
+        static constexpr uint32_t RED_HASH = ConstExprHashingUtils::HashString("RED");
+        static constexpr uint32_t GREEN_HASH = ConstExprHashingUtils::HashString("GREEN");
+        static constexpr uint32_t BLUE_HASH = ConstExprHashingUtils::HashString("BLUE");
+        static constexpr uint32_t HEX_HASH = ConstExprHashingUtils::HashString("HEX");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
 
 
         BurninSubtitleFontColor GetBurninSubtitleFontColorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WHITE_HASH)
           {
             return BurninSubtitleFontColor::WHITE;

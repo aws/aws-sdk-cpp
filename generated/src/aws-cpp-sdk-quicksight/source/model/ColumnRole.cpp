@@ -20,13 +20,13 @@ namespace Aws
       namespace ColumnRoleMapper
       {
 
-        static const int DIMENSION_HASH = HashingUtils::HashString("DIMENSION");
-        static const int MEASURE_HASH = HashingUtils::HashString("MEASURE");
+        static constexpr uint32_t DIMENSION_HASH = ConstExprHashingUtils::HashString("DIMENSION");
+        static constexpr uint32_t MEASURE_HASH = ConstExprHashingUtils::HashString("MEASURE");
 
 
         ColumnRole GetColumnRoleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DIMENSION_HASH)
           {
             return ColumnRole::DIMENSION;

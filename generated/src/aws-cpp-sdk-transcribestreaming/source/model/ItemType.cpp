@@ -20,13 +20,13 @@ namespace Aws
       namespace ItemTypeMapper
       {
 
-        static const int pronunciation_HASH = HashingUtils::HashString("pronunciation");
-        static const int punctuation_HASH = HashingUtils::HashString("punctuation");
+        static constexpr uint32_t pronunciation_HASH = ConstExprHashingUtils::HashString("pronunciation");
+        static constexpr uint32_t punctuation_HASH = ConstExprHashingUtils::HashString("punctuation");
 
 
         ItemType GetItemTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pronunciation_HASH)
           {
             return ItemType::pronunciation;

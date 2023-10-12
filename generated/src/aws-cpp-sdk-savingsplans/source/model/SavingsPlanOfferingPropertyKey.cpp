@@ -20,13 +20,13 @@ namespace Aws
       namespace SavingsPlanOfferingPropertyKeyMapper
       {
 
-        static const int region_HASH = HashingUtils::HashString("region");
-        static const int instanceFamily_HASH = HashingUtils::HashString("instanceFamily");
+        static constexpr uint32_t region_HASH = ConstExprHashingUtils::HashString("region");
+        static constexpr uint32_t instanceFamily_HASH = ConstExprHashingUtils::HashString("instanceFamily");
 
 
         SavingsPlanOfferingPropertyKey GetSavingsPlanOfferingPropertyKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == region_HASH)
           {
             return SavingsPlanOfferingPropertyKey::region;

@@ -20,13 +20,13 @@ namespace Aws
       namespace DeviceServiceNameMapper
       {
 
-        static const int NFS_ON_DEVICE_SERVICE_HASH = HashingUtils::HashString("NFS_ON_DEVICE_SERVICE");
-        static const int S3_ON_DEVICE_SERVICE_HASH = HashingUtils::HashString("S3_ON_DEVICE_SERVICE");
+        static constexpr uint32_t NFS_ON_DEVICE_SERVICE_HASH = ConstExprHashingUtils::HashString("NFS_ON_DEVICE_SERVICE");
+        static constexpr uint32_t S3_ON_DEVICE_SERVICE_HASH = ConstExprHashingUtils::HashString("S3_ON_DEVICE_SERVICE");
 
 
         DeviceServiceName GetDeviceServiceNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NFS_ON_DEVICE_SERVICE_HASH)
           {
             return DeviceServiceName::NFS_ON_DEVICE_SERVICE;

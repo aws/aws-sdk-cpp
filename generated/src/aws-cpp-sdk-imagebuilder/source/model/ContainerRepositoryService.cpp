@@ -20,12 +20,12 @@ namespace Aws
       namespace ContainerRepositoryServiceMapper
       {
 
-        static const int ECR_HASH = HashingUtils::HashString("ECR");
+        static constexpr uint32_t ECR_HASH = ConstExprHashingUtils::HashString("ECR");
 
 
         ContainerRepositoryService GetContainerRepositoryServiceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ECR_HASH)
           {
             return ContainerRepositoryService::ECR;

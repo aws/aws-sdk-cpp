@@ -20,16 +20,16 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int RESPONSE_PLAN_HASH = HashingUtils::HashString("RESPONSE_PLAN");
-        static const int INCIDENT_RECORD_HASH = HashingUtils::HashString("INCIDENT_RECORD");
-        static const int TIMELINE_EVENT_HASH = HashingUtils::HashString("TIMELINE_EVENT");
-        static const int REPLICATION_SET_HASH = HashingUtils::HashString("REPLICATION_SET");
-        static const int RESOURCE_POLICY_HASH = HashingUtils::HashString("RESOURCE_POLICY");
+        static constexpr uint32_t RESPONSE_PLAN_HASH = ConstExprHashingUtils::HashString("RESPONSE_PLAN");
+        static constexpr uint32_t INCIDENT_RECORD_HASH = ConstExprHashingUtils::HashString("INCIDENT_RECORD");
+        static constexpr uint32_t TIMELINE_EVENT_HASH = ConstExprHashingUtils::HashString("TIMELINE_EVENT");
+        static constexpr uint32_t REPLICATION_SET_HASH = ConstExprHashingUtils::HashString("REPLICATION_SET");
+        static constexpr uint32_t RESOURCE_POLICY_HASH = ConstExprHashingUtils::HashString("RESOURCE_POLICY");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESPONSE_PLAN_HASH)
           {
             return ResourceType::RESPONSE_PLAN;

@@ -20,13 +20,13 @@ namespace Aws
       namespace LastFrameClippingBehaviorMapper
       {
 
-        static const int EXCLUDE_LAST_FRAME_HASH = HashingUtils::HashString("EXCLUDE_LAST_FRAME");
-        static const int INCLUDE_LAST_FRAME_HASH = HashingUtils::HashString("INCLUDE_LAST_FRAME");
+        static constexpr uint32_t EXCLUDE_LAST_FRAME_HASH = ConstExprHashingUtils::HashString("EXCLUDE_LAST_FRAME");
+        static constexpr uint32_t INCLUDE_LAST_FRAME_HASH = ConstExprHashingUtils::HashString("INCLUDE_LAST_FRAME");
 
 
         LastFrameClippingBehavior GetLastFrameClippingBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXCLUDE_LAST_FRAME_HASH)
           {
             return LastFrameClippingBehavior::EXCLUDE_LAST_FRAME;

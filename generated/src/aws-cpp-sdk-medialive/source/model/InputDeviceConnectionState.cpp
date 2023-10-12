@@ -20,13 +20,13 @@ namespace Aws
       namespace InputDeviceConnectionStateMapper
       {
 
-        static const int DISCONNECTED_HASH = HashingUtils::HashString("DISCONNECTED");
-        static const int CONNECTED_HASH = HashingUtils::HashString("CONNECTED");
+        static constexpr uint32_t DISCONNECTED_HASH = ConstExprHashingUtils::HashString("DISCONNECTED");
+        static constexpr uint32_t CONNECTED_HASH = ConstExprHashingUtils::HashString("CONNECTED");
 
 
         InputDeviceConnectionState GetInputDeviceConnectionStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISCONNECTED_HASH)
           {
             return InputDeviceConnectionState::DISCONNECTED;

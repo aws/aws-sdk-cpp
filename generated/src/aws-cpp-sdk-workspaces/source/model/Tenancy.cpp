@@ -20,13 +20,13 @@ namespace Aws
       namespace TenancyMapper
       {
 
-        static const int DEDICATED_HASH = HashingUtils::HashString("DEDICATED");
-        static const int SHARED_HASH = HashingUtils::HashString("SHARED");
+        static constexpr uint32_t DEDICATED_HASH = ConstExprHashingUtils::HashString("DEDICATED");
+        static constexpr uint32_t SHARED_HASH = ConstExprHashingUtils::HashString("SHARED");
 
 
         Tenancy GetTenancyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEDICATED_HASH)
           {
             return Tenancy::DEDICATED;

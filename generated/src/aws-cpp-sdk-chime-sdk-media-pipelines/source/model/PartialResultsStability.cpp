@@ -20,14 +20,14 @@ namespace Aws
       namespace PartialResultsStabilityMapper
       {
 
-        static const int high_HASH = HashingUtils::HashString("high");
-        static const int medium_HASH = HashingUtils::HashString("medium");
-        static const int low_HASH = HashingUtils::HashString("low");
+        static constexpr uint32_t high_HASH = ConstExprHashingUtils::HashString("high");
+        static constexpr uint32_t medium_HASH = ConstExprHashingUtils::HashString("medium");
+        static constexpr uint32_t low_HASH = ConstExprHashingUtils::HashString("low");
 
 
         PartialResultsStability GetPartialResultsStabilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == high_HASH)
           {
             return PartialResultsStability::high;

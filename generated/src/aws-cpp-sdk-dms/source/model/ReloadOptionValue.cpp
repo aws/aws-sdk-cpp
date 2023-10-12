@@ -20,13 +20,13 @@ namespace Aws
       namespace ReloadOptionValueMapper
       {
 
-        static const int data_reload_HASH = HashingUtils::HashString("data-reload");
-        static const int validate_only_HASH = HashingUtils::HashString("validate-only");
+        static constexpr uint32_t data_reload_HASH = ConstExprHashingUtils::HashString("data-reload");
+        static constexpr uint32_t validate_only_HASH = ConstExprHashingUtils::HashString("validate-only");
 
 
         ReloadOptionValue GetReloadOptionValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == data_reload_HASH)
           {
             return ReloadOptionValue::data_reload;

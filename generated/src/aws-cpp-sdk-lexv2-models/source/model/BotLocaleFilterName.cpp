@@ -20,12 +20,12 @@ namespace Aws
       namespace BotLocaleFilterNameMapper
       {
 
-        static const int BotLocaleName_HASH = HashingUtils::HashString("BotLocaleName");
+        static constexpr uint32_t BotLocaleName_HASH = ConstExprHashingUtils::HashString("BotLocaleName");
 
 
         BotLocaleFilterName GetBotLocaleFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BotLocaleName_HASH)
           {
             return BotLocaleFilterName::BotLocaleName;

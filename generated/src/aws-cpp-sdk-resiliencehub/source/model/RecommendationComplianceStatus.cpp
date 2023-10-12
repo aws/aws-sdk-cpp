@@ -20,14 +20,14 @@ namespace Aws
       namespace RecommendationComplianceStatusMapper
       {
 
-        static const int BreachedUnattainable_HASH = HashingUtils::HashString("BreachedUnattainable");
-        static const int BreachedCanMeet_HASH = HashingUtils::HashString("BreachedCanMeet");
-        static const int MetCanImprove_HASH = HashingUtils::HashString("MetCanImprove");
+        static constexpr uint32_t BreachedUnattainable_HASH = ConstExprHashingUtils::HashString("BreachedUnattainable");
+        static constexpr uint32_t BreachedCanMeet_HASH = ConstExprHashingUtils::HashString("BreachedCanMeet");
+        static constexpr uint32_t MetCanImprove_HASH = ConstExprHashingUtils::HashString("MetCanImprove");
 
 
         RecommendationComplianceStatus GetRecommendationComplianceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BreachedUnattainable_HASH)
           {
             return RecommendationComplianceStatus::BreachedUnattainable;

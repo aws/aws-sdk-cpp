@@ -20,15 +20,15 @@ namespace Aws
       namespace RenditionConfigurationRenditionMapper
       {
 
-        static const int FULL_HD_HASH = HashingUtils::HashString("FULL_HD");
-        static const int HD_HASH = HashingUtils::HashString("HD");
-        static const int SD_HASH = HashingUtils::HashString("SD");
-        static const int LOWEST_RESOLUTION_HASH = HashingUtils::HashString("LOWEST_RESOLUTION");
+        static constexpr uint32_t FULL_HD_HASH = ConstExprHashingUtils::HashString("FULL_HD");
+        static constexpr uint32_t HD_HASH = ConstExprHashingUtils::HashString("HD");
+        static constexpr uint32_t SD_HASH = ConstExprHashingUtils::HashString("SD");
+        static constexpr uint32_t LOWEST_RESOLUTION_HASH = ConstExprHashingUtils::HashString("LOWEST_RESOLUTION");
 
 
         RenditionConfigurationRendition GetRenditionConfigurationRenditionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FULL_HD_HASH)
           {
             return RenditionConfigurationRendition::FULL_HD;

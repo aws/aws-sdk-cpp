@@ -20,13 +20,13 @@ namespace Aws
       namespace StackErrorCodeMapper
       {
 
-        static const int STORAGE_CONNECTOR_ERROR_HASH = HashingUtils::HashString("STORAGE_CONNECTOR_ERROR");
-        static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("INTERNAL_SERVICE_ERROR");
+        static constexpr uint32_t STORAGE_CONNECTOR_ERROR_HASH = ConstExprHashingUtils::HashString("STORAGE_CONNECTOR_ERROR");
+        static constexpr uint32_t INTERNAL_SERVICE_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_SERVICE_ERROR");
 
 
         StackErrorCode GetStackErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STORAGE_CONNECTOR_ERROR_HASH)
           {
             return StackErrorCode::STORAGE_CONNECTOR_ERROR;

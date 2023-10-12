@@ -20,14 +20,14 @@ namespace Aws
       namespace ReferenceLinePatternTypeMapper
       {
 
-        static const int SOLID_HASH = HashingUtils::HashString("SOLID");
-        static const int DASHED_HASH = HashingUtils::HashString("DASHED");
-        static const int DOTTED_HASH = HashingUtils::HashString("DOTTED");
+        static constexpr uint32_t SOLID_HASH = ConstExprHashingUtils::HashString("SOLID");
+        static constexpr uint32_t DASHED_HASH = ConstExprHashingUtils::HashString("DASHED");
+        static constexpr uint32_t DOTTED_HASH = ConstExprHashingUtils::HashString("DOTTED");
 
 
         ReferenceLinePatternType GetReferenceLinePatternTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SOLID_HASH)
           {
             return ReferenceLinePatternType::SOLID;

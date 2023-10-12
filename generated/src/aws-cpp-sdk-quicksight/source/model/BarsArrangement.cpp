@@ -20,14 +20,14 @@ namespace Aws
       namespace BarsArrangementMapper
       {
 
-        static const int CLUSTERED_HASH = HashingUtils::HashString("CLUSTERED");
-        static const int STACKED_HASH = HashingUtils::HashString("STACKED");
-        static const int STACKED_PERCENT_HASH = HashingUtils::HashString("STACKED_PERCENT");
+        static constexpr uint32_t CLUSTERED_HASH = ConstExprHashingUtils::HashString("CLUSTERED");
+        static constexpr uint32_t STACKED_HASH = ConstExprHashingUtils::HashString("STACKED");
+        static constexpr uint32_t STACKED_PERCENT_HASH = ConstExprHashingUtils::HashString("STACKED_PERCENT");
 
 
         BarsArrangement GetBarsArrangementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLUSTERED_HASH)
           {
             return BarsArrangement::CLUSTERED;

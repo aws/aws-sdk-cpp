@@ -20,13 +20,13 @@ namespace Aws
       namespace FormatMapper
       {
 
-        static const int JPEG_HASH = HashingUtils::HashString("JPEG");
-        static const int PNG_HASH = HashingUtils::HashString("PNG");
+        static constexpr uint32_t JPEG_HASH = ConstExprHashingUtils::HashString("JPEG");
+        static constexpr uint32_t PNG_HASH = ConstExprHashingUtils::HashString("PNG");
 
 
         Format GetFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JPEG_HASH)
           {
             return Format::JPEG;

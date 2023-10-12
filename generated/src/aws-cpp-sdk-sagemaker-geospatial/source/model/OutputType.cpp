@@ -20,16 +20,16 @@ namespace Aws
       namespace OutputTypeMapper
       {
 
-        static const int INT32_HASH = HashingUtils::HashString("INT32");
-        static const int FLOAT32_HASH = HashingUtils::HashString("FLOAT32");
-        static const int INT16_HASH = HashingUtils::HashString("INT16");
-        static const int FLOAT64_HASH = HashingUtils::HashString("FLOAT64");
-        static const int UINT16_HASH = HashingUtils::HashString("UINT16");
+        static constexpr uint32_t INT32_HASH = ConstExprHashingUtils::HashString("INT32");
+        static constexpr uint32_t FLOAT32_HASH = ConstExprHashingUtils::HashString("FLOAT32");
+        static constexpr uint32_t INT16_HASH = ConstExprHashingUtils::HashString("INT16");
+        static constexpr uint32_t FLOAT64_HASH = ConstExprHashingUtils::HashString("FLOAT64");
+        static constexpr uint32_t UINT16_HASH = ConstExprHashingUtils::HashString("UINT16");
 
 
         OutputType GetOutputTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INT32_HASH)
           {
             return OutputType::INT32;

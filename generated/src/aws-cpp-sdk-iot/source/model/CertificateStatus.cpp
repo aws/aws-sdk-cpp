@@ -20,17 +20,17 @@ namespace Aws
       namespace CertificateStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
-        static const int REVOKED_HASH = HashingUtils::HashString("REVOKED");
-        static const int PENDING_TRANSFER_HASH = HashingUtils::HashString("PENDING_TRANSFER");
-        static const int REGISTER_INACTIVE_HASH = HashingUtils::HashString("REGISTER_INACTIVE");
-        static const int PENDING_ACTIVATION_HASH = HashingUtils::HashString("PENDING_ACTIVATION");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t INACTIVE_HASH = ConstExprHashingUtils::HashString("INACTIVE");
+        static constexpr uint32_t REVOKED_HASH = ConstExprHashingUtils::HashString("REVOKED");
+        static constexpr uint32_t PENDING_TRANSFER_HASH = ConstExprHashingUtils::HashString("PENDING_TRANSFER");
+        static constexpr uint32_t REGISTER_INACTIVE_HASH = ConstExprHashingUtils::HashString("REGISTER_INACTIVE");
+        static constexpr uint32_t PENDING_ACTIVATION_HASH = ConstExprHashingUtils::HashString("PENDING_ACTIVATION");
 
 
         CertificateStatus GetCertificateStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return CertificateStatus::ACTIVE;

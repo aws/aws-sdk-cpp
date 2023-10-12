@@ -20,12 +20,12 @@ namespace Aws
       namespace ReportScopeMapper
       {
 
-        static const int FAILED_FILES_ONLY_HASH = HashingUtils::HashString("FAILED_FILES_ONLY");
+        static constexpr uint32_t FAILED_FILES_ONLY_HASH = ConstExprHashingUtils::HashString("FAILED_FILES_ONLY");
 
 
         ReportScope GetReportScopeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FAILED_FILES_ONLY_HASH)
           {
             return ReportScope::FAILED_FILES_ONLY;

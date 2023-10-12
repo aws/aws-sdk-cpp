@@ -20,13 +20,13 @@ namespace Aws
       namespace CustomerPolicyStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int OUT_OF_ADMIN_SCOPE_HASH = HashingUtils::HashString("OUT_OF_ADMIN_SCOPE");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t OUT_OF_ADMIN_SCOPE_HASH = ConstExprHashingUtils::HashString("OUT_OF_ADMIN_SCOPE");
 
 
         CustomerPolicyStatus GetCustomerPolicyStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return CustomerPolicyStatus::ACTIVE;

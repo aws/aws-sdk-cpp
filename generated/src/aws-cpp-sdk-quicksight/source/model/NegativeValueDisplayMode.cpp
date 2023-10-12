@@ -20,13 +20,13 @@ namespace Aws
       namespace NegativeValueDisplayModeMapper
       {
 
-        static const int POSITIVE_HASH = HashingUtils::HashString("POSITIVE");
-        static const int NEGATIVE_HASH = HashingUtils::HashString("NEGATIVE");
+        static constexpr uint32_t POSITIVE_HASH = ConstExprHashingUtils::HashString("POSITIVE");
+        static constexpr uint32_t NEGATIVE_HASH = ConstExprHashingUtils::HashString("NEGATIVE");
 
 
         NegativeValueDisplayMode GetNegativeValueDisplayModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == POSITIVE_HASH)
           {
             return NegativeValueDisplayMode::POSITIVE;

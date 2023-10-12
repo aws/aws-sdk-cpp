@@ -20,14 +20,14 @@ namespace Aws
       namespace ICD10CMRelationshipTypeMapper
       {
 
-        static const int OVERLAP_HASH = HashingUtils::HashString("OVERLAP");
-        static const int SYSTEM_ORGAN_SITE_HASH = HashingUtils::HashString("SYSTEM_ORGAN_SITE");
-        static const int QUALITY_HASH = HashingUtils::HashString("QUALITY");
+        static constexpr uint32_t OVERLAP_HASH = ConstExprHashingUtils::HashString("OVERLAP");
+        static constexpr uint32_t SYSTEM_ORGAN_SITE_HASH = ConstExprHashingUtils::HashString("SYSTEM_ORGAN_SITE");
+        static constexpr uint32_t QUALITY_HASH = ConstExprHashingUtils::HashString("QUALITY");
 
 
         ICD10CMRelationshipType GetICD10CMRelationshipTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OVERLAP_HASH)
           {
             return ICD10CMRelationshipType::OVERLAP;

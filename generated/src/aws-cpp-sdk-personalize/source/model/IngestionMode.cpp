@@ -20,14 +20,14 @@ namespace Aws
       namespace IngestionModeMapper
       {
 
-        static const int BULK_HASH = HashingUtils::HashString("BULK");
-        static const int PUT_HASH = HashingUtils::HashString("PUT");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t BULK_HASH = ConstExprHashingUtils::HashString("BULK");
+        static constexpr uint32_t PUT_HASH = ConstExprHashingUtils::HashString("PUT");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         IngestionMode GetIngestionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BULK_HASH)
           {
             return IngestionMode::BULK;

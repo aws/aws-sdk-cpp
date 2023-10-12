@@ -20,13 +20,13 @@ namespace Aws
       namespace SuppressionListReasonMapper
       {
 
-        static const int BOUNCE_HASH = HashingUtils::HashString("BOUNCE");
-        static const int COMPLAINT_HASH = HashingUtils::HashString("COMPLAINT");
+        static constexpr uint32_t BOUNCE_HASH = ConstExprHashingUtils::HashString("BOUNCE");
+        static constexpr uint32_t COMPLAINT_HASH = ConstExprHashingUtils::HashString("COMPLAINT");
 
 
         SuppressionListReason GetSuppressionListReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BOUNCE_HASH)
           {
             return SuppressionListReason::BOUNCE;

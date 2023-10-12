@@ -20,28 +20,28 @@ namespace Aws
       namespace NetworkInterfaceTypeMapper
       {
 
-        static const int interface_HASH = HashingUtils::HashString("interface");
-        static const int natGateway_HASH = HashingUtils::HashString("natGateway");
-        static const int efa_HASH = HashingUtils::HashString("efa");
-        static const int trunk_HASH = HashingUtils::HashString("trunk");
-        static const int load_balancer_HASH = HashingUtils::HashString("load_balancer");
-        static const int network_load_balancer_HASH = HashingUtils::HashString("network_load_balancer");
-        static const int vpc_endpoint_HASH = HashingUtils::HashString("vpc_endpoint");
-        static const int branch_HASH = HashingUtils::HashString("branch");
-        static const int transit_gateway_HASH = HashingUtils::HashString("transit_gateway");
-        static const int lambda_HASH = HashingUtils::HashString("lambda");
-        static const int quicksight_HASH = HashingUtils::HashString("quicksight");
-        static const int global_accelerator_managed_HASH = HashingUtils::HashString("global_accelerator_managed");
-        static const int api_gateway_managed_HASH = HashingUtils::HashString("api_gateway_managed");
-        static const int gateway_load_balancer_HASH = HashingUtils::HashString("gateway_load_balancer");
-        static const int gateway_load_balancer_endpoint_HASH = HashingUtils::HashString("gateway_load_balancer_endpoint");
-        static const int iot_rules_managed_HASH = HashingUtils::HashString("iot_rules_managed");
-        static const int aws_codestar_connections_managed_HASH = HashingUtils::HashString("aws_codestar_connections_managed");
+        static constexpr uint32_t interface_HASH = ConstExprHashingUtils::HashString("interface");
+        static constexpr uint32_t natGateway_HASH = ConstExprHashingUtils::HashString("natGateway");
+        static constexpr uint32_t efa_HASH = ConstExprHashingUtils::HashString("efa");
+        static constexpr uint32_t trunk_HASH = ConstExprHashingUtils::HashString("trunk");
+        static constexpr uint32_t load_balancer_HASH = ConstExprHashingUtils::HashString("load_balancer");
+        static constexpr uint32_t network_load_balancer_HASH = ConstExprHashingUtils::HashString("network_load_balancer");
+        static constexpr uint32_t vpc_endpoint_HASH = ConstExprHashingUtils::HashString("vpc_endpoint");
+        static constexpr uint32_t branch_HASH = ConstExprHashingUtils::HashString("branch");
+        static constexpr uint32_t transit_gateway_HASH = ConstExprHashingUtils::HashString("transit_gateway");
+        static constexpr uint32_t lambda_HASH = ConstExprHashingUtils::HashString("lambda");
+        static constexpr uint32_t quicksight_HASH = ConstExprHashingUtils::HashString("quicksight");
+        static constexpr uint32_t global_accelerator_managed_HASH = ConstExprHashingUtils::HashString("global_accelerator_managed");
+        static constexpr uint32_t api_gateway_managed_HASH = ConstExprHashingUtils::HashString("api_gateway_managed");
+        static constexpr uint32_t gateway_load_balancer_HASH = ConstExprHashingUtils::HashString("gateway_load_balancer");
+        static constexpr uint32_t gateway_load_balancer_endpoint_HASH = ConstExprHashingUtils::HashString("gateway_load_balancer_endpoint");
+        static constexpr uint32_t iot_rules_managed_HASH = ConstExprHashingUtils::HashString("iot_rules_managed");
+        static constexpr uint32_t aws_codestar_connections_managed_HASH = ConstExprHashingUtils::HashString("aws_codestar_connections_managed");
 
 
         NetworkInterfaceType GetNetworkInterfaceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == interface_HASH)
           {
             return NetworkInterfaceType::interface;

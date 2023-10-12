@@ -20,15 +20,15 @@ namespace Aws
       namespace AttachmentTypeMapper
       {
 
-        static const int CONNECT_HASH = HashingUtils::HashString("CONNECT");
-        static const int SITE_TO_SITE_VPN_HASH = HashingUtils::HashString("SITE_TO_SITE_VPN");
-        static const int VPC_HASH = HashingUtils::HashString("VPC");
-        static const int TRANSIT_GATEWAY_ROUTE_TABLE_HASH = HashingUtils::HashString("TRANSIT_GATEWAY_ROUTE_TABLE");
+        static constexpr uint32_t CONNECT_HASH = ConstExprHashingUtils::HashString("CONNECT");
+        static constexpr uint32_t SITE_TO_SITE_VPN_HASH = ConstExprHashingUtils::HashString("SITE_TO_SITE_VPN");
+        static constexpr uint32_t VPC_HASH = ConstExprHashingUtils::HashString("VPC");
+        static constexpr uint32_t TRANSIT_GATEWAY_ROUTE_TABLE_HASH = ConstExprHashingUtils::HashString("TRANSIT_GATEWAY_ROUTE_TABLE");
 
 
         AttachmentType GetAttachmentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONNECT_HASH)
           {
             return AttachmentType::CONNECT;

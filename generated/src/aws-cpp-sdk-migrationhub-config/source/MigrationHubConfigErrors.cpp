@@ -26,13 +26,13 @@ template<> AWS_MIGRATIONHUBCONFIG_API ThrottlingException MigrationHubConfigErro
 namespace MigrationHubConfigErrorMapper
 {
 
-static const int DRY_RUN_OPERATION_HASH = HashingUtils::HashString("DryRunOperation");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
+static constexpr uint32_t DRY_RUN_OPERATION_HASH = ConstExprHashingUtils::HashString("DryRunOperation");
+static constexpr uint32_t INVALID_INPUT_HASH = ConstExprHashingUtils::HashString("InvalidInputException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == DRY_RUN_OPERATION_HASH)
   {

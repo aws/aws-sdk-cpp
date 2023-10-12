@@ -20,12 +20,12 @@ namespace Aws
       namespace FHIRVersionMapper
       {
 
-        static const int R4_HASH = HashingUtils::HashString("R4");
+        static constexpr uint32_t R4_HASH = ConstExprHashingUtils::HashString("R4");
 
 
         FHIRVersion GetFHIRVersionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == R4_HASH)
           {
             return FHIRVersion::R4;

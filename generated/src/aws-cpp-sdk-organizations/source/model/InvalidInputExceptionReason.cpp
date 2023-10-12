@@ -20,39 +20,39 @@ namespace Aws
       namespace InvalidInputExceptionReasonMapper
       {
 
-        static const int INVALID_PARTY_TYPE_TARGET_HASH = HashingUtils::HashString("INVALID_PARTY_TYPE_TARGET");
-        static const int INVALID_SYNTAX_ORGANIZATION_ARN_HASH = HashingUtils::HashString("INVALID_SYNTAX_ORGANIZATION_ARN");
-        static const int INVALID_SYNTAX_POLICY_ID_HASH = HashingUtils::HashString("INVALID_SYNTAX_POLICY_ID");
-        static const int INVALID_ENUM_HASH = HashingUtils::HashString("INVALID_ENUM");
-        static const int INVALID_ENUM_POLICY_TYPE_HASH = HashingUtils::HashString("INVALID_ENUM_POLICY_TYPE");
-        static const int INVALID_LIST_MEMBER_HASH = HashingUtils::HashString("INVALID_LIST_MEMBER");
-        static const int MAX_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("MAX_LENGTH_EXCEEDED");
-        static const int MAX_VALUE_EXCEEDED_HASH = HashingUtils::HashString("MAX_VALUE_EXCEEDED");
-        static const int MIN_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("MIN_LENGTH_EXCEEDED");
-        static const int MIN_VALUE_EXCEEDED_HASH = HashingUtils::HashString("MIN_VALUE_EXCEEDED");
-        static const int IMMUTABLE_POLICY_HASH = HashingUtils::HashString("IMMUTABLE_POLICY");
-        static const int INVALID_PATTERN_HASH = HashingUtils::HashString("INVALID_PATTERN");
-        static const int INVALID_PATTERN_TARGET_ID_HASH = HashingUtils::HashString("INVALID_PATTERN_TARGET_ID");
-        static const int INPUT_REQUIRED_HASH = HashingUtils::HashString("INPUT_REQUIRED");
-        static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("INVALID_NEXT_TOKEN");
-        static const int MAX_LIMIT_EXCEEDED_FILTER_HASH = HashingUtils::HashString("MAX_LIMIT_EXCEEDED_FILTER");
-        static const int MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS_HASH = HashingUtils::HashString("MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS");
-        static const int INVALID_FULL_NAME_TARGET_HASH = HashingUtils::HashString("INVALID_FULL_NAME_TARGET");
-        static const int UNRECOGNIZED_SERVICE_PRINCIPAL_HASH = HashingUtils::HashString("UNRECOGNIZED_SERVICE_PRINCIPAL");
-        static const int INVALID_ROLE_NAME_HASH = HashingUtils::HashString("INVALID_ROLE_NAME");
-        static const int INVALID_SYSTEM_TAGS_PARAMETER_HASH = HashingUtils::HashString("INVALID_SYSTEM_TAGS_PARAMETER");
-        static const int DUPLICATE_TAG_KEY_HASH = HashingUtils::HashString("DUPLICATE_TAG_KEY");
-        static const int TARGET_NOT_SUPPORTED_HASH = HashingUtils::HashString("TARGET_NOT_SUPPORTED");
-        static const int INVALID_EMAIL_ADDRESS_TARGET_HASH = HashingUtils::HashString("INVALID_EMAIL_ADDRESS_TARGET");
-        static const int INVALID_RESOURCE_POLICY_JSON_HASH = HashingUtils::HashString("INVALID_RESOURCE_POLICY_JSON");
-        static const int UNSUPPORTED_ACTION_IN_RESOURCE_POLICY_HASH = HashingUtils::HashString("UNSUPPORTED_ACTION_IN_RESOURCE_POLICY");
-        static const int UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY_HASH = HashingUtils::HashString("UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY");
-        static const int UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY_HASH = HashingUtils::HashString("UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY");
+        static constexpr uint32_t INVALID_PARTY_TYPE_TARGET_HASH = ConstExprHashingUtils::HashString("INVALID_PARTY_TYPE_TARGET");
+        static constexpr uint32_t INVALID_SYNTAX_ORGANIZATION_ARN_HASH = ConstExprHashingUtils::HashString("INVALID_SYNTAX_ORGANIZATION_ARN");
+        static constexpr uint32_t INVALID_SYNTAX_POLICY_ID_HASH = ConstExprHashingUtils::HashString("INVALID_SYNTAX_POLICY_ID");
+        static constexpr uint32_t INVALID_ENUM_HASH = ConstExprHashingUtils::HashString("INVALID_ENUM");
+        static constexpr uint32_t INVALID_ENUM_POLICY_TYPE_HASH = ConstExprHashingUtils::HashString("INVALID_ENUM_POLICY_TYPE");
+        static constexpr uint32_t INVALID_LIST_MEMBER_HASH = ConstExprHashingUtils::HashString("INVALID_LIST_MEMBER");
+        static constexpr uint32_t MAX_LENGTH_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MAX_LENGTH_EXCEEDED");
+        static constexpr uint32_t MAX_VALUE_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MAX_VALUE_EXCEEDED");
+        static constexpr uint32_t MIN_LENGTH_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MIN_LENGTH_EXCEEDED");
+        static constexpr uint32_t MIN_VALUE_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MIN_VALUE_EXCEEDED");
+        static constexpr uint32_t IMMUTABLE_POLICY_HASH = ConstExprHashingUtils::HashString("IMMUTABLE_POLICY");
+        static constexpr uint32_t INVALID_PATTERN_HASH = ConstExprHashingUtils::HashString("INVALID_PATTERN");
+        static constexpr uint32_t INVALID_PATTERN_TARGET_ID_HASH = ConstExprHashingUtils::HashString("INVALID_PATTERN_TARGET_ID");
+        static constexpr uint32_t INPUT_REQUIRED_HASH = ConstExprHashingUtils::HashString("INPUT_REQUIRED");
+        static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("INVALID_NEXT_TOKEN");
+        static constexpr uint32_t MAX_LIMIT_EXCEEDED_FILTER_HASH = ConstExprHashingUtils::HashString("MAX_LIMIT_EXCEEDED_FILTER");
+        static constexpr uint32_t MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS_HASH = ConstExprHashingUtils::HashString("MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS");
+        static constexpr uint32_t INVALID_FULL_NAME_TARGET_HASH = ConstExprHashingUtils::HashString("INVALID_FULL_NAME_TARGET");
+        static constexpr uint32_t UNRECOGNIZED_SERVICE_PRINCIPAL_HASH = ConstExprHashingUtils::HashString("UNRECOGNIZED_SERVICE_PRINCIPAL");
+        static constexpr uint32_t INVALID_ROLE_NAME_HASH = ConstExprHashingUtils::HashString("INVALID_ROLE_NAME");
+        static constexpr uint32_t INVALID_SYSTEM_TAGS_PARAMETER_HASH = ConstExprHashingUtils::HashString("INVALID_SYSTEM_TAGS_PARAMETER");
+        static constexpr uint32_t DUPLICATE_TAG_KEY_HASH = ConstExprHashingUtils::HashString("DUPLICATE_TAG_KEY");
+        static constexpr uint32_t TARGET_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("TARGET_NOT_SUPPORTED");
+        static constexpr uint32_t INVALID_EMAIL_ADDRESS_TARGET_HASH = ConstExprHashingUtils::HashString("INVALID_EMAIL_ADDRESS_TARGET");
+        static constexpr uint32_t INVALID_RESOURCE_POLICY_JSON_HASH = ConstExprHashingUtils::HashString("INVALID_RESOURCE_POLICY_JSON");
+        static constexpr uint32_t UNSUPPORTED_ACTION_IN_RESOURCE_POLICY_HASH = ConstExprHashingUtils::HashString("UNSUPPORTED_ACTION_IN_RESOURCE_POLICY");
+        static constexpr uint32_t UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY_HASH = ConstExprHashingUtils::HashString("UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY");
+        static constexpr uint32_t UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY_HASH = ConstExprHashingUtils::HashString("UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY");
 
 
         InvalidInputExceptionReason GetInvalidInputExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVALID_PARTY_TYPE_TARGET_HASH)
           {
             return InvalidInputExceptionReason::INVALID_PARTY_TYPE_TARGET;

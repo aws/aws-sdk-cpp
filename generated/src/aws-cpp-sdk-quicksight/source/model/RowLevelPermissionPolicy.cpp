@@ -20,13 +20,13 @@ namespace Aws
       namespace RowLevelPermissionPolicyMapper
       {
 
-        static const int GRANT_ACCESS_HASH = HashingUtils::HashString("GRANT_ACCESS");
-        static const int DENY_ACCESS_HASH = HashingUtils::HashString("DENY_ACCESS");
+        static constexpr uint32_t GRANT_ACCESS_HASH = ConstExprHashingUtils::HashString("GRANT_ACCESS");
+        static constexpr uint32_t DENY_ACCESS_HASH = ConstExprHashingUtils::HashString("DENY_ACCESS");
 
 
         RowLevelPermissionPolicy GetRowLevelPermissionPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GRANT_ACCESS_HASH)
           {
             return RowLevelPermissionPolicy::GRANT_ACCESS;

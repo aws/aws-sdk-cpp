@@ -20,16 +20,16 @@ namespace Aws
       namespace UpdateReasonMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int PRICING_TIER_UPDATE_HASH = HashingUtils::HashString("PRICING_TIER_UPDATE");
-        static const int ENTITY_COUNT_UPDATE_HASH = HashingUtils::HashString("ENTITY_COUNT_UPDATE");
-        static const int PRICING_MODE_UPDATE_HASH = HashingUtils::HashString("PRICING_MODE_UPDATE");
-        static const int OVERWRITTEN_HASH = HashingUtils::HashString("OVERWRITTEN");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t PRICING_TIER_UPDATE_HASH = ConstExprHashingUtils::HashString("PRICING_TIER_UPDATE");
+        static constexpr uint32_t ENTITY_COUNT_UPDATE_HASH = ConstExprHashingUtils::HashString("ENTITY_COUNT_UPDATE");
+        static constexpr uint32_t PRICING_MODE_UPDATE_HASH = ConstExprHashingUtils::HashString("PRICING_MODE_UPDATE");
+        static constexpr uint32_t OVERWRITTEN_HASH = ConstExprHashingUtils::HashString("OVERWRITTEN");
 
 
         UpdateReason GetUpdateReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return UpdateReason::DEFAULT;

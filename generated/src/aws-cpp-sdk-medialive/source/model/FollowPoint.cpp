@@ -20,13 +20,13 @@ namespace Aws
       namespace FollowPointMapper
       {
 
-        static const int END_HASH = HashingUtils::HashString("END");
-        static const int START_HASH = HashingUtils::HashString("START");
+        static constexpr uint32_t END_HASH = ConstExprHashingUtils::HashString("END");
+        static constexpr uint32_t START_HASH = ConstExprHashingUtils::HashString("START");
 
 
         FollowPoint GetFollowPointForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == END_HASH)
           {
             return FollowPoint::END;

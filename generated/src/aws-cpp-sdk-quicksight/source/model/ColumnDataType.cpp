@@ -20,15 +20,15 @@ namespace Aws
       namespace ColumnDataTypeMapper
       {
 
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
-        static const int INTEGER_HASH = HashingUtils::HashString("INTEGER");
-        static const int DECIMAL_HASH = HashingUtils::HashString("DECIMAL");
-        static const int DATETIME_HASH = HashingUtils::HashString("DATETIME");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
+        static constexpr uint32_t INTEGER_HASH = ConstExprHashingUtils::HashString("INTEGER");
+        static constexpr uint32_t DECIMAL_HASH = ConstExprHashingUtils::HashString("DECIMAL");
+        static constexpr uint32_t DATETIME_HASH = ConstExprHashingUtils::HashString("DATETIME");
 
 
         ColumnDataType GetColumnDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STRING_HASH)
           {
             return ColumnDataType::STRING;

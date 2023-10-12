@@ -20,15 +20,15 @@ namespace Aws
       namespace CustomMetricTypeMapper
       {
 
-        static const int string_list_HASH = HashingUtils::HashString("string-list");
-        static const int ip_address_list_HASH = HashingUtils::HashString("ip-address-list");
-        static const int number_list_HASH = HashingUtils::HashString("number-list");
-        static const int number_HASH = HashingUtils::HashString("number");
+        static constexpr uint32_t string_list_HASH = ConstExprHashingUtils::HashString("string-list");
+        static constexpr uint32_t ip_address_list_HASH = ConstExprHashingUtils::HashString("ip-address-list");
+        static constexpr uint32_t number_list_HASH = ConstExprHashingUtils::HashString("number-list");
+        static constexpr uint32_t number_HASH = ConstExprHashingUtils::HashString("number");
 
 
         CustomMetricType GetCustomMetricTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == string_list_HASH)
           {
             return CustomMetricType::string_list;

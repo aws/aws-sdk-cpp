@@ -20,15 +20,15 @@ namespace Aws
       namespace MemberStatusMapper
       {
 
-        static const int INVITED_HASH = HashingUtils::HashString("INVITED");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int LEFT_HASH = HashingUtils::HashString("LEFT");
-        static const int REMOVED_HASH = HashingUtils::HashString("REMOVED");
+        static constexpr uint32_t INVITED_HASH = ConstExprHashingUtils::HashString("INVITED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t LEFT_HASH = ConstExprHashingUtils::HashString("LEFT");
+        static constexpr uint32_t REMOVED_HASH = ConstExprHashingUtils::HashString("REMOVED");
 
 
         MemberStatus GetMemberStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVITED_HASH)
           {
             return MemberStatus::INVITED;

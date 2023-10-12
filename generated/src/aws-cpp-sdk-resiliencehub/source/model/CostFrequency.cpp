@@ -20,15 +20,15 @@ namespace Aws
       namespace CostFrequencyMapper
       {
 
-        static const int Hourly_HASH = HashingUtils::HashString("Hourly");
-        static const int Daily_HASH = HashingUtils::HashString("Daily");
-        static const int Monthly_HASH = HashingUtils::HashString("Monthly");
-        static const int Yearly_HASH = HashingUtils::HashString("Yearly");
+        static constexpr uint32_t Hourly_HASH = ConstExprHashingUtils::HashString("Hourly");
+        static constexpr uint32_t Daily_HASH = ConstExprHashingUtils::HashString("Daily");
+        static constexpr uint32_t Monthly_HASH = ConstExprHashingUtils::HashString("Monthly");
+        static constexpr uint32_t Yearly_HASH = ConstExprHashingUtils::HashString("Yearly");
 
 
         CostFrequency GetCostFrequencyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Hourly_HASH)
           {
             return CostFrequency::Hourly;

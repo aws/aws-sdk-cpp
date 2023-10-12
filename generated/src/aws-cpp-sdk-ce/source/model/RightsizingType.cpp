@@ -20,13 +20,13 @@ namespace Aws
       namespace RightsizingTypeMapper
       {
 
-        static const int TERMINATE_HASH = HashingUtils::HashString("TERMINATE");
-        static const int MODIFY_HASH = HashingUtils::HashString("MODIFY");
+        static constexpr uint32_t TERMINATE_HASH = ConstExprHashingUtils::HashString("TERMINATE");
+        static constexpr uint32_t MODIFY_HASH = ConstExprHashingUtils::HashString("MODIFY");
 
 
         RightsizingType GetRightsizingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TERMINATE_HASH)
           {
             return RightsizingType::TERMINATE;

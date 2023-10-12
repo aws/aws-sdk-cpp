@@ -20,16 +20,16 @@ namespace Aws
       namespace OAuthScopesElementMapper
       {
 
-        static const int PHONE_HASH = HashingUtils::HashString("PHONE");
-        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
-        static const int OPENID_HASH = HashingUtils::HashString("OPENID");
-        static const int PROFILE_HASH = HashingUtils::HashString("PROFILE");
-        static const int AWS_COGNITO_SIGNIN_USER_ADMIN_HASH = HashingUtils::HashString("AWS_COGNITO_SIGNIN_USER_ADMIN");
+        static constexpr uint32_t PHONE_HASH = ConstExprHashingUtils::HashString("PHONE");
+        static constexpr uint32_t EMAIL_HASH = ConstExprHashingUtils::HashString("EMAIL");
+        static constexpr uint32_t OPENID_HASH = ConstExprHashingUtils::HashString("OPENID");
+        static constexpr uint32_t PROFILE_HASH = ConstExprHashingUtils::HashString("PROFILE");
+        static constexpr uint32_t AWS_COGNITO_SIGNIN_USER_ADMIN_HASH = ConstExprHashingUtils::HashString("AWS_COGNITO_SIGNIN_USER_ADMIN");
 
 
         OAuthScopesElement GetOAuthScopesElementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PHONE_HASH)
           {
             return OAuthScopesElement::PHONE;

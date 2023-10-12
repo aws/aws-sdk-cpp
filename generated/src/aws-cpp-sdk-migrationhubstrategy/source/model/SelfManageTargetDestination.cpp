@@ -20,15 +20,15 @@ namespace Aws
       namespace SelfManageTargetDestinationMapper
       {
 
-        static const int None_specified_HASH = HashingUtils::HashString("None specified");
-        static const int Amazon_Elastic_Cloud_Compute_EC2_HASH = HashingUtils::HashString("Amazon Elastic Cloud Compute (EC2)");
-        static const int Amazon_Elastic_Container_Service_ECS_HASH = HashingUtils::HashString("Amazon Elastic Container Service (ECS)");
-        static const int Amazon_Elastic_Kubernetes_Service_EKS_HASH = HashingUtils::HashString("Amazon Elastic Kubernetes Service (EKS)");
+        static constexpr uint32_t None_specified_HASH = ConstExprHashingUtils::HashString("None specified");
+        static constexpr uint32_t Amazon_Elastic_Cloud_Compute_EC2_HASH = ConstExprHashingUtils::HashString("Amazon Elastic Cloud Compute (EC2)");
+        static constexpr uint32_t Amazon_Elastic_Container_Service_ECS_HASH = ConstExprHashingUtils::HashString("Amazon Elastic Container Service (ECS)");
+        static constexpr uint32_t Amazon_Elastic_Kubernetes_Service_EKS_HASH = ConstExprHashingUtils::HashString("Amazon Elastic Kubernetes Service (EKS)");
 
 
         SelfManageTargetDestination GetSelfManageTargetDestinationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == None_specified_HASH)
           {
             return SelfManageTargetDestination::None_specified;

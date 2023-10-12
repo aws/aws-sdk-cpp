@@ -20,13 +20,13 @@ namespace Aws
       namespace SpotProvisioningTimeoutActionMapper
       {
 
-        static const int SWITCH_TO_ON_DEMAND_HASH = HashingUtils::HashString("SWITCH_TO_ON_DEMAND");
-        static const int TERMINATE_CLUSTER_HASH = HashingUtils::HashString("TERMINATE_CLUSTER");
+        static constexpr uint32_t SWITCH_TO_ON_DEMAND_HASH = ConstExprHashingUtils::HashString("SWITCH_TO_ON_DEMAND");
+        static constexpr uint32_t TERMINATE_CLUSTER_HASH = ConstExprHashingUtils::HashString("TERMINATE_CLUSTER");
 
 
         SpotProvisioningTimeoutAction GetSpotProvisioningTimeoutActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SWITCH_TO_ON_DEMAND_HASH)
           {
             return SpotProvisioningTimeoutAction::SWITCH_TO_ON_DEMAND;

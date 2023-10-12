@@ -20,14 +20,14 @@ namespace Aws
       namespace HlsOutputSelectionMapper
       {
 
-        static const int MANIFESTS_AND_SEGMENTS_HASH = HashingUtils::HashString("MANIFESTS_AND_SEGMENTS");
-        static const int SEGMENTS_ONLY_HASH = HashingUtils::HashString("SEGMENTS_ONLY");
-        static const int VARIANT_MANIFESTS_AND_SEGMENTS_HASH = HashingUtils::HashString("VARIANT_MANIFESTS_AND_SEGMENTS");
+        static constexpr uint32_t MANIFESTS_AND_SEGMENTS_HASH = ConstExprHashingUtils::HashString("MANIFESTS_AND_SEGMENTS");
+        static constexpr uint32_t SEGMENTS_ONLY_HASH = ConstExprHashingUtils::HashString("SEGMENTS_ONLY");
+        static constexpr uint32_t VARIANT_MANIFESTS_AND_SEGMENTS_HASH = ConstExprHashingUtils::HashString("VARIANT_MANIFESTS_AND_SEGMENTS");
 
 
         HlsOutputSelection GetHlsOutputSelectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MANIFESTS_AND_SEGMENTS_HASH)
           {
             return HlsOutputSelection::MANIFESTS_AND_SEGMENTS;

@@ -20,14 +20,14 @@ namespace Aws
       namespace BuildTypeMapper
       {
 
-        static const int USER_INITIATED_HASH = HashingUtils::HashString("USER_INITIATED");
-        static const int SCHEDULED_HASH = HashingUtils::HashString("SCHEDULED");
-        static const int IMPORT_HASH = HashingUtils::HashString("IMPORT");
+        static constexpr uint32_t USER_INITIATED_HASH = ConstExprHashingUtils::HashString("USER_INITIATED");
+        static constexpr uint32_t SCHEDULED_HASH = ConstExprHashingUtils::HashString("SCHEDULED");
+        static constexpr uint32_t IMPORT_HASH = ConstExprHashingUtils::HashString("IMPORT");
 
 
         BuildType GetBuildTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USER_INITIATED_HASH)
           {
             return BuildType::USER_INITIATED;

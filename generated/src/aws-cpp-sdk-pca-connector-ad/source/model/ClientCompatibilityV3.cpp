@@ -20,16 +20,16 @@ namespace Aws
       namespace ClientCompatibilityV3Mapper
       {
 
-        static const int WINDOWS_SERVER_2008_HASH = HashingUtils::HashString("WINDOWS_SERVER_2008");
-        static const int WINDOWS_SERVER_2008_R2_HASH = HashingUtils::HashString("WINDOWS_SERVER_2008_R2");
-        static const int WINDOWS_SERVER_2012_HASH = HashingUtils::HashString("WINDOWS_SERVER_2012");
-        static const int WINDOWS_SERVER_2012_R2_HASH = HashingUtils::HashString("WINDOWS_SERVER_2012_R2");
-        static const int WINDOWS_SERVER_2016_HASH = HashingUtils::HashString("WINDOWS_SERVER_2016");
+        static constexpr uint32_t WINDOWS_SERVER_2008_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2008");
+        static constexpr uint32_t WINDOWS_SERVER_2008_R2_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2008_R2");
+        static constexpr uint32_t WINDOWS_SERVER_2012_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2012");
+        static constexpr uint32_t WINDOWS_SERVER_2012_R2_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2012_R2");
+        static constexpr uint32_t WINDOWS_SERVER_2016_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2016");
 
 
         ClientCompatibilityV3 GetClientCompatibilityV3ForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WINDOWS_SERVER_2008_HASH)
           {
             return ClientCompatibilityV3::WINDOWS_SERVER_2008;

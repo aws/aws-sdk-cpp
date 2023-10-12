@@ -20,14 +20,14 @@ namespace Aws
       namespace BatchDeleteImportDataErrorCodeMapper
       {
 
-        static const int NOT_FOUND_HASH = HashingUtils::HashString("NOT_FOUND");
-        static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("INTERNAL_SERVER_ERROR");
-        static const int OVER_LIMIT_HASH = HashingUtils::HashString("OVER_LIMIT");
+        static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NOT_FOUND");
+        static constexpr uint32_t INTERNAL_SERVER_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_SERVER_ERROR");
+        static constexpr uint32_t OVER_LIMIT_HASH = ConstExprHashingUtils::HashString("OVER_LIMIT");
 
 
         BatchDeleteImportDataErrorCode GetBatchDeleteImportDataErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOT_FOUND_HASH)
           {
             return BatchDeleteImportDataErrorCode::NOT_FOUND;

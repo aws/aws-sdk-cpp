@@ -20,13 +20,13 @@ namespace Aws
       namespace EndDateTypeMapper
       {
 
-        static const int unlimited_HASH = HashingUtils::HashString("unlimited");
-        static const int limited_HASH = HashingUtils::HashString("limited");
+        static constexpr uint32_t unlimited_HASH = ConstExprHashingUtils::HashString("unlimited");
+        static constexpr uint32_t limited_HASH = ConstExprHashingUtils::HashString("limited");
 
 
         EndDateType GetEndDateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == unlimited_HASH)
           {
             return EndDateType::unlimited;

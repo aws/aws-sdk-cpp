@@ -20,14 +20,14 @@ namespace Aws
       namespace EnvironmentVariableTypeMapper
       {
 
-        static const int PLAINTEXT_HASH = HashingUtils::HashString("PLAINTEXT");
-        static const int PARAMETER_STORE_HASH = HashingUtils::HashString("PARAMETER_STORE");
-        static const int SECRETS_MANAGER_HASH = HashingUtils::HashString("SECRETS_MANAGER");
+        static constexpr uint32_t PLAINTEXT_HASH = ConstExprHashingUtils::HashString("PLAINTEXT");
+        static constexpr uint32_t PARAMETER_STORE_HASH = ConstExprHashingUtils::HashString("PARAMETER_STORE");
+        static constexpr uint32_t SECRETS_MANAGER_HASH = ConstExprHashingUtils::HashString("SECRETS_MANAGER");
 
 
         EnvironmentVariableType GetEnvironmentVariableTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PLAINTEXT_HASH)
           {
             return EnvironmentVariableType::PLAINTEXT;

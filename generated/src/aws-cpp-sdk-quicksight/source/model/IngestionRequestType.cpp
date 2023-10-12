@@ -20,15 +20,15 @@ namespace Aws
       namespace IngestionRequestTypeMapper
       {
 
-        static const int INITIAL_INGESTION_HASH = HashingUtils::HashString("INITIAL_INGESTION");
-        static const int EDIT_HASH = HashingUtils::HashString("EDIT");
-        static const int INCREMENTAL_REFRESH_HASH = HashingUtils::HashString("INCREMENTAL_REFRESH");
-        static const int FULL_REFRESH_HASH = HashingUtils::HashString("FULL_REFRESH");
+        static constexpr uint32_t INITIAL_INGESTION_HASH = ConstExprHashingUtils::HashString("INITIAL_INGESTION");
+        static constexpr uint32_t EDIT_HASH = ConstExprHashingUtils::HashString("EDIT");
+        static constexpr uint32_t INCREMENTAL_REFRESH_HASH = ConstExprHashingUtils::HashString("INCREMENTAL_REFRESH");
+        static constexpr uint32_t FULL_REFRESH_HASH = ConstExprHashingUtils::HashString("FULL_REFRESH");
 
 
         IngestionRequestType GetIngestionRequestTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INITIAL_INGESTION_HASH)
           {
             return IngestionRequestType::INITIAL_INGESTION;

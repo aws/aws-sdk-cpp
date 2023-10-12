@@ -20,19 +20,19 @@ namespace Aws
       namespace AttackPropertyIdentifierMapper
       {
 
-        static const int DESTINATION_URL_HASH = HashingUtils::HashString("DESTINATION_URL");
-        static const int REFERRER_HASH = HashingUtils::HashString("REFERRER");
-        static const int SOURCE_ASN_HASH = HashingUtils::HashString("SOURCE_ASN");
-        static const int SOURCE_COUNTRY_HASH = HashingUtils::HashString("SOURCE_COUNTRY");
-        static const int SOURCE_IP_ADDRESS_HASH = HashingUtils::HashString("SOURCE_IP_ADDRESS");
-        static const int SOURCE_USER_AGENT_HASH = HashingUtils::HashString("SOURCE_USER_AGENT");
-        static const int WORDPRESS_PINGBACK_REFLECTOR_HASH = HashingUtils::HashString("WORDPRESS_PINGBACK_REFLECTOR");
-        static const int WORDPRESS_PINGBACK_SOURCE_HASH = HashingUtils::HashString("WORDPRESS_PINGBACK_SOURCE");
+        static constexpr uint32_t DESTINATION_URL_HASH = ConstExprHashingUtils::HashString("DESTINATION_URL");
+        static constexpr uint32_t REFERRER_HASH = ConstExprHashingUtils::HashString("REFERRER");
+        static constexpr uint32_t SOURCE_ASN_HASH = ConstExprHashingUtils::HashString("SOURCE_ASN");
+        static constexpr uint32_t SOURCE_COUNTRY_HASH = ConstExprHashingUtils::HashString("SOURCE_COUNTRY");
+        static constexpr uint32_t SOURCE_IP_ADDRESS_HASH = ConstExprHashingUtils::HashString("SOURCE_IP_ADDRESS");
+        static constexpr uint32_t SOURCE_USER_AGENT_HASH = ConstExprHashingUtils::HashString("SOURCE_USER_AGENT");
+        static constexpr uint32_t WORDPRESS_PINGBACK_REFLECTOR_HASH = ConstExprHashingUtils::HashString("WORDPRESS_PINGBACK_REFLECTOR");
+        static constexpr uint32_t WORDPRESS_PINGBACK_SOURCE_HASH = ConstExprHashingUtils::HashString("WORDPRESS_PINGBACK_SOURCE");
 
 
         AttackPropertyIdentifier GetAttackPropertyIdentifierForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DESTINATION_URL_HASH)
           {
             return AttackPropertyIdentifier::DESTINATION_URL;

@@ -18,27 +18,27 @@ namespace MarketplaceMetering
 namespace MarketplaceMeteringErrorMapper
 {
 
-static const int INVALID_CUSTOMER_IDENTIFIER_HASH = HashingUtils::HashString("InvalidCustomerIdentifierException");
-static const int INVALID_TOKEN_HASH = HashingUtils::HashString("InvalidTokenException");
-static const int INVALID_USAGE_DIMENSION_HASH = HashingUtils::HashString("InvalidUsageDimensionException");
-static const int INVALID_USAGE_ALLOCATIONS_HASH = HashingUtils::HashString("InvalidUsageAllocationsException");
-static const int EXPIRED_TOKEN_HASH = HashingUtils::HashString("ExpiredTokenException");
-static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagException");
-static const int DISABLED_API_HASH = HashingUtils::HashString("DisabledApiException");
-static const int INVALID_ENDPOINT_REGION_HASH = HashingUtils::HashString("InvalidEndpointRegionException");
-static const int PLATFORM_NOT_SUPPORTED_HASH = HashingUtils::HashString("PlatformNotSupportedException");
-static const int INVALID_PRODUCT_CODE_HASH = HashingUtils::HashString("InvalidProductCodeException");
-static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateRequestException");
-static const int CUSTOMER_NOT_ENTITLED_HASH = HashingUtils::HashString("CustomerNotEntitledException");
-static const int INVALID_REGION_HASH = HashingUtils::HashString("InvalidRegionException");
-static const int TIMESTAMP_OUT_OF_BOUNDS_HASH = HashingUtils::HashString("TimestampOutOfBoundsException");
-static const int INVALID_PUBLIC_KEY_VERSION_HASH = HashingUtils::HashString("InvalidPublicKeyVersionException");
-static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("InternalServiceErrorException");
+static constexpr uint32_t INVALID_CUSTOMER_IDENTIFIER_HASH = ConstExprHashingUtils::HashString("InvalidCustomerIdentifierException");
+static constexpr uint32_t INVALID_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidTokenException");
+static constexpr uint32_t INVALID_USAGE_DIMENSION_HASH = ConstExprHashingUtils::HashString("InvalidUsageDimensionException");
+static constexpr uint32_t INVALID_USAGE_ALLOCATIONS_HASH = ConstExprHashingUtils::HashString("InvalidUsageAllocationsException");
+static constexpr uint32_t EXPIRED_TOKEN_HASH = ConstExprHashingUtils::HashString("ExpiredTokenException");
+static constexpr uint32_t INVALID_TAG_HASH = ConstExprHashingUtils::HashString("InvalidTagException");
+static constexpr uint32_t DISABLED_API_HASH = ConstExprHashingUtils::HashString("DisabledApiException");
+static constexpr uint32_t INVALID_ENDPOINT_REGION_HASH = ConstExprHashingUtils::HashString("InvalidEndpointRegionException");
+static constexpr uint32_t PLATFORM_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("PlatformNotSupportedException");
+static constexpr uint32_t INVALID_PRODUCT_CODE_HASH = ConstExprHashingUtils::HashString("InvalidProductCodeException");
+static constexpr uint32_t DUPLICATE_REQUEST_HASH = ConstExprHashingUtils::HashString("DuplicateRequestException");
+static constexpr uint32_t CUSTOMER_NOT_ENTITLED_HASH = ConstExprHashingUtils::HashString("CustomerNotEntitledException");
+static constexpr uint32_t INVALID_REGION_HASH = ConstExprHashingUtils::HashString("InvalidRegionException");
+static constexpr uint32_t TIMESTAMP_OUT_OF_BOUNDS_HASH = ConstExprHashingUtils::HashString("TimestampOutOfBoundsException");
+static constexpr uint32_t INVALID_PUBLIC_KEY_VERSION_HASH = ConstExprHashingUtils::HashString("InvalidPublicKeyVersionException");
+static constexpr uint32_t INTERNAL_SERVICE_ERROR_HASH = ConstExprHashingUtils::HashString("InternalServiceErrorException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INVALID_CUSTOMER_IDENTIFIER_HASH)
   {

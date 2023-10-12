@@ -20,13 +20,13 @@ namespace Aws
       namespace OAuthGrantTypeMapper
       {
 
-        static const int CODE_HASH = HashingUtils::HashString("CODE");
-        static const int IMPLICIT_HASH = HashingUtils::HashString("IMPLICIT");
+        static constexpr uint32_t CODE_HASH = ConstExprHashingUtils::HashString("CODE");
+        static constexpr uint32_t IMPLICIT_HASH = ConstExprHashingUtils::HashString("IMPLICIT");
 
 
         OAuthGrantType GetOAuthGrantTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CODE_HASH)
           {
             return OAuthGrantType::CODE;

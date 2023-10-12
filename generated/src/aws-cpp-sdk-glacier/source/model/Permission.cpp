@@ -20,16 +20,16 @@ namespace Aws
       namespace PermissionMapper
       {
 
-        static const int FULL_CONTROL_HASH = HashingUtils::HashString("FULL_CONTROL");
-        static const int WRITE_HASH = HashingUtils::HashString("WRITE");
-        static const int WRITE_ACP_HASH = HashingUtils::HashString("WRITE_ACP");
-        static const int READ_HASH = HashingUtils::HashString("READ");
-        static const int READ_ACP_HASH = HashingUtils::HashString("READ_ACP");
+        static constexpr uint32_t FULL_CONTROL_HASH = ConstExprHashingUtils::HashString("FULL_CONTROL");
+        static constexpr uint32_t WRITE_HASH = ConstExprHashingUtils::HashString("WRITE");
+        static constexpr uint32_t WRITE_ACP_HASH = ConstExprHashingUtils::HashString("WRITE_ACP");
+        static constexpr uint32_t READ_HASH = ConstExprHashingUtils::HashString("READ");
+        static constexpr uint32_t READ_ACP_HASH = ConstExprHashingUtils::HashString("READ_ACP");
 
 
         Permission GetPermissionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FULL_CONTROL_HASH)
           {
             return Permission::FULL_CONTROL;

@@ -20,33 +20,33 @@ namespace Aws
       namespace AppTypeMapper
       {
 
-        static const int DotNetFramework_HASH = HashingUtils::HashString("DotNetFramework");
-        static const int Java_HASH = HashingUtils::HashString("Java");
-        static const int SQLServer_HASH = HashingUtils::HashString("SQLServer");
-        static const int IIS_HASH = HashingUtils::HashString("IIS");
-        static const int Oracle_HASH = HashingUtils::HashString("Oracle");
-        static const int Other_HASH = HashingUtils::HashString("Other");
-        static const int Tomcat_HASH = HashingUtils::HashString("Tomcat");
-        static const int JBoss_HASH = HashingUtils::HashString("JBoss");
-        static const int Spring_HASH = HashingUtils::HashString("Spring");
-        static const int Mongo_DB_HASH = HashingUtils::HashString("Mongo DB");
-        static const int DB2_HASH = HashingUtils::HashString("DB2");
-        static const int Maria_DB_HASH = HashingUtils::HashString("Maria DB");
-        static const int MySQL_HASH = HashingUtils::HashString("MySQL");
-        static const int Sybase_HASH = HashingUtils::HashString("Sybase");
-        static const int PostgreSQLServer_HASH = HashingUtils::HashString("PostgreSQLServer");
-        static const int Cassandra_HASH = HashingUtils::HashString("Cassandra");
-        static const int IBM_WebSphere_HASH = HashingUtils::HashString("IBM WebSphere");
-        static const int Oracle_WebLogic_HASH = HashingUtils::HashString("Oracle WebLogic");
-        static const int Visual_Basic_HASH = HashingUtils::HashString("Visual Basic");
-        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
-        static const int DotnetCore_HASH = HashingUtils::HashString("DotnetCore");
-        static const int Dotnet_HASH = HashingUtils::HashString("Dotnet");
+        static constexpr uint32_t DotNetFramework_HASH = ConstExprHashingUtils::HashString("DotNetFramework");
+        static constexpr uint32_t Java_HASH = ConstExprHashingUtils::HashString("Java");
+        static constexpr uint32_t SQLServer_HASH = ConstExprHashingUtils::HashString("SQLServer");
+        static constexpr uint32_t IIS_HASH = ConstExprHashingUtils::HashString("IIS");
+        static constexpr uint32_t Oracle_HASH = ConstExprHashingUtils::HashString("Oracle");
+        static constexpr uint32_t Other_HASH = ConstExprHashingUtils::HashString("Other");
+        static constexpr uint32_t Tomcat_HASH = ConstExprHashingUtils::HashString("Tomcat");
+        static constexpr uint32_t JBoss_HASH = ConstExprHashingUtils::HashString("JBoss");
+        static constexpr uint32_t Spring_HASH = ConstExprHashingUtils::HashString("Spring");
+        static constexpr uint32_t Mongo_DB_HASH = ConstExprHashingUtils::HashString("Mongo DB");
+        static constexpr uint32_t DB2_HASH = ConstExprHashingUtils::HashString("DB2");
+        static constexpr uint32_t Maria_DB_HASH = ConstExprHashingUtils::HashString("Maria DB");
+        static constexpr uint32_t MySQL_HASH = ConstExprHashingUtils::HashString("MySQL");
+        static constexpr uint32_t Sybase_HASH = ConstExprHashingUtils::HashString("Sybase");
+        static constexpr uint32_t PostgreSQLServer_HASH = ConstExprHashingUtils::HashString("PostgreSQLServer");
+        static constexpr uint32_t Cassandra_HASH = ConstExprHashingUtils::HashString("Cassandra");
+        static constexpr uint32_t IBM_WebSphere_HASH = ConstExprHashingUtils::HashString("IBM WebSphere");
+        static constexpr uint32_t Oracle_WebLogic_HASH = ConstExprHashingUtils::HashString("Oracle WebLogic");
+        static constexpr uint32_t Visual_Basic_HASH = ConstExprHashingUtils::HashString("Visual Basic");
+        static constexpr uint32_t Unknown_HASH = ConstExprHashingUtils::HashString("Unknown");
+        static constexpr uint32_t DotnetCore_HASH = ConstExprHashingUtils::HashString("DotnetCore");
+        static constexpr uint32_t Dotnet_HASH = ConstExprHashingUtils::HashString("Dotnet");
 
 
         AppType GetAppTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DotNetFramework_HASH)
           {
             return AppType::DotNetFramework;

@@ -20,19 +20,19 @@ namespace Aws
       namespace ReplicationJobStateMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int PAUSED_ON_FAILURE_HASH = HashingUtils::HashString("PAUSED_ON_FAILURE");
-        static const int FAILING_HASH = HashingUtils::HashString("FAILING");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t PAUSED_ON_FAILURE_HASH = ConstExprHashingUtils::HashString("PAUSED_ON_FAILURE");
+        static constexpr uint32_t FAILING_HASH = ConstExprHashingUtils::HashString("FAILING");
 
 
         ReplicationJobState GetReplicationJobStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return ReplicationJobState::PENDING;

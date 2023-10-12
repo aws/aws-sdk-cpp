@@ -20,21 +20,21 @@ namespace Aws
       namespace ComparisonOperatorMapper
       {
 
-        static const int less_than_HASH = HashingUtils::HashString("less-than");
-        static const int less_than_equals_HASH = HashingUtils::HashString("less-than-equals");
-        static const int greater_than_HASH = HashingUtils::HashString("greater-than");
-        static const int greater_than_equals_HASH = HashingUtils::HashString("greater-than-equals");
-        static const int in_cidr_set_HASH = HashingUtils::HashString("in-cidr-set");
-        static const int not_in_cidr_set_HASH = HashingUtils::HashString("not-in-cidr-set");
-        static const int in_port_set_HASH = HashingUtils::HashString("in-port-set");
-        static const int not_in_port_set_HASH = HashingUtils::HashString("not-in-port-set");
-        static const int in_set_HASH = HashingUtils::HashString("in-set");
-        static const int not_in_set_HASH = HashingUtils::HashString("not-in-set");
+        static constexpr uint32_t less_than_HASH = ConstExprHashingUtils::HashString("less-than");
+        static constexpr uint32_t less_than_equals_HASH = ConstExprHashingUtils::HashString("less-than-equals");
+        static constexpr uint32_t greater_than_HASH = ConstExprHashingUtils::HashString("greater-than");
+        static constexpr uint32_t greater_than_equals_HASH = ConstExprHashingUtils::HashString("greater-than-equals");
+        static constexpr uint32_t in_cidr_set_HASH = ConstExprHashingUtils::HashString("in-cidr-set");
+        static constexpr uint32_t not_in_cidr_set_HASH = ConstExprHashingUtils::HashString("not-in-cidr-set");
+        static constexpr uint32_t in_port_set_HASH = ConstExprHashingUtils::HashString("in-port-set");
+        static constexpr uint32_t not_in_port_set_HASH = ConstExprHashingUtils::HashString("not-in-port-set");
+        static constexpr uint32_t in_set_HASH = ConstExprHashingUtils::HashString("in-set");
+        static constexpr uint32_t not_in_set_HASH = ConstExprHashingUtils::HashString("not-in-set");
 
 
         ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == less_than_HASH)
           {
             return ComparisonOperator::less_than;

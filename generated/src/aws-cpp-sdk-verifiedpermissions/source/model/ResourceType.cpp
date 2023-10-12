@@ -20,16 +20,16 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int IDENTITY_SOURCE_HASH = HashingUtils::HashString("IDENTITY_SOURCE");
-        static const int POLICY_STORE_HASH = HashingUtils::HashString("POLICY_STORE");
-        static const int POLICY_HASH = HashingUtils::HashString("POLICY");
-        static const int POLICY_TEMPLATE_HASH = HashingUtils::HashString("POLICY_TEMPLATE");
-        static const int SCHEMA_HASH = HashingUtils::HashString("SCHEMA");
+        static constexpr uint32_t IDENTITY_SOURCE_HASH = ConstExprHashingUtils::HashString("IDENTITY_SOURCE");
+        static constexpr uint32_t POLICY_STORE_HASH = ConstExprHashingUtils::HashString("POLICY_STORE");
+        static constexpr uint32_t POLICY_HASH = ConstExprHashingUtils::HashString("POLICY");
+        static constexpr uint32_t POLICY_TEMPLATE_HASH = ConstExprHashingUtils::HashString("POLICY_TEMPLATE");
+        static constexpr uint32_t SCHEMA_HASH = ConstExprHashingUtils::HashString("SCHEMA");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IDENTITY_SOURCE_HASH)
           {
             return ResourceType::IDENTITY_SOURCE;

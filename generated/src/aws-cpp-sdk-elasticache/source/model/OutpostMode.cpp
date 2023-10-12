@@ -20,13 +20,13 @@ namespace Aws
       namespace OutpostModeMapper
       {
 
-        static const int single_outpost_HASH = HashingUtils::HashString("single-outpost");
-        static const int cross_outpost_HASH = HashingUtils::HashString("cross-outpost");
+        static constexpr uint32_t single_outpost_HASH = ConstExprHashingUtils::HashString("single-outpost");
+        static constexpr uint32_t cross_outpost_HASH = ConstExprHashingUtils::HashString("cross-outpost");
 
 
         OutpostMode GetOutpostModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == single_outpost_HASH)
           {
             return OutpostMode::single_outpost;

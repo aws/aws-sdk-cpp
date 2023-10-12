@@ -20,14 +20,14 @@ namespace Aws
       namespace FormButtonsPositionMapper
       {
 
-        static const int top_HASH = HashingUtils::HashString("top");
-        static const int bottom_HASH = HashingUtils::HashString("bottom");
-        static const int top_and_bottom_HASH = HashingUtils::HashString("top_and_bottom");
+        static constexpr uint32_t top_HASH = ConstExprHashingUtils::HashString("top");
+        static constexpr uint32_t bottom_HASH = ConstExprHashingUtils::HashString("bottom");
+        static constexpr uint32_t top_and_bottom_HASH = ConstExprHashingUtils::HashString("top_and_bottom");
 
 
         FormButtonsPosition GetFormButtonsPositionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == top_HASH)
           {
             return FormButtonsPosition::top;

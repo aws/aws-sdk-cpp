@@ -20,13 +20,13 @@ namespace Aws
       namespace DkimSigningAttributesOriginMapper
       {
 
-        static const int AWS_SES_HASH = HashingUtils::HashString("AWS_SES");
-        static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
+        static constexpr uint32_t AWS_SES_HASH = ConstExprHashingUtils::HashString("AWS_SES");
+        static constexpr uint32_t EXTERNAL_HASH = ConstExprHashingUtils::HashString("EXTERNAL");
 
 
         DkimSigningAttributesOrigin GetDkimSigningAttributesOriginForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_SES_HASH)
           {
             return DkimSigningAttributesOrigin::AWS_SES;

@@ -20,17 +20,17 @@ namespace Aws
       namespace TransitGatewayAttachmentResourceTypeMapper
       {
 
-        static const int vpc_HASH = HashingUtils::HashString("vpc");
-        static const int vpn_HASH = HashingUtils::HashString("vpn");
-        static const int direct_connect_gateway_HASH = HashingUtils::HashString("direct-connect-gateway");
-        static const int connect_HASH = HashingUtils::HashString("connect");
-        static const int peering_HASH = HashingUtils::HashString("peering");
-        static const int tgw_peering_HASH = HashingUtils::HashString("tgw-peering");
+        static constexpr uint32_t vpc_HASH = ConstExprHashingUtils::HashString("vpc");
+        static constexpr uint32_t vpn_HASH = ConstExprHashingUtils::HashString("vpn");
+        static constexpr uint32_t direct_connect_gateway_HASH = ConstExprHashingUtils::HashString("direct-connect-gateway");
+        static constexpr uint32_t connect_HASH = ConstExprHashingUtils::HashString("connect");
+        static constexpr uint32_t peering_HASH = ConstExprHashingUtils::HashString("peering");
+        static constexpr uint32_t tgw_peering_HASH = ConstExprHashingUtils::HashString("tgw-peering");
 
 
         TransitGatewayAttachmentResourceType GetTransitGatewayAttachmentResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == vpc_HASH)
           {
             return TransitGatewayAttachmentResourceType::vpc;

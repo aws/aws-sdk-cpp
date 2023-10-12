@@ -20,15 +20,15 @@ namespace Aws
       namespace ListJobsFilterKeyMapper
       {
 
-        static const int jobType_HASH = HashingUtils::HashString("jobType");
-        static const int jobStatus_HASH = HashingUtils::HashString("jobStatus");
-        static const int createdAt_HASH = HashingUtils::HashString("createdAt");
-        static const int name_HASH = HashingUtils::HashString("name");
+        static constexpr uint32_t jobType_HASH = ConstExprHashingUtils::HashString("jobType");
+        static constexpr uint32_t jobStatus_HASH = ConstExprHashingUtils::HashString("jobStatus");
+        static constexpr uint32_t createdAt_HASH = ConstExprHashingUtils::HashString("createdAt");
+        static constexpr uint32_t name_HASH = ConstExprHashingUtils::HashString("name");
 
 
         ListJobsFilterKey GetListJobsFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == jobType_HASH)
           {
             return ListJobsFilterKey::jobType;

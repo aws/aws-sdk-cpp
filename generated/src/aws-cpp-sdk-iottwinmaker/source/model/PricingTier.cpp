@@ -20,15 +20,15 @@ namespace Aws
       namespace PricingTierMapper
       {
 
-        static const int TIER_1_HASH = HashingUtils::HashString("TIER_1");
-        static const int TIER_2_HASH = HashingUtils::HashString("TIER_2");
-        static const int TIER_3_HASH = HashingUtils::HashString("TIER_3");
-        static const int TIER_4_HASH = HashingUtils::HashString("TIER_4");
+        static constexpr uint32_t TIER_1_HASH = ConstExprHashingUtils::HashString("TIER_1");
+        static constexpr uint32_t TIER_2_HASH = ConstExprHashingUtils::HashString("TIER_2");
+        static constexpr uint32_t TIER_3_HASH = ConstExprHashingUtils::HashString("TIER_3");
+        static constexpr uint32_t TIER_4_HASH = ConstExprHashingUtils::HashString("TIER_4");
 
 
         PricingTier GetPricingTierForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TIER_1_HASH)
           {
             return PricingTier::TIER_1;

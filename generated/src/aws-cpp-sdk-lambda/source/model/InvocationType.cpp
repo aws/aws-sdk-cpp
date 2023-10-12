@@ -20,14 +20,14 @@ namespace Aws
       namespace InvocationTypeMapper
       {
 
-        static const int Event_HASH = HashingUtils::HashString("Event");
-        static const int RequestResponse_HASH = HashingUtils::HashString("RequestResponse");
-        static const int DryRun_HASH = HashingUtils::HashString("DryRun");
+        static constexpr uint32_t Event_HASH = ConstExprHashingUtils::HashString("Event");
+        static constexpr uint32_t RequestResponse_HASH = ConstExprHashingUtils::HashString("RequestResponse");
+        static constexpr uint32_t DryRun_HASH = ConstExprHashingUtils::HashString("DryRun");
 
 
         InvocationType GetInvocationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Event_HASH)
           {
             return InvocationType::Event;

@@ -20,18 +20,18 @@ namespace Aws
       namespace ServerCriteriaMapper
       {
 
-        static const int NOT_DEFINED_HASH = HashingUtils::HashString("NOT_DEFINED");
-        static const int OS_NAME_HASH = HashingUtils::HashString("OS_NAME");
-        static const int STRATEGY_HASH = HashingUtils::HashString("STRATEGY");
-        static const int DESTINATION_HASH = HashingUtils::HashString("DESTINATION");
-        static const int SERVER_ID_HASH = HashingUtils::HashString("SERVER_ID");
-        static const int ANALYSIS_STATUS_HASH = HashingUtils::HashString("ANALYSIS_STATUS");
-        static const int ERROR_CATEGORY_HASH = HashingUtils::HashString("ERROR_CATEGORY");
+        static constexpr uint32_t NOT_DEFINED_HASH = ConstExprHashingUtils::HashString("NOT_DEFINED");
+        static constexpr uint32_t OS_NAME_HASH = ConstExprHashingUtils::HashString("OS_NAME");
+        static constexpr uint32_t STRATEGY_HASH = ConstExprHashingUtils::HashString("STRATEGY");
+        static constexpr uint32_t DESTINATION_HASH = ConstExprHashingUtils::HashString("DESTINATION");
+        static constexpr uint32_t SERVER_ID_HASH = ConstExprHashingUtils::HashString("SERVER_ID");
+        static constexpr uint32_t ANALYSIS_STATUS_HASH = ConstExprHashingUtils::HashString("ANALYSIS_STATUS");
+        static constexpr uint32_t ERROR_CATEGORY_HASH = ConstExprHashingUtils::HashString("ERROR_CATEGORY");
 
 
         ServerCriteria GetServerCriteriaForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOT_DEFINED_HASH)
           {
             return ServerCriteria::NOT_DEFINED;

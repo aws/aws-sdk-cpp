@@ -20,37 +20,37 @@ namespace Aws
       namespace WorkspaceImageErrorDetailCodeMapper
       {
 
-        static const int OutdatedPowershellVersion_HASH = HashingUtils::HashString("OutdatedPowershellVersion");
-        static const int OfficeInstalled_HASH = HashingUtils::HashString("OfficeInstalled");
-        static const int PCoIPAgentInstalled_HASH = HashingUtils::HashString("PCoIPAgentInstalled");
-        static const int WindowsUpdatesEnabled_HASH = HashingUtils::HashString("WindowsUpdatesEnabled");
-        static const int AutoMountDisabled_HASH = HashingUtils::HashString("AutoMountDisabled");
-        static const int WorkspacesBYOLAccountNotFound_HASH = HashingUtils::HashString("WorkspacesBYOLAccountNotFound");
-        static const int WorkspacesBYOLAccountDisabled_HASH = HashingUtils::HashString("WorkspacesBYOLAccountDisabled");
-        static const int DHCPDisabled_HASH = HashingUtils::HashString("DHCPDisabled");
-        static const int DiskFreeSpace_HASH = HashingUtils::HashString("DiskFreeSpace");
-        static const int AdditionalDrivesAttached_HASH = HashingUtils::HashString("AdditionalDrivesAttached");
-        static const int OSNotSupported_HASH = HashingUtils::HashString("OSNotSupported");
-        static const int DomainJoined_HASH = HashingUtils::HashString("DomainJoined");
-        static const int AzureDomainJoined_HASH = HashingUtils::HashString("AzureDomainJoined");
-        static const int FirewallEnabled_HASH = HashingUtils::HashString("FirewallEnabled");
-        static const int VMWareToolsInstalled_HASH = HashingUtils::HashString("VMWareToolsInstalled");
-        static const int DiskSizeExceeded_HASH = HashingUtils::HashString("DiskSizeExceeded");
-        static const int IncompatiblePartitioning_HASH = HashingUtils::HashString("IncompatiblePartitioning");
-        static const int PendingReboot_HASH = HashingUtils::HashString("PendingReboot");
-        static const int AutoLogonEnabled_HASH = HashingUtils::HashString("AutoLogonEnabled");
-        static const int RealTimeUniversalDisabled_HASH = HashingUtils::HashString("RealTimeUniversalDisabled");
-        static const int MultipleBootPartition_HASH = HashingUtils::HashString("MultipleBootPartition");
-        static const int Requires64BitOS_HASH = HashingUtils::HashString("Requires64BitOS");
-        static const int ZeroRearmCount_HASH = HashingUtils::HashString("ZeroRearmCount");
-        static const int InPlaceUpgrade_HASH = HashingUtils::HashString("InPlaceUpgrade");
-        static const int AntiVirusInstalled_HASH = HashingUtils::HashString("AntiVirusInstalled");
-        static const int UEFINotSupported_HASH = HashingUtils::HashString("UEFINotSupported");
+        static constexpr uint32_t OutdatedPowershellVersion_HASH = ConstExprHashingUtils::HashString("OutdatedPowershellVersion");
+        static constexpr uint32_t OfficeInstalled_HASH = ConstExprHashingUtils::HashString("OfficeInstalled");
+        static constexpr uint32_t PCoIPAgentInstalled_HASH = ConstExprHashingUtils::HashString("PCoIPAgentInstalled");
+        static constexpr uint32_t WindowsUpdatesEnabled_HASH = ConstExprHashingUtils::HashString("WindowsUpdatesEnabled");
+        static constexpr uint32_t AutoMountDisabled_HASH = ConstExprHashingUtils::HashString("AutoMountDisabled");
+        static constexpr uint32_t WorkspacesBYOLAccountNotFound_HASH = ConstExprHashingUtils::HashString("WorkspacesBYOLAccountNotFound");
+        static constexpr uint32_t WorkspacesBYOLAccountDisabled_HASH = ConstExprHashingUtils::HashString("WorkspacesBYOLAccountDisabled");
+        static constexpr uint32_t DHCPDisabled_HASH = ConstExprHashingUtils::HashString("DHCPDisabled");
+        static constexpr uint32_t DiskFreeSpace_HASH = ConstExprHashingUtils::HashString("DiskFreeSpace");
+        static constexpr uint32_t AdditionalDrivesAttached_HASH = ConstExprHashingUtils::HashString("AdditionalDrivesAttached");
+        static constexpr uint32_t OSNotSupported_HASH = ConstExprHashingUtils::HashString("OSNotSupported");
+        static constexpr uint32_t DomainJoined_HASH = ConstExprHashingUtils::HashString("DomainJoined");
+        static constexpr uint32_t AzureDomainJoined_HASH = ConstExprHashingUtils::HashString("AzureDomainJoined");
+        static constexpr uint32_t FirewallEnabled_HASH = ConstExprHashingUtils::HashString("FirewallEnabled");
+        static constexpr uint32_t VMWareToolsInstalled_HASH = ConstExprHashingUtils::HashString("VMWareToolsInstalled");
+        static constexpr uint32_t DiskSizeExceeded_HASH = ConstExprHashingUtils::HashString("DiskSizeExceeded");
+        static constexpr uint32_t IncompatiblePartitioning_HASH = ConstExprHashingUtils::HashString("IncompatiblePartitioning");
+        static constexpr uint32_t PendingReboot_HASH = ConstExprHashingUtils::HashString("PendingReboot");
+        static constexpr uint32_t AutoLogonEnabled_HASH = ConstExprHashingUtils::HashString("AutoLogonEnabled");
+        static constexpr uint32_t RealTimeUniversalDisabled_HASH = ConstExprHashingUtils::HashString("RealTimeUniversalDisabled");
+        static constexpr uint32_t MultipleBootPartition_HASH = ConstExprHashingUtils::HashString("MultipleBootPartition");
+        static constexpr uint32_t Requires64BitOS_HASH = ConstExprHashingUtils::HashString("Requires64BitOS");
+        static constexpr uint32_t ZeroRearmCount_HASH = ConstExprHashingUtils::HashString("ZeroRearmCount");
+        static constexpr uint32_t InPlaceUpgrade_HASH = ConstExprHashingUtils::HashString("InPlaceUpgrade");
+        static constexpr uint32_t AntiVirusInstalled_HASH = ConstExprHashingUtils::HashString("AntiVirusInstalled");
+        static constexpr uint32_t UEFINotSupported_HASH = ConstExprHashingUtils::HashString("UEFINotSupported");
 
 
         WorkspaceImageErrorDetailCode GetWorkspaceImageErrorDetailCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OutdatedPowershellVersion_HASH)
           {
             return WorkspaceImageErrorDetailCode::OutdatedPowershellVersion;

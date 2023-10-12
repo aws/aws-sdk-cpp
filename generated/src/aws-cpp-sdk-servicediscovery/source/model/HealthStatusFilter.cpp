@@ -20,15 +20,15 @@ namespace Aws
       namespace HealthStatusFilterMapper
       {
 
-        static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
-        static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int HEALTHY_OR_ELSE_ALL_HASH = HashingUtils::HashString("HEALTHY_OR_ELSE_ALL");
+        static constexpr uint32_t HEALTHY_HASH = ConstExprHashingUtils::HashString("HEALTHY");
+        static constexpr uint32_t UNHEALTHY_HASH = ConstExprHashingUtils::HashString("UNHEALTHY");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t HEALTHY_OR_ELSE_ALL_HASH = ConstExprHashingUtils::HashString("HEALTHY_OR_ELSE_ALL");
 
 
         HealthStatusFilter GetHealthStatusFilterForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HEALTHY_HASH)
           {
             return HealthStatusFilter::HEALTHY;

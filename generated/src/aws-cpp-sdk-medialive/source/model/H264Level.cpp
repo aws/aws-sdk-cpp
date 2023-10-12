@@ -20,28 +20,28 @@ namespace Aws
       namespace H264LevelMapper
       {
 
-        static const int H264_LEVEL_1_HASH = HashingUtils::HashString("H264_LEVEL_1");
-        static const int H264_LEVEL_1_1_HASH = HashingUtils::HashString("H264_LEVEL_1_1");
-        static const int H264_LEVEL_1_2_HASH = HashingUtils::HashString("H264_LEVEL_1_2");
-        static const int H264_LEVEL_1_3_HASH = HashingUtils::HashString("H264_LEVEL_1_3");
-        static const int H264_LEVEL_2_HASH = HashingUtils::HashString("H264_LEVEL_2");
-        static const int H264_LEVEL_2_1_HASH = HashingUtils::HashString("H264_LEVEL_2_1");
-        static const int H264_LEVEL_2_2_HASH = HashingUtils::HashString("H264_LEVEL_2_2");
-        static const int H264_LEVEL_3_HASH = HashingUtils::HashString("H264_LEVEL_3");
-        static const int H264_LEVEL_3_1_HASH = HashingUtils::HashString("H264_LEVEL_3_1");
-        static const int H264_LEVEL_3_2_HASH = HashingUtils::HashString("H264_LEVEL_3_2");
-        static const int H264_LEVEL_4_HASH = HashingUtils::HashString("H264_LEVEL_4");
-        static const int H264_LEVEL_4_1_HASH = HashingUtils::HashString("H264_LEVEL_4_1");
-        static const int H264_LEVEL_4_2_HASH = HashingUtils::HashString("H264_LEVEL_4_2");
-        static const int H264_LEVEL_5_HASH = HashingUtils::HashString("H264_LEVEL_5");
-        static const int H264_LEVEL_5_1_HASH = HashingUtils::HashString("H264_LEVEL_5_1");
-        static const int H264_LEVEL_5_2_HASH = HashingUtils::HashString("H264_LEVEL_5_2");
-        static const int H264_LEVEL_AUTO_HASH = HashingUtils::HashString("H264_LEVEL_AUTO");
+        static constexpr uint32_t H264_LEVEL_1_HASH = ConstExprHashingUtils::HashString("H264_LEVEL_1");
+        static constexpr uint32_t H264_LEVEL_1_1_HASH = ConstExprHashingUtils::HashString("H264_LEVEL_1_1");
+        static constexpr uint32_t H264_LEVEL_1_2_HASH = ConstExprHashingUtils::HashString("H264_LEVEL_1_2");
+        static constexpr uint32_t H264_LEVEL_1_3_HASH = ConstExprHashingUtils::HashString("H264_LEVEL_1_3");
+        static constexpr uint32_t H264_LEVEL_2_HASH = ConstExprHashingUtils::HashString("H264_LEVEL_2");
+        static constexpr uint32_t H264_LEVEL_2_1_HASH = ConstExprHashingUtils::HashString("H264_LEVEL_2_1");
+        static constexpr uint32_t H264_LEVEL_2_2_HASH = ConstExprHashingUtils::HashString("H264_LEVEL_2_2");
+        static constexpr uint32_t H264_LEVEL_3_HASH = ConstExprHashingUtils::HashString("H264_LEVEL_3");
+        static constexpr uint32_t H264_LEVEL_3_1_HASH = ConstExprHashingUtils::HashString("H264_LEVEL_3_1");
+        static constexpr uint32_t H264_LEVEL_3_2_HASH = ConstExprHashingUtils::HashString("H264_LEVEL_3_2");
+        static constexpr uint32_t H264_LEVEL_4_HASH = ConstExprHashingUtils::HashString("H264_LEVEL_4");
+        static constexpr uint32_t H264_LEVEL_4_1_HASH = ConstExprHashingUtils::HashString("H264_LEVEL_4_1");
+        static constexpr uint32_t H264_LEVEL_4_2_HASH = ConstExprHashingUtils::HashString("H264_LEVEL_4_2");
+        static constexpr uint32_t H264_LEVEL_5_HASH = ConstExprHashingUtils::HashString("H264_LEVEL_5");
+        static constexpr uint32_t H264_LEVEL_5_1_HASH = ConstExprHashingUtils::HashString("H264_LEVEL_5_1");
+        static constexpr uint32_t H264_LEVEL_5_2_HASH = ConstExprHashingUtils::HashString("H264_LEVEL_5_2");
+        static constexpr uint32_t H264_LEVEL_AUTO_HASH = ConstExprHashingUtils::HashString("H264_LEVEL_AUTO");
 
 
         H264Level GetH264LevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == H264_LEVEL_1_HASH)
           {
             return H264Level::H264_LEVEL_1;

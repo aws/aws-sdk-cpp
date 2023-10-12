@@ -20,13 +20,13 @@ namespace Aws
       namespace DeletionModeMapper
       {
 
-        static const int SoftDelete_HASH = HashingUtils::HashString("SoftDelete");
-        static const int HardDelete_HASH = HashingUtils::HashString("HardDelete");
+        static constexpr uint32_t SoftDelete_HASH = ConstExprHashingUtils::HashString("SoftDelete");
+        static constexpr uint32_t HardDelete_HASH = ConstExprHashingUtils::HashString("HardDelete");
 
 
         DeletionMode GetDeletionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SoftDelete_HASH)
           {
             return DeletionMode::SoftDelete;

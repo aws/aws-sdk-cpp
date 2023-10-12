@@ -20,14 +20,14 @@ namespace Aws
       namespace AdvancedSecurityModeTypeMapper
       {
 
-        static const int OFF_HASH = HashingUtils::HashString("OFF");
-        static const int AUDIT_HASH = HashingUtils::HashString("AUDIT");
-        static const int ENFORCED_HASH = HashingUtils::HashString("ENFORCED");
+        static constexpr uint32_t OFF_HASH = ConstExprHashingUtils::HashString("OFF");
+        static constexpr uint32_t AUDIT_HASH = ConstExprHashingUtils::HashString("AUDIT");
+        static constexpr uint32_t ENFORCED_HASH = ConstExprHashingUtils::HashString("ENFORCED");
 
 
         AdvancedSecurityModeType GetAdvancedSecurityModeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OFF_HASH)
           {
             return AdvancedSecurityModeType::OFF;

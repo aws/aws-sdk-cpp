@@ -20,14 +20,14 @@ namespace Aws
       namespace UserPoolMfaTypeMapper
       {
 
-        static const int OFF_HASH = HashingUtils::HashString("OFF");
-        static const int ON_HASH = HashingUtils::HashString("ON");
-        static const int OPTIONAL_HASH = HashingUtils::HashString("OPTIONAL");
+        static constexpr uint32_t OFF_HASH = ConstExprHashingUtils::HashString("OFF");
+        static constexpr uint32_t ON_HASH = ConstExprHashingUtils::HashString("ON");
+        static constexpr uint32_t OPTIONAL_HASH = ConstExprHashingUtils::HashString("OPTIONAL");
 
 
         UserPoolMfaType GetUserPoolMfaTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OFF_HASH)
           {
             return UserPoolMfaType::OFF;

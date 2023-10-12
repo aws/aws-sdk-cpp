@@ -20,14 +20,14 @@ namespace Aws
       namespace AddressTransferStatusMapper
       {
 
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int disabled_HASH = HashingUtils::HashString("disabled");
-        static const int accepted_HASH = HashingUtils::HashString("accepted");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t disabled_HASH = ConstExprHashingUtils::HashString("disabled");
+        static constexpr uint32_t accepted_HASH = ConstExprHashingUtils::HashString("accepted");
 
 
         AddressTransferStatus GetAddressTransferStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pending_HASH)
           {
             return AddressTransferStatus::pending;

@@ -20,16 +20,16 @@ namespace Aws
       namespace ProvisionedProductStatusMapper
       {
 
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int UNDER_CHANGE_HASH = HashingUtils::HashString("UNDER_CHANGE");
-        static const int TAINTED_HASH = HashingUtils::HashString("TAINTED");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int PLAN_IN_PROGRESS_HASH = HashingUtils::HashString("PLAN_IN_PROGRESS");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t UNDER_CHANGE_HASH = ConstExprHashingUtils::HashString("UNDER_CHANGE");
+        static constexpr uint32_t TAINTED_HASH = ConstExprHashingUtils::HashString("TAINTED");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t PLAN_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("PLAN_IN_PROGRESS");
 
 
         ProvisionedProductStatus GetProvisionedProductStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVAILABLE_HASH)
           {
             return ProvisionedProductStatus::AVAILABLE;

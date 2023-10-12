@@ -20,22 +20,22 @@ namespace Aws
       namespace DefaultAggregationMapper
       {
 
-        static const int SUM_HASH = HashingUtils::HashString("SUM");
-        static const int MAX_HASH = HashingUtils::HashString("MAX");
-        static const int MIN_HASH = HashingUtils::HashString("MIN");
-        static const int COUNT_HASH = HashingUtils::HashString("COUNT");
-        static const int DISTINCT_COUNT_HASH = HashingUtils::HashString("DISTINCT_COUNT");
-        static const int AVERAGE_HASH = HashingUtils::HashString("AVERAGE");
-        static const int MEDIAN_HASH = HashingUtils::HashString("MEDIAN");
-        static const int STDEV_HASH = HashingUtils::HashString("STDEV");
-        static const int STDEVP_HASH = HashingUtils::HashString("STDEVP");
-        static const int VAR_HASH = HashingUtils::HashString("VAR");
-        static const int VARP_HASH = HashingUtils::HashString("VARP");
+        static constexpr uint32_t SUM_HASH = ConstExprHashingUtils::HashString("SUM");
+        static constexpr uint32_t MAX_HASH = ConstExprHashingUtils::HashString("MAX");
+        static constexpr uint32_t MIN_HASH = ConstExprHashingUtils::HashString("MIN");
+        static constexpr uint32_t COUNT_HASH = ConstExprHashingUtils::HashString("COUNT");
+        static constexpr uint32_t DISTINCT_COUNT_HASH = ConstExprHashingUtils::HashString("DISTINCT_COUNT");
+        static constexpr uint32_t AVERAGE_HASH = ConstExprHashingUtils::HashString("AVERAGE");
+        static constexpr uint32_t MEDIAN_HASH = ConstExprHashingUtils::HashString("MEDIAN");
+        static constexpr uint32_t STDEV_HASH = ConstExprHashingUtils::HashString("STDEV");
+        static constexpr uint32_t STDEVP_HASH = ConstExprHashingUtils::HashString("STDEVP");
+        static constexpr uint32_t VAR_HASH = ConstExprHashingUtils::HashString("VAR");
+        static constexpr uint32_t VARP_HASH = ConstExprHashingUtils::HashString("VARP");
 
 
         DefaultAggregation GetDefaultAggregationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUM_HASH)
           {
             return DefaultAggregation::SUM;

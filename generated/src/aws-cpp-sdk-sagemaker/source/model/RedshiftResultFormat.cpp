@@ -20,13 +20,13 @@ namespace Aws
       namespace RedshiftResultFormatMapper
       {
 
-        static const int PARQUET_HASH = HashingUtils::HashString("PARQUET");
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
+        static constexpr uint32_t PARQUET_HASH = ConstExprHashingUtils::HashString("PARQUET");
+        static constexpr uint32_t CSV_HASH = ConstExprHashingUtils::HashString("CSV");
 
 
         RedshiftResultFormat GetRedshiftResultFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PARQUET_HASH)
           {
             return RedshiftResultFormat::PARQUET;

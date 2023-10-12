@@ -20,12 +20,12 @@ namespace Aws
       namespace MetricTypeMapper
       {
 
-        static const int aggregate_latency_HASH = HashingUtils::HashString("aggregate-latency");
+        static constexpr uint32_t aggregate_latency_HASH = ConstExprHashingUtils::HashString("aggregate-latency");
 
 
         MetricType GetMetricTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == aggregate_latency_HASH)
           {
             return MetricType::aggregate_latency;

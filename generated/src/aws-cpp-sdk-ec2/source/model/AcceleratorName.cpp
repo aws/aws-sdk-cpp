@@ -20,20 +20,20 @@ namespace Aws
       namespace AcceleratorNameMapper
       {
 
-        static const int a100_HASH = HashingUtils::HashString("a100");
-        static const int v100_HASH = HashingUtils::HashString("v100");
-        static const int k80_HASH = HashingUtils::HashString("k80");
-        static const int t4_HASH = HashingUtils::HashString("t4");
-        static const int m60_HASH = HashingUtils::HashString("m60");
-        static const int radeon_pro_v520_HASH = HashingUtils::HashString("radeon-pro-v520");
-        static const int vu9p_HASH = HashingUtils::HashString("vu9p");
-        static const int inferentia_HASH = HashingUtils::HashString("inferentia");
-        static const int k520_HASH = HashingUtils::HashString("k520");
+        static constexpr uint32_t a100_HASH = ConstExprHashingUtils::HashString("a100");
+        static constexpr uint32_t v100_HASH = ConstExprHashingUtils::HashString("v100");
+        static constexpr uint32_t k80_HASH = ConstExprHashingUtils::HashString("k80");
+        static constexpr uint32_t t4_HASH = ConstExprHashingUtils::HashString("t4");
+        static constexpr uint32_t m60_HASH = ConstExprHashingUtils::HashString("m60");
+        static constexpr uint32_t radeon_pro_v520_HASH = ConstExprHashingUtils::HashString("radeon-pro-v520");
+        static constexpr uint32_t vu9p_HASH = ConstExprHashingUtils::HashString("vu9p");
+        static constexpr uint32_t inferentia_HASH = ConstExprHashingUtils::HashString("inferentia");
+        static constexpr uint32_t k520_HASH = ConstExprHashingUtils::HashString("k520");
 
 
         AcceleratorName GetAcceleratorNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == a100_HASH)
           {
             return AcceleratorName::a100;

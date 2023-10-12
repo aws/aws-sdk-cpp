@@ -20,17 +20,17 @@ namespace Aws
       namespace ActionStatusMapper
       {
 
-        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Completed_HASH = HashingUtils::HashString("Completed");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Stopping_HASH = HashingUtils::HashString("Stopping");
-        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
+        static constexpr uint32_t Unknown_HASH = ConstExprHashingUtils::HashString("Unknown");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Completed_HASH = ConstExprHashingUtils::HashString("Completed");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Stopping_HASH = ConstExprHashingUtils::HashString("Stopping");
+        static constexpr uint32_t Stopped_HASH = ConstExprHashingUtils::HashString("Stopped");
 
 
         ActionStatus GetActionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Unknown_HASH)
           {
             return ActionStatus::Unknown;

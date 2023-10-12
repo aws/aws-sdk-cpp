@@ -20,15 +20,15 @@ namespace Aws
       namespace DnsRecordIpTypeMapper
       {
 
-        static const int ipv4_HASH = HashingUtils::HashString("ipv4");
-        static const int dualstack_HASH = HashingUtils::HashString("dualstack");
-        static const int ipv6_HASH = HashingUtils::HashString("ipv6");
-        static const int service_defined_HASH = HashingUtils::HashString("service-defined");
+        static constexpr uint32_t ipv4_HASH = ConstExprHashingUtils::HashString("ipv4");
+        static constexpr uint32_t dualstack_HASH = ConstExprHashingUtils::HashString("dualstack");
+        static constexpr uint32_t ipv6_HASH = ConstExprHashingUtils::HashString("ipv6");
+        static constexpr uint32_t service_defined_HASH = ConstExprHashingUtils::HashString("service-defined");
 
 
         DnsRecordIpType GetDnsRecordIpTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ipv4_HASH)
           {
             return DnsRecordIpType::ipv4;

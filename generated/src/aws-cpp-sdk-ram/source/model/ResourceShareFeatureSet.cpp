@@ -20,14 +20,14 @@ namespace Aws
       namespace ResourceShareFeatureSetMapper
       {
 
-        static const int CREATED_FROM_POLICY_HASH = HashingUtils::HashString("CREATED_FROM_POLICY");
-        static const int PROMOTING_TO_STANDARD_HASH = HashingUtils::HashString("PROMOTING_TO_STANDARD");
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
+        static constexpr uint32_t CREATED_FROM_POLICY_HASH = ConstExprHashingUtils::HashString("CREATED_FROM_POLICY");
+        static constexpr uint32_t PROMOTING_TO_STANDARD_HASH = ConstExprHashingUtils::HashString("PROMOTING_TO_STANDARD");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
 
 
         ResourceShareFeatureSet GetResourceShareFeatureSetForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATED_FROM_POLICY_HASH)
           {
             return ResourceShareFeatureSet::CREATED_FROM_POLICY;

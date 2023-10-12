@@ -20,12 +20,12 @@ namespace Aws
       namespace ExportDataFormatMapper
       {
 
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
+        static constexpr uint32_t CSV_HASH = ConstExprHashingUtils::HashString("CSV");
 
 
         ExportDataFormat GetExportDataFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CSV_HASH)
           {
             return ExportDataFormat::CSV;

@@ -20,12 +20,12 @@ namespace Aws
       namespace AdditionalResponseFieldTypeMapper
       {
 
-        static const int WEBURL_HASH = HashingUtils::HashString("WEBURL");
+        static constexpr uint32_t WEBURL_HASH = ConstExprHashingUtils::HashString("WEBURL");
 
 
         AdditionalResponseFieldType GetAdditionalResponseFieldTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WEBURL_HASH)
           {
             return AdditionalResponseFieldType::WEBURL;

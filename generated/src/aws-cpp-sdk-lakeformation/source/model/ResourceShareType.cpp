@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceShareTypeMapper
       {
 
-        static const int FOREIGN_HASH = HashingUtils::HashString("FOREIGN");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t FOREIGN_HASH = ConstExprHashingUtils::HashString("FOREIGN");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         ResourceShareType GetResourceShareTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FOREIGN_HASH)
           {
             return ResourceShareType::FOREIGN;

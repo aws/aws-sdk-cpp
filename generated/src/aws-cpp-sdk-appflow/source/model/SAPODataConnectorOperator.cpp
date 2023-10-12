@@ -20,32 +20,32 @@ namespace Aws
       namespace SAPODataConnectorOperatorMapper
       {
 
-        static const int PROJECTION_HASH = HashingUtils::HashString("PROJECTION");
-        static const int LESS_THAN_HASH = HashingUtils::HashString("LESS_THAN");
-        static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
-        static const int GREATER_THAN_HASH = HashingUtils::HashString("GREATER_THAN");
-        static const int BETWEEN_HASH = HashingUtils::HashString("BETWEEN");
-        static const int LESS_THAN_OR_EQUAL_TO_HASH = HashingUtils::HashString("LESS_THAN_OR_EQUAL_TO");
-        static const int GREATER_THAN_OR_EQUAL_TO_HASH = HashingUtils::HashString("GREATER_THAN_OR_EQUAL_TO");
-        static const int EQUAL_TO_HASH = HashingUtils::HashString("EQUAL_TO");
-        static const int NOT_EQUAL_TO_HASH = HashingUtils::HashString("NOT_EQUAL_TO");
-        static const int ADDITION_HASH = HashingUtils::HashString("ADDITION");
-        static const int MULTIPLICATION_HASH = HashingUtils::HashString("MULTIPLICATION");
-        static const int DIVISION_HASH = HashingUtils::HashString("DIVISION");
-        static const int SUBTRACTION_HASH = HashingUtils::HashString("SUBTRACTION");
-        static const int MASK_ALL_HASH = HashingUtils::HashString("MASK_ALL");
-        static const int MASK_FIRST_N_HASH = HashingUtils::HashString("MASK_FIRST_N");
-        static const int MASK_LAST_N_HASH = HashingUtils::HashString("MASK_LAST_N");
-        static const int VALIDATE_NON_NULL_HASH = HashingUtils::HashString("VALIDATE_NON_NULL");
-        static const int VALIDATE_NON_ZERO_HASH = HashingUtils::HashString("VALIDATE_NON_ZERO");
-        static const int VALIDATE_NON_NEGATIVE_HASH = HashingUtils::HashString("VALIDATE_NON_NEGATIVE");
-        static const int VALIDATE_NUMERIC_HASH = HashingUtils::HashString("VALIDATE_NUMERIC");
-        static const int NO_OP_HASH = HashingUtils::HashString("NO_OP");
+        static constexpr uint32_t PROJECTION_HASH = ConstExprHashingUtils::HashString("PROJECTION");
+        static constexpr uint32_t LESS_THAN_HASH = ConstExprHashingUtils::HashString("LESS_THAN");
+        static constexpr uint32_t CONTAINS_HASH = ConstExprHashingUtils::HashString("CONTAINS");
+        static constexpr uint32_t GREATER_THAN_HASH = ConstExprHashingUtils::HashString("GREATER_THAN");
+        static constexpr uint32_t BETWEEN_HASH = ConstExprHashingUtils::HashString("BETWEEN");
+        static constexpr uint32_t LESS_THAN_OR_EQUAL_TO_HASH = ConstExprHashingUtils::HashString("LESS_THAN_OR_EQUAL_TO");
+        static constexpr uint32_t GREATER_THAN_OR_EQUAL_TO_HASH = ConstExprHashingUtils::HashString("GREATER_THAN_OR_EQUAL_TO");
+        static constexpr uint32_t EQUAL_TO_HASH = ConstExprHashingUtils::HashString("EQUAL_TO");
+        static constexpr uint32_t NOT_EQUAL_TO_HASH = ConstExprHashingUtils::HashString("NOT_EQUAL_TO");
+        static constexpr uint32_t ADDITION_HASH = ConstExprHashingUtils::HashString("ADDITION");
+        static constexpr uint32_t MULTIPLICATION_HASH = ConstExprHashingUtils::HashString("MULTIPLICATION");
+        static constexpr uint32_t DIVISION_HASH = ConstExprHashingUtils::HashString("DIVISION");
+        static constexpr uint32_t SUBTRACTION_HASH = ConstExprHashingUtils::HashString("SUBTRACTION");
+        static constexpr uint32_t MASK_ALL_HASH = ConstExprHashingUtils::HashString("MASK_ALL");
+        static constexpr uint32_t MASK_FIRST_N_HASH = ConstExprHashingUtils::HashString("MASK_FIRST_N");
+        static constexpr uint32_t MASK_LAST_N_HASH = ConstExprHashingUtils::HashString("MASK_LAST_N");
+        static constexpr uint32_t VALIDATE_NON_NULL_HASH = ConstExprHashingUtils::HashString("VALIDATE_NON_NULL");
+        static constexpr uint32_t VALIDATE_NON_ZERO_HASH = ConstExprHashingUtils::HashString("VALIDATE_NON_ZERO");
+        static constexpr uint32_t VALIDATE_NON_NEGATIVE_HASH = ConstExprHashingUtils::HashString("VALIDATE_NON_NEGATIVE");
+        static constexpr uint32_t VALIDATE_NUMERIC_HASH = ConstExprHashingUtils::HashString("VALIDATE_NUMERIC");
+        static constexpr uint32_t NO_OP_HASH = ConstExprHashingUtils::HashString("NO_OP");
 
 
         SAPODataConnectorOperator GetSAPODataConnectorOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROJECTION_HASH)
           {
             return SAPODataConnectorOperator::PROJECTION;

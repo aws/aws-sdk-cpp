@@ -20,19 +20,19 @@ namespace Aws
       namespace TypeMapper
       {
 
-        static const int RELATIONSHIP_HASH = HashingUtils::HashString("RELATIONSHIP");
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
-        static const int LONG_HASH = HashingUtils::HashString("LONG");
-        static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
-        static const int INTEGER_HASH = HashingUtils::HashString("INTEGER");
-        static const int DOUBLE_HASH = HashingUtils::HashString("DOUBLE");
-        static const int LIST_HASH = HashingUtils::HashString("LIST");
-        static const int MAP_HASH = HashingUtils::HashString("MAP");
+        static constexpr uint32_t RELATIONSHIP_HASH = ConstExprHashingUtils::HashString("RELATIONSHIP");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
+        static constexpr uint32_t LONG_HASH = ConstExprHashingUtils::HashString("LONG");
+        static constexpr uint32_t BOOLEAN_HASH = ConstExprHashingUtils::HashString("BOOLEAN");
+        static constexpr uint32_t INTEGER_HASH = ConstExprHashingUtils::HashString("INTEGER");
+        static constexpr uint32_t DOUBLE_HASH = ConstExprHashingUtils::HashString("DOUBLE");
+        static constexpr uint32_t LIST_HASH = ConstExprHashingUtils::HashString("LIST");
+        static constexpr uint32_t MAP_HASH = ConstExprHashingUtils::HashString("MAP");
 
 
         Type GetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RELATIONSHIP_HASH)
           {
             return Type::RELATIONSHIP;

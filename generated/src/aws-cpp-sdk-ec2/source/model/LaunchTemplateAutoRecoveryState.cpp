@@ -20,13 +20,13 @@ namespace Aws
       namespace LaunchTemplateAutoRecoveryStateMapper
       {
 
-        static const int default__HASH = HashingUtils::HashString("default");
-        static const int disabled_HASH = HashingUtils::HashString("disabled");
+        static constexpr uint32_t default__HASH = ConstExprHashingUtils::HashString("default");
+        static constexpr uint32_t disabled_HASH = ConstExprHashingUtils::HashString("disabled");
 
 
         LaunchTemplateAutoRecoveryState GetLaunchTemplateAutoRecoveryStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == default__HASH)
           {
             return LaunchTemplateAutoRecoveryState::default_;

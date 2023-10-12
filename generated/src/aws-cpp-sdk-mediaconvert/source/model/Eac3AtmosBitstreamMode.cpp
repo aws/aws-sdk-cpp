@@ -20,12 +20,12 @@ namespace Aws
       namespace Eac3AtmosBitstreamModeMapper
       {
 
-        static const int COMPLETE_MAIN_HASH = HashingUtils::HashString("COMPLETE_MAIN");
+        static constexpr uint32_t COMPLETE_MAIN_HASH = ConstExprHashingUtils::HashString("COMPLETE_MAIN");
 
 
         Eac3AtmosBitstreamMode GetEac3AtmosBitstreamModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPLETE_MAIN_HASH)
           {
             return Eac3AtmosBitstreamMode::COMPLETE_MAIN;

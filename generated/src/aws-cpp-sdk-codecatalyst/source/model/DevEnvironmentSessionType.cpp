@@ -20,13 +20,13 @@ namespace Aws
       namespace DevEnvironmentSessionTypeMapper
       {
 
-        static const int SSM_HASH = HashingUtils::HashString("SSM");
-        static const int SSH_HASH = HashingUtils::HashString("SSH");
+        static constexpr uint32_t SSM_HASH = ConstExprHashingUtils::HashString("SSM");
+        static constexpr uint32_t SSH_HASH = ConstExprHashingUtils::HashString("SSH");
 
 
         DevEnvironmentSessionType GetDevEnvironmentSessionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SSM_HASH)
           {
             return DevEnvironmentSessionType::SSM;

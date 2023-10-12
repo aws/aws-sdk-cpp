@@ -20,12 +20,12 @@ namespace Aws
       namespace AlgorithmNameCloudRemovalMapper
       {
 
-        static const int INTERPOLATION_HASH = HashingUtils::HashString("INTERPOLATION");
+        static constexpr uint32_t INTERPOLATION_HASH = ConstExprHashingUtils::HashString("INTERPOLATION");
 
 
         AlgorithmNameCloudRemoval GetAlgorithmNameCloudRemovalForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERPOLATION_HASH)
           {
             return AlgorithmNameCloudRemoval::INTERPOLATION;

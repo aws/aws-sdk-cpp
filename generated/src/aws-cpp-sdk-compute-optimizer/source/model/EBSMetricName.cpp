@@ -20,15 +20,15 @@ namespace Aws
       namespace EBSMetricNameMapper
       {
 
-        static const int VolumeReadOpsPerSecond_HASH = HashingUtils::HashString("VolumeReadOpsPerSecond");
-        static const int VolumeWriteOpsPerSecond_HASH = HashingUtils::HashString("VolumeWriteOpsPerSecond");
-        static const int VolumeReadBytesPerSecond_HASH = HashingUtils::HashString("VolumeReadBytesPerSecond");
-        static const int VolumeWriteBytesPerSecond_HASH = HashingUtils::HashString("VolumeWriteBytesPerSecond");
+        static constexpr uint32_t VolumeReadOpsPerSecond_HASH = ConstExprHashingUtils::HashString("VolumeReadOpsPerSecond");
+        static constexpr uint32_t VolumeWriteOpsPerSecond_HASH = ConstExprHashingUtils::HashString("VolumeWriteOpsPerSecond");
+        static constexpr uint32_t VolumeReadBytesPerSecond_HASH = ConstExprHashingUtils::HashString("VolumeReadBytesPerSecond");
+        static constexpr uint32_t VolumeWriteBytesPerSecond_HASH = ConstExprHashingUtils::HashString("VolumeWriteBytesPerSecond");
 
 
         EBSMetricName GetEBSMetricNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VolumeReadOpsPerSecond_HASH)
           {
             return EBSMetricName::VolumeReadOpsPerSecond;

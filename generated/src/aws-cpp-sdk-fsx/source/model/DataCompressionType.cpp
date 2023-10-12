@@ -20,13 +20,13 @@ namespace Aws
       namespace DataCompressionTypeMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int LZ4_HASH = HashingUtils::HashString("LZ4");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t LZ4_HASH = ConstExprHashingUtils::HashString("LZ4");
 
 
         DataCompressionType GetDataCompressionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return DataCompressionType::NONE;

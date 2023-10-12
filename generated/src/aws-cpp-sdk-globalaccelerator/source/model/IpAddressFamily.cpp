@@ -20,13 +20,13 @@ namespace Aws
       namespace IpAddressFamilyMapper
       {
 
-        static const int IPv4_HASH = HashingUtils::HashString("IPv4");
-        static const int IPv6_HASH = HashingUtils::HashString("IPv6");
+        static constexpr uint32_t IPv4_HASH = ConstExprHashingUtils::HashString("IPv4");
+        static constexpr uint32_t IPv6_HASH = ConstExprHashingUtils::HashString("IPv6");
 
 
         IpAddressFamily GetIpAddressFamilyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IPv4_HASH)
           {
             return IpAddressFamily::IPv4;

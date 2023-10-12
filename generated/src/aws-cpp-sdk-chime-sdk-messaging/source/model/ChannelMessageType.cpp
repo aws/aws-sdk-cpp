@@ -20,13 +20,13 @@ namespace Aws
       namespace ChannelMessageTypeMapper
       {
 
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
-        static const int CONTROL_HASH = HashingUtils::HashString("CONTROL");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
+        static constexpr uint32_t CONTROL_HASH = ConstExprHashingUtils::HashString("CONTROL");
 
 
         ChannelMessageType GetChannelMessageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STANDARD_HASH)
           {
             return ChannelMessageType::STANDARD;

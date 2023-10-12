@@ -20,13 +20,13 @@ namespace Aws
       namespace FrameworkMapper
       {
 
-        static const int HYPERLEDGER_FABRIC_HASH = HashingUtils::HashString("HYPERLEDGER_FABRIC");
-        static const int ETHEREUM_HASH = HashingUtils::HashString("ETHEREUM");
+        static constexpr uint32_t HYPERLEDGER_FABRIC_HASH = ConstExprHashingUtils::HashString("HYPERLEDGER_FABRIC");
+        static constexpr uint32_t ETHEREUM_HASH = ConstExprHashingUtils::HashString("ETHEREUM");
 
 
         Framework GetFrameworkForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HYPERLEDGER_FABRIC_HASH)
           {
             return Framework::HYPERLEDGER_FABRIC;

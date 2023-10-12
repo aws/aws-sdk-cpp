@@ -20,14 +20,14 @@ namespace Aws
       namespace JobPhaseMapper
       {
 
-        static const int PROBING_HASH = HashingUtils::HashString("PROBING");
-        static const int TRANSCODING_HASH = HashingUtils::HashString("TRANSCODING");
-        static const int UPLOADING_HASH = HashingUtils::HashString("UPLOADING");
+        static constexpr uint32_t PROBING_HASH = ConstExprHashingUtils::HashString("PROBING");
+        static constexpr uint32_t TRANSCODING_HASH = ConstExprHashingUtils::HashString("TRANSCODING");
+        static constexpr uint32_t UPLOADING_HASH = ConstExprHashingUtils::HashString("UPLOADING");
 
 
         JobPhase GetJobPhaseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROBING_HASH)
           {
             return JobPhase::PROBING;

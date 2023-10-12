@@ -20,32 +20,32 @@ namespace Aws
       namespace TextTransformationTypeMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int COMPRESS_WHITE_SPACE_HASH = HashingUtils::HashString("COMPRESS_WHITE_SPACE");
-        static const int HTML_ENTITY_DECODE_HASH = HashingUtils::HashString("HTML_ENTITY_DECODE");
-        static const int LOWERCASE_HASH = HashingUtils::HashString("LOWERCASE");
-        static const int CMD_LINE_HASH = HashingUtils::HashString("CMD_LINE");
-        static const int URL_DECODE_HASH = HashingUtils::HashString("URL_DECODE");
-        static const int BASE64_DECODE_HASH = HashingUtils::HashString("BASE64_DECODE");
-        static const int HEX_DECODE_HASH = HashingUtils::HashString("HEX_DECODE");
-        static const int MD5_HASH = HashingUtils::HashString("MD5");
-        static const int REPLACE_COMMENTS_HASH = HashingUtils::HashString("REPLACE_COMMENTS");
-        static const int ESCAPE_SEQ_DECODE_HASH = HashingUtils::HashString("ESCAPE_SEQ_DECODE");
-        static const int SQL_HEX_DECODE_HASH = HashingUtils::HashString("SQL_HEX_DECODE");
-        static const int CSS_DECODE_HASH = HashingUtils::HashString("CSS_DECODE");
-        static const int JS_DECODE_HASH = HashingUtils::HashString("JS_DECODE");
-        static const int NORMALIZE_PATH_HASH = HashingUtils::HashString("NORMALIZE_PATH");
-        static const int NORMALIZE_PATH_WIN_HASH = HashingUtils::HashString("NORMALIZE_PATH_WIN");
-        static const int REMOVE_NULLS_HASH = HashingUtils::HashString("REMOVE_NULLS");
-        static const int REPLACE_NULLS_HASH = HashingUtils::HashString("REPLACE_NULLS");
-        static const int BASE64_DECODE_EXT_HASH = HashingUtils::HashString("BASE64_DECODE_EXT");
-        static const int URL_DECODE_UNI_HASH = HashingUtils::HashString("URL_DECODE_UNI");
-        static const int UTF8_TO_UNICODE_HASH = HashingUtils::HashString("UTF8_TO_UNICODE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t COMPRESS_WHITE_SPACE_HASH = ConstExprHashingUtils::HashString("COMPRESS_WHITE_SPACE");
+        static constexpr uint32_t HTML_ENTITY_DECODE_HASH = ConstExprHashingUtils::HashString("HTML_ENTITY_DECODE");
+        static constexpr uint32_t LOWERCASE_HASH = ConstExprHashingUtils::HashString("LOWERCASE");
+        static constexpr uint32_t CMD_LINE_HASH = ConstExprHashingUtils::HashString("CMD_LINE");
+        static constexpr uint32_t URL_DECODE_HASH = ConstExprHashingUtils::HashString("URL_DECODE");
+        static constexpr uint32_t BASE64_DECODE_HASH = ConstExprHashingUtils::HashString("BASE64_DECODE");
+        static constexpr uint32_t HEX_DECODE_HASH = ConstExprHashingUtils::HashString("HEX_DECODE");
+        static constexpr uint32_t MD5_HASH = ConstExprHashingUtils::HashString("MD5");
+        static constexpr uint32_t REPLACE_COMMENTS_HASH = ConstExprHashingUtils::HashString("REPLACE_COMMENTS");
+        static constexpr uint32_t ESCAPE_SEQ_DECODE_HASH = ConstExprHashingUtils::HashString("ESCAPE_SEQ_DECODE");
+        static constexpr uint32_t SQL_HEX_DECODE_HASH = ConstExprHashingUtils::HashString("SQL_HEX_DECODE");
+        static constexpr uint32_t CSS_DECODE_HASH = ConstExprHashingUtils::HashString("CSS_DECODE");
+        static constexpr uint32_t JS_DECODE_HASH = ConstExprHashingUtils::HashString("JS_DECODE");
+        static constexpr uint32_t NORMALIZE_PATH_HASH = ConstExprHashingUtils::HashString("NORMALIZE_PATH");
+        static constexpr uint32_t NORMALIZE_PATH_WIN_HASH = ConstExprHashingUtils::HashString("NORMALIZE_PATH_WIN");
+        static constexpr uint32_t REMOVE_NULLS_HASH = ConstExprHashingUtils::HashString("REMOVE_NULLS");
+        static constexpr uint32_t REPLACE_NULLS_HASH = ConstExprHashingUtils::HashString("REPLACE_NULLS");
+        static constexpr uint32_t BASE64_DECODE_EXT_HASH = ConstExprHashingUtils::HashString("BASE64_DECODE_EXT");
+        static constexpr uint32_t URL_DECODE_UNI_HASH = ConstExprHashingUtils::HashString("URL_DECODE_UNI");
+        static constexpr uint32_t UTF8_TO_UNICODE_HASH = ConstExprHashingUtils::HashString("UTF8_TO_UNICODE");
 
 
         TextTransformationType GetTextTransformationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return TextTransformationType::NONE;

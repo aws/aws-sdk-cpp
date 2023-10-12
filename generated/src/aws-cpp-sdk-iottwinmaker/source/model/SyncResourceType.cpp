@@ -20,13 +20,13 @@ namespace Aws
       namespace SyncResourceTypeMapper
       {
 
-        static const int ENTITY_HASH = HashingUtils::HashString("ENTITY");
-        static const int COMPONENT_TYPE_HASH = HashingUtils::HashString("COMPONENT_TYPE");
+        static constexpr uint32_t ENTITY_HASH = ConstExprHashingUtils::HashString("ENTITY");
+        static constexpr uint32_t COMPONENT_TYPE_HASH = ConstExprHashingUtils::HashString("COMPONENT_TYPE");
 
 
         SyncResourceType GetSyncResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENTITY_HASH)
           {
             return SyncResourceType::ENTITY;

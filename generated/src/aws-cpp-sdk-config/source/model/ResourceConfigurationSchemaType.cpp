@@ -20,12 +20,12 @@ namespace Aws
       namespace ResourceConfigurationSchemaTypeMapper
       {
 
-        static const int CFN_RESOURCE_SCHEMA_HASH = HashingUtils::HashString("CFN_RESOURCE_SCHEMA");
+        static constexpr uint32_t CFN_RESOURCE_SCHEMA_HASH = ConstExprHashingUtils::HashString("CFN_RESOURCE_SCHEMA");
 
 
         ResourceConfigurationSchemaType GetResourceConfigurationSchemaTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CFN_RESOURCE_SCHEMA_HASH)
           {
             return ResourceConfigurationSchemaType::CFN_RESOURCE_SCHEMA;

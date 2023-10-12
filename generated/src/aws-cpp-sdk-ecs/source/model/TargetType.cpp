@@ -20,12 +20,12 @@ namespace Aws
       namespace TargetTypeMapper
       {
 
-        static const int container_instance_HASH = HashingUtils::HashString("container-instance");
+        static constexpr uint32_t container_instance_HASH = ConstExprHashingUtils::HashString("container-instance");
 
 
         TargetType GetTargetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == container_instance_HASH)
           {
             return TargetType::container_instance;

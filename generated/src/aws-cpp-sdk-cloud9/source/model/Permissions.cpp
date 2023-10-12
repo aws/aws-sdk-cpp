@@ -20,14 +20,14 @@ namespace Aws
       namespace PermissionsMapper
       {
 
-        static const int owner_HASH = HashingUtils::HashString("owner");
-        static const int read_write_HASH = HashingUtils::HashString("read-write");
-        static const int read_only_HASH = HashingUtils::HashString("read-only");
+        static constexpr uint32_t owner_HASH = ConstExprHashingUtils::HashString("owner");
+        static constexpr uint32_t read_write_HASH = ConstExprHashingUtils::HashString("read-write");
+        static constexpr uint32_t read_only_HASH = ConstExprHashingUtils::HashString("read-only");
 
 
         Permissions GetPermissionsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == owner_HASH)
           {
             return Permissions::owner;

@@ -20,14 +20,14 @@ namespace Aws
       namespace PassthroughBehaviorMapper
       {
 
-        static const int WHEN_NO_MATCH_HASH = HashingUtils::HashString("WHEN_NO_MATCH");
-        static const int NEVER_HASH = HashingUtils::HashString("NEVER");
-        static const int WHEN_NO_TEMPLATES_HASH = HashingUtils::HashString("WHEN_NO_TEMPLATES");
+        static constexpr uint32_t WHEN_NO_MATCH_HASH = ConstExprHashingUtils::HashString("WHEN_NO_MATCH");
+        static constexpr uint32_t NEVER_HASH = ConstExprHashingUtils::HashString("NEVER");
+        static constexpr uint32_t WHEN_NO_TEMPLATES_HASH = ConstExprHashingUtils::HashString("WHEN_NO_TEMPLATES");
 
 
         PassthroughBehavior GetPassthroughBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WHEN_NO_MATCH_HASH)
           {
             return PassthroughBehavior::WHEN_NO_MATCH;

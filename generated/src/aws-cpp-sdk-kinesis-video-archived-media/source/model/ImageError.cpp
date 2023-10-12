@@ -20,13 +20,13 @@ namespace Aws
       namespace ImageErrorMapper
       {
 
-        static const int NO_MEDIA_HASH = HashingUtils::HashString("NO_MEDIA");
-        static const int MEDIA_ERROR_HASH = HashingUtils::HashString("MEDIA_ERROR");
+        static constexpr uint32_t NO_MEDIA_HASH = ConstExprHashingUtils::HashString("NO_MEDIA");
+        static constexpr uint32_t MEDIA_ERROR_HASH = ConstExprHashingUtils::HashString("MEDIA_ERROR");
 
 
         ImageError GetImageErrorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_MEDIA_HASH)
           {
             return ImageError::NO_MEDIA;

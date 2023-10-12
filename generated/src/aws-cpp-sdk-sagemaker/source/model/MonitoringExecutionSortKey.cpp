@@ -20,14 +20,14 @@ namespace Aws
       namespace MonitoringExecutionSortKeyMapper
       {
 
-        static const int CreationTime_HASH = HashingUtils::HashString("CreationTime");
-        static const int ScheduledTime_HASH = HashingUtils::HashString("ScheduledTime");
-        static const int Status_HASH = HashingUtils::HashString("Status");
+        static constexpr uint32_t CreationTime_HASH = ConstExprHashingUtils::HashString("CreationTime");
+        static constexpr uint32_t ScheduledTime_HASH = ConstExprHashingUtils::HashString("ScheduledTime");
+        static constexpr uint32_t Status_HASH = ConstExprHashingUtils::HashString("Status");
 
 
         MonitoringExecutionSortKey GetMonitoringExecutionSortKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CreationTime_HASH)
           {
             return MonitoringExecutionSortKey::CreationTime;

@@ -20,15 +20,15 @@ namespace Aws
       namespace WakeWordMapper
       {
 
-        static const int ALEXA_HASH = HashingUtils::HashString("ALEXA");
-        static const int AMAZON_HASH = HashingUtils::HashString("AMAZON");
-        static const int ECHO_HASH = HashingUtils::HashString("ECHO");
-        static const int COMPUTER_HASH = HashingUtils::HashString("COMPUTER");
+        static constexpr uint32_t ALEXA_HASH = ConstExprHashingUtils::HashString("ALEXA");
+        static constexpr uint32_t AMAZON_HASH = ConstExprHashingUtils::HashString("AMAZON");
+        static constexpr uint32_t ECHO_HASH = ConstExprHashingUtils::HashString("ECHO");
+        static constexpr uint32_t COMPUTER_HASH = ConstExprHashingUtils::HashString("COMPUTER");
 
 
         WakeWord GetWakeWordForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALEXA_HASH)
           {
             return WakeWord::ALEXA;

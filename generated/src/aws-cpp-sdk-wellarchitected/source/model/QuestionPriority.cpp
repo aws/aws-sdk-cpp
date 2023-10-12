@@ -20,13 +20,13 @@ namespace Aws
       namespace QuestionPriorityMapper
       {
 
-        static const int PRIORITIZED_HASH = HashingUtils::HashString("PRIORITIZED");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t PRIORITIZED_HASH = ConstExprHashingUtils::HashString("PRIORITIZED");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         QuestionPriority GetQuestionPriorityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRIORITIZED_HASH)
           {
             return QuestionPriority::PRIORITIZED;

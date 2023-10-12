@@ -20,16 +20,16 @@ namespace Aws
       namespace UserSortTypeMapper
       {
 
-        static const int USER_NAME_HASH = HashingUtils::HashString("USER_NAME");
-        static const int FULL_NAME_HASH = HashingUtils::HashString("FULL_NAME");
-        static const int STORAGE_LIMIT_HASH = HashingUtils::HashString("STORAGE_LIMIT");
-        static const int USER_STATUS_HASH = HashingUtils::HashString("USER_STATUS");
-        static const int STORAGE_USED_HASH = HashingUtils::HashString("STORAGE_USED");
+        static constexpr uint32_t USER_NAME_HASH = ConstExprHashingUtils::HashString("USER_NAME");
+        static constexpr uint32_t FULL_NAME_HASH = ConstExprHashingUtils::HashString("FULL_NAME");
+        static constexpr uint32_t STORAGE_LIMIT_HASH = ConstExprHashingUtils::HashString("STORAGE_LIMIT");
+        static constexpr uint32_t USER_STATUS_HASH = ConstExprHashingUtils::HashString("USER_STATUS");
+        static constexpr uint32_t STORAGE_USED_HASH = ConstExprHashingUtils::HashString("STORAGE_USED");
 
 
         UserSortType GetUserSortTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USER_NAME_HASH)
           {
             return UserSortType::USER_NAME;

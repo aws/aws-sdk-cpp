@@ -20,13 +20,13 @@ namespace Aws
       namespace WordCloudWordOrientationMapper
       {
 
-        static const int HORIZONTAL_HASH = HashingUtils::HashString("HORIZONTAL");
-        static const int HORIZONTAL_AND_VERTICAL_HASH = HashingUtils::HashString("HORIZONTAL_AND_VERTICAL");
+        static constexpr uint32_t HORIZONTAL_HASH = ConstExprHashingUtils::HashString("HORIZONTAL");
+        static constexpr uint32_t HORIZONTAL_AND_VERTICAL_HASH = ConstExprHashingUtils::HashString("HORIZONTAL_AND_VERTICAL");
 
 
         WordCloudWordOrientation GetWordCloudWordOrientationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HORIZONTAL_HASH)
           {
             return WordCloudWordOrientation::HORIZONTAL;

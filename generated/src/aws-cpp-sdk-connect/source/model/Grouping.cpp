@@ -20,14 +20,14 @@ namespace Aws
       namespace GroupingMapper
       {
 
-        static const int QUEUE_HASH = HashingUtils::HashString("QUEUE");
-        static const int CHANNEL_HASH = HashingUtils::HashString("CHANNEL");
-        static const int ROUTING_PROFILE_HASH = HashingUtils::HashString("ROUTING_PROFILE");
+        static constexpr uint32_t QUEUE_HASH = ConstExprHashingUtils::HashString("QUEUE");
+        static constexpr uint32_t CHANNEL_HASH = ConstExprHashingUtils::HashString("CHANNEL");
+        static constexpr uint32_t ROUTING_PROFILE_HASH = ConstExprHashingUtils::HashString("ROUTING_PROFILE");
 
 
         Grouping GetGroupingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUEUE_HASH)
           {
             return Grouping::QUEUE;

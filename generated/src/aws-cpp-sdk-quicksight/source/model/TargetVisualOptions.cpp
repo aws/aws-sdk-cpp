@@ -20,12 +20,12 @@ namespace Aws
       namespace TargetVisualOptionsMapper
       {
 
-        static const int ALL_VISUALS_HASH = HashingUtils::HashString("ALL_VISUALS");
+        static constexpr uint32_t ALL_VISUALS_HASH = ConstExprHashingUtils::HashString("ALL_VISUALS");
 
 
         TargetVisualOptions GetTargetVisualOptionsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_VISUALS_HASH)
           {
             return TargetVisualOptions::ALL_VISUALS;

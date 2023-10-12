@@ -20,15 +20,15 @@ namespace Aws
       namespace NetworkModeMapper
       {
 
-        static const int bridge_HASH = HashingUtils::HashString("bridge");
-        static const int host_HASH = HashingUtils::HashString("host");
-        static const int awsvpc_HASH = HashingUtils::HashString("awsvpc");
-        static const int none_HASH = HashingUtils::HashString("none");
+        static constexpr uint32_t bridge_HASH = ConstExprHashingUtils::HashString("bridge");
+        static constexpr uint32_t host_HASH = ConstExprHashingUtils::HashString("host");
+        static constexpr uint32_t awsvpc_HASH = ConstExprHashingUtils::HashString("awsvpc");
+        static constexpr uint32_t none_HASH = ConstExprHashingUtils::HashString("none");
 
 
         NetworkMode GetNetworkModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == bridge_HASH)
           {
             return NetworkMode::bridge;

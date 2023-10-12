@@ -20,18 +20,18 @@ namespace Aws
       namespace TableStatusMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int INACCESSIBLE_ENCRYPTION_CREDENTIALS_HASH = HashingUtils::HashString("INACCESSIBLE_ENCRYPTION_CREDENTIALS");
-        static const int ARCHIVING_HASH = HashingUtils::HashString("ARCHIVING");
-        static const int ARCHIVED_HASH = HashingUtils::HashString("ARCHIVED");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t INACCESSIBLE_ENCRYPTION_CREDENTIALS_HASH = ConstExprHashingUtils::HashString("INACCESSIBLE_ENCRYPTION_CREDENTIALS");
+        static constexpr uint32_t ARCHIVING_HASH = ConstExprHashingUtils::HashString("ARCHIVING");
+        static constexpr uint32_t ARCHIVED_HASH = ConstExprHashingUtils::HashString("ARCHIVED");
 
 
         TableStatus GetTableStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return TableStatus::CREATING;

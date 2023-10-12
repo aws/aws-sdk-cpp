@@ -20,15 +20,15 @@ namespace Aws
       namespace DeleteFleetErrorCodeMapper
       {
 
-        static const int fleetIdDoesNotExist_HASH = HashingUtils::HashString("fleetIdDoesNotExist");
-        static const int fleetIdMalformed_HASH = HashingUtils::HashString("fleetIdMalformed");
-        static const int fleetNotInDeletableState_HASH = HashingUtils::HashString("fleetNotInDeletableState");
-        static const int unexpectedError_HASH = HashingUtils::HashString("unexpectedError");
+        static constexpr uint32_t fleetIdDoesNotExist_HASH = ConstExprHashingUtils::HashString("fleetIdDoesNotExist");
+        static constexpr uint32_t fleetIdMalformed_HASH = ConstExprHashingUtils::HashString("fleetIdMalformed");
+        static constexpr uint32_t fleetNotInDeletableState_HASH = ConstExprHashingUtils::HashString("fleetNotInDeletableState");
+        static constexpr uint32_t unexpectedError_HASH = ConstExprHashingUtils::HashString("unexpectedError");
 
 
         DeleteFleetErrorCode GetDeleteFleetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == fleetIdDoesNotExist_HASH)
           {
             return DeleteFleetErrorCode::fleetIdDoesNotExist;

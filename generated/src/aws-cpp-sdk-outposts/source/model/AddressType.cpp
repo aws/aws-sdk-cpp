@@ -20,13 +20,13 @@ namespace Aws
       namespace AddressTypeMapper
       {
 
-        static const int SHIPPING_ADDRESS_HASH = HashingUtils::HashString("SHIPPING_ADDRESS");
-        static const int OPERATING_ADDRESS_HASH = HashingUtils::HashString("OPERATING_ADDRESS");
+        static constexpr uint32_t SHIPPING_ADDRESS_HASH = ConstExprHashingUtils::HashString("SHIPPING_ADDRESS");
+        static constexpr uint32_t OPERATING_ADDRESS_HASH = ConstExprHashingUtils::HashString("OPERATING_ADDRESS");
 
 
         AddressType GetAddressTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SHIPPING_ADDRESS_HASH)
           {
             return AddressType::SHIPPING_ADDRESS;

@@ -20,13 +20,13 @@ namespace Aws
       namespace SessionStateMapper
       {
 
-        static const int Active_HASH = HashingUtils::HashString("Active");
-        static const int History_HASH = HashingUtils::HashString("History");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
+        static constexpr uint32_t History_HASH = ConstExprHashingUtils::HashString("History");
 
 
         SessionState GetSessionStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Active_HASH)
           {
             return SessionState::Active;

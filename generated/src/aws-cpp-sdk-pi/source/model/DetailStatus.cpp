@@ -20,14 +20,14 @@ namespace Aws
       namespace DetailStatusMapper
       {
 
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
-        static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t PROCESSING_HASH = ConstExprHashingUtils::HashString("PROCESSING");
+        static constexpr uint32_t UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("UNAVAILABLE");
 
 
         DetailStatus GetDetailStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVAILABLE_HASH)
           {
             return DetailStatus::AVAILABLE;

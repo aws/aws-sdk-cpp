@@ -20,21 +20,21 @@ namespace Aws
       namespace InstanceStorageResourceTypeMapper
       {
 
-        static const int CHAT_TRANSCRIPTS_HASH = HashingUtils::HashString("CHAT_TRANSCRIPTS");
-        static const int CALL_RECORDINGS_HASH = HashingUtils::HashString("CALL_RECORDINGS");
-        static const int SCHEDULED_REPORTS_HASH = HashingUtils::HashString("SCHEDULED_REPORTS");
-        static const int MEDIA_STREAMS_HASH = HashingUtils::HashString("MEDIA_STREAMS");
-        static const int CONTACT_TRACE_RECORDS_HASH = HashingUtils::HashString("CONTACT_TRACE_RECORDS");
-        static const int AGENT_EVENTS_HASH = HashingUtils::HashString("AGENT_EVENTS");
-        static const int REAL_TIME_CONTACT_ANALYSIS_SEGMENTS_HASH = HashingUtils::HashString("REAL_TIME_CONTACT_ANALYSIS_SEGMENTS");
-        static const int ATTACHMENTS_HASH = HashingUtils::HashString("ATTACHMENTS");
-        static const int CONTACT_EVALUATIONS_HASH = HashingUtils::HashString("CONTACT_EVALUATIONS");
-        static const int SCREEN_RECORDINGS_HASH = HashingUtils::HashString("SCREEN_RECORDINGS");
+        static constexpr uint32_t CHAT_TRANSCRIPTS_HASH = ConstExprHashingUtils::HashString("CHAT_TRANSCRIPTS");
+        static constexpr uint32_t CALL_RECORDINGS_HASH = ConstExprHashingUtils::HashString("CALL_RECORDINGS");
+        static constexpr uint32_t SCHEDULED_REPORTS_HASH = ConstExprHashingUtils::HashString("SCHEDULED_REPORTS");
+        static constexpr uint32_t MEDIA_STREAMS_HASH = ConstExprHashingUtils::HashString("MEDIA_STREAMS");
+        static constexpr uint32_t CONTACT_TRACE_RECORDS_HASH = ConstExprHashingUtils::HashString("CONTACT_TRACE_RECORDS");
+        static constexpr uint32_t AGENT_EVENTS_HASH = ConstExprHashingUtils::HashString("AGENT_EVENTS");
+        static constexpr uint32_t REAL_TIME_CONTACT_ANALYSIS_SEGMENTS_HASH = ConstExprHashingUtils::HashString("REAL_TIME_CONTACT_ANALYSIS_SEGMENTS");
+        static constexpr uint32_t ATTACHMENTS_HASH = ConstExprHashingUtils::HashString("ATTACHMENTS");
+        static constexpr uint32_t CONTACT_EVALUATIONS_HASH = ConstExprHashingUtils::HashString("CONTACT_EVALUATIONS");
+        static constexpr uint32_t SCREEN_RECORDINGS_HASH = ConstExprHashingUtils::HashString("SCREEN_RECORDINGS");
 
 
         InstanceStorageResourceType GetInstanceStorageResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CHAT_TRANSCRIPTS_HASH)
           {
             return InstanceStorageResourceType::CHAT_TRANSCRIPTS;

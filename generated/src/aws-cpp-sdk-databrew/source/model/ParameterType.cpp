@@ -20,14 +20,14 @@ namespace Aws
       namespace ParameterTypeMapper
       {
 
-        static const int Datetime_HASH = HashingUtils::HashString("Datetime");
-        static const int Number_HASH = HashingUtils::HashString("Number");
-        static const int String_HASH = HashingUtils::HashString("String");
+        static constexpr uint32_t Datetime_HASH = ConstExprHashingUtils::HashString("Datetime");
+        static constexpr uint32_t Number_HASH = ConstExprHashingUtils::HashString("Number");
+        static constexpr uint32_t String_HASH = ConstExprHashingUtils::HashString("String");
 
 
         ParameterType GetParameterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Datetime_HASH)
           {
             return ParameterType::Datetime;

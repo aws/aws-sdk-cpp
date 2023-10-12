@@ -20,14 +20,14 @@ namespace Aws
       namespace RetentionLockTypeMapper
       {
 
-        static const int COMPLIANCE_HASH = HashingUtils::HashString("COMPLIANCE");
-        static const int GOVERNANCE_HASH = HashingUtils::HashString("GOVERNANCE");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t COMPLIANCE_HASH = ConstExprHashingUtils::HashString("COMPLIANCE");
+        static constexpr uint32_t GOVERNANCE_HASH = ConstExprHashingUtils::HashString("GOVERNANCE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         RetentionLockType GetRetentionLockTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPLIANCE_HASH)
           {
             return RetentionLockType::COMPLIANCE;

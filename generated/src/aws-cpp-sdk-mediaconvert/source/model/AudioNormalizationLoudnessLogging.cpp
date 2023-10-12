@@ -20,13 +20,13 @@ namespace Aws
       namespace AudioNormalizationLoudnessLoggingMapper
       {
 
-        static const int LOG_HASH = HashingUtils::HashString("LOG");
-        static const int DONT_LOG_HASH = HashingUtils::HashString("DONT_LOG");
+        static constexpr uint32_t LOG_HASH = ConstExprHashingUtils::HashString("LOG");
+        static constexpr uint32_t DONT_LOG_HASH = ConstExprHashingUtils::HashString("DONT_LOG");
 
 
         AudioNormalizationLoudnessLogging GetAudioNormalizationLoudnessLoggingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LOG_HASH)
           {
             return AudioNormalizationLoudnessLogging::LOG;

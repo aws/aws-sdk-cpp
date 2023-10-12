@@ -20,13 +20,13 @@ namespace Aws
       namespace InputDeviceCodecMapper
       {
 
-        static const int HEVC_HASH = HashingUtils::HashString("HEVC");
-        static const int AVC_HASH = HashingUtils::HashString("AVC");
+        static constexpr uint32_t HEVC_HASH = ConstExprHashingUtils::HashString("HEVC");
+        static constexpr uint32_t AVC_HASH = ConstExprHashingUtils::HashString("AVC");
 
 
         InputDeviceCodec GetInputDeviceCodecForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HEVC_HASH)
           {
             return InputDeviceCodec::HEVC;

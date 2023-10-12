@@ -20,12 +20,12 @@ namespace Aws
       namespace AppCategoryMapper
       {
 
-        static const int LfR_HASH = HashingUtils::HashString("LfR");
+        static constexpr uint32_t LfR_HASH = ConstExprHashingUtils::HashString("LfR");
 
 
         AppCategory GetAppCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LfR_HASH)
           {
             return AppCategory::LfR;

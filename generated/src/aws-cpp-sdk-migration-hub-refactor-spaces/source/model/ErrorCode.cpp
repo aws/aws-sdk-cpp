@@ -20,23 +20,23 @@ namespace Aws
       namespace ErrorCodeMapper
       {
 
-        static const int INVALID_RESOURCE_STATE_HASH = HashingUtils::HashString("INVALID_RESOURCE_STATE");
-        static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("RESOURCE_LIMIT_EXCEEDED");
-        static const int RESOURCE_CREATION_FAILURE_HASH = HashingUtils::HashString("RESOURCE_CREATION_FAILURE");
-        static const int RESOURCE_UPDATE_FAILURE_HASH = HashingUtils::HashString("RESOURCE_UPDATE_FAILURE");
-        static const int SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE_HASH = HashingUtils::HashString("SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE");
-        static const int RESOURCE_DELETION_FAILURE_HASH = HashingUtils::HashString("RESOURCE_DELETION_FAILURE");
-        static const int RESOURCE_RETRIEVAL_FAILURE_HASH = HashingUtils::HashString("RESOURCE_RETRIEVAL_FAILURE");
-        static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("RESOURCE_IN_USE");
-        static const int RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("RESOURCE_NOT_FOUND");
-        static const int STATE_TRANSITION_FAILURE_HASH = HashingUtils::HashString("STATE_TRANSITION_FAILURE");
-        static const int REQUEST_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("REQUEST_LIMIT_EXCEEDED");
-        static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NOT_AUTHORIZED");
+        static constexpr uint32_t INVALID_RESOURCE_STATE_HASH = ConstExprHashingUtils::HashString("INVALID_RESOURCE_STATE");
+        static constexpr uint32_t RESOURCE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("RESOURCE_LIMIT_EXCEEDED");
+        static constexpr uint32_t RESOURCE_CREATION_FAILURE_HASH = ConstExprHashingUtils::HashString("RESOURCE_CREATION_FAILURE");
+        static constexpr uint32_t RESOURCE_UPDATE_FAILURE_HASH = ConstExprHashingUtils::HashString("RESOURCE_UPDATE_FAILURE");
+        static constexpr uint32_t SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE_HASH = ConstExprHashingUtils::HashString("SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE");
+        static constexpr uint32_t RESOURCE_DELETION_FAILURE_HASH = ConstExprHashingUtils::HashString("RESOURCE_DELETION_FAILURE");
+        static constexpr uint32_t RESOURCE_RETRIEVAL_FAILURE_HASH = ConstExprHashingUtils::HashString("RESOURCE_RETRIEVAL_FAILURE");
+        static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("RESOURCE_IN_USE");
+        static constexpr uint32_t RESOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("RESOURCE_NOT_FOUND");
+        static constexpr uint32_t STATE_TRANSITION_FAILURE_HASH = ConstExprHashingUtils::HashString("STATE_TRANSITION_FAILURE");
+        static constexpr uint32_t REQUEST_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("REQUEST_LIMIT_EXCEEDED");
+        static constexpr uint32_t NOT_AUTHORIZED_HASH = ConstExprHashingUtils::HashString("NOT_AUTHORIZED");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVALID_RESOURCE_STATE_HASH)
           {
             return ErrorCode::INVALID_RESOURCE_STATE;

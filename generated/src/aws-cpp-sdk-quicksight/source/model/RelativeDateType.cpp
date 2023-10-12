@@ -20,16 +20,16 @@ namespace Aws
       namespace RelativeDateTypeMapper
       {
 
-        static const int PREVIOUS_HASH = HashingUtils::HashString("PREVIOUS");
-        static const int THIS_HASH = HashingUtils::HashString("THIS");
-        static const int LAST_HASH = HashingUtils::HashString("LAST");
-        static const int NOW_HASH = HashingUtils::HashString("NOW");
-        static const int NEXT_HASH = HashingUtils::HashString("NEXT");
+        static constexpr uint32_t PREVIOUS_HASH = ConstExprHashingUtils::HashString("PREVIOUS");
+        static constexpr uint32_t THIS_HASH = ConstExprHashingUtils::HashString("THIS");
+        static constexpr uint32_t LAST_HASH = ConstExprHashingUtils::HashString("LAST");
+        static constexpr uint32_t NOW_HASH = ConstExprHashingUtils::HashString("NOW");
+        static constexpr uint32_t NEXT_HASH = ConstExprHashingUtils::HashString("NEXT");
 
 
         RelativeDateType GetRelativeDateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PREVIOUS_HASH)
           {
             return RelativeDateType::PREVIOUS;

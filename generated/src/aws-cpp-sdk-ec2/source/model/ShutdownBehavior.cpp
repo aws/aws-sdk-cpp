@@ -20,13 +20,13 @@ namespace Aws
       namespace ShutdownBehaviorMapper
       {
 
-        static const int stop_HASH = HashingUtils::HashString("stop");
-        static const int terminate_HASH = HashingUtils::HashString("terminate");
+        static constexpr uint32_t stop_HASH = ConstExprHashingUtils::HashString("stop");
+        static constexpr uint32_t terminate_HASH = ConstExprHashingUtils::HashString("terminate");
 
 
         ShutdownBehavior GetShutdownBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == stop_HASH)
           {
             return ShutdownBehavior::stop;

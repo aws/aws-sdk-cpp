@@ -20,13 +20,13 @@ namespace Aws
       namespace RetryBuildBatchTypeMapper
       {
 
-        static const int RETRY_ALL_BUILDS_HASH = HashingUtils::HashString("RETRY_ALL_BUILDS");
-        static const int RETRY_FAILED_BUILDS_HASH = HashingUtils::HashString("RETRY_FAILED_BUILDS");
+        static constexpr uint32_t RETRY_ALL_BUILDS_HASH = ConstExprHashingUtils::HashString("RETRY_ALL_BUILDS");
+        static constexpr uint32_t RETRY_FAILED_BUILDS_HASH = ConstExprHashingUtils::HashString("RETRY_FAILED_BUILDS");
 
 
         RetryBuildBatchType GetRetryBuildBatchTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RETRY_ALL_BUILDS_HASH)
           {
             return RetryBuildBatchType::RETRY_ALL_BUILDS;

@@ -20,12 +20,12 @@ namespace Aws
       namespace PolicyTypeMapper
       {
 
-        static const int DATA_PROTECTION_POLICY_HASH = HashingUtils::HashString("DATA_PROTECTION_POLICY");
+        static constexpr uint32_t DATA_PROTECTION_POLICY_HASH = ConstExprHashingUtils::HashString("DATA_PROTECTION_POLICY");
 
 
         PolicyType GetPolicyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DATA_PROTECTION_POLICY_HASH)
           {
             return PolicyType::DATA_PROTECTION_POLICY;

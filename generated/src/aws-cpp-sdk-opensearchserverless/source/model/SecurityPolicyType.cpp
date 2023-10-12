@@ -20,13 +20,13 @@ namespace Aws
       namespace SecurityPolicyTypeMapper
       {
 
-        static const int encryption_HASH = HashingUtils::HashString("encryption");
-        static const int network_HASH = HashingUtils::HashString("network");
+        static constexpr uint32_t encryption_HASH = ConstExprHashingUtils::HashString("encryption");
+        static constexpr uint32_t network_HASH = ConstExprHashingUtils::HashString("network");
 
 
         SecurityPolicyType GetSecurityPolicyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == encryption_HASH)
           {
             return SecurityPolicyType::encryption;

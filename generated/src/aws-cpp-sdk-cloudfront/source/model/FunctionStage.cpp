@@ -20,13 +20,13 @@ namespace Aws
       namespace FunctionStageMapper
       {
 
-        static const int DEVELOPMENT_HASH = HashingUtils::HashString("DEVELOPMENT");
-        static const int LIVE_HASH = HashingUtils::HashString("LIVE");
+        static constexpr uint32_t DEVELOPMENT_HASH = ConstExprHashingUtils::HashString("DEVELOPMENT");
+        static constexpr uint32_t LIVE_HASH = ConstExprHashingUtils::HashString("LIVE");
 
 
         FunctionStage GetFunctionStageForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEVELOPMENT_HASH)
           {
             return FunctionStage::DEVELOPMENT;

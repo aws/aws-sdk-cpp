@@ -20,13 +20,13 @@ namespace Aws
       namespace BatchJobDependencyTypeMapper
       {
 
-        static const int N_TO_N_HASH = HashingUtils::HashString("N_TO_N");
-        static const int SEQUENTIAL_HASH = HashingUtils::HashString("SEQUENTIAL");
+        static constexpr uint32_t N_TO_N_HASH = ConstExprHashingUtils::HashString("N_TO_N");
+        static constexpr uint32_t SEQUENTIAL_HASH = ConstExprHashingUtils::HashString("SEQUENTIAL");
 
 
         BatchJobDependencyType GetBatchJobDependencyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == N_TO_N_HASH)
           {
             return BatchJobDependencyType::N_TO_N;

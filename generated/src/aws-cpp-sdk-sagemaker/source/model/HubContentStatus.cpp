@@ -20,16 +20,16 @@ namespace Aws
       namespace HubContentStatusMapper
       {
 
-        static const int Available_HASH = HashingUtils::HashString("Available");
-        static const int Importing_HASH = HashingUtils::HashString("Importing");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
-        static const int ImportFailed_HASH = HashingUtils::HashString("ImportFailed");
-        static const int DeleteFailed_HASH = HashingUtils::HashString("DeleteFailed");
+        static constexpr uint32_t Available_HASH = ConstExprHashingUtils::HashString("Available");
+        static constexpr uint32_t Importing_HASH = ConstExprHashingUtils::HashString("Importing");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
+        static constexpr uint32_t ImportFailed_HASH = ConstExprHashingUtils::HashString("ImportFailed");
+        static constexpr uint32_t DeleteFailed_HASH = ConstExprHashingUtils::HashString("DeleteFailed");
 
 
         HubContentStatus GetHubContentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Available_HASH)
           {
             return HubContentStatus::Available;

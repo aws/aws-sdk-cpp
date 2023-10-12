@@ -20,13 +20,13 @@ namespace Aws
       namespace EmbeddedConvert608To708Mapper
       {
 
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int UPCONVERT_HASH = HashingUtils::HashString("UPCONVERT");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t UPCONVERT_HASH = ConstExprHashingUtils::HashString("UPCONVERT");
 
 
         EmbeddedConvert608To708 GetEmbeddedConvert608To708ForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISABLED_HASH)
           {
             return EmbeddedConvert608To708::DISABLED;

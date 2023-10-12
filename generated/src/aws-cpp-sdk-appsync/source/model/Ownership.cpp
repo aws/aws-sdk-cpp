@@ -20,13 +20,13 @@ namespace Aws
       namespace OwnershipMapper
       {
 
-        static const int CURRENT_ACCOUNT_HASH = HashingUtils::HashString("CURRENT_ACCOUNT");
-        static const int OTHER_ACCOUNTS_HASH = HashingUtils::HashString("OTHER_ACCOUNTS");
+        static constexpr uint32_t CURRENT_ACCOUNT_HASH = ConstExprHashingUtils::HashString("CURRENT_ACCOUNT");
+        static constexpr uint32_t OTHER_ACCOUNTS_HASH = ConstExprHashingUtils::HashString("OTHER_ACCOUNTS");
 
 
         Ownership GetOwnershipForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CURRENT_ACCOUNT_HASH)
           {
             return Ownership::CURRENT_ACCOUNT;

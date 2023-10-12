@@ -20,13 +20,13 @@ namespace Aws
       namespace OfferingClassMapper
       {
 
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
-        static const int CONVERTIBLE_HASH = HashingUtils::HashString("CONVERTIBLE");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
+        static constexpr uint32_t CONVERTIBLE_HASH = ConstExprHashingUtils::HashString("CONVERTIBLE");
 
 
         OfferingClass GetOfferingClassForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STANDARD_HASH)
           {
             return OfferingClass::STANDARD;

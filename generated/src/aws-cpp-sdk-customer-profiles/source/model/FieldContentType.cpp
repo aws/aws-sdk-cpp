@@ -20,16 +20,16 @@ namespace Aws
       namespace FieldContentTypeMapper
       {
 
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
-        static const int NUMBER_HASH = HashingUtils::HashString("NUMBER");
-        static const int PHONE_NUMBER_HASH = HashingUtils::HashString("PHONE_NUMBER");
-        static const int EMAIL_ADDRESS_HASH = HashingUtils::HashString("EMAIL_ADDRESS");
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
+        static constexpr uint32_t NUMBER_HASH = ConstExprHashingUtils::HashString("NUMBER");
+        static constexpr uint32_t PHONE_NUMBER_HASH = ConstExprHashingUtils::HashString("PHONE_NUMBER");
+        static constexpr uint32_t EMAIL_ADDRESS_HASH = ConstExprHashingUtils::HashString("EMAIL_ADDRESS");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
 
 
         FieldContentType GetFieldContentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STRING_HASH)
           {
             return FieldContentType::STRING;

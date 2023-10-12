@@ -20,15 +20,15 @@ namespace Aws
       namespace PutMetricsErrorCodeMapper
       {
 
-        static const int METRIC_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("METRIC_LIMIT_EXCEEDED");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int VALIDATION_ERROR_HASH = HashingUtils::HashString("VALIDATION_ERROR");
-        static const int CONFLICT_ERROR_HASH = HashingUtils::HashString("CONFLICT_ERROR");
+        static constexpr uint32_t METRIC_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("METRIC_LIMIT_EXCEEDED");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t VALIDATION_ERROR_HASH = ConstExprHashingUtils::HashString("VALIDATION_ERROR");
+        static constexpr uint32_t CONFLICT_ERROR_HASH = ConstExprHashingUtils::HashString("CONFLICT_ERROR");
 
 
         PutMetricsErrorCode GetPutMetricsErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == METRIC_LIMIT_EXCEEDED_HASH)
           {
             return PutMetricsErrorCode::METRIC_LIMIT_EXCEEDED;

@@ -26,18 +26,18 @@ template<> AWS_ROUTE53DOMAINS_API DuplicateRequest Route53DomainsError::GetModel
 namespace Route53DomainsErrorMapper
 {
 
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInput");
-static const int DOMAIN_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DomainLimitExceeded");
-static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateRequest");
-static const int OPERATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OperationLimitExceeded");
-static const int T_L_D_RULES_VIOLATION_HASH = HashingUtils::HashString("TLDRulesViolation");
-static const int UNSUPPORTED_T_L_D_HASH = HashingUtils::HashString("UnsupportedTLD");
-static const int DNSSEC_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DnssecLimitExceeded");
+static constexpr uint32_t INVALID_INPUT_HASH = ConstExprHashingUtils::HashString("InvalidInput");
+static constexpr uint32_t DOMAIN_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("DomainLimitExceeded");
+static constexpr uint32_t DUPLICATE_REQUEST_HASH = ConstExprHashingUtils::HashString("DuplicateRequest");
+static constexpr uint32_t OPERATION_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("OperationLimitExceeded");
+static constexpr uint32_t T_L_D_RULES_VIOLATION_HASH = ConstExprHashingUtils::HashString("TLDRulesViolation");
+static constexpr uint32_t UNSUPPORTED_T_L_D_HASH = ConstExprHashingUtils::HashString("UnsupportedTLD");
+static constexpr uint32_t DNSSEC_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("DnssecLimitExceeded");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INVALID_INPUT_HASH)
   {

@@ -20,14 +20,14 @@ namespace Aws
       namespace OwnerMapper
       {
 
-        static const int CUSTOM_LAMBDA_HASH = HashingUtils::HashString("CUSTOM_LAMBDA");
-        static const int AWS_HASH = HashingUtils::HashString("AWS");
-        static const int CUSTOM_POLICY_HASH = HashingUtils::HashString("CUSTOM_POLICY");
+        static constexpr uint32_t CUSTOM_LAMBDA_HASH = ConstExprHashingUtils::HashString("CUSTOM_LAMBDA");
+        static constexpr uint32_t AWS_HASH = ConstExprHashingUtils::HashString("AWS");
+        static constexpr uint32_t CUSTOM_POLICY_HASH = ConstExprHashingUtils::HashString("CUSTOM_POLICY");
 
 
         Owner GetOwnerForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CUSTOM_LAMBDA_HASH)
           {
             return Owner::CUSTOM_LAMBDA;

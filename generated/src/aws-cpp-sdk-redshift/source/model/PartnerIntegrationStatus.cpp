@@ -20,15 +20,15 @@ namespace Aws
       namespace PartnerIntegrationStatusMapper
       {
 
-        static const int Active_HASH = HashingUtils::HashString("Active");
-        static const int Inactive_HASH = HashingUtils::HashString("Inactive");
-        static const int RuntimeFailure_HASH = HashingUtils::HashString("RuntimeFailure");
-        static const int ConnectionFailure_HASH = HashingUtils::HashString("ConnectionFailure");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
+        static constexpr uint32_t Inactive_HASH = ConstExprHashingUtils::HashString("Inactive");
+        static constexpr uint32_t RuntimeFailure_HASH = ConstExprHashingUtils::HashString("RuntimeFailure");
+        static constexpr uint32_t ConnectionFailure_HASH = ConstExprHashingUtils::HashString("ConnectionFailure");
 
 
         PartnerIntegrationStatus GetPartnerIntegrationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Active_HASH)
           {
             return PartnerIntegrationStatus::Active;

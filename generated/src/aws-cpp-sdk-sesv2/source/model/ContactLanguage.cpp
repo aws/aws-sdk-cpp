@@ -20,13 +20,13 @@ namespace Aws
       namespace ContactLanguageMapper
       {
 
-        static const int EN_HASH = HashingUtils::HashString("EN");
-        static const int JA_HASH = HashingUtils::HashString("JA");
+        static constexpr uint32_t EN_HASH = ConstExprHashingUtils::HashString("EN");
+        static constexpr uint32_t JA_HASH = ConstExprHashingUtils::HashString("JA");
 
 
         ContactLanguage GetContactLanguageForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EN_HASH)
           {
             return ContactLanguage::EN;

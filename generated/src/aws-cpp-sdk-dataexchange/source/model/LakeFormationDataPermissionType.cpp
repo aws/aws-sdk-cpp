@@ -20,12 +20,12 @@ namespace Aws
       namespace LakeFormationDataPermissionTypeMapper
       {
 
-        static const int LFTagPolicy_HASH = HashingUtils::HashString("LFTagPolicy");
+        static constexpr uint32_t LFTagPolicy_HASH = ConstExprHashingUtils::HashString("LFTagPolicy");
 
 
         LakeFormationDataPermissionType GetLakeFormationDataPermissionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LFTagPolicy_HASH)
           {
             return LakeFormationDataPermissionType::LFTagPolicy;

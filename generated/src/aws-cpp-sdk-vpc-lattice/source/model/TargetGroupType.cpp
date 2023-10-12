@@ -20,15 +20,15 @@ namespace Aws
       namespace TargetGroupTypeMapper
       {
 
-        static const int IP_HASH = HashingUtils::HashString("IP");
-        static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
-        static const int INSTANCE_HASH = HashingUtils::HashString("INSTANCE");
-        static const int ALB_HASH = HashingUtils::HashString("ALB");
+        static constexpr uint32_t IP_HASH = ConstExprHashingUtils::HashString("IP");
+        static constexpr uint32_t LAMBDA_HASH = ConstExprHashingUtils::HashString("LAMBDA");
+        static constexpr uint32_t INSTANCE_HASH = ConstExprHashingUtils::HashString("INSTANCE");
+        static constexpr uint32_t ALB_HASH = ConstExprHashingUtils::HashString("ALB");
 
 
         TargetGroupType GetTargetGroupTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IP_HASH)
           {
             return TargetGroupType::IP;

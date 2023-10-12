@@ -20,13 +20,13 @@ namespace Aws
       namespace Mp2CodingModeMapper
       {
 
-        static const int CODING_MODE_1_0_HASH = HashingUtils::HashString("CODING_MODE_1_0");
-        static const int CODING_MODE_2_0_HASH = HashingUtils::HashString("CODING_MODE_2_0");
+        static constexpr uint32_t CODING_MODE_1_0_HASH = ConstExprHashingUtils::HashString("CODING_MODE_1_0");
+        static constexpr uint32_t CODING_MODE_2_0_HASH = ConstExprHashingUtils::HashString("CODING_MODE_2_0");
 
 
         Mp2CodingMode GetMp2CodingModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CODING_MODE_1_0_HASH)
           {
             return Mp2CodingMode::CODING_MODE_1_0;

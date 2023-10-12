@@ -20,12 +20,12 @@ namespace Aws
       namespace RelationalDatabaseSourceTypeMapper
       {
 
-        static const int RDS_HTTP_ENDPOINT_HASH = HashingUtils::HashString("RDS_HTTP_ENDPOINT");
+        static constexpr uint32_t RDS_HTTP_ENDPOINT_HASH = ConstExprHashingUtils::HashString("RDS_HTTP_ENDPOINT");
 
 
         RelationalDatabaseSourceType GetRelationalDatabaseSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RDS_HTTP_ENDPOINT_HASH)
           {
             return RelationalDatabaseSourceType::RDS_HTTP_ENDPOINT;

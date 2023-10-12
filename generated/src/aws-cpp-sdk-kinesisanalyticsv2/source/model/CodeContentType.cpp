@@ -20,13 +20,13 @@ namespace Aws
       namespace CodeContentTypeMapper
       {
 
-        static const int PLAINTEXT_HASH = HashingUtils::HashString("PLAINTEXT");
-        static const int ZIPFILE_HASH = HashingUtils::HashString("ZIPFILE");
+        static constexpr uint32_t PLAINTEXT_HASH = ConstExprHashingUtils::HashString("PLAINTEXT");
+        static constexpr uint32_t ZIPFILE_HASH = ConstExprHashingUtils::HashString("ZIPFILE");
 
 
         CodeContentType GetCodeContentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PLAINTEXT_HASH)
           {
             return CodeContentType::PLAINTEXT;

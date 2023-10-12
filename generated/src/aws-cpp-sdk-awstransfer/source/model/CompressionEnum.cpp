@@ -20,13 +20,13 @@ namespace Aws
       namespace CompressionEnumMapper
       {
 
-        static const int ZLIB_HASH = HashingUtils::HashString("ZLIB");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static constexpr uint32_t ZLIB_HASH = ConstExprHashingUtils::HashString("ZLIB");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
 
 
         CompressionEnum GetCompressionEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ZLIB_HASH)
           {
             return CompressionEnum::ZLIB;

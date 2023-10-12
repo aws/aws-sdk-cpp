@@ -61,15 +61,15 @@ template<> AWS_ROUTE53RECOVERYCLUSTER_API ServiceLimitExceededException Route53R
 namespace Route53RecoveryClusterErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int ENDPOINT_TEMPORARILY_UNAVAILABLE_HASH = HashingUtils::HashString("EndpointTemporarilyUnavailableException");
-static const int SERVICE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ServiceLimitExceededException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
+static constexpr uint32_t ENDPOINT_TEMPORARILY_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("EndpointTemporarilyUnavailableException");
+static constexpr uint32_t SERVICE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ServiceLimitExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

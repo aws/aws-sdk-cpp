@@ -20,14 +20,14 @@ namespace Aws
       namespace MarketplaceSubscriptionOnboardingStatusMapper
       {
 
-        static const int NO_SUBSCRIPTION_HASH = HashingUtils::HashString("NO_SUBSCRIPTION");
-        static const int NOT_COMPLETE_HASH = HashingUtils::HashString("NOT_COMPLETE");
-        static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
+        static constexpr uint32_t NO_SUBSCRIPTION_HASH = ConstExprHashingUtils::HashString("NO_SUBSCRIPTION");
+        static constexpr uint32_t NOT_COMPLETE_HASH = ConstExprHashingUtils::HashString("NOT_COMPLETE");
+        static constexpr uint32_t COMPLETE_HASH = ConstExprHashingUtils::HashString("COMPLETE");
 
 
         MarketplaceSubscriptionOnboardingStatus GetMarketplaceSubscriptionOnboardingStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_SUBSCRIPTION_HASH)
           {
             return MarketplaceSubscriptionOnboardingStatus::NO_SUBSCRIPTION;

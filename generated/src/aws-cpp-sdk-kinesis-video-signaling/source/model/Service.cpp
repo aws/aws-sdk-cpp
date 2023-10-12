@@ -20,12 +20,12 @@ namespace Aws
       namespace ServiceMapper
       {
 
-        static const int TURN_HASH = HashingUtils::HashString("TURN");
+        static constexpr uint32_t TURN_HASH = ConstExprHashingUtils::HashString("TURN");
 
 
         Service GetServiceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TURN_HASH)
           {
             return Service::TURN;

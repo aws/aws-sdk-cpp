@@ -20,13 +20,13 @@ namespace Aws
       namespace QueryTransactionStatusMapper
       {
 
-        static const int FINAL_HASH = HashingUtils::HashString("FINAL");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t FINAL_HASH = ConstExprHashingUtils::HashString("FINAL");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         QueryTransactionStatus GetQueryTransactionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FINAL_HASH)
           {
             return QueryTransactionStatus::FINAL;

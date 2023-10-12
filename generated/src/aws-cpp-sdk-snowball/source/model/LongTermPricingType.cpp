@@ -20,14 +20,14 @@ namespace Aws
       namespace LongTermPricingTypeMapper
       {
 
-        static const int OneYear_HASH = HashingUtils::HashString("OneYear");
-        static const int ThreeYear_HASH = HashingUtils::HashString("ThreeYear");
-        static const int OneMonth_HASH = HashingUtils::HashString("OneMonth");
+        static constexpr uint32_t OneYear_HASH = ConstExprHashingUtils::HashString("OneYear");
+        static constexpr uint32_t ThreeYear_HASH = ConstExprHashingUtils::HashString("ThreeYear");
+        static constexpr uint32_t OneMonth_HASH = ConstExprHashingUtils::HashString("OneMonth");
 
 
         LongTermPricingType GetLongTermPricingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OneYear_HASH)
           {
             return LongTermPricingType::OneYear;

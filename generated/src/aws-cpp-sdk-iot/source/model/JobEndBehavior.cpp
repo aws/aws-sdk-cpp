@@ -20,14 +20,14 @@ namespace Aws
       namespace JobEndBehaviorMapper
       {
 
-        static const int STOP_ROLLOUT_HASH = HashingUtils::HashString("STOP_ROLLOUT");
-        static const int CANCEL_HASH = HashingUtils::HashString("CANCEL");
-        static const int FORCE_CANCEL_HASH = HashingUtils::HashString("FORCE_CANCEL");
+        static constexpr uint32_t STOP_ROLLOUT_HASH = ConstExprHashingUtils::HashString("STOP_ROLLOUT");
+        static constexpr uint32_t CANCEL_HASH = ConstExprHashingUtils::HashString("CANCEL");
+        static constexpr uint32_t FORCE_CANCEL_HASH = ConstExprHashingUtils::HashString("FORCE_CANCEL");
 
 
         JobEndBehavior GetJobEndBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STOP_ROLLOUT_HASH)
           {
             return JobEndBehavior::STOP_ROLLOUT;

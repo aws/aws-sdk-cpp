@@ -20,15 +20,15 @@ namespace Aws
       namespace CodeSnippetErrorCodeMapper
       {
 
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
-        static const int CODE_SNIPPET_NOT_FOUND_HASH = HashingUtils::HashString("CODE_SNIPPET_NOT_FOUND");
-        static const int INVALID_INPUT_HASH = HashingUtils::HashString("INVALID_INPUT");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t CODE_SNIPPET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("CODE_SNIPPET_NOT_FOUND");
+        static constexpr uint32_t INVALID_INPUT_HASH = ConstExprHashingUtils::HashString("INVALID_INPUT");
 
 
         CodeSnippetErrorCode GetCodeSnippetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERNAL_ERROR_HASH)
           {
             return CodeSnippetErrorCode::INTERNAL_ERROR;

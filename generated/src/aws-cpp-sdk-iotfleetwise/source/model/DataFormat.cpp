@@ -20,13 +20,13 @@ namespace Aws
       namespace DataFormatMapper
       {
 
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
-        static const int PARQUET_HASH = HashingUtils::HashString("PARQUET");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
+        static constexpr uint32_t PARQUET_HASH = ConstExprHashingUtils::HashString("PARQUET");
 
 
         DataFormat GetDataFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JSON_HASH)
           {
             return DataFormat::JSON;

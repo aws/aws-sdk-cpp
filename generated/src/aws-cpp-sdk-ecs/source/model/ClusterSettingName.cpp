@@ -20,12 +20,12 @@ namespace Aws
       namespace ClusterSettingNameMapper
       {
 
-        static const int containerInsights_HASH = HashingUtils::HashString("containerInsights");
+        static constexpr uint32_t containerInsights_HASH = ConstExprHashingUtils::HashString("containerInsights");
 
 
         ClusterSettingName GetClusterSettingNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == containerInsights_HASH)
           {
             return ClusterSettingName::containerInsights;

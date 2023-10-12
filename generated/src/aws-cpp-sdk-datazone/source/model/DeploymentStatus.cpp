@@ -20,15 +20,15 @@ namespace Aws
       namespace DeploymentStatusMapper
       {
 
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int SUCCESSFUL_HASH = HashingUtils::HashString("SUCCESSFUL");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int PENDING_DEPLOYMENT_HASH = HashingUtils::HashString("PENDING_DEPLOYMENT");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t SUCCESSFUL_HASH = ConstExprHashingUtils::HashString("SUCCESSFUL");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t PENDING_DEPLOYMENT_HASH = ConstExprHashingUtils::HashString("PENDING_DEPLOYMENT");
 
 
         DeploymentStatus GetDeploymentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IN_PROGRESS_HASH)
           {
             return DeploymentStatus::IN_PROGRESS;

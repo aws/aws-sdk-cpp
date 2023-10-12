@@ -20,15 +20,15 @@ namespace Aws
       namespace PowerDrawKvaMapper
       {
 
-        static const int POWER_5_KVA_HASH = HashingUtils::HashString("POWER_5_KVA");
-        static const int POWER_10_KVA_HASH = HashingUtils::HashString("POWER_10_KVA");
-        static const int POWER_15_KVA_HASH = HashingUtils::HashString("POWER_15_KVA");
-        static const int POWER_30_KVA_HASH = HashingUtils::HashString("POWER_30_KVA");
+        static constexpr uint32_t POWER_5_KVA_HASH = ConstExprHashingUtils::HashString("POWER_5_KVA");
+        static constexpr uint32_t POWER_10_KVA_HASH = ConstExprHashingUtils::HashString("POWER_10_KVA");
+        static constexpr uint32_t POWER_15_KVA_HASH = ConstExprHashingUtils::HashString("POWER_15_KVA");
+        static constexpr uint32_t POWER_30_KVA_HASH = ConstExprHashingUtils::HashString("POWER_30_KVA");
 
 
         PowerDrawKva GetPowerDrawKvaForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == POWER_5_KVA_HASH)
           {
             return PowerDrawKva::POWER_5_KVA;

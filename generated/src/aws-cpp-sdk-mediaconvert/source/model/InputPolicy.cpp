@@ -20,13 +20,13 @@ namespace Aws
       namespace InputPolicyMapper
       {
 
-        static const int ALLOWED_HASH = HashingUtils::HashString("ALLOWED");
-        static const int DISALLOWED_HASH = HashingUtils::HashString("DISALLOWED");
+        static constexpr uint32_t ALLOWED_HASH = ConstExprHashingUtils::HashString("ALLOWED");
+        static constexpr uint32_t DISALLOWED_HASH = ConstExprHashingUtils::HashString("DISALLOWED");
 
 
         InputPolicy GetInputPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALLOWED_HASH)
           {
             return InputPolicy::ALLOWED;

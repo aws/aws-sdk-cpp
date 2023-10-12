@@ -20,12 +20,12 @@ namespace Aws
       namespace SelectedFieldOptionsMapper
       {
 
-        static const int ALL_FIELDS_HASH = HashingUtils::HashString("ALL_FIELDS");
+        static constexpr uint32_t ALL_FIELDS_HASH = ConstExprHashingUtils::HashString("ALL_FIELDS");
 
 
         SelectedFieldOptions GetSelectedFieldOptionsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_FIELDS_HASH)
           {
             return SelectedFieldOptions::ALL_FIELDS;

@@ -26,39 +26,39 @@ template<> AWS_SNS_API VerificationException SNSError::GetModeledError()
 namespace SNSErrorMapper
 {
 
-static const int VERIFICATION_HASH = HashingUtils::HashString("VerificationException");
-static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidState");
-static const int BATCH_REQUEST_TOO_LONG_HASH = HashingUtils::HashString("BatchRequestTooLong");
-static const int SUBSCRIPTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SubscriptionLimitExceeded");
-static const int TOPIC_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TopicLimitExceeded");
-static const int AUTHORIZATION_ERROR_HASH = HashingUtils::HashString("AuthorizationError");
-static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalError");
-static const int ENDPOINT_DISABLED_HASH = HashingUtils::HashString("EndpointDisabled");
-static const int TOO_MANY_ENTRIES_IN_BATCH_REQUEST_HASH = HashingUtils::HashString("TooManyEntriesInBatchRequest");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameter");
-static const int K_M_S_NOT_FOUND_HASH = HashingUtils::HashString("KMSNotFound");
-static const int FILTER_POLICY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("FilterPolicyLimitExceeded");
-static const int OPTED_OUT_HASH = HashingUtils::HashString("OptedOut");
-static const int TAG_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TagLimitExceeded");
-static const int CONCURRENT_ACCESS_HASH = HashingUtils::HashString("ConcurrentAccess");
-static const int K_M_S_THROTTLING_HASH = HashingUtils::HashString("KMSThrottling");
-static const int BATCH_ENTRY_IDS_NOT_DISTINCT_HASH = HashingUtils::HashString("BatchEntryIdsNotDistinct");
-static const int TAG_POLICY_HASH = HashingUtils::HashString("TagPolicy");
-static const int PLATFORM_APPLICATION_DISABLED_HASH = HashingUtils::HashString("PlatformApplicationDisabled");
-static const int USER_ERROR_HASH = HashingUtils::HashString("UserError");
-static const int K_M_S_OPT_IN_REQUIRED_HASH = HashingUtils::HashString("KMSOptInRequired");
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFound");
-static const int K_M_S_DISABLED_HASH = HashingUtils::HashString("KMSDisabled");
-static const int K_M_S_ACCESS_DENIED_HASH = HashingUtils::HashString("KMSAccessDenied");
-static const int INVALID_SECURITY_HASH = HashingUtils::HashString("InvalidSecurity");
-static const int STALE_TAG_HASH = HashingUtils::HashString("StaleTag");
-static const int EMPTY_BATCH_REQUEST_HASH = HashingUtils::HashString("EmptyBatchRequest");
-static const int INVALID_BATCH_ENTRY_ID_HASH = HashingUtils::HashString("InvalidBatchEntryId");
+static constexpr uint32_t VERIFICATION_HASH = ConstExprHashingUtils::HashString("VerificationException");
+static constexpr uint32_t K_M_S_INVALID_STATE_HASH = ConstExprHashingUtils::HashString("KMSInvalidState");
+static constexpr uint32_t BATCH_REQUEST_TOO_LONG_HASH = ConstExprHashingUtils::HashString("BatchRequestTooLong");
+static constexpr uint32_t SUBSCRIPTION_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("SubscriptionLimitExceeded");
+static constexpr uint32_t TOPIC_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("TopicLimitExceeded");
+static constexpr uint32_t AUTHORIZATION_ERROR_HASH = ConstExprHashingUtils::HashString("AuthorizationError");
+static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("InternalError");
+static constexpr uint32_t ENDPOINT_DISABLED_HASH = ConstExprHashingUtils::HashString("EndpointDisabled");
+static constexpr uint32_t TOO_MANY_ENTRIES_IN_BATCH_REQUEST_HASH = ConstExprHashingUtils::HashString("TooManyEntriesInBatchRequest");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameter");
+static constexpr uint32_t K_M_S_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("KMSNotFound");
+static constexpr uint32_t FILTER_POLICY_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("FilterPolicyLimitExceeded");
+static constexpr uint32_t OPTED_OUT_HASH = ConstExprHashingUtils::HashString("OptedOut");
+static constexpr uint32_t TAG_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("TagLimitExceeded");
+static constexpr uint32_t CONCURRENT_ACCESS_HASH = ConstExprHashingUtils::HashString("ConcurrentAccess");
+static constexpr uint32_t K_M_S_THROTTLING_HASH = ConstExprHashingUtils::HashString("KMSThrottling");
+static constexpr uint32_t BATCH_ENTRY_IDS_NOT_DISTINCT_HASH = ConstExprHashingUtils::HashString("BatchEntryIdsNotDistinct");
+static constexpr uint32_t TAG_POLICY_HASH = ConstExprHashingUtils::HashString("TagPolicy");
+static constexpr uint32_t PLATFORM_APPLICATION_DISABLED_HASH = ConstExprHashingUtils::HashString("PlatformApplicationDisabled");
+static constexpr uint32_t USER_ERROR_HASH = ConstExprHashingUtils::HashString("UserError");
+static constexpr uint32_t K_M_S_OPT_IN_REQUIRED_HASH = ConstExprHashingUtils::HashString("KMSOptInRequired");
+static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NotFound");
+static constexpr uint32_t K_M_S_DISABLED_HASH = ConstExprHashingUtils::HashString("KMSDisabled");
+static constexpr uint32_t K_M_S_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("KMSAccessDenied");
+static constexpr uint32_t INVALID_SECURITY_HASH = ConstExprHashingUtils::HashString("InvalidSecurity");
+static constexpr uint32_t STALE_TAG_HASH = ConstExprHashingUtils::HashString("StaleTag");
+static constexpr uint32_t EMPTY_BATCH_REQUEST_HASH = ConstExprHashingUtils::HashString("EmptyBatchRequest");
+static constexpr uint32_t INVALID_BATCH_ENTRY_ID_HASH = ConstExprHashingUtils::HashString("InvalidBatchEntryId");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == VERIFICATION_HASH)
   {

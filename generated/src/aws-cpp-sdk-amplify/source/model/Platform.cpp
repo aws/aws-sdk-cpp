@@ -20,14 +20,14 @@ namespace Aws
       namespace PlatformMapper
       {
 
-        static const int WEB_HASH = HashingUtils::HashString("WEB");
-        static const int WEB_DYNAMIC_HASH = HashingUtils::HashString("WEB_DYNAMIC");
-        static const int WEB_COMPUTE_HASH = HashingUtils::HashString("WEB_COMPUTE");
+        static constexpr uint32_t WEB_HASH = ConstExprHashingUtils::HashString("WEB");
+        static constexpr uint32_t WEB_DYNAMIC_HASH = ConstExprHashingUtils::HashString("WEB_DYNAMIC");
+        static constexpr uint32_t WEB_COMPUTE_HASH = ConstExprHashingUtils::HashString("WEB_COMPUTE");
 
 
         Platform GetPlatformForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WEB_HASH)
           {
             return Platform::WEB;

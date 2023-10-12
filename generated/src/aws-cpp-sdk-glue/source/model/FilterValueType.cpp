@@ -20,13 +20,13 @@ namespace Aws
       namespace FilterValueTypeMapper
       {
 
-        static const int COLUMNEXTRACTED_HASH = HashingUtils::HashString("COLUMNEXTRACTED");
-        static const int CONSTANT_HASH = HashingUtils::HashString("CONSTANT");
+        static constexpr uint32_t COLUMNEXTRACTED_HASH = ConstExprHashingUtils::HashString("COLUMNEXTRACTED");
+        static constexpr uint32_t CONSTANT_HASH = ConstExprHashingUtils::HashString("CONSTANT");
 
 
         FilterValueType GetFilterValueTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COLUMNEXTRACTED_HASH)
           {
             return FilterValueType::COLUMNEXTRACTED;

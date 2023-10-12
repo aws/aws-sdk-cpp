@@ -20,16 +20,16 @@ namespace Aws
       namespace SeparatorMapper
       {
 
-        static const int comma_HASH = HashingUtils::HashString("comma");
-        static const int ctrla_HASH = HashingUtils::HashString("ctrla");
-        static const int pipe_HASH = HashingUtils::HashString("pipe");
-        static const int semicolon_HASH = HashingUtils::HashString("semicolon");
-        static const int tab_HASH = HashingUtils::HashString("tab");
+        static constexpr uint32_t comma_HASH = ConstExprHashingUtils::HashString("comma");
+        static constexpr uint32_t ctrla_HASH = ConstExprHashingUtils::HashString("ctrla");
+        static constexpr uint32_t pipe_HASH = ConstExprHashingUtils::HashString("pipe");
+        static constexpr uint32_t semicolon_HASH = ConstExprHashingUtils::HashString("semicolon");
+        static constexpr uint32_t tab_HASH = ConstExprHashingUtils::HashString("tab");
 
 
         Separator GetSeparatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == comma_HASH)
           {
             return Separator::comma;

@@ -20,12 +20,12 @@ namespace Aws
       namespace MedicalContentIdentificationTypeMapper
       {
 
-        static const int PHI_HASH = HashingUtils::HashString("PHI");
+        static constexpr uint32_t PHI_HASH = ConstExprHashingUtils::HashString("PHI");
 
 
         MedicalContentIdentificationType GetMedicalContentIdentificationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PHI_HASH)
           {
             return MedicalContentIdentificationType::PHI;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ReplicateToMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int SSM_DOCUMENT_HASH = HashingUtils::HashString("SSM_DOCUMENT");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t SSM_DOCUMENT_HASH = ConstExprHashingUtils::HashString("SSM_DOCUMENT");
 
 
         ReplicateTo GetReplicateToForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return ReplicateTo::NONE;

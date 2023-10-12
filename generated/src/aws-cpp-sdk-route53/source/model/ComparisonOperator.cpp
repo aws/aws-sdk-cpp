@@ -20,15 +20,15 @@ namespace Aws
       namespace ComparisonOperatorMapper
       {
 
-        static const int GreaterThanOrEqualToThreshold_HASH = HashingUtils::HashString("GreaterThanOrEqualToThreshold");
-        static const int GreaterThanThreshold_HASH = HashingUtils::HashString("GreaterThanThreshold");
-        static const int LessThanThreshold_HASH = HashingUtils::HashString("LessThanThreshold");
-        static const int LessThanOrEqualToThreshold_HASH = HashingUtils::HashString("LessThanOrEqualToThreshold");
+        static constexpr uint32_t GreaterThanOrEqualToThreshold_HASH = ConstExprHashingUtils::HashString("GreaterThanOrEqualToThreshold");
+        static constexpr uint32_t GreaterThanThreshold_HASH = ConstExprHashingUtils::HashString("GreaterThanThreshold");
+        static constexpr uint32_t LessThanThreshold_HASH = ConstExprHashingUtils::HashString("LessThanThreshold");
+        static constexpr uint32_t LessThanOrEqualToThreshold_HASH = ConstExprHashingUtils::HashString("LessThanOrEqualToThreshold");
 
 
         ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GreaterThanOrEqualToThreshold_HASH)
           {
             return ComparisonOperator::GreaterThanOrEqualToThreshold;

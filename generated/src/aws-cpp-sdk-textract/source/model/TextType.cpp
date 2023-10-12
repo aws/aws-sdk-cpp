@@ -20,13 +20,13 @@ namespace Aws
       namespace TextTypeMapper
       {
 
-        static const int HANDWRITING_HASH = HashingUtils::HashString("HANDWRITING");
-        static const int PRINTED_HASH = HashingUtils::HashString("PRINTED");
+        static constexpr uint32_t HANDWRITING_HASH = ConstExprHashingUtils::HashString("HANDWRITING");
+        static constexpr uint32_t PRINTED_HASH = ConstExprHashingUtils::HashString("PRINTED");
 
 
         TextType GetTextTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HANDWRITING_HASH)
           {
             return TextType::HANDWRITING;

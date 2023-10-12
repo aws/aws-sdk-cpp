@@ -20,18 +20,18 @@ namespace Aws
       namespace EntityTypeMapper
       {
 
-        static const int MEDICATION_HASH = HashingUtils::HashString("MEDICATION");
-        static const int MEDICAL_CONDITION_HASH = HashingUtils::HashString("MEDICAL_CONDITION");
-        static const int PROTECTED_HEALTH_INFORMATION_HASH = HashingUtils::HashString("PROTECTED_HEALTH_INFORMATION");
-        static const int TEST_TREATMENT_PROCEDURE_HASH = HashingUtils::HashString("TEST_TREATMENT_PROCEDURE");
-        static const int ANATOMY_HASH = HashingUtils::HashString("ANATOMY");
-        static const int TIME_EXPRESSION_HASH = HashingUtils::HashString("TIME_EXPRESSION");
-        static const int BEHAVIORAL_ENVIRONMENTAL_SOCIAL_HASH = HashingUtils::HashString("BEHAVIORAL_ENVIRONMENTAL_SOCIAL");
+        static constexpr uint32_t MEDICATION_HASH = ConstExprHashingUtils::HashString("MEDICATION");
+        static constexpr uint32_t MEDICAL_CONDITION_HASH = ConstExprHashingUtils::HashString("MEDICAL_CONDITION");
+        static constexpr uint32_t PROTECTED_HEALTH_INFORMATION_HASH = ConstExprHashingUtils::HashString("PROTECTED_HEALTH_INFORMATION");
+        static constexpr uint32_t TEST_TREATMENT_PROCEDURE_HASH = ConstExprHashingUtils::HashString("TEST_TREATMENT_PROCEDURE");
+        static constexpr uint32_t ANATOMY_HASH = ConstExprHashingUtils::HashString("ANATOMY");
+        static constexpr uint32_t TIME_EXPRESSION_HASH = ConstExprHashingUtils::HashString("TIME_EXPRESSION");
+        static constexpr uint32_t BEHAVIORAL_ENVIRONMENTAL_SOCIAL_HASH = ConstExprHashingUtils::HashString("BEHAVIORAL_ENVIRONMENTAL_SOCIAL");
 
 
         EntityType GetEntityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MEDICATION_HASH)
           {
             return EntityType::MEDICATION;

@@ -20,14 +20,14 @@ namespace Aws
       namespace InputMaximumBitrateMapper
       {
 
-        static const int MAX_10_MBPS_HASH = HashingUtils::HashString("MAX_10_MBPS");
-        static const int MAX_20_MBPS_HASH = HashingUtils::HashString("MAX_20_MBPS");
-        static const int MAX_50_MBPS_HASH = HashingUtils::HashString("MAX_50_MBPS");
+        static constexpr uint32_t MAX_10_MBPS_HASH = ConstExprHashingUtils::HashString("MAX_10_MBPS");
+        static constexpr uint32_t MAX_20_MBPS_HASH = ConstExprHashingUtils::HashString("MAX_20_MBPS");
+        static constexpr uint32_t MAX_50_MBPS_HASH = ConstExprHashingUtils::HashString("MAX_50_MBPS");
 
 
         InputMaximumBitrate GetInputMaximumBitrateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MAX_10_MBPS_HASH)
           {
             return InputMaximumBitrate::MAX_10_MBPS;

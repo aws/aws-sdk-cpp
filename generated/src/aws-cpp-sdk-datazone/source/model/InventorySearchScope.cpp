@@ -20,14 +20,14 @@ namespace Aws
       namespace InventorySearchScopeMapper
       {
 
-        static const int ASSET_HASH = HashingUtils::HashString("ASSET");
-        static const int GLOSSARY_HASH = HashingUtils::HashString("GLOSSARY");
-        static const int GLOSSARY_TERM_HASH = HashingUtils::HashString("GLOSSARY_TERM");
+        static constexpr uint32_t ASSET_HASH = ConstExprHashingUtils::HashString("ASSET");
+        static constexpr uint32_t GLOSSARY_HASH = ConstExprHashingUtils::HashString("GLOSSARY");
+        static constexpr uint32_t GLOSSARY_TERM_HASH = ConstExprHashingUtils::HashString("GLOSSARY_TERM");
 
 
         InventorySearchScope GetInventorySearchScopeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASSET_HASH)
           {
             return InventorySearchScope::ASSET;

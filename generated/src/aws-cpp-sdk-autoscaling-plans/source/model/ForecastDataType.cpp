@@ -20,15 +20,15 @@ namespace Aws
       namespace ForecastDataTypeMapper
       {
 
-        static const int CapacityForecast_HASH = HashingUtils::HashString("CapacityForecast");
-        static const int LoadForecast_HASH = HashingUtils::HashString("LoadForecast");
-        static const int ScheduledActionMinCapacity_HASH = HashingUtils::HashString("ScheduledActionMinCapacity");
-        static const int ScheduledActionMaxCapacity_HASH = HashingUtils::HashString("ScheduledActionMaxCapacity");
+        static constexpr uint32_t CapacityForecast_HASH = ConstExprHashingUtils::HashString("CapacityForecast");
+        static constexpr uint32_t LoadForecast_HASH = ConstExprHashingUtils::HashString("LoadForecast");
+        static constexpr uint32_t ScheduledActionMinCapacity_HASH = ConstExprHashingUtils::HashString("ScheduledActionMinCapacity");
+        static constexpr uint32_t ScheduledActionMaxCapacity_HASH = ConstExprHashingUtils::HashString("ScheduledActionMaxCapacity");
 
 
         ForecastDataType GetForecastDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CapacityForecast_HASH)
           {
             return ForecastDataType::CapacityForecast;

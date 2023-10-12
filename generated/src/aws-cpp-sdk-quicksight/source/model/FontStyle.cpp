@@ -20,13 +20,13 @@ namespace Aws
       namespace FontStyleMapper
       {
 
-        static const int NORMAL_HASH = HashingUtils::HashString("NORMAL");
-        static const int ITALIC_HASH = HashingUtils::HashString("ITALIC");
+        static constexpr uint32_t NORMAL_HASH = ConstExprHashingUtils::HashString("NORMAL");
+        static constexpr uint32_t ITALIC_HASH = ConstExprHashingUtils::HashString("ITALIC");
 
 
         FontStyle GetFontStyleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NORMAL_HASH)
           {
             return FontStyle::NORMAL;

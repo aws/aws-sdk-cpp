@@ -20,13 +20,13 @@ namespace Aws
       namespace FilterRequirementMapper
       {
 
-        static const int MEETS_ALL_HASH = HashingUtils::HashString("MEETS_ALL");
-        static const int MEETS_ANY_HASH = HashingUtils::HashString("MEETS_ANY");
+        static constexpr uint32_t MEETS_ALL_HASH = ConstExprHashingUtils::HashString("MEETS_ALL");
+        static constexpr uint32_t MEETS_ANY_HASH = ConstExprHashingUtils::HashString("MEETS_ANY");
 
 
         FilterRequirement GetFilterRequirementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MEETS_ALL_HASH)
           {
             return FilterRequirement::MEETS_ALL;

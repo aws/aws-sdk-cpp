@@ -20,13 +20,13 @@ namespace Aws
       namespace RegionConcurrencyTypeMapper
       {
 
-        static const int SEQUENTIAL_HASH = HashingUtils::HashString("SEQUENTIAL");
-        static const int PARALLEL_HASH = HashingUtils::HashString("PARALLEL");
+        static constexpr uint32_t SEQUENTIAL_HASH = ConstExprHashingUtils::HashString("SEQUENTIAL");
+        static constexpr uint32_t PARALLEL_HASH = ConstExprHashingUtils::HashString("PARALLEL");
 
 
         RegionConcurrencyType GetRegionConcurrencyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SEQUENTIAL_HASH)
           {
             return RegionConcurrencyType::SEQUENTIAL;

@@ -20,14 +20,14 @@ namespace Aws
       namespace AlfrescoEntityMapper
       {
 
-        static const int wiki_HASH = HashingUtils::HashString("wiki");
-        static const int blog_HASH = HashingUtils::HashString("blog");
-        static const int documentLibrary_HASH = HashingUtils::HashString("documentLibrary");
+        static constexpr uint32_t wiki_HASH = ConstExprHashingUtils::HashString("wiki");
+        static constexpr uint32_t blog_HASH = ConstExprHashingUtils::HashString("blog");
+        static constexpr uint32_t documentLibrary_HASH = ConstExprHashingUtils::HashString("documentLibrary");
 
 
         AlfrescoEntity GetAlfrescoEntityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == wiki_HASH)
           {
             return AlfrescoEntity::wiki;

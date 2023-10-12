@@ -20,17 +20,17 @@ namespace Aws
       namespace FieldTypeMapper
       {
 
-        static const int Text_HASH = HashingUtils::HashString("Text");
-        static const int Number_HASH = HashingUtils::HashString("Number");
-        static const int Boolean_HASH = HashingUtils::HashString("Boolean");
-        static const int DateTime_HASH = HashingUtils::HashString("DateTime");
-        static const int SingleSelect_HASH = HashingUtils::HashString("SingleSelect");
-        static const int Url_HASH = HashingUtils::HashString("Url");
+        static constexpr uint32_t Text_HASH = ConstExprHashingUtils::HashString("Text");
+        static constexpr uint32_t Number_HASH = ConstExprHashingUtils::HashString("Number");
+        static constexpr uint32_t Boolean_HASH = ConstExprHashingUtils::HashString("Boolean");
+        static constexpr uint32_t DateTime_HASH = ConstExprHashingUtils::HashString("DateTime");
+        static constexpr uint32_t SingleSelect_HASH = ConstExprHashingUtils::HashString("SingleSelect");
+        static constexpr uint32_t Url_HASH = ConstExprHashingUtils::HashString("Url");
 
 
         FieldType GetFieldTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Text_HASH)
           {
             return FieldType::Text;

@@ -20,26 +20,26 @@ namespace Aws
       namespace ParameterTypeMapper
       {
 
-        static const int SMALLINT_HASH = HashingUtils::HashString("SMALLINT");
-        static const int INTEGER_HASH = HashingUtils::HashString("INTEGER");
-        static const int BIGINT_HASH = HashingUtils::HashString("BIGINT");
-        static const int DECIMAL_HASH = HashingUtils::HashString("DECIMAL");
-        static const int REAL_HASH = HashingUtils::HashString("REAL");
-        static const int DOUBLE_PRECISION_HASH = HashingUtils::HashString("DOUBLE_PRECISION");
-        static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
-        static const int CHAR__HASH = HashingUtils::HashString("CHAR");
-        static const int VARCHAR_HASH = HashingUtils::HashString("VARCHAR");
-        static const int DATE_HASH = HashingUtils::HashString("DATE");
-        static const int TIMESTAMP_HASH = HashingUtils::HashString("TIMESTAMP");
-        static const int TIMESTAMPTZ_HASH = HashingUtils::HashString("TIMESTAMPTZ");
-        static const int TIME_HASH = HashingUtils::HashString("TIME");
-        static const int TIMETZ_HASH = HashingUtils::HashString("TIMETZ");
-        static const int VARBYTE_HASH = HashingUtils::HashString("VARBYTE");
+        static constexpr uint32_t SMALLINT_HASH = ConstExprHashingUtils::HashString("SMALLINT");
+        static constexpr uint32_t INTEGER_HASH = ConstExprHashingUtils::HashString("INTEGER");
+        static constexpr uint32_t BIGINT_HASH = ConstExprHashingUtils::HashString("BIGINT");
+        static constexpr uint32_t DECIMAL_HASH = ConstExprHashingUtils::HashString("DECIMAL");
+        static constexpr uint32_t REAL_HASH = ConstExprHashingUtils::HashString("REAL");
+        static constexpr uint32_t DOUBLE_PRECISION_HASH = ConstExprHashingUtils::HashString("DOUBLE_PRECISION");
+        static constexpr uint32_t BOOLEAN_HASH = ConstExprHashingUtils::HashString("BOOLEAN");
+        static constexpr uint32_t CHAR__HASH = ConstExprHashingUtils::HashString("CHAR");
+        static constexpr uint32_t VARCHAR_HASH = ConstExprHashingUtils::HashString("VARCHAR");
+        static constexpr uint32_t DATE_HASH = ConstExprHashingUtils::HashString("DATE");
+        static constexpr uint32_t TIMESTAMP_HASH = ConstExprHashingUtils::HashString("TIMESTAMP");
+        static constexpr uint32_t TIMESTAMPTZ_HASH = ConstExprHashingUtils::HashString("TIMESTAMPTZ");
+        static constexpr uint32_t TIME_HASH = ConstExprHashingUtils::HashString("TIME");
+        static constexpr uint32_t TIMETZ_HASH = ConstExprHashingUtils::HashString("TIMETZ");
+        static constexpr uint32_t VARBYTE_HASH = ConstExprHashingUtils::HashString("VARBYTE");
 
 
         ParameterType GetParameterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SMALLINT_HASH)
           {
             return ParameterType::SMALLINT;

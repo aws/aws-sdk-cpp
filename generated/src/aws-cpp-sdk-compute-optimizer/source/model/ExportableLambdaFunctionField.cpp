@@ -20,38 +20,38 @@ namespace Aws
       namespace ExportableLambdaFunctionFieldMapper
       {
 
-        static const int AccountId_HASH = HashingUtils::HashString("AccountId");
-        static const int FunctionArn_HASH = HashingUtils::HashString("FunctionArn");
-        static const int FunctionVersion_HASH = HashingUtils::HashString("FunctionVersion");
-        static const int Finding_HASH = HashingUtils::HashString("Finding");
-        static const int FindingReasonCodes_HASH = HashingUtils::HashString("FindingReasonCodes");
-        static const int NumberOfInvocations_HASH = HashingUtils::HashString("NumberOfInvocations");
-        static const int UtilizationMetricsDurationMaximum_HASH = HashingUtils::HashString("UtilizationMetricsDurationMaximum");
-        static const int UtilizationMetricsDurationAverage_HASH = HashingUtils::HashString("UtilizationMetricsDurationAverage");
-        static const int UtilizationMetricsMemoryMaximum_HASH = HashingUtils::HashString("UtilizationMetricsMemoryMaximum");
-        static const int UtilizationMetricsMemoryAverage_HASH = HashingUtils::HashString("UtilizationMetricsMemoryAverage");
-        static const int LookbackPeriodInDays_HASH = HashingUtils::HashString("LookbackPeriodInDays");
-        static const int CurrentConfigurationMemorySize_HASH = HashingUtils::HashString("CurrentConfigurationMemorySize");
-        static const int CurrentConfigurationTimeout_HASH = HashingUtils::HashString("CurrentConfigurationTimeout");
-        static const int CurrentCostTotal_HASH = HashingUtils::HashString("CurrentCostTotal");
-        static const int CurrentCostAverage_HASH = HashingUtils::HashString("CurrentCostAverage");
-        static const int RecommendationOptionsConfigurationMemorySize_HASH = HashingUtils::HashString("RecommendationOptionsConfigurationMemorySize");
-        static const int RecommendationOptionsCostLow_HASH = HashingUtils::HashString("RecommendationOptionsCostLow");
-        static const int RecommendationOptionsCostHigh_HASH = HashingUtils::HashString("RecommendationOptionsCostHigh");
-        static const int RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound");
-        static const int RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound");
-        static const int RecommendationOptionsProjectedUtilizationMetricsDurationExpected_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsDurationExpected");
-        static const int LastRefreshTimestamp_HASH = HashingUtils::HashString("LastRefreshTimestamp");
-        static const int CurrentPerformanceRisk_HASH = HashingUtils::HashString("CurrentPerformanceRisk");
-        static const int RecommendationOptionsSavingsOpportunityPercentage_HASH = HashingUtils::HashString("RecommendationOptionsSavingsOpportunityPercentage");
-        static const int RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrency");
-        static const int RecommendationOptionsEstimatedMonthlySavingsValue_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValue");
-        static const int Tags_HASH = HashingUtils::HashString("Tags");
+        static constexpr uint32_t AccountId_HASH = ConstExprHashingUtils::HashString("AccountId");
+        static constexpr uint32_t FunctionArn_HASH = ConstExprHashingUtils::HashString("FunctionArn");
+        static constexpr uint32_t FunctionVersion_HASH = ConstExprHashingUtils::HashString("FunctionVersion");
+        static constexpr uint32_t Finding_HASH = ConstExprHashingUtils::HashString("Finding");
+        static constexpr uint32_t FindingReasonCodes_HASH = ConstExprHashingUtils::HashString("FindingReasonCodes");
+        static constexpr uint32_t NumberOfInvocations_HASH = ConstExprHashingUtils::HashString("NumberOfInvocations");
+        static constexpr uint32_t UtilizationMetricsDurationMaximum_HASH = ConstExprHashingUtils::HashString("UtilizationMetricsDurationMaximum");
+        static constexpr uint32_t UtilizationMetricsDurationAverage_HASH = ConstExprHashingUtils::HashString("UtilizationMetricsDurationAverage");
+        static constexpr uint32_t UtilizationMetricsMemoryMaximum_HASH = ConstExprHashingUtils::HashString("UtilizationMetricsMemoryMaximum");
+        static constexpr uint32_t UtilizationMetricsMemoryAverage_HASH = ConstExprHashingUtils::HashString("UtilizationMetricsMemoryAverage");
+        static constexpr uint32_t LookbackPeriodInDays_HASH = ConstExprHashingUtils::HashString("LookbackPeriodInDays");
+        static constexpr uint32_t CurrentConfigurationMemorySize_HASH = ConstExprHashingUtils::HashString("CurrentConfigurationMemorySize");
+        static constexpr uint32_t CurrentConfigurationTimeout_HASH = ConstExprHashingUtils::HashString("CurrentConfigurationTimeout");
+        static constexpr uint32_t CurrentCostTotal_HASH = ConstExprHashingUtils::HashString("CurrentCostTotal");
+        static constexpr uint32_t CurrentCostAverage_HASH = ConstExprHashingUtils::HashString("CurrentCostAverage");
+        static constexpr uint32_t RecommendationOptionsConfigurationMemorySize_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsConfigurationMemorySize");
+        static constexpr uint32_t RecommendationOptionsCostLow_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsCostLow");
+        static constexpr uint32_t RecommendationOptionsCostHigh_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsCostHigh");
+        static constexpr uint32_t RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound");
+        static constexpr uint32_t RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound");
+        static constexpr uint32_t RecommendationOptionsProjectedUtilizationMetricsDurationExpected_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsDurationExpected");
+        static constexpr uint32_t LastRefreshTimestamp_HASH = ConstExprHashingUtils::HashString("LastRefreshTimestamp");
+        static constexpr uint32_t CurrentPerformanceRisk_HASH = ConstExprHashingUtils::HashString("CurrentPerformanceRisk");
+        static constexpr uint32_t RecommendationOptionsSavingsOpportunityPercentage_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsSavingsOpportunityPercentage");
+        static constexpr uint32_t RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrency");
+        static constexpr uint32_t RecommendationOptionsEstimatedMonthlySavingsValue_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValue");
+        static constexpr uint32_t Tags_HASH = ConstExprHashingUtils::HashString("Tags");
 
 
         ExportableLambdaFunctionField GetExportableLambdaFunctionFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AccountId_HASH)
           {
             return ExportableLambdaFunctionField::AccountId;

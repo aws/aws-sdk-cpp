@@ -20,15 +20,15 @@ namespace Aws
       namespace SpeakerStatusMapper
       {
 
-        static const int ENROLLED_HASH = HashingUtils::HashString("ENROLLED");
-        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
-        static const int OPTED_OUT_HASH = HashingUtils::HashString("OPTED_OUT");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static constexpr uint32_t ENROLLED_HASH = ConstExprHashingUtils::HashString("ENROLLED");
+        static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("EXPIRED");
+        static constexpr uint32_t OPTED_OUT_HASH = ConstExprHashingUtils::HashString("OPTED_OUT");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
 
 
         SpeakerStatus GetSpeakerStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENROLLED_HASH)
           {
             return SpeakerStatus::ENROLLED;

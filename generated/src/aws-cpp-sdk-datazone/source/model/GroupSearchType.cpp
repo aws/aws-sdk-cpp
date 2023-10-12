@@ -20,13 +20,13 @@ namespace Aws
       namespace GroupSearchTypeMapper
       {
 
-        static const int SSO_GROUP_HASH = HashingUtils::HashString("SSO_GROUP");
-        static const int DATAZONE_SSO_GROUP_HASH = HashingUtils::HashString("DATAZONE_SSO_GROUP");
+        static constexpr uint32_t SSO_GROUP_HASH = ConstExprHashingUtils::HashString("SSO_GROUP");
+        static constexpr uint32_t DATAZONE_SSO_GROUP_HASH = ConstExprHashingUtils::HashString("DATAZONE_SSO_GROUP");
 
 
         GroupSearchType GetGroupSearchTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SSO_GROUP_HASH)
           {
             return GroupSearchType::SSO_GROUP;

@@ -20,18 +20,18 @@ namespace Aws
       namespace DashboardFilterAttributeMapper
       {
 
-        static const int QUICKSIGHT_USER_HASH = HashingUtils::HashString("QUICKSIGHT_USER");
-        static const int QUICKSIGHT_VIEWER_OR_OWNER_HASH = HashingUtils::HashString("QUICKSIGHT_VIEWER_OR_OWNER");
-        static const int DIRECT_QUICKSIGHT_VIEWER_OR_OWNER_HASH = HashingUtils::HashString("DIRECT_QUICKSIGHT_VIEWER_OR_OWNER");
-        static const int QUICKSIGHT_OWNER_HASH = HashingUtils::HashString("QUICKSIGHT_OWNER");
-        static const int DIRECT_QUICKSIGHT_OWNER_HASH = HashingUtils::HashString("DIRECT_QUICKSIGHT_OWNER");
-        static const int DIRECT_QUICKSIGHT_SOLE_OWNER_HASH = HashingUtils::HashString("DIRECT_QUICKSIGHT_SOLE_OWNER");
-        static const int DASHBOARD_NAME_HASH = HashingUtils::HashString("DASHBOARD_NAME");
+        static constexpr uint32_t QUICKSIGHT_USER_HASH = ConstExprHashingUtils::HashString("QUICKSIGHT_USER");
+        static constexpr uint32_t QUICKSIGHT_VIEWER_OR_OWNER_HASH = ConstExprHashingUtils::HashString("QUICKSIGHT_VIEWER_OR_OWNER");
+        static constexpr uint32_t DIRECT_QUICKSIGHT_VIEWER_OR_OWNER_HASH = ConstExprHashingUtils::HashString("DIRECT_QUICKSIGHT_VIEWER_OR_OWNER");
+        static constexpr uint32_t QUICKSIGHT_OWNER_HASH = ConstExprHashingUtils::HashString("QUICKSIGHT_OWNER");
+        static constexpr uint32_t DIRECT_QUICKSIGHT_OWNER_HASH = ConstExprHashingUtils::HashString("DIRECT_QUICKSIGHT_OWNER");
+        static constexpr uint32_t DIRECT_QUICKSIGHT_SOLE_OWNER_HASH = ConstExprHashingUtils::HashString("DIRECT_QUICKSIGHT_SOLE_OWNER");
+        static constexpr uint32_t DASHBOARD_NAME_HASH = ConstExprHashingUtils::HashString("DASHBOARD_NAME");
 
 
         DashboardFilterAttribute GetDashboardFilterAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUICKSIGHT_USER_HASH)
           {
             return DashboardFilterAttribute::QUICKSIGHT_USER;

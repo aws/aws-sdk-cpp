@@ -20,15 +20,15 @@ namespace Aws
       namespace UpdateTargetsOperatingSystemMapper
       {
 
-        static const int ubuntu_HASH = HashingUtils::HashString("ubuntu");
-        static const int raspbian_HASH = HashingUtils::HashString("raspbian");
-        static const int amazon_linux_HASH = HashingUtils::HashString("amazon_linux");
-        static const int openwrt_HASH = HashingUtils::HashString("openwrt");
+        static constexpr uint32_t ubuntu_HASH = ConstExprHashingUtils::HashString("ubuntu");
+        static constexpr uint32_t raspbian_HASH = ConstExprHashingUtils::HashString("raspbian");
+        static constexpr uint32_t amazon_linux_HASH = ConstExprHashingUtils::HashString("amazon_linux");
+        static constexpr uint32_t openwrt_HASH = ConstExprHashingUtils::HashString("openwrt");
 
 
         UpdateTargetsOperatingSystem GetUpdateTargetsOperatingSystemForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ubuntu_HASH)
           {
             return UpdateTargetsOperatingSystem::ubuntu;

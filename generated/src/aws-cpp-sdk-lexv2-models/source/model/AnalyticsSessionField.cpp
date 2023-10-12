@@ -20,13 +20,13 @@ namespace Aws
       namespace AnalyticsSessionFieldMapper
       {
 
-        static const int ConversationEndState_HASH = HashingUtils::HashString("ConversationEndState");
-        static const int LocaleId_HASH = HashingUtils::HashString("LocaleId");
+        static constexpr uint32_t ConversationEndState_HASH = ConstExprHashingUtils::HashString("ConversationEndState");
+        static constexpr uint32_t LocaleId_HASH = ConstExprHashingUtils::HashString("LocaleId");
 
 
         AnalyticsSessionField GetAnalyticsSessionFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ConversationEndState_HASH)
           {
             return AnalyticsSessionField::ConversationEndState;

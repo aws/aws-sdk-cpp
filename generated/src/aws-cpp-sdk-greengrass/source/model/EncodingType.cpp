@@ -20,13 +20,13 @@ namespace Aws
       namespace EncodingTypeMapper
       {
 
-        static const int binary_HASH = HashingUtils::HashString("binary");
-        static const int json_HASH = HashingUtils::HashString("json");
+        static constexpr uint32_t binary_HASH = ConstExprHashingUtils::HashString("binary");
+        static constexpr uint32_t json_HASH = ConstExprHashingUtils::HashString("json");
 
 
         EncodingType GetEncodingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == binary_HASH)
           {
             return EncodingType::binary;

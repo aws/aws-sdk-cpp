@@ -20,21 +20,21 @@ namespace Aws
       namespace ListServiceInstancesFilterByMapper
       {
 
-        static const int name_HASH = HashingUtils::HashString("name");
-        static const int deploymentStatus_HASH = HashingUtils::HashString("deploymentStatus");
-        static const int templateName_HASH = HashingUtils::HashString("templateName");
-        static const int serviceName_HASH = HashingUtils::HashString("serviceName");
-        static const int deployedTemplateVersionStatus_HASH = HashingUtils::HashString("deployedTemplateVersionStatus");
-        static const int environmentName_HASH = HashingUtils::HashString("environmentName");
-        static const int lastDeploymentAttemptedAtBefore_HASH = HashingUtils::HashString("lastDeploymentAttemptedAtBefore");
-        static const int lastDeploymentAttemptedAtAfter_HASH = HashingUtils::HashString("lastDeploymentAttemptedAtAfter");
-        static const int createdAtBefore_HASH = HashingUtils::HashString("createdAtBefore");
-        static const int createdAtAfter_HASH = HashingUtils::HashString("createdAtAfter");
+        static constexpr uint32_t name_HASH = ConstExprHashingUtils::HashString("name");
+        static constexpr uint32_t deploymentStatus_HASH = ConstExprHashingUtils::HashString("deploymentStatus");
+        static constexpr uint32_t templateName_HASH = ConstExprHashingUtils::HashString("templateName");
+        static constexpr uint32_t serviceName_HASH = ConstExprHashingUtils::HashString("serviceName");
+        static constexpr uint32_t deployedTemplateVersionStatus_HASH = ConstExprHashingUtils::HashString("deployedTemplateVersionStatus");
+        static constexpr uint32_t environmentName_HASH = ConstExprHashingUtils::HashString("environmentName");
+        static constexpr uint32_t lastDeploymentAttemptedAtBefore_HASH = ConstExprHashingUtils::HashString("lastDeploymentAttemptedAtBefore");
+        static constexpr uint32_t lastDeploymentAttemptedAtAfter_HASH = ConstExprHashingUtils::HashString("lastDeploymentAttemptedAtAfter");
+        static constexpr uint32_t createdAtBefore_HASH = ConstExprHashingUtils::HashString("createdAtBefore");
+        static constexpr uint32_t createdAtAfter_HASH = ConstExprHashingUtils::HashString("createdAtAfter");
 
 
         ListServiceInstancesFilterBy GetListServiceInstancesFilterByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == name_HASH)
           {
             return ListServiceInstancesFilterBy::name;

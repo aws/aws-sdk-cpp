@@ -20,14 +20,14 @@ namespace Aws
       namespace DescribePackagesFilterNameMapper
       {
 
-        static const int PackageID_HASH = HashingUtils::HashString("PackageID");
-        static const int PackageName_HASH = HashingUtils::HashString("PackageName");
-        static const int PackageStatus_HASH = HashingUtils::HashString("PackageStatus");
+        static constexpr uint32_t PackageID_HASH = ConstExprHashingUtils::HashString("PackageID");
+        static constexpr uint32_t PackageName_HASH = ConstExprHashingUtils::HashString("PackageName");
+        static constexpr uint32_t PackageStatus_HASH = ConstExprHashingUtils::HashString("PackageStatus");
 
 
         DescribePackagesFilterName GetDescribePackagesFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PackageID_HASH)
           {
             return DescribePackagesFilterName::PackageID;

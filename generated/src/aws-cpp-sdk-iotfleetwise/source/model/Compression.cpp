@@ -20,13 +20,13 @@ namespace Aws
       namespace CompressionMapper
       {
 
-        static const int OFF_HASH = HashingUtils::HashString("OFF");
-        static const int SNAPPY_HASH = HashingUtils::HashString("SNAPPY");
+        static constexpr uint32_t OFF_HASH = ConstExprHashingUtils::HashString("OFF");
+        static constexpr uint32_t SNAPPY_HASH = ConstExprHashingUtils::HashString("SNAPPY");
 
 
         Compression GetCompressionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OFF_HASH)
           {
             return Compression::OFF;

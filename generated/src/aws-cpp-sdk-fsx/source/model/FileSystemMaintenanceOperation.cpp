@@ -20,13 +20,13 @@ namespace Aws
       namespace FileSystemMaintenanceOperationMapper
       {
 
-        static const int PATCHING_HASH = HashingUtils::HashString("PATCHING");
-        static const int BACKING_UP_HASH = HashingUtils::HashString("BACKING_UP");
+        static constexpr uint32_t PATCHING_HASH = ConstExprHashingUtils::HashString("PATCHING");
+        static constexpr uint32_t BACKING_UP_HASH = ConstExprHashingUtils::HashString("BACKING_UP");
 
 
         FileSystemMaintenanceOperation GetFileSystemMaintenanceOperationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PATCHING_HASH)
           {
             return FileSystemMaintenanceOperation::PATCHING;

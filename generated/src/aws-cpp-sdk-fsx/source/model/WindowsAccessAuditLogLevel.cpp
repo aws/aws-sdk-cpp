@@ -20,15 +20,15 @@ namespace Aws
       namespace WindowsAccessAuditLogLevelMapper
       {
 
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int SUCCESS_ONLY_HASH = HashingUtils::HashString("SUCCESS_ONLY");
-        static const int FAILURE_ONLY_HASH = HashingUtils::HashString("FAILURE_ONLY");
-        static const int SUCCESS_AND_FAILURE_HASH = HashingUtils::HashString("SUCCESS_AND_FAILURE");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t SUCCESS_ONLY_HASH = ConstExprHashingUtils::HashString("SUCCESS_ONLY");
+        static constexpr uint32_t FAILURE_ONLY_HASH = ConstExprHashingUtils::HashString("FAILURE_ONLY");
+        static constexpr uint32_t SUCCESS_AND_FAILURE_HASH = ConstExprHashingUtils::HashString("SUCCESS_AND_FAILURE");
 
 
         WindowsAccessAuditLogLevel GetWindowsAccessAuditLogLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISABLED_HASH)
           {
             return WindowsAccessAuditLogLevel::DISABLED;

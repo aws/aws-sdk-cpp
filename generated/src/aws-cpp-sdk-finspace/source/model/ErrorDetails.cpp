@@ -20,19 +20,19 @@ namespace Aws
       namespace ErrorDetailsMapper
       {
 
-        static const int The_inputs_to_this_request_are_invalid_HASH = HashingUtils::HashString("The inputs to this request are invalid.");
-        static const int Service_limits_have_been_exceeded_HASH = HashingUtils::HashString("Service limits have been exceeded.");
-        static const int Missing_required_permission_to_perform_this_request_HASH = HashingUtils::HashString("Missing required permission to perform this request.");
-        static const int One_or_more_inputs_to_this_request_were_not_found_HASH = HashingUtils::HashString("One or more inputs to this request were not found.");
-        static const int The_system_temporarily_lacks_sufficient_resources_to_process_the_request_HASH = HashingUtils::HashString("The system temporarily lacks sufficient resources to process the request.");
-        static const int An_internal_error_has_occurred_HASH = HashingUtils::HashString("An internal error has occurred.");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
-        static const int A_user_recoverable_error_has_occurred_HASH = HashingUtils::HashString("A user recoverable error has occurred");
+        static constexpr uint32_t The_inputs_to_this_request_are_invalid_HASH = ConstExprHashingUtils::HashString("The inputs to this request are invalid.");
+        static constexpr uint32_t Service_limits_have_been_exceeded_HASH = ConstExprHashingUtils::HashString("Service limits have been exceeded.");
+        static constexpr uint32_t Missing_required_permission_to_perform_this_request_HASH = ConstExprHashingUtils::HashString("Missing required permission to perform this request.");
+        static constexpr uint32_t One_or_more_inputs_to_this_request_were_not_found_HASH = ConstExprHashingUtils::HashString("One or more inputs to this request were not found.");
+        static constexpr uint32_t The_system_temporarily_lacks_sufficient_resources_to_process_the_request_HASH = ConstExprHashingUtils::HashString("The system temporarily lacks sufficient resources to process the request.");
+        static constexpr uint32_t An_internal_error_has_occurred_HASH = ConstExprHashingUtils::HashString("An internal error has occurred.");
+        static constexpr uint32_t Cancelled_HASH = ConstExprHashingUtils::HashString("Cancelled");
+        static constexpr uint32_t A_user_recoverable_error_has_occurred_HASH = ConstExprHashingUtils::HashString("A user recoverable error has occurred");
 
 
         ErrorDetails GetErrorDetailsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == The_inputs_to_this_request_are_invalid_HASH)
           {
             return ErrorDetails::The_inputs_to_this_request_are_invalid;

@@ -20,15 +20,15 @@ namespace Aws
       namespace DocumentReviewActionMapper
       {
 
-        static const int SendForReview_HASH = HashingUtils::HashString("SendForReview");
-        static const int UpdateReview_HASH = HashingUtils::HashString("UpdateReview");
-        static const int Approve_HASH = HashingUtils::HashString("Approve");
-        static const int Reject_HASH = HashingUtils::HashString("Reject");
+        static constexpr uint32_t SendForReview_HASH = ConstExprHashingUtils::HashString("SendForReview");
+        static constexpr uint32_t UpdateReview_HASH = ConstExprHashingUtils::HashString("UpdateReview");
+        static constexpr uint32_t Approve_HASH = ConstExprHashingUtils::HashString("Approve");
+        static constexpr uint32_t Reject_HASH = ConstExprHashingUtils::HashString("Reject");
 
 
         DocumentReviewAction GetDocumentReviewActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SendForReview_HASH)
           {
             return DocumentReviewAction::SendForReview;

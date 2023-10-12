@@ -20,12 +20,12 @@ namespace Aws
       namespace CostCategoryRuleVersionMapper
       {
 
-        static const int CostCategoryExpression_v1_HASH = HashingUtils::HashString("CostCategoryExpression.v1");
+        static constexpr uint32_t CostCategoryExpression_v1_HASH = ConstExprHashingUtils::HashString("CostCategoryExpression.v1");
 
 
         CostCategoryRuleVersion GetCostCategoryRuleVersionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CostCategoryExpression_v1_HASH)
           {
             return CostCategoryRuleVersion::CostCategoryExpression_v1;

@@ -20,25 +20,25 @@ namespace Aws
       namespace H265CodecLevelMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int LEVEL_1_HASH = HashingUtils::HashString("LEVEL_1");
-        static const int LEVEL_2_HASH = HashingUtils::HashString("LEVEL_2");
-        static const int LEVEL_2_1_HASH = HashingUtils::HashString("LEVEL_2_1");
-        static const int LEVEL_3_HASH = HashingUtils::HashString("LEVEL_3");
-        static const int LEVEL_3_1_HASH = HashingUtils::HashString("LEVEL_3_1");
-        static const int LEVEL_4_HASH = HashingUtils::HashString("LEVEL_4");
-        static const int LEVEL_4_1_HASH = HashingUtils::HashString("LEVEL_4_1");
-        static const int LEVEL_5_HASH = HashingUtils::HashString("LEVEL_5");
-        static const int LEVEL_5_1_HASH = HashingUtils::HashString("LEVEL_5_1");
-        static const int LEVEL_5_2_HASH = HashingUtils::HashString("LEVEL_5_2");
-        static const int LEVEL_6_HASH = HashingUtils::HashString("LEVEL_6");
-        static const int LEVEL_6_1_HASH = HashingUtils::HashString("LEVEL_6_1");
-        static const int LEVEL_6_2_HASH = HashingUtils::HashString("LEVEL_6_2");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t LEVEL_1_HASH = ConstExprHashingUtils::HashString("LEVEL_1");
+        static constexpr uint32_t LEVEL_2_HASH = ConstExprHashingUtils::HashString("LEVEL_2");
+        static constexpr uint32_t LEVEL_2_1_HASH = ConstExprHashingUtils::HashString("LEVEL_2_1");
+        static constexpr uint32_t LEVEL_3_HASH = ConstExprHashingUtils::HashString("LEVEL_3");
+        static constexpr uint32_t LEVEL_3_1_HASH = ConstExprHashingUtils::HashString("LEVEL_3_1");
+        static constexpr uint32_t LEVEL_4_HASH = ConstExprHashingUtils::HashString("LEVEL_4");
+        static constexpr uint32_t LEVEL_4_1_HASH = ConstExprHashingUtils::HashString("LEVEL_4_1");
+        static constexpr uint32_t LEVEL_5_HASH = ConstExprHashingUtils::HashString("LEVEL_5");
+        static constexpr uint32_t LEVEL_5_1_HASH = ConstExprHashingUtils::HashString("LEVEL_5_1");
+        static constexpr uint32_t LEVEL_5_2_HASH = ConstExprHashingUtils::HashString("LEVEL_5_2");
+        static constexpr uint32_t LEVEL_6_HASH = ConstExprHashingUtils::HashString("LEVEL_6");
+        static constexpr uint32_t LEVEL_6_1_HASH = ConstExprHashingUtils::HashString("LEVEL_6_1");
+        static constexpr uint32_t LEVEL_6_2_HASH = ConstExprHashingUtils::HashString("LEVEL_6_2");
 
 
         H265CodecLevel GetH265CodecLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return H265CodecLevel::AUTO;

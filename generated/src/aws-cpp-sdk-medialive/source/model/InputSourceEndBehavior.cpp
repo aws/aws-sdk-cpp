@@ -20,13 +20,13 @@ namespace Aws
       namespace InputSourceEndBehaviorMapper
       {
 
-        static const int CONTINUE_HASH = HashingUtils::HashString("CONTINUE");
-        static const int LOOP_HASH = HashingUtils::HashString("LOOP");
+        static constexpr uint32_t CONTINUE_HASH = ConstExprHashingUtils::HashString("CONTINUE");
+        static constexpr uint32_t LOOP_HASH = ConstExprHashingUtils::HashString("LOOP");
 
 
         InputSourceEndBehavior GetInputSourceEndBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONTINUE_HASH)
           {
             return InputSourceEndBehavior::CONTINUE;

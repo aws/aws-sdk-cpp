@@ -20,13 +20,13 @@ namespace Aws
       namespace SsmTargetAccountMapper
       {
 
-        static const int RESPONSE_PLAN_OWNER_ACCOUNT_HASH = HashingUtils::HashString("RESPONSE_PLAN_OWNER_ACCOUNT");
-        static const int IMPACTED_ACCOUNT_HASH = HashingUtils::HashString("IMPACTED_ACCOUNT");
+        static constexpr uint32_t RESPONSE_PLAN_OWNER_ACCOUNT_HASH = ConstExprHashingUtils::HashString("RESPONSE_PLAN_OWNER_ACCOUNT");
+        static constexpr uint32_t IMPACTED_ACCOUNT_HASH = ConstExprHashingUtils::HashString("IMPACTED_ACCOUNT");
 
 
         SsmTargetAccount GetSsmTargetAccountForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESPONSE_PLAN_OWNER_ACCOUNT_HASH)
           {
             return SsmTargetAccount::RESPONSE_PLAN_OWNER_ACCOUNT;

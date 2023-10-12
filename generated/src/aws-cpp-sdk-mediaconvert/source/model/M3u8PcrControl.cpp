@@ -20,13 +20,13 @@ namespace Aws
       namespace M3u8PcrControlMapper
       {
 
-        static const int PCR_EVERY_PES_PACKET_HASH = HashingUtils::HashString("PCR_EVERY_PES_PACKET");
-        static const int CONFIGURED_PCR_PERIOD_HASH = HashingUtils::HashString("CONFIGURED_PCR_PERIOD");
+        static constexpr uint32_t PCR_EVERY_PES_PACKET_HASH = ConstExprHashingUtils::HashString("PCR_EVERY_PES_PACKET");
+        static constexpr uint32_t CONFIGURED_PCR_PERIOD_HASH = ConstExprHashingUtils::HashString("CONFIGURED_PCR_PERIOD");
 
 
         M3u8PcrControl GetM3u8PcrControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PCR_EVERY_PES_PACKET_HASH)
           {
             return M3u8PcrControl::PCR_EVERY_PES_PACKET;

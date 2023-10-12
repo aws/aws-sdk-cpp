@@ -20,12 +20,12 @@ namespace Aws
       namespace RuntimeNameMapper
       {
 
-        static const int APPSYNC_JS_HASH = HashingUtils::HashString("APPSYNC_JS");
+        static constexpr uint32_t APPSYNC_JS_HASH = ConstExprHashingUtils::HashString("APPSYNC_JS");
 
 
         RuntimeName GetRuntimeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APPSYNC_JS_HASH)
           {
             return RuntimeName::APPSYNC_JS;

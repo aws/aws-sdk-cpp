@@ -20,13 +20,13 @@ namespace Aws
       namespace SearchQueryScopeTypeMapper
       {
 
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int CONTENT_HASH = HashingUtils::HashString("CONTENT");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t CONTENT_HASH = ConstExprHashingUtils::HashString("CONTENT");
 
 
         SearchQueryScopeType GetSearchQueryScopeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NAME_HASH)
           {
             return SearchQueryScopeType::NAME;

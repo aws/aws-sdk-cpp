@@ -20,13 +20,13 @@ namespace Aws
       namespace AuthTypeValueMapper
       {
 
-        static const int no_HASH = HashingUtils::HashString("no");
-        static const int password_HASH = HashingUtils::HashString("password");
+        static constexpr uint32_t no_HASH = ConstExprHashingUtils::HashString("no");
+        static constexpr uint32_t password_HASH = ConstExprHashingUtils::HashString("password");
 
 
         AuthTypeValue GetAuthTypeValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == no_HASH)
           {
             return AuthTypeValue::no;

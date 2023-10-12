@@ -20,16 +20,16 @@ namespace Aws
       namespace WorkflowStepTypeMapper
       {
 
-        static const int COPY_HASH = HashingUtils::HashString("COPY");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
-        static const int TAG_HASH = HashingUtils::HashString("TAG");
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
-        static const int DECRYPT_HASH = HashingUtils::HashString("DECRYPT");
+        static constexpr uint32_t COPY_HASH = ConstExprHashingUtils::HashString("COPY");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t TAG_HASH = ConstExprHashingUtils::HashString("TAG");
+        static constexpr uint32_t DELETE__HASH = ConstExprHashingUtils::HashString("DELETE");
+        static constexpr uint32_t DECRYPT_HASH = ConstExprHashingUtils::HashString("DECRYPT");
 
 
         WorkflowStepType GetWorkflowStepTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COPY_HASH)
           {
             return WorkflowStepType::COPY;

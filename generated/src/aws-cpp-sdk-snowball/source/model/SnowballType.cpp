@@ -20,21 +20,21 @@ namespace Aws
       namespace SnowballTypeMapper
       {
 
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
-        static const int EDGE_HASH = HashingUtils::HashString("EDGE");
-        static const int EDGE_C_HASH = HashingUtils::HashString("EDGE_C");
-        static const int EDGE_CG_HASH = HashingUtils::HashString("EDGE_CG");
-        static const int EDGE_S_HASH = HashingUtils::HashString("EDGE_S");
-        static const int SNC1_HDD_HASH = HashingUtils::HashString("SNC1_HDD");
-        static const int SNC1_SSD_HASH = HashingUtils::HashString("SNC1_SSD");
-        static const int V3_5C_HASH = HashingUtils::HashString("V3_5C");
-        static const int V3_5S_HASH = HashingUtils::HashString("V3_5S");
-        static const int RACK_5U_C_HASH = HashingUtils::HashString("RACK_5U_C");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
+        static constexpr uint32_t EDGE_HASH = ConstExprHashingUtils::HashString("EDGE");
+        static constexpr uint32_t EDGE_C_HASH = ConstExprHashingUtils::HashString("EDGE_C");
+        static constexpr uint32_t EDGE_CG_HASH = ConstExprHashingUtils::HashString("EDGE_CG");
+        static constexpr uint32_t EDGE_S_HASH = ConstExprHashingUtils::HashString("EDGE_S");
+        static constexpr uint32_t SNC1_HDD_HASH = ConstExprHashingUtils::HashString("SNC1_HDD");
+        static constexpr uint32_t SNC1_SSD_HASH = ConstExprHashingUtils::HashString("SNC1_SSD");
+        static constexpr uint32_t V3_5C_HASH = ConstExprHashingUtils::HashString("V3_5C");
+        static constexpr uint32_t V3_5S_HASH = ConstExprHashingUtils::HashString("V3_5S");
+        static constexpr uint32_t RACK_5U_C_HASH = ConstExprHashingUtils::HashString("RACK_5U_C");
 
 
         SnowballType GetSnowballTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STANDARD_HASH)
           {
             return SnowballType::STANDARD;

@@ -20,15 +20,15 @@ namespace Aws
       namespace TaggableResourceTypeMapper
       {
 
-        static const int BatchPrediction_HASH = HashingUtils::HashString("BatchPrediction");
-        static const int DataSource_HASH = HashingUtils::HashString("DataSource");
-        static const int Evaluation_HASH = HashingUtils::HashString("Evaluation");
-        static const int MLModel_HASH = HashingUtils::HashString("MLModel");
+        static constexpr uint32_t BatchPrediction_HASH = ConstExprHashingUtils::HashString("BatchPrediction");
+        static constexpr uint32_t DataSource_HASH = ConstExprHashingUtils::HashString("DataSource");
+        static constexpr uint32_t Evaluation_HASH = ConstExprHashingUtils::HashString("Evaluation");
+        static constexpr uint32_t MLModel_HASH = ConstExprHashingUtils::HashString("MLModel");
 
 
         TaggableResourceType GetTaggableResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BatchPrediction_HASH)
           {
             return TaggableResourceType::BatchPrediction;

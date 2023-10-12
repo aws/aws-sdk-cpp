@@ -20,20 +20,20 @@ namespace Aws
       namespace TieringOperationStatusMapper
       {
 
-        static const int archival_in_progress_HASH = HashingUtils::HashString("archival-in-progress");
-        static const int archival_completed_HASH = HashingUtils::HashString("archival-completed");
-        static const int archival_failed_HASH = HashingUtils::HashString("archival-failed");
-        static const int temporary_restore_in_progress_HASH = HashingUtils::HashString("temporary-restore-in-progress");
-        static const int temporary_restore_completed_HASH = HashingUtils::HashString("temporary-restore-completed");
-        static const int temporary_restore_failed_HASH = HashingUtils::HashString("temporary-restore-failed");
-        static const int permanent_restore_in_progress_HASH = HashingUtils::HashString("permanent-restore-in-progress");
-        static const int permanent_restore_completed_HASH = HashingUtils::HashString("permanent-restore-completed");
-        static const int permanent_restore_failed_HASH = HashingUtils::HashString("permanent-restore-failed");
+        static constexpr uint32_t archival_in_progress_HASH = ConstExprHashingUtils::HashString("archival-in-progress");
+        static constexpr uint32_t archival_completed_HASH = ConstExprHashingUtils::HashString("archival-completed");
+        static constexpr uint32_t archival_failed_HASH = ConstExprHashingUtils::HashString("archival-failed");
+        static constexpr uint32_t temporary_restore_in_progress_HASH = ConstExprHashingUtils::HashString("temporary-restore-in-progress");
+        static constexpr uint32_t temporary_restore_completed_HASH = ConstExprHashingUtils::HashString("temporary-restore-completed");
+        static constexpr uint32_t temporary_restore_failed_HASH = ConstExprHashingUtils::HashString("temporary-restore-failed");
+        static constexpr uint32_t permanent_restore_in_progress_HASH = ConstExprHashingUtils::HashString("permanent-restore-in-progress");
+        static constexpr uint32_t permanent_restore_completed_HASH = ConstExprHashingUtils::HashString("permanent-restore-completed");
+        static constexpr uint32_t permanent_restore_failed_HASH = ConstExprHashingUtils::HashString("permanent-restore-failed");
 
 
         TieringOperationStatus GetTieringOperationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == archival_in_progress_HASH)
           {
             return TieringOperationStatus::archival_in_progress;

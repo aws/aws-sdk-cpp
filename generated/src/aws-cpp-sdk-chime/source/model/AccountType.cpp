@@ -20,15 +20,15 @@ namespace Aws
       namespace AccountTypeMapper
       {
 
-        static const int Team_HASH = HashingUtils::HashString("Team");
-        static const int EnterpriseDirectory_HASH = HashingUtils::HashString("EnterpriseDirectory");
-        static const int EnterpriseLWA_HASH = HashingUtils::HashString("EnterpriseLWA");
-        static const int EnterpriseOIDC_HASH = HashingUtils::HashString("EnterpriseOIDC");
+        static constexpr uint32_t Team_HASH = ConstExprHashingUtils::HashString("Team");
+        static constexpr uint32_t EnterpriseDirectory_HASH = ConstExprHashingUtils::HashString("EnterpriseDirectory");
+        static constexpr uint32_t EnterpriseLWA_HASH = ConstExprHashingUtils::HashString("EnterpriseLWA");
+        static constexpr uint32_t EnterpriseOIDC_HASH = ConstExprHashingUtils::HashString("EnterpriseOIDC");
 
 
         AccountType GetAccountTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Team_HASH)
           {
             return AccountType::Team;

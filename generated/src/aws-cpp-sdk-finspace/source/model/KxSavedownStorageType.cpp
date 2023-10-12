@@ -20,12 +20,12 @@ namespace Aws
       namespace KxSavedownStorageTypeMapper
       {
 
-        static const int SDS01_HASH = HashingUtils::HashString("SDS01");
+        static constexpr uint32_t SDS01_HASH = ConstExprHashingUtils::HashString("SDS01");
 
 
         KxSavedownStorageType GetKxSavedownStorageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SDS01_HASH)
           {
             return KxSavedownStorageType::SDS01;

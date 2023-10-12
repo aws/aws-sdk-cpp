@@ -20,13 +20,13 @@ namespace Aws
       namespace KafkaClusterEncryptionInTransitTypeMapper
       {
 
-        static const int PLAINTEXT_HASH = HashingUtils::HashString("PLAINTEXT");
-        static const int TLS_HASH = HashingUtils::HashString("TLS");
+        static constexpr uint32_t PLAINTEXT_HASH = ConstExprHashingUtils::HashString("PLAINTEXT");
+        static constexpr uint32_t TLS_HASH = ConstExprHashingUtils::HashString("TLS");
 
 
         KafkaClusterEncryptionInTransitType GetKafkaClusterEncryptionInTransitTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PLAINTEXT_HASH)
           {
             return KafkaClusterEncryptionInTransitType::PLAINTEXT;

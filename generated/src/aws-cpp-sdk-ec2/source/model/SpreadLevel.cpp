@@ -20,13 +20,13 @@ namespace Aws
       namespace SpreadLevelMapper
       {
 
-        static const int host_HASH = HashingUtils::HashString("host");
-        static const int rack_HASH = HashingUtils::HashString("rack");
+        static constexpr uint32_t host_HASH = ConstExprHashingUtils::HashString("host");
+        static constexpr uint32_t rack_HASH = ConstExprHashingUtils::HashString("rack");
 
 
         SpreadLevel GetSpreadLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == host_HASH)
           {
             return SpreadLevel::host;

@@ -20,14 +20,14 @@ namespace Aws
       namespace PortalStatusMapper
       {
 
-        static const int Incomplete_HASH = HashingUtils::HashString("Incomplete");
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int Active_HASH = HashingUtils::HashString("Active");
+        static constexpr uint32_t Incomplete_HASH = ConstExprHashingUtils::HashString("Incomplete");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
 
 
         PortalStatus GetPortalStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Incomplete_HASH)
           {
             return PortalStatus::Incomplete;

@@ -20,16 +20,16 @@ namespace Aws
       namespace CandidateStatusMapper
       {
 
-        static const int Completed_HASH = HashingUtils::HashString("Completed");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
-        static const int Stopping_HASH = HashingUtils::HashString("Stopping");
+        static constexpr uint32_t Completed_HASH = ConstExprHashingUtils::HashString("Completed");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Stopped_HASH = ConstExprHashingUtils::HashString("Stopped");
+        static constexpr uint32_t Stopping_HASH = ConstExprHashingUtils::HashString("Stopping");
 
 
         CandidateStatus GetCandidateStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Completed_HASH)
           {
             return CandidateStatus::Completed;

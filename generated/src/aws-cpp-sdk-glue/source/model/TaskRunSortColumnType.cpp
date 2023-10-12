@@ -20,14 +20,14 @@ namespace Aws
       namespace TaskRunSortColumnTypeMapper
       {
 
-        static const int TASK_RUN_TYPE_HASH = HashingUtils::HashString("TASK_RUN_TYPE");
-        static const int STATUS_HASH = HashingUtils::HashString("STATUS");
-        static const int STARTED_HASH = HashingUtils::HashString("STARTED");
+        static constexpr uint32_t TASK_RUN_TYPE_HASH = ConstExprHashingUtils::HashString("TASK_RUN_TYPE");
+        static constexpr uint32_t STATUS_HASH = ConstExprHashingUtils::HashString("STATUS");
+        static constexpr uint32_t STARTED_HASH = ConstExprHashingUtils::HashString("STARTED");
 
 
         TaskRunSortColumnType GetTaskRunSortColumnTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TASK_RUN_TYPE_HASH)
           {
             return TaskRunSortColumnType::TASK_RUN_TYPE;

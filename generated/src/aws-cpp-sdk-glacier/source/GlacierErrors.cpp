@@ -75,15 +75,15 @@ template<> AWS_GLACIER_API MissingParameterValueException GlacierError::GetModel
 namespace GlacierErrorMapper
 {
 
-static const int INSUFFICIENT_CAPACITY_HASH = HashingUtils::HashString("InsufficientCapacityException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int POLICY_ENFORCED_HASH = HashingUtils::HashString("PolicyEnforcedException");
-static const int MISSING_PARAMETER_VALUE_HASH = HashingUtils::HashString("MissingParameterValueException");
+static constexpr uint32_t INSUFFICIENT_CAPACITY_HASH = ConstExprHashingUtils::HashString("InsufficientCapacityException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t POLICY_ENFORCED_HASH = ConstExprHashingUtils::HashString("PolicyEnforcedException");
+static constexpr uint32_t MISSING_PARAMETER_VALUE_HASH = ConstExprHashingUtils::HashString("MissingParameterValueException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INSUFFICIENT_CAPACITY_HASH)
   {

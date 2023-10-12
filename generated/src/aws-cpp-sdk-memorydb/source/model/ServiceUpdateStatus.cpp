@@ -20,15 +20,15 @@ namespace Aws
       namespace ServiceUpdateStatusMapper
       {
 
-        static const int available_HASH = HashingUtils::HashString("available");
-        static const int in_progress_HASH = HashingUtils::HashString("in-progress");
-        static const int complete_HASH = HashingUtils::HashString("complete");
-        static const int scheduled_HASH = HashingUtils::HashString("scheduled");
+        static constexpr uint32_t available_HASH = ConstExprHashingUtils::HashString("available");
+        static constexpr uint32_t in_progress_HASH = ConstExprHashingUtils::HashString("in-progress");
+        static constexpr uint32_t complete_HASH = ConstExprHashingUtils::HashString("complete");
+        static constexpr uint32_t scheduled_HASH = ConstExprHashingUtils::HashString("scheduled");
 
 
         ServiceUpdateStatus GetServiceUpdateStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == available_HASH)
           {
             return ServiceUpdateStatus::available;

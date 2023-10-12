@@ -20,17 +20,17 @@ namespace Aws
       namespace StateMapper
       {
 
-        static const int OFFLINE_HASH = HashingUtils::HashString("OFFLINE");
-        static const int ONLINE_HASH = HashingUtils::HashString("ONLINE");
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int START_FAILED_HASH = HashingUtils::HashString("START_FAILED");
-        static const int STOP_FAILED_HASH = HashingUtils::HashString("STOP_FAILED");
+        static constexpr uint32_t OFFLINE_HASH = ConstExprHashingUtils::HashString("OFFLINE");
+        static constexpr uint32_t ONLINE_HASH = ConstExprHashingUtils::HashString("ONLINE");
+        static constexpr uint32_t STARTING_HASH = ConstExprHashingUtils::HashString("STARTING");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
+        static constexpr uint32_t START_FAILED_HASH = ConstExprHashingUtils::HashString("START_FAILED");
+        static constexpr uint32_t STOP_FAILED_HASH = ConstExprHashingUtils::HashString("STOP_FAILED");
 
 
         State GetStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OFFLINE_HASH)
           {
             return State::OFFLINE;

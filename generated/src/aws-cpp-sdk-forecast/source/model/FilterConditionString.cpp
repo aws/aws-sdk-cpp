@@ -20,13 +20,13 @@ namespace Aws
       namespace FilterConditionStringMapper
       {
 
-        static const int IS_HASH = HashingUtils::HashString("IS");
-        static const int IS_NOT_HASH = HashingUtils::HashString("IS_NOT");
+        static constexpr uint32_t IS_HASH = ConstExprHashingUtils::HashString("IS");
+        static constexpr uint32_t IS_NOT_HASH = ConstExprHashingUtils::HashString("IS_NOT");
 
 
         FilterConditionString GetFilterConditionStringForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IS_HASH)
           {
             return FilterConditionString::IS;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ClientAffinityMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int SOURCE_IP_HASH = HashingUtils::HashString("SOURCE_IP");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t SOURCE_IP_HASH = ConstExprHashingUtils::HashString("SOURCE_IP");
 
 
         ClientAffinity GetClientAffinityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return ClientAffinity::NONE;

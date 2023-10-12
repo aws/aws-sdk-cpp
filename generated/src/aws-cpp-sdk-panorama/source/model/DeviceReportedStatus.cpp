@@ -20,22 +20,22 @@ namespace Aws
       namespace DeviceReportedStatusMapper
       {
 
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
-        static const int STOP_ERROR_HASH = HashingUtils::HashString("STOP_ERROR");
-        static const int REMOVAL_FAILED_HASH = HashingUtils::HashString("REMOVAL_FAILED");
-        static const int REMOVAL_IN_PROGRESS_HASH = HashingUtils::HashString("REMOVAL_IN_PROGRESS");
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int INSTALL_ERROR_HASH = HashingUtils::HashString("INSTALL_ERROR");
-        static const int LAUNCHED_HASH = HashingUtils::HashString("LAUNCHED");
-        static const int LAUNCH_ERROR_HASH = HashingUtils::HashString("LAUNCH_ERROR");
-        static const int INSTALL_IN_PROGRESS_HASH = HashingUtils::HashString("INSTALL_IN_PROGRESS");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
+        static constexpr uint32_t STOP_ERROR_HASH = ConstExprHashingUtils::HashString("STOP_ERROR");
+        static constexpr uint32_t REMOVAL_FAILED_HASH = ConstExprHashingUtils::HashString("REMOVAL_FAILED");
+        static constexpr uint32_t REMOVAL_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("REMOVAL_IN_PROGRESS");
+        static constexpr uint32_t STARTING_HASH = ConstExprHashingUtils::HashString("STARTING");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t INSTALL_ERROR_HASH = ConstExprHashingUtils::HashString("INSTALL_ERROR");
+        static constexpr uint32_t LAUNCHED_HASH = ConstExprHashingUtils::HashString("LAUNCHED");
+        static constexpr uint32_t LAUNCH_ERROR_HASH = ConstExprHashingUtils::HashString("LAUNCH_ERROR");
+        static constexpr uint32_t INSTALL_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("INSTALL_IN_PROGRESS");
 
 
         DeviceReportedStatus GetDeviceReportedStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STOPPING_HASH)
           {
             return DeviceReportedStatus::STOPPING;

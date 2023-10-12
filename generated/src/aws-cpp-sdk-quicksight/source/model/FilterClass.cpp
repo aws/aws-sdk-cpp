@@ -20,14 +20,14 @@ namespace Aws
       namespace FilterClassMapper
       {
 
-        static const int ENFORCED_VALUE_FILTER_HASH = HashingUtils::HashString("ENFORCED_VALUE_FILTER");
-        static const int CONDITIONAL_VALUE_FILTER_HASH = HashingUtils::HashString("CONDITIONAL_VALUE_FILTER");
-        static const int NAMED_VALUE_FILTER_HASH = HashingUtils::HashString("NAMED_VALUE_FILTER");
+        static constexpr uint32_t ENFORCED_VALUE_FILTER_HASH = ConstExprHashingUtils::HashString("ENFORCED_VALUE_FILTER");
+        static constexpr uint32_t CONDITIONAL_VALUE_FILTER_HASH = ConstExprHashingUtils::HashString("CONDITIONAL_VALUE_FILTER");
+        static constexpr uint32_t NAMED_VALUE_FILTER_HASH = ConstExprHashingUtils::HashString("NAMED_VALUE_FILTER");
 
 
         FilterClass GetFilterClassForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENFORCED_VALUE_FILTER_HASH)
           {
             return FilterClass::ENFORCED_VALUE_FILTER;

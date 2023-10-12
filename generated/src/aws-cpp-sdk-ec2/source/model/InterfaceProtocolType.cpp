@@ -20,13 +20,13 @@ namespace Aws
       namespace InterfaceProtocolTypeMapper
       {
 
-        static const int VLAN_HASH = HashingUtils::HashString("VLAN");
-        static const int GRE_HASH = HashingUtils::HashString("GRE");
+        static constexpr uint32_t VLAN_HASH = ConstExprHashingUtils::HashString("VLAN");
+        static constexpr uint32_t GRE_HASH = ConstExprHashingUtils::HashString("GRE");
 
 
         InterfaceProtocolType GetInterfaceProtocolTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VLAN_HASH)
           {
             return InterfaceProtocolType::VLAN;

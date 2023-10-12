@@ -20,14 +20,14 @@ namespace Aws
       namespace ChildPolicyMapper
       {
 
-        static const int TERMINATE_HASH = HashingUtils::HashString("TERMINATE");
-        static const int REQUEST_CANCEL_HASH = HashingUtils::HashString("REQUEST_CANCEL");
-        static const int ABANDON_HASH = HashingUtils::HashString("ABANDON");
+        static constexpr uint32_t TERMINATE_HASH = ConstExprHashingUtils::HashString("TERMINATE");
+        static constexpr uint32_t REQUEST_CANCEL_HASH = ConstExprHashingUtils::HashString("REQUEST_CANCEL");
+        static constexpr uint32_t ABANDON_HASH = ConstExprHashingUtils::HashString("ABANDON");
 
 
         ChildPolicy GetChildPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TERMINATE_HASH)
           {
             return ChildPolicy::TERMINATE;

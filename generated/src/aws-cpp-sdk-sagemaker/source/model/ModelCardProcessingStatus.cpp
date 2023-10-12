@@ -20,17 +20,17 @@ namespace Aws
       namespace ModelCardProcessingStatusMapper
       {
 
-        static const int DeleteInProgress_HASH = HashingUtils::HashString("DeleteInProgress");
-        static const int DeletePending_HASH = HashingUtils::HashString("DeletePending");
-        static const int ContentDeleted_HASH = HashingUtils::HashString("ContentDeleted");
-        static const int ExportJobsDeleted_HASH = HashingUtils::HashString("ExportJobsDeleted");
-        static const int DeleteCompleted_HASH = HashingUtils::HashString("DeleteCompleted");
-        static const int DeleteFailed_HASH = HashingUtils::HashString("DeleteFailed");
+        static constexpr uint32_t DeleteInProgress_HASH = ConstExprHashingUtils::HashString("DeleteInProgress");
+        static constexpr uint32_t DeletePending_HASH = ConstExprHashingUtils::HashString("DeletePending");
+        static constexpr uint32_t ContentDeleted_HASH = ConstExprHashingUtils::HashString("ContentDeleted");
+        static constexpr uint32_t ExportJobsDeleted_HASH = ConstExprHashingUtils::HashString("ExportJobsDeleted");
+        static constexpr uint32_t DeleteCompleted_HASH = ConstExprHashingUtils::HashString("DeleteCompleted");
+        static constexpr uint32_t DeleteFailed_HASH = ConstExprHashingUtils::HashString("DeleteFailed");
 
 
         ModelCardProcessingStatus GetModelCardProcessingStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DeleteInProgress_HASH)
           {
             return ModelCardProcessingStatus::DeleteInProgress;

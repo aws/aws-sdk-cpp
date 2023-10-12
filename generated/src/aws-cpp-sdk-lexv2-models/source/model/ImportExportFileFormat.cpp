@@ -20,14 +20,14 @@ namespace Aws
       namespace ImportExportFileFormatMapper
       {
 
-        static const int LexJson_HASH = HashingUtils::HashString("LexJson");
-        static const int TSV_HASH = HashingUtils::HashString("TSV");
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
+        static constexpr uint32_t LexJson_HASH = ConstExprHashingUtils::HashString("LexJson");
+        static constexpr uint32_t TSV_HASH = ConstExprHashingUtils::HashString("TSV");
+        static constexpr uint32_t CSV_HASH = ConstExprHashingUtils::HashString("CSV");
 
 
         ImportExportFileFormat GetImportExportFileFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LexJson_HASH)
           {
             return ImportExportFileFormat::LexJson;

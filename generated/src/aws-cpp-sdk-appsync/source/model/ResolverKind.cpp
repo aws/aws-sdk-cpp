@@ -20,13 +20,13 @@ namespace Aws
       namespace ResolverKindMapper
       {
 
-        static const int UNIT_HASH = HashingUtils::HashString("UNIT");
-        static const int PIPELINE_HASH = HashingUtils::HashString("PIPELINE");
+        static constexpr uint32_t UNIT_HASH = ConstExprHashingUtils::HashString("UNIT");
+        static constexpr uint32_t PIPELINE_HASH = ConstExprHashingUtils::HashString("PIPELINE");
 
 
         ResolverKind GetResolverKindForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNIT_HASH)
           {
             return ResolverKind::UNIT;

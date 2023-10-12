@@ -20,16 +20,16 @@ namespace Aws
       namespace IpamAddressHistoryResourceTypeMapper
       {
 
-        static const int eip_HASH = HashingUtils::HashString("eip");
-        static const int vpc_HASH = HashingUtils::HashString("vpc");
-        static const int subnet_HASH = HashingUtils::HashString("subnet");
-        static const int network_interface_HASH = HashingUtils::HashString("network-interface");
-        static const int instance_HASH = HashingUtils::HashString("instance");
+        static constexpr uint32_t eip_HASH = ConstExprHashingUtils::HashString("eip");
+        static constexpr uint32_t vpc_HASH = ConstExprHashingUtils::HashString("vpc");
+        static constexpr uint32_t subnet_HASH = ConstExprHashingUtils::HashString("subnet");
+        static constexpr uint32_t network_interface_HASH = ConstExprHashingUtils::HashString("network-interface");
+        static constexpr uint32_t instance_HASH = ConstExprHashingUtils::HashString("instance");
 
 
         IpamAddressHistoryResourceType GetIpamAddressHistoryResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == eip_HASH)
           {
             return IpamAddressHistoryResourceType::eip;

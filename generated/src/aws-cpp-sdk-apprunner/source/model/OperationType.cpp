@@ -20,17 +20,17 @@ namespace Aws
       namespace OperationTypeMapper
       {
 
-        static const int START_DEPLOYMENT_HASH = HashingUtils::HashString("START_DEPLOYMENT");
-        static const int CREATE_SERVICE_HASH = HashingUtils::HashString("CREATE_SERVICE");
-        static const int PAUSE_SERVICE_HASH = HashingUtils::HashString("PAUSE_SERVICE");
-        static const int RESUME_SERVICE_HASH = HashingUtils::HashString("RESUME_SERVICE");
-        static const int DELETE_SERVICE_HASH = HashingUtils::HashString("DELETE_SERVICE");
-        static const int UPDATE_SERVICE_HASH = HashingUtils::HashString("UPDATE_SERVICE");
+        static constexpr uint32_t START_DEPLOYMENT_HASH = ConstExprHashingUtils::HashString("START_DEPLOYMENT");
+        static constexpr uint32_t CREATE_SERVICE_HASH = ConstExprHashingUtils::HashString("CREATE_SERVICE");
+        static constexpr uint32_t PAUSE_SERVICE_HASH = ConstExprHashingUtils::HashString("PAUSE_SERVICE");
+        static constexpr uint32_t RESUME_SERVICE_HASH = ConstExprHashingUtils::HashString("RESUME_SERVICE");
+        static constexpr uint32_t DELETE_SERVICE_HASH = ConstExprHashingUtils::HashString("DELETE_SERVICE");
+        static constexpr uint32_t UPDATE_SERVICE_HASH = ConstExprHashingUtils::HashString("UPDATE_SERVICE");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == START_DEPLOYMENT_HASH)
           {
             return OperationType::START_DEPLOYMENT;

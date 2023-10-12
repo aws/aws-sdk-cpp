@@ -20,14 +20,14 @@ namespace Aws
       namespace OrganizationConfigRuleTriggerTypeMapper
       {
 
-        static const int ConfigurationItemChangeNotification_HASH = HashingUtils::HashString("ConfigurationItemChangeNotification");
-        static const int OversizedConfigurationItemChangeNotification_HASH = HashingUtils::HashString("OversizedConfigurationItemChangeNotification");
-        static const int ScheduledNotification_HASH = HashingUtils::HashString("ScheduledNotification");
+        static constexpr uint32_t ConfigurationItemChangeNotification_HASH = ConstExprHashingUtils::HashString("ConfigurationItemChangeNotification");
+        static constexpr uint32_t OversizedConfigurationItemChangeNotification_HASH = ConstExprHashingUtils::HashString("OversizedConfigurationItemChangeNotification");
+        static constexpr uint32_t ScheduledNotification_HASH = ConstExprHashingUtils::HashString("ScheduledNotification");
 
 
         OrganizationConfigRuleTriggerType GetOrganizationConfigRuleTriggerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ConfigurationItemChangeNotification_HASH)
           {
             return OrganizationConfigRuleTriggerType::ConfigurationItemChangeNotification;

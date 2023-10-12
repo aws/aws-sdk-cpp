@@ -20,13 +20,13 @@ namespace Aws
       namespace AccessTypeMapper
       {
 
-        static const int LAKEFORMATION_HASH = HashingUtils::HashString("LAKEFORMATION");
-        static const int S3_HASH = HashingUtils::HashString("S3");
+        static constexpr uint32_t LAKEFORMATION_HASH = ConstExprHashingUtils::HashString("LAKEFORMATION");
+        static constexpr uint32_t S3_HASH = ConstExprHashingUtils::HashString("S3");
 
 
         AccessType GetAccessTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LAKEFORMATION_HASH)
           {
             return AccessType::LAKEFORMATION;

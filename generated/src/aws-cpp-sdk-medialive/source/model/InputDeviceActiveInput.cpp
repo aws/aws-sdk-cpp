@@ -20,13 +20,13 @@ namespace Aws
       namespace InputDeviceActiveInputMapper
       {
 
-        static const int HDMI_HASH = HashingUtils::HashString("HDMI");
-        static const int SDI_HASH = HashingUtils::HashString("SDI");
+        static constexpr uint32_t HDMI_HASH = ConstExprHashingUtils::HashString("HDMI");
+        static constexpr uint32_t SDI_HASH = ConstExprHashingUtils::HashString("SDI");
 
 
         InputDeviceActiveInput GetInputDeviceActiveInputForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HDMI_HASH)
           {
             return InputDeviceActiveInput::HDMI;

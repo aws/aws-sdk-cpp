@@ -20,14 +20,14 @@ namespace Aws
       namespace RiskDecisionTypeMapper
       {
 
-        static const int NoRisk_HASH = HashingUtils::HashString("NoRisk");
-        static const int AccountTakeover_HASH = HashingUtils::HashString("AccountTakeover");
-        static const int Block_HASH = HashingUtils::HashString("Block");
+        static constexpr uint32_t NoRisk_HASH = ConstExprHashingUtils::HashString("NoRisk");
+        static constexpr uint32_t AccountTakeover_HASH = ConstExprHashingUtils::HashString("AccountTakeover");
+        static constexpr uint32_t Block_HASH = ConstExprHashingUtils::HashString("Block");
 
 
         RiskDecisionType GetRiskDecisionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NoRisk_HASH)
           {
             return RiskDecisionType::NoRisk;

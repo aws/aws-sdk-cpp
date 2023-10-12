@@ -20,13 +20,13 @@ namespace Aws
       namespace CancelWorkflowExecutionFailedCauseMapper
       {
 
-        static const int UNHANDLED_DECISION_HASH = HashingUtils::HashString("UNHANDLED_DECISION");
-        static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERATION_NOT_PERMITTED");
+        static constexpr uint32_t UNHANDLED_DECISION_HASH = ConstExprHashingUtils::HashString("UNHANDLED_DECISION");
+        static constexpr uint32_t OPERATION_NOT_PERMITTED_HASH = ConstExprHashingUtils::HashString("OPERATION_NOT_PERMITTED");
 
 
         CancelWorkflowExecutionFailedCause GetCancelWorkflowExecutionFailedCauseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNHANDLED_DECISION_HASH)
           {
             return CancelWorkflowExecutionFailedCause::UNHANDLED_DECISION;

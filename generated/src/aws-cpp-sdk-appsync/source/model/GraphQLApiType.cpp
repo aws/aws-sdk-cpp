@@ -20,13 +20,13 @@ namespace Aws
       namespace GraphQLApiTypeMapper
       {
 
-        static const int GRAPHQL_HASH = HashingUtils::HashString("GRAPHQL");
-        static const int MERGED_HASH = HashingUtils::HashString("MERGED");
+        static constexpr uint32_t GRAPHQL_HASH = ConstExprHashingUtils::HashString("GRAPHQL");
+        static constexpr uint32_t MERGED_HASH = ConstExprHashingUtils::HashString("MERGED");
 
 
         GraphQLApiType GetGraphQLApiTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GRAPHQL_HASH)
           {
             return GraphQLApiType::GRAPHQL;

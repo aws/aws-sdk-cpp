@@ -20,12 +20,12 @@ namespace Aws
       namespace StackAttributesKeysMapper
       {
 
-        static const int Color_HASH = HashingUtils::HashString("Color");
+        static constexpr uint32_t Color_HASH = ConstExprHashingUtils::HashString("Color");
 
 
         StackAttributesKeys GetStackAttributesKeysForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Color_HASH)
           {
             return StackAttributesKeys::Color;

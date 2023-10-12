@@ -20,13 +20,13 @@ namespace Aws
       namespace TransportProtocolMapper
       {
 
-        static const int tcp_HASH = HashingUtils::HashString("tcp");
-        static const int udp_HASH = HashingUtils::HashString("udp");
+        static constexpr uint32_t tcp_HASH = ConstExprHashingUtils::HashString("tcp");
+        static constexpr uint32_t udp_HASH = ConstExprHashingUtils::HashString("udp");
 
 
         TransportProtocol GetTransportProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == tcp_HASH)
           {
             return TransportProtocol::tcp;

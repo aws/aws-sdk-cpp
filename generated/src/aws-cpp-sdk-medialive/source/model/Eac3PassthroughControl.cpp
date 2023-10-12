@@ -20,13 +20,13 @@ namespace Aws
       namespace Eac3PassthroughControlMapper
       {
 
-        static const int NO_PASSTHROUGH_HASH = HashingUtils::HashString("NO_PASSTHROUGH");
-        static const int WHEN_POSSIBLE_HASH = HashingUtils::HashString("WHEN_POSSIBLE");
+        static constexpr uint32_t NO_PASSTHROUGH_HASH = ConstExprHashingUtils::HashString("NO_PASSTHROUGH");
+        static constexpr uint32_t WHEN_POSSIBLE_HASH = ConstExprHashingUtils::HashString("WHEN_POSSIBLE");
 
 
         Eac3PassthroughControl GetEac3PassthroughControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_PASSTHROUGH_HASH)
           {
             return Eac3PassthroughControl::NO_PASSTHROUGH;

@@ -33,13 +33,13 @@ template<> AWS_APPCONFIGDATA_API BadRequestException AppConfigDataError::GetMode
 namespace AppConfigDataErrorMapper
 {
 
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
+static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BadRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INTERNAL_SERVER_HASH)
   {

@@ -20,28 +20,28 @@ namespace Aws
       namespace TemporalFilterStrengthMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int STRENGTH_1_HASH = HashingUtils::HashString("STRENGTH_1");
-        static const int STRENGTH_2_HASH = HashingUtils::HashString("STRENGTH_2");
-        static const int STRENGTH_3_HASH = HashingUtils::HashString("STRENGTH_3");
-        static const int STRENGTH_4_HASH = HashingUtils::HashString("STRENGTH_4");
-        static const int STRENGTH_5_HASH = HashingUtils::HashString("STRENGTH_5");
-        static const int STRENGTH_6_HASH = HashingUtils::HashString("STRENGTH_6");
-        static const int STRENGTH_7_HASH = HashingUtils::HashString("STRENGTH_7");
-        static const int STRENGTH_8_HASH = HashingUtils::HashString("STRENGTH_8");
-        static const int STRENGTH_9_HASH = HashingUtils::HashString("STRENGTH_9");
-        static const int STRENGTH_10_HASH = HashingUtils::HashString("STRENGTH_10");
-        static const int STRENGTH_11_HASH = HashingUtils::HashString("STRENGTH_11");
-        static const int STRENGTH_12_HASH = HashingUtils::HashString("STRENGTH_12");
-        static const int STRENGTH_13_HASH = HashingUtils::HashString("STRENGTH_13");
-        static const int STRENGTH_14_HASH = HashingUtils::HashString("STRENGTH_14");
-        static const int STRENGTH_15_HASH = HashingUtils::HashString("STRENGTH_15");
-        static const int STRENGTH_16_HASH = HashingUtils::HashString("STRENGTH_16");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t STRENGTH_1_HASH = ConstExprHashingUtils::HashString("STRENGTH_1");
+        static constexpr uint32_t STRENGTH_2_HASH = ConstExprHashingUtils::HashString("STRENGTH_2");
+        static constexpr uint32_t STRENGTH_3_HASH = ConstExprHashingUtils::HashString("STRENGTH_3");
+        static constexpr uint32_t STRENGTH_4_HASH = ConstExprHashingUtils::HashString("STRENGTH_4");
+        static constexpr uint32_t STRENGTH_5_HASH = ConstExprHashingUtils::HashString("STRENGTH_5");
+        static constexpr uint32_t STRENGTH_6_HASH = ConstExprHashingUtils::HashString("STRENGTH_6");
+        static constexpr uint32_t STRENGTH_7_HASH = ConstExprHashingUtils::HashString("STRENGTH_7");
+        static constexpr uint32_t STRENGTH_8_HASH = ConstExprHashingUtils::HashString("STRENGTH_8");
+        static constexpr uint32_t STRENGTH_9_HASH = ConstExprHashingUtils::HashString("STRENGTH_9");
+        static constexpr uint32_t STRENGTH_10_HASH = ConstExprHashingUtils::HashString("STRENGTH_10");
+        static constexpr uint32_t STRENGTH_11_HASH = ConstExprHashingUtils::HashString("STRENGTH_11");
+        static constexpr uint32_t STRENGTH_12_HASH = ConstExprHashingUtils::HashString("STRENGTH_12");
+        static constexpr uint32_t STRENGTH_13_HASH = ConstExprHashingUtils::HashString("STRENGTH_13");
+        static constexpr uint32_t STRENGTH_14_HASH = ConstExprHashingUtils::HashString("STRENGTH_14");
+        static constexpr uint32_t STRENGTH_15_HASH = ConstExprHashingUtils::HashString("STRENGTH_15");
+        static constexpr uint32_t STRENGTH_16_HASH = ConstExprHashingUtils::HashString("STRENGTH_16");
 
 
         TemporalFilterStrength GetTemporalFilterStrengthForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return TemporalFilterStrength::AUTO;

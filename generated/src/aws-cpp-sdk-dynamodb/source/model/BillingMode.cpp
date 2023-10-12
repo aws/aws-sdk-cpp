@@ -20,13 +20,13 @@ namespace Aws
       namespace BillingModeMapper
       {
 
-        static const int PROVISIONED_HASH = HashingUtils::HashString("PROVISIONED");
-        static const int PAY_PER_REQUEST_HASH = HashingUtils::HashString("PAY_PER_REQUEST");
+        static constexpr uint32_t PROVISIONED_HASH = ConstExprHashingUtils::HashString("PROVISIONED");
+        static constexpr uint32_t PAY_PER_REQUEST_HASH = ConstExprHashingUtils::HashString("PAY_PER_REQUEST");
 
 
         BillingMode GetBillingModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROVISIONED_HASH)
           {
             return BillingMode::PROVISIONED;

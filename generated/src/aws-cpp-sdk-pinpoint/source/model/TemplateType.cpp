@@ -20,16 +20,16 @@ namespace Aws
       namespace TemplateTypeMapper
       {
 
-        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
-        static const int SMS_HASH = HashingUtils::HashString("SMS");
-        static const int VOICE_HASH = HashingUtils::HashString("VOICE");
-        static const int PUSH_HASH = HashingUtils::HashString("PUSH");
-        static const int INAPP_HASH = HashingUtils::HashString("INAPP");
+        static constexpr uint32_t EMAIL_HASH = ConstExprHashingUtils::HashString("EMAIL");
+        static constexpr uint32_t SMS_HASH = ConstExprHashingUtils::HashString("SMS");
+        static constexpr uint32_t VOICE_HASH = ConstExprHashingUtils::HashString("VOICE");
+        static constexpr uint32_t PUSH_HASH = ConstExprHashingUtils::HashString("PUSH");
+        static constexpr uint32_t INAPP_HASH = ConstExprHashingUtils::HashString("INAPP");
 
 
         TemplateType GetTemplateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EMAIL_HASH)
           {
             return TemplateType::EMAIL;

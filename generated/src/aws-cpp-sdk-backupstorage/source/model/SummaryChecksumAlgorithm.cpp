@@ -20,12 +20,12 @@ namespace Aws
       namespace SummaryChecksumAlgorithmMapper
       {
 
-        static const int SUMMARY_HASH = HashingUtils::HashString("SUMMARY");
+        static constexpr uint32_t SUMMARY_HASH = ConstExprHashingUtils::HashString("SUMMARY");
 
 
         SummaryChecksumAlgorithm GetSummaryChecksumAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUMMARY_HASH)
           {
             return SummaryChecksumAlgorithm::SUMMARY;

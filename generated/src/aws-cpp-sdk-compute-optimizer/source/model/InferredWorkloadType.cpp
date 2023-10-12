@@ -20,20 +20,20 @@ namespace Aws
       namespace InferredWorkloadTypeMapper
       {
 
-        static const int AmazonEmr_HASH = HashingUtils::HashString("AmazonEmr");
-        static const int ApacheCassandra_HASH = HashingUtils::HashString("ApacheCassandra");
-        static const int ApacheHadoop_HASH = HashingUtils::HashString("ApacheHadoop");
-        static const int Memcached_HASH = HashingUtils::HashString("Memcached");
-        static const int Nginx_HASH = HashingUtils::HashString("Nginx");
-        static const int PostgreSql_HASH = HashingUtils::HashString("PostgreSql");
-        static const int Redis_HASH = HashingUtils::HashString("Redis");
-        static const int Kafka_HASH = HashingUtils::HashString("Kafka");
-        static const int SQLServer_HASH = HashingUtils::HashString("SQLServer");
+        static constexpr uint32_t AmazonEmr_HASH = ConstExprHashingUtils::HashString("AmazonEmr");
+        static constexpr uint32_t ApacheCassandra_HASH = ConstExprHashingUtils::HashString("ApacheCassandra");
+        static constexpr uint32_t ApacheHadoop_HASH = ConstExprHashingUtils::HashString("ApacheHadoop");
+        static constexpr uint32_t Memcached_HASH = ConstExprHashingUtils::HashString("Memcached");
+        static constexpr uint32_t Nginx_HASH = ConstExprHashingUtils::HashString("Nginx");
+        static constexpr uint32_t PostgreSql_HASH = ConstExprHashingUtils::HashString("PostgreSql");
+        static constexpr uint32_t Redis_HASH = ConstExprHashingUtils::HashString("Redis");
+        static constexpr uint32_t Kafka_HASH = ConstExprHashingUtils::HashString("Kafka");
+        static constexpr uint32_t SQLServer_HASH = ConstExprHashingUtils::HashString("SQLServer");
 
 
         InferredWorkloadType GetInferredWorkloadTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AmazonEmr_HASH)
           {
             return InferredWorkloadType::AmazonEmr;

@@ -20,18 +20,18 @@ namespace Aws
       namespace ImageFailureCodeMapper
       {
 
-        static const int InvalidImageDigest_HASH = HashingUtils::HashString("InvalidImageDigest");
-        static const int InvalidImageTag_HASH = HashingUtils::HashString("InvalidImageTag");
-        static const int ImageTagDoesNotMatchDigest_HASH = HashingUtils::HashString("ImageTagDoesNotMatchDigest");
-        static const int ImageNotFound_HASH = HashingUtils::HashString("ImageNotFound");
-        static const int MissingDigestAndTag_HASH = HashingUtils::HashString("MissingDigestAndTag");
-        static const int ImageReferencedByManifestList_HASH = HashingUtils::HashString("ImageReferencedByManifestList");
-        static const int KmsError_HASH = HashingUtils::HashString("KmsError");
+        static constexpr uint32_t InvalidImageDigest_HASH = ConstExprHashingUtils::HashString("InvalidImageDigest");
+        static constexpr uint32_t InvalidImageTag_HASH = ConstExprHashingUtils::HashString("InvalidImageTag");
+        static constexpr uint32_t ImageTagDoesNotMatchDigest_HASH = ConstExprHashingUtils::HashString("ImageTagDoesNotMatchDigest");
+        static constexpr uint32_t ImageNotFound_HASH = ConstExprHashingUtils::HashString("ImageNotFound");
+        static constexpr uint32_t MissingDigestAndTag_HASH = ConstExprHashingUtils::HashString("MissingDigestAndTag");
+        static constexpr uint32_t ImageReferencedByManifestList_HASH = ConstExprHashingUtils::HashString("ImageReferencedByManifestList");
+        static constexpr uint32_t KmsError_HASH = ConstExprHashingUtils::HashString("KmsError");
 
 
         ImageFailureCode GetImageFailureCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InvalidImageDigest_HASH)
           {
             return ImageFailureCode::InvalidImageDigest;

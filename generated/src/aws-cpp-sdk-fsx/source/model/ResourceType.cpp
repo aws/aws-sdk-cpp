@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int FILE_SYSTEM_HASH = HashingUtils::HashString("FILE_SYSTEM");
-        static const int VOLUME_HASH = HashingUtils::HashString("VOLUME");
+        static constexpr uint32_t FILE_SYSTEM_HASH = ConstExprHashingUtils::HashString("FILE_SYSTEM");
+        static constexpr uint32_t VOLUME_HASH = ConstExprHashingUtils::HashString("VOLUME");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FILE_SYSTEM_HASH)
           {
             return ResourceType::FILE_SYSTEM;

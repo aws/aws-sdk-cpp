@@ -20,13 +20,13 @@ namespace Aws
       namespace AacRawFormatMapper
       {
 
-        static const int LATM_LOAS_HASH = HashingUtils::HashString("LATM_LOAS");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t LATM_LOAS_HASH = ConstExprHashingUtils::HashString("LATM_LOAS");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         AacRawFormat GetAacRawFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LATM_LOAS_HASH)
           {
             return AacRawFormat::LATM_LOAS;

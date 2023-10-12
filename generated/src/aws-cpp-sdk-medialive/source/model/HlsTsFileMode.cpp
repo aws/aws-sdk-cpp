@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsTsFileModeMapper
       {
 
-        static const int SEGMENTED_FILES_HASH = HashingUtils::HashString("SEGMENTED_FILES");
-        static const int SINGLE_FILE_HASH = HashingUtils::HashString("SINGLE_FILE");
+        static constexpr uint32_t SEGMENTED_FILES_HASH = ConstExprHashingUtils::HashString("SEGMENTED_FILES");
+        static constexpr uint32_t SINGLE_FILE_HASH = ConstExprHashingUtils::HashString("SINGLE_FILE");
 
 
         HlsTsFileMode GetHlsTsFileModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SEGMENTED_FILES_HASH)
           {
             return HlsTsFileMode::SEGMENTED_FILES;

@@ -20,14 +20,14 @@ namespace Aws
       namespace AggregatedSourceStatusTypeMapper
       {
 
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-        static const int OUTDATED_HASH = HashingUtils::HashString("OUTDATED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t SUCCEEDED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED");
+        static constexpr uint32_t OUTDATED_HASH = ConstExprHashingUtils::HashString("OUTDATED");
 
 
         AggregatedSourceStatusType GetAggregatedSourceStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FAILED_HASH)
           {
             return AggregatedSourceStatusType::FAILED;

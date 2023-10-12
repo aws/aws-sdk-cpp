@@ -20,18 +20,18 @@ namespace Aws
       namespace MatchFieldTypeMapper
       {
 
-        static const int URI_HASH = HashingUtils::HashString("URI");
-        static const int QUERY_STRING_HASH = HashingUtils::HashString("QUERY_STRING");
-        static const int HEADER_HASH = HashingUtils::HashString("HEADER");
-        static const int METHOD_HASH = HashingUtils::HashString("METHOD");
-        static const int BODY_HASH = HashingUtils::HashString("BODY");
-        static const int SINGLE_QUERY_ARG_HASH = HashingUtils::HashString("SINGLE_QUERY_ARG");
-        static const int ALL_QUERY_ARGS_HASH = HashingUtils::HashString("ALL_QUERY_ARGS");
+        static constexpr uint32_t URI_HASH = ConstExprHashingUtils::HashString("URI");
+        static constexpr uint32_t QUERY_STRING_HASH = ConstExprHashingUtils::HashString("QUERY_STRING");
+        static constexpr uint32_t HEADER_HASH = ConstExprHashingUtils::HashString("HEADER");
+        static constexpr uint32_t METHOD_HASH = ConstExprHashingUtils::HashString("METHOD");
+        static constexpr uint32_t BODY_HASH = ConstExprHashingUtils::HashString("BODY");
+        static constexpr uint32_t SINGLE_QUERY_ARG_HASH = ConstExprHashingUtils::HashString("SINGLE_QUERY_ARG");
+        static constexpr uint32_t ALL_QUERY_ARGS_HASH = ConstExprHashingUtils::HashString("ALL_QUERY_ARGS");
 
 
         MatchFieldType GetMatchFieldTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == URI_HASH)
           {
             return MatchFieldType::URI;

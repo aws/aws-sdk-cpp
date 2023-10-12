@@ -20,15 +20,15 @@ namespace Aws
       namespace ChannelTypeMapper
       {
 
-        static const int Facebook_HASH = HashingUtils::HashString("Facebook");
-        static const int Slack_HASH = HashingUtils::HashString("Slack");
-        static const int Twilio_Sms_HASH = HashingUtils::HashString("Twilio-Sms");
-        static const int Kik_HASH = HashingUtils::HashString("Kik");
+        static constexpr uint32_t Facebook_HASH = ConstExprHashingUtils::HashString("Facebook");
+        static constexpr uint32_t Slack_HASH = ConstExprHashingUtils::HashString("Slack");
+        static constexpr uint32_t Twilio_Sms_HASH = ConstExprHashingUtils::HashString("Twilio-Sms");
+        static constexpr uint32_t Kik_HASH = ConstExprHashingUtils::HashString("Kik");
 
 
         ChannelType GetChannelTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Facebook_HASH)
           {
             return ChannelType::Facebook;

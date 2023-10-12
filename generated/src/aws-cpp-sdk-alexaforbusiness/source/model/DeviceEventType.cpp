@@ -20,13 +20,13 @@ namespace Aws
       namespace DeviceEventTypeMapper
       {
 
-        static const int CONNECTION_STATUS_HASH = HashingUtils::HashString("CONNECTION_STATUS");
-        static const int DEVICE_STATUS_HASH = HashingUtils::HashString("DEVICE_STATUS");
+        static constexpr uint32_t CONNECTION_STATUS_HASH = ConstExprHashingUtils::HashString("CONNECTION_STATUS");
+        static constexpr uint32_t DEVICE_STATUS_HASH = ConstExprHashingUtils::HashString("DEVICE_STATUS");
 
 
         DeviceEventType GetDeviceEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONNECTION_STATUS_HASH)
           {
             return DeviceEventType::CONNECTION_STATUS;

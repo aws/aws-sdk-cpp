@@ -20,15 +20,15 @@ namespace Aws
       namespace DataProtectionStatusMapper
       {
 
-        static const int ACTIVATED_HASH = HashingUtils::HashString("ACTIVATED");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int ARCHIVED_HASH = HashingUtils::HashString("ARCHIVED");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static constexpr uint32_t ACTIVATED_HASH = ConstExprHashingUtils::HashString("ACTIVATED");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t ARCHIVED_HASH = ConstExprHashingUtils::HashString("ARCHIVED");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
 
 
         DataProtectionStatus GetDataProtectionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVATED_HASH)
           {
             return DataProtectionStatus::ACTIVATED;

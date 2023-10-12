@@ -20,14 +20,14 @@ namespace Aws
       namespace ServiceTypeMapper
       {
 
-        static const int Interface_HASH = HashingUtils::HashString("Interface");
-        static const int Gateway_HASH = HashingUtils::HashString("Gateway");
-        static const int GatewayLoadBalancer_HASH = HashingUtils::HashString("GatewayLoadBalancer");
+        static constexpr uint32_t Interface_HASH = ConstExprHashingUtils::HashString("Interface");
+        static constexpr uint32_t Gateway_HASH = ConstExprHashingUtils::HashString("Gateway");
+        static constexpr uint32_t GatewayLoadBalancer_HASH = ConstExprHashingUtils::HashString("GatewayLoadBalancer");
 
 
         ServiceType GetServiceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Interface_HASH)
           {
             return ServiceType::Interface;

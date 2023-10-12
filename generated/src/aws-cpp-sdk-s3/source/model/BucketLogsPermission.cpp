@@ -20,14 +20,14 @@ namespace Aws
       namespace BucketLogsPermissionMapper
       {
 
-        static const int FULL_CONTROL_HASH = HashingUtils::HashString("FULL_CONTROL");
-        static const int READ_HASH = HashingUtils::HashString("READ");
-        static const int WRITE_HASH = HashingUtils::HashString("WRITE");
+        static constexpr uint32_t FULL_CONTROL_HASH = ConstExprHashingUtils::HashString("FULL_CONTROL");
+        static constexpr uint32_t READ_HASH = ConstExprHashingUtils::HashString("READ");
+        static constexpr uint32_t WRITE_HASH = ConstExprHashingUtils::HashString("WRITE");
 
 
         BucketLogsPermission GetBucketLogsPermissionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FULL_CONTROL_HASH)
           {
             return BucketLogsPermission::FULL_CONTROL;

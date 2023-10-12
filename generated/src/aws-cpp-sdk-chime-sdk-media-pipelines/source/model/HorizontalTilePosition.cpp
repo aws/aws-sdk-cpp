@@ -20,13 +20,13 @@ namespace Aws
       namespace HorizontalTilePositionMapper
       {
 
-        static const int Top_HASH = HashingUtils::HashString("Top");
-        static const int Bottom_HASH = HashingUtils::HashString("Bottom");
+        static constexpr uint32_t Top_HASH = ConstExprHashingUtils::HashString("Top");
+        static constexpr uint32_t Bottom_HASH = ConstExprHashingUtils::HashString("Bottom");
 
 
         HorizontalTilePosition GetHorizontalTilePositionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Top_HASH)
           {
             return HorizontalTilePosition::Top;

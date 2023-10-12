@@ -20,13 +20,13 @@ namespace Aws
       namespace EphemerisSourceMapper
       {
 
-        static const int CUSTOMER_PROVIDED_HASH = HashingUtils::HashString("CUSTOMER_PROVIDED");
-        static const int SPACE_TRACK_HASH = HashingUtils::HashString("SPACE_TRACK");
+        static constexpr uint32_t CUSTOMER_PROVIDED_HASH = ConstExprHashingUtils::HashString("CUSTOMER_PROVIDED");
+        static constexpr uint32_t SPACE_TRACK_HASH = ConstExprHashingUtils::HashString("SPACE_TRACK");
 
 
         EphemerisSource GetEphemerisSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CUSTOMER_PROVIDED_HASH)
           {
             return EphemerisSource::CUSTOMER_PROVIDED;

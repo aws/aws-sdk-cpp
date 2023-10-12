@@ -20,13 +20,13 @@ namespace Aws
       namespace UserTypeMapper
       {
 
-        static const int SSO_USER_HASH = HashingUtils::HashString("SSO_USER");
-        static const int SSO_GROUP_HASH = HashingUtils::HashString("SSO_GROUP");
+        static constexpr uint32_t SSO_USER_HASH = ConstExprHashingUtils::HashString("SSO_USER");
+        static constexpr uint32_t SSO_GROUP_HASH = ConstExprHashingUtils::HashString("SSO_GROUP");
 
 
         UserType GetUserTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SSO_USER_HASH)
           {
             return UserType::SSO_USER;

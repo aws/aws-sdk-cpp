@@ -20,13 +20,13 @@ namespace Aws
       namespace AuthMapper
       {
 
-        static const int PLAIN_TEXT_HASH = HashingUtils::HashString("PLAIN_TEXT");
-        static const int SECRET_ARN_HASH = HashingUtils::HashString("SECRET_ARN");
+        static constexpr uint32_t PLAIN_TEXT_HASH = ConstExprHashingUtils::HashString("PLAIN_TEXT");
+        static constexpr uint32_t SECRET_ARN_HASH = ConstExprHashingUtils::HashString("SECRET_ARN");
 
 
         Auth GetAuthForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PLAIN_TEXT_HASH)
           {
             return Auth::PLAIN_TEXT;

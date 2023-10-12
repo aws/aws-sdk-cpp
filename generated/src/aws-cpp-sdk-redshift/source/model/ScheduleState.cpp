@@ -20,14 +20,14 @@ namespace Aws
       namespace ScheduleStateMapper
       {
 
-        static const int MODIFYING_HASH = HashingUtils::HashString("MODIFYING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t MODIFYING_HASH = ConstExprHashingUtils::HashString("MODIFYING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         ScheduleState GetScheduleStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MODIFYING_HASH)
           {
             return ScheduleState::MODIFYING;

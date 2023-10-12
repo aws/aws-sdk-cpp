@@ -20,14 +20,14 @@ namespace Aws
       namespace ScanFrequencyMapper
       {
 
-        static const int SCAN_ON_PUSH_HASH = HashingUtils::HashString("SCAN_ON_PUSH");
-        static const int CONTINUOUS_SCAN_HASH = HashingUtils::HashString("CONTINUOUS_SCAN");
-        static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
+        static constexpr uint32_t SCAN_ON_PUSH_HASH = ConstExprHashingUtils::HashString("SCAN_ON_PUSH");
+        static constexpr uint32_t CONTINUOUS_SCAN_HASH = ConstExprHashingUtils::HashString("CONTINUOUS_SCAN");
+        static constexpr uint32_t MANUAL_HASH = ConstExprHashingUtils::HashString("MANUAL");
 
 
         ScanFrequency GetScanFrequencyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SCAN_ON_PUSH_HASH)
           {
             return ScanFrequency::SCAN_ON_PUSH;

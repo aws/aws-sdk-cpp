@@ -20,17 +20,17 @@ namespace Aws
       namespace AggregateTypeMapper
       {
 
-        static const int AVERAGE_HASH = HashingUtils::HashString("AVERAGE");
-        static const int COUNT_HASH = HashingUtils::HashString("COUNT");
-        static const int MAXIMUM_HASH = HashingUtils::HashString("MAXIMUM");
-        static const int MINIMUM_HASH = HashingUtils::HashString("MINIMUM");
-        static const int SUM_HASH = HashingUtils::HashString("SUM");
-        static const int STANDARD_DEVIATION_HASH = HashingUtils::HashString("STANDARD_DEVIATION");
+        static constexpr uint32_t AVERAGE_HASH = ConstExprHashingUtils::HashString("AVERAGE");
+        static constexpr uint32_t COUNT_HASH = ConstExprHashingUtils::HashString("COUNT");
+        static constexpr uint32_t MAXIMUM_HASH = ConstExprHashingUtils::HashString("MAXIMUM");
+        static constexpr uint32_t MINIMUM_HASH = ConstExprHashingUtils::HashString("MINIMUM");
+        static constexpr uint32_t SUM_HASH = ConstExprHashingUtils::HashString("SUM");
+        static constexpr uint32_t STANDARD_DEVIATION_HASH = ConstExprHashingUtils::HashString("STANDARD_DEVIATION");
 
 
         AggregateType GetAggregateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVERAGE_HASH)
           {
             return AggregateType::AVERAGE;

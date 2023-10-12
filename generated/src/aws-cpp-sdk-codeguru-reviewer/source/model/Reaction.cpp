@@ -20,13 +20,13 @@ namespace Aws
       namespace ReactionMapper
       {
 
-        static const int ThumbsUp_HASH = HashingUtils::HashString("ThumbsUp");
-        static const int ThumbsDown_HASH = HashingUtils::HashString("ThumbsDown");
+        static constexpr uint32_t ThumbsUp_HASH = ConstExprHashingUtils::HashString("ThumbsUp");
+        static constexpr uint32_t ThumbsDown_HASH = ConstExprHashingUtils::HashString("ThumbsDown");
 
 
         Reaction GetReactionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ThumbsUp_HASH)
           {
             return Reaction::ThumbsUp;

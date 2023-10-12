@@ -20,21 +20,21 @@ namespace Aws
       namespace AnalysisErrorTypeMapper
       {
 
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
-        static const int SOURCE_NOT_FOUND_HASH = HashingUtils::HashString("SOURCE_NOT_FOUND");
-        static const int DATA_SET_NOT_FOUND_HASH = HashingUtils::HashString("DATA_SET_NOT_FOUND");
-        static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
-        static const int PARAMETER_VALUE_INCOMPATIBLE_HASH = HashingUtils::HashString("PARAMETER_VALUE_INCOMPATIBLE");
-        static const int PARAMETER_TYPE_INVALID_HASH = HashingUtils::HashString("PARAMETER_TYPE_INVALID");
-        static const int PARAMETER_NOT_FOUND_HASH = HashingUtils::HashString("PARAMETER_NOT_FOUND");
-        static const int COLUMN_TYPE_MISMATCH_HASH = HashingUtils::HashString("COLUMN_TYPE_MISMATCH");
-        static const int COLUMN_GEOGRAPHIC_ROLE_MISMATCH_HASH = HashingUtils::HashString("COLUMN_GEOGRAPHIC_ROLE_MISMATCH");
-        static const int COLUMN_REPLACEMENT_MISSING_HASH = HashingUtils::HashString("COLUMN_REPLACEMENT_MISSING");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t SOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SOURCE_NOT_FOUND");
+        static constexpr uint32_t DATA_SET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("DATA_SET_NOT_FOUND");
+        static constexpr uint32_t INTERNAL_FAILURE_HASH = ConstExprHashingUtils::HashString("INTERNAL_FAILURE");
+        static constexpr uint32_t PARAMETER_VALUE_INCOMPATIBLE_HASH = ConstExprHashingUtils::HashString("PARAMETER_VALUE_INCOMPATIBLE");
+        static constexpr uint32_t PARAMETER_TYPE_INVALID_HASH = ConstExprHashingUtils::HashString("PARAMETER_TYPE_INVALID");
+        static constexpr uint32_t PARAMETER_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("PARAMETER_NOT_FOUND");
+        static constexpr uint32_t COLUMN_TYPE_MISMATCH_HASH = ConstExprHashingUtils::HashString("COLUMN_TYPE_MISMATCH");
+        static constexpr uint32_t COLUMN_GEOGRAPHIC_ROLE_MISMATCH_HASH = ConstExprHashingUtils::HashString("COLUMN_GEOGRAPHIC_ROLE_MISMATCH");
+        static constexpr uint32_t COLUMN_REPLACEMENT_MISSING_HASH = ConstExprHashingUtils::HashString("COLUMN_REPLACEMENT_MISSING");
 
 
         AnalysisErrorType GetAnalysisErrorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCESS_DENIED_HASH)
           {
             return AnalysisErrorType::ACCESS_DENIED;

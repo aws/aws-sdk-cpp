@@ -20,38 +20,38 @@ namespace Aws
       namespace EntitlementDataUnitMapper
       {
 
-        static const int Count_HASH = HashingUtils::HashString("Count");
-        static const int None_HASH = HashingUtils::HashString("None");
-        static const int Seconds_HASH = HashingUtils::HashString("Seconds");
-        static const int Microseconds_HASH = HashingUtils::HashString("Microseconds");
-        static const int Milliseconds_HASH = HashingUtils::HashString("Milliseconds");
-        static const int Bytes_HASH = HashingUtils::HashString("Bytes");
-        static const int Kilobytes_HASH = HashingUtils::HashString("Kilobytes");
-        static const int Megabytes_HASH = HashingUtils::HashString("Megabytes");
-        static const int Gigabytes_HASH = HashingUtils::HashString("Gigabytes");
-        static const int Terabytes_HASH = HashingUtils::HashString("Terabytes");
-        static const int Bits_HASH = HashingUtils::HashString("Bits");
-        static const int Kilobits_HASH = HashingUtils::HashString("Kilobits");
-        static const int Megabits_HASH = HashingUtils::HashString("Megabits");
-        static const int Gigabits_HASH = HashingUtils::HashString("Gigabits");
-        static const int Terabits_HASH = HashingUtils::HashString("Terabits");
-        static const int Percent_HASH = HashingUtils::HashString("Percent");
-        static const int Bytes_Second_HASH = HashingUtils::HashString("Bytes/Second");
-        static const int Kilobytes_Second_HASH = HashingUtils::HashString("Kilobytes/Second");
-        static const int Megabytes_Second_HASH = HashingUtils::HashString("Megabytes/Second");
-        static const int Gigabytes_Second_HASH = HashingUtils::HashString("Gigabytes/Second");
-        static const int Terabytes_Second_HASH = HashingUtils::HashString("Terabytes/Second");
-        static const int Bits_Second_HASH = HashingUtils::HashString("Bits/Second");
-        static const int Kilobits_Second_HASH = HashingUtils::HashString("Kilobits/Second");
-        static const int Megabits_Second_HASH = HashingUtils::HashString("Megabits/Second");
-        static const int Gigabits_Second_HASH = HashingUtils::HashString("Gigabits/Second");
-        static const int Terabits_Second_HASH = HashingUtils::HashString("Terabits/Second");
-        static const int Count_Second_HASH = HashingUtils::HashString("Count/Second");
+        static constexpr uint32_t Count_HASH = ConstExprHashingUtils::HashString("Count");
+        static constexpr uint32_t None_HASH = ConstExprHashingUtils::HashString("None");
+        static constexpr uint32_t Seconds_HASH = ConstExprHashingUtils::HashString("Seconds");
+        static constexpr uint32_t Microseconds_HASH = ConstExprHashingUtils::HashString("Microseconds");
+        static constexpr uint32_t Milliseconds_HASH = ConstExprHashingUtils::HashString("Milliseconds");
+        static constexpr uint32_t Bytes_HASH = ConstExprHashingUtils::HashString("Bytes");
+        static constexpr uint32_t Kilobytes_HASH = ConstExprHashingUtils::HashString("Kilobytes");
+        static constexpr uint32_t Megabytes_HASH = ConstExprHashingUtils::HashString("Megabytes");
+        static constexpr uint32_t Gigabytes_HASH = ConstExprHashingUtils::HashString("Gigabytes");
+        static constexpr uint32_t Terabytes_HASH = ConstExprHashingUtils::HashString("Terabytes");
+        static constexpr uint32_t Bits_HASH = ConstExprHashingUtils::HashString("Bits");
+        static constexpr uint32_t Kilobits_HASH = ConstExprHashingUtils::HashString("Kilobits");
+        static constexpr uint32_t Megabits_HASH = ConstExprHashingUtils::HashString("Megabits");
+        static constexpr uint32_t Gigabits_HASH = ConstExprHashingUtils::HashString("Gigabits");
+        static constexpr uint32_t Terabits_HASH = ConstExprHashingUtils::HashString("Terabits");
+        static constexpr uint32_t Percent_HASH = ConstExprHashingUtils::HashString("Percent");
+        static constexpr uint32_t Bytes_Second_HASH = ConstExprHashingUtils::HashString("Bytes/Second");
+        static constexpr uint32_t Kilobytes_Second_HASH = ConstExprHashingUtils::HashString("Kilobytes/Second");
+        static constexpr uint32_t Megabytes_Second_HASH = ConstExprHashingUtils::HashString("Megabytes/Second");
+        static constexpr uint32_t Gigabytes_Second_HASH = ConstExprHashingUtils::HashString("Gigabytes/Second");
+        static constexpr uint32_t Terabytes_Second_HASH = ConstExprHashingUtils::HashString("Terabytes/Second");
+        static constexpr uint32_t Bits_Second_HASH = ConstExprHashingUtils::HashString("Bits/Second");
+        static constexpr uint32_t Kilobits_Second_HASH = ConstExprHashingUtils::HashString("Kilobits/Second");
+        static constexpr uint32_t Megabits_Second_HASH = ConstExprHashingUtils::HashString("Megabits/Second");
+        static constexpr uint32_t Gigabits_Second_HASH = ConstExprHashingUtils::HashString("Gigabits/Second");
+        static constexpr uint32_t Terabits_Second_HASH = ConstExprHashingUtils::HashString("Terabits/Second");
+        static constexpr uint32_t Count_Second_HASH = ConstExprHashingUtils::HashString("Count/Second");
 
 
         EntitlementDataUnit GetEntitlementDataUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Count_HASH)
           {
             return EntitlementDataUnit::Count;

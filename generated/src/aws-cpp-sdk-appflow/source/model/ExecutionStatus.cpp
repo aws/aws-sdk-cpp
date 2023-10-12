@@ -20,16 +20,16 @@ namespace Aws
       namespace ExecutionStatusMapper
       {
 
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Successful_HASH = HashingUtils::HashString("Successful");
-        static const int Error_HASH = HashingUtils::HashString("Error");
-        static const int CancelStarted_HASH = HashingUtils::HashString("CancelStarted");
-        static const int Canceled_HASH = HashingUtils::HashString("Canceled");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Successful_HASH = ConstExprHashingUtils::HashString("Successful");
+        static constexpr uint32_t Error_HASH = ConstExprHashingUtils::HashString("Error");
+        static constexpr uint32_t CancelStarted_HASH = ConstExprHashingUtils::HashString("CancelStarted");
+        static constexpr uint32_t Canceled_HASH = ConstExprHashingUtils::HashString("Canceled");
 
 
         ExecutionStatus GetExecutionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InProgress_HASH)
           {
             return ExecutionStatus::InProgress;

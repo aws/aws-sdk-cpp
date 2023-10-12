@@ -20,12 +20,12 @@ namespace Aws
       namespace FirewallDomainImportOperationMapper
       {
 
-        static const int REPLACE_HASH = HashingUtils::HashString("REPLACE");
+        static constexpr uint32_t REPLACE_HASH = ConstExprHashingUtils::HashString("REPLACE");
 
 
         FirewallDomainImportOperation GetFirewallDomainImportOperationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REPLACE_HASH)
           {
             return FirewallDomainImportOperation::REPLACE;

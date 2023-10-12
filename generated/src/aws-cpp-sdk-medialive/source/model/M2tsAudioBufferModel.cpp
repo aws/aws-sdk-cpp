@@ -20,13 +20,13 @@ namespace Aws
       namespace M2tsAudioBufferModelMapper
       {
 
-        static const int ATSC_HASH = HashingUtils::HashString("ATSC");
-        static const int DVB_HASH = HashingUtils::HashString("DVB");
+        static constexpr uint32_t ATSC_HASH = ConstExprHashingUtils::HashString("ATSC");
+        static constexpr uint32_t DVB_HASH = ConstExprHashingUtils::HashString("DVB");
 
 
         M2tsAudioBufferModel GetM2tsAudioBufferModelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ATSC_HASH)
           {
             return M2tsAudioBufferModel::ATSC;

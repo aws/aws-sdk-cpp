@@ -20,15 +20,15 @@ namespace Aws
       namespace LineageTypeMapper
       {
 
-        static const int TrialComponent_HASH = HashingUtils::HashString("TrialComponent");
-        static const int Artifact_HASH = HashingUtils::HashString("Artifact");
-        static const int Context_HASH = HashingUtils::HashString("Context");
-        static const int Action_HASH = HashingUtils::HashString("Action");
+        static constexpr uint32_t TrialComponent_HASH = ConstExprHashingUtils::HashString("TrialComponent");
+        static constexpr uint32_t Artifact_HASH = ConstExprHashingUtils::HashString("Artifact");
+        static constexpr uint32_t Context_HASH = ConstExprHashingUtils::HashString("Context");
+        static constexpr uint32_t Action_HASH = ConstExprHashingUtils::HashString("Action");
 
 
         LineageType GetLineageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TrialComponent_HASH)
           {
             return LineageType::TrialComponent;

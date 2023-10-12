@@ -20,12 +20,12 @@ namespace Aws
       namespace SopServiceTypeMapper
       {
 
-        static const int SSM_HASH = HashingUtils::HashString("SSM");
+        static constexpr uint32_t SSM_HASH = ConstExprHashingUtils::HashString("SSM");
 
 
         SopServiceType GetSopServiceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SSM_HASH)
           {
             return SopServiceType::SSM;

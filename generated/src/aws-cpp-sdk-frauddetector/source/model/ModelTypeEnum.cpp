@@ -20,14 +20,14 @@ namespace Aws
       namespace ModelTypeEnumMapper
       {
 
-        static const int ONLINE_FRAUD_INSIGHTS_HASH = HashingUtils::HashString("ONLINE_FRAUD_INSIGHTS");
-        static const int TRANSACTION_FRAUD_INSIGHTS_HASH = HashingUtils::HashString("TRANSACTION_FRAUD_INSIGHTS");
-        static const int ACCOUNT_TAKEOVER_INSIGHTS_HASH = HashingUtils::HashString("ACCOUNT_TAKEOVER_INSIGHTS");
+        static constexpr uint32_t ONLINE_FRAUD_INSIGHTS_HASH = ConstExprHashingUtils::HashString("ONLINE_FRAUD_INSIGHTS");
+        static constexpr uint32_t TRANSACTION_FRAUD_INSIGHTS_HASH = ConstExprHashingUtils::HashString("TRANSACTION_FRAUD_INSIGHTS");
+        static constexpr uint32_t ACCOUNT_TAKEOVER_INSIGHTS_HASH = ConstExprHashingUtils::HashString("ACCOUNT_TAKEOVER_INSIGHTS");
 
 
         ModelTypeEnum GetModelTypeEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ONLINE_FRAUD_INSIGHTS_HASH)
           {
             return ModelTypeEnum::ONLINE_FRAUD_INSIGHTS;

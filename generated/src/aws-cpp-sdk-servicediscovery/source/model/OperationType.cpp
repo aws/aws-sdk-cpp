@@ -20,17 +20,17 @@ namespace Aws
       namespace OperationTypeMapper
       {
 
-        static const int CREATE_NAMESPACE_HASH = HashingUtils::HashString("CREATE_NAMESPACE");
-        static const int DELETE_NAMESPACE_HASH = HashingUtils::HashString("DELETE_NAMESPACE");
-        static const int UPDATE_NAMESPACE_HASH = HashingUtils::HashString("UPDATE_NAMESPACE");
-        static const int UPDATE_SERVICE_HASH = HashingUtils::HashString("UPDATE_SERVICE");
-        static const int REGISTER_INSTANCE_HASH = HashingUtils::HashString("REGISTER_INSTANCE");
-        static const int DEREGISTER_INSTANCE_HASH = HashingUtils::HashString("DEREGISTER_INSTANCE");
+        static constexpr uint32_t CREATE_NAMESPACE_HASH = ConstExprHashingUtils::HashString("CREATE_NAMESPACE");
+        static constexpr uint32_t DELETE_NAMESPACE_HASH = ConstExprHashingUtils::HashString("DELETE_NAMESPACE");
+        static constexpr uint32_t UPDATE_NAMESPACE_HASH = ConstExprHashingUtils::HashString("UPDATE_NAMESPACE");
+        static constexpr uint32_t UPDATE_SERVICE_HASH = ConstExprHashingUtils::HashString("UPDATE_SERVICE");
+        static constexpr uint32_t REGISTER_INSTANCE_HASH = ConstExprHashingUtils::HashString("REGISTER_INSTANCE");
+        static constexpr uint32_t DEREGISTER_INSTANCE_HASH = ConstExprHashingUtils::HashString("DEREGISTER_INSTANCE");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_NAMESPACE_HASH)
           {
             return OperationType::CREATE_NAMESPACE;

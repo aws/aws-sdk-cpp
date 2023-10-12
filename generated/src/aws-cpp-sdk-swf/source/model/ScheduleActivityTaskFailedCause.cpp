@@ -20,22 +20,22 @@ namespace Aws
       namespace ScheduleActivityTaskFailedCauseMapper
       {
 
-        static const int ACTIVITY_TYPE_DEPRECATED_HASH = HashingUtils::HashString("ACTIVITY_TYPE_DEPRECATED");
-        static const int ACTIVITY_TYPE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ACTIVITY_TYPE_DOES_NOT_EXIST");
-        static const int ACTIVITY_ID_ALREADY_IN_USE_HASH = HashingUtils::HashString("ACTIVITY_ID_ALREADY_IN_USE");
-        static const int OPEN_ACTIVITIES_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OPEN_ACTIVITIES_LIMIT_EXCEEDED");
-        static const int ACTIVITY_CREATION_RATE_EXCEEDED_HASH = HashingUtils::HashString("ACTIVITY_CREATION_RATE_EXCEEDED");
-        static const int DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED");
-        static const int DEFAULT_TASK_LIST_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_TASK_LIST_UNDEFINED");
-        static const int DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED");
-        static const int DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED");
-        static const int DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED");
-        static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERATION_NOT_PERMITTED");
+        static constexpr uint32_t ACTIVITY_TYPE_DEPRECATED_HASH = ConstExprHashingUtils::HashString("ACTIVITY_TYPE_DEPRECATED");
+        static constexpr uint32_t ACTIVITY_TYPE_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("ACTIVITY_TYPE_DOES_NOT_EXIST");
+        static constexpr uint32_t ACTIVITY_ID_ALREADY_IN_USE_HASH = ConstExprHashingUtils::HashString("ACTIVITY_ID_ALREADY_IN_USE");
+        static constexpr uint32_t OPEN_ACTIVITIES_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("OPEN_ACTIVITIES_LIMIT_EXCEEDED");
+        static constexpr uint32_t ACTIVITY_CREATION_RATE_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ACTIVITY_CREATION_RATE_EXCEEDED");
+        static constexpr uint32_t DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED_HASH = ConstExprHashingUtils::HashString("DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED");
+        static constexpr uint32_t DEFAULT_TASK_LIST_UNDEFINED_HASH = ConstExprHashingUtils::HashString("DEFAULT_TASK_LIST_UNDEFINED");
+        static constexpr uint32_t DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED_HASH = ConstExprHashingUtils::HashString("DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED");
+        static constexpr uint32_t DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED_HASH = ConstExprHashingUtils::HashString("DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED");
+        static constexpr uint32_t DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED_HASH = ConstExprHashingUtils::HashString("DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED");
+        static constexpr uint32_t OPERATION_NOT_PERMITTED_HASH = ConstExprHashingUtils::HashString("OPERATION_NOT_PERMITTED");
 
 
         ScheduleActivityTaskFailedCause GetScheduleActivityTaskFailedCauseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVITY_TYPE_DEPRECATED_HASH)
           {
             return ScheduleActivityTaskFailedCause::ACTIVITY_TYPE_DEPRECATED;

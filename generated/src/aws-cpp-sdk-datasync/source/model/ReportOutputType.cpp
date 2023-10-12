@@ -20,13 +20,13 @@ namespace Aws
       namespace ReportOutputTypeMapper
       {
 
-        static const int SUMMARY_ONLY_HASH = HashingUtils::HashString("SUMMARY_ONLY");
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
+        static constexpr uint32_t SUMMARY_ONLY_HASH = ConstExprHashingUtils::HashString("SUMMARY_ONLY");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
 
 
         ReportOutputType GetReportOutputTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUMMARY_ONLY_HASH)
           {
             return ReportOutputType::SUMMARY_ONLY;

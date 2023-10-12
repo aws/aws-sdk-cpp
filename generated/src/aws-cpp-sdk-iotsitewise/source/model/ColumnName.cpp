@@ -20,19 +20,19 @@ namespace Aws
       namespace ColumnNameMapper
       {
 
-        static const int ALIAS_HASH = HashingUtils::HashString("ALIAS");
-        static const int ASSET_ID_HASH = HashingUtils::HashString("ASSET_ID");
-        static const int PROPERTY_ID_HASH = HashingUtils::HashString("PROPERTY_ID");
-        static const int DATA_TYPE_HASH = HashingUtils::HashString("DATA_TYPE");
-        static const int TIMESTAMP_SECONDS_HASH = HashingUtils::HashString("TIMESTAMP_SECONDS");
-        static const int TIMESTAMP_NANO_OFFSET_HASH = HashingUtils::HashString("TIMESTAMP_NANO_OFFSET");
-        static const int QUALITY_HASH = HashingUtils::HashString("QUALITY");
-        static const int VALUE_HASH = HashingUtils::HashString("VALUE");
+        static constexpr uint32_t ALIAS_HASH = ConstExprHashingUtils::HashString("ALIAS");
+        static constexpr uint32_t ASSET_ID_HASH = ConstExprHashingUtils::HashString("ASSET_ID");
+        static constexpr uint32_t PROPERTY_ID_HASH = ConstExprHashingUtils::HashString("PROPERTY_ID");
+        static constexpr uint32_t DATA_TYPE_HASH = ConstExprHashingUtils::HashString("DATA_TYPE");
+        static constexpr uint32_t TIMESTAMP_SECONDS_HASH = ConstExprHashingUtils::HashString("TIMESTAMP_SECONDS");
+        static constexpr uint32_t TIMESTAMP_NANO_OFFSET_HASH = ConstExprHashingUtils::HashString("TIMESTAMP_NANO_OFFSET");
+        static constexpr uint32_t QUALITY_HASH = ConstExprHashingUtils::HashString("QUALITY");
+        static constexpr uint32_t VALUE_HASH = ConstExprHashingUtils::HashString("VALUE");
 
 
         ColumnName GetColumnNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALIAS_HASH)
           {
             return ColumnName::ALIAS;

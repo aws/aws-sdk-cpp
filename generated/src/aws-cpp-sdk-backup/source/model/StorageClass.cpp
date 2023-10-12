@@ -20,14 +20,14 @@ namespace Aws
       namespace StorageClassMapper
       {
 
-        static const int WARM_HASH = HashingUtils::HashString("WARM");
-        static const int COLD_HASH = HashingUtils::HashString("COLD");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t WARM_HASH = ConstExprHashingUtils::HashString("WARM");
+        static constexpr uint32_t COLD_HASH = ConstExprHashingUtils::HashString("COLD");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         StorageClass GetStorageClassForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WARM_HASH)
           {
             return StorageClass::WARM;

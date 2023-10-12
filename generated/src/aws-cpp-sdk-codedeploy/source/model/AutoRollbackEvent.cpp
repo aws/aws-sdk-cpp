@@ -20,14 +20,14 @@ namespace Aws
       namespace AutoRollbackEventMapper
       {
 
-        static const int DEPLOYMENT_FAILURE_HASH = HashingUtils::HashString("DEPLOYMENT_FAILURE");
-        static const int DEPLOYMENT_STOP_ON_ALARM_HASH = HashingUtils::HashString("DEPLOYMENT_STOP_ON_ALARM");
-        static const int DEPLOYMENT_STOP_ON_REQUEST_HASH = HashingUtils::HashString("DEPLOYMENT_STOP_ON_REQUEST");
+        static constexpr uint32_t DEPLOYMENT_FAILURE_HASH = ConstExprHashingUtils::HashString("DEPLOYMENT_FAILURE");
+        static constexpr uint32_t DEPLOYMENT_STOP_ON_ALARM_HASH = ConstExprHashingUtils::HashString("DEPLOYMENT_STOP_ON_ALARM");
+        static constexpr uint32_t DEPLOYMENT_STOP_ON_REQUEST_HASH = ConstExprHashingUtils::HashString("DEPLOYMENT_STOP_ON_REQUEST");
 
 
         AutoRollbackEvent GetAutoRollbackEventForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEPLOYMENT_FAILURE_HASH)
           {
             return AutoRollbackEvent::DEPLOYMENT_FAILURE;

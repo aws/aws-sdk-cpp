@@ -20,17 +20,17 @@ namespace Aws
       namespace IntentStateMapper
       {
 
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Fulfilled_HASH = HashingUtils::HashString("Fulfilled");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int ReadyForFulfillment_HASH = HashingUtils::HashString("ReadyForFulfillment");
-        static const int Waiting_HASH = HashingUtils::HashString("Waiting");
-        static const int FulfillmentInProgress_HASH = HashingUtils::HashString("FulfillmentInProgress");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Fulfilled_HASH = ConstExprHashingUtils::HashString("Fulfilled");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t ReadyForFulfillment_HASH = ConstExprHashingUtils::HashString("ReadyForFulfillment");
+        static constexpr uint32_t Waiting_HASH = ConstExprHashingUtils::HashString("Waiting");
+        static constexpr uint32_t FulfillmentInProgress_HASH = ConstExprHashingUtils::HashString("FulfillmentInProgress");
 
 
         IntentState GetIntentStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Failed_HASH)
           {
             return IntentState::Failed;

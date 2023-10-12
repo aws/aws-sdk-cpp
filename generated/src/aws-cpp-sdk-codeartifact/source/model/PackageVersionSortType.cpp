@@ -20,12 +20,12 @@ namespace Aws
       namespace PackageVersionSortTypeMapper
       {
 
-        static const int PUBLISHED_TIME_HASH = HashingUtils::HashString("PUBLISHED_TIME");
+        static constexpr uint32_t PUBLISHED_TIME_HASH = ConstExprHashingUtils::HashString("PUBLISHED_TIME");
 
 
         PackageVersionSortType GetPackageVersionSortTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUBLISHED_TIME_HASH)
           {
             return PackageVersionSortType::PUBLISHED_TIME;

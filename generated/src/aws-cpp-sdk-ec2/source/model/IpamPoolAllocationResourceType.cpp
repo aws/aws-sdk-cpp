@@ -20,15 +20,15 @@ namespace Aws
       namespace IpamPoolAllocationResourceTypeMapper
       {
 
-        static const int ipam_pool_HASH = HashingUtils::HashString("ipam-pool");
-        static const int vpc_HASH = HashingUtils::HashString("vpc");
-        static const int ec2_public_ipv4_pool_HASH = HashingUtils::HashString("ec2-public-ipv4-pool");
-        static const int custom_HASH = HashingUtils::HashString("custom");
+        static constexpr uint32_t ipam_pool_HASH = ConstExprHashingUtils::HashString("ipam-pool");
+        static constexpr uint32_t vpc_HASH = ConstExprHashingUtils::HashString("vpc");
+        static constexpr uint32_t ec2_public_ipv4_pool_HASH = ConstExprHashingUtils::HashString("ec2-public-ipv4-pool");
+        static constexpr uint32_t custom_HASH = ConstExprHashingUtils::HashString("custom");
 
 
         IpamPoolAllocationResourceType GetIpamPoolAllocationResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ipam_pool_HASH)
           {
             return IpamPoolAllocationResourceType::ipam_pool;

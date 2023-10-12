@@ -20,15 +20,15 @@ namespace Aws
       namespace ValidationExceptionReasonMapper
       {
 
-        static const int FIELD_VALIDATION_FAILED_HASH = HashingUtils::HashString("FIELD_VALIDATION_FAILED");
-        static const int INVALID_CONFIGURATION_HASH = HashingUtils::HashString("INVALID_CONFIGURATION");
-        static const int INVALID_QUERY_HASH = HashingUtils::HashString("INVALID_QUERY");
-        static const int IAM_SYNCHRONIZATION_DELAY_HASH = HashingUtils::HashString("IAM_SYNCHRONIZATION_DELAY");
+        static constexpr uint32_t FIELD_VALIDATION_FAILED_HASH = ConstExprHashingUtils::HashString("FIELD_VALIDATION_FAILED");
+        static constexpr uint32_t INVALID_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("INVALID_CONFIGURATION");
+        static constexpr uint32_t INVALID_QUERY_HASH = ConstExprHashingUtils::HashString("INVALID_QUERY");
+        static constexpr uint32_t IAM_SYNCHRONIZATION_DELAY_HASH = ConstExprHashingUtils::HashString("IAM_SYNCHRONIZATION_DELAY");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FIELD_VALIDATION_FAILED_HASH)
           {
             return ValidationExceptionReason::FIELD_VALIDATION_FAILED;

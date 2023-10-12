@@ -20,13 +20,13 @@ namespace Aws
       namespace ParticipantRoleMapper
       {
 
-        static const int AGENT_HASH = HashingUtils::HashString("AGENT");
-        static const int CUSTOMER_HASH = HashingUtils::HashString("CUSTOMER");
+        static constexpr uint32_t AGENT_HASH = ConstExprHashingUtils::HashString("AGENT");
+        static constexpr uint32_t CUSTOMER_HASH = ConstExprHashingUtils::HashString("CUSTOMER");
 
 
         ParticipantRole GetParticipantRoleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AGENT_HASH)
           {
             return ParticipantRole::AGENT;

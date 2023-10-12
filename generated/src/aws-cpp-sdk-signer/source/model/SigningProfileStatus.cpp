@@ -20,14 +20,14 @@ namespace Aws
       namespace SigningProfileStatusMapper
       {
 
-        static const int Active_HASH = HashingUtils::HashString("Active");
-        static const int Canceled_HASH = HashingUtils::HashString("Canceled");
-        static const int Revoked_HASH = HashingUtils::HashString("Revoked");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
+        static constexpr uint32_t Canceled_HASH = ConstExprHashingUtils::HashString("Canceled");
+        static constexpr uint32_t Revoked_HASH = ConstExprHashingUtils::HashString("Revoked");
 
 
         SigningProfileStatus GetSigningProfileStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Active_HASH)
           {
             return SigningProfileStatus::Active;

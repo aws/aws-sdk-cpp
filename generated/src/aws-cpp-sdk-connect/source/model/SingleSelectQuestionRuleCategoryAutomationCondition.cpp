@@ -20,13 +20,13 @@ namespace Aws
       namespace SingleSelectQuestionRuleCategoryAutomationConditionMapper
       {
 
-        static const int PRESENT_HASH = HashingUtils::HashString("PRESENT");
-        static const int NOT_PRESENT_HASH = HashingUtils::HashString("NOT_PRESENT");
+        static constexpr uint32_t PRESENT_HASH = ConstExprHashingUtils::HashString("PRESENT");
+        static constexpr uint32_t NOT_PRESENT_HASH = ConstExprHashingUtils::HashString("NOT_PRESENT");
 
 
         SingleSelectQuestionRuleCategoryAutomationCondition GetSingleSelectQuestionRuleCategoryAutomationConditionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRESENT_HASH)
           {
             return SingleSelectQuestionRuleCategoryAutomationCondition::PRESENT;

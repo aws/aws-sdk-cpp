@@ -18,36 +18,36 @@ namespace DAX
 namespace DAXErrorMapper
 {
 
-static const int TAG_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("TagNotFoundFault");
-static const int SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("SubnetGroupAlreadyExistsFault");
-static const int INVALID_A_R_N_FAULT_HASH = HashingUtils::HashString("InvalidARNFault");
-static const int INVALID_CLUSTER_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterStateFault");
-static const int NODE_QUOTA_FOR_CLUSTER_EXCEEDED_FAULT_HASH = HashingUtils::HashString("NodeQuotaForClusterExceededFault");
-static const int CLUSTER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ClusterNotFoundFault");
-static const int SUBNET_IN_USE_HASH = HashingUtils::HashString("SubnetInUse");
-static const int PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ParameterGroupQuotaExceededFault");
-static const int CLUSTER_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterQuotaForCustomerExceededFault");
-static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
-static const int SUBNET_GROUP_IN_USE_FAULT_HASH = HashingUtils::HashString("SubnetGroupInUseFault");
-static const int SUBNET_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SubnetQuotaExceededFault");
-static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet");
-static const int SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SubnetGroupQuotaExceededFault");
-static const int NODE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("NodeNotFoundFault");
-static const int INSUFFICIENT_CLUSTER_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientClusterCapacityFault");
-static const int PARAMETER_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ParameterGroupNotFoundFault");
-static const int PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ParameterGroupAlreadyExistsFault");
-static const int SUBNET_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubnetGroupNotFoundFault");
-static const int INVALID_PARAMETER_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidParameterGroupStateFault");
-static const int INVALID_V_P_C_NETWORK_STATE_FAULT_HASH = HashingUtils::HashString("InvalidVPCNetworkStateFault");
-static const int SERVICE_LINKED_ROLE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ServiceLinkedRoleNotFoundFault");
-static const int TAG_QUOTA_PER_RESOURCE_EXCEEDED_HASH = HashingUtils::HashString("TagQuotaPerResourceExceeded");
-static const int NODE_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT_HASH = HashingUtils::HashString("NodeQuotaForCustomerExceededFault");
-static const int CLUSTER_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ClusterAlreadyExistsFault");
+static constexpr uint32_t TAG_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("TagNotFoundFault");
+static constexpr uint32_t SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("SubnetGroupAlreadyExistsFault");
+static constexpr uint32_t INVALID_A_R_N_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidARNFault");
+static constexpr uint32_t INVALID_CLUSTER_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidClusterStateFault");
+static constexpr uint32_t NODE_QUOTA_FOR_CLUSTER_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("NodeQuotaForClusterExceededFault");
+static constexpr uint32_t CLUSTER_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterNotFoundFault");
+static constexpr uint32_t SUBNET_IN_USE_HASH = ConstExprHashingUtils::HashString("SubnetInUse");
+static constexpr uint32_t PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("ParameterGroupQuotaExceededFault");
+static constexpr uint32_t CLUSTER_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterQuotaForCustomerExceededFault");
+static constexpr uint32_t SERVICE_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ServiceQuotaExceededException");
+static constexpr uint32_t SUBNET_GROUP_IN_USE_FAULT_HASH = ConstExprHashingUtils::HashString("SubnetGroupInUseFault");
+static constexpr uint32_t SUBNET_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("SubnetQuotaExceededFault");
+static constexpr uint32_t INVALID_SUBNET_HASH = ConstExprHashingUtils::HashString("InvalidSubnet");
+static constexpr uint32_t SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("SubnetGroupQuotaExceededFault");
+static constexpr uint32_t NODE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("NodeNotFoundFault");
+static constexpr uint32_t INSUFFICIENT_CLUSTER_CAPACITY_FAULT_HASH = ConstExprHashingUtils::HashString("InsufficientClusterCapacityFault");
+static constexpr uint32_t PARAMETER_GROUP_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ParameterGroupNotFoundFault");
+static constexpr uint32_t PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("ParameterGroupAlreadyExistsFault");
+static constexpr uint32_t SUBNET_GROUP_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("SubnetGroupNotFoundFault");
+static constexpr uint32_t INVALID_PARAMETER_GROUP_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidParameterGroupStateFault");
+static constexpr uint32_t INVALID_V_P_C_NETWORK_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidVPCNetworkStateFault");
+static constexpr uint32_t SERVICE_LINKED_ROLE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ServiceLinkedRoleNotFoundFault");
+static constexpr uint32_t TAG_QUOTA_PER_RESOURCE_EXCEEDED_HASH = ConstExprHashingUtils::HashString("TagQuotaPerResourceExceeded");
+static constexpr uint32_t NODE_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("NodeQuotaForCustomerExceededFault");
+static constexpr uint32_t CLUSTER_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("ClusterAlreadyExistsFault");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == TAG_NOT_FOUND_FAULT_HASH)
   {

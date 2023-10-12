@@ -20,28 +20,28 @@ namespace Aws
       namespace WorkspaceStateMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int IMPAIRED_HASH = HashingUtils::HashString("IMPAIRED");
-        static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
-        static const int REBOOTING_HASH = HashingUtils::HashString("REBOOTING");
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int REBUILDING_HASH = HashingUtils::HashString("REBUILDING");
-        static const int RESTORING_HASH = HashingUtils::HashString("RESTORING");
-        static const int MAINTENANCE_HASH = HashingUtils::HashString("MAINTENANCE");
-        static const int ADMIN_MAINTENANCE_HASH = HashingUtils::HashString("ADMIN_MAINTENANCE");
-        static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
-        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
-        static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t IMPAIRED_HASH = ConstExprHashingUtils::HashString("IMPAIRED");
+        static constexpr uint32_t UNHEALTHY_HASH = ConstExprHashingUtils::HashString("UNHEALTHY");
+        static constexpr uint32_t REBOOTING_HASH = ConstExprHashingUtils::HashString("REBOOTING");
+        static constexpr uint32_t STARTING_HASH = ConstExprHashingUtils::HashString("STARTING");
+        static constexpr uint32_t REBUILDING_HASH = ConstExprHashingUtils::HashString("REBUILDING");
+        static constexpr uint32_t RESTORING_HASH = ConstExprHashingUtils::HashString("RESTORING");
+        static constexpr uint32_t MAINTENANCE_HASH = ConstExprHashingUtils::HashString("MAINTENANCE");
+        static constexpr uint32_t ADMIN_MAINTENANCE_HASH = ConstExprHashingUtils::HashString("ADMIN_MAINTENANCE");
+        static constexpr uint32_t TERMINATING_HASH = ConstExprHashingUtils::HashString("TERMINATING");
+        static constexpr uint32_t TERMINATED_HASH = ConstExprHashingUtils::HashString("TERMINATED");
+        static constexpr uint32_t SUSPENDED_HASH = ConstExprHashingUtils::HashString("SUSPENDED");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         WorkspaceState GetWorkspaceStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return WorkspaceState::PENDING;

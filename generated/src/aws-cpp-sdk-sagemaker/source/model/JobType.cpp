@@ -20,14 +20,14 @@ namespace Aws
       namespace JobTypeMapper
       {
 
-        static const int TRAINING_HASH = HashingUtils::HashString("TRAINING");
-        static const int INFERENCE_HASH = HashingUtils::HashString("INFERENCE");
-        static const int NOTEBOOK_KERNEL_HASH = HashingUtils::HashString("NOTEBOOK_KERNEL");
+        static constexpr uint32_t TRAINING_HASH = ConstExprHashingUtils::HashString("TRAINING");
+        static constexpr uint32_t INFERENCE_HASH = ConstExprHashingUtils::HashString("INFERENCE");
+        static constexpr uint32_t NOTEBOOK_KERNEL_HASH = ConstExprHashingUtils::HashString("NOTEBOOK_KERNEL");
 
 
         JobType GetJobTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRAINING_HASH)
           {
             return JobType::TRAINING;

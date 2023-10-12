@@ -20,32 +20,32 @@ namespace Aws
       namespace TierMapper
       {
 
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int DOT_NET_CORE_HASH = HashingUtils::HashString("DOT_NET_CORE");
-        static const int DOT_NET_WORKER_HASH = HashingUtils::HashString("DOT_NET_WORKER");
-        static const int DOT_NET_WEB_TIER_HASH = HashingUtils::HashString("DOT_NET_WEB_TIER");
-        static const int DOT_NET_WEB_HASH = HashingUtils::HashString("DOT_NET_WEB");
-        static const int SQL_SERVER_HASH = HashingUtils::HashString("SQL_SERVER");
-        static const int SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP_HASH = HashingUtils::HashString("SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP");
-        static const int MYSQL_HASH = HashingUtils::HashString("MYSQL");
-        static const int POSTGRESQL_HASH = HashingUtils::HashString("POSTGRESQL");
-        static const int JAVA_JMX_HASH = HashingUtils::HashString("JAVA_JMX");
-        static const int ORACLE_HASH = HashingUtils::HashString("ORACLE");
-        static const int SAP_HANA_MULTI_NODE_HASH = HashingUtils::HashString("SAP_HANA_MULTI_NODE");
-        static const int SAP_HANA_SINGLE_NODE_HASH = HashingUtils::HashString("SAP_HANA_SINGLE_NODE");
-        static const int SAP_HANA_HIGH_AVAILABILITY_HASH = HashingUtils::HashString("SAP_HANA_HIGH_AVAILABILITY");
-        static const int SQL_SERVER_FAILOVER_CLUSTER_INSTANCE_HASH = HashingUtils::HashString("SQL_SERVER_FAILOVER_CLUSTER_INSTANCE");
-        static const int SHAREPOINT_HASH = HashingUtils::HashString("SHAREPOINT");
-        static const int ACTIVE_DIRECTORY_HASH = HashingUtils::HashString("ACTIVE_DIRECTORY");
-        static const int SAP_NETWEAVER_STANDARD_HASH = HashingUtils::HashString("SAP_NETWEAVER_STANDARD");
-        static const int SAP_NETWEAVER_DISTRIBUTED_HASH = HashingUtils::HashString("SAP_NETWEAVER_DISTRIBUTED");
-        static const int SAP_NETWEAVER_HIGH_AVAILABILITY_HASH = HashingUtils::HashString("SAP_NETWEAVER_HIGH_AVAILABILITY");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t DOT_NET_CORE_HASH = ConstExprHashingUtils::HashString("DOT_NET_CORE");
+        static constexpr uint32_t DOT_NET_WORKER_HASH = ConstExprHashingUtils::HashString("DOT_NET_WORKER");
+        static constexpr uint32_t DOT_NET_WEB_TIER_HASH = ConstExprHashingUtils::HashString("DOT_NET_WEB_TIER");
+        static constexpr uint32_t DOT_NET_WEB_HASH = ConstExprHashingUtils::HashString("DOT_NET_WEB");
+        static constexpr uint32_t SQL_SERVER_HASH = ConstExprHashingUtils::HashString("SQL_SERVER");
+        static constexpr uint32_t SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP_HASH = ConstExprHashingUtils::HashString("SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP");
+        static constexpr uint32_t MYSQL_HASH = ConstExprHashingUtils::HashString("MYSQL");
+        static constexpr uint32_t POSTGRESQL_HASH = ConstExprHashingUtils::HashString("POSTGRESQL");
+        static constexpr uint32_t JAVA_JMX_HASH = ConstExprHashingUtils::HashString("JAVA_JMX");
+        static constexpr uint32_t ORACLE_HASH = ConstExprHashingUtils::HashString("ORACLE");
+        static constexpr uint32_t SAP_HANA_MULTI_NODE_HASH = ConstExprHashingUtils::HashString("SAP_HANA_MULTI_NODE");
+        static constexpr uint32_t SAP_HANA_SINGLE_NODE_HASH = ConstExprHashingUtils::HashString("SAP_HANA_SINGLE_NODE");
+        static constexpr uint32_t SAP_HANA_HIGH_AVAILABILITY_HASH = ConstExprHashingUtils::HashString("SAP_HANA_HIGH_AVAILABILITY");
+        static constexpr uint32_t SQL_SERVER_FAILOVER_CLUSTER_INSTANCE_HASH = ConstExprHashingUtils::HashString("SQL_SERVER_FAILOVER_CLUSTER_INSTANCE");
+        static constexpr uint32_t SHAREPOINT_HASH = ConstExprHashingUtils::HashString("SHAREPOINT");
+        static constexpr uint32_t ACTIVE_DIRECTORY_HASH = ConstExprHashingUtils::HashString("ACTIVE_DIRECTORY");
+        static constexpr uint32_t SAP_NETWEAVER_STANDARD_HASH = ConstExprHashingUtils::HashString("SAP_NETWEAVER_STANDARD");
+        static constexpr uint32_t SAP_NETWEAVER_DISTRIBUTED_HASH = ConstExprHashingUtils::HashString("SAP_NETWEAVER_DISTRIBUTED");
+        static constexpr uint32_t SAP_NETWEAVER_HIGH_AVAILABILITY_HASH = ConstExprHashingUtils::HashString("SAP_NETWEAVER_HIGH_AVAILABILITY");
 
 
         Tier GetTierForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CUSTOM_HASH)
           {
             return Tier::CUSTOM;

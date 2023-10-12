@@ -18,21 +18,21 @@ namespace EC2InstanceConnect
 namespace EC2InstanceConnectErrorMapper
 {
 
-static const int INVALID_ARGS_HASH = HashingUtils::HashString("InvalidArgsException");
-static const int E_C2_INSTANCE_STATE_INVALID_HASH = HashingUtils::HashString("EC2InstanceStateInvalidException");
-static const int SERIAL_CONSOLE_SESSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SerialConsoleSessionLimitExceededException");
-static const int SERIAL_CONSOLE_SESSION_UNAVAILABLE_HASH = HashingUtils::HashString("SerialConsoleSessionUnavailableException");
-static const int SERIAL_CONSOLE_ACCESS_DISABLED_HASH = HashingUtils::HashString("SerialConsoleAccessDisabledException");
-static const int E_C2_INSTANCE_UNAVAILABLE_HASH = HashingUtils::HashString("EC2InstanceUnavailableException");
-static const int E_C2_INSTANCE_TYPE_INVALID_HASH = HashingUtils::HashString("EC2InstanceTypeInvalidException");
-static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
-static const int AUTH_HASH = HashingUtils::HashString("AuthException");
-static const int E_C2_INSTANCE_NOT_FOUND_HASH = HashingUtils::HashString("EC2InstanceNotFoundException");
+static constexpr uint32_t INVALID_ARGS_HASH = ConstExprHashingUtils::HashString("InvalidArgsException");
+static constexpr uint32_t E_C2_INSTANCE_STATE_INVALID_HASH = ConstExprHashingUtils::HashString("EC2InstanceStateInvalidException");
+static constexpr uint32_t SERIAL_CONSOLE_SESSION_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("SerialConsoleSessionLimitExceededException");
+static constexpr uint32_t SERIAL_CONSOLE_SESSION_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("SerialConsoleSessionUnavailableException");
+static constexpr uint32_t SERIAL_CONSOLE_ACCESS_DISABLED_HASH = ConstExprHashingUtils::HashString("SerialConsoleAccessDisabledException");
+static constexpr uint32_t E_C2_INSTANCE_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("EC2InstanceUnavailableException");
+static constexpr uint32_t E_C2_INSTANCE_TYPE_INVALID_HASH = ConstExprHashingUtils::HashString("EC2InstanceTypeInvalidException");
+static constexpr uint32_t SERVICE_HASH = ConstExprHashingUtils::HashString("ServiceException");
+static constexpr uint32_t AUTH_HASH = ConstExprHashingUtils::HashString("AuthException");
+static constexpr uint32_t E_C2_INSTANCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("EC2InstanceNotFoundException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INVALID_ARGS_HASH)
   {

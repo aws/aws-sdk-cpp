@@ -20,13 +20,13 @@ namespace Aws
       namespace FilterActionMapper
       {
 
-        static const int NOOP_HASH = HashingUtils::HashString("NOOP");
-        static const int ARCHIVE_HASH = HashingUtils::HashString("ARCHIVE");
+        static constexpr uint32_t NOOP_HASH = ConstExprHashingUtils::HashString("NOOP");
+        static constexpr uint32_t ARCHIVE_HASH = ConstExprHashingUtils::HashString("ARCHIVE");
 
 
         FilterAction GetFilterActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOOP_HASH)
           {
             return FilterAction::NOOP;

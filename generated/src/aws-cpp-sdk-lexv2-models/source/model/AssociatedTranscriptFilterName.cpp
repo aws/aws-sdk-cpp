@@ -20,13 +20,13 @@ namespace Aws
       namespace AssociatedTranscriptFilterNameMapper
       {
 
-        static const int IntentId_HASH = HashingUtils::HashString("IntentId");
-        static const int SlotTypeId_HASH = HashingUtils::HashString("SlotTypeId");
+        static constexpr uint32_t IntentId_HASH = ConstExprHashingUtils::HashString("IntentId");
+        static constexpr uint32_t SlotTypeId_HASH = ConstExprHashingUtils::HashString("SlotTypeId");
 
 
         AssociatedTranscriptFilterName GetAssociatedTranscriptFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IntentId_HASH)
           {
             return AssociatedTranscriptFilterName::IntentId;

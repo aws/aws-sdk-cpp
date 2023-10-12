@@ -20,14 +20,14 @@ namespace Aws
       namespace OperatorMapper
       {
 
-        static const int LE_HASH = HashingUtils::HashString("LE");
-        static const int GE_HASH = HashingUtils::HashString("GE");
-        static const int BEGINS_WITH_HASH = HashingUtils::HashString("BEGINS_WITH");
+        static constexpr uint32_t LE_HASH = ConstExprHashingUtils::HashString("LE");
+        static constexpr uint32_t GE_HASH = ConstExprHashingUtils::HashString("GE");
+        static constexpr uint32_t BEGINS_WITH_HASH = ConstExprHashingUtils::HashString("BEGINS_WITH");
 
 
         Operator GetOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LE_HASH)
           {
             return Operator::LE;

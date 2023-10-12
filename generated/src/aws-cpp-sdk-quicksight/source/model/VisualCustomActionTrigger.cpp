@@ -20,13 +20,13 @@ namespace Aws
       namespace VisualCustomActionTriggerMapper
       {
 
-        static const int DATA_POINT_CLICK_HASH = HashingUtils::HashString("DATA_POINT_CLICK");
-        static const int DATA_POINT_MENU_HASH = HashingUtils::HashString("DATA_POINT_MENU");
+        static constexpr uint32_t DATA_POINT_CLICK_HASH = ConstExprHashingUtils::HashString("DATA_POINT_CLICK");
+        static constexpr uint32_t DATA_POINT_MENU_HASH = ConstExprHashingUtils::HashString("DATA_POINT_MENU");
 
 
         VisualCustomActionTrigger GetVisualCustomActionTriggerForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DATA_POINT_CLICK_HASH)
           {
             return VisualCustomActionTrigger::DATA_POINT_CLICK;

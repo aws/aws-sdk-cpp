@@ -20,13 +20,13 @@ namespace Aws
       namespace InclusionStatusMapper
       {
 
-        static const int excludeFromAssessment_HASH = HashingUtils::HashString("excludeFromAssessment");
-        static const int includeInAssessment_HASH = HashingUtils::HashString("includeInAssessment");
+        static constexpr uint32_t excludeFromAssessment_HASH = ConstExprHashingUtils::HashString("excludeFromAssessment");
+        static constexpr uint32_t includeInAssessment_HASH = ConstExprHashingUtils::HashString("includeInAssessment");
 
 
         InclusionStatus GetInclusionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == excludeFromAssessment_HASH)
           {
             return InclusionStatus::excludeFromAssessment;

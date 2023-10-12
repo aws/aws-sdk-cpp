@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int OUTPOST_HASH = HashingUtils::HashString("OUTPOST");
-        static const int ORDER_HASH = HashingUtils::HashString("ORDER");
+        static constexpr uint32_t OUTPOST_HASH = ConstExprHashingUtils::HashString("OUTPOST");
+        static constexpr uint32_t ORDER_HASH = ConstExprHashingUtils::HashString("ORDER");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OUTPOST_HASH)
           {
             return ResourceType::OUTPOST;

@@ -20,17 +20,17 @@ namespace Aws
       namespace MultiRegionAccessPointStatusMapper
       {
 
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int INCONSISTENT_ACROSS_REGIONS_HASH = HashingUtils::HashString("INCONSISTENT_ACROSS_REGIONS");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int PARTIALLY_CREATED_HASH = HashingUtils::HashString("PARTIALLY_CREATED");
-        static const int PARTIALLY_DELETED_HASH = HashingUtils::HashString("PARTIALLY_DELETED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
+        static constexpr uint32_t INCONSISTENT_ACROSS_REGIONS_HASH = ConstExprHashingUtils::HashString("INCONSISTENT_ACROSS_REGIONS");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t PARTIALLY_CREATED_HASH = ConstExprHashingUtils::HashString("PARTIALLY_CREATED");
+        static constexpr uint32_t PARTIALLY_DELETED_HASH = ConstExprHashingUtils::HashString("PARTIALLY_DELETED");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
 
 
         MultiRegionAccessPointStatus GetMultiRegionAccessPointStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == READY_HASH)
           {
             return MultiRegionAccessPointStatus::READY;

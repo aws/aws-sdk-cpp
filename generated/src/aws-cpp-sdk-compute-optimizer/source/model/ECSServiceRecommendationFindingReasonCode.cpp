@@ -20,15 +20,15 @@ namespace Aws
       namespace ECSServiceRecommendationFindingReasonCodeMapper
       {
 
-        static const int MemoryOverprovisioned_HASH = HashingUtils::HashString("MemoryOverprovisioned");
-        static const int MemoryUnderprovisioned_HASH = HashingUtils::HashString("MemoryUnderprovisioned");
-        static const int CPUOverprovisioned_HASH = HashingUtils::HashString("CPUOverprovisioned");
-        static const int CPUUnderprovisioned_HASH = HashingUtils::HashString("CPUUnderprovisioned");
+        static constexpr uint32_t MemoryOverprovisioned_HASH = ConstExprHashingUtils::HashString("MemoryOverprovisioned");
+        static constexpr uint32_t MemoryUnderprovisioned_HASH = ConstExprHashingUtils::HashString("MemoryUnderprovisioned");
+        static constexpr uint32_t CPUOverprovisioned_HASH = ConstExprHashingUtils::HashString("CPUOverprovisioned");
+        static constexpr uint32_t CPUUnderprovisioned_HASH = ConstExprHashingUtils::HashString("CPUUnderprovisioned");
 
 
         ECSServiceRecommendationFindingReasonCode GetECSServiceRecommendationFindingReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MemoryOverprovisioned_HASH)
           {
             return ECSServiceRecommendationFindingReasonCode::MemoryOverprovisioned;

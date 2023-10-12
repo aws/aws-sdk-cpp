@@ -20,17 +20,17 @@ namespace Aws
       namespace DocumentStatusMapper
       {
 
-        static const int NOT_FOUND_HASH = HashingUtils::HashString("NOT_FOUND");
-        static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
-        static const int INDEXED_HASH = HashingUtils::HashString("INDEXED");
-        static const int UPDATED_HASH = HashingUtils::HashString("UPDATED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
+        static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NOT_FOUND");
+        static constexpr uint32_t PROCESSING_HASH = ConstExprHashingUtils::HashString("PROCESSING");
+        static constexpr uint32_t INDEXED_HASH = ConstExprHashingUtils::HashString("INDEXED");
+        static constexpr uint32_t UPDATED_HASH = ConstExprHashingUtils::HashString("UPDATED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t UPDATE_FAILED_HASH = ConstExprHashingUtils::HashString("UPDATE_FAILED");
 
 
         DocumentStatus GetDocumentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOT_FOUND_HASH)
           {
             return DocumentStatus::NOT_FOUND;

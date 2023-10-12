@@ -20,19 +20,19 @@ namespace Aws
       namespace ClusterStateChangeReasonCodeMapper
       {
 
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int VALIDATION_ERROR_HASH = HashingUtils::HashString("VALIDATION_ERROR");
-        static const int INSTANCE_FAILURE_HASH = HashingUtils::HashString("INSTANCE_FAILURE");
-        static const int INSTANCE_FLEET_TIMEOUT_HASH = HashingUtils::HashString("INSTANCE_FLEET_TIMEOUT");
-        static const int BOOTSTRAP_FAILURE_HASH = HashingUtils::HashString("BOOTSTRAP_FAILURE");
-        static const int USER_REQUEST_HASH = HashingUtils::HashString("USER_REQUEST");
-        static const int STEP_FAILURE_HASH = HashingUtils::HashString("STEP_FAILURE");
-        static const int ALL_STEPS_COMPLETED_HASH = HashingUtils::HashString("ALL_STEPS_COMPLETED");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t VALIDATION_ERROR_HASH = ConstExprHashingUtils::HashString("VALIDATION_ERROR");
+        static constexpr uint32_t INSTANCE_FAILURE_HASH = ConstExprHashingUtils::HashString("INSTANCE_FAILURE");
+        static constexpr uint32_t INSTANCE_FLEET_TIMEOUT_HASH = ConstExprHashingUtils::HashString("INSTANCE_FLEET_TIMEOUT");
+        static constexpr uint32_t BOOTSTRAP_FAILURE_HASH = ConstExprHashingUtils::HashString("BOOTSTRAP_FAILURE");
+        static constexpr uint32_t USER_REQUEST_HASH = ConstExprHashingUtils::HashString("USER_REQUEST");
+        static constexpr uint32_t STEP_FAILURE_HASH = ConstExprHashingUtils::HashString("STEP_FAILURE");
+        static constexpr uint32_t ALL_STEPS_COMPLETED_HASH = ConstExprHashingUtils::HashString("ALL_STEPS_COMPLETED");
 
 
         ClusterStateChangeReasonCode GetClusterStateChangeReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERNAL_ERROR_HASH)
           {
             return ClusterStateChangeReasonCode::INTERNAL_ERROR;

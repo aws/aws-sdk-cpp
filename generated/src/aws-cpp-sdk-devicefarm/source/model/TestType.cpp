@@ -20,32 +20,32 @@ namespace Aws
       namespace TestTypeMapper
       {
 
-        static const int BUILTIN_FUZZ_HASH = HashingUtils::HashString("BUILTIN_FUZZ");
-        static const int BUILTIN_EXPLORER_HASH = HashingUtils::HashString("BUILTIN_EXPLORER");
-        static const int WEB_PERFORMANCE_PROFILE_HASH = HashingUtils::HashString("WEB_PERFORMANCE_PROFILE");
-        static const int APPIUM_JAVA_JUNIT_HASH = HashingUtils::HashString("APPIUM_JAVA_JUNIT");
-        static const int APPIUM_JAVA_TESTNG_HASH = HashingUtils::HashString("APPIUM_JAVA_TESTNG");
-        static const int APPIUM_PYTHON_HASH = HashingUtils::HashString("APPIUM_PYTHON");
-        static const int APPIUM_NODE_HASH = HashingUtils::HashString("APPIUM_NODE");
-        static const int APPIUM_RUBY_HASH = HashingUtils::HashString("APPIUM_RUBY");
-        static const int APPIUM_WEB_JAVA_JUNIT_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_JUNIT");
-        static const int APPIUM_WEB_JAVA_TESTNG_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_TESTNG");
-        static const int APPIUM_WEB_PYTHON_HASH = HashingUtils::HashString("APPIUM_WEB_PYTHON");
-        static const int APPIUM_WEB_NODE_HASH = HashingUtils::HashString("APPIUM_WEB_NODE");
-        static const int APPIUM_WEB_RUBY_HASH = HashingUtils::HashString("APPIUM_WEB_RUBY");
-        static const int CALABASH_HASH = HashingUtils::HashString("CALABASH");
-        static const int INSTRUMENTATION_HASH = HashingUtils::HashString("INSTRUMENTATION");
-        static const int UIAUTOMATION_HASH = HashingUtils::HashString("UIAUTOMATION");
-        static const int UIAUTOMATOR_HASH = HashingUtils::HashString("UIAUTOMATOR");
-        static const int XCTEST_HASH = HashingUtils::HashString("XCTEST");
-        static const int XCTEST_UI_HASH = HashingUtils::HashString("XCTEST_UI");
-        static const int REMOTE_ACCESS_RECORD_HASH = HashingUtils::HashString("REMOTE_ACCESS_RECORD");
-        static const int REMOTE_ACCESS_REPLAY_HASH = HashingUtils::HashString("REMOTE_ACCESS_REPLAY");
+        static constexpr uint32_t BUILTIN_FUZZ_HASH = ConstExprHashingUtils::HashString("BUILTIN_FUZZ");
+        static constexpr uint32_t BUILTIN_EXPLORER_HASH = ConstExprHashingUtils::HashString("BUILTIN_EXPLORER");
+        static constexpr uint32_t WEB_PERFORMANCE_PROFILE_HASH = ConstExprHashingUtils::HashString("WEB_PERFORMANCE_PROFILE");
+        static constexpr uint32_t APPIUM_JAVA_JUNIT_HASH = ConstExprHashingUtils::HashString("APPIUM_JAVA_JUNIT");
+        static constexpr uint32_t APPIUM_JAVA_TESTNG_HASH = ConstExprHashingUtils::HashString("APPIUM_JAVA_TESTNG");
+        static constexpr uint32_t APPIUM_PYTHON_HASH = ConstExprHashingUtils::HashString("APPIUM_PYTHON");
+        static constexpr uint32_t APPIUM_NODE_HASH = ConstExprHashingUtils::HashString("APPIUM_NODE");
+        static constexpr uint32_t APPIUM_RUBY_HASH = ConstExprHashingUtils::HashString("APPIUM_RUBY");
+        static constexpr uint32_t APPIUM_WEB_JAVA_JUNIT_HASH = ConstExprHashingUtils::HashString("APPIUM_WEB_JAVA_JUNIT");
+        static constexpr uint32_t APPIUM_WEB_JAVA_TESTNG_HASH = ConstExprHashingUtils::HashString("APPIUM_WEB_JAVA_TESTNG");
+        static constexpr uint32_t APPIUM_WEB_PYTHON_HASH = ConstExprHashingUtils::HashString("APPIUM_WEB_PYTHON");
+        static constexpr uint32_t APPIUM_WEB_NODE_HASH = ConstExprHashingUtils::HashString("APPIUM_WEB_NODE");
+        static constexpr uint32_t APPIUM_WEB_RUBY_HASH = ConstExprHashingUtils::HashString("APPIUM_WEB_RUBY");
+        static constexpr uint32_t CALABASH_HASH = ConstExprHashingUtils::HashString("CALABASH");
+        static constexpr uint32_t INSTRUMENTATION_HASH = ConstExprHashingUtils::HashString("INSTRUMENTATION");
+        static constexpr uint32_t UIAUTOMATION_HASH = ConstExprHashingUtils::HashString("UIAUTOMATION");
+        static constexpr uint32_t UIAUTOMATOR_HASH = ConstExprHashingUtils::HashString("UIAUTOMATOR");
+        static constexpr uint32_t XCTEST_HASH = ConstExprHashingUtils::HashString("XCTEST");
+        static constexpr uint32_t XCTEST_UI_HASH = ConstExprHashingUtils::HashString("XCTEST_UI");
+        static constexpr uint32_t REMOTE_ACCESS_RECORD_HASH = ConstExprHashingUtils::HashString("REMOTE_ACCESS_RECORD");
+        static constexpr uint32_t REMOTE_ACCESS_REPLAY_HASH = ConstExprHashingUtils::HashString("REMOTE_ACCESS_REPLAY");
 
 
         TestType GetTestTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BUILTIN_FUZZ_HASH)
           {
             return TestType::BUILTIN_FUZZ;

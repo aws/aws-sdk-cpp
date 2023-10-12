@@ -20,15 +20,15 @@ namespace Aws
       namespace DeviceAvailabilityMapper
       {
 
-        static const int TEMPORARY_NOT_AVAILABLE_HASH = HashingUtils::HashString("TEMPORARY_NOT_AVAILABLE");
-        static const int BUSY_HASH = HashingUtils::HashString("BUSY");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int HIGHLY_AVAILABLE_HASH = HashingUtils::HashString("HIGHLY_AVAILABLE");
+        static constexpr uint32_t TEMPORARY_NOT_AVAILABLE_HASH = ConstExprHashingUtils::HashString("TEMPORARY_NOT_AVAILABLE");
+        static constexpr uint32_t BUSY_HASH = ConstExprHashingUtils::HashString("BUSY");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t HIGHLY_AVAILABLE_HASH = ConstExprHashingUtils::HashString("HIGHLY_AVAILABLE");
 
 
         DeviceAvailability GetDeviceAvailabilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TEMPORARY_NOT_AVAILABLE_HASH)
           {
             return DeviceAvailability::TEMPORARY_NOT_AVAILABLE;

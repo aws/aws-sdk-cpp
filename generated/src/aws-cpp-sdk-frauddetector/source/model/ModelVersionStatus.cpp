@@ -20,14 +20,14 @@ namespace Aws
       namespace ModelVersionStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
-        static const int TRAINING_CANCELLED_HASH = HashingUtils::HashString("TRAINING_CANCELLED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t INACTIVE_HASH = ConstExprHashingUtils::HashString("INACTIVE");
+        static constexpr uint32_t TRAINING_CANCELLED_HASH = ConstExprHashingUtils::HashString("TRAINING_CANCELLED");
 
 
         ModelVersionStatus GetModelVersionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return ModelVersionStatus::ACTIVE;

@@ -20,12 +20,12 @@ namespace Aws
       namespace AudioRecognitionStrategyMapper
       {
 
-        static const int UseSlotValuesAsCustomVocabulary_HASH = HashingUtils::HashString("UseSlotValuesAsCustomVocabulary");
+        static constexpr uint32_t UseSlotValuesAsCustomVocabulary_HASH = ConstExprHashingUtils::HashString("UseSlotValuesAsCustomVocabulary");
 
 
         AudioRecognitionStrategy GetAudioRecognitionStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UseSlotValuesAsCustomVocabulary_HASH)
           {
             return AudioRecognitionStrategy::UseSlotValuesAsCustomVocabulary;

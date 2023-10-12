@@ -20,16 +20,16 @@ namespace Aws
       namespace ReplicationModeMapper
       {
 
-        static const int PRIMARY_HASH = HashingUtils::HashString("PRIMARY");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int SYNC_HASH = HashingUtils::HashString("SYNC");
-        static const int SYNCMEM_HASH = HashingUtils::HashString("SYNCMEM");
-        static const int ASYNC_HASH = HashingUtils::HashString("ASYNC");
+        static constexpr uint32_t PRIMARY_HASH = ConstExprHashingUtils::HashString("PRIMARY");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t SYNC_HASH = ConstExprHashingUtils::HashString("SYNC");
+        static constexpr uint32_t SYNCMEM_HASH = ConstExprHashingUtils::HashString("SYNCMEM");
+        static constexpr uint32_t ASYNC_HASH = ConstExprHashingUtils::HashString("ASYNC");
 
 
         ReplicationMode GetReplicationModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRIMARY_HASH)
           {
             return ReplicationMode::PRIMARY;

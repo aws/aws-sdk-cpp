@@ -20,20 +20,20 @@ namespace Aws
       namespace ExtendedKeyUsageTypeMapper
       {
 
-        static const int SERVER_AUTH_HASH = HashingUtils::HashString("SERVER_AUTH");
-        static const int CLIENT_AUTH_HASH = HashingUtils::HashString("CLIENT_AUTH");
-        static const int CODE_SIGNING_HASH = HashingUtils::HashString("CODE_SIGNING");
-        static const int EMAIL_PROTECTION_HASH = HashingUtils::HashString("EMAIL_PROTECTION");
-        static const int TIME_STAMPING_HASH = HashingUtils::HashString("TIME_STAMPING");
-        static const int OCSP_SIGNING_HASH = HashingUtils::HashString("OCSP_SIGNING");
-        static const int SMART_CARD_LOGIN_HASH = HashingUtils::HashString("SMART_CARD_LOGIN");
-        static const int DOCUMENT_SIGNING_HASH = HashingUtils::HashString("DOCUMENT_SIGNING");
-        static const int CERTIFICATE_TRANSPARENCY_HASH = HashingUtils::HashString("CERTIFICATE_TRANSPARENCY");
+        static constexpr uint32_t SERVER_AUTH_HASH = ConstExprHashingUtils::HashString("SERVER_AUTH");
+        static constexpr uint32_t CLIENT_AUTH_HASH = ConstExprHashingUtils::HashString("CLIENT_AUTH");
+        static constexpr uint32_t CODE_SIGNING_HASH = ConstExprHashingUtils::HashString("CODE_SIGNING");
+        static constexpr uint32_t EMAIL_PROTECTION_HASH = ConstExprHashingUtils::HashString("EMAIL_PROTECTION");
+        static constexpr uint32_t TIME_STAMPING_HASH = ConstExprHashingUtils::HashString("TIME_STAMPING");
+        static constexpr uint32_t OCSP_SIGNING_HASH = ConstExprHashingUtils::HashString("OCSP_SIGNING");
+        static constexpr uint32_t SMART_CARD_LOGIN_HASH = ConstExprHashingUtils::HashString("SMART_CARD_LOGIN");
+        static constexpr uint32_t DOCUMENT_SIGNING_HASH = ConstExprHashingUtils::HashString("DOCUMENT_SIGNING");
+        static constexpr uint32_t CERTIFICATE_TRANSPARENCY_HASH = ConstExprHashingUtils::HashString("CERTIFICATE_TRANSPARENCY");
 
 
         ExtendedKeyUsageType GetExtendedKeyUsageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SERVER_AUTH_HASH)
           {
             return ExtendedKeyUsageType::SERVER_AUTH;

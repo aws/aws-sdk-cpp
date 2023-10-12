@@ -20,14 +20,14 @@ namespace Aws
       namespace ScopeNameMapper
       {
 
-        static const int Organization_HASH = HashingUtils::HashString("Organization");
-        static const int AccountId_HASH = HashingUtils::HashString("AccountId");
-        static const int ResourceArn_HASH = HashingUtils::HashString("ResourceArn");
+        static constexpr uint32_t Organization_HASH = ConstExprHashingUtils::HashString("Organization");
+        static constexpr uint32_t AccountId_HASH = ConstExprHashingUtils::HashString("AccountId");
+        static constexpr uint32_t ResourceArn_HASH = ConstExprHashingUtils::HashString("ResourceArn");
 
 
         ScopeName GetScopeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Organization_HASH)
           {
             return ScopeName::Organization;

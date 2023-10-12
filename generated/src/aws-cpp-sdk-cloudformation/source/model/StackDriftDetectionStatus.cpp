@@ -20,14 +20,14 @@ namespace Aws
       namespace StackDriftDetectionStatusMapper
       {
 
-        static const int DETECTION_IN_PROGRESS_HASH = HashingUtils::HashString("DETECTION_IN_PROGRESS");
-        static const int DETECTION_FAILED_HASH = HashingUtils::HashString("DETECTION_FAILED");
-        static const int DETECTION_COMPLETE_HASH = HashingUtils::HashString("DETECTION_COMPLETE");
+        static constexpr uint32_t DETECTION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("DETECTION_IN_PROGRESS");
+        static constexpr uint32_t DETECTION_FAILED_HASH = ConstExprHashingUtils::HashString("DETECTION_FAILED");
+        static constexpr uint32_t DETECTION_COMPLETE_HASH = ConstExprHashingUtils::HashString("DETECTION_COMPLETE");
 
 
         StackDriftDetectionStatus GetStackDriftDetectionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DETECTION_IN_PROGRESS_HASH)
           {
             return StackDriftDetectionStatus::DETECTION_IN_PROGRESS;

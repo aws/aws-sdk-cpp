@@ -20,13 +20,13 @@ namespace Aws
       namespace TargetGroupIpAddressTypeEnumMapper
       {
 
-        static const int ipv4_HASH = HashingUtils::HashString("ipv4");
-        static const int ipv6_HASH = HashingUtils::HashString("ipv6");
+        static constexpr uint32_t ipv4_HASH = ConstExprHashingUtils::HashString("ipv4");
+        static constexpr uint32_t ipv6_HASH = ConstExprHashingUtils::HashString("ipv6");
 
 
         TargetGroupIpAddressTypeEnum GetTargetGroupIpAddressTypeEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ipv4_HASH)
           {
             return TargetGroupIpAddressTypeEnum::ipv4;

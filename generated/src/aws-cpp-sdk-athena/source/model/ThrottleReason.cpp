@@ -20,12 +20,12 @@ namespace Aws
       namespace ThrottleReasonMapper
       {
 
-        static const int CONCURRENT_QUERY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CONCURRENT_QUERY_LIMIT_EXCEEDED");
+        static constexpr uint32_t CONCURRENT_QUERY_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("CONCURRENT_QUERY_LIMIT_EXCEEDED");
 
 
         ThrottleReason GetThrottleReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONCURRENT_QUERY_LIMIT_EXCEEDED_HASH)
           {
             return ThrottleReason::CONCURRENT_QUERY_LIMIT_EXCEEDED;

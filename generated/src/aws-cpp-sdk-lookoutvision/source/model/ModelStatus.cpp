@@ -20,20 +20,20 @@ namespace Aws
       namespace ModelStatusMapper
       {
 
-        static const int TRAINING_HASH = HashingUtils::HashString("TRAINING");
-        static const int TRAINED_HASH = HashingUtils::HashString("TRAINED");
-        static const int TRAINING_FAILED_HASH = HashingUtils::HashString("TRAINING_FAILED");
-        static const int STARTING_HOSTING_HASH = HashingUtils::HashString("STARTING_HOSTING");
-        static const int HOSTED_HASH = HashingUtils::HashString("HOSTED");
-        static const int HOSTING_FAILED_HASH = HashingUtils::HashString("HOSTING_FAILED");
-        static const int STOPPING_HOSTING_HASH = HashingUtils::HashString("STOPPING_HOSTING");
-        static const int SYSTEM_UPDATING_HASH = HashingUtils::HashString("SYSTEM_UPDATING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static constexpr uint32_t TRAINING_HASH = ConstExprHashingUtils::HashString("TRAINING");
+        static constexpr uint32_t TRAINED_HASH = ConstExprHashingUtils::HashString("TRAINED");
+        static constexpr uint32_t TRAINING_FAILED_HASH = ConstExprHashingUtils::HashString("TRAINING_FAILED");
+        static constexpr uint32_t STARTING_HOSTING_HASH = ConstExprHashingUtils::HashString("STARTING_HOSTING");
+        static constexpr uint32_t HOSTED_HASH = ConstExprHashingUtils::HashString("HOSTED");
+        static constexpr uint32_t HOSTING_FAILED_HASH = ConstExprHashingUtils::HashString("HOSTING_FAILED");
+        static constexpr uint32_t STOPPING_HOSTING_HASH = ConstExprHashingUtils::HashString("STOPPING_HOSTING");
+        static constexpr uint32_t SYSTEM_UPDATING_HASH = ConstExprHashingUtils::HashString("SYSTEM_UPDATING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
 
 
         ModelStatus GetModelStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRAINING_HASH)
           {
             return ModelStatus::TRAINING;

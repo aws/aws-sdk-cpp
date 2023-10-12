@@ -20,13 +20,13 @@ namespace Aws
       namespace ComplianceStatusMapper
       {
 
-        static const int COMPLIANT_HASH = HashingUtils::HashString("COMPLIANT");
-        static const int NON_COMPLIANT_HASH = HashingUtils::HashString("NON_COMPLIANT");
+        static constexpr uint32_t COMPLIANT_HASH = ConstExprHashingUtils::HashString("COMPLIANT");
+        static constexpr uint32_t NON_COMPLIANT_HASH = ConstExprHashingUtils::HashString("NON_COMPLIANT");
 
 
         ComplianceStatus GetComplianceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPLIANT_HASH)
           {
             return ComplianceStatus::COMPLIANT;

@@ -20,13 +20,13 @@ namespace Aws
       namespace CapabilityHealthMapper
       {
 
-        static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
-        static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
+        static constexpr uint32_t UNHEALTHY_HASH = ConstExprHashingUtils::HashString("UNHEALTHY");
+        static constexpr uint32_t HEALTHY_HASH = ConstExprHashingUtils::HashString("HEALTHY");
 
 
         CapabilityHealth GetCapabilityHealthForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNHEALTHY_HASH)
           {
             return CapabilityHealth::UNHEALTHY;

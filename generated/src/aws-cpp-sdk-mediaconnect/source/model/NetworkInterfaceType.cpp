@@ -20,13 +20,13 @@ namespace Aws
       namespace NetworkInterfaceTypeMapper
       {
 
-        static const int ena_HASH = HashingUtils::HashString("ena");
-        static const int efa_HASH = HashingUtils::HashString("efa");
+        static constexpr uint32_t ena_HASH = ConstExprHashingUtils::HashString("ena");
+        static constexpr uint32_t efa_HASH = ConstExprHashingUtils::HashString("efa");
 
 
         NetworkInterfaceType GetNetworkInterfaceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ena_HASH)
           {
             return NetworkInterfaceType::ena;

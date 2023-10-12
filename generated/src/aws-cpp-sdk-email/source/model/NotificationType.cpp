@@ -20,14 +20,14 @@ namespace Aws
       namespace NotificationTypeMapper
       {
 
-        static const int Bounce_HASH = HashingUtils::HashString("Bounce");
-        static const int Complaint_HASH = HashingUtils::HashString("Complaint");
-        static const int Delivery_HASH = HashingUtils::HashString("Delivery");
+        static constexpr uint32_t Bounce_HASH = ConstExprHashingUtils::HashString("Bounce");
+        static constexpr uint32_t Complaint_HASH = ConstExprHashingUtils::HashString("Complaint");
+        static constexpr uint32_t Delivery_HASH = ConstExprHashingUtils::HashString("Delivery");
 
 
         NotificationType GetNotificationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Bounce_HASH)
           {
             return NotificationType::Bounce;

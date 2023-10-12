@@ -20,13 +20,13 @@ namespace Aws
       namespace OriginTypeValueMapper
       {
 
-        static const int SOURCE_HASH = HashingUtils::HashString("SOURCE");
-        static const int TARGET_HASH = HashingUtils::HashString("TARGET");
+        static constexpr uint32_t SOURCE_HASH = ConstExprHashingUtils::HashString("SOURCE");
+        static constexpr uint32_t TARGET_HASH = ConstExprHashingUtils::HashString("TARGET");
 
 
         OriginTypeValue GetOriginTypeValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SOURCE_HASH)
           {
             return OriginTypeValue::SOURCE;

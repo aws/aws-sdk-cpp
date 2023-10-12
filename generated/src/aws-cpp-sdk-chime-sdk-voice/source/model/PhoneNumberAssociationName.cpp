@@ -20,14 +20,14 @@ namespace Aws
       namespace PhoneNumberAssociationNameMapper
       {
 
-        static const int VoiceConnectorId_HASH = HashingUtils::HashString("VoiceConnectorId");
-        static const int VoiceConnectorGroupId_HASH = HashingUtils::HashString("VoiceConnectorGroupId");
-        static const int SipRuleId_HASH = HashingUtils::HashString("SipRuleId");
+        static constexpr uint32_t VoiceConnectorId_HASH = ConstExprHashingUtils::HashString("VoiceConnectorId");
+        static constexpr uint32_t VoiceConnectorGroupId_HASH = ConstExprHashingUtils::HashString("VoiceConnectorGroupId");
+        static constexpr uint32_t SipRuleId_HASH = ConstExprHashingUtils::HashString("SipRuleId");
 
 
         PhoneNumberAssociationName GetPhoneNumberAssociationNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VoiceConnectorId_HASH)
           {
             return PhoneNumberAssociationName::VoiceConnectorId;

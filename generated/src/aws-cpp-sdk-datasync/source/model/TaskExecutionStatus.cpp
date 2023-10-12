@@ -20,18 +20,18 @@ namespace Aws
       namespace TaskExecutionStatusMapper
       {
 
-        static const int QUEUED_HASH = HashingUtils::HashString("QUEUED");
-        static const int LAUNCHING_HASH = HashingUtils::HashString("LAUNCHING");
-        static const int PREPARING_HASH = HashingUtils::HashString("PREPARING");
-        static const int TRANSFERRING_HASH = HashingUtils::HashString("TRANSFERRING");
-        static const int VERIFYING_HASH = HashingUtils::HashString("VERIFYING");
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t QUEUED_HASH = ConstExprHashingUtils::HashString("QUEUED");
+        static constexpr uint32_t LAUNCHING_HASH = ConstExprHashingUtils::HashString("LAUNCHING");
+        static constexpr uint32_t PREPARING_HASH = ConstExprHashingUtils::HashString("PREPARING");
+        static constexpr uint32_t TRANSFERRING_HASH = ConstExprHashingUtils::HashString("TRANSFERRING");
+        static constexpr uint32_t VERIFYING_HASH = ConstExprHashingUtils::HashString("VERIFYING");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         TaskExecutionStatus GetTaskExecutionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUEUED_HASH)
           {
             return TaskExecutionStatus::QUEUED;

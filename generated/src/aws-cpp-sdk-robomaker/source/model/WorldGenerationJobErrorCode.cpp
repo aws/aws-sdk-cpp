@@ -20,17 +20,17 @@ namespace Aws
       namespace WorldGenerationJobErrorCodeMapper
       {
 
-        static const int InternalServiceError_HASH = HashingUtils::HashString("InternalServiceError");
-        static const int LimitExceeded_HASH = HashingUtils::HashString("LimitExceeded");
-        static const int ResourceNotFound_HASH = HashingUtils::HashString("ResourceNotFound");
-        static const int RequestThrottled_HASH = HashingUtils::HashString("RequestThrottled");
-        static const int InvalidInput_HASH = HashingUtils::HashString("InvalidInput");
-        static const int AllWorldGenerationFailed_HASH = HashingUtils::HashString("AllWorldGenerationFailed");
+        static constexpr uint32_t InternalServiceError_HASH = ConstExprHashingUtils::HashString("InternalServiceError");
+        static constexpr uint32_t LimitExceeded_HASH = ConstExprHashingUtils::HashString("LimitExceeded");
+        static constexpr uint32_t ResourceNotFound_HASH = ConstExprHashingUtils::HashString("ResourceNotFound");
+        static constexpr uint32_t RequestThrottled_HASH = ConstExprHashingUtils::HashString("RequestThrottled");
+        static constexpr uint32_t InvalidInput_HASH = ConstExprHashingUtils::HashString("InvalidInput");
+        static constexpr uint32_t AllWorldGenerationFailed_HASH = ConstExprHashingUtils::HashString("AllWorldGenerationFailed");
 
 
         WorldGenerationJobErrorCode GetWorldGenerationJobErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InternalServiceError_HASH)
           {
             return WorldGenerationJobErrorCode::InternalServiceError;

@@ -20,14 +20,14 @@ namespace Aws
       namespace FrequencyUnitsMapper
       {
 
-        static const int GHz_HASH = HashingUtils::HashString("GHz");
-        static const int MHz_HASH = HashingUtils::HashString("MHz");
-        static const int kHz_HASH = HashingUtils::HashString("kHz");
+        static constexpr uint32_t GHz_HASH = ConstExprHashingUtils::HashString("GHz");
+        static constexpr uint32_t MHz_HASH = ConstExprHashingUtils::HashString("MHz");
+        static constexpr uint32_t kHz_HASH = ConstExprHashingUtils::HashString("kHz");
 
 
         FrequencyUnits GetFrequencyUnitsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GHz_HASH)
           {
             return FrequencyUnits::GHz;

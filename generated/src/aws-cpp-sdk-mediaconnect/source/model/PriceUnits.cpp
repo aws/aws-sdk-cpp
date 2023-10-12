@@ -20,12 +20,12 @@ namespace Aws
       namespace PriceUnitsMapper
       {
 
-        static const int HOURLY_HASH = HashingUtils::HashString("HOURLY");
+        static constexpr uint32_t HOURLY_HASH = ConstExprHashingUtils::HashString("HOURLY");
 
 
         PriceUnits GetPriceUnitsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HOURLY_HASH)
           {
             return PriceUnits::HOURLY;

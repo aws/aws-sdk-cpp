@@ -20,18 +20,18 @@ namespace Aws
       namespace MinimumProtocolVersionMapper
       {
 
-        static const int SSLv3_HASH = HashingUtils::HashString("SSLv3");
-        static const int TLSv1_HASH = HashingUtils::HashString("TLSv1");
-        static const int TLSv1_2016_HASH = HashingUtils::HashString("TLSv1_2016");
-        static const int TLSv1_1_2016_HASH = HashingUtils::HashString("TLSv1.1_2016");
-        static const int TLSv1_2_2018_HASH = HashingUtils::HashString("TLSv1.2_2018");
-        static const int TLSv1_2_2019_HASH = HashingUtils::HashString("TLSv1.2_2019");
-        static const int TLSv1_2_2021_HASH = HashingUtils::HashString("TLSv1.2_2021");
+        static constexpr uint32_t SSLv3_HASH = ConstExprHashingUtils::HashString("SSLv3");
+        static constexpr uint32_t TLSv1_HASH = ConstExprHashingUtils::HashString("TLSv1");
+        static constexpr uint32_t TLSv1_2016_HASH = ConstExprHashingUtils::HashString("TLSv1_2016");
+        static constexpr uint32_t TLSv1_1_2016_HASH = ConstExprHashingUtils::HashString("TLSv1.1_2016");
+        static constexpr uint32_t TLSv1_2_2018_HASH = ConstExprHashingUtils::HashString("TLSv1.2_2018");
+        static constexpr uint32_t TLSv1_2_2019_HASH = ConstExprHashingUtils::HashString("TLSv1.2_2019");
+        static constexpr uint32_t TLSv1_2_2021_HASH = ConstExprHashingUtils::HashString("TLSv1.2_2021");
 
 
         MinimumProtocolVersion GetMinimumProtocolVersionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SSLv3_HASH)
           {
             return MinimumProtocolVersion::SSLv3;

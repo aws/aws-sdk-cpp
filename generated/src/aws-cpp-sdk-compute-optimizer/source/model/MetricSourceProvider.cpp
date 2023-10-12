@@ -20,12 +20,12 @@ namespace Aws
       namespace MetricSourceProviderMapper
       {
 
-        static const int CloudWatchApplicationInsights_HASH = HashingUtils::HashString("CloudWatchApplicationInsights");
+        static constexpr uint32_t CloudWatchApplicationInsights_HASH = ConstExprHashingUtils::HashString("CloudWatchApplicationInsights");
 
 
         MetricSourceProvider GetMetricSourceProviderForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CloudWatchApplicationInsights_HASH)
           {
             return MetricSourceProvider::CloudWatchApplicationInsights;

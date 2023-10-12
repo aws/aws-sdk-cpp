@@ -20,16 +20,16 @@ namespace Aws
       namespace ServerOsTypeMapper
       {
 
-        static const int WindowsServer_HASH = HashingUtils::HashString("WindowsServer");
-        static const int AmazonLinux_HASH = HashingUtils::HashString("AmazonLinux");
-        static const int EndOfSupportWindowsServer_HASH = HashingUtils::HashString("EndOfSupportWindowsServer");
-        static const int Redhat_HASH = HashingUtils::HashString("Redhat");
-        static const int Other_HASH = HashingUtils::HashString("Other");
+        static constexpr uint32_t WindowsServer_HASH = ConstExprHashingUtils::HashString("WindowsServer");
+        static constexpr uint32_t AmazonLinux_HASH = ConstExprHashingUtils::HashString("AmazonLinux");
+        static constexpr uint32_t EndOfSupportWindowsServer_HASH = ConstExprHashingUtils::HashString("EndOfSupportWindowsServer");
+        static constexpr uint32_t Redhat_HASH = ConstExprHashingUtils::HashString("Redhat");
+        static constexpr uint32_t Other_HASH = ConstExprHashingUtils::HashString("Other");
 
 
         ServerOsType GetServerOsTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WindowsServer_HASH)
           {
             return ServerOsType::WindowsServer;

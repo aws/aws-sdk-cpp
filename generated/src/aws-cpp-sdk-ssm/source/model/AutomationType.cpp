@@ -20,13 +20,13 @@ namespace Aws
       namespace AutomationTypeMapper
       {
 
-        static const int CrossAccount_HASH = HashingUtils::HashString("CrossAccount");
-        static const int Local_HASH = HashingUtils::HashString("Local");
+        static constexpr uint32_t CrossAccount_HASH = ConstExprHashingUtils::HashString("CrossAccount");
+        static constexpr uint32_t Local_HASH = ConstExprHashingUtils::HashString("Local");
 
 
         AutomationType GetAutomationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CrossAccount_HASH)
           {
             return AutomationType::CrossAccount;

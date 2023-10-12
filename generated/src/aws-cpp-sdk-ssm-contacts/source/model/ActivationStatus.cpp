@@ -20,13 +20,13 @@ namespace Aws
       namespace ActivationStatusMapper
       {
 
-        static const int ACTIVATED_HASH = HashingUtils::HashString("ACTIVATED");
-        static const int NOT_ACTIVATED_HASH = HashingUtils::HashString("NOT_ACTIVATED");
+        static constexpr uint32_t ACTIVATED_HASH = ConstExprHashingUtils::HashString("ACTIVATED");
+        static constexpr uint32_t NOT_ACTIVATED_HASH = ConstExprHashingUtils::HashString("NOT_ACTIVATED");
 
 
         ActivationStatus GetActivationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVATED_HASH)
           {
             return ActivationStatus::ACTIVATED;

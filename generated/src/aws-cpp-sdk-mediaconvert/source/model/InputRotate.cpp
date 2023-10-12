@@ -20,16 +20,16 @@ namespace Aws
       namespace InputRotateMapper
       {
 
-        static const int DEGREE_0_HASH = HashingUtils::HashString("DEGREE_0");
-        static const int DEGREES_90_HASH = HashingUtils::HashString("DEGREES_90");
-        static const int DEGREES_180_HASH = HashingUtils::HashString("DEGREES_180");
-        static const int DEGREES_270_HASH = HashingUtils::HashString("DEGREES_270");
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
+        static constexpr uint32_t DEGREE_0_HASH = ConstExprHashingUtils::HashString("DEGREE_0");
+        static constexpr uint32_t DEGREES_90_HASH = ConstExprHashingUtils::HashString("DEGREES_90");
+        static constexpr uint32_t DEGREES_180_HASH = ConstExprHashingUtils::HashString("DEGREES_180");
+        static constexpr uint32_t DEGREES_270_HASH = ConstExprHashingUtils::HashString("DEGREES_270");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
 
 
         InputRotate GetInputRotateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEGREE_0_HASH)
           {
             return InputRotate::DEGREE_0;

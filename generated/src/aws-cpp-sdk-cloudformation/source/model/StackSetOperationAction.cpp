@@ -20,15 +20,15 @@ namespace Aws
       namespace StackSetOperationActionMapper
       {
 
-        static const int CREATE_HASH = HashingUtils::HashString("CREATE");
-        static const int UPDATE_HASH = HashingUtils::HashString("UPDATE");
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
-        static const int DETECT_DRIFT_HASH = HashingUtils::HashString("DETECT_DRIFT");
+        static constexpr uint32_t CREATE_HASH = ConstExprHashingUtils::HashString("CREATE");
+        static constexpr uint32_t UPDATE_HASH = ConstExprHashingUtils::HashString("UPDATE");
+        static constexpr uint32_t DELETE__HASH = ConstExprHashingUtils::HashString("DELETE");
+        static constexpr uint32_t DETECT_DRIFT_HASH = ConstExprHashingUtils::HashString("DETECT_DRIFT");
 
 
         StackSetOperationAction GetStackSetOperationActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_HASH)
           {
             return StackSetOperationAction::CREATE;

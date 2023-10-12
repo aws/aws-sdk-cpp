@@ -20,14 +20,14 @@ namespace Aws
       namespace PostLaunchActionsDeploymentTypeMapper
       {
 
-        static const int TEST_AND_CUTOVER_HASH = HashingUtils::HashString("TEST_AND_CUTOVER");
-        static const int CUTOVER_ONLY_HASH = HashingUtils::HashString("CUTOVER_ONLY");
-        static const int TEST_ONLY_HASH = HashingUtils::HashString("TEST_ONLY");
+        static constexpr uint32_t TEST_AND_CUTOVER_HASH = ConstExprHashingUtils::HashString("TEST_AND_CUTOVER");
+        static constexpr uint32_t CUTOVER_ONLY_HASH = ConstExprHashingUtils::HashString("CUTOVER_ONLY");
+        static constexpr uint32_t TEST_ONLY_HASH = ConstExprHashingUtils::HashString("TEST_ONLY");
 
 
         PostLaunchActionsDeploymentType GetPostLaunchActionsDeploymentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TEST_AND_CUTOVER_HASH)
           {
             return PostLaunchActionsDeploymentType::TEST_AND_CUTOVER;

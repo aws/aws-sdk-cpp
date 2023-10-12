@@ -20,13 +20,13 @@ namespace Aws
       namespace ApplicationMapper
       {
 
-        static const int Microsoft_Office_2016_HASH = HashingUtils::HashString("Microsoft_Office_2016");
-        static const int Microsoft_Office_2019_HASH = HashingUtils::HashString("Microsoft_Office_2019");
+        static constexpr uint32_t Microsoft_Office_2016_HASH = ConstExprHashingUtils::HashString("Microsoft_Office_2016");
+        static constexpr uint32_t Microsoft_Office_2019_HASH = ConstExprHashingUtils::HashString("Microsoft_Office_2019");
 
 
         Application GetApplicationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Microsoft_Office_2016_HASH)
           {
             return Application::Microsoft_Office_2016;

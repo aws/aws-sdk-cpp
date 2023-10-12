@@ -20,16 +20,16 @@ namespace Aws
       namespace NamedFilterTypeMapper
       {
 
-        static const int CATEGORY_FILTER_HASH = HashingUtils::HashString("CATEGORY_FILTER");
-        static const int NUMERIC_EQUALITY_FILTER_HASH = HashingUtils::HashString("NUMERIC_EQUALITY_FILTER");
-        static const int NUMERIC_RANGE_FILTER_HASH = HashingUtils::HashString("NUMERIC_RANGE_FILTER");
-        static const int DATE_RANGE_FILTER_HASH = HashingUtils::HashString("DATE_RANGE_FILTER");
-        static const int RELATIVE_DATE_FILTER_HASH = HashingUtils::HashString("RELATIVE_DATE_FILTER");
+        static constexpr uint32_t CATEGORY_FILTER_HASH = ConstExprHashingUtils::HashString("CATEGORY_FILTER");
+        static constexpr uint32_t NUMERIC_EQUALITY_FILTER_HASH = ConstExprHashingUtils::HashString("NUMERIC_EQUALITY_FILTER");
+        static constexpr uint32_t NUMERIC_RANGE_FILTER_HASH = ConstExprHashingUtils::HashString("NUMERIC_RANGE_FILTER");
+        static constexpr uint32_t DATE_RANGE_FILTER_HASH = ConstExprHashingUtils::HashString("DATE_RANGE_FILTER");
+        static constexpr uint32_t RELATIVE_DATE_FILTER_HASH = ConstExprHashingUtils::HashString("RELATIVE_DATE_FILTER");
 
 
         NamedFilterType GetNamedFilterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CATEGORY_FILTER_HASH)
           {
             return NamedFilterType::CATEGORY_FILTER;

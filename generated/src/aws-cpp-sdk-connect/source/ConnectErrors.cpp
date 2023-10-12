@@ -47,31 +47,31 @@ template<> AWS_CONNECT_API ResourceInUseException ConnectError::GetModeledError(
 namespace ConnectErrorMapper
 {
 
-static const int IDEMPOTENCY_HASH = HashingUtils::HashString("IdempotencyException");
-static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
-static const int MAXIMUM_RESULT_RETURNED_HASH = HashingUtils::HashString("MaximumResultReturnedException");
-static const int PROPERTY_VALIDATION_HASH = HashingUtils::HashString("PropertyValidationException");
-static const int INVALID_CONTACT_FLOW_HASH = HashingUtils::HashString("InvalidContactFlowException");
-static const int USER_NOT_FOUND_HASH = HashingUtils::HashString("UserNotFoundException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int DUPLICATE_RESOURCE_HASH = HashingUtils::HashString("DuplicateResourceException");
-static const int DESTINATION_NOT_ALLOWED_HASH = HashingUtils::HashString("DestinationNotAllowedException");
-static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
-static const int CONTACT_FLOW_NOT_PUBLISHED_HASH = HashingUtils::HashString("ContactFlowNotPublishedException");
-static const int INVALID_CONTACT_FLOW_MODULE_HASH = HashingUtils::HashString("InvalidContactFlowModuleException");
-static const int OUTBOUND_CONTACT_NOT_PERMITTED_HASH = HashingUtils::HashString("OutboundContactNotPermittedException");
-static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
-static const int CONTACT_NOT_FOUND_HASH = HashingUtils::HashString("ContactNotFoundException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t IDEMPOTENCY_HASH = ConstExprHashingUtils::HashString("IdempotencyException");
+static constexpr uint32_t RESOURCE_NOT_READY_HASH = ConstExprHashingUtils::HashString("ResourceNotReadyException");
+static constexpr uint32_t MAXIMUM_RESULT_RETURNED_HASH = ConstExprHashingUtils::HashString("MaximumResultReturnedException");
+static constexpr uint32_t PROPERTY_VALIDATION_HASH = ConstExprHashingUtils::HashString("PropertyValidationException");
+static constexpr uint32_t INVALID_CONTACT_FLOW_HASH = ConstExprHashingUtils::HashString("InvalidContactFlowException");
+static constexpr uint32_t USER_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("UserNotFoundException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t DUPLICATE_RESOURCE_HASH = ConstExprHashingUtils::HashString("DuplicateResourceException");
+static constexpr uint32_t DESTINATION_NOT_ALLOWED_HASH = ConstExprHashingUtils::HashString("DestinationNotAllowedException");
+static constexpr uint32_t INTERNAL_SERVICE_HASH = ConstExprHashingUtils::HashString("InternalServiceException");
+static constexpr uint32_t CONTACT_FLOW_NOT_PUBLISHED_HASH = ConstExprHashingUtils::HashString("ContactFlowNotPublishedException");
+static constexpr uint32_t INVALID_CONTACT_FLOW_MODULE_HASH = ConstExprHashingUtils::HashString("InvalidContactFlowModuleException");
+static constexpr uint32_t OUTBOUND_CONTACT_NOT_PERMITTED_HASH = ConstExprHashingUtils::HashString("OutboundContactNotPermittedException");
+static constexpr uint32_t SERVICE_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ServiceQuotaExceededException");
+static constexpr uint32_t CONTACT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ContactNotFoundException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t RESOURCE_CONFLICT_HASH = ConstExprHashingUtils::HashString("ResourceConflictException");
+static constexpr uint32_t TOO_MANY_REQUESTS_HASH = ConstExprHashingUtils::HashString("TooManyRequestsException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == IDEMPOTENCY_HASH)
   {

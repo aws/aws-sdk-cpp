@@ -20,19 +20,19 @@ namespace Aws
       namespace MetricsNameMapper
       {
 
-        static const int IncomingBytes_HASH = HashingUtils::HashString("IncomingBytes");
-        static const int IncomingRecords_HASH = HashingUtils::HashString("IncomingRecords");
-        static const int OutgoingBytes_HASH = HashingUtils::HashString("OutgoingBytes");
-        static const int OutgoingRecords_HASH = HashingUtils::HashString("OutgoingRecords");
-        static const int WriteProvisionedThroughputExceeded_HASH = HashingUtils::HashString("WriteProvisionedThroughputExceeded");
-        static const int ReadProvisionedThroughputExceeded_HASH = HashingUtils::HashString("ReadProvisionedThroughputExceeded");
-        static const int IteratorAgeMilliseconds_HASH = HashingUtils::HashString("IteratorAgeMilliseconds");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t IncomingBytes_HASH = ConstExprHashingUtils::HashString("IncomingBytes");
+        static constexpr uint32_t IncomingRecords_HASH = ConstExprHashingUtils::HashString("IncomingRecords");
+        static constexpr uint32_t OutgoingBytes_HASH = ConstExprHashingUtils::HashString("OutgoingBytes");
+        static constexpr uint32_t OutgoingRecords_HASH = ConstExprHashingUtils::HashString("OutgoingRecords");
+        static constexpr uint32_t WriteProvisionedThroughputExceeded_HASH = ConstExprHashingUtils::HashString("WriteProvisionedThroughputExceeded");
+        static constexpr uint32_t ReadProvisionedThroughputExceeded_HASH = ConstExprHashingUtils::HashString("ReadProvisionedThroughputExceeded");
+        static constexpr uint32_t IteratorAgeMilliseconds_HASH = ConstExprHashingUtils::HashString("IteratorAgeMilliseconds");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         MetricsName GetMetricsNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IncomingBytes_HASH)
           {
             return MetricsName::IncomingBytes;

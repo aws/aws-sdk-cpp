@@ -20,16 +20,16 @@ namespace Aws
       namespace ReturnValueMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int ALL_OLD_HASH = HashingUtils::HashString("ALL_OLD");
-        static const int UPDATED_OLD_HASH = HashingUtils::HashString("UPDATED_OLD");
-        static const int ALL_NEW_HASH = HashingUtils::HashString("ALL_NEW");
-        static const int UPDATED_NEW_HASH = HashingUtils::HashString("UPDATED_NEW");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t ALL_OLD_HASH = ConstExprHashingUtils::HashString("ALL_OLD");
+        static constexpr uint32_t UPDATED_OLD_HASH = ConstExprHashingUtils::HashString("UPDATED_OLD");
+        static constexpr uint32_t ALL_NEW_HASH = ConstExprHashingUtils::HashString("ALL_NEW");
+        static constexpr uint32_t UPDATED_NEW_HASH = ConstExprHashingUtils::HashString("UPDATED_NEW");
 
 
         ReturnValue GetReturnValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return ReturnValue::NONE;

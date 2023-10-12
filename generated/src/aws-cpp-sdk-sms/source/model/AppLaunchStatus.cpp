@@ -20,26 +20,26 @@ namespace Aws
       namespace AppLaunchStatusMapper
       {
 
-        static const int READY_FOR_CONFIGURATION_HASH = HashingUtils::HashString("READY_FOR_CONFIGURATION");
-        static const int CONFIGURATION_IN_PROGRESS_HASH = HashingUtils::HashString("CONFIGURATION_IN_PROGRESS");
-        static const int CONFIGURATION_INVALID_HASH = HashingUtils::HashString("CONFIGURATION_INVALID");
-        static const int READY_FOR_LAUNCH_HASH = HashingUtils::HashString("READY_FOR_LAUNCH");
-        static const int VALIDATION_IN_PROGRESS_HASH = HashingUtils::HashString("VALIDATION_IN_PROGRESS");
-        static const int LAUNCH_PENDING_HASH = HashingUtils::HashString("LAUNCH_PENDING");
-        static const int LAUNCH_IN_PROGRESS_HASH = HashingUtils::HashString("LAUNCH_IN_PROGRESS");
-        static const int LAUNCHED_HASH = HashingUtils::HashString("LAUNCHED");
-        static const int PARTIALLY_LAUNCHED_HASH = HashingUtils::HashString("PARTIALLY_LAUNCHED");
-        static const int DELTA_LAUNCH_IN_PROGRESS_HASH = HashingUtils::HashString("DELTA_LAUNCH_IN_PROGRESS");
-        static const int DELTA_LAUNCH_FAILED_HASH = HashingUtils::HashString("DELTA_LAUNCH_FAILED");
-        static const int LAUNCH_FAILED_HASH = HashingUtils::HashString("LAUNCH_FAILED");
-        static const int TERMINATE_IN_PROGRESS_HASH = HashingUtils::HashString("TERMINATE_IN_PROGRESS");
-        static const int TERMINATE_FAILED_HASH = HashingUtils::HashString("TERMINATE_FAILED");
-        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
+        static constexpr uint32_t READY_FOR_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("READY_FOR_CONFIGURATION");
+        static constexpr uint32_t CONFIGURATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("CONFIGURATION_IN_PROGRESS");
+        static constexpr uint32_t CONFIGURATION_INVALID_HASH = ConstExprHashingUtils::HashString("CONFIGURATION_INVALID");
+        static constexpr uint32_t READY_FOR_LAUNCH_HASH = ConstExprHashingUtils::HashString("READY_FOR_LAUNCH");
+        static constexpr uint32_t VALIDATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("VALIDATION_IN_PROGRESS");
+        static constexpr uint32_t LAUNCH_PENDING_HASH = ConstExprHashingUtils::HashString("LAUNCH_PENDING");
+        static constexpr uint32_t LAUNCH_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("LAUNCH_IN_PROGRESS");
+        static constexpr uint32_t LAUNCHED_HASH = ConstExprHashingUtils::HashString("LAUNCHED");
+        static constexpr uint32_t PARTIALLY_LAUNCHED_HASH = ConstExprHashingUtils::HashString("PARTIALLY_LAUNCHED");
+        static constexpr uint32_t DELTA_LAUNCH_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("DELTA_LAUNCH_IN_PROGRESS");
+        static constexpr uint32_t DELTA_LAUNCH_FAILED_HASH = ConstExprHashingUtils::HashString("DELTA_LAUNCH_FAILED");
+        static constexpr uint32_t LAUNCH_FAILED_HASH = ConstExprHashingUtils::HashString("LAUNCH_FAILED");
+        static constexpr uint32_t TERMINATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("TERMINATE_IN_PROGRESS");
+        static constexpr uint32_t TERMINATE_FAILED_HASH = ConstExprHashingUtils::HashString("TERMINATE_FAILED");
+        static constexpr uint32_t TERMINATED_HASH = ConstExprHashingUtils::HashString("TERMINATED");
 
 
         AppLaunchStatus GetAppLaunchStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == READY_FOR_CONFIGURATION_HASH)
           {
             return AppLaunchStatus::READY_FOR_CONFIGURATION;

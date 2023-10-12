@@ -20,22 +20,22 @@ namespace Aws
       namespace LocaleMapper
       {
 
-        static const int DE_DE_HASH = HashingUtils::HashString("DE_DE");
-        static const int EN_US_HASH = HashingUtils::HashString("EN_US");
-        static const int EN_GB_HASH = HashingUtils::HashString("EN_GB");
-        static const int ES_ES_HASH = HashingUtils::HashString("ES_ES");
-        static const int FR_FR_HASH = HashingUtils::HashString("FR_FR");
-        static const int IT_IT_HASH = HashingUtils::HashString("IT_IT");
-        static const int JA_JP_HASH = HashingUtils::HashString("JA_JP");
-        static const int KO_KR_HASH = HashingUtils::HashString("KO_KR");
-        static const int PT_BR_HASH = HashingUtils::HashString("PT_BR");
-        static const int ZH_CN_HASH = HashingUtils::HashString("ZH_CN");
-        static const int ZH_TW_HASH = HashingUtils::HashString("ZH_TW");
+        static constexpr uint32_t DE_DE_HASH = ConstExprHashingUtils::HashString("DE_DE");
+        static constexpr uint32_t EN_US_HASH = ConstExprHashingUtils::HashString("EN_US");
+        static constexpr uint32_t EN_GB_HASH = ConstExprHashingUtils::HashString("EN_GB");
+        static constexpr uint32_t ES_ES_HASH = ConstExprHashingUtils::HashString("ES_ES");
+        static constexpr uint32_t FR_FR_HASH = ConstExprHashingUtils::HashString("FR_FR");
+        static constexpr uint32_t IT_IT_HASH = ConstExprHashingUtils::HashString("IT_IT");
+        static constexpr uint32_t JA_JP_HASH = ConstExprHashingUtils::HashString("JA_JP");
+        static constexpr uint32_t KO_KR_HASH = ConstExprHashingUtils::HashString("KO_KR");
+        static constexpr uint32_t PT_BR_HASH = ConstExprHashingUtils::HashString("PT_BR");
+        static constexpr uint32_t ZH_CN_HASH = ConstExprHashingUtils::HashString("ZH_CN");
+        static constexpr uint32_t ZH_TW_HASH = ConstExprHashingUtils::HashString("ZH_TW");
 
 
         Locale GetLocaleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DE_DE_HASH)
           {
             return Locale::DE_DE;

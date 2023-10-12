@@ -20,13 +20,13 @@ namespace Aws
       namespace ProresScanTypeConversionModeMapper
       {
 
-        static const int INTERLACED_HASH = HashingUtils::HashString("INTERLACED");
-        static const int INTERLACED_OPTIMIZE_HASH = HashingUtils::HashString("INTERLACED_OPTIMIZE");
+        static constexpr uint32_t INTERLACED_HASH = ConstExprHashingUtils::HashString("INTERLACED");
+        static constexpr uint32_t INTERLACED_OPTIMIZE_HASH = ConstExprHashingUtils::HashString("INTERLACED_OPTIMIZE");
 
 
         ProresScanTypeConversionMode GetProresScanTypeConversionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERLACED_HASH)
           {
             return ProresScanTypeConversionMode::INTERLACED;

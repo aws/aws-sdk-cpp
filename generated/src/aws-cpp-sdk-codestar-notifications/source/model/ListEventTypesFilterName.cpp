@@ -20,13 +20,13 @@ namespace Aws
       namespace ListEventTypesFilterNameMapper
       {
 
-        static const int RESOURCE_TYPE_HASH = HashingUtils::HashString("RESOURCE_TYPE");
-        static const int SERVICE_NAME_HASH = HashingUtils::HashString("SERVICE_NAME");
+        static constexpr uint32_t RESOURCE_TYPE_HASH = ConstExprHashingUtils::HashString("RESOURCE_TYPE");
+        static constexpr uint32_t SERVICE_NAME_HASH = ConstExprHashingUtils::HashString("SERVICE_NAME");
 
 
         ListEventTypesFilterName GetListEventTypesFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESOURCE_TYPE_HASH)
           {
             return ListEventTypesFilterName::RESOURCE_TYPE;

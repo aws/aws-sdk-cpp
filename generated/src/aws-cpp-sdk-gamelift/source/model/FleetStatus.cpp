@@ -20,21 +20,21 @@ namespace Aws
       namespace FleetStatusMapper
       {
 
-        static const int NEW__HASH = HashingUtils::HashString("NEW");
-        static const int DOWNLOADING_HASH = HashingUtils::HashString("DOWNLOADING");
-        static const int VALIDATING_HASH = HashingUtils::HashString("VALIDATING");
-        static const int BUILDING_HASH = HashingUtils::HashString("BUILDING");
-        static const int ACTIVATING_HASH = HashingUtils::HashString("ACTIVATING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
-        static const int NOT_FOUND_HASH = HashingUtils::HashString("NOT_FOUND");
+        static constexpr uint32_t NEW__HASH = ConstExprHashingUtils::HashString("NEW");
+        static constexpr uint32_t DOWNLOADING_HASH = ConstExprHashingUtils::HashString("DOWNLOADING");
+        static constexpr uint32_t VALIDATING_HASH = ConstExprHashingUtils::HashString("VALIDATING");
+        static constexpr uint32_t BUILDING_HASH = ConstExprHashingUtils::HashString("BUILDING");
+        static constexpr uint32_t ACTIVATING_HASH = ConstExprHashingUtils::HashString("ACTIVATING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t TERMINATED_HASH = ConstExprHashingUtils::HashString("TERMINATED");
+        static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NOT_FOUND");
 
 
         FleetStatus GetFleetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NEW__HASH)
           {
             return FleetStatus::NEW_;

@@ -20,13 +20,13 @@ namespace Aws
       namespace CmafMpdProfileMapper
       {
 
-        static const int MAIN_PROFILE_HASH = HashingUtils::HashString("MAIN_PROFILE");
-        static const int ON_DEMAND_PROFILE_HASH = HashingUtils::HashString("ON_DEMAND_PROFILE");
+        static constexpr uint32_t MAIN_PROFILE_HASH = ConstExprHashingUtils::HashString("MAIN_PROFILE");
+        static constexpr uint32_t ON_DEMAND_PROFILE_HASH = ConstExprHashingUtils::HashString("ON_DEMAND_PROFILE");
 
 
         CmafMpdProfile GetCmafMpdProfileForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MAIN_PROFILE_HASH)
           {
             return CmafMpdProfile::MAIN_PROFILE;

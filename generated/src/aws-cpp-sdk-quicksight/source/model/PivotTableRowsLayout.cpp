@@ -20,13 +20,13 @@ namespace Aws
       namespace PivotTableRowsLayoutMapper
       {
 
-        static const int TABULAR_HASH = HashingUtils::HashString("TABULAR");
-        static const int HIERARCHY_HASH = HashingUtils::HashString("HIERARCHY");
+        static constexpr uint32_t TABULAR_HASH = ConstExprHashingUtils::HashString("TABULAR");
+        static constexpr uint32_t HIERARCHY_HASH = ConstExprHashingUtils::HashString("HIERARCHY");
 
 
         PivotTableRowsLayout GetPivotTableRowsLayoutForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TABULAR_HASH)
           {
             return PivotTableRowsLayout::TABULAR;

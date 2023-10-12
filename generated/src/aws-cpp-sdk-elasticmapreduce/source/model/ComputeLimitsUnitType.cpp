@@ -20,14 +20,14 @@ namespace Aws
       namespace ComputeLimitsUnitTypeMapper
       {
 
-        static const int InstanceFleetUnits_HASH = HashingUtils::HashString("InstanceFleetUnits");
-        static const int Instances_HASH = HashingUtils::HashString("Instances");
-        static const int VCPU_HASH = HashingUtils::HashString("VCPU");
+        static constexpr uint32_t InstanceFleetUnits_HASH = ConstExprHashingUtils::HashString("InstanceFleetUnits");
+        static constexpr uint32_t Instances_HASH = ConstExprHashingUtils::HashString("Instances");
+        static constexpr uint32_t VCPU_HASH = ConstExprHashingUtils::HashString("VCPU");
 
 
         ComputeLimitsUnitType GetComputeLimitsUnitTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InstanceFleetUnits_HASH)
           {
             return ComputeLimitsUnitType::InstanceFleetUnits;

@@ -18,16 +18,16 @@ namespace KinesisVideoMedia
 namespace KinesisVideoMediaErrorMapper
 {
 
-static const int INVALID_ENDPOINT_HASH = HashingUtils::HashString("InvalidEndpointException");
-static const int CONNECTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ConnectionLimitExceededException");
-static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
-static const int CLIENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ClientLimitExceededException");
-static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
+static constexpr uint32_t INVALID_ENDPOINT_HASH = ConstExprHashingUtils::HashString("InvalidEndpointException");
+static constexpr uint32_t CONNECTION_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ConnectionLimitExceededException");
+static constexpr uint32_t NOT_AUTHORIZED_HASH = ConstExprHashingUtils::HashString("NotAuthorizedException");
+static constexpr uint32_t CLIENT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ClientLimitExceededException");
+static constexpr uint32_t INVALID_ARGUMENT_HASH = ConstExprHashingUtils::HashString("InvalidArgumentException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INVALID_ENDPOINT_HASH)
   {

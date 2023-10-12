@@ -20,19 +20,19 @@ namespace Aws
       namespace Ac3BitstreamModeMapper
       {
 
-        static const int COMMENTARY_HASH = HashingUtils::HashString("COMMENTARY");
-        static const int COMPLETE_MAIN_HASH = HashingUtils::HashString("COMPLETE_MAIN");
-        static const int DIALOGUE_HASH = HashingUtils::HashString("DIALOGUE");
-        static const int EMERGENCY_HASH = HashingUtils::HashString("EMERGENCY");
-        static const int HEARING_IMPAIRED_HASH = HashingUtils::HashString("HEARING_IMPAIRED");
-        static const int MUSIC_AND_EFFECTS_HASH = HashingUtils::HashString("MUSIC_AND_EFFECTS");
-        static const int VISUALLY_IMPAIRED_HASH = HashingUtils::HashString("VISUALLY_IMPAIRED");
-        static const int VOICE_OVER_HASH = HashingUtils::HashString("VOICE_OVER");
+        static constexpr uint32_t COMMENTARY_HASH = ConstExprHashingUtils::HashString("COMMENTARY");
+        static constexpr uint32_t COMPLETE_MAIN_HASH = ConstExprHashingUtils::HashString("COMPLETE_MAIN");
+        static constexpr uint32_t DIALOGUE_HASH = ConstExprHashingUtils::HashString("DIALOGUE");
+        static constexpr uint32_t EMERGENCY_HASH = ConstExprHashingUtils::HashString("EMERGENCY");
+        static constexpr uint32_t HEARING_IMPAIRED_HASH = ConstExprHashingUtils::HashString("HEARING_IMPAIRED");
+        static constexpr uint32_t MUSIC_AND_EFFECTS_HASH = ConstExprHashingUtils::HashString("MUSIC_AND_EFFECTS");
+        static constexpr uint32_t VISUALLY_IMPAIRED_HASH = ConstExprHashingUtils::HashString("VISUALLY_IMPAIRED");
+        static constexpr uint32_t VOICE_OVER_HASH = ConstExprHashingUtils::HashString("VOICE_OVER");
 
 
         Ac3BitstreamMode GetAc3BitstreamModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMMENTARY_HASH)
           {
             return Ac3BitstreamMode::COMMENTARY;

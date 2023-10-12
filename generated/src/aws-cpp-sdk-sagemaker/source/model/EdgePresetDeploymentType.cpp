@@ -20,12 +20,12 @@ namespace Aws
       namespace EdgePresetDeploymentTypeMapper
       {
 
-        static const int GreengrassV2Component_HASH = HashingUtils::HashString("GreengrassV2Component");
+        static constexpr uint32_t GreengrassV2Component_HASH = ConstExprHashingUtils::HashString("GreengrassV2Component");
 
 
         EdgePresetDeploymentType GetEdgePresetDeploymentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GreengrassV2Component_HASH)
           {
             return EdgePresetDeploymentType::GreengrassV2Component;

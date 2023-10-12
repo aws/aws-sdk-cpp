@@ -20,13 +20,13 @@ namespace Aws
       namespace TopBottomSortOrderMapper
       {
 
-        static const int PERCENT_DIFFERENCE_HASH = HashingUtils::HashString("PERCENT_DIFFERENCE");
-        static const int ABSOLUTE_DIFFERENCE_HASH = HashingUtils::HashString("ABSOLUTE_DIFFERENCE");
+        static constexpr uint32_t PERCENT_DIFFERENCE_HASH = ConstExprHashingUtils::HashString("PERCENT_DIFFERENCE");
+        static constexpr uint32_t ABSOLUTE_DIFFERENCE_HASH = ConstExprHashingUtils::HashString("ABSOLUTE_DIFFERENCE");
 
 
         TopBottomSortOrder GetTopBottomSortOrderForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PERCENT_DIFFERENCE_HASH)
           {
             return TopBottomSortOrder::PERCENT_DIFFERENCE;

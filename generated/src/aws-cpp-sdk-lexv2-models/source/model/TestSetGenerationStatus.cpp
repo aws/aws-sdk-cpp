@@ -20,15 +20,15 @@ namespace Aws
       namespace TestSetGenerationStatusMapper
       {
 
-        static const int Generating_HASH = HashingUtils::HashString("Generating");
-        static const int Ready_HASH = HashingUtils::HashString("Ready");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
+        static constexpr uint32_t Generating_HASH = ConstExprHashingUtils::HashString("Generating");
+        static constexpr uint32_t Ready_HASH = ConstExprHashingUtils::HashString("Ready");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
 
 
         TestSetGenerationStatus GetTestSetGenerationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Generating_HASH)
           {
             return TestSetGenerationStatus::Generating;

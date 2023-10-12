@@ -20,13 +20,13 @@ namespace Aws
       namespace QueueNameMapper
       {
 
-        static const int QUANTUM_TASKS_QUEUE_HASH = HashingUtils::HashString("QUANTUM_TASKS_QUEUE");
-        static const int JOBS_QUEUE_HASH = HashingUtils::HashString("JOBS_QUEUE");
+        static constexpr uint32_t QUANTUM_TASKS_QUEUE_HASH = ConstExprHashingUtils::HashString("QUANTUM_TASKS_QUEUE");
+        static constexpr uint32_t JOBS_QUEUE_HASH = ConstExprHashingUtils::HashString("JOBS_QUEUE");
 
 
         QueueName GetQueueNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUANTUM_TASKS_QUEUE_HASH)
           {
             return QueueName::QUANTUM_TASKS_QUEUE;

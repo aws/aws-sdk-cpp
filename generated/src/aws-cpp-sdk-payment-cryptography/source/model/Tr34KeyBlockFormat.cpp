@@ -20,12 +20,12 @@ namespace Aws
       namespace Tr34KeyBlockFormatMapper
       {
 
-        static const int X9_TR34_2012_HASH = HashingUtils::HashString("X9_TR34_2012");
+        static constexpr uint32_t X9_TR34_2012_HASH = ConstExprHashingUtils::HashString("X9_TR34_2012");
 
 
         Tr34KeyBlockFormat GetTr34KeyBlockFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == X9_TR34_2012_HASH)
           {
             return Tr34KeyBlockFormat::X9_TR34_2012;

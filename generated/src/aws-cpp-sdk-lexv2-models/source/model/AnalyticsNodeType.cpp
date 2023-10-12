@@ -20,13 +20,13 @@ namespace Aws
       namespace AnalyticsNodeTypeMapper
       {
 
-        static const int Inner_HASH = HashingUtils::HashString("Inner");
-        static const int Exit_HASH = HashingUtils::HashString("Exit");
+        static constexpr uint32_t Inner_HASH = ConstExprHashingUtils::HashString("Inner");
+        static constexpr uint32_t Exit_HASH = ConstExprHashingUtils::HashString("Exit");
 
 
         AnalyticsNodeType GetAnalyticsNodeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Inner_HASH)
           {
             return AnalyticsNodeType::Inner;

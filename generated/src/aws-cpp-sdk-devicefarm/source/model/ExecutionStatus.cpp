@@ -20,20 +20,20 @@ namespace Aws
       namespace ExecutionStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int PENDING_CONCURRENCY_HASH = HashingUtils::HashString("PENDING_CONCURRENCY");
-        static const int PENDING_DEVICE_HASH = HashingUtils::HashString("PENDING_DEVICE");
-        static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
-        static const int SCHEDULING_HASH = HashingUtils::HashString("SCHEDULING");
-        static const int PREPARING_HASH = HashingUtils::HashString("PREPARING");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t PENDING_CONCURRENCY_HASH = ConstExprHashingUtils::HashString("PENDING_CONCURRENCY");
+        static constexpr uint32_t PENDING_DEVICE_HASH = ConstExprHashingUtils::HashString("PENDING_DEVICE");
+        static constexpr uint32_t PROCESSING_HASH = ConstExprHashingUtils::HashString("PROCESSING");
+        static constexpr uint32_t SCHEDULING_HASH = ConstExprHashingUtils::HashString("SCHEDULING");
+        static constexpr uint32_t PREPARING_HASH = ConstExprHashingUtils::HashString("PREPARING");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
 
 
         ExecutionStatus GetExecutionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return ExecutionStatus::PENDING;

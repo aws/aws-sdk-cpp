@@ -20,15 +20,15 @@ namespace Aws
       namespace LegendPositionMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int RIGHT_HASH = HashingUtils::HashString("RIGHT");
-        static const int BOTTOM_HASH = HashingUtils::HashString("BOTTOM");
-        static const int TOP_HASH = HashingUtils::HashString("TOP");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t RIGHT_HASH = ConstExprHashingUtils::HashString("RIGHT");
+        static constexpr uint32_t BOTTOM_HASH = ConstExprHashingUtils::HashString("BOTTOM");
+        static constexpr uint32_t TOP_HASH = ConstExprHashingUtils::HashString("TOP");
 
 
         LegendPosition GetLegendPositionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return LegendPosition::AUTO;

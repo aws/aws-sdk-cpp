@@ -20,14 +20,14 @@ namespace Aws
       namespace InputFilterEnableMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int DISABLE_HASH = HashingUtils::HashString("DISABLE");
-        static const int FORCE_HASH = HashingUtils::HashString("FORCE");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t DISABLE_HASH = ConstExprHashingUtils::HashString("DISABLE");
+        static constexpr uint32_t FORCE_HASH = ConstExprHashingUtils::HashString("FORCE");
 
 
         InputFilterEnable GetInputFilterEnableForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return InputFilterEnable::AUTO;

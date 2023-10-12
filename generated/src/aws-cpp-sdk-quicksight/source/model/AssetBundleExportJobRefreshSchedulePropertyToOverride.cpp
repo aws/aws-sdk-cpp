@@ -20,12 +20,12 @@ namespace Aws
       namespace AssetBundleExportJobRefreshSchedulePropertyToOverrideMapper
       {
 
-        static const int StartAfterDateTime_HASH = HashingUtils::HashString("StartAfterDateTime");
+        static constexpr uint32_t StartAfterDateTime_HASH = ConstExprHashingUtils::HashString("StartAfterDateTime");
 
 
         AssetBundleExportJobRefreshSchedulePropertyToOverride GetAssetBundleExportJobRefreshSchedulePropertyToOverrideForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == StartAfterDateTime_HASH)
           {
             return AssetBundleExportJobRefreshSchedulePropertyToOverride::StartAfterDateTime;

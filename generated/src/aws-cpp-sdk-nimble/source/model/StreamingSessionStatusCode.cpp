@@ -20,27 +20,27 @@ namespace Aws
       namespace StreamingSessionStatusCodeMapper
       {
 
-        static const int STREAMING_SESSION_READY_HASH = HashingUtils::HashString("STREAMING_SESSION_READY");
-        static const int STREAMING_SESSION_DELETED_HASH = HashingUtils::HashString("STREAMING_SESSION_DELETED");
-        static const int STREAMING_SESSION_CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("STREAMING_SESSION_CREATE_IN_PROGRESS");
-        static const int STREAMING_SESSION_DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("STREAMING_SESSION_DELETE_IN_PROGRESS");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int INSUFFICIENT_CAPACITY_HASH = HashingUtils::HashString("INSUFFICIENT_CAPACITY");
-        static const int ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR_HASH = HashingUtils::HashString("ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR");
-        static const int NETWORK_CONNECTION_ERROR_HASH = HashingUtils::HashString("NETWORK_CONNECTION_ERROR");
-        static const int INITIALIZATION_SCRIPT_ERROR_HASH = HashingUtils::HashString("INITIALIZATION_SCRIPT_ERROR");
-        static const int DECRYPT_STREAMING_IMAGE_ERROR_HASH = HashingUtils::HashString("DECRYPT_STREAMING_IMAGE_ERROR");
-        static const int NETWORK_INTERFACE_ERROR_HASH = HashingUtils::HashString("NETWORK_INTERFACE_ERROR");
-        static const int STREAMING_SESSION_STOPPED_HASH = HashingUtils::HashString("STREAMING_SESSION_STOPPED");
-        static const int STREAMING_SESSION_STARTED_HASH = HashingUtils::HashString("STREAMING_SESSION_STARTED");
-        static const int STREAMING_SESSION_STOP_IN_PROGRESS_HASH = HashingUtils::HashString("STREAMING_SESSION_STOP_IN_PROGRESS");
-        static const int STREAMING_SESSION_START_IN_PROGRESS_HASH = HashingUtils::HashString("STREAMING_SESSION_START_IN_PROGRESS");
-        static const int AMI_VALIDATION_ERROR_HASH = HashingUtils::HashString("AMI_VALIDATION_ERROR");
+        static constexpr uint32_t STREAMING_SESSION_READY_HASH = ConstExprHashingUtils::HashString("STREAMING_SESSION_READY");
+        static constexpr uint32_t STREAMING_SESSION_DELETED_HASH = ConstExprHashingUtils::HashString("STREAMING_SESSION_DELETED");
+        static constexpr uint32_t STREAMING_SESSION_CREATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("STREAMING_SESSION_CREATE_IN_PROGRESS");
+        static constexpr uint32_t STREAMING_SESSION_DELETE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("STREAMING_SESSION_DELETE_IN_PROGRESS");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t INSUFFICIENT_CAPACITY_HASH = ConstExprHashingUtils::HashString("INSUFFICIENT_CAPACITY");
+        static constexpr uint32_t ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR_HASH = ConstExprHashingUtils::HashString("ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR");
+        static constexpr uint32_t NETWORK_CONNECTION_ERROR_HASH = ConstExprHashingUtils::HashString("NETWORK_CONNECTION_ERROR");
+        static constexpr uint32_t INITIALIZATION_SCRIPT_ERROR_HASH = ConstExprHashingUtils::HashString("INITIALIZATION_SCRIPT_ERROR");
+        static constexpr uint32_t DECRYPT_STREAMING_IMAGE_ERROR_HASH = ConstExprHashingUtils::HashString("DECRYPT_STREAMING_IMAGE_ERROR");
+        static constexpr uint32_t NETWORK_INTERFACE_ERROR_HASH = ConstExprHashingUtils::HashString("NETWORK_INTERFACE_ERROR");
+        static constexpr uint32_t STREAMING_SESSION_STOPPED_HASH = ConstExprHashingUtils::HashString("STREAMING_SESSION_STOPPED");
+        static constexpr uint32_t STREAMING_SESSION_STARTED_HASH = ConstExprHashingUtils::HashString("STREAMING_SESSION_STARTED");
+        static constexpr uint32_t STREAMING_SESSION_STOP_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("STREAMING_SESSION_STOP_IN_PROGRESS");
+        static constexpr uint32_t STREAMING_SESSION_START_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("STREAMING_SESSION_START_IN_PROGRESS");
+        static constexpr uint32_t AMI_VALIDATION_ERROR_HASH = ConstExprHashingUtils::HashString("AMI_VALIDATION_ERROR");
 
 
         StreamingSessionStatusCode GetStreamingSessionStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STREAMING_SESSION_READY_HASH)
           {
             return StreamingSessionStatusCode::STREAMING_SESSION_READY;

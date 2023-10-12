@@ -20,13 +20,13 @@ namespace Aws
       namespace CompressionTypeMapper
       {
 
-        static const int None_HASH = HashingUtils::HashString("None");
-        static const int Gzip_HASH = HashingUtils::HashString("Gzip");
+        static constexpr uint32_t None_HASH = ConstExprHashingUtils::HashString("None");
+        static constexpr uint32_t Gzip_HASH = ConstExprHashingUtils::HashString("Gzip");
 
 
         CompressionType GetCompressionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == None_HASH)
           {
             return CompressionType::None;

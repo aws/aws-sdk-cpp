@@ -20,14 +20,14 @@ namespace Aws
       namespace DatasetTypeMapper
       {
 
-        static const int TARGET_TIME_SERIES_HASH = HashingUtils::HashString("TARGET_TIME_SERIES");
-        static const int RELATED_TIME_SERIES_HASH = HashingUtils::HashString("RELATED_TIME_SERIES");
-        static const int ITEM_METADATA_HASH = HashingUtils::HashString("ITEM_METADATA");
+        static constexpr uint32_t TARGET_TIME_SERIES_HASH = ConstExprHashingUtils::HashString("TARGET_TIME_SERIES");
+        static constexpr uint32_t RELATED_TIME_SERIES_HASH = ConstExprHashingUtils::HashString("RELATED_TIME_SERIES");
+        static constexpr uint32_t ITEM_METADATA_HASH = ConstExprHashingUtils::HashString("ITEM_METADATA");
 
 
         DatasetType GetDatasetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TARGET_TIME_SERIES_HASH)
           {
             return DatasetType::TARGET_TIME_SERIES;

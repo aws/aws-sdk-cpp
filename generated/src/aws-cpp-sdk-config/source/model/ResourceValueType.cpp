@@ -20,12 +20,12 @@ namespace Aws
       namespace ResourceValueTypeMapper
       {
 
-        static const int RESOURCE_ID_HASH = HashingUtils::HashString("RESOURCE_ID");
+        static constexpr uint32_t RESOURCE_ID_HASH = ConstExprHashingUtils::HashString("RESOURCE_ID");
 
 
         ResourceValueType GetResourceValueTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESOURCE_ID_HASH)
           {
             return ResourceValueType::RESOURCE_ID;

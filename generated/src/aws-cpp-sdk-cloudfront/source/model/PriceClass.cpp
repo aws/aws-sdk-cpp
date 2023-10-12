@@ -20,14 +20,14 @@ namespace Aws
       namespace PriceClassMapper
       {
 
-        static const int PriceClass_100_HASH = HashingUtils::HashString("PriceClass_100");
-        static const int PriceClass_200_HASH = HashingUtils::HashString("PriceClass_200");
-        static const int PriceClass_All_HASH = HashingUtils::HashString("PriceClass_All");
+        static constexpr uint32_t PriceClass_100_HASH = ConstExprHashingUtils::HashString("PriceClass_100");
+        static constexpr uint32_t PriceClass_200_HASH = ConstExprHashingUtils::HashString("PriceClass_200");
+        static constexpr uint32_t PriceClass_All_HASH = ConstExprHashingUtils::HashString("PriceClass_All");
 
 
         PriceClass GetPriceClassForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PriceClass_100_HASH)
           {
             return PriceClass::PriceClass_100;

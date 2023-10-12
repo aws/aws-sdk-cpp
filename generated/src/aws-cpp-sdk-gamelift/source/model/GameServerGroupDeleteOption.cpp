@@ -20,14 +20,14 @@ namespace Aws
       namespace GameServerGroupDeleteOptionMapper
       {
 
-        static const int SAFE_DELETE_HASH = HashingUtils::HashString("SAFE_DELETE");
-        static const int FORCE_DELETE_HASH = HashingUtils::HashString("FORCE_DELETE");
-        static const int RETAIN_HASH = HashingUtils::HashString("RETAIN");
+        static constexpr uint32_t SAFE_DELETE_HASH = ConstExprHashingUtils::HashString("SAFE_DELETE");
+        static constexpr uint32_t FORCE_DELETE_HASH = ConstExprHashingUtils::HashString("FORCE_DELETE");
+        static constexpr uint32_t RETAIN_HASH = ConstExprHashingUtils::HashString("RETAIN");
 
 
         GameServerGroupDeleteOption GetGameServerGroupDeleteOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SAFE_DELETE_HASH)
           {
             return GameServerGroupDeleteOption::SAFE_DELETE;

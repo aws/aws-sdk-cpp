@@ -20,15 +20,15 @@ namespace Aws
       namespace ChannelTypeMapper
       {
 
-        static const int BASIC_HASH = HashingUtils::HashString("BASIC");
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
-        static const int ADVANCED_SD_HASH = HashingUtils::HashString("ADVANCED_SD");
-        static const int ADVANCED_HD_HASH = HashingUtils::HashString("ADVANCED_HD");
+        static constexpr uint32_t BASIC_HASH = ConstExprHashingUtils::HashString("BASIC");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
+        static constexpr uint32_t ADVANCED_SD_HASH = ConstExprHashingUtils::HashString("ADVANCED_SD");
+        static constexpr uint32_t ADVANCED_HD_HASH = ConstExprHashingUtils::HashString("ADVANCED_HD");
 
 
         ChannelType GetChannelTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BASIC_HASH)
           {
             return ChannelType::BASIC;

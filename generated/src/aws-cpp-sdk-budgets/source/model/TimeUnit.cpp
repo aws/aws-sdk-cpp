@@ -20,15 +20,15 @@ namespace Aws
       namespace TimeUnitMapper
       {
 
-        static const int DAILY_HASH = HashingUtils::HashString("DAILY");
-        static const int MONTHLY_HASH = HashingUtils::HashString("MONTHLY");
-        static const int QUARTERLY_HASH = HashingUtils::HashString("QUARTERLY");
-        static const int ANNUALLY_HASH = HashingUtils::HashString("ANNUALLY");
+        static constexpr uint32_t DAILY_HASH = ConstExprHashingUtils::HashString("DAILY");
+        static constexpr uint32_t MONTHLY_HASH = ConstExprHashingUtils::HashString("MONTHLY");
+        static constexpr uint32_t QUARTERLY_HASH = ConstExprHashingUtils::HashString("QUARTERLY");
+        static constexpr uint32_t ANNUALLY_HASH = ConstExprHashingUtils::HashString("ANNUALLY");
 
 
         TimeUnit GetTimeUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DAILY_HASH)
           {
             return TimeUnit::DAILY;

@@ -20,13 +20,13 @@ namespace Aws
       namespace DeletableSamlPropertyMapper
       {
 
-        static const int SAML_PROPERTIES_USER_ACCESS_URL_HASH = HashingUtils::HashString("SAML_PROPERTIES_USER_ACCESS_URL");
-        static const int SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME_HASH = HashingUtils::HashString("SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME");
+        static constexpr uint32_t SAML_PROPERTIES_USER_ACCESS_URL_HASH = ConstExprHashingUtils::HashString("SAML_PROPERTIES_USER_ACCESS_URL");
+        static constexpr uint32_t SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME_HASH = ConstExprHashingUtils::HashString("SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME");
 
 
         DeletableSamlProperty GetDeletableSamlPropertyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SAML_PROPERTIES_USER_ACCESS_URL_HASH)
           {
             return DeletableSamlProperty::SAML_PROPERTIES_USER_ACCESS_URL;

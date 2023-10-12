@@ -20,15 +20,15 @@ namespace Aws
       namespace PermissionStatusMapper
       {
 
-        static const int ATTACHABLE_HASH = HashingUtils::HashString("ATTACHABLE");
-        static const int UNATTACHABLE_HASH = HashingUtils::HashString("UNATTACHABLE");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t ATTACHABLE_HASH = ConstExprHashingUtils::HashString("ATTACHABLE");
+        static constexpr uint32_t UNATTACHABLE_HASH = ConstExprHashingUtils::HashString("UNATTACHABLE");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         PermissionStatus GetPermissionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ATTACHABLE_HASH)
           {
             return PermissionStatus::ATTACHABLE;

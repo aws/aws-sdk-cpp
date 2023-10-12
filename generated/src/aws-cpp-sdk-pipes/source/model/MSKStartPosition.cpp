@@ -20,13 +20,13 @@ namespace Aws
       namespace MSKStartPositionMapper
       {
 
-        static const int TRIM_HORIZON_HASH = HashingUtils::HashString("TRIM_HORIZON");
-        static const int LATEST_HASH = HashingUtils::HashString("LATEST");
+        static constexpr uint32_t TRIM_HORIZON_HASH = ConstExprHashingUtils::HashString("TRIM_HORIZON");
+        static constexpr uint32_t LATEST_HASH = ConstExprHashingUtils::HashString("LATEST");
 
 
         MSKStartPosition GetMSKStartPositionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRIM_HORIZON_HASH)
           {
             return MSKStartPosition::TRIM_HORIZON;

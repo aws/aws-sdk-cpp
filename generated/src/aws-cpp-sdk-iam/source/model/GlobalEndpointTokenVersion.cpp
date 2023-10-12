@@ -20,13 +20,13 @@ namespace Aws
       namespace GlobalEndpointTokenVersionMapper
       {
 
-        static const int v1Token_HASH = HashingUtils::HashString("v1Token");
-        static const int v2Token_HASH = HashingUtils::HashString("v2Token");
+        static constexpr uint32_t v1Token_HASH = ConstExprHashingUtils::HashString("v1Token");
+        static constexpr uint32_t v2Token_HASH = ConstExprHashingUtils::HashString("v2Token");
 
 
         GlobalEndpointTokenVersion GetGlobalEndpointTokenVersionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == v1Token_HASH)
           {
             return GlobalEndpointTokenVersion::v1Token;

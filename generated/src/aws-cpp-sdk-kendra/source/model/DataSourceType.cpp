@@ -20,30 +20,30 @@ namespace Aws
       namespace DataSourceTypeMapper
       {
 
-        static const int S3_HASH = HashingUtils::HashString("S3");
-        static const int SHAREPOINT_HASH = HashingUtils::HashString("SHAREPOINT");
-        static const int DATABASE_HASH = HashingUtils::HashString("DATABASE");
-        static const int SALESFORCE_HASH = HashingUtils::HashString("SALESFORCE");
-        static const int ONEDRIVE_HASH = HashingUtils::HashString("ONEDRIVE");
-        static const int SERVICENOW_HASH = HashingUtils::HashString("SERVICENOW");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
-        static const int CONFLUENCE_HASH = HashingUtils::HashString("CONFLUENCE");
-        static const int GOOGLEDRIVE_HASH = HashingUtils::HashString("GOOGLEDRIVE");
-        static const int WEBCRAWLER_HASH = HashingUtils::HashString("WEBCRAWLER");
-        static const int WORKDOCS_HASH = HashingUtils::HashString("WORKDOCS");
-        static const int FSX_HASH = HashingUtils::HashString("FSX");
-        static const int SLACK_HASH = HashingUtils::HashString("SLACK");
-        static const int BOX_HASH = HashingUtils::HashString("BOX");
-        static const int QUIP_HASH = HashingUtils::HashString("QUIP");
-        static const int JIRA_HASH = HashingUtils::HashString("JIRA");
-        static const int GITHUB_HASH = HashingUtils::HashString("GITHUB");
-        static const int ALFRESCO_HASH = HashingUtils::HashString("ALFRESCO");
-        static const int TEMPLATE_HASH = HashingUtils::HashString("TEMPLATE");
+        static constexpr uint32_t S3_HASH = ConstExprHashingUtils::HashString("S3");
+        static constexpr uint32_t SHAREPOINT_HASH = ConstExprHashingUtils::HashString("SHAREPOINT");
+        static constexpr uint32_t DATABASE_HASH = ConstExprHashingUtils::HashString("DATABASE");
+        static constexpr uint32_t SALESFORCE_HASH = ConstExprHashingUtils::HashString("SALESFORCE");
+        static constexpr uint32_t ONEDRIVE_HASH = ConstExprHashingUtils::HashString("ONEDRIVE");
+        static constexpr uint32_t SERVICENOW_HASH = ConstExprHashingUtils::HashString("SERVICENOW");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t CONFLUENCE_HASH = ConstExprHashingUtils::HashString("CONFLUENCE");
+        static constexpr uint32_t GOOGLEDRIVE_HASH = ConstExprHashingUtils::HashString("GOOGLEDRIVE");
+        static constexpr uint32_t WEBCRAWLER_HASH = ConstExprHashingUtils::HashString("WEBCRAWLER");
+        static constexpr uint32_t WORKDOCS_HASH = ConstExprHashingUtils::HashString("WORKDOCS");
+        static constexpr uint32_t FSX_HASH = ConstExprHashingUtils::HashString("FSX");
+        static constexpr uint32_t SLACK_HASH = ConstExprHashingUtils::HashString("SLACK");
+        static constexpr uint32_t BOX_HASH = ConstExprHashingUtils::HashString("BOX");
+        static constexpr uint32_t QUIP_HASH = ConstExprHashingUtils::HashString("QUIP");
+        static constexpr uint32_t JIRA_HASH = ConstExprHashingUtils::HashString("JIRA");
+        static constexpr uint32_t GITHUB_HASH = ConstExprHashingUtils::HashString("GITHUB");
+        static constexpr uint32_t ALFRESCO_HASH = ConstExprHashingUtils::HashString("ALFRESCO");
+        static constexpr uint32_t TEMPLATE_HASH = ConstExprHashingUtils::HashString("TEMPLATE");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == S3_HASH)
           {
             return DataSourceType::S3;

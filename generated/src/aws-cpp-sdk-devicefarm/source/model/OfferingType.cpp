@@ -20,12 +20,12 @@ namespace Aws
       namespace OfferingTypeMapper
       {
 
-        static const int RECURRING_HASH = HashingUtils::HashString("RECURRING");
+        static constexpr uint32_t RECURRING_HASH = ConstExprHashingUtils::HashString("RECURRING");
 
 
         OfferingType GetOfferingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RECURRING_HASH)
           {
             return OfferingType::RECURRING;

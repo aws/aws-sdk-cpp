@@ -20,38 +20,38 @@ namespace Aws
       namespace NodeDataTypeMapper
       {
 
-        static const int INT8_HASH = HashingUtils::HashString("INT8");
-        static const int UINT8_HASH = HashingUtils::HashString("UINT8");
-        static const int INT16_HASH = HashingUtils::HashString("INT16");
-        static const int UINT16_HASH = HashingUtils::HashString("UINT16");
-        static const int INT32_HASH = HashingUtils::HashString("INT32");
-        static const int UINT32_HASH = HashingUtils::HashString("UINT32");
-        static const int INT64_HASH = HashingUtils::HashString("INT64");
-        static const int UINT64_HASH = HashingUtils::HashString("UINT64");
-        static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
-        static const int FLOAT_HASH = HashingUtils::HashString("FLOAT");
-        static const int DOUBLE_HASH = HashingUtils::HashString("DOUBLE");
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
-        static const int UNIX_TIMESTAMP_HASH = HashingUtils::HashString("UNIX_TIMESTAMP");
-        static const int INT8_ARRAY_HASH = HashingUtils::HashString("INT8_ARRAY");
-        static const int UINT8_ARRAY_HASH = HashingUtils::HashString("UINT8_ARRAY");
-        static const int INT16_ARRAY_HASH = HashingUtils::HashString("INT16_ARRAY");
-        static const int UINT16_ARRAY_HASH = HashingUtils::HashString("UINT16_ARRAY");
-        static const int INT32_ARRAY_HASH = HashingUtils::HashString("INT32_ARRAY");
-        static const int UINT32_ARRAY_HASH = HashingUtils::HashString("UINT32_ARRAY");
-        static const int INT64_ARRAY_HASH = HashingUtils::HashString("INT64_ARRAY");
-        static const int UINT64_ARRAY_HASH = HashingUtils::HashString("UINT64_ARRAY");
-        static const int BOOLEAN_ARRAY_HASH = HashingUtils::HashString("BOOLEAN_ARRAY");
-        static const int FLOAT_ARRAY_HASH = HashingUtils::HashString("FLOAT_ARRAY");
-        static const int DOUBLE_ARRAY_HASH = HashingUtils::HashString("DOUBLE_ARRAY");
-        static const int STRING_ARRAY_HASH = HashingUtils::HashString("STRING_ARRAY");
-        static const int UNIX_TIMESTAMP_ARRAY_HASH = HashingUtils::HashString("UNIX_TIMESTAMP_ARRAY");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t INT8_HASH = ConstExprHashingUtils::HashString("INT8");
+        static constexpr uint32_t UINT8_HASH = ConstExprHashingUtils::HashString("UINT8");
+        static constexpr uint32_t INT16_HASH = ConstExprHashingUtils::HashString("INT16");
+        static constexpr uint32_t UINT16_HASH = ConstExprHashingUtils::HashString("UINT16");
+        static constexpr uint32_t INT32_HASH = ConstExprHashingUtils::HashString("INT32");
+        static constexpr uint32_t UINT32_HASH = ConstExprHashingUtils::HashString("UINT32");
+        static constexpr uint32_t INT64_HASH = ConstExprHashingUtils::HashString("INT64");
+        static constexpr uint32_t UINT64_HASH = ConstExprHashingUtils::HashString("UINT64");
+        static constexpr uint32_t BOOLEAN_HASH = ConstExprHashingUtils::HashString("BOOLEAN");
+        static constexpr uint32_t FLOAT_HASH = ConstExprHashingUtils::HashString("FLOAT");
+        static constexpr uint32_t DOUBLE_HASH = ConstExprHashingUtils::HashString("DOUBLE");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
+        static constexpr uint32_t UNIX_TIMESTAMP_HASH = ConstExprHashingUtils::HashString("UNIX_TIMESTAMP");
+        static constexpr uint32_t INT8_ARRAY_HASH = ConstExprHashingUtils::HashString("INT8_ARRAY");
+        static constexpr uint32_t UINT8_ARRAY_HASH = ConstExprHashingUtils::HashString("UINT8_ARRAY");
+        static constexpr uint32_t INT16_ARRAY_HASH = ConstExprHashingUtils::HashString("INT16_ARRAY");
+        static constexpr uint32_t UINT16_ARRAY_HASH = ConstExprHashingUtils::HashString("UINT16_ARRAY");
+        static constexpr uint32_t INT32_ARRAY_HASH = ConstExprHashingUtils::HashString("INT32_ARRAY");
+        static constexpr uint32_t UINT32_ARRAY_HASH = ConstExprHashingUtils::HashString("UINT32_ARRAY");
+        static constexpr uint32_t INT64_ARRAY_HASH = ConstExprHashingUtils::HashString("INT64_ARRAY");
+        static constexpr uint32_t UINT64_ARRAY_HASH = ConstExprHashingUtils::HashString("UINT64_ARRAY");
+        static constexpr uint32_t BOOLEAN_ARRAY_HASH = ConstExprHashingUtils::HashString("BOOLEAN_ARRAY");
+        static constexpr uint32_t FLOAT_ARRAY_HASH = ConstExprHashingUtils::HashString("FLOAT_ARRAY");
+        static constexpr uint32_t DOUBLE_ARRAY_HASH = ConstExprHashingUtils::HashString("DOUBLE_ARRAY");
+        static constexpr uint32_t STRING_ARRAY_HASH = ConstExprHashingUtils::HashString("STRING_ARRAY");
+        static constexpr uint32_t UNIX_TIMESTAMP_ARRAY_HASH = ConstExprHashingUtils::HashString("UNIX_TIMESTAMP_ARRAY");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         NodeDataType GetNodeDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INT8_HASH)
           {
             return NodeDataType::INT8;

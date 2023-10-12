@@ -20,18 +20,18 @@ namespace Aws
       namespace ValidationExceptionReasonMapper
       {
 
-        static const int InvalidExpiresIn_HASH = HashingUtils::HashString("InvalidExpiresIn");
-        static const int InvalidStatus_HASH = HashingUtils::HashString("InvalidStatus");
-        static const int MissingValue_HASH = HashingUtils::HashString("MissingValue");
-        static const int InvalidToken_HASH = HashingUtils::HashString("InvalidToken");
-        static const int InvalidResourceIdentifier_HASH = HashingUtils::HashString("InvalidResourceIdentifier");
-        static const int InvalidAz_HASH = HashingUtils::HashString("InvalidAz");
-        static const int UnsupportedAz_HASH = HashingUtils::HashString("UnsupportedAz");
+        static constexpr uint32_t InvalidExpiresIn_HASH = ConstExprHashingUtils::HashString("InvalidExpiresIn");
+        static constexpr uint32_t InvalidStatus_HASH = ConstExprHashingUtils::HashString("InvalidStatus");
+        static constexpr uint32_t MissingValue_HASH = ConstExprHashingUtils::HashString("MissingValue");
+        static constexpr uint32_t InvalidToken_HASH = ConstExprHashingUtils::HashString("InvalidToken");
+        static constexpr uint32_t InvalidResourceIdentifier_HASH = ConstExprHashingUtils::HashString("InvalidResourceIdentifier");
+        static constexpr uint32_t InvalidAz_HASH = ConstExprHashingUtils::HashString("InvalidAz");
+        static constexpr uint32_t UnsupportedAz_HASH = ConstExprHashingUtils::HashString("UnsupportedAz");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InvalidExpiresIn_HASH)
           {
             return ValidationExceptionReason::InvalidExpiresIn;

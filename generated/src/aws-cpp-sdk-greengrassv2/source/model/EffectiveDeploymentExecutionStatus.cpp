@@ -20,19 +20,19 @@ namespace Aws
       namespace EffectiveDeploymentExecutionStatusMapper
       {
 
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int QUEUED_HASH = HashingUtils::HashString("QUEUED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
-        static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
-        static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t QUEUED_HASH = ConstExprHashingUtils::HashString("QUEUED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t TIMED_OUT_HASH = ConstExprHashingUtils::HashString("TIMED_OUT");
+        static constexpr uint32_t CANCELED_HASH = ConstExprHashingUtils::HashString("CANCELED");
+        static constexpr uint32_t REJECTED_HASH = ConstExprHashingUtils::HashString("REJECTED");
+        static constexpr uint32_t SUCCEEDED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED");
 
 
         EffectiveDeploymentExecutionStatus GetEffectiveDeploymentExecutionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IN_PROGRESS_HASH)
           {
             return EffectiveDeploymentExecutionStatus::IN_PROGRESS;

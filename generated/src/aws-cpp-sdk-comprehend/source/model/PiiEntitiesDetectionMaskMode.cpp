@@ -20,13 +20,13 @@ namespace Aws
       namespace PiiEntitiesDetectionMaskModeMapper
       {
 
-        static const int MASK_HASH = HashingUtils::HashString("MASK");
-        static const int REPLACE_WITH_PII_ENTITY_TYPE_HASH = HashingUtils::HashString("REPLACE_WITH_PII_ENTITY_TYPE");
+        static constexpr uint32_t MASK_HASH = ConstExprHashingUtils::HashString("MASK");
+        static constexpr uint32_t REPLACE_WITH_PII_ENTITY_TYPE_HASH = ConstExprHashingUtils::HashString("REPLACE_WITH_PII_ENTITY_TYPE");
 
 
         PiiEntitiesDetectionMaskMode GetPiiEntitiesDetectionMaskModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MASK_HASH)
           {
             return PiiEntitiesDetectionMaskMode::MASK;

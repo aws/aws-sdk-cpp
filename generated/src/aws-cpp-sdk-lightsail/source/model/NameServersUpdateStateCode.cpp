@@ -20,15 +20,15 @@ namespace Aws
       namespace NameServersUpdateStateCodeMapper
       {
 
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int STARTED_HASH = HashingUtils::HashString("STARTED");
+        static constexpr uint32_t SUCCEEDED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t STARTED_HASH = ConstExprHashingUtils::HashString("STARTED");
 
 
         NameServersUpdateStateCode GetNameServersUpdateStateCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUCCEEDED_HASH)
           {
             return NameServersUpdateStateCode::SUCCEEDED;

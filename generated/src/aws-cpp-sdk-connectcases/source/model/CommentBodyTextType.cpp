@@ -20,12 +20,12 @@ namespace Aws
       namespace CommentBodyTextTypeMapper
       {
 
-        static const int Text_Plain_HASH = HashingUtils::HashString("Text/Plain");
+        static constexpr uint32_t Text_Plain_HASH = ConstExprHashingUtils::HashString("Text/Plain");
 
 
         CommentBodyTextType GetCommentBodyTextTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Text_Plain_HASH)
           {
             return CommentBodyTextType::Text_Plain;

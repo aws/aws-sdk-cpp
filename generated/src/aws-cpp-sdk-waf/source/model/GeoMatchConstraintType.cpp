@@ -20,12 +20,12 @@ namespace Aws
       namespace GeoMatchConstraintTypeMapper
       {
 
-        static const int Country_HASH = HashingUtils::HashString("Country");
+        static constexpr uint32_t Country_HASH = ConstExprHashingUtils::HashString("Country");
 
 
         GeoMatchConstraintType GetGeoMatchConstraintTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Country_HASH)
           {
             return GeoMatchConstraintType::Country;

@@ -20,15 +20,15 @@ namespace Aws
       namespace InputSecurityGroupStateMapper
       {
 
-        static const int IDLE_HASH = HashingUtils::HashString("IDLE");
-        static const int IN_USE_HASH = HashingUtils::HashString("IN_USE");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t IDLE_HASH = ConstExprHashingUtils::HashString("IDLE");
+        static constexpr uint32_t IN_USE_HASH = ConstExprHashingUtils::HashString("IN_USE");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         InputSecurityGroupState GetInputSecurityGroupStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IDLE_HASH)
           {
             return InputSecurityGroupState::IDLE;

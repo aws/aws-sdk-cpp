@@ -20,18 +20,18 @@ namespace Aws
       namespace ApplicationPermissionMapper
       {
 
-        static const int CreateDataset_HASH = HashingUtils::HashString("CreateDataset");
-        static const int ManageClusters_HASH = HashingUtils::HashString("ManageClusters");
-        static const int ManageUsersAndGroups_HASH = HashingUtils::HashString("ManageUsersAndGroups");
-        static const int ManageAttributeSets_HASH = HashingUtils::HashString("ManageAttributeSets");
-        static const int ViewAuditData_HASH = HashingUtils::HashString("ViewAuditData");
-        static const int AccessNotebooks_HASH = HashingUtils::HashString("AccessNotebooks");
-        static const int GetTemporaryCredentials_HASH = HashingUtils::HashString("GetTemporaryCredentials");
+        static constexpr uint32_t CreateDataset_HASH = ConstExprHashingUtils::HashString("CreateDataset");
+        static constexpr uint32_t ManageClusters_HASH = ConstExprHashingUtils::HashString("ManageClusters");
+        static constexpr uint32_t ManageUsersAndGroups_HASH = ConstExprHashingUtils::HashString("ManageUsersAndGroups");
+        static constexpr uint32_t ManageAttributeSets_HASH = ConstExprHashingUtils::HashString("ManageAttributeSets");
+        static constexpr uint32_t ViewAuditData_HASH = ConstExprHashingUtils::HashString("ViewAuditData");
+        static constexpr uint32_t AccessNotebooks_HASH = ConstExprHashingUtils::HashString("AccessNotebooks");
+        static constexpr uint32_t GetTemporaryCredentials_HASH = ConstExprHashingUtils::HashString("GetTemporaryCredentials");
 
 
         ApplicationPermission GetApplicationPermissionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CreateDataset_HASH)
           {
             return ApplicationPermission::CreateDataset;

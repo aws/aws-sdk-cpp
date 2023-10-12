@@ -20,13 +20,13 @@ namespace Aws
       namespace ApplicationDeploymentLifecycleMapper
       {
 
-        static const int Deploying_HASH = HashingUtils::HashString("Deploying");
-        static const int Deployed_HASH = HashingUtils::HashString("Deployed");
+        static constexpr uint32_t Deploying_HASH = ConstExprHashingUtils::HashString("Deploying");
+        static constexpr uint32_t Deployed_HASH = ConstExprHashingUtils::HashString("Deployed");
 
 
         ApplicationDeploymentLifecycle GetApplicationDeploymentLifecycleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Deploying_HASH)
           {
             return ApplicationDeploymentLifecycle::Deploying;

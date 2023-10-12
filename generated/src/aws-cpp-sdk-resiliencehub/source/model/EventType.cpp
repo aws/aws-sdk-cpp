@@ -20,13 +20,13 @@ namespace Aws
       namespace EventTypeMapper
       {
 
-        static const int ScheduledAssessmentFailure_HASH = HashingUtils::HashString("ScheduledAssessmentFailure");
-        static const int DriftDetected_HASH = HashingUtils::HashString("DriftDetected");
+        static constexpr uint32_t ScheduledAssessmentFailure_HASH = ConstExprHashingUtils::HashString("ScheduledAssessmentFailure");
+        static constexpr uint32_t DriftDetected_HASH = ConstExprHashingUtils::HashString("DriftDetected");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ScheduledAssessmentFailure_HASH)
           {
             return EventType::ScheduledAssessmentFailure;

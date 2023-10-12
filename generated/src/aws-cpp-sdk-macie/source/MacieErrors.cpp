@@ -47,14 +47,14 @@ template<> AWS_MACIE_API InvalidInputException MacieError::GetModeledError()
 namespace MacieErrorMapper
 {
 
-static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
+static constexpr uint32_t INTERNAL_HASH = ConstExprHashingUtils::HashString("InternalException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t INVALID_INPUT_HASH = ConstExprHashingUtils::HashString("InvalidInputException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INTERNAL_HASH)
   {

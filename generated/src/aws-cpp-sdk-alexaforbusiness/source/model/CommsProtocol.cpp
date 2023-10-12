@@ -20,14 +20,14 @@ namespace Aws
       namespace CommsProtocolMapper
       {
 
-        static const int SIP_HASH = HashingUtils::HashString("SIP");
-        static const int SIPS_HASH = HashingUtils::HashString("SIPS");
-        static const int H323_HASH = HashingUtils::HashString("H323");
+        static constexpr uint32_t SIP_HASH = ConstExprHashingUtils::HashString("SIP");
+        static constexpr uint32_t SIPS_HASH = ConstExprHashingUtils::HashString("SIPS");
+        static constexpr uint32_t H323_HASH = ConstExprHashingUtils::HashString("H323");
 
 
         CommsProtocol GetCommsProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SIP_HASH)
           {
             return CommsProtocol::SIP;

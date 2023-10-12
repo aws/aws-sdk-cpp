@@ -20,13 +20,13 @@ namespace Aws
       namespace PhoneNumberProductTypeMapper
       {
 
-        static const int VoiceConnector_HASH = HashingUtils::HashString("VoiceConnector");
-        static const int SipMediaApplicationDialIn_HASH = HashingUtils::HashString("SipMediaApplicationDialIn");
+        static constexpr uint32_t VoiceConnector_HASH = ConstExprHashingUtils::HashString("VoiceConnector");
+        static constexpr uint32_t SipMediaApplicationDialIn_HASH = ConstExprHashingUtils::HashString("SipMediaApplicationDialIn");
 
 
         PhoneNumberProductType GetPhoneNumberProductTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VoiceConnector_HASH)
           {
             return PhoneNumberProductType::VoiceConnector;

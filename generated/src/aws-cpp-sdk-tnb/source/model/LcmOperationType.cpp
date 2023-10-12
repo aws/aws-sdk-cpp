@@ -20,14 +20,14 @@ namespace Aws
       namespace LcmOperationTypeMapper
       {
 
-        static const int INSTANTIATE_HASH = HashingUtils::HashString("INSTANTIATE");
-        static const int UPDATE_HASH = HashingUtils::HashString("UPDATE");
-        static const int TERMINATE_HASH = HashingUtils::HashString("TERMINATE");
+        static constexpr uint32_t INSTANTIATE_HASH = ConstExprHashingUtils::HashString("INSTANTIATE");
+        static constexpr uint32_t UPDATE_HASH = ConstExprHashingUtils::HashString("UPDATE");
+        static constexpr uint32_t TERMINATE_HASH = ConstExprHashingUtils::HashString("TERMINATE");
 
 
         LcmOperationType GetLcmOperationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSTANTIATE_HASH)
           {
             return LcmOperationType::INSTANTIATE;

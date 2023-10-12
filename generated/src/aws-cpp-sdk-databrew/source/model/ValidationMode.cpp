@@ -20,12 +20,12 @@ namespace Aws
       namespace ValidationModeMapper
       {
 
-        static const int CHECK_ALL_HASH = HashingUtils::HashString("CHECK_ALL");
+        static constexpr uint32_t CHECK_ALL_HASH = ConstExprHashingUtils::HashString("CHECK_ALL");
 
 
         ValidationMode GetValidationModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CHECK_ALL_HASH)
           {
             return ValidationMode::CHECK_ALL;

@@ -20,15 +20,15 @@ namespace Aws
       namespace StackResourceDriftStatusMapper
       {
 
-        static const int IN_SYNC_HASH = HashingUtils::HashString("IN_SYNC");
-        static const int MODIFIED_HASH = HashingUtils::HashString("MODIFIED");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int NOT_CHECKED_HASH = HashingUtils::HashString("NOT_CHECKED");
+        static constexpr uint32_t IN_SYNC_HASH = ConstExprHashingUtils::HashString("IN_SYNC");
+        static constexpr uint32_t MODIFIED_HASH = ConstExprHashingUtils::HashString("MODIFIED");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t NOT_CHECKED_HASH = ConstExprHashingUtils::HashString("NOT_CHECKED");
 
 
         StackResourceDriftStatus GetStackResourceDriftStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IN_SYNC_HASH)
           {
             return StackResourceDriftStatus::IN_SYNC;

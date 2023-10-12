@@ -20,14 +20,14 @@ namespace Aws
       namespace ResourceCountGroupKeyMapper
       {
 
-        static const int RESOURCE_TYPE_HASH = HashingUtils::HashString("RESOURCE_TYPE");
-        static const int ACCOUNT_ID_HASH = HashingUtils::HashString("ACCOUNT_ID");
-        static const int AWS_REGION_HASH = HashingUtils::HashString("AWS_REGION");
+        static constexpr uint32_t RESOURCE_TYPE_HASH = ConstExprHashingUtils::HashString("RESOURCE_TYPE");
+        static constexpr uint32_t ACCOUNT_ID_HASH = ConstExprHashingUtils::HashString("ACCOUNT_ID");
+        static constexpr uint32_t AWS_REGION_HASH = ConstExprHashingUtils::HashString("AWS_REGION");
 
 
         ResourceCountGroupKey GetResourceCountGroupKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESOURCE_TYPE_HASH)
           {
             return ResourceCountGroupKey::RESOURCE_TYPE;

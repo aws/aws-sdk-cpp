@@ -20,12 +20,12 @@ namespace Aws
       namespace LanguageMapper
       {
 
-        static const int DETECTORPL_HASH = HashingUtils::HashString("DETECTORPL");
+        static constexpr uint32_t DETECTORPL_HASH = ConstExprHashingUtils::HashString("DETECTORPL");
 
 
         Language GetLanguageForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DETECTORPL_HASH)
           {
             return Language::DETECTORPL;

@@ -20,19 +20,19 @@ namespace Aws
       namespace APINameMapper
       {
 
-        static const int PUT_MEDIA_HASH = HashingUtils::HashString("PUT_MEDIA");
-        static const int GET_MEDIA_HASH = HashingUtils::HashString("GET_MEDIA");
-        static const int LIST_FRAGMENTS_HASH = HashingUtils::HashString("LIST_FRAGMENTS");
-        static const int GET_MEDIA_FOR_FRAGMENT_LIST_HASH = HashingUtils::HashString("GET_MEDIA_FOR_FRAGMENT_LIST");
-        static const int GET_HLS_STREAMING_SESSION_URL_HASH = HashingUtils::HashString("GET_HLS_STREAMING_SESSION_URL");
-        static const int GET_DASH_STREAMING_SESSION_URL_HASH = HashingUtils::HashString("GET_DASH_STREAMING_SESSION_URL");
-        static const int GET_CLIP_HASH = HashingUtils::HashString("GET_CLIP");
-        static const int GET_IMAGES_HASH = HashingUtils::HashString("GET_IMAGES");
+        static constexpr uint32_t PUT_MEDIA_HASH = ConstExprHashingUtils::HashString("PUT_MEDIA");
+        static constexpr uint32_t GET_MEDIA_HASH = ConstExprHashingUtils::HashString("GET_MEDIA");
+        static constexpr uint32_t LIST_FRAGMENTS_HASH = ConstExprHashingUtils::HashString("LIST_FRAGMENTS");
+        static constexpr uint32_t GET_MEDIA_FOR_FRAGMENT_LIST_HASH = ConstExprHashingUtils::HashString("GET_MEDIA_FOR_FRAGMENT_LIST");
+        static constexpr uint32_t GET_HLS_STREAMING_SESSION_URL_HASH = ConstExprHashingUtils::HashString("GET_HLS_STREAMING_SESSION_URL");
+        static constexpr uint32_t GET_DASH_STREAMING_SESSION_URL_HASH = ConstExprHashingUtils::HashString("GET_DASH_STREAMING_SESSION_URL");
+        static constexpr uint32_t GET_CLIP_HASH = ConstExprHashingUtils::HashString("GET_CLIP");
+        static constexpr uint32_t GET_IMAGES_HASH = ConstExprHashingUtils::HashString("GET_IMAGES");
 
 
         APIName GetAPINameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUT_MEDIA_HASH)
           {
             return APIName::PUT_MEDIA;

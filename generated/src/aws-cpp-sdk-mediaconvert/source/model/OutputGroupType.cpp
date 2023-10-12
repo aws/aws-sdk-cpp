@@ -20,16 +20,16 @@ namespace Aws
       namespace OutputGroupTypeMapper
       {
 
-        static const int HLS_GROUP_SETTINGS_HASH = HashingUtils::HashString("HLS_GROUP_SETTINGS");
-        static const int DASH_ISO_GROUP_SETTINGS_HASH = HashingUtils::HashString("DASH_ISO_GROUP_SETTINGS");
-        static const int FILE_GROUP_SETTINGS_HASH = HashingUtils::HashString("FILE_GROUP_SETTINGS");
-        static const int MS_SMOOTH_GROUP_SETTINGS_HASH = HashingUtils::HashString("MS_SMOOTH_GROUP_SETTINGS");
-        static const int CMAF_GROUP_SETTINGS_HASH = HashingUtils::HashString("CMAF_GROUP_SETTINGS");
+        static constexpr uint32_t HLS_GROUP_SETTINGS_HASH = ConstExprHashingUtils::HashString("HLS_GROUP_SETTINGS");
+        static constexpr uint32_t DASH_ISO_GROUP_SETTINGS_HASH = ConstExprHashingUtils::HashString("DASH_ISO_GROUP_SETTINGS");
+        static constexpr uint32_t FILE_GROUP_SETTINGS_HASH = ConstExprHashingUtils::HashString("FILE_GROUP_SETTINGS");
+        static constexpr uint32_t MS_SMOOTH_GROUP_SETTINGS_HASH = ConstExprHashingUtils::HashString("MS_SMOOTH_GROUP_SETTINGS");
+        static constexpr uint32_t CMAF_GROUP_SETTINGS_HASH = ConstExprHashingUtils::HashString("CMAF_GROUP_SETTINGS");
 
 
         OutputGroupType GetOutputGroupTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HLS_GROUP_SETTINGS_HASH)
           {
             return OutputGroupType::HLS_GROUP_SETTINGS;

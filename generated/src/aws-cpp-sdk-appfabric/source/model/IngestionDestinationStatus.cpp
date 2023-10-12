@@ -20,13 +20,13 @@ namespace Aws
       namespace IngestionDestinationStatusMapper
       {
 
-        static const int Active_HASH = HashingUtils::HashString("Active");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         IngestionDestinationStatus GetIngestionDestinationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Active_HASH)
           {
             return IngestionDestinationStatus::Active;

@@ -20,17 +20,17 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int APPLICATION_LOAD_BALANCER_HASH = HashingUtils::HashString("APPLICATION_LOAD_BALANCER");
-        static const int API_GATEWAY_HASH = HashingUtils::HashString("API_GATEWAY");
-        static const int APPSYNC_HASH = HashingUtils::HashString("APPSYNC");
-        static const int COGNITO_USER_POOL_HASH = HashingUtils::HashString("COGNITO_USER_POOL");
-        static const int APP_RUNNER_SERVICE_HASH = HashingUtils::HashString("APP_RUNNER_SERVICE");
-        static const int VERIFIED_ACCESS_INSTANCE_HASH = HashingUtils::HashString("VERIFIED_ACCESS_INSTANCE");
+        static constexpr uint32_t APPLICATION_LOAD_BALANCER_HASH = ConstExprHashingUtils::HashString("APPLICATION_LOAD_BALANCER");
+        static constexpr uint32_t API_GATEWAY_HASH = ConstExprHashingUtils::HashString("API_GATEWAY");
+        static constexpr uint32_t APPSYNC_HASH = ConstExprHashingUtils::HashString("APPSYNC");
+        static constexpr uint32_t COGNITO_USER_POOL_HASH = ConstExprHashingUtils::HashString("COGNITO_USER_POOL");
+        static constexpr uint32_t APP_RUNNER_SERVICE_HASH = ConstExprHashingUtils::HashString("APP_RUNNER_SERVICE");
+        static constexpr uint32_t VERIFIED_ACCESS_INSTANCE_HASH = ConstExprHashingUtils::HashString("VERIFIED_ACCESS_INSTANCE");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APPLICATION_LOAD_BALANCER_HASH)
           {
             return ResourceType::APPLICATION_LOAD_BALANCER;

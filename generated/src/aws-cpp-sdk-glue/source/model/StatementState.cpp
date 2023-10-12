@@ -20,17 +20,17 @@ namespace Aws
       namespace StatementStateMapper
       {
 
-        static const int WAITING_HASH = HashingUtils::HashString("WAITING");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int CANCELLING_HASH = HashingUtils::HashString("CANCELLING");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t WAITING_HASH = ConstExprHashingUtils::HashString("WAITING");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t CANCELLING_HASH = ConstExprHashingUtils::HashString("CANCELLING");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         StatementState GetStatementStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WAITING_HASH)
           {
             return StatementState::WAITING;

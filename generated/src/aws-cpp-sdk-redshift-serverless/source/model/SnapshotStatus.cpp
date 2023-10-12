@@ -20,17 +20,17 @@ namespace Aws
       namespace SnapshotStatusMapper
       {
 
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int COPYING_HASH = HashingUtils::HashString("COPYING");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t COPYING_HASH = ConstExprHashingUtils::HashString("COPYING");
 
 
         SnapshotStatus GetSnapshotStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVAILABLE_HASH)
           {
             return SnapshotStatus::AVAILABLE;

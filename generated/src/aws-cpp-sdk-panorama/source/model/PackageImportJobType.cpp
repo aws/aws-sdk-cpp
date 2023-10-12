@@ -20,13 +20,13 @@ namespace Aws
       namespace PackageImportJobTypeMapper
       {
 
-        static const int NODE_PACKAGE_VERSION_HASH = HashingUtils::HashString("NODE_PACKAGE_VERSION");
-        static const int MARKETPLACE_NODE_PACKAGE_VERSION_HASH = HashingUtils::HashString("MARKETPLACE_NODE_PACKAGE_VERSION");
+        static constexpr uint32_t NODE_PACKAGE_VERSION_HASH = ConstExprHashingUtils::HashString("NODE_PACKAGE_VERSION");
+        static constexpr uint32_t MARKETPLACE_NODE_PACKAGE_VERSION_HASH = ConstExprHashingUtils::HashString("MARKETPLACE_NODE_PACKAGE_VERSION");
 
 
         PackageImportJobType GetPackageImportJobTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NODE_PACKAGE_VERSION_HASH)
           {
             return PackageImportJobType::NODE_PACKAGE_VERSION;

@@ -20,15 +20,15 @@ namespace Aws
       namespace SslProtocolMapper
       {
 
-        static const int SSLv3_HASH = HashingUtils::HashString("SSLv3");
-        static const int TLSv1_HASH = HashingUtils::HashString("TLSv1");
-        static const int TLSv1_1_HASH = HashingUtils::HashString("TLSv1.1");
-        static const int TLSv1_2_HASH = HashingUtils::HashString("TLSv1.2");
+        static constexpr uint32_t SSLv3_HASH = ConstExprHashingUtils::HashString("SSLv3");
+        static constexpr uint32_t TLSv1_HASH = ConstExprHashingUtils::HashString("TLSv1");
+        static constexpr uint32_t TLSv1_1_HASH = ConstExprHashingUtils::HashString("TLSv1.1");
+        static constexpr uint32_t TLSv1_2_HASH = ConstExprHashingUtils::HashString("TLSv1.2");
 
 
         SslProtocol GetSslProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SSLv3_HASH)
           {
             return SslProtocol::SSLv3;

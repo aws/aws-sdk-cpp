@@ -20,12 +20,12 @@ namespace Aws
       namespace CloudFormationStackRecordSourceTypeMapper
       {
 
-        static const int ExportSnapshotRecord_HASH = HashingUtils::HashString("ExportSnapshotRecord");
+        static constexpr uint32_t ExportSnapshotRecord_HASH = ConstExprHashingUtils::HashString("ExportSnapshotRecord");
 
 
         CloudFormationStackRecordSourceType GetCloudFormationStackRecordSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ExportSnapshotRecord_HASH)
           {
             return CloudFormationStackRecordSourceType::ExportSnapshotRecord;

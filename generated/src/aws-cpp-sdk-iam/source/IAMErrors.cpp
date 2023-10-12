@@ -18,38 +18,38 @@ namespace IAM
 namespace IAMErrorMapper
 {
 
-static const int ENTITY_ALREADY_EXISTS_HASH = HashingUtils::HashString("EntityAlreadyExists");
-static const int DELETE_CONFLICT_HASH = HashingUtils::HashString("DeleteConflict");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModification");
-static const int INVALID_AUTHENTICATION_CODE_HASH = HashingUtils::HashString("InvalidAuthenticationCode");
-static const int INVALID_USER_TYPE_HASH = HashingUtils::HashString("InvalidUserType");
-static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocument");
-static const int SERVICE_NOT_SUPPORTED_HASH = HashingUtils::HashString("NotSupportedService");
-static const int UNMODIFIABLE_ENTITY_HASH = HashingUtils::HashString("UnmodifiableEntity");
-static const int NO_SUCH_ENTITY_HASH = HashingUtils::HashString("NoSuchEntity");
-static const int DUPLICATE_S_S_H_PUBLIC_KEY_HASH = HashingUtils::HashString("DuplicateSSHPublicKey");
-static const int INVALID_CERTIFICATE_HASH = HashingUtils::HashString("InvalidCertificate");
-static const int INVALID_PUBLIC_KEY_HASH = HashingUtils::HashString("InvalidPublicKey");
-static const int POLICY_NOT_ATTACHABLE_HASH = HashingUtils::HashString("PolicyNotAttachable");
-static const int DUPLICATE_CERTIFICATE_HASH = HashingUtils::HashString("DuplicateCertificate");
-static const int PASSWORD_POLICY_VIOLATION_HASH = HashingUtils::HashString("PasswordPolicyViolation");
-static const int UNRECOGNIZED_PUBLIC_KEY_ENCODING_HASH = HashingUtils::HashString("UnrecognizedPublicKeyEncoding");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInput");
-static const int CREDENTIAL_REPORT_NOT_READY_HASH = HashingUtils::HashString("ReportInProgress");
-static const int CREDENTIAL_REPORT_NOT_PRESENT_HASH = HashingUtils::HashString("ReportNotPresent");
-static const int CREDENTIAL_REPORT_EXPIRED_HASH = HashingUtils::HashString("ReportExpired");
-static const int KEY_PAIR_MISMATCH_HASH = HashingUtils::HashString("KeyPairMismatch");
-static const int MALFORMED_CERTIFICATE_HASH = HashingUtils::HashString("MalformedCertificate");
-static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailure");
-static const int POLICY_EVALUATION_HASH = HashingUtils::HashString("PolicyEvaluation");
-static const int ENTITY_TEMPORARILY_UNMODIFIABLE_HASH = HashingUtils::HashString("EntityTemporarilyUnmodifiable");
-static const int REPORT_GENERATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ReportGenerationLimitExceeded");
+static constexpr uint32_t ENTITY_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("EntityAlreadyExists");
+static constexpr uint32_t DELETE_CONFLICT_HASH = ConstExprHashingUtils::HashString("DeleteConflict");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceeded");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModification");
+static constexpr uint32_t INVALID_AUTHENTICATION_CODE_HASH = ConstExprHashingUtils::HashString("InvalidAuthenticationCode");
+static constexpr uint32_t INVALID_USER_TYPE_HASH = ConstExprHashingUtils::HashString("InvalidUserType");
+static constexpr uint32_t MALFORMED_POLICY_DOCUMENT_HASH = ConstExprHashingUtils::HashString("MalformedPolicyDocument");
+static constexpr uint32_t SERVICE_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("NotSupportedService");
+static constexpr uint32_t UNMODIFIABLE_ENTITY_HASH = ConstExprHashingUtils::HashString("UnmodifiableEntity");
+static constexpr uint32_t NO_SUCH_ENTITY_HASH = ConstExprHashingUtils::HashString("NoSuchEntity");
+static constexpr uint32_t DUPLICATE_S_S_H_PUBLIC_KEY_HASH = ConstExprHashingUtils::HashString("DuplicateSSHPublicKey");
+static constexpr uint32_t INVALID_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("InvalidCertificate");
+static constexpr uint32_t INVALID_PUBLIC_KEY_HASH = ConstExprHashingUtils::HashString("InvalidPublicKey");
+static constexpr uint32_t POLICY_NOT_ATTACHABLE_HASH = ConstExprHashingUtils::HashString("PolicyNotAttachable");
+static constexpr uint32_t DUPLICATE_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("DuplicateCertificate");
+static constexpr uint32_t PASSWORD_POLICY_VIOLATION_HASH = ConstExprHashingUtils::HashString("PasswordPolicyViolation");
+static constexpr uint32_t UNRECOGNIZED_PUBLIC_KEY_ENCODING_HASH = ConstExprHashingUtils::HashString("UnrecognizedPublicKeyEncoding");
+static constexpr uint32_t INVALID_INPUT_HASH = ConstExprHashingUtils::HashString("InvalidInput");
+static constexpr uint32_t CREDENTIAL_REPORT_NOT_READY_HASH = ConstExprHashingUtils::HashString("ReportInProgress");
+static constexpr uint32_t CREDENTIAL_REPORT_NOT_PRESENT_HASH = ConstExprHashingUtils::HashString("ReportNotPresent");
+static constexpr uint32_t CREDENTIAL_REPORT_EXPIRED_HASH = ConstExprHashingUtils::HashString("ReportExpired");
+static constexpr uint32_t KEY_PAIR_MISMATCH_HASH = ConstExprHashingUtils::HashString("KeyPairMismatch");
+static constexpr uint32_t MALFORMED_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("MalformedCertificate");
+static constexpr uint32_t SERVICE_FAILURE_HASH = ConstExprHashingUtils::HashString("ServiceFailure");
+static constexpr uint32_t POLICY_EVALUATION_HASH = ConstExprHashingUtils::HashString("PolicyEvaluation");
+static constexpr uint32_t ENTITY_TEMPORARILY_UNMODIFIABLE_HASH = ConstExprHashingUtils::HashString("EntityTemporarilyUnmodifiable");
+static constexpr uint32_t REPORT_GENERATION_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ReportGenerationLimitExceeded");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == ENTITY_ALREADY_EXISTS_HASH)
   {

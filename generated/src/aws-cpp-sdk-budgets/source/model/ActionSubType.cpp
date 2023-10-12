@@ -20,13 +20,13 @@ namespace Aws
       namespace ActionSubTypeMapper
       {
 
-        static const int STOP_EC2_INSTANCES_HASH = HashingUtils::HashString("STOP_EC2_INSTANCES");
-        static const int STOP_RDS_INSTANCES_HASH = HashingUtils::HashString("STOP_RDS_INSTANCES");
+        static constexpr uint32_t STOP_EC2_INSTANCES_HASH = ConstExprHashingUtils::HashString("STOP_EC2_INSTANCES");
+        static constexpr uint32_t STOP_RDS_INSTANCES_HASH = ConstExprHashingUtils::HashString("STOP_RDS_INSTANCES");
 
 
         ActionSubType GetActionSubTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STOP_EC2_INSTANCES_HASH)
           {
             return ActionSubType::STOP_EC2_INSTANCES;

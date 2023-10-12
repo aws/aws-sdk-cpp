@@ -20,13 +20,13 @@ namespace Aws
       namespace AdMarkupTypeMapper
       {
 
-        static const int DATERANGE_HASH = HashingUtils::HashString("DATERANGE");
-        static const int SCTE35_ENHANCED_HASH = HashingUtils::HashString("SCTE35_ENHANCED");
+        static constexpr uint32_t DATERANGE_HASH = ConstExprHashingUtils::HashString("DATERANGE");
+        static constexpr uint32_t SCTE35_ENHANCED_HASH = ConstExprHashingUtils::HashString("SCTE35_ENHANCED");
 
 
         AdMarkupType GetAdMarkupTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DATERANGE_HASH)
           {
             return AdMarkupType::DATERANGE;

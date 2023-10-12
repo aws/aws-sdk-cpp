@@ -20,13 +20,13 @@ namespace Aws
       namespace F4vMoovPlacementMapper
       {
 
-        static const int PROGRESSIVE_DOWNLOAD_HASH = HashingUtils::HashString("PROGRESSIVE_DOWNLOAD");
-        static const int NORMAL_HASH = HashingUtils::HashString("NORMAL");
+        static constexpr uint32_t PROGRESSIVE_DOWNLOAD_HASH = ConstExprHashingUtils::HashString("PROGRESSIVE_DOWNLOAD");
+        static constexpr uint32_t NORMAL_HASH = ConstExprHashingUtils::HashString("NORMAL");
 
 
         F4vMoovPlacement GetF4vMoovPlacementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROGRESSIVE_DOWNLOAD_HASH)
           {
             return F4vMoovPlacement::PROGRESSIVE_DOWNLOAD;

@@ -20,16 +20,16 @@ namespace Aws
       namespace ConnectorCapabilityMapper
       {
 
-        static const int VSPHERE_HASH = HashingUtils::HashString("VSPHERE");
-        static const int SCVMM_HASH = HashingUtils::HashString("SCVMM");
-        static const int HYPERV_MANAGER_HASH = HashingUtils::HashString("HYPERV-MANAGER");
-        static const int SNAPSHOT_BATCHING_HASH = HashingUtils::HashString("SNAPSHOT_BATCHING");
-        static const int SMS_OPTIMIZED_HASH = HashingUtils::HashString("SMS_OPTIMIZED");
+        static constexpr uint32_t VSPHERE_HASH = ConstExprHashingUtils::HashString("VSPHERE");
+        static constexpr uint32_t SCVMM_HASH = ConstExprHashingUtils::HashString("SCVMM");
+        static constexpr uint32_t HYPERV_MANAGER_HASH = ConstExprHashingUtils::HashString("HYPERV-MANAGER");
+        static constexpr uint32_t SNAPSHOT_BATCHING_HASH = ConstExprHashingUtils::HashString("SNAPSHOT_BATCHING");
+        static constexpr uint32_t SMS_OPTIMIZED_HASH = ConstExprHashingUtils::HashString("SMS_OPTIMIZED");
 
 
         ConnectorCapability GetConnectorCapabilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VSPHERE_HASH)
           {
             return ConnectorCapability::VSPHERE;

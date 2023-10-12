@@ -20,12 +20,12 @@ namespace Aws
       namespace AnchorOptionMapper
       {
 
-        static const int NOW_HASH = HashingUtils::HashString("NOW");
+        static constexpr uint32_t NOW_HASH = ConstExprHashingUtils::HashString("NOW");
 
 
         AnchorOption GetAnchorOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOW_HASH)
           {
             return AnchorOption::NOW;

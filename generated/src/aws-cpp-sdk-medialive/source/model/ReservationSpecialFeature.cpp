@@ -20,15 +20,15 @@ namespace Aws
       namespace ReservationSpecialFeatureMapper
       {
 
-        static const int ADVANCED_AUDIO_HASH = HashingUtils::HashString("ADVANCED_AUDIO");
-        static const int AUDIO_NORMALIZATION_HASH = HashingUtils::HashString("AUDIO_NORMALIZATION");
-        static const int MGHD_HASH = HashingUtils::HashString("MGHD");
-        static const int MGUHD_HASH = HashingUtils::HashString("MGUHD");
+        static constexpr uint32_t ADVANCED_AUDIO_HASH = ConstExprHashingUtils::HashString("ADVANCED_AUDIO");
+        static constexpr uint32_t AUDIO_NORMALIZATION_HASH = ConstExprHashingUtils::HashString("AUDIO_NORMALIZATION");
+        static constexpr uint32_t MGHD_HASH = ConstExprHashingUtils::HashString("MGHD");
+        static constexpr uint32_t MGUHD_HASH = ConstExprHashingUtils::HashString("MGUHD");
 
 
         ReservationSpecialFeature GetReservationSpecialFeatureForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADVANCED_AUDIO_HASH)
           {
             return ReservationSpecialFeature::ADVANCED_AUDIO;

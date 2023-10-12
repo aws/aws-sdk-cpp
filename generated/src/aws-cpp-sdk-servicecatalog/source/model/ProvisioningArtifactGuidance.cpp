@@ -20,13 +20,13 @@ namespace Aws
       namespace ProvisioningArtifactGuidanceMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t DEPRECATED_HASH = ConstExprHashingUtils::HashString("DEPRECATED");
 
 
         ProvisioningArtifactGuidance GetProvisioningArtifactGuidanceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return ProvisioningArtifactGuidance::DEFAULT;

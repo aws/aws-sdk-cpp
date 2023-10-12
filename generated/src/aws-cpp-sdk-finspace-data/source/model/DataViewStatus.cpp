@@ -20,19 +20,19 @@ namespace Aws
       namespace DataViewStatusMapper
       {
 
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-        static const int TIMEOUT_HASH = HashingUtils::HashString("TIMEOUT");
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int FAILED_CLEANUP_FAILED_HASH = HashingUtils::HashString("FAILED_CLEANUP_FAILED");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t STARTING_HASH = ConstExprHashingUtils::HashString("STARTING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t TIMEOUT_HASH = ConstExprHashingUtils::HashString("TIMEOUT");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t FAILED_CLEANUP_FAILED_HASH = ConstExprHashingUtils::HashString("FAILED_CLEANUP_FAILED");
 
 
         DataViewStatus GetDataViewStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RUNNING_HASH)
           {
             return DataViewStatus::RUNNING;

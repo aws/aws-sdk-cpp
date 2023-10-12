@@ -20,13 +20,13 @@ namespace Aws
       namespace SubnetStateMapper
       {
 
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int available_HASH = HashingUtils::HashString("available");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t available_HASH = ConstExprHashingUtils::HashString("available");
 
 
         SubnetState GetSubnetStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pending_HASH)
           {
             return SubnetState::pending;

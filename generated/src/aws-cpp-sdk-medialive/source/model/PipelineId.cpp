@@ -20,13 +20,13 @@ namespace Aws
       namespace PipelineIdMapper
       {
 
-        static const int PIPELINE_0_HASH = HashingUtils::HashString("PIPELINE_0");
-        static const int PIPELINE_1_HASH = HashingUtils::HashString("PIPELINE_1");
+        static constexpr uint32_t PIPELINE_0_HASH = ConstExprHashingUtils::HashString("PIPELINE_0");
+        static constexpr uint32_t PIPELINE_1_HASH = ConstExprHashingUtils::HashString("PIPELINE_1");
 
 
         PipelineId GetPipelineIdForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PIPELINE_0_HASH)
           {
             return PipelineId::PIPELINE_0;

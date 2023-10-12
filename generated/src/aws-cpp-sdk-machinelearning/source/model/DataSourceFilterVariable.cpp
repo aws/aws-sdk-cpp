@@ -20,17 +20,17 @@ namespace Aws
       namespace DataSourceFilterVariableMapper
       {
 
-        static const int CreatedAt_HASH = HashingUtils::HashString("CreatedAt");
-        static const int LastUpdatedAt_HASH = HashingUtils::HashString("LastUpdatedAt");
-        static const int Status_HASH = HashingUtils::HashString("Status");
-        static const int Name_HASH = HashingUtils::HashString("Name");
-        static const int DataLocationS3_HASH = HashingUtils::HashString("DataLocationS3");
-        static const int IAMUser_HASH = HashingUtils::HashString("IAMUser");
+        static constexpr uint32_t CreatedAt_HASH = ConstExprHashingUtils::HashString("CreatedAt");
+        static constexpr uint32_t LastUpdatedAt_HASH = ConstExprHashingUtils::HashString("LastUpdatedAt");
+        static constexpr uint32_t Status_HASH = ConstExprHashingUtils::HashString("Status");
+        static constexpr uint32_t Name_HASH = ConstExprHashingUtils::HashString("Name");
+        static constexpr uint32_t DataLocationS3_HASH = ConstExprHashingUtils::HashString("DataLocationS3");
+        static constexpr uint32_t IAMUser_HASH = ConstExprHashingUtils::HashString("IAMUser");
 
 
         DataSourceFilterVariable GetDataSourceFilterVariableForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CreatedAt_HASH)
           {
             return DataSourceFilterVariable::CreatedAt;

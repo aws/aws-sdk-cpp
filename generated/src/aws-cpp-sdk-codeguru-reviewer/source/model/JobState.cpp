@@ -20,15 +20,15 @@ namespace Aws
       namespace JobStateMapper
       {
 
-        static const int Completed_HASH = HashingUtils::HashString("Completed");
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
+        static constexpr uint32_t Completed_HASH = ConstExprHashingUtils::HashString("Completed");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
 
 
         JobState GetJobStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Completed_HASH)
           {
             return JobState::Completed;

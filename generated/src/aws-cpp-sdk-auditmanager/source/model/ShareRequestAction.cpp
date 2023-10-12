@@ -20,14 +20,14 @@ namespace Aws
       namespace ShareRequestActionMapper
       {
 
-        static const int ACCEPT_HASH = HashingUtils::HashString("ACCEPT");
-        static const int DECLINE_HASH = HashingUtils::HashString("DECLINE");
-        static const int REVOKE_HASH = HashingUtils::HashString("REVOKE");
+        static constexpr uint32_t ACCEPT_HASH = ConstExprHashingUtils::HashString("ACCEPT");
+        static constexpr uint32_t DECLINE_HASH = ConstExprHashingUtils::HashString("DECLINE");
+        static constexpr uint32_t REVOKE_HASH = ConstExprHashingUtils::HashString("REVOKE");
 
 
         ShareRequestAction GetShareRequestActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCEPT_HASH)
           {
             return ShareRequestAction::ACCEPT;

@@ -20,14 +20,14 @@ namespace Aws
       namespace DeploymentControllerTypeMapper
       {
 
-        static const int ECS_HASH = HashingUtils::HashString("ECS");
-        static const int CODE_DEPLOY_HASH = HashingUtils::HashString("CODE_DEPLOY");
-        static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
+        static constexpr uint32_t ECS_HASH = ConstExprHashingUtils::HashString("ECS");
+        static constexpr uint32_t CODE_DEPLOY_HASH = ConstExprHashingUtils::HashString("CODE_DEPLOY");
+        static constexpr uint32_t EXTERNAL_HASH = ConstExprHashingUtils::HashString("EXTERNAL");
 
 
         DeploymentControllerType GetDeploymentControllerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ECS_HASH)
           {
             return DeploymentControllerType::ECS;

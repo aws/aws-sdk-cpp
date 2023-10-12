@@ -20,13 +20,13 @@ namespace Aws
       namespace PayerMapper
       {
 
-        static const int Requester_HASH = HashingUtils::HashString("Requester");
-        static const int BucketOwner_HASH = HashingUtils::HashString("BucketOwner");
+        static constexpr uint32_t Requester_HASH = ConstExprHashingUtils::HashString("Requester");
+        static constexpr uint32_t BucketOwner_HASH = ConstExprHashingUtils::HashString("BucketOwner");
 
 
         Payer GetPayerForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Requester_HASH)
           {
             return Payer::Requester;

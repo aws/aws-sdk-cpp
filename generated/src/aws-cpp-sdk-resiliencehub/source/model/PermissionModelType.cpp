@@ -20,13 +20,13 @@ namespace Aws
       namespace PermissionModelTypeMapper
       {
 
-        static const int LegacyIAMUser_HASH = HashingUtils::HashString("LegacyIAMUser");
-        static const int RoleBased_HASH = HashingUtils::HashString("RoleBased");
+        static constexpr uint32_t LegacyIAMUser_HASH = ConstExprHashingUtils::HashString("LegacyIAMUser");
+        static constexpr uint32_t RoleBased_HASH = ConstExprHashingUtils::HashString("RoleBased");
 
 
         PermissionModelType GetPermissionModelTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LegacyIAMUser_HASH)
           {
             return PermissionModelType::LegacyIAMUser;

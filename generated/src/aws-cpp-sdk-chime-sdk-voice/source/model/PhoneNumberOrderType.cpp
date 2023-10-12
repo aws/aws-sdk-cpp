@@ -20,13 +20,13 @@ namespace Aws
       namespace PhoneNumberOrderTypeMapper
       {
 
-        static const int New_HASH = HashingUtils::HashString("New");
-        static const int Porting_HASH = HashingUtils::HashString("Porting");
+        static constexpr uint32_t New_HASH = ConstExprHashingUtils::HashString("New");
+        static constexpr uint32_t Porting_HASH = ConstExprHashingUtils::HashString("Porting");
 
 
         PhoneNumberOrderType GetPhoneNumberOrderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == New_HASH)
           {
             return PhoneNumberOrderType::New;

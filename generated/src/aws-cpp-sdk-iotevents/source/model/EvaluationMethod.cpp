@@ -20,13 +20,13 @@ namespace Aws
       namespace EvaluationMethodMapper
       {
 
-        static const int BATCH_HASH = HashingUtils::HashString("BATCH");
-        static const int SERIAL_HASH = HashingUtils::HashString("SERIAL");
+        static constexpr uint32_t BATCH_HASH = ConstExprHashingUtils::HashString("BATCH");
+        static constexpr uint32_t SERIAL_HASH = ConstExprHashingUtils::HashString("SERIAL");
 
 
         EvaluationMethod GetEvaluationMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BATCH_HASH)
           {
             return EvaluationMethod::BATCH;

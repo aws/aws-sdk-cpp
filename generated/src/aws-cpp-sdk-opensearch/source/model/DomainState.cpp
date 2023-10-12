@@ -20,14 +20,14 @@ namespace Aws
       namespace DomainStateMapper
       {
 
-        static const int Active_HASH = HashingUtils::HashString("Active");
-        static const int Processing_HASH = HashingUtils::HashString("Processing");
-        static const int NotAvailable_HASH = HashingUtils::HashString("NotAvailable");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
+        static constexpr uint32_t Processing_HASH = ConstExprHashingUtils::HashString("Processing");
+        static constexpr uint32_t NotAvailable_HASH = ConstExprHashingUtils::HashString("NotAvailable");
 
 
         DomainState GetDomainStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Active_HASH)
           {
             return DomainState::Active;

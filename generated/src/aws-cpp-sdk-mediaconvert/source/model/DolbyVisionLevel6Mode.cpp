@@ -20,14 +20,14 @@ namespace Aws
       namespace DolbyVisionLevel6ModeMapper
       {
 
-        static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
-        static const int RECALCULATE_HASH = HashingUtils::HashString("RECALCULATE");
-        static const int SPECIFY_HASH = HashingUtils::HashString("SPECIFY");
+        static constexpr uint32_t PASSTHROUGH_HASH = ConstExprHashingUtils::HashString("PASSTHROUGH");
+        static constexpr uint32_t RECALCULATE_HASH = ConstExprHashingUtils::HashString("RECALCULATE");
+        static constexpr uint32_t SPECIFY_HASH = ConstExprHashingUtils::HashString("SPECIFY");
 
 
         DolbyVisionLevel6Mode GetDolbyVisionLevel6ModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PASSTHROUGH_HASH)
           {
             return DolbyVisionLevel6Mode::PASSTHROUGH;

@@ -20,12 +20,12 @@ namespace Aws
       namespace EcsEnvironmentFileTypeMapper
       {
 
-        static const int s3_HASH = HashingUtils::HashString("s3");
+        static constexpr uint32_t s3_HASH = ConstExprHashingUtils::HashString("s3");
 
 
         EcsEnvironmentFileType GetEcsEnvironmentFileTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == s3_HASH)
           {
             return EcsEnvironmentFileType::s3;

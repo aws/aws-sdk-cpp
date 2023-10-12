@@ -20,12 +20,12 @@ namespace Aws
       namespace EndpointTypeMapper
       {
 
-        static const int HOME_HASH = HashingUtils::HashString("HOME");
+        static constexpr uint32_t HOME_HASH = ConstExprHashingUtils::HashString("HOME");
 
 
         EndpointType GetEndpointTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HOME_HASH)
           {
             return EndpointType::HOME;

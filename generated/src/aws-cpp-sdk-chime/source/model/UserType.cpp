@@ -20,13 +20,13 @@ namespace Aws
       namespace UserTypeMapper
       {
 
-        static const int PrivateUser_HASH = HashingUtils::HashString("PrivateUser");
-        static const int SharedDevice_HASH = HashingUtils::HashString("SharedDevice");
+        static constexpr uint32_t PrivateUser_HASH = ConstExprHashingUtils::HashString("PrivateUser");
+        static constexpr uint32_t SharedDevice_HASH = ConstExprHashingUtils::HashString("SharedDevice");
 
 
         UserType GetUserTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PrivateUser_HASH)
           {
             return UserType::PrivateUser;

@@ -20,16 +20,16 @@ namespace Aws
       namespace EventCodeMapper
       {
 
-        static const int instance_reboot_HASH = HashingUtils::HashString("instance-reboot");
-        static const int system_reboot_HASH = HashingUtils::HashString("system-reboot");
-        static const int system_maintenance_HASH = HashingUtils::HashString("system-maintenance");
-        static const int instance_retirement_HASH = HashingUtils::HashString("instance-retirement");
-        static const int instance_stop_HASH = HashingUtils::HashString("instance-stop");
+        static constexpr uint32_t instance_reboot_HASH = ConstExprHashingUtils::HashString("instance-reboot");
+        static constexpr uint32_t system_reboot_HASH = ConstExprHashingUtils::HashString("system-reboot");
+        static constexpr uint32_t system_maintenance_HASH = ConstExprHashingUtils::HashString("system-maintenance");
+        static constexpr uint32_t instance_retirement_HASH = ConstExprHashingUtils::HashString("instance-retirement");
+        static constexpr uint32_t instance_stop_HASH = ConstExprHashingUtils::HashString("instance-stop");
 
 
         EventCode GetEventCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == instance_reboot_HASH)
           {
             return EventCode::instance_reboot;

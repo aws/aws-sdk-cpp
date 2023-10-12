@@ -20,13 +20,13 @@ namespace Aws
       namespace MacieStatusMapper
       {
 
-        static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+        static constexpr uint32_t PAUSED_HASH = ConstExprHashingUtils::HashString("PAUSED");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
 
 
         MacieStatus GetMacieStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PAUSED_HASH)
           {
             return MacieStatus::PAUSED;

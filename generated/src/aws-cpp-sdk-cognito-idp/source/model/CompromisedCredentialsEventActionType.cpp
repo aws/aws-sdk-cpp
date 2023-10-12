@@ -20,13 +20,13 @@ namespace Aws
       namespace CompromisedCredentialsEventActionTypeMapper
       {
 
-        static const int BLOCK_HASH = HashingUtils::HashString("BLOCK");
-        static const int NO_ACTION_HASH = HashingUtils::HashString("NO_ACTION");
+        static constexpr uint32_t BLOCK_HASH = ConstExprHashingUtils::HashString("BLOCK");
+        static constexpr uint32_t NO_ACTION_HASH = ConstExprHashingUtils::HashString("NO_ACTION");
 
 
         CompromisedCredentialsEventActionType GetCompromisedCredentialsEventActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BLOCK_HASH)
           {
             return CompromisedCredentialsEventActionType::BLOCK;

@@ -20,15 +20,15 @@ namespace Aws
       namespace ChannelMessageStatusMapper
       {
 
-        static const int SENT_HASH = HashingUtils::HashString("SENT");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int DENIED_HASH = HashingUtils::HashString("DENIED");
+        static constexpr uint32_t SENT_HASH = ConstExprHashingUtils::HashString("SENT");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t DENIED_HASH = ConstExprHashingUtils::HashString("DENIED");
 
 
         ChannelMessageStatus GetChannelMessageStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SENT_HASH)
           {
             return ChannelMessageStatus::SENT;

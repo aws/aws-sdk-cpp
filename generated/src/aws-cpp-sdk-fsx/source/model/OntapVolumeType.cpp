@@ -20,14 +20,14 @@ namespace Aws
       namespace OntapVolumeTypeMapper
       {
 
-        static const int RW_HASH = HashingUtils::HashString("RW");
-        static const int DP_HASH = HashingUtils::HashString("DP");
-        static const int LS_HASH = HashingUtils::HashString("LS");
+        static constexpr uint32_t RW_HASH = ConstExprHashingUtils::HashString("RW");
+        static constexpr uint32_t DP_HASH = ConstExprHashingUtils::HashString("DP");
+        static constexpr uint32_t LS_HASH = ConstExprHashingUtils::HashString("LS");
 
 
         OntapVolumeType GetOntapVolumeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RW_HASH)
           {
             return OntapVolumeType::RW;

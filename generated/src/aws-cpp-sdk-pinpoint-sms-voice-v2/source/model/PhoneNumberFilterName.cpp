@@ -20,20 +20,20 @@ namespace Aws
       namespace PhoneNumberFilterNameMapper
       {
 
-        static const int status_HASH = HashingUtils::HashString("status");
-        static const int iso_country_code_HASH = HashingUtils::HashString("iso-country-code");
-        static const int message_type_HASH = HashingUtils::HashString("message-type");
-        static const int number_capability_HASH = HashingUtils::HashString("number-capability");
-        static const int number_type_HASH = HashingUtils::HashString("number-type");
-        static const int two_way_enabled_HASH = HashingUtils::HashString("two-way-enabled");
-        static const int self_managed_opt_outs_enabled_HASH = HashingUtils::HashString("self-managed-opt-outs-enabled");
-        static const int opt_out_list_name_HASH = HashingUtils::HashString("opt-out-list-name");
-        static const int deletion_protection_enabled_HASH = HashingUtils::HashString("deletion-protection-enabled");
+        static constexpr uint32_t status_HASH = ConstExprHashingUtils::HashString("status");
+        static constexpr uint32_t iso_country_code_HASH = ConstExprHashingUtils::HashString("iso-country-code");
+        static constexpr uint32_t message_type_HASH = ConstExprHashingUtils::HashString("message-type");
+        static constexpr uint32_t number_capability_HASH = ConstExprHashingUtils::HashString("number-capability");
+        static constexpr uint32_t number_type_HASH = ConstExprHashingUtils::HashString("number-type");
+        static constexpr uint32_t two_way_enabled_HASH = ConstExprHashingUtils::HashString("two-way-enabled");
+        static constexpr uint32_t self_managed_opt_outs_enabled_HASH = ConstExprHashingUtils::HashString("self-managed-opt-outs-enabled");
+        static constexpr uint32_t opt_out_list_name_HASH = ConstExprHashingUtils::HashString("opt-out-list-name");
+        static constexpr uint32_t deletion_protection_enabled_HASH = ConstExprHashingUtils::HashString("deletion-protection-enabled");
 
 
         PhoneNumberFilterName GetPhoneNumberFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == status_HASH)
           {
             return PhoneNumberFilterName::status;

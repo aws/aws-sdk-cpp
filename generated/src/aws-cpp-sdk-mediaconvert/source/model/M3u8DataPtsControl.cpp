@@ -20,13 +20,13 @@ namespace Aws
       namespace M3u8DataPtsControlMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int ALIGN_TO_VIDEO_HASH = HashingUtils::HashString("ALIGN_TO_VIDEO");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t ALIGN_TO_VIDEO_HASH = ConstExprHashingUtils::HashString("ALIGN_TO_VIDEO");
 
 
         M3u8DataPtsControl GetM3u8DataPtsControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return M3u8DataPtsControl::AUTO;

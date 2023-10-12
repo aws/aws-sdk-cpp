@@ -20,13 +20,13 @@ namespace Aws
       namespace SuggestionTypeMapper
       {
 
-        static const int QUERY_HASH = HashingUtils::HashString("QUERY");
-        static const int DOCUMENT_ATTRIBUTES_HASH = HashingUtils::HashString("DOCUMENT_ATTRIBUTES");
+        static constexpr uint32_t QUERY_HASH = ConstExprHashingUtils::HashString("QUERY");
+        static constexpr uint32_t DOCUMENT_ATTRIBUTES_HASH = ConstExprHashingUtils::HashString("DOCUMENT_ATTRIBUTES");
 
 
         SuggestionType GetSuggestionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUERY_HASH)
           {
             return SuggestionType::QUERY;

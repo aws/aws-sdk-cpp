@@ -20,13 +20,13 @@ namespace Aws
       namespace MaximumMinimumComputationTypeMapper
       {
 
-        static const int MAXIMUM_HASH = HashingUtils::HashString("MAXIMUM");
-        static const int MINIMUM_HASH = HashingUtils::HashString("MINIMUM");
+        static constexpr uint32_t MAXIMUM_HASH = ConstExprHashingUtils::HashString("MAXIMUM");
+        static constexpr uint32_t MINIMUM_HASH = ConstExprHashingUtils::HashString("MINIMUM");
 
 
         MaximumMinimumComputationType GetMaximumMinimumComputationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MAXIMUM_HASH)
           {
             return MaximumMinimumComputationType::MAXIMUM;

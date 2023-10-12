@@ -20,15 +20,15 @@ namespace Aws
       namespace SensitiveDataItemCategoryMapper
       {
 
-        static const int FINANCIAL_INFORMATION_HASH = HashingUtils::HashString("FINANCIAL_INFORMATION");
-        static const int PERSONAL_INFORMATION_HASH = HashingUtils::HashString("PERSONAL_INFORMATION");
-        static const int CREDENTIALS_HASH = HashingUtils::HashString("CREDENTIALS");
-        static const int CUSTOM_IDENTIFIER_HASH = HashingUtils::HashString("CUSTOM_IDENTIFIER");
+        static constexpr uint32_t FINANCIAL_INFORMATION_HASH = ConstExprHashingUtils::HashString("FINANCIAL_INFORMATION");
+        static constexpr uint32_t PERSONAL_INFORMATION_HASH = ConstExprHashingUtils::HashString("PERSONAL_INFORMATION");
+        static constexpr uint32_t CREDENTIALS_HASH = ConstExprHashingUtils::HashString("CREDENTIALS");
+        static constexpr uint32_t CUSTOM_IDENTIFIER_HASH = ConstExprHashingUtils::HashString("CUSTOM_IDENTIFIER");
 
 
         SensitiveDataItemCategory GetSensitiveDataItemCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FINANCIAL_INFORMATION_HASH)
           {
             return SensitiveDataItemCategory::FINANCIAL_INFORMATION;

@@ -20,12 +20,12 @@ namespace Aws
       namespace DeleteOpenZFSVolumeOptionMapper
       {
 
-        static const int DELETE_CHILD_VOLUMES_AND_SNAPSHOTS_HASH = HashingUtils::HashString("DELETE_CHILD_VOLUMES_AND_SNAPSHOTS");
+        static constexpr uint32_t DELETE_CHILD_VOLUMES_AND_SNAPSHOTS_HASH = ConstExprHashingUtils::HashString("DELETE_CHILD_VOLUMES_AND_SNAPSHOTS");
 
 
         DeleteOpenZFSVolumeOption GetDeleteOpenZFSVolumeOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DELETE_CHILD_VOLUMES_AND_SNAPSHOTS_HASH)
           {
             return DeleteOpenZFSVolumeOption::DELETE_CHILD_VOLUMES_AND_SNAPSHOTS;

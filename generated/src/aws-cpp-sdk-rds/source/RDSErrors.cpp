@@ -18,135 +18,135 @@ namespace RDS
 namespace RDSErrorMapper
 {
 
-static const int D_B_INSTANCE_ROLE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBInstanceRoleNotFound");
-static const int OPTION_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("OptionGroupNotFoundFault");
-static const int D_B_CLUSTER_ENDPOINT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBClusterEndpointQuotaExceededFault");
-static const int SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubscriptionCategoryNotFound");
-static const int D_B_SECURITY_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBSecurityGroupAlreadyExists");
-static const int INVALID_D_B_SUBNET_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBSubnetGroupStateFault");
-static const int D_B_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBSubnetGroupQuotaExceeded");
-static const int EXPORT_TASK_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ExportTaskNotFound");
-static const int IAM_ROLE_MISSING_PERMISSIONS_FAULT_HASH = HashingUtils::HashString("IamRoleMissingPermissions");
-static const int D_B_INSTANCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBInstanceNotFound");
-static const int OPTION_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("OptionGroupQuotaExceededFault");
-static const int D_B_LOG_FILE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBLogFileNotFoundFault");
-static const int INVALID_D_B_SNAPSHOT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBSnapshotState");
-static const int SHARED_SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SharedSnapshotQuotaExceeded");
-static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet");
-static const int D_B_PROXY_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBProxyQuotaExceededFault");
-static const int D_B_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBParameterGroupQuotaExceeded");
-static const int D_B_CLUSTER_ROLE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBClusterRoleAlreadyExists");
-static const int INVALID_EXPORT_TASK_STATE_FAULT_HASH = HashingUtils::HashString("InvalidExportTaskStateFault");
-static const int INSUFFICIENT_STORAGE_CLUSTER_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientStorageClusterCapacity");
-static const int D_B_SUBNET_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBSubnetGroupNotFoundFault");
-static const int D_B_SECURITY_GROUP_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashString("DBSecurityGroupNotSupported");
-static const int STORAGE_TYPE_NOT_AVAILABLE_FAULT_HASH = HashingUtils::HashString("StorageTypeNotAvailableFault");
-static const int D_B_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBSnapshotAlreadyExists");
-static const int D_B_PROXY_TARGET_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBProxyTargetGroupNotFoundFault");
-static const int SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SnapshotQuotaExceeded");
-static const int SUBNET_ALREADY_IN_USE_HASH = HashingUtils::HashString("SubnetAlreadyInUse");
-static const int D_B_CLUSTER_ENDPOINT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterEndpointNotFoundFault");
-static const int D_B_INSTANCE_ROLE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBInstanceRoleAlreadyExists");
-static const int RESERVED_D_B_INSTANCES_OFFERING_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedDBInstancesOfferingNotFound");
-static const int INVALID_D_B_PARAMETER_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBParameterGroupState");
-static const int D_B_PROXY_ENDPOINT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBProxyEndpointQuotaExceededFault");
-static const int D_B_PROXY_TARGET_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBProxyTargetNotFoundFault");
-static const int INVALID_D_B_SECURITY_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBSecurityGroupState");
-static const int D_B_CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBClusterSnapshotAlreadyExistsFault");
-static const int STORAGE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("StorageQuotaExceeded");
-static const int INVALID_D_B_SUBNET_GROUP_FAULT_HASH = HashingUtils::HashString("InvalidDBSubnetGroupFault");
-static const int INVALID_D_B_INSTANCE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBInstanceState");
-static const int D_B_SUBNET_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBSubnetQuotaExceededFault");
-static const int D_B_CLUSTER_SNAPSHOT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterSnapshotNotFoundFault");
-static const int D_B_CLUSTER_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBClusterAlreadyExistsFault");
-static const int D_B_PROXY_TARGET_ALREADY_REGISTERED_FAULT_HASH = HashingUtils::HashString("DBProxyTargetAlreadyRegisteredFault");
-static const int AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("AuthorizationAlreadyExists");
-static const int D_B_CLUSTER_ROLE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBClusterRoleQuotaExceeded");
-static const int INVALID_S3_BUCKET_FAULT_HASH = HashingUtils::HashString("InvalidS3BucketFault");
-static const int INVALID_OPTION_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidOptionGroupStateFault");
-static const int D_B_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBParameterGroupNotFound");
-static const int INVALID_D_B_CLUSTER_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBClusterStateFault");
-static const int SUBSCRIPTION_ALREADY_EXIST_FAULT_HASH = HashingUtils::HashString("SubscriptionAlreadyExist");
-static const int BLUE_GREEN_DEPLOYMENT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("BlueGreenDeploymentAlreadyExistsFault");
-static const int CERTIFICATE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("CertificateNotFound");
-static const int D_B_PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBParameterGroupAlreadyExists");
-static const int INVALID_D_B_CLUSTER_ENDPOINT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBClusterEndpointStateFault");
-static const int SOURCE_CLUSTER_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashString("SourceClusterNotSupportedFault");
-static const int INVALID_D_B_CLUSTER_AUTOMATED_BACKUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBClusterAutomatedBackupStateFault");
-static const int STORAGE_TYPE_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashString("StorageTypeNotSupported");
-static const int S_N_S_INVALID_TOPIC_FAULT_HASH = HashingUtils::HashString("SNSInvalidTopic");
-static const int INVALID_D_B_SUBNET_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBSubnetStateFault");
-static const int INVALID_D_B_CLUSTER_CAPACITY_FAULT_HASH = HashingUtils::HashString("InvalidDBClusterCapacityFault");
-static const int INVALID_V_P_C_NETWORK_STATE_FAULT_HASH = HashingUtils::HashString("InvalidVPCNetworkStateFault");
-static const int AUTHORIZATION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("AuthorizationNotFound");
-static const int AUTHORIZATION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("AuthorizationQuotaExceeded");
-static const int D_B_CLUSTER_ROLE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterRoleNotFound");
-static const int D_B_CLUSTER_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBClusterQuotaExceededFault");
-static const int OPTION_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("OptionGroupAlreadyExistsFault");
-static const int D_B_INSTANCE_AUTOMATED_BACKUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBInstanceAutomatedBackupQuotaExceeded");
-static const int D_B_CLUSTER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterNotFoundFault");
-static const int SUBSCRIPTION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubscriptionNotFound");
-static const int BACKUP_POLICY_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("BackupPolicyNotFoundFault");
-static const int INVALID_D_B_PROXY_ENDPOINT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBProxyEndpointStateFault");
-static const int D_B_SUBNET_GROUP_DOES_NOT_COVER_ENOUGH_A_ZS_HASH = HashingUtils::HashString("DBSubnetGroupDoesNotCoverEnoughAZs");
-static const int D_B_UPGRADE_DEPENDENCY_FAILURE_FAULT_HASH = HashingUtils::HashString("DBUpgradeDependencyFailure");
-static const int INVALID_D_B_PROXY_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBProxyStateFault");
-static const int D_B_SUBNET_GROUP_NOT_ALLOWED_FAULT_HASH = HashingUtils::HashString("DBSubnetGroupNotAllowedFault");
-static const int BLUE_GREEN_DEPLOYMENT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("BlueGreenDeploymentNotFoundFault");
-static const int D_B_PROXY_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBProxyNotFoundFault");
-static const int D_B_CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterParameterGroupNotFound");
-static const int DOMAIN_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DomainNotFoundFault");
-static const int INVALID_EVENT_SUBSCRIPTION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidEventSubscriptionState");
-static const int D_B_INSTANCE_AUTOMATED_BACKUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBInstanceAutomatedBackupNotFound");
-static const int SOURCE_DATABASE_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashString("SourceDatabaseNotSupportedFault");
-static const int INSUFFICIENT_AVAILABLE_I_PS_IN_SUBNET_FAULT_HASH = HashingUtils::HashString("InsufficientAvailableIPsInSubnetFault");
-static const int D_B_CLUSTER_ENDPOINT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBClusterEndpointAlreadyExistsFault");
-static const int D_B_SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBSubnetGroupAlreadyExists");
-static const int INVALID_EXPORT_SOURCE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidExportSourceState");
-static const int EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("EventSubscriptionQuotaExceeded");
-static const int D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBInstanceAlreadyExists");
-static const int INVALID_EXPORT_ONLY_FAULT_HASH = HashingUtils::HashString("InvalidExportOnly");
-static const int D_B_SECURITY_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBSecurityGroupNotFound");
-static const int CUSTOM_D_B_ENGINE_VERSION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("CustomDBEngineVersionNotFoundFault");
-static const int INVALID_D_B_CLUSTER_SNAPSHOT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBClusterSnapshotStateFault");
-static const int D_B_INSTANCE_ROLE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBInstanceRoleQuotaExceeded");
-static const int GLOBAL_CLUSTER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("GlobalClusterNotFoundFault");
-static const int D_B_PROXY_ENDPOINT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBProxyEndpointAlreadyExistsFault");
-static const int NETWORK_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("NetworkTypeNotSupported");
-static const int PROVISIONED_IOPS_NOT_AVAILABLE_IN_A_Z_FAULT_HASH = HashingUtils::HashString("ProvisionedIopsNotAvailableInAZFault");
-static const int D_B_CLUSTER_AUTOMATED_BACKUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBClusterAutomatedBackupQuotaExceededFault");
-static const int IAM_ROLE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("IamRoleNotFound");
-static const int GLOBAL_CLUSTER_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("GlobalClusterQuotaExceededFault");
-static const int RESOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ResourceNotFoundFault");
-static const int INVALID_D_B_INSTANCE_AUTOMATED_BACKUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBInstanceAutomatedBackupState");
-static const int INSUFFICIENT_D_B_INSTANCE_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientDBInstanceCapacity");
-static const int RESERVED_D_B_INSTANCE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ReservedDBInstanceQuotaExceeded");
-static const int RESERVED_D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ReservedDBInstanceAlreadyExists");
-static const int EXPORT_TASK_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ExportTaskAlreadyExists");
-static const int D_B_PROXY_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBProxyAlreadyExistsFault");
-static const int D_B_PROXY_ENDPOINT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBProxyEndpointNotFoundFault");
-static const int INSTANCE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("InstanceQuotaExceeded");
-static const int GLOBAL_CLUSTER_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("GlobalClusterAlreadyExistsFault");
-static const int D_B_SNAPSHOT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBSnapshotNotFound");
-static const int CUSTOM_AVAILABILITY_ZONE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("CustomAvailabilityZoneNotFound");
-static const int D_B_CLUSTER_AUTOMATED_BACKUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterAutomatedBackupNotFoundFault");
-static const int K_M_S_KEY_NOT_ACCESSIBLE_FAULT_HASH = HashingUtils::HashString("KMSKeyNotAccessibleFault");
-static const int D_B_CLUSTER_BACKTRACK_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterBacktrackNotFoundFault");
-static const int CREATE_CUSTOM_D_B_ENGINE_VERSION_FAULT_HASH = HashingUtils::HashString("CreateCustomDBEngineVersionFault");
-static const int S_N_S_NO_AUTHORIZATION_FAULT_HASH = HashingUtils::HashString("SNSNoAuthorization");
-static const int RESERVED_D_B_INSTANCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedDBInstanceNotFound");
-static const int INVALID_RESTORE_FAULT_HASH = HashingUtils::HashString("InvalidRestoreFault");
-static const int S_N_S_TOPIC_ARN_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SNSTopicArnNotFound");
-static const int INVALID_BLUE_GREEN_DEPLOYMENT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidBlueGreenDeploymentStateFault");
-static const int D_B_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("QuotaExceeded.DBSecurityGroup");
-static const int CUSTOM_D_B_ENGINE_VERSION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("CustomDBEngineVersionAlreadyExistsFault");
-static const int EC2_IMAGE_PROPERTIES_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashString("Ec2ImagePropertiesNotSupportedFault");
-static const int INSUFFICIENT_D_B_CLUSTER_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientDBClusterCapacityFault");
-static const int POINT_IN_TIME_RESTORE_NOT_ENABLED_FAULT_HASH = HashingUtils::HashString("PointInTimeRestoreNotEnabled");
-static const int SOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SourceNotFound");
-static const int INVALID_GLOBAL_CLUSTER_STATE_FAULT_HASH = HashingUtils::HashString("InvalidGlobalClusterStateFault");
-static const int INVALID_CUSTOM_D_B_ENGINE_VERSION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidCustomDBEngineVersionStateFault");
-static const int CUSTOM_D_B_ENGINE_VERSION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("CustomDBEngineVersionQuotaExceededFault");
+static constexpr uint32_t D_B_INSTANCE_ROLE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBInstanceRoleNotFound");
+static constexpr uint32_t OPTION_GROUP_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("OptionGroupNotFoundFault");
+static constexpr uint32_t D_B_CLUSTER_ENDPOINT_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("DBClusterEndpointQuotaExceededFault");
+static constexpr uint32_t SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("SubscriptionCategoryNotFound");
+static constexpr uint32_t D_B_SECURITY_GROUP_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("DBSecurityGroupAlreadyExists");
+static constexpr uint32_t INVALID_D_B_SUBNET_GROUP_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidDBSubnetGroupStateFault");
+static constexpr uint32_t D_B_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("DBSubnetGroupQuotaExceeded");
+static constexpr uint32_t EXPORT_TASK_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ExportTaskNotFound");
+static constexpr uint32_t IAM_ROLE_MISSING_PERMISSIONS_FAULT_HASH = ConstExprHashingUtils::HashString("IamRoleMissingPermissions");
+static constexpr uint32_t D_B_INSTANCE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBInstanceNotFound");
+static constexpr uint32_t OPTION_GROUP_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("OptionGroupQuotaExceededFault");
+static constexpr uint32_t D_B_LOG_FILE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBLogFileNotFoundFault");
+static constexpr uint32_t INVALID_D_B_SNAPSHOT_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidDBSnapshotState");
+static constexpr uint32_t SHARED_SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("SharedSnapshotQuotaExceeded");
+static constexpr uint32_t INVALID_SUBNET_HASH = ConstExprHashingUtils::HashString("InvalidSubnet");
+static constexpr uint32_t D_B_PROXY_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("DBProxyQuotaExceededFault");
+static constexpr uint32_t D_B_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("DBParameterGroupQuotaExceeded");
+static constexpr uint32_t D_B_CLUSTER_ROLE_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("DBClusterRoleAlreadyExists");
+static constexpr uint32_t INVALID_EXPORT_TASK_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidExportTaskStateFault");
+static constexpr uint32_t INSUFFICIENT_STORAGE_CLUSTER_CAPACITY_FAULT_HASH = ConstExprHashingUtils::HashString("InsufficientStorageClusterCapacity");
+static constexpr uint32_t D_B_SUBNET_GROUP_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBSubnetGroupNotFoundFault");
+static constexpr uint32_t D_B_SECURITY_GROUP_NOT_SUPPORTED_FAULT_HASH = ConstExprHashingUtils::HashString("DBSecurityGroupNotSupported");
+static constexpr uint32_t STORAGE_TYPE_NOT_AVAILABLE_FAULT_HASH = ConstExprHashingUtils::HashString("StorageTypeNotAvailableFault");
+static constexpr uint32_t D_B_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("DBSnapshotAlreadyExists");
+static constexpr uint32_t D_B_PROXY_TARGET_GROUP_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBProxyTargetGroupNotFoundFault");
+static constexpr uint32_t SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("SnapshotQuotaExceeded");
+static constexpr uint32_t SUBNET_ALREADY_IN_USE_HASH = ConstExprHashingUtils::HashString("SubnetAlreadyInUse");
+static constexpr uint32_t D_B_CLUSTER_ENDPOINT_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBClusterEndpointNotFoundFault");
+static constexpr uint32_t D_B_INSTANCE_ROLE_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("DBInstanceRoleAlreadyExists");
+static constexpr uint32_t RESERVED_D_B_INSTANCES_OFFERING_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ReservedDBInstancesOfferingNotFound");
+static constexpr uint32_t INVALID_D_B_PARAMETER_GROUP_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidDBParameterGroupState");
+static constexpr uint32_t D_B_PROXY_ENDPOINT_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("DBProxyEndpointQuotaExceededFault");
+static constexpr uint32_t D_B_PROXY_TARGET_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBProxyTargetNotFoundFault");
+static constexpr uint32_t INVALID_D_B_SECURITY_GROUP_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidDBSecurityGroupState");
+static constexpr uint32_t D_B_CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("DBClusterSnapshotAlreadyExistsFault");
+static constexpr uint32_t STORAGE_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("StorageQuotaExceeded");
+static constexpr uint32_t INVALID_D_B_SUBNET_GROUP_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidDBSubnetGroupFault");
+static constexpr uint32_t INVALID_D_B_INSTANCE_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidDBInstanceState");
+static constexpr uint32_t D_B_SUBNET_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("DBSubnetQuotaExceededFault");
+static constexpr uint32_t D_B_CLUSTER_SNAPSHOT_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBClusterSnapshotNotFoundFault");
+static constexpr uint32_t D_B_CLUSTER_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("DBClusterAlreadyExistsFault");
+static constexpr uint32_t D_B_PROXY_TARGET_ALREADY_REGISTERED_FAULT_HASH = ConstExprHashingUtils::HashString("DBProxyTargetAlreadyRegisteredFault");
+static constexpr uint32_t AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("AuthorizationAlreadyExists");
+static constexpr uint32_t D_B_CLUSTER_ROLE_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("DBClusterRoleQuotaExceeded");
+static constexpr uint32_t INVALID_S3_BUCKET_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidS3BucketFault");
+static constexpr uint32_t INVALID_OPTION_GROUP_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidOptionGroupStateFault");
+static constexpr uint32_t D_B_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBParameterGroupNotFound");
+static constexpr uint32_t INVALID_D_B_CLUSTER_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidDBClusterStateFault");
+static constexpr uint32_t SUBSCRIPTION_ALREADY_EXIST_FAULT_HASH = ConstExprHashingUtils::HashString("SubscriptionAlreadyExist");
+static constexpr uint32_t BLUE_GREEN_DEPLOYMENT_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("BlueGreenDeploymentAlreadyExistsFault");
+static constexpr uint32_t CERTIFICATE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("CertificateNotFound");
+static constexpr uint32_t D_B_PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("DBParameterGroupAlreadyExists");
+static constexpr uint32_t INVALID_D_B_CLUSTER_ENDPOINT_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidDBClusterEndpointStateFault");
+static constexpr uint32_t SOURCE_CLUSTER_NOT_SUPPORTED_FAULT_HASH = ConstExprHashingUtils::HashString("SourceClusterNotSupportedFault");
+static constexpr uint32_t INVALID_D_B_CLUSTER_AUTOMATED_BACKUP_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidDBClusterAutomatedBackupStateFault");
+static constexpr uint32_t STORAGE_TYPE_NOT_SUPPORTED_FAULT_HASH = ConstExprHashingUtils::HashString("StorageTypeNotSupported");
+static constexpr uint32_t S_N_S_INVALID_TOPIC_FAULT_HASH = ConstExprHashingUtils::HashString("SNSInvalidTopic");
+static constexpr uint32_t INVALID_D_B_SUBNET_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidDBSubnetStateFault");
+static constexpr uint32_t INVALID_D_B_CLUSTER_CAPACITY_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidDBClusterCapacityFault");
+static constexpr uint32_t INVALID_V_P_C_NETWORK_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidVPCNetworkStateFault");
+static constexpr uint32_t AUTHORIZATION_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("AuthorizationNotFound");
+static constexpr uint32_t AUTHORIZATION_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("AuthorizationQuotaExceeded");
+static constexpr uint32_t D_B_CLUSTER_ROLE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBClusterRoleNotFound");
+static constexpr uint32_t D_B_CLUSTER_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("DBClusterQuotaExceededFault");
+static constexpr uint32_t OPTION_GROUP_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("OptionGroupAlreadyExistsFault");
+static constexpr uint32_t D_B_INSTANCE_AUTOMATED_BACKUP_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("DBInstanceAutomatedBackupQuotaExceeded");
+static constexpr uint32_t D_B_CLUSTER_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBClusterNotFoundFault");
+static constexpr uint32_t SUBSCRIPTION_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("SubscriptionNotFound");
+static constexpr uint32_t BACKUP_POLICY_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("BackupPolicyNotFoundFault");
+static constexpr uint32_t INVALID_D_B_PROXY_ENDPOINT_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidDBProxyEndpointStateFault");
+static constexpr uint32_t D_B_SUBNET_GROUP_DOES_NOT_COVER_ENOUGH_A_ZS_HASH = ConstExprHashingUtils::HashString("DBSubnetGroupDoesNotCoverEnoughAZs");
+static constexpr uint32_t D_B_UPGRADE_DEPENDENCY_FAILURE_FAULT_HASH = ConstExprHashingUtils::HashString("DBUpgradeDependencyFailure");
+static constexpr uint32_t INVALID_D_B_PROXY_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidDBProxyStateFault");
+static constexpr uint32_t D_B_SUBNET_GROUP_NOT_ALLOWED_FAULT_HASH = ConstExprHashingUtils::HashString("DBSubnetGroupNotAllowedFault");
+static constexpr uint32_t BLUE_GREEN_DEPLOYMENT_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("BlueGreenDeploymentNotFoundFault");
+static constexpr uint32_t D_B_PROXY_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBProxyNotFoundFault");
+static constexpr uint32_t D_B_CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBClusterParameterGroupNotFound");
+static constexpr uint32_t DOMAIN_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DomainNotFoundFault");
+static constexpr uint32_t INVALID_EVENT_SUBSCRIPTION_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidEventSubscriptionState");
+static constexpr uint32_t D_B_INSTANCE_AUTOMATED_BACKUP_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBInstanceAutomatedBackupNotFound");
+static constexpr uint32_t SOURCE_DATABASE_NOT_SUPPORTED_FAULT_HASH = ConstExprHashingUtils::HashString("SourceDatabaseNotSupportedFault");
+static constexpr uint32_t INSUFFICIENT_AVAILABLE_I_PS_IN_SUBNET_FAULT_HASH = ConstExprHashingUtils::HashString("InsufficientAvailableIPsInSubnetFault");
+static constexpr uint32_t D_B_CLUSTER_ENDPOINT_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("DBClusterEndpointAlreadyExistsFault");
+static constexpr uint32_t D_B_SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("DBSubnetGroupAlreadyExists");
+static constexpr uint32_t INVALID_EXPORT_SOURCE_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidExportSourceState");
+static constexpr uint32_t EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("EventSubscriptionQuotaExceeded");
+static constexpr uint32_t D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("DBInstanceAlreadyExists");
+static constexpr uint32_t INVALID_EXPORT_ONLY_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidExportOnly");
+static constexpr uint32_t D_B_SECURITY_GROUP_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBSecurityGroupNotFound");
+static constexpr uint32_t CUSTOM_D_B_ENGINE_VERSION_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("CustomDBEngineVersionNotFoundFault");
+static constexpr uint32_t INVALID_D_B_CLUSTER_SNAPSHOT_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidDBClusterSnapshotStateFault");
+static constexpr uint32_t D_B_INSTANCE_ROLE_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("DBInstanceRoleQuotaExceeded");
+static constexpr uint32_t GLOBAL_CLUSTER_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("GlobalClusterNotFoundFault");
+static constexpr uint32_t D_B_PROXY_ENDPOINT_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("DBProxyEndpointAlreadyExistsFault");
+static constexpr uint32_t NETWORK_TYPE_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("NetworkTypeNotSupported");
+static constexpr uint32_t PROVISIONED_IOPS_NOT_AVAILABLE_IN_A_Z_FAULT_HASH = ConstExprHashingUtils::HashString("ProvisionedIopsNotAvailableInAZFault");
+static constexpr uint32_t D_B_CLUSTER_AUTOMATED_BACKUP_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("DBClusterAutomatedBackupQuotaExceededFault");
+static constexpr uint32_t IAM_ROLE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("IamRoleNotFound");
+static constexpr uint32_t GLOBAL_CLUSTER_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("GlobalClusterQuotaExceededFault");
+static constexpr uint32_t RESOURCE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ResourceNotFoundFault");
+static constexpr uint32_t INVALID_D_B_INSTANCE_AUTOMATED_BACKUP_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidDBInstanceAutomatedBackupState");
+static constexpr uint32_t INSUFFICIENT_D_B_INSTANCE_CAPACITY_FAULT_HASH = ConstExprHashingUtils::HashString("InsufficientDBInstanceCapacity");
+static constexpr uint32_t RESERVED_D_B_INSTANCE_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("ReservedDBInstanceQuotaExceeded");
+static constexpr uint32_t RESERVED_D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("ReservedDBInstanceAlreadyExists");
+static constexpr uint32_t EXPORT_TASK_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("ExportTaskAlreadyExists");
+static constexpr uint32_t D_B_PROXY_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("DBProxyAlreadyExistsFault");
+static constexpr uint32_t D_B_PROXY_ENDPOINT_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBProxyEndpointNotFoundFault");
+static constexpr uint32_t INSTANCE_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("InstanceQuotaExceeded");
+static constexpr uint32_t GLOBAL_CLUSTER_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("GlobalClusterAlreadyExistsFault");
+static constexpr uint32_t D_B_SNAPSHOT_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBSnapshotNotFound");
+static constexpr uint32_t CUSTOM_AVAILABILITY_ZONE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("CustomAvailabilityZoneNotFound");
+static constexpr uint32_t D_B_CLUSTER_AUTOMATED_BACKUP_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBClusterAutomatedBackupNotFoundFault");
+static constexpr uint32_t K_M_S_KEY_NOT_ACCESSIBLE_FAULT_HASH = ConstExprHashingUtils::HashString("KMSKeyNotAccessibleFault");
+static constexpr uint32_t D_B_CLUSTER_BACKTRACK_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("DBClusterBacktrackNotFoundFault");
+static constexpr uint32_t CREATE_CUSTOM_D_B_ENGINE_VERSION_FAULT_HASH = ConstExprHashingUtils::HashString("CreateCustomDBEngineVersionFault");
+static constexpr uint32_t S_N_S_NO_AUTHORIZATION_FAULT_HASH = ConstExprHashingUtils::HashString("SNSNoAuthorization");
+static constexpr uint32_t RESERVED_D_B_INSTANCE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("ReservedDBInstanceNotFound");
+static constexpr uint32_t INVALID_RESTORE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidRestoreFault");
+static constexpr uint32_t S_N_S_TOPIC_ARN_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("SNSTopicArnNotFound");
+static constexpr uint32_t INVALID_BLUE_GREEN_DEPLOYMENT_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidBlueGreenDeploymentStateFault");
+static constexpr uint32_t D_B_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("QuotaExceeded.DBSecurityGroup");
+static constexpr uint32_t CUSTOM_D_B_ENGINE_VERSION_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("CustomDBEngineVersionAlreadyExistsFault");
+static constexpr uint32_t EC2_IMAGE_PROPERTIES_NOT_SUPPORTED_FAULT_HASH = ConstExprHashingUtils::HashString("Ec2ImagePropertiesNotSupportedFault");
+static constexpr uint32_t INSUFFICIENT_D_B_CLUSTER_CAPACITY_FAULT_HASH = ConstExprHashingUtils::HashString("InsufficientDBClusterCapacityFault");
+static constexpr uint32_t POINT_IN_TIME_RESTORE_NOT_ENABLED_FAULT_HASH = ConstExprHashingUtils::HashString("PointInTimeRestoreNotEnabled");
+static constexpr uint32_t SOURCE_NOT_FOUND_FAULT_HASH = ConstExprHashingUtils::HashString("SourceNotFound");
+static constexpr uint32_t INVALID_GLOBAL_CLUSTER_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidGlobalClusterStateFault");
+static constexpr uint32_t INVALID_CUSTOM_D_B_ENGINE_VERSION_STATE_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidCustomDBEngineVersionStateFault");
+static constexpr uint32_t CUSTOM_D_B_ENGINE_VERSION_QUOTA_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("CustomDBEngineVersionQuotaExceededFault");
 
 
 /*
@@ -155,7 +155,7 @@ which allows constant time lookup. The chain has been broken into helper functio
 because MSVC has a maximum of 122 chained if-else blocks.
 */
 
-static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
+static bool GetErrorForNameHelper0(uint32_t hashCode, AWSError<CoreErrors>& error)
 {
   if (hashCode == D_B_INSTANCE_ROLE_NOT_FOUND_FAULT_HASH)
   {
@@ -770,7 +770,7 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   return false;
 }
 
-static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+static bool GetErrorForNameHelper1(uint32_t hashCode, AWSError<CoreErrors>& error)
 {
   if (hashCode == EC2_IMAGE_PROPERTIES_NOT_SUPPORTED_FAULT_HASH)
   {
@@ -812,7 +812,7 @@ static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
   AWSError<CoreErrors> error;
   if (GetErrorForNameHelper0(hashCode, error))
   {

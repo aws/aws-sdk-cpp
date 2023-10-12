@@ -20,12 +20,12 @@ namespace Aws
       namespace OfferingTypeMapper
       {
 
-        static const int NO_UPFRONT_HASH = HashingUtils::HashString("NO_UPFRONT");
+        static constexpr uint32_t NO_UPFRONT_HASH = ConstExprHashingUtils::HashString("NO_UPFRONT");
 
 
         OfferingType GetOfferingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_UPFRONT_HASH)
           {
             return OfferingType::NO_UPFRONT;

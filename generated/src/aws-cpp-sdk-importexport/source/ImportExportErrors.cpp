@@ -18,29 +18,29 @@ namespace ImportExport
 namespace ImportExportErrorMapper
 {
 
-static const int INVALID_VERSION_HASH = HashingUtils::HashString("InvalidVersionException");
-static const int INVALID_ADDRESS_HASH = HashingUtils::HashString("InvalidAddressException");
-static const int EXPIRED_JOB_ID_HASH = HashingUtils::HashString("ExpiredJobIdException");
-static const int UNABLE_TO_CANCEL_JOB_ID_HASH = HashingUtils::HashString("UnableToCancelJobIdException");
-static const int INVALID_CUSTOMS_HASH = HashingUtils::HashString("InvalidCustomsException");
-static const int INVALID_JOB_ID_HASH = HashingUtils::HashString("InvalidJobIdException");
-static const int CREATE_JOB_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("CreateJobQuotaExceededException");
-static const int UNABLE_TO_UPDATE_JOB_ID_HASH = HashingUtils::HashString("UnableToUpdateJobIdException");
-static const int MISSING_MANIFEST_FIELD_HASH = HashingUtils::HashString("MissingManifestFieldException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int CANCELED_JOB_ID_HASH = HashingUtils::HashString("CanceledJobIdException");
-static const int NO_SUCH_BUCKET_HASH = HashingUtils::HashString("NoSuchBucketException");
-static const int MALFORMED_MANIFEST_HASH = HashingUtils::HashString("MalformedManifestException");
-static const int INVALID_FILE_SYSTEM_HASH = HashingUtils::HashString("InvalidFileSystemException");
-static const int BUCKET_PERMISSION_HASH = HashingUtils::HashString("BucketPermissionException");
-static const int MULTIPLE_REGIONS_HASH = HashingUtils::HashString("MultipleRegionsException");
-static const int INVALID_MANIFEST_FIELD_HASH = HashingUtils::HashString("InvalidManifestFieldException");
-static const int MISSING_CUSTOMS_HASH = HashingUtils::HashString("MissingCustomsException");
+static constexpr uint32_t INVALID_VERSION_HASH = ConstExprHashingUtils::HashString("InvalidVersionException");
+static constexpr uint32_t INVALID_ADDRESS_HASH = ConstExprHashingUtils::HashString("InvalidAddressException");
+static constexpr uint32_t EXPIRED_JOB_ID_HASH = ConstExprHashingUtils::HashString("ExpiredJobIdException");
+static constexpr uint32_t UNABLE_TO_CANCEL_JOB_ID_HASH = ConstExprHashingUtils::HashString("UnableToCancelJobIdException");
+static constexpr uint32_t INVALID_CUSTOMS_HASH = ConstExprHashingUtils::HashString("InvalidCustomsException");
+static constexpr uint32_t INVALID_JOB_ID_HASH = ConstExprHashingUtils::HashString("InvalidJobIdException");
+static constexpr uint32_t CREATE_JOB_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("CreateJobQuotaExceededException");
+static constexpr uint32_t UNABLE_TO_UPDATE_JOB_ID_HASH = ConstExprHashingUtils::HashString("UnableToUpdateJobIdException");
+static constexpr uint32_t MISSING_MANIFEST_FIELD_HASH = ConstExprHashingUtils::HashString("MissingManifestFieldException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t CANCELED_JOB_ID_HASH = ConstExprHashingUtils::HashString("CanceledJobIdException");
+static constexpr uint32_t NO_SUCH_BUCKET_HASH = ConstExprHashingUtils::HashString("NoSuchBucketException");
+static constexpr uint32_t MALFORMED_MANIFEST_HASH = ConstExprHashingUtils::HashString("MalformedManifestException");
+static constexpr uint32_t INVALID_FILE_SYSTEM_HASH = ConstExprHashingUtils::HashString("InvalidFileSystemException");
+static constexpr uint32_t BUCKET_PERMISSION_HASH = ConstExprHashingUtils::HashString("BucketPermissionException");
+static constexpr uint32_t MULTIPLE_REGIONS_HASH = ConstExprHashingUtils::HashString("MultipleRegionsException");
+static constexpr uint32_t INVALID_MANIFEST_FIELD_HASH = ConstExprHashingUtils::HashString("InvalidManifestFieldException");
+static constexpr uint32_t MISSING_CUSTOMS_HASH = ConstExprHashingUtils::HashString("MissingCustomsException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INVALID_VERSION_HASH)
   {

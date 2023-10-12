@@ -20,15 +20,15 @@ namespace Aws
       namespace DirectoryTypeMapper
       {
 
-        static const int SimpleAD_HASH = HashingUtils::HashString("SimpleAD");
-        static const int ADConnector_HASH = HashingUtils::HashString("ADConnector");
-        static const int MicrosoftAD_HASH = HashingUtils::HashString("MicrosoftAD");
-        static const int SharedMicrosoftAD_HASH = HashingUtils::HashString("SharedMicrosoftAD");
+        static constexpr uint32_t SimpleAD_HASH = ConstExprHashingUtils::HashString("SimpleAD");
+        static constexpr uint32_t ADConnector_HASH = ConstExprHashingUtils::HashString("ADConnector");
+        static constexpr uint32_t MicrosoftAD_HASH = ConstExprHashingUtils::HashString("MicrosoftAD");
+        static constexpr uint32_t SharedMicrosoftAD_HASH = ConstExprHashingUtils::HashString("SharedMicrosoftAD");
 
 
         DirectoryType GetDirectoryTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SimpleAD_HASH)
           {
             return DirectoryType::SimpleAD;

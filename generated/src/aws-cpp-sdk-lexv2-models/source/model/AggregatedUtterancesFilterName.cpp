@@ -20,12 +20,12 @@ namespace Aws
       namespace AggregatedUtterancesFilterNameMapper
       {
 
-        static const int Utterance_HASH = HashingUtils::HashString("Utterance");
+        static constexpr uint32_t Utterance_HASH = ConstExprHashingUtils::HashString("Utterance");
 
 
         AggregatedUtterancesFilterName GetAggregatedUtterancesFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Utterance_HASH)
           {
             return AggregatedUtterancesFilterName::Utterance;

@@ -20,13 +20,13 @@ namespace Aws
       namespace RuleExecutionModeMapper
       {
 
-        static const int ALL_MATCHED_HASH = HashingUtils::HashString("ALL_MATCHED");
-        static const int FIRST_MATCHED_HASH = HashingUtils::HashString("FIRST_MATCHED");
+        static constexpr uint32_t ALL_MATCHED_HASH = ConstExprHashingUtils::HashString("ALL_MATCHED");
+        static constexpr uint32_t FIRST_MATCHED_HASH = ConstExprHashingUtils::HashString("FIRST_MATCHED");
 
 
         RuleExecutionMode GetRuleExecutionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_MATCHED_HASH)
           {
             return RuleExecutionMode::ALL_MATCHED;

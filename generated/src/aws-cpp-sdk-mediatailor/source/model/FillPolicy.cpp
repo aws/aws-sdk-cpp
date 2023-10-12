@@ -20,13 +20,13 @@ namespace Aws
       namespace FillPolicyMapper
       {
 
-        static const int FULL_AVAIL_ONLY_HASH = HashingUtils::HashString("FULL_AVAIL_ONLY");
-        static const int PARTIAL_AVAIL_HASH = HashingUtils::HashString("PARTIAL_AVAIL");
+        static constexpr uint32_t FULL_AVAIL_ONLY_HASH = ConstExprHashingUtils::HashString("FULL_AVAIL_ONLY");
+        static constexpr uint32_t PARTIAL_AVAIL_HASH = ConstExprHashingUtils::HashString("PARTIAL_AVAIL");
 
 
         FillPolicy GetFillPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FULL_AVAIL_ONLY_HASH)
           {
             return FillPolicy::FULL_AVAIL_ONLY;

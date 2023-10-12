@@ -20,16 +20,16 @@ namespace Aws
       namespace CloudComponentStateMapper
       {
 
-        static const int REQUESTED_HASH = HashingUtils::HashString("REQUESTED");
-        static const int INITIATED_HASH = HashingUtils::HashString("INITIATED");
-        static const int DEPLOYABLE_HASH = HashingUtils::HashString("DEPLOYABLE");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
+        static constexpr uint32_t REQUESTED_HASH = ConstExprHashingUtils::HashString("REQUESTED");
+        static constexpr uint32_t INITIATED_HASH = ConstExprHashingUtils::HashString("INITIATED");
+        static constexpr uint32_t DEPLOYABLE_HASH = ConstExprHashingUtils::HashString("DEPLOYABLE");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t DEPRECATED_HASH = ConstExprHashingUtils::HashString("DEPRECATED");
 
 
         CloudComponentState GetCloudComponentStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REQUESTED_HASH)
           {
             return CloudComponentState::REQUESTED;

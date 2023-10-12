@@ -26,19 +26,19 @@ template<> AWS_S3_API InvalidObjectState S3Error::GetModeledError()
 namespace S3ErrorMapper
 {
 
-static const int NO_SUCH_UPLOAD_HASH = HashingUtils::HashString("NoSuchUpload");
-static const int BUCKET_ALREADY_OWNED_BY_YOU_HASH = HashingUtils::HashString("BucketAlreadyOwnedByYou");
-static const int OBJECT_ALREADY_IN_ACTIVE_TIER_HASH = HashingUtils::HashString("ObjectAlreadyInActiveTierError");
-static const int NO_SUCH_BUCKET_HASH = HashingUtils::HashString("NoSuchBucket");
-static const int NO_SUCH_KEY_HASH = HashingUtils::HashString("NoSuchKey");
-static const int OBJECT_NOT_IN_ACTIVE_TIER_HASH = HashingUtils::HashString("ObjectNotInActiveTierError");
-static const int BUCKET_ALREADY_EXISTS_HASH = HashingUtils::HashString("BucketAlreadyExists");
-static const int INVALID_OBJECT_STATE_HASH = HashingUtils::HashString("InvalidObjectState");
+static constexpr uint32_t NO_SUCH_UPLOAD_HASH = ConstExprHashingUtils::HashString("NoSuchUpload");
+static constexpr uint32_t BUCKET_ALREADY_OWNED_BY_YOU_HASH = ConstExprHashingUtils::HashString("BucketAlreadyOwnedByYou");
+static constexpr uint32_t OBJECT_ALREADY_IN_ACTIVE_TIER_HASH = ConstExprHashingUtils::HashString("ObjectAlreadyInActiveTierError");
+static constexpr uint32_t NO_SUCH_BUCKET_HASH = ConstExprHashingUtils::HashString("NoSuchBucket");
+static constexpr uint32_t NO_SUCH_KEY_HASH = ConstExprHashingUtils::HashString("NoSuchKey");
+static constexpr uint32_t OBJECT_NOT_IN_ACTIVE_TIER_HASH = ConstExprHashingUtils::HashString("ObjectNotInActiveTierError");
+static constexpr uint32_t BUCKET_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("BucketAlreadyExists");
+static constexpr uint32_t INVALID_OBJECT_STATE_HASH = ConstExprHashingUtils::HashString("InvalidObjectState");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == NO_SUCH_UPLOAD_HASH)
   {

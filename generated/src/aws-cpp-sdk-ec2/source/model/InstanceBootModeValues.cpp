@@ -20,13 +20,13 @@ namespace Aws
       namespace InstanceBootModeValuesMapper
       {
 
-        static const int legacy_bios_HASH = HashingUtils::HashString("legacy-bios");
-        static const int uefi_HASH = HashingUtils::HashString("uefi");
+        static constexpr uint32_t legacy_bios_HASH = ConstExprHashingUtils::HashString("legacy-bios");
+        static constexpr uint32_t uefi_HASH = ConstExprHashingUtils::HashString("uefi");
 
 
         InstanceBootModeValues GetInstanceBootModeValuesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == legacy_bios_HASH)
           {
             return InstanceBootModeValues::legacy_bios;

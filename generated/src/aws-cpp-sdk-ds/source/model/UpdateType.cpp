@@ -20,12 +20,12 @@ namespace Aws
       namespace UpdateTypeMapper
       {
 
-        static const int OS_HASH = HashingUtils::HashString("OS");
+        static constexpr uint32_t OS_HASH = ConstExprHashingUtils::HashString("OS");
 
 
         UpdateType GetUpdateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OS_HASH)
           {
             return UpdateType::OS;

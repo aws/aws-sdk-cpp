@@ -20,22 +20,22 @@ namespace Aws
       namespace InstanceHealthReasonMapper
       {
 
-        static const int Lb_RegistrationInProgress_HASH = HashingUtils::HashString("Lb.RegistrationInProgress");
-        static const int Lb_InitialHealthChecking_HASH = HashingUtils::HashString("Lb.InitialHealthChecking");
-        static const int Lb_InternalError_HASH = HashingUtils::HashString("Lb.InternalError");
-        static const int Instance_ResponseCodeMismatch_HASH = HashingUtils::HashString("Instance.ResponseCodeMismatch");
-        static const int Instance_Timeout_HASH = HashingUtils::HashString("Instance.Timeout");
-        static const int Instance_FailedHealthChecks_HASH = HashingUtils::HashString("Instance.FailedHealthChecks");
-        static const int Instance_NotRegistered_HASH = HashingUtils::HashString("Instance.NotRegistered");
-        static const int Instance_NotInUse_HASH = HashingUtils::HashString("Instance.NotInUse");
-        static const int Instance_DeregistrationInProgress_HASH = HashingUtils::HashString("Instance.DeregistrationInProgress");
-        static const int Instance_InvalidState_HASH = HashingUtils::HashString("Instance.InvalidState");
-        static const int Instance_IpUnusable_HASH = HashingUtils::HashString("Instance.IpUnusable");
+        static constexpr uint32_t Lb_RegistrationInProgress_HASH = ConstExprHashingUtils::HashString("Lb.RegistrationInProgress");
+        static constexpr uint32_t Lb_InitialHealthChecking_HASH = ConstExprHashingUtils::HashString("Lb.InitialHealthChecking");
+        static constexpr uint32_t Lb_InternalError_HASH = ConstExprHashingUtils::HashString("Lb.InternalError");
+        static constexpr uint32_t Instance_ResponseCodeMismatch_HASH = ConstExprHashingUtils::HashString("Instance.ResponseCodeMismatch");
+        static constexpr uint32_t Instance_Timeout_HASH = ConstExprHashingUtils::HashString("Instance.Timeout");
+        static constexpr uint32_t Instance_FailedHealthChecks_HASH = ConstExprHashingUtils::HashString("Instance.FailedHealthChecks");
+        static constexpr uint32_t Instance_NotRegistered_HASH = ConstExprHashingUtils::HashString("Instance.NotRegistered");
+        static constexpr uint32_t Instance_NotInUse_HASH = ConstExprHashingUtils::HashString("Instance.NotInUse");
+        static constexpr uint32_t Instance_DeregistrationInProgress_HASH = ConstExprHashingUtils::HashString("Instance.DeregistrationInProgress");
+        static constexpr uint32_t Instance_InvalidState_HASH = ConstExprHashingUtils::HashString("Instance.InvalidState");
+        static constexpr uint32_t Instance_IpUnusable_HASH = ConstExprHashingUtils::HashString("Instance.IpUnusable");
 
 
         InstanceHealthReason GetInstanceHealthReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Lb_RegistrationInProgress_HASH)
           {
             return InstanceHealthReason::Lb_RegistrationInProgress;

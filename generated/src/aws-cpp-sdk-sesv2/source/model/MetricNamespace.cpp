@@ -20,12 +20,12 @@ namespace Aws
       namespace MetricNamespaceMapper
       {
 
-        static const int VDM_HASH = HashingUtils::HashString("VDM");
+        static constexpr uint32_t VDM_HASH = ConstExprHashingUtils::HashString("VDM");
 
 
         MetricNamespace GetMetricNamespaceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VDM_HASH)
           {
             return MetricNamespace::VDM;

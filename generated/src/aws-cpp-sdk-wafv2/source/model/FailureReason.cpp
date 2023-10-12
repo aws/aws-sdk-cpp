@@ -20,15 +20,15 @@ namespace Aws
       namespace FailureReasonMapper
       {
 
-        static const int TOKEN_MISSING_HASH = HashingUtils::HashString("TOKEN_MISSING");
-        static const int TOKEN_EXPIRED_HASH = HashingUtils::HashString("TOKEN_EXPIRED");
-        static const int TOKEN_INVALID_HASH = HashingUtils::HashString("TOKEN_INVALID");
-        static const int TOKEN_DOMAIN_MISMATCH_HASH = HashingUtils::HashString("TOKEN_DOMAIN_MISMATCH");
+        static constexpr uint32_t TOKEN_MISSING_HASH = ConstExprHashingUtils::HashString("TOKEN_MISSING");
+        static constexpr uint32_t TOKEN_EXPIRED_HASH = ConstExprHashingUtils::HashString("TOKEN_EXPIRED");
+        static constexpr uint32_t TOKEN_INVALID_HASH = ConstExprHashingUtils::HashString("TOKEN_INVALID");
+        static constexpr uint32_t TOKEN_DOMAIN_MISMATCH_HASH = ConstExprHashingUtils::HashString("TOKEN_DOMAIN_MISMATCH");
 
 
         FailureReason GetFailureReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TOKEN_MISSING_HASH)
           {
             return FailureReason::TOKEN_MISSING;

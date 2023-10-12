@@ -20,18 +20,18 @@ namespace Aws
       namespace ActionPointMapper
       {
 
-        static const int PRE_CREATE_HOSTED_CONFIGURATION_VERSION_HASH = HashingUtils::HashString("PRE_CREATE_HOSTED_CONFIGURATION_VERSION");
-        static const int PRE_START_DEPLOYMENT_HASH = HashingUtils::HashString("PRE_START_DEPLOYMENT");
-        static const int ON_DEPLOYMENT_START_HASH = HashingUtils::HashString("ON_DEPLOYMENT_START");
-        static const int ON_DEPLOYMENT_STEP_HASH = HashingUtils::HashString("ON_DEPLOYMENT_STEP");
-        static const int ON_DEPLOYMENT_BAKING_HASH = HashingUtils::HashString("ON_DEPLOYMENT_BAKING");
-        static const int ON_DEPLOYMENT_COMPLETE_HASH = HashingUtils::HashString("ON_DEPLOYMENT_COMPLETE");
-        static const int ON_DEPLOYMENT_ROLLED_BACK_HASH = HashingUtils::HashString("ON_DEPLOYMENT_ROLLED_BACK");
+        static constexpr uint32_t PRE_CREATE_HOSTED_CONFIGURATION_VERSION_HASH = ConstExprHashingUtils::HashString("PRE_CREATE_HOSTED_CONFIGURATION_VERSION");
+        static constexpr uint32_t PRE_START_DEPLOYMENT_HASH = ConstExprHashingUtils::HashString("PRE_START_DEPLOYMENT");
+        static constexpr uint32_t ON_DEPLOYMENT_START_HASH = ConstExprHashingUtils::HashString("ON_DEPLOYMENT_START");
+        static constexpr uint32_t ON_DEPLOYMENT_STEP_HASH = ConstExprHashingUtils::HashString("ON_DEPLOYMENT_STEP");
+        static constexpr uint32_t ON_DEPLOYMENT_BAKING_HASH = ConstExprHashingUtils::HashString("ON_DEPLOYMENT_BAKING");
+        static constexpr uint32_t ON_DEPLOYMENT_COMPLETE_HASH = ConstExprHashingUtils::HashString("ON_DEPLOYMENT_COMPLETE");
+        static constexpr uint32_t ON_DEPLOYMENT_ROLLED_BACK_HASH = ConstExprHashingUtils::HashString("ON_DEPLOYMENT_ROLLED_BACK");
 
 
         ActionPoint GetActionPointForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRE_CREATE_HOSTED_CONFIGURATION_VERSION_HASH)
           {
             return ActionPoint::PRE_CREATE_HOSTED_CONFIGURATION_VERSION;

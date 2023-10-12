@@ -20,18 +20,18 @@ namespace Aws
       namespace BrokerStateMapper
       {
 
-        static const int CREATION_IN_PROGRESS_HASH = HashingUtils::HashString("CREATION_IN_PROGRESS");
-        static const int CREATION_FAILED_HASH = HashingUtils::HashString("CREATION_FAILED");
-        static const int DELETION_IN_PROGRESS_HASH = HashingUtils::HashString("DELETION_IN_PROGRESS");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int REBOOT_IN_PROGRESS_HASH = HashingUtils::HashString("REBOOT_IN_PROGRESS");
-        static const int CRITICAL_ACTION_REQUIRED_HASH = HashingUtils::HashString("CRITICAL_ACTION_REQUIRED");
-        static const int REPLICA_HASH = HashingUtils::HashString("REPLICA");
+        static constexpr uint32_t CREATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("CREATION_IN_PROGRESS");
+        static constexpr uint32_t CREATION_FAILED_HASH = ConstExprHashingUtils::HashString("CREATION_FAILED");
+        static constexpr uint32_t DELETION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("DELETION_IN_PROGRESS");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t REBOOT_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("REBOOT_IN_PROGRESS");
+        static constexpr uint32_t CRITICAL_ACTION_REQUIRED_HASH = ConstExprHashingUtils::HashString("CRITICAL_ACTION_REQUIRED");
+        static constexpr uint32_t REPLICA_HASH = ConstExprHashingUtils::HashString("REPLICA");
 
 
         BrokerState GetBrokerStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATION_IN_PROGRESS_HASH)
           {
             return BrokerState::CREATION_IN_PROGRESS;

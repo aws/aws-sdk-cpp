@@ -20,13 +20,13 @@ namespace Aws
       namespace ResolutionTypeMapper
       {
 
-        static const int RULE_MATCHING_HASH = HashingUtils::HashString("RULE_MATCHING");
-        static const int ML_MATCHING_HASH = HashingUtils::HashString("ML_MATCHING");
+        static constexpr uint32_t RULE_MATCHING_HASH = ConstExprHashingUtils::HashString("RULE_MATCHING");
+        static constexpr uint32_t ML_MATCHING_HASH = ConstExprHashingUtils::HashString("ML_MATCHING");
 
 
         ResolutionType GetResolutionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RULE_MATCHING_HASH)
           {
             return ResolutionType::RULE_MATCHING;

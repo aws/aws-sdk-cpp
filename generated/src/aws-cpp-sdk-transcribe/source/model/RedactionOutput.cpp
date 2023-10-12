@@ -20,13 +20,13 @@ namespace Aws
       namespace RedactionOutputMapper
       {
 
-        static const int redacted_HASH = HashingUtils::HashString("redacted");
-        static const int redacted_and_unredacted_HASH = HashingUtils::HashString("redacted_and_unredacted");
+        static constexpr uint32_t redacted_HASH = ConstExprHashingUtils::HashString("redacted");
+        static constexpr uint32_t redacted_and_unredacted_HASH = ConstExprHashingUtils::HashString("redacted_and_unredacted");
 
 
         RedactionOutput GetRedactionOutputForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == redacted_HASH)
           {
             return RedactionOutput::redacted;

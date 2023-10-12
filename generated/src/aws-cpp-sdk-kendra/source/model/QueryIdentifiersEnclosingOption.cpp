@@ -20,13 +20,13 @@ namespace Aws
       namespace QueryIdentifiersEnclosingOptionMapper
       {
 
-        static const int DOUBLE_QUOTES_HASH = HashingUtils::HashString("DOUBLE_QUOTES");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t DOUBLE_QUOTES_HASH = ConstExprHashingUtils::HashString("DOUBLE_QUOTES");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         QueryIdentifiersEnclosingOption GetQueryIdentifiersEnclosingOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DOUBLE_QUOTES_HASH)
           {
             return QueryIdentifiersEnclosingOption::DOUBLE_QUOTES;

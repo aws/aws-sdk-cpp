@@ -20,16 +20,16 @@ namespace Aws
       namespace InputFormatMapper
       {
 
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
-        static const int PARQUET_HASH = HashingUtils::HashString("PARQUET");
-        static const int EXCEL_HASH = HashingUtils::HashString("EXCEL");
-        static const int ORC_HASH = HashingUtils::HashString("ORC");
+        static constexpr uint32_t CSV_HASH = ConstExprHashingUtils::HashString("CSV");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
+        static constexpr uint32_t PARQUET_HASH = ConstExprHashingUtils::HashString("PARQUET");
+        static constexpr uint32_t EXCEL_HASH = ConstExprHashingUtils::HashString("EXCEL");
+        static constexpr uint32_t ORC_HASH = ConstExprHashingUtils::HashString("ORC");
 
 
         InputFormat GetInputFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CSV_HASH)
           {
             return InputFormat::CSV;

@@ -20,14 +20,14 @@ namespace Aws
       namespace InputStartingPositionMapper
       {
 
-        static const int NOW_HASH = HashingUtils::HashString("NOW");
-        static const int TRIM_HORIZON_HASH = HashingUtils::HashString("TRIM_HORIZON");
-        static const int LAST_STOPPED_POINT_HASH = HashingUtils::HashString("LAST_STOPPED_POINT");
+        static constexpr uint32_t NOW_HASH = ConstExprHashingUtils::HashString("NOW");
+        static constexpr uint32_t TRIM_HORIZON_HASH = ConstExprHashingUtils::HashString("TRIM_HORIZON");
+        static constexpr uint32_t LAST_STOPPED_POINT_HASH = ConstExprHashingUtils::HashString("LAST_STOPPED_POINT");
 
 
         InputStartingPosition GetInputStartingPositionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOW_HASH)
           {
             return InputStartingPosition::NOW;

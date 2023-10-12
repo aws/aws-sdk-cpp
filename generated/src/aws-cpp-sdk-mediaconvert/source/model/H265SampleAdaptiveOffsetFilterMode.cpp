@@ -20,14 +20,14 @@ namespace Aws
       namespace H265SampleAdaptiveOffsetFilterModeMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int ADAPTIVE_HASH = HashingUtils::HashString("ADAPTIVE");
-        static const int OFF_HASH = HashingUtils::HashString("OFF");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t ADAPTIVE_HASH = ConstExprHashingUtils::HashString("ADAPTIVE");
+        static constexpr uint32_t OFF_HASH = ConstExprHashingUtils::HashString("OFF");
 
 
         H265SampleAdaptiveOffsetFilterMode GetH265SampleAdaptiveOffsetFilterModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return H265SampleAdaptiveOffsetFilterMode::DEFAULT;

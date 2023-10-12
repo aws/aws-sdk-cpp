@@ -20,14 +20,14 @@ namespace Aws
       namespace InputFormatMapper
       {
 
-        static const int DYNAMODB_JSON_HASH = HashingUtils::HashString("DYNAMODB_JSON");
-        static const int ION_HASH = HashingUtils::HashString("ION");
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
+        static constexpr uint32_t DYNAMODB_JSON_HASH = ConstExprHashingUtils::HashString("DYNAMODB_JSON");
+        static constexpr uint32_t ION_HASH = ConstExprHashingUtils::HashString("ION");
+        static constexpr uint32_t CSV_HASH = ConstExprHashingUtils::HashString("CSV");
 
 
         InputFormat GetInputFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DYNAMODB_JSON_HASH)
           {
             return InputFormat::DYNAMODB_JSON;

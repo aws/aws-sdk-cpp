@@ -20,13 +20,13 @@ namespace Aws
       namespace RelativePositionMapper
       {
 
-        static const int BEFORE_PROGRAM_HASH = HashingUtils::HashString("BEFORE_PROGRAM");
-        static const int AFTER_PROGRAM_HASH = HashingUtils::HashString("AFTER_PROGRAM");
+        static constexpr uint32_t BEFORE_PROGRAM_HASH = ConstExprHashingUtils::HashString("BEFORE_PROGRAM");
+        static constexpr uint32_t AFTER_PROGRAM_HASH = ConstExprHashingUtils::HashString("AFTER_PROGRAM");
 
 
         RelativePosition GetRelativePositionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BEFORE_PROGRAM_HASH)
           {
             return RelativePosition::BEFORE_PROGRAM;

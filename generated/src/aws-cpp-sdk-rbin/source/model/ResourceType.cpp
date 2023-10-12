@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int EBS_SNAPSHOT_HASH = HashingUtils::HashString("EBS_SNAPSHOT");
-        static const int EC2_IMAGE_HASH = HashingUtils::HashString("EC2_IMAGE");
+        static constexpr uint32_t EBS_SNAPSHOT_HASH = ConstExprHashingUtils::HashString("EBS_SNAPSHOT");
+        static constexpr uint32_t EC2_IMAGE_HASH = ConstExprHashingUtils::HashString("EC2_IMAGE");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EBS_SNAPSHOT_HASH)
           {
             return ResourceType::EBS_SNAPSHOT;

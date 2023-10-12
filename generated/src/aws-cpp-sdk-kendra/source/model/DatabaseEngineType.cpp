@@ -20,15 +20,15 @@ namespace Aws
       namespace DatabaseEngineTypeMapper
       {
 
-        static const int RDS_AURORA_MYSQL_HASH = HashingUtils::HashString("RDS_AURORA_MYSQL");
-        static const int RDS_AURORA_POSTGRESQL_HASH = HashingUtils::HashString("RDS_AURORA_POSTGRESQL");
-        static const int RDS_MYSQL_HASH = HashingUtils::HashString("RDS_MYSQL");
-        static const int RDS_POSTGRESQL_HASH = HashingUtils::HashString("RDS_POSTGRESQL");
+        static constexpr uint32_t RDS_AURORA_MYSQL_HASH = ConstExprHashingUtils::HashString("RDS_AURORA_MYSQL");
+        static constexpr uint32_t RDS_AURORA_POSTGRESQL_HASH = ConstExprHashingUtils::HashString("RDS_AURORA_POSTGRESQL");
+        static constexpr uint32_t RDS_MYSQL_HASH = ConstExprHashingUtils::HashString("RDS_MYSQL");
+        static constexpr uint32_t RDS_POSTGRESQL_HASH = ConstExprHashingUtils::HashString("RDS_POSTGRESQL");
 
 
         DatabaseEngineType GetDatabaseEngineTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RDS_AURORA_MYSQL_HASH)
           {
             return DatabaseEngineType::RDS_AURORA_MYSQL;

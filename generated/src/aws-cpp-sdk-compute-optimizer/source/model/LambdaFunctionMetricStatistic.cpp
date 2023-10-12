@@ -20,13 +20,13 @@ namespace Aws
       namespace LambdaFunctionMetricStatisticMapper
       {
 
-        static const int Maximum_HASH = HashingUtils::HashString("Maximum");
-        static const int Average_HASH = HashingUtils::HashString("Average");
+        static constexpr uint32_t Maximum_HASH = ConstExprHashingUtils::HashString("Maximum");
+        static constexpr uint32_t Average_HASH = ConstExprHashingUtils::HashString("Average");
 
 
         LambdaFunctionMetricStatistic GetLambdaFunctionMetricStatisticForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Maximum_HASH)
           {
             return LambdaFunctionMetricStatistic::Maximum;

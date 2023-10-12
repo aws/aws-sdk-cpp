@@ -20,13 +20,13 @@ namespace Aws
       namespace VolumeAttributeNameMapper
       {
 
-        static const int autoEnableIO_HASH = HashingUtils::HashString("autoEnableIO");
-        static const int productCodes_HASH = HashingUtils::HashString("productCodes");
+        static constexpr uint32_t autoEnableIO_HASH = ConstExprHashingUtils::HashString("autoEnableIO");
+        static constexpr uint32_t productCodes_HASH = ConstExprHashingUtils::HashString("productCodes");
 
 
         VolumeAttributeName GetVolumeAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == autoEnableIO_HASH)
           {
             return VolumeAttributeName::autoEnableIO;

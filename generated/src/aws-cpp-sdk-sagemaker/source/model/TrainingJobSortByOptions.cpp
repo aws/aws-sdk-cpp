@@ -20,15 +20,15 @@ namespace Aws
       namespace TrainingJobSortByOptionsMapper
       {
 
-        static const int Name_HASH = HashingUtils::HashString("Name");
-        static const int CreationTime_HASH = HashingUtils::HashString("CreationTime");
-        static const int Status_HASH = HashingUtils::HashString("Status");
-        static const int FinalObjectiveMetricValue_HASH = HashingUtils::HashString("FinalObjectiveMetricValue");
+        static constexpr uint32_t Name_HASH = ConstExprHashingUtils::HashString("Name");
+        static constexpr uint32_t CreationTime_HASH = ConstExprHashingUtils::HashString("CreationTime");
+        static constexpr uint32_t Status_HASH = ConstExprHashingUtils::HashString("Status");
+        static constexpr uint32_t FinalObjectiveMetricValue_HASH = ConstExprHashingUtils::HashString("FinalObjectiveMetricValue");
 
 
         TrainingJobSortByOptions GetTrainingJobSortByOptionsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Name_HASH)
           {
             return TrainingJobSortByOptions::Name;

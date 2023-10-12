@@ -20,13 +20,13 @@ namespace Aws
       namespace DirectionalityMapper
       {
 
-        static const int UNI_HASH = HashingUtils::HashString("UNI");
-        static const int MULTI_HASH = HashingUtils::HashString("MULTI");
+        static constexpr uint32_t UNI_HASH = ConstExprHashingUtils::HashString("UNI");
+        static constexpr uint32_t MULTI_HASH = ConstExprHashingUtils::HashString("MULTI");
 
 
         Directionality GetDirectionalityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNI_HASH)
           {
             return Directionality::UNI;

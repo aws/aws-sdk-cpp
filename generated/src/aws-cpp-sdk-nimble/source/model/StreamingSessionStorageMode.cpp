@@ -20,12 +20,12 @@ namespace Aws
       namespace StreamingSessionStorageModeMapper
       {
 
-        static const int UPLOAD_HASH = HashingUtils::HashString("UPLOAD");
+        static constexpr uint32_t UPLOAD_HASH = ConstExprHashingUtils::HashString("UPLOAD");
 
 
         StreamingSessionStorageMode GetStreamingSessionStorageModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UPLOAD_HASH)
           {
             return StreamingSessionStorageMode::UPLOAD;

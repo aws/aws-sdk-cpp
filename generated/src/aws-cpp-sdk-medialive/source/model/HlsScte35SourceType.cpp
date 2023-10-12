@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsScte35SourceTypeMapper
       {
 
-        static const int MANIFEST_HASH = HashingUtils::HashString("MANIFEST");
-        static const int SEGMENTS_HASH = HashingUtils::HashString("SEGMENTS");
+        static constexpr uint32_t MANIFEST_HASH = ConstExprHashingUtils::HashString("MANIFEST");
+        static constexpr uint32_t SEGMENTS_HASH = ConstExprHashingUtils::HashString("SEGMENTS");
 
 
         HlsScte35SourceType GetHlsScte35SourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MANIFEST_HASH)
           {
             return HlsScte35SourceType::MANIFEST;

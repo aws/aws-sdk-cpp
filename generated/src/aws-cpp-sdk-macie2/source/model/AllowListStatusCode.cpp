@@ -20,19 +20,19 @@ namespace Aws
       namespace AllowListStatusCodeMapper
       {
 
-        static const int OK_HASH = HashingUtils::HashString("OK");
-        static const int S3_OBJECT_NOT_FOUND_HASH = HashingUtils::HashString("S3_OBJECT_NOT_FOUND");
-        static const int S3_USER_ACCESS_DENIED_HASH = HashingUtils::HashString("S3_USER_ACCESS_DENIED");
-        static const int S3_OBJECT_ACCESS_DENIED_HASH = HashingUtils::HashString("S3_OBJECT_ACCESS_DENIED");
-        static const int S3_THROTTLED_HASH = HashingUtils::HashString("S3_THROTTLED");
-        static const int S3_OBJECT_OVERSIZE_HASH = HashingUtils::HashString("S3_OBJECT_OVERSIZE");
-        static const int S3_OBJECT_EMPTY_HASH = HashingUtils::HashString("S3_OBJECT_EMPTY");
-        static const int UNKNOWN_ERROR_HASH = HashingUtils::HashString("UNKNOWN_ERROR");
+        static constexpr uint32_t OK_HASH = ConstExprHashingUtils::HashString("OK");
+        static constexpr uint32_t S3_OBJECT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("S3_OBJECT_NOT_FOUND");
+        static constexpr uint32_t S3_USER_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("S3_USER_ACCESS_DENIED");
+        static constexpr uint32_t S3_OBJECT_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("S3_OBJECT_ACCESS_DENIED");
+        static constexpr uint32_t S3_THROTTLED_HASH = ConstExprHashingUtils::HashString("S3_THROTTLED");
+        static constexpr uint32_t S3_OBJECT_OVERSIZE_HASH = ConstExprHashingUtils::HashString("S3_OBJECT_OVERSIZE");
+        static constexpr uint32_t S3_OBJECT_EMPTY_HASH = ConstExprHashingUtils::HashString("S3_OBJECT_EMPTY");
+        static constexpr uint32_t UNKNOWN_ERROR_HASH = ConstExprHashingUtils::HashString("UNKNOWN_ERROR");
 
 
         AllowListStatusCode GetAllowListStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OK_HASH)
           {
             return AllowListStatusCode::OK;

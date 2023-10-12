@@ -20,16 +20,16 @@ namespace Aws
       namespace FlowLogsResourceTypeMapper
       {
 
-        static const int VPC_HASH = HashingUtils::HashString("VPC");
-        static const int Subnet_HASH = HashingUtils::HashString("Subnet");
-        static const int NetworkInterface_HASH = HashingUtils::HashString("NetworkInterface");
-        static const int TransitGateway_HASH = HashingUtils::HashString("TransitGateway");
-        static const int TransitGatewayAttachment_HASH = HashingUtils::HashString("TransitGatewayAttachment");
+        static constexpr uint32_t VPC_HASH = ConstExprHashingUtils::HashString("VPC");
+        static constexpr uint32_t Subnet_HASH = ConstExprHashingUtils::HashString("Subnet");
+        static constexpr uint32_t NetworkInterface_HASH = ConstExprHashingUtils::HashString("NetworkInterface");
+        static constexpr uint32_t TransitGateway_HASH = ConstExprHashingUtils::HashString("TransitGateway");
+        static constexpr uint32_t TransitGatewayAttachment_HASH = ConstExprHashingUtils::HashString("TransitGatewayAttachment");
 
 
         FlowLogsResourceType GetFlowLogsResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VPC_HASH)
           {
             return FlowLogsResourceType::VPC;

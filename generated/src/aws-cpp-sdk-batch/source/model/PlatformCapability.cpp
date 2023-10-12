@@ -20,13 +20,13 @@ namespace Aws
       namespace PlatformCapabilityMapper
       {
 
-        static const int EC2_HASH = HashingUtils::HashString("EC2");
-        static const int FARGATE_HASH = HashingUtils::HashString("FARGATE");
+        static constexpr uint32_t EC2_HASH = ConstExprHashingUtils::HashString("EC2");
+        static constexpr uint32_t FARGATE_HASH = ConstExprHashingUtils::HashString("FARGATE");
 
 
         PlatformCapability GetPlatformCapabilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EC2_HASH)
           {
             return PlatformCapability::EC2;

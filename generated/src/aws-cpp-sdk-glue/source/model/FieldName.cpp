@@ -20,16 +20,16 @@ namespace Aws
       namespace FieldNameMapper
       {
 
-        static const int CRAWL_ID_HASH = HashingUtils::HashString("CRAWL_ID");
-        static const int STATE_HASH = HashingUtils::HashString("STATE");
-        static const int START_TIME_HASH = HashingUtils::HashString("START_TIME");
-        static const int END_TIME_HASH = HashingUtils::HashString("END_TIME");
-        static const int DPU_HOUR_HASH = HashingUtils::HashString("DPU_HOUR");
+        static constexpr uint32_t CRAWL_ID_HASH = ConstExprHashingUtils::HashString("CRAWL_ID");
+        static constexpr uint32_t STATE_HASH = ConstExprHashingUtils::HashString("STATE");
+        static constexpr uint32_t START_TIME_HASH = ConstExprHashingUtils::HashString("START_TIME");
+        static constexpr uint32_t END_TIME_HASH = ConstExprHashingUtils::HashString("END_TIME");
+        static constexpr uint32_t DPU_HOUR_HASH = ConstExprHashingUtils::HashString("DPU_HOUR");
 
 
         FieldName GetFieldNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CRAWL_ID_HASH)
           {
             return FieldName::CRAWL_ID;

@@ -20,26 +20,26 @@ namespace Aws
       namespace UlimitNameMapper
       {
 
-        static const int core_HASH = HashingUtils::HashString("core");
-        static const int cpu_HASH = HashingUtils::HashString("cpu");
-        static const int data_HASH = HashingUtils::HashString("data");
-        static const int fsize_HASH = HashingUtils::HashString("fsize");
-        static const int locks_HASH = HashingUtils::HashString("locks");
-        static const int memlock_HASH = HashingUtils::HashString("memlock");
-        static const int msgqueue_HASH = HashingUtils::HashString("msgqueue");
-        static const int nice_HASH = HashingUtils::HashString("nice");
-        static const int nofile_HASH = HashingUtils::HashString("nofile");
-        static const int nproc_HASH = HashingUtils::HashString("nproc");
-        static const int rss_HASH = HashingUtils::HashString("rss");
-        static const int rtprio_HASH = HashingUtils::HashString("rtprio");
-        static const int rttime_HASH = HashingUtils::HashString("rttime");
-        static const int sigpending_HASH = HashingUtils::HashString("sigpending");
-        static const int stack_HASH = HashingUtils::HashString("stack");
+        static constexpr uint32_t core_HASH = ConstExprHashingUtils::HashString("core");
+        static constexpr uint32_t cpu_HASH = ConstExprHashingUtils::HashString("cpu");
+        static constexpr uint32_t data_HASH = ConstExprHashingUtils::HashString("data");
+        static constexpr uint32_t fsize_HASH = ConstExprHashingUtils::HashString("fsize");
+        static constexpr uint32_t locks_HASH = ConstExprHashingUtils::HashString("locks");
+        static constexpr uint32_t memlock_HASH = ConstExprHashingUtils::HashString("memlock");
+        static constexpr uint32_t msgqueue_HASH = ConstExprHashingUtils::HashString("msgqueue");
+        static constexpr uint32_t nice_HASH = ConstExprHashingUtils::HashString("nice");
+        static constexpr uint32_t nofile_HASH = ConstExprHashingUtils::HashString("nofile");
+        static constexpr uint32_t nproc_HASH = ConstExprHashingUtils::HashString("nproc");
+        static constexpr uint32_t rss_HASH = ConstExprHashingUtils::HashString("rss");
+        static constexpr uint32_t rtprio_HASH = ConstExprHashingUtils::HashString("rtprio");
+        static constexpr uint32_t rttime_HASH = ConstExprHashingUtils::HashString("rttime");
+        static constexpr uint32_t sigpending_HASH = ConstExprHashingUtils::HashString("sigpending");
+        static constexpr uint32_t stack_HASH = ConstExprHashingUtils::HashString("stack");
 
 
         UlimitName GetUlimitNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == core_HASH)
           {
             return UlimitName::core;

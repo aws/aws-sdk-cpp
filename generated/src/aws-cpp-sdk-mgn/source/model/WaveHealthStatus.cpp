@@ -20,14 +20,14 @@ namespace Aws
       namespace WaveHealthStatusMapper
       {
 
-        static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
-        static const int LAGGING_HASH = HashingUtils::HashString("LAGGING");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t HEALTHY_HASH = ConstExprHashingUtils::HashString("HEALTHY");
+        static constexpr uint32_t LAGGING_HASH = ConstExprHashingUtils::HashString("LAGGING");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         WaveHealthStatus GetWaveHealthStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HEALTHY_HASH)
           {
             return WaveHealthStatus::HEALTHY;

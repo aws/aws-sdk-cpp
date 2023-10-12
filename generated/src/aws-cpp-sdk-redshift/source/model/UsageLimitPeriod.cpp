@@ -20,14 +20,14 @@ namespace Aws
       namespace UsageLimitPeriodMapper
       {
 
-        static const int daily_HASH = HashingUtils::HashString("daily");
-        static const int weekly_HASH = HashingUtils::HashString("weekly");
-        static const int monthly_HASH = HashingUtils::HashString("monthly");
+        static constexpr uint32_t daily_HASH = ConstExprHashingUtils::HashString("daily");
+        static constexpr uint32_t weekly_HASH = ConstExprHashingUtils::HashString("weekly");
+        static constexpr uint32_t monthly_HASH = ConstExprHashingUtils::HashString("monthly");
 
 
         UsageLimitPeriod GetUsageLimitPeriodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == daily_HASH)
           {
             return UsageLimitPeriod::daily;

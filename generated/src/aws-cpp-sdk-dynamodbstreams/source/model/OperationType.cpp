@@ -20,14 +20,14 @@ namespace Aws
       namespace OperationTypeMapper
       {
 
-        static const int INSERT_HASH = HashingUtils::HashString("INSERT");
-        static const int MODIFY_HASH = HashingUtils::HashString("MODIFY");
-        static const int REMOVE_HASH = HashingUtils::HashString("REMOVE");
+        static constexpr uint32_t INSERT_HASH = ConstExprHashingUtils::HashString("INSERT");
+        static constexpr uint32_t MODIFY_HASH = ConstExprHashingUtils::HashString("MODIFY");
+        static constexpr uint32_t REMOVE_HASH = ConstExprHashingUtils::HashString("REMOVE");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSERT_HASH)
           {
             return OperationType::INSERT;

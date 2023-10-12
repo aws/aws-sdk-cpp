@@ -20,13 +20,13 @@ namespace Aws
       namespace Scte35ArchiveAllowedFlagMapper
       {
 
-        static const int ARCHIVE_NOT_ALLOWED_HASH = HashingUtils::HashString("ARCHIVE_NOT_ALLOWED");
-        static const int ARCHIVE_ALLOWED_HASH = HashingUtils::HashString("ARCHIVE_ALLOWED");
+        static constexpr uint32_t ARCHIVE_NOT_ALLOWED_HASH = ConstExprHashingUtils::HashString("ARCHIVE_NOT_ALLOWED");
+        static constexpr uint32_t ARCHIVE_ALLOWED_HASH = ConstExprHashingUtils::HashString("ARCHIVE_ALLOWED");
 
 
         Scte35ArchiveAllowedFlag GetScte35ArchiveAllowedFlagForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ARCHIVE_NOT_ALLOWED_HASH)
           {
             return Scte35ArchiveAllowedFlag::ARCHIVE_NOT_ALLOWED;

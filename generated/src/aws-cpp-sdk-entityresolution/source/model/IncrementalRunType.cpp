@@ -20,12 +20,12 @@ namespace Aws
       namespace IncrementalRunTypeMapper
       {
 
-        static const int IMMEDIATE_HASH = HashingUtils::HashString("IMMEDIATE");
+        static constexpr uint32_t IMMEDIATE_HASH = ConstExprHashingUtils::HashString("IMMEDIATE");
 
 
         IncrementalRunType GetIncrementalRunTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IMMEDIATE_HASH)
           {
             return IncrementalRunType::IMMEDIATE;

@@ -20,12 +20,12 @@ namespace Aws
       namespace FindingStatisticTypeMapper
       {
 
-        static const int COUNT_BY_SEVERITY_HASH = HashingUtils::HashString("COUNT_BY_SEVERITY");
+        static constexpr uint32_t COUNT_BY_SEVERITY_HASH = ConstExprHashingUtils::HashString("COUNT_BY_SEVERITY");
 
 
         FindingStatisticType GetFindingStatisticTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COUNT_BY_SEVERITY_HASH)
           {
             return FindingStatisticType::COUNT_BY_SEVERITY;

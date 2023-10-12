@@ -20,13 +20,13 @@ namespace Aws
       namespace ErrorCauseMapper
       {
 
-        static const int KINESIS_STREAM_NOT_FOUND_HASH = HashingUtils::HashString("KINESIS_STREAM_NOT_FOUND");
-        static const int IAM_PERMISSION_REVOKED_HASH = HashingUtils::HashString("IAM_PERMISSION_REVOKED");
+        static constexpr uint32_t KINESIS_STREAM_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("KINESIS_STREAM_NOT_FOUND");
+        static constexpr uint32_t IAM_PERMISSION_REVOKED_HASH = ConstExprHashingUtils::HashString("IAM_PERMISSION_REVOKED");
 
 
         ErrorCause GetErrorCauseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KINESIS_STREAM_NOT_FOUND_HASH)
           {
             return ErrorCause::KINESIS_STREAM_NOT_FOUND;

@@ -20,15 +20,15 @@ namespace Aws
       namespace TransactionStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int COMMITTED_HASH = HashingUtils::HashString("COMMITTED");
-        static const int ABORTED_HASH = HashingUtils::HashString("ABORTED");
-        static const int COMMIT_IN_PROGRESS_HASH = HashingUtils::HashString("COMMIT_IN_PROGRESS");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t COMMITTED_HASH = ConstExprHashingUtils::HashString("COMMITTED");
+        static constexpr uint32_t ABORTED_HASH = ConstExprHashingUtils::HashString("ABORTED");
+        static constexpr uint32_t COMMIT_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("COMMIT_IN_PROGRESS");
 
 
         TransactionStatus GetTransactionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return TransactionStatus::ACTIVE;

@@ -20,14 +20,14 @@ namespace Aws
       namespace BatchGetAssetPropertyValueHistoryErrorCodeMapper
       {
 
-        static const int ResourceNotFoundException_HASH = HashingUtils::HashString("ResourceNotFoundException");
-        static const int InvalidRequestException_HASH = HashingUtils::HashString("InvalidRequestException");
-        static const int AccessDeniedException_HASH = HashingUtils::HashString("AccessDeniedException");
+        static constexpr uint32_t ResourceNotFoundException_HASH = ConstExprHashingUtils::HashString("ResourceNotFoundException");
+        static constexpr uint32_t InvalidRequestException_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
+        static constexpr uint32_t AccessDeniedException_HASH = ConstExprHashingUtils::HashString("AccessDeniedException");
 
 
         BatchGetAssetPropertyValueHistoryErrorCode GetBatchGetAssetPropertyValueHistoryErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ResourceNotFoundException_HASH)
           {
             return BatchGetAssetPropertyValueHistoryErrorCode::ResourceNotFoundException;

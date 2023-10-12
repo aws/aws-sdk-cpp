@@ -20,13 +20,13 @@ namespace Aws
       namespace DeviceSettingsSyncStateMapper
       {
 
-        static const int SYNCED_HASH = HashingUtils::HashString("SYNCED");
-        static const int SYNCING_HASH = HashingUtils::HashString("SYNCING");
+        static constexpr uint32_t SYNCED_HASH = ConstExprHashingUtils::HashString("SYNCED");
+        static constexpr uint32_t SYNCING_HASH = ConstExprHashingUtils::HashString("SYNCING");
 
 
         DeviceSettingsSyncState GetDeviceSettingsSyncStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SYNCED_HASH)
           {
             return DeviceSettingsSyncState::SYNCED;

@@ -20,19 +20,19 @@ namespace Aws
       namespace FillingTypeMapper
       {
 
-        static const int frontfill_HASH = HashingUtils::HashString("frontfill");
-        static const int middlefill_HASH = HashingUtils::HashString("middlefill");
-        static const int backfill_HASH = HashingUtils::HashString("backfill");
-        static const int futurefill_HASH = HashingUtils::HashString("futurefill");
-        static const int frontfill_value_HASH = HashingUtils::HashString("frontfill_value");
-        static const int middlefill_value_HASH = HashingUtils::HashString("middlefill_value");
-        static const int backfill_value_HASH = HashingUtils::HashString("backfill_value");
-        static const int futurefill_value_HASH = HashingUtils::HashString("futurefill_value");
+        static constexpr uint32_t frontfill_HASH = ConstExprHashingUtils::HashString("frontfill");
+        static constexpr uint32_t middlefill_HASH = ConstExprHashingUtils::HashString("middlefill");
+        static constexpr uint32_t backfill_HASH = ConstExprHashingUtils::HashString("backfill");
+        static constexpr uint32_t futurefill_HASH = ConstExprHashingUtils::HashString("futurefill");
+        static constexpr uint32_t frontfill_value_HASH = ConstExprHashingUtils::HashString("frontfill_value");
+        static constexpr uint32_t middlefill_value_HASH = ConstExprHashingUtils::HashString("middlefill_value");
+        static constexpr uint32_t backfill_value_HASH = ConstExprHashingUtils::HashString("backfill_value");
+        static constexpr uint32_t futurefill_value_HASH = ConstExprHashingUtils::HashString("futurefill_value");
 
 
         FillingType GetFillingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == frontfill_HASH)
           {
             return FillingType::frontfill;

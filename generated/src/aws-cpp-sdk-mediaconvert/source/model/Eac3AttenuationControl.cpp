@@ -20,13 +20,13 @@ namespace Aws
       namespace Eac3AttenuationControlMapper
       {
 
-        static const int ATTENUATE_3_DB_HASH = HashingUtils::HashString("ATTENUATE_3_DB");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t ATTENUATE_3_DB_HASH = ConstExprHashingUtils::HashString("ATTENUATE_3_DB");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         Eac3AttenuationControl GetEac3AttenuationControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ATTENUATE_3_DB_HASH)
           {
             return Eac3AttenuationControl::ATTENUATE_3_DB;

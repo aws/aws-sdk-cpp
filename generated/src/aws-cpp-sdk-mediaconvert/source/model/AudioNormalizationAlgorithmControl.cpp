@@ -20,13 +20,13 @@ namespace Aws
       namespace AudioNormalizationAlgorithmControlMapper
       {
 
-        static const int CORRECT_AUDIO_HASH = HashingUtils::HashString("CORRECT_AUDIO");
-        static const int MEASURE_ONLY_HASH = HashingUtils::HashString("MEASURE_ONLY");
+        static constexpr uint32_t CORRECT_AUDIO_HASH = ConstExprHashingUtils::HashString("CORRECT_AUDIO");
+        static constexpr uint32_t MEASURE_ONLY_HASH = ConstExprHashingUtils::HashString("MEASURE_ONLY");
 
 
         AudioNormalizationAlgorithmControl GetAudioNormalizationAlgorithmControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CORRECT_AUDIO_HASH)
           {
             return AudioNormalizationAlgorithmControl::CORRECT_AUDIO;

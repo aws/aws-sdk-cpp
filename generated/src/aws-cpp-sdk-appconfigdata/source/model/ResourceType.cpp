@@ -20,16 +20,16 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int Application_HASH = HashingUtils::HashString("Application");
-        static const int ConfigurationProfile_HASH = HashingUtils::HashString("ConfigurationProfile");
-        static const int Deployment_HASH = HashingUtils::HashString("Deployment");
-        static const int Environment_HASH = HashingUtils::HashString("Environment");
-        static const int Configuration_HASH = HashingUtils::HashString("Configuration");
+        static constexpr uint32_t Application_HASH = ConstExprHashingUtils::HashString("Application");
+        static constexpr uint32_t ConfigurationProfile_HASH = ConstExprHashingUtils::HashString("ConfigurationProfile");
+        static constexpr uint32_t Deployment_HASH = ConstExprHashingUtils::HashString("Deployment");
+        static constexpr uint32_t Environment_HASH = ConstExprHashingUtils::HashString("Environment");
+        static constexpr uint32_t Configuration_HASH = ConstExprHashingUtils::HashString("Configuration");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Application_HASH)
           {
             return ResourceType::Application;

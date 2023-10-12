@@ -20,17 +20,17 @@ namespace Aws
       namespace PromptAttemptMapper
       {
 
-        static const int Initial_HASH = HashingUtils::HashString("Initial");
-        static const int Retry1_HASH = HashingUtils::HashString("Retry1");
-        static const int Retry2_HASH = HashingUtils::HashString("Retry2");
-        static const int Retry3_HASH = HashingUtils::HashString("Retry3");
-        static const int Retry4_HASH = HashingUtils::HashString("Retry4");
-        static const int Retry5_HASH = HashingUtils::HashString("Retry5");
+        static constexpr uint32_t Initial_HASH = ConstExprHashingUtils::HashString("Initial");
+        static constexpr uint32_t Retry1_HASH = ConstExprHashingUtils::HashString("Retry1");
+        static constexpr uint32_t Retry2_HASH = ConstExprHashingUtils::HashString("Retry2");
+        static constexpr uint32_t Retry3_HASH = ConstExprHashingUtils::HashString("Retry3");
+        static constexpr uint32_t Retry4_HASH = ConstExprHashingUtils::HashString("Retry4");
+        static constexpr uint32_t Retry5_HASH = ConstExprHashingUtils::HashString("Retry5");
 
 
         PromptAttempt GetPromptAttemptForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Initial_HASH)
           {
             return PromptAttempt::Initial;

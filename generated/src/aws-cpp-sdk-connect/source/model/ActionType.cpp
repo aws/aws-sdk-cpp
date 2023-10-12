@@ -20,15 +20,15 @@ namespace Aws
       namespace ActionTypeMapper
       {
 
-        static const int CREATE_TASK_HASH = HashingUtils::HashString("CREATE_TASK");
-        static const int ASSIGN_CONTACT_CATEGORY_HASH = HashingUtils::HashString("ASSIGN_CONTACT_CATEGORY");
-        static const int GENERATE_EVENTBRIDGE_EVENT_HASH = HashingUtils::HashString("GENERATE_EVENTBRIDGE_EVENT");
-        static const int SEND_NOTIFICATION_HASH = HashingUtils::HashString("SEND_NOTIFICATION");
+        static constexpr uint32_t CREATE_TASK_HASH = ConstExprHashingUtils::HashString("CREATE_TASK");
+        static constexpr uint32_t ASSIGN_CONTACT_CATEGORY_HASH = ConstExprHashingUtils::HashString("ASSIGN_CONTACT_CATEGORY");
+        static constexpr uint32_t GENERATE_EVENTBRIDGE_EVENT_HASH = ConstExprHashingUtils::HashString("GENERATE_EVENTBRIDGE_EVENT");
+        static constexpr uint32_t SEND_NOTIFICATION_HASH = ConstExprHashingUtils::HashString("SEND_NOTIFICATION");
 
 
         ActionType GetActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_TASK_HASH)
           {
             return ActionType::CREATE_TASK;

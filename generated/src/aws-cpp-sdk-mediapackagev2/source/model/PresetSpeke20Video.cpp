@@ -20,21 +20,21 @@ namespace Aws
       namespace PresetSpeke20VideoMapper
       {
 
-        static const int PRESET_VIDEO_1_HASH = HashingUtils::HashString("PRESET_VIDEO_1");
-        static const int PRESET_VIDEO_2_HASH = HashingUtils::HashString("PRESET_VIDEO_2");
-        static const int PRESET_VIDEO_3_HASH = HashingUtils::HashString("PRESET_VIDEO_3");
-        static const int PRESET_VIDEO_4_HASH = HashingUtils::HashString("PRESET_VIDEO_4");
-        static const int PRESET_VIDEO_5_HASH = HashingUtils::HashString("PRESET_VIDEO_5");
-        static const int PRESET_VIDEO_6_HASH = HashingUtils::HashString("PRESET_VIDEO_6");
-        static const int PRESET_VIDEO_7_HASH = HashingUtils::HashString("PRESET_VIDEO_7");
-        static const int PRESET_VIDEO_8_HASH = HashingUtils::HashString("PRESET_VIDEO_8");
-        static const int SHARED_HASH = HashingUtils::HashString("SHARED");
-        static const int UNENCRYPTED_HASH = HashingUtils::HashString("UNENCRYPTED");
+        static constexpr uint32_t PRESET_VIDEO_1_HASH = ConstExprHashingUtils::HashString("PRESET_VIDEO_1");
+        static constexpr uint32_t PRESET_VIDEO_2_HASH = ConstExprHashingUtils::HashString("PRESET_VIDEO_2");
+        static constexpr uint32_t PRESET_VIDEO_3_HASH = ConstExprHashingUtils::HashString("PRESET_VIDEO_3");
+        static constexpr uint32_t PRESET_VIDEO_4_HASH = ConstExprHashingUtils::HashString("PRESET_VIDEO_4");
+        static constexpr uint32_t PRESET_VIDEO_5_HASH = ConstExprHashingUtils::HashString("PRESET_VIDEO_5");
+        static constexpr uint32_t PRESET_VIDEO_6_HASH = ConstExprHashingUtils::HashString("PRESET_VIDEO_6");
+        static constexpr uint32_t PRESET_VIDEO_7_HASH = ConstExprHashingUtils::HashString("PRESET_VIDEO_7");
+        static constexpr uint32_t PRESET_VIDEO_8_HASH = ConstExprHashingUtils::HashString("PRESET_VIDEO_8");
+        static constexpr uint32_t SHARED_HASH = ConstExprHashingUtils::HashString("SHARED");
+        static constexpr uint32_t UNENCRYPTED_HASH = ConstExprHashingUtils::HashString("UNENCRYPTED");
 
 
         PresetSpeke20Video GetPresetSpeke20VideoForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRESET_VIDEO_1_HASH)
           {
             return PresetSpeke20Video::PRESET_VIDEO_1;

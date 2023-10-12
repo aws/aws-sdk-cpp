@@ -20,18 +20,18 @@ namespace Aws
       namespace ActionMapper
       {
 
-        static const int CLIPBOARD_COPY_FROM_LOCAL_DEVICE_HASH = HashingUtils::HashString("CLIPBOARD_COPY_FROM_LOCAL_DEVICE");
-        static const int CLIPBOARD_COPY_TO_LOCAL_DEVICE_HASH = HashingUtils::HashString("CLIPBOARD_COPY_TO_LOCAL_DEVICE");
-        static const int FILE_UPLOAD_HASH = HashingUtils::HashString("FILE_UPLOAD");
-        static const int FILE_DOWNLOAD_HASH = HashingUtils::HashString("FILE_DOWNLOAD");
-        static const int PRINTING_TO_LOCAL_DEVICE_HASH = HashingUtils::HashString("PRINTING_TO_LOCAL_DEVICE");
-        static const int DOMAIN_PASSWORD_SIGNIN_HASH = HashingUtils::HashString("DOMAIN_PASSWORD_SIGNIN");
-        static const int DOMAIN_SMART_CARD_SIGNIN_HASH = HashingUtils::HashString("DOMAIN_SMART_CARD_SIGNIN");
+        static constexpr uint32_t CLIPBOARD_COPY_FROM_LOCAL_DEVICE_HASH = ConstExprHashingUtils::HashString("CLIPBOARD_COPY_FROM_LOCAL_DEVICE");
+        static constexpr uint32_t CLIPBOARD_COPY_TO_LOCAL_DEVICE_HASH = ConstExprHashingUtils::HashString("CLIPBOARD_COPY_TO_LOCAL_DEVICE");
+        static constexpr uint32_t FILE_UPLOAD_HASH = ConstExprHashingUtils::HashString("FILE_UPLOAD");
+        static constexpr uint32_t FILE_DOWNLOAD_HASH = ConstExprHashingUtils::HashString("FILE_DOWNLOAD");
+        static constexpr uint32_t PRINTING_TO_LOCAL_DEVICE_HASH = ConstExprHashingUtils::HashString("PRINTING_TO_LOCAL_DEVICE");
+        static constexpr uint32_t DOMAIN_PASSWORD_SIGNIN_HASH = ConstExprHashingUtils::HashString("DOMAIN_PASSWORD_SIGNIN");
+        static constexpr uint32_t DOMAIN_SMART_CARD_SIGNIN_HASH = ConstExprHashingUtils::HashString("DOMAIN_SMART_CARD_SIGNIN");
 
 
         Action GetActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLIPBOARD_COPY_FROM_LOCAL_DEVICE_HASH)
           {
             return Action::CLIPBOARD_COPY_FROM_LOCAL_DEVICE;

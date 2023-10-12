@@ -20,13 +20,13 @@ namespace Aws
       namespace LongReturnTypeMapper
       {
 
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
-        static const int LONG_HASH = HashingUtils::HashString("LONG");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
+        static constexpr uint32_t LONG_HASH = ConstExprHashingUtils::HashString("LONG");
 
 
         LongReturnType GetLongReturnTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STRING_HASH)
           {
             return LongReturnType::STRING;

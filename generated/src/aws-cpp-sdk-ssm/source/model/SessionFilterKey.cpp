@@ -20,17 +20,17 @@ namespace Aws
       namespace SessionFilterKeyMapper
       {
 
-        static const int InvokedAfter_HASH = HashingUtils::HashString("InvokedAfter");
-        static const int InvokedBefore_HASH = HashingUtils::HashString("InvokedBefore");
-        static const int Target_HASH = HashingUtils::HashString("Target");
-        static const int Owner_HASH = HashingUtils::HashString("Owner");
-        static const int Status_HASH = HashingUtils::HashString("Status");
-        static const int SessionId_HASH = HashingUtils::HashString("SessionId");
+        static constexpr uint32_t InvokedAfter_HASH = ConstExprHashingUtils::HashString("InvokedAfter");
+        static constexpr uint32_t InvokedBefore_HASH = ConstExprHashingUtils::HashString("InvokedBefore");
+        static constexpr uint32_t Target_HASH = ConstExprHashingUtils::HashString("Target");
+        static constexpr uint32_t Owner_HASH = ConstExprHashingUtils::HashString("Owner");
+        static constexpr uint32_t Status_HASH = ConstExprHashingUtils::HashString("Status");
+        static constexpr uint32_t SessionId_HASH = ConstExprHashingUtils::HashString("SessionId");
 
 
         SessionFilterKey GetSessionFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InvokedAfter_HASH)
           {
             return SessionFilterKey::InvokedAfter;

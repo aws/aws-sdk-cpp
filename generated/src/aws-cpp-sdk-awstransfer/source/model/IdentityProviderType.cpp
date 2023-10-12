@@ -20,15 +20,15 @@ namespace Aws
       namespace IdentityProviderTypeMapper
       {
 
-        static const int SERVICE_MANAGED_HASH = HashingUtils::HashString("SERVICE_MANAGED");
-        static const int API_GATEWAY_HASH = HashingUtils::HashString("API_GATEWAY");
-        static const int AWS_DIRECTORY_SERVICE_HASH = HashingUtils::HashString("AWS_DIRECTORY_SERVICE");
-        static const int AWS_LAMBDA_HASH = HashingUtils::HashString("AWS_LAMBDA");
+        static constexpr uint32_t SERVICE_MANAGED_HASH = ConstExprHashingUtils::HashString("SERVICE_MANAGED");
+        static constexpr uint32_t API_GATEWAY_HASH = ConstExprHashingUtils::HashString("API_GATEWAY");
+        static constexpr uint32_t AWS_DIRECTORY_SERVICE_HASH = ConstExprHashingUtils::HashString("AWS_DIRECTORY_SERVICE");
+        static constexpr uint32_t AWS_LAMBDA_HASH = ConstExprHashingUtils::HashString("AWS_LAMBDA");
 
 
         IdentityProviderType GetIdentityProviderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SERVICE_MANAGED_HASH)
           {
             return IdentityProviderType::SERVICE_MANAGED;

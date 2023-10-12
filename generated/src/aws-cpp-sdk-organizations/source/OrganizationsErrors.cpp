@@ -54,57 +54,57 @@ template<> AWS_ORGANIZATIONS_API TooManyRequestsException OrganizationsError::Ge
 namespace OrganizationsErrorMapper
 {
 
-static const int UNSUPPORTED_A_P_I_ENDPOINT_HASH = HashingUtils::HashString("UnsupportedAPIEndpointException");
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int POLICY_TYPE_NOT_AVAILABLE_FOR_ORGANIZATION_HASH = HashingUtils::HashString("PolicyTypeNotAvailableForOrganizationException");
-static const int A_W_S_ORGANIZATIONS_NOT_IN_USE_HASH = HashingUtils::HashString("AWSOrganizationsNotInUseException");
-static const int DUPLICATE_POLICY_ATTACHMENT_HASH = HashingUtils::HashString("DuplicatePolicyAttachmentException");
-static const int FINALIZING_ORGANIZATION_HASH = HashingUtils::HashString("FinalizingOrganizationException");
-static const int DESTINATION_PARENT_NOT_FOUND_HASH = HashingUtils::HashString("DestinationParentNotFoundException");
-static const int POLICY_CHANGES_IN_PROGRESS_HASH = HashingUtils::HashString("PolicyChangesInProgressException");
-static const int MASTER_CANNOT_LEAVE_ORGANIZATION_HASH = HashingUtils::HashString("MasterCannotLeaveOrganizationException");
-static const int DUPLICATE_ACCOUNT_HASH = HashingUtils::HashString("DuplicateAccountException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int HANDSHAKE_NOT_FOUND_HASH = HashingUtils::HashString("HandshakeNotFoundException");
-static const int PARENT_NOT_FOUND_HASH = HashingUtils::HashString("ParentNotFoundException");
-static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocumentException");
-static const int CHILD_NOT_FOUND_HASH = HashingUtils::HashString("ChildNotFoundException");
-static const int HANDSHAKE_ALREADY_IN_STATE_HASH = HashingUtils::HashString("HandshakeAlreadyInStateException");
-static const int POLICY_TYPE_NOT_ENABLED_HASH = HashingUtils::HashString("PolicyTypeNotEnabledException");
-static const int ROOT_NOT_FOUND_HASH = HashingUtils::HashString("RootNotFoundException");
-static const int CONSTRAINT_VIOLATION_HASH = HashingUtils::HashString("ConstraintViolationException");
-static const int ORGANIZATIONAL_UNIT_NOT_FOUND_HASH = HashingUtils::HashString("OrganizationalUnitNotFoundException");
-static const int HANDSHAKE_CONSTRAINT_VIOLATION_HASH = HashingUtils::HashString("HandshakeConstraintViolationException");
-static const int ACCOUNT_NOT_FOUND_HASH = HashingUtils::HashString("AccountNotFoundException");
-static const int DUPLICATE_ORGANIZATIONAL_UNIT_HASH = HashingUtils::HashString("DuplicateOrganizationalUnitException");
-static const int RESOURCE_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("ResourcePolicyNotFoundException");
-static const int POLICY_TYPE_ALREADY_ENABLED_HASH = HashingUtils::HashString("PolicyTypeAlreadyEnabledException");
-static const int DUPLICATE_HANDSHAKE_HASH = HashingUtils::HashString("DuplicateHandshakeException");
-static const int TARGET_NOT_FOUND_HASH = HashingUtils::HashString("TargetNotFoundException");
-static const int ORGANIZATIONAL_UNIT_NOT_EMPTY_HASH = HashingUtils::HashString("OrganizationalUnitNotEmptyException");
-static const int INVALID_HANDSHAKE_TRANSITION_HASH = HashingUtils::HashString("InvalidHandshakeTransitionException");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
-static const int ORGANIZATION_NOT_EMPTY_HASH = HashingUtils::HashString("OrganizationNotEmptyException");
-static const int ACCOUNT_NOT_REGISTERED_HASH = HashingUtils::HashString("AccountNotRegisteredException");
-static const int ACCOUNT_ALREADY_REGISTERED_HASH = HashingUtils::HashString("AccountAlreadyRegisteredException");
-static const int POLICY_NOT_FOUND_HASH = HashingUtils::HashString("PolicyNotFoundException");
-static const int CREATE_ACCOUNT_STATUS_NOT_FOUND_HASH = HashingUtils::HashString("CreateAccountStatusNotFoundException");
-static const int EFFECTIVE_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("EffectivePolicyNotFoundException");
-static const int SOURCE_PARENT_NOT_FOUND_HASH = HashingUtils::HashString("SourceParentNotFoundException");
-static const int ACCESS_DENIED_FOR_DEPENDENCY_HASH = HashingUtils::HashString("AccessDeniedForDependencyException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int DUPLICATE_POLICY_HASH = HashingUtils::HashString("DuplicatePolicyException");
-static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
-static const int POLICY_IN_USE_HASH = HashingUtils::HashString("PolicyInUseException");
-static const int POLICY_NOT_ATTACHED_HASH = HashingUtils::HashString("PolicyNotAttachedException");
-static const int ACCOUNT_ALREADY_CLOSED_HASH = HashingUtils::HashString("AccountAlreadyClosedException");
-static const int ALREADY_IN_ORGANIZATION_HASH = HashingUtils::HashString("AlreadyInOrganizationException");
-static const int ACCOUNT_OWNER_NOT_VERIFIED_HASH = HashingUtils::HashString("AccountOwnerNotVerifiedException");
+static constexpr uint32_t UNSUPPORTED_A_P_I_ENDPOINT_HASH = ConstExprHashingUtils::HashString("UnsupportedAPIEndpointException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t POLICY_TYPE_NOT_AVAILABLE_FOR_ORGANIZATION_HASH = ConstExprHashingUtils::HashString("PolicyTypeNotAvailableForOrganizationException");
+static constexpr uint32_t A_W_S_ORGANIZATIONS_NOT_IN_USE_HASH = ConstExprHashingUtils::HashString("AWSOrganizationsNotInUseException");
+static constexpr uint32_t DUPLICATE_POLICY_ATTACHMENT_HASH = ConstExprHashingUtils::HashString("DuplicatePolicyAttachmentException");
+static constexpr uint32_t FINALIZING_ORGANIZATION_HASH = ConstExprHashingUtils::HashString("FinalizingOrganizationException");
+static constexpr uint32_t DESTINATION_PARENT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("DestinationParentNotFoundException");
+static constexpr uint32_t POLICY_CHANGES_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("PolicyChangesInProgressException");
+static constexpr uint32_t MASTER_CANNOT_LEAVE_ORGANIZATION_HASH = ConstExprHashingUtils::HashString("MasterCannotLeaveOrganizationException");
+static constexpr uint32_t DUPLICATE_ACCOUNT_HASH = ConstExprHashingUtils::HashString("DuplicateAccountException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t HANDSHAKE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("HandshakeNotFoundException");
+static constexpr uint32_t PARENT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ParentNotFoundException");
+static constexpr uint32_t MALFORMED_POLICY_DOCUMENT_HASH = ConstExprHashingUtils::HashString("MalformedPolicyDocumentException");
+static constexpr uint32_t CHILD_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ChildNotFoundException");
+static constexpr uint32_t HANDSHAKE_ALREADY_IN_STATE_HASH = ConstExprHashingUtils::HashString("HandshakeAlreadyInStateException");
+static constexpr uint32_t POLICY_TYPE_NOT_ENABLED_HASH = ConstExprHashingUtils::HashString("PolicyTypeNotEnabledException");
+static constexpr uint32_t ROOT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("RootNotFoundException");
+static constexpr uint32_t CONSTRAINT_VIOLATION_HASH = ConstExprHashingUtils::HashString("ConstraintViolationException");
+static constexpr uint32_t ORGANIZATIONAL_UNIT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("OrganizationalUnitNotFoundException");
+static constexpr uint32_t HANDSHAKE_CONSTRAINT_VIOLATION_HASH = ConstExprHashingUtils::HashString("HandshakeConstraintViolationException");
+static constexpr uint32_t ACCOUNT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("AccountNotFoundException");
+static constexpr uint32_t DUPLICATE_ORGANIZATIONAL_UNIT_HASH = ConstExprHashingUtils::HashString("DuplicateOrganizationalUnitException");
+static constexpr uint32_t RESOURCE_POLICY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ResourcePolicyNotFoundException");
+static constexpr uint32_t POLICY_TYPE_ALREADY_ENABLED_HASH = ConstExprHashingUtils::HashString("PolicyTypeAlreadyEnabledException");
+static constexpr uint32_t DUPLICATE_HANDSHAKE_HASH = ConstExprHashingUtils::HashString("DuplicateHandshakeException");
+static constexpr uint32_t TARGET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("TargetNotFoundException");
+static constexpr uint32_t ORGANIZATIONAL_UNIT_NOT_EMPTY_HASH = ConstExprHashingUtils::HashString("OrganizationalUnitNotEmptyException");
+static constexpr uint32_t INVALID_HANDSHAKE_TRANSITION_HASH = ConstExprHashingUtils::HashString("InvalidHandshakeTransitionException");
+static constexpr uint32_t INVALID_INPUT_HASH = ConstExprHashingUtils::HashString("InvalidInputException");
+static constexpr uint32_t ORGANIZATION_NOT_EMPTY_HASH = ConstExprHashingUtils::HashString("OrganizationNotEmptyException");
+static constexpr uint32_t ACCOUNT_NOT_REGISTERED_HASH = ConstExprHashingUtils::HashString("AccountNotRegisteredException");
+static constexpr uint32_t ACCOUNT_ALREADY_REGISTERED_HASH = ConstExprHashingUtils::HashString("AccountAlreadyRegisteredException");
+static constexpr uint32_t POLICY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("PolicyNotFoundException");
+static constexpr uint32_t CREATE_ACCOUNT_STATUS_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("CreateAccountStatusNotFoundException");
+static constexpr uint32_t EFFECTIVE_POLICY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("EffectivePolicyNotFoundException");
+static constexpr uint32_t SOURCE_PARENT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SourceParentNotFoundException");
+static constexpr uint32_t ACCESS_DENIED_FOR_DEPENDENCY_HASH = ConstExprHashingUtils::HashString("AccessDeniedForDependencyException");
+static constexpr uint32_t TOO_MANY_REQUESTS_HASH = ConstExprHashingUtils::HashString("TooManyRequestsException");
+static constexpr uint32_t DUPLICATE_POLICY_HASH = ConstExprHashingUtils::HashString("DuplicatePolicyException");
+static constexpr uint32_t SERVICE_HASH = ConstExprHashingUtils::HashString("ServiceException");
+static constexpr uint32_t POLICY_IN_USE_HASH = ConstExprHashingUtils::HashString("PolicyInUseException");
+static constexpr uint32_t POLICY_NOT_ATTACHED_HASH = ConstExprHashingUtils::HashString("PolicyNotAttachedException");
+static constexpr uint32_t ACCOUNT_ALREADY_CLOSED_HASH = ConstExprHashingUtils::HashString("AccountAlreadyClosedException");
+static constexpr uint32_t ALREADY_IN_ORGANIZATION_HASH = ConstExprHashingUtils::HashString("AlreadyInOrganizationException");
+static constexpr uint32_t ACCOUNT_OWNER_NOT_VERIFIED_HASH = ConstExprHashingUtils::HashString("AccountOwnerNotVerifiedException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == UNSUPPORTED_A_P_I_ENDPOINT_HASH)
   {

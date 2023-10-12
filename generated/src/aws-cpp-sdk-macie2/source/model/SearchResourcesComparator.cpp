@@ -20,13 +20,13 @@ namespace Aws
       namespace SearchResourcesComparatorMapper
       {
 
-        static const int EQ_HASH = HashingUtils::HashString("EQ");
-        static const int NE_HASH = HashingUtils::HashString("NE");
+        static constexpr uint32_t EQ_HASH = ConstExprHashingUtils::HashString("EQ");
+        static constexpr uint32_t NE_HASH = ConstExprHashingUtils::HashString("NE");
 
 
         SearchResourcesComparator GetSearchResourcesComparatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EQ_HASH)
           {
             return SearchResourcesComparator::EQ;

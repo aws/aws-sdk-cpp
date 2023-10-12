@@ -20,13 +20,13 @@ namespace Aws
       namespace HyperParameterTuningJobObjectiveTypeMapper
       {
 
-        static const int Maximize_HASH = HashingUtils::HashString("Maximize");
-        static const int Minimize_HASH = HashingUtils::HashString("Minimize");
+        static constexpr uint32_t Maximize_HASH = ConstExprHashingUtils::HashString("Maximize");
+        static constexpr uint32_t Minimize_HASH = ConstExprHashingUtils::HashString("Minimize");
 
 
         HyperParameterTuningJobObjectiveType GetHyperParameterTuningJobObjectiveTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Maximize_HASH)
           {
             return HyperParameterTuningJobObjectiveType::Maximize;

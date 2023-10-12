@@ -20,12 +20,12 @@ namespace Aws
       namespace FindingActionTypeMapper
       {
 
-        static const int AWS_API_CALL_HASH = HashingUtils::HashString("AWS_API_CALL");
+        static constexpr uint32_t AWS_API_CALL_HASH = ConstExprHashingUtils::HashString("AWS_API_CALL");
 
 
         FindingActionType GetFindingActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_API_CALL_HASH)
           {
             return FindingActionType::AWS_API_CALL;

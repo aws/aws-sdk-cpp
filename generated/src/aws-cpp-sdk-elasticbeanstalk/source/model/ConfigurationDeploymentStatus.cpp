@@ -20,14 +20,14 @@ namespace Aws
       namespace ConfigurationDeploymentStatusMapper
       {
 
-        static const int deployed_HASH = HashingUtils::HashString("deployed");
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int failed_HASH = HashingUtils::HashString("failed");
+        static constexpr uint32_t deployed_HASH = ConstExprHashingUtils::HashString("deployed");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
 
 
         ConfigurationDeploymentStatus GetConfigurationDeploymentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == deployed_HASH)
           {
             return ConfigurationDeploymentStatus::deployed;

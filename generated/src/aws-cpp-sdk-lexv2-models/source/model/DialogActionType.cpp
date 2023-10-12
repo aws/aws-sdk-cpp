@@ -20,20 +20,20 @@ namespace Aws
       namespace DialogActionTypeMapper
       {
 
-        static const int ElicitIntent_HASH = HashingUtils::HashString("ElicitIntent");
-        static const int StartIntent_HASH = HashingUtils::HashString("StartIntent");
-        static const int ElicitSlot_HASH = HashingUtils::HashString("ElicitSlot");
-        static const int EvaluateConditional_HASH = HashingUtils::HashString("EvaluateConditional");
-        static const int InvokeDialogCodeHook_HASH = HashingUtils::HashString("InvokeDialogCodeHook");
-        static const int ConfirmIntent_HASH = HashingUtils::HashString("ConfirmIntent");
-        static const int FulfillIntent_HASH = HashingUtils::HashString("FulfillIntent");
-        static const int CloseIntent_HASH = HashingUtils::HashString("CloseIntent");
-        static const int EndConversation_HASH = HashingUtils::HashString("EndConversation");
+        static constexpr uint32_t ElicitIntent_HASH = ConstExprHashingUtils::HashString("ElicitIntent");
+        static constexpr uint32_t StartIntent_HASH = ConstExprHashingUtils::HashString("StartIntent");
+        static constexpr uint32_t ElicitSlot_HASH = ConstExprHashingUtils::HashString("ElicitSlot");
+        static constexpr uint32_t EvaluateConditional_HASH = ConstExprHashingUtils::HashString("EvaluateConditional");
+        static constexpr uint32_t InvokeDialogCodeHook_HASH = ConstExprHashingUtils::HashString("InvokeDialogCodeHook");
+        static constexpr uint32_t ConfirmIntent_HASH = ConstExprHashingUtils::HashString("ConfirmIntent");
+        static constexpr uint32_t FulfillIntent_HASH = ConstExprHashingUtils::HashString("FulfillIntent");
+        static constexpr uint32_t CloseIntent_HASH = ConstExprHashingUtils::HashString("CloseIntent");
+        static constexpr uint32_t EndConversation_HASH = ConstExprHashingUtils::HashString("EndConversation");
 
 
         DialogActionType GetDialogActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ElicitIntent_HASH)
           {
             return DialogActionType::ElicitIntent;

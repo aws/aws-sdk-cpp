@@ -20,13 +20,13 @@ namespace Aws
       namespace IntelligentTieringAccessTierMapper
       {
 
-        static const int ARCHIVE_ACCESS_HASH = HashingUtils::HashString("ARCHIVE_ACCESS");
-        static const int DEEP_ARCHIVE_ACCESS_HASH = HashingUtils::HashString("DEEP_ARCHIVE_ACCESS");
+        static constexpr uint32_t ARCHIVE_ACCESS_HASH = ConstExprHashingUtils::HashString("ARCHIVE_ACCESS");
+        static constexpr uint32_t DEEP_ARCHIVE_ACCESS_HASH = ConstExprHashingUtils::HashString("DEEP_ARCHIVE_ACCESS");
 
 
         IntelligentTieringAccessTier GetIntelligentTieringAccessTierForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ARCHIVE_ACCESS_HASH)
           {
             return IntelligentTieringAccessTier::ARCHIVE_ACCESS;

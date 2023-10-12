@@ -20,13 +20,13 @@ namespace Aws
       namespace EcsResourceRequirementTypeMapper
       {
 
-        static const int GPU_HASH = HashingUtils::HashString("GPU");
-        static const int InferenceAccelerator_HASH = HashingUtils::HashString("InferenceAccelerator");
+        static constexpr uint32_t GPU_HASH = ConstExprHashingUtils::HashString("GPU");
+        static constexpr uint32_t InferenceAccelerator_HASH = ConstExprHashingUtils::HashString("InferenceAccelerator");
 
 
         EcsResourceRequirementType GetEcsResourceRequirementTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GPU_HASH)
           {
             return EcsResourceRequirementType::GPU;

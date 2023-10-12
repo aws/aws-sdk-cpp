@@ -20,13 +20,13 @@ namespace Aws
       namespace CertificateModeMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int SNI_ONLY_HASH = HashingUtils::HashString("SNI_ONLY");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t SNI_ONLY_HASH = ConstExprHashingUtils::HashString("SNI_ONLY");
 
 
         CertificateMode GetCertificateModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return CertificateMode::DEFAULT;

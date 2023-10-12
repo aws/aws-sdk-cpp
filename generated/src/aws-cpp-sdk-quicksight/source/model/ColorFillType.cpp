@@ -20,13 +20,13 @@ namespace Aws
       namespace ColorFillTypeMapper
       {
 
-        static const int DISCRETE_HASH = HashingUtils::HashString("DISCRETE");
-        static const int GRADIENT_HASH = HashingUtils::HashString("GRADIENT");
+        static constexpr uint32_t DISCRETE_HASH = ConstExprHashingUtils::HashString("DISCRETE");
+        static constexpr uint32_t GRADIENT_HASH = ConstExprHashingUtils::HashString("GRADIENT");
 
 
         ColorFillType GetColorFillTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISCRETE_HASH)
           {
             return ColorFillType::DISCRETE;

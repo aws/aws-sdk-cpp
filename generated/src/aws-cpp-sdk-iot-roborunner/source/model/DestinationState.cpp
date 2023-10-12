@@ -20,14 +20,14 @@ namespace Aws
       namespace DestinationStateMapper
       {
 
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int DECOMMISSIONED_HASH = HashingUtils::HashString("DECOMMISSIONED");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t DECOMMISSIONED_HASH = ConstExprHashingUtils::HashString("DECOMMISSIONED");
 
 
         DestinationState GetDestinationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLED_HASH)
           {
             return DestinationState::ENABLED;

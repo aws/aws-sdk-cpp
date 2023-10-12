@@ -20,15 +20,15 @@ namespace Aws
       namespace ProtocolMapper
       {
 
-        static const int SFTP_HASH = HashingUtils::HashString("SFTP");
-        static const int FTP_HASH = HashingUtils::HashString("FTP");
-        static const int FTPS_HASH = HashingUtils::HashString("FTPS");
-        static const int AS2_HASH = HashingUtils::HashString("AS2");
+        static constexpr uint32_t SFTP_HASH = ConstExprHashingUtils::HashString("SFTP");
+        static constexpr uint32_t FTP_HASH = ConstExprHashingUtils::HashString("FTP");
+        static constexpr uint32_t FTPS_HASH = ConstExprHashingUtils::HashString("FTPS");
+        static constexpr uint32_t AS2_HASH = ConstExprHashingUtils::HashString("AS2");
 
 
         Protocol GetProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SFTP_HASH)
           {
             return Protocol::SFTP;

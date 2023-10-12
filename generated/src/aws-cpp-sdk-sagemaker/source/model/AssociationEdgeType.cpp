@@ -20,15 +20,15 @@ namespace Aws
       namespace AssociationEdgeTypeMapper
       {
 
-        static const int ContributedTo_HASH = HashingUtils::HashString("ContributedTo");
-        static const int AssociatedWith_HASH = HashingUtils::HashString("AssociatedWith");
-        static const int DerivedFrom_HASH = HashingUtils::HashString("DerivedFrom");
-        static const int Produced_HASH = HashingUtils::HashString("Produced");
+        static constexpr uint32_t ContributedTo_HASH = ConstExprHashingUtils::HashString("ContributedTo");
+        static constexpr uint32_t AssociatedWith_HASH = ConstExprHashingUtils::HashString("AssociatedWith");
+        static constexpr uint32_t DerivedFrom_HASH = ConstExprHashingUtils::HashString("DerivedFrom");
+        static constexpr uint32_t Produced_HASH = ConstExprHashingUtils::HashString("Produced");
 
 
         AssociationEdgeType GetAssociationEdgeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ContributedTo_HASH)
           {
             return AssociationEdgeType::ContributedTo;

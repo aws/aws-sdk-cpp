@@ -20,12 +20,12 @@ namespace Aws
       namespace TraversalTypeMapper
       {
 
-        static const int PATH_TO_ROOT_HASH = HashingUtils::HashString("PATH_TO_ROOT");
+        static constexpr uint32_t PATH_TO_ROOT_HASH = ConstExprHashingUtils::HashString("PATH_TO_ROOT");
 
 
         TraversalType GetTraversalTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PATH_TO_ROOT_HASH)
           {
             return TraversalType::PATH_TO_ROOT;

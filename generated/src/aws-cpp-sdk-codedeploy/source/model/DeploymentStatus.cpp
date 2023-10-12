@@ -20,19 +20,19 @@ namespace Aws
       namespace DeploymentStatusMapper
       {
 
-        static const int Created_HASH = HashingUtils::HashString("Created");
-        static const int Queued_HASH = HashingUtils::HashString("Queued");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Baking_HASH = HashingUtils::HashString("Baking");
-        static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
-        static const int Ready_HASH = HashingUtils::HashString("Ready");
+        static constexpr uint32_t Created_HASH = ConstExprHashingUtils::HashString("Created");
+        static constexpr uint32_t Queued_HASH = ConstExprHashingUtils::HashString("Queued");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Baking_HASH = ConstExprHashingUtils::HashString("Baking");
+        static constexpr uint32_t Succeeded_HASH = ConstExprHashingUtils::HashString("Succeeded");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Stopped_HASH = ConstExprHashingUtils::HashString("Stopped");
+        static constexpr uint32_t Ready_HASH = ConstExprHashingUtils::HashString("Ready");
 
 
         DeploymentStatus GetDeploymentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Created_HASH)
           {
             return DeploymentStatus::Created;

@@ -20,14 +20,14 @@ namespace Aws
       namespace AnomalyFeedbackTypeMapper
       {
 
-        static const int YES_HASH = HashingUtils::HashString("YES");
-        static const int NO_HASH = HashingUtils::HashString("NO");
-        static const int PLANNED_ACTIVITY_HASH = HashingUtils::HashString("PLANNED_ACTIVITY");
+        static constexpr uint32_t YES_HASH = ConstExprHashingUtils::HashString("YES");
+        static constexpr uint32_t NO_HASH = ConstExprHashingUtils::HashString("NO");
+        static constexpr uint32_t PLANNED_ACTIVITY_HASH = ConstExprHashingUtils::HashString("PLANNED_ACTIVITY");
 
 
         AnomalyFeedbackType GetAnomalyFeedbackTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == YES_HASH)
           {
             return AnomalyFeedbackType::YES;

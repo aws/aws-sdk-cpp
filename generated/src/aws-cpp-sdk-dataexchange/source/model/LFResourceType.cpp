@@ -20,13 +20,13 @@ namespace Aws
       namespace LFResourceTypeMapper
       {
 
-        static const int TABLE_HASH = HashingUtils::HashString("TABLE");
-        static const int DATABASE_HASH = HashingUtils::HashString("DATABASE");
+        static constexpr uint32_t TABLE_HASH = ConstExprHashingUtils::HashString("TABLE");
+        static constexpr uint32_t DATABASE_HASH = ConstExprHashingUtils::HashString("DATABASE");
 
 
         LFResourceType GetLFResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TABLE_HASH)
           {
             return LFResourceType::TABLE;

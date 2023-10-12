@@ -192,11 +192,11 @@ namespace Model
 
 namespace StartMedicalStreamTranscriptionEventMapper
 {
-    static const int TRANSCRIPTEVENT_HASH = Aws::Utils::HashingUtils::HashString("TranscriptEvent");
+    static constexpr uint32_t TRANSCRIPTEVENT_HASH = Aws::Utils::ConstExprHashingUtils::HashString("TranscriptEvent");
 
     StartMedicalStreamTranscriptionEventType GetStartMedicalStreamTranscriptionEventTypeForName(const Aws::String& name)
     {
-        int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
+        uint32_t hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
         if (hashCode == TRANSCRIPTEVENT_HASH)
         {
             return StartMedicalStreamTranscriptionEventType::TRANSCRIPTEVENT;

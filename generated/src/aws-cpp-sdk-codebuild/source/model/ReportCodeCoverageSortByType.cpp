@@ -20,13 +20,13 @@ namespace Aws
       namespace ReportCodeCoverageSortByTypeMapper
       {
 
-        static const int LINE_COVERAGE_PERCENTAGE_HASH = HashingUtils::HashString("LINE_COVERAGE_PERCENTAGE");
-        static const int FILE_PATH_HASH = HashingUtils::HashString("FILE_PATH");
+        static constexpr uint32_t LINE_COVERAGE_PERCENTAGE_HASH = ConstExprHashingUtils::HashString("LINE_COVERAGE_PERCENTAGE");
+        static constexpr uint32_t FILE_PATH_HASH = ConstExprHashingUtils::HashString("FILE_PATH");
 
 
         ReportCodeCoverageSortByType GetReportCodeCoverageSortByTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LINE_COVERAGE_PERCENTAGE_HASH)
           {
             return ReportCodeCoverageSortByType::LINE_COVERAGE_PERCENTAGE;

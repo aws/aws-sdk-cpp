@@ -33,17 +33,17 @@ template<> AWS_QLDBSESSION_API BadRequestException QLDBSessionError::GetModeledE
 namespace QLDBSessionErrorMapper
 {
 
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INVALID_SESSION_HASH = HashingUtils::HashString("InvalidSessionException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
-static const int CAPACITY_EXCEEDED_HASH = HashingUtils::HashString("CapacityExceededException");
-static const int OCC_CONFLICT_HASH = HashingUtils::HashString("OccConflictException");
-static const int RATE_EXCEEDED_HASH = HashingUtils::HashString("RateExceededException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t INVALID_SESSION_HASH = ConstExprHashingUtils::HashString("InvalidSessionException");
+static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BadRequestException");
+static constexpr uint32_t CAPACITY_EXCEEDED_HASH = ConstExprHashingUtils::HashString("CapacityExceededException");
+static constexpr uint32_t OCC_CONFLICT_HASH = ConstExprHashingUtils::HashString("OccConflictException");
+static constexpr uint32_t RATE_EXCEEDED_HASH = ConstExprHashingUtils::HashString("RateExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == LIMIT_EXCEEDED_HASH)
   {

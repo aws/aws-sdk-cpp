@@ -20,19 +20,19 @@ namespace Aws
       namespace FeatureMapper
       {
 
-        static const int BLUETOOTH_HASH = HashingUtils::HashString("BLUETOOTH");
-        static const int VOLUME_HASH = HashingUtils::HashString("VOLUME");
-        static const int NOTIFICATIONS_HASH = HashingUtils::HashString("NOTIFICATIONS");
-        static const int LISTS_HASH = HashingUtils::HashString("LISTS");
-        static const int SKILLS_HASH = HashingUtils::HashString("SKILLS");
-        static const int NETWORK_PROFILE_HASH = HashingUtils::HashString("NETWORK_PROFILE");
-        static const int SETTINGS_HASH = HashingUtils::HashString("SETTINGS");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t BLUETOOTH_HASH = ConstExprHashingUtils::HashString("BLUETOOTH");
+        static constexpr uint32_t VOLUME_HASH = ConstExprHashingUtils::HashString("VOLUME");
+        static constexpr uint32_t NOTIFICATIONS_HASH = ConstExprHashingUtils::HashString("NOTIFICATIONS");
+        static constexpr uint32_t LISTS_HASH = ConstExprHashingUtils::HashString("LISTS");
+        static constexpr uint32_t SKILLS_HASH = ConstExprHashingUtils::HashString("SKILLS");
+        static constexpr uint32_t NETWORK_PROFILE_HASH = ConstExprHashingUtils::HashString("NETWORK_PROFILE");
+        static constexpr uint32_t SETTINGS_HASH = ConstExprHashingUtils::HashString("SETTINGS");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         Feature GetFeatureForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BLUETOOTH_HASH)
           {
             return Feature::BLUETOOTH;

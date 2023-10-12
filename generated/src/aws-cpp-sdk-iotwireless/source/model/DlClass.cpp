@@ -20,13 +20,13 @@ namespace Aws
       namespace DlClassMapper
       {
 
-        static const int ClassB_HASH = HashingUtils::HashString("ClassB");
-        static const int ClassC_HASH = HashingUtils::HashString("ClassC");
+        static constexpr uint32_t ClassB_HASH = ConstExprHashingUtils::HashString("ClassB");
+        static constexpr uint32_t ClassC_HASH = ConstExprHashingUtils::HashString("ClassC");
 
 
         DlClass GetDlClassForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ClassB_HASH)
           {
             return DlClass::ClassB;

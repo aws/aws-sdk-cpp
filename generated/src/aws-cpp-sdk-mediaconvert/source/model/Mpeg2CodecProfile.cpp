@@ -20,13 +20,13 @@ namespace Aws
       namespace Mpeg2CodecProfileMapper
       {
 
-        static const int MAIN_HASH = HashingUtils::HashString("MAIN");
-        static const int PROFILE_422_HASH = HashingUtils::HashString("PROFILE_422");
+        static constexpr uint32_t MAIN_HASH = ConstExprHashingUtils::HashString("MAIN");
+        static constexpr uint32_t PROFILE_422_HASH = ConstExprHashingUtils::HashString("PROFILE_422");
 
 
         Mpeg2CodecProfile GetMpeg2CodecProfileForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MAIN_HASH)
           {
             return Mpeg2CodecProfile::MAIN;

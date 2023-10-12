@@ -20,13 +20,13 @@ namespace Aws
       namespace CommitmentDurationMapper
       {
 
-        static const int OneMonth_HASH = HashingUtils::HashString("OneMonth");
-        static const int SixMonths_HASH = HashingUtils::HashString("SixMonths");
+        static constexpr uint32_t OneMonth_HASH = ConstExprHashingUtils::HashString("OneMonth");
+        static constexpr uint32_t SixMonths_HASH = ConstExprHashingUtils::HashString("SixMonths");
 
 
         CommitmentDuration GetCommitmentDurationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OneMonth_HASH)
           {
             return CommitmentDuration::OneMonth;

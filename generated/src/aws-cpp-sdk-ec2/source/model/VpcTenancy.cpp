@@ -20,12 +20,12 @@ namespace Aws
       namespace VpcTenancyMapper
       {
 
-        static const int default__HASH = HashingUtils::HashString("default");
+        static constexpr uint32_t default__HASH = ConstExprHashingUtils::HashString("default");
 
 
         VpcTenancy GetVpcTenancyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == default__HASH)
           {
             return VpcTenancy::default_;

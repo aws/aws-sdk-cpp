@@ -20,18 +20,18 @@ namespace Aws
       namespace ObjectACLMapper
       {
 
-        static const int private__HASH = HashingUtils::HashString("private");
-        static const int public_read_HASH = HashingUtils::HashString("public-read");
-        static const int public_read_write_HASH = HashingUtils::HashString("public-read-write");
-        static const int authenticated_read_HASH = HashingUtils::HashString("authenticated-read");
-        static const int bucket_owner_read_HASH = HashingUtils::HashString("bucket-owner-read");
-        static const int bucket_owner_full_control_HASH = HashingUtils::HashString("bucket-owner-full-control");
-        static const int aws_exec_read_HASH = HashingUtils::HashString("aws-exec-read");
+        static constexpr uint32_t private__HASH = ConstExprHashingUtils::HashString("private");
+        static constexpr uint32_t public_read_HASH = ConstExprHashingUtils::HashString("public-read");
+        static constexpr uint32_t public_read_write_HASH = ConstExprHashingUtils::HashString("public-read-write");
+        static constexpr uint32_t authenticated_read_HASH = ConstExprHashingUtils::HashString("authenticated-read");
+        static constexpr uint32_t bucket_owner_read_HASH = ConstExprHashingUtils::HashString("bucket-owner-read");
+        static constexpr uint32_t bucket_owner_full_control_HASH = ConstExprHashingUtils::HashString("bucket-owner-full-control");
+        static constexpr uint32_t aws_exec_read_HASH = ConstExprHashingUtils::HashString("aws-exec-read");
 
 
         ObjectACL GetObjectACLForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == private__HASH)
           {
             return ObjectACL::private_;

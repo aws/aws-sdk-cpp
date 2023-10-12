@@ -20,15 +20,15 @@ namespace Aws
       namespace WirelessDeviceIdTypeMapper
       {
 
-        static const int WirelessDeviceId_HASH = HashingUtils::HashString("WirelessDeviceId");
-        static const int DevEui_HASH = HashingUtils::HashString("DevEui");
-        static const int ThingName_HASH = HashingUtils::HashString("ThingName");
-        static const int SidewalkManufacturingSn_HASH = HashingUtils::HashString("SidewalkManufacturingSn");
+        static constexpr uint32_t WirelessDeviceId_HASH = ConstExprHashingUtils::HashString("WirelessDeviceId");
+        static constexpr uint32_t DevEui_HASH = ConstExprHashingUtils::HashString("DevEui");
+        static constexpr uint32_t ThingName_HASH = ConstExprHashingUtils::HashString("ThingName");
+        static constexpr uint32_t SidewalkManufacturingSn_HASH = ConstExprHashingUtils::HashString("SidewalkManufacturingSn");
 
 
         WirelessDeviceIdType GetWirelessDeviceIdTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WirelessDeviceId_HASH)
           {
             return WirelessDeviceIdType::WirelessDeviceId;

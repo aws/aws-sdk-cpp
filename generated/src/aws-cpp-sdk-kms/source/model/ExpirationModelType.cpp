@@ -20,13 +20,13 @@ namespace Aws
       namespace ExpirationModelTypeMapper
       {
 
-        static const int KEY_MATERIAL_EXPIRES_HASH = HashingUtils::HashString("KEY_MATERIAL_EXPIRES");
-        static const int KEY_MATERIAL_DOES_NOT_EXPIRE_HASH = HashingUtils::HashString("KEY_MATERIAL_DOES_NOT_EXPIRE");
+        static constexpr uint32_t KEY_MATERIAL_EXPIRES_HASH = ConstExprHashingUtils::HashString("KEY_MATERIAL_EXPIRES");
+        static constexpr uint32_t KEY_MATERIAL_DOES_NOT_EXPIRE_HASH = ConstExprHashingUtils::HashString("KEY_MATERIAL_DOES_NOT_EXPIRE");
 
 
         ExpirationModelType GetExpirationModelTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KEY_MATERIAL_EXPIRES_HASH)
           {
             return ExpirationModelType::KEY_MATERIAL_EXPIRES;

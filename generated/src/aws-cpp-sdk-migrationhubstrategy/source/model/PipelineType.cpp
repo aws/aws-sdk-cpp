@@ -20,12 +20,12 @@ namespace Aws
       namespace PipelineTypeMapper
       {
 
-        static const int AZURE_DEVOPS_HASH = HashingUtils::HashString("AZURE_DEVOPS");
+        static constexpr uint32_t AZURE_DEVOPS_HASH = ConstExprHashingUtils::HashString("AZURE_DEVOPS");
 
 
         PipelineType GetPipelineTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AZURE_DEVOPS_HASH)
           {
             return PipelineType::AZURE_DEVOPS;

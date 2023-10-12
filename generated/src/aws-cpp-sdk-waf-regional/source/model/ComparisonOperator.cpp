@@ -20,17 +20,17 @@ namespace Aws
       namespace ComparisonOperatorMapper
       {
 
-        static const int EQ_HASH = HashingUtils::HashString("EQ");
-        static const int NE_HASH = HashingUtils::HashString("NE");
-        static const int LE_HASH = HashingUtils::HashString("LE");
-        static const int LT_HASH = HashingUtils::HashString("LT");
-        static const int GE_HASH = HashingUtils::HashString("GE");
-        static const int GT_HASH = HashingUtils::HashString("GT");
+        static constexpr uint32_t EQ_HASH = ConstExprHashingUtils::HashString("EQ");
+        static constexpr uint32_t NE_HASH = ConstExprHashingUtils::HashString("NE");
+        static constexpr uint32_t LE_HASH = ConstExprHashingUtils::HashString("LE");
+        static constexpr uint32_t LT_HASH = ConstExprHashingUtils::HashString("LT");
+        static constexpr uint32_t GE_HASH = ConstExprHashingUtils::HashString("GE");
+        static constexpr uint32_t GT_HASH = ConstExprHashingUtils::HashString("GT");
 
 
         ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EQ_HASH)
           {
             return ComparisonOperator::EQ;

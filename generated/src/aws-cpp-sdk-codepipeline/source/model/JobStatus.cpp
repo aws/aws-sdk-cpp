@@ -20,18 +20,18 @@ namespace Aws
       namespace JobStatusMapper
       {
 
-        static const int Created_HASH = HashingUtils::HashString("Created");
-        static const int Queued_HASH = HashingUtils::HashString("Queued");
-        static const int Dispatched_HASH = HashingUtils::HashString("Dispatched");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int TimedOut_HASH = HashingUtils::HashString("TimedOut");
-        static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t Created_HASH = ConstExprHashingUtils::HashString("Created");
+        static constexpr uint32_t Queued_HASH = ConstExprHashingUtils::HashString("Queued");
+        static constexpr uint32_t Dispatched_HASH = ConstExprHashingUtils::HashString("Dispatched");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t TimedOut_HASH = ConstExprHashingUtils::HashString("TimedOut");
+        static constexpr uint32_t Succeeded_HASH = ConstExprHashingUtils::HashString("Succeeded");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         JobStatus GetJobStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Created_HASH)
           {
             return JobStatus::Created;

@@ -20,13 +20,13 @@ namespace Aws
       namespace BatchStrategyMapper
       {
 
-        static const int MultiRecord_HASH = HashingUtils::HashString("MultiRecord");
-        static const int SingleRecord_HASH = HashingUtils::HashString("SingleRecord");
+        static constexpr uint32_t MultiRecord_HASH = ConstExprHashingUtils::HashString("MultiRecord");
+        static constexpr uint32_t SingleRecord_HASH = ConstExprHashingUtils::HashString("SingleRecord");
 
 
         BatchStrategy GetBatchStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MultiRecord_HASH)
           {
             return BatchStrategy::MultiRecord;

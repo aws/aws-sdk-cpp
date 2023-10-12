@@ -20,13 +20,13 @@ namespace Aws
       namespace ExceptionCauseMapper
       {
 
-        static const int InsufficientS3BucketPolicy_HASH = HashingUtils::HashString("InsufficientS3BucketPolicy");
-        static const int S3AccessDenied_HASH = HashingUtils::HashString("S3AccessDenied");
+        static constexpr uint32_t InsufficientS3BucketPolicy_HASH = ConstExprHashingUtils::HashString("InsufficientS3BucketPolicy");
+        static constexpr uint32_t S3AccessDenied_HASH = ConstExprHashingUtils::HashString("S3AccessDenied");
 
 
         ExceptionCause GetExceptionCauseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InsufficientS3BucketPolicy_HASH)
           {
             return ExceptionCause::InsufficientS3BucketPolicy;

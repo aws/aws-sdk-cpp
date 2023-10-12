@@ -20,15 +20,15 @@ namespace Aws
       namespace AuthenticationTypeMapper
       {
 
-        static const int OAUTH2_HASH = HashingUtils::HashString("OAUTH2");
-        static const int APIKEY_HASH = HashingUtils::HashString("APIKEY");
-        static const int BASIC_HASH = HashingUtils::HashString("BASIC");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t OAUTH2_HASH = ConstExprHashingUtils::HashString("OAUTH2");
+        static constexpr uint32_t APIKEY_HASH = ConstExprHashingUtils::HashString("APIKEY");
+        static constexpr uint32_t BASIC_HASH = ConstExprHashingUtils::HashString("BASIC");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
 
 
         AuthenticationType GetAuthenticationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OAUTH2_HASH)
           {
             return AuthenticationType::OAUTH2;

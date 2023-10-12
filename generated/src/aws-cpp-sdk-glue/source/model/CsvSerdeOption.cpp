@@ -20,14 +20,14 @@ namespace Aws
       namespace CsvSerdeOptionMapper
       {
 
-        static const int OpenCSVSerDe_HASH = HashingUtils::HashString("OpenCSVSerDe");
-        static const int LazySimpleSerDe_HASH = HashingUtils::HashString("LazySimpleSerDe");
-        static const int None_HASH = HashingUtils::HashString("None");
+        static constexpr uint32_t OpenCSVSerDe_HASH = ConstExprHashingUtils::HashString("OpenCSVSerDe");
+        static constexpr uint32_t LazySimpleSerDe_HASH = ConstExprHashingUtils::HashString("LazySimpleSerDe");
+        static constexpr uint32_t None_HASH = ConstExprHashingUtils::HashString("None");
 
 
         CsvSerdeOption GetCsvSerdeOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OpenCSVSerDe_HASH)
           {
             return CsvSerdeOption::OpenCSVSerDe;

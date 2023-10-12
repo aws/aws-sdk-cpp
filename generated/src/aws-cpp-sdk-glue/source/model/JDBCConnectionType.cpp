@@ -20,16 +20,16 @@ namespace Aws
       namespace JDBCConnectionTypeMapper
       {
 
-        static const int sqlserver_HASH = HashingUtils::HashString("sqlserver");
-        static const int mysql_HASH = HashingUtils::HashString("mysql");
-        static const int oracle_HASH = HashingUtils::HashString("oracle");
-        static const int postgresql_HASH = HashingUtils::HashString("postgresql");
-        static const int redshift_HASH = HashingUtils::HashString("redshift");
+        static constexpr uint32_t sqlserver_HASH = ConstExprHashingUtils::HashString("sqlserver");
+        static constexpr uint32_t mysql_HASH = ConstExprHashingUtils::HashString("mysql");
+        static constexpr uint32_t oracle_HASH = ConstExprHashingUtils::HashString("oracle");
+        static constexpr uint32_t postgresql_HASH = ConstExprHashingUtils::HashString("postgresql");
+        static constexpr uint32_t redshift_HASH = ConstExprHashingUtils::HashString("redshift");
 
 
         JDBCConnectionType GetJDBCConnectionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == sqlserver_HASH)
           {
             return JDBCConnectionType::sqlserver;

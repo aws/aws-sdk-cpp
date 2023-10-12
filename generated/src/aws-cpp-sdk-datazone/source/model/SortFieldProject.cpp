@@ -20,12 +20,12 @@ namespace Aws
       namespace SortFieldProjectMapper
       {
 
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
 
 
         SortFieldProject GetSortFieldProjectForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NAME_HASH)
           {
             return SortFieldProject::NAME;

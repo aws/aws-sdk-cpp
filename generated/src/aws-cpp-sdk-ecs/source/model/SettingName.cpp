@@ -20,19 +20,19 @@ namespace Aws
       namespace SettingNameMapper
       {
 
-        static const int serviceLongArnFormat_HASH = HashingUtils::HashString("serviceLongArnFormat");
-        static const int taskLongArnFormat_HASH = HashingUtils::HashString("taskLongArnFormat");
-        static const int containerInstanceLongArnFormat_HASH = HashingUtils::HashString("containerInstanceLongArnFormat");
-        static const int awsvpcTrunking_HASH = HashingUtils::HashString("awsvpcTrunking");
-        static const int containerInsights_HASH = HashingUtils::HashString("containerInsights");
-        static const int fargateFIPSMode_HASH = HashingUtils::HashString("fargateFIPSMode");
-        static const int tagResourceAuthorization_HASH = HashingUtils::HashString("tagResourceAuthorization");
-        static const int fargateTaskRetirementWaitPeriod_HASH = HashingUtils::HashString("fargateTaskRetirementWaitPeriod");
+        static constexpr uint32_t serviceLongArnFormat_HASH = ConstExprHashingUtils::HashString("serviceLongArnFormat");
+        static constexpr uint32_t taskLongArnFormat_HASH = ConstExprHashingUtils::HashString("taskLongArnFormat");
+        static constexpr uint32_t containerInstanceLongArnFormat_HASH = ConstExprHashingUtils::HashString("containerInstanceLongArnFormat");
+        static constexpr uint32_t awsvpcTrunking_HASH = ConstExprHashingUtils::HashString("awsvpcTrunking");
+        static constexpr uint32_t containerInsights_HASH = ConstExprHashingUtils::HashString("containerInsights");
+        static constexpr uint32_t fargateFIPSMode_HASH = ConstExprHashingUtils::HashString("fargateFIPSMode");
+        static constexpr uint32_t tagResourceAuthorization_HASH = ConstExprHashingUtils::HashString("tagResourceAuthorization");
+        static constexpr uint32_t fargateTaskRetirementWaitPeriod_HASH = ConstExprHashingUtils::HashString("fargateTaskRetirementWaitPeriod");
 
 
         SettingName GetSettingNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == serviceLongArnFormat_HASH)
           {
             return SettingName::serviceLongArnFormat;

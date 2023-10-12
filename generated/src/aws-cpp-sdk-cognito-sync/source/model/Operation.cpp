@@ -20,13 +20,13 @@ namespace Aws
       namespace OperationMapper
       {
 
-        static const int replace_HASH = HashingUtils::HashString("replace");
-        static const int remove_HASH = HashingUtils::HashString("remove");
+        static constexpr uint32_t replace_HASH = ConstExprHashingUtils::HashString("replace");
+        static constexpr uint32_t remove_HASH = ConstExprHashingUtils::HashString("remove");
 
 
         Operation GetOperationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == replace_HASH)
           {
             return Operation::replace;

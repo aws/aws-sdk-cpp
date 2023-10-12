@@ -20,12 +20,12 @@ namespace Aws
       namespace ConnectorProvisioningTypeMapper
       {
 
-        static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
+        static constexpr uint32_t LAMBDA_HASH = ConstExprHashingUtils::HashString("LAMBDA");
 
 
         ConnectorProvisioningType GetConnectorProvisioningTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LAMBDA_HASH)
           {
             return ConnectorProvisioningType::LAMBDA;

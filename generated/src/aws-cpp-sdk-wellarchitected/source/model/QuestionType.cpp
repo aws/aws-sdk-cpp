@@ -20,13 +20,13 @@ namespace Aws
       namespace QuestionTypeMapper
       {
 
-        static const int PRIORITIZED_HASH = HashingUtils::HashString("PRIORITIZED");
-        static const int NON_PRIORITIZED_HASH = HashingUtils::HashString("NON_PRIORITIZED");
+        static constexpr uint32_t PRIORITIZED_HASH = ConstExprHashingUtils::HashString("PRIORITIZED");
+        static constexpr uint32_t NON_PRIORITIZED_HASH = ConstExprHashingUtils::HashString("NON_PRIORITIZED");
 
 
         QuestionType GetQuestionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRIORITIZED_HASH)
           {
             return QuestionType::PRIORITIZED;

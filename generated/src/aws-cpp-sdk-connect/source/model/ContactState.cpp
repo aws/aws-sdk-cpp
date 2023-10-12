@@ -20,20 +20,20 @@ namespace Aws
       namespace ContactStateMapper
       {
 
-        static const int INCOMING_HASH = HashingUtils::HashString("INCOMING");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int CONNECTING_HASH = HashingUtils::HashString("CONNECTING");
-        static const int CONNECTED_HASH = HashingUtils::HashString("CONNECTED");
-        static const int CONNECTED_ONHOLD_HASH = HashingUtils::HashString("CONNECTED_ONHOLD");
-        static const int MISSED_HASH = HashingUtils::HashString("MISSED");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int ENDED_HASH = HashingUtils::HashString("ENDED");
-        static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
+        static constexpr uint32_t INCOMING_HASH = ConstExprHashingUtils::HashString("INCOMING");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t CONNECTING_HASH = ConstExprHashingUtils::HashString("CONNECTING");
+        static constexpr uint32_t CONNECTED_HASH = ConstExprHashingUtils::HashString("CONNECTED");
+        static constexpr uint32_t CONNECTED_ONHOLD_HASH = ConstExprHashingUtils::HashString("CONNECTED_ONHOLD");
+        static constexpr uint32_t MISSED_HASH = ConstExprHashingUtils::HashString("MISSED");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t ENDED_HASH = ConstExprHashingUtils::HashString("ENDED");
+        static constexpr uint32_t REJECTED_HASH = ConstExprHashingUtils::HashString("REJECTED");
 
 
         ContactState GetContactStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INCOMING_HASH)
           {
             return ContactState::INCOMING;

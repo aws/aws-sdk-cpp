@@ -20,18 +20,18 @@ namespace Aws
       namespace TargetStatusMapper
       {
 
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Skipped_HASH = HashingUtils::HashString("Skipped");
-        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
-        static const int Ready_HASH = HashingUtils::HashString("Ready");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Succeeded_HASH = ConstExprHashingUtils::HashString("Succeeded");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Skipped_HASH = ConstExprHashingUtils::HashString("Skipped");
+        static constexpr uint32_t Unknown_HASH = ConstExprHashingUtils::HashString("Unknown");
+        static constexpr uint32_t Ready_HASH = ConstExprHashingUtils::HashString("Ready");
 
 
         TargetStatus GetTargetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pending_HASH)
           {
             return TargetStatus::Pending;

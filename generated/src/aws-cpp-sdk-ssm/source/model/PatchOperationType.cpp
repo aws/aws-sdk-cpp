@@ -20,13 +20,13 @@ namespace Aws
       namespace PatchOperationTypeMapper
       {
 
-        static const int Scan_HASH = HashingUtils::HashString("Scan");
-        static const int Install_HASH = HashingUtils::HashString("Install");
+        static constexpr uint32_t Scan_HASH = ConstExprHashingUtils::HashString("Scan");
+        static constexpr uint32_t Install_HASH = ConstExprHashingUtils::HashString("Install");
 
 
         PatchOperationType GetPatchOperationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Scan_HASH)
           {
             return PatchOperationType::Scan;

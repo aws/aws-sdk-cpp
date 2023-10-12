@@ -20,14 +20,14 @@ namespace Aws
       namespace CertificateStatusTypeMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int PENDING_ROTATION_HASH = HashingUtils::HashString("PENDING_ROTATION");
-        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t PENDING_ROTATION_HASH = ConstExprHashingUtils::HashString("PENDING_ROTATION");
+        static constexpr uint32_t INACTIVE_HASH = ConstExprHashingUtils::HashString("INACTIVE");
 
 
         CertificateStatusType GetCertificateStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return CertificateStatusType::ACTIVE;

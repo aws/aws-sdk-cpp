@@ -20,20 +20,20 @@ namespace Aws
       namespace EntityTypeMapper
       {
 
-        static const int PERSON_HASH = HashingUtils::HashString("PERSON");
-        static const int LOCATION_HASH = HashingUtils::HashString("LOCATION");
-        static const int ORGANIZATION_HASH = HashingUtils::HashString("ORGANIZATION");
-        static const int COMMERCIAL_ITEM_HASH = HashingUtils::HashString("COMMERCIAL_ITEM");
-        static const int EVENT_HASH = HashingUtils::HashString("EVENT");
-        static const int DATE_HASH = HashingUtils::HashString("DATE");
-        static const int QUANTITY_HASH = HashingUtils::HashString("QUANTITY");
-        static const int TITLE_HASH = HashingUtils::HashString("TITLE");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
+        static constexpr uint32_t PERSON_HASH = ConstExprHashingUtils::HashString("PERSON");
+        static constexpr uint32_t LOCATION_HASH = ConstExprHashingUtils::HashString("LOCATION");
+        static constexpr uint32_t ORGANIZATION_HASH = ConstExprHashingUtils::HashString("ORGANIZATION");
+        static constexpr uint32_t COMMERCIAL_ITEM_HASH = ConstExprHashingUtils::HashString("COMMERCIAL_ITEM");
+        static constexpr uint32_t EVENT_HASH = ConstExprHashingUtils::HashString("EVENT");
+        static constexpr uint32_t DATE_HASH = ConstExprHashingUtils::HashString("DATE");
+        static constexpr uint32_t QUANTITY_HASH = ConstExprHashingUtils::HashString("QUANTITY");
+        static constexpr uint32_t TITLE_HASH = ConstExprHashingUtils::HashString("TITLE");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
 
 
         EntityType GetEntityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PERSON_HASH)
           {
             return EntityType::PERSON;

@@ -20,16 +20,16 @@ namespace Aws
       namespace EndpointStatusMapper
       {
 
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int Available_HASH = HashingUtils::HashString("Available");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
-        static const int Create_Failed_HASH = HashingUtils::HashString("Create_Failed");
-        static const int Delete_Failed_HASH = HashingUtils::HashString("Delete_Failed");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t Available_HASH = ConstExprHashingUtils::HashString("Available");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
+        static constexpr uint32_t Create_Failed_HASH = ConstExprHashingUtils::HashString("Create_Failed");
+        static constexpr uint32_t Delete_Failed_HASH = ConstExprHashingUtils::HashString("Delete_Failed");
 
 
         EndpointStatus GetEndpointStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pending_HASH)
           {
             return EndpointStatus::Pending;

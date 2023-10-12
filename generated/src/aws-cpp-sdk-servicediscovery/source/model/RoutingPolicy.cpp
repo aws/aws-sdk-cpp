@@ -20,13 +20,13 @@ namespace Aws
       namespace RoutingPolicyMapper
       {
 
-        static const int MULTIVALUE_HASH = HashingUtils::HashString("MULTIVALUE");
-        static const int WEIGHTED_HASH = HashingUtils::HashString("WEIGHTED");
+        static constexpr uint32_t MULTIVALUE_HASH = ConstExprHashingUtils::HashString("MULTIVALUE");
+        static constexpr uint32_t WEIGHTED_HASH = ConstExprHashingUtils::HashString("WEIGHTED");
 
 
         RoutingPolicy GetRoutingPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MULTIVALUE_HASH)
           {
             return RoutingPolicy::MULTIVALUE;

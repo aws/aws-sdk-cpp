@@ -20,16 +20,16 @@ namespace Aws
       namespace FolderNameMapper
       {
 
-        static const int INBOX_HASH = HashingUtils::HashString("INBOX");
-        static const int DELETED_ITEMS_HASH = HashingUtils::HashString("DELETED_ITEMS");
-        static const int SENT_ITEMS_HASH = HashingUtils::HashString("SENT_ITEMS");
-        static const int DRAFTS_HASH = HashingUtils::HashString("DRAFTS");
-        static const int JUNK_EMAIL_HASH = HashingUtils::HashString("JUNK_EMAIL");
+        static constexpr uint32_t INBOX_HASH = ConstExprHashingUtils::HashString("INBOX");
+        static constexpr uint32_t DELETED_ITEMS_HASH = ConstExprHashingUtils::HashString("DELETED_ITEMS");
+        static constexpr uint32_t SENT_ITEMS_HASH = ConstExprHashingUtils::HashString("SENT_ITEMS");
+        static constexpr uint32_t DRAFTS_HASH = ConstExprHashingUtils::HashString("DRAFTS");
+        static constexpr uint32_t JUNK_EMAIL_HASH = ConstExprHashingUtils::HashString("JUNK_EMAIL");
 
 
         FolderName GetFolderNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INBOX_HASH)
           {
             return FolderName::INBOX;

@@ -20,20 +20,20 @@ namespace Aws
       namespace ContainerServiceStateDetailCodeMapper
       {
 
-        static const int CREATING_SYSTEM_RESOURCES_HASH = HashingUtils::HashString("CREATING_SYSTEM_RESOURCES");
-        static const int CREATING_NETWORK_INFRASTRUCTURE_HASH = HashingUtils::HashString("CREATING_NETWORK_INFRASTRUCTURE");
-        static const int PROVISIONING_CERTIFICATE_HASH = HashingUtils::HashString("PROVISIONING_CERTIFICATE");
-        static const int PROVISIONING_SERVICE_HASH = HashingUtils::HashString("PROVISIONING_SERVICE");
-        static const int CREATING_DEPLOYMENT_HASH = HashingUtils::HashString("CREATING_DEPLOYMENT");
-        static const int EVALUATING_HEALTH_CHECK_HASH = HashingUtils::HashString("EVALUATING_HEALTH_CHECK");
-        static const int ACTIVATING_DEPLOYMENT_HASH = HashingUtils::HashString("ACTIVATING_DEPLOYMENT");
-        static const int CERTIFICATE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CERTIFICATE_LIMIT_EXCEEDED");
-        static const int UNKNOWN_ERROR_HASH = HashingUtils::HashString("UNKNOWN_ERROR");
+        static constexpr uint32_t CREATING_SYSTEM_RESOURCES_HASH = ConstExprHashingUtils::HashString("CREATING_SYSTEM_RESOURCES");
+        static constexpr uint32_t CREATING_NETWORK_INFRASTRUCTURE_HASH = ConstExprHashingUtils::HashString("CREATING_NETWORK_INFRASTRUCTURE");
+        static constexpr uint32_t PROVISIONING_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("PROVISIONING_CERTIFICATE");
+        static constexpr uint32_t PROVISIONING_SERVICE_HASH = ConstExprHashingUtils::HashString("PROVISIONING_SERVICE");
+        static constexpr uint32_t CREATING_DEPLOYMENT_HASH = ConstExprHashingUtils::HashString("CREATING_DEPLOYMENT");
+        static constexpr uint32_t EVALUATING_HEALTH_CHECK_HASH = ConstExprHashingUtils::HashString("EVALUATING_HEALTH_CHECK");
+        static constexpr uint32_t ACTIVATING_DEPLOYMENT_HASH = ConstExprHashingUtils::HashString("ACTIVATING_DEPLOYMENT");
+        static constexpr uint32_t CERTIFICATE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("CERTIFICATE_LIMIT_EXCEEDED");
+        static constexpr uint32_t UNKNOWN_ERROR_HASH = ConstExprHashingUtils::HashString("UNKNOWN_ERROR");
 
 
         ContainerServiceStateDetailCode GetContainerServiceStateDetailCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_SYSTEM_RESOURCES_HASH)
           {
             return ContainerServiceStateDetailCode::CREATING_SYSTEM_RESOURCES;

@@ -20,12 +20,12 @@ namespace Aws
       namespace AnalysisMethodMapper
       {
 
-        static const int DIRECT_QUERY_HASH = HashingUtils::HashString("DIRECT_QUERY");
+        static constexpr uint32_t DIRECT_QUERY_HASH = ConstExprHashingUtils::HashString("DIRECT_QUERY");
 
 
         AnalysisMethod GetAnalysisMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DIRECT_QUERY_HASH)
           {
             return AnalysisMethod::DIRECT_QUERY;

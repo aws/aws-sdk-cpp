@@ -20,13 +20,13 @@ namespace Aws
       namespace ValidationModeMapper
       {
 
-        static const int OFF_HASH = HashingUtils::HashString("OFF");
-        static const int STRICT_HASH = HashingUtils::HashString("STRICT");
+        static constexpr uint32_t OFF_HASH = ConstExprHashingUtils::HashString("OFF");
+        static constexpr uint32_t STRICT_HASH = ConstExprHashingUtils::HashString("STRICT");
 
 
         ValidationMode GetValidationModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OFF_HASH)
           {
             return ValidationMode::OFF;

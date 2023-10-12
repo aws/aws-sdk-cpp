@@ -20,14 +20,14 @@ namespace Aws
       namespace ScanTypeMapper
       {
 
-        static const int NETWORK_HASH = HashingUtils::HashString("NETWORK");
-        static const int PACKAGE_HASH = HashingUtils::HashString("PACKAGE");
-        static const int CODE_HASH = HashingUtils::HashString("CODE");
+        static constexpr uint32_t NETWORK_HASH = ConstExprHashingUtils::HashString("NETWORK");
+        static constexpr uint32_t PACKAGE_HASH = ConstExprHashingUtils::HashString("PACKAGE");
+        static constexpr uint32_t CODE_HASH = ConstExprHashingUtils::HashString("CODE");
 
 
         ScanType GetScanTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NETWORK_HASH)
           {
             return ScanType::NETWORK;

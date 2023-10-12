@@ -20,13 +20,13 @@ namespace Aws
       namespace InferenceExperimentStopDesiredStateMapper
       {
 
-        static const int Completed_HASH = HashingUtils::HashString("Completed");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
+        static constexpr uint32_t Completed_HASH = ConstExprHashingUtils::HashString("Completed");
+        static constexpr uint32_t Cancelled_HASH = ConstExprHashingUtils::HashString("Cancelled");
 
 
         InferenceExperimentStopDesiredState GetInferenceExperimentStopDesiredStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Completed_HASH)
           {
             return InferenceExperimentStopDesiredState::Completed;

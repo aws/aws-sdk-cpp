@@ -20,16 +20,16 @@ namespace Aws
       namespace TestSetStatusMapper
       {
 
-        static const int Importing_HASH = HashingUtils::HashString("Importing");
-        static const int PendingAnnotation_HASH = HashingUtils::HashString("PendingAnnotation");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
-        static const int ValidationError_HASH = HashingUtils::HashString("ValidationError");
-        static const int Ready_HASH = HashingUtils::HashString("Ready");
+        static constexpr uint32_t Importing_HASH = ConstExprHashingUtils::HashString("Importing");
+        static constexpr uint32_t PendingAnnotation_HASH = ConstExprHashingUtils::HashString("PendingAnnotation");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
+        static constexpr uint32_t ValidationError_HASH = ConstExprHashingUtils::HashString("ValidationError");
+        static constexpr uint32_t Ready_HASH = ConstExprHashingUtils::HashString("Ready");
 
 
         TestSetStatus GetTestSetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Importing_HASH)
           {
             return TestSetStatus::Importing;

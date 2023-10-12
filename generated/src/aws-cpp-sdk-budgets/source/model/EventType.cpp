@@ -20,16 +20,16 @@ namespace Aws
       namespace EventTypeMapper
       {
 
-        static const int SYSTEM_HASH = HashingUtils::HashString("SYSTEM");
-        static const int CREATE_ACTION_HASH = HashingUtils::HashString("CREATE_ACTION");
-        static const int DELETE_ACTION_HASH = HashingUtils::HashString("DELETE_ACTION");
-        static const int UPDATE_ACTION_HASH = HashingUtils::HashString("UPDATE_ACTION");
-        static const int EXECUTE_ACTION_HASH = HashingUtils::HashString("EXECUTE_ACTION");
+        static constexpr uint32_t SYSTEM_HASH = ConstExprHashingUtils::HashString("SYSTEM");
+        static constexpr uint32_t CREATE_ACTION_HASH = ConstExprHashingUtils::HashString("CREATE_ACTION");
+        static constexpr uint32_t DELETE_ACTION_HASH = ConstExprHashingUtils::HashString("DELETE_ACTION");
+        static constexpr uint32_t UPDATE_ACTION_HASH = ConstExprHashingUtils::HashString("UPDATE_ACTION");
+        static constexpr uint32_t EXECUTE_ACTION_HASH = ConstExprHashingUtils::HashString("EXECUTE_ACTION");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SYSTEM_HASH)
           {
             return EventType::SYSTEM;

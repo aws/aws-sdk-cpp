@@ -20,13 +20,13 @@ namespace Aws
       namespace QueuePriorityMapper
       {
 
-        static const int Normal_HASH = HashingUtils::HashString("Normal");
-        static const int Priority_HASH = HashingUtils::HashString("Priority");
+        static constexpr uint32_t Normal_HASH = ConstExprHashingUtils::HashString("Normal");
+        static constexpr uint32_t Priority_HASH = ConstExprHashingUtils::HashString("Priority");
 
 
         QueuePriority GetQueuePriorityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Normal_HASH)
           {
             return QueuePriority::Normal;

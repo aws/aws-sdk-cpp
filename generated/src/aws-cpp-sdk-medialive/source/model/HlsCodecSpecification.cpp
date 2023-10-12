@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsCodecSpecificationMapper
       {
 
-        static const int RFC_4281_HASH = HashingUtils::HashString("RFC_4281");
-        static const int RFC_6381_HASH = HashingUtils::HashString("RFC_6381");
+        static constexpr uint32_t RFC_4281_HASH = ConstExprHashingUtils::HashString("RFC_4281");
+        static constexpr uint32_t RFC_6381_HASH = ConstExprHashingUtils::HashString("RFC_6381");
 
 
         HlsCodecSpecification GetHlsCodecSpecificationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RFC_4281_HASH)
           {
             return HlsCodecSpecification::RFC_4281;

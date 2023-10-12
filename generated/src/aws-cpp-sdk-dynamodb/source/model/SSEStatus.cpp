@@ -20,16 +20,16 @@ namespace Aws
       namespace SSEStatusMapper
       {
 
-        static const int ENABLING_HASH = HashingUtils::HashString("ENABLING");
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int DISABLING_HASH = HashingUtils::HashString("DISABLING");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static constexpr uint32_t ENABLING_HASH = ConstExprHashingUtils::HashString("ENABLING");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
+        static constexpr uint32_t DISABLING_HASH = ConstExprHashingUtils::HashString("DISABLING");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
 
 
         SSEStatus GetSSEStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLING_HASH)
           {
             return SSEStatus::ENABLING;

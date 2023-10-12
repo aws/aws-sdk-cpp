@@ -20,16 +20,16 @@ namespace Aws
       namespace CommandFilterKeyMapper
       {
 
-        static const int InvokedAfter_HASH = HashingUtils::HashString("InvokedAfter");
-        static const int InvokedBefore_HASH = HashingUtils::HashString("InvokedBefore");
-        static const int Status_HASH = HashingUtils::HashString("Status");
-        static const int ExecutionStage_HASH = HashingUtils::HashString("ExecutionStage");
-        static const int DocumentName_HASH = HashingUtils::HashString("DocumentName");
+        static constexpr uint32_t InvokedAfter_HASH = ConstExprHashingUtils::HashString("InvokedAfter");
+        static constexpr uint32_t InvokedBefore_HASH = ConstExprHashingUtils::HashString("InvokedBefore");
+        static constexpr uint32_t Status_HASH = ConstExprHashingUtils::HashString("Status");
+        static constexpr uint32_t ExecutionStage_HASH = ConstExprHashingUtils::HashString("ExecutionStage");
+        static constexpr uint32_t DocumentName_HASH = ConstExprHashingUtils::HashString("DocumentName");
 
 
         CommandFilterKey GetCommandFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InvokedAfter_HASH)
           {
             return CommandFilterKey::InvokedAfter;

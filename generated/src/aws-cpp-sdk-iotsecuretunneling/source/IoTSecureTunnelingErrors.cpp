@@ -18,12 +18,12 @@ namespace IoTSecureTunneling
 namespace IoTSecureTunnelingErrorMapper
 {
 
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == LIMIT_EXCEEDED_HASH)
   {

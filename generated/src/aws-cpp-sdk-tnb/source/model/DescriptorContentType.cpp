@@ -20,12 +20,12 @@ namespace Aws
       namespace DescriptorContentTypeMapper
       {
 
-        static const int text_plain_HASH = HashingUtils::HashString("text/plain");
+        static constexpr uint32_t text_plain_HASH = ConstExprHashingUtils::HashString("text/plain");
 
 
         DescriptorContentType GetDescriptorContentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == text_plain_HASH)
           {
             return DescriptorContentType::text_plain;

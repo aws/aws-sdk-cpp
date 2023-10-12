@@ -20,28 +20,28 @@ namespace Aws
       namespace FailureReasonMapper
       {
 
-        static const int NO_AVAILABLE_CONTACTS_HASH = HashingUtils::HashString("NO_AVAILABLE_CONTACTS");
-        static const int ADDITIONAL_VERIFICATION_REQUIRED_HASH = HashingUtils::HashString("ADDITIONAL_VERIFICATION_REQUIRED");
-        static const int DOMAIN_NOT_ALLOWED_HASH = HashingUtils::HashString("DOMAIN_NOT_ALLOWED");
-        static const int INVALID_PUBLIC_DOMAIN_HASH = HashingUtils::HashString("INVALID_PUBLIC_DOMAIN");
-        static const int DOMAIN_VALIDATION_DENIED_HASH = HashingUtils::HashString("DOMAIN_VALIDATION_DENIED");
-        static const int CAA_ERROR_HASH = HashingUtils::HashString("CAA_ERROR");
-        static const int PCA_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("PCA_LIMIT_EXCEEDED");
-        static const int PCA_INVALID_ARN_HASH = HashingUtils::HashString("PCA_INVALID_ARN");
-        static const int PCA_INVALID_STATE_HASH = HashingUtils::HashString("PCA_INVALID_STATE");
-        static const int PCA_REQUEST_FAILED_HASH = HashingUtils::HashString("PCA_REQUEST_FAILED");
-        static const int PCA_NAME_CONSTRAINTS_VALIDATION_HASH = HashingUtils::HashString("PCA_NAME_CONSTRAINTS_VALIDATION");
-        static const int PCA_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("PCA_RESOURCE_NOT_FOUND");
-        static const int PCA_INVALID_ARGS_HASH = HashingUtils::HashString("PCA_INVALID_ARGS");
-        static const int PCA_INVALID_DURATION_HASH = HashingUtils::HashString("PCA_INVALID_DURATION");
-        static const int PCA_ACCESS_DENIED_HASH = HashingUtils::HashString("PCA_ACCESS_DENIED");
-        static const int SLR_NOT_FOUND_HASH = HashingUtils::HashString("SLR_NOT_FOUND");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
+        static constexpr uint32_t NO_AVAILABLE_CONTACTS_HASH = ConstExprHashingUtils::HashString("NO_AVAILABLE_CONTACTS");
+        static constexpr uint32_t ADDITIONAL_VERIFICATION_REQUIRED_HASH = ConstExprHashingUtils::HashString("ADDITIONAL_VERIFICATION_REQUIRED");
+        static constexpr uint32_t DOMAIN_NOT_ALLOWED_HASH = ConstExprHashingUtils::HashString("DOMAIN_NOT_ALLOWED");
+        static constexpr uint32_t INVALID_PUBLIC_DOMAIN_HASH = ConstExprHashingUtils::HashString("INVALID_PUBLIC_DOMAIN");
+        static constexpr uint32_t DOMAIN_VALIDATION_DENIED_HASH = ConstExprHashingUtils::HashString("DOMAIN_VALIDATION_DENIED");
+        static constexpr uint32_t CAA_ERROR_HASH = ConstExprHashingUtils::HashString("CAA_ERROR");
+        static constexpr uint32_t PCA_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("PCA_LIMIT_EXCEEDED");
+        static constexpr uint32_t PCA_INVALID_ARN_HASH = ConstExprHashingUtils::HashString("PCA_INVALID_ARN");
+        static constexpr uint32_t PCA_INVALID_STATE_HASH = ConstExprHashingUtils::HashString("PCA_INVALID_STATE");
+        static constexpr uint32_t PCA_REQUEST_FAILED_HASH = ConstExprHashingUtils::HashString("PCA_REQUEST_FAILED");
+        static constexpr uint32_t PCA_NAME_CONSTRAINTS_VALIDATION_HASH = ConstExprHashingUtils::HashString("PCA_NAME_CONSTRAINTS_VALIDATION");
+        static constexpr uint32_t PCA_RESOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("PCA_RESOURCE_NOT_FOUND");
+        static constexpr uint32_t PCA_INVALID_ARGS_HASH = ConstExprHashingUtils::HashString("PCA_INVALID_ARGS");
+        static constexpr uint32_t PCA_INVALID_DURATION_HASH = ConstExprHashingUtils::HashString("PCA_INVALID_DURATION");
+        static constexpr uint32_t PCA_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("PCA_ACCESS_DENIED");
+        static constexpr uint32_t SLR_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SLR_NOT_FOUND");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
 
 
         FailureReason GetFailureReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_AVAILABLE_CONTACTS_HASH)
           {
             return FailureReason::NO_AVAILABLE_CONTACTS;

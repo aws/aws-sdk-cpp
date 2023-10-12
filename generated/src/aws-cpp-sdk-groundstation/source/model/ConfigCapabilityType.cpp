@@ -20,18 +20,18 @@ namespace Aws
       namespace ConfigCapabilityTypeMapper
       {
 
-        static const int antenna_downlink_HASH = HashingUtils::HashString("antenna-downlink");
-        static const int antenna_downlink_demod_decode_HASH = HashingUtils::HashString("antenna-downlink-demod-decode");
-        static const int antenna_uplink_HASH = HashingUtils::HashString("antenna-uplink");
-        static const int dataflow_endpoint_HASH = HashingUtils::HashString("dataflow-endpoint");
-        static const int tracking_HASH = HashingUtils::HashString("tracking");
-        static const int uplink_echo_HASH = HashingUtils::HashString("uplink-echo");
-        static const int s3_recording_HASH = HashingUtils::HashString("s3-recording");
+        static constexpr uint32_t antenna_downlink_HASH = ConstExprHashingUtils::HashString("antenna-downlink");
+        static constexpr uint32_t antenna_downlink_demod_decode_HASH = ConstExprHashingUtils::HashString("antenna-downlink-demod-decode");
+        static constexpr uint32_t antenna_uplink_HASH = ConstExprHashingUtils::HashString("antenna-uplink");
+        static constexpr uint32_t dataflow_endpoint_HASH = ConstExprHashingUtils::HashString("dataflow-endpoint");
+        static constexpr uint32_t tracking_HASH = ConstExprHashingUtils::HashString("tracking");
+        static constexpr uint32_t uplink_echo_HASH = ConstExprHashingUtils::HashString("uplink-echo");
+        static constexpr uint32_t s3_recording_HASH = ConstExprHashingUtils::HashString("s3-recording");
 
 
         ConfigCapabilityType GetConfigCapabilityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == antenna_downlink_HASH)
           {
             return ConfigCapabilityType::antenna_downlink;

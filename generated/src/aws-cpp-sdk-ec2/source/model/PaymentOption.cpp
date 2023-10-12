@@ -20,14 +20,14 @@ namespace Aws
       namespace PaymentOptionMapper
       {
 
-        static const int AllUpfront_HASH = HashingUtils::HashString("AllUpfront");
-        static const int PartialUpfront_HASH = HashingUtils::HashString("PartialUpfront");
-        static const int NoUpfront_HASH = HashingUtils::HashString("NoUpfront");
+        static constexpr uint32_t AllUpfront_HASH = ConstExprHashingUtils::HashString("AllUpfront");
+        static constexpr uint32_t PartialUpfront_HASH = ConstExprHashingUtils::HashString("PartialUpfront");
+        static constexpr uint32_t NoUpfront_HASH = ConstExprHashingUtils::HashString("NoUpfront");
 
 
         PaymentOption GetPaymentOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AllUpfront_HASH)
           {
             return PaymentOption::AllUpfront;

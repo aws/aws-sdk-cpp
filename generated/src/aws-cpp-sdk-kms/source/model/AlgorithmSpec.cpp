@@ -20,16 +20,16 @@ namespace Aws
       namespace AlgorithmSpecMapper
       {
 
-        static const int RSAES_PKCS1_V1_5_HASH = HashingUtils::HashString("RSAES_PKCS1_V1_5");
-        static const int RSAES_OAEP_SHA_1_HASH = HashingUtils::HashString("RSAES_OAEP_SHA_1");
-        static const int RSAES_OAEP_SHA_256_HASH = HashingUtils::HashString("RSAES_OAEP_SHA_256");
-        static const int RSA_AES_KEY_WRAP_SHA_1_HASH = HashingUtils::HashString("RSA_AES_KEY_WRAP_SHA_1");
-        static const int RSA_AES_KEY_WRAP_SHA_256_HASH = HashingUtils::HashString("RSA_AES_KEY_WRAP_SHA_256");
+        static constexpr uint32_t RSAES_PKCS1_V1_5_HASH = ConstExprHashingUtils::HashString("RSAES_PKCS1_V1_5");
+        static constexpr uint32_t RSAES_OAEP_SHA_1_HASH = ConstExprHashingUtils::HashString("RSAES_OAEP_SHA_1");
+        static constexpr uint32_t RSAES_OAEP_SHA_256_HASH = ConstExprHashingUtils::HashString("RSAES_OAEP_SHA_256");
+        static constexpr uint32_t RSA_AES_KEY_WRAP_SHA_1_HASH = ConstExprHashingUtils::HashString("RSA_AES_KEY_WRAP_SHA_1");
+        static constexpr uint32_t RSA_AES_KEY_WRAP_SHA_256_HASH = ConstExprHashingUtils::HashString("RSA_AES_KEY_WRAP_SHA_256");
 
 
         AlgorithmSpec GetAlgorithmSpecForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RSAES_PKCS1_V1_5_HASH)
           {
             return AlgorithmSpec::RSAES_PKCS1_V1_5;

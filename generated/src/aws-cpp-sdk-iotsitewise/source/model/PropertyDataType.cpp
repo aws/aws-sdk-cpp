@@ -20,16 +20,16 @@ namespace Aws
       namespace PropertyDataTypeMapper
       {
 
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
-        static const int INTEGER_HASH = HashingUtils::HashString("INTEGER");
-        static const int DOUBLE_HASH = HashingUtils::HashString("DOUBLE");
-        static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
-        static const int STRUCT_HASH = HashingUtils::HashString("STRUCT");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
+        static constexpr uint32_t INTEGER_HASH = ConstExprHashingUtils::HashString("INTEGER");
+        static constexpr uint32_t DOUBLE_HASH = ConstExprHashingUtils::HashString("DOUBLE");
+        static constexpr uint32_t BOOLEAN_HASH = ConstExprHashingUtils::HashString("BOOLEAN");
+        static constexpr uint32_t STRUCT_HASH = ConstExprHashingUtils::HashString("STRUCT");
 
 
         PropertyDataType GetPropertyDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STRING_HASH)
           {
             return PropertyDataType::STRING;

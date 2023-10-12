@@ -20,14 +20,14 @@ namespace Aws
       namespace SentimentValueMapper
       {
 
-        static const int POSITIVE_HASH = HashingUtils::HashString("POSITIVE");
-        static const int NEUTRAL_HASH = HashingUtils::HashString("NEUTRAL");
-        static const int NEGATIVE_HASH = HashingUtils::HashString("NEGATIVE");
+        static constexpr uint32_t POSITIVE_HASH = ConstExprHashingUtils::HashString("POSITIVE");
+        static constexpr uint32_t NEUTRAL_HASH = ConstExprHashingUtils::HashString("NEUTRAL");
+        static constexpr uint32_t NEGATIVE_HASH = ConstExprHashingUtils::HashString("NEGATIVE");
 
 
         SentimentValue GetSentimentValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == POSITIVE_HASH)
           {
             return SentimentValue::POSITIVE;

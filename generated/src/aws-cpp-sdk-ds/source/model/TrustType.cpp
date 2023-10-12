@@ -20,13 +20,13 @@ namespace Aws
       namespace TrustTypeMapper
       {
 
-        static const int Forest_HASH = HashingUtils::HashString("Forest");
-        static const int External_HASH = HashingUtils::HashString("External");
+        static constexpr uint32_t Forest_HASH = ConstExprHashingUtils::HashString("Forest");
+        static constexpr uint32_t External_HASH = ConstExprHashingUtils::HashString("External");
 
 
         TrustType GetTrustTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Forest_HASH)
           {
             return TrustType::Forest;

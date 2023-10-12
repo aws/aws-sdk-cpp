@@ -20,12 +20,12 @@ namespace Aws
       namespace FsxFileSystemTypeMapper
       {
 
-        static const int WINDOWS_HASH = HashingUtils::HashString("WINDOWS");
+        static constexpr uint32_t WINDOWS_HASH = ConstExprHashingUtils::HashString("WINDOWS");
 
 
         FsxFileSystemType GetFsxFileSystemTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WINDOWS_HASH)
           {
             return FsxFileSystemType::WINDOWS;

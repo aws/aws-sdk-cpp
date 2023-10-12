@@ -20,13 +20,13 @@ namespace Aws
       namespace AssessmentReportTypeMapper
       {
 
-        static const int pdf_HASH = HashingUtils::HashString("pdf");
-        static const int csv_HASH = HashingUtils::HashString("csv");
+        static constexpr uint32_t pdf_HASH = ConstExprHashingUtils::HashString("pdf");
+        static constexpr uint32_t csv_HASH = ConstExprHashingUtils::HashString("csv");
 
 
         AssessmentReportType GetAssessmentReportTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pdf_HASH)
           {
             return AssessmentReportType::pdf;

@@ -20,14 +20,14 @@ namespace Aws
       namespace QuickConnectTypeMapper
       {
 
-        static const int USER_HASH = HashingUtils::HashString("USER");
-        static const int QUEUE_HASH = HashingUtils::HashString("QUEUE");
-        static const int PHONE_NUMBER_HASH = HashingUtils::HashString("PHONE_NUMBER");
+        static constexpr uint32_t USER_HASH = ConstExprHashingUtils::HashString("USER");
+        static constexpr uint32_t QUEUE_HASH = ConstExprHashingUtils::HashString("QUEUE");
+        static constexpr uint32_t PHONE_NUMBER_HASH = ConstExprHashingUtils::HashString("PHONE_NUMBER");
 
 
         QuickConnectType GetQuickConnectTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USER_HASH)
           {
             return QuickConnectType::USER;

@@ -20,13 +20,13 @@ namespace Aws
       namespace BehaviorEnumMapper
       {
 
-        static const int dont_cache_HASH = HashingUtils::HashString("dont-cache");
-        static const int cache_HASH = HashingUtils::HashString("cache");
+        static constexpr uint32_t dont_cache_HASH = ConstExprHashingUtils::HashString("dont-cache");
+        static constexpr uint32_t cache_HASH = ConstExprHashingUtils::HashString("cache");
 
 
         BehaviorEnum GetBehaviorEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == dont_cache_HASH)
           {
             return BehaviorEnum::dont_cache;

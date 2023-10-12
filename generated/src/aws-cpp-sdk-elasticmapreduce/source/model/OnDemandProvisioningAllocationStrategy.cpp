@@ -20,12 +20,12 @@ namespace Aws
       namespace OnDemandProvisioningAllocationStrategyMapper
       {
 
-        static const int lowest_price_HASH = HashingUtils::HashString("lowest-price");
+        static constexpr uint32_t lowest_price_HASH = ConstExprHashingUtils::HashString("lowest-price");
 
 
         OnDemandProvisioningAllocationStrategy GetOnDemandProvisioningAllocationStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == lowest_price_HASH)
           {
             return OnDemandProvisioningAllocationStrategy::lowest_price;

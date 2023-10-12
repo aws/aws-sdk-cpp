@@ -20,12 +20,12 @@ namespace Aws
       namespace AttachmentHashTypeMapper
       {
 
-        static const int Sha256_HASH = HashingUtils::HashString("Sha256");
+        static constexpr uint32_t Sha256_HASH = ConstExprHashingUtils::HashString("Sha256");
 
 
         AttachmentHashType GetAttachmentHashTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Sha256_HASH)
           {
             return AttachmentHashType::Sha256;

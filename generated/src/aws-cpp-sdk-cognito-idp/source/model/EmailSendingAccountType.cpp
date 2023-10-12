@@ -20,13 +20,13 @@ namespace Aws
       namespace EmailSendingAccountTypeMapper
       {
 
-        static const int COGNITO_DEFAULT_HASH = HashingUtils::HashString("COGNITO_DEFAULT");
-        static const int DEVELOPER_HASH = HashingUtils::HashString("DEVELOPER");
+        static constexpr uint32_t COGNITO_DEFAULT_HASH = ConstExprHashingUtils::HashString("COGNITO_DEFAULT");
+        static constexpr uint32_t DEVELOPER_HASH = ConstExprHashingUtils::HashString("DEVELOPER");
 
 
         EmailSendingAccountType GetEmailSendingAccountTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COGNITO_DEFAULT_HASH)
           {
             return EmailSendingAccountType::COGNITO_DEFAULT;

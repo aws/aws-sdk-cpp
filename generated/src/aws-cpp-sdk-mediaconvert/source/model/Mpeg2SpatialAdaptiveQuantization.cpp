@@ -20,13 +20,13 @@ namespace Aws
       namespace Mpeg2SpatialAdaptiveQuantizationMapper
       {
 
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
 
 
         Mpeg2SpatialAdaptiveQuantization GetMpeg2SpatialAdaptiveQuantizationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISABLED_HASH)
           {
             return Mpeg2SpatialAdaptiveQuantization::DISABLED;

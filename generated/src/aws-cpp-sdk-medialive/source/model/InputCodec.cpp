@@ -20,14 +20,14 @@ namespace Aws
       namespace InputCodecMapper
       {
 
-        static const int MPEG2_HASH = HashingUtils::HashString("MPEG2");
-        static const int AVC_HASH = HashingUtils::HashString("AVC");
-        static const int HEVC_HASH = HashingUtils::HashString("HEVC");
+        static constexpr uint32_t MPEG2_HASH = ConstExprHashingUtils::HashString("MPEG2");
+        static constexpr uint32_t AVC_HASH = ConstExprHashingUtils::HashString("AVC");
+        static constexpr uint32_t HEVC_HASH = ConstExprHashingUtils::HashString("HEVC");
 
 
         InputCodec GetInputCodecForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MPEG2_HASH)
           {
             return InputCodec::MPEG2;

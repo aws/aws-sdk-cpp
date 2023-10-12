@@ -20,13 +20,13 @@ namespace Aws
       namespace SubscriberStatusMapper
       {
 
-        static const int CONFIRMED_HASH = HashingUtils::HashString("CONFIRMED");
-        static const int DECLINED_HASH = HashingUtils::HashString("DECLINED");
+        static constexpr uint32_t CONFIRMED_HASH = ConstExprHashingUtils::HashString("CONFIRMED");
+        static constexpr uint32_t DECLINED_HASH = ConstExprHashingUtils::HashString("DECLINED");
 
 
         SubscriberStatus GetSubscriberStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONFIRMED_HASH)
           {
             return SubscriberStatus::CONFIRMED;

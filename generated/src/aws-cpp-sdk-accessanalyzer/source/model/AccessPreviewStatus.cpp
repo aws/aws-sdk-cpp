@@ -20,14 +20,14 @@ namespace Aws
       namespace AccessPreviewStatusMapper
       {
 
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         AccessPreviewStatus GetAccessPreviewStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPLETED_HASH)
           {
             return AccessPreviewStatus::COMPLETED;

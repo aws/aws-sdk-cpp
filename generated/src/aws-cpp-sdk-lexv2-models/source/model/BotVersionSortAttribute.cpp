@@ -20,12 +20,12 @@ namespace Aws
       namespace BotVersionSortAttributeMapper
       {
 
-        static const int BotVersion_HASH = HashingUtils::HashString("BotVersion");
+        static constexpr uint32_t BotVersion_HASH = ConstExprHashingUtils::HashString("BotVersion");
 
 
         BotVersionSortAttribute GetBotVersionSortAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BotVersion_HASH)
           {
             return BotVersionSortAttribute::BotVersion;

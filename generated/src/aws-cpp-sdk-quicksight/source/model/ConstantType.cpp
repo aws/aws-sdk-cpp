@@ -20,14 +20,14 @@ namespace Aws
       namespace ConstantTypeMapper
       {
 
-        static const int SINGULAR_HASH = HashingUtils::HashString("SINGULAR");
-        static const int RANGE_HASH = HashingUtils::HashString("RANGE");
-        static const int COLLECTIVE_HASH = HashingUtils::HashString("COLLECTIVE");
+        static constexpr uint32_t SINGULAR_HASH = ConstExprHashingUtils::HashString("SINGULAR");
+        static constexpr uint32_t RANGE_HASH = ConstExprHashingUtils::HashString("RANGE");
+        static constexpr uint32_t COLLECTIVE_HASH = ConstExprHashingUtils::HashString("COLLECTIVE");
 
 
         ConstantType GetConstantTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SINGULAR_HASH)
           {
             return ConstantType::SINGULAR;

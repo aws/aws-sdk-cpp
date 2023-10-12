@@ -20,13 +20,13 @@ namespace Aws
       namespace ChannelPrivacyMapper
       {
 
-        static const int PUBLIC__HASH = HashingUtils::HashString("PUBLIC");
-        static const int PRIVATE__HASH = HashingUtils::HashString("PRIVATE");
+        static constexpr uint32_t PUBLIC__HASH = ConstExprHashingUtils::HashString("PUBLIC");
+        static constexpr uint32_t PRIVATE__HASH = ConstExprHashingUtils::HashString("PRIVATE");
 
 
         ChannelPrivacy GetChannelPrivacyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUBLIC__HASH)
           {
             return ChannelPrivacy::PUBLIC_;

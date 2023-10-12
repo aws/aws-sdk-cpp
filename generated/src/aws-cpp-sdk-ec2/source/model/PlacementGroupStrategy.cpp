@@ -20,14 +20,14 @@ namespace Aws
       namespace PlacementGroupStrategyMapper
       {
 
-        static const int cluster_HASH = HashingUtils::HashString("cluster");
-        static const int partition_HASH = HashingUtils::HashString("partition");
-        static const int spread_HASH = HashingUtils::HashString("spread");
+        static constexpr uint32_t cluster_HASH = ConstExprHashingUtils::HashString("cluster");
+        static constexpr uint32_t partition_HASH = ConstExprHashingUtils::HashString("partition");
+        static constexpr uint32_t spread_HASH = ConstExprHashingUtils::HashString("spread");
 
 
         PlacementGroupStrategy GetPlacementGroupStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == cluster_HASH)
           {
             return PlacementGroupStrategy::cluster;

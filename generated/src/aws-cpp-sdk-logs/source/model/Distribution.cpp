@@ -20,13 +20,13 @@ namespace Aws
       namespace DistributionMapper
       {
 
-        static const int Random_HASH = HashingUtils::HashString("Random");
-        static const int ByLogStream_HASH = HashingUtils::HashString("ByLogStream");
+        static constexpr uint32_t Random_HASH = ConstExprHashingUtils::HashString("Random");
+        static constexpr uint32_t ByLogStream_HASH = ConstExprHashingUtils::HashString("ByLogStream");
 
 
         Distribution GetDistributionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Random_HASH)
           {
             return Distribution::Random;

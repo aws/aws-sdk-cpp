@@ -20,13 +20,13 @@ namespace Aws
       namespace RtmpOutputCertificateModeMapper
       {
 
-        static const int SELF_SIGNED_HASH = HashingUtils::HashString("SELF_SIGNED");
-        static const int VERIFY_AUTHENTICITY_HASH = HashingUtils::HashString("VERIFY_AUTHENTICITY");
+        static constexpr uint32_t SELF_SIGNED_HASH = ConstExprHashingUtils::HashString("SELF_SIGNED");
+        static constexpr uint32_t VERIFY_AUTHENTICITY_HASH = ConstExprHashingUtils::HashString("VERIFY_AUTHENTICITY");
 
 
         RtmpOutputCertificateMode GetRtmpOutputCertificateModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SELF_SIGNED_HASH)
           {
             return RtmpOutputCertificateMode::SELF_SIGNED;

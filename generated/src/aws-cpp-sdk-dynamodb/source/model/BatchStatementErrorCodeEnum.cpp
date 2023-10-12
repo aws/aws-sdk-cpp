@@ -20,22 +20,22 @@ namespace Aws
       namespace BatchStatementErrorCodeEnumMapper
       {
 
-        static const int ConditionalCheckFailed_HASH = HashingUtils::HashString("ConditionalCheckFailed");
-        static const int ItemCollectionSizeLimitExceeded_HASH = HashingUtils::HashString("ItemCollectionSizeLimitExceeded");
-        static const int RequestLimitExceeded_HASH = HashingUtils::HashString("RequestLimitExceeded");
-        static const int ValidationError_HASH = HashingUtils::HashString("ValidationError");
-        static const int ProvisionedThroughputExceeded_HASH = HashingUtils::HashString("ProvisionedThroughputExceeded");
-        static const int TransactionConflict_HASH = HashingUtils::HashString("TransactionConflict");
-        static const int ThrottlingError_HASH = HashingUtils::HashString("ThrottlingError");
-        static const int InternalServerError_HASH = HashingUtils::HashString("InternalServerError");
-        static const int ResourceNotFound_HASH = HashingUtils::HashString("ResourceNotFound");
-        static const int AccessDenied_HASH = HashingUtils::HashString("AccessDenied");
-        static const int DuplicateItem_HASH = HashingUtils::HashString("DuplicateItem");
+        static constexpr uint32_t ConditionalCheckFailed_HASH = ConstExprHashingUtils::HashString("ConditionalCheckFailed");
+        static constexpr uint32_t ItemCollectionSizeLimitExceeded_HASH = ConstExprHashingUtils::HashString("ItemCollectionSizeLimitExceeded");
+        static constexpr uint32_t RequestLimitExceeded_HASH = ConstExprHashingUtils::HashString("RequestLimitExceeded");
+        static constexpr uint32_t ValidationError_HASH = ConstExprHashingUtils::HashString("ValidationError");
+        static constexpr uint32_t ProvisionedThroughputExceeded_HASH = ConstExprHashingUtils::HashString("ProvisionedThroughputExceeded");
+        static constexpr uint32_t TransactionConflict_HASH = ConstExprHashingUtils::HashString("TransactionConflict");
+        static constexpr uint32_t ThrottlingError_HASH = ConstExprHashingUtils::HashString("ThrottlingError");
+        static constexpr uint32_t InternalServerError_HASH = ConstExprHashingUtils::HashString("InternalServerError");
+        static constexpr uint32_t ResourceNotFound_HASH = ConstExprHashingUtils::HashString("ResourceNotFound");
+        static constexpr uint32_t AccessDenied_HASH = ConstExprHashingUtils::HashString("AccessDenied");
+        static constexpr uint32_t DuplicateItem_HASH = ConstExprHashingUtils::HashString("DuplicateItem");
 
 
         BatchStatementErrorCodeEnum GetBatchStatementErrorCodeEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ConditionalCheckFailed_HASH)
           {
             return BatchStatementErrorCodeEnum::ConditionalCheckFailed;

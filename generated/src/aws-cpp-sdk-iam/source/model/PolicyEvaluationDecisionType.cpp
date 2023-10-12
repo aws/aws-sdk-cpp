@@ -20,14 +20,14 @@ namespace Aws
       namespace PolicyEvaluationDecisionTypeMapper
       {
 
-        static const int allowed_HASH = HashingUtils::HashString("allowed");
-        static const int explicitDeny_HASH = HashingUtils::HashString("explicitDeny");
-        static const int implicitDeny_HASH = HashingUtils::HashString("implicitDeny");
+        static constexpr uint32_t allowed_HASH = ConstExprHashingUtils::HashString("allowed");
+        static constexpr uint32_t explicitDeny_HASH = ConstExprHashingUtils::HashString("explicitDeny");
+        static constexpr uint32_t implicitDeny_HASH = ConstExprHashingUtils::HashString("implicitDeny");
 
 
         PolicyEvaluationDecisionType GetPolicyEvaluationDecisionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == allowed_HASH)
           {
             return PolicyEvaluationDecisionType::allowed;

@@ -20,14 +20,14 @@ namespace Aws
       namespace RequestableNumberTypeMapper
       {
 
-        static const int LONG_CODE_HASH = HashingUtils::HashString("LONG_CODE");
-        static const int TOLL_FREE_HASH = HashingUtils::HashString("TOLL_FREE");
-        static const int TEN_DLC_HASH = HashingUtils::HashString("TEN_DLC");
+        static constexpr uint32_t LONG_CODE_HASH = ConstExprHashingUtils::HashString("LONG_CODE");
+        static constexpr uint32_t TOLL_FREE_HASH = ConstExprHashingUtils::HashString("TOLL_FREE");
+        static constexpr uint32_t TEN_DLC_HASH = ConstExprHashingUtils::HashString("TEN_DLC");
 
 
         RequestableNumberType GetRequestableNumberTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LONG_CODE_HASH)
           {
             return RequestableNumberType::LONG_CODE;

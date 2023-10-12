@@ -33,20 +33,20 @@ template<> AWS_CLOUDWATCH_API DashboardInvalidInputError CloudWatchError::GetMod
 namespace CloudWatchErrorMapper
 {
 
-static const int LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("LimitExceeded");
-static const int MISSING_REQUIRED_PARAMETER_HASH = HashingUtils::HashString("MissingParameter");
-static const int DASHBOARD_INVALID_INPUT_HASH = HashingUtils::HashString("InvalidParameterInput");
-static const int DASHBOARD_NOT_FOUND_HASH = HashingUtils::HashString("ResourceNotFound");
-static const int INVALID_FORMAT_FAULT_HASH = HashingUtils::HashString("InvalidFormat");
-static const int INTERNAL_SERVICE_FAULT_HASH = HashingUtils::HashString("InternalServiceError");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
+static constexpr uint32_t LIMIT_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("LimitExceeded");
+static constexpr uint32_t MISSING_REQUIRED_PARAMETER_HASH = ConstExprHashingUtils::HashString("MissingParameter");
+static constexpr uint32_t DASHBOARD_INVALID_INPUT_HASH = ConstExprHashingUtils::HashString("InvalidParameterInput");
+static constexpr uint32_t DASHBOARD_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ResourceNotFound");
+static constexpr uint32_t INVALID_FORMAT_FAULT_HASH = ConstExprHashingUtils::HashString("InvalidFormat");
+static constexpr uint32_t INTERNAL_SERVICE_FAULT_HASH = ConstExprHashingUtils::HashString("InternalServiceError");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextToken");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == LIMIT_EXCEEDED_FAULT_HASH)
   {

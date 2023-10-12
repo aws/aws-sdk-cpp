@@ -20,15 +20,15 @@ namespace Aws
       namespace EventTypeCategoryMapper
       {
 
-        static const int issue_HASH = HashingUtils::HashString("issue");
-        static const int accountNotification_HASH = HashingUtils::HashString("accountNotification");
-        static const int scheduledChange_HASH = HashingUtils::HashString("scheduledChange");
-        static const int investigation_HASH = HashingUtils::HashString("investigation");
+        static constexpr uint32_t issue_HASH = ConstExprHashingUtils::HashString("issue");
+        static constexpr uint32_t accountNotification_HASH = ConstExprHashingUtils::HashString("accountNotification");
+        static constexpr uint32_t scheduledChange_HASH = ConstExprHashingUtils::HashString("scheduledChange");
+        static constexpr uint32_t investigation_HASH = ConstExprHashingUtils::HashString("investigation");
 
 
         EventTypeCategory GetEventTypeCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == issue_HASH)
           {
             return EventTypeCategory::issue;

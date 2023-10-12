@@ -18,19 +18,19 @@ namespace STS
 namespace STSErrorMapper
 {
 
-static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocument");
-static const int PACKED_POLICY_TOO_LARGE_HASH = HashingUtils::HashString("PackedPolicyTooLarge");
-static const int I_D_P_COMMUNICATION_ERROR_HASH = HashingUtils::HashString("IDPCommunicationError");
-static const int I_D_P_REJECTED_CLAIM_HASH = HashingUtils::HashString("IDPRejectedClaim");
-static const int EXPIRED_TOKEN_HASH = HashingUtils::HashString("ExpiredTokenException");
-static const int INVALID_IDENTITY_TOKEN_HASH = HashingUtils::HashString("InvalidIdentityToken");
-static const int INVALID_AUTHORIZATION_MESSAGE_HASH = HashingUtils::HashString("InvalidAuthorizationMessageException");
-static const int REGION_DISABLED_HASH = HashingUtils::HashString("RegionDisabledException");
+static constexpr uint32_t MALFORMED_POLICY_DOCUMENT_HASH = ConstExprHashingUtils::HashString("MalformedPolicyDocument");
+static constexpr uint32_t PACKED_POLICY_TOO_LARGE_HASH = ConstExprHashingUtils::HashString("PackedPolicyTooLarge");
+static constexpr uint32_t I_D_P_COMMUNICATION_ERROR_HASH = ConstExprHashingUtils::HashString("IDPCommunicationError");
+static constexpr uint32_t I_D_P_REJECTED_CLAIM_HASH = ConstExprHashingUtils::HashString("IDPRejectedClaim");
+static constexpr uint32_t EXPIRED_TOKEN_HASH = ConstExprHashingUtils::HashString("ExpiredTokenException");
+static constexpr uint32_t INVALID_IDENTITY_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidIdentityToken");
+static constexpr uint32_t INVALID_AUTHORIZATION_MESSAGE_HASH = ConstExprHashingUtils::HashString("InvalidAuthorizationMessageException");
+static constexpr uint32_t REGION_DISABLED_HASH = ConstExprHashingUtils::HashString("RegionDisabledException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == MALFORMED_POLICY_DOCUMENT_HASH)
   {

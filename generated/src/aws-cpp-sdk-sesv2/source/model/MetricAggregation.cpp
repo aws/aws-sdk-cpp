@@ -20,13 +20,13 @@ namespace Aws
       namespace MetricAggregationMapper
       {
 
-        static const int RATE_HASH = HashingUtils::HashString("RATE");
-        static const int VOLUME_HASH = HashingUtils::HashString("VOLUME");
+        static constexpr uint32_t RATE_HASH = ConstExprHashingUtils::HashString("RATE");
+        static constexpr uint32_t VOLUME_HASH = ConstExprHashingUtils::HashString("VOLUME");
 
 
         MetricAggregation GetMetricAggregationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RATE_HASH)
           {
             return MetricAggregation::RATE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace CapabilityMapper
       {
 
-        static const int Voice_HASH = HashingUtils::HashString("Voice");
-        static const int SMS_HASH = HashingUtils::HashString("SMS");
+        static constexpr uint32_t Voice_HASH = ConstExprHashingUtils::HashString("Voice");
+        static constexpr uint32_t SMS_HASH = ConstExprHashingUtils::HashString("SMS");
 
 
         Capability GetCapabilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Voice_HASH)
           {
             return Capability::Voice;

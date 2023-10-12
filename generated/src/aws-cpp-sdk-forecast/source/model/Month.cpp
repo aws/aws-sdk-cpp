@@ -20,23 +20,23 @@ namespace Aws
       namespace MonthMapper
       {
 
-        static const int JANUARY_HASH = HashingUtils::HashString("JANUARY");
-        static const int FEBRUARY_HASH = HashingUtils::HashString("FEBRUARY");
-        static const int MARCH_HASH = HashingUtils::HashString("MARCH");
-        static const int APRIL_HASH = HashingUtils::HashString("APRIL");
-        static const int MAY_HASH = HashingUtils::HashString("MAY");
-        static const int JUNE_HASH = HashingUtils::HashString("JUNE");
-        static const int JULY_HASH = HashingUtils::HashString("JULY");
-        static const int AUGUST_HASH = HashingUtils::HashString("AUGUST");
-        static const int SEPTEMBER_HASH = HashingUtils::HashString("SEPTEMBER");
-        static const int OCTOBER_HASH = HashingUtils::HashString("OCTOBER");
-        static const int NOVEMBER_HASH = HashingUtils::HashString("NOVEMBER");
-        static const int DECEMBER_HASH = HashingUtils::HashString("DECEMBER");
+        static constexpr uint32_t JANUARY_HASH = ConstExprHashingUtils::HashString("JANUARY");
+        static constexpr uint32_t FEBRUARY_HASH = ConstExprHashingUtils::HashString("FEBRUARY");
+        static constexpr uint32_t MARCH_HASH = ConstExprHashingUtils::HashString("MARCH");
+        static constexpr uint32_t APRIL_HASH = ConstExprHashingUtils::HashString("APRIL");
+        static constexpr uint32_t MAY_HASH = ConstExprHashingUtils::HashString("MAY");
+        static constexpr uint32_t JUNE_HASH = ConstExprHashingUtils::HashString("JUNE");
+        static constexpr uint32_t JULY_HASH = ConstExprHashingUtils::HashString("JULY");
+        static constexpr uint32_t AUGUST_HASH = ConstExprHashingUtils::HashString("AUGUST");
+        static constexpr uint32_t SEPTEMBER_HASH = ConstExprHashingUtils::HashString("SEPTEMBER");
+        static constexpr uint32_t OCTOBER_HASH = ConstExprHashingUtils::HashString("OCTOBER");
+        static constexpr uint32_t NOVEMBER_HASH = ConstExprHashingUtils::HashString("NOVEMBER");
+        static constexpr uint32_t DECEMBER_HASH = ConstExprHashingUtils::HashString("DECEMBER");
 
 
         Month GetMonthForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JANUARY_HASH)
           {
             return Month::JANUARY;

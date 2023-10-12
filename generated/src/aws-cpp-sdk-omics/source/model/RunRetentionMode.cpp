@@ -20,13 +20,13 @@ namespace Aws
       namespace RunRetentionModeMapper
       {
 
-        static const int RETAIN_HASH = HashingUtils::HashString("RETAIN");
-        static const int REMOVE_HASH = HashingUtils::HashString("REMOVE");
+        static constexpr uint32_t RETAIN_HASH = ConstExprHashingUtils::HashString("RETAIN");
+        static constexpr uint32_t REMOVE_HASH = ConstExprHashingUtils::HashString("REMOVE");
 
 
         RunRetentionMode GetRunRetentionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RETAIN_HASH)
           {
             return RunRetentionMode::RETAIN;

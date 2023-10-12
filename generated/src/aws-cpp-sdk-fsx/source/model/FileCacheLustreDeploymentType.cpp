@@ -20,12 +20,12 @@ namespace Aws
       namespace FileCacheLustreDeploymentTypeMapper
       {
 
-        static const int CACHE_1_HASH = HashingUtils::HashString("CACHE_1");
+        static constexpr uint32_t CACHE_1_HASH = ConstExprHashingUtils::HashString("CACHE_1");
 
 
         FileCacheLustreDeploymentType GetFileCacheLustreDeploymentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CACHE_1_HASH)
           {
             return FileCacheLustreDeploymentType::CACHE_1;

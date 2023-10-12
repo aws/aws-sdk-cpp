@@ -20,13 +20,13 @@ namespace Aws
       namespace ComputePlatformMapper
       {
 
-        static const int Default_HASH = HashingUtils::HashString("Default");
-        static const int AWSLambda_HASH = HashingUtils::HashString("AWSLambda");
+        static constexpr uint32_t Default_HASH = ConstExprHashingUtils::HashString("Default");
+        static constexpr uint32_t AWSLambda_HASH = ConstExprHashingUtils::HashString("AWSLambda");
 
 
         ComputePlatform GetComputePlatformForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Default_HASH)
           {
             return ComputePlatform::Default;

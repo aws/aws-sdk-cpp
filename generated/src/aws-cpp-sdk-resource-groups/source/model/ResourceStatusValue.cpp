@@ -20,12 +20,12 @@ namespace Aws
       namespace ResourceStatusValueMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
 
 
         ResourceStatusValue GetResourceStatusValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return ResourceStatusValue::PENDING;

@@ -47,20 +47,20 @@ template<> AWS_CLOUDWATCHLOGS_API TooManyTagsException CloudWatchLogsError::GetM
 namespace CloudWatchLogsErrorMapper
 {
 
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int OPERATION_ABORTED_HASH = HashingUtils::HashString("OperationAbortedException");
-static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
-static const int INVALID_SEQUENCE_TOKEN_HASH = HashingUtils::HashString("InvalidSequenceTokenException");
-static const int DATA_ALREADY_ACCEPTED_HASH = HashingUtils::HashString("DataAlreadyAcceptedException");
-static const int MALFORMED_QUERY_HASH = HashingUtils::HashString("MalformedQueryException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t OPERATION_ABORTED_HASH = ConstExprHashingUtils::HashString("OperationAbortedException");
+static constexpr uint32_t RESOURCE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ResourceAlreadyExistsException");
+static constexpr uint32_t INVALID_SEQUENCE_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidSequenceTokenException");
+static constexpr uint32_t DATA_ALREADY_ACCEPTED_HASH = ConstExprHashingUtils::HashString("DataAlreadyAcceptedException");
+static constexpr uint32_t MALFORMED_QUERY_HASH = ConstExprHashingUtils::HashString("MalformedQueryException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t INVALID_OPERATION_HASH = ConstExprHashingUtils::HashString("InvalidOperationException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INVALID_PARAMETER_HASH)
   {

@@ -20,15 +20,15 @@ namespace Aws
       namespace ReviewActionStatusMapper
       {
 
-        static const int Intended_HASH = HashingUtils::HashString("Intended");
-        static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
+        static constexpr uint32_t Intended_HASH = ConstExprHashingUtils::HashString("Intended");
+        static constexpr uint32_t Succeeded_HASH = ConstExprHashingUtils::HashString("Succeeded");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Cancelled_HASH = ConstExprHashingUtils::HashString("Cancelled");
 
 
         ReviewActionStatus GetReviewActionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Intended_HASH)
           {
             return ReviewActionStatus::Intended;

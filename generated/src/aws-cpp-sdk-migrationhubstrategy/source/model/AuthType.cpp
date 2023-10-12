@@ -20,14 +20,14 @@ namespace Aws
       namespace AuthTypeMapper
       {
 
-        static const int NTLM_HASH = HashingUtils::HashString("NTLM");
-        static const int SSH_HASH = HashingUtils::HashString("SSH");
-        static const int CERT_HASH = HashingUtils::HashString("CERT");
+        static constexpr uint32_t NTLM_HASH = ConstExprHashingUtils::HashString("NTLM");
+        static constexpr uint32_t SSH_HASH = ConstExprHashingUtils::HashString("SSH");
+        static constexpr uint32_t CERT_HASH = ConstExprHashingUtils::HashString("CERT");
 
 
         AuthType GetAuthTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NTLM_HASH)
           {
             return AuthType::NTLM;

@@ -20,15 +20,15 @@ namespace Aws
       namespace UserProfileStatusMapper
       {
 
-        static const int ASSIGNED_HASH = HashingUtils::HashString("ASSIGNED");
-        static const int NOT_ASSIGNED_HASH = HashingUtils::HashString("NOT_ASSIGNED");
-        static const int ACTIVATED_HASH = HashingUtils::HashString("ACTIVATED");
-        static const int DEACTIVATED_HASH = HashingUtils::HashString("DEACTIVATED");
+        static constexpr uint32_t ASSIGNED_HASH = ConstExprHashingUtils::HashString("ASSIGNED");
+        static constexpr uint32_t NOT_ASSIGNED_HASH = ConstExprHashingUtils::HashString("NOT_ASSIGNED");
+        static constexpr uint32_t ACTIVATED_HASH = ConstExprHashingUtils::HashString("ACTIVATED");
+        static constexpr uint32_t DEACTIVATED_HASH = ConstExprHashingUtils::HashString("DEACTIVATED");
 
 
         UserProfileStatus GetUserProfileStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASSIGNED_HASH)
           {
             return UserProfileStatus::ASSIGNED;

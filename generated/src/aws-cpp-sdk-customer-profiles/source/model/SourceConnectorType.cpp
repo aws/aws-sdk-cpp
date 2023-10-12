@@ -20,16 +20,16 @@ namespace Aws
       namespace SourceConnectorTypeMapper
       {
 
-        static const int Salesforce_HASH = HashingUtils::HashString("Salesforce");
-        static const int Marketo_HASH = HashingUtils::HashString("Marketo");
-        static const int Zendesk_HASH = HashingUtils::HashString("Zendesk");
-        static const int Servicenow_HASH = HashingUtils::HashString("Servicenow");
-        static const int S3_HASH = HashingUtils::HashString("S3");
+        static constexpr uint32_t Salesforce_HASH = ConstExprHashingUtils::HashString("Salesforce");
+        static constexpr uint32_t Marketo_HASH = ConstExprHashingUtils::HashString("Marketo");
+        static constexpr uint32_t Zendesk_HASH = ConstExprHashingUtils::HashString("Zendesk");
+        static constexpr uint32_t Servicenow_HASH = ConstExprHashingUtils::HashString("Servicenow");
+        static constexpr uint32_t S3_HASH = ConstExprHashingUtils::HashString("S3");
 
 
         SourceConnectorType GetSourceConnectorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Salesforce_HASH)
           {
             return SourceConnectorType::Salesforce;

@@ -20,14 +20,14 @@ namespace Aws
       namespace OpenZFSDeploymentTypeMapper
       {
 
-        static const int SINGLE_AZ_1_HASH = HashingUtils::HashString("SINGLE_AZ_1");
-        static const int SINGLE_AZ_2_HASH = HashingUtils::HashString("SINGLE_AZ_2");
-        static const int MULTI_AZ_1_HASH = HashingUtils::HashString("MULTI_AZ_1");
+        static constexpr uint32_t SINGLE_AZ_1_HASH = ConstExprHashingUtils::HashString("SINGLE_AZ_1");
+        static constexpr uint32_t SINGLE_AZ_2_HASH = ConstExprHashingUtils::HashString("SINGLE_AZ_2");
+        static constexpr uint32_t MULTI_AZ_1_HASH = ConstExprHashingUtils::HashString("MULTI_AZ_1");
 
 
         OpenZFSDeploymentType GetOpenZFSDeploymentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SINGLE_AZ_1_HASH)
           {
             return OpenZFSDeploymentType::SINGLE_AZ_1;

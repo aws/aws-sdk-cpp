@@ -20,13 +20,13 @@ namespace Aws
       namespace MovPaddingControlMapper
       {
 
-        static const int OMNEON_HASH = HashingUtils::HashString("OMNEON");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t OMNEON_HASH = ConstExprHashingUtils::HashString("OMNEON");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         MovPaddingControl GetMovPaddingControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OMNEON_HASH)
           {
             return MovPaddingControl::OMNEON;

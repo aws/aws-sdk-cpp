@@ -20,14 +20,14 @@ namespace Aws
       namespace SlotValueResolutionStrategyMapper
       {
 
-        static const int OriginalValue_HASH = HashingUtils::HashString("OriginalValue");
-        static const int TopResolution_HASH = HashingUtils::HashString("TopResolution");
-        static const int Concatenation_HASH = HashingUtils::HashString("Concatenation");
+        static constexpr uint32_t OriginalValue_HASH = ConstExprHashingUtils::HashString("OriginalValue");
+        static constexpr uint32_t TopResolution_HASH = ConstExprHashingUtils::HashString("TopResolution");
+        static constexpr uint32_t Concatenation_HASH = ConstExprHashingUtils::HashString("Concatenation");
 
 
         SlotValueResolutionStrategy GetSlotValueResolutionStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OriginalValue_HASH)
           {
             return SlotValueResolutionStrategy::OriginalValue;

@@ -20,15 +20,15 @@ namespace Aws
       namespace ExperimentResultRequestTypeMapper
       {
 
-        static const int BaseStat_HASH = HashingUtils::HashString("BaseStat");
-        static const int TreatmentEffect_HASH = HashingUtils::HashString("TreatmentEffect");
-        static const int ConfidenceInterval_HASH = HashingUtils::HashString("ConfidenceInterval");
-        static const int PValue_HASH = HashingUtils::HashString("PValue");
+        static constexpr uint32_t BaseStat_HASH = ConstExprHashingUtils::HashString("BaseStat");
+        static constexpr uint32_t TreatmentEffect_HASH = ConstExprHashingUtils::HashString("TreatmentEffect");
+        static constexpr uint32_t ConfidenceInterval_HASH = ConstExprHashingUtils::HashString("ConfidenceInterval");
+        static constexpr uint32_t PValue_HASH = ConstExprHashingUtils::HashString("PValue");
 
 
         ExperimentResultRequestType GetExperimentResultRequestTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BaseStat_HASH)
           {
             return ExperimentResultRequestType::BaseStat;

@@ -20,14 +20,14 @@ namespace Aws
       namespace FileHeaderInfoMapper
       {
 
-        static const int USE_HASH = HashingUtils::HashString("USE");
-        static const int IGNORE_HASH = HashingUtils::HashString("IGNORE");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t USE_HASH = ConstExprHashingUtils::HashString("USE");
+        static constexpr uint32_t IGNORE_HASH = ConstExprHashingUtils::HashString("IGNORE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         FileHeaderInfo GetFileHeaderInfoForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USE_HASH)
           {
             return FileHeaderInfo::USE;

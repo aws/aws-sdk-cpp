@@ -20,12 +20,12 @@ namespace Aws
       namespace HookTargetTypeMapper
       {
 
-        static const int RESOURCE_HASH = HashingUtils::HashString("RESOURCE");
+        static constexpr uint32_t RESOURCE_HASH = ConstExprHashingUtils::HashString("RESOURCE");
 
 
         HookTargetType GetHookTargetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESOURCE_HASH)
           {
             return HookTargetType::RESOURCE;

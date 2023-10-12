@@ -18,12 +18,12 @@ namespace SageMakerFeatureStoreRuntime
 namespace SageMakerFeatureStoreRuntimeErrorMapper
 {
 
-static const int ACCESS_FORBIDDEN_HASH = HashingUtils::HashString("AccessForbidden");
+static constexpr uint32_t ACCESS_FORBIDDEN_HASH = ConstExprHashingUtils::HashString("AccessForbidden");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == ACCESS_FORBIDDEN_HASH)
   {

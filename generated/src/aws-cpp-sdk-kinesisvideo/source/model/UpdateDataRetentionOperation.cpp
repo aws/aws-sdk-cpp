@@ -20,13 +20,13 @@ namespace Aws
       namespace UpdateDataRetentionOperationMapper
       {
 
-        static const int INCREASE_DATA_RETENTION_HASH = HashingUtils::HashString("INCREASE_DATA_RETENTION");
-        static const int DECREASE_DATA_RETENTION_HASH = HashingUtils::HashString("DECREASE_DATA_RETENTION");
+        static constexpr uint32_t INCREASE_DATA_RETENTION_HASH = ConstExprHashingUtils::HashString("INCREASE_DATA_RETENTION");
+        static constexpr uint32_t DECREASE_DATA_RETENTION_HASH = ConstExprHashingUtils::HashString("DECREASE_DATA_RETENTION");
 
 
         UpdateDataRetentionOperation GetUpdateDataRetentionOperationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INCREASE_DATA_RETENTION_HASH)
           {
             return UpdateDataRetentionOperation::INCREASE_DATA_RETENTION;

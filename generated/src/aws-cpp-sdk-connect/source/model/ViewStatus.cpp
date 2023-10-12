@@ -20,13 +20,13 @@ namespace Aws
       namespace ViewStatusMapper
       {
 
-        static const int PUBLISHED_HASH = HashingUtils::HashString("PUBLISHED");
-        static const int SAVED_HASH = HashingUtils::HashString("SAVED");
+        static constexpr uint32_t PUBLISHED_HASH = ConstExprHashingUtils::HashString("PUBLISHED");
+        static constexpr uint32_t SAVED_HASH = ConstExprHashingUtils::HashString("SAVED");
 
 
         ViewStatus GetViewStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUBLISHED_HASH)
           {
             return ViewStatus::PUBLISHED;

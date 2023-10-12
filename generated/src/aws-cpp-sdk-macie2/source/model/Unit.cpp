@@ -20,12 +20,12 @@ namespace Aws
       namespace UnitMapper
       {
 
-        static const int TERABYTES_HASH = HashingUtils::HashString("TERABYTES");
+        static constexpr uint32_t TERABYTES_HASH = ConstExprHashingUtils::HashString("TERABYTES");
 
 
         Unit GetUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TERABYTES_HASH)
           {
             return Unit::TERABYTES;

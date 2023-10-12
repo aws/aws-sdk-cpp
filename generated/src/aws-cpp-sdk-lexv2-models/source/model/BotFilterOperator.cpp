@@ -20,14 +20,14 @@ namespace Aws
       namespace BotFilterOperatorMapper
       {
 
-        static const int CO_HASH = HashingUtils::HashString("CO");
-        static const int EQ_HASH = HashingUtils::HashString("EQ");
-        static const int NE_HASH = HashingUtils::HashString("NE");
+        static constexpr uint32_t CO_HASH = ConstExprHashingUtils::HashString("CO");
+        static constexpr uint32_t EQ_HASH = ConstExprHashingUtils::HashString("EQ");
+        static constexpr uint32_t NE_HASH = ConstExprHashingUtils::HashString("NE");
 
 
         BotFilterOperator GetBotFilterOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CO_HASH)
           {
             return BotFilterOperator::CO;

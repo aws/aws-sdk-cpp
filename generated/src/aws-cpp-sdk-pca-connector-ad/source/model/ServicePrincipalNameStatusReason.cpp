@@ -20,16 +20,16 @@ namespace Aws
       namespace ServicePrincipalNameStatusReasonMapper
       {
 
-        static const int DIRECTORY_ACCESS_DENIED_HASH = HashingUtils::HashString("DIRECTORY_ACCESS_DENIED");
-        static const int DIRECTORY_NOT_REACHABLE_HASH = HashingUtils::HashString("DIRECTORY_NOT_REACHABLE");
-        static const int DIRECTORY_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("DIRECTORY_RESOURCE_NOT_FOUND");
-        static const int SPN_EXISTS_ON_DIFFERENT_AD_OBJECT_HASH = HashingUtils::HashString("SPN_EXISTS_ON_DIFFERENT_AD_OBJECT");
-        static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
+        static constexpr uint32_t DIRECTORY_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("DIRECTORY_ACCESS_DENIED");
+        static constexpr uint32_t DIRECTORY_NOT_REACHABLE_HASH = ConstExprHashingUtils::HashString("DIRECTORY_NOT_REACHABLE");
+        static constexpr uint32_t DIRECTORY_RESOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("DIRECTORY_RESOURCE_NOT_FOUND");
+        static constexpr uint32_t SPN_EXISTS_ON_DIFFERENT_AD_OBJECT_HASH = ConstExprHashingUtils::HashString("SPN_EXISTS_ON_DIFFERENT_AD_OBJECT");
+        static constexpr uint32_t INTERNAL_FAILURE_HASH = ConstExprHashingUtils::HashString("INTERNAL_FAILURE");
 
 
         ServicePrincipalNameStatusReason GetServicePrincipalNameStatusReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DIRECTORY_ACCESS_DENIED_HASH)
           {
             return ServicePrincipalNameStatusReason::DIRECTORY_ACCESS_DENIED;

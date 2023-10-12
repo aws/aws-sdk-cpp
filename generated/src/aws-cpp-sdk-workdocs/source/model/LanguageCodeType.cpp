@@ -20,42 +20,42 @@ namespace Aws
       namespace LanguageCodeTypeMapper
       {
 
-        static const int AR_HASH = HashingUtils::HashString("AR");
-        static const int BG_HASH = HashingUtils::HashString("BG");
-        static const int BN_HASH = HashingUtils::HashString("BN");
-        static const int DA_HASH = HashingUtils::HashString("DA");
-        static const int DE_HASH = HashingUtils::HashString("DE");
-        static const int CS_HASH = HashingUtils::HashString("CS");
-        static const int EL_HASH = HashingUtils::HashString("EL");
-        static const int EN_HASH = HashingUtils::HashString("EN");
-        static const int ES_HASH = HashingUtils::HashString("ES");
-        static const int FA_HASH = HashingUtils::HashString("FA");
-        static const int FI_HASH = HashingUtils::HashString("FI");
-        static const int FR_HASH = HashingUtils::HashString("FR");
-        static const int HI_HASH = HashingUtils::HashString("HI");
-        static const int HU_HASH = HashingUtils::HashString("HU");
-        static const int ID_HASH = HashingUtils::HashString("ID");
-        static const int IT_HASH = HashingUtils::HashString("IT");
-        static const int JA_HASH = HashingUtils::HashString("JA");
-        static const int KO_HASH = HashingUtils::HashString("KO");
-        static const int LT_HASH = HashingUtils::HashString("LT");
-        static const int LV_HASH = HashingUtils::HashString("LV");
-        static const int NL_HASH = HashingUtils::HashString("NL");
-        static const int NO_HASH = HashingUtils::HashString("NO");
-        static const int PT_HASH = HashingUtils::HashString("PT");
-        static const int RO_HASH = HashingUtils::HashString("RO");
-        static const int RU_HASH = HashingUtils::HashString("RU");
-        static const int SV_HASH = HashingUtils::HashString("SV");
-        static const int SW_HASH = HashingUtils::HashString("SW");
-        static const int TH_HASH = HashingUtils::HashString("TH");
-        static const int TR_HASH = HashingUtils::HashString("TR");
-        static const int ZH_HASH = HashingUtils::HashString("ZH");
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t AR_HASH = ConstExprHashingUtils::HashString("AR");
+        static constexpr uint32_t BG_HASH = ConstExprHashingUtils::HashString("BG");
+        static constexpr uint32_t BN_HASH = ConstExprHashingUtils::HashString("BN");
+        static constexpr uint32_t DA_HASH = ConstExprHashingUtils::HashString("DA");
+        static constexpr uint32_t DE_HASH = ConstExprHashingUtils::HashString("DE");
+        static constexpr uint32_t CS_HASH = ConstExprHashingUtils::HashString("CS");
+        static constexpr uint32_t EL_HASH = ConstExprHashingUtils::HashString("EL");
+        static constexpr uint32_t EN_HASH = ConstExprHashingUtils::HashString("EN");
+        static constexpr uint32_t ES_HASH = ConstExprHashingUtils::HashString("ES");
+        static constexpr uint32_t FA_HASH = ConstExprHashingUtils::HashString("FA");
+        static constexpr uint32_t FI_HASH = ConstExprHashingUtils::HashString("FI");
+        static constexpr uint32_t FR_HASH = ConstExprHashingUtils::HashString("FR");
+        static constexpr uint32_t HI_HASH = ConstExprHashingUtils::HashString("HI");
+        static constexpr uint32_t HU_HASH = ConstExprHashingUtils::HashString("HU");
+        static constexpr uint32_t ID_HASH = ConstExprHashingUtils::HashString("ID");
+        static constexpr uint32_t IT_HASH = ConstExprHashingUtils::HashString("IT");
+        static constexpr uint32_t JA_HASH = ConstExprHashingUtils::HashString("JA");
+        static constexpr uint32_t KO_HASH = ConstExprHashingUtils::HashString("KO");
+        static constexpr uint32_t LT_HASH = ConstExprHashingUtils::HashString("LT");
+        static constexpr uint32_t LV_HASH = ConstExprHashingUtils::HashString("LV");
+        static constexpr uint32_t NL_HASH = ConstExprHashingUtils::HashString("NL");
+        static constexpr uint32_t NO_HASH = ConstExprHashingUtils::HashString("NO");
+        static constexpr uint32_t PT_HASH = ConstExprHashingUtils::HashString("PT");
+        static constexpr uint32_t RO_HASH = ConstExprHashingUtils::HashString("RO");
+        static constexpr uint32_t RU_HASH = ConstExprHashingUtils::HashString("RU");
+        static constexpr uint32_t SV_HASH = ConstExprHashingUtils::HashString("SV");
+        static constexpr uint32_t SW_HASH = ConstExprHashingUtils::HashString("SW");
+        static constexpr uint32_t TH_HASH = ConstExprHashingUtils::HashString("TH");
+        static constexpr uint32_t TR_HASH = ConstExprHashingUtils::HashString("TR");
+        static constexpr uint32_t ZH_HASH = ConstExprHashingUtils::HashString("ZH");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
 
 
         LanguageCodeType GetLanguageCodeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AR_HASH)
           {
             return LanguageCodeType::AR;

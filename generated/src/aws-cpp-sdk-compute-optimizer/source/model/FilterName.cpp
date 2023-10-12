@@ -20,15 +20,15 @@ namespace Aws
       namespace FilterNameMapper
       {
 
-        static const int Finding_HASH = HashingUtils::HashString("Finding");
-        static const int FindingReasonCodes_HASH = HashingUtils::HashString("FindingReasonCodes");
-        static const int RecommendationSourceType_HASH = HashingUtils::HashString("RecommendationSourceType");
-        static const int InferredWorkloadTypes_HASH = HashingUtils::HashString("InferredWorkloadTypes");
+        static constexpr uint32_t Finding_HASH = ConstExprHashingUtils::HashString("Finding");
+        static constexpr uint32_t FindingReasonCodes_HASH = ConstExprHashingUtils::HashString("FindingReasonCodes");
+        static constexpr uint32_t RecommendationSourceType_HASH = ConstExprHashingUtils::HashString("RecommendationSourceType");
+        static constexpr uint32_t InferredWorkloadTypes_HASH = ConstExprHashingUtils::HashString("InferredWorkloadTypes");
 
 
         FilterName GetFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Finding_HASH)
           {
             return FilterName::Finding;

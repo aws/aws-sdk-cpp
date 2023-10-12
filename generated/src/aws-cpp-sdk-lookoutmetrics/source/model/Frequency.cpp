@@ -20,15 +20,15 @@ namespace Aws
       namespace FrequencyMapper
       {
 
-        static const int P1D_HASH = HashingUtils::HashString("P1D");
-        static const int PT1H_HASH = HashingUtils::HashString("PT1H");
-        static const int PT10M_HASH = HashingUtils::HashString("PT10M");
-        static const int PT5M_HASH = HashingUtils::HashString("PT5M");
+        static constexpr uint32_t P1D_HASH = ConstExprHashingUtils::HashString("P1D");
+        static constexpr uint32_t PT1H_HASH = ConstExprHashingUtils::HashString("PT1H");
+        static constexpr uint32_t PT10M_HASH = ConstExprHashingUtils::HashString("PT10M");
+        static constexpr uint32_t PT5M_HASH = ConstExprHashingUtils::HashString("PT5M");
 
 
         Frequency GetFrequencyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == P1D_HASH)
           {
             return Frequency::P1D;

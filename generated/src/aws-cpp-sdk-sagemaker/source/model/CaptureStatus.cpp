@@ -20,13 +20,13 @@ namespace Aws
       namespace CaptureStatusMapper
       {
 
-        static const int Started_HASH = HashingUtils::HashString("Started");
-        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
+        static constexpr uint32_t Started_HASH = ConstExprHashingUtils::HashString("Started");
+        static constexpr uint32_t Stopped_HASH = ConstExprHashingUtils::HashString("Stopped");
 
 
         CaptureStatus GetCaptureStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Started_HASH)
           {
             return CaptureStatus::Started;

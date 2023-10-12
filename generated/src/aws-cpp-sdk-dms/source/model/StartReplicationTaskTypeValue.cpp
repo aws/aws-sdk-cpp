@@ -20,14 +20,14 @@ namespace Aws
       namespace StartReplicationTaskTypeValueMapper
       {
 
-        static const int start_replication_HASH = HashingUtils::HashString("start-replication");
-        static const int resume_processing_HASH = HashingUtils::HashString("resume-processing");
-        static const int reload_target_HASH = HashingUtils::HashString("reload-target");
+        static constexpr uint32_t start_replication_HASH = ConstExprHashingUtils::HashString("start-replication");
+        static constexpr uint32_t resume_processing_HASH = ConstExprHashingUtils::HashString("resume-processing");
+        static constexpr uint32_t reload_target_HASH = ConstExprHashingUtils::HashString("reload-target");
 
 
         StartReplicationTaskTypeValue GetStartReplicationTaskTypeValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == start_replication_HASH)
           {
             return StartReplicationTaskTypeValue::start_replication;

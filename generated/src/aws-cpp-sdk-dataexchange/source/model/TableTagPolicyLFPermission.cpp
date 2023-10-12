@@ -20,13 +20,13 @@ namespace Aws
       namespace TableTagPolicyLFPermissionMapper
       {
 
-        static const int DESCRIBE_HASH = HashingUtils::HashString("DESCRIBE");
-        static const int SELECT_HASH = HashingUtils::HashString("SELECT");
+        static constexpr uint32_t DESCRIBE_HASH = ConstExprHashingUtils::HashString("DESCRIBE");
+        static constexpr uint32_t SELECT_HASH = ConstExprHashingUtils::HashString("SELECT");
 
 
         TableTagPolicyLFPermission GetTableTagPolicyLFPermissionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DESCRIBE_HASH)
           {
             return TableTagPolicyLFPermission::DESCRIBE;

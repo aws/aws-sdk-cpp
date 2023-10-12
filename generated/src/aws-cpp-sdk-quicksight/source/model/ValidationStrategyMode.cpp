@@ -20,13 +20,13 @@ namespace Aws
       namespace ValidationStrategyModeMapper
       {
 
-        static const int STRICT_HASH = HashingUtils::HashString("STRICT");
-        static const int LENIENT_HASH = HashingUtils::HashString("LENIENT");
+        static constexpr uint32_t STRICT_HASH = ConstExprHashingUtils::HashString("STRICT");
+        static constexpr uint32_t LENIENT_HASH = ConstExprHashingUtils::HashString("LENIENT");
 
 
         ValidationStrategyMode GetValidationStrategyModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STRICT_HASH)
           {
             return ValidationStrategyMode::STRICT;

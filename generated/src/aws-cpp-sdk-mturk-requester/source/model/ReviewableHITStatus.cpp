@@ -20,13 +20,13 @@ namespace Aws
       namespace ReviewableHITStatusMapper
       {
 
-        static const int Reviewable_HASH = HashingUtils::HashString("Reviewable");
-        static const int Reviewing_HASH = HashingUtils::HashString("Reviewing");
+        static constexpr uint32_t Reviewable_HASH = ConstExprHashingUtils::HashString("Reviewable");
+        static constexpr uint32_t Reviewing_HASH = ConstExprHashingUtils::HashString("Reviewing");
 
 
         ReviewableHITStatus GetReviewableHITStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Reviewable_HASH)
           {
             return ReviewableHITStatus::Reviewable;

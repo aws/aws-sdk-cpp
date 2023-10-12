@@ -20,16 +20,16 @@ namespace Aws
       namespace LaunchActionCategoryMapper
       {
 
-        static const int MONITORING_HASH = HashingUtils::HashString("MONITORING");
-        static const int VALIDATION_HASH = HashingUtils::HashString("VALIDATION");
-        static const int CONFIGURATION_HASH = HashingUtils::HashString("CONFIGURATION");
-        static const int SECURITY_HASH = HashingUtils::HashString("SECURITY");
-        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
+        static constexpr uint32_t MONITORING_HASH = ConstExprHashingUtils::HashString("MONITORING");
+        static constexpr uint32_t VALIDATION_HASH = ConstExprHashingUtils::HashString("VALIDATION");
+        static constexpr uint32_t CONFIGURATION_HASH = ConstExprHashingUtils::HashString("CONFIGURATION");
+        static constexpr uint32_t SECURITY_HASH = ConstExprHashingUtils::HashString("SECURITY");
+        static constexpr uint32_t OTHER_HASH = ConstExprHashingUtils::HashString("OTHER");
 
 
         LaunchActionCategory GetLaunchActionCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MONITORING_HASH)
           {
             return LaunchActionCategory::MONITORING;

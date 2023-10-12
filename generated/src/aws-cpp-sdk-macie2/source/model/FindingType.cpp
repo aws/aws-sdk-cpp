@@ -20,22 +20,22 @@ namespace Aws
       namespace FindingTypeMapper
       {
 
-        static const int SensitiveData_S3Object_Multiple_HASH = HashingUtils::HashString("SensitiveData:S3Object/Multiple");
-        static const int SensitiveData_S3Object_Financial_HASH = HashingUtils::HashString("SensitiveData:S3Object/Financial");
-        static const int SensitiveData_S3Object_Personal_HASH = HashingUtils::HashString("SensitiveData:S3Object/Personal");
-        static const int SensitiveData_S3Object_Credentials_HASH = HashingUtils::HashString("SensitiveData:S3Object/Credentials");
-        static const int SensitiveData_S3Object_CustomIdentifier_HASH = HashingUtils::HashString("SensitiveData:S3Object/CustomIdentifier");
-        static const int Policy_IAMUser_S3BucketPublic_HASH = HashingUtils::HashString("Policy:IAMUser/S3BucketPublic");
-        static const int Policy_IAMUser_S3BucketSharedExternally_HASH = HashingUtils::HashString("Policy:IAMUser/S3BucketSharedExternally");
-        static const int Policy_IAMUser_S3BucketReplicatedExternally_HASH = HashingUtils::HashString("Policy:IAMUser/S3BucketReplicatedExternally");
-        static const int Policy_IAMUser_S3BucketEncryptionDisabled_HASH = HashingUtils::HashString("Policy:IAMUser/S3BucketEncryptionDisabled");
-        static const int Policy_IAMUser_S3BlockPublicAccessDisabled_HASH = HashingUtils::HashString("Policy:IAMUser/S3BlockPublicAccessDisabled");
-        static const int Policy_IAMUser_S3BucketSharedWithCloudFront_HASH = HashingUtils::HashString("Policy:IAMUser/S3BucketSharedWithCloudFront");
+        static constexpr uint32_t SensitiveData_S3Object_Multiple_HASH = ConstExprHashingUtils::HashString("SensitiveData:S3Object/Multiple");
+        static constexpr uint32_t SensitiveData_S3Object_Financial_HASH = ConstExprHashingUtils::HashString("SensitiveData:S3Object/Financial");
+        static constexpr uint32_t SensitiveData_S3Object_Personal_HASH = ConstExprHashingUtils::HashString("SensitiveData:S3Object/Personal");
+        static constexpr uint32_t SensitiveData_S3Object_Credentials_HASH = ConstExprHashingUtils::HashString("SensitiveData:S3Object/Credentials");
+        static constexpr uint32_t SensitiveData_S3Object_CustomIdentifier_HASH = ConstExprHashingUtils::HashString("SensitiveData:S3Object/CustomIdentifier");
+        static constexpr uint32_t Policy_IAMUser_S3BucketPublic_HASH = ConstExprHashingUtils::HashString("Policy:IAMUser/S3BucketPublic");
+        static constexpr uint32_t Policy_IAMUser_S3BucketSharedExternally_HASH = ConstExprHashingUtils::HashString("Policy:IAMUser/S3BucketSharedExternally");
+        static constexpr uint32_t Policy_IAMUser_S3BucketReplicatedExternally_HASH = ConstExprHashingUtils::HashString("Policy:IAMUser/S3BucketReplicatedExternally");
+        static constexpr uint32_t Policy_IAMUser_S3BucketEncryptionDisabled_HASH = ConstExprHashingUtils::HashString("Policy:IAMUser/S3BucketEncryptionDisabled");
+        static constexpr uint32_t Policy_IAMUser_S3BlockPublicAccessDisabled_HASH = ConstExprHashingUtils::HashString("Policy:IAMUser/S3BlockPublicAccessDisabled");
+        static constexpr uint32_t Policy_IAMUser_S3BucketSharedWithCloudFront_HASH = ConstExprHashingUtils::HashString("Policy:IAMUser/S3BucketSharedWithCloudFront");
 
 
         FindingType GetFindingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SensitiveData_S3Object_Multiple_HASH)
           {
             return FindingType::SensitiveData_S3Object_Multiple;

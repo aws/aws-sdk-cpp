@@ -20,13 +20,13 @@ namespace Aws
       namespace ChangeTypeMapper
       {
 
-        static const int IMMEDIATE_HASH = HashingUtils::HashString("IMMEDIATE");
-        static const int REQUIRES_REBOOT_HASH = HashingUtils::HashString("REQUIRES_REBOOT");
+        static constexpr uint32_t IMMEDIATE_HASH = ConstExprHashingUtils::HashString("IMMEDIATE");
+        static constexpr uint32_t REQUIRES_REBOOT_HASH = ConstExprHashingUtils::HashString("REQUIRES_REBOOT");
 
 
         ChangeType GetChangeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IMMEDIATE_HASH)
           {
             return ChangeType::IMMEDIATE;

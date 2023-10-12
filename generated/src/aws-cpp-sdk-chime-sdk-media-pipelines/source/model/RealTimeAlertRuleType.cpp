@@ -20,14 +20,14 @@ namespace Aws
       namespace RealTimeAlertRuleTypeMapper
       {
 
-        static const int KeywordMatch_HASH = HashingUtils::HashString("KeywordMatch");
-        static const int Sentiment_HASH = HashingUtils::HashString("Sentiment");
-        static const int IssueDetection_HASH = HashingUtils::HashString("IssueDetection");
+        static constexpr uint32_t KeywordMatch_HASH = ConstExprHashingUtils::HashString("KeywordMatch");
+        static constexpr uint32_t Sentiment_HASH = ConstExprHashingUtils::HashString("Sentiment");
+        static constexpr uint32_t IssueDetection_HASH = ConstExprHashingUtils::HashString("IssueDetection");
 
 
         RealTimeAlertRuleType GetRealTimeAlertRuleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KeywordMatch_HASH)
           {
             return RealTimeAlertRuleType::KeywordMatch;

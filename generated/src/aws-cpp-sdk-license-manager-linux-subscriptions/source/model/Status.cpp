@@ -20,15 +20,15 @@ namespace Aws
       namespace StatusMapper
       {
 
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Completed_HASH = HashingUtils::HashString("Completed");
-        static const int Successful_HASH = HashingUtils::HashString("Successful");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Completed_HASH = ConstExprHashingUtils::HashString("Completed");
+        static constexpr uint32_t Successful_HASH = ConstExprHashingUtils::HashString("Successful");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         Status GetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InProgress_HASH)
           {
             return Status::InProgress;

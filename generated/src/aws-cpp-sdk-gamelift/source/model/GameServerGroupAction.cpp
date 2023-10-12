@@ -20,12 +20,12 @@ namespace Aws
       namespace GameServerGroupActionMapper
       {
 
-        static const int REPLACE_INSTANCE_TYPES_HASH = HashingUtils::HashString("REPLACE_INSTANCE_TYPES");
+        static constexpr uint32_t REPLACE_INSTANCE_TYPES_HASH = ConstExprHashingUtils::HashString("REPLACE_INSTANCE_TYPES");
 
 
         GameServerGroupAction GetGameServerGroupActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REPLACE_INSTANCE_TYPES_HASH)
           {
             return GameServerGroupAction::REPLACE_INSTANCE_TYPES;

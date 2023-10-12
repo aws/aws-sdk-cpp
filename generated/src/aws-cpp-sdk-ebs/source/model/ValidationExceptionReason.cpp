@@ -20,26 +20,26 @@ namespace Aws
       namespace ValidationExceptionReasonMapper
       {
 
-        static const int INVALID_CUSTOMER_KEY_HASH = HashingUtils::HashString("INVALID_CUSTOMER_KEY");
-        static const int INVALID_PAGE_TOKEN_HASH = HashingUtils::HashString("INVALID_PAGE_TOKEN");
-        static const int INVALID_BLOCK_TOKEN_HASH = HashingUtils::HashString("INVALID_BLOCK_TOKEN");
-        static const int INVALID_GRANT_TOKEN_HASH = HashingUtils::HashString("INVALID_GRANT_TOKEN");
-        static const int INVALID_SNAPSHOT_ID_HASH = HashingUtils::HashString("INVALID_SNAPSHOT_ID");
-        static const int UNRELATED_SNAPSHOTS_HASH = HashingUtils::HashString("UNRELATED_SNAPSHOTS");
-        static const int INVALID_BLOCK_HASH = HashingUtils::HashString("INVALID_BLOCK");
-        static const int INVALID_CONTENT_ENCODING_HASH = HashingUtils::HashString("INVALID_CONTENT_ENCODING");
-        static const int INVALID_TAG_HASH = HashingUtils::HashString("INVALID_TAG");
-        static const int INVALID_DEPENDENCY_REQUEST_HASH = HashingUtils::HashString("INVALID_DEPENDENCY_REQUEST");
-        static const int INVALID_PARAMETER_VALUE_HASH = HashingUtils::HashString("INVALID_PARAMETER_VALUE");
-        static const int INVALID_VOLUME_SIZE_HASH = HashingUtils::HashString("INVALID_VOLUME_SIZE");
-        static const int CONFLICTING_BLOCK_UPDATE_HASH = HashingUtils::HashString("CONFLICTING_BLOCK_UPDATE");
-        static const int INVALID_IMAGE_ID_HASH = HashingUtils::HashString("INVALID_IMAGE_ID");
-        static const int WRITE_REQUEST_TIMEOUT_HASH = HashingUtils::HashString("WRITE_REQUEST_TIMEOUT");
+        static constexpr uint32_t INVALID_CUSTOMER_KEY_HASH = ConstExprHashingUtils::HashString("INVALID_CUSTOMER_KEY");
+        static constexpr uint32_t INVALID_PAGE_TOKEN_HASH = ConstExprHashingUtils::HashString("INVALID_PAGE_TOKEN");
+        static constexpr uint32_t INVALID_BLOCK_TOKEN_HASH = ConstExprHashingUtils::HashString("INVALID_BLOCK_TOKEN");
+        static constexpr uint32_t INVALID_GRANT_TOKEN_HASH = ConstExprHashingUtils::HashString("INVALID_GRANT_TOKEN");
+        static constexpr uint32_t INVALID_SNAPSHOT_ID_HASH = ConstExprHashingUtils::HashString("INVALID_SNAPSHOT_ID");
+        static constexpr uint32_t UNRELATED_SNAPSHOTS_HASH = ConstExprHashingUtils::HashString("UNRELATED_SNAPSHOTS");
+        static constexpr uint32_t INVALID_BLOCK_HASH = ConstExprHashingUtils::HashString("INVALID_BLOCK");
+        static constexpr uint32_t INVALID_CONTENT_ENCODING_HASH = ConstExprHashingUtils::HashString("INVALID_CONTENT_ENCODING");
+        static constexpr uint32_t INVALID_TAG_HASH = ConstExprHashingUtils::HashString("INVALID_TAG");
+        static constexpr uint32_t INVALID_DEPENDENCY_REQUEST_HASH = ConstExprHashingUtils::HashString("INVALID_DEPENDENCY_REQUEST");
+        static constexpr uint32_t INVALID_PARAMETER_VALUE_HASH = ConstExprHashingUtils::HashString("INVALID_PARAMETER_VALUE");
+        static constexpr uint32_t INVALID_VOLUME_SIZE_HASH = ConstExprHashingUtils::HashString("INVALID_VOLUME_SIZE");
+        static constexpr uint32_t CONFLICTING_BLOCK_UPDATE_HASH = ConstExprHashingUtils::HashString("CONFLICTING_BLOCK_UPDATE");
+        static constexpr uint32_t INVALID_IMAGE_ID_HASH = ConstExprHashingUtils::HashString("INVALID_IMAGE_ID");
+        static constexpr uint32_t WRITE_REQUEST_TIMEOUT_HASH = ConstExprHashingUtils::HashString("WRITE_REQUEST_TIMEOUT");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVALID_CUSTOMER_KEY_HASH)
           {
             return ValidationExceptionReason::INVALID_CUSTOMER_KEY;

@@ -20,13 +20,13 @@ namespace Aws
       namespace RoleMappingTypeMapper
       {
 
-        static const int Token_HASH = HashingUtils::HashString("Token");
-        static const int Rules_HASH = HashingUtils::HashString("Rules");
+        static constexpr uint32_t Token_HASH = ConstExprHashingUtils::HashString("Token");
+        static constexpr uint32_t Rules_HASH = ConstExprHashingUtils::HashString("Rules");
 
 
         RoleMappingType GetRoleMappingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Token_HASH)
           {
             return RoleMappingType::Token;

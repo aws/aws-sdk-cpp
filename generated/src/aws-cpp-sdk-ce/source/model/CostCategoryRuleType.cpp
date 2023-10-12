@@ -20,13 +20,13 @@ namespace Aws
       namespace CostCategoryRuleTypeMapper
       {
 
-        static const int REGULAR_HASH = HashingUtils::HashString("REGULAR");
-        static const int INHERITED_VALUE_HASH = HashingUtils::HashString("INHERITED_VALUE");
+        static constexpr uint32_t REGULAR_HASH = ConstExprHashingUtils::HashString("REGULAR");
+        static constexpr uint32_t INHERITED_VALUE_HASH = ConstExprHashingUtils::HashString("INHERITED_VALUE");
 
 
         CostCategoryRuleType GetCostCategoryRuleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REGULAR_HASH)
           {
             return CostCategoryRuleType::REGULAR;

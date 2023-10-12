@@ -20,14 +20,14 @@ namespace Aws
       namespace BounceTypeMapper
       {
 
-        static const int UNDETERMINED_HASH = HashingUtils::HashString("UNDETERMINED");
-        static const int TRANSIENT_HASH = HashingUtils::HashString("TRANSIENT");
-        static const int PERMANENT_HASH = HashingUtils::HashString("PERMANENT");
+        static constexpr uint32_t UNDETERMINED_HASH = ConstExprHashingUtils::HashString("UNDETERMINED");
+        static constexpr uint32_t TRANSIENT_HASH = ConstExprHashingUtils::HashString("TRANSIENT");
+        static constexpr uint32_t PERMANENT_HASH = ConstExprHashingUtils::HashString("PERMANENT");
 
 
         BounceType GetBounceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNDETERMINED_HASH)
           {
             return BounceType::UNDETERMINED;

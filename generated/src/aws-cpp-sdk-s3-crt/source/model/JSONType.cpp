@@ -20,13 +20,13 @@ namespace Aws
       namespace JSONTypeMapper
       {
 
-        static const int DOCUMENT_HASH = HashingUtils::HashString("DOCUMENT");
-        static const int LINES_HASH = HashingUtils::HashString("LINES");
+        static constexpr uint32_t DOCUMENT_HASH = ConstExprHashingUtils::HashString("DOCUMENT");
+        static constexpr uint32_t LINES_HASH = ConstExprHashingUtils::HashString("LINES");
 
 
         JSONType GetJSONTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DOCUMENT_HASH)
           {
             return JSONType::DOCUMENT;

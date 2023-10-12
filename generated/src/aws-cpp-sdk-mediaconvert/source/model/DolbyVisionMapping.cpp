@@ -20,13 +20,13 @@ namespace Aws
       namespace DolbyVisionMappingMapper
       {
 
-        static const int HDR10_NOMAP_HASH = HashingUtils::HashString("HDR10_NOMAP");
-        static const int HDR10_1000_HASH = HashingUtils::HashString("HDR10_1000");
+        static constexpr uint32_t HDR10_NOMAP_HASH = ConstExprHashingUtils::HashString("HDR10_NOMAP");
+        static constexpr uint32_t HDR10_1000_HASH = ConstExprHashingUtils::HashString("HDR10_1000");
 
 
         DolbyVisionMapping GetDolbyVisionMappingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HDR10_NOMAP_HASH)
           {
             return DolbyVisionMapping::HDR10_NOMAP;

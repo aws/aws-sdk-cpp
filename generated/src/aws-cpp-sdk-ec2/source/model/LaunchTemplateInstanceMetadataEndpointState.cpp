@@ -20,13 +20,13 @@ namespace Aws
       namespace LaunchTemplateInstanceMetadataEndpointStateMapper
       {
 
-        static const int disabled_HASH = HashingUtils::HashString("disabled");
-        static const int enabled_HASH = HashingUtils::HashString("enabled");
+        static constexpr uint32_t disabled_HASH = ConstExprHashingUtils::HashString("disabled");
+        static constexpr uint32_t enabled_HASH = ConstExprHashingUtils::HashString("enabled");
 
 
         LaunchTemplateInstanceMetadataEndpointState GetLaunchTemplateInstanceMetadataEndpointStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == disabled_HASH)
           {
             return LaunchTemplateInstanceMetadataEndpointState::disabled;

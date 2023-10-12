@@ -20,19 +20,19 @@ namespace Aws
       namespace DomainStatusMapper
       {
 
-        static const int PENDING_VERIFICATION_HASH = HashingUtils::HashString("PENDING_VERIFICATION");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int PENDING_DEPLOYMENT_HASH = HashingUtils::HashString("PENDING_DEPLOYMENT");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int REQUESTING_CERTIFICATE_HASH = HashingUtils::HashString("REQUESTING_CERTIFICATE");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static constexpr uint32_t PENDING_VERIFICATION_HASH = ConstExprHashingUtils::HashString("PENDING_VERIFICATION");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t PENDING_DEPLOYMENT_HASH = ConstExprHashingUtils::HashString("PENDING_DEPLOYMENT");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t REQUESTING_CERTIFICATE_HASH = ConstExprHashingUtils::HashString("REQUESTING_CERTIFICATE");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
 
 
         DomainStatus GetDomainStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_VERIFICATION_HASH)
           {
             return DomainStatus::PENDING_VERIFICATION;

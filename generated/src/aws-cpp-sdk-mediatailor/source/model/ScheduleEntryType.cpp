@@ -20,13 +20,13 @@ namespace Aws
       namespace ScheduleEntryTypeMapper
       {
 
-        static const int PROGRAM_HASH = HashingUtils::HashString("PROGRAM");
-        static const int FILLER_SLATE_HASH = HashingUtils::HashString("FILLER_SLATE");
+        static constexpr uint32_t PROGRAM_HASH = ConstExprHashingUtils::HashString("PROGRAM");
+        static constexpr uint32_t FILLER_SLATE_HASH = ConstExprHashingUtils::HashString("FILLER_SLATE");
 
 
         ScheduleEntryType GetScheduleEntryTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROGRAM_HASH)
           {
             return ScheduleEntryType::PROGRAM;

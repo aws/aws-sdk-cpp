@@ -20,14 +20,14 @@ namespace Aws
       namespace SupportedSavingsPlansTypeMapper
       {
 
-        static const int COMPUTE_SP_HASH = HashingUtils::HashString("COMPUTE_SP");
-        static const int EC2_INSTANCE_SP_HASH = HashingUtils::HashString("EC2_INSTANCE_SP");
-        static const int SAGEMAKER_SP_HASH = HashingUtils::HashString("SAGEMAKER_SP");
+        static constexpr uint32_t COMPUTE_SP_HASH = ConstExprHashingUtils::HashString("COMPUTE_SP");
+        static constexpr uint32_t EC2_INSTANCE_SP_HASH = ConstExprHashingUtils::HashString("EC2_INSTANCE_SP");
+        static constexpr uint32_t SAGEMAKER_SP_HASH = ConstExprHashingUtils::HashString("SAGEMAKER_SP");
 
 
         SupportedSavingsPlansType GetSupportedSavingsPlansTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPUTE_SP_HASH)
           {
             return SupportedSavingsPlansType::COMPUTE_SP;

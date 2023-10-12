@@ -20,14 +20,14 @@ namespace Aws
       namespace TargetTypeMapper
       {
 
-        static const int RDS_INSTANCE_HASH = HashingUtils::HashString("RDS_INSTANCE");
-        static const int RDS_SERVERLESS_ENDPOINT_HASH = HashingUtils::HashString("RDS_SERVERLESS_ENDPOINT");
-        static const int TRACKED_CLUSTER_HASH = HashingUtils::HashString("TRACKED_CLUSTER");
+        static constexpr uint32_t RDS_INSTANCE_HASH = ConstExprHashingUtils::HashString("RDS_INSTANCE");
+        static constexpr uint32_t RDS_SERVERLESS_ENDPOINT_HASH = ConstExprHashingUtils::HashString("RDS_SERVERLESS_ENDPOINT");
+        static constexpr uint32_t TRACKED_CLUSTER_HASH = ConstExprHashingUtils::HashString("TRACKED_CLUSTER");
 
 
         TargetType GetTargetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RDS_INSTANCE_HASH)
           {
             return TargetType::RDS_INSTANCE;

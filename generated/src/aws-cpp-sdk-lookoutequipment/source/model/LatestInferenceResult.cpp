@@ -20,13 +20,13 @@ namespace Aws
       namespace LatestInferenceResultMapper
       {
 
-        static const int ANOMALOUS_HASH = HashingUtils::HashString("ANOMALOUS");
-        static const int NORMAL_HASH = HashingUtils::HashString("NORMAL");
+        static constexpr uint32_t ANOMALOUS_HASH = ConstExprHashingUtils::HashString("ANOMALOUS");
+        static constexpr uint32_t NORMAL_HASH = ConstExprHashingUtils::HashString("NORMAL");
 
 
         LatestInferenceResult GetLatestInferenceResultForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ANOMALOUS_HASH)
           {
             return LatestInferenceResult::ANOMALOUS;

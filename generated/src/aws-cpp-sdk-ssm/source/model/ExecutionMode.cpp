@@ -20,13 +20,13 @@ namespace Aws
       namespace ExecutionModeMapper
       {
 
-        static const int Auto_HASH = HashingUtils::HashString("Auto");
-        static const int Interactive_HASH = HashingUtils::HashString("Interactive");
+        static constexpr uint32_t Auto_HASH = ConstExprHashingUtils::HashString("Auto");
+        static constexpr uint32_t Interactive_HASH = ConstExprHashingUtils::HashString("Interactive");
 
 
         ExecutionMode GetExecutionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Auto_HASH)
           {
             return ExecutionMode::Auto;

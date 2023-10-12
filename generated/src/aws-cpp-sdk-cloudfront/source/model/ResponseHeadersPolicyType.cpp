@@ -20,13 +20,13 @@ namespace Aws
       namespace ResponseHeadersPolicyTypeMapper
       {
 
-        static const int managed_HASH = HashingUtils::HashString("managed");
-        static const int custom_HASH = HashingUtils::HashString("custom");
+        static constexpr uint32_t managed_HASH = ConstExprHashingUtils::HashString("managed");
+        static constexpr uint32_t custom_HASH = ConstExprHashingUtils::HashString("custom");
 
 
         ResponseHeadersPolicyType GetResponseHeadersPolicyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == managed_HASH)
           {
             return ResponseHeadersPolicyType::managed;

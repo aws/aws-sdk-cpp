@@ -20,17 +20,17 @@ namespace Aws
       namespace StringFilterComparisonMapper
       {
 
-        static const int EQUALS_HASH = HashingUtils::HashString("EQUALS");
-        static const int PREFIX_HASH = HashingUtils::HashString("PREFIX");
-        static const int NOT_EQUALS_HASH = HashingUtils::HashString("NOT_EQUALS");
-        static const int PREFIX_NOT_EQUALS_HASH = HashingUtils::HashString("PREFIX_NOT_EQUALS");
-        static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
-        static const int NOT_CONTAINS_HASH = HashingUtils::HashString("NOT_CONTAINS");
+        static constexpr uint32_t EQUALS_HASH = ConstExprHashingUtils::HashString("EQUALS");
+        static constexpr uint32_t PREFIX_HASH = ConstExprHashingUtils::HashString("PREFIX");
+        static constexpr uint32_t NOT_EQUALS_HASH = ConstExprHashingUtils::HashString("NOT_EQUALS");
+        static constexpr uint32_t PREFIX_NOT_EQUALS_HASH = ConstExprHashingUtils::HashString("PREFIX_NOT_EQUALS");
+        static constexpr uint32_t CONTAINS_HASH = ConstExprHashingUtils::HashString("CONTAINS");
+        static constexpr uint32_t NOT_CONTAINS_HASH = ConstExprHashingUtils::HashString("NOT_CONTAINS");
 
 
         StringFilterComparison GetStringFilterComparisonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EQUALS_HASH)
           {
             return StringFilterComparison::EQUALS;

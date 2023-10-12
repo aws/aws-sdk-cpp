@@ -20,17 +20,17 @@ namespace Aws
       namespace ReportingErrorCodeMapper
       {
 
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int INVALID_PERMISSIONS_HASH = HashingUtils::HashString("INVALID_PERMISSIONS");
-        static const int NO_FINDINGS_FOUND_HASH = HashingUtils::HashString("NO_FINDINGS_FOUND");
-        static const int BUCKET_NOT_FOUND_HASH = HashingUtils::HashString("BUCKET_NOT_FOUND");
-        static const int INCOMPATIBLE_BUCKET_REGION_HASH = HashingUtils::HashString("INCOMPATIBLE_BUCKET_REGION");
-        static const int MALFORMED_KMS_KEY_HASH = HashingUtils::HashString("MALFORMED_KMS_KEY");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t INVALID_PERMISSIONS_HASH = ConstExprHashingUtils::HashString("INVALID_PERMISSIONS");
+        static constexpr uint32_t NO_FINDINGS_FOUND_HASH = ConstExprHashingUtils::HashString("NO_FINDINGS_FOUND");
+        static constexpr uint32_t BUCKET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("BUCKET_NOT_FOUND");
+        static constexpr uint32_t INCOMPATIBLE_BUCKET_REGION_HASH = ConstExprHashingUtils::HashString("INCOMPATIBLE_BUCKET_REGION");
+        static constexpr uint32_t MALFORMED_KMS_KEY_HASH = ConstExprHashingUtils::HashString("MALFORMED_KMS_KEY");
 
 
         ReportingErrorCode GetReportingErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERNAL_ERROR_HASH)
           {
             return ReportingErrorCode::INTERNAL_ERROR;

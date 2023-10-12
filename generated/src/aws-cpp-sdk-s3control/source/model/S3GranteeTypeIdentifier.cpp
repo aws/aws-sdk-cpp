@@ -20,14 +20,14 @@ namespace Aws
       namespace S3GranteeTypeIdentifierMapper
       {
 
-        static const int id_HASH = HashingUtils::HashString("id");
-        static const int emailAddress_HASH = HashingUtils::HashString("emailAddress");
-        static const int uri_HASH = HashingUtils::HashString("uri");
+        static constexpr uint32_t id_HASH = ConstExprHashingUtils::HashString("id");
+        static constexpr uint32_t emailAddress_HASH = ConstExprHashingUtils::HashString("emailAddress");
+        static constexpr uint32_t uri_HASH = ConstExprHashingUtils::HashString("uri");
 
 
         S3GranteeTypeIdentifier GetS3GranteeTypeIdentifierForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == id_HASH)
           {
             return S3GranteeTypeIdentifier::id;

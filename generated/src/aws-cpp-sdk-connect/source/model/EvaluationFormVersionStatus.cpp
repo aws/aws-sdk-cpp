@@ -20,13 +20,13 @@ namespace Aws
       namespace EvaluationFormVersionStatusMapper
       {
 
-        static const int DRAFT_HASH = HashingUtils::HashString("DRAFT");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t DRAFT_HASH = ConstExprHashingUtils::HashString("DRAFT");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
 
 
         EvaluationFormVersionStatus GetEvaluationFormVersionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DRAFT_HASH)
           {
             return EvaluationFormVersionStatus::DRAFT;

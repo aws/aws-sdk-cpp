@@ -20,14 +20,14 @@ namespace Aws
       namespace SNOMEDCTEntityCategoryMapper
       {
 
-        static const int MEDICAL_CONDITION_HASH = HashingUtils::HashString("MEDICAL_CONDITION");
-        static const int ANATOMY_HASH = HashingUtils::HashString("ANATOMY");
-        static const int TEST_TREATMENT_PROCEDURE_HASH = HashingUtils::HashString("TEST_TREATMENT_PROCEDURE");
+        static constexpr uint32_t MEDICAL_CONDITION_HASH = ConstExprHashingUtils::HashString("MEDICAL_CONDITION");
+        static constexpr uint32_t ANATOMY_HASH = ConstExprHashingUtils::HashString("ANATOMY");
+        static constexpr uint32_t TEST_TREATMENT_PROCEDURE_HASH = ConstExprHashingUtils::HashString("TEST_TREATMENT_PROCEDURE");
 
 
         SNOMEDCTEntityCategory GetSNOMEDCTEntityCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MEDICAL_CONDITION_HASH)
           {
             return SNOMEDCTEntityCategory::MEDICAL_CONDITION;

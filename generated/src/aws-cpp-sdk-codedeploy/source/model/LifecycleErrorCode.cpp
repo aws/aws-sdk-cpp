@@ -20,17 +20,17 @@ namespace Aws
       namespace LifecycleErrorCodeMapper
       {
 
-        static const int Success_HASH = HashingUtils::HashString("Success");
-        static const int ScriptMissing_HASH = HashingUtils::HashString("ScriptMissing");
-        static const int ScriptNotExecutable_HASH = HashingUtils::HashString("ScriptNotExecutable");
-        static const int ScriptTimedOut_HASH = HashingUtils::HashString("ScriptTimedOut");
-        static const int ScriptFailed_HASH = HashingUtils::HashString("ScriptFailed");
-        static const int UnknownError_HASH = HashingUtils::HashString("UnknownError");
+        static constexpr uint32_t Success_HASH = ConstExprHashingUtils::HashString("Success");
+        static constexpr uint32_t ScriptMissing_HASH = ConstExprHashingUtils::HashString("ScriptMissing");
+        static constexpr uint32_t ScriptNotExecutable_HASH = ConstExprHashingUtils::HashString("ScriptNotExecutable");
+        static constexpr uint32_t ScriptTimedOut_HASH = ConstExprHashingUtils::HashString("ScriptTimedOut");
+        static constexpr uint32_t ScriptFailed_HASH = ConstExprHashingUtils::HashString("ScriptFailed");
+        static constexpr uint32_t UnknownError_HASH = ConstExprHashingUtils::HashString("UnknownError");
 
 
         LifecycleErrorCode GetLifecycleErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Success_HASH)
           {
             return LifecycleErrorCode::Success;

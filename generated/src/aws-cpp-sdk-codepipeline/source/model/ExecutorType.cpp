@@ -20,13 +20,13 @@ namespace Aws
       namespace ExecutorTypeMapper
       {
 
-        static const int JobWorker_HASH = HashingUtils::HashString("JobWorker");
-        static const int Lambda_HASH = HashingUtils::HashString("Lambda");
+        static constexpr uint32_t JobWorker_HASH = ConstExprHashingUtils::HashString("JobWorker");
+        static constexpr uint32_t Lambda_HASH = ConstExprHashingUtils::HashString("Lambda");
 
 
         ExecutorType GetExecutorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JobWorker_HASH)
           {
             return ExecutorType::JobWorker;

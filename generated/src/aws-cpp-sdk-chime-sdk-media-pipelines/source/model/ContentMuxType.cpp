@@ -20,12 +20,12 @@ namespace Aws
       namespace ContentMuxTypeMapper
       {
 
-        static const int ContentOnly_HASH = HashingUtils::HashString("ContentOnly");
+        static constexpr uint32_t ContentOnly_HASH = ConstExprHashingUtils::HashString("ContentOnly");
 
 
         ContentMuxType GetContentMuxTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ContentOnly_HASH)
           {
             return ContentMuxType::ContentOnly;

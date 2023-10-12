@@ -20,16 +20,16 @@ namespace Aws
       namespace ClusterStateMapper
       {
 
-        static const int AwaitingQuorum_HASH = HashingUtils::HashString("AwaitingQuorum");
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int InUse_HASH = HashingUtils::HashString("InUse");
-        static const int Complete_HASH = HashingUtils::HashString("Complete");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
+        static constexpr uint32_t AwaitingQuorum_HASH = ConstExprHashingUtils::HashString("AwaitingQuorum");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t InUse_HASH = ConstExprHashingUtils::HashString("InUse");
+        static constexpr uint32_t Complete_HASH = ConstExprHashingUtils::HashString("Complete");
+        static constexpr uint32_t Cancelled_HASH = ConstExprHashingUtils::HashString("Cancelled");
 
 
         ClusterState GetClusterStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AwaitingQuorum_HASH)
           {
             return ClusterState::AwaitingQuorum;

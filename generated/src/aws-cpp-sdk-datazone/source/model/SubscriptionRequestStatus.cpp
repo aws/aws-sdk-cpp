@@ -20,14 +20,14 @@ namespace Aws
       namespace SubscriptionRequestStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int ACCEPTED_HASH = HashingUtils::HashString("ACCEPTED");
-        static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t ACCEPTED_HASH = ConstExprHashingUtils::HashString("ACCEPTED");
+        static constexpr uint32_t REJECTED_HASH = ConstExprHashingUtils::HashString("REJECTED");
 
 
         SubscriptionRequestStatus GetSubscriptionRequestStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return SubscriptionRequestStatus::PENDING;

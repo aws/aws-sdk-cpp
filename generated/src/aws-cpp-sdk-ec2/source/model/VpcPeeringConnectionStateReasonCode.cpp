@@ -20,20 +20,20 @@ namespace Aws
       namespace VpcPeeringConnectionStateReasonCodeMapper
       {
 
-        static const int initiating_request_HASH = HashingUtils::HashString("initiating-request");
-        static const int pending_acceptance_HASH = HashingUtils::HashString("pending-acceptance");
-        static const int active_HASH = HashingUtils::HashString("active");
-        static const int deleted_HASH = HashingUtils::HashString("deleted");
-        static const int rejected_HASH = HashingUtils::HashString("rejected");
-        static const int failed_HASH = HashingUtils::HashString("failed");
-        static const int expired_HASH = HashingUtils::HashString("expired");
-        static const int provisioning_HASH = HashingUtils::HashString("provisioning");
-        static const int deleting_HASH = HashingUtils::HashString("deleting");
+        static constexpr uint32_t initiating_request_HASH = ConstExprHashingUtils::HashString("initiating-request");
+        static constexpr uint32_t pending_acceptance_HASH = ConstExprHashingUtils::HashString("pending-acceptance");
+        static constexpr uint32_t active_HASH = ConstExprHashingUtils::HashString("active");
+        static constexpr uint32_t deleted_HASH = ConstExprHashingUtils::HashString("deleted");
+        static constexpr uint32_t rejected_HASH = ConstExprHashingUtils::HashString("rejected");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
+        static constexpr uint32_t expired_HASH = ConstExprHashingUtils::HashString("expired");
+        static constexpr uint32_t provisioning_HASH = ConstExprHashingUtils::HashString("provisioning");
+        static constexpr uint32_t deleting_HASH = ConstExprHashingUtils::HashString("deleting");
 
 
         VpcPeeringConnectionStateReasonCode GetVpcPeeringConnectionStateReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == initiating_request_HASH)
           {
             return VpcPeeringConnectionStateReasonCode::initiating_request;

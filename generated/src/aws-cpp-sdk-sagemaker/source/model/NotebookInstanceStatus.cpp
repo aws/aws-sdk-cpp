@@ -20,18 +20,18 @@ namespace Aws
       namespace NotebookInstanceStatusMapper
       {
 
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int InService_HASH = HashingUtils::HashString("InService");
-        static const int Stopping_HASH = HashingUtils::HashString("Stopping");
-        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
-        static const int Updating_HASH = HashingUtils::HashString("Updating");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t InService_HASH = ConstExprHashingUtils::HashString("InService");
+        static constexpr uint32_t Stopping_HASH = ConstExprHashingUtils::HashString("Stopping");
+        static constexpr uint32_t Stopped_HASH = ConstExprHashingUtils::HashString("Stopped");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
+        static constexpr uint32_t Updating_HASH = ConstExprHashingUtils::HashString("Updating");
 
 
         NotebookInstanceStatus GetNotebookInstanceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pending_HASH)
           {
             return NotebookInstanceStatus::Pending;

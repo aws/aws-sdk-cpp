@@ -20,13 +20,13 @@ namespace Aws
       namespace SourceControlAuthStrategyMapper
       {
 
-        static const int PERSONAL_ACCESS_TOKEN_HASH = HashingUtils::HashString("PERSONAL_ACCESS_TOKEN");
-        static const int AWS_SECRETS_MANAGER_HASH = HashingUtils::HashString("AWS_SECRETS_MANAGER");
+        static constexpr uint32_t PERSONAL_ACCESS_TOKEN_HASH = ConstExprHashingUtils::HashString("PERSONAL_ACCESS_TOKEN");
+        static constexpr uint32_t AWS_SECRETS_MANAGER_HASH = ConstExprHashingUtils::HashString("AWS_SECRETS_MANAGER");
 
 
         SourceControlAuthStrategy GetSourceControlAuthStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PERSONAL_ACCESS_TOKEN_HASH)
           {
             return SourceControlAuthStrategy::PERSONAL_ACCESS_TOKEN;

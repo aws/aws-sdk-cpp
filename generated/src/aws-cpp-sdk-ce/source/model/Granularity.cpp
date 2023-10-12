@@ -20,14 +20,14 @@ namespace Aws
       namespace GranularityMapper
       {
 
-        static const int DAILY_HASH = HashingUtils::HashString("DAILY");
-        static const int MONTHLY_HASH = HashingUtils::HashString("MONTHLY");
-        static const int HOURLY_HASH = HashingUtils::HashString("HOURLY");
+        static constexpr uint32_t DAILY_HASH = ConstExprHashingUtils::HashString("DAILY");
+        static constexpr uint32_t MONTHLY_HASH = ConstExprHashingUtils::HashString("MONTHLY");
+        static constexpr uint32_t HOURLY_HASH = ConstExprHashingUtils::HashString("HOURLY");
 
 
         Granularity GetGranularityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DAILY_HASH)
           {
             return Granularity::DAILY;

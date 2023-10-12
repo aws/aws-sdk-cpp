@@ -20,15 +20,15 @@ namespace Aws
       namespace CapabilitySyncStatusMapper
       {
 
-        static const int IN_SYNC_HASH = HashingUtils::HashString("IN_SYNC");
-        static const int OUT_OF_SYNC_HASH = HashingUtils::HashString("OUT_OF_SYNC");
-        static const int SYNC_FAILED_HASH = HashingUtils::HashString("SYNC_FAILED");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t IN_SYNC_HASH = ConstExprHashingUtils::HashString("IN_SYNC");
+        static constexpr uint32_t OUT_OF_SYNC_HASH = ConstExprHashingUtils::HashString("OUT_OF_SYNC");
+        static constexpr uint32_t SYNC_FAILED_HASH = ConstExprHashingUtils::HashString("SYNC_FAILED");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         CapabilitySyncStatus GetCapabilitySyncStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IN_SYNC_HASH)
           {
             return CapabilitySyncStatus::IN_SYNC;

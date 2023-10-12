@@ -20,13 +20,13 @@ namespace Aws
       namespace DetailTypeMapper
       {
 
-        static const int BASIC_HASH = HashingUtils::HashString("BASIC");
-        static const int FULL_HASH = HashingUtils::HashString("FULL");
+        static constexpr uint32_t BASIC_HASH = ConstExprHashingUtils::HashString("BASIC");
+        static constexpr uint32_t FULL_HASH = ConstExprHashingUtils::HashString("FULL");
 
 
         DetailType GetDetailTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BASIC_HASH)
           {
             return DetailType::BASIC;

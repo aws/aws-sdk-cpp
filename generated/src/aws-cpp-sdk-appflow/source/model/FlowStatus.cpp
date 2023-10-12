@@ -20,17 +20,17 @@ namespace Aws
       namespace FlowStatusMapper
       {
 
-        static const int Active_HASH = HashingUtils::HashString("Active");
-        static const int Deprecated_HASH = HashingUtils::HashString("Deprecated");
-        static const int Deleted_HASH = HashingUtils::HashString("Deleted");
-        static const int Draft_HASH = HashingUtils::HashString("Draft");
-        static const int Errored_HASH = HashingUtils::HashString("Errored");
-        static const int Suspended_HASH = HashingUtils::HashString("Suspended");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
+        static constexpr uint32_t Deprecated_HASH = ConstExprHashingUtils::HashString("Deprecated");
+        static constexpr uint32_t Deleted_HASH = ConstExprHashingUtils::HashString("Deleted");
+        static constexpr uint32_t Draft_HASH = ConstExprHashingUtils::HashString("Draft");
+        static constexpr uint32_t Errored_HASH = ConstExprHashingUtils::HashString("Errored");
+        static constexpr uint32_t Suspended_HASH = ConstExprHashingUtils::HashString("Suspended");
 
 
         FlowStatus GetFlowStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Active_HASH)
           {
             return FlowStatus::Active;

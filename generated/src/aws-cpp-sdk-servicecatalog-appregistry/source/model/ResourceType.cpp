@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int CFN_STACK_HASH = HashingUtils::HashString("CFN_STACK");
-        static const int RESOURCE_TAG_VALUE_HASH = HashingUtils::HashString("RESOURCE_TAG_VALUE");
+        static constexpr uint32_t CFN_STACK_HASH = ConstExprHashingUtils::HashString("CFN_STACK");
+        static constexpr uint32_t RESOURCE_TAG_VALUE_HASH = ConstExprHashingUtils::HashString("RESOURCE_TAG_VALUE");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CFN_STACK_HASH)
           {
             return ResourceType::CFN_STACK;

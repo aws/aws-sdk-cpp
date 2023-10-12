@@ -20,18 +20,18 @@ namespace Aws
       namespace InstanceFleetStateMapper
       {
 
-        static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
-        static const int BOOTSTRAPPING_HASH = HashingUtils::HashString("BOOTSTRAPPING");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int RESIZING_HASH = HashingUtils::HashString("RESIZING");
-        static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
-        static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
-        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
+        static constexpr uint32_t PROVISIONING_HASH = ConstExprHashingUtils::HashString("PROVISIONING");
+        static constexpr uint32_t BOOTSTRAPPING_HASH = ConstExprHashingUtils::HashString("BOOTSTRAPPING");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t RESIZING_HASH = ConstExprHashingUtils::HashString("RESIZING");
+        static constexpr uint32_t SUSPENDED_HASH = ConstExprHashingUtils::HashString("SUSPENDED");
+        static constexpr uint32_t TERMINATING_HASH = ConstExprHashingUtils::HashString("TERMINATING");
+        static constexpr uint32_t TERMINATED_HASH = ConstExprHashingUtils::HashString("TERMINATED");
 
 
         InstanceFleetState GetInstanceFleetStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROVISIONING_HASH)
           {
             return InstanceFleetState::PROVISIONING;

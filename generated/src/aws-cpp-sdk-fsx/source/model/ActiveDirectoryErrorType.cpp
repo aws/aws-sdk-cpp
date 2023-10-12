@@ -20,15 +20,15 @@ namespace Aws
       namespace ActiveDirectoryErrorTypeMapper
       {
 
-        static const int DOMAIN_NOT_FOUND_HASH = HashingUtils::HashString("DOMAIN_NOT_FOUND");
-        static const int INCOMPATIBLE_DOMAIN_MODE_HASH = HashingUtils::HashString("INCOMPATIBLE_DOMAIN_MODE");
-        static const int WRONG_VPC_HASH = HashingUtils::HashString("WRONG_VPC");
-        static const int INVALID_DOMAIN_STAGE_HASH = HashingUtils::HashString("INVALID_DOMAIN_STAGE");
+        static constexpr uint32_t DOMAIN_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("DOMAIN_NOT_FOUND");
+        static constexpr uint32_t INCOMPATIBLE_DOMAIN_MODE_HASH = ConstExprHashingUtils::HashString("INCOMPATIBLE_DOMAIN_MODE");
+        static constexpr uint32_t WRONG_VPC_HASH = ConstExprHashingUtils::HashString("WRONG_VPC");
+        static constexpr uint32_t INVALID_DOMAIN_STAGE_HASH = ConstExprHashingUtils::HashString("INVALID_DOMAIN_STAGE");
 
 
         ActiveDirectoryErrorType GetActiveDirectoryErrorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DOMAIN_NOT_FOUND_HASH)
           {
             return ActiveDirectoryErrorType::DOMAIN_NOT_FOUND;

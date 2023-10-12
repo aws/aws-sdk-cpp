@@ -20,14 +20,14 @@ namespace Aws
       namespace ComparisonMethodMapper
       {
 
-        static const int DIFFERENCE_HASH = HashingUtils::HashString("DIFFERENCE");
-        static const int PERCENT_DIFFERENCE_HASH = HashingUtils::HashString("PERCENT_DIFFERENCE");
-        static const int PERCENT_HASH = HashingUtils::HashString("PERCENT");
+        static constexpr uint32_t DIFFERENCE_HASH = ConstExprHashingUtils::HashString("DIFFERENCE");
+        static constexpr uint32_t PERCENT_DIFFERENCE_HASH = ConstExprHashingUtils::HashString("PERCENT_DIFFERENCE");
+        static constexpr uint32_t PERCENT_HASH = ConstExprHashingUtils::HashString("PERCENT");
 
 
         ComparisonMethod GetComparisonMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DIFFERENCE_HASH)
           {
             return ComparisonMethod::DIFFERENCE;

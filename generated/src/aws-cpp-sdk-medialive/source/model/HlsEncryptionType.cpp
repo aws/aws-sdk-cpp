@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsEncryptionTypeMapper
       {
 
-        static const int AES128_HASH = HashingUtils::HashString("AES128");
-        static const int SAMPLE_AES_HASH = HashingUtils::HashString("SAMPLE_AES");
+        static constexpr uint32_t AES128_HASH = ConstExprHashingUtils::HashString("AES128");
+        static constexpr uint32_t SAMPLE_AES_HASH = ConstExprHashingUtils::HashString("SAMPLE_AES");
 
 
         HlsEncryptionType GetHlsEncryptionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AES128_HASH)
           {
             return HlsEncryptionType::AES128;

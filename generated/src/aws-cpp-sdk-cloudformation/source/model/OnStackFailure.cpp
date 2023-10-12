@@ -20,14 +20,14 @@ namespace Aws
       namespace OnStackFailureMapper
       {
 
-        static const int DO_NOTHING_HASH = HashingUtils::HashString("DO_NOTHING");
-        static const int ROLLBACK_HASH = HashingUtils::HashString("ROLLBACK");
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
+        static constexpr uint32_t DO_NOTHING_HASH = ConstExprHashingUtils::HashString("DO_NOTHING");
+        static constexpr uint32_t ROLLBACK_HASH = ConstExprHashingUtils::HashString("ROLLBACK");
+        static constexpr uint32_t DELETE__HASH = ConstExprHashingUtils::HashString("DELETE");
 
 
         OnStackFailure GetOnStackFailureForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DO_NOTHING_HASH)
           {
             return OnStackFailure::DO_NOTHING;

@@ -20,15 +20,15 @@ namespace Aws
       namespace AuditFrequencyMapper
       {
 
-        static const int DAILY_HASH = HashingUtils::HashString("DAILY");
-        static const int WEEKLY_HASH = HashingUtils::HashString("WEEKLY");
-        static const int BIWEEKLY_HASH = HashingUtils::HashString("BIWEEKLY");
-        static const int MONTHLY_HASH = HashingUtils::HashString("MONTHLY");
+        static constexpr uint32_t DAILY_HASH = ConstExprHashingUtils::HashString("DAILY");
+        static constexpr uint32_t WEEKLY_HASH = ConstExprHashingUtils::HashString("WEEKLY");
+        static constexpr uint32_t BIWEEKLY_HASH = ConstExprHashingUtils::HashString("BIWEEKLY");
+        static constexpr uint32_t MONTHLY_HASH = ConstExprHashingUtils::HashString("MONTHLY");
 
 
         AuditFrequency GetAuditFrequencyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DAILY_HASH)
           {
             return AuditFrequency::DAILY;

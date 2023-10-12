@@ -20,16 +20,16 @@ namespace Aws
       namespace GrpcRetryPolicyEventMapper
       {
 
-        static const int cancelled_HASH = HashingUtils::HashString("cancelled");
-        static const int deadline_exceeded_HASH = HashingUtils::HashString("deadline-exceeded");
-        static const int internal_HASH = HashingUtils::HashString("internal");
-        static const int resource_exhausted_HASH = HashingUtils::HashString("resource-exhausted");
-        static const int unavailable_HASH = HashingUtils::HashString("unavailable");
+        static constexpr uint32_t cancelled_HASH = ConstExprHashingUtils::HashString("cancelled");
+        static constexpr uint32_t deadline_exceeded_HASH = ConstExprHashingUtils::HashString("deadline-exceeded");
+        static constexpr uint32_t internal_HASH = ConstExprHashingUtils::HashString("internal");
+        static constexpr uint32_t resource_exhausted_HASH = ConstExprHashingUtils::HashString("resource-exhausted");
+        static constexpr uint32_t unavailable_HASH = ConstExprHashingUtils::HashString("unavailable");
 
 
         GrpcRetryPolicyEvent GetGrpcRetryPolicyEventForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == cancelled_HASH)
           {
             return GrpcRetryPolicyEvent::cancelled;

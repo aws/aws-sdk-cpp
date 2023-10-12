@@ -20,14 +20,14 @@ namespace Aws
       namespace SmoothGroupEventIdModeMapper
       {
 
-        static const int NO_EVENT_ID_HASH = HashingUtils::HashString("NO_EVENT_ID");
-        static const int USE_CONFIGURED_HASH = HashingUtils::HashString("USE_CONFIGURED");
-        static const int USE_TIMESTAMP_HASH = HashingUtils::HashString("USE_TIMESTAMP");
+        static constexpr uint32_t NO_EVENT_ID_HASH = ConstExprHashingUtils::HashString("NO_EVENT_ID");
+        static constexpr uint32_t USE_CONFIGURED_HASH = ConstExprHashingUtils::HashString("USE_CONFIGURED");
+        static constexpr uint32_t USE_TIMESTAMP_HASH = ConstExprHashingUtils::HashString("USE_TIMESTAMP");
 
 
         SmoothGroupEventIdMode GetSmoothGroupEventIdModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_EVENT_ID_HASH)
           {
             return SmoothGroupEventIdMode::NO_EVENT_ID;

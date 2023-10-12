@@ -20,13 +20,13 @@ namespace Aws
       namespace SnaplockTypeMapper
       {
 
-        static const int COMPLIANCE_HASH = HashingUtils::HashString("COMPLIANCE");
-        static const int ENTERPRISE_HASH = HashingUtils::HashString("ENTERPRISE");
+        static constexpr uint32_t COMPLIANCE_HASH = ConstExprHashingUtils::HashString("COMPLIANCE");
+        static constexpr uint32_t ENTERPRISE_HASH = ConstExprHashingUtils::HashString("ENTERPRISE");
 
 
         SnaplockType GetSnaplockTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPLIANCE_HASH)
           {
             return SnaplockType::COMPLIANCE;

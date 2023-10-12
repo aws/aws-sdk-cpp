@@ -20,13 +20,13 @@ namespace Aws
       namespace TrustProviderTypeMapper
       {
 
-        static const int user_HASH = HashingUtils::HashString("user");
-        static const int device_HASH = HashingUtils::HashString("device");
+        static constexpr uint32_t user_HASH = ConstExprHashingUtils::HashString("user");
+        static constexpr uint32_t device_HASH = ConstExprHashingUtils::HashString("device");
 
 
         TrustProviderType GetTrustProviderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == user_HASH)
           {
             return TrustProviderType::user;

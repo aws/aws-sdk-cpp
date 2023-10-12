@@ -20,18 +20,18 @@ namespace Aws
       namespace TransitGatewayMulitcastDomainAssociationStateMapper
       {
 
-        static const int pendingAcceptance_HASH = HashingUtils::HashString("pendingAcceptance");
-        static const int associating_HASH = HashingUtils::HashString("associating");
-        static const int associated_HASH = HashingUtils::HashString("associated");
-        static const int disassociating_HASH = HashingUtils::HashString("disassociating");
-        static const int disassociated_HASH = HashingUtils::HashString("disassociated");
-        static const int rejected_HASH = HashingUtils::HashString("rejected");
-        static const int failed_HASH = HashingUtils::HashString("failed");
+        static constexpr uint32_t pendingAcceptance_HASH = ConstExprHashingUtils::HashString("pendingAcceptance");
+        static constexpr uint32_t associating_HASH = ConstExprHashingUtils::HashString("associating");
+        static constexpr uint32_t associated_HASH = ConstExprHashingUtils::HashString("associated");
+        static constexpr uint32_t disassociating_HASH = ConstExprHashingUtils::HashString("disassociating");
+        static constexpr uint32_t disassociated_HASH = ConstExprHashingUtils::HashString("disassociated");
+        static constexpr uint32_t rejected_HASH = ConstExprHashingUtils::HashString("rejected");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
 
 
         TransitGatewayMulitcastDomainAssociationState GetTransitGatewayMulitcastDomainAssociationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pendingAcceptance_HASH)
           {
             return TransitGatewayMulitcastDomainAssociationState::pendingAcceptance;

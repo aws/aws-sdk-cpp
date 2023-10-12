@@ -20,15 +20,15 @@ namespace Aws
       namespace ReasonCodeMapper
       {
 
-        static const int AWS_SERVICE_ACCESS_DISABLED_HASH = HashingUtils::HashString("AWS_SERVICE_ACCESS_DISABLED");
-        static const int DELEGATED_ADMINISTRATOR_DEREGISTERED_HASH = HashingUtils::HashString("DELEGATED_ADMINISTRATOR_DEREGISTERED");
-        static const int ORGANIZATION_DELETED_HASH = HashingUtils::HashString("ORGANIZATION_DELETED");
-        static const int SERVICE_LINKED_ROLE_CREATION_FAILED_HASH = HashingUtils::HashString("SERVICE_LINKED_ROLE_CREATION_FAILED");
+        static constexpr uint32_t AWS_SERVICE_ACCESS_DISABLED_HASH = ConstExprHashingUtils::HashString("AWS_SERVICE_ACCESS_DISABLED");
+        static constexpr uint32_t DELEGATED_ADMINISTRATOR_DEREGISTERED_HASH = ConstExprHashingUtils::HashString("DELEGATED_ADMINISTRATOR_DEREGISTERED");
+        static constexpr uint32_t ORGANIZATION_DELETED_HASH = ConstExprHashingUtils::HashString("ORGANIZATION_DELETED");
+        static constexpr uint32_t SERVICE_LINKED_ROLE_CREATION_FAILED_HASH = ConstExprHashingUtils::HashString("SERVICE_LINKED_ROLE_CREATION_FAILED");
 
 
         ReasonCode GetReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_SERVICE_ACCESS_DISABLED_HASH)
           {
             return ReasonCode::AWS_SERVICE_ACCESS_DISABLED;

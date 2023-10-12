@@ -20,13 +20,13 @@ namespace Aws
       namespace RouteStateMapper
       {
 
-        static const int active_HASH = HashingUtils::HashString("active");
-        static const int blackhole_HASH = HashingUtils::HashString("blackhole");
+        static constexpr uint32_t active_HASH = ConstExprHashingUtils::HashString("active");
+        static constexpr uint32_t blackhole_HASH = ConstExprHashingUtils::HashString("blackhole");
 
 
         RouteState GetRouteStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == active_HASH)
           {
             return RouteState::active;

@@ -20,13 +20,13 @@ namespace Aws
       namespace AutoMLOverrideStrategyMapper
       {
 
-        static const int LatencyOptimized_HASH = HashingUtils::HashString("LatencyOptimized");
-        static const int AccuracyOptimized_HASH = HashingUtils::HashString("AccuracyOptimized");
+        static constexpr uint32_t LatencyOptimized_HASH = ConstExprHashingUtils::HashString("LatencyOptimized");
+        static constexpr uint32_t AccuracyOptimized_HASH = ConstExprHashingUtils::HashString("AccuracyOptimized");
 
 
         AutoMLOverrideStrategy GetAutoMLOverrideStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LatencyOptimized_HASH)
           {
             return AutoMLOverrideStrategy::LatencyOptimized;

@@ -20,15 +20,15 @@ namespace Aws
       namespace ValidatePolicyFindingTypeMapper
       {
 
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int SECURITY_WARNING_HASH = HashingUtils::HashString("SECURITY_WARNING");
-        static const int SUGGESTION_HASH = HashingUtils::HashString("SUGGESTION");
-        static const int WARNING_HASH = HashingUtils::HashString("WARNING");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t SECURITY_WARNING_HASH = ConstExprHashingUtils::HashString("SECURITY_WARNING");
+        static constexpr uint32_t SUGGESTION_HASH = ConstExprHashingUtils::HashString("SUGGESTION");
+        static constexpr uint32_t WARNING_HASH = ConstExprHashingUtils::HashString("WARNING");
 
 
         ValidatePolicyFindingType GetValidatePolicyFindingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ERROR__HASH)
           {
             return ValidatePolicyFindingType::ERROR_;

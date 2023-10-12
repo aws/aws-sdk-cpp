@@ -20,14 +20,14 @@ namespace Aws
       namespace IsMonitoredByJobMapper
       {
 
-        static const int TRUE_HASH = HashingUtils::HashString("TRUE");
-        static const int FALSE_HASH = HashingUtils::HashString("FALSE");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t TRUE_HASH = ConstExprHashingUtils::HashString("TRUE");
+        static constexpr uint32_t FALSE_HASH = ConstExprHashingUtils::HashString("FALSE");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         IsMonitoredByJob GetIsMonitoredByJobForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRUE_HASH)
           {
             return IsMonitoredByJob::TRUE;

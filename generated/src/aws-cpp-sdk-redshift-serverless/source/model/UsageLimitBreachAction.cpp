@@ -20,14 +20,14 @@ namespace Aws
       namespace UsageLimitBreachActionMapper
       {
 
-        static const int log_HASH = HashingUtils::HashString("log");
-        static const int emit_metric_HASH = HashingUtils::HashString("emit-metric");
-        static const int deactivate_HASH = HashingUtils::HashString("deactivate");
+        static constexpr uint32_t log_HASH = ConstExprHashingUtils::HashString("log");
+        static constexpr uint32_t emit_metric_HASH = ConstExprHashingUtils::HashString("emit-metric");
+        static constexpr uint32_t deactivate_HASH = ConstExprHashingUtils::HashString("deactivate");
 
 
         UsageLimitBreachAction GetUsageLimitBreachActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == log_HASH)
           {
             return UsageLimitBreachAction::log;

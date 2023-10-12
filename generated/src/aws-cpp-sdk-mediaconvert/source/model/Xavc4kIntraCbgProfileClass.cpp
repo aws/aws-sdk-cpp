@@ -20,14 +20,14 @@ namespace Aws
       namespace Xavc4kIntraCbgProfileClassMapper
       {
 
-        static const int CLASS_100_HASH = HashingUtils::HashString("CLASS_100");
-        static const int CLASS_300_HASH = HashingUtils::HashString("CLASS_300");
-        static const int CLASS_480_HASH = HashingUtils::HashString("CLASS_480");
+        static constexpr uint32_t CLASS_100_HASH = ConstExprHashingUtils::HashString("CLASS_100");
+        static constexpr uint32_t CLASS_300_HASH = ConstExprHashingUtils::HashString("CLASS_300");
+        static constexpr uint32_t CLASS_480_HASH = ConstExprHashingUtils::HashString("CLASS_480");
 
 
         Xavc4kIntraCbgProfileClass GetXavc4kIntraCbgProfileClassForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLASS_100_HASH)
           {
             return Xavc4kIntraCbgProfileClass::CLASS_100;

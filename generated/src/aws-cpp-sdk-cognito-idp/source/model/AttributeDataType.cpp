@@ -20,15 +20,15 @@ namespace Aws
       namespace AttributeDataTypeMapper
       {
 
-        static const int String_HASH = HashingUtils::HashString("String");
-        static const int Number_HASH = HashingUtils::HashString("Number");
-        static const int DateTime_HASH = HashingUtils::HashString("DateTime");
-        static const int Boolean_HASH = HashingUtils::HashString("Boolean");
+        static constexpr uint32_t String_HASH = ConstExprHashingUtils::HashString("String");
+        static constexpr uint32_t Number_HASH = ConstExprHashingUtils::HashString("Number");
+        static constexpr uint32_t DateTime_HASH = ConstExprHashingUtils::HashString("DateTime");
+        static constexpr uint32_t Boolean_HASH = ConstExprHashingUtils::HashString("Boolean");
 
 
         AttributeDataType GetAttributeDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == String_HASH)
           {
             return AttributeDataType::String;

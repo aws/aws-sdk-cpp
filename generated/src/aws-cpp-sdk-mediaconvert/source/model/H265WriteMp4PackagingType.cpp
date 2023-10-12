@@ -20,13 +20,13 @@ namespace Aws
       namespace H265WriteMp4PackagingTypeMapper
       {
 
-        static const int HVC1_HASH = HashingUtils::HashString("HVC1");
-        static const int HEV1_HASH = HashingUtils::HashString("HEV1");
+        static constexpr uint32_t HVC1_HASH = ConstExprHashingUtils::HashString("HVC1");
+        static constexpr uint32_t HEV1_HASH = ConstExprHashingUtils::HashString("HEV1");
 
 
         H265WriteMp4PackagingType GetH265WriteMp4PackagingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HVC1_HASH)
           {
             return H265WriteMp4PackagingType::HVC1;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ReportTypeMapper
       {
 
-        static const int TEST_HASH = HashingUtils::HashString("TEST");
-        static const int CODE_COVERAGE_HASH = HashingUtils::HashString("CODE_COVERAGE");
+        static constexpr uint32_t TEST_HASH = ConstExprHashingUtils::HashString("TEST");
+        static constexpr uint32_t CODE_COVERAGE_HASH = ConstExprHashingUtils::HashString("CODE_COVERAGE");
 
 
         ReportType GetReportTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TEST_HASH)
           {
             return ReportType::TEST;

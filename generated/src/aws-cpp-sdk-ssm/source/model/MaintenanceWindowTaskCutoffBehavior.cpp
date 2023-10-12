@@ -20,13 +20,13 @@ namespace Aws
       namespace MaintenanceWindowTaskCutoffBehaviorMapper
       {
 
-        static const int CONTINUE_TASK_HASH = HashingUtils::HashString("CONTINUE_TASK");
-        static const int CANCEL_TASK_HASH = HashingUtils::HashString("CANCEL_TASK");
+        static constexpr uint32_t CONTINUE_TASK_HASH = ConstExprHashingUtils::HashString("CONTINUE_TASK");
+        static constexpr uint32_t CANCEL_TASK_HASH = ConstExprHashingUtils::HashString("CANCEL_TASK");
 
 
         MaintenanceWindowTaskCutoffBehavior GetMaintenanceWindowTaskCutoffBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONTINUE_TASK_HASH)
           {
             return MaintenanceWindowTaskCutoffBehavior::CONTINUE_TASK;

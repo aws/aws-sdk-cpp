@@ -20,26 +20,26 @@ namespace Aws
       namespace DocumentTypeMapper
       {
 
-        static const int Command_HASH = HashingUtils::HashString("Command");
-        static const int Policy_HASH = HashingUtils::HashString("Policy");
-        static const int Automation_HASH = HashingUtils::HashString("Automation");
-        static const int Session_HASH = HashingUtils::HashString("Session");
-        static const int Package_HASH = HashingUtils::HashString("Package");
-        static const int ApplicationConfiguration_HASH = HashingUtils::HashString("ApplicationConfiguration");
-        static const int ApplicationConfigurationSchema_HASH = HashingUtils::HashString("ApplicationConfigurationSchema");
-        static const int DeploymentStrategy_HASH = HashingUtils::HashString("DeploymentStrategy");
-        static const int ChangeCalendar_HASH = HashingUtils::HashString("ChangeCalendar");
-        static const int Automation_ChangeTemplate_HASH = HashingUtils::HashString("Automation.ChangeTemplate");
-        static const int ProblemAnalysis_HASH = HashingUtils::HashString("ProblemAnalysis");
-        static const int ProblemAnalysisTemplate_HASH = HashingUtils::HashString("ProblemAnalysisTemplate");
-        static const int CloudFormation_HASH = HashingUtils::HashString("CloudFormation");
-        static const int ConformancePackTemplate_HASH = HashingUtils::HashString("ConformancePackTemplate");
-        static const int QuickSetup_HASH = HashingUtils::HashString("QuickSetup");
+        static constexpr uint32_t Command_HASH = ConstExprHashingUtils::HashString("Command");
+        static constexpr uint32_t Policy_HASH = ConstExprHashingUtils::HashString("Policy");
+        static constexpr uint32_t Automation_HASH = ConstExprHashingUtils::HashString("Automation");
+        static constexpr uint32_t Session_HASH = ConstExprHashingUtils::HashString("Session");
+        static constexpr uint32_t Package_HASH = ConstExprHashingUtils::HashString("Package");
+        static constexpr uint32_t ApplicationConfiguration_HASH = ConstExprHashingUtils::HashString("ApplicationConfiguration");
+        static constexpr uint32_t ApplicationConfigurationSchema_HASH = ConstExprHashingUtils::HashString("ApplicationConfigurationSchema");
+        static constexpr uint32_t DeploymentStrategy_HASH = ConstExprHashingUtils::HashString("DeploymentStrategy");
+        static constexpr uint32_t ChangeCalendar_HASH = ConstExprHashingUtils::HashString("ChangeCalendar");
+        static constexpr uint32_t Automation_ChangeTemplate_HASH = ConstExprHashingUtils::HashString("Automation.ChangeTemplate");
+        static constexpr uint32_t ProblemAnalysis_HASH = ConstExprHashingUtils::HashString("ProblemAnalysis");
+        static constexpr uint32_t ProblemAnalysisTemplate_HASH = ConstExprHashingUtils::HashString("ProblemAnalysisTemplate");
+        static constexpr uint32_t CloudFormation_HASH = ConstExprHashingUtils::HashString("CloudFormation");
+        static constexpr uint32_t ConformancePackTemplate_HASH = ConstExprHashingUtils::HashString("ConformancePackTemplate");
+        static constexpr uint32_t QuickSetup_HASH = ConstExprHashingUtils::HashString("QuickSetup");
 
 
         DocumentType GetDocumentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Command_HASH)
           {
             return DocumentType::Command;

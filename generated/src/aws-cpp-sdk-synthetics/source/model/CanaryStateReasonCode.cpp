@@ -20,23 +20,23 @@ namespace Aws
       namespace CanaryStateReasonCodeMapper
       {
 
-        static const int INVALID_PERMISSIONS_HASH = HashingUtils::HashString("INVALID_PERMISSIONS");
-        static const int CREATE_PENDING_HASH = HashingUtils::HashString("CREATE_PENDING");
-        static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
-        static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
-        static const int UPDATE_PENDING_HASH = HashingUtils::HashString("UPDATE_PENDING");
-        static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
-        static const int UPDATE_COMPLETE_HASH = HashingUtils::HashString("UPDATE_COMPLETE");
-        static const int ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("ROLLBACK_COMPLETE");
-        static const int ROLLBACK_FAILED_HASH = HashingUtils::HashString("ROLLBACK_FAILED");
-        static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
-        static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
-        static const int SYNC_DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("SYNC_DELETE_IN_PROGRESS");
+        static constexpr uint32_t INVALID_PERMISSIONS_HASH = ConstExprHashingUtils::HashString("INVALID_PERMISSIONS");
+        static constexpr uint32_t CREATE_PENDING_HASH = ConstExprHashingUtils::HashString("CREATE_PENDING");
+        static constexpr uint32_t CREATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("CREATE_IN_PROGRESS");
+        static constexpr uint32_t CREATE_FAILED_HASH = ConstExprHashingUtils::HashString("CREATE_FAILED");
+        static constexpr uint32_t UPDATE_PENDING_HASH = ConstExprHashingUtils::HashString("UPDATE_PENDING");
+        static constexpr uint32_t UPDATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("UPDATE_IN_PROGRESS");
+        static constexpr uint32_t UPDATE_COMPLETE_HASH = ConstExprHashingUtils::HashString("UPDATE_COMPLETE");
+        static constexpr uint32_t ROLLBACK_COMPLETE_HASH = ConstExprHashingUtils::HashString("ROLLBACK_COMPLETE");
+        static constexpr uint32_t ROLLBACK_FAILED_HASH = ConstExprHashingUtils::HashString("ROLLBACK_FAILED");
+        static constexpr uint32_t DELETE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("DELETE_IN_PROGRESS");
+        static constexpr uint32_t DELETE_FAILED_HASH = ConstExprHashingUtils::HashString("DELETE_FAILED");
+        static constexpr uint32_t SYNC_DELETE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("SYNC_DELETE_IN_PROGRESS");
 
 
         CanaryStateReasonCode GetCanaryStateReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVALID_PERMISSIONS_HASH)
           {
             return CanaryStateReasonCode::INVALID_PERMISSIONS;

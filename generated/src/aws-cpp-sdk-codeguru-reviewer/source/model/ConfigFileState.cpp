@@ -20,14 +20,14 @@ namespace Aws
       namespace ConfigFileStateMapper
       {
 
-        static const int Present_HASH = HashingUtils::HashString("Present");
-        static const int Absent_HASH = HashingUtils::HashString("Absent");
-        static const int PresentWithErrors_HASH = HashingUtils::HashString("PresentWithErrors");
+        static constexpr uint32_t Present_HASH = ConstExprHashingUtils::HashString("Present");
+        static constexpr uint32_t Absent_HASH = ConstExprHashingUtils::HashString("Absent");
+        static constexpr uint32_t PresentWithErrors_HASH = ConstExprHashingUtils::HashString("PresentWithErrors");
 
 
         ConfigFileState GetConfigFileStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Present_HASH)
           {
             return ConfigFileState::Present;

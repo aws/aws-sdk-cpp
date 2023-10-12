@@ -20,13 +20,13 @@ namespace Aws
       namespace AutoScalingConfigurationMapper
       {
 
-        static const int TargetTrackingScalingCpu_HASH = HashingUtils::HashString("TargetTrackingScalingCpu");
-        static const int TargetTrackingScalingMemory_HASH = HashingUtils::HashString("TargetTrackingScalingMemory");
+        static constexpr uint32_t TargetTrackingScalingCpu_HASH = ConstExprHashingUtils::HashString("TargetTrackingScalingCpu");
+        static constexpr uint32_t TargetTrackingScalingMemory_HASH = ConstExprHashingUtils::HashString("TargetTrackingScalingMemory");
 
 
         AutoScalingConfiguration GetAutoScalingConfigurationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TargetTrackingScalingCpu_HASH)
           {
             return AutoScalingConfiguration::TargetTrackingScalingCpu;

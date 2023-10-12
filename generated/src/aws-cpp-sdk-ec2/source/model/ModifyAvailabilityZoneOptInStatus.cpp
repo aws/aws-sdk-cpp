@@ -20,13 +20,13 @@ namespace Aws
       namespace ModifyAvailabilityZoneOptInStatusMapper
       {
 
-        static const int opted_in_HASH = HashingUtils::HashString("opted-in");
-        static const int not_opted_in_HASH = HashingUtils::HashString("not-opted-in");
+        static constexpr uint32_t opted_in_HASH = ConstExprHashingUtils::HashString("opted-in");
+        static constexpr uint32_t not_opted_in_HASH = ConstExprHashingUtils::HashString("not-opted-in");
 
 
         ModifyAvailabilityZoneOptInStatus GetModifyAvailabilityZoneOptInStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == opted_in_HASH)
           {
             return ModifyAvailabilityZoneOptInStatus::opted_in;

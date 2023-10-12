@@ -20,12 +20,12 @@ namespace Aws
       namespace CostCategorySplitChargeRuleParameterTypeMapper
       {
 
-        static const int ALLOCATION_PERCENTAGES_HASH = HashingUtils::HashString("ALLOCATION_PERCENTAGES");
+        static constexpr uint32_t ALLOCATION_PERCENTAGES_HASH = ConstExprHashingUtils::HashString("ALLOCATION_PERCENTAGES");
 
 
         CostCategorySplitChargeRuleParameterType GetCostCategorySplitChargeRuleParameterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALLOCATION_PERCENTAGES_HASH)
           {
             return CostCategorySplitChargeRuleParameterType::ALLOCATION_PERCENTAGES;

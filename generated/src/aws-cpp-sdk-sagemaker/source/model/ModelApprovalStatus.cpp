@@ -20,14 +20,14 @@ namespace Aws
       namespace ModelApprovalStatusMapper
       {
 
-        static const int Approved_HASH = HashingUtils::HashString("Approved");
-        static const int Rejected_HASH = HashingUtils::HashString("Rejected");
-        static const int PendingManualApproval_HASH = HashingUtils::HashString("PendingManualApproval");
+        static constexpr uint32_t Approved_HASH = ConstExprHashingUtils::HashString("Approved");
+        static constexpr uint32_t Rejected_HASH = ConstExprHashingUtils::HashString("Rejected");
+        static constexpr uint32_t PendingManualApproval_HASH = ConstExprHashingUtils::HashString("PendingManualApproval");
 
 
         ModelApprovalStatus GetModelApprovalStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Approved_HASH)
           {
             return ModelApprovalStatus::Approved;

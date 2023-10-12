@@ -20,14 +20,14 @@ namespace Aws
       namespace SimulationSoftwareSuiteTypeMapper
       {
 
-        static const int Gazebo_HASH = HashingUtils::HashString("Gazebo");
-        static const int RosbagPlay_HASH = HashingUtils::HashString("RosbagPlay");
-        static const int SimulationRuntime_HASH = HashingUtils::HashString("SimulationRuntime");
+        static constexpr uint32_t Gazebo_HASH = ConstExprHashingUtils::HashString("Gazebo");
+        static constexpr uint32_t RosbagPlay_HASH = ConstExprHashingUtils::HashString("RosbagPlay");
+        static constexpr uint32_t SimulationRuntime_HASH = ConstExprHashingUtils::HashString("SimulationRuntime");
 
 
         SimulationSoftwareSuiteType GetSimulationSoftwareSuiteTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Gazebo_HASH)
           {
             return SimulationSoftwareSuiteType::Gazebo;

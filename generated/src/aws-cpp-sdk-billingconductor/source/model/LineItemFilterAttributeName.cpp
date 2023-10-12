@@ -20,12 +20,12 @@ namespace Aws
       namespace LineItemFilterAttributeNameMapper
       {
 
-        static const int LINE_ITEM_TYPE_HASH = HashingUtils::HashString("LINE_ITEM_TYPE");
+        static constexpr uint32_t LINE_ITEM_TYPE_HASH = ConstExprHashingUtils::HashString("LINE_ITEM_TYPE");
 
 
         LineItemFilterAttributeName GetLineItemFilterAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LINE_ITEM_TYPE_HASH)
           {
             return LineItemFilterAttributeName::LINE_ITEM_TYPE;

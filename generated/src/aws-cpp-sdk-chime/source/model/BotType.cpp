@@ -20,12 +20,12 @@ namespace Aws
       namespace BotTypeMapper
       {
 
-        static const int ChatBot_HASH = HashingUtils::HashString("ChatBot");
+        static constexpr uint32_t ChatBot_HASH = ConstExprHashingUtils::HashString("ChatBot");
 
 
         BotType GetBotTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ChatBot_HASH)
           {
             return BotType::ChatBot;

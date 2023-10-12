@@ -20,13 +20,13 @@ namespace Aws
       namespace H265TierMapper
       {
 
-        static const int HIGH_HASH = HashingUtils::HashString("HIGH");
-        static const int MAIN_HASH = HashingUtils::HashString("MAIN");
+        static constexpr uint32_t HIGH_HASH = ConstExprHashingUtils::HashString("HIGH");
+        static constexpr uint32_t MAIN_HASH = ConstExprHashingUtils::HashString("MAIN");
 
 
         H265Tier GetH265TierForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HIGH_HASH)
           {
             return H265Tier::HIGH;

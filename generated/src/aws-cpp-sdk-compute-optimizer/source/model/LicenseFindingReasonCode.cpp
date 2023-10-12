@@ -20,15 +20,15 @@ namespace Aws
       namespace LicenseFindingReasonCodeMapper
       {
 
-        static const int InvalidCloudWatchApplicationInsightsSetup_HASH = HashingUtils::HashString("InvalidCloudWatchApplicationInsightsSetup");
-        static const int CloudWatchApplicationInsightsError_HASH = HashingUtils::HashString("CloudWatchApplicationInsightsError");
-        static const int LicenseOverprovisioned_HASH = HashingUtils::HashString("LicenseOverprovisioned");
-        static const int Optimized_HASH = HashingUtils::HashString("Optimized");
+        static constexpr uint32_t InvalidCloudWatchApplicationInsightsSetup_HASH = ConstExprHashingUtils::HashString("InvalidCloudWatchApplicationInsightsSetup");
+        static constexpr uint32_t CloudWatchApplicationInsightsError_HASH = ConstExprHashingUtils::HashString("CloudWatchApplicationInsightsError");
+        static constexpr uint32_t LicenseOverprovisioned_HASH = ConstExprHashingUtils::HashString("LicenseOverprovisioned");
+        static constexpr uint32_t Optimized_HASH = ConstExprHashingUtils::HashString("Optimized");
 
 
         LicenseFindingReasonCode GetLicenseFindingReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InvalidCloudWatchApplicationInsightsSetup_HASH)
           {
             return LicenseFindingReasonCode::InvalidCloudWatchApplicationInsightsSetup;

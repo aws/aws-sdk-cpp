@@ -20,17 +20,17 @@ namespace Aws
       namespace ScheduleFrequencyTypeMapper
       {
 
-        static const int BYMINUTE_HASH = HashingUtils::HashString("BYMINUTE");
-        static const int HOURLY_HASH = HashingUtils::HashString("HOURLY");
-        static const int DAILY_HASH = HashingUtils::HashString("DAILY");
-        static const int WEEKLY_HASH = HashingUtils::HashString("WEEKLY");
-        static const int MONTHLY_HASH = HashingUtils::HashString("MONTHLY");
-        static const int ONCE_HASH = HashingUtils::HashString("ONCE");
+        static constexpr uint32_t BYMINUTE_HASH = ConstExprHashingUtils::HashString("BYMINUTE");
+        static constexpr uint32_t HOURLY_HASH = ConstExprHashingUtils::HashString("HOURLY");
+        static constexpr uint32_t DAILY_HASH = ConstExprHashingUtils::HashString("DAILY");
+        static constexpr uint32_t WEEKLY_HASH = ConstExprHashingUtils::HashString("WEEKLY");
+        static constexpr uint32_t MONTHLY_HASH = ConstExprHashingUtils::HashString("MONTHLY");
+        static constexpr uint32_t ONCE_HASH = ConstExprHashingUtils::HashString("ONCE");
 
 
         ScheduleFrequencyType GetScheduleFrequencyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BYMINUTE_HASH)
           {
             return ScheduleFrequencyType::BYMINUTE;

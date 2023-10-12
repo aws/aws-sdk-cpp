@@ -20,15 +20,15 @@ namespace Aws
       namespace FileSystemTypeMapper
       {
 
-        static const int WINDOWS_HASH = HashingUtils::HashString("WINDOWS");
-        static const int LUSTRE_HASH = HashingUtils::HashString("LUSTRE");
-        static const int ONTAP_HASH = HashingUtils::HashString("ONTAP");
-        static const int OPENZFS_HASH = HashingUtils::HashString("OPENZFS");
+        static constexpr uint32_t WINDOWS_HASH = ConstExprHashingUtils::HashString("WINDOWS");
+        static constexpr uint32_t LUSTRE_HASH = ConstExprHashingUtils::HashString("LUSTRE");
+        static constexpr uint32_t ONTAP_HASH = ConstExprHashingUtils::HashString("ONTAP");
+        static constexpr uint32_t OPENZFS_HASH = ConstExprHashingUtils::HashString("OPENZFS");
 
 
         FileSystemType GetFileSystemTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WINDOWS_HASH)
           {
             return FileSystemType::WINDOWS;

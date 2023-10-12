@@ -20,14 +20,14 @@ namespace Aws
       namespace NetworkConnectionStatusMapper
       {
 
-        static const int CONNECTED_HASH = HashingUtils::HashString("CONNECTED");
-        static const int NOT_CONNECTED_HASH = HashingUtils::HashString("NOT_CONNECTED");
-        static const int CONNECTING_HASH = HashingUtils::HashString("CONNECTING");
+        static constexpr uint32_t CONNECTED_HASH = ConstExprHashingUtils::HashString("CONNECTED");
+        static constexpr uint32_t NOT_CONNECTED_HASH = ConstExprHashingUtils::HashString("NOT_CONNECTED");
+        static constexpr uint32_t CONNECTING_HASH = ConstExprHashingUtils::HashString("CONNECTING");
 
 
         NetworkConnectionStatus GetNetworkConnectionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONNECTED_HASH)
           {
             return NetworkConnectionStatus::CONNECTED;

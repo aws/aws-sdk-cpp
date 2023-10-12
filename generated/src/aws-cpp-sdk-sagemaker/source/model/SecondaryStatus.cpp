@@ -20,27 +20,27 @@ namespace Aws
       namespace SecondaryStatusMapper
       {
 
-        static const int Starting_HASH = HashingUtils::HashString("Starting");
-        static const int LaunchingMLInstances_HASH = HashingUtils::HashString("LaunchingMLInstances");
-        static const int PreparingTrainingStack_HASH = HashingUtils::HashString("PreparingTrainingStack");
-        static const int Downloading_HASH = HashingUtils::HashString("Downloading");
-        static const int DownloadingTrainingImage_HASH = HashingUtils::HashString("DownloadingTrainingImage");
-        static const int Training_HASH = HashingUtils::HashString("Training");
-        static const int Uploading_HASH = HashingUtils::HashString("Uploading");
-        static const int Stopping_HASH = HashingUtils::HashString("Stopping");
-        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
-        static const int MaxRuntimeExceeded_HASH = HashingUtils::HashString("MaxRuntimeExceeded");
-        static const int Completed_HASH = HashingUtils::HashString("Completed");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Interrupted_HASH = HashingUtils::HashString("Interrupted");
-        static const int MaxWaitTimeExceeded_HASH = HashingUtils::HashString("MaxWaitTimeExceeded");
-        static const int Updating_HASH = HashingUtils::HashString("Updating");
-        static const int Restarting_HASH = HashingUtils::HashString("Restarting");
+        static constexpr uint32_t Starting_HASH = ConstExprHashingUtils::HashString("Starting");
+        static constexpr uint32_t LaunchingMLInstances_HASH = ConstExprHashingUtils::HashString("LaunchingMLInstances");
+        static constexpr uint32_t PreparingTrainingStack_HASH = ConstExprHashingUtils::HashString("PreparingTrainingStack");
+        static constexpr uint32_t Downloading_HASH = ConstExprHashingUtils::HashString("Downloading");
+        static constexpr uint32_t DownloadingTrainingImage_HASH = ConstExprHashingUtils::HashString("DownloadingTrainingImage");
+        static constexpr uint32_t Training_HASH = ConstExprHashingUtils::HashString("Training");
+        static constexpr uint32_t Uploading_HASH = ConstExprHashingUtils::HashString("Uploading");
+        static constexpr uint32_t Stopping_HASH = ConstExprHashingUtils::HashString("Stopping");
+        static constexpr uint32_t Stopped_HASH = ConstExprHashingUtils::HashString("Stopped");
+        static constexpr uint32_t MaxRuntimeExceeded_HASH = ConstExprHashingUtils::HashString("MaxRuntimeExceeded");
+        static constexpr uint32_t Completed_HASH = ConstExprHashingUtils::HashString("Completed");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Interrupted_HASH = ConstExprHashingUtils::HashString("Interrupted");
+        static constexpr uint32_t MaxWaitTimeExceeded_HASH = ConstExprHashingUtils::HashString("MaxWaitTimeExceeded");
+        static constexpr uint32_t Updating_HASH = ConstExprHashingUtils::HashString("Updating");
+        static constexpr uint32_t Restarting_HASH = ConstExprHashingUtils::HashString("Restarting");
 
 
         SecondaryStatus GetSecondaryStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Starting_HASH)
           {
             return SecondaryStatus::Starting;

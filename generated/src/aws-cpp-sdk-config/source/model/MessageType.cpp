@@ -20,15 +20,15 @@ namespace Aws
       namespace MessageTypeMapper
       {
 
-        static const int ConfigurationItemChangeNotification_HASH = HashingUtils::HashString("ConfigurationItemChangeNotification");
-        static const int ConfigurationSnapshotDeliveryCompleted_HASH = HashingUtils::HashString("ConfigurationSnapshotDeliveryCompleted");
-        static const int ScheduledNotification_HASH = HashingUtils::HashString("ScheduledNotification");
-        static const int OversizedConfigurationItemChangeNotification_HASH = HashingUtils::HashString("OversizedConfigurationItemChangeNotification");
+        static constexpr uint32_t ConfigurationItemChangeNotification_HASH = ConstExprHashingUtils::HashString("ConfigurationItemChangeNotification");
+        static constexpr uint32_t ConfigurationSnapshotDeliveryCompleted_HASH = ConstExprHashingUtils::HashString("ConfigurationSnapshotDeliveryCompleted");
+        static constexpr uint32_t ScheduledNotification_HASH = ConstExprHashingUtils::HashString("ScheduledNotification");
+        static constexpr uint32_t OversizedConfigurationItemChangeNotification_HASH = ConstExprHashingUtils::HashString("OversizedConfigurationItemChangeNotification");
 
 
         MessageType GetMessageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ConfigurationItemChangeNotification_HASH)
           {
             return MessageType::ConfigurationItemChangeNotification;

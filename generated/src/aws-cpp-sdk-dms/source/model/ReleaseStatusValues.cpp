@@ -20,13 +20,13 @@ namespace Aws
       namespace ReleaseStatusValuesMapper
       {
 
-        static const int beta_HASH = HashingUtils::HashString("beta");
-        static const int prod_HASH = HashingUtils::HashString("prod");
+        static constexpr uint32_t beta_HASH = ConstExprHashingUtils::HashString("beta");
+        static constexpr uint32_t prod_HASH = ConstExprHashingUtils::HashString("prod");
 
 
         ReleaseStatusValues GetReleaseStatusValuesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == beta_HASH)
           {
             return ReleaseStatusValues::beta;

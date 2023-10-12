@@ -20,13 +20,13 @@ namespace Aws
       namespace EvaluationModeMapper
       {
 
-        static const int DETECTIVE_HASH = HashingUtils::HashString("DETECTIVE");
-        static const int PROACTIVE_HASH = HashingUtils::HashString("PROACTIVE");
+        static constexpr uint32_t DETECTIVE_HASH = ConstExprHashingUtils::HashString("DETECTIVE");
+        static constexpr uint32_t PROACTIVE_HASH = ConstExprHashingUtils::HashString("PROACTIVE");
 
 
         EvaluationMode GetEvaluationModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DETECTIVE_HASH)
           {
             return EvaluationMode::DETECTIVE;

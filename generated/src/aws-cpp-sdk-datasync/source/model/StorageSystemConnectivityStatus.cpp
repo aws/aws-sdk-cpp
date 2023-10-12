@@ -20,14 +20,14 @@ namespace Aws
       namespace StorageSystemConnectivityStatusMapper
       {
 
-        static const int PASS_HASH = HashingUtils::HashString("PASS");
-        static const int FAIL_HASH = HashingUtils::HashString("FAIL");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t PASS_HASH = ConstExprHashingUtils::HashString("PASS");
+        static constexpr uint32_t FAIL_HASH = ConstExprHashingUtils::HashString("FAIL");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         StorageSystemConnectivityStatus GetStorageSystemConnectivityStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PASS_HASH)
           {
             return StorageSystemConnectivityStatus::PASS;

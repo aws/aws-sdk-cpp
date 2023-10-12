@@ -20,18 +20,18 @@ namespace Aws
       namespace ThreatIntelSetStatusMapper
       {
 
-        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
-        static const int ACTIVATING_HASH = HashingUtils::HashString("ACTIVATING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DEACTIVATING_HASH = HashingUtils::HashString("DEACTIVATING");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int DELETE_PENDING_HASH = HashingUtils::HashString("DELETE_PENDING");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t INACTIVE_HASH = ConstExprHashingUtils::HashString("INACTIVE");
+        static constexpr uint32_t ACTIVATING_HASH = ConstExprHashingUtils::HashString("ACTIVATING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t DEACTIVATING_HASH = ConstExprHashingUtils::HashString("DEACTIVATING");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t DELETE_PENDING_HASH = ConstExprHashingUtils::HashString("DELETE_PENDING");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         ThreatIntelSetStatus GetThreatIntelSetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INACTIVE_HASH)
           {
             return ThreatIntelSetStatus::INACTIVE;

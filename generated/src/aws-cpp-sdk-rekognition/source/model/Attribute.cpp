@@ -20,25 +20,25 @@ namespace Aws
       namespace AttributeMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int AGE_RANGE_HASH = HashingUtils::HashString("AGE_RANGE");
-        static const int BEARD_HASH = HashingUtils::HashString("BEARD");
-        static const int EMOTIONS_HASH = HashingUtils::HashString("EMOTIONS");
-        static const int EYE_DIRECTION_HASH = HashingUtils::HashString("EYE_DIRECTION");
-        static const int EYEGLASSES_HASH = HashingUtils::HashString("EYEGLASSES");
-        static const int EYES_OPEN_HASH = HashingUtils::HashString("EYES_OPEN");
-        static const int GENDER_HASH = HashingUtils::HashString("GENDER");
-        static const int MOUTH_OPEN_HASH = HashingUtils::HashString("MOUTH_OPEN");
-        static const int MUSTACHE_HASH = HashingUtils::HashString("MUSTACHE");
-        static const int FACE_OCCLUDED_HASH = HashingUtils::HashString("FACE_OCCLUDED");
-        static const int SMILE_HASH = HashingUtils::HashString("SMILE");
-        static const int SUNGLASSES_HASH = HashingUtils::HashString("SUNGLASSES");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t AGE_RANGE_HASH = ConstExprHashingUtils::HashString("AGE_RANGE");
+        static constexpr uint32_t BEARD_HASH = ConstExprHashingUtils::HashString("BEARD");
+        static constexpr uint32_t EMOTIONS_HASH = ConstExprHashingUtils::HashString("EMOTIONS");
+        static constexpr uint32_t EYE_DIRECTION_HASH = ConstExprHashingUtils::HashString("EYE_DIRECTION");
+        static constexpr uint32_t EYEGLASSES_HASH = ConstExprHashingUtils::HashString("EYEGLASSES");
+        static constexpr uint32_t EYES_OPEN_HASH = ConstExprHashingUtils::HashString("EYES_OPEN");
+        static constexpr uint32_t GENDER_HASH = ConstExprHashingUtils::HashString("GENDER");
+        static constexpr uint32_t MOUTH_OPEN_HASH = ConstExprHashingUtils::HashString("MOUTH_OPEN");
+        static constexpr uint32_t MUSTACHE_HASH = ConstExprHashingUtils::HashString("MUSTACHE");
+        static constexpr uint32_t FACE_OCCLUDED_HASH = ConstExprHashingUtils::HashString("FACE_OCCLUDED");
+        static constexpr uint32_t SMILE_HASH = ConstExprHashingUtils::HashString("SMILE");
+        static constexpr uint32_t SUNGLASSES_HASH = ConstExprHashingUtils::HashString("SUNGLASSES");
 
 
         Attribute GetAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return Attribute::DEFAULT;

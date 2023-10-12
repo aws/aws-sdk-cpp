@@ -20,16 +20,16 @@ namespace Aws
       namespace Eac3BitstreamModeMapper
       {
 
-        static const int COMPLETE_MAIN_HASH = HashingUtils::HashString("COMPLETE_MAIN");
-        static const int COMMENTARY_HASH = HashingUtils::HashString("COMMENTARY");
-        static const int EMERGENCY_HASH = HashingUtils::HashString("EMERGENCY");
-        static const int HEARING_IMPAIRED_HASH = HashingUtils::HashString("HEARING_IMPAIRED");
-        static const int VISUALLY_IMPAIRED_HASH = HashingUtils::HashString("VISUALLY_IMPAIRED");
+        static constexpr uint32_t COMPLETE_MAIN_HASH = ConstExprHashingUtils::HashString("COMPLETE_MAIN");
+        static constexpr uint32_t COMMENTARY_HASH = ConstExprHashingUtils::HashString("COMMENTARY");
+        static constexpr uint32_t EMERGENCY_HASH = ConstExprHashingUtils::HashString("EMERGENCY");
+        static constexpr uint32_t HEARING_IMPAIRED_HASH = ConstExprHashingUtils::HashString("HEARING_IMPAIRED");
+        static constexpr uint32_t VISUALLY_IMPAIRED_HASH = ConstExprHashingUtils::HashString("VISUALLY_IMPAIRED");
 
 
         Eac3BitstreamMode GetEac3BitstreamModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPLETE_MAIN_HASH)
           {
             return Eac3BitstreamMode::COMPLETE_MAIN;

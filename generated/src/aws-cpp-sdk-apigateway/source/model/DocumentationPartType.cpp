@@ -20,23 +20,23 @@ namespace Aws
       namespace DocumentationPartTypeMapper
       {
 
-        static const int API_HASH = HashingUtils::HashString("API");
-        static const int AUTHORIZER_HASH = HashingUtils::HashString("AUTHORIZER");
-        static const int MODEL_HASH = HashingUtils::HashString("MODEL");
-        static const int RESOURCE_HASH = HashingUtils::HashString("RESOURCE");
-        static const int METHOD_HASH = HashingUtils::HashString("METHOD");
-        static const int PATH_PARAMETER_HASH = HashingUtils::HashString("PATH_PARAMETER");
-        static const int QUERY_PARAMETER_HASH = HashingUtils::HashString("QUERY_PARAMETER");
-        static const int REQUEST_HEADER_HASH = HashingUtils::HashString("REQUEST_HEADER");
-        static const int REQUEST_BODY_HASH = HashingUtils::HashString("REQUEST_BODY");
-        static const int RESPONSE_HASH = HashingUtils::HashString("RESPONSE");
-        static const int RESPONSE_HEADER_HASH = HashingUtils::HashString("RESPONSE_HEADER");
-        static const int RESPONSE_BODY_HASH = HashingUtils::HashString("RESPONSE_BODY");
+        static constexpr uint32_t API_HASH = ConstExprHashingUtils::HashString("API");
+        static constexpr uint32_t AUTHORIZER_HASH = ConstExprHashingUtils::HashString("AUTHORIZER");
+        static constexpr uint32_t MODEL_HASH = ConstExprHashingUtils::HashString("MODEL");
+        static constexpr uint32_t RESOURCE_HASH = ConstExprHashingUtils::HashString("RESOURCE");
+        static constexpr uint32_t METHOD_HASH = ConstExprHashingUtils::HashString("METHOD");
+        static constexpr uint32_t PATH_PARAMETER_HASH = ConstExprHashingUtils::HashString("PATH_PARAMETER");
+        static constexpr uint32_t QUERY_PARAMETER_HASH = ConstExprHashingUtils::HashString("QUERY_PARAMETER");
+        static constexpr uint32_t REQUEST_HEADER_HASH = ConstExprHashingUtils::HashString("REQUEST_HEADER");
+        static constexpr uint32_t REQUEST_BODY_HASH = ConstExprHashingUtils::HashString("REQUEST_BODY");
+        static constexpr uint32_t RESPONSE_HASH = ConstExprHashingUtils::HashString("RESPONSE");
+        static constexpr uint32_t RESPONSE_HEADER_HASH = ConstExprHashingUtils::HashString("RESPONSE_HEADER");
+        static constexpr uint32_t RESPONSE_BODY_HASH = ConstExprHashingUtils::HashString("RESPONSE_BODY");
 
 
         DocumentationPartType GetDocumentationPartTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == API_HASH)
           {
             return DocumentationPartType::API;

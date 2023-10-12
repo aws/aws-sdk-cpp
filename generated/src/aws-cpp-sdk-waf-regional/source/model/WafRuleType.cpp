@@ -20,14 +20,14 @@ namespace Aws
       namespace WafRuleTypeMapper
       {
 
-        static const int REGULAR_HASH = HashingUtils::HashString("REGULAR");
-        static const int RATE_BASED_HASH = HashingUtils::HashString("RATE_BASED");
-        static const int GROUP_HASH = HashingUtils::HashString("GROUP");
+        static constexpr uint32_t REGULAR_HASH = ConstExprHashingUtils::HashString("REGULAR");
+        static constexpr uint32_t RATE_BASED_HASH = ConstExprHashingUtils::HashString("RATE_BASED");
+        static constexpr uint32_t GROUP_HASH = ConstExprHashingUtils::HashString("GROUP");
 
 
         WafRuleType GetWafRuleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REGULAR_HASH)
           {
             return WafRuleType::REGULAR;

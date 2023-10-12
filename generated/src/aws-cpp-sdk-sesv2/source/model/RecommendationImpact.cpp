@@ -20,13 +20,13 @@ namespace Aws
       namespace RecommendationImpactMapper
       {
 
-        static const int LOW_HASH = HashingUtils::HashString("LOW");
-        static const int HIGH_HASH = HashingUtils::HashString("HIGH");
+        static constexpr uint32_t LOW_HASH = ConstExprHashingUtils::HashString("LOW");
+        static constexpr uint32_t HIGH_HASH = ConstExprHashingUtils::HashString("HIGH");
 
 
         RecommendationImpact GetRecommendationImpactForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LOW_HASH)
           {
             return RecommendationImpact::LOW;

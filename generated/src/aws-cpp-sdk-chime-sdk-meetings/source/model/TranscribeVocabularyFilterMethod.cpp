@@ -20,14 +20,14 @@ namespace Aws
       namespace TranscribeVocabularyFilterMethodMapper
       {
 
-        static const int remove_HASH = HashingUtils::HashString("remove");
-        static const int mask_HASH = HashingUtils::HashString("mask");
-        static const int tag_HASH = HashingUtils::HashString("tag");
+        static constexpr uint32_t remove_HASH = ConstExprHashingUtils::HashString("remove");
+        static constexpr uint32_t mask_HASH = ConstExprHashingUtils::HashString("mask");
+        static constexpr uint32_t tag_HASH = ConstExprHashingUtils::HashString("tag");
 
 
         TranscribeVocabularyFilterMethod GetTranscribeVocabularyFilterMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == remove_HASH)
           {
             return TranscribeVocabularyFilterMethod::remove;

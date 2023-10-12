@@ -20,19 +20,19 @@ namespace Aws
       namespace LoadBalancerTlsCertificateStatusMapper
       {
 
-        static const int PENDING_VALIDATION_HASH = HashingUtils::HashString("PENDING_VALIDATION");
-        static const int ISSUED_HASH = HashingUtils::HashString("ISSUED");
-        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
-        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
-        static const int VALIDATION_TIMED_OUT_HASH = HashingUtils::HashString("VALIDATION_TIMED_OUT");
-        static const int REVOKED_HASH = HashingUtils::HashString("REVOKED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t PENDING_VALIDATION_HASH = ConstExprHashingUtils::HashString("PENDING_VALIDATION");
+        static constexpr uint32_t ISSUED_HASH = ConstExprHashingUtils::HashString("ISSUED");
+        static constexpr uint32_t INACTIVE_HASH = ConstExprHashingUtils::HashString("INACTIVE");
+        static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("EXPIRED");
+        static constexpr uint32_t VALIDATION_TIMED_OUT_HASH = ConstExprHashingUtils::HashString("VALIDATION_TIMED_OUT");
+        static constexpr uint32_t REVOKED_HASH = ConstExprHashingUtils::HashString("REVOKED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         LoadBalancerTlsCertificateStatus GetLoadBalancerTlsCertificateStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_VALIDATION_HASH)
           {
             return LoadBalancerTlsCertificateStatus::PENDING_VALIDATION;

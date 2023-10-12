@@ -20,14 +20,14 @@ namespace Aws
       namespace VolumeStatusInfoStatusMapper
       {
 
-        static const int ok_HASH = HashingUtils::HashString("ok");
-        static const int impaired_HASH = HashingUtils::HashString("impaired");
-        static const int insufficient_data_HASH = HashingUtils::HashString("insufficient-data");
+        static constexpr uint32_t ok_HASH = ConstExprHashingUtils::HashString("ok");
+        static constexpr uint32_t impaired_HASH = ConstExprHashingUtils::HashString("impaired");
+        static constexpr uint32_t insufficient_data_HASH = ConstExprHashingUtils::HashString("insufficient-data");
 
 
         VolumeStatusInfoStatus GetVolumeStatusInfoStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ok_HASH)
           {
             return VolumeStatusInfoStatus::ok;

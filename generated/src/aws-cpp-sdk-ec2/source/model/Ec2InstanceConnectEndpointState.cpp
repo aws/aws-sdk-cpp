@@ -20,17 +20,17 @@ namespace Aws
       namespace Ec2InstanceConnectEndpointStateMapper
       {
 
-        static const int create_in_progress_HASH = HashingUtils::HashString("create-in-progress");
-        static const int create_complete_HASH = HashingUtils::HashString("create-complete");
-        static const int create_failed_HASH = HashingUtils::HashString("create-failed");
-        static const int delete_in_progress_HASH = HashingUtils::HashString("delete-in-progress");
-        static const int delete_complete_HASH = HashingUtils::HashString("delete-complete");
-        static const int delete_failed_HASH = HashingUtils::HashString("delete-failed");
+        static constexpr uint32_t create_in_progress_HASH = ConstExprHashingUtils::HashString("create-in-progress");
+        static constexpr uint32_t create_complete_HASH = ConstExprHashingUtils::HashString("create-complete");
+        static constexpr uint32_t create_failed_HASH = ConstExprHashingUtils::HashString("create-failed");
+        static constexpr uint32_t delete_in_progress_HASH = ConstExprHashingUtils::HashString("delete-in-progress");
+        static constexpr uint32_t delete_complete_HASH = ConstExprHashingUtils::HashString("delete-complete");
+        static constexpr uint32_t delete_failed_HASH = ConstExprHashingUtils::HashString("delete-failed");
 
 
         Ec2InstanceConnectEndpointState GetEc2InstanceConnectEndpointStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == create_in_progress_HASH)
           {
             return Ec2InstanceConnectEndpointState::create_in_progress;

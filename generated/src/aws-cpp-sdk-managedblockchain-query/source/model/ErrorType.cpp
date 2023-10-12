@@ -20,13 +20,13 @@ namespace Aws
       namespace ErrorTypeMapper
       {
 
-        static const int VALIDATION_EXCEPTION_HASH = HashingUtils::HashString("VALIDATION_EXCEPTION");
-        static const int RESOURCE_NOT_FOUND_EXCEPTION_HASH = HashingUtils::HashString("RESOURCE_NOT_FOUND_EXCEPTION");
+        static constexpr uint32_t VALIDATION_EXCEPTION_HASH = ConstExprHashingUtils::HashString("VALIDATION_EXCEPTION");
+        static constexpr uint32_t RESOURCE_NOT_FOUND_EXCEPTION_HASH = ConstExprHashingUtils::HashString("RESOURCE_NOT_FOUND_EXCEPTION");
 
 
         ErrorType GetErrorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VALIDATION_EXCEPTION_HASH)
           {
             return ErrorType::VALIDATION_EXCEPTION;

@@ -20,14 +20,14 @@ namespace Aws
       namespace SavingsPlanPaymentOptionMapper
       {
 
-        static const int All_Upfront_HASH = HashingUtils::HashString("All Upfront");
-        static const int Partial_Upfront_HASH = HashingUtils::HashString("Partial Upfront");
-        static const int No_Upfront_HASH = HashingUtils::HashString("No Upfront");
+        static constexpr uint32_t All_Upfront_HASH = ConstExprHashingUtils::HashString("All Upfront");
+        static constexpr uint32_t Partial_Upfront_HASH = ConstExprHashingUtils::HashString("Partial Upfront");
+        static constexpr uint32_t No_Upfront_HASH = ConstExprHashingUtils::HashString("No Upfront");
 
 
         SavingsPlanPaymentOption GetSavingsPlanPaymentOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == All_Upfront_HASH)
           {
             return SavingsPlanPaymentOption::All_Upfront;

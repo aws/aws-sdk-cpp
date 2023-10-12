@@ -20,13 +20,13 @@ namespace Aws
       namespace LambdaEventSourceTypeMapper
       {
 
-        static const int PUB_SUB_HASH = HashingUtils::HashString("PUB_SUB");
-        static const int IOT_CORE_HASH = HashingUtils::HashString("IOT_CORE");
+        static constexpr uint32_t PUB_SUB_HASH = ConstExprHashingUtils::HashString("PUB_SUB");
+        static constexpr uint32_t IOT_CORE_HASH = ConstExprHashingUtils::HashString("IOT_CORE");
 
 
         LambdaEventSourceType GetLambdaEventSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUB_SUB_HASH)
           {
             return LambdaEventSourceType::PUB_SUB;

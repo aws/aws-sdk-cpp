@@ -20,22 +20,22 @@ namespace Aws
       namespace ManagedCredentialsStatusMapper
       {
 
-        static const int ENABLED_ON_CREATE_HASH = HashingUtils::HashString("ENABLED_ON_CREATE");
-        static const int ENABLED_BY_OWNER_HASH = HashingUtils::HashString("ENABLED_BY_OWNER");
-        static const int DISABLED_BY_DEFAULT_HASH = HashingUtils::HashString("DISABLED_BY_DEFAULT");
-        static const int DISABLED_BY_OWNER_HASH = HashingUtils::HashString("DISABLED_BY_OWNER");
-        static const int DISABLED_BY_COLLABORATOR_HASH = HashingUtils::HashString("DISABLED_BY_COLLABORATOR");
-        static const int PENDING_REMOVAL_BY_COLLABORATOR_HASH = HashingUtils::HashString("PENDING_REMOVAL_BY_COLLABORATOR");
-        static const int PENDING_START_REMOVAL_BY_COLLABORATOR_HASH = HashingUtils::HashString("PENDING_START_REMOVAL_BY_COLLABORATOR");
-        static const int PENDING_REMOVAL_BY_OWNER_HASH = HashingUtils::HashString("PENDING_REMOVAL_BY_OWNER");
-        static const int PENDING_START_REMOVAL_BY_OWNER_HASH = HashingUtils::HashString("PENDING_START_REMOVAL_BY_OWNER");
-        static const int FAILED_REMOVAL_BY_COLLABORATOR_HASH = HashingUtils::HashString("FAILED_REMOVAL_BY_COLLABORATOR");
-        static const int FAILED_REMOVAL_BY_OWNER_HASH = HashingUtils::HashString("FAILED_REMOVAL_BY_OWNER");
+        static constexpr uint32_t ENABLED_ON_CREATE_HASH = ConstExprHashingUtils::HashString("ENABLED_ON_CREATE");
+        static constexpr uint32_t ENABLED_BY_OWNER_HASH = ConstExprHashingUtils::HashString("ENABLED_BY_OWNER");
+        static constexpr uint32_t DISABLED_BY_DEFAULT_HASH = ConstExprHashingUtils::HashString("DISABLED_BY_DEFAULT");
+        static constexpr uint32_t DISABLED_BY_OWNER_HASH = ConstExprHashingUtils::HashString("DISABLED_BY_OWNER");
+        static constexpr uint32_t DISABLED_BY_COLLABORATOR_HASH = ConstExprHashingUtils::HashString("DISABLED_BY_COLLABORATOR");
+        static constexpr uint32_t PENDING_REMOVAL_BY_COLLABORATOR_HASH = ConstExprHashingUtils::HashString("PENDING_REMOVAL_BY_COLLABORATOR");
+        static constexpr uint32_t PENDING_START_REMOVAL_BY_COLLABORATOR_HASH = ConstExprHashingUtils::HashString("PENDING_START_REMOVAL_BY_COLLABORATOR");
+        static constexpr uint32_t PENDING_REMOVAL_BY_OWNER_HASH = ConstExprHashingUtils::HashString("PENDING_REMOVAL_BY_OWNER");
+        static constexpr uint32_t PENDING_START_REMOVAL_BY_OWNER_HASH = ConstExprHashingUtils::HashString("PENDING_START_REMOVAL_BY_OWNER");
+        static constexpr uint32_t FAILED_REMOVAL_BY_COLLABORATOR_HASH = ConstExprHashingUtils::HashString("FAILED_REMOVAL_BY_COLLABORATOR");
+        static constexpr uint32_t FAILED_REMOVAL_BY_OWNER_HASH = ConstExprHashingUtils::HashString("FAILED_REMOVAL_BY_OWNER");
 
 
         ManagedCredentialsStatus GetManagedCredentialsStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ENABLED_ON_CREATE_HASH)
           {
             return ManagedCredentialsStatus::ENABLED_ON_CREATE;

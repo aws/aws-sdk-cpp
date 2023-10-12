@@ -20,17 +20,17 @@ namespace Aws
       namespace FormatToHeaderKeyMapper
       {
 
-        static const int CHR_HASH = HashingUtils::HashString("CHR");
-        static const int START_HASH = HashingUtils::HashString("START");
-        static const int END_HASH = HashingUtils::HashString("END");
-        static const int REF_HASH = HashingUtils::HashString("REF");
-        static const int ALT_HASH = HashingUtils::HashString("ALT");
-        static const int POS_HASH = HashingUtils::HashString("POS");
+        static constexpr uint32_t CHR_HASH = ConstExprHashingUtils::HashString("CHR");
+        static constexpr uint32_t START_HASH = ConstExprHashingUtils::HashString("START");
+        static constexpr uint32_t END_HASH = ConstExprHashingUtils::HashString("END");
+        static constexpr uint32_t REF_HASH = ConstExprHashingUtils::HashString("REF");
+        static constexpr uint32_t ALT_HASH = ConstExprHashingUtils::HashString("ALT");
+        static constexpr uint32_t POS_HASH = ConstExprHashingUtils::HashString("POS");
 
 
         FormatToHeaderKey GetFormatToHeaderKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CHR_HASH)
           {
             return FormatToHeaderKey::CHR;

@@ -20,13 +20,13 @@ namespace Aws
       namespace FileSystemTypeMapper
       {
 
-        static const int EFS_HASH = HashingUtils::HashString("EFS");
-        static const int FSxLustre_HASH = HashingUtils::HashString("FSxLustre");
+        static constexpr uint32_t EFS_HASH = ConstExprHashingUtils::HashString("EFS");
+        static constexpr uint32_t FSxLustre_HASH = ConstExprHashingUtils::HashString("FSxLustre");
 
 
         FileSystemType GetFileSystemTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EFS_HASH)
           {
             return FileSystemType::EFS;

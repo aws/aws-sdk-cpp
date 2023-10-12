@@ -20,19 +20,19 @@ namespace Aws
       namespace MatchmakingConfigurationStatusMapper
       {
 
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int PLACING_HASH = HashingUtils::HashString("PLACING");
-        static const int QUEUED_HASH = HashingUtils::HashString("QUEUED");
-        static const int REQUIRES_ACCEPTANCE_HASH = HashingUtils::HashString("REQUIRES_ACCEPTANCE");
-        static const int SEARCHING_HASH = HashingUtils::HashString("SEARCHING");
-        static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t PLACING_HASH = ConstExprHashingUtils::HashString("PLACING");
+        static constexpr uint32_t QUEUED_HASH = ConstExprHashingUtils::HashString("QUEUED");
+        static constexpr uint32_t REQUIRES_ACCEPTANCE_HASH = ConstExprHashingUtils::HashString("REQUIRES_ACCEPTANCE");
+        static constexpr uint32_t SEARCHING_HASH = ConstExprHashingUtils::HashString("SEARCHING");
+        static constexpr uint32_t TIMED_OUT_HASH = ConstExprHashingUtils::HashString("TIMED_OUT");
 
 
         MatchmakingConfigurationStatus GetMatchmakingConfigurationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CANCELLED_HASH)
           {
             return MatchmakingConfigurationStatus::CANCELLED;

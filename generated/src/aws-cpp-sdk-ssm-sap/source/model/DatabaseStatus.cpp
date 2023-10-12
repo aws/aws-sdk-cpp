@@ -20,17 +20,17 @@ namespace Aws
       namespace DatabaseStatusMapper
       {
 
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
-        static const int WARNING_HASH = HashingUtils::HashString("WARNING");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t STARTING_HASH = ConstExprHashingUtils::HashString("STARTING");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
+        static constexpr uint32_t WARNING_HASH = ConstExprHashingUtils::HashString("WARNING");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         DatabaseStatus GetDatabaseStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RUNNING_HASH)
           {
             return DatabaseStatus::RUNNING;

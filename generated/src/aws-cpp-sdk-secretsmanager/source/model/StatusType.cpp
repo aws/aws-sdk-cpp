@@ -20,14 +20,14 @@ namespace Aws
       namespace StatusTypeMapper
       {
 
-        static const int InSync_HASH = HashingUtils::HashString("InSync");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
+        static constexpr uint32_t InSync_HASH = ConstExprHashingUtils::HashString("InSync");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
 
 
         StatusType GetStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InSync_HASH)
           {
             return StatusType::InSync;

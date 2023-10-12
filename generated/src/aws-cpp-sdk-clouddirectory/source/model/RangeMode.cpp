@@ -20,16 +20,16 @@ namespace Aws
       namespace RangeModeMapper
       {
 
-        static const int FIRST_HASH = HashingUtils::HashString("FIRST");
-        static const int LAST_HASH = HashingUtils::HashString("LAST");
-        static const int LAST_BEFORE_MISSING_VALUES_HASH = HashingUtils::HashString("LAST_BEFORE_MISSING_VALUES");
-        static const int INCLUSIVE_HASH = HashingUtils::HashString("INCLUSIVE");
-        static const int EXCLUSIVE_HASH = HashingUtils::HashString("EXCLUSIVE");
+        static constexpr uint32_t FIRST_HASH = ConstExprHashingUtils::HashString("FIRST");
+        static constexpr uint32_t LAST_HASH = ConstExprHashingUtils::HashString("LAST");
+        static constexpr uint32_t LAST_BEFORE_MISSING_VALUES_HASH = ConstExprHashingUtils::HashString("LAST_BEFORE_MISSING_VALUES");
+        static constexpr uint32_t INCLUSIVE_HASH = ConstExprHashingUtils::HashString("INCLUSIVE");
+        static constexpr uint32_t EXCLUSIVE_HASH = ConstExprHashingUtils::HashString("EXCLUSIVE");
 
 
         RangeMode GetRangeModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FIRST_HASH)
           {
             return RangeMode::FIRST;

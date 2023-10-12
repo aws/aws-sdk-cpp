@@ -20,14 +20,14 @@ namespace Aws
       namespace EventResponseTypeMapper
       {
 
-        static const int Pass_HASH = HashingUtils::HashString("Pass");
-        static const int Fail_HASH = HashingUtils::HashString("Fail");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
+        static constexpr uint32_t Pass_HASH = ConstExprHashingUtils::HashString("Pass");
+        static constexpr uint32_t Fail_HASH = ConstExprHashingUtils::HashString("Fail");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
 
 
         EventResponseType GetEventResponseTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pass_HASH)
           {
             return EventResponseType::Pass;

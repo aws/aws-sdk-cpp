@@ -20,15 +20,15 @@ namespace Aws
       namespace EndOfMeetingReminderTypeMapper
       {
 
-        static const int ANNOUNCEMENT_TIME_CHECK_HASH = HashingUtils::HashString("ANNOUNCEMENT_TIME_CHECK");
-        static const int ANNOUNCEMENT_VARIABLE_TIME_LEFT_HASH = HashingUtils::HashString("ANNOUNCEMENT_VARIABLE_TIME_LEFT");
-        static const int CHIME_HASH = HashingUtils::HashString("CHIME");
-        static const int KNOCK_HASH = HashingUtils::HashString("KNOCK");
+        static constexpr uint32_t ANNOUNCEMENT_TIME_CHECK_HASH = ConstExprHashingUtils::HashString("ANNOUNCEMENT_TIME_CHECK");
+        static constexpr uint32_t ANNOUNCEMENT_VARIABLE_TIME_LEFT_HASH = ConstExprHashingUtils::HashString("ANNOUNCEMENT_VARIABLE_TIME_LEFT");
+        static constexpr uint32_t CHIME_HASH = ConstExprHashingUtils::HashString("CHIME");
+        static constexpr uint32_t KNOCK_HASH = ConstExprHashingUtils::HashString("KNOCK");
 
 
         EndOfMeetingReminderType GetEndOfMeetingReminderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ANNOUNCEMENT_TIME_CHECK_HASH)
           {
             return EndOfMeetingReminderType::ANNOUNCEMENT_TIME_CHECK;

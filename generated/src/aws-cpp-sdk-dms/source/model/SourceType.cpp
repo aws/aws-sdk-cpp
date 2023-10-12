@@ -20,12 +20,12 @@ namespace Aws
       namespace SourceTypeMapper
       {
 
-        static const int replication_instance_HASH = HashingUtils::HashString("replication-instance");
+        static constexpr uint32_t replication_instance_HASH = ConstExprHashingUtils::HashString("replication-instance");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == replication_instance_HASH)
           {
             return SourceType::replication_instance;

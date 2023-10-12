@@ -20,13 +20,13 @@ namespace Aws
       namespace BoxPlotFillStyleMapper
       {
 
-        static const int SOLID_HASH = HashingUtils::HashString("SOLID");
-        static const int TRANSPARENT_HASH = HashingUtils::HashString("TRANSPARENT");
+        static constexpr uint32_t SOLID_HASH = ConstExprHashingUtils::HashString("SOLID");
+        static constexpr uint32_t TRANSPARENT_HASH = ConstExprHashingUtils::HashString("TRANSPARENT");
 
 
         BoxPlotFillStyle GetBoxPlotFillStyleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SOLID_HASH)
           {
             return BoxPlotFillStyle::SOLID;

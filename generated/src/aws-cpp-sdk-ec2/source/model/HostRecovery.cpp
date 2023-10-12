@@ -20,13 +20,13 @@ namespace Aws
       namespace HostRecoveryMapper
       {
 
-        static const int on_HASH = HashingUtils::HashString("on");
-        static const int off_HASH = HashingUtils::HashString("off");
+        static constexpr uint32_t on_HASH = ConstExprHashingUtils::HashString("on");
+        static constexpr uint32_t off_HASH = ConstExprHashingUtils::HashString("off");
 
 
         HostRecovery GetHostRecoveryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == on_HASH)
           {
             return HostRecovery::on;

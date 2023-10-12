@@ -20,13 +20,13 @@ namespace Aws
       namespace ProductCodeValuesMapper
       {
 
-        static const int devpay_HASH = HashingUtils::HashString("devpay");
-        static const int marketplace_HASH = HashingUtils::HashString("marketplace");
+        static constexpr uint32_t devpay_HASH = ConstExprHashingUtils::HashString("devpay");
+        static constexpr uint32_t marketplace_HASH = ConstExprHashingUtils::HashString("marketplace");
 
 
         ProductCodeValues GetProductCodeValuesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == devpay_HASH)
           {
             return ProductCodeValues::devpay;

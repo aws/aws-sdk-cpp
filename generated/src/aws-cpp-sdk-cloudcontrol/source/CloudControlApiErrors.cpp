@@ -18,30 +18,30 @@ namespace CloudControlApi
 namespace CloudControlApiErrorMapper
 {
 
-static const int HANDLER_INTERNAL_FAILURE_HASH = HashingUtils::HashString("HandlerInternalFailureException");
-static const int NETWORK_FAILURE_HASH = HashingUtils::HashString("NetworkFailureException");
-static const int HANDLER_FAILURE_HASH = HashingUtils::HashString("HandlerFailureException");
-static const int GENERAL_SERVICE_HASH = HashingUtils::HashString("GeneralServiceException");
-static const int CONCURRENT_OPERATION_HASH = HashingUtils::HashString("ConcurrentOperationException");
-static const int PRIVATE_TYPE_HASH = HashingUtils::HashString("PrivateTypeException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
-static const int SERVICE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ServiceLimitExceededException");
-static const int NOT_UPDATABLE_HASH = HashingUtils::HashString("NotUpdatableException");
-static const int TYPE_NOT_FOUND_HASH = HashingUtils::HashString("TypeNotFoundException");
-static const int UNSUPPORTED_ACTION_HASH = HashingUtils::HashString("UnsupportedActionException");
-static const int NOT_STABILIZED_HASH = HashingUtils::HashString("NotStabilizedException");
-static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
-static const int INVALID_CREDENTIALS_HASH = HashingUtils::HashString("InvalidCredentialsException");
-static const int SERVICE_INTERNAL_ERROR_HASH = HashingUtils::HashString("ServiceInternalErrorException");
-static const int CLIENT_TOKEN_CONFLICT_HASH = HashingUtils::HashString("ClientTokenConflictException");
-static const int REQUEST_TOKEN_NOT_FOUND_HASH = HashingUtils::HashString("RequestTokenNotFoundException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t HANDLER_INTERNAL_FAILURE_HASH = ConstExprHashingUtils::HashString("HandlerInternalFailureException");
+static constexpr uint32_t NETWORK_FAILURE_HASH = ConstExprHashingUtils::HashString("NetworkFailureException");
+static constexpr uint32_t HANDLER_FAILURE_HASH = ConstExprHashingUtils::HashString("HandlerFailureException");
+static constexpr uint32_t GENERAL_SERVICE_HASH = ConstExprHashingUtils::HashString("GeneralServiceException");
+static constexpr uint32_t CONCURRENT_OPERATION_HASH = ConstExprHashingUtils::HashString("ConcurrentOperationException");
+static constexpr uint32_t PRIVATE_TYPE_HASH = ConstExprHashingUtils::HashString("PrivateTypeException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("AlreadyExistsException");
+static constexpr uint32_t SERVICE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ServiceLimitExceededException");
+static constexpr uint32_t NOT_UPDATABLE_HASH = ConstExprHashingUtils::HashString("NotUpdatableException");
+static constexpr uint32_t TYPE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("TypeNotFoundException");
+static constexpr uint32_t UNSUPPORTED_ACTION_HASH = ConstExprHashingUtils::HashString("UnsupportedActionException");
+static constexpr uint32_t NOT_STABILIZED_HASH = ConstExprHashingUtils::HashString("NotStabilizedException");
+static constexpr uint32_t RESOURCE_CONFLICT_HASH = ConstExprHashingUtils::HashString("ResourceConflictException");
+static constexpr uint32_t INVALID_CREDENTIALS_HASH = ConstExprHashingUtils::HashString("InvalidCredentialsException");
+static constexpr uint32_t SERVICE_INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("ServiceInternalErrorException");
+static constexpr uint32_t CLIENT_TOKEN_CONFLICT_HASH = ConstExprHashingUtils::HashString("ClientTokenConflictException");
+static constexpr uint32_t REQUEST_TOKEN_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("RequestTokenNotFoundException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == HANDLER_INTERNAL_FAILURE_HASH)
   {

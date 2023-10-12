@@ -20,13 +20,13 @@ namespace Aws
       namespace DeliveryMediumTypeMapper
       {
 
-        static const int SMS_HASH = HashingUtils::HashString("SMS");
-        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
+        static constexpr uint32_t SMS_HASH = ConstExprHashingUtils::HashString("SMS");
+        static constexpr uint32_t EMAIL_HASH = ConstExprHashingUtils::HashString("EMAIL");
 
 
         DeliveryMediumType GetDeliveryMediumTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SMS_HASH)
           {
             return DeliveryMediumType::SMS;

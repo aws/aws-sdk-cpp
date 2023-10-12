@@ -20,14 +20,14 @@ namespace Aws
       namespace LongVarcharMappingTypeMapper
       {
 
-        static const int wstring_HASH = HashingUtils::HashString("wstring");
-        static const int clob_HASH = HashingUtils::HashString("clob");
-        static const int nclob_HASH = HashingUtils::HashString("nclob");
+        static constexpr uint32_t wstring_HASH = ConstExprHashingUtils::HashString("wstring");
+        static constexpr uint32_t clob_HASH = ConstExprHashingUtils::HashString("clob");
+        static constexpr uint32_t nclob_HASH = ConstExprHashingUtils::HashString("nclob");
 
 
         LongVarcharMappingType GetLongVarcharMappingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == wstring_HASH)
           {
             return LongVarcharMappingType::wstring;

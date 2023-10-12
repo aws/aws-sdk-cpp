@@ -20,15 +20,15 @@ namespace Aws
       namespace AnalysisTypeMapper
       {
 
-        static const int SOURCE_CODE_ANALYSIS_HASH = HashingUtils::HashString("SOURCE_CODE_ANALYSIS");
-        static const int DATABASE_ANALYSIS_HASH = HashingUtils::HashString("DATABASE_ANALYSIS");
-        static const int RUNTIME_ANALYSIS_HASH = HashingUtils::HashString("RUNTIME_ANALYSIS");
-        static const int BINARY_ANALYSIS_HASH = HashingUtils::HashString("BINARY_ANALYSIS");
+        static constexpr uint32_t SOURCE_CODE_ANALYSIS_HASH = ConstExprHashingUtils::HashString("SOURCE_CODE_ANALYSIS");
+        static constexpr uint32_t DATABASE_ANALYSIS_HASH = ConstExprHashingUtils::HashString("DATABASE_ANALYSIS");
+        static constexpr uint32_t RUNTIME_ANALYSIS_HASH = ConstExprHashingUtils::HashString("RUNTIME_ANALYSIS");
+        static constexpr uint32_t BINARY_ANALYSIS_HASH = ConstExprHashingUtils::HashString("BINARY_ANALYSIS");
 
 
         AnalysisType GetAnalysisTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SOURCE_CODE_ANALYSIS_HASH)
           {
             return AnalysisType::SOURCE_CODE_ANALYSIS;

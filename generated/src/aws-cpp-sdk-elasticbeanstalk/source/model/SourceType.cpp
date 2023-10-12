@@ -20,13 +20,13 @@ namespace Aws
       namespace SourceTypeMapper
       {
 
-        static const int Git_HASH = HashingUtils::HashString("Git");
-        static const int Zip_HASH = HashingUtils::HashString("Zip");
+        static constexpr uint32_t Git_HASH = ConstExprHashingUtils::HashString("Git");
+        static constexpr uint32_t Zip_HASH = ConstExprHashingUtils::HashString("Zip");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Git_HASH)
           {
             return SourceType::Git;

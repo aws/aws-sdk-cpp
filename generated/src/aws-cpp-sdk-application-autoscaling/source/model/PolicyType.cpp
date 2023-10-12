@@ -20,13 +20,13 @@ namespace Aws
       namespace PolicyTypeMapper
       {
 
-        static const int StepScaling_HASH = HashingUtils::HashString("StepScaling");
-        static const int TargetTrackingScaling_HASH = HashingUtils::HashString("TargetTrackingScaling");
+        static constexpr uint32_t StepScaling_HASH = ConstExprHashingUtils::HashString("StepScaling");
+        static constexpr uint32_t TargetTrackingScaling_HASH = ConstExprHashingUtils::HashString("TargetTrackingScaling");
 
 
         PolicyType GetPolicyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == StepScaling_HASH)
           {
             return PolicyType::StepScaling;

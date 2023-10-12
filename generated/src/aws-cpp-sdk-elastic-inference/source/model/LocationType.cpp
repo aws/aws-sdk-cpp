@@ -20,14 +20,14 @@ namespace Aws
       namespace LocationTypeMapper
       {
 
-        static const int region_HASH = HashingUtils::HashString("region");
-        static const int availability_zone_HASH = HashingUtils::HashString("availability-zone");
-        static const int availability_zone_id_HASH = HashingUtils::HashString("availability-zone-id");
+        static constexpr uint32_t region_HASH = ConstExprHashingUtils::HashString("region");
+        static constexpr uint32_t availability_zone_HASH = ConstExprHashingUtils::HashString("availability-zone");
+        static constexpr uint32_t availability_zone_id_HASH = ConstExprHashingUtils::HashString("availability-zone-id");
 
 
         LocationType GetLocationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == region_HASH)
           {
             return LocationType::region;

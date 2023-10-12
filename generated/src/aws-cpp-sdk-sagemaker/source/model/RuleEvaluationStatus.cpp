@@ -20,17 +20,17 @@ namespace Aws
       namespace RuleEvaluationStatusMapper
       {
 
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int NoIssuesFound_HASH = HashingUtils::HashString("NoIssuesFound");
-        static const int IssuesFound_HASH = HashingUtils::HashString("IssuesFound");
-        static const int Error_HASH = HashingUtils::HashString("Error");
-        static const int Stopping_HASH = HashingUtils::HashString("Stopping");
-        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t NoIssuesFound_HASH = ConstExprHashingUtils::HashString("NoIssuesFound");
+        static constexpr uint32_t IssuesFound_HASH = ConstExprHashingUtils::HashString("IssuesFound");
+        static constexpr uint32_t Error_HASH = ConstExprHashingUtils::HashString("Error");
+        static constexpr uint32_t Stopping_HASH = ConstExprHashingUtils::HashString("Stopping");
+        static constexpr uint32_t Stopped_HASH = ConstExprHashingUtils::HashString("Stopped");
 
 
         RuleEvaluationStatus GetRuleEvaluationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InProgress_HASH)
           {
             return RuleEvaluationStatus::InProgress;

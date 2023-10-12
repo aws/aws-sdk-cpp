@@ -20,28 +20,28 @@ namespace Aws
       namespace PackageManagerMapper
       {
 
-        static const int BUNDLER_HASH = HashingUtils::HashString("BUNDLER");
-        static const int CARGO_HASH = HashingUtils::HashString("CARGO");
-        static const int COMPOSER_HASH = HashingUtils::HashString("COMPOSER");
-        static const int NPM_HASH = HashingUtils::HashString("NPM");
-        static const int NUGET_HASH = HashingUtils::HashString("NUGET");
-        static const int PIPENV_HASH = HashingUtils::HashString("PIPENV");
-        static const int POETRY_HASH = HashingUtils::HashString("POETRY");
-        static const int YARN_HASH = HashingUtils::HashString("YARN");
-        static const int GOBINARY_HASH = HashingUtils::HashString("GOBINARY");
-        static const int GOMOD_HASH = HashingUtils::HashString("GOMOD");
-        static const int JAR_HASH = HashingUtils::HashString("JAR");
-        static const int OS_HASH = HashingUtils::HashString("OS");
-        static const int PIP_HASH = HashingUtils::HashString("PIP");
-        static const int PYTHONPKG_HASH = HashingUtils::HashString("PYTHONPKG");
-        static const int NODEPKG_HASH = HashingUtils::HashString("NODEPKG");
-        static const int POM_HASH = HashingUtils::HashString("POM");
-        static const int GEMSPEC_HASH = HashingUtils::HashString("GEMSPEC");
+        static constexpr uint32_t BUNDLER_HASH = ConstExprHashingUtils::HashString("BUNDLER");
+        static constexpr uint32_t CARGO_HASH = ConstExprHashingUtils::HashString("CARGO");
+        static constexpr uint32_t COMPOSER_HASH = ConstExprHashingUtils::HashString("COMPOSER");
+        static constexpr uint32_t NPM_HASH = ConstExprHashingUtils::HashString("NPM");
+        static constexpr uint32_t NUGET_HASH = ConstExprHashingUtils::HashString("NUGET");
+        static constexpr uint32_t PIPENV_HASH = ConstExprHashingUtils::HashString("PIPENV");
+        static constexpr uint32_t POETRY_HASH = ConstExprHashingUtils::HashString("POETRY");
+        static constexpr uint32_t YARN_HASH = ConstExprHashingUtils::HashString("YARN");
+        static constexpr uint32_t GOBINARY_HASH = ConstExprHashingUtils::HashString("GOBINARY");
+        static constexpr uint32_t GOMOD_HASH = ConstExprHashingUtils::HashString("GOMOD");
+        static constexpr uint32_t JAR_HASH = ConstExprHashingUtils::HashString("JAR");
+        static constexpr uint32_t OS_HASH = ConstExprHashingUtils::HashString("OS");
+        static constexpr uint32_t PIP_HASH = ConstExprHashingUtils::HashString("PIP");
+        static constexpr uint32_t PYTHONPKG_HASH = ConstExprHashingUtils::HashString("PYTHONPKG");
+        static constexpr uint32_t NODEPKG_HASH = ConstExprHashingUtils::HashString("NODEPKG");
+        static constexpr uint32_t POM_HASH = ConstExprHashingUtils::HashString("POM");
+        static constexpr uint32_t GEMSPEC_HASH = ConstExprHashingUtils::HashString("GEMSPEC");
 
 
         PackageManager GetPackageManagerForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BUNDLER_HASH)
           {
             return PackageManager::BUNDLER;

@@ -20,14 +20,14 @@ namespace Aws
       namespace TrustDirectionMapper
       {
 
-        static const int One_Way_Outgoing_HASH = HashingUtils::HashString("One-Way: Outgoing");
-        static const int One_Way_Incoming_HASH = HashingUtils::HashString("One-Way: Incoming");
-        static const int Two_Way_HASH = HashingUtils::HashString("Two-Way");
+        static constexpr uint32_t One_Way_Outgoing_HASH = ConstExprHashingUtils::HashString("One-Way: Outgoing");
+        static constexpr uint32_t One_Way_Incoming_HASH = ConstExprHashingUtils::HashString("One-Way: Incoming");
+        static constexpr uint32_t Two_Way_HASH = ConstExprHashingUtils::HashString("Two-Way");
 
 
         TrustDirection GetTrustDirectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == One_Way_Outgoing_HASH)
           {
             return TrustDirection::One_Way_Outgoing;

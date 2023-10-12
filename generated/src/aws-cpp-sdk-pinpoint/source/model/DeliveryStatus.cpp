@@ -20,18 +20,18 @@ namespace Aws
       namespace DeliveryStatusMapper
       {
 
-        static const int SUCCESSFUL_HASH = HashingUtils::HashString("SUCCESSFUL");
-        static const int THROTTLED_HASH = HashingUtils::HashString("THROTTLED");
-        static const int TEMPORARY_FAILURE_HASH = HashingUtils::HashString("TEMPORARY_FAILURE");
-        static const int PERMANENT_FAILURE_HASH = HashingUtils::HashString("PERMANENT_FAILURE");
-        static const int UNKNOWN_FAILURE_HASH = HashingUtils::HashString("UNKNOWN_FAILURE");
-        static const int OPT_OUT_HASH = HashingUtils::HashString("OPT_OUT");
-        static const int DUPLICATE_HASH = HashingUtils::HashString("DUPLICATE");
+        static constexpr uint32_t SUCCESSFUL_HASH = ConstExprHashingUtils::HashString("SUCCESSFUL");
+        static constexpr uint32_t THROTTLED_HASH = ConstExprHashingUtils::HashString("THROTTLED");
+        static constexpr uint32_t TEMPORARY_FAILURE_HASH = ConstExprHashingUtils::HashString("TEMPORARY_FAILURE");
+        static constexpr uint32_t PERMANENT_FAILURE_HASH = ConstExprHashingUtils::HashString("PERMANENT_FAILURE");
+        static constexpr uint32_t UNKNOWN_FAILURE_HASH = ConstExprHashingUtils::HashString("UNKNOWN_FAILURE");
+        static constexpr uint32_t OPT_OUT_HASH = ConstExprHashingUtils::HashString("OPT_OUT");
+        static constexpr uint32_t DUPLICATE_HASH = ConstExprHashingUtils::HashString("DUPLICATE");
 
 
         DeliveryStatus GetDeliveryStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUCCESSFUL_HASH)
           {
             return DeliveryStatus::SUCCESSFUL;

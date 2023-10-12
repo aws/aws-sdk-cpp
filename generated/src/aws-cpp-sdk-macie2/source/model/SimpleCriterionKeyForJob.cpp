@@ -20,15 +20,15 @@ namespace Aws
       namespace SimpleCriterionKeyForJobMapper
       {
 
-        static const int ACCOUNT_ID_HASH = HashingUtils::HashString("ACCOUNT_ID");
-        static const int S3_BUCKET_NAME_HASH = HashingUtils::HashString("S3_BUCKET_NAME");
-        static const int S3_BUCKET_EFFECTIVE_PERMISSION_HASH = HashingUtils::HashString("S3_BUCKET_EFFECTIVE_PERMISSION");
-        static const int S3_BUCKET_SHARED_ACCESS_HASH = HashingUtils::HashString("S3_BUCKET_SHARED_ACCESS");
+        static constexpr uint32_t ACCOUNT_ID_HASH = ConstExprHashingUtils::HashString("ACCOUNT_ID");
+        static constexpr uint32_t S3_BUCKET_NAME_HASH = ConstExprHashingUtils::HashString("S3_BUCKET_NAME");
+        static constexpr uint32_t S3_BUCKET_EFFECTIVE_PERMISSION_HASH = ConstExprHashingUtils::HashString("S3_BUCKET_EFFECTIVE_PERMISSION");
+        static constexpr uint32_t S3_BUCKET_SHARED_ACCESS_HASH = ConstExprHashingUtils::HashString("S3_BUCKET_SHARED_ACCESS");
 
 
         SimpleCriterionKeyForJob GetSimpleCriterionKeyForJobForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCOUNT_ID_HASH)
           {
             return SimpleCriterionKeyForJob::ACCOUNT_ID;

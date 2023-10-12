@@ -20,13 +20,13 @@ namespace Aws
       namespace ImageRepositoryTypeMapper
       {
 
-        static const int ECR_HASH = HashingUtils::HashString("ECR");
-        static const int ECR_PUBLIC_HASH = HashingUtils::HashString("ECR_PUBLIC");
+        static constexpr uint32_t ECR_HASH = ConstExprHashingUtils::HashString("ECR");
+        static constexpr uint32_t ECR_PUBLIC_HASH = ConstExprHashingUtils::HashString("ECR_PUBLIC");
 
 
         ImageRepositoryType GetImageRepositoryTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ECR_HASH)
           {
             return ImageRepositoryType::ECR;

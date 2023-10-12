@@ -20,15 +20,15 @@ namespace Aws
       namespace KafkaSecurityProtocolMapper
       {
 
-        static const int plaintext_HASH = HashingUtils::HashString("plaintext");
-        static const int ssl_authentication_HASH = HashingUtils::HashString("ssl-authentication");
-        static const int ssl_encryption_HASH = HashingUtils::HashString("ssl-encryption");
-        static const int sasl_ssl_HASH = HashingUtils::HashString("sasl-ssl");
+        static constexpr uint32_t plaintext_HASH = ConstExprHashingUtils::HashString("plaintext");
+        static constexpr uint32_t ssl_authentication_HASH = ConstExprHashingUtils::HashString("ssl-authentication");
+        static constexpr uint32_t ssl_encryption_HASH = ConstExprHashingUtils::HashString("ssl-encryption");
+        static constexpr uint32_t sasl_ssl_HASH = ConstExprHashingUtils::HashString("sasl-ssl");
 
 
         KafkaSecurityProtocol GetKafkaSecurityProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == plaintext_HASH)
           {
             return KafkaSecurityProtocol::plaintext;

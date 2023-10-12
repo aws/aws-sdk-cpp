@@ -20,13 +20,13 @@ namespace Aws
       namespace OSVersionMapper
       {
 
-        static const int SERVER_2012_HASH = HashingUtils::HashString("SERVER_2012");
-        static const int SERVER_2019_HASH = HashingUtils::HashString("SERVER_2019");
+        static constexpr uint32_t SERVER_2012_HASH = ConstExprHashingUtils::HashString("SERVER_2012");
+        static constexpr uint32_t SERVER_2019_HASH = ConstExprHashingUtils::HashString("SERVER_2019");
 
 
         OSVersion GetOSVersionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SERVER_2012_HASH)
           {
             return OSVersion::SERVER_2012;

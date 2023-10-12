@@ -20,12 +20,12 @@ namespace Aws
       namespace FilterKeyMapper
       {
 
-        static const int hasAccessTo_HASH = HashingUtils::HashString("hasAccessTo");
+        static constexpr uint32_t hasAccessTo_HASH = ConstExprHashingUtils::HashString("hasAccessTo");
 
 
         FilterKey GetFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == hasAccessTo_HASH)
           {
             return FilterKey::hasAccessTo;

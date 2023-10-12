@@ -18,27 +18,27 @@ namespace ServiceQuotas
 namespace ServiceQuotasErrorMapper
 {
 
-static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
-static const int ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH = HashingUtils::HashString("OrganizationNotInAllFeaturesModeException");
-static const int SERVICE_QUOTA_TEMPLATE_NOT_IN_USE_HASH = HashingUtils::HashString("ServiceQuotaTemplateNotInUseException");
-static const int DEPENDENCY_ACCESS_DENIED_HASH = HashingUtils::HashString("DependencyAccessDeniedException");
-static const int TEMPLATES_NOT_AVAILABLE_IN_REGION_HASH = HashingUtils::HashString("TemplatesNotAvailableInRegionException");
-static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("InvalidPaginationTokenException");
-static const int INVALID_RESOURCE_STATE_HASH = HashingUtils::HashString("InvalidResourceStateException");
-static const int NO_AVAILABLE_ORGANIZATION_HASH = HashingUtils::HashString("NoAvailableOrganizationException");
-static const int TAG_POLICY_VIOLATION_HASH = HashingUtils::HashString("TagPolicyViolationException");
-static const int A_W_S_SERVICE_ACCESS_NOT_ENABLED_HASH = HashingUtils::HashString("AWSServiceAccessNotEnabledException");
-static const int ILLEGAL_ARGUMENT_HASH = HashingUtils::HashString("IllegalArgumentException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int QUOTA_EXCEEDED_HASH = HashingUtils::HashString("QuotaExceededException");
-static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
-static const int NO_SUCH_RESOURCE_HASH = HashingUtils::HashString("NoSuchResourceException");
+static constexpr uint32_t RESOURCE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ResourceAlreadyExistsException");
+static constexpr uint32_t ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH = ConstExprHashingUtils::HashString("OrganizationNotInAllFeaturesModeException");
+static constexpr uint32_t SERVICE_QUOTA_TEMPLATE_NOT_IN_USE_HASH = ConstExprHashingUtils::HashString("ServiceQuotaTemplateNotInUseException");
+static constexpr uint32_t DEPENDENCY_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("DependencyAccessDeniedException");
+static constexpr uint32_t TEMPLATES_NOT_AVAILABLE_IN_REGION_HASH = ConstExprHashingUtils::HashString("TemplatesNotAvailableInRegionException");
+static constexpr uint32_t INVALID_PAGINATION_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidPaginationTokenException");
+static constexpr uint32_t INVALID_RESOURCE_STATE_HASH = ConstExprHashingUtils::HashString("InvalidResourceStateException");
+static constexpr uint32_t NO_AVAILABLE_ORGANIZATION_HASH = ConstExprHashingUtils::HashString("NoAvailableOrganizationException");
+static constexpr uint32_t TAG_POLICY_VIOLATION_HASH = ConstExprHashingUtils::HashString("TagPolicyViolationException");
+static constexpr uint32_t A_W_S_SERVICE_ACCESS_NOT_ENABLED_HASH = ConstExprHashingUtils::HashString("AWSServiceAccessNotEnabledException");
+static constexpr uint32_t ILLEGAL_ARGUMENT_HASH = ConstExprHashingUtils::HashString("IllegalArgumentException");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t TOO_MANY_REQUESTS_HASH = ConstExprHashingUtils::HashString("TooManyRequestsException");
+static constexpr uint32_t QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("QuotaExceededException");
+static constexpr uint32_t SERVICE_HASH = ConstExprHashingUtils::HashString("ServiceException");
+static constexpr uint32_t NO_SUCH_RESOURCE_HASH = ConstExprHashingUtils::HashString("NoSuchResourceException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {

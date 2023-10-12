@@ -20,13 +20,13 @@ namespace Aws
       namespace EmbeddedScte20DetectionMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int OFF_HASH = HashingUtils::HashString("OFF");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t OFF_HASH = ConstExprHashingUtils::HashString("OFF");
 
 
         EmbeddedScte20Detection GetEmbeddedScte20DetectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return EmbeddedScte20Detection::AUTO;

@@ -20,22 +20,22 @@ namespace Aws
       namespace RecommendationCategoryMapper
       {
 
-        static const int AWSBestPractices_HASH = HashingUtils::HashString("AWSBestPractices");
-        static const int AWSCloudFormationIssues_HASH = HashingUtils::HashString("AWSCloudFormationIssues");
-        static const int DuplicateCode_HASH = HashingUtils::HashString("DuplicateCode");
-        static const int CodeMaintenanceIssues_HASH = HashingUtils::HashString("CodeMaintenanceIssues");
-        static const int ConcurrencyIssues_HASH = HashingUtils::HashString("ConcurrencyIssues");
-        static const int InputValidations_HASH = HashingUtils::HashString("InputValidations");
-        static const int PythonBestPractices_HASH = HashingUtils::HashString("PythonBestPractices");
-        static const int JavaBestPractices_HASH = HashingUtils::HashString("JavaBestPractices");
-        static const int ResourceLeaks_HASH = HashingUtils::HashString("ResourceLeaks");
-        static const int SecurityIssues_HASH = HashingUtils::HashString("SecurityIssues");
-        static const int CodeInconsistencies_HASH = HashingUtils::HashString("CodeInconsistencies");
+        static constexpr uint32_t AWSBestPractices_HASH = ConstExprHashingUtils::HashString("AWSBestPractices");
+        static constexpr uint32_t AWSCloudFormationIssues_HASH = ConstExprHashingUtils::HashString("AWSCloudFormationIssues");
+        static constexpr uint32_t DuplicateCode_HASH = ConstExprHashingUtils::HashString("DuplicateCode");
+        static constexpr uint32_t CodeMaintenanceIssues_HASH = ConstExprHashingUtils::HashString("CodeMaintenanceIssues");
+        static constexpr uint32_t ConcurrencyIssues_HASH = ConstExprHashingUtils::HashString("ConcurrencyIssues");
+        static constexpr uint32_t InputValidations_HASH = ConstExprHashingUtils::HashString("InputValidations");
+        static constexpr uint32_t PythonBestPractices_HASH = ConstExprHashingUtils::HashString("PythonBestPractices");
+        static constexpr uint32_t JavaBestPractices_HASH = ConstExprHashingUtils::HashString("JavaBestPractices");
+        static constexpr uint32_t ResourceLeaks_HASH = ConstExprHashingUtils::HashString("ResourceLeaks");
+        static constexpr uint32_t SecurityIssues_HASH = ConstExprHashingUtils::HashString("SecurityIssues");
+        static constexpr uint32_t CodeInconsistencies_HASH = ConstExprHashingUtils::HashString("CodeInconsistencies");
 
 
         RecommendationCategory GetRecommendationCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWSBestPractices_HASH)
           {
             return RecommendationCategory::AWSBestPractices;

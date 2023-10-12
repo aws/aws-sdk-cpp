@@ -20,16 +20,16 @@ namespace Aws
       namespace ObjectTypeEnumMapper
       {
 
-        static const int ASSESSMENT_HASH = HashingUtils::HashString("ASSESSMENT");
-        static const int CONTROL_SET_HASH = HashingUtils::HashString("CONTROL_SET");
-        static const int CONTROL_HASH = HashingUtils::HashString("CONTROL");
-        static const int DELEGATION_HASH = HashingUtils::HashString("DELEGATION");
-        static const int ASSESSMENT_REPORT_HASH = HashingUtils::HashString("ASSESSMENT_REPORT");
+        static constexpr uint32_t ASSESSMENT_HASH = ConstExprHashingUtils::HashString("ASSESSMENT");
+        static constexpr uint32_t CONTROL_SET_HASH = ConstExprHashingUtils::HashString("CONTROL_SET");
+        static constexpr uint32_t CONTROL_HASH = ConstExprHashingUtils::HashString("CONTROL");
+        static constexpr uint32_t DELEGATION_HASH = ConstExprHashingUtils::HashString("DELEGATION");
+        static constexpr uint32_t ASSESSMENT_REPORT_HASH = ConstExprHashingUtils::HashString("ASSESSMENT_REPORT");
 
 
         ObjectTypeEnum GetObjectTypeEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASSESSMENT_HASH)
           {
             return ObjectTypeEnum::ASSESSMENT;

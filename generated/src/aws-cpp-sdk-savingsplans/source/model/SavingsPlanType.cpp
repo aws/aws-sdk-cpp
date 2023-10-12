@@ -20,14 +20,14 @@ namespace Aws
       namespace SavingsPlanTypeMapper
       {
 
-        static const int Compute_HASH = HashingUtils::HashString("Compute");
-        static const int EC2Instance_HASH = HashingUtils::HashString("EC2Instance");
-        static const int SageMaker_HASH = HashingUtils::HashString("SageMaker");
+        static constexpr uint32_t Compute_HASH = ConstExprHashingUtils::HashString("Compute");
+        static constexpr uint32_t EC2Instance_HASH = ConstExprHashingUtils::HashString("EC2Instance");
+        static constexpr uint32_t SageMaker_HASH = ConstExprHashingUtils::HashString("SageMaker");
 
 
         SavingsPlanType GetSavingsPlanTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Compute_HASH)
           {
             return SavingsPlanType::Compute;

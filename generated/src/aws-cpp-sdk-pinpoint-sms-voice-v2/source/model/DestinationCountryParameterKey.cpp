@@ -20,13 +20,13 @@ namespace Aws
       namespace DestinationCountryParameterKeyMapper
       {
 
-        static const int IN_TEMPLATE_ID_HASH = HashingUtils::HashString("IN_TEMPLATE_ID");
-        static const int IN_ENTITY_ID_HASH = HashingUtils::HashString("IN_ENTITY_ID");
+        static constexpr uint32_t IN_TEMPLATE_ID_HASH = ConstExprHashingUtils::HashString("IN_TEMPLATE_ID");
+        static constexpr uint32_t IN_ENTITY_ID_HASH = ConstExprHashingUtils::HashString("IN_ENTITY_ID");
 
 
         DestinationCountryParameterKey GetDestinationCountryParameterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IN_TEMPLATE_ID_HASH)
           {
             return DestinationCountryParameterKey::IN_TEMPLATE_ID;

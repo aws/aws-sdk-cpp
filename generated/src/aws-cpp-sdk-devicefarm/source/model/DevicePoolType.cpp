@@ -20,13 +20,13 @@ namespace Aws
       namespace DevicePoolTypeMapper
       {
 
-        static const int CURATED_HASH = HashingUtils::HashString("CURATED");
-        static const int PRIVATE__HASH = HashingUtils::HashString("PRIVATE");
+        static constexpr uint32_t CURATED_HASH = ConstExprHashingUtils::HashString("CURATED");
+        static constexpr uint32_t PRIVATE__HASH = ConstExprHashingUtils::HashString("PRIVATE");
 
 
         DevicePoolType GetDevicePoolTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CURATED_HASH)
           {
             return DevicePoolType::CURATED;

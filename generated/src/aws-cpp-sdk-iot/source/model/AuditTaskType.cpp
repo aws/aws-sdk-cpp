@@ -20,13 +20,13 @@ namespace Aws
       namespace AuditTaskTypeMapper
       {
 
-        static const int ON_DEMAND_AUDIT_TASK_HASH = HashingUtils::HashString("ON_DEMAND_AUDIT_TASK");
-        static const int SCHEDULED_AUDIT_TASK_HASH = HashingUtils::HashString("SCHEDULED_AUDIT_TASK");
+        static constexpr uint32_t ON_DEMAND_AUDIT_TASK_HASH = ConstExprHashingUtils::HashString("ON_DEMAND_AUDIT_TASK");
+        static constexpr uint32_t SCHEDULED_AUDIT_TASK_HASH = ConstExprHashingUtils::HashString("SCHEDULED_AUDIT_TASK");
 
 
         AuditTaskType GetAuditTaskTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ON_DEMAND_AUDIT_TASK_HASH)
           {
             return AuditTaskType::ON_DEMAND_AUDIT_TASK;

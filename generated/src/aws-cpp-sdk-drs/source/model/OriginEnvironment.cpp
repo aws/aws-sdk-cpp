@@ -20,13 +20,13 @@ namespace Aws
       namespace OriginEnvironmentMapper
       {
 
-        static const int ON_PREMISES_HASH = HashingUtils::HashString("ON_PREMISES");
-        static const int AWS_HASH = HashingUtils::HashString("AWS");
+        static constexpr uint32_t ON_PREMISES_HASH = ConstExprHashingUtils::HashString("ON_PREMISES");
+        static constexpr uint32_t AWS_HASH = ConstExprHashingUtils::HashString("AWS");
 
 
         OriginEnvironment GetOriginEnvironmentForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ON_PREMISES_HASH)
           {
             return OriginEnvironment::ON_PREMISES;

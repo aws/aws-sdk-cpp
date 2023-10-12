@@ -20,13 +20,13 @@ namespace Aws
       namespace SoftwareToUpdateMapper
       {
 
-        static const int core_HASH = HashingUtils::HashString("core");
-        static const int ota_agent_HASH = HashingUtils::HashString("ota_agent");
+        static constexpr uint32_t core_HASH = ConstExprHashingUtils::HashString("core");
+        static constexpr uint32_t ota_agent_HASH = ConstExprHashingUtils::HashString("ota_agent");
 
 
         SoftwareToUpdate GetSoftwareToUpdateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == core_HASH)
           {
             return SoftwareToUpdate::core;

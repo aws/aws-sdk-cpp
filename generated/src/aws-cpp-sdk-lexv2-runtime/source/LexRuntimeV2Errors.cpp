@@ -18,15 +18,15 @@ namespace LexRuntimeV2
 namespace LexRuntimeV2ErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int BAD_GATEWAY_HASH = HashingUtils::HashString("BadGatewayException");
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int DEPENDENCY_FAILED_HASH = HashingUtils::HashString("DependencyFailedException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t BAD_GATEWAY_HASH = ConstExprHashingUtils::HashString("BadGatewayException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
+static constexpr uint32_t DEPENDENCY_FAILED_HASH = ConstExprHashingUtils::HashString("DependencyFailedException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

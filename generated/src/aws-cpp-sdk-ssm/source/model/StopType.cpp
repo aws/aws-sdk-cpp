@@ -20,13 +20,13 @@ namespace Aws
       namespace StopTypeMapper
       {
 
-        static const int Complete_HASH = HashingUtils::HashString("Complete");
-        static const int Cancel_HASH = HashingUtils::HashString("Cancel");
+        static constexpr uint32_t Complete_HASH = ConstExprHashingUtils::HashString("Complete");
+        static constexpr uint32_t Cancel_HASH = ConstExprHashingUtils::HashString("Cancel");
 
 
         StopType GetStopTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Complete_HASH)
           {
             return StopType::Complete;

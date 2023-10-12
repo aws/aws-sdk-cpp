@@ -20,19 +20,19 @@ namespace Aws
       namespace RevocationReasonMapper
       {
 
-        static const int UNSPECIFIED_HASH = HashingUtils::HashString("UNSPECIFIED");
-        static const int KEY_COMPROMISE_HASH = HashingUtils::HashString("KEY_COMPROMISE");
-        static const int CERTIFICATE_AUTHORITY_COMPROMISE_HASH = HashingUtils::HashString("CERTIFICATE_AUTHORITY_COMPROMISE");
-        static const int AFFILIATION_CHANGED_HASH = HashingUtils::HashString("AFFILIATION_CHANGED");
-        static const int SUPERSEDED_HASH = HashingUtils::HashString("SUPERSEDED");
-        static const int CESSATION_OF_OPERATION_HASH = HashingUtils::HashString("CESSATION_OF_OPERATION");
-        static const int PRIVILEGE_WITHDRAWN_HASH = HashingUtils::HashString("PRIVILEGE_WITHDRAWN");
-        static const int A_A_COMPROMISE_HASH = HashingUtils::HashString("A_A_COMPROMISE");
+        static constexpr uint32_t UNSPECIFIED_HASH = ConstExprHashingUtils::HashString("UNSPECIFIED");
+        static constexpr uint32_t KEY_COMPROMISE_HASH = ConstExprHashingUtils::HashString("KEY_COMPROMISE");
+        static constexpr uint32_t CERTIFICATE_AUTHORITY_COMPROMISE_HASH = ConstExprHashingUtils::HashString("CERTIFICATE_AUTHORITY_COMPROMISE");
+        static constexpr uint32_t AFFILIATION_CHANGED_HASH = ConstExprHashingUtils::HashString("AFFILIATION_CHANGED");
+        static constexpr uint32_t SUPERSEDED_HASH = ConstExprHashingUtils::HashString("SUPERSEDED");
+        static constexpr uint32_t CESSATION_OF_OPERATION_HASH = ConstExprHashingUtils::HashString("CESSATION_OF_OPERATION");
+        static constexpr uint32_t PRIVILEGE_WITHDRAWN_HASH = ConstExprHashingUtils::HashString("PRIVILEGE_WITHDRAWN");
+        static constexpr uint32_t A_A_COMPROMISE_HASH = ConstExprHashingUtils::HashString("A_A_COMPROMISE");
 
 
         RevocationReason GetRevocationReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNSPECIFIED_HASH)
           {
             return RevocationReason::UNSPECIFIED;

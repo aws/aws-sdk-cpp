@@ -20,19 +20,19 @@ namespace Aws
       namespace ModelStatusMapper
       {
 
-        static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
-        static const int TRAINING_HASH = HashingUtils::HashString("TRAINING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int STOP_REQUESTED_HASH = HashingUtils::HashString("STOP_REQUESTED");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
-        static const int IN_ERROR_HASH = HashingUtils::HashString("IN_ERROR");
-        static const int TRAINED_HASH = HashingUtils::HashString("TRAINED");
-        static const int TRAINED_WITH_WARNING_HASH = HashingUtils::HashString("TRAINED_WITH_WARNING");
+        static constexpr uint32_t SUBMITTED_HASH = ConstExprHashingUtils::HashString("SUBMITTED");
+        static constexpr uint32_t TRAINING_HASH = ConstExprHashingUtils::HashString("TRAINING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t STOP_REQUESTED_HASH = ConstExprHashingUtils::HashString("STOP_REQUESTED");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
+        static constexpr uint32_t IN_ERROR_HASH = ConstExprHashingUtils::HashString("IN_ERROR");
+        static constexpr uint32_t TRAINED_HASH = ConstExprHashingUtils::HashString("TRAINED");
+        static constexpr uint32_t TRAINED_WITH_WARNING_HASH = ConstExprHashingUtils::HashString("TRAINED_WITH_WARNING");
 
 
         ModelStatus GetModelStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUBMITTED_HASH)
           {
             return ModelStatus::SUBMITTED;

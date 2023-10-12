@@ -75,21 +75,21 @@ template<> AWS_EKS_API InvalidRequestException EKSError::GetModeledError()
 namespace EKSErrorMapper
 {
 
-static const int CLIENT_HASH = HashingUtils::HashString("ClientException");
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
-static const int UNSUPPORTED_AVAILABILITY_ZONE_HASH = HashingUtils::HashString("UnsupportedAvailabilityZoneException");
-static const int SERVER_HASH = HashingUtils::HashString("ServerException");
-static const int RESOURCE_PROPAGATION_DELAY_HASH = HashingUtils::HashString("ResourcePropagationDelayException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t CLIENT_HASH = ConstExprHashingUtils::HashString("ClientException");
+static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NotFoundException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t RESOURCE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ResourceLimitExceededException");
+static constexpr uint32_t UNSUPPORTED_AVAILABILITY_ZONE_HASH = ConstExprHashingUtils::HashString("UnsupportedAvailabilityZoneException");
+static constexpr uint32_t SERVER_HASH = ConstExprHashingUtils::HashString("ServerException");
+static constexpr uint32_t RESOURCE_PROPAGATION_DELAY_HASH = ConstExprHashingUtils::HashString("ResourcePropagationDelayException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BadRequestException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CLIENT_HASH)
   {

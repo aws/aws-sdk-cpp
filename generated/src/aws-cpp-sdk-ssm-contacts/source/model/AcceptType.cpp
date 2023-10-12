@@ -20,13 +20,13 @@ namespace Aws
       namespace AcceptTypeMapper
       {
 
-        static const int DELIVERED_HASH = HashingUtils::HashString("DELIVERED");
-        static const int READ_HASH = HashingUtils::HashString("READ");
+        static constexpr uint32_t DELIVERED_HASH = ConstExprHashingUtils::HashString("DELIVERED");
+        static constexpr uint32_t READ_HASH = ConstExprHashingUtils::HashString("READ");
 
 
         AcceptType GetAcceptTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DELIVERED_HASH)
           {
             return AcceptType::DELIVERED;

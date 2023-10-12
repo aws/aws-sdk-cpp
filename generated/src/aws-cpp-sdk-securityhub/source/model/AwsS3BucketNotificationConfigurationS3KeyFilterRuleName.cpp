@@ -20,13 +20,13 @@ namespace Aws
       namespace AwsS3BucketNotificationConfigurationS3KeyFilterRuleNameMapper
       {
 
-        static const int Prefix_HASH = HashingUtils::HashString("Prefix");
-        static const int Suffix_HASH = HashingUtils::HashString("Suffix");
+        static constexpr uint32_t Prefix_HASH = ConstExprHashingUtils::HashString("Prefix");
+        static constexpr uint32_t Suffix_HASH = ConstExprHashingUtils::HashString("Suffix");
 
 
         AwsS3BucketNotificationConfigurationS3KeyFilterRuleName GetAwsS3BucketNotificationConfigurationS3KeyFilterRuleNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Prefix_HASH)
           {
             return AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Prefix;

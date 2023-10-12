@@ -20,13 +20,13 @@ namespace Aws
       namespace DashIsoMpdManifestBandwidthTypeMapper
       {
 
-        static const int AVERAGE_HASH = HashingUtils::HashString("AVERAGE");
-        static const int MAX_HASH = HashingUtils::HashString("MAX");
+        static constexpr uint32_t AVERAGE_HASH = ConstExprHashingUtils::HashString("AVERAGE");
+        static constexpr uint32_t MAX_HASH = ConstExprHashingUtils::HashString("MAX");
 
 
         DashIsoMpdManifestBandwidthType GetDashIsoMpdManifestBandwidthTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVERAGE_HASH)
           {
             return DashIsoMpdManifestBandwidthType::AVERAGE;

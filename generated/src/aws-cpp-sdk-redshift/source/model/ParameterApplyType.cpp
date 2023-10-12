@@ -20,13 +20,13 @@ namespace Aws
       namespace ParameterApplyTypeMapper
       {
 
-        static const int static__HASH = HashingUtils::HashString("static");
-        static const int dynamic_HASH = HashingUtils::HashString("dynamic");
+        static constexpr uint32_t static__HASH = ConstExprHashingUtils::HashString("static");
+        static constexpr uint32_t dynamic_HASH = ConstExprHashingUtils::HashString("dynamic");
 
 
         ParameterApplyType GetParameterApplyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == static__HASH)
           {
             return ParameterApplyType::static_;

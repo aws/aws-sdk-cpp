@@ -20,15 +20,15 @@ namespace Aws
       namespace BackupStateMapper
       {
 
-        static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int PENDING_DELETION_HASH = HashingUtils::HashString("PENDING_DELETION");
+        static constexpr uint32_t CREATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("CREATE_IN_PROGRESS");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t PENDING_DELETION_HASH = ConstExprHashingUtils::HashString("PENDING_DELETION");
 
 
         BackupState GetBackupStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_IN_PROGRESS_HASH)
           {
             return BackupState::CREATE_IN_PROGRESS;

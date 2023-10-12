@@ -20,24 +20,24 @@ namespace Aws
       namespace StreamingInstanceTypeMapper
       {
 
-        static const int g4dn_xlarge_HASH = HashingUtils::HashString("g4dn.xlarge");
-        static const int g4dn_2xlarge_HASH = HashingUtils::HashString("g4dn.2xlarge");
-        static const int g4dn_4xlarge_HASH = HashingUtils::HashString("g4dn.4xlarge");
-        static const int g4dn_8xlarge_HASH = HashingUtils::HashString("g4dn.8xlarge");
-        static const int g4dn_12xlarge_HASH = HashingUtils::HashString("g4dn.12xlarge");
-        static const int g4dn_16xlarge_HASH = HashingUtils::HashString("g4dn.16xlarge");
-        static const int g3_4xlarge_HASH = HashingUtils::HashString("g3.4xlarge");
-        static const int g3s_xlarge_HASH = HashingUtils::HashString("g3s.xlarge");
-        static const int g5_xlarge_HASH = HashingUtils::HashString("g5.xlarge");
-        static const int g5_2xlarge_HASH = HashingUtils::HashString("g5.2xlarge");
-        static const int g5_4xlarge_HASH = HashingUtils::HashString("g5.4xlarge");
-        static const int g5_8xlarge_HASH = HashingUtils::HashString("g5.8xlarge");
-        static const int g5_16xlarge_HASH = HashingUtils::HashString("g5.16xlarge");
+        static constexpr uint32_t g4dn_xlarge_HASH = ConstExprHashingUtils::HashString("g4dn.xlarge");
+        static constexpr uint32_t g4dn_2xlarge_HASH = ConstExprHashingUtils::HashString("g4dn.2xlarge");
+        static constexpr uint32_t g4dn_4xlarge_HASH = ConstExprHashingUtils::HashString("g4dn.4xlarge");
+        static constexpr uint32_t g4dn_8xlarge_HASH = ConstExprHashingUtils::HashString("g4dn.8xlarge");
+        static constexpr uint32_t g4dn_12xlarge_HASH = ConstExprHashingUtils::HashString("g4dn.12xlarge");
+        static constexpr uint32_t g4dn_16xlarge_HASH = ConstExprHashingUtils::HashString("g4dn.16xlarge");
+        static constexpr uint32_t g3_4xlarge_HASH = ConstExprHashingUtils::HashString("g3.4xlarge");
+        static constexpr uint32_t g3s_xlarge_HASH = ConstExprHashingUtils::HashString("g3s.xlarge");
+        static constexpr uint32_t g5_xlarge_HASH = ConstExprHashingUtils::HashString("g5.xlarge");
+        static constexpr uint32_t g5_2xlarge_HASH = ConstExprHashingUtils::HashString("g5.2xlarge");
+        static constexpr uint32_t g5_4xlarge_HASH = ConstExprHashingUtils::HashString("g5.4xlarge");
+        static constexpr uint32_t g5_8xlarge_HASH = ConstExprHashingUtils::HashString("g5.8xlarge");
+        static constexpr uint32_t g5_16xlarge_HASH = ConstExprHashingUtils::HashString("g5.16xlarge");
 
 
         StreamingInstanceType GetStreamingInstanceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == g4dn_xlarge_HASH)
           {
             return StreamingInstanceType::g4dn_xlarge;

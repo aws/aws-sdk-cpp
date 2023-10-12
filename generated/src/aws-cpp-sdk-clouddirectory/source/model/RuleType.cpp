@@ -20,15 +20,15 @@ namespace Aws
       namespace RuleTypeMapper
       {
 
-        static const int BINARY_LENGTH_HASH = HashingUtils::HashString("BINARY_LENGTH");
-        static const int NUMBER_COMPARISON_HASH = HashingUtils::HashString("NUMBER_COMPARISON");
-        static const int STRING_FROM_SET_HASH = HashingUtils::HashString("STRING_FROM_SET");
-        static const int STRING_LENGTH_HASH = HashingUtils::HashString("STRING_LENGTH");
+        static constexpr uint32_t BINARY_LENGTH_HASH = ConstExprHashingUtils::HashString("BINARY_LENGTH");
+        static constexpr uint32_t NUMBER_COMPARISON_HASH = ConstExprHashingUtils::HashString("NUMBER_COMPARISON");
+        static constexpr uint32_t STRING_FROM_SET_HASH = ConstExprHashingUtils::HashString("STRING_FROM_SET");
+        static constexpr uint32_t STRING_LENGTH_HASH = ConstExprHashingUtils::HashString("STRING_LENGTH");
 
 
         RuleType GetRuleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BINARY_LENGTH_HASH)
           {
             return RuleType::BINARY_LENGTH;

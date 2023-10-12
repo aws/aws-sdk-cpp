@@ -20,16 +20,16 @@ namespace Aws
       namespace HaArchitectureMapper
       {
 
-        static const int MultiSite_HASH = HashingUtils::HashString("MultiSite");
-        static const int WarmStandby_HASH = HashingUtils::HashString("WarmStandby");
-        static const int PilotLight_HASH = HashingUtils::HashString("PilotLight");
-        static const int BackupAndRestore_HASH = HashingUtils::HashString("BackupAndRestore");
-        static const int NoRecoveryPlan_HASH = HashingUtils::HashString("NoRecoveryPlan");
+        static constexpr uint32_t MultiSite_HASH = ConstExprHashingUtils::HashString("MultiSite");
+        static constexpr uint32_t WarmStandby_HASH = ConstExprHashingUtils::HashString("WarmStandby");
+        static constexpr uint32_t PilotLight_HASH = ConstExprHashingUtils::HashString("PilotLight");
+        static constexpr uint32_t BackupAndRestore_HASH = ConstExprHashingUtils::HashString("BackupAndRestore");
+        static constexpr uint32_t NoRecoveryPlan_HASH = ConstExprHashingUtils::HashString("NoRecoveryPlan");
 
 
         HaArchitecture GetHaArchitectureForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MultiSite_HASH)
           {
             return HaArchitecture::MultiSite;

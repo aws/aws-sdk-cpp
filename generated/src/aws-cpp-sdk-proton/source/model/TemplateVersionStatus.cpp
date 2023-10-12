@@ -20,15 +20,15 @@ namespace Aws
       namespace TemplateVersionStatusMapper
       {
 
-        static const int REGISTRATION_IN_PROGRESS_HASH = HashingUtils::HashString("REGISTRATION_IN_PROGRESS");
-        static const int REGISTRATION_FAILED_HASH = HashingUtils::HashString("REGISTRATION_FAILED");
-        static const int DRAFT_HASH = HashingUtils::HashString("DRAFT");
-        static const int PUBLISHED_HASH = HashingUtils::HashString("PUBLISHED");
+        static constexpr uint32_t REGISTRATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("REGISTRATION_IN_PROGRESS");
+        static constexpr uint32_t REGISTRATION_FAILED_HASH = ConstExprHashingUtils::HashString("REGISTRATION_FAILED");
+        static constexpr uint32_t DRAFT_HASH = ConstExprHashingUtils::HashString("DRAFT");
+        static constexpr uint32_t PUBLISHED_HASH = ConstExprHashingUtils::HashString("PUBLISHED");
 
 
         TemplateVersionStatus GetTemplateVersionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REGISTRATION_IN_PROGRESS_HASH)
           {
             return TemplateVersionStatus::REGISTRATION_IN_PROGRESS;

@@ -20,12 +20,12 @@ namespace Aws
       namespace ModelInfrastructureTypeMapper
       {
 
-        static const int RealTimeInference_HASH = HashingUtils::HashString("RealTimeInference");
+        static constexpr uint32_t RealTimeInference_HASH = ConstExprHashingUtils::HashString("RealTimeInference");
 
 
         ModelInfrastructureType GetModelInfrastructureTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RealTimeInference_HASH)
           {
             return ModelInfrastructureType::RealTimeInference;

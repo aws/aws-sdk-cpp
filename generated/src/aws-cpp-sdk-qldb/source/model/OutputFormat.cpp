@@ -20,14 +20,14 @@ namespace Aws
       namespace OutputFormatMapper
       {
 
-        static const int ION_BINARY_HASH = HashingUtils::HashString("ION_BINARY");
-        static const int ION_TEXT_HASH = HashingUtils::HashString("ION_TEXT");
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
+        static constexpr uint32_t ION_BINARY_HASH = ConstExprHashingUtils::HashString("ION_BINARY");
+        static constexpr uint32_t ION_TEXT_HASH = ConstExprHashingUtils::HashString("ION_TEXT");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
 
 
         OutputFormat GetOutputFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ION_BINARY_HASH)
           {
             return OutputFormat::ION_BINARY;

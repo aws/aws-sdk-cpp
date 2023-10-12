@@ -20,12 +20,12 @@ namespace Aws
       namespace NfsVersionMapper
       {
 
-        static const int NFS3_HASH = HashingUtils::HashString("NFS3");
+        static constexpr uint32_t NFS3_HASH = ConstExprHashingUtils::HashString("NFS3");
 
 
         NfsVersion GetNfsVersionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NFS3_HASH)
           {
             return NfsVersion::NFS3;

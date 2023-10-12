@@ -20,14 +20,14 @@ namespace Aws
       namespace OAuth2GrantTypeMapper
       {
 
-        static const int CLIENT_CREDENTIALS_HASH = HashingUtils::HashString("CLIENT_CREDENTIALS");
-        static const int AUTHORIZATION_CODE_HASH = HashingUtils::HashString("AUTHORIZATION_CODE");
-        static const int JWT_BEARER_HASH = HashingUtils::HashString("JWT_BEARER");
+        static constexpr uint32_t CLIENT_CREDENTIALS_HASH = ConstExprHashingUtils::HashString("CLIENT_CREDENTIALS");
+        static constexpr uint32_t AUTHORIZATION_CODE_HASH = ConstExprHashingUtils::HashString("AUTHORIZATION_CODE");
+        static constexpr uint32_t JWT_BEARER_HASH = ConstExprHashingUtils::HashString("JWT_BEARER");
 
 
         OAuth2GrantType GetOAuth2GrantTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLIENT_CREDENTIALS_HASH)
           {
             return OAuth2GrantType::CLIENT_CREDENTIALS;

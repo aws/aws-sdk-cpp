@@ -20,13 +20,13 @@ namespace Aws
       namespace LogDestinationTypeMapper
       {
 
-        static const int s3_HASH = HashingUtils::HashString("s3");
-        static const int cloudwatch_HASH = HashingUtils::HashString("cloudwatch");
+        static constexpr uint32_t s3_HASH = ConstExprHashingUtils::HashString("s3");
+        static constexpr uint32_t cloudwatch_HASH = ConstExprHashingUtils::HashString("cloudwatch");
 
 
         LogDestinationType GetLogDestinationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == s3_HASH)
           {
             return LogDestinationType::s3;

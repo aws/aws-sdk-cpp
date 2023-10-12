@@ -20,12 +20,12 @@ namespace Aws
       namespace InsightCategoryMapper
       {
 
-        static const int FAULT_HASH = HashingUtils::HashString("FAULT");
+        static constexpr uint32_t FAULT_HASH = ConstExprHashingUtils::HashString("FAULT");
 
 
         InsightCategory GetInsightCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FAULT_HASH)
           {
             return InsightCategory::FAULT;

@@ -20,14 +20,14 @@ namespace Aws
       namespace PositionFilteringMapper
       {
 
-        static const int TimeBased_HASH = HashingUtils::HashString("TimeBased");
-        static const int DistanceBased_HASH = HashingUtils::HashString("DistanceBased");
-        static const int AccuracyBased_HASH = HashingUtils::HashString("AccuracyBased");
+        static constexpr uint32_t TimeBased_HASH = ConstExprHashingUtils::HashString("TimeBased");
+        static constexpr uint32_t DistanceBased_HASH = ConstExprHashingUtils::HashString("DistanceBased");
+        static constexpr uint32_t AccuracyBased_HASH = ConstExprHashingUtils::HashString("AccuracyBased");
 
 
         PositionFiltering GetPositionFilteringForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TimeBased_HASH)
           {
             return PositionFiltering::TimeBased;

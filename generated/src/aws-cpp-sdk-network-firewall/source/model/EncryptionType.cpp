@@ -20,13 +20,13 @@ namespace Aws
       namespace EncryptionTypeMapper
       {
 
-        static const int CUSTOMER_KMS_HASH = HashingUtils::HashString("CUSTOMER_KMS");
-        static const int AWS_OWNED_KMS_KEY_HASH = HashingUtils::HashString("AWS_OWNED_KMS_KEY");
+        static constexpr uint32_t CUSTOMER_KMS_HASH = ConstExprHashingUtils::HashString("CUSTOMER_KMS");
+        static constexpr uint32_t AWS_OWNED_KMS_KEY_HASH = ConstExprHashingUtils::HashString("AWS_OWNED_KMS_KEY");
 
 
         EncryptionType GetEncryptionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CUSTOMER_KMS_HASH)
           {
             return EncryptionType::CUSTOMER_KMS;

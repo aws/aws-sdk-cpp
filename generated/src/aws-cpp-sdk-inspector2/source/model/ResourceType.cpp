@@ -20,15 +20,15 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int AWS_EC2_INSTANCE_HASH = HashingUtils::HashString("AWS_EC2_INSTANCE");
-        static const int AWS_ECR_CONTAINER_IMAGE_HASH = HashingUtils::HashString("AWS_ECR_CONTAINER_IMAGE");
-        static const int AWS_ECR_REPOSITORY_HASH = HashingUtils::HashString("AWS_ECR_REPOSITORY");
-        static const int AWS_LAMBDA_FUNCTION_HASH = HashingUtils::HashString("AWS_LAMBDA_FUNCTION");
+        static constexpr uint32_t AWS_EC2_INSTANCE_HASH = ConstExprHashingUtils::HashString("AWS_EC2_INSTANCE");
+        static constexpr uint32_t AWS_ECR_CONTAINER_IMAGE_HASH = ConstExprHashingUtils::HashString("AWS_ECR_CONTAINER_IMAGE");
+        static constexpr uint32_t AWS_ECR_REPOSITORY_HASH = ConstExprHashingUtils::HashString("AWS_ECR_REPOSITORY");
+        static constexpr uint32_t AWS_LAMBDA_FUNCTION_HASH = ConstExprHashingUtils::HashString("AWS_LAMBDA_FUNCTION");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_EC2_INSTANCE_HASH)
           {
             return ResourceType::AWS_EC2_INSTANCE;

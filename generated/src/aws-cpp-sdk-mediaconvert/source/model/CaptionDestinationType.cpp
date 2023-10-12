@@ -20,23 +20,23 @@ namespace Aws
       namespace CaptionDestinationTypeMapper
       {
 
-        static const int BURN_IN_HASH = HashingUtils::HashString("BURN_IN");
-        static const int DVB_SUB_HASH = HashingUtils::HashString("DVB_SUB");
-        static const int EMBEDDED_HASH = HashingUtils::HashString("EMBEDDED");
-        static const int EMBEDDED_PLUS_SCTE20_HASH = HashingUtils::HashString("EMBEDDED_PLUS_SCTE20");
-        static const int IMSC_HASH = HashingUtils::HashString("IMSC");
-        static const int SCTE20_PLUS_EMBEDDED_HASH = HashingUtils::HashString("SCTE20_PLUS_EMBEDDED");
-        static const int SCC_HASH = HashingUtils::HashString("SCC");
-        static const int SRT_HASH = HashingUtils::HashString("SRT");
-        static const int SMI_HASH = HashingUtils::HashString("SMI");
-        static const int TELETEXT_HASH = HashingUtils::HashString("TELETEXT");
-        static const int TTML_HASH = HashingUtils::HashString("TTML");
-        static const int WEBVTT_HASH = HashingUtils::HashString("WEBVTT");
+        static constexpr uint32_t BURN_IN_HASH = ConstExprHashingUtils::HashString("BURN_IN");
+        static constexpr uint32_t DVB_SUB_HASH = ConstExprHashingUtils::HashString("DVB_SUB");
+        static constexpr uint32_t EMBEDDED_HASH = ConstExprHashingUtils::HashString("EMBEDDED");
+        static constexpr uint32_t EMBEDDED_PLUS_SCTE20_HASH = ConstExprHashingUtils::HashString("EMBEDDED_PLUS_SCTE20");
+        static constexpr uint32_t IMSC_HASH = ConstExprHashingUtils::HashString("IMSC");
+        static constexpr uint32_t SCTE20_PLUS_EMBEDDED_HASH = ConstExprHashingUtils::HashString("SCTE20_PLUS_EMBEDDED");
+        static constexpr uint32_t SCC_HASH = ConstExprHashingUtils::HashString("SCC");
+        static constexpr uint32_t SRT_HASH = ConstExprHashingUtils::HashString("SRT");
+        static constexpr uint32_t SMI_HASH = ConstExprHashingUtils::HashString("SMI");
+        static constexpr uint32_t TELETEXT_HASH = ConstExprHashingUtils::HashString("TELETEXT");
+        static constexpr uint32_t TTML_HASH = ConstExprHashingUtils::HashString("TTML");
+        static constexpr uint32_t WEBVTT_HASH = ConstExprHashingUtils::HashString("WEBVTT");
 
 
         CaptionDestinationType GetCaptionDestinationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BURN_IN_HASH)
           {
             return CaptionDestinationType::BURN_IN;

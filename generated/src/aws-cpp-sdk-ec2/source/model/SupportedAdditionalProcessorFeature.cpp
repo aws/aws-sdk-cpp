@@ -20,12 +20,12 @@ namespace Aws
       namespace SupportedAdditionalProcessorFeatureMapper
       {
 
-        static const int amd_sev_snp_HASH = HashingUtils::HashString("amd-sev-snp");
+        static constexpr uint32_t amd_sev_snp_HASH = ConstExprHashingUtils::HashString("amd-sev-snp");
 
 
         SupportedAdditionalProcessorFeature GetSupportedAdditionalProcessorFeatureForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == amd_sev_snp_HASH)
           {
             return SupportedAdditionalProcessorFeature::amd_sev_snp;

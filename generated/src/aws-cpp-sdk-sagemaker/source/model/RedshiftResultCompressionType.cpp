@@ -20,16 +20,16 @@ namespace Aws
       namespace RedshiftResultCompressionTypeMapper
       {
 
-        static const int None_HASH = HashingUtils::HashString("None");
-        static const int GZIP_HASH = HashingUtils::HashString("GZIP");
-        static const int BZIP2_HASH = HashingUtils::HashString("BZIP2");
-        static const int ZSTD_HASH = HashingUtils::HashString("ZSTD");
-        static const int SNAPPY_HASH = HashingUtils::HashString("SNAPPY");
+        static constexpr uint32_t None_HASH = ConstExprHashingUtils::HashString("None");
+        static constexpr uint32_t GZIP_HASH = ConstExprHashingUtils::HashString("GZIP");
+        static constexpr uint32_t BZIP2_HASH = ConstExprHashingUtils::HashString("BZIP2");
+        static constexpr uint32_t ZSTD_HASH = ConstExprHashingUtils::HashString("ZSTD");
+        static constexpr uint32_t SNAPPY_HASH = ConstExprHashingUtils::HashString("SNAPPY");
 
 
         RedshiftResultCompressionType GetRedshiftResultCompressionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == None_HASH)
           {
             return RedshiftResultCompressionType::None;

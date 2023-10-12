@@ -20,17 +20,17 @@ namespace Aws
       namespace PropertyValidationExceptionReasonMapper
       {
 
-        static const int INVALID_FORMAT_HASH = HashingUtils::HashString("INVALID_FORMAT");
-        static const int UNIQUE_CONSTRAINT_VIOLATED_HASH = HashingUtils::HashString("UNIQUE_CONSTRAINT_VIOLATED");
-        static const int REFERENCED_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("REFERENCED_RESOURCE_NOT_FOUND");
-        static const int RESOURCE_NAME_ALREADY_EXISTS_HASH = HashingUtils::HashString("RESOURCE_NAME_ALREADY_EXISTS");
-        static const int REQUIRED_PROPERTY_MISSING_HASH = HashingUtils::HashString("REQUIRED_PROPERTY_MISSING");
-        static const int NOT_SUPPORTED_HASH = HashingUtils::HashString("NOT_SUPPORTED");
+        static constexpr uint32_t INVALID_FORMAT_HASH = ConstExprHashingUtils::HashString("INVALID_FORMAT");
+        static constexpr uint32_t UNIQUE_CONSTRAINT_VIOLATED_HASH = ConstExprHashingUtils::HashString("UNIQUE_CONSTRAINT_VIOLATED");
+        static constexpr uint32_t REFERENCED_RESOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("REFERENCED_RESOURCE_NOT_FOUND");
+        static constexpr uint32_t RESOURCE_NAME_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("RESOURCE_NAME_ALREADY_EXISTS");
+        static constexpr uint32_t REQUIRED_PROPERTY_MISSING_HASH = ConstExprHashingUtils::HashString("REQUIRED_PROPERTY_MISSING");
+        static constexpr uint32_t NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("NOT_SUPPORTED");
 
 
         PropertyValidationExceptionReason GetPropertyValidationExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVALID_FORMAT_HASH)
           {
             return PropertyValidationExceptionReason::INVALID_FORMAT;

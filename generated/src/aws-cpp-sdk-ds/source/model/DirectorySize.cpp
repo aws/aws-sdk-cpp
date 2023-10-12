@@ -20,13 +20,13 @@ namespace Aws
       namespace DirectorySizeMapper
       {
 
-        static const int Small_HASH = HashingUtils::HashString("Small");
-        static const int Large_HASH = HashingUtils::HashString("Large");
+        static constexpr uint32_t Small_HASH = ConstExprHashingUtils::HashString("Small");
+        static constexpr uint32_t Large_HASH = ConstExprHashingUtils::HashString("Large");
 
 
         DirectorySize GetDirectorySizeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Small_HASH)
           {
             return DirectorySize::Small;

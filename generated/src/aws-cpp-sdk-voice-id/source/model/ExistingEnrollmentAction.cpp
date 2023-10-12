@@ -20,13 +20,13 @@ namespace Aws
       namespace ExistingEnrollmentActionMapper
       {
 
-        static const int SKIP_HASH = HashingUtils::HashString("SKIP");
-        static const int OVERWRITE_HASH = HashingUtils::HashString("OVERWRITE");
+        static constexpr uint32_t SKIP_HASH = ConstExprHashingUtils::HashString("SKIP");
+        static constexpr uint32_t OVERWRITE_HASH = ConstExprHashingUtils::HashString("OVERWRITE");
 
 
         ExistingEnrollmentAction GetExistingEnrollmentActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SKIP_HASH)
           {
             return ExistingEnrollmentAction::SKIP;

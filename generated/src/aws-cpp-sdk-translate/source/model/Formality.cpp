@@ -20,13 +20,13 @@ namespace Aws
       namespace FormalityMapper
       {
 
-        static const int FORMAL_HASH = HashingUtils::HashString("FORMAL");
-        static const int INFORMAL_HASH = HashingUtils::HashString("INFORMAL");
+        static constexpr uint32_t FORMAL_HASH = ConstExprHashingUtils::HashString("FORMAL");
+        static constexpr uint32_t INFORMAL_HASH = ConstExprHashingUtils::HashString("INFORMAL");
 
 
         Formality GetFormalityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FORMAL_HASH)
           {
             return Formality::FORMAL;

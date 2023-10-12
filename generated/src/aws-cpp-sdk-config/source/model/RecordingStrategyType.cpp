@@ -20,14 +20,14 @@ namespace Aws
       namespace RecordingStrategyTypeMapper
       {
 
-        static const int ALL_SUPPORTED_RESOURCE_TYPES_HASH = HashingUtils::HashString("ALL_SUPPORTED_RESOURCE_TYPES");
-        static const int INCLUSION_BY_RESOURCE_TYPES_HASH = HashingUtils::HashString("INCLUSION_BY_RESOURCE_TYPES");
-        static const int EXCLUSION_BY_RESOURCE_TYPES_HASH = HashingUtils::HashString("EXCLUSION_BY_RESOURCE_TYPES");
+        static constexpr uint32_t ALL_SUPPORTED_RESOURCE_TYPES_HASH = ConstExprHashingUtils::HashString("ALL_SUPPORTED_RESOURCE_TYPES");
+        static constexpr uint32_t INCLUSION_BY_RESOURCE_TYPES_HASH = ConstExprHashingUtils::HashString("INCLUSION_BY_RESOURCE_TYPES");
+        static constexpr uint32_t EXCLUSION_BY_RESOURCE_TYPES_HASH = ConstExprHashingUtils::HashString("EXCLUSION_BY_RESOURCE_TYPES");
 
 
         RecordingStrategyType GetRecordingStrategyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_SUPPORTED_RESOURCE_TYPES_HASH)
           {
             return RecordingStrategyType::ALL_SUPPORTED_RESOURCE_TYPES;

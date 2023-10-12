@@ -20,15 +20,15 @@ namespace Aws
       namespace CallingNameStatusMapper
       {
 
-        static const int Unassigned_HASH = HashingUtils::HashString("Unassigned");
-        static const int UpdateInProgress_HASH = HashingUtils::HashString("UpdateInProgress");
-        static const int UpdateSucceeded_HASH = HashingUtils::HashString("UpdateSucceeded");
-        static const int UpdateFailed_HASH = HashingUtils::HashString("UpdateFailed");
+        static constexpr uint32_t Unassigned_HASH = ConstExprHashingUtils::HashString("Unassigned");
+        static constexpr uint32_t UpdateInProgress_HASH = ConstExprHashingUtils::HashString("UpdateInProgress");
+        static constexpr uint32_t UpdateSucceeded_HASH = ConstExprHashingUtils::HashString("UpdateSucceeded");
+        static constexpr uint32_t UpdateFailed_HASH = ConstExprHashingUtils::HashString("UpdateFailed");
 
 
         CallingNameStatus GetCallingNameStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Unassigned_HASH)
           {
             return CallingNameStatus::Unassigned;

@@ -20,20 +20,20 @@ namespace Aws
       namespace DeliveryStatusMapper
       {
 
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int FAILED_SIGNING_FILE_HASH = HashingUtils::HashString("FAILED_SIGNING_FILE");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("RESOURCE_NOT_FOUND");
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
-        static const int ACCESS_DENIED_SIGNING_FILE_HASH = HashingUtils::HashString("ACCESS_DENIED_SIGNING_FILE");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t FAILED_SIGNING_FILE_HASH = ConstExprHashingUtils::HashString("FAILED_SIGNING_FILE");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t RESOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("RESOURCE_NOT_FOUND");
+        static constexpr uint32_t ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED");
+        static constexpr uint32_t ACCESS_DENIED_SIGNING_FILE_HASH = ConstExprHashingUtils::HashString("ACCESS_DENIED_SIGNING_FILE");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
 
 
         DeliveryStatus GetDeliveryStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUCCESS_HASH)
           {
             return DeliveryStatus::SUCCESS;

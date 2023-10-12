@@ -20,12 +20,12 @@ namespace Aws
       namespace PeeringTypeMapper
       {
 
-        static const int TRANSIT_GATEWAY_HASH = HashingUtils::HashString("TRANSIT_GATEWAY");
+        static constexpr uint32_t TRANSIT_GATEWAY_HASH = ConstExprHashingUtils::HashString("TRANSIT_GATEWAY");
 
 
         PeeringType GetPeeringTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRANSIT_GATEWAY_HASH)
           {
             return PeeringType::TRANSIT_GATEWAY;

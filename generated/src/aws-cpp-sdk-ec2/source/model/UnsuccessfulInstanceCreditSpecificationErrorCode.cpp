@@ -20,15 +20,15 @@ namespace Aws
       namespace UnsuccessfulInstanceCreditSpecificationErrorCodeMapper
       {
 
-        static const int InvalidInstanceID_Malformed_HASH = HashingUtils::HashString("InvalidInstanceID.Malformed");
-        static const int InvalidInstanceID_NotFound_HASH = HashingUtils::HashString("InvalidInstanceID.NotFound");
-        static const int IncorrectInstanceState_HASH = HashingUtils::HashString("IncorrectInstanceState");
-        static const int InstanceCreditSpecification_NotSupported_HASH = HashingUtils::HashString("InstanceCreditSpecification.NotSupported");
+        static constexpr uint32_t InvalidInstanceID_Malformed_HASH = ConstExprHashingUtils::HashString("InvalidInstanceID.Malformed");
+        static constexpr uint32_t InvalidInstanceID_NotFound_HASH = ConstExprHashingUtils::HashString("InvalidInstanceID.NotFound");
+        static constexpr uint32_t IncorrectInstanceState_HASH = ConstExprHashingUtils::HashString("IncorrectInstanceState");
+        static constexpr uint32_t InstanceCreditSpecification_NotSupported_HASH = ConstExprHashingUtils::HashString("InstanceCreditSpecification.NotSupported");
 
 
         UnsuccessfulInstanceCreditSpecificationErrorCode GetUnsuccessfulInstanceCreditSpecificationErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InvalidInstanceID_Malformed_HASH)
           {
             return UnsuccessfulInstanceCreditSpecificationErrorCode::InvalidInstanceID_Malformed;

@@ -20,12 +20,12 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int Mbps_Outbound_Bandwidth_HASH = HashingUtils::HashString("Mbps_Outbound_Bandwidth");
+        static constexpr uint32_t Mbps_Outbound_Bandwidth_HASH = ConstExprHashingUtils::HashString("Mbps_Outbound_Bandwidth");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Mbps_Outbound_Bandwidth_HASH)
           {
             return ResourceType::Mbps_Outbound_Bandwidth;

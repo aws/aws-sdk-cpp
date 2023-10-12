@@ -20,15 +20,15 @@ namespace Aws
       namespace RadiusAuthenticationProtocolMapper
       {
 
-        static const int PAP_HASH = HashingUtils::HashString("PAP");
-        static const int CHAP_HASH = HashingUtils::HashString("CHAP");
-        static const int MS_CHAPv1_HASH = HashingUtils::HashString("MS-CHAPv1");
-        static const int MS_CHAPv2_HASH = HashingUtils::HashString("MS-CHAPv2");
+        static constexpr uint32_t PAP_HASH = ConstExprHashingUtils::HashString("PAP");
+        static constexpr uint32_t CHAP_HASH = ConstExprHashingUtils::HashString("CHAP");
+        static constexpr uint32_t MS_CHAPv1_HASH = ConstExprHashingUtils::HashString("MS-CHAPv1");
+        static constexpr uint32_t MS_CHAPv2_HASH = ConstExprHashingUtils::HashString("MS-CHAPv2");
 
 
         RadiusAuthenticationProtocol GetRadiusAuthenticationProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PAP_HASH)
           {
             return RadiusAuthenticationProtocol::PAP;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ParentEntityUpdateTypeMapper
       {
 
-        static const int UPDATE_HASH = HashingUtils::HashString("UPDATE");
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
+        static constexpr uint32_t UPDATE_HASH = ConstExprHashingUtils::HashString("UPDATE");
+        static constexpr uint32_t DELETE__HASH = ConstExprHashingUtils::HashString("DELETE");
 
 
         ParentEntityUpdateType GetParentEntityUpdateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UPDATE_HASH)
           {
             return ParentEntityUpdateType::UPDATE;

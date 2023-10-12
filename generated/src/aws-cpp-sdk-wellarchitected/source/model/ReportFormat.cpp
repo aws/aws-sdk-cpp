@@ -20,13 +20,13 @@ namespace Aws
       namespace ReportFormatMapper
       {
 
-        static const int PDF_HASH = HashingUtils::HashString("PDF");
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
+        static constexpr uint32_t PDF_HASH = ConstExprHashingUtils::HashString("PDF");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
 
 
         ReportFormat GetReportFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PDF_HASH)
           {
             return ReportFormat::PDF;

@@ -20,15 +20,15 @@ namespace Aws
       namespace AudioDurationCorrectionMapper
       {
 
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int TRACK_HASH = HashingUtils::HashString("TRACK");
-        static const int FRAME_HASH = HashingUtils::HashString("FRAME");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t TRACK_HASH = ConstExprHashingUtils::HashString("TRACK");
+        static constexpr uint32_t FRAME_HASH = ConstExprHashingUtils::HashString("FRAME");
 
 
         AudioDurationCorrection GetAudioDurationCorrectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISABLED_HASH)
           {
             return AudioDurationCorrection::DISABLED;

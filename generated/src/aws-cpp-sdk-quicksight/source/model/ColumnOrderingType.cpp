@@ -20,14 +20,14 @@ namespace Aws
       namespace ColumnOrderingTypeMapper
       {
 
-        static const int GREATER_IS_BETTER_HASH = HashingUtils::HashString("GREATER_IS_BETTER");
-        static const int LESSER_IS_BETTER_HASH = HashingUtils::HashString("LESSER_IS_BETTER");
-        static const int SPECIFIED_HASH = HashingUtils::HashString("SPECIFIED");
+        static constexpr uint32_t GREATER_IS_BETTER_HASH = ConstExprHashingUtils::HashString("GREATER_IS_BETTER");
+        static constexpr uint32_t LESSER_IS_BETTER_HASH = ConstExprHashingUtils::HashString("LESSER_IS_BETTER");
+        static constexpr uint32_t SPECIFIED_HASH = ConstExprHashingUtils::HashString("SPECIFIED");
 
 
         ColumnOrderingType GetColumnOrderingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GREATER_IS_BETTER_HASH)
           {
             return ColumnOrderingType::GREATER_IS_BETTER;

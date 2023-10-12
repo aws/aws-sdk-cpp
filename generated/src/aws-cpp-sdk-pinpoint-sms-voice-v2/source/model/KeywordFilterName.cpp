@@ -20,12 +20,12 @@ namespace Aws
       namespace KeywordFilterNameMapper
       {
 
-        static const int keyword_action_HASH = HashingUtils::HashString("keyword-action");
+        static constexpr uint32_t keyword_action_HASH = ConstExprHashingUtils::HashString("keyword-action");
 
 
         KeywordFilterName GetKeywordFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == keyword_action_HASH)
           {
             return KeywordFilterName::keyword_action;

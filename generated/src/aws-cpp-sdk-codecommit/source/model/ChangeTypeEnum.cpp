@@ -20,14 +20,14 @@ namespace Aws
       namespace ChangeTypeEnumMapper
       {
 
-        static const int A_HASH = HashingUtils::HashString("A");
-        static const int M_HASH = HashingUtils::HashString("M");
-        static const int D_HASH = HashingUtils::HashString("D");
+        static constexpr uint32_t A_HASH = ConstExprHashingUtils::HashString("A");
+        static constexpr uint32_t M_HASH = ConstExprHashingUtils::HashString("M");
+        static constexpr uint32_t D_HASH = ConstExprHashingUtils::HashString("D");
 
 
         ChangeTypeEnum GetChangeTypeEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == A_HASH)
           {
             return ChangeTypeEnum::A;

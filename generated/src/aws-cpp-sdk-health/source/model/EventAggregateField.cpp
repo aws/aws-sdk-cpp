@@ -20,12 +20,12 @@ namespace Aws
       namespace EventAggregateFieldMapper
       {
 
-        static const int eventTypeCategory_HASH = HashingUtils::HashString("eventTypeCategory");
+        static constexpr uint32_t eventTypeCategory_HASH = ConstExprHashingUtils::HashString("eventTypeCategory");
 
 
         EventAggregateField GetEventAggregateFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == eventTypeCategory_HASH)
           {
             return EventAggregateField::eventTypeCategory;

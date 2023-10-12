@@ -20,17 +20,17 @@ namespace Aws
       namespace EventDataStoreStatusMapper
       {
 
-        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int PENDING_DELETION_HASH = HashingUtils::HashString("PENDING_DELETION");
-        static const int STARTING_INGESTION_HASH = HashingUtils::HashString("STARTING_INGESTION");
-        static const int STOPPING_INGESTION_HASH = HashingUtils::HashString("STOPPING_INGESTION");
-        static const int STOPPED_INGESTION_HASH = HashingUtils::HashString("STOPPED_INGESTION");
+        static constexpr uint32_t CREATED_HASH = ConstExprHashingUtils::HashString("CREATED");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
+        static constexpr uint32_t PENDING_DELETION_HASH = ConstExprHashingUtils::HashString("PENDING_DELETION");
+        static constexpr uint32_t STARTING_INGESTION_HASH = ConstExprHashingUtils::HashString("STARTING_INGESTION");
+        static constexpr uint32_t STOPPING_INGESTION_HASH = ConstExprHashingUtils::HashString("STOPPING_INGESTION");
+        static constexpr uint32_t STOPPED_INGESTION_HASH = ConstExprHashingUtils::HashString("STOPPED_INGESTION");
 
 
         EventDataStoreStatus GetEventDataStoreStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATED_HASH)
           {
             return EventDataStoreStatus::CREATED;

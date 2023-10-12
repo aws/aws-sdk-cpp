@@ -20,14 +20,14 @@ namespace Aws
       namespace ServiceMapper
       {
 
-        static const int EC2_HASH = HashingUtils::HashString("EC2");
-        static const int ECR_HASH = HashingUtils::HashString("ECR");
-        static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
+        static constexpr uint32_t EC2_HASH = ConstExprHashingUtils::HashString("EC2");
+        static constexpr uint32_t ECR_HASH = ConstExprHashingUtils::HashString("ECR");
+        static constexpr uint32_t LAMBDA_HASH = ConstExprHashingUtils::HashString("LAMBDA");
 
 
         Service GetServiceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EC2_HASH)
           {
             return Service::EC2;

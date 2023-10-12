@@ -20,13 +20,13 @@ namespace Aws
       namespace TypesSearchScopeMapper
       {
 
-        static const int ASSET_TYPE_HASH = HashingUtils::HashString("ASSET_TYPE");
-        static const int FORM_TYPE_HASH = HashingUtils::HashString("FORM_TYPE");
+        static constexpr uint32_t ASSET_TYPE_HASH = ConstExprHashingUtils::HashString("ASSET_TYPE");
+        static constexpr uint32_t FORM_TYPE_HASH = ConstExprHashingUtils::HashString("FORM_TYPE");
 
 
         TypesSearchScope GetTypesSearchScopeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASSET_TYPE_HASH)
           {
             return TypesSearchScope::ASSET_TYPE;

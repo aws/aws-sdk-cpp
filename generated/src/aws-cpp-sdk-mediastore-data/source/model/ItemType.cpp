@@ -20,13 +20,13 @@ namespace Aws
       namespace ItemTypeMapper
       {
 
-        static const int OBJECT_HASH = HashingUtils::HashString("OBJECT");
-        static const int FOLDER_HASH = HashingUtils::HashString("FOLDER");
+        static constexpr uint32_t OBJECT_HASH = ConstExprHashingUtils::HashString("OBJECT");
+        static constexpr uint32_t FOLDER_HASH = ConstExprHashingUtils::HashString("FOLDER");
 
 
         ItemType GetItemTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OBJECT_HASH)
           {
             return ItemType::OBJECT;

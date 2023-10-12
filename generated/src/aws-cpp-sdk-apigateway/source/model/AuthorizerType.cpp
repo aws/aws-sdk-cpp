@@ -20,14 +20,14 @@ namespace Aws
       namespace AuthorizerTypeMapper
       {
 
-        static const int TOKEN_HASH = HashingUtils::HashString("TOKEN");
-        static const int REQUEST_HASH = HashingUtils::HashString("REQUEST");
-        static const int COGNITO_USER_POOLS_HASH = HashingUtils::HashString("COGNITO_USER_POOLS");
+        static constexpr uint32_t TOKEN_HASH = ConstExprHashingUtils::HashString("TOKEN");
+        static constexpr uint32_t REQUEST_HASH = ConstExprHashingUtils::HashString("REQUEST");
+        static constexpr uint32_t COGNITO_USER_POOLS_HASH = ConstExprHashingUtils::HashString("COGNITO_USER_POOLS");
 
 
         AuthorizerType GetAuthorizerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TOKEN_HASH)
           {
             return AuthorizerType::TOKEN;

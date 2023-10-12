@@ -20,16 +20,16 @@ namespace Aws
       namespace AssociationErrorCodeMapper
       {
 
-        static const int ValidationError_InsufficientDiskSpace_HASH = HashingUtils::HashString("ValidationError.InsufficientDiskSpace");
-        static const int ValidationError_InsufficientMemory_HASH = HashingUtils::HashString("ValidationError.InsufficientMemory");
-        static const int ValidationError_UnsupportedOperatingSystem_HASH = HashingUtils::HashString("ValidationError.UnsupportedOperatingSystem");
-        static const int DeploymentError_InternalServerError_HASH = HashingUtils::HashString("DeploymentError.InternalServerError");
-        static const int DeploymentError_WorkspaceUnreachable_HASH = HashingUtils::HashString("DeploymentError.WorkspaceUnreachable");
+        static constexpr uint32_t ValidationError_InsufficientDiskSpace_HASH = ConstExprHashingUtils::HashString("ValidationError.InsufficientDiskSpace");
+        static constexpr uint32_t ValidationError_InsufficientMemory_HASH = ConstExprHashingUtils::HashString("ValidationError.InsufficientMemory");
+        static constexpr uint32_t ValidationError_UnsupportedOperatingSystem_HASH = ConstExprHashingUtils::HashString("ValidationError.UnsupportedOperatingSystem");
+        static constexpr uint32_t DeploymentError_InternalServerError_HASH = ConstExprHashingUtils::HashString("DeploymentError.InternalServerError");
+        static constexpr uint32_t DeploymentError_WorkspaceUnreachable_HASH = ConstExprHashingUtils::HashString("DeploymentError.WorkspaceUnreachable");
 
 
         AssociationErrorCode GetAssociationErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ValidationError_InsufficientDiskSpace_HASH)
           {
             return AssociationErrorCode::ValidationError_InsufficientDiskSpace;

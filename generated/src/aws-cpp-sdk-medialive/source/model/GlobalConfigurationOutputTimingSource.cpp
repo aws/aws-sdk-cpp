@@ -20,13 +20,13 @@ namespace Aws
       namespace GlobalConfigurationOutputTimingSourceMapper
       {
 
-        static const int INPUT_CLOCK_HASH = HashingUtils::HashString("INPUT_CLOCK");
-        static const int SYSTEM_CLOCK_HASH = HashingUtils::HashString("SYSTEM_CLOCK");
+        static constexpr uint32_t INPUT_CLOCK_HASH = ConstExprHashingUtils::HashString("INPUT_CLOCK");
+        static constexpr uint32_t SYSTEM_CLOCK_HASH = ConstExprHashingUtils::HashString("SYSTEM_CLOCK");
 
 
         GlobalConfigurationOutputTimingSource GetGlobalConfigurationOutputTimingSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INPUT_CLOCK_HASH)
           {
             return GlobalConfigurationOutputTimingSource::INPUT_CLOCK;

@@ -20,15 +20,15 @@ namespace Aws
       namespace DataRepositoryTaskTypeMapper
       {
 
-        static const int EXPORT_TO_REPOSITORY_HASH = HashingUtils::HashString("EXPORT_TO_REPOSITORY");
-        static const int IMPORT_METADATA_FROM_REPOSITORY_HASH = HashingUtils::HashString("IMPORT_METADATA_FROM_REPOSITORY");
-        static const int RELEASE_DATA_FROM_FILESYSTEM_HASH = HashingUtils::HashString("RELEASE_DATA_FROM_FILESYSTEM");
-        static const int AUTO_RELEASE_DATA_HASH = HashingUtils::HashString("AUTO_RELEASE_DATA");
+        static constexpr uint32_t EXPORT_TO_REPOSITORY_HASH = ConstExprHashingUtils::HashString("EXPORT_TO_REPOSITORY");
+        static constexpr uint32_t IMPORT_METADATA_FROM_REPOSITORY_HASH = ConstExprHashingUtils::HashString("IMPORT_METADATA_FROM_REPOSITORY");
+        static constexpr uint32_t RELEASE_DATA_FROM_FILESYSTEM_HASH = ConstExprHashingUtils::HashString("RELEASE_DATA_FROM_FILESYSTEM");
+        static constexpr uint32_t AUTO_RELEASE_DATA_HASH = ConstExprHashingUtils::HashString("AUTO_RELEASE_DATA");
 
 
         DataRepositoryTaskType GetDataRepositoryTaskTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXPORT_TO_REPOSITORY_HASH)
           {
             return DataRepositoryTaskType::EXPORT_TO_REPOSITORY;

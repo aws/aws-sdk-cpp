@@ -40,36 +40,36 @@ template<> AWS_SFN_API TooManyTags SFNError::GetModeledError()
 namespace SFNErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int INVALID_TOKEN_HASH = HashingUtils::HashString("InvalidToken");
-static const int ACTIVITY_WORKER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ActivityWorkerLimitExceeded");
-static const int INVALID_LOGGING_CONFIGURATION_HASH = HashingUtils::HashString("InvalidLoggingConfiguration");
-static const int TASK_TIMED_OUT_HASH = HashingUtils::HashString("TaskTimedOut");
-static const int INVALID_EXECUTION_INPUT_HASH = HashingUtils::HashString("InvalidExecutionInput");
-static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
-static const int STATE_MACHINE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("StateMachineDoesNotExist");
-static const int INVALID_DEFINITION_HASH = HashingUtils::HashString("InvalidDefinition");
-static const int EXECUTION_ALREADY_EXISTS_HASH = HashingUtils::HashString("ExecutionAlreadyExists");
-static const int ACTIVITY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ActivityLimitExceeded");
-static const int STATE_MACHINE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("StateMachineLimitExceeded");
-static const int MISSING_REQUIRED_PARAMETER_HASH = HashingUtils::HashString("MissingRequiredParameter");
-static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArn");
-static const int TASK_DOES_NOT_EXIST_HASH = HashingUtils::HashString("TaskDoesNotExist");
-static const int EXECUTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ExecutionLimitExceeded");
-static const int ACTIVITY_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ActivityDoesNotExist");
-static const int INVALID_NAME_HASH = HashingUtils::HashString("InvalidName");
-static const int STATE_MACHINE_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("StateMachineTypeNotSupported");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTags");
-static const int STATE_MACHINE_DELETING_HASH = HashingUtils::HashString("StateMachineDeleting");
-static const int EXECUTION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ExecutionDoesNotExist");
-static const int INVALID_TRACING_CONFIGURATION_HASH = HashingUtils::HashString("InvalidTracingConfiguration");
-static const int INVALID_OUTPUT_HASH = HashingUtils::HashString("InvalidOutput");
-static const int STATE_MACHINE_ALREADY_EXISTS_HASH = HashingUtils::HashString("StateMachineAlreadyExists");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t INVALID_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidToken");
+static constexpr uint32_t ACTIVITY_WORKER_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ActivityWorkerLimitExceeded");
+static constexpr uint32_t INVALID_LOGGING_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("InvalidLoggingConfiguration");
+static constexpr uint32_t TASK_TIMED_OUT_HASH = ConstExprHashingUtils::HashString("TaskTimedOut");
+static constexpr uint32_t INVALID_EXECUTION_INPUT_HASH = ConstExprHashingUtils::HashString("InvalidExecutionInput");
+static constexpr uint32_t SERVICE_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ServiceQuotaExceededException");
+static constexpr uint32_t STATE_MACHINE_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("StateMachineDoesNotExist");
+static constexpr uint32_t INVALID_DEFINITION_HASH = ConstExprHashingUtils::HashString("InvalidDefinition");
+static constexpr uint32_t EXECUTION_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ExecutionAlreadyExists");
+static constexpr uint32_t ACTIVITY_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ActivityLimitExceeded");
+static constexpr uint32_t STATE_MACHINE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("StateMachineLimitExceeded");
+static constexpr uint32_t MISSING_REQUIRED_PARAMETER_HASH = ConstExprHashingUtils::HashString("MissingRequiredParameter");
+static constexpr uint32_t INVALID_ARN_HASH = ConstExprHashingUtils::HashString("InvalidArn");
+static constexpr uint32_t TASK_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("TaskDoesNotExist");
+static constexpr uint32_t EXECUTION_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ExecutionLimitExceeded");
+static constexpr uint32_t ACTIVITY_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("ActivityDoesNotExist");
+static constexpr uint32_t INVALID_NAME_HASH = ConstExprHashingUtils::HashString("InvalidName");
+static constexpr uint32_t STATE_MACHINE_TYPE_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("StateMachineTypeNotSupported");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTags");
+static constexpr uint32_t STATE_MACHINE_DELETING_HASH = ConstExprHashingUtils::HashString("StateMachineDeleting");
+static constexpr uint32_t EXECUTION_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("ExecutionDoesNotExist");
+static constexpr uint32_t INVALID_TRACING_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("InvalidTracingConfiguration");
+static constexpr uint32_t INVALID_OUTPUT_HASH = ConstExprHashingUtils::HashString("InvalidOutput");
+static constexpr uint32_t STATE_MACHINE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("StateMachineAlreadyExists");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

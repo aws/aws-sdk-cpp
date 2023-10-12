@@ -20,15 +20,15 @@ namespace Aws
       namespace HookStatusMapper
       {
 
-        static const int HOOK_IN_PROGRESS_HASH = HashingUtils::HashString("HOOK_IN_PROGRESS");
-        static const int HOOK_COMPLETE_SUCCEEDED_HASH = HashingUtils::HashString("HOOK_COMPLETE_SUCCEEDED");
-        static const int HOOK_COMPLETE_FAILED_HASH = HashingUtils::HashString("HOOK_COMPLETE_FAILED");
-        static const int HOOK_FAILED_HASH = HashingUtils::HashString("HOOK_FAILED");
+        static constexpr uint32_t HOOK_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("HOOK_IN_PROGRESS");
+        static constexpr uint32_t HOOK_COMPLETE_SUCCEEDED_HASH = ConstExprHashingUtils::HashString("HOOK_COMPLETE_SUCCEEDED");
+        static constexpr uint32_t HOOK_COMPLETE_FAILED_HASH = ConstExprHashingUtils::HashString("HOOK_COMPLETE_FAILED");
+        static constexpr uint32_t HOOK_FAILED_HASH = ConstExprHashingUtils::HashString("HOOK_FAILED");
 
 
         HookStatus GetHookStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HOOK_IN_PROGRESS_HASH)
           {
             return HookStatus::HOOK_IN_PROGRESS;

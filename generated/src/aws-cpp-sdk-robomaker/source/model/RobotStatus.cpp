@@ -20,18 +20,18 @@ namespace Aws
       namespace RobotStatusMapper
       {
 
-        static const int Available_HASH = HashingUtils::HashString("Available");
-        static const int Registered_HASH = HashingUtils::HashString("Registered");
-        static const int PendingNewDeployment_HASH = HashingUtils::HashString("PendingNewDeployment");
-        static const int Deploying_HASH = HashingUtils::HashString("Deploying");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int InSync_HASH = HashingUtils::HashString("InSync");
-        static const int NoResponse_HASH = HashingUtils::HashString("NoResponse");
+        static constexpr uint32_t Available_HASH = ConstExprHashingUtils::HashString("Available");
+        static constexpr uint32_t Registered_HASH = ConstExprHashingUtils::HashString("Registered");
+        static constexpr uint32_t PendingNewDeployment_HASH = ConstExprHashingUtils::HashString("PendingNewDeployment");
+        static constexpr uint32_t Deploying_HASH = ConstExprHashingUtils::HashString("Deploying");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t InSync_HASH = ConstExprHashingUtils::HashString("InSync");
+        static constexpr uint32_t NoResponse_HASH = ConstExprHashingUtils::HashString("NoResponse");
 
 
         RobotStatus GetRobotStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Available_HASH)
           {
             return RobotStatus::Available;

@@ -20,12 +20,12 @@ namespace Aws
       namespace GroupFilterOperatorMapper
       {
 
-        static const int StartsWith_HASH = HashingUtils::HashString("StartsWith");
+        static constexpr uint32_t StartsWith_HASH = ConstExprHashingUtils::HashString("StartsWith");
 
 
         GroupFilterOperator GetGroupFilterOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == StartsWith_HASH)
           {
             return GroupFilterOperator::StartsWith;

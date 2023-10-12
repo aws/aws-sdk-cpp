@@ -20,18 +20,18 @@ namespace Aws
       namespace UserStatusTypeMapper
       {
 
-        static const int UNCONFIRMED_HASH = HashingUtils::HashString("UNCONFIRMED");
-        static const int CONFIRMED_HASH = HashingUtils::HashString("CONFIRMED");
-        static const int ARCHIVED_HASH = HashingUtils::HashString("ARCHIVED");
-        static const int COMPROMISED_HASH = HashingUtils::HashString("COMPROMISED");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
-        static const int RESET_REQUIRED_HASH = HashingUtils::HashString("RESET_REQUIRED");
-        static const int FORCE_CHANGE_PASSWORD_HASH = HashingUtils::HashString("FORCE_CHANGE_PASSWORD");
+        static constexpr uint32_t UNCONFIRMED_HASH = ConstExprHashingUtils::HashString("UNCONFIRMED");
+        static constexpr uint32_t CONFIRMED_HASH = ConstExprHashingUtils::HashString("CONFIRMED");
+        static constexpr uint32_t ARCHIVED_HASH = ConstExprHashingUtils::HashString("ARCHIVED");
+        static constexpr uint32_t COMPROMISED_HASH = ConstExprHashingUtils::HashString("COMPROMISED");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t RESET_REQUIRED_HASH = ConstExprHashingUtils::HashString("RESET_REQUIRED");
+        static constexpr uint32_t FORCE_CHANGE_PASSWORD_HASH = ConstExprHashingUtils::HashString("FORCE_CHANGE_PASSWORD");
 
 
         UserStatusType GetUserStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNCONFIRMED_HASH)
           {
             return UserStatusType::UNCONFIRMED;

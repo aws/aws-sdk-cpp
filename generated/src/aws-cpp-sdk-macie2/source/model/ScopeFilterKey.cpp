@@ -20,15 +20,15 @@ namespace Aws
       namespace ScopeFilterKeyMapper
       {
 
-        static const int OBJECT_EXTENSION_HASH = HashingUtils::HashString("OBJECT_EXTENSION");
-        static const int OBJECT_LAST_MODIFIED_DATE_HASH = HashingUtils::HashString("OBJECT_LAST_MODIFIED_DATE");
-        static const int OBJECT_SIZE_HASH = HashingUtils::HashString("OBJECT_SIZE");
-        static const int OBJECT_KEY_HASH = HashingUtils::HashString("OBJECT_KEY");
+        static constexpr uint32_t OBJECT_EXTENSION_HASH = ConstExprHashingUtils::HashString("OBJECT_EXTENSION");
+        static constexpr uint32_t OBJECT_LAST_MODIFIED_DATE_HASH = ConstExprHashingUtils::HashString("OBJECT_LAST_MODIFIED_DATE");
+        static constexpr uint32_t OBJECT_SIZE_HASH = ConstExprHashingUtils::HashString("OBJECT_SIZE");
+        static constexpr uint32_t OBJECT_KEY_HASH = ConstExprHashingUtils::HashString("OBJECT_KEY");
 
 
         ScopeFilterKey GetScopeFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OBJECT_EXTENSION_HASH)
           {
             return ScopeFilterKey::OBJECT_EXTENSION;

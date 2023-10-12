@@ -20,13 +20,13 @@ namespace Aws
       namespace EvaluationFormScoringModeMapper
       {
 
-        static const int QUESTION_ONLY_HASH = HashingUtils::HashString("QUESTION_ONLY");
-        static const int SECTION_ONLY_HASH = HashingUtils::HashString("SECTION_ONLY");
+        static constexpr uint32_t QUESTION_ONLY_HASH = ConstExprHashingUtils::HashString("QUESTION_ONLY");
+        static constexpr uint32_t SECTION_ONLY_HASH = ConstExprHashingUtils::HashString("SECTION_ONLY");
 
 
         EvaluationFormScoringMode GetEvaluationFormScoringModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUESTION_ONLY_HASH)
           {
             return EvaluationFormScoringMode::QUESTION_ONLY;

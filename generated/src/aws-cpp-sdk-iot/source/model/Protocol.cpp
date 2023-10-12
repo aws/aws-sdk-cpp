@@ -20,13 +20,13 @@ namespace Aws
       namespace ProtocolMapper
       {
 
-        static const int MQTT_HASH = HashingUtils::HashString("MQTT");
-        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
+        static constexpr uint32_t MQTT_HASH = ConstExprHashingUtils::HashString("MQTT");
+        static constexpr uint32_t HTTP_HASH = ConstExprHashingUtils::HashString("HTTP");
 
 
         Protocol GetProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MQTT_HASH)
           {
             return Protocol::MQTT;

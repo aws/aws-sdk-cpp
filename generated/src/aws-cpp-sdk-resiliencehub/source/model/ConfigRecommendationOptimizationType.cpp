@@ -20,17 +20,17 @@ namespace Aws
       namespace ConfigRecommendationOptimizationTypeMapper
       {
 
-        static const int LeastCost_HASH = HashingUtils::HashString("LeastCost");
-        static const int LeastChange_HASH = HashingUtils::HashString("LeastChange");
-        static const int BestAZRecovery_HASH = HashingUtils::HashString("BestAZRecovery");
-        static const int LeastErrors_HASH = HashingUtils::HashString("LeastErrors");
-        static const int BestAttainable_HASH = HashingUtils::HashString("BestAttainable");
-        static const int BestRegionRecovery_HASH = HashingUtils::HashString("BestRegionRecovery");
+        static constexpr uint32_t LeastCost_HASH = ConstExprHashingUtils::HashString("LeastCost");
+        static constexpr uint32_t LeastChange_HASH = ConstExprHashingUtils::HashString("LeastChange");
+        static constexpr uint32_t BestAZRecovery_HASH = ConstExprHashingUtils::HashString("BestAZRecovery");
+        static constexpr uint32_t LeastErrors_HASH = ConstExprHashingUtils::HashString("LeastErrors");
+        static constexpr uint32_t BestAttainable_HASH = ConstExprHashingUtils::HashString("BestAttainable");
+        static constexpr uint32_t BestRegionRecovery_HASH = ConstExprHashingUtils::HashString("BestRegionRecovery");
 
 
         ConfigRecommendationOptimizationType GetConfigRecommendationOptimizationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LeastCost_HASH)
           {
             return ConfigRecommendationOptimizationType::LeastCost;

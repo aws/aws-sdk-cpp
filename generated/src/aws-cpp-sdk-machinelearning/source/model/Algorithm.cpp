@@ -20,12 +20,12 @@ namespace Aws
       namespace AlgorithmMapper
       {
 
-        static const int sgd_HASH = HashingUtils::HashString("sgd");
+        static constexpr uint32_t sgd_HASH = ConstExprHashingUtils::HashString("sgd");
 
 
         Algorithm GetAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == sgd_HASH)
           {
             return Algorithm::sgd;

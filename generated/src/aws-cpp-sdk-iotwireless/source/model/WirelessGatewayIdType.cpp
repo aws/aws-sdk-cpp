@@ -20,14 +20,14 @@ namespace Aws
       namespace WirelessGatewayIdTypeMapper
       {
 
-        static const int GatewayEui_HASH = HashingUtils::HashString("GatewayEui");
-        static const int WirelessGatewayId_HASH = HashingUtils::HashString("WirelessGatewayId");
-        static const int ThingName_HASH = HashingUtils::HashString("ThingName");
+        static constexpr uint32_t GatewayEui_HASH = ConstExprHashingUtils::HashString("GatewayEui");
+        static constexpr uint32_t WirelessGatewayId_HASH = ConstExprHashingUtils::HashString("WirelessGatewayId");
+        static constexpr uint32_t ThingName_HASH = ConstExprHashingUtils::HashString("ThingName");
 
 
         WirelessGatewayIdType GetWirelessGatewayIdTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GatewayEui_HASH)
           {
             return WirelessGatewayIdType::GatewayEui;

@@ -20,20 +20,20 @@ namespace Aws
       namespace ExceptionResourceTypeMapper
       {
 
-        static const int USER_HASH = HashingUtils::HashString("USER");
-        static const int GROUP_HASH = HashingUtils::HashString("GROUP");
-        static const int NAMESPACE_HASH = HashingUtils::HashString("NAMESPACE");
-        static const int ACCOUNT_SETTINGS_HASH = HashingUtils::HashString("ACCOUNT_SETTINGS");
-        static const int IAMPOLICY_ASSIGNMENT_HASH = HashingUtils::HashString("IAMPOLICY_ASSIGNMENT");
-        static const int DATA_SOURCE_HASH = HashingUtils::HashString("DATA_SOURCE");
-        static const int DATA_SET_HASH = HashingUtils::HashString("DATA_SET");
-        static const int VPC_CONNECTION_HASH = HashingUtils::HashString("VPC_CONNECTION");
-        static const int INGESTION_HASH = HashingUtils::HashString("INGESTION");
+        static constexpr uint32_t USER_HASH = ConstExprHashingUtils::HashString("USER");
+        static constexpr uint32_t GROUP_HASH = ConstExprHashingUtils::HashString("GROUP");
+        static constexpr uint32_t NAMESPACE_HASH = ConstExprHashingUtils::HashString("NAMESPACE");
+        static constexpr uint32_t ACCOUNT_SETTINGS_HASH = ConstExprHashingUtils::HashString("ACCOUNT_SETTINGS");
+        static constexpr uint32_t IAMPOLICY_ASSIGNMENT_HASH = ConstExprHashingUtils::HashString("IAMPOLICY_ASSIGNMENT");
+        static constexpr uint32_t DATA_SOURCE_HASH = ConstExprHashingUtils::HashString("DATA_SOURCE");
+        static constexpr uint32_t DATA_SET_HASH = ConstExprHashingUtils::HashString("DATA_SET");
+        static constexpr uint32_t VPC_CONNECTION_HASH = ConstExprHashingUtils::HashString("VPC_CONNECTION");
+        static constexpr uint32_t INGESTION_HASH = ConstExprHashingUtils::HashString("INGESTION");
 
 
         ExceptionResourceType GetExceptionResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USER_HASH)
           {
             return ExceptionResourceType::USER;

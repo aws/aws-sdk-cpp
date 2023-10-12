@@ -20,12 +20,12 @@ namespace Aws
       namespace TimeUnitMapper
       {
 
-        static const int HOURS_HASH = HashingUtils::HashString("HOURS");
+        static constexpr uint32_t HOURS_HASH = ConstExprHashingUtils::HashString("HOURS");
 
 
         TimeUnit GetTimeUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HOURS_HASH)
           {
             return TimeUnit::HOURS;

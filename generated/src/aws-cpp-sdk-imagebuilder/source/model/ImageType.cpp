@@ -20,13 +20,13 @@ namespace Aws
       namespace ImageTypeMapper
       {
 
-        static const int AMI_HASH = HashingUtils::HashString("AMI");
-        static const int DOCKER_HASH = HashingUtils::HashString("DOCKER");
+        static constexpr uint32_t AMI_HASH = ConstExprHashingUtils::HashString("AMI");
+        static constexpr uint32_t DOCKER_HASH = ConstExprHashingUtils::HashString("DOCKER");
 
 
         ImageType GetImageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AMI_HASH)
           {
             return ImageType::AMI;

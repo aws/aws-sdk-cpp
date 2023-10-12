@@ -20,14 +20,14 @@ namespace Aws
       namespace SampleTypeMapper
       {
 
-        static const int FIRST_N_HASH = HashingUtils::HashString("FIRST_N");
-        static const int LAST_N_HASH = HashingUtils::HashString("LAST_N");
-        static const int RANDOM_HASH = HashingUtils::HashString("RANDOM");
+        static constexpr uint32_t FIRST_N_HASH = ConstExprHashingUtils::HashString("FIRST_N");
+        static constexpr uint32_t LAST_N_HASH = ConstExprHashingUtils::HashString("LAST_N");
+        static constexpr uint32_t RANDOM_HASH = ConstExprHashingUtils::HashString("RANDOM");
 
 
         SampleType GetSampleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FIRST_N_HASH)
           {
             return SampleType::FIRST_N;

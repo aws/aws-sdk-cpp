@@ -20,13 +20,13 @@ namespace Aws
       namespace VehicleAssociationBehaviorMapper
       {
 
-        static const int CreateIotThing_HASH = HashingUtils::HashString("CreateIotThing");
-        static const int ValidateIotThingExists_HASH = HashingUtils::HashString("ValidateIotThingExists");
+        static constexpr uint32_t CreateIotThing_HASH = ConstExprHashingUtils::HashString("CreateIotThing");
+        static constexpr uint32_t ValidateIotThingExists_HASH = ConstExprHashingUtils::HashString("ValidateIotThingExists");
 
 
         VehicleAssociationBehavior GetVehicleAssociationBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CreateIotThing_HASH)
           {
             return VehicleAssociationBehavior::CreateIotThing;

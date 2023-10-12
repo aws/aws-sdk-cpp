@@ -20,13 +20,13 @@ namespace Aws
       namespace NumberSelectionBehaviorMapper
       {
 
-        static const int PreferSticky_HASH = HashingUtils::HashString("PreferSticky");
-        static const int AvoidSticky_HASH = HashingUtils::HashString("AvoidSticky");
+        static constexpr uint32_t PreferSticky_HASH = ConstExprHashingUtils::HashString("PreferSticky");
+        static constexpr uint32_t AvoidSticky_HASH = ConstExprHashingUtils::HashString("AvoidSticky");
 
 
         NumberSelectionBehavior GetNumberSelectionBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PreferSticky_HASH)
           {
             return NumberSelectionBehavior::PreferSticky;

@@ -20,13 +20,13 @@ namespace Aws
       namespace CostCategoryStatusMapper
       {
 
-        static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
-        static const int APPLIED_HASH = HashingUtils::HashString("APPLIED");
+        static constexpr uint32_t PROCESSING_HASH = ConstExprHashingUtils::HashString("PROCESSING");
+        static constexpr uint32_t APPLIED_HASH = ConstExprHashingUtils::HashString("APPLIED");
 
 
         CostCategoryStatus GetCostCategoryStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROCESSING_HASH)
           {
             return CostCategoryStatus::PROCESSING;

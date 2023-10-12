@@ -20,13 +20,13 @@ namespace Aws
       namespace AudioNormalizationPeakCalculationMapper
       {
 
-        static const int TRUE_PEAK_HASH = HashingUtils::HashString("TRUE_PEAK");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t TRUE_PEAK_HASH = ConstExprHashingUtils::HashString("TRUE_PEAK");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         AudioNormalizationPeakCalculation GetAudioNormalizationPeakCalculationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRUE_PEAK_HASH)
           {
             return AudioNormalizationPeakCalculation::TRUE_PEAK;

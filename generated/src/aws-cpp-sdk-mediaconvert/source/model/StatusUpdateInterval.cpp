@@ -20,26 +20,26 @@ namespace Aws
       namespace StatusUpdateIntervalMapper
       {
 
-        static const int SECONDS_10_HASH = HashingUtils::HashString("SECONDS_10");
-        static const int SECONDS_12_HASH = HashingUtils::HashString("SECONDS_12");
-        static const int SECONDS_15_HASH = HashingUtils::HashString("SECONDS_15");
-        static const int SECONDS_20_HASH = HashingUtils::HashString("SECONDS_20");
-        static const int SECONDS_30_HASH = HashingUtils::HashString("SECONDS_30");
-        static const int SECONDS_60_HASH = HashingUtils::HashString("SECONDS_60");
-        static const int SECONDS_120_HASH = HashingUtils::HashString("SECONDS_120");
-        static const int SECONDS_180_HASH = HashingUtils::HashString("SECONDS_180");
-        static const int SECONDS_240_HASH = HashingUtils::HashString("SECONDS_240");
-        static const int SECONDS_300_HASH = HashingUtils::HashString("SECONDS_300");
-        static const int SECONDS_360_HASH = HashingUtils::HashString("SECONDS_360");
-        static const int SECONDS_420_HASH = HashingUtils::HashString("SECONDS_420");
-        static const int SECONDS_480_HASH = HashingUtils::HashString("SECONDS_480");
-        static const int SECONDS_540_HASH = HashingUtils::HashString("SECONDS_540");
-        static const int SECONDS_600_HASH = HashingUtils::HashString("SECONDS_600");
+        static constexpr uint32_t SECONDS_10_HASH = ConstExprHashingUtils::HashString("SECONDS_10");
+        static constexpr uint32_t SECONDS_12_HASH = ConstExprHashingUtils::HashString("SECONDS_12");
+        static constexpr uint32_t SECONDS_15_HASH = ConstExprHashingUtils::HashString("SECONDS_15");
+        static constexpr uint32_t SECONDS_20_HASH = ConstExprHashingUtils::HashString("SECONDS_20");
+        static constexpr uint32_t SECONDS_30_HASH = ConstExprHashingUtils::HashString("SECONDS_30");
+        static constexpr uint32_t SECONDS_60_HASH = ConstExprHashingUtils::HashString("SECONDS_60");
+        static constexpr uint32_t SECONDS_120_HASH = ConstExprHashingUtils::HashString("SECONDS_120");
+        static constexpr uint32_t SECONDS_180_HASH = ConstExprHashingUtils::HashString("SECONDS_180");
+        static constexpr uint32_t SECONDS_240_HASH = ConstExprHashingUtils::HashString("SECONDS_240");
+        static constexpr uint32_t SECONDS_300_HASH = ConstExprHashingUtils::HashString("SECONDS_300");
+        static constexpr uint32_t SECONDS_360_HASH = ConstExprHashingUtils::HashString("SECONDS_360");
+        static constexpr uint32_t SECONDS_420_HASH = ConstExprHashingUtils::HashString("SECONDS_420");
+        static constexpr uint32_t SECONDS_480_HASH = ConstExprHashingUtils::HashString("SECONDS_480");
+        static constexpr uint32_t SECONDS_540_HASH = ConstExprHashingUtils::HashString("SECONDS_540");
+        static constexpr uint32_t SECONDS_600_HASH = ConstExprHashingUtils::HashString("SECONDS_600");
 
 
         StatusUpdateInterval GetStatusUpdateIntervalForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SECONDS_10_HASH)
           {
             return StatusUpdateInterval::SECONDS_10;

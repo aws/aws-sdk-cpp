@@ -20,30 +20,30 @@ namespace Aws
       namespace AutoMLJobSecondaryStatusMapper
       {
 
-        static const int Starting_HASH = HashingUtils::HashString("Starting");
-        static const int AnalyzingData_HASH = HashingUtils::HashString("AnalyzingData");
-        static const int FeatureEngineering_HASH = HashingUtils::HashString("FeatureEngineering");
-        static const int ModelTuning_HASH = HashingUtils::HashString("ModelTuning");
-        static const int MaxCandidatesReached_HASH = HashingUtils::HashString("MaxCandidatesReached");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
-        static const int MaxAutoMLJobRuntimeReached_HASH = HashingUtils::HashString("MaxAutoMLJobRuntimeReached");
-        static const int Stopping_HASH = HashingUtils::HashString("Stopping");
-        static const int CandidateDefinitionsGenerated_HASH = HashingUtils::HashString("CandidateDefinitionsGenerated");
-        static const int GeneratingExplainabilityReport_HASH = HashingUtils::HashString("GeneratingExplainabilityReport");
-        static const int Completed_HASH = HashingUtils::HashString("Completed");
-        static const int ExplainabilityError_HASH = HashingUtils::HashString("ExplainabilityError");
-        static const int DeployingModel_HASH = HashingUtils::HashString("DeployingModel");
-        static const int ModelDeploymentError_HASH = HashingUtils::HashString("ModelDeploymentError");
-        static const int GeneratingModelInsightsReport_HASH = HashingUtils::HashString("GeneratingModelInsightsReport");
-        static const int ModelInsightsError_HASH = HashingUtils::HashString("ModelInsightsError");
-        static const int TrainingModels_HASH = HashingUtils::HashString("TrainingModels");
-        static const int PreTraining_HASH = HashingUtils::HashString("PreTraining");
+        static constexpr uint32_t Starting_HASH = ConstExprHashingUtils::HashString("Starting");
+        static constexpr uint32_t AnalyzingData_HASH = ConstExprHashingUtils::HashString("AnalyzingData");
+        static constexpr uint32_t FeatureEngineering_HASH = ConstExprHashingUtils::HashString("FeatureEngineering");
+        static constexpr uint32_t ModelTuning_HASH = ConstExprHashingUtils::HashString("ModelTuning");
+        static constexpr uint32_t MaxCandidatesReached_HASH = ConstExprHashingUtils::HashString("MaxCandidatesReached");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Stopped_HASH = ConstExprHashingUtils::HashString("Stopped");
+        static constexpr uint32_t MaxAutoMLJobRuntimeReached_HASH = ConstExprHashingUtils::HashString("MaxAutoMLJobRuntimeReached");
+        static constexpr uint32_t Stopping_HASH = ConstExprHashingUtils::HashString("Stopping");
+        static constexpr uint32_t CandidateDefinitionsGenerated_HASH = ConstExprHashingUtils::HashString("CandidateDefinitionsGenerated");
+        static constexpr uint32_t GeneratingExplainabilityReport_HASH = ConstExprHashingUtils::HashString("GeneratingExplainabilityReport");
+        static constexpr uint32_t Completed_HASH = ConstExprHashingUtils::HashString("Completed");
+        static constexpr uint32_t ExplainabilityError_HASH = ConstExprHashingUtils::HashString("ExplainabilityError");
+        static constexpr uint32_t DeployingModel_HASH = ConstExprHashingUtils::HashString("DeployingModel");
+        static constexpr uint32_t ModelDeploymentError_HASH = ConstExprHashingUtils::HashString("ModelDeploymentError");
+        static constexpr uint32_t GeneratingModelInsightsReport_HASH = ConstExprHashingUtils::HashString("GeneratingModelInsightsReport");
+        static constexpr uint32_t ModelInsightsError_HASH = ConstExprHashingUtils::HashString("ModelInsightsError");
+        static constexpr uint32_t TrainingModels_HASH = ConstExprHashingUtils::HashString("TrainingModels");
+        static constexpr uint32_t PreTraining_HASH = ConstExprHashingUtils::HashString("PreTraining");
 
 
         AutoMLJobSecondaryStatus GetAutoMLJobSecondaryStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Starting_HASH)
           {
             return AutoMLJobSecondaryStatus::Starting;

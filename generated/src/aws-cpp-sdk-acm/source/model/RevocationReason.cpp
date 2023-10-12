@@ -20,21 +20,21 @@ namespace Aws
       namespace RevocationReasonMapper
       {
 
-        static const int UNSPECIFIED_HASH = HashingUtils::HashString("UNSPECIFIED");
-        static const int KEY_COMPROMISE_HASH = HashingUtils::HashString("KEY_COMPROMISE");
-        static const int CA_COMPROMISE_HASH = HashingUtils::HashString("CA_COMPROMISE");
-        static const int AFFILIATION_CHANGED_HASH = HashingUtils::HashString("AFFILIATION_CHANGED");
-        static const int SUPERCEDED_HASH = HashingUtils::HashString("SUPERCEDED");
-        static const int CESSATION_OF_OPERATION_HASH = HashingUtils::HashString("CESSATION_OF_OPERATION");
-        static const int CERTIFICATE_HOLD_HASH = HashingUtils::HashString("CERTIFICATE_HOLD");
-        static const int REMOVE_FROM_CRL_HASH = HashingUtils::HashString("REMOVE_FROM_CRL");
-        static const int PRIVILEGE_WITHDRAWN_HASH = HashingUtils::HashString("PRIVILEGE_WITHDRAWN");
-        static const int A_A_COMPROMISE_HASH = HashingUtils::HashString("A_A_COMPROMISE");
+        static constexpr uint32_t UNSPECIFIED_HASH = ConstExprHashingUtils::HashString("UNSPECIFIED");
+        static constexpr uint32_t KEY_COMPROMISE_HASH = ConstExprHashingUtils::HashString("KEY_COMPROMISE");
+        static constexpr uint32_t CA_COMPROMISE_HASH = ConstExprHashingUtils::HashString("CA_COMPROMISE");
+        static constexpr uint32_t AFFILIATION_CHANGED_HASH = ConstExprHashingUtils::HashString("AFFILIATION_CHANGED");
+        static constexpr uint32_t SUPERCEDED_HASH = ConstExprHashingUtils::HashString("SUPERCEDED");
+        static constexpr uint32_t CESSATION_OF_OPERATION_HASH = ConstExprHashingUtils::HashString("CESSATION_OF_OPERATION");
+        static constexpr uint32_t CERTIFICATE_HOLD_HASH = ConstExprHashingUtils::HashString("CERTIFICATE_HOLD");
+        static constexpr uint32_t REMOVE_FROM_CRL_HASH = ConstExprHashingUtils::HashString("REMOVE_FROM_CRL");
+        static constexpr uint32_t PRIVILEGE_WITHDRAWN_HASH = ConstExprHashingUtils::HashString("PRIVILEGE_WITHDRAWN");
+        static constexpr uint32_t A_A_COMPROMISE_HASH = ConstExprHashingUtils::HashString("A_A_COMPROMISE");
 
 
         RevocationReason GetRevocationReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNSPECIFIED_HASH)
           {
             return RevocationReason::UNSPECIFIED;

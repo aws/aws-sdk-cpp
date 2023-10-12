@@ -20,13 +20,13 @@ namespace Aws
       namespace DeviceStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int SIGNED_OUT_HASH = HashingUtils::HashString("SIGNED_OUT");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t SIGNED_OUT_HASH = ConstExprHashingUtils::HashString("SIGNED_OUT");
 
 
         DeviceStatus GetDeviceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return DeviceStatus::ACTIVE;

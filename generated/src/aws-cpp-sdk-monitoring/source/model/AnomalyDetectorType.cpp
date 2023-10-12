@@ -20,13 +20,13 @@ namespace Aws
       namespace AnomalyDetectorTypeMapper
       {
 
-        static const int SINGLE_METRIC_HASH = HashingUtils::HashString("SINGLE_METRIC");
-        static const int METRIC_MATH_HASH = HashingUtils::HashString("METRIC_MATH");
+        static constexpr uint32_t SINGLE_METRIC_HASH = ConstExprHashingUtils::HashString("SINGLE_METRIC");
+        static constexpr uint32_t METRIC_MATH_HASH = ConstExprHashingUtils::HashString("METRIC_MATH");
 
 
         AnomalyDetectorType GetAnomalyDetectorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SINGLE_METRIC_HASH)
           {
             return AnomalyDetectorType::SINGLE_METRIC;

@@ -20,20 +20,20 @@ namespace Aws
       namespace TimecodeBurninPositionMapper
       {
 
-        static const int BOTTOM_CENTER_HASH = HashingUtils::HashString("BOTTOM_CENTER");
-        static const int BOTTOM_LEFT_HASH = HashingUtils::HashString("BOTTOM_LEFT");
-        static const int BOTTOM_RIGHT_HASH = HashingUtils::HashString("BOTTOM_RIGHT");
-        static const int MIDDLE_CENTER_HASH = HashingUtils::HashString("MIDDLE_CENTER");
-        static const int MIDDLE_LEFT_HASH = HashingUtils::HashString("MIDDLE_LEFT");
-        static const int MIDDLE_RIGHT_HASH = HashingUtils::HashString("MIDDLE_RIGHT");
-        static const int TOP_CENTER_HASH = HashingUtils::HashString("TOP_CENTER");
-        static const int TOP_LEFT_HASH = HashingUtils::HashString("TOP_LEFT");
-        static const int TOP_RIGHT_HASH = HashingUtils::HashString("TOP_RIGHT");
+        static constexpr uint32_t BOTTOM_CENTER_HASH = ConstExprHashingUtils::HashString("BOTTOM_CENTER");
+        static constexpr uint32_t BOTTOM_LEFT_HASH = ConstExprHashingUtils::HashString("BOTTOM_LEFT");
+        static constexpr uint32_t BOTTOM_RIGHT_HASH = ConstExprHashingUtils::HashString("BOTTOM_RIGHT");
+        static constexpr uint32_t MIDDLE_CENTER_HASH = ConstExprHashingUtils::HashString("MIDDLE_CENTER");
+        static constexpr uint32_t MIDDLE_LEFT_HASH = ConstExprHashingUtils::HashString("MIDDLE_LEFT");
+        static constexpr uint32_t MIDDLE_RIGHT_HASH = ConstExprHashingUtils::HashString("MIDDLE_RIGHT");
+        static constexpr uint32_t TOP_CENTER_HASH = ConstExprHashingUtils::HashString("TOP_CENTER");
+        static constexpr uint32_t TOP_LEFT_HASH = ConstExprHashingUtils::HashString("TOP_LEFT");
+        static constexpr uint32_t TOP_RIGHT_HASH = ConstExprHashingUtils::HashString("TOP_RIGHT");
 
 
         TimecodeBurninPosition GetTimecodeBurninPositionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BOTTOM_CENTER_HASH)
           {
             return TimecodeBurninPosition::BOTTOM_CENTER;

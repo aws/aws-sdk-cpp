@@ -20,26 +20,26 @@ namespace Aws
       namespace DeliveryStreamFailureTypeMapper
       {
 
-        static const int RETIRE_KMS_GRANT_FAILED_HASH = HashingUtils::HashString("RETIRE_KMS_GRANT_FAILED");
-        static const int CREATE_KMS_GRANT_FAILED_HASH = HashingUtils::HashString("CREATE_KMS_GRANT_FAILED");
-        static const int KMS_ACCESS_DENIED_HASH = HashingUtils::HashString("KMS_ACCESS_DENIED");
-        static const int DISABLED_KMS_KEY_HASH = HashingUtils::HashString("DISABLED_KMS_KEY");
-        static const int INVALID_KMS_KEY_HASH = HashingUtils::HashString("INVALID_KMS_KEY");
-        static const int KMS_KEY_NOT_FOUND_HASH = HashingUtils::HashString("KMS_KEY_NOT_FOUND");
-        static const int KMS_OPT_IN_REQUIRED_HASH = HashingUtils::HashString("KMS_OPT_IN_REQUIRED");
-        static const int CREATE_ENI_FAILED_HASH = HashingUtils::HashString("CREATE_ENI_FAILED");
-        static const int DELETE_ENI_FAILED_HASH = HashingUtils::HashString("DELETE_ENI_FAILED");
-        static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SUBNET_NOT_FOUND");
-        static const int SECURITY_GROUP_NOT_FOUND_HASH = HashingUtils::HashString("SECURITY_GROUP_NOT_FOUND");
-        static const int ENI_ACCESS_DENIED_HASH = HashingUtils::HashString("ENI_ACCESS_DENIED");
-        static const int SUBNET_ACCESS_DENIED_HASH = HashingUtils::HashString("SUBNET_ACCESS_DENIED");
-        static const int SECURITY_GROUP_ACCESS_DENIED_HASH = HashingUtils::HashString("SECURITY_GROUP_ACCESS_DENIED");
-        static const int UNKNOWN_ERROR_HASH = HashingUtils::HashString("UNKNOWN_ERROR");
+        static constexpr uint32_t RETIRE_KMS_GRANT_FAILED_HASH = ConstExprHashingUtils::HashString("RETIRE_KMS_GRANT_FAILED");
+        static constexpr uint32_t CREATE_KMS_GRANT_FAILED_HASH = ConstExprHashingUtils::HashString("CREATE_KMS_GRANT_FAILED");
+        static constexpr uint32_t KMS_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("KMS_ACCESS_DENIED");
+        static constexpr uint32_t DISABLED_KMS_KEY_HASH = ConstExprHashingUtils::HashString("DISABLED_KMS_KEY");
+        static constexpr uint32_t INVALID_KMS_KEY_HASH = ConstExprHashingUtils::HashString("INVALID_KMS_KEY");
+        static constexpr uint32_t KMS_KEY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("KMS_KEY_NOT_FOUND");
+        static constexpr uint32_t KMS_OPT_IN_REQUIRED_HASH = ConstExprHashingUtils::HashString("KMS_OPT_IN_REQUIRED");
+        static constexpr uint32_t CREATE_ENI_FAILED_HASH = ConstExprHashingUtils::HashString("CREATE_ENI_FAILED");
+        static constexpr uint32_t DELETE_ENI_FAILED_HASH = ConstExprHashingUtils::HashString("DELETE_ENI_FAILED");
+        static constexpr uint32_t SUBNET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SUBNET_NOT_FOUND");
+        static constexpr uint32_t SECURITY_GROUP_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("SECURITY_GROUP_NOT_FOUND");
+        static constexpr uint32_t ENI_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ENI_ACCESS_DENIED");
+        static constexpr uint32_t SUBNET_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("SUBNET_ACCESS_DENIED");
+        static constexpr uint32_t SECURITY_GROUP_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("SECURITY_GROUP_ACCESS_DENIED");
+        static constexpr uint32_t UNKNOWN_ERROR_HASH = ConstExprHashingUtils::HashString("UNKNOWN_ERROR");
 
 
         DeliveryStreamFailureType GetDeliveryStreamFailureTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RETIRE_KMS_GRANT_FAILED_HASH)
           {
             return DeliveryStreamFailureType::RETIRE_KMS_GRANT_FAILED;

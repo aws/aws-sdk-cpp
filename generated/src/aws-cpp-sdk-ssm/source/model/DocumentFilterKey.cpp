@@ -20,15 +20,15 @@ namespace Aws
       namespace DocumentFilterKeyMapper
       {
 
-        static const int Name_HASH = HashingUtils::HashString("Name");
-        static const int Owner_HASH = HashingUtils::HashString("Owner");
-        static const int PlatformTypes_HASH = HashingUtils::HashString("PlatformTypes");
-        static const int DocumentType_HASH = HashingUtils::HashString("DocumentType");
+        static constexpr uint32_t Name_HASH = ConstExprHashingUtils::HashString("Name");
+        static constexpr uint32_t Owner_HASH = ConstExprHashingUtils::HashString("Owner");
+        static constexpr uint32_t PlatformTypes_HASH = ConstExprHashingUtils::HashString("PlatformTypes");
+        static constexpr uint32_t DocumentType_HASH = ConstExprHashingUtils::HashString("DocumentType");
 
 
         DocumentFilterKey GetDocumentFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Name_HASH)
           {
             return DocumentFilterKey::Name;

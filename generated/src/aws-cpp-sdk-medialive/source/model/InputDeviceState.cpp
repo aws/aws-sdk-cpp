@@ -20,13 +20,13 @@ namespace Aws
       namespace InputDeviceStateMapper
       {
 
-        static const int IDLE_HASH = HashingUtils::HashString("IDLE");
-        static const int STREAMING_HASH = HashingUtils::HashString("STREAMING");
+        static constexpr uint32_t IDLE_HASH = ConstExprHashingUtils::HashString("IDLE");
+        static constexpr uint32_t STREAMING_HASH = ConstExprHashingUtils::HashString("STREAMING");
 
 
         InputDeviceState GetInputDeviceStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IDLE_HASH)
           {
             return InputDeviceState::IDLE;

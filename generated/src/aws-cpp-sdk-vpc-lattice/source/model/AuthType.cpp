@@ -20,13 +20,13 @@ namespace Aws
       namespace AuthTypeMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int AWS_IAM_HASH = HashingUtils::HashString("AWS_IAM");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t AWS_IAM_HASH = ConstExprHashingUtils::HashString("AWS_IAM");
 
 
         AuthType GetAuthTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return AuthType::NONE;

@@ -20,37 +20,37 @@ namespace Aws
       namespace DataSourceTypeMapper
       {
 
-        static const int ADOBE_ANALYTICS_HASH = HashingUtils::HashString("ADOBE_ANALYTICS");
-        static const int AMAZON_ELASTICSEARCH_HASH = HashingUtils::HashString("AMAZON_ELASTICSEARCH");
-        static const int ATHENA_HASH = HashingUtils::HashString("ATHENA");
-        static const int AURORA_HASH = HashingUtils::HashString("AURORA");
-        static const int AURORA_POSTGRESQL_HASH = HashingUtils::HashString("AURORA_POSTGRESQL");
-        static const int AWS_IOT_ANALYTICS_HASH = HashingUtils::HashString("AWS_IOT_ANALYTICS");
-        static const int GITHUB_HASH = HashingUtils::HashString("GITHUB");
-        static const int JIRA_HASH = HashingUtils::HashString("JIRA");
-        static const int MARIADB_HASH = HashingUtils::HashString("MARIADB");
-        static const int MYSQL_HASH = HashingUtils::HashString("MYSQL");
-        static const int ORACLE_HASH = HashingUtils::HashString("ORACLE");
-        static const int POSTGRESQL_HASH = HashingUtils::HashString("POSTGRESQL");
-        static const int PRESTO_HASH = HashingUtils::HashString("PRESTO");
-        static const int REDSHIFT_HASH = HashingUtils::HashString("REDSHIFT");
-        static const int S3_HASH = HashingUtils::HashString("S3");
-        static const int SALESFORCE_HASH = HashingUtils::HashString("SALESFORCE");
-        static const int SERVICENOW_HASH = HashingUtils::HashString("SERVICENOW");
-        static const int SNOWFLAKE_HASH = HashingUtils::HashString("SNOWFLAKE");
-        static const int SPARK_HASH = HashingUtils::HashString("SPARK");
-        static const int SQLSERVER_HASH = HashingUtils::HashString("SQLSERVER");
-        static const int TERADATA_HASH = HashingUtils::HashString("TERADATA");
-        static const int TWITTER_HASH = HashingUtils::HashString("TWITTER");
-        static const int TIMESTREAM_HASH = HashingUtils::HashString("TIMESTREAM");
-        static const int AMAZON_OPENSEARCH_HASH = HashingUtils::HashString("AMAZON_OPENSEARCH");
-        static const int EXASOL_HASH = HashingUtils::HashString("EXASOL");
-        static const int DATABRICKS_HASH = HashingUtils::HashString("DATABRICKS");
+        static constexpr uint32_t ADOBE_ANALYTICS_HASH = ConstExprHashingUtils::HashString("ADOBE_ANALYTICS");
+        static constexpr uint32_t AMAZON_ELASTICSEARCH_HASH = ConstExprHashingUtils::HashString("AMAZON_ELASTICSEARCH");
+        static constexpr uint32_t ATHENA_HASH = ConstExprHashingUtils::HashString("ATHENA");
+        static constexpr uint32_t AURORA_HASH = ConstExprHashingUtils::HashString("AURORA");
+        static constexpr uint32_t AURORA_POSTGRESQL_HASH = ConstExprHashingUtils::HashString("AURORA_POSTGRESQL");
+        static constexpr uint32_t AWS_IOT_ANALYTICS_HASH = ConstExprHashingUtils::HashString("AWS_IOT_ANALYTICS");
+        static constexpr uint32_t GITHUB_HASH = ConstExprHashingUtils::HashString("GITHUB");
+        static constexpr uint32_t JIRA_HASH = ConstExprHashingUtils::HashString("JIRA");
+        static constexpr uint32_t MARIADB_HASH = ConstExprHashingUtils::HashString("MARIADB");
+        static constexpr uint32_t MYSQL_HASH = ConstExprHashingUtils::HashString("MYSQL");
+        static constexpr uint32_t ORACLE_HASH = ConstExprHashingUtils::HashString("ORACLE");
+        static constexpr uint32_t POSTGRESQL_HASH = ConstExprHashingUtils::HashString("POSTGRESQL");
+        static constexpr uint32_t PRESTO_HASH = ConstExprHashingUtils::HashString("PRESTO");
+        static constexpr uint32_t REDSHIFT_HASH = ConstExprHashingUtils::HashString("REDSHIFT");
+        static constexpr uint32_t S3_HASH = ConstExprHashingUtils::HashString("S3");
+        static constexpr uint32_t SALESFORCE_HASH = ConstExprHashingUtils::HashString("SALESFORCE");
+        static constexpr uint32_t SERVICENOW_HASH = ConstExprHashingUtils::HashString("SERVICENOW");
+        static constexpr uint32_t SNOWFLAKE_HASH = ConstExprHashingUtils::HashString("SNOWFLAKE");
+        static constexpr uint32_t SPARK_HASH = ConstExprHashingUtils::HashString("SPARK");
+        static constexpr uint32_t SQLSERVER_HASH = ConstExprHashingUtils::HashString("SQLSERVER");
+        static constexpr uint32_t TERADATA_HASH = ConstExprHashingUtils::HashString("TERADATA");
+        static constexpr uint32_t TWITTER_HASH = ConstExprHashingUtils::HashString("TWITTER");
+        static constexpr uint32_t TIMESTREAM_HASH = ConstExprHashingUtils::HashString("TIMESTREAM");
+        static constexpr uint32_t AMAZON_OPENSEARCH_HASH = ConstExprHashingUtils::HashString("AMAZON_OPENSEARCH");
+        static constexpr uint32_t EXASOL_HASH = ConstExprHashingUtils::HashString("EXASOL");
+        static constexpr uint32_t DATABRICKS_HASH = ConstExprHashingUtils::HashString("DATABRICKS");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADOBE_ANALYTICS_HASH)
           {
             return DataSourceType::ADOBE_ANALYTICS;

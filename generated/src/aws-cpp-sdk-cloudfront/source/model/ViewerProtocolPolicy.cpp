@@ -20,14 +20,14 @@ namespace Aws
       namespace ViewerProtocolPolicyMapper
       {
 
-        static const int allow_all_HASH = HashingUtils::HashString("allow-all");
-        static const int https_only_HASH = HashingUtils::HashString("https-only");
-        static const int redirect_to_https_HASH = HashingUtils::HashString("redirect-to-https");
+        static constexpr uint32_t allow_all_HASH = ConstExprHashingUtils::HashString("allow-all");
+        static constexpr uint32_t https_only_HASH = ConstExprHashingUtils::HashString("https-only");
+        static constexpr uint32_t redirect_to_https_HASH = ConstExprHashingUtils::HashString("redirect-to-https");
 
 
         ViewerProtocolPolicy GetViewerProtocolPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == allow_all_HASH)
           {
             return ViewerProtocolPolicy::allow_all;

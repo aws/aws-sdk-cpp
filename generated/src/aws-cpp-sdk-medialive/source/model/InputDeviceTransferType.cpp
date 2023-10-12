@@ -20,13 +20,13 @@ namespace Aws
       namespace InputDeviceTransferTypeMapper
       {
 
-        static const int OUTGOING_HASH = HashingUtils::HashString("OUTGOING");
-        static const int INCOMING_HASH = HashingUtils::HashString("INCOMING");
+        static constexpr uint32_t OUTGOING_HASH = ConstExprHashingUtils::HashString("OUTGOING");
+        static constexpr uint32_t INCOMING_HASH = ConstExprHashingUtils::HashString("INCOMING");
 
 
         InputDeviceTransferType GetInputDeviceTransferTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OUTGOING_HASH)
           {
             return InputDeviceTransferType::OUTGOING;

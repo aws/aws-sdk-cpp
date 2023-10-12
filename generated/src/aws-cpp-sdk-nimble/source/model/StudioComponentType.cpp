@@ -20,16 +20,16 @@ namespace Aws
       namespace StudioComponentTypeMapper
       {
 
-        static const int ACTIVE_DIRECTORY_HASH = HashingUtils::HashString("ACTIVE_DIRECTORY");
-        static const int SHARED_FILE_SYSTEM_HASH = HashingUtils::HashString("SHARED_FILE_SYSTEM");
-        static const int COMPUTE_FARM_HASH = HashingUtils::HashString("COMPUTE_FARM");
-        static const int LICENSE_SERVICE_HASH = HashingUtils::HashString("LICENSE_SERVICE");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t ACTIVE_DIRECTORY_HASH = ConstExprHashingUtils::HashString("ACTIVE_DIRECTORY");
+        static constexpr uint32_t SHARED_FILE_SYSTEM_HASH = ConstExprHashingUtils::HashString("SHARED_FILE_SYSTEM");
+        static constexpr uint32_t COMPUTE_FARM_HASH = ConstExprHashingUtils::HashString("COMPUTE_FARM");
+        static constexpr uint32_t LICENSE_SERVICE_HASH = ConstExprHashingUtils::HashString("LICENSE_SERVICE");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
 
 
         StudioComponentType GetStudioComponentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_DIRECTORY_HASH)
           {
             return StudioComponentType::ACTIVE_DIRECTORY;

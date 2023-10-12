@@ -20,15 +20,15 @@ namespace Aws
       namespace MessageContentTypeMapper
       {
 
-        static const int CustomPayload_HASH = HashingUtils::HashString("CustomPayload");
-        static const int ImageResponseCard_HASH = HashingUtils::HashString("ImageResponseCard");
-        static const int PlainText_HASH = HashingUtils::HashString("PlainText");
-        static const int SSML_HASH = HashingUtils::HashString("SSML");
+        static constexpr uint32_t CustomPayload_HASH = ConstExprHashingUtils::HashString("CustomPayload");
+        static constexpr uint32_t ImageResponseCard_HASH = ConstExprHashingUtils::HashString("ImageResponseCard");
+        static constexpr uint32_t PlainText_HASH = ConstExprHashingUtils::HashString("PlainText");
+        static constexpr uint32_t SSML_HASH = ConstExprHashingUtils::HashString("SSML");
 
 
         MessageContentType GetMessageContentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CustomPayload_HASH)
           {
             return MessageContentType::CustomPayload;

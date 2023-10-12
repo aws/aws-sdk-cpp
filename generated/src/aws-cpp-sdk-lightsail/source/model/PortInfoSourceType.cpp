@@ -20,15 +20,15 @@ namespace Aws
       namespace PortInfoSourceTypeMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int INSTANCE_HASH = HashingUtils::HashString("INSTANCE");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int CLOSED_HASH = HashingUtils::HashString("CLOSED");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t INSTANCE_HASH = ConstExprHashingUtils::HashString("INSTANCE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t CLOSED_HASH = ConstExprHashingUtils::HashString("CLOSED");
 
 
         PortInfoSourceType GetPortInfoSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return PortInfoSourceType::DEFAULT;

@@ -20,18 +20,18 @@ namespace Aws
       namespace AllowedOperationMapper
       {
 
-        static const int CreateGrant_HASH = HashingUtils::HashString("CreateGrant");
-        static const int CheckoutLicense_HASH = HashingUtils::HashString("CheckoutLicense");
-        static const int CheckoutBorrowLicense_HASH = HashingUtils::HashString("CheckoutBorrowLicense");
-        static const int CheckInLicense_HASH = HashingUtils::HashString("CheckInLicense");
-        static const int ExtendConsumptionLicense_HASH = HashingUtils::HashString("ExtendConsumptionLicense");
-        static const int ListPurchasedLicenses_HASH = HashingUtils::HashString("ListPurchasedLicenses");
-        static const int CreateToken_HASH = HashingUtils::HashString("CreateToken");
+        static constexpr uint32_t CreateGrant_HASH = ConstExprHashingUtils::HashString("CreateGrant");
+        static constexpr uint32_t CheckoutLicense_HASH = ConstExprHashingUtils::HashString("CheckoutLicense");
+        static constexpr uint32_t CheckoutBorrowLicense_HASH = ConstExprHashingUtils::HashString("CheckoutBorrowLicense");
+        static constexpr uint32_t CheckInLicense_HASH = ConstExprHashingUtils::HashString("CheckInLicense");
+        static constexpr uint32_t ExtendConsumptionLicense_HASH = ConstExprHashingUtils::HashString("ExtendConsumptionLicense");
+        static constexpr uint32_t ListPurchasedLicenses_HASH = ConstExprHashingUtils::HashString("ListPurchasedLicenses");
+        static constexpr uint32_t CreateToken_HASH = ConstExprHashingUtils::HashString("CreateToken");
 
 
         AllowedOperation GetAllowedOperationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CreateGrant_HASH)
           {
             return AllowedOperation::CreateGrant;

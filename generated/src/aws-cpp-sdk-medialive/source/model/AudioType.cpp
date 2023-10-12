@@ -20,15 +20,15 @@ namespace Aws
       namespace AudioTypeMapper
       {
 
-        static const int CLEAN_EFFECTS_HASH = HashingUtils::HashString("CLEAN_EFFECTS");
-        static const int HEARING_IMPAIRED_HASH = HashingUtils::HashString("HEARING_IMPAIRED");
-        static const int UNDEFINED_HASH = HashingUtils::HashString("UNDEFINED");
-        static const int VISUAL_IMPAIRED_COMMENTARY_HASH = HashingUtils::HashString("VISUAL_IMPAIRED_COMMENTARY");
+        static constexpr uint32_t CLEAN_EFFECTS_HASH = ConstExprHashingUtils::HashString("CLEAN_EFFECTS");
+        static constexpr uint32_t HEARING_IMPAIRED_HASH = ConstExprHashingUtils::HashString("HEARING_IMPAIRED");
+        static constexpr uint32_t UNDEFINED_HASH = ConstExprHashingUtils::HashString("UNDEFINED");
+        static constexpr uint32_t VISUAL_IMPAIRED_COMMENTARY_HASH = ConstExprHashingUtils::HashString("VISUAL_IMPAIRED_COMMENTARY");
 
 
         AudioType GetAudioTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLEAN_EFFECTS_HASH)
           {
             return AudioType::CLEAN_EFFECTS;

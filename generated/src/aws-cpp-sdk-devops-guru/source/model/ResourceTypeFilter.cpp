@@ -20,38 +20,38 @@ namespace Aws
       namespace ResourceTypeFilterMapper
       {
 
-        static const int LOG_GROUPS_HASH = HashingUtils::HashString("LOG_GROUPS");
-        static const int CLOUDFRONT_DISTRIBUTION_HASH = HashingUtils::HashString("CLOUDFRONT_DISTRIBUTION");
-        static const int DYNAMODB_TABLE_HASH = HashingUtils::HashString("DYNAMODB_TABLE");
-        static const int EC2_NAT_GATEWAY_HASH = HashingUtils::HashString("EC2_NAT_GATEWAY");
-        static const int ECS_CLUSTER_HASH = HashingUtils::HashString("ECS_CLUSTER");
-        static const int ECS_SERVICE_HASH = HashingUtils::HashString("ECS_SERVICE");
-        static const int EKS_CLUSTER_HASH = HashingUtils::HashString("EKS_CLUSTER");
-        static const int ELASTIC_BEANSTALK_ENVIRONMENT_HASH = HashingUtils::HashString("ELASTIC_BEANSTALK_ENVIRONMENT");
-        static const int ELASTIC_LOAD_BALANCER_LOAD_BALANCER_HASH = HashingUtils::HashString("ELASTIC_LOAD_BALANCER_LOAD_BALANCER");
-        static const int ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER_HASH = HashingUtils::HashString("ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER");
-        static const int ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP_HASH = HashingUtils::HashString("ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP");
-        static const int ELASTICACHE_CACHE_CLUSTER_HASH = HashingUtils::HashString("ELASTICACHE_CACHE_CLUSTER");
-        static const int ELASTICSEARCH_DOMAIN_HASH = HashingUtils::HashString("ELASTICSEARCH_DOMAIN");
-        static const int KINESIS_STREAM_HASH = HashingUtils::HashString("KINESIS_STREAM");
-        static const int LAMBDA_FUNCTION_HASH = HashingUtils::HashString("LAMBDA_FUNCTION");
-        static const int OPEN_SEARCH_SERVICE_DOMAIN_HASH = HashingUtils::HashString("OPEN_SEARCH_SERVICE_DOMAIN");
-        static const int RDS_DB_INSTANCE_HASH = HashingUtils::HashString("RDS_DB_INSTANCE");
-        static const int RDS_DB_CLUSTER_HASH = HashingUtils::HashString("RDS_DB_CLUSTER");
-        static const int REDSHIFT_CLUSTER_HASH = HashingUtils::HashString("REDSHIFT_CLUSTER");
-        static const int ROUTE53_HOSTED_ZONE_HASH = HashingUtils::HashString("ROUTE53_HOSTED_ZONE");
-        static const int ROUTE53_HEALTH_CHECK_HASH = HashingUtils::HashString("ROUTE53_HEALTH_CHECK");
-        static const int S3_BUCKET_HASH = HashingUtils::HashString("S3_BUCKET");
-        static const int SAGEMAKER_ENDPOINT_HASH = HashingUtils::HashString("SAGEMAKER_ENDPOINT");
-        static const int SNS_TOPIC_HASH = HashingUtils::HashString("SNS_TOPIC");
-        static const int SQS_QUEUE_HASH = HashingUtils::HashString("SQS_QUEUE");
-        static const int STEP_FUNCTIONS_ACTIVITY_HASH = HashingUtils::HashString("STEP_FUNCTIONS_ACTIVITY");
-        static const int STEP_FUNCTIONS_STATE_MACHINE_HASH = HashingUtils::HashString("STEP_FUNCTIONS_STATE_MACHINE");
+        static constexpr uint32_t LOG_GROUPS_HASH = ConstExprHashingUtils::HashString("LOG_GROUPS");
+        static constexpr uint32_t CLOUDFRONT_DISTRIBUTION_HASH = ConstExprHashingUtils::HashString("CLOUDFRONT_DISTRIBUTION");
+        static constexpr uint32_t DYNAMODB_TABLE_HASH = ConstExprHashingUtils::HashString("DYNAMODB_TABLE");
+        static constexpr uint32_t EC2_NAT_GATEWAY_HASH = ConstExprHashingUtils::HashString("EC2_NAT_GATEWAY");
+        static constexpr uint32_t ECS_CLUSTER_HASH = ConstExprHashingUtils::HashString("ECS_CLUSTER");
+        static constexpr uint32_t ECS_SERVICE_HASH = ConstExprHashingUtils::HashString("ECS_SERVICE");
+        static constexpr uint32_t EKS_CLUSTER_HASH = ConstExprHashingUtils::HashString("EKS_CLUSTER");
+        static constexpr uint32_t ELASTIC_BEANSTALK_ENVIRONMENT_HASH = ConstExprHashingUtils::HashString("ELASTIC_BEANSTALK_ENVIRONMENT");
+        static constexpr uint32_t ELASTIC_LOAD_BALANCER_LOAD_BALANCER_HASH = ConstExprHashingUtils::HashString("ELASTIC_LOAD_BALANCER_LOAD_BALANCER");
+        static constexpr uint32_t ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER_HASH = ConstExprHashingUtils::HashString("ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER");
+        static constexpr uint32_t ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP_HASH = ConstExprHashingUtils::HashString("ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP");
+        static constexpr uint32_t ELASTICACHE_CACHE_CLUSTER_HASH = ConstExprHashingUtils::HashString("ELASTICACHE_CACHE_CLUSTER");
+        static constexpr uint32_t ELASTICSEARCH_DOMAIN_HASH = ConstExprHashingUtils::HashString("ELASTICSEARCH_DOMAIN");
+        static constexpr uint32_t KINESIS_STREAM_HASH = ConstExprHashingUtils::HashString("KINESIS_STREAM");
+        static constexpr uint32_t LAMBDA_FUNCTION_HASH = ConstExprHashingUtils::HashString("LAMBDA_FUNCTION");
+        static constexpr uint32_t OPEN_SEARCH_SERVICE_DOMAIN_HASH = ConstExprHashingUtils::HashString("OPEN_SEARCH_SERVICE_DOMAIN");
+        static constexpr uint32_t RDS_DB_INSTANCE_HASH = ConstExprHashingUtils::HashString("RDS_DB_INSTANCE");
+        static constexpr uint32_t RDS_DB_CLUSTER_HASH = ConstExprHashingUtils::HashString("RDS_DB_CLUSTER");
+        static constexpr uint32_t REDSHIFT_CLUSTER_HASH = ConstExprHashingUtils::HashString("REDSHIFT_CLUSTER");
+        static constexpr uint32_t ROUTE53_HOSTED_ZONE_HASH = ConstExprHashingUtils::HashString("ROUTE53_HOSTED_ZONE");
+        static constexpr uint32_t ROUTE53_HEALTH_CHECK_HASH = ConstExprHashingUtils::HashString("ROUTE53_HEALTH_CHECK");
+        static constexpr uint32_t S3_BUCKET_HASH = ConstExprHashingUtils::HashString("S3_BUCKET");
+        static constexpr uint32_t SAGEMAKER_ENDPOINT_HASH = ConstExprHashingUtils::HashString("SAGEMAKER_ENDPOINT");
+        static constexpr uint32_t SNS_TOPIC_HASH = ConstExprHashingUtils::HashString("SNS_TOPIC");
+        static constexpr uint32_t SQS_QUEUE_HASH = ConstExprHashingUtils::HashString("SQS_QUEUE");
+        static constexpr uint32_t STEP_FUNCTIONS_ACTIVITY_HASH = ConstExprHashingUtils::HashString("STEP_FUNCTIONS_ACTIVITY");
+        static constexpr uint32_t STEP_FUNCTIONS_STATE_MACHINE_HASH = ConstExprHashingUtils::HashString("STEP_FUNCTIONS_STATE_MACHINE");
 
 
         ResourceTypeFilter GetResourceTypeFilterForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LOG_GROUPS_HASH)
           {
             return ResourceTypeFilter::LOG_GROUPS;

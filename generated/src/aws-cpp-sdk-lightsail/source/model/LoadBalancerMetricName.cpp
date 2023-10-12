@@ -20,23 +20,23 @@ namespace Aws
       namespace LoadBalancerMetricNameMapper
       {
 
-        static const int ClientTLSNegotiationErrorCount_HASH = HashingUtils::HashString("ClientTLSNegotiationErrorCount");
-        static const int HealthyHostCount_HASH = HashingUtils::HashString("HealthyHostCount");
-        static const int UnhealthyHostCount_HASH = HashingUtils::HashString("UnhealthyHostCount");
-        static const int HTTPCode_LB_4XX_Count_HASH = HashingUtils::HashString("HTTPCode_LB_4XX_Count");
-        static const int HTTPCode_LB_5XX_Count_HASH = HashingUtils::HashString("HTTPCode_LB_5XX_Count");
-        static const int HTTPCode_Instance_2XX_Count_HASH = HashingUtils::HashString("HTTPCode_Instance_2XX_Count");
-        static const int HTTPCode_Instance_3XX_Count_HASH = HashingUtils::HashString("HTTPCode_Instance_3XX_Count");
-        static const int HTTPCode_Instance_4XX_Count_HASH = HashingUtils::HashString("HTTPCode_Instance_4XX_Count");
-        static const int HTTPCode_Instance_5XX_Count_HASH = HashingUtils::HashString("HTTPCode_Instance_5XX_Count");
-        static const int InstanceResponseTime_HASH = HashingUtils::HashString("InstanceResponseTime");
-        static const int RejectedConnectionCount_HASH = HashingUtils::HashString("RejectedConnectionCount");
-        static const int RequestCount_HASH = HashingUtils::HashString("RequestCount");
+        static constexpr uint32_t ClientTLSNegotiationErrorCount_HASH = ConstExprHashingUtils::HashString("ClientTLSNegotiationErrorCount");
+        static constexpr uint32_t HealthyHostCount_HASH = ConstExprHashingUtils::HashString("HealthyHostCount");
+        static constexpr uint32_t UnhealthyHostCount_HASH = ConstExprHashingUtils::HashString("UnhealthyHostCount");
+        static constexpr uint32_t HTTPCode_LB_4XX_Count_HASH = ConstExprHashingUtils::HashString("HTTPCode_LB_4XX_Count");
+        static constexpr uint32_t HTTPCode_LB_5XX_Count_HASH = ConstExprHashingUtils::HashString("HTTPCode_LB_5XX_Count");
+        static constexpr uint32_t HTTPCode_Instance_2XX_Count_HASH = ConstExprHashingUtils::HashString("HTTPCode_Instance_2XX_Count");
+        static constexpr uint32_t HTTPCode_Instance_3XX_Count_HASH = ConstExprHashingUtils::HashString("HTTPCode_Instance_3XX_Count");
+        static constexpr uint32_t HTTPCode_Instance_4XX_Count_HASH = ConstExprHashingUtils::HashString("HTTPCode_Instance_4XX_Count");
+        static constexpr uint32_t HTTPCode_Instance_5XX_Count_HASH = ConstExprHashingUtils::HashString("HTTPCode_Instance_5XX_Count");
+        static constexpr uint32_t InstanceResponseTime_HASH = ConstExprHashingUtils::HashString("InstanceResponseTime");
+        static constexpr uint32_t RejectedConnectionCount_HASH = ConstExprHashingUtils::HashString("RejectedConnectionCount");
+        static constexpr uint32_t RequestCount_HASH = ConstExprHashingUtils::HashString("RequestCount");
 
 
         LoadBalancerMetricName GetLoadBalancerMetricNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ClientTLSNegotiationErrorCount_HASH)
           {
             return LoadBalancerMetricName::ClientTLSNegotiationErrorCount;

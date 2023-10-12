@@ -20,13 +20,13 @@ namespace Aws
       namespace FaceSearchSortByMapper
       {
 
-        static const int INDEX_HASH = HashingUtils::HashString("INDEX");
-        static const int TIMESTAMP_HASH = HashingUtils::HashString("TIMESTAMP");
+        static constexpr uint32_t INDEX_HASH = ConstExprHashingUtils::HashString("INDEX");
+        static constexpr uint32_t TIMESTAMP_HASH = ConstExprHashingUtils::HashString("TIMESTAMP");
 
 
         FaceSearchSortBy GetFaceSearchSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INDEX_HASH)
           {
             return FaceSearchSortBy::INDEX;

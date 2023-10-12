@@ -20,35 +20,35 @@ namespace Aws
       namespace StateReasonCodeMapper
       {
 
-        static const int Idle_HASH = HashingUtils::HashString("Idle");
-        static const int Creating_HASH = HashingUtils::HashString("Creating");
-        static const int Restoring_HASH = HashingUtils::HashString("Restoring");
-        static const int EniLimitExceeded_HASH = HashingUtils::HashString("EniLimitExceeded");
-        static const int InsufficientRolePermissions_HASH = HashingUtils::HashString("InsufficientRolePermissions");
-        static const int InvalidConfiguration_HASH = HashingUtils::HashString("InvalidConfiguration");
-        static const int InternalError_HASH = HashingUtils::HashString("InternalError");
-        static const int SubnetOutOfIPAddresses_HASH = HashingUtils::HashString("SubnetOutOfIPAddresses");
-        static const int InvalidSubnet_HASH = HashingUtils::HashString("InvalidSubnet");
-        static const int InvalidSecurityGroup_HASH = HashingUtils::HashString("InvalidSecurityGroup");
-        static const int ImageDeleted_HASH = HashingUtils::HashString("ImageDeleted");
-        static const int ImageAccessDenied_HASH = HashingUtils::HashString("ImageAccessDenied");
-        static const int InvalidImage_HASH = HashingUtils::HashString("InvalidImage");
-        static const int KMSKeyAccessDenied_HASH = HashingUtils::HashString("KMSKeyAccessDenied");
-        static const int KMSKeyNotFound_HASH = HashingUtils::HashString("KMSKeyNotFound");
-        static const int InvalidStateKMSKey_HASH = HashingUtils::HashString("InvalidStateKMSKey");
-        static const int DisabledKMSKey_HASH = HashingUtils::HashString("DisabledKMSKey");
-        static const int EFSIOError_HASH = HashingUtils::HashString("EFSIOError");
-        static const int EFSMountConnectivityError_HASH = HashingUtils::HashString("EFSMountConnectivityError");
-        static const int EFSMountFailure_HASH = HashingUtils::HashString("EFSMountFailure");
-        static const int EFSMountTimeout_HASH = HashingUtils::HashString("EFSMountTimeout");
-        static const int InvalidRuntime_HASH = HashingUtils::HashString("InvalidRuntime");
-        static const int InvalidZipFileException_HASH = HashingUtils::HashString("InvalidZipFileException");
-        static const int FunctionError_HASH = HashingUtils::HashString("FunctionError");
+        static constexpr uint32_t Idle_HASH = ConstExprHashingUtils::HashString("Idle");
+        static constexpr uint32_t Creating_HASH = ConstExprHashingUtils::HashString("Creating");
+        static constexpr uint32_t Restoring_HASH = ConstExprHashingUtils::HashString("Restoring");
+        static constexpr uint32_t EniLimitExceeded_HASH = ConstExprHashingUtils::HashString("EniLimitExceeded");
+        static constexpr uint32_t InsufficientRolePermissions_HASH = ConstExprHashingUtils::HashString("InsufficientRolePermissions");
+        static constexpr uint32_t InvalidConfiguration_HASH = ConstExprHashingUtils::HashString("InvalidConfiguration");
+        static constexpr uint32_t InternalError_HASH = ConstExprHashingUtils::HashString("InternalError");
+        static constexpr uint32_t SubnetOutOfIPAddresses_HASH = ConstExprHashingUtils::HashString("SubnetOutOfIPAddresses");
+        static constexpr uint32_t InvalidSubnet_HASH = ConstExprHashingUtils::HashString("InvalidSubnet");
+        static constexpr uint32_t InvalidSecurityGroup_HASH = ConstExprHashingUtils::HashString("InvalidSecurityGroup");
+        static constexpr uint32_t ImageDeleted_HASH = ConstExprHashingUtils::HashString("ImageDeleted");
+        static constexpr uint32_t ImageAccessDenied_HASH = ConstExprHashingUtils::HashString("ImageAccessDenied");
+        static constexpr uint32_t InvalidImage_HASH = ConstExprHashingUtils::HashString("InvalidImage");
+        static constexpr uint32_t KMSKeyAccessDenied_HASH = ConstExprHashingUtils::HashString("KMSKeyAccessDenied");
+        static constexpr uint32_t KMSKeyNotFound_HASH = ConstExprHashingUtils::HashString("KMSKeyNotFound");
+        static constexpr uint32_t InvalidStateKMSKey_HASH = ConstExprHashingUtils::HashString("InvalidStateKMSKey");
+        static constexpr uint32_t DisabledKMSKey_HASH = ConstExprHashingUtils::HashString("DisabledKMSKey");
+        static constexpr uint32_t EFSIOError_HASH = ConstExprHashingUtils::HashString("EFSIOError");
+        static constexpr uint32_t EFSMountConnectivityError_HASH = ConstExprHashingUtils::HashString("EFSMountConnectivityError");
+        static constexpr uint32_t EFSMountFailure_HASH = ConstExprHashingUtils::HashString("EFSMountFailure");
+        static constexpr uint32_t EFSMountTimeout_HASH = ConstExprHashingUtils::HashString("EFSMountTimeout");
+        static constexpr uint32_t InvalidRuntime_HASH = ConstExprHashingUtils::HashString("InvalidRuntime");
+        static constexpr uint32_t InvalidZipFileException_HASH = ConstExprHashingUtils::HashString("InvalidZipFileException");
+        static constexpr uint32_t FunctionError_HASH = ConstExprHashingUtils::HashString("FunctionError");
 
 
         StateReasonCode GetStateReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Idle_HASH)
           {
             return StateReasonCode::Idle;

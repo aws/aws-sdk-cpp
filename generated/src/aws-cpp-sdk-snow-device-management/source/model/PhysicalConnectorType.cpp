@@ -20,16 +20,16 @@ namespace Aws
       namespace PhysicalConnectorTypeMapper
       {
 
-        static const int RJ45_HASH = HashingUtils::HashString("RJ45");
-        static const int SFP_PLUS_HASH = HashingUtils::HashString("SFP_PLUS");
-        static const int QSFP_HASH = HashingUtils::HashString("QSFP");
-        static const int RJ45_2_HASH = HashingUtils::HashString("RJ45_2");
-        static const int WIFI_HASH = HashingUtils::HashString("WIFI");
+        static constexpr uint32_t RJ45_HASH = ConstExprHashingUtils::HashString("RJ45");
+        static constexpr uint32_t SFP_PLUS_HASH = ConstExprHashingUtils::HashString("SFP_PLUS");
+        static constexpr uint32_t QSFP_HASH = ConstExprHashingUtils::HashString("QSFP");
+        static constexpr uint32_t RJ45_2_HASH = ConstExprHashingUtils::HashString("RJ45_2");
+        static constexpr uint32_t WIFI_HASH = ConstExprHashingUtils::HashString("WIFI");
 
 
         PhysicalConnectorType GetPhysicalConnectorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RJ45_HASH)
           {
             return PhysicalConnectorType::RJ45;

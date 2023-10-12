@@ -20,37 +20,37 @@ namespace Aws
       namespace SummaryKeyTypeMapper
       {
 
-        static const int Users_HASH = HashingUtils::HashString("Users");
-        static const int UsersQuota_HASH = HashingUtils::HashString("UsersQuota");
-        static const int Groups_HASH = HashingUtils::HashString("Groups");
-        static const int GroupsQuota_HASH = HashingUtils::HashString("GroupsQuota");
-        static const int ServerCertificates_HASH = HashingUtils::HashString("ServerCertificates");
-        static const int ServerCertificatesQuota_HASH = HashingUtils::HashString("ServerCertificatesQuota");
-        static const int UserPolicySizeQuota_HASH = HashingUtils::HashString("UserPolicySizeQuota");
-        static const int GroupPolicySizeQuota_HASH = HashingUtils::HashString("GroupPolicySizeQuota");
-        static const int GroupsPerUserQuota_HASH = HashingUtils::HashString("GroupsPerUserQuota");
-        static const int SigningCertificatesPerUserQuota_HASH = HashingUtils::HashString("SigningCertificatesPerUserQuota");
-        static const int AccessKeysPerUserQuota_HASH = HashingUtils::HashString("AccessKeysPerUserQuota");
-        static const int MFADevices_HASH = HashingUtils::HashString("MFADevices");
-        static const int MFADevicesInUse_HASH = HashingUtils::HashString("MFADevicesInUse");
-        static const int AccountMFAEnabled_HASH = HashingUtils::HashString("AccountMFAEnabled");
-        static const int AccountAccessKeysPresent_HASH = HashingUtils::HashString("AccountAccessKeysPresent");
-        static const int AccountSigningCertificatesPresent_HASH = HashingUtils::HashString("AccountSigningCertificatesPresent");
-        static const int AttachedPoliciesPerGroupQuota_HASH = HashingUtils::HashString("AttachedPoliciesPerGroupQuota");
-        static const int AttachedPoliciesPerRoleQuota_HASH = HashingUtils::HashString("AttachedPoliciesPerRoleQuota");
-        static const int AttachedPoliciesPerUserQuota_HASH = HashingUtils::HashString("AttachedPoliciesPerUserQuota");
-        static const int Policies_HASH = HashingUtils::HashString("Policies");
-        static const int PoliciesQuota_HASH = HashingUtils::HashString("PoliciesQuota");
-        static const int PolicySizeQuota_HASH = HashingUtils::HashString("PolicySizeQuota");
-        static const int PolicyVersionsInUse_HASH = HashingUtils::HashString("PolicyVersionsInUse");
-        static const int PolicyVersionsInUseQuota_HASH = HashingUtils::HashString("PolicyVersionsInUseQuota");
-        static const int VersionsPerPolicyQuota_HASH = HashingUtils::HashString("VersionsPerPolicyQuota");
-        static const int GlobalEndpointTokenVersion_HASH = HashingUtils::HashString("GlobalEndpointTokenVersion");
+        static constexpr uint32_t Users_HASH = ConstExprHashingUtils::HashString("Users");
+        static constexpr uint32_t UsersQuota_HASH = ConstExprHashingUtils::HashString("UsersQuota");
+        static constexpr uint32_t Groups_HASH = ConstExprHashingUtils::HashString("Groups");
+        static constexpr uint32_t GroupsQuota_HASH = ConstExprHashingUtils::HashString("GroupsQuota");
+        static constexpr uint32_t ServerCertificates_HASH = ConstExprHashingUtils::HashString("ServerCertificates");
+        static constexpr uint32_t ServerCertificatesQuota_HASH = ConstExprHashingUtils::HashString("ServerCertificatesQuota");
+        static constexpr uint32_t UserPolicySizeQuota_HASH = ConstExprHashingUtils::HashString("UserPolicySizeQuota");
+        static constexpr uint32_t GroupPolicySizeQuota_HASH = ConstExprHashingUtils::HashString("GroupPolicySizeQuota");
+        static constexpr uint32_t GroupsPerUserQuota_HASH = ConstExprHashingUtils::HashString("GroupsPerUserQuota");
+        static constexpr uint32_t SigningCertificatesPerUserQuota_HASH = ConstExprHashingUtils::HashString("SigningCertificatesPerUserQuota");
+        static constexpr uint32_t AccessKeysPerUserQuota_HASH = ConstExprHashingUtils::HashString("AccessKeysPerUserQuota");
+        static constexpr uint32_t MFADevices_HASH = ConstExprHashingUtils::HashString("MFADevices");
+        static constexpr uint32_t MFADevicesInUse_HASH = ConstExprHashingUtils::HashString("MFADevicesInUse");
+        static constexpr uint32_t AccountMFAEnabled_HASH = ConstExprHashingUtils::HashString("AccountMFAEnabled");
+        static constexpr uint32_t AccountAccessKeysPresent_HASH = ConstExprHashingUtils::HashString("AccountAccessKeysPresent");
+        static constexpr uint32_t AccountSigningCertificatesPresent_HASH = ConstExprHashingUtils::HashString("AccountSigningCertificatesPresent");
+        static constexpr uint32_t AttachedPoliciesPerGroupQuota_HASH = ConstExprHashingUtils::HashString("AttachedPoliciesPerGroupQuota");
+        static constexpr uint32_t AttachedPoliciesPerRoleQuota_HASH = ConstExprHashingUtils::HashString("AttachedPoliciesPerRoleQuota");
+        static constexpr uint32_t AttachedPoliciesPerUserQuota_HASH = ConstExprHashingUtils::HashString("AttachedPoliciesPerUserQuota");
+        static constexpr uint32_t Policies_HASH = ConstExprHashingUtils::HashString("Policies");
+        static constexpr uint32_t PoliciesQuota_HASH = ConstExprHashingUtils::HashString("PoliciesQuota");
+        static constexpr uint32_t PolicySizeQuota_HASH = ConstExprHashingUtils::HashString("PolicySizeQuota");
+        static constexpr uint32_t PolicyVersionsInUse_HASH = ConstExprHashingUtils::HashString("PolicyVersionsInUse");
+        static constexpr uint32_t PolicyVersionsInUseQuota_HASH = ConstExprHashingUtils::HashString("PolicyVersionsInUseQuota");
+        static constexpr uint32_t VersionsPerPolicyQuota_HASH = ConstExprHashingUtils::HashString("VersionsPerPolicyQuota");
+        static constexpr uint32_t GlobalEndpointTokenVersion_HASH = ConstExprHashingUtils::HashString("GlobalEndpointTokenVersion");
 
 
         SummaryKeyType GetSummaryKeyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Users_HASH)
           {
             return SummaryKeyType::Users;

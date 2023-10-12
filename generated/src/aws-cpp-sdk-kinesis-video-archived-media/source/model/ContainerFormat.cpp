@@ -20,13 +20,13 @@ namespace Aws
       namespace ContainerFormatMapper
       {
 
-        static const int FRAGMENTED_MP4_HASH = HashingUtils::HashString("FRAGMENTED_MP4");
-        static const int MPEG_TS_HASH = HashingUtils::HashString("MPEG_TS");
+        static constexpr uint32_t FRAGMENTED_MP4_HASH = ConstExprHashingUtils::HashString("FRAGMENTED_MP4");
+        static constexpr uint32_t MPEG_TS_HASH = ConstExprHashingUtils::HashString("MPEG_TS");
 
 
         ContainerFormat GetContainerFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FRAGMENTED_MP4_HASH)
           {
             return ContainerFormat::FRAGMENTED_MP4;

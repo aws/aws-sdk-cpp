@@ -20,13 +20,13 @@ namespace Aws
       namespace ProtocolTypeMapper
       {
 
-        static const int WEBSOCKET_HASH = HashingUtils::HashString("WEBSOCKET");
-        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
+        static constexpr uint32_t WEBSOCKET_HASH = ConstExprHashingUtils::HashString("WEBSOCKET");
+        static constexpr uint32_t HTTP_HASH = ConstExprHashingUtils::HashString("HTTP");
 
 
         ProtocolType GetProtocolTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WEBSOCKET_HASH)
           {
             return ProtocolType::WEBSOCKET;

@@ -20,18 +20,18 @@ namespace Aws
       namespace WorkflowExecutionStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int SKIPPED_HASH = HashingUtils::HashString("SKIPPED");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("ROLLBACK_IN_PROGRESS");
-        static const int ROLLBACK_COMPLETED_HASH = HashingUtils::HashString("ROLLBACK_COMPLETED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t SKIPPED_HASH = ConstExprHashingUtils::HashString("SKIPPED");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t ROLLBACK_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("ROLLBACK_IN_PROGRESS");
+        static constexpr uint32_t ROLLBACK_COMPLETED_HASH = ConstExprHashingUtils::HashString("ROLLBACK_COMPLETED");
 
 
         WorkflowExecutionStatus GetWorkflowExecutionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return WorkflowExecutionStatus::PENDING;

@@ -20,13 +20,13 @@ namespace Aws
       namespace PutModeMapper
       {
 
-        static const int merge_HASH = HashingUtils::HashString("merge");
-        static const int overwrite_HASH = HashingUtils::HashString("overwrite");
+        static constexpr uint32_t merge_HASH = ConstExprHashingUtils::HashString("merge");
+        static constexpr uint32_t overwrite_HASH = ConstExprHashingUtils::HashString("overwrite");
 
 
         PutMode GetPutModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == merge_HASH)
           {
             return PutMode::merge;

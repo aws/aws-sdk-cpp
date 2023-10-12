@@ -20,14 +20,14 @@ namespace Aws
       namespace ScheduledAutoTuneSeverityTypeMapper
       {
 
-        static const int LOW_HASH = HashingUtils::HashString("LOW");
-        static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
-        static const int HIGH_HASH = HashingUtils::HashString("HIGH");
+        static constexpr uint32_t LOW_HASH = ConstExprHashingUtils::HashString("LOW");
+        static constexpr uint32_t MEDIUM_HASH = ConstExprHashingUtils::HashString("MEDIUM");
+        static constexpr uint32_t HIGH_HASH = ConstExprHashingUtils::HashString("HIGH");
 
 
         ScheduledAutoTuneSeverityType GetScheduledAutoTuneSeverityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LOW_HASH)
           {
             return ScheduledAutoTuneSeverityType::LOW;

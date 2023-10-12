@@ -20,15 +20,15 @@ namespace Aws
       namespace SpeechMarkTypeMapper
       {
 
-        static const int sentence_HASH = HashingUtils::HashString("sentence");
-        static const int ssml_HASH = HashingUtils::HashString("ssml");
-        static const int viseme_HASH = HashingUtils::HashString("viseme");
-        static const int word_HASH = HashingUtils::HashString("word");
+        static constexpr uint32_t sentence_HASH = ConstExprHashingUtils::HashString("sentence");
+        static constexpr uint32_t ssml_HASH = ConstExprHashingUtils::HashString("ssml");
+        static constexpr uint32_t viseme_HASH = ConstExprHashingUtils::HashString("viseme");
+        static constexpr uint32_t word_HASH = ConstExprHashingUtils::HashString("word");
 
 
         SpeechMarkType GetSpeechMarkTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == sentence_HASH)
           {
             return SpeechMarkType::sentence;

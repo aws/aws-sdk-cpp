@@ -20,13 +20,13 @@ namespace Aws
       namespace FallbackActionMapper
       {
 
-        static const int CONTINUE_HASH = HashingUtils::HashString("CONTINUE");
-        static const int ABORT_HASH = HashingUtils::HashString("ABORT");
+        static constexpr uint32_t CONTINUE_HASH = ConstExprHashingUtils::HashString("CONTINUE");
+        static constexpr uint32_t ABORT_HASH = ConstExprHashingUtils::HashString("ABORT");
 
 
         FallbackAction GetFallbackActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONTINUE_HASH)
           {
             return FallbackAction::CONTINUE;

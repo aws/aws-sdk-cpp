@@ -20,13 +20,13 @@ namespace Aws
       namespace ConflictResolvingModelMapper
       {
 
-        static const int RECENCY_HASH = HashingUtils::HashString("RECENCY");
-        static const int SOURCE_HASH = HashingUtils::HashString("SOURCE");
+        static constexpr uint32_t RECENCY_HASH = ConstExprHashingUtils::HashString("RECENCY");
+        static constexpr uint32_t SOURCE_HASH = ConstExprHashingUtils::HashString("SOURCE");
 
 
         ConflictResolvingModel GetConflictResolvingModelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RECENCY_HASH)
           {
             return ConflictResolvingModel::RECENCY;

@@ -20,44 +20,44 @@ namespace Aws
       namespace ActivityTypeMapper
       {
 
-        static const int DOCUMENT_CHECKED_IN_HASH = HashingUtils::HashString("DOCUMENT_CHECKED_IN");
-        static const int DOCUMENT_CHECKED_OUT_HASH = HashingUtils::HashString("DOCUMENT_CHECKED_OUT");
-        static const int DOCUMENT_RENAMED_HASH = HashingUtils::HashString("DOCUMENT_RENAMED");
-        static const int DOCUMENT_VERSION_UPLOADED_HASH = HashingUtils::HashString("DOCUMENT_VERSION_UPLOADED");
-        static const int DOCUMENT_VERSION_DELETED_HASH = HashingUtils::HashString("DOCUMENT_VERSION_DELETED");
-        static const int DOCUMENT_VERSION_VIEWED_HASH = HashingUtils::HashString("DOCUMENT_VERSION_VIEWED");
-        static const int DOCUMENT_VERSION_DOWNLOADED_HASH = HashingUtils::HashString("DOCUMENT_VERSION_DOWNLOADED");
-        static const int DOCUMENT_RECYCLED_HASH = HashingUtils::HashString("DOCUMENT_RECYCLED");
-        static const int DOCUMENT_RESTORED_HASH = HashingUtils::HashString("DOCUMENT_RESTORED");
-        static const int DOCUMENT_REVERTED_HASH = HashingUtils::HashString("DOCUMENT_REVERTED");
-        static const int DOCUMENT_SHARED_HASH = HashingUtils::HashString("DOCUMENT_SHARED");
-        static const int DOCUMENT_UNSHARED_HASH = HashingUtils::HashString("DOCUMENT_UNSHARED");
-        static const int DOCUMENT_SHARE_PERMISSION_CHANGED_HASH = HashingUtils::HashString("DOCUMENT_SHARE_PERMISSION_CHANGED");
-        static const int DOCUMENT_SHAREABLE_LINK_CREATED_HASH = HashingUtils::HashString("DOCUMENT_SHAREABLE_LINK_CREATED");
-        static const int DOCUMENT_SHAREABLE_LINK_REMOVED_HASH = HashingUtils::HashString("DOCUMENT_SHAREABLE_LINK_REMOVED");
-        static const int DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED_HASH = HashingUtils::HashString("DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED");
-        static const int DOCUMENT_MOVED_HASH = HashingUtils::HashString("DOCUMENT_MOVED");
-        static const int DOCUMENT_COMMENT_ADDED_HASH = HashingUtils::HashString("DOCUMENT_COMMENT_ADDED");
-        static const int DOCUMENT_COMMENT_DELETED_HASH = HashingUtils::HashString("DOCUMENT_COMMENT_DELETED");
-        static const int DOCUMENT_ANNOTATION_ADDED_HASH = HashingUtils::HashString("DOCUMENT_ANNOTATION_ADDED");
-        static const int DOCUMENT_ANNOTATION_DELETED_HASH = HashingUtils::HashString("DOCUMENT_ANNOTATION_DELETED");
-        static const int FOLDER_CREATED_HASH = HashingUtils::HashString("FOLDER_CREATED");
-        static const int FOLDER_DELETED_HASH = HashingUtils::HashString("FOLDER_DELETED");
-        static const int FOLDER_RENAMED_HASH = HashingUtils::HashString("FOLDER_RENAMED");
-        static const int FOLDER_RECYCLED_HASH = HashingUtils::HashString("FOLDER_RECYCLED");
-        static const int FOLDER_RESTORED_HASH = HashingUtils::HashString("FOLDER_RESTORED");
-        static const int FOLDER_SHARED_HASH = HashingUtils::HashString("FOLDER_SHARED");
-        static const int FOLDER_UNSHARED_HASH = HashingUtils::HashString("FOLDER_UNSHARED");
-        static const int FOLDER_SHARE_PERMISSION_CHANGED_HASH = HashingUtils::HashString("FOLDER_SHARE_PERMISSION_CHANGED");
-        static const int FOLDER_SHAREABLE_LINK_CREATED_HASH = HashingUtils::HashString("FOLDER_SHAREABLE_LINK_CREATED");
-        static const int FOLDER_SHAREABLE_LINK_REMOVED_HASH = HashingUtils::HashString("FOLDER_SHAREABLE_LINK_REMOVED");
-        static const int FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED_HASH = HashingUtils::HashString("FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED");
-        static const int FOLDER_MOVED_HASH = HashingUtils::HashString("FOLDER_MOVED");
+        static constexpr uint32_t DOCUMENT_CHECKED_IN_HASH = ConstExprHashingUtils::HashString("DOCUMENT_CHECKED_IN");
+        static constexpr uint32_t DOCUMENT_CHECKED_OUT_HASH = ConstExprHashingUtils::HashString("DOCUMENT_CHECKED_OUT");
+        static constexpr uint32_t DOCUMENT_RENAMED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_RENAMED");
+        static constexpr uint32_t DOCUMENT_VERSION_UPLOADED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_VERSION_UPLOADED");
+        static constexpr uint32_t DOCUMENT_VERSION_DELETED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_VERSION_DELETED");
+        static constexpr uint32_t DOCUMENT_VERSION_VIEWED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_VERSION_VIEWED");
+        static constexpr uint32_t DOCUMENT_VERSION_DOWNLOADED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_VERSION_DOWNLOADED");
+        static constexpr uint32_t DOCUMENT_RECYCLED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_RECYCLED");
+        static constexpr uint32_t DOCUMENT_RESTORED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_RESTORED");
+        static constexpr uint32_t DOCUMENT_REVERTED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_REVERTED");
+        static constexpr uint32_t DOCUMENT_SHARED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_SHARED");
+        static constexpr uint32_t DOCUMENT_UNSHARED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_UNSHARED");
+        static constexpr uint32_t DOCUMENT_SHARE_PERMISSION_CHANGED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_SHARE_PERMISSION_CHANGED");
+        static constexpr uint32_t DOCUMENT_SHAREABLE_LINK_CREATED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_SHAREABLE_LINK_CREATED");
+        static constexpr uint32_t DOCUMENT_SHAREABLE_LINK_REMOVED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_SHAREABLE_LINK_REMOVED");
+        static constexpr uint32_t DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED");
+        static constexpr uint32_t DOCUMENT_MOVED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_MOVED");
+        static constexpr uint32_t DOCUMENT_COMMENT_ADDED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_COMMENT_ADDED");
+        static constexpr uint32_t DOCUMENT_COMMENT_DELETED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_COMMENT_DELETED");
+        static constexpr uint32_t DOCUMENT_ANNOTATION_ADDED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_ANNOTATION_ADDED");
+        static constexpr uint32_t DOCUMENT_ANNOTATION_DELETED_HASH = ConstExprHashingUtils::HashString("DOCUMENT_ANNOTATION_DELETED");
+        static constexpr uint32_t FOLDER_CREATED_HASH = ConstExprHashingUtils::HashString("FOLDER_CREATED");
+        static constexpr uint32_t FOLDER_DELETED_HASH = ConstExprHashingUtils::HashString("FOLDER_DELETED");
+        static constexpr uint32_t FOLDER_RENAMED_HASH = ConstExprHashingUtils::HashString("FOLDER_RENAMED");
+        static constexpr uint32_t FOLDER_RECYCLED_HASH = ConstExprHashingUtils::HashString("FOLDER_RECYCLED");
+        static constexpr uint32_t FOLDER_RESTORED_HASH = ConstExprHashingUtils::HashString("FOLDER_RESTORED");
+        static constexpr uint32_t FOLDER_SHARED_HASH = ConstExprHashingUtils::HashString("FOLDER_SHARED");
+        static constexpr uint32_t FOLDER_UNSHARED_HASH = ConstExprHashingUtils::HashString("FOLDER_UNSHARED");
+        static constexpr uint32_t FOLDER_SHARE_PERMISSION_CHANGED_HASH = ConstExprHashingUtils::HashString("FOLDER_SHARE_PERMISSION_CHANGED");
+        static constexpr uint32_t FOLDER_SHAREABLE_LINK_CREATED_HASH = ConstExprHashingUtils::HashString("FOLDER_SHAREABLE_LINK_CREATED");
+        static constexpr uint32_t FOLDER_SHAREABLE_LINK_REMOVED_HASH = ConstExprHashingUtils::HashString("FOLDER_SHAREABLE_LINK_REMOVED");
+        static constexpr uint32_t FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED_HASH = ConstExprHashingUtils::HashString("FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED");
+        static constexpr uint32_t FOLDER_MOVED_HASH = ConstExprHashingUtils::HashString("FOLDER_MOVED");
 
 
         ActivityType GetActivityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DOCUMENT_CHECKED_IN_HASH)
           {
             return ActivityType::DOCUMENT_CHECKED_IN;

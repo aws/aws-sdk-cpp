@@ -20,17 +20,17 @@ namespace Aws
       namespace NetworkInterfaceFailureReasonMapper
       {
 
-        static const int DUPLICATE_NETWORK_INTERFACE_HASH = HashingUtils::HashString("DUPLICATE_NETWORK_INTERFACE");
-        static const int CONFLICTING_NETWORK_INTERFACE_HASH = HashingUtils::HashString("CONFLICTING_NETWORK_INTERFACE");
-        static const int NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS_HASH = HashingUtils::HashString("NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS");
-        static const int CAN_NETWORK_INTERFACE_INFO_IS_NULL_HASH = HashingUtils::HashString("CAN_NETWORK_INTERFACE_INFO_IS_NULL");
-        static const int OBD_NETWORK_INTERFACE_INFO_IS_NULL_HASH = HashingUtils::HashString("OBD_NETWORK_INTERFACE_INFO_IS_NULL");
-        static const int NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS_HASH = HashingUtils::HashString("NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS");
+        static constexpr uint32_t DUPLICATE_NETWORK_INTERFACE_HASH = ConstExprHashingUtils::HashString("DUPLICATE_NETWORK_INTERFACE");
+        static constexpr uint32_t CONFLICTING_NETWORK_INTERFACE_HASH = ConstExprHashingUtils::HashString("CONFLICTING_NETWORK_INTERFACE");
+        static constexpr uint32_t NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS");
+        static constexpr uint32_t CAN_NETWORK_INTERFACE_INFO_IS_NULL_HASH = ConstExprHashingUtils::HashString("CAN_NETWORK_INTERFACE_INFO_IS_NULL");
+        static constexpr uint32_t OBD_NETWORK_INTERFACE_INFO_IS_NULL_HASH = ConstExprHashingUtils::HashString("OBD_NETWORK_INTERFACE_INFO_IS_NULL");
+        static constexpr uint32_t NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS_HASH = ConstExprHashingUtils::HashString("NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS");
 
 
         NetworkInterfaceFailureReason GetNetworkInterfaceFailureReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DUPLICATE_NETWORK_INTERFACE_HASH)
           {
             return NetworkInterfaceFailureReason::DUPLICATE_NETWORK_INTERFACE;

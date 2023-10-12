@@ -20,13 +20,13 @@ namespace Aws
       namespace GraphQLApiVisibilityMapper
       {
 
-        static const int GLOBAL_HASH = HashingUtils::HashString("GLOBAL");
-        static const int PRIVATE__HASH = HashingUtils::HashString("PRIVATE");
+        static constexpr uint32_t GLOBAL_HASH = ConstExprHashingUtils::HashString("GLOBAL");
+        static constexpr uint32_t PRIVATE__HASH = ConstExprHashingUtils::HashString("PRIVATE");
 
 
         GraphQLApiVisibility GetGraphQLApiVisibilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GLOBAL_HASH)
           {
             return GraphQLApiVisibility::GLOBAL;

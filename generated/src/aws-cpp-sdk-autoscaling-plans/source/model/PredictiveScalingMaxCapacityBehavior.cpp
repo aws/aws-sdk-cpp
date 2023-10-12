@@ -20,14 +20,14 @@ namespace Aws
       namespace PredictiveScalingMaxCapacityBehaviorMapper
       {
 
-        static const int SetForecastCapacityToMaxCapacity_HASH = HashingUtils::HashString("SetForecastCapacityToMaxCapacity");
-        static const int SetMaxCapacityToForecastCapacity_HASH = HashingUtils::HashString("SetMaxCapacityToForecastCapacity");
-        static const int SetMaxCapacityAboveForecastCapacity_HASH = HashingUtils::HashString("SetMaxCapacityAboveForecastCapacity");
+        static constexpr uint32_t SetForecastCapacityToMaxCapacity_HASH = ConstExprHashingUtils::HashString("SetForecastCapacityToMaxCapacity");
+        static constexpr uint32_t SetMaxCapacityToForecastCapacity_HASH = ConstExprHashingUtils::HashString("SetMaxCapacityToForecastCapacity");
+        static constexpr uint32_t SetMaxCapacityAboveForecastCapacity_HASH = ConstExprHashingUtils::HashString("SetMaxCapacityAboveForecastCapacity");
 
 
         PredictiveScalingMaxCapacityBehavior GetPredictiveScalingMaxCapacityBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SetForecastCapacityToMaxCapacity_HASH)
           {
             return PredictiveScalingMaxCapacityBehavior::SetForecastCapacityToMaxCapacity;

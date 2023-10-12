@@ -20,13 +20,13 @@ namespace Aws
       namespace RouteTypeMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int URI_PATH_HASH = HashingUtils::HashString("URI_PATH");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t URI_PATH_HASH = ConstExprHashingUtils::HashString("URI_PATH");
 
 
         RouteType GetRouteTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return RouteType::DEFAULT;

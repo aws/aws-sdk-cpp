@@ -20,14 +20,14 @@ namespace Aws
       namespace SourceMapper
       {
 
-        static const int S3_HASH = HashingUtils::HashString("S3");
-        static const int DATA_CATALOG_HASH = HashingUtils::HashString("DATA-CATALOG");
-        static const int DATABASE_HASH = HashingUtils::HashString("DATABASE");
+        static constexpr uint32_t S3_HASH = ConstExprHashingUtils::HashString("S3");
+        static constexpr uint32_t DATA_CATALOG_HASH = ConstExprHashingUtils::HashString("DATA-CATALOG");
+        static constexpr uint32_t DATABASE_HASH = ConstExprHashingUtils::HashString("DATABASE");
 
 
         Source GetSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == S3_HASH)
           {
             return Source::S3;

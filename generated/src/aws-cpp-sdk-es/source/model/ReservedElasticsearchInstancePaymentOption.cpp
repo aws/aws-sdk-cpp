@@ -20,14 +20,14 @@ namespace Aws
       namespace ReservedElasticsearchInstancePaymentOptionMapper
       {
 
-        static const int ALL_UPFRONT_HASH = HashingUtils::HashString("ALL_UPFRONT");
-        static const int PARTIAL_UPFRONT_HASH = HashingUtils::HashString("PARTIAL_UPFRONT");
-        static const int NO_UPFRONT_HASH = HashingUtils::HashString("NO_UPFRONT");
+        static constexpr uint32_t ALL_UPFRONT_HASH = ConstExprHashingUtils::HashString("ALL_UPFRONT");
+        static constexpr uint32_t PARTIAL_UPFRONT_HASH = ConstExprHashingUtils::HashString("PARTIAL_UPFRONT");
+        static constexpr uint32_t NO_UPFRONT_HASH = ConstExprHashingUtils::HashString("NO_UPFRONT");
 
 
         ReservedElasticsearchInstancePaymentOption GetReservedElasticsearchInstancePaymentOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_UPFRONT_HASH)
           {
             return ReservedElasticsearchInstancePaymentOption::ALL_UPFRONT;

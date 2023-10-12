@@ -20,13 +20,13 @@ namespace Aws
       namespace AccountAccessTypeMapper
       {
 
-        static const int CURRENT_ACCOUNT_HASH = HashingUtils::HashString("CURRENT_ACCOUNT");
-        static const int ORGANIZATION_HASH = HashingUtils::HashString("ORGANIZATION");
+        static constexpr uint32_t CURRENT_ACCOUNT_HASH = ConstExprHashingUtils::HashString("CURRENT_ACCOUNT");
+        static constexpr uint32_t ORGANIZATION_HASH = ConstExprHashingUtils::HashString("ORGANIZATION");
 
 
         AccountAccessType GetAccountAccessTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CURRENT_ACCOUNT_HASH)
           {
             return AccountAccessType::CURRENT_ACCOUNT;

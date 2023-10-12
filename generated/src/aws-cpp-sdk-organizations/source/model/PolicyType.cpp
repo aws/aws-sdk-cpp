@@ -20,15 +20,15 @@ namespace Aws
       namespace PolicyTypeMapper
       {
 
-        static const int SERVICE_CONTROL_POLICY_HASH = HashingUtils::HashString("SERVICE_CONTROL_POLICY");
-        static const int TAG_POLICY_HASH = HashingUtils::HashString("TAG_POLICY");
-        static const int BACKUP_POLICY_HASH = HashingUtils::HashString("BACKUP_POLICY");
-        static const int AISERVICES_OPT_OUT_POLICY_HASH = HashingUtils::HashString("AISERVICES_OPT_OUT_POLICY");
+        static constexpr uint32_t SERVICE_CONTROL_POLICY_HASH = ConstExprHashingUtils::HashString("SERVICE_CONTROL_POLICY");
+        static constexpr uint32_t TAG_POLICY_HASH = ConstExprHashingUtils::HashString("TAG_POLICY");
+        static constexpr uint32_t BACKUP_POLICY_HASH = ConstExprHashingUtils::HashString("BACKUP_POLICY");
+        static constexpr uint32_t AISERVICES_OPT_OUT_POLICY_HASH = ConstExprHashingUtils::HashString("AISERVICES_OPT_OUT_POLICY");
 
 
         PolicyType GetPolicyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SERVICE_CONTROL_POLICY_HASH)
           {
             return PolicyType::SERVICE_CONTROL_POLICY;

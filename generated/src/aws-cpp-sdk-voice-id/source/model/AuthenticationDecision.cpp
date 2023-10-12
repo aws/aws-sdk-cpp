@@ -20,18 +20,18 @@ namespace Aws
       namespace AuthenticationDecisionMapper
       {
 
-        static const int ACCEPT_HASH = HashingUtils::HashString("ACCEPT");
-        static const int REJECT_HASH = HashingUtils::HashString("REJECT");
-        static const int NOT_ENOUGH_SPEECH_HASH = HashingUtils::HashString("NOT_ENOUGH_SPEECH");
-        static const int SPEAKER_NOT_ENROLLED_HASH = HashingUtils::HashString("SPEAKER_NOT_ENROLLED");
-        static const int SPEAKER_OPTED_OUT_HASH = HashingUtils::HashString("SPEAKER_OPTED_OUT");
-        static const int SPEAKER_ID_NOT_PROVIDED_HASH = HashingUtils::HashString("SPEAKER_ID_NOT_PROVIDED");
-        static const int SPEAKER_EXPIRED_HASH = HashingUtils::HashString("SPEAKER_EXPIRED");
+        static constexpr uint32_t ACCEPT_HASH = ConstExprHashingUtils::HashString("ACCEPT");
+        static constexpr uint32_t REJECT_HASH = ConstExprHashingUtils::HashString("REJECT");
+        static constexpr uint32_t NOT_ENOUGH_SPEECH_HASH = ConstExprHashingUtils::HashString("NOT_ENOUGH_SPEECH");
+        static constexpr uint32_t SPEAKER_NOT_ENROLLED_HASH = ConstExprHashingUtils::HashString("SPEAKER_NOT_ENROLLED");
+        static constexpr uint32_t SPEAKER_OPTED_OUT_HASH = ConstExprHashingUtils::HashString("SPEAKER_OPTED_OUT");
+        static constexpr uint32_t SPEAKER_ID_NOT_PROVIDED_HASH = ConstExprHashingUtils::HashString("SPEAKER_ID_NOT_PROVIDED");
+        static constexpr uint32_t SPEAKER_EXPIRED_HASH = ConstExprHashingUtils::HashString("SPEAKER_EXPIRED");
 
 
         AuthenticationDecision GetAuthenticationDecisionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCEPT_HASH)
           {
             return AuthenticationDecision::ACCEPT;

@@ -20,12 +20,12 @@ namespace Aws
       namespace StudioPersonaMapper
       {
 
-        static const int ADMINISTRATOR_HASH = HashingUtils::HashString("ADMINISTRATOR");
+        static constexpr uint32_t ADMINISTRATOR_HASH = ConstExprHashingUtils::HashString("ADMINISTRATOR");
 
 
         StudioPersona GetStudioPersonaForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ADMINISTRATOR_HASH)
           {
             return StudioPersona::ADMINISTRATOR;

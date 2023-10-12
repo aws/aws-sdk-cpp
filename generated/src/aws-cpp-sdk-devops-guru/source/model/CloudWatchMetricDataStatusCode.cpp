@@ -20,14 +20,14 @@ namespace Aws
       namespace CloudWatchMetricDataStatusCodeMapper
       {
 
-        static const int Complete_HASH = HashingUtils::HashString("Complete");
-        static const int InternalError_HASH = HashingUtils::HashString("InternalError");
-        static const int PartialData_HASH = HashingUtils::HashString("PartialData");
+        static constexpr uint32_t Complete_HASH = ConstExprHashingUtils::HashString("Complete");
+        static constexpr uint32_t InternalError_HASH = ConstExprHashingUtils::HashString("InternalError");
+        static constexpr uint32_t PartialData_HASH = ConstExprHashingUtils::HashString("PartialData");
 
 
         CloudWatchMetricDataStatusCode GetCloudWatchMetricDataStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Complete_HASH)
           {
             return CloudWatchMetricDataStatusCode::Complete;

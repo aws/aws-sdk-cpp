@@ -20,15 +20,15 @@ namespace Aws
       namespace GidMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int INT_VALUE_HASH = HashingUtils::HashString("INT_VALUE");
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int BOTH_HASH = HashingUtils::HashString("BOTH");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t INT_VALUE_HASH = ConstExprHashingUtils::HashString("INT_VALUE");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t BOTH_HASH = ConstExprHashingUtils::HashString("BOTH");
 
 
         Gid GetGidForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return Gid::NONE;

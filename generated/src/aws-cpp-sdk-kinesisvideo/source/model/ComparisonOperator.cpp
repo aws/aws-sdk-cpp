@@ -20,12 +20,12 @@ namespace Aws
       namespace ComparisonOperatorMapper
       {
 
-        static const int BEGINS_WITH_HASH = HashingUtils::HashString("BEGINS_WITH");
+        static constexpr uint32_t BEGINS_WITH_HASH = ConstExprHashingUtils::HashString("BEGINS_WITH");
 
 
         ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BEGINS_WITH_HASH)
           {
             return ComparisonOperator::BEGINS_WITH;

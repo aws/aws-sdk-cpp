@@ -18,23 +18,23 @@ namespace CodeStar
 namespace CodeStarErrorMapper
 {
 
-static const int PROJECT_CONFIGURATION_HASH = HashingUtils::HashString("ProjectConfigurationException");
-static const int USER_PROFILE_NOT_FOUND_HASH = HashingUtils::HashString("UserProfileNotFoundException");
-static const int PROJECT_CREATION_FAILED_HASH = HashingUtils::HashString("ProjectCreationFailedException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int PROJECT_NOT_FOUND_HASH = HashingUtils::HashString("ProjectNotFoundException");
-static const int TEAM_MEMBER_ALREADY_ASSOCIATED_HASH = HashingUtils::HashString("TeamMemberAlreadyAssociatedException");
-static const int USER_PROFILE_ALREADY_EXISTS_HASH = HashingUtils::HashString("UserProfileAlreadyExistsException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int TEAM_MEMBER_NOT_FOUND_HASH = HashingUtils::HashString("TeamMemberNotFoundException");
-static const int INVALID_SERVICE_ROLE_HASH = HashingUtils::HashString("InvalidServiceRoleException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int PROJECT_ALREADY_EXISTS_HASH = HashingUtils::HashString("ProjectAlreadyExistsException");
+static constexpr uint32_t PROJECT_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("ProjectConfigurationException");
+static constexpr uint32_t USER_PROFILE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("UserProfileNotFoundException");
+static constexpr uint32_t PROJECT_CREATION_FAILED_HASH = ConstExprHashingUtils::HashString("ProjectCreationFailedException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t PROJECT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ProjectNotFoundException");
+static constexpr uint32_t TEAM_MEMBER_ALREADY_ASSOCIATED_HASH = ConstExprHashingUtils::HashString("TeamMemberAlreadyAssociatedException");
+static constexpr uint32_t USER_PROFILE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("UserProfileAlreadyExistsException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t TEAM_MEMBER_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("TeamMemberNotFoundException");
+static constexpr uint32_t INVALID_SERVICE_ROLE_HASH = ConstExprHashingUtils::HashString("InvalidServiceRoleException");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+static constexpr uint32_t PROJECT_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ProjectAlreadyExistsException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == PROJECT_CONFIGURATION_HASH)
   {

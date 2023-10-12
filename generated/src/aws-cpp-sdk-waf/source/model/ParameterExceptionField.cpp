@@ -20,29 +20,29 @@ namespace Aws
       namespace ParameterExceptionFieldMapper
       {
 
-        static const int CHANGE_ACTION_HASH = HashingUtils::HashString("CHANGE_ACTION");
-        static const int WAF_ACTION_HASH = HashingUtils::HashString("WAF_ACTION");
-        static const int WAF_OVERRIDE_ACTION_HASH = HashingUtils::HashString("WAF_OVERRIDE_ACTION");
-        static const int PREDICATE_TYPE_HASH = HashingUtils::HashString("PREDICATE_TYPE");
-        static const int IPSET_TYPE_HASH = HashingUtils::HashString("IPSET_TYPE");
-        static const int BYTE_MATCH_FIELD_TYPE_HASH = HashingUtils::HashString("BYTE_MATCH_FIELD_TYPE");
-        static const int SQL_INJECTION_MATCH_FIELD_TYPE_HASH = HashingUtils::HashString("SQL_INJECTION_MATCH_FIELD_TYPE");
-        static const int BYTE_MATCH_TEXT_TRANSFORMATION_HASH = HashingUtils::HashString("BYTE_MATCH_TEXT_TRANSFORMATION");
-        static const int BYTE_MATCH_POSITIONAL_CONSTRAINT_HASH = HashingUtils::HashString("BYTE_MATCH_POSITIONAL_CONSTRAINT");
-        static const int SIZE_CONSTRAINT_COMPARISON_OPERATOR_HASH = HashingUtils::HashString("SIZE_CONSTRAINT_COMPARISON_OPERATOR");
-        static const int GEO_MATCH_LOCATION_TYPE_HASH = HashingUtils::HashString("GEO_MATCH_LOCATION_TYPE");
-        static const int GEO_MATCH_LOCATION_VALUE_HASH = HashingUtils::HashString("GEO_MATCH_LOCATION_VALUE");
-        static const int RATE_KEY_HASH = HashingUtils::HashString("RATE_KEY");
-        static const int RULE_TYPE_HASH = HashingUtils::HashString("RULE_TYPE");
-        static const int NEXT_MARKER_HASH = HashingUtils::HashString("NEXT_MARKER");
-        static const int RESOURCE_ARN_HASH = HashingUtils::HashString("RESOURCE_ARN");
-        static const int TAGS_HASH = HashingUtils::HashString("TAGS");
-        static const int TAG_KEYS_HASH = HashingUtils::HashString("TAG_KEYS");
+        static constexpr uint32_t CHANGE_ACTION_HASH = ConstExprHashingUtils::HashString("CHANGE_ACTION");
+        static constexpr uint32_t WAF_ACTION_HASH = ConstExprHashingUtils::HashString("WAF_ACTION");
+        static constexpr uint32_t WAF_OVERRIDE_ACTION_HASH = ConstExprHashingUtils::HashString("WAF_OVERRIDE_ACTION");
+        static constexpr uint32_t PREDICATE_TYPE_HASH = ConstExprHashingUtils::HashString("PREDICATE_TYPE");
+        static constexpr uint32_t IPSET_TYPE_HASH = ConstExprHashingUtils::HashString("IPSET_TYPE");
+        static constexpr uint32_t BYTE_MATCH_FIELD_TYPE_HASH = ConstExprHashingUtils::HashString("BYTE_MATCH_FIELD_TYPE");
+        static constexpr uint32_t SQL_INJECTION_MATCH_FIELD_TYPE_HASH = ConstExprHashingUtils::HashString("SQL_INJECTION_MATCH_FIELD_TYPE");
+        static constexpr uint32_t BYTE_MATCH_TEXT_TRANSFORMATION_HASH = ConstExprHashingUtils::HashString("BYTE_MATCH_TEXT_TRANSFORMATION");
+        static constexpr uint32_t BYTE_MATCH_POSITIONAL_CONSTRAINT_HASH = ConstExprHashingUtils::HashString("BYTE_MATCH_POSITIONAL_CONSTRAINT");
+        static constexpr uint32_t SIZE_CONSTRAINT_COMPARISON_OPERATOR_HASH = ConstExprHashingUtils::HashString("SIZE_CONSTRAINT_COMPARISON_OPERATOR");
+        static constexpr uint32_t GEO_MATCH_LOCATION_TYPE_HASH = ConstExprHashingUtils::HashString("GEO_MATCH_LOCATION_TYPE");
+        static constexpr uint32_t GEO_MATCH_LOCATION_VALUE_HASH = ConstExprHashingUtils::HashString("GEO_MATCH_LOCATION_VALUE");
+        static constexpr uint32_t RATE_KEY_HASH = ConstExprHashingUtils::HashString("RATE_KEY");
+        static constexpr uint32_t RULE_TYPE_HASH = ConstExprHashingUtils::HashString("RULE_TYPE");
+        static constexpr uint32_t NEXT_MARKER_HASH = ConstExprHashingUtils::HashString("NEXT_MARKER");
+        static constexpr uint32_t RESOURCE_ARN_HASH = ConstExprHashingUtils::HashString("RESOURCE_ARN");
+        static constexpr uint32_t TAGS_HASH = ConstExprHashingUtils::HashString("TAGS");
+        static constexpr uint32_t TAG_KEYS_HASH = ConstExprHashingUtils::HashString("TAG_KEYS");
 
 
         ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CHANGE_ACTION_HASH)
           {
             return ParameterExceptionField::CHANGE_ACTION;

@@ -20,20 +20,20 @@ namespace Aws
       namespace ConnectionStateMapper
       {
 
-        static const int ordering_HASH = HashingUtils::HashString("ordering");
-        static const int requested_HASH = HashingUtils::HashString("requested");
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int available_HASH = HashingUtils::HashString("available");
-        static const int down_HASH = HashingUtils::HashString("down");
-        static const int deleting_HASH = HashingUtils::HashString("deleting");
-        static const int deleted_HASH = HashingUtils::HashString("deleted");
-        static const int rejected_HASH = HashingUtils::HashString("rejected");
-        static const int unknown_HASH = HashingUtils::HashString("unknown");
+        static constexpr uint32_t ordering_HASH = ConstExprHashingUtils::HashString("ordering");
+        static constexpr uint32_t requested_HASH = ConstExprHashingUtils::HashString("requested");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t available_HASH = ConstExprHashingUtils::HashString("available");
+        static constexpr uint32_t down_HASH = ConstExprHashingUtils::HashString("down");
+        static constexpr uint32_t deleting_HASH = ConstExprHashingUtils::HashString("deleting");
+        static constexpr uint32_t deleted_HASH = ConstExprHashingUtils::HashString("deleted");
+        static constexpr uint32_t rejected_HASH = ConstExprHashingUtils::HashString("rejected");
+        static constexpr uint32_t unknown_HASH = ConstExprHashingUtils::HashString("unknown");
 
 
         ConnectionState GetConnectionStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ordering_HASH)
           {
             return ConnectionState::ordering;

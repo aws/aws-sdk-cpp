@@ -20,23 +20,23 @@ namespace Aws
       namespace FormatMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int NUMBER_HASH = HashingUtils::HashString("NUMBER");
-        static const int CURRENCY_HASH = HashingUtils::HashString("CURRENCY");
-        static const int DATE_HASH = HashingUtils::HashString("DATE");
-        static const int TIME_HASH = HashingUtils::HashString("TIME");
-        static const int DATE_TIME_HASH = HashingUtils::HashString("DATE_TIME");
-        static const int PERCENTAGE_HASH = HashingUtils::HashString("PERCENTAGE");
-        static const int TEXT_HASH = HashingUtils::HashString("TEXT");
-        static const int ACCOUNTING_HASH = HashingUtils::HashString("ACCOUNTING");
-        static const int CONTACT_HASH = HashingUtils::HashString("CONTACT");
-        static const int ROWLINK_HASH = HashingUtils::HashString("ROWLINK");
-        static const int ROWSET_HASH = HashingUtils::HashString("ROWSET");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t NUMBER_HASH = ConstExprHashingUtils::HashString("NUMBER");
+        static constexpr uint32_t CURRENCY_HASH = ConstExprHashingUtils::HashString("CURRENCY");
+        static constexpr uint32_t DATE_HASH = ConstExprHashingUtils::HashString("DATE");
+        static constexpr uint32_t TIME_HASH = ConstExprHashingUtils::HashString("TIME");
+        static constexpr uint32_t DATE_TIME_HASH = ConstExprHashingUtils::HashString("DATE_TIME");
+        static constexpr uint32_t PERCENTAGE_HASH = ConstExprHashingUtils::HashString("PERCENTAGE");
+        static constexpr uint32_t TEXT_HASH = ConstExprHashingUtils::HashString("TEXT");
+        static constexpr uint32_t ACCOUNTING_HASH = ConstExprHashingUtils::HashString("ACCOUNTING");
+        static constexpr uint32_t CONTACT_HASH = ConstExprHashingUtils::HashString("CONTACT");
+        static constexpr uint32_t ROWLINK_HASH = ConstExprHashingUtils::HashString("ROWLINK");
+        static constexpr uint32_t ROWSET_HASH = ConstExprHashingUtils::HashString("ROWSET");
 
 
         Format GetFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return Format::AUTO;

@@ -20,13 +20,13 @@ namespace Aws
       namespace Mpeg2DisplayRatioMapper
       {
 
-        static const int DISPLAYRATIO16X9_HASH = HashingUtils::HashString("DISPLAYRATIO16X9");
-        static const int DISPLAYRATIO4X3_HASH = HashingUtils::HashString("DISPLAYRATIO4X3");
+        static constexpr uint32_t DISPLAYRATIO16X9_HASH = ConstExprHashingUtils::HashString("DISPLAYRATIO16X9");
+        static constexpr uint32_t DISPLAYRATIO4X3_HASH = ConstExprHashingUtils::HashString("DISPLAYRATIO4X3");
 
 
         Mpeg2DisplayRatio GetMpeg2DisplayRatioForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISPLAYRATIO16X9_HASH)
           {
             return Mpeg2DisplayRatio::DISPLAYRATIO16X9;

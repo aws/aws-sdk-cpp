@@ -20,13 +20,13 @@ namespace Aws
       namespace LicenseTypeMapper
       {
 
-        static const int AWS_HASH = HashingUtils::HashString("AWS");
-        static const int BYOL_HASH = HashingUtils::HashString("BYOL");
+        static constexpr uint32_t AWS_HASH = ConstExprHashingUtils::HashString("AWS");
+        static constexpr uint32_t BYOL_HASH = ConstExprHashingUtils::HashString("BYOL");
 
 
         LicenseType GetLicenseTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_HASH)
           {
             return LicenseType::AWS;

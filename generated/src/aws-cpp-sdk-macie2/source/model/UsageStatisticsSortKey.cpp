@@ -20,15 +20,15 @@ namespace Aws
       namespace UsageStatisticsSortKeyMapper
       {
 
-        static const int accountId_HASH = HashingUtils::HashString("accountId");
-        static const int total_HASH = HashingUtils::HashString("total");
-        static const int serviceLimitValue_HASH = HashingUtils::HashString("serviceLimitValue");
-        static const int freeTrialStartDate_HASH = HashingUtils::HashString("freeTrialStartDate");
+        static constexpr uint32_t accountId_HASH = ConstExprHashingUtils::HashString("accountId");
+        static constexpr uint32_t total_HASH = ConstExprHashingUtils::HashString("total");
+        static constexpr uint32_t serviceLimitValue_HASH = ConstExprHashingUtils::HashString("serviceLimitValue");
+        static constexpr uint32_t freeTrialStartDate_HASH = ConstExprHashingUtils::HashString("freeTrialStartDate");
 
 
         UsageStatisticsSortKey GetUsageStatisticsSortKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == accountId_HASH)
           {
             return UsageStatisticsSortKey::accountId;

@@ -20,19 +20,19 @@ namespace Aws
       namespace AssociationFilterKeyMapper
       {
 
-        static const int InstanceId_HASH = HashingUtils::HashString("InstanceId");
-        static const int Name_HASH = HashingUtils::HashString("Name");
-        static const int AssociationId_HASH = HashingUtils::HashString("AssociationId");
-        static const int AssociationStatusName_HASH = HashingUtils::HashString("AssociationStatusName");
-        static const int LastExecutedBefore_HASH = HashingUtils::HashString("LastExecutedBefore");
-        static const int LastExecutedAfter_HASH = HashingUtils::HashString("LastExecutedAfter");
-        static const int AssociationName_HASH = HashingUtils::HashString("AssociationName");
-        static const int ResourceGroupName_HASH = HashingUtils::HashString("ResourceGroupName");
+        static constexpr uint32_t InstanceId_HASH = ConstExprHashingUtils::HashString("InstanceId");
+        static constexpr uint32_t Name_HASH = ConstExprHashingUtils::HashString("Name");
+        static constexpr uint32_t AssociationId_HASH = ConstExprHashingUtils::HashString("AssociationId");
+        static constexpr uint32_t AssociationStatusName_HASH = ConstExprHashingUtils::HashString("AssociationStatusName");
+        static constexpr uint32_t LastExecutedBefore_HASH = ConstExprHashingUtils::HashString("LastExecutedBefore");
+        static constexpr uint32_t LastExecutedAfter_HASH = ConstExprHashingUtils::HashString("LastExecutedAfter");
+        static constexpr uint32_t AssociationName_HASH = ConstExprHashingUtils::HashString("AssociationName");
+        static constexpr uint32_t ResourceGroupName_HASH = ConstExprHashingUtils::HashString("ResourceGroupName");
 
 
         AssociationFilterKey GetAssociationFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InstanceId_HASH)
           {
             return AssociationFilterKey::InstanceId;

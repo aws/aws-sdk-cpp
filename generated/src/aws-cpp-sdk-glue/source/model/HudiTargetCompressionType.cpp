@@ -20,15 +20,15 @@ namespace Aws
       namespace HudiTargetCompressionTypeMapper
       {
 
-        static const int gzip_HASH = HashingUtils::HashString("gzip");
-        static const int lzo_HASH = HashingUtils::HashString("lzo");
-        static const int uncompressed_HASH = HashingUtils::HashString("uncompressed");
-        static const int snappy_HASH = HashingUtils::HashString("snappy");
+        static constexpr uint32_t gzip_HASH = ConstExprHashingUtils::HashString("gzip");
+        static constexpr uint32_t lzo_HASH = ConstExprHashingUtils::HashString("lzo");
+        static constexpr uint32_t uncompressed_HASH = ConstExprHashingUtils::HashString("uncompressed");
+        static constexpr uint32_t snappy_HASH = ConstExprHashingUtils::HashString("snappy");
 
 
         HudiTargetCompressionType GetHudiTargetCompressionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == gzip_HASH)
           {
             return HudiTargetCompressionType::gzip;

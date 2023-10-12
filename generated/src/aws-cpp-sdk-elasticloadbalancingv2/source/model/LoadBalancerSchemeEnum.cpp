@@ -20,13 +20,13 @@ namespace Aws
       namespace LoadBalancerSchemeEnumMapper
       {
 
-        static const int internet_facing_HASH = HashingUtils::HashString("internet-facing");
-        static const int internal_HASH = HashingUtils::HashString("internal");
+        static constexpr uint32_t internet_facing_HASH = ConstExprHashingUtils::HashString("internet-facing");
+        static constexpr uint32_t internal_HASH = ConstExprHashingUtils::HashString("internal");
 
 
         LoadBalancerSchemeEnum GetLoadBalancerSchemeEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == internet_facing_HASH)
           {
             return LoadBalancerSchemeEnum::internet_facing;

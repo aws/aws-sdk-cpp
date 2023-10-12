@@ -20,13 +20,13 @@ namespace Aws
       namespace DatasetActionTypeMapper
       {
 
-        static const int QUERY_HASH = HashingUtils::HashString("QUERY");
-        static const int CONTAINER_HASH = HashingUtils::HashString("CONTAINER");
+        static constexpr uint32_t QUERY_HASH = ConstExprHashingUtils::HashString("QUERY");
+        static constexpr uint32_t CONTAINER_HASH = ConstExprHashingUtils::HashString("CONTAINER");
 
 
         DatasetActionType GetDatasetActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUERY_HASH)
           {
             return DatasetActionType::QUERY;

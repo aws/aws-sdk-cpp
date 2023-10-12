@@ -20,12 +20,12 @@ namespace Aws
       namespace PayerResponsibilityMapper
       {
 
-        static const int ServiceOwner_HASH = HashingUtils::HashString("ServiceOwner");
+        static constexpr uint32_t ServiceOwner_HASH = ConstExprHashingUtils::HashString("ServiceOwner");
 
 
         PayerResponsibility GetPayerResponsibilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ServiceOwner_HASH)
           {
             return PayerResponsibility::ServiceOwner;

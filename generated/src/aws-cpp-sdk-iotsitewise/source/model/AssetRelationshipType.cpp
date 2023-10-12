@@ -20,12 +20,12 @@ namespace Aws
       namespace AssetRelationshipTypeMapper
       {
 
-        static const int HIERARCHY_HASH = HashingUtils::HashString("HIERARCHY");
+        static constexpr uint32_t HIERARCHY_HASH = ConstExprHashingUtils::HashString("HIERARCHY");
 
 
         AssetRelationshipType GetAssetRelationshipTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HIERARCHY_HASH)
           {
             return AssetRelationshipType::HIERARCHY;

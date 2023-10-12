@@ -33,17 +33,17 @@ template<> AWS_BEDROCKRUNTIME_API ModelErrorException BedrockRuntimeError::GetMo
 namespace BedrockRuntimeErrorMapper
 {
 
-static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int MODEL_TIMEOUT_HASH = HashingUtils::HashString("ModelTimeoutException");
-static const int MODEL_STREAM_ERROR_HASH = HashingUtils::HashString("ModelStreamErrorException");
-static const int MODEL_NOT_READY_HASH = HashingUtils::HashString("ModelNotReadyException");
-static const int MODEL_ERROR_HASH = HashingUtils::HashString("ModelErrorException");
+static constexpr uint32_t SERVICE_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ServiceQuotaExceededException");
+static constexpr uint32_t INTERNAL_SERVER_HASH = ConstExprHashingUtils::HashString("InternalServerException");
+static constexpr uint32_t MODEL_TIMEOUT_HASH = ConstExprHashingUtils::HashString("ModelTimeoutException");
+static constexpr uint32_t MODEL_STREAM_ERROR_HASH = ConstExprHashingUtils::HashString("ModelStreamErrorException");
+static constexpr uint32_t MODEL_NOT_READY_HASH = ConstExprHashingUtils::HashString("ModelNotReadyException");
+static constexpr uint32_t MODEL_ERROR_HASH = ConstExprHashingUtils::HashString("ModelErrorException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {

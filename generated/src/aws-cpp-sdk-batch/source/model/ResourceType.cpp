@@ -20,14 +20,14 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int GPU_HASH = HashingUtils::HashString("GPU");
-        static const int VCPU_HASH = HashingUtils::HashString("VCPU");
-        static const int MEMORY_HASH = HashingUtils::HashString("MEMORY");
+        static constexpr uint32_t GPU_HASH = ConstExprHashingUtils::HashString("GPU");
+        static constexpr uint32_t VCPU_HASH = ConstExprHashingUtils::HashString("VCPU");
+        static constexpr uint32_t MEMORY_HASH = ConstExprHashingUtils::HashString("MEMORY");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GPU_HASH)
           {
             return ResourceType::GPU;

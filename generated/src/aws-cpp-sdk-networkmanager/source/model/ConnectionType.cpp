@@ -20,13 +20,13 @@ namespace Aws
       namespace ConnectionTypeMapper
       {
 
-        static const int BGP_HASH = HashingUtils::HashString("BGP");
-        static const int IPSEC_HASH = HashingUtils::HashString("IPSEC");
+        static constexpr uint32_t BGP_HASH = ConstExprHashingUtils::HashString("BGP");
+        static constexpr uint32_t IPSEC_HASH = ConstExprHashingUtils::HashString("IPSEC");
 
 
         ConnectionType GetConnectionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BGP_HASH)
           {
             return ConnectionType::BGP;

@@ -20,13 +20,13 @@ namespace Aws
       namespace InputFormatMapper
       {
 
-        static const int ONE_DOC_PER_FILE_HASH = HashingUtils::HashString("ONE_DOC_PER_FILE");
-        static const int ONE_DOC_PER_LINE_HASH = HashingUtils::HashString("ONE_DOC_PER_LINE");
+        static constexpr uint32_t ONE_DOC_PER_FILE_HASH = ConstExprHashingUtils::HashString("ONE_DOC_PER_FILE");
+        static constexpr uint32_t ONE_DOC_PER_LINE_HASH = ConstExprHashingUtils::HashString("ONE_DOC_PER_LINE");
 
 
         InputFormat GetInputFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ONE_DOC_PER_FILE_HASH)
           {
             return InputFormat::ONE_DOC_PER_FILE;

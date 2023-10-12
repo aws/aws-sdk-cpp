@@ -20,12 +20,12 @@ namespace Aws
       namespace PolicyTemplateNameMapper
       {
 
-        static const int BLANK_POLICY_HASH = HashingUtils::HashString("BLANK_POLICY");
+        static constexpr uint32_t BLANK_POLICY_HASH = ConstExprHashingUtils::HashString("BLANK_POLICY");
 
 
         PolicyTemplateName GetPolicyTemplateNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BLANK_POLICY_HASH)
           {
             return PolicyTemplateName::BLANK_POLICY;

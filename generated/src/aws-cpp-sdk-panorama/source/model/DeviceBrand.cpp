@@ -20,13 +20,13 @@ namespace Aws
       namespace DeviceBrandMapper
       {
 
-        static const int AWS_PANORAMA_HASH = HashingUtils::HashString("AWS_PANORAMA");
-        static const int LENOVO_HASH = HashingUtils::HashString("LENOVO");
+        static constexpr uint32_t AWS_PANORAMA_HASH = ConstExprHashingUtils::HashString("AWS_PANORAMA");
+        static constexpr uint32_t LENOVO_HASH = ConstExprHashingUtils::HashString("LENOVO");
 
 
         DeviceBrand GetDeviceBrandForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_PANORAMA_HASH)
           {
             return DeviceBrand::AWS_PANORAMA;

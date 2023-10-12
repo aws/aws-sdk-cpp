@@ -20,13 +20,13 @@ namespace Aws
       namespace ConnectionTypeMapper
       {
 
-        static const int INTERNET_HASH = HashingUtils::HashString("INTERNET");
-        static const int VPC_LINK_HASH = HashingUtils::HashString("VPC_LINK");
+        static constexpr uint32_t INTERNET_HASH = ConstExprHashingUtils::HashString("INTERNET");
+        static constexpr uint32_t VPC_LINK_HASH = ConstExprHashingUtils::HashString("VPC_LINK");
 
 
         ConnectionType GetConnectionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERNET_HASH)
           {
             return ConnectionType::INTERNET;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ObfuscationSettingTypeMapper
       {
 
-        static const int None_HASH = HashingUtils::HashString("None");
-        static const int DefaultObfuscation_HASH = HashingUtils::HashString("DefaultObfuscation");
+        static constexpr uint32_t None_HASH = ConstExprHashingUtils::HashString("None");
+        static constexpr uint32_t DefaultObfuscation_HASH = ConstExprHashingUtils::HashString("DefaultObfuscation");
 
 
         ObfuscationSettingType GetObfuscationSettingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == None_HASH)
           {
             return ObfuscationSettingType::None;

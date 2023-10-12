@@ -20,13 +20,13 @@ namespace Aws
       namespace ConnectivityTypeMapper
       {
 
-        static const int private__HASH = HashingUtils::HashString("private");
-        static const int public__HASH = HashingUtils::HashString("public");
+        static constexpr uint32_t private__HASH = ConstExprHashingUtils::HashString("private");
+        static constexpr uint32_t public__HASH = ConstExprHashingUtils::HashString("public");
 
 
         ConnectivityType GetConnectivityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == private__HASH)
           {
             return ConnectivityType::private_;

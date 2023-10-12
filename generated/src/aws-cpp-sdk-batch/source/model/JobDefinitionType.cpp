@@ -20,13 +20,13 @@ namespace Aws
       namespace JobDefinitionTypeMapper
       {
 
-        static const int container_HASH = HashingUtils::HashString("container");
-        static const int multinode_HASH = HashingUtils::HashString("multinode");
+        static constexpr uint32_t container_HASH = ConstExprHashingUtils::HashString("container");
+        static constexpr uint32_t multinode_HASH = ConstExprHashingUtils::HashString("multinode");
 
 
         JobDefinitionType GetJobDefinitionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == container_HASH)
           {
             return JobDefinitionType::container;

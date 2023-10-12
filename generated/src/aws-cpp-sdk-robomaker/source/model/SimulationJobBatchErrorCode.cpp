@@ -20,12 +20,12 @@ namespace Aws
       namespace SimulationJobBatchErrorCodeMapper
       {
 
-        static const int InternalServiceError_HASH = HashingUtils::HashString("InternalServiceError");
+        static constexpr uint32_t InternalServiceError_HASH = ConstExprHashingUtils::HashString("InternalServiceError");
 
 
         SimulationJobBatchErrorCode GetSimulationJobBatchErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InternalServiceError_HASH)
           {
             return SimulationJobBatchErrorCode::InternalServiceError;

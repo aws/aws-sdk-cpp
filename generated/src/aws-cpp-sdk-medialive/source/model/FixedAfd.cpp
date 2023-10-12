@@ -20,22 +20,22 @@ namespace Aws
       namespace FixedAfdMapper
       {
 
-        static const int AFD_0000_HASH = HashingUtils::HashString("AFD_0000");
-        static const int AFD_0010_HASH = HashingUtils::HashString("AFD_0010");
-        static const int AFD_0011_HASH = HashingUtils::HashString("AFD_0011");
-        static const int AFD_0100_HASH = HashingUtils::HashString("AFD_0100");
-        static const int AFD_1000_HASH = HashingUtils::HashString("AFD_1000");
-        static const int AFD_1001_HASH = HashingUtils::HashString("AFD_1001");
-        static const int AFD_1010_HASH = HashingUtils::HashString("AFD_1010");
-        static const int AFD_1011_HASH = HashingUtils::HashString("AFD_1011");
-        static const int AFD_1101_HASH = HashingUtils::HashString("AFD_1101");
-        static const int AFD_1110_HASH = HashingUtils::HashString("AFD_1110");
-        static const int AFD_1111_HASH = HashingUtils::HashString("AFD_1111");
+        static constexpr uint32_t AFD_0000_HASH = ConstExprHashingUtils::HashString("AFD_0000");
+        static constexpr uint32_t AFD_0010_HASH = ConstExprHashingUtils::HashString("AFD_0010");
+        static constexpr uint32_t AFD_0011_HASH = ConstExprHashingUtils::HashString("AFD_0011");
+        static constexpr uint32_t AFD_0100_HASH = ConstExprHashingUtils::HashString("AFD_0100");
+        static constexpr uint32_t AFD_1000_HASH = ConstExprHashingUtils::HashString("AFD_1000");
+        static constexpr uint32_t AFD_1001_HASH = ConstExprHashingUtils::HashString("AFD_1001");
+        static constexpr uint32_t AFD_1010_HASH = ConstExprHashingUtils::HashString("AFD_1010");
+        static constexpr uint32_t AFD_1011_HASH = ConstExprHashingUtils::HashString("AFD_1011");
+        static constexpr uint32_t AFD_1101_HASH = ConstExprHashingUtils::HashString("AFD_1101");
+        static constexpr uint32_t AFD_1110_HASH = ConstExprHashingUtils::HashString("AFD_1110");
+        static constexpr uint32_t AFD_1111_HASH = ConstExprHashingUtils::HashString("AFD_1111");
 
 
         FixedAfd GetFixedAfdForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AFD_0000_HASH)
           {
             return FixedAfd::AFD_0000;

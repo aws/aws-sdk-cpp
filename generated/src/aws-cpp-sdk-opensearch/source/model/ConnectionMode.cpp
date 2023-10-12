@@ -20,13 +20,13 @@ namespace Aws
       namespace ConnectionModeMapper
       {
 
-        static const int DIRECT_HASH = HashingUtils::HashString("DIRECT");
-        static const int VPC_ENDPOINT_HASH = HashingUtils::HashString("VPC_ENDPOINT");
+        static constexpr uint32_t DIRECT_HASH = ConstExprHashingUtils::HashString("DIRECT");
+        static constexpr uint32_t VPC_ENDPOINT_HASH = ConstExprHashingUtils::HashString("VPC_ENDPOINT");
 
 
         ConnectionMode GetConnectionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DIRECT_HASH)
           {
             return ConnectionMode::DIRECT;

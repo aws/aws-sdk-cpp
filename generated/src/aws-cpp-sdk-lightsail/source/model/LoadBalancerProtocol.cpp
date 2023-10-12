@@ -20,13 +20,13 @@ namespace Aws
       namespace LoadBalancerProtocolMapper
       {
 
-        static const int HTTP_HTTPS_HASH = HashingUtils::HashString("HTTP_HTTPS");
-        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
+        static constexpr uint32_t HTTP_HTTPS_HASH = ConstExprHashingUtils::HashString("HTTP_HTTPS");
+        static constexpr uint32_t HTTP_HASH = ConstExprHashingUtils::HashString("HTTP");
 
 
         LoadBalancerProtocol GetLoadBalancerProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HTTP_HTTPS_HASH)
           {
             return LoadBalancerProtocol::HTTP_HTTPS;

@@ -20,12 +20,12 @@ namespace Aws
       namespace AdMarkerHlsMapper
       {
 
-        static const int DATERANGE_HASH = HashingUtils::HashString("DATERANGE");
+        static constexpr uint32_t DATERANGE_HASH = ConstExprHashingUtils::HashString("DATERANGE");
 
 
         AdMarkerHls GetAdMarkerHlsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DATERANGE_HASH)
           {
             return AdMarkerHls::DATERANGE;

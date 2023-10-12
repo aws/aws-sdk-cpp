@@ -20,15 +20,15 @@ namespace Aws
       namespace ReferenceTypeMapper
       {
 
-        static const int Intent_HASH = HashingUtils::HashString("Intent");
-        static const int Bot_HASH = HashingUtils::HashString("Bot");
-        static const int BotAlias_HASH = HashingUtils::HashString("BotAlias");
-        static const int BotChannel_HASH = HashingUtils::HashString("BotChannel");
+        static constexpr uint32_t Intent_HASH = ConstExprHashingUtils::HashString("Intent");
+        static constexpr uint32_t Bot_HASH = ConstExprHashingUtils::HashString("Bot");
+        static constexpr uint32_t BotAlias_HASH = ConstExprHashingUtils::HashString("BotAlias");
+        static constexpr uint32_t BotChannel_HASH = ConstExprHashingUtils::HashString("BotChannel");
 
 
         ReferenceType GetReferenceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Intent_HASH)
           {
             return ReferenceType::Intent;

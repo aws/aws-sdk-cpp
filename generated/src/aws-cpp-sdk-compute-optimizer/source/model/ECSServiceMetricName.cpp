@@ -20,13 +20,13 @@ namespace Aws
       namespace ECSServiceMetricNameMapper
       {
 
-        static const int Cpu_HASH = HashingUtils::HashString("Cpu");
-        static const int Memory_HASH = HashingUtils::HashString("Memory");
+        static constexpr uint32_t Cpu_HASH = ConstExprHashingUtils::HashString("Cpu");
+        static constexpr uint32_t Memory_HASH = ConstExprHashingUtils::HashString("Memory");
 
 
         ECSServiceMetricName GetECSServiceMetricNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Cpu_HASH)
           {
             return ECSServiceMetricName::Cpu;

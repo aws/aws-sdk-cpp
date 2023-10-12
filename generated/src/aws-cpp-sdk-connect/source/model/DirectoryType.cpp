@@ -20,14 +20,14 @@ namespace Aws
       namespace DirectoryTypeMapper
       {
 
-        static const int SAML_HASH = HashingUtils::HashString("SAML");
-        static const int CONNECT_MANAGED_HASH = HashingUtils::HashString("CONNECT_MANAGED");
-        static const int EXISTING_DIRECTORY_HASH = HashingUtils::HashString("EXISTING_DIRECTORY");
+        static constexpr uint32_t SAML_HASH = ConstExprHashingUtils::HashString("SAML");
+        static constexpr uint32_t CONNECT_MANAGED_HASH = ConstExprHashingUtils::HashString("CONNECT_MANAGED");
+        static constexpr uint32_t EXISTING_DIRECTORY_HASH = ConstExprHashingUtils::HashString("EXISTING_DIRECTORY");
 
 
         DirectoryType GetDirectoryTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SAML_HASH)
           {
             return DirectoryType::SAML;

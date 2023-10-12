@@ -20,14 +20,14 @@ namespace Aws
       namespace TransformStatusTypeMapper
       {
 
-        static const int NOT_READY_HASH = HashingUtils::HashString("NOT_READY");
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static constexpr uint32_t NOT_READY_HASH = ConstExprHashingUtils::HashString("NOT_READY");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
 
 
         TransformStatusType GetTransformStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOT_READY_HASH)
           {
             return TransformStatusType::NOT_READY;

@@ -20,14 +20,14 @@ namespace Aws
       namespace ExportEnvironmentMapper
       {
 
-        static const int citrix_HASH = HashingUtils::HashString("citrix");
-        static const int vmware_HASH = HashingUtils::HashString("vmware");
-        static const int microsoft_HASH = HashingUtils::HashString("microsoft");
+        static constexpr uint32_t citrix_HASH = ConstExprHashingUtils::HashString("citrix");
+        static constexpr uint32_t vmware_HASH = ConstExprHashingUtils::HashString("vmware");
+        static constexpr uint32_t microsoft_HASH = ConstExprHashingUtils::HashString("microsoft");
 
 
         ExportEnvironment GetExportEnvironmentForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == citrix_HASH)
           {
             return ExportEnvironment::citrix;

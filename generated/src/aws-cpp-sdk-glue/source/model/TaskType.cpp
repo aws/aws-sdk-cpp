@@ -20,16 +20,16 @@ namespace Aws
       namespace TaskTypeMapper
       {
 
-        static const int EVALUATION_HASH = HashingUtils::HashString("EVALUATION");
-        static const int LABELING_SET_GENERATION_HASH = HashingUtils::HashString("LABELING_SET_GENERATION");
-        static const int IMPORT_LABELS_HASH = HashingUtils::HashString("IMPORT_LABELS");
-        static const int EXPORT_LABELS_HASH = HashingUtils::HashString("EXPORT_LABELS");
-        static const int FIND_MATCHES_HASH = HashingUtils::HashString("FIND_MATCHES");
+        static constexpr uint32_t EVALUATION_HASH = ConstExprHashingUtils::HashString("EVALUATION");
+        static constexpr uint32_t LABELING_SET_GENERATION_HASH = ConstExprHashingUtils::HashString("LABELING_SET_GENERATION");
+        static constexpr uint32_t IMPORT_LABELS_HASH = ConstExprHashingUtils::HashString("IMPORT_LABELS");
+        static constexpr uint32_t EXPORT_LABELS_HASH = ConstExprHashingUtils::HashString("EXPORT_LABELS");
+        static constexpr uint32_t FIND_MATCHES_HASH = ConstExprHashingUtils::HashString("FIND_MATCHES");
 
 
         TaskType GetTaskTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EVALUATION_HASH)
           {
             return TaskType::EVALUATION;

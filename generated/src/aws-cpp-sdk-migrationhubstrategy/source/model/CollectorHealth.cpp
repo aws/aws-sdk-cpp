@@ -20,13 +20,13 @@ namespace Aws
       namespace CollectorHealthMapper
       {
 
-        static const int COLLECTOR_HEALTHY_HASH = HashingUtils::HashString("COLLECTOR_HEALTHY");
-        static const int COLLECTOR_UNHEALTHY_HASH = HashingUtils::HashString("COLLECTOR_UNHEALTHY");
+        static constexpr uint32_t COLLECTOR_HEALTHY_HASH = ConstExprHashingUtils::HashString("COLLECTOR_HEALTHY");
+        static constexpr uint32_t COLLECTOR_UNHEALTHY_HASH = ConstExprHashingUtils::HashString("COLLECTOR_UNHEALTHY");
 
 
         CollectorHealth GetCollectorHealthForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COLLECTOR_HEALTHY_HASH)
           {
             return CollectorHealth::COLLECTOR_HEALTHY;

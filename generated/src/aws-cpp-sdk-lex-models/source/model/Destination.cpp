@@ -20,13 +20,13 @@ namespace Aws
       namespace DestinationMapper
       {
 
-        static const int CLOUDWATCH_LOGS_HASH = HashingUtils::HashString("CLOUDWATCH_LOGS");
-        static const int S3_HASH = HashingUtils::HashString("S3");
+        static constexpr uint32_t CLOUDWATCH_LOGS_HASH = ConstExprHashingUtils::HashString("CLOUDWATCH_LOGS");
+        static constexpr uint32_t S3_HASH = ConstExprHashingUtils::HashString("S3");
 
 
         Destination GetDestinationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLOUDWATCH_LOGS_HASH)
           {
             return Destination::CLOUDWATCH_LOGS;

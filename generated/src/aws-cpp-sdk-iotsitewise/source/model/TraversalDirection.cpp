@@ -20,13 +20,13 @@ namespace Aws
       namespace TraversalDirectionMapper
       {
 
-        static const int PARENT_HASH = HashingUtils::HashString("PARENT");
-        static const int CHILD_HASH = HashingUtils::HashString("CHILD");
+        static constexpr uint32_t PARENT_HASH = ConstExprHashingUtils::HashString("PARENT");
+        static constexpr uint32_t CHILD_HASH = ConstExprHashingUtils::HashString("CHILD");
 
 
         TraversalDirection GetTraversalDirectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PARENT_HASH)
           {
             return TraversalDirection::PARENT;

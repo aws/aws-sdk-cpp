@@ -20,15 +20,15 @@ namespace Aws
       namespace JoinTypeMapper
       {
 
-        static const int INNER_HASH = HashingUtils::HashString("INNER");
-        static const int OUTER_HASH = HashingUtils::HashString("OUTER");
-        static const int LEFT_HASH = HashingUtils::HashString("LEFT");
-        static const int RIGHT_HASH = HashingUtils::HashString("RIGHT");
+        static constexpr uint32_t INNER_HASH = ConstExprHashingUtils::HashString("INNER");
+        static constexpr uint32_t OUTER_HASH = ConstExprHashingUtils::HashString("OUTER");
+        static constexpr uint32_t LEFT_HASH = ConstExprHashingUtils::HashString("LEFT");
+        static constexpr uint32_t RIGHT_HASH = ConstExprHashingUtils::HashString("RIGHT");
 
 
         JoinType GetJoinTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INNER_HASH)
           {
             return JoinType::INNER;

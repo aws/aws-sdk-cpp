@@ -20,13 +20,13 @@ namespace Aws
       namespace PivotTableMetricPlacementMapper
       {
 
-        static const int ROW_HASH = HashingUtils::HashString("ROW");
-        static const int COLUMN_HASH = HashingUtils::HashString("COLUMN");
+        static constexpr uint32_t ROW_HASH = ConstExprHashingUtils::HashString("ROW");
+        static constexpr uint32_t COLUMN_HASH = ConstExprHashingUtils::HashString("COLUMN");
 
 
         PivotTableMetricPlacement GetPivotTableMetricPlacementForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ROW_HASH)
           {
             return PivotTableMetricPlacement::ROW;

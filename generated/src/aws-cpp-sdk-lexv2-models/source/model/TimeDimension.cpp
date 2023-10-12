@@ -20,14 +20,14 @@ namespace Aws
       namespace TimeDimensionMapper
       {
 
-        static const int Hours_HASH = HashingUtils::HashString("Hours");
-        static const int Days_HASH = HashingUtils::HashString("Days");
-        static const int Weeks_HASH = HashingUtils::HashString("Weeks");
+        static constexpr uint32_t Hours_HASH = ConstExprHashingUtils::HashString("Hours");
+        static constexpr uint32_t Days_HASH = ConstExprHashingUtils::HashString("Days");
+        static constexpr uint32_t Weeks_HASH = ConstExprHashingUtils::HashString("Weeks");
 
 
         TimeDimension GetTimeDimensionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Hours_HASH)
           {
             return TimeDimension::Hours;

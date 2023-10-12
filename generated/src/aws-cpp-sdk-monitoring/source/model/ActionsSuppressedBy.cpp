@@ -20,14 +20,14 @@ namespace Aws
       namespace ActionsSuppressedByMapper
       {
 
-        static const int WaitPeriod_HASH = HashingUtils::HashString("WaitPeriod");
-        static const int ExtensionPeriod_HASH = HashingUtils::HashString("ExtensionPeriod");
-        static const int Alarm_HASH = HashingUtils::HashString("Alarm");
+        static constexpr uint32_t WaitPeriod_HASH = ConstExprHashingUtils::HashString("WaitPeriod");
+        static constexpr uint32_t ExtensionPeriod_HASH = ConstExprHashingUtils::HashString("ExtensionPeriod");
+        static constexpr uint32_t Alarm_HASH = ConstExprHashingUtils::HashString("Alarm");
 
 
         ActionsSuppressedBy GetActionsSuppressedByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WaitPeriod_HASH)
           {
             return ActionsSuppressedBy::WaitPeriod;

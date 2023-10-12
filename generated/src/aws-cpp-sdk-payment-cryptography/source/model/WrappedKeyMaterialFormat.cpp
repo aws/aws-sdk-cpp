@@ -20,14 +20,14 @@ namespace Aws
       namespace WrappedKeyMaterialFormatMapper
       {
 
-        static const int KEY_CRYPTOGRAM_HASH = HashingUtils::HashString("KEY_CRYPTOGRAM");
-        static const int TR31_KEY_BLOCK_HASH = HashingUtils::HashString("TR31_KEY_BLOCK");
-        static const int TR34_KEY_BLOCK_HASH = HashingUtils::HashString("TR34_KEY_BLOCK");
+        static constexpr uint32_t KEY_CRYPTOGRAM_HASH = ConstExprHashingUtils::HashString("KEY_CRYPTOGRAM");
+        static constexpr uint32_t TR31_KEY_BLOCK_HASH = ConstExprHashingUtils::HashString("TR31_KEY_BLOCK");
+        static constexpr uint32_t TR34_KEY_BLOCK_HASH = ConstExprHashingUtils::HashString("TR34_KEY_BLOCK");
 
 
         WrappedKeyMaterialFormat GetWrappedKeyMaterialFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KEY_CRYPTOGRAM_HASH)
           {
             return WrappedKeyMaterialFormat::KEY_CRYPTOGRAM;

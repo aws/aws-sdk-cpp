@@ -20,17 +20,17 @@ namespace Aws
       namespace FastLaunchStateCodeMapper
       {
 
-        static const int enabling_HASH = HashingUtils::HashString("enabling");
-        static const int enabling_failed_HASH = HashingUtils::HashString("enabling-failed");
-        static const int enabled_HASH = HashingUtils::HashString("enabled");
-        static const int enabled_failed_HASH = HashingUtils::HashString("enabled-failed");
-        static const int disabling_HASH = HashingUtils::HashString("disabling");
-        static const int disabling_failed_HASH = HashingUtils::HashString("disabling-failed");
+        static constexpr uint32_t enabling_HASH = ConstExprHashingUtils::HashString("enabling");
+        static constexpr uint32_t enabling_failed_HASH = ConstExprHashingUtils::HashString("enabling-failed");
+        static constexpr uint32_t enabled_HASH = ConstExprHashingUtils::HashString("enabled");
+        static constexpr uint32_t enabled_failed_HASH = ConstExprHashingUtils::HashString("enabled-failed");
+        static constexpr uint32_t disabling_HASH = ConstExprHashingUtils::HashString("disabling");
+        static constexpr uint32_t disabling_failed_HASH = ConstExprHashingUtils::HashString("disabling-failed");
 
 
         FastLaunchStateCode GetFastLaunchStateCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == enabling_HASH)
           {
             return FastLaunchStateCode::enabling;

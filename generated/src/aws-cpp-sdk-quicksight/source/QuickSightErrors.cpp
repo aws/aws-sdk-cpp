@@ -152,25 +152,25 @@ template<> AWS_QUICKSIGHT_API InvalidRequestException QuickSightError::GetModele
 namespace QuickSightErrorMapper
 {
 
-static const int RESOURCE_EXISTS_HASH = HashingUtils::HashString("ResourceExistsException");
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int QUICK_SIGHT_USER_NOT_FOUND_HASH = HashingUtils::HashString("QuickSightUserNotFoundException");
-static const int IDENTITY_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("IdentityTypeNotSupportedException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int UNSUPPORTED_PRICING_PLAN_HASH = HashingUtils::HashString("UnsupportedPricingPlanException");
-static const int DOMAIN_NOT_WHITELISTED_HASH = HashingUtils::HashString("DomainNotWhitelistedException");
-static const int UNSUPPORTED_USER_EDITION_HASH = HashingUtils::HashString("UnsupportedUserEditionException");
-static const int SESSION_LIFETIME_IN_MINUTES_INVALID_HASH = HashingUtils::HashString("SessionLifetimeInMinutesInvalidException");
-static const int PRECONDITION_NOT_MET_HASH = HashingUtils::HashString("PreconditionNotMetException");
-static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
-static const int CONCURRENT_UPDATING_HASH = HashingUtils::HashString("ConcurrentUpdatingException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static constexpr uint32_t RESOURCE_EXISTS_HASH = ConstExprHashingUtils::HashString("ResourceExistsException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t QUICK_SIGHT_USER_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("QuickSightUserNotFoundException");
+static constexpr uint32_t IDENTITY_TYPE_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("IdentityTypeNotSupportedException");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+static constexpr uint32_t UNSUPPORTED_PRICING_PLAN_HASH = ConstExprHashingUtils::HashString("UnsupportedPricingPlanException");
+static constexpr uint32_t DOMAIN_NOT_WHITELISTED_HASH = ConstExprHashingUtils::HashString("DomainNotWhitelistedException");
+static constexpr uint32_t UNSUPPORTED_USER_EDITION_HASH = ConstExprHashingUtils::HashString("UnsupportedUserEditionException");
+static constexpr uint32_t SESSION_LIFETIME_IN_MINUTES_INVALID_HASH = ConstExprHashingUtils::HashString("SessionLifetimeInMinutesInvalidException");
+static constexpr uint32_t PRECONDITION_NOT_MET_HASH = ConstExprHashingUtils::HashString("PreconditionNotMetException");
+static constexpr uint32_t RESOURCE_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("ResourceUnavailableException");
+static constexpr uint32_t CONCURRENT_UPDATING_HASH = ConstExprHashingUtils::HashString("ConcurrentUpdatingException");
+static constexpr uint32_t INVALID_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == RESOURCE_EXISTS_HASH)
   {

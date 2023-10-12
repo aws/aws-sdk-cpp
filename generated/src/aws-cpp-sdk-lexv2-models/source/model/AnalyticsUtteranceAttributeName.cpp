@@ -20,12 +20,12 @@ namespace Aws
       namespace AnalyticsUtteranceAttributeNameMapper
       {
 
-        static const int LastUsedIntent_HASH = HashingUtils::HashString("LastUsedIntent");
+        static constexpr uint32_t LastUsedIntent_HASH = ConstExprHashingUtils::HashString("LastUsedIntent");
 
 
         AnalyticsUtteranceAttributeName GetAnalyticsUtteranceAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LastUsedIntent_HASH)
           {
             return AnalyticsUtteranceAttributeName::LastUsedIntent;

@@ -18,12 +18,12 @@ namespace PersonalizeRuntime
 namespace PersonalizeRuntimeErrorMapper
 {
 
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
+static constexpr uint32_t INVALID_INPUT_HASH = ConstExprHashingUtils::HashString("InvalidInputException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INVALID_INPUT_HASH)
   {

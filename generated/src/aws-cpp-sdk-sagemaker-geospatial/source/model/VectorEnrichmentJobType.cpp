@@ -20,13 +20,13 @@ namespace Aws
       namespace VectorEnrichmentJobTypeMapper
       {
 
-        static const int REVERSE_GEOCODING_HASH = HashingUtils::HashString("REVERSE_GEOCODING");
-        static const int MAP_MATCHING_HASH = HashingUtils::HashString("MAP_MATCHING");
+        static constexpr uint32_t REVERSE_GEOCODING_HASH = ConstExprHashingUtils::HashString("REVERSE_GEOCODING");
+        static constexpr uint32_t MAP_MATCHING_HASH = ConstExprHashingUtils::HashString("MAP_MATCHING");
 
 
         VectorEnrichmentJobType GetVectorEnrichmentJobTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REVERSE_GEOCODING_HASH)
           {
             return VectorEnrichmentJobType::REVERSE_GEOCODING;

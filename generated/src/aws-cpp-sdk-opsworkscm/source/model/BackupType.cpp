@@ -20,13 +20,13 @@ namespace Aws
       namespace BackupTypeMapper
       {
 
-        static const int AUTOMATED_HASH = HashingUtils::HashString("AUTOMATED");
-        static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
+        static constexpr uint32_t AUTOMATED_HASH = ConstExprHashingUtils::HashString("AUTOMATED");
+        static constexpr uint32_t MANUAL_HASH = ConstExprHashingUtils::HashString("MANUAL");
 
 
         BackupType GetBackupTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTOMATED_HASH)
           {
             return BackupType::AUTOMATED;

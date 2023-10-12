@@ -20,13 +20,13 @@ namespace Aws
       namespace S3ServerSideEncryptionTypeMapper
       {
 
-        static const int SERVER_SIDE_ENCRYPTION_S3_HASH = HashingUtils::HashString("SERVER_SIDE_ENCRYPTION_S3");
-        static const int SERVER_SIDE_ENCRYPTION_KMS_HASH = HashingUtils::HashString("SERVER_SIDE_ENCRYPTION_KMS");
+        static constexpr uint32_t SERVER_SIDE_ENCRYPTION_S3_HASH = ConstExprHashingUtils::HashString("SERVER_SIDE_ENCRYPTION_S3");
+        static constexpr uint32_t SERVER_SIDE_ENCRYPTION_KMS_HASH = ConstExprHashingUtils::HashString("SERVER_SIDE_ENCRYPTION_KMS");
 
 
         S3ServerSideEncryptionType GetS3ServerSideEncryptionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SERVER_SIDE_ENCRYPTION_S3_HASH)
           {
             return S3ServerSideEncryptionType::SERVER_SIDE_ENCRYPTION_S3;

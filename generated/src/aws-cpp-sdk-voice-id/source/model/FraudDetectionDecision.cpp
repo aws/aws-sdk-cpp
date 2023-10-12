@@ -20,14 +20,14 @@ namespace Aws
       namespace FraudDetectionDecisionMapper
       {
 
-        static const int HIGH_RISK_HASH = HashingUtils::HashString("HIGH_RISK");
-        static const int LOW_RISK_HASH = HashingUtils::HashString("LOW_RISK");
-        static const int NOT_ENOUGH_SPEECH_HASH = HashingUtils::HashString("NOT_ENOUGH_SPEECH");
+        static constexpr uint32_t HIGH_RISK_HASH = ConstExprHashingUtils::HashString("HIGH_RISK");
+        static constexpr uint32_t LOW_RISK_HASH = ConstExprHashingUtils::HashString("LOW_RISK");
+        static constexpr uint32_t NOT_ENOUGH_SPEECH_HASH = ConstExprHashingUtils::HashString("NOT_ENOUGH_SPEECH");
 
 
         FraudDetectionDecision GetFraudDetectionDecisionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HIGH_RISK_HASH)
           {
             return FraudDetectionDecision::HIGH_RISK;

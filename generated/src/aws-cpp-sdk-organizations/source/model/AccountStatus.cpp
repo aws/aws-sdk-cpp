@@ -20,14 +20,14 @@ namespace Aws
       namespace AccountStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
-        static const int PENDING_CLOSURE_HASH = HashingUtils::HashString("PENDING_CLOSURE");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t SUSPENDED_HASH = ConstExprHashingUtils::HashString("SUSPENDED");
+        static constexpr uint32_t PENDING_CLOSURE_HASH = ConstExprHashingUtils::HashString("PENDING_CLOSURE");
 
 
         AccountStatus GetAccountStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return AccountStatus::ACTIVE;

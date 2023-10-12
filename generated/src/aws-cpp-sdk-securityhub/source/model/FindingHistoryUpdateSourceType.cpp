@@ -20,13 +20,13 @@ namespace Aws
       namespace FindingHistoryUpdateSourceTypeMapper
       {
 
-        static const int BATCH_UPDATE_FINDINGS_HASH = HashingUtils::HashString("BATCH_UPDATE_FINDINGS");
-        static const int BATCH_IMPORT_FINDINGS_HASH = HashingUtils::HashString("BATCH_IMPORT_FINDINGS");
+        static constexpr uint32_t BATCH_UPDATE_FINDINGS_HASH = ConstExprHashingUtils::HashString("BATCH_UPDATE_FINDINGS");
+        static constexpr uint32_t BATCH_IMPORT_FINDINGS_HASH = ConstExprHashingUtils::HashString("BATCH_IMPORT_FINDINGS");
 
 
         FindingHistoryUpdateSourceType GetFindingHistoryUpdateSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BATCH_UPDATE_FINDINGS_HASH)
           {
             return FindingHistoryUpdateSourceType::BATCH_UPDATE_FINDINGS;

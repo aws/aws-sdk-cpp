@@ -20,12 +20,12 @@ namespace Aws
       namespace ListLabelingJobsForWorkteamSortByOptionsMapper
       {
 
-        static const int CreationTime_HASH = HashingUtils::HashString("CreationTime");
+        static constexpr uint32_t CreationTime_HASH = ConstExprHashingUtils::HashString("CreationTime");
 
 
         ListLabelingJobsForWorkteamSortByOptions GetListLabelingJobsForWorkteamSortByOptionsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CreationTime_HASH)
           {
             return ListLabelingJobsForWorkteamSortByOptions::CreationTime;

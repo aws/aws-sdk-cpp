@@ -20,17 +20,17 @@ namespace Aws
       namespace InstanceStateNameMapper
       {
 
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int running_HASH = HashingUtils::HashString("running");
-        static const int shutting_down_HASH = HashingUtils::HashString("shutting-down");
-        static const int terminated_HASH = HashingUtils::HashString("terminated");
-        static const int stopping_HASH = HashingUtils::HashString("stopping");
-        static const int stopped_HASH = HashingUtils::HashString("stopped");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t running_HASH = ConstExprHashingUtils::HashString("running");
+        static constexpr uint32_t shutting_down_HASH = ConstExprHashingUtils::HashString("shutting-down");
+        static constexpr uint32_t terminated_HASH = ConstExprHashingUtils::HashString("terminated");
+        static constexpr uint32_t stopping_HASH = ConstExprHashingUtils::HashString("stopping");
+        static constexpr uint32_t stopped_HASH = ConstExprHashingUtils::HashString("stopped");
 
 
         InstanceStateName GetInstanceStateNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pending_HASH)
           {
             return InstanceStateName::pending;

@@ -20,15 +20,15 @@ namespace Aws
       namespace Ec2DeepInspectionStatusMapper
       {
 
-        static const int ACTIVATED_HASH = HashingUtils::HashString("ACTIVATED");
-        static const int DEACTIVATED_HASH = HashingUtils::HashString("DEACTIVATED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t ACTIVATED_HASH = ConstExprHashingUtils::HashString("ACTIVATED");
+        static constexpr uint32_t DEACTIVATED_HASH = ConstExprHashingUtils::HashString("DEACTIVATED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         Ec2DeepInspectionStatus GetEc2DeepInspectionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVATED_HASH)
           {
             return Ec2DeepInspectionStatus::ACTIVATED;

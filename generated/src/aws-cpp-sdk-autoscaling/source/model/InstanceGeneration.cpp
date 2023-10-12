@@ -20,13 +20,13 @@ namespace Aws
       namespace InstanceGenerationMapper
       {
 
-        static const int current_HASH = HashingUtils::HashString("current");
-        static const int previous_HASH = HashingUtils::HashString("previous");
+        static constexpr uint32_t current_HASH = ConstExprHashingUtils::HashString("current");
+        static constexpr uint32_t previous_HASH = ConstExprHashingUtils::HashString("previous");
 
 
         InstanceGeneration GetInstanceGenerationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == current_HASH)
           {
             return InstanceGeneration::current;

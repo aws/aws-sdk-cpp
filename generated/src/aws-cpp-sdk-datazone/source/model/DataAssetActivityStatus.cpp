@@ -20,19 +20,19 @@ namespace Aws
       namespace DataAssetActivityStatusMapper
       {
 
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int PUBLISHING_FAILED_HASH = HashingUtils::HashString("PUBLISHING_FAILED");
-        static const int SUCCEEDED_CREATED_HASH = HashingUtils::HashString("SUCCEEDED_CREATED");
-        static const int SUCCEEDED_UPDATED_HASH = HashingUtils::HashString("SUCCEEDED_UPDATED");
-        static const int SKIPPED_ALREADY_IMPORTED_HASH = HashingUtils::HashString("SKIPPED_ALREADY_IMPORTED");
-        static const int SKIPPED_ARCHIVED_HASH = HashingUtils::HashString("SKIPPED_ARCHIVED");
-        static const int SKIPPED_NO_ACCESS_HASH = HashingUtils::HashString("SKIPPED_NO_ACCESS");
-        static const int UNCHANGED_HASH = HashingUtils::HashString("UNCHANGED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t PUBLISHING_FAILED_HASH = ConstExprHashingUtils::HashString("PUBLISHING_FAILED");
+        static constexpr uint32_t SUCCEEDED_CREATED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED_CREATED");
+        static constexpr uint32_t SUCCEEDED_UPDATED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED_UPDATED");
+        static constexpr uint32_t SKIPPED_ALREADY_IMPORTED_HASH = ConstExprHashingUtils::HashString("SKIPPED_ALREADY_IMPORTED");
+        static constexpr uint32_t SKIPPED_ARCHIVED_HASH = ConstExprHashingUtils::HashString("SKIPPED_ARCHIVED");
+        static constexpr uint32_t SKIPPED_NO_ACCESS_HASH = ConstExprHashingUtils::HashString("SKIPPED_NO_ACCESS");
+        static constexpr uint32_t UNCHANGED_HASH = ConstExprHashingUtils::HashString("UNCHANGED");
 
 
         DataAssetActivityStatus GetDataAssetActivityStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FAILED_HASH)
           {
             return DataAssetActivityStatus::FAILED;

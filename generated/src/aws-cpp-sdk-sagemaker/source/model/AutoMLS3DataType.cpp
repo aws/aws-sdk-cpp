@@ -20,14 +20,14 @@ namespace Aws
       namespace AutoMLS3DataTypeMapper
       {
 
-        static const int ManifestFile_HASH = HashingUtils::HashString("ManifestFile");
-        static const int S3Prefix_HASH = HashingUtils::HashString("S3Prefix");
-        static const int AugmentedManifestFile_HASH = HashingUtils::HashString("AugmentedManifestFile");
+        static constexpr uint32_t ManifestFile_HASH = ConstExprHashingUtils::HashString("ManifestFile");
+        static constexpr uint32_t S3Prefix_HASH = ConstExprHashingUtils::HashString("S3Prefix");
+        static constexpr uint32_t AugmentedManifestFile_HASH = ConstExprHashingUtils::HashString("AugmentedManifestFile");
 
 
         AutoMLS3DataType GetAutoMLS3DataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ManifestFile_HASH)
           {
             return AutoMLS3DataType::ManifestFile;

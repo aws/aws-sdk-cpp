@@ -20,13 +20,13 @@ namespace Aws
       namespace VolumeStatusNameMapper
       {
 
-        static const int io_enabled_HASH = HashingUtils::HashString("io-enabled");
-        static const int io_performance_HASH = HashingUtils::HashString("io-performance");
+        static constexpr uint32_t io_enabled_HASH = ConstExprHashingUtils::HashString("io-enabled");
+        static constexpr uint32_t io_performance_HASH = ConstExprHashingUtils::HashString("io-performance");
 
 
         VolumeStatusName GetVolumeStatusNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == io_enabled_HASH)
           {
             return VolumeStatusName::io_enabled;

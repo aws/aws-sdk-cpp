@@ -20,13 +20,13 @@ namespace Aws
       namespace MpdCaptionContainerTypeMapper
       {
 
-        static const int RAW_HASH = HashingUtils::HashString("RAW");
-        static const int FRAGMENTED_MP4_HASH = HashingUtils::HashString("FRAGMENTED_MP4");
+        static constexpr uint32_t RAW_HASH = ConstExprHashingUtils::HashString("RAW");
+        static constexpr uint32_t FRAGMENTED_MP4_HASH = ConstExprHashingUtils::HashString("FRAGMENTED_MP4");
 
 
         MpdCaptionContainerType GetMpdCaptionContainerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RAW_HASH)
           {
             return MpdCaptionContainerType::RAW;

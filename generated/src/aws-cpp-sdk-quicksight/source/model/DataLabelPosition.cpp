@@ -20,17 +20,17 @@ namespace Aws
       namespace DataLabelPositionMapper
       {
 
-        static const int INSIDE_HASH = HashingUtils::HashString("INSIDE");
-        static const int OUTSIDE_HASH = HashingUtils::HashString("OUTSIDE");
-        static const int LEFT_HASH = HashingUtils::HashString("LEFT");
-        static const int TOP_HASH = HashingUtils::HashString("TOP");
-        static const int BOTTOM_HASH = HashingUtils::HashString("BOTTOM");
-        static const int RIGHT_HASH = HashingUtils::HashString("RIGHT");
+        static constexpr uint32_t INSIDE_HASH = ConstExprHashingUtils::HashString("INSIDE");
+        static constexpr uint32_t OUTSIDE_HASH = ConstExprHashingUtils::HashString("OUTSIDE");
+        static constexpr uint32_t LEFT_HASH = ConstExprHashingUtils::HashString("LEFT");
+        static constexpr uint32_t TOP_HASH = ConstExprHashingUtils::HashString("TOP");
+        static constexpr uint32_t BOTTOM_HASH = ConstExprHashingUtils::HashString("BOTTOM");
+        static constexpr uint32_t RIGHT_HASH = ConstExprHashingUtils::HashString("RIGHT");
 
 
         DataLabelPosition GetDataLabelPositionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INSIDE_HASH)
           {
             return DataLabelPosition::INSIDE;

@@ -20,16 +20,16 @@ namespace Aws
       namespace CheckStatusMapper
       {
 
-        static const int OKAY_HASH = HashingUtils::HashString("OKAY");
-        static const int WARNING_HASH = HashingUtils::HashString("WARNING");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int NOT_AVAILABLE_HASH = HashingUtils::HashString("NOT_AVAILABLE");
-        static const int FETCH_FAILED_HASH = HashingUtils::HashString("FETCH_FAILED");
+        static constexpr uint32_t OKAY_HASH = ConstExprHashingUtils::HashString("OKAY");
+        static constexpr uint32_t WARNING_HASH = ConstExprHashingUtils::HashString("WARNING");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t NOT_AVAILABLE_HASH = ConstExprHashingUtils::HashString("NOT_AVAILABLE");
+        static constexpr uint32_t FETCH_FAILED_HASH = ConstExprHashingUtils::HashString("FETCH_FAILED");
 
 
         CheckStatus GetCheckStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OKAY_HASH)
           {
             return CheckStatus::OKAY;

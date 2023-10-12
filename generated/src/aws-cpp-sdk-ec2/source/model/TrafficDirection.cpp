@@ -20,13 +20,13 @@ namespace Aws
       namespace TrafficDirectionMapper
       {
 
-        static const int ingress_HASH = HashingUtils::HashString("ingress");
-        static const int egress_HASH = HashingUtils::HashString("egress");
+        static constexpr uint32_t ingress_HASH = ConstExprHashingUtils::HashString("ingress");
+        static constexpr uint32_t egress_HASH = ConstExprHashingUtils::HashString("egress");
 
 
         TrafficDirection GetTrafficDirectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ingress_HASH)
           {
             return TrafficDirection::ingress;

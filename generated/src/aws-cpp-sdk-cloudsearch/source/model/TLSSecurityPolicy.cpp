@@ -20,13 +20,13 @@ namespace Aws
       namespace TLSSecurityPolicyMapper
       {
 
-        static const int Policy_Min_TLS_1_0_2019_07_HASH = HashingUtils::HashString("Policy-Min-TLS-1-0-2019-07");
-        static const int Policy_Min_TLS_1_2_2019_07_HASH = HashingUtils::HashString("Policy-Min-TLS-1-2-2019-07");
+        static constexpr uint32_t Policy_Min_TLS_1_0_2019_07_HASH = ConstExprHashingUtils::HashString("Policy-Min-TLS-1-0-2019-07");
+        static constexpr uint32_t Policy_Min_TLS_1_2_2019_07_HASH = ConstExprHashingUtils::HashString("Policy-Min-TLS-1-2-2019-07");
 
 
         TLSSecurityPolicy GetTLSSecurityPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Policy_Min_TLS_1_0_2019_07_HASH)
           {
             return TLSSecurityPolicy::Policy_Min_TLS_1_0_2019_07;

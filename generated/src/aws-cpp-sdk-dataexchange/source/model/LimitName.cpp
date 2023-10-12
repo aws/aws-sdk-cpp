@@ -20,39 +20,39 @@ namespace Aws
       namespace LimitNameMapper
       {
 
-        static const int Products_per_account_HASH = HashingUtils::HashString("Products per account");
-        static const int Data_sets_per_account_HASH = HashingUtils::HashString("Data sets per account");
-        static const int Data_sets_per_product_HASH = HashingUtils::HashString("Data sets per product");
-        static const int Revisions_per_data_set_HASH = HashingUtils::HashString("Revisions per data set");
-        static const int Assets_per_revision_HASH = HashingUtils::HashString("Assets per revision");
-        static const int Assets_per_import_job_from_Amazon_S3_HASH = HashingUtils::HashString("Assets per import job from Amazon S3");
-        static const int Asset_per_export_job_from_Amazon_S3_HASH = HashingUtils::HashString("Asset per export job from Amazon S3");
-        static const int Asset_size_in_GB_HASH = HashingUtils::HashString("Asset size in GB");
-        static const int Concurrent_in_progress_jobs_to_export_assets_to_Amazon_S3_HASH = HashingUtils::HashString("Concurrent in progress jobs to export assets to Amazon S3");
-        static const int Concurrent_in_progress_jobs_to_export_assets_to_a_signed_URL_HASH = HashingUtils::HashString("Concurrent in progress jobs to export assets to a signed URL");
-        static const int Concurrent_in_progress_jobs_to_import_assets_from_Amazon_S3_HASH = HashingUtils::HashString("Concurrent in progress jobs to import assets from Amazon S3");
-        static const int Concurrent_in_progress_jobs_to_import_assets_from_a_signed_URL_HASH = HashingUtils::HashString("Concurrent in progress jobs to import assets from a signed URL");
-        static const int Concurrent_in_progress_jobs_to_export_revisions_to_Amazon_S3_HASH = HashingUtils::HashString("Concurrent in progress jobs to export revisions to Amazon S3");
-        static const int Event_actions_per_account_HASH = HashingUtils::HashString("Event actions per account");
-        static const int Auto_export_event_actions_per_data_set_HASH = HashingUtils::HashString("Auto export event actions per data set");
-        static const int Amazon_Redshift_datashare_assets_per_import_job_from_Redshift_HASH = HashingUtils::HashString("Amazon Redshift datashare assets per import job from Redshift");
-        static const int Concurrent_in_progress_jobs_to_import_assets_from_Amazon_Redshift_datashares_HASH = HashingUtils::HashString("Concurrent in progress jobs to import assets from Amazon Redshift datashares");
-        static const int Revisions_per_Amazon_Redshift_datashare_data_set_HASH = HashingUtils::HashString("Revisions per Amazon Redshift datashare data set");
-        static const int Amazon_Redshift_datashare_assets_per_revision_HASH = HashingUtils::HashString("Amazon Redshift datashare assets per revision");
-        static const int Concurrent_in_progress_jobs_to_import_assets_from_an_API_Gateway_API_HASH = HashingUtils::HashString("Concurrent in progress jobs to import assets from an API Gateway API");
-        static const int Amazon_API_Gateway_API_assets_per_revision_HASH = HashingUtils::HashString("Amazon API Gateway API assets per revision");
-        static const int Revisions_per_Amazon_API_Gateway_API_data_set_HASH = HashingUtils::HashString("Revisions per Amazon API Gateway API data set");
-        static const int Concurrent_in_progress_jobs_to_import_assets_from_an_AWS_Lake_Formation_tag_policy_HASH = HashingUtils::HashString("Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy");
-        static const int AWS_Lake_Formation_data_permission_assets_per_revision_HASH = HashingUtils::HashString("AWS Lake Formation data permission assets per revision");
-        static const int Revisions_per_AWS_Lake_Formation_data_permission_data_set_HASH = HashingUtils::HashString("Revisions per AWS Lake Formation data permission data set");
-        static const int Revisions_per_Amazon_S3_data_access_data_set_HASH = HashingUtils::HashString("Revisions per Amazon S3 data access data set");
-        static const int Amazon_S3_data_access_assets_per_revision_HASH = HashingUtils::HashString("Amazon S3 data access assets per revision");
-        static const int Concurrent_in_progress_jobs_to_create_Amazon_S3_data_access_assets_from_S3_buckets_HASH = HashingUtils::HashString("Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets");
+        static constexpr uint32_t Products_per_account_HASH = ConstExprHashingUtils::HashString("Products per account");
+        static constexpr uint32_t Data_sets_per_account_HASH = ConstExprHashingUtils::HashString("Data sets per account");
+        static constexpr uint32_t Data_sets_per_product_HASH = ConstExprHashingUtils::HashString("Data sets per product");
+        static constexpr uint32_t Revisions_per_data_set_HASH = ConstExprHashingUtils::HashString("Revisions per data set");
+        static constexpr uint32_t Assets_per_revision_HASH = ConstExprHashingUtils::HashString("Assets per revision");
+        static constexpr uint32_t Assets_per_import_job_from_Amazon_S3_HASH = ConstExprHashingUtils::HashString("Assets per import job from Amazon S3");
+        static constexpr uint32_t Asset_per_export_job_from_Amazon_S3_HASH = ConstExprHashingUtils::HashString("Asset per export job from Amazon S3");
+        static constexpr uint32_t Asset_size_in_GB_HASH = ConstExprHashingUtils::HashString("Asset size in GB");
+        static constexpr uint32_t Concurrent_in_progress_jobs_to_export_assets_to_Amazon_S3_HASH = ConstExprHashingUtils::HashString("Concurrent in progress jobs to export assets to Amazon S3");
+        static constexpr uint32_t Concurrent_in_progress_jobs_to_export_assets_to_a_signed_URL_HASH = ConstExprHashingUtils::HashString("Concurrent in progress jobs to export assets to a signed URL");
+        static constexpr uint32_t Concurrent_in_progress_jobs_to_import_assets_from_Amazon_S3_HASH = ConstExprHashingUtils::HashString("Concurrent in progress jobs to import assets from Amazon S3");
+        static constexpr uint32_t Concurrent_in_progress_jobs_to_import_assets_from_a_signed_URL_HASH = ConstExprHashingUtils::HashString("Concurrent in progress jobs to import assets from a signed URL");
+        static constexpr uint32_t Concurrent_in_progress_jobs_to_export_revisions_to_Amazon_S3_HASH = ConstExprHashingUtils::HashString("Concurrent in progress jobs to export revisions to Amazon S3");
+        static constexpr uint32_t Event_actions_per_account_HASH = ConstExprHashingUtils::HashString("Event actions per account");
+        static constexpr uint32_t Auto_export_event_actions_per_data_set_HASH = ConstExprHashingUtils::HashString("Auto export event actions per data set");
+        static constexpr uint32_t Amazon_Redshift_datashare_assets_per_import_job_from_Redshift_HASH = ConstExprHashingUtils::HashString("Amazon Redshift datashare assets per import job from Redshift");
+        static constexpr uint32_t Concurrent_in_progress_jobs_to_import_assets_from_Amazon_Redshift_datashares_HASH = ConstExprHashingUtils::HashString("Concurrent in progress jobs to import assets from Amazon Redshift datashares");
+        static constexpr uint32_t Revisions_per_Amazon_Redshift_datashare_data_set_HASH = ConstExprHashingUtils::HashString("Revisions per Amazon Redshift datashare data set");
+        static constexpr uint32_t Amazon_Redshift_datashare_assets_per_revision_HASH = ConstExprHashingUtils::HashString("Amazon Redshift datashare assets per revision");
+        static constexpr uint32_t Concurrent_in_progress_jobs_to_import_assets_from_an_API_Gateway_API_HASH = ConstExprHashingUtils::HashString("Concurrent in progress jobs to import assets from an API Gateway API");
+        static constexpr uint32_t Amazon_API_Gateway_API_assets_per_revision_HASH = ConstExprHashingUtils::HashString("Amazon API Gateway API assets per revision");
+        static constexpr uint32_t Revisions_per_Amazon_API_Gateway_API_data_set_HASH = ConstExprHashingUtils::HashString("Revisions per Amazon API Gateway API data set");
+        static constexpr uint32_t Concurrent_in_progress_jobs_to_import_assets_from_an_AWS_Lake_Formation_tag_policy_HASH = ConstExprHashingUtils::HashString("Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy");
+        static constexpr uint32_t AWS_Lake_Formation_data_permission_assets_per_revision_HASH = ConstExprHashingUtils::HashString("AWS Lake Formation data permission assets per revision");
+        static constexpr uint32_t Revisions_per_AWS_Lake_Formation_data_permission_data_set_HASH = ConstExprHashingUtils::HashString("Revisions per AWS Lake Formation data permission data set");
+        static constexpr uint32_t Revisions_per_Amazon_S3_data_access_data_set_HASH = ConstExprHashingUtils::HashString("Revisions per Amazon S3 data access data set");
+        static constexpr uint32_t Amazon_S3_data_access_assets_per_revision_HASH = ConstExprHashingUtils::HashString("Amazon S3 data access assets per revision");
+        static constexpr uint32_t Concurrent_in_progress_jobs_to_create_Amazon_S3_data_access_assets_from_S3_buckets_HASH = ConstExprHashingUtils::HashString("Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets");
 
 
         LimitName GetLimitNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Products_per_account_HASH)
           {
             return LimitName::Products_per_account;

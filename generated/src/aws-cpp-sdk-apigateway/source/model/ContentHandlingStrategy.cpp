@@ -20,13 +20,13 @@ namespace Aws
       namespace ContentHandlingStrategyMapper
       {
 
-        static const int CONVERT_TO_BINARY_HASH = HashingUtils::HashString("CONVERT_TO_BINARY");
-        static const int CONVERT_TO_TEXT_HASH = HashingUtils::HashString("CONVERT_TO_TEXT");
+        static constexpr uint32_t CONVERT_TO_BINARY_HASH = ConstExprHashingUtils::HashString("CONVERT_TO_BINARY");
+        static constexpr uint32_t CONVERT_TO_TEXT_HASH = ConstExprHashingUtils::HashString("CONVERT_TO_TEXT");
 
 
         ContentHandlingStrategy GetContentHandlingStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONVERT_TO_BINARY_HASH)
           {
             return ContentHandlingStrategy::CONVERT_TO_BINARY;

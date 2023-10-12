@@ -20,15 +20,15 @@ namespace Aws
       namespace ErrorCodeMapper
       {
 
-        static const int DUPLICATE_INPUT_HASH = HashingUtils::HashString("DUPLICATE_INPUT");
-        static const int RESOURCE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RESOURCE_DOES_NOT_EXIST");
-        static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("RESOURCE_ALREADY_EXISTS");
-        static const int INTERNAL_SERVER_FAILURE_HASH = HashingUtils::HashString("INTERNAL_SERVER_FAILURE");
+        static constexpr uint32_t DUPLICATE_INPUT_HASH = ConstExprHashingUtils::HashString("DUPLICATE_INPUT");
+        static constexpr uint32_t RESOURCE_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("RESOURCE_DOES_NOT_EXIST");
+        static constexpr uint32_t RESOURCE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("RESOURCE_ALREADY_EXISTS");
+        static constexpr uint32_t INTERNAL_SERVER_FAILURE_HASH = ConstExprHashingUtils::HashString("INTERNAL_SERVER_FAILURE");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DUPLICATE_INPUT_HASH)
           {
             return ErrorCode::DUPLICATE_INPUT;

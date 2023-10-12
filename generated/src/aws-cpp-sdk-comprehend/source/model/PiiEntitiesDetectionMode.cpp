@@ -20,13 +20,13 @@ namespace Aws
       namespace PiiEntitiesDetectionModeMapper
       {
 
-        static const int ONLY_REDACTION_HASH = HashingUtils::HashString("ONLY_REDACTION");
-        static const int ONLY_OFFSETS_HASH = HashingUtils::HashString("ONLY_OFFSETS");
+        static constexpr uint32_t ONLY_REDACTION_HASH = ConstExprHashingUtils::HashString("ONLY_REDACTION");
+        static constexpr uint32_t ONLY_OFFSETS_HASH = ConstExprHashingUtils::HashString("ONLY_OFFSETS");
 
 
         PiiEntitiesDetectionMode GetPiiEntitiesDetectionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ONLY_REDACTION_HASH)
           {
             return PiiEntitiesDetectionMode::ONLY_REDACTION;

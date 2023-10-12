@@ -20,17 +20,17 @@ namespace Aws
       namespace DeviceStatusMapper
       {
 
-        static const int AWAITING_PROVISIONING_HASH = HashingUtils::HashString("AWAITING_PROVISIONING");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static constexpr uint32_t AWAITING_PROVISIONING_HASH = ConstExprHashingUtils::HashString("AWAITING_PROVISIONING");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t SUCCEEDED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
 
 
         DeviceStatus GetDeviceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWAITING_PROVISIONING_HASH)
           {
             return DeviceStatus::AWAITING_PROVISIONING;

@@ -20,17 +20,17 @@ namespace Aws
       namespace FormatMapper
       {
 
-        static const int csv_HASH = HashingUtils::HashString("csv");
-        static const int opencypher_HASH = HashingUtils::HashString("opencypher");
-        static const int ntriples_HASH = HashingUtils::HashString("ntriples");
-        static const int nquads_HASH = HashingUtils::HashString("nquads");
-        static const int rdfxml_HASH = HashingUtils::HashString("rdfxml");
-        static const int turtle_HASH = HashingUtils::HashString("turtle");
+        static constexpr uint32_t csv_HASH = ConstExprHashingUtils::HashString("csv");
+        static constexpr uint32_t opencypher_HASH = ConstExprHashingUtils::HashString("opencypher");
+        static constexpr uint32_t ntriples_HASH = ConstExprHashingUtils::HashString("ntriples");
+        static constexpr uint32_t nquads_HASH = ConstExprHashingUtils::HashString("nquads");
+        static constexpr uint32_t rdfxml_HASH = ConstExprHashingUtils::HashString("rdfxml");
+        static constexpr uint32_t turtle_HASH = ConstExprHashingUtils::HashString("turtle");
 
 
         Format GetFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == csv_HASH)
           {
             return Format::csv;

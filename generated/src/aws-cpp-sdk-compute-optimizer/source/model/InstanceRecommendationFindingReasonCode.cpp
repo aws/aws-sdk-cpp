@@ -20,31 +20,31 @@ namespace Aws
       namespace InstanceRecommendationFindingReasonCodeMapper
       {
 
-        static const int CPUOverprovisioned_HASH = HashingUtils::HashString("CPUOverprovisioned");
-        static const int CPUUnderprovisioned_HASH = HashingUtils::HashString("CPUUnderprovisioned");
-        static const int MemoryOverprovisioned_HASH = HashingUtils::HashString("MemoryOverprovisioned");
-        static const int MemoryUnderprovisioned_HASH = HashingUtils::HashString("MemoryUnderprovisioned");
-        static const int EBSThroughputOverprovisioned_HASH = HashingUtils::HashString("EBSThroughputOverprovisioned");
-        static const int EBSThroughputUnderprovisioned_HASH = HashingUtils::HashString("EBSThroughputUnderprovisioned");
-        static const int EBSIOPSOverprovisioned_HASH = HashingUtils::HashString("EBSIOPSOverprovisioned");
-        static const int EBSIOPSUnderprovisioned_HASH = HashingUtils::HashString("EBSIOPSUnderprovisioned");
-        static const int NetworkBandwidthOverprovisioned_HASH = HashingUtils::HashString("NetworkBandwidthOverprovisioned");
-        static const int NetworkBandwidthUnderprovisioned_HASH = HashingUtils::HashString("NetworkBandwidthUnderprovisioned");
-        static const int NetworkPPSOverprovisioned_HASH = HashingUtils::HashString("NetworkPPSOverprovisioned");
-        static const int NetworkPPSUnderprovisioned_HASH = HashingUtils::HashString("NetworkPPSUnderprovisioned");
-        static const int DiskIOPSOverprovisioned_HASH = HashingUtils::HashString("DiskIOPSOverprovisioned");
-        static const int DiskIOPSUnderprovisioned_HASH = HashingUtils::HashString("DiskIOPSUnderprovisioned");
-        static const int DiskThroughputOverprovisioned_HASH = HashingUtils::HashString("DiskThroughputOverprovisioned");
-        static const int DiskThroughputUnderprovisioned_HASH = HashingUtils::HashString("DiskThroughputUnderprovisioned");
-        static const int GPUUnderprovisioned_HASH = HashingUtils::HashString("GPUUnderprovisioned");
-        static const int GPUOverprovisioned_HASH = HashingUtils::HashString("GPUOverprovisioned");
-        static const int GPUMemoryUnderprovisioned_HASH = HashingUtils::HashString("GPUMemoryUnderprovisioned");
-        static const int GPUMemoryOverprovisioned_HASH = HashingUtils::HashString("GPUMemoryOverprovisioned");
+        static constexpr uint32_t CPUOverprovisioned_HASH = ConstExprHashingUtils::HashString("CPUOverprovisioned");
+        static constexpr uint32_t CPUUnderprovisioned_HASH = ConstExprHashingUtils::HashString("CPUUnderprovisioned");
+        static constexpr uint32_t MemoryOverprovisioned_HASH = ConstExprHashingUtils::HashString("MemoryOverprovisioned");
+        static constexpr uint32_t MemoryUnderprovisioned_HASH = ConstExprHashingUtils::HashString("MemoryUnderprovisioned");
+        static constexpr uint32_t EBSThroughputOverprovisioned_HASH = ConstExprHashingUtils::HashString("EBSThroughputOverprovisioned");
+        static constexpr uint32_t EBSThroughputUnderprovisioned_HASH = ConstExprHashingUtils::HashString("EBSThroughputUnderprovisioned");
+        static constexpr uint32_t EBSIOPSOverprovisioned_HASH = ConstExprHashingUtils::HashString("EBSIOPSOverprovisioned");
+        static constexpr uint32_t EBSIOPSUnderprovisioned_HASH = ConstExprHashingUtils::HashString("EBSIOPSUnderprovisioned");
+        static constexpr uint32_t NetworkBandwidthOverprovisioned_HASH = ConstExprHashingUtils::HashString("NetworkBandwidthOverprovisioned");
+        static constexpr uint32_t NetworkBandwidthUnderprovisioned_HASH = ConstExprHashingUtils::HashString("NetworkBandwidthUnderprovisioned");
+        static constexpr uint32_t NetworkPPSOverprovisioned_HASH = ConstExprHashingUtils::HashString("NetworkPPSOverprovisioned");
+        static constexpr uint32_t NetworkPPSUnderprovisioned_HASH = ConstExprHashingUtils::HashString("NetworkPPSUnderprovisioned");
+        static constexpr uint32_t DiskIOPSOverprovisioned_HASH = ConstExprHashingUtils::HashString("DiskIOPSOverprovisioned");
+        static constexpr uint32_t DiskIOPSUnderprovisioned_HASH = ConstExprHashingUtils::HashString("DiskIOPSUnderprovisioned");
+        static constexpr uint32_t DiskThroughputOverprovisioned_HASH = ConstExprHashingUtils::HashString("DiskThroughputOverprovisioned");
+        static constexpr uint32_t DiskThroughputUnderprovisioned_HASH = ConstExprHashingUtils::HashString("DiskThroughputUnderprovisioned");
+        static constexpr uint32_t GPUUnderprovisioned_HASH = ConstExprHashingUtils::HashString("GPUUnderprovisioned");
+        static constexpr uint32_t GPUOverprovisioned_HASH = ConstExprHashingUtils::HashString("GPUOverprovisioned");
+        static constexpr uint32_t GPUMemoryUnderprovisioned_HASH = ConstExprHashingUtils::HashString("GPUMemoryUnderprovisioned");
+        static constexpr uint32_t GPUMemoryOverprovisioned_HASH = ConstExprHashingUtils::HashString("GPUMemoryOverprovisioned");
 
 
         InstanceRecommendationFindingReasonCode GetInstanceRecommendationFindingReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CPUOverprovisioned_HASH)
           {
             return InstanceRecommendationFindingReasonCode::CPUOverprovisioned;

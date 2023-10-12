@@ -20,14 +20,14 @@ namespace Aws
       namespace URLTargetConfigurationMapper
       {
 
-        static const int NEW_TAB_HASH = HashingUtils::HashString("NEW_TAB");
-        static const int NEW_WINDOW_HASH = HashingUtils::HashString("NEW_WINDOW");
-        static const int SAME_TAB_HASH = HashingUtils::HashString("SAME_TAB");
+        static constexpr uint32_t NEW_TAB_HASH = ConstExprHashingUtils::HashString("NEW_TAB");
+        static constexpr uint32_t NEW_WINDOW_HASH = ConstExprHashingUtils::HashString("NEW_WINDOW");
+        static constexpr uint32_t SAME_TAB_HASH = ConstExprHashingUtils::HashString("SAME_TAB");
 
 
         URLTargetConfiguration GetURLTargetConfigurationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NEW_TAB_HASH)
           {
             return URLTargetConfiguration::NEW_TAB;

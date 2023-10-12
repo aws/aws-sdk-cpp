@@ -20,15 +20,15 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int GROUP_HASH = HashingUtils::HashString("GROUP");
-        static const int USER_HASH = HashingUtils::HashString("USER");
-        static const int IDENTITY_STORE_HASH = HashingUtils::HashString("IDENTITY_STORE");
-        static const int GROUP_MEMBERSHIP_HASH = HashingUtils::HashString("GROUP_MEMBERSHIP");
+        static constexpr uint32_t GROUP_HASH = ConstExprHashingUtils::HashString("GROUP");
+        static constexpr uint32_t USER_HASH = ConstExprHashingUtils::HashString("USER");
+        static constexpr uint32_t IDENTITY_STORE_HASH = ConstExprHashingUtils::HashString("IDENTITY_STORE");
+        static constexpr uint32_t GROUP_MEMBERSHIP_HASH = ConstExprHashingUtils::HashString("GROUP_MEMBERSHIP");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GROUP_HASH)
           {
             return ResourceType::GROUP;

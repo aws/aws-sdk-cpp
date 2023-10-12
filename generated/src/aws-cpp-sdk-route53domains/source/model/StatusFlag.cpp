@@ -20,16 +20,16 @@ namespace Aws
       namespace StatusFlagMapper
       {
 
-        static const int PENDING_ACCEPTANCE_HASH = HashingUtils::HashString("PENDING_ACCEPTANCE");
-        static const int PENDING_CUSTOMER_ACTION_HASH = HashingUtils::HashString("PENDING_CUSTOMER_ACTION");
-        static const int PENDING_AUTHORIZATION_HASH = HashingUtils::HashString("PENDING_AUTHORIZATION");
-        static const int PENDING_PAYMENT_VERIFICATION_HASH = HashingUtils::HashString("PENDING_PAYMENT_VERIFICATION");
-        static const int PENDING_SUPPORT_CASE_HASH = HashingUtils::HashString("PENDING_SUPPORT_CASE");
+        static constexpr uint32_t PENDING_ACCEPTANCE_HASH = ConstExprHashingUtils::HashString("PENDING_ACCEPTANCE");
+        static constexpr uint32_t PENDING_CUSTOMER_ACTION_HASH = ConstExprHashingUtils::HashString("PENDING_CUSTOMER_ACTION");
+        static constexpr uint32_t PENDING_AUTHORIZATION_HASH = ConstExprHashingUtils::HashString("PENDING_AUTHORIZATION");
+        static constexpr uint32_t PENDING_PAYMENT_VERIFICATION_HASH = ConstExprHashingUtils::HashString("PENDING_PAYMENT_VERIFICATION");
+        static constexpr uint32_t PENDING_SUPPORT_CASE_HASH = ConstExprHashingUtils::HashString("PENDING_SUPPORT_CASE");
 
 
         StatusFlag GetStatusFlagForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_ACCEPTANCE_HASH)
           {
             return StatusFlag::PENDING_ACCEPTANCE;

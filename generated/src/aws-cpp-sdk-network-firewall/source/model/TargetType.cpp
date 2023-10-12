@@ -20,13 +20,13 @@ namespace Aws
       namespace TargetTypeMapper
       {
 
-        static const int TLS_SNI_HASH = HashingUtils::HashString("TLS_SNI");
-        static const int HTTP_HOST_HASH = HashingUtils::HashString("HTTP_HOST");
+        static constexpr uint32_t TLS_SNI_HASH = ConstExprHashingUtils::HashString("TLS_SNI");
+        static constexpr uint32_t HTTP_HOST_HASH = ConstExprHashingUtils::HashString("HTTP_HOST");
 
 
         TargetType GetTargetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TLS_SNI_HASH)
           {
             return TargetType::TLS_SNI;

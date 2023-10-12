@@ -20,15 +20,15 @@ namespace Aws
       namespace StorageVirtualMachineSubtypeMapper
       {
 
-        static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
-        static const int DP_DESTINATION_HASH = HashingUtils::HashString("DP_DESTINATION");
-        static const int SYNC_DESTINATION_HASH = HashingUtils::HashString("SYNC_DESTINATION");
-        static const int SYNC_SOURCE_HASH = HashingUtils::HashString("SYNC_SOURCE");
+        static constexpr uint32_t DEFAULT_HASH = ConstExprHashingUtils::HashString("DEFAULT");
+        static constexpr uint32_t DP_DESTINATION_HASH = ConstExprHashingUtils::HashString("DP_DESTINATION");
+        static constexpr uint32_t SYNC_DESTINATION_HASH = ConstExprHashingUtils::HashString("SYNC_DESTINATION");
+        static constexpr uint32_t SYNC_SOURCE_HASH = ConstExprHashingUtils::HashString("SYNC_SOURCE");
 
 
         StorageVirtualMachineSubtype GetStorageVirtualMachineSubtypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEFAULT_HASH)
           {
             return StorageVirtualMachineSubtype::DEFAULT;

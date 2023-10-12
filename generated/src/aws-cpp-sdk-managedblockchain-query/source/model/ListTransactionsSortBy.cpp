@@ -20,12 +20,12 @@ namespace Aws
       namespace ListTransactionsSortByMapper
       {
 
-        static const int TRANSACTION_TIMESTAMP_HASH = HashingUtils::HashString("TRANSACTION_TIMESTAMP");
+        static constexpr uint32_t TRANSACTION_TIMESTAMP_HASH = ConstExprHashingUtils::HashString("TRANSACTION_TIMESTAMP");
 
 
         ListTransactionsSortBy GetListTransactionsSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRANSACTION_TIMESTAMP_HASH)
           {
             return ListTransactionsSortBy::TRANSACTION_TIMESTAMP;

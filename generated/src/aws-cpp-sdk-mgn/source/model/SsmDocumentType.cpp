@@ -20,13 +20,13 @@ namespace Aws
       namespace SsmDocumentTypeMapper
       {
 
-        static const int AUTOMATION_HASH = HashingUtils::HashString("AUTOMATION");
-        static const int COMMAND_HASH = HashingUtils::HashString("COMMAND");
+        static constexpr uint32_t AUTOMATION_HASH = ConstExprHashingUtils::HashString("AUTOMATION");
+        static constexpr uint32_t COMMAND_HASH = ConstExprHashingUtils::HashString("COMMAND");
 
 
         SsmDocumentType GetSsmDocumentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTOMATION_HASH)
           {
             return SsmDocumentType::AUTOMATION;

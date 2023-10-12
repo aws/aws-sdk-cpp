@@ -20,20 +20,20 @@ namespace Aws
       namespace SourceTypeMapper
       {
 
-        static const int db_instance_HASH = HashingUtils::HashString("db-instance");
-        static const int db_parameter_group_HASH = HashingUtils::HashString("db-parameter-group");
-        static const int db_security_group_HASH = HashingUtils::HashString("db-security-group");
-        static const int db_snapshot_HASH = HashingUtils::HashString("db-snapshot");
-        static const int db_cluster_HASH = HashingUtils::HashString("db-cluster");
-        static const int db_cluster_snapshot_HASH = HashingUtils::HashString("db-cluster-snapshot");
-        static const int custom_engine_version_HASH = HashingUtils::HashString("custom-engine-version");
-        static const int db_proxy_HASH = HashingUtils::HashString("db-proxy");
-        static const int blue_green_deployment_HASH = HashingUtils::HashString("blue-green-deployment");
+        static constexpr uint32_t db_instance_HASH = ConstExprHashingUtils::HashString("db-instance");
+        static constexpr uint32_t db_parameter_group_HASH = ConstExprHashingUtils::HashString("db-parameter-group");
+        static constexpr uint32_t db_security_group_HASH = ConstExprHashingUtils::HashString("db-security-group");
+        static constexpr uint32_t db_snapshot_HASH = ConstExprHashingUtils::HashString("db-snapshot");
+        static constexpr uint32_t db_cluster_HASH = ConstExprHashingUtils::HashString("db-cluster");
+        static constexpr uint32_t db_cluster_snapshot_HASH = ConstExprHashingUtils::HashString("db-cluster-snapshot");
+        static constexpr uint32_t custom_engine_version_HASH = ConstExprHashingUtils::HashString("custom-engine-version");
+        static constexpr uint32_t db_proxy_HASH = ConstExprHashingUtils::HashString("db-proxy");
+        static constexpr uint32_t blue_green_deployment_HASH = ConstExprHashingUtils::HashString("blue-green-deployment");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == db_instance_HASH)
           {
             return SourceType::db_instance;

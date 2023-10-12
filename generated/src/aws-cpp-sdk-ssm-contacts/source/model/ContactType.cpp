@@ -20,14 +20,14 @@ namespace Aws
       namespace ContactTypeMapper
       {
 
-        static const int PERSONAL_HASH = HashingUtils::HashString("PERSONAL");
-        static const int ESCALATION_HASH = HashingUtils::HashString("ESCALATION");
-        static const int ONCALL_SCHEDULE_HASH = HashingUtils::HashString("ONCALL_SCHEDULE");
+        static constexpr uint32_t PERSONAL_HASH = ConstExprHashingUtils::HashString("PERSONAL");
+        static constexpr uint32_t ESCALATION_HASH = ConstExprHashingUtils::HashString("ESCALATION");
+        static constexpr uint32_t ONCALL_SCHEDULE_HASH = ConstExprHashingUtils::HashString("ONCALL_SCHEDULE");
 
 
         ContactType GetContactTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PERSONAL_HASH)
           {
             return ContactType::PERSONAL;

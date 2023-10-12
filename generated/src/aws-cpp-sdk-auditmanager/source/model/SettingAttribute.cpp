@@ -20,19 +20,19 @@ namespace Aws
       namespace SettingAttributeMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int IS_AWS_ORG_ENABLED_HASH = HashingUtils::HashString("IS_AWS_ORG_ENABLED");
-        static const int SNS_TOPIC_HASH = HashingUtils::HashString("SNS_TOPIC");
-        static const int DEFAULT_ASSESSMENT_REPORTS_DESTINATION_HASH = HashingUtils::HashString("DEFAULT_ASSESSMENT_REPORTS_DESTINATION");
-        static const int DEFAULT_PROCESS_OWNERS_HASH = HashingUtils::HashString("DEFAULT_PROCESS_OWNERS");
-        static const int EVIDENCE_FINDER_ENABLEMENT_HASH = HashingUtils::HashString("EVIDENCE_FINDER_ENABLEMENT");
-        static const int DEREGISTRATION_POLICY_HASH = HashingUtils::HashString("DEREGISTRATION_POLICY");
-        static const int DEFAULT_EXPORT_DESTINATION_HASH = HashingUtils::HashString("DEFAULT_EXPORT_DESTINATION");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t IS_AWS_ORG_ENABLED_HASH = ConstExprHashingUtils::HashString("IS_AWS_ORG_ENABLED");
+        static constexpr uint32_t SNS_TOPIC_HASH = ConstExprHashingUtils::HashString("SNS_TOPIC");
+        static constexpr uint32_t DEFAULT_ASSESSMENT_REPORTS_DESTINATION_HASH = ConstExprHashingUtils::HashString("DEFAULT_ASSESSMENT_REPORTS_DESTINATION");
+        static constexpr uint32_t DEFAULT_PROCESS_OWNERS_HASH = ConstExprHashingUtils::HashString("DEFAULT_PROCESS_OWNERS");
+        static constexpr uint32_t EVIDENCE_FINDER_ENABLEMENT_HASH = ConstExprHashingUtils::HashString("EVIDENCE_FINDER_ENABLEMENT");
+        static constexpr uint32_t DEREGISTRATION_POLICY_HASH = ConstExprHashingUtils::HashString("DEREGISTRATION_POLICY");
+        static constexpr uint32_t DEFAULT_EXPORT_DESTINATION_HASH = ConstExprHashingUtils::HashString("DEFAULT_EXPORT_DESTINATION");
 
 
         SettingAttribute GetSettingAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return SettingAttribute::ALL;

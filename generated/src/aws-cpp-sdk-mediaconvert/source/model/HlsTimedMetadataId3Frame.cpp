@@ -20,14 +20,14 @@ namespace Aws
       namespace HlsTimedMetadataId3FrameMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int PRIV_HASH = HashingUtils::HashString("PRIV");
-        static const int TDRL_HASH = HashingUtils::HashString("TDRL");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t PRIV_HASH = ConstExprHashingUtils::HashString("PRIV");
+        static constexpr uint32_t TDRL_HASH = ConstExprHashingUtils::HashString("TDRL");
 
 
         HlsTimedMetadataId3Frame GetHlsTimedMetadataId3FrameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return HlsTimedMetadataId3Frame::NONE;

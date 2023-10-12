@@ -20,13 +20,13 @@ namespace Aws
       namespace ScalingPolicyUpdateBehaviorMapper
       {
 
-        static const int KeepExternalPolicies_HASH = HashingUtils::HashString("KeepExternalPolicies");
-        static const int ReplaceExternalPolicies_HASH = HashingUtils::HashString("ReplaceExternalPolicies");
+        static constexpr uint32_t KeepExternalPolicies_HASH = ConstExprHashingUtils::HashString("KeepExternalPolicies");
+        static constexpr uint32_t ReplaceExternalPolicies_HASH = ConstExprHashingUtils::HashString("ReplaceExternalPolicies");
 
 
         ScalingPolicyUpdateBehavior GetScalingPolicyUpdateBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KeepExternalPolicies_HASH)
           {
             return ScalingPolicyUpdateBehavior::KeepExternalPolicies;

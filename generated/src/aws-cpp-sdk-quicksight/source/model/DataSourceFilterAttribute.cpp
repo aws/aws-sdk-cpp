@@ -20,15 +20,15 @@ namespace Aws
       namespace DataSourceFilterAttributeMapper
       {
 
-        static const int DIRECT_QUICKSIGHT_VIEWER_OR_OWNER_HASH = HashingUtils::HashString("DIRECT_QUICKSIGHT_VIEWER_OR_OWNER");
-        static const int DIRECT_QUICKSIGHT_OWNER_HASH = HashingUtils::HashString("DIRECT_QUICKSIGHT_OWNER");
-        static const int DIRECT_QUICKSIGHT_SOLE_OWNER_HASH = HashingUtils::HashString("DIRECT_QUICKSIGHT_SOLE_OWNER");
-        static const int DATASOURCE_NAME_HASH = HashingUtils::HashString("DATASOURCE_NAME");
+        static constexpr uint32_t DIRECT_QUICKSIGHT_VIEWER_OR_OWNER_HASH = ConstExprHashingUtils::HashString("DIRECT_QUICKSIGHT_VIEWER_OR_OWNER");
+        static constexpr uint32_t DIRECT_QUICKSIGHT_OWNER_HASH = ConstExprHashingUtils::HashString("DIRECT_QUICKSIGHT_OWNER");
+        static constexpr uint32_t DIRECT_QUICKSIGHT_SOLE_OWNER_HASH = ConstExprHashingUtils::HashString("DIRECT_QUICKSIGHT_SOLE_OWNER");
+        static constexpr uint32_t DATASOURCE_NAME_HASH = ConstExprHashingUtils::HashString("DATASOURCE_NAME");
 
 
         DataSourceFilterAttribute GetDataSourceFilterAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DIRECT_QUICKSIGHT_VIEWER_OR_OWNER_HASH)
           {
             return DataSourceFilterAttribute::DIRECT_QUICKSIGHT_VIEWER_OR_OWNER;

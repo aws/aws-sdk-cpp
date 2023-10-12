@@ -138,25 +138,25 @@ template<> AWS_SIMPLEDB_API RequestTimeout SimpleDBError::GetModeledError()
 namespace SimpleDBErrorMapper
 {
 
-static const int NUMBER_SUBMITTED_ITEMS_EXCEEDED_HASH = HashingUtils::HashString("NumberSubmittedItemsExceeded");
-static const int NUMBER_DOMAIN_ATTRIBUTES_EXCEEDED_HASH = HashingUtils::HashString("NumberDomainAttributesExceeded");
-static const int INVALID_NUMBER_PREDICATES_HASH = HashingUtils::HashString("InvalidNumberPredicates");
-static const int TOO_MANY_REQUESTED_ATTRIBUTES_HASH = HashingUtils::HashString("TooManyRequestedAttributes");
-static const int NO_SUCH_DOMAIN_HASH = HashingUtils::HashString("NoSuchDomain");
-static const int INVALID_NUMBER_VALUE_TESTS_HASH = HashingUtils::HashString("InvalidNumberValueTests");
-static const int NUMBER_ITEM_ATTRIBUTES_EXCEEDED_HASH = HashingUtils::HashString("NumberItemAttributesExceeded");
-static const int NUMBER_DOMAINS_EXCEEDED_HASH = HashingUtils::HashString("NumberDomainsExceeded");
-static const int INVALID_QUERY_EXPRESSION_HASH = HashingUtils::HashString("InvalidQueryExpression");
-static const int DUPLICATE_ITEM_NAME_HASH = HashingUtils::HashString("DuplicateItemName");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
-static const int ATTRIBUTE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AttributeDoesNotExist");
-static const int NUMBER_DOMAIN_BYTES_EXCEEDED_HASH = HashingUtils::HashString("NumberDomainBytesExceeded");
-static const int NUMBER_SUBMITTED_ATTRIBUTES_EXCEEDED_HASH = HashingUtils::HashString("NumberSubmittedAttributesExceeded");
+static constexpr uint32_t NUMBER_SUBMITTED_ITEMS_EXCEEDED_HASH = ConstExprHashingUtils::HashString("NumberSubmittedItemsExceeded");
+static constexpr uint32_t NUMBER_DOMAIN_ATTRIBUTES_EXCEEDED_HASH = ConstExprHashingUtils::HashString("NumberDomainAttributesExceeded");
+static constexpr uint32_t INVALID_NUMBER_PREDICATES_HASH = ConstExprHashingUtils::HashString("InvalidNumberPredicates");
+static constexpr uint32_t TOO_MANY_REQUESTED_ATTRIBUTES_HASH = ConstExprHashingUtils::HashString("TooManyRequestedAttributes");
+static constexpr uint32_t NO_SUCH_DOMAIN_HASH = ConstExprHashingUtils::HashString("NoSuchDomain");
+static constexpr uint32_t INVALID_NUMBER_VALUE_TESTS_HASH = ConstExprHashingUtils::HashString("InvalidNumberValueTests");
+static constexpr uint32_t NUMBER_ITEM_ATTRIBUTES_EXCEEDED_HASH = ConstExprHashingUtils::HashString("NumberItemAttributesExceeded");
+static constexpr uint32_t NUMBER_DOMAINS_EXCEEDED_HASH = ConstExprHashingUtils::HashString("NumberDomainsExceeded");
+static constexpr uint32_t INVALID_QUERY_EXPRESSION_HASH = ConstExprHashingUtils::HashString("InvalidQueryExpression");
+static constexpr uint32_t DUPLICATE_ITEM_NAME_HASH = ConstExprHashingUtils::HashString("DuplicateItemName");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextToken");
+static constexpr uint32_t ATTRIBUTE_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("AttributeDoesNotExist");
+static constexpr uint32_t NUMBER_DOMAIN_BYTES_EXCEEDED_HASH = ConstExprHashingUtils::HashString("NumberDomainBytesExceeded");
+static constexpr uint32_t NUMBER_SUBMITTED_ATTRIBUTES_EXCEEDED_HASH = ConstExprHashingUtils::HashString("NumberSubmittedAttributesExceeded");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == NUMBER_SUBMITTED_ITEMS_EXCEEDED_HASH)
   {

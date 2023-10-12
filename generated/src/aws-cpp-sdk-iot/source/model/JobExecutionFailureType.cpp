@@ -20,15 +20,15 @@ namespace Aws
       namespace JobExecutionFailureTypeMapper
       {
 
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
-        static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t REJECTED_HASH = ConstExprHashingUtils::HashString("REJECTED");
+        static constexpr uint32_t TIMED_OUT_HASH = ConstExprHashingUtils::HashString("TIMED_OUT");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         JobExecutionFailureType GetJobExecutionFailureTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FAILED_HASH)
           {
             return JobExecutionFailureType::FAILED;

@@ -20,13 +20,13 @@ namespace Aws
       namespace KPISparklineTypeMapper
       {
 
-        static const int LINE_HASH = HashingUtils::HashString("LINE");
-        static const int AREA_HASH = HashingUtils::HashString("AREA");
+        static constexpr uint32_t LINE_HASH = ConstExprHashingUtils::HashString("LINE");
+        static constexpr uint32_t AREA_HASH = ConstExprHashingUtils::HashString("AREA");
 
 
         KPISparklineType GetKPISparklineTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LINE_HASH)
           {
             return KPISparklineType::LINE;

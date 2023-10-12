@@ -20,15 +20,15 @@ namespace Aws
       namespace AuthenticationTypeMapper
       {
 
-        static const int API_HASH = HashingUtils::HashString("API");
-        static const int SAML_HASH = HashingUtils::HashString("SAML");
-        static const int USERPOOL_HASH = HashingUtils::HashString("USERPOOL");
-        static const int AWS_AD_HASH = HashingUtils::HashString("AWS_AD");
+        static constexpr uint32_t API_HASH = ConstExprHashingUtils::HashString("API");
+        static constexpr uint32_t SAML_HASH = ConstExprHashingUtils::HashString("SAML");
+        static constexpr uint32_t USERPOOL_HASH = ConstExprHashingUtils::HashString("USERPOOL");
+        static constexpr uint32_t AWS_AD_HASH = ConstExprHashingUtils::HashString("AWS_AD");
 
 
         AuthenticationType GetAuthenticationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == API_HASH)
           {
             return AuthenticationType::API;

@@ -20,15 +20,15 @@ namespace Aws
       namespace DurationMapper
       {
 
-        static const int HR_24_HASH = HashingUtils::HashString("HR_24");
-        static const int DAY_7_HASH = HashingUtils::HashString("DAY_7");
-        static const int DAY_14_HASH = HashingUtils::HashString("DAY_14");
-        static const int DAY_30_HASH = HashingUtils::HashString("DAY_30");
+        static constexpr uint32_t HR_24_HASH = ConstExprHashingUtils::HashString("HR_24");
+        static constexpr uint32_t DAY_7_HASH = ConstExprHashingUtils::HashString("DAY_7");
+        static constexpr uint32_t DAY_14_HASH = ConstExprHashingUtils::HashString("DAY_14");
+        static constexpr uint32_t DAY_30_HASH = ConstExprHashingUtils::HashString("DAY_30");
 
 
         Duration GetDurationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HR_24_HASH)
           {
             return Duration::HR_24;

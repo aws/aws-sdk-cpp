@@ -20,19 +20,19 @@ namespace Aws
       namespace LogAnomalyTypeMapper
       {
 
-        static const int KEYWORD_HASH = HashingUtils::HashString("KEYWORD");
-        static const int KEYWORD_TOKEN_HASH = HashingUtils::HashString("KEYWORD_TOKEN");
-        static const int FORMAT_HASH = HashingUtils::HashString("FORMAT");
-        static const int HTTP_CODE_HASH = HashingUtils::HashString("HTTP_CODE");
-        static const int BLOCK_FORMAT_HASH = HashingUtils::HashString("BLOCK_FORMAT");
-        static const int NUMERICAL_POINT_HASH = HashingUtils::HashString("NUMERICAL_POINT");
-        static const int NUMERICAL_NAN_HASH = HashingUtils::HashString("NUMERICAL_NAN");
-        static const int NEW_FIELD_NAME_HASH = HashingUtils::HashString("NEW_FIELD_NAME");
+        static constexpr uint32_t KEYWORD_HASH = ConstExprHashingUtils::HashString("KEYWORD");
+        static constexpr uint32_t KEYWORD_TOKEN_HASH = ConstExprHashingUtils::HashString("KEYWORD_TOKEN");
+        static constexpr uint32_t FORMAT_HASH = ConstExprHashingUtils::HashString("FORMAT");
+        static constexpr uint32_t HTTP_CODE_HASH = ConstExprHashingUtils::HashString("HTTP_CODE");
+        static constexpr uint32_t BLOCK_FORMAT_HASH = ConstExprHashingUtils::HashString("BLOCK_FORMAT");
+        static constexpr uint32_t NUMERICAL_POINT_HASH = ConstExprHashingUtils::HashString("NUMERICAL_POINT");
+        static constexpr uint32_t NUMERICAL_NAN_HASH = ConstExprHashingUtils::HashString("NUMERICAL_NAN");
+        static constexpr uint32_t NEW_FIELD_NAME_HASH = ConstExprHashingUtils::HashString("NEW_FIELD_NAME");
 
 
         LogAnomalyType GetLogAnomalyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KEYWORD_HASH)
           {
             return LogAnomalyType::KEYWORD;

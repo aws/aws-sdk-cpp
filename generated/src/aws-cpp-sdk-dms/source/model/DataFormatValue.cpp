@@ -20,13 +20,13 @@ namespace Aws
       namespace DataFormatValueMapper
       {
 
-        static const int csv_HASH = HashingUtils::HashString("csv");
-        static const int parquet_HASH = HashingUtils::HashString("parquet");
+        static constexpr uint32_t csv_HASH = ConstExprHashingUtils::HashString("csv");
+        static constexpr uint32_t parquet_HASH = ConstExprHashingUtils::HashString("parquet");
 
 
         DataFormatValue GetDataFormatValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == csv_HASH)
           {
             return DataFormatValue::csv;

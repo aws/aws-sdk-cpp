@@ -20,13 +20,13 @@ namespace Aws
       namespace RecordFormatTypeMapper
       {
 
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
+        static constexpr uint32_t CSV_HASH = ConstExprHashingUtils::HashString("CSV");
 
 
         RecordFormatType GetRecordFormatTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JSON_HASH)
           {
             return RecordFormatType::JSON;

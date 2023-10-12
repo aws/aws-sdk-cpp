@@ -20,14 +20,14 @@ namespace Aws
       namespace ArtifactsTypeMapper
       {
 
-        static const int CODEPIPELINE_HASH = HashingUtils::HashString("CODEPIPELINE");
-        static const int S3_HASH = HashingUtils::HashString("S3");
-        static const int NO_ARTIFACTS_HASH = HashingUtils::HashString("NO_ARTIFACTS");
+        static constexpr uint32_t CODEPIPELINE_HASH = ConstExprHashingUtils::HashString("CODEPIPELINE");
+        static constexpr uint32_t S3_HASH = ConstExprHashingUtils::HashString("S3");
+        static constexpr uint32_t NO_ARTIFACTS_HASH = ConstExprHashingUtils::HashString("NO_ARTIFACTS");
 
 
         ArtifactsType GetArtifactsTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CODEPIPELINE_HASH)
           {
             return ArtifactsType::CODEPIPELINE;

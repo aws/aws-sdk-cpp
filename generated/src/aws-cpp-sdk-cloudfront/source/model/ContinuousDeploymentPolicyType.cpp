@@ -20,13 +20,13 @@ namespace Aws
       namespace ContinuousDeploymentPolicyTypeMapper
       {
 
-        static const int SingleWeight_HASH = HashingUtils::HashString("SingleWeight");
-        static const int SingleHeader_HASH = HashingUtils::HashString("SingleHeader");
+        static constexpr uint32_t SingleWeight_HASH = ConstExprHashingUtils::HashString("SingleWeight");
+        static constexpr uint32_t SingleHeader_HASH = ConstExprHashingUtils::HashString("SingleHeader");
 
 
         ContinuousDeploymentPolicyType GetContinuousDeploymentPolicyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SingleWeight_HASH)
           {
             return ContinuousDeploymentPolicyType::SingleWeight;

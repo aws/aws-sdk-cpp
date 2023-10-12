@@ -20,13 +20,13 @@ namespace Aws
       namespace MoveStatusMapper
       {
 
-        static const int movingToVpc_HASH = HashingUtils::HashString("movingToVpc");
-        static const int restoringToClassic_HASH = HashingUtils::HashString("restoringToClassic");
+        static constexpr uint32_t movingToVpc_HASH = ConstExprHashingUtils::HashString("movingToVpc");
+        static constexpr uint32_t restoringToClassic_HASH = ConstExprHashingUtils::HashString("restoringToClassic");
 
 
         MoveStatus GetMoveStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == movingToVpc_HASH)
           {
             return MoveStatus::movingToVpc;

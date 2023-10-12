@@ -20,15 +20,15 @@ namespace Aws
       namespace MediaCapabilitiesMapper
       {
 
-        static const int SendReceive_HASH = HashingUtils::HashString("SendReceive");
-        static const int Send_HASH = HashingUtils::HashString("Send");
-        static const int Receive_HASH = HashingUtils::HashString("Receive");
-        static const int None_HASH = HashingUtils::HashString("None");
+        static constexpr uint32_t SendReceive_HASH = ConstExprHashingUtils::HashString("SendReceive");
+        static constexpr uint32_t Send_HASH = ConstExprHashingUtils::HashString("Send");
+        static constexpr uint32_t Receive_HASH = ConstExprHashingUtils::HashString("Receive");
+        static constexpr uint32_t None_HASH = ConstExprHashingUtils::HashString("None");
 
 
         MediaCapabilities GetMediaCapabilitiesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SendReceive_HASH)
           {
             return MediaCapabilities::SendReceive;

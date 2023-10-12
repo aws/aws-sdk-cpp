@@ -20,14 +20,14 @@ namespace Aws
       namespace GroupByAttributeMapper
       {
 
-        static const int TARGET_ID_HASH = HashingUtils::HashString("TARGET_ID");
-        static const int REGION_HASH = HashingUtils::HashString("REGION");
-        static const int RESOURCE_TYPE_HASH = HashingUtils::HashString("RESOURCE_TYPE");
+        static constexpr uint32_t TARGET_ID_HASH = ConstExprHashingUtils::HashString("TARGET_ID");
+        static constexpr uint32_t REGION_HASH = ConstExprHashingUtils::HashString("REGION");
+        static constexpr uint32_t RESOURCE_TYPE_HASH = ConstExprHashingUtils::HashString("RESOURCE_TYPE");
 
 
         GroupByAttribute GetGroupByAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TARGET_ID_HASH)
           {
             return GroupByAttribute::TARGET_ID;

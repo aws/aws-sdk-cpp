@@ -20,13 +20,13 @@ namespace Aws
       namespace ListWorkteamsSortByOptionsMapper
       {
 
-        static const int Name_HASH = HashingUtils::HashString("Name");
-        static const int CreateDate_HASH = HashingUtils::HashString("CreateDate");
+        static constexpr uint32_t Name_HASH = ConstExprHashingUtils::HashString("Name");
+        static constexpr uint32_t CreateDate_HASH = ConstExprHashingUtils::HashString("CreateDate");
 
 
         ListWorkteamsSortByOptions GetListWorkteamsSortByOptionsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Name_HASH)
           {
             return ListWorkteamsSortByOptions::Name;

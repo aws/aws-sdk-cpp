@@ -20,12 +20,12 @@ namespace Aws
       namespace GroupFilterAttributeMapper
       {
 
-        static const int GROUP_NAME_HASH = HashingUtils::HashString("GROUP_NAME");
+        static constexpr uint32_t GROUP_NAME_HASH = ConstExprHashingUtils::HashString("GROUP_NAME");
 
 
         GroupFilterAttribute GetGroupFilterAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GROUP_NAME_HASH)
           {
             return GroupFilterAttribute::GROUP_NAME;

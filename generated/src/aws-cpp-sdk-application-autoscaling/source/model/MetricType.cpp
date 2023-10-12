@@ -20,34 +20,34 @@ namespace Aws
       namespace MetricTypeMapper
       {
 
-        static const int DynamoDBReadCapacityUtilization_HASH = HashingUtils::HashString("DynamoDBReadCapacityUtilization");
-        static const int DynamoDBWriteCapacityUtilization_HASH = HashingUtils::HashString("DynamoDBWriteCapacityUtilization");
-        static const int ALBRequestCountPerTarget_HASH = HashingUtils::HashString("ALBRequestCountPerTarget");
-        static const int RDSReaderAverageCPUUtilization_HASH = HashingUtils::HashString("RDSReaderAverageCPUUtilization");
-        static const int RDSReaderAverageDatabaseConnections_HASH = HashingUtils::HashString("RDSReaderAverageDatabaseConnections");
-        static const int EC2SpotFleetRequestAverageCPUUtilization_HASH = HashingUtils::HashString("EC2SpotFleetRequestAverageCPUUtilization");
-        static const int EC2SpotFleetRequestAverageNetworkIn_HASH = HashingUtils::HashString("EC2SpotFleetRequestAverageNetworkIn");
-        static const int EC2SpotFleetRequestAverageNetworkOut_HASH = HashingUtils::HashString("EC2SpotFleetRequestAverageNetworkOut");
-        static const int SageMakerVariantInvocationsPerInstance_HASH = HashingUtils::HashString("SageMakerVariantInvocationsPerInstance");
-        static const int ECSServiceAverageCPUUtilization_HASH = HashingUtils::HashString("ECSServiceAverageCPUUtilization");
-        static const int ECSServiceAverageMemoryUtilization_HASH = HashingUtils::HashString("ECSServiceAverageMemoryUtilization");
-        static const int AppStreamAverageCapacityUtilization_HASH = HashingUtils::HashString("AppStreamAverageCapacityUtilization");
-        static const int ComprehendInferenceUtilization_HASH = HashingUtils::HashString("ComprehendInferenceUtilization");
-        static const int LambdaProvisionedConcurrencyUtilization_HASH = HashingUtils::HashString("LambdaProvisionedConcurrencyUtilization");
-        static const int CassandraReadCapacityUtilization_HASH = HashingUtils::HashString("CassandraReadCapacityUtilization");
-        static const int CassandraWriteCapacityUtilization_HASH = HashingUtils::HashString("CassandraWriteCapacityUtilization");
-        static const int KafkaBrokerStorageUtilization_HASH = HashingUtils::HashString("KafkaBrokerStorageUtilization");
-        static const int ElastiCachePrimaryEngineCPUUtilization_HASH = HashingUtils::HashString("ElastiCachePrimaryEngineCPUUtilization");
-        static const int ElastiCacheReplicaEngineCPUUtilization_HASH = HashingUtils::HashString("ElastiCacheReplicaEngineCPUUtilization");
-        static const int ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage_HASH = HashingUtils::HashString("ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage");
-        static const int NeptuneReaderAverageCPUUtilization_HASH = HashingUtils::HashString("NeptuneReaderAverageCPUUtilization");
-        static const int SageMakerVariantProvisionedConcurrencyUtilization_HASH = HashingUtils::HashString("SageMakerVariantProvisionedConcurrencyUtilization");
-        static const int ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage_HASH = HashingUtils::HashString("ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage");
+        static constexpr uint32_t DynamoDBReadCapacityUtilization_HASH = ConstExprHashingUtils::HashString("DynamoDBReadCapacityUtilization");
+        static constexpr uint32_t DynamoDBWriteCapacityUtilization_HASH = ConstExprHashingUtils::HashString("DynamoDBWriteCapacityUtilization");
+        static constexpr uint32_t ALBRequestCountPerTarget_HASH = ConstExprHashingUtils::HashString("ALBRequestCountPerTarget");
+        static constexpr uint32_t RDSReaderAverageCPUUtilization_HASH = ConstExprHashingUtils::HashString("RDSReaderAverageCPUUtilization");
+        static constexpr uint32_t RDSReaderAverageDatabaseConnections_HASH = ConstExprHashingUtils::HashString("RDSReaderAverageDatabaseConnections");
+        static constexpr uint32_t EC2SpotFleetRequestAverageCPUUtilization_HASH = ConstExprHashingUtils::HashString("EC2SpotFleetRequestAverageCPUUtilization");
+        static constexpr uint32_t EC2SpotFleetRequestAverageNetworkIn_HASH = ConstExprHashingUtils::HashString("EC2SpotFleetRequestAverageNetworkIn");
+        static constexpr uint32_t EC2SpotFleetRequestAverageNetworkOut_HASH = ConstExprHashingUtils::HashString("EC2SpotFleetRequestAverageNetworkOut");
+        static constexpr uint32_t SageMakerVariantInvocationsPerInstance_HASH = ConstExprHashingUtils::HashString("SageMakerVariantInvocationsPerInstance");
+        static constexpr uint32_t ECSServiceAverageCPUUtilization_HASH = ConstExprHashingUtils::HashString("ECSServiceAverageCPUUtilization");
+        static constexpr uint32_t ECSServiceAverageMemoryUtilization_HASH = ConstExprHashingUtils::HashString("ECSServiceAverageMemoryUtilization");
+        static constexpr uint32_t AppStreamAverageCapacityUtilization_HASH = ConstExprHashingUtils::HashString("AppStreamAverageCapacityUtilization");
+        static constexpr uint32_t ComprehendInferenceUtilization_HASH = ConstExprHashingUtils::HashString("ComprehendInferenceUtilization");
+        static constexpr uint32_t LambdaProvisionedConcurrencyUtilization_HASH = ConstExprHashingUtils::HashString("LambdaProvisionedConcurrencyUtilization");
+        static constexpr uint32_t CassandraReadCapacityUtilization_HASH = ConstExprHashingUtils::HashString("CassandraReadCapacityUtilization");
+        static constexpr uint32_t CassandraWriteCapacityUtilization_HASH = ConstExprHashingUtils::HashString("CassandraWriteCapacityUtilization");
+        static constexpr uint32_t KafkaBrokerStorageUtilization_HASH = ConstExprHashingUtils::HashString("KafkaBrokerStorageUtilization");
+        static constexpr uint32_t ElastiCachePrimaryEngineCPUUtilization_HASH = ConstExprHashingUtils::HashString("ElastiCachePrimaryEngineCPUUtilization");
+        static constexpr uint32_t ElastiCacheReplicaEngineCPUUtilization_HASH = ConstExprHashingUtils::HashString("ElastiCacheReplicaEngineCPUUtilization");
+        static constexpr uint32_t ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage_HASH = ConstExprHashingUtils::HashString("ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage");
+        static constexpr uint32_t NeptuneReaderAverageCPUUtilization_HASH = ConstExprHashingUtils::HashString("NeptuneReaderAverageCPUUtilization");
+        static constexpr uint32_t SageMakerVariantProvisionedConcurrencyUtilization_HASH = ConstExprHashingUtils::HashString("SageMakerVariantProvisionedConcurrencyUtilization");
+        static constexpr uint32_t ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage_HASH = ConstExprHashingUtils::HashString("ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage");
 
 
         MetricType GetMetricTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DynamoDBReadCapacityUtilization_HASH)
           {
             return MetricType::DynamoDBReadCapacityUtilization;

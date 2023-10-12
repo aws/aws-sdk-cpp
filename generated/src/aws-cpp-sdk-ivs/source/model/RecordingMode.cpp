@@ -20,13 +20,13 @@ namespace Aws
       namespace RecordingModeMapper
       {
 
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int INTERVAL_HASH = HashingUtils::HashString("INTERVAL");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t INTERVAL_HASH = ConstExprHashingUtils::HashString("INTERVAL");
 
 
         RecordingMode GetRecordingModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DISABLED_HASH)
           {
             return RecordingMode::DISABLED;

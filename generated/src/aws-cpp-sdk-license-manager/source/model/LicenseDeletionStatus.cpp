@@ -20,13 +20,13 @@ namespace Aws
       namespace LicenseDeletionStatusMapper
       {
 
-        static const int PENDING_DELETE_HASH = HashingUtils::HashString("PENDING_DELETE");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t PENDING_DELETE_HASH = ConstExprHashingUtils::HashString("PENDING_DELETE");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         LicenseDeletionStatus GetLicenseDeletionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_DELETE_HASH)
           {
             return LicenseDeletionStatus::PENDING_DELETE;

@@ -20,12 +20,12 @@ namespace Aws
       namespace PositionSolverTypeMapper
       {
 
-        static const int GNSS_HASH = HashingUtils::HashString("GNSS");
+        static constexpr uint32_t GNSS_HASH = ConstExprHashingUtils::HashString("GNSS");
 
 
         PositionSolverType GetPositionSolverTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GNSS_HASH)
           {
             return PositionSolverType::GNSS;

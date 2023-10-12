@@ -20,15 +20,15 @@ namespace Aws
       namespace MacAlgorithmSpecMapper
       {
 
-        static const int HMAC_SHA_224_HASH = HashingUtils::HashString("HMAC_SHA_224");
-        static const int HMAC_SHA_256_HASH = HashingUtils::HashString("HMAC_SHA_256");
-        static const int HMAC_SHA_384_HASH = HashingUtils::HashString("HMAC_SHA_384");
-        static const int HMAC_SHA_512_HASH = HashingUtils::HashString("HMAC_SHA_512");
+        static constexpr uint32_t HMAC_SHA_224_HASH = ConstExprHashingUtils::HashString("HMAC_SHA_224");
+        static constexpr uint32_t HMAC_SHA_256_HASH = ConstExprHashingUtils::HashString("HMAC_SHA_256");
+        static constexpr uint32_t HMAC_SHA_384_HASH = ConstExprHashingUtils::HashString("HMAC_SHA_384");
+        static constexpr uint32_t HMAC_SHA_512_HASH = ConstExprHashingUtils::HashString("HMAC_SHA_512");
 
 
         MacAlgorithmSpec GetMacAlgorithmSpecForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HMAC_SHA_224_HASH)
           {
             return MacAlgorithmSpec::HMAC_SHA_224;

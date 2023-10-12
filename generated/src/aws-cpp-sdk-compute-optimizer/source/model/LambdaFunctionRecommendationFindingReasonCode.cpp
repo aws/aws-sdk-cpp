@@ -20,15 +20,15 @@ namespace Aws
       namespace LambdaFunctionRecommendationFindingReasonCodeMapper
       {
 
-        static const int MemoryOverprovisioned_HASH = HashingUtils::HashString("MemoryOverprovisioned");
-        static const int MemoryUnderprovisioned_HASH = HashingUtils::HashString("MemoryUnderprovisioned");
-        static const int InsufficientData_HASH = HashingUtils::HashString("InsufficientData");
-        static const int Inconclusive_HASH = HashingUtils::HashString("Inconclusive");
+        static constexpr uint32_t MemoryOverprovisioned_HASH = ConstExprHashingUtils::HashString("MemoryOverprovisioned");
+        static constexpr uint32_t MemoryUnderprovisioned_HASH = ConstExprHashingUtils::HashString("MemoryUnderprovisioned");
+        static constexpr uint32_t InsufficientData_HASH = ConstExprHashingUtils::HashString("InsufficientData");
+        static constexpr uint32_t Inconclusive_HASH = ConstExprHashingUtils::HashString("Inconclusive");
 
 
         LambdaFunctionRecommendationFindingReasonCode GetLambdaFunctionRecommendationFindingReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MemoryOverprovisioned_HASH)
           {
             return LambdaFunctionRecommendationFindingReasonCode::MemoryOverprovisioned;

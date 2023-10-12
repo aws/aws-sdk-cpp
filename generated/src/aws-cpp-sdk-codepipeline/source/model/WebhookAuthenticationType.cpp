@@ -20,14 +20,14 @@ namespace Aws
       namespace WebhookAuthenticationTypeMapper
       {
 
-        static const int GITHUB_HMAC_HASH = HashingUtils::HashString("GITHUB_HMAC");
-        static const int IP_HASH = HashingUtils::HashString("IP");
-        static const int UNAUTHENTICATED_HASH = HashingUtils::HashString("UNAUTHENTICATED");
+        static constexpr uint32_t GITHUB_HMAC_HASH = ConstExprHashingUtils::HashString("GITHUB_HMAC");
+        static constexpr uint32_t IP_HASH = ConstExprHashingUtils::HashString("IP");
+        static constexpr uint32_t UNAUTHENTICATED_HASH = ConstExprHashingUtils::HashString("UNAUTHENTICATED");
 
 
         WebhookAuthenticationType GetWebhookAuthenticationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GITHUB_HMAC_HASH)
           {
             return WebhookAuthenticationType::GITHUB_HMAC;

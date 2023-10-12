@@ -20,13 +20,13 @@ namespace Aws
       namespace CodeSigningPolicyMapper
       {
 
-        static const int Warn_HASH = HashingUtils::HashString("Warn");
-        static const int Enforce_HASH = HashingUtils::HashString("Enforce");
+        static constexpr uint32_t Warn_HASH = ConstExprHashingUtils::HashString("Warn");
+        static constexpr uint32_t Enforce_HASH = ConstExprHashingUtils::HashString("Enforce");
 
 
         CodeSigningPolicy GetCodeSigningPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Warn_HASH)
           {
             return CodeSigningPolicy::Warn;

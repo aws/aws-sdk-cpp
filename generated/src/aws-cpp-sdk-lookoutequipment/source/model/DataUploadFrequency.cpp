@@ -20,16 +20,16 @@ namespace Aws
       namespace DataUploadFrequencyMapper
       {
 
-        static const int PT5M_HASH = HashingUtils::HashString("PT5M");
-        static const int PT10M_HASH = HashingUtils::HashString("PT10M");
-        static const int PT15M_HASH = HashingUtils::HashString("PT15M");
-        static const int PT30M_HASH = HashingUtils::HashString("PT30M");
-        static const int PT1H_HASH = HashingUtils::HashString("PT1H");
+        static constexpr uint32_t PT5M_HASH = ConstExprHashingUtils::HashString("PT5M");
+        static constexpr uint32_t PT10M_HASH = ConstExprHashingUtils::HashString("PT10M");
+        static constexpr uint32_t PT15M_HASH = ConstExprHashingUtils::HashString("PT15M");
+        static constexpr uint32_t PT30M_HASH = ConstExprHashingUtils::HashString("PT30M");
+        static constexpr uint32_t PT1H_HASH = ConstExprHashingUtils::HashString("PT1H");
 
 
         DataUploadFrequency GetDataUploadFrequencyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PT5M_HASH)
           {
             return DataUploadFrequency::PT5M;

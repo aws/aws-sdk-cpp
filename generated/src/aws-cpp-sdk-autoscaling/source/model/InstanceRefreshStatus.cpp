@@ -20,20 +20,20 @@ namespace Aws
       namespace InstanceRefreshStatusMapper
       {
 
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Successful_HASH = HashingUtils::HashString("Successful");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Cancelling_HASH = HashingUtils::HashString("Cancelling");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
-        static const int RollbackInProgress_HASH = HashingUtils::HashString("RollbackInProgress");
-        static const int RollbackFailed_HASH = HashingUtils::HashString("RollbackFailed");
-        static const int RollbackSuccessful_HASH = HashingUtils::HashString("RollbackSuccessful");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Successful_HASH = ConstExprHashingUtils::HashString("Successful");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Cancelling_HASH = ConstExprHashingUtils::HashString("Cancelling");
+        static constexpr uint32_t Cancelled_HASH = ConstExprHashingUtils::HashString("Cancelled");
+        static constexpr uint32_t RollbackInProgress_HASH = ConstExprHashingUtils::HashString("RollbackInProgress");
+        static constexpr uint32_t RollbackFailed_HASH = ConstExprHashingUtils::HashString("RollbackFailed");
+        static constexpr uint32_t RollbackSuccessful_HASH = ConstExprHashingUtils::HashString("RollbackSuccessful");
 
 
         InstanceRefreshStatus GetInstanceRefreshStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pending_HASH)
           {
             return InstanceRefreshStatus::Pending;

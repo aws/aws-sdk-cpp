@@ -20,12 +20,12 @@ namespace Aws
       namespace AssetErrorCodeMapper
       {
 
-        static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
+        static constexpr uint32_t INTERNAL_FAILURE_HASH = ConstExprHashingUtils::HashString("INTERNAL_FAILURE");
 
 
         AssetErrorCode GetAssetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERNAL_FAILURE_HASH)
           {
             return AssetErrorCode::INTERNAL_FAILURE;

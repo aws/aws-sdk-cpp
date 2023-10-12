@@ -20,19 +20,19 @@ namespace Aws
       namespace ScalingPlanStatusCodeMapper
       {
 
-        static const int Active_HASH = HashingUtils::HashString("Active");
-        static const int ActiveWithProblems_HASH = HashingUtils::HashString("ActiveWithProblems");
-        static const int CreationInProgress_HASH = HashingUtils::HashString("CreationInProgress");
-        static const int CreationFailed_HASH = HashingUtils::HashString("CreationFailed");
-        static const int DeletionInProgress_HASH = HashingUtils::HashString("DeletionInProgress");
-        static const int DeletionFailed_HASH = HashingUtils::HashString("DeletionFailed");
-        static const int UpdateInProgress_HASH = HashingUtils::HashString("UpdateInProgress");
-        static const int UpdateFailed_HASH = HashingUtils::HashString("UpdateFailed");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
+        static constexpr uint32_t ActiveWithProblems_HASH = ConstExprHashingUtils::HashString("ActiveWithProblems");
+        static constexpr uint32_t CreationInProgress_HASH = ConstExprHashingUtils::HashString("CreationInProgress");
+        static constexpr uint32_t CreationFailed_HASH = ConstExprHashingUtils::HashString("CreationFailed");
+        static constexpr uint32_t DeletionInProgress_HASH = ConstExprHashingUtils::HashString("DeletionInProgress");
+        static constexpr uint32_t DeletionFailed_HASH = ConstExprHashingUtils::HashString("DeletionFailed");
+        static constexpr uint32_t UpdateInProgress_HASH = ConstExprHashingUtils::HashString("UpdateInProgress");
+        static constexpr uint32_t UpdateFailed_HASH = ConstExprHashingUtils::HashString("UpdateFailed");
 
 
         ScalingPlanStatusCode GetScalingPlanStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Active_HASH)
           {
             return ScalingPlanStatusCode::Active;

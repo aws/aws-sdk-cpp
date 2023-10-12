@@ -20,20 +20,20 @@ namespace Aws
       namespace UsageFeatureMapper
       {
 
-        static const int FLOW_LOGS_HASH = HashingUtils::HashString("FLOW_LOGS");
-        static const int CLOUD_TRAIL_HASH = HashingUtils::HashString("CLOUD_TRAIL");
-        static const int DNS_LOGS_HASH = HashingUtils::HashString("DNS_LOGS");
-        static const int S3_DATA_EVENTS_HASH = HashingUtils::HashString("S3_DATA_EVENTS");
-        static const int EKS_AUDIT_LOGS_HASH = HashingUtils::HashString("EKS_AUDIT_LOGS");
-        static const int EBS_MALWARE_PROTECTION_HASH = HashingUtils::HashString("EBS_MALWARE_PROTECTION");
-        static const int RDS_LOGIN_EVENTS_HASH = HashingUtils::HashString("RDS_LOGIN_EVENTS");
-        static const int LAMBDA_NETWORK_LOGS_HASH = HashingUtils::HashString("LAMBDA_NETWORK_LOGS");
-        static const int EKS_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EKS_RUNTIME_MONITORING");
+        static constexpr uint32_t FLOW_LOGS_HASH = ConstExprHashingUtils::HashString("FLOW_LOGS");
+        static constexpr uint32_t CLOUD_TRAIL_HASH = ConstExprHashingUtils::HashString("CLOUD_TRAIL");
+        static constexpr uint32_t DNS_LOGS_HASH = ConstExprHashingUtils::HashString("DNS_LOGS");
+        static constexpr uint32_t S3_DATA_EVENTS_HASH = ConstExprHashingUtils::HashString("S3_DATA_EVENTS");
+        static constexpr uint32_t EKS_AUDIT_LOGS_HASH = ConstExprHashingUtils::HashString("EKS_AUDIT_LOGS");
+        static constexpr uint32_t EBS_MALWARE_PROTECTION_HASH = ConstExprHashingUtils::HashString("EBS_MALWARE_PROTECTION");
+        static constexpr uint32_t RDS_LOGIN_EVENTS_HASH = ConstExprHashingUtils::HashString("RDS_LOGIN_EVENTS");
+        static constexpr uint32_t LAMBDA_NETWORK_LOGS_HASH = ConstExprHashingUtils::HashString("LAMBDA_NETWORK_LOGS");
+        static constexpr uint32_t EKS_RUNTIME_MONITORING_HASH = ConstExprHashingUtils::HashString("EKS_RUNTIME_MONITORING");
 
 
         UsageFeature GetUsageFeatureForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FLOW_LOGS_HASH)
           {
             return UsageFeature::FLOW_LOGS;

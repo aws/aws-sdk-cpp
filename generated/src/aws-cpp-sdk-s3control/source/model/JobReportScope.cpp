@@ -20,13 +20,13 @@ namespace Aws
       namespace JobReportScopeMapper
       {
 
-        static const int AllTasks_HASH = HashingUtils::HashString("AllTasks");
-        static const int FailedTasksOnly_HASH = HashingUtils::HashString("FailedTasksOnly");
+        static constexpr uint32_t AllTasks_HASH = ConstExprHashingUtils::HashString("AllTasks");
+        static constexpr uint32_t FailedTasksOnly_HASH = ConstExprHashingUtils::HashString("FailedTasksOnly");
 
 
         JobReportScope GetJobReportScopeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AllTasks_HASH)
           {
             return JobReportScope::AllTasks;

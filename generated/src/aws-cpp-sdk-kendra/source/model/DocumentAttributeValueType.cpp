@@ -20,15 +20,15 @@ namespace Aws
       namespace DocumentAttributeValueTypeMapper
       {
 
-        static const int STRING_VALUE_HASH = HashingUtils::HashString("STRING_VALUE");
-        static const int STRING_LIST_VALUE_HASH = HashingUtils::HashString("STRING_LIST_VALUE");
-        static const int LONG_VALUE_HASH = HashingUtils::HashString("LONG_VALUE");
-        static const int DATE_VALUE_HASH = HashingUtils::HashString("DATE_VALUE");
+        static constexpr uint32_t STRING_VALUE_HASH = ConstExprHashingUtils::HashString("STRING_VALUE");
+        static constexpr uint32_t STRING_LIST_VALUE_HASH = ConstExprHashingUtils::HashString("STRING_LIST_VALUE");
+        static constexpr uint32_t LONG_VALUE_HASH = ConstExprHashingUtils::HashString("LONG_VALUE");
+        static constexpr uint32_t DATE_VALUE_HASH = ConstExprHashingUtils::HashString("DATE_VALUE");
 
 
         DocumentAttributeValueType GetDocumentAttributeValueTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STRING_VALUE_HASH)
           {
             return DocumentAttributeValueType::STRING_VALUE;

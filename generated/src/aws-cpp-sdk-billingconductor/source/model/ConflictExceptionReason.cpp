@@ -20,16 +20,16 @@ namespace Aws
       namespace ConflictExceptionReasonMapper
       {
 
-        static const int RESOURCE_NAME_CONFLICT_HASH = HashingUtils::HashString("RESOURCE_NAME_CONFLICT");
-        static const int PRICING_RULE_IN_PRICING_PLAN_CONFLICT_HASH = HashingUtils::HashString("PRICING_RULE_IN_PRICING_PLAN_CONFLICT");
-        static const int PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT_HASH = HashingUtils::HashString("PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT");
-        static const int PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT_HASH = HashingUtils::HashString("PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT");
-        static const int WRITE_CONFLICT_RETRY_HASH = HashingUtils::HashString("WRITE_CONFLICT_RETRY");
+        static constexpr uint32_t RESOURCE_NAME_CONFLICT_HASH = ConstExprHashingUtils::HashString("RESOURCE_NAME_CONFLICT");
+        static constexpr uint32_t PRICING_RULE_IN_PRICING_PLAN_CONFLICT_HASH = ConstExprHashingUtils::HashString("PRICING_RULE_IN_PRICING_PLAN_CONFLICT");
+        static constexpr uint32_t PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT_HASH = ConstExprHashingUtils::HashString("PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT");
+        static constexpr uint32_t PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT_HASH = ConstExprHashingUtils::HashString("PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT");
+        static constexpr uint32_t WRITE_CONFLICT_RETRY_HASH = ConstExprHashingUtils::HashString("WRITE_CONFLICT_RETRY");
 
 
         ConflictExceptionReason GetConflictExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RESOURCE_NAME_CONFLICT_HASH)
           {
             return ConflictExceptionReason::RESOURCE_NAME_CONFLICT;

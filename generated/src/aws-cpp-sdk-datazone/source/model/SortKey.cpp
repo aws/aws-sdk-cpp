@@ -20,13 +20,13 @@ namespace Aws
       namespace SortKeyMapper
       {
 
-        static const int CREATED_AT_HASH = HashingUtils::HashString("CREATED_AT");
-        static const int UPDATED_AT_HASH = HashingUtils::HashString("UPDATED_AT");
+        static constexpr uint32_t CREATED_AT_HASH = ConstExprHashingUtils::HashString("CREATED_AT");
+        static constexpr uint32_t UPDATED_AT_HASH = ConstExprHashingUtils::HashString("UPDATED_AT");
 
 
         SortKey GetSortKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATED_AT_HASH)
           {
             return SortKey::CREATED_AT;

@@ -20,22 +20,22 @@ namespace Aws
       namespace IndexFieldTypeMapper
       {
 
-        static const int int__HASH = HashingUtils::HashString("int");
-        static const int double__HASH = HashingUtils::HashString("double");
-        static const int literal_HASH = HashingUtils::HashString("literal");
-        static const int text_HASH = HashingUtils::HashString("text");
-        static const int date_HASH = HashingUtils::HashString("date");
-        static const int latlon_HASH = HashingUtils::HashString("latlon");
-        static const int int_array_HASH = HashingUtils::HashString("int-array");
-        static const int double_array_HASH = HashingUtils::HashString("double-array");
-        static const int literal_array_HASH = HashingUtils::HashString("literal-array");
-        static const int text_array_HASH = HashingUtils::HashString("text-array");
-        static const int date_array_HASH = HashingUtils::HashString("date-array");
+        static constexpr uint32_t int__HASH = ConstExprHashingUtils::HashString("int");
+        static constexpr uint32_t double__HASH = ConstExprHashingUtils::HashString("double");
+        static constexpr uint32_t literal_HASH = ConstExprHashingUtils::HashString("literal");
+        static constexpr uint32_t text_HASH = ConstExprHashingUtils::HashString("text");
+        static constexpr uint32_t date_HASH = ConstExprHashingUtils::HashString("date");
+        static constexpr uint32_t latlon_HASH = ConstExprHashingUtils::HashString("latlon");
+        static constexpr uint32_t int_array_HASH = ConstExprHashingUtils::HashString("int-array");
+        static constexpr uint32_t double_array_HASH = ConstExprHashingUtils::HashString("double-array");
+        static constexpr uint32_t literal_array_HASH = ConstExprHashingUtils::HashString("literal-array");
+        static constexpr uint32_t text_array_HASH = ConstExprHashingUtils::HashString("text-array");
+        static constexpr uint32_t date_array_HASH = ConstExprHashingUtils::HashString("date-array");
 
 
         IndexFieldType GetIndexFieldTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == int__HASH)
           {
             return IndexFieldType::int_;

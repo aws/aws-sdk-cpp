@@ -20,15 +20,15 @@ namespace Aws
       namespace UserRoleMapper
       {
 
-        static const int USER_HASH = HashingUtils::HashString("USER");
-        static const int RESOURCE_HASH = HashingUtils::HashString("RESOURCE");
-        static const int SYSTEM_USER_HASH = HashingUtils::HashString("SYSTEM_USER");
-        static const int REMOTE_USER_HASH = HashingUtils::HashString("REMOTE_USER");
+        static constexpr uint32_t USER_HASH = ConstExprHashingUtils::HashString("USER");
+        static constexpr uint32_t RESOURCE_HASH = ConstExprHashingUtils::HashString("RESOURCE");
+        static constexpr uint32_t SYSTEM_USER_HASH = ConstExprHashingUtils::HashString("SYSTEM_USER");
+        static constexpr uint32_t REMOTE_USER_HASH = ConstExprHashingUtils::HashString("REMOTE_USER");
 
 
         UserRole GetUserRoleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USER_HASH)
           {
             return UserRole::USER;

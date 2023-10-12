@@ -20,14 +20,14 @@ namespace Aws
       namespace ApplicationVersionLifecycleMapper
       {
 
-        static const int Creating_HASH = HashingUtils::HashString("Creating");
-        static const int Available_HASH = HashingUtils::HashString("Available");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t Creating_HASH = ConstExprHashingUtils::HashString("Creating");
+        static constexpr uint32_t Available_HASH = ConstExprHashingUtils::HashString("Available");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         ApplicationVersionLifecycle GetApplicationVersionLifecycleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Creating_HASH)
           {
             return ApplicationVersionLifecycle::Creating;

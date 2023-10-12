@@ -20,12 +20,12 @@ namespace Aws
       namespace AssociatedResourceTypeMapper
       {
 
-        static const int CLOUDFRONT_HASH = HashingUtils::HashString("CLOUDFRONT");
+        static constexpr uint32_t CLOUDFRONT_HASH = ConstExprHashingUtils::HashString("CLOUDFRONT");
 
 
         AssociatedResourceType GetAssociatedResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLOUDFRONT_HASH)
           {
             return AssociatedResourceType::CLOUDFRONT;

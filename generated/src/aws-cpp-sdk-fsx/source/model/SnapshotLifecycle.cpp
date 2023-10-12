@@ -20,15 +20,15 @@ namespace Aws
       namespace SnapshotLifecycleMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
 
 
         SnapshotLifecycle GetSnapshotLifecycleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return SnapshotLifecycle::PENDING;

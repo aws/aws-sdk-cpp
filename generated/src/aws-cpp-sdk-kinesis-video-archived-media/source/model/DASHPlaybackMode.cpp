@@ -20,14 +20,14 @@ namespace Aws
       namespace DASHPlaybackModeMapper
       {
 
-        static const int LIVE_HASH = HashingUtils::HashString("LIVE");
-        static const int LIVE_REPLAY_HASH = HashingUtils::HashString("LIVE_REPLAY");
-        static const int ON_DEMAND_HASH = HashingUtils::HashString("ON_DEMAND");
+        static constexpr uint32_t LIVE_HASH = ConstExprHashingUtils::HashString("LIVE");
+        static constexpr uint32_t LIVE_REPLAY_HASH = ConstExprHashingUtils::HashString("LIVE_REPLAY");
+        static constexpr uint32_t ON_DEMAND_HASH = ConstExprHashingUtils::HashString("ON_DEMAND");
 
 
         DASHPlaybackMode GetDASHPlaybackModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LIVE_HASH)
           {
             return DASHPlaybackMode::LIVE;

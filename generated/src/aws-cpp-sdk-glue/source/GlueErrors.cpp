@@ -47,41 +47,41 @@ template<> AWS_GLUE_API FederationSourceException GlueError::GetModeledError()
 namespace GlueErrorMapper
 {
 
-static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int FEDERATION_SOURCE_RETRYABLE_HASH = HashingUtils::HashString("FederationSourceRetryableException");
-static const int ILLEGAL_BLUEPRINT_STATE_HASH = HashingUtils::HashString("IllegalBlueprintStateException");
-static const int SCHEDULER_RUNNING_HASH = HashingUtils::HashString("SchedulerRunningException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int CRAWLER_RUNNING_HASH = HashingUtils::HashString("CrawlerRunningException");
-static const int GLUE_ENCRYPTION_HASH = HashingUtils::HashString("GlueEncryptionException");
-static const int M_L_TRANSFORM_NOT_READY_HASH = HashingUtils::HashString("MLTransformNotReadyException");
-static const int PERMISSION_TYPE_MISMATCH_HASH = HashingUtils::HashString("PermissionTypeMismatchException");
-static const int RESOURCE_NUMBER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceNumberLimitExceededException");
-static const int OPERATION_TIMEOUT_HASH = HashingUtils::HashString("OperationTimeoutException");
-static const int VERSION_MISMATCH_HASH = HashingUtils::HashString("VersionMismatchException");
-static const int CRAWLER_NOT_RUNNING_HASH = HashingUtils::HashString("CrawlerNotRunningException");
-static const int SCHEDULER_NOT_RUNNING_HASH = HashingUtils::HashString("SchedulerNotRunningException");
-static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
-static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
-static const int CONDITION_CHECK_FAILURE_HASH = HashingUtils::HashString("ConditionCheckFailureException");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
-static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
-static const int FEDERATED_RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("FederatedResourceAlreadyExistsException");
-static const int ILLEGAL_WORKFLOW_STATE_HASH = HashingUtils::HashString("IllegalWorkflowStateException");
-static const int ENTITY_NOT_FOUND_HASH = HashingUtils::HashString("EntityNotFoundException");
-static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
-static const int SCHEDULER_TRANSITIONING_HASH = HashingUtils::HashString("SchedulerTransitioningException");
-static const int CRAWLER_STOPPING_HASH = HashingUtils::HashString("CrawlerStoppingException");
-static const int NO_SCHEDULE_HASH = HashingUtils::HashString("NoScheduleException");
-static const int CONCURRENT_RUNS_EXCEEDED_HASH = HashingUtils::HashString("ConcurrentRunsExceededException");
-static const int ILLEGAL_SESSION_STATE_HASH = HashingUtils::HashString("IllegalSessionStateException");
-static const int FEDERATION_SOURCE_HASH = HashingUtils::HashString("FederationSourceException");
+static constexpr uint32_t RESOURCE_NOT_READY_HASH = ConstExprHashingUtils::HashString("ResourceNotReadyException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t FEDERATION_SOURCE_RETRYABLE_HASH = ConstExprHashingUtils::HashString("FederationSourceRetryableException");
+static constexpr uint32_t ILLEGAL_BLUEPRINT_STATE_HASH = ConstExprHashingUtils::HashString("IllegalBlueprintStateException");
+static constexpr uint32_t SCHEDULER_RUNNING_HASH = ConstExprHashingUtils::HashString("SchedulerRunningException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t CRAWLER_RUNNING_HASH = ConstExprHashingUtils::HashString("CrawlerRunningException");
+static constexpr uint32_t GLUE_ENCRYPTION_HASH = ConstExprHashingUtils::HashString("GlueEncryptionException");
+static constexpr uint32_t M_L_TRANSFORM_NOT_READY_HASH = ConstExprHashingUtils::HashString("MLTransformNotReadyException");
+static constexpr uint32_t PERMISSION_TYPE_MISMATCH_HASH = ConstExprHashingUtils::HashString("PermissionTypeMismatchException");
+static constexpr uint32_t RESOURCE_NUMBER_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ResourceNumberLimitExceededException");
+static constexpr uint32_t OPERATION_TIMEOUT_HASH = ConstExprHashingUtils::HashString("OperationTimeoutException");
+static constexpr uint32_t VERSION_MISMATCH_HASH = ConstExprHashingUtils::HashString("VersionMismatchException");
+static constexpr uint32_t CRAWLER_NOT_RUNNING_HASH = ConstExprHashingUtils::HashString("CrawlerNotRunningException");
+static constexpr uint32_t SCHEDULER_NOT_RUNNING_HASH = ConstExprHashingUtils::HashString("SchedulerNotRunningException");
+static constexpr uint32_t IDEMPOTENT_PARAMETER_MISMATCH_HASH = ConstExprHashingUtils::HashString("IdempotentParameterMismatchException");
+static constexpr uint32_t ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("AlreadyExistsException");
+static constexpr uint32_t CONDITION_CHECK_FAILURE_HASH = ConstExprHashingUtils::HashString("ConditionCheckFailureException");
+static constexpr uint32_t INVALID_INPUT_HASH = ConstExprHashingUtils::HashString("InvalidInputException");
+static constexpr uint32_t INTERNAL_SERVICE_HASH = ConstExprHashingUtils::HashString("InternalServiceException");
+static constexpr uint32_t FEDERATED_RESOURCE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("FederatedResourceAlreadyExistsException");
+static constexpr uint32_t ILLEGAL_WORKFLOW_STATE_HASH = ConstExprHashingUtils::HashString("IllegalWorkflowStateException");
+static constexpr uint32_t ENTITY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("EntityNotFoundException");
+static constexpr uint32_t INVALID_STATE_HASH = ConstExprHashingUtils::HashString("InvalidStateException");
+static constexpr uint32_t SCHEDULER_TRANSITIONING_HASH = ConstExprHashingUtils::HashString("SchedulerTransitioningException");
+static constexpr uint32_t CRAWLER_STOPPING_HASH = ConstExprHashingUtils::HashString("CrawlerStoppingException");
+static constexpr uint32_t NO_SCHEDULE_HASH = ConstExprHashingUtils::HashString("NoScheduleException");
+static constexpr uint32_t CONCURRENT_RUNS_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ConcurrentRunsExceededException");
+static constexpr uint32_t ILLEGAL_SESSION_STATE_HASH = ConstExprHashingUtils::HashString("IllegalSessionStateException");
+static constexpr uint32_t FEDERATION_SOURCE_HASH = ConstExprHashingUtils::HashString("FederationSourceException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == RESOURCE_NOT_READY_HASH)
   {

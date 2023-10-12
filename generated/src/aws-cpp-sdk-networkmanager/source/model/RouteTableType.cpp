@@ -20,13 +20,13 @@ namespace Aws
       namespace RouteTableTypeMapper
       {
 
-        static const int TRANSIT_GATEWAY_ROUTE_TABLE_HASH = HashingUtils::HashString("TRANSIT_GATEWAY_ROUTE_TABLE");
-        static const int CORE_NETWORK_SEGMENT_HASH = HashingUtils::HashString("CORE_NETWORK_SEGMENT");
+        static constexpr uint32_t TRANSIT_GATEWAY_ROUTE_TABLE_HASH = ConstExprHashingUtils::HashString("TRANSIT_GATEWAY_ROUTE_TABLE");
+        static constexpr uint32_t CORE_NETWORK_SEGMENT_HASH = ConstExprHashingUtils::HashString("CORE_NETWORK_SEGMENT");
 
 
         RouteTableType GetRouteTableTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRANSIT_GATEWAY_ROUTE_TABLE_HASH)
           {
             return RouteTableType::TRANSIT_GATEWAY_ROUTE_TABLE;

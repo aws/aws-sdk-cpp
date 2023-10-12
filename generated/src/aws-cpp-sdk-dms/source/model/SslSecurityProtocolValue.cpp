@@ -20,13 +20,13 @@ namespace Aws
       namespace SslSecurityProtocolValueMapper
       {
 
-        static const int plaintext_HASH = HashingUtils::HashString("plaintext");
-        static const int ssl_encryption_HASH = HashingUtils::HashString("ssl-encryption");
+        static constexpr uint32_t plaintext_HASH = ConstExprHashingUtils::HashString("plaintext");
+        static constexpr uint32_t ssl_encryption_HASH = ConstExprHashingUtils::HashString("ssl-encryption");
 
 
         SslSecurityProtocolValue GetSslSecurityProtocolValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == plaintext_HASH)
           {
             return SslSecurityProtocolValue::plaintext;

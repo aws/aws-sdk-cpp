@@ -20,14 +20,14 @@ namespace Aws
       namespace EventScopeCodeMapper
       {
 
-        static const int PUBLIC__HASH = HashingUtils::HashString("PUBLIC");
-        static const int ACCOUNT_SPECIFIC_HASH = HashingUtils::HashString("ACCOUNT_SPECIFIC");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t PUBLIC__HASH = ConstExprHashingUtils::HashString("PUBLIC");
+        static constexpr uint32_t ACCOUNT_SPECIFIC_HASH = ConstExprHashingUtils::HashString("ACCOUNT_SPECIFIC");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         EventScopeCode GetEventScopeCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUBLIC__HASH)
           {
             return EventScopeCode::PUBLIC_;

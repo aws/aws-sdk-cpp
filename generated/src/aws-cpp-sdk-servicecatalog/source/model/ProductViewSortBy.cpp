@@ -20,14 +20,14 @@ namespace Aws
       namespace ProductViewSortByMapper
       {
 
-        static const int Title_HASH = HashingUtils::HashString("Title");
-        static const int VersionCount_HASH = HashingUtils::HashString("VersionCount");
-        static const int CreationDate_HASH = HashingUtils::HashString("CreationDate");
+        static constexpr uint32_t Title_HASH = ConstExprHashingUtils::HashString("Title");
+        static constexpr uint32_t VersionCount_HASH = ConstExprHashingUtils::HashString("VersionCount");
+        static constexpr uint32_t CreationDate_HASH = ConstExprHashingUtils::HashString("CreationDate");
 
 
         ProductViewSortBy GetProductViewSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Title_HASH)
           {
             return ProductViewSortBy::Title;

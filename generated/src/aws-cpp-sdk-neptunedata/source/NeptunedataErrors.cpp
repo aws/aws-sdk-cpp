@@ -257,41 +257,41 @@ template<> AWS_NEPTUNEDATA_API FailureByQueryException NeptunedataError::GetMode
 namespace NeptunedataErrorMapper
 {
 
-static const int QUERY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("QueryLimitExceededException");
-static const int EXPIRED_STREAM_HASH = HashingUtils::HashString("ExpiredStreamException");
-static const int QUERY_LIMIT_HASH = HashingUtils::HashString("QueryLimitException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int CANCELLED_BY_USER_HASH = HashingUtils::HashString("CancelledByUserException");
-static const int STREAM_RECORDS_NOT_FOUND_HASH = HashingUtils::HashString("StreamRecordsNotFoundException");
-static const int PARSING_HASH = HashingUtils::HashString("ParsingException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int ILLEGAL_ARGUMENT_HASH = HashingUtils::HashString("IllegalArgumentException");
-static const int BULK_LOAD_ID_NOT_FOUND_HASH = HashingUtils::HashString("BulkLoadIdNotFoundException");
-static const int INVALID_NUMERIC_DATA_HASH = HashingUtils::HashString("InvalidNumericDataException");
-static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
-static const int CONSTRAINT_VIOLATION_HASH = HashingUtils::HashString("ConstraintViolationException");
-static const int SERVER_SHUTDOWN_HASH = HashingUtils::HashString("ServerShutdownException");
-static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
-static const int LOAD_URL_ACCESS_DENIED_HASH = HashingUtils::HashString("LoadUrlAccessDeniedException");
-static const int S3_HASH = HashingUtils::HashString("S3Exception");
-static const int MALFORMED_QUERY_HASH = HashingUtils::HashString("MalformedQueryException");
-static const int QUERY_TOO_LARGE_HASH = HashingUtils::HashString("QueryTooLargeException");
-static const int READ_ONLY_VIOLATION_HASH = HashingUtils::HashString("ReadOnlyViolationException");
-static const int CLIENT_TIMEOUT_HASH = HashingUtils::HashString("ClientTimeoutException");
-static const int STATISTICS_NOT_AVAILABLE_HASH = HashingUtils::HashString("StatisticsNotAvailableException");
-static const int METHOD_NOT_ALLOWED_HASH = HashingUtils::HashString("MethodNotAllowedException");
-static const int MEMORY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("MemoryLimitExceededException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int M_L_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("MLResourceNotFoundException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
-static const int PRECONDITIONS_FAILED_HASH = HashingUtils::HashString("PreconditionsFailedException");
-static const int TIME_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TimeLimitExceededException");
-static const int FAILURE_BY_QUERY_HASH = HashingUtils::HashString("FailureByQueryException");
+static constexpr uint32_t QUERY_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("QueryLimitExceededException");
+static constexpr uint32_t EXPIRED_STREAM_HASH = ConstExprHashingUtils::HashString("ExpiredStreamException");
+static constexpr uint32_t QUERY_LIMIT_HASH = ConstExprHashingUtils::HashString("QueryLimitException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t CANCELLED_BY_USER_HASH = ConstExprHashingUtils::HashString("CancelledByUserException");
+static constexpr uint32_t STREAM_RECORDS_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("StreamRecordsNotFoundException");
+static constexpr uint32_t PARSING_HASH = ConstExprHashingUtils::HashString("ParsingException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t ILLEGAL_ARGUMENT_HASH = ConstExprHashingUtils::HashString("IllegalArgumentException");
+static constexpr uint32_t BULK_LOAD_ID_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("BulkLoadIdNotFoundException");
+static constexpr uint32_t INVALID_NUMERIC_DATA_HASH = ConstExprHashingUtils::HashString("InvalidNumericDataException");
+static constexpr uint32_t UNSUPPORTED_OPERATION_HASH = ConstExprHashingUtils::HashString("UnsupportedOperationException");
+static constexpr uint32_t CONSTRAINT_VIOLATION_HASH = ConstExprHashingUtils::HashString("ConstraintViolationException");
+static constexpr uint32_t SERVER_SHUTDOWN_HASH = ConstExprHashingUtils::HashString("ServerShutdownException");
+static constexpr uint32_t INVALID_ARGUMENT_HASH = ConstExprHashingUtils::HashString("InvalidArgumentException");
+static constexpr uint32_t LOAD_URL_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("LoadUrlAccessDeniedException");
+static constexpr uint32_t S3_HASH = ConstExprHashingUtils::HashString("S3Exception");
+static constexpr uint32_t MALFORMED_QUERY_HASH = ConstExprHashingUtils::HashString("MalformedQueryException");
+static constexpr uint32_t QUERY_TOO_LARGE_HASH = ConstExprHashingUtils::HashString("QueryTooLargeException");
+static constexpr uint32_t READ_ONLY_VIOLATION_HASH = ConstExprHashingUtils::HashString("ReadOnlyViolationException");
+static constexpr uint32_t CLIENT_TIMEOUT_HASH = ConstExprHashingUtils::HashString("ClientTimeoutException");
+static constexpr uint32_t STATISTICS_NOT_AVAILABLE_HASH = ConstExprHashingUtils::HashString("StatisticsNotAvailableException");
+static constexpr uint32_t METHOD_NOT_ALLOWED_HASH = ConstExprHashingUtils::HashString("MethodNotAllowedException");
+static constexpr uint32_t MEMORY_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MemoryLimitExceededException");
+static constexpr uint32_t TOO_MANY_REQUESTS_HASH = ConstExprHashingUtils::HashString("TooManyRequestsException");
+static constexpr uint32_t M_L_RESOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("MLResourceNotFoundException");
+static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BadRequestException");
+static constexpr uint32_t PRECONDITIONS_FAILED_HASH = ConstExprHashingUtils::HashString("PreconditionsFailedException");
+static constexpr uint32_t TIME_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("TimeLimitExceededException");
+static constexpr uint32_t FAILURE_BY_QUERY_HASH = ConstExprHashingUtils::HashString("FailureByQueryException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == QUERY_LIMIT_EXCEEDED_HASH)
   {

@@ -20,16 +20,16 @@ namespace Aws
       namespace SavingsPlanRateServiceCodeMapper
       {
 
-        static const int AmazonEC2_HASH = HashingUtils::HashString("AmazonEC2");
-        static const int AmazonECS_HASH = HashingUtils::HashString("AmazonECS");
-        static const int AmazonEKS_HASH = HashingUtils::HashString("AmazonEKS");
-        static const int AWSLambda_HASH = HashingUtils::HashString("AWSLambda");
-        static const int AmazonSageMaker_HASH = HashingUtils::HashString("AmazonSageMaker");
+        static constexpr uint32_t AmazonEC2_HASH = ConstExprHashingUtils::HashString("AmazonEC2");
+        static constexpr uint32_t AmazonECS_HASH = ConstExprHashingUtils::HashString("AmazonECS");
+        static constexpr uint32_t AmazonEKS_HASH = ConstExprHashingUtils::HashString("AmazonEKS");
+        static constexpr uint32_t AWSLambda_HASH = ConstExprHashingUtils::HashString("AWSLambda");
+        static constexpr uint32_t AmazonSageMaker_HASH = ConstExprHashingUtils::HashString("AmazonSageMaker");
 
 
         SavingsPlanRateServiceCode GetSavingsPlanRateServiceCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AmazonEC2_HASH)
           {
             return SavingsPlanRateServiceCode::AmazonEC2;

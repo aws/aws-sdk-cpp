@@ -20,14 +20,14 @@ namespace Aws
       namespace XavcHdProfileBitrateClassMapper
       {
 
-        static const int BITRATE_CLASS_25_HASH = HashingUtils::HashString("BITRATE_CLASS_25");
-        static const int BITRATE_CLASS_35_HASH = HashingUtils::HashString("BITRATE_CLASS_35");
-        static const int BITRATE_CLASS_50_HASH = HashingUtils::HashString("BITRATE_CLASS_50");
+        static constexpr uint32_t BITRATE_CLASS_25_HASH = ConstExprHashingUtils::HashString("BITRATE_CLASS_25");
+        static constexpr uint32_t BITRATE_CLASS_35_HASH = ConstExprHashingUtils::HashString("BITRATE_CLASS_35");
+        static constexpr uint32_t BITRATE_CLASS_50_HASH = ConstExprHashingUtils::HashString("BITRATE_CLASS_50");
 
 
         XavcHdProfileBitrateClass GetXavcHdProfileBitrateClassForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BITRATE_CLASS_25_HASH)
           {
             return XavcHdProfileBitrateClass::BITRATE_CLASS_25;

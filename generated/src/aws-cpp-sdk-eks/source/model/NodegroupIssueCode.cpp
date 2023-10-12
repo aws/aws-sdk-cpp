@@ -20,44 +20,44 @@ namespace Aws
       namespace NodegroupIssueCodeMapper
       {
 
-        static const int AutoScalingGroupNotFound_HASH = HashingUtils::HashString("AutoScalingGroupNotFound");
-        static const int AutoScalingGroupInvalidConfiguration_HASH = HashingUtils::HashString("AutoScalingGroupInvalidConfiguration");
-        static const int Ec2SecurityGroupNotFound_HASH = HashingUtils::HashString("Ec2SecurityGroupNotFound");
-        static const int Ec2SecurityGroupDeletionFailure_HASH = HashingUtils::HashString("Ec2SecurityGroupDeletionFailure");
-        static const int Ec2LaunchTemplateNotFound_HASH = HashingUtils::HashString("Ec2LaunchTemplateNotFound");
-        static const int Ec2LaunchTemplateVersionMismatch_HASH = HashingUtils::HashString("Ec2LaunchTemplateVersionMismatch");
-        static const int Ec2SubnetNotFound_HASH = HashingUtils::HashString("Ec2SubnetNotFound");
-        static const int Ec2SubnetInvalidConfiguration_HASH = HashingUtils::HashString("Ec2SubnetInvalidConfiguration");
-        static const int IamInstanceProfileNotFound_HASH = HashingUtils::HashString("IamInstanceProfileNotFound");
-        static const int Ec2SubnetMissingIpv6Assignment_HASH = HashingUtils::HashString("Ec2SubnetMissingIpv6Assignment");
-        static const int IamLimitExceeded_HASH = HashingUtils::HashString("IamLimitExceeded");
-        static const int IamNodeRoleNotFound_HASH = HashingUtils::HashString("IamNodeRoleNotFound");
-        static const int NodeCreationFailure_HASH = HashingUtils::HashString("NodeCreationFailure");
-        static const int AsgInstanceLaunchFailures_HASH = HashingUtils::HashString("AsgInstanceLaunchFailures");
-        static const int InstanceLimitExceeded_HASH = HashingUtils::HashString("InstanceLimitExceeded");
-        static const int InsufficientFreeAddresses_HASH = HashingUtils::HashString("InsufficientFreeAddresses");
-        static const int AccessDenied_HASH = HashingUtils::HashString("AccessDenied");
-        static const int InternalFailure_HASH = HashingUtils::HashString("InternalFailure");
-        static const int ClusterUnreachable_HASH = HashingUtils::HashString("ClusterUnreachable");
-        static const int AmiIdNotFound_HASH = HashingUtils::HashString("AmiIdNotFound");
-        static const int AutoScalingGroupOptInRequired_HASH = HashingUtils::HashString("AutoScalingGroupOptInRequired");
-        static const int AutoScalingGroupRateLimitExceeded_HASH = HashingUtils::HashString("AutoScalingGroupRateLimitExceeded");
-        static const int Ec2LaunchTemplateDeletionFailure_HASH = HashingUtils::HashString("Ec2LaunchTemplateDeletionFailure");
-        static const int Ec2LaunchTemplateInvalidConfiguration_HASH = HashingUtils::HashString("Ec2LaunchTemplateInvalidConfiguration");
-        static const int Ec2LaunchTemplateMaxLimitExceeded_HASH = HashingUtils::HashString("Ec2LaunchTemplateMaxLimitExceeded");
-        static const int Ec2SubnetListTooLong_HASH = HashingUtils::HashString("Ec2SubnetListTooLong");
-        static const int IamThrottling_HASH = HashingUtils::HashString("IamThrottling");
-        static const int NodeTerminationFailure_HASH = HashingUtils::HashString("NodeTerminationFailure");
-        static const int PodEvictionFailure_HASH = HashingUtils::HashString("PodEvictionFailure");
-        static const int SourceEc2LaunchTemplateNotFound_HASH = HashingUtils::HashString("SourceEc2LaunchTemplateNotFound");
-        static const int LimitExceeded_HASH = HashingUtils::HashString("LimitExceeded");
-        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
-        static const int AutoScalingGroupInstanceRefreshActive_HASH = HashingUtils::HashString("AutoScalingGroupInstanceRefreshActive");
+        static constexpr uint32_t AutoScalingGroupNotFound_HASH = ConstExprHashingUtils::HashString("AutoScalingGroupNotFound");
+        static constexpr uint32_t AutoScalingGroupInvalidConfiguration_HASH = ConstExprHashingUtils::HashString("AutoScalingGroupInvalidConfiguration");
+        static constexpr uint32_t Ec2SecurityGroupNotFound_HASH = ConstExprHashingUtils::HashString("Ec2SecurityGroupNotFound");
+        static constexpr uint32_t Ec2SecurityGroupDeletionFailure_HASH = ConstExprHashingUtils::HashString("Ec2SecurityGroupDeletionFailure");
+        static constexpr uint32_t Ec2LaunchTemplateNotFound_HASH = ConstExprHashingUtils::HashString("Ec2LaunchTemplateNotFound");
+        static constexpr uint32_t Ec2LaunchTemplateVersionMismatch_HASH = ConstExprHashingUtils::HashString("Ec2LaunchTemplateVersionMismatch");
+        static constexpr uint32_t Ec2SubnetNotFound_HASH = ConstExprHashingUtils::HashString("Ec2SubnetNotFound");
+        static constexpr uint32_t Ec2SubnetInvalidConfiguration_HASH = ConstExprHashingUtils::HashString("Ec2SubnetInvalidConfiguration");
+        static constexpr uint32_t IamInstanceProfileNotFound_HASH = ConstExprHashingUtils::HashString("IamInstanceProfileNotFound");
+        static constexpr uint32_t Ec2SubnetMissingIpv6Assignment_HASH = ConstExprHashingUtils::HashString("Ec2SubnetMissingIpv6Assignment");
+        static constexpr uint32_t IamLimitExceeded_HASH = ConstExprHashingUtils::HashString("IamLimitExceeded");
+        static constexpr uint32_t IamNodeRoleNotFound_HASH = ConstExprHashingUtils::HashString("IamNodeRoleNotFound");
+        static constexpr uint32_t NodeCreationFailure_HASH = ConstExprHashingUtils::HashString("NodeCreationFailure");
+        static constexpr uint32_t AsgInstanceLaunchFailures_HASH = ConstExprHashingUtils::HashString("AsgInstanceLaunchFailures");
+        static constexpr uint32_t InstanceLimitExceeded_HASH = ConstExprHashingUtils::HashString("InstanceLimitExceeded");
+        static constexpr uint32_t InsufficientFreeAddresses_HASH = ConstExprHashingUtils::HashString("InsufficientFreeAddresses");
+        static constexpr uint32_t AccessDenied_HASH = ConstExprHashingUtils::HashString("AccessDenied");
+        static constexpr uint32_t InternalFailure_HASH = ConstExprHashingUtils::HashString("InternalFailure");
+        static constexpr uint32_t ClusterUnreachable_HASH = ConstExprHashingUtils::HashString("ClusterUnreachable");
+        static constexpr uint32_t AmiIdNotFound_HASH = ConstExprHashingUtils::HashString("AmiIdNotFound");
+        static constexpr uint32_t AutoScalingGroupOptInRequired_HASH = ConstExprHashingUtils::HashString("AutoScalingGroupOptInRequired");
+        static constexpr uint32_t AutoScalingGroupRateLimitExceeded_HASH = ConstExprHashingUtils::HashString("AutoScalingGroupRateLimitExceeded");
+        static constexpr uint32_t Ec2LaunchTemplateDeletionFailure_HASH = ConstExprHashingUtils::HashString("Ec2LaunchTemplateDeletionFailure");
+        static constexpr uint32_t Ec2LaunchTemplateInvalidConfiguration_HASH = ConstExprHashingUtils::HashString("Ec2LaunchTemplateInvalidConfiguration");
+        static constexpr uint32_t Ec2LaunchTemplateMaxLimitExceeded_HASH = ConstExprHashingUtils::HashString("Ec2LaunchTemplateMaxLimitExceeded");
+        static constexpr uint32_t Ec2SubnetListTooLong_HASH = ConstExprHashingUtils::HashString("Ec2SubnetListTooLong");
+        static constexpr uint32_t IamThrottling_HASH = ConstExprHashingUtils::HashString("IamThrottling");
+        static constexpr uint32_t NodeTerminationFailure_HASH = ConstExprHashingUtils::HashString("NodeTerminationFailure");
+        static constexpr uint32_t PodEvictionFailure_HASH = ConstExprHashingUtils::HashString("PodEvictionFailure");
+        static constexpr uint32_t SourceEc2LaunchTemplateNotFound_HASH = ConstExprHashingUtils::HashString("SourceEc2LaunchTemplateNotFound");
+        static constexpr uint32_t LimitExceeded_HASH = ConstExprHashingUtils::HashString("LimitExceeded");
+        static constexpr uint32_t Unknown_HASH = ConstExprHashingUtils::HashString("Unknown");
+        static constexpr uint32_t AutoScalingGroupInstanceRefreshActive_HASH = ConstExprHashingUtils::HashString("AutoScalingGroupInstanceRefreshActive");
 
 
         NodegroupIssueCode GetNodegroupIssueCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AutoScalingGroupNotFound_HASH)
           {
             return NodegroupIssueCode::AutoScalingGroupNotFound;

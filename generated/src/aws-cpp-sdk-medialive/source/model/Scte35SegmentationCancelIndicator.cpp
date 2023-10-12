@@ -20,13 +20,13 @@ namespace Aws
       namespace Scte35SegmentationCancelIndicatorMapper
       {
 
-        static const int SEGMENTATION_EVENT_NOT_CANCELED_HASH = HashingUtils::HashString("SEGMENTATION_EVENT_NOT_CANCELED");
-        static const int SEGMENTATION_EVENT_CANCELED_HASH = HashingUtils::HashString("SEGMENTATION_EVENT_CANCELED");
+        static constexpr uint32_t SEGMENTATION_EVENT_NOT_CANCELED_HASH = ConstExprHashingUtils::HashString("SEGMENTATION_EVENT_NOT_CANCELED");
+        static constexpr uint32_t SEGMENTATION_EVENT_CANCELED_HASH = ConstExprHashingUtils::HashString("SEGMENTATION_EVENT_CANCELED");
 
 
         Scte35SegmentationCancelIndicator GetScte35SegmentationCancelIndicatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SEGMENTATION_EVENT_NOT_CANCELED_HASH)
           {
             return Scte35SegmentationCancelIndicator::SEGMENTATION_EVENT_NOT_CANCELED;

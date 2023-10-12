@@ -20,17 +20,17 @@ namespace Aws
       namespace EphemerisStatusMapper
       {
 
-        static const int VALIDATING_HASH = HashingUtils::HashString("VALIDATING");
-        static const int INVALID_HASH = HashingUtils::HashString("INVALID");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
+        static constexpr uint32_t VALIDATING_HASH = ConstExprHashingUtils::HashString("VALIDATING");
+        static constexpr uint32_t INVALID_HASH = ConstExprHashingUtils::HashString("INVALID");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t ENABLED_HASH = ConstExprHashingUtils::HashString("ENABLED");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
+        static constexpr uint32_t EXPIRED_HASH = ConstExprHashingUtils::HashString("EXPIRED");
 
 
         EphemerisStatus GetEphemerisStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VALIDATING_HASH)
           {
             return EphemerisStatus::VALIDATING;

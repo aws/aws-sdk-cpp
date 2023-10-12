@@ -20,13 +20,13 @@ namespace Aws
       namespace DefinitionTypeMapper
       {
 
-        static const int WORKLOAD_METADATA_HASH = HashingUtils::HashString("WORKLOAD_METADATA");
-        static const int APP_REGISTRY_HASH = HashingUtils::HashString("APP_REGISTRY");
+        static constexpr uint32_t WORKLOAD_METADATA_HASH = ConstExprHashingUtils::HashString("WORKLOAD_METADATA");
+        static constexpr uint32_t APP_REGISTRY_HASH = ConstExprHashingUtils::HashString("APP_REGISTRY");
 
 
         DefinitionType GetDefinitionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WORKLOAD_METADATA_HASH)
           {
             return DefinitionType::WORKLOAD_METADATA;

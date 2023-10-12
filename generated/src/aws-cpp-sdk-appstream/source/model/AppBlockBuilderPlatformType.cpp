@@ -20,12 +20,12 @@ namespace Aws
       namespace AppBlockBuilderPlatformTypeMapper
       {
 
-        static const int WINDOWS_SERVER_2019_HASH = HashingUtils::HashString("WINDOWS_SERVER_2019");
+        static constexpr uint32_t WINDOWS_SERVER_2019_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER_2019");
 
 
         AppBlockBuilderPlatformType GetAppBlockBuilderPlatformTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WINDOWS_SERVER_2019_HASH)
           {
             return AppBlockBuilderPlatformType::WINDOWS_SERVER_2019;

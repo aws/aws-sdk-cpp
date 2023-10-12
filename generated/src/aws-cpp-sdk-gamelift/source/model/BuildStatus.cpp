@@ -20,14 +20,14 @@ namespace Aws
       namespace BuildStatusMapper
       {
 
-        static const int INITIALIZED_HASH = HashingUtils::HashString("INITIALIZED");
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t INITIALIZED_HASH = ConstExprHashingUtils::HashString("INITIALIZED");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         BuildStatus GetBuildStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INITIALIZED_HASH)
           {
             return BuildStatus::INITIALIZED;

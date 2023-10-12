@@ -20,15 +20,15 @@ namespace Aws
       namespace QueryParserMapper
       {
 
-        static const int simple_HASH = HashingUtils::HashString("simple");
-        static const int structured_HASH = HashingUtils::HashString("structured");
-        static const int lucene_HASH = HashingUtils::HashString("lucene");
-        static const int dismax_HASH = HashingUtils::HashString("dismax");
+        static constexpr uint32_t simple_HASH = ConstExprHashingUtils::HashString("simple");
+        static constexpr uint32_t structured_HASH = ConstExprHashingUtils::HashString("structured");
+        static constexpr uint32_t lucene_HASH = ConstExprHashingUtils::HashString("lucene");
+        static constexpr uint32_t dismax_HASH = ConstExprHashingUtils::HashString("dismax");
 
 
         QueryParser GetQueryParserForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == simple_HASH)
           {
             return QueryParser::simple;

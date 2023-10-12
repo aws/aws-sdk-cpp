@@ -20,18 +20,18 @@ namespace Aws
       namespace GeoSpatialDataRoleMapper
       {
 
-        static const int COUNTRY_HASH = HashingUtils::HashString("COUNTRY");
-        static const int STATE_HASH = HashingUtils::HashString("STATE");
-        static const int COUNTY_HASH = HashingUtils::HashString("COUNTY");
-        static const int CITY_HASH = HashingUtils::HashString("CITY");
-        static const int POSTCODE_HASH = HashingUtils::HashString("POSTCODE");
-        static const int LONGITUDE_HASH = HashingUtils::HashString("LONGITUDE");
-        static const int LATITUDE_HASH = HashingUtils::HashString("LATITUDE");
+        static constexpr uint32_t COUNTRY_HASH = ConstExprHashingUtils::HashString("COUNTRY");
+        static constexpr uint32_t STATE_HASH = ConstExprHashingUtils::HashString("STATE");
+        static constexpr uint32_t COUNTY_HASH = ConstExprHashingUtils::HashString("COUNTY");
+        static constexpr uint32_t CITY_HASH = ConstExprHashingUtils::HashString("CITY");
+        static constexpr uint32_t POSTCODE_HASH = ConstExprHashingUtils::HashString("POSTCODE");
+        static constexpr uint32_t LONGITUDE_HASH = ConstExprHashingUtils::HashString("LONGITUDE");
+        static constexpr uint32_t LATITUDE_HASH = ConstExprHashingUtils::HashString("LATITUDE");
 
 
         GeoSpatialDataRole GetGeoSpatialDataRoleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COUNTRY_HASH)
           {
             return GeoSpatialDataRole::COUNTRY;

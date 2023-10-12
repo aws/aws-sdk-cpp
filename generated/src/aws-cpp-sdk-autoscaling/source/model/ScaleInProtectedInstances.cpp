@@ -20,14 +20,14 @@ namespace Aws
       namespace ScaleInProtectedInstancesMapper
       {
 
-        static const int Refresh_HASH = HashingUtils::HashString("Refresh");
-        static const int Ignore_HASH = HashingUtils::HashString("Ignore");
-        static const int Wait_HASH = HashingUtils::HashString("Wait");
+        static constexpr uint32_t Refresh_HASH = ConstExprHashingUtils::HashString("Refresh");
+        static constexpr uint32_t Ignore_HASH = ConstExprHashingUtils::HashString("Ignore");
+        static constexpr uint32_t Wait_HASH = ConstExprHashingUtils::HashString("Wait");
 
 
         ScaleInProtectedInstances GetScaleInProtectedInstancesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Refresh_HASH)
           {
             return ScaleInProtectedInstances::Refresh;

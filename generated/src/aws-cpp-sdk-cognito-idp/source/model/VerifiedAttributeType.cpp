@@ -20,13 +20,13 @@ namespace Aws
       namespace VerifiedAttributeTypeMapper
       {
 
-        static const int phone_number_HASH = HashingUtils::HashString("phone_number");
-        static const int email_HASH = HashingUtils::HashString("email");
+        static constexpr uint32_t phone_number_HASH = ConstExprHashingUtils::HashString("phone_number");
+        static constexpr uint32_t email_HASH = ConstExprHashingUtils::HashString("email");
 
 
         VerifiedAttributeType GetVerifiedAttributeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == phone_number_HASH)
           {
             return VerifiedAttributeType::phone_number;

@@ -20,13 +20,13 @@ namespace Aws
       namespace AutomationModeMapper
       {
 
-        static const int full_HASH = HashingUtils::HashString("full");
-        static const int all_paused_HASH = HashingUtils::HashString("all-paused");
+        static constexpr uint32_t full_HASH = ConstExprHashingUtils::HashString("full");
+        static constexpr uint32_t all_paused_HASH = ConstExprHashingUtils::HashString("all-paused");
 
 
         AutomationMode GetAutomationModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == full_HASH)
           {
             return AutomationMode::full;

@@ -18,14 +18,14 @@ namespace MediaStoreData
 namespace MediaStoreDataErrorMapper
 {
 
-static const int REQUESTED_RANGE_NOT_SATISFIABLE_HASH = HashingUtils::HashString("RequestedRangeNotSatisfiableException");
-static const int CONTAINER_NOT_FOUND_HASH = HashingUtils::HashString("ContainerNotFoundException");
-static const int OBJECT_NOT_FOUND_HASH = HashingUtils::HashString("ObjectNotFoundException");
+static constexpr uint32_t REQUESTED_RANGE_NOT_SATISFIABLE_HASH = ConstExprHashingUtils::HashString("RequestedRangeNotSatisfiableException");
+static constexpr uint32_t CONTAINER_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ContainerNotFoundException");
+static constexpr uint32_t OBJECT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ObjectNotFoundException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == REQUESTED_RANGE_NOT_SATISFIABLE_HASH)
   {

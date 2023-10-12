@@ -20,36 +20,36 @@ namespace Aws
       namespace MetricNameMapper
       {
 
-        static const int CPUUtilization_HASH = HashingUtils::HashString("CPUUtilization");
-        static const int NetworkIn_HASH = HashingUtils::HashString("NetworkIn");
-        static const int NetworkOut_HASH = HashingUtils::HashString("NetworkOut");
-        static const int StatusCheckFailed_HASH = HashingUtils::HashString("StatusCheckFailed");
-        static const int StatusCheckFailed_Instance_HASH = HashingUtils::HashString("StatusCheckFailed_Instance");
-        static const int StatusCheckFailed_System_HASH = HashingUtils::HashString("StatusCheckFailed_System");
-        static const int ClientTLSNegotiationErrorCount_HASH = HashingUtils::HashString("ClientTLSNegotiationErrorCount");
-        static const int HealthyHostCount_HASH = HashingUtils::HashString("HealthyHostCount");
-        static const int UnhealthyHostCount_HASH = HashingUtils::HashString("UnhealthyHostCount");
-        static const int HTTPCode_LB_4XX_Count_HASH = HashingUtils::HashString("HTTPCode_LB_4XX_Count");
-        static const int HTTPCode_LB_5XX_Count_HASH = HashingUtils::HashString("HTTPCode_LB_5XX_Count");
-        static const int HTTPCode_Instance_2XX_Count_HASH = HashingUtils::HashString("HTTPCode_Instance_2XX_Count");
-        static const int HTTPCode_Instance_3XX_Count_HASH = HashingUtils::HashString("HTTPCode_Instance_3XX_Count");
-        static const int HTTPCode_Instance_4XX_Count_HASH = HashingUtils::HashString("HTTPCode_Instance_4XX_Count");
-        static const int HTTPCode_Instance_5XX_Count_HASH = HashingUtils::HashString("HTTPCode_Instance_5XX_Count");
-        static const int InstanceResponseTime_HASH = HashingUtils::HashString("InstanceResponseTime");
-        static const int RejectedConnectionCount_HASH = HashingUtils::HashString("RejectedConnectionCount");
-        static const int RequestCount_HASH = HashingUtils::HashString("RequestCount");
-        static const int DatabaseConnections_HASH = HashingUtils::HashString("DatabaseConnections");
-        static const int DiskQueueDepth_HASH = HashingUtils::HashString("DiskQueueDepth");
-        static const int FreeStorageSpace_HASH = HashingUtils::HashString("FreeStorageSpace");
-        static const int NetworkReceiveThroughput_HASH = HashingUtils::HashString("NetworkReceiveThroughput");
-        static const int NetworkTransmitThroughput_HASH = HashingUtils::HashString("NetworkTransmitThroughput");
-        static const int BurstCapacityTime_HASH = HashingUtils::HashString("BurstCapacityTime");
-        static const int BurstCapacityPercentage_HASH = HashingUtils::HashString("BurstCapacityPercentage");
+        static constexpr uint32_t CPUUtilization_HASH = ConstExprHashingUtils::HashString("CPUUtilization");
+        static constexpr uint32_t NetworkIn_HASH = ConstExprHashingUtils::HashString("NetworkIn");
+        static constexpr uint32_t NetworkOut_HASH = ConstExprHashingUtils::HashString("NetworkOut");
+        static constexpr uint32_t StatusCheckFailed_HASH = ConstExprHashingUtils::HashString("StatusCheckFailed");
+        static constexpr uint32_t StatusCheckFailed_Instance_HASH = ConstExprHashingUtils::HashString("StatusCheckFailed_Instance");
+        static constexpr uint32_t StatusCheckFailed_System_HASH = ConstExprHashingUtils::HashString("StatusCheckFailed_System");
+        static constexpr uint32_t ClientTLSNegotiationErrorCount_HASH = ConstExprHashingUtils::HashString("ClientTLSNegotiationErrorCount");
+        static constexpr uint32_t HealthyHostCount_HASH = ConstExprHashingUtils::HashString("HealthyHostCount");
+        static constexpr uint32_t UnhealthyHostCount_HASH = ConstExprHashingUtils::HashString("UnhealthyHostCount");
+        static constexpr uint32_t HTTPCode_LB_4XX_Count_HASH = ConstExprHashingUtils::HashString("HTTPCode_LB_4XX_Count");
+        static constexpr uint32_t HTTPCode_LB_5XX_Count_HASH = ConstExprHashingUtils::HashString("HTTPCode_LB_5XX_Count");
+        static constexpr uint32_t HTTPCode_Instance_2XX_Count_HASH = ConstExprHashingUtils::HashString("HTTPCode_Instance_2XX_Count");
+        static constexpr uint32_t HTTPCode_Instance_3XX_Count_HASH = ConstExprHashingUtils::HashString("HTTPCode_Instance_3XX_Count");
+        static constexpr uint32_t HTTPCode_Instance_4XX_Count_HASH = ConstExprHashingUtils::HashString("HTTPCode_Instance_4XX_Count");
+        static constexpr uint32_t HTTPCode_Instance_5XX_Count_HASH = ConstExprHashingUtils::HashString("HTTPCode_Instance_5XX_Count");
+        static constexpr uint32_t InstanceResponseTime_HASH = ConstExprHashingUtils::HashString("InstanceResponseTime");
+        static constexpr uint32_t RejectedConnectionCount_HASH = ConstExprHashingUtils::HashString("RejectedConnectionCount");
+        static constexpr uint32_t RequestCount_HASH = ConstExprHashingUtils::HashString("RequestCount");
+        static constexpr uint32_t DatabaseConnections_HASH = ConstExprHashingUtils::HashString("DatabaseConnections");
+        static constexpr uint32_t DiskQueueDepth_HASH = ConstExprHashingUtils::HashString("DiskQueueDepth");
+        static constexpr uint32_t FreeStorageSpace_HASH = ConstExprHashingUtils::HashString("FreeStorageSpace");
+        static constexpr uint32_t NetworkReceiveThroughput_HASH = ConstExprHashingUtils::HashString("NetworkReceiveThroughput");
+        static constexpr uint32_t NetworkTransmitThroughput_HASH = ConstExprHashingUtils::HashString("NetworkTransmitThroughput");
+        static constexpr uint32_t BurstCapacityTime_HASH = ConstExprHashingUtils::HashString("BurstCapacityTime");
+        static constexpr uint32_t BurstCapacityPercentage_HASH = ConstExprHashingUtils::HashString("BurstCapacityPercentage");
 
 
         MetricName GetMetricNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CPUUtilization_HASH)
           {
             return MetricName::CPUUtilization;

@@ -20,12 +20,12 @@ namespace Aws
       namespace EirpUnitsMapper
       {
 
-        static const int dBW_HASH = HashingUtils::HashString("dBW");
+        static constexpr uint32_t dBW_HASH = ConstExprHashingUtils::HashString("dBW");
 
 
         EirpUnits GetEirpUnitsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == dBW_HASH)
           {
             return EirpUnits::dBW;

@@ -20,13 +20,13 @@ namespace Aws
       namespace S3ObjectLockRetentionModeMapper
       {
 
-        static const int COMPLIANCE_HASH = HashingUtils::HashString("COMPLIANCE");
-        static const int GOVERNANCE_HASH = HashingUtils::HashString("GOVERNANCE");
+        static constexpr uint32_t COMPLIANCE_HASH = ConstExprHashingUtils::HashString("COMPLIANCE");
+        static constexpr uint32_t GOVERNANCE_HASH = ConstExprHashingUtils::HashString("GOVERNANCE");
 
 
         S3ObjectLockRetentionMode GetS3ObjectLockRetentionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COMPLIANCE_HASH)
           {
             return S3ObjectLockRetentionMode::COMPLIANCE;

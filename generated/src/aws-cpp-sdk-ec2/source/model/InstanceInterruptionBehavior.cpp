@@ -20,14 +20,14 @@ namespace Aws
       namespace InstanceInterruptionBehaviorMapper
       {
 
-        static const int hibernate_HASH = HashingUtils::HashString("hibernate");
-        static const int stop_HASH = HashingUtils::HashString("stop");
-        static const int terminate_HASH = HashingUtils::HashString("terminate");
+        static constexpr uint32_t hibernate_HASH = ConstExprHashingUtils::HashString("hibernate");
+        static constexpr uint32_t stop_HASH = ConstExprHashingUtils::HashString("stop");
+        static constexpr uint32_t terminate_HASH = ConstExprHashingUtils::HashString("terminate");
 
 
         InstanceInterruptionBehavior GetInstanceInterruptionBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == hibernate_HASH)
           {
             return InstanceInterruptionBehavior::hibernate;

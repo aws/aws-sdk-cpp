@@ -20,13 +20,13 @@ namespace Aws
       namespace ExportSourceTypeMapper
       {
 
-        static const int METRICS_DATA_HASH = HashingUtils::HashString("METRICS_DATA");
-        static const int MESSAGE_INSIGHTS_HASH = HashingUtils::HashString("MESSAGE_INSIGHTS");
+        static constexpr uint32_t METRICS_DATA_HASH = ConstExprHashingUtils::HashString("METRICS_DATA");
+        static constexpr uint32_t MESSAGE_INSIGHTS_HASH = ConstExprHashingUtils::HashString("MESSAGE_INSIGHTS");
 
 
         ExportSourceType GetExportSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == METRICS_DATA_HASH)
           {
             return ExportSourceType::METRICS_DATA;

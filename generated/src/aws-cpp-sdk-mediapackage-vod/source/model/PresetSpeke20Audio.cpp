@@ -20,16 +20,16 @@ namespace Aws
       namespace PresetSpeke20AudioMapper
       {
 
-        static const int PRESET_AUDIO_1_HASH = HashingUtils::HashString("PRESET-AUDIO-1");
-        static const int PRESET_AUDIO_2_HASH = HashingUtils::HashString("PRESET-AUDIO-2");
-        static const int PRESET_AUDIO_3_HASH = HashingUtils::HashString("PRESET-AUDIO-3");
-        static const int SHARED_HASH = HashingUtils::HashString("SHARED");
-        static const int UNENCRYPTED_HASH = HashingUtils::HashString("UNENCRYPTED");
+        static constexpr uint32_t PRESET_AUDIO_1_HASH = ConstExprHashingUtils::HashString("PRESET-AUDIO-1");
+        static constexpr uint32_t PRESET_AUDIO_2_HASH = ConstExprHashingUtils::HashString("PRESET-AUDIO-2");
+        static constexpr uint32_t PRESET_AUDIO_3_HASH = ConstExprHashingUtils::HashString("PRESET-AUDIO-3");
+        static constexpr uint32_t SHARED_HASH = ConstExprHashingUtils::HashString("SHARED");
+        static constexpr uint32_t UNENCRYPTED_HASH = ConstExprHashingUtils::HashString("UNENCRYPTED");
 
 
         PresetSpeke20Audio GetPresetSpeke20AudioForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRESET_AUDIO_1_HASH)
           {
             return PresetSpeke20Audio::PRESET_AUDIO_1;

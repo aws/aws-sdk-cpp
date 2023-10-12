@@ -20,17 +20,17 @@ namespace Aws
       namespace TransitionToIARulesMapper
       {
 
-        static const int AFTER_7_DAYS_HASH = HashingUtils::HashString("AFTER_7_DAYS");
-        static const int AFTER_14_DAYS_HASH = HashingUtils::HashString("AFTER_14_DAYS");
-        static const int AFTER_30_DAYS_HASH = HashingUtils::HashString("AFTER_30_DAYS");
-        static const int AFTER_60_DAYS_HASH = HashingUtils::HashString("AFTER_60_DAYS");
-        static const int AFTER_90_DAYS_HASH = HashingUtils::HashString("AFTER_90_DAYS");
-        static const int AFTER_1_DAY_HASH = HashingUtils::HashString("AFTER_1_DAY");
+        static constexpr uint32_t AFTER_7_DAYS_HASH = ConstExprHashingUtils::HashString("AFTER_7_DAYS");
+        static constexpr uint32_t AFTER_14_DAYS_HASH = ConstExprHashingUtils::HashString("AFTER_14_DAYS");
+        static constexpr uint32_t AFTER_30_DAYS_HASH = ConstExprHashingUtils::HashString("AFTER_30_DAYS");
+        static constexpr uint32_t AFTER_60_DAYS_HASH = ConstExprHashingUtils::HashString("AFTER_60_DAYS");
+        static constexpr uint32_t AFTER_90_DAYS_HASH = ConstExprHashingUtils::HashString("AFTER_90_DAYS");
+        static constexpr uint32_t AFTER_1_DAY_HASH = ConstExprHashingUtils::HashString("AFTER_1_DAY");
 
 
         TransitionToIARules GetTransitionToIARulesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AFTER_7_DAYS_HASH)
           {
             return TransitionToIARules::AFTER_7_DAYS;

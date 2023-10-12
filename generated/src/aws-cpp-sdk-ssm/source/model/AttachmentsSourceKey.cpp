@@ -20,14 +20,14 @@ namespace Aws
       namespace AttachmentsSourceKeyMapper
       {
 
-        static const int SourceUrl_HASH = HashingUtils::HashString("SourceUrl");
-        static const int S3FileUrl_HASH = HashingUtils::HashString("S3FileUrl");
-        static const int AttachmentReference_HASH = HashingUtils::HashString("AttachmentReference");
+        static constexpr uint32_t SourceUrl_HASH = ConstExprHashingUtils::HashString("SourceUrl");
+        static constexpr uint32_t S3FileUrl_HASH = ConstExprHashingUtils::HashString("S3FileUrl");
+        static constexpr uint32_t AttachmentReference_HASH = ConstExprHashingUtils::HashString("AttachmentReference");
 
 
         AttachmentsSourceKey GetAttachmentsSourceKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SourceUrl_HASH)
           {
             return AttachmentsSourceKey::SourceUrl;

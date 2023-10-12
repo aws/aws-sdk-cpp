@@ -20,15 +20,15 @@ namespace Aws
       namespace ActiveSpeakerPositionMapper
       {
 
-        static const int TopLeft_HASH = HashingUtils::HashString("TopLeft");
-        static const int TopRight_HASH = HashingUtils::HashString("TopRight");
-        static const int BottomLeft_HASH = HashingUtils::HashString("BottomLeft");
-        static const int BottomRight_HASH = HashingUtils::HashString("BottomRight");
+        static constexpr uint32_t TopLeft_HASH = ConstExprHashingUtils::HashString("TopLeft");
+        static constexpr uint32_t TopRight_HASH = ConstExprHashingUtils::HashString("TopRight");
+        static constexpr uint32_t BottomLeft_HASH = ConstExprHashingUtils::HashString("BottomLeft");
+        static constexpr uint32_t BottomRight_HASH = ConstExprHashingUtils::HashString("BottomRight");
 
 
         ActiveSpeakerPosition GetActiveSpeakerPositionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TopLeft_HASH)
           {
             return ActiveSpeakerPosition::TopLeft;

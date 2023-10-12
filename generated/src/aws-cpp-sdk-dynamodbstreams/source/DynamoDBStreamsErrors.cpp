@@ -18,14 +18,14 @@ namespace DynamoDBStreams
 namespace DynamoDBStreamsErrorMapper
 {
 
-static const int TRIMMED_DATA_ACCESS_HASH = HashingUtils::HashString("TrimmedDataAccessException");
-static const int EXPIRED_ITERATOR_HASH = HashingUtils::HashString("ExpiredIteratorException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t TRIMMED_DATA_ACCESS_HASH = ConstExprHashingUtils::HashString("TrimmedDataAccessException");
+static constexpr uint32_t EXPIRED_ITERATOR_HASH = ConstExprHashingUtils::HashString("ExpiredIteratorException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == TRIMMED_DATA_ACCESS_HASH)
   {

@@ -20,15 +20,15 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int CONFIGURED_TABLE_HASH = HashingUtils::HashString("CONFIGURED_TABLE");
-        static const int COLLABORATION_HASH = HashingUtils::HashString("COLLABORATION");
-        static const int MEMBERSHIP_HASH = HashingUtils::HashString("MEMBERSHIP");
-        static const int CONFIGURED_TABLE_ASSOCIATION_HASH = HashingUtils::HashString("CONFIGURED_TABLE_ASSOCIATION");
+        static constexpr uint32_t CONFIGURED_TABLE_HASH = ConstExprHashingUtils::HashString("CONFIGURED_TABLE");
+        static constexpr uint32_t COLLABORATION_HASH = ConstExprHashingUtils::HashString("COLLABORATION");
+        static constexpr uint32_t MEMBERSHIP_HASH = ConstExprHashingUtils::HashString("MEMBERSHIP");
+        static constexpr uint32_t CONFIGURED_TABLE_ASSOCIATION_HASH = ConstExprHashingUtils::HashString("CONFIGURED_TABLE_ASSOCIATION");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONFIGURED_TABLE_HASH)
           {
             return ResourceType::CONFIGURED_TABLE;

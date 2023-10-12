@@ -20,15 +20,15 @@ namespace Aws
       namespace TimecodeBurninFontSizeMapper
       {
 
-        static const int EXTRA_SMALL_10_HASH = HashingUtils::HashString("EXTRA_SMALL_10");
-        static const int LARGE_48_HASH = HashingUtils::HashString("LARGE_48");
-        static const int MEDIUM_32_HASH = HashingUtils::HashString("MEDIUM_32");
-        static const int SMALL_16_HASH = HashingUtils::HashString("SMALL_16");
+        static constexpr uint32_t EXTRA_SMALL_10_HASH = ConstExprHashingUtils::HashString("EXTRA_SMALL_10");
+        static constexpr uint32_t LARGE_48_HASH = ConstExprHashingUtils::HashString("LARGE_48");
+        static constexpr uint32_t MEDIUM_32_HASH = ConstExprHashingUtils::HashString("MEDIUM_32");
+        static constexpr uint32_t SMALL_16_HASH = ConstExprHashingUtils::HashString("SMALL_16");
 
 
         TimecodeBurninFontSize GetTimecodeBurninFontSizeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXTRA_SMALL_10_HASH)
           {
             return TimecodeBurninFontSize::EXTRA_SMALL_10;

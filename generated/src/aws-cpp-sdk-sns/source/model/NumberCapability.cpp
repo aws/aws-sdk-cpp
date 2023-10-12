@@ -20,14 +20,14 @@ namespace Aws
       namespace NumberCapabilityMapper
       {
 
-        static const int SMS_HASH = HashingUtils::HashString("SMS");
-        static const int MMS_HASH = HashingUtils::HashString("MMS");
-        static const int VOICE_HASH = HashingUtils::HashString("VOICE");
+        static constexpr uint32_t SMS_HASH = ConstExprHashingUtils::HashString("SMS");
+        static constexpr uint32_t MMS_HASH = ConstExprHashingUtils::HashString("MMS");
+        static constexpr uint32_t VOICE_HASH = ConstExprHashingUtils::HashString("VOICE");
 
 
         NumberCapability GetNumberCapabilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SMS_HASH)
           {
             return NumberCapability::SMS;

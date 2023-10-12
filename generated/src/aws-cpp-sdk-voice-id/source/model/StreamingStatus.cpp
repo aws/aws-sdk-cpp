@@ -20,14 +20,14 @@ namespace Aws
       namespace StreamingStatusMapper
       {
 
-        static const int PENDING_CONFIGURATION_HASH = HashingUtils::HashString("PENDING_CONFIGURATION");
-        static const int ONGOING_HASH = HashingUtils::HashString("ONGOING");
-        static const int ENDED_HASH = HashingUtils::HashString("ENDED");
+        static constexpr uint32_t PENDING_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("PENDING_CONFIGURATION");
+        static constexpr uint32_t ONGOING_HASH = ConstExprHashingUtils::HashString("ONGOING");
+        static constexpr uint32_t ENDED_HASH = ConstExprHashingUtils::HashString("ENDED");
 
 
         StreamingStatus GetStreamingStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_CONFIGURATION_HASH)
           {
             return StreamingStatus::PENDING_CONFIGURATION;

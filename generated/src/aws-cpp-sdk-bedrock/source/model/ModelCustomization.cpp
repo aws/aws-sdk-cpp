@@ -20,12 +20,12 @@ namespace Aws
       namespace ModelCustomizationMapper
       {
 
-        static const int FINE_TUNING_HASH = HashingUtils::HashString("FINE_TUNING");
+        static constexpr uint32_t FINE_TUNING_HASH = ConstExprHashingUtils::HashString("FINE_TUNING");
 
 
         ModelCustomization GetModelCustomizationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FINE_TUNING_HASH)
           {
             return ModelCustomization::FINE_TUNING;

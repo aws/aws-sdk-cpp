@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsCaptionSegmentLengthControlMapper
       {
 
-        static const int LARGE_SEGMENTS_HASH = HashingUtils::HashString("LARGE_SEGMENTS");
-        static const int MATCH_VIDEO_HASH = HashingUtils::HashString("MATCH_VIDEO");
+        static constexpr uint32_t LARGE_SEGMENTS_HASH = ConstExprHashingUtils::HashString("LARGE_SEGMENTS");
+        static constexpr uint32_t MATCH_VIDEO_HASH = ConstExprHashingUtils::HashString("MATCH_VIDEO");
 
 
         HlsCaptionSegmentLengthControl GetHlsCaptionSegmentLengthControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LARGE_SEGMENTS_HASH)
           {
             return HlsCaptionSegmentLengthControl::LARGE_SEGMENTS;

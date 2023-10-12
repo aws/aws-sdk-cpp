@@ -89,21 +89,21 @@ template<> AWS_INSPECTOR_API InvalidCrossAccountRoleException InspectorError::Ge
 namespace InspectorErrorMapper
 {
 
-static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
-static const int AGENTS_ALREADY_RUNNING_ASSESSMENT_HASH = HashingUtils::HashString("AgentsAlreadyRunningAssessmentException");
-static const int PREVIEW_GENERATION_IN_PROGRESS_HASH = HashingUtils::HashString("PreviewGenerationInProgressException");
-static const int UNSUPPORTED_FEATURE_HASH = HashingUtils::HashString("UnsupportedFeatureException");
-static const int NO_SUCH_ENTITY_HASH = HashingUtils::HashString("NoSuchEntityException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int ASSESSMENT_RUN_IN_PROGRESS_HASH = HashingUtils::HashString("AssessmentRunInProgressException");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
-static const int SERVICE_TEMPORARILY_UNAVAILABLE_HASH = HashingUtils::HashString("ServiceTemporarilyUnavailableException");
-static const int INVALID_CROSS_ACCOUNT_ROLE_HASH = HashingUtils::HashString("InvalidCrossAccountRoleException");
+static constexpr uint32_t INTERNAL_HASH = ConstExprHashingUtils::HashString("InternalException");
+static constexpr uint32_t AGENTS_ALREADY_RUNNING_ASSESSMENT_HASH = ConstExprHashingUtils::HashString("AgentsAlreadyRunningAssessmentException");
+static constexpr uint32_t PREVIEW_GENERATION_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("PreviewGenerationInProgressException");
+static constexpr uint32_t UNSUPPORTED_FEATURE_HASH = ConstExprHashingUtils::HashString("UnsupportedFeatureException");
+static constexpr uint32_t NO_SUCH_ENTITY_HASH = ConstExprHashingUtils::HashString("NoSuchEntityException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t ASSESSMENT_RUN_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("AssessmentRunInProgressException");
+static constexpr uint32_t INVALID_INPUT_HASH = ConstExprHashingUtils::HashString("InvalidInputException");
+static constexpr uint32_t SERVICE_TEMPORARILY_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("ServiceTemporarilyUnavailableException");
+static constexpr uint32_t INVALID_CROSS_ACCOUNT_ROLE_HASH = ConstExprHashingUtils::HashString("InvalidCrossAccountRoleException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INTERNAL_HASH)
   {

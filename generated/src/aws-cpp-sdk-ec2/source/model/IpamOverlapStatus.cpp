@@ -20,14 +20,14 @@ namespace Aws
       namespace IpamOverlapStatusMapper
       {
 
-        static const int overlapping_HASH = HashingUtils::HashString("overlapping");
-        static const int nonoverlapping_HASH = HashingUtils::HashString("nonoverlapping");
-        static const int ignored_HASH = HashingUtils::HashString("ignored");
+        static constexpr uint32_t overlapping_HASH = ConstExprHashingUtils::HashString("overlapping");
+        static constexpr uint32_t nonoverlapping_HASH = ConstExprHashingUtils::HashString("nonoverlapping");
+        static constexpr uint32_t ignored_HASH = ConstExprHashingUtils::HashString("ignored");
 
 
         IpamOverlapStatus GetIpamOverlapStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == overlapping_HASH)
           {
             return IpamOverlapStatus::overlapping;

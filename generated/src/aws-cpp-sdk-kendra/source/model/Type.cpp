@@ -20,13 +20,13 @@ namespace Aws
       namespace TypeMapper
       {
 
-        static const int SAAS_HASH = HashingUtils::HashString("SAAS");
-        static const int ON_PREMISE_HASH = HashingUtils::HashString("ON_PREMISE");
+        static constexpr uint32_t SAAS_HASH = ConstExprHashingUtils::HashString("SAAS");
+        static constexpr uint32_t ON_PREMISE_HASH = ConstExprHashingUtils::HashString("ON_PREMISE");
 
 
         Type GetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SAAS_HASH)
           {
             return Type::SAAS;

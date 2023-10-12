@@ -20,29 +20,29 @@ namespace Aws
       namespace OperationTypeMapper
       {
 
-        static const int REGISTER_DOMAIN_HASH = HashingUtils::HashString("REGISTER_DOMAIN");
-        static const int DELETE_DOMAIN_HASH = HashingUtils::HashString("DELETE_DOMAIN");
-        static const int TRANSFER_IN_DOMAIN_HASH = HashingUtils::HashString("TRANSFER_IN_DOMAIN");
-        static const int UPDATE_DOMAIN_CONTACT_HASH = HashingUtils::HashString("UPDATE_DOMAIN_CONTACT");
-        static const int UPDATE_NAMESERVER_HASH = HashingUtils::HashString("UPDATE_NAMESERVER");
-        static const int CHANGE_PRIVACY_PROTECTION_HASH = HashingUtils::HashString("CHANGE_PRIVACY_PROTECTION");
-        static const int DOMAIN_LOCK_HASH = HashingUtils::HashString("DOMAIN_LOCK");
-        static const int ENABLE_AUTORENEW_HASH = HashingUtils::HashString("ENABLE_AUTORENEW");
-        static const int DISABLE_AUTORENEW_HASH = HashingUtils::HashString("DISABLE_AUTORENEW");
-        static const int ADD_DNSSEC_HASH = HashingUtils::HashString("ADD_DNSSEC");
-        static const int REMOVE_DNSSEC_HASH = HashingUtils::HashString("REMOVE_DNSSEC");
-        static const int EXPIRE_DOMAIN_HASH = HashingUtils::HashString("EXPIRE_DOMAIN");
-        static const int TRANSFER_OUT_DOMAIN_HASH = HashingUtils::HashString("TRANSFER_OUT_DOMAIN");
-        static const int CHANGE_DOMAIN_OWNER_HASH = HashingUtils::HashString("CHANGE_DOMAIN_OWNER");
-        static const int RENEW_DOMAIN_HASH = HashingUtils::HashString("RENEW_DOMAIN");
-        static const int PUSH_DOMAIN_HASH = HashingUtils::HashString("PUSH_DOMAIN");
-        static const int INTERNAL_TRANSFER_OUT_DOMAIN_HASH = HashingUtils::HashString("INTERNAL_TRANSFER_OUT_DOMAIN");
-        static const int INTERNAL_TRANSFER_IN_DOMAIN_HASH = HashingUtils::HashString("INTERNAL_TRANSFER_IN_DOMAIN");
+        static constexpr uint32_t REGISTER_DOMAIN_HASH = ConstExprHashingUtils::HashString("REGISTER_DOMAIN");
+        static constexpr uint32_t DELETE_DOMAIN_HASH = ConstExprHashingUtils::HashString("DELETE_DOMAIN");
+        static constexpr uint32_t TRANSFER_IN_DOMAIN_HASH = ConstExprHashingUtils::HashString("TRANSFER_IN_DOMAIN");
+        static constexpr uint32_t UPDATE_DOMAIN_CONTACT_HASH = ConstExprHashingUtils::HashString("UPDATE_DOMAIN_CONTACT");
+        static constexpr uint32_t UPDATE_NAMESERVER_HASH = ConstExprHashingUtils::HashString("UPDATE_NAMESERVER");
+        static constexpr uint32_t CHANGE_PRIVACY_PROTECTION_HASH = ConstExprHashingUtils::HashString("CHANGE_PRIVACY_PROTECTION");
+        static constexpr uint32_t DOMAIN_LOCK_HASH = ConstExprHashingUtils::HashString("DOMAIN_LOCK");
+        static constexpr uint32_t ENABLE_AUTORENEW_HASH = ConstExprHashingUtils::HashString("ENABLE_AUTORENEW");
+        static constexpr uint32_t DISABLE_AUTORENEW_HASH = ConstExprHashingUtils::HashString("DISABLE_AUTORENEW");
+        static constexpr uint32_t ADD_DNSSEC_HASH = ConstExprHashingUtils::HashString("ADD_DNSSEC");
+        static constexpr uint32_t REMOVE_DNSSEC_HASH = ConstExprHashingUtils::HashString("REMOVE_DNSSEC");
+        static constexpr uint32_t EXPIRE_DOMAIN_HASH = ConstExprHashingUtils::HashString("EXPIRE_DOMAIN");
+        static constexpr uint32_t TRANSFER_OUT_DOMAIN_HASH = ConstExprHashingUtils::HashString("TRANSFER_OUT_DOMAIN");
+        static constexpr uint32_t CHANGE_DOMAIN_OWNER_HASH = ConstExprHashingUtils::HashString("CHANGE_DOMAIN_OWNER");
+        static constexpr uint32_t RENEW_DOMAIN_HASH = ConstExprHashingUtils::HashString("RENEW_DOMAIN");
+        static constexpr uint32_t PUSH_DOMAIN_HASH = ConstExprHashingUtils::HashString("PUSH_DOMAIN");
+        static constexpr uint32_t INTERNAL_TRANSFER_OUT_DOMAIN_HASH = ConstExprHashingUtils::HashString("INTERNAL_TRANSFER_OUT_DOMAIN");
+        static constexpr uint32_t INTERNAL_TRANSFER_IN_DOMAIN_HASH = ConstExprHashingUtils::HashString("INTERNAL_TRANSFER_IN_DOMAIN");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REGISTER_DOMAIN_HASH)
           {
             return OperationType::REGISTER_DOMAIN;

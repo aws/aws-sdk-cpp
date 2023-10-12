@@ -20,14 +20,14 @@ namespace Aws
       namespace JobTypeMapper
       {
 
-        static const int LAUNCH_HASH = HashingUtils::HashString("LAUNCH");
-        static const int TERMINATE_HASH = HashingUtils::HashString("TERMINATE");
-        static const int CREATE_CONVERTED_SNAPSHOT_HASH = HashingUtils::HashString("CREATE_CONVERTED_SNAPSHOT");
+        static constexpr uint32_t LAUNCH_HASH = ConstExprHashingUtils::HashString("LAUNCH");
+        static constexpr uint32_t TERMINATE_HASH = ConstExprHashingUtils::HashString("TERMINATE");
+        static constexpr uint32_t CREATE_CONVERTED_SNAPSHOT_HASH = ConstExprHashingUtils::HashString("CREATE_CONVERTED_SNAPSHOT");
 
 
         JobType GetJobTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LAUNCH_HASH)
           {
             return JobType::LAUNCH;

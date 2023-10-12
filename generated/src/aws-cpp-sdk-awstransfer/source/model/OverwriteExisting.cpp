@@ -20,13 +20,13 @@ namespace Aws
       namespace OverwriteExistingMapper
       {
 
-        static const int TRUE_HASH = HashingUtils::HashString("TRUE");
-        static const int FALSE_HASH = HashingUtils::HashString("FALSE");
+        static constexpr uint32_t TRUE_HASH = ConstExprHashingUtils::HashString("TRUE");
+        static constexpr uint32_t FALSE_HASH = ConstExprHashingUtils::HashString("FALSE");
 
 
         OverwriteExisting GetOverwriteExistingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRUE_HASH)
           {
             return OverwriteExisting::TRUE;

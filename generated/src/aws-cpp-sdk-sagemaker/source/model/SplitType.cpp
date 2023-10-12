@@ -20,15 +20,15 @@ namespace Aws
       namespace SplitTypeMapper
       {
 
-        static const int None_HASH = HashingUtils::HashString("None");
-        static const int Line_HASH = HashingUtils::HashString("Line");
-        static const int RecordIO_HASH = HashingUtils::HashString("RecordIO");
-        static const int TFRecord_HASH = HashingUtils::HashString("TFRecord");
+        static constexpr uint32_t None_HASH = ConstExprHashingUtils::HashString("None");
+        static constexpr uint32_t Line_HASH = ConstExprHashingUtils::HashString("Line");
+        static constexpr uint32_t RecordIO_HASH = ConstExprHashingUtils::HashString("RecordIO");
+        static constexpr uint32_t TFRecord_HASH = ConstExprHashingUtils::HashString("TFRecord");
 
 
         SplitType GetSplitTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == None_HASH)
           {
             return SplitType::None;

@@ -20,14 +20,14 @@ namespace Aws
       namespace FailoverStatusMapper
       {
 
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int failing_over_HASH = HashingUtils::HashString("failing-over");
-        static const int cancelling_HASH = HashingUtils::HashString("cancelling");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t failing_over_HASH = ConstExprHashingUtils::HashString("failing-over");
+        static constexpr uint32_t cancelling_HASH = ConstExprHashingUtils::HashString("cancelling");
 
 
         FailoverStatus GetFailoverStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pending_HASH)
           {
             return FailoverStatus::pending;

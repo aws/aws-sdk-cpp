@@ -20,14 +20,14 @@ namespace Aws
       namespace NotificationTransportMapper
       {
 
-        static const int Email_HASH = HashingUtils::HashString("Email");
-        static const int SQS_HASH = HashingUtils::HashString("SQS");
-        static const int SNS_HASH = HashingUtils::HashString("SNS");
+        static constexpr uint32_t Email_HASH = ConstExprHashingUtils::HashString("Email");
+        static constexpr uint32_t SQS_HASH = ConstExprHashingUtils::HashString("SQS");
+        static constexpr uint32_t SNS_HASH = ConstExprHashingUtils::HashString("SNS");
 
 
         NotificationTransport GetNotificationTransportForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Email_HASH)
           {
             return NotificationTransport::Email;

@@ -20,14 +20,14 @@ namespace Aws
       namespace ScheduleAtMapper
       {
 
-        static const int NOW_HASH = HashingUtils::HashString("NOW");
-        static const int TIMESTAMP_HASH = HashingUtils::HashString("TIMESTAMP");
-        static const int OFF_PEAK_WINDOW_HASH = HashingUtils::HashString("OFF_PEAK_WINDOW");
+        static constexpr uint32_t NOW_HASH = ConstExprHashingUtils::HashString("NOW");
+        static constexpr uint32_t TIMESTAMP_HASH = ConstExprHashingUtils::HashString("TIMESTAMP");
+        static constexpr uint32_t OFF_PEAK_WINDOW_HASH = ConstExprHashingUtils::HashString("OFF_PEAK_WINDOW");
 
 
         ScheduleAt GetScheduleAtForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NOW_HASH)
           {
             return ScheduleAt::NOW;

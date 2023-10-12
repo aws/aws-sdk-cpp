@@ -20,13 +20,13 @@ namespace Aws
       namespace FiberOpticCableTypeMapper
       {
 
-        static const int SINGLE_MODE_HASH = HashingUtils::HashString("SINGLE_MODE");
-        static const int MULTI_MODE_HASH = HashingUtils::HashString("MULTI_MODE");
+        static constexpr uint32_t SINGLE_MODE_HASH = ConstExprHashingUtils::HashString("SINGLE_MODE");
+        static constexpr uint32_t MULTI_MODE_HASH = ConstExprHashingUtils::HashString("MULTI_MODE");
 
 
         FiberOpticCableType GetFiberOpticCableTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SINGLE_MODE_HASH)
           {
             return FiberOpticCableType::SINGLE_MODE;

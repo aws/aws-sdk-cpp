@@ -20,14 +20,14 @@ namespace Aws
       namespace ConfidenceMapper
       {
 
-        static const int HIGH_HASH = HashingUtils::HashString("HIGH");
-        static const int LOW_HASH = HashingUtils::HashString("LOW");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t HIGH_HASH = ConstExprHashingUtils::HashString("HIGH");
+        static constexpr uint32_t LOW_HASH = ConstExprHashingUtils::HashString("LOW");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         Confidence GetConfidenceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HIGH_HASH)
           {
             return Confidence::HIGH;

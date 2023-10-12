@@ -20,13 +20,13 @@ namespace Aws
       namespace NetworkInputServerValidationMapper
       {
 
-        static const int CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME_HASH = HashingUtils::HashString("CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME");
-        static const int CHECK_CRYPTOGRAPHY_ONLY_HASH = HashingUtils::HashString("CHECK_CRYPTOGRAPHY_ONLY");
+        static constexpr uint32_t CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME_HASH = ConstExprHashingUtils::HashString("CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME");
+        static constexpr uint32_t CHECK_CRYPTOGRAPHY_ONLY_HASH = ConstExprHashingUtils::HashString("CHECK_CRYPTOGRAPHY_ONLY");
 
 
         NetworkInputServerValidation GetNetworkInputServerValidationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME_HASH)
           {
             return NetworkInputServerValidation::CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME;

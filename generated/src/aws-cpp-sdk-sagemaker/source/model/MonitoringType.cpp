@@ -20,15 +20,15 @@ namespace Aws
       namespace MonitoringTypeMapper
       {
 
-        static const int DataQuality_HASH = HashingUtils::HashString("DataQuality");
-        static const int ModelQuality_HASH = HashingUtils::HashString("ModelQuality");
-        static const int ModelBias_HASH = HashingUtils::HashString("ModelBias");
-        static const int ModelExplainability_HASH = HashingUtils::HashString("ModelExplainability");
+        static constexpr uint32_t DataQuality_HASH = ConstExprHashingUtils::HashString("DataQuality");
+        static constexpr uint32_t ModelQuality_HASH = ConstExprHashingUtils::HashString("ModelQuality");
+        static constexpr uint32_t ModelBias_HASH = ConstExprHashingUtils::HashString("ModelBias");
+        static constexpr uint32_t ModelExplainability_HASH = ConstExprHashingUtils::HashString("ModelExplainability");
 
 
         MonitoringType GetMonitoringTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DataQuality_HASH)
           {
             return MonitoringType::DataQuality;

@@ -20,13 +20,13 @@ namespace Aws
       namespace BundleTypeMapper
       {
 
-        static const int REGULAR_HASH = HashingUtils::HashString("REGULAR");
-        static const int STANDBY_HASH = HashingUtils::HashString("STANDBY");
+        static constexpr uint32_t REGULAR_HASH = ConstExprHashingUtils::HashString("REGULAR");
+        static constexpr uint32_t STANDBY_HASH = ConstExprHashingUtils::HashString("STANDBY");
 
 
         BundleType GetBundleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REGULAR_HASH)
           {
             return BundleType::REGULAR;

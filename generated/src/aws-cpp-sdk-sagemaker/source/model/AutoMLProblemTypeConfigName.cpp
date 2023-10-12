@@ -20,15 +20,15 @@ namespace Aws
       namespace AutoMLProblemTypeConfigNameMapper
       {
 
-        static const int ImageClassification_HASH = HashingUtils::HashString("ImageClassification");
-        static const int TextClassification_HASH = HashingUtils::HashString("TextClassification");
-        static const int Tabular_HASH = HashingUtils::HashString("Tabular");
-        static const int TimeSeriesForecasting_HASH = HashingUtils::HashString("TimeSeriesForecasting");
+        static constexpr uint32_t ImageClassification_HASH = ConstExprHashingUtils::HashString("ImageClassification");
+        static constexpr uint32_t TextClassification_HASH = ConstExprHashingUtils::HashString("TextClassification");
+        static constexpr uint32_t Tabular_HASH = ConstExprHashingUtils::HashString("Tabular");
+        static constexpr uint32_t TimeSeriesForecasting_HASH = ConstExprHashingUtils::HashString("TimeSeriesForecasting");
 
 
         AutoMLProblemTypeConfigName GetAutoMLProblemTypeConfigNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ImageClassification_HASH)
           {
             return AutoMLProblemTypeConfigName::ImageClassification;

@@ -20,13 +20,13 @@ namespace Aws
       namespace EnvironmentAccountConnectionRequesterAccountTypeMapper
       {
 
-        static const int MANAGEMENT_ACCOUNT_HASH = HashingUtils::HashString("MANAGEMENT_ACCOUNT");
-        static const int ENVIRONMENT_ACCOUNT_HASH = HashingUtils::HashString("ENVIRONMENT_ACCOUNT");
+        static constexpr uint32_t MANAGEMENT_ACCOUNT_HASH = ConstExprHashingUtils::HashString("MANAGEMENT_ACCOUNT");
+        static constexpr uint32_t ENVIRONMENT_ACCOUNT_HASH = ConstExprHashingUtils::HashString("ENVIRONMENT_ACCOUNT");
 
 
         EnvironmentAccountConnectionRequesterAccountType GetEnvironmentAccountConnectionRequesterAccountTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MANAGEMENT_ACCOUNT_HASH)
           {
             return EnvironmentAccountConnectionRequesterAccountType::MANAGEMENT_ACCOUNT;

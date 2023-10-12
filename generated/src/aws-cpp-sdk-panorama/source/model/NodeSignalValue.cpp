@@ -20,13 +20,13 @@ namespace Aws
       namespace NodeSignalValueMapper
       {
 
-        static const int PAUSE_HASH = HashingUtils::HashString("PAUSE");
-        static const int RESUME_HASH = HashingUtils::HashString("RESUME");
+        static constexpr uint32_t PAUSE_HASH = ConstExprHashingUtils::HashString("PAUSE");
+        static constexpr uint32_t RESUME_HASH = ConstExprHashingUtils::HashString("RESUME");
 
 
         NodeSignalValue GetNodeSignalValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PAUSE_HASH)
           {
             return NodeSignalValue::PAUSE;

@@ -20,14 +20,14 @@ namespace Aws
       namespace InferenceDataImportStrategyMapper
       {
 
-        static const int NO_IMPORT_HASH = HashingUtils::HashString("NO_IMPORT");
-        static const int ADD_WHEN_EMPTY_HASH = HashingUtils::HashString("ADD_WHEN_EMPTY");
-        static const int OVERWRITE_HASH = HashingUtils::HashString("OVERWRITE");
+        static constexpr uint32_t NO_IMPORT_HASH = ConstExprHashingUtils::HashString("NO_IMPORT");
+        static constexpr uint32_t ADD_WHEN_EMPTY_HASH = ConstExprHashingUtils::HashString("ADD_WHEN_EMPTY");
+        static constexpr uint32_t OVERWRITE_HASH = ConstExprHashingUtils::HashString("OVERWRITE");
 
 
         InferenceDataImportStrategy GetInferenceDataImportStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_IMPORT_HASH)
           {
             return InferenceDataImportStrategy::NO_IMPORT;

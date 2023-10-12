@@ -20,33 +20,33 @@ namespace Aws
       namespace RelationshipTypeMapper
       {
 
-        static const int EVERY_HASH = HashingUtils::HashString("EVERY");
-        static const int WITH_DOSAGE_HASH = HashingUtils::HashString("WITH_DOSAGE");
-        static const int ADMINISTERED_VIA_HASH = HashingUtils::HashString("ADMINISTERED_VIA");
-        static const int FOR_HASH = HashingUtils::HashString("FOR");
-        static const int NEGATIVE_HASH = HashingUtils::HashString("NEGATIVE");
-        static const int OVERLAP_HASH = HashingUtils::HashString("OVERLAP");
-        static const int DOSAGE_HASH = HashingUtils::HashString("DOSAGE");
-        static const int ROUTE_OR_MODE_HASH = HashingUtils::HashString("ROUTE_OR_MODE");
-        static const int FORM_HASH = HashingUtils::HashString("FORM");
-        static const int FREQUENCY_HASH = HashingUtils::HashString("FREQUENCY");
-        static const int DURATION_HASH = HashingUtils::HashString("DURATION");
-        static const int STRENGTH_HASH = HashingUtils::HashString("STRENGTH");
-        static const int RATE_HASH = HashingUtils::HashString("RATE");
-        static const int ACUITY_HASH = HashingUtils::HashString("ACUITY");
-        static const int TEST_VALUE_HASH = HashingUtils::HashString("TEST_VALUE");
-        static const int TEST_UNITS_HASH = HashingUtils::HashString("TEST_UNITS");
-        static const int TEST_UNIT_HASH = HashingUtils::HashString("TEST_UNIT");
-        static const int DIRECTION_HASH = HashingUtils::HashString("DIRECTION");
-        static const int SYSTEM_ORGAN_SITE_HASH = HashingUtils::HashString("SYSTEM_ORGAN_SITE");
-        static const int AMOUNT_HASH = HashingUtils::HashString("AMOUNT");
-        static const int USAGE_HASH = HashingUtils::HashString("USAGE");
-        static const int QUALITY_HASH = HashingUtils::HashString("QUALITY");
+        static constexpr uint32_t EVERY_HASH = ConstExprHashingUtils::HashString("EVERY");
+        static constexpr uint32_t WITH_DOSAGE_HASH = ConstExprHashingUtils::HashString("WITH_DOSAGE");
+        static constexpr uint32_t ADMINISTERED_VIA_HASH = ConstExprHashingUtils::HashString("ADMINISTERED_VIA");
+        static constexpr uint32_t FOR_HASH = ConstExprHashingUtils::HashString("FOR");
+        static constexpr uint32_t NEGATIVE_HASH = ConstExprHashingUtils::HashString("NEGATIVE");
+        static constexpr uint32_t OVERLAP_HASH = ConstExprHashingUtils::HashString("OVERLAP");
+        static constexpr uint32_t DOSAGE_HASH = ConstExprHashingUtils::HashString("DOSAGE");
+        static constexpr uint32_t ROUTE_OR_MODE_HASH = ConstExprHashingUtils::HashString("ROUTE_OR_MODE");
+        static constexpr uint32_t FORM_HASH = ConstExprHashingUtils::HashString("FORM");
+        static constexpr uint32_t FREQUENCY_HASH = ConstExprHashingUtils::HashString("FREQUENCY");
+        static constexpr uint32_t DURATION_HASH = ConstExprHashingUtils::HashString("DURATION");
+        static constexpr uint32_t STRENGTH_HASH = ConstExprHashingUtils::HashString("STRENGTH");
+        static constexpr uint32_t RATE_HASH = ConstExprHashingUtils::HashString("RATE");
+        static constexpr uint32_t ACUITY_HASH = ConstExprHashingUtils::HashString("ACUITY");
+        static constexpr uint32_t TEST_VALUE_HASH = ConstExprHashingUtils::HashString("TEST_VALUE");
+        static constexpr uint32_t TEST_UNITS_HASH = ConstExprHashingUtils::HashString("TEST_UNITS");
+        static constexpr uint32_t TEST_UNIT_HASH = ConstExprHashingUtils::HashString("TEST_UNIT");
+        static constexpr uint32_t DIRECTION_HASH = ConstExprHashingUtils::HashString("DIRECTION");
+        static constexpr uint32_t SYSTEM_ORGAN_SITE_HASH = ConstExprHashingUtils::HashString("SYSTEM_ORGAN_SITE");
+        static constexpr uint32_t AMOUNT_HASH = ConstExprHashingUtils::HashString("AMOUNT");
+        static constexpr uint32_t USAGE_HASH = ConstExprHashingUtils::HashString("USAGE");
+        static constexpr uint32_t QUALITY_HASH = ConstExprHashingUtils::HashString("QUALITY");
 
 
         RelationshipType GetRelationshipTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EVERY_HASH)
           {
             return RelationshipType::EVERY;

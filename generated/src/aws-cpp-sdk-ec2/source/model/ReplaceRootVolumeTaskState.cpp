@@ -20,17 +20,17 @@ namespace Aws
       namespace ReplaceRootVolumeTaskStateMapper
       {
 
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int in_progress_HASH = HashingUtils::HashString("in-progress");
-        static const int failing_HASH = HashingUtils::HashString("failing");
-        static const int succeeded_HASH = HashingUtils::HashString("succeeded");
-        static const int failed_HASH = HashingUtils::HashString("failed");
-        static const int failed_detached_HASH = HashingUtils::HashString("failed-detached");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t in_progress_HASH = ConstExprHashingUtils::HashString("in-progress");
+        static constexpr uint32_t failing_HASH = ConstExprHashingUtils::HashString("failing");
+        static constexpr uint32_t succeeded_HASH = ConstExprHashingUtils::HashString("succeeded");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
+        static constexpr uint32_t failed_detached_HASH = ConstExprHashingUtils::HashString("failed-detached");
 
 
         ReplaceRootVolumeTaskState GetReplaceRootVolumeTaskStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == pending_HASH)
           {
             return ReplaceRootVolumeTaskState::pending;

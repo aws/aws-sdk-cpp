@@ -20,13 +20,13 @@ namespace Aws
       namespace ContainerModeMapper
       {
 
-        static const int SingleModel_HASH = HashingUtils::HashString("SingleModel");
-        static const int MultiModel_HASH = HashingUtils::HashString("MultiModel");
+        static constexpr uint32_t SingleModel_HASH = ConstExprHashingUtils::HashString("SingleModel");
+        static constexpr uint32_t MultiModel_HASH = ConstExprHashingUtils::HashString("MultiModel");
 
 
         ContainerMode GetContainerModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SingleModel_HASH)
           {
             return ContainerMode::SingleModel;

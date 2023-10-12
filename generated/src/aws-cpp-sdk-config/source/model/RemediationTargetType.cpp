@@ -20,12 +20,12 @@ namespace Aws
       namespace RemediationTargetTypeMapper
       {
 
-        static const int SSM_DOCUMENT_HASH = HashingUtils::HashString("SSM_DOCUMENT");
+        static constexpr uint32_t SSM_DOCUMENT_HASH = ConstExprHashingUtils::HashString("SSM_DOCUMENT");
 
 
         RemediationTargetType GetRemediationTargetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SSM_DOCUMENT_HASH)
           {
             return RemediationTargetType::SSM_DOCUMENT;

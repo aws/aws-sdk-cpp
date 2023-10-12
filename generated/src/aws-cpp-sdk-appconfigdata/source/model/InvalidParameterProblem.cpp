@@ -20,14 +20,14 @@ namespace Aws
       namespace InvalidParameterProblemMapper
       {
 
-        static const int Corrupted_HASH = HashingUtils::HashString("Corrupted");
-        static const int Expired_HASH = HashingUtils::HashString("Expired");
-        static const int PollIntervalNotSatisfied_HASH = HashingUtils::HashString("PollIntervalNotSatisfied");
+        static constexpr uint32_t Corrupted_HASH = ConstExprHashingUtils::HashString("Corrupted");
+        static constexpr uint32_t Expired_HASH = ConstExprHashingUtils::HashString("Expired");
+        static constexpr uint32_t PollIntervalNotSatisfied_HASH = ConstExprHashingUtils::HashString("PollIntervalNotSatisfied");
 
 
         InvalidParameterProblem GetInvalidParameterProblemForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Corrupted_HASH)
           {
             return InvalidParameterProblem::Corrupted;

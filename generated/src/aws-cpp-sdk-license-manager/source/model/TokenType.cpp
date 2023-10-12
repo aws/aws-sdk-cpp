@@ -20,12 +20,12 @@ namespace Aws
       namespace TokenTypeMapper
       {
 
-        static const int REFRESH_TOKEN_HASH = HashingUtils::HashString("REFRESH_TOKEN");
+        static constexpr uint32_t REFRESH_TOKEN_HASH = ConstExprHashingUtils::HashString("REFRESH_TOKEN");
 
 
         TokenType GetTokenTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REFRESH_TOKEN_HASH)
           {
             return TokenType::REFRESH_TOKEN;

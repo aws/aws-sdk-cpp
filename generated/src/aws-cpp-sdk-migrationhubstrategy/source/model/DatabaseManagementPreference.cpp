@@ -20,14 +20,14 @@ namespace Aws
       namespace DatabaseManagementPreferenceMapper
       {
 
-        static const int AWS_managed_HASH = HashingUtils::HashString("AWS-managed");
-        static const int Self_manage_HASH = HashingUtils::HashString("Self-manage");
-        static const int No_preference_HASH = HashingUtils::HashString("No preference");
+        static constexpr uint32_t AWS_managed_HASH = ConstExprHashingUtils::HashString("AWS-managed");
+        static constexpr uint32_t Self_manage_HASH = ConstExprHashingUtils::HashString("Self-manage");
+        static constexpr uint32_t No_preference_HASH = ConstExprHashingUtils::HashString("No preference");
 
 
         DatabaseManagementPreference GetDatabaseManagementPreferenceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_managed_HASH)
           {
             return DatabaseManagementPreference::AWS_managed;

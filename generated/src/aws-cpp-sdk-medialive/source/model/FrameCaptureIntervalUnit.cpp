@@ -20,13 +20,13 @@ namespace Aws
       namespace FrameCaptureIntervalUnitMapper
       {
 
-        static const int MILLISECONDS_HASH = HashingUtils::HashString("MILLISECONDS");
-        static const int SECONDS_HASH = HashingUtils::HashString("SECONDS");
+        static constexpr uint32_t MILLISECONDS_HASH = ConstExprHashingUtils::HashString("MILLISECONDS");
+        static constexpr uint32_t SECONDS_HASH = ConstExprHashingUtils::HashString("SECONDS");
 
 
         FrameCaptureIntervalUnit GetFrameCaptureIntervalUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MILLISECONDS_HASH)
           {
             return FrameCaptureIntervalUnit::MILLISECONDS;

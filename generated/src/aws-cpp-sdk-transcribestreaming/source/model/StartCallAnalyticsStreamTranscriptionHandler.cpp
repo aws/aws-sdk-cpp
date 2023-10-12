@@ -209,12 +209,12 @@ namespace Model
 
 namespace StartCallAnalyticsStreamTranscriptionEventMapper
 {
-    static const int UTTERANCEEVENT_HASH = Aws::Utils::HashingUtils::HashString("UtteranceEvent");
-    static const int CATEGORYEVENT_HASH = Aws::Utils::HashingUtils::HashString("CategoryEvent");
+    static constexpr uint32_t UTTERANCEEVENT_HASH = Aws::Utils::ConstExprHashingUtils::HashString("UtteranceEvent");
+    static constexpr uint32_t CATEGORYEVENT_HASH = Aws::Utils::ConstExprHashingUtils::HashString("CategoryEvent");
 
     StartCallAnalyticsStreamTranscriptionEventType GetStartCallAnalyticsStreamTranscriptionEventTypeForName(const Aws::String& name)
     {
-        int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
+        uint32_t hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
         if (hashCode == UTTERANCEEVENT_HASH)
         {
             return StartCallAnalyticsStreamTranscriptionEventType::UTTERANCEEVENT;

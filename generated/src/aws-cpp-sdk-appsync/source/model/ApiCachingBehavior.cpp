@@ -20,13 +20,13 @@ namespace Aws
       namespace ApiCachingBehaviorMapper
       {
 
-        static const int FULL_REQUEST_CACHING_HASH = HashingUtils::HashString("FULL_REQUEST_CACHING");
-        static const int PER_RESOLVER_CACHING_HASH = HashingUtils::HashString("PER_RESOLVER_CACHING");
+        static constexpr uint32_t FULL_REQUEST_CACHING_HASH = ConstExprHashingUtils::HashString("FULL_REQUEST_CACHING");
+        static constexpr uint32_t PER_RESOLVER_CACHING_HASH = ConstExprHashingUtils::HashString("PER_RESOLVER_CACHING");
 
 
         ApiCachingBehavior GetApiCachingBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FULL_REQUEST_CACHING_HASH)
           {
             return ApiCachingBehavior::FULL_REQUEST_CACHING;

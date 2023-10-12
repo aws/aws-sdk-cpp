@@ -26,35 +26,35 @@ template<> AWS_WORKDOCS_API EntityNotExistsException WorkDocsError::GetModeledEr
 namespace WorkDocsErrorMapper
 {
 
-static const int ENTITY_ALREADY_EXISTS_HASH = HashingUtils::HashString("EntityAlreadyExistsException");
-static const int REQUESTED_ENTITY_TOO_LARGE_HASH = HashingUtils::HashString("RequestedEntityTooLargeException");
-static const int TOO_MANY_LABELS_HASH = HashingUtils::HashString("TooManyLabelsException");
-static const int DRAFT_UPLOAD_OUT_OF_SYNC_HASH = HashingUtils::HashString("DraftUploadOutOfSyncException");
-static const int FAILED_DEPENDENCY_HASH = HashingUtils::HashString("FailedDependencyException");
-static const int RESOURCE_ALREADY_CHECKED_OUT_HASH = HashingUtils::HashString("ResourceAlreadyCheckedOutException");
-static const int CUSTOM_METADATA_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CustomMetadataLimitExceededException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int PROHIBITED_STATE_HASH = HashingUtils::HashString("ProhibitedStateException");
-static const int DOCUMENT_LOCKED_FOR_COMMENTS_HASH = HashingUtils::HashString("DocumentLockedForCommentsException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int STORAGE_LIMIT_WILL_EXCEED_HASH = HashingUtils::HashString("StorageLimitWillExceedException");
-static const int INVALID_COMMENT_OPERATION_HASH = HashingUtils::HashString("InvalidCommentOperationException");
-static const int STORAGE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("StorageLimitExceededException");
-static const int UNAUTHORIZED_OPERATION_HASH = HashingUtils::HashString("UnauthorizedOperationException");
-static const int TOO_MANY_SUBSCRIPTIONS_HASH = HashingUtils::HashString("TooManySubscriptionsException");
-static const int ILLEGAL_USER_STATE_HASH = HashingUtils::HashString("IllegalUserStateException");
-static const int DEACTIVATING_LAST_SYSTEM_USER_HASH = HashingUtils::HashString("DeactivatingLastSystemUserException");
-static const int UNAUTHORIZED_RESOURCE_ACCESS_HASH = HashingUtils::HashString("UnauthorizedResourceAccessException");
-static const int ENTITY_NOT_EXISTS_HASH = HashingUtils::HashString("EntityNotExistsException");
-static const int INVALID_PASSWORD_HASH = HashingUtils::HashString("InvalidPasswordException");
-static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
-static const int CONFLICTING_OPERATION_HASH = HashingUtils::HashString("ConflictingOperationException");
-static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
+static constexpr uint32_t ENTITY_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("EntityAlreadyExistsException");
+static constexpr uint32_t REQUESTED_ENTITY_TOO_LARGE_HASH = ConstExprHashingUtils::HashString("RequestedEntityTooLargeException");
+static constexpr uint32_t TOO_MANY_LABELS_HASH = ConstExprHashingUtils::HashString("TooManyLabelsException");
+static constexpr uint32_t DRAFT_UPLOAD_OUT_OF_SYNC_HASH = ConstExprHashingUtils::HashString("DraftUploadOutOfSyncException");
+static constexpr uint32_t FAILED_DEPENDENCY_HASH = ConstExprHashingUtils::HashString("FailedDependencyException");
+static constexpr uint32_t RESOURCE_ALREADY_CHECKED_OUT_HASH = ConstExprHashingUtils::HashString("ResourceAlreadyCheckedOutException");
+static constexpr uint32_t CUSTOM_METADATA_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("CustomMetadataLimitExceededException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t PROHIBITED_STATE_HASH = ConstExprHashingUtils::HashString("ProhibitedStateException");
+static constexpr uint32_t DOCUMENT_LOCKED_FOR_COMMENTS_HASH = ConstExprHashingUtils::HashString("DocumentLockedForCommentsException");
+static constexpr uint32_t CONCURRENT_MODIFICATION_HASH = ConstExprHashingUtils::HashString("ConcurrentModificationException");
+static constexpr uint32_t STORAGE_LIMIT_WILL_EXCEED_HASH = ConstExprHashingUtils::HashString("StorageLimitWillExceedException");
+static constexpr uint32_t INVALID_COMMENT_OPERATION_HASH = ConstExprHashingUtils::HashString("InvalidCommentOperationException");
+static constexpr uint32_t STORAGE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("StorageLimitExceededException");
+static constexpr uint32_t UNAUTHORIZED_OPERATION_HASH = ConstExprHashingUtils::HashString("UnauthorizedOperationException");
+static constexpr uint32_t TOO_MANY_SUBSCRIPTIONS_HASH = ConstExprHashingUtils::HashString("TooManySubscriptionsException");
+static constexpr uint32_t ILLEGAL_USER_STATE_HASH = ConstExprHashingUtils::HashString("IllegalUserStateException");
+static constexpr uint32_t DEACTIVATING_LAST_SYSTEM_USER_HASH = ConstExprHashingUtils::HashString("DeactivatingLastSystemUserException");
+static constexpr uint32_t UNAUTHORIZED_RESOURCE_ACCESS_HASH = ConstExprHashingUtils::HashString("UnauthorizedResourceAccessException");
+static constexpr uint32_t ENTITY_NOT_EXISTS_HASH = ConstExprHashingUtils::HashString("EntityNotExistsException");
+static constexpr uint32_t INVALID_PASSWORD_HASH = ConstExprHashingUtils::HashString("InvalidPasswordException");
+static constexpr uint32_t INVALID_OPERATION_HASH = ConstExprHashingUtils::HashString("InvalidOperationException");
+static constexpr uint32_t CONFLICTING_OPERATION_HASH = ConstExprHashingUtils::HashString("ConflictingOperationException");
+static constexpr uint32_t INVALID_ARGUMENT_HASH = ConstExprHashingUtils::HashString("InvalidArgumentException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == ENTITY_ALREADY_EXISTS_HASH)
   {

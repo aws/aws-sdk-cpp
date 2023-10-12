@@ -20,17 +20,17 @@ namespace Aws
       namespace PackageVersionErrorCodeMapper
       {
 
-        static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("ALREADY_EXISTS");
-        static const int MISMATCHED_REVISION_HASH = HashingUtils::HashString("MISMATCHED_REVISION");
-        static const int MISMATCHED_STATUS_HASH = HashingUtils::HashString("MISMATCHED_STATUS");
-        static const int NOT_ALLOWED_HASH = HashingUtils::HashString("NOT_ALLOWED");
-        static const int NOT_FOUND_HASH = HashingUtils::HashString("NOT_FOUND");
-        static const int SKIPPED_HASH = HashingUtils::HashString("SKIPPED");
+        static constexpr uint32_t ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ALREADY_EXISTS");
+        static constexpr uint32_t MISMATCHED_REVISION_HASH = ConstExprHashingUtils::HashString("MISMATCHED_REVISION");
+        static constexpr uint32_t MISMATCHED_STATUS_HASH = ConstExprHashingUtils::HashString("MISMATCHED_STATUS");
+        static constexpr uint32_t NOT_ALLOWED_HASH = ConstExprHashingUtils::HashString("NOT_ALLOWED");
+        static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NOT_FOUND");
+        static constexpr uint32_t SKIPPED_HASH = ConstExprHashingUtils::HashString("SKIPPED");
 
 
         PackageVersionErrorCode GetPackageVersionErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALREADY_EXISTS_HASH)
           {
             return PackageVersionErrorCode::ALREADY_EXISTS;

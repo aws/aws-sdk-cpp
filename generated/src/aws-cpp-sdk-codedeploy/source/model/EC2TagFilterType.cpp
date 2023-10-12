@@ -20,14 +20,14 @@ namespace Aws
       namespace EC2TagFilterTypeMapper
       {
 
-        static const int KEY_ONLY_HASH = HashingUtils::HashString("KEY_ONLY");
-        static const int VALUE_ONLY_HASH = HashingUtils::HashString("VALUE_ONLY");
-        static const int KEY_AND_VALUE_HASH = HashingUtils::HashString("KEY_AND_VALUE");
+        static constexpr uint32_t KEY_ONLY_HASH = ConstExprHashingUtils::HashString("KEY_ONLY");
+        static constexpr uint32_t VALUE_ONLY_HASH = ConstExprHashingUtils::HashString("VALUE_ONLY");
+        static constexpr uint32_t KEY_AND_VALUE_HASH = ConstExprHashingUtils::HashString("KEY_AND_VALUE");
 
 
         EC2TagFilterType GetEC2TagFilterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KEY_ONLY_HASH)
           {
             return EC2TagFilterType::KEY_ONLY;

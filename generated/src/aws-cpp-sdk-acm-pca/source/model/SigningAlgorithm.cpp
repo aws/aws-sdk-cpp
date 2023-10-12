@@ -20,17 +20,17 @@ namespace Aws
       namespace SigningAlgorithmMapper
       {
 
-        static const int SHA256WITHECDSA_HASH = HashingUtils::HashString("SHA256WITHECDSA");
-        static const int SHA384WITHECDSA_HASH = HashingUtils::HashString("SHA384WITHECDSA");
-        static const int SHA512WITHECDSA_HASH = HashingUtils::HashString("SHA512WITHECDSA");
-        static const int SHA256WITHRSA_HASH = HashingUtils::HashString("SHA256WITHRSA");
-        static const int SHA384WITHRSA_HASH = HashingUtils::HashString("SHA384WITHRSA");
-        static const int SHA512WITHRSA_HASH = HashingUtils::HashString("SHA512WITHRSA");
+        static constexpr uint32_t SHA256WITHECDSA_HASH = ConstExprHashingUtils::HashString("SHA256WITHECDSA");
+        static constexpr uint32_t SHA384WITHECDSA_HASH = ConstExprHashingUtils::HashString("SHA384WITHECDSA");
+        static constexpr uint32_t SHA512WITHECDSA_HASH = ConstExprHashingUtils::HashString("SHA512WITHECDSA");
+        static constexpr uint32_t SHA256WITHRSA_HASH = ConstExprHashingUtils::HashString("SHA256WITHRSA");
+        static constexpr uint32_t SHA384WITHRSA_HASH = ConstExprHashingUtils::HashString("SHA384WITHRSA");
+        static constexpr uint32_t SHA512WITHRSA_HASH = ConstExprHashingUtils::HashString("SHA512WITHRSA");
 
 
         SigningAlgorithm GetSigningAlgorithmForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SHA256WITHECDSA_HASH)
           {
             return SigningAlgorithm::SHA256WITHECDSA;

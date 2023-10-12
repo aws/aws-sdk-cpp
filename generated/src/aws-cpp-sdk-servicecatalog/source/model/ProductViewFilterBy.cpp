@@ -20,15 +20,15 @@ namespace Aws
       namespace ProductViewFilterByMapper
       {
 
-        static const int FullTextSearch_HASH = HashingUtils::HashString("FullTextSearch");
-        static const int Owner_HASH = HashingUtils::HashString("Owner");
-        static const int ProductType_HASH = HashingUtils::HashString("ProductType");
-        static const int SourceProductId_HASH = HashingUtils::HashString("SourceProductId");
+        static constexpr uint32_t FullTextSearch_HASH = ConstExprHashingUtils::HashString("FullTextSearch");
+        static constexpr uint32_t Owner_HASH = ConstExprHashingUtils::HashString("Owner");
+        static constexpr uint32_t ProductType_HASH = ConstExprHashingUtils::HashString("ProductType");
+        static constexpr uint32_t SourceProductId_HASH = ConstExprHashingUtils::HashString("SourceProductId");
 
 
         ProductViewFilterBy GetProductViewFilterByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FullTextSearch_HASH)
           {
             return ProductViewFilterBy::FullTextSearch;

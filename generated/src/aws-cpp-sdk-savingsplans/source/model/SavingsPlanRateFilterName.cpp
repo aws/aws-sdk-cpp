@@ -20,19 +20,19 @@ namespace Aws
       namespace SavingsPlanRateFilterNameMapper
       {
 
-        static const int region_HASH = HashingUtils::HashString("region");
-        static const int instanceType_HASH = HashingUtils::HashString("instanceType");
-        static const int productDescription_HASH = HashingUtils::HashString("productDescription");
-        static const int tenancy_HASH = HashingUtils::HashString("tenancy");
-        static const int productType_HASH = HashingUtils::HashString("productType");
-        static const int serviceCode_HASH = HashingUtils::HashString("serviceCode");
-        static const int usageType_HASH = HashingUtils::HashString("usageType");
-        static const int operation_HASH = HashingUtils::HashString("operation");
+        static constexpr uint32_t region_HASH = ConstExprHashingUtils::HashString("region");
+        static constexpr uint32_t instanceType_HASH = ConstExprHashingUtils::HashString("instanceType");
+        static constexpr uint32_t productDescription_HASH = ConstExprHashingUtils::HashString("productDescription");
+        static constexpr uint32_t tenancy_HASH = ConstExprHashingUtils::HashString("tenancy");
+        static constexpr uint32_t productType_HASH = ConstExprHashingUtils::HashString("productType");
+        static constexpr uint32_t serviceCode_HASH = ConstExprHashingUtils::HashString("serviceCode");
+        static constexpr uint32_t usageType_HASH = ConstExprHashingUtils::HashString("usageType");
+        static constexpr uint32_t operation_HASH = ConstExprHashingUtils::HashString("operation");
 
 
         SavingsPlanRateFilterName GetSavingsPlanRateFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == region_HASH)
           {
             return SavingsPlanRateFilterName::region;

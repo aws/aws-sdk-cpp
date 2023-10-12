@@ -20,20 +20,20 @@ namespace Aws
       namespace SchemaExtensionStatusMapper
       {
 
-        static const int Initializing_HASH = HashingUtils::HashString("Initializing");
-        static const int CreatingSnapshot_HASH = HashingUtils::HashString("CreatingSnapshot");
-        static const int UpdatingSchema_HASH = HashingUtils::HashString("UpdatingSchema");
-        static const int Replicating_HASH = HashingUtils::HashString("Replicating");
-        static const int CancelInProgress_HASH = HashingUtils::HashString("CancelInProgress");
-        static const int RollbackInProgress_HASH = HashingUtils::HashString("RollbackInProgress");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Completed_HASH = HashingUtils::HashString("Completed");
+        static constexpr uint32_t Initializing_HASH = ConstExprHashingUtils::HashString("Initializing");
+        static constexpr uint32_t CreatingSnapshot_HASH = ConstExprHashingUtils::HashString("CreatingSnapshot");
+        static constexpr uint32_t UpdatingSchema_HASH = ConstExprHashingUtils::HashString("UpdatingSchema");
+        static constexpr uint32_t Replicating_HASH = ConstExprHashingUtils::HashString("Replicating");
+        static constexpr uint32_t CancelInProgress_HASH = ConstExprHashingUtils::HashString("CancelInProgress");
+        static constexpr uint32_t RollbackInProgress_HASH = ConstExprHashingUtils::HashString("RollbackInProgress");
+        static constexpr uint32_t Cancelled_HASH = ConstExprHashingUtils::HashString("Cancelled");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Completed_HASH = ConstExprHashingUtils::HashString("Completed");
 
 
         SchemaExtensionStatus GetSchemaExtensionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Initializing_HASH)
           {
             return SchemaExtensionStatus::Initializing;

@@ -20,14 +20,14 @@ namespace Aws
       namespace IpamManagementStateMapper
       {
 
-        static const int managed_HASH = HashingUtils::HashString("managed");
-        static const int unmanaged_HASH = HashingUtils::HashString("unmanaged");
-        static const int ignored_HASH = HashingUtils::HashString("ignored");
+        static constexpr uint32_t managed_HASH = ConstExprHashingUtils::HashString("managed");
+        static constexpr uint32_t unmanaged_HASH = ConstExprHashingUtils::HashString("unmanaged");
+        static constexpr uint32_t ignored_HASH = ConstExprHashingUtils::HashString("ignored");
 
 
         IpamManagementState GetIpamManagementStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == managed_HASH)
           {
             return IpamManagementState::managed;

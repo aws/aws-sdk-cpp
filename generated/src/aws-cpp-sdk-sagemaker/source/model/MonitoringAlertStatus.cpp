@@ -20,13 +20,13 @@ namespace Aws
       namespace MonitoringAlertStatusMapper
       {
 
-        static const int InAlert_HASH = HashingUtils::HashString("InAlert");
-        static const int OK_HASH = HashingUtils::HashString("OK");
+        static constexpr uint32_t InAlert_HASH = ConstExprHashingUtils::HashString("InAlert");
+        static constexpr uint32_t OK_HASH = ConstExprHashingUtils::HashString("OK");
 
 
         MonitoringAlertStatus GetMonitoringAlertStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InAlert_HASH)
           {
             return MonitoringAlertStatus::InAlert;

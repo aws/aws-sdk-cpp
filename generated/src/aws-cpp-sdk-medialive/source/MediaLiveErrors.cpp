@@ -26,20 +26,20 @@ template<> AWS_MEDIALIVE_API UnprocessableEntityException MediaLiveError::GetMod
 namespace MediaLiveErrorMapper
 {
 
-static const int BAD_GATEWAY_HASH = HashingUtils::HashString("BadGatewayException");
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
-static const int GATEWAY_TIMEOUT_HASH = HashingUtils::HashString("GatewayTimeoutException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int UNPROCESSABLE_ENTITY_HASH = HashingUtils::HashString("UnprocessableEntityException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
-static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerErrorException");
+static constexpr uint32_t BAD_GATEWAY_HASH = ConstExprHashingUtils::HashString("BadGatewayException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NotFoundException");
+static constexpr uint32_t FORBIDDEN_HASH = ConstExprHashingUtils::HashString("ForbiddenException");
+static constexpr uint32_t GATEWAY_TIMEOUT_HASH = ConstExprHashingUtils::HashString("GatewayTimeoutException");
+static constexpr uint32_t TOO_MANY_REQUESTS_HASH = ConstExprHashingUtils::HashString("TooManyRequestsException");
+static constexpr uint32_t UNPROCESSABLE_ENTITY_HASH = ConstExprHashingUtils::HashString("UnprocessableEntityException");
+static constexpr uint32_t BAD_REQUEST_HASH = ConstExprHashingUtils::HashString("BadRequestException");
+static constexpr uint32_t INTERNAL_SERVER_ERROR_HASH = ConstExprHashingUtils::HashString("InternalServerErrorException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == BAD_GATEWAY_HASH)
   {

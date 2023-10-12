@@ -20,14 +20,14 @@ namespace Aws
       namespace RegistrationStatusMapper
       {
 
-        static const int REGISTRATION_PENDING_HASH = HashingUtils::HashString("REGISTRATION_PENDING");
-        static const int REGISTRATION_SUCCESS_HASH = HashingUtils::HashString("REGISTRATION_SUCCESS");
-        static const int REGISTRATION_FAILURE_HASH = HashingUtils::HashString("REGISTRATION_FAILURE");
+        static constexpr uint32_t REGISTRATION_PENDING_HASH = ConstExprHashingUtils::HashString("REGISTRATION_PENDING");
+        static constexpr uint32_t REGISTRATION_SUCCESS_HASH = ConstExprHashingUtils::HashString("REGISTRATION_SUCCESS");
+        static constexpr uint32_t REGISTRATION_FAILURE_HASH = ConstExprHashingUtils::HashString("REGISTRATION_FAILURE");
 
 
         RegistrationStatus GetRegistrationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REGISTRATION_PENDING_HASH)
           {
             return RegistrationStatus::REGISTRATION_PENDING;

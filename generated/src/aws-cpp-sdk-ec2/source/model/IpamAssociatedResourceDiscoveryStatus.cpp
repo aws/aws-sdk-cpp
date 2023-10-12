@@ -20,13 +20,13 @@ namespace Aws
       namespace IpamAssociatedResourceDiscoveryStatusMapper
       {
 
-        static const int active_HASH = HashingUtils::HashString("active");
-        static const int not_found_HASH = HashingUtils::HashString("not-found");
+        static constexpr uint32_t active_HASH = ConstExprHashingUtils::HashString("active");
+        static constexpr uint32_t not_found_HASH = ConstExprHashingUtils::HashString("not-found");
 
 
         IpamAssociatedResourceDiscoveryStatus GetIpamAssociatedResourceDiscoveryStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == active_HASH)
           {
             return IpamAssociatedResourceDiscoveryStatus::active;

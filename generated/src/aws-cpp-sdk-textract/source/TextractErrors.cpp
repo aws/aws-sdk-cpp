@@ -26,24 +26,24 @@ template<> AWS_TEXTRACT_API HumanLoopQuotaExceededException TextractError::GetMo
 namespace TextractErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int UNSUPPORTED_DOCUMENT_HASH = HashingUtils::HashString("UnsupportedDocumentException");
-static const int BAD_DOCUMENT_HASH = HashingUtils::HashString("BadDocumentException");
-static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INVALID_JOB_ID_HASH = HashingUtils::HashString("InvalidJobIdException");
-static const int INVALID_K_M_S_KEY_HASH = HashingUtils::HashString("InvalidKMSKeyException");
-static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int DOCUMENT_TOO_LARGE_HASH = HashingUtils::HashString("DocumentTooLargeException");
-static const int PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("ProvisionedThroughputExceededException");
-static const int INVALID_S3_OBJECT_HASH = HashingUtils::HashString("InvalidS3ObjectException");
-static const int HUMAN_LOOP_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("HumanLoopQuotaExceededException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t UNSUPPORTED_DOCUMENT_HASH = ConstExprHashingUtils::HashString("UnsupportedDocumentException");
+static constexpr uint32_t BAD_DOCUMENT_HASH = ConstExprHashingUtils::HashString("BadDocumentException");
+static constexpr uint32_t IDEMPOTENT_PARAMETER_MISMATCH_HASH = ConstExprHashingUtils::HashString("IdempotentParameterMismatchException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t INVALID_JOB_ID_HASH = ConstExprHashingUtils::HashString("InvalidJobIdException");
+static constexpr uint32_t INVALID_K_M_S_KEY_HASH = ConstExprHashingUtils::HashString("InvalidKMSKeyException");
+static constexpr uint32_t SERVICE_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ServiceQuotaExceededException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t DOCUMENT_TOO_LARGE_HASH = ConstExprHashingUtils::HashString("DocumentTooLargeException");
+static constexpr uint32_t PROVISIONED_THROUGHPUT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ProvisionedThroughputExceededException");
+static constexpr uint32_t INVALID_S3_OBJECT_HASH = ConstExprHashingUtils::HashString("InvalidS3ObjectException");
+static constexpr uint32_t HUMAN_LOOP_QUOTA_EXCEEDED_HASH = ConstExprHashingUtils::HashString("HumanLoopQuotaExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

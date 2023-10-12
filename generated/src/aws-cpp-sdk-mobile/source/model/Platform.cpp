@@ -20,18 +20,18 @@ namespace Aws
       namespace PlatformMapper
       {
 
-        static const int OSX_HASH = HashingUtils::HashString("OSX");
-        static const int WINDOWS_HASH = HashingUtils::HashString("WINDOWS");
-        static const int LINUX_HASH = HashingUtils::HashString("LINUX");
-        static const int OBJC_HASH = HashingUtils::HashString("OBJC");
-        static const int SWIFT_HASH = HashingUtils::HashString("SWIFT");
-        static const int ANDROID__HASH = HashingUtils::HashString("ANDROID");
-        static const int JAVASCRIPT_HASH = HashingUtils::HashString("JAVASCRIPT");
+        static constexpr uint32_t OSX_HASH = ConstExprHashingUtils::HashString("OSX");
+        static constexpr uint32_t WINDOWS_HASH = ConstExprHashingUtils::HashString("WINDOWS");
+        static constexpr uint32_t LINUX_HASH = ConstExprHashingUtils::HashString("LINUX");
+        static constexpr uint32_t OBJC_HASH = ConstExprHashingUtils::HashString("OBJC");
+        static constexpr uint32_t SWIFT_HASH = ConstExprHashingUtils::HashString("SWIFT");
+        static constexpr uint32_t ANDROID__HASH = ConstExprHashingUtils::HashString("ANDROID");
+        static constexpr uint32_t JAVASCRIPT_HASH = ConstExprHashingUtils::HashString("JAVASCRIPT");
 
 
         Platform GetPlatformForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OSX_HASH)
           {
             return Platform::OSX;

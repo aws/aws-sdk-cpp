@@ -20,18 +20,18 @@ namespace Aws
       namespace FilterNameMapper
       {
 
-        static const int file_system_id_HASH = HashingUtils::HashString("file-system-id");
-        static const int backup_type_HASH = HashingUtils::HashString("backup-type");
-        static const int file_system_type_HASH = HashingUtils::HashString("file-system-type");
-        static const int volume_id_HASH = HashingUtils::HashString("volume-id");
-        static const int data_repository_type_HASH = HashingUtils::HashString("data-repository-type");
-        static const int file_cache_id_HASH = HashingUtils::HashString("file-cache-id");
-        static const int file_cache_type_HASH = HashingUtils::HashString("file-cache-type");
+        static constexpr uint32_t file_system_id_HASH = ConstExprHashingUtils::HashString("file-system-id");
+        static constexpr uint32_t backup_type_HASH = ConstExprHashingUtils::HashString("backup-type");
+        static constexpr uint32_t file_system_type_HASH = ConstExprHashingUtils::HashString("file-system-type");
+        static constexpr uint32_t volume_id_HASH = ConstExprHashingUtils::HashString("volume-id");
+        static constexpr uint32_t data_repository_type_HASH = ConstExprHashingUtils::HashString("data-repository-type");
+        static constexpr uint32_t file_cache_id_HASH = ConstExprHashingUtils::HashString("file-cache-id");
+        static constexpr uint32_t file_cache_type_HASH = ConstExprHashingUtils::HashString("file-cache-type");
 
 
         FilterName GetFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == file_system_id_HASH)
           {
             return FilterName::file_system_id;

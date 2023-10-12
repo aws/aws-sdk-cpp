@@ -20,18 +20,18 @@ namespace Aws
       namespace HttpMethodMapper
       {
 
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
-        static const int GET__HASH = HashingUtils::HashString("GET");
-        static const int HEAD_HASH = HashingUtils::HashString("HEAD");
-        static const int OPTIONS_HASH = HashingUtils::HashString("OPTIONS");
-        static const int PATCH_HASH = HashingUtils::HashString("PATCH");
-        static const int POST_HASH = HashingUtils::HashString("POST");
-        static const int PUT_HASH = HashingUtils::HashString("PUT");
+        static constexpr uint32_t DELETE__HASH = ConstExprHashingUtils::HashString("DELETE");
+        static constexpr uint32_t GET__HASH = ConstExprHashingUtils::HashString("GET");
+        static constexpr uint32_t HEAD_HASH = ConstExprHashingUtils::HashString("HEAD");
+        static constexpr uint32_t OPTIONS_HASH = ConstExprHashingUtils::HashString("OPTIONS");
+        static constexpr uint32_t PATCH_HASH = ConstExprHashingUtils::HashString("PATCH");
+        static constexpr uint32_t POST_HASH = ConstExprHashingUtils::HashString("POST");
+        static constexpr uint32_t PUT_HASH = ConstExprHashingUtils::HashString("PUT");
 
 
         HttpMethod GetHttpMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DELETE__HASH)
           {
             return HttpMethod::DELETE_;

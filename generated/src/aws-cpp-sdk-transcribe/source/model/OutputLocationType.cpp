@@ -20,13 +20,13 @@ namespace Aws
       namespace OutputLocationTypeMapper
       {
 
-        static const int CUSTOMER_BUCKET_HASH = HashingUtils::HashString("CUSTOMER_BUCKET");
-        static const int SERVICE_BUCKET_HASH = HashingUtils::HashString("SERVICE_BUCKET");
+        static constexpr uint32_t CUSTOMER_BUCKET_HASH = ConstExprHashingUtils::HashString("CUSTOMER_BUCKET");
+        static constexpr uint32_t SERVICE_BUCKET_HASH = ConstExprHashingUtils::HashString("SERVICE_BUCKET");
 
 
         OutputLocationType GetOutputLocationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CUSTOMER_BUCKET_HASH)
           {
             return OutputLocationType::CUSTOMER_BUCKET;

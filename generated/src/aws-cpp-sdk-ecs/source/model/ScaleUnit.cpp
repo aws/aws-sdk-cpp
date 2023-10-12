@@ -20,12 +20,12 @@ namespace Aws
       namespace ScaleUnitMapper
       {
 
-        static const int PERCENT_HASH = HashingUtils::HashString("PERCENT");
+        static constexpr uint32_t PERCENT_HASH = ConstExprHashingUtils::HashString("PERCENT");
 
 
         ScaleUnit GetScaleUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PERCENT_HASH)
           {
             return ScaleUnit::PERCENT;

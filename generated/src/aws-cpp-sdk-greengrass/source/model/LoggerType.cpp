@@ -20,13 +20,13 @@ namespace Aws
       namespace LoggerTypeMapper
       {
 
-        static const int FileSystem_HASH = HashingUtils::HashString("FileSystem");
-        static const int AWSCloudWatch_HASH = HashingUtils::HashString("AWSCloudWatch");
+        static constexpr uint32_t FileSystem_HASH = ConstExprHashingUtils::HashString("FileSystem");
+        static constexpr uint32_t AWSCloudWatch_HASH = ConstExprHashingUtils::HashString("AWSCloudWatch");
 
 
         LoggerType GetLoggerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FileSystem_HASH)
           {
             return LoggerType::FileSystem;

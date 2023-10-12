@@ -20,12 +20,12 @@ namespace Aws
       namespace InstanceIdFilterOperatorMapper
       {
 
-        static const int Eq_HASH = HashingUtils::HashString("Eq");
+        static constexpr uint32_t Eq_HASH = ConstExprHashingUtils::HashString("Eq");
 
 
         InstanceIdFilterOperator GetInstanceIdFilterOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Eq_HASH)
           {
             return InstanceIdFilterOperator::Eq;

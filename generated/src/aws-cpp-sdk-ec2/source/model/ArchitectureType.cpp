@@ -20,16 +20,16 @@ namespace Aws
       namespace ArchitectureTypeMapper
       {
 
-        static const int i386_HASH = HashingUtils::HashString("i386");
-        static const int x86_64_HASH = HashingUtils::HashString("x86_64");
-        static const int arm64_HASH = HashingUtils::HashString("arm64");
-        static const int x86_64_mac_HASH = HashingUtils::HashString("x86_64_mac");
-        static const int arm64_mac_HASH = HashingUtils::HashString("arm64_mac");
+        static constexpr uint32_t i386_HASH = ConstExprHashingUtils::HashString("i386");
+        static constexpr uint32_t x86_64_HASH = ConstExprHashingUtils::HashString("x86_64");
+        static constexpr uint32_t arm64_HASH = ConstExprHashingUtils::HashString("arm64");
+        static constexpr uint32_t x86_64_mac_HASH = ConstExprHashingUtils::HashString("x86_64_mac");
+        static constexpr uint32_t arm64_mac_HASH = ConstExprHashingUtils::HashString("arm64_mac");
 
 
         ArchitectureType GetArchitectureTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == i386_HASH)
           {
             return ArchitectureType::i386;

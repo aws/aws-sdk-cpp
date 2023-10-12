@@ -20,13 +20,13 @@ namespace Aws
       namespace ApprovalStateMapper
       {
 
-        static const int APPROVE_HASH = HashingUtils::HashString("APPROVE");
-        static const int REVOKE_HASH = HashingUtils::HashString("REVOKE");
+        static constexpr uint32_t APPROVE_HASH = ConstExprHashingUtils::HashString("APPROVE");
+        static constexpr uint32_t REVOKE_HASH = ConstExprHashingUtils::HashString("REVOKE");
 
 
         ApprovalState GetApprovalStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APPROVE_HASH)
           {
             return ApprovalState::APPROVE;

@@ -20,14 +20,14 @@ namespace Aws
       namespace RetryableFailureTypeMapper
       {
 
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t TIMED_OUT_HASH = ConstExprHashingUtils::HashString("TIMED_OUT");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         RetryableFailureType GetRetryableFailureTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FAILED_HASH)
           {
             return RetryableFailureType::FAILED;

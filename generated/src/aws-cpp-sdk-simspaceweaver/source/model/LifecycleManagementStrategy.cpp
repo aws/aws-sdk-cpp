@@ -20,15 +20,15 @@ namespace Aws
       namespace LifecycleManagementStrategyMapper
       {
 
-        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
-        static const int PerWorker_HASH = HashingUtils::HashString("PerWorker");
-        static const int BySpatialSubdivision_HASH = HashingUtils::HashString("BySpatialSubdivision");
-        static const int ByRequest_HASH = HashingUtils::HashString("ByRequest");
+        static constexpr uint32_t Unknown_HASH = ConstExprHashingUtils::HashString("Unknown");
+        static constexpr uint32_t PerWorker_HASH = ConstExprHashingUtils::HashString("PerWorker");
+        static constexpr uint32_t BySpatialSubdivision_HASH = ConstExprHashingUtils::HashString("BySpatialSubdivision");
+        static constexpr uint32_t ByRequest_HASH = ConstExprHashingUtils::HashString("ByRequest");
 
 
         LifecycleManagementStrategy GetLifecycleManagementStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Unknown_HASH)
           {
             return LifecycleManagementStrategy::Unknown;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ResourceSourceTypeMapper
       {
 
-        static const int AppTemplate_HASH = HashingUtils::HashString("AppTemplate");
-        static const int Discovered_HASH = HashingUtils::HashString("Discovered");
+        static constexpr uint32_t AppTemplate_HASH = ConstExprHashingUtils::HashString("AppTemplate");
+        static constexpr uint32_t Discovered_HASH = ConstExprHashingUtils::HashString("Discovered");
 
 
         ResourceSourceType GetResourceSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AppTemplate_HASH)
           {
             return ResourceSourceType::AppTemplate;

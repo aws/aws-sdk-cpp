@@ -20,13 +20,13 @@ namespace Aws
       namespace AuthenticationTypeMapper
       {
 
-        static const int Standard_HASH = HashingUtils::HashString("Standard");
-        static const int IAM_Identity_Center_HASH = HashingUtils::HashString("IAM_Identity_Center");
+        static constexpr uint32_t Standard_HASH = ConstExprHashingUtils::HashString("Standard");
+        static constexpr uint32_t IAM_Identity_Center_HASH = ConstExprHashingUtils::HashString("IAM_Identity_Center");
 
 
         AuthenticationType GetAuthenticationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Standard_HASH)
           {
             return AuthenticationType::Standard;

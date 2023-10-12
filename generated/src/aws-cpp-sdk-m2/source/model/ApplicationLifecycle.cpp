@@ -20,22 +20,22 @@ namespace Aws
       namespace ApplicationLifecycleMapper
       {
 
-        static const int Creating_HASH = HashingUtils::HashString("Creating");
-        static const int Created_HASH = HashingUtils::HashString("Created");
-        static const int Available_HASH = HashingUtils::HashString("Available");
-        static const int Ready_HASH = HashingUtils::HashString("Ready");
-        static const int Starting_HASH = HashingUtils::HashString("Starting");
-        static const int Running_HASH = HashingUtils::HashString("Running");
-        static const int Stopping_HASH = HashingUtils::HashString("Stopping");
-        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
-        static const int Deleting_From_Environment_HASH = HashingUtils::HashString("Deleting From Environment");
+        static constexpr uint32_t Creating_HASH = ConstExprHashingUtils::HashString("Creating");
+        static constexpr uint32_t Created_HASH = ConstExprHashingUtils::HashString("Created");
+        static constexpr uint32_t Available_HASH = ConstExprHashingUtils::HashString("Available");
+        static constexpr uint32_t Ready_HASH = ConstExprHashingUtils::HashString("Ready");
+        static constexpr uint32_t Starting_HASH = ConstExprHashingUtils::HashString("Starting");
+        static constexpr uint32_t Running_HASH = ConstExprHashingUtils::HashString("Running");
+        static constexpr uint32_t Stopping_HASH = ConstExprHashingUtils::HashString("Stopping");
+        static constexpr uint32_t Stopped_HASH = ConstExprHashingUtils::HashString("Stopped");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
+        static constexpr uint32_t Deleting_From_Environment_HASH = ConstExprHashingUtils::HashString("Deleting From Environment");
 
 
         ApplicationLifecycle GetApplicationLifecycleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Creating_HASH)
           {
             return ApplicationLifecycle::Creating;

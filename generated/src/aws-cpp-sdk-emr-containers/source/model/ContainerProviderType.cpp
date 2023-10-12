@@ -20,12 +20,12 @@ namespace Aws
       namespace ContainerProviderTypeMapper
       {
 
-        static const int EKS_HASH = HashingUtils::HashString("EKS");
+        static constexpr uint32_t EKS_HASH = ConstExprHashingUtils::HashString("EKS");
 
 
         ContainerProviderType GetContainerProviderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EKS_HASH)
           {
             return ContainerProviderType::EKS;

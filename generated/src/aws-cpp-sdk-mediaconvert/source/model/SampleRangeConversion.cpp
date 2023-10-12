@@ -20,14 +20,14 @@ namespace Aws
       namespace SampleRangeConversionMapper
       {
 
-        static const int LIMITED_RANGE_SQUEEZE_HASH = HashingUtils::HashString("LIMITED_RANGE_SQUEEZE");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int LIMITED_RANGE_CLIP_HASH = HashingUtils::HashString("LIMITED_RANGE_CLIP");
+        static constexpr uint32_t LIMITED_RANGE_SQUEEZE_HASH = ConstExprHashingUtils::HashString("LIMITED_RANGE_SQUEEZE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t LIMITED_RANGE_CLIP_HASH = ConstExprHashingUtils::HashString("LIMITED_RANGE_CLIP");
 
 
         SampleRangeConversion GetSampleRangeConversionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LIMITED_RANGE_SQUEEZE_HASH)
           {
             return SampleRangeConversion::LIMITED_RANGE_SQUEEZE;

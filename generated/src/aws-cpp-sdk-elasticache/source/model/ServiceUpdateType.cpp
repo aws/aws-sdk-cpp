@@ -20,12 +20,12 @@ namespace Aws
       namespace ServiceUpdateTypeMapper
       {
 
-        static const int security_update_HASH = HashingUtils::HashString("security-update");
+        static constexpr uint32_t security_update_HASH = ConstExprHashingUtils::HashString("security-update");
 
 
         ServiceUpdateType GetServiceUpdateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == security_update_HASH)
           {
             return ServiceUpdateType::security_update;

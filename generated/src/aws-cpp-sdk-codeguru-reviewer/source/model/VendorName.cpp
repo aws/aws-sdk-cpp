@@ -20,14 +20,14 @@ namespace Aws
       namespace VendorNameMapper
       {
 
-        static const int GitHub_HASH = HashingUtils::HashString("GitHub");
-        static const int GitLab_HASH = HashingUtils::HashString("GitLab");
-        static const int NativeS3_HASH = HashingUtils::HashString("NativeS3");
+        static constexpr uint32_t GitHub_HASH = ConstExprHashingUtils::HashString("GitHub");
+        static constexpr uint32_t GitLab_HASH = ConstExprHashingUtils::HashString("GitLab");
+        static constexpr uint32_t NativeS3_HASH = ConstExprHashingUtils::HashString("NativeS3");
 
 
         VendorName GetVendorNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GitHub_HASH)
           {
             return VendorName::GitHub;

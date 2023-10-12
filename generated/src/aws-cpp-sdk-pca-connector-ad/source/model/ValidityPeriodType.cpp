@@ -20,16 +20,16 @@ namespace Aws
       namespace ValidityPeriodTypeMapper
       {
 
-        static const int HOURS_HASH = HashingUtils::HashString("HOURS");
-        static const int DAYS_HASH = HashingUtils::HashString("DAYS");
-        static const int WEEKS_HASH = HashingUtils::HashString("WEEKS");
-        static const int MONTHS_HASH = HashingUtils::HashString("MONTHS");
-        static const int YEARS_HASH = HashingUtils::HashString("YEARS");
+        static constexpr uint32_t HOURS_HASH = ConstExprHashingUtils::HashString("HOURS");
+        static constexpr uint32_t DAYS_HASH = ConstExprHashingUtils::HashString("DAYS");
+        static constexpr uint32_t WEEKS_HASH = ConstExprHashingUtils::HashString("WEEKS");
+        static constexpr uint32_t MONTHS_HASH = ConstExprHashingUtils::HashString("MONTHS");
+        static constexpr uint32_t YEARS_HASH = ConstExprHashingUtils::HashString("YEARS");
 
 
         ValidityPeriodType GetValidityPeriodTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HOURS_HASH)
           {
             return ValidityPeriodType::HOURS;

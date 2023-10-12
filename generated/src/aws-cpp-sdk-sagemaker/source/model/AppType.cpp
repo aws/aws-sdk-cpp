@@ -20,16 +20,16 @@ namespace Aws
       namespace AppTypeMapper
       {
 
-        static const int JupyterServer_HASH = HashingUtils::HashString("JupyterServer");
-        static const int KernelGateway_HASH = HashingUtils::HashString("KernelGateway");
-        static const int TensorBoard_HASH = HashingUtils::HashString("TensorBoard");
-        static const int RStudioServerPro_HASH = HashingUtils::HashString("RStudioServerPro");
-        static const int RSessionGateway_HASH = HashingUtils::HashString("RSessionGateway");
+        static constexpr uint32_t JupyterServer_HASH = ConstExprHashingUtils::HashString("JupyterServer");
+        static constexpr uint32_t KernelGateway_HASH = ConstExprHashingUtils::HashString("KernelGateway");
+        static constexpr uint32_t TensorBoard_HASH = ConstExprHashingUtils::HashString("TensorBoard");
+        static constexpr uint32_t RStudioServerPro_HASH = ConstExprHashingUtils::HashString("RStudioServerPro");
+        static constexpr uint32_t RSessionGateway_HASH = ConstExprHashingUtils::HashString("RSessionGateway");
 
 
         AppType GetAppTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JupyterServer_HASH)
           {
             return AppType::JupyterServer;

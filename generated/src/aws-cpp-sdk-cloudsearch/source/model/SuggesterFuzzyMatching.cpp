@@ -20,14 +20,14 @@ namespace Aws
       namespace SuggesterFuzzyMatchingMapper
       {
 
-        static const int none_HASH = HashingUtils::HashString("none");
-        static const int low_HASH = HashingUtils::HashString("low");
-        static const int high_HASH = HashingUtils::HashString("high");
+        static constexpr uint32_t none_HASH = ConstExprHashingUtils::HashString("none");
+        static constexpr uint32_t low_HASH = ConstExprHashingUtils::HashString("low");
+        static constexpr uint32_t high_HASH = ConstExprHashingUtils::HashString("high");
 
 
         SuggesterFuzzyMatching GetSuggesterFuzzyMatchingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == none_HASH)
           {
             return SuggesterFuzzyMatching::none;

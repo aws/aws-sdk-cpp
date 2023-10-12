@@ -20,13 +20,13 @@ namespace Aws
       namespace ValidationExceptionReasonMapper
       {
 
-        static const int INVALID_PAGE_TOKEN_HASH = HashingUtils::HashString("INVALID_PAGE_TOKEN");
-        static const int INVALID_PARAMETER_VALUE_HASH = HashingUtils::HashString("INVALID_PARAMETER_VALUE");
+        static constexpr uint32_t INVALID_PAGE_TOKEN_HASH = ConstExprHashingUtils::HashString("INVALID_PAGE_TOKEN");
+        static constexpr uint32_t INVALID_PARAMETER_VALUE_HASH = ConstExprHashingUtils::HashString("INVALID_PARAMETER_VALUE");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVALID_PAGE_TOKEN_HASH)
           {
             return ValidationExceptionReason::INVALID_PAGE_TOKEN;

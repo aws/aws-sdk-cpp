@@ -20,17 +20,17 @@ namespace Aws
       namespace IpSetFormatMapper
       {
 
-        static const int TXT_HASH = HashingUtils::HashString("TXT");
-        static const int STIX_HASH = HashingUtils::HashString("STIX");
-        static const int OTX_CSV_HASH = HashingUtils::HashString("OTX_CSV");
-        static const int ALIEN_VAULT_HASH = HashingUtils::HashString("ALIEN_VAULT");
-        static const int PROOF_POINT_HASH = HashingUtils::HashString("PROOF_POINT");
-        static const int FIRE_EYE_HASH = HashingUtils::HashString("FIRE_EYE");
+        static constexpr uint32_t TXT_HASH = ConstExprHashingUtils::HashString("TXT");
+        static constexpr uint32_t STIX_HASH = ConstExprHashingUtils::HashString("STIX");
+        static constexpr uint32_t OTX_CSV_HASH = ConstExprHashingUtils::HashString("OTX_CSV");
+        static constexpr uint32_t ALIEN_VAULT_HASH = ConstExprHashingUtils::HashString("ALIEN_VAULT");
+        static constexpr uint32_t PROOF_POINT_HASH = ConstExprHashingUtils::HashString("PROOF_POINT");
+        static constexpr uint32_t FIRE_EYE_HASH = ConstExprHashingUtils::HashString("FIRE_EYE");
 
 
         IpSetFormat GetIpSetFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TXT_HASH)
           {
             return IpSetFormat::TXT;

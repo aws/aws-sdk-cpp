@@ -20,17 +20,17 @@ namespace Aws
       namespace PlatformDifferenceMapper
       {
 
-        static const int Hypervisor_HASH = HashingUtils::HashString("Hypervisor");
-        static const int NetworkInterface_HASH = HashingUtils::HashString("NetworkInterface");
-        static const int StorageInterface_HASH = HashingUtils::HashString("StorageInterface");
-        static const int InstanceStoreAvailability_HASH = HashingUtils::HashString("InstanceStoreAvailability");
-        static const int VirtualizationType_HASH = HashingUtils::HashString("VirtualizationType");
-        static const int Architecture_HASH = HashingUtils::HashString("Architecture");
+        static constexpr uint32_t Hypervisor_HASH = ConstExprHashingUtils::HashString("Hypervisor");
+        static constexpr uint32_t NetworkInterface_HASH = ConstExprHashingUtils::HashString("NetworkInterface");
+        static constexpr uint32_t StorageInterface_HASH = ConstExprHashingUtils::HashString("StorageInterface");
+        static constexpr uint32_t InstanceStoreAvailability_HASH = ConstExprHashingUtils::HashString("InstanceStoreAvailability");
+        static constexpr uint32_t VirtualizationType_HASH = ConstExprHashingUtils::HashString("VirtualizationType");
+        static constexpr uint32_t Architecture_HASH = ConstExprHashingUtils::HashString("Architecture");
 
 
         PlatformDifference GetPlatformDifferenceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Hypervisor_HASH)
           {
             return PlatformDifference::Hypervisor;

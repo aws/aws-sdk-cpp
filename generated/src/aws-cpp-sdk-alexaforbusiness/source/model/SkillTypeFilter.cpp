@@ -20,14 +20,14 @@ namespace Aws
       namespace SkillTypeFilterMapper
       {
 
-        static const int PUBLIC__HASH = HashingUtils::HashString("PUBLIC");
-        static const int PRIVATE__HASH = HashingUtils::HashString("PRIVATE");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t PUBLIC__HASH = ConstExprHashingUtils::HashString("PUBLIC");
+        static constexpr uint32_t PRIVATE__HASH = ConstExprHashingUtils::HashString("PRIVATE");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         SkillTypeFilter GetSkillTypeFilterForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUBLIC__HASH)
           {
             return SkillTypeFilter::PUBLIC_;

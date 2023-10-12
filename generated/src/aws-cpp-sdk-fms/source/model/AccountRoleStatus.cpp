@@ -20,16 +20,16 @@ namespace Aws
       namespace AccountRoleStatusMapper
       {
 
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int PENDING_DELETION_HASH = HashingUtils::HashString("PENDING_DELETION");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t PENDING_DELETION_HASH = ConstExprHashingUtils::HashString("PENDING_DELETION");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
 
 
         AccountRoleStatus GetAccountRoleStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == READY_HASH)
           {
             return AccountRoleStatus::READY;

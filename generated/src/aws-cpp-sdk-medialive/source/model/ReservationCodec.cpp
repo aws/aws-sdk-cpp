@@ -20,16 +20,16 @@ namespace Aws
       namespace ReservationCodecMapper
       {
 
-        static const int MPEG2_HASH = HashingUtils::HashString("MPEG2");
-        static const int AVC_HASH = HashingUtils::HashString("AVC");
-        static const int HEVC_HASH = HashingUtils::HashString("HEVC");
-        static const int AUDIO_HASH = HashingUtils::HashString("AUDIO");
-        static const int LINK_HASH = HashingUtils::HashString("LINK");
+        static constexpr uint32_t MPEG2_HASH = ConstExprHashingUtils::HashString("MPEG2");
+        static constexpr uint32_t AVC_HASH = ConstExprHashingUtils::HashString("AVC");
+        static constexpr uint32_t HEVC_HASH = ConstExprHashingUtils::HashString("HEVC");
+        static constexpr uint32_t AUDIO_HASH = ConstExprHashingUtils::HashString("AUDIO");
+        static constexpr uint32_t LINK_HASH = ConstExprHashingUtils::HashString("LINK");
 
 
         ReservationCodec GetReservationCodecForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MPEG2_HASH)
           {
             return ReservationCodec::MPEG2;

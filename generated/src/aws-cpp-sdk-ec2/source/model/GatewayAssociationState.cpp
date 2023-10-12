@@ -20,15 +20,15 @@ namespace Aws
       namespace GatewayAssociationStateMapper
       {
 
-        static const int associated_HASH = HashingUtils::HashString("associated");
-        static const int not_associated_HASH = HashingUtils::HashString("not-associated");
-        static const int associating_HASH = HashingUtils::HashString("associating");
-        static const int disassociating_HASH = HashingUtils::HashString("disassociating");
+        static constexpr uint32_t associated_HASH = ConstExprHashingUtils::HashString("associated");
+        static constexpr uint32_t not_associated_HASH = ConstExprHashingUtils::HashString("not-associated");
+        static constexpr uint32_t associating_HASH = ConstExprHashingUtils::HashString("associating");
+        static constexpr uint32_t disassociating_HASH = ConstExprHashingUtils::HashString("disassociating");
 
 
         GatewayAssociationState GetGatewayAssociationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == associated_HASH)
           {
             return GatewayAssociationState::associated;

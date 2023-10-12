@@ -18,21 +18,21 @@ namespace SWF
 namespace SWFErrorMapper
 {
 
-static const int LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("LimitExceededFault");
-static const int OPERATION_NOT_PERMITTED_FAULT_HASH = HashingUtils::HashString("OperationNotPermittedFault");
-static const int UNKNOWN_RESOURCE_FAULT_HASH = HashingUtils::HashString("UnknownResourceFault");
-static const int TYPE_DEPRECATED_FAULT_HASH = HashingUtils::HashString("TypeDeprecatedFault");
-static const int DEFAULT_UNDEFINED_FAULT_HASH = HashingUtils::HashString("DefaultUndefinedFault");
-static const int DOMAIN_DEPRECATED_FAULT_HASH = HashingUtils::HashString("DomainDeprecatedFault");
-static const int TYPE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("TypeAlreadyExistsFault");
-static const int TOO_MANY_TAGS_FAULT_HASH = HashingUtils::HashString("TooManyTagsFault");
-static const int DOMAIN_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DomainAlreadyExistsFault");
-static const int WORKFLOW_EXECUTION_ALREADY_STARTED_FAULT_HASH = HashingUtils::HashString("WorkflowExecutionAlreadyStartedFault");
+static constexpr uint32_t LIMIT_EXCEEDED_FAULT_HASH = ConstExprHashingUtils::HashString("LimitExceededFault");
+static constexpr uint32_t OPERATION_NOT_PERMITTED_FAULT_HASH = ConstExprHashingUtils::HashString("OperationNotPermittedFault");
+static constexpr uint32_t UNKNOWN_RESOURCE_FAULT_HASH = ConstExprHashingUtils::HashString("UnknownResourceFault");
+static constexpr uint32_t TYPE_DEPRECATED_FAULT_HASH = ConstExprHashingUtils::HashString("TypeDeprecatedFault");
+static constexpr uint32_t DEFAULT_UNDEFINED_FAULT_HASH = ConstExprHashingUtils::HashString("DefaultUndefinedFault");
+static constexpr uint32_t DOMAIN_DEPRECATED_FAULT_HASH = ConstExprHashingUtils::HashString("DomainDeprecatedFault");
+static constexpr uint32_t TYPE_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("TypeAlreadyExistsFault");
+static constexpr uint32_t TOO_MANY_TAGS_FAULT_HASH = ConstExprHashingUtils::HashString("TooManyTagsFault");
+static constexpr uint32_t DOMAIN_ALREADY_EXISTS_FAULT_HASH = ConstExprHashingUtils::HashString("DomainAlreadyExistsFault");
+static constexpr uint32_t WORKFLOW_EXECUTION_ALREADY_STARTED_FAULT_HASH = ConstExprHashingUtils::HashString("WorkflowExecutionAlreadyStartedFault");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == LIMIT_EXCEEDED_FAULT_HASH)
   {

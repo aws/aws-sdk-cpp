@@ -20,15 +20,15 @@ namespace Aws
       namespace HubSortByMapper
       {
 
-        static const int HubName_HASH = HashingUtils::HashString("HubName");
-        static const int CreationTime_HASH = HashingUtils::HashString("CreationTime");
-        static const int HubStatus_HASH = HashingUtils::HashString("HubStatus");
-        static const int AccountIdOwner_HASH = HashingUtils::HashString("AccountIdOwner");
+        static constexpr uint32_t HubName_HASH = ConstExprHashingUtils::HashString("HubName");
+        static constexpr uint32_t CreationTime_HASH = ConstExprHashingUtils::HashString("CreationTime");
+        static constexpr uint32_t HubStatus_HASH = ConstExprHashingUtils::HashString("HubStatus");
+        static constexpr uint32_t AccountIdOwner_HASH = ConstExprHashingUtils::HashString("AccountIdOwner");
 
 
         HubSortBy GetHubSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HubName_HASH)
           {
             return HubSortBy::HubName;

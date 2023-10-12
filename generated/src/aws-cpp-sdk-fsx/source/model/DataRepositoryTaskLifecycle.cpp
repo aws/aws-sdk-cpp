@@ -20,17 +20,17 @@ namespace Aws
       namespace DataRepositoryTaskLifecycleMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int EXECUTING_HASH = HashingUtils::HashString("EXECUTING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-        static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
-        static const int CANCELING_HASH = HashingUtils::HashString("CANCELING");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t EXECUTING_HASH = ConstExprHashingUtils::HashString("EXECUTING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t SUCCEEDED_HASH = ConstExprHashingUtils::HashString("SUCCEEDED");
+        static constexpr uint32_t CANCELED_HASH = ConstExprHashingUtils::HashString("CANCELED");
+        static constexpr uint32_t CANCELING_HASH = ConstExprHashingUtils::HashString("CANCELING");
 
 
         DataRepositoryTaskLifecycle GetDataRepositoryTaskLifecycleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return DataRepositoryTaskLifecycle::PENDING;

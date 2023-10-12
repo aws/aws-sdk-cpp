@@ -20,14 +20,14 @@ namespace Aws
       namespace FindingPublishingFrequencyMapper
       {
 
-        static const int FIFTEEN_MINUTES_HASH = HashingUtils::HashString("FIFTEEN_MINUTES");
-        static const int ONE_HOUR_HASH = HashingUtils::HashString("ONE_HOUR");
-        static const int SIX_HOURS_HASH = HashingUtils::HashString("SIX_HOURS");
+        static constexpr uint32_t FIFTEEN_MINUTES_HASH = ConstExprHashingUtils::HashString("FIFTEEN_MINUTES");
+        static constexpr uint32_t ONE_HOUR_HASH = ConstExprHashingUtils::HashString("ONE_HOUR");
+        static constexpr uint32_t SIX_HOURS_HASH = ConstExprHashingUtils::HashString("SIX_HOURS");
 
 
         FindingPublishingFrequency GetFindingPublishingFrequencyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FIFTEEN_MINUTES_HASH)
           {
             return FindingPublishingFrequency::FIFTEEN_MINUTES;

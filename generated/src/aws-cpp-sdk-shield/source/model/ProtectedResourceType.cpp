@@ -20,17 +20,17 @@ namespace Aws
       namespace ProtectedResourceTypeMapper
       {
 
-        static const int CLOUDFRONT_DISTRIBUTION_HASH = HashingUtils::HashString("CLOUDFRONT_DISTRIBUTION");
-        static const int ROUTE_53_HOSTED_ZONE_HASH = HashingUtils::HashString("ROUTE_53_HOSTED_ZONE");
-        static const int ELASTIC_IP_ALLOCATION_HASH = HashingUtils::HashString("ELASTIC_IP_ALLOCATION");
-        static const int CLASSIC_LOAD_BALANCER_HASH = HashingUtils::HashString("CLASSIC_LOAD_BALANCER");
-        static const int APPLICATION_LOAD_BALANCER_HASH = HashingUtils::HashString("APPLICATION_LOAD_BALANCER");
-        static const int GLOBAL_ACCELERATOR_HASH = HashingUtils::HashString("GLOBAL_ACCELERATOR");
+        static constexpr uint32_t CLOUDFRONT_DISTRIBUTION_HASH = ConstExprHashingUtils::HashString("CLOUDFRONT_DISTRIBUTION");
+        static constexpr uint32_t ROUTE_53_HOSTED_ZONE_HASH = ConstExprHashingUtils::HashString("ROUTE_53_HOSTED_ZONE");
+        static constexpr uint32_t ELASTIC_IP_ALLOCATION_HASH = ConstExprHashingUtils::HashString("ELASTIC_IP_ALLOCATION");
+        static constexpr uint32_t CLASSIC_LOAD_BALANCER_HASH = ConstExprHashingUtils::HashString("CLASSIC_LOAD_BALANCER");
+        static constexpr uint32_t APPLICATION_LOAD_BALANCER_HASH = ConstExprHashingUtils::HashString("APPLICATION_LOAD_BALANCER");
+        static constexpr uint32_t GLOBAL_ACCELERATOR_HASH = ConstExprHashingUtils::HashString("GLOBAL_ACCELERATOR");
 
 
         ProtectedResourceType GetProtectedResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLOUDFRONT_DISTRIBUTION_HASH)
           {
             return ProtectedResourceType::CLOUDFRONT_DISTRIBUTION;

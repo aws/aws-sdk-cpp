@@ -20,14 +20,14 @@ namespace Aws
       namespace WorkflowEngineMapper
       {
 
-        static const int WDL_HASH = HashingUtils::HashString("WDL");
-        static const int NEXTFLOW_HASH = HashingUtils::HashString("NEXTFLOW");
-        static const int CWL_HASH = HashingUtils::HashString("CWL");
+        static constexpr uint32_t WDL_HASH = ConstExprHashingUtils::HashString("WDL");
+        static constexpr uint32_t NEXTFLOW_HASH = ConstExprHashingUtils::HashString("NEXTFLOW");
+        static constexpr uint32_t CWL_HASH = ConstExprHashingUtils::HashString("CWL");
 
 
         WorkflowEngine GetWorkflowEngineForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == WDL_HASH)
           {
             return WorkflowEngine::WDL;

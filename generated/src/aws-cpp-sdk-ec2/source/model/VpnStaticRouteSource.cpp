@@ -20,12 +20,12 @@ namespace Aws
       namespace VpnStaticRouteSourceMapper
       {
 
-        static const int Static_HASH = HashingUtils::HashString("Static");
+        static constexpr uint32_t Static_HASH = ConstExprHashingUtils::HashString("Static");
 
 
         VpnStaticRouteSource GetVpnStaticRouteSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Static_HASH)
           {
             return VpnStaticRouteSource::Static;

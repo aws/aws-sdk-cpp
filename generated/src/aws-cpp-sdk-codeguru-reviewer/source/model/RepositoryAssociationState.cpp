@@ -20,16 +20,16 @@ namespace Aws
       namespace RepositoryAssociationStateMapper
       {
 
-        static const int Associated_HASH = HashingUtils::HashString("Associated");
-        static const int Associating_HASH = HashingUtils::HashString("Associating");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Disassociating_HASH = HashingUtils::HashString("Disassociating");
-        static const int Disassociated_HASH = HashingUtils::HashString("Disassociated");
+        static constexpr uint32_t Associated_HASH = ConstExprHashingUtils::HashString("Associated");
+        static constexpr uint32_t Associating_HASH = ConstExprHashingUtils::HashString("Associating");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Disassociating_HASH = ConstExprHashingUtils::HashString("Disassociating");
+        static constexpr uint32_t Disassociated_HASH = ConstExprHashingUtils::HashString("Disassociated");
 
 
         RepositoryAssociationState GetRepositoryAssociationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Associated_HASH)
           {
             return RepositoryAssociationState::Associated;

@@ -20,13 +20,13 @@ namespace Aws
       namespace S3OneTimeClassificationTypeMapper
       {
 
-        static const int FULL_HASH = HashingUtils::HashString("FULL");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static constexpr uint32_t FULL_HASH = ConstExprHashingUtils::HashString("FULL");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
 
 
         S3OneTimeClassificationType GetS3OneTimeClassificationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FULL_HASH)
           {
             return S3OneTimeClassificationType::FULL;

@@ -20,13 +20,13 @@ namespace Aws
       namespace RsMapper
       {
 
-        static const int SINGLE_REGION_HASH = HashingUtils::HashString("SINGLE_REGION");
-        static const int MULTI_REGION_HASH = HashingUtils::HashString("MULTI_REGION");
+        static constexpr uint32_t SINGLE_REGION_HASH = ConstExprHashingUtils::HashString("SINGLE_REGION");
+        static constexpr uint32_t MULTI_REGION_HASH = ConstExprHashingUtils::HashString("MULTI_REGION");
 
 
         Rs GetRsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SINGLE_REGION_HASH)
           {
             return Rs::SINGLE_REGION;

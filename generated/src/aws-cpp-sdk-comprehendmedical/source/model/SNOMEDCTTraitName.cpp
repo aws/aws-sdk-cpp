@@ -20,20 +20,20 @@ namespace Aws
       namespace SNOMEDCTTraitNameMapper
       {
 
-        static const int NEGATION_HASH = HashingUtils::HashString("NEGATION");
-        static const int DIAGNOSIS_HASH = HashingUtils::HashString("DIAGNOSIS");
-        static const int SIGN_HASH = HashingUtils::HashString("SIGN");
-        static const int SYMPTOM_HASH = HashingUtils::HashString("SYMPTOM");
-        static const int PERTAINS_TO_FAMILY_HASH = HashingUtils::HashString("PERTAINS_TO_FAMILY");
-        static const int HYPOTHETICAL_HASH = HashingUtils::HashString("HYPOTHETICAL");
-        static const int LOW_CONFIDENCE_HASH = HashingUtils::HashString("LOW_CONFIDENCE");
-        static const int PAST_HISTORY_HASH = HashingUtils::HashString("PAST_HISTORY");
-        static const int FUTURE_HASH = HashingUtils::HashString("FUTURE");
+        static constexpr uint32_t NEGATION_HASH = ConstExprHashingUtils::HashString("NEGATION");
+        static constexpr uint32_t DIAGNOSIS_HASH = ConstExprHashingUtils::HashString("DIAGNOSIS");
+        static constexpr uint32_t SIGN_HASH = ConstExprHashingUtils::HashString("SIGN");
+        static constexpr uint32_t SYMPTOM_HASH = ConstExprHashingUtils::HashString("SYMPTOM");
+        static constexpr uint32_t PERTAINS_TO_FAMILY_HASH = ConstExprHashingUtils::HashString("PERTAINS_TO_FAMILY");
+        static constexpr uint32_t HYPOTHETICAL_HASH = ConstExprHashingUtils::HashString("HYPOTHETICAL");
+        static constexpr uint32_t LOW_CONFIDENCE_HASH = ConstExprHashingUtils::HashString("LOW_CONFIDENCE");
+        static constexpr uint32_t PAST_HISTORY_HASH = ConstExprHashingUtils::HashString("PAST_HISTORY");
+        static constexpr uint32_t FUTURE_HASH = ConstExprHashingUtils::HashString("FUTURE");
 
 
         SNOMEDCTTraitName GetSNOMEDCTTraitNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NEGATION_HASH)
           {
             return SNOMEDCTTraitName::NEGATION;

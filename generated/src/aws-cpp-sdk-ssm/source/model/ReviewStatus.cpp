@@ -20,15 +20,15 @@ namespace Aws
       namespace ReviewStatusMapper
       {
 
-        static const int APPROVED_HASH = HashingUtils::HashString("APPROVED");
-        static const int NOT_REVIEWED_HASH = HashingUtils::HashString("NOT_REVIEWED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
+        static constexpr uint32_t APPROVED_HASH = ConstExprHashingUtils::HashString("APPROVED");
+        static constexpr uint32_t NOT_REVIEWED_HASH = ConstExprHashingUtils::HashString("NOT_REVIEWED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t REJECTED_HASH = ConstExprHashingUtils::HashString("REJECTED");
 
 
         ReviewStatus GetReviewStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APPROVED_HASH)
           {
             return ReviewStatus::APPROVED;

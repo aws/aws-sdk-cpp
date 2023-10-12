@@ -20,13 +20,13 @@ namespace Aws
       namespace KeyOriginMapper
       {
 
-        static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
-        static const int AWS_PAYMENT_CRYPTOGRAPHY_HASH = HashingUtils::HashString("AWS_PAYMENT_CRYPTOGRAPHY");
+        static constexpr uint32_t EXTERNAL_HASH = ConstExprHashingUtils::HashString("EXTERNAL");
+        static constexpr uint32_t AWS_PAYMENT_CRYPTOGRAPHY_HASH = ConstExprHashingUtils::HashString("AWS_PAYMENT_CRYPTOGRAPHY");
 
 
         KeyOrigin GetKeyOriginForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXTERNAL_HASH)
           {
             return KeyOrigin::EXTERNAL;

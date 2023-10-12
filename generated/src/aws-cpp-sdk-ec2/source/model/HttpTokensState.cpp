@@ -20,13 +20,13 @@ namespace Aws
       namespace HttpTokensStateMapper
       {
 
-        static const int optional_HASH = HashingUtils::HashString("optional");
-        static const int required_HASH = HashingUtils::HashString("required");
+        static constexpr uint32_t optional_HASH = ConstExprHashingUtils::HashString("optional");
+        static constexpr uint32_t required_HASH = ConstExprHashingUtils::HashString("required");
 
 
         HttpTokensState GetHttpTokensStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == optional_HASH)
           {
             return HttpTokensState::optional;

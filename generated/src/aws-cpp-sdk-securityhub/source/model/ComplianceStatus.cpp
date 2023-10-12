@@ -20,15 +20,15 @@ namespace Aws
       namespace ComplianceStatusMapper
       {
 
-        static const int PASSED_HASH = HashingUtils::HashString("PASSED");
-        static const int WARNING_HASH = HashingUtils::HashString("WARNING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int NOT_AVAILABLE_HASH = HashingUtils::HashString("NOT_AVAILABLE");
+        static constexpr uint32_t PASSED_HASH = ConstExprHashingUtils::HashString("PASSED");
+        static constexpr uint32_t WARNING_HASH = ConstExprHashingUtils::HashString("WARNING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t NOT_AVAILABLE_HASH = ConstExprHashingUtils::HashString("NOT_AVAILABLE");
 
 
         ComplianceStatus GetComplianceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PASSED_HASH)
           {
             return ComplianceStatus::PASSED;

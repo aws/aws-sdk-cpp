@@ -20,13 +20,13 @@ namespace Aws
       namespace PageBasedWarningCodeMapper
       {
 
-        static const int INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL_HASH = HashingUtils::HashString("INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL");
-        static const int INFERENCING_NATIVE_DOCUMENT_WITH_PLAINTEXT_TRAINED_MODEL_HASH = HashingUtils::HashString("INFERENCING_NATIVE_DOCUMENT_WITH_PLAINTEXT_TRAINED_MODEL");
+        static constexpr uint32_t INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL_HASH = ConstExprHashingUtils::HashString("INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL");
+        static constexpr uint32_t INFERENCING_NATIVE_DOCUMENT_WITH_PLAINTEXT_TRAINED_MODEL_HASH = ConstExprHashingUtils::HashString("INFERENCING_NATIVE_DOCUMENT_WITH_PLAINTEXT_TRAINED_MODEL");
 
 
         PageBasedWarningCode GetPageBasedWarningCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL_HASH)
           {
             return PageBasedWarningCode::INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL;

@@ -20,15 +20,15 @@ namespace Aws
       namespace ConfigurationSetAttributeMapper
       {
 
-        static const int eventDestinations_HASH = HashingUtils::HashString("eventDestinations");
-        static const int trackingOptions_HASH = HashingUtils::HashString("trackingOptions");
-        static const int deliveryOptions_HASH = HashingUtils::HashString("deliveryOptions");
-        static const int reputationOptions_HASH = HashingUtils::HashString("reputationOptions");
+        static constexpr uint32_t eventDestinations_HASH = ConstExprHashingUtils::HashString("eventDestinations");
+        static constexpr uint32_t trackingOptions_HASH = ConstExprHashingUtils::HashString("trackingOptions");
+        static constexpr uint32_t deliveryOptions_HASH = ConstExprHashingUtils::HashString("deliveryOptions");
+        static constexpr uint32_t reputationOptions_HASH = ConstExprHashingUtils::HashString("reputationOptions");
 
 
         ConfigurationSetAttribute GetConfigurationSetAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == eventDestinations_HASH)
           {
             return ConfigurationSetAttribute::eventDestinations;

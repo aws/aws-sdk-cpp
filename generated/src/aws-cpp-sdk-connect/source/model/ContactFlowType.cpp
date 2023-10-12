@@ -20,20 +20,20 @@ namespace Aws
       namespace ContactFlowTypeMapper
       {
 
-        static const int CONTACT_FLOW_HASH = HashingUtils::HashString("CONTACT_FLOW");
-        static const int CUSTOMER_QUEUE_HASH = HashingUtils::HashString("CUSTOMER_QUEUE");
-        static const int CUSTOMER_HOLD_HASH = HashingUtils::HashString("CUSTOMER_HOLD");
-        static const int CUSTOMER_WHISPER_HASH = HashingUtils::HashString("CUSTOMER_WHISPER");
-        static const int AGENT_HOLD_HASH = HashingUtils::HashString("AGENT_HOLD");
-        static const int AGENT_WHISPER_HASH = HashingUtils::HashString("AGENT_WHISPER");
-        static const int OUTBOUND_WHISPER_HASH = HashingUtils::HashString("OUTBOUND_WHISPER");
-        static const int AGENT_TRANSFER_HASH = HashingUtils::HashString("AGENT_TRANSFER");
-        static const int QUEUE_TRANSFER_HASH = HashingUtils::HashString("QUEUE_TRANSFER");
+        static constexpr uint32_t CONTACT_FLOW_HASH = ConstExprHashingUtils::HashString("CONTACT_FLOW");
+        static constexpr uint32_t CUSTOMER_QUEUE_HASH = ConstExprHashingUtils::HashString("CUSTOMER_QUEUE");
+        static constexpr uint32_t CUSTOMER_HOLD_HASH = ConstExprHashingUtils::HashString("CUSTOMER_HOLD");
+        static constexpr uint32_t CUSTOMER_WHISPER_HASH = ConstExprHashingUtils::HashString("CUSTOMER_WHISPER");
+        static constexpr uint32_t AGENT_HOLD_HASH = ConstExprHashingUtils::HashString("AGENT_HOLD");
+        static constexpr uint32_t AGENT_WHISPER_HASH = ConstExprHashingUtils::HashString("AGENT_WHISPER");
+        static constexpr uint32_t OUTBOUND_WHISPER_HASH = ConstExprHashingUtils::HashString("OUTBOUND_WHISPER");
+        static constexpr uint32_t AGENT_TRANSFER_HASH = ConstExprHashingUtils::HashString("AGENT_TRANSFER");
+        static constexpr uint32_t QUEUE_TRANSFER_HASH = ConstExprHashingUtils::HashString("QUEUE_TRANSFER");
 
 
         ContactFlowType GetContactFlowTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONTACT_FLOW_HASH)
           {
             return ContactFlowType::CONTACT_FLOW;

@@ -20,14 +20,14 @@ namespace Aws
       namespace ModelPackageTypeMapper
       {
 
-        static const int Versioned_HASH = HashingUtils::HashString("Versioned");
-        static const int Unversioned_HASH = HashingUtils::HashString("Unversioned");
-        static const int Both_HASH = HashingUtils::HashString("Both");
+        static constexpr uint32_t Versioned_HASH = ConstExprHashingUtils::HashString("Versioned");
+        static constexpr uint32_t Unversioned_HASH = ConstExprHashingUtils::HashString("Unversioned");
+        static constexpr uint32_t Both_HASH = ConstExprHashingUtils::HashString("Both");
 
 
         ModelPackageType GetModelPackageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Versioned_HASH)
           {
             return ModelPackageType::Versioned;

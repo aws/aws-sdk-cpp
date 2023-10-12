@@ -20,14 +20,14 @@ namespace Aws
       namespace FindingStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int SUPPRESSED_HASH = HashingUtils::HashString("SUPPRESSED");
-        static const int CLOSED_HASH = HashingUtils::HashString("CLOSED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t SUPPRESSED_HASH = ConstExprHashingUtils::HashString("SUPPRESSED");
+        static constexpr uint32_t CLOSED_HASH = ConstExprHashingUtils::HashString("CLOSED");
 
 
         FindingStatus GetFindingStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return FindingStatus::ACTIVE;

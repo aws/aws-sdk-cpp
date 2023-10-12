@@ -20,14 +20,14 @@ namespace Aws
       namespace ActionTypeMapper
       {
 
-        static const int InstanceRefresh_HASH = HashingUtils::HashString("InstanceRefresh");
-        static const int PlatformUpdate_HASH = HashingUtils::HashString("PlatformUpdate");
-        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
+        static constexpr uint32_t InstanceRefresh_HASH = ConstExprHashingUtils::HashString("InstanceRefresh");
+        static constexpr uint32_t PlatformUpdate_HASH = ConstExprHashingUtils::HashString("PlatformUpdate");
+        static constexpr uint32_t Unknown_HASH = ConstExprHashingUtils::HashString("Unknown");
 
 
         ActionType GetActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InstanceRefresh_HASH)
           {
             return ActionType::InstanceRefresh;

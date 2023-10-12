@@ -20,17 +20,17 @@ namespace Aws
       namespace ResourceMappingTypeMapper
       {
 
-        static const int CfnStack_HASH = HashingUtils::HashString("CfnStack");
-        static const int Resource_HASH = HashingUtils::HashString("Resource");
-        static const int AppRegistryApp_HASH = HashingUtils::HashString("AppRegistryApp");
-        static const int ResourceGroup_HASH = HashingUtils::HashString("ResourceGroup");
-        static const int Terraform_HASH = HashingUtils::HashString("Terraform");
-        static const int EKS_HASH = HashingUtils::HashString("EKS");
+        static constexpr uint32_t CfnStack_HASH = ConstExprHashingUtils::HashString("CfnStack");
+        static constexpr uint32_t Resource_HASH = ConstExprHashingUtils::HashString("Resource");
+        static constexpr uint32_t AppRegistryApp_HASH = ConstExprHashingUtils::HashString("AppRegistryApp");
+        static constexpr uint32_t ResourceGroup_HASH = ConstExprHashingUtils::HashString("ResourceGroup");
+        static constexpr uint32_t Terraform_HASH = ConstExprHashingUtils::HashString("Terraform");
+        static constexpr uint32_t EKS_HASH = ConstExprHashingUtils::HashString("EKS");
 
 
         ResourceMappingType GetResourceMappingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CfnStack_HASH)
           {
             return ResourceMappingType::CfnStack;

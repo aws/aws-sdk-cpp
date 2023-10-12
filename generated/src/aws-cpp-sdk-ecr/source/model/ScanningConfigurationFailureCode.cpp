@@ -20,12 +20,12 @@ namespace Aws
       namespace ScanningConfigurationFailureCodeMapper
       {
 
-        static const int REPOSITORY_NOT_FOUND_HASH = HashingUtils::HashString("REPOSITORY_NOT_FOUND");
+        static constexpr uint32_t REPOSITORY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("REPOSITORY_NOT_FOUND");
 
 
         ScanningConfigurationFailureCode GetScanningConfigurationFailureCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REPOSITORY_NOT_FOUND_HASH)
           {
             return ScanningConfigurationFailureCode::REPOSITORY_NOT_FOUND;

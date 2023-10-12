@@ -20,13 +20,13 @@ namespace Aws
       namespace StepCancellationOptionMapper
       {
 
-        static const int SEND_INTERRUPT_HASH = HashingUtils::HashString("SEND_INTERRUPT");
-        static const int TERMINATE_PROCESS_HASH = HashingUtils::HashString("TERMINATE_PROCESS");
+        static constexpr uint32_t SEND_INTERRUPT_HASH = ConstExprHashingUtils::HashString("SEND_INTERRUPT");
+        static constexpr uint32_t TERMINATE_PROCESS_HASH = ConstExprHashingUtils::HashString("TERMINATE_PROCESS");
 
 
         StepCancellationOption GetStepCancellationOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SEND_INTERRUPT_HASH)
           {
             return StepCancellationOption::SEND_INTERRUPT;

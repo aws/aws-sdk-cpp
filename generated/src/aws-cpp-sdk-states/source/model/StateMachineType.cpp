@@ -20,13 +20,13 @@ namespace Aws
       namespace StateMachineTypeMapper
       {
 
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
-        static const int EXPRESS_HASH = HashingUtils::HashString("EXPRESS");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
+        static constexpr uint32_t EXPRESS_HASH = ConstExprHashingUtils::HashString("EXPRESS");
 
 
         StateMachineType GetStateMachineTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STANDARD_HASH)
           {
             return StateMachineType::STANDARD;

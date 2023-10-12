@@ -20,13 +20,13 @@ namespace Aws
       namespace CrossDatasetTypesMapper
       {
 
-        static const int ALL_DATASETS_HASH = HashingUtils::HashString("ALL_DATASETS");
-        static const int SINGLE_DATASET_HASH = HashingUtils::HashString("SINGLE_DATASET");
+        static constexpr uint32_t ALL_DATASETS_HASH = ConstExprHashingUtils::HashString("ALL_DATASETS");
+        static constexpr uint32_t SINGLE_DATASET_HASH = ConstExprHashingUtils::HashString("SINGLE_DATASET");
 
 
         CrossDatasetTypes GetCrossDatasetTypesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_DATASETS_HASH)
           {
             return CrossDatasetTypes::ALL_DATASETS;

@@ -20,17 +20,17 @@ namespace Aws
       namespace SchemaValueTypeMapper
       {
 
-        static const int LONG_HASH = HashingUtils::HashString("LONG");
-        static const int INT_HASH = HashingUtils::HashString("INT");
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
-        static const int FLOAT_HASH = HashingUtils::HashString("FLOAT");
-        static const int DOUBLE_HASH = HashingUtils::HashString("DOUBLE");
-        static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
+        static constexpr uint32_t LONG_HASH = ConstExprHashingUtils::HashString("LONG");
+        static constexpr uint32_t INT_HASH = ConstExprHashingUtils::HashString("INT");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
+        static constexpr uint32_t FLOAT_HASH = ConstExprHashingUtils::HashString("FLOAT");
+        static constexpr uint32_t DOUBLE_HASH = ConstExprHashingUtils::HashString("DOUBLE");
+        static constexpr uint32_t BOOLEAN_HASH = ConstExprHashingUtils::HashString("BOOLEAN");
 
 
         SchemaValueType GetSchemaValueTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LONG_HASH)
           {
             return SchemaValueType::LONG;

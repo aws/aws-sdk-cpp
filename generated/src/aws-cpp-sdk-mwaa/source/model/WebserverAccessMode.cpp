@@ -20,13 +20,13 @@ namespace Aws
       namespace WebserverAccessModeMapper
       {
 
-        static const int PRIVATE_ONLY_HASH = HashingUtils::HashString("PRIVATE_ONLY");
-        static const int PUBLIC_ONLY_HASH = HashingUtils::HashString("PUBLIC_ONLY");
+        static constexpr uint32_t PRIVATE_ONLY_HASH = ConstExprHashingUtils::HashString("PRIVATE_ONLY");
+        static constexpr uint32_t PUBLIC_ONLY_HASH = ConstExprHashingUtils::HashString("PUBLIC_ONLY");
 
 
         WebserverAccessMode GetWebserverAccessModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRIVATE_ONLY_HASH)
           {
             return WebserverAccessMode::PRIVATE_ONLY;

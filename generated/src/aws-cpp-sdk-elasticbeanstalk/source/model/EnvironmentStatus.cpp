@@ -20,19 +20,19 @@ namespace Aws
       namespace EnvironmentStatusMapper
       {
 
-        static const int Aborting_HASH = HashingUtils::HashString("Aborting");
-        static const int Launching_HASH = HashingUtils::HashString("Launching");
-        static const int Updating_HASH = HashingUtils::HashString("Updating");
-        static const int LinkingFrom_HASH = HashingUtils::HashString("LinkingFrom");
-        static const int LinkingTo_HASH = HashingUtils::HashString("LinkingTo");
-        static const int Ready_HASH = HashingUtils::HashString("Ready");
-        static const int Terminating_HASH = HashingUtils::HashString("Terminating");
-        static const int Terminated_HASH = HashingUtils::HashString("Terminated");
+        static constexpr uint32_t Aborting_HASH = ConstExprHashingUtils::HashString("Aborting");
+        static constexpr uint32_t Launching_HASH = ConstExprHashingUtils::HashString("Launching");
+        static constexpr uint32_t Updating_HASH = ConstExprHashingUtils::HashString("Updating");
+        static constexpr uint32_t LinkingFrom_HASH = ConstExprHashingUtils::HashString("LinkingFrom");
+        static constexpr uint32_t LinkingTo_HASH = ConstExprHashingUtils::HashString("LinkingTo");
+        static constexpr uint32_t Ready_HASH = ConstExprHashingUtils::HashString("Ready");
+        static constexpr uint32_t Terminating_HASH = ConstExprHashingUtils::HashString("Terminating");
+        static constexpr uint32_t Terminated_HASH = ConstExprHashingUtils::HashString("Terminated");
 
 
         EnvironmentStatus GetEnvironmentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Aborting_HASH)
           {
             return EnvironmentStatus::Aborting;

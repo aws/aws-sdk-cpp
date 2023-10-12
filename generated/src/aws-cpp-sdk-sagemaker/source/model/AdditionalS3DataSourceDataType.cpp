@@ -20,12 +20,12 @@ namespace Aws
       namespace AdditionalS3DataSourceDataTypeMapper
       {
 
-        static const int S3Object_HASH = HashingUtils::HashString("S3Object");
+        static constexpr uint32_t S3Object_HASH = ConstExprHashingUtils::HashString("S3Object");
 
 
         AdditionalS3DataSourceDataType GetAdditionalS3DataSourceDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == S3Object_HASH)
           {
             return AdditionalS3DataSourceDataType::S3Object;

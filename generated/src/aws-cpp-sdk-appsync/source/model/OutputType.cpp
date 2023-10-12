@@ -20,13 +20,13 @@ namespace Aws
       namespace OutputTypeMapper
       {
 
-        static const int SDL_HASH = HashingUtils::HashString("SDL");
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
+        static constexpr uint32_t SDL_HASH = ConstExprHashingUtils::HashString("SDL");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
 
 
         OutputType GetOutputTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SDL_HASH)
           {
             return OutputType::SDL;

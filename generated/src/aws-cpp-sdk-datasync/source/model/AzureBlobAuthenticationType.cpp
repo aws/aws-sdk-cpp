@@ -20,12 +20,12 @@ namespace Aws
       namespace AzureBlobAuthenticationTypeMapper
       {
 
-        static const int SAS_HASH = HashingUtils::HashString("SAS");
+        static constexpr uint32_t SAS_HASH = ConstExprHashingUtils::HashString("SAS");
 
 
         AzureBlobAuthenticationType GetAzureBlobAuthenticationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SAS_HASH)
           {
             return AzureBlobAuthenticationType::SAS;

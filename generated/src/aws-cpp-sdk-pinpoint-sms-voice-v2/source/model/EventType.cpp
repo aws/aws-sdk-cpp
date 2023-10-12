@@ -20,36 +20,36 @@ namespace Aws
       namespace EventTypeMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int TEXT_ALL_HASH = HashingUtils::HashString("TEXT_ALL");
-        static const int TEXT_SENT_HASH = HashingUtils::HashString("TEXT_SENT");
-        static const int TEXT_PENDING_HASH = HashingUtils::HashString("TEXT_PENDING");
-        static const int TEXT_QUEUED_HASH = HashingUtils::HashString("TEXT_QUEUED");
-        static const int TEXT_SUCCESSFUL_HASH = HashingUtils::HashString("TEXT_SUCCESSFUL");
-        static const int TEXT_DELIVERED_HASH = HashingUtils::HashString("TEXT_DELIVERED");
-        static const int TEXT_INVALID_HASH = HashingUtils::HashString("TEXT_INVALID");
-        static const int TEXT_INVALID_MESSAGE_HASH = HashingUtils::HashString("TEXT_INVALID_MESSAGE");
-        static const int TEXT_UNREACHABLE_HASH = HashingUtils::HashString("TEXT_UNREACHABLE");
-        static const int TEXT_CARRIER_UNREACHABLE_HASH = HashingUtils::HashString("TEXT_CARRIER_UNREACHABLE");
-        static const int TEXT_BLOCKED_HASH = HashingUtils::HashString("TEXT_BLOCKED");
-        static const int TEXT_CARRIER_BLOCKED_HASH = HashingUtils::HashString("TEXT_CARRIER_BLOCKED");
-        static const int TEXT_SPAM_HASH = HashingUtils::HashString("TEXT_SPAM");
-        static const int TEXT_UNKNOWN_HASH = HashingUtils::HashString("TEXT_UNKNOWN");
-        static const int TEXT_TTL_EXPIRED_HASH = HashingUtils::HashString("TEXT_TTL_EXPIRED");
-        static const int VOICE_ALL_HASH = HashingUtils::HashString("VOICE_ALL");
-        static const int VOICE_INITIATED_HASH = HashingUtils::HashString("VOICE_INITIATED");
-        static const int VOICE_RINGING_HASH = HashingUtils::HashString("VOICE_RINGING");
-        static const int VOICE_ANSWERED_HASH = HashingUtils::HashString("VOICE_ANSWERED");
-        static const int VOICE_COMPLETED_HASH = HashingUtils::HashString("VOICE_COMPLETED");
-        static const int VOICE_BUSY_HASH = HashingUtils::HashString("VOICE_BUSY");
-        static const int VOICE_NO_ANSWER_HASH = HashingUtils::HashString("VOICE_NO_ANSWER");
-        static const int VOICE_FAILED_HASH = HashingUtils::HashString("VOICE_FAILED");
-        static const int VOICE_TTL_EXPIRED_HASH = HashingUtils::HashString("VOICE_TTL_EXPIRED");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t TEXT_ALL_HASH = ConstExprHashingUtils::HashString("TEXT_ALL");
+        static constexpr uint32_t TEXT_SENT_HASH = ConstExprHashingUtils::HashString("TEXT_SENT");
+        static constexpr uint32_t TEXT_PENDING_HASH = ConstExprHashingUtils::HashString("TEXT_PENDING");
+        static constexpr uint32_t TEXT_QUEUED_HASH = ConstExprHashingUtils::HashString("TEXT_QUEUED");
+        static constexpr uint32_t TEXT_SUCCESSFUL_HASH = ConstExprHashingUtils::HashString("TEXT_SUCCESSFUL");
+        static constexpr uint32_t TEXT_DELIVERED_HASH = ConstExprHashingUtils::HashString("TEXT_DELIVERED");
+        static constexpr uint32_t TEXT_INVALID_HASH = ConstExprHashingUtils::HashString("TEXT_INVALID");
+        static constexpr uint32_t TEXT_INVALID_MESSAGE_HASH = ConstExprHashingUtils::HashString("TEXT_INVALID_MESSAGE");
+        static constexpr uint32_t TEXT_UNREACHABLE_HASH = ConstExprHashingUtils::HashString("TEXT_UNREACHABLE");
+        static constexpr uint32_t TEXT_CARRIER_UNREACHABLE_HASH = ConstExprHashingUtils::HashString("TEXT_CARRIER_UNREACHABLE");
+        static constexpr uint32_t TEXT_BLOCKED_HASH = ConstExprHashingUtils::HashString("TEXT_BLOCKED");
+        static constexpr uint32_t TEXT_CARRIER_BLOCKED_HASH = ConstExprHashingUtils::HashString("TEXT_CARRIER_BLOCKED");
+        static constexpr uint32_t TEXT_SPAM_HASH = ConstExprHashingUtils::HashString("TEXT_SPAM");
+        static constexpr uint32_t TEXT_UNKNOWN_HASH = ConstExprHashingUtils::HashString("TEXT_UNKNOWN");
+        static constexpr uint32_t TEXT_TTL_EXPIRED_HASH = ConstExprHashingUtils::HashString("TEXT_TTL_EXPIRED");
+        static constexpr uint32_t VOICE_ALL_HASH = ConstExprHashingUtils::HashString("VOICE_ALL");
+        static constexpr uint32_t VOICE_INITIATED_HASH = ConstExprHashingUtils::HashString("VOICE_INITIATED");
+        static constexpr uint32_t VOICE_RINGING_HASH = ConstExprHashingUtils::HashString("VOICE_RINGING");
+        static constexpr uint32_t VOICE_ANSWERED_HASH = ConstExprHashingUtils::HashString("VOICE_ANSWERED");
+        static constexpr uint32_t VOICE_COMPLETED_HASH = ConstExprHashingUtils::HashString("VOICE_COMPLETED");
+        static constexpr uint32_t VOICE_BUSY_HASH = ConstExprHashingUtils::HashString("VOICE_BUSY");
+        static constexpr uint32_t VOICE_NO_ANSWER_HASH = ConstExprHashingUtils::HashString("VOICE_NO_ANSWER");
+        static constexpr uint32_t VOICE_FAILED_HASH = ConstExprHashingUtils::HashString("VOICE_FAILED");
+        static constexpr uint32_t VOICE_TTL_EXPIRED_HASH = ConstExprHashingUtils::HashString("VOICE_TTL_EXPIRED");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return EventType::ALL;

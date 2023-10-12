@@ -20,13 +20,13 @@ namespace Aws
       namespace DashIsoIntervalCadenceMapper
       {
 
-        static const int FOLLOW_IFRAME_HASH = HashingUtils::HashString("FOLLOW_IFRAME");
-        static const int FOLLOW_CUSTOM_HASH = HashingUtils::HashString("FOLLOW_CUSTOM");
+        static constexpr uint32_t FOLLOW_IFRAME_HASH = ConstExprHashingUtils::HashString("FOLLOW_IFRAME");
+        static constexpr uint32_t FOLLOW_CUSTOM_HASH = ConstExprHashingUtils::HashString("FOLLOW_CUSTOM");
 
 
         DashIsoIntervalCadence GetDashIsoIntervalCadenceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FOLLOW_IFRAME_HASH)
           {
             return DashIsoIntervalCadence::FOLLOW_IFRAME;

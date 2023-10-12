@@ -20,12 +20,12 @@ namespace Aws
       namespace EBSFilterNameMapper
       {
 
-        static const int Finding_HASH = HashingUtils::HashString("Finding");
+        static constexpr uint32_t Finding_HASH = ConstExprHashingUtils::HashString("Finding");
 
 
         EBSFilterName GetEBSFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Finding_HASH)
           {
             return EBSFilterName::Finding;

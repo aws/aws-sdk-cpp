@@ -20,21 +20,21 @@ namespace Aws
       namespace ServiceLimitMapper
       {
 
-        static const int FILE_SYSTEM_COUNT_HASH = HashingUtils::HashString("FILE_SYSTEM_COUNT");
-        static const int TOTAL_THROUGHPUT_CAPACITY_HASH = HashingUtils::HashString("TOTAL_THROUGHPUT_CAPACITY");
-        static const int TOTAL_STORAGE_HASH = HashingUtils::HashString("TOTAL_STORAGE");
-        static const int TOTAL_USER_INITIATED_BACKUPS_HASH = HashingUtils::HashString("TOTAL_USER_INITIATED_BACKUPS");
-        static const int TOTAL_USER_TAGS_HASH = HashingUtils::HashString("TOTAL_USER_TAGS");
-        static const int TOTAL_IN_PROGRESS_COPY_BACKUPS_HASH = HashingUtils::HashString("TOTAL_IN_PROGRESS_COPY_BACKUPS");
-        static const int STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM_HASH = HashingUtils::HashString("STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM");
-        static const int VOLUMES_PER_FILE_SYSTEM_HASH = HashingUtils::HashString("VOLUMES_PER_FILE_SYSTEM");
-        static const int TOTAL_SSD_IOPS_HASH = HashingUtils::HashString("TOTAL_SSD_IOPS");
-        static const int FILE_CACHE_COUNT_HASH = HashingUtils::HashString("FILE_CACHE_COUNT");
+        static constexpr uint32_t FILE_SYSTEM_COUNT_HASH = ConstExprHashingUtils::HashString("FILE_SYSTEM_COUNT");
+        static constexpr uint32_t TOTAL_THROUGHPUT_CAPACITY_HASH = ConstExprHashingUtils::HashString("TOTAL_THROUGHPUT_CAPACITY");
+        static constexpr uint32_t TOTAL_STORAGE_HASH = ConstExprHashingUtils::HashString("TOTAL_STORAGE");
+        static constexpr uint32_t TOTAL_USER_INITIATED_BACKUPS_HASH = ConstExprHashingUtils::HashString("TOTAL_USER_INITIATED_BACKUPS");
+        static constexpr uint32_t TOTAL_USER_TAGS_HASH = ConstExprHashingUtils::HashString("TOTAL_USER_TAGS");
+        static constexpr uint32_t TOTAL_IN_PROGRESS_COPY_BACKUPS_HASH = ConstExprHashingUtils::HashString("TOTAL_IN_PROGRESS_COPY_BACKUPS");
+        static constexpr uint32_t STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM_HASH = ConstExprHashingUtils::HashString("STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM");
+        static constexpr uint32_t VOLUMES_PER_FILE_SYSTEM_HASH = ConstExprHashingUtils::HashString("VOLUMES_PER_FILE_SYSTEM");
+        static constexpr uint32_t TOTAL_SSD_IOPS_HASH = ConstExprHashingUtils::HashString("TOTAL_SSD_IOPS");
+        static constexpr uint32_t FILE_CACHE_COUNT_HASH = ConstExprHashingUtils::HashString("FILE_CACHE_COUNT");
 
 
         ServiceLimit GetServiceLimitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FILE_SYSTEM_COUNT_HASH)
           {
             return ServiceLimit::FILE_SYSTEM_COUNT;

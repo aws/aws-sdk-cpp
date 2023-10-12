@@ -20,12 +20,12 @@ namespace Aws
       namespace ProvisioningMapper
       {
 
-        static const int CUSTOMER_MANAGED_HASH = HashingUtils::HashString("CUSTOMER_MANAGED");
+        static constexpr uint32_t CUSTOMER_MANAGED_HASH = ConstExprHashingUtils::HashString("CUSTOMER_MANAGED");
 
 
         Provisioning GetProvisioningForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CUSTOMER_MANAGED_HASH)
           {
             return Provisioning::CUSTOMER_MANAGED;

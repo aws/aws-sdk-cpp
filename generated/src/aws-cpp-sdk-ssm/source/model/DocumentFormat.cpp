@@ -20,14 +20,14 @@ namespace Aws
       namespace DocumentFormatMapper
       {
 
-        static const int YAML_HASH = HashingUtils::HashString("YAML");
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
-        static const int TEXT_HASH = HashingUtils::HashString("TEXT");
+        static constexpr uint32_t YAML_HASH = ConstExprHashingUtils::HashString("YAML");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
+        static constexpr uint32_t TEXT_HASH = ConstExprHashingUtils::HashString("TEXT");
 
 
         DocumentFormat GetDocumentFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == YAML_HASH)
           {
             return DocumentFormat::YAML;

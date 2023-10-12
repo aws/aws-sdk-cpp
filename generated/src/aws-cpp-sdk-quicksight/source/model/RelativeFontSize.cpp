@@ -20,16 +20,16 @@ namespace Aws
       namespace RelativeFontSizeMapper
       {
 
-        static const int EXTRA_SMALL_HASH = HashingUtils::HashString("EXTRA_SMALL");
-        static const int SMALL_HASH = HashingUtils::HashString("SMALL");
-        static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
-        static const int LARGE_HASH = HashingUtils::HashString("LARGE");
-        static const int EXTRA_LARGE_HASH = HashingUtils::HashString("EXTRA_LARGE");
+        static constexpr uint32_t EXTRA_SMALL_HASH = ConstExprHashingUtils::HashString("EXTRA_SMALL");
+        static constexpr uint32_t SMALL_HASH = ConstExprHashingUtils::HashString("SMALL");
+        static constexpr uint32_t MEDIUM_HASH = ConstExprHashingUtils::HashString("MEDIUM");
+        static constexpr uint32_t LARGE_HASH = ConstExprHashingUtils::HashString("LARGE");
+        static constexpr uint32_t EXTRA_LARGE_HASH = ConstExprHashingUtils::HashString("EXTRA_LARGE");
 
 
         RelativeFontSize GetRelativeFontSizeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXTRA_SMALL_HASH)
           {
             return RelativeFontSize::EXTRA_SMALL;

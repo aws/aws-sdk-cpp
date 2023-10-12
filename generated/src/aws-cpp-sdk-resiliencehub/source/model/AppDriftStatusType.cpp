@@ -20,14 +20,14 @@ namespace Aws
       namespace AppDriftStatusTypeMapper
       {
 
-        static const int NotChecked_HASH = HashingUtils::HashString("NotChecked");
-        static const int NotDetected_HASH = HashingUtils::HashString("NotDetected");
-        static const int Detected_HASH = HashingUtils::HashString("Detected");
+        static constexpr uint32_t NotChecked_HASH = ConstExprHashingUtils::HashString("NotChecked");
+        static constexpr uint32_t NotDetected_HASH = ConstExprHashingUtils::HashString("NotDetected");
+        static constexpr uint32_t Detected_HASH = ConstExprHashingUtils::HashString("Detected");
 
 
         AppDriftStatusType GetAppDriftStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NotChecked_HASH)
           {
             return AppDriftStatusType::NotChecked;

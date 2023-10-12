@@ -20,38 +20,38 @@ namespace Aws
       namespace EventMapper
       {
 
-        static const int s3_ReducedRedundancyLostObject_HASH = HashingUtils::HashString("s3:ReducedRedundancyLostObject");
-        static const int s3_ObjectCreated_HASH = HashingUtils::HashString("s3:ObjectCreated:*");
-        static const int s3_ObjectCreated_Put_HASH = HashingUtils::HashString("s3:ObjectCreated:Put");
-        static const int s3_ObjectCreated_Post_HASH = HashingUtils::HashString("s3:ObjectCreated:Post");
-        static const int s3_ObjectCreated_Copy_HASH = HashingUtils::HashString("s3:ObjectCreated:Copy");
-        static const int s3_ObjectCreated_CompleteMultipartUpload_HASH = HashingUtils::HashString("s3:ObjectCreated:CompleteMultipartUpload");
-        static const int s3_ObjectRemoved_HASH = HashingUtils::HashString("s3:ObjectRemoved:*");
-        static const int s3_ObjectRemoved_Delete_HASH = HashingUtils::HashString("s3:ObjectRemoved:Delete");
-        static const int s3_ObjectRemoved_DeleteMarkerCreated_HASH = HashingUtils::HashString("s3:ObjectRemoved:DeleteMarkerCreated");
-        static const int s3_ObjectRestore_HASH = HashingUtils::HashString("s3:ObjectRestore:*");
-        static const int s3_ObjectRestore_Post_HASH = HashingUtils::HashString("s3:ObjectRestore:Post");
-        static const int s3_ObjectRestore_Completed_HASH = HashingUtils::HashString("s3:ObjectRestore:Completed");
-        static const int s3_Replication_HASH = HashingUtils::HashString("s3:Replication:*");
-        static const int s3_Replication_OperationFailedReplication_HASH = HashingUtils::HashString("s3:Replication:OperationFailedReplication");
-        static const int s3_Replication_OperationNotTracked_HASH = HashingUtils::HashString("s3:Replication:OperationNotTracked");
-        static const int s3_Replication_OperationMissedThreshold_HASH = HashingUtils::HashString("s3:Replication:OperationMissedThreshold");
-        static const int s3_Replication_OperationReplicatedAfterThreshold_HASH = HashingUtils::HashString("s3:Replication:OperationReplicatedAfterThreshold");
-        static const int s3_ObjectRestore_Delete_HASH = HashingUtils::HashString("s3:ObjectRestore:Delete");
-        static const int s3_LifecycleTransition_HASH = HashingUtils::HashString("s3:LifecycleTransition");
-        static const int s3_IntelligentTiering_HASH = HashingUtils::HashString("s3:IntelligentTiering");
-        static const int s3_ObjectAcl_Put_HASH = HashingUtils::HashString("s3:ObjectAcl:Put");
-        static const int s3_LifecycleExpiration_HASH = HashingUtils::HashString("s3:LifecycleExpiration:*");
-        static const int s3_LifecycleExpiration_Delete_HASH = HashingUtils::HashString("s3:LifecycleExpiration:Delete");
-        static const int s3_LifecycleExpiration_DeleteMarkerCreated_HASH = HashingUtils::HashString("s3:LifecycleExpiration:DeleteMarkerCreated");
-        static const int s3_ObjectTagging_HASH = HashingUtils::HashString("s3:ObjectTagging:*");
-        static const int s3_ObjectTagging_Put_HASH = HashingUtils::HashString("s3:ObjectTagging:Put");
-        static const int s3_ObjectTagging_Delete_HASH = HashingUtils::HashString("s3:ObjectTagging:Delete");
+        static constexpr uint32_t s3_ReducedRedundancyLostObject_HASH = ConstExprHashingUtils::HashString("s3:ReducedRedundancyLostObject");
+        static constexpr uint32_t s3_ObjectCreated_HASH = ConstExprHashingUtils::HashString("s3:ObjectCreated:*");
+        static constexpr uint32_t s3_ObjectCreated_Put_HASH = ConstExprHashingUtils::HashString("s3:ObjectCreated:Put");
+        static constexpr uint32_t s3_ObjectCreated_Post_HASH = ConstExprHashingUtils::HashString("s3:ObjectCreated:Post");
+        static constexpr uint32_t s3_ObjectCreated_Copy_HASH = ConstExprHashingUtils::HashString("s3:ObjectCreated:Copy");
+        static constexpr uint32_t s3_ObjectCreated_CompleteMultipartUpload_HASH = ConstExprHashingUtils::HashString("s3:ObjectCreated:CompleteMultipartUpload");
+        static constexpr uint32_t s3_ObjectRemoved_HASH = ConstExprHashingUtils::HashString("s3:ObjectRemoved:*");
+        static constexpr uint32_t s3_ObjectRemoved_Delete_HASH = ConstExprHashingUtils::HashString("s3:ObjectRemoved:Delete");
+        static constexpr uint32_t s3_ObjectRemoved_DeleteMarkerCreated_HASH = ConstExprHashingUtils::HashString("s3:ObjectRemoved:DeleteMarkerCreated");
+        static constexpr uint32_t s3_ObjectRestore_HASH = ConstExprHashingUtils::HashString("s3:ObjectRestore:*");
+        static constexpr uint32_t s3_ObjectRestore_Post_HASH = ConstExprHashingUtils::HashString("s3:ObjectRestore:Post");
+        static constexpr uint32_t s3_ObjectRestore_Completed_HASH = ConstExprHashingUtils::HashString("s3:ObjectRestore:Completed");
+        static constexpr uint32_t s3_Replication_HASH = ConstExprHashingUtils::HashString("s3:Replication:*");
+        static constexpr uint32_t s3_Replication_OperationFailedReplication_HASH = ConstExprHashingUtils::HashString("s3:Replication:OperationFailedReplication");
+        static constexpr uint32_t s3_Replication_OperationNotTracked_HASH = ConstExprHashingUtils::HashString("s3:Replication:OperationNotTracked");
+        static constexpr uint32_t s3_Replication_OperationMissedThreshold_HASH = ConstExprHashingUtils::HashString("s3:Replication:OperationMissedThreshold");
+        static constexpr uint32_t s3_Replication_OperationReplicatedAfterThreshold_HASH = ConstExprHashingUtils::HashString("s3:Replication:OperationReplicatedAfterThreshold");
+        static constexpr uint32_t s3_ObjectRestore_Delete_HASH = ConstExprHashingUtils::HashString("s3:ObjectRestore:Delete");
+        static constexpr uint32_t s3_LifecycleTransition_HASH = ConstExprHashingUtils::HashString("s3:LifecycleTransition");
+        static constexpr uint32_t s3_IntelligentTiering_HASH = ConstExprHashingUtils::HashString("s3:IntelligentTiering");
+        static constexpr uint32_t s3_ObjectAcl_Put_HASH = ConstExprHashingUtils::HashString("s3:ObjectAcl:Put");
+        static constexpr uint32_t s3_LifecycleExpiration_HASH = ConstExprHashingUtils::HashString("s3:LifecycleExpiration:*");
+        static constexpr uint32_t s3_LifecycleExpiration_Delete_HASH = ConstExprHashingUtils::HashString("s3:LifecycleExpiration:Delete");
+        static constexpr uint32_t s3_LifecycleExpiration_DeleteMarkerCreated_HASH = ConstExprHashingUtils::HashString("s3:LifecycleExpiration:DeleteMarkerCreated");
+        static constexpr uint32_t s3_ObjectTagging_HASH = ConstExprHashingUtils::HashString("s3:ObjectTagging:*");
+        static constexpr uint32_t s3_ObjectTagging_Put_HASH = ConstExprHashingUtils::HashString("s3:ObjectTagging:Put");
+        static constexpr uint32_t s3_ObjectTagging_Delete_HASH = ConstExprHashingUtils::HashString("s3:ObjectTagging:Delete");
 
 
         Event GetEventForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == s3_ReducedRedundancyLostObject_HASH)
           {
             return Event::s3_ReducedRedundancyLostObject;

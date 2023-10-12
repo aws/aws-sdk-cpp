@@ -20,17 +20,17 @@ namespace Aws
       namespace RouteMatrixErrorCodeMapper
       {
 
-        static const int RouteNotFound_HASH = HashingUtils::HashString("RouteNotFound");
-        static const int RouteTooLong_HASH = HashingUtils::HashString("RouteTooLong");
-        static const int PositionsNotFound_HASH = HashingUtils::HashString("PositionsNotFound");
-        static const int DestinationPositionNotFound_HASH = HashingUtils::HashString("DestinationPositionNotFound");
-        static const int DeparturePositionNotFound_HASH = HashingUtils::HashString("DeparturePositionNotFound");
-        static const int OtherValidationError_HASH = HashingUtils::HashString("OtherValidationError");
+        static constexpr uint32_t RouteNotFound_HASH = ConstExprHashingUtils::HashString("RouteNotFound");
+        static constexpr uint32_t RouteTooLong_HASH = ConstExprHashingUtils::HashString("RouteTooLong");
+        static constexpr uint32_t PositionsNotFound_HASH = ConstExprHashingUtils::HashString("PositionsNotFound");
+        static constexpr uint32_t DestinationPositionNotFound_HASH = ConstExprHashingUtils::HashString("DestinationPositionNotFound");
+        static constexpr uint32_t DeparturePositionNotFound_HASH = ConstExprHashingUtils::HashString("DeparturePositionNotFound");
+        static constexpr uint32_t OtherValidationError_HASH = ConstExprHashingUtils::HashString("OtherValidationError");
 
 
         RouteMatrixErrorCode GetRouteMatrixErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RouteNotFound_HASH)
           {
             return RouteMatrixErrorCode::RouteNotFound;

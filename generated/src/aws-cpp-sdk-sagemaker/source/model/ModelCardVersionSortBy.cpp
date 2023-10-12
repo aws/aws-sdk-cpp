@@ -20,12 +20,12 @@ namespace Aws
       namespace ModelCardVersionSortByMapper
       {
 
-        static const int Version_HASH = HashingUtils::HashString("Version");
+        static constexpr uint32_t Version_HASH = ConstExprHashingUtils::HashString("Version");
 
 
         ModelCardVersionSortBy GetModelCardVersionSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Version_HASH)
           {
             return ModelCardVersionSortBy::Version;

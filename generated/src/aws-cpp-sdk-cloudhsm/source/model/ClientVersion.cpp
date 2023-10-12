@@ -20,13 +20,13 @@ namespace Aws
       namespace ClientVersionMapper
       {
 
-        static const int _5_1_HASH = HashingUtils::HashString("5.1");
-        static const int _5_3_HASH = HashingUtils::HashString("5.3");
+        static constexpr uint32_t _5_1_HASH = ConstExprHashingUtils::HashString("5.1");
+        static constexpr uint32_t _5_3_HASH = ConstExprHashingUtils::HashString("5.3");
 
 
         ClientVersion GetClientVersionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == _5_1_HASH)
           {
             return ClientVersion::_5_1;

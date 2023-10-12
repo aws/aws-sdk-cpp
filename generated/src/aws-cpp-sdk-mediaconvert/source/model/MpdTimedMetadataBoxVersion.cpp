@@ -20,13 +20,13 @@ namespace Aws
       namespace MpdTimedMetadataBoxVersionMapper
       {
 
-        static const int VERSION_0_HASH = HashingUtils::HashString("VERSION_0");
-        static const int VERSION_1_HASH = HashingUtils::HashString("VERSION_1");
+        static constexpr uint32_t VERSION_0_HASH = ConstExprHashingUtils::HashString("VERSION_0");
+        static constexpr uint32_t VERSION_1_HASH = ConstExprHashingUtils::HashString("VERSION_1");
 
 
         MpdTimedMetadataBoxVersion GetMpdTimedMetadataBoxVersionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VERSION_0_HASH)
           {
             return MpdTimedMetadataBoxVersion::VERSION_0;

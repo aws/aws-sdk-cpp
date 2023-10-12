@@ -20,13 +20,13 @@ namespace Aws
       namespace TrafficTypeMapper
       {
 
-        static const int PHASES_HASH = HashingUtils::HashString("PHASES");
-        static const int STAIRS_HASH = HashingUtils::HashString("STAIRS");
+        static constexpr uint32_t PHASES_HASH = ConstExprHashingUtils::HashString("PHASES");
+        static constexpr uint32_t STAIRS_HASH = ConstExprHashingUtils::HashString("STAIRS");
 
 
         TrafficType GetTrafficTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PHASES_HASH)
           {
             return TrafficType::PHASES;

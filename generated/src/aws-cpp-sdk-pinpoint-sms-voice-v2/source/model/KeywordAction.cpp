@@ -20,14 +20,14 @@ namespace Aws
       namespace KeywordActionMapper
       {
 
-        static const int AUTOMATIC_RESPONSE_HASH = HashingUtils::HashString("AUTOMATIC_RESPONSE");
-        static const int OPT_OUT_HASH = HashingUtils::HashString("OPT_OUT");
-        static const int OPT_IN_HASH = HashingUtils::HashString("OPT_IN");
+        static constexpr uint32_t AUTOMATIC_RESPONSE_HASH = ConstExprHashingUtils::HashString("AUTOMATIC_RESPONSE");
+        static constexpr uint32_t OPT_OUT_HASH = ConstExprHashingUtils::HashString("OPT_OUT");
+        static constexpr uint32_t OPT_IN_HASH = ConstExprHashingUtils::HashString("OPT_IN");
 
 
         KeywordAction GetKeywordActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTOMATIC_RESPONSE_HASH)
           {
             return KeywordAction::AUTOMATIC_RESPONSE;

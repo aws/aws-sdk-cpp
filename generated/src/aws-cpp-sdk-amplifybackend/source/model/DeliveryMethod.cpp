@@ -20,13 +20,13 @@ namespace Aws
       namespace DeliveryMethodMapper
       {
 
-        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
-        static const int SMS_HASH = HashingUtils::HashString("SMS");
+        static constexpr uint32_t EMAIL_HASH = ConstExprHashingUtils::HashString("EMAIL");
+        static constexpr uint32_t SMS_HASH = ConstExprHashingUtils::HashString("SMS");
 
 
         DeliveryMethod GetDeliveryMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EMAIL_HASH)
           {
             return DeliveryMethod::EMAIL;

@@ -20,25 +20,25 @@ namespace Aws
       namespace AlgorithmNameGeoMosaicMapper
       {
 
-        static const int NEAR_HASH = HashingUtils::HashString("NEAR");
-        static const int BILINEAR_HASH = HashingUtils::HashString("BILINEAR");
-        static const int CUBIC_HASH = HashingUtils::HashString("CUBIC");
-        static const int CUBICSPLINE_HASH = HashingUtils::HashString("CUBICSPLINE");
-        static const int LANCZOS_HASH = HashingUtils::HashString("LANCZOS");
-        static const int AVERAGE_HASH = HashingUtils::HashString("AVERAGE");
-        static const int RMS_HASH = HashingUtils::HashString("RMS");
-        static const int MODE_HASH = HashingUtils::HashString("MODE");
-        static const int MAX_HASH = HashingUtils::HashString("MAX");
-        static const int MIN_HASH = HashingUtils::HashString("MIN");
-        static const int MED_HASH = HashingUtils::HashString("MED");
-        static const int Q1_HASH = HashingUtils::HashString("Q1");
-        static const int Q3_HASH = HashingUtils::HashString("Q3");
-        static const int SUM_HASH = HashingUtils::HashString("SUM");
+        static constexpr uint32_t NEAR_HASH = ConstExprHashingUtils::HashString("NEAR");
+        static constexpr uint32_t BILINEAR_HASH = ConstExprHashingUtils::HashString("BILINEAR");
+        static constexpr uint32_t CUBIC_HASH = ConstExprHashingUtils::HashString("CUBIC");
+        static constexpr uint32_t CUBICSPLINE_HASH = ConstExprHashingUtils::HashString("CUBICSPLINE");
+        static constexpr uint32_t LANCZOS_HASH = ConstExprHashingUtils::HashString("LANCZOS");
+        static constexpr uint32_t AVERAGE_HASH = ConstExprHashingUtils::HashString("AVERAGE");
+        static constexpr uint32_t RMS_HASH = ConstExprHashingUtils::HashString("RMS");
+        static constexpr uint32_t MODE_HASH = ConstExprHashingUtils::HashString("MODE");
+        static constexpr uint32_t MAX_HASH = ConstExprHashingUtils::HashString("MAX");
+        static constexpr uint32_t MIN_HASH = ConstExprHashingUtils::HashString("MIN");
+        static constexpr uint32_t MED_HASH = ConstExprHashingUtils::HashString("MED");
+        static constexpr uint32_t Q1_HASH = ConstExprHashingUtils::HashString("Q1");
+        static constexpr uint32_t Q3_HASH = ConstExprHashingUtils::HashString("Q3");
+        static constexpr uint32_t SUM_HASH = ConstExprHashingUtils::HashString("SUM");
 
 
         AlgorithmNameGeoMosaic GetAlgorithmNameGeoMosaicForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NEAR_HASH)
           {
             return AlgorithmNameGeoMosaic::NEAR;

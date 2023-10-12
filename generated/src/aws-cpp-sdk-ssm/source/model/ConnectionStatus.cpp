@@ -20,13 +20,13 @@ namespace Aws
       namespace ConnectionStatusMapper
       {
 
-        static const int connected_HASH = HashingUtils::HashString("connected");
-        static const int notconnected_HASH = HashingUtils::HashString("notconnected");
+        static constexpr uint32_t connected_HASH = ConstExprHashingUtils::HashString("connected");
+        static constexpr uint32_t notconnected_HASH = ConstExprHashingUtils::HashString("notconnected");
 
 
         ConnectionStatus GetConnectionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == connected_HASH)
           {
             return ConnectionStatus::connected;

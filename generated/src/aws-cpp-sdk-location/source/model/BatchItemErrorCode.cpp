@@ -20,17 +20,17 @@ namespace Aws
       namespace BatchItemErrorCodeMapper
       {
 
-        static const int AccessDeniedError_HASH = HashingUtils::HashString("AccessDeniedError");
-        static const int ConflictError_HASH = HashingUtils::HashString("ConflictError");
-        static const int InternalServerError_HASH = HashingUtils::HashString("InternalServerError");
-        static const int ResourceNotFoundError_HASH = HashingUtils::HashString("ResourceNotFoundError");
-        static const int ThrottlingError_HASH = HashingUtils::HashString("ThrottlingError");
-        static const int ValidationError_HASH = HashingUtils::HashString("ValidationError");
+        static constexpr uint32_t AccessDeniedError_HASH = ConstExprHashingUtils::HashString("AccessDeniedError");
+        static constexpr uint32_t ConflictError_HASH = ConstExprHashingUtils::HashString("ConflictError");
+        static constexpr uint32_t InternalServerError_HASH = ConstExprHashingUtils::HashString("InternalServerError");
+        static constexpr uint32_t ResourceNotFoundError_HASH = ConstExprHashingUtils::HashString("ResourceNotFoundError");
+        static constexpr uint32_t ThrottlingError_HASH = ConstExprHashingUtils::HashString("ThrottlingError");
+        static constexpr uint32_t ValidationError_HASH = ConstExprHashingUtils::HashString("ValidationError");
 
 
         BatchItemErrorCode GetBatchItemErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AccessDeniedError_HASH)
           {
             return BatchItemErrorCode::AccessDeniedError;

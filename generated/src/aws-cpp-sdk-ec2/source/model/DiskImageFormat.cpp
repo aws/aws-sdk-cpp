@@ -20,14 +20,14 @@ namespace Aws
       namespace DiskImageFormatMapper
       {
 
-        static const int VMDK_HASH = HashingUtils::HashString("VMDK");
-        static const int RAW_HASH = HashingUtils::HashString("RAW");
-        static const int VHD_HASH = HashingUtils::HashString("VHD");
+        static constexpr uint32_t VMDK_HASH = ConstExprHashingUtils::HashString("VMDK");
+        static constexpr uint32_t RAW_HASH = ConstExprHashingUtils::HashString("RAW");
+        static constexpr uint32_t VHD_HASH = ConstExprHashingUtils::HashString("VHD");
 
 
         DiskImageFormat GetDiskImageFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VMDK_HASH)
           {
             return DiskImageFormat::VMDK;

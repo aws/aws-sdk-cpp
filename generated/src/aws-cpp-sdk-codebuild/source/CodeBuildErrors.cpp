@@ -18,15 +18,15 @@ namespace CodeBuild
 namespace CodeBuildErrorMapper
 {
 
-static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
-static const int O_AUTH_PROVIDER_HASH = HashingUtils::HashString("OAuthProviderException");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
-static const int ACCOUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AccountLimitExceededException");
+static constexpr uint32_t RESOURCE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ResourceAlreadyExistsException");
+static constexpr uint32_t O_AUTH_PROVIDER_HASH = ConstExprHashingUtils::HashString("OAuthProviderException");
+static constexpr uint32_t INVALID_INPUT_HASH = ConstExprHashingUtils::HashString("InvalidInputException");
+static constexpr uint32_t ACCOUNT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("AccountLimitExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {

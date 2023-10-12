@@ -103,133 +103,133 @@ template<> AWS_SSM_API OpsItemInvalidParameterException SSMError::GetModeledErro
 namespace SSMErrorMapper
 {
 
-static const int INVALID_OUTPUT_LOCATION_HASH = HashingUtils::HashString("InvalidOutputLocation");
-static const int RESOURCE_DATA_SYNC_COUNT_EXCEEDED_HASH = HashingUtils::HashString("ResourceDataSyncCountExceededException");
-static const int PARAMETER_VERSION_NOT_FOUND_HASH = HashingUtils::HashString("ParameterVersionNotFound");
-static const int INVALID_POLICY_TYPE_HASH = HashingUtils::HashString("InvalidPolicyTypeException");
-static const int INVALID_AGGREGATOR_HASH = HashingUtils::HashString("InvalidAggregatorException");
-static const int INVALID_INVENTORY_REQUEST_HASH = HashingUtils::HashString("InvalidInventoryRequestException");
-static const int DUPLICATE_DOCUMENT_VERSION_NAME_HASH = HashingUtils::HashString("DuplicateDocumentVersionName");
-static const int OPS_METADATA_INVALID_ARGUMENT_HASH = HashingUtils::HashString("OpsMetadataInvalidArgumentException");
-static const int INVALID_TYPE_NAME_HASH = HashingUtils::HashString("InvalidTypeNameException");
-static const int UNSUPPORTED_INVENTORY_SCHEMA_VERSION_HASH = HashingUtils::HashString("UnsupportedInventorySchemaVersionException");
-static const int ASSOCIATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AssociationDoesNotExist");
-static const int ASSOCIATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AssociationLimitExceeded");
-static const int INVALID_OPTION_HASH = HashingUtils::HashString("InvalidOptionException");
-static const int PARAMETER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ParameterLimitExceeded");
-static const int SUB_TYPE_COUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SubTypeCountLimitExceededException");
-static const int ASSOCIATION_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AssociationVersionLimitExceeded");
-static const int INVALID_PERMISSION_TYPE_HASH = HashingUtils::HashString("InvalidPermissionType");
-static const int INCOMPATIBLE_POLICY_HASH = HashingUtils::HashString("IncompatiblePolicyException");
-static const int INVALID_ASSOCIATION_VERSION_HASH = HashingUtils::HashString("InvalidAssociationVersion");
-static const int OPS_ITEM_RELATED_ITEM_ALREADY_EXISTS_HASH = HashingUtils::HashString("OpsItemRelatedItemAlreadyExistsException");
-static const int PARAMETER_NOT_FOUND_HASH = HashingUtils::HashString("ParameterNotFound");
-static const int INVALID_DOCUMENT_TYPE_HASH = HashingUtils::HashString("InvalidDocumentType");
-static const int RESOURCE_POLICY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourcePolicyLimitExceededException");
-static const int RESOURCE_POLICY_CONFLICT_HASH = HashingUtils::HashString("ResourcePolicyConflictException");
-static const int PARAMETER_ALREADY_EXISTS_HASH = HashingUtils::HashString("ParameterAlreadyExists");
-static const int HIERARCHY_LEVEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("HierarchyLevelLimitExceededException");
-static const int DOCUMENT_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DocumentVersionLimitExceeded");
-static const int RESOURCE_DATA_SYNC_NOT_FOUND_HASH = HashingUtils::HashString("ResourceDataSyncNotFoundException");
-static const int INVALID_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidFilterValue");
-static const int OPS_ITEM_ALREADY_EXISTS_HASH = HashingUtils::HashString("OpsItemAlreadyExistsException");
-static const int INVALID_DELETE_INVENTORY_PARAMETERS_HASH = HashingUtils::HashString("InvalidDeleteInventoryParametersException");
-static const int OPS_METADATA_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OpsMetadataLimitExceededException");
-static const int FEATURE_NOT_AVAILABLE_HASH = HashingUtils::HashString("FeatureNotAvailableException");
-static const int INVALID_PLUGIN_NAME_HASH = HashingUtils::HashString("InvalidPluginName");
-static const int INVALID_DOCUMENT_HASH = HashingUtils::HashString("InvalidDocument");
-static const int INVALID_AUTOMATION_SIGNAL_HASH = HashingUtils::HashString("InvalidAutomationSignalException");
-static const int RESOURCE_POLICY_INVALID_PARAMETER_HASH = HashingUtils::HashString("ResourcePolicyInvalidParameterException");
-static const int AUTOMATION_DEFINITION_NOT_APPROVED_HASH = HashingUtils::HashString("AutomationDefinitionNotApprovedException");
-static const int AUTOMATION_EXECUTION_NOT_FOUND_HASH = HashingUtils::HashString("AutomationExecutionNotFoundException");
-static const int INVALID_INVENTORY_ITEM_CONTEXT_HASH = HashingUtils::HashString("InvalidInventoryItemContextException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int ASSOCIATION_EXECUTION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AssociationExecutionDoesNotExist");
-static const int INVALID_RESOURCE_ID_HASH = HashingUtils::HashString("InvalidResourceId");
-static const int INVALID_INSTANCE_ID_HASH = HashingUtils::HashString("InvalidInstanceId");
-static const int ASSOCIATED_INSTANCES_HASH = HashingUtils::HashString("AssociatedInstances");
-static const int OPS_METADATA_ALREADY_EXISTS_HASH = HashingUtils::HashString("OpsMetadataAlreadyExistsException");
-static const int TARGET_IN_USE_HASH = HashingUtils::HashString("TargetInUseException");
-static const int INVALID_KEY_ID_HASH = HashingUtils::HashString("InvalidKeyId");
-static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
-static const int ITEM_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ItemSizeLimitExceededException");
-static const int OPS_METADATA_TOO_MANY_UPDATES_HASH = HashingUtils::HashString("OpsMetadataTooManyUpdatesException");
-static const int PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ParameterVersionLabelLimitExceeded");
-static const int INVALID_RESOURCE_TYPE_HASH = HashingUtils::HashString("InvalidResourceType");
-static const int OPS_ITEM_RELATED_ITEM_ASSOCIATION_NOT_FOUND_HASH = HashingUtils::HashString("OpsItemRelatedItemAssociationNotFoundException");
-static const int DOCUMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DocumentLimitExceeded");
-static const int ASSOCIATION_ALREADY_EXISTS_HASH = HashingUtils::HashString("AssociationAlreadyExists");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
-static const int UNSUPPORTED_OPERATING_SYSTEM_HASH = HashingUtils::HashString("UnsupportedOperatingSystem");
-static const int AUTOMATION_EXECUTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AutomationExecutionLimitExceededException");
-static const int INVALID_DELETION_ID_HASH = HashingUtils::HashString("InvalidDeletionIdException");
-static const int INVALID_TARGET_HASH = HashingUtils::HashString("InvalidTarget");
-static const int INVALID_DOCUMENT_CONTENT_HASH = HashingUtils::HashString("InvalidDocumentContent");
-static const int UNSUPPORTED_INVENTORY_ITEM_CONTEXT_HASH = HashingUtils::HashString("UnsupportedInventoryItemContextException");
-static const int INVALID_POLICY_ATTRIBUTE_HASH = HashingUtils::HashString("InvalidPolicyAttributeException");
-static const int AUTOMATION_DEFINITION_VERSION_NOT_FOUND_HASH = HashingUtils::HashString("AutomationDefinitionVersionNotFoundException");
-static const int COMPLIANCE_TYPE_COUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ComplianceTypeCountLimitExceededException");
-static const int PARAMETER_MAX_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ParameterMaxVersionLimitExceeded");
-static const int OPS_ITEM_ACCESS_DENIED_HASH = HashingUtils::HashString("OpsItemAccessDeniedException");
-static const int AUTOMATION_STEP_NOT_FOUND_HASH = HashingUtils::HashString("AutomationStepNotFoundException");
-static const int RESOURCE_DATA_SYNC_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceDataSyncAlreadyExistsException");
-static const int INVALID_RESULT_ATTRIBUTE_HASH = HashingUtils::HashString("InvalidResultAttributeException");
-static const int UNSUPPORTED_FEATURE_REQUIRED_HASH = HashingUtils::HashString("UnsupportedFeatureRequiredException");
-static const int STATUS_UNCHANGED_HASH = HashingUtils::HashString("StatusUnchanged");
-static const int OPS_ITEM_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OpsItemLimitExceededException");
-static const int DUPLICATE_INSTANCE_ID_HASH = HashingUtils::HashString("DuplicateInstanceId");
-static const int DUPLICATE_DOCUMENT_CONTENT_HASH = HashingUtils::HashString("DuplicateDocumentContent");
-static const int INVALID_OUTPUT_FOLDER_HASH = HashingUtils::HashString("InvalidOutputFolder");
-static const int TOO_MANY_UPDATES_HASH = HashingUtils::HashString("TooManyUpdates");
-static const int INVALID_DOCUMENT_SCHEMA_VERSION_HASH = HashingUtils::HashString("InvalidDocumentSchemaVersion");
-static const int INVALID_AUTOMATION_STATUS_UPDATE_HASH = HashingUtils::HashString("InvalidAutomationStatusUpdateException");
-static const int INVALID_AUTOMATION_EXECUTION_PARAMETERS_HASH = HashingUtils::HashString("InvalidAutomationExecutionParametersException");
-static const int ITEM_CONTENT_MISMATCH_HASH = HashingUtils::HashString("ItemContentMismatchException");
-static const int PARAMETER_PATTERN_MISMATCH_HASH = HashingUtils::HashString("ParameterPatternMismatchException");
-static const int INVALID_INSTANCE_INFORMATION_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidInstanceInformationFilterValue");
-static const int INVALID_COMMAND_ID_HASH = HashingUtils::HashString("InvalidCommandId");
-static const int INVALID_TARGET_MAPS_HASH = HashingUtils::HashString("InvalidTargetMaps");
-static const int INVOCATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("InvocationDoesNotExist");
-static const int TOTAL_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TotalSizeLimitExceededException");
-static const int AUTOMATION_DEFINITION_NOT_FOUND_HASH = HashingUtils::HashString("AutomationDefinitionNotFoundException");
-static const int CUSTOM_SCHEMA_COUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CustomSchemaCountLimitExceededException");
-static const int INVALID_ALLOWED_PATTERN_HASH = HashingUtils::HashString("InvalidAllowedPatternException");
-static const int INVALID_ROLE_HASH = HashingUtils::HashString("InvalidRole");
-static const int INVALID_PARAMETERS_HASH = HashingUtils::HashString("InvalidParameters");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsError");
-static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
-static const int INVALID_ACTIVATION_HASH = HashingUtils::HashString("InvalidActivation");
-static const int RESOURCE_DATA_SYNC_INVALID_CONFIGURATION_HASH = HashingUtils::HashString("ResourceDataSyncInvalidConfigurationException");
-static const int INVALID_ASSOCIATION_HASH = HashingUtils::HashString("InvalidAssociation");
-static const int HIERARCHY_TYPE_MISMATCH_HASH = HashingUtils::HashString("HierarchyTypeMismatchException");
-static const int DOES_NOT_EXIST_HASH = HashingUtils::HashString("DoesNotExistException");
-static const int INVALID_DOCUMENT_OPERATION_HASH = HashingUtils::HashString("InvalidDocumentOperation");
-static const int OPS_METADATA_NOT_FOUND_HASH = HashingUtils::HashString("OpsMetadataNotFoundException");
-static const int OPS_ITEM_NOT_FOUND_HASH = HashingUtils::HashString("OpsItemNotFoundException");
-static const int INVALID_UPDATE_HASH = HashingUtils::HashString("InvalidUpdate");
-static const int INVALID_FILTER_OPTION_HASH = HashingUtils::HashString("InvalidFilterOption");
-static const int INVALID_ITEM_CONTENT_HASH = HashingUtils::HashString("InvalidItemContentException");
-static const int TARGET_NOT_CONNECTED_HASH = HashingUtils::HashString("TargetNotConnected");
-static const int DOCUMENT_ALREADY_EXISTS_HASH = HashingUtils::HashString("DocumentAlreadyExists");
-static const int UNSUPPORTED_CALENDAR_HASH = HashingUtils::HashString("UnsupportedCalendarException");
-static const int INVALID_DOCUMENT_VERSION_HASH = HashingUtils::HashString("InvalidDocumentVersion");
-static const int INVALID_NOTIFICATION_CONFIG_HASH = HashingUtils::HashString("InvalidNotificationConfig");
-static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTag");
-static const int INVALID_SCHEDULE_HASH = HashingUtils::HashString("InvalidSchedule");
-static const int INVALID_ACTIVATION_ID_HASH = HashingUtils::HashString("InvalidActivationId");
-static const int RESOURCE_DATA_SYNC_CONFLICT_HASH = HashingUtils::HashString("ResourceDataSyncConflictException");
-static const int OPS_METADATA_KEY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OpsMetadataKeyLimitExceededException");
-static const int INVALID_FILTER_HASH = HashingUtils::HashString("InvalidFilter");
-static const int OPS_ITEM_INVALID_PARAMETER_HASH = HashingUtils::HashString("OpsItemInvalidParameterException");
-static const int INVALID_INVENTORY_GROUP_HASH = HashingUtils::HashString("InvalidInventoryGroupException");
-static const int POLICIES_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("PoliciesLimitExceededException");
-static const int UNSUPPORTED_PARAMETER_TYPE_HASH = HashingUtils::HashString("UnsupportedParameterType");
-static const int MAX_DOCUMENT_SIZE_EXCEEDED_HASH = HashingUtils::HashString("MaxDocumentSizeExceeded");
-static const int INVALID_FILTER_KEY_HASH = HashingUtils::HashString("InvalidFilterKey");
-static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatch");
-static const int UNSUPPORTED_PLATFORM_TYPE_HASH = HashingUtils::HashString("UnsupportedPlatformType");
-static const int SERVICE_SETTING_NOT_FOUND_HASH = HashingUtils::HashString("ServiceSettingNotFound");
-static const int DOCUMENT_PERMISSION_LIMIT_HASH = HashingUtils::HashString("DocumentPermissionLimit");
+static constexpr uint32_t INVALID_OUTPUT_LOCATION_HASH = ConstExprHashingUtils::HashString("InvalidOutputLocation");
+static constexpr uint32_t RESOURCE_DATA_SYNC_COUNT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ResourceDataSyncCountExceededException");
+static constexpr uint32_t PARAMETER_VERSION_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ParameterVersionNotFound");
+static constexpr uint32_t INVALID_POLICY_TYPE_HASH = ConstExprHashingUtils::HashString("InvalidPolicyTypeException");
+static constexpr uint32_t INVALID_AGGREGATOR_HASH = ConstExprHashingUtils::HashString("InvalidAggregatorException");
+static constexpr uint32_t INVALID_INVENTORY_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidInventoryRequestException");
+static constexpr uint32_t DUPLICATE_DOCUMENT_VERSION_NAME_HASH = ConstExprHashingUtils::HashString("DuplicateDocumentVersionName");
+static constexpr uint32_t OPS_METADATA_INVALID_ARGUMENT_HASH = ConstExprHashingUtils::HashString("OpsMetadataInvalidArgumentException");
+static constexpr uint32_t INVALID_TYPE_NAME_HASH = ConstExprHashingUtils::HashString("InvalidTypeNameException");
+static constexpr uint32_t UNSUPPORTED_INVENTORY_SCHEMA_VERSION_HASH = ConstExprHashingUtils::HashString("UnsupportedInventorySchemaVersionException");
+static constexpr uint32_t ASSOCIATION_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("AssociationDoesNotExist");
+static constexpr uint32_t ASSOCIATION_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("AssociationLimitExceeded");
+static constexpr uint32_t INVALID_OPTION_HASH = ConstExprHashingUtils::HashString("InvalidOptionException");
+static constexpr uint32_t PARAMETER_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ParameterLimitExceeded");
+static constexpr uint32_t SUB_TYPE_COUNT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("SubTypeCountLimitExceededException");
+static constexpr uint32_t ASSOCIATION_VERSION_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("AssociationVersionLimitExceeded");
+static constexpr uint32_t INVALID_PERMISSION_TYPE_HASH = ConstExprHashingUtils::HashString("InvalidPermissionType");
+static constexpr uint32_t INCOMPATIBLE_POLICY_HASH = ConstExprHashingUtils::HashString("IncompatiblePolicyException");
+static constexpr uint32_t INVALID_ASSOCIATION_VERSION_HASH = ConstExprHashingUtils::HashString("InvalidAssociationVersion");
+static constexpr uint32_t OPS_ITEM_RELATED_ITEM_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("OpsItemRelatedItemAlreadyExistsException");
+static constexpr uint32_t PARAMETER_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ParameterNotFound");
+static constexpr uint32_t INVALID_DOCUMENT_TYPE_HASH = ConstExprHashingUtils::HashString("InvalidDocumentType");
+static constexpr uint32_t RESOURCE_POLICY_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ResourcePolicyLimitExceededException");
+static constexpr uint32_t RESOURCE_POLICY_CONFLICT_HASH = ConstExprHashingUtils::HashString("ResourcePolicyConflictException");
+static constexpr uint32_t PARAMETER_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ParameterAlreadyExists");
+static constexpr uint32_t HIERARCHY_LEVEL_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("HierarchyLevelLimitExceededException");
+static constexpr uint32_t DOCUMENT_VERSION_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("DocumentVersionLimitExceeded");
+static constexpr uint32_t RESOURCE_DATA_SYNC_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ResourceDataSyncNotFoundException");
+static constexpr uint32_t INVALID_FILTER_VALUE_HASH = ConstExprHashingUtils::HashString("InvalidFilterValue");
+static constexpr uint32_t OPS_ITEM_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("OpsItemAlreadyExistsException");
+static constexpr uint32_t INVALID_DELETE_INVENTORY_PARAMETERS_HASH = ConstExprHashingUtils::HashString("InvalidDeleteInventoryParametersException");
+static constexpr uint32_t OPS_METADATA_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("OpsMetadataLimitExceededException");
+static constexpr uint32_t FEATURE_NOT_AVAILABLE_HASH = ConstExprHashingUtils::HashString("FeatureNotAvailableException");
+static constexpr uint32_t INVALID_PLUGIN_NAME_HASH = ConstExprHashingUtils::HashString("InvalidPluginName");
+static constexpr uint32_t INVALID_DOCUMENT_HASH = ConstExprHashingUtils::HashString("InvalidDocument");
+static constexpr uint32_t INVALID_AUTOMATION_SIGNAL_HASH = ConstExprHashingUtils::HashString("InvalidAutomationSignalException");
+static constexpr uint32_t RESOURCE_POLICY_INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("ResourcePolicyInvalidParameterException");
+static constexpr uint32_t AUTOMATION_DEFINITION_NOT_APPROVED_HASH = ConstExprHashingUtils::HashString("AutomationDefinitionNotApprovedException");
+static constexpr uint32_t AUTOMATION_EXECUTION_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("AutomationExecutionNotFoundException");
+static constexpr uint32_t INVALID_INVENTORY_ITEM_CONTEXT_HASH = ConstExprHashingUtils::HashString("InvalidInventoryItemContextException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t ASSOCIATION_EXECUTION_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("AssociationExecutionDoesNotExist");
+static constexpr uint32_t INVALID_RESOURCE_ID_HASH = ConstExprHashingUtils::HashString("InvalidResourceId");
+static constexpr uint32_t INVALID_INSTANCE_ID_HASH = ConstExprHashingUtils::HashString("InvalidInstanceId");
+static constexpr uint32_t ASSOCIATED_INSTANCES_HASH = ConstExprHashingUtils::HashString("AssociatedInstances");
+static constexpr uint32_t OPS_METADATA_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("OpsMetadataAlreadyExistsException");
+static constexpr uint32_t TARGET_IN_USE_HASH = ConstExprHashingUtils::HashString("TargetInUseException");
+static constexpr uint32_t INVALID_KEY_ID_HASH = ConstExprHashingUtils::HashString("InvalidKeyId");
+static constexpr uint32_t ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("AlreadyExistsException");
+static constexpr uint32_t ITEM_SIZE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ItemSizeLimitExceededException");
+static constexpr uint32_t OPS_METADATA_TOO_MANY_UPDATES_HASH = ConstExprHashingUtils::HashString("OpsMetadataTooManyUpdatesException");
+static constexpr uint32_t PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ParameterVersionLabelLimitExceeded");
+static constexpr uint32_t INVALID_RESOURCE_TYPE_HASH = ConstExprHashingUtils::HashString("InvalidResourceType");
+static constexpr uint32_t OPS_ITEM_RELATED_ITEM_ASSOCIATION_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("OpsItemRelatedItemAssociationNotFoundException");
+static constexpr uint32_t DOCUMENT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("DocumentLimitExceeded");
+static constexpr uint32_t ASSOCIATION_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("AssociationAlreadyExists");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextToken");
+static constexpr uint32_t UNSUPPORTED_OPERATING_SYSTEM_HASH = ConstExprHashingUtils::HashString("UnsupportedOperatingSystem");
+static constexpr uint32_t AUTOMATION_EXECUTION_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("AutomationExecutionLimitExceededException");
+static constexpr uint32_t INVALID_DELETION_ID_HASH = ConstExprHashingUtils::HashString("InvalidDeletionIdException");
+static constexpr uint32_t INVALID_TARGET_HASH = ConstExprHashingUtils::HashString("InvalidTarget");
+static constexpr uint32_t INVALID_DOCUMENT_CONTENT_HASH = ConstExprHashingUtils::HashString("InvalidDocumentContent");
+static constexpr uint32_t UNSUPPORTED_INVENTORY_ITEM_CONTEXT_HASH = ConstExprHashingUtils::HashString("UnsupportedInventoryItemContextException");
+static constexpr uint32_t INVALID_POLICY_ATTRIBUTE_HASH = ConstExprHashingUtils::HashString("InvalidPolicyAttributeException");
+static constexpr uint32_t AUTOMATION_DEFINITION_VERSION_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("AutomationDefinitionVersionNotFoundException");
+static constexpr uint32_t COMPLIANCE_TYPE_COUNT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ComplianceTypeCountLimitExceededException");
+static constexpr uint32_t PARAMETER_MAX_VERSION_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ParameterMaxVersionLimitExceeded");
+static constexpr uint32_t OPS_ITEM_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("OpsItemAccessDeniedException");
+static constexpr uint32_t AUTOMATION_STEP_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("AutomationStepNotFoundException");
+static constexpr uint32_t RESOURCE_DATA_SYNC_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ResourceDataSyncAlreadyExistsException");
+static constexpr uint32_t INVALID_RESULT_ATTRIBUTE_HASH = ConstExprHashingUtils::HashString("InvalidResultAttributeException");
+static constexpr uint32_t UNSUPPORTED_FEATURE_REQUIRED_HASH = ConstExprHashingUtils::HashString("UnsupportedFeatureRequiredException");
+static constexpr uint32_t STATUS_UNCHANGED_HASH = ConstExprHashingUtils::HashString("StatusUnchanged");
+static constexpr uint32_t OPS_ITEM_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("OpsItemLimitExceededException");
+static constexpr uint32_t DUPLICATE_INSTANCE_ID_HASH = ConstExprHashingUtils::HashString("DuplicateInstanceId");
+static constexpr uint32_t DUPLICATE_DOCUMENT_CONTENT_HASH = ConstExprHashingUtils::HashString("DuplicateDocumentContent");
+static constexpr uint32_t INVALID_OUTPUT_FOLDER_HASH = ConstExprHashingUtils::HashString("InvalidOutputFolder");
+static constexpr uint32_t TOO_MANY_UPDATES_HASH = ConstExprHashingUtils::HashString("TooManyUpdates");
+static constexpr uint32_t INVALID_DOCUMENT_SCHEMA_VERSION_HASH = ConstExprHashingUtils::HashString("InvalidDocumentSchemaVersion");
+static constexpr uint32_t INVALID_AUTOMATION_STATUS_UPDATE_HASH = ConstExprHashingUtils::HashString("InvalidAutomationStatusUpdateException");
+static constexpr uint32_t INVALID_AUTOMATION_EXECUTION_PARAMETERS_HASH = ConstExprHashingUtils::HashString("InvalidAutomationExecutionParametersException");
+static constexpr uint32_t ITEM_CONTENT_MISMATCH_HASH = ConstExprHashingUtils::HashString("ItemContentMismatchException");
+static constexpr uint32_t PARAMETER_PATTERN_MISMATCH_HASH = ConstExprHashingUtils::HashString("ParameterPatternMismatchException");
+static constexpr uint32_t INVALID_INSTANCE_INFORMATION_FILTER_VALUE_HASH = ConstExprHashingUtils::HashString("InvalidInstanceInformationFilterValue");
+static constexpr uint32_t INVALID_COMMAND_ID_HASH = ConstExprHashingUtils::HashString("InvalidCommandId");
+static constexpr uint32_t INVALID_TARGET_MAPS_HASH = ConstExprHashingUtils::HashString("InvalidTargetMaps");
+static constexpr uint32_t INVOCATION_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("InvocationDoesNotExist");
+static constexpr uint32_t TOTAL_SIZE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("TotalSizeLimitExceededException");
+static constexpr uint32_t AUTOMATION_DEFINITION_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("AutomationDefinitionNotFoundException");
+static constexpr uint32_t CUSTOM_SCHEMA_COUNT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("CustomSchemaCountLimitExceededException");
+static constexpr uint32_t INVALID_ALLOWED_PATTERN_HASH = ConstExprHashingUtils::HashString("InvalidAllowedPatternException");
+static constexpr uint32_t INVALID_ROLE_HASH = ConstExprHashingUtils::HashString("InvalidRole");
+static constexpr uint32_t INVALID_PARAMETERS_HASH = ConstExprHashingUtils::HashString("InvalidParameters");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsError");
+static constexpr uint32_t RESOURCE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ResourceLimitExceededException");
+static constexpr uint32_t INVALID_ACTIVATION_HASH = ConstExprHashingUtils::HashString("InvalidActivation");
+static constexpr uint32_t RESOURCE_DATA_SYNC_INVALID_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("ResourceDataSyncInvalidConfigurationException");
+static constexpr uint32_t INVALID_ASSOCIATION_HASH = ConstExprHashingUtils::HashString("InvalidAssociation");
+static constexpr uint32_t HIERARCHY_TYPE_MISMATCH_HASH = ConstExprHashingUtils::HashString("HierarchyTypeMismatchException");
+static constexpr uint32_t DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("DoesNotExistException");
+static constexpr uint32_t INVALID_DOCUMENT_OPERATION_HASH = ConstExprHashingUtils::HashString("InvalidDocumentOperation");
+static constexpr uint32_t OPS_METADATA_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("OpsMetadataNotFoundException");
+static constexpr uint32_t OPS_ITEM_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("OpsItemNotFoundException");
+static constexpr uint32_t INVALID_UPDATE_HASH = ConstExprHashingUtils::HashString("InvalidUpdate");
+static constexpr uint32_t INVALID_FILTER_OPTION_HASH = ConstExprHashingUtils::HashString("InvalidFilterOption");
+static constexpr uint32_t INVALID_ITEM_CONTENT_HASH = ConstExprHashingUtils::HashString("InvalidItemContentException");
+static constexpr uint32_t TARGET_NOT_CONNECTED_HASH = ConstExprHashingUtils::HashString("TargetNotConnected");
+static constexpr uint32_t DOCUMENT_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("DocumentAlreadyExists");
+static constexpr uint32_t UNSUPPORTED_CALENDAR_HASH = ConstExprHashingUtils::HashString("UnsupportedCalendarException");
+static constexpr uint32_t INVALID_DOCUMENT_VERSION_HASH = ConstExprHashingUtils::HashString("InvalidDocumentVersion");
+static constexpr uint32_t INVALID_NOTIFICATION_CONFIG_HASH = ConstExprHashingUtils::HashString("InvalidNotificationConfig");
+static constexpr uint32_t INVALID_TAG_HASH = ConstExprHashingUtils::HashString("InvalidTag");
+static constexpr uint32_t INVALID_SCHEDULE_HASH = ConstExprHashingUtils::HashString("InvalidSchedule");
+static constexpr uint32_t INVALID_ACTIVATION_ID_HASH = ConstExprHashingUtils::HashString("InvalidActivationId");
+static constexpr uint32_t RESOURCE_DATA_SYNC_CONFLICT_HASH = ConstExprHashingUtils::HashString("ResourceDataSyncConflictException");
+static constexpr uint32_t OPS_METADATA_KEY_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("OpsMetadataKeyLimitExceededException");
+static constexpr uint32_t INVALID_FILTER_HASH = ConstExprHashingUtils::HashString("InvalidFilter");
+static constexpr uint32_t OPS_ITEM_INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("OpsItemInvalidParameterException");
+static constexpr uint32_t INVALID_INVENTORY_GROUP_HASH = ConstExprHashingUtils::HashString("InvalidInventoryGroupException");
+static constexpr uint32_t POLICIES_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("PoliciesLimitExceededException");
+static constexpr uint32_t UNSUPPORTED_PARAMETER_TYPE_HASH = ConstExprHashingUtils::HashString("UnsupportedParameterType");
+static constexpr uint32_t MAX_DOCUMENT_SIZE_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MaxDocumentSizeExceeded");
+static constexpr uint32_t INVALID_FILTER_KEY_HASH = ConstExprHashingUtils::HashString("InvalidFilterKey");
+static constexpr uint32_t IDEMPOTENT_PARAMETER_MISMATCH_HASH = ConstExprHashingUtils::HashString("IdempotentParameterMismatch");
+static constexpr uint32_t UNSUPPORTED_PLATFORM_TYPE_HASH = ConstExprHashingUtils::HashString("UnsupportedPlatformType");
+static constexpr uint32_t SERVICE_SETTING_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ServiceSettingNotFound");
+static constexpr uint32_t DOCUMENT_PERMISSION_LIMIT_HASH = ConstExprHashingUtils::HashString("DocumentPermissionLimit");
 
 
 /*
@@ -238,7 +238,7 @@ which allows constant time lookup. The chain has been broken into helper functio
 because MSVC has a maximum of 122 chained if-else blocks.
 */
 
-static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
+static bool GetErrorForNameHelper0(uint32_t hashCode, AWSError<CoreErrors>& error)
 {
   if (hashCode == INVALID_OUTPUT_LOCATION_HASH)
   {
@@ -853,7 +853,7 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   return false;
 }
 
-static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+static bool GetErrorForNameHelper1(uint32_t hashCode, AWSError<CoreErrors>& error)
 {
   if (hashCode == INVALID_FILTER_KEY_HASH)
   {
@@ -885,7 +885,7 @@ static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
   AWSError<CoreErrors> error;
   if (GetErrorForNameHelper0(hashCode, error))
   {

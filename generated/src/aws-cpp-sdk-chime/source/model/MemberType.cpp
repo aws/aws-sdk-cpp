@@ -20,14 +20,14 @@ namespace Aws
       namespace MemberTypeMapper
       {
 
-        static const int User_HASH = HashingUtils::HashString("User");
-        static const int Bot_HASH = HashingUtils::HashString("Bot");
-        static const int Webhook_HASH = HashingUtils::HashString("Webhook");
+        static constexpr uint32_t User_HASH = ConstExprHashingUtils::HashString("User");
+        static constexpr uint32_t Bot_HASH = ConstExprHashingUtils::HashString("Bot");
+        static constexpr uint32_t Webhook_HASH = ConstExprHashingUtils::HashString("Webhook");
 
 
         MemberType GetMemberTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == User_HASH)
           {
             return MemberType::User;

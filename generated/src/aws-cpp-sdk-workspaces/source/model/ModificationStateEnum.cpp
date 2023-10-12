@@ -20,13 +20,13 @@ namespace Aws
       namespace ModificationStateEnumMapper
       {
 
-        static const int UPDATE_INITIATED_HASH = HashingUtils::HashString("UPDATE_INITIATED");
-        static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
+        static constexpr uint32_t UPDATE_INITIATED_HASH = ConstExprHashingUtils::HashString("UPDATE_INITIATED");
+        static constexpr uint32_t UPDATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("UPDATE_IN_PROGRESS");
 
 
         ModificationStateEnum GetModificationStateEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UPDATE_INITIATED_HASH)
           {
             return ModificationStateEnum::UPDATE_INITIATED;

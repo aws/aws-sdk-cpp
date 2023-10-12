@@ -20,13 +20,13 @@ namespace Aws
       namespace AccessAdvisorUsageGranularityTypeMapper
       {
 
-        static const int SERVICE_LEVEL_HASH = HashingUtils::HashString("SERVICE_LEVEL");
-        static const int ACTION_LEVEL_HASH = HashingUtils::HashString("ACTION_LEVEL");
+        static constexpr uint32_t SERVICE_LEVEL_HASH = ConstExprHashingUtils::HashString("SERVICE_LEVEL");
+        static constexpr uint32_t ACTION_LEVEL_HASH = ConstExprHashingUtils::HashString("ACTION_LEVEL");
 
 
         AccessAdvisorUsageGranularityType GetAccessAdvisorUsageGranularityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SERVICE_LEVEL_HASH)
           {
             return AccessAdvisorUsageGranularityType::SERVICE_LEVEL;

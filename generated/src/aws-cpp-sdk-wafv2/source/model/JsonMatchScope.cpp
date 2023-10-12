@@ -20,14 +20,14 @@ namespace Aws
       namespace JsonMatchScopeMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int KEY_HASH = HashingUtils::HashString("KEY");
-        static const int VALUE_HASH = HashingUtils::HashString("VALUE");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t KEY_HASH = ConstExprHashingUtils::HashString("KEY");
+        static constexpr uint32_t VALUE_HASH = ConstExprHashingUtils::HashString("VALUE");
 
 
         JsonMatchScope GetJsonMatchScopeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return JsonMatchScope::ALL;

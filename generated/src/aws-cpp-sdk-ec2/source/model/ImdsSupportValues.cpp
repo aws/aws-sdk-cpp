@@ -20,12 +20,12 @@ namespace Aws
       namespace ImdsSupportValuesMapper
       {
 
-        static const int v2_0_HASH = HashingUtils::HashString("v2.0");
+        static constexpr uint32_t v2_0_HASH = ConstExprHashingUtils::HashString("v2.0");
 
 
         ImdsSupportValues GetImdsSupportValuesForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == v2_0_HASH)
           {
             return ImdsSupportValues::v2_0;

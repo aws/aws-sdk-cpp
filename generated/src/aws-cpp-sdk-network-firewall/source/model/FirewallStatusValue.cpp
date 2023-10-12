@@ -20,14 +20,14 @@ namespace Aws
       namespace FirewallStatusValueMapper
       {
 
-        static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int READY_HASH = HashingUtils::HashString("READY");
+        static constexpr uint32_t PROVISIONING_HASH = ConstExprHashingUtils::HashString("PROVISIONING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t READY_HASH = ConstExprHashingUtils::HashString("READY");
 
 
         FirewallStatusValue GetFirewallStatusValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROVISIONING_HASH)
           {
             return FirewallStatusValue::PROVISIONING;

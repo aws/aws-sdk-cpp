@@ -20,18 +20,18 @@ namespace Aws
       namespace RunTimeAssessmentStatusMapper
       {
 
-        static const int dataCollectionTaskToBeScheduled_HASH = HashingUtils::HashString("dataCollectionTaskToBeScheduled");
-        static const int dataCollectionTaskScheduled_HASH = HashingUtils::HashString("dataCollectionTaskScheduled");
-        static const int dataCollectionTaskStarted_HASH = HashingUtils::HashString("dataCollectionTaskStarted");
-        static const int dataCollectionTaskStopped_HASH = HashingUtils::HashString("dataCollectionTaskStopped");
-        static const int dataCollectionTaskSuccess_HASH = HashingUtils::HashString("dataCollectionTaskSuccess");
-        static const int dataCollectionTaskFailed_HASH = HashingUtils::HashString("dataCollectionTaskFailed");
-        static const int dataCollectionTaskPartialSuccess_HASH = HashingUtils::HashString("dataCollectionTaskPartialSuccess");
+        static constexpr uint32_t dataCollectionTaskToBeScheduled_HASH = ConstExprHashingUtils::HashString("dataCollectionTaskToBeScheduled");
+        static constexpr uint32_t dataCollectionTaskScheduled_HASH = ConstExprHashingUtils::HashString("dataCollectionTaskScheduled");
+        static constexpr uint32_t dataCollectionTaskStarted_HASH = ConstExprHashingUtils::HashString("dataCollectionTaskStarted");
+        static constexpr uint32_t dataCollectionTaskStopped_HASH = ConstExprHashingUtils::HashString("dataCollectionTaskStopped");
+        static constexpr uint32_t dataCollectionTaskSuccess_HASH = ConstExprHashingUtils::HashString("dataCollectionTaskSuccess");
+        static constexpr uint32_t dataCollectionTaskFailed_HASH = ConstExprHashingUtils::HashString("dataCollectionTaskFailed");
+        static constexpr uint32_t dataCollectionTaskPartialSuccess_HASH = ConstExprHashingUtils::HashString("dataCollectionTaskPartialSuccess");
 
 
         RunTimeAssessmentStatus GetRunTimeAssessmentStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == dataCollectionTaskToBeScheduled_HASH)
           {
             return RunTimeAssessmentStatus::dataCollectionTaskToBeScheduled;

@@ -20,13 +20,13 @@ namespace Aws
       namespace UsageLimitUsageTypeMapper
       {
 
-        static const int serverless_compute_HASH = HashingUtils::HashString("serverless-compute");
-        static const int cross_region_datasharing_HASH = HashingUtils::HashString("cross-region-datasharing");
+        static constexpr uint32_t serverless_compute_HASH = ConstExprHashingUtils::HashString("serverless-compute");
+        static constexpr uint32_t cross_region_datasharing_HASH = ConstExprHashingUtils::HashString("cross-region-datasharing");
 
 
         UsageLimitUsageType GetUsageLimitUsageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == serverless_compute_HASH)
           {
             return UsageLimitUsageType::serverless_compute;

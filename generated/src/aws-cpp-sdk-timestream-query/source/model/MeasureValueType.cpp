@@ -20,16 +20,16 @@ namespace Aws
       namespace MeasureValueTypeMapper
       {
 
-        static const int BIGINT_HASH = HashingUtils::HashString("BIGINT");
-        static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
-        static const int DOUBLE_HASH = HashingUtils::HashString("DOUBLE");
-        static const int VARCHAR_HASH = HashingUtils::HashString("VARCHAR");
-        static const int MULTI_HASH = HashingUtils::HashString("MULTI");
+        static constexpr uint32_t BIGINT_HASH = ConstExprHashingUtils::HashString("BIGINT");
+        static constexpr uint32_t BOOLEAN_HASH = ConstExprHashingUtils::HashString("BOOLEAN");
+        static constexpr uint32_t DOUBLE_HASH = ConstExprHashingUtils::HashString("DOUBLE");
+        static constexpr uint32_t VARCHAR_HASH = ConstExprHashingUtils::HashString("VARCHAR");
+        static constexpr uint32_t MULTI_HASH = ConstExprHashingUtils::HashString("MULTI");
 
 
         MeasureValueType GetMeasureValueTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BIGINT_HASH)
           {
             return MeasureValueType::BIGINT;

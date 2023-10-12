@@ -20,16 +20,16 @@ namespace Aws
       namespace SourceTypeMapper
       {
 
-        static const int AWS_Cloudtrail_HASH = HashingUtils::HashString("AWS_Cloudtrail");
-        static const int AWS_Config_HASH = HashingUtils::HashString("AWS_Config");
-        static const int AWS_Security_Hub_HASH = HashingUtils::HashString("AWS_Security_Hub");
-        static const int AWS_API_Call_HASH = HashingUtils::HashString("AWS_API_Call");
-        static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
+        static constexpr uint32_t AWS_Cloudtrail_HASH = ConstExprHashingUtils::HashString("AWS_Cloudtrail");
+        static constexpr uint32_t AWS_Config_HASH = ConstExprHashingUtils::HashString("AWS_Config");
+        static constexpr uint32_t AWS_Security_Hub_HASH = ConstExprHashingUtils::HashString("AWS_Security_Hub");
+        static constexpr uint32_t AWS_API_Call_HASH = ConstExprHashingUtils::HashString("AWS_API_Call");
+        static constexpr uint32_t MANUAL_HASH = ConstExprHashingUtils::HashString("MANUAL");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_Cloudtrail_HASH)
           {
             return SourceType::AWS_Cloudtrail;

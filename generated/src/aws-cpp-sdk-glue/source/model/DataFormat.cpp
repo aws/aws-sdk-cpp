@@ -20,14 +20,14 @@ namespace Aws
       namespace DataFormatMapper
       {
 
-        static const int AVRO_HASH = HashingUtils::HashString("AVRO");
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
-        static const int PROTOBUF_HASH = HashingUtils::HashString("PROTOBUF");
+        static constexpr uint32_t AVRO_HASH = ConstExprHashingUtils::HashString("AVRO");
+        static constexpr uint32_t JSON_HASH = ConstExprHashingUtils::HashString("JSON");
+        static constexpr uint32_t PROTOBUF_HASH = ConstExprHashingUtils::HashString("PROTOBUF");
 
 
         DataFormat GetDataFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AVRO_HASH)
           {
             return DataFormat::AVRO;

@@ -20,13 +20,13 @@ namespace Aws
       namespace SchedulingStrategyMapper
       {
 
-        static const int REPLICA_HASH = HashingUtils::HashString("REPLICA");
-        static const int DAEMON_HASH = HashingUtils::HashString("DAEMON");
+        static constexpr uint32_t REPLICA_HASH = ConstExprHashingUtils::HashString("REPLICA");
+        static constexpr uint32_t DAEMON_HASH = ConstExprHashingUtils::HashString("DAEMON");
 
 
         SchedulingStrategy GetSchedulingStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REPLICA_HASH)
           {
             return SchedulingStrategy::REPLICA;

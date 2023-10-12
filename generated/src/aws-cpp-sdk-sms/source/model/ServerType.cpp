@@ -20,12 +20,12 @@ namespace Aws
       namespace ServerTypeMapper
       {
 
-        static const int VIRTUAL_MACHINE_HASH = HashingUtils::HashString("VIRTUAL_MACHINE");
+        static constexpr uint32_t VIRTUAL_MACHINE_HASH = ConstExprHashingUtils::HashString("VIRTUAL_MACHINE");
 
 
         ServerType GetServerTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VIRTUAL_MACHINE_HASH)
           {
             return ServerType::VIRTUAL_MACHINE;

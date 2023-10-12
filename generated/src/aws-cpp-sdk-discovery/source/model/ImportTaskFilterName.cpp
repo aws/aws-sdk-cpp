@@ -20,14 +20,14 @@ namespace Aws
       namespace ImportTaskFilterNameMapper
       {
 
-        static const int IMPORT_TASK_ID_HASH = HashingUtils::HashString("IMPORT_TASK_ID");
-        static const int STATUS_HASH = HashingUtils::HashString("STATUS");
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
+        static constexpr uint32_t IMPORT_TASK_ID_HASH = ConstExprHashingUtils::HashString("IMPORT_TASK_ID");
+        static constexpr uint32_t STATUS_HASH = ConstExprHashingUtils::HashString("STATUS");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
 
 
         ImportTaskFilterName GetImportTaskFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IMPORT_TASK_ID_HASH)
           {
             return ImportTaskFilterName::IMPORT_TASK_ID;

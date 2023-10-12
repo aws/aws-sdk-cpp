@@ -20,13 +20,13 @@ namespace Aws
       namespace PeriodAlignmentMapper
       {
 
-        static const int END_TIME_HASH = HashingUtils::HashString("END_TIME");
-        static const int START_TIME_HASH = HashingUtils::HashString("START_TIME");
+        static constexpr uint32_t END_TIME_HASH = ConstExprHashingUtils::HashString("END_TIME");
+        static constexpr uint32_t START_TIME_HASH = ConstExprHashingUtils::HashString("START_TIME");
 
 
         PeriodAlignment GetPeriodAlignmentForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == END_TIME_HASH)
           {
             return PeriodAlignment::END_TIME;

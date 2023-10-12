@@ -20,13 +20,13 @@ namespace Aws
       namespace UploadBehaviorMapper
       {
 
-        static const int UPLOAD_ON_TERMINATE_HASH = HashingUtils::HashString("UPLOAD_ON_TERMINATE");
-        static const int UPLOAD_ROLLING_AUTO_REMOVE_HASH = HashingUtils::HashString("UPLOAD_ROLLING_AUTO_REMOVE");
+        static constexpr uint32_t UPLOAD_ON_TERMINATE_HASH = ConstExprHashingUtils::HashString("UPLOAD_ON_TERMINATE");
+        static constexpr uint32_t UPLOAD_ROLLING_AUTO_REMOVE_HASH = ConstExprHashingUtils::HashString("UPLOAD_ROLLING_AUTO_REMOVE");
 
 
         UploadBehavior GetUploadBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UPLOAD_ON_TERMINATE_HASH)
           {
             return UploadBehavior::UPLOAD_ON_TERMINATE;

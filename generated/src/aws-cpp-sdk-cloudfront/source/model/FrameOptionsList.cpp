@@ -20,13 +20,13 @@ namespace Aws
       namespace FrameOptionsListMapper
       {
 
-        static const int DENY_HASH = HashingUtils::HashString("DENY");
-        static const int SAMEORIGIN_HASH = HashingUtils::HashString("SAMEORIGIN");
+        static constexpr uint32_t DENY_HASH = ConstExprHashingUtils::HashString("DENY");
+        static constexpr uint32_t SAMEORIGIN_HASH = ConstExprHashingUtils::HashString("SAMEORIGIN");
 
 
         FrameOptionsList GetFrameOptionsListForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DENY_HASH)
           {
             return FrameOptionsList::DENY;

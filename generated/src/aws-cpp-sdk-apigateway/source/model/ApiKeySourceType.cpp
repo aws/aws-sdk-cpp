@@ -20,13 +20,13 @@ namespace Aws
       namespace ApiKeySourceTypeMapper
       {
 
-        static const int HEADER_HASH = HashingUtils::HashString("HEADER");
-        static const int AUTHORIZER_HASH = HashingUtils::HashString("AUTHORIZER");
+        static constexpr uint32_t HEADER_HASH = ConstExprHashingUtils::HashString("HEADER");
+        static constexpr uint32_t AUTHORIZER_HASH = ConstExprHashingUtils::HashString("AUTHORIZER");
 
 
         ApiKeySourceType GetApiKeySourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HEADER_HASH)
           {
             return ApiKeySourceType::HEADER;

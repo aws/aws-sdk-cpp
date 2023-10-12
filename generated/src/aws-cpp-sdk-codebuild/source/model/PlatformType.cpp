@@ -20,15 +20,15 @@ namespace Aws
       namespace PlatformTypeMapper
       {
 
-        static const int DEBIAN_HASH = HashingUtils::HashString("DEBIAN");
-        static const int AMAZON_LINUX_HASH = HashingUtils::HashString("AMAZON_LINUX");
-        static const int UBUNTU_HASH = HashingUtils::HashString("UBUNTU");
-        static const int WINDOWS_SERVER_HASH = HashingUtils::HashString("WINDOWS_SERVER");
+        static constexpr uint32_t DEBIAN_HASH = ConstExprHashingUtils::HashString("DEBIAN");
+        static constexpr uint32_t AMAZON_LINUX_HASH = ConstExprHashingUtils::HashString("AMAZON_LINUX");
+        static constexpr uint32_t UBUNTU_HASH = ConstExprHashingUtils::HashString("UBUNTU");
+        static constexpr uint32_t WINDOWS_SERVER_HASH = ConstExprHashingUtils::HashString("WINDOWS_SERVER");
 
 
         PlatformType GetPlatformTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEBIAN_HASH)
           {
             return PlatformType::DEBIAN;

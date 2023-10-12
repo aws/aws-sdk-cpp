@@ -20,17 +20,17 @@ namespace Aws
       namespace ProductionVariantAcceleratorTypeMapper
       {
 
-        static const int ml_eia1_medium_HASH = HashingUtils::HashString("ml.eia1.medium");
-        static const int ml_eia1_large_HASH = HashingUtils::HashString("ml.eia1.large");
-        static const int ml_eia1_xlarge_HASH = HashingUtils::HashString("ml.eia1.xlarge");
-        static const int ml_eia2_medium_HASH = HashingUtils::HashString("ml.eia2.medium");
-        static const int ml_eia2_large_HASH = HashingUtils::HashString("ml.eia2.large");
-        static const int ml_eia2_xlarge_HASH = HashingUtils::HashString("ml.eia2.xlarge");
+        static constexpr uint32_t ml_eia1_medium_HASH = ConstExprHashingUtils::HashString("ml.eia1.medium");
+        static constexpr uint32_t ml_eia1_large_HASH = ConstExprHashingUtils::HashString("ml.eia1.large");
+        static constexpr uint32_t ml_eia1_xlarge_HASH = ConstExprHashingUtils::HashString("ml.eia1.xlarge");
+        static constexpr uint32_t ml_eia2_medium_HASH = ConstExprHashingUtils::HashString("ml.eia2.medium");
+        static constexpr uint32_t ml_eia2_large_HASH = ConstExprHashingUtils::HashString("ml.eia2.large");
+        static constexpr uint32_t ml_eia2_xlarge_HASH = ConstExprHashingUtils::HashString("ml.eia2.xlarge");
 
 
         ProductionVariantAcceleratorType GetProductionVariantAcceleratorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ml_eia1_medium_HASH)
           {
             return ProductionVariantAcceleratorType::ml_eia1_medium;

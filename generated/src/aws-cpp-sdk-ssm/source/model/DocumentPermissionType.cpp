@@ -20,12 +20,12 @@ namespace Aws
       namespace DocumentPermissionTypeMapper
       {
 
-        static const int Share_HASH = HashingUtils::HashString("Share");
+        static constexpr uint32_t Share_HASH = ConstExprHashingUtils::HashString("Share");
 
 
         DocumentPermissionType GetDocumentPermissionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Share_HASH)
           {
             return DocumentPermissionType::Share;

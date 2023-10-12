@@ -20,13 +20,13 @@ namespace Aws
       namespace SplunkS3BackupModeMapper
       {
 
-        static const int FailedEventsOnly_HASH = HashingUtils::HashString("FailedEventsOnly");
-        static const int AllEvents_HASH = HashingUtils::HashString("AllEvents");
+        static constexpr uint32_t FailedEventsOnly_HASH = ConstExprHashingUtils::HashString("FailedEventsOnly");
+        static constexpr uint32_t AllEvents_HASH = ConstExprHashingUtils::HashString("AllEvents");
 
 
         SplunkS3BackupMode GetSplunkS3BackupModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FailedEventsOnly_HASH)
           {
             return SplunkS3BackupMode::FailedEventsOnly;

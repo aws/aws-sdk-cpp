@@ -40,12 +40,12 @@ template<> AWS_STORAGEGATEWAY_API InvalidGatewayRequestException StorageGatewayE
 namespace StorageGatewayErrorMapper
 {
 
-static const int INVALID_GATEWAY_REQUEST_HASH = HashingUtils::HashString("InvalidGatewayRequestException");
+static constexpr uint32_t INVALID_GATEWAY_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidGatewayRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INVALID_GATEWAY_REQUEST_HASH)
   {

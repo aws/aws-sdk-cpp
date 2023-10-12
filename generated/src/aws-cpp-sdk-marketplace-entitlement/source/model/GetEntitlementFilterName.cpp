@@ -20,13 +20,13 @@ namespace Aws
       namespace GetEntitlementFilterNameMapper
       {
 
-        static const int CUSTOMER_IDENTIFIER_HASH = HashingUtils::HashString("CUSTOMER_IDENTIFIER");
-        static const int DIMENSION_HASH = HashingUtils::HashString("DIMENSION");
+        static constexpr uint32_t CUSTOMER_IDENTIFIER_HASH = ConstExprHashingUtils::HashString("CUSTOMER_IDENTIFIER");
+        static constexpr uint32_t DIMENSION_HASH = ConstExprHashingUtils::HashString("DIMENSION");
 
 
         GetEntitlementFilterName GetGetEntitlementFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CUSTOMER_IDENTIFIER_HASH)
           {
             return GetEntitlementFilterName::CUSTOMER_IDENTIFIER;

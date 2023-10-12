@@ -20,14 +20,14 @@ namespace Aws
       namespace EcrRescanDurationMapper
       {
 
-        static const int LIFETIME_HASH = HashingUtils::HashString("LIFETIME");
-        static const int DAYS_30_HASH = HashingUtils::HashString("DAYS_30");
-        static const int DAYS_180_HASH = HashingUtils::HashString("DAYS_180");
+        static constexpr uint32_t LIFETIME_HASH = ConstExprHashingUtils::HashString("LIFETIME");
+        static constexpr uint32_t DAYS_30_HASH = ConstExprHashingUtils::HashString("DAYS_30");
+        static constexpr uint32_t DAYS_180_HASH = ConstExprHashingUtils::HashString("DAYS_180");
 
 
         EcrRescanDuration GetEcrRescanDurationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LIFETIME_HASH)
           {
             return EcrRescanDuration::LIFETIME;

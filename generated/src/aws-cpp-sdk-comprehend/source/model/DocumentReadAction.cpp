@@ -20,13 +20,13 @@ namespace Aws
       namespace DocumentReadActionMapper
       {
 
-        static const int TEXTRACT_DETECT_DOCUMENT_TEXT_HASH = HashingUtils::HashString("TEXTRACT_DETECT_DOCUMENT_TEXT");
-        static const int TEXTRACT_ANALYZE_DOCUMENT_HASH = HashingUtils::HashString("TEXTRACT_ANALYZE_DOCUMENT");
+        static constexpr uint32_t TEXTRACT_DETECT_DOCUMENT_TEXT_HASH = ConstExprHashingUtils::HashString("TEXTRACT_DETECT_DOCUMENT_TEXT");
+        static constexpr uint32_t TEXTRACT_ANALYZE_DOCUMENT_HASH = ConstExprHashingUtils::HashString("TEXTRACT_ANALYZE_DOCUMENT");
 
 
         DocumentReadAction GetDocumentReadActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TEXTRACT_DETECT_DOCUMENT_TEXT_HASH)
           {
             return DocumentReadAction::TEXTRACT_DETECT_DOCUMENT_TEXT;

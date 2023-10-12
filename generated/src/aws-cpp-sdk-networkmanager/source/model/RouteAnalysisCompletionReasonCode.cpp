@@ -20,22 +20,22 @@ namespace Aws
       namespace RouteAnalysisCompletionReasonCodeMapper
       {
 
-        static const int TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND_HASH = HashingUtils::HashString("TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND");
-        static const int TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY_HASH = HashingUtils::HashString("TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY");
-        static const int CYCLIC_PATH_DETECTED_HASH = HashingUtils::HashString("CYCLIC_PATH_DETECTED");
-        static const int TRANSIT_GATEWAY_ATTACHMENT_STABLE_ROUTE_TABLE_NOT_FOUND_HASH = HashingUtils::HashString("TRANSIT_GATEWAY_ATTACHMENT_STABLE_ROUTE_TABLE_NOT_FOUND");
-        static const int ROUTE_NOT_FOUND_HASH = HashingUtils::HashString("ROUTE_NOT_FOUND");
-        static const int BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND_HASH = HashingUtils::HashString("BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND");
-        static const int INACTIVE_ROUTE_FOR_DESTINATION_FOUND_HASH = HashingUtils::HashString("INACTIVE_ROUTE_FOR_DESTINATION_FOUND");
-        static const int TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH_HASH = HashingUtils::HashString("TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH");
-        static const int MAX_HOPS_EXCEEDED_HASH = HashingUtils::HashString("MAX_HOPS_EXCEEDED");
-        static const int POSSIBLE_MIDDLEBOX_HASH = HashingUtils::HashString("POSSIBLE_MIDDLEBOX");
-        static const int NO_DESTINATION_ARN_PROVIDED_HASH = HashingUtils::HashString("NO_DESTINATION_ARN_PROVIDED");
+        static constexpr uint32_t TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND");
+        static constexpr uint32_t TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY_HASH = ConstExprHashingUtils::HashString("TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY");
+        static constexpr uint32_t CYCLIC_PATH_DETECTED_HASH = ConstExprHashingUtils::HashString("CYCLIC_PATH_DETECTED");
+        static constexpr uint32_t TRANSIT_GATEWAY_ATTACHMENT_STABLE_ROUTE_TABLE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("TRANSIT_GATEWAY_ATTACHMENT_STABLE_ROUTE_TABLE_NOT_FOUND");
+        static constexpr uint32_t ROUTE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ROUTE_NOT_FOUND");
+        static constexpr uint32_t BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND_HASH = ConstExprHashingUtils::HashString("BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND");
+        static constexpr uint32_t INACTIVE_ROUTE_FOR_DESTINATION_FOUND_HASH = ConstExprHashingUtils::HashString("INACTIVE_ROUTE_FOR_DESTINATION_FOUND");
+        static constexpr uint32_t TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH_HASH = ConstExprHashingUtils::HashString("TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH");
+        static constexpr uint32_t MAX_HOPS_EXCEEDED_HASH = ConstExprHashingUtils::HashString("MAX_HOPS_EXCEEDED");
+        static constexpr uint32_t POSSIBLE_MIDDLEBOX_HASH = ConstExprHashingUtils::HashString("POSSIBLE_MIDDLEBOX");
+        static constexpr uint32_t NO_DESTINATION_ARN_PROVIDED_HASH = ConstExprHashingUtils::HashString("NO_DESTINATION_ARN_PROVIDED");
 
 
         RouteAnalysisCompletionReasonCode GetRouteAnalysisCompletionReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND_HASH)
           {
             return RouteAnalysisCompletionReasonCode::TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND;

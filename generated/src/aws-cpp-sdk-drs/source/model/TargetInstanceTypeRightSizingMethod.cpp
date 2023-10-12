@@ -20,14 +20,14 @@ namespace Aws
       namespace TargetInstanceTypeRightSizingMethodMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int BASIC_HASH = HashingUtils::HashString("BASIC");
-        static const int IN_AWS_HASH = HashingUtils::HashString("IN_AWS");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t BASIC_HASH = ConstExprHashingUtils::HashString("BASIC");
+        static constexpr uint32_t IN_AWS_HASH = ConstExprHashingUtils::HashString("IN_AWS");
 
 
         TargetInstanceTypeRightSizingMethod GetTargetInstanceTypeRightSizingMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return TargetInstanceTypeRightSizingMethod::NONE;

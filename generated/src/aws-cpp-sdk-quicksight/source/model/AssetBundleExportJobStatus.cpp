@@ -20,15 +20,15 @@ namespace Aws
       namespace AssetBundleExportJobStatusMapper
       {
 
-        static const int QUEUED_FOR_IMMEDIATE_EXECUTION_HASH = HashingUtils::HashString("QUEUED_FOR_IMMEDIATE_EXECUTION");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int SUCCESSFUL_HASH = HashingUtils::HashString("SUCCESSFUL");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t QUEUED_FOR_IMMEDIATE_EXECUTION_HASH = ConstExprHashingUtils::HashString("QUEUED_FOR_IMMEDIATE_EXECUTION");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t SUCCESSFUL_HASH = ConstExprHashingUtils::HashString("SUCCESSFUL");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         AssetBundleExportJobStatus GetAssetBundleExportJobStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUEUED_FOR_IMMEDIATE_EXECUTION_HASH)
           {
             return AssetBundleExportJobStatus::QUEUED_FOR_IMMEDIATE_EXECUTION;

@@ -20,43 +20,43 @@ namespace Aws
       namespace UploadTypeMapper
       {
 
-        static const int ANDROID_APP_HASH = HashingUtils::HashString("ANDROID_APP");
-        static const int IOS_APP_HASH = HashingUtils::HashString("IOS_APP");
-        static const int WEB_APP_HASH = HashingUtils::HashString("WEB_APP");
-        static const int EXTERNAL_DATA_HASH = HashingUtils::HashString("EXTERNAL_DATA");
-        static const int APPIUM_JAVA_JUNIT_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_JAVA_JUNIT_TEST_PACKAGE");
-        static const int APPIUM_JAVA_TESTNG_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_JAVA_TESTNG_TEST_PACKAGE");
-        static const int APPIUM_PYTHON_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_PYTHON_TEST_PACKAGE");
-        static const int APPIUM_NODE_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_NODE_TEST_PACKAGE");
-        static const int APPIUM_RUBY_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_RUBY_TEST_PACKAGE");
-        static const int APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE");
-        static const int APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE");
-        static const int APPIUM_WEB_PYTHON_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_WEB_PYTHON_TEST_PACKAGE");
-        static const int APPIUM_WEB_NODE_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_WEB_NODE_TEST_PACKAGE");
-        static const int APPIUM_WEB_RUBY_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_WEB_RUBY_TEST_PACKAGE");
-        static const int CALABASH_TEST_PACKAGE_HASH = HashingUtils::HashString("CALABASH_TEST_PACKAGE");
-        static const int INSTRUMENTATION_TEST_PACKAGE_HASH = HashingUtils::HashString("INSTRUMENTATION_TEST_PACKAGE");
-        static const int UIAUTOMATION_TEST_PACKAGE_HASH = HashingUtils::HashString("UIAUTOMATION_TEST_PACKAGE");
-        static const int UIAUTOMATOR_TEST_PACKAGE_HASH = HashingUtils::HashString("UIAUTOMATOR_TEST_PACKAGE");
-        static const int XCTEST_TEST_PACKAGE_HASH = HashingUtils::HashString("XCTEST_TEST_PACKAGE");
-        static const int XCTEST_UI_TEST_PACKAGE_HASH = HashingUtils::HashString("XCTEST_UI_TEST_PACKAGE");
-        static const int APPIUM_JAVA_JUNIT_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_JAVA_JUNIT_TEST_SPEC");
-        static const int APPIUM_JAVA_TESTNG_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_JAVA_TESTNG_TEST_SPEC");
-        static const int APPIUM_PYTHON_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_PYTHON_TEST_SPEC");
-        static const int APPIUM_NODE_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_NODE_TEST_SPEC");
-        static const int APPIUM_RUBY_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_RUBY_TEST_SPEC");
-        static const int APPIUM_WEB_JAVA_JUNIT_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_JUNIT_TEST_SPEC");
-        static const int APPIUM_WEB_JAVA_TESTNG_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_TESTNG_TEST_SPEC");
-        static const int APPIUM_WEB_PYTHON_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_WEB_PYTHON_TEST_SPEC");
-        static const int APPIUM_WEB_NODE_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_WEB_NODE_TEST_SPEC");
-        static const int APPIUM_WEB_RUBY_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_WEB_RUBY_TEST_SPEC");
-        static const int INSTRUMENTATION_TEST_SPEC_HASH = HashingUtils::HashString("INSTRUMENTATION_TEST_SPEC");
-        static const int XCTEST_UI_TEST_SPEC_HASH = HashingUtils::HashString("XCTEST_UI_TEST_SPEC");
+        static constexpr uint32_t ANDROID_APP_HASH = ConstExprHashingUtils::HashString("ANDROID_APP");
+        static constexpr uint32_t IOS_APP_HASH = ConstExprHashingUtils::HashString("IOS_APP");
+        static constexpr uint32_t WEB_APP_HASH = ConstExprHashingUtils::HashString("WEB_APP");
+        static constexpr uint32_t EXTERNAL_DATA_HASH = ConstExprHashingUtils::HashString("EXTERNAL_DATA");
+        static constexpr uint32_t APPIUM_JAVA_JUNIT_TEST_PACKAGE_HASH = ConstExprHashingUtils::HashString("APPIUM_JAVA_JUNIT_TEST_PACKAGE");
+        static constexpr uint32_t APPIUM_JAVA_TESTNG_TEST_PACKAGE_HASH = ConstExprHashingUtils::HashString("APPIUM_JAVA_TESTNG_TEST_PACKAGE");
+        static constexpr uint32_t APPIUM_PYTHON_TEST_PACKAGE_HASH = ConstExprHashingUtils::HashString("APPIUM_PYTHON_TEST_PACKAGE");
+        static constexpr uint32_t APPIUM_NODE_TEST_PACKAGE_HASH = ConstExprHashingUtils::HashString("APPIUM_NODE_TEST_PACKAGE");
+        static constexpr uint32_t APPIUM_RUBY_TEST_PACKAGE_HASH = ConstExprHashingUtils::HashString("APPIUM_RUBY_TEST_PACKAGE");
+        static constexpr uint32_t APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE_HASH = ConstExprHashingUtils::HashString("APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE");
+        static constexpr uint32_t APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE_HASH = ConstExprHashingUtils::HashString("APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE");
+        static constexpr uint32_t APPIUM_WEB_PYTHON_TEST_PACKAGE_HASH = ConstExprHashingUtils::HashString("APPIUM_WEB_PYTHON_TEST_PACKAGE");
+        static constexpr uint32_t APPIUM_WEB_NODE_TEST_PACKAGE_HASH = ConstExprHashingUtils::HashString("APPIUM_WEB_NODE_TEST_PACKAGE");
+        static constexpr uint32_t APPIUM_WEB_RUBY_TEST_PACKAGE_HASH = ConstExprHashingUtils::HashString("APPIUM_WEB_RUBY_TEST_PACKAGE");
+        static constexpr uint32_t CALABASH_TEST_PACKAGE_HASH = ConstExprHashingUtils::HashString("CALABASH_TEST_PACKAGE");
+        static constexpr uint32_t INSTRUMENTATION_TEST_PACKAGE_HASH = ConstExprHashingUtils::HashString("INSTRUMENTATION_TEST_PACKAGE");
+        static constexpr uint32_t UIAUTOMATION_TEST_PACKAGE_HASH = ConstExprHashingUtils::HashString("UIAUTOMATION_TEST_PACKAGE");
+        static constexpr uint32_t UIAUTOMATOR_TEST_PACKAGE_HASH = ConstExprHashingUtils::HashString("UIAUTOMATOR_TEST_PACKAGE");
+        static constexpr uint32_t XCTEST_TEST_PACKAGE_HASH = ConstExprHashingUtils::HashString("XCTEST_TEST_PACKAGE");
+        static constexpr uint32_t XCTEST_UI_TEST_PACKAGE_HASH = ConstExprHashingUtils::HashString("XCTEST_UI_TEST_PACKAGE");
+        static constexpr uint32_t APPIUM_JAVA_JUNIT_TEST_SPEC_HASH = ConstExprHashingUtils::HashString("APPIUM_JAVA_JUNIT_TEST_SPEC");
+        static constexpr uint32_t APPIUM_JAVA_TESTNG_TEST_SPEC_HASH = ConstExprHashingUtils::HashString("APPIUM_JAVA_TESTNG_TEST_SPEC");
+        static constexpr uint32_t APPIUM_PYTHON_TEST_SPEC_HASH = ConstExprHashingUtils::HashString("APPIUM_PYTHON_TEST_SPEC");
+        static constexpr uint32_t APPIUM_NODE_TEST_SPEC_HASH = ConstExprHashingUtils::HashString("APPIUM_NODE_TEST_SPEC");
+        static constexpr uint32_t APPIUM_RUBY_TEST_SPEC_HASH = ConstExprHashingUtils::HashString("APPIUM_RUBY_TEST_SPEC");
+        static constexpr uint32_t APPIUM_WEB_JAVA_JUNIT_TEST_SPEC_HASH = ConstExprHashingUtils::HashString("APPIUM_WEB_JAVA_JUNIT_TEST_SPEC");
+        static constexpr uint32_t APPIUM_WEB_JAVA_TESTNG_TEST_SPEC_HASH = ConstExprHashingUtils::HashString("APPIUM_WEB_JAVA_TESTNG_TEST_SPEC");
+        static constexpr uint32_t APPIUM_WEB_PYTHON_TEST_SPEC_HASH = ConstExprHashingUtils::HashString("APPIUM_WEB_PYTHON_TEST_SPEC");
+        static constexpr uint32_t APPIUM_WEB_NODE_TEST_SPEC_HASH = ConstExprHashingUtils::HashString("APPIUM_WEB_NODE_TEST_SPEC");
+        static constexpr uint32_t APPIUM_WEB_RUBY_TEST_SPEC_HASH = ConstExprHashingUtils::HashString("APPIUM_WEB_RUBY_TEST_SPEC");
+        static constexpr uint32_t INSTRUMENTATION_TEST_SPEC_HASH = ConstExprHashingUtils::HashString("INSTRUMENTATION_TEST_SPEC");
+        static constexpr uint32_t XCTEST_UI_TEST_SPEC_HASH = ConstExprHashingUtils::HashString("XCTEST_UI_TEST_SPEC");
 
 
         UploadType GetUploadTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ANDROID_APP_HASH)
           {
             return UploadType::ANDROID_APP;

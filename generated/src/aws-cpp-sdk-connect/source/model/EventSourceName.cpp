@@ -20,19 +20,19 @@ namespace Aws
       namespace EventSourceNameMapper
       {
 
-        static const int OnPostCallAnalysisAvailable_HASH = HashingUtils::HashString("OnPostCallAnalysisAvailable");
-        static const int OnRealTimeCallAnalysisAvailable_HASH = HashingUtils::HashString("OnRealTimeCallAnalysisAvailable");
-        static const int OnPostChatAnalysisAvailable_HASH = HashingUtils::HashString("OnPostChatAnalysisAvailable");
-        static const int OnZendeskTicketCreate_HASH = HashingUtils::HashString("OnZendeskTicketCreate");
-        static const int OnZendeskTicketStatusUpdate_HASH = HashingUtils::HashString("OnZendeskTicketStatusUpdate");
-        static const int OnSalesforceCaseCreate_HASH = HashingUtils::HashString("OnSalesforceCaseCreate");
-        static const int OnContactEvaluationSubmit_HASH = HashingUtils::HashString("OnContactEvaluationSubmit");
-        static const int OnMetricDataUpdate_HASH = HashingUtils::HashString("OnMetricDataUpdate");
+        static constexpr uint32_t OnPostCallAnalysisAvailable_HASH = ConstExprHashingUtils::HashString("OnPostCallAnalysisAvailable");
+        static constexpr uint32_t OnRealTimeCallAnalysisAvailable_HASH = ConstExprHashingUtils::HashString("OnRealTimeCallAnalysisAvailable");
+        static constexpr uint32_t OnPostChatAnalysisAvailable_HASH = ConstExprHashingUtils::HashString("OnPostChatAnalysisAvailable");
+        static constexpr uint32_t OnZendeskTicketCreate_HASH = ConstExprHashingUtils::HashString("OnZendeskTicketCreate");
+        static constexpr uint32_t OnZendeskTicketStatusUpdate_HASH = ConstExprHashingUtils::HashString("OnZendeskTicketStatusUpdate");
+        static constexpr uint32_t OnSalesforceCaseCreate_HASH = ConstExprHashingUtils::HashString("OnSalesforceCaseCreate");
+        static constexpr uint32_t OnContactEvaluationSubmit_HASH = ConstExprHashingUtils::HashString("OnContactEvaluationSubmit");
+        static constexpr uint32_t OnMetricDataUpdate_HASH = ConstExprHashingUtils::HashString("OnMetricDataUpdate");
 
 
         EventSourceName GetEventSourceNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OnPostCallAnalysisAvailable_HASH)
           {
             return EventSourceName::OnPostCallAnalysisAvailable;

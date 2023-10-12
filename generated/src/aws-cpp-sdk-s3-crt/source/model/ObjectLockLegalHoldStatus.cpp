@@ -20,13 +20,13 @@ namespace Aws
       namespace ObjectLockLegalHoldStatusMapper
       {
 
-        static const int ON_HASH = HashingUtils::HashString("ON");
-        static const int OFF_HASH = HashingUtils::HashString("OFF");
+        static constexpr uint32_t ON_HASH = ConstExprHashingUtils::HashString("ON");
+        static constexpr uint32_t OFF_HASH = ConstExprHashingUtils::HashString("OFF");
 
 
         ObjectLockLegalHoldStatus GetObjectLockLegalHoldStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ON_HASH)
           {
             return ObjectLockLegalHoldStatus::ON;

@@ -20,13 +20,13 @@ namespace Aws
       namespace SubnetCidrReservationTypeMapper
       {
 
-        static const int prefix_HASH = HashingUtils::HashString("prefix");
-        static const int explicit__HASH = HashingUtils::HashString("explicit");
+        static constexpr uint32_t prefix_HASH = ConstExprHashingUtils::HashString("prefix");
+        static constexpr uint32_t explicit__HASH = ConstExprHashingUtils::HashString("explicit");
 
 
         SubnetCidrReservationType GetSubnetCidrReservationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == prefix_HASH)
           {
             return SubnetCidrReservationType::prefix;

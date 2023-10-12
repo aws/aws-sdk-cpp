@@ -20,13 +20,13 @@ namespace Aws
       namespace ShipmentStateMapper
       {
 
-        static const int RECEIVED_HASH = HashingUtils::HashString("RECEIVED");
-        static const int RETURNED_HASH = HashingUtils::HashString("RETURNED");
+        static constexpr uint32_t RECEIVED_HASH = ConstExprHashingUtils::HashString("RECEIVED");
+        static constexpr uint32_t RETURNED_HASH = ConstExprHashingUtils::HashString("RETURNED");
 
 
         ShipmentState GetShipmentStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RECEIVED_HASH)
           {
             return ShipmentState::RECEIVED;

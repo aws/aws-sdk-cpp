@@ -20,15 +20,15 @@ namespace Aws
       namespace TreatMissingDataMapper
       {
 
-        static const int breaching_HASH = HashingUtils::HashString("breaching");
-        static const int notBreaching_HASH = HashingUtils::HashString("notBreaching");
-        static const int ignore_HASH = HashingUtils::HashString("ignore");
-        static const int missing_HASH = HashingUtils::HashString("missing");
+        static constexpr uint32_t breaching_HASH = ConstExprHashingUtils::HashString("breaching");
+        static constexpr uint32_t notBreaching_HASH = ConstExprHashingUtils::HashString("notBreaching");
+        static constexpr uint32_t ignore_HASH = ConstExprHashingUtils::HashString("ignore");
+        static constexpr uint32_t missing_HASH = ConstExprHashingUtils::HashString("missing");
 
 
         TreatMissingData GetTreatMissingDataForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == breaching_HASH)
           {
             return TreatMissingData::breaching;

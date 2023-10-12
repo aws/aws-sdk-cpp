@@ -20,16 +20,16 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int EC2_INSTANCE_HASH = HashingUtils::HashString("EC2_INSTANCE");
-        static const int EC2_HOST_HASH = HashingUtils::HashString("EC2_HOST");
-        static const int EC2_AMI_HASH = HashingUtils::HashString("EC2_AMI");
-        static const int RDS_HASH = HashingUtils::HashString("RDS");
-        static const int SYSTEMS_MANAGER_MANAGED_INSTANCE_HASH = HashingUtils::HashString("SYSTEMS_MANAGER_MANAGED_INSTANCE");
+        static constexpr uint32_t EC2_INSTANCE_HASH = ConstExprHashingUtils::HashString("EC2_INSTANCE");
+        static constexpr uint32_t EC2_HOST_HASH = ConstExprHashingUtils::HashString("EC2_HOST");
+        static constexpr uint32_t EC2_AMI_HASH = ConstExprHashingUtils::HashString("EC2_AMI");
+        static constexpr uint32_t RDS_HASH = ConstExprHashingUtils::HashString("RDS");
+        static constexpr uint32_t SYSTEMS_MANAGER_MANAGED_INSTANCE_HASH = ConstExprHashingUtils::HashString("SYSTEMS_MANAGER_MANAGED_INSTANCE");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EC2_INSTANCE_HASH)
           {
             return ResourceType::EC2_INSTANCE;

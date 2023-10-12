@@ -20,20 +20,20 @@ namespace Aws
       namespace SavingsPlansFilterNameMapper
       {
 
-        static const int region_HASH = HashingUtils::HashString("region");
-        static const int ec2_instance_family_HASH = HashingUtils::HashString("ec2-instance-family");
-        static const int commitment_HASH = HashingUtils::HashString("commitment");
-        static const int upfront_HASH = HashingUtils::HashString("upfront");
-        static const int term_HASH = HashingUtils::HashString("term");
-        static const int savings_plan_type_HASH = HashingUtils::HashString("savings-plan-type");
-        static const int payment_option_HASH = HashingUtils::HashString("payment-option");
-        static const int start_HASH = HashingUtils::HashString("start");
-        static const int end_HASH = HashingUtils::HashString("end");
+        static constexpr uint32_t region_HASH = ConstExprHashingUtils::HashString("region");
+        static constexpr uint32_t ec2_instance_family_HASH = ConstExprHashingUtils::HashString("ec2-instance-family");
+        static constexpr uint32_t commitment_HASH = ConstExprHashingUtils::HashString("commitment");
+        static constexpr uint32_t upfront_HASH = ConstExprHashingUtils::HashString("upfront");
+        static constexpr uint32_t term_HASH = ConstExprHashingUtils::HashString("term");
+        static constexpr uint32_t savings_plan_type_HASH = ConstExprHashingUtils::HashString("savings-plan-type");
+        static constexpr uint32_t payment_option_HASH = ConstExprHashingUtils::HashString("payment-option");
+        static constexpr uint32_t start_HASH = ConstExprHashingUtils::HashString("start");
+        static constexpr uint32_t end_HASH = ConstExprHashingUtils::HashString("end");
 
 
         SavingsPlansFilterName GetSavingsPlansFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == region_HASH)
           {
             return SavingsPlansFilterName::region;

@@ -20,12 +20,12 @@ namespace Aws
       namespace FeaturizationMethodNameMapper
       {
 
-        static const int filling_HASH = HashingUtils::HashString("filling");
+        static constexpr uint32_t filling_HASH = ConstExprHashingUtils::HashString("filling");
 
 
         FeaturizationMethodName GetFeaturizationMethodNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == filling_HASH)
           {
             return FeaturizationMethodName::filling;

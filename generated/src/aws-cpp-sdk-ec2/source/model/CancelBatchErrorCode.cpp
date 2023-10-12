@@ -20,15 +20,15 @@ namespace Aws
       namespace CancelBatchErrorCodeMapper
       {
 
-        static const int fleetRequestIdDoesNotExist_HASH = HashingUtils::HashString("fleetRequestIdDoesNotExist");
-        static const int fleetRequestIdMalformed_HASH = HashingUtils::HashString("fleetRequestIdMalformed");
-        static const int fleetRequestNotInCancellableState_HASH = HashingUtils::HashString("fleetRequestNotInCancellableState");
-        static const int unexpectedError_HASH = HashingUtils::HashString("unexpectedError");
+        static constexpr uint32_t fleetRequestIdDoesNotExist_HASH = ConstExprHashingUtils::HashString("fleetRequestIdDoesNotExist");
+        static constexpr uint32_t fleetRequestIdMalformed_HASH = ConstExprHashingUtils::HashString("fleetRequestIdMalformed");
+        static constexpr uint32_t fleetRequestNotInCancellableState_HASH = ConstExprHashingUtils::HashString("fleetRequestNotInCancellableState");
+        static constexpr uint32_t unexpectedError_HASH = ConstExprHashingUtils::HashString("unexpectedError");
 
 
         CancelBatchErrorCode GetCancelBatchErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == fleetRequestIdDoesNotExist_HASH)
           {
             return CancelBatchErrorCode::fleetRequestIdDoesNotExist;

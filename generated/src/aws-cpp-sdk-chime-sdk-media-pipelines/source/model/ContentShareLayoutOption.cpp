@@ -20,15 +20,15 @@ namespace Aws
       namespace ContentShareLayoutOptionMapper
       {
 
-        static const int PresenterOnly_HASH = HashingUtils::HashString("PresenterOnly");
-        static const int Horizontal_HASH = HashingUtils::HashString("Horizontal");
-        static const int Vertical_HASH = HashingUtils::HashString("Vertical");
-        static const int ActiveSpeakerOnly_HASH = HashingUtils::HashString("ActiveSpeakerOnly");
+        static constexpr uint32_t PresenterOnly_HASH = ConstExprHashingUtils::HashString("PresenterOnly");
+        static constexpr uint32_t Horizontal_HASH = ConstExprHashingUtils::HashString("Horizontal");
+        static constexpr uint32_t Vertical_HASH = ConstExprHashingUtils::HashString("Vertical");
+        static constexpr uint32_t ActiveSpeakerOnly_HASH = ConstExprHashingUtils::HashString("ActiveSpeakerOnly");
 
 
         ContentShareLayoutOption GetContentShareLayoutOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PresenterOnly_HASH)
           {
             return ContentShareLayoutOption::PresenterOnly;

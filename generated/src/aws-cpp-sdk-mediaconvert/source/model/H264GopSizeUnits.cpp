@@ -20,14 +20,14 @@ namespace Aws
       namespace H264GopSizeUnitsMapper
       {
 
-        static const int FRAMES_HASH = HashingUtils::HashString("FRAMES");
-        static const int SECONDS_HASH = HashingUtils::HashString("SECONDS");
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
+        static constexpr uint32_t FRAMES_HASH = ConstExprHashingUtils::HashString("FRAMES");
+        static constexpr uint32_t SECONDS_HASH = ConstExprHashingUtils::HashString("SECONDS");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
 
 
         H264GopSizeUnits GetH264GopSizeUnitsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FRAMES_HASH)
           {
             return H264GopSizeUnits::FRAMES;

@@ -20,15 +20,15 @@ namespace Aws
       namespace AccountLimitNameMapper
       {
 
-        static const int PHONE_NUMBERS_HASH = HashingUtils::HashString("PHONE_NUMBERS");
-        static const int POOLS_HASH = HashingUtils::HashString("POOLS");
-        static const int CONFIGURATION_SETS_HASH = HashingUtils::HashString("CONFIGURATION_SETS");
-        static const int OPT_OUT_LISTS_HASH = HashingUtils::HashString("OPT_OUT_LISTS");
+        static constexpr uint32_t PHONE_NUMBERS_HASH = ConstExprHashingUtils::HashString("PHONE_NUMBERS");
+        static constexpr uint32_t POOLS_HASH = ConstExprHashingUtils::HashString("POOLS");
+        static constexpr uint32_t CONFIGURATION_SETS_HASH = ConstExprHashingUtils::HashString("CONFIGURATION_SETS");
+        static constexpr uint32_t OPT_OUT_LISTS_HASH = ConstExprHashingUtils::HashString("OPT_OUT_LISTS");
 
 
         AccountLimitName GetAccountLimitNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PHONE_NUMBERS_HASH)
           {
             return AccountLimitName::PHONE_NUMBERS;

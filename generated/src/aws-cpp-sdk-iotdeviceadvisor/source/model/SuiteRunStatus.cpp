@@ -20,20 +20,20 @@ namespace Aws
       namespace SuiteRunStatusMapper
       {
 
-        static const int PASS_HASH = HashingUtils::HashString("PASS");
-        static const int FAIL_HASH = HashingUtils::HashString("FAIL");
-        static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
-        static const int PASS_WITH_WARNINGS_HASH = HashingUtils::HashString("PASS_WITH_WARNINGS");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t PASS_HASH = ConstExprHashingUtils::HashString("PASS");
+        static constexpr uint32_t FAIL_HASH = ConstExprHashingUtils::HashString("FAIL");
+        static constexpr uint32_t CANCELED_HASH = ConstExprHashingUtils::HashString("CANCELED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
+        static constexpr uint32_t PASS_WITH_WARNINGS_HASH = ConstExprHashingUtils::HashString("PASS_WITH_WARNINGS");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         SuiteRunStatus GetSuiteRunStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PASS_HASH)
           {
             return SuiteRunStatus::PASS;

@@ -20,34 +20,34 @@ namespace Aws
       namespace VocabularyLanguageCodeMapper
       {
 
-        static const int ar_AE_HASH = HashingUtils::HashString("ar-AE");
-        static const int de_CH_HASH = HashingUtils::HashString("de-CH");
-        static const int de_DE_HASH = HashingUtils::HashString("de-DE");
-        static const int en_AB_HASH = HashingUtils::HashString("en-AB");
-        static const int en_AU_HASH = HashingUtils::HashString("en-AU");
-        static const int en_GB_HASH = HashingUtils::HashString("en-GB");
-        static const int en_IE_HASH = HashingUtils::HashString("en-IE");
-        static const int en_IN_HASH = HashingUtils::HashString("en-IN");
-        static const int en_US_HASH = HashingUtils::HashString("en-US");
-        static const int en_WL_HASH = HashingUtils::HashString("en-WL");
-        static const int es_ES_HASH = HashingUtils::HashString("es-ES");
-        static const int es_US_HASH = HashingUtils::HashString("es-US");
-        static const int fr_CA_HASH = HashingUtils::HashString("fr-CA");
-        static const int fr_FR_HASH = HashingUtils::HashString("fr-FR");
-        static const int hi_IN_HASH = HashingUtils::HashString("hi-IN");
-        static const int it_IT_HASH = HashingUtils::HashString("it-IT");
-        static const int ja_JP_HASH = HashingUtils::HashString("ja-JP");
-        static const int ko_KR_HASH = HashingUtils::HashString("ko-KR");
-        static const int pt_BR_HASH = HashingUtils::HashString("pt-BR");
-        static const int pt_PT_HASH = HashingUtils::HashString("pt-PT");
-        static const int zh_CN_HASH = HashingUtils::HashString("zh-CN");
-        static const int en_NZ_HASH = HashingUtils::HashString("en-NZ");
-        static const int en_ZA_HASH = HashingUtils::HashString("en-ZA");
+        static constexpr uint32_t ar_AE_HASH = ConstExprHashingUtils::HashString("ar-AE");
+        static constexpr uint32_t de_CH_HASH = ConstExprHashingUtils::HashString("de-CH");
+        static constexpr uint32_t de_DE_HASH = ConstExprHashingUtils::HashString("de-DE");
+        static constexpr uint32_t en_AB_HASH = ConstExprHashingUtils::HashString("en-AB");
+        static constexpr uint32_t en_AU_HASH = ConstExprHashingUtils::HashString("en-AU");
+        static constexpr uint32_t en_GB_HASH = ConstExprHashingUtils::HashString("en-GB");
+        static constexpr uint32_t en_IE_HASH = ConstExprHashingUtils::HashString("en-IE");
+        static constexpr uint32_t en_IN_HASH = ConstExprHashingUtils::HashString("en-IN");
+        static constexpr uint32_t en_US_HASH = ConstExprHashingUtils::HashString("en-US");
+        static constexpr uint32_t en_WL_HASH = ConstExprHashingUtils::HashString("en-WL");
+        static constexpr uint32_t es_ES_HASH = ConstExprHashingUtils::HashString("es-ES");
+        static constexpr uint32_t es_US_HASH = ConstExprHashingUtils::HashString("es-US");
+        static constexpr uint32_t fr_CA_HASH = ConstExprHashingUtils::HashString("fr-CA");
+        static constexpr uint32_t fr_FR_HASH = ConstExprHashingUtils::HashString("fr-FR");
+        static constexpr uint32_t hi_IN_HASH = ConstExprHashingUtils::HashString("hi-IN");
+        static constexpr uint32_t it_IT_HASH = ConstExprHashingUtils::HashString("it-IT");
+        static constexpr uint32_t ja_JP_HASH = ConstExprHashingUtils::HashString("ja-JP");
+        static constexpr uint32_t ko_KR_HASH = ConstExprHashingUtils::HashString("ko-KR");
+        static constexpr uint32_t pt_BR_HASH = ConstExprHashingUtils::HashString("pt-BR");
+        static constexpr uint32_t pt_PT_HASH = ConstExprHashingUtils::HashString("pt-PT");
+        static constexpr uint32_t zh_CN_HASH = ConstExprHashingUtils::HashString("zh-CN");
+        static constexpr uint32_t en_NZ_HASH = ConstExprHashingUtils::HashString("en-NZ");
+        static constexpr uint32_t en_ZA_HASH = ConstExprHashingUtils::HashString("en-ZA");
 
 
         VocabularyLanguageCode GetVocabularyLanguageCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ar_AE_HASH)
           {
             return VocabularyLanguageCode::ar_AE;

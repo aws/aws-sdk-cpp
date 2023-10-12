@@ -20,16 +20,16 @@ namespace Aws
       namespace InsightFeedbackOptionMapper
       {
 
-        static const int VALID_COLLECTION_HASH = HashingUtils::HashString("VALID_COLLECTION");
-        static const int RECOMMENDATION_USEFUL_HASH = HashingUtils::HashString("RECOMMENDATION_USEFUL");
-        static const int ALERT_TOO_SENSITIVE_HASH = HashingUtils::HashString("ALERT_TOO_SENSITIVE");
-        static const int DATA_NOISY_ANOMALY_HASH = HashingUtils::HashString("DATA_NOISY_ANOMALY");
-        static const int DATA_INCORRECT_HASH = HashingUtils::HashString("DATA_INCORRECT");
+        static constexpr uint32_t VALID_COLLECTION_HASH = ConstExprHashingUtils::HashString("VALID_COLLECTION");
+        static constexpr uint32_t RECOMMENDATION_USEFUL_HASH = ConstExprHashingUtils::HashString("RECOMMENDATION_USEFUL");
+        static constexpr uint32_t ALERT_TOO_SENSITIVE_HASH = ConstExprHashingUtils::HashString("ALERT_TOO_SENSITIVE");
+        static constexpr uint32_t DATA_NOISY_ANOMALY_HASH = ConstExprHashingUtils::HashString("DATA_NOISY_ANOMALY");
+        static constexpr uint32_t DATA_INCORRECT_HASH = ConstExprHashingUtils::HashString("DATA_INCORRECT");
 
 
         InsightFeedbackOption GetInsightFeedbackOptionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VALID_COLLECTION_HASH)
           {
             return InsightFeedbackOption::VALID_COLLECTION;

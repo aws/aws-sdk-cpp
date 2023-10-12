@@ -20,32 +20,32 @@ namespace Aws
       namespace ExportableLicenseFieldMapper
       {
 
-        static const int AccountId_HASH = HashingUtils::HashString("AccountId");
-        static const int ResourceArn_HASH = HashingUtils::HashString("ResourceArn");
-        static const int LookbackPeriodInDays_HASH = HashingUtils::HashString("LookbackPeriodInDays");
-        static const int LastRefreshTimestamp_HASH = HashingUtils::HashString("LastRefreshTimestamp");
-        static const int Finding_HASH = HashingUtils::HashString("Finding");
-        static const int FindingReasonCodes_HASH = HashingUtils::HashString("FindingReasonCodes");
-        static const int CurrentLicenseConfigurationNumberOfCores_HASH = HashingUtils::HashString("CurrentLicenseConfigurationNumberOfCores");
-        static const int CurrentLicenseConfigurationInstanceType_HASH = HashingUtils::HashString("CurrentLicenseConfigurationInstanceType");
-        static const int CurrentLicenseConfigurationOperatingSystem_HASH = HashingUtils::HashString("CurrentLicenseConfigurationOperatingSystem");
-        static const int CurrentLicenseConfigurationLicenseName_HASH = HashingUtils::HashString("CurrentLicenseConfigurationLicenseName");
-        static const int CurrentLicenseConfigurationLicenseEdition_HASH = HashingUtils::HashString("CurrentLicenseConfigurationLicenseEdition");
-        static const int CurrentLicenseConfigurationLicenseModel_HASH = HashingUtils::HashString("CurrentLicenseConfigurationLicenseModel");
-        static const int CurrentLicenseConfigurationLicenseVersion_HASH = HashingUtils::HashString("CurrentLicenseConfigurationLicenseVersion");
-        static const int CurrentLicenseConfigurationMetricsSource_HASH = HashingUtils::HashString("CurrentLicenseConfigurationMetricsSource");
-        static const int RecommendationOptionsOperatingSystem_HASH = HashingUtils::HashString("RecommendationOptionsOperatingSystem");
-        static const int RecommendationOptionsLicenseEdition_HASH = HashingUtils::HashString("RecommendationOptionsLicenseEdition");
-        static const int RecommendationOptionsLicenseModel_HASH = HashingUtils::HashString("RecommendationOptionsLicenseModel");
-        static const int RecommendationOptionsSavingsOpportunityPercentage_HASH = HashingUtils::HashString("RecommendationOptionsSavingsOpportunityPercentage");
-        static const int RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrency");
-        static const int RecommendationOptionsEstimatedMonthlySavingsValue_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValue");
-        static const int Tags_HASH = HashingUtils::HashString("Tags");
+        static constexpr uint32_t AccountId_HASH = ConstExprHashingUtils::HashString("AccountId");
+        static constexpr uint32_t ResourceArn_HASH = ConstExprHashingUtils::HashString("ResourceArn");
+        static constexpr uint32_t LookbackPeriodInDays_HASH = ConstExprHashingUtils::HashString("LookbackPeriodInDays");
+        static constexpr uint32_t LastRefreshTimestamp_HASH = ConstExprHashingUtils::HashString("LastRefreshTimestamp");
+        static constexpr uint32_t Finding_HASH = ConstExprHashingUtils::HashString("Finding");
+        static constexpr uint32_t FindingReasonCodes_HASH = ConstExprHashingUtils::HashString("FindingReasonCodes");
+        static constexpr uint32_t CurrentLicenseConfigurationNumberOfCores_HASH = ConstExprHashingUtils::HashString("CurrentLicenseConfigurationNumberOfCores");
+        static constexpr uint32_t CurrentLicenseConfigurationInstanceType_HASH = ConstExprHashingUtils::HashString("CurrentLicenseConfigurationInstanceType");
+        static constexpr uint32_t CurrentLicenseConfigurationOperatingSystem_HASH = ConstExprHashingUtils::HashString("CurrentLicenseConfigurationOperatingSystem");
+        static constexpr uint32_t CurrentLicenseConfigurationLicenseName_HASH = ConstExprHashingUtils::HashString("CurrentLicenseConfigurationLicenseName");
+        static constexpr uint32_t CurrentLicenseConfigurationLicenseEdition_HASH = ConstExprHashingUtils::HashString("CurrentLicenseConfigurationLicenseEdition");
+        static constexpr uint32_t CurrentLicenseConfigurationLicenseModel_HASH = ConstExprHashingUtils::HashString("CurrentLicenseConfigurationLicenseModel");
+        static constexpr uint32_t CurrentLicenseConfigurationLicenseVersion_HASH = ConstExprHashingUtils::HashString("CurrentLicenseConfigurationLicenseVersion");
+        static constexpr uint32_t CurrentLicenseConfigurationMetricsSource_HASH = ConstExprHashingUtils::HashString("CurrentLicenseConfigurationMetricsSource");
+        static constexpr uint32_t RecommendationOptionsOperatingSystem_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsOperatingSystem");
+        static constexpr uint32_t RecommendationOptionsLicenseEdition_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsLicenseEdition");
+        static constexpr uint32_t RecommendationOptionsLicenseModel_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsLicenseModel");
+        static constexpr uint32_t RecommendationOptionsSavingsOpportunityPercentage_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsSavingsOpportunityPercentage");
+        static constexpr uint32_t RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrency");
+        static constexpr uint32_t RecommendationOptionsEstimatedMonthlySavingsValue_HASH = ConstExprHashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValue");
+        static constexpr uint32_t Tags_HASH = ConstExprHashingUtils::HashString("Tags");
 
 
         ExportableLicenseField GetExportableLicenseFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AccountId_HASH)
           {
             return ExportableLicenseField::AccountId;

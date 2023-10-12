@@ -20,14 +20,14 @@ namespace Aws
       namespace StatusMapper
       {
 
-        static const int MoveInProgress_HASH = HashingUtils::HashString("MoveInProgress");
-        static const int InVpc_HASH = HashingUtils::HashString("InVpc");
-        static const int InClassic_HASH = HashingUtils::HashString("InClassic");
+        static constexpr uint32_t MoveInProgress_HASH = ConstExprHashingUtils::HashString("MoveInProgress");
+        static constexpr uint32_t InVpc_HASH = ConstExprHashingUtils::HashString("InVpc");
+        static constexpr uint32_t InClassic_HASH = ConstExprHashingUtils::HashString("InClassic");
 
 
         Status GetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MoveInProgress_HASH)
           {
             return Status::MoveInProgress;

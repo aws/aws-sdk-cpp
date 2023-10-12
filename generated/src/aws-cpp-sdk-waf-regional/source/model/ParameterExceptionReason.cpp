@@ -20,15 +20,15 @@ namespace Aws
       namespace ParameterExceptionReasonMapper
       {
 
-        static const int INVALID_OPTION_HASH = HashingUtils::HashString("INVALID_OPTION");
-        static const int ILLEGAL_COMBINATION_HASH = HashingUtils::HashString("ILLEGAL_COMBINATION");
-        static const int ILLEGAL_ARGUMENT_HASH = HashingUtils::HashString("ILLEGAL_ARGUMENT");
-        static const int INVALID_TAG_KEY_HASH = HashingUtils::HashString("INVALID_TAG_KEY");
+        static constexpr uint32_t INVALID_OPTION_HASH = ConstExprHashingUtils::HashString("INVALID_OPTION");
+        static constexpr uint32_t ILLEGAL_COMBINATION_HASH = ConstExprHashingUtils::HashString("ILLEGAL_COMBINATION");
+        static constexpr uint32_t ILLEGAL_ARGUMENT_HASH = ConstExprHashingUtils::HashString("ILLEGAL_ARGUMENT");
+        static constexpr uint32_t INVALID_TAG_KEY_HASH = ConstExprHashingUtils::HashString("INVALID_TAG_KEY");
 
 
         ParameterExceptionReason GetParameterExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INVALID_OPTION_HASH)
           {
             return ParameterExceptionReason::INVALID_OPTION;

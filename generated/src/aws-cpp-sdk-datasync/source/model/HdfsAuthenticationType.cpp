@@ -20,13 +20,13 @@ namespace Aws
       namespace HdfsAuthenticationTypeMapper
       {
 
-        static const int SIMPLE_HASH = HashingUtils::HashString("SIMPLE");
-        static const int KERBEROS_HASH = HashingUtils::HashString("KERBEROS");
+        static constexpr uint32_t SIMPLE_HASH = ConstExprHashingUtils::HashString("SIMPLE");
+        static constexpr uint32_t KERBEROS_HASH = ConstExprHashingUtils::HashString("KERBEROS");
 
 
         HdfsAuthenticationType GetHdfsAuthenticationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SIMPLE_HASH)
           {
             return HdfsAuthenticationType::SIMPLE;

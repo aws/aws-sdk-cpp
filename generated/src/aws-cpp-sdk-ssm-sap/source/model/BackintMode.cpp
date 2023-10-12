@@ -20,12 +20,12 @@ namespace Aws
       namespace BackintModeMapper
       {
 
-        static const int AWSBackup_HASH = HashingUtils::HashString("AWSBackup");
+        static constexpr uint32_t AWSBackup_HASH = ConstExprHashingUtils::HashString("AWSBackup");
 
 
         BackintMode GetBackintModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWSBackup_HASH)
           {
             return BackintMode::AWSBackup;

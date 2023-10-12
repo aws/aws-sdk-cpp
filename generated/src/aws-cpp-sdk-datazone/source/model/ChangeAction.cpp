@@ -20,13 +20,13 @@ namespace Aws
       namespace ChangeActionMapper
       {
 
-        static const int PUBLISH_HASH = HashingUtils::HashString("PUBLISH");
-        static const int UNPUBLISH_HASH = HashingUtils::HashString("UNPUBLISH");
+        static constexpr uint32_t PUBLISH_HASH = ConstExprHashingUtils::HashString("PUBLISH");
+        static constexpr uint32_t UNPUBLISH_HASH = ConstExprHashingUtils::HashString("UNPUBLISH");
 
 
         ChangeAction GetChangeActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUBLISH_HASH)
           {
             return ChangeAction::PUBLISH;

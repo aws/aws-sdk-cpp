@@ -20,16 +20,16 @@ namespace Aws
       namespace LineChartMarkerShapeMapper
       {
 
-        static const int CIRCLE_HASH = HashingUtils::HashString("CIRCLE");
-        static const int TRIANGLE_HASH = HashingUtils::HashString("TRIANGLE");
-        static const int SQUARE_HASH = HashingUtils::HashString("SQUARE");
-        static const int DIAMOND_HASH = HashingUtils::HashString("DIAMOND");
-        static const int ROUNDED_SQUARE_HASH = HashingUtils::HashString("ROUNDED_SQUARE");
+        static constexpr uint32_t CIRCLE_HASH = ConstExprHashingUtils::HashString("CIRCLE");
+        static constexpr uint32_t TRIANGLE_HASH = ConstExprHashingUtils::HashString("TRIANGLE");
+        static constexpr uint32_t SQUARE_HASH = ConstExprHashingUtils::HashString("SQUARE");
+        static constexpr uint32_t DIAMOND_HASH = ConstExprHashingUtils::HashString("DIAMOND");
+        static constexpr uint32_t ROUNDED_SQUARE_HASH = ConstExprHashingUtils::HashString("ROUNDED_SQUARE");
 
 
         LineChartMarkerShape GetLineChartMarkerShapeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CIRCLE_HASH)
           {
             return LineChartMarkerShape::CIRCLE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace SubtitleFormatMapper
       {
 
-        static const int vtt_HASH = HashingUtils::HashString("vtt");
-        static const int srt_HASH = HashingUtils::HashString("srt");
+        static constexpr uint32_t vtt_HASH = ConstExprHashingUtils::HashString("vtt");
+        static constexpr uint32_t srt_HASH = ConstExprHashingUtils::HashString("srt");
 
 
         SubtitleFormat GetSubtitleFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == vtt_HASH)
           {
             return SubtitleFormat::vtt;

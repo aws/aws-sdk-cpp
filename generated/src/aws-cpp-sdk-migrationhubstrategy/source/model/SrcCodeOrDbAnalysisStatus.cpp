@@ -20,18 +20,18 @@ namespace Aws
       namespace SrcCodeOrDbAnalysisStatusMapper
       {
 
-        static const int ANALYSIS_TO_BE_SCHEDULED_HASH = HashingUtils::HashString("ANALYSIS_TO_BE_SCHEDULED");
-        static const int ANALYSIS_STARTED_HASH = HashingUtils::HashString("ANALYSIS_STARTED");
-        static const int ANALYSIS_SUCCESS_HASH = HashingUtils::HashString("ANALYSIS_SUCCESS");
-        static const int ANALYSIS_FAILED_HASH = HashingUtils::HashString("ANALYSIS_FAILED");
-        static const int ANALYSIS_PARTIAL_SUCCESS_HASH = HashingUtils::HashString("ANALYSIS_PARTIAL_SUCCESS");
-        static const int UNCONFIGURED_HASH = HashingUtils::HashString("UNCONFIGURED");
-        static const int CONFIGURED_HASH = HashingUtils::HashString("CONFIGURED");
+        static constexpr uint32_t ANALYSIS_TO_BE_SCHEDULED_HASH = ConstExprHashingUtils::HashString("ANALYSIS_TO_BE_SCHEDULED");
+        static constexpr uint32_t ANALYSIS_STARTED_HASH = ConstExprHashingUtils::HashString("ANALYSIS_STARTED");
+        static constexpr uint32_t ANALYSIS_SUCCESS_HASH = ConstExprHashingUtils::HashString("ANALYSIS_SUCCESS");
+        static constexpr uint32_t ANALYSIS_FAILED_HASH = ConstExprHashingUtils::HashString("ANALYSIS_FAILED");
+        static constexpr uint32_t ANALYSIS_PARTIAL_SUCCESS_HASH = ConstExprHashingUtils::HashString("ANALYSIS_PARTIAL_SUCCESS");
+        static constexpr uint32_t UNCONFIGURED_HASH = ConstExprHashingUtils::HashString("UNCONFIGURED");
+        static constexpr uint32_t CONFIGURED_HASH = ConstExprHashingUtils::HashString("CONFIGURED");
 
 
         SrcCodeOrDbAnalysisStatus GetSrcCodeOrDbAnalysisStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ANALYSIS_TO_BE_SCHEDULED_HASH)
           {
             return SrcCodeOrDbAnalysisStatus::ANALYSIS_TO_BE_SCHEDULED;

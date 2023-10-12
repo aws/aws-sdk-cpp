@@ -20,12 +20,12 @@ namespace Aws
       namespace VpnProtocolMapper
       {
 
-        static const int openvpn_HASH = HashingUtils::HashString("openvpn");
+        static constexpr uint32_t openvpn_HASH = ConstExprHashingUtils::HashString("openvpn");
 
 
         VpnProtocol GetVpnProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == openvpn_HASH)
           {
             return VpnProtocol::openvpn;

@@ -20,13 +20,13 @@ namespace Aws
       namespace AZModeMapper
       {
 
-        static const int single_az_HASH = HashingUtils::HashString("single-az");
-        static const int cross_az_HASH = HashingUtils::HashString("cross-az");
+        static constexpr uint32_t single_az_HASH = ConstExprHashingUtils::HashString("single-az");
+        static constexpr uint32_t cross_az_HASH = ConstExprHashingUtils::HashString("cross-az");
 
 
         AZMode GetAZModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == single_az_HASH)
           {
             return AZMode::single_az;

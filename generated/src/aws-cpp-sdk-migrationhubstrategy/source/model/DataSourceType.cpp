@@ -20,14 +20,14 @@ namespace Aws
       namespace DataSourceTypeMapper
       {
 
-        static const int ApplicationDiscoveryService_HASH = HashingUtils::HashString("ApplicationDiscoveryService");
-        static const int MPA_HASH = HashingUtils::HashString("MPA");
-        static const int Import_HASH = HashingUtils::HashString("Import");
+        static constexpr uint32_t ApplicationDiscoveryService_HASH = ConstExprHashingUtils::HashString("ApplicationDiscoveryService");
+        static constexpr uint32_t MPA_HASH = ConstExprHashingUtils::HashString("MPA");
+        static constexpr uint32_t Import_HASH = ConstExprHashingUtils::HashString("Import");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ApplicationDiscoveryService_HASH)
           {
             return DataSourceType::ApplicationDiscoveryService;

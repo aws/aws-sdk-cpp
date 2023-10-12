@@ -20,13 +20,13 @@ namespace Aws
       namespace PortStateMapper
       {
 
-        static const int open_HASH = HashingUtils::HashString("open");
-        static const int closed_HASH = HashingUtils::HashString("closed");
+        static constexpr uint32_t open_HASH = ConstExprHashingUtils::HashString("open");
+        static constexpr uint32_t closed_HASH = ConstExprHashingUtils::HashString("closed");
 
 
         PortState GetPortStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == open_HASH)
           {
             return PortState::open;

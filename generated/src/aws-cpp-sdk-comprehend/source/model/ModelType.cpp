@@ -20,13 +20,13 @@ namespace Aws
       namespace ModelTypeMapper
       {
 
-        static const int DOCUMENT_CLASSIFIER_HASH = HashingUtils::HashString("DOCUMENT_CLASSIFIER");
-        static const int ENTITY_RECOGNIZER_HASH = HashingUtils::HashString("ENTITY_RECOGNIZER");
+        static constexpr uint32_t DOCUMENT_CLASSIFIER_HASH = ConstExprHashingUtils::HashString("DOCUMENT_CLASSIFIER");
+        static constexpr uint32_t ENTITY_RECOGNIZER_HASH = ConstExprHashingUtils::HashString("ENTITY_RECOGNIZER");
 
 
         ModelType GetModelTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DOCUMENT_CLASSIFIER_HASH)
           {
             return ModelType::DOCUMENT_CLASSIFIER;

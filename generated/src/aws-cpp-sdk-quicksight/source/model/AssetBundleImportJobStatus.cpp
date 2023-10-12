@@ -20,18 +20,18 @@ namespace Aws
       namespace AssetBundleImportJobStatusMapper
       {
 
-        static const int QUEUED_FOR_IMMEDIATE_EXECUTION_HASH = HashingUtils::HashString("QUEUED_FOR_IMMEDIATE_EXECUTION");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int SUCCESSFUL_HASH = HashingUtils::HashString("SUCCESSFUL");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int FAILED_ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("FAILED_ROLLBACK_IN_PROGRESS");
-        static const int FAILED_ROLLBACK_COMPLETED_HASH = HashingUtils::HashString("FAILED_ROLLBACK_COMPLETED");
-        static const int FAILED_ROLLBACK_ERROR_HASH = HashingUtils::HashString("FAILED_ROLLBACK_ERROR");
+        static constexpr uint32_t QUEUED_FOR_IMMEDIATE_EXECUTION_HASH = ConstExprHashingUtils::HashString("QUEUED_FOR_IMMEDIATE_EXECUTION");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t SUCCESSFUL_HASH = ConstExprHashingUtils::HashString("SUCCESSFUL");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t FAILED_ROLLBACK_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("FAILED_ROLLBACK_IN_PROGRESS");
+        static constexpr uint32_t FAILED_ROLLBACK_COMPLETED_HASH = ConstExprHashingUtils::HashString("FAILED_ROLLBACK_COMPLETED");
+        static constexpr uint32_t FAILED_ROLLBACK_ERROR_HASH = ConstExprHashingUtils::HashString("FAILED_ROLLBACK_ERROR");
 
 
         AssetBundleImportJobStatus GetAssetBundleImportJobStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUEUED_FOR_IMMEDIATE_EXECUTION_HASH)
           {
             return AssetBundleImportJobStatus::QUEUED_FOR_IMMEDIATE_EXECUTION;

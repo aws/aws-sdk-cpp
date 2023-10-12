@@ -20,14 +20,14 @@ namespace Aws
       namespace CertificateTypeMapper
       {
 
-        static const int IMPORTED_HASH = HashingUtils::HashString("IMPORTED");
-        static const int AMAZON_ISSUED_HASH = HashingUtils::HashString("AMAZON_ISSUED");
-        static const int PRIVATE__HASH = HashingUtils::HashString("PRIVATE");
+        static constexpr uint32_t IMPORTED_HASH = ConstExprHashingUtils::HashString("IMPORTED");
+        static constexpr uint32_t AMAZON_ISSUED_HASH = ConstExprHashingUtils::HashString("AMAZON_ISSUED");
+        static constexpr uint32_t PRIVATE__HASH = ConstExprHashingUtils::HashString("PRIVATE");
 
 
         CertificateType GetCertificateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IMPORTED_HASH)
           {
             return CertificateType::IMPORTED;

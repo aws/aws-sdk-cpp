@@ -18,18 +18,18 @@ namespace ApplicationDiscoveryService
 namespace ApplicationDiscoveryServiceErrorMapper
 {
 
-static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
-static const int CONFLICT_ERROR_HASH = HashingUtils::HashString("ConflictErrorException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int AUTHORIZATION_ERROR_HASH = HashingUtils::HashString("AuthorizationErrorException");
-static const int HOME_REGION_NOT_SET_HASH = HashingUtils::HashString("HomeRegionNotSetException");
-static const int SERVER_INTERNAL_ERROR_HASH = HashingUtils::HashString("ServerInternalErrorException");
+static constexpr uint32_t OPERATION_NOT_PERMITTED_HASH = ConstExprHashingUtils::HashString("OperationNotPermittedException");
+static constexpr uint32_t CONFLICT_ERROR_HASH = ConstExprHashingUtils::HashString("ConflictErrorException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t AUTHORIZATION_ERROR_HASH = ConstExprHashingUtils::HashString("AuthorizationErrorException");
+static constexpr uint32_t HOME_REGION_NOT_SET_HASH = ConstExprHashingUtils::HashString("HomeRegionNotSetException");
+static constexpr uint32_t SERVER_INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("ServerInternalErrorException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {

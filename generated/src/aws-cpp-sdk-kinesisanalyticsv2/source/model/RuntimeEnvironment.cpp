@@ -20,20 +20,20 @@ namespace Aws
       namespace RuntimeEnvironmentMapper
       {
 
-        static const int SQL_1_0_HASH = HashingUtils::HashString("SQL-1_0");
-        static const int FLINK_1_6_HASH = HashingUtils::HashString("FLINK-1_6");
-        static const int FLINK_1_8_HASH = HashingUtils::HashString("FLINK-1_8");
-        static const int ZEPPELIN_FLINK_1_0_HASH = HashingUtils::HashString("ZEPPELIN-FLINK-1_0");
-        static const int FLINK_1_11_HASH = HashingUtils::HashString("FLINK-1_11");
-        static const int FLINK_1_13_HASH = HashingUtils::HashString("FLINK-1_13");
-        static const int ZEPPELIN_FLINK_2_0_HASH = HashingUtils::HashString("ZEPPELIN-FLINK-2_0");
-        static const int FLINK_1_15_HASH = HashingUtils::HashString("FLINK-1_15");
-        static const int ZEPPELIN_FLINK_3_0_HASH = HashingUtils::HashString("ZEPPELIN-FLINK-3_0");
+        static constexpr uint32_t SQL_1_0_HASH = ConstExprHashingUtils::HashString("SQL-1_0");
+        static constexpr uint32_t FLINK_1_6_HASH = ConstExprHashingUtils::HashString("FLINK-1_6");
+        static constexpr uint32_t FLINK_1_8_HASH = ConstExprHashingUtils::HashString("FLINK-1_8");
+        static constexpr uint32_t ZEPPELIN_FLINK_1_0_HASH = ConstExprHashingUtils::HashString("ZEPPELIN-FLINK-1_0");
+        static constexpr uint32_t FLINK_1_11_HASH = ConstExprHashingUtils::HashString("FLINK-1_11");
+        static constexpr uint32_t FLINK_1_13_HASH = ConstExprHashingUtils::HashString("FLINK-1_13");
+        static constexpr uint32_t ZEPPELIN_FLINK_2_0_HASH = ConstExprHashingUtils::HashString("ZEPPELIN-FLINK-2_0");
+        static constexpr uint32_t FLINK_1_15_HASH = ConstExprHashingUtils::HashString("FLINK-1_15");
+        static constexpr uint32_t ZEPPELIN_FLINK_3_0_HASH = ConstExprHashingUtils::HashString("ZEPPELIN-FLINK-3_0");
 
 
         RuntimeEnvironment GetRuntimeEnvironmentForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SQL_1_0_HASH)
           {
             return RuntimeEnvironment::SQL_1_0;

@@ -20,42 +20,42 @@ namespace Aws
       namespace SimulationJobErrorCodeMapper
       {
 
-        static const int InternalServiceError_HASH = HashingUtils::HashString("InternalServiceError");
-        static const int RobotApplicationCrash_HASH = HashingUtils::HashString("RobotApplicationCrash");
-        static const int SimulationApplicationCrash_HASH = HashingUtils::HashString("SimulationApplicationCrash");
-        static const int RobotApplicationHealthCheckFailure_HASH = HashingUtils::HashString("RobotApplicationHealthCheckFailure");
-        static const int SimulationApplicationHealthCheckFailure_HASH = HashingUtils::HashString("SimulationApplicationHealthCheckFailure");
-        static const int BadPermissionsRobotApplication_HASH = HashingUtils::HashString("BadPermissionsRobotApplication");
-        static const int BadPermissionsSimulationApplication_HASH = HashingUtils::HashString("BadPermissionsSimulationApplication");
-        static const int BadPermissionsS3Object_HASH = HashingUtils::HashString("BadPermissionsS3Object");
-        static const int BadPermissionsS3Output_HASH = HashingUtils::HashString("BadPermissionsS3Output");
-        static const int BadPermissionsCloudwatchLogs_HASH = HashingUtils::HashString("BadPermissionsCloudwatchLogs");
-        static const int SubnetIpLimitExceeded_HASH = HashingUtils::HashString("SubnetIpLimitExceeded");
-        static const int ENILimitExceeded_HASH = HashingUtils::HashString("ENILimitExceeded");
-        static const int BadPermissionsUserCredentials_HASH = HashingUtils::HashString("BadPermissionsUserCredentials");
-        static const int InvalidBundleRobotApplication_HASH = HashingUtils::HashString("InvalidBundleRobotApplication");
-        static const int InvalidBundleSimulationApplication_HASH = HashingUtils::HashString("InvalidBundleSimulationApplication");
-        static const int InvalidS3Resource_HASH = HashingUtils::HashString("InvalidS3Resource");
-        static const int ThrottlingError_HASH = HashingUtils::HashString("ThrottlingError");
-        static const int LimitExceeded_HASH = HashingUtils::HashString("LimitExceeded");
-        static const int MismatchedEtag_HASH = HashingUtils::HashString("MismatchedEtag");
-        static const int RobotApplicationVersionMismatchedEtag_HASH = HashingUtils::HashString("RobotApplicationVersionMismatchedEtag");
-        static const int SimulationApplicationVersionMismatchedEtag_HASH = HashingUtils::HashString("SimulationApplicationVersionMismatchedEtag");
-        static const int ResourceNotFound_HASH = HashingUtils::HashString("ResourceNotFound");
-        static const int RequestThrottled_HASH = HashingUtils::HashString("RequestThrottled");
-        static const int BatchTimedOut_HASH = HashingUtils::HashString("BatchTimedOut");
-        static const int BatchCanceled_HASH = HashingUtils::HashString("BatchCanceled");
-        static const int InvalidInput_HASH = HashingUtils::HashString("InvalidInput");
-        static const int WrongRegionS3Bucket_HASH = HashingUtils::HashString("WrongRegionS3Bucket");
-        static const int WrongRegionS3Output_HASH = HashingUtils::HashString("WrongRegionS3Output");
-        static const int WrongRegionRobotApplication_HASH = HashingUtils::HashString("WrongRegionRobotApplication");
-        static const int WrongRegionSimulationApplication_HASH = HashingUtils::HashString("WrongRegionSimulationApplication");
-        static const int UploadContentMismatchError_HASH = HashingUtils::HashString("UploadContentMismatchError");
+        static constexpr uint32_t InternalServiceError_HASH = ConstExprHashingUtils::HashString("InternalServiceError");
+        static constexpr uint32_t RobotApplicationCrash_HASH = ConstExprHashingUtils::HashString("RobotApplicationCrash");
+        static constexpr uint32_t SimulationApplicationCrash_HASH = ConstExprHashingUtils::HashString("SimulationApplicationCrash");
+        static constexpr uint32_t RobotApplicationHealthCheckFailure_HASH = ConstExprHashingUtils::HashString("RobotApplicationHealthCheckFailure");
+        static constexpr uint32_t SimulationApplicationHealthCheckFailure_HASH = ConstExprHashingUtils::HashString("SimulationApplicationHealthCheckFailure");
+        static constexpr uint32_t BadPermissionsRobotApplication_HASH = ConstExprHashingUtils::HashString("BadPermissionsRobotApplication");
+        static constexpr uint32_t BadPermissionsSimulationApplication_HASH = ConstExprHashingUtils::HashString("BadPermissionsSimulationApplication");
+        static constexpr uint32_t BadPermissionsS3Object_HASH = ConstExprHashingUtils::HashString("BadPermissionsS3Object");
+        static constexpr uint32_t BadPermissionsS3Output_HASH = ConstExprHashingUtils::HashString("BadPermissionsS3Output");
+        static constexpr uint32_t BadPermissionsCloudwatchLogs_HASH = ConstExprHashingUtils::HashString("BadPermissionsCloudwatchLogs");
+        static constexpr uint32_t SubnetIpLimitExceeded_HASH = ConstExprHashingUtils::HashString("SubnetIpLimitExceeded");
+        static constexpr uint32_t ENILimitExceeded_HASH = ConstExprHashingUtils::HashString("ENILimitExceeded");
+        static constexpr uint32_t BadPermissionsUserCredentials_HASH = ConstExprHashingUtils::HashString("BadPermissionsUserCredentials");
+        static constexpr uint32_t InvalidBundleRobotApplication_HASH = ConstExprHashingUtils::HashString("InvalidBundleRobotApplication");
+        static constexpr uint32_t InvalidBundleSimulationApplication_HASH = ConstExprHashingUtils::HashString("InvalidBundleSimulationApplication");
+        static constexpr uint32_t InvalidS3Resource_HASH = ConstExprHashingUtils::HashString("InvalidS3Resource");
+        static constexpr uint32_t ThrottlingError_HASH = ConstExprHashingUtils::HashString("ThrottlingError");
+        static constexpr uint32_t LimitExceeded_HASH = ConstExprHashingUtils::HashString("LimitExceeded");
+        static constexpr uint32_t MismatchedEtag_HASH = ConstExprHashingUtils::HashString("MismatchedEtag");
+        static constexpr uint32_t RobotApplicationVersionMismatchedEtag_HASH = ConstExprHashingUtils::HashString("RobotApplicationVersionMismatchedEtag");
+        static constexpr uint32_t SimulationApplicationVersionMismatchedEtag_HASH = ConstExprHashingUtils::HashString("SimulationApplicationVersionMismatchedEtag");
+        static constexpr uint32_t ResourceNotFound_HASH = ConstExprHashingUtils::HashString("ResourceNotFound");
+        static constexpr uint32_t RequestThrottled_HASH = ConstExprHashingUtils::HashString("RequestThrottled");
+        static constexpr uint32_t BatchTimedOut_HASH = ConstExprHashingUtils::HashString("BatchTimedOut");
+        static constexpr uint32_t BatchCanceled_HASH = ConstExprHashingUtils::HashString("BatchCanceled");
+        static constexpr uint32_t InvalidInput_HASH = ConstExprHashingUtils::HashString("InvalidInput");
+        static constexpr uint32_t WrongRegionS3Bucket_HASH = ConstExprHashingUtils::HashString("WrongRegionS3Bucket");
+        static constexpr uint32_t WrongRegionS3Output_HASH = ConstExprHashingUtils::HashString("WrongRegionS3Output");
+        static constexpr uint32_t WrongRegionRobotApplication_HASH = ConstExprHashingUtils::HashString("WrongRegionRobotApplication");
+        static constexpr uint32_t WrongRegionSimulationApplication_HASH = ConstExprHashingUtils::HashString("WrongRegionSimulationApplication");
+        static constexpr uint32_t UploadContentMismatchError_HASH = ConstExprHashingUtils::HashString("UploadContentMismatchError");
 
 
         SimulationJobErrorCode GetSimulationJobErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InternalServiceError_HASH)
           {
             return SimulationJobErrorCode::InternalServiceError;

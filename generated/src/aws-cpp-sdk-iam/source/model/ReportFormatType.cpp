@@ -20,12 +20,12 @@ namespace Aws
       namespace ReportFormatTypeMapper
       {
 
-        static const int text_csv_HASH = HashingUtils::HashString("text/csv");
+        static constexpr uint32_t text_csv_HASH = ConstExprHashingUtils::HashString("text/csv");
 
 
         ReportFormatType GetReportFormatTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == text_csv_HASH)
           {
             return ReportFormatType::text_csv;

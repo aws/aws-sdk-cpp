@@ -20,12 +20,12 @@ namespace Aws
       namespace LocationUpdateStatusMapper
       {
 
-        static const int PENDING_UPDATE_HASH = HashingUtils::HashString("PENDING_UPDATE");
+        static constexpr uint32_t PENDING_UPDATE_HASH = ConstExprHashingUtils::HashString("PENDING_UPDATE");
 
 
         LocationUpdateStatus GetLocationUpdateStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_UPDATE_HASH)
           {
             return LocationUpdateStatus::PENDING_UPDATE;

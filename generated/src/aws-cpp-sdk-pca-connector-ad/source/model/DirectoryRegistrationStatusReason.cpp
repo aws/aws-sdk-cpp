@@ -20,17 +20,17 @@ namespace Aws
       namespace DirectoryRegistrationStatusReasonMapper
       {
 
-        static const int DIRECTORY_ACCESS_DENIED_HASH = HashingUtils::HashString("DIRECTORY_ACCESS_DENIED");
-        static const int DIRECTORY_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("DIRECTORY_RESOURCE_NOT_FOUND");
-        static const int DIRECTORY_NOT_ACTIVE_HASH = HashingUtils::HashString("DIRECTORY_NOT_ACTIVE");
-        static const int DIRECTORY_NOT_REACHABLE_HASH = HashingUtils::HashString("DIRECTORY_NOT_REACHABLE");
-        static const int DIRECTORY_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("DIRECTORY_TYPE_NOT_SUPPORTED");
-        static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
+        static constexpr uint32_t DIRECTORY_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("DIRECTORY_ACCESS_DENIED");
+        static constexpr uint32_t DIRECTORY_RESOURCE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("DIRECTORY_RESOURCE_NOT_FOUND");
+        static constexpr uint32_t DIRECTORY_NOT_ACTIVE_HASH = ConstExprHashingUtils::HashString("DIRECTORY_NOT_ACTIVE");
+        static constexpr uint32_t DIRECTORY_NOT_REACHABLE_HASH = ConstExprHashingUtils::HashString("DIRECTORY_NOT_REACHABLE");
+        static constexpr uint32_t DIRECTORY_TYPE_NOT_SUPPORTED_HASH = ConstExprHashingUtils::HashString("DIRECTORY_TYPE_NOT_SUPPORTED");
+        static constexpr uint32_t INTERNAL_FAILURE_HASH = ConstExprHashingUtils::HashString("INTERNAL_FAILURE");
 
 
         DirectoryRegistrationStatusReason GetDirectoryRegistrationStatusReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DIRECTORY_ACCESS_DENIED_HASH)
           {
             return DirectoryRegistrationStatusReason::DIRECTORY_ACCESS_DENIED;

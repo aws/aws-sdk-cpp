@@ -20,12 +20,12 @@ namespace Aws
       namespace PackageContentTypeMapper
       {
 
-        static const int application_zip_HASH = HashingUtils::HashString("application/zip");
+        static constexpr uint32_t application_zip_HASH = ConstExprHashingUtils::HashString("application/zip");
 
 
         PackageContentType GetPackageContentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == application_zip_HASH)
           {
             return PackageContentType::application_zip;

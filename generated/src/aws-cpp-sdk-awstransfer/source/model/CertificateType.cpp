@@ -20,13 +20,13 @@ namespace Aws
       namespace CertificateTypeMapper
       {
 
-        static const int CERTIFICATE_HASH = HashingUtils::HashString("CERTIFICATE");
-        static const int CERTIFICATE_WITH_PRIVATE_KEY_HASH = HashingUtils::HashString("CERTIFICATE_WITH_PRIVATE_KEY");
+        static constexpr uint32_t CERTIFICATE_HASH = ConstExprHashingUtils::HashString("CERTIFICATE");
+        static constexpr uint32_t CERTIFICATE_WITH_PRIVATE_KEY_HASH = ConstExprHashingUtils::HashString("CERTIFICATE_WITH_PRIVATE_KEY");
 
 
         CertificateType GetCertificateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CERTIFICATE_HASH)
           {
             return CertificateType::CERTIFICATE;

@@ -20,23 +20,23 @@ namespace Aws
       namespace AudioCodecMapper
       {
 
-        static const int AAC_HASH = HashingUtils::HashString("AAC");
-        static const int MP2_HASH = HashingUtils::HashString("MP2");
-        static const int MP3_HASH = HashingUtils::HashString("MP3");
-        static const int WAV_HASH = HashingUtils::HashString("WAV");
-        static const int AIFF_HASH = HashingUtils::HashString("AIFF");
-        static const int AC3_HASH = HashingUtils::HashString("AC3");
-        static const int EAC3_HASH = HashingUtils::HashString("EAC3");
-        static const int EAC3_ATMOS_HASH = HashingUtils::HashString("EAC3_ATMOS");
-        static const int VORBIS_HASH = HashingUtils::HashString("VORBIS");
-        static const int OPUS_HASH = HashingUtils::HashString("OPUS");
-        static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
-        static const int FLAC_HASH = HashingUtils::HashString("FLAC");
+        static constexpr uint32_t AAC_HASH = ConstExprHashingUtils::HashString("AAC");
+        static constexpr uint32_t MP2_HASH = ConstExprHashingUtils::HashString("MP2");
+        static constexpr uint32_t MP3_HASH = ConstExprHashingUtils::HashString("MP3");
+        static constexpr uint32_t WAV_HASH = ConstExprHashingUtils::HashString("WAV");
+        static constexpr uint32_t AIFF_HASH = ConstExprHashingUtils::HashString("AIFF");
+        static constexpr uint32_t AC3_HASH = ConstExprHashingUtils::HashString("AC3");
+        static constexpr uint32_t EAC3_HASH = ConstExprHashingUtils::HashString("EAC3");
+        static constexpr uint32_t EAC3_ATMOS_HASH = ConstExprHashingUtils::HashString("EAC3_ATMOS");
+        static constexpr uint32_t VORBIS_HASH = ConstExprHashingUtils::HashString("VORBIS");
+        static constexpr uint32_t OPUS_HASH = ConstExprHashingUtils::HashString("OPUS");
+        static constexpr uint32_t PASSTHROUGH_HASH = ConstExprHashingUtils::HashString("PASSTHROUGH");
+        static constexpr uint32_t FLAC_HASH = ConstExprHashingUtils::HashString("FLAC");
 
 
         AudioCodec GetAudioCodecForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AAC_HASH)
           {
             return AudioCodec::AAC;

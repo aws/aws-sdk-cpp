@@ -20,13 +20,13 @@ namespace Aws
       namespace SkipModelValidationMapper
       {
 
-        static const int All_HASH = HashingUtils::HashString("All");
-        static const int None_HASH = HashingUtils::HashString("None");
+        static constexpr uint32_t All_HASH = ConstExprHashingUtils::HashString("All");
+        static constexpr uint32_t None_HASH = ConstExprHashingUtils::HashString("None");
 
 
         SkipModelValidation GetSkipModelValidationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == All_HASH)
           {
             return SkipModelValidation::All;

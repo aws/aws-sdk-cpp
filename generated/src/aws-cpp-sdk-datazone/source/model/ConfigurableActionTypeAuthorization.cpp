@@ -20,13 +20,13 @@ namespace Aws
       namespace ConfigurableActionTypeAuthorizationMapper
       {
 
-        static const int IAM_HASH = HashingUtils::HashString("IAM");
-        static const int HTTPS_HASH = HashingUtils::HashString("HTTPS");
+        static constexpr uint32_t IAM_HASH = ConstExprHashingUtils::HashString("IAM");
+        static constexpr uint32_t HTTPS_HASH = ConstExprHashingUtils::HashString("HTTPS");
 
 
         ConfigurableActionTypeAuthorization GetConfigurableActionTypeAuthorizationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IAM_HASH)
           {
             return ConfigurableActionTypeAuthorization::IAM;

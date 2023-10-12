@@ -20,15 +20,15 @@ namespace Aws
       namespace AvcIntraClassMapper
       {
 
-        static const int CLASS_50_HASH = HashingUtils::HashString("CLASS_50");
-        static const int CLASS_100_HASH = HashingUtils::HashString("CLASS_100");
-        static const int CLASS_200_HASH = HashingUtils::HashString("CLASS_200");
-        static const int CLASS_4K_2K_HASH = HashingUtils::HashString("CLASS_4K_2K");
+        static constexpr uint32_t CLASS_50_HASH = ConstExprHashingUtils::HashString("CLASS_50");
+        static constexpr uint32_t CLASS_100_HASH = ConstExprHashingUtils::HashString("CLASS_100");
+        static constexpr uint32_t CLASS_200_HASH = ConstExprHashingUtils::HashString("CLASS_200");
+        static constexpr uint32_t CLASS_4K_2K_HASH = ConstExprHashingUtils::HashString("CLASS_4K_2K");
 
 
         AvcIntraClass GetAvcIntraClassForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLASS_50_HASH)
           {
             return AvcIntraClass::CLASS_50;

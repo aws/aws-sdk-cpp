@@ -20,13 +20,13 @@ namespace Aws
       namespace ExpressionTypeMapper
       {
 
-        static const int RuleName_HASH = HashingUtils::HashString("RuleName");
-        static const int MqttTopic_HASH = HashingUtils::HashString("MqttTopic");
+        static constexpr uint32_t RuleName_HASH = ConstExprHashingUtils::HashString("RuleName");
+        static constexpr uint32_t MqttTopic_HASH = ConstExprHashingUtils::HashString("MqttTopic");
 
 
         ExpressionType GetExpressionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RuleName_HASH)
           {
             return ExpressionType::RuleName;

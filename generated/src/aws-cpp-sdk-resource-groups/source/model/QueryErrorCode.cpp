@@ -20,14 +20,14 @@ namespace Aws
       namespace QueryErrorCodeMapper
       {
 
-        static const int CLOUDFORMATION_STACK_INACTIVE_HASH = HashingUtils::HashString("CLOUDFORMATION_STACK_INACTIVE");
-        static const int CLOUDFORMATION_STACK_NOT_EXISTING_HASH = HashingUtils::HashString("CLOUDFORMATION_STACK_NOT_EXISTING");
-        static const int CLOUDFORMATION_STACK_UNASSUMABLE_ROLE_HASH = HashingUtils::HashString("CLOUDFORMATION_STACK_UNASSUMABLE_ROLE");
+        static constexpr uint32_t CLOUDFORMATION_STACK_INACTIVE_HASH = ConstExprHashingUtils::HashString("CLOUDFORMATION_STACK_INACTIVE");
+        static constexpr uint32_t CLOUDFORMATION_STACK_NOT_EXISTING_HASH = ConstExprHashingUtils::HashString("CLOUDFORMATION_STACK_NOT_EXISTING");
+        static constexpr uint32_t CLOUDFORMATION_STACK_UNASSUMABLE_ROLE_HASH = ConstExprHashingUtils::HashString("CLOUDFORMATION_STACK_UNASSUMABLE_ROLE");
 
 
         QueryErrorCode GetQueryErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLOUDFORMATION_STACK_INACTIVE_HASH)
           {
             return QueryErrorCode::CLOUDFORMATION_STACK_INACTIVE;

@@ -20,15 +20,15 @@ namespace Aws
       namespace EntityFilterNameMapper
       {
 
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int NAMESPACE_HASH = HashingUtils::HashString("NAMESPACE");
-        static const int SEMANTIC_TYPE_PATH_HASH = HashingUtils::HashString("SEMANTIC_TYPE_PATH");
-        static const int REFERENCED_ENTITY_ID_HASH = HashingUtils::HashString("REFERENCED_ENTITY_ID");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t NAMESPACE_HASH = ConstExprHashingUtils::HashString("NAMESPACE");
+        static constexpr uint32_t SEMANTIC_TYPE_PATH_HASH = ConstExprHashingUtils::HashString("SEMANTIC_TYPE_PATH");
+        static constexpr uint32_t REFERENCED_ENTITY_ID_HASH = ConstExprHashingUtils::HashString("REFERENCED_ENTITY_ID");
 
 
         EntityFilterName GetEntityFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NAME_HASH)
           {
             return EntityFilterName::NAME;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ScaleDownBehaviorMapper
       {
 
-        static const int TERMINATE_AT_INSTANCE_HOUR_HASH = HashingUtils::HashString("TERMINATE_AT_INSTANCE_HOUR");
-        static const int TERMINATE_AT_TASK_COMPLETION_HASH = HashingUtils::HashString("TERMINATE_AT_TASK_COMPLETION");
+        static constexpr uint32_t TERMINATE_AT_INSTANCE_HOUR_HASH = ConstExprHashingUtils::HashString("TERMINATE_AT_INSTANCE_HOUR");
+        static constexpr uint32_t TERMINATE_AT_TASK_COMPLETION_HASH = ConstExprHashingUtils::HashString("TERMINATE_AT_TASK_COMPLETION");
 
 
         ScaleDownBehavior GetScaleDownBehaviorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TERMINATE_AT_INSTANCE_HOUR_HASH)
           {
             return ScaleDownBehavior::TERMINATE_AT_INSTANCE_HOUR;

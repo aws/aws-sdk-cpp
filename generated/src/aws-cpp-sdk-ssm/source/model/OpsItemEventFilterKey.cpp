@@ -20,12 +20,12 @@ namespace Aws
       namespace OpsItemEventFilterKeyMapper
       {
 
-        static const int OpsItemId_HASH = HashingUtils::HashString("OpsItemId");
+        static constexpr uint32_t OpsItemId_HASH = ConstExprHashingUtils::HashString("OpsItemId");
 
 
         OpsItemEventFilterKey GetOpsItemEventFilterKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OpsItemId_HASH)
           {
             return OpsItemEventFilterKey::OpsItemId;

@@ -20,13 +20,13 @@ namespace Aws
       namespace BehaviorOnMXFailureMapper
       {
 
-        static const int UseDefaultValue_HASH = HashingUtils::HashString("UseDefaultValue");
-        static const int RejectMessage_HASH = HashingUtils::HashString("RejectMessage");
+        static constexpr uint32_t UseDefaultValue_HASH = ConstExprHashingUtils::HashString("UseDefaultValue");
+        static constexpr uint32_t RejectMessage_HASH = ConstExprHashingUtils::HashString("RejectMessage");
 
 
         BehaviorOnMXFailure GetBehaviorOnMXFailureForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UseDefaultValue_HASH)
           {
             return BehaviorOnMXFailure::UseDefaultValue;

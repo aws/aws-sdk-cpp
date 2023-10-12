@@ -20,13 +20,13 @@ namespace Aws
       namespace NotificationTypeMapper
       {
 
-        static const int ACTUAL_HASH = HashingUtils::HashString("ACTUAL");
-        static const int FORECASTED_HASH = HashingUtils::HashString("FORECASTED");
+        static constexpr uint32_t ACTUAL_HASH = ConstExprHashingUtils::HashString("ACTUAL");
+        static constexpr uint32_t FORECASTED_HASH = ConstExprHashingUtils::HashString("FORECASTED");
 
 
         NotificationType GetNotificationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTUAL_HASH)
           {
             return NotificationType::ACTUAL;

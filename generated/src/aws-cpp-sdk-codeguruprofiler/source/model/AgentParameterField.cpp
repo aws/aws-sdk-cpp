@@ -20,16 +20,16 @@ namespace Aws
       namespace AgentParameterFieldMapper
       {
 
-        static const int SamplingIntervalInMilliseconds_HASH = HashingUtils::HashString("SamplingIntervalInMilliseconds");
-        static const int ReportingIntervalInMilliseconds_HASH = HashingUtils::HashString("ReportingIntervalInMilliseconds");
-        static const int MinimumTimeForReportingInMilliseconds_HASH = HashingUtils::HashString("MinimumTimeForReportingInMilliseconds");
-        static const int MemoryUsageLimitPercent_HASH = HashingUtils::HashString("MemoryUsageLimitPercent");
-        static const int MaxStackDepth_HASH = HashingUtils::HashString("MaxStackDepth");
+        static constexpr uint32_t SamplingIntervalInMilliseconds_HASH = ConstExprHashingUtils::HashString("SamplingIntervalInMilliseconds");
+        static constexpr uint32_t ReportingIntervalInMilliseconds_HASH = ConstExprHashingUtils::HashString("ReportingIntervalInMilliseconds");
+        static constexpr uint32_t MinimumTimeForReportingInMilliseconds_HASH = ConstExprHashingUtils::HashString("MinimumTimeForReportingInMilliseconds");
+        static constexpr uint32_t MemoryUsageLimitPercent_HASH = ConstExprHashingUtils::HashString("MemoryUsageLimitPercent");
+        static constexpr uint32_t MaxStackDepth_HASH = ConstExprHashingUtils::HashString("MaxStackDepth");
 
 
         AgentParameterField GetAgentParameterFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SamplingIntervalInMilliseconds_HASH)
           {
             return AgentParameterField::SamplingIntervalInMilliseconds;

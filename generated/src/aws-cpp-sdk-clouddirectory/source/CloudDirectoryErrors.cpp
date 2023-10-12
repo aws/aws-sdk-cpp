@@ -26,43 +26,43 @@ template<> AWS_CLOUDDIRECTORY_API BatchWriteException CloudDirectoryError::GetMo
 namespace CloudDirectoryErrorMapper
 {
 
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INVALID_ATTACHMENT_HASH = HashingUtils::HashString("InvalidAttachmentException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int BATCH_WRITE_HASH = HashingUtils::HashString("BatchWriteException");
-static const int STILL_CONTAINS_LINKS_HASH = HashingUtils::HashString("StillContainsLinksException");
-static const int INVALID_TAGGING_REQUEST_HASH = HashingUtils::HashString("InvalidTaggingRequestException");
-static const int INVALID_RULE_HASH = HashingUtils::HashString("InvalidRuleException");
-static const int OBJECT_NOT_DETACHED_HASH = HashingUtils::HashString("ObjectNotDetachedException");
-static const int LINK_NAME_ALREADY_IN_USE_HASH = HashingUtils::HashString("LinkNameAlreadyInUseException");
-static const int CANNOT_LIST_PARENT_OF_ROOT_HASH = HashingUtils::HashString("CannotListParentOfRootException");
-static const int FACET_VALIDATION_HASH = HashingUtils::HashString("FacetValidationException");
-static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
-static const int FACET_ALREADY_EXISTS_HASH = HashingUtils::HashString("FacetAlreadyExistsException");
-static const int RETRYABLE_CONFLICT_HASH = HashingUtils::HashString("RetryableConflictException");
-static const int NOT_INDEX_HASH = HashingUtils::HashString("NotIndexException");
-static const int NOT_NODE_HASH = HashingUtils::HashString("NotNodeException");
-static const int DIRECTORY_NOT_DISABLED_HASH = HashingUtils::HashString("DirectoryNotDisabledException");
-static const int UNSUPPORTED_INDEX_TYPE_HASH = HashingUtils::HashString("UnsupportedIndexTypeException");
-static const int DIRECTORY_DELETED_HASH = HashingUtils::HashString("DirectoryDeletedException");
-static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
-static const int INCOMPATIBLE_SCHEMA_HASH = HashingUtils::HashString("IncompatibleSchemaException");
-static const int INVALID_FACET_UPDATE_HASH = HashingUtils::HashString("InvalidFacetUpdateException");
-static const int FACET_IN_USE_HASH = HashingUtils::HashString("FacetInUseException");
-static const int INDEXED_ATTRIBUTE_MISSING_HASH = HashingUtils::HashString("IndexedAttributeMissingException");
-static const int DIRECTORY_ALREADY_EXISTS_HASH = HashingUtils::HashString("DirectoryAlreadyExistsException");
-static const int OBJECT_ALREADY_DETACHED_HASH = HashingUtils::HashString("ObjectAlreadyDetachedException");
-static const int SCHEMA_ALREADY_EXISTS_HASH = HashingUtils::HashString("SchemaAlreadyExistsException");
-static const int FACET_NOT_FOUND_HASH = HashingUtils::HashString("FacetNotFoundException");
-static const int DIRECTORY_NOT_ENABLED_HASH = HashingUtils::HashString("DirectoryNotEnabledException");
-static const int SCHEMA_ALREADY_PUBLISHED_HASH = HashingUtils::HashString("SchemaAlreadyPublishedException");
-static const int INVALID_SCHEMA_DOC_HASH = HashingUtils::HashString("InvalidSchemaDocException");
-static const int NOT_POLICY_HASH = HashingUtils::HashString("NotPolicyException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t INVALID_ATTACHMENT_HASH = ConstExprHashingUtils::HashString("InvalidAttachmentException");
+static constexpr uint32_t INVALID_NEXT_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidNextTokenException");
+static constexpr uint32_t BATCH_WRITE_HASH = ConstExprHashingUtils::HashString("BatchWriteException");
+static constexpr uint32_t STILL_CONTAINS_LINKS_HASH = ConstExprHashingUtils::HashString("StillContainsLinksException");
+static constexpr uint32_t INVALID_TAGGING_REQUEST_HASH = ConstExprHashingUtils::HashString("InvalidTaggingRequestException");
+static constexpr uint32_t INVALID_RULE_HASH = ConstExprHashingUtils::HashString("InvalidRuleException");
+static constexpr uint32_t OBJECT_NOT_DETACHED_HASH = ConstExprHashingUtils::HashString("ObjectNotDetachedException");
+static constexpr uint32_t LINK_NAME_ALREADY_IN_USE_HASH = ConstExprHashingUtils::HashString("LinkNameAlreadyInUseException");
+static constexpr uint32_t CANNOT_LIST_PARENT_OF_ROOT_HASH = ConstExprHashingUtils::HashString("CannotListParentOfRootException");
+static constexpr uint32_t FACET_VALIDATION_HASH = ConstExprHashingUtils::HashString("FacetValidationException");
+static constexpr uint32_t INTERNAL_SERVICE_HASH = ConstExprHashingUtils::HashString("InternalServiceException");
+static constexpr uint32_t FACET_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("FacetAlreadyExistsException");
+static constexpr uint32_t RETRYABLE_CONFLICT_HASH = ConstExprHashingUtils::HashString("RetryableConflictException");
+static constexpr uint32_t NOT_INDEX_HASH = ConstExprHashingUtils::HashString("NotIndexException");
+static constexpr uint32_t NOT_NODE_HASH = ConstExprHashingUtils::HashString("NotNodeException");
+static constexpr uint32_t DIRECTORY_NOT_DISABLED_HASH = ConstExprHashingUtils::HashString("DirectoryNotDisabledException");
+static constexpr uint32_t UNSUPPORTED_INDEX_TYPE_HASH = ConstExprHashingUtils::HashString("UnsupportedIndexTypeException");
+static constexpr uint32_t DIRECTORY_DELETED_HASH = ConstExprHashingUtils::HashString("DirectoryDeletedException");
+static constexpr uint32_t INVALID_ARN_HASH = ConstExprHashingUtils::HashString("InvalidArnException");
+static constexpr uint32_t INCOMPATIBLE_SCHEMA_HASH = ConstExprHashingUtils::HashString("IncompatibleSchemaException");
+static constexpr uint32_t INVALID_FACET_UPDATE_HASH = ConstExprHashingUtils::HashString("InvalidFacetUpdateException");
+static constexpr uint32_t FACET_IN_USE_HASH = ConstExprHashingUtils::HashString("FacetInUseException");
+static constexpr uint32_t INDEXED_ATTRIBUTE_MISSING_HASH = ConstExprHashingUtils::HashString("IndexedAttributeMissingException");
+static constexpr uint32_t DIRECTORY_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("DirectoryAlreadyExistsException");
+static constexpr uint32_t OBJECT_ALREADY_DETACHED_HASH = ConstExprHashingUtils::HashString("ObjectAlreadyDetachedException");
+static constexpr uint32_t SCHEMA_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("SchemaAlreadyExistsException");
+static constexpr uint32_t FACET_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("FacetNotFoundException");
+static constexpr uint32_t DIRECTORY_NOT_ENABLED_HASH = ConstExprHashingUtils::HashString("DirectoryNotEnabledException");
+static constexpr uint32_t SCHEMA_ALREADY_PUBLISHED_HASH = ConstExprHashingUtils::HashString("SchemaAlreadyPublishedException");
+static constexpr uint32_t INVALID_SCHEMA_DOC_HASH = ConstExprHashingUtils::HashString("InvalidSchemaDocException");
+static constexpr uint32_t NOT_POLICY_HASH = ConstExprHashingUtils::HashString("NotPolicyException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == LIMIT_EXCEEDED_HASH)
   {

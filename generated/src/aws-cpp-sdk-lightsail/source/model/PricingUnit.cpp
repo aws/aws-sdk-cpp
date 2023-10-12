@@ -20,16 +20,16 @@ namespace Aws
       namespace PricingUnitMapper
       {
 
-        static const int GB_HASH = HashingUtils::HashString("GB");
-        static const int Hrs_HASH = HashingUtils::HashString("Hrs");
-        static const int GB_Mo_HASH = HashingUtils::HashString("GB-Mo");
-        static const int Bundles_HASH = HashingUtils::HashString("Bundles");
-        static const int Queries_HASH = HashingUtils::HashString("Queries");
+        static constexpr uint32_t GB_HASH = ConstExprHashingUtils::HashString("GB");
+        static constexpr uint32_t Hrs_HASH = ConstExprHashingUtils::HashString("Hrs");
+        static constexpr uint32_t GB_Mo_HASH = ConstExprHashingUtils::HashString("GB-Mo");
+        static constexpr uint32_t Bundles_HASH = ConstExprHashingUtils::HashString("Bundles");
+        static constexpr uint32_t Queries_HASH = ConstExprHashingUtils::HashString("Queries");
 
 
         PricingUnit GetPricingUnitForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == GB_HASH)
           {
             return PricingUnit::GB;

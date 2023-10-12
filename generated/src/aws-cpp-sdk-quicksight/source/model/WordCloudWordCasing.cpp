@@ -20,13 +20,13 @@ namespace Aws
       namespace WordCloudWordCasingMapper
       {
 
-        static const int LOWER_CASE_HASH = HashingUtils::HashString("LOWER_CASE");
-        static const int EXISTING_CASE_HASH = HashingUtils::HashString("EXISTING_CASE");
+        static constexpr uint32_t LOWER_CASE_HASH = ConstExprHashingUtils::HashString("LOWER_CASE");
+        static constexpr uint32_t EXISTING_CASE_HASH = ConstExprHashingUtils::HashString("EXISTING_CASE");
 
 
         WordCloudWordCasing GetWordCloudWordCasingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LOWER_CASE_HASH)
           {
             return WordCloudWordCasing::LOWER_CASE;

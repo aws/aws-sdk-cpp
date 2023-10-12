@@ -20,13 +20,13 @@ namespace Aws
       namespace SnapshotFileSheetSelectionScopeMapper
       {
 
-        static const int ALL_VISUALS_HASH = HashingUtils::HashString("ALL_VISUALS");
-        static const int SELECTED_VISUALS_HASH = HashingUtils::HashString("SELECTED_VISUALS");
+        static constexpr uint32_t ALL_VISUALS_HASH = ConstExprHashingUtils::HashString("ALL_VISUALS");
+        static constexpr uint32_t SELECTED_VISUALS_HASH = ConstExprHashingUtils::HashString("SELECTED_VISUALS");
 
 
         SnapshotFileSheetSelectionScope GetSnapshotFileSheetSelectionScopeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_VISUALS_HASH)
           {
             return SnapshotFileSheetSelectionScope::ALL_VISUALS;

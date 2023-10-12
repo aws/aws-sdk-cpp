@@ -20,19 +20,19 @@ namespace Aws
       namespace CommandInvocationStatusMapper
       {
 
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Delayed_HASH = HashingUtils::HashString("Delayed");
-        static const int Success_HASH = HashingUtils::HashString("Success");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
-        static const int TimedOut_HASH = HashingUtils::HashString("TimedOut");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Cancelling_HASH = HashingUtils::HashString("Cancelling");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Delayed_HASH = ConstExprHashingUtils::HashString("Delayed");
+        static constexpr uint32_t Success_HASH = ConstExprHashingUtils::HashString("Success");
+        static constexpr uint32_t Cancelled_HASH = ConstExprHashingUtils::HashString("Cancelled");
+        static constexpr uint32_t TimedOut_HASH = ConstExprHashingUtils::HashString("TimedOut");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Cancelling_HASH = ConstExprHashingUtils::HashString("Cancelling");
 
 
         CommandInvocationStatus GetCommandInvocationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pending_HASH)
           {
             return CommandInvocationStatus::Pending;

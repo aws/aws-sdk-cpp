@@ -20,13 +20,13 @@ namespace Aws
       namespace PackagingTypeMapper
       {
 
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
-        static const int APPSTREAM2_HASH = HashingUtils::HashString("APPSTREAM2");
+        static constexpr uint32_t CUSTOM_HASH = ConstExprHashingUtils::HashString("CUSTOM");
+        static constexpr uint32_t APPSTREAM2_HASH = ConstExprHashingUtils::HashString("APPSTREAM2");
 
 
         PackagingType GetPackagingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CUSTOM_HASH)
           {
             return PackagingType::CUSTOM;

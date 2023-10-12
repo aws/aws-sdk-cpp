@@ -20,14 +20,14 @@ namespace Aws
       namespace AlertCategoryMapper
       {
 
-        static const int SCHEDULING_ERROR_HASH = HashingUtils::HashString("SCHEDULING_ERROR");
-        static const int PLAYBACK_WARNING_HASH = HashingUtils::HashString("PLAYBACK_WARNING");
-        static const int INFO_HASH = HashingUtils::HashString("INFO");
+        static constexpr uint32_t SCHEDULING_ERROR_HASH = ConstExprHashingUtils::HashString("SCHEDULING_ERROR");
+        static constexpr uint32_t PLAYBACK_WARNING_HASH = ConstExprHashingUtils::HashString("PLAYBACK_WARNING");
+        static constexpr uint32_t INFO_HASH = ConstExprHashingUtils::HashString("INFO");
 
 
         AlertCategory GetAlertCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SCHEDULING_ERROR_HASH)
           {
             return AlertCategory::SCHEDULING_ERROR;

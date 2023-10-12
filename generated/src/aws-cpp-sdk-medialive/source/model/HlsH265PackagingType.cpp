@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsH265PackagingTypeMapper
       {
 
-        static const int HEV1_HASH = HashingUtils::HashString("HEV1");
-        static const int HVC1_HASH = HashingUtils::HashString("HVC1");
+        static constexpr uint32_t HEV1_HASH = ConstExprHashingUtils::HashString("HEV1");
+        static constexpr uint32_t HVC1_HASH = ConstExprHashingUtils::HashString("HVC1");
 
 
         HlsH265PackagingType GetHlsH265PackagingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HEV1_HASH)
           {
             return HlsH265PackagingType::HEV1;

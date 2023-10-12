@@ -20,14 +20,14 @@ namespace Aws
       namespace AutoScalingPolicyStateChangeReasonCodeMapper
       {
 
-        static const int USER_REQUEST_HASH = HashingUtils::HashString("USER_REQUEST");
-        static const int PROVISION_FAILURE_HASH = HashingUtils::HashString("PROVISION_FAILURE");
-        static const int CLEANUP_FAILURE_HASH = HashingUtils::HashString("CLEANUP_FAILURE");
+        static constexpr uint32_t USER_REQUEST_HASH = ConstExprHashingUtils::HashString("USER_REQUEST");
+        static constexpr uint32_t PROVISION_FAILURE_HASH = ConstExprHashingUtils::HashString("PROVISION_FAILURE");
+        static constexpr uint32_t CLEANUP_FAILURE_HASH = ConstExprHashingUtils::HashString("CLEANUP_FAILURE");
 
 
         AutoScalingPolicyStateChangeReasonCode GetAutoScalingPolicyStateChangeReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USER_REQUEST_HASH)
           {
             return AutoScalingPolicyStateChangeReasonCode::USER_REQUEST;

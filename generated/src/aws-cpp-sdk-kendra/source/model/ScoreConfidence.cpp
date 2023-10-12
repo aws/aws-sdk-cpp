@@ -20,16 +20,16 @@ namespace Aws
       namespace ScoreConfidenceMapper
       {
 
-        static const int VERY_HIGH_HASH = HashingUtils::HashString("VERY_HIGH");
-        static const int HIGH_HASH = HashingUtils::HashString("HIGH");
-        static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
-        static const int LOW_HASH = HashingUtils::HashString("LOW");
-        static const int NOT_AVAILABLE_HASH = HashingUtils::HashString("NOT_AVAILABLE");
+        static constexpr uint32_t VERY_HIGH_HASH = ConstExprHashingUtils::HashString("VERY_HIGH");
+        static constexpr uint32_t HIGH_HASH = ConstExprHashingUtils::HashString("HIGH");
+        static constexpr uint32_t MEDIUM_HASH = ConstExprHashingUtils::HashString("MEDIUM");
+        static constexpr uint32_t LOW_HASH = ConstExprHashingUtils::HashString("LOW");
+        static constexpr uint32_t NOT_AVAILABLE_HASH = ConstExprHashingUtils::HashString("NOT_AVAILABLE");
 
 
         ScoreConfidence GetScoreConfidenceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VERY_HIGH_HASH)
           {
             return ScoreConfidence::VERY_HIGH;

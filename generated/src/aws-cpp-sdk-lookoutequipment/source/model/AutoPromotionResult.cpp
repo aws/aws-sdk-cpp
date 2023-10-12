@@ -20,16 +20,16 @@ namespace Aws
       namespace AutoPromotionResultMapper
       {
 
-        static const int MODEL_PROMOTED_HASH = HashingUtils::HashString("MODEL_PROMOTED");
-        static const int MODEL_NOT_PROMOTED_HASH = HashingUtils::HashString("MODEL_NOT_PROMOTED");
-        static const int RETRAINING_INTERNAL_ERROR_HASH = HashingUtils::HashString("RETRAINING_INTERNAL_ERROR");
-        static const int RETRAINING_CUSTOMER_ERROR_HASH = HashingUtils::HashString("RETRAINING_CUSTOMER_ERROR");
-        static const int RETRAINING_CANCELLED_HASH = HashingUtils::HashString("RETRAINING_CANCELLED");
+        static constexpr uint32_t MODEL_PROMOTED_HASH = ConstExprHashingUtils::HashString("MODEL_PROMOTED");
+        static constexpr uint32_t MODEL_NOT_PROMOTED_HASH = ConstExprHashingUtils::HashString("MODEL_NOT_PROMOTED");
+        static constexpr uint32_t RETRAINING_INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("RETRAINING_INTERNAL_ERROR");
+        static constexpr uint32_t RETRAINING_CUSTOMER_ERROR_HASH = ConstExprHashingUtils::HashString("RETRAINING_CUSTOMER_ERROR");
+        static constexpr uint32_t RETRAINING_CANCELLED_HASH = ConstExprHashingUtils::HashString("RETRAINING_CANCELLED");
 
 
         AutoPromotionResult GetAutoPromotionResultForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MODEL_PROMOTED_HASH)
           {
             return AutoPromotionResult::MODEL_PROMOTED;

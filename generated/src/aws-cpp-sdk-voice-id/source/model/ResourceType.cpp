@@ -20,18 +20,18 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int BATCH_JOB_HASH = HashingUtils::HashString("BATCH_JOB");
-        static const int COMPLIANCE_CONSENT_HASH = HashingUtils::HashString("COMPLIANCE_CONSENT");
-        static const int DOMAIN__HASH = HashingUtils::HashString("DOMAIN");
-        static const int FRAUDSTER_HASH = HashingUtils::HashString("FRAUDSTER");
-        static const int SESSION_HASH = HashingUtils::HashString("SESSION");
-        static const int SPEAKER_HASH = HashingUtils::HashString("SPEAKER");
-        static const int WATCHLIST_HASH = HashingUtils::HashString("WATCHLIST");
+        static constexpr uint32_t BATCH_JOB_HASH = ConstExprHashingUtils::HashString("BATCH_JOB");
+        static constexpr uint32_t COMPLIANCE_CONSENT_HASH = ConstExprHashingUtils::HashString("COMPLIANCE_CONSENT");
+        static constexpr uint32_t DOMAIN__HASH = ConstExprHashingUtils::HashString("DOMAIN");
+        static constexpr uint32_t FRAUDSTER_HASH = ConstExprHashingUtils::HashString("FRAUDSTER");
+        static constexpr uint32_t SESSION_HASH = ConstExprHashingUtils::HashString("SESSION");
+        static constexpr uint32_t SPEAKER_HASH = ConstExprHashingUtils::HashString("SPEAKER");
+        static constexpr uint32_t WATCHLIST_HASH = ConstExprHashingUtils::HashString("WATCHLIST");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BATCH_JOB_HASH)
           {
             return ResourceType::BATCH_JOB;

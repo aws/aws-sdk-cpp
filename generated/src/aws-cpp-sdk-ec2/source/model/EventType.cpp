@@ -20,15 +20,15 @@ namespace Aws
       namespace EventTypeMapper
       {
 
-        static const int instanceChange_HASH = HashingUtils::HashString("instanceChange");
-        static const int fleetRequestChange_HASH = HashingUtils::HashString("fleetRequestChange");
-        static const int error_HASH = HashingUtils::HashString("error");
-        static const int information_HASH = HashingUtils::HashString("information");
+        static constexpr uint32_t instanceChange_HASH = ConstExprHashingUtils::HashString("instanceChange");
+        static constexpr uint32_t fleetRequestChange_HASH = ConstExprHashingUtils::HashString("fleetRequestChange");
+        static constexpr uint32_t error_HASH = ConstExprHashingUtils::HashString("error");
+        static constexpr uint32_t information_HASH = ConstExprHashingUtils::HashString("information");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == instanceChange_HASH)
           {
             return EventType::instanceChange;

@@ -20,14 +20,14 @@ namespace Aws
       namespace WarmPoolStateMapper
       {
 
-        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
-        static const int Running_HASH = HashingUtils::HashString("Running");
-        static const int Hibernated_HASH = HashingUtils::HashString("Hibernated");
+        static constexpr uint32_t Stopped_HASH = ConstExprHashingUtils::HashString("Stopped");
+        static constexpr uint32_t Running_HASH = ConstExprHashingUtils::HashString("Running");
+        static constexpr uint32_t Hibernated_HASH = ConstExprHashingUtils::HashString("Hibernated");
 
 
         WarmPoolState GetWarmPoolStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Stopped_HASH)
           {
             return WarmPoolState::Stopped;

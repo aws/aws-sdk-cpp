@@ -20,14 +20,14 @@ namespace Aws
       namespace BurnInAlignmentMapper
       {
 
-        static const int CENTERED_HASH = HashingUtils::HashString("CENTERED");
-        static const int LEFT_HASH = HashingUtils::HashString("LEFT");
-        static const int SMART_HASH = HashingUtils::HashString("SMART");
+        static constexpr uint32_t CENTERED_HASH = ConstExprHashingUtils::HashString("CENTERED");
+        static constexpr uint32_t LEFT_HASH = ConstExprHashingUtils::HashString("LEFT");
+        static constexpr uint32_t SMART_HASH = ConstExprHashingUtils::HashString("SMART");
 
 
         BurnInAlignment GetBurnInAlignmentForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CENTERED_HASH)
           {
             return BurnInAlignment::CENTERED;

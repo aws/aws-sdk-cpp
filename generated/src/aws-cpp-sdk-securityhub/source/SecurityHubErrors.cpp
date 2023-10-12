@@ -68,16 +68,16 @@ template<> AWS_SECURITYHUB_API InvalidInputException SecurityHubError::GetModele
 namespace SecurityHubErrorMapper
 {
 
-static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
-static const int INVALID_ACCESS_HASH = HashingUtils::HashString("InvalidAccessException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
+static constexpr uint32_t INTERNAL_HASH = ConstExprHashingUtils::HashString("InternalException");
+static constexpr uint32_t INVALID_ACCESS_HASH = ConstExprHashingUtils::HashString("InvalidAccessException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t RESOURCE_CONFLICT_HASH = ConstExprHashingUtils::HashString("ResourceConflictException");
+static constexpr uint32_t INVALID_INPUT_HASH = ConstExprHashingUtils::HashString("InvalidInputException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == INTERNAL_HASH)
   {

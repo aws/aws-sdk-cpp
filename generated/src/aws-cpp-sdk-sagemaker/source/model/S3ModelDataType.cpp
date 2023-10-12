@@ -20,13 +20,13 @@ namespace Aws
       namespace S3ModelDataTypeMapper
       {
 
-        static const int S3Prefix_HASH = HashingUtils::HashString("S3Prefix");
-        static const int S3Object_HASH = HashingUtils::HashString("S3Object");
+        static constexpr uint32_t S3Prefix_HASH = ConstExprHashingUtils::HashString("S3Prefix");
+        static constexpr uint32_t S3Object_HASH = ConstExprHashingUtils::HashString("S3Object");
 
 
         S3ModelDataType GetS3ModelDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == S3Prefix_HASH)
           {
             return S3ModelDataType::S3Prefix;

@@ -20,20 +20,20 @@ namespace Aws
       namespace VirtualInterfaceStateMapper
       {
 
-        static const int confirming_HASH = HashingUtils::HashString("confirming");
-        static const int verifying_HASH = HashingUtils::HashString("verifying");
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int available_HASH = HashingUtils::HashString("available");
-        static const int down_HASH = HashingUtils::HashString("down");
-        static const int deleting_HASH = HashingUtils::HashString("deleting");
-        static const int deleted_HASH = HashingUtils::HashString("deleted");
-        static const int rejected_HASH = HashingUtils::HashString("rejected");
-        static const int unknown_HASH = HashingUtils::HashString("unknown");
+        static constexpr uint32_t confirming_HASH = ConstExprHashingUtils::HashString("confirming");
+        static constexpr uint32_t verifying_HASH = ConstExprHashingUtils::HashString("verifying");
+        static constexpr uint32_t pending_HASH = ConstExprHashingUtils::HashString("pending");
+        static constexpr uint32_t available_HASH = ConstExprHashingUtils::HashString("available");
+        static constexpr uint32_t down_HASH = ConstExprHashingUtils::HashString("down");
+        static constexpr uint32_t deleting_HASH = ConstExprHashingUtils::HashString("deleting");
+        static constexpr uint32_t deleted_HASH = ConstExprHashingUtils::HashString("deleted");
+        static constexpr uint32_t rejected_HASH = ConstExprHashingUtils::HashString("rejected");
+        static constexpr uint32_t unknown_HASH = ConstExprHashingUtils::HashString("unknown");
 
 
         VirtualInterfaceState GetVirtualInterfaceStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == confirming_HASH)
           {
             return VirtualInterfaceState::confirming;

@@ -20,13 +20,13 @@ namespace Aws
       namespace RecommendationJobSupportedEndpointTypeMapper
       {
 
-        static const int RealTime_HASH = HashingUtils::HashString("RealTime");
-        static const int Serverless_HASH = HashingUtils::HashString("Serverless");
+        static constexpr uint32_t RealTime_HASH = ConstExprHashingUtils::HashString("RealTime");
+        static constexpr uint32_t Serverless_HASH = ConstExprHashingUtils::HashString("Serverless");
 
 
         RecommendationJobSupportedEndpointType GetRecommendationJobSupportedEndpointTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RealTime_HASH)
           {
             return RecommendationJobSupportedEndpointType::RealTime;

@@ -20,12 +20,12 @@ namespace Aws
       namespace RecordTypeMapper
       {
 
-        static const int CNAME_HASH = HashingUtils::HashString("CNAME");
+        static constexpr uint32_t CNAME_HASH = ConstExprHashingUtils::HashString("CNAME");
 
 
         RecordType GetRecordTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CNAME_HASH)
           {
             return RecordType::CNAME;

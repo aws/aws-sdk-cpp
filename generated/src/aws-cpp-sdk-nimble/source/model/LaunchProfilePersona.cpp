@@ -20,12 +20,12 @@ namespace Aws
       namespace LaunchProfilePersonaMapper
       {
 
-        static const int USER_HASH = HashingUtils::HashString("USER");
+        static constexpr uint32_t USER_HASH = ConstExprHashingUtils::HashString("USER");
 
 
         LaunchProfilePersona GetLaunchProfilePersonaForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USER_HASH)
           {
             return LaunchProfilePersona::USER;

@@ -20,14 +20,14 @@ namespace Aws
       namespace NotificationSeverityLevelMapper
       {
 
-        static const int none_HASH = HashingUtils::HashString("none");
-        static const int all_HASH = HashingUtils::HashString("all");
-        static const int high_HASH = HashingUtils::HashString("high");
+        static constexpr uint32_t none_HASH = ConstExprHashingUtils::HashString("none");
+        static constexpr uint32_t all_HASH = ConstExprHashingUtils::HashString("all");
+        static constexpr uint32_t high_HASH = ConstExprHashingUtils::HashString("high");
 
 
         NotificationSeverityLevel GetNotificationSeverityLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == none_HASH)
           {
             return NotificationSeverityLevel::none;

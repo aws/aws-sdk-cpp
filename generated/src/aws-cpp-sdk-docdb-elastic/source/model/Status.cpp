@@ -20,20 +20,20 @@ namespace Aws
       namespace StatusMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int VPC_ENDPOINT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("VPC_ENDPOINT_LIMIT_EXCEEDED");
-        static const int IP_ADDRESS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("IP_ADDRESS_LIMIT_EXCEEDED");
-        static const int INVALID_SECURITY_GROUP_ID_HASH = HashingUtils::HashString("INVALID_SECURITY_GROUP_ID");
-        static const int INVALID_SUBNET_ID_HASH = HashingUtils::HashString("INVALID_SUBNET_ID");
-        static const int INACCESSIBLE_ENCRYPTION_CREDS_HASH = HashingUtils::HashString("INACCESSIBLE_ENCRYPTION_CREDS");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
+        static constexpr uint32_t VPC_ENDPOINT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("VPC_ENDPOINT_LIMIT_EXCEEDED");
+        static constexpr uint32_t IP_ADDRESS_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("IP_ADDRESS_LIMIT_EXCEEDED");
+        static constexpr uint32_t INVALID_SECURITY_GROUP_ID_HASH = ConstExprHashingUtils::HashString("INVALID_SECURITY_GROUP_ID");
+        static constexpr uint32_t INVALID_SUBNET_ID_HASH = ConstExprHashingUtils::HashString("INVALID_SUBNET_ID");
+        static constexpr uint32_t INACCESSIBLE_ENCRYPTION_CREDS_HASH = ConstExprHashingUtils::HashString("INACCESSIBLE_ENCRYPTION_CREDS");
 
 
         Status GetStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return Status::CREATING;

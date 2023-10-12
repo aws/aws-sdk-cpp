@@ -20,14 +20,14 @@ namespace Aws
       namespace LabelRatingMapper
       {
 
-        static const int ANOMALY_HASH = HashingUtils::HashString("ANOMALY");
-        static const int NO_ANOMALY_HASH = HashingUtils::HashString("NO_ANOMALY");
-        static const int NEUTRAL_HASH = HashingUtils::HashString("NEUTRAL");
+        static constexpr uint32_t ANOMALY_HASH = ConstExprHashingUtils::HashString("ANOMALY");
+        static constexpr uint32_t NO_ANOMALY_HASH = ConstExprHashingUtils::HashString("NO_ANOMALY");
+        static constexpr uint32_t NEUTRAL_HASH = ConstExprHashingUtils::HashString("NEUTRAL");
 
 
         LabelRating GetLabelRatingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ANOMALY_HASH)
           {
             return LabelRating::ANOMALY;

@@ -20,21 +20,21 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int account_HASH = HashingUtils::HashString("account");
-        static const int phone_number_HASH = HashingUtils::HashString("phone-number");
-        static const int sender_id_HASH = HashingUtils::HashString("sender-id");
-        static const int pool_HASH = HashingUtils::HashString("pool");
-        static const int configuration_set_HASH = HashingUtils::HashString("configuration-set");
-        static const int opt_out_list_HASH = HashingUtils::HashString("opt-out-list");
-        static const int event_destination_HASH = HashingUtils::HashString("event-destination");
-        static const int keyword_HASH = HashingUtils::HashString("keyword");
-        static const int opted_out_number_HASH = HashingUtils::HashString("opted-out-number");
-        static const int registration_HASH = HashingUtils::HashString("registration");
+        static constexpr uint32_t account_HASH = ConstExprHashingUtils::HashString("account");
+        static constexpr uint32_t phone_number_HASH = ConstExprHashingUtils::HashString("phone-number");
+        static constexpr uint32_t sender_id_HASH = ConstExprHashingUtils::HashString("sender-id");
+        static constexpr uint32_t pool_HASH = ConstExprHashingUtils::HashString("pool");
+        static constexpr uint32_t configuration_set_HASH = ConstExprHashingUtils::HashString("configuration-set");
+        static constexpr uint32_t opt_out_list_HASH = ConstExprHashingUtils::HashString("opt-out-list");
+        static constexpr uint32_t event_destination_HASH = ConstExprHashingUtils::HashString("event-destination");
+        static constexpr uint32_t keyword_HASH = ConstExprHashingUtils::HashString("keyword");
+        static constexpr uint32_t opted_out_number_HASH = ConstExprHashingUtils::HashString("opted-out-number");
+        static constexpr uint32_t registration_HASH = ConstExprHashingUtils::HashString("registration");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == account_HASH)
           {
             return ResourceType::account;

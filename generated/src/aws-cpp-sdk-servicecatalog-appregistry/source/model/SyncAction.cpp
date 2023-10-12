@@ -20,13 +20,13 @@ namespace Aws
       namespace SyncActionMapper
       {
 
-        static const int START_SYNC_HASH = HashingUtils::HashString("START_SYNC");
-        static const int NO_ACTION_HASH = HashingUtils::HashString("NO_ACTION");
+        static constexpr uint32_t START_SYNC_HASH = ConstExprHashingUtils::HashString("START_SYNC");
+        static constexpr uint32_t NO_ACTION_HASH = ConstExprHashingUtils::HashString("NO_ACTION");
 
 
         SyncAction GetSyncActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == START_SYNC_HASH)
           {
             return SyncAction::START_SYNC;

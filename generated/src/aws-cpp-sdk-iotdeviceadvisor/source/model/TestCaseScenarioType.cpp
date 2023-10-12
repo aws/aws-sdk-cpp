@@ -20,13 +20,13 @@ namespace Aws
       namespace TestCaseScenarioTypeMapper
       {
 
-        static const int Advanced_HASH = HashingUtils::HashString("Advanced");
-        static const int Basic_HASH = HashingUtils::HashString("Basic");
+        static constexpr uint32_t Advanced_HASH = ConstExprHashingUtils::HashString("Advanced");
+        static constexpr uint32_t Basic_HASH = ConstExprHashingUtils::HashString("Basic");
 
 
         TestCaseScenarioType GetTestCaseScenarioTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Advanced_HASH)
           {
             return TestCaseScenarioType::Advanced;

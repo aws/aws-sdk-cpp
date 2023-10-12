@@ -20,14 +20,14 @@ namespace Aws
       namespace TrafficRoutingTypeMapper
       {
 
-        static const int TimeBasedCanary_HASH = HashingUtils::HashString("TimeBasedCanary");
-        static const int TimeBasedLinear_HASH = HashingUtils::HashString("TimeBasedLinear");
-        static const int AllAtOnce_HASH = HashingUtils::HashString("AllAtOnce");
+        static constexpr uint32_t TimeBasedCanary_HASH = ConstExprHashingUtils::HashString("TimeBasedCanary");
+        static constexpr uint32_t TimeBasedLinear_HASH = ConstExprHashingUtils::HashString("TimeBasedLinear");
+        static constexpr uint32_t AllAtOnce_HASH = ConstExprHashingUtils::HashString("AllAtOnce");
 
 
         TrafficRoutingType GetTrafficRoutingTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TimeBasedCanary_HASH)
           {
             return TrafficRoutingType::TimeBasedCanary;

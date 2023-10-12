@@ -20,13 +20,13 @@ namespace Aws
       namespace DolbyVisionProfileMapper
       {
 
-        static const int PROFILE_5_HASH = HashingUtils::HashString("PROFILE_5");
-        static const int PROFILE_8_1_HASH = HashingUtils::HashString("PROFILE_8_1");
+        static constexpr uint32_t PROFILE_5_HASH = ConstExprHashingUtils::HashString("PROFILE_5");
+        static constexpr uint32_t PROFILE_8_1_HASH = ConstExprHashingUtils::HashString("PROFILE_8_1");
 
 
         DolbyVisionProfile GetDolbyVisionProfileForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROFILE_5_HASH)
           {
             return DolbyVisionProfile::PROFILE_5;

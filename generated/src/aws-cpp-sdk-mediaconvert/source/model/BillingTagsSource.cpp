@@ -20,15 +20,15 @@ namespace Aws
       namespace BillingTagsSourceMapper
       {
 
-        static const int QUEUE_HASH = HashingUtils::HashString("QUEUE");
-        static const int PRESET_HASH = HashingUtils::HashString("PRESET");
-        static const int JOB_TEMPLATE_HASH = HashingUtils::HashString("JOB_TEMPLATE");
-        static const int JOB_HASH = HashingUtils::HashString("JOB");
+        static constexpr uint32_t QUEUE_HASH = ConstExprHashingUtils::HashString("QUEUE");
+        static constexpr uint32_t PRESET_HASH = ConstExprHashingUtils::HashString("PRESET");
+        static constexpr uint32_t JOB_TEMPLATE_HASH = ConstExprHashingUtils::HashString("JOB_TEMPLATE");
+        static constexpr uint32_t JOB_HASH = ConstExprHashingUtils::HashString("JOB");
 
 
         BillingTagsSource GetBillingTagsSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUEUE_HASH)
           {
             return BillingTagsSource::QUEUE;

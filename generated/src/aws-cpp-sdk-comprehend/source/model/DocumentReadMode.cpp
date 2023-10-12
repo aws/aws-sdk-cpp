@@ -20,13 +20,13 @@ namespace Aws
       namespace DocumentReadModeMapper
       {
 
-        static const int SERVICE_DEFAULT_HASH = HashingUtils::HashString("SERVICE_DEFAULT");
-        static const int FORCE_DOCUMENT_READ_ACTION_HASH = HashingUtils::HashString("FORCE_DOCUMENT_READ_ACTION");
+        static constexpr uint32_t SERVICE_DEFAULT_HASH = ConstExprHashingUtils::HashString("SERVICE_DEFAULT");
+        static constexpr uint32_t FORCE_DOCUMENT_READ_ACTION_HASH = ConstExprHashingUtils::HashString("FORCE_DOCUMENT_READ_ACTION");
 
 
         DocumentReadMode GetDocumentReadModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SERVICE_DEFAULT_HASH)
           {
             return DocumentReadMode::SERVICE_DEFAULT;

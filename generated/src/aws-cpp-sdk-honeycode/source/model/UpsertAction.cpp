@@ -20,13 +20,13 @@ namespace Aws
       namespace UpsertActionMapper
       {
 
-        static const int UPDATED_HASH = HashingUtils::HashString("UPDATED");
-        static const int APPENDED_HASH = HashingUtils::HashString("APPENDED");
+        static constexpr uint32_t UPDATED_HASH = ConstExprHashingUtils::HashString("UPDATED");
+        static constexpr uint32_t APPENDED_HASH = ConstExprHashingUtils::HashString("APPENDED");
 
 
         UpsertAction GetUpsertActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UPDATED_HASH)
           {
             return UpsertAction::UPDATED;

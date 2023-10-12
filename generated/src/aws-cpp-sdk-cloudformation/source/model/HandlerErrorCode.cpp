@@ -20,30 +20,30 @@ namespace Aws
       namespace HandlerErrorCodeMapper
       {
 
-        static const int NotUpdatable_HASH = HashingUtils::HashString("NotUpdatable");
-        static const int InvalidRequest_HASH = HashingUtils::HashString("InvalidRequest");
-        static const int AccessDenied_HASH = HashingUtils::HashString("AccessDenied");
-        static const int InvalidCredentials_HASH = HashingUtils::HashString("InvalidCredentials");
-        static const int AlreadyExists_HASH = HashingUtils::HashString("AlreadyExists");
-        static const int NotFound_HASH = HashingUtils::HashString("NotFound");
-        static const int ResourceConflict_HASH = HashingUtils::HashString("ResourceConflict");
-        static const int Throttling_HASH = HashingUtils::HashString("Throttling");
-        static const int ServiceLimitExceeded_HASH = HashingUtils::HashString("ServiceLimitExceeded");
-        static const int NotStabilized_HASH = HashingUtils::HashString("NotStabilized");
-        static const int GeneralServiceException_HASH = HashingUtils::HashString("GeneralServiceException");
-        static const int ServiceInternalError_HASH = HashingUtils::HashString("ServiceInternalError");
-        static const int NetworkFailure_HASH = HashingUtils::HashString("NetworkFailure");
-        static const int InternalFailure_HASH = HashingUtils::HashString("InternalFailure");
-        static const int InvalidTypeConfiguration_HASH = HashingUtils::HashString("InvalidTypeConfiguration");
-        static const int HandlerInternalFailure_HASH = HashingUtils::HashString("HandlerInternalFailure");
-        static const int NonCompliant_HASH = HashingUtils::HashString("NonCompliant");
-        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
-        static const int UnsupportedTarget_HASH = HashingUtils::HashString("UnsupportedTarget");
+        static constexpr uint32_t NotUpdatable_HASH = ConstExprHashingUtils::HashString("NotUpdatable");
+        static constexpr uint32_t InvalidRequest_HASH = ConstExprHashingUtils::HashString("InvalidRequest");
+        static constexpr uint32_t AccessDenied_HASH = ConstExprHashingUtils::HashString("AccessDenied");
+        static constexpr uint32_t InvalidCredentials_HASH = ConstExprHashingUtils::HashString("InvalidCredentials");
+        static constexpr uint32_t AlreadyExists_HASH = ConstExprHashingUtils::HashString("AlreadyExists");
+        static constexpr uint32_t NotFound_HASH = ConstExprHashingUtils::HashString("NotFound");
+        static constexpr uint32_t ResourceConflict_HASH = ConstExprHashingUtils::HashString("ResourceConflict");
+        static constexpr uint32_t Throttling_HASH = ConstExprHashingUtils::HashString("Throttling");
+        static constexpr uint32_t ServiceLimitExceeded_HASH = ConstExprHashingUtils::HashString("ServiceLimitExceeded");
+        static constexpr uint32_t NotStabilized_HASH = ConstExprHashingUtils::HashString("NotStabilized");
+        static constexpr uint32_t GeneralServiceException_HASH = ConstExprHashingUtils::HashString("GeneralServiceException");
+        static constexpr uint32_t ServiceInternalError_HASH = ConstExprHashingUtils::HashString("ServiceInternalError");
+        static constexpr uint32_t NetworkFailure_HASH = ConstExprHashingUtils::HashString("NetworkFailure");
+        static constexpr uint32_t InternalFailure_HASH = ConstExprHashingUtils::HashString("InternalFailure");
+        static constexpr uint32_t InvalidTypeConfiguration_HASH = ConstExprHashingUtils::HashString("InvalidTypeConfiguration");
+        static constexpr uint32_t HandlerInternalFailure_HASH = ConstExprHashingUtils::HashString("HandlerInternalFailure");
+        static constexpr uint32_t NonCompliant_HASH = ConstExprHashingUtils::HashString("NonCompliant");
+        static constexpr uint32_t Unknown_HASH = ConstExprHashingUtils::HashString("Unknown");
+        static constexpr uint32_t UnsupportedTarget_HASH = ConstExprHashingUtils::HashString("UnsupportedTarget");
 
 
         HandlerErrorCode GetHandlerErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NotUpdatable_HASH)
           {
             return HandlerErrorCode::NotUpdatable;

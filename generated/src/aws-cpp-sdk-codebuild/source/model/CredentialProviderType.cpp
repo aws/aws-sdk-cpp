@@ -20,12 +20,12 @@ namespace Aws
       namespace CredentialProviderTypeMapper
       {
 
-        static const int SECRETS_MANAGER_HASH = HashingUtils::HashString("SECRETS_MANAGER");
+        static constexpr uint32_t SECRETS_MANAGER_HASH = ConstExprHashingUtils::HashString("SECRETS_MANAGER");
 
 
         CredentialProviderType GetCredentialProviderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SECRETS_MANAGER_HASH)
           {
             return CredentialProviderType::SECRETS_MANAGER;

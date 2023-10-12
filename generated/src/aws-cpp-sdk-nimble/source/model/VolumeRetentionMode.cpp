@@ -20,13 +20,13 @@ namespace Aws
       namespace VolumeRetentionModeMapper
       {
 
-        static const int RETAIN_HASH = HashingUtils::HashString("RETAIN");
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
+        static constexpr uint32_t RETAIN_HASH = ConstExprHashingUtils::HashString("RETAIN");
+        static constexpr uint32_t DELETE__HASH = ConstExprHashingUtils::HashString("DELETE");
 
 
         VolumeRetentionMode GetVolumeRetentionModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RETAIN_HASH)
           {
             return VolumeRetentionMode::RETAIN;

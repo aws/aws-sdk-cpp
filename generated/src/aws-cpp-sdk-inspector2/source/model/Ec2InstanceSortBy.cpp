@@ -20,15 +20,15 @@ namespace Aws
       namespace Ec2InstanceSortByMapper
       {
 
-        static const int NETWORK_FINDINGS_HASH = HashingUtils::HashString("NETWORK_FINDINGS");
-        static const int CRITICAL_HASH = HashingUtils::HashString("CRITICAL");
-        static const int HIGH_HASH = HashingUtils::HashString("HIGH");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static constexpr uint32_t NETWORK_FINDINGS_HASH = ConstExprHashingUtils::HashString("NETWORK_FINDINGS");
+        static constexpr uint32_t CRITICAL_HASH = ConstExprHashingUtils::HashString("CRITICAL");
+        static constexpr uint32_t HIGH_HASH = ConstExprHashingUtils::HashString("HIGH");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
 
 
         Ec2InstanceSortBy GetEc2InstanceSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NETWORK_FINDINGS_HASH)
           {
             return Ec2InstanceSortBy::NETWORK_FINDINGS;

@@ -20,12 +20,12 @@ namespace Aws
       namespace TableFieldIconSetTypeMapper
       {
 
-        static const int LINK_HASH = HashingUtils::HashString("LINK");
+        static constexpr uint32_t LINK_HASH = ConstExprHashingUtils::HashString("LINK");
 
 
         TableFieldIconSetType GetTableFieldIconSetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LINK_HASH)
           {
             return TableFieldIconSetType::LINK;

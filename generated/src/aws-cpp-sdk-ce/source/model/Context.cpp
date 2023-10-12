@@ -20,14 +20,14 @@ namespace Aws
       namespace ContextMapper
       {
 
-        static const int COST_AND_USAGE_HASH = HashingUtils::HashString("COST_AND_USAGE");
-        static const int RESERVATIONS_HASH = HashingUtils::HashString("RESERVATIONS");
-        static const int SAVINGS_PLANS_HASH = HashingUtils::HashString("SAVINGS_PLANS");
+        static constexpr uint32_t COST_AND_USAGE_HASH = ConstExprHashingUtils::HashString("COST_AND_USAGE");
+        static constexpr uint32_t RESERVATIONS_HASH = ConstExprHashingUtils::HashString("RESERVATIONS");
+        static constexpr uint32_t SAVINGS_PLANS_HASH = ConstExprHashingUtils::HashString("SAVINGS_PLANS");
 
 
         Context GetContextForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == COST_AND_USAGE_HASH)
           {
             return Context::COST_AND_USAGE;

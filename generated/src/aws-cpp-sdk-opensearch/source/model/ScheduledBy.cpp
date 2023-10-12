@@ -20,13 +20,13 @@ namespace Aws
       namespace ScheduledByMapper
       {
 
-        static const int CUSTOMER_HASH = HashingUtils::HashString("CUSTOMER");
-        static const int SYSTEM_HASH = HashingUtils::HashString("SYSTEM");
+        static constexpr uint32_t CUSTOMER_HASH = ConstExprHashingUtils::HashString("CUSTOMER");
+        static constexpr uint32_t SYSTEM_HASH = ConstExprHashingUtils::HashString("SYSTEM");
 
 
         ScheduledBy GetScheduledByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CUSTOMER_HASH)
           {
             return ScheduledBy::CUSTOMER;

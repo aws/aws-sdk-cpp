@@ -20,35 +20,35 @@ namespace Aws
       namespace ConnectorTypeMapper
       {
 
-        static const int Salesforce_HASH = HashingUtils::HashString("Salesforce");
-        static const int Singular_HASH = HashingUtils::HashString("Singular");
-        static const int Slack_HASH = HashingUtils::HashString("Slack");
-        static const int Redshift_HASH = HashingUtils::HashString("Redshift");
-        static const int S3_HASH = HashingUtils::HashString("S3");
-        static const int Marketo_HASH = HashingUtils::HashString("Marketo");
-        static const int Googleanalytics_HASH = HashingUtils::HashString("Googleanalytics");
-        static const int Zendesk_HASH = HashingUtils::HashString("Zendesk");
-        static const int Servicenow_HASH = HashingUtils::HashString("Servicenow");
-        static const int Datadog_HASH = HashingUtils::HashString("Datadog");
-        static const int Trendmicro_HASH = HashingUtils::HashString("Trendmicro");
-        static const int Snowflake_HASH = HashingUtils::HashString("Snowflake");
-        static const int Dynatrace_HASH = HashingUtils::HashString("Dynatrace");
-        static const int Infornexus_HASH = HashingUtils::HashString("Infornexus");
-        static const int Amplitude_HASH = HashingUtils::HashString("Amplitude");
-        static const int Veeva_HASH = HashingUtils::HashString("Veeva");
-        static const int EventBridge_HASH = HashingUtils::HashString("EventBridge");
-        static const int LookoutMetrics_HASH = HashingUtils::HashString("LookoutMetrics");
-        static const int Upsolver_HASH = HashingUtils::HashString("Upsolver");
-        static const int Honeycode_HASH = HashingUtils::HashString("Honeycode");
-        static const int CustomerProfiles_HASH = HashingUtils::HashString("CustomerProfiles");
-        static const int SAPOData_HASH = HashingUtils::HashString("SAPOData");
-        static const int CustomConnector_HASH = HashingUtils::HashString("CustomConnector");
-        static const int Pardot_HASH = HashingUtils::HashString("Pardot");
+        static constexpr uint32_t Salesforce_HASH = ConstExprHashingUtils::HashString("Salesforce");
+        static constexpr uint32_t Singular_HASH = ConstExprHashingUtils::HashString("Singular");
+        static constexpr uint32_t Slack_HASH = ConstExprHashingUtils::HashString("Slack");
+        static constexpr uint32_t Redshift_HASH = ConstExprHashingUtils::HashString("Redshift");
+        static constexpr uint32_t S3_HASH = ConstExprHashingUtils::HashString("S3");
+        static constexpr uint32_t Marketo_HASH = ConstExprHashingUtils::HashString("Marketo");
+        static constexpr uint32_t Googleanalytics_HASH = ConstExprHashingUtils::HashString("Googleanalytics");
+        static constexpr uint32_t Zendesk_HASH = ConstExprHashingUtils::HashString("Zendesk");
+        static constexpr uint32_t Servicenow_HASH = ConstExprHashingUtils::HashString("Servicenow");
+        static constexpr uint32_t Datadog_HASH = ConstExprHashingUtils::HashString("Datadog");
+        static constexpr uint32_t Trendmicro_HASH = ConstExprHashingUtils::HashString("Trendmicro");
+        static constexpr uint32_t Snowflake_HASH = ConstExprHashingUtils::HashString("Snowflake");
+        static constexpr uint32_t Dynatrace_HASH = ConstExprHashingUtils::HashString("Dynatrace");
+        static constexpr uint32_t Infornexus_HASH = ConstExprHashingUtils::HashString("Infornexus");
+        static constexpr uint32_t Amplitude_HASH = ConstExprHashingUtils::HashString("Amplitude");
+        static constexpr uint32_t Veeva_HASH = ConstExprHashingUtils::HashString("Veeva");
+        static constexpr uint32_t EventBridge_HASH = ConstExprHashingUtils::HashString("EventBridge");
+        static constexpr uint32_t LookoutMetrics_HASH = ConstExprHashingUtils::HashString("LookoutMetrics");
+        static constexpr uint32_t Upsolver_HASH = ConstExprHashingUtils::HashString("Upsolver");
+        static constexpr uint32_t Honeycode_HASH = ConstExprHashingUtils::HashString("Honeycode");
+        static constexpr uint32_t CustomerProfiles_HASH = ConstExprHashingUtils::HashString("CustomerProfiles");
+        static constexpr uint32_t SAPOData_HASH = ConstExprHashingUtils::HashString("SAPOData");
+        static constexpr uint32_t CustomConnector_HASH = ConstExprHashingUtils::HashString("CustomConnector");
+        static constexpr uint32_t Pardot_HASH = ConstExprHashingUtils::HashString("Pardot");
 
 
         ConnectorType GetConnectorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Salesforce_HASH)
           {
             return ConnectorType::Salesforce;

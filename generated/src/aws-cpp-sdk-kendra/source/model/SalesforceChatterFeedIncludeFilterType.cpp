@@ -20,13 +20,13 @@ namespace Aws
       namespace SalesforceChatterFeedIncludeFilterTypeMapper
       {
 
-        static const int ACTIVE_USER_HASH = HashingUtils::HashString("ACTIVE_USER");
-        static const int STANDARD_USER_HASH = HashingUtils::HashString("STANDARD_USER");
+        static constexpr uint32_t ACTIVE_USER_HASH = ConstExprHashingUtils::HashString("ACTIVE_USER");
+        static constexpr uint32_t STANDARD_USER_HASH = ConstExprHashingUtils::HashString("STANDARD_USER");
 
 
         SalesforceChatterFeedIncludeFilterType GetSalesforceChatterFeedIncludeFilterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_USER_HASH)
           {
             return SalesforceChatterFeedIncludeFilterType::ACTIVE_USER;

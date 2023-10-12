@@ -20,13 +20,13 @@ namespace Aws
       namespace HECEndpointTypeMapper
       {
 
-        static const int Raw_HASH = HashingUtils::HashString("Raw");
-        static const int Event_HASH = HashingUtils::HashString("Event");
+        static constexpr uint32_t Raw_HASH = ConstExprHashingUtils::HashString("Raw");
+        static constexpr uint32_t Event_HASH = ConstExprHashingUtils::HashString("Event");
 
 
         HECEndpointType GetHECEndpointTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Raw_HASH)
           {
             return HECEndpointType::Raw;

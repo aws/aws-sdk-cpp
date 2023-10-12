@@ -20,14 +20,14 @@ namespace Aws
       namespace DataSourceTypeMapper
       {
 
-        static const int Prefix_HASH = HashingUtils::HashString("Prefix");
-        static const int Archive_HASH = HashingUtils::HashString("Archive");
-        static const int File_HASH = HashingUtils::HashString("File");
+        static constexpr uint32_t Prefix_HASH = ConstExprHashingUtils::HashString("Prefix");
+        static constexpr uint32_t Archive_HASH = ConstExprHashingUtils::HashString("Archive");
+        static constexpr uint32_t File_HASH = ConstExprHashingUtils::HashString("File");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Prefix_HASH)
           {
             return DataSourceType::Prefix;

@@ -20,28 +20,28 @@ namespace Aws
       namespace DeviceStatusDetailCodeMapper
       {
 
-        static const int DEVICE_SOFTWARE_UPDATE_NEEDED_HASH = HashingUtils::HashString("DEVICE_SOFTWARE_UPDATE_NEEDED");
-        static const int DEVICE_WAS_OFFLINE_HASH = HashingUtils::HashString("DEVICE_WAS_OFFLINE");
-        static const int CREDENTIALS_ACCESS_FAILURE_HASH = HashingUtils::HashString("CREDENTIALS_ACCESS_FAILURE");
-        static const int TLS_VERSION_MISMATCH_HASH = HashingUtils::HashString("TLS_VERSION_MISMATCH");
-        static const int ASSOCIATION_REJECTION_HASH = HashingUtils::HashString("ASSOCIATION_REJECTION");
-        static const int AUTHENTICATION_FAILURE_HASH = HashingUtils::HashString("AUTHENTICATION_FAILURE");
-        static const int DHCP_FAILURE_HASH = HashingUtils::HashString("DHCP_FAILURE");
-        static const int INTERNET_UNAVAILABLE_HASH = HashingUtils::HashString("INTERNET_UNAVAILABLE");
-        static const int DNS_FAILURE_HASH = HashingUtils::HashString("DNS_FAILURE");
-        static const int UNKNOWN_FAILURE_HASH = HashingUtils::HashString("UNKNOWN_FAILURE");
-        static const int CERTIFICATE_ISSUING_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CERTIFICATE_ISSUING_LIMIT_EXCEEDED");
-        static const int INVALID_CERTIFICATE_AUTHORITY_HASH = HashingUtils::HashString("INVALID_CERTIFICATE_AUTHORITY");
-        static const int NETWORK_PROFILE_NOT_FOUND_HASH = HashingUtils::HashString("NETWORK_PROFILE_NOT_FOUND");
-        static const int INVALID_PASSWORD_STATE_HASH = HashingUtils::HashString("INVALID_PASSWORD_STATE");
-        static const int PASSWORD_NOT_FOUND_HASH = HashingUtils::HashString("PASSWORD_NOT_FOUND");
-        static const int PASSWORD_MANAGER_ACCESS_DENIED_HASH = HashingUtils::HashString("PASSWORD_MANAGER_ACCESS_DENIED");
-        static const int CERTIFICATE_AUTHORITY_ACCESS_DENIED_HASH = HashingUtils::HashString("CERTIFICATE_AUTHORITY_ACCESS_DENIED");
+        static constexpr uint32_t DEVICE_SOFTWARE_UPDATE_NEEDED_HASH = ConstExprHashingUtils::HashString("DEVICE_SOFTWARE_UPDATE_NEEDED");
+        static constexpr uint32_t DEVICE_WAS_OFFLINE_HASH = ConstExprHashingUtils::HashString("DEVICE_WAS_OFFLINE");
+        static constexpr uint32_t CREDENTIALS_ACCESS_FAILURE_HASH = ConstExprHashingUtils::HashString("CREDENTIALS_ACCESS_FAILURE");
+        static constexpr uint32_t TLS_VERSION_MISMATCH_HASH = ConstExprHashingUtils::HashString("TLS_VERSION_MISMATCH");
+        static constexpr uint32_t ASSOCIATION_REJECTION_HASH = ConstExprHashingUtils::HashString("ASSOCIATION_REJECTION");
+        static constexpr uint32_t AUTHENTICATION_FAILURE_HASH = ConstExprHashingUtils::HashString("AUTHENTICATION_FAILURE");
+        static constexpr uint32_t DHCP_FAILURE_HASH = ConstExprHashingUtils::HashString("DHCP_FAILURE");
+        static constexpr uint32_t INTERNET_UNAVAILABLE_HASH = ConstExprHashingUtils::HashString("INTERNET_UNAVAILABLE");
+        static constexpr uint32_t DNS_FAILURE_HASH = ConstExprHashingUtils::HashString("DNS_FAILURE");
+        static constexpr uint32_t UNKNOWN_FAILURE_HASH = ConstExprHashingUtils::HashString("UNKNOWN_FAILURE");
+        static constexpr uint32_t CERTIFICATE_ISSUING_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("CERTIFICATE_ISSUING_LIMIT_EXCEEDED");
+        static constexpr uint32_t INVALID_CERTIFICATE_AUTHORITY_HASH = ConstExprHashingUtils::HashString("INVALID_CERTIFICATE_AUTHORITY");
+        static constexpr uint32_t NETWORK_PROFILE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("NETWORK_PROFILE_NOT_FOUND");
+        static constexpr uint32_t INVALID_PASSWORD_STATE_HASH = ConstExprHashingUtils::HashString("INVALID_PASSWORD_STATE");
+        static constexpr uint32_t PASSWORD_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("PASSWORD_NOT_FOUND");
+        static constexpr uint32_t PASSWORD_MANAGER_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("PASSWORD_MANAGER_ACCESS_DENIED");
+        static constexpr uint32_t CERTIFICATE_AUTHORITY_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("CERTIFICATE_AUTHORITY_ACCESS_DENIED");
 
 
         DeviceStatusDetailCode GetDeviceStatusDetailCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEVICE_SOFTWARE_UPDATE_NEEDED_HASH)
           {
             return DeviceStatusDetailCode::DEVICE_SOFTWARE_UPDATE_NEEDED;

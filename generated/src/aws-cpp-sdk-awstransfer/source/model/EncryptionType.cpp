@@ -20,12 +20,12 @@ namespace Aws
       namespace EncryptionTypeMapper
       {
 
-        static const int PGP_HASH = HashingUtils::HashString("PGP");
+        static constexpr uint32_t PGP_HASH = ConstExprHashingUtils::HashString("PGP");
 
 
         EncryptionType GetEncryptionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PGP_HASH)
           {
             return EncryptionType::PGP;

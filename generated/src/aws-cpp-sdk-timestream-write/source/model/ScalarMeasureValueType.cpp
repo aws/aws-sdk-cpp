@@ -20,16 +20,16 @@ namespace Aws
       namespace ScalarMeasureValueTypeMapper
       {
 
-        static const int DOUBLE_HASH = HashingUtils::HashString("DOUBLE");
-        static const int BIGINT_HASH = HashingUtils::HashString("BIGINT");
-        static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
-        static const int VARCHAR_HASH = HashingUtils::HashString("VARCHAR");
-        static const int TIMESTAMP_HASH = HashingUtils::HashString("TIMESTAMP");
+        static constexpr uint32_t DOUBLE_HASH = ConstExprHashingUtils::HashString("DOUBLE");
+        static constexpr uint32_t BIGINT_HASH = ConstExprHashingUtils::HashString("BIGINT");
+        static constexpr uint32_t BOOLEAN_HASH = ConstExprHashingUtils::HashString("BOOLEAN");
+        static constexpr uint32_t VARCHAR_HASH = ConstExprHashingUtils::HashString("VARCHAR");
+        static constexpr uint32_t TIMESTAMP_HASH = ConstExprHashingUtils::HashString("TIMESTAMP");
 
 
         ScalarMeasureValueType GetScalarMeasureValueTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DOUBLE_HASH)
           {
             return ScalarMeasureValueType::DOUBLE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace ReviewPolicyLevelMapper
       {
 
-        static const int Assignment_HASH = HashingUtils::HashString("Assignment");
-        static const int HIT_HASH = HashingUtils::HashString("HIT");
+        static constexpr uint32_t Assignment_HASH = ConstExprHashingUtils::HashString("Assignment");
+        static constexpr uint32_t HIT_HASH = ConstExprHashingUtils::HashString("HIT");
 
 
         ReviewPolicyLevel GetReviewPolicyLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Assignment_HASH)
           {
             return ReviewPolicyLevel::Assignment;

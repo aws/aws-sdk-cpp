@@ -20,16 +20,16 @@ namespace Aws
       namespace ProcessorTypeMapper
       {
 
-        static const int RecordDeAggregation_HASH = HashingUtils::HashString("RecordDeAggregation");
-        static const int Decompression_HASH = HashingUtils::HashString("Decompression");
-        static const int Lambda_HASH = HashingUtils::HashString("Lambda");
-        static const int MetadataExtraction_HASH = HashingUtils::HashString("MetadataExtraction");
-        static const int AppendDelimiterToRecord_HASH = HashingUtils::HashString("AppendDelimiterToRecord");
+        static constexpr uint32_t RecordDeAggregation_HASH = ConstExprHashingUtils::HashString("RecordDeAggregation");
+        static constexpr uint32_t Decompression_HASH = ConstExprHashingUtils::HashString("Decompression");
+        static constexpr uint32_t Lambda_HASH = ConstExprHashingUtils::HashString("Lambda");
+        static constexpr uint32_t MetadataExtraction_HASH = ConstExprHashingUtils::HashString("MetadataExtraction");
+        static constexpr uint32_t AppendDelimiterToRecord_HASH = ConstExprHashingUtils::HashString("AppendDelimiterToRecord");
 
 
         ProcessorType GetProcessorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RecordDeAggregation_HASH)
           {
             return ProcessorType::RecordDeAggregation;

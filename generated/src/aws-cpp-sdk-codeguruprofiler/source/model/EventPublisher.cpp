@@ -20,12 +20,12 @@ namespace Aws
       namespace EventPublisherMapper
       {
 
-        static const int AnomalyDetection_HASH = HashingUtils::HashString("AnomalyDetection");
+        static constexpr uint32_t AnomalyDetection_HASH = ConstExprHashingUtils::HashString("AnomalyDetection");
 
 
         EventPublisher GetEventPublisherForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AnomalyDetection_HASH)
           {
             return EventPublisher::AnomalyDetection;

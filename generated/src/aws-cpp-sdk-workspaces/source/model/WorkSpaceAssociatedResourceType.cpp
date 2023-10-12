@@ -20,12 +20,12 @@ namespace Aws
       namespace WorkSpaceAssociatedResourceTypeMapper
       {
 
-        static const int APPLICATION_HASH = HashingUtils::HashString("APPLICATION");
+        static constexpr uint32_t APPLICATION_HASH = ConstExprHashingUtils::HashString("APPLICATION");
 
 
         WorkSpaceAssociatedResourceType GetWorkSpaceAssociatedResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == APPLICATION_HASH)
           {
             return WorkSpaceAssociatedResourceType::APPLICATION;

@@ -20,13 +20,13 @@ namespace Aws
       namespace AccountAttributeNameMapper
       {
 
-        static const int supported_platforms_HASH = HashingUtils::HashString("supported-platforms");
-        static const int default_vpc_HASH = HashingUtils::HashString("default-vpc");
+        static constexpr uint32_t supported_platforms_HASH = ConstExprHashingUtils::HashString("supported-platforms");
+        static constexpr uint32_t default_vpc_HASH = ConstExprHashingUtils::HashString("default-vpc");
 
 
         AccountAttributeName GetAccountAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == supported_platforms_HASH)
           {
             return AccountAttributeName::supported_platforms;

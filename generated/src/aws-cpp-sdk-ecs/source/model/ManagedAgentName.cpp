@@ -20,12 +20,12 @@ namespace Aws
       namespace ManagedAgentNameMapper
       {
 
-        static const int ExecuteCommandAgent_HASH = HashingUtils::HashString("ExecuteCommandAgent");
+        static constexpr uint32_t ExecuteCommandAgent_HASH = ConstExprHashingUtils::HashString("ExecuteCommandAgent");
 
 
         ManagedAgentName GetManagedAgentNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ExecuteCommandAgent_HASH)
           {
             return ManagedAgentName::ExecuteCommandAgent;

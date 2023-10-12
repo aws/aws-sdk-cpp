@@ -20,13 +20,13 @@ namespace Aws
       namespace AutoAdjustTypeMapper
       {
 
-        static const int HISTORICAL_HASH = HashingUtils::HashString("HISTORICAL");
-        static const int FORECAST_HASH = HashingUtils::HashString("FORECAST");
+        static constexpr uint32_t HISTORICAL_HASH = ConstExprHashingUtils::HashString("HISTORICAL");
+        static constexpr uint32_t FORECAST_HASH = ConstExprHashingUtils::HashString("FORECAST");
 
 
         AutoAdjustType GetAutoAdjustTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HISTORICAL_HASH)
           {
             return AutoAdjustType::HISTORICAL;

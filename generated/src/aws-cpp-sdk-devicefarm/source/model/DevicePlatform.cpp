@@ -20,13 +20,13 @@ namespace Aws
       namespace DevicePlatformMapper
       {
 
-        static const int ANDROID__HASH = HashingUtils::HashString("ANDROID");
-        static const int IOS_HASH = HashingUtils::HashString("IOS");
+        static constexpr uint32_t ANDROID__HASH = ConstExprHashingUtils::HashString("ANDROID");
+        static constexpr uint32_t IOS_HASH = ConstExprHashingUtils::HashString("IOS");
 
 
         DevicePlatform GetDevicePlatformForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ANDROID__HASH)
           {
             return DevicePlatform::ANDROID_;

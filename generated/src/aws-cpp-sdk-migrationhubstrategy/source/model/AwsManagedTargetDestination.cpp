@@ -20,14 +20,14 @@ namespace Aws
       namespace AwsManagedTargetDestinationMapper
       {
 
-        static const int None_specified_HASH = HashingUtils::HashString("None specified");
-        static const int AWS_Elastic_BeanStalk_HASH = HashingUtils::HashString("AWS Elastic BeanStalk");
-        static const int AWS_Fargate_HASH = HashingUtils::HashString("AWS Fargate");
+        static constexpr uint32_t None_specified_HASH = ConstExprHashingUtils::HashString("None specified");
+        static constexpr uint32_t AWS_Elastic_BeanStalk_HASH = ConstExprHashingUtils::HashString("AWS Elastic BeanStalk");
+        static constexpr uint32_t AWS_Fargate_HASH = ConstExprHashingUtils::HashString("AWS Fargate");
 
 
         AwsManagedTargetDestination GetAwsManagedTargetDestinationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == None_specified_HASH)
           {
             return AwsManagedTargetDestination::None_specified;

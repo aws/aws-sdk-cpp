@@ -20,12 +20,12 @@ namespace Aws
       namespace RecommendationTypeMapper
       {
 
-        static const int KNOWLEDGE_CONTENT_HASH = HashingUtils::HashString("KNOWLEDGE_CONTENT");
+        static constexpr uint32_t KNOWLEDGE_CONTENT_HASH = ConstExprHashingUtils::HashString("KNOWLEDGE_CONTENT");
 
 
         RecommendationType GetRecommendationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == KNOWLEDGE_CONTENT_HASH)
           {
             return RecommendationType::KNOWLEDGE_CONTENT;

@@ -20,13 +20,13 @@ namespace Aws
       namespace SnapshotAttributeNameMapper
       {
 
-        static const int productCodes_HASH = HashingUtils::HashString("productCodes");
-        static const int createVolumePermission_HASH = HashingUtils::HashString("createVolumePermission");
+        static constexpr uint32_t productCodes_HASH = ConstExprHashingUtils::HashString("productCodes");
+        static constexpr uint32_t createVolumePermission_HASH = ConstExprHashingUtils::HashString("createVolumePermission");
 
 
         SnapshotAttributeName GetSnapshotAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == productCodes_HASH)
           {
             return SnapshotAttributeName::productCodes;

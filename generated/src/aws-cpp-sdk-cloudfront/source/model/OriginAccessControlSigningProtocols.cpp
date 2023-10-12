@@ -20,12 +20,12 @@ namespace Aws
       namespace OriginAccessControlSigningProtocolsMapper
       {
 
-        static const int sigv4_HASH = HashingUtils::HashString("sigv4");
+        static constexpr uint32_t sigv4_HASH = ConstExprHashingUtils::HashString("sigv4");
 
 
         OriginAccessControlSigningProtocols GetOriginAccessControlSigningProtocolsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == sigv4_HASH)
           {
             return OriginAccessControlSigningProtocols::sigv4;

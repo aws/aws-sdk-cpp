@@ -20,14 +20,14 @@ namespace Aws
       namespace ComputePlatformMapper
       {
 
-        static const int Server_HASH = HashingUtils::HashString("Server");
-        static const int Lambda_HASH = HashingUtils::HashString("Lambda");
-        static const int ECS_HASH = HashingUtils::HashString("ECS");
+        static constexpr uint32_t Server_HASH = ConstExprHashingUtils::HashString("Server");
+        static constexpr uint32_t Lambda_HASH = ConstExprHashingUtils::HashString("Lambda");
+        static constexpr uint32_t ECS_HASH = ConstExprHashingUtils::HashString("ECS");
 
 
         ComputePlatform GetComputePlatformForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Server_HASH)
           {
             return ComputePlatform::Server;

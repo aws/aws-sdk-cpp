@@ -20,13 +20,13 @@ namespace Aws
       namespace GeneratedRulesTypeMapper
       {
 
-        static const int ALLOWLIST_HASH = HashingUtils::HashString("ALLOWLIST");
-        static const int DENYLIST_HASH = HashingUtils::HashString("DENYLIST");
+        static constexpr uint32_t ALLOWLIST_HASH = ConstExprHashingUtils::HashString("ALLOWLIST");
+        static constexpr uint32_t DENYLIST_HASH = ConstExprHashingUtils::HashString("DENYLIST");
 
 
         GeneratedRulesType GetGeneratedRulesTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALLOWLIST_HASH)
           {
             return GeneratedRulesType::ALLOWLIST;

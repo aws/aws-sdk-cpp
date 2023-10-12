@@ -20,12 +20,12 @@ namespace Aws
       namespace VpcLinkVersionMapper
       {
 
-        static const int V2_HASH = HashingUtils::HashString("V2");
+        static constexpr uint32_t V2_HASH = ConstExprHashingUtils::HashString("V2");
 
 
         VpcLinkVersion GetVpcLinkVersionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == V2_HASH)
           {
             return VpcLinkVersion::V2;

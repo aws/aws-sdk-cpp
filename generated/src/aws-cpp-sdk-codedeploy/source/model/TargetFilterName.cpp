@@ -20,13 +20,13 @@ namespace Aws
       namespace TargetFilterNameMapper
       {
 
-        static const int TargetStatus_HASH = HashingUtils::HashString("TargetStatus");
-        static const int ServerInstanceLabel_HASH = HashingUtils::HashString("ServerInstanceLabel");
+        static constexpr uint32_t TargetStatus_HASH = ConstExprHashingUtils::HashString("TargetStatus");
+        static constexpr uint32_t ServerInstanceLabel_HASH = ConstExprHashingUtils::HashString("ServerInstanceLabel");
 
 
         TargetFilterName GetTargetFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TargetStatus_HASH)
           {
             return TargetFilterName::TargetStatus;

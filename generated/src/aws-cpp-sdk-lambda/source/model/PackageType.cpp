@@ -20,13 +20,13 @@ namespace Aws
       namespace PackageTypeMapper
       {
 
-        static const int Zip_HASH = HashingUtils::HashString("Zip");
-        static const int Image_HASH = HashingUtils::HashString("Image");
+        static constexpr uint32_t Zip_HASH = ConstExprHashingUtils::HashString("Zip");
+        static constexpr uint32_t Image_HASH = ConstExprHashingUtils::HashString("Image");
 
 
         PackageType GetPackageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Zip_HASH)
           {
             return PackageType::Zip;

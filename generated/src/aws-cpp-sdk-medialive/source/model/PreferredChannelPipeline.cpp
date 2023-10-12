@@ -20,14 +20,14 @@ namespace Aws
       namespace PreferredChannelPipelineMapper
       {
 
-        static const int CURRENTLY_ACTIVE_HASH = HashingUtils::HashString("CURRENTLY_ACTIVE");
-        static const int PIPELINE_0_HASH = HashingUtils::HashString("PIPELINE_0");
-        static const int PIPELINE_1_HASH = HashingUtils::HashString("PIPELINE_1");
+        static constexpr uint32_t CURRENTLY_ACTIVE_HASH = ConstExprHashingUtils::HashString("CURRENTLY_ACTIVE");
+        static constexpr uint32_t PIPELINE_0_HASH = ConstExprHashingUtils::HashString("PIPELINE_0");
+        static constexpr uint32_t PIPELINE_1_HASH = ConstExprHashingUtils::HashString("PIPELINE_1");
 
 
         PreferredChannelPipeline GetPreferredChannelPipelineForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CURRENTLY_ACTIVE_HASH)
           {
             return PreferredChannelPipeline::CURRENTLY_ACTIVE;

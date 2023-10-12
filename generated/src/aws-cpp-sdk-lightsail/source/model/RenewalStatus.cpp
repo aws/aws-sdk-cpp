@@ -20,15 +20,15 @@ namespace Aws
       namespace RenewalStatusMapper
       {
 
-        static const int PendingAutoRenewal_HASH = HashingUtils::HashString("PendingAutoRenewal");
-        static const int PendingValidation_HASH = HashingUtils::HashString("PendingValidation");
-        static const int Success_HASH = HashingUtils::HashString("Success");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t PendingAutoRenewal_HASH = ConstExprHashingUtils::HashString("PendingAutoRenewal");
+        static constexpr uint32_t PendingValidation_HASH = ConstExprHashingUtils::HashString("PendingValidation");
+        static constexpr uint32_t Success_HASH = ConstExprHashingUtils::HashString("Success");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         RenewalStatus GetRenewalStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PendingAutoRenewal_HASH)
           {
             return RenewalStatus::PendingAutoRenewal;

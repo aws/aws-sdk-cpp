@@ -20,18 +20,18 @@ namespace Aws
       namespace IdentityResolutionJobStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int PREPROCESSING_HASH = HashingUtils::HashString("PREPROCESSING");
-        static const int FIND_MATCHING_HASH = HashingUtils::HashString("FIND_MATCHING");
-        static const int MERGING_HASH = HashingUtils::HashString("MERGING");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int PARTIAL_SUCCESS_HASH = HashingUtils::HashString("PARTIAL_SUCCESS");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t PREPROCESSING_HASH = ConstExprHashingUtils::HashString("PREPROCESSING");
+        static constexpr uint32_t FIND_MATCHING_HASH = ConstExprHashingUtils::HashString("FIND_MATCHING");
+        static constexpr uint32_t MERGING_HASH = ConstExprHashingUtils::HashString("MERGING");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t PARTIAL_SUCCESS_HASH = ConstExprHashingUtils::HashString("PARTIAL_SUCCESS");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         IdentityResolutionJobStatus GetIdentityResolutionJobStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return IdentityResolutionJobStatus::PENDING;

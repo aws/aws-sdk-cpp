@@ -20,14 +20,14 @@ namespace Aws
       namespace ProtectionGroupPatternMapper
       {
 
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int ARBITRARY_HASH = HashingUtils::HashString("ARBITRARY");
-        static const int BY_RESOURCE_TYPE_HASH = HashingUtils::HashString("BY_RESOURCE_TYPE");
+        static constexpr uint32_t ALL_HASH = ConstExprHashingUtils::HashString("ALL");
+        static constexpr uint32_t ARBITRARY_HASH = ConstExprHashingUtils::HashString("ARBITRARY");
+        static constexpr uint32_t BY_RESOURCE_TYPE_HASH = ConstExprHashingUtils::HashString("BY_RESOURCE_TYPE");
 
 
         ProtectionGroupPattern GetProtectionGroupPatternForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALL_HASH)
           {
             return ProtectionGroupPattern::ALL;

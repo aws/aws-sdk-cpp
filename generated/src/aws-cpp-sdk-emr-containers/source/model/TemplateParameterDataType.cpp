@@ -20,13 +20,13 @@ namespace Aws
       namespace TemplateParameterDataTypeMapper
       {
 
-        static const int NUMBER_HASH = HashingUtils::HashString("NUMBER");
-        static const int STRING_HASH = HashingUtils::HashString("STRING");
+        static constexpr uint32_t NUMBER_HASH = ConstExprHashingUtils::HashString("NUMBER");
+        static constexpr uint32_t STRING_HASH = ConstExprHashingUtils::HashString("STRING");
 
 
         TemplateParameterDataType GetTemplateParameterDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NUMBER_HASH)
           {
             return TemplateParameterDataType::NUMBER;

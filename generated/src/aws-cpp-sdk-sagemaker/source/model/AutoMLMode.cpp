@@ -20,14 +20,14 @@ namespace Aws
       namespace AutoMLModeMapper
       {
 
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int ENSEMBLING_HASH = HashingUtils::HashString("ENSEMBLING");
-        static const int HYPERPARAMETER_TUNING_HASH = HashingUtils::HashString("HYPERPARAMETER_TUNING");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t ENSEMBLING_HASH = ConstExprHashingUtils::HashString("ENSEMBLING");
+        static constexpr uint32_t HYPERPARAMETER_TUNING_HASH = ConstExprHashingUtils::HashString("HYPERPARAMETER_TUNING");
 
 
         AutoMLMode GetAutoMLModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTO_HASH)
           {
             return AutoMLMode::AUTO;

@@ -20,14 +20,14 @@ namespace Aws
       namespace ImageVersionSortByMapper
       {
 
-        static const int CREATION_TIME_HASH = HashingUtils::HashString("CREATION_TIME");
-        static const int LAST_MODIFIED_TIME_HASH = HashingUtils::HashString("LAST_MODIFIED_TIME");
-        static const int VERSION_HASH = HashingUtils::HashString("VERSION");
+        static constexpr uint32_t CREATION_TIME_HASH = ConstExprHashingUtils::HashString("CREATION_TIME");
+        static constexpr uint32_t LAST_MODIFIED_TIME_HASH = ConstExprHashingUtils::HashString("LAST_MODIFIED_TIME");
+        static constexpr uint32_t VERSION_HASH = ConstExprHashingUtils::HashString("VERSION");
 
 
         ImageVersionSortBy GetImageVersionSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATION_TIME_HASH)
           {
             return ImageVersionSortBy::CREATION_TIME;

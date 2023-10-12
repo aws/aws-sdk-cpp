@@ -20,13 +20,13 @@ namespace Aws
       namespace GoogleAnalyticsConnectorOperatorMapper
       {
 
-        static const int PROJECTION_HASH = HashingUtils::HashString("PROJECTION");
-        static const int BETWEEN_HASH = HashingUtils::HashString("BETWEEN");
+        static constexpr uint32_t PROJECTION_HASH = ConstExprHashingUtils::HashString("PROJECTION");
+        static constexpr uint32_t BETWEEN_HASH = ConstExprHashingUtils::HashString("BETWEEN");
 
 
         GoogleAnalyticsConnectorOperator GetGoogleAnalyticsConnectorOperatorForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PROJECTION_HASH)
           {
             return GoogleAnalyticsConnectorOperator::PROJECTION;

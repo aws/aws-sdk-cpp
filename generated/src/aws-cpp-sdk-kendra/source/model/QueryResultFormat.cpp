@@ -20,13 +20,13 @@ namespace Aws
       namespace QueryResultFormatMapper
       {
 
-        static const int TABLE_HASH = HashingUtils::HashString("TABLE");
-        static const int TEXT_HASH = HashingUtils::HashString("TEXT");
+        static constexpr uint32_t TABLE_HASH = ConstExprHashingUtils::HashString("TABLE");
+        static constexpr uint32_t TEXT_HASH = ConstExprHashingUtils::HashString("TEXT");
 
 
         QueryResultFormat GetQueryResultFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TABLE_HASH)
           {
             return QueryResultFormat::TABLE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace DataSourceNameMapper
       {
 
-        static const int SalesforceGenie_HASH = HashingUtils::HashString("SalesforceGenie");
-        static const int Snowflake_HASH = HashingUtils::HashString("Snowflake");
+        static constexpr uint32_t SalesforceGenie_HASH = ConstExprHashingUtils::HashString("SalesforceGenie");
+        static constexpr uint32_t Snowflake_HASH = ConstExprHashingUtils::HashString("Snowflake");
 
 
         DataSourceName GetDataSourceNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SalesforceGenie_HASH)
           {
             return DataSourceName::SalesforceGenie;

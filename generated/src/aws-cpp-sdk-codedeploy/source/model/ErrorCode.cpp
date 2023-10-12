@@ -20,45 +20,45 @@ namespace Aws
       namespace ErrorCodeMapper
       {
 
-        static const int AGENT_ISSUE_HASH = HashingUtils::HashString("AGENT_ISSUE");
-        static const int ALARM_ACTIVE_HASH = HashingUtils::HashString("ALARM_ACTIVE");
-        static const int APPLICATION_MISSING_HASH = HashingUtils::HashString("APPLICATION_MISSING");
-        static const int AUTOSCALING_VALIDATION_ERROR_HASH = HashingUtils::HashString("AUTOSCALING_VALIDATION_ERROR");
-        static const int AUTO_SCALING_CONFIGURATION_HASH = HashingUtils::HashString("AUTO_SCALING_CONFIGURATION");
-        static const int AUTO_SCALING_IAM_ROLE_PERMISSIONS_HASH = HashingUtils::HashString("AUTO_SCALING_IAM_ROLE_PERMISSIONS");
-        static const int CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND_HASH = HashingUtils::HashString("CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND");
-        static const int CUSTOMER_APPLICATION_UNHEALTHY_HASH = HashingUtils::HashString("CUSTOMER_APPLICATION_UNHEALTHY");
-        static const int DEPLOYMENT_GROUP_MISSING_HASH = HashingUtils::HashString("DEPLOYMENT_GROUP_MISSING");
-        static const int ECS_UPDATE_ERROR_HASH = HashingUtils::HashString("ECS_UPDATE_ERROR");
-        static const int ELASTIC_LOAD_BALANCING_INVALID_HASH = HashingUtils::HashString("ELASTIC_LOAD_BALANCING_INVALID");
-        static const int ELB_INVALID_INSTANCE_HASH = HashingUtils::HashString("ELB_INVALID_INSTANCE");
-        static const int HEALTH_CONSTRAINTS_HASH = HashingUtils::HashString("HEALTH_CONSTRAINTS");
-        static const int HEALTH_CONSTRAINTS_INVALID_HASH = HashingUtils::HashString("HEALTH_CONSTRAINTS_INVALID");
-        static const int HOOK_EXECUTION_FAILURE_HASH = HashingUtils::HashString("HOOK_EXECUTION_FAILURE");
-        static const int IAM_ROLE_MISSING_HASH = HashingUtils::HashString("IAM_ROLE_MISSING");
-        static const int IAM_ROLE_PERMISSIONS_HASH = HashingUtils::HashString("IAM_ROLE_PERMISSIONS");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int INVALID_ECS_SERVICE_HASH = HashingUtils::HashString("INVALID_ECS_SERVICE");
-        static const int INVALID_LAMBDA_CONFIGURATION_HASH = HashingUtils::HashString("INVALID_LAMBDA_CONFIGURATION");
-        static const int INVALID_LAMBDA_FUNCTION_HASH = HashingUtils::HashString("INVALID_LAMBDA_FUNCTION");
-        static const int INVALID_REVISION_HASH = HashingUtils::HashString("INVALID_REVISION");
-        static const int MANUAL_STOP_HASH = HashingUtils::HashString("MANUAL_STOP");
-        static const int MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION_HASH = HashingUtils::HashString("MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION");
-        static const int MISSING_ELB_INFORMATION_HASH = HashingUtils::HashString("MISSING_ELB_INFORMATION");
-        static const int MISSING_GITHUB_TOKEN_HASH = HashingUtils::HashString("MISSING_GITHUB_TOKEN");
-        static const int NO_EC2_SUBSCRIPTION_HASH = HashingUtils::HashString("NO_EC2_SUBSCRIPTION");
-        static const int NO_INSTANCES_HASH = HashingUtils::HashString("NO_INSTANCES");
-        static const int OVER_MAX_INSTANCES_HASH = HashingUtils::HashString("OVER_MAX_INSTANCES");
-        static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("RESOURCE_LIMIT_EXCEEDED");
-        static const int REVISION_MISSING_HASH = HashingUtils::HashString("REVISION_MISSING");
-        static const int THROTTLED_HASH = HashingUtils::HashString("THROTTLED");
-        static const int TIMEOUT_HASH = HashingUtils::HashString("TIMEOUT");
-        static const int CLOUDFORMATION_STACK_FAILURE_HASH = HashingUtils::HashString("CLOUDFORMATION_STACK_FAILURE");
+        static constexpr uint32_t AGENT_ISSUE_HASH = ConstExprHashingUtils::HashString("AGENT_ISSUE");
+        static constexpr uint32_t ALARM_ACTIVE_HASH = ConstExprHashingUtils::HashString("ALARM_ACTIVE");
+        static constexpr uint32_t APPLICATION_MISSING_HASH = ConstExprHashingUtils::HashString("APPLICATION_MISSING");
+        static constexpr uint32_t AUTOSCALING_VALIDATION_ERROR_HASH = ConstExprHashingUtils::HashString("AUTOSCALING_VALIDATION_ERROR");
+        static constexpr uint32_t AUTO_SCALING_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("AUTO_SCALING_CONFIGURATION");
+        static constexpr uint32_t AUTO_SCALING_IAM_ROLE_PERMISSIONS_HASH = ConstExprHashingUtils::HashString("AUTO_SCALING_IAM_ROLE_PERMISSIONS");
+        static constexpr uint32_t CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND_HASH = ConstExprHashingUtils::HashString("CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND");
+        static constexpr uint32_t CUSTOMER_APPLICATION_UNHEALTHY_HASH = ConstExprHashingUtils::HashString("CUSTOMER_APPLICATION_UNHEALTHY");
+        static constexpr uint32_t DEPLOYMENT_GROUP_MISSING_HASH = ConstExprHashingUtils::HashString("DEPLOYMENT_GROUP_MISSING");
+        static constexpr uint32_t ECS_UPDATE_ERROR_HASH = ConstExprHashingUtils::HashString("ECS_UPDATE_ERROR");
+        static constexpr uint32_t ELASTIC_LOAD_BALANCING_INVALID_HASH = ConstExprHashingUtils::HashString("ELASTIC_LOAD_BALANCING_INVALID");
+        static constexpr uint32_t ELB_INVALID_INSTANCE_HASH = ConstExprHashingUtils::HashString("ELB_INVALID_INSTANCE");
+        static constexpr uint32_t HEALTH_CONSTRAINTS_HASH = ConstExprHashingUtils::HashString("HEALTH_CONSTRAINTS");
+        static constexpr uint32_t HEALTH_CONSTRAINTS_INVALID_HASH = ConstExprHashingUtils::HashString("HEALTH_CONSTRAINTS_INVALID");
+        static constexpr uint32_t HOOK_EXECUTION_FAILURE_HASH = ConstExprHashingUtils::HashString("HOOK_EXECUTION_FAILURE");
+        static constexpr uint32_t IAM_ROLE_MISSING_HASH = ConstExprHashingUtils::HashString("IAM_ROLE_MISSING");
+        static constexpr uint32_t IAM_ROLE_PERMISSIONS_HASH = ConstExprHashingUtils::HashString("IAM_ROLE_PERMISSIONS");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t INVALID_ECS_SERVICE_HASH = ConstExprHashingUtils::HashString("INVALID_ECS_SERVICE");
+        static constexpr uint32_t INVALID_LAMBDA_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("INVALID_LAMBDA_CONFIGURATION");
+        static constexpr uint32_t INVALID_LAMBDA_FUNCTION_HASH = ConstExprHashingUtils::HashString("INVALID_LAMBDA_FUNCTION");
+        static constexpr uint32_t INVALID_REVISION_HASH = ConstExprHashingUtils::HashString("INVALID_REVISION");
+        static constexpr uint32_t MANUAL_STOP_HASH = ConstExprHashingUtils::HashString("MANUAL_STOP");
+        static constexpr uint32_t MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION");
+        static constexpr uint32_t MISSING_ELB_INFORMATION_HASH = ConstExprHashingUtils::HashString("MISSING_ELB_INFORMATION");
+        static constexpr uint32_t MISSING_GITHUB_TOKEN_HASH = ConstExprHashingUtils::HashString("MISSING_GITHUB_TOKEN");
+        static constexpr uint32_t NO_EC2_SUBSCRIPTION_HASH = ConstExprHashingUtils::HashString("NO_EC2_SUBSCRIPTION");
+        static constexpr uint32_t NO_INSTANCES_HASH = ConstExprHashingUtils::HashString("NO_INSTANCES");
+        static constexpr uint32_t OVER_MAX_INSTANCES_HASH = ConstExprHashingUtils::HashString("OVER_MAX_INSTANCES");
+        static constexpr uint32_t RESOURCE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("RESOURCE_LIMIT_EXCEEDED");
+        static constexpr uint32_t REVISION_MISSING_HASH = ConstExprHashingUtils::HashString("REVISION_MISSING");
+        static constexpr uint32_t THROTTLED_HASH = ConstExprHashingUtils::HashString("THROTTLED");
+        static constexpr uint32_t TIMEOUT_HASH = ConstExprHashingUtils::HashString("TIMEOUT");
+        static constexpr uint32_t CLOUDFORMATION_STACK_FAILURE_HASH = ConstExprHashingUtils::HashString("CLOUDFORMATION_STACK_FAILURE");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AGENT_ISSUE_HASH)
           {
             return ErrorCode::AGENT_ISSUE;

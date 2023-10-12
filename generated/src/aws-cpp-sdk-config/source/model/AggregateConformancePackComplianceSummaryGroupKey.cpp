@@ -20,13 +20,13 @@ namespace Aws
       namespace AggregateConformancePackComplianceSummaryGroupKeyMapper
       {
 
-        static const int ACCOUNT_ID_HASH = HashingUtils::HashString("ACCOUNT_ID");
-        static const int AWS_REGION_HASH = HashingUtils::HashString("AWS_REGION");
+        static constexpr uint32_t ACCOUNT_ID_HASH = ConstExprHashingUtils::HashString("ACCOUNT_ID");
+        static constexpr uint32_t AWS_REGION_HASH = ConstExprHashingUtils::HashString("AWS_REGION");
 
 
         AggregateConformancePackComplianceSummaryGroupKey GetAggregateConformancePackComplianceSummaryGroupKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACCOUNT_ID_HASH)
           {
             return AggregateConformancePackComplianceSummaryGroupKey::ACCOUNT_ID;

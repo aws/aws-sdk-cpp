@@ -20,13 +20,13 @@ namespace Aws
       namespace OpenZFSCopyStrategyMapper
       {
 
-        static const int CLONE_HASH = HashingUtils::HashString("CLONE");
-        static const int FULL_COPY_HASH = HashingUtils::HashString("FULL_COPY");
+        static constexpr uint32_t CLONE_HASH = ConstExprHashingUtils::HashString("CLONE");
+        static constexpr uint32_t FULL_COPY_HASH = ConstExprHashingUtils::HashString("FULL_COPY");
 
 
         OpenZFSCopyStrategy GetOpenZFSCopyStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLONE_HASH)
           {
             return OpenZFSCopyStrategy::CLONE;

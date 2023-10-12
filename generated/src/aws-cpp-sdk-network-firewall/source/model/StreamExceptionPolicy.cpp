@@ -20,14 +20,14 @@ namespace Aws
       namespace StreamExceptionPolicyMapper
       {
 
-        static const int DROP_HASH = HashingUtils::HashString("DROP");
-        static const int CONTINUE_HASH = HashingUtils::HashString("CONTINUE");
-        static const int REJECT_HASH = HashingUtils::HashString("REJECT");
+        static constexpr uint32_t DROP_HASH = ConstExprHashingUtils::HashString("DROP");
+        static constexpr uint32_t CONTINUE_HASH = ConstExprHashingUtils::HashString("CONTINUE");
+        static constexpr uint32_t REJECT_HASH = ConstExprHashingUtils::HashString("REJECT");
 
 
         StreamExceptionPolicy GetStreamExceptionPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DROP_HASH)
           {
             return StreamExceptionPolicy::DROP;

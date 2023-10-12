@@ -20,13 +20,13 @@ namespace Aws
       namespace IpAddressAssignmentMapper
       {
 
-        static const int DHCP_HASH = HashingUtils::HashString("DHCP");
-        static const int STATIC__HASH = HashingUtils::HashString("STATIC");
+        static constexpr uint32_t DHCP_HASH = ConstExprHashingUtils::HashString("DHCP");
+        static constexpr uint32_t STATIC__HASH = ConstExprHashingUtils::HashString("STATIC");
 
 
         IpAddressAssignment GetIpAddressAssignmentForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DHCP_HASH)
           {
             return IpAddressAssignment::DHCP;

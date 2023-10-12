@@ -20,16 +20,16 @@ namespace Aws
       namespace JobErrorLimitNameMapper
       {
 
-        static const int Assets_per_revision_HASH = HashingUtils::HashString("Assets per revision");
-        static const int Asset_size_in_GB_HASH = HashingUtils::HashString("Asset size in GB");
-        static const int Amazon_Redshift_datashare_assets_per_revision_HASH = HashingUtils::HashString("Amazon Redshift datashare assets per revision");
-        static const int AWS_Lake_Formation_data_permission_assets_per_revision_HASH = HashingUtils::HashString("AWS Lake Formation data permission assets per revision");
-        static const int Amazon_S3_data_access_assets_per_revision_HASH = HashingUtils::HashString("Amazon S3 data access assets per revision");
+        static constexpr uint32_t Assets_per_revision_HASH = ConstExprHashingUtils::HashString("Assets per revision");
+        static constexpr uint32_t Asset_size_in_GB_HASH = ConstExprHashingUtils::HashString("Asset size in GB");
+        static constexpr uint32_t Amazon_Redshift_datashare_assets_per_revision_HASH = ConstExprHashingUtils::HashString("Amazon Redshift datashare assets per revision");
+        static constexpr uint32_t AWS_Lake_Formation_data_permission_assets_per_revision_HASH = ConstExprHashingUtils::HashString("AWS Lake Formation data permission assets per revision");
+        static constexpr uint32_t Amazon_S3_data_access_assets_per_revision_HASH = ConstExprHashingUtils::HashString("Amazon S3 data access assets per revision");
 
 
         JobErrorLimitName GetJobErrorLimitNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Assets_per_revision_HASH)
           {
             return JobErrorLimitName::Assets_per_revision;

@@ -20,12 +20,12 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int collection_HASH = HashingUtils::HashString("collection");
+        static constexpr uint32_t collection_HASH = ConstExprHashingUtils::HashString("collection");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == collection_HASH)
           {
             return ResourceType::collection;

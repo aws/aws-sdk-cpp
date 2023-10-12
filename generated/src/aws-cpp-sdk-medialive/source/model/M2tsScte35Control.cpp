@@ -20,13 +20,13 @@ namespace Aws
       namespace M2tsScte35ControlMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t PASSTHROUGH_HASH = ConstExprHashingUtils::HashString("PASSTHROUGH");
 
 
         M2tsScte35Control GetM2tsScte35ControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return M2tsScte35Control::NONE;

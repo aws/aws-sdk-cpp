@@ -20,15 +20,15 @@ namespace Aws
       namespace ActionTypeMapper
       {
 
-        static const int PUBLISH_HASH = HashingUtils::HashString("PUBLISH");
-        static const int SUBSCRIBE_HASH = HashingUtils::HashString("SUBSCRIBE");
-        static const int RECEIVE_HASH = HashingUtils::HashString("RECEIVE");
-        static const int CONNECT_HASH = HashingUtils::HashString("CONNECT");
+        static constexpr uint32_t PUBLISH_HASH = ConstExprHashingUtils::HashString("PUBLISH");
+        static constexpr uint32_t SUBSCRIBE_HASH = ConstExprHashingUtils::HashString("SUBSCRIBE");
+        static constexpr uint32_t RECEIVE_HASH = ConstExprHashingUtils::HashString("RECEIVE");
+        static constexpr uint32_t CONNECT_HASH = ConstExprHashingUtils::HashString("CONNECT");
 
 
         ActionType GetActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUBLISH_HASH)
           {
             return ActionType::PUBLISH;

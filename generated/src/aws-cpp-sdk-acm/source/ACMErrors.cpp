@@ -18,23 +18,23 @@ namespace ACM
 namespace ACMErrorMapper
 {
 
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int INVALID_ARGS_HASH = HashingUtils::HashString("InvalidArgsException");
-static const int INVALID_DOMAIN_VALIDATION_OPTIONS_HASH = HashingUtils::HashString("InvalidDomainValidationOptionsException");
-static const int REQUEST_IN_PROGRESS_HASH = HashingUtils::HashString("RequestInProgressException");
-static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagException");
-static const int TAG_POLICY_HASH = HashingUtils::HashString("TagPolicyException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t INVALID_ARGS_HASH = ConstExprHashingUtils::HashString("InvalidArgsException");
+static constexpr uint32_t INVALID_DOMAIN_VALIDATION_OPTIONS_HASH = ConstExprHashingUtils::HashString("InvalidDomainValidationOptionsException");
+static constexpr uint32_t REQUEST_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("RequestInProgressException");
+static constexpr uint32_t INVALID_ARN_HASH = ConstExprHashingUtils::HashString("InvalidArnException");
+static constexpr uint32_t INVALID_PARAMETER_HASH = ConstExprHashingUtils::HashString("InvalidParameterException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t TOO_MANY_TAGS_HASH = ConstExprHashingUtils::HashString("TooManyTagsException");
+static constexpr uint32_t INVALID_TAG_HASH = ConstExprHashingUtils::HashString("InvalidTagException");
+static constexpr uint32_t TAG_POLICY_HASH = ConstExprHashingUtils::HashString("TagPolicyException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t INVALID_STATE_HASH = ConstExprHashingUtils::HashString("InvalidStateException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CONFLICT_HASH)
   {

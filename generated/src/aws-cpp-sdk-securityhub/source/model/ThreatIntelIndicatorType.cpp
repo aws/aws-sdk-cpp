@@ -20,22 +20,22 @@ namespace Aws
       namespace ThreatIntelIndicatorTypeMapper
       {
 
-        static const int DOMAIN__HASH = HashingUtils::HashString("DOMAIN");
-        static const int EMAIL_ADDRESS_HASH = HashingUtils::HashString("EMAIL_ADDRESS");
-        static const int HASH_MD5_HASH = HashingUtils::HashString("HASH_MD5");
-        static const int HASH_SHA1_HASH = HashingUtils::HashString("HASH_SHA1");
-        static const int HASH_SHA256_HASH = HashingUtils::HashString("HASH_SHA256");
-        static const int HASH_SHA512_HASH = HashingUtils::HashString("HASH_SHA512");
-        static const int IPV4_ADDRESS_HASH = HashingUtils::HashString("IPV4_ADDRESS");
-        static const int IPV6_ADDRESS_HASH = HashingUtils::HashString("IPV6_ADDRESS");
-        static const int MUTEX_HASH = HashingUtils::HashString("MUTEX");
-        static const int PROCESS_HASH = HashingUtils::HashString("PROCESS");
-        static const int URL_HASH = HashingUtils::HashString("URL");
+        static constexpr uint32_t DOMAIN__HASH = ConstExprHashingUtils::HashString("DOMAIN");
+        static constexpr uint32_t EMAIL_ADDRESS_HASH = ConstExprHashingUtils::HashString("EMAIL_ADDRESS");
+        static constexpr uint32_t HASH_MD5_HASH = ConstExprHashingUtils::HashString("HASH_MD5");
+        static constexpr uint32_t HASH_SHA1_HASH = ConstExprHashingUtils::HashString("HASH_SHA1");
+        static constexpr uint32_t HASH_SHA256_HASH = ConstExprHashingUtils::HashString("HASH_SHA256");
+        static constexpr uint32_t HASH_SHA512_HASH = ConstExprHashingUtils::HashString("HASH_SHA512");
+        static constexpr uint32_t IPV4_ADDRESS_HASH = ConstExprHashingUtils::HashString("IPV4_ADDRESS");
+        static constexpr uint32_t IPV6_ADDRESS_HASH = ConstExprHashingUtils::HashString("IPV6_ADDRESS");
+        static constexpr uint32_t MUTEX_HASH = ConstExprHashingUtils::HashString("MUTEX");
+        static constexpr uint32_t PROCESS_HASH = ConstExprHashingUtils::HashString("PROCESS");
+        static constexpr uint32_t URL_HASH = ConstExprHashingUtils::HashString("URL");
 
 
         ThreatIntelIndicatorType GetThreatIntelIndicatorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DOMAIN__HASH)
           {
             return ThreatIntelIndicatorType::DOMAIN_;

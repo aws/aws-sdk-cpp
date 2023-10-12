@@ -20,13 +20,13 @@ namespace Aws
       namespace ExecutionRoleIdentityConfigMapper
       {
 
-        static const int USER_PROFILE_NAME_HASH = HashingUtils::HashString("USER_PROFILE_NAME");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static constexpr uint32_t USER_PROFILE_NAME_HASH = ConstExprHashingUtils::HashString("USER_PROFILE_NAME");
+        static constexpr uint32_t DISABLED_HASH = ConstExprHashingUtils::HashString("DISABLED");
 
 
         ExecutionRoleIdentityConfig GetExecutionRoleIdentityConfigForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USER_PROFILE_NAME_HASH)
           {
             return ExecutionRoleIdentityConfig::USER_PROFILE_NAME;

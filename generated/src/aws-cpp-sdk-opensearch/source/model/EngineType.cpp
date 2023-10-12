@@ -20,13 +20,13 @@ namespace Aws
       namespace EngineTypeMapper
       {
 
-        static const int OpenSearch_HASH = HashingUtils::HashString("OpenSearch");
-        static const int Elasticsearch_HASH = HashingUtils::HashString("Elasticsearch");
+        static constexpr uint32_t OpenSearch_HASH = ConstExprHashingUtils::HashString("OpenSearch");
+        static constexpr uint32_t Elasticsearch_HASH = ConstExprHashingUtils::HashString("Elasticsearch");
 
 
         EngineType GetEngineTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OpenSearch_HASH)
           {
             return EngineType::OpenSearch;

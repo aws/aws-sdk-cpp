@@ -20,16 +20,16 @@ namespace Aws
       namespace PageBasedErrorCodeMapper
       {
 
-        static const int TEXTRACT_BAD_PAGE_HASH = HashingUtils::HashString("TEXTRACT_BAD_PAGE");
-        static const int TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED");
-        static const int PAGE_CHARACTERS_EXCEEDED_HASH = HashingUtils::HashString("PAGE_CHARACTERS_EXCEEDED");
-        static const int PAGE_SIZE_EXCEEDED_HASH = HashingUtils::HashString("PAGE_SIZE_EXCEEDED");
-        static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("INTERNAL_SERVER_ERROR");
+        static constexpr uint32_t TEXTRACT_BAD_PAGE_HASH = ConstExprHashingUtils::HashString("TEXTRACT_BAD_PAGE");
+        static constexpr uint32_t TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED");
+        static constexpr uint32_t PAGE_CHARACTERS_EXCEEDED_HASH = ConstExprHashingUtils::HashString("PAGE_CHARACTERS_EXCEEDED");
+        static constexpr uint32_t PAGE_SIZE_EXCEEDED_HASH = ConstExprHashingUtils::HashString("PAGE_SIZE_EXCEEDED");
+        static constexpr uint32_t INTERNAL_SERVER_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_SERVER_ERROR");
 
 
         PageBasedErrorCode GetPageBasedErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TEXTRACT_BAD_PAGE_HASH)
           {
             return PageBasedErrorCode::TEXTRACT_BAD_PAGE;

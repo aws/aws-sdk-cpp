@@ -20,13 +20,13 @@ namespace Aws
       namespace ServiceQuotaTemplateAssociationStatusMapper
       {
 
-        static const int ASSOCIATED_HASH = HashingUtils::HashString("ASSOCIATED");
-        static const int DISASSOCIATED_HASH = HashingUtils::HashString("DISASSOCIATED");
+        static constexpr uint32_t ASSOCIATED_HASH = ConstExprHashingUtils::HashString("ASSOCIATED");
+        static constexpr uint32_t DISASSOCIATED_HASH = ConstExprHashingUtils::HashString("DISASSOCIATED");
 
 
         ServiceQuotaTemplateAssociationStatus GetServiceQuotaTemplateAssociationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASSOCIATED_HASH)
           {
             return ServiceQuotaTemplateAssociationStatus::ASSOCIATED;

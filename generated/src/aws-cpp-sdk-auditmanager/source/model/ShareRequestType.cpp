@@ -20,13 +20,13 @@ namespace Aws
       namespace ShareRequestTypeMapper
       {
 
-        static const int SENT_HASH = HashingUtils::HashString("SENT");
-        static const int RECEIVED_HASH = HashingUtils::HashString("RECEIVED");
+        static constexpr uint32_t SENT_HASH = ConstExprHashingUtils::HashString("SENT");
+        static constexpr uint32_t RECEIVED_HASH = ConstExprHashingUtils::HashString("RECEIVED");
 
 
         ShareRequestType GetShareRequestTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SENT_HASH)
           {
             return ShareRequestType::SENT;

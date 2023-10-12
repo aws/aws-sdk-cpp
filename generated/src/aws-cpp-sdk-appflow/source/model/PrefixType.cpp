@@ -20,14 +20,14 @@ namespace Aws
       namespace PrefixTypeMapper
       {
 
-        static const int FILENAME_HASH = HashingUtils::HashString("FILENAME");
-        static const int PATH_HASH = HashingUtils::HashString("PATH");
-        static const int PATH_AND_FILENAME_HASH = HashingUtils::HashString("PATH_AND_FILENAME");
+        static constexpr uint32_t FILENAME_HASH = ConstExprHashingUtils::HashString("FILENAME");
+        static constexpr uint32_t PATH_HASH = ConstExprHashingUtils::HashString("PATH");
+        static constexpr uint32_t PATH_AND_FILENAME_HASH = ConstExprHashingUtils::HashString("PATH_AND_FILENAME");
 
 
         PrefixType GetPrefixTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FILENAME_HASH)
           {
             return PrefixType::FILENAME;

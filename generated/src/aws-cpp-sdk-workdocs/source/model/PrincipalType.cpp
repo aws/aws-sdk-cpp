@@ -20,16 +20,16 @@ namespace Aws
       namespace PrincipalTypeMapper
       {
 
-        static const int USER_HASH = HashingUtils::HashString("USER");
-        static const int GROUP_HASH = HashingUtils::HashString("GROUP");
-        static const int INVITE_HASH = HashingUtils::HashString("INVITE");
-        static const int ANONYMOUS_HASH = HashingUtils::HashString("ANONYMOUS");
-        static const int ORGANIZATION_HASH = HashingUtils::HashString("ORGANIZATION");
+        static constexpr uint32_t USER_HASH = ConstExprHashingUtils::HashString("USER");
+        static constexpr uint32_t GROUP_HASH = ConstExprHashingUtils::HashString("GROUP");
+        static constexpr uint32_t INVITE_HASH = ConstExprHashingUtils::HashString("INVITE");
+        static constexpr uint32_t ANONYMOUS_HASH = ConstExprHashingUtils::HashString("ANONYMOUS");
+        static constexpr uint32_t ORGANIZATION_HASH = ConstExprHashingUtils::HashString("ORGANIZATION");
 
 
         PrincipalType GetPrincipalTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USER_HASH)
           {
             return PrincipalType::USER;

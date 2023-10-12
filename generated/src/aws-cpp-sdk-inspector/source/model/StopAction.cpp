@@ -20,13 +20,13 @@ namespace Aws
       namespace StopActionMapper
       {
 
-        static const int START_EVALUATION_HASH = HashingUtils::HashString("START_EVALUATION");
-        static const int SKIP_EVALUATION_HASH = HashingUtils::HashString("SKIP_EVALUATION");
+        static constexpr uint32_t START_EVALUATION_HASH = ConstExprHashingUtils::HashString("START_EVALUATION");
+        static constexpr uint32_t SKIP_EVALUATION_HASH = ConstExprHashingUtils::HashString("SKIP_EVALUATION");
 
 
         StopAction GetStopActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == START_EVALUATION_HASH)
           {
             return StopAction::START_EVALUATION;

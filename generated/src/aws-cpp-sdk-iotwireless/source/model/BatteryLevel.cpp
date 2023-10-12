@@ -20,14 +20,14 @@ namespace Aws
       namespace BatteryLevelMapper
       {
 
-        static const int normal_HASH = HashingUtils::HashString("normal");
-        static const int low_HASH = HashingUtils::HashString("low");
-        static const int critical_HASH = HashingUtils::HashString("critical");
+        static constexpr uint32_t normal_HASH = ConstExprHashingUtils::HashString("normal");
+        static constexpr uint32_t low_HASH = ConstExprHashingUtils::HashString("low");
+        static constexpr uint32_t critical_HASH = ConstExprHashingUtils::HashString("critical");
 
 
         BatteryLevel GetBatteryLevelForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == normal_HASH)
           {
             return BatteryLevel::normal;

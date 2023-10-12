@@ -20,19 +20,19 @@ namespace Aws
       namespace StageStatusMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int READYTODEPLOY_HASH = HashingUtils::HashString("READYTODEPLOY");
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int INPROGRESS_HASH = HashingUtils::HashString("INPROGRESS");
-        static const int DEPLOYED_HASH = HashingUtils::HashString("DEPLOYED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t READYTODEPLOY_HASH = ConstExprHashingUtils::HashString("READYTODEPLOY");
+        static constexpr uint32_t STARTING_HASH = ConstExprHashingUtils::HashString("STARTING");
+        static constexpr uint32_t INPROGRESS_HASH = ConstExprHashingUtils::HashString("INPROGRESS");
+        static constexpr uint32_t DEPLOYED_HASH = ConstExprHashingUtils::HashString("DEPLOYED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t STOPPING_HASH = ConstExprHashingUtils::HashString("STOPPING");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
 
 
         StageStatus GetStageStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return StageStatus::CREATING;

@@ -20,12 +20,12 @@ namespace Aws
       namespace WarningCodeMapper
       {
 
-        static const int QUERY_LANGUAGE_INVALID_SYNTAX_HASH = HashingUtils::HashString("QUERY_LANGUAGE_INVALID_SYNTAX");
+        static constexpr uint32_t QUERY_LANGUAGE_INVALID_SYNTAX_HASH = ConstExprHashingUtils::HashString("QUERY_LANGUAGE_INVALID_SYNTAX");
 
 
         WarningCode GetWarningCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == QUERY_LANGUAGE_INVALID_SYNTAX_HASH)
           {
             return WarningCode::QUERY_LANGUAGE_INVALID_SYNTAX;

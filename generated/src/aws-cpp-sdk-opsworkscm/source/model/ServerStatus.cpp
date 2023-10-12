@@ -20,24 +20,24 @@ namespace Aws
       namespace ServerStatusMapper
       {
 
-        static const int BACKING_UP_HASH = HashingUtils::HashString("BACKING_UP");
-        static const int CONNECTION_LOST_HASH = HashingUtils::HashString("CONNECTION_LOST");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int MODIFYING_HASH = HashingUtils::HashString("MODIFYING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int RESTORING_HASH = HashingUtils::HashString("RESTORING");
-        static const int SETUP_HASH = HashingUtils::HashString("SETUP");
-        static const int UNDER_MAINTENANCE_HASH = HashingUtils::HashString("UNDER_MAINTENANCE");
-        static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
-        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
+        static constexpr uint32_t BACKING_UP_HASH = ConstExprHashingUtils::HashString("BACKING_UP");
+        static constexpr uint32_t CONNECTION_LOST_HASH = ConstExprHashingUtils::HashString("CONNECTION_LOST");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t MODIFYING_HASH = ConstExprHashingUtils::HashString("MODIFYING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t HEALTHY_HASH = ConstExprHashingUtils::HashString("HEALTHY");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t RESTORING_HASH = ConstExprHashingUtils::HashString("RESTORING");
+        static constexpr uint32_t SETUP_HASH = ConstExprHashingUtils::HashString("SETUP");
+        static constexpr uint32_t UNDER_MAINTENANCE_HASH = ConstExprHashingUtils::HashString("UNDER_MAINTENANCE");
+        static constexpr uint32_t UNHEALTHY_HASH = ConstExprHashingUtils::HashString("UNHEALTHY");
+        static constexpr uint32_t TERMINATED_HASH = ConstExprHashingUtils::HashString("TERMINATED");
 
 
         ServerStatus GetServerStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BACKING_UP_HASH)
           {
             return ServerStatus::BACKING_UP;

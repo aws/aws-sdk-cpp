@@ -20,13 +20,13 @@ namespace Aws
       namespace RedirectActionStatusCodeEnumMapper
       {
 
-        static const int HTTP_301_HASH = HashingUtils::HashString("HTTP_301");
-        static const int HTTP_302_HASH = HashingUtils::HashString("HTTP_302");
+        static constexpr uint32_t HTTP_301_HASH = ConstExprHashingUtils::HashString("HTTP_301");
+        static constexpr uint32_t HTTP_302_HASH = ConstExprHashingUtils::HashString("HTTP_302");
 
 
         RedirectActionStatusCodeEnum GetRedirectActionStatusCodeEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HTTP_301_HASH)
           {
             return RedirectActionStatusCodeEnum::HTTP_301;

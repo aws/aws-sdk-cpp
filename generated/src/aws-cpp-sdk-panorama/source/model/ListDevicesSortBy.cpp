@@ -20,15 +20,15 @@ namespace Aws
       namespace ListDevicesSortByMapper
       {
 
-        static const int DEVICE_ID_HASH = HashingUtils::HashString("DEVICE_ID");
-        static const int CREATED_TIME_HASH = HashingUtils::HashString("CREATED_TIME");
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int DEVICE_AGGREGATED_STATUS_HASH = HashingUtils::HashString("DEVICE_AGGREGATED_STATUS");
+        static constexpr uint32_t DEVICE_ID_HASH = ConstExprHashingUtils::HashString("DEVICE_ID");
+        static constexpr uint32_t CREATED_TIME_HASH = ConstExprHashingUtils::HashString("CREATED_TIME");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t DEVICE_AGGREGATED_STATUS_HASH = ConstExprHashingUtils::HashString("DEVICE_AGGREGATED_STATUS");
 
 
         ListDevicesSortBy GetListDevicesSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEVICE_ID_HASH)
           {
             return ListDevicesSortBy::DEVICE_ID;

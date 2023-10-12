@@ -20,12 +20,12 @@ namespace Aws
       namespace As2TransportMapper
       {
 
-        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
+        static constexpr uint32_t HTTP_HASH = ConstExprHashingUtils::HashString("HTTP");
 
 
         As2Transport GetAs2TransportForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HTTP_HASH)
           {
             return As2Transport::HTTP;

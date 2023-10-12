@@ -20,13 +20,13 @@ namespace Aws
       namespace MigrationSortAttributeMapper
       {
 
-        static const int V1_BOT_NAME_HASH = HashingUtils::HashString("V1_BOT_NAME");
-        static const int MIGRATION_DATE_TIME_HASH = HashingUtils::HashString("MIGRATION_DATE_TIME");
+        static constexpr uint32_t V1_BOT_NAME_HASH = ConstExprHashingUtils::HashString("V1_BOT_NAME");
+        static constexpr uint32_t MIGRATION_DATE_TIME_HASH = ConstExprHashingUtils::HashString("MIGRATION_DATE_TIME");
 
 
         MigrationSortAttribute GetMigrationSortAttributeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == V1_BOT_NAME_HASH)
           {
             return MigrationSortAttribute::V1_BOT_NAME;

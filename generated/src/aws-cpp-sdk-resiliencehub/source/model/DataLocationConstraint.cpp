@@ -20,14 +20,14 @@ namespace Aws
       namespace DataLocationConstraintMapper
       {
 
-        static const int AnyLocation_HASH = HashingUtils::HashString("AnyLocation");
-        static const int SameContinent_HASH = HashingUtils::HashString("SameContinent");
-        static const int SameCountry_HASH = HashingUtils::HashString("SameCountry");
+        static constexpr uint32_t AnyLocation_HASH = ConstExprHashingUtils::HashString("AnyLocation");
+        static constexpr uint32_t SameContinent_HASH = ConstExprHashingUtils::HashString("SameContinent");
+        static constexpr uint32_t SameCountry_HASH = ConstExprHashingUtils::HashString("SameCountry");
 
 
         DataLocationConstraint GetDataLocationConstraintForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AnyLocation_HASH)
           {
             return DataLocationConstraint::AnyLocation;

@@ -20,16 +20,16 @@ namespace Aws
       namespace AllocationStrategyMapper
       {
 
-        static const int lowestPrice_HASH = HashingUtils::HashString("lowestPrice");
-        static const int diversified_HASH = HashingUtils::HashString("diversified");
-        static const int capacityOptimized_HASH = HashingUtils::HashString("capacityOptimized");
-        static const int capacityOptimizedPrioritized_HASH = HashingUtils::HashString("capacityOptimizedPrioritized");
-        static const int priceCapacityOptimized_HASH = HashingUtils::HashString("priceCapacityOptimized");
+        static constexpr uint32_t lowestPrice_HASH = ConstExprHashingUtils::HashString("lowestPrice");
+        static constexpr uint32_t diversified_HASH = ConstExprHashingUtils::HashString("diversified");
+        static constexpr uint32_t capacityOptimized_HASH = ConstExprHashingUtils::HashString("capacityOptimized");
+        static constexpr uint32_t capacityOptimizedPrioritized_HASH = ConstExprHashingUtils::HashString("capacityOptimizedPrioritized");
+        static constexpr uint32_t priceCapacityOptimized_HASH = ConstExprHashingUtils::HashString("priceCapacityOptimized");
 
 
         AllocationStrategy GetAllocationStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == lowestPrice_HASH)
           {
             return AllocationStrategy::lowestPrice;

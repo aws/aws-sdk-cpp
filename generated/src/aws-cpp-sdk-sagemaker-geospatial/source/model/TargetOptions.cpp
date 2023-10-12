@@ -20,13 +20,13 @@ namespace Aws
       namespace TargetOptionsMapper
       {
 
-        static const int INPUT_HASH = HashingUtils::HashString("INPUT");
-        static const int OUTPUT_HASH = HashingUtils::HashString("OUTPUT");
+        static constexpr uint32_t INPUT_HASH = ConstExprHashingUtils::HashString("INPUT");
+        static constexpr uint32_t OUTPUT_HASH = ConstExprHashingUtils::HashString("OUTPUT");
 
 
         TargetOptions GetTargetOptionsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INPUT_HASH)
           {
             return TargetOptions::INPUT;

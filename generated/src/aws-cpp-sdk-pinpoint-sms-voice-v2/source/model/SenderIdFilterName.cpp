@@ -20,14 +20,14 @@ namespace Aws
       namespace SenderIdFilterNameMapper
       {
 
-        static const int sender_id_HASH = HashingUtils::HashString("sender-id");
-        static const int iso_country_code_HASH = HashingUtils::HashString("iso-country-code");
-        static const int message_type_HASH = HashingUtils::HashString("message-type");
+        static constexpr uint32_t sender_id_HASH = ConstExprHashingUtils::HashString("sender-id");
+        static constexpr uint32_t iso_country_code_HASH = ConstExprHashingUtils::HashString("iso-country-code");
+        static constexpr uint32_t message_type_HASH = ConstExprHashingUtils::HashString("message-type");
 
 
         SenderIdFilterName GetSenderIdFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == sender_id_HASH)
           {
             return SenderIdFilterName::sender_id;

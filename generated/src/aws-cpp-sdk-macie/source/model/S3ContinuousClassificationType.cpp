@@ -20,12 +20,12 @@ namespace Aws
       namespace S3ContinuousClassificationTypeMapper
       {
 
-        static const int FULL_HASH = HashingUtils::HashString("FULL");
+        static constexpr uint32_t FULL_HASH = ConstExprHashingUtils::HashString("FULL");
 
 
         S3ContinuousClassificationType GetS3ContinuousClassificationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FULL_HASH)
           {
             return S3ContinuousClassificationType::FULL;

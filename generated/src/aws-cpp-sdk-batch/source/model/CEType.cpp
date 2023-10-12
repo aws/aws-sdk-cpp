@@ -20,13 +20,13 @@ namespace Aws
       namespace CETypeMapper
       {
 
-        static const int MANAGED_HASH = HashingUtils::HashString("MANAGED");
-        static const int UNMANAGED_HASH = HashingUtils::HashString("UNMANAGED");
+        static constexpr uint32_t MANAGED_HASH = ConstExprHashingUtils::HashString("MANAGED");
+        static constexpr uint32_t UNMANAGED_HASH = ConstExprHashingUtils::HashString("UNMANAGED");
 
 
         CEType GetCETypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MANAGED_HASH)
           {
             return CEType::MANAGED;

@@ -20,15 +20,15 @@ namespace Aws
       namespace RoleTypeMapper
       {
 
-        static const int VIEWER_HASH = HashingUtils::HashString("VIEWER");
-        static const int CONTRIBUTOR_HASH = HashingUtils::HashString("CONTRIBUTOR");
-        static const int OWNER_HASH = HashingUtils::HashString("OWNER");
-        static const int COOWNER_HASH = HashingUtils::HashString("COOWNER");
+        static constexpr uint32_t VIEWER_HASH = ConstExprHashingUtils::HashString("VIEWER");
+        static constexpr uint32_t CONTRIBUTOR_HASH = ConstExprHashingUtils::HashString("CONTRIBUTOR");
+        static constexpr uint32_t OWNER_HASH = ConstExprHashingUtils::HashString("OWNER");
+        static constexpr uint32_t COOWNER_HASH = ConstExprHashingUtils::HashString("COOWNER");
 
 
         RoleType GetRoleTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VIEWER_HASH)
           {
             return RoleType::VIEWER;

@@ -20,16 +20,16 @@ namespace Aws
       namespace NetworkSecurityTypeMapper
       {
 
-        static const int OPEN_HASH = HashingUtils::HashString("OPEN");
-        static const int WEP_HASH = HashingUtils::HashString("WEP");
-        static const int WPA_PSK_HASH = HashingUtils::HashString("WPA_PSK");
-        static const int WPA2_PSK_HASH = HashingUtils::HashString("WPA2_PSK");
-        static const int WPA2_ENTERPRISE_HASH = HashingUtils::HashString("WPA2_ENTERPRISE");
+        static constexpr uint32_t OPEN_HASH = ConstExprHashingUtils::HashString("OPEN");
+        static constexpr uint32_t WEP_HASH = ConstExprHashingUtils::HashString("WEP");
+        static constexpr uint32_t WPA_PSK_HASH = ConstExprHashingUtils::HashString("WPA_PSK");
+        static constexpr uint32_t WPA2_PSK_HASH = ConstExprHashingUtils::HashString("WPA2_PSK");
+        static constexpr uint32_t WPA2_ENTERPRISE_HASH = ConstExprHashingUtils::HashString("WPA2_ENTERPRISE");
 
 
         NetworkSecurityType GetNetworkSecurityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OPEN_HASH)
           {
             return NetworkSecurityType::OPEN;

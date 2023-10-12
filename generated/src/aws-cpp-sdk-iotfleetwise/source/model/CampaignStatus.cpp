@@ -20,15 +20,15 @@ namespace Aws
       namespace CampaignStatusMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int WAITING_FOR_APPROVAL_HASH = HashingUtils::HashString("WAITING_FOR_APPROVAL");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t WAITING_FOR_APPROVAL_HASH = ConstExprHashingUtils::HashString("WAITING_FOR_APPROVAL");
+        static constexpr uint32_t RUNNING_HASH = ConstExprHashingUtils::HashString("RUNNING");
+        static constexpr uint32_t SUSPENDED_HASH = ConstExprHashingUtils::HashString("SUSPENDED");
 
 
         CampaignStatus GetCampaignStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return CampaignStatus::CREATING;

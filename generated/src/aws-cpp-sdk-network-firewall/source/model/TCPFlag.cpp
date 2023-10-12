@@ -20,19 +20,19 @@ namespace Aws
       namespace TCPFlagMapper
       {
 
-        static const int FIN_HASH = HashingUtils::HashString("FIN");
-        static const int SYN_HASH = HashingUtils::HashString("SYN");
-        static const int RST_HASH = HashingUtils::HashString("RST");
-        static const int PSH_HASH = HashingUtils::HashString("PSH");
-        static const int ACK_HASH = HashingUtils::HashString("ACK");
-        static const int URG_HASH = HashingUtils::HashString("URG");
-        static const int ECE_HASH = HashingUtils::HashString("ECE");
-        static const int CWR_HASH = HashingUtils::HashString("CWR");
+        static constexpr uint32_t FIN_HASH = ConstExprHashingUtils::HashString("FIN");
+        static constexpr uint32_t SYN_HASH = ConstExprHashingUtils::HashString("SYN");
+        static constexpr uint32_t RST_HASH = ConstExprHashingUtils::HashString("RST");
+        static constexpr uint32_t PSH_HASH = ConstExprHashingUtils::HashString("PSH");
+        static constexpr uint32_t ACK_HASH = ConstExprHashingUtils::HashString("ACK");
+        static constexpr uint32_t URG_HASH = ConstExprHashingUtils::HashString("URG");
+        static constexpr uint32_t ECE_HASH = ConstExprHashingUtils::HashString("ECE");
+        static constexpr uint32_t CWR_HASH = ConstExprHashingUtils::HashString("CWR");
 
 
         TCPFlag GetTCPFlagForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FIN_HASH)
           {
             return TCPFlag::FIN;

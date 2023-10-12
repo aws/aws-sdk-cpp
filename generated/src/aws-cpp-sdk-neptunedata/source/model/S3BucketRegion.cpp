@@ -20,34 +20,34 @@ namespace Aws
       namespace S3BucketRegionMapper
       {
 
-        static const int us_east_1_HASH = HashingUtils::HashString("us-east-1");
-        static const int us_east_2_HASH = HashingUtils::HashString("us-east-2");
-        static const int us_west_1_HASH = HashingUtils::HashString("us-west-1");
-        static const int us_west_2_HASH = HashingUtils::HashString("us-west-2");
-        static const int ca_central_1_HASH = HashingUtils::HashString("ca-central-1");
-        static const int sa_east_1_HASH = HashingUtils::HashString("sa-east-1");
-        static const int eu_north_1_HASH = HashingUtils::HashString("eu-north-1");
-        static const int eu_west_1_HASH = HashingUtils::HashString("eu-west-1");
-        static const int eu_west_2_HASH = HashingUtils::HashString("eu-west-2");
-        static const int eu_west_3_HASH = HashingUtils::HashString("eu-west-3");
-        static const int eu_central_1_HASH = HashingUtils::HashString("eu-central-1");
-        static const int me_south_1_HASH = HashingUtils::HashString("me-south-1");
-        static const int af_south_1_HASH = HashingUtils::HashString("af-south-1");
-        static const int ap_east_1_HASH = HashingUtils::HashString("ap-east-1");
-        static const int ap_northeast_1_HASH = HashingUtils::HashString("ap-northeast-1");
-        static const int ap_northeast_2_HASH = HashingUtils::HashString("ap-northeast-2");
-        static const int ap_southeast_1_HASH = HashingUtils::HashString("ap-southeast-1");
-        static const int ap_southeast_2_HASH = HashingUtils::HashString("ap-southeast-2");
-        static const int ap_south_1_HASH = HashingUtils::HashString("ap-south-1");
-        static const int cn_north_1_HASH = HashingUtils::HashString("cn-north-1");
-        static const int cn_northwest_1_HASH = HashingUtils::HashString("cn-northwest-1");
-        static const int us_gov_west_1_HASH = HashingUtils::HashString("us-gov-west-1");
-        static const int us_gov_east_1_HASH = HashingUtils::HashString("us-gov-east-1");
+        static constexpr uint32_t us_east_1_HASH = ConstExprHashingUtils::HashString("us-east-1");
+        static constexpr uint32_t us_east_2_HASH = ConstExprHashingUtils::HashString("us-east-2");
+        static constexpr uint32_t us_west_1_HASH = ConstExprHashingUtils::HashString("us-west-1");
+        static constexpr uint32_t us_west_2_HASH = ConstExprHashingUtils::HashString("us-west-2");
+        static constexpr uint32_t ca_central_1_HASH = ConstExprHashingUtils::HashString("ca-central-1");
+        static constexpr uint32_t sa_east_1_HASH = ConstExprHashingUtils::HashString("sa-east-1");
+        static constexpr uint32_t eu_north_1_HASH = ConstExprHashingUtils::HashString("eu-north-1");
+        static constexpr uint32_t eu_west_1_HASH = ConstExprHashingUtils::HashString("eu-west-1");
+        static constexpr uint32_t eu_west_2_HASH = ConstExprHashingUtils::HashString("eu-west-2");
+        static constexpr uint32_t eu_west_3_HASH = ConstExprHashingUtils::HashString("eu-west-3");
+        static constexpr uint32_t eu_central_1_HASH = ConstExprHashingUtils::HashString("eu-central-1");
+        static constexpr uint32_t me_south_1_HASH = ConstExprHashingUtils::HashString("me-south-1");
+        static constexpr uint32_t af_south_1_HASH = ConstExprHashingUtils::HashString("af-south-1");
+        static constexpr uint32_t ap_east_1_HASH = ConstExprHashingUtils::HashString("ap-east-1");
+        static constexpr uint32_t ap_northeast_1_HASH = ConstExprHashingUtils::HashString("ap-northeast-1");
+        static constexpr uint32_t ap_northeast_2_HASH = ConstExprHashingUtils::HashString("ap-northeast-2");
+        static constexpr uint32_t ap_southeast_1_HASH = ConstExprHashingUtils::HashString("ap-southeast-1");
+        static constexpr uint32_t ap_southeast_2_HASH = ConstExprHashingUtils::HashString("ap-southeast-2");
+        static constexpr uint32_t ap_south_1_HASH = ConstExprHashingUtils::HashString("ap-south-1");
+        static constexpr uint32_t cn_north_1_HASH = ConstExprHashingUtils::HashString("cn-north-1");
+        static constexpr uint32_t cn_northwest_1_HASH = ConstExprHashingUtils::HashString("cn-northwest-1");
+        static constexpr uint32_t us_gov_west_1_HASH = ConstExprHashingUtils::HashString("us-gov-west-1");
+        static constexpr uint32_t us_gov_east_1_HASH = ConstExprHashingUtils::HashString("us-gov-east-1");
 
 
         S3BucketRegion GetS3BucketRegionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == us_east_1_HASH)
           {
             return S3BucketRegion::us_east_1;

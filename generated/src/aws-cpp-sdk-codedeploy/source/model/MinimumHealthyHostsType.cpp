@@ -20,13 +20,13 @@ namespace Aws
       namespace MinimumHealthyHostsTypeMapper
       {
 
-        static const int HOST_COUNT_HASH = HashingUtils::HashString("HOST_COUNT");
-        static const int FLEET_PERCENT_HASH = HashingUtils::HashString("FLEET_PERCENT");
+        static constexpr uint32_t HOST_COUNT_HASH = ConstExprHashingUtils::HashString("HOST_COUNT");
+        static constexpr uint32_t FLEET_PERCENT_HASH = ConstExprHashingUtils::HashString("FLEET_PERCENT");
 
 
         MinimumHealthyHostsType GetMinimumHealthyHostsTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HOST_COUNT_HASH)
           {
             return MinimumHealthyHostsType::HOST_COUNT;

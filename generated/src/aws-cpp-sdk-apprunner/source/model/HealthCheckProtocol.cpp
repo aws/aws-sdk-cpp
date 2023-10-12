@@ -20,13 +20,13 @@ namespace Aws
       namespace HealthCheckProtocolMapper
       {
 
-        static const int TCP_HASH = HashingUtils::HashString("TCP");
-        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
+        static constexpr uint32_t TCP_HASH = ConstExprHashingUtils::HashString("TCP");
+        static constexpr uint32_t HTTP_HASH = ConstExprHashingUtils::HashString("HTTP");
 
 
         HealthCheckProtocol GetHealthCheckProtocolForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TCP_HASH)
           {
             return HealthCheckProtocol::TCP;

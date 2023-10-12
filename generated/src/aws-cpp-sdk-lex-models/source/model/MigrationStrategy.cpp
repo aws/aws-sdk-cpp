@@ -20,13 +20,13 @@ namespace Aws
       namespace MigrationStrategyMapper
       {
 
-        static const int CREATE_NEW_HASH = HashingUtils::HashString("CREATE_NEW");
-        static const int UPDATE_EXISTING_HASH = HashingUtils::HashString("UPDATE_EXISTING");
+        static constexpr uint32_t CREATE_NEW_HASH = ConstExprHashingUtils::HashString("CREATE_NEW");
+        static constexpr uint32_t UPDATE_EXISTING_HASH = ConstExprHashingUtils::HashString("UPDATE_EXISTING");
 
 
         MigrationStrategy GetMigrationStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_NEW_HASH)
           {
             return MigrationStrategy::CREATE_NEW;

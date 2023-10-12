@@ -20,15 +20,15 @@ namespace Aws
       namespace IteratorTypeMapper
       {
 
-        static const int AT_SEQUENCE_NUMBER_HASH = HashingUtils::HashString("AT_SEQUENCE_NUMBER");
-        static const int AFTER_SEQUENCE_NUMBER_HASH = HashingUtils::HashString("AFTER_SEQUENCE_NUMBER");
-        static const int TRIM_HORIZON_HASH = HashingUtils::HashString("TRIM_HORIZON");
-        static const int LATEST_HASH = HashingUtils::HashString("LATEST");
+        static constexpr uint32_t AT_SEQUENCE_NUMBER_HASH = ConstExprHashingUtils::HashString("AT_SEQUENCE_NUMBER");
+        static constexpr uint32_t AFTER_SEQUENCE_NUMBER_HASH = ConstExprHashingUtils::HashString("AFTER_SEQUENCE_NUMBER");
+        static constexpr uint32_t TRIM_HORIZON_HASH = ConstExprHashingUtils::HashString("TRIM_HORIZON");
+        static constexpr uint32_t LATEST_HASH = ConstExprHashingUtils::HashString("LATEST");
 
 
         IteratorType GetIteratorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AT_SEQUENCE_NUMBER_HASH)
           {
             return IteratorType::AT_SEQUENCE_NUMBER;

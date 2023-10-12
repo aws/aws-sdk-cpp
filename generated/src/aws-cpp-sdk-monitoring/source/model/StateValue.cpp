@@ -20,14 +20,14 @@ namespace Aws
       namespace StateValueMapper
       {
 
-        static const int OK_HASH = HashingUtils::HashString("OK");
-        static const int ALARM_HASH = HashingUtils::HashString("ALARM");
-        static const int INSUFFICIENT_DATA_HASH = HashingUtils::HashString("INSUFFICIENT_DATA");
+        static constexpr uint32_t OK_HASH = ConstExprHashingUtils::HashString("OK");
+        static constexpr uint32_t ALARM_HASH = ConstExprHashingUtils::HashString("ALARM");
+        static constexpr uint32_t INSUFFICIENT_DATA_HASH = ConstExprHashingUtils::HashString("INSUFFICIENT_DATA");
 
 
         StateValue GetStateValueForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OK_HASH)
           {
             return StateValue::OK;

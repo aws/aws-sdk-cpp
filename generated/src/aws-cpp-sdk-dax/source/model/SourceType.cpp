@@ -20,14 +20,14 @@ namespace Aws
       namespace SourceTypeMapper
       {
 
-        static const int CLUSTER_HASH = HashingUtils::HashString("CLUSTER");
-        static const int PARAMETER_GROUP_HASH = HashingUtils::HashString("PARAMETER_GROUP");
-        static const int SUBNET_GROUP_HASH = HashingUtils::HashString("SUBNET_GROUP");
+        static constexpr uint32_t CLUSTER_HASH = ConstExprHashingUtils::HashString("CLUSTER");
+        static constexpr uint32_t PARAMETER_GROUP_HASH = ConstExprHashingUtils::HashString("PARAMETER_GROUP");
+        static constexpr uint32_t SUBNET_GROUP_HASH = ConstExprHashingUtils::HashString("SUBNET_GROUP");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CLUSTER_HASH)
           {
             return SourceType::CLUSTER;

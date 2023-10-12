@@ -20,14 +20,14 @@ namespace Aws
       namespace EngineFamilyMapper
       {
 
-        static const int MYSQL_HASH = HashingUtils::HashString("MYSQL");
-        static const int POSTGRESQL_HASH = HashingUtils::HashString("POSTGRESQL");
-        static const int SQLSERVER_HASH = HashingUtils::HashString("SQLSERVER");
+        static constexpr uint32_t MYSQL_HASH = ConstExprHashingUtils::HashString("MYSQL");
+        static constexpr uint32_t POSTGRESQL_HASH = ConstExprHashingUtils::HashString("POSTGRESQL");
+        static constexpr uint32_t SQLSERVER_HASH = ConstExprHashingUtils::HashString("SQLSERVER");
 
 
         EngineFamily GetEngineFamilyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MYSQL_HASH)
           {
             return EngineFamily::MYSQL;

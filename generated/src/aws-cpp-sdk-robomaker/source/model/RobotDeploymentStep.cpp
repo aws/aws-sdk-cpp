@@ -20,18 +20,18 @@ namespace Aws
       namespace RobotDeploymentStepMapper
       {
 
-        static const int Validating_HASH = HashingUtils::HashString("Validating");
-        static const int DownloadingExtracting_HASH = HashingUtils::HashString("DownloadingExtracting");
-        static const int ExecutingDownloadCondition_HASH = HashingUtils::HashString("ExecutingDownloadCondition");
-        static const int ExecutingPreLaunch_HASH = HashingUtils::HashString("ExecutingPreLaunch");
-        static const int Launching_HASH = HashingUtils::HashString("Launching");
-        static const int ExecutingPostLaunch_HASH = HashingUtils::HashString("ExecutingPostLaunch");
-        static const int Finished_HASH = HashingUtils::HashString("Finished");
+        static constexpr uint32_t Validating_HASH = ConstExprHashingUtils::HashString("Validating");
+        static constexpr uint32_t DownloadingExtracting_HASH = ConstExprHashingUtils::HashString("DownloadingExtracting");
+        static constexpr uint32_t ExecutingDownloadCondition_HASH = ConstExprHashingUtils::HashString("ExecutingDownloadCondition");
+        static constexpr uint32_t ExecutingPreLaunch_HASH = ConstExprHashingUtils::HashString("ExecutingPreLaunch");
+        static constexpr uint32_t Launching_HASH = ConstExprHashingUtils::HashString("Launching");
+        static constexpr uint32_t ExecutingPostLaunch_HASH = ConstExprHashingUtils::HashString("ExecutingPostLaunch");
+        static constexpr uint32_t Finished_HASH = ConstExprHashingUtils::HashString("Finished");
 
 
         RobotDeploymentStep GetRobotDeploymentStepForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Validating_HASH)
           {
             return RobotDeploymentStep::Validating;

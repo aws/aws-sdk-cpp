@@ -20,14 +20,14 @@ namespace Aws
       namespace CommitmentLengthMapper
       {
 
-        static const int SIXTY_DAYS_HASH = HashingUtils::HashString("SIXTY_DAYS");
-        static const int ONE_YEAR_HASH = HashingUtils::HashString("ONE_YEAR");
-        static const int THREE_YEARS_HASH = HashingUtils::HashString("THREE_YEARS");
+        static constexpr uint32_t SIXTY_DAYS_HASH = ConstExprHashingUtils::HashString("SIXTY_DAYS");
+        static constexpr uint32_t ONE_YEAR_HASH = ConstExprHashingUtils::HashString("ONE_YEAR");
+        static constexpr uint32_t THREE_YEARS_HASH = ConstExprHashingUtils::HashString("THREE_YEARS");
 
 
         CommitmentLength GetCommitmentLengthForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SIXTY_DAYS_HASH)
           {
             return CommitmentLength::SIXTY_DAYS;

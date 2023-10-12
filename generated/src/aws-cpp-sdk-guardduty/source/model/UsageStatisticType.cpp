@@ -20,16 +20,16 @@ namespace Aws
       namespace UsageStatisticTypeMapper
       {
 
-        static const int SUM_BY_ACCOUNT_HASH = HashingUtils::HashString("SUM_BY_ACCOUNT");
-        static const int SUM_BY_DATA_SOURCE_HASH = HashingUtils::HashString("SUM_BY_DATA_SOURCE");
-        static const int SUM_BY_RESOURCE_HASH = HashingUtils::HashString("SUM_BY_RESOURCE");
-        static const int TOP_RESOURCES_HASH = HashingUtils::HashString("TOP_RESOURCES");
-        static const int SUM_BY_FEATURES_HASH = HashingUtils::HashString("SUM_BY_FEATURES");
+        static constexpr uint32_t SUM_BY_ACCOUNT_HASH = ConstExprHashingUtils::HashString("SUM_BY_ACCOUNT");
+        static constexpr uint32_t SUM_BY_DATA_SOURCE_HASH = ConstExprHashingUtils::HashString("SUM_BY_DATA_SOURCE");
+        static constexpr uint32_t SUM_BY_RESOURCE_HASH = ConstExprHashingUtils::HashString("SUM_BY_RESOURCE");
+        static constexpr uint32_t TOP_RESOURCES_HASH = ConstExprHashingUtils::HashString("TOP_RESOURCES");
+        static constexpr uint32_t SUM_BY_FEATURES_HASH = ConstExprHashingUtils::HashString("SUM_BY_FEATURES");
 
 
         UsageStatisticType GetUsageStatisticTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUM_BY_ACCOUNT_HASH)
           {
             return UsageStatisticType::SUM_BY_ACCOUNT;

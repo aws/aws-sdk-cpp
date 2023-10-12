@@ -20,13 +20,13 @@ namespace Aws
       namespace ImportDestinationTypeMapper
       {
 
-        static const int SUPPRESSION_LIST_HASH = HashingUtils::HashString("SUPPRESSION_LIST");
-        static const int CONTACT_LIST_HASH = HashingUtils::HashString("CONTACT_LIST");
+        static constexpr uint32_t SUPPRESSION_LIST_HASH = ConstExprHashingUtils::HashString("SUPPRESSION_LIST");
+        static constexpr uint32_t CONTACT_LIST_HASH = ConstExprHashingUtils::HashString("CONTACT_LIST");
 
 
         ImportDestinationType GetImportDestinationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUPPRESSION_LIST_HASH)
           {
             return ImportDestinationType::SUPPRESSION_LIST;

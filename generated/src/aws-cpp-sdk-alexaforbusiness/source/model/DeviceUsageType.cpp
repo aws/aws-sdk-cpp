@@ -20,12 +20,12 @@ namespace Aws
       namespace DeviceUsageTypeMapper
       {
 
-        static const int VOICE_HASH = HashingUtils::HashString("VOICE");
+        static constexpr uint32_t VOICE_HASH = ConstExprHashingUtils::HashString("VOICE");
 
 
         DeviceUsageType GetDeviceUsageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VOICE_HASH)
           {
             return DeviceUsageType::VOICE;

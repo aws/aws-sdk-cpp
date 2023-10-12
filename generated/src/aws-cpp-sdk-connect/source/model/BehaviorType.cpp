@@ -20,13 +20,13 @@ namespace Aws
       namespace BehaviorTypeMapper
       {
 
-        static const int ROUTE_CURRENT_CHANNEL_ONLY_HASH = HashingUtils::HashString("ROUTE_CURRENT_CHANNEL_ONLY");
-        static const int ROUTE_ANY_CHANNEL_HASH = HashingUtils::HashString("ROUTE_ANY_CHANNEL");
+        static constexpr uint32_t ROUTE_CURRENT_CHANNEL_ONLY_HASH = ConstExprHashingUtils::HashString("ROUTE_CURRENT_CHANNEL_ONLY");
+        static constexpr uint32_t ROUTE_ANY_CHANNEL_HASH = ConstExprHashingUtils::HashString("ROUTE_ANY_CHANNEL");
 
 
         BehaviorType GetBehaviorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ROUTE_CURRENT_CHANNEL_ONLY_HASH)
           {
             return BehaviorType::ROUTE_CURRENT_CHANNEL_ONLY;

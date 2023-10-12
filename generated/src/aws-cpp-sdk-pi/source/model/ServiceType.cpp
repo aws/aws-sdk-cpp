@@ -20,13 +20,13 @@ namespace Aws
       namespace ServiceTypeMapper
       {
 
-        static const int RDS_HASH = HashingUtils::HashString("RDS");
-        static const int DOCDB_HASH = HashingUtils::HashString("DOCDB");
+        static constexpr uint32_t RDS_HASH = ConstExprHashingUtils::HashString("RDS");
+        static constexpr uint32_t DOCDB_HASH = ConstExprHashingUtils::HashString("DOCDB");
 
 
         ServiceType GetServiceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RDS_HASH)
           {
             return ServiceType::RDS;

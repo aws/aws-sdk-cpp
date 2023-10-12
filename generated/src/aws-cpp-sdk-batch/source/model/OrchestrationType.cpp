@@ -20,13 +20,13 @@ namespace Aws
       namespace OrchestrationTypeMapper
       {
 
-        static const int ECS_HASH = HashingUtils::HashString("ECS");
-        static const int EKS_HASH = HashingUtils::HashString("EKS");
+        static constexpr uint32_t ECS_HASH = ConstExprHashingUtils::HashString("ECS");
+        static constexpr uint32_t EKS_HASH = ConstExprHashingUtils::HashString("EKS");
 
 
         OrchestrationType GetOrchestrationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ECS_HASH)
           {
             return OrchestrationType::ECS;

@@ -20,16 +20,16 @@ namespace Aws
       namespace ConfigurationItemStatusMapper
       {
 
-        static const int OK_HASH = HashingUtils::HashString("OK");
-        static const int ResourceDiscovered_HASH = HashingUtils::HashString("ResourceDiscovered");
-        static const int ResourceNotRecorded_HASH = HashingUtils::HashString("ResourceNotRecorded");
-        static const int ResourceDeleted_HASH = HashingUtils::HashString("ResourceDeleted");
-        static const int ResourceDeletedNotRecorded_HASH = HashingUtils::HashString("ResourceDeletedNotRecorded");
+        static constexpr uint32_t OK_HASH = ConstExprHashingUtils::HashString("OK");
+        static constexpr uint32_t ResourceDiscovered_HASH = ConstExprHashingUtils::HashString("ResourceDiscovered");
+        static constexpr uint32_t ResourceNotRecorded_HASH = ConstExprHashingUtils::HashString("ResourceNotRecorded");
+        static constexpr uint32_t ResourceDeleted_HASH = ConstExprHashingUtils::HashString("ResourceDeleted");
+        static constexpr uint32_t ResourceDeletedNotRecorded_HASH = ConstExprHashingUtils::HashString("ResourceDeletedNotRecorded");
 
 
         ConfigurationItemStatus GetConfigurationItemStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OK_HASH)
           {
             return ConfigurationItemStatus::OK;

@@ -20,14 +20,14 @@ namespace Aws
       namespace AnalysisStatusMapper
       {
 
-        static const int running_HASH = HashingUtils::HashString("running");
-        static const int succeeded_HASH = HashingUtils::HashString("succeeded");
-        static const int failed_HASH = HashingUtils::HashString("failed");
+        static constexpr uint32_t running_HASH = ConstExprHashingUtils::HashString("running");
+        static constexpr uint32_t succeeded_HASH = ConstExprHashingUtils::HashString("succeeded");
+        static constexpr uint32_t failed_HASH = ConstExprHashingUtils::HashString("failed");
 
 
         AnalysisStatus GetAnalysisStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == running_HASH)
           {
             return AnalysisStatus::running;

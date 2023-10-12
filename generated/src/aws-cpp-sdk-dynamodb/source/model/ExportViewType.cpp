@@ -20,13 +20,13 @@ namespace Aws
       namespace ExportViewTypeMapper
       {
 
-        static const int NEW_IMAGE_HASH = HashingUtils::HashString("NEW_IMAGE");
-        static const int NEW_AND_OLD_IMAGES_HASH = HashingUtils::HashString("NEW_AND_OLD_IMAGES");
+        static constexpr uint32_t NEW_IMAGE_HASH = ConstExprHashingUtils::HashString("NEW_IMAGE");
+        static constexpr uint32_t NEW_AND_OLD_IMAGES_HASH = ConstExprHashingUtils::HashString("NEW_AND_OLD_IMAGES");
 
 
         ExportViewType GetExportViewTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NEW_IMAGE_HASH)
           {
             return ExportViewType::NEW_IMAGE;

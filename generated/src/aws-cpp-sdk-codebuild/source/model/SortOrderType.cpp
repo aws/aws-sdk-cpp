@@ -20,13 +20,13 @@ namespace Aws
       namespace SortOrderTypeMapper
       {
 
-        static const int ASCENDING_HASH = HashingUtils::HashString("ASCENDING");
-        static const int DESCENDING_HASH = HashingUtils::HashString("DESCENDING");
+        static constexpr uint32_t ASCENDING_HASH = ConstExprHashingUtils::HashString("ASCENDING");
+        static constexpr uint32_t DESCENDING_HASH = ConstExprHashingUtils::HashString("DESCENDING");
 
 
         SortOrderType GetSortOrderTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASCENDING_HASH)
           {
             return SortOrderType::ASCENDING;

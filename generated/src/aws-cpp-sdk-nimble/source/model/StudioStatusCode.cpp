@@ -20,30 +20,30 @@ namespace Aws
       namespace StudioStatusCodeMapper
       {
 
-        static const int STUDIO_CREATED_HASH = HashingUtils::HashString("STUDIO_CREATED");
-        static const int STUDIO_DELETED_HASH = HashingUtils::HashString("STUDIO_DELETED");
-        static const int STUDIO_UPDATED_HASH = HashingUtils::HashString("STUDIO_UPDATED");
-        static const int STUDIO_CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("STUDIO_CREATE_IN_PROGRESS");
-        static const int STUDIO_UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("STUDIO_UPDATE_IN_PROGRESS");
-        static const int STUDIO_DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("STUDIO_DELETE_IN_PROGRESS");
-        static const int STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED_HASH = HashingUtils::HashString("STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED");
-        static const int STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED_HASH = HashingUtils::HashString("STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED");
-        static const int STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED_HASH = HashingUtils::HashString("STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED");
-        static const int AWS_SSO_NOT_ENABLED_HASH = HashingUtils::HashString("AWS_SSO_NOT_ENABLED");
-        static const int AWS_SSO_ACCESS_DENIED_HASH = HashingUtils::HashString("AWS_SSO_ACCESS_DENIED");
-        static const int ROLE_NOT_OWNED_BY_STUDIO_OWNER_HASH = HashingUtils::HashString("ROLE_NOT_OWNED_BY_STUDIO_OWNER");
-        static const int ROLE_COULD_NOT_BE_ASSUMED_HASH = HashingUtils::HashString("ROLE_COULD_NOT_BE_ASSUMED");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-        static const int ENCRYPTION_KEY_NOT_FOUND_HASH = HashingUtils::HashString("ENCRYPTION_KEY_NOT_FOUND");
-        static const int ENCRYPTION_KEY_ACCESS_DENIED_HASH = HashingUtils::HashString("ENCRYPTION_KEY_ACCESS_DENIED");
-        static const int AWS_SSO_CONFIGURATION_REPAIRED_HASH = HashingUtils::HashString("AWS_SSO_CONFIGURATION_REPAIRED");
-        static const int AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS_HASH = HashingUtils::HashString("AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS");
-        static const int AWS_STS_REGION_DISABLED_HASH = HashingUtils::HashString("AWS_STS_REGION_DISABLED");
+        static constexpr uint32_t STUDIO_CREATED_HASH = ConstExprHashingUtils::HashString("STUDIO_CREATED");
+        static constexpr uint32_t STUDIO_DELETED_HASH = ConstExprHashingUtils::HashString("STUDIO_DELETED");
+        static constexpr uint32_t STUDIO_UPDATED_HASH = ConstExprHashingUtils::HashString("STUDIO_UPDATED");
+        static constexpr uint32_t STUDIO_CREATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("STUDIO_CREATE_IN_PROGRESS");
+        static constexpr uint32_t STUDIO_UPDATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("STUDIO_UPDATE_IN_PROGRESS");
+        static constexpr uint32_t STUDIO_DELETE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("STUDIO_DELETE_IN_PROGRESS");
+        static constexpr uint32_t STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED_HASH = ConstExprHashingUtils::HashString("STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED");
+        static constexpr uint32_t STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED_HASH = ConstExprHashingUtils::HashString("STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED");
+        static constexpr uint32_t STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED_HASH = ConstExprHashingUtils::HashString("STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED");
+        static constexpr uint32_t AWS_SSO_NOT_ENABLED_HASH = ConstExprHashingUtils::HashString("AWS_SSO_NOT_ENABLED");
+        static constexpr uint32_t AWS_SSO_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("AWS_SSO_ACCESS_DENIED");
+        static constexpr uint32_t ROLE_NOT_OWNED_BY_STUDIO_OWNER_HASH = ConstExprHashingUtils::HashString("ROLE_NOT_OWNED_BY_STUDIO_OWNER");
+        static constexpr uint32_t ROLE_COULD_NOT_BE_ASSUMED_HASH = ConstExprHashingUtils::HashString("ROLE_COULD_NOT_BE_ASSUMED");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t ENCRYPTION_KEY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("ENCRYPTION_KEY_NOT_FOUND");
+        static constexpr uint32_t ENCRYPTION_KEY_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("ENCRYPTION_KEY_ACCESS_DENIED");
+        static constexpr uint32_t AWS_SSO_CONFIGURATION_REPAIRED_HASH = ConstExprHashingUtils::HashString("AWS_SSO_CONFIGURATION_REPAIRED");
+        static constexpr uint32_t AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS");
+        static constexpr uint32_t AWS_STS_REGION_DISABLED_HASH = ConstExprHashingUtils::HashString("AWS_STS_REGION_DISABLED");
 
 
         StudioStatusCode GetStudioStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STUDIO_CREATED_HASH)
           {
             return StudioStatusCode::STUDIO_CREATED;

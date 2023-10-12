@@ -20,28 +20,28 @@ namespace Aws
       namespace SortFieldMapper
       {
 
-        static const int AWS_ACCOUNT_ID_HASH = HashingUtils::HashString("AWS_ACCOUNT_ID");
-        static const int FINDING_TYPE_HASH = HashingUtils::HashString("FINDING_TYPE");
-        static const int SEVERITY_HASH = HashingUtils::HashString("SEVERITY");
-        static const int FIRST_OBSERVED_AT_HASH = HashingUtils::HashString("FIRST_OBSERVED_AT");
-        static const int LAST_OBSERVED_AT_HASH = HashingUtils::HashString("LAST_OBSERVED_AT");
-        static const int FINDING_STATUS_HASH = HashingUtils::HashString("FINDING_STATUS");
-        static const int RESOURCE_TYPE_HASH = HashingUtils::HashString("RESOURCE_TYPE");
-        static const int ECR_IMAGE_PUSHED_AT_HASH = HashingUtils::HashString("ECR_IMAGE_PUSHED_AT");
-        static const int ECR_IMAGE_REPOSITORY_NAME_HASH = HashingUtils::HashString("ECR_IMAGE_REPOSITORY_NAME");
-        static const int ECR_IMAGE_REGISTRY_HASH = HashingUtils::HashString("ECR_IMAGE_REGISTRY");
-        static const int NETWORK_PROTOCOL_HASH = HashingUtils::HashString("NETWORK_PROTOCOL");
-        static const int COMPONENT_TYPE_HASH = HashingUtils::HashString("COMPONENT_TYPE");
-        static const int VULNERABILITY_ID_HASH = HashingUtils::HashString("VULNERABILITY_ID");
-        static const int VULNERABILITY_SOURCE_HASH = HashingUtils::HashString("VULNERABILITY_SOURCE");
-        static const int INSPECTOR_SCORE_HASH = HashingUtils::HashString("INSPECTOR_SCORE");
-        static const int VENDOR_SEVERITY_HASH = HashingUtils::HashString("VENDOR_SEVERITY");
-        static const int EPSS_SCORE_HASH = HashingUtils::HashString("EPSS_SCORE");
+        static constexpr uint32_t AWS_ACCOUNT_ID_HASH = ConstExprHashingUtils::HashString("AWS_ACCOUNT_ID");
+        static constexpr uint32_t FINDING_TYPE_HASH = ConstExprHashingUtils::HashString("FINDING_TYPE");
+        static constexpr uint32_t SEVERITY_HASH = ConstExprHashingUtils::HashString("SEVERITY");
+        static constexpr uint32_t FIRST_OBSERVED_AT_HASH = ConstExprHashingUtils::HashString("FIRST_OBSERVED_AT");
+        static constexpr uint32_t LAST_OBSERVED_AT_HASH = ConstExprHashingUtils::HashString("LAST_OBSERVED_AT");
+        static constexpr uint32_t FINDING_STATUS_HASH = ConstExprHashingUtils::HashString("FINDING_STATUS");
+        static constexpr uint32_t RESOURCE_TYPE_HASH = ConstExprHashingUtils::HashString("RESOURCE_TYPE");
+        static constexpr uint32_t ECR_IMAGE_PUSHED_AT_HASH = ConstExprHashingUtils::HashString("ECR_IMAGE_PUSHED_AT");
+        static constexpr uint32_t ECR_IMAGE_REPOSITORY_NAME_HASH = ConstExprHashingUtils::HashString("ECR_IMAGE_REPOSITORY_NAME");
+        static constexpr uint32_t ECR_IMAGE_REGISTRY_HASH = ConstExprHashingUtils::HashString("ECR_IMAGE_REGISTRY");
+        static constexpr uint32_t NETWORK_PROTOCOL_HASH = ConstExprHashingUtils::HashString("NETWORK_PROTOCOL");
+        static constexpr uint32_t COMPONENT_TYPE_HASH = ConstExprHashingUtils::HashString("COMPONENT_TYPE");
+        static constexpr uint32_t VULNERABILITY_ID_HASH = ConstExprHashingUtils::HashString("VULNERABILITY_ID");
+        static constexpr uint32_t VULNERABILITY_SOURCE_HASH = ConstExprHashingUtils::HashString("VULNERABILITY_SOURCE");
+        static constexpr uint32_t INSPECTOR_SCORE_HASH = ConstExprHashingUtils::HashString("INSPECTOR_SCORE");
+        static constexpr uint32_t VENDOR_SEVERITY_HASH = ConstExprHashingUtils::HashString("VENDOR_SEVERITY");
+        static constexpr uint32_t EPSS_SCORE_HASH = ConstExprHashingUtils::HashString("EPSS_SCORE");
 
 
         SortField GetSortFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_ACCOUNT_ID_HASH)
           {
             return SortField::AWS_ACCOUNT_ID;

@@ -20,14 +20,14 @@ namespace Aws
       namespace NielsenActiveWatermarkProcessTypeMapper
       {
 
-        static const int NAES2_AND_NW_HASH = HashingUtils::HashString("NAES2_AND_NW");
-        static const int CBET_HASH = HashingUtils::HashString("CBET");
-        static const int NAES2_AND_NW_AND_CBET_HASH = HashingUtils::HashString("NAES2_AND_NW_AND_CBET");
+        static constexpr uint32_t NAES2_AND_NW_HASH = ConstExprHashingUtils::HashString("NAES2_AND_NW");
+        static constexpr uint32_t CBET_HASH = ConstExprHashingUtils::HashString("CBET");
+        static constexpr uint32_t NAES2_AND_NW_AND_CBET_HASH = ConstExprHashingUtils::HashString("NAES2_AND_NW_AND_CBET");
 
 
         NielsenActiveWatermarkProcessType GetNielsenActiveWatermarkProcessTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NAES2_AND_NW_HASH)
           {
             return NielsenActiveWatermarkProcessType::NAES2_AND_NW;

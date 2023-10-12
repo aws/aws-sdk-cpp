@@ -20,13 +20,13 @@ namespace Aws
       namespace DashIsoGroupAudioChannelConfigSchemeIdUriMapper
       {
 
-        static const int MPEG_CHANNEL_CONFIGURATION_HASH = HashingUtils::HashString("MPEG_CHANNEL_CONFIGURATION");
-        static const int DOLBY_CHANNEL_CONFIGURATION_HASH = HashingUtils::HashString("DOLBY_CHANNEL_CONFIGURATION");
+        static constexpr uint32_t MPEG_CHANNEL_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("MPEG_CHANNEL_CONFIGURATION");
+        static constexpr uint32_t DOLBY_CHANNEL_CONFIGURATION_HASH = ConstExprHashingUtils::HashString("DOLBY_CHANNEL_CONFIGURATION");
 
 
         DashIsoGroupAudioChannelConfigSchemeIdUri GetDashIsoGroupAudioChannelConfigSchemeIdUriForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MPEG_CHANNEL_CONFIGURATION_HASH)
           {
             return DashIsoGroupAudioChannelConfigSchemeIdUri::MPEG_CHANNEL_CONFIGURATION;

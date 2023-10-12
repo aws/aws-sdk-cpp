@@ -20,14 +20,14 @@ namespace Aws
       namespace OpenCypherExplainModeMapper
       {
 
-        static const int static__HASH = HashingUtils::HashString("static");
-        static const int dynamic_HASH = HashingUtils::HashString("dynamic");
-        static const int details_HASH = HashingUtils::HashString("details");
+        static constexpr uint32_t static__HASH = ConstExprHashingUtils::HashString("static");
+        static constexpr uint32_t dynamic_HASH = ConstExprHashingUtils::HashString("dynamic");
+        static constexpr uint32_t details_HASH = ConstExprHashingUtils::HashString("details");
 
 
         OpenCypherExplainMode GetOpenCypherExplainModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == static__HASH)
           {
             return OpenCypherExplainMode::static_;

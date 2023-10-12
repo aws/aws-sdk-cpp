@@ -20,14 +20,14 @@ namespace Aws
       namespace ArtifactCategoryMapper
       {
 
-        static const int SCREENSHOT_HASH = HashingUtils::HashString("SCREENSHOT");
-        static const int FILE_HASH = HashingUtils::HashString("FILE");
-        static const int LOG_HASH = HashingUtils::HashString("LOG");
+        static constexpr uint32_t SCREENSHOT_HASH = ConstExprHashingUtils::HashString("SCREENSHOT");
+        static constexpr uint32_t FILE_HASH = ConstExprHashingUtils::HashString("FILE");
+        static constexpr uint32_t LOG_HASH = ConstExprHashingUtils::HashString("LOG");
 
 
         ArtifactCategory GetArtifactCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SCREENSHOT_HASH)
           {
             return ArtifactCategory::SCREENSHOT;

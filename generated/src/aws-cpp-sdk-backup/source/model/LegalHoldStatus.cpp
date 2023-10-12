@@ -20,15 +20,15 @@ namespace Aws
       namespace LegalHoldStatusMapper
       {
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int CANCELING_HASH = HashingUtils::HashString("CANCELING");
-        static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t CANCELING_HASH = ConstExprHashingUtils::HashString("CANCELING");
+        static constexpr uint32_t CANCELED_HASH = ConstExprHashingUtils::HashString("CANCELED");
 
 
         LegalHoldStatus GetLegalHoldStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
             return LegalHoldStatus::CREATING;

@@ -20,13 +20,13 @@ namespace Aws
       namespace DiagnosticsModeMapper
       {
 
-        static const int OFF_HASH = HashingUtils::HashString("OFF");
-        static const int SEND_ACTIVE_DTCS_HASH = HashingUtils::HashString("SEND_ACTIVE_DTCS");
+        static constexpr uint32_t OFF_HASH = ConstExprHashingUtils::HashString("OFF");
+        static constexpr uint32_t SEND_ACTIVE_DTCS_HASH = ConstExprHashingUtils::HashString("SEND_ACTIVE_DTCS");
 
 
         DiagnosticsMode GetDiagnosticsModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OFF_HASH)
           {
             return DiagnosticsMode::OFF;

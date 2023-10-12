@@ -20,13 +20,13 @@ namespace Aws
       namespace AttackLayerMapper
       {
 
-        static const int NETWORK_HASH = HashingUtils::HashString("NETWORK");
-        static const int APPLICATION_HASH = HashingUtils::HashString("APPLICATION");
+        static constexpr uint32_t NETWORK_HASH = ConstExprHashingUtils::HashString("NETWORK");
+        static constexpr uint32_t APPLICATION_HASH = ConstExprHashingUtils::HashString("APPLICATION");
 
 
         AttackLayer GetAttackLayerForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NETWORK_HASH)
           {
             return AttackLayer::NETWORK;

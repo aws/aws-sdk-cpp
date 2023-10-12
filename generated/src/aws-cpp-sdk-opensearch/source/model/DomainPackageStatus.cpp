@@ -20,16 +20,16 @@ namespace Aws
       namespace DomainPackageStatusMapper
       {
 
-        static const int ASSOCIATING_HASH = HashingUtils::HashString("ASSOCIATING");
-        static const int ASSOCIATION_FAILED_HASH = HashingUtils::HashString("ASSOCIATION_FAILED");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DISSOCIATING_HASH = HashingUtils::HashString("DISSOCIATING");
-        static const int DISSOCIATION_FAILED_HASH = HashingUtils::HashString("DISSOCIATION_FAILED");
+        static constexpr uint32_t ASSOCIATING_HASH = ConstExprHashingUtils::HashString("ASSOCIATING");
+        static constexpr uint32_t ASSOCIATION_FAILED_HASH = ConstExprHashingUtils::HashString("ASSOCIATION_FAILED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t DISSOCIATING_HASH = ConstExprHashingUtils::HashString("DISSOCIATING");
+        static constexpr uint32_t DISSOCIATION_FAILED_HASH = ConstExprHashingUtils::HashString("DISSOCIATION_FAILED");
 
 
         DomainPackageStatus GetDomainPackageStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASSOCIATING_HASH)
           {
             return DomainPackageStatus::ASSOCIATING;

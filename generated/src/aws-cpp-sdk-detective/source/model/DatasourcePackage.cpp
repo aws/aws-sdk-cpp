@@ -20,14 +20,14 @@ namespace Aws
       namespace DatasourcePackageMapper
       {
 
-        static const int DETECTIVE_CORE_HASH = HashingUtils::HashString("DETECTIVE_CORE");
-        static const int EKS_AUDIT_HASH = HashingUtils::HashString("EKS_AUDIT");
-        static const int ASFF_SECURITYHUB_FINDING_HASH = HashingUtils::HashString("ASFF_SECURITYHUB_FINDING");
+        static constexpr uint32_t DETECTIVE_CORE_HASH = ConstExprHashingUtils::HashString("DETECTIVE_CORE");
+        static constexpr uint32_t EKS_AUDIT_HASH = ConstExprHashingUtils::HashString("EKS_AUDIT");
+        static constexpr uint32_t ASFF_SECURITYHUB_FINDING_HASH = ConstExprHashingUtils::HashString("ASFF_SECURITYHUB_FINDING");
 
 
         DatasourcePackage GetDatasourcePackageForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DETECTIVE_CORE_HASH)
           {
             return DatasourcePackage::DETECTIVE_CORE;

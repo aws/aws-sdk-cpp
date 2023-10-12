@@ -20,29 +20,29 @@ namespace Aws
       namespace CapacityReservationInstancePlatformMapper
       {
 
-        static const int Linux_UNIX_HASH = HashingUtils::HashString("Linux/UNIX");
-        static const int Red_Hat_Enterprise_Linux_HASH = HashingUtils::HashString("Red Hat Enterprise Linux");
-        static const int SUSE_Linux_HASH = HashingUtils::HashString("SUSE Linux");
-        static const int Windows_HASH = HashingUtils::HashString("Windows");
-        static const int Windows_with_SQL_Server_HASH = HashingUtils::HashString("Windows with SQL Server");
-        static const int Windows_with_SQL_Server_Enterprise_HASH = HashingUtils::HashString("Windows with SQL Server Enterprise");
-        static const int Windows_with_SQL_Server_Standard_HASH = HashingUtils::HashString("Windows with SQL Server Standard");
-        static const int Windows_with_SQL_Server_Web_HASH = HashingUtils::HashString("Windows with SQL Server Web");
-        static const int Linux_with_SQL_Server_Standard_HASH = HashingUtils::HashString("Linux with SQL Server Standard");
-        static const int Linux_with_SQL_Server_Web_HASH = HashingUtils::HashString("Linux with SQL Server Web");
-        static const int Linux_with_SQL_Server_Enterprise_HASH = HashingUtils::HashString("Linux with SQL Server Enterprise");
-        static const int RHEL_with_SQL_Server_Standard_HASH = HashingUtils::HashString("RHEL with SQL Server Standard");
-        static const int RHEL_with_SQL_Server_Enterprise_HASH = HashingUtils::HashString("RHEL with SQL Server Enterprise");
-        static const int RHEL_with_SQL_Server_Web_HASH = HashingUtils::HashString("RHEL with SQL Server Web");
-        static const int RHEL_with_HA_HASH = HashingUtils::HashString("RHEL with HA");
-        static const int RHEL_with_HA_and_SQL_Server_Standard_HASH = HashingUtils::HashString("RHEL with HA and SQL Server Standard");
-        static const int RHEL_with_HA_and_SQL_Server_Enterprise_HASH = HashingUtils::HashString("RHEL with HA and SQL Server Enterprise");
-        static const int Ubuntu_Pro_HASH = HashingUtils::HashString("Ubuntu Pro");
+        static constexpr uint32_t Linux_UNIX_HASH = ConstExprHashingUtils::HashString("Linux/UNIX");
+        static constexpr uint32_t Red_Hat_Enterprise_Linux_HASH = ConstExprHashingUtils::HashString("Red Hat Enterprise Linux");
+        static constexpr uint32_t SUSE_Linux_HASH = ConstExprHashingUtils::HashString("SUSE Linux");
+        static constexpr uint32_t Windows_HASH = ConstExprHashingUtils::HashString("Windows");
+        static constexpr uint32_t Windows_with_SQL_Server_HASH = ConstExprHashingUtils::HashString("Windows with SQL Server");
+        static constexpr uint32_t Windows_with_SQL_Server_Enterprise_HASH = ConstExprHashingUtils::HashString("Windows with SQL Server Enterprise");
+        static constexpr uint32_t Windows_with_SQL_Server_Standard_HASH = ConstExprHashingUtils::HashString("Windows with SQL Server Standard");
+        static constexpr uint32_t Windows_with_SQL_Server_Web_HASH = ConstExprHashingUtils::HashString("Windows with SQL Server Web");
+        static constexpr uint32_t Linux_with_SQL_Server_Standard_HASH = ConstExprHashingUtils::HashString("Linux with SQL Server Standard");
+        static constexpr uint32_t Linux_with_SQL_Server_Web_HASH = ConstExprHashingUtils::HashString("Linux with SQL Server Web");
+        static constexpr uint32_t Linux_with_SQL_Server_Enterprise_HASH = ConstExprHashingUtils::HashString("Linux with SQL Server Enterprise");
+        static constexpr uint32_t RHEL_with_SQL_Server_Standard_HASH = ConstExprHashingUtils::HashString("RHEL with SQL Server Standard");
+        static constexpr uint32_t RHEL_with_SQL_Server_Enterprise_HASH = ConstExprHashingUtils::HashString("RHEL with SQL Server Enterprise");
+        static constexpr uint32_t RHEL_with_SQL_Server_Web_HASH = ConstExprHashingUtils::HashString("RHEL with SQL Server Web");
+        static constexpr uint32_t RHEL_with_HA_HASH = ConstExprHashingUtils::HashString("RHEL with HA");
+        static constexpr uint32_t RHEL_with_HA_and_SQL_Server_Standard_HASH = ConstExprHashingUtils::HashString("RHEL with HA and SQL Server Standard");
+        static constexpr uint32_t RHEL_with_HA_and_SQL_Server_Enterprise_HASH = ConstExprHashingUtils::HashString("RHEL with HA and SQL Server Enterprise");
+        static constexpr uint32_t Ubuntu_Pro_HASH = ConstExprHashingUtils::HashString("Ubuntu Pro");
 
 
         CapacityReservationInstancePlatform GetCapacityReservationInstancePlatformForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Linux_UNIX_HASH)
           {
             return CapacityReservationInstancePlatform::Linux_UNIX;

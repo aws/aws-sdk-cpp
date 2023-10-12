@@ -20,13 +20,13 @@ namespace Aws
       namespace HypervisorTypeMapper
       {
 
-        static const int ovm_HASH = HashingUtils::HashString("ovm");
-        static const int xen_HASH = HashingUtils::HashString("xen");
+        static constexpr uint32_t ovm_HASH = ConstExprHashingUtils::HashString("ovm");
+        static constexpr uint32_t xen_HASH = ConstExprHashingUtils::HashString("xen");
 
 
         HypervisorType GetHypervisorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ovm_HASH)
           {
             return HypervisorType::ovm;

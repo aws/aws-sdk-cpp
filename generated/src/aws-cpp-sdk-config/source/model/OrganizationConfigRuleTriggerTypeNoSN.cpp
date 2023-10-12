@@ -20,13 +20,13 @@ namespace Aws
       namespace OrganizationConfigRuleTriggerTypeNoSNMapper
       {
 
-        static const int ConfigurationItemChangeNotification_HASH = HashingUtils::HashString("ConfigurationItemChangeNotification");
-        static const int OversizedConfigurationItemChangeNotification_HASH = HashingUtils::HashString("OversizedConfigurationItemChangeNotification");
+        static constexpr uint32_t ConfigurationItemChangeNotification_HASH = ConstExprHashingUtils::HashString("ConfigurationItemChangeNotification");
+        static constexpr uint32_t OversizedConfigurationItemChangeNotification_HASH = ConstExprHashingUtils::HashString("OversizedConfigurationItemChangeNotification");
 
 
         OrganizationConfigRuleTriggerTypeNoSN GetOrganizationConfigRuleTriggerTypeNoSNForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ConfigurationItemChangeNotification_HASH)
           {
             return OrganizationConfigRuleTriggerTypeNoSN::ConfigurationItemChangeNotification;

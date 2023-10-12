@@ -20,13 +20,13 @@ namespace Aws
       namespace FederationModeMapper
       {
 
-        static const int FEDERATED_HASH = HashingUtils::HashString("FEDERATED");
-        static const int LOCAL_HASH = HashingUtils::HashString("LOCAL");
+        static constexpr uint32_t FEDERATED_HASH = ConstExprHashingUtils::HashString("FEDERATED");
+        static constexpr uint32_t LOCAL_HASH = ConstExprHashingUtils::HashString("LOCAL");
 
 
         FederationMode GetFederationModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FEDERATED_HASH)
           {
             return FederationMode::FEDERATED;

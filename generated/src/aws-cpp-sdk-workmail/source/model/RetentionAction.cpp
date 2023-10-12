@@ -20,14 +20,14 @@ namespace Aws
       namespace RetentionActionMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
-        static const int PERMANENTLY_DELETE_HASH = HashingUtils::HashString("PERMANENTLY_DELETE");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t DELETE__HASH = ConstExprHashingUtils::HashString("DELETE");
+        static constexpr uint32_t PERMANENTLY_DELETE_HASH = ConstExprHashingUtils::HashString("PERMANENTLY_DELETE");
 
 
         RetentionAction GetRetentionActionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return RetentionAction::NONE;

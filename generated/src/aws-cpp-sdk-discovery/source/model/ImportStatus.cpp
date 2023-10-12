@@ -20,22 +20,22 @@ namespace Aws
       namespace ImportStatusMapper
       {
 
-        static const int IMPORT_IN_PROGRESS_HASH = HashingUtils::HashString("IMPORT_IN_PROGRESS");
-        static const int IMPORT_COMPLETE_HASH = HashingUtils::HashString("IMPORT_COMPLETE");
-        static const int IMPORT_COMPLETE_WITH_ERRORS_HASH = HashingUtils::HashString("IMPORT_COMPLETE_WITH_ERRORS");
-        static const int IMPORT_FAILED_HASH = HashingUtils::HashString("IMPORT_FAILED");
-        static const int IMPORT_FAILED_SERVER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("IMPORT_FAILED_SERVER_LIMIT_EXCEEDED");
-        static const int IMPORT_FAILED_RECORD_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("IMPORT_FAILED_RECORD_LIMIT_EXCEEDED");
-        static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
-        static const int DELETE_COMPLETE_HASH = HashingUtils::HashString("DELETE_COMPLETE");
-        static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
-        static const int DELETE_FAILED_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DELETE_FAILED_LIMIT_EXCEEDED");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t IMPORT_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IMPORT_IN_PROGRESS");
+        static constexpr uint32_t IMPORT_COMPLETE_HASH = ConstExprHashingUtils::HashString("IMPORT_COMPLETE");
+        static constexpr uint32_t IMPORT_COMPLETE_WITH_ERRORS_HASH = ConstExprHashingUtils::HashString("IMPORT_COMPLETE_WITH_ERRORS");
+        static constexpr uint32_t IMPORT_FAILED_HASH = ConstExprHashingUtils::HashString("IMPORT_FAILED");
+        static constexpr uint32_t IMPORT_FAILED_SERVER_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("IMPORT_FAILED_SERVER_LIMIT_EXCEEDED");
+        static constexpr uint32_t IMPORT_FAILED_RECORD_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("IMPORT_FAILED_RECORD_LIMIT_EXCEEDED");
+        static constexpr uint32_t DELETE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("DELETE_IN_PROGRESS");
+        static constexpr uint32_t DELETE_COMPLETE_HASH = ConstExprHashingUtils::HashString("DELETE_COMPLETE");
+        static constexpr uint32_t DELETE_FAILED_HASH = ConstExprHashingUtils::HashString("DELETE_FAILED");
+        static constexpr uint32_t DELETE_FAILED_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("DELETE_FAILED_LIMIT_EXCEEDED");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
 
 
         ImportStatus GetImportStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IMPORT_IN_PROGRESS_HASH)
           {
             return ImportStatus::IMPORT_IN_PROGRESS;

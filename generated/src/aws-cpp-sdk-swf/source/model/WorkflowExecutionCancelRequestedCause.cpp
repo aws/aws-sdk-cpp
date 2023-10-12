@@ -20,12 +20,12 @@ namespace Aws
       namespace WorkflowExecutionCancelRequestedCauseMapper
       {
 
-        static const int CHILD_POLICY_APPLIED_HASH = HashingUtils::HashString("CHILD_POLICY_APPLIED");
+        static constexpr uint32_t CHILD_POLICY_APPLIED_HASH = ConstExprHashingUtils::HashString("CHILD_POLICY_APPLIED");
 
 
         WorkflowExecutionCancelRequestedCause GetWorkflowExecutionCancelRequestedCauseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CHILD_POLICY_APPLIED_HASH)
           {
             return WorkflowExecutionCancelRequestedCause::CHILD_POLICY_APPLIED;

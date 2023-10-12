@@ -20,17 +20,17 @@ namespace Aws
       namespace DataSourceMapper
       {
 
-        static const int FLOW_LOGS_HASH = HashingUtils::HashString("FLOW_LOGS");
-        static const int CLOUD_TRAIL_HASH = HashingUtils::HashString("CLOUD_TRAIL");
-        static const int DNS_LOGS_HASH = HashingUtils::HashString("DNS_LOGS");
-        static const int S3_LOGS_HASH = HashingUtils::HashString("S3_LOGS");
-        static const int KUBERNETES_AUDIT_LOGS_HASH = HashingUtils::HashString("KUBERNETES_AUDIT_LOGS");
-        static const int EC2_MALWARE_SCAN_HASH = HashingUtils::HashString("EC2_MALWARE_SCAN");
+        static constexpr uint32_t FLOW_LOGS_HASH = ConstExprHashingUtils::HashString("FLOW_LOGS");
+        static constexpr uint32_t CLOUD_TRAIL_HASH = ConstExprHashingUtils::HashString("CLOUD_TRAIL");
+        static constexpr uint32_t DNS_LOGS_HASH = ConstExprHashingUtils::HashString("DNS_LOGS");
+        static constexpr uint32_t S3_LOGS_HASH = ConstExprHashingUtils::HashString("S3_LOGS");
+        static constexpr uint32_t KUBERNETES_AUDIT_LOGS_HASH = ConstExprHashingUtils::HashString("KUBERNETES_AUDIT_LOGS");
+        static constexpr uint32_t EC2_MALWARE_SCAN_HASH = ConstExprHashingUtils::HashString("EC2_MALWARE_SCAN");
 
 
         DataSource GetDataSourceForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FLOW_LOGS_HASH)
           {
             return DataSource::FLOW_LOGS;

@@ -20,14 +20,14 @@ namespace Aws
       namespace GeospatialSelectedPointStyleMapper
       {
 
-        static const int POINT_HASH = HashingUtils::HashString("POINT");
-        static const int CLUSTER_HASH = HashingUtils::HashString("CLUSTER");
-        static const int HEATMAP_HASH = HashingUtils::HashString("HEATMAP");
+        static constexpr uint32_t POINT_HASH = ConstExprHashingUtils::HashString("POINT");
+        static constexpr uint32_t CLUSTER_HASH = ConstExprHashingUtils::HashString("CLUSTER");
+        static constexpr uint32_t HEATMAP_HASH = ConstExprHashingUtils::HashString("HEATMAP");
 
 
         GeospatialSelectedPointStyle GetGeospatialSelectedPointStyleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == POINT_HASH)
           {
             return GeospatialSelectedPointStyle::POINT;

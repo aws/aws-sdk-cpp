@@ -20,13 +20,13 @@ namespace Aws
       namespace FlexMatchModeMapper
       {
 
-        static const int STANDALONE_HASH = HashingUtils::HashString("STANDALONE");
-        static const int WITH_QUEUE_HASH = HashingUtils::HashString("WITH_QUEUE");
+        static constexpr uint32_t STANDALONE_HASH = ConstExprHashingUtils::HashString("STANDALONE");
+        static constexpr uint32_t WITH_QUEUE_HASH = ConstExprHashingUtils::HashString("WITH_QUEUE");
 
 
         FlexMatchMode GetFlexMatchModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STANDALONE_HASH)
           {
             return FlexMatchMode::STANDALONE;

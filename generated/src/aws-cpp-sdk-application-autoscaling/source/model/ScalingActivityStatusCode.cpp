@@ -20,17 +20,17 @@ namespace Aws
       namespace ScalingActivityStatusCodeMapper
       {
 
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Successful_HASH = HashingUtils::HashString("Successful");
-        static const int Overridden_HASH = HashingUtils::HashString("Overridden");
-        static const int Unfulfilled_HASH = HashingUtils::HashString("Unfulfilled");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t InProgress_HASH = ConstExprHashingUtils::HashString("InProgress");
+        static constexpr uint32_t Successful_HASH = ConstExprHashingUtils::HashString("Successful");
+        static constexpr uint32_t Overridden_HASH = ConstExprHashingUtils::HashString("Overridden");
+        static constexpr uint32_t Unfulfilled_HASH = ConstExprHashingUtils::HashString("Unfulfilled");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         ScalingActivityStatusCode GetScalingActivityStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Pending_HASH)
           {
             return ScalingActivityStatusCode::Pending;

@@ -20,15 +20,15 @@ namespace Aws
       namespace AutoMountStatusMapper
       {
 
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int Mounted_HASH = HashingUtils::HashString("Mounted");
-        static const int NotMounted_HASH = HashingUtils::HashString("NotMounted");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Pending_HASH = ConstExprHashingUtils::HashString("Pending");
+        static constexpr uint32_t Mounted_HASH = ConstExprHashingUtils::HashString("Mounted");
+        static constexpr uint32_t NotMounted_HASH = ConstExprHashingUtils::HashString("NotMounted");
 
 
         AutoMountStatus GetAutoMountStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Failed_HASH)
           {
             return AutoMountStatus::Failed;

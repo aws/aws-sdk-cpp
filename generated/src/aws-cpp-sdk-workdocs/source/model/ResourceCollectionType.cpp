@@ -20,12 +20,12 @@ namespace Aws
       namespace ResourceCollectionTypeMapper
       {
 
-        static const int SHARED_WITH_ME_HASH = HashingUtils::HashString("SHARED_WITH_ME");
+        static constexpr uint32_t SHARED_WITH_ME_HASH = ConstExprHashingUtils::HashString("SHARED_WITH_ME");
 
 
         ResourceCollectionType GetResourceCollectionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SHARED_WITH_ME_HASH)
           {
             return ResourceCollectionType::SHARED_WITH_ME;

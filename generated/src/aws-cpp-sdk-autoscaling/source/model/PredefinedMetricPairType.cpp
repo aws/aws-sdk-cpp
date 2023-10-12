@@ -20,15 +20,15 @@ namespace Aws
       namespace PredefinedMetricPairTypeMapper
       {
 
-        static const int ASGCPUUtilization_HASH = HashingUtils::HashString("ASGCPUUtilization");
-        static const int ASGNetworkIn_HASH = HashingUtils::HashString("ASGNetworkIn");
-        static const int ASGNetworkOut_HASH = HashingUtils::HashString("ASGNetworkOut");
-        static const int ALBRequestCount_HASH = HashingUtils::HashString("ALBRequestCount");
+        static constexpr uint32_t ASGCPUUtilization_HASH = ConstExprHashingUtils::HashString("ASGCPUUtilization");
+        static constexpr uint32_t ASGNetworkIn_HASH = ConstExprHashingUtils::HashString("ASGNetworkIn");
+        static constexpr uint32_t ASGNetworkOut_HASH = ConstExprHashingUtils::HashString("ASGNetworkOut");
+        static constexpr uint32_t ALBRequestCount_HASH = ConstExprHashingUtils::HashString("ALBRequestCount");
 
 
         PredefinedMetricPairType GetPredefinedMetricPairTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ASGCPUUtilization_HASH)
           {
             return PredefinedMetricPairType::ASGCPUUtilization;

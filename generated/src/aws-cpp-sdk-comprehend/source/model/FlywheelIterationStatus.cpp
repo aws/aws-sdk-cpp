@@ -20,17 +20,17 @@ namespace Aws
       namespace FlywheelIterationStatusMapper
       {
 
-        static const int TRAINING_HASH = HashingUtils::HashString("TRAINING");
-        static const int EVALUATING_HASH = HashingUtils::HashString("EVALUATING");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int STOP_REQUESTED_HASH = HashingUtils::HashString("STOP_REQUESTED");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+        static constexpr uint32_t TRAINING_HASH = ConstExprHashingUtils::HashString("TRAINING");
+        static constexpr uint32_t EVALUATING_HASH = ConstExprHashingUtils::HashString("EVALUATING");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t STOP_REQUESTED_HASH = ConstExprHashingUtils::HashString("STOP_REQUESTED");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
 
 
         FlywheelIterationStatus GetFlywheelIterationStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRAINING_HASH)
           {
             return FlywheelIterationStatus::TRAINING;

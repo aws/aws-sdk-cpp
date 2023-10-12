@@ -20,15 +20,15 @@ namespace Aws
       namespace ResourceScanTypeMapper
       {
 
-        static const int EC2_HASH = HashingUtils::HashString("EC2");
-        static const int ECR_HASH = HashingUtils::HashString("ECR");
-        static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
-        static const int LAMBDA_CODE_HASH = HashingUtils::HashString("LAMBDA_CODE");
+        static constexpr uint32_t EC2_HASH = ConstExprHashingUtils::HashString("EC2");
+        static constexpr uint32_t ECR_HASH = ConstExprHashingUtils::HashString("ECR");
+        static constexpr uint32_t LAMBDA_HASH = ConstExprHashingUtils::HashString("LAMBDA");
+        static constexpr uint32_t LAMBDA_CODE_HASH = ConstExprHashingUtils::HashString("LAMBDA_CODE");
 
 
         ResourceScanType GetResourceScanTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EC2_HASH)
           {
             return ResourceScanType::EC2;

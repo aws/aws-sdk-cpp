@@ -20,15 +20,15 @@ namespace Aws
       namespace OptionStateMapper
       {
 
-        static const int RequiresIndexDocuments_HASH = HashingUtils::HashString("RequiresIndexDocuments");
-        static const int Processing_HASH = HashingUtils::HashString("Processing");
-        static const int Active_HASH = HashingUtils::HashString("Active");
-        static const int FailedToValidate_HASH = HashingUtils::HashString("FailedToValidate");
+        static constexpr uint32_t RequiresIndexDocuments_HASH = ConstExprHashingUtils::HashString("RequiresIndexDocuments");
+        static constexpr uint32_t Processing_HASH = ConstExprHashingUtils::HashString("Processing");
+        static constexpr uint32_t Active_HASH = ConstExprHashingUtils::HashString("Active");
+        static constexpr uint32_t FailedToValidate_HASH = ConstExprHashingUtils::HashString("FailedToValidate");
 
 
         OptionState GetOptionStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RequiresIndexDocuments_HASH)
           {
             return OptionState::RequiresIndexDocuments;

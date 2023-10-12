@@ -20,19 +20,19 @@ namespace Aws
       namespace ClusterStateMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int HEALING_HASH = HashingUtils::HashString("HEALING");
-        static const int MAINTENANCE_HASH = HashingUtils::HashString("MAINTENANCE");
-        static const int REBOOTING_BROKER_HASH = HashingUtils::HashString("REBOOTING_BROKER");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t HEALING_HASH = ConstExprHashingUtils::HashString("HEALING");
+        static constexpr uint32_t MAINTENANCE_HASH = ConstExprHashingUtils::HashString("MAINTENANCE");
+        static constexpr uint32_t REBOOTING_BROKER_HASH = ConstExprHashingUtils::HashString("REBOOTING_BROKER");
+        static constexpr uint32_t UPDATING_HASH = ConstExprHashingUtils::HashString("UPDATING");
 
 
         ClusterState GetClusterStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return ClusterState::ACTIVE;

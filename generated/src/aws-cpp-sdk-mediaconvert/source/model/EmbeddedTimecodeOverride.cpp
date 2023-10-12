@@ -20,13 +20,13 @@ namespace Aws
       namespace EmbeddedTimecodeOverrideMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int USE_MDPM_HASH = HashingUtils::HashString("USE_MDPM");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t USE_MDPM_HASH = ConstExprHashingUtils::HashString("USE_MDPM");
 
 
         EmbeddedTimecodeOverride GetEmbeddedTimecodeOverrideForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return EmbeddedTimecodeOverride::NONE;

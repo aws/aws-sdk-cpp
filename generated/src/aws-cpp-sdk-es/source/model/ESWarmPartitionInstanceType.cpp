@@ -20,13 +20,13 @@ namespace Aws
       namespace ESWarmPartitionInstanceTypeMapper
       {
 
-        static const int ultrawarm1_medium_elasticsearch_HASH = HashingUtils::HashString("ultrawarm1.medium.elasticsearch");
-        static const int ultrawarm1_large_elasticsearch_HASH = HashingUtils::HashString("ultrawarm1.large.elasticsearch");
+        static constexpr uint32_t ultrawarm1_medium_elasticsearch_HASH = ConstExprHashingUtils::HashString("ultrawarm1.medium.elasticsearch");
+        static constexpr uint32_t ultrawarm1_large_elasticsearch_HASH = ConstExprHashingUtils::HashString("ultrawarm1.large.elasticsearch");
 
 
         ESWarmPartitionInstanceType GetESWarmPartitionInstanceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ultrawarm1_medium_elasticsearch_HASH)
           {
             return ESWarmPartitionInstanceType::ultrawarm1_medium_elasticsearch;

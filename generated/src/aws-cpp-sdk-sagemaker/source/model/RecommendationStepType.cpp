@@ -20,12 +20,12 @@ namespace Aws
       namespace RecommendationStepTypeMapper
       {
 
-        static const int BENCHMARK_HASH = HashingUtils::HashString("BENCHMARK");
+        static constexpr uint32_t BENCHMARK_HASH = ConstExprHashingUtils::HashString("BENCHMARK");
 
 
         RecommendationStepType GetRecommendationStepTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BENCHMARK_HASH)
           {
             return RecommendationStepType::BENCHMARK;

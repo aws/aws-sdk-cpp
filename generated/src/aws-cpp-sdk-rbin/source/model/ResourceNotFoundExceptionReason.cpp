@@ -20,12 +20,12 @@ namespace Aws
       namespace ResourceNotFoundExceptionReasonMapper
       {
 
-        static const int RULE_NOT_FOUND_HASH = HashingUtils::HashString("RULE_NOT_FOUND");
+        static constexpr uint32_t RULE_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("RULE_NOT_FOUND");
 
 
         ResourceNotFoundExceptionReason GetResourceNotFoundExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RULE_NOT_FOUND_HASH)
           {
             return ResourceNotFoundExceptionReason::RULE_NOT_FOUND;

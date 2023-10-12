@@ -20,13 +20,13 @@ namespace Aws
       namespace JobTypeMapper
       {
 
-        static const int ONE_TIME_HASH = HashingUtils::HashString("ONE_TIME");
-        static const int SCHEDULED_HASH = HashingUtils::HashString("SCHEDULED");
+        static constexpr uint32_t ONE_TIME_HASH = ConstExprHashingUtils::HashString("ONE_TIME");
+        static constexpr uint32_t SCHEDULED_HASH = ConstExprHashingUtils::HashString("SCHEDULED");
 
 
         JobType GetJobTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ONE_TIME_HASH)
           {
             return JobType::ONE_TIME;

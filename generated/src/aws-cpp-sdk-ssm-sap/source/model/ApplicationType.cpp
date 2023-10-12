@@ -20,12 +20,12 @@ namespace Aws
       namespace ApplicationTypeMapper
       {
 
-        static const int HANA_HASH = HashingUtils::HashString("HANA");
+        static constexpr uint32_t HANA_HASH = ConstExprHashingUtils::HashString("HANA");
 
 
         ApplicationType GetApplicationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HANA_HASH)
           {
             return ApplicationType::HANA;

@@ -20,13 +20,13 @@ namespace Aws
       namespace DeviceRememberedStatusTypeMapper
       {
 
-        static const int remembered_HASH = HashingUtils::HashString("remembered");
-        static const int not_remembered_HASH = HashingUtils::HashString("not_remembered");
+        static constexpr uint32_t remembered_HASH = ConstExprHashingUtils::HashString("remembered");
+        static constexpr uint32_t not_remembered_HASH = ConstExprHashingUtils::HashString("not_remembered");
 
 
         DeviceRememberedStatusType GetDeviceRememberedStatusTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == remembered_HASH)
           {
             return DeviceRememberedStatusType::remembered;

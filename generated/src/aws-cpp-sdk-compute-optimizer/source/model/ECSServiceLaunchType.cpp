@@ -20,13 +20,13 @@ namespace Aws
       namespace ECSServiceLaunchTypeMapper
       {
 
-        static const int EC2_HASH = HashingUtils::HashString("EC2");
-        static const int Fargate_HASH = HashingUtils::HashString("Fargate");
+        static constexpr uint32_t EC2_HASH = ConstExprHashingUtils::HashString("EC2");
+        static constexpr uint32_t Fargate_HASH = ConstExprHashingUtils::HashString("Fargate");
 
 
         ECSServiceLaunchType GetECSServiceLaunchTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EC2_HASH)
           {
             return ECSServiceLaunchType::EC2;

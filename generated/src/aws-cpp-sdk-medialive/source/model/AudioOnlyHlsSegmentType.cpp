@@ -20,13 +20,13 @@ namespace Aws
       namespace AudioOnlyHlsSegmentTypeMapper
       {
 
-        static const int AAC_HASH = HashingUtils::HashString("AAC");
-        static const int FMP4_HASH = HashingUtils::HashString("FMP4");
+        static constexpr uint32_t AAC_HASH = ConstExprHashingUtils::HashString("AAC");
+        static constexpr uint32_t FMP4_HASH = ConstExprHashingUtils::HashString("FMP4");
 
 
         AudioOnlyHlsSegmentType GetAudioOnlyHlsSegmentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AAC_HASH)
           {
             return AudioOnlyHlsSegmentType::AAC;

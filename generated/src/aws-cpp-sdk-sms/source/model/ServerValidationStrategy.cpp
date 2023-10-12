@@ -20,12 +20,12 @@ namespace Aws
       namespace ServerValidationStrategyMapper
       {
 
-        static const int USERDATA_HASH = HashingUtils::HashString("USERDATA");
+        static constexpr uint32_t USERDATA_HASH = ConstExprHashingUtils::HashString("USERDATA");
 
 
         ServerValidationStrategy GetServerValidationStrategyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USERDATA_HASH)
           {
             return ServerValidationStrategy::USERDATA;

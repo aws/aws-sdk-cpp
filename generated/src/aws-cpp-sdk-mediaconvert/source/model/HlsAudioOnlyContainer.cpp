@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsAudioOnlyContainerMapper
       {
 
-        static const int AUTOMATIC_HASH = HashingUtils::HashString("AUTOMATIC");
-        static const int M2TS_HASH = HashingUtils::HashString("M2TS");
+        static constexpr uint32_t AUTOMATIC_HASH = ConstExprHashingUtils::HashString("AUTOMATIC");
+        static constexpr uint32_t M2TS_HASH = ConstExprHashingUtils::HashString("M2TS");
 
 
         HlsAudioOnlyContainer GetHlsAudioOnlyContainerForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AUTOMATIC_HASH)
           {
             return HlsAudioOnlyContainer::AUTOMATIC;

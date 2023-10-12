@@ -20,13 +20,13 @@ namespace Aws
       namespace XksProxyConnectivityTypeMapper
       {
 
-        static const int PUBLIC_ENDPOINT_HASH = HashingUtils::HashString("PUBLIC_ENDPOINT");
-        static const int VPC_ENDPOINT_SERVICE_HASH = HashingUtils::HashString("VPC_ENDPOINT_SERVICE");
+        static constexpr uint32_t PUBLIC_ENDPOINT_HASH = ConstExprHashingUtils::HashString("PUBLIC_ENDPOINT");
+        static constexpr uint32_t VPC_ENDPOINT_SERVICE_HASH = ConstExprHashingUtils::HashString("VPC_ENDPOINT_SERVICE");
 
 
         XksProxyConnectivityType GetXksProxyConnectivityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PUBLIC_ENDPOINT_HASH)
           {
             return XksProxyConnectivityType::PUBLIC_ENDPOINT;

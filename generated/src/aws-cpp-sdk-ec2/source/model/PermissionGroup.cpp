@@ -20,12 +20,12 @@ namespace Aws
       namespace PermissionGroupMapper
       {
 
-        static const int all_HASH = HashingUtils::HashString("all");
+        static constexpr uint32_t all_HASH = ConstExprHashingUtils::HashString("all");
 
 
         PermissionGroup GetPermissionGroupForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == all_HASH)
           {
             return PermissionGroup::all;

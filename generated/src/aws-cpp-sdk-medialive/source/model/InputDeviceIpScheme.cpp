@@ -20,13 +20,13 @@ namespace Aws
       namespace InputDeviceIpSchemeMapper
       {
 
-        static const int STATIC__HASH = HashingUtils::HashString("STATIC");
-        static const int DHCP_HASH = HashingUtils::HashString("DHCP");
+        static constexpr uint32_t STATIC__HASH = ConstExprHashingUtils::HashString("STATIC");
+        static constexpr uint32_t DHCP_HASH = ConstExprHashingUtils::HashString("DHCP");
 
 
         InputDeviceIpScheme GetInputDeviceIpSchemeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STATIC__HASH)
           {
             return InputDeviceIpScheme::STATIC_;

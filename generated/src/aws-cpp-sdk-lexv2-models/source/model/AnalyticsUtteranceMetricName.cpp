@@ -20,15 +20,15 @@ namespace Aws
       namespace AnalyticsUtteranceMetricNameMapper
       {
 
-        static const int Count_HASH = HashingUtils::HashString("Count");
-        static const int Missed_HASH = HashingUtils::HashString("Missed");
-        static const int Detected_HASH = HashingUtils::HashString("Detected");
-        static const int UtteranceTimestamp_HASH = HashingUtils::HashString("UtteranceTimestamp");
+        static constexpr uint32_t Count_HASH = ConstExprHashingUtils::HashString("Count");
+        static constexpr uint32_t Missed_HASH = ConstExprHashingUtils::HashString("Missed");
+        static constexpr uint32_t Detected_HASH = ConstExprHashingUtils::HashString("Detected");
+        static constexpr uint32_t UtteranceTimestamp_HASH = ConstExprHashingUtils::HashString("UtteranceTimestamp");
 
 
         AnalyticsUtteranceMetricName GetAnalyticsUtteranceMetricNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Count_HASH)
           {
             return AnalyticsUtteranceMetricName::Count;

@@ -20,19 +20,19 @@ namespace Aws
       namespace MediaFormatMapper
       {
 
-        static const int mp3_HASH = HashingUtils::HashString("mp3");
-        static const int mp4_HASH = HashingUtils::HashString("mp4");
-        static const int wav_HASH = HashingUtils::HashString("wav");
-        static const int flac_HASH = HashingUtils::HashString("flac");
-        static const int ogg_HASH = HashingUtils::HashString("ogg");
-        static const int amr_HASH = HashingUtils::HashString("amr");
-        static const int webm_HASH = HashingUtils::HashString("webm");
-        static const int m4a_HASH = HashingUtils::HashString("m4a");
+        static constexpr uint32_t mp3_HASH = ConstExprHashingUtils::HashString("mp3");
+        static constexpr uint32_t mp4_HASH = ConstExprHashingUtils::HashString("mp4");
+        static constexpr uint32_t wav_HASH = ConstExprHashingUtils::HashString("wav");
+        static constexpr uint32_t flac_HASH = ConstExprHashingUtils::HashString("flac");
+        static constexpr uint32_t ogg_HASH = ConstExprHashingUtils::HashString("ogg");
+        static constexpr uint32_t amr_HASH = ConstExprHashingUtils::HashString("amr");
+        static constexpr uint32_t webm_HASH = ConstExprHashingUtils::HashString("webm");
+        static constexpr uint32_t m4a_HASH = ConstExprHashingUtils::HashString("m4a");
 
 
         MediaFormat GetMediaFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == mp3_HASH)
           {
             return MediaFormat::mp3;

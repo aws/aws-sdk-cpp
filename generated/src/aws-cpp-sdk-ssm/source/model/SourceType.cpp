@@ -20,14 +20,14 @@ namespace Aws
       namespace SourceTypeMapper
       {
 
-        static const int AWS_EC2_Instance_HASH = HashingUtils::HashString("AWS::EC2::Instance");
-        static const int AWS_IoT_Thing_HASH = HashingUtils::HashString("AWS::IoT::Thing");
-        static const int AWS_SSM_ManagedInstance_HASH = HashingUtils::HashString("AWS::SSM::ManagedInstance");
+        static constexpr uint32_t AWS_EC2_Instance_HASH = ConstExprHashingUtils::HashString("AWS::EC2::Instance");
+        static constexpr uint32_t AWS_IoT_Thing_HASH = ConstExprHashingUtils::HashString("AWS::IoT::Thing");
+        static constexpr uint32_t AWS_SSM_ManagedInstance_HASH = ConstExprHashingUtils::HashString("AWS::SSM::ManagedInstance");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_EC2_Instance_HASH)
           {
             return SourceType::AWS_EC2_Instance;

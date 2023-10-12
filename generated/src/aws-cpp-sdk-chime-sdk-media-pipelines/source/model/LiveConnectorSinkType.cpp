@@ -20,12 +20,12 @@ namespace Aws
       namespace LiveConnectorSinkTypeMapper
       {
 
-        static const int RTMP_HASH = HashingUtils::HashString("RTMP");
+        static constexpr uint32_t RTMP_HASH = ConstExprHashingUtils::HashString("RTMP");
 
 
         LiveConnectorSinkType GetLiveConnectorSinkTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RTMP_HASH)
           {
             return LiveConnectorSinkType::RTMP;

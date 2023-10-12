@@ -20,23 +20,23 @@ namespace Aws
       namespace EventTypeMapper
       {
 
-        static const int AssignmentAccepted_HASH = HashingUtils::HashString("AssignmentAccepted");
-        static const int AssignmentAbandoned_HASH = HashingUtils::HashString("AssignmentAbandoned");
-        static const int AssignmentReturned_HASH = HashingUtils::HashString("AssignmentReturned");
-        static const int AssignmentSubmitted_HASH = HashingUtils::HashString("AssignmentSubmitted");
-        static const int AssignmentRejected_HASH = HashingUtils::HashString("AssignmentRejected");
-        static const int AssignmentApproved_HASH = HashingUtils::HashString("AssignmentApproved");
-        static const int HITCreated_HASH = HashingUtils::HashString("HITCreated");
-        static const int HITExpired_HASH = HashingUtils::HashString("HITExpired");
-        static const int HITReviewable_HASH = HashingUtils::HashString("HITReviewable");
-        static const int HITExtended_HASH = HashingUtils::HashString("HITExtended");
-        static const int HITDisposed_HASH = HashingUtils::HashString("HITDisposed");
-        static const int Ping_HASH = HashingUtils::HashString("Ping");
+        static constexpr uint32_t AssignmentAccepted_HASH = ConstExprHashingUtils::HashString("AssignmentAccepted");
+        static constexpr uint32_t AssignmentAbandoned_HASH = ConstExprHashingUtils::HashString("AssignmentAbandoned");
+        static constexpr uint32_t AssignmentReturned_HASH = ConstExprHashingUtils::HashString("AssignmentReturned");
+        static constexpr uint32_t AssignmentSubmitted_HASH = ConstExprHashingUtils::HashString("AssignmentSubmitted");
+        static constexpr uint32_t AssignmentRejected_HASH = ConstExprHashingUtils::HashString("AssignmentRejected");
+        static constexpr uint32_t AssignmentApproved_HASH = ConstExprHashingUtils::HashString("AssignmentApproved");
+        static constexpr uint32_t HITCreated_HASH = ConstExprHashingUtils::HashString("HITCreated");
+        static constexpr uint32_t HITExpired_HASH = ConstExprHashingUtils::HashString("HITExpired");
+        static constexpr uint32_t HITReviewable_HASH = ConstExprHashingUtils::HashString("HITReviewable");
+        static constexpr uint32_t HITExtended_HASH = ConstExprHashingUtils::HashString("HITExtended");
+        static constexpr uint32_t HITDisposed_HASH = ConstExprHashingUtils::HashString("HITDisposed");
+        static constexpr uint32_t Ping_HASH = ConstExprHashingUtils::HashString("Ping");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AssignmentAccepted_HASH)
           {
             return EventType::AssignmentAccepted;

@@ -20,16 +20,16 @@ namespace Aws
       namespace CampaignStateMapper
       {
 
-        static const int Initialized_HASH = HashingUtils::HashString("Initialized");
-        static const int Running_HASH = HashingUtils::HashString("Running");
-        static const int Paused_HASH = HashingUtils::HashString("Paused");
-        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t Initialized_HASH = ConstExprHashingUtils::HashString("Initialized");
+        static constexpr uint32_t Running_HASH = ConstExprHashingUtils::HashString("Running");
+        static constexpr uint32_t Paused_HASH = ConstExprHashingUtils::HashString("Paused");
+        static constexpr uint32_t Stopped_HASH = ConstExprHashingUtils::HashString("Stopped");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         CampaignState GetCampaignStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Initialized_HASH)
           {
             return CampaignState::Initialized;

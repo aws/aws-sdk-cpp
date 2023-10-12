@@ -20,13 +20,13 @@ namespace Aws
       namespace DirectoryEditionMapper
       {
 
-        static const int Enterprise_HASH = HashingUtils::HashString("Enterprise");
-        static const int Standard_HASH = HashingUtils::HashString("Standard");
+        static constexpr uint32_t Enterprise_HASH = ConstExprHashingUtils::HashString("Enterprise");
+        static constexpr uint32_t Standard_HASH = ConstExprHashingUtils::HashString("Standard");
 
 
         DirectoryEdition GetDirectoryEditionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Enterprise_HASH)
           {
             return DirectoryEdition::Enterprise;

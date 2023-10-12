@@ -20,13 +20,13 @@ namespace Aws
       namespace ValidationSeverityMapper
       {
 
-        static const int error_HASH = HashingUtils::HashString("error");
-        static const int warning_HASH = HashingUtils::HashString("warning");
+        static constexpr uint32_t error_HASH = ConstExprHashingUtils::HashString("error");
+        static constexpr uint32_t warning_HASH = ConstExprHashingUtils::HashString("warning");
 
 
         ValidationSeverity GetValidationSeverityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == error_HASH)
           {
             return ValidationSeverity::error;

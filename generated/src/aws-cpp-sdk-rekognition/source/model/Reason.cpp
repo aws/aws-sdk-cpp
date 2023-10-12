@@ -20,18 +20,18 @@ namespace Aws
       namespace ReasonMapper
       {
 
-        static const int EXCEEDS_MAX_FACES_HASH = HashingUtils::HashString("EXCEEDS_MAX_FACES");
-        static const int EXTREME_POSE_HASH = HashingUtils::HashString("EXTREME_POSE");
-        static const int LOW_BRIGHTNESS_HASH = HashingUtils::HashString("LOW_BRIGHTNESS");
-        static const int LOW_SHARPNESS_HASH = HashingUtils::HashString("LOW_SHARPNESS");
-        static const int LOW_CONFIDENCE_HASH = HashingUtils::HashString("LOW_CONFIDENCE");
-        static const int SMALL_BOUNDING_BOX_HASH = HashingUtils::HashString("SMALL_BOUNDING_BOX");
-        static const int LOW_FACE_QUALITY_HASH = HashingUtils::HashString("LOW_FACE_QUALITY");
+        static constexpr uint32_t EXCEEDS_MAX_FACES_HASH = ConstExprHashingUtils::HashString("EXCEEDS_MAX_FACES");
+        static constexpr uint32_t EXTREME_POSE_HASH = ConstExprHashingUtils::HashString("EXTREME_POSE");
+        static constexpr uint32_t LOW_BRIGHTNESS_HASH = ConstExprHashingUtils::HashString("LOW_BRIGHTNESS");
+        static constexpr uint32_t LOW_SHARPNESS_HASH = ConstExprHashingUtils::HashString("LOW_SHARPNESS");
+        static constexpr uint32_t LOW_CONFIDENCE_HASH = ConstExprHashingUtils::HashString("LOW_CONFIDENCE");
+        static constexpr uint32_t SMALL_BOUNDING_BOX_HASH = ConstExprHashingUtils::HashString("SMALL_BOUNDING_BOX");
+        static constexpr uint32_t LOW_FACE_QUALITY_HASH = ConstExprHashingUtils::HashString("LOW_FACE_QUALITY");
 
 
         Reason GetReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EXCEEDS_MAX_FACES_HASH)
           {
             return Reason::EXCEEDS_MAX_FACES;

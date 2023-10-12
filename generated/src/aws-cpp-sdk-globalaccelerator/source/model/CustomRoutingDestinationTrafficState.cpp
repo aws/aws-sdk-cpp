@@ -20,13 +20,13 @@ namespace Aws
       namespace CustomRoutingDestinationTrafficStateMapper
       {
 
-        static const int ALLOW_HASH = HashingUtils::HashString("ALLOW");
-        static const int DENY_HASH = HashingUtils::HashString("DENY");
+        static constexpr uint32_t ALLOW_HASH = ConstExprHashingUtils::HashString("ALLOW");
+        static constexpr uint32_t DENY_HASH = ConstExprHashingUtils::HashString("DENY");
 
 
         CustomRoutingDestinationTrafficState GetCustomRoutingDestinationTrafficStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALLOW_HASH)
           {
             return CustomRoutingDestinationTrafficState::ALLOW;

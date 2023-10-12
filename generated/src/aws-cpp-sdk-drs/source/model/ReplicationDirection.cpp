@@ -20,13 +20,13 @@ namespace Aws
       namespace ReplicationDirectionMapper
       {
 
-        static const int FAILOVER_HASH = HashingUtils::HashString("FAILOVER");
-        static const int FAILBACK_HASH = HashingUtils::HashString("FAILBACK");
+        static constexpr uint32_t FAILOVER_HASH = ConstExprHashingUtils::HashString("FAILOVER");
+        static constexpr uint32_t FAILBACK_HASH = ConstExprHashingUtils::HashString("FAILBACK");
 
 
         ReplicationDirection GetReplicationDirectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FAILOVER_HASH)
           {
             return ReplicationDirection::FAILOVER;

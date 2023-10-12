@@ -20,14 +20,14 @@ namespace Aws
       namespace RecorderStatusMapper
       {
 
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int USER_ERROR_HASH = HashingUtils::HashString("USER_ERROR");
-        static const int SYSTEM_ERROR_HASH = HashingUtils::HashString("SYSTEM_ERROR");
+        static constexpr uint32_t SUCCESS_HASH = ConstExprHashingUtils::HashString("SUCCESS");
+        static constexpr uint32_t USER_ERROR_HASH = ConstExprHashingUtils::HashString("USER_ERROR");
+        static constexpr uint32_t SYSTEM_ERROR_HASH = ConstExprHashingUtils::HashString("SYSTEM_ERROR");
 
 
         RecorderStatus GetRecorderStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SUCCESS_HASH)
           {
             return RecorderStatus::SUCCESS;

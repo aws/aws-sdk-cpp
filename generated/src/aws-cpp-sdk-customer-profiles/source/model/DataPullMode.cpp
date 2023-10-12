@@ -20,13 +20,13 @@ namespace Aws
       namespace DataPullModeMapper
       {
 
-        static const int Incremental_HASH = HashingUtils::HashString("Incremental");
-        static const int Complete_HASH = HashingUtils::HashString("Complete");
+        static constexpr uint32_t Incremental_HASH = ConstExprHashingUtils::HashString("Incremental");
+        static constexpr uint32_t Complete_HASH = ConstExprHashingUtils::HashString("Complete");
 
 
         DataPullMode GetDataPullModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Incremental_HASH)
           {
             return DataPullMode::Incremental;

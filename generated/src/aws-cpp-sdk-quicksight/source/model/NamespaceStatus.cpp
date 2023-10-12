@@ -20,16 +20,16 @@ namespace Aws
       namespace NamespaceStatusMapper
       {
 
-        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int RETRYABLE_FAILURE_HASH = HashingUtils::HashString("RETRYABLE_FAILURE");
-        static const int NON_RETRYABLE_FAILURE_HASH = HashingUtils::HashString("NON_RETRYABLE_FAILURE");
+        static constexpr uint32_t CREATED_HASH = ConstExprHashingUtils::HashString("CREATED");
+        static constexpr uint32_t CREATING_HASH = ConstExprHashingUtils::HashString("CREATING");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t RETRYABLE_FAILURE_HASH = ConstExprHashingUtils::HashString("RETRYABLE_FAILURE");
+        static constexpr uint32_t NON_RETRYABLE_FAILURE_HASH = ConstExprHashingUtils::HashString("NON_RETRYABLE_FAILURE");
 
 
         NamespaceStatus GetNamespaceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATED_HASH)
           {
             return NamespaceStatus::CREATED;

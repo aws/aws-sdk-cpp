@@ -20,14 +20,14 @@ namespace Aws
       namespace ExcludeRecommendationReasonMapper
       {
 
-        static const int AlreadyImplemented_HASH = HashingUtils::HashString("AlreadyImplemented");
-        static const int NotRelevant_HASH = HashingUtils::HashString("NotRelevant");
-        static const int ComplexityOfImplementation_HASH = HashingUtils::HashString("ComplexityOfImplementation");
+        static constexpr uint32_t AlreadyImplemented_HASH = ConstExprHashingUtils::HashString("AlreadyImplemented");
+        static constexpr uint32_t NotRelevant_HASH = ConstExprHashingUtils::HashString("NotRelevant");
+        static constexpr uint32_t ComplexityOfImplementation_HASH = ConstExprHashingUtils::HashString("ComplexityOfImplementation");
 
 
         ExcludeRecommendationReason GetExcludeRecommendationReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AlreadyImplemented_HASH)
           {
             return ExcludeRecommendationReason::AlreadyImplemented;

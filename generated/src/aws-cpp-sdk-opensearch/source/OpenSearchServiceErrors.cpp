@@ -26,21 +26,21 @@ template<> AWS_OPENSEARCHSERVICE_API SlotNotAvailableException OpenSearchService
 namespace OpenSearchServiceErrorMapper
 {
 
-static const int DISABLED_OPERATION_HASH = HashingUtils::HashString("DisabledOperationException");
-static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
-static const int DEPENDENCY_FAILURE_HASH = HashingUtils::HashString("DependencyFailureException");
-static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
-static const int BASE_HASH = HashingUtils::HashString("BaseException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INVALID_TYPE_HASH = HashingUtils::HashString("InvalidTypeException");
-static const int SLOT_NOT_AVAILABLE_HASH = HashingUtils::HashString("SlotNotAvailableException");
-static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("InvalidPaginationTokenException");
+static constexpr uint32_t DISABLED_OPERATION_HASH = ConstExprHashingUtils::HashString("DisabledOperationException");
+static constexpr uint32_t CONFLICT_HASH = ConstExprHashingUtils::HashString("ConflictException");
+static constexpr uint32_t INTERNAL_HASH = ConstExprHashingUtils::HashString("InternalException");
+static constexpr uint32_t DEPENDENCY_FAILURE_HASH = ConstExprHashingUtils::HashString("DependencyFailureException");
+static constexpr uint32_t RESOURCE_ALREADY_EXISTS_HASH = ConstExprHashingUtils::HashString("ResourceAlreadyExistsException");
+static constexpr uint32_t BASE_HASH = ConstExprHashingUtils::HashString("BaseException");
+static constexpr uint32_t LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("LimitExceededException");
+static constexpr uint32_t INVALID_TYPE_HASH = ConstExprHashingUtils::HashString("InvalidTypeException");
+static constexpr uint32_t SLOT_NOT_AVAILABLE_HASH = ConstExprHashingUtils::HashString("SlotNotAvailableException");
+static constexpr uint32_t INVALID_PAGINATION_TOKEN_HASH = ConstExprHashingUtils::HashString("InvalidPaginationTokenException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == DISABLED_OPERATION_HASH)
   {

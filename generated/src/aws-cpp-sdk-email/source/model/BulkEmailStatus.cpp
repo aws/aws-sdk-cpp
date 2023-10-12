@@ -20,25 +20,25 @@ namespace Aws
       namespace BulkEmailStatusMapper
       {
 
-        static const int Success_HASH = HashingUtils::HashString("Success");
-        static const int MessageRejected_HASH = HashingUtils::HashString("MessageRejected");
-        static const int MailFromDomainNotVerified_HASH = HashingUtils::HashString("MailFromDomainNotVerified");
-        static const int ConfigurationSetDoesNotExist_HASH = HashingUtils::HashString("ConfigurationSetDoesNotExist");
-        static const int TemplateDoesNotExist_HASH = HashingUtils::HashString("TemplateDoesNotExist");
-        static const int AccountSuspended_HASH = HashingUtils::HashString("AccountSuspended");
-        static const int AccountThrottled_HASH = HashingUtils::HashString("AccountThrottled");
-        static const int AccountDailyQuotaExceeded_HASH = HashingUtils::HashString("AccountDailyQuotaExceeded");
-        static const int InvalidSendingPoolName_HASH = HashingUtils::HashString("InvalidSendingPoolName");
-        static const int AccountSendingPaused_HASH = HashingUtils::HashString("AccountSendingPaused");
-        static const int ConfigurationSetSendingPaused_HASH = HashingUtils::HashString("ConfigurationSetSendingPaused");
-        static const int InvalidParameterValue_HASH = HashingUtils::HashString("InvalidParameterValue");
-        static const int TransientFailure_HASH = HashingUtils::HashString("TransientFailure");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static constexpr uint32_t Success_HASH = ConstExprHashingUtils::HashString("Success");
+        static constexpr uint32_t MessageRejected_HASH = ConstExprHashingUtils::HashString("MessageRejected");
+        static constexpr uint32_t MailFromDomainNotVerified_HASH = ConstExprHashingUtils::HashString("MailFromDomainNotVerified");
+        static constexpr uint32_t ConfigurationSetDoesNotExist_HASH = ConstExprHashingUtils::HashString("ConfigurationSetDoesNotExist");
+        static constexpr uint32_t TemplateDoesNotExist_HASH = ConstExprHashingUtils::HashString("TemplateDoesNotExist");
+        static constexpr uint32_t AccountSuspended_HASH = ConstExprHashingUtils::HashString("AccountSuspended");
+        static constexpr uint32_t AccountThrottled_HASH = ConstExprHashingUtils::HashString("AccountThrottled");
+        static constexpr uint32_t AccountDailyQuotaExceeded_HASH = ConstExprHashingUtils::HashString("AccountDailyQuotaExceeded");
+        static constexpr uint32_t InvalidSendingPoolName_HASH = ConstExprHashingUtils::HashString("InvalidSendingPoolName");
+        static constexpr uint32_t AccountSendingPaused_HASH = ConstExprHashingUtils::HashString("AccountSendingPaused");
+        static constexpr uint32_t ConfigurationSetSendingPaused_HASH = ConstExprHashingUtils::HashString("ConfigurationSetSendingPaused");
+        static constexpr uint32_t InvalidParameterValue_HASH = ConstExprHashingUtils::HashString("InvalidParameterValue");
+        static constexpr uint32_t TransientFailure_HASH = ConstExprHashingUtils::HashString("TransientFailure");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
 
 
         BulkEmailStatus GetBulkEmailStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Success_HASH)
           {
             return BulkEmailStatus::Success;

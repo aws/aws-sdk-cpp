@@ -20,12 +20,12 @@ namespace Aws
       namespace DigitalSignatureMethodMapper
       {
 
-        static const int JWT_PS384_HASH = HashingUtils::HashString("JWT_PS384");
+        static constexpr uint32_t JWT_PS384_HASH = ConstExprHashingUtils::HashString("JWT_PS384");
 
 
         DigitalSignatureMethod GetDigitalSignatureMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == JWT_PS384_HASH)
           {
             return DigitalSignatureMethod::JWT_PS384;

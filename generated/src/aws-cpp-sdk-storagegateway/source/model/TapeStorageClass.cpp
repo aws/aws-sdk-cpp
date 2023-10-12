@@ -20,13 +20,13 @@ namespace Aws
       namespace TapeStorageClassMapper
       {
 
-        static const int DEEP_ARCHIVE_HASH = HashingUtils::HashString("DEEP_ARCHIVE");
-        static const int GLACIER_HASH = HashingUtils::HashString("GLACIER");
+        static constexpr uint32_t DEEP_ARCHIVE_HASH = ConstExprHashingUtils::HashString("DEEP_ARCHIVE");
+        static constexpr uint32_t GLACIER_HASH = ConstExprHashingUtils::HashString("GLACIER");
 
 
         TapeStorageClass GetTapeStorageClassForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEEP_ARCHIVE_HASH)
           {
             return TapeStorageClass::DEEP_ARCHIVE;

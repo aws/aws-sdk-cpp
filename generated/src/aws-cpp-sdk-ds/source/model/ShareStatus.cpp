@@ -20,20 +20,20 @@ namespace Aws
       namespace ShareStatusMapper
       {
 
-        static const int Shared_HASH = HashingUtils::HashString("Shared");
-        static const int PendingAcceptance_HASH = HashingUtils::HashString("PendingAcceptance");
-        static const int Rejected_HASH = HashingUtils::HashString("Rejected");
-        static const int Rejecting_HASH = HashingUtils::HashString("Rejecting");
-        static const int RejectFailed_HASH = HashingUtils::HashString("RejectFailed");
-        static const int Sharing_HASH = HashingUtils::HashString("Sharing");
-        static const int ShareFailed_HASH = HashingUtils::HashString("ShareFailed");
-        static const int Deleted_HASH = HashingUtils::HashString("Deleted");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
+        static constexpr uint32_t Shared_HASH = ConstExprHashingUtils::HashString("Shared");
+        static constexpr uint32_t PendingAcceptance_HASH = ConstExprHashingUtils::HashString("PendingAcceptance");
+        static constexpr uint32_t Rejected_HASH = ConstExprHashingUtils::HashString("Rejected");
+        static constexpr uint32_t Rejecting_HASH = ConstExprHashingUtils::HashString("Rejecting");
+        static constexpr uint32_t RejectFailed_HASH = ConstExprHashingUtils::HashString("RejectFailed");
+        static constexpr uint32_t Sharing_HASH = ConstExprHashingUtils::HashString("Sharing");
+        static constexpr uint32_t ShareFailed_HASH = ConstExprHashingUtils::HashString("ShareFailed");
+        static constexpr uint32_t Deleted_HASH = ConstExprHashingUtils::HashString("Deleted");
+        static constexpr uint32_t Deleting_HASH = ConstExprHashingUtils::HashString("Deleting");
 
 
         ShareStatus GetShareStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Shared_HASH)
           {
             return ShareStatus::Shared;

@@ -20,20 +20,20 @@ namespace Aws
       namespace ClusterStateMapper
       {
 
-        static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
-        static const int UNINITIALIZED_HASH = HashingUtils::HashString("UNINITIALIZED");
-        static const int INITIALIZE_IN_PROGRESS_HASH = HashingUtils::HashString("INITIALIZE_IN_PROGRESS");
-        static const int INITIALIZED_HASH = HashingUtils::HashString("INITIALIZED");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
-        static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int DEGRADED_HASH = HashingUtils::HashString("DEGRADED");
+        static constexpr uint32_t CREATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("CREATE_IN_PROGRESS");
+        static constexpr uint32_t UNINITIALIZED_HASH = ConstExprHashingUtils::HashString("UNINITIALIZED");
+        static constexpr uint32_t INITIALIZE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("INITIALIZE_IN_PROGRESS");
+        static constexpr uint32_t INITIALIZED_HASH = ConstExprHashingUtils::HashString("INITIALIZED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t UPDATE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("UPDATE_IN_PROGRESS");
+        static constexpr uint32_t DELETE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("DELETE_IN_PROGRESS");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t DEGRADED_HASH = ConstExprHashingUtils::HashString("DEGRADED");
 
 
         ClusterState GetClusterStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATE_IN_PROGRESS_HASH)
           {
             return ClusterState::CREATE_IN_PROGRESS;

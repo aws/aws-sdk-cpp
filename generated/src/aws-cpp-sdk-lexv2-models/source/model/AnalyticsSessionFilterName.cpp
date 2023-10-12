@@ -20,21 +20,21 @@ namespace Aws
       namespace AnalyticsSessionFilterNameMapper
       {
 
-        static const int BotAliasId_HASH = HashingUtils::HashString("BotAliasId");
-        static const int BotVersion_HASH = HashingUtils::HashString("BotVersion");
-        static const int LocaleId_HASH = HashingUtils::HashString("LocaleId");
-        static const int Modality_HASH = HashingUtils::HashString("Modality");
-        static const int Channel_HASH = HashingUtils::HashString("Channel");
-        static const int Duration_HASH = HashingUtils::HashString("Duration");
-        static const int ConversationEndState_HASH = HashingUtils::HashString("ConversationEndState");
-        static const int SessionId_HASH = HashingUtils::HashString("SessionId");
-        static const int OriginatingRequestId_HASH = HashingUtils::HashString("OriginatingRequestId");
-        static const int IntentPath_HASH = HashingUtils::HashString("IntentPath");
+        static constexpr uint32_t BotAliasId_HASH = ConstExprHashingUtils::HashString("BotAliasId");
+        static constexpr uint32_t BotVersion_HASH = ConstExprHashingUtils::HashString("BotVersion");
+        static constexpr uint32_t LocaleId_HASH = ConstExprHashingUtils::HashString("LocaleId");
+        static constexpr uint32_t Modality_HASH = ConstExprHashingUtils::HashString("Modality");
+        static constexpr uint32_t Channel_HASH = ConstExprHashingUtils::HashString("Channel");
+        static constexpr uint32_t Duration_HASH = ConstExprHashingUtils::HashString("Duration");
+        static constexpr uint32_t ConversationEndState_HASH = ConstExprHashingUtils::HashString("ConversationEndState");
+        static constexpr uint32_t SessionId_HASH = ConstExprHashingUtils::HashString("SessionId");
+        static constexpr uint32_t OriginatingRequestId_HASH = ConstExprHashingUtils::HashString("OriginatingRequestId");
+        static constexpr uint32_t IntentPath_HASH = ConstExprHashingUtils::HashString("IntentPath");
 
 
         AnalyticsSessionFilterName GetAnalyticsSessionFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BotAliasId_HASH)
           {
             return AnalyticsSessionFilterName::BotAliasId;

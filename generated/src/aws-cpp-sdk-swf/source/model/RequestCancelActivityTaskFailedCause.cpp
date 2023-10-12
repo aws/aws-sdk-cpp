@@ -20,13 +20,13 @@ namespace Aws
       namespace RequestCancelActivityTaskFailedCauseMapper
       {
 
-        static const int ACTIVITY_ID_UNKNOWN_HASH = HashingUtils::HashString("ACTIVITY_ID_UNKNOWN");
-        static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERATION_NOT_PERMITTED");
+        static constexpr uint32_t ACTIVITY_ID_UNKNOWN_HASH = ConstExprHashingUtils::HashString("ACTIVITY_ID_UNKNOWN");
+        static constexpr uint32_t OPERATION_NOT_PERMITTED_HASH = ConstExprHashingUtils::HashString("OPERATION_NOT_PERMITTED");
 
 
         RequestCancelActivityTaskFailedCause GetRequestCancelActivityTaskFailedCauseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVITY_ID_UNKNOWN_HASH)
           {
             return RequestCancelActivityTaskFailedCause::ACTIVITY_ID_UNKNOWN;

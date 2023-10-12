@@ -20,17 +20,17 @@ namespace Aws
       namespace ResiliencyPolicyTierMapper
       {
 
-        static const int MissionCritical_HASH = HashingUtils::HashString("MissionCritical");
-        static const int Critical_HASH = HashingUtils::HashString("Critical");
-        static const int Important_HASH = HashingUtils::HashString("Important");
-        static const int CoreServices_HASH = HashingUtils::HashString("CoreServices");
-        static const int NonCritical_HASH = HashingUtils::HashString("NonCritical");
-        static const int NotApplicable_HASH = HashingUtils::HashString("NotApplicable");
+        static constexpr uint32_t MissionCritical_HASH = ConstExprHashingUtils::HashString("MissionCritical");
+        static constexpr uint32_t Critical_HASH = ConstExprHashingUtils::HashString("Critical");
+        static constexpr uint32_t Important_HASH = ConstExprHashingUtils::HashString("Important");
+        static constexpr uint32_t CoreServices_HASH = ConstExprHashingUtils::HashString("CoreServices");
+        static constexpr uint32_t NonCritical_HASH = ConstExprHashingUtils::HashString("NonCritical");
+        static constexpr uint32_t NotApplicable_HASH = ConstExprHashingUtils::HashString("NotApplicable");
 
 
         ResiliencyPolicyTier GetResiliencyPolicyTierForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MissionCritical_HASH)
           {
             return ResiliencyPolicyTier::MissionCritical;

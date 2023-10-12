@@ -20,12 +20,12 @@ namespace Aws
       namespace StopScopeMapper
       {
 
-        static const int RuleSet_HASH = HashingUtils::HashString("RuleSet");
+        static constexpr uint32_t RuleSet_HASH = ConstExprHashingUtils::HashString("RuleSet");
 
 
         StopScope GetStopScopeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RuleSet_HASH)
           {
             return StopScope::RuleSet;

@@ -20,36 +20,36 @@ namespace Aws
       namespace HistoricalMetricNameMapper
       {
 
-        static const int CONTACTS_QUEUED_HASH = HashingUtils::HashString("CONTACTS_QUEUED");
-        static const int CONTACTS_HANDLED_HASH = HashingUtils::HashString("CONTACTS_HANDLED");
-        static const int CONTACTS_ABANDONED_HASH = HashingUtils::HashString("CONTACTS_ABANDONED");
-        static const int CONTACTS_CONSULTED_HASH = HashingUtils::HashString("CONTACTS_CONSULTED");
-        static const int CONTACTS_AGENT_HUNG_UP_FIRST_HASH = HashingUtils::HashString("CONTACTS_AGENT_HUNG_UP_FIRST");
-        static const int CONTACTS_HANDLED_INCOMING_HASH = HashingUtils::HashString("CONTACTS_HANDLED_INCOMING");
-        static const int CONTACTS_HANDLED_OUTBOUND_HASH = HashingUtils::HashString("CONTACTS_HANDLED_OUTBOUND");
-        static const int CONTACTS_HOLD_ABANDONS_HASH = HashingUtils::HashString("CONTACTS_HOLD_ABANDONS");
-        static const int CONTACTS_TRANSFERRED_IN_HASH = HashingUtils::HashString("CONTACTS_TRANSFERRED_IN");
-        static const int CONTACTS_TRANSFERRED_OUT_HASH = HashingUtils::HashString("CONTACTS_TRANSFERRED_OUT");
-        static const int CONTACTS_TRANSFERRED_IN_FROM_QUEUE_HASH = HashingUtils::HashString("CONTACTS_TRANSFERRED_IN_FROM_QUEUE");
-        static const int CONTACTS_TRANSFERRED_OUT_FROM_QUEUE_HASH = HashingUtils::HashString("CONTACTS_TRANSFERRED_OUT_FROM_QUEUE");
-        static const int CONTACTS_MISSED_HASH = HashingUtils::HashString("CONTACTS_MISSED");
-        static const int CALLBACK_CONTACTS_HANDLED_HASH = HashingUtils::HashString("CALLBACK_CONTACTS_HANDLED");
-        static const int API_CONTACTS_HANDLED_HASH = HashingUtils::HashString("API_CONTACTS_HANDLED");
-        static const int OCCUPANCY_HASH = HashingUtils::HashString("OCCUPANCY");
-        static const int HANDLE_TIME_HASH = HashingUtils::HashString("HANDLE_TIME");
-        static const int AFTER_CONTACT_WORK_TIME_HASH = HashingUtils::HashString("AFTER_CONTACT_WORK_TIME");
-        static const int QUEUED_TIME_HASH = HashingUtils::HashString("QUEUED_TIME");
-        static const int ABANDON_TIME_HASH = HashingUtils::HashString("ABANDON_TIME");
-        static const int QUEUE_ANSWER_TIME_HASH = HashingUtils::HashString("QUEUE_ANSWER_TIME");
-        static const int HOLD_TIME_HASH = HashingUtils::HashString("HOLD_TIME");
-        static const int INTERACTION_TIME_HASH = HashingUtils::HashString("INTERACTION_TIME");
-        static const int INTERACTION_AND_HOLD_TIME_HASH = HashingUtils::HashString("INTERACTION_AND_HOLD_TIME");
-        static const int SERVICE_LEVEL_HASH = HashingUtils::HashString("SERVICE_LEVEL");
+        static constexpr uint32_t CONTACTS_QUEUED_HASH = ConstExprHashingUtils::HashString("CONTACTS_QUEUED");
+        static constexpr uint32_t CONTACTS_HANDLED_HASH = ConstExprHashingUtils::HashString("CONTACTS_HANDLED");
+        static constexpr uint32_t CONTACTS_ABANDONED_HASH = ConstExprHashingUtils::HashString("CONTACTS_ABANDONED");
+        static constexpr uint32_t CONTACTS_CONSULTED_HASH = ConstExprHashingUtils::HashString("CONTACTS_CONSULTED");
+        static constexpr uint32_t CONTACTS_AGENT_HUNG_UP_FIRST_HASH = ConstExprHashingUtils::HashString("CONTACTS_AGENT_HUNG_UP_FIRST");
+        static constexpr uint32_t CONTACTS_HANDLED_INCOMING_HASH = ConstExprHashingUtils::HashString("CONTACTS_HANDLED_INCOMING");
+        static constexpr uint32_t CONTACTS_HANDLED_OUTBOUND_HASH = ConstExprHashingUtils::HashString("CONTACTS_HANDLED_OUTBOUND");
+        static constexpr uint32_t CONTACTS_HOLD_ABANDONS_HASH = ConstExprHashingUtils::HashString("CONTACTS_HOLD_ABANDONS");
+        static constexpr uint32_t CONTACTS_TRANSFERRED_IN_HASH = ConstExprHashingUtils::HashString("CONTACTS_TRANSFERRED_IN");
+        static constexpr uint32_t CONTACTS_TRANSFERRED_OUT_HASH = ConstExprHashingUtils::HashString("CONTACTS_TRANSFERRED_OUT");
+        static constexpr uint32_t CONTACTS_TRANSFERRED_IN_FROM_QUEUE_HASH = ConstExprHashingUtils::HashString("CONTACTS_TRANSFERRED_IN_FROM_QUEUE");
+        static constexpr uint32_t CONTACTS_TRANSFERRED_OUT_FROM_QUEUE_HASH = ConstExprHashingUtils::HashString("CONTACTS_TRANSFERRED_OUT_FROM_QUEUE");
+        static constexpr uint32_t CONTACTS_MISSED_HASH = ConstExprHashingUtils::HashString("CONTACTS_MISSED");
+        static constexpr uint32_t CALLBACK_CONTACTS_HANDLED_HASH = ConstExprHashingUtils::HashString("CALLBACK_CONTACTS_HANDLED");
+        static constexpr uint32_t API_CONTACTS_HANDLED_HASH = ConstExprHashingUtils::HashString("API_CONTACTS_HANDLED");
+        static constexpr uint32_t OCCUPANCY_HASH = ConstExprHashingUtils::HashString("OCCUPANCY");
+        static constexpr uint32_t HANDLE_TIME_HASH = ConstExprHashingUtils::HashString("HANDLE_TIME");
+        static constexpr uint32_t AFTER_CONTACT_WORK_TIME_HASH = ConstExprHashingUtils::HashString("AFTER_CONTACT_WORK_TIME");
+        static constexpr uint32_t QUEUED_TIME_HASH = ConstExprHashingUtils::HashString("QUEUED_TIME");
+        static constexpr uint32_t ABANDON_TIME_HASH = ConstExprHashingUtils::HashString("ABANDON_TIME");
+        static constexpr uint32_t QUEUE_ANSWER_TIME_HASH = ConstExprHashingUtils::HashString("QUEUE_ANSWER_TIME");
+        static constexpr uint32_t HOLD_TIME_HASH = ConstExprHashingUtils::HashString("HOLD_TIME");
+        static constexpr uint32_t INTERACTION_TIME_HASH = ConstExprHashingUtils::HashString("INTERACTION_TIME");
+        static constexpr uint32_t INTERACTION_AND_HOLD_TIME_HASH = ConstExprHashingUtils::HashString("INTERACTION_AND_HOLD_TIME");
+        static constexpr uint32_t SERVICE_LEVEL_HASH = ConstExprHashingUtils::HashString("SERVICE_LEVEL");
 
 
         HistoricalMetricName GetHistoricalMetricNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CONTACTS_QUEUED_HASH)
           {
             return HistoricalMetricName::CONTACTS_QUEUED;

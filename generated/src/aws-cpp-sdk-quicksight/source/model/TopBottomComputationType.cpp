@@ -20,13 +20,13 @@ namespace Aws
       namespace TopBottomComputationTypeMapper
       {
 
-        static const int TOP_HASH = HashingUtils::HashString("TOP");
-        static const int BOTTOM_HASH = HashingUtils::HashString("BOTTOM");
+        static constexpr uint32_t TOP_HASH = ConstExprHashingUtils::HashString("TOP");
+        static constexpr uint32_t BOTTOM_HASH = ConstExprHashingUtils::HashString("BOTTOM");
 
 
         TopBottomComputationType GetTopBottomComputationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TOP_HASH)
           {
             return TopBottomComputationType::TOP;

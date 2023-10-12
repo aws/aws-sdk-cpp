@@ -20,15 +20,15 @@ namespace Aws
       namespace OnboardStatusMapper
       {
 
-        static const int INITIALIZED_HASH = HashingUtils::HashString("INITIALIZED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int ONBOARDED_HASH = HashingUtils::HashString("ONBOARDED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static constexpr uint32_t INITIALIZED_HASH = ConstExprHashingUtils::HashString("INITIALIZED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t ONBOARDED_HASH = ConstExprHashingUtils::HashString("ONBOARDED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
 
 
         OnboardStatus GetOnboardStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INITIALIZED_HASH)
           {
             return OnboardStatus::INITIALIZED;

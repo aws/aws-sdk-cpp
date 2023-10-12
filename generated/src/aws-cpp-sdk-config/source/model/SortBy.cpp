@@ -20,12 +20,12 @@ namespace Aws
       namespace SortByMapper
       {
 
-        static const int SCORE_HASH = HashingUtils::HashString("SCORE");
+        static constexpr uint32_t SCORE_HASH = ConstExprHashingUtils::HashString("SCORE");
 
 
         SortBy GetSortByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SCORE_HASH)
           {
             return SortBy::SCORE;

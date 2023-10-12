@@ -20,14 +20,14 @@ namespace Aws
       namespace ParquetCompressionMapper
       {
 
-        static const int UNCOMPRESSED_HASH = HashingUtils::HashString("UNCOMPRESSED");
-        static const int GZIP_HASH = HashingUtils::HashString("GZIP");
-        static const int SNAPPY_HASH = HashingUtils::HashString("SNAPPY");
+        static constexpr uint32_t UNCOMPRESSED_HASH = ConstExprHashingUtils::HashString("UNCOMPRESSED");
+        static constexpr uint32_t GZIP_HASH = ConstExprHashingUtils::HashString("GZIP");
+        static constexpr uint32_t SNAPPY_HASH = ConstExprHashingUtils::HashString("SNAPPY");
 
 
         ParquetCompression GetParquetCompressionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UNCOMPRESSED_HASH)
           {
             return ParquetCompression::UNCOMPRESSED;

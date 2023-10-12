@@ -20,13 +20,13 @@ namespace Aws
       namespace InputPsiControlMapper
       {
 
-        static const int IGNORE_PSI_HASH = HashingUtils::HashString("IGNORE_PSI");
-        static const int USE_PSI_HASH = HashingUtils::HashString("USE_PSI");
+        static constexpr uint32_t IGNORE_PSI_HASH = ConstExprHashingUtils::HashString("IGNORE_PSI");
+        static constexpr uint32_t USE_PSI_HASH = ConstExprHashingUtils::HashString("USE_PSI");
 
 
         InputPsiControl GetInputPsiControlForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IGNORE_PSI_HASH)
           {
             return InputPsiControl::IGNORE_PSI;

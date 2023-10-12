@@ -20,13 +20,13 @@ namespace Aws
       namespace SmoothGroupTimestampOffsetModeMapper
       {
 
-        static const int USE_CONFIGURED_OFFSET_HASH = HashingUtils::HashString("USE_CONFIGURED_OFFSET");
-        static const int USE_EVENT_START_DATE_HASH = HashingUtils::HashString("USE_EVENT_START_DATE");
+        static constexpr uint32_t USE_CONFIGURED_OFFSET_HASH = ConstExprHashingUtils::HashString("USE_CONFIGURED_OFFSET");
+        static constexpr uint32_t USE_EVENT_START_DATE_HASH = ConstExprHashingUtils::HashString("USE_EVENT_START_DATE");
 
 
         SmoothGroupTimestampOffsetMode GetSmoothGroupTimestampOffsetModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == USE_CONFIGURED_OFFSET_HASH)
           {
             return SmoothGroupTimestampOffsetMode::USE_CONFIGURED_OFFSET;

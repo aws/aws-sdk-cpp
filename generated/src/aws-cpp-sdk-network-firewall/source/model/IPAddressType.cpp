@@ -20,14 +20,14 @@ namespace Aws
       namespace IPAddressTypeMapper
       {
 
-        static const int DUALSTACK_HASH = HashingUtils::HashString("DUALSTACK");
-        static const int IPV4_HASH = HashingUtils::HashString("IPV4");
-        static const int IPV6_HASH = HashingUtils::HashString("IPV6");
+        static constexpr uint32_t DUALSTACK_HASH = ConstExprHashingUtils::HashString("DUALSTACK");
+        static constexpr uint32_t IPV4_HASH = ConstExprHashingUtils::HashString("IPV4");
+        static constexpr uint32_t IPV6_HASH = ConstExprHashingUtils::HashString("IPV6");
 
 
         IPAddressType GetIPAddressTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DUALSTACK_HASH)
           {
             return IPAddressType::DUALSTACK;

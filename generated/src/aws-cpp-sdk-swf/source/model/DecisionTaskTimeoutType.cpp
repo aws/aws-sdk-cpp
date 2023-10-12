@@ -20,13 +20,13 @@ namespace Aws
       namespace DecisionTaskTimeoutTypeMapper
       {
 
-        static const int START_TO_CLOSE_HASH = HashingUtils::HashString("START_TO_CLOSE");
-        static const int SCHEDULE_TO_START_HASH = HashingUtils::HashString("SCHEDULE_TO_START");
+        static constexpr uint32_t START_TO_CLOSE_HASH = ConstExprHashingUtils::HashString("START_TO_CLOSE");
+        static constexpr uint32_t SCHEDULE_TO_START_HASH = ConstExprHashingUtils::HashString("SCHEDULE_TO_START");
 
 
         DecisionTaskTimeoutType GetDecisionTaskTimeoutTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == START_TO_CLOSE_HASH)
           {
             return DecisionTaskTimeoutType::START_TO_CLOSE;

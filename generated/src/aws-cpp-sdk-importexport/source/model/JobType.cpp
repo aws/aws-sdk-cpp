@@ -20,13 +20,13 @@ namespace Aws
       namespace JobTypeMapper
       {
 
-        static const int Import_HASH = HashingUtils::HashString("Import");
-        static const int Export_HASH = HashingUtils::HashString("Export");
+        static constexpr uint32_t Import_HASH = ConstExprHashingUtils::HashString("Import");
+        static constexpr uint32_t Export_HASH = ConstExprHashingUtils::HashString("Export");
 
 
         JobType GetJobTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Import_HASH)
           {
             return JobType::Import;

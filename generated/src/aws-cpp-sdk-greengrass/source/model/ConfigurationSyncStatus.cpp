@@ -20,13 +20,13 @@ namespace Aws
       namespace ConfigurationSyncStatusMapper
       {
 
-        static const int InSync_HASH = HashingUtils::HashString("InSync");
-        static const int OutOfSync_HASH = HashingUtils::HashString("OutOfSync");
+        static constexpr uint32_t InSync_HASH = ConstExprHashingUtils::HashString("InSync");
+        static constexpr uint32_t OutOfSync_HASH = ConstExprHashingUtils::HashString("OutOfSync");
 
 
         ConfigurationSyncStatus GetConfigurationSyncStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == InSync_HASH)
           {
             return ConfigurationSyncStatus::InSync;

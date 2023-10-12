@@ -20,13 +20,13 @@ namespace Aws
       namespace StatusReasonCodeMapper
       {
 
-        static const int NO_AVAILABLE_CONFIGURATION_RECORDER_HASH = HashingUtils::HashString("NO_AVAILABLE_CONFIGURATION_RECORDER");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
+        static constexpr uint32_t NO_AVAILABLE_CONFIGURATION_RECORDER_HASH = ConstExprHashingUtils::HashString("NO_AVAILABLE_CONFIGURATION_RECORDER");
+        static constexpr uint32_t INTERNAL_ERROR_HASH = ConstExprHashingUtils::HashString("INTERNAL_ERROR");
 
 
         StatusReasonCode GetStatusReasonCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NO_AVAILABLE_CONFIGURATION_RECORDER_HASH)
           {
             return StatusReasonCode::NO_AVAILABLE_CONFIGURATION_RECORDER;

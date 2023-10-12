@@ -20,16 +20,16 @@ namespace Aws
       namespace ApplicationVersionStatusMapper
       {
 
-        static const int Processed_HASH = HashingUtils::HashString("Processed");
-        static const int Unprocessed_HASH = HashingUtils::HashString("Unprocessed");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Processing_HASH = HashingUtils::HashString("Processing");
-        static const int Building_HASH = HashingUtils::HashString("Building");
+        static constexpr uint32_t Processed_HASH = ConstExprHashingUtils::HashString("Processed");
+        static constexpr uint32_t Unprocessed_HASH = ConstExprHashingUtils::HashString("Unprocessed");
+        static constexpr uint32_t Failed_HASH = ConstExprHashingUtils::HashString("Failed");
+        static constexpr uint32_t Processing_HASH = ConstExprHashingUtils::HashString("Processing");
+        static constexpr uint32_t Building_HASH = ConstExprHashingUtils::HashString("Building");
 
 
         ApplicationVersionStatus GetApplicationVersionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Processed_HASH)
           {
             return ApplicationVersionStatus::Processed;

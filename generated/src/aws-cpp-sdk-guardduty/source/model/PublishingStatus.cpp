@@ -20,15 +20,15 @@ namespace Aws
       namespace PublishingStatusMapper
       {
 
-        static const int PENDING_VERIFICATION_HASH = HashingUtils::HashString("PENDING_VERIFICATION");
-        static const int PUBLISHING_HASH = HashingUtils::HashString("PUBLISHING");
-        static const int UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY_HASH = HashingUtils::HashString("UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+        static constexpr uint32_t PENDING_VERIFICATION_HASH = ConstExprHashingUtils::HashString("PENDING_VERIFICATION");
+        static constexpr uint32_t PUBLISHING_HASH = ConstExprHashingUtils::HashString("PUBLISHING");
+        static constexpr uint32_t UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY_HASH = ConstExprHashingUtils::HashString("UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
 
 
         PublishingStatus GetPublishingStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_VERIFICATION_HASH)
           {
             return PublishingStatus::PENDING_VERIFICATION;

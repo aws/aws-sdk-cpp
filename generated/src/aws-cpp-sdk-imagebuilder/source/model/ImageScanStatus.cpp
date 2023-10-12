@@ -20,18 +20,18 @@ namespace Aws
       namespace ImageScanStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int SCANNING_HASH = HashingUtils::HashString("SCANNING");
-        static const int COLLECTING_HASH = HashingUtils::HashString("COLLECTING");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int ABANDONED_HASH = HashingUtils::HashString("ABANDONED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t SCANNING_HASH = ConstExprHashingUtils::HashString("SCANNING");
+        static constexpr uint32_t COLLECTING_HASH = ConstExprHashingUtils::HashString("COLLECTING");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t ABANDONED_HASH = ConstExprHashingUtils::HashString("ABANDONED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t TIMED_OUT_HASH = ConstExprHashingUtils::HashString("TIMED_OUT");
 
 
         ImageScanStatus GetImageScanStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return ImageScanStatus::PENDING;

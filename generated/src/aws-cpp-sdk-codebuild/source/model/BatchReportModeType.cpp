@@ -20,13 +20,13 @@ namespace Aws
       namespace BatchReportModeTypeMapper
       {
 
-        static const int REPORT_INDIVIDUAL_BUILDS_HASH = HashingUtils::HashString("REPORT_INDIVIDUAL_BUILDS");
-        static const int REPORT_AGGREGATED_BATCH_HASH = HashingUtils::HashString("REPORT_AGGREGATED_BATCH");
+        static constexpr uint32_t REPORT_INDIVIDUAL_BUILDS_HASH = ConstExprHashingUtils::HashString("REPORT_INDIVIDUAL_BUILDS");
+        static constexpr uint32_t REPORT_AGGREGATED_BATCH_HASH = ConstExprHashingUtils::HashString("REPORT_AGGREGATED_BATCH");
 
 
         BatchReportModeType GetBatchReportModeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == REPORT_INDIVIDUAL_BUILDS_HASH)
           {
             return BatchReportModeType::REPORT_INDIVIDUAL_BUILDS;

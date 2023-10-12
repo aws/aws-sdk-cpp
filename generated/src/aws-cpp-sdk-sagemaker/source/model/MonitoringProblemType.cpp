@@ -20,14 +20,14 @@ namespace Aws
       namespace MonitoringProblemTypeMapper
       {
 
-        static const int BinaryClassification_HASH = HashingUtils::HashString("BinaryClassification");
-        static const int MulticlassClassification_HASH = HashingUtils::HashString("MulticlassClassification");
-        static const int Regression_HASH = HashingUtils::HashString("Regression");
+        static constexpr uint32_t BinaryClassification_HASH = ConstExprHashingUtils::HashString("BinaryClassification");
+        static constexpr uint32_t MulticlassClassification_HASH = ConstExprHashingUtils::HashString("MulticlassClassification");
+        static constexpr uint32_t Regression_HASH = ConstExprHashingUtils::HashString("Regression");
 
 
         MonitoringProblemType GetMonitoringProblemTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BinaryClassification_HASH)
           {
             return MonitoringProblemType::BinaryClassification;

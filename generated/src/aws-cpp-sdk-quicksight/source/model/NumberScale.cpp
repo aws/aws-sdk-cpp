@@ -20,17 +20,17 @@ namespace Aws
       namespace NumberScaleMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int THOUSANDS_HASH = HashingUtils::HashString("THOUSANDS");
-        static const int MILLIONS_HASH = HashingUtils::HashString("MILLIONS");
-        static const int BILLIONS_HASH = HashingUtils::HashString("BILLIONS");
-        static const int TRILLIONS_HASH = HashingUtils::HashString("TRILLIONS");
+        static constexpr uint32_t NONE_HASH = ConstExprHashingUtils::HashString("NONE");
+        static constexpr uint32_t AUTO_HASH = ConstExprHashingUtils::HashString("AUTO");
+        static constexpr uint32_t THOUSANDS_HASH = ConstExprHashingUtils::HashString("THOUSANDS");
+        static constexpr uint32_t MILLIONS_HASH = ConstExprHashingUtils::HashString("MILLIONS");
+        static constexpr uint32_t BILLIONS_HASH = ConstExprHashingUtils::HashString("BILLIONS");
+        static constexpr uint32_t TRILLIONS_HASH = ConstExprHashingUtils::HashString("TRILLIONS");
 
 
         NumberScale GetNumberScaleForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
             return NumberScale::NONE;

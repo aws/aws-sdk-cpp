@@ -20,13 +20,13 @@ namespace Aws
       namespace AmazonopensearchserviceS3BackupModeMapper
       {
 
-        static const int FailedDocumentsOnly_HASH = HashingUtils::HashString("FailedDocumentsOnly");
-        static const int AllDocuments_HASH = HashingUtils::HashString("AllDocuments");
+        static constexpr uint32_t FailedDocumentsOnly_HASH = ConstExprHashingUtils::HashString("FailedDocumentsOnly");
+        static constexpr uint32_t AllDocuments_HASH = ConstExprHashingUtils::HashString("AllDocuments");
 
 
         AmazonopensearchserviceS3BackupMode GetAmazonopensearchserviceS3BackupModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FailedDocumentsOnly_HASH)
           {
             return AmazonopensearchserviceS3BackupMode::FailedDocumentsOnly;

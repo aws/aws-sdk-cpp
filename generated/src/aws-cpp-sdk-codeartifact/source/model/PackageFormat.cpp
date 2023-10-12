@@ -20,17 +20,17 @@ namespace Aws
       namespace PackageFormatMapper
       {
 
-        static const int npm_HASH = HashingUtils::HashString("npm");
-        static const int pypi_HASH = HashingUtils::HashString("pypi");
-        static const int maven_HASH = HashingUtils::HashString("maven");
-        static const int nuget_HASH = HashingUtils::HashString("nuget");
-        static const int generic_HASH = HashingUtils::HashString("generic");
-        static const int swift_HASH = HashingUtils::HashString("swift");
+        static constexpr uint32_t npm_HASH = ConstExprHashingUtils::HashString("npm");
+        static constexpr uint32_t pypi_HASH = ConstExprHashingUtils::HashString("pypi");
+        static constexpr uint32_t maven_HASH = ConstExprHashingUtils::HashString("maven");
+        static constexpr uint32_t nuget_HASH = ConstExprHashingUtils::HashString("nuget");
+        static constexpr uint32_t generic_HASH = ConstExprHashingUtils::HashString("generic");
+        static constexpr uint32_t swift_HASH = ConstExprHashingUtils::HashString("swift");
 
 
         PackageFormat GetPackageFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == npm_HASH)
           {
             return PackageFormat::npm;

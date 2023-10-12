@@ -20,13 +20,13 @@ namespace Aws
       namespace QueueListByMapper
       {
 
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int CREATION_DATE_HASH = HashingUtils::HashString("CREATION_DATE");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t CREATION_DATE_HASH = ConstExprHashingUtils::HashString("CREATION_DATE");
 
 
         QueueListBy GetQueueListByForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NAME_HASH)
           {
             return QueueListBy::NAME;

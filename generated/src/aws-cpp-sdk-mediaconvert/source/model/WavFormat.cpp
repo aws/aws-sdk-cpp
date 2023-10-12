@@ -20,13 +20,13 @@ namespace Aws
       namespace WavFormatMapper
       {
 
-        static const int RIFF_HASH = HashingUtils::HashString("RIFF");
-        static const int RF64_HASH = HashingUtils::HashString("RF64");
+        static constexpr uint32_t RIFF_HASH = ConstExprHashingUtils::HashString("RIFF");
+        static constexpr uint32_t RF64_HASH = ConstExprHashingUtils::HashString("RF64");
 
 
         WavFormat GetWavFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RIFF_HASH)
           {
             return WavFormat::RIFF;

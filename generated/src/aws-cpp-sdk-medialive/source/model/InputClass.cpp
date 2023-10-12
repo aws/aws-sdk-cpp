@@ -20,13 +20,13 @@ namespace Aws
       namespace InputClassMapper
       {
 
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
-        static const int SINGLE_PIPELINE_HASH = HashingUtils::HashString("SINGLE_PIPELINE");
+        static constexpr uint32_t STANDARD_HASH = ConstExprHashingUtils::HashString("STANDARD");
+        static constexpr uint32_t SINGLE_PIPELINE_HASH = ConstExprHashingUtils::HashString("SINGLE_PIPELINE");
 
 
         InputClass GetInputClassForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == STANDARD_HASH)
           {
             return InputClass::STANDARD;

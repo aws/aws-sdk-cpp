@@ -20,50 +20,50 @@ namespace Aws
       namespace ConnectionPropertyKeyMapper
       {
 
-        static const int HOST_HASH = HashingUtils::HashString("HOST");
-        static const int PORT_HASH = HashingUtils::HashString("PORT");
-        static const int USERNAME_HASH = HashingUtils::HashString("USERNAME");
-        static const int PASSWORD_HASH = HashingUtils::HashString("PASSWORD");
-        static const int ENCRYPTED_PASSWORD_HASH = HashingUtils::HashString("ENCRYPTED_PASSWORD");
-        static const int JDBC_DRIVER_JAR_URI_HASH = HashingUtils::HashString("JDBC_DRIVER_JAR_URI");
-        static const int JDBC_DRIVER_CLASS_NAME_HASH = HashingUtils::HashString("JDBC_DRIVER_CLASS_NAME");
-        static const int JDBC_ENGINE_HASH = HashingUtils::HashString("JDBC_ENGINE");
-        static const int JDBC_ENGINE_VERSION_HASH = HashingUtils::HashString("JDBC_ENGINE_VERSION");
-        static const int CONFIG_FILES_HASH = HashingUtils::HashString("CONFIG_FILES");
-        static const int INSTANCE_ID_HASH = HashingUtils::HashString("INSTANCE_ID");
-        static const int JDBC_CONNECTION_URL_HASH = HashingUtils::HashString("JDBC_CONNECTION_URL");
-        static const int JDBC_ENFORCE_SSL_HASH = HashingUtils::HashString("JDBC_ENFORCE_SSL");
-        static const int CUSTOM_JDBC_CERT_HASH = HashingUtils::HashString("CUSTOM_JDBC_CERT");
-        static const int SKIP_CUSTOM_JDBC_CERT_VALIDATION_HASH = HashingUtils::HashString("SKIP_CUSTOM_JDBC_CERT_VALIDATION");
-        static const int CUSTOM_JDBC_CERT_STRING_HASH = HashingUtils::HashString("CUSTOM_JDBC_CERT_STRING");
-        static const int CONNECTION_URL_HASH = HashingUtils::HashString("CONNECTION_URL");
-        static const int KAFKA_BOOTSTRAP_SERVERS_HASH = HashingUtils::HashString("KAFKA_BOOTSTRAP_SERVERS");
-        static const int KAFKA_SSL_ENABLED_HASH = HashingUtils::HashString("KAFKA_SSL_ENABLED");
-        static const int KAFKA_CUSTOM_CERT_HASH = HashingUtils::HashString("KAFKA_CUSTOM_CERT");
-        static const int KAFKA_SKIP_CUSTOM_CERT_VALIDATION_HASH = HashingUtils::HashString("KAFKA_SKIP_CUSTOM_CERT_VALIDATION");
-        static const int KAFKA_CLIENT_KEYSTORE_HASH = HashingUtils::HashString("KAFKA_CLIENT_KEYSTORE");
-        static const int KAFKA_CLIENT_KEYSTORE_PASSWORD_HASH = HashingUtils::HashString("KAFKA_CLIENT_KEYSTORE_PASSWORD");
-        static const int KAFKA_CLIENT_KEY_PASSWORD_HASH = HashingUtils::HashString("KAFKA_CLIENT_KEY_PASSWORD");
-        static const int ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD_HASH = HashingUtils::HashString("ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD");
-        static const int ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD_HASH = HashingUtils::HashString("ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD");
-        static const int SECRET_ID_HASH = HashingUtils::HashString("SECRET_ID");
-        static const int CONNECTOR_URL_HASH = HashingUtils::HashString("CONNECTOR_URL");
-        static const int CONNECTOR_TYPE_HASH = HashingUtils::HashString("CONNECTOR_TYPE");
-        static const int CONNECTOR_CLASS_NAME_HASH = HashingUtils::HashString("CONNECTOR_CLASS_NAME");
-        static const int KAFKA_SASL_MECHANISM_HASH = HashingUtils::HashString("KAFKA_SASL_MECHANISM");
-        static const int KAFKA_SASL_SCRAM_USERNAME_HASH = HashingUtils::HashString("KAFKA_SASL_SCRAM_USERNAME");
-        static const int KAFKA_SASL_SCRAM_PASSWORD_HASH = HashingUtils::HashString("KAFKA_SASL_SCRAM_PASSWORD");
-        static const int KAFKA_SASL_SCRAM_SECRETS_ARN_HASH = HashingUtils::HashString("KAFKA_SASL_SCRAM_SECRETS_ARN");
-        static const int ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD_HASH = HashingUtils::HashString("ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD");
-        static const int KAFKA_SASL_GSSAPI_KEYTAB_HASH = HashingUtils::HashString("KAFKA_SASL_GSSAPI_KEYTAB");
-        static const int KAFKA_SASL_GSSAPI_KRB5_CONF_HASH = HashingUtils::HashString("KAFKA_SASL_GSSAPI_KRB5_CONF");
-        static const int KAFKA_SASL_GSSAPI_SERVICE_HASH = HashingUtils::HashString("KAFKA_SASL_GSSAPI_SERVICE");
-        static const int KAFKA_SASL_GSSAPI_PRINCIPAL_HASH = HashingUtils::HashString("KAFKA_SASL_GSSAPI_PRINCIPAL");
+        static constexpr uint32_t HOST_HASH = ConstExprHashingUtils::HashString("HOST");
+        static constexpr uint32_t PORT_HASH = ConstExprHashingUtils::HashString("PORT");
+        static constexpr uint32_t USERNAME_HASH = ConstExprHashingUtils::HashString("USERNAME");
+        static constexpr uint32_t PASSWORD_HASH = ConstExprHashingUtils::HashString("PASSWORD");
+        static constexpr uint32_t ENCRYPTED_PASSWORD_HASH = ConstExprHashingUtils::HashString("ENCRYPTED_PASSWORD");
+        static constexpr uint32_t JDBC_DRIVER_JAR_URI_HASH = ConstExprHashingUtils::HashString("JDBC_DRIVER_JAR_URI");
+        static constexpr uint32_t JDBC_DRIVER_CLASS_NAME_HASH = ConstExprHashingUtils::HashString("JDBC_DRIVER_CLASS_NAME");
+        static constexpr uint32_t JDBC_ENGINE_HASH = ConstExprHashingUtils::HashString("JDBC_ENGINE");
+        static constexpr uint32_t JDBC_ENGINE_VERSION_HASH = ConstExprHashingUtils::HashString("JDBC_ENGINE_VERSION");
+        static constexpr uint32_t CONFIG_FILES_HASH = ConstExprHashingUtils::HashString("CONFIG_FILES");
+        static constexpr uint32_t INSTANCE_ID_HASH = ConstExprHashingUtils::HashString("INSTANCE_ID");
+        static constexpr uint32_t JDBC_CONNECTION_URL_HASH = ConstExprHashingUtils::HashString("JDBC_CONNECTION_URL");
+        static constexpr uint32_t JDBC_ENFORCE_SSL_HASH = ConstExprHashingUtils::HashString("JDBC_ENFORCE_SSL");
+        static constexpr uint32_t CUSTOM_JDBC_CERT_HASH = ConstExprHashingUtils::HashString("CUSTOM_JDBC_CERT");
+        static constexpr uint32_t SKIP_CUSTOM_JDBC_CERT_VALIDATION_HASH = ConstExprHashingUtils::HashString("SKIP_CUSTOM_JDBC_CERT_VALIDATION");
+        static constexpr uint32_t CUSTOM_JDBC_CERT_STRING_HASH = ConstExprHashingUtils::HashString("CUSTOM_JDBC_CERT_STRING");
+        static constexpr uint32_t CONNECTION_URL_HASH = ConstExprHashingUtils::HashString("CONNECTION_URL");
+        static constexpr uint32_t KAFKA_BOOTSTRAP_SERVERS_HASH = ConstExprHashingUtils::HashString("KAFKA_BOOTSTRAP_SERVERS");
+        static constexpr uint32_t KAFKA_SSL_ENABLED_HASH = ConstExprHashingUtils::HashString("KAFKA_SSL_ENABLED");
+        static constexpr uint32_t KAFKA_CUSTOM_CERT_HASH = ConstExprHashingUtils::HashString("KAFKA_CUSTOM_CERT");
+        static constexpr uint32_t KAFKA_SKIP_CUSTOM_CERT_VALIDATION_HASH = ConstExprHashingUtils::HashString("KAFKA_SKIP_CUSTOM_CERT_VALIDATION");
+        static constexpr uint32_t KAFKA_CLIENT_KEYSTORE_HASH = ConstExprHashingUtils::HashString("KAFKA_CLIENT_KEYSTORE");
+        static constexpr uint32_t KAFKA_CLIENT_KEYSTORE_PASSWORD_HASH = ConstExprHashingUtils::HashString("KAFKA_CLIENT_KEYSTORE_PASSWORD");
+        static constexpr uint32_t KAFKA_CLIENT_KEY_PASSWORD_HASH = ConstExprHashingUtils::HashString("KAFKA_CLIENT_KEY_PASSWORD");
+        static constexpr uint32_t ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD_HASH = ConstExprHashingUtils::HashString("ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD");
+        static constexpr uint32_t ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD_HASH = ConstExprHashingUtils::HashString("ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD");
+        static constexpr uint32_t SECRET_ID_HASH = ConstExprHashingUtils::HashString("SECRET_ID");
+        static constexpr uint32_t CONNECTOR_URL_HASH = ConstExprHashingUtils::HashString("CONNECTOR_URL");
+        static constexpr uint32_t CONNECTOR_TYPE_HASH = ConstExprHashingUtils::HashString("CONNECTOR_TYPE");
+        static constexpr uint32_t CONNECTOR_CLASS_NAME_HASH = ConstExprHashingUtils::HashString("CONNECTOR_CLASS_NAME");
+        static constexpr uint32_t KAFKA_SASL_MECHANISM_HASH = ConstExprHashingUtils::HashString("KAFKA_SASL_MECHANISM");
+        static constexpr uint32_t KAFKA_SASL_SCRAM_USERNAME_HASH = ConstExprHashingUtils::HashString("KAFKA_SASL_SCRAM_USERNAME");
+        static constexpr uint32_t KAFKA_SASL_SCRAM_PASSWORD_HASH = ConstExprHashingUtils::HashString("KAFKA_SASL_SCRAM_PASSWORD");
+        static constexpr uint32_t KAFKA_SASL_SCRAM_SECRETS_ARN_HASH = ConstExprHashingUtils::HashString("KAFKA_SASL_SCRAM_SECRETS_ARN");
+        static constexpr uint32_t ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD_HASH = ConstExprHashingUtils::HashString("ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD");
+        static constexpr uint32_t KAFKA_SASL_GSSAPI_KEYTAB_HASH = ConstExprHashingUtils::HashString("KAFKA_SASL_GSSAPI_KEYTAB");
+        static constexpr uint32_t KAFKA_SASL_GSSAPI_KRB5_CONF_HASH = ConstExprHashingUtils::HashString("KAFKA_SASL_GSSAPI_KRB5_CONF");
+        static constexpr uint32_t KAFKA_SASL_GSSAPI_SERVICE_HASH = ConstExprHashingUtils::HashString("KAFKA_SASL_GSSAPI_SERVICE");
+        static constexpr uint32_t KAFKA_SASL_GSSAPI_PRINCIPAL_HASH = ConstExprHashingUtils::HashString("KAFKA_SASL_GSSAPI_PRINCIPAL");
 
 
         ConnectionPropertyKey GetConnectionPropertyKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == HOST_HASH)
           {
             return ConnectionPropertyKey::HOST;

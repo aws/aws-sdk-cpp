@@ -20,13 +20,13 @@ namespace Aws
       namespace DeploymentTypeMapper
       {
 
-        static const int IN_PLACE_HASH = HashingUtils::HashString("IN_PLACE");
-        static const int BLUE_GREEN_HASH = HashingUtils::HashString("BLUE_GREEN");
+        static constexpr uint32_t IN_PLACE_HASH = ConstExprHashingUtils::HashString("IN_PLACE");
+        static constexpr uint32_t BLUE_GREEN_HASH = ConstExprHashingUtils::HashString("BLUE_GREEN");
 
 
         DeploymentType GetDeploymentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IN_PLACE_HASH)
           {
             return DeploymentType::IN_PLACE;

@@ -20,13 +20,13 @@ namespace Aws
       namespace DeploymentFailureHandlingPolicyMapper
       {
 
-        static const int ROLLBACK_HASH = HashingUtils::HashString("ROLLBACK");
-        static const int DO_NOTHING_HASH = HashingUtils::HashString("DO_NOTHING");
+        static constexpr uint32_t ROLLBACK_HASH = ConstExprHashingUtils::HashString("ROLLBACK");
+        static constexpr uint32_t DO_NOTHING_HASH = ConstExprHashingUtils::HashString("DO_NOTHING");
 
 
         DeploymentFailureHandlingPolicy GetDeploymentFailureHandlingPolicyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ROLLBACK_HASH)
           {
             return DeploymentFailureHandlingPolicy::ROLLBACK;

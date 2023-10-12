@@ -20,13 +20,13 @@ namespace Aws
       namespace FailoverModeMapper
       {
 
-        static const int MERGE_HASH = HashingUtils::HashString("MERGE");
-        static const int FAILOVER_HASH = HashingUtils::HashString("FAILOVER");
+        static constexpr uint32_t MERGE_HASH = ConstExprHashingUtils::HashString("MERGE");
+        static constexpr uint32_t FAILOVER_HASH = ConstExprHashingUtils::HashString("FAILOVER");
 
 
         FailoverMode GetFailoverModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MERGE_HASH)
           {
             return FailoverMode::MERGE;

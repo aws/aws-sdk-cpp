@@ -20,13 +20,13 @@ namespace Aws
       namespace VariableTypeMapper
       {
 
-        static const int INCIDENT_RECORD_ARN_HASH = HashingUtils::HashString("INCIDENT_RECORD_ARN");
-        static const int INVOLVED_RESOURCES_HASH = HashingUtils::HashString("INVOLVED_RESOURCES");
+        static constexpr uint32_t INCIDENT_RECORD_ARN_HASH = ConstExprHashingUtils::HashString("INCIDENT_RECORD_ARN");
+        static constexpr uint32_t INVOLVED_RESOURCES_HASH = ConstExprHashingUtils::HashString("INVOLVED_RESOURCES");
 
 
         VariableType GetVariableTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INCIDENT_RECORD_ARN_HASH)
           {
             return VariableType::INCIDENT_RECORD_ARN;

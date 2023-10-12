@@ -20,16 +20,16 @@ namespace Aws
       namespace OrderByFieldTypeMapper
       {
 
-        static const int RELEVANCE_HASH = HashingUtils::HashString("RELEVANCE");
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int SIZE_HASH = HashingUtils::HashString("SIZE");
-        static const int CREATED_TIMESTAMP_HASH = HashingUtils::HashString("CREATED_TIMESTAMP");
-        static const int MODIFIED_TIMESTAMP_HASH = HashingUtils::HashString("MODIFIED_TIMESTAMP");
+        static constexpr uint32_t RELEVANCE_HASH = ConstExprHashingUtils::HashString("RELEVANCE");
+        static constexpr uint32_t NAME_HASH = ConstExprHashingUtils::HashString("NAME");
+        static constexpr uint32_t SIZE_HASH = ConstExprHashingUtils::HashString("SIZE");
+        static constexpr uint32_t CREATED_TIMESTAMP_HASH = ConstExprHashingUtils::HashString("CREATED_TIMESTAMP");
+        static constexpr uint32_t MODIFIED_TIMESTAMP_HASH = ConstExprHashingUtils::HashString("MODIFIED_TIMESTAMP");
 
 
         OrderByFieldType GetOrderByFieldTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RELEVANCE_HASH)
           {
             return OrderByFieldType::RELEVANCE;

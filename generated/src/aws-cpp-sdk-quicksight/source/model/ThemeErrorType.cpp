@@ -20,12 +20,12 @@ namespace Aws
       namespace ThemeErrorTypeMapper
       {
 
-        static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
+        static constexpr uint32_t INTERNAL_FAILURE_HASH = ConstExprHashingUtils::HashString("INTERNAL_FAILURE");
 
 
         ThemeErrorType GetThemeErrorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == INTERNAL_FAILURE_HASH)
           {
             return ThemeErrorType::INTERNAL_FAILURE;

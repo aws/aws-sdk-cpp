@@ -20,13 +20,13 @@ namespace Aws
       namespace HlsWebdavHttpTransferModeMapper
       {
 
-        static const int CHUNKED_HASH = HashingUtils::HashString("CHUNKED");
-        static const int NON_CHUNKED_HASH = HashingUtils::HashString("NON_CHUNKED");
+        static constexpr uint32_t CHUNKED_HASH = ConstExprHashingUtils::HashString("CHUNKED");
+        static constexpr uint32_t NON_CHUNKED_HASH = ConstExprHashingUtils::HashString("NON_CHUNKED");
 
 
         HlsWebdavHttpTransferMode GetHlsWebdavHttpTransferModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CHUNKED_HASH)
           {
             return HlsWebdavHttpTransferMode::CHUNKED;

@@ -20,13 +20,13 @@ namespace Aws
       namespace PlatformMapper
       {
 
-        static const int Windows_HASH = HashingUtils::HashString("Windows");
-        static const int Linux_HASH = HashingUtils::HashString("Linux");
+        static constexpr uint32_t Windows_HASH = ConstExprHashingUtils::HashString("Windows");
+        static constexpr uint32_t Linux_HASH = ConstExprHashingUtils::HashString("Linux");
 
 
         Platform GetPlatformForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Windows_HASH)
           {
             return Platform::Windows;

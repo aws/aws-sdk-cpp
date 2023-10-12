@@ -20,13 +20,13 @@ namespace Aws
       namespace RequestedJobStatusMapper
       {
 
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
-        static const int Ready_HASH = HashingUtils::HashString("Ready");
+        static constexpr uint32_t Cancelled_HASH = ConstExprHashingUtils::HashString("Cancelled");
+        static constexpr uint32_t Ready_HASH = ConstExprHashingUtils::HashString("Ready");
 
 
         RequestedJobStatus GetRequestedJobStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Cancelled_HASH)
           {
             return RequestedJobStatus::Cancelled;

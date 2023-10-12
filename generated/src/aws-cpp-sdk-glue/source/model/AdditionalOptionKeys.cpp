@@ -20,12 +20,12 @@ namespace Aws
       namespace AdditionalOptionKeysMapper
       {
 
-        static const int performanceTuning_caching_HASH = HashingUtils::HashString("performanceTuning.caching");
+        static constexpr uint32_t performanceTuning_caching_HASH = ConstExprHashingUtils::HashString("performanceTuning.caching");
 
 
         AdditionalOptionKeys GetAdditionalOptionKeysForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == performanceTuning_caching_HASH)
           {
             return AdditionalOptionKeys::performanceTuning_caching;

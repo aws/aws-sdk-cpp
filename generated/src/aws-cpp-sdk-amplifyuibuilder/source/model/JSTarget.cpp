@@ -20,13 +20,13 @@ namespace Aws
       namespace JSTargetMapper
       {
 
-        static const int es2015_HASH = HashingUtils::HashString("es2015");
-        static const int es2020_HASH = HashingUtils::HashString("es2020");
+        static constexpr uint32_t es2015_HASH = ConstExprHashingUtils::HashString("es2015");
+        static constexpr uint32_t es2020_HASH = ConstExprHashingUtils::HashString("es2020");
 
 
         JSTarget GetJSTargetForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == es2015_HASH)
           {
             return JSTarget::es2015;

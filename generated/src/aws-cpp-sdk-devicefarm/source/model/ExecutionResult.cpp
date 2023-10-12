@@ -20,18 +20,18 @@ namespace Aws
       namespace ExecutionResultMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int PASSED_HASH = HashingUtils::HashString("PASSED");
-        static const int WARNED_HASH = HashingUtils::HashString("WARNED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int SKIPPED_HASH = HashingUtils::HashString("SKIPPED");
-        static const int ERRORED_HASH = HashingUtils::HashString("ERRORED");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t PASSED_HASH = ConstExprHashingUtils::HashString("PASSED");
+        static constexpr uint32_t WARNED_HASH = ConstExprHashingUtils::HashString("WARNED");
+        static constexpr uint32_t FAILED_HASH = ConstExprHashingUtils::HashString("FAILED");
+        static constexpr uint32_t SKIPPED_HASH = ConstExprHashingUtils::HashString("SKIPPED");
+        static constexpr uint32_t ERRORED_HASH = ConstExprHashingUtils::HashString("ERRORED");
+        static constexpr uint32_t STOPPED_HASH = ConstExprHashingUtils::HashString("STOPPED");
 
 
         ExecutionResult GetExecutionResultForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return ExecutionResult::PENDING;

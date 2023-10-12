@@ -20,12 +20,12 @@ namespace Aws
       namespace EventSourceNameMapper
       {
 
-        static const int userNotification_HASH = HashingUtils::HashString("userNotification");
+        static constexpr uint32_t userNotification_HASH = ConstExprHashingUtils::HashString("userNotification");
 
 
         EventSourceName GetEventSourceNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == userNotification_HASH)
           {
             return EventSourceName::userNotification;

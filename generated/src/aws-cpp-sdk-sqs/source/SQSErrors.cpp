@@ -18,27 +18,27 @@ namespace SQS
 namespace SQSErrorMapper
 {
 
-static const int TOO_MANY_ENTRIES_IN_BATCH_REQUEST_HASH = HashingUtils::HashString("AWS.SimpleQueueService.TooManyEntriesInBatchRequest");
-static const int OVER_LIMIT_HASH = HashingUtils::HashString("OverLimit");
-static const int QUEUE_NAME_EXISTS_HASH = HashingUtils::HashString("QueueAlreadyExists");
-static const int PURGE_QUEUE_IN_PROGRESS_HASH = HashingUtils::HashString("AWS.SimpleQueueService.PurgeQueueInProgress");
-static const int QUEUE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AWS.SimpleQueueService.NonExistentQueue");
-static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("AWS.SimpleQueueService.UnsupportedOperation");
-static const int BATCH_ENTRY_IDS_NOT_DISTINCT_HASH = HashingUtils::HashString("AWS.SimpleQueueService.BatchEntryIdsNotDistinct");
-static const int MESSAGE_NOT_INFLIGHT_HASH = HashingUtils::HashString("AWS.SimpleQueueService.MessageNotInflight");
-static const int BATCH_REQUEST_TOO_LONG_HASH = HashingUtils::HashString("AWS.SimpleQueueService.BatchRequestTooLong");
-static const int INVALID_BATCH_ENTRY_ID_HASH = HashingUtils::HashString("AWS.SimpleQueueService.InvalidBatchEntryId");
-static const int INVALID_ATTRIBUTE_NAME_HASH = HashingUtils::HashString("InvalidAttributeName");
-static const int INVALID_ID_FORMAT_HASH = HashingUtils::HashString("InvalidIdFormat");
-static const int EMPTY_BATCH_REQUEST_HASH = HashingUtils::HashString("AWS.SimpleQueueService.EmptyBatchRequest");
-static const int INVALID_MESSAGE_CONTENTS_HASH = HashingUtils::HashString("InvalidMessageContents");
-static const int RECEIPT_HANDLE_IS_INVALID_HASH = HashingUtils::HashString("ReceiptHandleIsInvalid");
-static const int QUEUE_DELETED_RECENTLY_HASH = HashingUtils::HashString("AWS.SimpleQueueService.QueueDeletedRecently");
+static constexpr uint32_t TOO_MANY_ENTRIES_IN_BATCH_REQUEST_HASH = ConstExprHashingUtils::HashString("AWS.SimpleQueueService.TooManyEntriesInBatchRequest");
+static constexpr uint32_t OVER_LIMIT_HASH = ConstExprHashingUtils::HashString("OverLimit");
+static constexpr uint32_t QUEUE_NAME_EXISTS_HASH = ConstExprHashingUtils::HashString("QueueAlreadyExists");
+static constexpr uint32_t PURGE_QUEUE_IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("AWS.SimpleQueueService.PurgeQueueInProgress");
+static constexpr uint32_t QUEUE_DOES_NOT_EXIST_HASH = ConstExprHashingUtils::HashString("AWS.SimpleQueueService.NonExistentQueue");
+static constexpr uint32_t UNSUPPORTED_OPERATION_HASH = ConstExprHashingUtils::HashString("AWS.SimpleQueueService.UnsupportedOperation");
+static constexpr uint32_t BATCH_ENTRY_IDS_NOT_DISTINCT_HASH = ConstExprHashingUtils::HashString("AWS.SimpleQueueService.BatchEntryIdsNotDistinct");
+static constexpr uint32_t MESSAGE_NOT_INFLIGHT_HASH = ConstExprHashingUtils::HashString("AWS.SimpleQueueService.MessageNotInflight");
+static constexpr uint32_t BATCH_REQUEST_TOO_LONG_HASH = ConstExprHashingUtils::HashString("AWS.SimpleQueueService.BatchRequestTooLong");
+static constexpr uint32_t INVALID_BATCH_ENTRY_ID_HASH = ConstExprHashingUtils::HashString("AWS.SimpleQueueService.InvalidBatchEntryId");
+static constexpr uint32_t INVALID_ATTRIBUTE_NAME_HASH = ConstExprHashingUtils::HashString("InvalidAttributeName");
+static constexpr uint32_t INVALID_ID_FORMAT_HASH = ConstExprHashingUtils::HashString("InvalidIdFormat");
+static constexpr uint32_t EMPTY_BATCH_REQUEST_HASH = ConstExprHashingUtils::HashString("AWS.SimpleQueueService.EmptyBatchRequest");
+static constexpr uint32_t INVALID_MESSAGE_CONTENTS_HASH = ConstExprHashingUtils::HashString("InvalidMessageContents");
+static constexpr uint32_t RECEIPT_HANDLE_IS_INVALID_HASH = ConstExprHashingUtils::HashString("ReceiptHandleIsInvalid");
+static constexpr uint32_t QUEUE_DELETED_RECENTLY_HASH = ConstExprHashingUtils::HashString("AWS.SimpleQueueService.QueueDeletedRecently");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == TOO_MANY_ENTRIES_IN_BATCH_REQUEST_HASH)
   {

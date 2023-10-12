@@ -20,20 +20,20 @@ namespace Aws
       namespace AssociationStateMapper
       {
 
-        static const int PENDING_INSTALL_HASH = HashingUtils::HashString("PENDING_INSTALL");
-        static const int PENDING_INSTALL_DEPLOYMENT_HASH = HashingUtils::HashString("PENDING_INSTALL_DEPLOYMENT");
-        static const int PENDING_UNINSTALL_HASH = HashingUtils::HashString("PENDING_UNINSTALL");
-        static const int PENDING_UNINSTALL_DEPLOYMENT_HASH = HashingUtils::HashString("PENDING_UNINSTALL_DEPLOYMENT");
-        static const int INSTALLING_HASH = HashingUtils::HashString("INSTALLING");
-        static const int UNINSTALLING_HASH = HashingUtils::HashString("UNINSTALLING");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int REMOVED_HASH = HashingUtils::HashString("REMOVED");
+        static constexpr uint32_t PENDING_INSTALL_HASH = ConstExprHashingUtils::HashString("PENDING_INSTALL");
+        static constexpr uint32_t PENDING_INSTALL_DEPLOYMENT_HASH = ConstExprHashingUtils::HashString("PENDING_INSTALL_DEPLOYMENT");
+        static constexpr uint32_t PENDING_UNINSTALL_HASH = ConstExprHashingUtils::HashString("PENDING_UNINSTALL");
+        static constexpr uint32_t PENDING_UNINSTALL_DEPLOYMENT_HASH = ConstExprHashingUtils::HashString("PENDING_UNINSTALL_DEPLOYMENT");
+        static constexpr uint32_t INSTALLING_HASH = ConstExprHashingUtils::HashString("INSTALLING");
+        static constexpr uint32_t UNINSTALLING_HASH = ConstExprHashingUtils::HashString("UNINSTALLING");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t REMOVED_HASH = ConstExprHashingUtils::HashString("REMOVED");
 
 
         AssociationState GetAssociationStateForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_INSTALL_HASH)
           {
             return AssociationState::PENDING_INSTALL;

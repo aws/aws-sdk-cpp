@@ -20,15 +20,15 @@ namespace Aws
       namespace ObjectTypeEnumMapper
       {
 
-        static const int FILE_HASH = HashingUtils::HashString("FILE");
-        static const int DIRECTORY_HASH = HashingUtils::HashString("DIRECTORY");
-        static const int GIT_LINK_HASH = HashingUtils::HashString("GIT_LINK");
-        static const int SYMBOLIC_LINK_HASH = HashingUtils::HashString("SYMBOLIC_LINK");
+        static constexpr uint32_t FILE_HASH = ConstExprHashingUtils::HashString("FILE");
+        static constexpr uint32_t DIRECTORY_HASH = ConstExprHashingUtils::HashString("DIRECTORY");
+        static constexpr uint32_t GIT_LINK_HASH = ConstExprHashingUtils::HashString("GIT_LINK");
+        static constexpr uint32_t SYMBOLIC_LINK_HASH = ConstExprHashingUtils::HashString("SYMBOLIC_LINK");
 
 
         ObjectTypeEnum GetObjectTypeEnumForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FILE_HASH)
           {
             return ObjectTypeEnum::FILE;

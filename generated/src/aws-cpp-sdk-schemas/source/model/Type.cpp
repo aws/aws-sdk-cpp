@@ -20,13 +20,13 @@ namespace Aws
       namespace TypeMapper
       {
 
-        static const int OpenApi3_HASH = HashingUtils::HashString("OpenApi3");
-        static const int JSONSchemaDraft4_HASH = HashingUtils::HashString("JSONSchemaDraft4");
+        static constexpr uint32_t OpenApi3_HASH = ConstExprHashingUtils::HashString("OpenApi3");
+        static constexpr uint32_t JSONSchemaDraft4_HASH = ConstExprHashingUtils::HashString("JSONSchemaDraft4");
 
 
         Type GetTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OpenApi3_HASH)
           {
             return Type::OpenApi3;

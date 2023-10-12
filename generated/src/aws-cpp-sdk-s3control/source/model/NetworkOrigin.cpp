@@ -20,13 +20,13 @@ namespace Aws
       namespace NetworkOriginMapper
       {
 
-        static const int Internet_HASH = HashingUtils::HashString("Internet");
-        static const int VPC_HASH = HashingUtils::HashString("VPC");
+        static constexpr uint32_t Internet_HASH = ConstExprHashingUtils::HashString("Internet");
+        static constexpr uint32_t VPC_HASH = ConstExprHashingUtils::HashString("VPC");
 
 
         NetworkOrigin GetNetworkOriginForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Internet_HASH)
           {
             return NetworkOrigin::Internet;

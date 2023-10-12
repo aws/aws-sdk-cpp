@@ -20,17 +20,17 @@ namespace Aws
       namespace LaunchTemplateErrorCodeMapper
       {
 
-        static const int launchTemplateIdDoesNotExist_HASH = HashingUtils::HashString("launchTemplateIdDoesNotExist");
-        static const int launchTemplateIdMalformed_HASH = HashingUtils::HashString("launchTemplateIdMalformed");
-        static const int launchTemplateNameDoesNotExist_HASH = HashingUtils::HashString("launchTemplateNameDoesNotExist");
-        static const int launchTemplateNameMalformed_HASH = HashingUtils::HashString("launchTemplateNameMalformed");
-        static const int launchTemplateVersionDoesNotExist_HASH = HashingUtils::HashString("launchTemplateVersionDoesNotExist");
-        static const int unexpectedError_HASH = HashingUtils::HashString("unexpectedError");
+        static constexpr uint32_t launchTemplateIdDoesNotExist_HASH = ConstExprHashingUtils::HashString("launchTemplateIdDoesNotExist");
+        static constexpr uint32_t launchTemplateIdMalformed_HASH = ConstExprHashingUtils::HashString("launchTemplateIdMalformed");
+        static constexpr uint32_t launchTemplateNameDoesNotExist_HASH = ConstExprHashingUtils::HashString("launchTemplateNameDoesNotExist");
+        static constexpr uint32_t launchTemplateNameMalformed_HASH = ConstExprHashingUtils::HashString("launchTemplateNameMalformed");
+        static constexpr uint32_t launchTemplateVersionDoesNotExist_HASH = ConstExprHashingUtils::HashString("launchTemplateVersionDoesNotExist");
+        static constexpr uint32_t unexpectedError_HASH = ConstExprHashingUtils::HashString("unexpectedError");
 
 
         LaunchTemplateErrorCode GetLaunchTemplateErrorCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == launchTemplateIdDoesNotExist_HASH)
           {
             return LaunchTemplateErrorCode::launchTemplateIdDoesNotExist;

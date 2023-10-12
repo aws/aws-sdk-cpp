@@ -20,13 +20,13 @@ namespace Aws
       namespace DataKeySpecMapper
       {
 
-        static const int AES_256_HASH = HashingUtils::HashString("AES_256");
-        static const int AES_128_HASH = HashingUtils::HashString("AES_128");
+        static constexpr uint32_t AES_256_HASH = ConstExprHashingUtils::HashString("AES_256");
+        static constexpr uint32_t AES_128_HASH = ConstExprHashingUtils::HashString("AES_128");
 
 
         DataKeySpec GetDataKeySpecForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AES_256_HASH)
           {
             return DataKeySpec::AES_256;

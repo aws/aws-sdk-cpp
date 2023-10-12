@@ -20,12 +20,12 @@ namespace Aws
       namespace RecordMarkerFailedCauseMapper
       {
 
-        static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERATION_NOT_PERMITTED");
+        static constexpr uint32_t OPERATION_NOT_PERMITTED_HASH = ConstExprHashingUtils::HashString("OPERATION_NOT_PERMITTED");
 
 
         RecordMarkerFailedCause GetRecordMarkerFailedCauseForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == OPERATION_NOT_PERMITTED_HASH)
           {
             return RecordMarkerFailedCause::OPERATION_NOT_PERMITTED;

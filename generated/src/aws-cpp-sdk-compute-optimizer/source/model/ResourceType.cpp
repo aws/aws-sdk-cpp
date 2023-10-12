@@ -20,18 +20,18 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
-        static const int Ec2Instance_HASH = HashingUtils::HashString("Ec2Instance");
-        static const int AutoScalingGroup_HASH = HashingUtils::HashString("AutoScalingGroup");
-        static const int EbsVolume_HASH = HashingUtils::HashString("EbsVolume");
-        static const int LambdaFunction_HASH = HashingUtils::HashString("LambdaFunction");
-        static const int NotApplicable_HASH = HashingUtils::HashString("NotApplicable");
-        static const int EcsService_HASH = HashingUtils::HashString("EcsService");
-        static const int License_HASH = HashingUtils::HashString("License");
+        static constexpr uint32_t Ec2Instance_HASH = ConstExprHashingUtils::HashString("Ec2Instance");
+        static constexpr uint32_t AutoScalingGroup_HASH = ConstExprHashingUtils::HashString("AutoScalingGroup");
+        static constexpr uint32_t EbsVolume_HASH = ConstExprHashingUtils::HashString("EbsVolume");
+        static constexpr uint32_t LambdaFunction_HASH = ConstExprHashingUtils::HashString("LambdaFunction");
+        static constexpr uint32_t NotApplicable_HASH = ConstExprHashingUtils::HashString("NotApplicable");
+        static constexpr uint32_t EcsService_HASH = ConstExprHashingUtils::HashString("EcsService");
+        static constexpr uint32_t License_HASH = ConstExprHashingUtils::HashString("License");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Ec2Instance_HASH)
           {
             return ResourceType::Ec2Instance;

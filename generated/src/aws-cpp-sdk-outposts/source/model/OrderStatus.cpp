@@ -20,21 +20,21 @@ namespace Aws
       namespace OrderStatusMapper
       {
 
-        static const int RECEIVED_HASH = HashingUtils::HashString("RECEIVED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
-        static const int INSTALLING_HASH = HashingUtils::HashString("INSTALLING");
-        static const int FULFILLED_HASH = HashingUtils::HashString("FULFILLED");
-        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-        static const int PREPARING_HASH = HashingUtils::HashString("PREPARING");
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static constexpr uint32_t RECEIVED_HASH = ConstExprHashingUtils::HashString("RECEIVED");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t PROCESSING_HASH = ConstExprHashingUtils::HashString("PROCESSING");
+        static constexpr uint32_t INSTALLING_HASH = ConstExprHashingUtils::HashString("INSTALLING");
+        static constexpr uint32_t FULFILLED_HASH = ConstExprHashingUtils::HashString("FULFILLED");
+        static constexpr uint32_t CANCELLED_HASH = ConstExprHashingUtils::HashString("CANCELLED");
+        static constexpr uint32_t PREPARING_HASH = ConstExprHashingUtils::HashString("PREPARING");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t ERROR__HASH = ConstExprHashingUtils::HashString("ERROR");
 
 
         OrderStatus GetOrderStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RECEIVED_HASH)
           {
             return OrderStatus::RECEIVED;

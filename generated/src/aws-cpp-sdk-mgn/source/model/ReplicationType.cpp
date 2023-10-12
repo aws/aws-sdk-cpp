@@ -20,13 +20,13 @@ namespace Aws
       namespace ReplicationTypeMapper
       {
 
-        static const int AGENT_BASED_HASH = HashingUtils::HashString("AGENT_BASED");
-        static const int SNAPSHOT_SHIPPING_HASH = HashingUtils::HashString("SNAPSHOT_SHIPPING");
+        static constexpr uint32_t AGENT_BASED_HASH = ConstExprHashingUtils::HashString("AGENT_BASED");
+        static constexpr uint32_t SNAPSHOT_SHIPPING_HASH = ConstExprHashingUtils::HashString("SNAPSHOT_SHIPPING");
 
 
         ReplicationType GetReplicationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AGENT_BASED_HASH)
           {
             return ReplicationType::AGENT_BASED;

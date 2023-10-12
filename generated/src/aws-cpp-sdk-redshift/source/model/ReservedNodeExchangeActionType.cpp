@@ -20,13 +20,13 @@ namespace Aws
       namespace ReservedNodeExchangeActionTypeMapper
       {
 
-        static const int restore_cluster_HASH = HashingUtils::HashString("restore-cluster");
-        static const int resize_cluster_HASH = HashingUtils::HashString("resize-cluster");
+        static constexpr uint32_t restore_cluster_HASH = ConstExprHashingUtils::HashString("restore-cluster");
+        static constexpr uint32_t resize_cluster_HASH = ConstExprHashingUtils::HashString("resize-cluster");
 
 
         ReservedNodeExchangeActionType GetReservedNodeExchangeActionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == restore_cluster_HASH)
           {
             return ReservedNodeExchangeActionType::restore_cluster;

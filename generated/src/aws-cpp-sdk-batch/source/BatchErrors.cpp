@@ -18,13 +18,13 @@ namespace Batch
 namespace BatchErrorMapper
 {
 
-static const int CLIENT_HASH = HashingUtils::HashString("ClientException");
-static const int SERVER_HASH = HashingUtils::HashString("ServerException");
+static constexpr uint32_t CLIENT_HASH = ConstExprHashingUtils::HashString("ClientException");
+static constexpr uint32_t SERVER_HASH = ConstExprHashingUtils::HashString("ServerException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == CLIENT_HASH)
   {

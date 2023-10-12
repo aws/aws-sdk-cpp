@@ -20,12 +20,12 @@ namespace Aws
       namespace RateKeyMapper
       {
 
-        static const int IP_HASH = HashingUtils::HashString("IP");
+        static constexpr uint32_t IP_HASH = ConstExprHashingUtils::HashString("IP");
 
 
         RateKey GetRateKeyForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IP_HASH)
           {
             return RateKey::IP;

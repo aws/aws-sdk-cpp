@@ -20,14 +20,14 @@ namespace Aws
       namespace AggregationTypeNameMapper
       {
 
-        static const int Statistics_HASH = HashingUtils::HashString("Statistics");
-        static const int Percentiles_HASH = HashingUtils::HashString("Percentiles");
-        static const int Cardinality_HASH = HashingUtils::HashString("Cardinality");
+        static constexpr uint32_t Statistics_HASH = ConstExprHashingUtils::HashString("Statistics");
+        static constexpr uint32_t Percentiles_HASH = ConstExprHashingUtils::HashString("Percentiles");
+        static constexpr uint32_t Cardinality_HASH = ConstExprHashingUtils::HashString("Cardinality");
 
 
         AggregationTypeName GetAggregationTypeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Statistics_HASH)
           {
             return AggregationTypeName::Statistics;

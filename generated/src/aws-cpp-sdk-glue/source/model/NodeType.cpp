@@ -20,14 +20,14 @@ namespace Aws
       namespace NodeTypeMapper
       {
 
-        static const int CRAWLER_HASH = HashingUtils::HashString("CRAWLER");
-        static const int JOB_HASH = HashingUtils::HashString("JOB");
-        static const int TRIGGER_HASH = HashingUtils::HashString("TRIGGER");
+        static constexpr uint32_t CRAWLER_HASH = ConstExprHashingUtils::HashString("CRAWLER");
+        static constexpr uint32_t JOB_HASH = ConstExprHashingUtils::HashString("JOB");
+        static constexpr uint32_t TRIGGER_HASH = ConstExprHashingUtils::HashString("TRIGGER");
 
 
         NodeType GetNodeTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CRAWLER_HASH)
           {
             return NodeType::CRAWLER;

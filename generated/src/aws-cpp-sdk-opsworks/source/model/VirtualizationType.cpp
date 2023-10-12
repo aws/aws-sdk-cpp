@@ -20,13 +20,13 @@ namespace Aws
       namespace VirtualizationTypeMapper
       {
 
-        static const int paravirtual_HASH = HashingUtils::HashString("paravirtual");
-        static const int hvm_HASH = HashingUtils::HashString("hvm");
+        static constexpr uint32_t paravirtual_HASH = ConstExprHashingUtils::HashString("paravirtual");
+        static constexpr uint32_t hvm_HASH = ConstExprHashingUtils::HashString("hvm");
 
 
         VirtualizationType GetVirtualizationTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == paravirtual_HASH)
           {
             return VirtualizationType::paravirtual;

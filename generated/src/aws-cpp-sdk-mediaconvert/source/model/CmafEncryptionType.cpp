@@ -20,13 +20,13 @@ namespace Aws
       namespace CmafEncryptionTypeMapper
       {
 
-        static const int SAMPLE_AES_HASH = HashingUtils::HashString("SAMPLE_AES");
-        static const int AES_CTR_HASH = HashingUtils::HashString("AES_CTR");
+        static constexpr uint32_t SAMPLE_AES_HASH = ConstExprHashingUtils::HashString("SAMPLE_AES");
+        static constexpr uint32_t AES_CTR_HASH = ConstExprHashingUtils::HashString("AES_CTR");
 
 
         CmafEncryptionType GetCmafEncryptionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SAMPLE_AES_HASH)
           {
             return CmafEncryptionType::SAMPLE_AES;

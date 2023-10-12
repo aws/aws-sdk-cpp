@@ -20,13 +20,13 @@ namespace Aws
       namespace MsSmoothManifestEncodingMapper
       {
 
-        static const int UTF8_HASH = HashingUtils::HashString("UTF8");
-        static const int UTF16_HASH = HashingUtils::HashString("UTF16");
+        static constexpr uint32_t UTF8_HASH = ConstExprHashingUtils::HashString("UTF8");
+        static constexpr uint32_t UTF16_HASH = ConstExprHashingUtils::HashString("UTF16");
 
 
         MsSmoothManifestEncoding GetMsSmoothManifestEncodingForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == UTF8_HASH)
           {
             return MsSmoothManifestEncoding::UTF8;

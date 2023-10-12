@@ -20,14 +20,14 @@ namespace Aws
       namespace ConflictExceptionReasonMapper
       {
 
-        static const int ZonalShiftAlreadyExists_HASH = HashingUtils::HashString("ZonalShiftAlreadyExists");
-        static const int ZonalShiftStatusNotActive_HASH = HashingUtils::HashString("ZonalShiftStatusNotActive");
-        static const int SimultaneousZonalShiftsConflict_HASH = HashingUtils::HashString("SimultaneousZonalShiftsConflict");
+        static constexpr uint32_t ZonalShiftAlreadyExists_HASH = ConstExprHashingUtils::HashString("ZonalShiftAlreadyExists");
+        static constexpr uint32_t ZonalShiftStatusNotActive_HASH = ConstExprHashingUtils::HashString("ZonalShiftStatusNotActive");
+        static constexpr uint32_t SimultaneousZonalShiftsConflict_HASH = ConstExprHashingUtils::HashString("SimultaneousZonalShiftsConflict");
 
 
         ConflictExceptionReason GetConflictExceptionReasonForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ZonalShiftAlreadyExists_HASH)
           {
             return ConflictExceptionReason::ZonalShiftAlreadyExists;

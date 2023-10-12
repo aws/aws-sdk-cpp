@@ -20,15 +20,15 @@ namespace Aws
       namespace PriorityTypeMapper
       {
 
-        static const int LATENCY_HASH = HashingUtils::HashString("LATENCY");
-        static const int COST_HASH = HashingUtils::HashString("COST");
-        static const int DESTINATION_HASH = HashingUtils::HashString("DESTINATION");
-        static const int LOCATION_HASH = HashingUtils::HashString("LOCATION");
+        static constexpr uint32_t LATENCY_HASH = ConstExprHashingUtils::HashString("LATENCY");
+        static constexpr uint32_t COST_HASH = ConstExprHashingUtils::HashString("COST");
+        static constexpr uint32_t DESTINATION_HASH = ConstExprHashingUtils::HashString("DESTINATION");
+        static constexpr uint32_t LOCATION_HASH = ConstExprHashingUtils::HashString("LOCATION");
 
 
         PriorityType GetPriorityTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == LATENCY_HASH)
           {
             return PriorityType::LATENCY;

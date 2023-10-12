@@ -20,13 +20,13 @@ namespace Aws
       namespace SampleModeMapper
       {
 
-        static const int FULL_DATASET_HASH = HashingUtils::HashString("FULL_DATASET");
-        static const int CUSTOM_ROWS_HASH = HashingUtils::HashString("CUSTOM_ROWS");
+        static constexpr uint32_t FULL_DATASET_HASH = ConstExprHashingUtils::HashString("FULL_DATASET");
+        static constexpr uint32_t CUSTOM_ROWS_HASH = ConstExprHashingUtils::HashString("CUSTOM_ROWS");
 
 
         SampleMode GetSampleModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FULL_DATASET_HASH)
           {
             return SampleMode::FULL_DATASET;

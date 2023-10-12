@@ -20,42 +20,42 @@ namespace Aws
       namespace ExtraParamNameMapper
       {
 
-        static const int DUNS_NUMBER_HASH = HashingUtils::HashString("DUNS_NUMBER");
-        static const int BRAND_NUMBER_HASH = HashingUtils::HashString("BRAND_NUMBER");
-        static const int BIRTH_DEPARTMENT_HASH = HashingUtils::HashString("BIRTH_DEPARTMENT");
-        static const int BIRTH_DATE_IN_YYYY_MM_DD_HASH = HashingUtils::HashString("BIRTH_DATE_IN_YYYY_MM_DD");
-        static const int BIRTH_COUNTRY_HASH = HashingUtils::HashString("BIRTH_COUNTRY");
-        static const int BIRTH_CITY_HASH = HashingUtils::HashString("BIRTH_CITY");
-        static const int DOCUMENT_NUMBER_HASH = HashingUtils::HashString("DOCUMENT_NUMBER");
-        static const int AU_ID_NUMBER_HASH = HashingUtils::HashString("AU_ID_NUMBER");
-        static const int AU_ID_TYPE_HASH = HashingUtils::HashString("AU_ID_TYPE");
-        static const int CA_LEGAL_TYPE_HASH = HashingUtils::HashString("CA_LEGAL_TYPE");
-        static const int CA_BUSINESS_ENTITY_TYPE_HASH = HashingUtils::HashString("CA_BUSINESS_ENTITY_TYPE");
-        static const int CA_LEGAL_REPRESENTATIVE_HASH = HashingUtils::HashString("CA_LEGAL_REPRESENTATIVE");
-        static const int CA_LEGAL_REPRESENTATIVE_CAPACITY_HASH = HashingUtils::HashString("CA_LEGAL_REPRESENTATIVE_CAPACITY");
-        static const int ES_IDENTIFICATION_HASH = HashingUtils::HashString("ES_IDENTIFICATION");
-        static const int ES_IDENTIFICATION_TYPE_HASH = HashingUtils::HashString("ES_IDENTIFICATION_TYPE");
-        static const int ES_LEGAL_FORM_HASH = HashingUtils::HashString("ES_LEGAL_FORM");
-        static const int FI_BUSINESS_NUMBER_HASH = HashingUtils::HashString("FI_BUSINESS_NUMBER");
-        static const int FI_ID_NUMBER_HASH = HashingUtils::HashString("FI_ID_NUMBER");
-        static const int FI_NATIONALITY_HASH = HashingUtils::HashString("FI_NATIONALITY");
-        static const int FI_ORGANIZATION_TYPE_HASH = HashingUtils::HashString("FI_ORGANIZATION_TYPE");
-        static const int IT_NATIONALITY_HASH = HashingUtils::HashString("IT_NATIONALITY");
-        static const int IT_PIN_HASH = HashingUtils::HashString("IT_PIN");
-        static const int IT_REGISTRANT_ENTITY_TYPE_HASH = HashingUtils::HashString("IT_REGISTRANT_ENTITY_TYPE");
-        static const int RU_PASSPORT_DATA_HASH = HashingUtils::HashString("RU_PASSPORT_DATA");
-        static const int SE_ID_NUMBER_HASH = HashingUtils::HashString("SE_ID_NUMBER");
-        static const int SG_ID_NUMBER_HASH = HashingUtils::HashString("SG_ID_NUMBER");
-        static const int VAT_NUMBER_HASH = HashingUtils::HashString("VAT_NUMBER");
-        static const int UK_CONTACT_TYPE_HASH = HashingUtils::HashString("UK_CONTACT_TYPE");
-        static const int UK_COMPANY_NUMBER_HASH = HashingUtils::HashString("UK_COMPANY_NUMBER");
-        static const int EU_COUNTRY_OF_CITIZENSHIP_HASH = HashingUtils::HashString("EU_COUNTRY_OF_CITIZENSHIP");
-        static const int AU_PRIORITY_TOKEN_HASH = HashingUtils::HashString("AU_PRIORITY_TOKEN");
+        static constexpr uint32_t DUNS_NUMBER_HASH = ConstExprHashingUtils::HashString("DUNS_NUMBER");
+        static constexpr uint32_t BRAND_NUMBER_HASH = ConstExprHashingUtils::HashString("BRAND_NUMBER");
+        static constexpr uint32_t BIRTH_DEPARTMENT_HASH = ConstExprHashingUtils::HashString("BIRTH_DEPARTMENT");
+        static constexpr uint32_t BIRTH_DATE_IN_YYYY_MM_DD_HASH = ConstExprHashingUtils::HashString("BIRTH_DATE_IN_YYYY_MM_DD");
+        static constexpr uint32_t BIRTH_COUNTRY_HASH = ConstExprHashingUtils::HashString("BIRTH_COUNTRY");
+        static constexpr uint32_t BIRTH_CITY_HASH = ConstExprHashingUtils::HashString("BIRTH_CITY");
+        static constexpr uint32_t DOCUMENT_NUMBER_HASH = ConstExprHashingUtils::HashString("DOCUMENT_NUMBER");
+        static constexpr uint32_t AU_ID_NUMBER_HASH = ConstExprHashingUtils::HashString("AU_ID_NUMBER");
+        static constexpr uint32_t AU_ID_TYPE_HASH = ConstExprHashingUtils::HashString("AU_ID_TYPE");
+        static constexpr uint32_t CA_LEGAL_TYPE_HASH = ConstExprHashingUtils::HashString("CA_LEGAL_TYPE");
+        static constexpr uint32_t CA_BUSINESS_ENTITY_TYPE_HASH = ConstExprHashingUtils::HashString("CA_BUSINESS_ENTITY_TYPE");
+        static constexpr uint32_t CA_LEGAL_REPRESENTATIVE_HASH = ConstExprHashingUtils::HashString("CA_LEGAL_REPRESENTATIVE");
+        static constexpr uint32_t CA_LEGAL_REPRESENTATIVE_CAPACITY_HASH = ConstExprHashingUtils::HashString("CA_LEGAL_REPRESENTATIVE_CAPACITY");
+        static constexpr uint32_t ES_IDENTIFICATION_HASH = ConstExprHashingUtils::HashString("ES_IDENTIFICATION");
+        static constexpr uint32_t ES_IDENTIFICATION_TYPE_HASH = ConstExprHashingUtils::HashString("ES_IDENTIFICATION_TYPE");
+        static constexpr uint32_t ES_LEGAL_FORM_HASH = ConstExprHashingUtils::HashString("ES_LEGAL_FORM");
+        static constexpr uint32_t FI_BUSINESS_NUMBER_HASH = ConstExprHashingUtils::HashString("FI_BUSINESS_NUMBER");
+        static constexpr uint32_t FI_ID_NUMBER_HASH = ConstExprHashingUtils::HashString("FI_ID_NUMBER");
+        static constexpr uint32_t FI_NATIONALITY_HASH = ConstExprHashingUtils::HashString("FI_NATIONALITY");
+        static constexpr uint32_t FI_ORGANIZATION_TYPE_HASH = ConstExprHashingUtils::HashString("FI_ORGANIZATION_TYPE");
+        static constexpr uint32_t IT_NATIONALITY_HASH = ConstExprHashingUtils::HashString("IT_NATIONALITY");
+        static constexpr uint32_t IT_PIN_HASH = ConstExprHashingUtils::HashString("IT_PIN");
+        static constexpr uint32_t IT_REGISTRANT_ENTITY_TYPE_HASH = ConstExprHashingUtils::HashString("IT_REGISTRANT_ENTITY_TYPE");
+        static constexpr uint32_t RU_PASSPORT_DATA_HASH = ConstExprHashingUtils::HashString("RU_PASSPORT_DATA");
+        static constexpr uint32_t SE_ID_NUMBER_HASH = ConstExprHashingUtils::HashString("SE_ID_NUMBER");
+        static constexpr uint32_t SG_ID_NUMBER_HASH = ConstExprHashingUtils::HashString("SG_ID_NUMBER");
+        static constexpr uint32_t VAT_NUMBER_HASH = ConstExprHashingUtils::HashString("VAT_NUMBER");
+        static constexpr uint32_t UK_CONTACT_TYPE_HASH = ConstExprHashingUtils::HashString("UK_CONTACT_TYPE");
+        static constexpr uint32_t UK_COMPANY_NUMBER_HASH = ConstExprHashingUtils::HashString("UK_COMPANY_NUMBER");
+        static constexpr uint32_t EU_COUNTRY_OF_CITIZENSHIP_HASH = ConstExprHashingUtils::HashString("EU_COUNTRY_OF_CITIZENSHIP");
+        static constexpr uint32_t AU_PRIORITY_TOKEN_HASH = ConstExprHashingUtils::HashString("AU_PRIORITY_TOKEN");
 
 
         ExtraParamName GetExtraParamNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DUNS_NUMBER_HASH)
           {
             return ExtraParamName::DUNS_NUMBER;

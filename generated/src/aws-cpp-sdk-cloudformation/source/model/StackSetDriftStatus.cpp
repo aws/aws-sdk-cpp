@@ -20,14 +20,14 @@ namespace Aws
       namespace StackSetDriftStatusMapper
       {
 
-        static const int DRIFTED_HASH = HashingUtils::HashString("DRIFTED");
-        static const int IN_SYNC_HASH = HashingUtils::HashString("IN_SYNC");
-        static const int NOT_CHECKED_HASH = HashingUtils::HashString("NOT_CHECKED");
+        static constexpr uint32_t DRIFTED_HASH = ConstExprHashingUtils::HashString("DRIFTED");
+        static constexpr uint32_t IN_SYNC_HASH = ConstExprHashingUtils::HashString("IN_SYNC");
+        static constexpr uint32_t NOT_CHECKED_HASH = ConstExprHashingUtils::HashString("NOT_CHECKED");
 
 
         StackSetDriftStatus GetStackSetDriftStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DRIFTED_HASH)
           {
             return StackSetDriftStatus::DRIFTED;

@@ -20,13 +20,13 @@ namespace Aws
       namespace MessageTypeMapper
       {
 
-        static const int TRANSACTIONAL_HASH = HashingUtils::HashString("TRANSACTIONAL");
-        static const int PROMOTIONAL_HASH = HashingUtils::HashString("PROMOTIONAL");
+        static constexpr uint32_t TRANSACTIONAL_HASH = ConstExprHashingUtils::HashString("TRANSACTIONAL");
+        static constexpr uint32_t PROMOTIONAL_HASH = ConstExprHashingUtils::HashString("PROMOTIONAL");
 
 
         MessageType GetMessageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == TRANSACTIONAL_HASH)
           {
             return MessageType::TRANSACTIONAL;

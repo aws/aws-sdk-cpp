@@ -20,17 +20,17 @@ namespace Aws
       namespace InstanceOnboardingJobFailureCodeMapper
       {
 
-        static const int EVENT_BRIDGE_ACCESS_DENIED_HASH = HashingUtils::HashString("EVENT_BRIDGE_ACCESS_DENIED");
-        static const int EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED");
-        static const int IAM_ACCESS_DENIED_HASH = HashingUtils::HashString("IAM_ACCESS_DENIED");
-        static const int KMS_ACCESS_DENIED_HASH = HashingUtils::HashString("KMS_ACCESS_DENIED");
-        static const int KMS_KEY_NOT_FOUND_HASH = HashingUtils::HashString("KMS_KEY_NOT_FOUND");
-        static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
+        static constexpr uint32_t EVENT_BRIDGE_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("EVENT_BRIDGE_ACCESS_DENIED");
+        static constexpr uint32_t EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED");
+        static constexpr uint32_t IAM_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("IAM_ACCESS_DENIED");
+        static constexpr uint32_t KMS_ACCESS_DENIED_HASH = ConstExprHashingUtils::HashString("KMS_ACCESS_DENIED");
+        static constexpr uint32_t KMS_KEY_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("KMS_KEY_NOT_FOUND");
+        static constexpr uint32_t INTERNAL_FAILURE_HASH = ConstExprHashingUtils::HashString("INTERNAL_FAILURE");
 
 
         InstanceOnboardingJobFailureCode GetInstanceOnboardingJobFailureCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EVENT_BRIDGE_ACCESS_DENIED_HASH)
           {
             return InstanceOnboardingJobFailureCode::EVENT_BRIDGE_ACCESS_DENIED;

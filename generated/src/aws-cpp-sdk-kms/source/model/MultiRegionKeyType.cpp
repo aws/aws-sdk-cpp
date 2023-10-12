@@ -20,13 +20,13 @@ namespace Aws
       namespace MultiRegionKeyTypeMapper
       {
 
-        static const int PRIMARY_HASH = HashingUtils::HashString("PRIMARY");
-        static const int REPLICA_HASH = HashingUtils::HashString("REPLICA");
+        static constexpr uint32_t PRIMARY_HASH = ConstExprHashingUtils::HashString("PRIMARY");
+        static constexpr uint32_t REPLICA_HASH = ConstExprHashingUtils::HashString("REPLICA");
 
 
         MultiRegionKeyType GetMultiRegionKeyTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PRIMARY_HASH)
           {
             return MultiRegionKeyType::PRIMARY;

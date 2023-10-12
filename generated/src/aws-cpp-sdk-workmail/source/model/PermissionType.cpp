@@ -20,14 +20,14 @@ namespace Aws
       namespace PermissionTypeMapper
       {
 
-        static const int FULL_ACCESS_HASH = HashingUtils::HashString("FULL_ACCESS");
-        static const int SEND_AS_HASH = HashingUtils::HashString("SEND_AS");
-        static const int SEND_ON_BEHALF_HASH = HashingUtils::HashString("SEND_ON_BEHALF");
+        static constexpr uint32_t FULL_ACCESS_HASH = ConstExprHashingUtils::HashString("FULL_ACCESS");
+        static constexpr uint32_t SEND_AS_HASH = ConstExprHashingUtils::HashString("SEND_AS");
+        static constexpr uint32_t SEND_ON_BEHALF_HASH = ConstExprHashingUtils::HashString("SEND_ON_BEHALF");
 
 
         PermissionType GetPermissionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FULL_ACCESS_HASH)
           {
             return PermissionType::FULL_ACCESS;

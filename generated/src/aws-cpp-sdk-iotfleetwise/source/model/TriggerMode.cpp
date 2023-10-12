@@ -20,13 +20,13 @@ namespace Aws
       namespace TriggerModeMapper
       {
 
-        static const int ALWAYS_HASH = HashingUtils::HashString("ALWAYS");
-        static const int RISING_EDGE_HASH = HashingUtils::HashString("RISING_EDGE");
+        static constexpr uint32_t ALWAYS_HASH = ConstExprHashingUtils::HashString("ALWAYS");
+        static constexpr uint32_t RISING_EDGE_HASH = ConstExprHashingUtils::HashString("RISING_EDGE");
 
 
         TriggerMode GetTriggerModeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ALWAYS_HASH)
           {
             return TriggerMode::ALWAYS;

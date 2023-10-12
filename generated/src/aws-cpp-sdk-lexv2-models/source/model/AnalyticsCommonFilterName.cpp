@@ -20,16 +20,16 @@ namespace Aws
       namespace AnalyticsCommonFilterNameMapper
       {
 
-        static const int BotAliasId_HASH = HashingUtils::HashString("BotAliasId");
-        static const int BotVersion_HASH = HashingUtils::HashString("BotVersion");
-        static const int LocaleId_HASH = HashingUtils::HashString("LocaleId");
-        static const int Modality_HASH = HashingUtils::HashString("Modality");
-        static const int Channel_HASH = HashingUtils::HashString("Channel");
+        static constexpr uint32_t BotAliasId_HASH = ConstExprHashingUtils::HashString("BotAliasId");
+        static constexpr uint32_t BotVersion_HASH = ConstExprHashingUtils::HashString("BotVersion");
+        static constexpr uint32_t LocaleId_HASH = ConstExprHashingUtils::HashString("LocaleId");
+        static constexpr uint32_t Modality_HASH = ConstExprHashingUtils::HashString("Modality");
+        static constexpr uint32_t Channel_HASH = ConstExprHashingUtils::HashString("Channel");
 
 
         AnalyticsCommonFilterName GetAnalyticsCommonFilterNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == BotAliasId_HASH)
           {
             return AnalyticsCommonFilterName::BotAliasId;

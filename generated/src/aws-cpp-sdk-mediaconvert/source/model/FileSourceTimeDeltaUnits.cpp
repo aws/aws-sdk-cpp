@@ -20,13 +20,13 @@ namespace Aws
       namespace FileSourceTimeDeltaUnitsMapper
       {
 
-        static const int SECONDS_HASH = HashingUtils::HashString("SECONDS");
-        static const int MILLISECONDS_HASH = HashingUtils::HashString("MILLISECONDS");
+        static constexpr uint32_t SECONDS_HASH = ConstExprHashingUtils::HashString("SECONDS");
+        static constexpr uint32_t MILLISECONDS_HASH = ConstExprHashingUtils::HashString("MILLISECONDS");
 
 
         FileSourceTimeDeltaUnits GetFileSourceTimeDeltaUnitsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SECONDS_HASH)
           {
             return FileSourceTimeDeltaUnits::SECONDS;

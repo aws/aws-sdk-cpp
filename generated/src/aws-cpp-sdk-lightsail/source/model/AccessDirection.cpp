@@ -20,13 +20,13 @@ namespace Aws
       namespace AccessDirectionMapper
       {
 
-        static const int inbound_HASH = HashingUtils::HashString("inbound");
-        static const int outbound_HASH = HashingUtils::HashString("outbound");
+        static constexpr uint32_t inbound_HASH = ConstExprHashingUtils::HashString("inbound");
+        static constexpr uint32_t outbound_HASH = ConstExprHashingUtils::HashString("outbound");
 
 
         AccessDirection GetAccessDirectionForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == inbound_HASH)
           {
             return AccessDirection::inbound;

@@ -20,16 +20,16 @@ namespace Aws
       namespace EntityStatusCodeMapper
       {
 
-        static const int IMPAIRED_HASH = HashingUtils::HashString("IMPAIRED");
-        static const int UNIMPAIRED_HASH = HashingUtils::HashString("UNIMPAIRED");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int RESOLVED_HASH = HashingUtils::HashString("RESOLVED");
+        static constexpr uint32_t IMPAIRED_HASH = ConstExprHashingUtils::HashString("IMPAIRED");
+        static constexpr uint32_t UNIMPAIRED_HASH = ConstExprHashingUtils::HashString("UNIMPAIRED");
+        static constexpr uint32_t UNKNOWN_HASH = ConstExprHashingUtils::HashString("UNKNOWN");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t RESOLVED_HASH = ConstExprHashingUtils::HashString("RESOLVED");
 
 
         EntityStatusCode GetEntityStatusCodeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IMPAIRED_HASH)
           {
             return EntityStatusCode::IMPAIRED;

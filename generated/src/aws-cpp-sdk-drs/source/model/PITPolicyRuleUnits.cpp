@@ -20,14 +20,14 @@ namespace Aws
       namespace PITPolicyRuleUnitsMapper
       {
 
-        static const int MINUTE_HASH = HashingUtils::HashString("MINUTE");
-        static const int HOUR_HASH = HashingUtils::HashString("HOUR");
-        static const int DAY_HASH = HashingUtils::HashString("DAY");
+        static constexpr uint32_t MINUTE_HASH = ConstExprHashingUtils::HashString("MINUTE");
+        static constexpr uint32_t HOUR_HASH = ConstExprHashingUtils::HashString("HOUR");
+        static constexpr uint32_t DAY_HASH = ConstExprHashingUtils::HashString("DAY");
 
 
         PITPolicyRuleUnits GetPITPolicyRuleUnitsForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == MINUTE_HASH)
           {
             return PITPolicyRuleUnits::MINUTE;

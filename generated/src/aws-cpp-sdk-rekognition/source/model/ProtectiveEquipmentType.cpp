@@ -20,14 +20,14 @@ namespace Aws
       namespace ProtectiveEquipmentTypeMapper
       {
 
-        static const int FACE_COVER_HASH = HashingUtils::HashString("FACE_COVER");
-        static const int HAND_COVER_HASH = HashingUtils::HashString("HAND_COVER");
-        static const int HEAD_COVER_HASH = HashingUtils::HashString("HEAD_COVER");
+        static constexpr uint32_t FACE_COVER_HASH = ConstExprHashingUtils::HashString("FACE_COVER");
+        static constexpr uint32_t HAND_COVER_HASH = ConstExprHashingUtils::HashString("HAND_COVER");
+        static constexpr uint32_t HEAD_COVER_HASH = ConstExprHashingUtils::HashString("HEAD_COVER");
 
 
         ProtectiveEquipmentType GetProtectiveEquipmentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FACE_COVER_HASH)
           {
             return ProtectiveEquipmentType::FACE_COVER;

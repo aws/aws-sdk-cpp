@@ -20,17 +20,17 @@ namespace Aws
       namespace StartSelectorTypeMapper
       {
 
-        static const int FRAGMENT_NUMBER_HASH = HashingUtils::HashString("FRAGMENT_NUMBER");
-        static const int SERVER_TIMESTAMP_HASH = HashingUtils::HashString("SERVER_TIMESTAMP");
-        static const int PRODUCER_TIMESTAMP_HASH = HashingUtils::HashString("PRODUCER_TIMESTAMP");
-        static const int NOW_HASH = HashingUtils::HashString("NOW");
-        static const int EARLIEST_HASH = HashingUtils::HashString("EARLIEST");
-        static const int CONTINUATION_TOKEN_HASH = HashingUtils::HashString("CONTINUATION_TOKEN");
+        static constexpr uint32_t FRAGMENT_NUMBER_HASH = ConstExprHashingUtils::HashString("FRAGMENT_NUMBER");
+        static constexpr uint32_t SERVER_TIMESTAMP_HASH = ConstExprHashingUtils::HashString("SERVER_TIMESTAMP");
+        static constexpr uint32_t PRODUCER_TIMESTAMP_HASH = ConstExprHashingUtils::HashString("PRODUCER_TIMESTAMP");
+        static constexpr uint32_t NOW_HASH = ConstExprHashingUtils::HashString("NOW");
+        static constexpr uint32_t EARLIEST_HASH = ConstExprHashingUtils::HashString("EARLIEST");
+        static constexpr uint32_t CONTINUATION_TOKEN_HASH = ConstExprHashingUtils::HashString("CONTINUATION_TOKEN");
 
 
         StartSelectorType GetStartSelectorTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FRAGMENT_NUMBER_HASH)
           {
             return StartSelectorType::FRAGMENT_NUMBER;

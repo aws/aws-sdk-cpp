@@ -18,24 +18,24 @@ namespace KinesisVideo
 namespace KinesisVideoErrorMapper
 {
 
-static const int VERSION_MISMATCH_HASH = HashingUtils::HashString("VersionMismatchException");
-static const int INVALID_RESOURCE_FORMAT_HASH = HashingUtils::HashString("InvalidResourceFormatException");
-static const int ACCOUNT_CHANNEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AccountChannelLimitExceededException");
-static const int DEVICE_STREAM_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DeviceStreamLimitExceededException");
-static const int INVALID_DEVICE_HASH = HashingUtils::HashString("InvalidDeviceException");
-static const int TAGS_PER_RESOURCE_EXCEEDED_LIMIT_HASH = HashingUtils::HashString("TagsPerResourceExceededLimitException");
-static const int ACCOUNT_STREAM_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AccountStreamLimitExceededException");
-static const int NO_DATA_RETENTION_HASH = HashingUtils::HashString("NoDataRetentionException");
-static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int STREAM_EDGE_CONFIGURATION_NOT_FOUND_HASH = HashingUtils::HashString("StreamEdgeConfigurationNotFoundException");
-static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
-static const int CLIENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ClientLimitExceededException");
+static constexpr uint32_t VERSION_MISMATCH_HASH = ConstExprHashingUtils::HashString("VersionMismatchException");
+static constexpr uint32_t INVALID_RESOURCE_FORMAT_HASH = ConstExprHashingUtils::HashString("InvalidResourceFormatException");
+static constexpr uint32_t ACCOUNT_CHANNEL_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("AccountChannelLimitExceededException");
+static constexpr uint32_t DEVICE_STREAM_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("DeviceStreamLimitExceededException");
+static constexpr uint32_t INVALID_DEVICE_HASH = ConstExprHashingUtils::HashString("InvalidDeviceException");
+static constexpr uint32_t TAGS_PER_RESOURCE_EXCEEDED_LIMIT_HASH = ConstExprHashingUtils::HashString("TagsPerResourceExceededLimitException");
+static constexpr uint32_t ACCOUNT_STREAM_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("AccountStreamLimitExceededException");
+static constexpr uint32_t NO_DATA_RETENTION_HASH = ConstExprHashingUtils::HashString("NoDataRetentionException");
+static constexpr uint32_t NOT_AUTHORIZED_HASH = ConstExprHashingUtils::HashString("NotAuthorizedException");
+static constexpr uint32_t RESOURCE_IN_USE_HASH = ConstExprHashingUtils::HashString("ResourceInUseException");
+static constexpr uint32_t STREAM_EDGE_CONFIGURATION_NOT_FOUND_HASH = ConstExprHashingUtils::HashString("StreamEdgeConfigurationNotFoundException");
+static constexpr uint32_t INVALID_ARGUMENT_HASH = ConstExprHashingUtils::HashString("InvalidArgumentException");
+static constexpr uint32_t CLIENT_LIMIT_EXCEEDED_HASH = ConstExprHashingUtils::HashString("ClientLimitExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == VERSION_MISMATCH_HASH)
   {

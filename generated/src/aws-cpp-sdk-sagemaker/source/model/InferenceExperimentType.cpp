@@ -20,12 +20,12 @@ namespace Aws
       namespace InferenceExperimentTypeMapper
       {
 
-        static const int ShadowMode_HASH = HashingUtils::HashString("ShadowMode");
+        static constexpr uint32_t ShadowMode_HASH = ConstExprHashingUtils::HashString("ShadowMode");
 
 
         InferenceExperimentType GetInferenceExperimentTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ShadowMode_HASH)
           {
             return InferenceExperimentType::ShadowMode;

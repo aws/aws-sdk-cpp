@@ -20,13 +20,13 @@ namespace Aws
       namespace TestGridSessionArtifactCategoryMapper
       {
 
-        static const int VIDEO_HASH = HashingUtils::HashString("VIDEO");
-        static const int LOG_HASH = HashingUtils::HashString("LOG");
+        static constexpr uint32_t VIDEO_HASH = ConstExprHashingUtils::HashString("VIDEO");
+        static constexpr uint32_t LOG_HASH = ConstExprHashingUtils::HashString("LOG");
 
 
         TestGridSessionArtifactCategory GetTestGridSessionArtifactCategoryForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == VIDEO_HASH)
           {
             return TestGridSessionArtifactCategory::VIDEO;

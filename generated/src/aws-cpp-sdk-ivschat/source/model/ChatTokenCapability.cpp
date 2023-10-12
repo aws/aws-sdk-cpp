@@ -20,14 +20,14 @@ namespace Aws
       namespace ChatTokenCapabilityMapper
       {
 
-        static const int SEND_MESSAGE_HASH = HashingUtils::HashString("SEND_MESSAGE");
-        static const int DISCONNECT_USER_HASH = HashingUtils::HashString("DISCONNECT_USER");
-        static const int DELETE_MESSAGE_HASH = HashingUtils::HashString("DELETE_MESSAGE");
+        static constexpr uint32_t SEND_MESSAGE_HASH = ConstExprHashingUtils::HashString("SEND_MESSAGE");
+        static constexpr uint32_t DISCONNECT_USER_HASH = ConstExprHashingUtils::HashString("DISCONNECT_USER");
+        static constexpr uint32_t DELETE_MESSAGE_HASH = ConstExprHashingUtils::HashString("DELETE_MESSAGE");
 
 
         ChatTokenCapability GetChatTokenCapabilityForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == SEND_MESSAGE_HASH)
           {
             return ChatTokenCapability::SEND_MESSAGE;

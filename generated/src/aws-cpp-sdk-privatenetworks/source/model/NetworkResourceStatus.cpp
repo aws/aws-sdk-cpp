@@ -20,20 +20,20 @@ namespace Aws
       namespace NetworkResourceStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int SHIPPED_HASH = HashingUtils::HashString("SHIPPED");
-        static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
-        static const int PROVISIONED_HASH = HashingUtils::HashString("PROVISIONED");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int PENDING_RETURN_HASH = HashingUtils::HashString("PENDING_RETURN");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
-        static const int CREATING_SHIPPING_LABEL_HASH = HashingUtils::HashString("CREATING_SHIPPING_LABEL");
+        static constexpr uint32_t PENDING_HASH = ConstExprHashingUtils::HashString("PENDING");
+        static constexpr uint32_t SHIPPED_HASH = ConstExprHashingUtils::HashString("SHIPPED");
+        static constexpr uint32_t PROVISIONING_HASH = ConstExprHashingUtils::HashString("PROVISIONING");
+        static constexpr uint32_t PROVISIONED_HASH = ConstExprHashingUtils::HashString("PROVISIONED");
+        static constexpr uint32_t AVAILABLE_HASH = ConstExprHashingUtils::HashString("AVAILABLE");
+        static constexpr uint32_t DELETING_HASH = ConstExprHashingUtils::HashString("DELETING");
+        static constexpr uint32_t PENDING_RETURN_HASH = ConstExprHashingUtils::HashString("PENDING_RETURN");
+        static constexpr uint32_t DELETED_HASH = ConstExprHashingUtils::HashString("DELETED");
+        static constexpr uint32_t CREATING_SHIPPING_LABEL_HASH = ConstExprHashingUtils::HashString("CREATING_SHIPPING_LABEL");
 
 
         NetworkResourceStatus GetNetworkResourceStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == PENDING_HASH)
           {
             return NetworkResourceStatus::PENDING;

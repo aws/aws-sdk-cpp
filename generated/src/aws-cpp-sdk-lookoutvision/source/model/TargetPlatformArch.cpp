@@ -20,13 +20,13 @@ namespace Aws
       namespace TargetPlatformArchMapper
       {
 
-        static const int ARM64_HASH = HashingUtils::HashString("ARM64");
-        static const int X86_64_HASH = HashingUtils::HashString("X86_64");
+        static constexpr uint32_t ARM64_HASH = ConstExprHashingUtils::HashString("ARM64");
+        static constexpr uint32_t X86_64_HASH = ConstExprHashingUtils::HashString("X86_64");
 
 
         TargetPlatformArch GetTargetPlatformArchForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ARM64_HASH)
           {
             return TargetPlatformArch::ARM64;

@@ -20,13 +20,13 @@ namespace Aws
       namespace DocumentParameterTypeMapper
       {
 
-        static const int String_HASH = HashingUtils::HashString("String");
-        static const int StringList_HASH = HashingUtils::HashString("StringList");
+        static constexpr uint32_t String_HASH = ConstExprHashingUtils::HashString("String");
+        static constexpr uint32_t StringList_HASH = ConstExprHashingUtils::HashString("StringList");
 
 
         DocumentParameterType GetDocumentParameterTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == String_HASH)
           {
             return DocumentParameterType::String;

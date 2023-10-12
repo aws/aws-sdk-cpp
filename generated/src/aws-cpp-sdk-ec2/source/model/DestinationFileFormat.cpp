@@ -20,13 +20,13 @@ namespace Aws
       namespace DestinationFileFormatMapper
       {
 
-        static const int plain_text_HASH = HashingUtils::HashString("plain-text");
-        static const int parquet_HASH = HashingUtils::HashString("parquet");
+        static constexpr uint32_t plain_text_HASH = ConstExprHashingUtils::HashString("plain-text");
+        static constexpr uint32_t parquet_HASH = ConstExprHashingUtils::HashString("parquet");
 
 
         DestinationFileFormat GetDestinationFileFormatForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == plain_text_HASH)
           {
             return DestinationFileFormat::plain_text;

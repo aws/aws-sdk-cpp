@@ -20,15 +20,15 @@ namespace Aws
       namespace MessageTypeMapper
       {
 
-        static const int CUSTOM_COMMAND_ID_NOTIFY_HASH = HashingUtils::HashString("CUSTOM_COMMAND_ID_NOTIFY");
-        static const int CUSTOM_COMMAND_ID_GET_HASH = HashingUtils::HashString("CUSTOM_COMMAND_ID_GET");
-        static const int CUSTOM_COMMAND_ID_SET_HASH = HashingUtils::HashString("CUSTOM_COMMAND_ID_SET");
-        static const int CUSTOM_COMMAND_ID_RESP_HASH = HashingUtils::HashString("CUSTOM_COMMAND_ID_RESP");
+        static constexpr uint32_t CUSTOM_COMMAND_ID_NOTIFY_HASH = ConstExprHashingUtils::HashString("CUSTOM_COMMAND_ID_NOTIFY");
+        static constexpr uint32_t CUSTOM_COMMAND_ID_GET_HASH = ConstExprHashingUtils::HashString("CUSTOM_COMMAND_ID_GET");
+        static constexpr uint32_t CUSTOM_COMMAND_ID_SET_HASH = ConstExprHashingUtils::HashString("CUSTOM_COMMAND_ID_SET");
+        static constexpr uint32_t CUSTOM_COMMAND_ID_RESP_HASH = ConstExprHashingUtils::HashString("CUSTOM_COMMAND_ID_RESP");
 
 
         MessageType GetMessageTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CUSTOM_COMMAND_ID_NOTIFY_HASH)
           {
             return MessageType::CUSTOM_COMMAND_ID_NOTIFY;

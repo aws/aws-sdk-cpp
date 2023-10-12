@@ -20,13 +20,13 @@ namespace Aws
       namespace AppInstanceDataTypeMapper
       {
 
-        static const int Channel_HASH = HashingUtils::HashString("Channel");
-        static const int ChannelMessage_HASH = HashingUtils::HashString("ChannelMessage");
+        static constexpr uint32_t Channel_HASH = ConstExprHashingUtils::HashString("Channel");
+        static constexpr uint32_t ChannelMessage_HASH = ConstExprHashingUtils::HashString("ChannelMessage");
 
 
         AppInstanceDataType GetAppInstanceDataTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Channel_HASH)
           {
             return AppInstanceDataType::Channel;

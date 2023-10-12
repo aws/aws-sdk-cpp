@@ -20,27 +20,27 @@ namespace Aws
       namespace GrantOperationMapper
       {
 
-        static const int Decrypt_HASH = HashingUtils::HashString("Decrypt");
-        static const int Encrypt_HASH = HashingUtils::HashString("Encrypt");
-        static const int GenerateDataKey_HASH = HashingUtils::HashString("GenerateDataKey");
-        static const int GenerateDataKeyWithoutPlaintext_HASH = HashingUtils::HashString("GenerateDataKeyWithoutPlaintext");
-        static const int ReEncryptFrom_HASH = HashingUtils::HashString("ReEncryptFrom");
-        static const int ReEncryptTo_HASH = HashingUtils::HashString("ReEncryptTo");
-        static const int Sign_HASH = HashingUtils::HashString("Sign");
-        static const int Verify_HASH = HashingUtils::HashString("Verify");
-        static const int GetPublicKey_HASH = HashingUtils::HashString("GetPublicKey");
-        static const int CreateGrant_HASH = HashingUtils::HashString("CreateGrant");
-        static const int RetireGrant_HASH = HashingUtils::HashString("RetireGrant");
-        static const int DescribeKey_HASH = HashingUtils::HashString("DescribeKey");
-        static const int GenerateDataKeyPair_HASH = HashingUtils::HashString("GenerateDataKeyPair");
-        static const int GenerateDataKeyPairWithoutPlaintext_HASH = HashingUtils::HashString("GenerateDataKeyPairWithoutPlaintext");
-        static const int GenerateMac_HASH = HashingUtils::HashString("GenerateMac");
-        static const int VerifyMac_HASH = HashingUtils::HashString("VerifyMac");
+        static constexpr uint32_t Decrypt_HASH = ConstExprHashingUtils::HashString("Decrypt");
+        static constexpr uint32_t Encrypt_HASH = ConstExprHashingUtils::HashString("Encrypt");
+        static constexpr uint32_t GenerateDataKey_HASH = ConstExprHashingUtils::HashString("GenerateDataKey");
+        static constexpr uint32_t GenerateDataKeyWithoutPlaintext_HASH = ConstExprHashingUtils::HashString("GenerateDataKeyWithoutPlaintext");
+        static constexpr uint32_t ReEncryptFrom_HASH = ConstExprHashingUtils::HashString("ReEncryptFrom");
+        static constexpr uint32_t ReEncryptTo_HASH = ConstExprHashingUtils::HashString("ReEncryptTo");
+        static constexpr uint32_t Sign_HASH = ConstExprHashingUtils::HashString("Sign");
+        static constexpr uint32_t Verify_HASH = ConstExprHashingUtils::HashString("Verify");
+        static constexpr uint32_t GetPublicKey_HASH = ConstExprHashingUtils::HashString("GetPublicKey");
+        static constexpr uint32_t CreateGrant_HASH = ConstExprHashingUtils::HashString("CreateGrant");
+        static constexpr uint32_t RetireGrant_HASH = ConstExprHashingUtils::HashString("RetireGrant");
+        static constexpr uint32_t DescribeKey_HASH = ConstExprHashingUtils::HashString("DescribeKey");
+        static constexpr uint32_t GenerateDataKeyPair_HASH = ConstExprHashingUtils::HashString("GenerateDataKeyPair");
+        static constexpr uint32_t GenerateDataKeyPairWithoutPlaintext_HASH = ConstExprHashingUtils::HashString("GenerateDataKeyPairWithoutPlaintext");
+        static constexpr uint32_t GenerateMac_HASH = ConstExprHashingUtils::HashString("GenerateMac");
+        static constexpr uint32_t VerifyMac_HASH = ConstExprHashingUtils::HashString("VerifyMac");
 
 
         GrantOperation GetGrantOperationForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Decrypt_HASH)
           {
             return GrantOperation::Decrypt;

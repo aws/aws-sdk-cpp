@@ -20,23 +20,23 @@ namespace Aws
       namespace ImageAttributeNameMapper
       {
 
-        static const int description_HASH = HashingUtils::HashString("description");
-        static const int kernel_HASH = HashingUtils::HashString("kernel");
-        static const int ramdisk_HASH = HashingUtils::HashString("ramdisk");
-        static const int launchPermission_HASH = HashingUtils::HashString("launchPermission");
-        static const int productCodes_HASH = HashingUtils::HashString("productCodes");
-        static const int blockDeviceMapping_HASH = HashingUtils::HashString("blockDeviceMapping");
-        static const int sriovNetSupport_HASH = HashingUtils::HashString("sriovNetSupport");
-        static const int bootMode_HASH = HashingUtils::HashString("bootMode");
-        static const int tpmSupport_HASH = HashingUtils::HashString("tpmSupport");
-        static const int uefiData_HASH = HashingUtils::HashString("uefiData");
-        static const int lastLaunchedTime_HASH = HashingUtils::HashString("lastLaunchedTime");
-        static const int imdsSupport_HASH = HashingUtils::HashString("imdsSupport");
+        static constexpr uint32_t description_HASH = ConstExprHashingUtils::HashString("description");
+        static constexpr uint32_t kernel_HASH = ConstExprHashingUtils::HashString("kernel");
+        static constexpr uint32_t ramdisk_HASH = ConstExprHashingUtils::HashString("ramdisk");
+        static constexpr uint32_t launchPermission_HASH = ConstExprHashingUtils::HashString("launchPermission");
+        static constexpr uint32_t productCodes_HASH = ConstExprHashingUtils::HashString("productCodes");
+        static constexpr uint32_t blockDeviceMapping_HASH = ConstExprHashingUtils::HashString("blockDeviceMapping");
+        static constexpr uint32_t sriovNetSupport_HASH = ConstExprHashingUtils::HashString("sriovNetSupport");
+        static constexpr uint32_t bootMode_HASH = ConstExprHashingUtils::HashString("bootMode");
+        static constexpr uint32_t tpmSupport_HASH = ConstExprHashingUtils::HashString("tpmSupport");
+        static constexpr uint32_t uefiData_HASH = ConstExprHashingUtils::HashString("uefiData");
+        static constexpr uint32_t lastLaunchedTime_HASH = ConstExprHashingUtils::HashString("lastLaunchedTime");
+        static constexpr uint32_t imdsSupport_HASH = ConstExprHashingUtils::HashString("imdsSupport");
 
 
         ImageAttributeName GetImageAttributeNameForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == description_HASH)
           {
             return ImageAttributeName::description;

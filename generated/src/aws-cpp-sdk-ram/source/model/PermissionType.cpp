@@ -20,13 +20,13 @@ namespace Aws
       namespace PermissionTypeMapper
       {
 
-        static const int CUSTOMER_MANAGED_HASH = HashingUtils::HashString("CUSTOMER_MANAGED");
-        static const int AWS_MANAGED_HASH = HashingUtils::HashString("AWS_MANAGED");
+        static constexpr uint32_t CUSTOMER_MANAGED_HASH = ConstExprHashingUtils::HashString("CUSTOMER_MANAGED");
+        static constexpr uint32_t AWS_MANAGED_HASH = ConstExprHashingUtils::HashString("AWS_MANAGED");
 
 
         PermissionType GetPermissionTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CUSTOMER_MANAGED_HASH)
           {
             return PermissionType::CUSTOMER_MANAGED;

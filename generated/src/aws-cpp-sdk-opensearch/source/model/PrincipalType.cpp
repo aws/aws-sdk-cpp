@@ -20,13 +20,13 @@ namespace Aws
       namespace PrincipalTypeMapper
       {
 
-        static const int AWS_ACCOUNT_HASH = HashingUtils::HashString("AWS_ACCOUNT");
-        static const int AWS_SERVICE_HASH = HashingUtils::HashString("AWS_SERVICE");
+        static constexpr uint32_t AWS_ACCOUNT_HASH = ConstExprHashingUtils::HashString("AWS_ACCOUNT");
+        static constexpr uint32_t AWS_SERVICE_HASH = ConstExprHashingUtils::HashString("AWS_SERVICE");
 
 
         PrincipalType GetPrincipalTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == AWS_ACCOUNT_HASH)
           {
             return PrincipalType::AWS_ACCOUNT;

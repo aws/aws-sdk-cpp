@@ -20,26 +20,26 @@ namespace Aws
       namespace InventoryOptionalFieldMapper
       {
 
-        static const int Size_HASH = HashingUtils::HashString("Size");
-        static const int LastModifiedDate_HASH = HashingUtils::HashString("LastModifiedDate");
-        static const int StorageClass_HASH = HashingUtils::HashString("StorageClass");
-        static const int ETag_HASH = HashingUtils::HashString("ETag");
-        static const int IsMultipartUploaded_HASH = HashingUtils::HashString("IsMultipartUploaded");
-        static const int ReplicationStatus_HASH = HashingUtils::HashString("ReplicationStatus");
-        static const int EncryptionStatus_HASH = HashingUtils::HashString("EncryptionStatus");
-        static const int ObjectLockRetainUntilDate_HASH = HashingUtils::HashString("ObjectLockRetainUntilDate");
-        static const int ObjectLockMode_HASH = HashingUtils::HashString("ObjectLockMode");
-        static const int ObjectLockLegalHoldStatus_HASH = HashingUtils::HashString("ObjectLockLegalHoldStatus");
-        static const int IntelligentTieringAccessTier_HASH = HashingUtils::HashString("IntelligentTieringAccessTier");
-        static const int BucketKeyStatus_HASH = HashingUtils::HashString("BucketKeyStatus");
-        static const int ChecksumAlgorithm_HASH = HashingUtils::HashString("ChecksumAlgorithm");
-        static const int ObjectAccessControlList_HASH = HashingUtils::HashString("ObjectAccessControlList");
-        static const int ObjectOwner_HASH = HashingUtils::HashString("ObjectOwner");
+        static constexpr uint32_t Size_HASH = ConstExprHashingUtils::HashString("Size");
+        static constexpr uint32_t LastModifiedDate_HASH = ConstExprHashingUtils::HashString("LastModifiedDate");
+        static constexpr uint32_t StorageClass_HASH = ConstExprHashingUtils::HashString("StorageClass");
+        static constexpr uint32_t ETag_HASH = ConstExprHashingUtils::HashString("ETag");
+        static constexpr uint32_t IsMultipartUploaded_HASH = ConstExprHashingUtils::HashString("IsMultipartUploaded");
+        static constexpr uint32_t ReplicationStatus_HASH = ConstExprHashingUtils::HashString("ReplicationStatus");
+        static constexpr uint32_t EncryptionStatus_HASH = ConstExprHashingUtils::HashString("EncryptionStatus");
+        static constexpr uint32_t ObjectLockRetainUntilDate_HASH = ConstExprHashingUtils::HashString("ObjectLockRetainUntilDate");
+        static constexpr uint32_t ObjectLockMode_HASH = ConstExprHashingUtils::HashString("ObjectLockMode");
+        static constexpr uint32_t ObjectLockLegalHoldStatus_HASH = ConstExprHashingUtils::HashString("ObjectLockLegalHoldStatus");
+        static constexpr uint32_t IntelligentTieringAccessTier_HASH = ConstExprHashingUtils::HashString("IntelligentTieringAccessTier");
+        static constexpr uint32_t BucketKeyStatus_HASH = ConstExprHashingUtils::HashString("BucketKeyStatus");
+        static constexpr uint32_t ChecksumAlgorithm_HASH = ConstExprHashingUtils::HashString("ChecksumAlgorithm");
+        static constexpr uint32_t ObjectAccessControlList_HASH = ConstExprHashingUtils::HashString("ObjectAccessControlList");
+        static constexpr uint32_t ObjectOwner_HASH = ConstExprHashingUtils::HashString("ObjectOwner");
 
 
         InventoryOptionalField GetInventoryOptionalFieldForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == Size_HASH)
           {
             return InventoryOptionalField::Size;

@@ -20,15 +20,15 @@ namespace Aws
       namespace ResourceStateTypeMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int RESTORING_HASH = HashingUtils::HashString("RESTORING");
-        static const int RECYCLING_HASH = HashingUtils::HashString("RECYCLING");
-        static const int RECYCLED_HASH = HashingUtils::HashString("RECYCLED");
+        static constexpr uint32_t ACTIVE_HASH = ConstExprHashingUtils::HashString("ACTIVE");
+        static constexpr uint32_t RESTORING_HASH = ConstExprHashingUtils::HashString("RESTORING");
+        static constexpr uint32_t RECYCLING_HASH = ConstExprHashingUtils::HashString("RECYCLING");
+        static constexpr uint32_t RECYCLED_HASH = ConstExprHashingUtils::HashString("RECYCLED");
 
 
         ResourceStateType GetResourceStateTypeForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
             return ResourceStateType::ACTIVE;

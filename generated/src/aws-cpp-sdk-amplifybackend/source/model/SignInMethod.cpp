@@ -20,15 +20,15 @@ namespace Aws
       namespace SignInMethodMapper
       {
 
-        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
-        static const int EMAIL_AND_PHONE_NUMBER_HASH = HashingUtils::HashString("EMAIL_AND_PHONE_NUMBER");
-        static const int PHONE_NUMBER_HASH = HashingUtils::HashString("PHONE_NUMBER");
-        static const int USERNAME_HASH = HashingUtils::HashString("USERNAME");
+        static constexpr uint32_t EMAIL_HASH = ConstExprHashingUtils::HashString("EMAIL");
+        static constexpr uint32_t EMAIL_AND_PHONE_NUMBER_HASH = ConstExprHashingUtils::HashString("EMAIL_AND_PHONE_NUMBER");
+        static constexpr uint32_t PHONE_NUMBER_HASH = ConstExprHashingUtils::HashString("PHONE_NUMBER");
+        static constexpr uint32_t USERNAME_HASH = ConstExprHashingUtils::HashString("USERNAME");
 
 
         SignInMethod GetSignInMethodForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == EMAIL_HASH)
           {
             return SignInMethod::EMAIL;

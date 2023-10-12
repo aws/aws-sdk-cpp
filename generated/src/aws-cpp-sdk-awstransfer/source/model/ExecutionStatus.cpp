@@ -20,15 +20,15 @@ namespace Aws
       namespace ExecutionStatusMapper
       {
 
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-        static const int EXCEPTION_HASH = HashingUtils::HashString("EXCEPTION");
-        static const int HANDLING_EXCEPTION_HASH = HashingUtils::HashString("HANDLING_EXCEPTION");
+        static constexpr uint32_t IN_PROGRESS_HASH = ConstExprHashingUtils::HashString("IN_PROGRESS");
+        static constexpr uint32_t COMPLETED_HASH = ConstExprHashingUtils::HashString("COMPLETED");
+        static constexpr uint32_t EXCEPTION_HASH = ConstExprHashingUtils::HashString("EXCEPTION");
+        static constexpr uint32_t HANDLING_EXCEPTION_HASH = ConstExprHashingUtils::HashString("HANDLING_EXCEPTION");
 
 
         ExecutionStatus GetExecutionStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == IN_PROGRESS_HASH)
           {
             return ExecutionStatus::IN_PROGRESS;

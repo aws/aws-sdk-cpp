@@ -20,13 +20,13 @@ namespace Aws
       namespace StatisticalIssueStatusMapper
       {
 
-        static const int POTENTIAL_ISSUE_DETECTED_HASH = HashingUtils::HashString("POTENTIAL_ISSUE_DETECTED");
-        static const int NO_ISSUE_DETECTED_HASH = HashingUtils::HashString("NO_ISSUE_DETECTED");
+        static constexpr uint32_t POTENTIAL_ISSUE_DETECTED_HASH = ConstExprHashingUtils::HashString("POTENTIAL_ISSUE_DETECTED");
+        static constexpr uint32_t NO_ISSUE_DETECTED_HASH = ConstExprHashingUtils::HashString("NO_ISSUE_DETECTED");
 
 
         StatisticalIssueStatus GetStatisticalIssueStatusForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == POTENTIAL_ISSUE_DETECTED_HASH)
           {
             return StatisticalIssueStatus::POTENTIAL_ISSUE_DETECTED;
