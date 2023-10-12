@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ivs-realtime/model/ParticipantState.h>
 #include <utility>
 
@@ -160,6 +160,88 @@ namespace Model
 
 
     /**
+     * <p>The participant’s browser.</p>
+     */
+    inline const Aws::String& GetBrowserName() const{ return m_browserName; }
+
+    /**
+     * <p>The participant’s browser.</p>
+     */
+    inline bool BrowserNameHasBeenSet() const { return m_browserNameHasBeenSet; }
+
+    /**
+     * <p>The participant’s browser.</p>
+     */
+    inline void SetBrowserName(const Aws::String& value) { m_browserNameHasBeenSet = true; m_browserName = value; }
+
+    /**
+     * <p>The participant’s browser.</p>
+     */
+    inline void SetBrowserName(Aws::String&& value) { m_browserNameHasBeenSet = true; m_browserName = std::move(value); }
+
+    /**
+     * <p>The participant’s browser.</p>
+     */
+    inline void SetBrowserName(const char* value) { m_browserNameHasBeenSet = true; m_browserName.assign(value); }
+
+    /**
+     * <p>The participant’s browser.</p>
+     */
+    inline Participant& WithBrowserName(const Aws::String& value) { SetBrowserName(value); return *this;}
+
+    /**
+     * <p>The participant’s browser.</p>
+     */
+    inline Participant& WithBrowserName(Aws::String&& value) { SetBrowserName(std::move(value)); return *this;}
+
+    /**
+     * <p>The participant’s browser.</p>
+     */
+    inline Participant& WithBrowserName(const char* value) { SetBrowserName(value); return *this;}
+
+
+    /**
+     * <p>The participant’s browser version.</p>
+     */
+    inline const Aws::String& GetBrowserVersion() const{ return m_browserVersion; }
+
+    /**
+     * <p>The participant’s browser version.</p>
+     */
+    inline bool BrowserVersionHasBeenSet() const { return m_browserVersionHasBeenSet; }
+
+    /**
+     * <p>The participant’s browser version.</p>
+     */
+    inline void SetBrowserVersion(const Aws::String& value) { m_browserVersionHasBeenSet = true; m_browserVersion = value; }
+
+    /**
+     * <p>The participant’s browser version.</p>
+     */
+    inline void SetBrowserVersion(Aws::String&& value) { m_browserVersionHasBeenSet = true; m_browserVersion = std::move(value); }
+
+    /**
+     * <p>The participant’s browser version.</p>
+     */
+    inline void SetBrowserVersion(const char* value) { m_browserVersionHasBeenSet = true; m_browserVersion.assign(value); }
+
+    /**
+     * <p>The participant’s browser version.</p>
+     */
+    inline Participant& WithBrowserVersion(const Aws::String& value) { SetBrowserVersion(value); return *this;}
+
+    /**
+     * <p>The participant’s browser version.</p>
+     */
+    inline Participant& WithBrowserVersion(Aws::String&& value) { SetBrowserVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The participant’s browser version.</p>
+     */
+    inline Participant& WithBrowserVersion(const char* value) { SetBrowserVersion(value); return *this;}
+
+
+    /**
      * <p>ISO 8601 timestamp (returned as a string) when the participant first joined
      * the stage session.</p>
      */
@@ -194,6 +276,129 @@ namespace Model
      * the stage session.</p>
      */
     inline Participant& WithFirstJoinTime(Aws::Utils::DateTime&& value) { SetFirstJoinTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The participant’s Internet Service Provider.</p>
+     */
+    inline const Aws::String& GetIspName() const{ return m_ispName; }
+
+    /**
+     * <p>The participant’s Internet Service Provider.</p>
+     */
+    inline bool IspNameHasBeenSet() const { return m_ispNameHasBeenSet; }
+
+    /**
+     * <p>The participant’s Internet Service Provider.</p>
+     */
+    inline void SetIspName(const Aws::String& value) { m_ispNameHasBeenSet = true; m_ispName = value; }
+
+    /**
+     * <p>The participant’s Internet Service Provider.</p>
+     */
+    inline void SetIspName(Aws::String&& value) { m_ispNameHasBeenSet = true; m_ispName = std::move(value); }
+
+    /**
+     * <p>The participant’s Internet Service Provider.</p>
+     */
+    inline void SetIspName(const char* value) { m_ispNameHasBeenSet = true; m_ispName.assign(value); }
+
+    /**
+     * <p>The participant’s Internet Service Provider.</p>
+     */
+    inline Participant& WithIspName(const Aws::String& value) { SetIspName(value); return *this;}
+
+    /**
+     * <p>The participant’s Internet Service Provider.</p>
+     */
+    inline Participant& WithIspName(Aws::String&& value) { SetIspName(std::move(value)); return *this;}
+
+    /**
+     * <p>The participant’s Internet Service Provider.</p>
+     */
+    inline Participant& WithIspName(const char* value) { SetIspName(value); return *this;}
+
+
+    /**
+     * <p>The participant’s operating system.</p>
+     */
+    inline const Aws::String& GetOsName() const{ return m_osName; }
+
+    /**
+     * <p>The participant’s operating system.</p>
+     */
+    inline bool OsNameHasBeenSet() const { return m_osNameHasBeenSet; }
+
+    /**
+     * <p>The participant’s operating system.</p>
+     */
+    inline void SetOsName(const Aws::String& value) { m_osNameHasBeenSet = true; m_osName = value; }
+
+    /**
+     * <p>The participant’s operating system.</p>
+     */
+    inline void SetOsName(Aws::String&& value) { m_osNameHasBeenSet = true; m_osName = std::move(value); }
+
+    /**
+     * <p>The participant’s operating system.</p>
+     */
+    inline void SetOsName(const char* value) { m_osNameHasBeenSet = true; m_osName.assign(value); }
+
+    /**
+     * <p>The participant’s operating system.</p>
+     */
+    inline Participant& WithOsName(const Aws::String& value) { SetOsName(value); return *this;}
+
+    /**
+     * <p>The participant’s operating system.</p>
+     */
+    inline Participant& WithOsName(Aws::String&& value) { SetOsName(std::move(value)); return *this;}
+
+    /**
+     * <p>The participant’s operating system.</p>
+     */
+    inline Participant& WithOsName(const char* value) { SetOsName(value); return *this;}
+
+
+    /**
+     * <p>The participant’s operating system version.</p>
+     */
+    inline const Aws::String& GetOsVersion() const{ return m_osVersion; }
+
+    /**
+     * <p>The participant’s operating system version.</p>
+     */
+    inline bool OsVersionHasBeenSet() const { return m_osVersionHasBeenSet; }
+
+    /**
+     * <p>The participant’s operating system version.</p>
+     */
+    inline void SetOsVersion(const Aws::String& value) { m_osVersionHasBeenSet = true; m_osVersion = value; }
+
+    /**
+     * <p>The participant’s operating system version.</p>
+     */
+    inline void SetOsVersion(Aws::String&& value) { m_osVersionHasBeenSet = true; m_osVersion = std::move(value); }
+
+    /**
+     * <p>The participant’s operating system version.</p>
+     */
+    inline void SetOsVersion(const char* value) { m_osVersionHasBeenSet = true; m_osVersion.assign(value); }
+
+    /**
+     * <p>The participant’s operating system version.</p>
+     */
+    inline Participant& WithOsVersion(const Aws::String& value) { SetOsVersion(value); return *this;}
+
+    /**
+     * <p>The participant’s operating system version.</p>
+     */
+    inline Participant& WithOsVersion(Aws::String&& value) { SetOsVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The participant’s operating system version.</p>
+     */
+    inline Participant& WithOsVersion(const char* value) { SetOsVersion(value); return *this;}
 
 
     /**
@@ -256,6 +461,47 @@ namespace Model
      * <p>Whether the participant ever published to the stage session.</p>
      */
     inline Participant& WithPublished(bool value) { SetPublished(value); return *this;}
+
+
+    /**
+     * <p>The participant’s SDK version.</p>
+     */
+    inline const Aws::String& GetSdkVersion() const{ return m_sdkVersion; }
+
+    /**
+     * <p>The participant’s SDK version.</p>
+     */
+    inline bool SdkVersionHasBeenSet() const { return m_sdkVersionHasBeenSet; }
+
+    /**
+     * <p>The participant’s SDK version.</p>
+     */
+    inline void SetSdkVersion(const Aws::String& value) { m_sdkVersionHasBeenSet = true; m_sdkVersion = value; }
+
+    /**
+     * <p>The participant’s SDK version.</p>
+     */
+    inline void SetSdkVersion(Aws::String&& value) { m_sdkVersionHasBeenSet = true; m_sdkVersion = std::move(value); }
+
+    /**
+     * <p>The participant’s SDK version.</p>
+     */
+    inline void SetSdkVersion(const char* value) { m_sdkVersionHasBeenSet = true; m_sdkVersion.assign(value); }
+
+    /**
+     * <p>The participant’s SDK version.</p>
+     */
+    inline Participant& WithSdkVersion(const Aws::String& value) { SetSdkVersion(value); return *this;}
+
+    /**
+     * <p>The participant’s SDK version.</p>
+     */
+    inline Participant& WithSdkVersion(Aws::String&& value) { SetSdkVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The participant’s SDK version.</p>
+     */
+    inline Participant& WithSdkVersion(const char* value) { SetSdkVersion(value); return *this;}
 
 
     /**
@@ -366,14 +612,32 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet = false;
 
+    Aws::String m_browserName;
+    bool m_browserNameHasBeenSet = false;
+
+    Aws::String m_browserVersion;
+    bool m_browserVersionHasBeenSet = false;
+
     Aws::Utils::DateTime m_firstJoinTime;
     bool m_firstJoinTimeHasBeenSet = false;
+
+    Aws::String m_ispName;
+    bool m_ispNameHasBeenSet = false;
+
+    Aws::String m_osName;
+    bool m_osNameHasBeenSet = false;
+
+    Aws::String m_osVersion;
+    bool m_osVersionHasBeenSet = false;
 
     Aws::String m_participantId;
     bool m_participantIdHasBeenSet = false;
 
     bool m_published;
     bool m_publishedHasBeenSet = false;
+
+    Aws::String m_sdkVersion;
+    bool m_sdkVersionHasBeenSet = false;
 
     ParticipantState m_state;
     bool m_stateHasBeenSet = false;

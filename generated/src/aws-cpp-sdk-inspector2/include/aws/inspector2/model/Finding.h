@@ -568,73 +568,129 @@ namespace Model
 
 
     /**
-     * <p>Contains information on the resources involved in a finding.</p>
+     * <p>Contains information on the resources involved in a finding. The
+     * <code>resource</code> value determines the valid values for <code>type</code> in
+     * your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+     * types</a> in the Amazon Inspector user guide.</p>
      */
     inline const Aws::Vector<Resource>& GetResources() const{ return m_resources; }
 
     /**
-     * <p>Contains information on the resources involved in a finding.</p>
+     * <p>Contains information on the resources involved in a finding. The
+     * <code>resource</code> value determines the valid values for <code>type</code> in
+     * your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+     * types</a> in the Amazon Inspector user guide.</p>
      */
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
-     * <p>Contains information on the resources involved in a finding.</p>
+     * <p>Contains information on the resources involved in a finding. The
+     * <code>resource</code> value determines the valid values for <code>type</code> in
+     * your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+     * types</a> in the Amazon Inspector user guide.</p>
      */
     inline void SetResources(const Aws::Vector<Resource>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**
-     * <p>Contains information on the resources involved in a finding.</p>
+     * <p>Contains information on the resources involved in a finding. The
+     * <code>resource</code> value determines the valid values for <code>type</code> in
+     * your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+     * types</a> in the Amazon Inspector user guide.</p>
      */
     inline void SetResources(Aws::Vector<Resource>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
-     * <p>Contains information on the resources involved in a finding.</p>
+     * <p>Contains information on the resources involved in a finding. The
+     * <code>resource</code> value determines the valid values for <code>type</code> in
+     * your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+     * types</a> in the Amazon Inspector user guide.</p>
      */
     inline Finding& WithResources(const Aws::Vector<Resource>& value) { SetResources(value); return *this;}
 
     /**
-     * <p>Contains information on the resources involved in a finding.</p>
+     * <p>Contains information on the resources involved in a finding. The
+     * <code>resource</code> value determines the valid values for <code>type</code> in
+     * your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+     * types</a> in the Amazon Inspector user guide.</p>
      */
     inline Finding& WithResources(Aws::Vector<Resource>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
-     * <p>Contains information on the resources involved in a finding.</p>
+     * <p>Contains information on the resources involved in a finding. The
+     * <code>resource</code> value determines the valid values for <code>type</code> in
+     * your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+     * types</a> in the Amazon Inspector user guide.</p>
      */
     inline Finding& AddResources(const Resource& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
     /**
-     * <p>Contains information on the resources involved in a finding.</p>
+     * <p>Contains information on the resources involved in a finding. The
+     * <code>resource</code> value determines the valid values for <code>type</code> in
+     * your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+     * types</a> in the Amazon Inspector user guide.</p>
      */
     inline Finding& AddResources(Resource&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity of the finding. <code>UNTRIAGED</code> applies to
+     * <code>PACKAGE_VULNERABILITY</code> type findings that the vendor has not
+     * assigned a severity yet. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity
+     * levels for findings</a> in the Amazon Inspector user guide.</p>
      */
     inline const Severity& GetSeverity() const{ return m_severity; }
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity of the finding. <code>UNTRIAGED</code> applies to
+     * <code>PACKAGE_VULNERABILITY</code> type findings that the vendor has not
+     * assigned a severity yet. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity
+     * levels for findings</a> in the Amazon Inspector user guide.</p>
      */
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity of the finding. <code>UNTRIAGED</code> applies to
+     * <code>PACKAGE_VULNERABILITY</code> type findings that the vendor has not
+     * assigned a severity yet. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity
+     * levels for findings</a> in the Amazon Inspector user guide.</p>
      */
     inline void SetSeverity(const Severity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity of the finding. <code>UNTRIAGED</code> applies to
+     * <code>PACKAGE_VULNERABILITY</code> type findings that the vendor has not
+     * assigned a severity yet. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity
+     * levels for findings</a> in the Amazon Inspector user guide.</p>
      */
     inline void SetSeverity(Severity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity of the finding. <code>UNTRIAGED</code> applies to
+     * <code>PACKAGE_VULNERABILITY</code> type findings that the vendor has not
+     * assigned a severity yet. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity
+     * levels for findings</a> in the Amazon Inspector user guide.</p>
      */
     inline Finding& WithSeverity(const Severity& value) { SetSeverity(value); return *this;}
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity of the finding. <code>UNTRIAGED</code> applies to
+     * <code>PACKAGE_VULNERABILITY</code> type findings that the vendor has not
+     * assigned a severity yet. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity
+     * levels for findings</a> in the Amazon Inspector user guide.</p>
      */
     inline Finding& WithSeverity(Severity&& value) { SetSeverity(std::move(value)); return *this;}
 
@@ -712,32 +768,50 @@ namespace Model
 
 
     /**
-     * <p>The type of the finding.</p>
+     * <p>The type of the finding. The <code>type</code> value determines the valid
+     * values for <code>resource</code> in your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+     * types</a> in the Amazon Inspector user guide.</p>
      */
     inline const FindingType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the finding.</p>
+     * <p>The type of the finding. The <code>type</code> value determines the valid
+     * values for <code>resource</code> in your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+     * types</a> in the Amazon Inspector user guide.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the finding.</p>
+     * <p>The type of the finding. The <code>type</code> value determines the valid
+     * values for <code>resource</code> in your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+     * types</a> in the Amazon Inspector user guide.</p>
      */
     inline void SetType(const FindingType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the finding.</p>
+     * <p>The type of the finding. The <code>type</code> value determines the valid
+     * values for <code>resource</code> in your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+     * types</a> in the Amazon Inspector user guide.</p>
      */
     inline void SetType(FindingType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the finding.</p>
+     * <p>The type of the finding. The <code>type</code> value determines the valid
+     * values for <code>resource</code> in your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+     * types</a> in the Amazon Inspector user guide.</p>
      */
     inline Finding& WithType(const FindingType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the finding.</p>
+     * <p>The type of the finding. The <code>type</code> value determines the valid
+     * values for <code>resource</code> in your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+     * types</a> in the Amazon Inspector user guide.</p>
      */
     inline Finding& WithType(FindingType&& value) { SetType(std::move(value)); return *this;}
 

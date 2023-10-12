@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon SageMaker Canvas app setting where you configure OAuth for
+   * <p>The Amazon SageMaker Canvas application setting where you configure OAuth for
    * connecting to an external data source, such as Snowflake.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/IdentityProviderOAuthSetting">AWS

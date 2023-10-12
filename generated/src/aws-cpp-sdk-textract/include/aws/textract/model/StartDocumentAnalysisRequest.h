@@ -12,6 +12,7 @@
 #include <aws/textract/model/NotificationChannel.h>
 #include <aws/textract/model/OutputConfig.h>
 #include <aws/textract/model/QueriesConfig.h>
+#include <aws/textract/model/AdaptersConfig.h>
 #include <aws/textract/model/FeatureType.h>
 #include <utility>
 
@@ -477,6 +478,37 @@ namespace Model
     
     inline StartDocumentAnalysisRequest& WithQueriesConfig(QueriesConfig&& value) { SetQueriesConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the adapter to be used when analyzing a document.</p>
+     */
+    inline const AdaptersConfig& GetAdaptersConfig() const{ return m_adaptersConfig; }
+
+    /**
+     * <p>Specifies the adapter to be used when analyzing a document.</p>
+     */
+    inline bool AdaptersConfigHasBeenSet() const { return m_adaptersConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies the adapter to be used when analyzing a document.</p>
+     */
+    inline void SetAdaptersConfig(const AdaptersConfig& value) { m_adaptersConfigHasBeenSet = true; m_adaptersConfig = value; }
+
+    /**
+     * <p>Specifies the adapter to be used when analyzing a document.</p>
+     */
+    inline void SetAdaptersConfig(AdaptersConfig&& value) { m_adaptersConfigHasBeenSet = true; m_adaptersConfig = std::move(value); }
+
+    /**
+     * <p>Specifies the adapter to be used when analyzing a document.</p>
+     */
+    inline StartDocumentAnalysisRequest& WithAdaptersConfig(const AdaptersConfig& value) { SetAdaptersConfig(value); return *this;}
+
+    /**
+     * <p>Specifies the adapter to be used when analyzing a document.</p>
+     */
+    inline StartDocumentAnalysisRequest& WithAdaptersConfig(AdaptersConfig&& value) { SetAdaptersConfig(std::move(value)); return *this;}
+
   private:
 
     DocumentLocation m_documentLocation;
@@ -502,6 +534,9 @@ namespace Model
 
     QueriesConfig m_queriesConfig;
     bool m_queriesConfigHasBeenSet = false;
+
+    AdaptersConfig m_adaptersConfig;
+    bool m_adaptersConfigHasBeenSet = false;
   };
 
 } // namespace Model

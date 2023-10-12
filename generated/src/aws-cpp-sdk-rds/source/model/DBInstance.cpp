@@ -126,7 +126,9 @@ DBInstance::DBInstance() :
     m_masterUserSecretHasBeenSet(false),
     m_certificateDetailsHasBeenSet(false),
     m_readReplicaSourceDBClusterIdentifierHasBeenSet(false),
-    m_percentProgressHasBeenSet(false)
+    m_percentProgressHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false)
 {
 }
 
@@ -236,7 +238,9 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_masterUserSecretHasBeenSet(false),
     m_certificateDetailsHasBeenSet(false),
     m_readReplicaSourceDBClusterIdentifierHasBeenSet(false),
-    m_percentProgressHasBeenSet(false)
+    m_percentProgressHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -817,6 +821,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_percentProgress = Aws::Utils::Xml::DecodeEscapedXmlText(percentProgressNode.GetText());
       m_percentProgressHasBeenSet = true;
     }
+    XmlNode dedicatedLogVolumeNode = resultNode.FirstChild("DedicatedLogVolume");
+    if(!dedicatedLogVolumeNode.IsNull())
+    {
+      m_dedicatedLogVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dedicatedLogVolumeNode.GetText()).c_str()).c_str());
+      m_dedicatedLogVolumeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1318,6 +1328,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".PercentProgress=" << StringUtils::URLEncode(m_percentProgress.c_str()) << "&";
   }
 
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1733,6 +1748,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_percentProgressHasBeenSet)
   {
       oStream << location << ".PercentProgress=" << StringUtils::URLEncode(m_percentProgress.c_str()) << "&";
+  }
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+      oStream << location << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
 }
 

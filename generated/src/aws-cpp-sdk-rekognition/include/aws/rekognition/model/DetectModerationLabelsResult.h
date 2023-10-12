@@ -79,43 +79,43 @@ namespace Model
 
 
     /**
-     * <p>Version number of the moderation detection model that was used to detect
+     * <p>Version number of the base moderation detection model that was used to detect
      * unsafe content.</p>
      */
     inline const Aws::String& GetModerationModelVersion() const{ return m_moderationModelVersion; }
 
     /**
-     * <p>Version number of the moderation detection model that was used to detect
+     * <p>Version number of the base moderation detection model that was used to detect
      * unsafe content.</p>
      */
     inline void SetModerationModelVersion(const Aws::String& value) { m_moderationModelVersion = value; }
 
     /**
-     * <p>Version number of the moderation detection model that was used to detect
+     * <p>Version number of the base moderation detection model that was used to detect
      * unsafe content.</p>
      */
     inline void SetModerationModelVersion(Aws::String&& value) { m_moderationModelVersion = std::move(value); }
 
     /**
-     * <p>Version number of the moderation detection model that was used to detect
+     * <p>Version number of the base moderation detection model that was used to detect
      * unsafe content.</p>
      */
     inline void SetModerationModelVersion(const char* value) { m_moderationModelVersion.assign(value); }
 
     /**
-     * <p>Version number of the moderation detection model that was used to detect
+     * <p>Version number of the base moderation detection model that was used to detect
      * unsafe content.</p>
      */
     inline DetectModerationLabelsResult& WithModerationModelVersion(const Aws::String& value) { SetModerationModelVersion(value); return *this;}
 
     /**
-     * <p>Version number of the moderation detection model that was used to detect
+     * <p>Version number of the base moderation detection model that was used to detect
      * unsafe content.</p>
      */
     inline DetectModerationLabelsResult& WithModerationModelVersion(Aws::String&& value) { SetModerationModelVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Version number of the moderation detection model that was used to detect
+     * <p>Version number of the base moderation detection model that was used to detect
      * unsafe content.</p>
      */
     inline DetectModerationLabelsResult& WithModerationModelVersion(const char* value) { SetModerationModelVersion(value); return *this;}
@@ -147,6 +147,56 @@ namespace Model
     inline DetectModerationLabelsResult& WithHumanLoopActivationOutput(HumanLoopActivationOutput&& value) { SetHumanLoopActivationOutput(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Identifier of the custom adapter that was used during inference. If during
+     * inference the adapter was EXPIRED, then the parameter will not be returned,
+     * indicating that a base moderation detection project version was used.</p>
+     */
+    inline const Aws::String& GetProjectVersion() const{ return m_projectVersion; }
+
+    /**
+     * <p>Identifier of the custom adapter that was used during inference. If during
+     * inference the adapter was EXPIRED, then the parameter will not be returned,
+     * indicating that a base moderation detection project version was used.</p>
+     */
+    inline void SetProjectVersion(const Aws::String& value) { m_projectVersion = value; }
+
+    /**
+     * <p>Identifier of the custom adapter that was used during inference. If during
+     * inference the adapter was EXPIRED, then the parameter will not be returned,
+     * indicating that a base moderation detection project version was used.</p>
+     */
+    inline void SetProjectVersion(Aws::String&& value) { m_projectVersion = std::move(value); }
+
+    /**
+     * <p>Identifier of the custom adapter that was used during inference. If during
+     * inference the adapter was EXPIRED, then the parameter will not be returned,
+     * indicating that a base moderation detection project version was used.</p>
+     */
+    inline void SetProjectVersion(const char* value) { m_projectVersion.assign(value); }
+
+    /**
+     * <p>Identifier of the custom adapter that was used during inference. If during
+     * inference the adapter was EXPIRED, then the parameter will not be returned,
+     * indicating that a base moderation detection project version was used.</p>
+     */
+    inline DetectModerationLabelsResult& WithProjectVersion(const Aws::String& value) { SetProjectVersion(value); return *this;}
+
+    /**
+     * <p>Identifier of the custom adapter that was used during inference. If during
+     * inference the adapter was EXPIRED, then the parameter will not be returned,
+     * indicating that a base moderation detection project version was used.</p>
+     */
+    inline DetectModerationLabelsResult& WithProjectVersion(Aws::String&& value) { SetProjectVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Identifier of the custom adapter that was used during inference. If during
+     * inference the adapter was EXPIRED, then the parameter will not be returned,
+     * indicating that a base moderation detection project version was used.</p>
+     */
+    inline DetectModerationLabelsResult& WithProjectVersion(const char* value) { SetProjectVersion(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -175,6 +225,8 @@ namespace Model
     Aws::String m_moderationModelVersion;
 
     HumanLoopActivationOutput m_humanLoopActivationOutput;
+
+    Aws::String m_projectVersion;
 
     Aws::String m_requestId;
   };

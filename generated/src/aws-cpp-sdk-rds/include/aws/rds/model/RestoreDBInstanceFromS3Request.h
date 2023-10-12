@@ -2851,6 +2851,31 @@ namespace Model
      */
     inline RestoreDBInstanceFromS3Request& WithMasterUserSecretKmsKeyId(const char* value) { SetMasterUserSecretKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
+     * instance.</p>
+     */
+    inline bool GetDedicatedLogVolume() const{ return m_dedicatedLogVolume; }
+
+    /**
+     * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
+     * instance.</p>
+     */
+    inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
+     * instance.</p>
+     */
+    inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
+
+    /**
+     * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
+     * instance.</p>
+     */
+    inline RestoreDBInstanceFromS3Request& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -2996,6 +3021,9 @@ namespace Model
 
     Aws::String m_masterUserSecretKmsKeyId;
     bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
+
+    bool m_dedicatedLogVolume;
+    bool m_dedicatedLogVolumeHasBeenSet = false;
   };
 
 } // namespace Model

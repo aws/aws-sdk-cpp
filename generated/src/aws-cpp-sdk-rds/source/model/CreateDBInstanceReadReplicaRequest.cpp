@@ -70,6 +70,8 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
     m_sourceDBClusterIdentifierHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false),
     m_sourceRegionHasBeenSet(false)
 {
 }
@@ -314,6 +316,11 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
   if(m_sourceDBClusterIdentifierHasBeenSet)
   {
     ss << "SourceDBClusterIdentifier=" << StringUtils::URLEncode(m_sourceDBClusterIdentifier.c_str()) << "&";
+  }
+
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+    ss << "DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
 
   ss << "Version=2014-10-31";

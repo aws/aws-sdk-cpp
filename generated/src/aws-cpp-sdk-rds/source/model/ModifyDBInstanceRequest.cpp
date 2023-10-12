@@ -95,7 +95,9 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_rotateMasterUserPassword(false),
     m_rotateMasterUserPasswordHasBeenSet(false),
     m_masterUserSecretKmsKeyIdHasBeenSet(false),
-    m_engineHasBeenSet(false)
+    m_engineHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false)
 {
 }
 
@@ -414,6 +416,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_engineHasBeenSet)
   {
     ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+  }
+
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+    ss << "DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
 
   ss << "Version=2014-10-31";

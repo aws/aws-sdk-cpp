@@ -36,42 +36,66 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the model version that you want to use.</p>
+     * <p>The ARN of the model version that you want to use. Only models associated
+     * with Custom Labels projects accepted by the operation. If a provided ARN refers
+     * to a model version associated with a project for a different feature type, then
+     * an InvalidParameterException is returned.</p>
      */
     inline const Aws::String& GetProjectVersionArn() const{ return m_projectVersionArn; }
 
     /**
-     * <p>The ARN of the model version that you want to use.</p>
+     * <p>The ARN of the model version that you want to use. Only models associated
+     * with Custom Labels projects accepted by the operation. If a provided ARN refers
+     * to a model version associated with a project for a different feature type, then
+     * an InvalidParameterException is returned.</p>
      */
     inline bool ProjectVersionArnHasBeenSet() const { return m_projectVersionArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the model version that you want to use.</p>
+     * <p>The ARN of the model version that you want to use. Only models associated
+     * with Custom Labels projects accepted by the operation. If a provided ARN refers
+     * to a model version associated with a project for a different feature type, then
+     * an InvalidParameterException is returned.</p>
      */
     inline void SetProjectVersionArn(const Aws::String& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = value; }
 
     /**
-     * <p>The ARN of the model version that you want to use.</p>
+     * <p>The ARN of the model version that you want to use. Only models associated
+     * with Custom Labels projects accepted by the operation. If a provided ARN refers
+     * to a model version associated with a project for a different feature type, then
+     * an InvalidParameterException is returned.</p>
      */
     inline void SetProjectVersionArn(Aws::String&& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = std::move(value); }
 
     /**
-     * <p>The ARN of the model version that you want to use.</p>
+     * <p>The ARN of the model version that you want to use. Only models associated
+     * with Custom Labels projects accepted by the operation. If a provided ARN refers
+     * to a model version associated with a project for a different feature type, then
+     * an InvalidParameterException is returned.</p>
      */
     inline void SetProjectVersionArn(const char* value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn.assign(value); }
 
     /**
-     * <p>The ARN of the model version that you want to use.</p>
+     * <p>The ARN of the model version that you want to use. Only models associated
+     * with Custom Labels projects accepted by the operation. If a provided ARN refers
+     * to a model version associated with a project for a different feature type, then
+     * an InvalidParameterException is returned.</p>
      */
     inline DetectCustomLabelsRequest& WithProjectVersionArn(const Aws::String& value) { SetProjectVersionArn(value); return *this;}
 
     /**
-     * <p>The ARN of the model version that you want to use.</p>
+     * <p>The ARN of the model version that you want to use. Only models associated
+     * with Custom Labels projects accepted by the operation. If a provided ARN refers
+     * to a model version associated with a project for a different feature type, then
+     * an InvalidParameterException is returned.</p>
      */
     inline DetectCustomLabelsRequest& WithProjectVersionArn(Aws::String&& value) { SetProjectVersionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the model version that you want to use.</p>
+     * <p>The ARN of the model version that you want to use. Only models associated
+     * with Custom Labels projects accepted by the operation. If a provided ARN refers
+     * to a model version associated with a project for a different feature type, then
+     * an InvalidParameterException is returned.</p>
      */
     inline DetectCustomLabelsRequest& WithProjectVersionArn(const char* value) { SetProjectVersionArn(value); return *this;}
 

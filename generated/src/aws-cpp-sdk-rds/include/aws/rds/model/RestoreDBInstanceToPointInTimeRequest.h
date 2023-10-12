@@ -2613,6 +2613,31 @@ namespace Model
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
+     * instance.</p>
+     */
+    inline bool GetDedicatedLogVolume() const{ return m_dedicatedLogVolume; }
+
+    /**
+     * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
+     * instance.</p>
+     */
+    inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
+     * instance.</p>
+     */
+    inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
+
+    /**
+     * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
+     * instance.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
+
   private:
 
     Aws::String m_sourceDBInstanceIdentifier;
@@ -2743,6 +2768,9 @@ namespace Model
 
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet = false;
+
+    bool m_dedicatedLogVolume;
+    bool m_dedicatedLogVolumeHasBeenSet = false;
   };
 
 } // namespace Model
