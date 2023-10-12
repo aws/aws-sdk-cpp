@@ -97,7 +97,21 @@ namespace Model
      * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
      * to a question asked during the call of analyze document. Comes with an alias and
      * ID for ease of locating in a response. Also contains location and confidence
-     * score.</p> </li> </ul>
+     * score.</p> </li> </ul> <p>The following BlockTypes are only returned for Amazon
+     * Textract Layout.</p> <ul> <li> <p> <code>LAYOUT_TITLE</code> - The main title of
+     * the document.</p> </li> <li> <p> <code>LAYOUT_HEADER</code> - Text located in
+     * the top margin of the document.</p> </li> <li> <p> <code>LAYOUT_FOOTER</code> -
+     * Text located in the bottom margin of the document.</p> </li> <li> <p>
+     * <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a
+     * document.</p> </li> <li> <p> <code>LAYOUT_PAGE_NUMBER</code> - The page number
+     * of the documents.</p> </li> <li> <p> <code>LAYOUT_LIST</code> - Any information
+     * grouped together in list form. </p> </li> <li> <p> <code>LAYOUT_FIGURE</code> -
+     * Indicates the location of an image in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TABLE</code> - Indicates the location of a table in the
+     * document.</p> </li> <li> <p> <code>LAYOUT_KEY_VALUE</code> - Indicates the
+     * location of form key-values in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TEXT</code> - Text that is present typically as a part of
+     * paragraphs in documents.</p> </li> </ul>
      */
     inline const BlockType& GetBlockType() const{ return m_blockType; }
 
@@ -140,7 +154,21 @@ namespace Model
      * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
      * to a question asked during the call of analyze document. Comes with an alias and
      * ID for ease of locating in a response. Also contains location and confidence
-     * score.</p> </li> </ul>
+     * score.</p> </li> </ul> <p>The following BlockTypes are only returned for Amazon
+     * Textract Layout.</p> <ul> <li> <p> <code>LAYOUT_TITLE</code> - The main title of
+     * the document.</p> </li> <li> <p> <code>LAYOUT_HEADER</code> - Text located in
+     * the top margin of the document.</p> </li> <li> <p> <code>LAYOUT_FOOTER</code> -
+     * Text located in the bottom margin of the document.</p> </li> <li> <p>
+     * <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a
+     * document.</p> </li> <li> <p> <code>LAYOUT_PAGE_NUMBER</code> - The page number
+     * of the documents.</p> </li> <li> <p> <code>LAYOUT_LIST</code> - Any information
+     * grouped together in list form. </p> </li> <li> <p> <code>LAYOUT_FIGURE</code> -
+     * Indicates the location of an image in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TABLE</code> - Indicates the location of a table in the
+     * document.</p> </li> <li> <p> <code>LAYOUT_KEY_VALUE</code> - Indicates the
+     * location of form key-values in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TEXT</code> - Text that is present typically as a part of
+     * paragraphs in documents.</p> </li> </ul>
      */
     inline bool BlockTypeHasBeenSet() const { return m_blockTypeHasBeenSet; }
 
@@ -183,7 +211,21 @@ namespace Model
      * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
      * to a question asked during the call of analyze document. Comes with an alias and
      * ID for ease of locating in a response. Also contains location and confidence
-     * score.</p> </li> </ul>
+     * score.</p> </li> </ul> <p>The following BlockTypes are only returned for Amazon
+     * Textract Layout.</p> <ul> <li> <p> <code>LAYOUT_TITLE</code> - The main title of
+     * the document.</p> </li> <li> <p> <code>LAYOUT_HEADER</code> - Text located in
+     * the top margin of the document.</p> </li> <li> <p> <code>LAYOUT_FOOTER</code> -
+     * Text located in the bottom margin of the document.</p> </li> <li> <p>
+     * <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a
+     * document.</p> </li> <li> <p> <code>LAYOUT_PAGE_NUMBER</code> - The page number
+     * of the documents.</p> </li> <li> <p> <code>LAYOUT_LIST</code> - Any information
+     * grouped together in list form. </p> </li> <li> <p> <code>LAYOUT_FIGURE</code> -
+     * Indicates the location of an image in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TABLE</code> - Indicates the location of a table in the
+     * document.</p> </li> <li> <p> <code>LAYOUT_KEY_VALUE</code> - Indicates the
+     * location of form key-values in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TEXT</code> - Text that is present typically as a part of
+     * paragraphs in documents.</p> </li> </ul>
      */
     inline void SetBlockType(const BlockType& value) { m_blockTypeHasBeenSet = true; m_blockType = value; }
 
@@ -226,7 +268,21 @@ namespace Model
      * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
      * to a question asked during the call of analyze document. Comes with an alias and
      * ID for ease of locating in a response. Also contains location and confidence
-     * score.</p> </li> </ul>
+     * score.</p> </li> </ul> <p>The following BlockTypes are only returned for Amazon
+     * Textract Layout.</p> <ul> <li> <p> <code>LAYOUT_TITLE</code> - The main title of
+     * the document.</p> </li> <li> <p> <code>LAYOUT_HEADER</code> - Text located in
+     * the top margin of the document.</p> </li> <li> <p> <code>LAYOUT_FOOTER</code> -
+     * Text located in the bottom margin of the document.</p> </li> <li> <p>
+     * <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a
+     * document.</p> </li> <li> <p> <code>LAYOUT_PAGE_NUMBER</code> - The page number
+     * of the documents.</p> </li> <li> <p> <code>LAYOUT_LIST</code> - Any information
+     * grouped together in list form. </p> </li> <li> <p> <code>LAYOUT_FIGURE</code> -
+     * Indicates the location of an image in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TABLE</code> - Indicates the location of a table in the
+     * document.</p> </li> <li> <p> <code>LAYOUT_KEY_VALUE</code> - Indicates the
+     * location of form key-values in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TEXT</code> - Text that is present typically as a part of
+     * paragraphs in documents.</p> </li> </ul>
      */
     inline void SetBlockType(BlockType&& value) { m_blockTypeHasBeenSet = true; m_blockType = std::move(value); }
 
@@ -269,7 +325,21 @@ namespace Model
      * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
      * to a question asked during the call of analyze document. Comes with an alias and
      * ID for ease of locating in a response. Also contains location and confidence
-     * score.</p> </li> </ul>
+     * score.</p> </li> </ul> <p>The following BlockTypes are only returned for Amazon
+     * Textract Layout.</p> <ul> <li> <p> <code>LAYOUT_TITLE</code> - The main title of
+     * the document.</p> </li> <li> <p> <code>LAYOUT_HEADER</code> - Text located in
+     * the top margin of the document.</p> </li> <li> <p> <code>LAYOUT_FOOTER</code> -
+     * Text located in the bottom margin of the document.</p> </li> <li> <p>
+     * <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a
+     * document.</p> </li> <li> <p> <code>LAYOUT_PAGE_NUMBER</code> - The page number
+     * of the documents.</p> </li> <li> <p> <code>LAYOUT_LIST</code> - Any information
+     * grouped together in list form. </p> </li> <li> <p> <code>LAYOUT_FIGURE</code> -
+     * Indicates the location of an image in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TABLE</code> - Indicates the location of a table in the
+     * document.</p> </li> <li> <p> <code>LAYOUT_KEY_VALUE</code> - Indicates the
+     * location of form key-values in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TEXT</code> - Text that is present typically as a part of
+     * paragraphs in documents.</p> </li> </ul>
      */
     inline Block& WithBlockType(const BlockType& value) { SetBlockType(value); return *this;}
 
@@ -312,7 +382,21 @@ namespace Model
      * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
      * to a question asked during the call of analyze document. Comes with an alias and
      * ID for ease of locating in a response. Also contains location and confidence
-     * score.</p> </li> </ul>
+     * score.</p> </li> </ul> <p>The following BlockTypes are only returned for Amazon
+     * Textract Layout.</p> <ul> <li> <p> <code>LAYOUT_TITLE</code> - The main title of
+     * the document.</p> </li> <li> <p> <code>LAYOUT_HEADER</code> - Text located in
+     * the top margin of the document.</p> </li> <li> <p> <code>LAYOUT_FOOTER</code> -
+     * Text located in the bottom margin of the document.</p> </li> <li> <p>
+     * <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a
+     * document.</p> </li> <li> <p> <code>LAYOUT_PAGE_NUMBER</code> - The page number
+     * of the documents.</p> </li> <li> <p> <code>LAYOUT_LIST</code> - Any information
+     * grouped together in list form. </p> </li> <li> <p> <code>LAYOUT_FIGURE</code> -
+     * Indicates the location of an image in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TABLE</code> - Indicates the location of a table in the
+     * document.</p> </li> <li> <p> <code>LAYOUT_KEY_VALUE</code> - Indicates the
+     * location of form key-values in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TEXT</code> - Text that is present typically as a part of
+     * paragraphs in documents.</p> </li> </ul>
      */
     inline Block& WithBlockType(BlockType&& value) { SetBlockType(std::move(value)); return *this;}
 

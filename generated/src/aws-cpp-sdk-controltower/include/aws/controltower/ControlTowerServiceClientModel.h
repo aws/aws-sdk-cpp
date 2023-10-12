@@ -21,6 +21,7 @@
 #include <aws/controltower/model/DisableControlResult.h>
 #include <aws/controltower/model/EnableControlResult.h>
 #include <aws/controltower/model/GetControlOperationResult.h>
+#include <aws/controltower/model/GetEnabledControlResult.h>
 #include <aws/controltower/model/ListEnabledControlsResult.h>
 /* End of service model headers required in ControlTowerClient header */
 
@@ -65,6 +66,7 @@ namespace Aws
       class DisableControlRequest;
       class EnableControlRequest;
       class GetControlOperationRequest;
+      class GetEnabledControlRequest;
       class ListEnabledControlsRequest;
       /* End of service model forward declarations required in ControlTowerClient header */
 
@@ -72,6 +74,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisableControlResult, ControlTowerError> DisableControlOutcome;
       typedef Aws::Utils::Outcome<EnableControlResult, ControlTowerError> EnableControlOutcome;
       typedef Aws::Utils::Outcome<GetControlOperationResult, ControlTowerError> GetControlOperationOutcome;
+      typedef Aws::Utils::Outcome<GetEnabledControlResult, ControlTowerError> GetEnabledControlOutcome;
       typedef Aws::Utils::Outcome<ListEnabledControlsResult, ControlTowerError> ListEnabledControlsOutcome;
       /* End of service model Outcome class definitions */
 
@@ -79,6 +82,7 @@ namespace Aws
       typedef std::future<DisableControlOutcome> DisableControlOutcomeCallable;
       typedef std::future<EnableControlOutcome> EnableControlOutcomeCallable;
       typedef std::future<GetControlOperationOutcome> GetControlOperationOutcomeCallable;
+      typedef std::future<GetEnabledControlOutcome> GetEnabledControlOutcomeCallable;
       typedef std::future<ListEnabledControlsOutcome> ListEnabledControlsOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -89,6 +93,7 @@ namespace Aws
     typedef std::function<void(const ControlTowerClient*, const Model::DisableControlRequest&, const Model::DisableControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableControlResponseReceivedHandler;
     typedef std::function<void(const ControlTowerClient*, const Model::EnableControlRequest&, const Model::EnableControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableControlResponseReceivedHandler;
     typedef std::function<void(const ControlTowerClient*, const Model::GetControlOperationRequest&, const Model::GetControlOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetControlOperationResponseReceivedHandler;
+    typedef std::function<void(const ControlTowerClient*, const Model::GetEnabledControlRequest&, const Model::GetEnabledControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnabledControlResponseReceivedHandler;
     typedef std::function<void(const ControlTowerClient*, const Model::ListEnabledControlsRequest&, const Model::ListEnabledControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnabledControlsResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace ControlTower

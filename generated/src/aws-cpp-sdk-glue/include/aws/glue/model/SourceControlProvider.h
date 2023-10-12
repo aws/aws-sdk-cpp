@@ -17,6 +17,8 @@ namespace Model
   {
     NOT_SET,
     GITHUB,
+    GITLAB,
+    BITBUCKET,
     AWS_CODE_COMMIT
   };
 

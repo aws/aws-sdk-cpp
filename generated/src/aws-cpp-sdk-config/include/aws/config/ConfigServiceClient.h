@@ -1843,20 +1843,25 @@ namespace ConfigService
         }
 
         /**
-         * <p>Returns a list of <code>ConfigurationItems</code> for the specified resource.
-         * The list contains details about each state of the resource during the specified
-         * time interval. If you specified a retention period to retain your
-         * <code>ConfigurationItems</code> between a minimum of 30 days and a maximum of 7
-         * years (2557 days), Config returns the <code>ConfigurationItems</code> for the
-         * specified retention period. </p> <p>The response is paginated. By default,
-         * Config returns a limit of 10 configuration items per page. You can customize
-         * this number with the <code>limit</code> parameter. The response includes a
-         * <code>nextToken</code> string. To get the next page of results, run the request
-         * again and specify the string for the <code>nextToken</code> parameter.</p>
-         *  <p>Each call to the API is limited to span a duration of seven days. It
-         * is likely that the number of records returned is smaller than the specified
-         * <code>limit</code>. In such cases, you can make another call, using the
-         * <code>nextToken</code>.</p> <p><h3>See Also:</h3>   <a
+         *  <p>For accurate reporting on the compliance status, you must record
+         * the <code>AWS::Config::ResourceCompliance</code> resource type. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
+         * Which Resources Config Records</a>.</p>  <p>Returns a list of
+         * <code>ConfigurationItems</code> for the specified resource. The list contains
+         * details about each state of the resource during the specified time interval. If
+         * you specified a retention period to retain your <code>ConfigurationItems</code>
+         * between a minimum of 30 days and a maximum of 7 years (2557 days), Config
+         * returns the <code>ConfigurationItems</code> for the specified retention period.
+         * </p> <p>The response is paginated. By default, Config returns a limit of 10
+         * configuration items per page. You can customize this number with the
+         * <code>limit</code> parameter. The response includes a <code>nextToken</code>
+         * string. To get the next page of results, run the request again and specify the
+         * string for the <code>nextToken</code> parameter.</p>  <p>Each call to the
+         * API is limited to span a duration of seven days. It is likely that the number of
+         * records returned is smaller than the specified <code>limit</code>. In such
+         * cases, you can make another call, using the <code>nextToken</code>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">AWS
          * API Reference</a></p>
          */
@@ -2337,16 +2342,19 @@ namespace ConfigService
         }
 
         /**
-         * <p>Creates a delivery channel object to deliver configuration information to an
-         * Amazon S3 bucket and Amazon SNS topic.</p> <p>Before you can create a delivery
-         * channel, you must create a configuration recorder.</p> <p>You can use this
-         * action to change the Amazon S3 bucket or an Amazon SNS topic of the existing
-         * delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic, call
-         * this action and specify the changed values for the S3 bucket and the SNS topic.
-         * If you specify a different value for either the S3 bucket or the SNS topic, this
-         * action will keep the existing value for the parameter that is not changed.</p>
-         *  <p>You can have only one delivery channel per region in your account.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Creates a delivery channel object to deliver configuration information and
+         * other compliance information to an Amazon S3 bucket and Amazon SNS topic. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/notifications-for-AWS-Config.html">Notifications
+         * that Config Sends to an Amazon SNS topic</a>.</p> <p>Before you can create a
+         * delivery channel, you must create a configuration recorder.</p> <p>You can use
+         * this action to change the Amazon S3 bucket or an Amazon SNS topic of the
+         * existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS
+         * topic, call this action and specify the changed values for the S3 bucket and the
+         * SNS topic. If you specify a different value for either the S3 bucket or the SNS
+         * topic, this action will keep the existing value for the parameter that is not
+         * changed.</p>  <p>You can have only one delivery channel per region in your
+         * account.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">AWS
          * API Reference</a></p>
          */

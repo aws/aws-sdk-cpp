@@ -9,6 +9,8 @@
 #include <aws/sagemaker/model/ModelRegisterSettings.h>
 #include <aws/sagemaker/model/WorkspaceSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/KendraSettings.h>
+#include <aws/sagemaker/model/DirectDeploySettings.h>
 #include <aws/sagemaker/model/IdentityProviderOAuthSetting.h>
 #include <utility>
 
@@ -42,32 +44,32 @@ namespace Model
 
 
     /**
-     * <p>Time series forecast settings for the Canvas application.</p>
+     * <p>Time series forecast settings for the SageMaker Canvas application.</p>
      */
     inline const TimeSeriesForecastingSettings& GetTimeSeriesForecastingSettings() const{ return m_timeSeriesForecastingSettings; }
 
     /**
-     * <p>Time series forecast settings for the Canvas application.</p>
+     * <p>Time series forecast settings for the SageMaker Canvas application.</p>
      */
     inline bool TimeSeriesForecastingSettingsHasBeenSet() const { return m_timeSeriesForecastingSettingsHasBeenSet; }
 
     /**
-     * <p>Time series forecast settings for the Canvas application.</p>
+     * <p>Time series forecast settings for the SageMaker Canvas application.</p>
      */
     inline void SetTimeSeriesForecastingSettings(const TimeSeriesForecastingSettings& value) { m_timeSeriesForecastingSettingsHasBeenSet = true; m_timeSeriesForecastingSettings = value; }
 
     /**
-     * <p>Time series forecast settings for the Canvas application.</p>
+     * <p>Time series forecast settings for the SageMaker Canvas application.</p>
      */
     inline void SetTimeSeriesForecastingSettings(TimeSeriesForecastingSettings&& value) { m_timeSeriesForecastingSettingsHasBeenSet = true; m_timeSeriesForecastingSettings = std::move(value); }
 
     /**
-     * <p>Time series forecast settings for the Canvas application.</p>
+     * <p>Time series forecast settings for the SageMaker Canvas application.</p>
      */
     inline CanvasAppSettings& WithTimeSeriesForecastingSettings(const TimeSeriesForecastingSettings& value) { SetTimeSeriesForecastingSettings(value); return *this;}
 
     /**
-     * <p>Time series forecast settings for the Canvas application.</p>
+     * <p>Time series forecast settings for the SageMaker Canvas application.</p>
      */
     inline CanvasAppSettings& WithTimeSeriesForecastingSettings(TimeSeriesForecastingSettings&& value) { SetTimeSeriesForecastingSettings(std::move(value)); return *this;}
 
@@ -174,6 +176,68 @@ namespace Model
      */
     inline CanvasAppSettings& AddIdentityProviderOAuthSettings(IdentityProviderOAuthSetting&& value) { m_identityProviderOAuthSettingsHasBeenSet = true; m_identityProviderOAuthSettings.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The settings for document querying.</p>
+     */
+    inline const KendraSettings& GetKendraSettings() const{ return m_kendraSettings; }
+
+    /**
+     * <p>The settings for document querying.</p>
+     */
+    inline bool KendraSettingsHasBeenSet() const { return m_kendraSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for document querying.</p>
+     */
+    inline void SetKendraSettings(const KendraSettings& value) { m_kendraSettingsHasBeenSet = true; m_kendraSettings = value; }
+
+    /**
+     * <p>The settings for document querying.</p>
+     */
+    inline void SetKendraSettings(KendraSettings&& value) { m_kendraSettingsHasBeenSet = true; m_kendraSettings = std::move(value); }
+
+    /**
+     * <p>The settings for document querying.</p>
+     */
+    inline CanvasAppSettings& WithKendraSettings(const KendraSettings& value) { SetKendraSettings(value); return *this;}
+
+    /**
+     * <p>The settings for document querying.</p>
+     */
+    inline CanvasAppSettings& WithKendraSettings(KendraSettings&& value) { SetKendraSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The model deployment settings for the SageMaker Canvas application.</p>
+     */
+    inline const DirectDeploySettings& GetDirectDeploySettings() const{ return m_directDeploySettings; }
+
+    /**
+     * <p>The model deployment settings for the SageMaker Canvas application.</p>
+     */
+    inline bool DirectDeploySettingsHasBeenSet() const { return m_directDeploySettingsHasBeenSet; }
+
+    /**
+     * <p>The model deployment settings for the SageMaker Canvas application.</p>
+     */
+    inline void SetDirectDeploySettings(const DirectDeploySettings& value) { m_directDeploySettingsHasBeenSet = true; m_directDeploySettings = value; }
+
+    /**
+     * <p>The model deployment settings for the SageMaker Canvas application.</p>
+     */
+    inline void SetDirectDeploySettings(DirectDeploySettings&& value) { m_directDeploySettingsHasBeenSet = true; m_directDeploySettings = std::move(value); }
+
+    /**
+     * <p>The model deployment settings for the SageMaker Canvas application.</p>
+     */
+    inline CanvasAppSettings& WithDirectDeploySettings(const DirectDeploySettings& value) { SetDirectDeploySettings(value); return *this;}
+
+    /**
+     * <p>The model deployment settings for the SageMaker Canvas application.</p>
+     */
+    inline CanvasAppSettings& WithDirectDeploySettings(DirectDeploySettings&& value) { SetDirectDeploySettings(std::move(value)); return *this;}
+
   private:
 
     TimeSeriesForecastingSettings m_timeSeriesForecastingSettings;
@@ -187,6 +251,12 @@ namespace Model
 
     Aws::Vector<IdentityProviderOAuthSetting> m_identityProviderOAuthSettings;
     bool m_identityProviderOAuthSettingsHasBeenSet = false;
+
+    KendraSettings m_kendraSettings;
+    bool m_kendraSettingsHasBeenSet = false;
+
+    DirectDeploySettings m_directDeploySettings;
+    bool m_directDeploySettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,7 +22,9 @@ CanvasAppSettings::CanvasAppSettings() :
     m_timeSeriesForecastingSettingsHasBeenSet(false),
     m_modelRegisterSettingsHasBeenSet(false),
     m_workspaceSettingsHasBeenSet(false),
-    m_identityProviderOAuthSettingsHasBeenSet(false)
+    m_identityProviderOAuthSettingsHasBeenSet(false),
+    m_kendraSettingsHasBeenSet(false),
+    m_directDeploySettingsHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ CanvasAppSettings::CanvasAppSettings(JsonView jsonValue) :
     m_timeSeriesForecastingSettingsHasBeenSet(false),
     m_modelRegisterSettingsHasBeenSet(false),
     m_workspaceSettingsHasBeenSet(false),
-    m_identityProviderOAuthSettingsHasBeenSet(false)
+    m_identityProviderOAuthSettingsHasBeenSet(false),
+    m_kendraSettingsHasBeenSet(false),
+    m_directDeploySettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +72,20 @@ CanvasAppSettings& CanvasAppSettings::operator =(JsonView jsonValue)
     m_identityProviderOAuthSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KendraSettings"))
+  {
+    m_kendraSettings = jsonValue.GetObject("KendraSettings");
+
+    m_kendraSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DirectDeploySettings"))
+  {
+    m_directDeploySettings = jsonValue.GetObject("DirectDeploySettings");
+
+    m_directDeploySettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -101,6 +119,18 @@ JsonValue CanvasAppSettings::Jsonize() const
      identityProviderOAuthSettingsJsonList[identityProviderOAuthSettingsIndex].AsObject(m_identityProviderOAuthSettings[identityProviderOAuthSettingsIndex].Jsonize());
    }
    payload.WithArray("IdentityProviderOAuthSettings", std::move(identityProviderOAuthSettingsJsonList));
+
+  }
+
+  if(m_kendraSettingsHasBeenSet)
+  {
+   payload.WithObject("KendraSettings", m_kendraSettings.Jsonize());
+
+  }
+
+  if(m_directDeploySettingsHasBeenSet)
+  {
+   payload.WithObject("DirectDeploySettings", m_directDeploySettings.Jsonize());
 
   }
 

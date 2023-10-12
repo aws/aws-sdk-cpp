@@ -811,6 +811,31 @@ namespace Model
      */
     inline PendingModifiedValues& WithEngine(const char* value) { SetEngine(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.&gt;</p>
+     */
+    inline bool GetDedicatedLogVolume() const{ return m_dedicatedLogVolume; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.&gt;</p>
+     */
+    inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.&gt;</p>
+     */
+    inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.&gt;</p>
+     */
+    inline PendingModifiedValues& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceClass;
@@ -872,6 +897,9 @@ namespace Model
 
     Aws::String m_engine;
     bool m_engineHasBeenSet = false;
+
+    bool m_dedicatedLogVolume;
+    bool m_dedicatedLogVolumeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -1147,6 +1147,31 @@ namespace Model
      */
     inline OrderableDBInstanceOption& WithMaxStorageThroughputPerIops(double value) { SetMaxStorageThroughputPerIops(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether a DB instance supports using a dedicated log volume
+     * (DLV).</p>
+     */
+    inline bool GetSupportsDedicatedLogVolume() const{ return m_supportsDedicatedLogVolume; }
+
+    /**
+     * <p>Indicates whether a DB instance supports using a dedicated log volume
+     * (DLV).</p>
+     */
+    inline bool SupportsDedicatedLogVolumeHasBeenSet() const { return m_supportsDedicatedLogVolumeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a DB instance supports using a dedicated log volume
+     * (DLV).</p>
+     */
+    inline void SetSupportsDedicatedLogVolume(bool value) { m_supportsDedicatedLogVolumeHasBeenSet = true; m_supportsDedicatedLogVolume = value; }
+
+    /**
+     * <p>Indicates whether a DB instance supports using a dedicated log volume
+     * (DLV).</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportsDedicatedLogVolume(bool value) { SetSupportsDedicatedLogVolume(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -1253,6 +1278,9 @@ namespace Model
 
     double m_maxStorageThroughputPerIops;
     bool m_maxStorageThroughputPerIopsHasBeenSet = false;
+
+    bool m_supportsDedicatedLogVolume;
+    bool m_supportsDedicatedLogVolumeHasBeenSet = false;
   };
 
 } // namespace Model

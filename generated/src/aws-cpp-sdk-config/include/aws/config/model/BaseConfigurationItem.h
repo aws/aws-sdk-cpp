@@ -164,7 +164,7 @@ namespace Model
      * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
      * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
      * was not recorded since the recorder excludes the recording of resources of this
-     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
+     * type</p> </li> </ul>
      */
     inline const ConfigurationItemStatus& GetConfigurationItemStatus() const{ return m_configurationItemStatus; }
 
@@ -177,7 +177,7 @@ namespace Model
      * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
      * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
      * was not recorded since the recorder excludes the recording of resources of this
-     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
+     * type</p> </li> </ul>
      */
     inline bool ConfigurationItemStatusHasBeenSet() const { return m_configurationItemStatusHasBeenSet; }
 
@@ -190,7 +190,7 @@ namespace Model
      * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
      * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
      * was not recorded since the recorder excludes the recording of resources of this
-     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
+     * type</p> </li> </ul>
      */
     inline void SetConfigurationItemStatus(const ConfigurationItemStatus& value) { m_configurationItemStatusHasBeenSet = true; m_configurationItemStatus = value; }
 
@@ -203,7 +203,7 @@ namespace Model
      * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
      * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
      * was not recorded since the recorder excludes the recording of resources of this
-     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
+     * type</p> </li> </ul>
      */
     inline void SetConfigurationItemStatus(ConfigurationItemStatus&& value) { m_configurationItemStatusHasBeenSet = true; m_configurationItemStatus = std::move(value); }
 
@@ -216,7 +216,7 @@ namespace Model
      * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
      * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
      * was not recorded since the recorder excludes the recording of resources of this
-     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
+     * type</p> </li> </ul>
      */
     inline BaseConfigurationItem& WithConfigurationItemStatus(const ConfigurationItemStatus& value) { SetConfigurationItemStatus(value); return *this;}
 
@@ -229,7 +229,7 @@ namespace Model
      * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
      * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
      * was not recorded since the recorder excludes the recording of resources of this
-     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
+     * type</p> </li> </ul>
      */
     inline BaseConfigurationItem& WithConfigurationItemStatus(ConfigurationItemStatus&& value) { SetConfigurationItemStatus(std::move(value)); return *this;}
 

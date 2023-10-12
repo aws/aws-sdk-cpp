@@ -115,6 +115,13 @@ namespace Model
      * load balancer to route requests to targets if it is unable to forward the
      * request to Amazon Web Services WAF. The possible values are <code>true</code>
      * and <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <p>The following attributes are supported by only Network Load Balancers:</p>
+     * <ul> <li> <p> <code>dns_record.client_routing_policy</code> - Indicates how
+     * traffic is distributed among the load balancer Availability Zones. The possible
+     * values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
+     * affinity, and <code>any_availability_zone</code> with 0 percent zonal
+     * affinity.</p> </li> </ul>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -194,6 +201,13 @@ namespace Model
      * load balancer to route requests to targets if it is unable to forward the
      * request to Amazon Web Services WAF. The possible values are <code>true</code>
      * and <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <p>The following attributes are supported by only Network Load Balancers:</p>
+     * <ul> <li> <p> <code>dns_record.client_routing_policy</code> - Indicates how
+     * traffic is distributed among the load balancer Availability Zones. The possible
+     * values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
+     * affinity, and <code>any_availability_zone</code> with 0 percent zonal
+     * affinity.</p> </li> </ul>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
@@ -273,6 +287,13 @@ namespace Model
      * load balancer to route requests to targets if it is unable to forward the
      * request to Amazon Web Services WAF. The possible values are <code>true</code>
      * and <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <p>The following attributes are supported by only Network Load Balancers:</p>
+     * <ul> <li> <p> <code>dns_record.client_routing_policy</code> - Indicates how
+     * traffic is distributed among the load balancer Availability Zones. The possible
+     * values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
+     * affinity, and <code>any_availability_zone</code> with 0 percent zonal
+     * affinity.</p> </li> </ul>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
@@ -352,6 +373,13 @@ namespace Model
      * load balancer to route requests to targets if it is unable to forward the
      * request to Amazon Web Services WAF. The possible values are <code>true</code>
      * and <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <p>The following attributes are supported by only Network Load Balancers:</p>
+     * <ul> <li> <p> <code>dns_record.client_routing_policy</code> - Indicates how
+     * traffic is distributed among the load balancer Availability Zones. The possible
+     * values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
+     * affinity, and <code>any_availability_zone</code> with 0 percent zonal
+     * affinity.</p> </li> </ul>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
@@ -431,6 +459,13 @@ namespace Model
      * load balancer to route requests to targets if it is unable to forward the
      * request to Amazon Web Services WAF. The possible values are <code>true</code>
      * and <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <p>The following attributes are supported by only Network Load Balancers:</p>
+     * <ul> <li> <p> <code>dns_record.client_routing_policy</code> - Indicates how
+     * traffic is distributed among the load balancer Availability Zones. The possible
+     * values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
+     * affinity, and <code>any_availability_zone</code> with 0 percent zonal
+     * affinity.</p> </li> </ul>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
@@ -510,6 +545,13 @@ namespace Model
      * load balancer to route requests to targets if it is unable to forward the
      * request to Amazon Web Services WAF. The possible values are <code>true</code>
      * and <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <p>The following attributes are supported by only Network Load Balancers:</p>
+     * <ul> <li> <p> <code>dns_record.client_routing_policy</code> - Indicates how
+     * traffic is distributed among the load balancer Availability Zones. The possible
+     * values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
+     * affinity, and <code>any_availability_zone</code> with 0 percent zonal
+     * affinity.</p> </li> </ul>
      */
     inline LoadBalancerAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
@@ -589,6 +631,13 @@ namespace Model
      * load balancer to route requests to targets if it is unable to forward the
      * request to Amazon Web Services WAF. The possible values are <code>true</code>
      * and <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <p>The following attributes are supported by only Network Load Balancers:</p>
+     * <ul> <li> <p> <code>dns_record.client_routing_policy</code> - Indicates how
+     * traffic is distributed among the load balancer Availability Zones. The possible
+     * values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
+     * affinity, and <code>any_availability_zone</code> with 0 percent zonal
+     * affinity.</p> </li> </ul>
      */
     inline LoadBalancerAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
@@ -668,6 +717,13 @@ namespace Model
      * load balancer to route requests to targets if it is unable to forward the
      * request to Amazon Web Services WAF. The possible values are <code>true</code>
      * and <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <p>The following attributes are supported by only Network Load Balancers:</p>
+     * <ul> <li> <p> <code>dns_record.client_routing_policy</code> - Indicates how
+     * traffic is distributed among the load balancer Availability Zones. The possible
+     * values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
+     * affinity, and <code>any_availability_zone</code> with 0 percent zonal
+     * affinity.</p> </li> </ul>
      */
     inline LoadBalancerAttribute& WithKey(const char* value) { SetKey(value); return *this;}
 

@@ -48,7 +48,9 @@ PendingModifiedValues::PendingModifiedValues() :
     m_resumeFullAutomationModeTimeHasBeenSet(false),
     m_storageThroughput(0),
     m_storageThroughputHasBeenSet(false),
-    m_engineHasBeenSet(false)
+    m_engineHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false)
 {
 }
 
@@ -80,7 +82,9 @@ PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) :
     m_resumeFullAutomationModeTimeHasBeenSet(false),
     m_storageThroughput(0),
     m_storageThroughputHasBeenSet(false),
-    m_engineHasBeenSet(false)
+    m_engineHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -217,6 +221,12 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
     }
+    XmlNode dedicatedLogVolumeNode = resultNode.FirstChild("DedicatedLogVolume");
+    if(!dedicatedLogVolumeNode.IsNull())
+    {
+      m_dedicatedLogVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dedicatedLogVolumeNode.GetText()).c_str()).c_str());
+      m_dedicatedLogVolumeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -332,6 +342,11 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
+  }
+
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -423,6 +438,10 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_engineHasBeenSet)
   {
       oStream << location << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+  }
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+      oStream << location << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
 }
 

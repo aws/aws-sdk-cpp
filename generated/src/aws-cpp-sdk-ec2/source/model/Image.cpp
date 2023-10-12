@@ -62,7 +62,8 @@ Image::Image() :
     m_tpmSupportHasBeenSet(false),
     m_deprecationTimeHasBeenSet(false),
     m_imdsSupport(ImdsSupportValues::NOT_SET),
-    m_imdsSupportHasBeenSet(false)
+    m_imdsSupportHasBeenSet(false),
+    m_sourceInstanceIdHasBeenSet(false)
 {
 }
 
@@ -108,7 +109,8 @@ Image::Image(const XmlNode& xmlNode) :
     m_tpmSupportHasBeenSet(false),
     m_deprecationTimeHasBeenSet(false),
     m_imdsSupport(ImdsSupportValues::NOT_SET),
-    m_imdsSupportHasBeenSet(false)
+    m_imdsSupportHasBeenSet(false),
+    m_sourceInstanceIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -317,6 +319,12 @@ Image& Image::operator =(const XmlNode& xmlNode)
       m_imdsSupport = ImdsSupportValuesMapper::GetImdsSupportValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(imdsSupportNode.GetText()).c_str()).c_str());
       m_imdsSupportHasBeenSet = true;
     }
+    XmlNode sourceInstanceIdNode = resultNode.FirstChild("sourceInstanceId");
+    if(!sourceInstanceIdNode.IsNull())
+    {
+      m_sourceInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(sourceInstanceIdNode.GetText());
+      m_sourceInstanceIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -494,6 +502,11 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".ImdsSupport=" << ImdsSupportValuesMapper::GetNameForImdsSupportValues(m_imdsSupport) << "&";
   }
 
+  if(m_sourceInstanceIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SourceInstanceId=" << StringUtils::URLEncode(m_sourceInstanceId.c_str()) << "&";
+  }
+
 }
 
 void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -637,6 +650,10 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_imdsSupportHasBeenSet)
   {
       oStream << location << ".ImdsSupport=" << ImdsSupportValuesMapper::GetNameForImdsSupportValues(m_imdsSupport) << "&";
+  }
+  if(m_sourceInstanceIdHasBeenSet)
+  {
+      oStream << location << ".SourceInstanceId=" << StringUtils::URLEncode(m_sourceInstanceId.c_str()) << "&";
   }
 }
 
