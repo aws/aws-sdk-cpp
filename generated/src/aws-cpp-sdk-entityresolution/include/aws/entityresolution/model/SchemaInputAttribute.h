@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>An object containing <code>FieldField</code>, <code>Type</code>,
+   * <p>An object containing <code>FieldName</code>, <code>Type</code>,
    * <code>GroupName</code>, and <code>MatchKey</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/SchemaInputAttribute">AWS
    * API Reference</a></p>
@@ -156,98 +156,139 @@ namespace Model
     /**
      * <p>A key that allows grouping of multiple input attributes into a unified
      * matching group. For example, let's consider a scenario where the source table
-     * contains various addresses, such as business_address and shipping_address. By
-     * assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity
-     * Resolution will match records across these fields to create a consolidated
-     * matching group. If no <code>MatchKey</code> is specified for a column, it won't
-     * be utilized for matching purposes but will still be included in the output
-     * table.</p>
+     * contains various addresses, such as <code>business_address</code> and
+     * <code>shipping_address</code>. By assigning the <code>MatchKey</code>
+     * <i>Address</i> to both attributes, Entity Resolution will match records across
+     * these fields to create a consolidated matching group. If no
+     * <code>MatchKey</code> is specified for a column, it won't be utilized for
+     * matching purposes but will still be included in the output table.</p>
      */
     inline const Aws::String& GetMatchKey() const{ return m_matchKey; }
 
     /**
      * <p>A key that allows grouping of multiple input attributes into a unified
      * matching group. For example, let's consider a scenario where the source table
-     * contains various addresses, such as business_address and shipping_address. By
-     * assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity
-     * Resolution will match records across these fields to create a consolidated
-     * matching group. If no <code>MatchKey</code> is specified for a column, it won't
-     * be utilized for matching purposes but will still be included in the output
-     * table.</p>
+     * contains various addresses, such as <code>business_address</code> and
+     * <code>shipping_address</code>. By assigning the <code>MatchKey</code>
+     * <i>Address</i> to both attributes, Entity Resolution will match records across
+     * these fields to create a consolidated matching group. If no
+     * <code>MatchKey</code> is specified for a column, it won't be utilized for
+     * matching purposes but will still be included in the output table.</p>
      */
     inline bool MatchKeyHasBeenSet() const { return m_matchKeyHasBeenSet; }
 
     /**
      * <p>A key that allows grouping of multiple input attributes into a unified
      * matching group. For example, let's consider a scenario where the source table
-     * contains various addresses, such as business_address and shipping_address. By
-     * assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity
-     * Resolution will match records across these fields to create a consolidated
-     * matching group. If no <code>MatchKey</code> is specified for a column, it won't
-     * be utilized for matching purposes but will still be included in the output
-     * table.</p>
+     * contains various addresses, such as <code>business_address</code> and
+     * <code>shipping_address</code>. By assigning the <code>MatchKey</code>
+     * <i>Address</i> to both attributes, Entity Resolution will match records across
+     * these fields to create a consolidated matching group. If no
+     * <code>MatchKey</code> is specified for a column, it won't be utilized for
+     * matching purposes but will still be included in the output table.</p>
      */
     inline void SetMatchKey(const Aws::String& value) { m_matchKeyHasBeenSet = true; m_matchKey = value; }
 
     /**
      * <p>A key that allows grouping of multiple input attributes into a unified
      * matching group. For example, let's consider a scenario where the source table
-     * contains various addresses, such as business_address and shipping_address. By
-     * assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity
-     * Resolution will match records across these fields to create a consolidated
-     * matching group. If no <code>MatchKey</code> is specified for a column, it won't
-     * be utilized for matching purposes but will still be included in the output
-     * table.</p>
+     * contains various addresses, such as <code>business_address</code> and
+     * <code>shipping_address</code>. By assigning the <code>MatchKey</code>
+     * <i>Address</i> to both attributes, Entity Resolution will match records across
+     * these fields to create a consolidated matching group. If no
+     * <code>MatchKey</code> is specified for a column, it won't be utilized for
+     * matching purposes but will still be included in the output table.</p>
      */
     inline void SetMatchKey(Aws::String&& value) { m_matchKeyHasBeenSet = true; m_matchKey = std::move(value); }
 
     /**
      * <p>A key that allows grouping of multiple input attributes into a unified
      * matching group. For example, let's consider a scenario where the source table
-     * contains various addresses, such as business_address and shipping_address. By
-     * assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity
-     * Resolution will match records across these fields to create a consolidated
-     * matching group. If no <code>MatchKey</code> is specified for a column, it won't
-     * be utilized for matching purposes but will still be included in the output
-     * table.</p>
+     * contains various addresses, such as <code>business_address</code> and
+     * <code>shipping_address</code>. By assigning the <code>MatchKey</code>
+     * <i>Address</i> to both attributes, Entity Resolution will match records across
+     * these fields to create a consolidated matching group. If no
+     * <code>MatchKey</code> is specified for a column, it won't be utilized for
+     * matching purposes but will still be included in the output table.</p>
      */
     inline void SetMatchKey(const char* value) { m_matchKeyHasBeenSet = true; m_matchKey.assign(value); }
 
     /**
      * <p>A key that allows grouping of multiple input attributes into a unified
      * matching group. For example, let's consider a scenario where the source table
-     * contains various addresses, such as business_address and shipping_address. By
-     * assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity
-     * Resolution will match records across these fields to create a consolidated
-     * matching group. If no <code>MatchKey</code> is specified for a column, it won't
-     * be utilized for matching purposes but will still be included in the output
-     * table.</p>
+     * contains various addresses, such as <code>business_address</code> and
+     * <code>shipping_address</code>. By assigning the <code>MatchKey</code>
+     * <i>Address</i> to both attributes, Entity Resolution will match records across
+     * these fields to create a consolidated matching group. If no
+     * <code>MatchKey</code> is specified for a column, it won't be utilized for
+     * matching purposes but will still be included in the output table.</p>
      */
     inline SchemaInputAttribute& WithMatchKey(const Aws::String& value) { SetMatchKey(value); return *this;}
 
     /**
      * <p>A key that allows grouping of multiple input attributes into a unified
      * matching group. For example, let's consider a scenario where the source table
-     * contains various addresses, such as business_address and shipping_address. By
-     * assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity
-     * Resolution will match records across these fields to create a consolidated
-     * matching group. If no <code>MatchKey</code> is specified for a column, it won't
-     * be utilized for matching purposes but will still be included in the output
-     * table.</p>
+     * contains various addresses, such as <code>business_address</code> and
+     * <code>shipping_address</code>. By assigning the <code>MatchKey</code>
+     * <i>Address</i> to both attributes, Entity Resolution will match records across
+     * these fields to create a consolidated matching group. If no
+     * <code>MatchKey</code> is specified for a column, it won't be utilized for
+     * matching purposes but will still be included in the output table.</p>
      */
     inline SchemaInputAttribute& WithMatchKey(Aws::String&& value) { SetMatchKey(std::move(value)); return *this;}
 
     /**
      * <p>A key that allows grouping of multiple input attributes into a unified
      * matching group. For example, let's consider a scenario where the source table
-     * contains various addresses, such as business_address and shipping_address. By
-     * assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity
-     * Resolution will match records across these fields to create a consolidated
-     * matching group. If no <code>MatchKey</code> is specified for a column, it won't
-     * be utilized for matching purposes but will still be included in the output
-     * table.</p>
+     * contains various addresses, such as <code>business_address</code> and
+     * <code>shipping_address</code>. By assigning the <code>MatchKey</code>
+     * <i>Address</i> to both attributes, Entity Resolution will match records across
+     * these fields to create a consolidated matching group. If no
+     * <code>MatchKey</code> is specified for a column, it won't be utilized for
+     * matching purposes but will still be included in the output table.</p>
      */
     inline SchemaInputAttribute& WithMatchKey(const char* value) { SetMatchKey(value); return *this;}
+
+
+    /**
+     * <p>The subtype of the attribute, selected from a list of values.</p>
+     */
+    inline const Aws::String& GetSubType() const{ return m_subType; }
+
+    /**
+     * <p>The subtype of the attribute, selected from a list of values.</p>
+     */
+    inline bool SubTypeHasBeenSet() const { return m_subTypeHasBeenSet; }
+
+    /**
+     * <p>The subtype of the attribute, selected from a list of values.</p>
+     */
+    inline void SetSubType(const Aws::String& value) { m_subTypeHasBeenSet = true; m_subType = value; }
+
+    /**
+     * <p>The subtype of the attribute, selected from a list of values.</p>
+     */
+    inline void SetSubType(Aws::String&& value) { m_subTypeHasBeenSet = true; m_subType = std::move(value); }
+
+    /**
+     * <p>The subtype of the attribute, selected from a list of values.</p>
+     */
+    inline void SetSubType(const char* value) { m_subTypeHasBeenSet = true; m_subType.assign(value); }
+
+    /**
+     * <p>The subtype of the attribute, selected from a list of values.</p>
+     */
+    inline SchemaInputAttribute& WithSubType(const Aws::String& value) { SetSubType(value); return *this;}
+
+    /**
+     * <p>The subtype of the attribute, selected from a list of values.</p>
+     */
+    inline SchemaInputAttribute& WithSubType(Aws::String&& value) { SetSubType(std::move(value)); return *this;}
+
+    /**
+     * <p>The subtype of the attribute, selected from a list of values.</p>
+     */
+    inline SchemaInputAttribute& WithSubType(const char* value) { SetSubType(value); return *this;}
 
 
     /**
@@ -290,6 +331,9 @@ namespace Model
 
     Aws::String m_matchKey;
     bool m_matchKeyHasBeenSet = false;
+
+    Aws::String m_subType;
+    bool m_subTypeHasBeenSet = false;
 
     SchemaAttributeType m_type;
     bool m_typeHasBeenSet = false;

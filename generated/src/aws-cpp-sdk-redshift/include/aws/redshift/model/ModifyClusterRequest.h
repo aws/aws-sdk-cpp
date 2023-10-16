@@ -484,15 +484,17 @@ namespace Model
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the admin user account for a cluster if the password is
-     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
-     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
-     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
-     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
-     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
+     * <p>You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is <code>true</code>.</p>  <p>Operations
+     * never return the password, so this operation provides a way to regain access to
+     * the admin user account for a cluster if the password is lost.</p> 
+     * <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li> <p>Must be
+     * between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least
+     * one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase
+     * letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any
+     * printable ASCII character (ASCII code 33-126) except <code>'</code> (single
+     * quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
+     * <code>@</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
@@ -501,15 +503,17 @@ namespace Model
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the admin user account for a cluster if the password is
-     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
-     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
-     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
-     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
-     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
+     * <p>You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is <code>true</code>.</p>  <p>Operations
+     * never return the password, so this operation provides a way to regain access to
+     * the admin user account for a cluster if the password is lost.</p> 
+     * <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li> <p>Must be
+     * between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least
+     * one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase
+     * letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any
+     * printable ASCII character (ASCII code 33-126) except <code>'</code> (single
+     * quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
+     * <code>@</code>.</p> </li> </ul>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
@@ -518,15 +522,17 @@ namespace Model
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the admin user account for a cluster if the password is
-     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
-     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
-     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
-     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
-     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
+     * <p>You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is <code>true</code>.</p>  <p>Operations
+     * never return the password, so this operation provides a way to regain access to
+     * the admin user account for a cluster if the password is lost.</p> 
+     * <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li> <p>Must be
+     * between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least
+     * one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase
+     * letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any
+     * printable ASCII character (ASCII code 33-126) except <code>'</code> (single
+     * quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
+     * <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
@@ -535,15 +541,17 @@ namespace Model
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the admin user account for a cluster if the password is
-     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
-     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
-     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
-     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
-     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
+     * <p>You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is <code>true</code>.</p>  <p>Operations
+     * never return the password, so this operation provides a way to regain access to
+     * the admin user account for a cluster if the password is lost.</p> 
+     * <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li> <p>Must be
+     * between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least
+     * one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase
+     * letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any
+     * printable ASCII character (ASCII code 33-126) except <code>'</code> (single
+     * quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
+     * <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
@@ -552,15 +560,17 @@ namespace Model
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the admin user account for a cluster if the password is
-     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
-     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
-     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
-     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
-     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
+     * <p>You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is <code>true</code>.</p>  <p>Operations
+     * never return the password, so this operation provides a way to regain access to
+     * the admin user account for a cluster if the password is lost.</p> 
+     * <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li> <p>Must be
+     * between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least
+     * one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase
+     * letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any
+     * printable ASCII character (ASCII code 33-126) except <code>'</code> (single
+     * quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
+     * <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
@@ -569,15 +579,17 @@ namespace Model
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the admin user account for a cluster if the password is
-     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
-     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
-     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
-     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
-     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
+     * <p>You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is <code>true</code>.</p>  <p>Operations
+     * never return the password, so this operation provides a way to regain access to
+     * the admin user account for a cluster if the password is lost.</p> 
+     * <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li> <p>Must be
+     * between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least
+     * one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase
+     * letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any
+     * printable ASCII character (ASCII code 33-126) except <code>'</code> (single
+     * quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
+     * <code>@</code>.</p> </li> </ul>
      */
     inline ModifyClusterRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
@@ -586,15 +598,17 @@ namespace Model
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the admin user account for a cluster if the password is
-     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
-     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
-     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
-     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
-     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
+     * <p>You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is <code>true</code>.</p>  <p>Operations
+     * never return the password, so this operation provides a way to regain access to
+     * the admin user account for a cluster if the password is lost.</p> 
+     * <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li> <p>Must be
+     * between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least
+     * one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase
+     * letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any
+     * printable ASCII character (ASCII code 33-126) except <code>'</code> (single
+     * quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
+     * <code>@</code>.</p> </li> </ul>
      */
     inline ModifyClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
@@ -603,15 +617,17 @@ namespace Model
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the admin user account for a cluster if the password is
-     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
-     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
-     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
-     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
-     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
+     * <p>You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is <code>true</code>.</p>  <p>Operations
+     * never return the password, so this operation provides a way to regain access to
+     * the admin user account for a cluster if the password is lost.</p> 
+     * <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li> <p>Must be
+     * between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least
+     * one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase
+     * letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any
+     * printable ASCII character (ASCII code 33-126) except <code>'</code> (single
+     * quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
+     * <code>@</code>.</p> </li> </ul>
      */
     inline ModifyClusterRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -1617,6 +1633,100 @@ namespace Model
      */
     inline ModifyClusterRequest& WithPort(int value) { SetPort(value); return *this;}
 
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this
+     * cluster's admin credentials. You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code>
+     * is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for
+     * the admin user account's password. </p>
+     */
+    inline bool GetManageMasterPassword() const{ return m_manageMasterPassword; }
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this
+     * cluster's admin credentials. You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code>
+     * is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for
+     * the admin user account's password. </p>
+     */
+    inline bool ManageMasterPasswordHasBeenSet() const { return m_manageMasterPasswordHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this
+     * cluster's admin credentials. You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code>
+     * is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for
+     * the admin user account's password. </p>
+     */
+    inline void SetManageMasterPassword(bool value) { m_manageMasterPasswordHasBeenSet = true; m_manageMasterPassword = value; }
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this
+     * cluster's admin credentials. You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code>
+     * is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for
+     * the admin user account's password. </p>
+     */
+    inline ModifyClusterRequest& WithManageMasterPassword(bool value) { SetManageMasterPassword(value); return *this;}
+
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline const Aws::String& GetMasterPasswordSecretKmsKeyId() const{ return m_masterPasswordSecretKmsKeyId; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline bool MasterPasswordSecretKmsKeyIdHasBeenSet() const { return m_masterPasswordSecretKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline void SetMasterPasswordSecretKmsKeyId(const Aws::String& value) { m_masterPasswordSecretKmsKeyIdHasBeenSet = true; m_masterPasswordSecretKmsKeyId = value; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline void SetMasterPasswordSecretKmsKeyId(Aws::String&& value) { m_masterPasswordSecretKmsKeyIdHasBeenSet = true; m_masterPasswordSecretKmsKeyId = std::move(value); }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline void SetMasterPasswordSecretKmsKeyId(const char* value) { m_masterPasswordSecretKmsKeyIdHasBeenSet = true; m_masterPasswordSecretKmsKeyId.assign(value); }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline ModifyClusterRequest& WithMasterPasswordSecretKmsKeyId(const Aws::String& value) { SetMasterPasswordSecretKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline ModifyClusterRequest& WithMasterPasswordSecretKmsKeyId(Aws::String&& value) { SetMasterPasswordSecretKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline ModifyClusterRequest& WithMasterPasswordSecretKmsKeyId(const char* value) { SetMasterPasswordSecretKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1693,6 +1803,12 @@ namespace Model
 
     int m_port;
     bool m_portHasBeenSet = false;
+
+    bool m_manageMasterPassword;
+    bool m_manageMasterPasswordHasBeenSet = false;
+
+    Aws::String m_masterPasswordSecretKmsKeyId;
+    bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

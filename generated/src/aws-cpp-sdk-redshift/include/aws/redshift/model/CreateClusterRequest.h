@@ -561,97 +561,105 @@ namespace Model
 
     /**
      * <p>The password associated with the admin user account for the cluster that is
-     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
-     * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
-     * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
-     * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
-     * character (ASCII code 33-126) except <code>'</code> (single quote),
-     * <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
-     * <code>@</code>.</p> </li> </ul>
+     * being created.</p> <p>You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is <code>true</code>.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
+     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
+     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
      * <p>The password associated with the admin user account for the cluster that is
-     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
-     * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
-     * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
-     * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
-     * character (ASCII code 33-126) except <code>'</code> (single quote),
-     * <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
-     * <code>@</code>.</p> </li> </ul>
+     * being created.</p> <p>You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is <code>true</code>.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
+     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
+     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
      * <p>The password associated with the admin user account for the cluster that is
-     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
-     * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
-     * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
-     * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
-     * character (ASCII code 33-126) except <code>'</code> (single quote),
-     * <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
-     * <code>@</code>.</p> </li> </ul>
+     * being created.</p> <p>You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is <code>true</code>.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
+     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
+     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
      * <p>The password associated with the admin user account for the cluster that is
-     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
-     * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
-     * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
-     * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
-     * character (ASCII code 33-126) except <code>'</code> (single quote),
-     * <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
-     * <code>@</code>.</p> </li> </ul>
+     * being created.</p> <p>You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is <code>true</code>.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
+     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
+     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
      * <p>The password associated with the admin user account for the cluster that is
-     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
-     * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
-     * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
-     * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
-     * character (ASCII code 33-126) except <code>'</code> (single quote),
-     * <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
-     * <code>@</code>.</p> </li> </ul>
+     * being created.</p> <p>You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is <code>true</code>.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
+     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
+     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
      * <p>The password associated with the admin user account for the cluster that is
-     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
-     * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
-     * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
-     * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
-     * character (ASCII code 33-126) except <code>'</code> (single quote),
-     * <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
-     * <code>@</code>.</p> </li> </ul>
+     * being created.</p> <p>You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is <code>true</code>.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
+     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
+     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline CreateClusterRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
      * <p>The password associated with the admin user account for the cluster that is
-     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
-     * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
-     * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
-     * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
-     * character (ASCII code 33-126) except <code>'</code> (single quote),
-     * <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
-     * <code>@</code>.</p> </li> </ul>
+     * being created.</p> <p>You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is <code>true</code>.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
+     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
+     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline CreateClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
      * <p>The password associated with the admin user account for the cluster that is
-     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
-     * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
-     * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
-     * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
-     * character (ASCII code 33-126) except <code>'</code> (single quote),
-     * <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
-     * <code>@</code>.</p> </li> </ul>
+     * being created.</p> <p>You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is <code>true</code>.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
+     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
+     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline CreateClusterRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -2185,6 +2193,100 @@ namespace Model
      */
     inline CreateClusterRequest& WithLoadSampleData(const char* value) { SetLoadSampleData(value); return *this;}
 
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this
+     * cluster's admin credentials. You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code>
+     * is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for
+     * the admin user account's password. </p>
+     */
+    inline bool GetManageMasterPassword() const{ return m_manageMasterPassword; }
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this
+     * cluster's admin credentials. You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code>
+     * is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for
+     * the admin user account's password. </p>
+     */
+    inline bool ManageMasterPasswordHasBeenSet() const { return m_manageMasterPasswordHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this
+     * cluster's admin credentials. You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code>
+     * is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for
+     * the admin user account's password. </p>
+     */
+    inline void SetManageMasterPassword(bool value) { m_manageMasterPasswordHasBeenSet = true; m_manageMasterPassword = value; }
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this
+     * cluster's admin credentials. You can't use <code>MasterUserPassword</code> if
+     * <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code>
+     * is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for
+     * the admin user account's password. </p>
+     */
+    inline CreateClusterRequest& WithManageMasterPassword(bool value) { SetManageMasterPassword(value); return *this;}
+
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline const Aws::String& GetMasterPasswordSecretKmsKeyId() const{ return m_masterPasswordSecretKmsKeyId; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline bool MasterPasswordSecretKmsKeyIdHasBeenSet() const { return m_masterPasswordSecretKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline void SetMasterPasswordSecretKmsKeyId(const Aws::String& value) { m_masterPasswordSecretKmsKeyIdHasBeenSet = true; m_masterPasswordSecretKmsKeyId = value; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline void SetMasterPasswordSecretKmsKeyId(Aws::String&& value) { m_masterPasswordSecretKmsKeyIdHasBeenSet = true; m_masterPasswordSecretKmsKeyId = std::move(value); }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline void SetMasterPasswordSecretKmsKeyId(const char* value) { m_masterPasswordSecretKmsKeyIdHasBeenSet = true; m_masterPasswordSecretKmsKeyId.assign(value); }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline CreateClusterRequest& WithMasterPasswordSecretKmsKeyId(const Aws::String& value) { SetMasterPasswordSecretKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline CreateClusterRequest& WithMasterPasswordSecretKmsKeyId(Aws::String&& value) { SetMasterPasswordSecretKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline CreateClusterRequest& WithMasterPasswordSecretKmsKeyId(const char* value) { SetMasterPasswordSecretKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -2288,6 +2390,12 @@ namespace Model
 
     Aws::String m_loadSampleData;
     bool m_loadSampleDataHasBeenSet = false;
+
+    bool m_manageMasterPassword;
+    bool m_manageMasterPasswordHasBeenSet = false;
+
+    Aws::String m_masterPasswordSecretKmsKeyId;
+    bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

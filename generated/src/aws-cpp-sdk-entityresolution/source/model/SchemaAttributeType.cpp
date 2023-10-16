@@ -39,6 +39,7 @@ namespace Aws
         static const int UNIQUE_ID_HASH = HashingUtils::HashString("UNIQUE_ID");
         static const int DATE_HASH = HashingUtils::HashString("DATE");
         static const int STRING_HASH = HashingUtils::HashString("STRING");
+        static const int PROVIDER_ID_HASH = HashingUtils::HashString("PROVIDER_ID");
 
 
         SchemaAttributeType GetSchemaAttributeTypeForName(const Aws::String& name)
@@ -120,6 +121,10 @@ namespace Aws
           {
             return SchemaAttributeType::STRING;
           }
+          else if (hashCode == PROVIDER_ID_HASH)
+          {
+            return SchemaAttributeType::PROVIDER_ID;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -174,6 +179,8 @@ namespace Aws
             return "DATE";
           case SchemaAttributeType::STRING:
             return "STRING";
+          case SchemaAttributeType::PROVIDER_ID:
+            return "PROVIDER_ID";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

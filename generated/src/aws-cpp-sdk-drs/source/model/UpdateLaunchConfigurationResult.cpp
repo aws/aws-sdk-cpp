@@ -63,6 +63,12 @@ UpdateLaunchConfigurationResult& UpdateLaunchConfigurationResult::operator =(con
 
   }
 
+  if(jsonValue.ValueExists("launchIntoInstanceProperties"))
+  {
+    m_launchIntoInstanceProperties = jsonValue.GetObject("launchIntoInstanceProperties");
+
+  }
+
   if(jsonValue.ValueExists("licensing"))
   {
     m_licensing = jsonValue.GetObject("licensing");

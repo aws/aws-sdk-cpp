@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     TraceId,
-    Event
+    Event,
+    Service
   };
 
 namespace TimeRangeTypeMapper

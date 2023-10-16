@@ -1431,7 +1431,7 @@ namespace OpenSearchService
 
         /**
          * <p>Modifies the cluster configuration of the specified Amazon OpenSearch Service
-         * domain.sl</p><p><h3>See Also:</h3>   <a
+         * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDomainConfig">AWS
          * API Reference</a></p>
          */

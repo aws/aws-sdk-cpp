@@ -89,6 +89,35 @@ namespace EntityResolution
         virtual ~EntityResolutionClient();
 
         /**
+         * <p>Creates an <code>IdMappingWorkflow</code> object which stores the
+         * configuration of the data processing job to be run. Each
+         * <code>IdMappingWorkflow</code> must have a unique workflow name. To modify an
+         * existing workflow, use the <code>UpdateIdMappingWorkflow</code>
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdMappingWorkflow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateIdMappingWorkflowOutcome CreateIdMappingWorkflow(const Model::CreateIdMappingWorkflowRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateIdMappingWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateIdMappingWorkflowRequestT = Model::CreateIdMappingWorkflowRequest>
+        Model::CreateIdMappingWorkflowOutcomeCallable CreateIdMappingWorkflowCallable(const CreateIdMappingWorkflowRequestT& request) const
+        {
+            return SubmitCallable(&EntityResolutionClient::CreateIdMappingWorkflow, request);
+        }
+
+        /**
+         * An Async wrapper for CreateIdMappingWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateIdMappingWorkflowRequestT = Model::CreateIdMappingWorkflowRequest>
+        void CreateIdMappingWorkflowAsync(const CreateIdMappingWorkflowRequestT& request, const CreateIdMappingWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EntityResolutionClient::CreateIdMappingWorkflow, request, handler, context);
+        }
+
+        /**
          * <p>Creates a <code>MatchingWorkflow</code> object which stores the configuration
          * of the data processing job to be run. It is important to note that there should
          * not be a pre-existing <code>MatchingWorkflow</code> with the same name. To
@@ -146,6 +175,33 @@ namespace EntityResolution
         }
 
         /**
+         * <p>Deletes the <code>IdMappingWorkflow</code> with a given name. This operation
+         * will succeed even if a workflow with the given name does not
+         * exist.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdMappingWorkflow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteIdMappingWorkflowOutcome DeleteIdMappingWorkflow(const Model::DeleteIdMappingWorkflowRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteIdMappingWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteIdMappingWorkflowRequestT = Model::DeleteIdMappingWorkflowRequest>
+        Model::DeleteIdMappingWorkflowOutcomeCallable DeleteIdMappingWorkflowCallable(const DeleteIdMappingWorkflowRequestT& request) const
+        {
+            return SubmitCallable(&EntityResolutionClient::DeleteIdMappingWorkflow, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteIdMappingWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteIdMappingWorkflowRequestT = Model::DeleteIdMappingWorkflowRequest>
+        void DeleteIdMappingWorkflowAsync(const DeleteIdMappingWorkflowRequestT& request, const DeleteIdMappingWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EntityResolutionClient::DeleteIdMappingWorkflow, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the <code>MatchingWorkflow</code> with a given name. This operation
          * will succeed even if a workflow with the given name does not
          * exist.</p><p><h3>See Also:</h3>   <a
@@ -175,8 +231,8 @@ namespace EntityResolution
         /**
          * <p>Deletes the <code>SchemaMapping</code> with a given name. This operation will
          * succeed even if a schema with the given name does not exist. This operation will
-         * fail if there is a <code>DataIntegrationWorkflow</code> object that references
-         * the <code>SchemaMapping</code> in the workflow's
+         * fail if there is a <code>MatchingWorkflow</code> object that references the
+         * <code>SchemaMapping</code> in the workflow's
          * <code>InputSourceConfig</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteSchemaMapping">AWS
          * API Reference</a></p>
@@ -199,6 +255,58 @@ namespace EntityResolution
         void DeleteSchemaMappingAsync(const DeleteSchemaMappingRequestT& request, const DeleteSchemaMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EntityResolutionClient::DeleteSchemaMapping, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the status, metrics, and errors (if there are any) that are associated
+         * with a job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdMappingJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetIdMappingJobOutcome GetIdMappingJob(const Model::GetIdMappingJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetIdMappingJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetIdMappingJobRequestT = Model::GetIdMappingJobRequest>
+        Model::GetIdMappingJobOutcomeCallable GetIdMappingJobCallable(const GetIdMappingJobRequestT& request) const
+        {
+            return SubmitCallable(&EntityResolutionClient::GetIdMappingJob, request);
+        }
+
+        /**
+         * An Async wrapper for GetIdMappingJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetIdMappingJobRequestT = Model::GetIdMappingJobRequest>
+        void GetIdMappingJobAsync(const GetIdMappingJobRequestT& request, const GetIdMappingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EntityResolutionClient::GetIdMappingJob, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the <code>IdMappingWorkflow</code> with a given name, if it
+         * exists.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdMappingWorkflow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetIdMappingWorkflowOutcome GetIdMappingWorkflow(const Model::GetIdMappingWorkflowRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetIdMappingWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetIdMappingWorkflowRequestT = Model::GetIdMappingWorkflowRequest>
+        Model::GetIdMappingWorkflowOutcomeCallable GetIdMappingWorkflowCallable(const GetIdMappingWorkflowRequestT& request) const
+        {
+            return SubmitCallable(&EntityResolutionClient::GetIdMappingWorkflow, request);
+        }
+
+        /**
+         * An Async wrapper for GetIdMappingWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetIdMappingWorkflowRequestT = Model::GetIdMappingWorkflowRequest>
+        void GetIdMappingWorkflowAsync(const GetIdMappingWorkflowRequestT& request, const GetIdMappingWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EntityResolutionClient::GetIdMappingWorkflow, request, handler, context);
         }
 
         /**
@@ -280,6 +388,32 @@ namespace EntityResolution
         }
 
         /**
+         * <p>Returns the <code>ProviderService</code> of a given name.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetProviderService">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetProviderServiceOutcome GetProviderService(const Model::GetProviderServiceRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetProviderService that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetProviderServiceRequestT = Model::GetProviderServiceRequest>
+        Model::GetProviderServiceOutcomeCallable GetProviderServiceCallable(const GetProviderServiceRequestT& request) const
+        {
+            return SubmitCallable(&EntityResolutionClient::GetProviderService, request);
+        }
+
+        /**
+         * An Async wrapper for GetProviderService that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetProviderServiceRequestT = Model::GetProviderServiceRequest>
+        void GetProviderServiceAsync(const GetProviderServiceRequestT& request, const GetProviderServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EntityResolutionClient::GetProviderService, request, handler, context);
+        }
+
+        /**
          * <p>Returns the SchemaMapping of a given name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetSchemaMapping">AWS
          * API Reference</a></p>
@@ -302,6 +436,57 @@ namespace EntityResolution
         void GetSchemaMappingAsync(const GetSchemaMappingRequestT& request, const GetSchemaMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EntityResolutionClient::GetSchemaMapping, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all ID mapping jobs for a given workflow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIdMappingJobsOutcome ListIdMappingJobs(const Model::ListIdMappingJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListIdMappingJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListIdMappingJobsRequestT = Model::ListIdMappingJobsRequest>
+        Model::ListIdMappingJobsOutcomeCallable ListIdMappingJobsCallable(const ListIdMappingJobsRequestT& request) const
+        {
+            return SubmitCallable(&EntityResolutionClient::ListIdMappingJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListIdMappingJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListIdMappingJobsRequestT = Model::ListIdMappingJobsRequest>
+        void ListIdMappingJobsAsync(const ListIdMappingJobsRequestT& request, const ListIdMappingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EntityResolutionClient::ListIdMappingJobs, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of all the <code>IdMappingWorkflows</code> that have been
+         * created for an Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingWorkflows">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIdMappingWorkflowsOutcome ListIdMappingWorkflows(const Model::ListIdMappingWorkflowsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListIdMappingWorkflows that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListIdMappingWorkflowsRequestT = Model::ListIdMappingWorkflowsRequest>
+        Model::ListIdMappingWorkflowsOutcomeCallable ListIdMappingWorkflowsCallable(const ListIdMappingWorkflowsRequestT& request) const
+        {
+            return SubmitCallable(&EntityResolutionClient::ListIdMappingWorkflows, request);
+        }
+
+        /**
+         * An Async wrapper for ListIdMappingWorkflows that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListIdMappingWorkflowsRequestT = Model::ListIdMappingWorkflowsRequest>
+        void ListIdMappingWorkflowsAsync(const ListIdMappingWorkflowsRequestT& request, const ListIdMappingWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EntityResolutionClient::ListIdMappingWorkflows, request, handler, context);
         }
 
         /**
@@ -356,6 +541,32 @@ namespace EntityResolution
         }
 
         /**
+         * <p>Returns a list of all the <code>ProviderServices</code> that are available in
+         * this Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListProviderServices">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListProviderServicesOutcome ListProviderServices(const Model::ListProviderServicesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListProviderServices that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListProviderServicesRequestT = Model::ListProviderServicesRequest>
+        Model::ListProviderServicesOutcomeCallable ListProviderServicesCallable(const ListProviderServicesRequestT& request) const
+        {
+            return SubmitCallable(&EntityResolutionClient::ListProviderServices, request);
+        }
+
+        /**
+         * An Async wrapper for ListProviderServices that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListProviderServicesRequestT = Model::ListProviderServicesRequest>
+        void ListProviderServicesAsync(const ListProviderServicesRequestT& request, const ListProviderServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EntityResolutionClient::ListProviderServices, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of all the <code>SchemaMappings</code> that have been created
          * for an Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListSchemaMappings">AWS
@@ -406,6 +617,33 @@ namespace EntityResolution
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EntityResolutionClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Starts the <code>IdMappingJob</code> of a workflow. The workflow must have
+         * previously been created using the <code>CreateIdMappingWorkflow</code>
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/StartIdMappingJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartIdMappingJobOutcome StartIdMappingJob(const Model::StartIdMappingJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartIdMappingJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartIdMappingJobRequestT = Model::StartIdMappingJobRequest>
+        Model::StartIdMappingJobOutcomeCallable StartIdMappingJobCallable(const StartIdMappingJobRequestT& request) const
+        {
+            return SubmitCallable(&EntityResolutionClient::StartIdMappingJob, request);
+        }
+
+        /**
+         * An Async wrapper for StartIdMappingJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartIdMappingJobRequestT = Model::StartIdMappingJobRequest>
+        void StartIdMappingJobAsync(const StartIdMappingJobRequestT& request, const StartIdMappingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EntityResolutionClient::StartIdMappingJob, request, handler, context);
         }
 
         /**
@@ -499,6 +737,35 @@ namespace EntityResolution
         }
 
         /**
+         * <p>Updates an existing <code>IdMappingWorkflow</code>. This method is identical
+         * to <code>CreateIdMappingWorkflow</code>, except it uses an HTTP <code>PUT</code>
+         * request instead of a <code>POST</code> request, and the
+         * <code>IdMappingWorkflow</code> must already exist for the method to
+         * succeed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdMappingWorkflow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateIdMappingWorkflowOutcome UpdateIdMappingWorkflow(const Model::UpdateIdMappingWorkflowRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateIdMappingWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateIdMappingWorkflowRequestT = Model::UpdateIdMappingWorkflowRequest>
+        Model::UpdateIdMappingWorkflowOutcomeCallable UpdateIdMappingWorkflowCallable(const UpdateIdMappingWorkflowRequestT& request) const
+        {
+            return SubmitCallable(&EntityResolutionClient::UpdateIdMappingWorkflow, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateIdMappingWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateIdMappingWorkflowRequestT = Model::UpdateIdMappingWorkflowRequest>
+        void UpdateIdMappingWorkflowAsync(const UpdateIdMappingWorkflowRequestT& request, const UpdateIdMappingWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EntityResolutionClient::UpdateIdMappingWorkflow, request, handler, context);
+        }
+
+        /**
          * <p>Updates an existing <code>MatchingWorkflow</code>. This method is identical
          * to <code>CreateMatchingWorkflow</code>, except it uses an HTTP <code>PUT</code>
          * request instead of a <code>POST</code> request, and the
@@ -525,6 +792,33 @@ namespace EntityResolution
         void UpdateMatchingWorkflowAsync(const UpdateMatchingWorkflowRequestT& request, const UpdateMatchingWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EntityResolutionClient::UpdateMatchingWorkflow, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a schema mapping.</p>  <p>A schema is immutable if it is being
+         * used by a workflow. Therefore, you can't update a schema mapping if it's
+         * associated with a workflow. </p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateSchemaMapping">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSchemaMappingOutcome UpdateSchemaMapping(const Model::UpdateSchemaMappingRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSchemaMapping that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSchemaMappingRequestT = Model::UpdateSchemaMappingRequest>
+        Model::UpdateSchemaMappingOutcomeCallable UpdateSchemaMappingCallable(const UpdateSchemaMappingRequestT& request) const
+        {
+            return SubmitCallable(&EntityResolutionClient::UpdateSchemaMapping, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSchemaMapping that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSchemaMappingRequestT = Model::UpdateSchemaMappingRequest>
+        void UpdateSchemaMappingAsync(const UpdateSchemaMappingRequestT& request, const UpdateSchemaMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EntityResolutionClient::UpdateSchemaMapping, request, handler, context);
         }
 
 

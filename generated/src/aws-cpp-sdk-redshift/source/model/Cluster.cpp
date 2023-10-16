@@ -84,7 +84,9 @@ Cluster::Cluster() :
     m_reservedNodeExchangeStatusHasBeenSet(false),
     m_customDomainNameHasBeenSet(false),
     m_customDomainCertificateArnHasBeenSet(false),
-    m_customDomainCertificateExpiryDateHasBeenSet(false)
+    m_customDomainCertificateExpiryDateHasBeenSet(false),
+    m_masterPasswordSecretArnHasBeenSet(false),
+    m_masterPasswordSecretKmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -152,7 +154,9 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_reservedNodeExchangeStatusHasBeenSet(false),
     m_customDomainNameHasBeenSet(false),
     m_customDomainCertificateArnHasBeenSet(false),
-    m_customDomainCertificateExpiryDateHasBeenSet(false)
+    m_customDomainCertificateExpiryDateHasBeenSet(false),
+    m_masterPasswordSecretArnHasBeenSet(false),
+    m_masterPasswordSecretKmsKeyIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -541,6 +545,18 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_customDomainCertificateExpiryDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(customDomainCertificateExpiryDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_customDomainCertificateExpiryDateHasBeenSet = true;
     }
+    XmlNode masterPasswordSecretArnNode = resultNode.FirstChild("MasterPasswordSecretArn");
+    if(!masterPasswordSecretArnNode.IsNull())
+    {
+      m_masterPasswordSecretArn = Aws::Utils::Xml::DecodeEscapedXmlText(masterPasswordSecretArnNode.GetText());
+      m_masterPasswordSecretArnHasBeenSet = true;
+    }
+    XmlNode masterPasswordSecretKmsKeyIdNode = resultNode.FirstChild("MasterPasswordSecretKmsKeyId");
+    if(!masterPasswordSecretKmsKeyIdNode.IsNull())
+    {
+      m_masterPasswordSecretKmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(masterPasswordSecretKmsKeyIdNode.GetText());
+      m_masterPasswordSecretKmsKeyIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -889,6 +905,16 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".CustomDomainCertificateExpiryDate=" << StringUtils::URLEncode(m_customDomainCertificateExpiryDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_masterPasswordSecretArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MasterPasswordSecretArn=" << StringUtils::URLEncode(m_masterPasswordSecretArn.c_str()) << "&";
+  }
+
+  if(m_masterPasswordSecretKmsKeyIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MasterPasswordSecretKmsKeyId=" << StringUtils::URLEncode(m_masterPasswordSecretKmsKeyId.c_str()) << "&";
+  }
+
 }
 
 void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1178,6 +1204,14 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_customDomainCertificateExpiryDateHasBeenSet)
   {
       oStream << location << ".CustomDomainCertificateExpiryDate=" << StringUtils::URLEncode(m_customDomainCertificateExpiryDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_masterPasswordSecretArnHasBeenSet)
+  {
+      oStream << location << ".MasterPasswordSecretArn=" << StringUtils::URLEncode(m_masterPasswordSecretArn.c_str()) << "&";
+  }
+  if(m_masterPasswordSecretKmsKeyIdHasBeenSet)
+  {
+      oStream << location << ".MasterPasswordSecretKmsKeyId=" << StringUtils::URLEncode(m_masterPasswordSecretKmsKeyId.c_str()) << "&";
   }
 }
 
