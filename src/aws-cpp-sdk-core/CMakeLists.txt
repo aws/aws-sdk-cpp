@@ -581,7 +581,7 @@ if (EXTERNAL_DEPS_INCLUDE_DIRS)
     endforeach()
 endif()
 
-target_link_libraries(${PROJECT_NAME} PRIVATE ${PLATFORM_DEP_LIBS} ${CLIENT_LIBS} ${CRYPTO_LIBS} ${AWS_SDK_ADDITIONAL_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${PLATFORM_DEP_LIBS} ${CLIENT_LIBS} ${CRYPTO_LIBS} ${AWS_SDK_ADDITIONAL_LIBRARIES} CURL::libcurl)
 
 aws_use_package(aws-crt-cpp)
 
@@ -707,4 +707,3 @@ elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
 endif()
 
 do_packaging()
-
