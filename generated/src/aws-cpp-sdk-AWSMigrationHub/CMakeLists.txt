@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-AWSMigrationHub "C++ SDK for the AWS AWSMigrationHub service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-awsmigrationhub "C++ SDK for the AWS AWSMigrationHub service" aws-cpp-sdk-core)
 
 file(GLOB AWS_AWSMIGRATIONHUB_HEADERS
     "include/aws/AWSMigrationHub/*.h"
