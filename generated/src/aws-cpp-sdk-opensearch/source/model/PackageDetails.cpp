@@ -29,7 +29,9 @@ PackageDetails::PackageDetails() :
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_availablePackageVersionHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false)
+    m_errorDetailsHasBeenSet(false),
+    m_engineVersionHasBeenSet(false),
+    m_availablePluginPropertiesHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ PackageDetails::PackageDetails(JsonView jsonValue) :
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_availablePackageVersionHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false)
+    m_errorDetailsHasBeenSet(false),
+    m_engineVersionHasBeenSet(false),
+    m_availablePluginPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -114,6 +118,20 @@ PackageDetails& PackageDetails::operator =(JsonView jsonValue)
     m_errorDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EngineVersion"))
+  {
+    m_engineVersion = jsonValue.GetString("EngineVersion");
+
+    m_engineVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AvailablePluginProperties"))
+  {
+    m_availablePluginProperties = jsonValue.GetObject("AvailablePluginProperties");
+
+    m_availablePluginPropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +186,18 @@ JsonValue PackageDetails::Jsonize() const
   if(m_errorDetailsHasBeenSet)
   {
    payload.WithObject("ErrorDetails", m_errorDetails.Jsonize());
+
+  }
+
+  if(m_engineVersionHasBeenSet)
+  {
+   payload.WithString("EngineVersion", m_engineVersion);
+
+  }
+
+  if(m_availablePluginPropertiesHasBeenSet)
+  {
+   payload.WithObject("AvailablePluginProperties", m_availablePluginProperties.Jsonize());
 
   }
 

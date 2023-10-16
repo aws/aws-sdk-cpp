@@ -1759,7 +1759,7 @@ namespace Redshift
         }
 
         /**
-         * <p>Contains information for custom domain associations for a
+         * <p>Contains information about custom domain associations for a
          * cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeCustomDomainAssociations">AWS
          * API Reference</a></p>

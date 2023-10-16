@@ -16,7 +16,8 @@ namespace Model
   enum class PackageType
   {
     NOT_SET,
-    TXT_DICTIONARY
+    TXT_DICTIONARY,
+    ZIP_PLUGIN
   };
 
 namespace PackageTypeMapper

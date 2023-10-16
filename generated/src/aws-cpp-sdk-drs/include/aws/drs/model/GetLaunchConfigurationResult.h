@@ -7,6 +7,7 @@
 #include <aws/drs/Drs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/drs/model/LaunchDisposition.h>
+#include <aws/drs/model/LaunchIntoInstanceProperties.h>
 #include <aws/drs/model/Licensing.h>
 #include <aws/drs/model/TargetInstanceTypeRightSizingMethod.h>
 #include <utility>
@@ -133,6 +134,32 @@ namespace Model
      * <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
      */
     inline GetLaunchConfigurationResult& WithLaunchDisposition(LaunchDisposition&& value) { SetLaunchDisposition(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline const LaunchIntoInstanceProperties& GetLaunchIntoInstanceProperties() const{ return m_launchIntoInstanceProperties; }
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline void SetLaunchIntoInstanceProperties(const LaunchIntoInstanceProperties& value) { m_launchIntoInstanceProperties = value; }
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline void SetLaunchIntoInstanceProperties(LaunchIntoInstanceProperties&& value) { m_launchIntoInstanceProperties = std::move(value); }
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline GetLaunchConfigurationResult& WithLaunchIntoInstanceProperties(const LaunchIntoInstanceProperties& value) { SetLaunchIntoInstanceProperties(value); return *this;}
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline GetLaunchConfigurationResult& WithLaunchIntoInstanceProperties(LaunchIntoInstanceProperties&& value) { SetLaunchIntoInstanceProperties(std::move(value)); return *this;}
 
 
     /**
@@ -310,6 +337,8 @@ namespace Model
     Aws::String m_ec2LaunchTemplateID;
 
     LaunchDisposition m_launchDisposition;
+
+    LaunchIntoInstanceProperties m_launchIntoInstanceProperties;
 
     Licensing m_licensing;
 

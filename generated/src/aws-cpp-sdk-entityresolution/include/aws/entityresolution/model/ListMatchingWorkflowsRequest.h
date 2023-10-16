@@ -60,50 +60,42 @@ namespace Model
 
 
     /**
-     * <p>The pagination token from the previous <code>ListSchemaMappings</code> API
-     * call.</p>
+     * <p>The pagination token from the previous API call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The pagination token from the previous <code>ListSchemaMappings</code> API
-     * call.</p>
+     * <p>The pagination token from the previous API call.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The pagination token from the previous <code>ListSchemaMappings</code> API
-     * call.</p>
+     * <p>The pagination token from the previous API call.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The pagination token from the previous <code>ListSchemaMappings</code> API
-     * call.</p>
+     * <p>The pagination token from the previous API call.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The pagination token from the previous <code>ListSchemaMappings</code> API
-     * call.</p>
+     * <p>The pagination token from the previous API call.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The pagination token from the previous <code>ListSchemaMappings</code> API
-     * call.</p>
+     * <p>The pagination token from the previous API call.</p>
      */
     inline ListMatchingWorkflowsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The pagination token from the previous <code>ListSchemaMappings</code> API
-     * call.</p>
+     * <p>The pagination token from the previous API call.</p>
      */
     inline ListMatchingWorkflowsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The pagination token from the previous <code>ListSchemaMappings</code> API
-     * call.</p>
+     * <p>The pagination token from the previous API call.</p>
      */
     inline ListMatchingWorkflowsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

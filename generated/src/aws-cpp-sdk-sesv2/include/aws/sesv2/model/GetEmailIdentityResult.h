@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sesv2/model/VerificationStatus.h>
+#include <aws/sesv2/model/VerificationInfo.h>
 #include <aws/sesv2/model/Tag.h>
 #include <utility>
 
@@ -408,6 +409,37 @@ namespace Model
     inline GetEmailIdentityResult& WithVerificationStatus(VerificationStatus&& value) { SetVerificationStatus(std::move(value)); return *this;}
 
 
+    /**
+     * <p>An object that contains additional information about the verification status
+     * for the identity.</p>
+     */
+    inline const VerificationInfo& GetVerificationInfo() const{ return m_verificationInfo; }
+
+    /**
+     * <p>An object that contains additional information about the verification status
+     * for the identity.</p>
+     */
+    inline void SetVerificationInfo(const VerificationInfo& value) { m_verificationInfo = value; }
+
+    /**
+     * <p>An object that contains additional information about the verification status
+     * for the identity.</p>
+     */
+    inline void SetVerificationInfo(VerificationInfo&& value) { m_verificationInfo = std::move(value); }
+
+    /**
+     * <p>An object that contains additional information about the verification status
+     * for the identity.</p>
+     */
+    inline GetEmailIdentityResult& WithVerificationInfo(const VerificationInfo& value) { SetVerificationInfo(value); return *this;}
+
+    /**
+     * <p>An object that contains additional information about the verification status
+     * for the identity.</p>
+     */
+    inline GetEmailIdentityResult& WithVerificationInfo(VerificationInfo&& value) { SetVerificationInfo(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -448,6 +480,8 @@ namespace Model
     Aws::String m_configurationSetName;
 
     VerificationStatus m_verificationStatus;
+
+    VerificationInfo m_verificationInfo;
 
     Aws::String m_requestId;
   };

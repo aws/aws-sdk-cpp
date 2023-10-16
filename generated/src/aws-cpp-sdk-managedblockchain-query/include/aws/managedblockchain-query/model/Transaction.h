@@ -47,32 +47,32 @@ namespace Model
 
 
     /**
-     * <p>The blockchain network where the transaction occured.</p>
+     * <p>The blockchain network where the transaction occurred.</p>
      */
     inline const QueryNetwork& GetNetwork() const{ return m_network; }
 
     /**
-     * <p>The blockchain network where the transaction occured.</p>
+     * <p>The blockchain network where the transaction occurred.</p>
      */
     inline bool NetworkHasBeenSet() const { return m_networkHasBeenSet; }
 
     /**
-     * <p>The blockchain network where the transaction occured.</p>
+     * <p>The blockchain network where the transaction occurred.</p>
      */
     inline void SetNetwork(const QueryNetwork& value) { m_networkHasBeenSet = true; m_network = value; }
 
     /**
-     * <p>The blockchain network where the transaction occured.</p>
+     * <p>The blockchain network where the transaction occurred.</p>
      */
     inline void SetNetwork(QueryNetwork&& value) { m_networkHasBeenSet = true; m_network = std::move(value); }
 
     /**
-     * <p>The blockchain network where the transaction occured.</p>
+     * <p>The blockchain network where the transaction occurred.</p>
      */
     inline Transaction& WithNetwork(const QueryNetwork& value) { SetNetwork(value); return *this;}
 
     /**
-     * <p>The blockchain network where the transaction occured.</p>
+     * <p>The blockchain network where the transaction occurred.</p>
      */
     inline Transaction& WithNetwork(QueryNetwork&& value) { SetNetwork(std::move(value)); return *this;}
 

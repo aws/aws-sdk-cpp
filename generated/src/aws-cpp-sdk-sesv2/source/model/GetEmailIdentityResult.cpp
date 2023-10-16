@@ -97,6 +97,12 @@ GetEmailIdentityResult& GetEmailIdentityResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("VerificationInfo"))
+  {
+    m_verificationInfo = jsonValue.GetObject("VerificationInfo");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

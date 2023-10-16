@@ -23,6 +23,8 @@ Snapshot::Snapshot() :
     m_accountsWithRestoreAccessHasBeenSet(false),
     m_actualIncrementalBackupSizeInMegaBytes(0.0),
     m_actualIncrementalBackupSizeInMegaBytesHasBeenSet(false),
+    m_adminPasswordSecretArnHasBeenSet(false),
+    m_adminPasswordSecretKmsKeyIdHasBeenSet(false),
     m_adminUsernameHasBeenSet(false),
     m_backupProgressInMegaBytes(0.0),
     m_backupProgressInMegaBytesHasBeenSet(false),
@@ -56,6 +58,8 @@ Snapshot::Snapshot(JsonView jsonValue) :
     m_accountsWithRestoreAccessHasBeenSet(false),
     m_actualIncrementalBackupSizeInMegaBytes(0.0),
     m_actualIncrementalBackupSizeInMegaBytesHasBeenSet(false),
+    m_adminPasswordSecretArnHasBeenSet(false),
+    m_adminPasswordSecretKmsKeyIdHasBeenSet(false),
     m_adminUsernameHasBeenSet(false),
     m_backupProgressInMegaBytes(0.0),
     m_backupProgressInMegaBytesHasBeenSet(false),
@@ -112,6 +116,20 @@ Snapshot& Snapshot::operator =(JsonView jsonValue)
     m_actualIncrementalBackupSizeInMegaBytes = jsonValue.GetDouble("actualIncrementalBackupSizeInMegaBytes");
 
     m_actualIncrementalBackupSizeInMegaBytesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("adminPasswordSecretArn"))
+  {
+    m_adminPasswordSecretArn = jsonValue.GetString("adminPasswordSecretArn");
+
+    m_adminPasswordSecretArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("adminPasswordSecretKmsKeyId"))
+  {
+    m_adminPasswordSecretKmsKeyId = jsonValue.GetString("adminPasswordSecretKmsKeyId");
+
+    m_adminPasswordSecretKmsKeyIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("adminUsername"))
@@ -265,6 +283,18 @@ JsonValue Snapshot::Jsonize() const
   if(m_actualIncrementalBackupSizeInMegaBytesHasBeenSet)
   {
    payload.WithDouble("actualIncrementalBackupSizeInMegaBytes", m_actualIncrementalBackupSizeInMegaBytes);
+
+  }
+
+  if(m_adminPasswordSecretArnHasBeenSet)
+  {
+   payload.WithString("adminPasswordSecretArn", m_adminPasswordSecretArn);
+
+  }
+
+  if(m_adminPasswordSecretKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("adminPasswordSecretKmsKeyId", m_adminPasswordSecretKmsKeyId);
 
   }
 

@@ -7,6 +7,7 @@
 #include <aws/drs/Drs_EXPORTS.h>
 #include <aws/drs/DrsRequest.h>
 #include <aws/drs/model/LaunchDisposition.h>
+#include <aws/drs/model/LaunchIntoInstanceProperties.h>
 #include <aws/drs/model/Licensing.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/drs/model/TargetInstanceTypeRightSizingMethod.h>
@@ -114,6 +115,37 @@ namespace Model
      * <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
      */
     inline UpdateLaunchConfigurationRequest& WithLaunchDisposition(LaunchDisposition&& value) { SetLaunchDisposition(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline const LaunchIntoInstanceProperties& GetLaunchIntoInstanceProperties() const{ return m_launchIntoInstanceProperties; }
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline bool LaunchIntoInstancePropertiesHasBeenSet() const { return m_launchIntoInstancePropertiesHasBeenSet; }
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline void SetLaunchIntoInstanceProperties(const LaunchIntoInstanceProperties& value) { m_launchIntoInstancePropertiesHasBeenSet = true; m_launchIntoInstanceProperties = value; }
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline void SetLaunchIntoInstanceProperties(LaunchIntoInstanceProperties&& value) { m_launchIntoInstancePropertiesHasBeenSet = true; m_launchIntoInstanceProperties = std::move(value); }
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline UpdateLaunchConfigurationRequest& WithLaunchIntoInstanceProperties(const LaunchIntoInstanceProperties& value) { SetLaunchIntoInstanceProperties(value); return *this;}
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline UpdateLaunchConfigurationRequest& WithLaunchIntoInstanceProperties(LaunchIntoInstanceProperties&& value) { SetLaunchIntoInstanceProperties(std::move(value)); return *this;}
 
 
     /**
@@ -304,6 +336,9 @@ namespace Model
 
     LaunchDisposition m_launchDisposition;
     bool m_launchDispositionHasBeenSet = false;
+
+    LaunchIntoInstanceProperties m_launchIntoInstanceProperties;
+    bool m_launchIntoInstancePropertiesHasBeenSet = false;
 
     Licensing m_licensing;
     bool m_licensingHasBeenSet = false;
