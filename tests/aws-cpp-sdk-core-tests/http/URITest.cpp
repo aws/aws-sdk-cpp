@@ -286,6 +286,15 @@ TEST_F(URITest, TestParseWithColon)
     EXPECT_EQ(80, complexUri.GetPort());
     EXPECT_STREQ("/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:1234/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:Key", complexUri.GetPath().c_str());
     EXPECT_STREQ(strComplexUri, complexUri.GetURIString().c_str());
+
+    URI complexUriCompliant(strComplexUri);
+    complexUriCompliant.SetRfc3986Encoded(true);
+    EXPECT_STREQ("s3.us-east-1.amazonaws.com", complexUriCompliant.GetAuthority().c_str());
+    EXPECT_EQ(80, complexUriCompliant.GetPort());
+    EXPECT_STREQ("/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:1234/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:Key",
+                 complexUri.GetPath().c_str());
+    EXPECT_STREQ("http://s3.us-east-1.amazonaws.com/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject%3A1234/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject%3AKey",
+                 complexUriCompliant.GetURIString().c_str());
 }
 
 TEST_F(URITest, TestParseWithColonCompliant)
