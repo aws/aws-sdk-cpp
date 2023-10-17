@@ -1,4 +1,3 @@
-#if($serviceModel.endpointRules)
 #if(($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled) || $operation.getRequest().getShape().hasEventStreamMembers())
 #set($meterNeeded = true)
 #set($indent = "")
@@ -37,7 +36,6 @@ ${indent}          CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION
 ${indent}      return;
 ${indent}  }
 #end
-#end
 #if($operation.http.requestUri.contains("?"))
 ${indent}  Aws::StringStream ss;
 #end
@@ -54,19 +52,17 @@ ${indent}  Aws::StringStream ss;
 #set($queryStart = true)
 #set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
 #if(!$pathAndQuery.get(0).isEmpty())
-#if($serviceModel.endpointRules)
-${indent}  endpointResolutionOutcome.GetResult().AddPathSegments("${pathAndQuery.get(0)}");
-#else
-${indent}  uri.AddPathSegments("${pathAndQuery.get(0)}");
+#if($pathAndQuery.get(0).toLowerCase().contains("arn"))
+${indent}  endpointResolutionOutcome.GetResult().SetRfc3986Encoded(true);
 #end
+${indent}  endpointResolutionOutcome.GetResult().AddPathSegments("${pathAndQuery.get(0)}");
 #end
 ${indent}  ss.str("${pathAndQuery.get(1)}");
 #elseif(!$uriPartString.equals("/"))
-#if($serviceModel.endpointRules)
-${indent}  endpointResolutionOutcome.GetResult().AddPathSegments("$uriPartString");
-#else
-${indent}  uri.AddPathSegments("$uriPartString");
+#if($uriPartString.get(0).toLowerCase().contains("arn"))
+${indent}  endpointResolutionOutcome.GetResult().SetRfc3986Encoded(true);
 #end
+${indent}  endpointResolutionOutcome.GetResult().AddPathSegments("$uriPartString");
 #end## ---------------------------- if (request uri contains query) end ------
 #foreach($var in $uriVars)## for (parameter in request uri parameters) -------
 #set($varIndex = $partIndex - 1)
@@ -83,17 +79,12 @@ ${indent}  uri.AddPathSegments("$uriPartString");
 ${indent}  ss << $parameter;
 #else
 #if($greedySyntax)
-#if($serviceModel.endpointRules)
+#if($parameter.toLowerCase().contains("arn"))
+${indent}  endpointResolutionOutcome.GetResult().SetRfc3986Encoded(true);
+#end
 ${indent}  endpointResolutionOutcome.GetResult().AddPathSegments($parameter);
 #else
-${indent}  uri.AddPathSegments($parameter);
-#end
-#else
-#if($serviceModel.endpointRules)
 ${indent}  endpointResolutionOutcome.GetResult().AddPathSegment($parameter);
-#else
-${indent}  uri.AddPathSegment($parameter);
-#end
 #end
 #end
 #if($uriParts.size() > $partIndex)
@@ -102,19 +93,17 @@ ${indent}  uri.AddPathSegment($parameter);
 #set($queryStart = true)
 #set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
 #if(!$pathAndQuery.get(0).isEmpty())
-#if($serviceModel.endpointRules)
-${indent}  endpointResolutionOutcome.GetResult().AddPathSegments("${pathAndQuery.get(0)}");
-#else
-${indent}  uri.AddPathSegments("${pathAndQuery.get(0)}");
+#if($pathAndQuery.get(0).toLowerCase().contains("arn"))
+${indent}  endpointResolutionOutcome.GetResult().SetRfc3986Encoded(true);
 #end
+${indent}  endpointResolutionOutcome.GetResult().AddPathSegments("${pathAndQuery.get(0)}");
 #end
 ${indent}  ss.str("${pathAndQuery.get(1)}");
 #elseif(!$uriPartString.equals("/"))
-#if($serviceModel.endpointRules)
-${indent}  endpointResolutionOutcome.GetResult().AddPathSegments("$uriPartString");
-#else
-${indent}  uri.AddPathSegments("$uriPartString");
+#if($uriPartString.toLowerCase().contains("arn"))
+${indent}  endpointResolutionOutcome.GetResult().SetRfc3986Encoded(true);
 #end
+${indent}  endpointResolutionOutcome.GetResult().AddPathSegments("$uriPartString");
 #end
 #end
 #end## --------------------- if !skipFirst end ---
@@ -123,9 +112,5 @@ ${indent}  uri.AddPathSegments("$uriPartString");
 #end## --------------------- if uriParts.size() > startIndex end ---
 #end## --------------------- for (parameter in request uri parameters) end ---
 #if($queryStart)
-#if($serviceModel.endpointRules)
 ${indent}  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
-#else
-${indent}  uri.SetQueryString(ss.str());
-#end
 #end

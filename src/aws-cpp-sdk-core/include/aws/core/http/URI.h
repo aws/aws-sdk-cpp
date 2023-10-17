@@ -181,6 +181,16 @@ namespace Aws
             Aws::String GetURIString(bool includeQueryString = true) const;
 
             /**
+            * Returns true if this URI is going to be encoded in Rfc3986 compliant mode
+            */
+            inline bool IsRfc3986Encoded() const { return m_useRfcEncoding; }
+
+            /**
+            * Sets Rfc3986 compliant encoding mode. False (i.e. use legacy encoding with some chars unescaped) is the default.
+            */
+            inline void SetRfc3986Encoded(const bool value) { m_useRfcEncoding = value; }
+
+            /**
              * URLEncodes the path portions of path (doesn't encode the "/" portion)
              * Keeps the first and the last "/".
              */
@@ -189,7 +199,7 @@ namespace Aws
             /**
              * URLEncodes the path portion of the URI according to RFC3986
              */
-            static Aws::String URLEncodePathRFC3986(const Aws::String& path);
+            static Aws::String URLEncodePathRFC3986(const Aws::String& path, bool  = false);
 
         private:
             void ParseURIParts(const Aws::String& uri);
@@ -205,6 +215,7 @@ namespace Aws
             uint16_t m_port = HTTP_DEFAULT_PORT;
             Aws::Vector<Aws::String> m_pathSegments;
             bool m_pathHasTrailingSlash = false;
+            bool m_useRfcEncoding = false;
             Aws::String m_queryString;
         };
 
