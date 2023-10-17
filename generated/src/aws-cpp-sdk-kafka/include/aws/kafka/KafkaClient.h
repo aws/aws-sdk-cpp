@@ -192,6 +192,31 @@ namespace Kafka
         }
 
         /**
+         * <p>Creates the replicator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateReplicator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateReplicatorOutcome CreateReplicator(const Model::CreateReplicatorRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateReplicator that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateReplicatorRequestT = Model::CreateReplicatorRequest>
+        Model::CreateReplicatorOutcomeCallable CreateReplicatorCallable(const CreateReplicatorRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::CreateReplicator, request);
+        }
+
+        /**
+         * An Async wrapper for CreateReplicator that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateReplicatorRequestT = Model::CreateReplicatorRequest>
+        void CreateReplicatorAsync(const CreateReplicatorRequestT& request, const CreateReplicatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::CreateReplicator, request, handler, context);
+        }
+
+        /**
          * 
             <p>Creates a new MSK VPC connection.</p>
          <p><h3>See
@@ -301,6 +326,31 @@ namespace Kafka
         void DeleteConfigurationAsync(const DeleteConfigurationRequestT& request, const DeleteConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KafkaClient::DeleteConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a replicator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteReplicator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteReplicatorOutcome DeleteReplicator(const Model::DeleteReplicatorRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteReplicator that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteReplicatorRequestT = Model::DeleteReplicatorRequest>
+        Model::DeleteReplicatorOutcomeCallable DeleteReplicatorCallable(const DeleteReplicatorRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::DeleteReplicator, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteReplicator that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteReplicatorRequestT = Model::DeleteReplicatorRequest>
+        void DeleteReplicatorAsync(const DeleteReplicatorRequestT& request, const DeleteReplicatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::DeleteReplicator, request, handler, context);
         }
 
         /**
@@ -497,6 +547,31 @@ namespace Kafka
         void DescribeConfigurationRevisionAsync(const DescribeConfigurationRevisionRequestT& request, const DescribeConfigurationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KafkaClient::DescribeConfigurationRevision, request, handler, context);
+        }
+
+        /**
+         * <p>Describes a replicator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeReplicator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeReplicatorOutcome DescribeReplicator(const Model::DescribeReplicatorRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeReplicator that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeReplicatorRequestT = Model::DescribeReplicatorRequest>
+        Model::DescribeReplicatorOutcomeCallable DescribeReplicatorCallable(const DescribeReplicatorRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::DescribeReplicator, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeReplicator that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeReplicatorRequestT = Model::DescribeReplicatorRequest>
+        void DescribeReplicatorAsync(const DescribeReplicatorRequestT& request, const DescribeReplicatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::DescribeReplicator, request, handler, context);
         }
 
         /**
@@ -861,6 +936,31 @@ namespace Kafka
         void ListNodesAsync(const ListNodesRequestT& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KafkaClient::ListNodes, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the replicators.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListReplicators">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListReplicatorsOutcome ListReplicators(const Model::ListReplicatorsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListReplicators that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListReplicatorsRequestT = Model::ListReplicatorsRequest>
+        Model::ListReplicatorsOutcomeCallable ListReplicatorsCallable(const ListReplicatorsRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::ListReplicators, request);
+        }
+
+        /**
+         * An Async wrapper for ListReplicators that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListReplicatorsRequestT = Model::ListReplicatorsRequest>
+        void ListReplicatorsAsync(const ListReplicatorsRequestT& request, const ListReplicatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::ListReplicators, request, handler, context);
         }
 
         /**
@@ -1336,6 +1436,31 @@ namespace Kafka
         void UpdateMonitoringAsync(const UpdateMonitoringRequestT& request, const UpdateMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KafkaClient::UpdateMonitoring, request, handler, context);
+        }
+
+        /**
+         * <p>Updates replication info of a replicator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateReplicationInfo">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateReplicationInfoOutcome UpdateReplicationInfo(const Model::UpdateReplicationInfoRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateReplicationInfo that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateReplicationInfoRequestT = Model::UpdateReplicationInfoRequest>
+        Model::UpdateReplicationInfoOutcomeCallable UpdateReplicationInfoCallable(const UpdateReplicationInfoRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::UpdateReplicationInfo, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateReplicationInfo that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateReplicationInfoRequestT = Model::UpdateReplicationInfoRequest>
+        void UpdateReplicationInfoAsync(const UpdateReplicationInfoRequestT& request, const UpdateReplicationInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::UpdateReplicationInfo, request, handler, context);
         }
 
         /**

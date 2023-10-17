@@ -1033,10 +1033,15 @@ namespace CodePipeline
         }
 
         /**
-         * <p>Resumes the pipeline execution by retrying the last failed actions in a
-         * stage. You can retry a stage immediately if any of the actions in the stage
-         * fail. When you retry, all actions that are still in progress continue working,
-         * and failed actions are triggered again.</p><p><h3>See Also:</h3>   <a
+         * <p>You can retry a stage that has failed without having to run a pipeline again
+         * from the beginning. You do this by either retrying the failed actions in a stage
+         * or by retrying all actions in the stage starting from the first action in the
+         * stage. When you retry the failed actions in a stage, all actions that are still
+         * in progress continue working, and failed actions are triggered again. When you
+         * retry a failed stage from the first action in the stage, the stage cannot have
+         * any actions in progress. Before a stage can be retried, it must either have all
+         * actions failed or some actions failed and some succeeded.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RetryStageExecution">AWS
          * API Reference</a></p>
          */
