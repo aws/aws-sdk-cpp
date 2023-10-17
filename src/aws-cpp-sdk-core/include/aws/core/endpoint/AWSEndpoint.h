@@ -44,6 +44,11 @@ namespace Aws
                 m_uri.AddPathSegments(std::forward<T>(pathSegments));
             }
 
+            inline void SetRfc3986Encoded(bool rfcEncoded)
+            {
+                m_uri.SetRfc3986Encoded(rfcEncoded);
+            }
+
             using OptionalError = Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>>;
             OptionalError AddPrefixIfMissing(const Aws::String& prefix);
 
