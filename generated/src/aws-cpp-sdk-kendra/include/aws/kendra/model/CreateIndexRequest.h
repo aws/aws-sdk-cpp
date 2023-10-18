@@ -542,43 +542,43 @@ namespace Model
 
 
     /**
-     * <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On)
-     * identity source. To configure this, see <a
+     * <p>Gets users and groups from IAM Identity Center identity source. To configure
+     * this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
 
     /**
-     * <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On)
-     * identity source. To configure this, see <a
+     * <p>Gets users and groups from IAM Identity Center identity source. To configure
+     * this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline bool UserGroupResolutionConfigurationHasBeenSet() const { return m_userGroupResolutionConfigurationHasBeenSet; }
 
     /**
-     * <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On)
-     * identity source. To configure this, see <a
+     * <p>Gets users and groups from IAM Identity Center identity source. To configure
+     * this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline void SetUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = value; }
 
     /**
-     * <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On)
-     * identity source. To configure this, see <a
+     * <p>Gets users and groups from IAM Identity Center identity source. To configure
+     * this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline void SetUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = std::move(value); }
 
     /**
-     * <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On)
-     * identity source. To configure this, see <a
+     * <p>Gets users and groups from IAM Identity Center identity source. To configure
+     * this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline CreateIndexRequest& WithUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { SetUserGroupResolutionConfiguration(value); return *this;}
 
     /**
-     * <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On)
-     * identity source. To configure this, see <a
+     * <p>Gets users and groups from IAM Identity Center identity source. To configure
+     * this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline CreateIndexRequest& WithUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { SetUserGroupResolutionConfiguration(std::move(value)); return *this;}

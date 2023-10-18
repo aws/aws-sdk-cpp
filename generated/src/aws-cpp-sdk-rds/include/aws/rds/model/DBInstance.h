@@ -3881,6 +3881,47 @@ namespace Model
      */
     inline DBInstance& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether an upgrade is recommended for the storage file system
+     * configuration on the DB instance. To migrate to the preferred configuration, you
+     * can either create a blue/green deployment, or create a read replica from the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
+     * the storage file system for a DB instance</a>.</p>
+     */
+    inline bool GetIsStorageConfigUpgradeAvailable() const{ return m_isStorageConfigUpgradeAvailable; }
+
+    /**
+     * <p>Indicates whether an upgrade is recommended for the storage file system
+     * configuration on the DB instance. To migrate to the preferred configuration, you
+     * can either create a blue/green deployment, or create a read replica from the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
+     * the storage file system for a DB instance</a>.</p>
+     */
+    inline bool IsStorageConfigUpgradeAvailableHasBeenSet() const { return m_isStorageConfigUpgradeAvailableHasBeenSet; }
+
+    /**
+     * <p>Indicates whether an upgrade is recommended for the storage file system
+     * configuration on the DB instance. To migrate to the preferred configuration, you
+     * can either create a blue/green deployment, or create a read replica from the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
+     * the storage file system for a DB instance</a>.</p>
+     */
+    inline void SetIsStorageConfigUpgradeAvailable(bool value) { m_isStorageConfigUpgradeAvailableHasBeenSet = true; m_isStorageConfigUpgradeAvailable = value; }
+
+    /**
+     * <p>Indicates whether an upgrade is recommended for the storage file system
+     * configuration on the DB instance. To migrate to the preferred configuration, you
+     * can either create a blue/green deployment, or create a read replica from the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
+     * the storage file system for a DB instance</a>.</p>
+     */
+    inline DBInstance& WithIsStorageConfigUpgradeAvailable(bool value) { SetIsStorageConfigUpgradeAvailable(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -4131,6 +4172,9 @@ namespace Model
 
     bool m_dedicatedLogVolume;
     bool m_dedicatedLogVolumeHasBeenSet = false;
+
+    bool m_isStorageConfigUpgradeAvailable;
+    bool m_isStorageConfigUpgradeAvailableHasBeenSet = false;
   };
 
 } // namespace Model
