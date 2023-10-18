@@ -3403,6 +3403,35 @@ namespace Model
 
 
     /**
+     * <p>Whether to upgrade the storage file system configuration on the read replica.
+     * This option migrates the read replica from the old storage file system layout to
+     * the preferred layout.</p>
+     */
+    inline bool GetUpgradeStorageConfig() const{ return m_upgradeStorageConfig; }
+
+    /**
+     * <p>Whether to upgrade the storage file system configuration on the read replica.
+     * This option migrates the read replica from the old storage file system layout to
+     * the preferred layout.</p>
+     */
+    inline bool UpgradeStorageConfigHasBeenSet() const { return m_upgradeStorageConfigHasBeenSet; }
+
+    /**
+     * <p>Whether to upgrade the storage file system configuration on the read replica.
+     * This option migrates the read replica from the old storage file system layout to
+     * the preferred layout.</p>
+     */
+    inline void SetUpgradeStorageConfig(bool value) { m_upgradeStorageConfigHasBeenSet = true; m_upgradeStorageConfig = value; }
+
+    /**
+     * <p>Whether to upgrade the storage file system configuration on the read replica.
+     * This option migrates the read replica from the old storage file system layout to
+     * the preferred layout.</p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithUpgradeStorageConfig(bool value) { SetUpgradeStorageConfig(value); return *this;}
+
+
+    /**
      * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
@@ -3572,6 +3601,9 @@ namespace Model
 
     bool m_dedicatedLogVolume;
     bool m_dedicatedLogVolumeHasBeenSet = false;
+
+    bool m_upgradeStorageConfig;
+    bool m_upgradeStorageConfigHasBeenSet = false;
 
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet = false;

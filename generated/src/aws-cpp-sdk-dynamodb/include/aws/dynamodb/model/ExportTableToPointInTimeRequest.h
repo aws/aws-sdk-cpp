@@ -511,49 +511,49 @@ namespace Model
 
     /**
      * <p>Choice of whether to execute as a full export or incremental export. Valid
-     * values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If
-     * <code>INCREMENTAL_EXPORT</code> is provided, the
-     * <code>IncrementalExportSpecification</code> must also be used.</p>
+     * values are FULL_EXPORT or INCREMENTAL_EXPORT. The default value is FULL_EXPORT.
+     * If INCREMENTAL_EXPORT is provided, the IncrementalExportSpecification must also
+     * be used.</p>
      */
     inline const ExportType& GetExportType() const{ return m_exportType; }
 
     /**
      * <p>Choice of whether to execute as a full export or incremental export. Valid
-     * values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If
-     * <code>INCREMENTAL_EXPORT</code> is provided, the
-     * <code>IncrementalExportSpecification</code> must also be used.</p>
+     * values are FULL_EXPORT or INCREMENTAL_EXPORT. The default value is FULL_EXPORT.
+     * If INCREMENTAL_EXPORT is provided, the IncrementalExportSpecification must also
+     * be used.</p>
      */
     inline bool ExportTypeHasBeenSet() const { return m_exportTypeHasBeenSet; }
 
     /**
      * <p>Choice of whether to execute as a full export or incremental export. Valid
-     * values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If
-     * <code>INCREMENTAL_EXPORT</code> is provided, the
-     * <code>IncrementalExportSpecification</code> must also be used.</p>
+     * values are FULL_EXPORT or INCREMENTAL_EXPORT. The default value is FULL_EXPORT.
+     * If INCREMENTAL_EXPORT is provided, the IncrementalExportSpecification must also
+     * be used.</p>
      */
     inline void SetExportType(const ExportType& value) { m_exportTypeHasBeenSet = true; m_exportType = value; }
 
     /**
      * <p>Choice of whether to execute as a full export or incremental export. Valid
-     * values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If
-     * <code>INCREMENTAL_EXPORT</code> is provided, the
-     * <code>IncrementalExportSpecification</code> must also be used.</p>
+     * values are FULL_EXPORT or INCREMENTAL_EXPORT. The default value is FULL_EXPORT.
+     * If INCREMENTAL_EXPORT is provided, the IncrementalExportSpecification must also
+     * be used.</p>
      */
     inline void SetExportType(ExportType&& value) { m_exportTypeHasBeenSet = true; m_exportType = std::move(value); }
 
     /**
      * <p>Choice of whether to execute as a full export or incremental export. Valid
-     * values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If
-     * <code>INCREMENTAL_EXPORT</code> is provided, the
-     * <code>IncrementalExportSpecification</code> must also be used.</p>
+     * values are FULL_EXPORT or INCREMENTAL_EXPORT. The default value is FULL_EXPORT.
+     * If INCREMENTAL_EXPORT is provided, the IncrementalExportSpecification must also
+     * be used.</p>
      */
     inline ExportTableToPointInTimeRequest& WithExportType(const ExportType& value) { SetExportType(value); return *this;}
 
     /**
      * <p>Choice of whether to execute as a full export or incremental export. Valid
-     * values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If
-     * <code>INCREMENTAL_EXPORT</code> is provided, the
-     * <code>IncrementalExportSpecification</code> must also be used.</p>
+     * values are FULL_EXPORT or INCREMENTAL_EXPORT. The default value is FULL_EXPORT.
+     * If INCREMENTAL_EXPORT is provided, the IncrementalExportSpecification must also
+     * be used.</p>
      */
     inline ExportTableToPointInTimeRequest& WithExportType(ExportType&& value) { SetExportType(std::move(value)); return *this;}
 

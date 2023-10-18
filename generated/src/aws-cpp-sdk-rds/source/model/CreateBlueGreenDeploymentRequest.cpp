@@ -16,7 +16,10 @@ CreateBlueGreenDeploymentRequest::CreateBlueGreenDeploymentRequest() :
     m_targetEngineVersionHasBeenSet(false),
     m_targetDBParameterGroupNameHasBeenSet(false),
     m_targetDBClusterParameterGroupNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_targetDBInstanceClassHasBeenSet(false),
+    m_upgradeTargetStorageConfig(false),
+    m_upgradeTargetStorageConfigHasBeenSet(false)
 {
 }
 
@@ -57,6 +60,16 @@ Aws::String CreateBlueGreenDeploymentRequest::SerializePayload() const
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
+  }
+
+  if(m_targetDBInstanceClassHasBeenSet)
+  {
+    ss << "TargetDBInstanceClass=" << StringUtils::URLEncode(m_targetDBInstanceClass.c_str()) << "&";
+  }
+
+  if(m_upgradeTargetStorageConfigHasBeenSet)
+  {
+    ss << "UpgradeTargetStorageConfig=" << std::boolalpha << m_upgradeTargetStorageConfig << "&";
   }
 
   ss << "Version=2014-10-31";

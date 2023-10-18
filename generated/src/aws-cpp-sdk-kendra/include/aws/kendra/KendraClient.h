@@ -1599,22 +1599,29 @@ namespace kendra
         }
 
         /**
-         * <p>Searches an index given an input query.</p> <p>You can configure boosting or
-         * relevance tuning at the query level to override boosting at the index level,
-         * filter based on document fields/attributes and faceted search, and filter based
-         * on the user or their group access to documents. You can also include certain
-         * fields in the response that might provide useful additional information.</p>
-         * <p>A query response contains three types of results.</p> <ul> <li> <p>Relevant
-         * suggested answers. The answers can be either a text excerpt or table excerpt.
-         * The answer can be highlighted in the excerpt.</p> </li> <li> <p>Matching FAQs or
-         * questions-answer from your FAQ file.</p> </li> <li> <p>Relevant documents. This
-         * result type includes an excerpt of the document with the document title. The
-         * searched terms can be highlighted in the excerpt.</p> </li> </ul> <p>You can
-         * specify that the query return only one type of result using the
-         * <code>QueryResultTypeFilter</code> parameter. Each query returns the 100 most
-         * relevant results. If you filter result type to only question-answers, a maximum
-         * of four results are returned. If you filter result type to only answers, a
-         * maximum of three results are returned.</p><p><h3>See Also:</h3>   <a
+         * <p>Searches an index given an input query.</p>  <p>If you are working with
+         * large language models (LLMs) or implementing retrieval augmented generation
+         * (RAG) systems, you can use Amazon Kendra's <a
+         * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_Retrieve.html">Retrieve</a>
+         * API, which can return longer semantically relevant passages. We recommend using
+         * the <code>Retrieve</code> API instead of filing a service limit increase to
+         * increase the <code>Query</code> API document excerpt length.</p>  <p>You
+         * can configure boosting or relevance tuning at the query level to override
+         * boosting at the index level, filter based on document fields/attributes and
+         * faceted search, and filter based on the user or their group access to documents.
+         * You can also include certain fields in the response that might provide useful
+         * additional information.</p> <p>A query response contains three types of
+         * results.</p> <ul> <li> <p>Relevant suggested answers. The answers can be either
+         * a text excerpt or table excerpt. The answer can be highlighted in the
+         * excerpt.</p> </li> <li> <p>Matching FAQs or questions-answer from your FAQ
+         * file.</p> </li> <li> <p>Relevant documents. This result type includes an excerpt
+         * of the document with the document title. The searched terms can be highlighted
+         * in the excerpt.</p> </li> </ul> <p>You can specify that the query return only
+         * one type of result using the <code>QueryResultTypeFilter</code> parameter. Each
+         * query returns the 100 most relevant results. If you filter result type to only
+         * question-answers, a maximum of four results are returned. If you filter result
+         * type to only answers, a maximum of three results are returned.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Query">AWS API
          * Reference</a></p>
          */
@@ -1653,9 +1660,13 @@ namespace kendra
          * and its types of responses.</p> <p>You can also do the following:</p> <ul> <li>
          * <p>Override boosting at the index level</p> </li> <li> <p>Filter based on
          * document fields or attributes</p> </li> <li> <p>Filter based on the user or
-         * their group access to documents</p> </li> </ul> <p>You can also include certain
-         * fields in the response that might provide useful additional information.</p>
-         * <p>The <code>Retrieve</code> API shares the number of <a
+         * their group access to documents</p> </li> <li> <p>View the confidence score
+         * bucket for a retrieved passage result. The confidence bucket provides a relative
+         * ranking that indicates how confident Amazon Kendra is that the response is
+         * relevant to the query.</p>  <p>Confidence score buckets are currently
+         * available only for English.</p>  </li> </ul> <p>You can also include
+         * certain fields in the response that might provide useful additional
+         * information.</p> <p>The <code>Retrieve</code> API shares the number of <a
          * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_CapacityUnitsConfiguration.html">query
          * capacity units</a> that you set for your index. For more information on what's
          * included in a single capacity unit and the default base capacity for an index,

@@ -802,32 +802,6 @@ namespace ApiGatewayV2
         }
 
         /**
-         * <p>Resets all authorizer cache entries on a stage. Supported only for HTTP
-         * APIs.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ResetAuthorizersCache">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::ResetAuthorizersCacheOutcome ResetAuthorizersCache(const Model::ResetAuthorizersCacheRequest& request) const;
-
-        /**
-         * A Callable wrapper for ResetAuthorizersCache that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename ResetAuthorizersCacheRequestT = Model::ResetAuthorizersCacheRequest>
-        Model::ResetAuthorizersCacheOutcomeCallable ResetAuthorizersCacheCallable(const ResetAuthorizersCacheRequestT& request) const
-        {
-            return SubmitCallable(&ApiGatewayV2Client::ResetAuthorizersCache, request);
-        }
-
-        /**
-         * An Async wrapper for ResetAuthorizersCache that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename ResetAuthorizersCacheRequestT = Model::ResetAuthorizersCacheRequest>
-        void ResetAuthorizersCacheAsync(const ResetAuthorizersCacheRequestT& request, const ResetAuthorizersCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&ApiGatewayV2Client::ResetAuthorizersCache, request, handler, context);
-        }
-
-        /**
          * <p>Gets an Api resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApi">AWS
          * API Reference</a></p>
@@ -1526,6 +1500,32 @@ namespace ApiGatewayV2
         void ReimportApiAsync(const ReimportApiRequestT& request, const ReimportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ApiGatewayV2Client::ReimportApi, request, handler, context);
+        }
+
+        /**
+         * <p>Resets all authorizer cache entries on a stage. Supported only for HTTP
+         * APIs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ResetAuthorizersCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetAuthorizersCacheOutcome ResetAuthorizersCache(const Model::ResetAuthorizersCacheRequest& request) const;
+
+        /**
+         * A Callable wrapper for ResetAuthorizersCache that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ResetAuthorizersCacheRequestT = Model::ResetAuthorizersCacheRequest>
+        Model::ResetAuthorizersCacheOutcomeCallable ResetAuthorizersCacheCallable(const ResetAuthorizersCacheRequestT& request) const
+        {
+            return SubmitCallable(&ApiGatewayV2Client::ResetAuthorizersCache, request);
+        }
+
+        /**
+         * An Async wrapper for ResetAuthorizersCache that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ResetAuthorizersCacheRequestT = Model::ResetAuthorizersCacheRequest>
+        void ResetAuthorizersCacheAsync(const ResetAuthorizersCacheRequestT& request, const ResetAuthorizersCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ApiGatewayV2Client::ResetAuthorizersCache, request, handler, context);
         }
 
         /**
