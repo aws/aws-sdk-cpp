@@ -473,7 +473,7 @@ public class C2jModelToGeneratorModelTransformer {
 
     void convertOperations() {
         allErrors = new HashSet<>();
-        operations = new LinkedHashMap<>(c2jServiceModel.getOperations().size());
+        operations = new TreeMap<>();
         removedOperations = new HashSet<>();
         for (Map.Entry<String, C2jOperation> entry : c2jServiceModel.getOperations().entrySet()) {
             if(!entry.getValue().isDeprecated()) {
