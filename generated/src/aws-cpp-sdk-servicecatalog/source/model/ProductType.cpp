@@ -24,6 +24,7 @@ namespace Aws
         static const int MARKETPLACE_HASH = HashingUtils::HashString("MARKETPLACE");
         static const int TERRAFORM_OPEN_SOURCE_HASH = HashingUtils::HashString("TERRAFORM_OPEN_SOURCE");
         static const int TERRAFORM_CLOUD_HASH = HashingUtils::HashString("TERRAFORM_CLOUD");
+        static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
 
 
         ProductType GetProductTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == TERRAFORM_CLOUD_HASH)
           {
             return ProductType::TERRAFORM_CLOUD;
+          }
+          else if (hashCode == EXTERNAL_HASH)
+          {
+            return ProductType::EXTERNAL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "TERRAFORM_OPEN_SOURCE";
           case ProductType::TERRAFORM_CLOUD:
             return "TERRAFORM_CLOUD";
+          case ProductType::EXTERNAL:
+            return "EXTERNAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

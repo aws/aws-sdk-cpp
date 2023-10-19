@@ -41,7 +41,9 @@ DataSourceParameters::DataSourceParameters() :
     m_twitterParametersHasBeenSet(false),
     m_amazonOpenSearchParametersHasBeenSet(false),
     m_exasolParametersHasBeenSet(false),
-    m_databricksParametersHasBeenSet(false)
+    m_databricksParametersHasBeenSet(false),
+    m_starburstParametersHasBeenSet(false),
+    m_trinoParametersHasBeenSet(false)
 {
 }
 
@@ -68,7 +70,9 @@ DataSourceParameters::DataSourceParameters(JsonView jsonValue) :
     m_twitterParametersHasBeenSet(false),
     m_amazonOpenSearchParametersHasBeenSet(false),
     m_exasolParametersHasBeenSet(false),
-    m_databricksParametersHasBeenSet(false)
+    m_databricksParametersHasBeenSet(false),
+    m_starburstParametersHasBeenSet(false),
+    m_trinoParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -236,6 +240,20 @@ DataSourceParameters& DataSourceParameters::operator =(JsonView jsonValue)
     m_databricksParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StarburstParameters"))
+  {
+    m_starburstParameters = jsonValue.GetObject("StarburstParameters");
+
+    m_starburstParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TrinoParameters"))
+  {
+    m_trinoParameters = jsonValue.GetObject("TrinoParameters");
+
+    m_trinoParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -378,6 +396,18 @@ JsonValue DataSourceParameters::Jsonize() const
   if(m_databricksParametersHasBeenSet)
   {
    payload.WithObject("DatabricksParameters", m_databricksParameters.Jsonize());
+
+  }
+
+  if(m_starburstParametersHasBeenSet)
+  {
+   payload.WithObject("StarburstParameters", m_starburstParameters.Jsonize());
+
+  }
+
+  if(m_trinoParametersHasBeenSet)
+  {
+   payload.WithObject("TrinoParameters", m_trinoParameters.Jsonize());
 
   }
 

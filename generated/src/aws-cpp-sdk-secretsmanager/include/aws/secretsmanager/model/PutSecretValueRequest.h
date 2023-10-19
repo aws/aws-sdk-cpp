@@ -113,216 +113,216 @@ namespace Model
     /**
      * <p>A unique identifier for the new version of the secret. </p>  <p>If you
      * use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call
-     * this operation, then you can leave this parameter empty because they generate a
-     * random UUID for you. If you don't use the SDK and instead generate a raw HTTP
-     * request to the Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for new versions and include that value
-     * in the request. </p>  <p>This value helps ensure idempotency. Secrets
-     * Manager uses this value to prevent the accidental creation of duplicate versions
-     * if there are failures and retries during the Lambda rotation function
-     * processing. We recommend that you generate a <a
+     * this operation, then you can leave this parameter empty. The CLI or SDK
+     * generates a random UUID for you and includes it as the value for this parameter
+     * in the request. </p>  <p>If you generate a raw HTTP request to the
+     * Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.</p> <p>This value
+     * helps ensure idempotency. Secrets Manager uses this value to prevent the
+     * accidental creation of duplicate versions if there are failures and retries
+     * during a rotation. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
-     * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
-     * <code>ClientRequestToken</code> value isn't already associated with a version of
-     * the secret then a new version of the secret is created. </p> </li> <li> <p>If a
-     * version with this value already exists and that version's
-     * <code>SecretString</code> or <code>SecretBinary</code> values are the same as
-     * those in the request then the request is ignored. The operation is idempotent.
-     * </p> </li> <li> <p>If a version with this value already exists and the version
-     * of the <code>SecretString</code> and <code>SecretBinary</code> values are
-     * different from those in the request, then the request fails because you can't
-     * modify a secret version. You can only create new versions to store new secret
-     * values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
-     * new version.</p>
+     * value to ensure uniqueness of your versions within the specified secret. </p>
+     * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
+     * associated with a version of the secret then a new version of the secret is
+     * created. </p> </li> <li> <p>If a version with this value already exists and that
+     * version's <code>SecretString</code> or <code>SecretBinary</code> values are the
+     * same as those in the request then the request is ignored. The operation is
+     * idempotent. </p> </li> <li> <p>If a version with this value already exists and
+     * the version of the <code>SecretString</code> and <code>SecretBinary</code>
+     * values are different from those in the request, then the request fails because
+     * you can't modify a secret version. You can only create new versions to store new
+     * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
+     * of the new version.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
      * <p>A unique identifier for the new version of the secret. </p>  <p>If you
      * use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call
-     * this operation, then you can leave this parameter empty because they generate a
-     * random UUID for you. If you don't use the SDK and instead generate a raw HTTP
-     * request to the Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for new versions and include that value
-     * in the request. </p>  <p>This value helps ensure idempotency. Secrets
-     * Manager uses this value to prevent the accidental creation of duplicate versions
-     * if there are failures and retries during the Lambda rotation function
-     * processing. We recommend that you generate a <a
+     * this operation, then you can leave this parameter empty. The CLI or SDK
+     * generates a random UUID for you and includes it as the value for this parameter
+     * in the request. </p>  <p>If you generate a raw HTTP request to the
+     * Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.</p> <p>This value
+     * helps ensure idempotency. Secrets Manager uses this value to prevent the
+     * accidental creation of duplicate versions if there are failures and retries
+     * during a rotation. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
-     * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
-     * <code>ClientRequestToken</code> value isn't already associated with a version of
-     * the secret then a new version of the secret is created. </p> </li> <li> <p>If a
-     * version with this value already exists and that version's
-     * <code>SecretString</code> or <code>SecretBinary</code> values are the same as
-     * those in the request then the request is ignored. The operation is idempotent.
-     * </p> </li> <li> <p>If a version with this value already exists and the version
-     * of the <code>SecretString</code> and <code>SecretBinary</code> values are
-     * different from those in the request, then the request fails because you can't
-     * modify a secret version. You can only create new versions to store new secret
-     * values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
-     * new version.</p>
+     * value to ensure uniqueness of your versions within the specified secret. </p>
+     * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
+     * associated with a version of the secret then a new version of the secret is
+     * created. </p> </li> <li> <p>If a version with this value already exists and that
+     * version's <code>SecretString</code> or <code>SecretBinary</code> values are the
+     * same as those in the request then the request is ignored. The operation is
+     * idempotent. </p> </li> <li> <p>If a version with this value already exists and
+     * the version of the <code>SecretString</code> and <code>SecretBinary</code>
+     * values are different from those in the request, then the request fails because
+     * you can't modify a secret version. You can only create new versions to store new
+     * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
+     * of the new version.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique identifier for the new version of the secret. </p>  <p>If you
      * use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call
-     * this operation, then you can leave this parameter empty because they generate a
-     * random UUID for you. If you don't use the SDK and instead generate a raw HTTP
-     * request to the Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for new versions and include that value
-     * in the request. </p>  <p>This value helps ensure idempotency. Secrets
-     * Manager uses this value to prevent the accidental creation of duplicate versions
-     * if there are failures and retries during the Lambda rotation function
-     * processing. We recommend that you generate a <a
+     * this operation, then you can leave this parameter empty. The CLI or SDK
+     * generates a random UUID for you and includes it as the value for this parameter
+     * in the request. </p>  <p>If you generate a raw HTTP request to the
+     * Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.</p> <p>This value
+     * helps ensure idempotency. Secrets Manager uses this value to prevent the
+     * accidental creation of duplicate versions if there are failures and retries
+     * during a rotation. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
-     * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
-     * <code>ClientRequestToken</code> value isn't already associated with a version of
-     * the secret then a new version of the secret is created. </p> </li> <li> <p>If a
-     * version with this value already exists and that version's
-     * <code>SecretString</code> or <code>SecretBinary</code> values are the same as
-     * those in the request then the request is ignored. The operation is idempotent.
-     * </p> </li> <li> <p>If a version with this value already exists and the version
-     * of the <code>SecretString</code> and <code>SecretBinary</code> values are
-     * different from those in the request, then the request fails because you can't
-     * modify a secret version. You can only create new versions to store new secret
-     * values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
-     * new version.</p>
+     * value to ensure uniqueness of your versions within the specified secret. </p>
+     * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
+     * associated with a version of the secret then a new version of the secret is
+     * created. </p> </li> <li> <p>If a version with this value already exists and that
+     * version's <code>SecretString</code> or <code>SecretBinary</code> values are the
+     * same as those in the request then the request is ignored. The operation is
+     * idempotent. </p> </li> <li> <p>If a version with this value already exists and
+     * the version of the <code>SecretString</code> and <code>SecretBinary</code>
+     * values are different from those in the request, then the request fails because
+     * you can't modify a secret version. You can only create new versions to store new
+     * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
+     * of the new version.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
      * <p>A unique identifier for the new version of the secret. </p>  <p>If you
      * use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call
-     * this operation, then you can leave this parameter empty because they generate a
-     * random UUID for you. If you don't use the SDK and instead generate a raw HTTP
-     * request to the Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for new versions and include that value
-     * in the request. </p>  <p>This value helps ensure idempotency. Secrets
-     * Manager uses this value to prevent the accidental creation of duplicate versions
-     * if there are failures and retries during the Lambda rotation function
-     * processing. We recommend that you generate a <a
+     * this operation, then you can leave this parameter empty. The CLI or SDK
+     * generates a random UUID for you and includes it as the value for this parameter
+     * in the request. </p>  <p>If you generate a raw HTTP request to the
+     * Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.</p> <p>This value
+     * helps ensure idempotency. Secrets Manager uses this value to prevent the
+     * accidental creation of duplicate versions if there are failures and retries
+     * during a rotation. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
-     * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
-     * <code>ClientRequestToken</code> value isn't already associated with a version of
-     * the secret then a new version of the secret is created. </p> </li> <li> <p>If a
-     * version with this value already exists and that version's
-     * <code>SecretString</code> or <code>SecretBinary</code> values are the same as
-     * those in the request then the request is ignored. The operation is idempotent.
-     * </p> </li> <li> <p>If a version with this value already exists and the version
-     * of the <code>SecretString</code> and <code>SecretBinary</code> values are
-     * different from those in the request, then the request fails because you can't
-     * modify a secret version. You can only create new versions to store new secret
-     * values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
-     * new version.</p>
+     * value to ensure uniqueness of your versions within the specified secret. </p>
+     * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
+     * associated with a version of the secret then a new version of the secret is
+     * created. </p> </li> <li> <p>If a version with this value already exists and that
+     * version's <code>SecretString</code> or <code>SecretBinary</code> values are the
+     * same as those in the request then the request is ignored. The operation is
+     * idempotent. </p> </li> <li> <p>If a version with this value already exists and
+     * the version of the <code>SecretString</code> and <code>SecretBinary</code>
+     * values are different from those in the request, then the request fails because
+     * you can't modify a secret version. You can only create new versions to store new
+     * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
+     * of the new version.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
      * <p>A unique identifier for the new version of the secret. </p>  <p>If you
      * use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call
-     * this operation, then you can leave this parameter empty because they generate a
-     * random UUID for you. If you don't use the SDK and instead generate a raw HTTP
-     * request to the Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for new versions and include that value
-     * in the request. </p>  <p>This value helps ensure idempotency. Secrets
-     * Manager uses this value to prevent the accidental creation of duplicate versions
-     * if there are failures and retries during the Lambda rotation function
-     * processing. We recommend that you generate a <a
+     * this operation, then you can leave this parameter empty. The CLI or SDK
+     * generates a random UUID for you and includes it as the value for this parameter
+     * in the request. </p>  <p>If you generate a raw HTTP request to the
+     * Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.</p> <p>This value
+     * helps ensure idempotency. Secrets Manager uses this value to prevent the
+     * accidental creation of duplicate versions if there are failures and retries
+     * during a rotation. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
-     * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
-     * <code>ClientRequestToken</code> value isn't already associated with a version of
-     * the secret then a new version of the secret is created. </p> </li> <li> <p>If a
-     * version with this value already exists and that version's
-     * <code>SecretString</code> or <code>SecretBinary</code> values are the same as
-     * those in the request then the request is ignored. The operation is idempotent.
-     * </p> </li> <li> <p>If a version with this value already exists and the version
-     * of the <code>SecretString</code> and <code>SecretBinary</code> values are
-     * different from those in the request, then the request fails because you can't
-     * modify a secret version. You can only create new versions to store new secret
-     * values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
-     * new version.</p>
+     * value to ensure uniqueness of your versions within the specified secret. </p>
+     * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
+     * associated with a version of the secret then a new version of the secret is
+     * created. </p> </li> <li> <p>If a version with this value already exists and that
+     * version's <code>SecretString</code> or <code>SecretBinary</code> values are the
+     * same as those in the request then the request is ignored. The operation is
+     * idempotent. </p> </li> <li> <p>If a version with this value already exists and
+     * the version of the <code>SecretString</code> and <code>SecretBinary</code>
+     * values are different from those in the request, then the request fails because
+     * you can't modify a secret version. You can only create new versions to store new
+     * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
+     * of the new version.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
      * <p>A unique identifier for the new version of the secret. </p>  <p>If you
      * use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call
-     * this operation, then you can leave this parameter empty because they generate a
-     * random UUID for you. If you don't use the SDK and instead generate a raw HTTP
-     * request to the Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for new versions and include that value
-     * in the request. </p>  <p>This value helps ensure idempotency. Secrets
-     * Manager uses this value to prevent the accidental creation of duplicate versions
-     * if there are failures and retries during the Lambda rotation function
-     * processing. We recommend that you generate a <a
+     * this operation, then you can leave this parameter empty. The CLI or SDK
+     * generates a random UUID for you and includes it as the value for this parameter
+     * in the request. </p>  <p>If you generate a raw HTTP request to the
+     * Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.</p> <p>This value
+     * helps ensure idempotency. Secrets Manager uses this value to prevent the
+     * accidental creation of duplicate versions if there are failures and retries
+     * during a rotation. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
-     * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
-     * <code>ClientRequestToken</code> value isn't already associated with a version of
-     * the secret then a new version of the secret is created. </p> </li> <li> <p>If a
-     * version with this value already exists and that version's
-     * <code>SecretString</code> or <code>SecretBinary</code> values are the same as
-     * those in the request then the request is ignored. The operation is idempotent.
-     * </p> </li> <li> <p>If a version with this value already exists and the version
-     * of the <code>SecretString</code> and <code>SecretBinary</code> values are
-     * different from those in the request, then the request fails because you can't
-     * modify a secret version. You can only create new versions to store new secret
-     * values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
-     * new version.</p>
+     * value to ensure uniqueness of your versions within the specified secret. </p>
+     * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
+     * associated with a version of the secret then a new version of the secret is
+     * created. </p> </li> <li> <p>If a version with this value already exists and that
+     * version's <code>SecretString</code> or <code>SecretBinary</code> values are the
+     * same as those in the request then the request is ignored. The operation is
+     * idempotent. </p> </li> <li> <p>If a version with this value already exists and
+     * the version of the <code>SecretString</code> and <code>SecretBinary</code>
+     * values are different from those in the request, then the request fails because
+     * you can't modify a secret version. You can only create new versions to store new
+     * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
+     * of the new version.</p>
      */
     inline PutSecretValueRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
      * <p>A unique identifier for the new version of the secret. </p>  <p>If you
      * use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call
-     * this operation, then you can leave this parameter empty because they generate a
-     * random UUID for you. If you don't use the SDK and instead generate a raw HTTP
-     * request to the Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for new versions and include that value
-     * in the request. </p>  <p>This value helps ensure idempotency. Secrets
-     * Manager uses this value to prevent the accidental creation of duplicate versions
-     * if there are failures and retries during the Lambda rotation function
-     * processing. We recommend that you generate a <a
+     * this operation, then you can leave this parameter empty. The CLI or SDK
+     * generates a random UUID for you and includes it as the value for this parameter
+     * in the request. </p>  <p>If you generate a raw HTTP request to the
+     * Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.</p> <p>This value
+     * helps ensure idempotency. Secrets Manager uses this value to prevent the
+     * accidental creation of duplicate versions if there are failures and retries
+     * during a rotation. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
-     * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
-     * <code>ClientRequestToken</code> value isn't already associated with a version of
-     * the secret then a new version of the secret is created. </p> </li> <li> <p>If a
-     * version with this value already exists and that version's
-     * <code>SecretString</code> or <code>SecretBinary</code> values are the same as
-     * those in the request then the request is ignored. The operation is idempotent.
-     * </p> </li> <li> <p>If a version with this value already exists and the version
-     * of the <code>SecretString</code> and <code>SecretBinary</code> values are
-     * different from those in the request, then the request fails because you can't
-     * modify a secret version. You can only create new versions to store new secret
-     * values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
-     * new version.</p>
+     * value to ensure uniqueness of your versions within the specified secret. </p>
+     * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
+     * associated with a version of the secret then a new version of the secret is
+     * created. </p> </li> <li> <p>If a version with this value already exists and that
+     * version's <code>SecretString</code> or <code>SecretBinary</code> values are the
+     * same as those in the request then the request is ignored. The operation is
+     * idempotent. </p> </li> <li> <p>If a version with this value already exists and
+     * the version of the <code>SecretString</code> and <code>SecretBinary</code>
+     * values are different from those in the request, then the request fails because
+     * you can't modify a secret version. You can only create new versions to store new
+     * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
+     * of the new version.</p>
      */
     inline PutSecretValueRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the new version of the secret. </p>  <p>If you
      * use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call
-     * this operation, then you can leave this parameter empty because they generate a
-     * random UUID for you. If you don't use the SDK and instead generate a raw HTTP
-     * request to the Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for new versions and include that value
-     * in the request. </p>  <p>This value helps ensure idempotency. Secrets
-     * Manager uses this value to prevent the accidental creation of duplicate versions
-     * if there are failures and retries during the Lambda rotation function
-     * processing. We recommend that you generate a <a
+     * this operation, then you can leave this parameter empty. The CLI or SDK
+     * generates a random UUID for you and includes it as the value for this parameter
+     * in the request. </p>  <p>If you generate a raw HTTP request to the
+     * Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.</p> <p>This value
+     * helps ensure idempotency. Secrets Manager uses this value to prevent the
+     * accidental creation of duplicate versions if there are failures and retries
+     * during a rotation. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
-     * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
-     * <code>ClientRequestToken</code> value isn't already associated with a version of
-     * the secret then a new version of the secret is created. </p> </li> <li> <p>If a
-     * version with this value already exists and that version's
-     * <code>SecretString</code> or <code>SecretBinary</code> values are the same as
-     * those in the request then the request is ignored. The operation is idempotent.
-     * </p> </li> <li> <p>If a version with this value already exists and the version
-     * of the <code>SecretString</code> and <code>SecretBinary</code> values are
-     * different from those in the request, then the request fails because you can't
-     * modify a secret version. You can only create new versions to store new secret
-     * values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
-     * new version.</p>
+     * value to ensure uniqueness of your versions within the specified secret. </p>
+     * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
+     * associated with a version of the secret then a new version of the secret is
+     * created. </p> </li> <li> <p>If a version with this value already exists and that
+     * version's <code>SecretString</code> or <code>SecretBinary</code> values are the
+     * same as those in the request then the request is ignored. The operation is
+     * idempotent. </p> </li> <li> <p>If a version with this value already exists and
+     * the version of the <code>SecretString</code> and <code>SecretBinary</code>
+     * values are different from those in the request, then the request fails because
+     * you can't modify a secret version. You can only create new versions to store new
+     * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
+     * of the new version.</p>
      */
     inline PutSecretValueRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
