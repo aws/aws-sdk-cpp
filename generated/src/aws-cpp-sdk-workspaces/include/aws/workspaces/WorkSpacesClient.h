@@ -488,8 +488,10 @@ namespace WorkSpaces
          * <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces
          * Core. Contact your account team to be allow-listed to use this value. For more
          * information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon
-         * WorkSpaces Core</a>.</p> </li> <li> <p>PCoIP is only available for Windows
-         * bundles.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * WorkSpaces Core</a>.</p> </li> <li> <p>You don't need to specify the
+         * <code>PCOIP</code> protocol for Linux bundles because <code>WSP</code> is the
+         * default protocol for those bundles.</p> </li> </ul> <p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">AWS
          * API Reference</a></p>
          */

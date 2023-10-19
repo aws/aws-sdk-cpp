@@ -52,9 +52,11 @@
 #include <aws/opensearch/model/DescribeVpcEndpointsRequest.h>
 #include <aws/opensearch/model/DissociatePackageRequest.h>
 #include <aws/opensearch/model/GetCompatibleVersionsRequest.h>
+#include <aws/opensearch/model/GetDomainMaintenanceStatusRequest.h>
 #include <aws/opensearch/model/GetPackageVersionHistoryRequest.h>
 #include <aws/opensearch/model/GetUpgradeHistoryRequest.h>
 #include <aws/opensearch/model/GetUpgradeStatusRequest.h>
+#include <aws/opensearch/model/ListDomainMaintenancesRequest.h>
 #include <aws/opensearch/model/ListDomainNamesRequest.h>
 #include <aws/opensearch/model/ListDomainsForPackageRequest.h>
 #include <aws/opensearch/model/ListInstanceTypeDetailsRequest.h>
@@ -69,6 +71,7 @@
 #include <aws/opensearch/model/RejectInboundConnectionRequest.h>
 #include <aws/opensearch/model/RemoveTagsRequest.h>
 #include <aws/opensearch/model/RevokeVpcEndpointAccessRequest.h>
+#include <aws/opensearch/model/StartDomainMaintenanceRequest.h>
 #include <aws/opensearch/model/StartServiceSoftwareUpdateRequest.h>
 #include <aws/opensearch/model/UpdateDomainConfigRequest.h>
 #include <aws/opensearch/model/UpdatePackageRequest.h>
@@ -1173,6 +1176,45 @@ GetCompatibleVersionsOutcome OpenSearchServiceClient::GetCompatibleVersions(cons
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetDomainMaintenanceStatusOutcome OpenSearchServiceClient::GetDomainMaintenanceStatus(const GetDomainMaintenanceStatusRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetDomainMaintenanceStatus);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDomainMaintenanceStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDomainMaintenanceStatus", "Required field: DomainName, is not set");
+    return GetDomainMaintenanceStatusOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.MaintenanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDomainMaintenanceStatus", "Required field: MaintenanceId, is not set");
+    return GetDomainMaintenanceStatusOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MaintenanceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDomainMaintenanceStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDomainMaintenanceStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDomainMaintenanceStatus",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDomainMaintenanceStatusOutcome>(
+    [&]()-> GetDomainMaintenanceStatusOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDomainMaintenanceStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/domainMaintenance");
+      return GetDomainMaintenanceStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetPackageVersionHistoryOutcome OpenSearchServiceClient::GetPackageVersionHistory(const GetPackageVersionHistoryRequest& request) const
 {
   AWS_OPERATION_GUARD(GetPackageVersionHistory);
@@ -1269,6 +1311,40 @@ GetUpgradeStatusOutcome OpenSearchServiceClient::GetUpgradeStatus(const GetUpgra
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
       endpointResolutionOutcome.GetResult().AddPathSegments("/status");
       return GetUpgradeStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListDomainMaintenancesOutcome OpenSearchServiceClient::ListDomainMaintenances(const ListDomainMaintenancesRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListDomainMaintenances);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDomainMaintenances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDomainMaintenances", "Required field: DomainName, is not set");
+    return ListDomainMaintenancesOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListDomainMaintenances, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListDomainMaintenances, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDomainMaintenances",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListDomainMaintenancesOutcome>(
+    [&]()-> ListDomainMaintenancesOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDomainMaintenances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/domainMaintenances");
+      return ListDomainMaintenancesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1707,6 +1783,40 @@ RevokeVpcEndpointAccessOutcome OpenSearchServiceClient::RevokeVpcEndpointAccess(
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
       endpointResolutionOutcome.GetResult().AddPathSegments("/revokeVpcEndpointAccess");
       return RevokeVpcEndpointAccessOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartDomainMaintenanceOutcome OpenSearchServiceClient::StartDomainMaintenance(const StartDomainMaintenanceRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartDomainMaintenance);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDomainMaintenance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartDomainMaintenance", "Required field: DomainName, is not set");
+    return StartDomainMaintenanceOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartDomainMaintenance, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartDomainMaintenance, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartDomainMaintenance",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartDomainMaintenanceOutcome>(
+    [&]()-> StartDomainMaintenanceOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartDomainMaintenance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/domainMaintenance");
+      return StartDomainMaintenanceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

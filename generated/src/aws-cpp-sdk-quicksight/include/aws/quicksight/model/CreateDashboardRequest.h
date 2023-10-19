@@ -749,6 +749,61 @@ namespace Model
      */
     inline CreateDashboardRequest& WithValidationStrategy(ValidationStrategy&& value) { SetValidationStrategy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFolderArns() const{ return m_folderArns; }
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline bool FolderArnsHasBeenSet() const { return m_folderArnsHasBeenSet; }
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline void SetFolderArns(const Aws::Vector<Aws::String>& value) { m_folderArnsHasBeenSet = true; m_folderArns = value; }
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline void SetFolderArns(Aws::Vector<Aws::String>&& value) { m_folderArnsHasBeenSet = true; m_folderArns = std::move(value); }
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline CreateDashboardRequest& WithFolderArns(const Aws::Vector<Aws::String>& value) { SetFolderArns(value); return *this;}
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline CreateDashboardRequest& WithFolderArns(Aws::Vector<Aws::String>&& value) { SetFolderArns(std::move(value)); return *this;}
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline CreateDashboardRequest& AddFolderArns(const Aws::String& value) { m_folderArnsHasBeenSet = true; m_folderArns.push_back(value); return *this; }
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline CreateDashboardRequest& AddFolderArns(Aws::String&& value) { m_folderArnsHasBeenSet = true; m_folderArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline CreateDashboardRequest& AddFolderArns(const char* value) { m_folderArnsHasBeenSet = true; m_folderArns.push_back(value); return *this; }
+
   private:
 
     Aws::String m_awsAccountId;
@@ -786,6 +841,9 @@ namespace Model
 
     ValidationStrategy m_validationStrategy;
     bool m_validationStrategyHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_folderArns;
+    bool m_folderArnsHasBeenSet = false;
   };
 
 } // namespace Model

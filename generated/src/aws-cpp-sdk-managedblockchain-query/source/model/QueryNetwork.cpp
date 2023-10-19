@@ -23,6 +23,7 @@ namespace Aws
         static const int ETHEREUM_MAINNET_HASH = HashingUtils::HashString("ETHEREUM_MAINNET");
         static const int BITCOIN_MAINNET_HASH = HashingUtils::HashString("BITCOIN_MAINNET");
         static const int BITCOIN_TESTNET_HASH = HashingUtils::HashString("BITCOIN_TESTNET");
+        static const int ETHEREUM_SEPOLIA_TESTNET_HASH = HashingUtils::HashString("ETHEREUM_SEPOLIA_TESTNET");
 
 
         QueryNetwork GetQueryNetworkForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == BITCOIN_TESTNET_HASH)
           {
             return QueryNetwork::BITCOIN_TESTNET;
+          }
+          else if (hashCode == ETHEREUM_SEPOLIA_TESTNET_HASH)
+          {
+            return QueryNetwork::ETHEREUM_SEPOLIA_TESTNET;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "BITCOIN_MAINNET";
           case QueryNetwork::BITCOIN_TESTNET:
             return "BITCOIN_TESTNET";
+          case QueryNetwork::ETHEREUM_SEPOLIA_TESTNET:
+            return "ETHEREUM_SEPOLIA_TESTNET";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

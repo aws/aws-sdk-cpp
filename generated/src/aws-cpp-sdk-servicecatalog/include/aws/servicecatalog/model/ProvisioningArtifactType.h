@@ -20,7 +20,8 @@ namespace Model
     MARKETPLACE_AMI,
     MARKETPLACE_CAR,
     TERRAFORM_OPEN_SOURCE,
-    TERRAFORM_CLOUD
+    TERRAFORM_CLOUD,
+    EXTERNAL
   };
 
 namespace ProvisioningArtifactTypeMapper
