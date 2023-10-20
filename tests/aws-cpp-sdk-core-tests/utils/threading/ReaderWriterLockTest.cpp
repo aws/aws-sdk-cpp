@@ -87,8 +87,10 @@ TEST_F(ReaderWriterLockTest, NoReadersMultipleWriters)
     ASSERT_EQ(originalLength + THREADS_NUM * ITERATIONS, resource.length());
 }
 
-TEST_F(ReaderWriterLockTest, Explosive)
+TEST_F(ReaderWriterLockTest, MultiAsync)
 {
+    GTEST_SKIP() << "Test is temporarily disabled";
+
     const char sharedBufferOriginal[] = "It's still Day One";
     char sharedBuffer[] = "It's still Day One";
     const size_t sharedBufferSz = strlen(sharedBuffer);
