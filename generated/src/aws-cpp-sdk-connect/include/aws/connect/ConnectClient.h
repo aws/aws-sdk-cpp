@@ -23,7 +23,7 @@ namespace Connect
    * issues more efficiently by getting customers in touch with the appropriate
    * agents.</p> <p>There are limits to the number of Amazon Connect resources that
    * you can create. There are also limits to the number of requests that you can
-   * make per second. For more information, see <a
+   * make per second. For more information, seeP98941055 <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
    * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
    * <p>You can connect programmatically to an Amazon Web Services service by using
@@ -908,8 +908,8 @@ namespace Connect
 
         /**
          * <p>Creates a traffic distribution group given an Amazon Connect instance that
-         * has been replicated. </p>  <p>You can change the <code>SignInConfig</code>
-         * distribution only for a default <code>TrafficDistributionGroup</code> (see the
+         * has been replicated. </p>  <p>The <code>SignInConfig</code> distribution
+         * is available only on a default <code>TrafficDistributionGroup</code> (see the
          * <code>IsDefault</code> parameter in the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
          * data type). If you call <code>UpdateTrafficDistribution</code> with a modified
@@ -970,9 +970,14 @@ namespace Connect
         }
 
         /**
-         * <p>Creates a user account for the specified Amazon Connect instance.</p> <p>For
-         * information about how to create user accounts using the Amazon Connect console,
-         * see <a
+         * <p>Creates a user account for the specified Amazon Connect instance.</p>
+         *  <p>Certain <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html">UserIdentityInfo</a>
+         * parameters are required in some situations. For example, <code>Email</code> is
+         * required if you are using SAML for identity management. <code>FirstName</code>
+         * and <code>LastName</code> are required if you are using Amazon Connect or SAML
+         * for identity management.</p>  <p>For information about how to create
+         * user accounts using the Amazon Connect console, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
          * Users</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2710,9 +2715,15 @@ namespace Connect
         }
 
         /**
-         * <p>Retrieves a token for federation.</p>  <p>This API doesn't support root
-         * users. If you try to invoke GetFederationToken with root credentials, an error
-         * message similar to the following one appears: </p> <p> <code>Provided identity:
+         * <p>Supports SAML sign-in for Amazon Connect. Retrieves a token for federation.
+         * The token is for the Amazon Connect user which corresponds to the IAM
+         * credentials that were used to invoke this action. </p> <p>For more information
+         * about how SAML sign-in works in Amazon Connect, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/configure-saml.html
+         * ">Configure SAML with IAM for Amazon Connect in the <i>Amazon Connect
+         * Administrator Guide</i>.</a> </p>  <p>This API doesn't support root users.
+         * If you try to invoke GetFederationToken with root credentials, an error message
+         * similar to the following one appears: </p> <p> <code>Provided identity:
          * Principal: .... User: .... cannot be used for federation with Amazon
          * Connect</code> </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFederationToken">AWS
@@ -2742,8 +2753,16 @@ namespace Connect
          * <p>Gets historical metric data from the specified Amazon Connect instance.</p>
          * <p>For a description of each historical metric, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-         * Metrics Definitions</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+         *  <p>We recommend using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricDataV2.html">GetMetricDataV2</a>
+         * API. It provides more flexibility, features, and the ability to query longer
+         * time ranges than <code>GetMetricData</code>. Use it to retrieve historical agent
+         * and contact metrics for the last 3 months, at varying intervals. You can also
+         * use it to build custom dashboards to measure historical queue and agent
+         * performance. For example, you can track the number of incoming contacts for the
+         * last 7 days, with data split by day, to see how contact volume changed per day
+         * of the week.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricData">AWS
          * API Reference</a></p>
          */
@@ -4341,7 +4360,7 @@ namespace Connect
         }
 
         /**
-         * <p>Searches users in an Amazon Connect instance, with optional filtering.</p>
+         * <p>Searches users in an Amazon Connect instance, with optional filtering. </p>
          *  <p> <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.
          * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUsers">AWS
@@ -4578,7 +4597,37 @@ namespace Connect
         }
 
         /**
-         * <p>Initiates a flow to start a new task.</p><p><h3>See Also:</h3>   <a
+         * <p>Initiates a flow to start a new task contact. For more information about task
+         * contacts, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html">Concepts:
+         * Tasks in Amazon Connect</a> in the <i>Amazon Connect Administrator Guide</i>.
+         * </p> <p>When using <code>PreviousContactId</code> and
+         * <code>RelatedContactId</code> input parameters, note the following:</p> <ul>
+         * <li> <p> <code>PreviousContactId</code> </p> <ul> <li> <p>Any updates to
+         * user-defined task contact attributes on any contact linked through the same
+         * <code>PreviousContactId</code> will affect every contact in the chain.</p> </li>
+         * <li> <p>There can be a maximum of 12 linked task contacts in a chain. That is,
+         * 12 task contacts can be created that share the same
+         * <code>PreviousContactId</code>.</p> </li> </ul> </li> <li> <p>
+         * <code>RelatedContactId</code> </p> <ul> <li> <p>Copies contact attributes from
+         * the related task contact to the new contact.</p> </li> <li> <p>Any update on
+         * attributes in a new task contact does not update attributes on previous
+         * contact.</p> </li> <li> <p>There’s no limit on the number of task contacts that
+         * can be created that use the same <code>RelatedContactId</code>.</p> </li> </ul>
+         * </li> </ul> <p>In addition, when calling StartTaskContact include only one of
+         * these parameters: <code>ContactFlowID</code>, <code>QuickConnectID</code>, or
+         * <code>TaskTemplateID</code>. Only one parameter is required as long as the task
+         * template has a flow configured to run it. If more than one parameter is
+         * specified, or only the <code>TaskTemplateID</code> is specified but it does not
+         * have a flow configured, the request returns an error because Amazon Connect
+         * cannot identify the unique flow to run when the task is created.</p> <p>A
+         * <code>ServiceQuotaExceededException</code> occurs when the number of open tasks
+         * exceeds the active tasks quota or there are already 12 tasks referencing the
+         * same <code>PreviousContactId</code>. For more information about service quotas
+         * for task contacts, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+         * Connect service quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact">AWS
          * API Reference</a></p>
          */
@@ -5307,6 +5356,34 @@ namespace Connect
         }
 
         /**
+         * <p>Updates a phone number’s metadata.</p>  <p>To verify the status of
+         * a previous UpdatePhoneNumberMetadata operation, call the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+         * API.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePhoneNumberMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePhoneNumberMetadataOutcome UpdatePhoneNumberMetadata(const Model::UpdatePhoneNumberMetadataRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePhoneNumberMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdatePhoneNumberMetadataRequestT = Model::UpdatePhoneNumberMetadataRequest>
+        Model::UpdatePhoneNumberMetadataOutcomeCallable UpdatePhoneNumberMetadataCallable(const UpdatePhoneNumberMetadataRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::UpdatePhoneNumberMetadata, request);
+        }
+
+        /**
+         * An Async wrapper for UpdatePhoneNumberMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdatePhoneNumberMetadataRequestT = Model::UpdatePhoneNumberMetadataRequest>
+        void UpdatePhoneNumberMetadataAsync(const UpdatePhoneNumberMetadataRequestT& request, const UpdatePhoneNumberMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::UpdatePhoneNumberMetadata, request, handler, context);
+        }
+
+        /**
          * <p>Updates a prompt.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePrompt">AWS
          * API Reference</a></p>
@@ -5752,7 +5829,7 @@ namespace Connect
 
         /**
          * <p>Updates the traffic distribution for a given traffic distribution group. </p>
-         *  <p>You can change the <code>SignInConfig</code> distribution only for a
+         *  <p>The <code>SignInConfig</code> distribution is available only on a
          * default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code>
          * parameter in the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>

@@ -102,69 +102,69 @@ namespace Model
 
 
     /**
-     * <p>The time an image set is created in AWS HealthImaging. Sample creation date
-     * is provided in <code>1985-04-12T23:20:50.52Z</code> format.</p>
+     * <p>The time an image set is created. Sample creation date is provided in
+     * <code>1985-04-12T23:20:50.52Z</code> format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The time an image set is created in AWS HealthImaging. Sample creation date
-     * is provided in <code>1985-04-12T23:20:50.52Z</code> format.</p>
+     * <p>The time an image set is created. Sample creation date is provided in
+     * <code>1985-04-12T23:20:50.52Z</code> format.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The time an image set is created in AWS HealthImaging. Sample creation date
-     * is provided in <code>1985-04-12T23:20:50.52Z</code> format.</p>
+     * <p>The time an image set is created. Sample creation date is provided in
+     * <code>1985-04-12T23:20:50.52Z</code> format.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The time an image set is created in AWS HealthImaging. Sample creation date
-     * is provided in <code>1985-04-12T23:20:50.52Z</code> format.</p>
+     * <p>The time an image set is created. Sample creation date is provided in
+     * <code>1985-04-12T23:20:50.52Z</code> format.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The time an image set is created in AWS HealthImaging. Sample creation date
-     * is provided in <code>1985-04-12T23:20:50.52Z</code> format.</p>
+     * <p>The time an image set is created. Sample creation date is provided in
+     * <code>1985-04-12T23:20:50.52Z</code> format.</p>
      */
     inline ImageSetsMetadataSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The time an image set is created in AWS HealthImaging. Sample creation date
-     * is provided in <code>1985-04-12T23:20:50.52Z</code> format.</p>
+     * <p>The time an image set is created. Sample creation date is provided in
+     * <code>1985-04-12T23:20:50.52Z</code> format.</p>
      */
     inline ImageSetsMetadataSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time when an image was last updated in AWS HealthImaging.</p>
+     * <p>The time an image set was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The time when an image was last updated in AWS HealthImaging.</p>
+     * <p>The time an image set was last updated.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>The time when an image was last updated in AWS HealthImaging.</p>
+     * <p>The time an image set was last updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The time when an image was last updated in AWS HealthImaging.</p>
+     * <p>The time an image set was last updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The time when an image was last updated in AWS HealthImaging.</p>
+     * <p>The time an image set was last updated.</p>
      */
     inline ImageSetsMetadataSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The time when an image was last updated in AWS HealthImaging.</p>
+     * <p>The time an image set was last updated.</p>
      */
     inline ImageSetsMetadataSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 

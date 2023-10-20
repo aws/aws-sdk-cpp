@@ -395,6 +395,7 @@ namespace Aws
       class UpdateInstanceStorageConfigRequest;
       class UpdateParticipantRoleConfigRequest;
       class UpdatePhoneNumberRequest;
+      class UpdatePhoneNumberMetadataRequest;
       class UpdatePromptRequest;
       class UpdateQueueHoursOfOperationRequest;
       class UpdateQueueMaxContactsRequest;
@@ -608,6 +609,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateInstanceStorageConfigOutcome;
       typedef Aws::Utils::Outcome<UpdateParticipantRoleConfigResult, ConnectError> UpdateParticipantRoleConfigOutcome;
       typedef Aws::Utils::Outcome<UpdatePhoneNumberResult, ConnectError> UpdatePhoneNumberOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdatePhoneNumberMetadataOutcome;
       typedef Aws::Utils::Outcome<UpdatePromptResult, ConnectError> UpdatePromptOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQueueHoursOfOperationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQueueMaxContactsOutcome;
@@ -821,6 +823,7 @@ namespace Aws
       typedef std::future<UpdateInstanceStorageConfigOutcome> UpdateInstanceStorageConfigOutcomeCallable;
       typedef std::future<UpdateParticipantRoleConfigOutcome> UpdateParticipantRoleConfigOutcomeCallable;
       typedef std::future<UpdatePhoneNumberOutcome> UpdatePhoneNumberOutcomeCallable;
+      typedef std::future<UpdatePhoneNumberMetadataOutcome> UpdatePhoneNumberMetadataOutcomeCallable;
       typedef std::future<UpdatePromptOutcome> UpdatePromptOutcomeCallable;
       typedef std::future<UpdateQueueHoursOfOperationOutcome> UpdateQueueHoursOfOperationOutcomeCallable;
       typedef std::future<UpdateQueueMaxContactsOutcome> UpdateQueueMaxContactsOutcomeCallable;
@@ -1037,6 +1040,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::UpdateInstanceStorageConfigRequest&, const Model::UpdateInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceStorageConfigResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateParticipantRoleConfigRequest&, const Model::UpdateParticipantRoleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateParticipantRoleConfigResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdatePhoneNumberRequest&, const Model::UpdatePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePhoneNumberResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdatePhoneNumberMetadataRequest&, const Model::UpdatePhoneNumberMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePhoneNumberMetadataResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdatePromptRequest&, const Model::UpdatePromptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePromptResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateQueueHoursOfOperationRequest&, const Model::UpdateQueueHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueueHoursOfOperationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateQueueMaxContactsRequest&, const Model::UpdateQueueMaxContactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueueMaxContactsResponseReceivedHandler;

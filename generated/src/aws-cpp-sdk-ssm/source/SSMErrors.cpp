@@ -113,6 +113,7 @@ static const int DUPLICATE_DOCUMENT_VERSION_NAME_HASH = HashingUtils::HashString
 static const int OPS_METADATA_INVALID_ARGUMENT_HASH = HashingUtils::HashString("OpsMetadataInvalidArgumentException");
 static const int INVALID_TYPE_NAME_HASH = HashingUtils::HashString("InvalidTypeNameException");
 static const int UNSUPPORTED_INVENTORY_SCHEMA_VERSION_HASH = HashingUtils::HashString("UnsupportedInventorySchemaVersionException");
+static const int OPS_ITEM_CONFLICT_HASH = HashingUtils::HashString("OpsItemConflictException");
 static const int ASSOCIATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AssociationDoesNotExist");
 static const int ASSOCIATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AssociationLimitExceeded");
 static const int INVALID_OPTION_HASH = HashingUtils::HashString("InvalidOptionException");
@@ -288,6 +289,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == UNSUPPORTED_INVENTORY_SCHEMA_VERSION_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_INVENTORY_SCHEMA_VERSION), false);
+    return true;
+  }
+  else if (hashCode == OPS_ITEM_CONFLICT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_CONFLICT), false);
     return true;
   }
   else if (hashCode == ASSOCIATION_DOES_NOT_EXIST_HASH)
@@ -845,17 +851,17 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_PARAMETER_TYPE), false);
     return true;
   }
-  else if (hashCode == MAX_DOCUMENT_SIZE_EXCEEDED_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::MAX_DOCUMENT_SIZE_EXCEEDED), false);
-    return true;
-  }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
-  if (hashCode == INVALID_FILTER_KEY_HASH)
+  if (hashCode == MAX_DOCUMENT_SIZE_EXCEEDED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::MAX_DOCUMENT_SIZE_EXCEEDED), false);
+    return true;
+  }
+  else if (hashCode == INVALID_FILTER_KEY_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_KEY), false);
     return true;
