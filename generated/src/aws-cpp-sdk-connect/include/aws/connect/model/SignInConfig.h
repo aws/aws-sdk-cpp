@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>The distribution of allowing signing in to the instance and its
-   * replica(s).</p><p><h3>See Also:</h3>   <a
+   * <p>The distribution that determines which Amazon Web Services Regions should be
+   * used to sign in agents in to both the instance and its replica(s).</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SignInConfig">AWS
    * API Reference</a></p>
    */

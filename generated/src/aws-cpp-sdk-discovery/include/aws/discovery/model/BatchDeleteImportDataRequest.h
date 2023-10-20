@@ -80,10 +80,38 @@ namespace Model
      */
     inline BatchDeleteImportDataRequest& AddImportTaskIds(const char* value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds.push_back(value); return *this; }
 
+
+    /**
+     * <p> Set to <code>true</code> to remove the deleted import task from
+     * <a>DescribeImportTasks</a>. </p>
+     */
+    inline bool GetDeleteHistory() const{ return m_deleteHistory; }
+
+    /**
+     * <p> Set to <code>true</code> to remove the deleted import task from
+     * <a>DescribeImportTasks</a>. </p>
+     */
+    inline bool DeleteHistoryHasBeenSet() const { return m_deleteHistoryHasBeenSet; }
+
+    /**
+     * <p> Set to <code>true</code> to remove the deleted import task from
+     * <a>DescribeImportTasks</a>. </p>
+     */
+    inline void SetDeleteHistory(bool value) { m_deleteHistoryHasBeenSet = true; m_deleteHistory = value; }
+
+    /**
+     * <p> Set to <code>true</code> to remove the deleted import task from
+     * <a>DescribeImportTasks</a>. </p>
+     */
+    inline BatchDeleteImportDataRequest& WithDeleteHistory(bool value) { SetDeleteHistory(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_importTaskIds;
     bool m_importTaskIdsHasBeenSet = false;
+
+    bool m_deleteHistory;
+    bool m_deleteHistoryHasBeenSet = false;
   };
 
 } // namespace Model
