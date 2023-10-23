@@ -1821,6 +1821,33 @@ namespace Rekognition
         }
 
         /**
+         * <p>Retrieves the results for a given media analysis job. Takes a
+         * <code>JobId</code> returned by StartMediaAnalysisJob.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetMediaAnalysisJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMediaAnalysisJobOutcome GetMediaAnalysisJob(const Model::GetMediaAnalysisJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMediaAnalysisJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMediaAnalysisJobRequestT = Model::GetMediaAnalysisJobRequest>
+        Model::GetMediaAnalysisJobOutcomeCallable GetMediaAnalysisJobCallable(const GetMediaAnalysisJobRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::GetMediaAnalysisJob, request);
+        }
+
+        /**
+         * An Async wrapper for GetMediaAnalysisJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMediaAnalysisJobRequestT = Model::GetMediaAnalysisJobRequest>
+        void GetMediaAnalysisJobAsync(const GetMediaAnalysisJobRequestT& request, const GetMediaAnalysisJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::GetMediaAnalysisJob, request, handler, context);
+        }
+
+        /**
          * <p>Gets the path tracking results of a Amazon Rekognition Video analysis started
          * by <a>StartPersonTracking</a>.</p> <p>The person path tracking operation is
          * started by a call to <code>StartPersonTracking</code> which returns a job
@@ -2193,6 +2220,33 @@ namespace Rekognition
         void ListFacesAsync(const ListFacesRequestT& request, const ListFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RekognitionClient::ListFaces, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of media analysis jobs. Results are sorted by
+         * <code>CreationTimestamp</code> in descending order.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListMediaAnalysisJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMediaAnalysisJobsOutcome ListMediaAnalysisJobs(const Model::ListMediaAnalysisJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMediaAnalysisJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListMediaAnalysisJobsRequestT = Model::ListMediaAnalysisJobsRequest>
+        Model::ListMediaAnalysisJobsOutcomeCallable ListMediaAnalysisJobsCallable(const ListMediaAnalysisJobsRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::ListMediaAnalysisJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListMediaAnalysisJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListMediaAnalysisJobsRequestT = Model::ListMediaAnalysisJobsRequest>
+        void ListMediaAnalysisJobsAsync(const ListMediaAnalysisJobsRequestT& request, const ListMediaAnalysisJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::ListMediaAnalysisJobs, request, handler, context);
         }
 
         /**
@@ -2766,6 +2820,33 @@ namespace Rekognition
         void StartLabelDetectionAsync(const StartLabelDetectionRequestT& request, const StartLabelDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RekognitionClient::StartLabelDetection, request, handler, context);
+        }
+
+        /**
+         * <p>Initiates a new media analysis job. Accepts a manifest file in an Amazon S3
+         * bucket. The output is a manifest file and a summary of the manifest stored in
+         * the Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartMediaAnalysisJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMediaAnalysisJobOutcome StartMediaAnalysisJob(const Model::StartMediaAnalysisJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartMediaAnalysisJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartMediaAnalysisJobRequestT = Model::StartMediaAnalysisJobRequest>
+        Model::StartMediaAnalysisJobOutcomeCallable StartMediaAnalysisJobCallable(const StartMediaAnalysisJobRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::StartMediaAnalysisJob, request);
+        }
+
+        /**
+         * An Async wrapper for StartMediaAnalysisJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartMediaAnalysisJobRequestT = Model::StartMediaAnalysisJobRequest>
+        void StartMediaAnalysisJobAsync(const StartMediaAnalysisJobRequestT& request, const StartMediaAnalysisJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::StartMediaAnalysisJob, request, handler, context);
         }
 
         /**

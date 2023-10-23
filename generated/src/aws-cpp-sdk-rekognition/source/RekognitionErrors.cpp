@@ -32,6 +32,7 @@ static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNot
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int INVALID_MANIFEST_HASH = HashingUtils::HashString("InvalidManifestException");
 static const int INVALID_POLICY_REVISION_ID_HASH = HashingUtils::HashString("InvalidPolicyRevisionIdException");
 static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("InvalidPaginationTokenException");
 static const int SESSION_NOT_FOUND_HASH = HashingUtils::HashString("SessionNotFoundException");
@@ -73,6 +74,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::LIMIT_EXCEEDED), true);
+  }
+  else if (hashCode == INVALID_MANIFEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::INVALID_MANIFEST), false);
   }
   else if (hashCode == INVALID_POLICY_REVISION_ID_HASH)
   {

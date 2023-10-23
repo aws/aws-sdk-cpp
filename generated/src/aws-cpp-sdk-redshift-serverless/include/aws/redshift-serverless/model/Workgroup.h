@@ -306,6 +306,71 @@ namespace Model
 
 
     /**
+     * <p>The patch version of your Amazon Redshift Serverless workgroup. For more
+     * information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline const Aws::String& GetPatchVersion() const{ return m_patchVersion; }
+
+    /**
+     * <p>The patch version of your Amazon Redshift Serverless workgroup. For more
+     * information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline bool PatchVersionHasBeenSet() const { return m_patchVersionHasBeenSet; }
+
+    /**
+     * <p>The patch version of your Amazon Redshift Serverless workgroup. For more
+     * information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline void SetPatchVersion(const Aws::String& value) { m_patchVersionHasBeenSet = true; m_patchVersion = value; }
+
+    /**
+     * <p>The patch version of your Amazon Redshift Serverless workgroup. For more
+     * information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline void SetPatchVersion(Aws::String&& value) { m_patchVersionHasBeenSet = true; m_patchVersion = std::move(value); }
+
+    /**
+     * <p>The patch version of your Amazon Redshift Serverless workgroup. For more
+     * information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline void SetPatchVersion(const char* value) { m_patchVersionHasBeenSet = true; m_patchVersion.assign(value); }
+
+    /**
+     * <p>The patch version of your Amazon Redshift Serverless workgroup. For more
+     * information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline Workgroup& WithPatchVersion(const Aws::String& value) { SetPatchVersion(value); return *this;}
+
+    /**
+     * <p>The patch version of your Amazon Redshift Serverless workgroup. For more
+     * information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline Workgroup& WithPatchVersion(Aws::String&& value) { SetPatchVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The patch version of your Amazon Redshift Serverless workgroup. For more
+     * information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline Workgroup& WithPatchVersion(const char* value) { SetPatchVersion(value); return *this;}
+
+
+    /**
      * <p>The custom port to use when connecting to a workgroup. Valid port ranges are
      * 5431-5455 and 8191-8215. The default is 5439.</p>
      */
@@ -600,6 +665,71 @@ namespace Model
      */
     inline Workgroup& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Redshift Serverless version of your workgroup. For more
+     * information about Amazon Redshift Serverless versions, see<a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline const Aws::String& GetWorkgroupVersion() const{ return m_workgroupVersion; }
+
+    /**
+     * <p>The Amazon Redshift Serverless version of your workgroup. For more
+     * information about Amazon Redshift Serverless versions, see<a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline bool WorkgroupVersionHasBeenSet() const { return m_workgroupVersionHasBeenSet; }
+
+    /**
+     * <p>The Amazon Redshift Serverless version of your workgroup. For more
+     * information about Amazon Redshift Serverless versions, see<a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline void SetWorkgroupVersion(const Aws::String& value) { m_workgroupVersionHasBeenSet = true; m_workgroupVersion = value; }
+
+    /**
+     * <p>The Amazon Redshift Serverless version of your workgroup. For more
+     * information about Amazon Redshift Serverless versions, see<a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline void SetWorkgroupVersion(Aws::String&& value) { m_workgroupVersionHasBeenSet = true; m_workgroupVersion = std::move(value); }
+
+    /**
+     * <p>The Amazon Redshift Serverless version of your workgroup. For more
+     * information about Amazon Redshift Serverless versions, see<a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline void SetWorkgroupVersion(const char* value) { m_workgroupVersionHasBeenSet = true; m_workgroupVersion.assign(value); }
+
+    /**
+     * <p>The Amazon Redshift Serverless version of your workgroup. For more
+     * information about Amazon Redshift Serverless versions, see<a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline Workgroup& WithWorkgroupVersion(const Aws::String& value) { SetWorkgroupVersion(value); return *this;}
+
+    /**
+     * <p>The Amazon Redshift Serverless version of your workgroup. For more
+     * information about Amazon Redshift Serverless versions, see<a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline Workgroup& WithWorkgroupVersion(Aws::String&& value) { SetWorkgroupVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Redshift Serverless version of your workgroup. For more
+     * information about Amazon Redshift Serverless versions, see<a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline Workgroup& WithWorkgroupVersion(const char* value) { SetWorkgroupVersion(value); return *this;}
+
   private:
 
     int m_baseCapacity;
@@ -619,6 +749,9 @@ namespace Model
 
     Aws::String m_namespaceName;
     bool m_namespaceNameHasBeenSet = false;
+
+    Aws::String m_patchVersion;
+    bool m_patchVersionHasBeenSet = false;
 
     int m_port;
     bool m_portHasBeenSet = false;
@@ -643,6 +776,9 @@ namespace Model
 
     Aws::String m_workgroupName;
     bool m_workgroupNameHasBeenSet = false;
+
+    Aws::String m_workgroupVersion;
+    bool m_workgroupVersionHasBeenSet = false;
   };
 
 } // namespace Model

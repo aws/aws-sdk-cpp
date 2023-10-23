@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/marketplacecommerceanalytics/model/StartSupportDataExportResult.h>
+#include <aws/rekognition/model/StartMediaAnalysisJobResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -12,26 +12,26 @@
 
 #include <utility>
 
-using namespace Aws::MarketplaceCommerceAnalytics::Model;
+using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartSupportDataExportResult::StartSupportDataExportResult()
+StartMediaAnalysisJobResult::StartMediaAnalysisJobResult()
 {
 }
 
-StartSupportDataExportResult::StartSupportDataExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+StartMediaAnalysisJobResult::StartMediaAnalysisJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartSupportDataExportResult& StartSupportDataExportResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+StartMediaAnalysisJobResult& StartMediaAnalysisJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("dataSetRequestId"))
+  if(jsonValue.ValueExists("JobId"))
   {
-    m_dataSetRequestId = jsonValue.GetString("dataSetRequestId");
+    m_jobId = jsonValue.GetString("JobId");
 
   }
 

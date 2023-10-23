@@ -26,7 +26,8 @@ ConnectPeerSummary::ConnectPeerSummary() :
     m_connectPeerState(ConnectPeerState::NOT_SET),
     m_connectPeerStateHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_subnetArnHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ ConnectPeerSummary::ConnectPeerSummary(JsonView jsonValue) :
     m_connectPeerState(ConnectPeerState::NOT_SET),
     m_connectPeerStateHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_subnetArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +99,13 @@ ConnectPeerSummary& ConnectPeerSummary::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SubnetArn"))
+  {
+    m_subnetArn = jsonValue.GetString("SubnetArn");
+
+    m_subnetArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -146,6 +155,12 @@ JsonValue ConnectPeerSummary::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_subnetArnHasBeenSet)
+  {
+   payload.WithString("SubnetArn", m_subnetArn);
 
   }
 
