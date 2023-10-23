@@ -27,6 +27,7 @@ Workgroup::Workgroup() :
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
+    m_patchVersionHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_publiclyAccessible(false),
@@ -37,7 +38,8 @@ Workgroup::Workgroup() :
     m_subnetIdsHasBeenSet(false),
     m_workgroupArnHasBeenSet(false),
     m_workgroupIdHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
+    m_workgroupNameHasBeenSet(false),
+    m_workgroupVersionHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,7 @@ Workgroup::Workgroup(JsonView jsonValue) :
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
+    m_patchVersionHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_publiclyAccessible(false),
@@ -60,7 +63,8 @@ Workgroup::Workgroup(JsonView jsonValue) :
     m_subnetIdsHasBeenSet(false),
     m_workgroupArnHasBeenSet(false),
     m_workgroupIdHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
+    m_workgroupNameHasBeenSet(false),
+    m_workgroupVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -110,6 +114,13 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
     m_namespaceName = jsonValue.GetString("namespaceName");
 
     m_namespaceNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("patchVersion"))
+  {
+    m_patchVersion = jsonValue.GetString("patchVersion");
+
+    m_patchVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("port"))
@@ -174,6 +185,13 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
     m_workgroupNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("workgroupVersion"))
+  {
+    m_workgroupVersion = jsonValue.GetString("workgroupVersion");
+
+    m_workgroupVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -218,6 +236,12 @@ JsonValue Workgroup::Jsonize() const
   if(m_namespaceNameHasBeenSet)
   {
    payload.WithString("namespaceName", m_namespaceName);
+
+  }
+
+  if(m_patchVersionHasBeenSet)
+  {
+   payload.WithString("patchVersion", m_patchVersion);
 
   }
 
@@ -275,6 +299,12 @@ JsonValue Workgroup::Jsonize() const
   if(m_workgroupNameHasBeenSet)
   {
    payload.WithString("workgroupName", m_workgroupName);
+
+  }
+
+  if(m_workgroupVersionHasBeenSet)
+  {
+   payload.WithString("workgroupVersion", m_workgroupVersion);
 
   }
 
