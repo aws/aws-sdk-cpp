@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 StartPipelineExecutionRequest::StartPipelineExecutionRequest() : 
     m_nameHasBeenSet(false),
+    m_variablesHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
@@ -26,6 +27,17 @@ Aws::String StartPipelineExecutionRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_variablesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> variablesJsonList(m_variables.size());
+   for(unsigned variablesIndex = 0; variablesIndex < variablesJsonList.GetLength(); ++variablesIndex)
+   {
+     variablesJsonList[variablesIndex].AsObject(m_variables[variablesIndex].Jsonize());
+   }
+   payload.WithArray("variables", std::move(variablesJsonList));
 
   }
 

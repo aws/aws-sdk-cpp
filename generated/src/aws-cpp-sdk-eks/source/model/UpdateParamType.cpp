@@ -43,6 +43,9 @@ namespace Aws
         static const int ResolveConflicts_HASH = HashingUtils::HashString("ResolveConflicts");
         static const int MaxUnavailable_HASH = HashingUtils::HashString("MaxUnavailable");
         static const int MaxUnavailablePercentage_HASH = HashingUtils::HashString("MaxUnavailablePercentage");
+        static const int ConfigurationValues_HASH = HashingUtils::HashString("ConfigurationValues");
+        static const int SecurityGroups_HASH = HashingUtils::HashString("SecurityGroups");
+        static const int Subnets_HASH = HashingUtils::HashString("Subnets");
 
 
         UpdateParamType GetUpdateParamTypeForName(const Aws::String& name)
@@ -140,6 +143,18 @@ namespace Aws
           {
             return UpdateParamType::MaxUnavailablePercentage;
           }
+          else if (hashCode == ConfigurationValues_HASH)
+          {
+            return UpdateParamType::ConfigurationValues;
+          }
+          else if (hashCode == SecurityGroups_HASH)
+          {
+            return UpdateParamType::SecurityGroups;
+          }
+          else if (hashCode == Subnets_HASH)
+          {
+            return UpdateParamType::Subnets;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -202,6 +217,12 @@ namespace Aws
             return "MaxUnavailable";
           case UpdateParamType::MaxUnavailablePercentage:
             return "MaxUnavailablePercentage";
+          case UpdateParamType::ConfigurationValues:
+            return "ConfigurationValues";
+          case UpdateParamType::SecurityGroups:
+            return "SecurityGroups";
+          case UpdateParamType::Subnets:
+            return "Subnets";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -37,6 +37,12 @@ GetPoliciesStatsResult& GetPoliciesStatsResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("LifecyclePolicyStats"))
+  {
+    m_lifecyclePolicyStats = jsonValue.GetObject("LifecyclePolicyStats");
+
+  }
+
   if(jsonValue.ValueExists("SecurityConfigStats"))
   {
     m_securityConfigStats = jsonValue.GetObject("SecurityConfigStats");
