@@ -56,10 +56,10 @@ namespace Model
      * VPC)</code>).</p> </li> <li> <p> <code>spot-price</code> - The Spot price. The
      * value must match exactly (or use wildcards; greater than or less than comparison
      * is not supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of
-     * the Spot price history, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use
-     * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
-     * </li> </ul>
+     * the Spot price history, in UTC format (for example, <i>ddd MMM dd
+     * HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards
+     * (<code>*</code> and <code>?</code>). Greater than or less than comparison is not
+     * supported.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -75,10 +75,10 @@ namespace Model
      * VPC)</code>).</p> </li> <li> <p> <code>spot-price</code> - The Spot price. The
      * value must match exactly (or use wildcards; greater than or less than comparison
      * is not supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of
-     * the Spot price history, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use
-     * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
-     * </li> </ul>
+     * the Spot price history, in UTC format (for example, <i>ddd MMM dd
+     * HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards
+     * (<code>*</code> and <code>?</code>). Greater than or less than comparison is not
+     * supported.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -94,10 +94,10 @@ namespace Model
      * VPC)</code>).</p> </li> <li> <p> <code>spot-price</code> - The Spot price. The
      * value must match exactly (or use wildcards; greater than or less than comparison
      * is not supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of
-     * the Spot price history, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use
-     * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
-     * </li> </ul>
+     * the Spot price history, in UTC format (for example, <i>ddd MMM dd
+     * HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards
+     * (<code>*</code> and <code>?</code>). Greater than or less than comparison is not
+     * supported.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -113,10 +113,10 @@ namespace Model
      * VPC)</code>).</p> </li> <li> <p> <code>spot-price</code> - The Spot price. The
      * value must match exactly (or use wildcards; greater than or less than comparison
      * is not supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of
-     * the Spot price history, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use
-     * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
-     * </li> </ul>
+     * the Spot price history, in UTC format (for example, <i>ddd MMM dd
+     * HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards
+     * (<code>*</code> and <code>?</code>). Greater than or less than comparison is not
+     * supported.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -132,10 +132,10 @@ namespace Model
      * VPC)</code>).</p> </li> <li> <p> <code>spot-price</code> - The Spot price. The
      * value must match exactly (or use wildcards; greater than or less than comparison
      * is not supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of
-     * the Spot price history, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use
-     * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
-     * </li> </ul>
+     * the Spot price history, in UTC format (for example, <i>ddd MMM dd
+     * HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards
+     * (<code>*</code> and <code>?</code>). Greater than or less than comparison is not
+     * supported.</p> </li> </ul>
      */
     inline DescribeSpotPriceHistoryRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -151,10 +151,10 @@ namespace Model
      * VPC)</code>).</p> </li> <li> <p> <code>spot-price</code> - The Spot price. The
      * value must match exactly (or use wildcards; greater than or less than comparison
      * is not supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of
-     * the Spot price history, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use
-     * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
-     * </li> </ul>
+     * the Spot price history, in UTC format (for example, <i>ddd MMM dd
+     * HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards
+     * (<code>*</code> and <code>?</code>). Greater than or less than comparison is not
+     * supported.</p> </li> </ul>
      */
     inline DescribeSpotPriceHistoryRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -170,10 +170,10 @@ namespace Model
      * VPC)</code>).</p> </li> <li> <p> <code>spot-price</code> - The Spot price. The
      * value must match exactly (or use wildcards; greater than or less than comparison
      * is not supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of
-     * the Spot price history, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use
-     * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
-     * </li> </ul>
+     * the Spot price history, in UTC format (for example, <i>ddd MMM dd
+     * HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards
+     * (<code>*</code> and <code>?</code>). Greater than or less than comparison is not
+     * supported.</p> </li> </ul>
      */
     inline DescribeSpotPriceHistoryRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -189,10 +189,10 @@ namespace Model
      * VPC)</code>).</p> </li> <li> <p> <code>spot-price</code> - The Spot price. The
      * value must match exactly (or use wildcards; greater than or less than comparison
      * is not supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of
-     * the Spot price history, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use
-     * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
-     * </li> </ul>
+     * the Spot price history, in UTC format (for example, <i>ddd MMM dd
+     * HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards
+     * (<code>*</code> and <code>?</code>). Greater than or less than comparison is not
+     * supported.</p> </li> </ul>
      */
     inline DescribeSpotPriceHistoryRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
