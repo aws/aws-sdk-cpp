@@ -9,8 +9,11 @@
 
 #include <memory>
 #include <atomic>
+#include <functional>
 #include <mutex>
 #include <condition_variable>
+
+#include <aws/core/utils/UnreferencedParam.h>
 
 namespace Aws
 {
@@ -20,6 +23,10 @@ namespace Aws
         {
             class RateLimiterInterface;
         } // namespace RateLimits
+        namespace Threading
+        {
+            class Executor;
+        }
     } // namespace Utils
 
     namespace Http
@@ -42,6 +49,34 @@ namespace Aws
             virtual std::shared_ptr<HttpResponse> MakeRequest(const std::shared_ptr<HttpRequest>& request,
                 Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
                 Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const = 0;
+
+            /**
+             * Takes an http request, makes it, and returns the newly allocated HttpResponse.
+             */
+            virtual std::shared_ptr<HttpResponse> MakeSyncRequest(const std::shared_ptr<HttpRequest>& request,
+                Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
+                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const
+            {
+                return MakeRequest(request, readLimiter, writeLimiter);
+            }
+
+
+            using HttpAsyncOnDoneHandler = std::function<void(std::shared_ptr<HttpResponse>)>;
+            //typedef std::function<void(std::shared_ptr<HttpResponse>)> HttpAsyncOnDoneHandler;
+
+            virtual void MakeAsyncRequest(const std::shared_ptr<HttpRequest>& request,
+                                          std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
+                                          HttpAsyncOnDoneHandler onDoneHandler,
+                                          Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
+                                          Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const
+            {
+                // TODO: fixme, provide backward compatibility
+              AWS_UNREFERENCED_PARAM(request);
+              AWS_UNREFERENCED_PARAM(pExecutor);
+              AWS_UNREFERENCED_PARAM(onDoneHandler);
+              AWS_UNREFERENCED_PARAM(readLimiter);
+              AWS_UNREFERENCED_PARAM(writeLimiter);
+            }
 
             /**
              * If yes, the http client supports transfer-encoding:chunked.

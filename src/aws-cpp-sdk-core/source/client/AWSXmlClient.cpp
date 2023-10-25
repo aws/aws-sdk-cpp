@@ -99,6 +99,25 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     const char* signerServiceNameOverride) const
 {
     HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride));
+
+    return HandleHttpResponse(request.GetServiceRequestName(),
+                              BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride));
+}
+
+XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
+    Http::HttpMethod method,
+    const char* signerName,
+    const char* requestName,
+    const char* signerRegionOverride,
+    const char* signerServiceNameOverride) const
+{
+    return HandleHttpResponse(requestName,
+                              BASECLASS::AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride));
+}
+
+XmlOutcome AWSXMLClient::HandleHttpResponse(const char* requestName,
+                                            HttpResponseOutcome httpOutcome) const
+{
     if (!httpOutcome.IsSuccess())
     {
         return smithy::components::tracing::TracingUtils::MakeCallWithTiming<XmlOutcome>(
@@ -107,7 +126,7 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
             },
             TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
             *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
     }
 
     if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
@@ -127,41 +146,6 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
             },
             TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
             *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-    }
-
-    return XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders()));
-}
-
-XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
-    Http::HttpMethod method,
-    const char* signerName,
-    const char* requestName,
-    const char* signerRegionOverride,
-    const char* signerServiceNameOverride) const
-{
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride));
-    if (!httpOutcome.IsSuccess())
-    {
-        return smithy::components::tracing::TracingUtils::MakeCallWithTiming<XmlOutcome>(
-            [&]() -> XmlOutcome {
-                return XmlOutcome(std::move(httpOutcome));
-            },
-            TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
-            *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-    }
-
-    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
-    {
-        return smithy::components::tracing::TracingUtils::MakeCallWithTiming<XmlOutcome>(
-            [&]() -> XmlOutcome {
-                return XmlOutcome(AmazonWebServiceResult<XmlDocument>(
-                    XmlDocument::CreateFromXmlStream(httpOutcome.GetResult()->GetResponseBody()),
-                    httpOutcome.GetResult()->GetHeaders(), httpOutcome.GetResult()->GetResponseCode()));
-            },
-            TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
-            *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
             {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
     }
 
@@ -172,6 +156,36 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
         TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
         *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
         {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+void AWSXMLClient::MakeAsyncRequest(Aws::AmazonWebServiceRequest const * const request,
+                                          const char* requestName,
+                                          Aws::Endpoint::AWSEndpoint endpoint,
+                                          std::function<void(XmlOutcome)> responseHandler,
+                                          std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
+                                          Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */) const
+{
+    if(!endpoint.GetAttributes())
+    {
+        endpoint.SetAttributes(Aws::Endpoint::AWSEndpoint::EndpointAttributes());
+    }
+    if (endpoint.GetAttributes()->authScheme.GetName().empty())
+    {
+        endpoint.AccessAttributes()->authScheme.SetName("Aws::Auth::NULL_SIGNER");
+    }
+
+    if (request && !requestName)
+    {
+        requestName = request->GetServiceRequestName();
+    }
+
+    Aws::String requestNameStr = requestName;
+    auto httpResponseOutcomeHandler = [this, responseHandler, requestNameStr](HttpResponseOutcome outcome)
+    {
+        responseHandler(HandleHttpResponse(requestNameStr.c_str(), outcome));
+    };
+
+    StartAsyncAttempt(endpoint, request, requestName, method, httpResponseOutcomeHandler, pExecutor);
 }
 
 AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::HttpResponse>& httpResponse) const

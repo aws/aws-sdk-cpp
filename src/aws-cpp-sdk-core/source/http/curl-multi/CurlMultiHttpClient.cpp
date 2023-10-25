@@ -14,6 +14,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/crypto/Hash.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/threading/SameThreadExecutor.h>
 #include <aws/core/monitoring/HttpClientMetrics.h>
 #include <cassert>
 #include <algorithm>
@@ -774,16 +776,28 @@ bool CurlMultiHttpClient::SubmitTask(Curl::CurlEasyHandleContext* pEasyHandleCtx
     return true;
 }
 
-// Blocking
-std::shared_ptr<HttpResponse> CurlMultiHttpClient::MakeRequest(const std::shared_ptr<HttpRequest>& request,
-    Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
-    Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+// Async
+void CurlMultiHttpClient::MakeAsyncRequest(const std::shared_ptr<HttpRequest>& request,
+                                                      std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
+                                                      HttpClient::HttpAsyncOnDoneHandler onDoneHandler,
+                                                      Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+                                                      Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
 {
+    if(!pExecutor)
+    {
+      assert(pExecutor);
+      AWS_LOGSTREAM_FATAL(CURL_HTTP_CLIENT_TAG, "Failed to submit async http request: executor is a nullptr");
+    }
+
     std::shared_ptr<HttpResponse> response = Aws::MakeShared<StandardHttpResponse>(CURL_HTTP_CLIENT_TAG, request);
     if(!response)
     {
         AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Failed to allocate shared_ptr<HttpResponse>");
-        return response;
+        pExecutor->Submit([response, onDoneHandler]()
+          {
+              onDoneHandler(response);
+          } );
+        return;
     }
 
     Curl::CurlEasyHandleContext* easyHandleContext = m_curlMultiHandleContainer.AcquireCurlHandle();
@@ -792,19 +806,23 @@ std::shared_ptr<HttpResponse> CurlMultiHttpClient::MakeRequest(const std::shared
         response->SetClientErrorType(CoreErrors::NETWORK_CONNECTION);
         response->SetClientErrorMessage("Failed to Acquire curl handle");
         AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Failed to Acquire curl handle");
-        return response;
+        pExecutor->Submit([response, onDoneHandler]()
+          {
+              onDoneHandler(response);
+          } );
+        return;
     }
 
     AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Obtained connection handle " << easyHandleContext);
 
-    std::mutex taskMutex;
-    std::condition_variable signal;
-    bool completed = false;
-    auto onDone = [&signal, &taskMutex, &completed]()
+    auto onDone = [response, pExecutor, onDoneHandler, easyHandleContext]()
       {
-        std::unique_lock<std::mutex> lockGuard(taskMutex);
-        completed = true;
-        signal.notify_one();
+        // this lambda body is executed within main curl multi thread loop and only submits reply handling for further processing
+        pExecutor->Submit([response, onDoneHandler, easyHandleContext]()
+          {
+              // this lambda body is executed by a thread executor and actually handles the reply
+              onDoneHandler(HandleCurlResponse(easyHandleContext));
+          } );
       };
 
     ConfigureEasyHandle(this, m_config, onDone, easyHandleContext, request.get(), response, readLimiter, writeLimiter);
@@ -817,17 +835,33 @@ std::shared_ptr<HttpResponse> CurlMultiHttpClient::MakeRequest(const std::shared
       response->SetClientErrorType(CoreErrors::NETWORK_CONNECTION);
       response->SetClientErrorMessage("Failed to add curl_easy_handle to curl_multi_handle.");
       AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Failed to add curl_easy_handle to curl_multi_handle.");
-      return response;
+      pExecutor->Submit([response, onDoneHandler]()
+        {
+            onDoneHandler(response);
+        } );
+      return;
     }
+    // Task is submitted, curl_multi loop will get a reply and submit reply handling to the executor.
+}
 
-    // Task submitted, wait for it's completion
-    std::unique_lock<std::mutex> lockGuard(taskMutex);
-    signal.wait(lockGuard,
-                [this, &completed]
-                {
-                  return !this->m_isRunning.load() || completed;
-                });
+// Blocking
+std::shared_ptr<HttpResponse> CurlMultiHttpClient::MakeSyncRequest(const std::shared_ptr<HttpRequest>& request,
+    Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+    Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+{
+    // submit a regular Async request, but provide executor that is going to handle reply within this (Submitter) thread
+    auto pExecutor = Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>(CURL_HTTP_CLIENT_TAG, true);
+    std::shared_ptr<HttpResponse> response = nullptr;
+    auto onDone = [&response](std::shared_ptr<HttpResponse> asyncResponse)
+    {
+        response = std::move(asyncResponse);
+    };
 
-    // This is a blocking mode, handle response within the submitter thread
-    return HandleCurlResponse(easyHandleContext);
+    MakeAsyncRequest(request, pExecutor, onDone, readLimiter, writeLimiter);
+
+    pExecutor->WaitForTask(); // TODO: add a timeout
+    pExecutor->Execute(); // this shall actually call HandleCurlResponse(easyHandleContext)
+    assert(response);
+
+    return response;
 }

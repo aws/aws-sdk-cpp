@@ -127,6 +127,16 @@ namespace Aws
                 const char* requestName = "",
                 const char* signerRegionOverride = nullptr,
                 const char* signerServiceNameOverride = nullptr) const;
+
+
+            void MakeAsyncRequest(Aws::AmazonWebServiceRequest const * const request,
+                                  const char* requestName,
+                                  Aws::Endpoint::AWSEndpoint endpoint,
+                                  std::function<void(XmlOutcome)> responseHandler,
+                                  std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
+                                  Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */) const;
+
+            XmlOutcome HandleHttpResponse(const char* requestName, HttpResponseOutcome httpOutcome) const;
         };
 
     } // namespace Client

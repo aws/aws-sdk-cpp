@@ -74,7 +74,23 @@ public:
     //Makes request and receives response synchronously
     std::shared_ptr<HttpResponse> MakeRequest(const std::shared_ptr<HttpRequest>& request,
         Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
-        Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
+        Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override
+    {
+        // TODO: put back the original curl_easy_perform wrapper (and then remove later)
+        return MakeSyncRequest(request, readLimiter, writeLimiter);
+    }
+
+    //Makes request and receives response synchronously using the curl_multi api
+    std::shared_ptr<HttpResponse> MakeSyncRequest(const std::shared_ptr<HttpRequest>& request,
+                                                  Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
+                                                  Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
+
+    /* Makes request and process reply async using the curl_multi api and Executor API */
+    virtual void MakeAsyncRequest(const std::shared_ptr<HttpRequest>& request,
+                                  std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
+                                  HttpClient::HttpAsyncOnDoneHandler onDoneHandler,
+                                  Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
+                                  Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
 
     static void InitGlobalState();
     static void CleanupGlobalState();

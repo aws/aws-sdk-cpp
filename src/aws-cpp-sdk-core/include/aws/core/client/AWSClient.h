@@ -68,6 +68,7 @@ namespace Aws
         class AWSAuthSigner;
         struct ClientConfiguration;
         class RetryStrategy;
+        class AwsClientAsyncRequestCtx;
 
         typedef Utils::Outcome<std::shared_ptr<Aws::Http::HttpResponse>, AWSError<CoreErrors>> HttpResponseOutcome;
         typedef Utils::Outcome<AmazonWebServiceResult<Utils::Stream::ResponseStream>, AWSError<CoreErrors>> StreamOutcome;
@@ -241,6 +242,20 @@ namespace Aws
                                                   const char* requestName = "",
                                                   const char* signerRegionOverride = nullptr,
                                                   const char* signerServiceNameOverride = nullptr) const;
+
+            /* Block of Async API*/
+            void StartAsyncAttempt(const Aws::Endpoint::AWSEndpoint& endpoint,
+                                   Aws::AmazonWebServiceRequest const * const request,
+                                   const char* requestName,
+                                   Aws::Http::HttpMethod method,
+                                   std::function<void(HttpResponseOutcome)> responseHandler,
+                                   std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const;
+
+            void AttemptOneRequestAsync(std::shared_ptr<Aws::Client::AwsClientAsyncRequestCtx> pRequestCtx) const;
+
+            void HandleExhaustiveAsyncReply(std::shared_ptr<Aws::Client::AwsClientAsyncRequestCtx> pRequestCtx,
+                                            std::shared_ptr<Aws::Http::HttpResponse> httpResponse) const;
+            /* eof Block of Async API */
 
             /**
              * This is used for structureless response payloads (file streams, binary data etc...). It calls AttemptExhaustively, but upon
