@@ -322,17 +322,24 @@ void CurlMultiHttpClient::CurlMultiPerformThread(CurlMultiHttpClient* pClient)
 
         pClient->m_tasksQueued = 0;
 
-        CURLMcode mc = curl_multi_perform(multi_handle, &stillRunning);
-        if(mc != CURLM_OK)
+        CURLMcode mc = CURLM_CALL_MULTI_PERFORM;
         {
-          AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Curl curl_multi_perform returned error code " << mc
-                                                << " resetting multi handle.");
-          pClient->CurlMultiPerformReset();
+          std::unique_lock<std::mutex> lockGuard(pClient->m_signalMutex);
+          mc = curl_multi_perform(multi_handle, &stillRunning);
+          if (mc != CURLM_OK) {
+            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Curl curl_multi_perform returned error code " << mc
+                                                                                                     << " resetting multi handle.");
+            pClient->CurlMultiPerformReset();
+          }
         }
+
         int msgQueue = 0;
         do {
-
-          struct CURLMsg* message = curl_multi_info_read(multi_handle, &msgQueue);
+          struct CURLMsg *message = nullptr;
+          {
+            std::unique_lock<std::mutex> lockGuard(pClient->m_signalMutex);
+            message = curl_multi_info_read(multi_handle, &msgQueue);
+          }
           if(message)
           {
             if(message->msg == CURLMSG_DONE)
@@ -596,10 +603,10 @@ curl_easy_setopt(connectionHandle, CURLOPT_CAPATH, TEST_CERT_PATH);
     if (request->GetContentBody())
     {
         easyHandleContext->writeContext.m_HasBody = true;
-//        curl_easy_setopt(connectionHandle, CURLOPT_READFUNCTION, ReadBodyFunc);
-//        curl_easy_setopt(connectionHandle, CURLOPT_READDATA, &handleContext.readContext);
-//        curl_easy_setopt(connectionHandle, CURLOPT_SEEKFUNCTION, SeekBody);
-//        curl_easy_setopt(connectionHandle, CURLOPT_SEEKDATA, &handleContext.readContext);
+        curl_easy_setopt(connectionHandle, CURLOPT_READFUNCTION, Curl::CurlEasyHandleContext::ReadBodyFunc);
+        curl_easy_setopt(connectionHandle, CURLOPT_READDATA, easyHandleContext);
+        curl_easy_setopt(connectionHandle, CURLOPT_SEEKFUNCTION, Curl::CurlEasyHandleContext::SeekBody);
+        curl_easy_setopt(connectionHandle, CURLOPT_SEEKDATA, easyHandleContext);
         if (request->IsEventStreamRequest() && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
         {
             curl_easy_setopt(connectionHandle, CURLOPT_READFUNCTION, Curl::CurlEasyHandleContext::ReadBodyStreaming);
@@ -756,8 +763,12 @@ std::shared_ptr<HttpResponse> CurlMultiHttpClient::HandleCurlResponse(Curl::Curl
 bool CurlMultiHttpClient::SubmitTask(Curl::CurlEasyHandleContext* pEasyHandleCtx) const
 {
     assert(pEasyHandleCtx);
-    CURLMcode curlMultiResponseCode = curl_multi_add_handle(m_curlMultiHandleContainer.AccessCurlMultiHandle(),
-                                                            pEasyHandleCtx->m_curlEasyHandle);
+    CURLMcode curlMultiResponseCode = CURLM_CALL_MULTI_PERFORM;
+    {
+      std::unique_lock<std::mutex> lockGuard(m_signalMutex);
+      curlMultiResponseCode = curl_multi_add_handle(m_curlMultiHandleContainer.AccessCurlMultiHandle(),
+                                                              pEasyHandleCtx->m_curlEasyHandle);
+    }
     if (CURLM_OK != curlMultiResponseCode)
     {
       return false;
@@ -769,7 +780,6 @@ bool CurlMultiHttpClient::SubmitTask(Curl::CurlEasyHandleContext* pEasyHandleCtx
       m_tasksQueued++;
     }
     {
-      std::unique_lock<std::mutex> lockGuard(m_signalMutex);
       m_signalRunning.notify_one();
       curl_multi_wakeup(m_curlMultiHandleContainer.AccessCurlMultiHandle());
     }

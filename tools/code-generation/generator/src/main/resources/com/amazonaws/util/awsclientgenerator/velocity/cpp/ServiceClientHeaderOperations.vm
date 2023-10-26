@@ -37,6 +37,9 @@
          */
         $virtual Model::${operation.name}Outcome ${operation.name}(${constText}Model::${operation.request.shape.name}& request${defaultOp}) const;
 
+        void SubmitOp${operation.name}(Model::${operation.request.shape.name} ${constText}* const pRequest${defaultOp},
+                                      std::function<void(XmlOutcome)> responseHandler, std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const;
+
 #if($serviceNamespace != "S3Crt" || !$operation.s3CrtEnabled)
 ##S3 CRT-backed Operations do not support Async Callable API
         /**
@@ -61,16 +64,22 @@
 ##S3 CRT-backed Operations are primarly based on Async implementation not sync blocking calls
         $virtual void ${operation.name}Async(${constText}Model::${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 #elseif($operation.isRequestlessDefault())
-        template<typename ${operation.name}RequestT = Model::${operation.request.shape.name}>
+        template<int version = 1, typename ${operation.name}RequestT = Model::${operation.request.shape.name}>
         void ${operation.name}Async(const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, ${constText}${operation.name}RequestT& request${defaultOp}) const
         {
-            return SubmitAsync(&${className}::${operation.name}, request, handler, context);
+            if(version == 2)
+              return SubmitAsyncV2< ${operation.name}RequestT, Model::${operation.name}Outcome, XmlOutcome>(&${className}::SubmitOp${operation.name}, request, handler, context);
+            else
+              return SubmitAsync(&${className}::${operation.name}, request, handler, context);
         }
 #else
-        template<typename ${operation.name}RequestT = Model::${operation.request.shape.name}>
+        template<int version = 1, typename ${operation.name}RequestT = Model::${operation.request.shape.name}>
         void ${operation.name}Async(${constText}${operation.name}RequestT& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
-            return SubmitAsync(&${className}::${operation.name}, request, handler, context);
+            if(version == 2)
+              return SubmitAsyncV2< ${operation.name}RequestT, Model::${operation.name}Outcome, XmlOutcome>(&${className}::SubmitOp${operation.name}, request, handler, context);
+            else
+              return SubmitAsync(&${className}::${operation.name}, request, handler, context);
         }
 #end##--#if($serviceModel.metadata.serviceId == "S3" && $operation.s3CrtEnabled)
 

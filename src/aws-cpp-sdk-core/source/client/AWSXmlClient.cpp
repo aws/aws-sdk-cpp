@@ -98,8 +98,6 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     const char* signerRegionOverride,
     const char* signerServiceNameOverride) const
 {
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride));
-
     return HandleHttpResponse(request.GetServiceRequestName(),
                               BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride));
 }

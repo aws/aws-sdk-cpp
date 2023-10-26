@@ -203,6 +203,75 @@ namespace Client
             const AwsServiceClientT* clientThis = static_cast<const AwsServiceClientT*>(this);
             return Aws::Client::MakeCallableOperation(AwsServiceClientT::GetAllocationTag(), operationFunc, clientThis, clientThis->m_clientConfiguration.executor.get());
         }
+
+
+        /* Version 2; True async */
+        /**
+         * A template to submit a AwsServiceClient regular operation method for async execution.
+         * This template method copies and queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        template<typename RequestT, typename ResponseT, typename GenericResponseT, typename HandlerT, typename OperationFuncT>
+        void SubmitAsyncV2(OperationFuncT submitOpFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            assert(handler);
+            const AwsServiceClientT* clientThis = static_cast<const AwsServiceClientT*>(this);
+            RequestT* requestCopyPtr = new RequestT(request);
+
+            std::function<void()> asyncTask =
+                [submitOpFunc, clientThis, requestCopyPtr, handler, context]() // note capture by value
+                {
+                    auto genericHandler = [clientThis, requestCopyPtr, handler, context](GenericResponseT genericOutcome)
+                    {
+                        ResponseT deserializedOutcome(std::move(genericOutcome));
+
+                        assert(handler);
+                        handler(clientThis,
+                                *requestCopyPtr,
+                                deserializedOutcome,
+                                context);
+
+                        delete requestCopyPtr;
+                    };
+
+                    (clientThis->*submitOpFunc)(requestCopyPtr,
+                                                genericHandler,
+                                                clientThis->m_executor);
+                };
+
+            clientThis->m_executor->Submit(std::move(asyncTask));
+        }
+
+//        /**
+//         * A template to submit a AwsServiceClient event stream enabled operation method for async execution.
+//         * This template method queues the original request object into a thread executor and triggers associated callback when operation has finished.
+//         * It is caller's responsibility to ensure the lifetime of the original request object for a duration of the async execution.
+//        */
+//        template<typename RequestT, typename HandlerT, typename OperationFuncT, typename std::enable_if<IsEventStreamOperation<OperationFuncT>::value, int>::type = 0>
+//        void SubmitAsyncV2(OperationFuncT operationFunc,
+//                         RequestT& request, // note non-const ref
+//                         const HandlerT& handler,
+//                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+//        {
+//            const AwsServiceClientT* clientThis = static_cast<const AwsServiceClientT*>(this);
+//            Aws::Client::MakeAsyncStreamingOperation(operationFunc, clientThis, request, handler, context, clientThis->m_executor.get());
+//        }
+
+        /**
+         * A template to submit a AwsServiceClient regular operation method without arguments for async execution.
+         * This template method submits a task into a thread executor and triggers associated callback when operation has finished.
+        */
+        template<typename HandlerT, typename OperationFuncT>
+        void SubmitAsyncV2(OperationFuncT operationFunc,
+                         const HandlerT& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            const AwsServiceClientT* clientThis = static_cast<const AwsServiceClientT*>(this);
+            Aws::Client::MakeAsyncOperation(operationFunc, clientThis, handler, context, clientThis->m_executor.get());
+        }
+
     protected:
         std::atomic<bool> m_isInitialized;
         mutable std::atomic<size_t> m_operationsProcessed;
