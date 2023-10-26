@@ -283,18 +283,18 @@ namespace NetworkFirewall
 
         /**
          * <p>Creates an Network Firewall TLS inspection configuration. A TLS inspection
-         * configuration contains the Certificate Manager certificate references that
-         * Network Firewall uses to decrypt and re-encrypt inbound traffic.</p> <p>After
-         * you create a TLS inspection configuration, you associate it with a new firewall
-         * policy.</p> <p>To update the settings for a TLS inspection configuration, use
-         * <a>UpdateTLSInspectionConfiguration</a>.</p> <p>To manage a TLS inspection
-         * configuration's tags, use the standard Amazon Web Services resource tagging
-         * operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and
-         * <a>UntagResource</a>.</p> <p>To retrieve information about TLS inspection
-         * configurations, use <a>ListTLSInspectionConfigurations</a> and
-         * <a>DescribeTLSInspectionConfiguration</a>.</p> <p> For more information about
-         * TLS inspection configurations, see <a
-         * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting
+         * configuration contains the Certificate Manager certificate associations that
+         * Network Firewall uses to decrypt and re-encrypt traffic traveling through your
+         * firewall.</p> <p>After you create a TLS inspection configuration, you can
+         * associate it with a new firewall policy.</p> <p>To update the settings for a TLS
+         * inspection configuration, use <a>UpdateTLSInspectionConfiguration</a>.</p> <p>To
+         * manage a TLS inspection configuration's tags, use the standard Amazon Web
+         * Services resource tagging operations, <a>ListTagsForResource</a>,
+         * <a>TagResource</a>, and <a>UntagResource</a>.</p> <p>To retrieve information
+         * about TLS inspection configurations, use <a>ListTLSInspectionConfigurations</a>
+         * and <a>DescribeTLSInspectionConfiguration</a>.</p> <p> For more information
+         * about TLS inspection configurations, see <a
+         * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Inspecting
          * SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network
          * Firewall Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateTLSInspectionConfiguration">AWS
@@ -1150,10 +1150,10 @@ namespace NetworkFirewall
 
         /**
          * <p>Updates the TLS inspection configuration settings for the specified TLS
-         * inspection configuration. You use a TLS inspection configuration by reference in
-         * one or more firewall policies. When you modify a TLS inspection configuration,
-         * you modify all firewall policies that use the TLS inspection configuration. </p>
-         * <p>To update a TLS inspection configuration, first call
+         * inspection configuration. You use a TLS inspection configuration by referencing
+         * it in one or more firewall policies. When you modify a TLS inspection
+         * configuration, you modify all firewall policies that use the TLS inspection
+         * configuration. </p> <p>To update a TLS inspection configuration, first call
          * <a>DescribeTLSInspectionConfiguration</a> to retrieve the current
          * <a>TLSInspectionConfiguration</a> object, update the object as needed, and then
          * provide the updated object to this call. </p><p><h3>See Also:</h3>   <a

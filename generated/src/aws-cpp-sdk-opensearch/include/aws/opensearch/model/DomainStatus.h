@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/opensearch/model/ClusterConfig.h>
 #include <aws/opensearch/model/EBSOptions.h>
+#include <aws/opensearch/model/IPAddressType.h>
 #include <aws/opensearch/model/SnapshotOptions.h>
 #include <aws/opensearch/model/VPCDerivedInfo.h>
 #include <aws/opensearch/model/CognitoOptions.h>
@@ -311,6 +312,31 @@ namespace Model
      * requests to the domain.</p>
      */
     inline DomainStatus& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+
+
+    
+    inline const Aws::String& GetEndpointV2() const{ return m_endpointV2; }
+
+    
+    inline bool EndpointV2HasBeenSet() const { return m_endpointV2HasBeenSet; }
+
+    
+    inline void SetEndpointV2(const Aws::String& value) { m_endpointV2HasBeenSet = true; m_endpointV2 = value; }
+
+    
+    inline void SetEndpointV2(Aws::String&& value) { m_endpointV2HasBeenSet = true; m_endpointV2 = std::move(value); }
+
+    
+    inline void SetEndpointV2(const char* value) { m_endpointV2HasBeenSet = true; m_endpointV2.assign(value); }
+
+    
+    inline DomainStatus& WithEndpointV2(const Aws::String& value) { SetEndpointV2(value); return *this;}
+
+    
+    inline DomainStatus& WithEndpointV2(Aws::String&& value) { SetEndpointV2(std::move(value)); return *this;}
+
+    
+    inline DomainStatus& WithEndpointV2(const char* value) { SetEndpointV2(value); return *this;}
 
 
     /**
@@ -617,6 +643,37 @@ namespace Model
      * policies for the domain.</p>
      */
     inline DomainStatus& WithAccessPolicies(const char* value) { SetAccessPolicies(value); return *this;}
+
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline const IPAddressType& GetIPAddressType() const{ return m_iPAddressType; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline bool IPAddressTypeHasBeenSet() const { return m_iPAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline void SetIPAddressType(const IPAddressType& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = value; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline void SetIPAddressType(IPAddressType&& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = std::move(value); }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline DomainStatus& WithIPAddressType(const IPAddressType& value) { SetIPAddressType(value); return *this;}
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline DomainStatus& WithIPAddressType(IPAddressType&& value) { SetIPAddressType(std::move(value)); return *this;}
 
 
     /**
@@ -1151,6 +1208,9 @@ namespace Model
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet = false;
 
+    Aws::String m_endpointV2;
+    bool m_endpointV2HasBeenSet = false;
+
     Aws::Map<Aws::String, Aws::String> m_endpoints;
     bool m_endpointsHasBeenSet = false;
 
@@ -1171,6 +1231,9 @@ namespace Model
 
     Aws::String m_accessPolicies;
     bool m_accessPoliciesHasBeenSet = false;
+
+    IPAddressType m_iPAddressType;
+    bool m_iPAddressTypeHasBeenSet = false;
 
     SnapshotOptions m_snapshotOptions;
     bool m_snapshotOptionsHasBeenSet = false;

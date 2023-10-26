@@ -25,8 +25,8 @@ namespace OpenSearchService
 namespace Model
 {
   /**
-   * <p>The result of a <code>StartDomainMaintenance</code> request. Contains
-   * information about the requested action. </p><p><h3>See Also:</h3>   <a
+   * <p>The result of a <code>StartDomainMaintenance</code> request that information
+   * about the requested action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartDomainMaintenanceResponse">AWS
    * API Reference</a></p>
    */
@@ -39,37 +39,37 @@ namespace Model
 
 
     /**
-     * <p>Contains request id of requested action.</p>
+     * <p>The request ID of requested action.</p>
      */
     inline const Aws::String& GetMaintenanceId() const{ return m_maintenanceId; }
 
     /**
-     * <p>Contains request id of requested action.</p>
+     * <p>The request ID of requested action.</p>
      */
     inline void SetMaintenanceId(const Aws::String& value) { m_maintenanceId = value; }
 
     /**
-     * <p>Contains request id of requested action.</p>
+     * <p>The request ID of requested action.</p>
      */
     inline void SetMaintenanceId(Aws::String&& value) { m_maintenanceId = std::move(value); }
 
     /**
-     * <p>Contains request id of requested action.</p>
+     * <p>The request ID of requested action.</p>
      */
     inline void SetMaintenanceId(const char* value) { m_maintenanceId.assign(value); }
 
     /**
-     * <p>Contains request id of requested action.</p>
+     * <p>The request ID of requested action.</p>
      */
     inline StartDomainMaintenanceResult& WithMaintenanceId(const Aws::String& value) { SetMaintenanceId(value); return *this;}
 
     /**
-     * <p>Contains request id of requested action.</p>
+     * <p>The request ID of requested action.</p>
      */
     inline StartDomainMaintenanceResult& WithMaintenanceId(Aws::String&& value) { SetMaintenanceId(std::move(value)); return *this;}
 
     /**
-     * <p>Contains request id of requested action.</p>
+     * <p>The request ID of requested action.</p>
      */
     inline StartDomainMaintenanceResult& WithMaintenanceId(const char* value) { SetMaintenanceId(value); return *this;}
 

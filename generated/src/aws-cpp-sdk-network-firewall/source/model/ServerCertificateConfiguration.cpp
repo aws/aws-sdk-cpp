@@ -20,13 +20,17 @@ namespace Model
 
 ServerCertificateConfiguration::ServerCertificateConfiguration() : 
     m_serverCertificatesHasBeenSet(false),
-    m_scopesHasBeenSet(false)
+    m_scopesHasBeenSet(false),
+    m_certificateAuthorityArnHasBeenSet(false),
+    m_checkCertificateRevocationStatusHasBeenSet(false)
 {
 }
 
 ServerCertificateConfiguration::ServerCertificateConfiguration(JsonView jsonValue) : 
     m_serverCertificatesHasBeenSet(false),
-    m_scopesHasBeenSet(false)
+    m_scopesHasBeenSet(false),
+    m_certificateAuthorityArnHasBeenSet(false),
+    m_checkCertificateRevocationStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,20 @@ ServerCertificateConfiguration& ServerCertificateConfiguration::operator =(JsonV
       m_scopes.push_back(scopesJsonList[scopesIndex].AsObject());
     }
     m_scopesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CertificateAuthorityArn"))
+  {
+    m_certificateAuthorityArn = jsonValue.GetString("CertificateAuthorityArn");
+
+    m_certificateAuthorityArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CheckCertificateRevocationStatus"))
+  {
+    m_checkCertificateRevocationStatus = jsonValue.GetObject("CheckCertificateRevocationStatus");
+
+    m_checkCertificateRevocationStatusHasBeenSet = true;
   }
 
   return *this;
@@ -79,6 +97,18 @@ JsonValue ServerCertificateConfiguration::Jsonize() const
      scopesJsonList[scopesIndex].AsObject(m_scopes[scopesIndex].Jsonize());
    }
    payload.WithArray("Scopes", std::move(scopesJsonList));
+
+  }
+
+  if(m_certificateAuthorityArnHasBeenSet)
+  {
+   payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
+
+  }
+
+  if(m_checkCertificateRevocationStatusHasBeenSet)
+  {
+   payload.WithObject("CheckCertificateRevocationStatus", m_checkCertificateRevocationStatus.Jsonize());
 
   }
 

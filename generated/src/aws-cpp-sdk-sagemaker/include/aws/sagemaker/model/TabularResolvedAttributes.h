@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The resolved attributes specific to the <code>TABULAR</code> problem
-   * type.</p><p><h3>See Also:</h3>   <a
+   * <p>The resolved attributes specific to the tabular problem type.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TabularResolvedAttributes">AWS
    * API Reference</a></p>
    */

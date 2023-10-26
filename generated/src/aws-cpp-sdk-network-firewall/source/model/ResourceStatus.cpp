@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 
 
         ResourceStatus GetResourceStatusForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == DELETING_HASH)
           {
             return ResourceStatus::DELETING;
+          }
+          else if (hashCode == ERROR__HASH)
+          {
+            return ResourceStatus::ERROR_;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "ACTIVE";
           case ResourceStatus::DELETING:
             return "DELETING";
+          case ResourceStatus::ERROR_:
+            return "ERROR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

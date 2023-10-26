@@ -27,7 +27,7 @@ namespace OpenSearchService
 namespace Model
 {
   /**
-   * <p>The result of a <code>ListDomainMaintenances</code> request. Contains
+   * <p>The result of a <code>ListDomainMaintenances</code> request that contains
    * information about the requested actions. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainMaintenancesResponse">AWS
    * API Reference</a></p>
@@ -41,37 +41,37 @@ namespace Model
 
 
     /**
-     * <p>List of the submitted maintenance actions.</p>
+     * <p>A list of the submitted maintenance actions.</p>
      */
     inline const Aws::Vector<DomainMaintenanceDetails>& GetDomainMaintenances() const{ return m_domainMaintenances; }
 
     /**
-     * <p>List of the submitted maintenance actions.</p>
+     * <p>A list of the submitted maintenance actions.</p>
      */
     inline void SetDomainMaintenances(const Aws::Vector<DomainMaintenanceDetails>& value) { m_domainMaintenances = value; }
 
     /**
-     * <p>List of the submitted maintenance actions.</p>
+     * <p>A list of the submitted maintenance actions.</p>
      */
     inline void SetDomainMaintenances(Aws::Vector<DomainMaintenanceDetails>&& value) { m_domainMaintenances = std::move(value); }
 
     /**
-     * <p>List of the submitted maintenance actions.</p>
+     * <p>A list of the submitted maintenance actions.</p>
      */
     inline ListDomainMaintenancesResult& WithDomainMaintenances(const Aws::Vector<DomainMaintenanceDetails>& value) { SetDomainMaintenances(value); return *this;}
 
     /**
-     * <p>List of the submitted maintenance actions.</p>
+     * <p>A list of the submitted maintenance actions.</p>
      */
     inline ListDomainMaintenancesResult& WithDomainMaintenances(Aws::Vector<DomainMaintenanceDetails>&& value) { SetDomainMaintenances(std::move(value)); return *this;}
 
     /**
-     * <p>List of the submitted maintenance actions.</p>
+     * <p>A list of the submitted maintenance actions.</p>
      */
     inline ListDomainMaintenancesResult& AddDomainMaintenances(const DomainMaintenanceDetails& value) { m_domainMaintenances.push_back(value); return *this; }
 
     /**
-     * <p>List of the submitted maintenance actions.</p>
+     * <p>A list of the submitted maintenance actions.</p>
      */
     inline ListDomainMaintenancesResult& AddDomainMaintenances(DomainMaintenanceDetails&& value) { m_domainMaintenances.push_back(std::move(value)); return *this; }
 

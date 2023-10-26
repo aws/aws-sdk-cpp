@@ -943,7 +943,7 @@ namespace OpenSearchService
         }
 
         /**
-         * <p>Get the status of the maintenance action.</p><p><h3>See Also:</h3>   <a
+         * <p>The status of the maintenance action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDomainMaintenanceStatus">AWS
          * API Reference</a></p>
          */
@@ -1050,7 +1050,7 @@ namespace OpenSearchService
         }
 
         /**
-         * <p>Get the list of the maintenance action.</p><p><h3>See Also:</h3>   <a
+         * <p>A list of maintenance actions for the domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainMaintenances">AWS
          * API Reference</a></p>
          */
@@ -1452,9 +1452,9 @@ namespace OpenSearchService
         }
 
         /**
-         * <p>Starts the node maintenance (Node restart, Node reboot,
-         * Opensearch/Elasticsearch process restart, Dashboard/kibana restart) on the data
-         * node.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the node maintenance process on the data node. These processes can
+         * include a node reboot, an Opensearch or Elasticsearch process restart, or a
+         * Dashboard or Kibana restart.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartDomainMaintenance">AWS
          * API Reference</a></p>
          */

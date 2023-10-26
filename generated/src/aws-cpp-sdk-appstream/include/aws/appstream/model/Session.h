@@ -439,6 +439,47 @@ namespace Model
      */
     inline Session& WithNetworkAccessConfiguration(NetworkAccessConfiguration&& value) { SetNetworkAccessConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The identifier for the instance hosting the session.</p>
+     */
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The identifier for the instance hosting the session.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the instance hosting the session.</p>
+     */
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /**
+     * <p>The identifier for the instance hosting the session.</p>
+     */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
+
+    /**
+     * <p>The identifier for the instance hosting the session.</p>
+     */
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
+
+    /**
+     * <p>The identifier for the instance hosting the session.</p>
+     */
+    inline Session& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /**
+     * <p>The identifier for the instance hosting the session.</p>
+     */
+    inline Session& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier for the instance hosting the session.</p>
+     */
+    inline Session& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -470,6 +511,9 @@ namespace Model
 
     NetworkAccessConfiguration m_networkAccessConfiguration;
     bool m_networkAccessConfigurationHasBeenSet = false;
+
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet = false;
   };
 
 } // namespace Model

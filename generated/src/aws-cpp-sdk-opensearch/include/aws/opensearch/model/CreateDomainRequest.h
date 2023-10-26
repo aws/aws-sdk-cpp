@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/model/ClusterConfig.h>
 #include <aws/opensearch/model/EBSOptions.h>
+#include <aws/opensearch/model/IPAddressType.h>
 #include <aws/opensearch/model/SnapshotOptions.h>
 #include <aws/opensearch/model/VPCOptions.h>
 #include <aws/opensearch/model/CognitoOptions.h>
@@ -294,6 +295,37 @@ namespace Model
      * policies for the new domain.</p>
      */
     inline CreateDomainRequest& WithAccessPolicies(const char* value) { SetAccessPolicies(value); return *this;}
+
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline const IPAddressType& GetIPAddressType() const{ return m_iPAddressType; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline bool IPAddressTypeHasBeenSet() const { return m_iPAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline void SetIPAddressType(const IPAddressType& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = value; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline void SetIPAddressType(IPAddressType&& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = std::move(value); }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline CreateDomainRequest& WithIPAddressType(const IPAddressType& value) { SetIPAddressType(value); return *this;}
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline CreateDomainRequest& WithIPAddressType(IPAddressType&& value) { SetIPAddressType(std::move(value)); return *this;}
 
 
     /**
@@ -1117,6 +1149,9 @@ namespace Model
 
     Aws::String m_accessPolicies;
     bool m_accessPoliciesHasBeenSet = false;
+
+    IPAddressType m_iPAddressType;
+    bool m_iPAddressTypeHasBeenSet = false;
 
     SnapshotOptions m_snapshotOptions;
     bool m_snapshotOptionsHasBeenSet = false;

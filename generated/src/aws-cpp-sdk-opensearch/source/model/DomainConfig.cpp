@@ -23,6 +23,7 @@ DomainConfig::DomainConfig() :
     m_clusterConfigHasBeenSet(false),
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
+    m_iPAddressTypeHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
     m_vPCOptionsHasBeenSet(false),
     m_cognitoOptionsHasBeenSet(false),
@@ -44,6 +45,7 @@ DomainConfig::DomainConfig(JsonView jsonValue) :
     m_clusterConfigHasBeenSet(false),
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
+    m_iPAddressTypeHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
     m_vPCOptionsHasBeenSet(false),
     m_cognitoOptionsHasBeenSet(false),
@@ -89,6 +91,13 @@ DomainConfig& DomainConfig::operator =(JsonView jsonValue)
     m_accessPolicies = jsonValue.GetObject("AccessPolicies");
 
     m_accessPoliciesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IPAddressType"))
+  {
+    m_iPAddressType = jsonValue.GetObject("IPAddressType");
+
+    m_iPAddressTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SnapshotOptions"))
@@ -210,6 +219,12 @@ JsonValue DomainConfig::Jsonize() const
   if(m_accessPoliciesHasBeenSet)
   {
    payload.WithObject("AccessPolicies", m_accessPolicies.Jsonize());
+
+  }
+
+  if(m_iPAddressTypeHasBeenSet)
+  {
+   payload.WithObject("IPAddressType", m_iPAddressType.Jsonize());
 
   }
 

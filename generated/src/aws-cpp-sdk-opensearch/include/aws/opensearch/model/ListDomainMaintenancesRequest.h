@@ -174,7 +174,7 @@ namespace Model
 
     /**
      * <p>If your initial <code>ListDomainMaintenances</code> operation returns a
-     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
+     * <code>nextToken</code>, include the returned <code>nextToken</code> in
      * subsequent <code>ListDomainMaintenances</code> operations, which returns results
      * in the next page.</p>
      */
@@ -182,7 +182,7 @@ namespace Model
 
     /**
      * <p>If your initial <code>ListDomainMaintenances</code> operation returns a
-     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
+     * <code>nextToken</code>, include the returned <code>nextToken</code> in
      * subsequent <code>ListDomainMaintenances</code> operations, which returns results
      * in the next page.</p>
      */
@@ -190,7 +190,7 @@ namespace Model
 
     /**
      * <p>If your initial <code>ListDomainMaintenances</code> operation returns a
-     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
+     * <code>nextToken</code>, include the returned <code>nextToken</code> in
      * subsequent <code>ListDomainMaintenances</code> operations, which returns results
      * in the next page.</p>
      */
@@ -198,7 +198,7 @@ namespace Model
 
     /**
      * <p>If your initial <code>ListDomainMaintenances</code> operation returns a
-     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
+     * <code>nextToken</code>, include the returned <code>nextToken</code> in
      * subsequent <code>ListDomainMaintenances</code> operations, which returns results
      * in the next page.</p>
      */
@@ -206,7 +206,7 @@ namespace Model
 
     /**
      * <p>If your initial <code>ListDomainMaintenances</code> operation returns a
-     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
+     * <code>nextToken</code>, include the returned <code>nextToken</code> in
      * subsequent <code>ListDomainMaintenances</code> operations, which returns results
      * in the next page.</p>
      */
@@ -214,7 +214,7 @@ namespace Model
 
     /**
      * <p>If your initial <code>ListDomainMaintenances</code> operation returns a
-     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
+     * <code>nextToken</code>, include the returned <code>nextToken</code> in
      * subsequent <code>ListDomainMaintenances</code> operations, which returns results
      * in the next page.</p>
      */
@@ -222,7 +222,7 @@ namespace Model
 
     /**
      * <p>If your initial <code>ListDomainMaintenances</code> operation returns a
-     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
+     * <code>nextToken</code>, include the returned <code>nextToken</code> in
      * subsequent <code>ListDomainMaintenances</code> operations, which returns results
      * in the next page.</p>
      */
@@ -230,7 +230,7 @@ namespace Model
 
     /**
      * <p>If your initial <code>ListDomainMaintenances</code> operation returns a
-     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
+     * <code>nextToken</code>, include the returned <code>nextToken</code> in
      * subsequent <code>ListDomainMaintenances</code> operations, which returns results
      * in the next page.</p>
      */

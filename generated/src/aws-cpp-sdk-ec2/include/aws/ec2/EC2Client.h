@@ -13423,6 +13423,33 @@ namespace EC2
         }
 
         /**
+         * <p>Gets security groups that can be associated by the Amazon Web Services
+         * account making the request with network interfaces in the specified
+         * VPC.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSecurityGroupsForVpc">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSecurityGroupsForVpcOutcome GetSecurityGroupsForVpc(const Model::GetSecurityGroupsForVpcRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSecurityGroupsForVpc that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSecurityGroupsForVpcRequestT = Model::GetSecurityGroupsForVpcRequest>
+        Model::GetSecurityGroupsForVpcOutcomeCallable GetSecurityGroupsForVpcCallable(const GetSecurityGroupsForVpcRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetSecurityGroupsForVpc, request);
+        }
+
+        /**
+         * An Async wrapper for GetSecurityGroupsForVpc that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSecurityGroupsForVpcRequestT = Model::GetSecurityGroupsForVpcRequest>
+        void GetSecurityGroupsForVpcAsync(const GetSecurityGroupsForVpcRequestT& request, const GetSecurityGroupsForVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetSecurityGroupsForVpc, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the access status of your account to the EC2 serial console of all
          * instances. By default, access to the EC2 serial console is disabled for your
          * account. For more information, see <a
