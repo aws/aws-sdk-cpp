@@ -26,7 +26,15 @@ ComputeCapacityStatus::ComputeCapacityStatus() :
     m_inUse(0),
     m_inUseHasBeenSet(false),
     m_available(0),
-    m_availableHasBeenSet(false)
+    m_availableHasBeenSet(false),
+    m_desiredUserSessions(0),
+    m_desiredUserSessionsHasBeenSet(false),
+    m_availableUserSessions(0),
+    m_availableUserSessionsHasBeenSet(false),
+    m_activeUserSessions(0),
+    m_activeUserSessionsHasBeenSet(false),
+    m_actualUserSessions(0),
+    m_actualUserSessionsHasBeenSet(false)
 {
 }
 
@@ -38,7 +46,15 @@ ComputeCapacityStatus::ComputeCapacityStatus(JsonView jsonValue) :
     m_inUse(0),
     m_inUseHasBeenSet(false),
     m_available(0),
-    m_availableHasBeenSet(false)
+    m_availableHasBeenSet(false),
+    m_desiredUserSessions(0),
+    m_desiredUserSessionsHasBeenSet(false),
+    m_availableUserSessions(0),
+    m_availableUserSessionsHasBeenSet(false),
+    m_activeUserSessions(0),
+    m_activeUserSessionsHasBeenSet(false),
+    m_actualUserSessions(0),
+    m_actualUserSessionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -73,6 +89,34 @@ ComputeCapacityStatus& ComputeCapacityStatus::operator =(JsonView jsonValue)
     m_availableHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DesiredUserSessions"))
+  {
+    m_desiredUserSessions = jsonValue.GetInteger("DesiredUserSessions");
+
+    m_desiredUserSessionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AvailableUserSessions"))
+  {
+    m_availableUserSessions = jsonValue.GetInteger("AvailableUserSessions");
+
+    m_availableUserSessionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ActiveUserSessions"))
+  {
+    m_activeUserSessions = jsonValue.GetInteger("ActiveUserSessions");
+
+    m_activeUserSessionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ActualUserSessions"))
+  {
+    m_actualUserSessions = jsonValue.GetInteger("ActualUserSessions");
+
+    m_actualUserSessionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -101,6 +145,30 @@ JsonValue ComputeCapacityStatus::Jsonize() const
   if(m_availableHasBeenSet)
   {
    payload.WithInteger("Available", m_available);
+
+  }
+
+  if(m_desiredUserSessionsHasBeenSet)
+  {
+   payload.WithInteger("DesiredUserSessions", m_desiredUserSessions);
+
+  }
+
+  if(m_availableUserSessionsHasBeenSet)
+  {
+   payload.WithInteger("AvailableUserSessions", m_availableUserSessions);
+
+  }
+
+  if(m_activeUserSessionsHasBeenSet)
+  {
+   payload.WithInteger("ActiveUserSessions", m_activeUserSessions);
+
+  }
+
+  if(m_actualUserSessionsHasBeenSet)
+  {
+   payload.WithInteger("ActualUserSessions", m_actualUserSessions);
 
   }
 

@@ -16,7 +16,8 @@ UpdateApplicationSettingsRequest::UpdateApplicationSettingsRequest() :
     m_applicationIdHasBeenSet(false),
     m_credentialsToAddOrUpdateHasBeenSet(false),
     m_credentialsToRemoveHasBeenSet(false),
-    m_backintHasBeenSet(false)
+    m_backintHasBeenSet(false),
+    m_databaseArnHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,12 @@ Aws::String UpdateApplicationSettingsRequest::SerializePayload() const
   if(m_backintHasBeenSet)
   {
    payload.WithObject("Backint", m_backint.Jsonize());
+
+  }
+
+  if(m_databaseArnHasBeenSet)
+  {
+   payload.WithString("DatabaseArn", m_databaseArn);
 
   }
 

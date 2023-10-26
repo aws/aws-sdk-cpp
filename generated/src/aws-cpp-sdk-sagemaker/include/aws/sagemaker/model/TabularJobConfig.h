@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>The collection of settings used by an AutoML job V2 for the
-   * <code>TABULAR</code> problem type.</p><p><h3>See Also:</h3>   <a
+   * <p>The collection of settings used by an AutoML job V2 for the tabular problem
+   * type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TabularJobConfig">AWS
    * API Reference</a></p>
    */

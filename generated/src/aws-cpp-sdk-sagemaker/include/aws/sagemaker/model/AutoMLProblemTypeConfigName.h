@@ -19,7 +19,8 @@ namespace Model
     ImageClassification,
     TextClassification,
     Tabular,
-    TimeSeriesForecasting
+    TimeSeriesForecasting,
+    TextGeneration
   };
 
 namespace AutoMLProblemTypeConfigNameMapper

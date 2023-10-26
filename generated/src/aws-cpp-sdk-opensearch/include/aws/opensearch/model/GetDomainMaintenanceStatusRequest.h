@@ -84,42 +84,42 @@ namespace Model
 
 
     /**
-     * <p>The request id of the maintenance action.</p>
+     * <p>The request ID of the maintenance action.</p>
      */
     inline const Aws::String& GetMaintenanceId() const{ return m_maintenanceId; }
 
     /**
-     * <p>The request id of the maintenance action.</p>
+     * <p>The request ID of the maintenance action.</p>
      */
     inline bool MaintenanceIdHasBeenSet() const { return m_maintenanceIdHasBeenSet; }
 
     /**
-     * <p>The request id of the maintenance action.</p>
+     * <p>The request ID of the maintenance action.</p>
      */
     inline void SetMaintenanceId(const Aws::String& value) { m_maintenanceIdHasBeenSet = true; m_maintenanceId = value; }
 
     /**
-     * <p>The request id of the maintenance action.</p>
+     * <p>The request ID of the maintenance action.</p>
      */
     inline void SetMaintenanceId(Aws::String&& value) { m_maintenanceIdHasBeenSet = true; m_maintenanceId = std::move(value); }
 
     /**
-     * <p>The request id of the maintenance action.</p>
+     * <p>The request ID of the maintenance action.</p>
      */
     inline void SetMaintenanceId(const char* value) { m_maintenanceIdHasBeenSet = true; m_maintenanceId.assign(value); }
 
     /**
-     * <p>The request id of the maintenance action.</p>
+     * <p>The request ID of the maintenance action.</p>
      */
     inline GetDomainMaintenanceStatusRequest& WithMaintenanceId(const Aws::String& value) { SetMaintenanceId(value); return *this;}
 
     /**
-     * <p>The request id of the maintenance action.</p>
+     * <p>The request ID of the maintenance action.</p>
      */
     inline GetDomainMaintenanceStatusRequest& WithMaintenanceId(Aws::String&& value) { SetMaintenanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The request id of the maintenance action.</p>
+     * <p>The request ID of the maintenance action.</p>
      */
     inline GetDomainMaintenanceStatusRequest& WithMaintenanceId(const char* value) { SetMaintenanceId(value); return *this;}
 

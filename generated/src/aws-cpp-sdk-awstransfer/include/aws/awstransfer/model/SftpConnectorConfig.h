@@ -42,57 +42,57 @@ namespace Model
 
     /**
      * <p>The identifier for the secret (in Amazon Web Services Secrets Manager) that
-     * contains the SFTP user's private key, password, or both. The identifier can be
-     * either the Amazon Resource Name (ARN) or the name of the secret.</p>
+     * contains the SFTP user's private key, password, or both. The identifier must be
+     * the Amazon Resource Name (ARN) of the secret.</p>
      */
     inline const Aws::String& GetUserSecretId() const{ return m_userSecretId; }
 
     /**
      * <p>The identifier for the secret (in Amazon Web Services Secrets Manager) that
-     * contains the SFTP user's private key, password, or both. The identifier can be
-     * either the Amazon Resource Name (ARN) or the name of the secret.</p>
+     * contains the SFTP user's private key, password, or both. The identifier must be
+     * the Amazon Resource Name (ARN) of the secret.</p>
      */
     inline bool UserSecretIdHasBeenSet() const { return m_userSecretIdHasBeenSet; }
 
     /**
      * <p>The identifier for the secret (in Amazon Web Services Secrets Manager) that
-     * contains the SFTP user's private key, password, or both. The identifier can be
-     * either the Amazon Resource Name (ARN) or the name of the secret.</p>
+     * contains the SFTP user's private key, password, or both. The identifier must be
+     * the Amazon Resource Name (ARN) of the secret.</p>
      */
     inline void SetUserSecretId(const Aws::String& value) { m_userSecretIdHasBeenSet = true; m_userSecretId = value; }
 
     /**
      * <p>The identifier for the secret (in Amazon Web Services Secrets Manager) that
-     * contains the SFTP user's private key, password, or both. The identifier can be
-     * either the Amazon Resource Name (ARN) or the name of the secret.</p>
+     * contains the SFTP user's private key, password, or both. The identifier must be
+     * the Amazon Resource Name (ARN) of the secret.</p>
      */
     inline void SetUserSecretId(Aws::String&& value) { m_userSecretIdHasBeenSet = true; m_userSecretId = std::move(value); }
 
     /**
      * <p>The identifier for the secret (in Amazon Web Services Secrets Manager) that
-     * contains the SFTP user's private key, password, or both. The identifier can be
-     * either the Amazon Resource Name (ARN) or the name of the secret.</p>
+     * contains the SFTP user's private key, password, or both. The identifier must be
+     * the Amazon Resource Name (ARN) of the secret.</p>
      */
     inline void SetUserSecretId(const char* value) { m_userSecretIdHasBeenSet = true; m_userSecretId.assign(value); }
 
     /**
      * <p>The identifier for the secret (in Amazon Web Services Secrets Manager) that
-     * contains the SFTP user's private key, password, or both. The identifier can be
-     * either the Amazon Resource Name (ARN) or the name of the secret.</p>
+     * contains the SFTP user's private key, password, or both. The identifier must be
+     * the Amazon Resource Name (ARN) of the secret.</p>
      */
     inline SftpConnectorConfig& WithUserSecretId(const Aws::String& value) { SetUserSecretId(value); return *this;}
 
     /**
      * <p>The identifier for the secret (in Amazon Web Services Secrets Manager) that
-     * contains the SFTP user's private key, password, or both. The identifier can be
-     * either the Amazon Resource Name (ARN) or the name of the secret.</p>
+     * contains the SFTP user's private key, password, or both. The identifier must be
+     * the Amazon Resource Name (ARN) of the secret.</p>
      */
     inline SftpConnectorConfig& WithUserSecretId(Aws::String&& value) { SetUserSecretId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the secret (in Amazon Web Services Secrets Manager) that
-     * contains the SFTP user's private key, password, or both. The identifier can be
-     * either the Amazon Resource Name (ARN) or the name of the secret.</p>
+     * contains the SFTP user's private key, password, or both. The identifier must be
+     * the Amazon Resource Name (ARN) of the secret.</p>
      */
     inline SftpConnectorConfig& WithUserSecretId(const char* value) { SetUserSecretId(value); return *this;}
 

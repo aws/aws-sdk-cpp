@@ -21,6 +21,8 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_cognitoOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
+    m_iPAddressType(IPAddressType::NOT_SET),
+    m_iPAddressTypeHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
     m_domainEndpointOptionsHasBeenSet(false),
@@ -85,6 +87,11 @@ Aws::String UpdateDomainConfigRequest::SerializePayload() const
   {
    payload.WithString("AccessPolicies", m_accessPolicies);
 
+  }
+
+  if(m_iPAddressTypeHasBeenSet)
+  {
+   payload.WithString("IPAddressType", IPAddressTypeMapper::GetNameForIPAddressType(m_iPAddressType));
   }
 
   if(m_logPublishingOptionsHasBeenSet)

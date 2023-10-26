@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>Id of the requested action.</p>
+     * <p>The ID of the requested action.</p>
      */
     inline const Aws::String& GetMaintenanceId() const{ return m_maintenanceId; }
 
     /**
-     * <p>Id of the requested action.</p>
+     * <p>The ID of the requested action.</p>
      */
     inline bool MaintenanceIdHasBeenSet() const { return m_maintenanceIdHasBeenSet; }
 
     /**
-     * <p>Id of the requested action.</p>
+     * <p>The ID of the requested action.</p>
      */
     inline void SetMaintenanceId(const Aws::String& value) { m_maintenanceIdHasBeenSet = true; m_maintenanceId = value; }
 
     /**
-     * <p>Id of the requested action.</p>
+     * <p>The ID of the requested action.</p>
      */
     inline void SetMaintenanceId(Aws::String&& value) { m_maintenanceIdHasBeenSet = true; m_maintenanceId = std::move(value); }
 
     /**
-     * <p>Id of the requested action.</p>
+     * <p>The ID of the requested action.</p>
      */
     inline void SetMaintenanceId(const char* value) { m_maintenanceIdHasBeenSet = true; m_maintenanceId.assign(value); }
 
     /**
-     * <p>Id of the requested action.</p>
+     * <p>The ID of the requested action.</p>
      */
     inline DomainMaintenanceDetails& WithMaintenanceId(const Aws::String& value) { SetMaintenanceId(value); return *this;}
 
     /**
-     * <p>Id of the requested action.</p>
+     * <p>The ID of the requested action.</p>
      */
     inline DomainMaintenanceDetails& WithMaintenanceId(Aws::String&& value) { SetMaintenanceId(std::move(value)); return *this;}
 
     /**
-     * <p>Id of the requested action.</p>
+     * <p>The ID of the requested action.</p>
      */
     inline DomainMaintenanceDetails& WithMaintenanceId(const char* value) { SetMaintenanceId(value); return *this;}
 
@@ -154,42 +154,42 @@ namespace Model
 
 
     /**
-     * <p>Id of the data node.</p>
+     * <p>The ID of the data node.</p>
      */
     inline const Aws::String& GetNodeId() const{ return m_nodeId; }
 
     /**
-     * <p>Id of the data node.</p>
+     * <p>The ID of the data node.</p>
      */
     inline bool NodeIdHasBeenSet() const { return m_nodeIdHasBeenSet; }
 
     /**
-     * <p>Id of the data node.</p>
+     * <p>The ID of the data node.</p>
      */
     inline void SetNodeId(const Aws::String& value) { m_nodeIdHasBeenSet = true; m_nodeId = value; }
 
     /**
-     * <p>Id of the data node.</p>
+     * <p>The ID of the data node.</p>
      */
     inline void SetNodeId(Aws::String&& value) { m_nodeIdHasBeenSet = true; m_nodeId = std::move(value); }
 
     /**
-     * <p>Id of the data node.</p>
+     * <p>The ID of the data node.</p>
      */
     inline void SetNodeId(const char* value) { m_nodeIdHasBeenSet = true; m_nodeId.assign(value); }
 
     /**
-     * <p>Id of the data node.</p>
+     * <p>The ID of the data node.</p>
      */
     inline DomainMaintenanceDetails& WithNodeId(const Aws::String& value) { SetNodeId(value); return *this;}
 
     /**
-     * <p>Id of the data node.</p>
+     * <p>The ID of the data node.</p>
      */
     inline DomainMaintenanceDetails& WithNodeId(Aws::String&& value) { SetNodeId(std::move(value)); return *this;}
 
     /**
-     * <p>Id of the data node.</p>
+     * <p>The ID of the data node.</p>
      */
     inline DomainMaintenanceDetails& WithNodeId(const char* value) { SetNodeId(value); return *this;}
 
@@ -226,104 +226,104 @@ namespace Model
 
 
     /**
-     * <p>The status message of the action.</p>
+     * <p>The status message for the action.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
     /**
-     * <p>The status message of the action.</p>
+     * <p>The status message for the action.</p>
      */
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
-     * <p>The status message of the action.</p>
+     * <p>The status message for the action.</p>
      */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
 
     /**
-     * <p>The status message of the action.</p>
+     * <p>The status message for the action.</p>
      */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
 
     /**
-     * <p>The status message of the action.</p>
+     * <p>The status message for the action.</p>
      */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
 
     /**
-     * <p>The status message of the action.</p>
+     * <p>The status message for the action.</p>
      */
     inline DomainMaintenanceDetails& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
     /**
-     * <p>The status message of the action.</p>
+     * <p>The status message for the action.</p>
      */
     inline DomainMaintenanceDetails& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The status message of the action.</p>
+     * <p>The status message for the action.</p>
      */
     inline DomainMaintenanceDetails& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
 
     /**
-     * <p>Contains time at which action created.</p>
+     * <p>The time at which the action was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>Contains time at which action created.</p>
+     * <p>The time at which the action was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>Contains time at which action created.</p>
+     * <p>The time at which the action was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>Contains time at which action created.</p>
+     * <p>The time at which the action was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>Contains time at which action created.</p>
+     * <p>The time at which the action was created.</p>
      */
     inline DomainMaintenanceDetails& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>Contains time at which action created.</p>
+     * <p>The time at which the action was created.</p>
      */
     inline DomainMaintenanceDetails& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>Contains time at which action updated.</p>
+     * <p>The time at which the action was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>Contains time at which action updated.</p>
+     * <p>The time at which the action was updated.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>Contains time at which action updated.</p>
+     * <p>The time at which the action was updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>Contains time at which action updated.</p>
+     * <p>The time at which the action was updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>Contains time at which action updated.</p>
+     * <p>The time at which the action was updated.</p>
      */
     inline DomainMaintenanceDetails& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>Contains time at which action updated.</p>
+     * <p>The time at which the action was updated.</p>
      */
     inline DomainMaintenanceDetails& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 

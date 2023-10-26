@@ -22,7 +22,8 @@ AutoMLProblemTypeConfig::AutoMLProblemTypeConfig() :
     m_imageClassificationJobConfigHasBeenSet(false),
     m_textClassificationJobConfigHasBeenSet(false),
     m_tabularJobConfigHasBeenSet(false),
-    m_timeSeriesForecastingJobConfigHasBeenSet(false)
+    m_timeSeriesForecastingJobConfigHasBeenSet(false),
+    m_textGenerationJobConfigHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ AutoMLProblemTypeConfig::AutoMLProblemTypeConfig(JsonView jsonValue) :
     m_imageClassificationJobConfigHasBeenSet(false),
     m_textClassificationJobConfigHasBeenSet(false),
     m_tabularJobConfigHasBeenSet(false),
-    m_timeSeriesForecastingJobConfigHasBeenSet(false)
+    m_timeSeriesForecastingJobConfigHasBeenSet(false),
+    m_textGenerationJobConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +67,13 @@ AutoMLProblemTypeConfig& AutoMLProblemTypeConfig::operator =(JsonView jsonValue)
     m_timeSeriesForecastingJobConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TextGenerationJobConfig"))
+  {
+    m_textGenerationJobConfig = jsonValue.GetObject("TextGenerationJobConfig");
+
+    m_textGenerationJobConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +102,12 @@ JsonValue AutoMLProblemTypeConfig::Jsonize() const
   if(m_timeSeriesForecastingJobConfigHasBeenSet)
   {
    payload.WithObject("TimeSeriesForecastingJobConfig", m_timeSeriesForecastingJobConfig.Jsonize());
+
+  }
+
+  if(m_textGenerationJobConfigHasBeenSet)
+  {
+   payload.WithObject("TextGenerationJobConfig", m_textGenerationJobConfig.Jsonize());
 
   }
 

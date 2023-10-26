@@ -44,6 +44,8 @@ static const int CONCURRENT_ACCESS_HASH = HashingUtils::HashString("ConcurrentAc
 static const int K_M_S_THROTTLING_HASH = HashingUtils::HashString("KMSThrottling");
 static const int BATCH_ENTRY_IDS_NOT_DISTINCT_HASH = HashingUtils::HashString("BatchEntryIdsNotDistinct");
 static const int TAG_POLICY_HASH = HashingUtils::HashString("TagPolicy");
+static const int REPLAY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ReplayLimitExceeded");
+static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidState");
 static const int PLATFORM_APPLICATION_DISABLED_HASH = HashingUtils::HashString("PlatformApplicationDisabled");
 static const int USER_ERROR_HASH = HashingUtils::HashString("UserError");
 static const int K_M_S_OPT_IN_REQUIRED_HASH = HashingUtils::HashString("KMSOptInRequired");
@@ -131,6 +133,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TAG_POLICY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::TAG_POLICY), false);
+  }
+  else if (hashCode == REPLAY_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::REPLAY_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == INVALID_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::INVALID_STATE), false);
   }
   else if (hashCode == PLATFORM_APPLICATION_DISABLED_HASH)
   {

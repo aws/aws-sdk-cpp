@@ -20,6 +20,8 @@ namespace Model
 
 Component::Component() : 
     m_componentIdHasBeenSet(false),
+    m_sidHasBeenSet(false),
+    m_systemNumberHasBeenSet(false),
     m_parentComponentHasBeenSet(false),
     m_childComponentsHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
@@ -28,11 +30,13 @@ Component::Component() :
     m_status(ComponentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_sapHostnameHasBeenSet(false),
+    m_sapFeatureHasBeenSet(false),
     m_sapKernelVersionHasBeenSet(false),
     m_hdbVersionHasBeenSet(false),
     m_resilienceHasBeenSet(false),
     m_associatedHostHasBeenSet(false),
     m_databasesHasBeenSet(false),
+    m_databaseConnectionHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_arnHasBeenSet(false)
 {
@@ -40,6 +44,8 @@ Component::Component() :
 
 Component::Component(JsonView jsonValue) : 
     m_componentIdHasBeenSet(false),
+    m_sidHasBeenSet(false),
+    m_systemNumberHasBeenSet(false),
     m_parentComponentHasBeenSet(false),
     m_childComponentsHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
@@ -48,11 +54,13 @@ Component::Component(JsonView jsonValue) :
     m_status(ComponentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_sapHostnameHasBeenSet(false),
+    m_sapFeatureHasBeenSet(false),
     m_sapKernelVersionHasBeenSet(false),
     m_hdbVersionHasBeenSet(false),
     m_resilienceHasBeenSet(false),
     m_associatedHostHasBeenSet(false),
     m_databasesHasBeenSet(false),
+    m_databaseConnectionHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_arnHasBeenSet(false)
 {
@@ -66,6 +74,20 @@ Component& Component::operator =(JsonView jsonValue)
     m_componentId = jsonValue.GetString("ComponentId");
 
     m_componentIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Sid"))
+  {
+    m_sid = jsonValue.GetString("Sid");
+
+    m_sidHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SystemNumber"))
+  {
+    m_systemNumber = jsonValue.GetString("SystemNumber");
+
+    m_systemNumberHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ParentComponent"))
@@ -113,6 +135,13 @@ Component& Component::operator =(JsonView jsonValue)
     m_sapHostnameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SapFeature"))
+  {
+    m_sapFeature = jsonValue.GetString("SapFeature");
+
+    m_sapFeatureHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("SapKernelVersion"))
   {
     m_sapKernelVersion = jsonValue.GetString("SapKernelVersion");
@@ -151,6 +180,13 @@ Component& Component::operator =(JsonView jsonValue)
     m_databasesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DatabaseConnection"))
+  {
+    m_databaseConnection = jsonValue.GetObject("DatabaseConnection");
+
+    m_databaseConnectionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("LastUpdated"))
   {
     m_lastUpdated = jsonValue.GetDouble("LastUpdated");
@@ -175,6 +211,18 @@ JsonValue Component::Jsonize() const
   if(m_componentIdHasBeenSet)
   {
    payload.WithString("ComponentId", m_componentId);
+
+  }
+
+  if(m_sidHasBeenSet)
+  {
+   payload.WithString("Sid", m_sid);
+
+  }
+
+  if(m_systemNumberHasBeenSet)
+  {
+   payload.WithString("SystemNumber", m_systemNumber);
 
   }
 
@@ -217,6 +265,12 @@ JsonValue Component::Jsonize() const
 
   }
 
+  if(m_sapFeatureHasBeenSet)
+  {
+   payload.WithString("SapFeature", m_sapFeature);
+
+  }
+
   if(m_sapKernelVersionHasBeenSet)
   {
    payload.WithString("SapKernelVersion", m_sapKernelVersion);
@@ -249,6 +303,12 @@ JsonValue Component::Jsonize() const
      databasesJsonList[databasesIndex].AsString(m_databases[databasesIndex]);
    }
    payload.WithArray("Databases", std::move(databasesJsonList));
+
+  }
+
+  if(m_databaseConnectionHasBeenSet)
+  {
+   payload.WithObject("DatabaseConnection", m_databaseConnection.Jsonize());
 
   }
 

@@ -20,6 +20,7 @@ namespace SsmSapErrorMapper
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -33,6 +34,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SsmSapErrors::INTERNAL_SERVER), false);
+  }
+  else if (hashCode == UNAUTHORIZED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SsmSapErrors::UNAUTHORIZED), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

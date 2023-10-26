@@ -110,42 +110,42 @@ namespace Model
 
 
     /**
-     * <p>Id of the data node.</p>
+     * <p>The ID of the data node.</p>
      */
     inline const Aws::String& GetNodeId() const{ return m_nodeId; }
 
     /**
-     * <p>Id of the data node.</p>
+     * <p>The ID of the data node.</p>
      */
     inline bool NodeIdHasBeenSet() const { return m_nodeIdHasBeenSet; }
 
     /**
-     * <p>Id of the data node.</p>
+     * <p>The ID of the data node.</p>
      */
     inline void SetNodeId(const Aws::String& value) { m_nodeIdHasBeenSet = true; m_nodeId = value; }
 
     /**
-     * <p>Id of the data node.</p>
+     * <p>The ID of the data node.</p>
      */
     inline void SetNodeId(Aws::String&& value) { m_nodeIdHasBeenSet = true; m_nodeId = std::move(value); }
 
     /**
-     * <p>Id of the data node.</p>
+     * <p>The ID of the data node.</p>
      */
     inline void SetNodeId(const char* value) { m_nodeIdHasBeenSet = true; m_nodeId.assign(value); }
 
     /**
-     * <p>Id of the data node.</p>
+     * <p>The ID of the data node.</p>
      */
     inline StartDomainMaintenanceRequest& WithNodeId(const Aws::String& value) { SetNodeId(value); return *this;}
 
     /**
-     * <p>Id of the data node.</p>
+     * <p>The ID of the data node.</p>
      */
     inline StartDomainMaintenanceRequest& WithNodeId(Aws::String&& value) { SetNodeId(std::move(value)); return *this;}
 
     /**
-     * <p>Id of the data node.</p>
+     * <p>The ID of the data node.</p>
      */
     inline StartDomainMaintenanceRequest& WithNodeId(const char* value) { SetNodeId(value); return *this;}
 

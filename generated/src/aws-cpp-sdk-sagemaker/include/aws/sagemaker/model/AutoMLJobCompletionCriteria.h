@@ -38,29 +38,33 @@ namespace Model
 
     /**
      * <p>The maximum number of times a training job is allowed to run.</p> <p>For text
-     * and image classification, as well as time-series forecasting problem types, the
-     * supported value is 1. For tabular problem types, the maximum value is 750.</p>
+     * and image classification, time-series forecasting, as well as text generation
+     * (LLMs fine-tuning) problem types, the supported value is 1. For tabular problem
+     * types, the maximum value is 750.</p>
      */
     inline int GetMaxCandidates() const{ return m_maxCandidates; }
 
     /**
      * <p>The maximum number of times a training job is allowed to run.</p> <p>For text
-     * and image classification, as well as time-series forecasting problem types, the
-     * supported value is 1. For tabular problem types, the maximum value is 750.</p>
+     * and image classification, time-series forecasting, as well as text generation
+     * (LLMs fine-tuning) problem types, the supported value is 1. For tabular problem
+     * types, the maximum value is 750.</p>
      */
     inline bool MaxCandidatesHasBeenSet() const { return m_maxCandidatesHasBeenSet; }
 
     /**
      * <p>The maximum number of times a training job is allowed to run.</p> <p>For text
-     * and image classification, as well as time-series forecasting problem types, the
-     * supported value is 1. For tabular problem types, the maximum value is 750.</p>
+     * and image classification, time-series forecasting, as well as text generation
+     * (LLMs fine-tuning) problem types, the supported value is 1. For tabular problem
+     * types, the maximum value is 750.</p>
      */
     inline void SetMaxCandidates(int value) { m_maxCandidatesHasBeenSet = true; m_maxCandidates = value; }
 
     /**
      * <p>The maximum number of times a training job is allowed to run.</p> <p>For text
-     * and image classification, as well as time-series forecasting problem types, the
-     * supported value is 1. For tabular problem types, the maximum value is 750.</p>
+     * and image classification, time-series forecasting, as well as text generation
+     * (LLMs fine-tuning) problem types, the supported value is 1. For tabular problem
+     * types, the maximum value is 750.</p>
      */
     inline AutoMLJobCompletionCriteria& WithMaxCandidates(int value) { SetMaxCandidates(value); return *this;}
 

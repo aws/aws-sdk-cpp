@@ -188,6 +188,55 @@ namespace Model
      */
     inline UpdateApplicationSettingsRequest& WithBackint(BackintConfig&& value) { SetBackint(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database that replaces the current
+     * SAP HANA connection with the SAP_ABAP application.</p>
+     */
+    inline const Aws::String& GetDatabaseArn() const{ return m_databaseArn; }
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database that replaces the current
+     * SAP HANA connection with the SAP_ABAP application.</p>
+     */
+    inline bool DatabaseArnHasBeenSet() const { return m_databaseArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database that replaces the current
+     * SAP HANA connection with the SAP_ABAP application.</p>
+     */
+    inline void SetDatabaseArn(const Aws::String& value) { m_databaseArnHasBeenSet = true; m_databaseArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database that replaces the current
+     * SAP HANA connection with the SAP_ABAP application.</p>
+     */
+    inline void SetDatabaseArn(Aws::String&& value) { m_databaseArnHasBeenSet = true; m_databaseArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database that replaces the current
+     * SAP HANA connection with the SAP_ABAP application.</p>
+     */
+    inline void SetDatabaseArn(const char* value) { m_databaseArnHasBeenSet = true; m_databaseArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database that replaces the current
+     * SAP HANA connection with the SAP_ABAP application.</p>
+     */
+    inline UpdateApplicationSettingsRequest& WithDatabaseArn(const Aws::String& value) { SetDatabaseArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database that replaces the current
+     * SAP HANA connection with the SAP_ABAP application.</p>
+     */
+    inline UpdateApplicationSettingsRequest& WithDatabaseArn(Aws::String&& value) { SetDatabaseArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database that replaces the current
+     * SAP HANA connection with the SAP_ABAP application.</p>
+     */
+    inline UpdateApplicationSettingsRequest& WithDatabaseArn(const char* value) { SetDatabaseArn(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -201,6 +250,9 @@ namespace Model
 
     BackintConfig m_backint;
     bool m_backintHasBeenSet = false;
+
+    Aws::String m_databaseArn;
+    bool m_databaseArnHasBeenSet = false;
   };
 
 } // namespace Model

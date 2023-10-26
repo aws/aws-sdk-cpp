@@ -24,14 +24,15 @@ namespace Model
 {
 
   /**
-   * <p>Any Certificate Manager Secure Sockets Layer/Transport Layer Security
+   * <p>Any Certificate Manager (ACM) Secure Sockets Layer/Transport Layer Security
    * (SSL/TLS) server certificate that's associated with a
-   * <a>ServerCertificateConfiguration</a> used in a
-   * <a>TLSInspectionConfiguration</a>. You must request or import a SSL/TLS
-   * certificate into ACM for each domain Network Firewall needs to decrypt and
-   * inspect. Network Firewall uses the SSL/TLS certificates to decrypt specified
-   * inbound SSL/TLS traffic going to your firewall. For information about working
-   * with certificates in Certificate Manager, see <a
+   * <a>ServerCertificateConfiguration</a>. Used in a
+   * <a>TLSInspectionConfiguration</a> for inspection of inbound traffic to your
+   * firewall. You must request or import a SSL/TLS certificate into ACM for each
+   * domain Network Firewall needs to decrypt and inspect. Network Firewall uses the
+   * SSL/TLS certificates to decrypt specified inbound SSL/TLS traffic going to your
+   * firewall. For information about working with certificates in Certificate
+   * Manager, see <a
    * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
    * a public certificate </a> or <a
    * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
@@ -51,49 +52,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server
-     * certificate.</p>
+     * certificate that's used for inbound SSL/TLS inspection.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server
-     * certificate.</p>
+     * certificate that's used for inbound SSL/TLS inspection.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server
-     * certificate.</p>
+     * certificate that's used for inbound SSL/TLS inspection.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server
-     * certificate.</p>
+     * certificate that's used for inbound SSL/TLS inspection.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server
-     * certificate.</p>
+     * certificate that's used for inbound SSL/TLS inspection.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server
-     * certificate.</p>
+     * certificate that's used for inbound SSL/TLS inspection.</p>
      */
     inline ServerCertificate& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server
-     * certificate.</p>
+     * certificate that's used for inbound SSL/TLS inspection.</p>
      */
     inline ServerCertificate& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server
-     * certificate.</p>
+     * certificate that's used for inbound SSL/TLS inspection.</p>
      */
     inline ServerCertificate& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

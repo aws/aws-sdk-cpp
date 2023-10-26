@@ -174,6 +174,31 @@ namespace Model
      */
     inline Resilience& WithClusterStatus(ClusterStatus&& value) { SetClusterStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates if or not enqueue replication is enabled for the ASCS
+     * component.</p>
+     */
+    inline bool GetEnqueueReplication() const{ return m_enqueueReplication; }
+
+    /**
+     * <p>Indicates if or not enqueue replication is enabled for the ASCS
+     * component.</p>
+     */
+    inline bool EnqueueReplicationHasBeenSet() const { return m_enqueueReplicationHasBeenSet; }
+
+    /**
+     * <p>Indicates if or not enqueue replication is enabled for the ASCS
+     * component.</p>
+     */
+    inline void SetEnqueueReplication(bool value) { m_enqueueReplicationHasBeenSet = true; m_enqueueReplication = value; }
+
+    /**
+     * <p>Indicates if or not enqueue replication is enabled for the ASCS
+     * component.</p>
+     */
+    inline Resilience& WithEnqueueReplication(bool value) { SetEnqueueReplication(value); return *this;}
+
   private:
 
     Aws::String m_hsrTier;
@@ -187,6 +212,9 @@ namespace Model
 
     ClusterStatus m_clusterStatus;
     bool m_clusterStatusHasBeenSet = false;
+
+    bool m_enqueueReplication;
+    bool m_enqueueReplicationHasBeenSet = false;
   };
 
 } // namespace Model

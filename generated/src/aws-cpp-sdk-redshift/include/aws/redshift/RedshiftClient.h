@@ -1273,6 +1273,32 @@ namespace Redshift
         }
 
         /**
+         * <p>Deletes the resource policy for a specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::DeleteResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::DeleteResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a scheduled action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteScheduledAction">AWS
          * API Reference</a></p>
@@ -2106,6 +2132,31 @@ namespace Redshift
         }
 
         /**
+         * <p>Returns a list of inbound integrations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeInboundIntegrations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInboundIntegrationsOutcome DescribeInboundIntegrations(const Model::DescribeInboundIntegrationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeInboundIntegrations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeInboundIntegrationsRequestT = Model::DescribeInboundIntegrationsRequest>
+        Model::DescribeInboundIntegrationsOutcomeCallable DescribeInboundIntegrationsCallable(const DescribeInboundIntegrationsRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::DescribeInboundIntegrations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeInboundIntegrations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeInboundIntegrationsRequestT = Model::DescribeInboundIntegrationsRequest>
+        void DescribeInboundIntegrationsAsync(const DescribeInboundIntegrationsRequestT& request, const DescribeInboundIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::DescribeInboundIntegrations, request, handler, context);
+        }
+
+        /**
          * <p>Describes whether information, such as queries and connection attempts, is
          * being logged for the specified Amazon Redshift cluster.</p><p><h3>See Also:</h3>
          * <a
@@ -2824,6 +2875,32 @@ namespace Redshift
         }
 
         /**
+         * <p>Get the resource policy for a specified resource.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::GetResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::GetResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p>This operation is retired. Calling this operation does not change AQUA
          * configuration. Amazon Redshift automatically determines whether to use AQUA
          * (Advanced Query Accelerator). </p><p><h3>See Also:</h3>   <a
@@ -3344,6 +3421,32 @@ namespace Redshift
         void PurchaseReservedNodeOfferingAsync(const PurchaseReservedNodeOfferingRequestT& request, const PurchaseReservedNodeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RedshiftClient::PurchaseReservedNodeOffering, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the resource policy for a specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const PutResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::PutResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        void PutResourcePolicyAsync(const PutResourcePolicyRequestT& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::PutResourcePolicy, request, handler, context);
         }
 
         /**

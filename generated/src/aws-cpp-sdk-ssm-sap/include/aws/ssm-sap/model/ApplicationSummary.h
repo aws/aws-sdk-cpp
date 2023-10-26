@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ssm-sap/SsmSap_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-sap/model/ApplicationDiscoveryStatus.h>
 #include <aws/ssm-sap/model/ApplicationType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -79,6 +80,37 @@ namespace Model
      * <p>The ID of the application.</p>
      */
     inline ApplicationSummary& WithId(const char* value) { SetId(value); return *this;}
+
+
+    /**
+     * <p>The status of the latest discovery.</p>
+     */
+    inline const ApplicationDiscoveryStatus& GetDiscoveryStatus() const{ return m_discoveryStatus; }
+
+    /**
+     * <p>The status of the latest discovery.</p>
+     */
+    inline bool DiscoveryStatusHasBeenSet() const { return m_discoveryStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the latest discovery.</p>
+     */
+    inline void SetDiscoveryStatus(const ApplicationDiscoveryStatus& value) { m_discoveryStatusHasBeenSet = true; m_discoveryStatus = value; }
+
+    /**
+     * <p>The status of the latest discovery.</p>
+     */
+    inline void SetDiscoveryStatus(ApplicationDiscoveryStatus&& value) { m_discoveryStatusHasBeenSet = true; m_discoveryStatus = std::move(value); }
+
+    /**
+     * <p>The status of the latest discovery.</p>
+     */
+    inline ApplicationSummary& WithDiscoveryStatus(const ApplicationDiscoveryStatus& value) { SetDiscoveryStatus(value); return *this;}
+
+    /**
+     * <p>The status of the latest discovery.</p>
+     */
+    inline ApplicationSummary& WithDiscoveryStatus(ApplicationDiscoveryStatus&& value) { SetDiscoveryStatus(std::move(value)); return *this;}
 
 
     /**
@@ -222,6 +254,9 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    ApplicationDiscoveryStatus m_discoveryStatus;
+    bool m_discoveryStatusHasBeenSet = false;
 
     ApplicationType m_type;
     bool m_typeHasBeenSet = false;
