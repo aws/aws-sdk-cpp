@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComponentType::NOT_SET:
+            return {};
           case ComponentType::HANA:
             return "HANA";
           case ComponentType::HANA_NODE:

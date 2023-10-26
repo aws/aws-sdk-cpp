@@ -375,50 +375,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the workflow. There cannot be multiple
-     * <code>DataIntegrationWorkflows</code> with the same name.</p>
+     * <p>The name of the workflow. There can't be multiple
+     * <code>MatchingWorkflows</code> with the same name.</p>
      */
     inline const Aws::String& GetWorkflowName() const{ return m_workflowName; }
 
     /**
-     * <p>The name of the workflow. There cannot be multiple
-     * <code>DataIntegrationWorkflows</code> with the same name.</p>
+     * <p>The name of the workflow. There can't be multiple
+     * <code>MatchingWorkflows</code> with the same name.</p>
      */
     inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
 
     /**
-     * <p>The name of the workflow. There cannot be multiple
-     * <code>DataIntegrationWorkflows</code> with the same name.</p>
+     * <p>The name of the workflow. There can't be multiple
+     * <code>MatchingWorkflows</code> with the same name.</p>
      */
     inline void SetWorkflowName(const Aws::String& value) { m_workflowNameHasBeenSet = true; m_workflowName = value; }
 
     /**
-     * <p>The name of the workflow. There cannot be multiple
-     * <code>DataIntegrationWorkflows</code> with the same name.</p>
+     * <p>The name of the workflow. There can't be multiple
+     * <code>MatchingWorkflows</code> with the same name.</p>
      */
     inline void SetWorkflowName(Aws::String&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::move(value); }
 
     /**
-     * <p>The name of the workflow. There cannot be multiple
-     * <code>DataIntegrationWorkflows</code> with the same name.</p>
+     * <p>The name of the workflow. There can't be multiple
+     * <code>MatchingWorkflows</code> with the same name.</p>
      */
     inline void SetWorkflowName(const char* value) { m_workflowNameHasBeenSet = true; m_workflowName.assign(value); }
 
     /**
-     * <p>The name of the workflow. There cannot be multiple
-     * <code>DataIntegrationWorkflows</code> with the same name.</p>
+     * <p>The name of the workflow. There can't be multiple
+     * <code>MatchingWorkflows</code> with the same name.</p>
      */
     inline CreateMatchingWorkflowRequest& WithWorkflowName(const Aws::String& value) { SetWorkflowName(value); return *this;}
 
     /**
-     * <p>The name of the workflow. There cannot be multiple
-     * <code>DataIntegrationWorkflows</code> with the same name.</p>
+     * <p>The name of the workflow. There can't be multiple
+     * <code>MatchingWorkflows</code> with the same name.</p>
      */
     inline CreateMatchingWorkflowRequest& WithWorkflowName(Aws::String&& value) { SetWorkflowName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the workflow. There cannot be multiple
-     * <code>DataIntegrationWorkflows</code> with the same name.</p>
+     * <p>The name of the workflow. There can't be multiple
+     * <code>MatchingWorkflows</code> with the same name.</p>
      */
     inline CreateMatchingWorkflowRequest& WithWorkflowName(const char* value) { SetWorkflowName(value); return *this;}
 

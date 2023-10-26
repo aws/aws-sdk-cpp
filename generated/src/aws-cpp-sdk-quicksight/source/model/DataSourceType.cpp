@@ -169,6 +169,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSourceType::NOT_SET:
+            return {};
           case DataSourceType::ADOBE_ANALYTICS:
             return "ADOBE_ANALYTICS";
           case DataSourceType::AMAZON_ELASTICSEARCH:

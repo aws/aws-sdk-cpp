@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatasourcePackageIngestState::NOT_SET:
+            return {};
           case DatasourcePackageIngestState::STARTED:
             return "STARTED";
           case DatasourcePackageIngestState::STOPPED:

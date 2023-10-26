@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SslProtocol::NOT_SET:
+            return {};
           case SslProtocol::SSLv3:
             return "SSLv3";
           case SslProtocol::TLSv1:

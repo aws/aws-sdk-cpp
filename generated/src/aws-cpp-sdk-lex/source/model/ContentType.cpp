@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContentType::NOT_SET:
+            return {};
           case ContentType::application_vnd_amazonaws_card_generic:
             return "application/vnd.amazonaws.card.generic";
           default:

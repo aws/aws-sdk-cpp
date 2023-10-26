@@ -119,42 +119,42 @@ namespace Model
 
     /**
      * <p>The graph summary of an RDF graph. See <a
-     * href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph
      * summary response for an RDF graph</a>.</p>
      */
     inline const RDFGraphSummary& GetGraphSummary() const{ return m_graphSummary; }
 
     /**
      * <p>The graph summary of an RDF graph. See <a
-     * href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph
      * summary response for an RDF graph</a>.</p>
      */
     inline bool GraphSummaryHasBeenSet() const { return m_graphSummaryHasBeenSet; }
 
     /**
      * <p>The graph summary of an RDF graph. See <a
-     * href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph
      * summary response for an RDF graph</a>.</p>
      */
     inline void SetGraphSummary(const RDFGraphSummary& value) { m_graphSummaryHasBeenSet = true; m_graphSummary = value; }
 
     /**
      * <p>The graph summary of an RDF graph. See <a
-     * href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph
      * summary response for an RDF graph</a>.</p>
      */
     inline void SetGraphSummary(RDFGraphSummary&& value) { m_graphSummaryHasBeenSet = true; m_graphSummary = std::move(value); }
 
     /**
      * <p>The graph summary of an RDF graph. See <a
-     * href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph
      * summary response for an RDF graph</a>.</p>
      */
     inline RDFGraphSummaryValueMap& WithGraphSummary(const RDFGraphSummary& value) { SetGraphSummary(value); return *this;}
 
     /**
      * <p>The graph summary of an RDF graph. See <a
-     * href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph
      * summary response for an RDF graph</a>.</p>
      */
     inline RDFGraphSummaryValueMap& WithGraphSummary(RDFGraphSummary&& value) { SetGraphSummary(std::move(value)); return *this;}

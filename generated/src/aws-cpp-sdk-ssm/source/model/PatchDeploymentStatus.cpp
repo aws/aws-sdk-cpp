@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PatchDeploymentStatus::NOT_SET:
+            return {};
           case PatchDeploymentStatus::APPROVED:
             return "APPROVED";
           case PatchDeploymentStatus::PENDING_APPROVAL:

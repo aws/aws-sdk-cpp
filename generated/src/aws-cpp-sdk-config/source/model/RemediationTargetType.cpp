@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RemediationTargetType::NOT_SET:
+            return {};
           case RemediationTargetType::SSM_DOCUMENT:
             return "SSM_DOCUMENT";
           default:

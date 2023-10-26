@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NatGatewayState::NOT_SET:
+            return {};
           case NatGatewayState::pending:
             return "pending";
           case NatGatewayState::failed:

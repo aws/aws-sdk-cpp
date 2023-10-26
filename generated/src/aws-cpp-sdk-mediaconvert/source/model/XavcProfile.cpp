@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case XavcProfile::NOT_SET:
+            return {};
           case XavcProfile::XAVC_HD_INTRA_CBG:
             return "XAVC_HD_INTRA_CBG";
           case XavcProfile::XAVC_4K_INTRA_CBG:

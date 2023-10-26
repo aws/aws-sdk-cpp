@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScopeName::NOT_SET:
+            return {};
           case ScopeName::Organization:
             return "Organization";
           case ScopeName::AccountId:

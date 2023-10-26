@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AvcIntraFramerateControl::NOT_SET:
+            return {};
           case AvcIntraFramerateControl::INITIALIZE_FROM_SOURCE:
             return "INITIALIZE_FROM_SOURCE";
           case AvcIntraFramerateControl::SPECIFIED:

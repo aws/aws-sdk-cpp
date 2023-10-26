@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VirtualInterfaceState::NOT_SET:
+            return {};
           case VirtualInterfaceState::confirming:
             return "confirming";
           case VirtualInterfaceState::verifying:

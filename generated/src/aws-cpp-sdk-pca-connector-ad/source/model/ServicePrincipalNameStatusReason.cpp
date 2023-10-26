@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServicePrincipalNameStatusReason::NOT_SET:
+            return {};
           case ServicePrincipalNameStatusReason::DIRECTORY_ACCESS_DENIED:
             return "DIRECTORY_ACCESS_DENIED";
           case ServicePrincipalNameStatusReason::DIRECTORY_NOT_REACHABLE:

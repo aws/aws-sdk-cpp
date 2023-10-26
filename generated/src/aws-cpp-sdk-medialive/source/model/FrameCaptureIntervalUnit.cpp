@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FrameCaptureIntervalUnit::NOT_SET:
+            return {};
           case FrameCaptureIntervalUnit::MILLISECONDS:
             return "MILLISECONDS";
           case FrameCaptureIntervalUnit::SECONDS:

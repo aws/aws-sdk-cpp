@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DBProxyEndpointTargetRole::NOT_SET:
+            return {};
           case DBProxyEndpointTargetRole::READ_WRITE:
             return "READ_WRITE";
           case DBProxyEndpointTargetRole::READ_ONLY:

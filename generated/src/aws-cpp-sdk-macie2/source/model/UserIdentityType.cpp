@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserIdentityType::NOT_SET:
+            return {};
           case UserIdentityType::AssumedRole:
             return "AssumedRole";
           case UserIdentityType::IAMUser:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AlarmType::NOT_SET:
+            return {};
           case AlarmType::CompositeAlarm:
             return "CompositeAlarm";
           case AlarmType::MetricAlarm:

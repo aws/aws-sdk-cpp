@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LustreDeploymentType::NOT_SET:
+            return {};
           case LustreDeploymentType::SCRATCH_1:
             return "SCRATCH_1";
           case LustreDeploymentType::SCRATCH_2:

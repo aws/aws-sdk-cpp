@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AggregationType::NOT_SET:
+            return {};
           case AggregationType::COUNT_DISTINCT:
             return "COUNT_DISTINCT";
           default:

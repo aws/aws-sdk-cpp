@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TtmlDestinationStyleControl::NOT_SET:
+            return {};
           case TtmlDestinationStyleControl::PASSTHROUGH:
             return "PASSTHROUGH";
           case TtmlDestinationStyleControl::USE_CONFIGURED:

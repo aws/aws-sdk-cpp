@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OnStackFailure::NOT_SET:
+            return {};
           case OnStackFailure::DO_NOTHING:
             return "DO_NOTHING";
           case OnStackFailure::ROLLBACK:

@@ -7,6 +7,8 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/CodePipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codepipeline/model/PipelineVariable.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -81,6 +83,63 @@ namespace Model
 
 
     /**
+     * <p>A list that overrides pipeline variables for a pipeline execution that's
+     * being started. Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the
+     * values can be anything except an empty string.</p>
+     */
+    inline const Aws::Vector<PipelineVariable>& GetVariables() const{ return m_variables; }
+
+    /**
+     * <p>A list that overrides pipeline variables for a pipeline execution that's
+     * being started. Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the
+     * values can be anything except an empty string.</p>
+     */
+    inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
+
+    /**
+     * <p>A list that overrides pipeline variables for a pipeline execution that's
+     * being started. Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the
+     * values can be anything except an empty string.</p>
+     */
+    inline void SetVariables(const Aws::Vector<PipelineVariable>& value) { m_variablesHasBeenSet = true; m_variables = value; }
+
+    /**
+     * <p>A list that overrides pipeline variables for a pipeline execution that's
+     * being started. Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the
+     * values can be anything except an empty string.</p>
+     */
+    inline void SetVariables(Aws::Vector<PipelineVariable>&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
+
+    /**
+     * <p>A list that overrides pipeline variables for a pipeline execution that's
+     * being started. Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the
+     * values can be anything except an empty string.</p>
+     */
+    inline StartPipelineExecutionRequest& WithVariables(const Aws::Vector<PipelineVariable>& value) { SetVariables(value); return *this;}
+
+    /**
+     * <p>A list that overrides pipeline variables for a pipeline execution that's
+     * being started. Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the
+     * values can be anything except an empty string.</p>
+     */
+    inline StartPipelineExecutionRequest& WithVariables(Aws::Vector<PipelineVariable>&& value) { SetVariables(std::move(value)); return *this;}
+
+    /**
+     * <p>A list that overrides pipeline variables for a pipeline execution that's
+     * being started. Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the
+     * values can be anything except an empty string.</p>
+     */
+    inline StartPipelineExecutionRequest& AddVariables(const PipelineVariable& value) { m_variablesHasBeenSet = true; m_variables.push_back(value); return *this; }
+
+    /**
+     * <p>A list that overrides pipeline variables for a pipeline execution that's
+     * being started. Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the
+     * values can be anything except an empty string.</p>
+     */
+    inline StartPipelineExecutionRequest& AddVariables(PipelineVariable&& value) { m_variablesHasBeenSet = true; m_variables.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The system-generated unique ID used to identify a unique execution
      * request.</p>
      */
@@ -132,6 +191,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::Vector<PipelineVariable> m_variables;
+    bool m_variablesHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;

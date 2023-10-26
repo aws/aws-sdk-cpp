@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeliveryMediumType::NOT_SET:
+            return {};
           case DeliveryMediumType::SMS:
             return "SMS";
           case DeliveryMediumType::EMAIL:

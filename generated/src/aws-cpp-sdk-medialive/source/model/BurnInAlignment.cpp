@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BurnInAlignment::NOT_SET:
+            return {};
           case BurnInAlignment::CENTERED:
             return "CENTERED";
           case BurnInAlignment::LEFT:

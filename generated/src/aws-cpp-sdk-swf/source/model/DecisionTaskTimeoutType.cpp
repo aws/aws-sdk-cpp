@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DecisionTaskTimeoutType::NOT_SET:
+            return {};
           case DecisionTaskTimeoutType::START_TO_CLOSE:
             return "START_TO_CLOSE";
           case DecisionTaskTimeoutType::SCHEDULE_TO_START:

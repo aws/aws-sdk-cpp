@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KinesisVideoStreamPoolStatus::NOT_SET:
+            return {};
           case KinesisVideoStreamPoolStatus::CREATING:
             return "CREATING";
           case KinesisVideoStreamPoolStatus::ACTIVE:

@@ -179,6 +179,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ArtifactType::NOT_SET:
+            return {};
           case ArtifactType::UNKNOWN:
             return "UNKNOWN";
           case ArtifactType::SCREENSHOT:

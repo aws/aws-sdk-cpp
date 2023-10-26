@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentMetadataEnum::NOT_SET:
+            return {};
           case DocumentMetadataEnum::DocumentReviews:
             return "DocumentReviews";
           default:

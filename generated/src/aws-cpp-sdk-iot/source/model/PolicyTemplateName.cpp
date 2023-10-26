@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PolicyTemplateName::NOT_SET:
+            return {};
           case PolicyTemplateName::BLANK_POLICY:
             return "BLANK_POLICY";
           default:

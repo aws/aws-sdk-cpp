@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ECSServiceRecommendationFinding::NOT_SET:
+            return {};
           case ECSServiceRecommendationFinding::Optimized:
             return "Optimized";
           case ECSServiceRecommendationFinding::Underprovisioned:

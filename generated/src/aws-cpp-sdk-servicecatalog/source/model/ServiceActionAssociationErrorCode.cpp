@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceActionAssociationErrorCode::NOT_SET:
+            return {};
           case ServiceActionAssociationErrorCode::DUPLICATE_RESOURCE:
             return "DUPLICATE_RESOURCE";
           case ServiceActionAssociationErrorCode::INTERNAL_FAILURE:

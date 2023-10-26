@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OpenZFSCopyStrategy::NOT_SET:
+            return {};
           case OpenZFSCopyStrategy::CLONE:
             return "CLONE";
           case OpenZFSCopyStrategy::FULL_COPY:

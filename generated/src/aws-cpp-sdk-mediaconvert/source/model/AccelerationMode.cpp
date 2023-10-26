@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccelerationMode::NOT_SET:
+            return {};
           case AccelerationMode::DISABLED:
             return "DISABLED";
           case AccelerationMode::ENABLED:

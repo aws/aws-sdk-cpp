@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComputeType::NOT_SET:
+            return {};
           case ComputeType::EC2:
             return "EC2";
           case ComputeType::ANYWHERE:

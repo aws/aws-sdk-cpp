@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OriginRequestPolicyHeaderBehavior::NOT_SET:
+            return {};
           case OriginRequestPolicyHeaderBehavior::none:
             return "none";
           case OriginRequestPolicyHeaderBehavior::whitelist:

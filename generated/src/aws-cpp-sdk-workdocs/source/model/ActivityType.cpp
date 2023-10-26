@@ -204,6 +204,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActivityType::NOT_SET:
+            return {};
           case ActivityType::DOCUMENT_CHECKED_IN:
             return "DOCUMENT_CHECKED_IN";
           case ActivityType::DOCUMENT_CHECKED_OUT:

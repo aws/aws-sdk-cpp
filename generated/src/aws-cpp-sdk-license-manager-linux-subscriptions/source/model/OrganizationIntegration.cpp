@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrganizationIntegration::NOT_SET:
+            return {};
           case OrganizationIntegration::Enabled:
             return "Enabled";
           case OrganizationIntegration::Disabled:

@@ -174,6 +174,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricUnit::NOT_SET:
+            return {};
           case MetricUnit::Seconds:
             return "Seconds";
           case MetricUnit::Microseconds:

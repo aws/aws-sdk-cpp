@@ -17,8 +17,8 @@ namespace Inspector2
 {
   /**
    * <p>Amazon Inspector is a vulnerability discovery service that automates
-   * continuous scanning for security vulnerabilities within your Amazon EC2 and
-   * Amazon ECR environments.</p>
+   * continuous scanning for security vulnerabilities within your Amazon EC2, Amazon
+   * ECR, and Amazon Web Services Lambda environments.</p>
    */
   class AWS_INSPECTOR2_API Inspector2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Inspector2Client>
   {
@@ -321,8 +321,9 @@ namespace Inspector2
         }
 
         /**
-         * <p>Creates a filter resource using specified filter criteria.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a filter resource using specified filter criteria. When the filter
+         * action is set to <code>SUPPRESS</code> this action creates a suppression
+         * rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateFilter">AWS
          * API Reference</a></p>
          */

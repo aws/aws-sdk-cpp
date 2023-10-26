@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelPackageGroupStatus::NOT_SET:
+            return {};
           case ModelPackageGroupStatus::Pending:
             return "Pending";
           case ModelPackageGroupStatus::InProgress:

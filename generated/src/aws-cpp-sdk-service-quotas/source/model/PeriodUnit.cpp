@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PeriodUnit::NOT_SET:
+            return {};
           case PeriodUnit::MICROSECOND:
             return "MICROSECOND";
           case PeriodUnit::MILLISECOND:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperationType::NOT_SET:
+            return {};
           case OperationType::INSERT:
             return "INSERT";
           case OperationType::MODIFY:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QueryTransactionStatus::NOT_SET:
+            return {};
           case QueryTransactionStatus::FINAL:
             return "FINAL";
           case QueryTransactionStatus::FAILED:

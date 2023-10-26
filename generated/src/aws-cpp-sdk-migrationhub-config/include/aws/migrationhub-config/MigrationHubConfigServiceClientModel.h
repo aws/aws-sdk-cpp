@@ -19,6 +19,7 @@
 
 /* Service model headers required in MigrationHubConfigClient header */
 #include <aws/migrationhub-config/model/CreateHomeRegionControlResult.h>
+#include <aws/migrationhub-config/model/DeleteHomeRegionControlResult.h>
 #include <aws/migrationhub-config/model/DescribeHomeRegionControlsResult.h>
 #include <aws/migrationhub-config/model/GetHomeRegionResult.h>
 /* End of service model headers required in MigrationHubConfigClient header */
@@ -62,18 +63,21 @@ namespace Aws
     {
       /* Service model forward declarations required in MigrationHubConfigClient header */
       class CreateHomeRegionControlRequest;
+      class DeleteHomeRegionControlRequest;
       class DescribeHomeRegionControlsRequest;
       class GetHomeRegionRequest;
       /* End of service model forward declarations required in MigrationHubConfigClient header */
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<CreateHomeRegionControlResult, MigrationHubConfigError> CreateHomeRegionControlOutcome;
+      typedef Aws::Utils::Outcome<DeleteHomeRegionControlResult, MigrationHubConfigError> DeleteHomeRegionControlOutcome;
       typedef Aws::Utils::Outcome<DescribeHomeRegionControlsResult, MigrationHubConfigError> DescribeHomeRegionControlsOutcome;
       typedef Aws::Utils::Outcome<GetHomeRegionResult, MigrationHubConfigError> GetHomeRegionOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
       typedef std::future<CreateHomeRegionControlOutcome> CreateHomeRegionControlOutcomeCallable;
+      typedef std::future<DeleteHomeRegionControlOutcome> DeleteHomeRegionControlOutcomeCallable;
       typedef std::future<DescribeHomeRegionControlsOutcome> DescribeHomeRegionControlsOutcomeCallable;
       typedef std::future<GetHomeRegionOutcome> GetHomeRegionOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -83,6 +87,7 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const MigrationHubConfigClient*, const Model::CreateHomeRegionControlRequest&, const Model::CreateHomeRegionControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHomeRegionControlResponseReceivedHandler;
+    typedef std::function<void(const MigrationHubConfigClient*, const Model::DeleteHomeRegionControlRequest&, const Model::DeleteHomeRegionControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHomeRegionControlResponseReceivedHandler;
     typedef std::function<void(const MigrationHubConfigClient*, const Model::DescribeHomeRegionControlsRequest&, const Model::DescribeHomeRegionControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHomeRegionControlsResponseReceivedHandler;
     typedef std::function<void(const MigrationHubConfigClient*, const Model::GetHomeRegionRequest&, const Model::GetHomeRegionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHomeRegionResponseReceivedHandler;
     /* End of service model async handlers definitions */

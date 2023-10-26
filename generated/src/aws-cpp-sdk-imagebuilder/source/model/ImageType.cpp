@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageType::NOT_SET:
+            return {};
           case ImageType::AMI:
             return "AMI";
           case ImageType::DOCKER:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSourceErrorType::NOT_SET:
+            return {};
           case DataSourceErrorType::ACCESS_DENIED_EXCEPTION:
             return "ACCESS_DENIED_EXCEPTION";
           case DataSourceErrorType::CONFLICT_EXCEPTION:

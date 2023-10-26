@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CreateAccountState::NOT_SET:
+            return {};
           case CreateAccountState::IN_PROGRESS:
             return "IN_PROGRESS";
           case CreateAccountState::SUCCEEDED:

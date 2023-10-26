@@ -14,6 +14,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/omics/model/Accelerators.h>
 #include <aws/omics/model/RunRetentionMode.h>
+#include <aws/omics/model/RunLogLocation.h>
 #include <utility>
 
 namespace Aws
@@ -860,6 +861,68 @@ namespace Model
     inline GetRunResult& WithRetentionMode(RunRetentionMode&& value) { SetRetentionMode(std::move(value)); return *this;}
 
 
+    /**
+     * <p> The reason a run has failed. </p>
+     */
+    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p> The reason a run has failed. </p>
+     */
+    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
+
+    /**
+     * <p> The reason a run has failed. </p>
+     */
+    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
+
+    /**
+     * <p> The reason a run has failed. </p>
+     */
+    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
+
+    /**
+     * <p> The reason a run has failed. </p>
+     */
+    inline GetRunResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
+
+    /**
+     * <p> The reason a run has failed. </p>
+     */
+    inline GetRunResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
+
+    /**
+     * <p> The reason a run has failed. </p>
+     */
+    inline GetRunResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+
+
+    /**
+     * <p> The location of the run log. </p>
+     */
+    inline const RunLogLocation& GetLogLocation() const{ return m_logLocation; }
+
+    /**
+     * <p> The location of the run log. </p>
+     */
+    inline void SetLogLocation(const RunLogLocation& value) { m_logLocation = value; }
+
+    /**
+     * <p> The location of the run log. </p>
+     */
+    inline void SetLogLocation(RunLogLocation&& value) { m_logLocation = std::move(value); }
+
+    /**
+     * <p> The location of the run log. </p>
+     */
+    inline GetRunResult& WithLogLocation(const RunLogLocation& value) { SetLogLocation(value); return *this;}
+
+    /**
+     * <p> The location of the run log. </p>
+     */
+    inline GetRunResult& WithLogLocation(RunLogLocation&& value) { SetLogLocation(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -932,6 +995,10 @@ namespace Model
     Accelerators m_accelerators;
 
     RunRetentionMode m_retentionMode;
+
+    Aws::String m_failureReason;
+
+    RunLogLocation m_logLocation;
 
     Aws::String m_requestId;
   };

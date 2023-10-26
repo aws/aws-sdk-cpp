@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkflowExecutionStatus::NOT_SET:
+            return {};
           case WorkflowExecutionStatus::PENDING:
             return "PENDING";
           case WorkflowExecutionStatus::SKIPPED:

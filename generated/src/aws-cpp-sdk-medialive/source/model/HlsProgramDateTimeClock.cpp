@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsProgramDateTimeClock::NOT_SET:
+            return {};
           case HlsProgramDateTimeClock::INITIALIZE_FROM_OUTPUT_TIMECODE:
             return "INITIALIZE_FROM_OUTPUT_TIMECODE";
           case HlsProgramDateTimeClock::SYSTEM_CLOCK:

@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobStatus::NOT_SET:
+            return {};
           case JobStatus::Active:
             return "Active";
           case JobStatus::Cancelled:

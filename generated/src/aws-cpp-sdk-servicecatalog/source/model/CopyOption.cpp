@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CopyOption::NOT_SET:
+            return {};
           case CopyOption::CopyTags:
             return "CopyTags";
           default:

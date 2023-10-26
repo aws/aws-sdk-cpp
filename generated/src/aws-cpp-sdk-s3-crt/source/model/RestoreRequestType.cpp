@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RestoreRequestType::NOT_SET:
+            return {};
           case RestoreRequestType::SELECT:
             return "SELECT";
           default:

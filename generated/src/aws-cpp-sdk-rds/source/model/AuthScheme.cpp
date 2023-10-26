@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthScheme::NOT_SET:
+            return {};
           case AuthScheme::SECRETS:
             return "SECRETS";
           default:

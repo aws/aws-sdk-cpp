@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264FlickerAdaptiveQuantization::NOT_SET:
+            return {};
           case H264FlickerAdaptiveQuantization::DISABLED:
             return "DISABLED";
           case H264FlickerAdaptiveQuantization::ENABLED:

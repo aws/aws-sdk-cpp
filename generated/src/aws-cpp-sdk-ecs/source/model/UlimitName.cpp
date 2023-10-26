@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UlimitName::NOT_SET:
+            return {};
           case UlimitName::core:
             return "core";
           case UlimitName::cpu:

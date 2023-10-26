@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DefaultDocumentIdFormat::NOT_SET:
+            return {};
           case DefaultDocumentIdFormat::FIREHOSE_DEFAULT:
             return "FIREHOSE_DEFAULT";
           case DefaultDocumentIdFormat::NO_DOCUMENT_ID:

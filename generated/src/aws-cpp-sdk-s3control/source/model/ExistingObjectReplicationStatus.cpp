@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExistingObjectReplicationStatus::NOT_SET:
+            return {};
           case ExistingObjectReplicationStatus::Enabled:
             return "Enabled";
           case ExistingObjectReplicationStatus::Disabled:

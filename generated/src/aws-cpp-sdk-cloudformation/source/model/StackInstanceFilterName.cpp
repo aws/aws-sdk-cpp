@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StackInstanceFilterName::NOT_SET:
+            return {};
           case StackInstanceFilterName::DETAILED_STATUS:
             return "DETAILED_STATUS";
           case StackInstanceFilterName::LAST_OPERATION_ID:

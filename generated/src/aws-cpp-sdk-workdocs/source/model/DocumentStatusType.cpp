@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentStatusType::NOT_SET:
+            return {};
           case DocumentStatusType::INITIALIZED:
             return "INITIALIZED";
           case DocumentStatusType::ACTIVE:

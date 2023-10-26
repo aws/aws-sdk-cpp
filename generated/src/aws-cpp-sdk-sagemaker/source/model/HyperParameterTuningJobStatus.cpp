@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HyperParameterTuningJobStatus::NOT_SET:
+            return {};
           case HyperParameterTuningJobStatus::Completed:
             return "Completed";
           case HyperParameterTuningJobStatus::InProgress:

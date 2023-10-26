@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrderType::NOT_SET:
+            return {};
           case OrderType::OUTPOST:
             return "OUTPOST";
           case OrderType::REPLACEMENT:

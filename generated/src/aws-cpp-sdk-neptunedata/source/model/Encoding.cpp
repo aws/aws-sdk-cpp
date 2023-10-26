@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Encoding::NOT_SET:
+            return {};
           case Encoding::gzip:
             return "gzip";
           default:

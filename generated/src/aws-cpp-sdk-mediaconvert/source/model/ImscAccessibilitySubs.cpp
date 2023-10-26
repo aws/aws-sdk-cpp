@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImscAccessibilitySubs::NOT_SET:
+            return {};
           case ImscAccessibilitySubs::DISABLED:
             return "DISABLED";
           case ImscAccessibilitySubs::ENABLED:

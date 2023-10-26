@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecipeProvider::NOT_SET:
+            return {};
           case RecipeProvider::SERVICE:
             return "SERVICE";
           default:

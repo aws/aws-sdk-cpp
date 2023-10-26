@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CodeSnippetErrorCode::NOT_SET:
+            return {};
           case CodeSnippetErrorCode::INTERNAL_ERROR:
             return "INTERNAL_ERROR";
           case CodeSnippetErrorCode::ACCESS_DENIED:

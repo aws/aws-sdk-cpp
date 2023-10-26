@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FleetEventType::NOT_SET:
+            return {};
           case FleetEventType::instance_change:
             return "instance-change";
           case FleetEventType::fleet_change:

@@ -414,6 +414,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceType::NOT_SET:
+            return {};
           case InstanceType::ml_t2_medium:
             return "ml.t2.medium";
           case InstanceType::ml_t2_large:

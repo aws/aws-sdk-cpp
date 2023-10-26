@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataQualityRuleResultStatus::NOT_SET:
+            return {};
           case DataQualityRuleResultStatus::PASS:
             return "PASS";
           case DataQualityRuleResultStatus::FAIL:

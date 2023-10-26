@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSourceRunStatus::NOT_SET:
+            return {};
           case DataSourceRunStatus::REQUESTED:
             return "REQUESTED";
           case DataSourceRunStatus::RUNNING:

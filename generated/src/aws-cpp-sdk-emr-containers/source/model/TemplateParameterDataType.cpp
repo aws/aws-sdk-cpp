@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TemplateParameterDataType::NOT_SET:
+            return {};
           case TemplateParameterDataType::NUMBER:
             return "NUMBER";
           case TemplateParameterDataType::STRING:

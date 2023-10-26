@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PartnerType::NOT_SET:
+            return {};
           case PartnerType::Sidewalk:
             return "Sidewalk";
           default:

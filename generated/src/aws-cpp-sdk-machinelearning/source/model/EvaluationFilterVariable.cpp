@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EvaluationFilterVariable::NOT_SET:
+            return {};
           case EvaluationFilterVariable::CreatedAt:
             return "CreatedAt";
           case EvaluationFilterVariable::LastUpdatedAt:

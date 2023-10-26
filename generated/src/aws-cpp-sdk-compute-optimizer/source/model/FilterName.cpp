@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterName::NOT_SET:
+            return {};
           case FilterName::Finding:
             return "Finding";
           case FilterName::FindingReasonCodes:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsIncompleteSegmentBehavior::NOT_SET:
+            return {};
           case HlsIncompleteSegmentBehavior::AUTO:
             return "AUTO";
           case HlsIncompleteSegmentBehavior::SUPPRESS:

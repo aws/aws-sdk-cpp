@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitGatewayAssociationState::NOT_SET:
+            return {};
           case TransitGatewayAssociationState::associating:
             return "associating";
           case TransitGatewayAssociationState::associated:

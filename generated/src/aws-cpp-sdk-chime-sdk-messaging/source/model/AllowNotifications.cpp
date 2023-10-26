@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AllowNotifications::NOT_SET:
+            return {};
           case AllowNotifications::ALL:
             return "ALL";
           case AllowNotifications::NONE:

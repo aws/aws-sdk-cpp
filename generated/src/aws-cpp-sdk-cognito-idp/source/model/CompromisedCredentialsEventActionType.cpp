@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CompromisedCredentialsEventActionType::NOT_SET:
+            return {};
           case CompromisedCredentialsEventActionType::BLOCK:
             return "BLOCK";
           case CompromisedCredentialsEventActionType::NO_ACTION:

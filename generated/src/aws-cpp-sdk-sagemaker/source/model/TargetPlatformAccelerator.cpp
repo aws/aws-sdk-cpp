@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetPlatformAccelerator::NOT_SET:
+            return {};
           case TargetPlatformAccelerator::INTEL_GRAPHICS:
             return "INTEL_GRAPHICS";
           case TargetPlatformAccelerator::MALI:

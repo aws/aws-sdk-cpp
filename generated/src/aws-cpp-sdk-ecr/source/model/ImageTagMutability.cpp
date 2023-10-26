@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageTagMutability::NOT_SET:
+            return {};
           case ImageTagMutability::MUTABLE:
             return "MUTABLE";
           case ImageTagMutability::IMMUTABLE:

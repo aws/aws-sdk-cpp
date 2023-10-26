@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeinterlacerControl::NOT_SET:
+            return {};
           case DeinterlacerControl::FORCE_ALL_FRAMES:
             return "FORCE_ALL_FRAMES";
           case DeinterlacerControl::NORMAL:

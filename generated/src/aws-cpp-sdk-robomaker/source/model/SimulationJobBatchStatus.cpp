@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SimulationJobBatchStatus::NOT_SET:
+            return {};
           case SimulationJobBatchStatus::Pending:
             return "Pending";
           case SimulationJobBatchStatus::InProgress:

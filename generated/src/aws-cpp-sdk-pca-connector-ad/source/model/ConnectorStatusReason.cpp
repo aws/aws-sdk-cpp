@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectorStatusReason::NOT_SET:
+            return {};
           case ConnectorStatusReason::DIRECTORY_ACCESS_DENIED:
             return "DIRECTORY_ACCESS_DENIED";
           case ConnectorStatusReason::INTERNAL_FAILURE:

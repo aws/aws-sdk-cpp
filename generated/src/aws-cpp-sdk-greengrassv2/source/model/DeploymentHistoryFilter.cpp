@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentHistoryFilter::NOT_SET:
+            return {};
           case DeploymentHistoryFilter::ALL:
             return "ALL";
           case DeploymentHistoryFilter::LATEST_ONLY:

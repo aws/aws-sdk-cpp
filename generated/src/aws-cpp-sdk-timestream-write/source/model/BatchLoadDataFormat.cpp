@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchLoadDataFormat::NOT_SET:
+            return {};
           case BatchLoadDataFormat::CSV:
             return "CSV";
           default:

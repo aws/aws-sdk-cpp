@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NamedEntityAggType::NOT_SET:
+            return {};
           case NamedEntityAggType::SUM:
             return "SUM";
           case NamedEntityAggType::MIN:

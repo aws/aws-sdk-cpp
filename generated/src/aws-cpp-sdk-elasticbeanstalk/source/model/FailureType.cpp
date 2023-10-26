@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FailureType::NOT_SET:
+            return {};
           case FailureType::UpdateCancelled:
             return "UpdateCancelled";
           case FailureType::CancellationFailed:

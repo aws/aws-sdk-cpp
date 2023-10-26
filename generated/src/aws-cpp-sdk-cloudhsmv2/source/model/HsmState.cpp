@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HsmState::NOT_SET:
+            return {};
           case HsmState::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case HsmState::ACTIVE:

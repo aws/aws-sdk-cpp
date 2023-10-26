@@ -134,6 +134,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConflictExceptionReason::NOT_SET:
+            return {};
           case ConflictExceptionReason::DELETION_PROTECTION_ENABLED:
             return "DELETION_PROTECTION_ENABLED";
           case ConflictExceptionReason::DESTINATION_PHONE_NUMBER_NOT_VERIFIED:

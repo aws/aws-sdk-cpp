@@ -209,6 +209,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorCode::NOT_SET:
+            return {};
           case ErrorCode::AGENT_ISSUE:
             return "AGENT_ISSUE";
           case ErrorCode::ALARM_ACTIVE:

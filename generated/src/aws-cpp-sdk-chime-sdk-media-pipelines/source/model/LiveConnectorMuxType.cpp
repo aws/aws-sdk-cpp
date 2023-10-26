@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LiveConnectorMuxType::NOT_SET:
+            return {};
           case LiveConnectorMuxType::AudioWithCompositedVideo:
             return "AudioWithCompositedVideo";
           case LiveConnectorMuxType::AudioWithActiveSpeakerVideo:

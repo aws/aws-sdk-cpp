@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RegistrationStatus::NOT_SET:
+            return {};
           case RegistrationStatus::REGISTERED:
             return "REGISTERED";
           case RegistrationStatus::DEPRECATED:

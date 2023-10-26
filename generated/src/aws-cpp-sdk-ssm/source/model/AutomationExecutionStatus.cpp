@@ -129,6 +129,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutomationExecutionStatus::NOT_SET:
+            return {};
           case AutomationExecutionStatus::Pending:
             return "Pending";
           case AutomationExecutionStatus::InProgress:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CharLengthSemantics::NOT_SET:
+            return {};
           case CharLengthSemantics::default_:
             return "default";
           case CharLengthSemantics::char_:

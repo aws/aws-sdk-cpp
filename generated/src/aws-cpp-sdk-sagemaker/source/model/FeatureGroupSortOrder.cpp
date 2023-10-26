@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FeatureGroupSortOrder::NOT_SET:
+            return {};
           case FeatureGroupSortOrder::Ascending:
             return "Ascending";
           case FeatureGroupSortOrder::Descending:

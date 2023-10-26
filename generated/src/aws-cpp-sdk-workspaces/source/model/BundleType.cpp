@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BundleType::NOT_SET:
+            return {};
           case BundleType::REGULAR:
             return "REGULAR";
           case BundleType::STANDBY:

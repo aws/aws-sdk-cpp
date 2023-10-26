@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264TemporalAq::NOT_SET:
+            return {};
           case H264TemporalAq::DISABLED:
             return "DISABLED";
           case H264TemporalAq::ENABLED:

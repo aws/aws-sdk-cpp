@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BotRecommendationStatus::NOT_SET:
+            return {};
           case BotRecommendationStatus::Processing:
             return "Processing";
           case BotRecommendationStatus::Deleting:

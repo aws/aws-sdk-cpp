@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RtmpOutputCertificateMode::NOT_SET:
+            return {};
           case RtmpOutputCertificateMode::SELF_SIGNED:
             return "SELF_SIGNED";
           case RtmpOutputCertificateMode::VERIFY_AUTHENTICITY:

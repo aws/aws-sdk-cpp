@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterOperation::NOT_SET:
+            return {};
           case FilterOperation::EQ:
             return "EQ";
           case FilterOperation::LT:

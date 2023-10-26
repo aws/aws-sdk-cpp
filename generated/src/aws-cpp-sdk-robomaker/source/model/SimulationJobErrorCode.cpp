@@ -194,6 +194,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SimulationJobErrorCode::NOT_SET:
+            return {};
           case SimulationJobErrorCode::InternalServiceError:
             return "InternalServiceError";
           case SimulationJobErrorCode::RobotApplicationCrash:

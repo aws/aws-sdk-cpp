@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AlfrescoEntity::NOT_SET:
+            return {};
           case AlfrescoEntity::wiki:
             return "wiki";
           case AlfrescoEntity::blog:

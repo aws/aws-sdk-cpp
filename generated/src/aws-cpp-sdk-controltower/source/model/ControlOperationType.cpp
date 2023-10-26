@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ControlOperationType::NOT_SET:
+            return {};
           case ControlOperationType::ENABLE_CONTROL:
             return "ENABLE_CONTROL";
           case ControlOperationType::DISABLE_CONTROL:

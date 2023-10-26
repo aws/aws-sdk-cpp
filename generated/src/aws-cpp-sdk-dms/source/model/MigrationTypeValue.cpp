@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MigrationTypeValue::NOT_SET:
+            return {};
           case MigrationTypeValue::full_load:
             return "full-load";
           case MigrationTypeValue::cdc:

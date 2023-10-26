@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LabelingJobStatus::NOT_SET:
+            return {};
           case LabelingJobStatus::Initializing:
             return "Initializing";
           case LabelingJobStatus::InProgress:

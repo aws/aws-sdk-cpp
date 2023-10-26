@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSourceName::NOT_SET:
+            return {};
           case DataSourceName::SalesforceGenie:
             return "SalesforceGenie";
           case DataSourceName::Snowflake:

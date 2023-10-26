@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClientPasswordAuthType::NOT_SET:
+            return {};
           case ClientPasswordAuthType::MYSQL_NATIVE_PASSWORD:
             return "MYSQL_NATIVE_PASSWORD";
           case ClientPasswordAuthType::POSTGRES_SCRAM_SHA_256:

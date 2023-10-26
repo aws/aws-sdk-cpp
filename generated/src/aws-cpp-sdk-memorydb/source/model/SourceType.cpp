@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceType::NOT_SET:
+            return {};
           case SourceType::node:
             return "node";
           case SourceType::parameter_group:

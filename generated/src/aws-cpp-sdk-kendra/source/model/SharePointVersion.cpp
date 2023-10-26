@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SharePointVersion::NOT_SET:
+            return {};
           case SharePointVersion::SHAREPOINT_2013:
             return "SHAREPOINT_2013";
           case SharePointVersion::SHAREPOINT_2016:

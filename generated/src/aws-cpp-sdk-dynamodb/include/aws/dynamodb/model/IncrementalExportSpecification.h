@@ -144,44 +144,44 @@ namespace Model
 
 
     /**
-     * <p>Choice of whether to output the previous item image prior to the start time
-     * of the incremental export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and
-     * <code>NEW_IMAGES</code>.</p>
+     * <p>The view type that was chosen for the export. Valid values are
+     * <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value
+     * is <code>NEW_AND_OLD_IMAGES</code>.</p>
      */
     inline const ExportViewType& GetExportViewType() const{ return m_exportViewType; }
 
     /**
-     * <p>Choice of whether to output the previous item image prior to the start time
-     * of the incremental export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and
-     * <code>NEW_IMAGES</code>.</p>
+     * <p>The view type that was chosen for the export. Valid values are
+     * <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value
+     * is <code>NEW_AND_OLD_IMAGES</code>.</p>
      */
     inline bool ExportViewTypeHasBeenSet() const { return m_exportViewTypeHasBeenSet; }
 
     /**
-     * <p>Choice of whether to output the previous item image prior to the start time
-     * of the incremental export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and
-     * <code>NEW_IMAGES</code>.</p>
+     * <p>The view type that was chosen for the export. Valid values are
+     * <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value
+     * is <code>NEW_AND_OLD_IMAGES</code>.</p>
      */
     inline void SetExportViewType(const ExportViewType& value) { m_exportViewTypeHasBeenSet = true; m_exportViewType = value; }
 
     /**
-     * <p>Choice of whether to output the previous item image prior to the start time
-     * of the incremental export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and
-     * <code>NEW_IMAGES</code>.</p>
+     * <p>The view type that was chosen for the export. Valid values are
+     * <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value
+     * is <code>NEW_AND_OLD_IMAGES</code>.</p>
      */
     inline void SetExportViewType(ExportViewType&& value) { m_exportViewTypeHasBeenSet = true; m_exportViewType = std::move(value); }
 
     /**
-     * <p>Choice of whether to output the previous item image prior to the start time
-     * of the incremental export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and
-     * <code>NEW_IMAGES</code>.</p>
+     * <p>The view type that was chosen for the export. Valid values are
+     * <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value
+     * is <code>NEW_AND_OLD_IMAGES</code>.</p>
      */
     inline IncrementalExportSpecification& WithExportViewType(const ExportViewType& value) { SetExportViewType(value); return *this;}
 
     /**
-     * <p>Choice of whether to output the previous item image prior to the start time
-     * of the incremental export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and
-     * <code>NEW_IMAGES</code>.</p>
+     * <p>The view type that was chosen for the export. Valid values are
+     * <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value
+     * is <code>NEW_AND_OLD_IMAGES</code>.</p>
      */
     inline IncrementalExportSpecification& WithExportViewType(ExportViewType&& value) { SetExportViewType(std::move(value)); return *this;}
 

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkspaceDirectoryState::NOT_SET:
+            return {};
           case WorkspaceDirectoryState::REGISTERING:
             return "REGISTERING";
           case WorkspaceDirectoryState::REGISTERED:

@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnvironmentStatus::NOT_SET:
+            return {};
           case EnvironmentStatus::ACTIVE:
             return "ACTIVE";
           case EnvironmentStatus::CREATING:

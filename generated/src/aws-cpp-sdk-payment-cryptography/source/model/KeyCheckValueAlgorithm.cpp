@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyCheckValueAlgorithm::NOT_SET:
+            return {};
           case KeyCheckValueAlgorithm::CMAC:
             return "CMAC";
           case KeyCheckValueAlgorithm::ANSI_X9_24:

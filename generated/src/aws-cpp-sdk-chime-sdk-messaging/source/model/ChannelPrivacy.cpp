@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelPrivacy::NOT_SET:
+            return {};
           case ChannelPrivacy::PUBLIC_:
             return "PUBLIC";
           case ChannelPrivacy::PRIVATE_:

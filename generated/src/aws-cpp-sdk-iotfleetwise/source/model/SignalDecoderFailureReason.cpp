@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SignalDecoderFailureReason::NOT_SET:
+            return {};
           case SignalDecoderFailureReason::DUPLICATE_SIGNAL:
             return "DUPLICATE_SIGNAL";
           case SignalDecoderFailureReason::CONFLICTING_SIGNAL:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TravelMode::NOT_SET:
+            return {};
           case TravelMode::Car:
             return "Car";
           case TravelMode::Truck:

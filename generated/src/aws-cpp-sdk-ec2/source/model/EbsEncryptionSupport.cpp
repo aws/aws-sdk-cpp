@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EbsEncryptionSupport::NOT_SET:
+            return {};
           case EbsEncryptionSupport::unsupported:
             return "unsupported";
           case EbsEncryptionSupport::supported:

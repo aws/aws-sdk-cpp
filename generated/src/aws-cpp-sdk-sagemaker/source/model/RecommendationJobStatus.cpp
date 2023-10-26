@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationJobStatus::NOT_SET:
+            return {};
           case RecommendationJobStatus::PENDING:
             return "PENDING";
           case RecommendationJobStatus::IN_PROGRESS:

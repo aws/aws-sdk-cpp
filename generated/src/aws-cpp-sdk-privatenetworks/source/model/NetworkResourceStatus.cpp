@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkResourceStatus::NOT_SET:
+            return {};
           case NetworkResourceStatus::PENDING:
             return "PENDING";
           case NetworkResourceStatus::SHIPPED:

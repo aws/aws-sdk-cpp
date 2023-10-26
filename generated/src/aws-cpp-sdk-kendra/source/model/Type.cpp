@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Type::NOT_SET:
+            return {};
           case Type::SAAS:
             return "SAAS";
           case Type::ON_PREMISE:

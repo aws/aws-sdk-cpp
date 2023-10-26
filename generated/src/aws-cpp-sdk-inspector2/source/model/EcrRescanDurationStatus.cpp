@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EcrRescanDurationStatus::NOT_SET:
+            return {};
           case EcrRescanDurationStatus::SUCCESS:
             return "SUCCESS";
           case EcrRescanDurationStatus::PENDING:

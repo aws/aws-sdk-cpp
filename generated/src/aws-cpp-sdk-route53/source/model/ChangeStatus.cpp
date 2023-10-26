@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChangeStatus::NOT_SET:
+            return {};
           case ChangeStatus::PENDING:
             return "PENDING";
           case ChangeStatus::INSYNC:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatteryLevel::NOT_SET:
+            return {};
           case BatteryLevel::normal:
             return "normal";
           case BatteryLevel::low:

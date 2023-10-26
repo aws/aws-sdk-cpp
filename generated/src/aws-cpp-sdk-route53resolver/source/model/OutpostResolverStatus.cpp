@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OutpostResolverStatus::NOT_SET:
+            return {};
           case OutpostResolverStatus::CREATING:
             return "CREATING";
           case OutpostResolverStatus::OPERATIONAL:

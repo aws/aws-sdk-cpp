@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AttachmentState::NOT_SET:
+            return {};
           case AttachmentState::REJECTED:
             return "REJECTED";
           case AttachmentState::PENDING_ATTACHMENT_ACCEPTANCE:

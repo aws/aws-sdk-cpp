@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImagePullCredentialsType::NOT_SET:
+            return {};
           case ImagePullCredentialsType::CODEBUILD:
             return "CODEBUILD";
           case ImagePullCredentialsType::SERVICE_ROLE:

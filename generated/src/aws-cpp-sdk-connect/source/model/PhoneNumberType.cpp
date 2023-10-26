@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PhoneNumberType::NOT_SET:
+            return {};
           case PhoneNumberType::TOLL_FREE:
             return "TOLL_FREE";
           case PhoneNumberType::DID:

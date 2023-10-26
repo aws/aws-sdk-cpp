@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExperimentStopDesiredState::NOT_SET:
+            return {};
           case ExperimentStopDesiredState::COMPLETED:
             return "COMPLETED";
           case ExperimentStopDesiredState::CANCELLED:

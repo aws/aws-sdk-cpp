@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ColumnType::NOT_SET:
+            return {};
           case ColumnType::NODE:
             return "NODE";
           case ColumnType::EDGE:

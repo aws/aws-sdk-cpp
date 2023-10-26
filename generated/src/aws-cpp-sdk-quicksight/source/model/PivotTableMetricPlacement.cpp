@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PivotTableMetricPlacement::NOT_SET:
+            return {};
           case PivotTableMetricPlacement::ROW:
             return "ROW";
           case PivotTableMetricPlacement::COLUMN:

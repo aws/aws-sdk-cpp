@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobComparator::NOT_SET:
+            return {};
           case JobComparator::EQ:
             return "EQ";
           case JobComparator::GT:

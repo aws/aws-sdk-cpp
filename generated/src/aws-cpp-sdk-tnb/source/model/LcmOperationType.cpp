@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LcmOperationType::NOT_SET:
+            return {};
           case LcmOperationType::INSTANTIATE:
             return "INSTANTIATE";
           case LcmOperationType::UPDATE:

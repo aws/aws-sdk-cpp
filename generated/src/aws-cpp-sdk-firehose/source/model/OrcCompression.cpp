@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrcCompression::NOT_SET:
+            return {};
           case OrcCompression::NONE:
             return "NONE";
           case OrcCompression::ZLIB:

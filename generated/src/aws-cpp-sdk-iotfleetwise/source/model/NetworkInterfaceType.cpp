@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkInterfaceType::NOT_SET:
+            return {};
           case NetworkInterfaceType::CAN_INTERFACE:
             return "CAN_INTERFACE";
           case NetworkInterfaceType::OBD_INTERFACE:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WatermarkingStrength::NOT_SET:
+            return {};
           case WatermarkingStrength::LIGHTEST:
             return "LIGHTEST";
           case WatermarkingStrength::LIGHTER:

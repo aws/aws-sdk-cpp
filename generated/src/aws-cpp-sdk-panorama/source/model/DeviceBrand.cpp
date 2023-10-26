@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceBrand::NOT_SET:
+            return {};
           case DeviceBrand::AWS_PANORAMA:
             return "AWS_PANORAMA";
           case DeviceBrand::LENOVO:

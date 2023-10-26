@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HyperParameterTuningAllocationStrategy::NOT_SET:
+            return {};
           case HyperParameterTuningAllocationStrategy::Prioritized:
             return "Prioritized";
           default:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PositionalConstraint::NOT_SET:
+            return {};
           case PositionalConstraint::EXACTLY:
             return "EXACTLY";
           case PositionalConstraint::STARTS_WITH:

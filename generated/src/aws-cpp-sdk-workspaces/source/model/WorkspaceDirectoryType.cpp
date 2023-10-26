@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkspaceDirectoryType::NOT_SET:
+            return {};
           case WorkspaceDirectoryType::SIMPLE_AD:
             return "SIMPLE_AD";
           case WorkspaceDirectoryType::AD_CONNECTOR:

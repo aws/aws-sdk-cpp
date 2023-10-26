@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScheduleGroupState::NOT_SET:
+            return {};
           case ScheduleGroupState::ACTIVE:
             return "ACTIVE";
           case ScheduleGroupState::DELETING:

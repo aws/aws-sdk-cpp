@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExperimentReportName::NOT_SET:
+            return {};
           case ExperimentReportName::BayesianInference:
             return "BayesianInference";
           default:

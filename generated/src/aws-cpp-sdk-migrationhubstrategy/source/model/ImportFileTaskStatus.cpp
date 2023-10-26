@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImportFileTaskStatus::NOT_SET:
+            return {};
           case ImportFileTaskStatus::ImportInProgress:
             return "ImportInProgress";
           case ImportFileTaskStatus::ImportFailed:

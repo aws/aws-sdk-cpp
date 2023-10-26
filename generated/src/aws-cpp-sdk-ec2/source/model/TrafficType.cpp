@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrafficType::NOT_SET:
+            return {};
           case TrafficType::ACCEPT:
             return "ACCEPT";
           case TrafficType::REJECT:

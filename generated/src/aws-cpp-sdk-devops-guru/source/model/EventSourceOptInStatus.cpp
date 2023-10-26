@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventSourceOptInStatus::NOT_SET:
+            return {};
           case EventSourceOptInStatus::ENABLED:
             return "ENABLED";
           case EventSourceOptInStatus::DISABLED:

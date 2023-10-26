@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Domain::NOT_SET:
+            return {};
           case Domain::RETAIL:
             return "RETAIL";
           case Domain::CUSTOM:

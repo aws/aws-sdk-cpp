@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrustProviderType::NOT_SET:
+            return {};
           case TrustProviderType::user:
             return "user";
           case TrustProviderType::device:

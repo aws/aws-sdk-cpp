@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ControlType::NOT_SET:
+            return {};
           case ControlType::Standard:
             return "Standard";
           case ControlType::Custom:

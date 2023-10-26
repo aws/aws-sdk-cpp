@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PropertyRole::NOT_SET:
+            return {};
           case PropertyRole::PRIMARY:
             return "PRIMARY";
           case PropertyRole::ID:

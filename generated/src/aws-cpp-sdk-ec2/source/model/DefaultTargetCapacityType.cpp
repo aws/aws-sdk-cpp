@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DefaultTargetCapacityType::NOT_SET:
+            return {};
           case DefaultTargetCapacityType::spot:
             return "spot";
           case DefaultTargetCapacityType::on_demand:

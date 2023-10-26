@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DQTransformOutput::NOT_SET:
+            return {};
           case DQTransformOutput::PrimaryInput:
             return "PrimaryInput";
           case DQTransformOutput::EvaluationResults:

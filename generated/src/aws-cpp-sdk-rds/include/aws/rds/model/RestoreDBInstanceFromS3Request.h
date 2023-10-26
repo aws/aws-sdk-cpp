@@ -1087,29 +1087,29 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. If
-     * the DB instance is a Multi-AZ deployment, you can't set the
+     * <p>Specifies whether the DB instance is a Multi-AZ deployment. If the DB
+     * instance is a Multi-AZ deployment, you can't set the
      * <code>AvailabilityZone</code> parameter.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. If
-     * the DB instance is a Multi-AZ deployment, you can't set the
+     * <p>Specifies whether the DB instance is a Multi-AZ deployment. If the DB
+     * instance is a Multi-AZ deployment, you can't set the
      * <code>AvailabilityZone</code> parameter.</p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. If
-     * the DB instance is a Multi-AZ deployment, you can't set the
+     * <p>Specifies whether the DB instance is a Multi-AZ deployment. If the DB
+     * instance is a Multi-AZ deployment, you can't set the
      * <code>AvailabilityZone</code> parameter.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. If
-     * the DB instance is a Multi-AZ deployment, you can't set the
+     * <p>Specifies whether the DB instance is a Multi-AZ deployment. If the DB
+     * instance is a Multi-AZ deployment, you can't set the
      * <code>AvailabilityZone</code> parameter.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
@@ -1181,30 +1181,30 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether minor engine upgrades are applied
-     * automatically to the DB instance during the maintenance window. By default,
-     * minor engine upgrades are not applied automatically.</p>
+     * <p>Specifies whether to automatically apply minor engine upgrades to the DB
+     * instance during the maintenance window. By default, minor engine upgrades are
+     * not applied automatically.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>A value that indicates whether minor engine upgrades are applied
-     * automatically to the DB instance during the maintenance window. By default,
-     * minor engine upgrades are not applied automatically.</p>
+     * <p>Specifies whether to automatically apply minor engine upgrades to the DB
+     * instance during the maintenance window. By default, minor engine upgrades are
+     * not applied automatically.</p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether minor engine upgrades are applied
-     * automatically to the DB instance during the maintenance window. By default,
-     * minor engine upgrades are not applied automatically.</p>
+     * <p>Specifies whether to automatically apply minor engine upgrades to the DB
+     * instance during the maintenance window. By default, minor engine upgrades are
+     * not applied automatically.</p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>A value that indicates whether minor engine upgrades are applied
-     * automatically to the DB instance during the maintenance window. By default,
-     * minor engine upgrades are not applied automatically.</p>
+     * <p>Specifies whether to automatically apply minor engine upgrades to the DB
+     * instance during the maintenance window. By default, minor engine upgrades are
+     * not applied automatically.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -1353,57 +1353,57 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB instance is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB instance's
-     * virtual private cloud (VPC). It resolves to the public IP address from outside
-     * of the DB instance's VPC. Access to the DB instance is ultimately controlled by
-     * the security group it uses. That public access is not permitted if the security
-     * group assigned to the DB instance doesn't permit it.</p> <p>When the DB instance
-     * isn't publicly accessible, it is an internal DB instance with a DNS name that
-     * resolves to a private IP address.</p> <p>For more information, see
+     * <p>Specifies whether the DB instance is publicly accessible.</p> <p>When the DB
+     * instance is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB instance's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB instance's
+     * VPC. Access to the DB instance is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB instance doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB instance is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB instance's
-     * virtual private cloud (VPC). It resolves to the public IP address from outside
-     * of the DB instance's VPC. Access to the DB instance is ultimately controlled by
-     * the security group it uses. That public access is not permitted if the security
-     * group assigned to the DB instance doesn't permit it.</p> <p>When the DB instance
-     * isn't publicly accessible, it is an internal DB instance with a DNS name that
-     * resolves to a private IP address.</p> <p>For more information, see
+     * <p>Specifies whether the DB instance is publicly accessible.</p> <p>When the DB
+     * instance is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB instance's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB instance's
+     * VPC. Access to the DB instance is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB instance doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB instance is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB instance's
-     * virtual private cloud (VPC). It resolves to the public IP address from outside
-     * of the DB instance's VPC. Access to the DB instance is ultimately controlled by
-     * the security group it uses. That public access is not permitted if the security
-     * group assigned to the DB instance doesn't permit it.</p> <p>When the DB instance
-     * isn't publicly accessible, it is an internal DB instance with a DNS name that
-     * resolves to a private IP address.</p> <p>For more information, see
+     * <p>Specifies whether the DB instance is publicly accessible.</p> <p>When the DB
+     * instance is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB instance's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB instance's
+     * VPC. Access to the DB instance is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB instance doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB instance is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB instance's
-     * virtual private cloud (VPC). It resolves to the public IP address from outside
-     * of the DB instance's VPC. Access to the DB instance is ultimately controlled by
-     * the security group it uses. That public access is not permitted if the security
-     * group assigned to the DB instance doesn't permit it.</p> <p>When the DB instance
-     * isn't publicly accessible, it is an internal DB instance with a DNS name that
-     * resolves to a private IP address.</p> <p>For more information, see
+     * <p>Specifies whether the DB instance is publicly accessible.</p> <p>When the DB
+     * instance is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB instance's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB instance's
+     * VPC. Access to the DB instance is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB instance doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
@@ -1476,7 +1476,7 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
@@ -1485,7 +1485,7 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
@@ -1494,7 +1494,7 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
@@ -1503,7 +1503,7 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
@@ -1512,7 +1512,7 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
@@ -1521,7 +1521,7 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
@@ -1530,7 +1530,7 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
@@ -1539,7 +1539,7 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
@@ -1548,22 +1548,22 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the new DB instance is encrypted or not.</p>
+     * <p>Specifies whether the new DB instance is encrypted or not.</p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
 
     /**
-     * <p>A value that indicates whether the new DB instance is encrypted or not.</p>
+     * <p>Specifies whether the new DB instance is encrypted or not.</p>
      */
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the new DB instance is encrypted or not.</p>
+     * <p>Specifies whether the new DB instance is encrypted or not.</p>
      */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
-     * <p>A value that indicates whether the new DB instance is encrypted or not.</p>
+     * <p>Specifies whether the new DB instance is encrypted or not.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
 
@@ -1674,26 +1674,26 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to copy all tags from the DB instance to
-     * snapshots of the DB instance. By default, tags are not copied.</p>
+     * <p>Specifies whether to copy all tags from the DB instance to snapshots of the
+     * DB instance. By default, tags are not copied.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the DB instance to
-     * snapshots of the DB instance. By default, tags are not copied.</p>
+     * <p>Specifies whether to copy all tags from the DB instance to snapshots of the
+     * DB instance. By default, tags are not copied.</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the DB instance to
-     * snapshots of the DB instance. By default, tags are not copied.</p>
+     * <p>Specifies whether to copy all tags from the DB instance to snapshots of the
+     * DB instance. By default, tags are not copied.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the DB instance to
-     * snapshots of the DB instance. By default, tags are not copied.</p>
+     * <p>Specifies whether to copy all tags from the DB instance to snapshots of the
+     * DB instance. By default, tags are not copied.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
@@ -1833,10 +1833,9 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information about IAM database
-     * authentication, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1844,10 +1843,9 @@ namespace Model
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information about IAM database
-     * authentication, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1855,10 +1853,9 @@ namespace Model
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information about IAM database
-     * authentication, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1866,10 +1863,9 @@ namespace Model
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information about IAM database
-     * authentication, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -2123,32 +2119,32 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to enable Performance Insights for the DB
-     * instance.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable Performance Insights for the DB instance.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
     /**
-     * <p>A value that indicates whether to enable Performance Insights for the DB
-     * instance.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable Performance Insights for the DB instance.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable Performance Insights for the DB
-     * instance.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable Performance Insights for the DB instance.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
-     * <p>A value that indicates whether to enable Performance Insights for the DB
-     * instance.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable Performance Insights for the DB instance.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
@@ -2434,61 +2430,61 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p>
      */
     inline bool GetUseDefaultProcessorFeatures() const{ return m_useDefaultProcessorFeatures; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p>
      */
     inline bool UseDefaultProcessorFeaturesHasBeenSet() const { return m_useDefaultProcessorFeaturesHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p>
      */
     inline void SetUseDefaultProcessorFeatures(bool value) { m_useDefaultProcessorFeaturesHasBeenSet = true; m_useDefaultProcessorFeatures = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithUseDefaultProcessorFeatures(bool value) { SetUseDefaultProcessorFeatures(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. For more information, see <a
+     * <p>Specifies whether to enable deletion protection for the DB instance. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. For more information, see <a
+     * <p>Specifies whether to enable deletion protection for the DB instance. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. For more information, see <a
+     * <p>Specifies whether to enable deletion protection for the DB instance. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. For more information, see <a
+     * <p>Specifies whether to enable deletion protection for the DB instance. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>.</p>
      */
@@ -2537,7 +2533,7 @@ namespace Model
 
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2550,7 +2546,7 @@ namespace Model
     inline const Aws::String& GetNetworkType() const{ return m_networkType; }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2563,7 +2559,7 @@ namespace Model
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2576,7 +2572,7 @@ namespace Model
     inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2589,7 +2585,7 @@ namespace Model
     inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2602,7 +2598,7 @@ namespace Model
     inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2615,7 +2611,7 @@ namespace Model
     inline RestoreDBInstanceFromS3Request& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2628,7 +2624,7 @@ namespace Model
     inline RestoreDBInstanceFromS3Request& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2667,8 +2663,8 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to manage the master user password with Amazon
-     * Web Services Secrets Manager.</p> <p>For more information, see <a
+     * <p>Specifies whether to manage the master user password with Amazon Web Services
+     * Secrets Manager.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
      * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Can't manage the master
@@ -2678,8 +2674,8 @@ namespace Model
     inline bool GetManageMasterUserPassword() const{ return m_manageMasterUserPassword; }
 
     /**
-     * <p>A value that indicates whether to manage the master user password with Amazon
-     * Web Services Secrets Manager.</p> <p>For more information, see <a
+     * <p>Specifies whether to manage the master user password with Amazon Web Services
+     * Secrets Manager.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
      * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Can't manage the master
@@ -2689,8 +2685,8 @@ namespace Model
     inline bool ManageMasterUserPasswordHasBeenSet() const { return m_manageMasterUserPasswordHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to manage the master user password with Amazon
-     * Web Services Secrets Manager.</p> <p>For more information, see <a
+     * <p>Specifies whether to manage the master user password with Amazon Web Services
+     * Secrets Manager.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
      * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Can't manage the master
@@ -2700,8 +2696,8 @@ namespace Model
     inline void SetManageMasterUserPassword(bool value) { m_manageMasterUserPasswordHasBeenSet = true; m_manageMasterUserPassword = value; }
 
     /**
-     * <p>A value that indicates whether to manage the master user password with Amazon
-     * Web Services Secrets Manager.</p> <p>For more information, see <a
+     * <p>Specifies whether to manage the master user password with Amazon Web Services
+     * Secrets Manager.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
      * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Can't manage the master
@@ -2855,6 +2851,31 @@ namespace Model
      */
     inline RestoreDBInstanceFromS3Request& WithMasterUserSecretKmsKeyId(const char* value) { SetMasterUserSecretKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
+     * instance.</p>
+     */
+    inline bool GetDedicatedLogVolume() const{ return m_dedicatedLogVolume; }
+
+    /**
+     * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
+     * instance.</p>
+     */
+    inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
+     * instance.</p>
+     */
+    inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
+
+    /**
+     * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
+     * instance.</p>
+     */
+    inline RestoreDBInstanceFromS3Request& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -3000,6 +3021,9 @@ namespace Model
 
     Aws::String m_masterUserSecretKmsKeyId;
     bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
+
+    bool m_dedicatedLogVolume;
+    bool m_dedicatedLogVolumeHasBeenSet = false;
   };
 
 } // namespace Model

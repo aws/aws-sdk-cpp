@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265RateControlMode::NOT_SET:
+            return {};
           case H265RateControlMode::CBR:
             return "CBR";
           case H265RateControlMode::MULTIPLEX:

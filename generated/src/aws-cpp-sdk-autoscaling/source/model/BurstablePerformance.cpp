@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BurstablePerformance::NOT_SET:
+            return {};
           case BurstablePerformance::included:
             return "included";
           case BurstablePerformance::excluded:

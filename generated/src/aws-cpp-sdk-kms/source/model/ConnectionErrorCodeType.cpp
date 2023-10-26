@@ -129,6 +129,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectionErrorCodeType::NOT_SET:
+            return {};
           case ConnectionErrorCodeType::INVALID_CREDENTIALS:
             return "INVALID_CREDENTIALS";
           case ConnectionErrorCodeType::CLUSTER_NOT_FOUND:

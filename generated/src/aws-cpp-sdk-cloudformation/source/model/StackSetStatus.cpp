@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StackSetStatus::NOT_SET:
+            return {};
           case StackSetStatus::ACTIVE:
             return "ACTIVE";
           case StackSetStatus::DELETED:

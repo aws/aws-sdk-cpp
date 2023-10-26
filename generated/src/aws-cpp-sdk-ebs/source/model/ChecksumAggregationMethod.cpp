@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChecksumAggregationMethod::NOT_SET:
+            return {};
           case ChecksumAggregationMethod::LINEAR:
             return "LINEAR";
           default:

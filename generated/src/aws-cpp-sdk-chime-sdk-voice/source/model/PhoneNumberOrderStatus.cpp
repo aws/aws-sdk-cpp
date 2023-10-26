@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PhoneNumberOrderStatus::NOT_SET:
+            return {};
           case PhoneNumberOrderStatus::Processing:
             return "Processing";
           case PhoneNumberOrderStatus::Successful:

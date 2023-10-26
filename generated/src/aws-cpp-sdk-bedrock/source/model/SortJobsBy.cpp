@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SortJobsBy::NOT_SET:
+            return {};
           case SortJobsBy::CreationTime:
             return "CreationTime";
           default:

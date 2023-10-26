@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RuleType::NOT_SET:
+            return {};
           case RuleType::BINARY_LENGTH:
             return "BINARY_LENGTH";
           case RuleType::NUMBER_COMPARISON:

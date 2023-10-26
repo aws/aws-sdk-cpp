@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SortByProvisionedModels::NOT_SET:
+            return {};
           case SortByProvisionedModels::CreationTime:
             return "CreationTime";
           default:

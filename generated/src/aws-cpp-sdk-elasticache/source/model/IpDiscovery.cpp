@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpDiscovery::NOT_SET:
+            return {};
           case IpDiscovery::ipv4:
             return "ipv4";
           case IpDiscovery::ipv6:

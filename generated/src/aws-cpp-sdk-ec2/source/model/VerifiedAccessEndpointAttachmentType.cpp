@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VerifiedAccessEndpointAttachmentType::NOT_SET:
+            return {};
           case VerifiedAccessEndpointAttachmentType::vpc:
             return "vpc";
           default:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchState::NOT_SET:
+            return {};
           case BatchState::submitted:
             return "submitted";
           case BatchState::active:

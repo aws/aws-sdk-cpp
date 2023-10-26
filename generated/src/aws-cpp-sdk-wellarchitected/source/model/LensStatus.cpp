@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LensStatus::NOT_SET:
+            return {};
           case LensStatus::CURRENT:
             return "CURRENT";
           case LensStatus::NOT_CURRENT:

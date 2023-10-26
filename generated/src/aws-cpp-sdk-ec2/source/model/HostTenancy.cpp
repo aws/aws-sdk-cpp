@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HostTenancy::NOT_SET:
+            return {};
           case HostTenancy::dedicated:
             return "dedicated";
           case HostTenancy::host:

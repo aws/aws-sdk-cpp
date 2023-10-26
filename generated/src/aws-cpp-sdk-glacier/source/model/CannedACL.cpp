@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CannedACL::NOT_SET:
+            return {};
           case CannedACL::private_:
             return "private";
           case CannedACL::public_read:

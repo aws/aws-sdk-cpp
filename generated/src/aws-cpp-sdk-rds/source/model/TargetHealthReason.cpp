@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetHealthReason::NOT_SET:
+            return {};
           case TargetHealthReason::UNREACHABLE:
             return "UNREACHABLE";
           case TargetHealthReason::CONNECTION_FAILED:

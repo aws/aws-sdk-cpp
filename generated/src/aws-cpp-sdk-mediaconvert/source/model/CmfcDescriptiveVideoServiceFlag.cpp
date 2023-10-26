@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmfcDescriptiveVideoServiceFlag::NOT_SET:
+            return {};
           case CmfcDescriptiveVideoServiceFlag::DONT_FLAG:
             return "DONT_FLAG";
           case CmfcDescriptiveVideoServiceFlag::FLAG:

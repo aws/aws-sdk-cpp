@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdditionalArtifact::NOT_SET:
+            return {};
           case AdditionalArtifact::REDSHIFT:
             return "REDSHIFT";
           case AdditionalArtifact::QUICKSIGHT:

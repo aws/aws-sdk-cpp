@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JSModule::NOT_SET:
+            return {};
           case JSModule::es2020:
             return "es2020";
           case JSModule::esnext:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HubContentSortBy::NOT_SET:
+            return {};
           case HubContentSortBy::HubContentName:
             return "HubContentName";
           case HubContentSortBy::CreationTime:

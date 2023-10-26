@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceCertificateUpdateAction::NOT_SET:
+            return {};
           case DeviceCertificateUpdateAction::DEACTIVATE:
             return "DEACTIVATE";
           default:

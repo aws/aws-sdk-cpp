@@ -19,12 +19,14 @@
 
 /* Service model headers required in ApplicationDiscoveryServiceClient header */
 #include <aws/discovery/model/AssociateConfigurationItemsToApplicationResult.h>
+#include <aws/discovery/model/BatchDeleteAgentsResult.h>
 #include <aws/discovery/model/BatchDeleteImportDataResult.h>
 #include <aws/discovery/model/CreateApplicationResult.h>
 #include <aws/discovery/model/CreateTagsResult.h>
 #include <aws/discovery/model/DeleteApplicationsResult.h>
 #include <aws/discovery/model/DeleteTagsResult.h>
 #include <aws/discovery/model/DescribeAgentsResult.h>
+#include <aws/discovery/model/DescribeBatchDeleteConfigurationTaskResult.h>
 #include <aws/discovery/model/DescribeConfigurationsResult.h>
 #include <aws/discovery/model/DescribeContinuousExportsResult.h>
 #include <aws/discovery/model/DescribeExportTasksResult.h>
@@ -34,6 +36,7 @@
 #include <aws/discovery/model/GetDiscoverySummaryResult.h>
 #include <aws/discovery/model/ListConfigurationsResult.h>
 #include <aws/discovery/model/ListServerNeighborsResult.h>
+#include <aws/discovery/model/StartBatchDeleteConfigurationTaskResult.h>
 #include <aws/discovery/model/StartContinuousExportResult.h>
 #include <aws/discovery/model/StartDataCollectionByAgentIdsResult.h>
 #include <aws/discovery/model/StartExportTaskResult.h>
@@ -82,12 +85,14 @@ namespace Aws
     {
       /* Service model forward declarations required in ApplicationDiscoveryServiceClient header */
       class AssociateConfigurationItemsToApplicationRequest;
+      class BatchDeleteAgentsRequest;
       class BatchDeleteImportDataRequest;
       class CreateApplicationRequest;
       class CreateTagsRequest;
       class DeleteApplicationsRequest;
       class DeleteTagsRequest;
       class DescribeAgentsRequest;
+      class DescribeBatchDeleteConfigurationTaskRequest;
       class DescribeConfigurationsRequest;
       class DescribeContinuousExportsRequest;
       class DescribeExportTasksRequest;
@@ -97,6 +102,7 @@ namespace Aws
       class GetDiscoverySummaryRequest;
       class ListConfigurationsRequest;
       class ListServerNeighborsRequest;
+      class StartBatchDeleteConfigurationTaskRequest;
       class StartContinuousExportRequest;
       class StartDataCollectionByAgentIdsRequest;
       class StartExportTaskRequest;
@@ -108,12 +114,14 @@ namespace Aws
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<AssociateConfigurationItemsToApplicationResult, ApplicationDiscoveryServiceError> AssociateConfigurationItemsToApplicationOutcome;
+      typedef Aws::Utils::Outcome<BatchDeleteAgentsResult, ApplicationDiscoveryServiceError> BatchDeleteAgentsOutcome;
       typedef Aws::Utils::Outcome<BatchDeleteImportDataResult, ApplicationDiscoveryServiceError> BatchDeleteImportDataOutcome;
       typedef Aws::Utils::Outcome<CreateApplicationResult, ApplicationDiscoveryServiceError> CreateApplicationOutcome;
       typedef Aws::Utils::Outcome<CreateTagsResult, ApplicationDiscoveryServiceError> CreateTagsOutcome;
       typedef Aws::Utils::Outcome<DeleteApplicationsResult, ApplicationDiscoveryServiceError> DeleteApplicationsOutcome;
       typedef Aws::Utils::Outcome<DeleteTagsResult, ApplicationDiscoveryServiceError> DeleteTagsOutcome;
       typedef Aws::Utils::Outcome<DescribeAgentsResult, ApplicationDiscoveryServiceError> DescribeAgentsOutcome;
+      typedef Aws::Utils::Outcome<DescribeBatchDeleteConfigurationTaskResult, ApplicationDiscoveryServiceError> DescribeBatchDeleteConfigurationTaskOutcome;
       typedef Aws::Utils::Outcome<DescribeConfigurationsResult, ApplicationDiscoveryServiceError> DescribeConfigurationsOutcome;
       typedef Aws::Utils::Outcome<DescribeContinuousExportsResult, ApplicationDiscoveryServiceError> DescribeContinuousExportsOutcome;
       typedef Aws::Utils::Outcome<DescribeExportTasksResult, ApplicationDiscoveryServiceError> DescribeExportTasksOutcome;
@@ -123,6 +131,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetDiscoverySummaryResult, ApplicationDiscoveryServiceError> GetDiscoverySummaryOutcome;
       typedef Aws::Utils::Outcome<ListConfigurationsResult, ApplicationDiscoveryServiceError> ListConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListServerNeighborsResult, ApplicationDiscoveryServiceError> ListServerNeighborsOutcome;
+      typedef Aws::Utils::Outcome<StartBatchDeleteConfigurationTaskResult, ApplicationDiscoveryServiceError> StartBatchDeleteConfigurationTaskOutcome;
       typedef Aws::Utils::Outcome<StartContinuousExportResult, ApplicationDiscoveryServiceError> StartContinuousExportOutcome;
       typedef Aws::Utils::Outcome<StartDataCollectionByAgentIdsResult, ApplicationDiscoveryServiceError> StartDataCollectionByAgentIdsOutcome;
       typedef Aws::Utils::Outcome<StartExportTaskResult, ApplicationDiscoveryServiceError> StartExportTaskOutcome;
@@ -134,12 +143,14 @@ namespace Aws
 
       /* Service model Outcome callable definitions */
       typedef std::future<AssociateConfigurationItemsToApplicationOutcome> AssociateConfigurationItemsToApplicationOutcomeCallable;
+      typedef std::future<BatchDeleteAgentsOutcome> BatchDeleteAgentsOutcomeCallable;
       typedef std::future<BatchDeleteImportDataOutcome> BatchDeleteImportDataOutcomeCallable;
       typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
       typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
       typedef std::future<DeleteApplicationsOutcome> DeleteApplicationsOutcomeCallable;
       typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
       typedef std::future<DescribeAgentsOutcome> DescribeAgentsOutcomeCallable;
+      typedef std::future<DescribeBatchDeleteConfigurationTaskOutcome> DescribeBatchDeleteConfigurationTaskOutcomeCallable;
       typedef std::future<DescribeConfigurationsOutcome> DescribeConfigurationsOutcomeCallable;
       typedef std::future<DescribeContinuousExportsOutcome> DescribeContinuousExportsOutcomeCallable;
       typedef std::future<DescribeExportTasksOutcome> DescribeExportTasksOutcomeCallable;
@@ -149,6 +160,7 @@ namespace Aws
       typedef std::future<GetDiscoverySummaryOutcome> GetDiscoverySummaryOutcomeCallable;
       typedef std::future<ListConfigurationsOutcome> ListConfigurationsOutcomeCallable;
       typedef std::future<ListServerNeighborsOutcome> ListServerNeighborsOutcomeCallable;
+      typedef std::future<StartBatchDeleteConfigurationTaskOutcome> StartBatchDeleteConfigurationTaskOutcomeCallable;
       typedef std::future<StartContinuousExportOutcome> StartContinuousExportOutcomeCallable;
       typedef std::future<StartDataCollectionByAgentIdsOutcome> StartDataCollectionByAgentIdsOutcomeCallable;
       typedef std::future<StartExportTaskOutcome> StartExportTaskOutcomeCallable;
@@ -163,12 +175,14 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::AssociateConfigurationItemsToApplicationRequest&, const Model::AssociateConfigurationItemsToApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateConfigurationItemsToApplicationResponseReceivedHandler;
+    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::BatchDeleteAgentsRequest&, const Model::BatchDeleteAgentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteAgentsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::BatchDeleteImportDataRequest&, const Model::BatchDeleteImportDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteImportDataResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::CreateTagsRequest&, const Model::CreateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTagsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DeleteApplicationsRequest&, const Model::DeleteApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeAgentsRequest&, const Model::DescribeAgentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAgentsResponseReceivedHandler;
+    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeBatchDeleteConfigurationTaskRequest&, const Model::DescribeBatchDeleteConfigurationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBatchDeleteConfigurationTaskResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeConfigurationsRequest&, const Model::DescribeConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeContinuousExportsRequest&, const Model::DescribeContinuousExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContinuousExportsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeExportTasksRequest&, const Model::DescribeExportTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportTasksResponseReceivedHandler;
@@ -178,6 +192,7 @@ namespace Aws
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::GetDiscoverySummaryRequest&, const Model::GetDiscoverySummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiscoverySummaryResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::ListConfigurationsRequest&, const Model::ListConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::ListServerNeighborsRequest&, const Model::ListServerNeighborsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServerNeighborsResponseReceivedHandler;
+    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StartBatchDeleteConfigurationTaskRequest&, const Model::StartBatchDeleteConfigurationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBatchDeleteConfigurationTaskResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StartContinuousExportRequest&, const Model::StartContinuousExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContinuousExportResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StartDataCollectionByAgentIdsRequest&, const Model::StartDataCollectionByAgentIdsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDataCollectionByAgentIdsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StartExportTaskRequest&, const Model::StartExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExportTaskResponseReceivedHandler;

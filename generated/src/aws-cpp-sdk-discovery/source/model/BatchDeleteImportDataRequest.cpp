@@ -13,7 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 BatchDeleteImportDataRequest::BatchDeleteImportDataRequest() : 
-    m_importTaskIdsHasBeenSet(false)
+    m_importTaskIdsHasBeenSet(false),
+    m_deleteHistory(false),
+    m_deleteHistoryHasBeenSet(false)
 {
 }
 
@@ -29,6 +31,12 @@ Aws::String BatchDeleteImportDataRequest::SerializePayload() const
      importTaskIdsJsonList[importTaskIdsIndex].AsString(m_importTaskIds[importTaskIdsIndex]);
    }
    payload.WithArray("importTaskIds", std::move(importTaskIdsJsonList));
+
+  }
+
+  if(m_deleteHistoryHasBeenSet)
+  {
+   payload.WithBool("deleteHistory", m_deleteHistory);
 
   }
 

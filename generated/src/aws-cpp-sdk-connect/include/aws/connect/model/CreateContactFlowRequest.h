@@ -204,8 +204,8 @@ namespace Model
      * <p>The JSON string that represents the content of the flow. For an example, see
      * <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
-     * contact flow in Amazon Connect Flow language</a>. </p> <p>Length Constraints:
-     * Minimum length of 1. Maximum length of 256000.</p>
+     * flow in Amazon Connect Flow language</a>. </p> <p>Length Constraints: Minimum
+     * length of 1. Maximum length of 256000.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
@@ -213,8 +213,8 @@ namespace Model
      * <p>The JSON string that represents the content of the flow. For an example, see
      * <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
-     * contact flow in Amazon Connect Flow language</a>. </p> <p>Length Constraints:
-     * Minimum length of 1. Maximum length of 256000.</p>
+     * flow in Amazon Connect Flow language</a>. </p> <p>Length Constraints: Minimum
+     * length of 1. Maximum length of 256000.</p>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
@@ -222,8 +222,8 @@ namespace Model
      * <p>The JSON string that represents the content of the flow. For an example, see
      * <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
-     * contact flow in Amazon Connect Flow language</a>. </p> <p>Length Constraints:
-     * Minimum length of 1. Maximum length of 256000.</p>
+     * flow in Amazon Connect Flow language</a>. </p> <p>Length Constraints: Minimum
+     * length of 1. Maximum length of 256000.</p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
@@ -231,8 +231,8 @@ namespace Model
      * <p>The JSON string that represents the content of the flow. For an example, see
      * <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
-     * contact flow in Amazon Connect Flow language</a>. </p> <p>Length Constraints:
-     * Minimum length of 1. Maximum length of 256000.</p>
+     * flow in Amazon Connect Flow language</a>. </p> <p>Length Constraints: Minimum
+     * length of 1. Maximum length of 256000.</p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
@@ -240,8 +240,8 @@ namespace Model
      * <p>The JSON string that represents the content of the flow. For an example, see
      * <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
-     * contact flow in Amazon Connect Flow language</a>. </p> <p>Length Constraints:
-     * Minimum length of 1. Maximum length of 256000.</p>
+     * flow in Amazon Connect Flow language</a>. </p> <p>Length Constraints: Minimum
+     * length of 1. Maximum length of 256000.</p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
@@ -249,8 +249,8 @@ namespace Model
      * <p>The JSON string that represents the content of the flow. For an example, see
      * <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
-     * contact flow in Amazon Connect Flow language</a>. </p> <p>Length Constraints:
-     * Minimum length of 1. Maximum length of 256000.</p>
+     * flow in Amazon Connect Flow language</a>. </p> <p>Length Constraints: Minimum
+     * length of 1. Maximum length of 256000.</p>
      */
     inline CreateContactFlowRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
@@ -258,8 +258,8 @@ namespace Model
      * <p>The JSON string that represents the content of the flow. For an example, see
      * <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
-     * contact flow in Amazon Connect Flow language</a>. </p> <p>Length Constraints:
-     * Minimum length of 1. Maximum length of 256000.</p>
+     * flow in Amazon Connect Flow language</a>. </p> <p>Length Constraints: Minimum
+     * length of 1. Maximum length of 256000.</p>
      */
     inline CreateContactFlowRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
@@ -267,8 +267,8 @@ namespace Model
      * <p>The JSON string that represents the content of the flow. For an example, see
      * <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
-     * contact flow in Amazon Connect Flow language</a>. </p> <p>Length Constraints:
-     * Minimum length of 1. Maximum length of 256000.</p>
+     * flow in Amazon Connect Flow language</a>. </p> <p>Length Constraints: Minimum
+     * length of 1. Maximum length of 256000.</p>
      */
     inline CreateContactFlowRequest& WithContent(const char* value) { SetContent(value); return *this;}
 

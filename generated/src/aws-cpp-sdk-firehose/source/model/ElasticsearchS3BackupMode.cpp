@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ElasticsearchS3BackupMode::NOT_SET:
+            return {};
           case ElasticsearchS3BackupMode::FailedDocumentsOnly:
             return "FailedDocumentsOnly";
           case ElasticsearchS3BackupMode::AllDocuments:

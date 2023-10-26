@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HighlightType::NOT_SET:
+            return {};
           case HighlightType::STANDARD:
             return "STANDARD";
           case HighlightType::THESAURUS_SYNONYM:

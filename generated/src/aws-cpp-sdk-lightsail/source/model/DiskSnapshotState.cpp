@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DiskSnapshotState::NOT_SET:
+            return {};
           case DiskSnapshotState::pending:
             return "pending";
           case DiskSnapshotState::completed:

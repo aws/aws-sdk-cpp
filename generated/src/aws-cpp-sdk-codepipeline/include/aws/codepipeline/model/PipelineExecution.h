@@ -8,7 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/PipelineExecutionStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codepipeline/model/ExecutionTrigger.h>
 #include <aws/codepipeline/model/ArtifactRevision.h>
+#include <aws/codepipeline/model/ResolvedPipelineVariable.h>
 #include <utility>
 
 namespace Aws
@@ -372,6 +374,66 @@ namespace Model
      */
     inline PipelineExecution& AddArtifactRevisions(ArtifactRevision&& value) { m_artifactRevisionsHasBeenSet = true; m_artifactRevisions.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const ExecutionTrigger& GetTrigger() const{ return m_trigger; }
+
+    
+    inline bool TriggerHasBeenSet() const { return m_triggerHasBeenSet; }
+
+    
+    inline void SetTrigger(const ExecutionTrigger& value) { m_triggerHasBeenSet = true; m_trigger = value; }
+
+    
+    inline void SetTrigger(ExecutionTrigger&& value) { m_triggerHasBeenSet = true; m_trigger = std::move(value); }
+
+    
+    inline PipelineExecution& WithTrigger(const ExecutionTrigger& value) { SetTrigger(value); return *this;}
+
+    
+    inline PipelineExecution& WithTrigger(ExecutionTrigger&& value) { SetTrigger(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of pipeline variables used for the pipeline execution.</p>
+     */
+    inline const Aws::Vector<ResolvedPipelineVariable>& GetVariables() const{ return m_variables; }
+
+    /**
+     * <p>A list of pipeline variables used for the pipeline execution.</p>
+     */
+    inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
+
+    /**
+     * <p>A list of pipeline variables used for the pipeline execution.</p>
+     */
+    inline void SetVariables(const Aws::Vector<ResolvedPipelineVariable>& value) { m_variablesHasBeenSet = true; m_variables = value; }
+
+    /**
+     * <p>A list of pipeline variables used for the pipeline execution.</p>
+     */
+    inline void SetVariables(Aws::Vector<ResolvedPipelineVariable>&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
+
+    /**
+     * <p>A list of pipeline variables used for the pipeline execution.</p>
+     */
+    inline PipelineExecution& WithVariables(const Aws::Vector<ResolvedPipelineVariable>& value) { SetVariables(value); return *this;}
+
+    /**
+     * <p>A list of pipeline variables used for the pipeline execution.</p>
+     */
+    inline PipelineExecution& WithVariables(Aws::Vector<ResolvedPipelineVariable>&& value) { SetVariables(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of pipeline variables used for the pipeline execution.</p>
+     */
+    inline PipelineExecution& AddVariables(const ResolvedPipelineVariable& value) { m_variablesHasBeenSet = true; m_variables.push_back(value); return *this; }
+
+    /**
+     * <p>A list of pipeline variables used for the pipeline execution.</p>
+     */
+    inline PipelineExecution& AddVariables(ResolvedPipelineVariable&& value) { m_variablesHasBeenSet = true; m_variables.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_pipelineName;
@@ -391,6 +453,12 @@ namespace Model
 
     Aws::Vector<ArtifactRevision> m_artifactRevisions;
     bool m_artifactRevisionsHasBeenSet = false;
+
+    ExecutionTrigger m_trigger;
+    bool m_triggerHasBeenSet = false;
+
+    Aws::Vector<ResolvedPipelineVariable> m_variables;
+    bool m_variablesHasBeenSet = false;
   };
 
 } // namespace Model

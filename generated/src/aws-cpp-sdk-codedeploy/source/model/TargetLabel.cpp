@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetLabel::NOT_SET:
+            return {};
           case TargetLabel::Blue:
             return "Blue";
           case TargetLabel::Green:

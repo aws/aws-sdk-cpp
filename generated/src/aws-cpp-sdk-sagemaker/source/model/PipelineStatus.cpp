@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PipelineStatus::NOT_SET:
+            return {};
           case PipelineStatus::Active:
             return "Active";
           default:

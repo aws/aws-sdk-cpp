@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AwsManagedHumanLoopRequestSource::NOT_SET:
+            return {};
           case AwsManagedHumanLoopRequestSource::AWS_Rekognition_DetectModerationLabels_Image_V3:
             return "AWS/Rekognition/DetectModerationLabels/Image/V3";
           case AwsManagedHumanLoopRequestSource::AWS_Textract_AnalyzeDocument_Forms_V1:

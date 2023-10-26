@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrustType::NOT_SET:
+            return {};
           case TrustType::Forest:
             return "Forest";
           case TrustType::External:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LineChartLineStyle::NOT_SET:
+            return {};
           case LineChartLineStyle::SOLID:
             return "SOLID";
           case LineChartLineStyle::DOTTED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutomatedDiscoveryStatus::NOT_SET:
+            return {};
           case AutomatedDiscoveryStatus::ENABLED:
             return "ENABLED";
           case AutomatedDiscoveryStatus::DISABLED:

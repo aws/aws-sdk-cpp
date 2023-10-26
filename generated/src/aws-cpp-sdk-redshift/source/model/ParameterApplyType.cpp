@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParameterApplyType::NOT_SET:
+            return {};
           case ParameterApplyType::static_:
             return "static";
           case ParameterApplyType::dynamic:

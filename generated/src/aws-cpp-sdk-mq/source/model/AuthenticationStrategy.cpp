@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthenticationStrategy::NOT_SET:
+            return {};
           case AuthenticationStrategy::SIMPLE:
             return "SIMPLE";
           case AuthenticationStrategy::LDAP:

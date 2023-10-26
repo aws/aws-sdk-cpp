@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AlertType::NOT_SET:
+            return {};
           case AlertType::SNS:
             return "SNS";
           case AlertType::LAMBDA:

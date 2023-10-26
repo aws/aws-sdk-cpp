@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StageExecutionStatus::NOT_SET:
+            return {};
           case StageExecutionStatus::Cancelled:
             return "Cancelled";
           case StageExecutionStatus::InProgress:

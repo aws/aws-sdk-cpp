@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OptedOutFilterName::NOT_SET:
+            return {};
           case OptedOutFilterName::end_user_opted_out:
             return "end-user-opted-out";
           default:

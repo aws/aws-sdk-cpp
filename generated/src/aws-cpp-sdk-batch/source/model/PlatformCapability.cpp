@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PlatformCapability::NOT_SET:
+            return {};
           case PlatformCapability::EC2:
             return "EC2";
           case PlatformCapability::FARGATE:

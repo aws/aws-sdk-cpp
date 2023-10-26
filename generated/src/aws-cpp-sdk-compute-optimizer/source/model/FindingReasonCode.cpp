@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingReasonCode::NOT_SET:
+            return {};
           case FindingReasonCode::MemoryOverprovisioned:
             return "MemoryOverprovisioned";
           case FindingReasonCode::MemoryUnderprovisioned:

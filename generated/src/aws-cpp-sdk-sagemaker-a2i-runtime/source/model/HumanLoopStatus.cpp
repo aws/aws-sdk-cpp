@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HumanLoopStatus::NOT_SET:
+            return {};
           case HumanLoopStatus::InProgress:
             return "InProgress";
           case HumanLoopStatus::Failed:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PreserveDeletedFiles::NOT_SET:
+            return {};
           case PreserveDeletedFiles::PRESERVE:
             return "PRESERVE";
           case PreserveDeletedFiles::REMOVE:

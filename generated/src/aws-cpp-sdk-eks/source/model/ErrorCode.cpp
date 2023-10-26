@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorCode::NOT_SET:
+            return {};
           case ErrorCode::SubnetNotFound:
             return "SubnetNotFound";
           case ErrorCode::SecurityGroupNotFound:

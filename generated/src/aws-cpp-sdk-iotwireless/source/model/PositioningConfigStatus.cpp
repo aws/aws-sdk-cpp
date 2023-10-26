@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PositioningConfigStatus::NOT_SET:
+            return {};
           case PositioningConfigStatus::Enabled:
             return "Enabled";
           case PositioningConfigStatus::Disabled:

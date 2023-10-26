@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageFeature::NOT_SET:
+            return {};
           case UsageFeature::FLOW_LOGS:
             return "FLOW_LOGS";
           case UsageFeature::CLOUD_TRAIL:

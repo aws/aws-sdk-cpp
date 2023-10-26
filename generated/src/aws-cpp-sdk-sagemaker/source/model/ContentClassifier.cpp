@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContentClassifier::NOT_SET:
+            return {};
           case ContentClassifier::FreeOfPersonallyIdentifiableInformation:
             return "FreeOfPersonallyIdentifiableInformation";
           case ContentClassifier::FreeOfAdultContent:

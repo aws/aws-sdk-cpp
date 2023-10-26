@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplyMethod::NOT_SET:
+            return {};
           case ApplyMethod::immediate:
             return "immediate";
           case ApplyMethod::pending_reboot:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExperimentResultResponseType::NOT_SET:
+            return {};
           case ExperimentResultResponseType::Mean:
             return "Mean";
           case ExperimentResultResponseType::TreatmentEffect:

@@ -644,26 +644,26 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the engine version supports exporting the log
-     * types specified by ExportableLogTypes to CloudWatch Logs.</p>
+     * <p>Indicates whether the engine version supports exporting the log types
+     * specified by ExportableLogTypes to CloudWatch Logs.</p>
      */
     inline bool GetSupportsLogExportsToCloudwatchLogs() const{ return m_supportsLogExportsToCloudwatchLogs; }
 
     /**
-     * <p>A value that indicates whether the engine version supports exporting the log
-     * types specified by ExportableLogTypes to CloudWatch Logs.</p>
+     * <p>Indicates whether the engine version supports exporting the log types
+     * specified by ExportableLogTypes to CloudWatch Logs.</p>
      */
     inline bool SupportsLogExportsToCloudwatchLogsHasBeenSet() const { return m_supportsLogExportsToCloudwatchLogsHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the engine version supports exporting the log
-     * types specified by ExportableLogTypes to CloudWatch Logs.</p>
+     * <p>Indicates whether the engine version supports exporting the log types
+     * specified by ExportableLogTypes to CloudWatch Logs.</p>
      */
     inline void SetSupportsLogExportsToCloudwatchLogs(bool value) { m_supportsLogExportsToCloudwatchLogsHasBeenSet = true; m_supportsLogExportsToCloudwatchLogs = value; }
 
     /**
-     * <p>A value that indicates whether the engine version supports exporting the log
-     * types specified by ExportableLogTypes to CloudWatch Logs.</p>
+     * <p>Indicates whether the engine version supports exporting the log types
+     * specified by ExportableLogTypes to CloudWatch Logs.</p>
      */
     inline DBEngineVersion& WithSupportsLogExportsToCloudwatchLogs(bool value) { SetSupportsLogExportsToCloudwatchLogs(value); return *this;}
 
@@ -912,51 +912,51 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether you can use Aurora parallel query with a
-     * specific DB engine version.</p>
+     * <p>Indicates whether you can use Aurora parallel query with a specific DB engine
+     * version.</p>
      */
     inline bool GetSupportsParallelQuery() const{ return m_supportsParallelQuery; }
 
     /**
-     * <p>A value that indicates whether you can use Aurora parallel query with a
-     * specific DB engine version.</p>
+     * <p>Indicates whether you can use Aurora parallel query with a specific DB engine
+     * version.</p>
      */
     inline bool SupportsParallelQueryHasBeenSet() const { return m_supportsParallelQueryHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether you can use Aurora parallel query with a
-     * specific DB engine version.</p>
+     * <p>Indicates whether you can use Aurora parallel query with a specific DB engine
+     * version.</p>
      */
     inline void SetSupportsParallelQuery(bool value) { m_supportsParallelQueryHasBeenSet = true; m_supportsParallelQuery = value; }
 
     /**
-     * <p>A value that indicates whether you can use Aurora parallel query with a
-     * specific DB engine version.</p>
+     * <p>Indicates whether you can use Aurora parallel query with a specific DB engine
+     * version.</p>
      */
     inline DBEngineVersion& WithSupportsParallelQuery(bool value) { SetSupportsParallelQuery(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether you can use Aurora global databases with a
-     * specific DB engine version.</p>
+     * <p>Indicates whether you can use Aurora global databases with a specific DB
+     * engine version.</p>
      */
     inline bool GetSupportsGlobalDatabases() const{ return m_supportsGlobalDatabases; }
 
     /**
-     * <p>A value that indicates whether you can use Aurora global databases with a
-     * specific DB engine version.</p>
+     * <p>Indicates whether you can use Aurora global databases with a specific DB
+     * engine version.</p>
      */
     inline bool SupportsGlobalDatabasesHasBeenSet() const { return m_supportsGlobalDatabasesHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether you can use Aurora global databases with a
-     * specific DB engine version.</p>
+     * <p>Indicates whether you can use Aurora global databases with a specific DB
+     * engine version.</p>
      */
     inline void SetSupportsGlobalDatabases(bool value) { m_supportsGlobalDatabasesHasBeenSet = true; m_supportsGlobalDatabases = value; }
 
     /**
-     * <p>A value that indicates whether you can use Aurora global databases with a
-     * specific DB engine version.</p>
+     * <p>Indicates whether you can use Aurora global databases with a specific DB
+     * engine version.</p>
      */
     inline DBEngineVersion& WithSupportsGlobalDatabases(bool value) { SetSupportsGlobalDatabases(value); return *this;}
 
@@ -1247,26 +1247,26 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the engine version supports Babelfish for
-     * Aurora PostgreSQL.</p>
+     * <p>Indicates whether the engine version supports Babelfish for Aurora
+     * PostgreSQL.</p>
      */
     inline bool GetSupportsBabelfish() const{ return m_supportsBabelfish; }
 
     /**
-     * <p>A value that indicates whether the engine version supports Babelfish for
-     * Aurora PostgreSQL.</p>
+     * <p>Indicates whether the engine version supports Babelfish for Aurora
+     * PostgreSQL.</p>
      */
     inline bool SupportsBabelfishHasBeenSet() const { return m_supportsBabelfishHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the engine version supports Babelfish for
-     * Aurora PostgreSQL.</p>
+     * <p>Indicates whether the engine version supports Babelfish for Aurora
+     * PostgreSQL.</p>
      */
     inline void SetSupportsBabelfish(bool value) { m_supportsBabelfishHasBeenSet = true; m_supportsBabelfish = value; }
 
     /**
-     * <p>A value that indicates whether the engine version supports Babelfish for
-     * Aurora PostgreSQL.</p>
+     * <p>Indicates whether the engine version supports Babelfish for Aurora
+     * PostgreSQL.</p>
      */
     inline DBEngineVersion& WithSupportsBabelfish(bool value) { SetSupportsBabelfish(value); return *this;}
 
@@ -1361,26 +1361,26 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the engine version supports rotating the
-     * server certificate without rebooting the DB instance.</p>
+     * <p>Indicates whether the engine version supports rotating the server certificate
+     * without rebooting the DB instance.</p>
      */
     inline bool GetSupportsCertificateRotationWithoutRestart() const{ return m_supportsCertificateRotationWithoutRestart; }
 
     /**
-     * <p>A value that indicates whether the engine version supports rotating the
-     * server certificate without rebooting the DB instance.</p>
+     * <p>Indicates whether the engine version supports rotating the server certificate
+     * without rebooting the DB instance.</p>
      */
     inline bool SupportsCertificateRotationWithoutRestartHasBeenSet() const { return m_supportsCertificateRotationWithoutRestartHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the engine version supports rotating the
-     * server certificate without rebooting the DB instance.</p>
+     * <p>Indicates whether the engine version supports rotating the server certificate
+     * without rebooting the DB instance.</p>
      */
     inline void SetSupportsCertificateRotationWithoutRestart(bool value) { m_supportsCertificateRotationWithoutRestartHasBeenSet = true; m_supportsCertificateRotationWithoutRestart = value; }
 
     /**
-     * <p>A value that indicates whether the engine version supports rotating the
-     * server certificate without rebooting the DB instance.</p>
+     * <p>Indicates whether the engine version supports rotating the server certificate
+     * without rebooting the DB instance.</p>
      */
     inline DBEngineVersion& WithSupportsCertificateRotationWithoutRestart(bool value) { SetSupportsCertificateRotationWithoutRestart(value); return *this;}
 
@@ -1495,34 +1495,34 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB engine version supports forwarding
-     * write operations from reader DB instances to the writer DB instance in the DB
-     * cluster. By default, write operations aren't allowed on reader DB instances.</p>
-     * <p>Valid for: Aurora DB clusters only</p>
+     * <p>Indicates whether the DB engine version supports forwarding write operations
+     * from reader DB instances to the writer DB instance in the DB cluster. By
+     * default, write operations aren't allowed on reader DB instances.</p> <p>Valid
+     * for: Aurora DB clusters only</p>
      */
     inline bool GetSupportsLocalWriteForwarding() const{ return m_supportsLocalWriteForwarding; }
 
     /**
-     * <p>A value that indicates whether the DB engine version supports forwarding
-     * write operations from reader DB instances to the writer DB instance in the DB
-     * cluster. By default, write operations aren't allowed on reader DB instances.</p>
-     * <p>Valid for: Aurora DB clusters only</p>
+     * <p>Indicates whether the DB engine version supports forwarding write operations
+     * from reader DB instances to the writer DB instance in the DB cluster. By
+     * default, write operations aren't allowed on reader DB instances.</p> <p>Valid
+     * for: Aurora DB clusters only</p>
      */
     inline bool SupportsLocalWriteForwardingHasBeenSet() const { return m_supportsLocalWriteForwardingHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB engine version supports forwarding
-     * write operations from reader DB instances to the writer DB instance in the DB
-     * cluster. By default, write operations aren't allowed on reader DB instances.</p>
-     * <p>Valid for: Aurora DB clusters only</p>
+     * <p>Indicates whether the DB engine version supports forwarding write operations
+     * from reader DB instances to the writer DB instance in the DB cluster. By
+     * default, write operations aren't allowed on reader DB instances.</p> <p>Valid
+     * for: Aurora DB clusters only</p>
      */
     inline void SetSupportsLocalWriteForwarding(bool value) { m_supportsLocalWriteForwardingHasBeenSet = true; m_supportsLocalWriteForwarding = value; }
 
     /**
-     * <p>A value that indicates whether the DB engine version supports forwarding
-     * write operations from reader DB instances to the writer DB instance in the DB
-     * cluster. By default, write operations aren't allowed on reader DB instances.</p>
-     * <p>Valid for: Aurora DB clusters only</p>
+     * <p>Indicates whether the DB engine version supports forwarding write operations
+     * from reader DB instances to the writer DB instance in the DB cluster. By
+     * default, write operations aren't allowed on reader DB instances.</p> <p>Valid
+     * for: Aurora DB clusters only</p>
      */
     inline DBEngineVersion& WithSupportsLocalWriteForwarding(bool value) { SetSupportsLocalWriteForwarding(value); return *this;}
 

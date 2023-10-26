@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PolicySourceType::NOT_SET:
+            return {};
           case PolicySourceType::user:
             return "user";
           case PolicySourceType::group:

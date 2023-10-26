@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StorageType::NOT_SET:
+            return {};
           case StorageType::SSD:
             return "SSD";
           case StorageType::HDD:

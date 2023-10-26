@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BotStatus::NOT_SET:
+            return {};
           case BotStatus::Creating:
             return "Creating";
           case BotStatus::Available:

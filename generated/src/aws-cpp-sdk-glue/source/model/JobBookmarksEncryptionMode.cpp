@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobBookmarksEncryptionMode::NOT_SET:
+            return {};
           case JobBookmarksEncryptionMode::DISABLED:
             return "DISABLED";
           case JobBookmarksEncryptionMode::CSE_KMS:

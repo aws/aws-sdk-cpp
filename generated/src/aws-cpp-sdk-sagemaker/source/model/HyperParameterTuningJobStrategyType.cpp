@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HyperParameterTuningJobStrategyType::NOT_SET:
+            return {};
           case HyperParameterTuningJobStrategyType::Bayesian:
             return "Bayesian";
           case HyperParameterTuningJobStrategyType::Random:

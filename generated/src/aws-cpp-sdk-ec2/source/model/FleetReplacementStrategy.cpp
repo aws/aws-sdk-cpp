@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FleetReplacementStrategy::NOT_SET:
+            return {};
           case FleetReplacementStrategy::launch:
             return "launch";
           case FleetReplacementStrategy::launch_before_terminate:

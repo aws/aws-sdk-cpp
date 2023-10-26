@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CollectionStatus::NOT_SET:
+            return {};
           case CollectionStatus::CREATING:
             return "CREATING";
           case CollectionStatus::DELETING:

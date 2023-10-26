@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StorageType::NOT_SET:
+            return {};
           case StorageType::SITEWISE_DEFAULT_STORAGE:
             return "SITEWISE_DEFAULT_STORAGE";
           case StorageType::MULTI_LAYER_STORAGE:

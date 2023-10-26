@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentStatus::NOT_SET:
+            return {};
           case DeploymentStatus::ACTIVE:
             return "ACTIVE";
           case DeploymentStatus::COMPLETED:

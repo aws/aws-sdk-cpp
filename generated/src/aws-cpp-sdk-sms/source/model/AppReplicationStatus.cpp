@@ -119,6 +119,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppReplicationStatus::NOT_SET:
+            return {};
           case AppReplicationStatus::READY_FOR_CONFIGURATION:
             return "READY_FOR_CONFIGURATION";
           case AppReplicationStatus::CONFIGURATION_IN_PROGRESS:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssetBundleExportFormat::NOT_SET:
+            return {};
           case AssetBundleExportFormat::CLOUDFORMATION_JSON:
             return "CLOUDFORMATION_JSON";
           case AssetBundleExportFormat::QUICKSIGHT_JSON:

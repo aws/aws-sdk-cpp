@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FailureBehavior::NOT_SET:
+            return {};
           case FailureBehavior::Fail:
             return "Fail";
           case FailureBehavior::Continue:

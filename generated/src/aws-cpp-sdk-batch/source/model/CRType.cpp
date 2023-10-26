@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CRType::NOT_SET:
+            return {};
           case CRType::EC2:
             return "EC2";
           case CRType::SPOT:

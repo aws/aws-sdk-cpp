@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InsightCategory::NOT_SET:
+            return {};
           case InsightCategory::FAULT:
             return "FAULT";
           default:

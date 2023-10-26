@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImportSortAttribute::NOT_SET:
+            return {};
           case ImportSortAttribute::LastUpdatedDateTime:
             return "LastUpdatedDateTime";
           default:

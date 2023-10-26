@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3ContinuousClassificationType::NOT_SET:
+            return {};
           case S3ContinuousClassificationType::FULL:
             return "FULL";
           default:

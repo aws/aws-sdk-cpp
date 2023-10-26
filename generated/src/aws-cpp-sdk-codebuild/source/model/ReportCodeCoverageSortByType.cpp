@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportCodeCoverageSortByType::NOT_SET:
+            return {};
           case ReportCodeCoverageSortByType::LINE_COVERAGE_PERCENTAGE:
             return "LINE_COVERAGE_PERCENTAGE";
           case ReportCodeCoverageSortByType::FILE_PATH:

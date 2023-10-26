@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorldGenerationJobStatus::NOT_SET:
+            return {};
           case WorldGenerationJobStatus::Pending:
             return "Pending";
           case WorldGenerationJobStatus::Running:

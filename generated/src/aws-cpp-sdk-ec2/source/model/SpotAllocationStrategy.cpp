@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SpotAllocationStrategy::NOT_SET:
+            return {};
           case SpotAllocationStrategy::lowest_price:
             return "lowest-price";
           case SpotAllocationStrategy::diversified:

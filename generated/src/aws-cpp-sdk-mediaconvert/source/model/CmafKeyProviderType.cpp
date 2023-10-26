@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafKeyProviderType::NOT_SET:
+            return {};
           case CmafKeyProviderType::SPEKE:
             return "SPEKE";
           case CmafKeyProviderType::STATIC_KEY:

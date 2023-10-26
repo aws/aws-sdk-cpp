@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelVariantAction::NOT_SET:
+            return {};
           case ModelVariantAction::Retain:
             return "Retain";
           case ModelVariantAction::Remove:

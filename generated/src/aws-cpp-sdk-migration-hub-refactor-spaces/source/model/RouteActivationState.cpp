@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RouteActivationState::NOT_SET:
+            return {};
           case RouteActivationState::ACTIVE:
             return "ACTIVE";
           case RouteActivationState::INACTIVE:

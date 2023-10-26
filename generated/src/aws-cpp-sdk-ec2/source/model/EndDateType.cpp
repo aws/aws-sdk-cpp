@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EndDateType::NOT_SET:
+            return {};
           case EndDateType::unlimited:
             return "unlimited";
           case EndDateType::limited:

@@ -28,6 +28,8 @@
 #include <aws/quicksight/model/AmazonOpenSearchParameters.h>
 #include <aws/quicksight/model/ExasolParameters.h>
 #include <aws/quicksight/model/DatabricksParameters.h>
+#include <aws/quicksight/model/StarburstParameters.h>
+#include <aws/quicksight/model/TrinoParameters.h>
 #include <utility>
 
 namespace Aws
@@ -744,40 +746,96 @@ namespace Model
 
 
     /**
-     * <p>The required parameters that are needed to connect to a Databricks data
-     * source.</p>
+     * <p>The parameters that are required to connect to a Databricks data source.</p>
      */
     inline const DatabricksParameters& GetDatabricksParameters() const{ return m_databricksParameters; }
 
     /**
-     * <p>The required parameters that are needed to connect to a Databricks data
-     * source.</p>
+     * <p>The parameters that are required to connect to a Databricks data source.</p>
      */
     inline bool DatabricksParametersHasBeenSet() const { return m_databricksParametersHasBeenSet; }
 
     /**
-     * <p>The required parameters that are needed to connect to a Databricks data
-     * source.</p>
+     * <p>The parameters that are required to connect to a Databricks data source.</p>
      */
     inline void SetDatabricksParameters(const DatabricksParameters& value) { m_databricksParametersHasBeenSet = true; m_databricksParameters = value; }
 
     /**
-     * <p>The required parameters that are needed to connect to a Databricks data
-     * source.</p>
+     * <p>The parameters that are required to connect to a Databricks data source.</p>
      */
     inline void SetDatabricksParameters(DatabricksParameters&& value) { m_databricksParametersHasBeenSet = true; m_databricksParameters = std::move(value); }
 
     /**
-     * <p>The required parameters that are needed to connect to a Databricks data
-     * source.</p>
+     * <p>The parameters that are required to connect to a Databricks data source.</p>
      */
     inline DataSourceParameters& WithDatabricksParameters(const DatabricksParameters& value) { SetDatabricksParameters(value); return *this;}
 
     /**
-     * <p>The required parameters that are needed to connect to a Databricks data
-     * source.</p>
+     * <p>The parameters that are required to connect to a Databricks data source.</p>
      */
     inline DataSourceParameters& WithDatabricksParameters(DatabricksParameters&& value) { SetDatabricksParameters(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The parameters that are required to connect to a Starburst data source.</p>
+     */
+    inline const StarburstParameters& GetStarburstParameters() const{ return m_starburstParameters; }
+
+    /**
+     * <p>The parameters that are required to connect to a Starburst data source.</p>
+     */
+    inline bool StarburstParametersHasBeenSet() const { return m_starburstParametersHasBeenSet; }
+
+    /**
+     * <p>The parameters that are required to connect to a Starburst data source.</p>
+     */
+    inline void SetStarburstParameters(const StarburstParameters& value) { m_starburstParametersHasBeenSet = true; m_starburstParameters = value; }
+
+    /**
+     * <p>The parameters that are required to connect to a Starburst data source.</p>
+     */
+    inline void SetStarburstParameters(StarburstParameters&& value) { m_starburstParametersHasBeenSet = true; m_starburstParameters = std::move(value); }
+
+    /**
+     * <p>The parameters that are required to connect to a Starburst data source.</p>
+     */
+    inline DataSourceParameters& WithStarburstParameters(const StarburstParameters& value) { SetStarburstParameters(value); return *this;}
+
+    /**
+     * <p>The parameters that are required to connect to a Starburst data source.</p>
+     */
+    inline DataSourceParameters& WithStarburstParameters(StarburstParameters&& value) { SetStarburstParameters(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The parameters that are required to connect to a Trino data source.</p>
+     */
+    inline const TrinoParameters& GetTrinoParameters() const{ return m_trinoParameters; }
+
+    /**
+     * <p>The parameters that are required to connect to a Trino data source.</p>
+     */
+    inline bool TrinoParametersHasBeenSet() const { return m_trinoParametersHasBeenSet; }
+
+    /**
+     * <p>The parameters that are required to connect to a Trino data source.</p>
+     */
+    inline void SetTrinoParameters(const TrinoParameters& value) { m_trinoParametersHasBeenSet = true; m_trinoParameters = value; }
+
+    /**
+     * <p>The parameters that are required to connect to a Trino data source.</p>
+     */
+    inline void SetTrinoParameters(TrinoParameters&& value) { m_trinoParametersHasBeenSet = true; m_trinoParameters = std::move(value); }
+
+    /**
+     * <p>The parameters that are required to connect to a Trino data source.</p>
+     */
+    inline DataSourceParameters& WithTrinoParameters(const TrinoParameters& value) { SetTrinoParameters(value); return *this;}
+
+    /**
+     * <p>The parameters that are required to connect to a Trino data source.</p>
+     */
+    inline DataSourceParameters& WithTrinoParameters(TrinoParameters&& value) { SetTrinoParameters(std::move(value)); return *this;}
 
   private:
 
@@ -849,6 +907,12 @@ namespace Model
 
     DatabricksParameters m_databricksParameters;
     bool m_databricksParametersHasBeenSet = false;
+
+    StarburstParameters m_starburstParameters;
+    bool m_starburstParametersHasBeenSet = false;
+
+    TrinoParameters m_trinoParameters;
+    bool m_trinoParametersHasBeenSet = false;
   };
 
 } // namespace Model

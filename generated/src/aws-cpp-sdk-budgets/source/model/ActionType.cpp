@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionType::NOT_SET:
+            return {};
           case ActionType::APPLY_IAM_POLICY:
             return "APPLY_IAM_POLICY";
           case ActionType::APPLY_SCP_POLICY:

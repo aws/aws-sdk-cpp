@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricStreamOutputFormat::NOT_SET:
+            return {};
           case MetricStreamOutputFormat::json:
             return "json";
           case MetricStreamOutputFormat::opentelemetry0_7:

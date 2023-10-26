@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SigningAlg::NOT_SET:
+            return {};
           case SigningAlg::SHA256:
             return "SHA256";
           case SigningAlg::SHA384:

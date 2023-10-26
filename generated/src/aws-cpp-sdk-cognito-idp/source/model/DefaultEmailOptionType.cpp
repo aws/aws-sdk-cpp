@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DefaultEmailOptionType::NOT_SET:
+            return {};
           case DefaultEmailOptionType::CONFIRM_WITH_LINK:
             return "CONFIRM_WITH_LINK";
           case DefaultEmailOptionType::CONFIRM_WITH_CODE:

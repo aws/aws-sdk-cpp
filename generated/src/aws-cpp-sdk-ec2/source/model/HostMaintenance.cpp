@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HostMaintenance::NOT_SET:
+            return {};
           case HostMaintenance::on:
             return "on";
           case HostMaintenance::off:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3AtmosDownmixControl::NOT_SET:
+            return {};
           case Eac3AtmosDownmixControl::SPECIFIED:
             return "SPECIFIED";
           case Eac3AtmosDownmixControl::INITIALIZE_FROM_SOURCE:

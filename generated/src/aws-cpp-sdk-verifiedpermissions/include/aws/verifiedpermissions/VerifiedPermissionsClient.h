@@ -218,7 +218,7 @@ namespace VerifiedPermissions
         /**
          * <p>Creates a policy store. A policy store is a container for policy
          * resources.</p>  <p>Although <a
-         * href="https://docs.cedarpolicy.com/schema.html#namespace">Cedar supports
+         * href="https://docs.cedarpolicy.com/schema/schema.html#namespace">Cedar supports
          * multiple namespaces</a>, Verified Permissions currently supports only one
          * namespace per policy store.</p>   <p>Verified Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
@@ -856,9 +856,9 @@ namespace VerifiedPermissions
          * and the some elements of the <a
          * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyTemplate.html#amazonverifiedpermissions-UpdatePolicyTemplate-request-policyBody">policyBody</a>.
          * </p>  <p>Changes you make to the policy template content are
-         * immediately reflected in authorization decisions that involve all
-         * template-linked policies instantiated from this template.</p> 
-         *  <p>Verified Permissions is <i> <a
+         * immediately (within the constraints of eventual consistency) reflected in
+         * authorization decisions that involve all template-linked policies instantiated
+         * from this template.</p>   <p>Verified Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
          * </i>. It can take a few seconds for a new or changed element to be propagate
          * through the service and be visible in the results of other Verified Permissions

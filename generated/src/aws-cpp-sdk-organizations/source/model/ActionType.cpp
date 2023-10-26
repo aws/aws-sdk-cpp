@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionType::NOT_SET:
+            return {};
           case ActionType::INVITE:
             return "INVITE";
           case ActionType::ENABLE_ALL_FEATURES:

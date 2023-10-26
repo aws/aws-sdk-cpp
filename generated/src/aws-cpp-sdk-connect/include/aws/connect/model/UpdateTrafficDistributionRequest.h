@@ -132,38 +132,38 @@ namespace Model
 
 
     /**
-     * <p>The distribution of allowing signing in to the instance and its
-     * replica(s).</p>
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
      */
     inline const SignInConfig& GetSignInConfig() const{ return m_signInConfig; }
 
     /**
-     * <p>The distribution of allowing signing in to the instance and its
-     * replica(s).</p>
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
      */
     inline bool SignInConfigHasBeenSet() const { return m_signInConfigHasBeenSet; }
 
     /**
-     * <p>The distribution of allowing signing in to the instance and its
-     * replica(s).</p>
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
      */
     inline void SetSignInConfig(const SignInConfig& value) { m_signInConfigHasBeenSet = true; m_signInConfig = value; }
 
     /**
-     * <p>The distribution of allowing signing in to the instance and its
-     * replica(s).</p>
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
      */
     inline void SetSignInConfig(SignInConfig&& value) { m_signInConfigHasBeenSet = true; m_signInConfig = std::move(value); }
 
     /**
-     * <p>The distribution of allowing signing in to the instance and its
-     * replica(s).</p>
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
      */
     inline UpdateTrafficDistributionRequest& WithSignInConfig(const SignInConfig& value) { SetSignInConfig(value); return *this;}
 
     /**
-     * <p>The distribution of allowing signing in to the instance and its
-     * replica(s).</p>
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
      */
     inline UpdateTrafficDistributionRequest& WithSignInConfig(SignInConfig&& value) { SetSignInConfig(std::move(value)); return *this;}
 

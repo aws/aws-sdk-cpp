@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CRUpdateAllocationStrategy::NOT_SET:
+            return {};
           case CRUpdateAllocationStrategy::BEST_FIT_PROGRESSIVE:
             return "BEST_FIT_PROGRESSIVE";
           case CRUpdateAllocationStrategy::SPOT_CAPACITY_OPTIMIZED:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TriggerType::NOT_SET:
+            return {};
           case TriggerType::Scheduled:
             return "Scheduled";
           case TriggerType::Event:

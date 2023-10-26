@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InvalidCrossAccountRoleErrorCode::NOT_SET:
+            return {};
           case InvalidCrossAccountRoleErrorCode::ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP:
             return "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP";
           case InvalidCrossAccountRoleErrorCode::ROLE_DOES_NOT_HAVE_CORRECT_POLICY:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataReplicationInitiationStepStatus::NOT_SET:
+            return {};
           case DataReplicationInitiationStepStatus::NOT_STARTED:
             return "NOT_STARTED";
           case DataReplicationInitiationStepStatus::IN_PROGRESS:

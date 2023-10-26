@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsImageBasedTrickPlay::NOT_SET:
+            return {};
           case HlsImageBasedTrickPlay::NONE:
             return "NONE";
           case HlsImageBasedTrickPlay::THUMBNAIL:

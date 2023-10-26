@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SupportedDataTransferType::NOT_SET:
+            return {};
           case SupportedDataTransferType::RECORD:
             return "RECORD";
           case SupportedDataTransferType::FILE:

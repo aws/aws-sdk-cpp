@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LineChartMarkerShape::NOT_SET:
+            return {};
           case LineChartMarkerShape::CIRCLE:
             return "CIRCLE";
           case LineChartMarkerShape::TRIANGLE:

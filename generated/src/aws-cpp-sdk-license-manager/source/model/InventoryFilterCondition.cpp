@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InventoryFilterCondition::NOT_SET:
+            return {};
           case InventoryFilterCondition::EQUALS:
             return "EQUALS";
           case InventoryFilterCondition::NOT_EQUALS:

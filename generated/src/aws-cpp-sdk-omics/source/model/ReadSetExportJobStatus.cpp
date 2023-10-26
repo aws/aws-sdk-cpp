@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReadSetExportJobStatus::NOT_SET:
+            return {};
           case ReadSetExportJobStatus::SUBMITTED:
             return "SUBMITTED";
           case ReadSetExportJobStatus::IN_PROGRESS:

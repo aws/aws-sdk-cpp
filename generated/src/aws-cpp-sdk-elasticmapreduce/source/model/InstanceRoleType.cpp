@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceRoleType::NOT_SET:
+            return {};
           case InstanceRoleType::MASTER:
             return "MASTER";
           case InstanceRoleType::CORE:

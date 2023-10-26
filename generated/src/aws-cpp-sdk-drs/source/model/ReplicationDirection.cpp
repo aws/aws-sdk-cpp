@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicationDirection::NOT_SET:
+            return {};
           case ReplicationDirection::FAILOVER:
             return "FAILOVER";
           case ReplicationDirection::FAILBACK:

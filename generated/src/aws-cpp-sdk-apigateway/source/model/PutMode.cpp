@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PutMode::NOT_SET:
+            return {};
           case PutMode::merge:
             return "merge";
           case PutMode::overwrite:

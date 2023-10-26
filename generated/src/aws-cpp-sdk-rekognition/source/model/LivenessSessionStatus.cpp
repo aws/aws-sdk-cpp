@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LivenessSessionStatus::NOT_SET:
+            return {};
           case LivenessSessionStatus::CREATED:
             return "CREATED";
           case LivenessSessionStatus::IN_PROGRESS:

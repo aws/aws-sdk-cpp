@@ -174,42 +174,66 @@ namespace Model
 
 
     /**
-     * <p>The content of the flow module.</p>
+     * <p>The JSON string that represents the content of the flow. For an example, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * flow in Amazon Connect Flow language</a>. </p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
-     * <p>The content of the flow module.</p>
+     * <p>The JSON string that represents the content of the flow. For an example, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * flow in Amazon Connect Flow language</a>. </p>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
-     * <p>The content of the flow module.</p>
+     * <p>The JSON string that represents the content of the flow. For an example, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * flow in Amazon Connect Flow language</a>. </p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
-     * <p>The content of the flow module.</p>
+     * <p>The JSON string that represents the content of the flow. For an example, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * flow in Amazon Connect Flow language</a>. </p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
-     * <p>The content of the flow module.</p>
+     * <p>The JSON string that represents the content of the flow. For an example, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * flow in Amazon Connect Flow language</a>. </p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
-     * <p>The content of the flow module.</p>
+     * <p>The JSON string that represents the content of the flow. For an example, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * flow in Amazon Connect Flow language</a>. </p>
      */
     inline CreateContactFlowModuleRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
-     * <p>The content of the flow module.</p>
+     * <p>The JSON string that represents the content of the flow. For an example, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * flow in Amazon Connect Flow language</a>. </p>
      */
     inline CreateContactFlowModuleRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
-     * <p>The content of the flow module.</p>
+     * <p>The JSON string that represents the content of the flow. For an example, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * flow in Amazon Connect Flow language</a>. </p>
      */
     inline CreateContactFlowModuleRequest& WithContent(const char* value) { SetContent(value); return *this;}
 

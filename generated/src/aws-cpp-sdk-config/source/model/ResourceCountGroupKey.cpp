@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceCountGroupKey::NOT_SET:
+            return {};
           case ResourceCountGroupKey::RESOURCE_TYPE:
             return "RESOURCE_TYPE";
           case ResourceCountGroupKey::ACCOUNT_ID:

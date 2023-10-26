@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TermInYears::NOT_SET:
+            return {};
           case TermInYears::ONE_YEAR:
             return "ONE_YEAR";
           case TermInYears::THREE_YEARS:

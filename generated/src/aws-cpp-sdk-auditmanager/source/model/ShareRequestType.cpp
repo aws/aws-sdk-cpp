@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShareRequestType::NOT_SET:
+            return {};
           case ShareRequestType::SENT:
             return "SENT";
           case ShareRequestType::RECEIVED:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3AtmosCodingMode::NOT_SET:
+            return {};
           case Eac3AtmosCodingMode::CODING_MODE_5_1_4:
             return "CODING_MODE_5_1_4";
           case Eac3AtmosCodingMode::CODING_MODE_7_1_4:

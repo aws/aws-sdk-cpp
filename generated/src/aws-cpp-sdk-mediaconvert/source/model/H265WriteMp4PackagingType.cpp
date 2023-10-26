@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265WriteMp4PackagingType::NOT_SET:
+            return {};
           case H265WriteMp4PackagingType::HVC1:
             return "HVC1";
           case H265WriteMp4PackagingType::HEV1:

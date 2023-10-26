@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamHealth::NOT_SET:
+            return {};
           case StreamHealth::HEALTHY:
             return "HEALTHY";
           case StreamHealth::STARVING:

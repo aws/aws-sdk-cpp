@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComponentStatus::NOT_SET:
+            return {};
           case ComponentStatus::ACTIVATED:
             return "ACTIVATED";
           case ComponentStatus::STARTING:

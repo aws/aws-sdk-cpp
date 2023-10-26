@@ -183,50 +183,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) assigned to the AWS Key Management Service
-     * (AWS KMS) key for accessing encrypted data.</p>
+     * <p>The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS)
+     * key for accessing encrypted data.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) assigned to the AWS Key Management Service
-     * (AWS KMS) key for accessing encrypted data.</p>
+     * <p>The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS)
+     * key for accessing encrypted data.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) assigned to the AWS Key Management Service
-     * (AWS KMS) key for accessing encrypted data.</p>
+     * <p>The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS)
+     * key for accessing encrypted data.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) assigned to the AWS Key Management Service
-     * (AWS KMS) key for accessing encrypted data.</p>
+     * <p>The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS)
+     * key for accessing encrypted data.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) assigned to the AWS Key Management Service
-     * (AWS KMS) key for accessing encrypted data.</p>
+     * <p>The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS)
+     * key for accessing encrypted data.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) assigned to the AWS Key Management Service
-     * (AWS KMS) key for accessing encrypted data.</p>
+     * <p>The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS)
+     * key for accessing encrypted data.</p>
      */
     inline CreateDatastoreRequest& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) assigned to the AWS Key Management Service
-     * (AWS KMS) key for accessing encrypted data.</p>
+     * <p>The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS)
+     * key for accessing encrypted data.</p>
      */
     inline CreateDatastoreRequest& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) assigned to the AWS Key Management Service
-     * (AWS KMS) key for accessing encrypted data.</p>
+     * <p>The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS)
+     * key for accessing encrypted data.</p>
      */
     inline CreateDatastoreRequest& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 

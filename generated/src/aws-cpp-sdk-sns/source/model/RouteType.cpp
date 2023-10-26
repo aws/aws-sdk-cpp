@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RouteType::NOT_SET:
+            return {};
           case RouteType::Transactional:
             return "Transactional";
           case RouteType::Promotional:

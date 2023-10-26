@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ColumnTagName::NOT_SET:
+            return {};
           case ColumnTagName::COLUMN_GEOGRAPHIC_ROLE:
             return "COLUMN_GEOGRAPHIC_ROLE";
           case ColumnTagName::COLUMN_DESCRIPTION:

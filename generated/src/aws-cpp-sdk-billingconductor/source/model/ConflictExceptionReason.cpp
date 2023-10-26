@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConflictExceptionReason::NOT_SET:
+            return {};
           case ConflictExceptionReason::RESOURCE_NAME_CONFLICT:
             return "RESOURCE_NAME_CONFLICT";
           case ConflictExceptionReason::PRICING_RULE_IN_PRICING_PLAN_CONFLICT:

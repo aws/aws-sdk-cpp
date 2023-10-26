@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetType::NOT_SET:
+            return {};
           case TargetType::ACCOUNT:
             return "ACCOUNT";
           case TargetType::ORGANIZATIONAL_UNIT:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncryptionKeyType::NOT_SET:
+            return {};
           case EncryptionKeyType::KMS:
             return "KMS";
           default:

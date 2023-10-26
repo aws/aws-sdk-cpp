@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AfdSignaling::NOT_SET:
+            return {};
           case AfdSignaling::NONE:
             return "NONE";
           case AfdSignaling::AUTO:

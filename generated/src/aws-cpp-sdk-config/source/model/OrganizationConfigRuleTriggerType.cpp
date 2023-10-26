@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrganizationConfigRuleTriggerType::NOT_SET:
+            return {};
           case OrganizationConfigRuleTriggerType::ConfigurationItemChangeNotification:
             return "ConfigurationItemChangeNotification";
           case OrganizationConfigRuleTriggerType::OversizedConfigurationItemChangeNotification:

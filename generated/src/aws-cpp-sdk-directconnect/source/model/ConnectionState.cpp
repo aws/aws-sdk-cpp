@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectionState::NOT_SET:
+            return {};
           case ConnectionState::ordering:
             return "ordering";
           case ConnectionState::requested:

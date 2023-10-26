@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TechnicalCueType::NOT_SET:
+            return {};
           case TechnicalCueType::ColorBars:
             return "ColorBars";
           case TechnicalCueType::EndCredits:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateLoggingConfigurationState::NOT_SET:
+            return {};
           case UpdateLoggingConfigurationState::ACTIVE:
             return "ACTIVE";
           default:

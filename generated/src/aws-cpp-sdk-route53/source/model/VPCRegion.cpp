@@ -209,6 +209,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VPCRegion::NOT_SET:
+            return {};
           case VPCRegion::us_east_1:
             return "us-east-1";
           case VPCRegion::us_east_2:

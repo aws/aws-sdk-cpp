@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FirewallDomainListStatus::NOT_SET:
+            return {};
           case FirewallDomainListStatus::COMPLETE:
             return "COMPLETE";
           case FirewallDomainListStatus::COMPLETE_IMPORT_FAILED:

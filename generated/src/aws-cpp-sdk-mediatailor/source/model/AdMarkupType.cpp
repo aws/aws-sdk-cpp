@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdMarkupType::NOT_SET:
+            return {};
           case AdMarkupType::DATERANGE:
             return "DATERANGE";
           case AdMarkupType::SCTE35_ENHANCED:

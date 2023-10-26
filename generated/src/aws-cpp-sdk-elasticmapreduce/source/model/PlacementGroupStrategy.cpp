@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PlacementGroupStrategy::NOT_SET:
+            return {};
           case PlacementGroupStrategy::SPREAD:
             return "SPREAD";
           case PlacementGroupStrategy::PARTITION:

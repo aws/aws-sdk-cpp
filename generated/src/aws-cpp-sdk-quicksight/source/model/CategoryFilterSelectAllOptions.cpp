@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CategoryFilterSelectAllOptions::NOT_SET:
+            return {};
           case CategoryFilterSelectAllOptions::FILTER_ALL_VALUES:
             return "FILTER_ALL_VALUES";
           default:

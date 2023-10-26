@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EvaluationFormQuestionType::NOT_SET:
+            return {};
           case EvaluationFormQuestionType::TEXT:
             return "TEXT";
           case EvaluationFormQuestionType::SINGLESELECT:

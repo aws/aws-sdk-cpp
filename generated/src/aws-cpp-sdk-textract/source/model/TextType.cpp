@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TextType::NOT_SET:
+            return {};
           case TextType::HANDWRITING:
             return "HANDWRITING";
           case TextType::PRINTED:

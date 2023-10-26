@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DukptEncryptionMode::NOT_SET:
+            return {};
           case DukptEncryptionMode::ECB:
             return "ECB";
           case DukptEncryptionMode::CBC:

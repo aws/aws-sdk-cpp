@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int SHARED_HASH = HashingUtils::HashString("SHARED");
+        static const int RESTRICTED_HASH = HashingUtils::HashString("RESTRICTED");
 
 
         FolderType GetFolderTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == SHARED_HASH)
           {
             return FolderType::SHARED;
+          }
+          else if (hashCode == RESTRICTED_HASH)
+          {
+            return FolderType::RESTRICTED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -44,8 +49,12 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FolderType::NOT_SET:
+            return {};
           case FolderType::SHARED:
             return "SHARED";
+          case FolderType::RESTRICTED:
+            return "RESTRICTED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

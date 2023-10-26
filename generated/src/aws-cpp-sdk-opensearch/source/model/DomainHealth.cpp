@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DomainHealth::NOT_SET:
+            return {};
           case DomainHealth::Red:
             return "Red";
           case DomainHealth::Yellow:

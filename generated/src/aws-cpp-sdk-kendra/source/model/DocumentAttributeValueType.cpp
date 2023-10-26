@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentAttributeValueType::NOT_SET:
+            return {};
           case DocumentAttributeValueType::STRING_VALUE:
             return "STRING_VALUE";
           case DocumentAttributeValueType::STRING_LIST_VALUE:

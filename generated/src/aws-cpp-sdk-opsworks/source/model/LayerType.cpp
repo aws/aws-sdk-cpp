@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LayerType::NOT_SET:
+            return {};
           case LayerType::aws_flow_ruby:
             return "aws-flow-ruby";
           case LayerType::ecs_cluster:

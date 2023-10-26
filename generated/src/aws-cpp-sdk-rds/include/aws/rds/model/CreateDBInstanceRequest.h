@@ -1053,13 +1053,14 @@ namespace Model
      * Aurora DB instances. The password for the master user is managed by the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>Can't be specified if
      * <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li> <p>Can
-     * include any printable ASCII character except "/", """, or "@".</p> </li> </ul>
-     * <p>Length Constraints:</p> <ul> <li> <p>RDS for MariaDB - Must contain from 8 to
-     * 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server - Must contain
-     * from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must contain from 8
-     * to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain from 8 to 30
-     * characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain from 8 to 128
-     * characters.</p> </li> </ul>
+     * include any printable ASCII character except "/", """, or "@". For RDS for
+     * Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for
+     * MariaDB - Must contain from 8 to 41 characters.</p> </li> <li> <p>RDS for
+     * Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li> <li>
+     * <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li> <li> <p>RDS
+     * for Oracle - Must contain from 8 to 30 characters.</p> </li> <li> <p>RDS for
+     * PostgreSQL - Must contain from 8 to 128 characters.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
@@ -1068,13 +1069,14 @@ namespace Model
      * Aurora DB instances. The password for the master user is managed by the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>Can't be specified if
      * <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li> <p>Can
-     * include any printable ASCII character except "/", """, or "@".</p> </li> </ul>
-     * <p>Length Constraints:</p> <ul> <li> <p>RDS for MariaDB - Must contain from 8 to
-     * 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server - Must contain
-     * from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must contain from 8
-     * to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain from 8 to 30
-     * characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain from 8 to 128
-     * characters.</p> </li> </ul>
+     * include any printable ASCII character except "/", """, or "@". For RDS for
+     * Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for
+     * MariaDB - Must contain from 8 to 41 characters.</p> </li> <li> <p>RDS for
+     * Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li> <li>
+     * <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li> <li> <p>RDS
+     * for Oracle - Must contain from 8 to 30 characters.</p> </li> <li> <p>RDS for
+     * PostgreSQL - Must contain from 8 to 128 characters.</p> </li> </ul>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
@@ -1083,13 +1085,14 @@ namespace Model
      * Aurora DB instances. The password for the master user is managed by the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>Can't be specified if
      * <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li> <p>Can
-     * include any printable ASCII character except "/", """, or "@".</p> </li> </ul>
-     * <p>Length Constraints:</p> <ul> <li> <p>RDS for MariaDB - Must contain from 8 to
-     * 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server - Must contain
-     * from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must contain from 8
-     * to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain from 8 to 30
-     * characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain from 8 to 128
-     * characters.</p> </li> </ul>
+     * include any printable ASCII character except "/", """, or "@". For RDS for
+     * Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for
+     * MariaDB - Must contain from 8 to 41 characters.</p> </li> <li> <p>RDS for
+     * Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li> <li>
+     * <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li> <li> <p>RDS
+     * for Oracle - Must contain from 8 to 30 characters.</p> </li> <li> <p>RDS for
+     * PostgreSQL - Must contain from 8 to 128 characters.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
@@ -1098,13 +1101,14 @@ namespace Model
      * Aurora DB instances. The password for the master user is managed by the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>Can't be specified if
      * <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li> <p>Can
-     * include any printable ASCII character except "/", """, or "@".</p> </li> </ul>
-     * <p>Length Constraints:</p> <ul> <li> <p>RDS for MariaDB - Must contain from 8 to
-     * 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server - Must contain
-     * from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must contain from 8
-     * to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain from 8 to 30
-     * characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain from 8 to 128
-     * characters.</p> </li> </ul>
+     * include any printable ASCII character except "/", """, or "@". For RDS for
+     * Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for
+     * MariaDB - Must contain from 8 to 41 characters.</p> </li> <li> <p>RDS for
+     * Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li> <li>
+     * <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li> <li> <p>RDS
+     * for Oracle - Must contain from 8 to 30 characters.</p> </li> <li> <p>RDS for
+     * PostgreSQL - Must contain from 8 to 128 characters.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
@@ -1113,13 +1117,14 @@ namespace Model
      * Aurora DB instances. The password for the master user is managed by the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>Can't be specified if
      * <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li> <p>Can
-     * include any printable ASCII character except "/", """, or "@".</p> </li> </ul>
-     * <p>Length Constraints:</p> <ul> <li> <p>RDS for MariaDB - Must contain from 8 to
-     * 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server - Must contain
-     * from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must contain from 8
-     * to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain from 8 to 30
-     * characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain from 8 to 128
-     * characters.</p> </li> </ul>
+     * include any printable ASCII character except "/", """, or "@". For RDS for
+     * Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for
+     * MariaDB - Must contain from 8 to 41 characters.</p> </li> <li> <p>RDS for
+     * Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li> <li>
+     * <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li> <li> <p>RDS
+     * for Oracle - Must contain from 8 to 30 characters.</p> </li> <li> <p>RDS for
+     * PostgreSQL - Must contain from 8 to 128 characters.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
@@ -1128,13 +1133,14 @@ namespace Model
      * Aurora DB instances. The password for the master user is managed by the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>Can't be specified if
      * <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li> <p>Can
-     * include any printable ASCII character except "/", """, or "@".</p> </li> </ul>
-     * <p>Length Constraints:</p> <ul> <li> <p>RDS for MariaDB - Must contain from 8 to
-     * 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server - Must contain
-     * from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must contain from 8
-     * to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain from 8 to 30
-     * characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain from 8 to 128
-     * characters.</p> </li> </ul>
+     * include any printable ASCII character except "/", """, or "@". For RDS for
+     * Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for
+     * MariaDB - Must contain from 8 to 41 characters.</p> </li> <li> <p>RDS for
+     * Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li> <li>
+     * <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li> <li> <p>RDS
+     * for Oracle - Must contain from 8 to 30 characters.</p> </li> <li> <p>RDS for
+     * PostgreSQL - Must contain from 8 to 128 characters.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
@@ -1143,13 +1149,14 @@ namespace Model
      * Aurora DB instances. The password for the master user is managed by the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>Can't be specified if
      * <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li> <p>Can
-     * include any printable ASCII character except "/", """, or "@".</p> </li> </ul>
-     * <p>Length Constraints:</p> <ul> <li> <p>RDS for MariaDB - Must contain from 8 to
-     * 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server - Must contain
-     * from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must contain from 8
-     * to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain from 8 to 30
-     * characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain from 8 to 128
-     * characters.</p> </li> </ul>
+     * include any printable ASCII character except "/", """, or "@". For RDS for
+     * Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for
+     * MariaDB - Must contain from 8 to 41 characters.</p> </li> <li> <p>RDS for
+     * Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li> <li>
+     * <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li> <li> <p>RDS
+     * for Oracle - Must contain from 8 to 30 characters.</p> </li> <li> <p>RDS for
+     * PostgreSQL - Must contain from 8 to 128 characters.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
@@ -1158,13 +1165,14 @@ namespace Model
      * Aurora DB instances. The password for the master user is managed by the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>Can't be specified if
      * <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li> <p>Can
-     * include any printable ASCII character except "/", """, or "@".</p> </li> </ul>
-     * <p>Length Constraints:</p> <ul> <li> <p>RDS for MariaDB - Must contain from 8 to
-     * 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server - Must contain
-     * from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must contain from 8
-     * to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain from 8 to 30
-     * characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain from 8 to 128
-     * characters.</p> </li> </ul>
+     * include any printable ASCII character except "/", """, or "@". For RDS for
+     * Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for
+     * MariaDB - Must contain from 8 to 41 characters.</p> </li> <li> <p>RDS for
+     * Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li> <li>
+     * <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li> <li> <p>RDS
+     * for Oracle - Must contain from 8 to 30 characters.</p> </li> <li> <p>RDS for
+     * PostgreSQL - Must contain from 8 to 128 characters.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -5316,6 +5324,31 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithDBSystemId(const char* value) { SetDBSystemId(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline bool GetDedicatedLogVolume() const{ return m_dedicatedLogVolume; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline CreateDBInstanceRequest& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -5497,6 +5530,9 @@ namespace Model
 
     Aws::String m_dBSystemId;
     bool m_dBSystemIdHasBeenSet = false;
+
+    bool m_dedicatedLogVolume;
+    bool m_dedicatedLogVolumeHasBeenSet = false;
   };
 
 } // namespace Model

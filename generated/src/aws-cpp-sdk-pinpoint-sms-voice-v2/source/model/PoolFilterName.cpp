@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PoolFilterName::NOT_SET:
+            return {};
           case PoolFilterName::status:
             return "status";
           case PoolFilterName::message_type:

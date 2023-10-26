@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PositionSolverType::NOT_SET:
+            return {};
           case PositionSolverType::GNSS:
             return "GNSS";
           default:

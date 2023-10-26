@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DynamicGroupStatus::NOT_SET:
+            return {};
           case DynamicGroupStatus::ACTIVE:
             return "ACTIVE";
           case DynamicGroupStatus::BUILDING:

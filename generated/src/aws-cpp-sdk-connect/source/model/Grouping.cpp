@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Grouping::NOT_SET:
+            return {};
           case Grouping::QUEUE:
             return "QUEUE";
           case Grouping::CHANNEL:

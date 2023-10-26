@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccountAttributeName::NOT_SET:
+            return {};
           case AccountAttributeName::ACCOUNT_TIER:
             return "ACCOUNT_TIER";
           default:

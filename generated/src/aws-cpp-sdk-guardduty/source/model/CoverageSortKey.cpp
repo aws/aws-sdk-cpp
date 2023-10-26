@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CoverageSortKey::NOT_SET:
+            return {};
           case CoverageSortKey::ACCOUNT_ID:
             return "ACCOUNT_ID";
           case CoverageSortKey::CLUSTER_NAME:

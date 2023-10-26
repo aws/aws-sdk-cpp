@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApiKeysFormat::NOT_SET:
+            return {};
           case ApiKeysFormat::csv:
             return "csv";
           default:

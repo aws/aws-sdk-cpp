@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FeatureStatus::NOT_SET:
+            return {};
           case FeatureStatus::AVAILABLE:
             return "AVAILABLE";
           case FeatureStatus::UPDATING:

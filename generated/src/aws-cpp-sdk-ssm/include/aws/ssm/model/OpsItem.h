@@ -109,7 +109,7 @@ namespace Model
      * is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
      * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
      * Manager for reviewing and approving or rejecting change requests. </p> </li>
-     * <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
      * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline const Aws::String& GetOpsItemType() const{ return m_opsItemType; }
@@ -120,7 +120,7 @@ namespace Model
      * is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
      * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
      * Manager for reviewing and approving or rejecting change requests. </p> </li>
-     * <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
      * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline bool OpsItemTypeHasBeenSet() const { return m_opsItemTypeHasBeenSet; }
@@ -131,7 +131,7 @@ namespace Model
      * is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
      * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
      * Manager for reviewing and approving or rejecting change requests. </p> </li>
-     * <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
      * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline void SetOpsItemType(const Aws::String& value) { m_opsItemTypeHasBeenSet = true; m_opsItemType = value; }
@@ -142,7 +142,7 @@ namespace Model
      * is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
      * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
      * Manager for reviewing and approving or rejecting change requests. </p> </li>
-     * <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
      * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline void SetOpsItemType(Aws::String&& value) { m_opsItemTypeHasBeenSet = true; m_opsItemType = std::move(value); }
@@ -153,7 +153,7 @@ namespace Model
      * is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
      * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
      * Manager for reviewing and approving or rejecting change requests. </p> </li>
-     * <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
      * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline void SetOpsItemType(const char* value) { m_opsItemTypeHasBeenSet = true; m_opsItemType.assign(value); }
@@ -164,7 +164,7 @@ namespace Model
      * is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
      * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
      * Manager for reviewing and approving or rejecting change requests. </p> </li>
-     * <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
      * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline OpsItem& WithOpsItemType(const Aws::String& value) { SetOpsItemType(value); return *this;}
@@ -175,7 +175,7 @@ namespace Model
      * is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
      * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
      * Manager for reviewing and approving or rejecting change requests. </p> </li>
-     * <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
      * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline OpsItem& WithOpsItemType(Aws::String&& value) { SetOpsItemType(std::move(value)); return *this;}
@@ -186,7 +186,7 @@ namespace Model
      * is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
      * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
      * Manager for reviewing and approving or rejecting change requests. </p> </li>
-     * <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
      * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline OpsItem& WithOpsItemType(const char* value) { SetOpsItemType(value); return *this;}

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PowerFeedDrop::NOT_SET:
+            return {};
           case PowerFeedDrop::ABOVE_RACK:
             return "ABOVE_RACK";
           case PowerFeedDrop::BELOW_RACK:

@@ -329,6 +329,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ESPartitionInstanceType::NOT_SET:
+            return {};
           case ESPartitionInstanceType::m3_medium_elasticsearch:
             return "m3.medium.elasticsearch";
           case ESPartitionInstanceType::m3_large_elasticsearch:

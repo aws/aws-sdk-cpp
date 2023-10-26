@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceGroupState::NOT_SET:
+            return {};
           case InstanceGroupState::PROVISIONING:
             return "PROVISIONING";
           case InstanceGroupState::BOOTSTRAPPING:

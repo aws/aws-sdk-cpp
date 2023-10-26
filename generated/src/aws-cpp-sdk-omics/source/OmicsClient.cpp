@@ -272,7 +272,7 @@ AbortMultipartReadSetUploadOutcome OmicsClient::AbortMultipartReadSetUpload(cons
       endpointResolutionOutcome.GetResult().AddPathSegments("/upload/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUploadId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/abort");
-      return AbortMultipartReadSetUploadOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::NULL_SIGNER));
+      return AbortMultipartReadSetUploadOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -307,7 +307,7 @@ AcceptShareOutcome OmicsClient::AcceptShare(const AcceptShareRequest& request) c
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), AcceptShareOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/share/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShareId());
-      return AcceptShareOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return AcceptShareOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -343,7 +343,7 @@ BatchDeleteReadSetOutcome OmicsClient::BatchDeleteReadSet(const BatchDeleteReadS
       endpointResolutionOutcome.GetResult().AddPathSegments("/sequencestore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSequenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/readset/batch/delete");
-      return BatchDeleteReadSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return BatchDeleteReadSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -378,7 +378,7 @@ CancelAnnotationImportJobOutcome OmicsClient::CancelAnnotationImportJob(const Ca
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CancelAnnotationImportJobOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/import/annotation/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-      return CancelAnnotationImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::NULL_SIGNER));
+      return CancelAnnotationImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -414,7 +414,7 @@ CancelRunOutcome OmicsClient::CancelRun(const CancelRunRequest& request) const
       endpointResolutionOutcome.GetResult().AddPathSegments("/run/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
-      return CancelRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return CancelRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -449,7 +449,7 @@ CancelVariantImportJobOutcome OmicsClient::CancelVariantImportJob(const CancelVa
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CancelVariantImportJobOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/import/variant/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-      return CancelVariantImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::NULL_SIGNER));
+      return CancelVariantImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -492,7 +492,7 @@ CompleteMultipartReadSetUploadOutcome OmicsClient::CompleteMultipartReadSetUploa
       endpointResolutionOutcome.GetResult().AddPathSegments("/upload/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUploadId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/complete");
-      return CompleteMultipartReadSetUploadOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return CompleteMultipartReadSetUploadOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -521,7 +521,7 @@ CreateAnnotationStoreOutcome OmicsClient::CreateAnnotationStore(const CreateAnno
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("analytics-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateAnnotationStoreOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/annotationStore");
-      return CreateAnnotationStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return CreateAnnotationStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -557,7 +557,7 @@ CreateAnnotationStoreVersionOutcome OmicsClient::CreateAnnotationStoreVersion(co
       endpointResolutionOutcome.GetResult().AddPathSegments("/annotationStore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
       endpointResolutionOutcome.GetResult().AddPathSegments("/version");
-      return CreateAnnotationStoreVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return CreateAnnotationStoreVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -593,7 +593,7 @@ CreateMultipartReadSetUploadOutcome OmicsClient::CreateMultipartReadSetUpload(co
       endpointResolutionOutcome.GetResult().AddPathSegments("/sequencestore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSequenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/upload");
-      return CreateMultipartReadSetUploadOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return CreateMultipartReadSetUploadOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -622,7 +622,7 @@ CreateReferenceStoreOutcome OmicsClient::CreateReferenceStore(const CreateRefere
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("control-storage-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateReferenceStoreOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/referencestore");
-      return CreateReferenceStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return CreateReferenceStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -651,7 +651,7 @@ CreateRunGroupOutcome OmicsClient::CreateRunGroup(const CreateRunGroupRequest& r
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("workflows-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateRunGroupOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/runGroup");
-      return CreateRunGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return CreateRunGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -680,7 +680,7 @@ CreateSequenceStoreOutcome OmicsClient::CreateSequenceStore(const CreateSequence
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("control-storage-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateSequenceStoreOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/sequencestore");
-      return CreateSequenceStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return CreateSequenceStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -709,7 +709,7 @@ CreateShareOutcome OmicsClient::CreateShare(const CreateShareRequest& request) c
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("analytics-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateShareOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/share");
-      return CreateShareOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return CreateShareOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -738,7 +738,7 @@ CreateVariantStoreOutcome OmicsClient::CreateVariantStore(const CreateVariantSto
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("analytics-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateVariantStoreOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/variantStore");
-      return CreateVariantStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return CreateVariantStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -767,7 +767,7 @@ CreateWorkflowOutcome OmicsClient::CreateWorkflow(const CreateWorkflowRequest& r
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("workflows-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateWorkflowOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/workflow");
-      return CreateWorkflowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return CreateWorkflowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -802,7 +802,7 @@ DeleteAnnotationStoreOutcome OmicsClient::DeleteAnnotationStore(const DeleteAnno
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteAnnotationStoreOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/annotationStore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      return DeleteAnnotationStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::NULL_SIGNER));
+      return DeleteAnnotationStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -838,7 +838,7 @@ DeleteAnnotationStoreVersionsOutcome OmicsClient::DeleteAnnotationStoreVersions(
       endpointResolutionOutcome.GetResult().AddPathSegments("/annotationStore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
       endpointResolutionOutcome.GetResult().AddPathSegments("/versions/delete");
-      return DeleteAnnotationStoreVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return DeleteAnnotationStoreVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -880,7 +880,7 @@ DeleteReferenceOutcome OmicsClient::DeleteReference(const DeleteReferenceRequest
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReferenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/reference/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return DeleteReferenceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::NULL_SIGNER));
+      return DeleteReferenceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -915,7 +915,7 @@ DeleteReferenceStoreOutcome OmicsClient::DeleteReferenceStore(const DeleteRefere
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteReferenceStoreOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/referencestore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return DeleteReferenceStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::NULL_SIGNER));
+      return DeleteReferenceStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -950,7 +950,7 @@ DeleteRunOutcome OmicsClient::DeleteRun(const DeleteRunRequest& request) const
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteRunOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/run/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return DeleteRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::NULL_SIGNER));
+      return DeleteRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -985,7 +985,7 @@ DeleteRunGroupOutcome OmicsClient::DeleteRunGroup(const DeleteRunGroupRequest& r
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteRunGroupOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/runGroup/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return DeleteRunGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::NULL_SIGNER));
+      return DeleteRunGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1020,7 +1020,7 @@ DeleteSequenceStoreOutcome OmicsClient::DeleteSequenceStore(const DeleteSequence
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteSequenceStoreOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/sequencestore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return DeleteSequenceStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::NULL_SIGNER));
+      return DeleteSequenceStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1055,7 +1055,7 @@ DeleteShareOutcome OmicsClient::DeleteShare(const DeleteShareRequest& request) c
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteShareOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/share/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShareId());
-      return DeleteShareOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::NULL_SIGNER));
+      return DeleteShareOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1090,7 +1090,7 @@ DeleteVariantStoreOutcome OmicsClient::DeleteVariantStore(const DeleteVariantSto
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteVariantStoreOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/variantStore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      return DeleteVariantStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::NULL_SIGNER));
+      return DeleteVariantStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1125,7 +1125,7 @@ DeleteWorkflowOutcome OmicsClient::DeleteWorkflow(const DeleteWorkflowRequest& r
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteWorkflowOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/workflow/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return DeleteWorkflowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::NULL_SIGNER));
+      return DeleteWorkflowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1160,7 +1160,7 @@ GetAnnotationImportJobOutcome OmicsClient::GetAnnotationImportJob(const GetAnnot
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetAnnotationImportJobOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/import/annotation/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-      return GetAnnotationImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetAnnotationImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1195,7 +1195,7 @@ GetAnnotationStoreOutcome OmicsClient::GetAnnotationStore(const GetAnnotationSto
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetAnnotationStoreOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/annotationStore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      return GetAnnotationStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetAnnotationStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1237,7 +1237,7 @@ GetAnnotationStoreVersionOutcome OmicsClient::GetAnnotationStoreVersion(const Ge
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
       endpointResolutionOutcome.GetResult().AddPathSegments("/version/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionName());
-      return GetAnnotationStoreVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetAnnotationStoreVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1326,7 +1326,7 @@ GetReadSetActivationJobOutcome OmicsClient::GetReadSetActivationJob(const GetRea
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSequenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/activationjob/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return GetReadSetActivationJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetReadSetActivationJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1368,7 +1368,7 @@ GetReadSetExportJobOutcome OmicsClient::GetReadSetExportJob(const GetReadSetExpo
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSequenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/exportjob/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return GetReadSetExportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetReadSetExportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1410,7 +1410,7 @@ GetReadSetImportJobOutcome OmicsClient::GetReadSetImportJob(const GetReadSetImpo
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSequenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/importjob/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return GetReadSetImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetReadSetImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1453,7 +1453,7 @@ GetReadSetMetadataOutcome OmicsClient::GetReadSetMetadata(const GetReadSetMetada
       endpointResolutionOutcome.GetResult().AddPathSegments("/readset/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
-      return GetReadSetMetadataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetReadSetMetadataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1542,7 +1542,7 @@ GetReferenceImportJobOutcome OmicsClient::GetReferenceImportJob(const GetReferen
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReferenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/importjob/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return GetReferenceImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetReferenceImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1585,7 +1585,7 @@ GetReferenceMetadataOutcome OmicsClient::GetReferenceMetadata(const GetReference
       endpointResolutionOutcome.GetResult().AddPathSegments("/reference/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
-      return GetReferenceMetadataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetReferenceMetadataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1620,7 +1620,7 @@ GetReferenceStoreOutcome OmicsClient::GetReferenceStore(const GetReferenceStoreR
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetReferenceStoreOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/referencestore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return GetReferenceStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetReferenceStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1655,7 +1655,7 @@ GetRunOutcome OmicsClient::GetRun(const GetRunRequest& request) const
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetRunOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/run/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return GetRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1690,7 +1690,7 @@ GetRunGroupOutcome OmicsClient::GetRunGroup(const GetRunGroupRequest& request) c
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetRunGroupOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/runGroup/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return GetRunGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetRunGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1732,7 +1732,7 @@ GetRunTaskOutcome OmicsClient::GetRunTask(const GetRunTaskRequest& request) cons
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/task/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
-      return GetRunTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetRunTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1767,7 +1767,7 @@ GetSequenceStoreOutcome OmicsClient::GetSequenceStore(const GetSequenceStoreRequ
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetSequenceStoreOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/sequencestore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return GetSequenceStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetSequenceStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1802,7 +1802,7 @@ GetShareOutcome OmicsClient::GetShare(const GetShareRequest& request) const
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetShareOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/share/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShareId());
-      return GetShareOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetShareOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1837,7 +1837,7 @@ GetVariantImportJobOutcome OmicsClient::GetVariantImportJob(const GetVariantImpo
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetVariantImportJobOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/import/variant/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-      return GetVariantImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetVariantImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1872,7 +1872,7 @@ GetVariantStoreOutcome OmicsClient::GetVariantStore(const GetVariantStoreRequest
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetVariantStoreOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/variantStore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      return GetVariantStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetVariantStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1907,7 +1907,7 @@ GetWorkflowOutcome OmicsClient::GetWorkflow(const GetWorkflowRequest& request) c
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetWorkflowOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/workflow/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return GetWorkflowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return GetWorkflowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1936,7 +1936,7 @@ ListAnnotationImportJobsOutcome OmicsClient::ListAnnotationImportJobs(const List
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("analytics-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListAnnotationImportJobsOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/import/annotations");
-      return ListAnnotationImportJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return ListAnnotationImportJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1972,7 +1972,7 @@ ListAnnotationStoreVersionsOutcome OmicsClient::ListAnnotationStoreVersions(cons
       endpointResolutionOutcome.GetResult().AddPathSegments("/annotationStore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
       endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
-      return ListAnnotationStoreVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return ListAnnotationStoreVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2001,7 +2001,7 @@ ListAnnotationStoresOutcome OmicsClient::ListAnnotationStores(const ListAnnotati
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("analytics-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListAnnotationStoresOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/annotationStores");
-      return ListAnnotationStoresOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return ListAnnotationStoresOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2037,7 +2037,7 @@ ListMultipartReadSetUploadsOutcome OmicsClient::ListMultipartReadSetUploads(cons
       endpointResolutionOutcome.GetResult().AddPathSegments("/sequencestore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSequenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/uploads");
-      return ListMultipartReadSetUploadsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return ListMultipartReadSetUploadsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2073,7 +2073,7 @@ ListReadSetActivationJobsOutcome OmicsClient::ListReadSetActivationJobs(const Li
       endpointResolutionOutcome.GetResult().AddPathSegments("/sequencestore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSequenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/activationjobs");
-      return ListReadSetActivationJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return ListReadSetActivationJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2109,7 +2109,7 @@ ListReadSetExportJobsOutcome OmicsClient::ListReadSetExportJobs(const ListReadSe
       endpointResolutionOutcome.GetResult().AddPathSegments("/sequencestore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSequenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/exportjobs");
-      return ListReadSetExportJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return ListReadSetExportJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2145,7 +2145,7 @@ ListReadSetImportJobsOutcome OmicsClient::ListReadSetImportJobs(const ListReadSe
       endpointResolutionOutcome.GetResult().AddPathSegments("/sequencestore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSequenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/importjobs");
-      return ListReadSetImportJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return ListReadSetImportJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2188,7 +2188,7 @@ ListReadSetUploadPartsOutcome OmicsClient::ListReadSetUploadParts(const ListRead
       endpointResolutionOutcome.GetResult().AddPathSegments("/upload/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUploadId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/parts");
-      return ListReadSetUploadPartsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return ListReadSetUploadPartsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2224,7 +2224,7 @@ ListReadSetsOutcome OmicsClient::ListReadSets(const ListReadSetsRequest& request
       endpointResolutionOutcome.GetResult().AddPathSegments("/sequencestore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSequenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/readsets");
-      return ListReadSetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return ListReadSetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2260,7 +2260,7 @@ ListReferenceImportJobsOutcome OmicsClient::ListReferenceImportJobs(const ListRe
       endpointResolutionOutcome.GetResult().AddPathSegments("/referencestore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReferenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/importjobs");
-      return ListReferenceImportJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return ListReferenceImportJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2289,7 +2289,7 @@ ListReferenceStoresOutcome OmicsClient::ListReferenceStores(const ListReferenceS
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("control-storage-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListReferenceStoresOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/referencestores");
-      return ListReferenceStoresOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return ListReferenceStoresOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2325,7 +2325,7 @@ ListReferencesOutcome OmicsClient::ListReferences(const ListReferencesRequest& r
       endpointResolutionOutcome.GetResult().AddPathSegments("/referencestore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReferenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/references");
-      return ListReferencesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return ListReferencesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2354,7 +2354,7 @@ ListRunGroupsOutcome OmicsClient::ListRunGroups(const ListRunGroupsRequest& requ
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("workflows-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListRunGroupsOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/runGroup");
-      return ListRunGroupsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return ListRunGroupsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2390,7 +2390,7 @@ ListRunTasksOutcome OmicsClient::ListRunTasks(const ListRunTasksRequest& request
       endpointResolutionOutcome.GetResult().AddPathSegments("/run/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/task");
-      return ListRunTasksOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return ListRunTasksOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2419,7 +2419,7 @@ ListRunsOutcome OmicsClient::ListRuns(const ListRunsRequest& request) const
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("workflows-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListRunsOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/run");
-      return ListRunsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return ListRunsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2448,7 +2448,7 @@ ListSequenceStoresOutcome OmicsClient::ListSequenceStores(const ListSequenceStor
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("control-storage-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListSequenceStoresOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/sequencestores");
-      return ListSequenceStoresOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return ListSequenceStoresOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2477,7 +2477,7 @@ ListSharesOutcome OmicsClient::ListShares(const ListSharesRequest& request) cons
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("analytics-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListSharesOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/shares");
-      return ListSharesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return ListSharesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2512,7 +2512,7 @@ ListTagsForResourceOutcome OmicsClient::ListTagsForResource(const ListTagsForRes
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListTagsForResourceOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-      return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2541,7 +2541,7 @@ ListVariantImportJobsOutcome OmicsClient::ListVariantImportJobs(const ListVarian
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("analytics-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListVariantImportJobsOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/import/variants");
-      return ListVariantImportJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return ListVariantImportJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2570,7 +2570,7 @@ ListVariantStoresOutcome OmicsClient::ListVariantStores(const ListVariantStoresR
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("analytics-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListVariantStoresOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/variantStores");
-      return ListVariantStoresOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return ListVariantStoresOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2599,7 +2599,7 @@ ListWorkflowsOutcome OmicsClient::ListWorkflows(const ListWorkflowsRequest& requ
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("workflows-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListWorkflowsOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/workflow");
-      return ListWorkflowsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
+      return ListWorkflowsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2628,7 +2628,7 @@ StartAnnotationImportJobOutcome OmicsClient::StartAnnotationImportJob(const Star
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("analytics-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), StartAnnotationImportJobOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/import/annotation");
-      return StartAnnotationImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return StartAnnotationImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2664,7 +2664,7 @@ StartReadSetActivationJobOutcome OmicsClient::StartReadSetActivationJob(const St
       endpointResolutionOutcome.GetResult().AddPathSegments("/sequencestore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSequenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/activationjob");
-      return StartReadSetActivationJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return StartReadSetActivationJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2700,7 +2700,7 @@ StartReadSetExportJobOutcome OmicsClient::StartReadSetExportJob(const StartReadS
       endpointResolutionOutcome.GetResult().AddPathSegments("/sequencestore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSequenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/exportjob");
-      return StartReadSetExportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return StartReadSetExportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2736,7 +2736,7 @@ StartReadSetImportJobOutcome OmicsClient::StartReadSetImportJob(const StartReadS
       endpointResolutionOutcome.GetResult().AddPathSegments("/sequencestore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSequenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/importjob");
-      return StartReadSetImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return StartReadSetImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2772,7 +2772,7 @@ StartReferenceImportJobOutcome OmicsClient::StartReferenceImportJob(const StartR
       endpointResolutionOutcome.GetResult().AddPathSegments("/referencestore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReferenceStoreId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/importjob");
-      return StartReferenceImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return StartReferenceImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2801,7 +2801,7 @@ StartRunOutcome OmicsClient::StartRun(const StartRunRequest& request) const
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("workflows-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), StartRunOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/run");
-      return StartRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return StartRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2830,7 +2830,7 @@ StartVariantImportJobOutcome OmicsClient::StartVariantImportJob(const StartVaria
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("analytics-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), StartVariantImportJobOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/import/variant");
-      return StartVariantImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return StartVariantImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2865,7 +2865,7 @@ TagResourceOutcome OmicsClient::TagResource(const TagResourceRequest& request) c
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), TagResourceOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-      return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2905,7 +2905,7 @@ UntagResourceOutcome OmicsClient::UntagResource(const UntagResourceRequest& requ
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UntagResourceOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-      return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::NULL_SIGNER));
+      return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2940,7 +2940,7 @@ UpdateAnnotationStoreOutcome OmicsClient::UpdateAnnotationStore(const UpdateAnno
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateAnnotationStoreOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/annotationStore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      return UpdateAnnotationStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return UpdateAnnotationStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2982,7 +2982,7 @@ UpdateAnnotationStoreVersionOutcome OmicsClient::UpdateAnnotationStoreVersion(co
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
       endpointResolutionOutcome.GetResult().AddPathSegments("/version/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionName());
-      return UpdateAnnotationStoreVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return UpdateAnnotationStoreVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -3017,7 +3017,7 @@ UpdateRunGroupOutcome OmicsClient::UpdateRunGroup(const UpdateRunGroupRequest& r
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateRunGroupOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/runGroup/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return UpdateRunGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return UpdateRunGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -3052,7 +3052,7 @@ UpdateVariantStoreOutcome OmicsClient::UpdateVariantStore(const UpdateVariantSto
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateVariantStoreOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/variantStore/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      return UpdateVariantStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return UpdateVariantStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -3087,7 +3087,7 @@ UpdateWorkflowOutcome OmicsClient::UpdateWorkflow(const UpdateWorkflowRequest& r
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateWorkflowOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/workflow/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return UpdateWorkflowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
+      return UpdateWorkflowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

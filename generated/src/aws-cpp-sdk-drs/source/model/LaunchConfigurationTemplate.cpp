@@ -28,6 +28,8 @@ LaunchConfigurationTemplate::LaunchConfigurationTemplate() :
     m_launchConfigurationTemplateIDHasBeenSet(false),
     m_launchDisposition(LaunchDisposition::NOT_SET),
     m_launchDispositionHasBeenSet(false),
+    m_launchIntoSourceInstance(false),
+    m_launchIntoSourceInstanceHasBeenSet(false),
     m_licensingHasBeenSet(false),
     m_postLaunchEnabled(false),
     m_postLaunchEnabledHasBeenSet(false),
@@ -47,6 +49,8 @@ LaunchConfigurationTemplate::LaunchConfigurationTemplate(JsonView jsonValue) :
     m_launchConfigurationTemplateIDHasBeenSet(false),
     m_launchDisposition(LaunchDisposition::NOT_SET),
     m_launchDispositionHasBeenSet(false),
+    m_launchIntoSourceInstance(false),
+    m_launchIntoSourceInstanceHasBeenSet(false),
     m_licensingHasBeenSet(false),
     m_postLaunchEnabled(false),
     m_postLaunchEnabledHasBeenSet(false),
@@ -99,6 +103,13 @@ LaunchConfigurationTemplate& LaunchConfigurationTemplate::operator =(JsonView js
     m_launchDisposition = LaunchDispositionMapper::GetLaunchDispositionForName(jsonValue.GetString("launchDisposition"));
 
     m_launchDispositionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("launchIntoSourceInstance"))
+  {
+    m_launchIntoSourceInstance = jsonValue.GetBool("launchIntoSourceInstance");
+
+    m_launchIntoSourceInstanceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("licensing"))
@@ -172,6 +183,12 @@ JsonValue LaunchConfigurationTemplate::Jsonize() const
   if(m_launchDispositionHasBeenSet)
   {
    payload.WithString("launchDisposition", LaunchDispositionMapper::GetNameForLaunchDisposition(m_launchDisposition));
+  }
+
+  if(m_launchIntoSourceInstanceHasBeenSet)
+  {
+   payload.WithBool("launchIntoSourceInstance", m_launchIntoSourceInstance);
+
   }
 
   if(m_licensingHasBeenSet)

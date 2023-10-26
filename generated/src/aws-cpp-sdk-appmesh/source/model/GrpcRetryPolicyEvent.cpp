@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GrpcRetryPolicyEvent::NOT_SET:
+            return {};
           case GrpcRetryPolicyEvent::cancelled:
             return "cancelled";
           case GrpcRetryPolicyEvent::deadline_exceeded:

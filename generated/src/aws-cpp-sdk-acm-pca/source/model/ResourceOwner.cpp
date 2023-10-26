@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceOwner::NOT_SET:
+            return {};
           case ResourceOwner::SELF:
             return "SELF";
           case ResourceOwner::OTHER_ACCOUNTS:

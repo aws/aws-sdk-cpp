@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SortInferenceExperimentsBy::NOT_SET:
+            return {};
           case SortInferenceExperimentsBy::Name:
             return "Name";
           case SortInferenceExperimentsBy::CreationTime:

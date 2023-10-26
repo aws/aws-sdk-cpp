@@ -469,6 +469,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::capacity_reservation:
             return "capacity-reservation";
           case ResourceType::client_vpn_endpoint:

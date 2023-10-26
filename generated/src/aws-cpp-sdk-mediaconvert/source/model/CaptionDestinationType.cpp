@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CaptionDestinationType::NOT_SET:
+            return {};
           case CaptionDestinationType::BURN_IN:
             return "BURN_IN";
           case CaptionDestinationType::DVB_SUB:

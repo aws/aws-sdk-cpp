@@ -100,7 +100,7 @@ namespace Model
      * number you specified in this parameter, then the response includes a
      * <code>NextToken</code> element, which you can use to obtain additional
      * results.</p> <p>The value you specify has to be at least 1, and can be no more
-     * than 10.</p>
+     * than 100.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
 
@@ -110,7 +110,7 @@ namespace Model
      * number you specified in this parameter, then the response includes a
      * <code>NextToken</code> element, which you can use to obtain additional
      * results.</p> <p>The value you specify has to be at least 1, and can be no more
-     * than 10.</p>
+     * than 100.</p>
      */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
 
@@ -120,7 +120,7 @@ namespace Model
      * number you specified in this parameter, then the response includes a
      * <code>NextToken</code> element, which you can use to obtain additional
      * results.</p> <p>The value you specify has to be at least 1, and can be no more
-     * than 10.</p>
+     * than 100.</p>
      */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
@@ -130,7 +130,7 @@ namespace Model
      * number you specified in this parameter, then the response includes a
      * <code>NextToken</code> element, which you can use to obtain additional
      * results.</p> <p>The value you specify has to be at least 1, and can be no more
-     * than 10.</p>
+     * than 100.</p>
      */
     inline ListEmailTemplatesRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 

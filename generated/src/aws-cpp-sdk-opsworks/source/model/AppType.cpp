@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppType::NOT_SET:
+            return {};
           case AppType::aws_flow_ruby:
             return "aws-flow-ruby";
           case AppType::java:

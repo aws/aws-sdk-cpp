@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContinuousDeploymentPolicyType::NOT_SET:
+            return {};
           case ContinuousDeploymentPolicyType::SingleWeight:
             return "SingleWeight";
           case ContinuousDeploymentPolicyType::SingleHeader:

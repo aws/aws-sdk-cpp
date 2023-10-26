@@ -127,56 +127,64 @@ namespace Model
     /**
      * <p>Amazon Route 53 uses the two-letter country codes that are specified in <a
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-     * alpha-2</a>.</p>
+     * alpha-2</a>.</p> <p>Route 53 also supports the contry code <b>UA</b> forr
+     * Ukraine.</p>
      */
     inline const Aws::String& GetCountryCode() const{ return m_countryCode; }
 
     /**
      * <p>Amazon Route 53 uses the two-letter country codes that are specified in <a
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-     * alpha-2</a>.</p>
+     * alpha-2</a>.</p> <p>Route 53 also supports the contry code <b>UA</b> forr
+     * Ukraine.</p>
      */
     inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
 
     /**
      * <p>Amazon Route 53 uses the two-letter country codes that are specified in <a
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-     * alpha-2</a>.</p>
+     * alpha-2</a>.</p> <p>Route 53 also supports the contry code <b>UA</b> forr
+     * Ukraine.</p>
      */
     inline void SetCountryCode(const Aws::String& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
 
     /**
      * <p>Amazon Route 53 uses the two-letter country codes that are specified in <a
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-     * alpha-2</a>.</p>
+     * alpha-2</a>.</p> <p>Route 53 also supports the contry code <b>UA</b> forr
+     * Ukraine.</p>
      */
     inline void SetCountryCode(Aws::String&& value) { m_countryCodeHasBeenSet = true; m_countryCode = std::move(value); }
 
     /**
      * <p>Amazon Route 53 uses the two-letter country codes that are specified in <a
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-     * alpha-2</a>.</p>
+     * alpha-2</a>.</p> <p>Route 53 also supports the contry code <b>UA</b> forr
+     * Ukraine.</p>
      */
     inline void SetCountryCode(const char* value) { m_countryCodeHasBeenSet = true; m_countryCode.assign(value); }
 
     /**
      * <p>Amazon Route 53 uses the two-letter country codes that are specified in <a
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-     * alpha-2</a>.</p>
+     * alpha-2</a>.</p> <p>Route 53 also supports the contry code <b>UA</b> forr
+     * Ukraine.</p>
      */
     inline GetGeoLocationRequest& WithCountryCode(const Aws::String& value) { SetCountryCode(value); return *this;}
 
     /**
      * <p>Amazon Route 53 uses the two-letter country codes that are specified in <a
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-     * alpha-2</a>.</p>
+     * alpha-2</a>.</p> <p>Route 53 also supports the contry code <b>UA</b> forr
+     * Ukraine.</p>
      */
     inline GetGeoLocationRequest& WithCountryCode(Aws::String&& value) { SetCountryCode(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Route 53 uses the two-letter country codes that are specified in <a
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-     * alpha-2</a>.</p>
+     * alpha-2</a>.</p> <p>Route 53 also supports the contry code <b>UA</b> forr
+     * Ukraine.</p>
      */
     inline GetGeoLocationRequest& WithCountryCode(const char* value) { SetCountryCode(value); return *this;}
 

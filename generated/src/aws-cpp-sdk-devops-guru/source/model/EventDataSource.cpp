@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventDataSource::NOT_SET:
+            return {};
           case EventDataSource::AWS_CLOUD_TRAIL:
             return "AWS_CLOUD_TRAIL";
           case EventDataSource::AWS_CODE_DEPLOY:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PredictiveScalingMaxCapacityBehavior::NOT_SET:
+            return {};
           case PredictiveScalingMaxCapacityBehavior::SetForecastCapacityToMaxCapacity:
             return "SetForecastCapacityToMaxCapacity";
           case PredictiveScalingMaxCapacityBehavior::SetMaxCapacityToForecastCapacity:

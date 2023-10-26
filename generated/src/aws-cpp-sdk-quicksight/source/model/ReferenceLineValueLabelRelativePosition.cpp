@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReferenceLineValueLabelRelativePosition::NOT_SET:
+            return {};
           case ReferenceLineValueLabelRelativePosition::BEFORE_CUSTOM_LABEL:
             return "BEFORE_CUSTOM_LABEL";
           case ReferenceLineValueLabelRelativePosition::AFTER_CUSTOM_LABEL:

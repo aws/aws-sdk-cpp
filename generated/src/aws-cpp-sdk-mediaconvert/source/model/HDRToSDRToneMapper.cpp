@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HDRToSDRToneMapper::NOT_SET:
+            return {};
           case HDRToSDRToneMapper::PRESERVE_DETAILS:
             return "PRESERVE_DETAILS";
           case HDRToSDRToneMapper::VIBRANT:

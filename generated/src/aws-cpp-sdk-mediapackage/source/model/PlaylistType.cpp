@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PlaylistType::NOT_SET:
+            return {};
           case PlaylistType::NONE:
             return "NONE";
           case PlaylistType::EVENT:

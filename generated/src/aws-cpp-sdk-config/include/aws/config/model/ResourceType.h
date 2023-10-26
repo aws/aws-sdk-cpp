@@ -368,7 +368,26 @@ namespace Model
     AWS_Pinpoint_EmailChannel,
     AWS_S3_AccessPoint,
     AWS_NetworkManager_CustomerGatewayAssociation,
-    AWS_NetworkManager_LinkAssociation
+    AWS_NetworkManager_LinkAssociation,
+    AWS_IoTWireless_MulticastGroup,
+    AWS_Personalize_DatasetGroup,
+    AWS_IoTTwinMaker_ComponentType,
+    AWS_CodeBuild_ReportGroup,
+    AWS_SageMaker_FeatureGroup,
+    AWS_MSK_BatchScramSecret,
+    AWS_AppStream_Stack,
+    AWS_IoT_JobTemplate,
+    AWS_IoTWireless_FuotaTask,
+    AWS_IoT_ProvisioningTemplate,
+    AWS_InspectorV2_Filter,
+    AWS_Route53Resolver_ResolverQueryLoggingConfigAssociation,
+    AWS_ServiceDiscovery_Instance,
+    AWS_Transfer_Certificate,
+    AWS_MediaConnect_FlowSource,
+    AWS_APS_RuleGroupsNamespace,
+    AWS_CodeGuruProfiler_ProfilingGroup,
+    AWS_Route53Resolver_ResolverQueryLoggingConfig,
+    AWS_Batch_SchedulingPolicy
   };
 
 namespace ResourceTypeMapper

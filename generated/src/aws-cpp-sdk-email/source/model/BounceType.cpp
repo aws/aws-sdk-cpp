@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BounceType::NOT_SET:
+            return {};
           case BounceType::DoesNotExist:
             return "DoesNotExist";
           case BounceType::MessageTooLarge:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NameServersUpdateStateCode::NOT_SET:
+            return {};
           case NameServersUpdateStateCode::SUCCEEDED:
             return "SUCCEEDED";
           case NameServersUpdateStateCode::PENDING:

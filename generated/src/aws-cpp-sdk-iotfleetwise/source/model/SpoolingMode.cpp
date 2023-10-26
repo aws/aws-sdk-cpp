@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SpoolingMode::NOT_SET:
+            return {};
           case SpoolingMode::OFF:
             return "OFF";
           case SpoolingMode::TO_DISK:

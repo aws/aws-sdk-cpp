@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::DATA_SET:
             return "DATA_SET";
           case ResourceType::REVISION:

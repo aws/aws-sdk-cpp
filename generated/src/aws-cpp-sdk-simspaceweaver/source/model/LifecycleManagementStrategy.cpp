@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LifecycleManagementStrategy::NOT_SET:
+            return {};
           case LifecycleManagementStrategy::Unknown:
             return "Unknown";
           case LifecycleManagementStrategy::PerWorker:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatabaseManagementPreference::NOT_SET:
+            return {};
           case DatabaseManagementPreference::AWS_managed:
             return "AWS-managed";
           case DatabaseManagementPreference::Self_manage:

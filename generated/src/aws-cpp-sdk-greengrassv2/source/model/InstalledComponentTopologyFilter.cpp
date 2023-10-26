@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstalledComponentTopologyFilter::NOT_SET:
+            return {};
           case InstalledComponentTopologyFilter::ALL:
             return "ALL";
           case InstalledComponentTopologyFilter::ROOT:

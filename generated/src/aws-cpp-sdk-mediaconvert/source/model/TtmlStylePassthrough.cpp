@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TtmlStylePassthrough::NOT_SET:
+            return {};
           case TtmlStylePassthrough::ENABLED:
             return "ENABLED";
           case TtmlStylePassthrough::DISABLED:

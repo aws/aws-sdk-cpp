@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutomaticFailoverStatus::NOT_SET:
+            return {};
           case AutomaticFailoverStatus::enabled:
             return "enabled";
           case AutomaticFailoverStatus::disabled:

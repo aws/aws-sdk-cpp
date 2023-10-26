@@ -67,7 +67,9 @@ Snapshot::Snapshot() :
     m_manualSnapshotRetentionPeriodHasBeenSet(false),
     m_manualSnapshotRemainingDays(0),
     m_manualSnapshotRemainingDaysHasBeenSet(false),
-    m_snapshotRetentionStartTimeHasBeenSet(false)
+    m_snapshotRetentionStartTimeHasBeenSet(false),
+    m_masterPasswordSecretArnHasBeenSet(false),
+    m_masterPasswordSecretKmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -118,7 +120,9 @@ Snapshot::Snapshot(const XmlNode& xmlNode) :
     m_manualSnapshotRetentionPeriodHasBeenSet(false),
     m_manualSnapshotRemainingDays(0),
     m_manualSnapshotRemainingDaysHasBeenSet(false),
-    m_snapshotRetentionStartTimeHasBeenSet(false)
+    m_snapshotRetentionStartTimeHasBeenSet(false),
+    m_masterPasswordSecretArnHasBeenSet(false),
+    m_masterPasswordSecretKmsKeyIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -351,6 +355,18 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
       m_snapshotRetentionStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotRetentionStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_snapshotRetentionStartTimeHasBeenSet = true;
     }
+    XmlNode masterPasswordSecretArnNode = resultNode.FirstChild("MasterPasswordSecretArn");
+    if(!masterPasswordSecretArnNode.IsNull())
+    {
+      m_masterPasswordSecretArn = Aws::Utils::Xml::DecodeEscapedXmlText(masterPasswordSecretArnNode.GetText());
+      m_masterPasswordSecretArnHasBeenSet = true;
+    }
+    XmlNode masterPasswordSecretKmsKeyIdNode = resultNode.FirstChild("MasterPasswordSecretKmsKeyId");
+    if(!masterPasswordSecretKmsKeyIdNode.IsNull())
+    {
+      m_masterPasswordSecretKmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(masterPasswordSecretKmsKeyIdNode.GetText());
+      m_masterPasswordSecretKmsKeyIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -544,6 +560,16 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".SnapshotRetentionStartTime=" << StringUtils::URLEncode(m_snapshotRetentionStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_masterPasswordSecretArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MasterPasswordSecretArn=" << StringUtils::URLEncode(m_masterPasswordSecretArn.c_str()) << "&";
+  }
+
+  if(m_masterPasswordSecretKmsKeyIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MasterPasswordSecretKmsKeyId=" << StringUtils::URLEncode(m_masterPasswordSecretKmsKeyId.c_str()) << "&";
+  }
+
 }
 
 void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -699,6 +725,14 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_snapshotRetentionStartTimeHasBeenSet)
   {
       oStream << location << ".SnapshotRetentionStartTime=" << StringUtils::URLEncode(m_snapshotRetentionStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_masterPasswordSecretArnHasBeenSet)
+  {
+      oStream << location << ".MasterPasswordSecretArn=" << StringUtils::URLEncode(m_masterPasswordSecretArn.c_str()) << "&";
+  }
+  if(m_masterPasswordSecretKmsKeyIdHasBeenSet)
+  {
+      oStream << location << ".MasterPasswordSecretKmsKeyId=" << StringUtils::URLEncode(m_masterPasswordSecretKmsKeyId.c_str()) << "&";
   }
 }
 

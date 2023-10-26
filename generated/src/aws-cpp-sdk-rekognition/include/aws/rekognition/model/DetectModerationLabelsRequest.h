@@ -8,6 +8,7 @@
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/rekognition/model/Image.h>
 #include <aws/rekognition/model/HumanLoopConfig.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -169,6 +170,63 @@ namespace Model
      */
     inline DetectModerationLabelsRequest& WithHumanLoopConfig(HumanLoopConfig&& value) { SetHumanLoopConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Identifier for the custom adapter. Expects the ProjectVersionArn as a value.
+     * Use the CreateProject or CreateProjectVersion APIs to create a custom
+     * adapter.</p>
+     */
+    inline const Aws::String& GetProjectVersion() const{ return m_projectVersion; }
+
+    /**
+     * <p>Identifier for the custom adapter. Expects the ProjectVersionArn as a value.
+     * Use the CreateProject or CreateProjectVersion APIs to create a custom
+     * adapter.</p>
+     */
+    inline bool ProjectVersionHasBeenSet() const { return m_projectVersionHasBeenSet; }
+
+    /**
+     * <p>Identifier for the custom adapter. Expects the ProjectVersionArn as a value.
+     * Use the CreateProject or CreateProjectVersion APIs to create a custom
+     * adapter.</p>
+     */
+    inline void SetProjectVersion(const Aws::String& value) { m_projectVersionHasBeenSet = true; m_projectVersion = value; }
+
+    /**
+     * <p>Identifier for the custom adapter. Expects the ProjectVersionArn as a value.
+     * Use the CreateProject or CreateProjectVersion APIs to create a custom
+     * adapter.</p>
+     */
+    inline void SetProjectVersion(Aws::String&& value) { m_projectVersionHasBeenSet = true; m_projectVersion = std::move(value); }
+
+    /**
+     * <p>Identifier for the custom adapter. Expects the ProjectVersionArn as a value.
+     * Use the CreateProject or CreateProjectVersion APIs to create a custom
+     * adapter.</p>
+     */
+    inline void SetProjectVersion(const char* value) { m_projectVersionHasBeenSet = true; m_projectVersion.assign(value); }
+
+    /**
+     * <p>Identifier for the custom adapter. Expects the ProjectVersionArn as a value.
+     * Use the CreateProject or CreateProjectVersion APIs to create a custom
+     * adapter.</p>
+     */
+    inline DetectModerationLabelsRequest& WithProjectVersion(const Aws::String& value) { SetProjectVersion(value); return *this;}
+
+    /**
+     * <p>Identifier for the custom adapter. Expects the ProjectVersionArn as a value.
+     * Use the CreateProject or CreateProjectVersion APIs to create a custom
+     * adapter.</p>
+     */
+    inline DetectModerationLabelsRequest& WithProjectVersion(Aws::String&& value) { SetProjectVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Identifier for the custom adapter. Expects the ProjectVersionArn as a value.
+     * Use the CreateProject or CreateProjectVersion APIs to create a custom
+     * adapter.</p>
+     */
+    inline DetectModerationLabelsRequest& WithProjectVersion(const char* value) { SetProjectVersion(value); return *this;}
+
   private:
 
     Image m_image;
@@ -179,6 +237,9 @@ namespace Model
 
     HumanLoopConfig m_humanLoopConfig;
     bool m_humanLoopConfigHasBeenSet = false;
+
+    Aws::String m_projectVersion;
+    bool m_projectVersionHasBeenSet = false;
   };
 
 } // namespace Model

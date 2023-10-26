@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchJobDependencyType::NOT_SET:
+            return {};
           case BatchJobDependencyType::N_TO_N:
             return "N_TO_N";
           case BatchJobDependencyType::SEQUENTIAL:

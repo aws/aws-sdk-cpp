@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExtensionStatus::NOT_SET:
+            return {};
           case ExtensionStatus::EXTENDED:
             return "EXTENDED";
           case ExtensionStatus::EXTENSION_ERROR:

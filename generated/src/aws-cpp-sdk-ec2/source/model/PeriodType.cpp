@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PeriodType::NOT_SET:
+            return {};
           case PeriodType::five_minutes:
             return "five-minutes";
           case PeriodType::fifteen_minutes:

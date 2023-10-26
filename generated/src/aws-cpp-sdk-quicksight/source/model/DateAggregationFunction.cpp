@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DateAggregationFunction::NOT_SET:
+            return {};
           case DateAggregationFunction::COUNT:
             return "COUNT";
           case DateAggregationFunction::DISTINCT_COUNT:

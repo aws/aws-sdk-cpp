@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LambdaEventSourceType::NOT_SET:
+            return {};
           case LambdaEventSourceType::PUB_SUB:
             return "PUB_SUB";
           case LambdaEventSourceType::IOT_CORE:

@@ -366,6 +366,42 @@ namespace Model
     inline GetRunTaskResult& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
 
+    /**
+     * <p> The reason a task has failed. </p>
+     */
+    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p> The reason a task has failed. </p>
+     */
+    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
+
+    /**
+     * <p> The reason a task has failed. </p>
+     */
+    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
+
+    /**
+     * <p> The reason a task has failed. </p>
+     */
+    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
+
+    /**
+     * <p> The reason a task has failed. </p>
+     */
+    inline GetRunTaskResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
+
+    /**
+     * <p> The reason a task has failed. </p>
+     */
+    inline GetRunTaskResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
+
+    /**
+     * <p> The reason a task has failed. </p>
+     */
+    inline GetRunTaskResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -412,6 +448,8 @@ namespace Model
     int m_gpus;
 
     Aws::String m_instanceType;
+
+    Aws::String m_failureReason;
 
     Aws::String m_requestId;
   };

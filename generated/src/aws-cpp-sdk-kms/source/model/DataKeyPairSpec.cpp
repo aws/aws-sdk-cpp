@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataKeyPairSpec::NOT_SET:
+            return {};
           case DataKeyPairSpec::RSA_2048:
             return "RSA_2048";
           case DataKeyPairSpec::RSA_3072:

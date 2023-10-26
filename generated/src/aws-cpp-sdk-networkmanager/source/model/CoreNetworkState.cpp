@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CoreNetworkState::NOT_SET:
+            return {};
           case CoreNetworkState::CREATING:
             return "CREATING";
           case CoreNetworkState::UPDATING:

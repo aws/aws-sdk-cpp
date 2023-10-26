@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncryptionType::NOT_SET:
+            return {};
           case EncryptionType::SITEWISE_DEFAULT_ENCRYPTION:
             return "SITEWISE_DEFAULT_ENCRYPTION";
           case EncryptionType::KMS_BASED_ENCRYPTION:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageActionType::NOT_SET:
+            return {};
           case ImageActionType::EXPIRE:
             return "EXPIRE";
           default:

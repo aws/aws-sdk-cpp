@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterType::NOT_SET:
+            return {};
           case FilterType::SIMPLE_PATTERN:
             return "SIMPLE_PATTERN";
           default:

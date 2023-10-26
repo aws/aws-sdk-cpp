@@ -22,6 +22,7 @@ SchemaInputAttribute::SchemaInputAttribute() :
     m_fieldNameHasBeenSet(false),
     m_groupNameHasBeenSet(false),
     m_matchKeyHasBeenSet(false),
+    m_subTypeHasBeenSet(false),
     m_type(SchemaAttributeType::NOT_SET),
     m_typeHasBeenSet(false)
 {
@@ -31,6 +32,7 @@ SchemaInputAttribute::SchemaInputAttribute(JsonView jsonValue) :
     m_fieldNameHasBeenSet(false),
     m_groupNameHasBeenSet(false),
     m_matchKeyHasBeenSet(false),
+    m_subTypeHasBeenSet(false),
     m_type(SchemaAttributeType::NOT_SET),
     m_typeHasBeenSet(false)
 {
@@ -58,6 +60,13 @@ SchemaInputAttribute& SchemaInputAttribute::operator =(JsonView jsonValue)
     m_matchKey = jsonValue.GetString("matchKey");
 
     m_matchKeyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("subType"))
+  {
+    m_subType = jsonValue.GetString("subType");
+
+    m_subTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("type"))
@@ -89,6 +98,12 @@ JsonValue SchemaInputAttribute::Jsonize() const
   if(m_matchKeyHasBeenSet)
   {
    payload.WithString("matchKey", m_matchKey);
+
+  }
+
+  if(m_subTypeHasBeenSet)
+  {
+   payload.WithString("subType", m_subType);
 
   }
 

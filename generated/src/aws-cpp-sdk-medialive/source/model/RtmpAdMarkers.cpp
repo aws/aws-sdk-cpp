@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RtmpAdMarkers::NOT_SET:
+            return {};
           case RtmpAdMarkers::ON_CUE_POINT_SCTE35:
             return "ON_CUE_POINT_SCTE35";
           default:

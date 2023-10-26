@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CoreDeviceStatus::NOT_SET:
+            return {};
           case CoreDeviceStatus::HEALTHY:
             return "HEALTHY";
           case CoreDeviceStatus::UNHEALTHY:

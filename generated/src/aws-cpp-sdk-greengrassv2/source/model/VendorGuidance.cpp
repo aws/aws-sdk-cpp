@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VendorGuidance::NOT_SET:
+            return {};
           case VendorGuidance::ACTIVE:
             return "ACTIVE";
           case VendorGuidance::DISCONTINUED:

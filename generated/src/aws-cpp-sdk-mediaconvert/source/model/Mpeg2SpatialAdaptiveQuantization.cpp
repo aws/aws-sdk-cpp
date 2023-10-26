@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2SpatialAdaptiveQuantization::NOT_SET:
+            return {};
           case Mpeg2SpatialAdaptiveQuantization::DISABLED:
             return "DISABLED";
           case Mpeg2SpatialAdaptiveQuantization::ENABLED:

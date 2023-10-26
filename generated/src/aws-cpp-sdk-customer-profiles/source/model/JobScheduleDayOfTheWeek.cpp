@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobScheduleDayOfTheWeek::NOT_SET:
+            return {};
           case JobScheduleDayOfTheWeek::SUNDAY:
             return "SUNDAY";
           case JobScheduleDayOfTheWeek::MONDAY:

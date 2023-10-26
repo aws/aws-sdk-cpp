@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3AclOption::NOT_SET:
+            return {};
           case S3AclOption::BUCKET_OWNER_FULL_CONTROL:
             return "BUCKET_OWNER_FULL_CONTROL";
           default:

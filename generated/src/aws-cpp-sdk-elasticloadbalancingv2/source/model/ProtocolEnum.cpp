@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProtocolEnum::NOT_SET:
+            return {};
           case ProtocolEnum::HTTP:
             return "HTTP";
           case ProtocolEnum::HTTPS:

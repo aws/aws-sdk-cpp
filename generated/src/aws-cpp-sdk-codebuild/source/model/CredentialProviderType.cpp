@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CredentialProviderType::NOT_SET:
+            return {};
           case CredentialProviderType::SECRETS_MANAGER:
             return "SECRETS_MANAGER";
           default:

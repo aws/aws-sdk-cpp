@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NielsenUniqueTicPerAudioTrackType::NOT_SET:
+            return {};
           case NielsenUniqueTicPerAudioTrackType::RESERVE_UNIQUE_TICS_PER_TRACK:
             return "RESERVE_UNIQUE_TICS_PER_TRACK";
           case NielsenUniqueTicPerAudioTrackType::SAME_TICS_PER_TRACK:

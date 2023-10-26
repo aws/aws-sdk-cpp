@@ -27,6 +27,7 @@ namespace Aws
         static const int transient_HASH = HashingUtils::HashString("transient");
         static const int failed_HASH = HashingUtils::HashString("failed");
         static const int error_HASH = HashingUtils::HashString("error");
+        static const int disabled_HASH = HashingUtils::HashString("disabled");
 
 
         ImageState GetImageStateForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return ImageState::error;
           }
+          else if (hashCode == disabled_HASH)
+          {
+            return ImageState::disabled;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageState::NOT_SET:
+            return {};
           case ImageState::pending:
             return "pending";
           case ImageState::available:
@@ -88,6 +95,8 @@ namespace Aws
             return "failed";
           case ImageState::error:
             return "error";
+          case ImageState::disabled:
+            return "disabled";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

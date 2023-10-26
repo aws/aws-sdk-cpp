@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsAudioTrackType::NOT_SET:
+            return {};
           case HlsAudioTrackType::ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT:
             return "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT";
           case HlsAudioTrackType::ALTERNATE_AUDIO_AUTO_SELECT:

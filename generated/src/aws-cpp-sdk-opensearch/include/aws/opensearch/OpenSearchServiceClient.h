@@ -943,6 +943,31 @@ namespace OpenSearchService
         }
 
         /**
+         * <p>Get the status of the maintenance action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDomainMaintenanceStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDomainMaintenanceStatusOutcome GetDomainMaintenanceStatus(const Model::GetDomainMaintenanceStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDomainMaintenanceStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDomainMaintenanceStatusRequestT = Model::GetDomainMaintenanceStatusRequest>
+        Model::GetDomainMaintenanceStatusOutcomeCallable GetDomainMaintenanceStatusCallable(const GetDomainMaintenanceStatusRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServiceClient::GetDomainMaintenanceStatus, request);
+        }
+
+        /**
+         * An Async wrapper for GetDomainMaintenanceStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDomainMaintenanceStatusRequestT = Model::GetDomainMaintenanceStatusRequest>
+        void GetDomainMaintenanceStatusAsync(const GetDomainMaintenanceStatusRequestT& request, const GetDomainMaintenanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServiceClient::GetDomainMaintenanceStatus, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of Amazon OpenSearch Service package versions, along with
          * their creation time, commit message, and plugin properties (if the package is a
          * zip plugin package). For more information, see <a
@@ -1022,6 +1047,31 @@ namespace OpenSearchService
         void GetUpgradeStatusAsync(const GetUpgradeStatusRequestT& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OpenSearchServiceClient::GetUpgradeStatus, request, handler, context);
+        }
+
+        /**
+         * <p>Get the list of the maintenance action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainMaintenances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDomainMaintenancesOutcome ListDomainMaintenances(const Model::ListDomainMaintenancesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDomainMaintenances that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDomainMaintenancesRequestT = Model::ListDomainMaintenancesRequest>
+        Model::ListDomainMaintenancesOutcomeCallable ListDomainMaintenancesCallable(const ListDomainMaintenancesRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServiceClient::ListDomainMaintenances, request);
+        }
+
+        /**
+         * An Async wrapper for ListDomainMaintenances that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDomainMaintenancesRequestT = Model::ListDomainMaintenancesRequest>
+        void ListDomainMaintenancesAsync(const ListDomainMaintenancesRequestT& request, const ListDomainMaintenancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServiceClient::ListDomainMaintenances, request, handler, context);
         }
 
         /**
@@ -1402,6 +1452,33 @@ namespace OpenSearchService
         }
 
         /**
+         * <p>Starts the node maintenance (Node restart, Node reboot,
+         * Opensearch/Elasticsearch process restart, Dashboard/kibana restart) on the data
+         * node.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartDomainMaintenance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartDomainMaintenanceOutcome StartDomainMaintenance(const Model::StartDomainMaintenanceRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartDomainMaintenance that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartDomainMaintenanceRequestT = Model::StartDomainMaintenanceRequest>
+        Model::StartDomainMaintenanceOutcomeCallable StartDomainMaintenanceCallable(const StartDomainMaintenanceRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServiceClient::StartDomainMaintenance, request);
+        }
+
+        /**
+         * An Async wrapper for StartDomainMaintenance that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartDomainMaintenanceRequestT = Model::StartDomainMaintenanceRequest>
+        void StartDomainMaintenanceAsync(const StartDomainMaintenanceRequestT& request, const StartDomainMaintenanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServiceClient::StartDomainMaintenance, request, handler, context);
+        }
+
+        /**
          * <p>Schedules a service software update for an Amazon OpenSearch Service domain.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service
@@ -1431,7 +1508,7 @@ namespace OpenSearchService
 
         /**
          * <p>Modifies the cluster configuration of the specified Amazon OpenSearch Service
-         * domain.sl</p><p><h3>See Also:</h3>   <a
+         * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDomainConfig">AWS
          * API Reference</a></p>
          */

@@ -787,9 +787,13 @@
       "type":"structure",
       "required":["namespaceName"],
       "members":{
+        "adminPasswordSecretKmsKeyId":{
+          "shape":"KmsKeyId",
+          "documentation":"<p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.</p>"
+        },
         "adminUserPassword":{
           "shape":"DbPassword",
-          "documentation":"<p>The password of the administrator for the first database created in the namespace.</p>"
+          "documentation":"<p>The password of the administrator for the first database created in the namespace.</p> <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. </p>"
         },
         "adminUsername":{
           "shape":"DbUser",
@@ -814,6 +818,10 @@
         "logExports":{
           "shape":"LogExportList",
           "documentation":"<p>The types of logs the namespace can export. Available export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>"
+        },
+        "manageAdminPassword":{
+          "shape":"Boolean",
+          "documentation":"<p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the admin user account's password. </p>"
         },
         "namespaceName":{
           "shape":"NamespaceName",
@@ -1740,6 +1748,14 @@
     "Namespace":{
       "type":"structure",
       "members":{
+        "adminPasswordSecretArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.</p>"
+        },
+        "adminPasswordSecretKmsKeyId":{
+          "shape":"KmsKeyId",
+          "documentation":"<p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>"
+        },
         "adminUsername":{
           "shape":"DbUser",
           "documentation":"<p>The username of the administrator for the first database created in the namespace.</p>"
@@ -1967,6 +1983,14 @@
         "workgroupName"
       ],
       "members":{
+        "adminPasswordSecretKmsKeyId":{
+          "shape":"KmsKeyId",
+          "documentation":"<p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>"
+        },
+        "manageAdminPassword":{
+          "shape":"Boolean",
+          "documentation":"<p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials. If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin credentials that the namespace or cluster had at the time the snapshot was taken.</p>"
+        },
         "namespaceName":{
           "shape":"NamespaceName",
           "documentation":"<p>The name of the namespace to restore the snapshot to.</p>"
@@ -2093,6 +2117,14 @@
         "actualIncrementalBackupSizeInMegaBytes":{
           "shape":"Double",
           "documentation":"<p>The size of the incremental backup in megabytes.</p>"
+        },
+        "adminPasswordSecretArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.</p>"
+        },
+        "adminPasswordSecretKmsKeyId":{
+          "shape":"KmsKeyId",
+          "documentation":"<p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>"
         },
         "adminUsername":{
           "shape":"String",
@@ -2394,9 +2426,13 @@
       "type":"structure",
       "required":["namespaceName"],
       "members":{
+        "adminPasswordSecretKmsKeyId":{
+          "shape":"KmsKeyId",
+          "documentation":"<p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.</p>"
+        },
         "adminUserPassword":{
           "shape":"DbPassword",
-          "documentation":"<p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>"
+          "documentation":"<p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>"
         },
         "adminUsername":{
           "shape":"DbUser",
@@ -2417,6 +2453,10 @@
         "logExports":{
           "shape":"LogExportList",
           "documentation":"<p>The types of logs the namespace can export. The export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>"
+        },
+        "manageAdminPassword":{
+          "shape":"Boolean",
+          "documentation":"<p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the admin user account's password. </p>"
         },
         "namespaceName":{
           "shape":"NamespaceName",
@@ -2676,6 +2716,10 @@
           "shape":"String",
           "documentation":"<p>The namespace the workgroup is associated with.</p>"
         },
+        "patchVersion":{
+          "shape":"String",
+          "documentation":"<p>The patch version of your Amazon Redshift Serverless workgroup. For more information about patch versions, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html\">Cluster versions for Amazon Redshift</a>.</p>"
+        },
         "port":{
           "shape":"Integer",
           "documentation":"<p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>"
@@ -2707,6 +2751,10 @@
         "workgroupName":{
           "shape":"WorkgroupName",
           "documentation":"<p>The name of the workgroup.</p>"
+        },
+        "workgroupVersion":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Redshift Serverless version of your workgroup. For more information about Amazon Redshift Serverless versions, see<a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html\">Cluster versions for Amazon Redshift</a>.</p>"
         }
       },
       "documentation":"<p>The collection of computing resources from which an endpoint is created.</p>"

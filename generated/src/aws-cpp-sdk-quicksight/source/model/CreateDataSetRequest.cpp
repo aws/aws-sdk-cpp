@@ -28,7 +28,8 @@ CreateDataSetRequest::CreateDataSetRequest() :
     m_columnLevelPermissionRulesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_dataSetUsageConfigurationHasBeenSet(false),
-    m_datasetParametersHasBeenSet(false)
+    m_datasetParametersHasBeenSet(false),
+    m_folderArnsHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,17 @@ Aws::String CreateDataSetRequest::SerializePayload() const
      datasetParametersJsonList[datasetParametersIndex].AsObject(m_datasetParameters[datasetParametersIndex].Jsonize());
    }
    payload.WithArray("DatasetParameters", std::move(datasetParametersJsonList));
+
+  }
+
+  if(m_folderArnsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> folderArnsJsonList(m_folderArns.size());
+   for(unsigned folderArnsIndex = 0; folderArnsIndex < folderArnsJsonList.GetLength(); ++folderArnsIndex)
+   {
+     folderArnsJsonList[folderArnsIndex].AsString(m_folderArns[folderArnsIndex]);
+   }
+   payload.WithArray("FolderArns", std::move(folderArnsJsonList));
 
   }
 

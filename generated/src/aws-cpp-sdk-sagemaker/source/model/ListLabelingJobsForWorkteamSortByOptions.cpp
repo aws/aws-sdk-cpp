@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListLabelingJobsForWorkteamSortByOptions::NOT_SET:
+            return {};
           case ListLabelingJobsForWorkteamSortByOptions::CreationTime:
             return "CreationTime";
           default:

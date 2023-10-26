@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KafkaSslEndpointIdentificationAlgorithm::NOT_SET:
+            return {};
           case KafkaSslEndpointIdentificationAlgorithm::none:
             return "none";
           case KafkaSslEndpointIdentificationAlgorithm::https:

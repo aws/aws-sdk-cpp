@@ -164,6 +164,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LayerAttributesKeys::NOT_SET:
+            return {};
           case LayerAttributesKeys::EcsClusterArn:
             return "EcsClusterArn";
           case LayerAttributesKeys::EnableHaproxyStats:

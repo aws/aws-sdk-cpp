@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionHistoryStatus::NOT_SET:
+            return {};
           case ActionHistoryStatus::Completed:
             return "Completed";
           case ActionHistoryStatus::Failed:

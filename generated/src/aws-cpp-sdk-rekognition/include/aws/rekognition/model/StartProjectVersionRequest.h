@@ -85,45 +85,33 @@ namespace Model
 
     /**
      * <p>The minimum number of inference units to use. A single inference unit
-     * represents 1 hour of processing. </p> <p>For information about the number of
-     * transactions per second (TPS) that an inference unit can support, see <i>Running
-     * a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition
-     * Custom Labels Guide. </p> <p>Use a higher number to increase the TPS throughput
-     * of your model. You are charged for the number of inference units that you use.
-     * </p>
+     * represents 1 hour of processing. </p> <p>Use a higher number to increase the TPS
+     * throughput of your model. You are charged for the number of inference units that
+     * you use. </p>
      */
     inline int GetMinInferenceUnits() const{ return m_minInferenceUnits; }
 
     /**
      * <p>The minimum number of inference units to use. A single inference unit
-     * represents 1 hour of processing. </p> <p>For information about the number of
-     * transactions per second (TPS) that an inference unit can support, see <i>Running
-     * a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition
-     * Custom Labels Guide. </p> <p>Use a higher number to increase the TPS throughput
-     * of your model. You are charged for the number of inference units that you use.
-     * </p>
+     * represents 1 hour of processing. </p> <p>Use a higher number to increase the TPS
+     * throughput of your model. You are charged for the number of inference units that
+     * you use. </p>
      */
     inline bool MinInferenceUnitsHasBeenSet() const { return m_minInferenceUnitsHasBeenSet; }
 
     /**
      * <p>The minimum number of inference units to use. A single inference unit
-     * represents 1 hour of processing. </p> <p>For information about the number of
-     * transactions per second (TPS) that an inference unit can support, see <i>Running
-     * a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition
-     * Custom Labels Guide. </p> <p>Use a higher number to increase the TPS throughput
-     * of your model. You are charged for the number of inference units that you use.
-     * </p>
+     * represents 1 hour of processing. </p> <p>Use a higher number to increase the TPS
+     * throughput of your model. You are charged for the number of inference units that
+     * you use. </p>
      */
     inline void SetMinInferenceUnits(int value) { m_minInferenceUnitsHasBeenSet = true; m_minInferenceUnits = value; }
 
     /**
      * <p>The minimum number of inference units to use. A single inference unit
-     * represents 1 hour of processing. </p> <p>For information about the number of
-     * transactions per second (TPS) that an inference unit can support, see <i>Running
-     * a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition
-     * Custom Labels Guide. </p> <p>Use a higher number to increase the TPS throughput
-     * of your model. You are charged for the number of inference units that you use.
-     * </p>
+     * represents 1 hour of processing. </p> <p>Use a higher number to increase the TPS
+     * throughput of your model. You are charged for the number of inference units that
+     * you use. </p>
      */
     inline StartProjectVersionRequest& WithMinInferenceUnits(int value) { SetMinInferenceUnits(value); return *this;}
 

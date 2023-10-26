@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M3u8DataPtsControl::NOT_SET:
+            return {};
           case M3u8DataPtsControl::AUTO:
             return "AUTO";
           case M3u8DataPtsControl::ALIGN_TO_VIDEO:

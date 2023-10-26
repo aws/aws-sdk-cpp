@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserDesignation::NOT_SET:
+            return {};
           case UserDesignation::PROJECT_OWNER:
             return "PROJECT_OWNER";
           case UserDesignation::PROJECT_CONTRIBUTOR:

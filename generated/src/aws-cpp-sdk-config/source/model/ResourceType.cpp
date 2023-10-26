@@ -373,6 +373,25 @@ namespace Aws
         static const int AWS_S3_AccessPoint_HASH = HashingUtils::HashString("AWS::S3::AccessPoint");
         static const int AWS_NetworkManager_CustomerGatewayAssociation_HASH = HashingUtils::HashString("AWS::NetworkManager::CustomerGatewayAssociation");
         static const int AWS_NetworkManager_LinkAssociation_HASH = HashingUtils::HashString("AWS::NetworkManager::LinkAssociation");
+        static const int AWS_IoTWireless_MulticastGroup_HASH = HashingUtils::HashString("AWS::IoTWireless::MulticastGroup");
+        static const int AWS_Personalize_DatasetGroup_HASH = HashingUtils::HashString("AWS::Personalize::DatasetGroup");
+        static const int AWS_IoTTwinMaker_ComponentType_HASH = HashingUtils::HashString("AWS::IoTTwinMaker::ComponentType");
+        static const int AWS_CodeBuild_ReportGroup_HASH = HashingUtils::HashString("AWS::CodeBuild::ReportGroup");
+        static const int AWS_SageMaker_FeatureGroup_HASH = HashingUtils::HashString("AWS::SageMaker::FeatureGroup");
+        static const int AWS_MSK_BatchScramSecret_HASH = HashingUtils::HashString("AWS::MSK::BatchScramSecret");
+        static const int AWS_AppStream_Stack_HASH = HashingUtils::HashString("AWS::AppStream::Stack");
+        static const int AWS_IoT_JobTemplate_HASH = HashingUtils::HashString("AWS::IoT::JobTemplate");
+        static const int AWS_IoTWireless_FuotaTask_HASH = HashingUtils::HashString("AWS::IoTWireless::FuotaTask");
+        static const int AWS_IoT_ProvisioningTemplate_HASH = HashingUtils::HashString("AWS::IoT::ProvisioningTemplate");
+        static const int AWS_InspectorV2_Filter_HASH = HashingUtils::HashString("AWS::InspectorV2::Filter");
+        static const int AWS_Route53Resolver_ResolverQueryLoggingConfigAssociation_HASH = HashingUtils::HashString("AWS::Route53Resolver::ResolverQueryLoggingConfigAssociation");
+        static const int AWS_ServiceDiscovery_Instance_HASH = HashingUtils::HashString("AWS::ServiceDiscovery::Instance");
+        static const int AWS_Transfer_Certificate_HASH = HashingUtils::HashString("AWS::Transfer::Certificate");
+        static const int AWS_MediaConnect_FlowSource_HASH = HashingUtils::HashString("AWS::MediaConnect::FlowSource");
+        static const int AWS_APS_RuleGroupsNamespace_HASH = HashingUtils::HashString("AWS::APS::RuleGroupsNamespace");
+        static const int AWS_CodeGuruProfiler_ProfilingGroup_HASH = HashingUtils::HashString("AWS::CodeGuruProfiler::ProfilingGroup");
+        static const int AWS_Route53Resolver_ResolverQueryLoggingConfig_HASH = HashingUtils::HashString("AWS::Route53Resolver::ResolverQueryLoggingConfig");
+        static const int AWS_Batch_SchedulingPolicy_HASH = HashingUtils::HashString("AWS::Batch::SchedulingPolicy");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -2154,6 +2173,105 @@ namespace Aws
             enumValue = ResourceType::AWS_NetworkManager_LinkAssociation;
             return true;
           }
+          else if (hashCode == AWS_IoTWireless_MulticastGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTWireless_MulticastGroup;
+            return true;
+          }
+          else if (hashCode == AWS_Personalize_DatasetGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_Personalize_DatasetGroup;
+            return true;
+          }
+          else if (hashCode == AWS_IoTTwinMaker_ComponentType_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTTwinMaker_ComponentType;
+            return true;
+          }
+          else if (hashCode == AWS_CodeBuild_ReportGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_CodeBuild_ReportGroup;
+            return true;
+          }
+          else if (hashCode == AWS_SageMaker_FeatureGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_SageMaker_FeatureGroup;
+            return true;
+          }
+          else if (hashCode == AWS_MSK_BatchScramSecret_HASH)
+          {
+            enumValue = ResourceType::AWS_MSK_BatchScramSecret;
+            return true;
+          }
+          else if (hashCode == AWS_AppStream_Stack_HASH)
+          {
+            enumValue = ResourceType::AWS_AppStream_Stack;
+            return true;
+          }
+          else if (hashCode == AWS_IoT_JobTemplate_HASH)
+          {
+            enumValue = ResourceType::AWS_IoT_JobTemplate;
+            return true;
+          }
+          else if (hashCode == AWS_IoTWireless_FuotaTask_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTWireless_FuotaTask;
+            return true;
+          }
+          else if (hashCode == AWS_IoT_ProvisioningTemplate_HASH)
+          {
+            enumValue = ResourceType::AWS_IoT_ProvisioningTemplate;
+            return true;
+          }
+          else if (hashCode == AWS_InspectorV2_Filter_HASH)
+          {
+            enumValue = ResourceType::AWS_InspectorV2_Filter;
+            return true;
+          }
+          else if (hashCode == AWS_Route53Resolver_ResolverQueryLoggingConfigAssociation_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53Resolver_ResolverQueryLoggingConfigAssociation;
+            return true;
+          }
+          else if (hashCode == AWS_ServiceDiscovery_Instance_HASH)
+          {
+            enumValue = ResourceType::AWS_ServiceDiscovery_Instance;
+            return true;
+          }
+          return false;
+        }
+        static bool GetEnumForNameHelper3(int hashCode, ResourceType& enumValue)
+        {
+          if (hashCode == AWS_Transfer_Certificate_HASH)
+          {
+            enumValue = ResourceType::AWS_Transfer_Certificate;
+            return true;
+          }
+          else if (hashCode == AWS_MediaConnect_FlowSource_HASH)
+          {
+            enumValue = ResourceType::AWS_MediaConnect_FlowSource;
+            return true;
+          }
+          else if (hashCode == AWS_APS_RuleGroupsNamespace_HASH)
+          {
+            enumValue = ResourceType::AWS_APS_RuleGroupsNamespace;
+            return true;
+          }
+          else if (hashCode == AWS_CodeGuruProfiler_ProfilingGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_CodeGuruProfiler_ProfilingGroup;
+            return true;
+          }
+          else if (hashCode == AWS_Route53Resolver_ResolverQueryLoggingConfig_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53Resolver_ResolverQueryLoggingConfig;
+            return true;
+          }
+          else if (hashCode == AWS_Batch_SchedulingPolicy_HASH)
+          {
+            enumValue = ResourceType::AWS_Batch_SchedulingPolicy;
+            return true;
+          }
           return false;
         }
 
@@ -3236,6 +3354,71 @@ namespace Aws
           case ResourceType::AWS_NetworkManager_LinkAssociation:
             value = "AWS::NetworkManager::LinkAssociation";
             return true;
+          case ResourceType::AWS_IoTWireless_MulticastGroup:
+            value = "AWS::IoTWireless::MulticastGroup";
+            return true;
+          case ResourceType::AWS_Personalize_DatasetGroup:
+            value = "AWS::Personalize::DatasetGroup";
+            return true;
+          case ResourceType::AWS_IoTTwinMaker_ComponentType:
+            value = "AWS::IoTTwinMaker::ComponentType";
+            return true;
+          case ResourceType::AWS_CodeBuild_ReportGroup:
+            value = "AWS::CodeBuild::ReportGroup";
+            return true;
+          case ResourceType::AWS_SageMaker_FeatureGroup:
+            value = "AWS::SageMaker::FeatureGroup";
+            return true;
+          case ResourceType::AWS_MSK_BatchScramSecret:
+            value = "AWS::MSK::BatchScramSecret";
+            return true;
+          case ResourceType::AWS_AppStream_Stack:
+            value = "AWS::AppStream::Stack";
+            return true;
+          case ResourceType::AWS_IoT_JobTemplate:
+            value = "AWS::IoT::JobTemplate";
+            return true;
+          case ResourceType::AWS_IoTWireless_FuotaTask:
+            value = "AWS::IoTWireless::FuotaTask";
+            return true;
+          case ResourceType::AWS_IoT_ProvisioningTemplate:
+            value = "AWS::IoT::ProvisioningTemplate";
+            return true;
+          case ResourceType::AWS_InspectorV2_Filter:
+            value = "AWS::InspectorV2::Filter";
+            return true;
+          case ResourceType::AWS_Route53Resolver_ResolverQueryLoggingConfigAssociation:
+            value = "AWS::Route53Resolver::ResolverQueryLoggingConfigAssociation";
+            return true;
+          case ResourceType::AWS_ServiceDiscovery_Instance:
+            value = "AWS::ServiceDiscovery::Instance";
+            return true;
+          default:
+            return false;
+          }
+        }
+        static bool GetNameForEnumHelper3(ResourceType enumValue, Aws::String& value)
+        {
+          switch(enumValue)
+          {
+          case ResourceType::AWS_Transfer_Certificate:
+            value = "AWS::Transfer::Certificate";
+            return true;
+          case ResourceType::AWS_MediaConnect_FlowSource:
+            value = "AWS::MediaConnect::FlowSource";
+            return true;
+          case ResourceType::AWS_APS_RuleGroupsNamespace:
+            value = "AWS::APS::RuleGroupsNamespace";
+            return true;
+          case ResourceType::AWS_CodeGuruProfiler_ProfilingGroup:
+            value = "AWS::CodeGuruProfiler::ProfilingGroup";
+            return true;
+          case ResourceType::AWS_Route53Resolver_ResolverQueryLoggingConfig:
+            value = "AWS::Route53Resolver::ResolverQueryLoggingConfig";
+            return true;
+          case ResourceType::AWS_Batch_SchedulingPolicy:
+            value = "AWS::Batch::SchedulingPolicy";
+            return true;
           default:
             return false;
           }
@@ -3254,6 +3437,10 @@ namespace Aws
              return enumValue;
           }
           else if (GetEnumForNameHelper2(hashCode, enumValue))
+          {
+             return enumValue;
+          }
+          else if (GetEnumForNameHelper3(hashCode, enumValue))
           {
              return enumValue;
           }
@@ -3279,6 +3466,10 @@ namespace Aws
             return value;
           }
           else if (GetNameForEnumHelper2(enumValue, value))
+          {
+            return value;
+          }
+          else if (GetNameForEnumHelper3(enumValue, value))
           {
             return value;
           }

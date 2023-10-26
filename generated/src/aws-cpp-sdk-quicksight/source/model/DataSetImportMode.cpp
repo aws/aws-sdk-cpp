@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSetImportMode::NOT_SET:
+            return {};
           case DataSetImportMode::SPICE:
             return "SPICE";
           case DataSetImportMode::DIRECT_QUERY:

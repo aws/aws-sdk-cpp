@@ -23,6 +23,7 @@ namespace Aws
         static const int DASHBOARD_HASH = HashingUtils::HashString("DASHBOARD");
         static const int ANALYSIS_HASH = HashingUtils::HashString("ANALYSIS");
         static const int DATASET_HASH = HashingUtils::HashString("DATASET");
+        static const int DATASOURCE_HASH = HashingUtils::HashString("DATASOURCE");
         static const int TOPIC_HASH = HashingUtils::HashString("TOPIC");
 
 
@@ -40,6 +41,10 @@ namespace Aws
           else if (hashCode == DATASET_HASH)
           {
             return MemberType::DATASET;
+          }
+          else if (hashCode == DATASOURCE_HASH)
+          {
+            return MemberType::DATASOURCE;
           }
           else if (hashCode == TOPIC_HASH)
           {
@@ -59,12 +64,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MemberType::NOT_SET:
+            return {};
           case MemberType::DASHBOARD:
             return "DASHBOARD";
           case MemberType::ANALYSIS:
             return "ANALYSIS";
           case MemberType::DATASET:
             return "DATASET";
+          case MemberType::DATASOURCE:
+            return "DATASOURCE";
           case MemberType::TOPIC:
             return "TOPIC";
           default:

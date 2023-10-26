@@ -134,49 +134,49 @@ namespace Model
 
 
     /**
-     * <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code>
+     * <p>The name of the schema. There can't be multiple <code>SchemaMappings</code>
      * with the same name.</p>
      */
     inline const Aws::String& GetSchemaName() const{ return m_schemaName; }
 
     /**
-     * <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code>
+     * <p>The name of the schema. There can't be multiple <code>SchemaMappings</code>
      * with the same name.</p>
      */
     inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
 
     /**
-     * <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code>
+     * <p>The name of the schema. There can't be multiple <code>SchemaMappings</code>
      * with the same name.</p>
      */
     inline void SetSchemaName(const Aws::String& value) { m_schemaNameHasBeenSet = true; m_schemaName = value; }
 
     /**
-     * <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code>
+     * <p>The name of the schema. There can't be multiple <code>SchemaMappings</code>
      * with the same name.</p>
      */
     inline void SetSchemaName(Aws::String&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::move(value); }
 
     /**
-     * <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code>
+     * <p>The name of the schema. There can't be multiple <code>SchemaMappings</code>
      * with the same name.</p>
      */
     inline void SetSchemaName(const char* value) { m_schemaNameHasBeenSet = true; m_schemaName.assign(value); }
 
     /**
-     * <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code>
+     * <p>The name of the schema. There can't be multiple <code>SchemaMappings</code>
      * with the same name.</p>
      */
     inline CreateSchemaMappingRequest& WithSchemaName(const Aws::String& value) { SetSchemaName(value); return *this;}
 
     /**
-     * <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code>
+     * <p>The name of the schema. There can't be multiple <code>SchemaMappings</code>
      * with the same name.</p>
      */
     inline CreateSchemaMappingRequest& WithSchemaName(Aws::String&& value) { SetSchemaName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code>
+     * <p>The name of the schema. There can't be multiple <code>SchemaMappings</code>
      * with the same name.</p>
      */
     inline CreateSchemaMappingRequest& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}

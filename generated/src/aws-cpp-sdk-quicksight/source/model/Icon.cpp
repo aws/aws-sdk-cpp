@@ -169,6 +169,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Icon::NOT_SET:
+            return {};
           case Icon::CARET_UP:
             return "CARET_UP";
           case Icon::CARET_DOWN:

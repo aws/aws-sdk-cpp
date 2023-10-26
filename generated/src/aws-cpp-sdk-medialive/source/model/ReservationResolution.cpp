@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReservationResolution::NOT_SET:
+            return {};
           case ReservationResolution::SD:
             return "SD";
           case ReservationResolution::HD:

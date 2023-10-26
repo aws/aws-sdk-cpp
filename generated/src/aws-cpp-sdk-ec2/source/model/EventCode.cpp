@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventCode::NOT_SET:
+            return {};
           case EventCode::instance_reboot:
             return "instance-reboot";
           case EventCode::system_reboot:

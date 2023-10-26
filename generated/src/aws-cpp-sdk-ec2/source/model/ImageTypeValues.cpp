@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageTypeValues::NOT_SET:
+            return {};
           case ImageTypeValues::machine:
             return "machine";
           case ImageTypeValues::kernel:

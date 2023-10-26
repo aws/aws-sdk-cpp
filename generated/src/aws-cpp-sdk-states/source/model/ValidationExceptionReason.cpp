@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidationExceptionReason::NOT_SET:
+            return {};
           case ValidationExceptionReason::API_DOES_NOT_SUPPORT_LABELED_ARNS:
             return "API_DOES_NOT_SUPPORT_LABELED_ARNS";
           case ValidationExceptionReason::MISSING_REQUIRED_PARAMETER:

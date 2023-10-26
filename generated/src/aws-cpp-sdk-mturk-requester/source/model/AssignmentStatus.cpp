@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssignmentStatus::NOT_SET:
+            return {};
           case AssignmentStatus::Submitted:
             return "Submitted";
           case AssignmentStatus::Approved:

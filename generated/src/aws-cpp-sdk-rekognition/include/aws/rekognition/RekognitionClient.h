@@ -340,19 +340,21 @@ namespace Rekognition
         }
 
         /**
-         * <p>Copies a version of an Amazon Rekognition Custom Labels model from a source
-         * project to a destination project. The source and destination projects can be in
-         * different AWS accounts but must be in the same AWS Region. You can't copy a
-         * model to another AWS service. </p> <p>To copy a model version to a different AWS
-         * account, you need to create a resource-based policy known as a <i>project
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Copies a version of an Amazon Rekognition Custom Labels model from a
+         * source project to a destination project. The source and destination projects can
+         * be in different AWS accounts but must be in the same AWS Region. You can't copy
+         * a model to another AWS service. </p> <p>To copy a model version to a different
+         * AWS account, you need to create a resource-based policy known as a <i>project
          * policy</i>. You attach the project policy to the source project by calling
          * <a>PutProjectPolicy</a>. The project policy gives permission to copy the model
          * version from a trusting AWS account to a trusted account.</p> <p>For more
          * information creating and attaching a project policy, see Attaching a project
          * policy (SDK) in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
          * </p> <p>If you are copying a model version to a project in the same AWS account,
-         * you don't need to create a project policy.</p>  <p>To copy a model, the
-         * destination project, source project, and source model version must already
+         * you don't need to create a project policy.</p>  <p>Copying project
+         * versions is supported only for Custom Labels models. </p> <p>To copy a model,
+         * the destination project, source project, and source model version must already
          * exist.</p>  <p>Copying a model version takes a while to complete. To get
          * the current status, call <a>DescribeProjectVersions</a> and check the value of
          * <code>Status</code> in the <a>ProjectVersionDescription</a> object. The copy
@@ -419,10 +421,11 @@ namespace Rekognition
         }
 
         /**
-         * <p>Creates a new Amazon Rekognition Custom Labels dataset. You can create a
-         * dataset by using an Amazon Sagemaker format manifest file or by copying an
-         * existing Amazon Rekognition Custom Labels dataset.</p> <p>To create a training
-         * dataset for a project, specify <code>TRAIN</code> for the value of
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Creates a new Amazon Rekognition Custom Labels dataset. You can
+         * create a dataset by using an Amazon Sagemaker format manifest file or by copying
+         * an existing Amazon Rekognition Custom Labels dataset.</p> <p>To create a
+         * training dataset for a project, specify <code>TRAIN</code> for the value of
          * <code>DatasetType</code>. To create the test dataset for a project, specify
          * <code>TEST</code> for the value of <code>DatasetType</code>. </p> <p>The
          * response from <code>CreateDataset</code> is the Amazon Resource Name (ARN) for
@@ -498,11 +501,14 @@ namespace Rekognition
         }
 
         /**
-         * <p>Creates a new Amazon Rekognition Custom Labels project. A project is a group
-         * of resources (datasets, model versions) that you use to create and manage Amazon
-         * Rekognition Custom Labels models. </p> <p>This operation requires permissions to
-         * perform the <code>rekognition:CreateProject</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new Amazon Rekognition project. A project is a group of resources
+         * (datasets, model versions) that you use to create and manage a Amazon
+         * Rekognition Custom Labels Model or custom adapter. You can specify a feature to
+         * create the project with, if no feature is specified then Custom Labels is used
+         * by default. For adapters, you can also choose whether or not to have the project
+         * auto update by using the AutoUpdate argument. This operation requires
+         * permissions to perform the <code>rekognition:CreateProject</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProject">AWS
          * API Reference</a></p>
          */
@@ -527,32 +533,30 @@ namespace Rekognition
         }
 
         /**
-         * <p>Creates a new version of a model and begins training. Models are managed as
-         * part of an Amazon Rekognition Custom Labels project. The response from
+         * <p>Creates a new version of Amazon Rekognition project (like a Custom Labels
+         * model or a custom adapter) and begins training. Models and adapters are managed
+         * as part of a Rekognition project. The response from
          * <code>CreateProjectVersion</code> is an Amazon Resource Name (ARN) for the
-         * version of the model. </p> <p>Training uses the training and test datasets
-         * associated with the project. For more information, see Creating training and
-         * test dataset in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
-         * </p>  <p>You can train a model in a project that doesn't have associated
-         * datasets by specifying manifest files in the <code>TrainingData</code> and
-         * <code>TestingData</code> fields. </p> <p>If you open the console after training
-         * a model with manifest files, Amazon Rekognition Custom Labels creates the
-         * datasets for you using the most recent manifest files. You can no longer train a
-         * model version for the project by specifying manifest files. </p> <p>Instead of
-         * training with a project without associated datasets, we recommend that you use
-         * the manifest files to create training and test datasets for the project.</p>
-         *  <p>Training takes a while to complete. You can get the current status by
-         * calling <a>DescribeProjectVersions</a>. Training completed successfully if the
-         * value of the <code>Status</code> field is <code>TRAINING_COMPLETED</code>.</p>
-         * <p>If training fails, see Debugging a failed model training in the <i>Amazon
-         * Rekognition Custom Labels</i> developer guide. </p> <p>Once training has
-         * successfully completed, call <a>DescribeProjectVersions</a> to get the training
-         * results and evaluate the model. For more information, see Improving a trained
-         * Amazon Rekognition Custom Labels model in the <i>Amazon Rekognition Custom
-         * Labels</i> developers guide. </p> <p>After evaluating the model, you start the
-         * model by calling <a>StartProjectVersion</a>.</p> <p>This operation requires
+         * project version. </p> <p>The FeatureConfig operation argument allows you to
+         * configure specific model or adapter settings. You can provide a description to
+         * the project version by using the VersionDescription argment. Training can take a
+         * while to complete. You can get the current status by calling
+         * <a>DescribeProjectVersions</a>. Training completed successfully if the value of
+         * the <code>Status</code> field is <code>TRAINING_COMPLETED</code>. Once training
+         * has successfully completed, call <a>DescribeProjectVersions</a> to get the
+         * training results and evaluate the model.</p> <p>This operation requires
          * permissions to perform the <code>rekognition:CreateProjectVersion</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * action.</p>  <p> <i>The following applies only to projects with Amazon
+         * Rekognition Custom Labels as the chosen feature:</i> </p> <p>You can train a
+         * model in a project that doesn't have associated datasets by specifying manifest
+         * files in the <code>TrainingData</code> and <code>TestingData</code> fields. </p>
+         * <p>If you open the console after training a model with manifest files, Amazon
+         * Rekognition Custom Labels creates the datasets for you using the most recent
+         * manifest files. You can no longer train a model version for the project by
+         * specifying manifest files. </p> <p>Instead of training with a project without
+         * associated datasets, we recommend that you use the manifest files to create
+         * training and test datasets for the project.</p>  <p/><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProjectVersion">AWS
          * API Reference</a></p>
          */
@@ -693,16 +697,17 @@ namespace Rekognition
         }
 
         /**
-         * <p>Deletes an existing Amazon Rekognition Custom Labels dataset. Deleting a
-         * dataset might take while. Use <a>DescribeDataset</a> to check the current
-         * status. The dataset is still deleting if the value of <code>Status</code> is
-         * <code>DELETE_IN_PROGRESS</code>. If you try to access the dataset after it is
-         * deleted, you get a <code>ResourceNotFoundException</code> exception. </p> <p>You
-         * can't delete a dataset while it is creating (<code>Status</code> =
-         * <code>CREATE_IN_PROGRESS</code>) or if the dataset is updating
-         * (<code>Status</code> = <code>UPDATE_IN_PROGRESS</code>).</p> <p>This operation
-         * requires permissions to perform the <code>rekognition:DeleteDataset</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Deletes an existing Amazon Rekognition Custom Labels dataset.
+         * Deleting a dataset might take while. Use <a>DescribeDataset</a> to check the
+         * current status. The dataset is still deleting if the value of
+         * <code>Status</code> is <code>DELETE_IN_PROGRESS</code>. If you try to access the
+         * dataset after it is deleted, you get a <code>ResourceNotFoundException</code>
+         * exception. </p> <p>You can't delete a dataset while it is creating
+         * (<code>Status</code> = <code>CREATE_IN_PROGRESS</code>) or if the dataset is
+         * updating (<code>Status</code> = <code>UPDATE_IN_PROGRESS</code>).</p> <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:DeleteDataset</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteDataset">AWS
          * API Reference</a></p>
          */
@@ -755,10 +760,10 @@ namespace Rekognition
         }
 
         /**
-         * <p>Deletes an Amazon Rekognition Custom Labels project. To delete a project you
-         * must first delete all models associated with the project. To delete a model, see
-         * <a>DeleteProjectVersion</a>.</p> <p> <code>DeleteProject</code> is an
-         * asynchronous operation. To check if the project is deleted, call
+         * <p>Deletes a Amazon Rekognition project. To delete a project you must first
+         * delete all models or adapters associated with the project. To delete a model or
+         * adapter, see <a>DeleteProjectVersion</a>.</p> <p> <code>DeleteProject</code> is
+         * an asynchronous operation. To check if the project is deleted, call
          * <a>DescribeProjects</a>. The project is deleted when the project no longer
          * appears in the response. Be aware that deleting a given project will also delete
          * any <code>ProjectPolicies</code> associated with that project.</p> <p>This
@@ -788,9 +793,10 @@ namespace Rekognition
         }
 
         /**
-         * <p>Deletes an existing project policy.</p> <p>To get a list of project policies
-         * attached to a project, call <a>ListProjectPolicies</a>. To attach a project
-         * policy to a project, call <a>PutProjectPolicy</a>.</p> <p>This operation
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Deletes an existing project policy.</p> <p>To get a list of project
+         * policies attached to a project, call <a>ListProjectPolicies</a>. To attach a
+         * project policy to a project, call <a>PutProjectPolicy</a>.</p> <p>This operation
          * requires permissions to perform the <code>rekognition:DeleteProjectPolicy</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectPolicy">AWS
@@ -817,13 +823,15 @@ namespace Rekognition
         }
 
         /**
-         * <p>Deletes an Amazon Rekognition Custom Labels model. </p> <p>You can't delete a
-         * model if it is running or if it is training. To check the status of a model, use
-         * the <code>Status</code> field returned from <a>DescribeProjectVersions</a>. To
-         * stop a running model call <a>StopProjectVersion</a>. If the model is training,
-         * wait until it finishes.</p> <p>This operation requires permissions to perform
-         * the <code>rekognition:DeleteProjectVersion</code> action. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a Rekognition project model or project version, like a Amazon
+         * Rekognition Custom Labels model or a custom adapter.</p> <p>You can't delete a
+         * project version if it is running or if it is training. To check the status of a
+         * project version, use the Status field returned from
+         * <a>DescribeProjectVersions</a>. To stop a project version call
+         * <a>StopProjectVersion</a>. If the project version is training, wait until it
+         * finishes.</p> <p>This operation requires permissions to perform the
+         * <code>rekognition:DeleteProjectVersion</code> action. </p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectVersion">AWS
          * API Reference</a></p>
          */
@@ -936,7 +944,8 @@ namespace Rekognition
         }
 
         /**
-         * <p> Describes an Amazon Rekognition Custom Labels dataset. You can get
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p> Describes an Amazon Rekognition Custom Labels dataset. You can get
          * information such as the current status of a dataset and statistics about the
          * images and labels in a dataset. </p> <p>This operation requires permissions to
          * perform the <code>rekognition:DescribeDataset</code> action.</p><p><h3>See
@@ -965,12 +974,12 @@ namespace Rekognition
         }
 
         /**
-         * <p>Lists and describes the versions of a model in an Amazon Rekognition Custom
-         * Labels project. You can specify up to 10 model versions in
-         * <code>ProjectVersionArns</code>. If you don't specify a value, descriptions for
-         * all model versions in the project are returned.</p> <p>This operation requires
-         * permissions to perform the <code>rekognition:DescribeProjectVersions</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists and describes the versions of an Amazon Rekognition project. You can
+         * specify up to 10 model or adapter versions in <code>ProjectVersionArns</code>.
+         * If you don't specify a value, descriptions for all model/adapter versions in the
+         * project are returned.</p> <p>This operation requires permissions to perform the
+         * <code>rekognition:DescribeProjectVersions</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjectVersions">AWS
          * API Reference</a></p>
          */
@@ -995,9 +1004,9 @@ namespace Rekognition
         }
 
         /**
-         * <p>Gets information about your Amazon Rekognition Custom Labels projects. </p>
-         * <p>This operation requires permissions to perform the
-         * <code>rekognition:DescribeProjects</code> action.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about your Rekognition projects.</p> <p>This operation
+         * requires permissions to perform the <code>rekognition:DescribeProjects</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjects">AWS
          * API Reference</a></p>
          */
@@ -1050,35 +1059,37 @@ namespace Rekognition
         }
 
         /**
-         * <p>Detects custom labels in a supplied image by using an Amazon Rekognition
-         * Custom Labels model. </p> <p>You specify which version of a model version to use
-         * by using the <code>ProjectVersionArn</code> input parameter. </p> <p>You pass
-         * the input image as base64-encoded image bytes or as a reference to an image in
-         * an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
-         * operations, passing image bytes is not supported. The image must be either a PNG
-         * or JPEG formatted file. </p> <p> For each object that the model version detects
-         * on an image, the API returns a (<code>CustomLabel</code>) object in an array
-         * (<code>CustomLabels</code>). Each <code>CustomLabel</code> object provides the
-         * label name (<code>Name</code>), the level of confidence that the image contains
-         * the object (<code>Confidence</code>), and object location information, if it
-         * exists, for the label on the image (<code>Geometry</code>). </p> <p>To filter
-         * labels that are returned, specify a value for <code>MinConfidence</code>.
-         * <code>DetectCustomLabelsLabels</code> only returns labels with a confidence
-         * that's higher than the specified value. The value of <code>MinConfidence</code>
-         * maps to the assumed threshold values created during training. For more
-         * information, see <i>Assumed threshold</i> in the Amazon Rekognition Custom
-         * Labels Developer Guide. Amazon Rekognition Custom Labels metrics expresses an
-         * assumed threshold as a floating point value between 0-1. The range of
-         * <code>MinConfidence</code> normalizes the threshold value to a percentage value
-         * (0-100). Confidence responses from <code>DetectCustomLabels</code> are also
-         * returned as a percentage. You can use <code>MinConfidence</code> to change the
-         * precision and recall or your model. For more information, see <i>Analyzing an
-         * image</i> in the Amazon Rekognition Custom Labels Developer Guide. </p> <p>If
-         * you don't specify a value for <code>MinConfidence</code>,
-         * <code>DetectCustomLabels</code> returns labels based on the assumed threshold of
-         * each label.</p> <p>This is a stateless API operation. That is, the operation
-         * does not persist any data.</p> <p>This operation requires permissions to perform
-         * the <code>rekognition:DetectCustomLabels</code> action. </p> <p>For more
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Detects custom labels in a supplied image by using an Amazon
+         * Rekognition Custom Labels model. </p> <p>You specify which version of a model
+         * version to use by using the <code>ProjectVersionArn</code> input parameter. </p>
+         * <p>You pass the input image as base64-encoded image bytes or as a reference to
+         * an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon
+         * Rekognition operations, passing image bytes is not supported. The image must be
+         * either a PNG or JPEG formatted file. </p> <p> For each object that the model
+         * version detects on an image, the API returns a (<code>CustomLabel</code>) object
+         * in an array (<code>CustomLabels</code>). Each <code>CustomLabel</code> object
+         * provides the label name (<code>Name</code>), the level of confidence that the
+         * image contains the object (<code>Confidence</code>), and object location
+         * information, if it exists, for the label on the image (<code>Geometry</code>).
+         * </p> <p>To filter labels that are returned, specify a value for
+         * <code>MinConfidence</code>. <code>DetectCustomLabelsLabels</code> only returns
+         * labels with a confidence that's higher than the specified value. The value of
+         * <code>MinConfidence</code> maps to the assumed threshold values created during
+         * training. For more information, see <i>Assumed threshold</i> in the Amazon
+         * Rekognition Custom Labels Developer Guide. Amazon Rekognition Custom Labels
+         * metrics expresses an assumed threshold as a floating point value between 0-1.
+         * The range of <code>MinConfidence</code> normalizes the threshold value to a
+         * percentage value (0-100). Confidence responses from
+         * <code>DetectCustomLabels</code> are also returned as a percentage. You can use
+         * <code>MinConfidence</code> to change the precision and recall or your model. For
+         * more information, see <i>Analyzing an image</i> in the Amazon Rekognition Custom
+         * Labels Developer Guide. </p> <p>If you don't specify a value for
+         * <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based
+         * on the assumed threshold of each label.</p> <p>This is a stateless API
+         * operation. That is, the operation does not persist any data.</p> <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:DetectCustomLabels</code> action. </p> <p>For more
          * information, see <i>Analyzing an image</i> in the Amazon Rekognition Custom
          * Labels Developer Guide. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectCustomLabels">AWS
@@ -1248,7 +1259,9 @@ namespace Rekognition
          * pass the input image either as base64-encoded image bytes or as a reference to
          * an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon
          * Rekognition operations, passing image bytes is not supported. The image must be
-         * either a PNG or JPEG formatted file. </p><p><h3>See Also:</h3>   <a
+         * either a PNG or JPEG formatted file. </p> <p>You can specify an adapter to use
+         * when retrieving label predictions by providing a <code>ProjectVersionArn</code>
+         * to the <code>ProjectVersion</code> argument.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">AWS
          * API Reference</a></p>
          */
@@ -1401,8 +1414,9 @@ namespace Rekognition
         }
 
         /**
-         * <p>Distributes the entries (images) in a training dataset across the training
-         * dataset and the test dataset for a project.
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Distributes the entries (images) in a training dataset across the
+         * training dataset and the test dataset for a project.
          * <code>DistributeDatasetEntries</code> moves 20% of the training dataset images
          * to the test dataset. An entry is a JSON Line that describes an image. </p>
          * <p>You supply the Amazon Resource Names (ARN) of a project's training dataset
@@ -1807,6 +1821,33 @@ namespace Rekognition
         }
 
         /**
+         * <p>Retrieves the results for a given media analysis job. Takes a
+         * <code>JobId</code> returned by StartMediaAnalysisJob.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetMediaAnalysisJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMediaAnalysisJobOutcome GetMediaAnalysisJob(const Model::GetMediaAnalysisJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMediaAnalysisJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMediaAnalysisJobRequestT = Model::GetMediaAnalysisJobRequest>
+        Model::GetMediaAnalysisJobOutcomeCallable GetMediaAnalysisJobCallable(const GetMediaAnalysisJobRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::GetMediaAnalysisJob, request);
+        }
+
+        /**
+         * An Async wrapper for GetMediaAnalysisJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMediaAnalysisJobRequestT = Model::GetMediaAnalysisJobRequest>
+        void GetMediaAnalysisJobAsync(const GetMediaAnalysisJobRequestT& request, const GetMediaAnalysisJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::GetMediaAnalysisJob, request, handler, context);
+        }
+
+        /**
          * <p>Gets the path tracking results of a Amazon Rekognition Video analysis started
          * by <a>StartPersonTracking</a>.</p> <p>The person path tracking operation is
          * started by a call to <code>StartPersonTracking</code> which returns a job
@@ -2081,8 +2122,9 @@ namespace Rekognition
         }
 
         /**
-         * <p> Lists the entries (images) within a dataset. An entry is a JSON Line that
-         * contains the information for a single image, including the image location,
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p> Lists the entries (images) within a dataset. An entry is a JSON Line
+         * that contains the information for a single image, including the image location,
          * assigned labels, and object location bounding boxes. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-manifest-files.html">Creating
@@ -2119,8 +2161,9 @@ namespace Rekognition
         }
 
         /**
-         * <p>Lists the labels in a dataset. Amazon Rekognition Custom Labels uses labels
-         * to describe images. For more information, see <a
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Lists the labels in a dataset. Amazon Rekognition Custom Labels uses
+         * labels to describe images. For more information, see <a
          * href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-labeling-images.html">Labeling
          * images</a>. </p> <p> Lists the labels in a dataset. Amazon Rekognition Custom
          * Labels uses labels to describe images. For more information, see Labeling images
@@ -2180,11 +2223,40 @@ namespace Rekognition
         }
 
         /**
-         * <p>Gets a list of the project policies attached to a project.</p> <p>To attach a
-         * project policy to a project, call <a>PutProjectPolicy</a>. To remove a project
-         * policy from a project, call <a>DeleteProjectPolicy</a>.</p> <p>This operation
-         * requires permissions to perform the <code>rekognition:ListProjectPolicies</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of media analysis jobs. Results are sorted by
+         * <code>CreationTimestamp</code> in descending order.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListMediaAnalysisJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMediaAnalysisJobsOutcome ListMediaAnalysisJobs(const Model::ListMediaAnalysisJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMediaAnalysisJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListMediaAnalysisJobsRequestT = Model::ListMediaAnalysisJobsRequest>
+        Model::ListMediaAnalysisJobsOutcomeCallable ListMediaAnalysisJobsCallable(const ListMediaAnalysisJobsRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::ListMediaAnalysisJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListMediaAnalysisJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListMediaAnalysisJobsRequestT = Model::ListMediaAnalysisJobsRequest>
+        void ListMediaAnalysisJobsAsync(const ListMediaAnalysisJobsRequestT& request, const ListMediaAnalysisJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::ListMediaAnalysisJobs, request, handler, context);
+        }
+
+        /**
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Gets a list of the project policies attached to a project.</p> <p>To
+         * attach a project policy to a project, call <a>PutProjectPolicy</a>. To remove a
+         * project policy from a project, call <a>DeleteProjectPolicy</a>.</p> <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:ListProjectPolicies</code> action.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListProjectPolicies">AWS
          * API Reference</a></p>
          */
@@ -2293,22 +2365,23 @@ namespace Rekognition
         }
 
         /**
-         * <p>Attaches a project policy to a Amazon Rekognition Custom Labels project in a
-         * trusting AWS account. A project policy specifies that a trusted AWS account can
-         * copy a model version from a trusting AWS account to a project in the trusted AWS
-         * account. To copy a model version you use the <a>CopyProjectVersion</a>
-         * operation.</p> <p>For more information about the format of a project policy
-         * document, see Attaching a project policy (SDK) in the <i>Amazon Rekognition
-         * Custom Labels Developer Guide</i>. </p> <p>The response from
-         * <code>PutProjectPolicy</code> is a revision ID for the project policy. You can
-         * attach multiple project policies to a project. You can also update an existing
-         * project policy by specifying the policy revision ID of the existing policy.</p>
-         * <p>To remove a project policy from a project, call <a>DeleteProjectPolicy</a>.
-         * To get a list of project policies attached to a project, call
-         * <a>ListProjectPolicies</a>. </p> <p>You copy a model version by calling
-         * <a>CopyProjectVersion</a>.</p> <p>This operation requires permissions to perform
-         * the <code>rekognition:PutProjectPolicy</code> action.</p><p><h3>See Also:</h3>  
-         * <a
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Attaches a project policy to a Amazon Rekognition Custom Labels
+         * project in a trusting AWS account. A project policy specifies that a trusted AWS
+         * account can copy a model version from a trusting AWS account to a project in the
+         * trusted AWS account. To copy a model version you use the
+         * <a>CopyProjectVersion</a> operation. Only applies to Custom Labels projects.</p>
+         * <p>For more information about the format of a project policy document, see
+         * Attaching a project policy (SDK) in the <i>Amazon Rekognition Custom Labels
+         * Developer Guide</i>. </p> <p>The response from <code>PutProjectPolicy</code> is
+         * a revision ID for the project policy. You can attach multiple project policies
+         * to a project. You can also update an existing project policy by specifying the
+         * policy revision ID of the existing policy.</p> <p>To remove a project policy
+         * from a project, call <a>DeleteProjectPolicy</a>. To get a list of project
+         * policies attached to a project, call <a>ListProjectPolicies</a>. </p> <p>You
+         * copy a model version by calling <a>CopyProjectVersion</a>.</p> <p>This operation
+         * requires permissions to perform the <code>rekognition:PutProjectPolicy</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PutProjectPolicy">AWS
          * API Reference</a></p>
          */
@@ -2750,6 +2823,33 @@ namespace Rekognition
         }
 
         /**
+         * <p>Initiates a new media analysis job. Accepts a manifest file in an Amazon S3
+         * bucket. The output is a manifest file and a summary of the manifest stored in
+         * the Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartMediaAnalysisJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMediaAnalysisJobOutcome StartMediaAnalysisJob(const Model::StartMediaAnalysisJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartMediaAnalysisJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartMediaAnalysisJobRequestT = Model::StartMediaAnalysisJobRequest>
+        Model::StartMediaAnalysisJobOutcomeCallable StartMediaAnalysisJobCallable(const StartMediaAnalysisJobRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::StartMediaAnalysisJob, request);
+        }
+
+        /**
+         * An Async wrapper for StartMediaAnalysisJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartMediaAnalysisJobRequestT = Model::StartMediaAnalysisJobRequest>
+        void StartMediaAnalysisJobAsync(const StartMediaAnalysisJobRequestT& request, const StartMediaAnalysisJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::StartMediaAnalysisJob, request, handler, context);
+        }
+
+        /**
          * <p>Starts the asynchronous tracking of a person's path in a stored video.</p>
          * <p>Amazon Rekognition Video can track the path of people in a video stored in an
          * Amazon S3 bucket. Use <a>Video</a> to specify the bucket name and the filename
@@ -2786,16 +2886,16 @@ namespace Rekognition
         }
 
         /**
-         * <p>Starts the running of the version of a model. Starting a model takes a while
-         * to complete. To check the current state of the model, use
-         * <a>DescribeProjectVersions</a>.</p> <p>Once the model is running, you can detect
-         * custom labels in new images by calling <a>DetectCustomLabels</a>.</p> 
-         * <p>You are charged for the amount of time that the model is running. To stop a
-         * running model, call <a>StopProjectVersion</a>.</p>  <p>For more
-         * information, see <i>Running a trained Amazon Rekognition Custom Labels model</i>
-         * in the Amazon Rekognition Custom Labels Guide.</p> <p>This operation requires
-         * permissions to perform the <code>rekognition:StartProjectVersion</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Starts the running of the version of a model. Starting a model takes
+         * a while to complete. To check the current state of the model, use
+         * <a>DescribeProjectVersions</a>. </p> <p>Once the model is running, you can
+         * detect custom labels in new images by calling <a>DetectCustomLabels</a>.</p>
+         *  <p>You are charged for the amount of time that the model is running. To
+         * stop a running model, call <a>StopProjectVersion</a>.</p>  <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:StartProjectVersion</code> action.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartProjectVersion">AWS
          * API Reference</a></p>
          */
@@ -2930,10 +3030,12 @@ namespace Rekognition
         }
 
         /**
-         * <p>Stops a running model. The operation might take a while to complete. To check
-         * the current status, call <a>DescribeProjectVersions</a>. </p> <p>This operation
-         * requires permissions to perform the <code>rekognition:StopProjectVersion</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Stops a running model. The operation might take a while to complete.
+         * To check the current status, call <a>DescribeProjectVersions</a>. Only applies
+         * to Custom Labels projects.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:StopProjectVersion</code> action.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopProjectVersion">AWS
          * API Reference</a></p>
          */
@@ -3041,9 +3143,10 @@ namespace Rekognition
         }
 
         /**
-         * <p>Adds or updates one or more entries (images) in a dataset. An entry is a JSON
-         * Line which contains the information for a single image, including the image
-         * location, assigned labels, and object location bounding boxes. For more
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Adds or updates one or more entries (images) in a dataset. An entry
+         * is a JSON Line which contains the information for a single image, including the
+         * image location, assigned labels, and object location bounding boxes. For more
          * information, see Image-Level labels in manifest files and Object localization in
          * manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
          * </p> <p>If the <code>source-ref</code> field in the JSON line references an

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StudioLifecycleConfigAppType::NOT_SET:
+            return {};
           case StudioLifecycleConfigAppType::JupyterServer:
             return "JupyterServer";
           case StudioLifecycleConfigAppType::KernelGateway:

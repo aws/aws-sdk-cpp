@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GroupFilterName::NOT_SET:
+            return {};
           case GroupFilterName::resource_type:
             return "resource-type";
           case GroupFilterName::configuration_type:

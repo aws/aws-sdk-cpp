@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CloudWatchLogsTimeZone::NOT_SET:
+            return {};
           case CloudWatchLogsTimeZone::LOCAL:
             return "LOCAL";
           case CloudWatchLogsTimeZone::UTC:

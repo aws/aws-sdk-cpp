@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BucketOwnerAccess::NOT_SET:
+            return {};
           case BucketOwnerAccess::NONE:
             return "NONE";
           case BucketOwnerAccess::READ_ONLY:

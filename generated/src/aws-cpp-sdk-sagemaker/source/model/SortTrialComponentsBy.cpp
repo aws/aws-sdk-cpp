@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SortTrialComponentsBy::NOT_SET:
+            return {};
           case SortTrialComponentsBy::Name:
             return "Name";
           case SortTrialComponentsBy::CreationTime:

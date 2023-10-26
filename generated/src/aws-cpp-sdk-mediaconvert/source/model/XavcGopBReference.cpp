@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case XavcGopBReference::NOT_SET:
+            return {};
           case XavcGopBReference::DISABLED:
             return "DISABLED";
           case XavcGopBReference::ENABLED:

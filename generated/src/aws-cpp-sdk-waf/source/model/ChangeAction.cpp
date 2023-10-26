@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChangeAction::NOT_SET:
+            return {};
           case ChangeAction::INSERT:
             return "INSERT";
           case ChangeAction::DELETE_:

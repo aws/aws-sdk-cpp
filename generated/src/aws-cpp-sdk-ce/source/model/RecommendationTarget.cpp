@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationTarget::NOT_SET:
+            return {};
           case RecommendationTarget::SAME_INSTANCE_FAMILY:
             return "SAME_INSTANCE_FAMILY";
           case RecommendationTarget::CROSS_INSTANCE_FAMILY:

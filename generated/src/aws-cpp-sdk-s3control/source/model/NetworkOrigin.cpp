@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkOrigin::NOT_SET:
+            return {};
           case NetworkOrigin::Internet:
             return "Internet";
           case NetworkOrigin::VPC:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RetentionIntervalUnitValues::NOT_SET:
+            return {};
           case RetentionIntervalUnitValues::DAYS:
             return "DAYS";
           case RetentionIntervalUnitValues::WEEKS:

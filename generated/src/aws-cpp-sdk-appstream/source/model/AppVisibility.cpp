@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppVisibility::NOT_SET:
+            return {};
           case AppVisibility::ALL:
             return "ALL";
           case AppVisibility::ASSOCIATED:

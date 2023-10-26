@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceInformationFilterKey::NOT_SET:
+            return {};
           case InstanceInformationFilterKey::InstanceIds:
             return "InstanceIds";
           case InstanceInformationFilterKey::AgentVersion:

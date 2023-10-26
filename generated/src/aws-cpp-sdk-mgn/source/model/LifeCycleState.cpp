@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LifeCycleState::NOT_SET:
+            return {};
           case LifeCycleState::STOPPED:
             return "STOPPED";
           case LifeCycleState::NOT_READY:

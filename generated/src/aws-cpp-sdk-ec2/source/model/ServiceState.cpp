@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceState::NOT_SET:
+            return {};
           case ServiceState::Pending:
             return "Pending";
           case ServiceState::Available:

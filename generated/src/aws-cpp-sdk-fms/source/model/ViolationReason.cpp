@@ -179,6 +179,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ViolationReason::NOT_SET:
+            return {};
           case ViolationReason::WEB_ACL_MISSING_RULE_GROUP:
             return "WEB_ACL_MISSING_RULE_GROUP";
           case ViolationReason::RESOURCE_MISSING_WEB_ACL:

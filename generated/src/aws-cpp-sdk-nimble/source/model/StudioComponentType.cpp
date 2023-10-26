@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StudioComponentType::NOT_SET:
+            return {};
           case StudioComponentType::ACTIVE_DIRECTORY:
             return "ACTIVE_DIRECTORY";
           case StudioComponentType::SHARED_FILE_SYSTEM:

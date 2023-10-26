@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterVisualScope::NOT_SET:
+            return {};
           case FilterVisualScope::ALL_VISUALS:
             return "ALL_VISUALS";
           case FilterVisualScope::SELECTED_VISUALS:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioChannelsOption::NOT_SET:
+            return {};
           case AudioChannelsOption::Stereo:
             return "Stereo";
           case AudioChannelsOption::Mono:

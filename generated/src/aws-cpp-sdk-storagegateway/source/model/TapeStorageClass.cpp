@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TapeStorageClass::NOT_SET:
+            return {};
           case TapeStorageClass::DEEP_ARCHIVE:
             return "DEEP_ARCHIVE";
           case TapeStorageClass::GLACIER:

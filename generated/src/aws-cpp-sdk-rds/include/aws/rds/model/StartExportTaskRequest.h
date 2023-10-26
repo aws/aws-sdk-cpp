@@ -460,137 +460,137 @@ namespace Model
 
 
     /**
-     * <p>The data to be exported from the snapshot or cluster. If this parameter is
-     * not provided, all of the data is exported. Valid values are the following:</p>
-     * <ul> <li> <p> <code>database</code> - Export all the data from a specified
-     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
-     * Export a table of the snapshot or cluster. This format is valid only for RDS for
-     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
-     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
-     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
-     * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
-     * <i>table-name</i> - Export a table of the database schema. This format is valid
-     * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
+     * <p>The data to be exported from the snapshot or cluster. If this parameter isn't
+     * provided, all of the data is exported.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>database</code> - Export all the data from a specified database.</p> </li>
+     * <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the
+     * snapshot or cluster. This format is valid only for RDS for MySQL, RDS for
+     * MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot or cluster. This
+     * format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+     * <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table
+     * of the database schema. This format is valid only for RDS for PostgreSQL and
+     * Aurora PostgreSQL.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetExportOnly() const{ return m_exportOnly; }
 
     /**
-     * <p>The data to be exported from the snapshot or cluster. If this parameter is
-     * not provided, all of the data is exported. Valid values are the following:</p>
-     * <ul> <li> <p> <code>database</code> - Export all the data from a specified
-     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
-     * Export a table of the snapshot or cluster. This format is valid only for RDS for
-     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
-     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
-     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
-     * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
-     * <i>table-name</i> - Export a table of the database schema. This format is valid
-     * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
+     * <p>The data to be exported from the snapshot or cluster. If this parameter isn't
+     * provided, all of the data is exported.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>database</code> - Export all the data from a specified database.</p> </li>
+     * <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the
+     * snapshot or cluster. This format is valid only for RDS for MySQL, RDS for
+     * MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot or cluster. This
+     * format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+     * <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table
+     * of the database schema. This format is valid only for RDS for PostgreSQL and
+     * Aurora PostgreSQL.</p> </li> </ul>
      */
     inline bool ExportOnlyHasBeenSet() const { return m_exportOnlyHasBeenSet; }
 
     /**
-     * <p>The data to be exported from the snapshot or cluster. If this parameter is
-     * not provided, all of the data is exported. Valid values are the following:</p>
-     * <ul> <li> <p> <code>database</code> - Export all the data from a specified
-     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
-     * Export a table of the snapshot or cluster. This format is valid only for RDS for
-     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
-     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
-     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
-     * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
-     * <i>table-name</i> - Export a table of the database schema. This format is valid
-     * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
+     * <p>The data to be exported from the snapshot or cluster. If this parameter isn't
+     * provided, all of the data is exported.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>database</code> - Export all the data from a specified database.</p> </li>
+     * <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the
+     * snapshot or cluster. This format is valid only for RDS for MySQL, RDS for
+     * MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot or cluster. This
+     * format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+     * <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table
+     * of the database schema. This format is valid only for RDS for PostgreSQL and
+     * Aurora PostgreSQL.</p> </li> </ul>
      */
     inline void SetExportOnly(const Aws::Vector<Aws::String>& value) { m_exportOnlyHasBeenSet = true; m_exportOnly = value; }
 
     /**
-     * <p>The data to be exported from the snapshot or cluster. If this parameter is
-     * not provided, all of the data is exported. Valid values are the following:</p>
-     * <ul> <li> <p> <code>database</code> - Export all the data from a specified
-     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
-     * Export a table of the snapshot or cluster. This format is valid only for RDS for
-     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
-     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
-     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
-     * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
-     * <i>table-name</i> - Export a table of the database schema. This format is valid
-     * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
+     * <p>The data to be exported from the snapshot or cluster. If this parameter isn't
+     * provided, all of the data is exported.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>database</code> - Export all the data from a specified database.</p> </li>
+     * <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the
+     * snapshot or cluster. This format is valid only for RDS for MySQL, RDS for
+     * MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot or cluster. This
+     * format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+     * <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table
+     * of the database schema. This format is valid only for RDS for PostgreSQL and
+     * Aurora PostgreSQL.</p> </li> </ul>
      */
     inline void SetExportOnly(Aws::Vector<Aws::String>&& value) { m_exportOnlyHasBeenSet = true; m_exportOnly = std::move(value); }
 
     /**
-     * <p>The data to be exported from the snapshot or cluster. If this parameter is
-     * not provided, all of the data is exported. Valid values are the following:</p>
-     * <ul> <li> <p> <code>database</code> - Export all the data from a specified
-     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
-     * Export a table of the snapshot or cluster. This format is valid only for RDS for
-     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
-     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
-     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
-     * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
-     * <i>table-name</i> - Export a table of the database schema. This format is valid
-     * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
+     * <p>The data to be exported from the snapshot or cluster. If this parameter isn't
+     * provided, all of the data is exported.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>database</code> - Export all the data from a specified database.</p> </li>
+     * <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the
+     * snapshot or cluster. This format is valid only for RDS for MySQL, RDS for
+     * MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot or cluster. This
+     * format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+     * <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table
+     * of the database schema. This format is valid only for RDS for PostgreSQL and
+     * Aurora PostgreSQL.</p> </li> </ul>
      */
     inline StartExportTaskRequest& WithExportOnly(const Aws::Vector<Aws::String>& value) { SetExportOnly(value); return *this;}
 
     /**
-     * <p>The data to be exported from the snapshot or cluster. If this parameter is
-     * not provided, all of the data is exported. Valid values are the following:</p>
-     * <ul> <li> <p> <code>database</code> - Export all the data from a specified
-     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
-     * Export a table of the snapshot or cluster. This format is valid only for RDS for
-     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
-     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
-     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
-     * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
-     * <i>table-name</i> - Export a table of the database schema. This format is valid
-     * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
+     * <p>The data to be exported from the snapshot or cluster. If this parameter isn't
+     * provided, all of the data is exported.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>database</code> - Export all the data from a specified database.</p> </li>
+     * <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the
+     * snapshot or cluster. This format is valid only for RDS for MySQL, RDS for
+     * MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot or cluster. This
+     * format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+     * <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table
+     * of the database schema. This format is valid only for RDS for PostgreSQL and
+     * Aurora PostgreSQL.</p> </li> </ul>
      */
     inline StartExportTaskRequest& WithExportOnly(Aws::Vector<Aws::String>&& value) { SetExportOnly(std::move(value)); return *this;}
 
     /**
-     * <p>The data to be exported from the snapshot or cluster. If this parameter is
-     * not provided, all of the data is exported. Valid values are the following:</p>
-     * <ul> <li> <p> <code>database</code> - Export all the data from a specified
-     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
-     * Export a table of the snapshot or cluster. This format is valid only for RDS for
-     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
-     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
-     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
-     * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
-     * <i>table-name</i> - Export a table of the database schema. This format is valid
-     * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
+     * <p>The data to be exported from the snapshot or cluster. If this parameter isn't
+     * provided, all of the data is exported.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>database</code> - Export all the data from a specified database.</p> </li>
+     * <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the
+     * snapshot or cluster. This format is valid only for RDS for MySQL, RDS for
+     * MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot or cluster. This
+     * format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+     * <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table
+     * of the database schema. This format is valid only for RDS for PostgreSQL and
+     * Aurora PostgreSQL.</p> </li> </ul>
      */
     inline StartExportTaskRequest& AddExportOnly(const Aws::String& value) { m_exportOnlyHasBeenSet = true; m_exportOnly.push_back(value); return *this; }
 
     /**
-     * <p>The data to be exported from the snapshot or cluster. If this parameter is
-     * not provided, all of the data is exported. Valid values are the following:</p>
-     * <ul> <li> <p> <code>database</code> - Export all the data from a specified
-     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
-     * Export a table of the snapshot or cluster. This format is valid only for RDS for
-     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
-     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
-     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
-     * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
-     * <i>table-name</i> - Export a table of the database schema. This format is valid
-     * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
+     * <p>The data to be exported from the snapshot or cluster. If this parameter isn't
+     * provided, all of the data is exported.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>database</code> - Export all the data from a specified database.</p> </li>
+     * <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the
+     * snapshot or cluster. This format is valid only for RDS for MySQL, RDS for
+     * MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot or cluster. This
+     * format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+     * <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table
+     * of the database schema. This format is valid only for RDS for PostgreSQL and
+     * Aurora PostgreSQL.</p> </li> </ul>
      */
     inline StartExportTaskRequest& AddExportOnly(Aws::String&& value) { m_exportOnlyHasBeenSet = true; m_exportOnly.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The data to be exported from the snapshot or cluster. If this parameter is
-     * not provided, all of the data is exported. Valid values are the following:</p>
-     * <ul> <li> <p> <code>database</code> - Export all the data from a specified
-     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
-     * Export a table of the snapshot or cluster. This format is valid only for RDS for
-     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
-     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
-     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
-     * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
-     * <i>table-name</i> - Export a table of the database schema. This format is valid
-     * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
+     * <p>The data to be exported from the snapshot or cluster. If this parameter isn't
+     * provided, all of the data is exported.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>database</code> - Export all the data from a specified database.</p> </li>
+     * <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the
+     * snapshot or cluster. This format is valid only for RDS for MySQL, RDS for
+     * MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot or cluster. This
+     * format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+     * <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table
+     * of the database schema. This format is valid only for RDS for PostgreSQL and
+     * Aurora PostgreSQL.</p> </li> </ul>
      */
     inline StartExportTaskRequest& AddExportOnly(const char* value) { m_exportOnlyHasBeenSet = true; m_exportOnly.push_back(value); return *this; }
 

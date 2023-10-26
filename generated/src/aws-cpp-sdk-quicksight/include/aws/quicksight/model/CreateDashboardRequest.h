@@ -12,6 +12,7 @@
 #include <aws/quicksight/model/DashboardSourceEntity.h>
 #include <aws/quicksight/model/DashboardPublishOptions.h>
 #include <aws/quicksight/model/DashboardVersionDefinition.h>
+#include <aws/quicksight/model/ValidationStrategy.h>
 #include <aws/quicksight/model/ResourcePermission.h>
 #include <aws/quicksight/model/Tag.h>
 #include <utility>
@@ -705,6 +706,104 @@ namespace Model
      */
     inline CreateDashboardRequest& WithDefinition(DashboardVersionDefinition&& value) { SetDefinition(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The option to relax the validation needed to create a dashboard with
+     * definition objects. This option skips the validation step for specific
+     * errors.</p>
+     */
+    inline const ValidationStrategy& GetValidationStrategy() const{ return m_validationStrategy; }
+
+    /**
+     * <p>The option to relax the validation needed to create a dashboard with
+     * definition objects. This option skips the validation step for specific
+     * errors.</p>
+     */
+    inline bool ValidationStrategyHasBeenSet() const { return m_validationStrategyHasBeenSet; }
+
+    /**
+     * <p>The option to relax the validation needed to create a dashboard with
+     * definition objects. This option skips the validation step for specific
+     * errors.</p>
+     */
+    inline void SetValidationStrategy(const ValidationStrategy& value) { m_validationStrategyHasBeenSet = true; m_validationStrategy = value; }
+
+    /**
+     * <p>The option to relax the validation needed to create a dashboard with
+     * definition objects. This option skips the validation step for specific
+     * errors.</p>
+     */
+    inline void SetValidationStrategy(ValidationStrategy&& value) { m_validationStrategyHasBeenSet = true; m_validationStrategy = std::move(value); }
+
+    /**
+     * <p>The option to relax the validation needed to create a dashboard with
+     * definition objects. This option skips the validation step for specific
+     * errors.</p>
+     */
+    inline CreateDashboardRequest& WithValidationStrategy(const ValidationStrategy& value) { SetValidationStrategy(value); return *this;}
+
+    /**
+     * <p>The option to relax the validation needed to create a dashboard with
+     * definition objects. This option skips the validation step for specific
+     * errors.</p>
+     */
+    inline CreateDashboardRequest& WithValidationStrategy(ValidationStrategy&& value) { SetValidationStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFolderArns() const{ return m_folderArns; }
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline bool FolderArnsHasBeenSet() const { return m_folderArnsHasBeenSet; }
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline void SetFolderArns(const Aws::Vector<Aws::String>& value) { m_folderArnsHasBeenSet = true; m_folderArns = value; }
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline void SetFolderArns(Aws::Vector<Aws::String>&& value) { m_folderArnsHasBeenSet = true; m_folderArns = std::move(value); }
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline CreateDashboardRequest& WithFolderArns(const Aws::Vector<Aws::String>& value) { SetFolderArns(value); return *this;}
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline CreateDashboardRequest& WithFolderArns(Aws::Vector<Aws::String>&& value) { SetFolderArns(std::move(value)); return *this;}
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline CreateDashboardRequest& AddFolderArns(const Aws::String& value) { m_folderArnsHasBeenSet = true; m_folderArns.push_back(value); return *this; }
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline CreateDashboardRequest& AddFolderArns(Aws::String&& value) { m_folderArnsHasBeenSet = true; m_folderArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * folders.</p>
+     */
+    inline CreateDashboardRequest& AddFolderArns(const char* value) { m_folderArnsHasBeenSet = true; m_folderArns.push_back(value); return *this; }
+
   private:
 
     Aws::String m_awsAccountId;
@@ -739,6 +838,12 @@ namespace Model
 
     DashboardVersionDefinition m_definition;
     bool m_definitionHasBeenSet = false;
+
+    ValidationStrategy m_validationStrategy;
+    bool m_validationStrategyHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_folderArns;
+    bool m_folderArnsHasBeenSet = false;
   };
 
 } // namespace Model

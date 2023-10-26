@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectionType::NOT_SET:
+            return {};
           case ConnectionType::STATIC_IP:
             return "STATIC_IP";
           case ConnectionType::DHCP:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Unit::NOT_SET:
+            return {};
           case Unit::BITS:
             return "BITS";
           case Unit::BYTES:

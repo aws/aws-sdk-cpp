@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationDestinationType::NOT_SET:
+            return {};
           case NotificationDestinationType::SNS:
             return "SNS";
           default:

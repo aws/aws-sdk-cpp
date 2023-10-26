@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConflictHandlerType::NOT_SET:
+            return {};
           case ConflictHandlerType::OPTIMISTIC_CONCURRENCY:
             return "OPTIMISTIC_CONCURRENCY";
           case ConflictHandlerType::LAMBDA:

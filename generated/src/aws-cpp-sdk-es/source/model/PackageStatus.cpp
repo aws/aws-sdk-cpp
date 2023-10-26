@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PackageStatus::NOT_SET:
+            return {};
           case PackageStatus::COPYING:
             return "COPYING";
           case PackageStatus::COPY_FAILED:

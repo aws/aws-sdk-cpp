@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ZoneStatus::NOT_SET:
+            return {};
           case ZoneStatus::Active:
             return "Active";
           case ZoneStatus::StandBy:

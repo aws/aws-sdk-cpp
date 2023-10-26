@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkDirection::NOT_SET:
+            return {};
           case NetworkDirection::IN:
             return "IN";
           case NetworkDirection::OUT:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LocationType::NOT_SET:
+            return {};
           case LocationType::region:
             return "region";
           case LocationType::availability_zone:

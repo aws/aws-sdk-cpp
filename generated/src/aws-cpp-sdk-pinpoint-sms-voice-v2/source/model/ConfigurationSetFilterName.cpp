@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigurationSetFilterName::NOT_SET:
+            return {};
           case ConfigurationSetFilterName::event_destination_name:
             return "event-destination-name";
           case ConfigurationSetFilterName::matching_event_types:

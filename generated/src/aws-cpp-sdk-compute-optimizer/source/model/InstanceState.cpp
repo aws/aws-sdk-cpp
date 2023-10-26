@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceState::NOT_SET:
+            return {};
           case InstanceState::pending:
             return "pending";
           case InstanceState::running:

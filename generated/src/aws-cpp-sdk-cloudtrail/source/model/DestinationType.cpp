@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DestinationType::NOT_SET:
+            return {};
           case DestinationType::EVENT_DATA_STORE:
             return "EVENT_DATA_STORE";
           case DestinationType::AWS_SERVICE:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WirelessGatewayIdType::NOT_SET:
+            return {};
           case WirelessGatewayIdType::GatewayEui:
             return "GatewayEui";
           case WirelessGatewayIdType::WirelessGatewayId:

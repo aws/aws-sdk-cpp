@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JoinSource::NOT_SET:
+            return {};
           case JoinSource::Input:
             return "Input";
           case JoinSource::None:

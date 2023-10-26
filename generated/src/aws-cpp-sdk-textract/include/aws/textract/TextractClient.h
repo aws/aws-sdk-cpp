@@ -195,6 +195,118 @@ namespace Textract
         }
 
         /**
+         * <p>Creates an adapter, which can be fine-tuned for enhanced performance on user
+         * provided documents. Takes an AdapterName and FeatureType. Currently the only
+         * supported feature type is <code>QUERIES</code>. You can also provide a
+         * Description, Tags, and a ClientRequestToken. You can choose whether or not the
+         * adapter should be AutoUpdated with the AutoUpdate argument. By default,
+         * AutoUpdate is set to DISABLED.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateAdapter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAdapterOutcome CreateAdapter(const Model::CreateAdapterRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAdapter that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAdapterRequestT = Model::CreateAdapterRequest>
+        Model::CreateAdapterOutcomeCallable CreateAdapterCallable(const CreateAdapterRequestT& request) const
+        {
+            return SubmitCallable(&TextractClient::CreateAdapter, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAdapter that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAdapterRequestT = Model::CreateAdapterRequest>
+        void CreateAdapterAsync(const CreateAdapterRequestT& request, const CreateAdapterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TextractClient::CreateAdapter, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new version of an adapter. Operates on a provided AdapterId and a
+         * specified dataset provided via the DatasetConfig argument. Requires that you
+         * specify an Amazon S3 bucket with the OutputConfig argument. You can provide an
+         * optional KMSKeyId, an optional ClientRequestToken, and optional
+         * tags.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateAdapterVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAdapterVersionOutcome CreateAdapterVersion(const Model::CreateAdapterVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAdapterVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAdapterVersionRequestT = Model::CreateAdapterVersionRequest>
+        Model::CreateAdapterVersionOutcomeCallable CreateAdapterVersionCallable(const CreateAdapterVersionRequestT& request) const
+        {
+            return SubmitCallable(&TextractClient::CreateAdapterVersion, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAdapterVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAdapterVersionRequestT = Model::CreateAdapterVersionRequest>
+        void CreateAdapterVersionAsync(const CreateAdapterVersionRequestT& request, const CreateAdapterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TextractClient::CreateAdapterVersion, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an Amazon Textract adapter. Takes an AdapterId and deletes the
+         * adapter specified by the ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteAdapter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAdapterOutcome DeleteAdapter(const Model::DeleteAdapterRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAdapter that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAdapterRequestT = Model::DeleteAdapterRequest>
+        Model::DeleteAdapterOutcomeCallable DeleteAdapterCallable(const DeleteAdapterRequestT& request) const
+        {
+            return SubmitCallable(&TextractClient::DeleteAdapter, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAdapter that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAdapterRequestT = Model::DeleteAdapterRequest>
+        void DeleteAdapterAsync(const DeleteAdapterRequestT& request, const DeleteAdapterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TextractClient::DeleteAdapter, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an Amazon Textract adapter version. Requires that you specify both an
+         * AdapterId and a AdapterVersion. Deletes the adapter version specified by the
+         * AdapterId and the AdapterVersion.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteAdapterVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAdapterVersionOutcome DeleteAdapterVersion(const Model::DeleteAdapterVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAdapterVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAdapterVersionRequestT = Model::DeleteAdapterVersionRequest>
+        Model::DeleteAdapterVersionOutcomeCallable DeleteAdapterVersionCallable(const DeleteAdapterVersionRequestT& request) const
+        {
+            return SubmitCallable(&TextractClient::DeleteAdapterVersion, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAdapterVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAdapterVersionRequestT = Model::DeleteAdapterVersionRequest>
+        void DeleteAdapterVersionAsync(const DeleteAdapterVersionRequestT& request, const DeleteAdapterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TextractClient::DeleteAdapterVersion, request, handler, context);
+        }
+
+        /**
          * <p>Detects text in the input document. Amazon Textract can detect lines of text
          * and the words that make up a line of text. The input document must be in one of
          * the following image formats: JPEG, PNG, PDF, or TIFF.
@@ -230,6 +342,61 @@ namespace Textract
         void DetectDocumentTextAsync(const DetectDocumentTextRequestT& request, const DetectDocumentTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&TextractClient::DetectDocumentText, request, handler, context);
+        }
+
+        /**
+         * <p>Gets configuration information for an adapter specified by an AdapterId,
+         * returning information on AdapterName, Description, CreationTime, AutoUpdate
+         * status, and FeatureTypes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetAdapter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAdapterOutcome GetAdapter(const Model::GetAdapterRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAdapter that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAdapterRequestT = Model::GetAdapterRequest>
+        Model::GetAdapterOutcomeCallable GetAdapterCallable(const GetAdapterRequestT& request) const
+        {
+            return SubmitCallable(&TextractClient::GetAdapter, request);
+        }
+
+        /**
+         * An Async wrapper for GetAdapter that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAdapterRequestT = Model::GetAdapterRequest>
+        void GetAdapterAsync(const GetAdapterRequestT& request, const GetAdapterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TextractClient::GetAdapter, request, handler, context);
+        }
+
+        /**
+         * <p>Gets configuration information for the specified adapter version, including:
+         * AdapterId, AdapterVersion, FeatureTypes, Status, StatusMessage, DatasetConfig,
+         * KMSKeyId, OutputConfig, Tags and EvaluationMetrics.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetAdapterVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAdapterVersionOutcome GetAdapterVersion(const Model::GetAdapterVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAdapterVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAdapterVersionRequestT = Model::GetAdapterVersionRequest>
+        Model::GetAdapterVersionOutcomeCallable GetAdapterVersionCallable(const GetAdapterVersionRequestT& request) const
+        {
+            return SubmitCallable(&TextractClient::GetAdapterVersion, request);
+        }
+
+        /**
+         * An Async wrapper for GetAdapterVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAdapterVersionRequestT = Model::GetAdapterVersionRequest>
+        void GetAdapterVersionAsync(const GetAdapterVersionRequestT& request, const GetAdapterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TextractClient::GetAdapterVersion, request, handler, context);
         }
 
         /**
@@ -473,6 +640,83 @@ namespace Textract
         }
 
         /**
+         * <p>List all version of an adapter that meet the specified filtration
+         * criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapterVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAdapterVersionsOutcome ListAdapterVersions(const Model::ListAdapterVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAdapterVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAdapterVersionsRequestT = Model::ListAdapterVersionsRequest>
+        Model::ListAdapterVersionsOutcomeCallable ListAdapterVersionsCallable(const ListAdapterVersionsRequestT& request) const
+        {
+            return SubmitCallable(&TextractClient::ListAdapterVersions, request);
+        }
+
+        /**
+         * An Async wrapper for ListAdapterVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAdapterVersionsRequestT = Model::ListAdapterVersionsRequest>
+        void ListAdapterVersionsAsync(const ListAdapterVersionsRequestT& request, const ListAdapterVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TextractClient::ListAdapterVersions, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all adapters that match the specified filtration
+         * criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapters">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAdaptersOutcome ListAdapters(const Model::ListAdaptersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAdapters that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAdaptersRequestT = Model::ListAdaptersRequest>
+        Model::ListAdaptersOutcomeCallable ListAdaptersCallable(const ListAdaptersRequestT& request) const
+        {
+            return SubmitCallable(&TextractClient::ListAdapters, request);
+        }
+
+        /**
+         * An Async wrapper for ListAdapters that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAdaptersRequestT = Model::ListAdaptersRequest>
+        void ListAdaptersAsync(const ListAdaptersRequestT& request, const ListAdaptersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TextractClient::ListAdapters, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all tags for an Amazon Textract resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&TextractClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TextractClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
          * <p>Starts the asynchronous analysis of an input document for relationships
          * between detected items such as key-value pairs, tables, and selection
          * elements.</p> <p> <code>StartDocumentAnalysis</code> can analyze text in
@@ -640,6 +884,85 @@ namespace Textract
         void StartLendingAnalysisAsync(const StartLendingAnalysisRequestT& request, const StartLendingAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&TextractClient::StartLendingAnalysis, request, handler, context);
+        }
+
+        /**
+         * <p>Adds one or more tags to the specified resource.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&TextractClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TextractClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Removes any tags with the specified keys from the specified
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&TextractClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TextractClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Update the configuration for an adapter. FeatureTypes configurations cannot
+         * be updated. At least one new parameter must be specified as an
+         * argument.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UpdateAdapter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAdapterOutcome UpdateAdapter(const Model::UpdateAdapterRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAdapter that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAdapterRequestT = Model::UpdateAdapterRequest>
+        Model::UpdateAdapterOutcomeCallable UpdateAdapterCallable(const UpdateAdapterRequestT& request) const
+        {
+            return SubmitCallable(&TextractClient::UpdateAdapter, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAdapter that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAdapterRequestT = Model::UpdateAdapterRequest>
+        void UpdateAdapterAsync(const UpdateAdapterRequestT& request, const UpdateAdapterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TextractClient::UpdateAdapter, request, handler, context);
         }
 
 

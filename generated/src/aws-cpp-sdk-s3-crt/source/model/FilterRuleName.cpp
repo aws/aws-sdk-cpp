@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterRuleName::NOT_SET:
+            return {};
           case FilterRuleName::prefix:
             return "prefix";
           case FilterRuleName::suffix:

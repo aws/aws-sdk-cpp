@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricDimensionName::NOT_SET:
+            return {};
           case MetricDimensionName::EMAIL_IDENTITY:
             return "EMAIL_IDENTITY";
           case MetricDimensionName::CONFIGURATION_SET:

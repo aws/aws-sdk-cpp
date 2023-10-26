@@ -58,59 +58,12 @@
             } \
         }
 
-    #define AWS_LOG_FATAL(tag, ...) \
-        { \
-            Aws::Utils::Logging::LogSystemInterface* logSystem = Aws::Utils::Logging::GetLogSystem(); \
-            if ( logSystem && logSystem->GetLogLevel() >= Aws::Utils::Logging::LogLevel::Fatal ) \
-            { \
-                logSystem->Log(Aws::Utils::Logging::LogLevel::Fatal, tag, __VA_ARGS__); \
-            } \
-        }
-
-    #define AWS_LOG_ERROR(tag, ...) \
-        { \
-            Aws::Utils::Logging::LogSystemInterface* logSystem = Aws::Utils::Logging::GetLogSystem(); \
-            if ( logSystem && logSystem->GetLogLevel() >= Aws::Utils::Logging::LogLevel::Error ) \
-            { \
-                logSystem->Log(Aws::Utils::Logging::LogLevel::Error, tag, __VA_ARGS__); \
-            } \
-        }
-
-    #define AWS_LOG_WARN(tag, ...) \
-        { \
-            Aws::Utils::Logging::LogSystemInterface* logSystem = Aws::Utils::Logging::GetLogSystem(); \
-            if ( logSystem && logSystem->GetLogLevel() >= Aws::Utils::Logging::LogLevel::Warn ) \
-            { \
-                logSystem->Log(Aws::Utils::Logging::LogLevel::Warn, tag, __VA_ARGS__); \
-            } \
-        }
-
-    #define AWS_LOG_INFO(tag, ...) \
-        { \
-            Aws::Utils::Logging::LogSystemInterface* logSystem = Aws::Utils::Logging::GetLogSystem(); \
-            if ( logSystem && logSystem->GetLogLevel() >= Aws::Utils::Logging::LogLevel::Info ) \
-            { \
-                logSystem->Log(Aws::Utils::Logging::LogLevel::Info, tag, __VA_ARGS__); \
-            } \
-        }
-
-    #define AWS_LOG_DEBUG(tag, ...) \
-        { \
-            Aws::Utils::Logging::LogSystemInterface* logSystem = Aws::Utils::Logging::GetLogSystem(); \
-            if ( logSystem && logSystem->GetLogLevel() >= Aws::Utils::Logging::LogLevel::Debug ) \
-            { \
-                logSystem->Log(Aws::Utils::Logging::LogLevel::Debug, tag, __VA_ARGS__); \
-            } \
-        }
-
-    #define AWS_LOG_TRACE(tag, ...) \
-        { \
-            Aws::Utils::Logging::LogSystemInterface* logSystem = Aws::Utils::Logging::GetLogSystem(); \
-            if ( logSystem && logSystem->GetLogLevel() >= Aws::Utils::Logging::LogLevel::Trace ) \
-            { \
-                logSystem->Log(Aws::Utils::Logging::LogLevel::Trace, tag, __VA_ARGS__); \
-            } \
-        }
+    #define AWS_LOG_FATAL(tag, ...) AWS_LOG(Aws::Utils::Logging::LogLevel::Fatal, tag, __VA_ARGS__)
+    #define AWS_LOG_ERROR(tag, ...) AWS_LOG(Aws::Utils::Logging::LogLevel::Error, tag, __VA_ARGS__)
+    #define AWS_LOG_WARN(tag, ...)  AWS_LOG(Aws::Utils::Logging::LogLevel::Warn,  tag, __VA_ARGS__)
+    #define AWS_LOG_INFO(tag, ...)  AWS_LOG(Aws::Utils::Logging::LogLevel::Info,  tag, __VA_ARGS__)
+    #define AWS_LOG_DEBUG(tag, ...) AWS_LOG(Aws::Utils::Logging::LogLevel::Debug, tag, __VA_ARGS__)
+    #define AWS_LOG_TRACE(tag, ...) AWS_LOG(Aws::Utils::Logging::LogLevel::Trace, tag, __VA_ARGS__)
 
     #define AWS_LOGSTREAM(level, tag, streamExpression) \
         { \
@@ -119,76 +72,16 @@
             { \
                 Aws::OStringStream logStream; \
                 logStream << streamExpression; \
-                logSystem->LogStream( logLevel, tag, logStream ); \
+                logSystem->LogStream( level, tag, logStream ); \
             } \
         }
 
-    #define AWS_LOGSTREAM_FATAL(tag, streamExpression) \
-        { \
-            Aws::Utils::Logging::LogSystemInterface* logSystem = Aws::Utils::Logging::GetLogSystem(); \
-            if ( logSystem && logSystem->GetLogLevel() >= Aws::Utils::Logging::LogLevel::Fatal ) \
-            { \
-                Aws::OStringStream logStream; \
-                logStream << streamExpression; \
-                logSystem->LogStream( Aws::Utils::Logging::LogLevel::Fatal, tag, logStream ); \
-            } \
-        }
-
-    #define AWS_LOGSTREAM_ERROR(tag, streamExpression) \
-        { \
-            Aws::Utils::Logging::LogSystemInterface* logSystem = Aws::Utils::Logging::GetLogSystem(); \
-            if ( logSystem && logSystem->GetLogLevel() >= Aws::Utils::Logging::LogLevel::Error ) \
-            { \
-                Aws::OStringStream logStream; \
-                logStream << streamExpression; \
-                logSystem->LogStream( Aws::Utils::Logging::LogLevel::Error, tag, logStream ); \
-            } \
-        }
-
-    #define AWS_LOGSTREAM_WARN(tag, streamExpression) \
-        { \
-            Aws::Utils::Logging::LogSystemInterface* logSystem = Aws::Utils::Logging::GetLogSystem(); \
-            if ( logSystem && logSystem->GetLogLevel() >= Aws::Utils::Logging::LogLevel::Warn ) \
-            { \
-                Aws::OStringStream logStream; \
-                logStream << streamExpression; \
-                logSystem->LogStream( Aws::Utils::Logging::LogLevel::Warn, tag, logStream ); \
-            } \
-        }
-
-    #define AWS_LOGSTREAM_INFO(tag, streamExpression) \
-        { \
-            Aws::Utils::Logging::LogSystemInterface* logSystem = Aws::Utils::Logging::GetLogSystem(); \
-            if ( logSystem && logSystem->GetLogLevel() >= Aws::Utils::Logging::LogLevel::Info ) \
-            { \
-                Aws::OStringStream logStream; \
-                logStream << streamExpression; \
-                logSystem->LogStream( Aws::Utils::Logging::LogLevel::Info, tag, logStream ); \
-            } \
-        }
-
-    #define AWS_LOGSTREAM_DEBUG(tag, streamExpression) \
-        { \
-            Aws::Utils::Logging::LogSystemInterface* logSystem = Aws::Utils::Logging::GetLogSystem(); \
-            if ( logSystem && logSystem->GetLogLevel() >= Aws::Utils::Logging::LogLevel::Debug ) \
-            { \
-                Aws::OStringStream logStream; \
-                logStream << streamExpression; \
-                logSystem->LogStream( Aws::Utils::Logging::LogLevel::Debug, tag, logStream ); \
-            } \
-        }
-
-    #define AWS_LOGSTREAM_TRACE(tag, streamExpression) \
-        { \
-            Aws::Utils::Logging::LogSystemInterface* logSystem = Aws::Utils::Logging::GetLogSystem(); \
-            if ( logSystem && logSystem->GetLogLevel() >= Aws::Utils::Logging::LogLevel::Trace ) \
-            { \
-                Aws::OStringStream logStream; \
-                logStream << streamExpression; \
-                logSystem->LogStream( Aws::Utils::Logging::LogLevel::Trace, tag, logStream ); \
-            } \
-        }
-
+    #define AWS_LOGSTREAM_FATAL(tag, streamExpression)  AWS_LOGSTREAM(Aws::Utils::Logging::LogLevel::Fatal, tag, streamExpression)
+    #define AWS_LOGSTREAM_ERROR(tag, streamExpression)  AWS_LOGSTREAM(Aws::Utils::Logging::LogLevel::Error, tag, streamExpression)
+    #define AWS_LOGSTREAM_WARN(tag,  streamExpression)  AWS_LOGSTREAM(Aws::Utils::Logging::LogLevel::Warn,  tag, streamExpression)
+    #define AWS_LOGSTREAM_INFO(tag,  streamExpression)  AWS_LOGSTREAM(Aws::Utils::Logging::LogLevel::Info,  tag, streamExpression)
+    #define AWS_LOGSTREAM_DEBUG(tag, streamExpression)  AWS_LOGSTREAM(Aws::Utils::Logging::LogLevel::Debug, tag, streamExpression)
+    #define AWS_LOGSTREAM_TRACE(tag, streamExpression)  AWS_LOGSTREAM(Aws::Utils::Logging::LogLevel::Trace, tag, streamExpression)
     #define AWS_LOGSTREAM_FLUSH()  AWS_LOG_FLUSH()
 
 #endif // DISABLE_AWS_LOGGING

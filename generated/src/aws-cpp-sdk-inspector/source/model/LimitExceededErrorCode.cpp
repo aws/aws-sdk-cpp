@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LimitExceededErrorCode::NOT_SET:
+            return {};
           case LimitExceededErrorCode::ASSESSMENT_TARGET_LIMIT_EXCEEDED:
             return "ASSESSMENT_TARGET_LIMIT_EXCEEDED";
           case LimitExceededErrorCode::ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComputeType::NOT_SET:
+            return {};
           case ComputeType::CPU:
             return "CPU";
           case ComputeType::GPU_AND_CPU:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Ac3DynamicRangeCompressionRf::NOT_SET:
+            return {};
           case Ac3DynamicRangeCompressionRf::FILM_STANDARD:
             return "FILM_STANDARD";
           case Ac3DynamicRangeCompressionRf::FILM_LIGHT:

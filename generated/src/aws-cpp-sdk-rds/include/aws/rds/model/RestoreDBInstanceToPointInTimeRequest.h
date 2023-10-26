@@ -1879,30 +1879,26 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool GetUseDefaultProcessorFeatures() const{ return m_useDefaultProcessorFeatures; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool UseDefaultProcessorFeaturesHasBeenSet() const { return m_useDefaultProcessorFeaturesHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetUseDefaultProcessorFeatures(bool value) { m_useDefaultProcessorFeaturesHasBeenSet = true; m_useDefaultProcessorFeatures = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithUseDefaultProcessorFeatures(bool value) { SetUseDefaultProcessorFeatures(value); return *this;}
 
@@ -2617,6 +2613,31 @@ namespace Model
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
+     * instance.</p>
+     */
+    inline bool GetDedicatedLogVolume() const{ return m_dedicatedLogVolume; }
+
+    /**
+     * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
+     * instance.</p>
+     */
+    inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
+     * instance.</p>
+     */
+    inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
+
+    /**
+     * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
+     * instance.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
+
   private:
 
     Aws::String m_sourceDBInstanceIdentifier;
@@ -2747,6 +2768,9 @@ namespace Model
 
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet = false;
+
+    bool m_dedicatedLogVolume;
+    bool m_dedicatedLogVolumeHasBeenSet = false;
   };
 
 } // namespace Model

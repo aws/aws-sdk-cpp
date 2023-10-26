@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioNormalizationAlgorithmControl::NOT_SET:
+            return {};
           case AudioNormalizationAlgorithmControl::CORRECT_AUDIO:
             return "CORRECT_AUDIO";
           case AudioNormalizationAlgorithmControl::MEASURE_ONLY:

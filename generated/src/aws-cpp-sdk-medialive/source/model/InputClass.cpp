@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputClass::NOT_SET:
+            return {};
           case InputClass::STANDARD:
             return "STANDARD";
           case InputClass::SINGLE_PIPELINE:

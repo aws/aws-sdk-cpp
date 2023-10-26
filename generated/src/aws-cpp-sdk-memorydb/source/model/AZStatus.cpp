@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AZStatus::NOT_SET:
+            return {};
           case AZStatus::singleaz:
             return "singleaz";
           case AZStatus::multiaz:

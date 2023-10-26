@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScanFrequency::NOT_SET:
+            return {};
           case ScanFrequency::SCAN_ON_PUSH:
             return "SCAN_ON_PUSH";
           case ScanFrequency::CONTINUOUS_SCAN:

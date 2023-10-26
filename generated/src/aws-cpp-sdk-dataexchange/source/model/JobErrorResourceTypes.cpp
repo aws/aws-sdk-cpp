@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobErrorResourceTypes::NOT_SET:
+            return {};
           case JobErrorResourceTypes::REVISION:
             return "REVISION";
           case JobErrorResourceTypes::ASSET:

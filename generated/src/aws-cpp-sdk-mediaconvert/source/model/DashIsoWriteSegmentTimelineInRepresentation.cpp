@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashIsoWriteSegmentTimelineInRepresentation::NOT_SET:
+            return {};
           case DashIsoWriteSegmentTimelineInRepresentation::ENABLED:
             return "ENABLED";
           case DashIsoWriteSegmentTimelineInRepresentation::DISABLED:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ICPRecordalStatus::NOT_SET:
+            return {};
           case ICPRecordalStatus::APPROVED:
             return "APPROVED";
           case ICPRecordalStatus::SUSPENDED:

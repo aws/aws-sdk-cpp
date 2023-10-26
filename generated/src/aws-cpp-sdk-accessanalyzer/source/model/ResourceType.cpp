@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::AWS_S3_Bucket:
             return "AWS::S3::Bucket";
           case ResourceType::AWS_IAM_Role:

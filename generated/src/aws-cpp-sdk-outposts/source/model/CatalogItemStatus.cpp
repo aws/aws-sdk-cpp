@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CatalogItemStatus::NOT_SET:
+            return {};
           case CatalogItemStatus::AVAILABLE:
             return "AVAILABLE";
           case CatalogItemStatus::DISCONTINUED:

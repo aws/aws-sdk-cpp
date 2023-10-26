@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FleetStateCode::NOT_SET:
+            return {};
           case FleetStateCode::submitted:
             return "submitted";
           case FleetStateCode::active:

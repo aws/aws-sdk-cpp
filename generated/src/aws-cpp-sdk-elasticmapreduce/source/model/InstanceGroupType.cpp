@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceGroupType::NOT_SET:
+            return {};
           case InstanceGroupType::MASTER:
             return "MASTER";
           case InstanceGroupType::CORE:

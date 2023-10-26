@@ -22,6 +22,7 @@ namespace Aws
 
         static const int TraceId_HASH = HashingUtils::HashString("TraceId");
         static const int Event_HASH = HashingUtils::HashString("Event");
+        static const int Service_HASH = HashingUtils::HashString("Service");
 
 
         TimeRangeType GetTimeRangeTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == Event_HASH)
           {
             return TimeRangeType::Event;
+          }
+          else if (hashCode == Service_HASH)
+          {
+            return TimeRangeType::Service;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TimeRangeType::NOT_SET:
+            return {};
           case TimeRangeType::TraceId:
             return "TraceId";
           case TimeRangeType::Event:
             return "Event";
+          case TimeRangeType::Service:
+            return "Service";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

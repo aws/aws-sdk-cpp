@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HITStatus::NOT_SET:
+            return {};
           case HITStatus::Assignable:
             return "Assignable";
           case HITStatus::Unassignable:

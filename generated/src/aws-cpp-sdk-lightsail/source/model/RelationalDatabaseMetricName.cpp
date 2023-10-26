@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RelationalDatabaseMetricName::NOT_SET:
+            return {};
           case RelationalDatabaseMetricName::CPUUtilization:
             return "CPUUtilization";
           case RelationalDatabaseMetricName::DatabaseConnections:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KPIVisualStandardLayoutType::NOT_SET:
+            return {};
           case KPIVisualStandardLayoutType::CLASSIC:
             return "CLASSIC";
           case KPIVisualStandardLayoutType::VERTICAL:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PhoneNumberWorkflowStatus::NOT_SET:
+            return {};
           case PhoneNumberWorkflowStatus::CLAIMED:
             return "CLAIMED";
           case PhoneNumberWorkflowStatus::IN_PROGRESS:

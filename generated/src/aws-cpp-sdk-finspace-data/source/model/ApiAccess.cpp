@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApiAccess::NOT_SET:
+            return {};
           case ApiAccess::ENABLED:
             return "ENABLED";
           case ApiAccess::DISABLED:

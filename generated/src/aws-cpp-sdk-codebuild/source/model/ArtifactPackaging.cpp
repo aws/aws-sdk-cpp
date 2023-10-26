@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ArtifactPackaging::NOT_SET:
+            return {};
           case ArtifactPackaging::NONE:
             return "NONE";
           case ArtifactPackaging::ZIP:

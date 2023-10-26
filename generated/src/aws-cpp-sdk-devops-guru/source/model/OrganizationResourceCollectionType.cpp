@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrganizationResourceCollectionType::NOT_SET:
+            return {};
           case OrganizationResourceCollectionType::AWS_CLOUD_FORMATION:
             return "AWS_CLOUD_FORMATION";
           case OrganizationResourceCollectionType::AWS_SERVICE:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProvisionedProductPlanType::NOT_SET:
+            return {};
           case ProvisionedProductPlanType::CLOUDFORMATION:
             return "CLOUDFORMATION";
           default:

@@ -109,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TranscribeLanguageCode::NOT_SET:
+            return {};
           case TranscribeLanguageCode::en_US:
             return "en-US";
           case TranscribeLanguageCode::en_GB:

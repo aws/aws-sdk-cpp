@@ -34,7 +34,8 @@ namespace Model
     EMAIL_ADDRESS,
     UNIQUE_ID,
     DATE,
-    STRING
+    STRING,
+    PROVIDER_ID
   };
 
 namespace SchemaAttributeTypeMapper

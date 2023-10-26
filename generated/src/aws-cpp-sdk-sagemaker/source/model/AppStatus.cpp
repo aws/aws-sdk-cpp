@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppStatus::NOT_SET:
+            return {};
           case AppStatus::Deleted:
             return "Deleted";
           case AppStatus::Deleting:

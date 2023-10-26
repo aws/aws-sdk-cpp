@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JoinRequiredOption::NOT_SET:
+            return {};
           case JoinRequiredOption::QUERY_RUNNER:
             return "QUERY_RUNNER";
           default:

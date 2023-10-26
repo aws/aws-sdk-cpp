@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParquetCompression::NOT_SET:
+            return {};
           case ParquetCompression::UNCOMPRESSED:
             return "UNCOMPRESSED";
           case ParquetCompression::GZIP:

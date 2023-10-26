@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListEventTypesFilterName::NOT_SET:
+            return {};
           case ListEventTypesFilterName::RESOURCE_TYPE:
             return "RESOURCE_TYPE";
           case ListEventTypesFilterName::SERVICE_NAME:

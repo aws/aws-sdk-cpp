@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceAccessProtocol::NOT_SET:
+            return {};
           case InstanceAccessProtocol::ssh:
             return "ssh";
           case InstanceAccessProtocol::rdp:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GroupType::NOT_SET:
+            return {};
           case GroupType::TABULAR:
             return "TABULAR";
           default:

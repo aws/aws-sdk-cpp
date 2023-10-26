@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AclPermission::NOT_SET:
+            return {};
           case AclPermission::READ:
             return "READ";
           case AclPermission::WRITE:

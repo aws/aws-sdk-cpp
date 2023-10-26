@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerServiceState::NOT_SET:
+            return {};
           case ContainerServiceState::PENDING:
             return "PENDING";
           case ContainerServiceState::READY:

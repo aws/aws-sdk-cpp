@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LocalWriteForwardingStatus::NOT_SET:
+            return {};
           case LocalWriteForwardingStatus::enabled:
             return "enabled";
           case LocalWriteForwardingStatus::disabled:

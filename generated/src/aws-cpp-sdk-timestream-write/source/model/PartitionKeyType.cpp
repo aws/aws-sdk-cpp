@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PartitionKeyType::NOT_SET:
+            return {};
           case PartitionKeyType::DIMENSION:
             return "DIMENSION";
           case PartitionKeyType::MEASURE:

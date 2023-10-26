@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TranscribeVocabularyFilterMethod::NOT_SET:
+            return {};
           case TranscribeVocabularyFilterMethod::remove:
             return "remove";
           case TranscribeVocabularyFilterMethod::mask:

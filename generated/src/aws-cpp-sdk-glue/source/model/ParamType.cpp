@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParamType::NOT_SET:
+            return {};
           case ParamType::str:
             return "str";
           case ParamType::int_:

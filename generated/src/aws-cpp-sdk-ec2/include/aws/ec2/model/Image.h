@@ -820,32 +820,38 @@ namespace Model
 
 
     /**
-     * <p>The hypervisor type of the image.</p>
+     * <p>The hypervisor type of the image. Only <code>xen</code> is supported.
+     * <code>ovm</code> is not supported.</p>
      */
     inline const HypervisorType& GetHypervisor() const{ return m_hypervisor; }
 
     /**
-     * <p>The hypervisor type of the image.</p>
+     * <p>The hypervisor type of the image. Only <code>xen</code> is supported.
+     * <code>ovm</code> is not supported.</p>
      */
     inline bool HypervisorHasBeenSet() const { return m_hypervisorHasBeenSet; }
 
     /**
-     * <p>The hypervisor type of the image.</p>
+     * <p>The hypervisor type of the image. Only <code>xen</code> is supported.
+     * <code>ovm</code> is not supported.</p>
      */
     inline void SetHypervisor(const HypervisorType& value) { m_hypervisorHasBeenSet = true; m_hypervisor = value; }
 
     /**
-     * <p>The hypervisor type of the image.</p>
+     * <p>The hypervisor type of the image. Only <code>xen</code> is supported.
+     * <code>ovm</code> is not supported.</p>
      */
     inline void SetHypervisor(HypervisorType&& value) { m_hypervisorHasBeenSet = true; m_hypervisor = std::move(value); }
 
     /**
-     * <p>The hypervisor type of the image.</p>
+     * <p>The hypervisor type of the image. Only <code>xen</code> is supported.
+     * <code>ovm</code> is not supported.</p>
      */
     inline Image& WithHypervisor(const HypervisorType& value) { SetHypervisor(value); return *this;}
 
     /**
-     * <p>The hypervisor type of the image.</p>
+     * <p>The hypervisor type of the image. Only <code>xen</code> is supported.
+     * <code>ovm</code> is not supported.</p>
      */
     inline Image& WithHypervisor(HypervisorType&& value) { SetHypervisor(std::move(value)); return *this;}
 
@@ -1399,6 +1405,71 @@ namespace Model
      */
     inline Image& WithImdsSupport(ImdsSupportValues&& value) { SetImdsSupport(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ID of the instance that the AMI was created from if the AMI was created
+     * using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+     * This field only appears if the AMI was created using CreateImage.</p>
+     */
+    inline const Aws::String& GetSourceInstanceId() const{ return m_sourceInstanceId; }
+
+    /**
+     * <p>The ID of the instance that the AMI was created from if the AMI was created
+     * using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+     * This field only appears if the AMI was created using CreateImage.</p>
+     */
+    inline bool SourceInstanceIdHasBeenSet() const { return m_sourceInstanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance that the AMI was created from if the AMI was created
+     * using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+     * This field only appears if the AMI was created using CreateImage.</p>
+     */
+    inline void SetSourceInstanceId(const Aws::String& value) { m_sourceInstanceIdHasBeenSet = true; m_sourceInstanceId = value; }
+
+    /**
+     * <p>The ID of the instance that the AMI was created from if the AMI was created
+     * using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+     * This field only appears if the AMI was created using CreateImage.</p>
+     */
+    inline void SetSourceInstanceId(Aws::String&& value) { m_sourceInstanceIdHasBeenSet = true; m_sourceInstanceId = std::move(value); }
+
+    /**
+     * <p>The ID of the instance that the AMI was created from if the AMI was created
+     * using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+     * This field only appears if the AMI was created using CreateImage.</p>
+     */
+    inline void SetSourceInstanceId(const char* value) { m_sourceInstanceIdHasBeenSet = true; m_sourceInstanceId.assign(value); }
+
+    /**
+     * <p>The ID of the instance that the AMI was created from if the AMI was created
+     * using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+     * This field only appears if the AMI was created using CreateImage.</p>
+     */
+    inline Image& WithSourceInstanceId(const Aws::String& value) { SetSourceInstanceId(value); return *this;}
+
+    /**
+     * <p>The ID of the instance that the AMI was created from if the AMI was created
+     * using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+     * This field only appears if the AMI was created using CreateImage.</p>
+     */
+    inline Image& WithSourceInstanceId(Aws::String&& value) { SetSourceInstanceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the instance that the AMI was created from if the AMI was created
+     * using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+     * This field only appears if the AMI was created using CreateImage.</p>
+     */
+    inline Image& WithSourceInstanceId(const char* value) { SetSourceInstanceId(value); return *this;}
+
   private:
 
     ArchitectureValues m_architecture;
@@ -1490,6 +1561,9 @@ namespace Model
 
     ImdsSupportValues m_imdsSupport;
     bool m_imdsSupportHasBeenSet = false;
+
+    Aws::String m_sourceInstanceId;
+    bool m_sourceInstanceIdHasBeenSet = false;
   };
 
 } // namespace Model

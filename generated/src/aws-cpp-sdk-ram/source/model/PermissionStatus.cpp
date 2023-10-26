@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PermissionStatus::NOT_SET:
+            return {};
           case PermissionStatus::ATTACHABLE:
             return "ATTACHABLE";
           case PermissionStatus::UNATTACHABLE:

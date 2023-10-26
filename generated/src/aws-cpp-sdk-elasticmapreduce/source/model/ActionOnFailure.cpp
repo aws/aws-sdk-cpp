@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionOnFailure::NOT_SET:
+            return {};
           case ActionOnFailure::TERMINATE_JOB_FLOW:
             return "TERMINATE_JOB_FLOW";
           case ActionOnFailure::TERMINATE_CLUSTER:

@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutomationExecutionFilterKey::NOT_SET:
+            return {};
           case AutomationExecutionFilterKey::DocumentNamePrefix:
             return "DocumentNamePrefix";
           case AutomationExecutionFilterKey::ExecutionStatus:

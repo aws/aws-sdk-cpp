@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventType::NOT_SET:
+            return {};
           case EventType::send:
             return "send";
           case EventType::reject:

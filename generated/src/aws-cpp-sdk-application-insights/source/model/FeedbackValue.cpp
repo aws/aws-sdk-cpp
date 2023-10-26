@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FeedbackValue::NOT_SET:
+            return {};
           case FeedbackValue::NOT_SPECIFIED:
             return "NOT_SPECIFIED";
           case FeedbackValue::USEFUL:

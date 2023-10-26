@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComputeType::NOT_SET:
+            return {};
           case ComputeType::ACU_1:
             return "ACU_1";
           case ComputeType::ACU_2:

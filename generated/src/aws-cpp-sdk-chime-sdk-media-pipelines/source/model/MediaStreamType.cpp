@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MediaStreamType::NOT_SET:
+            return {};
           case MediaStreamType::MixedAudio:
             return "MixedAudio";
           case MediaStreamType::IndividualAudio:

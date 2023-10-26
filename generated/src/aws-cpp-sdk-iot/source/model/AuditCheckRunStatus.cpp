@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuditCheckRunStatus::NOT_SET:
+            return {};
           case AuditCheckRunStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case AuditCheckRunStatus::WAITING_FOR_DATA_COLLECTION:

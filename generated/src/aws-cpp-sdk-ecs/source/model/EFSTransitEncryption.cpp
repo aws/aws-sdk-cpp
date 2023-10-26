@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EFSTransitEncryption::NOT_SET:
+            return {};
           case EFSTransitEncryption::ENABLED:
             return "ENABLED";
           case EFSTransitEncryption::DISABLED:

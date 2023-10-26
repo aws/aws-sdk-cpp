@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OpticalStandard::NOT_SET:
+            return {};
           case OpticalStandard::OPTIC_10GBASE_SR:
             return "OPTIC_10GBASE_SR";
           case OpticalStandard::OPTIC_10GBASE_IR:

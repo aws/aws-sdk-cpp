@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigurationSource::NOT_SET:
+            return {};
           case ConfigurationSource::REPOSITORY:
             return "REPOSITORY";
           case ConfigurationSource::API:

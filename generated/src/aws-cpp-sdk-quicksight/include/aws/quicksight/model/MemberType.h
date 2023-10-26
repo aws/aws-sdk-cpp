@@ -19,6 +19,7 @@ namespace Model
     DASHBOARD,
     ANALYSIS,
     DATASET,
+    DATASOURCE,
     TOPIC
   };
 

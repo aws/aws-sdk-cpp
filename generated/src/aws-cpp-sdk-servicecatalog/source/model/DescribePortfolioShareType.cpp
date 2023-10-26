@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DescribePortfolioShareType::NOT_SET:
+            return {};
           case DescribePortfolioShareType::ACCOUNT:
             return "ACCOUNT";
           case DescribePortfolioShareType::ORGANIZATION:

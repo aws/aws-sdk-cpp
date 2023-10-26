@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScalingActivityStatusCode::NOT_SET:
+            return {};
           case ScalingActivityStatusCode::PendingSpotBidPlacement:
             return "PendingSpotBidPlacement";
           case ScalingActivityStatusCode::WaitingForSpotInstanceRequestId:

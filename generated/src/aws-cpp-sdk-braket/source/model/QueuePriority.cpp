@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QueuePriority::NOT_SET:
+            return {};
           case QueuePriority::Normal:
             return "Normal";
           case QueuePriority::Priority:

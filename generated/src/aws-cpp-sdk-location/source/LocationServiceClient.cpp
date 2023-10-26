@@ -236,7 +236,7 @@ AssociateTrackerConsumerOutcome LocationServiceClient::AssociateTrackerConsumer(
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateTrackerConsumer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("tracking.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.tracking.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), AssociateTrackerConsumerOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/tracking/v0/trackers/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrackerName());
@@ -555,7 +555,7 @@ CreateGeofenceCollectionOutcome LocationServiceClient::CreateGeofenceCollection(
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGeofenceCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("geofencing.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.geofencing.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateGeofenceCollectionOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/geofencing/v0/collections");
       return CreateGeofenceCollectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -584,7 +584,7 @@ CreateKeyOutcome LocationServiceClient::CreateKey(const CreateKeyRequest& reques
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("metadata.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.metadata.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateKeyOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/metadata/v0/keys");
       return CreateKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -613,7 +613,7 @@ CreateMapOutcome LocationServiceClient::CreateMap(const CreateMapRequest& reques
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("maps.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.maps.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateMapOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/maps/v0/maps");
       return CreateMapOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -642,7 +642,7 @@ CreatePlaceIndexOutcome LocationServiceClient::CreatePlaceIndex(const CreatePlac
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePlaceIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("places.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.places.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreatePlaceIndexOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/places/v0/indexes");
       return CreatePlaceIndexOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -671,7 +671,7 @@ CreateRouteCalculatorOutcome LocationServiceClient::CreateRouteCalculator(const 
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRouteCalculator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("routes.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.routes.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateRouteCalculatorOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/routes/v0/calculators");
       return CreateRouteCalculatorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -700,7 +700,7 @@ CreateTrackerOutcome LocationServiceClient::CreateTracker(const CreateTrackerReq
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTracker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("tracking.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.tracking.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateTrackerOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/tracking/v0/trackers");
       return CreateTrackerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -734,7 +734,7 @@ DeleteGeofenceCollectionOutcome LocationServiceClient::DeleteGeofenceCollection(
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteGeofenceCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("geofencing.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.geofencing.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteGeofenceCollectionOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/geofencing/v0/collections/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollectionName());
@@ -769,7 +769,7 @@ DeleteKeyOutcome LocationServiceClient::DeleteKey(const DeleteKeyRequest& reques
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("metadata.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.metadata.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteKeyOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/metadata/v0/keys/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKeyName());
@@ -804,7 +804,7 @@ DeleteMapOutcome LocationServiceClient::DeleteMap(const DeleteMapRequest& reques
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("maps.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.maps.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteMapOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/maps/v0/maps/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMapName());
@@ -839,7 +839,7 @@ DeletePlaceIndexOutcome LocationServiceClient::DeletePlaceIndex(const DeletePlac
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePlaceIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("places.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.places.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeletePlaceIndexOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/places/v0/indexes/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexName());
@@ -874,7 +874,7 @@ DeleteRouteCalculatorOutcome LocationServiceClient::DeleteRouteCalculator(const 
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRouteCalculator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("routes.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.routes.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteRouteCalculatorOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/routes/v0/calculators/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCalculatorName());
@@ -909,7 +909,7 @@ DeleteTrackerOutcome LocationServiceClient::DeleteTracker(const DeleteTrackerReq
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTracker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("tracking.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.tracking.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteTrackerOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/tracking/v0/trackers/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrackerName());
@@ -944,7 +944,7 @@ DescribeGeofenceCollectionOutcome LocationServiceClient::DescribeGeofenceCollect
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeGeofenceCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("geofencing.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.geofencing.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeGeofenceCollectionOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/geofencing/v0/collections/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollectionName());
@@ -979,7 +979,7 @@ DescribeKeyOutcome LocationServiceClient::DescribeKey(const DescribeKeyRequest& 
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("metadata.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.metadata.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeKeyOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/metadata/v0/keys/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKeyName());
@@ -1014,7 +1014,7 @@ DescribeMapOutcome LocationServiceClient::DescribeMap(const DescribeMapRequest& 
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("maps.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.maps.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeMapOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/maps/v0/maps/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMapName());
@@ -1049,7 +1049,7 @@ DescribePlaceIndexOutcome LocationServiceClient::DescribePlaceIndex(const Descri
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribePlaceIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("places.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.places.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribePlaceIndexOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/places/v0/indexes/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexName());
@@ -1084,7 +1084,7 @@ DescribeRouteCalculatorOutcome LocationServiceClient::DescribeRouteCalculator(co
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeRouteCalculator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("routes.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.routes.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeRouteCalculatorOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/routes/v0/calculators/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCalculatorName());
@@ -1119,7 +1119,7 @@ DescribeTrackerOutcome LocationServiceClient::DescribeTracker(const DescribeTrac
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTracker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("tracking.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.tracking.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeTrackerOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/tracking/v0/trackers/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrackerName());
@@ -1159,7 +1159,7 @@ DisassociateTrackerConsumerOutcome LocationServiceClient::DisassociateTrackerCon
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateTrackerConsumer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("tracking.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.tracking.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DisassociateTrackerConsumerOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/tracking/v0/trackers/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrackerName());
@@ -1577,7 +1577,7 @@ ListGeofenceCollectionsOutcome LocationServiceClient::ListGeofenceCollections(co
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGeofenceCollections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("geofencing.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.geofencing.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListGeofenceCollectionsOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/geofencing/v0/list-collections");
       return ListGeofenceCollectionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -1642,7 +1642,7 @@ ListKeysOutcome LocationServiceClient::ListKeys(const ListKeysRequest& request) 
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListKeys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("metadata.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.metadata.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListKeysOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/metadata/v0/list-keys");
       return ListKeysOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -1671,7 +1671,7 @@ ListMapsOutcome LocationServiceClient::ListMaps(const ListMapsRequest& request) 
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMaps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("maps.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.maps.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListMapsOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/maps/v0/list-maps");
       return ListMapsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -1700,7 +1700,7 @@ ListPlaceIndexesOutcome LocationServiceClient::ListPlaceIndexes(const ListPlaceI
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPlaceIndexes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("places.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.places.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListPlaceIndexesOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/places/v0/list-indexes");
       return ListPlaceIndexesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -1729,7 +1729,7 @@ ListRouteCalculatorsOutcome LocationServiceClient::ListRouteCalculators(const Li
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRouteCalculators, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("routes.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.routes.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListRouteCalculatorsOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/routes/v0/list-calculators");
       return ListRouteCalculatorsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -1763,7 +1763,7 @@ ListTagsForResourceOutcome LocationServiceClient::ListTagsForResource(const List
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("metadata.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.metadata.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListTagsForResourceOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
@@ -1798,7 +1798,7 @@ ListTrackerConsumersOutcome LocationServiceClient::ListTrackerConsumers(const Li
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrackerConsumers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("tracking.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.tracking.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListTrackerConsumersOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/tracking/v0/trackers/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrackerName());
@@ -1829,7 +1829,7 @@ ListTrackersOutcome LocationServiceClient::ListTrackers(const ListTrackersReques
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrackers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("tracking.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.tracking.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListTrackersOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/tracking/v0/list-trackers");
       return ListTrackersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -2013,7 +2013,7 @@ TagResourceOutcome LocationServiceClient::TagResource(const TagResourceRequest& 
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("metadata.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.metadata.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), TagResourceOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
@@ -2053,7 +2053,7 @@ UntagResourceOutcome LocationServiceClient::UntagResource(const UntagResourceReq
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("metadata.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.metadata.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UntagResourceOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
@@ -2088,7 +2088,7 @@ UpdateGeofenceCollectionOutcome LocationServiceClient::UpdateGeofenceCollection(
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGeofenceCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("geofencing.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.geofencing.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateGeofenceCollectionOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/geofencing/v0/collections/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollectionName());
@@ -2123,7 +2123,7 @@ UpdateKeyOutcome LocationServiceClient::UpdateKey(const UpdateKeyRequest& reques
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("metadata.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.metadata.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateKeyOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/metadata/v0/keys/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKeyName());
@@ -2158,7 +2158,7 @@ UpdateMapOutcome LocationServiceClient::UpdateMap(const UpdateMapRequest& reques
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("maps.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.maps.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateMapOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/maps/v0/maps/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMapName());
@@ -2193,7 +2193,7 @@ UpdatePlaceIndexOutcome LocationServiceClient::UpdatePlaceIndex(const UpdatePlac
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePlaceIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("places.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.places.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdatePlaceIndexOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/places/v0/indexes/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexName());
@@ -2228,7 +2228,7 @@ UpdateRouteCalculatorOutcome LocationServiceClient::UpdateRouteCalculator(const 
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRouteCalculator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("routes.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.routes.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateRouteCalculatorOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/routes/v0/calculators/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCalculatorName());
@@ -2263,7 +2263,7 @@ UpdateTrackerOutcome LocationServiceClient::UpdateTracker(const UpdateTrackerReq
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTracker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("tracking.");
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("cp.tracking.");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateTrackerOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/tracking/v0/trackers/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrackerName());

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActivityStreamStatus::NOT_SET:
+            return {};
           case ActivityStreamStatus::stopped:
             return "stopped";
           case ActivityStreamStatus::starting:

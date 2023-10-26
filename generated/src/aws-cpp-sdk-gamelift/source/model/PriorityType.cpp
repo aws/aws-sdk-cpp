@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PriorityType::NOT_SET:
+            return {};
           case PriorityType::LATENCY:
             return "LATENCY";
           case PriorityType::COST:

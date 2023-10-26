@@ -174,6 +174,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NodeDataType::NOT_SET:
+            return {};
           case NodeDataType::INT8:
             return "INT8";
           case NodeDataType::UINT8:

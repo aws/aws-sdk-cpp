@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FederationSourceErrorCode::NOT_SET:
+            return {};
           case FederationSourceErrorCode::InvalidResponseException:
             return "InvalidResponseException";
           case FederationSourceErrorCode::OperationTimeoutException:

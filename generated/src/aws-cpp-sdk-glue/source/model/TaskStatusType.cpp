@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaskStatusType::NOT_SET:
+            return {};
           case TaskStatusType::STARTING:
             return "STARTING";
           case TaskStatusType::RUNNING:

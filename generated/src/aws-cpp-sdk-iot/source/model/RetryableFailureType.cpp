@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RetryableFailureType::NOT_SET:
+            return {};
           case RetryableFailureType::FAILED:
             return "FAILED";
           case RetryableFailureType::TIMED_OUT:

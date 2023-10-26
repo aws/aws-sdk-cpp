@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceStateType::NOT_SET:
+            return {};
           case ResourceStateType::ACTIVE:
             return "ACTIVE";
           case ResourceStateType::RESTORING:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthorizerType::NOT_SET:
+            return {};
           case AuthorizerType::TOKEN:
             return "TOKEN";
           case AuthorizerType::REQUEST:

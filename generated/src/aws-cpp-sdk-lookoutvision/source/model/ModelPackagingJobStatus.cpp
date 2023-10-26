@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelPackagingJobStatus::NOT_SET:
+            return {};
           case ModelPackagingJobStatus::CREATED:
             return "CREATED";
           case ModelPackagingJobStatus::RUNNING:

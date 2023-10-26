@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides in-depth details about the error. These details include the possible
-   * causes of the errors and troubleshooting information.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Describes in-depth details about the error. These details include the
+   * possible causes of the error and troubleshooting information.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ErrorDetails">AWS
    * API Reference</a></p>
    */

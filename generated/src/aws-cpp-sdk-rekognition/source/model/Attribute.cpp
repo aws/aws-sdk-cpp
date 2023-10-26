@@ -109,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Attribute::NOT_SET:
+            return {};
           case Attribute::DEFAULT:
             return "DEFAULT";
           case Attribute::ALL:

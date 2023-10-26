@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DiagnosticsMode::NOT_SET:
+            return {};
           case DiagnosticsMode::OFF:
             return "OFF";
           case DiagnosticsMode::SEND_ACTIVE_DTCS:

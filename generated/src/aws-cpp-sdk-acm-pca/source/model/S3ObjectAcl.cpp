@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3ObjectAcl::NOT_SET:
+            return {};
           case S3ObjectAcl::PUBLIC_READ:
             return "PUBLIC_READ";
           case S3ObjectAcl::BUCKET_OWNER_FULL_CONTROL:

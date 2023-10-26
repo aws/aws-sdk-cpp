@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TriggerType::NOT_SET:
+            return {};
           case TriggerType::SNOOZE_TIMEOUT:
             return "SNOOZE_TIMEOUT";
           default:

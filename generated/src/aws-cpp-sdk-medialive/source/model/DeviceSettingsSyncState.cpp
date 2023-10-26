@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceSettingsSyncState::NOT_SET:
+            return {};
           case DeviceSettingsSyncState::SYNCED:
             return "SYNCED";
           case DeviceSettingsSyncState::SYNCING:

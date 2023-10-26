@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VaultState::NOT_SET:
+            return {};
           case VaultState::CREATING:
             return "CREATING";
           case VaultState::AVAILABLE:

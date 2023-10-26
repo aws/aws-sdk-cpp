@@ -226,126 +226,130 @@ namespace Model
 
 
     /**
-     * <p>Earliest and latest time an instance can be restored to.</p>
+     * <p>The earliest and latest time a DB instance can be restored to.</p>
      */
     inline const RestoreWindow& GetRestoreWindow() const{ return m_restoreWindow; }
 
     /**
-     * <p>Earliest and latest time an instance can be restored to.</p>
+     * <p>The earliest and latest time a DB instance can be restored to.</p>
      */
     inline bool RestoreWindowHasBeenSet() const { return m_restoreWindowHasBeenSet; }
 
     /**
-     * <p>Earliest and latest time an instance can be restored to.</p>
+     * <p>The earliest and latest time a DB instance can be restored to.</p>
      */
     inline void SetRestoreWindow(const RestoreWindow& value) { m_restoreWindowHasBeenSet = true; m_restoreWindow = value; }
 
     /**
-     * <p>Earliest and latest time an instance can be restored to.</p>
+     * <p>The earliest and latest time a DB instance can be restored to.</p>
      */
     inline void SetRestoreWindow(RestoreWindow&& value) { m_restoreWindowHasBeenSet = true; m_restoreWindow = std::move(value); }
 
     /**
-     * <p>Earliest and latest time an instance can be restored to.</p>
+     * <p>The earliest and latest time a DB instance can be restored to.</p>
      */
     inline DBInstanceAutomatedBackup& WithRestoreWindow(const RestoreWindow& value) { SetRestoreWindow(value); return *this;}
 
     /**
-     * <p>Earliest and latest time an instance can be restored to.</p>
+     * <p>The earliest and latest time a DB instance can be restored to.</p>
      */
     inline DBInstanceAutomatedBackup& WithRestoreWindow(RestoreWindow&& value) { SetRestoreWindow(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the allocated storage size in gibibytes (GiB).</p>
+     * <p>The allocated storage size for the the automated backup in gibibytes
+     * (GiB).</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p>Specifies the allocated storage size in gibibytes (GiB).</p>
+     * <p>The allocated storage size for the the automated backup in gibibytes
+     * (GiB).</p>
      */
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
     /**
-     * <p>Specifies the allocated storage size in gibibytes (GiB).</p>
+     * <p>The allocated storage size for the the automated backup in gibibytes
+     * (GiB).</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p>Specifies the allocated storage size in gibibytes (GiB).</p>
+     * <p>The allocated storage size for the the automated backup in gibibytes
+     * (GiB).</p>
      */
     inline DBInstanceAutomatedBackup& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
 
     /**
-     * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
-     * <p> <code>active</code> - Automated backups for current instances.</p> </li>
-     * <li> <p> <code>retained</code> - Automated backups for deleted instances.</p>
-     * </li> <li> <p> <code>creating</code> - Automated backups that are waiting for
-     * the first automated snapshot to be available.</p> </li> </ul>
+     * <p>A list of status information for an automated backup:</p> <ul> <li> <p>
+     * <code>active</code> - Automated backups for current instances.</p> </li> <li>
+     * <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+     * <li> <p> <code>creating</code> - Automated backups that are waiting for the
+     * first automated snapshot to be available.</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
-     * <p> <code>active</code> - Automated backups for current instances.</p> </li>
-     * <li> <p> <code>retained</code> - Automated backups for deleted instances.</p>
-     * </li> <li> <p> <code>creating</code> - Automated backups that are waiting for
-     * the first automated snapshot to be available.</p> </li> </ul>
+     * <p>A list of status information for an automated backup:</p> <ul> <li> <p>
+     * <code>active</code> - Automated backups for current instances.</p> </li> <li>
+     * <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+     * <li> <p> <code>creating</code> - Automated backups that are waiting for the
+     * first automated snapshot to be available.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
-     * <p> <code>active</code> - Automated backups for current instances.</p> </li>
-     * <li> <p> <code>retained</code> - Automated backups for deleted instances.</p>
-     * </li> <li> <p> <code>creating</code> - Automated backups that are waiting for
-     * the first automated snapshot to be available.</p> </li> </ul>
+     * <p>A list of status information for an automated backup:</p> <ul> <li> <p>
+     * <code>active</code> - Automated backups for current instances.</p> </li> <li>
+     * <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+     * <li> <p> <code>creating</code> - Automated backups that are waiting for the
+     * first automated snapshot to be available.</p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
-     * <p> <code>active</code> - Automated backups for current instances.</p> </li>
-     * <li> <p> <code>retained</code> - Automated backups for deleted instances.</p>
-     * </li> <li> <p> <code>creating</code> - Automated backups that are waiting for
-     * the first automated snapshot to be available.</p> </li> </ul>
+     * <p>A list of status information for an automated backup:</p> <ul> <li> <p>
+     * <code>active</code> - Automated backups for current instances.</p> </li> <li>
+     * <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+     * <li> <p> <code>creating</code> - Automated backups that are waiting for the
+     * first automated snapshot to be available.</p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
-     * <p> <code>active</code> - Automated backups for current instances.</p> </li>
-     * <li> <p> <code>retained</code> - Automated backups for deleted instances.</p>
-     * </li> <li> <p> <code>creating</code> - Automated backups that are waiting for
-     * the first automated snapshot to be available.</p> </li> </ul>
+     * <p>A list of status information for an automated backup:</p> <ul> <li> <p>
+     * <code>active</code> - Automated backups for current instances.</p> </li> <li>
+     * <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+     * <li> <p> <code>creating</code> - Automated backups that are waiting for the
+     * first automated snapshot to be available.</p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
-     * <p> <code>active</code> - Automated backups for current instances.</p> </li>
-     * <li> <p> <code>retained</code> - Automated backups for deleted instances.</p>
-     * </li> <li> <p> <code>creating</code> - Automated backups that are waiting for
-     * the first automated snapshot to be available.</p> </li> </ul>
+     * <p>A list of status information for an automated backup:</p> <ul> <li> <p>
+     * <code>active</code> - Automated backups for current instances.</p> </li> <li>
+     * <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+     * <li> <p> <code>creating</code> - Automated backups that are waiting for the
+     * first automated snapshot to be available.</p> </li> </ul>
      */
     inline DBInstanceAutomatedBackup& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
-     * <p> <code>active</code> - Automated backups for current instances.</p> </li>
-     * <li> <p> <code>retained</code> - Automated backups for deleted instances.</p>
-     * </li> <li> <p> <code>creating</code> - Automated backups that are waiting for
-     * the first automated snapshot to be available.</p> </li> </ul>
+     * <p>A list of status information for an automated backup:</p> <ul> <li> <p>
+     * <code>active</code> - Automated backups for current instances.</p> </li> <li>
+     * <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+     * <li> <p> <code>creating</code> - Automated backups that are waiting for the
+     * first automated snapshot to be available.</p> </li> </ul>
      */
     inline DBInstanceAutomatedBackup& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
-     * <p> <code>active</code> - Automated backups for current instances.</p> </li>
-     * <li> <p> <code>retained</code> - Automated backups for deleted instances.</p>
-     * </li> <li> <p> <code>creating</code> - Automated backups that are waiting for
-     * the first automated snapshot to be available.</p> </li> </ul>
+     * <p>A list of status information for an automated backup:</p> <ul> <li> <p>
+     * <code>active</code> - Automated backups for current instances.</p> </li> <li>
+     * <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+     * <li> <p> <code>creating</code> - Automated backups that are waiting for the
+     * first automated snapshot to be available.</p> </li> </ul>
      */
     inline DBInstanceAutomatedBackup& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -445,73 +449,73 @@ namespace Model
 
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance.</p>
+     * <p>The VPC ID associated with the DB instance.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance.</p>
+     * <p>The VPC ID associated with the DB instance.</p>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance.</p>
+     * <p>The VPC ID associated with the DB instance.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance.</p>
+     * <p>The VPC ID associated with the DB instance.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance.</p>
+     * <p>The VPC ID associated with the DB instance.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance.</p>
+     * <p>The VPC ID associated with the DB instance.</p>
      */
     inline DBInstanceAutomatedBackup& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance.</p>
+     * <p>The VPC ID associated with the DB instance.</p>
      */
     inline DBInstanceAutomatedBackup& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance.</p>
+     * <p>The VPC ID associated with the DB instance.</p>
      */
     inline DBInstanceAutomatedBackup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
 
     /**
-     * <p>Provides the date and time that the DB instance was created.</p>
+     * <p>The date and time when the DB instance was created.</p>
      */
     inline const Aws::Utils::DateTime& GetInstanceCreateTime() const{ return m_instanceCreateTime; }
 
     /**
-     * <p>Provides the date and time that the DB instance was created.</p>
+     * <p>The date and time when the DB instance was created.</p>
      */
     inline bool InstanceCreateTimeHasBeenSet() const { return m_instanceCreateTimeHasBeenSet; }
 
     /**
-     * <p>Provides the date and time that the DB instance was created.</p>
+     * <p>The date and time when the DB instance was created.</p>
      */
     inline void SetInstanceCreateTime(const Aws::Utils::DateTime& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = value; }
 
     /**
-     * <p>Provides the date and time that the DB instance was created.</p>
+     * <p>The date and time when the DB instance was created.</p>
      */
     inline void SetInstanceCreateTime(Aws::Utils::DateTime&& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = std::move(value); }
 
     /**
-     * <p>Provides the date and time that the DB instance was created.</p>
+     * <p>The date and time when the DB instance was created.</p>
      */
     inline DBInstanceAutomatedBackup& WithInstanceCreateTime(const Aws::Utils::DateTime& value) { SetInstanceCreateTime(value); return *this;}
 
     /**
-     * <p>Provides the date and time that the DB instance was created.</p>
+     * <p>The date and time when the DB instance was created.</p>
      */
     inline DBInstanceAutomatedBackup& WithInstanceCreateTime(Aws::Utils::DateTime&& value) { SetInstanceCreateTime(std::move(value)); return *this;}
 
@@ -640,42 +644,42 @@ namespace Model
 
 
     /**
-     * <p>License model information for the automated backup.</p>
+     * <p>The license model information for the automated backup.</p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
 
     /**
-     * <p>License model information for the automated backup.</p>
+     * <p>The license model information for the automated backup.</p>
      */
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
-     * <p>License model information for the automated backup.</p>
+     * <p>The license model information for the automated backup.</p>
      */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
-     * <p>License model information for the automated backup.</p>
+     * <p>The license model information for the automated backup.</p>
      */
     inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
-     * <p>License model information for the automated backup.</p>
+     * <p>The license model information for the automated backup.</p>
      */
     inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
 
     /**
-     * <p>License model information for the automated backup.</p>
+     * <p>The license model information for the automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
 
     /**
-     * <p>License model information for the automated backup.</p>
+     * <p>The license model information for the automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
-     * <p>License model information for the automated backup.</p>
+     * <p>The license model information for the automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
@@ -800,63 +804,63 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the automated backup is encrypted.</p>
+     * <p>Indicates whether the automated backup is encrypted.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
-     * <p>Specifies whether the automated backup is encrypted.</p>
+     * <p>Indicates whether the automated backup is encrypted.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
-     * <p>Specifies whether the automated backup is encrypted.</p>
+     * <p>Indicates whether the automated backup is encrypted.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
-     * <p>Specifies whether the automated backup is encrypted.</p>
+     * <p>Indicates whether the automated backup is encrypted.</p>
      */
     inline DBInstanceAutomatedBackup& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
 
     /**
-     * <p>Specifies the storage type associated with the automated backup.</p>
+     * <p>The storage type associated with the automated backup.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>Specifies the storage type associated with the automated backup.</p>
+     * <p>The storage type associated with the automated backup.</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the storage type associated with the automated backup.</p>
+     * <p>The storage type associated with the automated backup.</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>Specifies the storage type associated with the automated backup.</p>
+     * <p>The storage type associated with the automated backup.</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>Specifies the storage type associated with the automated backup.</p>
+     * <p>The storage type associated with the automated backup.</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>Specifies the storage type associated with the automated backup.</p>
+     * <p>The storage type associated with the automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>Specifies the storage type associated with the automated backup.</p>
+     * <p>The storage type associated with the automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the storage type associated with the automated backup.</p>
+     * <p>The storage type associated with the automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -1120,71 +1124,71 @@ namespace Model
 
 
     /**
-     * <p>Specifies where automated backups are stored: Amazon Web Services Outposts or
-     * the Amazon Web Services Region.</p>
+     * <p>The location where automated backups are stored: Amazon Web Services Outposts
+     * or the Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetBackupTarget() const{ return m_backupTarget; }
 
     /**
-     * <p>Specifies where automated backups are stored: Amazon Web Services Outposts or
-     * the Amazon Web Services Region.</p>
+     * <p>The location where automated backups are stored: Amazon Web Services Outposts
+     * or the Amazon Web Services Region.</p>
      */
     inline bool BackupTargetHasBeenSet() const { return m_backupTargetHasBeenSet; }
 
     /**
-     * <p>Specifies where automated backups are stored: Amazon Web Services Outposts or
-     * the Amazon Web Services Region.</p>
+     * <p>The location where automated backups are stored: Amazon Web Services Outposts
+     * or the Amazon Web Services Region.</p>
      */
     inline void SetBackupTarget(const Aws::String& value) { m_backupTargetHasBeenSet = true; m_backupTarget = value; }
 
     /**
-     * <p>Specifies where automated backups are stored: Amazon Web Services Outposts or
-     * the Amazon Web Services Region.</p>
+     * <p>The location where automated backups are stored: Amazon Web Services Outposts
+     * or the Amazon Web Services Region.</p>
      */
     inline void SetBackupTarget(Aws::String&& value) { m_backupTargetHasBeenSet = true; m_backupTarget = std::move(value); }
 
     /**
-     * <p>Specifies where automated backups are stored: Amazon Web Services Outposts or
-     * the Amazon Web Services Region.</p>
+     * <p>The location where automated backups are stored: Amazon Web Services Outposts
+     * or the Amazon Web Services Region.</p>
      */
     inline void SetBackupTarget(const char* value) { m_backupTargetHasBeenSet = true; m_backupTarget.assign(value); }
 
     /**
-     * <p>Specifies where automated backups are stored: Amazon Web Services Outposts or
-     * the Amazon Web Services Region.</p>
+     * <p>The location where automated backups are stored: Amazon Web Services Outposts
+     * or the Amazon Web Services Region.</p>
      */
     inline DBInstanceAutomatedBackup& WithBackupTarget(const Aws::String& value) { SetBackupTarget(value); return *this;}
 
     /**
-     * <p>Specifies where automated backups are stored: Amazon Web Services Outposts or
-     * the Amazon Web Services Region.</p>
+     * <p>The location where automated backups are stored: Amazon Web Services Outposts
+     * or the Amazon Web Services Region.</p>
      */
     inline DBInstanceAutomatedBackup& WithBackupTarget(Aws::String&& value) { SetBackupTarget(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies where automated backups are stored: Amazon Web Services Outposts or
-     * the Amazon Web Services Region.</p>
+     * <p>The location where automated backups are stored: Amazon Web Services Outposts
+     * or the Amazon Web Services Region.</p>
      */
     inline DBInstanceAutomatedBackup& WithBackupTarget(const char* value) { SetBackupTarget(value); return *this;}
 
 
     /**
-     * <p>Specifies the storage throughput for the automated backup.</p>
+     * <p>The storage throughput for the automated backup.</p>
      */
     inline int GetStorageThroughput() const{ return m_storageThroughput; }
 
     /**
-     * <p>Specifies the storage throughput for the automated backup.</p>
+     * <p>The storage throughput for the automated backup.</p>
      */
     inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
 
     /**
-     * <p>Specifies the storage throughput for the automated backup.</p>
+     * <p>The storage throughput for the automated backup.</p>
      */
     inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
 
     /**
-     * <p>Specifies the storage throughput for the automated backup.</p>
+     * <p>The storage throughput for the automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
 
@@ -1236,6 +1240,31 @@ namespace Model
      * Backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithAwsBackupRecoveryPointArn(const char* value) { SetAwsBackupRecoveryPointArn(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline bool GetDedicatedLogVolume() const{ return m_dedicatedLogVolume; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline DBInstanceAutomatedBackup& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
 
   private:
 
@@ -1325,6 +1354,9 @@ namespace Model
 
     Aws::String m_awsBackupRecoveryPointArn;
     bool m_awsBackupRecoveryPointArnHasBeenSet = false;
+
+    bool m_dedicatedLogVolume;
+    bool m_dedicatedLogVolumeHasBeenSet = false;
   };
 
 } // namespace Model

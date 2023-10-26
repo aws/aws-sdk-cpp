@@ -1322,6 +1322,34 @@ namespace FSx
         }
 
         /**
+         * <p>After performing steps to repair the Active Directory configuration of an FSx
+         * for Windows File Server file system, use this action to initiate the process of
+         * Amazon FSx attempting to reconnect to the file system.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/StartMisconfiguredStateRecovery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMisconfiguredStateRecoveryOutcome StartMisconfiguredStateRecovery(const Model::StartMisconfiguredStateRecoveryRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartMisconfiguredStateRecovery that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartMisconfiguredStateRecoveryRequestT = Model::StartMisconfiguredStateRecoveryRequest>
+        Model::StartMisconfiguredStateRecoveryOutcomeCallable StartMisconfiguredStateRecoveryCallable(const StartMisconfiguredStateRecoveryRequestT& request) const
+        {
+            return SubmitCallable(&FSxClient::StartMisconfiguredStateRecovery, request);
+        }
+
+        /**
+         * An Async wrapper for StartMisconfiguredStateRecovery that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartMisconfiguredStateRecoveryRequestT = Model::StartMisconfiguredStateRecoveryRequest>
+        void StartMisconfiguredStateRecoveryAsync(const StartMisconfiguredStateRecoveryRequestT& request, const StartMisconfiguredStateRecoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FSxClient::StartMisconfiguredStateRecovery, request, handler, context);
+        }
+
+        /**
          * <p>Tags an Amazon FSx resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/TagResource">AWS API
          * Reference</a></p>

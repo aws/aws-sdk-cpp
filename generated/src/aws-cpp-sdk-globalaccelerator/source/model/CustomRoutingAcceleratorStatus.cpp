@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomRoutingAcceleratorStatus::NOT_SET:
+            return {};
           case CustomRoutingAcceleratorStatus::DEPLOYED:
             return "DEPLOYED";
           case CustomRoutingAcceleratorStatus::IN_PROGRESS:

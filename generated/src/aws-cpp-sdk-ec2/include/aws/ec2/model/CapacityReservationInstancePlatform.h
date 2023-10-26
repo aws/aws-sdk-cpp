@@ -32,7 +32,8 @@ namespace Model
     RHEL_with_SQL_Server_Web,
     RHEL_with_HA,
     RHEL_with_HA_and_SQL_Server_Standard,
-    RHEL_with_HA_and_SQL_Server_Enterprise
+    RHEL_with_HA_and_SQL_Server_Enterprise,
+    Ubuntu_Pro
   };
 
 namespace CapacityReservationInstancePlatformMapper

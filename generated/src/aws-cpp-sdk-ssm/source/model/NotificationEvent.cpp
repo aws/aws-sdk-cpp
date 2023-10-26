@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationEvent::NOT_SET:
+            return {};
           case NotificationEvent::All:
             return "All";
           case NotificationEvent::InProgress:

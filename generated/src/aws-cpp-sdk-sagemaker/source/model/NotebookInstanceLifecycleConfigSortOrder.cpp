@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotebookInstanceLifecycleConfigSortOrder::NOT_SET:
+            return {};
           case NotebookInstanceLifecycleConfigSortOrder::Ascending:
             return "Ascending";
           case NotebookInstanceLifecycleConfigSortOrder::Descending:

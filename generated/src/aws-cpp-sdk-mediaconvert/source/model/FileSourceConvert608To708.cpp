@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FileSourceConvert608To708::NOT_SET:
+            return {};
           case FileSourceConvert608To708::UPCONVERT:
             return "UPCONVERT";
           case FileSourceConvert608To708::DISABLED:

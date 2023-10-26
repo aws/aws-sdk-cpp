@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MessageSystemAttributeName::NOT_SET:
+            return {};
           case MessageSystemAttributeName::SenderId:
             return "SenderId";
           case MessageSystemAttributeName::SentTimestamp:

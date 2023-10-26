@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WordCloudWordCasing::NOT_SET:
+            return {};
           case WordCloudWordCasing::LOWER_CASE:
             return "LOWER_CASE";
           case WordCloudWordCasing::EXISTING_CASE:

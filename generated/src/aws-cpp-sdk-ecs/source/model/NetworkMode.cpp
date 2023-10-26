@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkMode::NOT_SET:
+            return {};
           case NetworkMode::bridge:
             return "bridge";
           case NetworkMode::host:

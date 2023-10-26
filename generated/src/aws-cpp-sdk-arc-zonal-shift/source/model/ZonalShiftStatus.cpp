@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ZonalShiftStatus::NOT_SET:
+            return {};
           case ZonalShiftStatus::ACTIVE:
             return "ACTIVE";
           case ZonalShiftStatus::EXPIRED:

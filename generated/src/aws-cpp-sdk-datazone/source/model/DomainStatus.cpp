@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DomainStatus::NOT_SET:
+            return {};
           case DomainStatus::CREATING:
             return "CREATING";
           case DomainStatus::AVAILABLE:

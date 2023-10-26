@@ -8,6 +8,7 @@
 #include <aws/workspaces/model/RunningMode.h>
 #include <aws/workspaces/model/Compute.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/workspaces/model/OperatingSystemName.h>
 #include <aws/workspaces/model/Protocol.h>
 #include <utility>
 
@@ -337,6 +338,37 @@ namespace Model
      */
     inline WorkspaceProperties& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The name of the operating system.</p>
+     */
+    inline const OperatingSystemName& GetOperatingSystemName() const{ return m_operatingSystemName; }
+
+    /**
+     * <p>The name of the operating system.</p>
+     */
+    inline bool OperatingSystemNameHasBeenSet() const { return m_operatingSystemNameHasBeenSet; }
+
+    /**
+     * <p>The name of the operating system.</p>
+     */
+    inline void SetOperatingSystemName(const OperatingSystemName& value) { m_operatingSystemNameHasBeenSet = true; m_operatingSystemName = value; }
+
+    /**
+     * <p>The name of the operating system.</p>
+     */
+    inline void SetOperatingSystemName(OperatingSystemName&& value) { m_operatingSystemNameHasBeenSet = true; m_operatingSystemName = std::move(value); }
+
+    /**
+     * <p>The name of the operating system.</p>
+     */
+    inline WorkspaceProperties& WithOperatingSystemName(const OperatingSystemName& value) { SetOperatingSystemName(value); return *this;}
+
+    /**
+     * <p>The name of the operating system.</p>
+     */
+    inline WorkspaceProperties& WithOperatingSystemName(OperatingSystemName&& value) { SetOperatingSystemName(std::move(value)); return *this;}
+
   private:
 
     RunningMode m_runningMode;
@@ -356,6 +388,9 @@ namespace Model
 
     Aws::Vector<Protocol> m_protocols;
     bool m_protocolsHasBeenSet = false;
+
+    OperatingSystemName m_operatingSystemName;
+    bool m_operatingSystemNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PackageVersionSortType::NOT_SET:
+            return {};
           case PackageVersionSortType::PUBLISHED_TIME:
             return "PUBLISHED_TIME";
           default:

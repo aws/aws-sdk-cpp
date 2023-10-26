@@ -941,16 +941,19 @@ namespace SageMaker
          * <p>Create a new <code>FeatureGroup</code>. A <code>FeatureGroup</code> is a
          * group of <code>Features</code> defined in the <code>FeatureStore</code> to
          * describe a <code>Record</code>. </p> <p>The <code>FeatureGroup</code> defines
-         * the schema and features contained in the FeatureGroup. A
+         * the schema and features contained in the <code>FeatureGroup</code>. A
          * <code>FeatureGroup</code> definition is composed of a list of
          * <code>Features</code>, a <code>RecordIdentifierFeatureName</code>, an
          * <code>EventTimeFeatureName</code> and configurations for its
          * <code>OnlineStore</code> and <code>OfflineStore</code>. Check <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
          * Web Services service quotas</a> to see the <code>FeatureGroup</code>s quota for
-         * your Amazon Web Services account.</p>  <p>You must include at least
-         * one of <code>OnlineStoreConfig</code> and <code>OfflineStoreConfig</code> to
-         * create a <code>FeatureGroup</code>.</p> <p><h3>See Also:</h3>   <a
+         * your Amazon Web Services account.</p> <p>Note that it can take approximately
+         * 10-15 minutes to provision an <code>OnlineStore</code> <code>FeatureGroup</code>
+         * with the <code>InMemory</code> <code>StorageType</code>.</p>  <p>You
+         * must include at least one of <code>OnlineStoreConfig</code> and
+         * <code>OfflineStoreConfig</code> to create a <code>FeatureGroup</code>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateFeatureGroup">AWS
          * API Reference</a></p>
          */
@@ -2569,7 +2572,10 @@ namespace SageMaker
          * <code>DeleteFeatureGroup</code> is called. </p> <p>Data written into the
          * <code>OfflineStore</code> will not be deleted. The Amazon Web Services Glue
          * database and tables that are automatically created for your
-         * <code>OfflineStore</code> are not deleted. </p><p><h3>See Also:</h3>   <a
+         * <code>OfflineStore</code> are not deleted. </p> <p>Note that it can take
+         * approximately 10-15 minutes to delete an <code>OnlineStore</code>
+         * <code>FeatureGroup</code> with the <code>InMemory</code>
+         * <code>StorageType</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteFeatureGroup">AWS
          * API Reference</a></p>
          */

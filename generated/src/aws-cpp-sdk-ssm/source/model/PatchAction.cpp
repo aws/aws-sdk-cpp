@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PatchAction::NOT_SET:
+            return {};
           case PatchAction::ALLOW_AS_DEPENDENCY:
             return "ALLOW_AS_DEPENDENCY";
           case PatchAction::BLOCK:

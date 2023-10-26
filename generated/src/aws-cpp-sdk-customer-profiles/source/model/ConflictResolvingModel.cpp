@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConflictResolvingModel::NOT_SET:
+            return {};
           case ConflictResolvingModel::RECENCY:
             return "RECENCY";
           case ConflictResolvingModel::SOURCE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VoiceEngine::NOT_SET:
+            return {};
           case VoiceEngine::standard:
             return "standard";
           case VoiceEngine::neural:

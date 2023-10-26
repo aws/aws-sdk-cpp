@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TestSetModality::NOT_SET:
+            return {};
           case TestSetModality::Text:
             return "Text";
           case TestSetModality::Audio:

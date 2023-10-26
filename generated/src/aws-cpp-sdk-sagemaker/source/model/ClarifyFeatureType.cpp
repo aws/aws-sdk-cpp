@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClarifyFeatureType::NOT_SET:
+            return {};
           case ClarifyFeatureType::numerical:
             return "numerical";
           case ClarifyFeatureType::categorical:

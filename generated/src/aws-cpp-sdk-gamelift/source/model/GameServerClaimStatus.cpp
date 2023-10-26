@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GameServerClaimStatus::NOT_SET:
+            return {};
           case GameServerClaimStatus::CLAIMED:
             return "CLAIMED";
           default:

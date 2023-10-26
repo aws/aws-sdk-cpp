@@ -149,6 +149,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppType::NOT_SET:
+            return {};
           case AppType::DotNetFramework:
             return "DotNetFramework";
           case AppType::Java:

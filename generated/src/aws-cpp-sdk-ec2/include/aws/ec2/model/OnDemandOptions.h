@@ -237,49 +237,105 @@ namespace Model
 
     /**
      * <p>The maximum amount per hour for On-Demand Instances that you're willing to
-     * pay.</p>
+     * pay.</p>  <p>If your fleet includes T instances that are configured as
+     * <code>unlimited</code>, and if their average CPU usage exceeds the baseline
+     * utilization, you will incur a charge for surplus credits. The
+     * <code>maxTotalPrice</code> does not account for surplus credits, and, if you use
+     * surplus credits, your final cost might be higher than what you specified for
+     * <code>maxTotalPrice</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetMaxTotalPrice() const{ return m_maxTotalPrice; }
 
     /**
      * <p>The maximum amount per hour for On-Demand Instances that you're willing to
-     * pay.</p>
+     * pay.</p>  <p>If your fleet includes T instances that are configured as
+     * <code>unlimited</code>, and if their average CPU usage exceeds the baseline
+     * utilization, you will incur a charge for surplus credits. The
+     * <code>maxTotalPrice</code> does not account for surplus credits, and, if you use
+     * surplus credits, your final cost might be higher than what you specified for
+     * <code>maxTotalPrice</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline bool MaxTotalPriceHasBeenSet() const { return m_maxTotalPriceHasBeenSet; }
 
     /**
      * <p>The maximum amount per hour for On-Demand Instances that you're willing to
-     * pay.</p>
+     * pay.</p>  <p>If your fleet includes T instances that are configured as
+     * <code>unlimited</code>, and if their average CPU usage exceeds the baseline
+     * utilization, you will incur a charge for surplus credits. The
+     * <code>maxTotalPrice</code> does not account for surplus credits, and, if you use
+     * surplus credits, your final cost might be higher than what you specified for
+     * <code>maxTotalPrice</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline void SetMaxTotalPrice(const Aws::String& value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice = value; }
 
     /**
      * <p>The maximum amount per hour for On-Demand Instances that you're willing to
-     * pay.</p>
+     * pay.</p>  <p>If your fleet includes T instances that are configured as
+     * <code>unlimited</code>, and if their average CPU usage exceeds the baseline
+     * utilization, you will incur a charge for surplus credits. The
+     * <code>maxTotalPrice</code> does not account for surplus credits, and, if you use
+     * surplus credits, your final cost might be higher than what you specified for
+     * <code>maxTotalPrice</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline void SetMaxTotalPrice(Aws::String&& value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice = std::move(value); }
 
     /**
      * <p>The maximum amount per hour for On-Demand Instances that you're willing to
-     * pay.</p>
+     * pay.</p>  <p>If your fleet includes T instances that are configured as
+     * <code>unlimited</code>, and if their average CPU usage exceeds the baseline
+     * utilization, you will incur a charge for surplus credits. The
+     * <code>maxTotalPrice</code> does not account for surplus credits, and, if you use
+     * surplus credits, your final cost might be higher than what you specified for
+     * <code>maxTotalPrice</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline void SetMaxTotalPrice(const char* value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice.assign(value); }
 
     /**
      * <p>The maximum amount per hour for On-Demand Instances that you're willing to
-     * pay.</p>
+     * pay.</p>  <p>If your fleet includes T instances that are configured as
+     * <code>unlimited</code>, and if their average CPU usage exceeds the baseline
+     * utilization, you will incur a charge for surplus credits. The
+     * <code>maxTotalPrice</code> does not account for surplus credits, and, if you use
+     * surplus credits, your final cost might be higher than what you specified for
+     * <code>maxTotalPrice</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline OnDemandOptions& WithMaxTotalPrice(const Aws::String& value) { SetMaxTotalPrice(value); return *this;}
 
     /**
      * <p>The maximum amount per hour for On-Demand Instances that you're willing to
-     * pay.</p>
+     * pay.</p>  <p>If your fleet includes T instances that are configured as
+     * <code>unlimited</code>, and if their average CPU usage exceeds the baseline
+     * utilization, you will incur a charge for surplus credits. The
+     * <code>maxTotalPrice</code> does not account for surplus credits, and, if you use
+     * surplus credits, your final cost might be higher than what you specified for
+     * <code>maxTotalPrice</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline OnDemandOptions& WithMaxTotalPrice(Aws::String&& value) { SetMaxTotalPrice(std::move(value)); return *this;}
 
     /**
      * <p>The maximum amount per hour for On-Demand Instances that you're willing to
-     * pay.</p>
+     * pay.</p>  <p>If your fleet includes T instances that are configured as
+     * <code>unlimited</code>, and if their average CPU usage exceeds the baseline
+     * utilization, you will incur a charge for surplus credits. The
+     * <code>maxTotalPrice</code> does not account for surplus credits, and, if you use
+     * surplus credits, your final cost might be higher than what you specified for
+     * <code>maxTotalPrice</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline OnDemandOptions& WithMaxTotalPrice(const char* value) { SetMaxTotalPrice(value); return *this;}
 

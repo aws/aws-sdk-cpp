@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProvisionedModelStatus::NOT_SET:
+            return {};
           case ProvisionedModelStatus::Creating:
             return "Creating";
           case ProvisionedModelStatus::InService:

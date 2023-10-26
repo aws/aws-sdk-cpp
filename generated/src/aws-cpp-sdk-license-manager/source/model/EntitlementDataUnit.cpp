@@ -174,6 +174,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EntitlementDataUnit::NOT_SET:
+            return {};
           case EntitlementDataUnit::Count:
             return "Count";
           case EntitlementDataUnit::None:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReadSetStatus::NOT_SET:
+            return {};
           case ReadSetStatus::ARCHIVED:
             return "ARCHIVED";
           case ReadSetStatus::ACTIVATING:

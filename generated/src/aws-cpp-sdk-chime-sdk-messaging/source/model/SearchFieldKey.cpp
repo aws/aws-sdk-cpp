@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SearchFieldKey::NOT_SET:
+            return {};
           case SearchFieldKey::MEMBERS:
             return "MEMBERS";
           default:

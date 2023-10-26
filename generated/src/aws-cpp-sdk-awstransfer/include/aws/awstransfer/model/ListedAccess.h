@@ -44,7 +44,7 @@ namespace Model
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
      * <code>/bucket_name/home/mydirectory</code>.</p>  <p>The
      * <code>HomeDirectory</code> parameter is only used if
-     * <code>HomeDirectoryType</code> is set to <code>LOGICAL</code>.</p> 
+     * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
     inline const Aws::String& GetHomeDirectory() const{ return m_homeDirectory; }
 
@@ -53,7 +53,7 @@ namespace Model
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
      * <code>/bucket_name/home/mydirectory</code>.</p>  <p>The
      * <code>HomeDirectory</code> parameter is only used if
-     * <code>HomeDirectoryType</code> is set to <code>LOGICAL</code>.</p> 
+     * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
     inline bool HomeDirectoryHasBeenSet() const { return m_homeDirectoryHasBeenSet; }
 
@@ -62,7 +62,7 @@ namespace Model
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
      * <code>/bucket_name/home/mydirectory</code>.</p>  <p>The
      * <code>HomeDirectory</code> parameter is only used if
-     * <code>HomeDirectoryType</code> is set to <code>LOGICAL</code>.</p> 
+     * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
     inline void SetHomeDirectory(const Aws::String& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = value; }
 
@@ -71,7 +71,7 @@ namespace Model
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
      * <code>/bucket_name/home/mydirectory</code>.</p>  <p>The
      * <code>HomeDirectory</code> parameter is only used if
-     * <code>HomeDirectoryType</code> is set to <code>LOGICAL</code>.</p> 
+     * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
     inline void SetHomeDirectory(Aws::String&& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = std::move(value); }
 
@@ -80,7 +80,7 @@ namespace Model
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
      * <code>/bucket_name/home/mydirectory</code>.</p>  <p>The
      * <code>HomeDirectory</code> parameter is only used if
-     * <code>HomeDirectoryType</code> is set to <code>LOGICAL</code>.</p> 
+     * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
     inline void SetHomeDirectory(const char* value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory.assign(value); }
 
@@ -89,7 +89,7 @@ namespace Model
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
      * <code>/bucket_name/home/mydirectory</code>.</p>  <p>The
      * <code>HomeDirectory</code> parameter is only used if
-     * <code>HomeDirectoryType</code> is set to <code>LOGICAL</code>.</p> 
+     * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
     inline ListedAccess& WithHomeDirectory(const Aws::String& value) { SetHomeDirectory(value); return *this;}
 
@@ -98,7 +98,7 @@ namespace Model
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
      * <code>/bucket_name/home/mydirectory</code>.</p>  <p>The
      * <code>HomeDirectory</code> parameter is only used if
-     * <code>HomeDirectoryType</code> is set to <code>LOGICAL</code>.</p> 
+     * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
     inline ListedAccess& WithHomeDirectory(Aws::String&& value) { SetHomeDirectory(std::move(value)); return *this;}
 
@@ -107,7 +107,7 @@ namespace Model
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
      * <code>/bucket_name/home/mydirectory</code>.</p>  <p>The
      * <code>HomeDirectory</code> parameter is only used if
-     * <code>HomeDirectoryType</code> is set to <code>LOGICAL</code>.</p> 
+     * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
     inline ListedAccess& WithHomeDirectory(const char* value) { SetHomeDirectory(value); return *this;}
 

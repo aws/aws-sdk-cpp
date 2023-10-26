@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case F4vMoovPlacement::NOT_SET:
+            return {};
           case F4vMoovPlacement::PROGRESSIVE_DOWNLOAD:
             return "PROGRESSIVE_DOWNLOAD";
           case F4vMoovPlacement::NORMAL:

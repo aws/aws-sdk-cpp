@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OpenSearchWarmPartitionInstanceType::NOT_SET:
+            return {};
           case OpenSearchWarmPartitionInstanceType::ultrawarm1_medium_search:
             return "ultrawarm1.medium.search";
           case OpenSearchWarmPartitionInstanceType::ultrawarm1_large_search:

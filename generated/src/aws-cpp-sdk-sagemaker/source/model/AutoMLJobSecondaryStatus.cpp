@@ -134,6 +134,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoMLJobSecondaryStatus::NOT_SET:
+            return {};
           case AutoMLJobSecondaryStatus::Starting:
             return "Starting";
           case AutoMLJobSecondaryStatus::AnalyzingData:

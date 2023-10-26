@@ -129,6 +129,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperationType::NOT_SET:
+            return {};
           case OperationType::REGISTER_DOMAIN:
             return "REGISTER_DOMAIN";
           case OperationType::DELETE_DOMAIN:

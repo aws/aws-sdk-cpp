@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceDataSyncS3Format::NOT_SET:
+            return {};
           case ResourceDataSyncS3Format::JsonSerDe:
             return "JsonSerDe";
           default:

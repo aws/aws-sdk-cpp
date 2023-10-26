@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventNotificationTopicStatus::NOT_SET:
+            return {};
           case EventNotificationTopicStatus::Enabled:
             return "Enabled";
           case EventNotificationTopicStatus::Disabled:

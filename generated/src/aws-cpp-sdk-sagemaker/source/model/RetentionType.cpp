@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RetentionType::NOT_SET:
+            return {};
           case RetentionType::Retain:
             return "Retain";
           case RetentionType::Delete:

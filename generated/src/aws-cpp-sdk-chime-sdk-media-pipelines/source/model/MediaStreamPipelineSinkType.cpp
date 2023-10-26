@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MediaStreamPipelineSinkType::NOT_SET:
+            return {};
           case MediaStreamPipelineSinkType::KinesisVideoStreamPool:
             return "KinesisVideoStreamPool";
           default:

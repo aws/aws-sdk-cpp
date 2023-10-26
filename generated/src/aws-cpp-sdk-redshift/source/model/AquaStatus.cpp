@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AquaStatus::NOT_SET:
+            return {};
           case AquaStatus::enabled:
             return "enabled";
           case AquaStatus::disabled:

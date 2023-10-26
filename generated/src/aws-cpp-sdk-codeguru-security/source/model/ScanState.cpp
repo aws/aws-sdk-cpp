@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScanState::NOT_SET:
+            return {};
           case ScanState::InProgress:
             return "InProgress";
           case ScanState::Successful:

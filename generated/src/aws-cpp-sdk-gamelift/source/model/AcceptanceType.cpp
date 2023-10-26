@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AcceptanceType::NOT_SET:
+            return {};
           case AcceptanceType::ACCEPT:
             return "ACCEPT";
           case AcceptanceType::REJECT:

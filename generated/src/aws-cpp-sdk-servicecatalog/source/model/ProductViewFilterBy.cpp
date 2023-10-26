@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProductViewFilterBy::NOT_SET:
+            return {};
           case ProductViewFilterBy::FullTextSearch:
             return "FullTextSearch";
           case ProductViewFilterBy::Owner:

@@ -16,7 +16,8 @@ AnalyzeDocumentRequest::AnalyzeDocumentRequest() :
     m_documentHasBeenSet(false),
     m_featureTypesHasBeenSet(false),
     m_humanLoopConfigHasBeenSet(false),
-    m_queriesConfigHasBeenSet(false)
+    m_queriesConfigHasBeenSet(false),
+    m_adaptersConfigHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,12 @@ Aws::String AnalyzeDocumentRequest::SerializePayload() const
   if(m_queriesConfigHasBeenSet)
   {
    payload.WithObject("QueriesConfig", m_queriesConfig.Jsonize());
+
+  }
+
+  if(m_adaptersConfigHasBeenSet)
+  {
+   payload.WithObject("AdaptersConfig", m_adaptersConfig.Jsonize());
 
   }
 

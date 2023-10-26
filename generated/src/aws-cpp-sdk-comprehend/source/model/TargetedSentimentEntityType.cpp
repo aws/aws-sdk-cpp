@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetedSentimentEntityType::NOT_SET:
+            return {};
           case TargetedSentimentEntityType::PERSON:
             return "PERSON";
           case TargetedSentimentEntityType::LOCATION:

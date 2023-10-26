@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperationType::NOT_SET:
+            return {};
           case OperationType::CREATE_NAMESPACE:
             return "CREATE_NAMESPACE";
           case OperationType::DELETE_NAMESPACE:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrainingInputMode::NOT_SET:
+            return {};
           case TrainingInputMode::Pipe:
             return "Pipe";
           case TrainingInputMode::File:

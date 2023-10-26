@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceOnboardingJobStatusCode::NOT_SET:
+            return {};
           case InstanceOnboardingJobStatusCode::IN_PROGRESS:
             return "IN_PROGRESS";
           case InstanceOnboardingJobStatusCode::SUCCEEDED:

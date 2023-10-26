@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OptionalObjectAttributes::NOT_SET:
+            return {};
           case OptionalObjectAttributes::RestoreStatus:
             return "RestoreStatus";
           default:

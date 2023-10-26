@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DomainStatus::NOT_SET:
+            return {};
           case DomainStatus::PENDING_VALIDATION:
             return "PENDING_VALIDATION";
           case DomainStatus::SUCCESS:

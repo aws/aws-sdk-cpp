@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoaContentType::NOT_SET:
+            return {};
           case LoaContentType::application_pdf:
             return "application/pdf";
           default:

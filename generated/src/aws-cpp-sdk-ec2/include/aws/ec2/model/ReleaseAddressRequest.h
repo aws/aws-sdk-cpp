@@ -122,9 +122,7 @@ namespace Model
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
      * Amazon Web Services advertises IP addresses.</p> <p>If you provide an incorrect
      * network border group, you receive an <code>InvalidAddress.NotFound</code>
-     * error.</p> <p>You cannot use a network border group with EC2 Classic. If you
-     * attempt this operation on EC2 classic, you receive an
-     * <code>InvalidParameterCombination</code> error.</p>
+     * error.</p>
      */
     inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
 
@@ -132,9 +130,7 @@ namespace Model
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
      * Amazon Web Services advertises IP addresses.</p> <p>If you provide an incorrect
      * network border group, you receive an <code>InvalidAddress.NotFound</code>
-     * error.</p> <p>You cannot use a network border group with EC2 Classic. If you
-     * attempt this operation on EC2 classic, you receive an
-     * <code>InvalidParameterCombination</code> error.</p>
+     * error.</p>
      */
     inline bool NetworkBorderGroupHasBeenSet() const { return m_networkBorderGroupHasBeenSet; }
 
@@ -142,9 +138,7 @@ namespace Model
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
      * Amazon Web Services advertises IP addresses.</p> <p>If you provide an incorrect
      * network border group, you receive an <code>InvalidAddress.NotFound</code>
-     * error.</p> <p>You cannot use a network border group with EC2 Classic. If you
-     * attempt this operation on EC2 classic, you receive an
-     * <code>InvalidParameterCombination</code> error.</p>
+     * error.</p>
      */
     inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = value; }
 
@@ -152,9 +146,7 @@ namespace Model
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
      * Amazon Web Services advertises IP addresses.</p> <p>If you provide an incorrect
      * network border group, you receive an <code>InvalidAddress.NotFound</code>
-     * error.</p> <p>You cannot use a network border group with EC2 Classic. If you
-     * attempt this operation on EC2 classic, you receive an
-     * <code>InvalidParameterCombination</code> error.</p>
+     * error.</p>
      */
     inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::move(value); }
 
@@ -162,9 +154,7 @@ namespace Model
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
      * Amazon Web Services advertises IP addresses.</p> <p>If you provide an incorrect
      * network border group, you receive an <code>InvalidAddress.NotFound</code>
-     * error.</p> <p>You cannot use a network border group with EC2 Classic. If you
-     * attempt this operation on EC2 classic, you receive an
-     * <code>InvalidParameterCombination</code> error.</p>
+     * error.</p>
      */
     inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup.assign(value); }
 
@@ -172,9 +162,7 @@ namespace Model
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
      * Amazon Web Services advertises IP addresses.</p> <p>If you provide an incorrect
      * network border group, you receive an <code>InvalidAddress.NotFound</code>
-     * error.</p> <p>You cannot use a network border group with EC2 Classic. If you
-     * attempt this operation on EC2 classic, you receive an
-     * <code>InvalidParameterCombination</code> error.</p>
+     * error.</p>
      */
     inline ReleaseAddressRequest& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
 
@@ -182,9 +170,7 @@ namespace Model
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
      * Amazon Web Services advertises IP addresses.</p> <p>If you provide an incorrect
      * network border group, you receive an <code>InvalidAddress.NotFound</code>
-     * error.</p> <p>You cannot use a network border group with EC2 Classic. If you
-     * attempt this operation on EC2 classic, you receive an
-     * <code>InvalidParameterCombination</code> error.</p>
+     * error.</p>
      */
     inline ReleaseAddressRequest& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
 
@@ -192,9 +178,7 @@ namespace Model
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
      * Amazon Web Services advertises IP addresses.</p> <p>If you provide an incorrect
      * network border group, you receive an <code>InvalidAddress.NotFound</code>
-     * error.</p> <p>You cannot use a network border group with EC2 Classic. If you
-     * attempt this operation on EC2 classic, you receive an
-     * <code>InvalidParameterCombination</code> error.</p>
+     * error.</p>
      */
     inline ReleaseAddressRequest& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
 

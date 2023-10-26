@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuditTaskType::NOT_SET:
+            return {};
           case AuditTaskType::ON_DEMAND_AUDIT_TASK:
             return "ON_DEMAND_AUDIT_TASK";
           case AuditTaskType::SCHEDULED_AUDIT_TASK:

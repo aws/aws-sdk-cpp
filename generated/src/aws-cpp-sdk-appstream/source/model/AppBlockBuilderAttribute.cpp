@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppBlockBuilderAttribute::NOT_SET:
+            return {};
           case AppBlockBuilderAttribute::IAM_ROLE_ARN:
             return "IAM_ROLE_ARN";
           case AppBlockBuilderAttribute::ACCESS_ENDPOINTS:

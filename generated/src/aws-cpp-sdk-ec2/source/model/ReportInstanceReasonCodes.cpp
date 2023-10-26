@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportInstanceReasonCodes::NOT_SET:
+            return {};
           case ReportInstanceReasonCodes::instance_stuck_in_state:
             return "instance-stuck-in-state";
           case ReportInstanceReasonCodes::unresponsive:

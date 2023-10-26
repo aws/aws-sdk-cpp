@@ -286,7 +286,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a>
      * operation has failed.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html">UpdateTrafficDistribution</a>
      * operation is still in progress and has not yet completed.</p> </li> </ul>
      */
     inline const TrafficDistributionGroupStatus& GetStatus() const{ return m_status; }
@@ -309,7 +309,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a>
      * operation has failed.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html">UpdateTrafficDistribution</a>
      * operation is still in progress and has not yet completed.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -332,7 +332,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a>
      * operation has failed.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html">UpdateTrafficDistribution</a>
      * operation is still in progress and has not yet completed.</p> </li> </ul>
      */
     inline void SetStatus(const TrafficDistributionGroupStatus& value) { m_statusHasBeenSet = true; m_status = value; }
@@ -355,7 +355,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a>
      * operation has failed.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html">UpdateTrafficDistribution</a>
      * operation is still in progress and has not yet completed.</p> </li> </ul>
      */
     inline void SetStatus(TrafficDistributionGroupStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
@@ -378,7 +378,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a>
      * operation has failed.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html">UpdateTrafficDistribution</a>
      * operation is still in progress and has not yet completed.</p> </li> </ul>
      */
     inline TrafficDistributionGroup& WithStatus(const TrafficDistributionGroupStatus& value) { SetStatus(value); return *this;}
@@ -401,7 +401,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a>
      * operation has failed.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html">UpdateTrafficDistribution</a>
      * operation is still in progress and has not yet completed.</p> </li> </ul>
      */
     inline TrafficDistributionGroup& WithStatus(TrafficDistributionGroupStatus&& value) { SetStatus(std::move(value)); return *this;}
@@ -491,14 +491,11 @@ namespace Model
      * instance replication. The default traffic distribution group cannot be deleted
      * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
      * distribution group is deleted as part of the process for deleting a replica.</p>
-     *  <p>You can change the <code>SignInConfig</code> distribution only for a
-     * default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code>
-     * parameter in the <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
-     * data type). If you call <code>UpdateTrafficDistribution</code> with a modified
-     * <code>SignInConfig</code> and a non-default
-     * <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
-     * is returned.</p> 
+     *  <p>The <code>SignInConfig</code> distribution is available only on the
+     * default <code>TrafficDistributionGroup</code>. If you call
+     * <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+     * and a non-default <code>TrafficDistributionGroup</code>, an
+     * <code>InvalidRequestException</code> is returned.</p> 
      */
     inline bool GetIsDefault() const{ return m_isDefault; }
 
@@ -507,14 +504,11 @@ namespace Model
      * instance replication. The default traffic distribution group cannot be deleted
      * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
      * distribution group is deleted as part of the process for deleting a replica.</p>
-     *  <p>You can change the <code>SignInConfig</code> distribution only for a
-     * default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code>
-     * parameter in the <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
-     * data type). If you call <code>UpdateTrafficDistribution</code> with a modified
-     * <code>SignInConfig</code> and a non-default
-     * <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
-     * is returned.</p> 
+     *  <p>The <code>SignInConfig</code> distribution is available only on the
+     * default <code>TrafficDistributionGroup</code>. If you call
+     * <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+     * and a non-default <code>TrafficDistributionGroup</code>, an
+     * <code>InvalidRequestException</code> is returned.</p> 
      */
     inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
 
@@ -523,14 +517,11 @@ namespace Model
      * instance replication. The default traffic distribution group cannot be deleted
      * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
      * distribution group is deleted as part of the process for deleting a replica.</p>
-     *  <p>You can change the <code>SignInConfig</code> distribution only for a
-     * default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code>
-     * parameter in the <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
-     * data type). If you call <code>UpdateTrafficDistribution</code> with a modified
-     * <code>SignInConfig</code> and a non-default
-     * <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
-     * is returned.</p> 
+     *  <p>The <code>SignInConfig</code> distribution is available only on the
+     * default <code>TrafficDistributionGroup</code>. If you call
+     * <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+     * and a non-default <code>TrafficDistributionGroup</code>, an
+     * <code>InvalidRequestException</code> is returned.</p> 
      */
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
 
@@ -539,14 +530,11 @@ namespace Model
      * instance replication. The default traffic distribution group cannot be deleted
      * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
      * distribution group is deleted as part of the process for deleting a replica.</p>
-     *  <p>You can change the <code>SignInConfig</code> distribution only for a
-     * default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code>
-     * parameter in the <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
-     * data type). If you call <code>UpdateTrafficDistribution</code> with a modified
-     * <code>SignInConfig</code> and a non-default
-     * <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
-     * is returned.</p> 
+     *  <p>The <code>SignInConfig</code> distribution is available only on the
+     * default <code>TrafficDistributionGroup</code>. If you call
+     * <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+     * and a non-default <code>TrafficDistributionGroup</code>, an
+     * <code>InvalidRequestException</code> is returned.</p> 
      */
     inline TrafficDistributionGroup& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
 
