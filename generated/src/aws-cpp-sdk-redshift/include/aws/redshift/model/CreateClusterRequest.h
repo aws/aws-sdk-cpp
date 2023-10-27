@@ -2287,6 +2287,55 @@ namespace Model
      */
     inline CreateClusterRequest& WithMasterPasswordSecretKmsKeyId(const char* value) { SetMasterPasswordSecretKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The IP address types that the cluster supports. Possible values are
+     * <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline const Aws::String& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address types that the cluster supports. Possible values are
+     * <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The IP address types that the cluster supports. Possible values are
+     * <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(const Aws::String& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address types that the cluster supports. Possible values are
+     * <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(Aws::String&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The IP address types that the cluster supports. Possible values are
+     * <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(const char* value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType.assign(value); }
+
+    /**
+     * <p>The IP address types that the cluster supports. Possible values are
+     * <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline CreateClusterRequest& WithIpAddressType(const Aws::String& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The IP address types that the cluster supports. Possible values are
+     * <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline CreateClusterRequest& WithIpAddressType(Aws::String&& value) { SetIpAddressType(std::move(value)); return *this;}
+
+    /**
+     * <p>The IP address types that the cluster supports. Possible values are
+     * <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline CreateClusterRequest& WithIpAddressType(const char* value) { SetIpAddressType(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -2396,6 +2445,9 @@ namespace Model
 
     Aws::String m_masterPasswordSecretKmsKeyId;
     bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
+
+    Aws::String m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet = false;
   };
 
 } // namespace Model

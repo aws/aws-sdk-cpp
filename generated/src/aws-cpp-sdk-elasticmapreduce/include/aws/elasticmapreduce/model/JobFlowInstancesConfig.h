@@ -192,64 +192,64 @@ namespace Model
 
     /**
      *  <p>The instance fleet configuration is available only in Amazon EMR
-     * releases 4.8.0 and later, excluding 5.0.x versions.</p>  <p>Describes the
-     * Amazon EC2 instances and instance configurations for clusters that use the
+     * releases 4.8.0 and higher, excluding 5.0.x versions.</p>  <p>Describes
+     * the Amazon EC2 instances and instance configurations for clusters that use the
      * instance fleet configuration.</p>
      */
     inline const Aws::Vector<InstanceFleetConfig>& GetInstanceFleets() const{ return m_instanceFleets; }
 
     /**
      *  <p>The instance fleet configuration is available only in Amazon EMR
-     * releases 4.8.0 and later, excluding 5.0.x versions.</p>  <p>Describes the
-     * Amazon EC2 instances and instance configurations for clusters that use the
+     * releases 4.8.0 and higher, excluding 5.0.x versions.</p>  <p>Describes
+     * the Amazon EC2 instances and instance configurations for clusters that use the
      * instance fleet configuration.</p>
      */
     inline bool InstanceFleetsHasBeenSet() const { return m_instanceFleetsHasBeenSet; }
 
     /**
      *  <p>The instance fleet configuration is available only in Amazon EMR
-     * releases 4.8.0 and later, excluding 5.0.x versions.</p>  <p>Describes the
-     * Amazon EC2 instances and instance configurations for clusters that use the
+     * releases 4.8.0 and higher, excluding 5.0.x versions.</p>  <p>Describes
+     * the Amazon EC2 instances and instance configurations for clusters that use the
      * instance fleet configuration.</p>
      */
     inline void SetInstanceFleets(const Aws::Vector<InstanceFleetConfig>& value) { m_instanceFleetsHasBeenSet = true; m_instanceFleets = value; }
 
     /**
      *  <p>The instance fleet configuration is available only in Amazon EMR
-     * releases 4.8.0 and later, excluding 5.0.x versions.</p>  <p>Describes the
-     * Amazon EC2 instances and instance configurations for clusters that use the
+     * releases 4.8.0 and higher, excluding 5.0.x versions.</p>  <p>Describes
+     * the Amazon EC2 instances and instance configurations for clusters that use the
      * instance fleet configuration.</p>
      */
     inline void SetInstanceFleets(Aws::Vector<InstanceFleetConfig>&& value) { m_instanceFleetsHasBeenSet = true; m_instanceFleets = std::move(value); }
 
     /**
      *  <p>The instance fleet configuration is available only in Amazon EMR
-     * releases 4.8.0 and later, excluding 5.0.x versions.</p>  <p>Describes the
-     * Amazon EC2 instances and instance configurations for clusters that use the
+     * releases 4.8.0 and higher, excluding 5.0.x versions.</p>  <p>Describes
+     * the Amazon EC2 instances and instance configurations for clusters that use the
      * instance fleet configuration.</p>
      */
     inline JobFlowInstancesConfig& WithInstanceFleets(const Aws::Vector<InstanceFleetConfig>& value) { SetInstanceFleets(value); return *this;}
 
     /**
      *  <p>The instance fleet configuration is available only in Amazon EMR
-     * releases 4.8.0 and later, excluding 5.0.x versions.</p>  <p>Describes the
-     * Amazon EC2 instances and instance configurations for clusters that use the
+     * releases 4.8.0 and higher, excluding 5.0.x versions.</p>  <p>Describes
+     * the Amazon EC2 instances and instance configurations for clusters that use the
      * instance fleet configuration.</p>
      */
     inline JobFlowInstancesConfig& WithInstanceFleets(Aws::Vector<InstanceFleetConfig>&& value) { SetInstanceFleets(std::move(value)); return *this;}
 
     /**
      *  <p>The instance fleet configuration is available only in Amazon EMR
-     * releases 4.8.0 and later, excluding 5.0.x versions.</p>  <p>Describes the
-     * Amazon EC2 instances and instance configurations for clusters that use the
+     * releases 4.8.0 and higher, excluding 5.0.x versions.</p>  <p>Describes
+     * the Amazon EC2 instances and instance configurations for clusters that use the
      * instance fleet configuration.</p>
      */
     inline JobFlowInstancesConfig& AddInstanceFleets(const InstanceFleetConfig& value) { m_instanceFleetsHasBeenSet = true; m_instanceFleets.push_back(value); return *this; }
 
     /**
      *  <p>The instance fleet configuration is available only in Amazon EMR
-     * releases 4.8.0 and later, excluding 5.0.x versions.</p>  <p>Describes the
-     * Amazon EC2 instances and instance configurations for clusters that use the
+     * releases 4.8.0 and higher, excluding 5.0.x versions.</p>  <p>Describes
+     * the Amazon EC2 instances and instance configurations for clusters that use the
      * instance fleet configuration.</p>
      */
     inline JobFlowInstancesConfig& AddInstanceFleets(InstanceFleetConfig&& value) { m_instanceFleetsHasBeenSet = true; m_instanceFleets.push_back(std::move(value)); return *this; }
@@ -559,7 +559,7 @@ namespace Model
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * Amazon EC2 subnet IDs are specified, Amazon EMR evaluates them and launches
      * instances in the optimal subnet.</p>  <p>The instance fleet configuration
-     * is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
+     * is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x
      * versions.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetEc2SubnetIds() const{ return m_ec2SubnetIds; }
@@ -568,7 +568,7 @@ namespace Model
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * Amazon EC2 subnet IDs are specified, Amazon EMR evaluates them and launches
      * instances in the optimal subnet.</p>  <p>The instance fleet configuration
-     * is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
+     * is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x
      * versions.</p> 
      */
     inline bool Ec2SubnetIdsHasBeenSet() const { return m_ec2SubnetIdsHasBeenSet; }
@@ -577,7 +577,7 @@ namespace Model
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * Amazon EC2 subnet IDs are specified, Amazon EMR evaluates them and launches
      * instances in the optimal subnet.</p>  <p>The instance fleet configuration
-     * is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
+     * is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x
      * versions.</p> 
      */
     inline void SetEc2SubnetIds(const Aws::Vector<Aws::String>& value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds = value; }
@@ -586,7 +586,7 @@ namespace Model
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * Amazon EC2 subnet IDs are specified, Amazon EMR evaluates them and launches
      * instances in the optimal subnet.</p>  <p>The instance fleet configuration
-     * is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
+     * is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x
      * versions.</p> 
      */
     inline void SetEc2SubnetIds(Aws::Vector<Aws::String>&& value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds = std::move(value); }
@@ -595,7 +595,7 @@ namespace Model
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * Amazon EC2 subnet IDs are specified, Amazon EMR evaluates them and launches
      * instances in the optimal subnet.</p>  <p>The instance fleet configuration
-     * is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
+     * is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x
      * versions.</p> 
      */
     inline JobFlowInstancesConfig& WithEc2SubnetIds(const Aws::Vector<Aws::String>& value) { SetEc2SubnetIds(value); return *this;}
@@ -604,7 +604,7 @@ namespace Model
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * Amazon EC2 subnet IDs are specified, Amazon EMR evaluates them and launches
      * instances in the optimal subnet.</p>  <p>The instance fleet configuration
-     * is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
+     * is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x
      * versions.</p> 
      */
     inline JobFlowInstancesConfig& WithEc2SubnetIds(Aws::Vector<Aws::String>&& value) { SetEc2SubnetIds(std::move(value)); return *this;}
@@ -613,7 +613,7 @@ namespace Model
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * Amazon EC2 subnet IDs are specified, Amazon EMR evaluates them and launches
      * instances in the optimal subnet.</p>  <p>The instance fleet configuration
-     * is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
+     * is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x
      * versions.</p> 
      */
     inline JobFlowInstancesConfig& AddEc2SubnetIds(const Aws::String& value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds.push_back(value); return *this; }
@@ -622,7 +622,7 @@ namespace Model
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * Amazon EC2 subnet IDs are specified, Amazon EMR evaluates them and launches
      * instances in the optimal subnet.</p>  <p>The instance fleet configuration
-     * is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
+     * is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x
      * versions.</p> 
      */
     inline JobFlowInstancesConfig& AddEc2SubnetIds(Aws::String&& value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds.push_back(std::move(value)); return *this; }
@@ -631,7 +631,7 @@ namespace Model
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * Amazon EC2 subnet IDs are specified, Amazon EMR evaluates them and launches
      * instances in the optimal subnet.</p>  <p>The instance fleet configuration
-     * is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
+     * is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x
      * versions.</p> 
      */
     inline JobFlowInstancesConfig& AddEc2SubnetIds(const char* value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds.push_back(value); return *this; }

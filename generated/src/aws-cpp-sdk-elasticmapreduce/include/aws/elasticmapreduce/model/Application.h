@@ -26,10 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>With Amazon EMR release version 4.0 and later, the only accepted parameter is
-   * the application name. To pass arguments to applications, you use configuration
-   * classifications specified using configuration JSON objects. For more
-   * information, see <a
+   * <p>With Amazon EMR release version 4.0 and higher, the only accepted parameter
+   * is the application name. To pass arguments to applications, you use
+   * configuration classifications specified using configuration JSON objects. For
+   * more information, see <a
    * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring
    * Applications</a>.</p> <p>With earlier Amazon EMR releases, the application is
    * any Amazon or third-party software that you can add to the cluster. This

@@ -908,22 +908,52 @@ namespace Model
     inline RestoreDBClusterToPointInTimeRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const{ return m_serverlessV2ScalingConfiguration; }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline void SetServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfiguration& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = value; }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline RestoreDBClusterToPointInTimeRequest& WithServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfiguration& value) { SetServerlessV2ScalingConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline RestoreDBClusterToPointInTimeRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
 
   private:

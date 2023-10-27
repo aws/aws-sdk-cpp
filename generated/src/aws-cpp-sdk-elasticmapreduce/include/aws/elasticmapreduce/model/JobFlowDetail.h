@@ -168,105 +168,105 @@ namespace Model
 
     /**
      * <p>The KMS key used for encrypting log files. This attribute is only available
-     * with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
+     * with Amazon EMR 5.30.0 and higher, excluding 6.0.0.</p>
      */
     inline const Aws::String& GetLogEncryptionKmsKeyId() const{ return m_logEncryptionKmsKeyId; }
 
     /**
      * <p>The KMS key used for encrypting log files. This attribute is only available
-     * with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
+     * with Amazon EMR 5.30.0 and higher, excluding 6.0.0.</p>
      */
     inline bool LogEncryptionKmsKeyIdHasBeenSet() const { return m_logEncryptionKmsKeyIdHasBeenSet; }
 
     /**
      * <p>The KMS key used for encrypting log files. This attribute is only available
-     * with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
+     * with Amazon EMR 5.30.0 and higher, excluding 6.0.0.</p>
      */
     inline void SetLogEncryptionKmsKeyId(const Aws::String& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = value; }
 
     /**
      * <p>The KMS key used for encrypting log files. This attribute is only available
-     * with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
+     * with Amazon EMR 5.30.0 and higher, excluding 6.0.0.</p>
      */
     inline void SetLogEncryptionKmsKeyId(Aws::String&& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = std::move(value); }
 
     /**
      * <p>The KMS key used for encrypting log files. This attribute is only available
-     * with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
+     * with Amazon EMR 5.30.0 and higher, excluding 6.0.0.</p>
      */
     inline void SetLogEncryptionKmsKeyId(const char* value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId.assign(value); }
 
     /**
      * <p>The KMS key used for encrypting log files. This attribute is only available
-     * with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
+     * with Amazon EMR 5.30.0 and higher, excluding 6.0.0.</p>
      */
     inline JobFlowDetail& WithLogEncryptionKmsKeyId(const Aws::String& value) { SetLogEncryptionKmsKeyId(value); return *this;}
 
     /**
      * <p>The KMS key used for encrypting log files. This attribute is only available
-     * with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
+     * with Amazon EMR 5.30.0 and higher, excluding 6.0.0.</p>
      */
     inline JobFlowDetail& WithLogEncryptionKmsKeyId(Aws::String&& value) { SetLogEncryptionKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The KMS key used for encrypting log files. This attribute is only available
-     * with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
+     * with Amazon EMR 5.30.0 and higher, excluding 6.0.0.</p>
      */
     inline JobFlowDetail& WithLogEncryptionKmsKeyId(const char* value) { SetLogEncryptionKmsKeyId(value); return *this;}
 
 
     /**
      * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
-     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * 4.0 and higher, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
      * <code>CustomAmiID</code>.</p>
      */
     inline const Aws::String& GetAmiVersion() const{ return m_amiVersion; }
 
     /**
      * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
-     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * 4.0 and higher, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
      * <code>CustomAmiID</code>.</p>
      */
     inline bool AmiVersionHasBeenSet() const { return m_amiVersionHasBeenSet; }
 
     /**
      * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
-     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * 4.0 and higher, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
      * <code>CustomAmiID</code>.</p>
      */
     inline void SetAmiVersion(const Aws::String& value) { m_amiVersionHasBeenSet = true; m_amiVersion = value; }
 
     /**
      * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
-     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * 4.0 and higher, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
      * <code>CustomAmiID</code>.</p>
      */
     inline void SetAmiVersion(Aws::String&& value) { m_amiVersionHasBeenSet = true; m_amiVersion = std::move(value); }
 
     /**
      * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
-     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * 4.0 and higher, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
      * <code>CustomAmiID</code>.</p>
      */
     inline void SetAmiVersion(const char* value) { m_amiVersionHasBeenSet = true; m_amiVersion.assign(value); }
 
     /**
      * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
-     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * 4.0 and higher, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
      * <code>CustomAmiID</code>.</p>
      */
     inline JobFlowDetail& WithAmiVersion(const Aws::String& value) { SetAmiVersion(value); return *this;}
 
     /**
      * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
-     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * 4.0 and higher, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
      * <code>CustomAmiID</code>.</p>
      */
     inline JobFlowDetail& WithAmiVersion(Aws::String&& value) { SetAmiVersion(std::move(value)); return *this;}
 
     /**
      * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
-     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * 4.0 and higher, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
      * <code>CustomAmiID</code>.</p>
      */
     inline JobFlowDetail& WithAmiVersion(const char* value) { SetAmiVersion(value); return *this;}
@@ -710,13 +710,13 @@ namespace Model
      * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
-     * and later and is the default for clusters created using that version.
+     * and higher and is the default for clusters created using that version.
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
      * to a deny list and drains tasks from nodes before terminating the Amazon EC2
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * available only in Amazon EMR releases 4.1.0 and higher, and is the default for
      * releases of Amazon EMR earlier than 5.1.0.</p>
      */
     inline const ScaleDownBehavior& GetScaleDownBehavior() const{ return m_scaleDownBehavior; }
@@ -727,13 +727,13 @@ namespace Model
      * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
-     * and later and is the default for clusters created using that version.
+     * and higher and is the default for clusters created using that version.
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
      * to a deny list and drains tasks from nodes before terminating the Amazon EC2
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * available only in Amazon EMR releases 4.1.0 and higher, and is the default for
      * releases of Amazon EMR earlier than 5.1.0.</p>
      */
     inline bool ScaleDownBehaviorHasBeenSet() const { return m_scaleDownBehaviorHasBeenSet; }
@@ -744,13 +744,13 @@ namespace Model
      * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
-     * and later and is the default for clusters created using that version.
+     * and higher and is the default for clusters created using that version.
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
      * to a deny list and drains tasks from nodes before terminating the Amazon EC2
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * available only in Amazon EMR releases 4.1.0 and higher, and is the default for
      * releases of Amazon EMR earlier than 5.1.0.</p>
      */
     inline void SetScaleDownBehavior(const ScaleDownBehavior& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
@@ -761,13 +761,13 @@ namespace Model
      * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
-     * and later and is the default for clusters created using that version.
+     * and higher and is the default for clusters created using that version.
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
      * to a deny list and drains tasks from nodes before terminating the Amazon EC2
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * available only in Amazon EMR releases 4.1.0 and higher, and is the default for
      * releases of Amazon EMR earlier than 5.1.0.</p>
      */
     inline void SetScaleDownBehavior(ScaleDownBehavior&& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = std::move(value); }
@@ -778,13 +778,13 @@ namespace Model
      * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
-     * and later and is the default for clusters created using that version.
+     * and higher and is the default for clusters created using that version.
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
      * to a deny list and drains tasks from nodes before terminating the Amazon EC2
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * available only in Amazon EMR releases 4.1.0 and higher, and is the default for
      * releases of Amazon EMR earlier than 5.1.0.</p>
      */
     inline JobFlowDetail& WithScaleDownBehavior(const ScaleDownBehavior& value) { SetScaleDownBehavior(value); return *this;}
@@ -795,13 +795,13 @@ namespace Model
      * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
-     * and later and is the default for clusters created using that version.
+     * and higher and is the default for clusters created using that version.
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
      * to a deny list and drains tasks from nodes before terminating the Amazon EC2
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * available only in Amazon EMR releases 4.1.0 and higher, and is the default for
      * releases of Amazon EMR earlier than 5.1.0.</p>
      */
     inline JobFlowDetail& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(std::move(value)); return *this;}
