@@ -86,37 +86,67 @@ namespace Model
 
     /**
      * <p>The parts of the JSON to match against using the <code>MatchPattern</code>.
-     * If you specify <code>All</code>, WAF matches against keys and values. </p>
+     * If you specify <code>ALL</code>, WAF matches against keys and values. </p> <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to
+     * be found in the values. It requires a match to be found in the keys or the
+     * values or both. To require a match in the keys and in the values, use a logical
+     * <code>AND</code> statement to combine two match rules, one that inspects the
+     * keys and another that inspects the values. </p>
      */
     inline const JsonMatchScope& GetMatchScope() const{ return m_matchScope; }
 
     /**
      * <p>The parts of the JSON to match against using the <code>MatchPattern</code>.
-     * If you specify <code>All</code>, WAF matches against keys and values. </p>
+     * If you specify <code>ALL</code>, WAF matches against keys and values. </p> <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to
+     * be found in the values. It requires a match to be found in the keys or the
+     * values or both. To require a match in the keys and in the values, use a logical
+     * <code>AND</code> statement to combine two match rules, one that inspects the
+     * keys and another that inspects the values. </p>
      */
     inline bool MatchScopeHasBeenSet() const { return m_matchScopeHasBeenSet; }
 
     /**
      * <p>The parts of the JSON to match against using the <code>MatchPattern</code>.
-     * If you specify <code>All</code>, WAF matches against keys and values. </p>
+     * If you specify <code>ALL</code>, WAF matches against keys and values. </p> <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to
+     * be found in the values. It requires a match to be found in the keys or the
+     * values or both. To require a match in the keys and in the values, use a logical
+     * <code>AND</code> statement to combine two match rules, one that inspects the
+     * keys and another that inspects the values. </p>
      */
     inline void SetMatchScope(const JsonMatchScope& value) { m_matchScopeHasBeenSet = true; m_matchScope = value; }
 
     /**
      * <p>The parts of the JSON to match against using the <code>MatchPattern</code>.
-     * If you specify <code>All</code>, WAF matches against keys and values. </p>
+     * If you specify <code>ALL</code>, WAF matches against keys and values. </p> <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to
+     * be found in the values. It requires a match to be found in the keys or the
+     * values or both. To require a match in the keys and in the values, use a logical
+     * <code>AND</code> statement to combine two match rules, one that inspects the
+     * keys and another that inspects the values. </p>
      */
     inline void SetMatchScope(JsonMatchScope&& value) { m_matchScopeHasBeenSet = true; m_matchScope = std::move(value); }
 
     /**
      * <p>The parts of the JSON to match against using the <code>MatchPattern</code>.
-     * If you specify <code>All</code>, WAF matches against keys and values. </p>
+     * If you specify <code>ALL</code>, WAF matches against keys and values. </p> <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to
+     * be found in the values. It requires a match to be found in the keys or the
+     * values or both. To require a match in the keys and in the values, use a logical
+     * <code>AND</code> statement to combine two match rules, one that inspects the
+     * keys and another that inspects the values. </p>
      */
     inline JsonBody& WithMatchScope(const JsonMatchScope& value) { SetMatchScope(value); return *this;}
 
     /**
      * <p>The parts of the JSON to match against using the <code>MatchPattern</code>.
-     * If you specify <code>All</code>, WAF matches against keys and values. </p>
+     * If you specify <code>ALL</code>, WAF matches against keys and values. </p> <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to
+     * be found in the values. It requires a match to be found in the keys or the
+     * values or both. To require a match in the keys and in the values, use a logical
+     * <code>AND</code> statement to combine two match rules, one that inspects the
+     * keys and another that inspects the values. </p>
      */
     inline JsonBody& WithMatchScope(JsonMatchScope&& value) { SetMatchScope(std::move(value)); return *this;}
 

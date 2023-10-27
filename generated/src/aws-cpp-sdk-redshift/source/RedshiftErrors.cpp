@@ -35,6 +35,7 @@ static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet")
 static const int INVALID_CLUSTER_TRACK_FAULT_HASH = HashingUtils::HashString("InvalidClusterTrack");
 static const int INVALID_SNAPSHOT_COPY_GRANT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidSnapshotCopyGrantStateFault");
 static const int INVALID_ELASTIC_IP_FAULT_HASH = HashingUtils::HashString("InvalidElasticIpFault");
+static const int IPV6_CIDR_BLOCK_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("Ipv6CidrBlockNotFoundFault");
 static const int ENDPOINT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("EndpointAlreadyExists");
 static const int SNAPSHOT_COPY_GRANT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("SnapshotCopyGrantAlreadyExistsFault");
 static const int AUTHENTICATION_PROFILE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("AuthenticationProfileQuotaExceededFault");
@@ -242,6 +243,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == INVALID_ELASTIC_IP_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_ELASTIC_IP_FAULT), false);
+    return true;
+  }
+  else if (hashCode == IPV6_CIDR_BLOCK_NOT_FOUND_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::IPV6_CIDR_BLOCK_NOT_FOUND_FAULT), false);
     return true;
   }
   else if (hashCode == ENDPOINT_ALREADY_EXISTS_FAULT_HASH)
@@ -764,17 +770,17 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESERVED_NODE_ALREADY_MIGRATED_FAULT), false);
     return true;
   }
-  else if (hashCode == ENDPOINTS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ENDPOINTS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT), false);
-    return true;
-  }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
-  if (hashCode == DEPENDENT_SERVICE_REQUEST_THROTTLING_FAULT_HASH)
+  if (hashCode == ENDPOINTS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ENDPOINTS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT), false);
+    return true;
+  }
+  else if (hashCode == DEPENDENT_SERVICE_REQUEST_THROTTLING_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::DEPENDENT_SERVICE_REQUEST_THROTTLING_FAULT), false);
     return true;

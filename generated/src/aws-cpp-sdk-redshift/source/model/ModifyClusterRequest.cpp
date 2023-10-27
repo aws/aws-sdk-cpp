@@ -47,7 +47,8 @@ ModifyClusterRequest::ModifyClusterRequest() :
     m_portHasBeenSet(false),
     m_manageMasterPassword(false),
     m_manageMasterPasswordHasBeenSet(false),
-    m_masterPasswordSecretKmsKeyIdHasBeenSet(false)
+    m_masterPasswordSecretKmsKeyIdHasBeenSet(false),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -200,6 +201,11 @@ Aws::String ModifyClusterRequest::SerializePayload() const
   if(m_masterPasswordSecretKmsKeyIdHasBeenSet)
   {
     ss << "MasterPasswordSecretKmsKeyId=" << StringUtils::URLEncode(m_masterPasswordSecretKmsKeyId.c_str()) << "&";
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+    ss << "IpAddressType=" << StringUtils::URLEncode(m_ipAddressType.c_str()) << "&";
   }
 
   ss << "Version=2012-12-01";

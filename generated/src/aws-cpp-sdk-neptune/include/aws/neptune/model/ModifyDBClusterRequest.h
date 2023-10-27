@@ -719,8 +719,7 @@ namespace Model
      * next maintenance window unless the <code>ApplyImmediately</code> parameter is
      * set to true.</p> <p>For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
-     * Releases for Amazon Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+     * Releases for Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -730,8 +729,7 @@ namespace Model
      * next maintenance window unless the <code>ApplyImmediately</code> parameter is
      * set to true.</p> <p>For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
-     * Releases for Amazon Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+     * Releases for Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -741,8 +739,7 @@ namespace Model
      * next maintenance window unless the <code>ApplyImmediately</code> parameter is
      * set to true.</p> <p>For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
-     * Releases for Amazon Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+     * Releases for Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -752,8 +749,7 @@ namespace Model
      * next maintenance window unless the <code>ApplyImmediately</code> parameter is
      * set to true.</p> <p>For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
-     * Releases for Amazon Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+     * Releases for Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -763,8 +759,7 @@ namespace Model
      * next maintenance window unless the <code>ApplyImmediately</code> parameter is
      * set to true.</p> <p>For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
-     * Releases for Amazon Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+     * Releases for Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -774,8 +769,7 @@ namespace Model
      * next maintenance window unless the <code>ApplyImmediately</code> parameter is
      * set to true.</p> <p>For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
-     * Releases for Amazon Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+     * Releases for Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -785,8 +779,7 @@ namespace Model
      * next maintenance window unless the <code>ApplyImmediately</code> parameter is
      * set to true.</p> <p>For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
-     * Releases for Amazon Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+     * Releases for Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -796,8 +789,7 @@ namespace Model
      * next maintenance window unless the <code>ApplyImmediately</code> parameter is
      * set to true.</p> <p>For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
-     * Releases for Amazon Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+     * Releases for Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -994,22 +986,52 @@ namespace Model
     inline ModifyDBClusterRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const{ return m_serverlessV2ScalingConfiguration; }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline void SetServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfiguration& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = value; }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline ModifyDBClusterRequest& WithServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfiguration& value) { SetServerlessV2ScalingConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline ModifyDBClusterRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
 
   private:

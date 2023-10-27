@@ -295,6 +295,61 @@ namespace Model
      */
     inline ClusterSubnetGroup& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The IP address types supported by this cluster subnet group. Possible values
+     * are <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedClusterIpAddressTypes() const{ return m_supportedClusterIpAddressTypes; }
+
+    /**
+     * <p>The IP address types supported by this cluster subnet group. Possible values
+     * are <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline bool SupportedClusterIpAddressTypesHasBeenSet() const { return m_supportedClusterIpAddressTypesHasBeenSet; }
+
+    /**
+     * <p>The IP address types supported by this cluster subnet group. Possible values
+     * are <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline void SetSupportedClusterIpAddressTypes(const Aws::Vector<Aws::String>& value) { m_supportedClusterIpAddressTypesHasBeenSet = true; m_supportedClusterIpAddressTypes = value; }
+
+    /**
+     * <p>The IP address types supported by this cluster subnet group. Possible values
+     * are <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline void SetSupportedClusterIpAddressTypes(Aws::Vector<Aws::String>&& value) { m_supportedClusterIpAddressTypesHasBeenSet = true; m_supportedClusterIpAddressTypes = std::move(value); }
+
+    /**
+     * <p>The IP address types supported by this cluster subnet group. Possible values
+     * are <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline ClusterSubnetGroup& WithSupportedClusterIpAddressTypes(const Aws::Vector<Aws::String>& value) { SetSupportedClusterIpAddressTypes(value); return *this;}
+
+    /**
+     * <p>The IP address types supported by this cluster subnet group. Possible values
+     * are <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline ClusterSubnetGroup& WithSupportedClusterIpAddressTypes(Aws::Vector<Aws::String>&& value) { SetSupportedClusterIpAddressTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The IP address types supported by this cluster subnet group. Possible values
+     * are <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline ClusterSubnetGroup& AddSupportedClusterIpAddressTypes(const Aws::String& value) { m_supportedClusterIpAddressTypesHasBeenSet = true; m_supportedClusterIpAddressTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The IP address types supported by this cluster subnet group. Possible values
+     * are <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline ClusterSubnetGroup& AddSupportedClusterIpAddressTypes(Aws::String&& value) { m_supportedClusterIpAddressTypesHasBeenSet = true; m_supportedClusterIpAddressTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IP address types supported by this cluster subnet group. Possible values
+     * are <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline ClusterSubnetGroup& AddSupportedClusterIpAddressTypes(const char* value) { m_supportedClusterIpAddressTypesHasBeenSet = true; m_supportedClusterIpAddressTypes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_clusterSubnetGroupName;
@@ -314,6 +369,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_supportedClusterIpAddressTypes;
+    bool m_supportedClusterIpAddressTypesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -86,7 +86,8 @@ Cluster::Cluster() :
     m_customDomainCertificateArnHasBeenSet(false),
     m_customDomainCertificateExpiryDateHasBeenSet(false),
     m_masterPasswordSecretArnHasBeenSet(false),
-    m_masterPasswordSecretKmsKeyIdHasBeenSet(false)
+    m_masterPasswordSecretKmsKeyIdHasBeenSet(false),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -156,7 +157,8 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_customDomainCertificateArnHasBeenSet(false),
     m_customDomainCertificateExpiryDateHasBeenSet(false),
     m_masterPasswordSecretArnHasBeenSet(false),
-    m_masterPasswordSecretKmsKeyIdHasBeenSet(false)
+    m_masterPasswordSecretKmsKeyIdHasBeenSet(false),
+    m_ipAddressTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -557,6 +559,12 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_masterPasswordSecretKmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(masterPasswordSecretKmsKeyIdNode.GetText());
       m_masterPasswordSecretKmsKeyIdHasBeenSet = true;
     }
+    XmlNode ipAddressTypeNode = resultNode.FirstChild("IpAddressType");
+    if(!ipAddressTypeNode.IsNull())
+    {
+      m_ipAddressType = Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText());
+      m_ipAddressTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -915,6 +923,11 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".MasterPasswordSecretKmsKeyId=" << StringUtils::URLEncode(m_masterPasswordSecretKmsKeyId.c_str()) << "&";
   }
 
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IpAddressType=" << StringUtils::URLEncode(m_ipAddressType.c_str()) << "&";
+  }
+
 }
 
 void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1212,6 +1225,10 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_masterPasswordSecretKmsKeyIdHasBeenSet)
   {
       oStream << location << ".MasterPasswordSecretKmsKeyId=" << StringUtils::URLEncode(m_masterPasswordSecretKmsKeyId.c_str()) << "&";
+  }
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << ".IpAddressType=" << StringUtils::URLEncode(m_ipAddressType.c_str()) << "&";
   }
 }
 

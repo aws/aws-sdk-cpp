@@ -738,9 +738,9 @@ namespace Model
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -752,9 +752,9 @@ namespace Model
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -766,9 +766,9 @@ namespace Model
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -780,9 +780,9 @@ namespace Model
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -794,9 +794,9 @@ namespace Model
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -808,9 +808,9 @@ namespace Model
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -822,9 +822,9 @@ namespace Model
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -836,9 +836,9 @@ namespace Model
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -852,10 +852,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region, occurring on a random day of the week. To see the
      * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p> <p>Valid
+     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
@@ -865,10 +865,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region, occurring on a random day of the week. To see the
      * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p> <p>Valid
+     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
@@ -878,10 +878,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region, occurring on a random day of the week. To see the
      * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p> <p>Valid
+     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
@@ -891,10 +891,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region, occurring on a random day of the week. To see the
      * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p> <p>Valid
+     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
@@ -904,10 +904,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region, occurring on a random day of the week. To see the
      * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p> <p>Valid
+     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
@@ -917,10 +917,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region, occurring on a random day of the week. To see the
      * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p> <p>Valid
+     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline CreateDBClusterRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -930,10 +930,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region, occurring on a random day of the week. To see the
      * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p> <p>Valid
+     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline CreateDBClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
@@ -943,10 +943,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region, occurring on a random day of the week. To see the
      * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p> <p>Valid
+     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline CreateDBClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -1385,22 +1385,52 @@ namespace Model
     inline CreateDBClusterRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const{ return m_serverlessV2ScalingConfiguration; }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline void SetServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfiguration& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = value; }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline CreateDBClusterRequest& WithServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfiguration& value) { SetServerlessV2ScalingConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline CreateDBClusterRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
 
 

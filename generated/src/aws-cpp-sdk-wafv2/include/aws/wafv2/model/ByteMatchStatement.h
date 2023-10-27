@@ -65,15 +65,15 @@ namespace Model
      * includes it in the logs. For information about the logging fields, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
      * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
-     * <code>HeaderOrder</code>: The comma-separated list of header names to match for.
-     * WAF creates a string that contains the ordered list of header names, from the
-     * headers in the web request, and then matches against that string. </p> </li>
-     * </ul> <p>If <code>SearchString</code> includes alphabetic characters A-Z and
-     * a-z, note that the value is case sensitive.</p> <p> <b>If you're using the WAF
-     * API</b> </p> <p>Specify a base64-encoded version of the value. The maximum
-     * length of the value before you base64-encode it is 200 bytes.</p> <p>For
-     * example, suppose the value of <code>Type</code> is <code>HEADER</code> and the
-     * value of <code>Data</code> is <code>User-Agent</code>. If you want to search the
+     * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a
+     * string that contains the ordered list of header names, from the headers in the
+     * web request, and then matches against that string. </p> </li> </ul> <p>If
+     * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
+     * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
+     * <p>Specify a base64-encoded version of the value. The maximum length of the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
+     * value of <code>Type</code> is <code>HEADER</code> and the value of
+     * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you
      * base64-encode <code>BadBot</code> using MIME base64-encoding and include the
      * resulting value, <code>QmFkQm90</code>, in the value of
@@ -102,15 +102,15 @@ namespace Model
      * includes it in the logs. For information about the logging fields, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
      * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
-     * <code>HeaderOrder</code>: The comma-separated list of header names to match for.
-     * WAF creates a string that contains the ordered list of header names, from the
-     * headers in the web request, and then matches against that string. </p> </li>
-     * </ul> <p>If <code>SearchString</code> includes alphabetic characters A-Z and
-     * a-z, note that the value is case sensitive.</p> <p> <b>If you're using the WAF
-     * API</b> </p> <p>Specify a base64-encoded version of the value. The maximum
-     * length of the value before you base64-encode it is 200 bytes.</p> <p>For
-     * example, suppose the value of <code>Type</code> is <code>HEADER</code> and the
-     * value of <code>Data</code> is <code>User-Agent</code>. If you want to search the
+     * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a
+     * string that contains the ordered list of header names, from the headers in the
+     * web request, and then matches against that string. </p> </li> </ul> <p>If
+     * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
+     * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
+     * <p>Specify a base64-encoded version of the value. The maximum length of the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
+     * value of <code>Type</code> is <code>HEADER</code> and the value of
+     * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you
      * base64-encode <code>BadBot</code> using MIME base64-encoding and include the
      * resulting value, <code>QmFkQm90</code>, in the value of
@@ -139,15 +139,15 @@ namespace Model
      * includes it in the logs. For information about the logging fields, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
      * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
-     * <code>HeaderOrder</code>: The comma-separated list of header names to match for.
-     * WAF creates a string that contains the ordered list of header names, from the
-     * headers in the web request, and then matches against that string. </p> </li>
-     * </ul> <p>If <code>SearchString</code> includes alphabetic characters A-Z and
-     * a-z, note that the value is case sensitive.</p> <p> <b>If you're using the WAF
-     * API</b> </p> <p>Specify a base64-encoded version of the value. The maximum
-     * length of the value before you base64-encode it is 200 bytes.</p> <p>For
-     * example, suppose the value of <code>Type</code> is <code>HEADER</code> and the
-     * value of <code>Data</code> is <code>User-Agent</code>. If you want to search the
+     * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a
+     * string that contains the ordered list of header names, from the headers in the
+     * web request, and then matches against that string. </p> </li> </ul> <p>If
+     * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
+     * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
+     * <p>Specify a base64-encoded version of the value. The maximum length of the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
+     * value of <code>Type</code> is <code>HEADER</code> and the value of
+     * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you
      * base64-encode <code>BadBot</code> using MIME base64-encoding and include the
      * resulting value, <code>QmFkQm90</code>, in the value of
@@ -176,15 +176,15 @@ namespace Model
      * includes it in the logs. For information about the logging fields, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
      * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
-     * <code>HeaderOrder</code>: The comma-separated list of header names to match for.
-     * WAF creates a string that contains the ordered list of header names, from the
-     * headers in the web request, and then matches against that string. </p> </li>
-     * </ul> <p>If <code>SearchString</code> includes alphabetic characters A-Z and
-     * a-z, note that the value is case sensitive.</p> <p> <b>If you're using the WAF
-     * API</b> </p> <p>Specify a base64-encoded version of the value. The maximum
-     * length of the value before you base64-encode it is 200 bytes.</p> <p>For
-     * example, suppose the value of <code>Type</code> is <code>HEADER</code> and the
-     * value of <code>Data</code> is <code>User-Agent</code>. If you want to search the
+     * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a
+     * string that contains the ordered list of header names, from the headers in the
+     * web request, and then matches against that string. </p> </li> </ul> <p>If
+     * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
+     * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
+     * <p>Specify a base64-encoded version of the value. The maximum length of the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
+     * value of <code>Type</code> is <code>HEADER</code> and the value of
+     * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you
      * base64-encode <code>BadBot</code> using MIME base64-encoding and include the
      * resulting value, <code>QmFkQm90</code>, in the value of
@@ -213,15 +213,15 @@ namespace Model
      * includes it in the logs. For information about the logging fields, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
      * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
-     * <code>HeaderOrder</code>: The comma-separated list of header names to match for.
-     * WAF creates a string that contains the ordered list of header names, from the
-     * headers in the web request, and then matches against that string. </p> </li>
-     * </ul> <p>If <code>SearchString</code> includes alphabetic characters A-Z and
-     * a-z, note that the value is case sensitive.</p> <p> <b>If you're using the WAF
-     * API</b> </p> <p>Specify a base64-encoded version of the value. The maximum
-     * length of the value before you base64-encode it is 200 bytes.</p> <p>For
-     * example, suppose the value of <code>Type</code> is <code>HEADER</code> and the
-     * value of <code>Data</code> is <code>User-Agent</code>. If you want to search the
+     * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a
+     * string that contains the ordered list of header names, from the headers in the
+     * web request, and then matches against that string. </p> </li> </ul> <p>If
+     * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
+     * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
+     * <p>Specify a base64-encoded version of the value. The maximum length of the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
+     * value of <code>Type</code> is <code>HEADER</code> and the value of
+     * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you
      * base64-encode <code>BadBot</code> using MIME base64-encoding and include the
      * resulting value, <code>QmFkQm90</code>, in the value of
@@ -250,15 +250,15 @@ namespace Model
      * includes it in the logs. For information about the logging fields, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
      * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
-     * <code>HeaderOrder</code>: The comma-separated list of header names to match for.
-     * WAF creates a string that contains the ordered list of header names, from the
-     * headers in the web request, and then matches against that string. </p> </li>
-     * </ul> <p>If <code>SearchString</code> includes alphabetic characters A-Z and
-     * a-z, note that the value is case sensitive.</p> <p> <b>If you're using the WAF
-     * API</b> </p> <p>Specify a base64-encoded version of the value. The maximum
-     * length of the value before you base64-encode it is 200 bytes.</p> <p>For
-     * example, suppose the value of <code>Type</code> is <code>HEADER</code> and the
-     * value of <code>Data</code> is <code>User-Agent</code>. If you want to search the
+     * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a
+     * string that contains the ordered list of header names, from the headers in the
+     * web request, and then matches against that string. </p> </li> </ul> <p>If
+     * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
+     * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
+     * <p>Specify a base64-encoded version of the value. The maximum length of the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
+     * value of <code>Type</code> is <code>HEADER</code> and the value of
+     * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you
      * base64-encode <code>BadBot</code> using MIME base64-encoding and include the
      * resulting value, <code>QmFkQm90</code>, in the value of
