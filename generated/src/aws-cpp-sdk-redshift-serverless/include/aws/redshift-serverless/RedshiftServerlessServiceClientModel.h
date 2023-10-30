@@ -19,11 +19,13 @@
 
 /* Service model headers required in RedshiftServerlessClient header */
 #include <aws/redshift-serverless/model/ConvertRecoveryPointToSnapshotResult.h>
+#include <aws/redshift-serverless/model/CreateCustomDomainAssociationResult.h>
 #include <aws/redshift-serverless/model/CreateEndpointAccessResult.h>
 #include <aws/redshift-serverless/model/CreateNamespaceResult.h>
 #include <aws/redshift-serverless/model/CreateSnapshotResult.h>
 #include <aws/redshift-serverless/model/CreateUsageLimitResult.h>
 #include <aws/redshift-serverless/model/CreateWorkgroupResult.h>
+#include <aws/redshift-serverless/model/DeleteCustomDomainAssociationResult.h>
 #include <aws/redshift-serverless/model/DeleteEndpointAccessResult.h>
 #include <aws/redshift-serverless/model/DeleteNamespaceResult.h>
 #include <aws/redshift-serverless/model/DeleteResourcePolicyResult.h>
@@ -31,6 +33,7 @@
 #include <aws/redshift-serverless/model/DeleteUsageLimitResult.h>
 #include <aws/redshift-serverless/model/DeleteWorkgroupResult.h>
 #include <aws/redshift-serverless/model/GetCredentialsResult.h>
+#include <aws/redshift-serverless/model/GetCustomDomainAssociationResult.h>
 #include <aws/redshift-serverless/model/GetEndpointAccessResult.h>
 #include <aws/redshift-serverless/model/GetNamespaceResult.h>
 #include <aws/redshift-serverless/model/GetRecoveryPointResult.h>
@@ -39,6 +42,7 @@
 #include <aws/redshift-serverless/model/GetTableRestoreStatusResult.h>
 #include <aws/redshift-serverless/model/GetUsageLimitResult.h>
 #include <aws/redshift-serverless/model/GetWorkgroupResult.h>
+#include <aws/redshift-serverless/model/ListCustomDomainAssociationsResult.h>
 #include <aws/redshift-serverless/model/ListEndpointAccessResult.h>
 #include <aws/redshift-serverless/model/ListNamespacesResult.h>
 #include <aws/redshift-serverless/model/ListRecoveryPointsResult.h>
@@ -53,6 +57,7 @@
 #include <aws/redshift-serverless/model/RestoreTableFromSnapshotResult.h>
 #include <aws/redshift-serverless/model/TagResourceResult.h>
 #include <aws/redshift-serverless/model/UntagResourceResult.h>
+#include <aws/redshift-serverless/model/UpdateCustomDomainAssociationResult.h>
 #include <aws/redshift-serverless/model/UpdateEndpointAccessResult.h>
 #include <aws/redshift-serverless/model/UpdateNamespaceResult.h>
 #include <aws/redshift-serverless/model/UpdateSnapshotResult.h>
@@ -99,11 +104,13 @@ namespace Aws
     {
       /* Service model forward declarations required in RedshiftServerlessClient header */
       class ConvertRecoveryPointToSnapshotRequest;
+      class CreateCustomDomainAssociationRequest;
       class CreateEndpointAccessRequest;
       class CreateNamespaceRequest;
       class CreateSnapshotRequest;
       class CreateUsageLimitRequest;
       class CreateWorkgroupRequest;
+      class DeleteCustomDomainAssociationRequest;
       class DeleteEndpointAccessRequest;
       class DeleteNamespaceRequest;
       class DeleteResourcePolicyRequest;
@@ -111,6 +118,7 @@ namespace Aws
       class DeleteUsageLimitRequest;
       class DeleteWorkgroupRequest;
       class GetCredentialsRequest;
+      class GetCustomDomainAssociationRequest;
       class GetEndpointAccessRequest;
       class GetNamespaceRequest;
       class GetRecoveryPointRequest;
@@ -119,6 +127,7 @@ namespace Aws
       class GetTableRestoreStatusRequest;
       class GetUsageLimitRequest;
       class GetWorkgroupRequest;
+      class ListCustomDomainAssociationsRequest;
       class ListEndpointAccessRequest;
       class ListNamespacesRequest;
       class ListRecoveryPointsRequest;
@@ -133,6 +142,7 @@ namespace Aws
       class RestoreTableFromSnapshotRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
+      class UpdateCustomDomainAssociationRequest;
       class UpdateEndpointAccessRequest;
       class UpdateNamespaceRequest;
       class UpdateSnapshotRequest;
@@ -142,11 +152,13 @@ namespace Aws
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<ConvertRecoveryPointToSnapshotResult, RedshiftServerlessError> ConvertRecoveryPointToSnapshotOutcome;
+      typedef Aws::Utils::Outcome<CreateCustomDomainAssociationResult, RedshiftServerlessError> CreateCustomDomainAssociationOutcome;
       typedef Aws::Utils::Outcome<CreateEndpointAccessResult, RedshiftServerlessError> CreateEndpointAccessOutcome;
       typedef Aws::Utils::Outcome<CreateNamespaceResult, RedshiftServerlessError> CreateNamespaceOutcome;
       typedef Aws::Utils::Outcome<CreateSnapshotResult, RedshiftServerlessError> CreateSnapshotOutcome;
       typedef Aws::Utils::Outcome<CreateUsageLimitResult, RedshiftServerlessError> CreateUsageLimitOutcome;
       typedef Aws::Utils::Outcome<CreateWorkgroupResult, RedshiftServerlessError> CreateWorkgroupOutcome;
+      typedef Aws::Utils::Outcome<DeleteCustomDomainAssociationResult, RedshiftServerlessError> DeleteCustomDomainAssociationOutcome;
       typedef Aws::Utils::Outcome<DeleteEndpointAccessResult, RedshiftServerlessError> DeleteEndpointAccessOutcome;
       typedef Aws::Utils::Outcome<DeleteNamespaceResult, RedshiftServerlessError> DeleteNamespaceOutcome;
       typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, RedshiftServerlessError> DeleteResourcePolicyOutcome;
@@ -154,6 +166,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteUsageLimitResult, RedshiftServerlessError> DeleteUsageLimitOutcome;
       typedef Aws::Utils::Outcome<DeleteWorkgroupResult, RedshiftServerlessError> DeleteWorkgroupOutcome;
       typedef Aws::Utils::Outcome<GetCredentialsResult, RedshiftServerlessError> GetCredentialsOutcome;
+      typedef Aws::Utils::Outcome<GetCustomDomainAssociationResult, RedshiftServerlessError> GetCustomDomainAssociationOutcome;
       typedef Aws::Utils::Outcome<GetEndpointAccessResult, RedshiftServerlessError> GetEndpointAccessOutcome;
       typedef Aws::Utils::Outcome<GetNamespaceResult, RedshiftServerlessError> GetNamespaceOutcome;
       typedef Aws::Utils::Outcome<GetRecoveryPointResult, RedshiftServerlessError> GetRecoveryPointOutcome;
@@ -162,6 +175,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetTableRestoreStatusResult, RedshiftServerlessError> GetTableRestoreStatusOutcome;
       typedef Aws::Utils::Outcome<GetUsageLimitResult, RedshiftServerlessError> GetUsageLimitOutcome;
       typedef Aws::Utils::Outcome<GetWorkgroupResult, RedshiftServerlessError> GetWorkgroupOutcome;
+      typedef Aws::Utils::Outcome<ListCustomDomainAssociationsResult, RedshiftServerlessError> ListCustomDomainAssociationsOutcome;
       typedef Aws::Utils::Outcome<ListEndpointAccessResult, RedshiftServerlessError> ListEndpointAccessOutcome;
       typedef Aws::Utils::Outcome<ListNamespacesResult, RedshiftServerlessError> ListNamespacesOutcome;
       typedef Aws::Utils::Outcome<ListRecoveryPointsResult, RedshiftServerlessError> ListRecoveryPointsOutcome;
@@ -176,6 +190,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<RestoreTableFromSnapshotResult, RedshiftServerlessError> RestoreTableFromSnapshotOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, RedshiftServerlessError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, RedshiftServerlessError> UntagResourceOutcome;
+      typedef Aws::Utils::Outcome<UpdateCustomDomainAssociationResult, RedshiftServerlessError> UpdateCustomDomainAssociationOutcome;
       typedef Aws::Utils::Outcome<UpdateEndpointAccessResult, RedshiftServerlessError> UpdateEndpointAccessOutcome;
       typedef Aws::Utils::Outcome<UpdateNamespaceResult, RedshiftServerlessError> UpdateNamespaceOutcome;
       typedef Aws::Utils::Outcome<UpdateSnapshotResult, RedshiftServerlessError> UpdateSnapshotOutcome;
@@ -185,11 +200,13 @@ namespace Aws
 
       /* Service model Outcome callable definitions */
       typedef std::future<ConvertRecoveryPointToSnapshotOutcome> ConvertRecoveryPointToSnapshotOutcomeCallable;
+      typedef std::future<CreateCustomDomainAssociationOutcome> CreateCustomDomainAssociationOutcomeCallable;
       typedef std::future<CreateEndpointAccessOutcome> CreateEndpointAccessOutcomeCallable;
       typedef std::future<CreateNamespaceOutcome> CreateNamespaceOutcomeCallable;
       typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
       typedef std::future<CreateUsageLimitOutcome> CreateUsageLimitOutcomeCallable;
       typedef std::future<CreateWorkgroupOutcome> CreateWorkgroupOutcomeCallable;
+      typedef std::future<DeleteCustomDomainAssociationOutcome> DeleteCustomDomainAssociationOutcomeCallable;
       typedef std::future<DeleteEndpointAccessOutcome> DeleteEndpointAccessOutcomeCallable;
       typedef std::future<DeleteNamespaceOutcome> DeleteNamespaceOutcomeCallable;
       typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
@@ -197,6 +214,7 @@ namespace Aws
       typedef std::future<DeleteUsageLimitOutcome> DeleteUsageLimitOutcomeCallable;
       typedef std::future<DeleteWorkgroupOutcome> DeleteWorkgroupOutcomeCallable;
       typedef std::future<GetCredentialsOutcome> GetCredentialsOutcomeCallable;
+      typedef std::future<GetCustomDomainAssociationOutcome> GetCustomDomainAssociationOutcomeCallable;
       typedef std::future<GetEndpointAccessOutcome> GetEndpointAccessOutcomeCallable;
       typedef std::future<GetNamespaceOutcome> GetNamespaceOutcomeCallable;
       typedef std::future<GetRecoveryPointOutcome> GetRecoveryPointOutcomeCallable;
@@ -205,6 +223,7 @@ namespace Aws
       typedef std::future<GetTableRestoreStatusOutcome> GetTableRestoreStatusOutcomeCallable;
       typedef std::future<GetUsageLimitOutcome> GetUsageLimitOutcomeCallable;
       typedef std::future<GetWorkgroupOutcome> GetWorkgroupOutcomeCallable;
+      typedef std::future<ListCustomDomainAssociationsOutcome> ListCustomDomainAssociationsOutcomeCallable;
       typedef std::future<ListEndpointAccessOutcome> ListEndpointAccessOutcomeCallable;
       typedef std::future<ListNamespacesOutcome> ListNamespacesOutcomeCallable;
       typedef std::future<ListRecoveryPointsOutcome> ListRecoveryPointsOutcomeCallable;
@@ -219,6 +238,7 @@ namespace Aws
       typedef std::future<RestoreTableFromSnapshotOutcome> RestoreTableFromSnapshotOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+      typedef std::future<UpdateCustomDomainAssociationOutcome> UpdateCustomDomainAssociationOutcomeCallable;
       typedef std::future<UpdateEndpointAccessOutcome> UpdateEndpointAccessOutcomeCallable;
       typedef std::future<UpdateNamespaceOutcome> UpdateNamespaceOutcomeCallable;
       typedef std::future<UpdateSnapshotOutcome> UpdateSnapshotOutcomeCallable;
@@ -231,11 +251,13 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const RedshiftServerlessClient*, const Model::ConvertRecoveryPointToSnapshotRequest&, const Model::ConvertRecoveryPointToSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConvertRecoveryPointToSnapshotResponseReceivedHandler;
+    typedef std::function<void(const RedshiftServerlessClient*, const Model::CreateCustomDomainAssociationRequest&, const Model::CreateCustomDomainAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomDomainAssociationResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::CreateEndpointAccessRequest&, const Model::CreateEndpointAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointAccessResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::CreateNamespaceRequest&, const Model::CreateNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNamespaceResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::CreateSnapshotRequest&, const Model::CreateSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSnapshotResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::CreateUsageLimitRequest&, const Model::CreateUsageLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUsageLimitResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::CreateWorkgroupRequest&, const Model::CreateWorkgroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkgroupResponseReceivedHandler;
+    typedef std::function<void(const RedshiftServerlessClient*, const Model::DeleteCustomDomainAssociationRequest&, const Model::DeleteCustomDomainAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomDomainAssociationResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::DeleteEndpointAccessRequest&, const Model::DeleteEndpointAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointAccessResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::DeleteNamespaceRequest&, const Model::DeleteNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNamespaceResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
@@ -243,6 +265,7 @@ namespace Aws
     typedef std::function<void(const RedshiftServerlessClient*, const Model::DeleteUsageLimitRequest&, const Model::DeleteUsageLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUsageLimitResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::DeleteWorkgroupRequest&, const Model::DeleteWorkgroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkgroupResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::GetCredentialsRequest&, const Model::GetCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCredentialsResponseReceivedHandler;
+    typedef std::function<void(const RedshiftServerlessClient*, const Model::GetCustomDomainAssociationRequest&, const Model::GetCustomDomainAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCustomDomainAssociationResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::GetEndpointAccessRequest&, const Model::GetEndpointAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEndpointAccessResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::GetNamespaceRequest&, const Model::GetNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNamespaceResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::GetRecoveryPointRequest&, const Model::GetRecoveryPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecoveryPointResponseReceivedHandler;
@@ -251,6 +274,7 @@ namespace Aws
     typedef std::function<void(const RedshiftServerlessClient*, const Model::GetTableRestoreStatusRequest&, const Model::GetTableRestoreStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableRestoreStatusResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::GetUsageLimitRequest&, const Model::GetUsageLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageLimitResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::GetWorkgroupRequest&, const Model::GetWorkgroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkgroupResponseReceivedHandler;
+    typedef std::function<void(const RedshiftServerlessClient*, const Model::ListCustomDomainAssociationsRequest&, const Model::ListCustomDomainAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomDomainAssociationsResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::ListEndpointAccessRequest&, const Model::ListEndpointAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEndpointAccessResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::ListNamespacesRequest&, const Model::ListNamespacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNamespacesResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::ListRecoveryPointsRequest&, const Model::ListRecoveryPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecoveryPointsResponseReceivedHandler;
@@ -265,6 +289,7 @@ namespace Aws
     typedef std::function<void(const RedshiftServerlessClient*, const Model::RestoreTableFromSnapshotRequest&, const Model::RestoreTableFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreTableFromSnapshotResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const RedshiftServerlessClient*, const Model::UpdateCustomDomainAssociationRequest&, const Model::UpdateCustomDomainAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCustomDomainAssociationResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::UpdateEndpointAccessRequest&, const Model::UpdateEndpointAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointAccessResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::UpdateNamespaceRequest&, const Model::UpdateNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNamespaceResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::UpdateSnapshotRequest&, const Model::UpdateSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSnapshotResponseReceivedHandler;

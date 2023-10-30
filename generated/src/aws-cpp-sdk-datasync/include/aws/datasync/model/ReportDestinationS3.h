@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Specifies the Amazon S3 bucket where DataSync uploads your <a
-   * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task
    * report</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ReportDestinationS3">AWS
    * API Reference</a></p>
@@ -124,7 +124,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the IAM policy that allows
      * DataSync to upload a task report to your S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Allowing
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Allowing
      * DataSync to upload a task report to an Amazon S3 bucket</a>.</p>
      */
     inline const Aws::String& GetBucketAccessRoleArn() const{ return m_bucketAccessRoleArn; }
@@ -132,7 +132,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the IAM policy that allows
      * DataSync to upload a task report to your S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Allowing
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Allowing
      * DataSync to upload a task report to an Amazon S3 bucket</a>.</p>
      */
     inline bool BucketAccessRoleArnHasBeenSet() const { return m_bucketAccessRoleArnHasBeenSet; }
@@ -140,7 +140,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the IAM policy that allows
      * DataSync to upload a task report to your S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Allowing
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Allowing
      * DataSync to upload a task report to an Amazon S3 bucket</a>.</p>
      */
     inline void SetBucketAccessRoleArn(const Aws::String& value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn = value; }
@@ -148,7 +148,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the IAM policy that allows
      * DataSync to upload a task report to your S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Allowing
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Allowing
      * DataSync to upload a task report to an Amazon S3 bucket</a>.</p>
      */
     inline void SetBucketAccessRoleArn(Aws::String&& value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn = std::move(value); }
@@ -156,7 +156,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the IAM policy that allows
      * DataSync to upload a task report to your S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Allowing
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Allowing
      * DataSync to upload a task report to an Amazon S3 bucket</a>.</p>
      */
     inline void SetBucketAccessRoleArn(const char* value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn.assign(value); }
@@ -164,7 +164,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the IAM policy that allows
      * DataSync to upload a task report to your S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Allowing
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Allowing
      * DataSync to upload a task report to an Amazon S3 bucket</a>.</p>
      */
     inline ReportDestinationS3& WithBucketAccessRoleArn(const Aws::String& value) { SetBucketAccessRoleArn(value); return *this;}
@@ -172,7 +172,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the IAM policy that allows
      * DataSync to upload a task report to your S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Allowing
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Allowing
      * DataSync to upload a task report to an Amazon S3 bucket</a>.</p>
      */
     inline ReportDestinationS3& WithBucketAccessRoleArn(Aws::String&& value) { SetBucketAccessRoleArn(std::move(value)); return *this;}
@@ -180,7 +180,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the IAM policy that allows
      * DataSync to upload a task report to your S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Allowing
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Allowing
      * DataSync to upload a task report to an Amazon S3 bucket</a>.</p>
      */
     inline ReportDestinationS3& WithBucketAccessRoleArn(const char* value) { SetBucketAccessRoleArn(value); return *this;}

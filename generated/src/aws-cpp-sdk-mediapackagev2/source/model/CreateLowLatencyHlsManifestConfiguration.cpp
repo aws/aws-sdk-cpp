@@ -25,7 +25,8 @@ CreateLowLatencyHlsManifestConfiguration::CreateLowLatencyHlsManifestConfigurati
     m_manifestWindowSeconds(0),
     m_manifestWindowSecondsHasBeenSet(false),
     m_programDateTimeIntervalSeconds(0),
-    m_programDateTimeIntervalSecondsHasBeenSet(false)
+    m_programDateTimeIntervalSecondsHasBeenSet(false),
+    m_filterConfigurationHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ CreateLowLatencyHlsManifestConfiguration::CreateLowLatencyHlsManifestConfigurati
     m_manifestWindowSeconds(0),
     m_manifestWindowSecondsHasBeenSet(false),
     m_programDateTimeIntervalSeconds(0),
-    m_programDateTimeIntervalSecondsHasBeenSet(false)
+    m_programDateTimeIntervalSecondsHasBeenSet(false),
+    m_filterConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,6 +80,13 @@ CreateLowLatencyHlsManifestConfiguration& CreateLowLatencyHlsManifestConfigurati
     m_programDateTimeIntervalSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FilterConfiguration"))
+  {
+    m_filterConfiguration = jsonValue.GetObject("FilterConfiguration");
+
+    m_filterConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -112,6 +121,12 @@ JsonValue CreateLowLatencyHlsManifestConfiguration::Jsonize() const
   if(m_programDateTimeIntervalSecondsHasBeenSet)
   {
    payload.WithInteger("ProgramDateTimeIntervalSeconds", m_programDateTimeIntervalSeconds);
+
+  }
+
+  if(m_filterConfigurationHasBeenSet)
+  {
+   payload.WithObject("FilterConfiguration", m_filterConfiguration.Jsonize());
 
   }
 

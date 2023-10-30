@@ -562,54 +562,63 @@ namespace Model
 
     /**
      * <p>The number of files, objects, and directories that DataSync verified during
-     * your transfer.</p>
+     * your transfer.</p>  <p>When you configure your task to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify
+     * only the data that's transferred</a>, DataSync doesn't verify directories in
+     * some situations or files that fail to transfer.</p> 
      */
     inline long long GetFilesVerified() const{ return m_filesVerified; }
 
     /**
      * <p>The number of files, objects, and directories that DataSync verified during
-     * your transfer.</p>
+     * your transfer.</p>  <p>When you configure your task to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify
+     * only the data that's transferred</a>, DataSync doesn't verify directories in
+     * some situations or files that fail to transfer.</p> 
      */
     inline void SetFilesVerified(long long value) { m_filesVerified = value; }
 
     /**
      * <p>The number of files, objects, and directories that DataSync verified during
-     * your transfer.</p>
+     * your transfer.</p>  <p>When you configure your task to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify
+     * only the data that's transferred</a>, DataSync doesn't verify directories in
+     * some situations or files that fail to transfer.</p> 
      */
     inline DescribeTaskExecutionResult& WithFilesVerified(long long value) { SetFilesVerified(value); return *this;}
 
 
     /**
      * <p>Indicates whether DataSync generated a complete <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task
      * report</a> for your transfer.</p>
      */
     inline const ReportResult& GetReportResult() const{ return m_reportResult; }
 
     /**
      * <p>Indicates whether DataSync generated a complete <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task
      * report</a> for your transfer.</p>
      */
     inline void SetReportResult(const ReportResult& value) { m_reportResult = value; }
 
     /**
      * <p>Indicates whether DataSync generated a complete <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task
      * report</a> for your transfer.</p>
      */
     inline void SetReportResult(ReportResult&& value) { m_reportResult = std::move(value); }
 
     /**
      * <p>Indicates whether DataSync generated a complete <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task
      * report</a> for your transfer.</p>
      */
     inline DescribeTaskExecutionResult& WithReportResult(const ReportResult& value) { SetReportResult(value); return *this;}
 
     /**
      * <p>Indicates whether DataSync generated a complete <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task
      * report</a> for your transfer.</p>
      */
     inline DescribeTaskExecutionResult& WithReportResult(ReportResult&& value) { SetReportResult(std::move(value)); return *this;}

@@ -28,9 +28,14 @@ AppSummary::AppSummary() :
     m_descriptionHasBeenSet(false),
     m_driftStatus(AppDriftStatusType::NOT_SET),
     m_driftStatusHasBeenSet(false),
+    m_lastAppComplianceEvaluationTimeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_resiliencyScore(0.0),
     m_resiliencyScoreHasBeenSet(false),
+    m_rpoInSecs(0),
+    m_rpoInSecsHasBeenSet(false),
+    m_rtoInSecs(0),
+    m_rtoInSecsHasBeenSet(false),
     m_status(AppStatusType::NOT_SET),
     m_statusHasBeenSet(false)
 {
@@ -46,9 +51,14 @@ AppSummary::AppSummary(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_driftStatus(AppDriftStatusType::NOT_SET),
     m_driftStatusHasBeenSet(false),
+    m_lastAppComplianceEvaluationTimeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_resiliencyScore(0.0),
     m_resiliencyScoreHasBeenSet(false),
+    m_rpoInSecs(0),
+    m_rpoInSecsHasBeenSet(false),
+    m_rtoInSecs(0),
+    m_rtoInSecsHasBeenSet(false),
     m_status(AppStatusType::NOT_SET),
     m_statusHasBeenSet(false)
 {
@@ -99,6 +109,13 @@ AppSummary& AppSummary::operator =(JsonView jsonValue)
     m_driftStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lastAppComplianceEvaluationTime"))
+  {
+    m_lastAppComplianceEvaluationTime = jsonValue.GetDouble("lastAppComplianceEvaluationTime");
+
+    m_lastAppComplianceEvaluationTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -111,6 +128,20 @@ AppSummary& AppSummary::operator =(JsonView jsonValue)
     m_resiliencyScore = jsonValue.GetDouble("resiliencyScore");
 
     m_resiliencyScoreHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("rpoInSecs"))
+  {
+    m_rpoInSecs = jsonValue.GetInteger("rpoInSecs");
+
+    m_rpoInSecsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("rtoInSecs"))
+  {
+    m_rtoInSecs = jsonValue.GetInteger("rtoInSecs");
+
+    m_rtoInSecsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -159,6 +190,11 @@ JsonValue AppSummary::Jsonize() const
    payload.WithString("driftStatus", AppDriftStatusTypeMapper::GetNameForAppDriftStatusType(m_driftStatus));
   }
 
+  if(m_lastAppComplianceEvaluationTimeHasBeenSet)
+  {
+   payload.WithDouble("lastAppComplianceEvaluationTime", m_lastAppComplianceEvaluationTime.SecondsWithMSPrecision());
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
@@ -168,6 +204,18 @@ JsonValue AppSummary::Jsonize() const
   if(m_resiliencyScoreHasBeenSet)
   {
    payload.WithDouble("resiliencyScore", m_resiliencyScore);
+
+  }
+
+  if(m_rpoInSecsHasBeenSet)
+  {
+   payload.WithInteger("rpoInSecs", m_rpoInSecs);
+
+  }
+
+  if(m_rtoInSecsHasBeenSet)
+  {
+   payload.WithInteger("rtoInSecs", m_rtoInSecs);
 
   }
 

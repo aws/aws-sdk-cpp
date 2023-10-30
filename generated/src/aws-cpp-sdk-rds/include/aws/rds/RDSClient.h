@@ -1106,6 +1106,35 @@ namespace Aws
         }
 
         /**
+         * <p>Creates a zero-ETL integration with Amazon Redshift. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html">Working
+         * with Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the
+         * <i>Amazon Aurora User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateIntegrationOutcome CreateIntegration(const Model::CreateIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateIntegrationRequestT = Model::CreateIntegrationRequest>
+        Model::CreateIntegrationOutcomeCallable CreateIntegrationCallable(const CreateIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::CreateIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateIntegrationRequestT = Model::CreateIntegrationRequest>
+        void CreateIntegrationAsync(const CreateIntegrationRequestT& request, const CreateIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::CreateIntegration, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new option group. You can create up to 20 option groups.</p>
          * <p>This command doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup">AWS
@@ -1652,6 +1681,35 @@ namespace Aws
         void DeleteGlobalClusterAsync(const DeleteGlobalClusterRequestT& request, const DeleteGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::DeleteGlobalCluster, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a zero-ETL integration with Amazon Redshift. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.deleting.html">Deleting
+         * Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon
+         * Aurora User Guide</i> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteIntegrationOutcome DeleteIntegration(const Model::DeleteIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteIntegrationRequestT = Model::DeleteIntegrationRequest>
+        Model::DeleteIntegrationOutcomeCallable DeleteIntegrationCallable(const DeleteIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DeleteIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteIntegrationRequestT = Model::DeleteIntegrationRequest>
+        void DeleteIntegrationAsync(const DeleteIntegrationRequestT& request, const DeleteIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DeleteIntegration, request, handler, context);
         }
 
         /**
@@ -2649,6 +2707,35 @@ namespace Aws
         void DescribeGlobalClustersAsync(const DescribeGlobalClustersRequestT& request, const DescribeGlobalClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::DescribeGlobalClusters, request, handler, context);
+        }
+
+        /**
+         * <p>Describe one or more zero-ETL integration with Amazon Redshift. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.describingmonitoring.html">Viewing
+         * and monitoring Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in
+         * the <i>Amazon Aurora User Guide</i> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeIntegrations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeIntegrationsOutcome DescribeIntegrations(const Model::DescribeIntegrationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeIntegrations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeIntegrationsRequestT = Model::DescribeIntegrationsRequest>
+        Model::DescribeIntegrationsOutcomeCallable DescribeIntegrationsCallable(const DescribeIntegrationsRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DescribeIntegrations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeIntegrations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeIntegrationsRequestT = Model::DescribeIntegrationsRequest>
+        void DescribeIntegrationsAsync(const DescribeIntegrationsRequestT& request, const DescribeIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DescribeIntegrations, request, handler, context);
         }
 
         /**

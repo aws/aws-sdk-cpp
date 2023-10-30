@@ -47,6 +47,7 @@
 #include <aws/finspace/model/TagResourceResult.h>
 #include <aws/finspace/model/UntagResourceResult.h>
 #include <aws/finspace/model/UpdateEnvironmentResult.h>
+#include <aws/finspace/model/UpdateKxClusterCodeConfigurationResult.h>
 #include <aws/finspace/model/UpdateKxClusterDatabasesResult.h>
 #include <aws/finspace/model/UpdateKxDatabaseResult.h>
 #include <aws/finspace/model/UpdateKxEnvironmentResult.h>
@@ -121,6 +122,7 @@ namespace Aws
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateEnvironmentRequest;
+      class UpdateKxClusterCodeConfigurationRequest;
       class UpdateKxClusterDatabasesRequest;
       class UpdateKxDatabaseRequest;
       class UpdateKxEnvironmentRequest;
@@ -158,6 +160,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<TagResourceResult, FinspaceError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, FinspaceError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateEnvironmentResult, FinspaceError> UpdateEnvironmentOutcome;
+      typedef Aws::Utils::Outcome<UpdateKxClusterCodeConfigurationResult, FinspaceError> UpdateKxClusterCodeConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateKxClusterDatabasesResult, FinspaceError> UpdateKxClusterDatabasesOutcome;
       typedef Aws::Utils::Outcome<UpdateKxDatabaseResult, FinspaceError> UpdateKxDatabaseOutcome;
       typedef Aws::Utils::Outcome<UpdateKxEnvironmentResult, FinspaceError> UpdateKxEnvironmentOutcome;
@@ -195,6 +198,7 @@ namespace Aws
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateEnvironmentOutcome> UpdateEnvironmentOutcomeCallable;
+      typedef std::future<UpdateKxClusterCodeConfigurationOutcome> UpdateKxClusterCodeConfigurationOutcomeCallable;
       typedef std::future<UpdateKxClusterDatabasesOutcome> UpdateKxClusterDatabasesOutcomeCallable;
       typedef std::future<UpdateKxDatabaseOutcome> UpdateKxDatabaseOutcomeCallable;
       typedef std::future<UpdateKxEnvironmentOutcome> UpdateKxEnvironmentOutcomeCallable;
@@ -235,6 +239,7 @@ namespace Aws
     typedef std::function<void(const FinspaceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const FinspaceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const FinspaceClient*, const Model::UpdateEnvironmentRequest&, const Model::UpdateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentResponseReceivedHandler;
+    typedef std::function<void(const FinspaceClient*, const Model::UpdateKxClusterCodeConfigurationRequest&, const Model::UpdateKxClusterCodeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateKxClusterCodeConfigurationResponseReceivedHandler;
     typedef std::function<void(const FinspaceClient*, const Model::UpdateKxClusterDatabasesRequest&, const Model::UpdateKxClusterDatabasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateKxClusterDatabasesResponseReceivedHandler;
     typedef std::function<void(const FinspaceClient*, const Model::UpdateKxDatabaseRequest&, const Model::UpdateKxDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateKxDatabaseResponseReceivedHandler;
     typedef std::function<void(const FinspaceClient*, const Model::UpdateKxEnvironmentRequest&, const Model::UpdateKxEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateKxEnvironmentResponseReceivedHandler;

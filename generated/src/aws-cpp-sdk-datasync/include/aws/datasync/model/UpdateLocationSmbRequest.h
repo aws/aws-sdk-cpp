@@ -37,389 +37,438 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
+     * <p>Specifies the ARN of the SMB location that you want to update.</p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
+     * <p>Specifies the ARN of the SMB location that you want to update.</p>
      */
     inline bool LocationArnHasBeenSet() const { return m_locationArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
+     * <p>Specifies the ARN of the SMB location that you want to update.</p>
      */
     inline void SetLocationArn(const Aws::String& value) { m_locationArnHasBeenSet = true; m_locationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
+     * <p>Specifies the ARN of the SMB location that you want to update.</p>
      */
     inline void SetLocationArn(Aws::String&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
+     * <p>Specifies the ARN of the SMB location that you want to update.</p>
      */
     inline void SetLocationArn(const char* value) { m_locationArnHasBeenSet = true; m_locationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
+     * <p>Specifies the ARN of the SMB location that you want to update.</p>
      */
     inline UpdateLocationSmbRequest& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
+     * <p>Specifies the ARN of the SMB location that you want to update.</p>
      */
     inline UpdateLocationSmbRequest& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
+     * <p>Specifies the ARN of the SMB location that you want to update.</p>
      */
     inline UpdateLocationSmbRequest& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
 
 
     /**
-     * <p>The subdirectory in the SMB file system that is used to read data from the
-     * SMB source location or write data to the SMB destination. The SMB path should be
-     * a path that's exported by the SMB server, or a subdirectory of that path. The
-     * path should be such that it can be mounted by other SMB clients in your
-     * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example, <code>/path/to/folder</code>.</p>  <p>To transfer
-     * all the data in the folder that you specified, DataSync must have permissions to
-     * mount the SMB share and to access all the data in that share. To ensure this, do
-     * either of the following:</p> <ul> <li> <p>Ensure that the user/password
-     * specified belongs to the user who can mount the share and who has the
-     * appropriate permissions for all of the files and directories that you want
-     * DataSync to access.</p> </li> <li> <p>Use credentials of a member of the Backup
-     * Operators group to mount the share. </p> </li> </ul> <p>Doing either of these
-     * options enables the agent to access the data. For the agent to access
-     * directories, you must also enable all execute access.</p>
+     * <p>Specifies the name of the share exported by your SMB file server where
+     * DataSync will read or write data. You can include a subdirectory in the share
+     * path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB
+     * clients in your network can also mount this path.</p> <p>To copy all data in the
+     * specified subdirectory, DataSync must be able to mount the SMB share and access
+     * all of its data. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
 
     /**
-     * <p>The subdirectory in the SMB file system that is used to read data from the
-     * SMB source location or write data to the SMB destination. The SMB path should be
-     * a path that's exported by the SMB server, or a subdirectory of that path. The
-     * path should be such that it can be mounted by other SMB clients in your
-     * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example, <code>/path/to/folder</code>.</p>  <p>To transfer
-     * all the data in the folder that you specified, DataSync must have permissions to
-     * mount the SMB share and to access all the data in that share. To ensure this, do
-     * either of the following:</p> <ul> <li> <p>Ensure that the user/password
-     * specified belongs to the user who can mount the share and who has the
-     * appropriate permissions for all of the files and directories that you want
-     * DataSync to access.</p> </li> <li> <p>Use credentials of a member of the Backup
-     * Operators group to mount the share. </p> </li> </ul> <p>Doing either of these
-     * options enables the agent to access the data. For the agent to access
-     * directories, you must also enable all execute access.</p>
+     * <p>Specifies the name of the share exported by your SMB file server where
+     * DataSync will read or write data. You can include a subdirectory in the share
+     * path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB
+     * clients in your network can also mount this path.</p> <p>To copy all data in the
+     * specified subdirectory, DataSync must be able to mount the SMB share and access
+     * all of its data. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
 
     /**
-     * <p>The subdirectory in the SMB file system that is used to read data from the
-     * SMB source location or write data to the SMB destination. The SMB path should be
-     * a path that's exported by the SMB server, or a subdirectory of that path. The
-     * path should be such that it can be mounted by other SMB clients in your
-     * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example, <code>/path/to/folder</code>.</p>  <p>To transfer
-     * all the data in the folder that you specified, DataSync must have permissions to
-     * mount the SMB share and to access all the data in that share. To ensure this, do
-     * either of the following:</p> <ul> <li> <p>Ensure that the user/password
-     * specified belongs to the user who can mount the share and who has the
-     * appropriate permissions for all of the files and directories that you want
-     * DataSync to access.</p> </li> <li> <p>Use credentials of a member of the Backup
-     * Operators group to mount the share. </p> </li> </ul> <p>Doing either of these
-     * options enables the agent to access the data. For the agent to access
-     * directories, you must also enable all execute access.</p>
+     * <p>Specifies the name of the share exported by your SMB file server where
+     * DataSync will read or write data. You can include a subdirectory in the share
+     * path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB
+     * clients in your network can also mount this path.</p> <p>To copy all data in the
+     * specified subdirectory, DataSync must be able to mount the SMB share and access
+     * all of its data. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
 
     /**
-     * <p>The subdirectory in the SMB file system that is used to read data from the
-     * SMB source location or write data to the SMB destination. The SMB path should be
-     * a path that's exported by the SMB server, or a subdirectory of that path. The
-     * path should be such that it can be mounted by other SMB clients in your
-     * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example, <code>/path/to/folder</code>.</p>  <p>To transfer
-     * all the data in the folder that you specified, DataSync must have permissions to
-     * mount the SMB share and to access all the data in that share. To ensure this, do
-     * either of the following:</p> <ul> <li> <p>Ensure that the user/password
-     * specified belongs to the user who can mount the share and who has the
-     * appropriate permissions for all of the files and directories that you want
-     * DataSync to access.</p> </li> <li> <p>Use credentials of a member of the Backup
-     * Operators group to mount the share. </p> </li> </ul> <p>Doing either of these
-     * options enables the agent to access the data. For the agent to access
-     * directories, you must also enable all execute access.</p>
+     * <p>Specifies the name of the share exported by your SMB file server where
+     * DataSync will read or write data. You can include a subdirectory in the share
+     * path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB
+     * clients in your network can also mount this path.</p> <p>To copy all data in the
+     * specified subdirectory, DataSync must be able to mount the SMB share and access
+     * all of its data. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
 
     /**
-     * <p>The subdirectory in the SMB file system that is used to read data from the
-     * SMB source location or write data to the SMB destination. The SMB path should be
-     * a path that's exported by the SMB server, or a subdirectory of that path. The
-     * path should be such that it can be mounted by other SMB clients in your
-     * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example, <code>/path/to/folder</code>.</p>  <p>To transfer
-     * all the data in the folder that you specified, DataSync must have permissions to
-     * mount the SMB share and to access all the data in that share. To ensure this, do
-     * either of the following:</p> <ul> <li> <p>Ensure that the user/password
-     * specified belongs to the user who can mount the share and who has the
-     * appropriate permissions for all of the files and directories that you want
-     * DataSync to access.</p> </li> <li> <p>Use credentials of a member of the Backup
-     * Operators group to mount the share. </p> </li> </ul> <p>Doing either of these
-     * options enables the agent to access the data. For the agent to access
-     * directories, you must also enable all execute access.</p>
+     * <p>Specifies the name of the share exported by your SMB file server where
+     * DataSync will read or write data. You can include a subdirectory in the share
+     * path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB
+     * clients in your network can also mount this path.</p> <p>To copy all data in the
+     * specified subdirectory, DataSync must be able to mount the SMB share and access
+     * all of its data. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
 
     /**
-     * <p>The subdirectory in the SMB file system that is used to read data from the
-     * SMB source location or write data to the SMB destination. The SMB path should be
-     * a path that's exported by the SMB server, or a subdirectory of that path. The
-     * path should be such that it can be mounted by other SMB clients in your
-     * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example, <code>/path/to/folder</code>.</p>  <p>To transfer
-     * all the data in the folder that you specified, DataSync must have permissions to
-     * mount the SMB share and to access all the data in that share. To ensure this, do
-     * either of the following:</p> <ul> <li> <p>Ensure that the user/password
-     * specified belongs to the user who can mount the share and who has the
-     * appropriate permissions for all of the files and directories that you want
-     * DataSync to access.</p> </li> <li> <p>Use credentials of a member of the Backup
-     * Operators group to mount the share. </p> </li> </ul> <p>Doing either of these
-     * options enables the agent to access the data. For the agent to access
-     * directories, you must also enable all execute access.</p>
+     * <p>Specifies the name of the share exported by your SMB file server where
+     * DataSync will read or write data. You can include a subdirectory in the share
+     * path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB
+     * clients in your network can also mount this path.</p> <p>To copy all data in the
+     * specified subdirectory, DataSync must be able to mount the SMB share and access
+     * all of its data. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline UpdateLocationSmbRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
 
     /**
-     * <p>The subdirectory in the SMB file system that is used to read data from the
-     * SMB source location or write data to the SMB destination. The SMB path should be
-     * a path that's exported by the SMB server, or a subdirectory of that path. The
-     * path should be such that it can be mounted by other SMB clients in your
-     * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example, <code>/path/to/folder</code>.</p>  <p>To transfer
-     * all the data in the folder that you specified, DataSync must have permissions to
-     * mount the SMB share and to access all the data in that share. To ensure this, do
-     * either of the following:</p> <ul> <li> <p>Ensure that the user/password
-     * specified belongs to the user who can mount the share and who has the
-     * appropriate permissions for all of the files and directories that you want
-     * DataSync to access.</p> </li> <li> <p>Use credentials of a member of the Backup
-     * Operators group to mount the share. </p> </li> </ul> <p>Doing either of these
-     * options enables the agent to access the data. For the agent to access
-     * directories, you must also enable all execute access.</p>
+     * <p>Specifies the name of the share exported by your SMB file server where
+     * DataSync will read or write data. You can include a subdirectory in the share
+     * path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB
+     * clients in your network can also mount this path.</p> <p>To copy all data in the
+     * specified subdirectory, DataSync must be able to mount the SMB share and access
+     * all of its data. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline UpdateLocationSmbRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
 
     /**
-     * <p>The subdirectory in the SMB file system that is used to read data from the
-     * SMB source location or write data to the SMB destination. The SMB path should be
-     * a path that's exported by the SMB server, or a subdirectory of that path. The
-     * path should be such that it can be mounted by other SMB clients in your
-     * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example, <code>/path/to/folder</code>.</p>  <p>To transfer
-     * all the data in the folder that you specified, DataSync must have permissions to
-     * mount the SMB share and to access all the data in that share. To ensure this, do
-     * either of the following:</p> <ul> <li> <p>Ensure that the user/password
-     * specified belongs to the user who can mount the share and who has the
-     * appropriate permissions for all of the files and directories that you want
-     * DataSync to access.</p> </li> <li> <p>Use credentials of a member of the Backup
-     * Operators group to mount the share. </p> </li> </ul> <p>Doing either of these
-     * options enables the agent to access the data. For the agent to access
-     * directories, you must also enable all execute access.</p>
+     * <p>Specifies the name of the share exported by your SMB file server where
+     * DataSync will read or write data. You can include a subdirectory in the share
+     * path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB
+     * clients in your network can also mount this path.</p> <p>To copy all data in the
+     * specified subdirectory, DataSync must be able to mount the SMB share and access
+     * all of its data. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline UpdateLocationSmbRequest& WithSubdirectory(const char* value) { SetSubdirectory(value); return *this;}
 
 
     /**
-     * <p>The user who can mount the share has the permissions to access files and
-     * folders in the SMB share.</p>
+     * <p>Specifies the user name that can mount your SMB file server and has
+     * permission to access the files and folders involved in your transfer.</p> <p>For
+     * information about choosing a user with the right level of access for your
+     * transfer, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline const Aws::String& GetUser() const{ return m_user; }
 
     /**
-     * <p>The user who can mount the share has the permissions to access files and
-     * folders in the SMB share.</p>
+     * <p>Specifies the user name that can mount your SMB file server and has
+     * permission to access the files and folders involved in your transfer.</p> <p>For
+     * information about choosing a user with the right level of access for your
+     * transfer, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
 
     /**
-     * <p>The user who can mount the share has the permissions to access files and
-     * folders in the SMB share.</p>
+     * <p>Specifies the user name that can mount your SMB file server and has
+     * permission to access the files and folders involved in your transfer.</p> <p>For
+     * information about choosing a user with the right level of access for your
+     * transfer, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
 
     /**
-     * <p>The user who can mount the share has the permissions to access files and
-     * folders in the SMB share.</p>
+     * <p>Specifies the user name that can mount your SMB file server and has
+     * permission to access the files and folders involved in your transfer.</p> <p>For
+     * information about choosing a user with the right level of access for your
+     * transfer, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
 
     /**
-     * <p>The user who can mount the share has the permissions to access files and
-     * folders in the SMB share.</p>
+     * <p>Specifies the user name that can mount your SMB file server and has
+     * permission to access the files and folders involved in your transfer.</p> <p>For
+     * information about choosing a user with the right level of access for your
+     * transfer, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
 
     /**
-     * <p>The user who can mount the share has the permissions to access files and
-     * folders in the SMB share.</p>
+     * <p>Specifies the user name that can mount your SMB file server and has
+     * permission to access the files and folders involved in your transfer.</p> <p>For
+     * information about choosing a user with the right level of access for your
+     * transfer, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline UpdateLocationSmbRequest& WithUser(const Aws::String& value) { SetUser(value); return *this;}
 
     /**
-     * <p>The user who can mount the share has the permissions to access files and
-     * folders in the SMB share.</p>
+     * <p>Specifies the user name that can mount your SMB file server and has
+     * permission to access the files and folders involved in your transfer.</p> <p>For
+     * information about choosing a user with the right level of access for your
+     * transfer, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline UpdateLocationSmbRequest& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
 
     /**
-     * <p>The user who can mount the share has the permissions to access files and
-     * folders in the SMB share.</p>
+     * <p>Specifies the user name that can mount your SMB file server and has
+     * permission to access the files and folders involved in your transfer.</p> <p>For
+     * information about choosing a user with the right level of access for your
+     * transfer, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline UpdateLocationSmbRequest& WithUser(const char* value) { SetUser(value); return *this;}
 
 
     /**
-     * <p>The name of the Windows domain that the SMB server belongs to.</p>
+     * <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+     * <p>If you have multiple domains in your environment, configuring this parameter
+     * makes sure that DataSync connects to the right file server.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The name of the Windows domain that the SMB server belongs to.</p>
+     * <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+     * <p>If you have multiple domains in your environment, configuring this parameter
+     * makes sure that DataSync connects to the right file server.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>The name of the Windows domain that the SMB server belongs to.</p>
+     * <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+     * <p>If you have multiple domains in your environment, configuring this parameter
+     * makes sure that DataSync connects to the right file server.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>The name of the Windows domain that the SMB server belongs to.</p>
+     * <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+     * <p>If you have multiple domains in your environment, configuring this parameter
+     * makes sure that DataSync connects to the right file server.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>The name of the Windows domain that the SMB server belongs to.</p>
+     * <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+     * <p>If you have multiple domains in your environment, configuring this parameter
+     * makes sure that DataSync connects to the right file server.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>The name of the Windows domain that the SMB server belongs to.</p>
+     * <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+     * <p>If you have multiple domains in your environment, configuring this parameter
+     * makes sure that DataSync connects to the right file server.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline UpdateLocationSmbRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The name of the Windows domain that the SMB server belongs to.</p>
+     * <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+     * <p>If you have multiple domains in your environment, configuring this parameter
+     * makes sure that DataSync connects to the right file server.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline UpdateLocationSmbRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Windows domain that the SMB server belongs to.</p>
+     * <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+     * <p>If you have multiple domains in your environment, configuring this parameter
+     * makes sure that DataSync connects to the right file server.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline UpdateLocationSmbRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
 
     /**
-     * <p>The password of the user who can mount the share has the permissions to
-     * access files and folders in the SMB share.</p>
+     * <p>Specifies the password of the user who can mount your SMB file server and has
+     * permission to access the files and folders involved in your transfer.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
     /**
-     * <p>The password of the user who can mount the share has the permissions to
-     * access files and folders in the SMB share.</p>
+     * <p>Specifies the password of the user who can mount your SMB file server and has
+     * permission to access the files and folders involved in your transfer.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
-     * <p>The password of the user who can mount the share has the permissions to
-     * access files and folders in the SMB share.</p>
+     * <p>Specifies the password of the user who can mount your SMB file server and has
+     * permission to access the files and folders involved in your transfer.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
-     * <p>The password of the user who can mount the share has the permissions to
-     * access files and folders in the SMB share.</p>
+     * <p>Specifies the password of the user who can mount your SMB file server and has
+     * permission to access the files and folders involved in your transfer.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     /**
-     * <p>The password of the user who can mount the share has the permissions to
-     * access files and folders in the SMB share.</p>
+     * <p>Specifies the password of the user who can mount your SMB file server and has
+     * permission to access the files and folders involved in your transfer.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
     /**
-     * <p>The password of the user who can mount the share has the permissions to
-     * access files and folders in the SMB share.</p>
+     * <p>Specifies the password of the user who can mount your SMB file server and has
+     * permission to access the files and folders involved in your transfer.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline UpdateLocationSmbRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
     /**
-     * <p>The password of the user who can mount the share has the permissions to
-     * access files and folders in the SMB share.</p>
+     * <p>Specifies the password of the user who can mount your SMB file server and has
+     * permission to access the files and folders involved in your transfer.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline UpdateLocationSmbRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password of the user who can mount the share has the permissions to
-     * access files and folders in the SMB share.</p>
+     * <p>Specifies the password of the user who can mount your SMB file server and has
+     * permission to access the files and folders involved in your transfer.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+     * permissions</a> for SMB locations.</p>
      */
     inline UpdateLocationSmbRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block
-     * (SMB) location.</p>
+     * <p>Specifies the DataSync agent (or agents) which you want to connect to your
+     * SMB file server. You specify an agent by using its Amazon Resource Name
+     * (ARN).</p>
      */
     inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block
-     * (SMB) location.</p>
+     * <p>Specifies the DataSync agent (or agents) which you want to connect to your
+     * SMB file server. You specify an agent by using its Amazon Resource Name
+     * (ARN).</p>
      */
     inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block
-     * (SMB) location.</p>
+     * <p>Specifies the DataSync agent (or agents) which you want to connect to your
+     * SMB file server. You specify an agent by using its Amazon Resource Name
+     * (ARN).</p>
      */
     inline void SetAgentArns(const Aws::Vector<Aws::String>& value) { m_agentArnsHasBeenSet = true; m_agentArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block
-     * (SMB) location.</p>
+     * <p>Specifies the DataSync agent (or agents) which you want to connect to your
+     * SMB file server. You specify an agent by using its Amazon Resource Name
+     * (ARN).</p>
      */
     inline void SetAgentArns(Aws::Vector<Aws::String>&& value) { m_agentArnsHasBeenSet = true; m_agentArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block
-     * (SMB) location.</p>
+     * <p>Specifies the DataSync agent (or agents) which you want to connect to your
+     * SMB file server. You specify an agent by using its Amazon Resource Name
+     * (ARN).</p>
      */
     inline UpdateLocationSmbRequest& WithAgentArns(const Aws::Vector<Aws::String>& value) { SetAgentArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block
-     * (SMB) location.</p>
+     * <p>Specifies the DataSync agent (or agents) which you want to connect to your
+     * SMB file server. You specify an agent by using its Amazon Resource Name
+     * (ARN).</p>
      */
     inline UpdateLocationSmbRequest& WithAgentArns(Aws::Vector<Aws::String>&& value) { SetAgentArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block
-     * (SMB) location.</p>
+     * <p>Specifies the DataSync agent (or agents) which you want to connect to your
+     * SMB file server. You specify an agent by using its Amazon Resource Name
+     * (ARN).</p>
      */
     inline UpdateLocationSmbRequest& AddAgentArns(const Aws::String& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block
-     * (SMB) location.</p>
+     * <p>Specifies the DataSync agent (or agents) which you want to connect to your
+     * SMB file server. You specify an agent by using its Amazon Resource Name
+     * (ARN).</p>
      */
     inline UpdateLocationSmbRequest& AddAgentArns(Aws::String&& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block
-     * (SMB) location.</p>
+     * <p>Specifies the DataSync agent (or agents) which you want to connect to your
+     * SMB file server. You specify an agent by using its Amazon Resource Name
+     * (ARN).</p>
      */
     inline UpdateLocationSmbRequest& AddAgentArns(const char* value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
 

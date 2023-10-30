@@ -54,6 +54,9 @@ namespace Aws
         static const int MEMBER_MAX_LENGTH_HASH = HashingUtils::HashString("MEMBER_MAX_LENGTH");
         static const int MEMBER_INVALID_ENUM_VALUE_HASH = HashingUtils::HashString("MEMBER_INVALID_ENUM_VALUE");
         static const int MEMBER_DOES_NOT_MATCH_PATTERN_HASH = HashingUtils::HashString("MEMBER_DOES_NOT_MATCH_PATTERN");
+        static const int INVALID_MANIFEST_FILTER_HASH = HashingUtils::HashString("INVALID_MANIFEST_FILTER");
+        static const int INVALID_TIME_DELAY_SECONDS_HASH = HashingUtils::HashString("INVALID_TIME_DELAY_SECONDS");
+        static const int END_TIME_EARLIER_THAN_START_TIME_HASH = HashingUtils::HashString("END_TIME_EARLIER_THAN_START_TIME");
 
 
         ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& name)
@@ -195,6 +198,18 @@ namespace Aws
           {
             return ValidationExceptionType::MEMBER_DOES_NOT_MATCH_PATTERN;
           }
+          else if (hashCode == INVALID_MANIFEST_FILTER_HASH)
+          {
+            return ValidationExceptionType::INVALID_MANIFEST_FILTER;
+          }
+          else if (hashCode == INVALID_TIME_DELAY_SECONDS_HASH)
+          {
+            return ValidationExceptionType::INVALID_TIME_DELAY_SECONDS;
+          }
+          else if (hashCode == END_TIME_EARLIER_THAN_START_TIME_HASH)
+          {
+            return ValidationExceptionType::END_TIME_EARLIER_THAN_START_TIME;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -279,6 +294,12 @@ namespace Aws
             return "MEMBER_INVALID_ENUM_VALUE";
           case ValidationExceptionType::MEMBER_DOES_NOT_MATCH_PATTERN:
             return "MEMBER_DOES_NOT_MATCH_PATTERN";
+          case ValidationExceptionType::INVALID_MANIFEST_FILTER:
+            return "INVALID_MANIFEST_FILTER";
+          case ValidationExceptionType::INVALID_TIME_DELAY_SECONDS:
+            return "INVALID_TIME_DELAY_SECONDS";
+          case ValidationExceptionType::END_TIME_EARLIER_THAN_START_TIME:
+            return "END_TIME_EARLIER_THAN_START_TIME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

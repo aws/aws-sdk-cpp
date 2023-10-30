@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>The level of detail included in each aspect of your DataSync <a
-   * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task
    * report</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ReportOverrides">AWS
    * API Reference</a></p>
