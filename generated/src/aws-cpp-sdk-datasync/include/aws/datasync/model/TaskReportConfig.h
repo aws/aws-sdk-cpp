@@ -31,7 +31,7 @@ namespace Model
    * <p>Specifies how you want to configure a task report, which provides detailed
    * information about for your DataSync transfer.</p> <p>For more information, see
    * <a
-   * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Task
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Task
    * reports</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TaskReportConfig">AWS
    * API Reference</a></p>
@@ -48,7 +48,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon S3 bucket where DataSync uploads your task report. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html#task-report-access">Task
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html#task-report-access">Task
      * reports</a>.</p>
      */
     inline const ReportDestination& GetDestination() const{ return m_destination; }
@@ -56,7 +56,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon S3 bucket where DataSync uploads your task report. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html#task-report-access">Task
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html#task-report-access">Task
      * reports</a>.</p>
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
@@ -64,7 +64,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon S3 bucket where DataSync uploads your task report. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html#task-report-access">Task
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html#task-report-access">Task
      * reports</a>.</p>
      */
     inline void SetDestination(const ReportDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
@@ -72,7 +72,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon S3 bucket where DataSync uploads your task report. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html#task-report-access">Task
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html#task-report-access">Task
      * reports</a>.</p>
      */
     inline void SetDestination(ReportDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
@@ -80,7 +80,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon S3 bucket where DataSync uploads your task report. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html#task-report-access">Task
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html#task-report-access">Task
      * reports</a>.</p>
      */
     inline TaskReportConfig& WithDestination(const ReportDestination& value) { SetDestination(value); return *this;}
@@ -88,7 +88,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon S3 bucket where DataSync uploads your task report. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html#task-report-access">Task
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html#task-report-access">Task
      * reports</a>.</p>
      */
     inline TaskReportConfig& WithDestination(ReportDestination&& value) { SetDestination(std::move(value)); return *this;}

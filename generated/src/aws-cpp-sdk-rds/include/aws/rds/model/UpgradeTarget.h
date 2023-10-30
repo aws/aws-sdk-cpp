@@ -367,6 +367,31 @@ namespace Model
      */
     inline UpgradeTarget& WithSupportsLocalWriteForwarding(bool value) { SetSupportsLocalWriteForwarding(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations
+     * with Amazon Redshift.</p>
+     */
+    inline bool GetSupportsIntegrations() const{ return m_supportsIntegrations; }
+
+    /**
+     * <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations
+     * with Amazon Redshift.</p>
+     */
+    inline bool SupportsIntegrationsHasBeenSet() const { return m_supportsIntegrationsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations
+     * with Amazon Redshift.</p>
+     */
+    inline void SetSupportsIntegrations(bool value) { m_supportsIntegrationsHasBeenSet = true; m_supportsIntegrations = value; }
+
+    /**
+     * <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations
+     * with Amazon Redshift.</p>
+     */
+    inline UpgradeTarget& WithSupportsIntegrations(bool value) { SetSupportsIntegrations(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -398,6 +423,9 @@ namespace Model
 
     bool m_supportsLocalWriteForwarding;
     bool m_supportsLocalWriteForwardingHasBeenSet = false;
+
+    bool m_supportsIntegrations;
+    bool m_supportsIntegrationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,6 +28,7 @@ ClaimedPhoneNumberSummary::ClaimedPhoneNumberSummary() :
     m_phoneNumberTypeHasBeenSet(false),
     m_phoneNumberDescriptionHasBeenSet(false),
     m_targetArnHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_phoneNumberStatusHasBeenSet(false)
 {
@@ -43,6 +44,7 @@ ClaimedPhoneNumberSummary::ClaimedPhoneNumberSummary(JsonView jsonValue) :
     m_phoneNumberTypeHasBeenSet(false),
     m_phoneNumberDescriptionHasBeenSet(false),
     m_targetArnHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_phoneNumberStatusHasBeenSet(false)
 {
@@ -98,6 +100,13 @@ ClaimedPhoneNumberSummary& ClaimedPhoneNumberSummary::operator =(JsonView jsonVa
     m_targetArn = jsonValue.GetString("TargetArn");
 
     m_targetArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InstanceId"))
+  {
+    m_instanceId = jsonValue.GetString("InstanceId");
+
+    m_instanceIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -161,6 +170,12 @@ JsonValue ClaimedPhoneNumberSummary::Jsonize() const
   if(m_targetArnHasBeenSet)
   {
    payload.WithString("TargetArn", m_targetArn);
+
+  }
+
+  if(m_instanceIdHasBeenSet)
+  {
+   payload.WithString("InstanceId", m_instanceId);
 
   }
 

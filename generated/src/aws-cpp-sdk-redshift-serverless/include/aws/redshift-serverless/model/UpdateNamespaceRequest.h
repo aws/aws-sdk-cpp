@@ -97,7 +97,7 @@ namespace Model
      * <p>The password of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
      * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
-     * if <code>manageAdminPassword</code> is true.</p>
+     * if <code>manageAdminPassword</code> is true. </p>
      */
     inline const Aws::String& GetAdminUserPassword() const{ return m_adminUserPassword; }
 
@@ -105,7 +105,7 @@ namespace Model
      * <p>The password of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
      * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
-     * if <code>manageAdminPassword</code> is true.</p>
+     * if <code>manageAdminPassword</code> is true. </p>
      */
     inline bool AdminUserPasswordHasBeenSet() const { return m_adminUserPasswordHasBeenSet; }
 
@@ -113,7 +113,7 @@ namespace Model
      * <p>The password of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
      * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
-     * if <code>manageAdminPassword</code> is true.</p>
+     * if <code>manageAdminPassword</code> is true. </p>
      */
     inline void SetAdminUserPassword(const Aws::String& value) { m_adminUserPasswordHasBeenSet = true; m_adminUserPassword = value; }
 
@@ -121,7 +121,7 @@ namespace Model
      * <p>The password of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
      * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
-     * if <code>manageAdminPassword</code> is true.</p>
+     * if <code>manageAdminPassword</code> is true. </p>
      */
     inline void SetAdminUserPassword(Aws::String&& value) { m_adminUserPasswordHasBeenSet = true; m_adminUserPassword = std::move(value); }
 
@@ -129,7 +129,7 @@ namespace Model
      * <p>The password of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
      * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
-     * if <code>manageAdminPassword</code> is true.</p>
+     * if <code>manageAdminPassword</code> is true. </p>
      */
     inline void SetAdminUserPassword(const char* value) { m_adminUserPasswordHasBeenSet = true; m_adminUserPassword.assign(value); }
 
@@ -137,7 +137,7 @@ namespace Model
      * <p>The password of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
      * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
-     * if <code>manageAdminPassword</code> is true.</p>
+     * if <code>manageAdminPassword</code> is true. </p>
      */
     inline UpdateNamespaceRequest& WithAdminUserPassword(const Aws::String& value) { SetAdminUserPassword(value); return *this;}
 
@@ -145,7 +145,7 @@ namespace Model
      * <p>The password of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
      * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
-     * if <code>manageAdminPassword</code> is true.</p>
+     * if <code>manageAdminPassword</code> is true. </p>
      */
     inline UpdateNamespaceRequest& WithAdminUserPassword(Aws::String&& value) { SetAdminUserPassword(std::move(value)); return *this;}
 
@@ -153,7 +153,7 @@ namespace Model
      * <p>The password of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
      * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
-     * if <code>manageAdminPassword</code> is true.</p>
+     * if <code>manageAdminPassword</code> is true. </p>
      */
     inline UpdateNamespaceRequest& WithAdminUserPassword(const char* value) { SetAdminUserPassword(value); return *this;}
 

@@ -293,170 +293,218 @@ namespace Model
     /**
      * <p>Specifies the user who has the permissions to access files, folders, and
      * metadata in your file system.</p> <p>For information about choosing a user with
-     * sufficient permissions, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">Required
-     * permissions</a>.</p>
+     * the right level of access for your transfer, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline const Aws::String& GetUser() const{ return m_user; }
 
     /**
      * <p>Specifies the user who has the permissions to access files, folders, and
      * metadata in your file system.</p> <p>For information about choosing a user with
-     * sufficient permissions, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">Required
-     * permissions</a>.</p>
+     * the right level of access for your transfer, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
 
     /**
      * <p>Specifies the user who has the permissions to access files, folders, and
      * metadata in your file system.</p> <p>For information about choosing a user with
-     * sufficient permissions, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">Required
-     * permissions</a>.</p>
+     * the right level of access for your transfer, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
 
     /**
      * <p>Specifies the user who has the permissions to access files, folders, and
      * metadata in your file system.</p> <p>For information about choosing a user with
-     * sufficient permissions, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">Required
-     * permissions</a>.</p>
+     * the right level of access for your transfer, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
 
     /**
      * <p>Specifies the user who has the permissions to access files, folders, and
      * metadata in your file system.</p> <p>For information about choosing a user with
-     * sufficient permissions, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">Required
-     * permissions</a>.</p>
+     * the right level of access for your transfer, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
 
     /**
      * <p>Specifies the user who has the permissions to access files, folders, and
      * metadata in your file system.</p> <p>For information about choosing a user with
-     * sufficient permissions, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">Required
-     * permissions</a>.</p>
+     * the right level of access for your transfer, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline CreateLocationFsxWindowsRequest& WithUser(const Aws::String& value) { SetUser(value); return *this;}
 
     /**
      * <p>Specifies the user who has the permissions to access files, folders, and
      * metadata in your file system.</p> <p>For information about choosing a user with
-     * sufficient permissions, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">Required
-     * permissions</a>.</p>
+     * the right level of access for your transfer, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline CreateLocationFsxWindowsRequest& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the user who has the permissions to access files, folders, and
      * metadata in your file system.</p> <p>For information about choosing a user with
-     * sufficient permissions, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">Required
-     * permissions</a>.</p>
+     * the right level of access for your transfer, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline CreateLocationFsxWindowsRequest& WithUser(const char* value) { SetUser(value); return *this;}
 
 
     /**
      * <p>Specifies the name of the Windows domain that the FSx for Windows File Server
-     * belongs to.</p>
+     * belongs to.</p> <p>If you have multiple domains in your environment, configuring
+     * this parameter makes sure that DataSync connects to the right file server.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
      * <p>Specifies the name of the Windows domain that the FSx for Windows File Server
-     * belongs to.</p>
+     * belongs to.</p> <p>If you have multiple domains in your environment, configuring
+     * this parameter makes sure that DataSync connects to the right file server.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
      * <p>Specifies the name of the Windows domain that the FSx for Windows File Server
-     * belongs to.</p>
+     * belongs to.</p> <p>If you have multiple domains in your environment, configuring
+     * this parameter makes sure that DataSync connects to the right file server.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
      * <p>Specifies the name of the Windows domain that the FSx for Windows File Server
-     * belongs to.</p>
+     * belongs to.</p> <p>If you have multiple domains in your environment, configuring
+     * this parameter makes sure that DataSync connects to the right file server.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>Specifies the name of the Windows domain that the FSx for Windows File Server
-     * belongs to.</p>
+     * belongs to.</p> <p>If you have multiple domains in your environment, configuring
+     * this parameter makes sure that DataSync connects to the right file server.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
      * <p>Specifies the name of the Windows domain that the FSx for Windows File Server
-     * belongs to.</p>
+     * belongs to.</p> <p>If you have multiple domains in your environment, configuring
+     * this parameter makes sure that DataSync connects to the right file server.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline CreateLocationFsxWindowsRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
      * <p>Specifies the name of the Windows domain that the FSx for Windows File Server
-     * belongs to.</p>
+     * belongs to.</p> <p>If you have multiple domains in your environment, configuring
+     * this parameter makes sure that DataSync connects to the right file server.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline CreateLocationFsxWindowsRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the Windows domain that the FSx for Windows File Server
-     * belongs to.</p>
+     * belongs to.</p> <p>If you have multiple domains in your environment, configuring
+     * this parameter makes sure that DataSync connects to the right file server.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline CreateLocationFsxWindowsRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
 
     /**
      * <p>Specifies the password of the user who has the permissions to access files
-     * and folders in the file system.</p>
+     * and folders in the file system.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
     /**
      * <p>Specifies the password of the user who has the permissions to access files
-     * and folders in the file system.</p>
+     * and folders in the file system.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p>Specifies the password of the user who has the permissions to access files
-     * and folders in the file system.</p>
+     * and folders in the file system.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
      * <p>Specifies the password of the user who has the permissions to access files
-     * and folders in the file system.</p>
+     * and folders in the file system.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     /**
      * <p>Specifies the password of the user who has the permissions to access files
-     * and folders in the file system.</p>
+     * and folders in the file system.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
     /**
      * <p>Specifies the password of the user who has the permissions to access files
-     * and folders in the file system.</p>
+     * and folders in the file system.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline CreateLocationFsxWindowsRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
     /**
      * <p>Specifies the password of the user who has the permissions to access files
-     * and folders in the file system.</p>
+     * and folders in the file system.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline CreateLocationFsxWindowsRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the password of the user who has the permissions to access files
-     * and folders in the file system.</p>
+     * and folders in the file system.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+     * permissions</a> for FSx for Windows File Server locations.</p>
      */
     inline CreateLocationFsxWindowsRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 

@@ -314,32 +314,68 @@ namespace Model
 
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the
+     * IAM identity using the key to invoke Wisdom. </p> <p>For more information about
+     * setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the
+     * IAM identity using the key to invoke Wisdom. </p> <p>For more information about
+     * setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline bool ServerSideEncryptionConfigurationHasBeenSet() const { return m_serverSideEncryptionConfigurationHasBeenSet; }
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the
+     * IAM identity using the key to invoke Wisdom. </p> <p>For more information about
+     * setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = value; }
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the
+     * IAM identity using the key to invoke Wisdom. </p> <p>For more information about
+     * setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = std::move(value); }
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the
+     * IAM identity using the key to invoke Wisdom. </p> <p>For more information about
+     * setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline KnowledgeBaseData& WithServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the
+     * IAM identity using the key to invoke Wisdom. </p> <p>For more information about
+     * setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline KnowledgeBaseData& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
 

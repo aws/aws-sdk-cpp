@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Indicates whether DataSync created a complete <a
-   * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task
    * report</a> for your transfer.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ReportResult">AWS
    * API Reference</a></p>

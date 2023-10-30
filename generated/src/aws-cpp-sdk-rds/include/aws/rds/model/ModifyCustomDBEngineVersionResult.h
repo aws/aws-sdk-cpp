@@ -1323,6 +1323,25 @@ namespace Model
     inline ModifyCustomDBEngineVersionResult& WithSupportsLocalWriteForwarding(bool value) { SetSupportsLocalWriteForwarding(value); return *this;}
 
 
+    /**
+     * <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations
+     * with Amazon Redshift.</p>
+     */
+    inline bool GetSupportsIntegrations() const{ return m_supportsIntegrations; }
+
+    /**
+     * <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations
+     * with Amazon Redshift.</p>
+     */
+    inline void SetSupportsIntegrations(bool value) { m_supportsIntegrations = value; }
+
+    /**
+     * <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations
+     * with Amazon Redshift.</p>
+     */
+    inline ModifyCustomDBEngineVersionResult& WithSupportsIntegrations(bool value) { SetSupportsIntegrations(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -1403,6 +1422,8 @@ namespace Model
     Aws::Vector<Aws::String> m_supportedCACertificateIdentifiers;
 
     bool m_supportsLocalWriteForwarding;
+
+    bool m_supportsIntegrations;
 
     ResponseMetadata m_responseMetadata;
   };

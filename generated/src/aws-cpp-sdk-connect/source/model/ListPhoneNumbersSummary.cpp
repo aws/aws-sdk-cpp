@@ -26,7 +26,8 @@ ListPhoneNumbersSummary::ListPhoneNumbersSummary() :
     m_phoneNumberCountryCodeHasBeenSet(false),
     m_phoneNumberType(PhoneNumberType::NOT_SET),
     m_phoneNumberTypeHasBeenSet(false),
-    m_targetArnHasBeenSet(false)
+    m_targetArnHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ ListPhoneNumbersSummary::ListPhoneNumbersSummary(JsonView jsonValue) :
     m_phoneNumberCountryCodeHasBeenSet(false),
     m_phoneNumberType(PhoneNumberType::NOT_SET),
     m_phoneNumberTypeHasBeenSet(false),
-    m_targetArnHasBeenSet(false)
+    m_targetArnHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +89,13 @@ ListPhoneNumbersSummary& ListPhoneNumbersSummary::operator =(JsonView jsonValue)
     m_targetArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InstanceId"))
+  {
+    m_instanceId = jsonValue.GetString("InstanceId");
+
+    m_instanceIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -125,6 +134,12 @@ JsonValue ListPhoneNumbersSummary::Jsonize() const
   if(m_targetArnHasBeenSet)
   {
    payload.WithString("TargetArn", m_targetArn);
+
+  }
+
+  if(m_instanceIdHasBeenSet)
+  {
+   payload.WithString("InstanceId", m_instanceId);
 
   }
 

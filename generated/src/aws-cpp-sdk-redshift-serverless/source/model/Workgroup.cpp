@@ -23,6 +23,9 @@ Workgroup::Workgroup() :
     m_baseCapacityHasBeenSet(false),
     m_configParametersHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_customDomainCertificateArnHasBeenSet(false),
+    m_customDomainCertificateExpiryTimeHasBeenSet(false),
+    m_customDomainNameHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
@@ -48,6 +51,9 @@ Workgroup::Workgroup(JsonView jsonValue) :
     m_baseCapacityHasBeenSet(false),
     m_configParametersHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_customDomainCertificateArnHasBeenSet(false),
+    m_customDomainCertificateExpiryTimeHasBeenSet(false),
+    m_customDomainNameHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
@@ -93,6 +99,27 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
     m_creationDate = jsonValue.GetString("creationDate");
 
     m_creationDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customDomainCertificateArn"))
+  {
+    m_customDomainCertificateArn = jsonValue.GetString("customDomainCertificateArn");
+
+    m_customDomainCertificateArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customDomainCertificateExpiryTime"))
+  {
+    m_customDomainCertificateExpiryTime = jsonValue.GetString("customDomainCertificateExpiryTime");
+
+    m_customDomainCertificateExpiryTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customDomainName"))
+  {
+    m_customDomainName = jsonValue.GetString("customDomainName");
+
+    m_customDomainNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("endpoint"))
@@ -219,6 +246,23 @@ JsonValue Workgroup::Jsonize() const
   if(m_creationDateHasBeenSet)
   {
    payload.WithString("creationDate", m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_customDomainCertificateArnHasBeenSet)
+  {
+   payload.WithString("customDomainCertificateArn", m_customDomainCertificateArn);
+
+  }
+
+  if(m_customDomainCertificateExpiryTimeHasBeenSet)
+  {
+   payload.WithString("customDomainCertificateExpiryTime", m_customDomainCertificateExpiryTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_customDomainNameHasBeenSet)
+  {
+   payload.WithString("customDomainName", m_customDomainName);
+
   }
 
   if(m_endpointHasBeenSet)

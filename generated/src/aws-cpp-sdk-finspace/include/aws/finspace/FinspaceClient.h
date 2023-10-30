@@ -820,6 +820,35 @@ namespace finspace
         }
 
         /**
+         * <p> Allows you to update code configuration on a running cluster. By using this
+         * API you can update the code, the initialization script path, and the command
+         * line arguments for a specific cluster. The configuration that you want to update
+         * will override any existing configurations on the cluster. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxClusterCodeConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateKxClusterCodeConfigurationOutcome UpdateKxClusterCodeConfiguration(const Model::UpdateKxClusterCodeConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateKxClusterCodeConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateKxClusterCodeConfigurationRequestT = Model::UpdateKxClusterCodeConfigurationRequest>
+        Model::UpdateKxClusterCodeConfigurationOutcomeCallable UpdateKxClusterCodeConfigurationCallable(const UpdateKxClusterCodeConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&FinspaceClient::UpdateKxClusterCodeConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateKxClusterCodeConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateKxClusterCodeConfigurationRequestT = Model::UpdateKxClusterCodeConfigurationRequest>
+        void UpdateKxClusterCodeConfigurationAsync(const UpdateKxClusterCodeConfigurationRequestT& request, const UpdateKxClusterCodeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FinspaceClient::UpdateKxClusterCodeConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Updates the databases mounted on a kdb cluster, which includes the
          * <code>changesetId</code> and all the dbPaths to be cached. This API does not
          * allow you to change a database name or add a database if you created a cluster

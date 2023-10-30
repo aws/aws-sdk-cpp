@@ -39,140 +39,148 @@ namespace Model
 
 
     /**
-     * <p>The security profile identifier.</p>
+     * <p>The identifier for the security profle.</p>
      */
     inline const Aws::String& GetSecurityProfileId() const{ return m_securityProfileId; }
 
     /**
-     * <p>The security profile identifier.</p>
+     * <p>The identifier for the security profle.</p>
      */
     inline bool SecurityProfileIdHasBeenSet() const { return m_securityProfileIdHasBeenSet; }
 
     /**
-     * <p>The security profile identifier.</p>
+     * <p>The identifier for the security profle.</p>
      */
     inline void SetSecurityProfileId(const Aws::String& value) { m_securityProfileIdHasBeenSet = true; m_securityProfileId = value; }
 
     /**
-     * <p>The security profile identifier.</p>
+     * <p>The identifier for the security profle.</p>
      */
     inline void SetSecurityProfileId(Aws::String&& value) { m_securityProfileIdHasBeenSet = true; m_securityProfileId = std::move(value); }
 
     /**
-     * <p>The security profile identifier.</p>
+     * <p>The identifier for the security profle.</p>
      */
     inline void SetSecurityProfileId(const char* value) { m_securityProfileIdHasBeenSet = true; m_securityProfileId.assign(value); }
 
     /**
-     * <p>The security profile identifier.</p>
+     * <p>The identifier for the security profle.</p>
      */
     inline ListSecurityProfileApplicationsRequest& WithSecurityProfileId(const Aws::String& value) { SetSecurityProfileId(value); return *this;}
 
     /**
-     * <p>The security profile identifier.</p>
+     * <p>The identifier for the security profle.</p>
      */
     inline ListSecurityProfileApplicationsRequest& WithSecurityProfileId(Aws::String&& value) { SetSecurityProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>The security profile identifier.</p>
+     * <p>The identifier for the security profle.</p>
      */
     inline ListSecurityProfileApplicationsRequest& WithSecurityProfileId(const char* value) { SetSecurityProfileId(value); return *this;}
 
 
     /**
-     * <p>The instance identifier.</p>
+     * <p>The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The instance identifier.</p>
+     * <p>The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The instance identifier.</p>
+     * <p>The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The instance identifier.</p>
+     * <p>The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The instance identifier.</p>
+     * <p>The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The instance identifier.</p>
+     * <p>The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline ListSecurityProfileApplicationsRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The instance identifier.</p>
+     * <p>The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline ListSecurityProfileApplicationsRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The instance identifier.</p>
+     * <p>The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline ListSecurityProfileApplicationsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
-     * <p>The token for the next set of results. The next set of results can be
-     * retrieved by using the token value returned in the previous response when making
-     * the next request.</p>
+     * <p>The token for the next set of results. Use the value returned in the previous
+     * response in the next request to retrieve the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token for the next set of results. The next set of results can be
-     * retrieved by using the token value returned in the previous response when making
-     * the next request.</p>
+     * <p>The token for the next set of results. Use the value returned in the previous
+     * response in the next request to retrieve the next set of results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The token for the next set of results. The next set of results can be
-     * retrieved by using the token value returned in the previous response when making
-     * the next request.</p>
+     * <p>The token for the next set of results. Use the value returned in the previous
+     * response in the next request to retrieve the next set of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token for the next set of results. The next set of results can be
-     * retrieved by using the token value returned in the previous response when making
-     * the next request.</p>
+     * <p>The token for the next set of results. Use the value returned in the previous
+     * response in the next request to retrieve the next set of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The token for the next set of results. The next set of results can be
-     * retrieved by using the token value returned in the previous response when making
-     * the next request.</p>
+     * <p>The token for the next set of results. Use the value returned in the previous
+     * response in the next request to retrieve the next set of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token for the next set of results. The next set of results can be
-     * retrieved by using the token value returned in the previous response when making
-     * the next request.</p>
+     * <p>The token for the next set of results. Use the value returned in the previous
+     * response in the next request to retrieve the next set of results.</p>
      */
     inline ListSecurityProfileApplicationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token for the next set of results. The next set of results can be
-     * retrieved by using the token value returned in the previous response when making
-     * the next request.</p>
+     * <p>The token for the next set of results. Use the value returned in the previous
+     * response in the next request to retrieve the next set of results.</p>
      */
     inline ListSecurityProfileApplicationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token for the next set of results. The next set of results can be
-     * retrieved by using the token value returned in the previous response when making
-     * the next request.</p>
+     * <p>The token for the next set of results. Use the value returned in the previous
+     * response in the next request to retrieve the next set of results.</p>
      */
     inline ListSecurityProfileApplicationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

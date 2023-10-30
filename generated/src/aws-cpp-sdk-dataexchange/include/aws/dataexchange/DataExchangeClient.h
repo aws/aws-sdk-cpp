@@ -658,6 +658,31 @@ namespace DataExchange
         }
 
         /**
+         * <p>The type of event associated with the data set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendDataSetNotification">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendDataSetNotificationOutcome SendDataSetNotification(const Model::SendDataSetNotificationRequest& request) const;
+
+        /**
+         * A Callable wrapper for SendDataSetNotification that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SendDataSetNotificationRequestT = Model::SendDataSetNotificationRequest>
+        Model::SendDataSetNotificationOutcomeCallable SendDataSetNotificationCallable(const SendDataSetNotificationRequestT& request) const
+        {
+            return SubmitCallable(&DataExchangeClient::SendDataSetNotification, request);
+        }
+
+        /**
+         * An Async wrapper for SendDataSetNotification that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SendDataSetNotificationRequestT = Model::SendDataSetNotificationRequest>
+        void SendDataSetNotificationAsync(const SendDataSetNotificationRequestT& request, const SendDataSetNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataExchangeClient::SendDataSetNotification, request, handler, context);
+        }
+
+        /**
          * <p>This operation starts a job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/StartJob">AWS
          * API Reference</a></p>
