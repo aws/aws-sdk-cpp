@@ -23,6 +23,7 @@ namespace Aws
         static const int Creating_HASH = HashingUtils::HashString("Creating");
         static const int Running_HASH = HashingUtils::HashString("Running");
         static const int Completed_HASH = HashingUtils::HashString("Completed");
+        static const int Failed_HASH = HashingUtils::HashString("Failed");
 
 
         DataSetTaskLifecycle GetDataSetTaskLifecycleForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == Completed_HASH)
           {
             return DataSetTaskLifecycle::Completed;
+          }
+          else if (hashCode == Failed_HASH)
+          {
+            return DataSetTaskLifecycle::Failed;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "Running";
           case DataSetTaskLifecycle::Completed:
             return "Completed";
+          case DataSetTaskLifecycle::Failed:
+            return "Failed";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

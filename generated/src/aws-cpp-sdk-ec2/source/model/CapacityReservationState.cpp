@@ -25,6 +25,9 @@ namespace Aws
         static const int cancelled_HASH = HashingUtils::HashString("cancelled");
         static const int pending_HASH = HashingUtils::HashString("pending");
         static const int failed_HASH = HashingUtils::HashString("failed");
+        static const int scheduled_HASH = HashingUtils::HashString("scheduled");
+        static const int payment_pending_HASH = HashingUtils::HashString("payment-pending");
+        static const int payment_failed_HASH = HashingUtils::HashString("payment-failed");
 
 
         CapacityReservationState GetCapacityReservationStateForName(const Aws::String& name)
@@ -49,6 +52,18 @@ namespace Aws
           else if (hashCode == failed_HASH)
           {
             return CapacityReservationState::failed;
+          }
+          else if (hashCode == scheduled_HASH)
+          {
+            return CapacityReservationState::scheduled;
+          }
+          else if (hashCode == payment_pending_HASH)
+          {
+            return CapacityReservationState::payment_pending;
+          }
+          else if (hashCode == payment_failed_HASH)
+          {
+            return CapacityReservationState::payment_failed;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +91,12 @@ namespace Aws
             return "pending";
           case CapacityReservationState::failed:
             return "failed";
+          case CapacityReservationState::scheduled:
+            return "scheduled";
+          case CapacityReservationState::payment_pending:
+            return "payment-pending";
+          case CapacityReservationState::payment_failed:
+            return "payment-failed";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

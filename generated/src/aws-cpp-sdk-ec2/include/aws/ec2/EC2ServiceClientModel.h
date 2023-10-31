@@ -217,6 +217,7 @@
 #include <aws/ec2/model/DescribeAwsNetworkPerformanceMetricSubscriptionsResponse.h>
 #include <aws/ec2/model/DescribeBundleTasksResponse.h>
 #include <aws/ec2/model/DescribeByoipCidrsResponse.h>
+#include <aws/ec2/model/DescribeCapacityBlockOfferingsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationsResponse.h>
 #include <aws/ec2/model/DescribeCarrierGatewaysResponse.h>
@@ -513,6 +514,7 @@
 #include <aws/ec2/model/ProvisionByoipCidrResponse.h>
 #include <aws/ec2/model/ProvisionIpamPoolCidrResponse.h>
 #include <aws/ec2/model/ProvisionPublicIpv4PoolCidrResponse.h>
+#include <aws/ec2/model/PurchaseCapacityBlockResponse.h>
 #include <aws/ec2/model/PurchaseHostReservationResponse.h>
 #include <aws/ec2/model/PurchaseReservedInstancesOfferingResponse.h>
 #include <aws/ec2/model/PurchaseScheduledInstancesResponse.h>
@@ -830,6 +832,7 @@ namespace Aws
       class DescribeAwsNetworkPerformanceMetricSubscriptionsRequest;
       class DescribeBundleTasksRequest;
       class DescribeByoipCidrsRequest;
+      class DescribeCapacityBlockOfferingsRequest;
       class DescribeCapacityReservationFleetsRequest;
       class DescribeCapacityReservationsRequest;
       class DescribeCarrierGatewaysRequest;
@@ -1143,6 +1146,7 @@ namespace Aws
       class ProvisionByoipCidrRequest;
       class ProvisionIpamPoolCidrRequest;
       class ProvisionPublicIpv4PoolCidrRequest;
+      class PurchaseCapacityBlockRequest;
       class PurchaseHostReservationRequest;
       class PurchaseReservedInstancesOfferingRequest;
       class PurchaseScheduledInstancesRequest;
@@ -1433,6 +1437,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeAwsNetworkPerformanceMetricSubscriptionsResponse, EC2Error> DescribeAwsNetworkPerformanceMetricSubscriptionsOutcome;
       typedef Aws::Utils::Outcome<DescribeBundleTasksResponse, EC2Error> DescribeBundleTasksOutcome;
       typedef Aws::Utils::Outcome<DescribeByoipCidrsResponse, EC2Error> DescribeByoipCidrsOutcome;
+      typedef Aws::Utils::Outcome<DescribeCapacityBlockOfferingsResponse, EC2Error> DescribeCapacityBlockOfferingsOutcome;
       typedef Aws::Utils::Outcome<DescribeCapacityReservationFleetsResponse, EC2Error> DescribeCapacityReservationFleetsOutcome;
       typedef Aws::Utils::Outcome<DescribeCapacityReservationsResponse, EC2Error> DescribeCapacityReservationsOutcome;
       typedef Aws::Utils::Outcome<DescribeCarrierGatewaysResponse, EC2Error> DescribeCarrierGatewaysOutcome;
@@ -1746,6 +1751,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ProvisionByoipCidrResponse, EC2Error> ProvisionByoipCidrOutcome;
       typedef Aws::Utils::Outcome<ProvisionIpamPoolCidrResponse, EC2Error> ProvisionIpamPoolCidrOutcome;
       typedef Aws::Utils::Outcome<ProvisionPublicIpv4PoolCidrResponse, EC2Error> ProvisionPublicIpv4PoolCidrOutcome;
+      typedef Aws::Utils::Outcome<PurchaseCapacityBlockResponse, EC2Error> PurchaseCapacityBlockOutcome;
       typedef Aws::Utils::Outcome<PurchaseHostReservationResponse, EC2Error> PurchaseHostReservationOutcome;
       typedef Aws::Utils::Outcome<PurchaseReservedInstancesOfferingResponse, EC2Error> PurchaseReservedInstancesOfferingOutcome;
       typedef Aws::Utils::Outcome<PurchaseScheduledInstancesResponse, EC2Error> PurchaseScheduledInstancesOutcome;
@@ -2036,6 +2042,7 @@ namespace Aws
       typedef std::future<DescribeAwsNetworkPerformanceMetricSubscriptionsOutcome> DescribeAwsNetworkPerformanceMetricSubscriptionsOutcomeCallable;
       typedef std::future<DescribeBundleTasksOutcome> DescribeBundleTasksOutcomeCallable;
       typedef std::future<DescribeByoipCidrsOutcome> DescribeByoipCidrsOutcomeCallable;
+      typedef std::future<DescribeCapacityBlockOfferingsOutcome> DescribeCapacityBlockOfferingsOutcomeCallable;
       typedef std::future<DescribeCapacityReservationFleetsOutcome> DescribeCapacityReservationFleetsOutcomeCallable;
       typedef std::future<DescribeCapacityReservationsOutcome> DescribeCapacityReservationsOutcomeCallable;
       typedef std::future<DescribeCarrierGatewaysOutcome> DescribeCarrierGatewaysOutcomeCallable;
@@ -2349,6 +2356,7 @@ namespace Aws
       typedef std::future<ProvisionByoipCidrOutcome> ProvisionByoipCidrOutcomeCallable;
       typedef std::future<ProvisionIpamPoolCidrOutcome> ProvisionIpamPoolCidrOutcomeCallable;
       typedef std::future<ProvisionPublicIpv4PoolCidrOutcome> ProvisionPublicIpv4PoolCidrOutcomeCallable;
+      typedef std::future<PurchaseCapacityBlockOutcome> PurchaseCapacityBlockOutcomeCallable;
       typedef std::future<PurchaseHostReservationOutcome> PurchaseHostReservationOutcomeCallable;
       typedef std::future<PurchaseReservedInstancesOfferingOutcome> PurchaseReservedInstancesOfferingOutcomeCallable;
       typedef std::future<PurchaseScheduledInstancesOutcome> PurchaseScheduledInstancesOutcomeCallable;
@@ -2642,6 +2650,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DescribeAwsNetworkPerformanceMetricSubscriptionsRequest&, const Model::DescribeAwsNetworkPerformanceMetricSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAwsNetworkPerformanceMetricSubscriptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeBundleTasksRequest&, const Model::DescribeBundleTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBundleTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeByoipCidrsRequest&, const Model::DescribeByoipCidrsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeByoipCidrsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeCapacityBlockOfferingsRequest&, const Model::DescribeCapacityBlockOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityBlockOfferingsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeCapacityReservationFleetsRequest&, const Model::DescribeCapacityReservationFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityReservationFleetsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeCapacityReservationsRequest&, const Model::DescribeCapacityReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityReservationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeCarrierGatewaysRequest&, const Model::DescribeCarrierGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCarrierGatewaysResponseReceivedHandler;
@@ -2955,6 +2964,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::ProvisionByoipCidrRequest&, const Model::ProvisionByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionByoipCidrResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ProvisionIpamPoolCidrRequest&, const Model::ProvisionIpamPoolCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionIpamPoolCidrResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ProvisionPublicIpv4PoolCidrRequest&, const Model::ProvisionPublicIpv4PoolCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionPublicIpv4PoolCidrResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::PurchaseCapacityBlockRequest&, const Model::PurchaseCapacityBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseCapacityBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::PurchaseHostReservationRequest&, const Model::PurchaseHostReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseHostReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::PurchaseReservedInstancesOfferingRequest&, const Model::PurchaseReservedInstancesOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseReservedInstancesOfferingResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::PurchaseScheduledInstancesRequest&, const Model::PurchaseScheduledInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseScheduledInstancesResponseReceivedHandler;

@@ -22,7 +22,9 @@ UpdateApplicationRequest::UpdateApplicationRequest() :
     m_removeSNSTopic(false),
     m_removeSNSTopicHasBeenSet(false),
     m_autoConfigEnabled(false),
-    m_autoConfigEnabledHasBeenSet(false)
+    m_autoConfigEnabledHasBeenSet(false),
+    m_attachMissingPermission(false),
+    m_attachMissingPermissionHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,12 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
   if(m_autoConfigEnabledHasBeenSet)
   {
    payload.WithBool("AutoConfigEnabled", m_autoConfigEnabled);
+
+  }
+
+  if(m_attachMissingPermissionHasBeenSet)
+  {
+   payload.WithBool("AttachMissingPermission", m_attachMissingPermission);
 
   }
 

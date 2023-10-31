@@ -26,8 +26,8 @@ namespace Amplify
 namespace Model
 {
   /**
-   * <p> The result structure for the delete branch request. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The result structure for the delete branch request. </p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBranchResult">AWS
    * API Reference</a></p>
    */
@@ -40,32 +40,32 @@ namespace Model
 
 
     /**
-     * <p> The branch for an Amplify app, which maps to a third-party repository
-     * branch. </p>
+     * <p>The branch for an Amplify app, which maps to a third-party repository branch.
+     * </p>
      */
     inline const Branch& GetBranch() const{ return m_branch; }
 
     /**
-     * <p> The branch for an Amplify app, which maps to a third-party repository
-     * branch. </p>
+     * <p>The branch for an Amplify app, which maps to a third-party repository branch.
+     * </p>
      */
     inline void SetBranch(const Branch& value) { m_branch = value; }
 
     /**
-     * <p> The branch for an Amplify app, which maps to a third-party repository
-     * branch. </p>
+     * <p>The branch for an Amplify app, which maps to a third-party repository branch.
+     * </p>
      */
     inline void SetBranch(Branch&& value) { m_branch = std::move(value); }
 
     /**
-     * <p> The branch for an Amplify app, which maps to a third-party repository
-     * branch. </p>
+     * <p>The branch for an Amplify app, which maps to a third-party repository branch.
+     * </p>
      */
     inline DeleteBranchResult& WithBranch(const Branch& value) { SetBranch(value); return *this;}
 
     /**
-     * <p> The branch for an Amplify app, which maps to a third-party repository
-     * branch. </p>
+     * <p>The branch for an Amplify app, which maps to a third-party repository branch.
+     * </p>
      */
     inline DeleteBranchResult& WithBranch(Branch&& value) { SetBranch(std::move(value)); return *this;}
 

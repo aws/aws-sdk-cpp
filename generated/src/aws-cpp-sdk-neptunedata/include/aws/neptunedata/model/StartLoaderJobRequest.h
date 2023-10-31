@@ -1113,7 +1113,8 @@ namespace Model
      * can be queued up or not. </p> <p>You don't have to wait for one load job to
      * complete before issuing the next one, because Neptune can queue up as many as 64
      * jobs at a time, provided that their <code>queueRequest</code> parameters are all
-     * set to <code>"TRUE"</code>.</p> <p>If the <code>queueRequest</code> parameter is
+     * set to <code>"TRUE"</code>. The queue order of the jobs will be
+     * first-in-first-out (FIFO).</p> <p>If the <code>queueRequest</code> parameter is
      * omitted or set to <code>"FALSE"</code>, the load request will fail if another
      * load job is already running.</p> <p> <i>Allowed values</i>: <code>"TRUE"</code>,
      * <code>"FALSE"</code>.</p> <p> <i>Default value</i>: <code>"FALSE"</code>.</p>
@@ -1125,7 +1126,8 @@ namespace Model
      * can be queued up or not. </p> <p>You don't have to wait for one load job to
      * complete before issuing the next one, because Neptune can queue up as many as 64
      * jobs at a time, provided that their <code>queueRequest</code> parameters are all
-     * set to <code>"TRUE"</code>.</p> <p>If the <code>queueRequest</code> parameter is
+     * set to <code>"TRUE"</code>. The queue order of the jobs will be
+     * first-in-first-out (FIFO).</p> <p>If the <code>queueRequest</code> parameter is
      * omitted or set to <code>"FALSE"</code>, the load request will fail if another
      * load job is already running.</p> <p> <i>Allowed values</i>: <code>"TRUE"</code>,
      * <code>"FALSE"</code>.</p> <p> <i>Default value</i>: <code>"FALSE"</code>.</p>
@@ -1137,7 +1139,8 @@ namespace Model
      * can be queued up or not. </p> <p>You don't have to wait for one load job to
      * complete before issuing the next one, because Neptune can queue up as many as 64
      * jobs at a time, provided that their <code>queueRequest</code> parameters are all
-     * set to <code>"TRUE"</code>.</p> <p>If the <code>queueRequest</code> parameter is
+     * set to <code>"TRUE"</code>. The queue order of the jobs will be
+     * first-in-first-out (FIFO).</p> <p>If the <code>queueRequest</code> parameter is
      * omitted or set to <code>"FALSE"</code>, the load request will fail if another
      * load job is already running.</p> <p> <i>Allowed values</i>: <code>"TRUE"</code>,
      * <code>"FALSE"</code>.</p> <p> <i>Default value</i>: <code>"FALSE"</code>.</p>
@@ -1149,7 +1152,8 @@ namespace Model
      * can be queued up or not. </p> <p>You don't have to wait for one load job to
      * complete before issuing the next one, because Neptune can queue up as many as 64
      * jobs at a time, provided that their <code>queueRequest</code> parameters are all
-     * set to <code>"TRUE"</code>.</p> <p>If the <code>queueRequest</code> parameter is
+     * set to <code>"TRUE"</code>. The queue order of the jobs will be
+     * first-in-first-out (FIFO).</p> <p>If the <code>queueRequest</code> parameter is
      * omitted or set to <code>"FALSE"</code>, the load request will fail if another
      * load job is already running.</p> <p> <i>Allowed values</i>: <code>"TRUE"</code>,
      * <code>"FALSE"</code>.</p> <p> <i>Default value</i>: <code>"FALSE"</code>.</p>

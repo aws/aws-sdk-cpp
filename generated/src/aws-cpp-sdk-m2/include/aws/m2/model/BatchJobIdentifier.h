@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 #include <aws/m2/model/FileBatchJobIdentifier.h>
+#include <aws/m2/model/S3BatchJobIdentifier.h>
 #include <aws/m2/model/ScriptBatchJobIdentifier.h>
 #include <utility>
 
@@ -70,6 +71,43 @@ namespace Model
 
 
     /**
+     * <p>Specifies an Amazon S3 location that identifies the batch jobs that you want
+     * to run. Use this identifier to run ad hoc batch jobs.</p>
+     */
+    inline const S3BatchJobIdentifier& GetS3BatchJobIdentifier() const{ return m_s3BatchJobIdentifier; }
+
+    /**
+     * <p>Specifies an Amazon S3 location that identifies the batch jobs that you want
+     * to run. Use this identifier to run ad hoc batch jobs.</p>
+     */
+    inline bool S3BatchJobIdentifierHasBeenSet() const { return m_s3BatchJobIdentifierHasBeenSet; }
+
+    /**
+     * <p>Specifies an Amazon S3 location that identifies the batch jobs that you want
+     * to run. Use this identifier to run ad hoc batch jobs.</p>
+     */
+    inline void SetS3BatchJobIdentifier(const S3BatchJobIdentifier& value) { m_s3BatchJobIdentifierHasBeenSet = true; m_s3BatchJobIdentifier = value; }
+
+    /**
+     * <p>Specifies an Amazon S3 location that identifies the batch jobs that you want
+     * to run. Use this identifier to run ad hoc batch jobs.</p>
+     */
+    inline void SetS3BatchJobIdentifier(S3BatchJobIdentifier&& value) { m_s3BatchJobIdentifierHasBeenSet = true; m_s3BatchJobIdentifier = std::move(value); }
+
+    /**
+     * <p>Specifies an Amazon S3 location that identifies the batch jobs that you want
+     * to run. Use this identifier to run ad hoc batch jobs.</p>
+     */
+    inline BatchJobIdentifier& WithS3BatchJobIdentifier(const S3BatchJobIdentifier& value) { SetS3BatchJobIdentifier(value); return *this;}
+
+    /**
+     * <p>Specifies an Amazon S3 location that identifies the batch jobs that you want
+     * to run. Use this identifier to run ad hoc batch jobs.</p>
+     */
+    inline BatchJobIdentifier& WithS3BatchJobIdentifier(S3BatchJobIdentifier&& value) { SetS3BatchJobIdentifier(std::move(value)); return *this;}
+
+
+    /**
      * <p>A batch job identifier in which the batch job to run is identified by the
      * script name.</p>
      */
@@ -109,6 +147,9 @@ namespace Model
 
     FileBatchJobIdentifier m_fileBatchJobIdentifier;
     bool m_fileBatchJobIdentifierHasBeenSet = false;
+
+    S3BatchJobIdentifier m_s3BatchJobIdentifier;
+    bool m_s3BatchJobIdentifierHasBeenSet = false;
 
     ScriptBatchJobIdentifier m_scriptBatchJobIdentifier;
     bool m_scriptBatchJobIdentifierHasBeenSet = false;

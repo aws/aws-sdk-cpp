@@ -16,7 +16,8 @@ namespace Model
   enum class MarketType
   {
     NOT_SET,
-    spot
+    spot,
+    capacity_block
   };
 
 namespace MarketTypeMapper
