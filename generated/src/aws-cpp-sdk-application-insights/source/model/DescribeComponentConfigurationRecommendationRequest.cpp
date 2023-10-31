@@ -17,6 +17,7 @@ DescribeComponentConfigurationRecommendationRequest::DescribeComponentConfigurat
     m_componentNameHasBeenSet(false),
     m_tier(Tier::NOT_SET),
     m_tierHasBeenSet(false),
+    m_workloadNameHasBeenSet(false),
     m_recommendationType(RecommendationType::NOT_SET),
     m_recommendationTypeHasBeenSet(false)
 {
@@ -41,6 +42,12 @@ Aws::String DescribeComponentConfigurationRecommendationRequest::SerializePayloa
   if(m_tierHasBeenSet)
   {
    payload.WithString("Tier", TierMapper::GetNameForTier(m_tier));
+  }
+
+  if(m_workloadNameHasBeenSet)
+  {
+   payload.WithString("WorkloadName", m_workloadName);
+
   }
 
   if(m_recommendationTypeHasBeenSet)

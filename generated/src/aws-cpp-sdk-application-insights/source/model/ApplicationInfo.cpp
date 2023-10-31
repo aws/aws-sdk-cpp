@@ -31,7 +31,9 @@ ApplicationInfo::ApplicationInfo() :
     m_autoConfigEnabled(false),
     m_autoConfigEnabledHasBeenSet(false),
     m_discoveryType(DiscoveryType::NOT_SET),
-    m_discoveryTypeHasBeenSet(false)
+    m_discoveryTypeHasBeenSet(false),
+    m_attachMissingPermission(false),
+    m_attachMissingPermissionHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ ApplicationInfo::ApplicationInfo(JsonView jsonValue) :
     m_autoConfigEnabled(false),
     m_autoConfigEnabledHasBeenSet(false),
     m_discoveryType(DiscoveryType::NOT_SET),
-    m_discoveryTypeHasBeenSet(false)
+    m_discoveryTypeHasBeenSet(false),
+    m_attachMissingPermission(false),
+    m_attachMissingPermissionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -118,6 +122,13 @@ ApplicationInfo& ApplicationInfo::operator =(JsonView jsonValue)
     m_discoveryTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AttachMissingPermission"))
+  {
+    m_attachMissingPermission = jsonValue.GetBool("AttachMissingPermission");
+
+    m_attachMissingPermissionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -176,6 +187,12 @@ JsonValue ApplicationInfo::Jsonize() const
   if(m_discoveryTypeHasBeenSet)
   {
    payload.WithString("DiscoveryType", DiscoveryTypeMapper::GetNameForDiscoveryType(m_discoveryType));
+  }
+
+  if(m_attachMissingPermissionHasBeenSet)
+  {
+   payload.WithBool("AttachMissingPermission", m_attachMissingPermission);
+
   }
 
   return payload;

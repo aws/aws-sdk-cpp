@@ -389,44 +389,56 @@ namespace Model
 
 
     /**
-     * <p>Settings to configure your translation output, including the option to set
-     * the formality level of the output text and the option to mask profane words and
-     * phrases.</p>
+     * <p>Settings to configure your translation output. You can configure the
+     * following options:</p> <ul> <li> <p>Brevity: reduces the length of the
+     * translated output for most translations.</p> </li> <li> <p>Formality: sets the
+     * formality level of the output text.</p> </li> <li> <p>Profanity: masks profane
+     * words and phrases in your translation output.</p> </li> </ul>
      */
     inline const TranslationSettings& GetSettings() const{ return m_settings; }
 
     /**
-     * <p>Settings to configure your translation output, including the option to set
-     * the formality level of the output text and the option to mask profane words and
-     * phrases.</p>
+     * <p>Settings to configure your translation output. You can configure the
+     * following options:</p> <ul> <li> <p>Brevity: reduces the length of the
+     * translated output for most translations.</p> </li> <li> <p>Formality: sets the
+     * formality level of the output text.</p> </li> <li> <p>Profanity: masks profane
+     * words and phrases in your translation output.</p> </li> </ul>
      */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
-     * <p>Settings to configure your translation output, including the option to set
-     * the formality level of the output text and the option to mask profane words and
-     * phrases.</p>
+     * <p>Settings to configure your translation output. You can configure the
+     * following options:</p> <ul> <li> <p>Brevity: reduces the length of the
+     * translated output for most translations.</p> </li> <li> <p>Formality: sets the
+     * formality level of the output text.</p> </li> <li> <p>Profanity: masks profane
+     * words and phrases in your translation output.</p> </li> </ul>
      */
     inline void SetSettings(const TranslationSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
-     * <p>Settings to configure your translation output, including the option to set
-     * the formality level of the output text and the option to mask profane words and
-     * phrases.</p>
+     * <p>Settings to configure your translation output. You can configure the
+     * following options:</p> <ul> <li> <p>Brevity: reduces the length of the
+     * translated output for most translations.</p> </li> <li> <p>Formality: sets the
+     * formality level of the output text.</p> </li> <li> <p>Profanity: masks profane
+     * words and phrases in your translation output.</p> </li> </ul>
      */
     inline void SetSettings(TranslationSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
     /**
-     * <p>Settings to configure your translation output, including the option to set
-     * the formality level of the output text and the option to mask profane words and
-     * phrases.</p>
+     * <p>Settings to configure your translation output. You can configure the
+     * following options:</p> <ul> <li> <p>Brevity: reduces the length of the
+     * translated output for most translations.</p> </li> <li> <p>Formality: sets the
+     * formality level of the output text.</p> </li> <li> <p>Profanity: masks profane
+     * words and phrases in your translation output.</p> </li> </ul>
      */
     inline TranslateTextRequest& WithSettings(const TranslationSettings& value) { SetSettings(value); return *this;}
 
     /**
-     * <p>Settings to configure your translation output, including the option to set
-     * the formality level of the output text and the option to mask profane words and
-     * phrases.</p>
+     * <p>Settings to configure your translation output. You can configure the
+     * following options:</p> <ul> <li> <p>Brevity: reduces the length of the
+     * translated output for most translations.</p> </li> <li> <p>Formality: sets the
+     * formality level of the output text.</p> </li> <li> <p>Profanity: masks profane
+     * words and phrases in your translation output.</p> </li> </ul>
      */
     inline TranslateTextRequest& WithSettings(TranslationSettings&& value) { SetSettings(std::move(value)); return *this;}
 

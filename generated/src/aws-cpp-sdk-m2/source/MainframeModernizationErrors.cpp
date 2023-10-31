@@ -64,6 +64,7 @@ namespace MainframeModernizationErrorMapper
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int EXECUTION_TIMEOUT_HASH = HashingUtils::HashString("ExecutionTimeoutException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -81,6 +82,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MainframeModernizationErrors::INTERNAL_SERVER), false);
+  }
+  else if (hashCode == EXECUTION_TIMEOUT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MainframeModernizationErrors::EXECUTION_TIMEOUT), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -7031,6 +7031,33 @@ namespace EC2
         }
 
         /**
+         * <p>Describes Capacity Block offerings available for purchase. With Capacity
+         * Blocks, you purchase a specific instance type for a period of
+         * time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCapacityBlockOfferingsOutcome DescribeCapacityBlockOfferings(const Model::DescribeCapacityBlockOfferingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeCapacityBlockOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeCapacityBlockOfferingsRequestT = Model::DescribeCapacityBlockOfferingsRequest>
+        Model::DescribeCapacityBlockOfferingsOutcomeCallable DescribeCapacityBlockOfferingsCallable(const DescribeCapacityBlockOfferingsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DescribeCapacityBlockOfferings, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeCapacityBlockOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeCapacityBlockOfferingsRequestT = Model::DescribeCapacityBlockOfferingsRequest>
+        void DescribeCapacityBlockOfferingsAsync(const DescribeCapacityBlockOfferingsRequestT& request, const DescribeCapacityBlockOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DescribeCapacityBlockOfferings, request, handler, context);
+        }
+
+        /**
          * <p>Describes one or more Capacity Reservation Fleets.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationFleets">AWS
@@ -16314,6 +16341,34 @@ namespace EC2
         void ProvisionPublicIpv4PoolCidrAsync(const ProvisionPublicIpv4PoolCidrRequestT& request, const ProvisionPublicIpv4PoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::ProvisionPublicIpv4PoolCidr, request, handler, context);
+        }
+
+        /**
+         * <p>Purchase the Capacity Block for use with your account. With Capacity Blocks
+         * you ensure GPU capacity is available for machine learning (ML) workloads. You
+         * must specify the ID of the Capacity Block offering you are
+         * purchasing.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlock">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PurchaseCapacityBlockOutcome PurchaseCapacityBlock(const Model::PurchaseCapacityBlockRequest& request) const;
+
+        /**
+         * A Callable wrapper for PurchaseCapacityBlock that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PurchaseCapacityBlockRequestT = Model::PurchaseCapacityBlockRequest>
+        Model::PurchaseCapacityBlockOutcomeCallable PurchaseCapacityBlockCallable(const PurchaseCapacityBlockRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::PurchaseCapacityBlock, request);
+        }
+
+        /**
+         * An Async wrapper for PurchaseCapacityBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PurchaseCapacityBlockRequestT = Model::PurchaseCapacityBlockRequest>
+        void PurchaseCapacityBlockAsync(const PurchaseCapacityBlockRequestT& request, const PurchaseCapacityBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::PurchaseCapacityBlock, request, handler, context);
         }
 
         /**
