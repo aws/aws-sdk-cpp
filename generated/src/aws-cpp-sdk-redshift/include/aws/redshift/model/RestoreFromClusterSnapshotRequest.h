@@ -2039,6 +2039,31 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithIpAddressType(const char* value) { SetIpAddressType(value); return *this;}
 
+
+    /**
+     * <p>If true, the snapshot will be restored to a cluster deployed in two
+     * Availability Zones.</p>
+     */
+    inline bool GetMultiAZ() const{ return m_multiAZ; }
+
+    /**
+     * <p>If true, the snapshot will be restored to a cluster deployed in two
+     * Availability Zones.</p>
+     */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p>If true, the snapshot will be restored to a cluster deployed in two
+     * Availability Zones.</p>
+     */
+    inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
+
+    /**
+     * <p>If true, the snapshot will be restored to a cluster deployed in two
+     * Availability Zones.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -2148,6 +2173,9 @@ namespace Model
 
     Aws::String m_ipAddressType;
     bool m_ipAddressTypeHasBeenSet = false;
+
+    bool m_multiAZ;
+    bool m_multiAZHasBeenSet = false;
   };
 
 } // namespace Model

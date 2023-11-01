@@ -87,7 +87,9 @@ Cluster::Cluster() :
     m_customDomainCertificateExpiryDateHasBeenSet(false),
     m_masterPasswordSecretArnHasBeenSet(false),
     m_masterPasswordSecretKmsKeyIdHasBeenSet(false),
-    m_ipAddressTypeHasBeenSet(false)
+    m_ipAddressTypeHasBeenSet(false),
+    m_multiAZHasBeenSet(false),
+    m_multiAZSecondaryHasBeenSet(false)
 {
 }
 
@@ -158,7 +160,9 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_customDomainCertificateExpiryDateHasBeenSet(false),
     m_masterPasswordSecretArnHasBeenSet(false),
     m_masterPasswordSecretKmsKeyIdHasBeenSet(false),
-    m_ipAddressTypeHasBeenSet(false)
+    m_ipAddressTypeHasBeenSet(false),
+    m_multiAZHasBeenSet(false),
+    m_multiAZSecondaryHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -565,6 +569,18 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_ipAddressType = Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText());
       m_ipAddressTypeHasBeenSet = true;
     }
+    XmlNode multiAZNode = resultNode.FirstChild("MultiAZ");
+    if(!multiAZNode.IsNull())
+    {
+      m_multiAZ = Aws::Utils::Xml::DecodeEscapedXmlText(multiAZNode.GetText());
+      m_multiAZHasBeenSet = true;
+    }
+    XmlNode multiAZSecondaryNode = resultNode.FirstChild("MultiAZSecondary");
+    if(!multiAZSecondaryNode.IsNull())
+    {
+      m_multiAZSecondary = multiAZSecondaryNode;
+      m_multiAZSecondaryHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -928,6 +944,18 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".IpAddressType=" << StringUtils::URLEncode(m_ipAddressType.c_str()) << "&";
   }
 
+  if(m_multiAZHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MultiAZ=" << StringUtils::URLEncode(m_multiAZ.c_str()) << "&";
+  }
+
+  if(m_multiAZSecondaryHasBeenSet)
+  {
+      Aws::StringStream multiAZSecondaryLocationAndMemberSs;
+      multiAZSecondaryLocationAndMemberSs << location << index << locationValue << ".MultiAZSecondary";
+      m_multiAZSecondary.OutputToStream(oStream, multiAZSecondaryLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1229,6 +1257,16 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_ipAddressTypeHasBeenSet)
   {
       oStream << location << ".IpAddressType=" << StringUtils::URLEncode(m_ipAddressType.c_str()) << "&";
+  }
+  if(m_multiAZHasBeenSet)
+  {
+      oStream << location << ".MultiAZ=" << StringUtils::URLEncode(m_multiAZ.c_str()) << "&";
+  }
+  if(m_multiAZSecondaryHasBeenSet)
+  {
+      Aws::String multiAZSecondaryLocationAndMember(location);
+      multiAZSecondaryLocationAndMember += ".MultiAZSecondary";
+      m_multiAZSecondary.OutputToStream(oStream, multiAZSecondaryLocationAndMember.c_str());
   }
 }
 

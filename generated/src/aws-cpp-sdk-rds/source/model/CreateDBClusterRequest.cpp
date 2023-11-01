@@ -42,6 +42,7 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_enableCloudwatchLogsExportsHasBeenSet(false),
     m_engineModeHasBeenSet(false),
     m_scalingConfigurationHasBeenSet(false),
+    m_rdsCustomClusterConfigurationHasBeenSet(false),
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
     m_globalClusterIdentifierHasBeenSet(false),
@@ -238,6 +239,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_scalingConfigurationHasBeenSet)
   {
     m_scalingConfiguration.OutputToStream(ss, "ScalingConfiguration");
+  }
+
+  if(m_rdsCustomClusterConfigurationHasBeenSet)
+  {
+    m_rdsCustomClusterConfiguration.OutputToStream(ss, "RdsCustomClusterConfiguration");
   }
 
   if(m_deletionProtectionHasBeenSet)

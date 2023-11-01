@@ -35,6 +35,18 @@ GetPromptFileResult& GetPromptFileResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+
+  }
+
+  if(jsonValue.ValueExists("LastModifiedRegion"))
+  {
+    m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

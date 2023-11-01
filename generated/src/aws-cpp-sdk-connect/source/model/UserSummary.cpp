@@ -21,14 +21,18 @@ namespace Model
 UserSummary::UserSummary() : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+    m_usernameHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
+    m_lastModifiedRegionHasBeenSet(false)
 {
 }
 
 UserSummary::UserSummary(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+    m_usernameHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
+    m_lastModifiedRegionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,20 @@ UserSummary& UserSummary::operator =(JsonView jsonValue)
     m_usernameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastModifiedRegion"))
+  {
+    m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
+
+    m_lastModifiedRegionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +96,17 @@ JsonValue UserSummary::Jsonize() const
   if(m_usernameHasBeenSet)
   {
    payload.WithString("Username", m_username);
+
+  }
+
+  if(m_lastModifiedTimeHasBeenSet)
+  {
+   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_lastModifiedRegionHasBeenSet)
+  {
+   payload.WithString("LastModifiedRegion", m_lastModifiedRegion);
 
   }
 

@@ -22,6 +22,7 @@
 #include <aws/globalaccelerator/model/AddEndpointsResult.h>
 #include <aws/globalaccelerator/model/AdvertiseByoipCidrResult.h>
 #include <aws/globalaccelerator/model/CreateAcceleratorResult.h>
+#include <aws/globalaccelerator/model/CreateCrossAccountAttachmentResult.h>
 #include <aws/globalaccelerator/model/CreateCustomRoutingAcceleratorResult.h>
 #include <aws/globalaccelerator/model/CreateCustomRoutingEndpointGroupResult.h>
 #include <aws/globalaccelerator/model/CreateCustomRoutingListenerResult.h>
@@ -30,6 +31,7 @@
 #include <aws/globalaccelerator/model/DeprovisionByoipCidrResult.h>
 #include <aws/globalaccelerator/model/DescribeAcceleratorResult.h>
 #include <aws/globalaccelerator/model/DescribeAcceleratorAttributesResult.h>
+#include <aws/globalaccelerator/model/DescribeCrossAccountAttachmentResult.h>
 #include <aws/globalaccelerator/model/DescribeCustomRoutingAcceleratorResult.h>
 #include <aws/globalaccelerator/model/DescribeCustomRoutingAcceleratorAttributesResult.h>
 #include <aws/globalaccelerator/model/DescribeCustomRoutingEndpointGroupResult.h>
@@ -38,6 +40,9 @@
 #include <aws/globalaccelerator/model/DescribeListenerResult.h>
 #include <aws/globalaccelerator/model/ListAcceleratorsResult.h>
 #include <aws/globalaccelerator/model/ListByoipCidrsResult.h>
+#include <aws/globalaccelerator/model/ListCrossAccountAttachmentsResult.h>
+#include <aws/globalaccelerator/model/ListCrossAccountResourceAccountsResult.h>
+#include <aws/globalaccelerator/model/ListCrossAccountResourcesResult.h>
 #include <aws/globalaccelerator/model/ListCustomRoutingAcceleratorsResult.h>
 #include <aws/globalaccelerator/model/ListCustomRoutingEndpointGroupsResult.h>
 #include <aws/globalaccelerator/model/ListCustomRoutingListenersResult.h>
@@ -51,6 +56,7 @@
 #include <aws/globalaccelerator/model/UntagResourceResult.h>
 #include <aws/globalaccelerator/model/UpdateAcceleratorResult.h>
 #include <aws/globalaccelerator/model/UpdateAcceleratorAttributesResult.h>
+#include <aws/globalaccelerator/model/UpdateCrossAccountAttachmentResult.h>
 #include <aws/globalaccelerator/model/UpdateCustomRoutingAcceleratorResult.h>
 #include <aws/globalaccelerator/model/UpdateCustomRoutingAcceleratorAttributesResult.h>
 #include <aws/globalaccelerator/model/UpdateCustomRoutingListenerResult.h>
@@ -103,12 +109,14 @@ namespace Aws
       class AdvertiseByoipCidrRequest;
       class AllowCustomRoutingTrafficRequest;
       class CreateAcceleratorRequest;
+      class CreateCrossAccountAttachmentRequest;
       class CreateCustomRoutingAcceleratorRequest;
       class CreateCustomRoutingEndpointGroupRequest;
       class CreateCustomRoutingListenerRequest;
       class CreateEndpointGroupRequest;
       class CreateListenerRequest;
       class DeleteAcceleratorRequest;
+      class DeleteCrossAccountAttachmentRequest;
       class DeleteCustomRoutingAcceleratorRequest;
       class DeleteCustomRoutingEndpointGroupRequest;
       class DeleteCustomRoutingListenerRequest;
@@ -118,6 +126,7 @@ namespace Aws
       class DeprovisionByoipCidrRequest;
       class DescribeAcceleratorRequest;
       class DescribeAcceleratorAttributesRequest;
+      class DescribeCrossAccountAttachmentRequest;
       class DescribeCustomRoutingAcceleratorRequest;
       class DescribeCustomRoutingAcceleratorAttributesRequest;
       class DescribeCustomRoutingEndpointGroupRequest;
@@ -126,6 +135,9 @@ namespace Aws
       class DescribeListenerRequest;
       class ListAcceleratorsRequest;
       class ListByoipCidrsRequest;
+      class ListCrossAccountAttachmentsRequest;
+      class ListCrossAccountResourceAccountsRequest;
+      class ListCrossAccountResourcesRequest;
       class ListCustomRoutingAcceleratorsRequest;
       class ListCustomRoutingEndpointGroupsRequest;
       class ListCustomRoutingListenersRequest;
@@ -141,6 +153,7 @@ namespace Aws
       class UntagResourceRequest;
       class UpdateAcceleratorRequest;
       class UpdateAcceleratorAttributesRequest;
+      class UpdateCrossAccountAttachmentRequest;
       class UpdateCustomRoutingAcceleratorRequest;
       class UpdateCustomRoutingAcceleratorAttributesRequest;
       class UpdateCustomRoutingListenerRequest;
@@ -155,12 +168,14 @@ namespace Aws
       typedef Aws::Utils::Outcome<AdvertiseByoipCidrResult, GlobalAcceleratorError> AdvertiseByoipCidrOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> AllowCustomRoutingTrafficOutcome;
       typedef Aws::Utils::Outcome<CreateAcceleratorResult, GlobalAcceleratorError> CreateAcceleratorOutcome;
+      typedef Aws::Utils::Outcome<CreateCrossAccountAttachmentResult, GlobalAcceleratorError> CreateCrossAccountAttachmentOutcome;
       typedef Aws::Utils::Outcome<CreateCustomRoutingAcceleratorResult, GlobalAcceleratorError> CreateCustomRoutingAcceleratorOutcome;
       typedef Aws::Utils::Outcome<CreateCustomRoutingEndpointGroupResult, GlobalAcceleratorError> CreateCustomRoutingEndpointGroupOutcome;
       typedef Aws::Utils::Outcome<CreateCustomRoutingListenerResult, GlobalAcceleratorError> CreateCustomRoutingListenerOutcome;
       typedef Aws::Utils::Outcome<CreateEndpointGroupResult, GlobalAcceleratorError> CreateEndpointGroupOutcome;
       typedef Aws::Utils::Outcome<CreateListenerResult, GlobalAcceleratorError> CreateListenerOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> DeleteAcceleratorOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> DeleteCrossAccountAttachmentOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> DeleteCustomRoutingAcceleratorOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> DeleteCustomRoutingEndpointGroupOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> DeleteCustomRoutingListenerOutcome;
@@ -170,6 +185,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeprovisionByoipCidrResult, GlobalAcceleratorError> DeprovisionByoipCidrOutcome;
       typedef Aws::Utils::Outcome<DescribeAcceleratorResult, GlobalAcceleratorError> DescribeAcceleratorOutcome;
       typedef Aws::Utils::Outcome<DescribeAcceleratorAttributesResult, GlobalAcceleratorError> DescribeAcceleratorAttributesOutcome;
+      typedef Aws::Utils::Outcome<DescribeCrossAccountAttachmentResult, GlobalAcceleratorError> DescribeCrossAccountAttachmentOutcome;
       typedef Aws::Utils::Outcome<DescribeCustomRoutingAcceleratorResult, GlobalAcceleratorError> DescribeCustomRoutingAcceleratorOutcome;
       typedef Aws::Utils::Outcome<DescribeCustomRoutingAcceleratorAttributesResult, GlobalAcceleratorError> DescribeCustomRoutingAcceleratorAttributesOutcome;
       typedef Aws::Utils::Outcome<DescribeCustomRoutingEndpointGroupResult, GlobalAcceleratorError> DescribeCustomRoutingEndpointGroupOutcome;
@@ -178,6 +194,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeListenerResult, GlobalAcceleratorError> DescribeListenerOutcome;
       typedef Aws::Utils::Outcome<ListAcceleratorsResult, GlobalAcceleratorError> ListAcceleratorsOutcome;
       typedef Aws::Utils::Outcome<ListByoipCidrsResult, GlobalAcceleratorError> ListByoipCidrsOutcome;
+      typedef Aws::Utils::Outcome<ListCrossAccountAttachmentsResult, GlobalAcceleratorError> ListCrossAccountAttachmentsOutcome;
+      typedef Aws::Utils::Outcome<ListCrossAccountResourceAccountsResult, GlobalAcceleratorError> ListCrossAccountResourceAccountsOutcome;
+      typedef Aws::Utils::Outcome<ListCrossAccountResourcesResult, GlobalAcceleratorError> ListCrossAccountResourcesOutcome;
       typedef Aws::Utils::Outcome<ListCustomRoutingAcceleratorsResult, GlobalAcceleratorError> ListCustomRoutingAcceleratorsOutcome;
       typedef Aws::Utils::Outcome<ListCustomRoutingEndpointGroupsResult, GlobalAcceleratorError> ListCustomRoutingEndpointGroupsOutcome;
       typedef Aws::Utils::Outcome<ListCustomRoutingListenersResult, GlobalAcceleratorError> ListCustomRoutingListenersOutcome;
@@ -193,6 +212,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UntagResourceResult, GlobalAcceleratorError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateAcceleratorResult, GlobalAcceleratorError> UpdateAcceleratorOutcome;
       typedef Aws::Utils::Outcome<UpdateAcceleratorAttributesResult, GlobalAcceleratorError> UpdateAcceleratorAttributesOutcome;
+      typedef Aws::Utils::Outcome<UpdateCrossAccountAttachmentResult, GlobalAcceleratorError> UpdateCrossAccountAttachmentOutcome;
       typedef Aws::Utils::Outcome<UpdateCustomRoutingAcceleratorResult, GlobalAcceleratorError> UpdateCustomRoutingAcceleratorOutcome;
       typedef Aws::Utils::Outcome<UpdateCustomRoutingAcceleratorAttributesResult, GlobalAcceleratorError> UpdateCustomRoutingAcceleratorAttributesOutcome;
       typedef Aws::Utils::Outcome<UpdateCustomRoutingListenerResult, GlobalAcceleratorError> UpdateCustomRoutingListenerOutcome;
@@ -207,12 +227,14 @@ namespace Aws
       typedef std::future<AdvertiseByoipCidrOutcome> AdvertiseByoipCidrOutcomeCallable;
       typedef std::future<AllowCustomRoutingTrafficOutcome> AllowCustomRoutingTrafficOutcomeCallable;
       typedef std::future<CreateAcceleratorOutcome> CreateAcceleratorOutcomeCallable;
+      typedef std::future<CreateCrossAccountAttachmentOutcome> CreateCrossAccountAttachmentOutcomeCallable;
       typedef std::future<CreateCustomRoutingAcceleratorOutcome> CreateCustomRoutingAcceleratorOutcomeCallable;
       typedef std::future<CreateCustomRoutingEndpointGroupOutcome> CreateCustomRoutingEndpointGroupOutcomeCallable;
       typedef std::future<CreateCustomRoutingListenerOutcome> CreateCustomRoutingListenerOutcomeCallable;
       typedef std::future<CreateEndpointGroupOutcome> CreateEndpointGroupOutcomeCallable;
       typedef std::future<CreateListenerOutcome> CreateListenerOutcomeCallable;
       typedef std::future<DeleteAcceleratorOutcome> DeleteAcceleratorOutcomeCallable;
+      typedef std::future<DeleteCrossAccountAttachmentOutcome> DeleteCrossAccountAttachmentOutcomeCallable;
       typedef std::future<DeleteCustomRoutingAcceleratorOutcome> DeleteCustomRoutingAcceleratorOutcomeCallable;
       typedef std::future<DeleteCustomRoutingEndpointGroupOutcome> DeleteCustomRoutingEndpointGroupOutcomeCallable;
       typedef std::future<DeleteCustomRoutingListenerOutcome> DeleteCustomRoutingListenerOutcomeCallable;
@@ -222,6 +244,7 @@ namespace Aws
       typedef std::future<DeprovisionByoipCidrOutcome> DeprovisionByoipCidrOutcomeCallable;
       typedef std::future<DescribeAcceleratorOutcome> DescribeAcceleratorOutcomeCallable;
       typedef std::future<DescribeAcceleratorAttributesOutcome> DescribeAcceleratorAttributesOutcomeCallable;
+      typedef std::future<DescribeCrossAccountAttachmentOutcome> DescribeCrossAccountAttachmentOutcomeCallable;
       typedef std::future<DescribeCustomRoutingAcceleratorOutcome> DescribeCustomRoutingAcceleratorOutcomeCallable;
       typedef std::future<DescribeCustomRoutingAcceleratorAttributesOutcome> DescribeCustomRoutingAcceleratorAttributesOutcomeCallable;
       typedef std::future<DescribeCustomRoutingEndpointGroupOutcome> DescribeCustomRoutingEndpointGroupOutcomeCallable;
@@ -230,6 +253,9 @@ namespace Aws
       typedef std::future<DescribeListenerOutcome> DescribeListenerOutcomeCallable;
       typedef std::future<ListAcceleratorsOutcome> ListAcceleratorsOutcomeCallable;
       typedef std::future<ListByoipCidrsOutcome> ListByoipCidrsOutcomeCallable;
+      typedef std::future<ListCrossAccountAttachmentsOutcome> ListCrossAccountAttachmentsOutcomeCallable;
+      typedef std::future<ListCrossAccountResourceAccountsOutcome> ListCrossAccountResourceAccountsOutcomeCallable;
+      typedef std::future<ListCrossAccountResourcesOutcome> ListCrossAccountResourcesOutcomeCallable;
       typedef std::future<ListCustomRoutingAcceleratorsOutcome> ListCustomRoutingAcceleratorsOutcomeCallable;
       typedef std::future<ListCustomRoutingEndpointGroupsOutcome> ListCustomRoutingEndpointGroupsOutcomeCallable;
       typedef std::future<ListCustomRoutingListenersOutcome> ListCustomRoutingListenersOutcomeCallable;
@@ -245,6 +271,7 @@ namespace Aws
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAcceleratorOutcome> UpdateAcceleratorOutcomeCallable;
       typedef std::future<UpdateAcceleratorAttributesOutcome> UpdateAcceleratorAttributesOutcomeCallable;
+      typedef std::future<UpdateCrossAccountAttachmentOutcome> UpdateCrossAccountAttachmentOutcomeCallable;
       typedef std::future<UpdateCustomRoutingAcceleratorOutcome> UpdateCustomRoutingAcceleratorOutcomeCallable;
       typedef std::future<UpdateCustomRoutingAcceleratorAttributesOutcome> UpdateCustomRoutingAcceleratorAttributesOutcomeCallable;
       typedef std::future<UpdateCustomRoutingListenerOutcome> UpdateCustomRoutingListenerOutcomeCallable;
@@ -262,12 +289,14 @@ namespace Aws
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::AdvertiseByoipCidrRequest&, const Model::AdvertiseByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdvertiseByoipCidrResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::AllowCustomRoutingTrafficRequest&, const Model::AllowCustomRoutingTrafficOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AllowCustomRoutingTrafficResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::CreateAcceleratorRequest&, const Model::CreateAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAcceleratorResponseReceivedHandler;
+    typedef std::function<void(const GlobalAcceleratorClient*, const Model::CreateCrossAccountAttachmentRequest&, const Model::CreateCrossAccountAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCrossAccountAttachmentResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::CreateCustomRoutingAcceleratorRequest&, const Model::CreateCustomRoutingAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomRoutingAcceleratorResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::CreateCustomRoutingEndpointGroupRequest&, const Model::CreateCustomRoutingEndpointGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomRoutingEndpointGroupResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::CreateCustomRoutingListenerRequest&, const Model::CreateCustomRoutingListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomRoutingListenerResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::CreateEndpointGroupRequest&, const Model::CreateEndpointGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointGroupResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::CreateListenerRequest&, const Model::CreateListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateListenerResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::DeleteAcceleratorRequest&, const Model::DeleteAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAcceleratorResponseReceivedHandler;
+    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DeleteCrossAccountAttachmentRequest&, const Model::DeleteCrossAccountAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCrossAccountAttachmentResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::DeleteCustomRoutingAcceleratorRequest&, const Model::DeleteCustomRoutingAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomRoutingAcceleratorResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::DeleteCustomRoutingEndpointGroupRequest&, const Model::DeleteCustomRoutingEndpointGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomRoutingEndpointGroupResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::DeleteCustomRoutingListenerRequest&, const Model::DeleteCustomRoutingListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomRoutingListenerResponseReceivedHandler;
@@ -277,6 +306,7 @@ namespace Aws
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::DeprovisionByoipCidrRequest&, const Model::DeprovisionByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeprovisionByoipCidrResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::DescribeAcceleratorRequest&, const Model::DescribeAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAcceleratorResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::DescribeAcceleratorAttributesRequest&, const Model::DescribeAcceleratorAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAcceleratorAttributesResponseReceivedHandler;
+    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DescribeCrossAccountAttachmentRequest&, const Model::DescribeCrossAccountAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCrossAccountAttachmentResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::DescribeCustomRoutingAcceleratorRequest&, const Model::DescribeCustomRoutingAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomRoutingAcceleratorResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::DescribeCustomRoutingAcceleratorAttributesRequest&, const Model::DescribeCustomRoutingAcceleratorAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomRoutingAcceleratorAttributesResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::DescribeCustomRoutingEndpointGroupRequest&, const Model::DescribeCustomRoutingEndpointGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomRoutingEndpointGroupResponseReceivedHandler;
@@ -285,6 +315,9 @@ namespace Aws
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::DescribeListenerRequest&, const Model::DescribeListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeListenerResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListAcceleratorsRequest&, const Model::ListAcceleratorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAcceleratorsResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListByoipCidrsRequest&, const Model::ListByoipCidrsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListByoipCidrsResponseReceivedHandler;
+    typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListCrossAccountAttachmentsRequest&, const Model::ListCrossAccountAttachmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCrossAccountAttachmentsResponseReceivedHandler;
+    typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListCrossAccountResourceAccountsRequest&, const Model::ListCrossAccountResourceAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCrossAccountResourceAccountsResponseReceivedHandler;
+    typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListCrossAccountResourcesRequest&, const Model::ListCrossAccountResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCrossAccountResourcesResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListCustomRoutingAcceleratorsRequest&, const Model::ListCustomRoutingAcceleratorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomRoutingAcceleratorsResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListCustomRoutingEndpointGroupsRequest&, const Model::ListCustomRoutingEndpointGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomRoutingEndpointGroupsResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListCustomRoutingListenersRequest&, const Model::ListCustomRoutingListenersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomRoutingListenersResponseReceivedHandler;
@@ -300,6 +333,7 @@ namespace Aws
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::UpdateAcceleratorRequest&, const Model::UpdateAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAcceleratorResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::UpdateAcceleratorAttributesRequest&, const Model::UpdateAcceleratorAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAcceleratorAttributesResponseReceivedHandler;
+    typedef std::function<void(const GlobalAcceleratorClient*, const Model::UpdateCrossAccountAttachmentRequest&, const Model::UpdateCrossAccountAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCrossAccountAttachmentResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::UpdateCustomRoutingAcceleratorRequest&, const Model::UpdateCustomRoutingAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCustomRoutingAcceleratorResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::UpdateCustomRoutingAcceleratorAttributesRequest&, const Model::UpdateCustomRoutingAcceleratorAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCustomRoutingAcceleratorAttributesResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::UpdateCustomRoutingListenerRequest&, const Model::UpdateCustomRoutingListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCustomRoutingListenerResponseReceivedHandler;

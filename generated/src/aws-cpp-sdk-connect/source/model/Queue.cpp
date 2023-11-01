@@ -29,7 +29,9 @@ Queue::Queue() :
     m_maxContactsHasBeenSet(false),
     m_status(QueueStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
+    m_lastModifiedRegionHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ Queue::Queue(JsonView jsonValue) :
     m_maxContactsHasBeenSet(false),
     m_status(QueueStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
+    m_lastModifiedRegionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -117,6 +121,20 @@ Queue& Queue::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastModifiedRegion"))
+  {
+    m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
+
+    m_lastModifiedRegionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -179,6 +197,17 @@ JsonValue Queue::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_lastModifiedTimeHasBeenSet)
+  {
+   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_lastModifiedRegionHasBeenSet)
+  {
+   payload.WithString("LastModifiedRegion", m_lastModifiedRegion);
 
   }
 
