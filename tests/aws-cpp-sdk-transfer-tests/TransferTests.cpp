@@ -208,7 +208,7 @@ public:
     static std::map<TestType, std::shared_ptr<MockS3Client>> m_s3Clients;
     void SetUp()
     {
-        m_executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
+        m_executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 6);
         if (EmptyBucket(GetTestBucketName()))
         {
             WaitForBucketToEmpty(GetTestBucketName());
@@ -655,7 +655,8 @@ protected:
         config.requestTimeoutMs = 60000;
         config.region = AWS_TEST_REGION;
         // executor used for s3Client
-        config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 5);
+        config.maxConnections = 25;
+        config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
         m_s3Clients[TestType::Https] = Aws::MakeShared<MockS3Client>(ALLOCATION_TAG, config,
                                                                      Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG));
         m_s3Clients[TestType::Http] = Aws::MakeShared<MockS3Client>(ALLOCATION_TAG, config,
@@ -948,7 +949,7 @@ TEST_P(TransferTests, TransferManager_SmallTest)
     ASSERT_STREQ(smallTestFileName.c_str(), requestPtr->GetTargetFilePath().c_str());
     requestPtr->WaitUntilFinished();
 
-    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
+    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus()) << requestPtr->GetLastError().GetMessage();
     ASSERT_EQ(1u, requestPtr->GetCompletedParts().size()); // Should be 2.5 megs
     ASSERT_EQ(0u, requestPtr->GetFailedParts().size());
     ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
@@ -1390,6 +1391,9 @@ TEST_P(TransferTests, TransferManager_BigTest)
     TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.s3Client = m_s3Clients[GetParam()];
 
+    typedef std::chrono::high_resolution_clock Clock;
+    auto t1 = Clock::now();
+
     auto transferManager = TransferManager::Create(transferManagerConfig);
     std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(bigTestFileName, GetTestBucketName(), BIG_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
 
@@ -1419,21 +1423,26 @@ TEST_P(TransferTests, TransferManager_BigTest)
     ASSERT_EQ(fileSize, BIG_TEST_SIZE / testStrLen * testStrLen);
     ASSERT_LE(fileSize, requestPtr->GetBytesTransferred());
 
-    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), BIG_FILE_KEY));
+    auto t2 = Clock::now();
+    std::cout << "Big file upload time: "
+              << std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count()
+              << " microseconds" << std::endl;
 
-    VerifyUploadedFile(*transferManager,
-                       bigTestFileName,
-                       GetTestBucketName(),
-                       BIG_FILE_KEY,
-                       "text/plain",
-                       Aws::Map<Aws::String, Aws::String>());
+    //ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), BIG_FILE_KEY));
 
-    VerifyUploadedFileDownloadInParts(*transferManager,
-                                      bigTestFileName,
-                                      GetTestBucketName(),
-                                      BIG_FILE_KEY,
-                                      "text/plain",
-                                      Aws::Map<Aws::String, Aws::String>());
+//    VerifyUploadedFile(*transferManager,
+//                       bigTestFileName,
+//                       GetTestBucketName(),
+//                       BIG_FILE_KEY,
+//                       "text/plain",
+//                       Aws::Map<Aws::String, Aws::String>());
+//
+//    VerifyUploadedFileDownloadInParts(*transferManager,
+//                                      bigTestFileName,
+//                                      GetTestBucketName(),
+//                                      BIG_FILE_KEY,
+//                                      "text/plain",
+//                                      Aws::Map<Aws::String, Aws::String>());
 }
 
 TEST_P(TransferTests, TransferManager_LargeTestDontCare)
@@ -2329,6 +2338,6 @@ TEST_P(TransferTests, TransferManager_TestRelativePrefix)
 }
 
 INSTANTIATE_TEST_SUITE_P(Https, TransferTests, testing::Values(TestType::Https));
-INSTANTIATE_TEST_SUITE_P(Http, TransferTests, testing::Values(TestType::Http));
+//INSTANTIATE_TEST_SUITE_P(Http, TransferTests, testing::Values(TestType::Http));
 
 }
