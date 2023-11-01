@@ -41,6 +41,12 @@ namespace Aws
                                          Version version = Version::HTTP_VERSION_2TLS);
                 ~CurlMultiHandleContainer();
 
+
+                /**
+                  * Gets an available curl handle from the pool, or returns nullptr if no handle is available
+                  */
+                CurlEasyHandleContext* TryAcquireCurlHandle();
+
                 /**
                   * Blocks until a curl handle from the pool is available for use.
                   */
@@ -56,6 +62,11 @@ namespace Aws
                  */
                 void DestroyCurlHandle(CurlEasyHandleContext* handleCtx);
 
+                /**
+                 * Resets handle to an initial state and returns it; or Destroys and creates a new handle if the curl code is bad.
+                 */
+                CurlEasyHandleContext* ResetCurlHandle(CurlEasyHandleContext* handleCtx, const CURLcode code);
+
                 inline CURLM* AccessCurlMultiHandle()
                 {
                   return m_curlMultiHandle;
@@ -67,7 +78,7 @@ namespace Aws
                 CurlMultiHandleContainer(const CurlMultiHandleContainer&&) = delete;
                 const CurlMultiHandleContainer& operator = (const CurlMultiHandleContainer&&) = delete;
 
-                CurlEasyHandleContext* CreateCurlHandleInPool();
+                CurlEasyHandleContext* CreateCurlHandleInPool(bool release = true);
                 bool CheckAndGrowPool();
                 void SetDefaultOptionsOnHandle(CurlEasyHandleContext& handleCtx);
                 static long ConvertHttpVersion(Version version);

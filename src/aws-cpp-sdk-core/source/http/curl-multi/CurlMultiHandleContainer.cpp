@@ -64,6 +64,27 @@ CurlMultiHandleContainer::~CurlMultiHandleContainer()
     }
 }
 
+CurlEasyHandleContext* CurlMultiHandleContainer::TryAcquireCurlHandle()
+{
+    AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Attempting to acquire curl easy handle.");
+
+    if(!m_handleContainer.HasResourcesAvailable())
+    {
+        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "No current connections available in pool. Attempting to create new connections.");
+        CheckAndGrowPool();
+    }
+
+    CurlEasyHandleContext* handle = nullptr;
+    if(m_handleContainer.TryAcquire(handle))
+    {
+      AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Returning connection handle " << handle);
+    } else {
+      AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "No connection handle available");
+    }
+
+    return handle;
+}
+
 CurlEasyHandleContext* CurlMultiHandleContainer::AcquireCurlHandle()
 {
     AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Attempting to acquire curl easy handle.");
@@ -121,8 +142,45 @@ void CurlMultiHandleContainer::DestroyCurlHandle(CurlEasyHandleContext* handleCt
     }
 }
 
+CurlEasyHandleContext* CurlMultiHandleContainer::ResetCurlHandle(CurlEasyHandleContext* handleCtx, const CURLcode code)
+{
+  if (code != CURLE_OK)
+  {
+    if(handleCtx && handleCtx->m_curlEasyHandle)
+    {
+        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Destroy curl handle: " << handleCtx->m_curlEasyHandle);
+        curl_easy_cleanup(handleCtx->m_curlEasyHandle);
+        handleCtx->m_curlEasyHandle = nullptr;
+        Aws::Delete(handleCtx);
+        handleCtx = nullptr;
+    }
 
-CurlEasyHandleContext* CurlMultiHandleContainer::CreateCurlHandleInPool()
+    {
+        std::lock_guard<std::mutex> locker(m_containerLock);
+        handleCtx = CreateCurlHandleInPool(false);
+    }
+    if (handleCtx)
+    {
+        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Created replacement handle: " << handleCtx->m_curlEasyHandle);
+    }
+  }
+  else
+  {
+    CURL* handle = handleCtx ? handleCtx->m_curlEasyHandle : nullptr;
+    if (handle)
+    {
+#if LIBCURL_VERSION_NUM >= 0x074D00 // 7.77.0
+        curl_easy_setopt(handle, CURLOPT_COOKIEFILE, NULL); // workaround a mem leak on curl
+#endif
+        curl_easy_reset(handle);
+        SetDefaultOptionsOnHandle(*handleCtx);
+        curl_easy_setopt(handle, CURLOPT_PRIVATE, handleCtx);
+    }
+  }
+  return handleCtx;
+}
+
+CurlEasyHandleContext* CurlMultiHandleContainer::CreateCurlHandleInPool(bool release /* = true */)
 {
     CurlEasyHandleContext* handleCtx = Aws::New<CurlEasyHandleContext>(CURL_HANDLE_CONTAINER_TAG);
     if(!handleCtx)
@@ -138,7 +196,9 @@ CurlEasyHandleContext* CurlMultiHandleContainer::CreateCurlHandleInPool()
     {
         SetDefaultOptionsOnHandle(*handleCtx);
         curl_easy_setopt(handleCtx->m_curlEasyHandle, CURLOPT_PRIVATE, handleCtx);
-        m_handleContainer.Release(handleCtx);
+        if (release) {
+          m_handleContainer.Release(handleCtx);
+        }
     }
     else
     {

@@ -797,7 +797,7 @@ void AWSClient::HandleExhaustiveAsyncReply(std::shared_ptr<Aws::Client::AwsClien
               }
             }
             return false;
-        } (); // <- IIFE (immideately invoked lambda)
+        } (); // <- IIFE (immediately invoked lambda)
 
         long sleepMillis = TracingUtils::MakeCallWithTiming<long>(
             [&]() -> long {

@@ -427,8 +427,6 @@ CurlMultiHttpClient::~CurlMultiHttpClient()
     m_signalRunning.notify_all();
   }
   m_multiHandleThread.join();
-
-  curl_multi_cleanup(m_curlMultiHandleContainer.AccessCurlMultiHandle());
 }
 
 struct curl_slist* PrepareHeaders(const HttpRequest* request, const bool disableExpectHeader)
@@ -680,8 +678,6 @@ std::shared_ptr<HttpResponse> CurlMultiHttpClient::HandleCurlResponse(Curl::Curl
                 AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Response body length doesn't match the content-length header.");
             }
         }
-
-        AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Releasing curl handle " << connectionHandle);
     }
 
     double timep = 0.0;
@@ -748,13 +744,38 @@ std::shared_ptr<HttpResponse> CurlMultiHttpClient::HandleCurlResponse(Curl::Curl
     std::shared_ptr<HttpResponse> res = std::move(pEasyHandleCtx->writeContext.m_response);
     pEasyHandleCtx->writeContext.m_response.reset();
 
-    if (curlResponseCode != CURLE_OK)
+    Aws::UniquePtr<CurlMultiHttpClientTask> newTask;
     {
-        client->m_curlMultiHandleContainer.DestroyCurlHandle(pEasyHandleCtx);
+      std::unique_lock<std::mutex> lockGuard(client->m_MultiCurlTasksLock);
+      if(!client->m_MultiCurlTasks.empty()) {
+        newTask = std::move(client->m_MultiCurlTasks.front());
+        client->m_MultiCurlTasks.pop();
+      }
+    }
+
+    if(newTask)
+    {
+      AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Submitting a new task from the queue to the curl handle " << connectionHandle);
+      pEasyHandleCtx = client->m_curlMultiHandleContainer.ResetCurlHandle(pEasyHandleCtx, curlResponseCode);
+
+      client->SubmitAsyncRequest(pEasyHandleCtx,
+                                 std::move(newTask->request),
+                                 std::move(newTask->pExecutor),
+                                 std::move(newTask->onDoneHandler),
+                                 newTask->readLimiter,
+                                 newTask->writeLimiter);
     }
     else
     {
+      AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Releasing curl handle " << connectionHandle);
+      if (curlResponseCode != CURLE_OK)
+      {
+        client->m_curlMultiHandleContainer.DestroyCurlHandle(pEasyHandleCtx);
+      }
+      else
+      {
         client->m_curlMultiHandleContainer.ReleaseCurlHandle(pEasyHandleCtx);
+      }
     }
 
     return res;
@@ -788,10 +809,57 @@ bool CurlMultiHttpClient::SubmitTask(Curl::CurlEasyHandleContext* pEasyHandleCtx
 
 // Async
 void CurlMultiHttpClient::MakeAsyncRequest(const std::shared_ptr<HttpRequest>& request,
-                                                      std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
-                                                      HttpClient::HttpAsyncOnDoneHandler onDoneHandler,
-                                                      Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
-                                                      Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+                                           std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
+                                           HttpClient::HttpAsyncOnDoneHandler onDoneHandler,
+                                           Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+                                           Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+{
+    if(!pExecutor)
+    {
+      assert(pExecutor);
+      AWS_LOGSTREAM_FATAL(CURL_HTTP_CLIENT_TAG, "Failed to submit async http request: executor is a nullptr");
+    }
+
+    Curl::CurlEasyHandleContext* easyHandleContext = m_curlMultiHandleContainer.TryAcquireCurlHandle();
+    if(easyHandleContext)
+    {
+      return SubmitAsyncRequest(easyHandleContext, std::move(request), std::move(pExecutor), std::move(onDoneHandler), readLimiter, writeLimiter);
+    }
+    else
+    {
+      AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "No available curl handle, queueing the request.");
+      Aws::UniquePtr<CurlMultiHttpClientTask> task = Aws::MakeUnique<CurlMultiHttpClientTask>(CURL_HTTP_CLIENT_TAG);
+      if(!task) {
+        AWS_LOGSTREAM_FATAL(CURL_HTTP_CLIENT_TAG, "Failed to allocate a UniquePtr for holding enqueued http client task!");
+        pExecutor->Submit([request, onDoneHandler]()
+                          {
+                              std::shared_ptr<HttpResponse> response = Aws::MakeShared<StandardHttpResponse>(CURL_HTTP_CLIENT_TAG, request);
+                              if(response)
+                              {
+                                response->SetClientErrorType(CoreErrors::MEMORY_ALLOCATION);
+                                response->SetClientErrorMessage("Failed to allocate a UniquePtr for holding enqueued http client task");
+                              }
+                              onDoneHandler(response);
+                          } );
+        return;
+      }
+      task->request = std::move(request);
+      task->pExecutor = std::move(pExecutor);
+      task->onDoneHandler = std::move(onDoneHandler);
+      task->readLimiter = readLimiter;
+      task->writeLimiter = writeLimiter;
+
+      std::unique_lock<std::mutex> lockGuard(m_MultiCurlTasksLock);
+      m_MultiCurlTasks.emplace(std::move(task));
+    }
+}
+
+void CurlMultiHttpClient::SubmitAsyncRequest(Curl::CurlEasyHandleContext* easyHandleContext,
+                                             const std::shared_ptr<HttpRequest>& request,
+                                             std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
+                                             HttpClient::HttpAsyncOnDoneHandler onDoneHandler,
+                                             Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+                                             Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
 {
     if(!pExecutor)
     {
@@ -810,7 +878,6 @@ void CurlMultiHttpClient::MakeAsyncRequest(const std::shared_ptr<HttpRequest>& r
         return;
     }
 
-    Curl::CurlEasyHandleContext* easyHandleContext = m_curlMultiHandleContainer.AcquireCurlHandle();
     if(!easyHandleContext)
     {
         response->SetClientErrorType(CoreErrors::NETWORK_CONNECTION);

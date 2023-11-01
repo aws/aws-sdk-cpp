@@ -34,6 +34,31 @@ namespace Aws
              *
              * @return instance of RESOURCE_TYPE
              */
+            bool TryAcquire(RESOURCE_TYPE& result)
+            {
+                std::unique_lock<std::mutex> locker(m_queueLock);
+                if (m_shutdown.load() || m_resources.size() == 0)
+                {
+                  result = {};
+                  return false;
+                }
+                else
+                {
+                  assert(!m_shutdown.load());
+
+                  result = std::move(m_resources.back());
+                  m_resources.pop_back();
+
+                  return true;
+                }
+            }
+
+            /**
+             * Returns a resource with exclusive ownership. You must call Release on the resource when you are finished or other
+             * threads will block waiting to acquire it.
+             *
+             * @return instance of RESOURCE_TYPE
+             */
             RESOURCE_TYPE Acquire()
             {
                 std::unique_lock<std::mutex> locker(m_queueLock);

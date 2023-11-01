@@ -103,6 +103,26 @@ protected:
     virtual void OverrideOptionsOnConnectionHandle(CURL*) const {}
 
 private:
+    struct CurlMultiHttpClientTask
+    {
+       std::shared_ptr<HttpRequest> request;
+       std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor;
+       HttpClient::HttpAsyncOnDoneHandler onDoneHandler;
+       Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr;
+       Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr;
+    };
+
+    mutable Aws::Queue<Aws::UniquePtr<CurlMultiHttpClientTask>> m_MultiCurlTasks;
+    mutable std::mutex m_MultiCurlTasksLock;
+
+    /* Actually submits a request for processing */
+    virtual void SubmitAsyncRequest(Curl::CurlEasyHandleContext* easyHandleContext,
+                                    const std::shared_ptr<HttpRequest>& request,
+                                    std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
+                                    HttpClient::HttpAsyncOnDoneHandler onDoneHandler,
+                                    Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+                                    Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const;
+
     bool SubmitTask(Curl::CurlEasyHandleContext* pEasyHandleCtx) const;
 
     static std::shared_ptr<HttpResponse> HandleCurlResponse(Curl::CurlEasyHandleContext* pEasyHandleCtx);
