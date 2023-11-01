@@ -1776,6 +1776,31 @@ namespace Model
      */
     inline ModifyClusterRequest& WithIpAddressType(const char* value) { SetIpAddressType(value); return *this;}
 
+
+    /**
+     * <p>If true and the cluster is currently only deployed in a single Availability
+     * Zone, the cluster will be modified to be deployed in two Availability Zones.</p>
+     */
+    inline bool GetMultiAZ() const{ return m_multiAZ; }
+
+    /**
+     * <p>If true and the cluster is currently only deployed in a single Availability
+     * Zone, the cluster will be modified to be deployed in two Availability Zones.</p>
+     */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p>If true and the cluster is currently only deployed in a single Availability
+     * Zone, the cluster will be modified to be deployed in two Availability Zones.</p>
+     */
+    inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
+
+    /**
+     * <p>If true and the cluster is currently only deployed in a single Availability
+     * Zone, the cluster will be modified to be deployed in two Availability Zones.</p>
+     */
+    inline ModifyClusterRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1861,6 +1886,9 @@ namespace Model
 
     Aws::String m_ipAddressType;
     bool m_ipAddressTypeHasBeenSet = false;
+
+    bool m_multiAZ;
+    bool m_multiAZHasBeenSet = false;
   };
 
 } // namespace Model

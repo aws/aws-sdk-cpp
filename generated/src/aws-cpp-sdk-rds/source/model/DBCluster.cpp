@@ -74,6 +74,7 @@ DBCluster::DBCluster() :
     m_capacityHasBeenSet(false),
     m_engineModeHasBeenSet(false),
     m_scalingConfigurationInfoHasBeenSet(false),
+    m_rdsCustomClusterConfigurationHasBeenSet(false),
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
     m_httpEndpointEnabled(false),
@@ -176,6 +177,7 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_capacityHasBeenSet(false),
     m_engineModeHasBeenSet(false),
     m_scalingConfigurationInfoHasBeenSet(false),
+    m_rdsCustomClusterConfigurationHasBeenSet(false),
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
     m_httpEndpointEnabled(false),
@@ -542,6 +544,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     {
       m_scalingConfigurationInfo = scalingConfigurationInfoNode;
       m_scalingConfigurationInfoHasBeenSet = true;
+    }
+    XmlNode rdsCustomClusterConfigurationNode = resultNode.FirstChild("RdsCustomClusterConfiguration");
+    if(!rdsCustomClusterConfigurationNode.IsNull())
+    {
+      m_rdsCustomClusterConfiguration = rdsCustomClusterConfigurationNode;
+      m_rdsCustomClusterConfigurationHasBeenSet = true;
     }
     XmlNode deletionProtectionNode = resultNode.FirstChild("DeletionProtection");
     if(!deletionProtectionNode.IsNull())
@@ -1004,6 +1012,13 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       m_scalingConfigurationInfo.OutputToStream(oStream, scalingConfigurationInfoLocationAndMemberSs.str().c_str());
   }
 
+  if(m_rdsCustomClusterConfigurationHasBeenSet)
+  {
+      Aws::StringStream rdsCustomClusterConfigurationLocationAndMemberSs;
+      rdsCustomClusterConfigurationLocationAndMemberSs << location << index << locationValue << ".RdsCustomClusterConfiguration";
+      m_rdsCustomClusterConfiguration.OutputToStream(oStream, rdsCustomClusterConfigurationLocationAndMemberSs.str().c_str());
+  }
+
   if(m_deletionProtectionHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
@@ -1393,6 +1408,12 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       Aws::String scalingConfigurationInfoLocationAndMember(location);
       scalingConfigurationInfoLocationAndMember += ".ScalingConfigurationInfo";
       m_scalingConfigurationInfo.OutputToStream(oStream, scalingConfigurationInfoLocationAndMember.c_str());
+  }
+  if(m_rdsCustomClusterConfigurationHasBeenSet)
+  {
+      Aws::String rdsCustomClusterConfigurationLocationAndMember(location);
+      rdsCustomClusterConfigurationLocationAndMember += ".RdsCustomClusterConfiguration";
+      m_rdsCustomClusterConfiguration.OutputToStream(oStream, rdsCustomClusterConfigurationLocationAndMember.c_str());
   }
   if(m_deletionProtectionHasBeenSet)
   {

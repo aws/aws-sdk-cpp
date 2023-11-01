@@ -94,6 +94,7 @@
 #include <aws/redshift/model/DisassociateDataShareConsumerResult.h>
 #include <aws/redshift/model/EnableLoggingResult.h>
 #include <aws/redshift/model/EnableSnapshotCopyResult.h>
+#include <aws/redshift/model/FailoverPrimaryComputeResult.h>
 #include <aws/redshift/model/GetClusterCredentialsResult.h>
 #include <aws/redshift/model/GetClusterCredentialsWithIAMResult.h>
 #include <aws/redshift/model/GetReservedNodeExchangeConfigurationOptionsResult.h>
@@ -261,6 +262,7 @@ namespace Aws
       class DisassociateDataShareConsumerRequest;
       class EnableLoggingRequest;
       class EnableSnapshotCopyRequest;
+      class FailoverPrimaryComputeRequest;
       class GetClusterCredentialsRequest;
       class GetClusterCredentialsWithIAMRequest;
       class GetReservedNodeExchangeConfigurationOptionsRequest;
@@ -391,6 +393,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisassociateDataShareConsumerResult, RedshiftError> DisassociateDataShareConsumerOutcome;
       typedef Aws::Utils::Outcome<EnableLoggingResult, RedshiftError> EnableLoggingOutcome;
       typedef Aws::Utils::Outcome<EnableSnapshotCopyResult, RedshiftError> EnableSnapshotCopyOutcome;
+      typedef Aws::Utils::Outcome<FailoverPrimaryComputeResult, RedshiftError> FailoverPrimaryComputeOutcome;
       typedef Aws::Utils::Outcome<GetClusterCredentialsResult, RedshiftError> GetClusterCredentialsOutcome;
       typedef Aws::Utils::Outcome<GetClusterCredentialsWithIAMResult, RedshiftError> GetClusterCredentialsWithIAMOutcome;
       typedef Aws::Utils::Outcome<GetReservedNodeExchangeConfigurationOptionsResult, RedshiftError> GetReservedNodeExchangeConfigurationOptionsOutcome;
@@ -521,6 +524,7 @@ namespace Aws
       typedef std::future<DisassociateDataShareConsumerOutcome> DisassociateDataShareConsumerOutcomeCallable;
       typedef std::future<EnableLoggingOutcome> EnableLoggingOutcomeCallable;
       typedef std::future<EnableSnapshotCopyOutcome> EnableSnapshotCopyOutcomeCallable;
+      typedef std::future<FailoverPrimaryComputeOutcome> FailoverPrimaryComputeOutcomeCallable;
       typedef std::future<GetClusterCredentialsOutcome> GetClusterCredentialsOutcomeCallable;
       typedef std::future<GetClusterCredentialsWithIAMOutcome> GetClusterCredentialsWithIAMOutcomeCallable;
       typedef std::future<GetReservedNodeExchangeConfigurationOptionsOutcome> GetReservedNodeExchangeConfigurationOptionsOutcomeCallable;
@@ -654,6 +658,7 @@ namespace Aws
     typedef std::function<void(const RedshiftClient*, const Model::DisassociateDataShareConsumerRequest&, const Model::DisassociateDataShareConsumerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDataShareConsumerResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::EnableLoggingRequest&, const Model::EnableLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableLoggingResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::EnableSnapshotCopyRequest&, const Model::EnableSnapshotCopyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSnapshotCopyResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::FailoverPrimaryComputeRequest&, const Model::FailoverPrimaryComputeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FailoverPrimaryComputeResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::GetClusterCredentialsRequest&, const Model::GetClusterCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClusterCredentialsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::GetClusterCredentialsWithIAMRequest&, const Model::GetClusterCredentialsWithIAMOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClusterCredentialsWithIAMResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::GetReservedNodeExchangeConfigurationOptionsRequest&, const Model::GetReservedNodeExchangeConfigurationOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservedNodeExchangeConfigurationOptionsResponseReceivedHandler;

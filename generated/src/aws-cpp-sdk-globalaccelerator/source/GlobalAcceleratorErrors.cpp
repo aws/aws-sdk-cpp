@@ -22,6 +22,7 @@ static const int ENDPOINT_ALREADY_EXISTS_HASH = HashingUtils::HashString("Endpoi
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int ACCELERATOR_NOT_FOUND_HASH = HashingUtils::HashString("AcceleratorNotFoundException");
+static const int ATTACHMENT_NOT_FOUND_HASH = HashingUtils::HashString("AttachmentNotFoundException");
 static const int INCORRECT_CIDR_STATE_HASH = HashingUtils::HashString("IncorrectCidrStateException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int TRANSACTION_IN_PROGRESS_HASH = HashingUtils::HashString("TransactionInProgressException");
@@ -57,6 +58,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ACCELERATOR_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::ACCELERATOR_NOT_FOUND), false);
+  }
+  else if (hashCode == ATTACHMENT_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::ATTACHMENT_NOT_FOUND), false);
   }
   else if (hashCode == INCORRECT_CIDR_STATE_HASH)
   {

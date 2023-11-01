@@ -23,7 +23,8 @@ EndpointConfiguration::EndpointConfiguration() :
     m_weight(0),
     m_weightHasBeenSet(false),
     m_clientIPPreservationEnabled(false),
-    m_clientIPPreservationEnabledHasBeenSet(false)
+    m_clientIPPreservationEnabledHasBeenSet(false),
+    m_attachmentArnHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ EndpointConfiguration::EndpointConfiguration(JsonView jsonValue) :
     m_weight(0),
     m_weightHasBeenSet(false),
     m_clientIPPreservationEnabled(false),
-    m_clientIPPreservationEnabledHasBeenSet(false)
+    m_clientIPPreservationEnabledHasBeenSet(false),
+    m_attachmentArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +62,13 @@ EndpointConfiguration& EndpointConfiguration::operator =(JsonView jsonValue)
     m_clientIPPreservationEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AttachmentArn"))
+  {
+    m_attachmentArn = jsonValue.GetString("AttachmentArn");
+
+    m_attachmentArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -82,6 +91,12 @@ JsonValue EndpointConfiguration::Jsonize() const
   if(m_clientIPPreservationEnabledHasBeenSet)
   {
    payload.WithBool("ClientIPPreservationEnabled", m_clientIPPreservationEnabled);
+
+  }
+
+  if(m_attachmentArnHasBeenSet)
+  {
+   payload.WithString("AttachmentArn", m_attachmentArn);
 
   }
 

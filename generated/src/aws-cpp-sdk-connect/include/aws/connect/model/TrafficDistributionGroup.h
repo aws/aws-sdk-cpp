@@ -491,11 +491,14 @@ namespace Model
      * instance replication. The default traffic distribution group cannot be deleted
      * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
      * distribution group is deleted as part of the process for deleting a replica.</p>
-     *  <p>The <code>SignInConfig</code> distribution is available only on the
-     * default <code>TrafficDistributionGroup</code>. If you call
-     * <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
-     * and a non-default <code>TrafficDistributionGroup</code>, an
-     * <code>InvalidRequestException</code> is returned.</p> 
+     *  <p>The <code>SignInConfig</code> distribution is available only on a
+     * default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code>
+     * parameter in the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
+     * data type). If you call <code>UpdateTrafficDistribution</code> with a modified
+     * <code>SignInConfig</code> and a non-default
+     * <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
+     * is returned.</p> 
      */
     inline bool GetIsDefault() const{ return m_isDefault; }
 
@@ -504,11 +507,14 @@ namespace Model
      * instance replication. The default traffic distribution group cannot be deleted
      * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
      * distribution group is deleted as part of the process for deleting a replica.</p>
-     *  <p>The <code>SignInConfig</code> distribution is available only on the
-     * default <code>TrafficDistributionGroup</code>. If you call
-     * <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
-     * and a non-default <code>TrafficDistributionGroup</code>, an
-     * <code>InvalidRequestException</code> is returned.</p> 
+     *  <p>The <code>SignInConfig</code> distribution is available only on a
+     * default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code>
+     * parameter in the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
+     * data type). If you call <code>UpdateTrafficDistribution</code> with a modified
+     * <code>SignInConfig</code> and a non-default
+     * <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
+     * is returned.</p> 
      */
     inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
 
@@ -517,11 +523,14 @@ namespace Model
      * instance replication. The default traffic distribution group cannot be deleted
      * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
      * distribution group is deleted as part of the process for deleting a replica.</p>
-     *  <p>The <code>SignInConfig</code> distribution is available only on the
-     * default <code>TrafficDistributionGroup</code>. If you call
-     * <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
-     * and a non-default <code>TrafficDistributionGroup</code>, an
-     * <code>InvalidRequestException</code> is returned.</p> 
+     *  <p>The <code>SignInConfig</code> distribution is available only on a
+     * default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code>
+     * parameter in the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
+     * data type). If you call <code>UpdateTrafficDistribution</code> with a modified
+     * <code>SignInConfig</code> and a non-default
+     * <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
+     * is returned.</p> 
      */
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
 
@@ -530,11 +539,14 @@ namespace Model
      * instance replication. The default traffic distribution group cannot be deleted
      * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
      * distribution group is deleted as part of the process for deleting a replica.</p>
-     *  <p>The <code>SignInConfig</code> distribution is available only on the
-     * default <code>TrafficDistributionGroup</code>. If you call
-     * <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
-     * and a non-default <code>TrafficDistributionGroup</code>, an
-     * <code>InvalidRequestException</code> is returned.</p> 
+     *  <p>The <code>SignInConfig</code> distribution is available only on a
+     * default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code>
+     * parameter in the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
+     * data type). If you call <code>UpdateTrafficDistribution</code> with a modified
+     * <code>SignInConfig</code> and a non-default
+     * <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
+     * is returned.</p> 
      */
     inline TrafficDistributionGroup& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
 

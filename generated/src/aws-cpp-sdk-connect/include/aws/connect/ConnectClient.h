@@ -426,6 +426,32 @@ namespace Connect
         }
 
         /**
+         * <p>Retrieve the flow associations for the given resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchGetFlowAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetFlowAssociationOutcome BatchGetFlowAssociation(const Model::BatchGetFlowAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetFlowAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetFlowAssociationRequestT = Model::BatchGetFlowAssociationRequest>
+        Model::BatchGetFlowAssociationOutcomeCallable BatchGetFlowAssociationCallable(const BatchGetFlowAssociationRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::BatchGetFlowAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetFlowAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetFlowAssociationRequestT = Model::BatchGetFlowAssociationRequest>
+        void BatchGetFlowAssociationAsync(const BatchGetFlowAssociationRequestT& request, const BatchGetFlowAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::BatchGetFlowAssociation, request, handler, context);
+        }
+
+        /**
          * <p>Claims an available phone number to your Amazon Connect instance or traffic
          * distribution group. You can call this API only in the same Amazon Web Services
          * Region where the Amazon Connect instance or traffic distribution group was
@@ -4093,8 +4119,9 @@ namespace Connect
 
         /**
          * <p>Replicates an Amazon Connect instance in the specified Amazon Web Services
-         * Region.</p> <p>For more information about replicating an Amazon Connect
-         * instance, see <a
+         * Region and copies configuration information for Amazon Connect resources across
+         * Amazon Web Services Regions. </p> <p>For more information about replicating an
+         * Amazon Connect instance, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create
          * a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect
          * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a

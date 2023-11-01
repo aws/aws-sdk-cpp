@@ -2735,6 +2735,32 @@ namespace Redshift
         }
 
         /**
+         * <p>Fails over the primary compute unit of the specified Multi-AZ cluster to
+         * another Availability Zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/FailoverPrimaryCompute">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::FailoverPrimaryComputeOutcome FailoverPrimaryCompute(const Model::FailoverPrimaryComputeRequest& request) const;
+
+        /**
+         * A Callable wrapper for FailoverPrimaryCompute that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename FailoverPrimaryComputeRequestT = Model::FailoverPrimaryComputeRequest>
+        Model::FailoverPrimaryComputeOutcomeCallable FailoverPrimaryComputeCallable(const FailoverPrimaryComputeRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::FailoverPrimaryCompute, request);
+        }
+
+        /**
+         * An Async wrapper for FailoverPrimaryCompute that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename FailoverPrimaryComputeRequestT = Model::FailoverPrimaryComputeRequest>
+        void FailoverPrimaryComputeAsync(const FailoverPrimaryComputeRequestT& request, const FailoverPrimaryComputeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::FailoverPrimaryCompute, request, handler, context);
+        }
+
+        /**
          * <p>Returns a database user name and temporary password with temporary
          * authorization to log on to an Amazon Redshift database. The action returns the
          * database user name prefixed with <code>IAM:</code> if <code>AutoCreate</code> is

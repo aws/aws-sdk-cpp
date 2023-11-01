@@ -2336,6 +2336,31 @@ namespace Model
      */
     inline CreateClusterRequest& WithIpAddressType(const char* value) { SetIpAddressType(value); return *this;}
 
+
+    /**
+     * <p>If true, Amazon Redshift will deploy the cluster in two Availability Zones
+     * (AZ).</p>
+     */
+    inline bool GetMultiAZ() const{ return m_multiAZ; }
+
+    /**
+     * <p>If true, Amazon Redshift will deploy the cluster in two Availability Zones
+     * (AZ).</p>
+     */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p>If true, Amazon Redshift will deploy the cluster in two Availability Zones
+     * (AZ).</p>
+     */
+    inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
+
+    /**
+     * <p>If true, Amazon Redshift will deploy the cluster in two Availability Zones
+     * (AZ).</p>
+     */
+    inline CreateClusterRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -2448,6 +2473,9 @@ namespace Model
 
     Aws::String m_ipAddressType;
     bool m_ipAddressTypeHasBeenSet = false;
+
+    bool m_multiAZ;
+    bool m_multiAZHasBeenSet = false;
   };
 
 } // namespace Model
