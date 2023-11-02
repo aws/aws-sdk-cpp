@@ -35,11 +35,11 @@ namespace Model
    * <code>CertificateAuthorityArn</code> for outbound SSL/TLS inspection, or both.
    * For information about working with certificates for TLS inspection, see <a
    * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">
-   * Requirements for using SSL/TLS server certficiates with TLS inspection
-   * configurations</a> in the <i>Network Firewall Developer Guide</i>.</p> 
-   * <p>If a server certificate that's associated with your
-   * <a>TLSInspectionConfiguration</a> is revoked, deleted, or expired it can result
-   * in client-side TLS errors.</p> <p><h3>See Also:</h3>   <a
+   * Using SSL/TLS server certficiates with TLS inspection configurations</a> in the
+   * <i>Network Firewall Developer Guide</i>.</p>  <p>If a server certificate
+   * that's associated with your <a>TLSInspectionConfiguration</a> is revoked,
+   * deleted, or expired it can result in client-side TLS errors.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ServerCertificateConfiguration">AWS
    * API Reference</a></p>
    */
@@ -53,50 +53,42 @@ namespace Model
 
 
     /**
-     * <p>The list of a server certificate configuration's Certificate Manager
-     * certificates, used for inbound SSL/TLS inspection.</p>
+     * <p>The list of server certificates to use for inbound SSL/TLS inspection.</p>
      */
     inline const Aws::Vector<ServerCertificate>& GetServerCertificates() const{ return m_serverCertificates; }
 
     /**
-     * <p>The list of a server certificate configuration's Certificate Manager
-     * certificates, used for inbound SSL/TLS inspection.</p>
+     * <p>The list of server certificates to use for inbound SSL/TLS inspection.</p>
      */
     inline bool ServerCertificatesHasBeenSet() const { return m_serverCertificatesHasBeenSet; }
 
     /**
-     * <p>The list of a server certificate configuration's Certificate Manager
-     * certificates, used for inbound SSL/TLS inspection.</p>
+     * <p>The list of server certificates to use for inbound SSL/TLS inspection.</p>
      */
     inline void SetServerCertificates(const Aws::Vector<ServerCertificate>& value) { m_serverCertificatesHasBeenSet = true; m_serverCertificates = value; }
 
     /**
-     * <p>The list of a server certificate configuration's Certificate Manager
-     * certificates, used for inbound SSL/TLS inspection.</p>
+     * <p>The list of server certificates to use for inbound SSL/TLS inspection.</p>
      */
     inline void SetServerCertificates(Aws::Vector<ServerCertificate>&& value) { m_serverCertificatesHasBeenSet = true; m_serverCertificates = std::move(value); }
 
     /**
-     * <p>The list of a server certificate configuration's Certificate Manager
-     * certificates, used for inbound SSL/TLS inspection.</p>
+     * <p>The list of server certificates to use for inbound SSL/TLS inspection.</p>
      */
     inline ServerCertificateConfiguration& WithServerCertificates(const Aws::Vector<ServerCertificate>& value) { SetServerCertificates(value); return *this;}
 
     /**
-     * <p>The list of a server certificate configuration's Certificate Manager
-     * certificates, used for inbound SSL/TLS inspection.</p>
+     * <p>The list of server certificates to use for inbound SSL/TLS inspection.</p>
      */
     inline ServerCertificateConfiguration& WithServerCertificates(Aws::Vector<ServerCertificate>&& value) { SetServerCertificates(std::move(value)); return *this;}
 
     /**
-     * <p>The list of a server certificate configuration's Certificate Manager
-     * certificates, used for inbound SSL/TLS inspection.</p>
+     * <p>The list of server certificates to use for inbound SSL/TLS inspection.</p>
      */
     inline ServerCertificateConfiguration& AddServerCertificates(const ServerCertificate& value) { m_serverCertificatesHasBeenSet = true; m_serverCertificates.push_back(value); return *this; }
 
     /**
-     * <p>The list of a server certificate configuration's Certificate Manager
-     * certificates, used for inbound SSL/TLS inspection.</p>
+     * <p>The list of server certificates to use for inbound SSL/TLS inspection.</p>
      */
     inline ServerCertificateConfiguration& AddServerCertificates(ServerCertificate&& value) { m_serverCertificatesHasBeenSet = true; m_serverCertificates.push_back(std::move(value)); return *this; }
 
@@ -144,16 +136,16 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the imported certificate authority (CA)
-     * certificate configured in Certificate Manager (ACM) to use for outbound SSL/TLS
+     * certificate within Certificate Manager (ACM) to use for outbound SSL/TLS
      * inspection.</p> <p>The following limitations apply:</p> <ul> <li> <p>You can use
      * CA certificates that you imported into ACM, but you can't generate CA
      * certificates with ACM.</p> </li> <li> <p>You can't use certificates issued by
-     * Private Certificate Authority.</p> </li> </ul> <p>For more information about the
-     * certificate requirements for outbound inspection, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Requirements
-     * for using SSL/TLS certificates with TLS inspection configurations</a> in the
-     * <i>Network Firewall Developer Guide</i>. </p> <p>For information about working
-     * with certificates in ACM, see <a
+     * Private Certificate Authority.</p> </li> </ul> <p>For more information about
+     * configuring certificates for outbound inspection, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Using
+     * SSL/TLS certificates with certificates with TLS inspection configurations</a> in
+     * the <i>Network Firewall Developer Guide</i>. </p> <p>For information about
+     * working with certificates in ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
      * certificates</a> in the <i>Certificate Manager User Guide</i>.</p>
      */
@@ -161,16 +153,16 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the imported certificate authority (CA)
-     * certificate configured in Certificate Manager (ACM) to use for outbound SSL/TLS
+     * certificate within Certificate Manager (ACM) to use for outbound SSL/TLS
      * inspection.</p> <p>The following limitations apply:</p> <ul> <li> <p>You can use
      * CA certificates that you imported into ACM, but you can't generate CA
      * certificates with ACM.</p> </li> <li> <p>You can't use certificates issued by
-     * Private Certificate Authority.</p> </li> </ul> <p>For more information about the
-     * certificate requirements for outbound inspection, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Requirements
-     * for using SSL/TLS certificates with TLS inspection configurations</a> in the
-     * <i>Network Firewall Developer Guide</i>. </p> <p>For information about working
-     * with certificates in ACM, see <a
+     * Private Certificate Authority.</p> </li> </ul> <p>For more information about
+     * configuring certificates for outbound inspection, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Using
+     * SSL/TLS certificates with certificates with TLS inspection configurations</a> in
+     * the <i>Network Firewall Developer Guide</i>. </p> <p>For information about
+     * working with certificates in ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
      * certificates</a> in the <i>Certificate Manager User Guide</i>.</p>
      */
@@ -178,16 +170,16 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the imported certificate authority (CA)
-     * certificate configured in Certificate Manager (ACM) to use for outbound SSL/TLS
+     * certificate within Certificate Manager (ACM) to use for outbound SSL/TLS
      * inspection.</p> <p>The following limitations apply:</p> <ul> <li> <p>You can use
      * CA certificates that you imported into ACM, but you can't generate CA
      * certificates with ACM.</p> </li> <li> <p>You can't use certificates issued by
-     * Private Certificate Authority.</p> </li> </ul> <p>For more information about the
-     * certificate requirements for outbound inspection, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Requirements
-     * for using SSL/TLS certificates with TLS inspection configurations</a> in the
-     * <i>Network Firewall Developer Guide</i>. </p> <p>For information about working
-     * with certificates in ACM, see <a
+     * Private Certificate Authority.</p> </li> </ul> <p>For more information about
+     * configuring certificates for outbound inspection, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Using
+     * SSL/TLS certificates with certificates with TLS inspection configurations</a> in
+     * the <i>Network Firewall Developer Guide</i>. </p> <p>For information about
+     * working with certificates in ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
      * certificates</a> in the <i>Certificate Manager User Guide</i>.</p>
      */
@@ -195,16 +187,16 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the imported certificate authority (CA)
-     * certificate configured in Certificate Manager (ACM) to use for outbound SSL/TLS
+     * certificate within Certificate Manager (ACM) to use for outbound SSL/TLS
      * inspection.</p> <p>The following limitations apply:</p> <ul> <li> <p>You can use
      * CA certificates that you imported into ACM, but you can't generate CA
      * certificates with ACM.</p> </li> <li> <p>You can't use certificates issued by
-     * Private Certificate Authority.</p> </li> </ul> <p>For more information about the
-     * certificate requirements for outbound inspection, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Requirements
-     * for using SSL/TLS certificates with TLS inspection configurations</a> in the
-     * <i>Network Firewall Developer Guide</i>. </p> <p>For information about working
-     * with certificates in ACM, see <a
+     * Private Certificate Authority.</p> </li> </ul> <p>For more information about
+     * configuring certificates for outbound inspection, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Using
+     * SSL/TLS certificates with certificates with TLS inspection configurations</a> in
+     * the <i>Network Firewall Developer Guide</i>. </p> <p>For information about
+     * working with certificates in ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
      * certificates</a> in the <i>Certificate Manager User Guide</i>.</p>
      */
@@ -212,16 +204,16 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the imported certificate authority (CA)
-     * certificate configured in Certificate Manager (ACM) to use for outbound SSL/TLS
+     * certificate within Certificate Manager (ACM) to use for outbound SSL/TLS
      * inspection.</p> <p>The following limitations apply:</p> <ul> <li> <p>You can use
      * CA certificates that you imported into ACM, but you can't generate CA
      * certificates with ACM.</p> </li> <li> <p>You can't use certificates issued by
-     * Private Certificate Authority.</p> </li> </ul> <p>For more information about the
-     * certificate requirements for outbound inspection, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Requirements
-     * for using SSL/TLS certificates with TLS inspection configurations</a> in the
-     * <i>Network Firewall Developer Guide</i>. </p> <p>For information about working
-     * with certificates in ACM, see <a
+     * Private Certificate Authority.</p> </li> </ul> <p>For more information about
+     * configuring certificates for outbound inspection, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Using
+     * SSL/TLS certificates with certificates with TLS inspection configurations</a> in
+     * the <i>Network Firewall Developer Guide</i>. </p> <p>For information about
+     * working with certificates in ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
      * certificates</a> in the <i>Certificate Manager User Guide</i>.</p>
      */
@@ -229,16 +221,16 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the imported certificate authority (CA)
-     * certificate configured in Certificate Manager (ACM) to use for outbound SSL/TLS
+     * certificate within Certificate Manager (ACM) to use for outbound SSL/TLS
      * inspection.</p> <p>The following limitations apply:</p> <ul> <li> <p>You can use
      * CA certificates that you imported into ACM, but you can't generate CA
      * certificates with ACM.</p> </li> <li> <p>You can't use certificates issued by
-     * Private Certificate Authority.</p> </li> </ul> <p>For more information about the
-     * certificate requirements for outbound inspection, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Requirements
-     * for using SSL/TLS certificates with TLS inspection configurations</a> in the
-     * <i>Network Firewall Developer Guide</i>. </p> <p>For information about working
-     * with certificates in ACM, see <a
+     * Private Certificate Authority.</p> </li> </ul> <p>For more information about
+     * configuring certificates for outbound inspection, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Using
+     * SSL/TLS certificates with certificates with TLS inspection configurations</a> in
+     * the <i>Network Firewall Developer Guide</i>. </p> <p>For information about
+     * working with certificates in ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
      * certificates</a> in the <i>Certificate Manager User Guide</i>.</p>
      */
@@ -246,16 +238,16 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the imported certificate authority (CA)
-     * certificate configured in Certificate Manager (ACM) to use for outbound SSL/TLS
+     * certificate within Certificate Manager (ACM) to use for outbound SSL/TLS
      * inspection.</p> <p>The following limitations apply:</p> <ul> <li> <p>You can use
      * CA certificates that you imported into ACM, but you can't generate CA
      * certificates with ACM.</p> </li> <li> <p>You can't use certificates issued by
-     * Private Certificate Authority.</p> </li> </ul> <p>For more information about the
-     * certificate requirements for outbound inspection, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Requirements
-     * for using SSL/TLS certificates with TLS inspection configurations</a> in the
-     * <i>Network Firewall Developer Guide</i>. </p> <p>For information about working
-     * with certificates in ACM, see <a
+     * Private Certificate Authority.</p> </li> </ul> <p>For more information about
+     * configuring certificates for outbound inspection, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Using
+     * SSL/TLS certificates with certificates with TLS inspection configurations</a> in
+     * the <i>Network Firewall Developer Guide</i>. </p> <p>For information about
+     * working with certificates in ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
      * certificates</a> in the <i>Certificate Manager User Guide</i>.</p>
      */
@@ -263,16 +255,16 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the imported certificate authority (CA)
-     * certificate configured in Certificate Manager (ACM) to use for outbound SSL/TLS
+     * certificate within Certificate Manager (ACM) to use for outbound SSL/TLS
      * inspection.</p> <p>The following limitations apply:</p> <ul> <li> <p>You can use
      * CA certificates that you imported into ACM, but you can't generate CA
      * certificates with ACM.</p> </li> <li> <p>You can't use certificates issued by
-     * Private Certificate Authority.</p> </li> </ul> <p>For more information about the
-     * certificate requirements for outbound inspection, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Requirements
-     * for using SSL/TLS certificates with TLS inspection configurations</a> in the
-     * <i>Network Firewall Developer Guide</i>. </p> <p>For information about working
-     * with certificates in ACM, see <a
+     * Private Certificate Authority.</p> </li> </ul> <p>For more information about
+     * configuring certificates for outbound inspection, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Using
+     * SSL/TLS certificates with certificates with TLS inspection configurations</a> in
+     * the <i>Network Firewall Developer Guide</i>. </p> <p>For information about
+     * working with certificates in ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
      * certificates</a> in the <i>Certificate Manager User Guide</i>.</p>
      */
@@ -283,8 +275,8 @@ namespace Model
      * <p>When enabled, Network Firewall checks if the server certificate presented by
      * the server in the SSL/TLS connection has a revoked or unkown status. If the
      * certificate has an unknown or revoked status, you must specify the actions that
-     * Network Firewall takes on outbound traffic. To use this option, you must specify
-     * a <code>CertificateAuthorityArn</code> in
+     * Network Firewall takes on outbound traffic. To check the certificate revocation
+     * status, you must also specify a <code>CertificateAuthorityArn</code> in
      * <a>ServerCertificateConfiguration</a>.</p>
      */
     inline const CheckCertificateRevocationStatusActions& GetCheckCertificateRevocationStatus() const{ return m_checkCertificateRevocationStatus; }
@@ -293,8 +285,8 @@ namespace Model
      * <p>When enabled, Network Firewall checks if the server certificate presented by
      * the server in the SSL/TLS connection has a revoked or unkown status. If the
      * certificate has an unknown or revoked status, you must specify the actions that
-     * Network Firewall takes on outbound traffic. To use this option, you must specify
-     * a <code>CertificateAuthorityArn</code> in
+     * Network Firewall takes on outbound traffic. To check the certificate revocation
+     * status, you must also specify a <code>CertificateAuthorityArn</code> in
      * <a>ServerCertificateConfiguration</a>.</p>
      */
     inline bool CheckCertificateRevocationStatusHasBeenSet() const { return m_checkCertificateRevocationStatusHasBeenSet; }
@@ -303,8 +295,8 @@ namespace Model
      * <p>When enabled, Network Firewall checks if the server certificate presented by
      * the server in the SSL/TLS connection has a revoked or unkown status. If the
      * certificate has an unknown or revoked status, you must specify the actions that
-     * Network Firewall takes on outbound traffic. To use this option, you must specify
-     * a <code>CertificateAuthorityArn</code> in
+     * Network Firewall takes on outbound traffic. To check the certificate revocation
+     * status, you must also specify a <code>CertificateAuthorityArn</code> in
      * <a>ServerCertificateConfiguration</a>.</p>
      */
     inline void SetCheckCertificateRevocationStatus(const CheckCertificateRevocationStatusActions& value) { m_checkCertificateRevocationStatusHasBeenSet = true; m_checkCertificateRevocationStatus = value; }
@@ -313,8 +305,8 @@ namespace Model
      * <p>When enabled, Network Firewall checks if the server certificate presented by
      * the server in the SSL/TLS connection has a revoked or unkown status. If the
      * certificate has an unknown or revoked status, you must specify the actions that
-     * Network Firewall takes on outbound traffic. To use this option, you must specify
-     * a <code>CertificateAuthorityArn</code> in
+     * Network Firewall takes on outbound traffic. To check the certificate revocation
+     * status, you must also specify a <code>CertificateAuthorityArn</code> in
      * <a>ServerCertificateConfiguration</a>.</p>
      */
     inline void SetCheckCertificateRevocationStatus(CheckCertificateRevocationStatusActions&& value) { m_checkCertificateRevocationStatusHasBeenSet = true; m_checkCertificateRevocationStatus = std::move(value); }
@@ -323,8 +315,8 @@ namespace Model
      * <p>When enabled, Network Firewall checks if the server certificate presented by
      * the server in the SSL/TLS connection has a revoked or unkown status. If the
      * certificate has an unknown or revoked status, you must specify the actions that
-     * Network Firewall takes on outbound traffic. To use this option, you must specify
-     * a <code>CertificateAuthorityArn</code> in
+     * Network Firewall takes on outbound traffic. To check the certificate revocation
+     * status, you must also specify a <code>CertificateAuthorityArn</code> in
      * <a>ServerCertificateConfiguration</a>.</p>
      */
     inline ServerCertificateConfiguration& WithCheckCertificateRevocationStatus(const CheckCertificateRevocationStatusActions& value) { SetCheckCertificateRevocationStatus(value); return *this;}
@@ -333,8 +325,8 @@ namespace Model
      * <p>When enabled, Network Firewall checks if the server certificate presented by
      * the server in the SSL/TLS connection has a revoked or unkown status. If the
      * certificate has an unknown or revoked status, you must specify the actions that
-     * Network Firewall takes on outbound traffic. To use this option, you must specify
-     * a <code>CertificateAuthorityArn</code> in
+     * Network Firewall takes on outbound traffic. To check the certificate revocation
+     * status, you must also specify a <code>CertificateAuthorityArn</code> in
      * <a>ServerCertificateConfiguration</a>.</p>
      */
     inline ServerCertificateConfiguration& WithCheckCertificateRevocationStatus(CheckCertificateRevocationStatusActions&& value) { SetCheckCertificateRevocationStatus(std::move(value)); return *this;}

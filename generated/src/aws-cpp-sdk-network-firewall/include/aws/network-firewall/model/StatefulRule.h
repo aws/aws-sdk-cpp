@@ -54,12 +54,12 @@ namespace Model
      * intended destination.</p> </li> <li> <p> <b>DROP</b> - Blocks the packets from
      * going to the intended destination and sends an alert log message, if alert
      * logging is configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p>
-     * </li> <li> <p> <b>ALERT</b> - Permits the packets to go to the intended
-     * destination and sends an alert log message, if alert logging is configured in
-     * the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can use this action
-     * to test a rule that you intend to use to drop traffic. You can enable the rule
-     * with <code>ALERT</code> action, verify in the logs that the rule is filtering as
-     * you want, then change the action to <code>DROP</code>.</p> </li> </ul>
+     * </li> <li> <p> <b>ALERT</b> - Sends an alert log message, if alert logging is
+     * configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can
+     * use this action to test a rule that you intend to use to drop traffic. You can
+     * enable the rule with <code>ALERT</code> action, verify in the logs that the rule
+     * is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
+     * </ul>
      */
     inline const StatefulAction& GetAction() const{ return m_action; }
 
@@ -72,12 +72,12 @@ namespace Model
      * intended destination.</p> </li> <li> <p> <b>DROP</b> - Blocks the packets from
      * going to the intended destination and sends an alert log message, if alert
      * logging is configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p>
-     * </li> <li> <p> <b>ALERT</b> - Permits the packets to go to the intended
-     * destination and sends an alert log message, if alert logging is configured in
-     * the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can use this action
-     * to test a rule that you intend to use to drop traffic. You can enable the rule
-     * with <code>ALERT</code> action, verify in the logs that the rule is filtering as
-     * you want, then change the action to <code>DROP</code>.</p> </li> </ul>
+     * </li> <li> <p> <b>ALERT</b> - Sends an alert log message, if alert logging is
+     * configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can
+     * use this action to test a rule that you intend to use to drop traffic. You can
+     * enable the rule with <code>ALERT</code> action, verify in the logs that the rule
+     * is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
+     * </ul>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
@@ -90,12 +90,12 @@ namespace Model
      * intended destination.</p> </li> <li> <p> <b>DROP</b> - Blocks the packets from
      * going to the intended destination and sends an alert log message, if alert
      * logging is configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p>
-     * </li> <li> <p> <b>ALERT</b> - Permits the packets to go to the intended
-     * destination and sends an alert log message, if alert logging is configured in
-     * the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can use this action
-     * to test a rule that you intend to use to drop traffic. You can enable the rule
-     * with <code>ALERT</code> action, verify in the logs that the rule is filtering as
-     * you want, then change the action to <code>DROP</code>.</p> </li> </ul>
+     * </li> <li> <p> <b>ALERT</b> - Sends an alert log message, if alert logging is
+     * configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can
+     * use this action to test a rule that you intend to use to drop traffic. You can
+     * enable the rule with <code>ALERT</code> action, verify in the logs that the rule
+     * is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
+     * </ul>
      */
     inline void SetAction(const StatefulAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
@@ -108,12 +108,12 @@ namespace Model
      * intended destination.</p> </li> <li> <p> <b>DROP</b> - Blocks the packets from
      * going to the intended destination and sends an alert log message, if alert
      * logging is configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p>
-     * </li> <li> <p> <b>ALERT</b> - Permits the packets to go to the intended
-     * destination and sends an alert log message, if alert logging is configured in
-     * the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can use this action
-     * to test a rule that you intend to use to drop traffic. You can enable the rule
-     * with <code>ALERT</code> action, verify in the logs that the rule is filtering as
-     * you want, then change the action to <code>DROP</code>.</p> </li> </ul>
+     * </li> <li> <p> <b>ALERT</b> - Sends an alert log message, if alert logging is
+     * configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can
+     * use this action to test a rule that you intend to use to drop traffic. You can
+     * enable the rule with <code>ALERT</code> action, verify in the logs that the rule
+     * is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
+     * </ul>
      */
     inline void SetAction(StatefulAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
@@ -126,12 +126,12 @@ namespace Model
      * intended destination.</p> </li> <li> <p> <b>DROP</b> - Blocks the packets from
      * going to the intended destination and sends an alert log message, if alert
      * logging is configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p>
-     * </li> <li> <p> <b>ALERT</b> - Permits the packets to go to the intended
-     * destination and sends an alert log message, if alert logging is configured in
-     * the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can use this action
-     * to test a rule that you intend to use to drop traffic. You can enable the rule
-     * with <code>ALERT</code> action, verify in the logs that the rule is filtering as
-     * you want, then change the action to <code>DROP</code>.</p> </li> </ul>
+     * </li> <li> <p> <b>ALERT</b> - Sends an alert log message, if alert logging is
+     * configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can
+     * use this action to test a rule that you intend to use to drop traffic. You can
+     * enable the rule with <code>ALERT</code> action, verify in the logs that the rule
+     * is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
+     * </ul>
      */
     inline StatefulRule& WithAction(const StatefulAction& value) { SetAction(value); return *this;}
 
@@ -144,12 +144,12 @@ namespace Model
      * intended destination.</p> </li> <li> <p> <b>DROP</b> - Blocks the packets from
      * going to the intended destination and sends an alert log message, if alert
      * logging is configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p>
-     * </li> <li> <p> <b>ALERT</b> - Permits the packets to go to the intended
-     * destination and sends an alert log message, if alert logging is configured in
-     * the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can use this action
-     * to test a rule that you intend to use to drop traffic. You can enable the rule
-     * with <code>ALERT</code> action, verify in the logs that the rule is filtering as
-     * you want, then change the action to <code>DROP</code>.</p> </li> </ul>
+     * </li> <li> <p> <b>ALERT</b> - Sends an alert log message, if alert logging is
+     * configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can
+     * use this action to test a rule that you intend to use to drop traffic. You can
+     * enable the rule with <code>ALERT</code> action, verify in the logs that the rule
+     * is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
+     * </ul>
      */
     inline StatefulRule& WithAction(StatefulAction&& value) { SetAction(std::move(value)); return *this;}
 

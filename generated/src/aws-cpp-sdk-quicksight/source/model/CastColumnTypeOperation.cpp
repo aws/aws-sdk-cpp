@@ -22,6 +22,8 @@ CastColumnTypeOperation::CastColumnTypeOperation() :
     m_columnNameHasBeenSet(false),
     m_newColumnType(ColumnDataType::NOT_SET),
     m_newColumnTypeHasBeenSet(false),
+    m_subType(ColumnDataSubType::NOT_SET),
+    m_subTypeHasBeenSet(false),
     m_formatHasBeenSet(false)
 {
 }
@@ -30,6 +32,8 @@ CastColumnTypeOperation::CastColumnTypeOperation(JsonView jsonValue) :
     m_columnNameHasBeenSet(false),
     m_newColumnType(ColumnDataType::NOT_SET),
     m_newColumnTypeHasBeenSet(false),
+    m_subType(ColumnDataSubType::NOT_SET),
+    m_subTypeHasBeenSet(false),
     m_formatHasBeenSet(false)
 {
   *this = jsonValue;
@@ -49,6 +53,13 @@ CastColumnTypeOperation& CastColumnTypeOperation::operator =(JsonView jsonValue)
     m_newColumnType = ColumnDataTypeMapper::GetColumnDataTypeForName(jsonValue.GetString("NewColumnType"));
 
     m_newColumnTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SubType"))
+  {
+    m_subType = ColumnDataSubTypeMapper::GetColumnDataSubTypeForName(jsonValue.GetString("SubType"));
+
+    m_subTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Format"))
@@ -74,6 +85,11 @@ JsonValue CastColumnTypeOperation::Jsonize() const
   if(m_newColumnTypeHasBeenSet)
   {
    payload.WithString("NewColumnType", ColumnDataTypeMapper::GetNameForColumnDataType(m_newColumnType));
+  }
+
+  if(m_subTypeHasBeenSet)
+  {
+   payload.WithString("SubType", ColumnDataSubTypeMapper::GetNameForColumnDataSubType(m_subType));
   }
 
   if(m_formatHasBeenSet)

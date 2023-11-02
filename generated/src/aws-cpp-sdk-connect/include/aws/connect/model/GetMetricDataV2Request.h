@@ -843,9 +843,23 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>MAX_QUEUED_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
-     * Hierarchy</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>You can include up to 20
-     * SERVICE_LEVEL metrics in a request.</p> <p>Unit: Percent</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * Hierarchy</p> </dd> <dt>PERCENT_NON_TALK_TIME</dt> <dd> <p>This metric is
+     * available only for contacts analyzed by Contact Lens conversational
+     * analytics.</p> <p>Unit: Percentage</p> <p>Valid groupings and filters: Queue,
+     * Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
+     * <dt>PERCENT_TALK_TIME</dt> <dd> <p>This metric is available only for contacts
+     * analyzed by Contact Lens conversational analytics.</p> <p>Unit: Percentage</p>
+     * <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
+     * Hierarchy</p> </dd> <dt>PERCENT_TALK_TIME_AGENT</dt> <dd> <p>This metric is
+     * available only for contacts analyzed by Contact Lens conversational
+     * analytics.</p> <p>Unit: Percentage</p> <p>Valid groupings and filters: Queue,
+     * Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
+     * <dt>PERCENT_TALK_TIME_CUSTOMER</dt> <dd> <p>This metric is available only for
+     * contacts analyzed by Contact Lens conversational analytics.</p> <p>Unit:
+     * Percentage</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
+     * Agent, Agent Hierarchy</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>You can include
+     * up to 20 SERVICE_LEVEL metrics in a request.</p> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
      * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
      * (inclusive), in seconds. For <code>Comparison</code>, you must enter
      * <code>LT</code> (for "Less than"). </p> </dd>
@@ -986,9 +1000,23 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>MAX_QUEUED_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
-     * Hierarchy</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>You can include up to 20
-     * SERVICE_LEVEL metrics in a request.</p> <p>Unit: Percent</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * Hierarchy</p> </dd> <dt>PERCENT_NON_TALK_TIME</dt> <dd> <p>This metric is
+     * available only for contacts analyzed by Contact Lens conversational
+     * analytics.</p> <p>Unit: Percentage</p> <p>Valid groupings and filters: Queue,
+     * Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
+     * <dt>PERCENT_TALK_TIME</dt> <dd> <p>This metric is available only for contacts
+     * analyzed by Contact Lens conversational analytics.</p> <p>Unit: Percentage</p>
+     * <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
+     * Hierarchy</p> </dd> <dt>PERCENT_TALK_TIME_AGENT</dt> <dd> <p>This metric is
+     * available only for contacts analyzed by Contact Lens conversational
+     * analytics.</p> <p>Unit: Percentage</p> <p>Valid groupings and filters: Queue,
+     * Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
+     * <dt>PERCENT_TALK_TIME_CUSTOMER</dt> <dd> <p>This metric is available only for
+     * contacts analyzed by Contact Lens conversational analytics.</p> <p>Unit:
+     * Percentage</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
+     * Agent, Agent Hierarchy</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>You can include
+     * up to 20 SERVICE_LEVEL metrics in a request.</p> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
      * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
      * (inclusive), in seconds. For <code>Comparison</code>, you must enter
      * <code>LT</code> (for "Less than"). </p> </dd>
@@ -1129,9 +1157,23 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>MAX_QUEUED_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
-     * Hierarchy</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>You can include up to 20
-     * SERVICE_LEVEL metrics in a request.</p> <p>Unit: Percent</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * Hierarchy</p> </dd> <dt>PERCENT_NON_TALK_TIME</dt> <dd> <p>This metric is
+     * available only for contacts analyzed by Contact Lens conversational
+     * analytics.</p> <p>Unit: Percentage</p> <p>Valid groupings and filters: Queue,
+     * Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
+     * <dt>PERCENT_TALK_TIME</dt> <dd> <p>This metric is available only for contacts
+     * analyzed by Contact Lens conversational analytics.</p> <p>Unit: Percentage</p>
+     * <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
+     * Hierarchy</p> </dd> <dt>PERCENT_TALK_TIME_AGENT</dt> <dd> <p>This metric is
+     * available only for contacts analyzed by Contact Lens conversational
+     * analytics.</p> <p>Unit: Percentage</p> <p>Valid groupings and filters: Queue,
+     * Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
+     * <dt>PERCENT_TALK_TIME_CUSTOMER</dt> <dd> <p>This metric is available only for
+     * contacts analyzed by Contact Lens conversational analytics.</p> <p>Unit:
+     * Percentage</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
+     * Agent, Agent Hierarchy</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>You can include
+     * up to 20 SERVICE_LEVEL metrics in a request.</p> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
      * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
      * (inclusive), in seconds. For <code>Comparison</code>, you must enter
      * <code>LT</code> (for "Less than"). </p> </dd>
@@ -1272,9 +1314,23 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>MAX_QUEUED_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
-     * Hierarchy</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>You can include up to 20
-     * SERVICE_LEVEL metrics in a request.</p> <p>Unit: Percent</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * Hierarchy</p> </dd> <dt>PERCENT_NON_TALK_TIME</dt> <dd> <p>This metric is
+     * available only for contacts analyzed by Contact Lens conversational
+     * analytics.</p> <p>Unit: Percentage</p> <p>Valid groupings and filters: Queue,
+     * Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
+     * <dt>PERCENT_TALK_TIME</dt> <dd> <p>This metric is available only for contacts
+     * analyzed by Contact Lens conversational analytics.</p> <p>Unit: Percentage</p>
+     * <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
+     * Hierarchy</p> </dd> <dt>PERCENT_TALK_TIME_AGENT</dt> <dd> <p>This metric is
+     * available only for contacts analyzed by Contact Lens conversational
+     * analytics.</p> <p>Unit: Percentage</p> <p>Valid groupings and filters: Queue,
+     * Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
+     * <dt>PERCENT_TALK_TIME_CUSTOMER</dt> <dd> <p>This metric is available only for
+     * contacts analyzed by Contact Lens conversational analytics.</p> <p>Unit:
+     * Percentage</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
+     * Agent, Agent Hierarchy</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>You can include
+     * up to 20 SERVICE_LEVEL metrics in a request.</p> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
      * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
      * (inclusive), in seconds. For <code>Comparison</code>, you must enter
      * <code>LT</code> (for "Less than"). </p> </dd>
@@ -1415,9 +1471,23 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>MAX_QUEUED_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
-     * Hierarchy</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>You can include up to 20
-     * SERVICE_LEVEL metrics in a request.</p> <p>Unit: Percent</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * Hierarchy</p> </dd> <dt>PERCENT_NON_TALK_TIME</dt> <dd> <p>This metric is
+     * available only for contacts analyzed by Contact Lens conversational
+     * analytics.</p> <p>Unit: Percentage</p> <p>Valid groupings and filters: Queue,
+     * Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
+     * <dt>PERCENT_TALK_TIME</dt> <dd> <p>This metric is available only for contacts
+     * analyzed by Contact Lens conversational analytics.</p> <p>Unit: Percentage</p>
+     * <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
+     * Hierarchy</p> </dd> <dt>PERCENT_TALK_TIME_AGENT</dt> <dd> <p>This metric is
+     * available only for contacts analyzed by Contact Lens conversational
+     * analytics.</p> <p>Unit: Percentage</p> <p>Valid groupings and filters: Queue,
+     * Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
+     * <dt>PERCENT_TALK_TIME_CUSTOMER</dt> <dd> <p>This metric is available only for
+     * contacts analyzed by Contact Lens conversational analytics.</p> <p>Unit:
+     * Percentage</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
+     * Agent, Agent Hierarchy</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>You can include
+     * up to 20 SERVICE_LEVEL metrics in a request.</p> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
      * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
      * (inclusive), in seconds. For <code>Comparison</code>, you must enter
      * <code>LT</code> (for "Less than"). </p> </dd>
@@ -1558,9 +1628,23 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>MAX_QUEUED_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
-     * Hierarchy</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>You can include up to 20
-     * SERVICE_LEVEL metrics in a request.</p> <p>Unit: Percent</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * Hierarchy</p> </dd> <dt>PERCENT_NON_TALK_TIME</dt> <dd> <p>This metric is
+     * available only for contacts analyzed by Contact Lens conversational
+     * analytics.</p> <p>Unit: Percentage</p> <p>Valid groupings and filters: Queue,
+     * Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
+     * <dt>PERCENT_TALK_TIME</dt> <dd> <p>This metric is available only for contacts
+     * analyzed by Contact Lens conversational analytics.</p> <p>Unit: Percentage</p>
+     * <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
+     * Hierarchy</p> </dd> <dt>PERCENT_TALK_TIME_AGENT</dt> <dd> <p>This metric is
+     * available only for contacts analyzed by Contact Lens conversational
+     * analytics.</p> <p>Unit: Percentage</p> <p>Valid groupings and filters: Queue,
+     * Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
+     * <dt>PERCENT_TALK_TIME_CUSTOMER</dt> <dd> <p>This metric is available only for
+     * contacts analyzed by Contact Lens conversational analytics.</p> <p>Unit:
+     * Percentage</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
+     * Agent, Agent Hierarchy</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>You can include
+     * up to 20 SERVICE_LEVEL metrics in a request.</p> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
      * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
      * (inclusive), in seconds. For <code>Comparison</code>, you must enter
      * <code>LT</code> (for "Less than"). </p> </dd>
@@ -1701,9 +1785,23 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>MAX_QUEUED_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
-     * Hierarchy</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>You can include up to 20
-     * SERVICE_LEVEL metrics in a request.</p> <p>Unit: Percent</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * Hierarchy</p> </dd> <dt>PERCENT_NON_TALK_TIME</dt> <dd> <p>This metric is
+     * available only for contacts analyzed by Contact Lens conversational
+     * analytics.</p> <p>Unit: Percentage</p> <p>Valid groupings and filters: Queue,
+     * Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
+     * <dt>PERCENT_TALK_TIME</dt> <dd> <p>This metric is available only for contacts
+     * analyzed by Contact Lens conversational analytics.</p> <p>Unit: Percentage</p>
+     * <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
+     * Hierarchy</p> </dd> <dt>PERCENT_TALK_TIME_AGENT</dt> <dd> <p>This metric is
+     * available only for contacts analyzed by Contact Lens conversational
+     * analytics.</p> <p>Unit: Percentage</p> <p>Valid groupings and filters: Queue,
+     * Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
+     * <dt>PERCENT_TALK_TIME_CUSTOMER</dt> <dd> <p>This metric is available only for
+     * contacts analyzed by Contact Lens conversational analytics.</p> <p>Unit:
+     * Percentage</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
+     * Agent, Agent Hierarchy</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>You can include
+     * up to 20 SERVICE_LEVEL metrics in a request.</p> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
      * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
      * (inclusive), in seconds. For <code>Comparison</code>, you must enter
      * <code>LT</code> (for "Less than"). </p> </dd>
@@ -1844,9 +1942,23 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>MAX_QUEUED_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
-     * Hierarchy</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>You can include up to 20
-     * SERVICE_LEVEL metrics in a request.</p> <p>Unit: Percent</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * Hierarchy</p> </dd> <dt>PERCENT_NON_TALK_TIME</dt> <dd> <p>This metric is
+     * available only for contacts analyzed by Contact Lens conversational
+     * analytics.</p> <p>Unit: Percentage</p> <p>Valid groupings and filters: Queue,
+     * Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
+     * <dt>PERCENT_TALK_TIME</dt> <dd> <p>This metric is available only for contacts
+     * analyzed by Contact Lens conversational analytics.</p> <p>Unit: Percentage</p>
+     * <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
+     * Hierarchy</p> </dd> <dt>PERCENT_TALK_TIME_AGENT</dt> <dd> <p>This metric is
+     * available only for contacts analyzed by Contact Lens conversational
+     * analytics.</p> <p>Unit: Percentage</p> <p>Valid groupings and filters: Queue,
+     * Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
+     * <dt>PERCENT_TALK_TIME_CUSTOMER</dt> <dd> <p>This metric is available only for
+     * contacts analyzed by Contact Lens conversational analytics.</p> <p>Unit:
+     * Percentage</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
+     * Agent, Agent Hierarchy</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>You can include
+     * up to 20 SERVICE_LEVEL metrics in a request.</p> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
      * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
      * (inclusive), in seconds. For <code>Comparison</code>, you must enter
      * <code>LT</code> (for "Less than"). </p> </dd>

@@ -151,42 +151,60 @@ namespace Model
     /**
      * <p>Additional options governing how Network Firewall handles stateful rules. The
      * policies where you use your stateful rule group must have stateful rule options
-     * settings that are compatible with these settings.</p>
+     * settings that are compatible with these settings. Some limitations apply; for
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict
+     * evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
      */
     inline const StatefulRuleOptions& GetStatefulRuleOptions() const{ return m_statefulRuleOptions; }
 
     /**
      * <p>Additional options governing how Network Firewall handles stateful rules. The
      * policies where you use your stateful rule group must have stateful rule options
-     * settings that are compatible with these settings.</p>
+     * settings that are compatible with these settings. Some limitations apply; for
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict
+     * evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
      */
     inline bool StatefulRuleOptionsHasBeenSet() const { return m_statefulRuleOptionsHasBeenSet; }
 
     /**
      * <p>Additional options governing how Network Firewall handles stateful rules. The
      * policies where you use your stateful rule group must have stateful rule options
-     * settings that are compatible with these settings.</p>
+     * settings that are compatible with these settings. Some limitations apply; for
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict
+     * evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
      */
     inline void SetStatefulRuleOptions(const StatefulRuleOptions& value) { m_statefulRuleOptionsHasBeenSet = true; m_statefulRuleOptions = value; }
 
     /**
      * <p>Additional options governing how Network Firewall handles stateful rules. The
      * policies where you use your stateful rule group must have stateful rule options
-     * settings that are compatible with these settings.</p>
+     * settings that are compatible with these settings. Some limitations apply; for
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict
+     * evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
      */
     inline void SetStatefulRuleOptions(StatefulRuleOptions&& value) { m_statefulRuleOptionsHasBeenSet = true; m_statefulRuleOptions = std::move(value); }
 
     /**
      * <p>Additional options governing how Network Firewall handles stateful rules. The
      * policies where you use your stateful rule group must have stateful rule options
-     * settings that are compatible with these settings.</p>
+     * settings that are compatible with these settings. Some limitations apply; for
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict
+     * evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
      */
     inline RuleGroup& WithStatefulRuleOptions(const StatefulRuleOptions& value) { SetStatefulRuleOptions(value); return *this;}
 
     /**
      * <p>Additional options governing how Network Firewall handles stateful rules. The
      * policies where you use your stateful rule group must have stateful rule options
-     * settings that are compatible with these settings.</p>
+     * settings that are compatible with these settings. Some limitations apply; for
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict
+     * evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
      */
     inline RuleGroup& WithStatefulRuleOptions(StatefulRuleOptions&& value) { SetStatefulRuleOptions(std::move(value)); return *this;}
 
