@@ -334,7 +334,15 @@ namespace GameLift
          * successful, this operation creates a new Fleet resource and places it in
          * <code>NEW</code> status, which prompts Amazon GameLift to initiate the <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-all.html#fleets-creation-workflow">fleet
-         * creation workflow</a>.</p> <p> <b>Learn more</b> </p> <p> <a
+         * creation workflow</a>. You can track fleet creation by checking fleet status
+         * using <a>DescribeFleetAttributes</a> and
+         * <a>DescribeFleetLocationAttributes</a>/, or by monitoring fleet creation events
+         * using <a>DescribeFleetEvents</a>. </p> <p>When the fleet status changes to
+         * <code>ACTIVE</code>, you can enable automatic scaling with
+         * <a>PutScalingPolicy</a> and set capacity for the home Region with
+         * <a>UpdateFleetCapacity</a>. When the status of each remote location reaches
+         * <code>ACTIVE</code>, you can set capacity by location using
+         * <a>UpdateFleetCapacity</a>.</p> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up fleets</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">Debug
@@ -1142,7 +1150,7 @@ namespace GameLift
         /**
          * <p>Deletes a custom location.</p> <p>Before deleting a custom location, review
          * any fleets currently using the custom location and deregister the location if it
-         * is in use. For more information see, <a
+         * is in use. For more information, see <a
          * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeregisterCompute.html">DeregisterCompute</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteLocation">AWS

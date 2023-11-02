@@ -44,11 +44,11 @@ namespace Model
      * certificate presented by the server in the SSL/TLS connection has a revoked
      * status.</p> <ul> <li> <p> <b>PASS</b> - Allow the connection to continue, and
      * pass subsequent packets to the stateful engine for inspection.</p> </li> <li>
-     * <p> <b>DROP</b> - Network Firewall fails closed and drops all subsequent
-     * traffic.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject
-     * packet back to your client so that the client can immediately establish a new
-     * session. Network Firewall then fails closed and drops all subsequent traffic.
-     * <code>REJECT</code> is available only for TCP traffic.</p> </li> </ul>
+     * <p> <b>DROP</b> - Network Firewall closes the connection and drops subsequent
+     * packets for that connection.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall
+     * sends a TCP reject packet back to your client. The service closes the connection
+     * and drops subsequent packets for that connection. <code>REJECT</code> is
+     * available only for TCP traffic.</p> </li> </ul>
      */
     inline const RevocationCheckAction& GetRevokedStatusAction() const{ return m_revokedStatusAction; }
 
@@ -57,11 +57,11 @@ namespace Model
      * certificate presented by the server in the SSL/TLS connection has a revoked
      * status.</p> <ul> <li> <p> <b>PASS</b> - Allow the connection to continue, and
      * pass subsequent packets to the stateful engine for inspection.</p> </li> <li>
-     * <p> <b>DROP</b> - Network Firewall fails closed and drops all subsequent
-     * traffic.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject
-     * packet back to your client so that the client can immediately establish a new
-     * session. Network Firewall then fails closed and drops all subsequent traffic.
-     * <code>REJECT</code> is available only for TCP traffic.</p> </li> </ul>
+     * <p> <b>DROP</b> - Network Firewall closes the connection and drops subsequent
+     * packets for that connection.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall
+     * sends a TCP reject packet back to your client. The service closes the connection
+     * and drops subsequent packets for that connection. <code>REJECT</code> is
+     * available only for TCP traffic.</p> </li> </ul>
      */
     inline bool RevokedStatusActionHasBeenSet() const { return m_revokedStatusActionHasBeenSet; }
 
@@ -70,11 +70,11 @@ namespace Model
      * certificate presented by the server in the SSL/TLS connection has a revoked
      * status.</p> <ul> <li> <p> <b>PASS</b> - Allow the connection to continue, and
      * pass subsequent packets to the stateful engine for inspection.</p> </li> <li>
-     * <p> <b>DROP</b> - Network Firewall fails closed and drops all subsequent
-     * traffic.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject
-     * packet back to your client so that the client can immediately establish a new
-     * session. Network Firewall then fails closed and drops all subsequent traffic.
-     * <code>REJECT</code> is available only for TCP traffic.</p> </li> </ul>
+     * <p> <b>DROP</b> - Network Firewall closes the connection and drops subsequent
+     * packets for that connection.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall
+     * sends a TCP reject packet back to your client. The service closes the connection
+     * and drops subsequent packets for that connection. <code>REJECT</code> is
+     * available only for TCP traffic.</p> </li> </ul>
      */
     inline void SetRevokedStatusAction(const RevocationCheckAction& value) { m_revokedStatusActionHasBeenSet = true; m_revokedStatusAction = value; }
 
@@ -83,11 +83,11 @@ namespace Model
      * certificate presented by the server in the SSL/TLS connection has a revoked
      * status.</p> <ul> <li> <p> <b>PASS</b> - Allow the connection to continue, and
      * pass subsequent packets to the stateful engine for inspection.</p> </li> <li>
-     * <p> <b>DROP</b> - Network Firewall fails closed and drops all subsequent
-     * traffic.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject
-     * packet back to your client so that the client can immediately establish a new
-     * session. Network Firewall then fails closed and drops all subsequent traffic.
-     * <code>REJECT</code> is available only for TCP traffic.</p> </li> </ul>
+     * <p> <b>DROP</b> - Network Firewall closes the connection and drops subsequent
+     * packets for that connection.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall
+     * sends a TCP reject packet back to your client. The service closes the connection
+     * and drops subsequent packets for that connection. <code>REJECT</code> is
+     * available only for TCP traffic.</p> </li> </ul>
      */
     inline void SetRevokedStatusAction(RevocationCheckAction&& value) { m_revokedStatusActionHasBeenSet = true; m_revokedStatusAction = std::move(value); }
 
@@ -96,11 +96,11 @@ namespace Model
      * certificate presented by the server in the SSL/TLS connection has a revoked
      * status.</p> <ul> <li> <p> <b>PASS</b> - Allow the connection to continue, and
      * pass subsequent packets to the stateful engine for inspection.</p> </li> <li>
-     * <p> <b>DROP</b> - Network Firewall fails closed and drops all subsequent
-     * traffic.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject
-     * packet back to your client so that the client can immediately establish a new
-     * session. Network Firewall then fails closed and drops all subsequent traffic.
-     * <code>REJECT</code> is available only for TCP traffic.</p> </li> </ul>
+     * <p> <b>DROP</b> - Network Firewall closes the connection and drops subsequent
+     * packets for that connection.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall
+     * sends a TCP reject packet back to your client. The service closes the connection
+     * and drops subsequent packets for that connection. <code>REJECT</code> is
+     * available only for TCP traffic.</p> </li> </ul>
      */
     inline CheckCertificateRevocationStatusActions& WithRevokedStatusAction(const RevocationCheckAction& value) { SetRevokedStatusAction(value); return *this;}
 
@@ -109,11 +109,11 @@ namespace Model
      * certificate presented by the server in the SSL/TLS connection has a revoked
      * status.</p> <ul> <li> <p> <b>PASS</b> - Allow the connection to continue, and
      * pass subsequent packets to the stateful engine for inspection.</p> </li> <li>
-     * <p> <b>DROP</b> - Network Firewall fails closed and drops all subsequent
-     * traffic.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject
-     * packet back to your client so that the client can immediately establish a new
-     * session. Network Firewall then fails closed and drops all subsequent traffic.
-     * <code>REJECT</code> is available only for TCP traffic.</p> </li> </ul>
+     * <p> <b>DROP</b> - Network Firewall closes the connection and drops subsequent
+     * packets for that connection.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall
+     * sends a TCP reject packet back to your client. The service closes the connection
+     * and drops subsequent packets for that connection. <code>REJECT</code> is
+     * available only for TCP traffic.</p> </li> </ul>
      */
     inline CheckCertificateRevocationStatusActions& WithRevokedStatusAction(RevocationCheckAction&& value) { SetRevokedStatusAction(std::move(value)); return *this;}
 
@@ -125,11 +125,11 @@ namespace Model
      * when the service is unable to connect to the OCSP and CRL endpoints for the
      * certificate.</p> <ul> <li> <p> <b>PASS</b> - Allow the connection to continue,
      * and pass subsequent packets to the stateful engine for inspection.</p> </li>
-     * <li> <p> <b>DROP</b> - Network Firewall fails closed and drops all subsequent
-     * traffic.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject
-     * packet back to your client so that the client can immediately establish a new
-     * session. Network Firewall then fails closed and drops all subsequent traffic.
-     * <code>REJECT</code> is available only for TCP traffic. </p> </li> </ul>
+     * <li> <p> <b>DROP</b> - Network Firewall closes the connection and drops
+     * subsequent packets for that connection.</p> </li> <li> <p> <b>REJECT</b> -
+     * Network Firewall sends a TCP reject packet back to your client. The service
+     * closes the connection and drops subsequent packets for that connection.
+     * <code>REJECT</code> is available only for TCP traffic.</p> </li> </ul>
      */
     inline const RevocationCheckAction& GetUnknownStatusAction() const{ return m_unknownStatusAction; }
 
@@ -140,11 +140,11 @@ namespace Model
      * when the service is unable to connect to the OCSP and CRL endpoints for the
      * certificate.</p> <ul> <li> <p> <b>PASS</b> - Allow the connection to continue,
      * and pass subsequent packets to the stateful engine for inspection.</p> </li>
-     * <li> <p> <b>DROP</b> - Network Firewall fails closed and drops all subsequent
-     * traffic.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject
-     * packet back to your client so that the client can immediately establish a new
-     * session. Network Firewall then fails closed and drops all subsequent traffic.
-     * <code>REJECT</code> is available only for TCP traffic. </p> </li> </ul>
+     * <li> <p> <b>DROP</b> - Network Firewall closes the connection and drops
+     * subsequent packets for that connection.</p> </li> <li> <p> <b>REJECT</b> -
+     * Network Firewall sends a TCP reject packet back to your client. The service
+     * closes the connection and drops subsequent packets for that connection.
+     * <code>REJECT</code> is available only for TCP traffic.</p> </li> </ul>
      */
     inline bool UnknownStatusActionHasBeenSet() const { return m_unknownStatusActionHasBeenSet; }
 
@@ -155,11 +155,11 @@ namespace Model
      * when the service is unable to connect to the OCSP and CRL endpoints for the
      * certificate.</p> <ul> <li> <p> <b>PASS</b> - Allow the connection to continue,
      * and pass subsequent packets to the stateful engine for inspection.</p> </li>
-     * <li> <p> <b>DROP</b> - Network Firewall fails closed and drops all subsequent
-     * traffic.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject
-     * packet back to your client so that the client can immediately establish a new
-     * session. Network Firewall then fails closed and drops all subsequent traffic.
-     * <code>REJECT</code> is available only for TCP traffic. </p> </li> </ul>
+     * <li> <p> <b>DROP</b> - Network Firewall closes the connection and drops
+     * subsequent packets for that connection.</p> </li> <li> <p> <b>REJECT</b> -
+     * Network Firewall sends a TCP reject packet back to your client. The service
+     * closes the connection and drops subsequent packets for that connection.
+     * <code>REJECT</code> is available only for TCP traffic.</p> </li> </ul>
      */
     inline void SetUnknownStatusAction(const RevocationCheckAction& value) { m_unknownStatusActionHasBeenSet = true; m_unknownStatusAction = value; }
 
@@ -170,11 +170,11 @@ namespace Model
      * when the service is unable to connect to the OCSP and CRL endpoints for the
      * certificate.</p> <ul> <li> <p> <b>PASS</b> - Allow the connection to continue,
      * and pass subsequent packets to the stateful engine for inspection.</p> </li>
-     * <li> <p> <b>DROP</b> - Network Firewall fails closed and drops all subsequent
-     * traffic.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject
-     * packet back to your client so that the client can immediately establish a new
-     * session. Network Firewall then fails closed and drops all subsequent traffic.
-     * <code>REJECT</code> is available only for TCP traffic. </p> </li> </ul>
+     * <li> <p> <b>DROP</b> - Network Firewall closes the connection and drops
+     * subsequent packets for that connection.</p> </li> <li> <p> <b>REJECT</b> -
+     * Network Firewall sends a TCP reject packet back to your client. The service
+     * closes the connection and drops subsequent packets for that connection.
+     * <code>REJECT</code> is available only for TCP traffic.</p> </li> </ul>
      */
     inline void SetUnknownStatusAction(RevocationCheckAction&& value) { m_unknownStatusActionHasBeenSet = true; m_unknownStatusAction = std::move(value); }
 
@@ -185,11 +185,11 @@ namespace Model
      * when the service is unable to connect to the OCSP and CRL endpoints for the
      * certificate.</p> <ul> <li> <p> <b>PASS</b> - Allow the connection to continue,
      * and pass subsequent packets to the stateful engine for inspection.</p> </li>
-     * <li> <p> <b>DROP</b> - Network Firewall fails closed and drops all subsequent
-     * traffic.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject
-     * packet back to your client so that the client can immediately establish a new
-     * session. Network Firewall then fails closed and drops all subsequent traffic.
-     * <code>REJECT</code> is available only for TCP traffic. </p> </li> </ul>
+     * <li> <p> <b>DROP</b> - Network Firewall closes the connection and drops
+     * subsequent packets for that connection.</p> </li> <li> <p> <b>REJECT</b> -
+     * Network Firewall sends a TCP reject packet back to your client. The service
+     * closes the connection and drops subsequent packets for that connection.
+     * <code>REJECT</code> is available only for TCP traffic.</p> </li> </ul>
      */
     inline CheckCertificateRevocationStatusActions& WithUnknownStatusAction(const RevocationCheckAction& value) { SetUnknownStatusAction(value); return *this;}
 
@@ -200,11 +200,11 @@ namespace Model
      * when the service is unable to connect to the OCSP and CRL endpoints for the
      * certificate.</p> <ul> <li> <p> <b>PASS</b> - Allow the connection to continue,
      * and pass subsequent packets to the stateful engine for inspection.</p> </li>
-     * <li> <p> <b>DROP</b> - Network Firewall fails closed and drops all subsequent
-     * traffic.</p> </li> <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject
-     * packet back to your client so that the client can immediately establish a new
-     * session. Network Firewall then fails closed and drops all subsequent traffic.
-     * <code>REJECT</code> is available only for TCP traffic. </p> </li> </ul>
+     * <li> <p> <b>DROP</b> - Network Firewall closes the connection and drops
+     * subsequent packets for that connection.</p> </li> <li> <p> <b>REJECT</b> -
+     * Network Firewall sends a TCP reject packet back to your client. The service
+     * closes the connection and drops subsequent packets for that connection.
+     * <code>REJECT</code> is available only for TCP traffic.</p> </li> </ul>
      */
     inline CheckCertificateRevocationStatusActions& WithUnknownStatusAction(RevocationCheckAction&& value) { SetUnknownStatusAction(std::move(value)); return *this;}
 

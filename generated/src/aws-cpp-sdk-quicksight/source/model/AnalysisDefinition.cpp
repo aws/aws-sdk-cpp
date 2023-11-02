@@ -25,7 +25,8 @@ AnalysisDefinition::AnalysisDefinition() :
     m_parameterDeclarationsHasBeenSet(false),
     m_filterGroupsHasBeenSet(false),
     m_columnConfigurationsHasBeenSet(false),
-    m_analysisDefaultsHasBeenSet(false)
+    m_analysisDefaultsHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ AnalysisDefinition::AnalysisDefinition(JsonView jsonValue) :
     m_parameterDeclarationsHasBeenSet(false),
     m_filterGroupsHasBeenSet(false),
     m_columnConfigurationsHasBeenSet(false),
-    m_analysisDefaultsHasBeenSet(false)
+    m_analysisDefaultsHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -108,6 +110,13 @@ AnalysisDefinition& AnalysisDefinition::operator =(JsonView jsonValue)
     m_analysisDefaults = jsonValue.GetObject("AnalysisDefaults");
 
     m_analysisDefaultsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Options"))
+  {
+    m_options = jsonValue.GetObject("Options");
+
+    m_optionsHasBeenSet = true;
   }
 
   return *this;
@@ -186,6 +195,12 @@ JsonValue AnalysisDefinition::Jsonize() const
   if(m_analysisDefaultsHasBeenSet)
   {
    payload.WithObject("AnalysisDefaults", m_analysisDefaults.Jsonize());
+
+  }
+
+  if(m_optionsHasBeenSet)
+  {
+   payload.WithObject("Options", m_options.Jsonize());
 
   }
 

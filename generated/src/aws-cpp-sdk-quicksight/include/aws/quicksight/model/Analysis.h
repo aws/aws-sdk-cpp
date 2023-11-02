@@ -9,6 +9,7 @@
 #include <aws/quicksight/model/ResourceStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/quicksight/model/AssetOptions.h>
 #include <aws/quicksight/model/AnalysisError.h>
 #include <aws/quicksight/model/Sheet.h>
 #include <utility>
@@ -435,6 +436,25 @@ namespace Model
      */
     inline Analysis& AddSheets(Sheet&& value) { m_sheetsHasBeenSet = true; m_sheets.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const AssetOptions& GetOptions() const{ return m_options; }
+
+    
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    
+    inline void SetOptions(const AssetOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
+
+    
+    inline void SetOptions(AssetOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
+
+    
+    inline Analysis& WithOptions(const AssetOptions& value) { SetOptions(value); return *this;}
+
+    
+    inline Analysis& WithOptions(AssetOptions&& value) { SetOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_analysisId;
@@ -466,6 +486,9 @@ namespace Model
 
     Aws::Vector<Sheet> m_sheets;
     bool m_sheetsHasBeenSet = false;
+
+    AssetOptions m_options;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model
