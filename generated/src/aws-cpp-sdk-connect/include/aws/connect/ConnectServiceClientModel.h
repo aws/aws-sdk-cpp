@@ -33,6 +33,7 @@
 #include <aws/connect/model/CreateInstanceResult.h>
 #include <aws/connect/model/CreateIntegrationAssociationResult.h>
 #include <aws/connect/model/CreateParticipantResult.h>
+#include <aws/connect/model/CreatePersistentContactAssociationResult.h>
 #include <aws/connect/model/CreatePromptResult.h>
 #include <aws/connect/model/CreateQueueResult.h>
 #include <aws/connect/model/CreateQuickConnectResult.h>
@@ -234,6 +235,7 @@ namespace Aws
       class CreateInstanceRequest;
       class CreateIntegrationAssociationRequest;
       class CreateParticipantRequest;
+      class CreatePersistentContactAssociationRequest;
       class CreatePromptRequest;
       class CreateQueueRequest;
       class CreateQuickConnectRequest;
@@ -449,6 +451,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateInstanceResult, ConnectError> CreateInstanceOutcome;
       typedef Aws::Utils::Outcome<CreateIntegrationAssociationResult, ConnectError> CreateIntegrationAssociationOutcome;
       typedef Aws::Utils::Outcome<CreateParticipantResult, ConnectError> CreateParticipantOutcome;
+      typedef Aws::Utils::Outcome<CreatePersistentContactAssociationResult, ConnectError> CreatePersistentContactAssociationOutcome;
       typedef Aws::Utils::Outcome<CreatePromptResult, ConnectError> CreatePromptOutcome;
       typedef Aws::Utils::Outcome<CreateQueueResult, ConnectError> CreateQueueOutcome;
       typedef Aws::Utils::Outcome<CreateQuickConnectResult, ConnectError> CreateQuickConnectOutcome;
@@ -664,6 +667,7 @@ namespace Aws
       typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
       typedef std::future<CreateIntegrationAssociationOutcome> CreateIntegrationAssociationOutcomeCallable;
       typedef std::future<CreateParticipantOutcome> CreateParticipantOutcomeCallable;
+      typedef std::future<CreatePersistentContactAssociationOutcome> CreatePersistentContactAssociationOutcomeCallable;
       typedef std::future<CreatePromptOutcome> CreatePromptOutcomeCallable;
       typedef std::future<CreateQueueOutcome> CreateQueueOutcomeCallable;
       typedef std::future<CreateQuickConnectOutcome> CreateQuickConnectOutcomeCallable;
@@ -882,6 +886,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::CreateInstanceRequest&, const Model::CreateInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateIntegrationAssociationRequest&, const Model::CreateIntegrationAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIntegrationAssociationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateParticipantRequest&, const Model::CreateParticipantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateParticipantResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::CreatePersistentContactAssociationRequest&, const Model::CreatePersistentContactAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePersistentContactAssociationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreatePromptRequest&, const Model::CreatePromptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePromptResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateQueueRequest&, const Model::CreateQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQueueResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateQuickConnectRequest&, const Model::CreateQuickConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQuickConnectResponseReceivedHandler;

@@ -392,6 +392,23 @@ namespace Aws
         static const int AWS_CodeGuruProfiler_ProfilingGroup_HASH = HashingUtils::HashString("AWS::CodeGuruProfiler::ProfilingGroup");
         static const int AWS_Route53Resolver_ResolverQueryLoggingConfig_HASH = HashingUtils::HashString("AWS::Route53Resolver::ResolverQueryLoggingConfig");
         static const int AWS_Batch_SchedulingPolicy_HASH = HashingUtils::HashString("AWS::Batch::SchedulingPolicy");
+        static const int AWS_ACMPCA_CertificateAuthorityActivation_HASH = HashingUtils::HashString("AWS::ACMPCA::CertificateAuthorityActivation");
+        static const int AWS_AppMesh_GatewayRoute_HASH = HashingUtils::HashString("AWS::AppMesh::GatewayRoute");
+        static const int AWS_AppMesh_Mesh_HASH = HashingUtils::HashString("AWS::AppMesh::Mesh");
+        static const int AWS_Connect_Instance_HASH = HashingUtils::HashString("AWS::Connect::Instance");
+        static const int AWS_Connect_QuickConnect_HASH = HashingUtils::HashString("AWS::Connect::QuickConnect");
+        static const int AWS_EC2_CarrierGateway_HASH = HashingUtils::HashString("AWS::EC2::CarrierGateway");
+        static const int AWS_EC2_IPAMPool_HASH = HashingUtils::HashString("AWS::EC2::IPAMPool");
+        static const int AWS_EC2_TransitGatewayConnect_HASH = HashingUtils::HashString("AWS::EC2::TransitGatewayConnect");
+        static const int AWS_EC2_TransitGatewayMulticastDomain_HASH = HashingUtils::HashString("AWS::EC2::TransitGatewayMulticastDomain");
+        static const int AWS_ECS_CapacityProvider_HASH = HashingUtils::HashString("AWS::ECS::CapacityProvider");
+        static const int AWS_IAM_InstanceProfile_HASH = HashingUtils::HashString("AWS::IAM::InstanceProfile");
+        static const int AWS_IoT_CACertificate_HASH = HashingUtils::HashString("AWS::IoT::CACertificate");
+        static const int AWS_IoTTwinMaker_SyncJob_HASH = HashingUtils::HashString("AWS::IoTTwinMaker::SyncJob");
+        static const int AWS_KafkaConnect_Connector_HASH = HashingUtils::HashString("AWS::KafkaConnect::Connector");
+        static const int AWS_Lambda_CodeSigningConfig_HASH = HashingUtils::HashString("AWS::Lambda::CodeSigningConfig");
+        static const int AWS_NetworkManager_ConnectPeer_HASH = HashingUtils::HashString("AWS::NetworkManager::ConnectPeer");
+        static const int AWS_ResourceExplorer2_Index_HASH = HashingUtils::HashString("AWS::ResourceExplorer2::Index");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -2272,6 +2289,91 @@ namespace Aws
             enumValue = ResourceType::AWS_Batch_SchedulingPolicy;
             return true;
           }
+          else if (hashCode == AWS_ACMPCA_CertificateAuthorityActivation_HASH)
+          {
+            enumValue = ResourceType::AWS_ACMPCA_CertificateAuthorityActivation;
+            return true;
+          }
+          else if (hashCode == AWS_AppMesh_GatewayRoute_HASH)
+          {
+            enumValue = ResourceType::AWS_AppMesh_GatewayRoute;
+            return true;
+          }
+          else if (hashCode == AWS_AppMesh_Mesh_HASH)
+          {
+            enumValue = ResourceType::AWS_AppMesh_Mesh;
+            return true;
+          }
+          else if (hashCode == AWS_Connect_Instance_HASH)
+          {
+            enumValue = ResourceType::AWS_Connect_Instance;
+            return true;
+          }
+          else if (hashCode == AWS_Connect_QuickConnect_HASH)
+          {
+            enumValue = ResourceType::AWS_Connect_QuickConnect;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_CarrierGateway_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_CarrierGateway;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_IPAMPool_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_IPAMPool;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_TransitGatewayConnect_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_TransitGatewayConnect;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_TransitGatewayMulticastDomain_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_TransitGatewayMulticastDomain;
+            return true;
+          }
+          else if (hashCode == AWS_ECS_CapacityProvider_HASH)
+          {
+            enumValue = ResourceType::AWS_ECS_CapacityProvider;
+            return true;
+          }
+          else if (hashCode == AWS_IAM_InstanceProfile_HASH)
+          {
+            enumValue = ResourceType::AWS_IAM_InstanceProfile;
+            return true;
+          }
+          else if (hashCode == AWS_IoT_CACertificate_HASH)
+          {
+            enumValue = ResourceType::AWS_IoT_CACertificate;
+            return true;
+          }
+          else if (hashCode == AWS_IoTTwinMaker_SyncJob_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTTwinMaker_SyncJob;
+            return true;
+          }
+          else if (hashCode == AWS_KafkaConnect_Connector_HASH)
+          {
+            enumValue = ResourceType::AWS_KafkaConnect_Connector;
+            return true;
+          }
+          else if (hashCode == AWS_Lambda_CodeSigningConfig_HASH)
+          {
+            enumValue = ResourceType::AWS_Lambda_CodeSigningConfig;
+            return true;
+          }
+          else if (hashCode == AWS_NetworkManager_ConnectPeer_HASH)
+          {
+            enumValue = ResourceType::AWS_NetworkManager_ConnectPeer;
+            return true;
+          }
+          else if (hashCode == AWS_ResourceExplorer2_Index_HASH)
+          {
+            enumValue = ResourceType::AWS_ResourceExplorer2_Index;
+            return true;
+          }
           return false;
         }
 
@@ -3418,6 +3520,57 @@ namespace Aws
             return true;
           case ResourceType::AWS_Batch_SchedulingPolicy:
             value = "AWS::Batch::SchedulingPolicy";
+            return true;
+          case ResourceType::AWS_ACMPCA_CertificateAuthorityActivation:
+            value = "AWS::ACMPCA::CertificateAuthorityActivation";
+            return true;
+          case ResourceType::AWS_AppMesh_GatewayRoute:
+            value = "AWS::AppMesh::GatewayRoute";
+            return true;
+          case ResourceType::AWS_AppMesh_Mesh:
+            value = "AWS::AppMesh::Mesh";
+            return true;
+          case ResourceType::AWS_Connect_Instance:
+            value = "AWS::Connect::Instance";
+            return true;
+          case ResourceType::AWS_Connect_QuickConnect:
+            value = "AWS::Connect::QuickConnect";
+            return true;
+          case ResourceType::AWS_EC2_CarrierGateway:
+            value = "AWS::EC2::CarrierGateway";
+            return true;
+          case ResourceType::AWS_EC2_IPAMPool:
+            value = "AWS::EC2::IPAMPool";
+            return true;
+          case ResourceType::AWS_EC2_TransitGatewayConnect:
+            value = "AWS::EC2::TransitGatewayConnect";
+            return true;
+          case ResourceType::AWS_EC2_TransitGatewayMulticastDomain:
+            value = "AWS::EC2::TransitGatewayMulticastDomain";
+            return true;
+          case ResourceType::AWS_ECS_CapacityProvider:
+            value = "AWS::ECS::CapacityProvider";
+            return true;
+          case ResourceType::AWS_IAM_InstanceProfile:
+            value = "AWS::IAM::InstanceProfile";
+            return true;
+          case ResourceType::AWS_IoT_CACertificate:
+            value = "AWS::IoT::CACertificate";
+            return true;
+          case ResourceType::AWS_IoTTwinMaker_SyncJob:
+            value = "AWS::IoTTwinMaker::SyncJob";
+            return true;
+          case ResourceType::AWS_KafkaConnect_Connector:
+            value = "AWS::KafkaConnect::Connector";
+            return true;
+          case ResourceType::AWS_Lambda_CodeSigningConfig:
+            value = "AWS::Lambda::CodeSigningConfig";
+            return true;
+          case ResourceType::AWS_NetworkManager_ConnectPeer:
+            value = "AWS::NetworkManager::ConnectPeer";
+            return true;
+          case ResourceType::AWS_ResourceExplorer2_Index:
+            value = "AWS::ResourceExplorer2::Index";
             return true;
           default:
             return false;

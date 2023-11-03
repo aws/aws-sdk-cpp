@@ -728,6 +728,35 @@ namespace Connect
         }
 
         /**
+         * <p>Enables rehydration of chats for the lifespan of a contact. For more
+         * information about chat rehydration, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+         * persistent chat</a> in the <i>Amazon Connect Administrator Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePersistentContactAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePersistentContactAssociationOutcome CreatePersistentContactAssociation(const Model::CreatePersistentContactAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePersistentContactAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePersistentContactAssociationRequestT = Model::CreatePersistentContactAssociationRequest>
+        Model::CreatePersistentContactAssociationOutcomeCallable CreatePersistentContactAssociationCallable(const CreatePersistentContactAssociationRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::CreatePersistentContactAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePersistentContactAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePersistentContactAssociationRequestT = Model::CreatePersistentContactAssociationRequest>
+        void CreatePersistentContactAssociationAsync(const CreatePersistentContactAssociationRequestT& request, const CreatePersistentContactAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::CreatePersistentContactAssociation, request, handler, context);
+        }
+
+        /**
          * <p>Creates a prompt. For more information about prompts, such as supported file
          * types and maximum length, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html">Create
