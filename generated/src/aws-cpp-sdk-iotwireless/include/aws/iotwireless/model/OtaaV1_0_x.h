@@ -120,6 +120,47 @@ namespace Model
 
 
     /**
+     * <p>The JoinEUI value.</p>
+     */
+    inline const Aws::String& GetJoinEui() const{ return m_joinEui; }
+
+    /**
+     * <p>The JoinEUI value.</p>
+     */
+    inline bool JoinEuiHasBeenSet() const { return m_joinEuiHasBeenSet; }
+
+    /**
+     * <p>The JoinEUI value.</p>
+     */
+    inline void SetJoinEui(const Aws::String& value) { m_joinEuiHasBeenSet = true; m_joinEui = value; }
+
+    /**
+     * <p>The JoinEUI value.</p>
+     */
+    inline void SetJoinEui(Aws::String&& value) { m_joinEuiHasBeenSet = true; m_joinEui = std::move(value); }
+
+    /**
+     * <p>The JoinEUI value.</p>
+     */
+    inline void SetJoinEui(const char* value) { m_joinEuiHasBeenSet = true; m_joinEui.assign(value); }
+
+    /**
+     * <p>The JoinEUI value.</p>
+     */
+    inline OtaaV1_0_x& WithJoinEui(const Aws::String& value) { SetJoinEui(value); return *this;}
+
+    /**
+     * <p>The JoinEUI value.</p>
+     */
+    inline OtaaV1_0_x& WithJoinEui(Aws::String&& value) { SetJoinEui(std::move(value)); return *this;}
+
+    /**
+     * <p>The JoinEUI value.</p>
+     */
+    inline OtaaV1_0_x& WithJoinEui(const char* value) { SetJoinEui(value); return *this;}
+
+
+    /**
      * <p>The GenAppKey value.</p>
      */
     inline const Aws::String& GetGenAppKey() const{ return m_genAppKey; }
@@ -166,6 +207,9 @@ namespace Model
 
     Aws::String m_appEui;
     bool m_appEuiHasBeenSet = false;
+
+    Aws::String m_joinEui;
+    bool m_joinEuiHasBeenSet = false;
 
     Aws::String m_genAppKey;
     bool m_genAppKeyHasBeenSet = false;

@@ -387,7 +387,24 @@ namespace Model
     AWS_APS_RuleGroupsNamespace,
     AWS_CodeGuruProfiler_ProfilingGroup,
     AWS_Route53Resolver_ResolverQueryLoggingConfig,
-    AWS_Batch_SchedulingPolicy
+    AWS_Batch_SchedulingPolicy,
+    AWS_ACMPCA_CertificateAuthorityActivation,
+    AWS_AppMesh_GatewayRoute,
+    AWS_AppMesh_Mesh,
+    AWS_Connect_Instance,
+    AWS_Connect_QuickConnect,
+    AWS_EC2_CarrierGateway,
+    AWS_EC2_IPAMPool,
+    AWS_EC2_TransitGatewayConnect,
+    AWS_EC2_TransitGatewayMulticastDomain,
+    AWS_ECS_CapacityProvider,
+    AWS_IAM_InstanceProfile,
+    AWS_IoT_CACertificate,
+    AWS_IoTTwinMaker_SyncJob,
+    AWS_KafkaConnect_Connector,
+    AWS_Lambda_CodeSigningConfig,
+    AWS_NetworkManager_ConnectPeer,
+    AWS_ResourceExplorer2_Index
   };
 
 namespace ResourceTypeMapper
