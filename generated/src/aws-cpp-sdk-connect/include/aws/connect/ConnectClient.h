@@ -452,6 +452,39 @@ namespace Connect
         }
 
         /**
+         *  <p>Only the Amazon Connect outbound campaigns service principal is
+         * allowed to assume a role in your account and call this API.</p> 
+         * <p>Allows you to create a batch of contacts in Amazon Connect. The outbound
+         * campaigns capability ingests dial requests via the <a
+         * href="https://docs.aws.amazon.com/connect-outbound/latest/APIReference/API_PutDialRequestBatch.html">PutDialRequestBatch</a>
+         * API. It then uses BatchPutContact to create contacts corresponding to those dial
+         * requests. If agents are available, the dial requests are dialed out, which
+         * results in a voice call. The resulting voice call uses the same contactId that
+         * was created by BatchPutContact. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchPutContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchPutContactOutcome BatchPutContact(const Model::BatchPutContactRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchPutContact that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchPutContactRequestT = Model::BatchPutContactRequest>
+        Model::BatchPutContactOutcomeCallable BatchPutContactCallable(const BatchPutContactRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::BatchPutContact, request);
+        }
+
+        /**
+         * An Async wrapper for BatchPutContact that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchPutContactRequestT = Model::BatchPutContactRequest>
+        void BatchPutContactAsync(const BatchPutContactRequestT& request, const BatchPutContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::BatchPutContact, request, handler, context);
+        }
+
+        /**
          * <p>Claims an available phone number to your Amazon Connect instance or traffic
          * distribution group. You can call this API only in the same Amazon Web Services
          * Region where the Amazon Connect instance or traffic distribution group was

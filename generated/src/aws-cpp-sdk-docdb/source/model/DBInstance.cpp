@@ -53,7 +53,8 @@ DBInstance::DBInstance() :
     m_promotionTier(0),
     m_promotionTierHasBeenSet(false),
     m_dBInstanceArnHasBeenSet(false),
-    m_enabledCloudwatchLogsExportsHasBeenSet(false)
+    m_enabledCloudwatchLogsExportsHasBeenSet(false),
+    m_certificateDetailsHasBeenSet(false)
 {
 }
 
@@ -90,7 +91,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_promotionTier(0),
     m_promotionTierHasBeenSet(false),
     m_dBInstanceArnHasBeenSet(false),
-    m_enabledCloudwatchLogsExportsHasBeenSet(false)
+    m_enabledCloudwatchLogsExportsHasBeenSet(false),
+    m_certificateDetailsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -281,6 +283,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
 
       m_enabledCloudwatchLogsExportsHasBeenSet = true;
     }
+    XmlNode certificateDetailsNode = resultNode.FirstChild("CertificateDetails");
+    if(!certificateDetailsNode.IsNull())
+    {
+      m_certificateDetails = certificateDetailsNode;
+      m_certificateDetailsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -445,6 +453,13 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
+  if(m_certificateDetailsHasBeenSet)
+  {
+      Aws::StringStream certificateDetailsLocationAndMemberSs;
+      certificateDetailsLocationAndMemberSs << location << index << locationValue << ".CertificateDetails";
+      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -578,6 +593,12 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       {
         oStream << location << ".EnabledCloudwatchLogsExports.member." << enabledCloudwatchLogsExportsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_certificateDetailsHasBeenSet)
+  {
+      Aws::String certificateDetailsLocationAndMember(location);
+      certificateDetailsLocationAndMember += ".CertificateDetails";
+      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMember.c_str());
   }
 }
 

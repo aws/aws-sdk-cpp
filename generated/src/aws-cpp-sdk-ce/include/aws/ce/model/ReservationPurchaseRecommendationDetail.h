@@ -81,37 +81,37 @@ namespace Model
 
 
     /**
-     * <p>Details about the instances that Amazon Web Services recommends that you
+     * <p>Details about the reservations that Amazon Web Services recommends that you
      * purchase.</p>
      */
     inline const InstanceDetails& GetInstanceDetails() const{ return m_instanceDetails; }
 
     /**
-     * <p>Details about the instances that Amazon Web Services recommends that you
+     * <p>Details about the reservations that Amazon Web Services recommends that you
      * purchase.</p>
      */
     inline bool InstanceDetailsHasBeenSet() const { return m_instanceDetailsHasBeenSet; }
 
     /**
-     * <p>Details about the instances that Amazon Web Services recommends that you
+     * <p>Details about the reservations that Amazon Web Services recommends that you
      * purchase.</p>
      */
     inline void SetInstanceDetails(const InstanceDetails& value) { m_instanceDetailsHasBeenSet = true; m_instanceDetails = value; }
 
     /**
-     * <p>Details about the instances that Amazon Web Services recommends that you
+     * <p>Details about the reservations that Amazon Web Services recommends that you
      * purchase.</p>
      */
     inline void SetInstanceDetails(InstanceDetails&& value) { m_instanceDetailsHasBeenSet = true; m_instanceDetails = std::move(value); }
 
     /**
-     * <p>Details about the instances that Amazon Web Services recommends that you
+     * <p>Details about the reservations that Amazon Web Services recommends that you
      * purchase.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithInstanceDetails(const InstanceDetails& value) { SetInstanceDetails(value); return *this;}
 
     /**
-     * <p>Details about the instances that Amazon Web Services recommends that you
+     * <p>Details about the reservations that Amazon Web Services recommends that you
      * purchase.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithInstanceDetails(InstanceDetails&& value) { SetInstanceDetails(std::move(value)); return *this;}

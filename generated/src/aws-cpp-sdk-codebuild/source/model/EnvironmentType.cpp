@@ -25,6 +25,8 @@ namespace Aws
         static const int LINUX_GPU_CONTAINER_HASH = HashingUtils::HashString("LINUX_GPU_CONTAINER");
         static const int ARM_CONTAINER_HASH = HashingUtils::HashString("ARM_CONTAINER");
         static const int WINDOWS_SERVER_2019_CONTAINER_HASH = HashingUtils::HashString("WINDOWS_SERVER_2019_CONTAINER");
+        static const int LINUX_LAMBDA_CONTAINER_HASH = HashingUtils::HashString("LINUX_LAMBDA_CONTAINER");
+        static const int ARM_LAMBDA_CONTAINER_HASH = HashingUtils::HashString("ARM_LAMBDA_CONTAINER");
 
 
         EnvironmentType GetEnvironmentTypeForName(const Aws::String& name)
@@ -49,6 +51,14 @@ namespace Aws
           else if (hashCode == WINDOWS_SERVER_2019_CONTAINER_HASH)
           {
             return EnvironmentType::WINDOWS_SERVER_2019_CONTAINER;
+          }
+          else if (hashCode == LINUX_LAMBDA_CONTAINER_HASH)
+          {
+            return EnvironmentType::LINUX_LAMBDA_CONTAINER;
+          }
+          else if (hashCode == ARM_LAMBDA_CONTAINER_HASH)
+          {
+            return EnvironmentType::ARM_LAMBDA_CONTAINER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +86,10 @@ namespace Aws
             return "ARM_CONTAINER";
           case EnvironmentType::WINDOWS_SERVER_2019_CONTAINER:
             return "WINDOWS_SERVER_2019_CONTAINER";
+          case EnvironmentType::LINUX_LAMBDA_CONTAINER:
+            return "LINUX_LAMBDA_CONTAINER";
+          case EnvironmentType::ARM_LAMBDA_CONTAINER:
+            return "ARM_LAMBDA_CONTAINER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
