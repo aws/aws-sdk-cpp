@@ -24,6 +24,7 @@
 #include <aws/connect/model/AssociateSecurityKeyResult.h>
 #include <aws/connect/model/AssociateTrafficDistributionGroupUserResult.h>
 #include <aws/connect/model/BatchGetFlowAssociationResult.h>
+#include <aws/connect/model/BatchPutContactResult.h>
 #include <aws/connect/model/ClaimPhoneNumberResult.h>
 #include <aws/connect/model/CreateAgentStatusResult.h>
 #include <aws/connect/model/CreateContactFlowResult.h>
@@ -226,6 +227,7 @@ namespace Aws
       class AssociateSecurityKeyRequest;
       class AssociateTrafficDistributionGroupUserRequest;
       class BatchGetFlowAssociationRequest;
+      class BatchPutContactRequest;
       class ClaimPhoneNumberRequest;
       class CreateAgentStatusRequest;
       class CreateContactFlowRequest;
@@ -442,6 +444,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<AssociateSecurityKeyResult, ConnectError> AssociateSecurityKeyOutcome;
       typedef Aws::Utils::Outcome<AssociateTrafficDistributionGroupUserResult, ConnectError> AssociateTrafficDistributionGroupUserOutcome;
       typedef Aws::Utils::Outcome<BatchGetFlowAssociationResult, ConnectError> BatchGetFlowAssociationOutcome;
+      typedef Aws::Utils::Outcome<BatchPutContactResult, ConnectError> BatchPutContactOutcome;
       typedef Aws::Utils::Outcome<ClaimPhoneNumberResult, ConnectError> ClaimPhoneNumberOutcome;
       typedef Aws::Utils::Outcome<CreateAgentStatusResult, ConnectError> CreateAgentStatusOutcome;
       typedef Aws::Utils::Outcome<CreateContactFlowResult, ConnectError> CreateContactFlowOutcome;
@@ -658,6 +661,7 @@ namespace Aws
       typedef std::future<AssociateSecurityKeyOutcome> AssociateSecurityKeyOutcomeCallable;
       typedef std::future<AssociateTrafficDistributionGroupUserOutcome> AssociateTrafficDistributionGroupUserOutcomeCallable;
       typedef std::future<BatchGetFlowAssociationOutcome> BatchGetFlowAssociationOutcomeCallable;
+      typedef std::future<BatchPutContactOutcome> BatchPutContactOutcomeCallable;
       typedef std::future<ClaimPhoneNumberOutcome> ClaimPhoneNumberOutcomeCallable;
       typedef std::future<CreateAgentStatusOutcome> CreateAgentStatusOutcomeCallable;
       typedef std::future<CreateContactFlowOutcome> CreateContactFlowOutcomeCallable;
@@ -877,6 +881,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::AssociateSecurityKeyRequest&, const Model::AssociateSecurityKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSecurityKeyResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::AssociateTrafficDistributionGroupUserRequest&, const Model::AssociateTrafficDistributionGroupUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTrafficDistributionGroupUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::BatchGetFlowAssociationRequest&, const Model::BatchGetFlowAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetFlowAssociationResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::BatchPutContactRequest&, const Model::BatchPutContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ClaimPhoneNumberRequest&, const Model::ClaimPhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ClaimPhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateAgentStatusRequest&, const Model::CreateAgentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAgentStatusResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowRequest&, const Model::CreateContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactFlowResponseReceivedHandler;
