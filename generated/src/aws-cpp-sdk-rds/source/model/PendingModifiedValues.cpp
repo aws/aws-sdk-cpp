@@ -50,7 +50,9 @@ PendingModifiedValues::PendingModifiedValues() :
     m_storageThroughputHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_dedicatedLogVolume(false),
-    m_dedicatedLogVolumeHasBeenSet(false)
+    m_dedicatedLogVolumeHasBeenSet(false),
+    m_multiTenant(false),
+    m_multiTenantHasBeenSet(false)
 {
 }
 
@@ -84,7 +86,9 @@ PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) :
     m_storageThroughputHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_dedicatedLogVolume(false),
-    m_dedicatedLogVolumeHasBeenSet(false)
+    m_dedicatedLogVolumeHasBeenSet(false),
+    m_multiTenant(false),
+    m_multiTenantHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -227,6 +231,12 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_dedicatedLogVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dedicatedLogVolumeNode.GetText()).c_str()).c_str());
       m_dedicatedLogVolumeHasBeenSet = true;
     }
+    XmlNode multiTenantNode = resultNode.FirstChild("MultiTenant");
+    if(!multiTenantNode.IsNull())
+    {
+      m_multiTenant = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiTenantNode.GetText()).c_str()).c_str());
+      m_multiTenantHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -347,6 +357,11 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
 
+  if(m_multiTenantHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
+  }
+
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -442,6 +457,10 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_dedicatedLogVolumeHasBeenSet)
   {
       oStream << location << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
+  }
+  if(m_multiTenantHasBeenSet)
+  {
+      oStream << location << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
 }
 

@@ -141,8 +141,9 @@ namespace DLM
 
         /**
          * <p>Gets summary information about all or the specified data lifecycle
-         * policies.</p> <p>To get complete information about a policy, use
-         * <a>GetLifecyclePolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * policies.</p> <p>To get complete information about a policy, use <a
+         * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html">GetLifecyclePolicy</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/GetLifecyclePolicies">AWS
          * API Reference</a></p>
          */

@@ -167,8 +167,8 @@ namespace Model
      * instance class and upgrading the engine version at the same time, the currently
      * running engine version must be supported on the specified DB instance class.
      * Otherwise, the operation returns an error. In this case, first run the operation
-     * to modify the DB instance class, and then run it again to upgrade the engine
-     * version.</p> </li> </ul>
+     * to upgrade the engine version, and then run it again to modify the DB instance
+     * class.</p> </li> </ul>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
@@ -193,8 +193,8 @@ namespace Model
      * instance class and upgrading the engine version at the same time, the currently
      * running engine version must be supported on the specified DB instance class.
      * Otherwise, the operation returns an error. In this case, first run the operation
-     * to modify the DB instance class, and then run it again to upgrade the engine
-     * version.</p> </li> </ul>
+     * to upgrade the engine version, and then run it again to modify the DB instance
+     * class.</p> </li> </ul>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
@@ -219,8 +219,8 @@ namespace Model
      * instance class and upgrading the engine version at the same time, the currently
      * running engine version must be supported on the specified DB instance class.
      * Otherwise, the operation returns an error. In this case, first run the operation
-     * to modify the DB instance class, and then run it again to upgrade the engine
-     * version.</p> </li> </ul>
+     * to upgrade the engine version, and then run it again to modify the DB instance
+     * class.</p> </li> </ul>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
@@ -245,8 +245,8 @@ namespace Model
      * instance class and upgrading the engine version at the same time, the currently
      * running engine version must be supported on the specified DB instance class.
      * Otherwise, the operation returns an error. In this case, first run the operation
-     * to modify the DB instance class, and then run it again to upgrade the engine
-     * version.</p> </li> </ul>
+     * to upgrade the engine version, and then run it again to modify the DB instance
+     * class.</p> </li> </ul>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
@@ -271,8 +271,8 @@ namespace Model
      * instance class and upgrading the engine version at the same time, the currently
      * running engine version must be supported on the specified DB instance class.
      * Otherwise, the operation returns an error. In this case, first run the operation
-     * to modify the DB instance class, and then run it again to upgrade the engine
-     * version.</p> </li> </ul>
+     * to upgrade the engine version, and then run it again to modify the DB instance
+     * class.</p> </li> </ul>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
@@ -297,8 +297,8 @@ namespace Model
      * instance class and upgrading the engine version at the same time, the currently
      * running engine version must be supported on the specified DB instance class.
      * Otherwise, the operation returns an error. In this case, first run the operation
-     * to modify the DB instance class, and then run it again to upgrade the engine
-     * version.</p> </li> </ul>
+     * to upgrade the engine version, and then run it again to modify the DB instance
+     * class.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
@@ -323,8 +323,8 @@ namespace Model
      * instance class and upgrading the engine version at the same time, the currently
      * running engine version must be supported on the specified DB instance class.
      * Otherwise, the operation returns an error. In this case, first run the operation
-     * to modify the DB instance class, and then run it again to upgrade the engine
-     * version.</p> </li> </ul>
+     * to upgrade the engine version, and then run it again to modify the DB instance
+     * class.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
@@ -349,8 +349,8 @@ namespace Model
      * instance class and upgrading the engine version at the same time, the currently
      * running engine version must be supported on the specified DB instance class.
      * Otherwise, the operation returns an error. In this case, first run the operation
-     * to modify the DB instance class, and then run it again to upgrade the engine
-     * version.</p> </li> </ul>
+     * to upgrade the engine version, and then run it again to modify the DB instance
+     * class.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -1508,9 +1508,9 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
      * modifying the DB instance class at the same time, the currently running engine
      * version must be supported on the specified DB instance class. Otherwise, the
-     * operation returns an error. In this case, first run the operation to modify the
-     * DB instance class, and then run it again to upgrade the engine version.</p>
-     * </li> </ul>
+     * operation returns an error. In this case, first run the operation to upgrade the
+     * engine version, and then run it again to modify the DB instance class.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -1533,9 +1533,9 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
      * modifying the DB instance class at the same time, the currently running engine
      * version must be supported on the specified DB instance class. Otherwise, the
-     * operation returns an error. In this case, first run the operation to modify the
-     * DB instance class, and then run it again to upgrade the engine version.</p>
-     * </li> </ul>
+     * operation returns an error. In this case, first run the operation to upgrade the
+     * engine version, and then run it again to modify the DB instance class.</p> </li>
+     * </ul>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -1558,9 +1558,9 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
      * modifying the DB instance class at the same time, the currently running engine
      * version must be supported on the specified DB instance class. Otherwise, the
-     * operation returns an error. In this case, first run the operation to modify the
-     * DB instance class, and then run it again to upgrade the engine version.</p>
-     * </li> </ul>
+     * operation returns an error. In this case, first run the operation to upgrade the
+     * engine version, and then run it again to modify the DB instance class.</p> </li>
+     * </ul>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -1583,9 +1583,9 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
      * modifying the DB instance class at the same time, the currently running engine
      * version must be supported on the specified DB instance class. Otherwise, the
-     * operation returns an error. In this case, first run the operation to modify the
-     * DB instance class, and then run it again to upgrade the engine version.</p>
-     * </li> </ul>
+     * operation returns an error. In this case, first run the operation to upgrade the
+     * engine version, and then run it again to modify the DB instance class.</p> </li>
+     * </ul>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -1608,9 +1608,9 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
      * modifying the DB instance class at the same time, the currently running engine
      * version must be supported on the specified DB instance class. Otherwise, the
-     * operation returns an error. In this case, first run the operation to modify the
-     * DB instance class, and then run it again to upgrade the engine version.</p>
-     * </li> </ul>
+     * operation returns an error. In this case, first run the operation to upgrade the
+     * engine version, and then run it again to modify the DB instance class.</p> </li>
+     * </ul>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -1633,9 +1633,9 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
      * modifying the DB instance class at the same time, the currently running engine
      * version must be supported on the specified DB instance class. Otherwise, the
-     * operation returns an error. In this case, first run the operation to modify the
-     * DB instance class, and then run it again to upgrade the engine version.</p>
-     * </li> </ul>
+     * operation returns an error. In this case, first run the operation to upgrade the
+     * engine version, and then run it again to modify the DB instance class.</p> </li>
+     * </ul>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -1658,9 +1658,9 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
      * modifying the DB instance class at the same time, the currently running engine
      * version must be supported on the specified DB instance class. Otherwise, the
-     * operation returns an error. In this case, first run the operation to modify the
-     * DB instance class, and then run it again to upgrade the engine version.</p>
-     * </li> </ul>
+     * operation returns an error. In this case, first run the operation to upgrade the
+     * engine version, and then run it again to modify the DB instance class.</p> </li>
+     * </ul>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -1683,9 +1683,9 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
      * modifying the DB instance class at the same time, the currently running engine
      * version must be supported on the specified DB instance class. Otherwise, the
-     * operation returns an error. In this case, first run the operation to modify the
-     * DB instance class, and then run it again to upgrade the engine version.</p>
-     * </li> </ul>
+     * operation returns an error. In this case, first run the operation to upgrade the
+     * engine version, and then run it again to modify the DB instance class.</p> </li>
+     * </ul>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -4839,6 +4839,67 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether the to convert your DB instance from the single-tenant
+     * conﬁguration to the multi-tenant conﬁguration. This parameter is supported only
+     * for RDS for Oracle CDB instances.</p> <p>During the conversion, RDS creates an
+     * initial tenant database and associates the DB name, master user name, character
+     * set, and national character set metadata with this database. The tags associated
+     * with the instance also propagate to the initial tenant database. You can add
+     * more tenant databases to your DB instance by using the
+     * <code>CreateTenantDatabase</code> operation.</p>  <p>The conversion
+     * to the multi-tenant configuration is permanent and irreversible, so you can't
+     * later convert back to the single-tenant configuration. When you specify this
+     * parameter, you must also specify <code>ApplyImmediately</code>.</p> 
+     */
+    inline bool GetMultiTenant() const{ return m_multiTenant; }
+
+    /**
+     * <p>Specifies whether the to convert your DB instance from the single-tenant
+     * conﬁguration to the multi-tenant conﬁguration. This parameter is supported only
+     * for RDS for Oracle CDB instances.</p> <p>During the conversion, RDS creates an
+     * initial tenant database and associates the DB name, master user name, character
+     * set, and national character set metadata with this database. The tags associated
+     * with the instance also propagate to the initial tenant database. You can add
+     * more tenant databases to your DB instance by using the
+     * <code>CreateTenantDatabase</code> operation.</p>  <p>The conversion
+     * to the multi-tenant configuration is permanent and irreversible, so you can't
+     * later convert back to the single-tenant configuration. When you specify this
+     * parameter, you must also specify <code>ApplyImmediately</code>.</p> 
+     */
+    inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the to convert your DB instance from the single-tenant
+     * conﬁguration to the multi-tenant conﬁguration. This parameter is supported only
+     * for RDS for Oracle CDB instances.</p> <p>During the conversion, RDS creates an
+     * initial tenant database and associates the DB name, master user name, character
+     * set, and national character set metadata with this database. The tags associated
+     * with the instance also propagate to the initial tenant database. You can add
+     * more tenant databases to your DB instance by using the
+     * <code>CreateTenantDatabase</code> operation.</p>  <p>The conversion
+     * to the multi-tenant configuration is permanent and irreversible, so you can't
+     * later convert back to the single-tenant configuration. When you specify this
+     * parameter, you must also specify <code>ApplyImmediately</code>.</p> 
+     */
+    inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
+
+    /**
+     * <p>Specifies whether the to convert your DB instance from the single-tenant
+     * conﬁguration to the multi-tenant conﬁguration. This parameter is supported only
+     * for RDS for Oracle CDB instances.</p> <p>During the conversion, RDS creates an
+     * initial tenant database and associates the DB name, master user name, character
+     * set, and national character set metadata with this database. The tags associated
+     * with the instance also propagate to the initial tenant database. You can add
+     * more tenant databases to your DB instance by using the
+     * <code>CreateTenantDatabase</code> operation.</p>  <p>The conversion
+     * to the multi-tenant configuration is permanent and irreversible, so you can't
+     * later convert back to the single-tenant configuration. When you specify this
+     * parameter, you must also specify <code>ApplyImmediately</code>.</p> 
+     */
+    inline ModifyDBInstanceRequest& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -5017,6 +5078,9 @@ namespace Model
 
     bool m_dedicatedLogVolume;
     bool m_dedicatedLogVolumeHasBeenSet = false;
+
+    bool m_multiTenant;
+    bool m_multiTenantHasBeenSet = false;
   };
 
 } // namespace Model

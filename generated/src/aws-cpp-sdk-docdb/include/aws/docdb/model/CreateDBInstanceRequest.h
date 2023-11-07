@@ -645,6 +645,95 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
+
+    /**
+     * <p>The CA certificate identifier to use for the DB instance's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetCACertificateIdentifier() const{ return m_cACertificateIdentifier; }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB instance's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline bool CACertificateIdentifierHasBeenSet() const { return m_cACertificateIdentifierHasBeenSet; }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB instance's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline void SetCACertificateIdentifier(const Aws::String& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = value; }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB instance's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline void SetCACertificateIdentifier(Aws::String&& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = std::move(value); }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB instance's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline void SetCACertificateIdentifier(const char* value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier.assign(value); }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB instance's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline CreateDBInstanceRequest& WithCACertificateIdentifier(const Aws::String& value) { SetCACertificateIdentifier(value); return *this;}
+
+    /**
+     * <p>The CA certificate identifier to use for the DB instance's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline CreateDBInstanceRequest& WithCACertificateIdentifier(Aws::String&& value) { SetCACertificateIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The CA certificate identifier to use for the DB instance's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline CreateDBInstanceRequest& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -682,6 +771,9 @@ namespace Model
 
     Aws::String m_performanceInsightsKMSKeyId;
     bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
+
+    Aws::String m_cACertificateIdentifier;
+    bool m_cACertificateIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -298,6 +298,12 @@ static const Aws::Vector<Route53EndpointProviderEndpointTestCase> TEST_CASES = {
     {}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
+  },
+  /*TEST CASE 32*/
+  {"Partition doesn't support DualStack", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
   }
 };
 
