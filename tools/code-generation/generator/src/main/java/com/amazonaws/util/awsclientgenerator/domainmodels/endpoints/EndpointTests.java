@@ -67,9 +67,12 @@ public class EndpointTests {
             for (Map.Entry<String, EndpointTestParameter> paramEntry : this.entrySet()) {
                 builder.append(separator);
                 builder.append(paramEntry.getValue().getAsCppSourceString(isEndpointProperty));
-                if (builder.length() > onPreviousLinesLength + 100) {
+                if (builder.length() > onPreviousLinesLength + 150) {
                     onPreviousLinesLength = builder.length();
-                    separator = ",\n" + String.join("", Collections.nCopies(indent + 1, " "));;
+                    if (isEndpointProperty)
+                        separator = ",\n" + String.join("", Collections.nCopies(indent + 3, " "));
+                    else
+                        separator = ",\n" + String.join("", Collections.nCopies(indent + 1, " "));
                 } else {
                     separator = ", ";
                 }
@@ -156,11 +159,17 @@ public class EndpointTests {
                         String separator = "";
                         for (Map.Entry<String, List<EndpointTestParams>> propEntry : properties.entrySet()) {
                             builder.append(separator);
-                            builder.append("{\"").append(propEntry.getKey()).append("\", ");
+                            builder.append("{\"").append(propEntry.getKey()).append("\", {");
+                            boolean atLeastOneEpParamWritten = false;
                             for (EndpointTestParams epParam : propEntry.getValue()) {
+                                if (atLeastOneEpParamWritten){
+                                    builder.append(",\n");
+                                    builder.append(String.join("", Collections.nCopies(indent + 24 + propEntry.getKey().length(), " ")));
+                                }
                                 builder.append(epParam.getAsCppSourceString(true, indent + 22 + propEntry.getKey().length()));
+                                atLeastOneEpParamWritten = true;
                             }
-                            builder.append("}");
+                            builder.append("}}");
                             separator = "," + indentStr + " ";
                         }
                     }
