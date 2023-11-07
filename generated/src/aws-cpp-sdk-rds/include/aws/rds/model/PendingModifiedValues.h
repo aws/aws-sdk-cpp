@@ -836,6 +836,31 @@ namespace Model
      */
     inline PendingModifiedValues& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the DB instance will change to the multi-tenant
+     * configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+     */
+    inline bool GetMultiTenant() const{ return m_multiTenant; }
+
+    /**
+     * <p>Indicates whether the DB instance will change to the multi-tenant
+     * configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+     */
+    inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the DB instance will change to the multi-tenant
+     * configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+     */
+    inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
+
+    /**
+     * <p>Indicates whether the DB instance will change to the multi-tenant
+     * configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+     */
+    inline PendingModifiedValues& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceClass;
@@ -900,6 +925,9 @@ namespace Model
 
     bool m_dedicatedLogVolume;
     bool m_dedicatedLogVolumeHasBeenSet = false;
+
+    bool m_multiTenant;
+    bool m_multiTenantHasBeenSet = false;
   };
 
 } // namespace Model

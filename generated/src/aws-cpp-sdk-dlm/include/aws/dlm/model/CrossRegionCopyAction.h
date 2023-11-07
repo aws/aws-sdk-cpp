@@ -28,8 +28,9 @@ namespace Model
   /**
    * <p> <b>[Event-based policies only]</b> Specifies a cross-Region copy action for
    * event-based policies.</p>  <p>To specify a cross-Region copy rule for
-   * snapshot and AMI policies, use <a>CrossRegionCopyRule</a>.</p> <p><h3>See
-   * Also:</h3>   <a
+   * snapshot and AMI policies, use <a
+   * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_CrossRegionCopyRule.html">CrossRegionCopyRule</a>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CrossRegionCopyAction">AWS
    * API Reference</a></p>
    */

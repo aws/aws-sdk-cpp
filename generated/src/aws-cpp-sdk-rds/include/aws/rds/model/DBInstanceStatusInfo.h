@@ -82,26 +82,26 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value that is true if the instance is operating normally, or false
-     * if the instance is in an error state.</p>
+     * <p>Indicates whether the instance is operating normally (TRUE) or is in an error
+     * state (FALSE).</p>
      */
     inline bool GetNormal() const{ return m_normal; }
 
     /**
-     * <p>A Boolean value that is true if the instance is operating normally, or false
-     * if the instance is in an error state.</p>
+     * <p>Indicates whether the instance is operating normally (TRUE) or is in an error
+     * state (FALSE).</p>
      */
     inline bool NormalHasBeenSet() const { return m_normalHasBeenSet; }
 
     /**
-     * <p>A Boolean value that is true if the instance is operating normally, or false
-     * if the instance is in an error state.</p>
+     * <p>Indicates whether the instance is operating normally (TRUE) or is in an error
+     * state (FALSE).</p>
      */
     inline void SetNormal(bool value) { m_normalHasBeenSet = true; m_normal = value; }
 
     /**
-     * <p>A Boolean value that is true if the instance is operating normally, or false
-     * if the instance is in an error state.</p>
+     * <p>Indicates whether the instance is operating normally (TRUE) or is in an error
+     * state (FALSE).</p>
      */
     inline DBInstanceStatusInfo& WithNormal(bool value) { SetNormal(value); return *this;}
 

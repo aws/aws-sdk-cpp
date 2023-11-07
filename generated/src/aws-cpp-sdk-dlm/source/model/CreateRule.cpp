@@ -26,7 +26,8 @@ CreateRule::CreateRule() :
     m_intervalUnit(IntervalUnitValues::NOT_SET),
     m_intervalUnitHasBeenSet(false),
     m_timesHasBeenSet(false),
-    m_cronExpressionHasBeenSet(false)
+    m_cronExpressionHasBeenSet(false),
+    m_scriptsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ CreateRule::CreateRule(JsonView jsonValue) :
     m_intervalUnit(IntervalUnitValues::NOT_SET),
     m_intervalUnitHasBeenSet(false),
     m_timesHasBeenSet(false),
-    m_cronExpressionHasBeenSet(false)
+    m_cronExpressionHasBeenSet(false),
+    m_scriptsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +85,16 @@ CreateRule& CreateRule::operator =(JsonView jsonValue)
     m_cronExpressionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Scripts"))
+  {
+    Aws::Utils::Array<JsonView> scriptsJsonList = jsonValue.GetArray("Scripts");
+    for(unsigned scriptsIndex = 0; scriptsIndex < scriptsJsonList.GetLength(); ++scriptsIndex)
+    {
+      m_scripts.push_back(scriptsJsonList[scriptsIndex].AsObject());
+    }
+    m_scriptsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -120,6 +132,17 @@ JsonValue CreateRule::Jsonize() const
   if(m_cronExpressionHasBeenSet)
   {
    payload.WithString("CronExpression", m_cronExpression);
+
+  }
+
+  if(m_scriptsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> scriptsJsonList(m_scripts.size());
+   for(unsigned scriptsIndex = 0; scriptsIndex < scriptsJsonList.GetLength(); ++scriptsIndex)
+   {
+     scriptsJsonList[scriptsIndex].AsObject(m_scripts[scriptsIndex].Jsonize());
+   }
+   payload.WithArray("Scripts", std::move(scriptsJsonList));
 
   }
 
