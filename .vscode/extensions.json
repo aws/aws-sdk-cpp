@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "codespaces-contrib.codeswing",
+        "ms-vscode.vscode-github-issue-notebooks",
+        "eamodio.gitlens"
+    ]
+}
