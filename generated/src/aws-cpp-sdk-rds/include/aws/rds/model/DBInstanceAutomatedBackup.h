@@ -1266,6 +1266,35 @@ namespace Model
      */
     inline DBInstanceAutomatedBackup& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether the automatic backup is for a DB instance in the
+     * multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).
+     * </p>
+     */
+    inline bool GetMultiTenant() const{ return m_multiTenant; }
+
+    /**
+     * <p>Specifies whether the automatic backup is for a DB instance in the
+     * multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).
+     * </p>
+     */
+    inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the automatic backup is for a DB instance in the
+     * multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).
+     * </p>
+     */
+    inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
+
+    /**
+     * <p>Specifies whether the automatic backup is for a DB instance in the
+     * multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).
+     * </p>
+     */
+    inline DBInstanceAutomatedBackup& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceArn;
@@ -1357,6 +1386,9 @@ namespace Model
 
     bool m_dedicatedLogVolume;
     bool m_dedicatedLogVolumeHasBeenSet = false;
+
+    bool m_multiTenant;
+    bool m_multiTenantHasBeenSet = false;
   };
 
 } // namespace Model

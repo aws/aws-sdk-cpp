@@ -1161,6 +1161,33 @@ namespace Aws
         }
 
         /**
+         * <p>Creates a tenant database in a DB instance that uses the multi-tenant
+         * configuration. Only RDS for Oracle container database (CDB) instances are
+         * supported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateTenantDatabase">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTenantDatabaseOutcome CreateTenantDatabase(const Model::CreateTenantDatabaseRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTenantDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateTenantDatabaseRequestT = Model::CreateTenantDatabaseRequest>
+        Model::CreateTenantDatabaseOutcomeCallable CreateTenantDatabaseCallable(const CreateTenantDatabaseRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::CreateTenantDatabase, request);
+        }
+
+        /**
+         * An Async wrapper for CreateTenantDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateTenantDatabaseRequestT = Model::CreateTenantDatabaseRequest>
+        void CreateTenantDatabaseAsync(const CreateTenantDatabaseRequestT& request, const CreateTenantDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::CreateTenantDatabase, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a blue/green deployment.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
          * Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS
@@ -1735,6 +1762,34 @@ namespace Aws
         void DeleteOptionGroupAsync(const DeleteOptionGroupRequestT& request, const DeleteOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::DeleteOptionGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a tenant database from your DB instance. This command only applies to
+         * RDS for Oracle container database (CDB) instances.</p> <p>You can't delete a
+         * tenant database when it is the only tenant in the DB instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteTenantDatabase">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTenantDatabaseOutcome DeleteTenantDatabase(const Model::DeleteTenantDatabaseRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTenantDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTenantDatabaseRequestT = Model::DeleteTenantDatabaseRequest>
+        Model::DeleteTenantDatabaseOutcomeCallable DeleteTenantDatabaseCallable(const DeleteTenantDatabaseRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DeleteTenantDatabase, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTenantDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTenantDatabaseRequestT = Model::DeleteTenantDatabaseRequest>
+        void DeleteTenantDatabaseAsync(const DeleteTenantDatabaseRequestT& request, const DeleteTenantDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DeleteTenantDatabase, request, handler, context);
         }
 
         /**
@@ -2447,6 +2502,37 @@ namespace Aws
         }
 
         /**
+         * <p>Describes the tenant databases that exist in a DB snapshot. This command only
+         * applies to RDS for Oracle DB instances in the multi-tenant configuration.</p>
+         * <p>You can use this command to inspect the tenant databases within a snapshot
+         * before restoring it. You can't directly interact with the tenant databases in a
+         * DB snapshot. If you restore a snapshot that was taken from DB instance using the
+         * multi-tenant configuration, you restore all its tenant databases.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotTenantDatabases">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDBSnapshotTenantDatabasesOutcome DescribeDBSnapshotTenantDatabases(const Model::DescribeDBSnapshotTenantDatabasesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDBSnapshotTenantDatabases that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDBSnapshotTenantDatabasesRequestT = Model::DescribeDBSnapshotTenantDatabasesRequest>
+        Model::DescribeDBSnapshotTenantDatabasesOutcomeCallable DescribeDBSnapshotTenantDatabasesCallable(const DescribeDBSnapshotTenantDatabasesRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DescribeDBSnapshotTenantDatabases, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDBSnapshotTenantDatabases that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDBSnapshotTenantDatabasesRequestT = Model::DescribeDBSnapshotTenantDatabasesRequest>
+        void DescribeDBSnapshotTenantDatabasesAsync(const DescribeDBSnapshotTenantDatabasesRequestT& request, const DescribeDBSnapshotTenantDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DescribeDBSnapshotTenantDatabases, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about DB snapshots. This API action supports
          * pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots">AWS
@@ -2923,6 +3009,33 @@ namespace Aws
         void DescribeSourceRegionsAsync(const DescribeSourceRegionsRequestT& request, const DescribeSourceRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::DescribeSourceRegions, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the tenant databases in a DB instance that uses the multi-tenant
+         * configuration. Only RDS for Oracle CDB instances are supported.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeTenantDatabases">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTenantDatabasesOutcome DescribeTenantDatabases(const Model::DescribeTenantDatabasesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTenantDatabases that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeTenantDatabasesRequestT = Model::DescribeTenantDatabasesRequest>
+        Model::DescribeTenantDatabasesOutcomeCallable DescribeTenantDatabasesCallable(const DescribeTenantDatabasesRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DescribeTenantDatabases, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeTenantDatabases that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeTenantDatabasesRequestT = Model::DescribeTenantDatabasesRequest>
+        void DescribeTenantDatabasesAsync(const DescribeTenantDatabasesRequestT& request, const DescribeTenantDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DescribeTenantDatabases, request, handler, context);
         }
 
         /**
@@ -3751,6 +3864,34 @@ namespace Aws
         void ModifyOptionGroupAsync(const ModifyOptionGroupRequestT& request, const ModifyOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::ModifyOptionGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies an existing tenant database in a DB instance. You can change the
+         * tenant database name or the master user password. This operation is supported
+         * only for RDS for Oracle CDB instances using the multi-tenant
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyTenantDatabase">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyTenantDatabaseOutcome ModifyTenantDatabase(const Model::ModifyTenantDatabaseRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyTenantDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyTenantDatabaseRequestT = Model::ModifyTenantDatabaseRequest>
+        Model::ModifyTenantDatabaseOutcomeCallable ModifyTenantDatabaseCallable(const ModifyTenantDatabaseRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::ModifyTenantDatabase, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyTenantDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyTenantDatabaseRequestT = Model::ModifyTenantDatabaseRequest>
+        void ModifyTenantDatabaseAsync(const ModifyTenantDatabaseRequestT& request, const ModifyTenantDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::ModifyTenantDatabase, request, handler, context);
         }
 
         /**

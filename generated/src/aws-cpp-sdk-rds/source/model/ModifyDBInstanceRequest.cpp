@@ -97,7 +97,9 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_masterUserSecretKmsKeyIdHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_dedicatedLogVolume(false),
-    m_dedicatedLogVolumeHasBeenSet(false)
+    m_dedicatedLogVolumeHasBeenSet(false),
+    m_multiTenant(false),
+    m_multiTenantHasBeenSet(false)
 {
 }
 
@@ -421,6 +423,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_dedicatedLogVolumeHasBeenSet)
   {
     ss << "DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
+  }
+
+  if(m_multiTenantHasBeenSet)
+  {
+    ss << "MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
 
   ss << "Version=2014-10-31";

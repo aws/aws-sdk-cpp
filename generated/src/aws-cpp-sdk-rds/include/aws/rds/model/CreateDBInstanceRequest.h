@@ -5349,6 +5349,59 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether to use the multi-tenant configuration or the single-tenant
+     * configuration (default). This parameter only applies to RDS for Oracle container
+     * database (CDB) engines.</p> <p>Note the following restrictions: </p> <ul> <li>
+     * <p>The DB engine that you specify in the request must support the multi-tenant
+     * configuration. If you attempt to enable the multi-tenant configuration on a DB
+     * engine that doesn't support it, the request fails.</p> </li> <li> <p>If you
+     * specify the multi-tenant configuration when you create your DB instance, you
+     * can't later modify this DB instance to use the single-tenant configuration.</p>
+     * </li> </ul>
+     */
+    inline bool GetMultiTenant() const{ return m_multiTenant; }
+
+    /**
+     * <p>Specifies whether to use the multi-tenant configuration or the single-tenant
+     * configuration (default). This parameter only applies to RDS for Oracle container
+     * database (CDB) engines.</p> <p>Note the following restrictions: </p> <ul> <li>
+     * <p>The DB engine that you specify in the request must support the multi-tenant
+     * configuration. If you attempt to enable the multi-tenant configuration on a DB
+     * engine that doesn't support it, the request fails.</p> </li> <li> <p>If you
+     * specify the multi-tenant configuration when you create your DB instance, you
+     * can't later modify this DB instance to use the single-tenant configuration.</p>
+     * </li> </ul>
+     */
+    inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to use the multi-tenant configuration or the single-tenant
+     * configuration (default). This parameter only applies to RDS for Oracle container
+     * database (CDB) engines.</p> <p>Note the following restrictions: </p> <ul> <li>
+     * <p>The DB engine that you specify in the request must support the multi-tenant
+     * configuration. If you attempt to enable the multi-tenant configuration on a DB
+     * engine that doesn't support it, the request fails.</p> </li> <li> <p>If you
+     * specify the multi-tenant configuration when you create your DB instance, you
+     * can't later modify this DB instance to use the single-tenant configuration.</p>
+     * </li> </ul>
+     */
+    inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
+
+    /**
+     * <p>Specifies whether to use the multi-tenant configuration or the single-tenant
+     * configuration (default). This parameter only applies to RDS for Oracle container
+     * database (CDB) engines.</p> <p>Note the following restrictions: </p> <ul> <li>
+     * <p>The DB engine that you specify in the request must support the multi-tenant
+     * configuration. If you attempt to enable the multi-tenant configuration on a DB
+     * engine that doesn't support it, the request fails.</p> </li> <li> <p>If you
+     * specify the multi-tenant configuration when you create your DB instance, you
+     * can't later modify this DB instance to use the single-tenant configuration.</p>
+     * </li> </ul>
+     */
+    inline CreateDBInstanceRequest& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -5533,6 +5586,9 @@ namespace Model
 
     bool m_dedicatedLogVolume;
     bool m_dedicatedLogVolumeHasBeenSet = false;
+
+    bool m_multiTenant;
+    bool m_multiTenantHasBeenSet = false;
   };
 
 } // namespace Model

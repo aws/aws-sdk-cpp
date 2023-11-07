@@ -338,65 +338,65 @@ namespace Model
 
 
     /**
-     * <p>Contains the initial database name that you provided (if required) when you
-     * created the DB instance. This name is returned for the life of your DB instance.
-     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * <p>The initial database name that you provided (if required) when you created
+     * the DB instance. This name is returned for the life of your DB instance. For an
+     * RDS for Oracle CDB instance, the name identifies the PDB rather than the
      * CDB.</p>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
     /**
-     * <p>Contains the initial database name that you provided (if required) when you
-     * created the DB instance. This name is returned for the life of your DB instance.
-     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * <p>The initial database name that you provided (if required) when you created
+     * the DB instance. This name is returned for the life of your DB instance. For an
+     * RDS for Oracle CDB instance, the name identifies the PDB rather than the
      * CDB.</p>
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
     /**
-     * <p>Contains the initial database name that you provided (if required) when you
-     * created the DB instance. This name is returned for the life of your DB instance.
-     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * <p>The initial database name that you provided (if required) when you created
+     * the DB instance. This name is returned for the life of your DB instance. For an
+     * RDS for Oracle CDB instance, the name identifies the PDB rather than the
      * CDB.</p>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /**
-     * <p>Contains the initial database name that you provided (if required) when you
-     * created the DB instance. This name is returned for the life of your DB instance.
-     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * <p>The initial database name that you provided (if required) when you created
+     * the DB instance. This name is returned for the life of your DB instance. For an
+     * RDS for Oracle CDB instance, the name identifies the PDB rather than the
      * CDB.</p>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
     /**
-     * <p>Contains the initial database name that you provided (if required) when you
-     * created the DB instance. This name is returned for the life of your DB instance.
-     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * <p>The initial database name that you provided (if required) when you created
+     * the DB instance. This name is returned for the life of your DB instance. For an
+     * RDS for Oracle CDB instance, the name identifies the PDB rather than the
      * CDB.</p>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
     /**
-     * <p>Contains the initial database name that you provided (if required) when you
-     * created the DB instance. This name is returned for the life of your DB instance.
-     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * <p>The initial database name that you provided (if required) when you created
+     * the DB instance. This name is returned for the life of your DB instance. For an
+     * RDS for Oracle CDB instance, the name identifies the PDB rather than the
      * CDB.</p>
      */
     inline DBInstance& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
     /**
-     * <p>Contains the initial database name that you provided (if required) when you
-     * created the DB instance. This name is returned for the life of your DB instance.
-     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * <p>The initial database name that you provided (if required) when you created
+     * the DB instance. This name is returned for the life of your DB instance. For an
+     * RDS for Oracle CDB instance, the name identifies the PDB rather than the
      * CDB.</p>
      */
     inline DBInstance& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
     /**
-     * <p>Contains the initial database name that you provided (if required) when you
-     * created the DB instance. This name is returned for the life of your DB instance.
-     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * <p>The initial database name that you provided (if required) when you created
+     * the DB instance. This name is returned for the life of your DB instance. For an
+     * RDS for Oracle CDB instance, the name identifies the PDB rather than the
      * CDB.</p>
      */
     inline DBInstance& WithDBName(const char* value) { SetDBName(value); return *this;}
@@ -3922,6 +3922,31 @@ namespace Model
      */
     inline DBInstance& WithIsStorageConfigUpgradeAvailable(bool value) { SetIsStorageConfigUpgradeAvailable(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE)
+     * or the single-tenant configuration (FALSE).</p>
+     */
+    inline bool GetMultiTenant() const{ return m_multiTenant; }
+
+    /**
+     * <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE)
+     * or the single-tenant configuration (FALSE).</p>
+     */
+    inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE)
+     * or the single-tenant configuration (FALSE).</p>
+     */
+    inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
+
+    /**
+     * <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE)
+     * or the single-tenant configuration (FALSE).</p>
+     */
+    inline DBInstance& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -4175,6 +4200,9 @@ namespace Model
 
     bool m_isStorageConfigUpgradeAvailable;
     bool m_isStorageConfigUpgradeAvailableHasBeenSet = false;
+
+    bool m_multiTenant;
+    bool m_multiTenantHasBeenSet = false;
   };
 
 } // namespace Model
