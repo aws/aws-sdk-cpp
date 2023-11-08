@@ -378,6 +378,31 @@ namespace Model
 
 
     /**
+     * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
+     * queries. The max capacity is specified in RPUs.</p>
+     */
+    inline int GetMaxCapacity() const{ return m_maxCapacity; }
+
+    /**
+     * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
+     * queries. The max capacity is specified in RPUs.</p>
+     */
+    inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
+
+    /**
+     * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
+     * queries. The max capacity is specified in RPUs.</p>
+     */
+    inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
+
+    /**
+     * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
+     * queries. The max capacity is specified in RPUs.</p>
+     */
+    inline Workgroup& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
+
+
+    /**
      * <p>The namespace the workgroup is associated with.</p>
      */
     inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
@@ -868,6 +893,9 @@ namespace Model
 
     bool m_enhancedVpcRouting;
     bool m_enhancedVpcRoutingHasBeenSet = false;
+
+    int m_maxCapacity;
+    bool m_maxCapacityHasBeenSet = false;
 
     Aws::String m_namespaceName;
     bool m_namespaceNameHasBeenSet = false;

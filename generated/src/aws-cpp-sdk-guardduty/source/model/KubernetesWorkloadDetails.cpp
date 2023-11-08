@@ -26,7 +26,12 @@ KubernetesWorkloadDetails::KubernetesWorkloadDetails() :
     m_hostNetwork(false),
     m_hostNetworkHasBeenSet(false),
     m_containersHasBeenSet(false),
-    m_volumesHasBeenSet(false)
+    m_volumesHasBeenSet(false),
+    m_serviceAccountNameHasBeenSet(false),
+    m_hostIPC(false),
+    m_hostIPCHasBeenSet(false),
+    m_hostPID(false),
+    m_hostPIDHasBeenSet(false)
 {
 }
 
@@ -38,7 +43,12 @@ KubernetesWorkloadDetails::KubernetesWorkloadDetails(JsonView jsonValue) :
     m_hostNetwork(false),
     m_hostNetworkHasBeenSet(false),
     m_containersHasBeenSet(false),
-    m_volumesHasBeenSet(false)
+    m_volumesHasBeenSet(false),
+    m_serviceAccountNameHasBeenSet(false),
+    m_hostIPC(false),
+    m_hostIPCHasBeenSet(false),
+    m_hostPID(false),
+    m_hostPIDHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -100,6 +110,27 @@ KubernetesWorkloadDetails& KubernetesWorkloadDetails::operator =(JsonView jsonVa
     m_volumesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("serviceAccountName"))
+  {
+    m_serviceAccountName = jsonValue.GetString("serviceAccountName");
+
+    m_serviceAccountNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("hostIPC"))
+  {
+    m_hostIPC = jsonValue.GetBool("hostIPC");
+
+    m_hostIPCHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("hostPID"))
+  {
+    m_hostPID = jsonValue.GetBool("hostPID");
+
+    m_hostPIDHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -156,6 +187,24 @@ JsonValue KubernetesWorkloadDetails::Jsonize() const
      volumesJsonList[volumesIndex].AsObject(m_volumes[volumesIndex].Jsonize());
    }
    payload.WithArray("volumes", std::move(volumesJsonList));
+
+  }
+
+  if(m_serviceAccountNameHasBeenSet)
+  {
+   payload.WithString("serviceAccountName", m_serviceAccountName);
+
+  }
+
+  if(m_hostIPCHasBeenSet)
+  {
+   payload.WithBool("hostIPC", m_hostIPC);
+
+  }
+
+  if(m_hostPIDHasBeenSet)
+  {
+   payload.WithBool("hostPID", m_hostPID);
 
   }
 

@@ -192,6 +192,31 @@ namespace Model
 
 
     /**
+     * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
+     * queries. The max capacity is specified in RPUs.</p>
+     */
+    inline int GetMaxCapacity() const{ return m_maxCapacity; }
+
+    /**
+     * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
+     * queries. The max capacity is specified in RPUs.</p>
+     */
+    inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
+
+    /**
+     * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
+     * queries. The max capacity is specified in RPUs.</p>
+     */
+    inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
+
+    /**
+     * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
+     * queries. The max capacity is specified in RPUs.</p>
+     */
+    inline UpdateWorkgroupRequest& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
+
+
+    /**
      * <p>The custom port to use when connecting to a workgroup. Valid port ranges are
      * 5431-5455 and 8191-8215. The default is 5439.</p>
      */
@@ -391,6 +416,9 @@ namespace Model
 
     bool m_enhancedVpcRouting;
     bool m_enhancedVpcRoutingHasBeenSet = false;
+
+    int m_maxCapacity;
+    bool m_maxCapacityHasBeenSet = false;
 
     int m_port;
     bool m_portHasBeenSet = false;

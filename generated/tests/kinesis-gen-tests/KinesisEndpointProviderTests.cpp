@@ -16,7 +16,7 @@ using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 using EpParam = Aws::Endpoint::EndpointParameter;
 using EpProp = Aws::Endpoint::EndpointParameter; // just a container to store test expectations
-using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<EpProp>>;
+using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp>>>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
 class KinesisEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
@@ -432,8 +432,7 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 48*/
   {"For custom endpoint with region set and fips disabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://example.com",
        {/*properties*/},
@@ -449,15 +448,13 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 50*/
   {"For custom endpoint with fips enabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
   /*TEST CASE 51*/
   {"For custom endpoint with fips disabled and dualstack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true)}, // params
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
   },
@@ -475,36 +472,31 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 54*/
   {"Invalid ARN: partition missing from ARN.", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("StreamARN", "arn::kinesis:us-west-2:123456789012:stream/testStream"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("StreamARN", "arn::kinesis:us-west-2:123456789012:stream/testStream"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: Failed to parse ARN."} // expect
   },
   /*TEST CASE 55*/
   {"Invalid ARN: partitions mismatch.", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("StreamARN", "arn:aws:kinesis:us-west-2:123456789012:stream/testStream"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("StreamARN", "arn:aws:kinesis:us-west-2:123456789012:stream/testStream"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Partition: aws from ARN doesn't match with partition name: aws-us-gov."} // expect
   },
   /*TEST CASE 56*/
   {"Invalid ARN: Not Kinesis", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("StreamARN", "arn:aws:s3:us-west-2:123456789012:stream/testStream"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("StreamARN", "arn:aws:s3:us-west-2:123456789012:stream/testStream"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: The ARN was not for the Kinesis service, found: s3."} // expect
   },
   /*TEST CASE 57*/
   {"Invalid ARN: Region is missing in ARN", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("StreamARN", "arn:aws:kinesis::123456789012:stream/testStream"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("StreamARN", "arn:aws:kinesis::123456789012:stream/testStream"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: Invalid region."} // expect
   },
   /*TEST CASE 58*/
   {"Invalid ARN: Region is empty string in ARN", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("StreamARN", "arn:aws:kinesis:  :123456789012:stream/testStream"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("StreamARN", "arn:aws:kinesis:  :123456789012:stream/testStream"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: Invalid region."} // expect
   },
@@ -524,8 +516,7 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 61*/
   {"Invalid ARN: Kinesis ARNs only support stream arn types", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("StreamARN", "arn:aws:kinesis:us-east-1:123:accesspoint/testStream"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("StreamARN", "arn:aws:kinesis:us-east-1:123:accesspoint/testStream"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types."} // expect
   },
@@ -538,15 +529,13 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 63*/
   {"OperationType not set", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("StreamARN", "arn:aws:kinesis:us-east-1:123456789012:stream/testStream"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("StreamARN", "arn:aws:kinesis:us-east-1:123456789012:stream/testStream"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Operation Type is not set. Please contact service team for resolution."} // expect
   },
   /*TEST CASE 64*/
   {"Custom Endpoint is specified", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("OperationType", "control"), EpParam("StreamARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream"),
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("StreamARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream"),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://example.com",
@@ -696,57 +685,57 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 81*/
   {"Invalid ConsumerARN: partition missing from ARN.", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn::kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn::kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: Failed to parse ARN."} // expect
   },
   /*TEST CASE 82*/
   {"Invalid ARN: partitions mismatch.", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737"), EpParam("Region", "us-gov-west-1"),
+     EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Partition: aws from ARN doesn't match with partition name: aws-us-gov."} // expect
   },
   /*TEST CASE 83*/
   {"Invalid ARN: Not Kinesis", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:s3:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:s3:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: The ARN was not for the Kinesis service, found: s3."} // expect
   },
   /*TEST CASE 84*/
   {"Invalid ARN: Region is missing in ARN", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis::123456789012:stream/testStream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis::123456789012:stream/testStream/consumer/test-consumer:1525898737"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: Invalid region."} // expect
   },
   /*TEST CASE 85*/
   {"Invalid ARN: Region is empty string in ARN", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:  :123456789012:stream/testStream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:  :123456789012:stream/testStream/consumer/test-consumer:1525898737"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: Invalid region."} // expect
   },
   /*TEST CASE 86*/
   {"Invalid ARN: Invalid account id", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1::stream/testStream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1::stream/testStream/consumer/test-consumer:1525898737"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: Invalid account id."} // expect
   },
   /*TEST CASE 87*/
   {"Invalid ARN: Invalid account id", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:   :stream/testStream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:   :stream/testStream/consumer/test-consumer:1525898737"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: Invalid account id."} // expect
   },
   /*TEST CASE 88*/
   {"Invalid ARN: Kinesis ARNs only support stream arn/consumer arn types", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123:accesspoint/testStream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123:accesspoint/testStream/consumer/test-consumer:1525898737"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types."} // expect
   },
@@ -759,8 +748,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 90*/
   {"OperationType not set", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123456789012:stream/testStream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123456789012:stream/testStream/consumer/test-consumer:1525898737"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Operation Type is not set. Please contact service team for resolution."} // expect
   },
@@ -775,8 +764,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 92*/
   {"Account endpoint targeting control operation type", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://123.control-kinesis.us-east-1.amazonaws.com",
        {/*properties*/},
@@ -784,8 +773,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 93*/
   {"Account endpoint targeting data operation type", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-east-1"), EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://123.data-kinesis.us-east-1.amazonaws.com",
        {/*properties*/},
@@ -793,8 +782,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 94*/
   {"Account endpoint with fips targeting data operation type", // documentation
-    {EpParam("UseFIPS", true), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-east-1"), EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", true), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://123.data-kinesis-fips.us-east-1.amazonaws.com",
        {/*properties*/},
@@ -802,8 +791,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 95*/
   {"Account endpoint with fips targeting control operation type", // documentation
-    {EpParam("UseFIPS", true), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", true), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://123.control-kinesis-fips.us-east-1.amazonaws.com",
        {/*properties*/},
@@ -811,8 +800,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 96*/
   {"Account endpoint with Dual Stack and FIPS enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", true)}, // params
+    {EpParam("UseFIPS", true), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://123.control-kinesis-fips.us-east-1.api.aws",
        {/*properties*/},
@@ -820,8 +809,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 97*/
   {"Account endpoint with Dual Stack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-west-1:123:stream/test-stream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-west-1"), EpParam("OperationType", "data"), EpParam("UseDualStack", true)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-west-1:123:stream/test-stream/consumer/test-consumer:1525898737"), EpParam("Region", "us-west-1"),
+     EpParam("OperationType", "data"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://123.data-kinesis.us-west-1.api.aws",
        {/*properties*/},
@@ -829,8 +818,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 98*/
   {"Account endpoint with FIPS and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-west-1:123:stream/test-stream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-west-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-west-1:123:stream/test-stream/consumer/test-consumer:1525898737"), EpParam("Region", "us-west-1"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://123.control-kinesis.us-west-1.amazonaws.com",
        {/*properties*/},
@@ -838,8 +827,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 99*/
   {"RegionMismatch: client region should be used for endpoint region", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-west-1:123:stream/testStream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-east-1"), EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-west-1:123:stream/testStream/consumer/test-consumer:1525898737"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://123.data-kinesis.us-east-1.amazonaws.com",
        {/*properties*/},
@@ -847,8 +836,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 100*/
   {"Account endpoint with FIPS enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("ConsumerARN", "arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "cn-northwest-1"), EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", true), EpParam("ConsumerARN", "arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream/consumer/test-consumer:1525898737"), EpParam("Region", "cn-northwest-1"),
+     EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://123.data-kinesis-fips.cn-northwest-1.amazonaws.com.cn",
        {/*properties*/},
@@ -856,8 +845,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 101*/
   {"Account endpoint with FIPS and DualStack enabled for cn regions.", // documentation
-    {EpParam("UseFIPS", true), EpParam("ConsumerARN", "arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "cn-northwest-1"), EpParam("OperationType", "data"), EpParam("UseDualStack", true)}, // params
+    {EpParam("UseFIPS", true), EpParam("ConsumerARN", "arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream/consumer/test-consumer:1525898737"), EpParam("Region", "cn-northwest-1"),
+     EpParam("OperationType", "data"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://123.data-kinesis-fips.cn-northwest-1.api.amazonwebservices.com.cn",
        {/*properties*/},
@@ -865,8 +854,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 102*/
   {"Account endpoint targeting control operation type in ADC regions", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-iso-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"), EpParam("Region", "us-iso-east-1"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://kinesis.us-iso-east-1.c2s.ic.gov",
        {/*properties*/},
@@ -874,8 +863,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 103*/
   {"Account endpoint targeting control operation type in ADC regions", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws-iso:kinesis:us-iso-west-1:123:stream/test-stream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-iso-west-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws-iso:kinesis:us-iso-west-1:123:stream/test-stream/consumer/test-consumer:1525898737"), EpParam("Region", "us-iso-west-1"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://kinesis.us-iso-west-1.c2s.ic.gov",
        {/*properties*/},
@@ -883,8 +872,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 104*/
   {"Account endpoint targeting data operation type in ADC regions", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-isob-east-1"), EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"), EpParam("Region", "us-isob-east-1"),
+     EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://kinesis.us-isob-east-1.sc2s.sgov.gov",
        {/*properties*/},
@@ -892,8 +881,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 105*/
   {"Account endpoint with fips targeting control operation type in ADC regions", // documentation
-    {EpParam("UseFIPS", true), EpParam("ConsumerARN", "arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-iso-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", true), EpParam("ConsumerARN", "arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"), EpParam("Region", "us-iso-east-1"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://kinesis-fips.us-iso-east-1.c2s.ic.gov",
        {/*properties*/},
@@ -901,8 +890,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 106*/
   {"Account endpoint with fips targeting data operation type in ADC regions", // documentation
-    {EpParam("UseFIPS", true), EpParam("ConsumerARN", "arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-isob-east-1"), EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", true), EpParam("ConsumerARN", "arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"), EpParam("Region", "us-isob-east-1"),
+     EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://kinesis-fips.us-isob-east-1.sc2s.sgov.gov",
        {/*properties*/},
@@ -910,8 +899,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 107*/
   {"ConsumerARN targeting US-EAST-1", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123456789123:stream/foobar/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-east-1"), EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123456789123:stream/foobar/consumer/test-consumer:1525898737"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://123456789123.data-kinesis.us-east-1.amazonaws.com",
        {/*properties*/},
@@ -919,9 +908,8 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 108*/
   {"Both StreamARN and ConsumerARN specified. StreamARN should take precedence", // documentation
-    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123456789123:stream/foobar/consumer/test-consumer:1525898737"),
-     EpParam("Region", "us-east-1"), EpParam("OperationType", "data"), EpParam("StreamARN", "arn:aws:kinesis:us-east-1:123:stream/foobar"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123456789123:stream/foobar/consumer/test-consumer:1525898737"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "data"), EpParam("StreamARN", "arn:aws:kinesis:us-east-1:123:stream/foobar"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://123.data-kinesis.us-east-1.amazonaws.com",
        {/*properties*/},
@@ -961,9 +949,23 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const KinesisEndpoin
         const auto expAuthSchemesIt = expect.endpoint.properties.find("authSchemes");
         if (expAuthSchemesIt != expect.endpoint.properties.end())
         {
+            // in the list of AuthSchemes, select the one with a highest priority
+            const Aws::Vector<Aws::String> priotityList = {"sigv4a", "sigv4", "bearer", "none", ""};
+            const auto expectedAuthSchemePropsIt = std::find_first_of(expAuthSchemesIt->second.begin(), expAuthSchemesIt->second.end(),
+                                                                    priotityList.begin(), priotityList.end(), [](const Aws::Vector<EpProp>& props, const Aws::String& expName)
+                                                                    {
+                                                                        const auto& propNameIt = std::find_if(props.begin(), props.end(), [](const EpProp& prop)
+                                                                        {
+                                                                            return prop.GetName() == "name";
+                                                                        });
+                                                                        assert(propNameIt != props.end());
+                                                                        return propNameIt->GetStrValueNoCheck() == expName;
+                                                                    });
+            assert(expectedAuthSchemePropsIt != expAuthSchemesIt->second.end());
+
             const auto& endpointResultAttrs = outcome.GetResult().GetAttributes();
             ASSERT_TRUE(endpointResultAttrs) << "Expected non-empty EndpointAttributes (authSchemes)";
-            for (const auto& expProperty : expAuthSchemesIt->second)
+            for (const auto& expProperty : *expectedAuthSchemePropsIt)
             {
                 if (expProperty.GetName() == "name") {
                     ASSERT_TRUE(!endpointResultAttrs->authScheme.GetName().empty());
