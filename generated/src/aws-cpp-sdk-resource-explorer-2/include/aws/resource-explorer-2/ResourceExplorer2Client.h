@@ -10,6 +10,9 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resource-explorer-2/ResourceExplorer2ServiceClientModel.h>
+#include <aws/resource-explorer-2/model/GetDefaultViewRequest.h>
+#include <aws/resource-explorer-2/model/DisassociateDefaultViewRequest.h>
+#include <aws/resource-explorer-2/model/GetIndexRequest.h>
 
 namespace Aws
 {
@@ -337,25 +340,26 @@ namespace ResourceExplorer2
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/DisassociateDefaultView">AWS
          * API Reference</a></p>
          */
-        virtual Model::DisassociateDefaultViewOutcome DisassociateDefaultView() const;
+        virtual Model::DisassociateDefaultViewOutcome DisassociateDefaultView(const Model::DisassociateDefaultViewRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DisassociateDefaultView that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DisassociateDefaultViewOutcomeCallable DisassociateDefaultViewCallable() const
+        template<typename DisassociateDefaultViewRequestT = Model::DisassociateDefaultViewRequest>
+        Model::DisassociateDefaultViewOutcomeCallable DisassociateDefaultViewCallable(const DisassociateDefaultViewRequestT& request = {}) const
         {
-            return SubmitCallable(&ResourceExplorer2Client::DisassociateDefaultView);
+            return SubmitCallable(&ResourceExplorer2Client::DisassociateDefaultView, request);
         }
 
         /**
          * An Async wrapper for DisassociateDefaultView that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DisassociateDefaultViewAsync(const DisassociateDefaultViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DisassociateDefaultViewRequestT = Model::DisassociateDefaultViewRequest>
+        void DisassociateDefaultViewAsync(const DisassociateDefaultViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisassociateDefaultViewRequestT& request = {}) const
         {
-            return SubmitAsync(&ResourceExplorer2Client::DisassociateDefaultView, handler, context);
+            return SubmitAsync(&ResourceExplorer2Client::DisassociateDefaultView, request, handler, context);
         }
+
         /**
          * <p>Retrieves the Amazon Resource Name (ARN) of the view that is the default for
          * the Amazon Web Services Region in which you call this operation. You can then
@@ -364,25 +368,26 @@ namespace ResourceExplorer2
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetDefaultView">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetDefaultViewOutcome GetDefaultView() const;
+        virtual Model::GetDefaultViewOutcome GetDefaultView(const Model::GetDefaultViewRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetDefaultView that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetDefaultViewOutcomeCallable GetDefaultViewCallable() const
+        template<typename GetDefaultViewRequestT = Model::GetDefaultViewRequest>
+        Model::GetDefaultViewOutcomeCallable GetDefaultViewCallable(const GetDefaultViewRequestT& request = {}) const
         {
-            return SubmitCallable(&ResourceExplorer2Client::GetDefaultView);
+            return SubmitCallable(&ResourceExplorer2Client::GetDefaultView, request);
         }
 
         /**
          * An Async wrapper for GetDefaultView that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetDefaultViewAsync(const GetDefaultViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetDefaultViewRequestT = Model::GetDefaultViewRequest>
+        void GetDefaultViewAsync(const GetDefaultViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetDefaultViewRequestT& request = {}) const
         {
-            return SubmitAsync(&ResourceExplorer2Client::GetDefaultView, handler, context);
+            return SubmitAsync(&ResourceExplorer2Client::GetDefaultView, request, handler, context);
         }
+
         /**
          * <p>Retrieves details about the Amazon Web Services Resource Explorer index in
          * the Amazon Web Services Region in which you invoked the operation.</p><p><h3>See
@@ -390,25 +395,26 @@ namespace ResourceExplorer2
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetIndex">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetIndexOutcome GetIndex() const;
+        virtual Model::GetIndexOutcome GetIndex(const Model::GetIndexRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetIndex that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetIndexOutcomeCallable GetIndexCallable() const
+        template<typename GetIndexRequestT = Model::GetIndexRequest>
+        Model::GetIndexOutcomeCallable GetIndexCallable(const GetIndexRequestT& request = {}) const
         {
-            return SubmitCallable(&ResourceExplorer2Client::GetIndex);
+            return SubmitCallable(&ResourceExplorer2Client::GetIndex, request);
         }
 
         /**
          * An Async wrapper for GetIndex that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetIndexAsync(const GetIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetIndexRequestT = Model::GetIndexRequest>
+        void GetIndexAsync(const GetIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetIndexRequestT& request = {}) const
         {
-            return SubmitAsync(&ResourceExplorer2Client::GetIndex, handler, context);
+            return SubmitAsync(&ResourceExplorer2Client::GetIndex, request, handler, context);
         }
+
         /**
          * <p>Retrieves details of the specified view.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetView">AWS

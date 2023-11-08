@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/backup/BackupServiceClientModel.h>
+#include <aws/backup/model/GetSupportedResourceTypesRequest.h>
 
 namespace Aws
 {
@@ -1151,25 +1152,26 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetSupportedResourceTypes">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSupportedResourceTypesOutcome GetSupportedResourceTypes() const;
+        virtual Model::GetSupportedResourceTypesOutcome GetSupportedResourceTypes(const Model::GetSupportedResourceTypesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSupportedResourceTypes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetSupportedResourceTypesOutcomeCallable GetSupportedResourceTypesCallable() const
+        template<typename GetSupportedResourceTypesRequestT = Model::GetSupportedResourceTypesRequest>
+        Model::GetSupportedResourceTypesOutcomeCallable GetSupportedResourceTypesCallable(const GetSupportedResourceTypesRequestT& request = {}) const
         {
-            return SubmitCallable(&BackupClient::GetSupportedResourceTypes);
+            return SubmitCallable(&BackupClient::GetSupportedResourceTypes, request);
         }
 
         /**
          * An Async wrapper for GetSupportedResourceTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetSupportedResourceTypesAsync(const GetSupportedResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetSupportedResourceTypesRequestT = Model::GetSupportedResourceTypesRequest>
+        void GetSupportedResourceTypesAsync(const GetSupportedResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSupportedResourceTypesRequestT& request = {}) const
         {
-            return SubmitAsync(&BackupClient::GetSupportedResourceTypes, handler, context);
+            return SubmitAsync(&BackupClient::GetSupportedResourceTypes, request, handler, context);
         }
+
         /**
          * <p>Returns a list of existing backup jobs for an authenticated account for the
          * last 30 days. For a longer period of time, consider using these <a

@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/servicecatalog-appregistry/AppRegistryServiceClientModel.h>
+#include <aws/servicecatalog-appregistry/model/GetConfigurationRequest.h>
 
 namespace Aws
 {
@@ -384,25 +385,26 @@ namespace AppRegistry
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetConfigurationOutcome GetConfiguration() const;
+        virtual Model::GetConfigurationOutcome GetConfiguration(const Model::GetConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetConfigurationOutcomeCallable GetConfigurationCallable() const
+        template<typename GetConfigurationRequestT = Model::GetConfigurationRequest>
+        Model::GetConfigurationOutcomeCallable GetConfigurationCallable(const GetConfigurationRequestT& request = {}) const
         {
-            return SubmitCallable(&AppRegistryClient::GetConfiguration);
+            return SubmitCallable(&AppRegistryClient::GetConfiguration, request);
         }
 
         /**
          * An Async wrapper for GetConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetConfigurationAsync(const GetConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetConfigurationRequestT = Model::GetConfigurationRequest>
+        void GetConfigurationAsync(const GetConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetConfigurationRequestT& request = {}) const
         {
-            return SubmitAsync(&AppRegistryClient::GetConfiguration, handler, context);
+            return SubmitAsync(&AppRegistryClient::GetConfiguration, request, handler, context);
         }
+
         /**
          * <p>Retrieves a list of all of your applications. Results are
          * paginated.</p><p><h3>See Also:</h3>   <a

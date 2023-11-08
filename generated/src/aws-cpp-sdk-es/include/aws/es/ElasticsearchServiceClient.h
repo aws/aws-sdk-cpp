@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/es/ElasticsearchServiceServiceClientModel.h>
+#include <aws/es/model/DeleteElasticsearchServiceRoleRequest.h>
 
 namespace Aws
 {
@@ -365,25 +366,26 @@ namespace ElasticsearchService
          * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchServiceRole">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteElasticsearchServiceRoleOutcome DeleteElasticsearchServiceRole() const;
+        virtual Model::DeleteElasticsearchServiceRoleOutcome DeleteElasticsearchServiceRole(const Model::DeleteElasticsearchServiceRoleRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteElasticsearchServiceRole that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DeleteElasticsearchServiceRoleOutcomeCallable DeleteElasticsearchServiceRoleCallable() const
+        template<typename DeleteElasticsearchServiceRoleRequestT = Model::DeleteElasticsearchServiceRoleRequest>
+        Model::DeleteElasticsearchServiceRoleOutcomeCallable DeleteElasticsearchServiceRoleCallable(const DeleteElasticsearchServiceRoleRequestT& request = {}) const
         {
-            return SubmitCallable(&ElasticsearchServiceClient::DeleteElasticsearchServiceRole);
+            return SubmitCallable(&ElasticsearchServiceClient::DeleteElasticsearchServiceRole, request);
         }
 
         /**
          * An Async wrapper for DeleteElasticsearchServiceRole that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DeleteElasticsearchServiceRoleAsync(const DeleteElasticsearchServiceRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DeleteElasticsearchServiceRoleRequestT = Model::DeleteElasticsearchServiceRoleRequest>
+        void DeleteElasticsearchServiceRoleAsync(const DeleteElasticsearchServiceRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteElasticsearchServiceRoleRequestT& request = {}) const
         {
-            return SubmitAsync(&ElasticsearchServiceClient::DeleteElasticsearchServiceRole, handler, context);
+            return SubmitAsync(&ElasticsearchServiceClient::DeleteElasticsearchServiceRole, request, handler, context);
         }
+
         /**
          * <p>Allows the destination domain owner to delete an existing inbound
          * cross-cluster search connection.</p><p><h3>See Also:</h3>   <a

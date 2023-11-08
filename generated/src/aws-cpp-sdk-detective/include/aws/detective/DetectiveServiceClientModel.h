@@ -82,6 +82,7 @@ namespace Aws
       class DeleteGraphRequest;
       class DeleteMembersRequest;
       class DescribeOrganizationConfigurationRequest;
+      class DisableOrganizationAdminAccountRequest;
       class DisassociateMembershipRequest;
       class EnableOrganizationAdminAccountRequest;
       class GetMembersRequest;
@@ -165,7 +166,7 @@ namespace Aws
     typedef std::function<void(const DetectiveClient*, const Model::DeleteGraphRequest&, const Model::DeleteGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGraphResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::DeleteMembersRequest&, const Model::DeleteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMembersResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::DescribeOrganizationConfigurationRequest&, const Model::DescribeOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::DisableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableOrganizationAdminAccountResponseReceivedHandler;
+    typedef std::function<void(const DetectiveClient*, const Model::DisableOrganizationAdminAccountRequest&, const Model::DisableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableOrganizationAdminAccountResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::DisassociateMembershipRequest&, const Model::DisassociateMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateMembershipResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::EnableOrganizationAdminAccountRequest&, const Model::EnableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableOrganizationAdminAccountResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::GetMembersRequest&, const Model::GetMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMembersResponseReceivedHandler;
