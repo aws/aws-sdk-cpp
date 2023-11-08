@@ -16,7 +16,7 @@ using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 using EpParam = Aws::Endpoint::EndpointParameter;
 using EpProp = Aws::Endpoint::EndpointParameter; // just a container to store test expectations
-using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<EpProp>>;
+using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp>>>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
 class STSEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
@@ -131,7 +131,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "aws-global"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 10*/
@@ -440,8 +440,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 49*/
   {"For custom endpoint with region set and fips disabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://example.com",
        {/*properties*/},
@@ -457,15 +456,13 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 51*/
   {"For custom endpoint with fips enabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
   /*TEST CASE 52*/
   {"For custom endpoint with fips disabled and dualstack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true)}, // params
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
   },
@@ -480,7 +477,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 55*/
@@ -488,7 +485,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "ap-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 56*/
@@ -496,7 +493,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 57*/
@@ -504,7 +501,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 58*/
@@ -512,7 +509,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "aws-global"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 59*/
@@ -520,7 +517,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "ca-central-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 60*/
@@ -528,7 +525,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 61*/
@@ -536,7 +533,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 62*/
@@ -544,7 +541,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 63*/
@@ -552,7 +549,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 64*/
@@ -560,7 +557,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 65*/
@@ -568,7 +565,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 66*/
@@ -576,7 +573,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 67*/
@@ -584,7 +581,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 68*/
@@ -592,7 +589,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "us-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 69*/
@@ -600,7 +597,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 70*/
@@ -608,13 +605,12 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "us-east-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://sts.us-east-3.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("signingRegion", "us-east-3"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}},
+       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-3"), EpProp("name", "sigv4"), EpProp("signingName", "sts")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 71*/
   {"UseGlobalEndpoint with legacy region and custom endpoint", // documentation
-    {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-west-1"), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://example.com",
        {/*properties*/},
@@ -622,8 +618,7 @@ static const Aws::Vector<STSEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 72*/
   {"UseGlobalEndpoint with unset region and custom endpoint", // documentation
-    {EpParam("UseGlobalEndpoint", false), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseGlobalEndpoint", false), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://example.com",
        {/*properties*/},
@@ -663,9 +658,23 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const STSEndpointPro
         const auto expAuthSchemesIt = expect.endpoint.properties.find("authSchemes");
         if (expAuthSchemesIt != expect.endpoint.properties.end())
         {
+            // in the list of AuthSchemes, select the one with a highest priority
+            const Aws::Vector<Aws::String> priotityList = {"sigv4a", "sigv4", "bearer", "none", ""};
+            const auto expectedAuthSchemePropsIt = std::find_first_of(expAuthSchemesIt->second.begin(), expAuthSchemesIt->second.end(),
+                                                                    priotityList.begin(), priotityList.end(), [](const Aws::Vector<EpProp>& props, const Aws::String& expName)
+                                                                    {
+                                                                        const auto& propNameIt = std::find_if(props.begin(), props.end(), [](const EpProp& prop)
+                                                                        {
+                                                                            return prop.GetName() == "name";
+                                                                        });
+                                                                        assert(propNameIt != props.end());
+                                                                        return propNameIt->GetStrValueNoCheck() == expName;
+                                                                    });
+            assert(expectedAuthSchemePropsIt != expAuthSchemesIt->second.end());
+
             const auto& endpointResultAttrs = outcome.GetResult().GetAttributes();
             ASSERT_TRUE(endpointResultAttrs) << "Expected non-empty EndpointAttributes (authSchemes)";
-            for (const auto& expProperty : expAuthSchemesIt->second)
+            for (const auto& expProperty : *expectedAuthSchemePropsIt)
             {
                 if (expProperty.GetName() == "name") {
                     ASSERT_TRUE(!endpointResultAttrs->authScheme.GetName().empty());

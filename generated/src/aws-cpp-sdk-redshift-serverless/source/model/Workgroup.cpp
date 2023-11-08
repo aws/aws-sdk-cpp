@@ -29,6 +29,8 @@ Workgroup::Workgroup() :
     m_endpointHasBeenSet(false),
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
+    m_maxCapacity(0),
+    m_maxCapacityHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
     m_patchVersionHasBeenSet(false),
     m_port(0),
@@ -57,6 +59,8 @@ Workgroup::Workgroup(JsonView jsonValue) :
     m_endpointHasBeenSet(false),
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
+    m_maxCapacity(0),
+    m_maxCapacityHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
     m_patchVersionHasBeenSet(false),
     m_port(0),
@@ -134,6 +138,13 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
     m_enhancedVpcRouting = jsonValue.GetBool("enhancedVpcRouting");
 
     m_enhancedVpcRoutingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("maxCapacity"))
+  {
+    m_maxCapacity = jsonValue.GetInteger("maxCapacity");
+
+    m_maxCapacityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("namespaceName"))
@@ -274,6 +285,12 @@ JsonValue Workgroup::Jsonize() const
   if(m_enhancedVpcRoutingHasBeenSet)
   {
    payload.WithBool("enhancedVpcRouting", m_enhancedVpcRouting);
+
+  }
+
+  if(m_maxCapacityHasBeenSet)
+  {
+   payload.WithInteger("maxCapacity", m_maxCapacity);
 
   }
 

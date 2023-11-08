@@ -7,6 +7,7 @@
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resiliencehub/model/RecommendationStatus.h>
 #include <aws/resiliencehub/model/AlarmType.h>
 #include <aws/resiliencehub/model/RecommendationItem.h>
 #include <utility>
@@ -302,6 +303,37 @@ namespace Model
 
 
     /**
+     * <p>Status of the recommended Amazon CloudWatch alarm.</p>
+     */
+    inline const RecommendationStatus& GetRecommendationStatus() const{ return m_recommendationStatus; }
+
+    /**
+     * <p>Status of the recommended Amazon CloudWatch alarm.</p>
+     */
+    inline bool RecommendationStatusHasBeenSet() const { return m_recommendationStatusHasBeenSet; }
+
+    /**
+     * <p>Status of the recommended Amazon CloudWatch alarm.</p>
+     */
+    inline void SetRecommendationStatus(const RecommendationStatus& value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = value; }
+
+    /**
+     * <p>Status of the recommended Amazon CloudWatch alarm.</p>
+     */
+    inline void SetRecommendationStatus(RecommendationStatus&& value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = std::move(value); }
+
+    /**
+     * <p>Status of the recommended Amazon CloudWatch alarm.</p>
+     */
+    inline AlarmRecommendation& WithRecommendationStatus(const RecommendationStatus& value) { SetRecommendationStatus(value); return *this;}
+
+    /**
+     * <p>Status of the recommended Amazon CloudWatch alarm.</p>
+     */
+    inline AlarmRecommendation& WithRecommendationStatus(RecommendationStatus&& value) { SetRecommendationStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>Reference identifier of the alarm recommendation.</p>
      */
     inline const Aws::String& GetReferenceId() const{ return m_referenceId; }
@@ -391,6 +423,9 @@ namespace Model
 
     Aws::String m_recommendationId;
     bool m_recommendationIdHasBeenSet = false;
+
+    RecommendationStatus m_recommendationStatus;
+    bool m_recommendationStatusHasBeenSet = false;
 
     Aws::String m_referenceId;
     bool m_referenceIdHasBeenSet = false;

@@ -193,6 +193,78 @@ namespace Model
     inline StartRunResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
+    /**
+     * <p> The universally unique identifier for a run. </p>
+     */
+    inline const Aws::String& GetUuid() const{ return m_uuid; }
+
+    /**
+     * <p> The universally unique identifier for a run. </p>
+     */
+    inline void SetUuid(const Aws::String& value) { m_uuid = value; }
+
+    /**
+     * <p> The universally unique identifier for a run. </p>
+     */
+    inline void SetUuid(Aws::String&& value) { m_uuid = std::move(value); }
+
+    /**
+     * <p> The universally unique identifier for a run. </p>
+     */
+    inline void SetUuid(const char* value) { m_uuid.assign(value); }
+
+    /**
+     * <p> The universally unique identifier for a run. </p>
+     */
+    inline StartRunResult& WithUuid(const Aws::String& value) { SetUuid(value); return *this;}
+
+    /**
+     * <p> The universally unique identifier for a run. </p>
+     */
+    inline StartRunResult& WithUuid(Aws::String&& value) { SetUuid(std::move(value)); return *this;}
+
+    /**
+     * <p> The universally unique identifier for a run. </p>
+     */
+    inline StartRunResult& WithUuid(const char* value) { SetUuid(value); return *this;}
+
+
+    /**
+     * <p> The destination for workflow outputs. </p>
+     */
+    inline const Aws::String& GetRunOutputUri() const{ return m_runOutputUri; }
+
+    /**
+     * <p> The destination for workflow outputs. </p>
+     */
+    inline void SetRunOutputUri(const Aws::String& value) { m_runOutputUri = value; }
+
+    /**
+     * <p> The destination for workflow outputs. </p>
+     */
+    inline void SetRunOutputUri(Aws::String&& value) { m_runOutputUri = std::move(value); }
+
+    /**
+     * <p> The destination for workflow outputs. </p>
+     */
+    inline void SetRunOutputUri(const char* value) { m_runOutputUri.assign(value); }
+
+    /**
+     * <p> The destination for workflow outputs. </p>
+     */
+    inline StartRunResult& WithRunOutputUri(const Aws::String& value) { SetRunOutputUri(value); return *this;}
+
+    /**
+     * <p> The destination for workflow outputs. </p>
+     */
+    inline StartRunResult& WithRunOutputUri(Aws::String&& value) { SetRunOutputUri(std::move(value)); return *this;}
+
+    /**
+     * <p> The destination for workflow outputs. </p>
+     */
+    inline StartRunResult& WithRunOutputUri(const char* value) { SetRunOutputUri(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -223,6 +295,10 @@ namespace Model
     RunStatus m_status;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::String m_uuid;
+
+    Aws::String m_runOutputUri;
 
     Aws::String m_requestId;
   };

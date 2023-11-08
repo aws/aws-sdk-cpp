@@ -409,42 +409,42 @@ namespace Model
 
 
     /**
-     * <p>Type of resource.</p>
+     * <p>The type of resource.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>Type of resource.</p>
+     * <p>The type of resource.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>Type of resource.</p>
+     * <p>The type of resource.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>Type of resource.</p>
+     * <p>The type of resource.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>Type of resource.</p>
+     * <p>The type of resource.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>Type of resource.</p>
+     * <p>The type of resource.</p>
      */
     inline PhysicalResource& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>Type of resource.</p>
+     * <p>The type of resource.</p>
      */
     inline PhysicalResource& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>Type of resource.</p>
+     * <p>The type of resource.</p>
      */
     inline PhysicalResource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

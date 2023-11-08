@@ -25,6 +25,8 @@ AlarmRecommendation::AlarmRecommendation() :
     m_nameHasBeenSet(false),
     m_prerequisiteHasBeenSet(false),
     m_recommendationIdHasBeenSet(false),
+    m_recommendationStatus(RecommendationStatus::NOT_SET),
+    m_recommendationStatusHasBeenSet(false),
     m_referenceIdHasBeenSet(false),
     m_type(AlarmType::NOT_SET),
     m_typeHasBeenSet(false)
@@ -38,6 +40,8 @@ AlarmRecommendation::AlarmRecommendation(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_prerequisiteHasBeenSet(false),
     m_recommendationIdHasBeenSet(false),
+    m_recommendationStatus(RecommendationStatus::NOT_SET),
+    m_recommendationStatusHasBeenSet(false),
     m_referenceIdHasBeenSet(false),
     m_type(AlarmType::NOT_SET),
     m_typeHasBeenSet(false)
@@ -93,6 +97,13 @@ AlarmRecommendation& AlarmRecommendation::operator =(JsonView jsonValue)
     m_recommendationId = jsonValue.GetString("recommendationId");
 
     m_recommendationIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("recommendationStatus"))
+  {
+    m_recommendationStatus = RecommendationStatusMapper::GetRecommendationStatusForName(jsonValue.GetString("recommendationStatus"));
+
+    m_recommendationStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("referenceId"))
@@ -160,6 +171,11 @@ JsonValue AlarmRecommendation::Jsonize() const
   {
    payload.WithString("recommendationId", m_recommendationId);
 
+  }
+
+  if(m_recommendationStatusHasBeenSet)
+  {
+   payload.WithString("recommendationStatus", RecommendationStatusMapper::GetNameForRecommendationStatus(m_recommendationStatus));
   }
 
   if(m_referenceIdHasBeenSet)

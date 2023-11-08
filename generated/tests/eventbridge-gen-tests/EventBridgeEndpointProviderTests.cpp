@@ -16,7 +16,7 @@ using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 using EpParam = Aws::Endpoint::EndpointParameter;
 using EpProp = Aws::Endpoint::EndpointParameter; // just a container to store test expectations
-using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<EpProp>>;
+using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp>>>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
 class EventBridgeEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
@@ -432,8 +432,7 @@ static const Aws::Vector<EventBridgeEndpointProviderEndpointTestCase> TEST_CASES
   },
   /*TEST CASE 48*/
   {"For custom endpoint with region set and fips disabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://example.com",
        {/*properties*/},
@@ -449,15 +448,13 @@ static const Aws::Vector<EventBridgeEndpointProviderEndpointTestCase> TEST_CASES
   },
   /*TEST CASE 50*/
   {"For custom endpoint with fips enabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
   /*TEST CASE 51*/
   {"For custom endpoint with fips disabled and dualstack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true)}, // params
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
   },
@@ -472,7 +469,7 @@ static const Aws::Vector<EventBridgeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://abc123.456def.endpoint.events.amazonaws.com",
-       {/*properties*/{"authSchemes", {EpProp("name", "sigv4a"), EpProp("signingName", "events")}}},
+       {/*properties*/{"authSchemes", {{EpProp("name", "sigv4a"), EpProp("signingName", "events")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 54*/
@@ -489,8 +486,7 @@ static const Aws::Vector<EventBridgeEndpointProviderEndpointTestCase> TEST_CASES
   },
   /*TEST CASE 56*/
   {"Invalid EndpointId", // documentation
-    {EpParam("UseFIPS", false), EpParam("EndpointId", "badactor.com?foo=bar"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("EndpointId", "badactor.com?foo=bar"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"EndpointId must be a valid host label."} // expect
   },
@@ -505,22 +501,20 @@ static const Aws::Vector<EventBridgeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://abc123.456def.endpoint.events.api.aws",
-       {/*properties*/{"authSchemes", {EpProp("name", "sigv4a"), EpProp("signingName", "events")}}},
+       {/*properties*/{"authSchemes", {{EpProp("name", "sigv4a"), EpProp("signingName", "events")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 59*/
   {"Valid endpointId with custom sdk endpoint", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("EndpointId", "abc123.456def"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://example.com",
-       {/*properties*/{"authSchemes", {EpProp("name", "sigv4a"), EpProp("signingName", "events")}}},
+       {/*properties*/{"authSchemes", {{EpProp("name", "sigv4a"), EpProp("signingName", "events")}}}},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 60*/
   {"Valid EndpointId with DualStack enabled and partition does not support DualStack", // documentation
-    {EpParam("UseFIPS", false), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-isob-east-1"),
-     EpParam("UseDualStack", true)}, // params
+    {EpParam("UseFIPS", false), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
   }
@@ -558,9 +552,23 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const EventBridgeEnd
         const auto expAuthSchemesIt = expect.endpoint.properties.find("authSchemes");
         if (expAuthSchemesIt != expect.endpoint.properties.end())
         {
+            // in the list of AuthSchemes, select the one with a highest priority
+            const Aws::Vector<Aws::String> priotityList = {"sigv4a", "sigv4", "bearer", "none", ""};
+            const auto expectedAuthSchemePropsIt = std::find_first_of(expAuthSchemesIt->second.begin(), expAuthSchemesIt->second.end(),
+                                                                    priotityList.begin(), priotityList.end(), [](const Aws::Vector<EpProp>& props, const Aws::String& expName)
+                                                                    {
+                                                                        const auto& propNameIt = std::find_if(props.begin(), props.end(), [](const EpProp& prop)
+                                                                        {
+                                                                            return prop.GetName() == "name";
+                                                                        });
+                                                                        assert(propNameIt != props.end());
+                                                                        return propNameIt->GetStrValueNoCheck() == expName;
+                                                                    });
+            assert(expectedAuthSchemePropsIt != expAuthSchemesIt->second.end());
+
             const auto& endpointResultAttrs = outcome.GetResult().GetAttributes();
             ASSERT_TRUE(endpointResultAttrs) << "Expected non-empty EndpointAttributes (authSchemes)";
-            for (const auto& expProperty : expAuthSchemesIt->second)
+            for (const auto& expProperty : *expectedAuthSchemePropsIt)
             {
                 if (expProperty.GetName() == "name") {
                     ASSERT_TRUE(!endpointResultAttrs->authScheme.GetName().empty());

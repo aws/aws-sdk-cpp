@@ -12,6 +12,9 @@
 #include <aws/guardduty/model/PortProbeAction.h>
 #include <aws/guardduty/model/KubernetesApiCallAction.h>
 #include <aws/guardduty/model/RdsLoginAttemptAction.h>
+#include <aws/guardduty/model/KubernetesPermissionCheckedDetails.h>
+#include <aws/guardduty/model/KubernetesRoleBindingDetails.h>
+#include <aws/guardduty/model/KubernetesRoleDetails.h>
 #include <utility>
 
 namespace Aws
@@ -287,6 +290,111 @@ namespace Model
      */
     inline Action& WithRdsLoginAttemptAction(RdsLoginAttemptAction&& value) { SetRdsLoginAttemptAction(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information whether the user has the permission to use a specific Kubernetes
+     * API.</p>
+     */
+    inline const KubernetesPermissionCheckedDetails& GetKubernetesPermissionCheckedDetails() const{ return m_kubernetesPermissionCheckedDetails; }
+
+    /**
+     * <p>Information whether the user has the permission to use a specific Kubernetes
+     * API.</p>
+     */
+    inline bool KubernetesPermissionCheckedDetailsHasBeenSet() const { return m_kubernetesPermissionCheckedDetailsHasBeenSet; }
+
+    /**
+     * <p>Information whether the user has the permission to use a specific Kubernetes
+     * API.</p>
+     */
+    inline void SetKubernetesPermissionCheckedDetails(const KubernetesPermissionCheckedDetails& value) { m_kubernetesPermissionCheckedDetailsHasBeenSet = true; m_kubernetesPermissionCheckedDetails = value; }
+
+    /**
+     * <p>Information whether the user has the permission to use a specific Kubernetes
+     * API.</p>
+     */
+    inline void SetKubernetesPermissionCheckedDetails(KubernetesPermissionCheckedDetails&& value) { m_kubernetesPermissionCheckedDetailsHasBeenSet = true; m_kubernetesPermissionCheckedDetails = std::move(value); }
+
+    /**
+     * <p>Information whether the user has the permission to use a specific Kubernetes
+     * API.</p>
+     */
+    inline Action& WithKubernetesPermissionCheckedDetails(const KubernetesPermissionCheckedDetails& value) { SetKubernetesPermissionCheckedDetails(value); return *this;}
+
+    /**
+     * <p>Information whether the user has the permission to use a specific Kubernetes
+     * API.</p>
+     */
+    inline Action& WithKubernetesPermissionCheckedDetails(KubernetesPermissionCheckedDetails&& value) { SetKubernetesPermissionCheckedDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the role binding that grants the permission defined in a
+     * Kubernetes role.</p>
+     */
+    inline const KubernetesRoleBindingDetails& GetKubernetesRoleBindingDetails() const{ return m_kubernetesRoleBindingDetails; }
+
+    /**
+     * <p>Information about the role binding that grants the permission defined in a
+     * Kubernetes role.</p>
+     */
+    inline bool KubernetesRoleBindingDetailsHasBeenSet() const { return m_kubernetesRoleBindingDetailsHasBeenSet; }
+
+    /**
+     * <p>Information about the role binding that grants the permission defined in a
+     * Kubernetes role.</p>
+     */
+    inline void SetKubernetesRoleBindingDetails(const KubernetesRoleBindingDetails& value) { m_kubernetesRoleBindingDetailsHasBeenSet = true; m_kubernetesRoleBindingDetails = value; }
+
+    /**
+     * <p>Information about the role binding that grants the permission defined in a
+     * Kubernetes role.</p>
+     */
+    inline void SetKubernetesRoleBindingDetails(KubernetesRoleBindingDetails&& value) { m_kubernetesRoleBindingDetailsHasBeenSet = true; m_kubernetesRoleBindingDetails = std::move(value); }
+
+    /**
+     * <p>Information about the role binding that grants the permission defined in a
+     * Kubernetes role.</p>
+     */
+    inline Action& WithKubernetesRoleBindingDetails(const KubernetesRoleBindingDetails& value) { SetKubernetesRoleBindingDetails(value); return *this;}
+
+    /**
+     * <p>Information about the role binding that grants the permission defined in a
+     * Kubernetes role.</p>
+     */
+    inline Action& WithKubernetesRoleBindingDetails(KubernetesRoleBindingDetails&& value) { SetKubernetesRoleBindingDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the Kubernetes role name and role type.</p>
+     */
+    inline const KubernetesRoleDetails& GetKubernetesRoleDetails() const{ return m_kubernetesRoleDetails; }
+
+    /**
+     * <p>Information about the Kubernetes role name and role type.</p>
+     */
+    inline bool KubernetesRoleDetailsHasBeenSet() const { return m_kubernetesRoleDetailsHasBeenSet; }
+
+    /**
+     * <p>Information about the Kubernetes role name and role type.</p>
+     */
+    inline void SetKubernetesRoleDetails(const KubernetesRoleDetails& value) { m_kubernetesRoleDetailsHasBeenSet = true; m_kubernetesRoleDetails = value; }
+
+    /**
+     * <p>Information about the Kubernetes role name and role type.</p>
+     */
+    inline void SetKubernetesRoleDetails(KubernetesRoleDetails&& value) { m_kubernetesRoleDetailsHasBeenSet = true; m_kubernetesRoleDetails = std::move(value); }
+
+    /**
+     * <p>Information about the Kubernetes role name and role type.</p>
+     */
+    inline Action& WithKubernetesRoleDetails(const KubernetesRoleDetails& value) { SetKubernetesRoleDetails(value); return *this;}
+
+    /**
+     * <p>Information about the Kubernetes role name and role type.</p>
+     */
+    inline Action& WithKubernetesRoleDetails(KubernetesRoleDetails&& value) { SetKubernetesRoleDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_actionType;
@@ -309,6 +417,15 @@ namespace Model
 
     RdsLoginAttemptAction m_rdsLoginAttemptAction;
     bool m_rdsLoginAttemptActionHasBeenSet = false;
+
+    KubernetesPermissionCheckedDetails m_kubernetesPermissionCheckedDetails;
+    bool m_kubernetesPermissionCheckedDetailsHasBeenSet = false;
+
+    KubernetesRoleBindingDetails m_kubernetesRoleBindingDetails;
+    bool m_kubernetesRoleBindingDetailsHasBeenSet = false;
+
+    KubernetesRoleDetails m_kubernetesRoleDetails;
+    bool m_kubernetesRoleDetailsHasBeenSet = false;
   };
 
 } // namespace Model
