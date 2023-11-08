@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codecatalyst/CodeCatalystServiceClientModel.h>
+#include <aws/codecatalyst/model/VerifySessionRequest.h>
 
 namespace Aws
 {
@@ -954,25 +955,26 @@ namespace CodeCatalyst
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/VerifySession">AWS
          * API Reference</a></p>
          */
-        virtual Model::VerifySessionOutcome VerifySession() const;
+        virtual Model::VerifySessionOutcome VerifySession(const Model::VerifySessionRequest& request = {}) const;
 
         /**
          * A Callable wrapper for VerifySession that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::VerifySessionOutcomeCallable VerifySessionCallable() const
+        template<typename VerifySessionRequestT = Model::VerifySessionRequest>
+        Model::VerifySessionOutcomeCallable VerifySessionCallable(const VerifySessionRequestT& request = {}) const
         {
-            return SubmitCallable(&CodeCatalystClient::VerifySession);
+            return SubmitCallable(&CodeCatalystClient::VerifySession, request);
         }
 
         /**
          * An Async wrapper for VerifySession that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void VerifySessionAsync(const VerifySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename VerifySessionRequestT = Model::VerifySessionRequest>
+        void VerifySessionAsync(const VerifySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const VerifySessionRequestT& request = {}) const
         {
-            return SubmitAsync(&CodeCatalystClient::VerifySession, handler, context);
+            return SubmitAsync(&CodeCatalystClient::VerifySession, request, handler, context);
         }
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CodeCatalystEndpointProviderBase>& accessEndpointProvider();

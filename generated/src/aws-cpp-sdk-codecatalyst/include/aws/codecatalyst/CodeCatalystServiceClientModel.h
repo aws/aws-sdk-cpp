@@ -122,6 +122,7 @@ namespace Aws
       class UpdateDevEnvironmentRequest;
       class UpdateProjectRequest;
       class UpdateSpaceRequest;
+      class VerifySessionRequest;
       /* End of service model forward declarations required in CodeCatalystClient header */
 
       /* Service model Outcome class definitions */
@@ -232,7 +233,7 @@ namespace Aws
     typedef std::function<void(const CodeCatalystClient*, const Model::UpdateDevEnvironmentRequest&, const Model::UpdateDevEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDevEnvironmentResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::UpdateSpaceRequest&, const Model::UpdateSpaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSpaceResponseReceivedHandler;
-    typedef std::function<void(const CodeCatalystClient*, const Model::VerifySessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifySessionResponseReceivedHandler;
+    typedef std::function<void(const CodeCatalystClient*, const Model::VerifySessionRequest&, const Model::VerifySessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifySessionResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace CodeCatalyst
 } // namespace Aws

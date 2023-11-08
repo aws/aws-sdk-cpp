@@ -40,7 +40,6 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     @Override
     public SdkFileEntry[] generateSourceFiles(ServiceModel serviceModel) throws Exception {
         serviceModel.getOperations().values().stream()
-                .filter(__ -> StringUtils.isNotEmpty(serviceModel.getMetadata().getTargetPrefix()))
                 .filter(operation -> !operation.hasRequest())
                 .forEach(operation -> {
                     Shape requestShape = Shape.builder()
