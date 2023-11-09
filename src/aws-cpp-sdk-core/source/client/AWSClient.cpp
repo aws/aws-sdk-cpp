@@ -278,6 +278,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         httpRequest->SetEventStreamRequest(request.IsEventStreamRequest());
 
         outcome = AttemptOneRequest(httpRequest, request, signerName, signerRegion, signerServiceNameOverride);
+        outcome.SetRetryCount(retries);
         if (retries == 0)
         {
             m_retryStrategy->RequestBookkeeping(outcome);
@@ -422,6 +423,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
 
         };
         outcome = AttemptOneRequest(httpRequest, signerName, requestName, signerRegion, signerServiceNameOverride);
+        outcome.SetRetryCount(retries);
         if (retries == 0)
         {
             m_retryStrategy->RequestBookkeeping(outcome);
