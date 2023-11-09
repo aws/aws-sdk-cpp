@@ -61,7 +61,7 @@ def main():
             print("Test: \"{}\" doesn't exist, failing test run.".format(test_exe))
             exit(1)
         prefix = "--aws_resource_prefix=" + ''.join(
-            random.choice(string.ascii_lowercase + string.digits) for _ in range(8))
+            random.choice(string.ascii_lowercase + string.digits) for _ in range(16))
         print("testExe = " + test_exe)
         print("prefix = " + prefix)
         gtest_brief = "--gtest_brief=1"
