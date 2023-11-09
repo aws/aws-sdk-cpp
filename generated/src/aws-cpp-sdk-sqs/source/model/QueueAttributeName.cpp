@@ -42,10 +42,6 @@ namespace Aws
         static const int FifoThroughputLimit_HASH = HashingUtils::HashString("FifoThroughputLimit");
         static const int RedriveAllowPolicy_HASH = HashingUtils::HashString("RedriveAllowPolicy");
         static const int SqsManagedSseEnabled_HASH = HashingUtils::HashString("SqsManagedSseEnabled");
-        static const int SentTimestamp_HASH = HashingUtils::HashString("SentTimestamp");
-        static const int ApproximateFirstReceiveTimestamp_HASH = HashingUtils::HashString("ApproximateFirstReceiveTimestamp");
-        static const int ApproximateReceiveCount_HASH = HashingUtils::HashString("ApproximateReceiveCount");
-        static const int SenderId_HASH = HashingUtils::HashString("SenderId");
 
 
         QueueAttributeName GetQueueAttributeNameForName(const Aws::String& name)
@@ -139,22 +135,6 @@ namespace Aws
           {
             return QueueAttributeName::SqsManagedSseEnabled;
           }
-          else if (hashCode == SentTimestamp_HASH)
-          {
-            return QueueAttributeName::SentTimestamp;
-          }
-          else if (hashCode == ApproximateFirstReceiveTimestamp_HASH)
-          {
-            return QueueAttributeName::ApproximateFirstReceiveTimestamp;
-          }
-          else if (hashCode == ApproximateReceiveCount_HASH)
-          {
-            return QueueAttributeName::ApproximateReceiveCount;
-          }
-          else if (hashCode == SenderId_HASH)
-          {
-            return QueueAttributeName::SenderId;
-          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -215,14 +195,6 @@ namespace Aws
             return "RedriveAllowPolicy";
           case QueueAttributeName::SqsManagedSseEnabled:
             return "SqsManagedSseEnabled";
-          case QueueAttributeName::SentTimestamp:
-            return "SentTimestamp";
-          case QueueAttributeName::ApproximateFirstReceiveTimestamp:
-            return "ApproximateFirstReceiveTimestamp";
-          case QueueAttributeName::ApproximateReceiveCount:
-            return "ApproximateReceiveCount";
-          case QueueAttributeName::SenderId:
-            return "SenderId";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

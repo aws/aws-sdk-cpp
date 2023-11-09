@@ -4,10 +4,12 @@
  */
 
 #include <aws/sqs/model/GetQueueAttributesRequest.h>
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
 
 using namespace Aws::SQS::Model;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetQueueAttributesRequest::GetQueueAttributesRequest() : 
@@ -18,30 +20,36 @@ GetQueueAttributesRequest::GetQueueAttributesRequest() :
 
 Aws::String GetQueueAttributesRequest::SerializePayload() const
 {
-  Aws::StringStream ss;
-  ss << "Action=GetQueueAttributes&";
+  JsonValue payload;
+
   if(m_queueUrlHasBeenSet)
   {
-    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
+   payload.WithString("QueueUrl", m_queueUrl);
+
   }
 
   if(m_attributeNamesHasBeenSet)
   {
-    unsigned attributeNamesCount = 1;
-    for(auto& item : m_attributeNames)
-    {
-      ss << "AttributeName." << attributeNamesCount << "="
-          << StringUtils::URLEncode(QueueAttributeNameMapper::GetNameForQueueAttributeName(item).c_str()) << "&";
-      attributeNamesCount++;
-    }
+   Aws::Utils::Array<JsonValue> attributeNamesJsonList(m_attributeNames.size());
+   for(unsigned attributeNamesIndex = 0; attributeNamesIndex < attributeNamesJsonList.GetLength(); ++attributeNamesIndex)
+   {
+     attributeNamesJsonList[attributeNamesIndex].AsString(QueueAttributeNameMapper::GetNameForQueueAttributeName(m_attributeNames[attributeNamesIndex]));
+   }
+   payload.WithArray("AttributeNames", std::move(attributeNamesJsonList));
+
   }
 
-  ss << "Version=2012-11-05";
-  return ss.str();
+  return payload.View().WriteReadable();
 }
 
-
-void  GetQueueAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+Aws::Http::HeaderValueCollection GetQueueAttributesRequest::GetRequestSpecificHeaders() const
 {
-  uri.SetQueryString(SerializePayload());
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.GetQueueAttributes"));
+  return headers;
+
 }
+
+
+
+
