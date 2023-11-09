@@ -303,42 +303,42 @@ namespace Model
 
     /**
      * <p>Specifies the location for the output files from a custom classifier job.
-     * This parameter is required for a request that creates a native classifier
+     * This parameter is required for a request that creates a native document
      * model.</p>
      */
     inline const DocumentClassifierOutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
 
     /**
      * <p>Specifies the location for the output files from a custom classifier job.
-     * This parameter is required for a request that creates a native classifier
+     * This parameter is required for a request that creates a native document
      * model.</p>
      */
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
 
     /**
      * <p>Specifies the location for the output files from a custom classifier job.
-     * This parameter is required for a request that creates a native classifier
+     * This parameter is required for a request that creates a native document
      * model.</p>
      */
     inline void SetOutputDataConfig(const DocumentClassifierOutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
      * <p>Specifies the location for the output files from a custom classifier job.
-     * This parameter is required for a request that creates a native classifier
+     * This parameter is required for a request that creates a native document
      * model.</p>
      */
     inline void SetOutputDataConfig(DocumentClassifierOutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
 
     /**
      * <p>Specifies the location for the output files from a custom classifier job.
-     * This parameter is required for a request that creates a native classifier
+     * This parameter is required for a request that creates a native document
      * model.</p>
      */
     inline CreateDocumentClassifierRequest& WithOutputDataConfig(const DocumentClassifierOutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
 
     /**
      * <p>Specifies the location for the output files from a custom classifier job.
-     * This parameter is required for a request that creates a native classifier
+     * This parameter is required for a request that creates a native document
      * model.</p>
      */
     inline CreateDocumentClassifierRequest& WithOutputDataConfig(DocumentClassifierOutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}

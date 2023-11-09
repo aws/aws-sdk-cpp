@@ -6,9 +6,9 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/logs/CloudWatchLogsErrors.h>
-#include <aws/logs/model/InvalidSequenceTokenException.h>
 #include <aws/logs/model/DataAlreadyAcceptedException.h>
 #include <aws/logs/model/MalformedQueryException.h>
+#include <aws/logs/model/InvalidSequenceTokenException.h>
 #include <aws/logs/model/TooManyTagsException.h>
 
 using namespace Aws::Client;
@@ -20,12 +20,6 @@ namespace Aws
 {
 namespace CloudWatchLogs
 {
-template<> AWS_CLOUDWATCHLOGS_API InvalidSequenceTokenException CloudWatchLogsError::GetModeledError()
-{
-  assert(this->GetErrorType() == CloudWatchLogsErrors::INVALID_SEQUENCE_TOKEN);
-  return InvalidSequenceTokenException(this->GetJsonPayload().View());
-}
-
 template<> AWS_CLOUDWATCHLOGS_API DataAlreadyAcceptedException CloudWatchLogsError::GetModeledError()
 {
   assert(this->GetErrorType() == CloudWatchLogsErrors::DATA_ALREADY_ACCEPTED);
@@ -38,6 +32,12 @@ template<> AWS_CLOUDWATCHLOGS_API MalformedQueryException CloudWatchLogsError::G
   return MalformedQueryException(this->GetJsonPayload().View());
 }
 
+template<> AWS_CLOUDWATCHLOGS_API InvalidSequenceTokenException CloudWatchLogsError::GetModeledError()
+{
+  assert(this->GetErrorType() == CloudWatchLogsErrors::INVALID_SEQUENCE_TOKEN);
+  return InvalidSequenceTokenException(this->GetJsonPayload().View());
+}
+
 template<> AWS_CLOUDWATCHLOGS_API TooManyTagsException CloudWatchLogsError::GetModeledError()
 {
   assert(this->GetErrorType() == CloudWatchLogsErrors::TOO_MANY_TAGS);
@@ -47,9 +47,11 @@ template<> AWS_CLOUDWATCHLOGS_API TooManyTagsException CloudWatchLogsError::GetM
 namespace CloudWatchLogsErrorMapper
 {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
+static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int OPERATION_ABORTED_HASH = HashingUtils::HashString("OperationAbortedException");
-static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int INVALID_SEQUENCE_TOKEN_HASH = HashingUtils::HashString("InvalidSequenceTokenException");
 static const int DATA_ALREADY_ACCEPTED_HASH = HashingUtils::HashString("DataAlreadyAcceptedException");
 static const int MALFORMED_QUERY_HASH = HashingUtils::HashString("MalformedQueryException");
@@ -62,17 +64,25 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_PARAMETER_HASH)
+  if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::CONFLICT), false);
+  }
+  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::SERVICE_QUOTA_EXCEEDED), false);
+  }
+  else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::RESOURCE_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == INVALID_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::INVALID_PARAMETER), false);
   }
   else if (hashCode == OPERATION_ABORTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::OPERATION_ABORTED), false);
-  }
-  else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::RESOURCE_ALREADY_EXISTS), false);
   }
   else if (hashCode == INVALID_SEQUENCE_TOKEN_HASH)
   {

@@ -23,6 +23,7 @@ ResourceNotFoundException::ResourceNotFoundException() :
     m_nodegroupNameHasBeenSet(false),
     m_fargateProfileNameHasBeenSet(false),
     m_addonNameHasBeenSet(false),
+    m_subscriptionIdHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
 }
@@ -32,6 +33,7 @@ ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue) :
     m_nodegroupNameHasBeenSet(false),
     m_fargateProfileNameHasBeenSet(false),
     m_addonNameHasBeenSet(false),
+    m_subscriptionIdHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
   *this = jsonValue;
@@ -65,6 +67,13 @@ ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonVa
     m_addonName = jsonValue.GetString("addonName");
 
     m_addonNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("subscriptionId"))
+  {
+    m_subscriptionId = jsonValue.GetString("subscriptionId");
+
+    m_subscriptionIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("message"))
@@ -102,6 +111,12 @@ JsonValue ResourceNotFoundException::Jsonize() const
   if(m_addonNameHasBeenSet)
   {
    payload.WithString("addonName", m_addonName);
+
+  }
+
+  if(m_subscriptionIdHasBeenSet)
+  {
+   payload.WithString("subscriptionId", m_subscriptionId);
 
   }
 

@@ -196,6 +196,47 @@ namespace Model
      */
     inline ListIntegrationAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the integration.</p>
+     */
+    inline const Aws::String& GetIntegrationArn() const{ return m_integrationArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the integration.</p>
+     */
+    inline bool IntegrationArnHasBeenSet() const { return m_integrationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the integration.</p>
+     */
+    inline void SetIntegrationArn(const Aws::String& value) { m_integrationArnHasBeenSet = true; m_integrationArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the integration.</p>
+     */
+    inline void SetIntegrationArn(Aws::String&& value) { m_integrationArnHasBeenSet = true; m_integrationArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the integration.</p>
+     */
+    inline void SetIntegrationArn(const char* value) { m_integrationArnHasBeenSet = true; m_integrationArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the integration.</p>
+     */
+    inline ListIntegrationAssociationsRequest& WithIntegrationArn(const Aws::String& value) { SetIntegrationArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the integration.</p>
+     */
+    inline ListIntegrationAssociationsRequest& WithIntegrationArn(Aws::String&& value) { SetIntegrationArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the integration.</p>
+     */
+    inline ListIntegrationAssociationsRequest& WithIntegrationArn(const char* value) { SetIntegrationArn(value); return *this;}
+
   private:
 
     Aws::String m_instanceId;
@@ -209,6 +250,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_integrationArn;
+    bool m_integrationArnHasBeenSet = false;
   };
 
 } // namespace Model

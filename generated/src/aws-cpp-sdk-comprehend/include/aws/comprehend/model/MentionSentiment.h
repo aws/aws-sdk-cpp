@@ -28,7 +28,8 @@ namespace Model
    * <p>Contains the sentiment and sentiment score for one mention of an entity.</p>
    * <p>For more information about targeted sentiment, see <a
    * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted
-   * sentiment</a>.</p><p><h3>See Also:</h3>   <a
+   * sentiment</a> in the <i>Amazon Comprehend Developer Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/MentionSentiment">AWS
    * API Reference</a></p>
    */

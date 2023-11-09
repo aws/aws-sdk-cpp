@@ -48,7 +48,8 @@ namespace Model
     java17,
     ruby3_2,
     python3_11,
-    nodejs20_x
+    nodejs20_x,
+    provided_al2023
   };
 
 namespace RuntimeMapper

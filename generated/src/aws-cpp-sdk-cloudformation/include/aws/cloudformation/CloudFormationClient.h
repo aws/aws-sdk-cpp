@@ -998,7 +998,7 @@ namespace CloudFormation
         /**
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
-         *  <p>If the stack doesn't exist, an <code>ValidationError</code> is
+         *  <p>If the stack doesn't exist, a <code>ValidationError</code> is
          * returned.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">AWS
          * API Reference</a></p>
