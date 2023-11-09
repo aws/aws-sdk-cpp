@@ -569,7 +569,8 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
 
@@ -630,7 +631,8 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
 
@@ -691,7 +693,8 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
@@ -752,7 +755,8 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
@@ -813,7 +817,8 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateStackRequest& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
 
@@ -874,7 +879,8 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateStackRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
@@ -935,7 +941,8 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateStackRequest& AddCapabilities(const Capability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
@@ -996,7 +1003,8 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateStackRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 
@@ -1017,7 +1025,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
 
@@ -1037,7 +1047,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
 
@@ -1057,7 +1069,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
 
@@ -1077,7 +1091,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
 
@@ -1097,7 +1113,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline CreateStackRequest& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
 
@@ -1117,7 +1135,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline CreateStackRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
 
@@ -1137,7 +1157,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline CreateStackRequest& AddResourceTypes(const Aws::String& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
@@ -1157,7 +1179,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline CreateStackRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
 
@@ -1177,7 +1201,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline CreateStackRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 

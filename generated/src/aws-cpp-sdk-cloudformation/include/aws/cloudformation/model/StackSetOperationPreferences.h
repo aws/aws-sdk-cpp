@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/cloudformation/model/RegionConcurrencyType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudformation/model/ConcurrencyMode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -220,57 +221,57 @@ namespace Model
 
     /**
      * <p>The maximum number of accounts in which to perform this operation at one
-     * time. This is dependent on the value of
-     * <code>FailureToleranceCount</code>.<code>MaxConcurrentCount</code> is at most
-     * one more than the <code>FailureToleranceCount</code>.</p> <p>Note that this
-     * setting lets you specify the <i>maximum</i> for operations. For large
-     * deployments, under certain circumstances the actual number of accounts acted
-     * upon concurrently may be lower due to service throttling.</p> <p>Conditional:
-     * You must specify either <code>MaxConcurrentCount</code> or
-     * <code>MaxConcurrentPercentage</code>, but not both.</p> <p>By default,
-     * <code>1</code> is specified.</p>
+     * time. This can depend on the value of <code>FailureToleranceCount</code>
+     * depending on your <code>ConcurrencyMode</code>. <code>MaxConcurrentCount</code>
+     * is at most one more than the <code>FailureToleranceCount</code> if you're using
+     * <code>STRICT_FAILURE_TOLERANCE</code>.</p> <p>Note that this setting lets you
+     * specify the <i>maximum</i> for operations. For large deployments, under certain
+     * circumstances the actual number of accounts acted upon concurrently may be lower
+     * due to service throttling.</p> <p>Conditional: You must specify either
+     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
+     * both.</p> <p>By default, <code>1</code> is specified.</p>
      */
     inline int GetMaxConcurrentCount() const{ return m_maxConcurrentCount; }
 
     /**
      * <p>The maximum number of accounts in which to perform this operation at one
-     * time. This is dependent on the value of
-     * <code>FailureToleranceCount</code>.<code>MaxConcurrentCount</code> is at most
-     * one more than the <code>FailureToleranceCount</code>.</p> <p>Note that this
-     * setting lets you specify the <i>maximum</i> for operations. For large
-     * deployments, under certain circumstances the actual number of accounts acted
-     * upon concurrently may be lower due to service throttling.</p> <p>Conditional:
-     * You must specify either <code>MaxConcurrentCount</code> or
-     * <code>MaxConcurrentPercentage</code>, but not both.</p> <p>By default,
-     * <code>1</code> is specified.</p>
+     * time. This can depend on the value of <code>FailureToleranceCount</code>
+     * depending on your <code>ConcurrencyMode</code>. <code>MaxConcurrentCount</code>
+     * is at most one more than the <code>FailureToleranceCount</code> if you're using
+     * <code>STRICT_FAILURE_TOLERANCE</code>.</p> <p>Note that this setting lets you
+     * specify the <i>maximum</i> for operations. For large deployments, under certain
+     * circumstances the actual number of accounts acted upon concurrently may be lower
+     * due to service throttling.</p> <p>Conditional: You must specify either
+     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
+     * both.</p> <p>By default, <code>1</code> is specified.</p>
      */
     inline bool MaxConcurrentCountHasBeenSet() const { return m_maxConcurrentCountHasBeenSet; }
 
     /**
      * <p>The maximum number of accounts in which to perform this operation at one
-     * time. This is dependent on the value of
-     * <code>FailureToleranceCount</code>.<code>MaxConcurrentCount</code> is at most
-     * one more than the <code>FailureToleranceCount</code>.</p> <p>Note that this
-     * setting lets you specify the <i>maximum</i> for operations. For large
-     * deployments, under certain circumstances the actual number of accounts acted
-     * upon concurrently may be lower due to service throttling.</p> <p>Conditional:
-     * You must specify either <code>MaxConcurrentCount</code> or
-     * <code>MaxConcurrentPercentage</code>, but not both.</p> <p>By default,
-     * <code>1</code> is specified.</p>
+     * time. This can depend on the value of <code>FailureToleranceCount</code>
+     * depending on your <code>ConcurrencyMode</code>. <code>MaxConcurrentCount</code>
+     * is at most one more than the <code>FailureToleranceCount</code> if you're using
+     * <code>STRICT_FAILURE_TOLERANCE</code>.</p> <p>Note that this setting lets you
+     * specify the <i>maximum</i> for operations. For large deployments, under certain
+     * circumstances the actual number of accounts acted upon concurrently may be lower
+     * due to service throttling.</p> <p>Conditional: You must specify either
+     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
+     * both.</p> <p>By default, <code>1</code> is specified.</p>
      */
     inline void SetMaxConcurrentCount(int value) { m_maxConcurrentCountHasBeenSet = true; m_maxConcurrentCount = value; }
 
     /**
      * <p>The maximum number of accounts in which to perform this operation at one
-     * time. This is dependent on the value of
-     * <code>FailureToleranceCount</code>.<code>MaxConcurrentCount</code> is at most
-     * one more than the <code>FailureToleranceCount</code>.</p> <p>Note that this
-     * setting lets you specify the <i>maximum</i> for operations. For large
-     * deployments, under certain circumstances the actual number of accounts acted
-     * upon concurrently may be lower due to service throttling.</p> <p>Conditional:
-     * You must specify either <code>MaxConcurrentCount</code> or
-     * <code>MaxConcurrentPercentage</code>, but not both.</p> <p>By default,
-     * <code>1</code> is specified.</p>
+     * time. This can depend on the value of <code>FailureToleranceCount</code>
+     * depending on your <code>ConcurrencyMode</code>. <code>MaxConcurrentCount</code>
+     * is at most one more than the <code>FailureToleranceCount</code> if you're using
+     * <code>STRICT_FAILURE_TOLERANCE</code>.</p> <p>Note that this setting lets you
+     * specify the <i>maximum</i> for operations. For large deployments, under certain
+     * circumstances the actual number of accounts acted upon concurrently may be lower
+     * due to service throttling.</p> <p>Conditional: You must specify either
+     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
+     * both.</p> <p>By default, <code>1</code> is specified.</p>
      */
     inline StackSetOperationPreferences& WithMaxConcurrentCount(int value) { SetMaxConcurrentCount(value); return *this;}
 
@@ -331,6 +332,103 @@ namespace Model
      */
     inline StackSetOperationPreferences& WithMaxConcurrentPercentage(int value) { SetMaxConcurrentPercentage(value); return *this;}
 
+
+    /**
+     * <p>Specifies how the concurrency level behaves during the operation
+     * execution.</p> <ul> <li> <p> <code>STRICT_FAILURE_TOLERANCE</code>: Dynamically
+     * lowers the concurrency level to ensure the number of failed accounts never
+     * exceeds the <code>FailureToleranceCount</code> +1. StackSets will set the actual
+     * concurrency of your deployment as the minimum value between the
+     * <code>MaxConcurrentCount</code> and the <code>FailureToleranceCount</code> +1.
+     * This is the default behavior.</p> <p>If failure tolerance or Maximum concurrent
+     * accounts are set to percentages, the behavior is similar.</p> </li> <li> <p>
+     * <code>SOFT_FAILURE_TOLERANCE</code>: Always run at the concurrency level set by
+     * the user in the <code>MaxConcurrentCount</code> or
+     * <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p>
+     * </li> </ul>
+     */
+    inline const ConcurrencyMode& GetConcurrencyMode() const{ return m_concurrencyMode; }
+
+    /**
+     * <p>Specifies how the concurrency level behaves during the operation
+     * execution.</p> <ul> <li> <p> <code>STRICT_FAILURE_TOLERANCE</code>: Dynamically
+     * lowers the concurrency level to ensure the number of failed accounts never
+     * exceeds the <code>FailureToleranceCount</code> +1. StackSets will set the actual
+     * concurrency of your deployment as the minimum value between the
+     * <code>MaxConcurrentCount</code> and the <code>FailureToleranceCount</code> +1.
+     * This is the default behavior.</p> <p>If failure tolerance or Maximum concurrent
+     * accounts are set to percentages, the behavior is similar.</p> </li> <li> <p>
+     * <code>SOFT_FAILURE_TOLERANCE</code>: Always run at the concurrency level set by
+     * the user in the <code>MaxConcurrentCount</code> or
+     * <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p>
+     * </li> </ul>
+     */
+    inline bool ConcurrencyModeHasBeenSet() const { return m_concurrencyModeHasBeenSet; }
+
+    /**
+     * <p>Specifies how the concurrency level behaves during the operation
+     * execution.</p> <ul> <li> <p> <code>STRICT_FAILURE_TOLERANCE</code>: Dynamically
+     * lowers the concurrency level to ensure the number of failed accounts never
+     * exceeds the <code>FailureToleranceCount</code> +1. StackSets will set the actual
+     * concurrency of your deployment as the minimum value between the
+     * <code>MaxConcurrentCount</code> and the <code>FailureToleranceCount</code> +1.
+     * This is the default behavior.</p> <p>If failure tolerance or Maximum concurrent
+     * accounts are set to percentages, the behavior is similar.</p> </li> <li> <p>
+     * <code>SOFT_FAILURE_TOLERANCE</code>: Always run at the concurrency level set by
+     * the user in the <code>MaxConcurrentCount</code> or
+     * <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p>
+     * </li> </ul>
+     */
+    inline void SetConcurrencyMode(const ConcurrencyMode& value) { m_concurrencyModeHasBeenSet = true; m_concurrencyMode = value; }
+
+    /**
+     * <p>Specifies how the concurrency level behaves during the operation
+     * execution.</p> <ul> <li> <p> <code>STRICT_FAILURE_TOLERANCE</code>: Dynamically
+     * lowers the concurrency level to ensure the number of failed accounts never
+     * exceeds the <code>FailureToleranceCount</code> +1. StackSets will set the actual
+     * concurrency of your deployment as the minimum value between the
+     * <code>MaxConcurrentCount</code> and the <code>FailureToleranceCount</code> +1.
+     * This is the default behavior.</p> <p>If failure tolerance or Maximum concurrent
+     * accounts are set to percentages, the behavior is similar.</p> </li> <li> <p>
+     * <code>SOFT_FAILURE_TOLERANCE</code>: Always run at the concurrency level set by
+     * the user in the <code>MaxConcurrentCount</code> or
+     * <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p>
+     * </li> </ul>
+     */
+    inline void SetConcurrencyMode(ConcurrencyMode&& value) { m_concurrencyModeHasBeenSet = true; m_concurrencyMode = std::move(value); }
+
+    /**
+     * <p>Specifies how the concurrency level behaves during the operation
+     * execution.</p> <ul> <li> <p> <code>STRICT_FAILURE_TOLERANCE</code>: Dynamically
+     * lowers the concurrency level to ensure the number of failed accounts never
+     * exceeds the <code>FailureToleranceCount</code> +1. StackSets will set the actual
+     * concurrency of your deployment as the minimum value between the
+     * <code>MaxConcurrentCount</code> and the <code>FailureToleranceCount</code> +1.
+     * This is the default behavior.</p> <p>If failure tolerance or Maximum concurrent
+     * accounts are set to percentages, the behavior is similar.</p> </li> <li> <p>
+     * <code>SOFT_FAILURE_TOLERANCE</code>: Always run at the concurrency level set by
+     * the user in the <code>MaxConcurrentCount</code> or
+     * <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p>
+     * </li> </ul>
+     */
+    inline StackSetOperationPreferences& WithConcurrencyMode(const ConcurrencyMode& value) { SetConcurrencyMode(value); return *this;}
+
+    /**
+     * <p>Specifies how the concurrency level behaves during the operation
+     * execution.</p> <ul> <li> <p> <code>STRICT_FAILURE_TOLERANCE</code>: Dynamically
+     * lowers the concurrency level to ensure the number of failed accounts never
+     * exceeds the <code>FailureToleranceCount</code> +1. StackSets will set the actual
+     * concurrency of your deployment as the minimum value between the
+     * <code>MaxConcurrentCount</code> and the <code>FailureToleranceCount</code> +1.
+     * This is the default behavior.</p> <p>If failure tolerance or Maximum concurrent
+     * accounts are set to percentages, the behavior is similar.</p> </li> <li> <p>
+     * <code>SOFT_FAILURE_TOLERANCE</code>: Always run at the concurrency level set by
+     * the user in the <code>MaxConcurrentCount</code> or
+     * <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p>
+     * </li> </ul>
+     */
+    inline StackSetOperationPreferences& WithConcurrencyMode(ConcurrencyMode&& value) { SetConcurrencyMode(std::move(value)); return *this;}
+
   private:
 
     RegionConcurrencyType m_regionConcurrencyType;
@@ -350,6 +448,9 @@ namespace Model
 
     int m_maxConcurrentPercentage;
     bool m_maxConcurrentPercentageHasBeenSet = false;
+
+    ConcurrencyMode m_concurrencyMode;
+    bool m_concurrencyModeHasBeenSet = false;
   };
 
 } // namespace Model

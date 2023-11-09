@@ -193,6 +193,59 @@ namespace CloudWatchLogs
         }
 
         /**
+         * <p>Creates a <i>delivery</i>. A delivery is a connection between a logical
+         * <i>delivery source</i> and a logical <i>delivery destination</i> that you have
+         * already created.</p> <p>Only some Amazon Web Services services support being
+         * configured as a delivery source using this operation. These services are listed
+         * as <b>Supported [V2 Permissions]</b> in the table at <a
+         * href="https://docs.aws.amazon.com/
+         * AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+         * logging from Amazon Web Services services.</a> </p> <p>A delivery destination
+         * can represent a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery
+         * stream in Kinesis Data Firehose.</p> <p>To configure logs delivery between a
+         * supported Amazon Web Services service and a destination, you must do the
+         * following:</p> <ul> <li> <p>Create a delivery source, which is a logical object
+         * that represents the resource that is actually sending the logs. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>.</p>
+         * </li> <li> <p>Create a <i>delivery destination</i>, which is a logical object
+         * that represents the actual delivery destination. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">PutDeliveryDestination</a>.</p>
+         * </li> <li> <p>If you are delivering logs cross-account, you must use <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationolicy.html">PutDeliveryDestinationPolicy</a>
+         * in the destination account to assign an IAM policy to the destination. This
+         * policy allows delivery to that destination. </p> </li> <li> <p>Use
+         * <code>CreateDelivery</code> to create a <i>delivery</i> by pairing exactly one
+         * delivery source and one delivery destination. </p> </li> </ul> <p>You can
+         * configure a single delivery source to send logs to multiple destinations by
+         * creating multiple deliveries. You can also create multiple deliveries to
+         * configure multiple delivery sources to send logs to the same delivery
+         * destination.</p> <p>You can't update an existing delivery. You can only create
+         * and delete deliveries.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateDelivery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDeliveryOutcome CreateDelivery(const Model::CreateDeliveryRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDelivery that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDeliveryRequestT = Model::CreateDeliveryRequest>
+        Model::CreateDeliveryOutcomeCallable CreateDeliveryCallable(const CreateDeliveryRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::CreateDelivery, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDelivery that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDeliveryRequestT = Model::CreateDeliveryRequest>
+        void CreateDeliveryAsync(const CreateDeliveryRequestT& request, const CreateDeliveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::CreateDelivery, request, handler, context);
+        }
+
+        /**
          * <p>Creates an export task so that you can efficiently export data from a log
          * group to an Amazon S3 bucket. When you perform a <code>CreateExportTask</code>
          * operation, you must use credentials that have permission to write to the S3
@@ -370,6 +423,127 @@ namespace CloudWatchLogs
         void DeleteDataProtectionPolicyAsync(const DeleteDataProtectionPolicyRequestT& request, const DeleteDataProtectionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudWatchLogsClient::DeleteDataProtectionPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes s <i>delivery</i>. A delivery is a connection between a logical
+         * <i>delivery source</i> and a logical <i>delivery destination</i>. Deleting a
+         * delivery only deletes the connection between the delivery source and delivery
+         * destination. It does not delete the delivery destination or the delivery
+         * source.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDelivery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDeliveryOutcome DeleteDelivery(const Model::DeleteDeliveryRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDelivery that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDeliveryRequestT = Model::DeleteDeliveryRequest>
+        Model::DeleteDeliveryOutcomeCallable DeleteDeliveryCallable(const DeleteDeliveryRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::DeleteDelivery, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDelivery that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDeliveryRequestT = Model::DeleteDeliveryRequest>
+        void DeleteDeliveryAsync(const DeleteDeliveryRequestT& request, const DeleteDeliveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::DeleteDelivery, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a <i>delivery destination</i>. A delivery is a connection between a
+         * logical <i>delivery source</i> and a logical <i>delivery destination</i>.</p>
+         * <p>You can't delete a delivery destination if any current deliveries are
+         * associated with it. To find whether any deliveries are associated with this
+         * delivery destination, use the <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveries.html">DescribeDeliveries</a>
+         * operation and check the <code>deliveryDestinationArn</code> field in the
+         * results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDeliveryDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDeliveryDestinationOutcome DeleteDeliveryDestination(const Model::DeleteDeliveryDestinationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDeliveryDestination that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDeliveryDestinationRequestT = Model::DeleteDeliveryDestinationRequest>
+        Model::DeleteDeliveryDestinationOutcomeCallable DeleteDeliveryDestinationCallable(const DeleteDeliveryDestinationRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::DeleteDeliveryDestination, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDeliveryDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDeliveryDestinationRequestT = Model::DeleteDeliveryDestinationRequest>
+        void DeleteDeliveryDestinationAsync(const DeleteDeliveryDestinationRequestT& request, const DeleteDeliveryDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::DeleteDeliveryDestination, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a delivery destination policy. For more information about these
+         * policies, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html">PutDeliveryDestinationPolicy</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDeliveryDestinationPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDeliveryDestinationPolicyOutcome DeleteDeliveryDestinationPolicy(const Model::DeleteDeliveryDestinationPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDeliveryDestinationPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDeliveryDestinationPolicyRequestT = Model::DeleteDeliveryDestinationPolicyRequest>
+        Model::DeleteDeliveryDestinationPolicyOutcomeCallable DeleteDeliveryDestinationPolicyCallable(const DeleteDeliveryDestinationPolicyRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::DeleteDeliveryDestinationPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDeliveryDestinationPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDeliveryDestinationPolicyRequestT = Model::DeleteDeliveryDestinationPolicyRequest>
+        void DeleteDeliveryDestinationPolicyAsync(const DeleteDeliveryDestinationPolicyRequestT& request, const DeleteDeliveryDestinationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::DeleteDeliveryDestinationPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a <i>delivery source</i>. A delivery is a connection between a
+         * logical <i>delivery source</i> and a logical <i>delivery destination</i>.</p>
+         * <p>You can't delete a delivery source if any current deliveries are associated
+         * with it. To find whether any deliveries are associated with this delivery
+         * source, use the <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveries.html">DescribeDeliveries</a>
+         * operation and check the <code>deliverySourceName</code> field in the
+         * results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDeliverySource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDeliverySourceOutcome DeleteDeliverySource(const Model::DeleteDeliverySourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDeliverySource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDeliverySourceRequestT = Model::DeleteDeliverySourceRequest>
+        Model::DeleteDeliverySourceOutcomeCallable DeleteDeliverySourceCallable(const DeleteDeliverySourceRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::DeleteDeliverySource, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDeliverySource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDeliverySourceRequestT = Model::DeleteDeliverySourceRequest>
+        void DeleteDeliverySourceAsync(const DeleteDeliverySourceRequestT& request, const DeleteDeliverySourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::DeleteDeliverySource, request, handler, context);
         }
 
         /**
@@ -608,6 +782,84 @@ namespace CloudWatchLogs
         void DescribeAccountPoliciesAsync(const DescribeAccountPoliciesRequestT& request, const DescribeAccountPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudWatchLogsClient::DescribeAccountPolicies, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of the deliveries that have been created in the
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDeliveries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDeliveriesOutcome DescribeDeliveries(const Model::DescribeDeliveriesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDeliveries that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDeliveriesRequestT = Model::DescribeDeliveriesRequest>
+        Model::DescribeDeliveriesOutcomeCallable DescribeDeliveriesCallable(const DescribeDeliveriesRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::DescribeDeliveries, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDeliveries that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDeliveriesRequestT = Model::DescribeDeliveriesRequest>
+        void DescribeDeliveriesAsync(const DescribeDeliveriesRequestT& request, const DescribeDeliveriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::DescribeDeliveries, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of the delivery destinations that have been created in the
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDeliveryDestinations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDeliveryDestinationsOutcome DescribeDeliveryDestinations(const Model::DescribeDeliveryDestinationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDeliveryDestinations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDeliveryDestinationsRequestT = Model::DescribeDeliveryDestinationsRequest>
+        Model::DescribeDeliveryDestinationsOutcomeCallable DescribeDeliveryDestinationsCallable(const DescribeDeliveryDestinationsRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::DescribeDeliveryDestinations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDeliveryDestinations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDeliveryDestinationsRequestT = Model::DescribeDeliveryDestinationsRequest>
+        void DescribeDeliveryDestinationsAsync(const DescribeDeliveryDestinationsRequestT& request, const DescribeDeliveryDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::DescribeDeliveryDestinations, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of the delivery sources that have been created in the
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDeliverySources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDeliverySourcesOutcome DescribeDeliverySources(const Model::DescribeDeliverySourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDeliverySources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDeliverySourcesRequestT = Model::DescribeDeliverySourcesRequest>
+        Model::DescribeDeliverySourcesOutcomeCallable DescribeDeliverySourcesCallable(const DescribeDeliverySourcesRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::DescribeDeliverySources, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDeliverySources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDeliverySourcesRequestT = Model::DescribeDeliverySourcesRequest>
+        void DescribeDeliverySourcesAsync(const DescribeDeliverySourcesRequestT& request, const DescribeDeliverySourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::DescribeDeliverySources, request, handler, context);
         }
 
         /**
@@ -987,6 +1239,117 @@ namespace CloudWatchLogs
         }
 
         /**
+         * <p>Returns complete information about one <i>delivery</i>. A delivery is a
+         * connection between a logical <i>delivery source</i> and a logical <i>delivery
+         * destination</i> </p> <p>You need to specify the delivery <code>id</code> in this
+         * operation. You can find the IDs of the deliveries in your account with the <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveries.html">DescribeDeliveries</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetDelivery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDeliveryOutcome GetDelivery(const Model::GetDeliveryRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDelivery that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDeliveryRequestT = Model::GetDeliveryRequest>
+        Model::GetDeliveryOutcomeCallable GetDeliveryCallable(const GetDeliveryRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::GetDelivery, request);
+        }
+
+        /**
+         * An Async wrapper for GetDelivery that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDeliveryRequestT = Model::GetDeliveryRequest>
+        void GetDeliveryAsync(const GetDeliveryRequestT& request, const GetDeliveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::GetDelivery, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves complete information about one delivery destination.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetDeliveryDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDeliveryDestinationOutcome GetDeliveryDestination(const Model::GetDeliveryDestinationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDeliveryDestination that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDeliveryDestinationRequestT = Model::GetDeliveryDestinationRequest>
+        Model::GetDeliveryDestinationOutcomeCallable GetDeliveryDestinationCallable(const GetDeliveryDestinationRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::GetDeliveryDestination, request);
+        }
+
+        /**
+         * An Async wrapper for GetDeliveryDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDeliveryDestinationRequestT = Model::GetDeliveryDestinationRequest>
+        void GetDeliveryDestinationAsync(const GetDeliveryDestinationRequestT& request, const GetDeliveryDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::GetDeliveryDestination, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the delivery destination policy assigned to the delivery
+         * destination that you specify. For more information about delivery destinations
+         * and their policies, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html">PutDeliveryDestinationPolicy</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetDeliveryDestinationPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDeliveryDestinationPolicyOutcome GetDeliveryDestinationPolicy(const Model::GetDeliveryDestinationPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDeliveryDestinationPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDeliveryDestinationPolicyRequestT = Model::GetDeliveryDestinationPolicyRequest>
+        Model::GetDeliveryDestinationPolicyOutcomeCallable GetDeliveryDestinationPolicyCallable(const GetDeliveryDestinationPolicyRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::GetDeliveryDestinationPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetDeliveryDestinationPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDeliveryDestinationPolicyRequestT = Model::GetDeliveryDestinationPolicyRequest>
+        void GetDeliveryDestinationPolicyAsync(const GetDeliveryDestinationPolicyRequestT& request, const GetDeliveryDestinationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::GetDeliveryDestinationPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves complete information about one delivery source.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetDeliverySource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDeliverySourceOutcome GetDeliverySource(const Model::GetDeliverySourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDeliverySource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDeliverySourceRequestT = Model::GetDeliverySourceRequest>
+        Model::GetDeliverySourceOutcomeCallable GetDeliverySourceCallable(const GetDeliverySourceRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::GetDeliverySource, request);
+        }
+
+        /**
+         * An Async wrapper for GetDeliverySource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDeliverySourceRequestT = Model::GetDeliverySourceRequest>
+        void GetDeliverySourceAsync(const GetDeliverySourceRequestT& request, const GetDeliverySourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::GetDeliverySource, request, handler, context);
+        }
+
+        /**
          * <p>Lists log events from the specified log stream. You can list all of the log
          * events or filter using a time range.</p> <p>By default, this operation returns
          * as many log events as can fit in a response size of 1MB (up to 10,000 log
@@ -1101,13 +1464,16 @@ namespace CloudWatchLogs
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogRecord.html">GetLogRecord</a>
          * operation to get the full log record.</p> <p> <code>GetQueryResults</code> does
          * not start running a query. To run a query, use <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.</p>
-         * <p>If the value of the <code>Status</code> field in the output is
-         * <code>Running</code>, this operation returns only partial results. If you see a
-         * value of <code>Scheduled</code> or <code>Running</code> for the status, you can
-         * retry the operation later to see the final results. </p> <p>If you are using
-         * CloudWatch cross-account observability, you can use this operation in a
-         * monitoring account to start queries in linked source accounts. For more
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.
+         * For more information about how long results of previous queries are available,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch_limits_cwl.html">CloudWatch
+         * Logs quotas</a>.</p> <p>If the value of the <code>Status</code> field in the
+         * output is <code>Running</code>, this operation returns only partial results. If
+         * you see a value of <code>Scheduled</code> or <code>Running</code> for the
+         * status, you can retry the operation later to see the final results. </p> <p>If
+         * you are using CloudWatch cross-account observability, you can use this operation
+         * in a monitoring account to start queries in linked source accounts. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
          * cross-account observability</a>.</p><p><h3>See Also:</h3>   <a
@@ -1269,6 +1635,162 @@ namespace CloudWatchLogs
         void PutDataProtectionPolicyAsync(const PutDataProtectionPolicyRequestT& request, const PutDataProtectionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudWatchLogsClient::PutDataProtectionPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Creates or updates a logical <i>delivery destination</i>. A delivery
+         * destination is an Amazon Web Services resource that represents an Amazon Web
+         * Services service that logs can be sent to. CloudWatch Logs, Amazon S3, and
+         * Kinesis Data Firehose are supported as logs delivery destinations.</p> <p>To
+         * configure logs delivery between a supported Amazon Web Services service and a
+         * destination, you must do the following:</p> <ul> <li> <p>Create a delivery
+         * source, which is a logical object that represents the resource that is actually
+         * sending the logs. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>.</p>
+         * </li> <li> <p>Use <code>PutDeliveryDestination</code> to create a <i>delivery
+         * destination</i>, which is a logical object that represents the actual delivery
+         * destination. </p> </li> <li> <p>If you are delivering logs cross-account, you
+         * must use <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationolicy.html">PutDeliveryDestinationPolicy</a>
+         * in the destination account to assign an IAM policy to the destination. This
+         * policy allows delivery to that destination. </p> </li> <li> <p>Use
+         * <code>CreateDelivery</code> to create a <i>delivery</i> by pairing exactly one
+         * delivery source and one delivery destination. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.
+         * </p> </li> </ul> <p>You can configure a single delivery source to send logs to
+         * multiple destinations by creating multiple deliveries. You can also create
+         * multiple deliveries to configure multiple delivery sources to send logs to the
+         * same delivery destination.</p> <p>Only some Amazon Web Services services support
+         * being configured as a delivery source. These services are listed as <b>Supported
+         * [V2 Permissions]</b> in the table at <a href="https://docs.aws.amazon.com/
+         * AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+         * logging from Amazon Web Services services.</a> </p> <p>If you use this operation
+         * to update an existing delivery destination, all the current delivery destination
+         * parameters are overwritten with the new parameter values that you
+         * specify.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDeliveryDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutDeliveryDestinationOutcome PutDeliveryDestination(const Model::PutDeliveryDestinationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutDeliveryDestination that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutDeliveryDestinationRequestT = Model::PutDeliveryDestinationRequest>
+        Model::PutDeliveryDestinationOutcomeCallable PutDeliveryDestinationCallable(const PutDeliveryDestinationRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::PutDeliveryDestination, request);
+        }
+
+        /**
+         * An Async wrapper for PutDeliveryDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutDeliveryDestinationRequestT = Model::PutDeliveryDestinationRequest>
+        void PutDeliveryDestinationAsync(const PutDeliveryDestinationRequestT& request, const PutDeliveryDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::PutDeliveryDestination, request, handler, context);
+        }
+
+        /**
+         * <p>Creates and assigns an IAM policy that grants permissions to CloudWatch Logs
+         * to deliver logs cross-account to a specified destination in this account. To
+         * configure the delivery of logs from an Amazon Web Services service in another
+         * account to a logs delivery destination in the current account, you must do the
+         * following:</p> <ul> <li> <p>Create a delivery source, which is a logical object
+         * that represents the resource that is actually sending the logs. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>.</p>
+         * </li> <li> <p>Create a <i>delivery destination</i>, which is a logical object
+         * that represents the actual delivery destination. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">PutDeliveryDestination</a>.</p>
+         * </li> <li> <p>Use this operation in the destination account to assign an IAM
+         * policy to the destination. This policy allows delivery to that destination. </p>
+         * </li> <li> <p>Create a <i>delivery</i> by pairing exactly one delivery source
+         * and one delivery destination. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.</p>
+         * </li> </ul> <p>Only some Amazon Web Services services support being configured
+         * as a delivery source. These services are listed as <b>Supported [V2
+         * Permissions]</b> in the table at <a href="https://docs.aws.amazon.com/
+         * AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+         * logging from Amazon Web Services services.</a> </p> <p>The contents of the
+         * policy must include two statements. One statement enables general logs delivery,
+         * and the other allows delivery to the chosen destination. See the examples for
+         * the needed policies.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDeliveryDestinationPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutDeliveryDestinationPolicyOutcome PutDeliveryDestinationPolicy(const Model::PutDeliveryDestinationPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutDeliveryDestinationPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutDeliveryDestinationPolicyRequestT = Model::PutDeliveryDestinationPolicyRequest>
+        Model::PutDeliveryDestinationPolicyOutcomeCallable PutDeliveryDestinationPolicyCallable(const PutDeliveryDestinationPolicyRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::PutDeliveryDestinationPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PutDeliveryDestinationPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutDeliveryDestinationPolicyRequestT = Model::PutDeliveryDestinationPolicyRequest>
+        void PutDeliveryDestinationPolicyAsync(const PutDeliveryDestinationPolicyRequestT& request, const PutDeliveryDestinationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::PutDeliveryDestinationPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Creates or updates a logical <i>delivery source</i>. A delivery source
+         * represents an Amazon Web Services resource that sends logs to an logs delivery
+         * destination. The destination can be CloudWatch Logs, Amazon S3, or Kinesis Data
+         * Firehose.</p> <p>To configure logs delivery between a delivery destination and
+         * an Amazon Web Services service that is supported as a delivery source, you must
+         * do the following:</p> <ul> <li> <p>Use <code>PutDeliverySource</code> to create
+         * a delivery source, which is a logical object that represents the resource that
+         * is actually sending the logs. </p> </li> <li> <p>Use
+         * <code>PutDeliveryDestination</code> to create a <i>delivery destination</i>,
+         * which is a logical object that represents the actual delivery destination. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">PutDeliveryDestination</a>.</p>
+         * </li> <li> <p>If you are delivering logs cross-account, you must use <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationolicy.html">PutDeliveryDestinationPolicy</a>
+         * in the destination account to assign an IAM policy to the destination. This
+         * policy allows delivery to that destination. </p> </li> <li> <p>Use
+         * <code>CreateDelivery</code> to create a <i>delivery</i> by pairing exactly one
+         * delivery source and one delivery destination. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.
+         * </p> </li> </ul> <p>You can configure a single delivery source to send logs to
+         * multiple destinations by creating multiple deliveries. You can also create
+         * multiple deliveries to configure multiple delivery sources to send logs to the
+         * same delivery destination.</p> <p>Only some Amazon Web Services services support
+         * being configured as a delivery source. These services are listed as <b>Supported
+         * [V2 Permissions]</b> in the table at <a href="https://docs.aws.amazon.com/
+         * AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+         * logging from Amazon Web Services services.</a> </p> <p>If you use this operation
+         * to update an existing delivery source, all the current delivery source
+         * parameters are overwritten with the new parameter values that you
+         * specify.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDeliverySource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutDeliverySourceOutcome PutDeliverySource(const Model::PutDeliverySourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutDeliverySource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutDeliverySourceRequestT = Model::PutDeliverySourceRequest>
+        Model::PutDeliverySourceOutcomeCallable PutDeliverySourceCallable(const PutDeliverySourceRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::PutDeliverySource, request);
+        }
+
+        /**
+         * An Async wrapper for PutDeliverySource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutDeliverySourceRequestT = Model::PutDeliverySourceRequest>
+        void PutDeliverySourceAsync(const PutDeliverySourceRequestT& request, const PutDeliverySourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::PutDeliverySource, request, handler, context);
         }
 
         /**

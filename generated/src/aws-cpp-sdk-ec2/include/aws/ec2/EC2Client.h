@@ -11470,6 +11470,40 @@ namespace EC2
         }
 
         /**
+         * <p>Disables the <i>block public access for snapshots</i> setting at the account
+         * level for the specified Amazon Web Services Region. After you disable block
+         * public access for snapshots in a Region, users can publicly share snapshots in
+         * that Region.</p> <p>If block public access is enabled in
+         * <code>block-all-sharing</code> mode, and you disable block public access, all
+         * snapshots that were previously publicly shared are no longer treated as private
+         * and they become publicly accessible again.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
+         * Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud
+         * User Guide</i> .</p> <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSnapshotBlockPublicAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableSnapshotBlockPublicAccessOutcome DisableSnapshotBlockPublicAccess(const Model::DisableSnapshotBlockPublicAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableSnapshotBlockPublicAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableSnapshotBlockPublicAccessRequestT = Model::DisableSnapshotBlockPublicAccessRequest>
+        Model::DisableSnapshotBlockPublicAccessOutcomeCallable DisableSnapshotBlockPublicAccessCallable(const DisableSnapshotBlockPublicAccessRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DisableSnapshotBlockPublicAccess, request);
+        }
+
+        /**
+         * An Async wrapper for DisableSnapshotBlockPublicAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableSnapshotBlockPublicAccessRequestT = Model::DisableSnapshotBlockPublicAccessRequest>
+        void DisableSnapshotBlockPublicAccessAsync(const DisableSnapshotBlockPublicAccessRequestT& request, const DisableSnapshotBlockPublicAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DisableSnapshotBlockPublicAccess, request, handler, context);
+        }
+
+        /**
          * <p>Disables the specified resource attachment from propagating routes to the
          * specified propagation route table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableTransitGatewayRouteTablePropagation">AWS
@@ -12320,6 +12354,43 @@ namespace EC2
         void EnableSerialConsoleAccessAsync(const EnableSerialConsoleAccessRequestT& request, const EnableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::EnableSerialConsoleAccess, request, handler, context);
+        }
+
+        /**
+         * <p>Enables or modifies the <i>block public access for snapshots</i> setting at
+         * the account level for the specified Amazon Web Services Region. After you enable
+         * block public access for snapshots in a Region, users can no longer request
+         * public sharing for snapshots in that Region. Snapshots that are already publicly
+         * shared are either treated as private or they remain publicly shared, depending
+         * on the <b>State</b> that you specify.</p> <p>If block public access is enabled
+         * in <code>block-all-sharing</code> mode, and you change the mode to
+         * <code>block-new-sharing</code>, all snapshots that were previously publicly
+         * shared are no longer treated as private and they become publicly accessible
+         * again.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
+         * Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSnapshotBlockPublicAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableSnapshotBlockPublicAccessOutcome EnableSnapshotBlockPublicAccess(const Model::EnableSnapshotBlockPublicAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableSnapshotBlockPublicAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableSnapshotBlockPublicAccessRequestT = Model::EnableSnapshotBlockPublicAccessRequest>
+        Model::EnableSnapshotBlockPublicAccessOutcomeCallable EnableSnapshotBlockPublicAccessCallable(const EnableSnapshotBlockPublicAccessRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::EnableSnapshotBlockPublicAccess, request);
+        }
+
+        /**
+         * An Async wrapper for EnableSnapshotBlockPublicAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableSnapshotBlockPublicAccessRequestT = Model::EnableSnapshotBlockPublicAccessRequest>
+        void EnableSnapshotBlockPublicAccessAsync(const EnableSnapshotBlockPublicAccessRequestT& request, const EnableSnapshotBlockPublicAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::EnableSnapshotBlockPublicAccess, request, handler, context);
         }
 
         /**
@@ -13504,6 +13575,35 @@ namespace EC2
         void GetSerialConsoleAccessStatusAsync(const GetSerialConsoleAccessStatusRequestT& request, const GetSerialConsoleAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::GetSerialConsoleAccessStatus, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the current state of <i>block public access for snapshots</i> setting
+         * for the account and Region.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
+         * Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSnapshotBlockPublicAccessState">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSnapshotBlockPublicAccessStateOutcome GetSnapshotBlockPublicAccessState(const Model::GetSnapshotBlockPublicAccessStateRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSnapshotBlockPublicAccessState that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSnapshotBlockPublicAccessStateRequestT = Model::GetSnapshotBlockPublicAccessStateRequest>
+        Model::GetSnapshotBlockPublicAccessStateOutcomeCallable GetSnapshotBlockPublicAccessStateCallable(const GetSnapshotBlockPublicAccessStateRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetSnapshotBlockPublicAccessState, request);
+        }
+
+        /**
+         * An Async wrapper for GetSnapshotBlockPublicAccessState that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSnapshotBlockPublicAccessStateRequestT = Model::GetSnapshotBlockPublicAccessStateRequest>
+        void GetSnapshotBlockPublicAccessStateAsync(const GetSnapshotBlockPublicAccessStateRequestT& request, const GetSnapshotBlockPublicAccessStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetSnapshotBlockPublicAccessState, request, handler, context);
         }
 
         /**

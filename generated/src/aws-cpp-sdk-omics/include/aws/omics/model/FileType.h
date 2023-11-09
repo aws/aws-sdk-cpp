@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     FASTQ,
     BAM,
-    CRAM
+    CRAM,
+    UBAM
   };
 
 namespace FileTypeMapper

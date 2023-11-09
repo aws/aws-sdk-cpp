@@ -367,6 +367,7 @@
 #include <aws/ec2/model/DisableImageDeprecationResponse.h>
 #include <aws/ec2/model/DisableIpamOrganizationAdminAccountResponse.h>
 #include <aws/ec2/model/DisableSerialConsoleAccessResponse.h>
+#include <aws/ec2/model/DisableSnapshotBlockPublicAccessResponse.h>
 #include <aws/ec2/model/DisableTransitGatewayRouteTablePropagationResponse.h>
 #include <aws/ec2/model/DisableVpcClassicLinkResponse.h>
 #include <aws/ec2/model/DisableVpcClassicLinkDnsSupportResponse.h>
@@ -393,6 +394,7 @@
 #include <aws/ec2/model/EnableIpamOrganizationAdminAccountResponse.h>
 #include <aws/ec2/model/EnableReachabilityAnalyzerOrganizationSharingResponse.h>
 #include <aws/ec2/model/EnableSerialConsoleAccessResponse.h>
+#include <aws/ec2/model/EnableSnapshotBlockPublicAccessResponse.h>
 #include <aws/ec2/model/EnableTransitGatewayRouteTablePropagationResponse.h>
 #include <aws/ec2/model/EnableVpcClassicLinkResponse.h>
 #include <aws/ec2/model/EnableVpcClassicLinkDnsSupportResponse.h>
@@ -431,6 +433,7 @@
 #include <aws/ec2/model/GetReservedInstancesExchangeQuoteResponse.h>
 #include <aws/ec2/model/GetSecurityGroupsForVpcResponse.h>
 #include <aws/ec2/model/GetSerialConsoleAccessStatusResponse.h>
+#include <aws/ec2/model/GetSnapshotBlockPublicAccessStateResponse.h>
 #include <aws/ec2/model/GetSpotPlacementScoresResponse.h>
 #include <aws/ec2/model/GetSubnetCidrReservationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsResponse.h>
@@ -985,6 +988,7 @@ namespace Aws
       class DisableImageDeprecationRequest;
       class DisableIpamOrganizationAdminAccountRequest;
       class DisableSerialConsoleAccessRequest;
+      class DisableSnapshotBlockPublicAccessRequest;
       class DisableTransitGatewayRouteTablePropagationRequest;
       class DisableVgwRoutePropagationRequest;
       class DisableVpcClassicLinkRequest;
@@ -1014,6 +1018,7 @@ namespace Aws
       class EnableIpamOrganizationAdminAccountRequest;
       class EnableReachabilityAnalyzerOrganizationSharingRequest;
       class EnableSerialConsoleAccessRequest;
+      class EnableSnapshotBlockPublicAccessRequest;
       class EnableTransitGatewayRouteTablePropagationRequest;
       class EnableVgwRoutePropagationRequest;
       class EnableVolumeIORequest;
@@ -1054,6 +1059,7 @@ namespace Aws
       class GetReservedInstancesExchangeQuoteRequest;
       class GetSecurityGroupsForVpcRequest;
       class GetSerialConsoleAccessStatusRequest;
+      class GetSnapshotBlockPublicAccessStateRequest;
       class GetSpotPlacementScoresRequest;
       class GetSubnetCidrReservationsRequest;
       class GetTransitGatewayAttachmentPropagationsRequest;
@@ -1590,6 +1596,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisableImageDeprecationResponse, EC2Error> DisableImageDeprecationOutcome;
       typedef Aws::Utils::Outcome<DisableIpamOrganizationAdminAccountResponse, EC2Error> DisableIpamOrganizationAdminAccountOutcome;
       typedef Aws::Utils::Outcome<DisableSerialConsoleAccessResponse, EC2Error> DisableSerialConsoleAccessOutcome;
+      typedef Aws::Utils::Outcome<DisableSnapshotBlockPublicAccessResponse, EC2Error> DisableSnapshotBlockPublicAccessOutcome;
       typedef Aws::Utils::Outcome<DisableTransitGatewayRouteTablePropagationResponse, EC2Error> DisableTransitGatewayRouteTablePropagationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DisableVgwRoutePropagationOutcome;
       typedef Aws::Utils::Outcome<DisableVpcClassicLinkResponse, EC2Error> DisableVpcClassicLinkOutcome;
@@ -1619,6 +1626,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<EnableIpamOrganizationAdminAccountResponse, EC2Error> EnableIpamOrganizationAdminAccountOutcome;
       typedef Aws::Utils::Outcome<EnableReachabilityAnalyzerOrganizationSharingResponse, EC2Error> EnableReachabilityAnalyzerOrganizationSharingOutcome;
       typedef Aws::Utils::Outcome<EnableSerialConsoleAccessResponse, EC2Error> EnableSerialConsoleAccessOutcome;
+      typedef Aws::Utils::Outcome<EnableSnapshotBlockPublicAccessResponse, EC2Error> EnableSnapshotBlockPublicAccessOutcome;
       typedef Aws::Utils::Outcome<EnableTransitGatewayRouteTablePropagationResponse, EC2Error> EnableTransitGatewayRouteTablePropagationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> EnableVgwRoutePropagationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> EnableVolumeIOOutcome;
@@ -1659,6 +1667,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetReservedInstancesExchangeQuoteResponse, EC2Error> GetReservedInstancesExchangeQuoteOutcome;
       typedef Aws::Utils::Outcome<GetSecurityGroupsForVpcResponse, EC2Error> GetSecurityGroupsForVpcOutcome;
       typedef Aws::Utils::Outcome<GetSerialConsoleAccessStatusResponse, EC2Error> GetSerialConsoleAccessStatusOutcome;
+      typedef Aws::Utils::Outcome<GetSnapshotBlockPublicAccessStateResponse, EC2Error> GetSnapshotBlockPublicAccessStateOutcome;
       typedef Aws::Utils::Outcome<GetSpotPlacementScoresResponse, EC2Error> GetSpotPlacementScoresOutcome;
       typedef Aws::Utils::Outcome<GetSubnetCidrReservationsResponse, EC2Error> GetSubnetCidrReservationsOutcome;
       typedef Aws::Utils::Outcome<GetTransitGatewayAttachmentPropagationsResponse, EC2Error> GetTransitGatewayAttachmentPropagationsOutcome;
@@ -2195,6 +2204,7 @@ namespace Aws
       typedef std::future<DisableImageDeprecationOutcome> DisableImageDeprecationOutcomeCallable;
       typedef std::future<DisableIpamOrganizationAdminAccountOutcome> DisableIpamOrganizationAdminAccountOutcomeCallable;
       typedef std::future<DisableSerialConsoleAccessOutcome> DisableSerialConsoleAccessOutcomeCallable;
+      typedef std::future<DisableSnapshotBlockPublicAccessOutcome> DisableSnapshotBlockPublicAccessOutcomeCallable;
       typedef std::future<DisableTransitGatewayRouteTablePropagationOutcome> DisableTransitGatewayRouteTablePropagationOutcomeCallable;
       typedef std::future<DisableVgwRoutePropagationOutcome> DisableVgwRoutePropagationOutcomeCallable;
       typedef std::future<DisableVpcClassicLinkOutcome> DisableVpcClassicLinkOutcomeCallable;
@@ -2224,6 +2234,7 @@ namespace Aws
       typedef std::future<EnableIpamOrganizationAdminAccountOutcome> EnableIpamOrganizationAdminAccountOutcomeCallable;
       typedef std::future<EnableReachabilityAnalyzerOrganizationSharingOutcome> EnableReachabilityAnalyzerOrganizationSharingOutcomeCallable;
       typedef std::future<EnableSerialConsoleAccessOutcome> EnableSerialConsoleAccessOutcomeCallable;
+      typedef std::future<EnableSnapshotBlockPublicAccessOutcome> EnableSnapshotBlockPublicAccessOutcomeCallable;
       typedef std::future<EnableTransitGatewayRouteTablePropagationOutcome> EnableTransitGatewayRouteTablePropagationOutcomeCallable;
       typedef std::future<EnableVgwRoutePropagationOutcome> EnableVgwRoutePropagationOutcomeCallable;
       typedef std::future<EnableVolumeIOOutcome> EnableVolumeIOOutcomeCallable;
@@ -2264,6 +2275,7 @@ namespace Aws
       typedef std::future<GetReservedInstancesExchangeQuoteOutcome> GetReservedInstancesExchangeQuoteOutcomeCallable;
       typedef std::future<GetSecurityGroupsForVpcOutcome> GetSecurityGroupsForVpcOutcomeCallable;
       typedef std::future<GetSerialConsoleAccessStatusOutcome> GetSerialConsoleAccessStatusOutcomeCallable;
+      typedef std::future<GetSnapshotBlockPublicAccessStateOutcome> GetSnapshotBlockPublicAccessStateOutcomeCallable;
       typedef std::future<GetSpotPlacementScoresOutcome> GetSpotPlacementScoresOutcomeCallable;
       typedef std::future<GetSubnetCidrReservationsOutcome> GetSubnetCidrReservationsOutcomeCallable;
       typedef std::future<GetTransitGatewayAttachmentPropagationsOutcome> GetTransitGatewayAttachmentPropagationsOutcomeCallable;
@@ -2803,6 +2815,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DisableImageDeprecationRequest&, const Model::DisableImageDeprecationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableImageDeprecationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableIpamOrganizationAdminAccountRequest&, const Model::DisableIpamOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableIpamOrganizationAdminAccountResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableSerialConsoleAccessRequest&, const Model::DisableSerialConsoleAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableSerialConsoleAccessResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DisableSnapshotBlockPublicAccessRequest&, const Model::DisableSnapshotBlockPublicAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableSnapshotBlockPublicAccessResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableTransitGatewayRouteTablePropagationRequest&, const Model::DisableTransitGatewayRouteTablePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableTransitGatewayRouteTablePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableVgwRoutePropagationRequest&, const Model::DisableVgwRoutePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableVgwRoutePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableVpcClassicLinkRequest&, const Model::DisableVpcClassicLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableVpcClassicLinkResponseReceivedHandler;
@@ -2832,6 +2845,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::EnableIpamOrganizationAdminAccountRequest&, const Model::EnableIpamOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableIpamOrganizationAdminAccountResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableReachabilityAnalyzerOrganizationSharingRequest&, const Model::EnableReachabilityAnalyzerOrganizationSharingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableReachabilityAnalyzerOrganizationSharingResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableSerialConsoleAccessRequest&, const Model::EnableSerialConsoleAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSerialConsoleAccessResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::EnableSnapshotBlockPublicAccessRequest&, const Model::EnableSnapshotBlockPublicAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSnapshotBlockPublicAccessResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableTransitGatewayRouteTablePropagationRequest&, const Model::EnableTransitGatewayRouteTablePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableTransitGatewayRouteTablePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableVgwRoutePropagationRequest&, const Model::EnableVgwRoutePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableVgwRoutePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableVolumeIORequest&, const Model::EnableVolumeIOOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableVolumeIOResponseReceivedHandler;
@@ -2872,6 +2886,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::GetReservedInstancesExchangeQuoteRequest&, const Model::GetReservedInstancesExchangeQuoteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservedInstancesExchangeQuoteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetSecurityGroupsForVpcRequest&, const Model::GetSecurityGroupsForVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSecurityGroupsForVpcResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetSerialConsoleAccessStatusRequest&, const Model::GetSerialConsoleAccessStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSerialConsoleAccessStatusResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetSnapshotBlockPublicAccessStateRequest&, const Model::GetSnapshotBlockPublicAccessStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSnapshotBlockPublicAccessStateResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetSpotPlacementScoresRequest&, const Model::GetSpotPlacementScoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSpotPlacementScoresResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetSubnetCidrReservationsRequest&, const Model::GetSubnetCidrReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubnetCidrReservationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayAttachmentPropagationsRequest&, const Model::GetTransitGatewayAttachmentPropagationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayAttachmentPropagationsResponseReceivedHandler;
