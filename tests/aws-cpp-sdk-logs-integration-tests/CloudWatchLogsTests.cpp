@@ -33,6 +33,7 @@ namespace
     static const char ALLOCATION_TAG[] = "CloudWatchLogsTest";
     static const char BASE_CLOUD_WATCH_LOGS_GROUP[] = "CppSDKIntegrationTestCWLGroup";
     static const char BASE_CLOUD_WATCH_LOGS_STREAM[] = "testLogs";
+    static const int SECONDS_TO_WAIT = 120;
 
     class CloudWatchLogsOperationTest : public ::testing::Test
     {
@@ -116,8 +117,8 @@ namespace
                     .WithLogStreamName(BuildResourceName(BASE_CLOUD_WATCH_LOGS_STREAM))
                     .WithStartFromHead(true);
         size_t eventsCount = 0;
-        int retry = 0;
-        while (retry++ < 10)
+        size_t retry = 0;
+        while (retry < SECONDS_TO_WAIT)
         {
             auto getOutcome = m_client->GetLogEvents(getRequest);
             AWS_ASSERT_SUCCESS(getOutcome);
@@ -135,6 +136,7 @@ namespace
             }
 
             std::this_thread::sleep_for(std::chrono::seconds(1));
+            retry++;
         }
         ASSERT_EQ(6u, eventsCount);
     }
