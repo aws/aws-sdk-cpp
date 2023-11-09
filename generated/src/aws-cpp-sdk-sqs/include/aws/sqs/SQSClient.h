@@ -6,10 +6,9 @@
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sqs/SQSServiceClientModel.h>
 
 namespace Aws
@@ -43,10 +42,10 @@ namespace SQS
    * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region">Regions
    * and Endpoints</a> </p> </li> </ul> </li> </ul>
    */
-  class AWS_SQS_API SQSClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<SQSClient>
+  class AWS_SQS_API SQSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SQSClient>
   {
     public:
-      typedef Aws::Client::AWSXMLClient BASECLASS;
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
@@ -100,13 +99,6 @@ namespace SQS
 
         /* End of legacy constructors due deprecation */
         virtual ~SQSClient();
-
-
-       /**
-        * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
-        */
-        Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
-
 
         /**
          * <p>Adds a permission to a queue for a specific <a
@@ -1020,15 +1012,15 @@ namespace SQS
         }
 
 
-        void OverrideEndpoint(const Aws::String& endpoint);
-        std::shared_ptr<SQSEndpointProviderBase>& accessEndpointProvider();
-  private:
-        friend class Aws::Client::ClientWithAsyncTemplateMethods<SQSClient>;
-        void init(const SQSClientConfiguration& clientConfiguration);
+      void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<SQSEndpointProviderBase>& accessEndpointProvider();
+    private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SQSClient>;
+      void init(const SQSClientConfiguration& clientConfiguration);
 
-        SQSClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
-        std::shared_ptr<SQSEndpointProviderBase> m_endpointProvider;
+      SQSClientConfiguration m_clientConfiguration;
+      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<SQSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SQS
