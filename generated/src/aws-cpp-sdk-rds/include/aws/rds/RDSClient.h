@@ -1106,11 +1106,8 @@ namespace Aws
         }
 
         /**
-         * <p>Creates a zero-ETL integration with Amazon Redshift. For more information,
-         * see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html">Working
-         * with Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the
-         * <i>Amazon Aurora User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a zero-ETL integration with Amazon Redshift.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateIntegration">AWS
          * API Reference</a></p>
          */
@@ -1711,11 +1708,8 @@ namespace Aws
         }
 
         /**
-         * <p>Deletes a zero-ETL integration with Amazon Redshift. For more information,
-         * see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.deleting.html">Deleting
-         * Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon
-         * Aurora User Guide</i> </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a zero-ETL integration with Amazon Redshift.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteIntegration">AWS
          * API Reference</a></p>
          */
@@ -2796,11 +2790,8 @@ namespace Aws
         }
 
         /**
-         * <p>Describe one or more zero-ETL integration with Amazon Redshift. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.describingmonitoring.html">Viewing
-         * and monitoring Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in
-         * the <i>Amazon Aurora User Guide</i> </p><p><h3>See Also:</h3>   <a
+         * <p>Describe one or more zero-ETL integrations with Amazon
+         * Redshift.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeIntegrations">AWS
          * API Reference</a></p>
          */

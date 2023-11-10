@@ -126,22 +126,22 @@ namespace Model
 
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      */
     inline int GetSampleRate() const{ return m_sampleRate; }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      */
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      */
     inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      */
     inline Mp3Settings& WithSampleRate(int value) { SetSampleRate(value); return *this;}
 

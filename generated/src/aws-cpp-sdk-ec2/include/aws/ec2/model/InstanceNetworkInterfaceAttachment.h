@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttachmentStatus.h>
+#include <aws/ec2/model/InstanceAttachmentEnaSrdSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -214,6 +215,43 @@ namespace Model
      */
     inline InstanceNetworkInterfaceAttachment& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
 
+
+    /**
+     * <p>Contains the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline const InstanceAttachmentEnaSrdSpecification& GetEnaSrdSpecification() const{ return m_enaSrdSpecification; }
+
+    /**
+     * <p>Contains the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline bool EnaSrdSpecificationHasBeenSet() const { return m_enaSrdSpecificationHasBeenSet; }
+
+    /**
+     * <p>Contains the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline void SetEnaSrdSpecification(const InstanceAttachmentEnaSrdSpecification& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = value; }
+
+    /**
+     * <p>Contains the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline void SetEnaSrdSpecification(InstanceAttachmentEnaSrdSpecification&& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = std::move(value); }
+
+    /**
+     * <p>Contains the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline InstanceNetworkInterfaceAttachment& WithEnaSrdSpecification(const InstanceAttachmentEnaSrdSpecification& value) { SetEnaSrdSpecification(value); return *this;}
+
+    /**
+     * <p>Contains the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline InstanceNetworkInterfaceAttachment& WithEnaSrdSpecification(InstanceAttachmentEnaSrdSpecification&& value) { SetEnaSrdSpecification(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_attachTime;
@@ -233,6 +271,9 @@ namespace Model
 
     int m_networkCardIndex;
     bool m_networkCardIndexHasBeenSet = false;
+
+    InstanceAttachmentEnaSrdSpecification m_enaSrdSpecification;
+    bool m_enaSrdSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

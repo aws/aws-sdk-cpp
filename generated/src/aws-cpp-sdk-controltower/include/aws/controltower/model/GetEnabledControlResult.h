@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p> Information about the enabled control. </p>
+     * <p>Information about the enabled control.</p>
      */
     inline const EnabledControlDetails& GetEnabledControlDetails() const{ return m_enabledControlDetails; }
 
     /**
-     * <p> Information about the enabled control. </p>
+     * <p>Information about the enabled control.</p>
      */
     inline void SetEnabledControlDetails(const EnabledControlDetails& value) { m_enabledControlDetails = value; }
 
     /**
-     * <p> Information about the enabled control. </p>
+     * <p>Information about the enabled control.</p>
      */
     inline void SetEnabledControlDetails(EnabledControlDetails&& value) { m_enabledControlDetails = std::move(value); }
 
     /**
-     * <p> Information about the enabled control. </p>
+     * <p>Information about the enabled control.</p>
      */
     inline GetEnabledControlResult& WithEnabledControlDetails(const EnabledControlDetails& value) { SetEnabledControlDetails(value); return *this;}
 
     /**
-     * <p> Information about the enabled control. </p>
+     * <p>Information about the enabled control.</p>
      */
     inline GetEnabledControlResult& WithEnabledControlDetails(EnabledControlDetails&& value) { SetEnabledControlDetails(std::move(value)); return *this;}
 

@@ -204,6 +204,55 @@ namespace Model
 
 
     /**
+     * Specify the input that MediaConvert references for your default output settings.
+     * MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio
+     * for all  outputs that you don't manually specify different output settings for.
+     * Enabling this setting will disable "Follow source" for all other inputs.  If
+     * MediaConvert cannot follow your source, for example if you specify an audio-only
+     * input,  MediaConvert uses the first followable input instead. In your JSON job
+     * specification, enter an integer from 1 to 150 corresponding  to the order of
+     * your inputs.
+     */
+    inline int GetFollowSource() const{ return m_followSource; }
+
+    /**
+     * Specify the input that MediaConvert references for your default output settings.
+     * MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio
+     * for all  outputs that you don't manually specify different output settings for.
+     * Enabling this setting will disable "Follow source" for all other inputs.  If
+     * MediaConvert cannot follow your source, for example if you specify an audio-only
+     * input,  MediaConvert uses the first followable input instead. In your JSON job
+     * specification, enter an integer from 1 to 150 corresponding  to the order of
+     * your inputs.
+     */
+    inline bool FollowSourceHasBeenSet() const { return m_followSourceHasBeenSet; }
+
+    /**
+     * Specify the input that MediaConvert references for your default output settings.
+     * MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio
+     * for all  outputs that you don't manually specify different output settings for.
+     * Enabling this setting will disable "Follow source" for all other inputs.  If
+     * MediaConvert cannot follow your source, for example if you specify an audio-only
+     * input,  MediaConvert uses the first followable input instead. In your JSON job
+     * specification, enter an integer from 1 to 150 corresponding  to the order of
+     * your inputs.
+     */
+    inline void SetFollowSource(int value) { m_followSourceHasBeenSet = true; m_followSource = value; }
+
+    /**
+     * Specify the input that MediaConvert references for your default output settings.
+     * MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio
+     * for all  outputs that you don't manually specify different output settings for.
+     * Enabling this setting will disable "Follow source" for all other inputs.  If
+     * MediaConvert cannot follow your source, for example if you specify an audio-only
+     * input,  MediaConvert uses the first followable input instead. In your JSON job
+     * specification, enter an integer from 1 to 150 corresponding  to the order of
+     * your inputs.
+     */
+    inline JobTemplateSettings& WithFollowSource(int value) { SetFollowSource(value); return *this;}
+
+
+    /**
      * Use Inputs to define the source file used in the transcode job. There can only
      * be one input in a job template. Using the API, you can include multiple inputs
      * when referencing a job template.
@@ -669,6 +718,9 @@ namespace Model
 
     ExtendedDataServices m_extendedDataServices;
     bool m_extendedDataServicesHasBeenSet = false;
+
+    int m_followSource;
+    bool m_followSourceHasBeenSet = false;
 
     Aws::Vector<InputTemplate> m_inputs;
     bool m_inputsHasBeenSet = false;

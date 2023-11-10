@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/EnaSrdSpecificationRequest.h>
 #include <aws/ec2/model/InstanceIpv6AddressRequest.h>
 #include <aws/ec2/model/PrivateIpAddressSpecification.h>
 #include <aws/ec2/model/Ipv4PrefixSpecificationRequest.h>
@@ -816,6 +817,37 @@ namespace Model
      */
     inline LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& WithPrimaryIpv6(bool value) { SetPrimaryIpv6(value); return *this;}
 
+
+    /**
+     * <p>Configure ENA Express settings for your launch template.</p>
+     */
+    inline const EnaSrdSpecificationRequest& GetEnaSrdSpecification() const{ return m_enaSrdSpecification; }
+
+    /**
+     * <p>Configure ENA Express settings for your launch template.</p>
+     */
+    inline bool EnaSrdSpecificationHasBeenSet() const { return m_enaSrdSpecificationHasBeenSet; }
+
+    /**
+     * <p>Configure ENA Express settings for your launch template.</p>
+     */
+    inline void SetEnaSrdSpecification(const EnaSrdSpecificationRequest& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = value; }
+
+    /**
+     * <p>Configure ENA Express settings for your launch template.</p>
+     */
+    inline void SetEnaSrdSpecification(EnaSrdSpecificationRequest&& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = std::move(value); }
+
+    /**
+     * <p>Configure ENA Express settings for your launch template.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& WithEnaSrdSpecification(const EnaSrdSpecificationRequest& value) { SetEnaSrdSpecification(value); return *this;}
+
+    /**
+     * <p>Configure ENA Express settings for your launch template.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& WithEnaSrdSpecification(EnaSrdSpecificationRequest&& value) { SetEnaSrdSpecification(std::move(value)); return *this;}
+
   private:
 
     bool m_associateCarrierIpAddress;
@@ -877,6 +909,9 @@ namespace Model
 
     bool m_primaryIpv6;
     bool m_primaryIpv6HasBeenSet = false;
+
+    EnaSrdSpecificationRequest m_enaSrdSpecification;
+    bool m_enaSrdSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

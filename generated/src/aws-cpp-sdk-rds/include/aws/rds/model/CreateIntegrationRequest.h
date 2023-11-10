@@ -40,50 +40,50 @@ namespace Model
   public:
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source
-     * for replication.</p>
+     * <p>The Amazon Resource Name (ARN) of the database to use as the source for
+     * replication.</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source
-     * for replication.</p>
+     * <p>The Amazon Resource Name (ARN) of the database to use as the source for
+     * replication.</p>
      */
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source
-     * for replication.</p>
+     * <p>The Amazon Resource Name (ARN) of the database to use as the source for
+     * replication.</p>
      */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source
-     * for replication.</p>
+     * <p>The Amazon Resource Name (ARN) of the database to use as the source for
+     * replication.</p>
      */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source
-     * for replication.</p>
+     * <p>The Amazon Resource Name (ARN) of the database to use as the source for
+     * replication.</p>
      */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source
-     * for replication.</p>
+     * <p>The Amazon Resource Name (ARN) of the database to use as the source for
+     * replication.</p>
      */
     inline CreateIntegrationRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source
-     * for replication.</p>
+     * <p>The Amazon Resource Name (ARN) of the database to use as the source for
+     * replication.</p>
      */
     inline CreateIntegrationRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source
-     * for replication.</p>
+     * <p>The Amazon Resource Name (ARN) of the database to use as the source for
+     * replication.</p>
      */
     inline CreateIntegrationRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
@@ -181,56 +181,56 @@ namespace Model
     /**
      * <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key
      * identifier for the key to use to encrypt the integration. If you don't specify
-     * an encryption key, Aurora uses a default Amazon Web Services owned key. </p>
+     * an encryption key, RDS uses a default Amazon Web Services owned key. </p>
      */
     inline const Aws::String& GetKMSKeyId() const{ return m_kMSKeyId; }
 
     /**
      * <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key
      * identifier for the key to use to encrypt the integration. If you don't specify
-     * an encryption key, Aurora uses a default Amazon Web Services owned key. </p>
+     * an encryption key, RDS uses a default Amazon Web Services owned key. </p>
      */
     inline bool KMSKeyIdHasBeenSet() const { return m_kMSKeyIdHasBeenSet; }
 
     /**
      * <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key
      * identifier for the key to use to encrypt the integration. If you don't specify
-     * an encryption key, Aurora uses a default Amazon Web Services owned key. </p>
+     * an encryption key, RDS uses a default Amazon Web Services owned key. </p>
      */
     inline void SetKMSKeyId(const Aws::String& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = value; }
 
     /**
      * <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key
      * identifier for the key to use to encrypt the integration. If you don't specify
-     * an encryption key, Aurora uses a default Amazon Web Services owned key. </p>
+     * an encryption key, RDS uses a default Amazon Web Services owned key. </p>
      */
     inline void SetKMSKeyId(Aws::String&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::move(value); }
 
     /**
      * <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key
      * identifier for the key to use to encrypt the integration. If you don't specify
-     * an encryption key, Aurora uses a default Amazon Web Services owned key. </p>
+     * an encryption key, RDS uses a default Amazon Web Services owned key. </p>
      */
     inline void SetKMSKeyId(const char* value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId.assign(value); }
 
     /**
      * <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key
      * identifier for the key to use to encrypt the integration. If you don't specify
-     * an encryption key, Aurora uses a default Amazon Web Services owned key. </p>
+     * an encryption key, RDS uses a default Amazon Web Services owned key. </p>
      */
     inline CreateIntegrationRequest& WithKMSKeyId(const Aws::String& value) { SetKMSKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key
      * identifier for the key to use to encrypt the integration. If you don't specify
-     * an encryption key, Aurora uses a default Amazon Web Services owned key. </p>
+     * an encryption key, RDS uses a default Amazon Web Services owned key. </p>
      */
     inline CreateIntegrationRequest& WithKMSKeyId(Aws::String&& value) { SetKMSKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key
      * identifier for the key to use to encrypt the integration. If you don't specify
-     * an encryption key, Aurora uses a default Amazon Web Services owned key. </p>
+     * an encryption key, RDS uses a default Amazon Web Services owned key. </p>
      */
     inline CreateIntegrationRequest& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
 

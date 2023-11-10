@@ -18,11 +18,12 @@ namespace ControlTower
   /**
    * <p>These interfaces allow you to apply the AWS library of pre-defined
    * <i>controls</i> to your organizational units, programmatically. In AWS Control
-   * Tower, the terms "control" and "guardrail" are synonyms. .</p> <p>To call these
+   * Tower, the terms "control" and "guardrail" are synonyms.</p> <p>To call these
    * APIs, you'll need to know:</p> <ul> <li> <p>the <code>controlIdentifier</code>
    * for the control--or guardrail--you are targeting.</p> </li> <li> <p>the ARN
    * associated with the target organizational unit (OU), which we call the
-   * <code>targetIdentifier</code>.</p> </li> </ul> <p> <b>To get the
+   * <code>targetIdentifier</code>.</p> </li> <li> <p>the ARN associated with a
+   * resource that you wish to tag or untag.</p> </li> </ul> <p> <b>To get the
    * <code>controlIdentifier</code> for your AWS Control Tower control:</b> </p>
    * <p>The <code>controlIdentifier</code> is an ARN that is specified for each
    * control. You can view the <code>controlIdentifier</code> in the console on the
@@ -35,7 +36,7 @@ namespace ControlTower
    * quick-reference list of control identifers for the AWS Control Tower legacy
    * <i>Strongly recommended</i> and <i>Elective</i> controls is given in <a
    * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html.html">Resource
-   * identifiers for APIs and guardrails</a> in the <a
+   * identifiers for APIs and controls</a> in the <a
    * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html">Controls
    * reference guide section</a> of the <i>AWS Control Tower User Guide</i>. Remember
    * that <i>Mandatory</i> controls cannot be added or removed.</p>  <p> <b>ARN
@@ -170,7 +171,7 @@ namespace ControlTower
          * contains. The resources created will vary according to the control that you
          * specify. For usage examples, see <a
          * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-         * <i>the AWS Control Tower User Guide</i> </a> </p><p><h3>See Also:</h3>   <a
+         * <i>the AWS Control Tower User Guide</i> </a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnableControl">AWS
          * API Reference</a></p>
          */
@@ -199,7 +200,7 @@ namespace ControlTower
          * <code>DisableControl</code> operation. Displays a message in case of error.
          * Details for an operation are available for 90 days. For usage examples, see <a
          * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-         * <i>the AWS Control Tower User Guide</i> </a> </p><p><h3>See Also:</h3>   <a
+         * <i>the AWS Control Tower User Guide</i> </a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetControlOperation">AWS
          * API Reference</a></p>
          */
@@ -224,14 +225,9 @@ namespace ControlTower
         }
 
         /**
-         * <p> Provides details about the enabled control. For usage examples, see <a
+         * <p>Retrieves details about an enabled control. For usage examples, see <a
          * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-         * <i>the AWS Control Tower User Guide</i> </a>.</p> <p class="title"> <b>Returned
-         * values</b> </p> <ul> <li> <p>TargetRegions: Shows target AWS Regions where the
-         * enabled control is available to be deployed.</p> </li> <li> <p>StatusSummary:
-         * Provides a detailed summary of the deployment status.</p> </li> <li>
-         * <p>DriftSummary: Provides a detailed summary of the drifted status.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <i>the AWS Control Tower User Guide</i> </a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetEnabledControl">AWS
          * API Reference</a></p>
          */
@@ -259,7 +255,7 @@ namespace ControlTower
          * <p>Lists the controls enabled by AWS Control Tower on the specified
          * organizational unit and the accounts it contains. For usage examples, see <a
          * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-         * <i>the AWS Control Tower User Guide</i> </a> </p><p><h3>See Also:</h3>   <a
+         * <i>the AWS Control Tower User Guide</i> </a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListEnabledControls">AWS
          * API Reference</a></p>
          */
@@ -281,6 +277,88 @@ namespace ControlTower
         void ListEnabledControlsAsync(const ListEnabledControlsRequestT& request, const ListEnabledControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ControlTowerClient::ListEnabledControls, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of tags associated with the resource. For usage examples, see
+         * <a
+         * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+         * <i>the AWS Control Tower User Guide</i> </a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Applies tags to a resource. For usage examples, see <a
+         * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+         * <i>the AWS Control Tower User Guide</i> </a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Removes tags from a resource. For usage examples, see <a
+         * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+         * <i>the AWS Control Tower User Guide</i> </a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::UntagResource, request, handler, context);
         }
 
 

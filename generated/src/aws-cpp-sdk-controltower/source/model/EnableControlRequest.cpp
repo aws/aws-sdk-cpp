@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 EnableControlRequest::EnableControlRequest() : 
     m_controlIdentifierHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_targetIdentifierHasBeenSet(false)
 {
 }
@@ -25,6 +26,17 @@ Aws::String EnableControlRequest::SerializePayload() const
   if(m_controlIdentifierHasBeenSet)
   {
    payload.WithString("controlIdentifier", m_controlIdentifier);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

@@ -1212,137 +1212,110 @@ namespace Model
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline RequestLaunchTemplateData& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline RequestLaunchTemplateData& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline RequestLaunchTemplateData& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline RequestLaunchTemplateData& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 

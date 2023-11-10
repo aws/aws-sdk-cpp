@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/LaunchTemplateEnaSrdSpecification.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/PrivateIpAddressSpecification.h>
 #include <aws/ec2/model/Ipv4PrefixSpecificationResponse.h>
@@ -720,6 +721,43 @@ namespace Model
      */
     inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithPrimaryIpv6(bool value) { SetPrimaryIpv6(value); return *this;}
 
+
+    /**
+     * <p>Contains the ENA Express settings for instances launched from your launch
+     * template.</p>
+     */
+    inline const LaunchTemplateEnaSrdSpecification& GetEnaSrdSpecification() const{ return m_enaSrdSpecification; }
+
+    /**
+     * <p>Contains the ENA Express settings for instances launched from your launch
+     * template.</p>
+     */
+    inline bool EnaSrdSpecificationHasBeenSet() const { return m_enaSrdSpecificationHasBeenSet; }
+
+    /**
+     * <p>Contains the ENA Express settings for instances launched from your launch
+     * template.</p>
+     */
+    inline void SetEnaSrdSpecification(const LaunchTemplateEnaSrdSpecification& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = value; }
+
+    /**
+     * <p>Contains the ENA Express settings for instances launched from your launch
+     * template.</p>
+     */
+    inline void SetEnaSrdSpecification(LaunchTemplateEnaSrdSpecification&& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = std::move(value); }
+
+    /**
+     * <p>Contains the ENA Express settings for instances launched from your launch
+     * template.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithEnaSrdSpecification(const LaunchTemplateEnaSrdSpecification& value) { SetEnaSrdSpecification(value); return *this;}
+
+    /**
+     * <p>Contains the ENA Express settings for instances launched from your launch
+     * template.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithEnaSrdSpecification(LaunchTemplateEnaSrdSpecification&& value) { SetEnaSrdSpecification(std::move(value)); return *this;}
+
   private:
 
     bool m_associateCarrierIpAddress;
@@ -781,6 +819,9 @@ namespace Model
 
     bool m_primaryIpv6;
     bool m_primaryIpv6HasBeenSet = false;
+
+    LaunchTemplateEnaSrdSpecification m_enaSrdSpecification;
+    bool m_enaSrdSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

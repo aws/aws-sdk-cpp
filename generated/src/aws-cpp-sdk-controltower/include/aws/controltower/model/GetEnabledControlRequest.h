@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p> The ARN of the enabled control. </p>
+     * <p>The <code>controlIdentifier</code> of the enabled control.</p>
      */
     inline const Aws::String& GetEnabledControlIdentifier() const{ return m_enabledControlIdentifier; }
 
     /**
-     * <p> The ARN of the enabled control. </p>
+     * <p>The <code>controlIdentifier</code> of the enabled control.</p>
      */
     inline bool EnabledControlIdentifierHasBeenSet() const { return m_enabledControlIdentifierHasBeenSet; }
 
     /**
-     * <p> The ARN of the enabled control. </p>
+     * <p>The <code>controlIdentifier</code> of the enabled control.</p>
      */
     inline void SetEnabledControlIdentifier(const Aws::String& value) { m_enabledControlIdentifierHasBeenSet = true; m_enabledControlIdentifier = value; }
 
     /**
-     * <p> The ARN of the enabled control. </p>
+     * <p>The <code>controlIdentifier</code> of the enabled control.</p>
      */
     inline void SetEnabledControlIdentifier(Aws::String&& value) { m_enabledControlIdentifierHasBeenSet = true; m_enabledControlIdentifier = std::move(value); }
 
     /**
-     * <p> The ARN of the enabled control. </p>
+     * <p>The <code>controlIdentifier</code> of the enabled control.</p>
      */
     inline void SetEnabledControlIdentifier(const char* value) { m_enabledControlIdentifierHasBeenSet = true; m_enabledControlIdentifier.assign(value); }
 
     /**
-     * <p> The ARN of the enabled control. </p>
+     * <p>The <code>controlIdentifier</code> of the enabled control.</p>
      */
     inline GetEnabledControlRequest& WithEnabledControlIdentifier(const Aws::String& value) { SetEnabledControlIdentifier(value); return *this;}
 
     /**
-     * <p> The ARN of the enabled control. </p>
+     * <p>The <code>controlIdentifier</code> of the enabled control.</p>
      */
     inline GetEnabledControlRequest& WithEnabledControlIdentifier(Aws::String&& value) { SetEnabledControlIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> The ARN of the enabled control. </p>
+     * <p>The <code>controlIdentifier</code> of the enabled control.</p>
      */
     inline GetEnabledControlRequest& WithEnabledControlIdentifier(const char* value) { SetEnabledControlIdentifier(value); return *this;}
 

@@ -520,56 +520,44 @@ namespace Model
 
 
     /**
-     * Specify how the service handles outputs that have a different aspect ratio from
-     * the input aspect ratio. Choose Stretch to output to have the service stretch
-     * your video image to fit. Keep the setting Default to have the service letterbox
-     * your video instead. This setting overrides any value that you specify for the
-     * setting Selection placement in this output.
+     * Specify the video Scaling behavior when your output has a different resolution
+     * than your input. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      */
     inline const ScalingBehavior& GetScalingBehavior() const{ return m_scalingBehavior; }
 
     /**
-     * Specify how the service handles outputs that have a different aspect ratio from
-     * the input aspect ratio. Choose Stretch to output to have the service stretch
-     * your video image to fit. Keep the setting Default to have the service letterbox
-     * your video instead. This setting overrides any value that you specify for the
-     * setting Selection placement in this output.
+     * Specify the video Scaling behavior when your output has a different resolution
+     * than your input. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      */
     inline bool ScalingBehaviorHasBeenSet() const { return m_scalingBehaviorHasBeenSet; }
 
     /**
-     * Specify how the service handles outputs that have a different aspect ratio from
-     * the input aspect ratio. Choose Stretch to output to have the service stretch
-     * your video image to fit. Keep the setting Default to have the service letterbox
-     * your video instead. This setting overrides any value that you specify for the
-     * setting Selection placement in this output.
+     * Specify the video Scaling behavior when your output has a different resolution
+     * than your input. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      */
     inline void SetScalingBehavior(const ScalingBehavior& value) { m_scalingBehaviorHasBeenSet = true; m_scalingBehavior = value; }
 
     /**
-     * Specify how the service handles outputs that have a different aspect ratio from
-     * the input aspect ratio. Choose Stretch to output to have the service stretch
-     * your video image to fit. Keep the setting Default to have the service letterbox
-     * your video instead. This setting overrides any value that you specify for the
-     * setting Selection placement in this output.
+     * Specify the video Scaling behavior when your output has a different resolution
+     * than your input. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      */
     inline void SetScalingBehavior(ScalingBehavior&& value) { m_scalingBehaviorHasBeenSet = true; m_scalingBehavior = std::move(value); }
 
     /**
-     * Specify how the service handles outputs that have a different aspect ratio from
-     * the input aspect ratio. Choose Stretch to output to have the service stretch
-     * your video image to fit. Keep the setting Default to have the service letterbox
-     * your video instead. This setting overrides any value that you specify for the
-     * setting Selection placement in this output.
+     * Specify the video Scaling behavior when your output has a different resolution
+     * than your input. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      */
     inline VideoDescription& WithScalingBehavior(const ScalingBehavior& value) { SetScalingBehavior(value); return *this;}
 
     /**
-     * Specify how the service handles outputs that have a different aspect ratio from
-     * the input aspect ratio. Choose Stretch to output to have the service stretch
-     * your video image to fit. Keep the setting Default to have the service letterbox
-     * your video instead. This setting overrides any value that you specify for the
-     * setting Selection placement in this output.
+     * Specify the video Scaling behavior when your output has a different resolution
+     * than your input. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      */
     inline VideoDescription& WithScalingBehavior(ScalingBehavior&& value) { SetScalingBehavior(std::move(value)); return *this;}
 

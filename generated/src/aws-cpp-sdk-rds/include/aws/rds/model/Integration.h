@@ -31,11 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>An Aurora zero-ETL integration with Amazon Redshift. For more information,
-   * see <a
-   * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html">Working
-   * with Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the
-   * <i>Amazon Aurora User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * <p>A zero-ETL integration with Amazon Redshift.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Integration">AWS API
    * Reference</a></p>
    */
@@ -51,50 +47,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster used as the source
-     * for replication.</p>
+     * <p>The Amazon Resource Name (ARN) of the database used as the source for
+     * replication.</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster used as the source
-     * for replication.</p>
+     * <p>The Amazon Resource Name (ARN) of the database used as the source for
+     * replication.</p>
      */
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster used as the source
-     * for replication.</p>
+     * <p>The Amazon Resource Name (ARN) of the database used as the source for
+     * replication.</p>
      */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster used as the source
-     * for replication.</p>
+     * <p>The Amazon Resource Name (ARN) of the database used as the source for
+     * replication.</p>
      */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster used as the source
-     * for replication.</p>
+     * <p>The Amazon Resource Name (ARN) of the database used as the source for
+     * replication.</p>
      */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster used as the source
-     * for replication.</p>
+     * <p>The Amazon Resource Name (ARN) of the database used as the source for
+     * replication.</p>
      */
     inline Integration& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster used as the source
-     * for replication.</p>
+     * <p>The Amazon Resource Name (ARN) of the database used as the source for
+     * replication.</p>
      */
     inline Integration& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster used as the source
-     * for replication.</p>
+     * <p>The Amazon Resource Name (ARN) of the database used as the source for
+     * replication.</p>
      */
     inline Integration& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
