@@ -50,7 +50,8 @@ LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::LaunchTemplateInstan
     m_ipv6PrefixCount(0),
     m_ipv6PrefixCountHasBeenSet(false),
     m_primaryIpv6(false),
-    m_primaryIpv6HasBeenSet(false)
+    m_primaryIpv6HasBeenSet(false),
+    m_enaSrdSpecificationHasBeenSet(false)
 {
 }
 
@@ -84,7 +85,8 @@ LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::LaunchTemplateInstan
     m_ipv6PrefixCount(0),
     m_ipv6PrefixCountHasBeenSet(false),
     m_primaryIpv6(false),
-    m_primaryIpv6HasBeenSet(false)
+    m_primaryIpv6HasBeenSet(false),
+    m_enaSrdSpecificationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -245,6 +247,12 @@ LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& LaunchTemplateInstan
       m_primaryIpv6 = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(primaryIpv6Node.GetText()).c_str()).c_str());
       m_primaryIpv6HasBeenSet = true;
     }
+    XmlNode enaSrdSpecificationNode = resultNode.FirstChild("EnaSrdSpecification");
+    if(!enaSrdSpecificationNode.IsNull())
+    {
+      m_enaSrdSpecification = enaSrdSpecificationNode;
+      m_enaSrdSpecificationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -380,6 +388,13 @@ void LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::OutputToStream(
       oStream << location << index << locationValue << ".PrimaryIpv6=" << std::boolalpha << m_primaryIpv6 << "&";
   }
 
+  if(m_enaSrdSpecificationHasBeenSet)
+  {
+      Aws::StringStream enaSrdSpecificationLocationAndMemberSs;
+      enaSrdSpecificationLocationAndMemberSs << location << index << locationValue << ".EnaSrdSpecification";
+      m_enaSrdSpecification.OutputToStream(oStream, enaSrdSpecificationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -491,6 +506,12 @@ void LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::OutputToStream(
   if(m_primaryIpv6HasBeenSet)
   {
       oStream << location << ".PrimaryIpv6=" << std::boolalpha << m_primaryIpv6 << "&";
+  }
+  if(m_enaSrdSpecificationHasBeenSet)
+  {
+      Aws::String enaSrdSpecificationLocationAndMember(location);
+      enaSrdSpecificationLocationAndMember += ".EnaSrdSpecification";
+      m_enaSrdSpecification.OutputToStream(oStream, enaSrdSpecificationLocationAndMember.c_str());
   }
 }
 

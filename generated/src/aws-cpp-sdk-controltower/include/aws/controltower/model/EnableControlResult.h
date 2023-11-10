@@ -33,6 +33,42 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the <code>EnabledControl</code> resource.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The ARN of the <code>EnabledControl</code> resource.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arn = value; }
+
+    /**
+     * <p>The ARN of the <code>EnabledControl</code> resource.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
+
+    /**
+     * <p>The ARN of the <code>EnabledControl</code> resource.</p>
+     */
+    inline void SetArn(const char* value) { m_arn.assign(value); }
+
+    /**
+     * <p>The ARN of the <code>EnabledControl</code> resource.</p>
+     */
+    inline EnableControlResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the <code>EnabledControl</code> resource.</p>
+     */
+    inline EnableControlResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the <code>EnabledControl</code> resource.</p>
+     */
+    inline EnableControlResult& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
      * <p>The ID of the asynchronous operation, which is used to track status. The
      * operation is available for 90 days.</p>
      */
@@ -97,6 +133,8 @@ namespace Model
     inline EnableControlResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
   private:
+
+    Aws::String m_arn;
 
     Aws::String m_operationIdentifier;
 

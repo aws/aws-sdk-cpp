@@ -20,13 +20,15 @@ namespace Model
 
 AudioChannelTaggingSettings::AudioChannelTaggingSettings() : 
     m_channelTag(AudioChannelTag::NOT_SET),
-    m_channelTagHasBeenSet(false)
+    m_channelTagHasBeenSet(false),
+    m_channelTagsHasBeenSet(false)
 {
 }
 
 AudioChannelTaggingSettings::AudioChannelTaggingSettings(JsonView jsonValue) : 
     m_channelTag(AudioChannelTag::NOT_SET),
-    m_channelTagHasBeenSet(false)
+    m_channelTagHasBeenSet(false),
+    m_channelTagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +42,16 @@ AudioChannelTaggingSettings& AudioChannelTaggingSettings::operator =(JsonView js
     m_channelTagHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("channelTags"))
+  {
+    Aws::Utils::Array<JsonView> channelTagsJsonList = jsonValue.GetArray("channelTags");
+    for(unsigned channelTagsIndex = 0; channelTagsIndex < channelTagsJsonList.GetLength(); ++channelTagsIndex)
+    {
+      m_channelTags.push_back(AudioChannelTagMapper::GetAudioChannelTagForName(channelTagsJsonList[channelTagsIndex].AsString()));
+    }
+    m_channelTagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +62,17 @@ JsonValue AudioChannelTaggingSettings::Jsonize() const
   if(m_channelTagHasBeenSet)
   {
    payload.WithString("channelTag", AudioChannelTagMapper::GetNameForAudioChannelTag(m_channelTag));
+  }
+
+  if(m_channelTagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> channelTagsJsonList(m_channelTags.size());
+   for(unsigned channelTagsIndex = 0; channelTagsIndex < channelTagsJsonList.GetLength(); ++channelTagsIndex)
+   {
+     channelTagsJsonList[channelTagsIndex].AsString(AudioChannelTagMapper::GetNameForAudioChannelTag(m_channelTags[channelTagsIndex]));
+   }
+   payload.WithArray("channelTags", std::move(channelTagsJsonList));
+
   }
 
   return payload;
