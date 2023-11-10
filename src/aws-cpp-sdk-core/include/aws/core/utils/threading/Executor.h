@@ -9,7 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSQueue.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/threading/Semaphore.h>
+#include <condition_variable>
 #include <functional>
 #include <future>
 #include <mutex>
@@ -105,7 +105,7 @@ namespace Aws
             private:
                 Aws::Queue<std::function<void()>*> m_tasks;
                 std::mutex m_queueLock;
-                Aws::Utils::Threading::Semaphore m_sync;
+                std::condition_variable m_sync;
                 Aws::Vector<ThreadTask*> m_threadTaskHandles;
                 size_t m_poolSize;
                 OverflowPolicy m_overflowPolicy;
