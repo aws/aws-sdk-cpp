@@ -21,22 +21,23 @@ ThreadTask::~ThreadTask()
 
 void ThreadTask::MainTaskRunner()
 {
+    std::unique_lock lock(m_executor.m_queueLock);
+
     while (m_continue)
     {        
-        while (m_continue && m_executor.HasTasks())
+        if (m_executor.HasTasks())
         {      
             auto fn = m_executor.PopTask();
+            lock.unlock();
             if(fn)
             {
                 (*fn)();
                 Aws::Delete(fn);               
             }
+            lock.lock();
         }
-     
-        if(m_continue)
-        {
-            m_executor.m_sync.WaitOne();
-        }
+
+        m_executor.m_sync.wait(lock, [this] { return !m_continue || m_executor.HasTasks(); });
     }
 }
 
