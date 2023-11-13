@@ -961,6 +961,37 @@ namespace Model
      */
     inline Replication& WithReplicationLastStopTime(Aws::Utils::DateTime&& value) { SetReplicationLastStopTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The timestamp when DMS will deprovision the replication.</p>
+     */
+    inline const Aws::Utils::DateTime& GetReplicationDeprovisionTime() const{ return m_replicationDeprovisionTime; }
+
+    /**
+     * <p>The timestamp when DMS will deprovision the replication.</p>
+     */
+    inline bool ReplicationDeprovisionTimeHasBeenSet() const { return m_replicationDeprovisionTimeHasBeenSet; }
+
+    /**
+     * <p>The timestamp when DMS will deprovision the replication.</p>
+     */
+    inline void SetReplicationDeprovisionTime(const Aws::Utils::DateTime& value) { m_replicationDeprovisionTimeHasBeenSet = true; m_replicationDeprovisionTime = value; }
+
+    /**
+     * <p>The timestamp when DMS will deprovision the replication.</p>
+     */
+    inline void SetReplicationDeprovisionTime(Aws::Utils::DateTime&& value) { m_replicationDeprovisionTimeHasBeenSet = true; m_replicationDeprovisionTime = std::move(value); }
+
+    /**
+     * <p>The timestamp when DMS will deprovision the replication.</p>
+     */
+    inline Replication& WithReplicationDeprovisionTime(const Aws::Utils::DateTime& value) { SetReplicationDeprovisionTime(value); return *this;}
+
+    /**
+     * <p>The timestamp when DMS will deprovision the replication.</p>
+     */
+    inline Replication& WithReplicationDeprovisionTime(Aws::Utils::DateTime&& value) { SetReplicationDeprovisionTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_replicationConfigIdentifier;
@@ -1016,6 +1047,9 @@ namespace Model
 
     Aws::Utils::DateTime m_replicationLastStopTime;
     bool m_replicationLastStopTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_replicationDeprovisionTime;
+    bool m_replicationDeprovisionTimeHasBeenSet = false;
   };
 
 } // namespace Model

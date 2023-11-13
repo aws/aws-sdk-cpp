@@ -59,6 +59,11 @@ GetCoipPoolUsageResponse& GetCoipPoolUsageResponse::operator =(const Aws::Amazon
     {
       m_localGatewayRouteTableId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayRouteTableIdNode.GetText());
     }
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

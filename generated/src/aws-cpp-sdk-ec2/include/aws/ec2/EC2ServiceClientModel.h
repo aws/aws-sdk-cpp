@@ -259,6 +259,7 @@
 #include <aws/ec2/model/DescribeInstanceEventNotificationAttributesResponse.h>
 #include <aws/ec2/model/DescribeInstanceEventWindowsResponse.h>
 #include <aws/ec2/model/DescribeInstanceStatusResponse.h>
+#include <aws/ec2/model/DescribeInstanceTopologyResponse.h>
 #include <aws/ec2/model/DescribeInstanceTypeOfferingsResponse.h>
 #include <aws/ec2/model/DescribeInstanceTypesResponse.h>
 #include <aws/ec2/model/DescribeInstancesResponse.h>
@@ -877,6 +878,7 @@ namespace Aws
       class DescribeInstanceEventNotificationAttributesRequest;
       class DescribeInstanceEventWindowsRequest;
       class DescribeInstanceStatusRequest;
+      class DescribeInstanceTopologyRequest;
       class DescribeInstanceTypeOfferingsRequest;
       class DescribeInstanceTypesRequest;
       class DescribeInstancesRequest;
@@ -1485,6 +1487,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeInstanceEventNotificationAttributesResponse, EC2Error> DescribeInstanceEventNotificationAttributesOutcome;
       typedef Aws::Utils::Outcome<DescribeInstanceEventWindowsResponse, EC2Error> DescribeInstanceEventWindowsOutcome;
       typedef Aws::Utils::Outcome<DescribeInstanceStatusResponse, EC2Error> DescribeInstanceStatusOutcome;
+      typedef Aws::Utils::Outcome<DescribeInstanceTopologyResponse, EC2Error> DescribeInstanceTopologyOutcome;
       typedef Aws::Utils::Outcome<DescribeInstanceTypeOfferingsResponse, EC2Error> DescribeInstanceTypeOfferingsOutcome;
       typedef Aws::Utils::Outcome<DescribeInstanceTypesResponse, EC2Error> DescribeInstanceTypesOutcome;
       typedef Aws::Utils::Outcome<DescribeInstancesResponse, EC2Error> DescribeInstancesOutcome;
@@ -2093,6 +2096,7 @@ namespace Aws
       typedef std::future<DescribeInstanceEventNotificationAttributesOutcome> DescribeInstanceEventNotificationAttributesOutcomeCallable;
       typedef std::future<DescribeInstanceEventWindowsOutcome> DescribeInstanceEventWindowsOutcomeCallable;
       typedef std::future<DescribeInstanceStatusOutcome> DescribeInstanceStatusOutcomeCallable;
+      typedef std::future<DescribeInstanceTopologyOutcome> DescribeInstanceTopologyOutcomeCallable;
       typedef std::future<DescribeInstanceTypeOfferingsOutcome> DescribeInstanceTypeOfferingsOutcomeCallable;
       typedef std::future<DescribeInstanceTypesOutcome> DescribeInstanceTypesOutcomeCallable;
       typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
@@ -2704,6 +2708,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceEventNotificationAttributesRequest&, const Model::DescribeInstanceEventNotificationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceEventNotificationAttributesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceEventWindowsRequest&, const Model::DescribeInstanceEventWindowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceEventWindowsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceStatusRequest&, const Model::DescribeInstanceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceStatusResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeInstanceTopologyRequest&, const Model::DescribeInstanceTopologyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceTopologyResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceTypeOfferingsRequest&, const Model::DescribeInstanceTypeOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceTypeOfferingsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceTypesRequest&, const Model::DescribeInstanceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceTypesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstancesRequest&, const Model::DescribeInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstancesResponseReceivedHandler;

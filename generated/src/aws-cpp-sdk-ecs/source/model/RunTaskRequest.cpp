@@ -34,7 +34,9 @@ RunTaskRequest::RunTaskRequest() :
     m_referenceIdHasBeenSet(false),
     m_startedByHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_taskDefinitionHasBeenSet(false)
+    m_taskDefinitionHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -159,6 +161,12 @@ Aws::String RunTaskRequest::SerializePayload() const
   if(m_taskDefinitionHasBeenSet)
   {
    payload.WithString("taskDefinition", m_taskDefinition);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

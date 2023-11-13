@@ -360,6 +360,72 @@ namespace Model
      */
     inline Application& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetApplicationTag() const{ return m_applicationTag; }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline bool ApplicationTagHasBeenSet() const { return m_applicationTagHasBeenSet; }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline void SetApplicationTag(const Aws::Map<Aws::String, Aws::String>& value) { m_applicationTagHasBeenSet = true; m_applicationTag = value; }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline void SetApplicationTag(Aws::Map<Aws::String, Aws::String>&& value) { m_applicationTagHasBeenSet = true; m_applicationTag = std::move(value); }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline Application& WithApplicationTag(const Aws::Map<Aws::String, Aws::String>& value) { SetApplicationTag(value); return *this;}
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline Application& WithApplicationTag(Aws::Map<Aws::String, Aws::String>&& value) { SetApplicationTag(std::move(value)); return *this;}
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline Application& AddApplicationTag(const Aws::String& key, const Aws::String& value) { m_applicationTagHasBeenSet = true; m_applicationTag.emplace(key, value); return *this; }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline Application& AddApplicationTag(Aws::String&& key, const Aws::String& value) { m_applicationTagHasBeenSet = true; m_applicationTag.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline Application& AddApplicationTag(const Aws::String& key, Aws::String&& value) { m_applicationTagHasBeenSet = true; m_applicationTag.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline Application& AddApplicationTag(Aws::String&& key, Aws::String&& value) { m_applicationTagHasBeenSet = true; m_applicationTag.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline Application& AddApplicationTag(const char* key, Aws::String&& value) { m_applicationTagHasBeenSet = true; m_applicationTag.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline Application& AddApplicationTag(Aws::String&& key, const char* value) { m_applicationTagHasBeenSet = true; m_applicationTag.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline Application& AddApplicationTag(const char* key, const char* value) { m_applicationTagHasBeenSet = true; m_applicationTag.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_id;
@@ -382,6 +448,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_applicationTag;
+    bool m_applicationTagHasBeenSet = false;
   };
 
 } // namespace Model

@@ -136,63 +136,63 @@ namespace Model
 
 
     /**
-     * <p> Describes current setting for the logging version. </p>
+     * <p>The log version.</p>
      */
     inline const Aws::String& GetLogVersion() const{ return m_logVersion; }
 
     /**
-     * <p> Describes current setting for the logging version. </p>
+     * <p>The log version.</p>
      */
     inline bool LogVersionHasBeenSet() const { return m_logVersionHasBeenSet; }
 
     /**
-     * <p> Describes current setting for the logging version. </p>
+     * <p>The log version.</p>
      */
     inline void SetLogVersion(const Aws::String& value) { m_logVersionHasBeenSet = true; m_logVersion = value; }
 
     /**
-     * <p> Describes current setting for the logging version. </p>
+     * <p>The log version.</p>
      */
     inline void SetLogVersion(Aws::String&& value) { m_logVersionHasBeenSet = true; m_logVersion = std::move(value); }
 
     /**
-     * <p> Describes current setting for the logging version. </p>
+     * <p>The log version.</p>
      */
     inline void SetLogVersion(const char* value) { m_logVersionHasBeenSet = true; m_logVersion.assign(value); }
 
     /**
-     * <p> Describes current setting for the logging version. </p>
+     * <p>The log version.</p>
      */
     inline VerifiedAccessLogs& WithLogVersion(const Aws::String& value) { SetLogVersion(value); return *this;}
 
     /**
-     * <p> Describes current setting for the logging version. </p>
+     * <p>The log version.</p>
      */
     inline VerifiedAccessLogs& WithLogVersion(Aws::String&& value) { SetLogVersion(std::move(value)); return *this;}
 
     /**
-     * <p> Describes current setting for the logging version. </p>
+     * <p>The log version.</p>
      */
     inline VerifiedAccessLogs& WithLogVersion(const char* value) { SetLogVersion(value); return *this;}
 
 
     /**
-     * <p> Describes current setting for including trust data into the logs. </p>
+     * <p>Indicates whether trust data is included in the logs.</p>
      */
     inline bool GetIncludeTrustContext() const{ return m_includeTrustContext; }
 
     /**
-     * <p> Describes current setting for including trust data into the logs. </p>
+     * <p>Indicates whether trust data is included in the logs.</p>
      */
     inline bool IncludeTrustContextHasBeenSet() const { return m_includeTrustContextHasBeenSet; }
 
     /**
-     * <p> Describes current setting for including trust data into the logs. </p>
+     * <p>Indicates whether trust data is included in the logs.</p>
      */
     inline void SetIncludeTrustContext(bool value) { m_includeTrustContextHasBeenSet = true; m_includeTrustContext = value; }
 
     /**
-     * <p> Describes current setting for including trust data into the logs. </p>
+     * <p>Indicates whether trust data is included in the logs.</p>
      */
     inline VerifiedAccessLogs& WithIncludeTrustContext(bool value) { SetIncludeTrustContext(value); return *this;}
 

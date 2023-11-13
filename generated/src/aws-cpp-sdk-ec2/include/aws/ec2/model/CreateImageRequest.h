@@ -40,58 +40,114 @@ namespace Model
   public:
 
     /**
-     * <p>The block device mappings. This parameter cannot be used to modify the
-     * encryption status of existing volumes or snapshots. To create an AMI with
-     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
+     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
+     * want a different volume size, you must first change the volume size of the
+     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
+     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
+     * have a different encryption status (for example, where the source volume and
+     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
+     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
+     * option that can be changed for existing mappings or snapshots is
+     * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>The block device mappings. This parameter cannot be used to modify the
-     * encryption status of existing volumes or snapshots. To create an AMI with
-     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
+     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
+     * want a different volume size, you must first change the volume size of the
+     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
+     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
+     * have a different encryption status (for example, where the source volume and
+     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
+     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
+     * option that can be changed for existing mappings or snapshots is
+     * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
     /**
-     * <p>The block device mappings. This parameter cannot be used to modify the
-     * encryption status of existing volumes or snapshots. To create an AMI with
-     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
+     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
+     * want a different volume size, you must first change the volume size of the
+     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
+     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
+     * have a different encryption status (for example, where the source volume and
+     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
+     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
+     * option that can be changed for existing mappings or snapshots is
+     * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>The block device mappings. This parameter cannot be used to modify the
-     * encryption status of existing volumes or snapshots. To create an AMI with
-     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
+     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
+     * want a different volume size, you must first change the volume size of the
+     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
+     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
+     * have a different encryption status (for example, where the source volume and
+     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
+     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
+     * option that can be changed for existing mappings or snapshots is
+     * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
-     * <p>The block device mappings. This parameter cannot be used to modify the
-     * encryption status of existing volumes or snapshots. To create an AMI with
-     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
+     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
+     * want a different volume size, you must first change the volume size of the
+     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
+     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
+     * have a different encryption status (for example, where the source volume and
+     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
+     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
+     * option that can be changed for existing mappings or snapshots is
+     * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
     inline CreateImageRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>The block device mappings. This parameter cannot be used to modify the
-     * encryption status of existing volumes or snapshots. To create an AMI with
-     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
+     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
+     * want a different volume size, you must first change the volume size of the
+     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
+     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
+     * have a different encryption status (for example, where the source volume and
+     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
+     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
+     * option that can be changed for existing mappings or snapshots is
+     * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
     inline CreateImageRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
-     * <p>The block device mappings. This parameter cannot be used to modify the
-     * encryption status of existing volumes or snapshots. To create an AMI with
-     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
+     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
+     * want a different volume size, you must first change the volume size of the
+     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
+     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
+     * have a different encryption status (for example, where the source volume and
+     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
+     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
+     * option that can be changed for existing mappings or snapshots is
+     * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
     inline CreateImageRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>The block device mappings. This parameter cannot be used to modify the
-     * encryption status of existing volumes or snapshots. To create an AMI with
-     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
+     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
+     * want a different volume size, you must first change the volume size of the
+     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
+     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
+     * have a different encryption status (for example, where the source volume and
+     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
+     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
+     * option that can be changed for existing mappings or snapshots is
+     * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
     inline CreateImageRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 

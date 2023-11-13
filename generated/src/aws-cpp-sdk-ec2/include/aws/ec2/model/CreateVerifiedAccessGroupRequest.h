@@ -303,32 +303,32 @@ namespace Model
 
 
     /**
-     * <p> Options for server side encryption. </p>
+     * <p>The options for server side encryption.</p>
      */
     inline const VerifiedAccessSseSpecificationRequest& GetSseSpecification() const{ return m_sseSpecification; }
 
     /**
-     * <p> Options for server side encryption. </p>
+     * <p>The options for server side encryption.</p>
      */
     inline bool SseSpecificationHasBeenSet() const { return m_sseSpecificationHasBeenSet; }
 
     /**
-     * <p> Options for server side encryption. </p>
+     * <p>The options for server side encryption.</p>
      */
     inline void SetSseSpecification(const VerifiedAccessSseSpecificationRequest& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = value; }
 
     /**
-     * <p> Options for server side encryption. </p>
+     * <p>The options for server side encryption.</p>
      */
     inline void SetSseSpecification(VerifiedAccessSseSpecificationRequest&& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = std::move(value); }
 
     /**
-     * <p> Options for server side encryption. </p>
+     * <p>The options for server side encryption.</p>
      */
     inline CreateVerifiedAccessGroupRequest& WithSseSpecification(const VerifiedAccessSseSpecificationRequest& value) { SetSseSpecification(value); return *this;}
 
     /**
-     * <p> Options for server side encryption. </p>
+     * <p>The options for server side encryption.</p>
      */
     inline CreateVerifiedAccessGroupRequest& WithSseSpecification(VerifiedAccessSseSpecificationRequest&& value) { SetSseSpecification(std::move(value)); return *this;}
 
