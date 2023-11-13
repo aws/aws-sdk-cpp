@@ -111,8 +111,24 @@ namespace AppRegistry
 
         /**
          * <p> Associates a resource with an application. The resource can be specified by
-         * its ARN or name. The application can be specified by ARN, ID, or name.
-         * </p><p><h3>See Also:</h3>   <a
+         * its ARN or name. The application can be specified by ARN, ID, or name. </p> <p>
+         * <b>Minimum permissions</b> </p> <p> You must have the following permissions to
+         * associate a resource using the <code>OPTIONS</code> parameter set to
+         * <code>APPLY_APPLICATION_TAG</code>. </p> <ul> <li> <p>
+         * <code>tag:GetResources</code> </p> </li> <li> <p> <code>tag:TagResources</code>
+         * </p> </li> </ul> <p> You must also have these additional permissions if you
+         * don't use the <code>AWSServiceCatalogAppRegistryFullAccess</code> policy. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/full.html">AWSServiceCatalogAppRegistryFullAccess</a>
+         * in the AppRegistry Administrator Guide. </p> <ul> <li> <p>
+         * <code>resource-groups:DisassociateResource</code> </p> </li> <li> <p>
+         * <code>cloudformation:UpdateStack</code> </p> </li> <li> <p>
+         * <code>cloudformation:DescribeStacks</code> </p> </li> </ul>  <p> In
+         * addition, you must have the tagging permission defined by the Amazon Web
+         * Services service that creates the resource. For more information, see <a
+         * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html">TagResources</a>
+         * in the <i>Resource Groups Tagging API Reference</i>. </p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource">AWS
          * API Reference</a></p>
          */
@@ -272,8 +288,27 @@ namespace AppRegistry
         }
 
         /**
-         * <p>Disassociates a resource from application. Both the resource and the
-         * application can be specified either by ID or name.</p><p><h3>See Also:</h3>   <a
+         * <p> Disassociates a resource from application. Both the resource and the
+         * application can be specified either by ID or name. </p> <p> <b>Minimum
+         * permissions</b> </p> <p> You must have the following permissions to remove a
+         * resource that's been associated with an application using the
+         * <code>APPLY_APPLICATION_TAG</code> option for <a
+         * href="https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_AssociateResource.html">AssociateResource</a>.
+         * </p> <ul> <li> <p> <code>tag:GetResources</code> </p> </li> <li> <p>
+         * <code>tag:UntagResources</code> </p> </li> </ul> <p> You must also have the
+         * following permissions if you don't use the
+         * <code>AWSServiceCatalogAppRegistryFullAccess</code> policy. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/full.html">AWSServiceCatalogAppRegistryFullAccess</a>
+         * in the AppRegistry Administrator Guide. </p> <ul> <li> <p>
+         * <code>resource-groups:DisassociateResource</code> </p> </li> <li> <p>
+         * <code>cloudformation:UpdateStack</code> </p> </li> <li> <p>
+         * <code>cloudformation:DescribeStacks</code> </p> </li> </ul>  <p> In
+         * addition, you must have the tagging permission defined by the Amazon Web
+         * Services service that creates the resource. For more information, see <a
+         * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_UntTagResources.html">UntagResources</a>
+         * in the <i>Resource Groups Tagging API Reference</i>. </p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource">AWS
          * API Reference</a></p>
          */

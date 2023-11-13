@@ -6,19 +6,28 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/ecs/ECSErrors.h>
+#include <aws/ecs/model/ConflictException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::ECS;
+using namespace Aws::ECS::Model;
 
 namespace Aws
 {
 namespace ECS
 {
+template<> AWS_ECS_API ConflictException ECSError::GetModeledError()
+{
+  assert(this->GetErrorType() == ECSErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
 namespace ECSErrorMapper
 {
 
 static const int CLIENT_HASH = HashingUtils::HashString("ClientException");
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int NO_UPDATE_AVAILABLE_HASH = HashingUtils::HashString("NoUpdateAvailableException");
 static const int UNSUPPORTED_FEATURE_HASH = HashingUtils::HashString("UnsupportedFeatureException");
 static const int TARGET_NOT_FOUND_HASH = HashingUtils::HashString("TargetNotFoundException");
@@ -50,6 +59,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == CLIENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::CLIENT), false);
+  }
+  else if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::CONFLICT), false);
   }
   else if (hashCode == NO_UPDATE_AVAILABLE_HASH)
   {

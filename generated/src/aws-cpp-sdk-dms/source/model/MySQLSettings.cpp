@@ -38,7 +38,9 @@ MySQLSettings::MySQLSettings() :
     m_serverTimezoneHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false)
+    m_secretsManagerSecretIdHasBeenSet(false),
+    m_executeTimeout(0),
+    m_executeTimeoutHasBeenSet(false)
 {
 }
 
@@ -62,7 +64,9 @@ MySQLSettings::MySQLSettings(JsonView jsonValue) :
     m_serverTimezoneHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false)
+    m_secretsManagerSecretIdHasBeenSet(false),
+    m_executeTimeout(0),
+    m_executeTimeoutHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -167,6 +171,13 @@ MySQLSettings& MySQLSettings::operator =(JsonView jsonValue)
     m_secretsManagerSecretIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExecuteTimeout"))
+  {
+    m_executeTimeout = jsonValue.GetInteger("ExecuteTimeout");
+
+    m_executeTimeoutHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -254,6 +265,12 @@ JsonValue MySQLSettings::Jsonize() const
   if(m_secretsManagerSecretIdHasBeenSet)
   {
    payload.WithString("SecretsManagerSecretId", m_secretsManagerSecretId);
+
+  }
+
+  if(m_executeTimeoutHasBeenSet)
+  {
+   payload.WithInteger("ExecuteTimeout", m_executeTimeout);
 
   }
 

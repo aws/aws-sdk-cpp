@@ -133,7 +133,8 @@ namespace TranscribeStreamingService
          * <p>Starts a bidirectional HTTP/2 or WebSocket stream where audio is streamed to
          * Amazon Transcribe and the transcription results are streamed to your
          * application.</p> <p>The following parameters are required:</p> <ul> <li> <p>
-         * <code>language-code</code> or <code>identify-language</code> </p> </li> <li> <p>
+         * <code>language-code</code> or <code>identify-language</code> or
+         * <code>identify-multiple-language</code> </p> </li> <li> <p>
          * <code>media-encoding</code> </p> </li> <li> <p> <code>sample-rate</code> </p>
          * </li> </ul> <p>For more information on streaming with Amazon Transcribe, see <a
          * href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing

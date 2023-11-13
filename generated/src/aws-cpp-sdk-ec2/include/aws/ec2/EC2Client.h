@@ -6423,8 +6423,8 @@ namespace EC2
          * the owner of the accepter VPC can delete the VPC peering connection if it's in
          * the <code>active</code> state. The owner of the requester VPC can delete a VPC
          * peering connection in the <code>pending-acceptance</code> state. You cannot
-         * delete a VPC peering connection that's in the <code>failed</code>
-         * state.</p><p><h3>See Also:</h3>   <a
+         * delete a VPC peering connection that's in the <code>failed</code> or
+         * <code>rejected</code> state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcPeeringConnection">AWS
          * API Reference</a></p>
          */
@@ -7517,8 +7517,8 @@ namespace EC2
         }
 
         /**
-         * <p>Describe details for Windows AMIs that are configured for faster
-         * launching.</p><p><h3>See Also:</h3>   <a
+         * <p>Describe details for Windows AMIs that are configured for Windows fast
+         * launch.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastLaunchImages">AWS
          * API Reference</a></p>
          */
@@ -8266,6 +8266,49 @@ namespace EC2
         void DescribeInstanceStatusAsync(const DescribeInstanceStatusRequestT& request, const DescribeInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DescribeInstanceStatus, request, handler, context);
+        }
+
+        /**
+         * <p>Describes a tree-based hierarchy that represents the physical host placement
+         * of your EC2 instances within an Availability Zone or Local Zone. You can use
+         * this information to determine the relative proximity of your EC2 instances
+         * within the Amazon Web Services network to support your tightly coupled
+         * workloads.</p> <p class="title"> <b>Limitations</b> </p> <ul> <li> <p>Supported
+         * zones</p> <ul> <li> <p>Availability Zone</p> </li> <li> <p>Local Zone</p> </li>
+         * </ul> </li> <li> <p>Supported instance types</p> <ul> <li> <p>
+         * <code>hpc6a.48xlarge</code> | <code>hpc6id.32xlarge</code> |
+         * <code>hpc7a.12xlarge</code> | <code>hpc7a.24xlarge</code> |
+         * <code>hpc7a.48xlarge</code> | <code>hpc7a.96xlarge</code> |
+         * <code>hpc7g.4xlarge</code> | <code>hpc7g.8xlarge</code> |
+         * <code>hpc7g.16xlarge</code> </p> </li> <li> <p> <code>p3dn.24xlarge</code> |
+         * <code>p4d.24xlarge</code> | <code>p4de.24xlarge</code> |
+         * <code>p5.48xlarge</code> </p> </li> <li> <p> <code>trn1.2xlarge</code> |
+         * <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code> </p> </li> </ul> </li>
+         * </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
+         * EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTopology">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInstanceTopologyOutcome DescribeInstanceTopology(const Model::DescribeInstanceTopologyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeInstanceTopology that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeInstanceTopologyRequestT = Model::DescribeInstanceTopologyRequest>
+        Model::DescribeInstanceTopologyOutcomeCallable DescribeInstanceTopologyCallable(const DescribeInstanceTopologyRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DescribeInstanceTopology, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeInstanceTopology that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeInstanceTopologyRequestT = Model::DescribeInstanceTopologyRequest>
+        void DescribeInstanceTopologyAsync(const DescribeInstanceTopologyRequestT& request, const DescribeInstanceTopologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DescribeInstanceTopology, request, handler, context);
         }
 
         /**
@@ -11255,11 +11298,12 @@ namespace EC2
         }
 
         /**
-         * <p>Discontinue faster launching for a Windows AMI, and clean up existing
-         * pre-provisioned snapshots. When you disable faster launching, the AMI uses the
-         * standard launch process for each instance. All pre-provisioned snapshots must be
-         * removed before you can enable faster launching again.</p>  <p>To change
-         * these settings, you must own the AMI.</p> <p><h3>See Also:</h3>   <a
+         * <p>Discontinue Windows fast launch for a Windows AMI, and clean up existing
+         * pre-provisioned snapshots. After you disable Windows fast launch, the AMI uses
+         * the standard launch process for each new instance. Amazon EC2 must remove all
+         * pre-provisioned snapshots before you can enable Windows fast launch again.</p>
+         *  <p>You can only change these settings for Windows AMIs that you own or
+         * that have been shared with you.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">AWS
          * API Reference</a></p>
          */
@@ -11312,7 +11356,7 @@ namespace EC2
         /**
          * <p>Sets the AMI state to <code>disabled</code> and removes all launch
          * permissions from the AMI. A disabled AMI can't be used for instance
-         * launches.</p> <p>A disabled AMI can't be shared. If a public or shared AMI was
+         * launches.</p> <p>A disabled AMI can't be shared. If an AMI was public or
          * previously shared, it is made private. If an AMI was shared with an Amazon Web
          * Services account, organization, or Organizational Unit, they lose access to the
          * disabled AMI. </p> <p>A disabled AMI does not appear in <a
@@ -12106,14 +12150,15 @@ namespace EC2
         }
 
         /**
-         * <p>When you enable faster launching for a Windows AMI, images are
+         * <p>When you enable Windows fast launch for a Windows AMI, images are
          * pre-provisioned, using snapshots to launch instances up to 65% faster. To create
          * the optimized Windows image, Amazon EC2 launches an instance and runs through
          * Sysprep steps, rebooting as required. Then it creates a set of reserved
          * snapshots that are used for subsequent launches. The reserved snapshots are
          * automatically replenished as they are used, depending on your settings for
-         * launch frequency.</p>  <p>To change these settings, you must own the
-         * AMI.</p> <p><h3>See Also:</h3>   <a
+         * launch frequency.</p>  <p>You can only change these settings for Windows
+         * AMIs that you own or that have been shared with you.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">AWS
          * API Reference</a></p>
          */
