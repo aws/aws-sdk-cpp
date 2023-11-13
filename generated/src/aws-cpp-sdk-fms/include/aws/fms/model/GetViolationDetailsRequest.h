@@ -35,50 +35,74 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Firewall Manager policy that you want the details for. This
-     * currently only supports security group content audit policies.</p>
+     * <p>The ID of the Firewall Manager policy that you want the details for. You can
+     * get violation details for the following policy types:</p> <ul> <li> <p>DNS
+     * Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li> <li> <p>Network
+     * Firewall</p> </li> <li> <p>Security group content audit</p> </li> <li>
+     * <p>Third-party firewall</p> </li> </ul>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
 
     /**
-     * <p>The ID of the Firewall Manager policy that you want the details for. This
-     * currently only supports security group content audit policies.</p>
+     * <p>The ID of the Firewall Manager policy that you want the details for. You can
+     * get violation details for the following policy types:</p> <ul> <li> <p>DNS
+     * Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li> <li> <p>Network
+     * Firewall</p> </li> <li> <p>Security group content audit</p> </li> <li>
+     * <p>Third-party firewall</p> </li> </ul>
      */
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Firewall Manager policy that you want the details for. This
-     * currently only supports security group content audit policies.</p>
+     * <p>The ID of the Firewall Manager policy that you want the details for. You can
+     * get violation details for the following policy types:</p> <ul> <li> <p>DNS
+     * Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li> <li> <p>Network
+     * Firewall</p> </li> <li> <p>Security group content audit</p> </li> <li>
+     * <p>Third-party firewall</p> </li> </ul>
      */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
-     * <p>The ID of the Firewall Manager policy that you want the details for. This
-     * currently only supports security group content audit policies.</p>
+     * <p>The ID of the Firewall Manager policy that you want the details for. You can
+     * get violation details for the following policy types:</p> <ul> <li> <p>DNS
+     * Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li> <li> <p>Network
+     * Firewall</p> </li> <li> <p>Security group content audit</p> </li> <li>
+     * <p>Third-party firewall</p> </li> </ul>
      */
     inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
 
     /**
-     * <p>The ID of the Firewall Manager policy that you want the details for. This
-     * currently only supports security group content audit policies.</p>
+     * <p>The ID of the Firewall Manager policy that you want the details for. You can
+     * get violation details for the following policy types:</p> <ul> <li> <p>DNS
+     * Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li> <li> <p>Network
+     * Firewall</p> </li> <li> <p>Security group content audit</p> </li> <li>
+     * <p>Third-party firewall</p> </li> </ul>
      */
     inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
 
     /**
-     * <p>The ID of the Firewall Manager policy that you want the details for. This
-     * currently only supports security group content audit policies.</p>
+     * <p>The ID of the Firewall Manager policy that you want the details for. You can
+     * get violation details for the following policy types:</p> <ul> <li> <p>DNS
+     * Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li> <li> <p>Network
+     * Firewall</p> </li> <li> <p>Security group content audit</p> </li> <li>
+     * <p>Third-party firewall</p> </li> </ul>
      */
     inline GetViolationDetailsRequest& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
 
     /**
-     * <p>The ID of the Firewall Manager policy that you want the details for. This
-     * currently only supports security group content audit policies.</p>
+     * <p>The ID of the Firewall Manager policy that you want the details for. You can
+     * get violation details for the following policy types:</p> <ul> <li> <p>DNS
+     * Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li> <li> <p>Network
+     * Firewall</p> </li> <li> <p>Security group content audit</p> </li> <li>
+     * <p>Third-party firewall</p> </li> </ul>
      */
     inline GetViolationDetailsRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Firewall Manager policy that you want the details for. This
-     * currently only supports security group content audit policies.</p>
+     * <p>The ID of the Firewall Manager policy that you want the details for. You can
+     * get violation details for the following policy types:</p> <ul> <li> <p>DNS
+     * Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li> <li> <p>Network
+     * Firewall</p> </li> <li> <p>Security group content audit</p> </li> <li>
+     * <p>Third-party firewall</p> </li> </ul>
      */
     inline GetViolationDetailsRequest& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
 

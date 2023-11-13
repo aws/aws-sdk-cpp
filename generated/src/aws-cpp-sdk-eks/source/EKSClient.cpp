@@ -25,10 +25,12 @@
 #include <aws/eks/model/AssociateIdentityProviderConfigRequest.h>
 #include <aws/eks/model/CreateAddonRequest.h>
 #include <aws/eks/model/CreateClusterRequest.h>
+#include <aws/eks/model/CreateEksAnywhereSubscriptionRequest.h>
 #include <aws/eks/model/CreateFargateProfileRequest.h>
 #include <aws/eks/model/CreateNodegroupRequest.h>
 #include <aws/eks/model/DeleteAddonRequest.h>
 #include <aws/eks/model/DeleteClusterRequest.h>
+#include <aws/eks/model/DeleteEksAnywhereSubscriptionRequest.h>
 #include <aws/eks/model/DeleteFargateProfileRequest.h>
 #include <aws/eks/model/DeleteNodegroupRequest.h>
 #include <aws/eks/model/DeregisterClusterRequest.h>
@@ -36,6 +38,7 @@
 #include <aws/eks/model/DescribeAddonConfigurationRequest.h>
 #include <aws/eks/model/DescribeAddonVersionsRequest.h>
 #include <aws/eks/model/DescribeClusterRequest.h>
+#include <aws/eks/model/DescribeEksAnywhereSubscriptionRequest.h>
 #include <aws/eks/model/DescribeFargateProfileRequest.h>
 #include <aws/eks/model/DescribeIdentityProviderConfigRequest.h>
 #include <aws/eks/model/DescribeNodegroupRequest.h>
@@ -43,6 +46,7 @@
 #include <aws/eks/model/DisassociateIdentityProviderConfigRequest.h>
 #include <aws/eks/model/ListAddonsRequest.h>
 #include <aws/eks/model/ListClustersRequest.h>
+#include <aws/eks/model/ListEksAnywhereSubscriptionsRequest.h>
 #include <aws/eks/model/ListFargateProfilesRequest.h>
 #include <aws/eks/model/ListIdentityProviderConfigsRequest.h>
 #include <aws/eks/model/ListNodegroupsRequest.h>
@@ -54,6 +58,7 @@
 #include <aws/eks/model/UpdateAddonRequest.h>
 #include <aws/eks/model/UpdateClusterConfigRequest.h>
 #include <aws/eks/model/UpdateClusterVersionRequest.h>
+#include <aws/eks/model/UpdateEksAnywhereSubscriptionRequest.h>
 #include <aws/eks/model/UpdateNodegroupConfigRequest.h>
 #include <aws/eks/model/UpdateNodegroupVersionRequest.h>
 
@@ -318,6 +323,33 @@ CreateClusterOutcome EKSClient::CreateCluster(const CreateClusterRequest& reques
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateEksAnywhereSubscriptionOutcome EKSClient::CreateEksAnywhereSubscription(const CreateEksAnywhereSubscriptionRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateEksAnywhereSubscription);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEksAnywhereSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateEksAnywhereSubscription, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateEksAnywhereSubscription, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateEksAnywhereSubscription",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateEksAnywhereSubscriptionOutcome>(
+    [&]()-> CreateEksAnywhereSubscriptionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEksAnywhereSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/eks-anywhere-subscriptions");
+      return CreateEksAnywhereSubscriptionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateFargateProfileOutcome EKSClient::CreateFargateProfile(const CreateFargateProfileRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateFargateProfile);
@@ -453,6 +485,39 @@ DeleteClusterOutcome EKSClient::DeleteCluster(const DeleteClusterRequest& reques
       endpointResolutionOutcome.GetResult().AddPathSegments("/clusters/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
       return DeleteClusterOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteEksAnywhereSubscriptionOutcome EKSClient::DeleteEksAnywhereSubscription(const DeleteEksAnywhereSubscriptionRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteEksAnywhereSubscription);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEksAnywhereSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEksAnywhereSubscription", "Required field: Id, is not set");
+    return DeleteEksAnywhereSubscriptionOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteEksAnywhereSubscription, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteEksAnywhereSubscription, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteEksAnywhereSubscription",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteEksAnywhereSubscriptionOutcome>(
+    [&]()-> DeleteEksAnywhereSubscriptionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteEksAnywhereSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/eks-anywhere-subscriptions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+      return DeleteEksAnywhereSubscriptionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -709,6 +774,39 @@ DescribeClusterOutcome EKSClient::DescribeCluster(const DescribeClusterRequest& 
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DescribeEksAnywhereSubscriptionOutcome EKSClient::DescribeEksAnywhereSubscription(const DescribeEksAnywhereSubscriptionRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeEksAnywhereSubscription);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEksAnywhereSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeEksAnywhereSubscription", "Required field: Id, is not set");
+    return DescribeEksAnywhereSubscriptionOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeEksAnywhereSubscription, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeEksAnywhereSubscription, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeEksAnywhereSubscription",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeEksAnywhereSubscriptionOutcome>(
+    [&]()-> DescribeEksAnywhereSubscriptionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEksAnywhereSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/eks-anywhere-subscriptions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+      return DescribeEksAnywhereSubscriptionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DescribeFargateProfileOutcome EKSClient::DescribeFargateProfile(const DescribeFargateProfileRequest& request) const
 {
   AWS_OPERATION_GUARD(DescribeFargateProfile);
@@ -952,6 +1050,33 @@ ListClustersOutcome EKSClient::ListClusters(const ListClustersRequest& request) 
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/clusters");
       return ListClustersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListEksAnywhereSubscriptionsOutcome EKSClient::ListEksAnywhereSubscriptions(const ListEksAnywhereSubscriptionsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListEksAnywhereSubscriptions);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEksAnywhereSubscriptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListEksAnywhereSubscriptions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListEksAnywhereSubscriptions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListEksAnywhereSubscriptions",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListEksAnywhereSubscriptionsOutcome>(
+    [&]()-> ListEksAnywhereSubscriptionsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEksAnywhereSubscriptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/eks-anywhere-subscriptions");
+      return ListEksAnywhereSubscriptionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1328,6 +1453,39 @@ UpdateClusterVersionOutcome EKSClient::UpdateClusterVersion(const UpdateClusterV
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
       endpointResolutionOutcome.GetResult().AddPathSegments("/updates");
       return UpdateClusterVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateEksAnywhereSubscriptionOutcome EKSClient::UpdateEksAnywhereSubscription(const UpdateEksAnywhereSubscriptionRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateEksAnywhereSubscription);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEksAnywhereSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateEksAnywhereSubscription", "Required field: Id, is not set");
+    return UpdateEksAnywhereSubscriptionOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateEksAnywhereSubscription, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateEksAnywhereSubscription, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateEksAnywhereSubscription",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateEksAnywhereSubscriptionOutcome>(
+    [&]()-> UpdateEksAnywhereSubscriptionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateEksAnywhereSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/eks-anywhere-subscriptions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+      return UpdateEksAnywhereSubscriptionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

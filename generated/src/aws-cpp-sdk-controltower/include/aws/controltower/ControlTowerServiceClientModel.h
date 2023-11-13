@@ -23,6 +23,9 @@
 #include <aws/controltower/model/GetControlOperationResult.h>
 #include <aws/controltower/model/GetEnabledControlResult.h>
 #include <aws/controltower/model/ListEnabledControlsResult.h>
+#include <aws/controltower/model/ListTagsForResourceResult.h>
+#include <aws/controltower/model/TagResourceResult.h>
+#include <aws/controltower/model/UntagResourceResult.h>
 /* End of service model headers required in ControlTowerClient header */
 
 namespace Aws
@@ -68,6 +71,9 @@ namespace Aws
       class GetControlOperationRequest;
       class GetEnabledControlRequest;
       class ListEnabledControlsRequest;
+      class ListTagsForResourceRequest;
+      class TagResourceRequest;
+      class UntagResourceRequest;
       /* End of service model forward declarations required in ControlTowerClient header */
 
       /* Service model Outcome class definitions */
@@ -76,6 +82,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetControlOperationResult, ControlTowerError> GetControlOperationOutcome;
       typedef Aws::Utils::Outcome<GetEnabledControlResult, ControlTowerError> GetEnabledControlOutcome;
       typedef Aws::Utils::Outcome<ListEnabledControlsResult, ControlTowerError> ListEnabledControlsOutcome;
+      typedef Aws::Utils::Outcome<ListTagsForResourceResult, ControlTowerError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<TagResourceResult, ControlTowerError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<UntagResourceResult, ControlTowerError> UntagResourceOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -84,6 +93,9 @@ namespace Aws
       typedef std::future<GetControlOperationOutcome> GetControlOperationOutcomeCallable;
       typedef std::future<GetEnabledControlOutcome> GetEnabledControlOutcomeCallable;
       typedef std::future<ListEnabledControlsOutcome> ListEnabledControlsOutcomeCallable;
+      typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -95,6 +107,9 @@ namespace Aws
     typedef std::function<void(const ControlTowerClient*, const Model::GetControlOperationRequest&, const Model::GetControlOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetControlOperationResponseReceivedHandler;
     typedef std::function<void(const ControlTowerClient*, const Model::GetEnabledControlRequest&, const Model::GetEnabledControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnabledControlResponseReceivedHandler;
     typedef std::function<void(const ControlTowerClient*, const Model::ListEnabledControlsRequest&, const Model::ListEnabledControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnabledControlsResponseReceivedHandler;
+    typedef std::function<void(const ControlTowerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const ControlTowerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const ControlTowerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace ControlTower
 } // namespace Aws

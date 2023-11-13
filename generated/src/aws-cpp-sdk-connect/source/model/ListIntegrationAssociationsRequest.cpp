@@ -21,7 +21,8 @@ ListIntegrationAssociationsRequest::ListIntegrationAssociationsRequest() :
     m_integrationTypeHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_integrationArnHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,13 @@ void ListIntegrationAssociationsRequest::AddQueryStringParameters(URI& uri) cons
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("maxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_integrationArnHasBeenSet)
+    {
+      ss << m_integrationArn;
+      uri.AddQueryStringParameter("integrationArn", ss.str());
       ss.str("");
     }
 

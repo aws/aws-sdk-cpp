@@ -18,6 +18,8 @@ CreateWorkgroupRequest::CreateWorkgroupRequest() :
     m_configParametersHasBeenSet(false),
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
+    m_maxCapacity(0),
+    m_maxCapacityHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
@@ -54,6 +56,12 @@ Aws::String CreateWorkgroupRequest::SerializePayload() const
   if(m_enhancedVpcRoutingHasBeenSet)
   {
    payload.WithBool("enhancedVpcRouting", m_enhancedVpcRouting);
+
+  }
+
+  if(m_maxCapacityHasBeenSet)
+  {
+   payload.WithInteger("maxCapacity", m_maxCapacity);
 
   }
 

@@ -298,6 +298,178 @@ namespace Model
      */
     inline KubernetesApiCallAction& WithParameters(const char* value) { SetParameters(value); return *this;}
 
+
+    /**
+     * <p>The resource component in the Kubernetes API call action.</p>
+     */
+    inline const Aws::String& GetResource() const{ return m_resource; }
+
+    /**
+     * <p>The resource component in the Kubernetes API call action.</p>
+     */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
+
+    /**
+     * <p>The resource component in the Kubernetes API call action.</p>
+     */
+    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
+
+    /**
+     * <p>The resource component in the Kubernetes API call action.</p>
+     */
+    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
+
+    /**
+     * <p>The resource component in the Kubernetes API call action.</p>
+     */
+    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
+
+    /**
+     * <p>The resource component in the Kubernetes API call action.</p>
+     */
+    inline KubernetesApiCallAction& WithResource(const Aws::String& value) { SetResource(value); return *this;}
+
+    /**
+     * <p>The resource component in the Kubernetes API call action.</p>
+     */
+    inline KubernetesApiCallAction& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
+
+    /**
+     * <p>The resource component in the Kubernetes API call action.</p>
+     */
+    inline KubernetesApiCallAction& WithResource(const char* value) { SetResource(value); return *this;}
+
+
+    /**
+     * <p>The name of the sub-resource in the Kubernetes API call action.</p>
+     */
+    inline const Aws::String& GetSubresource() const{ return m_subresource; }
+
+    /**
+     * <p>The name of the sub-resource in the Kubernetes API call action.</p>
+     */
+    inline bool SubresourceHasBeenSet() const { return m_subresourceHasBeenSet; }
+
+    /**
+     * <p>The name of the sub-resource in the Kubernetes API call action.</p>
+     */
+    inline void SetSubresource(const Aws::String& value) { m_subresourceHasBeenSet = true; m_subresource = value; }
+
+    /**
+     * <p>The name of the sub-resource in the Kubernetes API call action.</p>
+     */
+    inline void SetSubresource(Aws::String&& value) { m_subresourceHasBeenSet = true; m_subresource = std::move(value); }
+
+    /**
+     * <p>The name of the sub-resource in the Kubernetes API call action.</p>
+     */
+    inline void SetSubresource(const char* value) { m_subresourceHasBeenSet = true; m_subresource.assign(value); }
+
+    /**
+     * <p>The name of the sub-resource in the Kubernetes API call action.</p>
+     */
+    inline KubernetesApiCallAction& WithSubresource(const Aws::String& value) { SetSubresource(value); return *this;}
+
+    /**
+     * <p>The name of the sub-resource in the Kubernetes API call action.</p>
+     */
+    inline KubernetesApiCallAction& WithSubresource(Aws::String&& value) { SetSubresource(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the sub-resource in the Kubernetes API call action.</p>
+     */
+    inline KubernetesApiCallAction& WithSubresource(const char* value) { SetSubresource(value); return *this;}
+
+
+    /**
+     * <p>The name of the namespace where the Kubernetes API call action takes
+     * place.</p>
+     */
+    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
+    /**
+     * <p>The name of the namespace where the Kubernetes API call action takes
+     * place.</p>
+     */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+
+    /**
+     * <p>The name of the namespace where the Kubernetes API call action takes
+     * place.</p>
+     */
+    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+
+    /**
+     * <p>The name of the namespace where the Kubernetes API call action takes
+     * place.</p>
+     */
+    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
+
+    /**
+     * <p>The name of the namespace where the Kubernetes API call action takes
+     * place.</p>
+     */
+    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
+
+    /**
+     * <p>The name of the namespace where the Kubernetes API call action takes
+     * place.</p>
+     */
+    inline KubernetesApiCallAction& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
+
+    /**
+     * <p>The name of the namespace where the Kubernetes API call action takes
+     * place.</p>
+     */
+    inline KubernetesApiCallAction& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the namespace where the Kubernetes API call action takes
+     * place.</p>
+     */
+    inline KubernetesApiCallAction& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+
+
+    /**
+     * <p>The name of the resource in the Kubernetes API call action.</p>
+     */
+    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+
+    /**
+     * <p>The name of the resource in the Kubernetes API call action.</p>
+     */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the resource in the Kubernetes API call action.</p>
+     */
+    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
+
+    /**
+     * <p>The name of the resource in the Kubernetes API call action.</p>
+     */
+    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
+
+    /**
+     * <p>The name of the resource in the Kubernetes API call action.</p>
+     */
+    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
+
+    /**
+     * <p>The name of the resource in the Kubernetes API call action.</p>
+     */
+    inline KubernetesApiCallAction& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
+
+    /**
+     * <p>The name of the resource in the Kubernetes API call action.</p>
+     */
+    inline KubernetesApiCallAction& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the resource in the Kubernetes API call action.</p>
+     */
+    inline KubernetesApiCallAction& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+
   private:
 
     Aws::String m_requestUri;
@@ -320,6 +492,18 @@ namespace Model
 
     Aws::String m_parameters;
     bool m_parametersHasBeenSet = false;
+
+    Aws::String m_resource;
+    bool m_resourceHasBeenSet = false;
+
+    Aws::String m_subresource;
+    bool m_subresourceHasBeenSet = false;
+
+    Aws::String m_namespace;
+    bool m_namespaceHasBeenSet = false;
+
+    Aws::String m_resourceName;
+    bool m_resourceNameHasBeenSet = false;
   };
 
 } // namespace Model

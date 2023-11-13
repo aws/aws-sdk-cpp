@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p> Information about the enabled control. </p><p><h3>See Also:</h3>   <a
+   * <p>Information about the enabled control.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnabledControlDetails">AWS
    * API Reference</a></p>
    */
@@ -42,275 +42,275 @@ namespace Model
 
 
     /**
-     * <p> The ARN of the enabled control. </p>
+     * <p>The ARN of the enabled control.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p> The ARN of the enabled control. </p>
+     * <p>The ARN of the enabled control.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p> The ARN of the enabled control. </p>
+     * <p>The ARN of the enabled control.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p> The ARN of the enabled control. </p>
+     * <p>The ARN of the enabled control.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p> The ARN of the enabled control. </p>
+     * <p>The ARN of the enabled control.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p> The ARN of the enabled control. </p>
+     * <p>The ARN of the enabled control.</p>
      */
     inline EnabledControlDetails& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p> The ARN of the enabled control. </p>
+     * <p>The ARN of the enabled control.</p>
      */
     inline EnabledControlDetails& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p> The ARN of the enabled control. </p>
+     * <p>The ARN of the enabled control.</p>
      */
     inline EnabledControlDetails& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p> The control identifier of the enabled control. For information on how to
-     * find the <code>controlIdentifier</code>, see <a
+     * <p>The control identifier of the enabled control. For information on how to find
+     * the <code>controlIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>. </p>
+     * overview page</a>.</p>
      */
     inline const Aws::String& GetControlIdentifier() const{ return m_controlIdentifier; }
 
     /**
-     * <p> The control identifier of the enabled control. For information on how to
-     * find the <code>controlIdentifier</code>, see <a
+     * <p>The control identifier of the enabled control. For information on how to find
+     * the <code>controlIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>. </p>
+     * overview page</a>.</p>
      */
     inline bool ControlIdentifierHasBeenSet() const { return m_controlIdentifierHasBeenSet; }
 
     /**
-     * <p> The control identifier of the enabled control. For information on how to
-     * find the <code>controlIdentifier</code>, see <a
+     * <p>The control identifier of the enabled control. For information on how to find
+     * the <code>controlIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>. </p>
+     * overview page</a>.</p>
      */
     inline void SetControlIdentifier(const Aws::String& value) { m_controlIdentifierHasBeenSet = true; m_controlIdentifier = value; }
 
     /**
-     * <p> The control identifier of the enabled control. For information on how to
-     * find the <code>controlIdentifier</code>, see <a
+     * <p>The control identifier of the enabled control. For information on how to find
+     * the <code>controlIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>. </p>
+     * overview page</a>.</p>
      */
     inline void SetControlIdentifier(Aws::String&& value) { m_controlIdentifierHasBeenSet = true; m_controlIdentifier = std::move(value); }
 
     /**
-     * <p> The control identifier of the enabled control. For information on how to
-     * find the <code>controlIdentifier</code>, see <a
+     * <p>The control identifier of the enabled control. For information on how to find
+     * the <code>controlIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>. </p>
+     * overview page</a>.</p>
      */
     inline void SetControlIdentifier(const char* value) { m_controlIdentifierHasBeenSet = true; m_controlIdentifier.assign(value); }
 
     /**
-     * <p> The control identifier of the enabled control. For information on how to
-     * find the <code>controlIdentifier</code>, see <a
+     * <p>The control identifier of the enabled control. For information on how to find
+     * the <code>controlIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>. </p>
+     * overview page</a>.</p>
      */
     inline EnabledControlDetails& WithControlIdentifier(const Aws::String& value) { SetControlIdentifier(value); return *this;}
 
     /**
-     * <p> The control identifier of the enabled control. For information on how to
-     * find the <code>controlIdentifier</code>, see <a
+     * <p>The control identifier of the enabled control. For information on how to find
+     * the <code>controlIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>. </p>
+     * overview page</a>.</p>
      */
     inline EnabledControlDetails& WithControlIdentifier(Aws::String&& value) { SetControlIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> The control identifier of the enabled control. For information on how to
-     * find the <code>controlIdentifier</code>, see <a
+     * <p>The control identifier of the enabled control. For information on how to find
+     * the <code>controlIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>. </p>
+     * overview page</a>.</p>
      */
     inline EnabledControlDetails& WithControlIdentifier(const char* value) { SetControlIdentifier(value); return *this;}
 
 
     /**
-     * <p> The drift status of the enabled control. </p>
+     * <p>The drift status of the enabled control.</p>
      */
     inline const DriftStatusSummary& GetDriftStatusSummary() const{ return m_driftStatusSummary; }
 
     /**
-     * <p> The drift status of the enabled control. </p>
+     * <p>The drift status of the enabled control.</p>
      */
     inline bool DriftStatusSummaryHasBeenSet() const { return m_driftStatusSummaryHasBeenSet; }
 
     /**
-     * <p> The drift status of the enabled control. </p>
+     * <p>The drift status of the enabled control.</p>
      */
     inline void SetDriftStatusSummary(const DriftStatusSummary& value) { m_driftStatusSummaryHasBeenSet = true; m_driftStatusSummary = value; }
 
     /**
-     * <p> The drift status of the enabled control. </p>
+     * <p>The drift status of the enabled control.</p>
      */
     inline void SetDriftStatusSummary(DriftStatusSummary&& value) { m_driftStatusSummaryHasBeenSet = true; m_driftStatusSummary = std::move(value); }
 
     /**
-     * <p> The drift status of the enabled control. </p>
+     * <p>The drift status of the enabled control.</p>
      */
     inline EnabledControlDetails& WithDriftStatusSummary(const DriftStatusSummary& value) { SetDriftStatusSummary(value); return *this;}
 
     /**
-     * <p> The drift status of the enabled control. </p>
+     * <p>The drift status of the enabled control.</p>
      */
     inline EnabledControlDetails& WithDriftStatusSummary(DriftStatusSummary&& value) { SetDriftStatusSummary(std::move(value)); return *this;}
 
 
     /**
-     * <p> The deployment summary of the enabled control. </p>
+     * <p>The deployment summary of the enabled control.</p>
      */
     inline const EnablementStatusSummary& GetStatusSummary() const{ return m_statusSummary; }
 
     /**
-     * <p> The deployment summary of the enabled control. </p>
+     * <p>The deployment summary of the enabled control.</p>
      */
     inline bool StatusSummaryHasBeenSet() const { return m_statusSummaryHasBeenSet; }
 
     /**
-     * <p> The deployment summary of the enabled control. </p>
+     * <p>The deployment summary of the enabled control.</p>
      */
     inline void SetStatusSummary(const EnablementStatusSummary& value) { m_statusSummaryHasBeenSet = true; m_statusSummary = value; }
 
     /**
-     * <p> The deployment summary of the enabled control. </p>
+     * <p>The deployment summary of the enabled control.</p>
      */
     inline void SetStatusSummary(EnablementStatusSummary&& value) { m_statusSummaryHasBeenSet = true; m_statusSummary = std::move(value); }
 
     /**
-     * <p> The deployment summary of the enabled control. </p>
+     * <p>The deployment summary of the enabled control.</p>
      */
     inline EnabledControlDetails& WithStatusSummary(const EnablementStatusSummary& value) { SetStatusSummary(value); return *this;}
 
     /**
-     * <p> The deployment summary of the enabled control. </p>
+     * <p>The deployment summary of the enabled control.</p>
      */
     inline EnabledControlDetails& WithStatusSummary(EnablementStatusSummary&& value) { SetStatusSummary(std::move(value)); return *this;}
 
 
     /**
-     * <p> The ARN of the organizational unit. For information on how to find the
+     * <p>The ARN of the organizational unit. For information on how to find the
      * <code>targetIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>. </p>
+     * overview page</a>.</p>
      */
     inline const Aws::String& GetTargetIdentifier() const{ return m_targetIdentifier; }
 
     /**
-     * <p> The ARN of the organizational unit. For information on how to find the
+     * <p>The ARN of the organizational unit. For information on how to find the
      * <code>targetIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>. </p>
+     * overview page</a>.</p>
      */
     inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
 
     /**
-     * <p> The ARN of the organizational unit. For information on how to find the
+     * <p>The ARN of the organizational unit. For information on how to find the
      * <code>targetIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>. </p>
+     * overview page</a>.</p>
      */
     inline void SetTargetIdentifier(const Aws::String& value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier = value; }
 
     /**
-     * <p> The ARN of the organizational unit. For information on how to find the
+     * <p>The ARN of the organizational unit. For information on how to find the
      * <code>targetIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>. </p>
+     * overview page</a>.</p>
      */
     inline void SetTargetIdentifier(Aws::String&& value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier = std::move(value); }
 
     /**
-     * <p> The ARN of the organizational unit. For information on how to find the
+     * <p>The ARN of the organizational unit. For information on how to find the
      * <code>targetIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>. </p>
+     * overview page</a>.</p>
      */
     inline void SetTargetIdentifier(const char* value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier.assign(value); }
 
     /**
-     * <p> The ARN of the organizational unit. For information on how to find the
+     * <p>The ARN of the organizational unit. For information on how to find the
      * <code>targetIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>. </p>
+     * overview page</a>.</p>
      */
     inline EnabledControlDetails& WithTargetIdentifier(const Aws::String& value) { SetTargetIdentifier(value); return *this;}
 
     /**
-     * <p> The ARN of the organizational unit. For information on how to find the
+     * <p>The ARN of the organizational unit. For information on how to find the
      * <code>targetIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>. </p>
+     * overview page</a>.</p>
      */
     inline EnabledControlDetails& WithTargetIdentifier(Aws::String&& value) { SetTargetIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> The ARN of the organizational unit. For information on how to find the
+     * <p>The ARN of the organizational unit. For information on how to find the
      * <code>targetIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>. </p>
+     * overview page</a>.</p>
      */
     inline EnabledControlDetails& WithTargetIdentifier(const char* value) { SetTargetIdentifier(value); return *this;}
 
 
     /**
-     * <p> Target AWS Regions for the enabled control. </p>
+     * <p>Target AWS Regions for the enabled control.</p>
      */
     inline const Aws::Vector<Region>& GetTargetRegions() const{ return m_targetRegions; }
 
     /**
-     * <p> Target AWS Regions for the enabled control. </p>
+     * <p>Target AWS Regions for the enabled control.</p>
      */
     inline bool TargetRegionsHasBeenSet() const { return m_targetRegionsHasBeenSet; }
 
     /**
-     * <p> Target AWS Regions for the enabled control. </p>
+     * <p>Target AWS Regions for the enabled control.</p>
      */
     inline void SetTargetRegions(const Aws::Vector<Region>& value) { m_targetRegionsHasBeenSet = true; m_targetRegions = value; }
 
     /**
-     * <p> Target AWS Regions for the enabled control. </p>
+     * <p>Target AWS Regions for the enabled control.</p>
      */
     inline void SetTargetRegions(Aws::Vector<Region>&& value) { m_targetRegionsHasBeenSet = true; m_targetRegions = std::move(value); }
 
     /**
-     * <p> Target AWS Regions for the enabled control. </p>
+     * <p>Target AWS Regions for the enabled control.</p>
      */
     inline EnabledControlDetails& WithTargetRegions(const Aws::Vector<Region>& value) { SetTargetRegions(value); return *this;}
 
     /**
-     * <p> Target AWS Regions for the enabled control. </p>
+     * <p>Target AWS Regions for the enabled control.</p>
      */
     inline EnabledControlDetails& WithTargetRegions(Aws::Vector<Region>&& value) { SetTargetRegions(std::move(value)); return *this;}
 
     /**
-     * <p> Target AWS Regions for the enabled control. </p>
+     * <p>Target AWS Regions for the enabled control.</p>
      */
     inline EnabledControlDetails& AddTargetRegions(const Region& value) { m_targetRegionsHasBeenSet = true; m_targetRegions.push_back(value); return *this; }
 
     /**
-     * <p> Target AWS Regions for the enabled control. </p>
+     * <p>Target AWS Regions for the enabled control.</p>
      */
     inline EnabledControlDetails& AddTargetRegions(Region&& value) { m_targetRegionsHasBeenSet = true; m_targetRegions.push_back(std::move(value)); return *this; }
 

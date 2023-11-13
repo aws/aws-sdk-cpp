@@ -13,6 +13,7 @@ import com.amazonaws.util.awsclientgenerator.generators.exceptions.SourceGenerat
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.collect.ImmutableList;
 import org.apache.commons.lang.WordUtils;
 
 import java.util.*;
@@ -98,6 +99,16 @@ public class C2jModelToGeneratorModelTransformer {
         LEGACY_SERVICE_IDS.add("transcribestreaming");
         LEGACY_SERVICE_IDS.add("dynamodbstreams");
     }
+
+    /**
+     * There was a bug with namespace collision detection where customers
+     * renamed their models instead of this bug being fixed. This list exists
+     * only to capture these old APIs. This list should never be added to
+     * under any circumstances and only exists to preserve backwards compat.
+     */
+    private static List<String> LEGACY_RENAMED_APIS = ImmutableList.of(
+            "GeneratedPolicyResult"
+    );
 
     public C2jModelToGeneratorModelTransformer(C2jServiceModel c2jServiceModel, boolean standalone) {
         this.c2jServiceModel = c2jServiceModel;
@@ -646,9 +657,11 @@ public class C2jModelToGeneratorModelTransformer {
         }
 
         // Detect any conflicts with shape name defined by service team, need to rename it if so.
-        Optional<String> conflicted = shapes.keySet().stream().filter(shapeName ->
-            name.equals(shapeName) || shape.getMembers().values().stream().anyMatch(shapeMember ->
-                shapeMember.getShape().getName().equals(shapeName) && (name.equals("Get" + shapeName) || name.equals("Set" + shapeName)))).findFirst();
+        Optional<String> conflicted = shapes.keySet().stream()
+                .filter(shapeName -> name.equals(shapeName) ||
+                        (shape.getMembers().keySet().stream().anyMatch(memberName -> memberName.equals(shapeName) ||
+                         shape.getMembers().values().stream().anyMatch(shapeMember -> LEGACY_RENAMED_APIS.contains(shapeMember.getShape().getName()))) &&
+                                        (name.equals("Get" + shapeName) || name.equals("Set" + shapeName)))).findFirst();
         if (conflicted.isPresent()) {
             String originalShapeName = conflicted.get();
             String newShapeName = "";

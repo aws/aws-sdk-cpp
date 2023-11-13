@@ -25,8 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> The deployment summary of the enabled control. </p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The deployment summary of the enabled control.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnablementStatusSummary">AWS
    * API Reference</a></p>
    */
@@ -40,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p> The last operation identifier for the enabled control. </p>
+     * <p>The last operation identifier for the enabled control.</p>
      */
     inline const Aws::String& GetLastOperationIdentifier() const{ return m_lastOperationIdentifier; }
 
     /**
-     * <p> The last operation identifier for the enabled control. </p>
+     * <p>The last operation identifier for the enabled control.</p>
      */
     inline bool LastOperationIdentifierHasBeenSet() const { return m_lastOperationIdentifierHasBeenSet; }
 
     /**
-     * <p> The last operation identifier for the enabled control. </p>
+     * <p>The last operation identifier for the enabled control.</p>
      */
     inline void SetLastOperationIdentifier(const Aws::String& value) { m_lastOperationIdentifierHasBeenSet = true; m_lastOperationIdentifier = value; }
 
     /**
-     * <p> The last operation identifier for the enabled control. </p>
+     * <p>The last operation identifier for the enabled control.</p>
      */
     inline void SetLastOperationIdentifier(Aws::String&& value) { m_lastOperationIdentifierHasBeenSet = true; m_lastOperationIdentifier = std::move(value); }
 
     /**
-     * <p> The last operation identifier for the enabled control. </p>
+     * <p>The last operation identifier for the enabled control.</p>
      */
     inline void SetLastOperationIdentifier(const char* value) { m_lastOperationIdentifierHasBeenSet = true; m_lastOperationIdentifier.assign(value); }
 
     /**
-     * <p> The last operation identifier for the enabled control. </p>
+     * <p>The last operation identifier for the enabled control.</p>
      */
     inline EnablementStatusSummary& WithLastOperationIdentifier(const Aws::String& value) { SetLastOperationIdentifier(value); return *this;}
 
     /**
-     * <p> The last operation identifier for the enabled control. </p>
+     * <p>The last operation identifier for the enabled control.</p>
      */
     inline EnablementStatusSummary& WithLastOperationIdentifier(Aws::String&& value) { SetLastOperationIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> The last operation identifier for the enabled control. </p>
+     * <p>The last operation identifier for the enabled control.</p>
      */
     inline EnablementStatusSummary& WithLastOperationIdentifier(const char* value) { SetLastOperationIdentifier(value); return *this;}
 

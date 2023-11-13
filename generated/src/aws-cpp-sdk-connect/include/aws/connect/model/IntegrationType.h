@@ -22,7 +22,8 @@ namespace Model
     WISDOM_ASSISTANT,
     WISDOM_KNOWLEDGE_BASE,
     CASES_DOMAIN,
-    APPLICATION
+    APPLICATION,
+    FILE_SCANNER
   };
 
 namespace IntegrationTypeMapper

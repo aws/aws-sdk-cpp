@@ -976,37 +976,55 @@ namespace Model
 
     /**
      * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB.</p>
+     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
+     * ephemeral storage (console)</a>.</p>
      */
     inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
 
     /**
      * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB.</p>
+     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
+     * ephemeral storage (console)</a>.</p>
      */
     inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
 
     /**
      * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB.</p>
+     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
+     * ephemeral storage (console)</a>.</p>
      */
     inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
 
     /**
      * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB.</p>
+     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
+     * ephemeral storage (console)</a>.</p>
      */
     inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
 
     /**
      * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB.</p>
+     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
+     * ephemeral storage (console)</a>.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
 
     /**
      * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB.</p>
+     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
+     * ephemeral storage (console)</a>.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
 

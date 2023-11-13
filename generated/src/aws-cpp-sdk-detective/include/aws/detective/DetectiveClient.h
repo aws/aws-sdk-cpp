@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/detective/DetectiveServiceClientModel.h>
+#include <aws/detective/model/DisableOrganizationAdminAccountRequest.h>
 
 namespace Aws
 {
@@ -392,25 +393,26 @@ namespace Detective
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DisableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
-        virtual Model::DisableOrganizationAdminAccountOutcome DisableOrganizationAdminAccount() const;
+        virtual Model::DisableOrganizationAdminAccountOutcome DisableOrganizationAdminAccount(const Model::DisableOrganizationAdminAccountRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DisableOrganizationAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DisableOrganizationAdminAccountOutcomeCallable DisableOrganizationAdminAccountCallable() const
+        template<typename DisableOrganizationAdminAccountRequestT = Model::DisableOrganizationAdminAccountRequest>
+        Model::DisableOrganizationAdminAccountOutcomeCallable DisableOrganizationAdminAccountCallable(const DisableOrganizationAdminAccountRequestT& request = {}) const
         {
-            return SubmitCallable(&DetectiveClient::DisableOrganizationAdminAccount);
+            return SubmitCallable(&DetectiveClient::DisableOrganizationAdminAccount, request);
         }
 
         /**
          * An Async wrapper for DisableOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DisableOrganizationAdminAccountAsync(const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DisableOrganizationAdminAccountRequestT = Model::DisableOrganizationAdminAccountRequest>
+        void DisableOrganizationAdminAccountAsync(const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisableOrganizationAdminAccountRequestT& request = {}) const
         {
-            return SubmitAsync(&DetectiveClient::DisableOrganizationAdminAccount, handler, context);
+            return SubmitAsync(&DetectiveClient::DisableOrganizationAdminAccount, request, handler, context);
         }
+
         /**
          * <p>Removes the member account from the specified behavior graph. This operation
          * can only be called by an invited member account that has the

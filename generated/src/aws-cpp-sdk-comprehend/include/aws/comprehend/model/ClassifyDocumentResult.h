@@ -43,7 +43,10 @@ namespace Model
      * <p>The classes used by the document being analyzed. These are used for
      * multi-class trained models. Individual classes are mutually exclusive and each
      * document is expected to have only a single class assigned to it. For example, an
-     * animal can be a dog or a cat, but not both at the same time. </p>
+     * animal can be a dog or a cat, but not both at the same time. </p> <p>For prompt
+     * classification, the response includes a single class
+     * (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher
+     * confidence score indicates that the input prompt is undesired in nature.</p>
      */
     inline const Aws::Vector<DocumentClass>& GetClasses() const{ return m_classes; }
 
@@ -51,7 +54,10 @@ namespace Model
      * <p>The classes used by the document being analyzed. These are used for
      * multi-class trained models. Individual classes are mutually exclusive and each
      * document is expected to have only a single class assigned to it. For example, an
-     * animal can be a dog or a cat, but not both at the same time. </p>
+     * animal can be a dog or a cat, but not both at the same time. </p> <p>For prompt
+     * classification, the response includes a single class
+     * (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher
+     * confidence score indicates that the input prompt is undesired in nature.</p>
      */
     inline void SetClasses(const Aws::Vector<DocumentClass>& value) { m_classes = value; }
 
@@ -59,7 +65,10 @@ namespace Model
      * <p>The classes used by the document being analyzed. These are used for
      * multi-class trained models. Individual classes are mutually exclusive and each
      * document is expected to have only a single class assigned to it. For example, an
-     * animal can be a dog or a cat, but not both at the same time. </p>
+     * animal can be a dog or a cat, but not both at the same time. </p> <p>For prompt
+     * classification, the response includes a single class
+     * (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher
+     * confidence score indicates that the input prompt is undesired in nature.</p>
      */
     inline void SetClasses(Aws::Vector<DocumentClass>&& value) { m_classes = std::move(value); }
 
@@ -67,7 +76,10 @@ namespace Model
      * <p>The classes used by the document being analyzed. These are used for
      * multi-class trained models. Individual classes are mutually exclusive and each
      * document is expected to have only a single class assigned to it. For example, an
-     * animal can be a dog or a cat, but not both at the same time. </p>
+     * animal can be a dog or a cat, but not both at the same time. </p> <p>For prompt
+     * classification, the response includes a single class
+     * (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher
+     * confidence score indicates that the input prompt is undesired in nature.</p>
      */
     inline ClassifyDocumentResult& WithClasses(const Aws::Vector<DocumentClass>& value) { SetClasses(value); return *this;}
 
@@ -75,7 +87,10 @@ namespace Model
      * <p>The classes used by the document being analyzed. These are used for
      * multi-class trained models. Individual classes are mutually exclusive and each
      * document is expected to have only a single class assigned to it. For example, an
-     * animal can be a dog or a cat, but not both at the same time. </p>
+     * animal can be a dog or a cat, but not both at the same time. </p> <p>For prompt
+     * classification, the response includes a single class
+     * (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher
+     * confidence score indicates that the input prompt is undesired in nature.</p>
      */
     inline ClassifyDocumentResult& WithClasses(Aws::Vector<DocumentClass>&& value) { SetClasses(std::move(value)); return *this;}
 
@@ -83,7 +98,10 @@ namespace Model
      * <p>The classes used by the document being analyzed. These are used for
      * multi-class trained models. Individual classes are mutually exclusive and each
      * document is expected to have only a single class assigned to it. For example, an
-     * animal can be a dog or a cat, but not both at the same time. </p>
+     * animal can be a dog or a cat, but not both at the same time. </p> <p>For prompt
+     * classification, the response includes a single class
+     * (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher
+     * confidence score indicates that the input prompt is undesired in nature.</p>
      */
     inline ClassifyDocumentResult& AddClasses(const DocumentClass& value) { m_classes.push_back(value); return *this; }
 
@@ -91,7 +109,10 @@ namespace Model
      * <p>The classes used by the document being analyzed. These are used for
      * multi-class trained models. Individual classes are mutually exclusive and each
      * document is expected to have only a single class assigned to it. For example, an
-     * animal can be a dog or a cat, but not both at the same time. </p>
+     * animal can be a dog or a cat, but not both at the same time. </p> <p>For prompt
+     * classification, the response includes a single class
+     * (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher
+     * confidence score indicates that the input prompt is undesired in nature.</p>
      */
     inline ClassifyDocumentResult& AddClasses(DocumentClass&& value) { m_classes.push_back(std::move(value)); return *this; }
 

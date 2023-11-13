@@ -1324,20 +1324,20 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations
-     * with Amazon Redshift.</p>
+     * <p>Indicates whether the DB engine version supports zero-ETL integrations with
+     * Amazon Redshift.</p>
      */
     inline bool GetSupportsIntegrations() const{ return m_supportsIntegrations; }
 
     /**
-     * <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations
-     * with Amazon Redshift.</p>
+     * <p>Indicates whether the DB engine version supports zero-ETL integrations with
+     * Amazon Redshift.</p>
      */
     inline void SetSupportsIntegrations(bool value) { m_supportsIntegrations = value; }
 
     /**
-     * <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations
-     * with Amazon Redshift.</p>
+     * <p>Indicates whether the DB engine version supports zero-ETL integrations with
+     * Amazon Redshift.</p>
      */
     inline DeleteCustomDBEngineVersionResult& WithSupportsIntegrations(bool value) { SetSupportsIntegrations(value); return *this;}
 

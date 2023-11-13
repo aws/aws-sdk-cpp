@@ -225,6 +225,35 @@ namespace EKS
         }
 
         /**
+         * <p>Creates an EKS Anywhere subscription. When a subscription is created, it is a
+         * contract agreement for the length of the term specified in the request. Licenses
+         * that are used to validate support are provisioned in Amazon Web Services License
+         * Manager and the caller account is granted access to EKS Anywhere Curated
+         * Packages.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateEksAnywhereSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEksAnywhereSubscriptionOutcome CreateEksAnywhereSubscription(const Model::CreateEksAnywhereSubscriptionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateEksAnywhereSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateEksAnywhereSubscriptionRequestT = Model::CreateEksAnywhereSubscriptionRequest>
+        Model::CreateEksAnywhereSubscriptionOutcomeCallable CreateEksAnywhereSubscriptionCallable(const CreateEksAnywhereSubscriptionRequestT& request) const
+        {
+            return SubmitCallable(&EKSClient::CreateEksAnywhereSubscription, request);
+        }
+
+        /**
+         * An Async wrapper for CreateEksAnywhereSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateEksAnywhereSubscriptionRequestT = Model::CreateEksAnywhereSubscriptionRequest>
+        void CreateEksAnywhereSubscriptionAsync(const CreateEksAnywhereSubscriptionRequestT& request, const CreateEksAnywhereSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EKSClient::CreateEksAnywhereSubscription, request, handler, context);
+        }
+
+        /**
          * <p>Creates an Fargate profile for your Amazon EKS cluster. You must have at
          * least one Fargate profile in a cluster to be able to run pods on Fargate.</p>
          * <p>The Fargate profile allows an administrator to declare which pods run on
@@ -237,12 +266,12 @@ namespace EKS
          * <p>When you create a Fargate profile, you must specify a pod execution role to
          * use with the pods that are scheduled with the profile. This role is added to the
          * cluster's Kubernetes <a
-         * href="https://kubernetes.io/docs/admin/authorization/rbac/">Role Based Access
-         * Control</a> (RBAC) for authorization so that the <code>kubelet</code> that is
-         * running on the Fargate infrastructure can register with your Amazon EKS cluster
-         * so that it can appear in your cluster as a node. The pod execution role also
-         * provides IAM permissions to the Fargate infrastructure to allow read access to
-         * Amazon ECR image repositories. For more information, see <a
+         * href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Role Based
+         * Access Control</a> (RBAC) for authorization so that the <code>kubelet</code>
+         * that is running on the Fargate infrastructure can register with your Amazon EKS
+         * cluster so that it can appear in your cluster as a node. The pod execution role
+         * also provides IAM permissions to the Fargate infrastructure to allow read access
+         * to Amazon ECR image repositories. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
          * Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p> <p>Fargate profiles
          * are immutable. However, you can create a new updated profile to replace an
@@ -279,14 +308,9 @@ namespace EKS
         /**
          * <p>Creates a managed node group for an Amazon EKS cluster. You can only create a
          * node group for your cluster that is equal to the current Kubernetes version for
-         * the cluster. All node groups are created with the latest AMI release version for
-         * the respective minor Kubernetes version of the cluster, unless you deploy a
-         * custom AMI using a launch template. For more information about using launch
-         * templates, see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-         * template support</a>.</p> <p>An Amazon EKS managed node group is an Amazon EC2
-         * Auto Scaling group and associated Amazon EC2 instances that are managed by
-         * Amazon Web Services for an Amazon EKS cluster. For more information, see <a
+         * the cluster.</p> <p>An Amazon EKS managed node group is an Amazon EC2 Auto
+         * Scaling group and associated Amazon EC2 instances that are managed by Amazon Web
+         * Services for an Amazon EKS cluster. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
          * node groups</a> in the <i>Amazon EKS User Guide</i>.</p>  <p>Windows AMI
          * types are only supported for commercial Regions that support Windows Amazon
@@ -373,6 +397,35 @@ namespace EKS
         void DeleteClusterAsync(const DeleteClusterRequestT& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EKSClient::DeleteCluster, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an expired / inactive subscription. Deleting inactive subscriptions
+         * removes them from the Amazon Web Services Management Console view and from
+         * list/describe API responses. Subscriptions can only be cancelled within 7 days
+         * of creation, and are cancelled by creating a ticket in the Amazon Web Services
+         * Support Center. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteEksAnywhereSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEksAnywhereSubscriptionOutcome DeleteEksAnywhereSubscription(const Model::DeleteEksAnywhereSubscriptionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteEksAnywhereSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteEksAnywhereSubscriptionRequestT = Model::DeleteEksAnywhereSubscriptionRequest>
+        Model::DeleteEksAnywhereSubscriptionOutcomeCallable DeleteEksAnywhereSubscriptionCallable(const DeleteEksAnywhereSubscriptionRequestT& request) const
+        {
+            return SubmitCallable(&EKSClient::DeleteEksAnywhereSubscription, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteEksAnywhereSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteEksAnywhereSubscriptionRequestT = Model::DeleteEksAnywhereSubscriptionRequest>
+        void DeleteEksAnywhereSubscriptionAsync(const DeleteEksAnywhereSubscriptionRequestT& request, const DeleteEksAnywhereSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EKSClient::DeleteEksAnywhereSubscription, request, handler, context);
         }
 
         /**
@@ -569,6 +622,32 @@ namespace EKS
         }
 
         /**
+         * <p>Returns descriptive information about a subscription.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeEksAnywhereSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEksAnywhereSubscriptionOutcome DescribeEksAnywhereSubscription(const Model::DescribeEksAnywhereSubscriptionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeEksAnywhereSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeEksAnywhereSubscriptionRequestT = Model::DescribeEksAnywhereSubscriptionRequest>
+        Model::DescribeEksAnywhereSubscriptionOutcomeCallable DescribeEksAnywhereSubscriptionCallable(const DescribeEksAnywhereSubscriptionRequestT& request) const
+        {
+            return SubmitCallable(&EKSClient::DescribeEksAnywhereSubscription, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeEksAnywhereSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeEksAnywhereSubscriptionRequestT = Model::DescribeEksAnywhereSubscriptionRequest>
+        void DescribeEksAnywhereSubscriptionAsync(const DescribeEksAnywhereSubscriptionRequestT& request, const DescribeEksAnywhereSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EKSClient::DescribeEksAnywhereSubscription, request, handler, context);
+        }
+
+        /**
          * <p>Returns descriptive information about an Fargate profile.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeFargateProfile">AWS
@@ -679,7 +758,9 @@ namespace EKS
          * <p>Disassociates an identity provider configuration from a cluster. If you
          * disassociate an identity provider from your cluster, users included in the
          * provider can no longer access the cluster. However, you can still access the
-         * cluster with Amazon Web Services IAM users.</p><p><h3>See Also:</h3>   <a
+         * cluster with <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+         * principals</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateIdentityProviderConfig">AWS
          * API Reference</a></p>
          */
@@ -704,7 +785,7 @@ namespace EKS
         }
 
         /**
-         * <p>Lists the available add-ons.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the installed add-ons.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAddons">AWS API
          * Reference</a></p>
          */
@@ -752,6 +833,32 @@ namespace EKS
         void ListClustersAsync(const ListClustersRequestT& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EKSClient::ListClusters, request, handler, context);
+        }
+
+        /**
+         * <p>Displays the full description of the subscription.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListEksAnywhereSubscriptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEksAnywhereSubscriptionsOutcome ListEksAnywhereSubscriptions(const Model::ListEksAnywhereSubscriptionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEksAnywhereSubscriptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEksAnywhereSubscriptionsRequestT = Model::ListEksAnywhereSubscriptionsRequest>
+        Model::ListEksAnywhereSubscriptionsOutcomeCallable ListEksAnywhereSubscriptionsCallable(const ListEksAnywhereSubscriptionsRequestT& request) const
+        {
+            return SubmitCallable(&EKSClient::ListEksAnywhereSubscriptions, request);
+        }
+
+        /**
+         * An Async wrapper for ListEksAnywhereSubscriptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEksAnywhereSubscriptionsRequestT = Model::ListEksAnywhereSubscriptionsRequest>
+        void ListEksAnywhereSubscriptionsAsync(const ListEksAnywhereSubscriptionsRequestT& request, const ListEksAnywhereSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EKSClient::ListEksAnywhereSubscriptions, request, handler, context);
         }
 
         /**
@@ -1086,6 +1193,32 @@ namespace EKS
         void UpdateClusterVersionAsync(const UpdateClusterVersionRequestT& request, const UpdateClusterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EKSClient::UpdateClusterVersion, request, handler, context);
+        }
+
+        /**
+         * <p>Update an EKS Anywhere Subscription. Only auto renewal and tags can be
+         * updated after subscription creation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateEksAnywhereSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEksAnywhereSubscriptionOutcome UpdateEksAnywhereSubscription(const Model::UpdateEksAnywhereSubscriptionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateEksAnywhereSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateEksAnywhereSubscriptionRequestT = Model::UpdateEksAnywhereSubscriptionRequest>
+        Model::UpdateEksAnywhereSubscriptionOutcomeCallable UpdateEksAnywhereSubscriptionCallable(const UpdateEksAnywhereSubscriptionRequestT& request) const
+        {
+            return SubmitCallable(&EKSClient::UpdateEksAnywhereSubscription, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateEksAnywhereSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateEksAnywhereSubscriptionRequestT = Model::UpdateEksAnywhereSubscriptionRequest>
+        void UpdateEksAnywhereSubscriptionAsync(const UpdateEksAnywhereSubscriptionRequestT& request, const UpdateEksAnywhereSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EKSClient::UpdateEksAnywhereSubscription, request, handler, context);
         }
 
         /**

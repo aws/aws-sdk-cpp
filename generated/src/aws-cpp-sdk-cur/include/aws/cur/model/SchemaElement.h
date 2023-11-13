@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     RESOURCES,
-    SPLIT_COST_ALLOCATION_DATA
+    SPLIT_COST_ALLOCATION_DATA,
+    MANUAL_DISCOUNT_COMPATIBILITY
   };
 
 namespace SchemaElementMapper

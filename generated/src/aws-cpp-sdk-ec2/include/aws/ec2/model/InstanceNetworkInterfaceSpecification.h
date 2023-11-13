@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/EnaSrdSpecificationRequest.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/PrivateIpAddressSpecification.h>
 #include <aws/ec2/model/Ipv4PrefixSpecificationRequest.h>
@@ -969,6 +970,43 @@ namespace Model
      */
     inline InstanceNetworkInterfaceSpecification& WithPrimaryIpv6(bool value) { SetPrimaryIpv6(value); return *this;}
 
+
+    /**
+     * <p>Specifies the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline const EnaSrdSpecificationRequest& GetEnaSrdSpecification() const{ return m_enaSrdSpecification; }
+
+    /**
+     * <p>Specifies the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline bool EnaSrdSpecificationHasBeenSet() const { return m_enaSrdSpecificationHasBeenSet; }
+
+    /**
+     * <p>Specifies the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline void SetEnaSrdSpecification(const EnaSrdSpecificationRequest& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = value; }
+
+    /**
+     * <p>Specifies the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline void SetEnaSrdSpecification(EnaSrdSpecificationRequest&& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = std::move(value); }
+
+    /**
+     * <p>Specifies the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithEnaSrdSpecification(const EnaSrdSpecificationRequest& value) { SetEnaSrdSpecification(value); return *this;}
+
+    /**
+     * <p>Specifies the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithEnaSrdSpecification(EnaSrdSpecificationRequest&& value) { SetEnaSrdSpecification(std::move(value)); return *this;}
+
   private:
 
     bool m_associatePublicIpAddress;
@@ -1030,6 +1068,9 @@ namespace Model
 
     bool m_primaryIpv6;
     bool m_primaryIpv6HasBeenSet = false;
+
+    EnaSrdSpecificationRequest m_enaSrdSpecification;
+    bool m_enaSrdSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

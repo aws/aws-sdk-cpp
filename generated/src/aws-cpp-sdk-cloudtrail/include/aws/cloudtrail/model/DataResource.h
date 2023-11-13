@@ -46,7 +46,7 @@ namespace Model
    * processes and logs the event.</p> </li> <li> <p>A user uploads an object to an
    * Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.</p> </li> <li> <p>The
    * <code>PutObject</code> API operation occurred for an object in an S3 bucket that
-   * the CloudTrail user didn't specify for the trail. The trail doesn’t log the
+   * the CloudTrail user didn't specify for the trail. The trail doesn��t log the
    * event.</p> </li> </ol> <p>The following example demonstrates how logging works
    * when you configure logging of Lambda data events for a Lambda function named
    * <i>MyLambdaFunction</i>, but not for all Lambda functions.</p> <ol> <li> <p>A
@@ -60,7 +60,7 @@ namespace Model
    * Lambda API. Because the CloudTrail user did not specify logging data events for
    * all Lambda functions, the <code>Invoke</code> operation for
    * <i>MyOtherLambdaFunction</i> does not match the function specified for the
-   * trail. The trail doesn’t log the event. </p> </li> </ol><p><h3>See Also:</h3>  
+   * trail. The trail doesn��t log the event. </p> </li> </ol><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DataResource">AWS
    * API Reference</a></p>
@@ -86,6 +86,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
      * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::CodeWhisperer::Customization</code> </p> </li> <li> <p>
      * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
      * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
@@ -95,15 +96,22 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::KinesisVideo::Stream</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
+     * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
+     * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
      * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
@@ -120,6 +128,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
      * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::CodeWhisperer::Customization</code> </p> </li> <li> <p>
      * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
      * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
@@ -129,15 +138,22 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::KinesisVideo::Stream</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
+     * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
+     * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
      * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -154,6 +170,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
      * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::CodeWhisperer::Customization</code> </p> </li> <li> <p>
      * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
      * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
@@ -163,15 +180,22 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::KinesisVideo::Stream</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
+     * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
+     * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
      * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
@@ -188,6 +212,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
      * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::CodeWhisperer::Customization</code> </p> </li> <li> <p>
      * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
      * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
@@ -197,15 +222,22 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::KinesisVideo::Stream</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
+     * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
+     * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
      * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
@@ -222,6 +254,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
      * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::CodeWhisperer::Customization</code> </p> </li> <li> <p>
      * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
      * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
@@ -231,15 +264,22 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::KinesisVideo::Stream</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
+     * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
+     * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
      * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
@@ -256,6 +296,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
      * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::CodeWhisperer::Customization</code> </p> </li> <li> <p>
      * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
      * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
@@ -265,15 +306,22 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::KinesisVideo::Stream</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
+     * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
+     * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
      * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline DataResource& WithType(const Aws::String& value) { SetType(value); return *this;}
@@ -290,6 +338,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
      * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::CodeWhisperer::Customization</code> </p> </li> <li> <p>
      * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
      * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
@@ -299,15 +348,22 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::KinesisVideo::Stream</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
+     * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
+     * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
      * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline DataResource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
@@ -324,6 +380,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
      * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::CodeWhisperer::Customization</code> </p> </li> <li> <p>
      * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
      * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
@@ -333,15 +390,22 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::KinesisVideo::Stream</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
+     * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
+     * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
      * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline DataResource& WithType(const char* value) { SetType(value); return *this;}

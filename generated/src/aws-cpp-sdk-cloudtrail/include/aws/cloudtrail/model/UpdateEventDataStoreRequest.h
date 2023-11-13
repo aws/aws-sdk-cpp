@@ -210,25 +210,37 @@ namespace Model
 
     /**
      * <p>Specifies whether an event data store collects events logged for an
-     * organization in Organizations.</p>
+     * organization in Organizations.</p>  <p>Only the management account for the
+     * organization can convert an organization event data store to a non-organization
+     * event data store, or convert a non-organization event data store to an
+     * organization event data store.</p> 
      */
     inline bool GetOrganizationEnabled() const{ return m_organizationEnabled; }
 
     /**
      * <p>Specifies whether an event data store collects events logged for an
-     * organization in Organizations.</p>
+     * organization in Organizations.</p>  <p>Only the management account for the
+     * organization can convert an organization event data store to a non-organization
+     * event data store, or convert a non-organization event data store to an
+     * organization event data store.</p> 
      */
     inline bool OrganizationEnabledHasBeenSet() const { return m_organizationEnabledHasBeenSet; }
 
     /**
      * <p>Specifies whether an event data store collects events logged for an
-     * organization in Organizations.</p>
+     * organization in Organizations.</p>  <p>Only the management account for the
+     * organization can convert an organization event data store to a non-organization
+     * event data store, or convert a non-organization event data store to an
+     * organization event data store.</p> 
      */
     inline void SetOrganizationEnabled(bool value) { m_organizationEnabledHasBeenSet = true; m_organizationEnabled = value; }
 
     /**
      * <p>Specifies whether an event data store collects events logged for an
-     * organization in Organizations.</p>
+     * organization in Organizations.</p>  <p>Only the management account for the
+     * organization can convert an organization event data store to a non-organization
+     * event data store, or convert a non-organization event data store to an
+     * organization event data store.</p> 
      */
     inline UpdateEventDataStoreRequest& WithOrganizationEnabled(bool value) { SetOrganizationEnabled(value); return *this;}
 

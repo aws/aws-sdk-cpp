@@ -83,49 +83,57 @@ namespace Model
 
     /**
      * <p>To associate an existing model with the flywheel, specify the Amazon Resource
-     * Number (ARN) of the model version.</p>
+     * Number (ARN) of the model version. Do not set <code>TaskConfig</code> or
+     * <code>ModelType</code> if you specify an <code>ActiveModelArn</code>.</p>
      */
     inline const Aws::String& GetActiveModelArn() const{ return m_activeModelArn; }
 
     /**
      * <p>To associate an existing model with the flywheel, specify the Amazon Resource
-     * Number (ARN) of the model version.</p>
+     * Number (ARN) of the model version. Do not set <code>TaskConfig</code> or
+     * <code>ModelType</code> if you specify an <code>ActiveModelArn</code>.</p>
      */
     inline bool ActiveModelArnHasBeenSet() const { return m_activeModelArnHasBeenSet; }
 
     /**
      * <p>To associate an existing model with the flywheel, specify the Amazon Resource
-     * Number (ARN) of the model version.</p>
+     * Number (ARN) of the model version. Do not set <code>TaskConfig</code> or
+     * <code>ModelType</code> if you specify an <code>ActiveModelArn</code>.</p>
      */
     inline void SetActiveModelArn(const Aws::String& value) { m_activeModelArnHasBeenSet = true; m_activeModelArn = value; }
 
     /**
      * <p>To associate an existing model with the flywheel, specify the Amazon Resource
-     * Number (ARN) of the model version.</p>
+     * Number (ARN) of the model version. Do not set <code>TaskConfig</code> or
+     * <code>ModelType</code> if you specify an <code>ActiveModelArn</code>.</p>
      */
     inline void SetActiveModelArn(Aws::String&& value) { m_activeModelArnHasBeenSet = true; m_activeModelArn = std::move(value); }
 
     /**
      * <p>To associate an existing model with the flywheel, specify the Amazon Resource
-     * Number (ARN) of the model version.</p>
+     * Number (ARN) of the model version. Do not set <code>TaskConfig</code> or
+     * <code>ModelType</code> if you specify an <code>ActiveModelArn</code>.</p>
      */
     inline void SetActiveModelArn(const char* value) { m_activeModelArnHasBeenSet = true; m_activeModelArn.assign(value); }
 
     /**
      * <p>To associate an existing model with the flywheel, specify the Amazon Resource
-     * Number (ARN) of the model version.</p>
+     * Number (ARN) of the model version. Do not set <code>TaskConfig</code> or
+     * <code>ModelType</code> if you specify an <code>ActiveModelArn</code>.</p>
      */
     inline CreateFlywheelRequest& WithActiveModelArn(const Aws::String& value) { SetActiveModelArn(value); return *this;}
 
     /**
      * <p>To associate an existing model with the flywheel, specify the Amazon Resource
-     * Number (ARN) of the model version.</p>
+     * Number (ARN) of the model version. Do not set <code>TaskConfig</code> or
+     * <code>ModelType</code> if you specify an <code>ActiveModelArn</code>.</p>
      */
     inline CreateFlywheelRequest& WithActiveModelArn(Aws::String&& value) { SetActiveModelArn(std::move(value)); return *this;}
 
     /**
      * <p>To associate an existing model with the flywheel, specify the Amazon Resource
-     * Number (ARN) of the model version.</p>
+     * Number (ARN) of the model version. Do not set <code>TaskConfig</code> or
+     * <code>ModelType</code> if you specify an <code>ActiveModelArn</code>.</p>
      */
     inline CreateFlywheelRequest& WithActiveModelArn(const char* value) { SetActiveModelArn(value); return *this;}
 
@@ -180,63 +188,75 @@ namespace Model
 
 
     /**
-     * <p>Configuration about the custom classifier associated with the flywheel.</p>
+     * <p>Configuration about the model associated with the flywheel. You need to set
+     * <code>TaskConfig</code> if you are creating a flywheel for a new model.</p>
      */
     inline const TaskConfig& GetTaskConfig() const{ return m_taskConfig; }
 
     /**
-     * <p>Configuration about the custom classifier associated with the flywheel.</p>
+     * <p>Configuration about the model associated with the flywheel. You need to set
+     * <code>TaskConfig</code> if you are creating a flywheel for a new model.</p>
      */
     inline bool TaskConfigHasBeenSet() const { return m_taskConfigHasBeenSet; }
 
     /**
-     * <p>Configuration about the custom classifier associated with the flywheel.</p>
+     * <p>Configuration about the model associated with the flywheel. You need to set
+     * <code>TaskConfig</code> if you are creating a flywheel for a new model.</p>
      */
     inline void SetTaskConfig(const TaskConfig& value) { m_taskConfigHasBeenSet = true; m_taskConfig = value; }
 
     /**
-     * <p>Configuration about the custom classifier associated with the flywheel.</p>
+     * <p>Configuration about the model associated with the flywheel. You need to set
+     * <code>TaskConfig</code> if you are creating a flywheel for a new model.</p>
      */
     inline void SetTaskConfig(TaskConfig&& value) { m_taskConfigHasBeenSet = true; m_taskConfig = std::move(value); }
 
     /**
-     * <p>Configuration about the custom classifier associated with the flywheel.</p>
+     * <p>Configuration about the model associated with the flywheel. You need to set
+     * <code>TaskConfig</code> if you are creating a flywheel for a new model.</p>
      */
     inline CreateFlywheelRequest& WithTaskConfig(const TaskConfig& value) { SetTaskConfig(value); return *this;}
 
     /**
-     * <p>Configuration about the custom classifier associated with the flywheel.</p>
+     * <p>Configuration about the model associated with the flywheel. You need to set
+     * <code>TaskConfig</code> if you are creating a flywheel for a new model.</p>
      */
     inline CreateFlywheelRequest& WithTaskConfig(TaskConfig&& value) { SetTaskConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The model type.</p>
+     * <p>The model type. You need to set <code>ModelType</code> if you are creating a
+     * flywheel for a new model.</p>
      */
     inline const ModelType& GetModelType() const{ return m_modelType; }
 
     /**
-     * <p>The model type.</p>
+     * <p>The model type. You need to set <code>ModelType</code> if you are creating a
+     * flywheel for a new model.</p>
      */
     inline bool ModelTypeHasBeenSet() const { return m_modelTypeHasBeenSet; }
 
     /**
-     * <p>The model type.</p>
+     * <p>The model type. You need to set <code>ModelType</code> if you are creating a
+     * flywheel for a new model.</p>
      */
     inline void SetModelType(const ModelType& value) { m_modelTypeHasBeenSet = true; m_modelType = value; }
 
     /**
-     * <p>The model type.</p>
+     * <p>The model type. You need to set <code>ModelType</code> if you are creating a
+     * flywheel for a new model.</p>
      */
     inline void SetModelType(ModelType&& value) { m_modelTypeHasBeenSet = true; m_modelType = std::move(value); }
 
     /**
-     * <p>The model type.</p>
+     * <p>The model type. You need to set <code>ModelType</code> if you are creating a
+     * flywheel for a new model.</p>
      */
     inline CreateFlywheelRequest& WithModelType(const ModelType& value) { SetModelType(value); return *this;}
 
     /**
-     * <p>The model type.</p>
+     * <p>The model type. You need to set <code>ModelType</code> if you are creating a
+     * flywheel for a new model.</p>
      */
     inline CreateFlywheelRequest& WithModelType(ModelType&& value) { SetModelType(std::move(value)); return *this;}
 

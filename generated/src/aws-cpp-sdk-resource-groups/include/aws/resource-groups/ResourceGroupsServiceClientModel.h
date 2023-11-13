@@ -78,6 +78,7 @@ namespace Aws
       /* Service model forward declarations required in ResourceGroupsClient header */
       class CreateGroupRequest;
       class DeleteGroupRequest;
+      class GetAccountSettingsRequest;
       class GetGroupRequest;
       class GetGroupConfigurationRequest;
       class GetGroupQueryRequest;
@@ -143,7 +144,7 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const ResourceGroupsClient*, const Model::CreateGroupRequest&, const Model::CreateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGroupResponseReceivedHandler;
     typedef std::function<void(const ResourceGroupsClient*, const Model::DeleteGroupRequest&, const Model::DeleteGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGroupResponseReceivedHandler;
-    typedef std::function<void(const ResourceGroupsClient*, const Model::GetAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountSettingsResponseReceivedHandler;
+    typedef std::function<void(const ResourceGroupsClient*, const Model::GetAccountSettingsRequest&, const Model::GetAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountSettingsResponseReceivedHandler;
     typedef std::function<void(const ResourceGroupsClient*, const Model::GetGroupRequest&, const Model::GetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupResponseReceivedHandler;
     typedef std::function<void(const ResourceGroupsClient*, const Model::GetGroupConfigurationRequest&, const Model::GetGroupConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupConfigurationResponseReceivedHandler;
     typedef std::function<void(const ResourceGroupsClient*, const Model::GetGroupQueryRequest&, const Model::GetGroupQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupQueryResponseReceivedHandler;

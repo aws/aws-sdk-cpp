@@ -145,6 +145,47 @@ namespace Model
     inline InvalidRequestException& WithAddonName(const char* value) { SetAddonName(value); return *this;}
 
 
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline const Aws::String& GetSubscriptionId() const{ return m_subscriptionId; }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline bool SubscriptionIdHasBeenSet() const { return m_subscriptionIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline void SetSubscriptionId(const Aws::String& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = value; }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline void SetSubscriptionId(Aws::String&& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = std::move(value); }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline void SetSubscriptionId(const char* value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId.assign(value); }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline InvalidRequestException& WithSubscriptionId(const Aws::String& value) { SetSubscriptionId(value); return *this;}
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline InvalidRequestException& WithSubscriptionId(Aws::String&& value) { SetSubscriptionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline InvalidRequestException& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
+
+
     
     inline const Aws::String& GetMessage() const{ return m_message; }
 
@@ -179,6 +220,9 @@ namespace Model
 
     Aws::String m_addonName;
     bool m_addonNameHasBeenSet = false;
+
+    Aws::String m_subscriptionId;
+    bool m_subscriptionIdHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;

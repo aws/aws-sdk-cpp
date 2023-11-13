@@ -34,7 +34,8 @@ Service::Service() :
     m_additionalInfoHasBeenSet(false),
     m_featureNameHasBeenSet(false),
     m_ebsVolumeScanDetailsHasBeenSet(false),
-    m_runtimeDetailsHasBeenSet(false)
+    m_runtimeDetailsHasBeenSet(false),
+    m_detectionHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ Service::Service(JsonView jsonValue) :
     m_additionalInfoHasBeenSet(false),
     m_featureNameHasBeenSet(false),
     m_ebsVolumeScanDetailsHasBeenSet(false),
-    m_runtimeDetailsHasBeenSet(false)
+    m_runtimeDetailsHasBeenSet(false),
+    m_detectionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -159,6 +161,13 @@ Service& Service::operator =(JsonView jsonValue)
     m_runtimeDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("detection"))
+  {
+    m_detection = jsonValue.GetObject("detection");
+
+    m_detectionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -247,6 +256,12 @@ JsonValue Service::Jsonize() const
   if(m_runtimeDetailsHasBeenSet)
   {
    payload.WithObject("runtimeDetails", m_runtimeDetails.Jsonize());
+
+  }
+
+  if(m_detectionHasBeenSet)
+  {
+   payload.WithObject("detection", m_detection.Jsonize());
 
   }
 
