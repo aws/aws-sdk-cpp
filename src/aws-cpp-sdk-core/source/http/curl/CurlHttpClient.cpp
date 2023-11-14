@@ -627,7 +627,11 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
     for (auto& requestHeader : requestHeaders)
     {
         headerStream.str("");
-        headerStream << requestHeader.first << ": " << requestHeader.second;
+        if (requestHeader.second.empty()) {
+            headerStream << requestHeader.first << ";";
+        } else {
+            headerStream << requestHeader.first << ": " << requestHeader.second;
+        }
         Aws::String headerString = headerStream.str();
         AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, headerString);
         headers = curl_slist_append(headers, headerString.c_str());
