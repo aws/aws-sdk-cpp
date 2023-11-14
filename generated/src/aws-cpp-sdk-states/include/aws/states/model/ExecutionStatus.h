@@ -20,7 +20,8 @@ namespace Model
     SUCCEEDED,
     FAILED,
     TIMED_OUT,
-    ABORTED
+    ABORTED,
+    PENDING_REDRIVE
   };
 
 namespace ExecutionStatusMapper

@@ -550,6 +550,66 @@ namespace Model
      */
     inline ExecutionListItem& WithStateMachineAliasArn(const char* value) { SetStateMachineAliasArn(value); return *this;}
 
+
+    /**
+     * <p>The number of times you've redriven an execution. If you have not yet
+     * redriven an execution, the <code>redriveCount</code> is 0. This count is not
+     * updated for redrives that failed to start or are pending to be redriven.</p>
+     */
+    inline int GetRedriveCount() const{ return m_redriveCount; }
+
+    /**
+     * <p>The number of times you've redriven an execution. If you have not yet
+     * redriven an execution, the <code>redriveCount</code> is 0. This count is not
+     * updated for redrives that failed to start or are pending to be redriven.</p>
+     */
+    inline bool RedriveCountHasBeenSet() const { return m_redriveCountHasBeenSet; }
+
+    /**
+     * <p>The number of times you've redriven an execution. If you have not yet
+     * redriven an execution, the <code>redriveCount</code> is 0. This count is not
+     * updated for redrives that failed to start or are pending to be redriven.</p>
+     */
+    inline void SetRedriveCount(int value) { m_redriveCountHasBeenSet = true; m_redriveCount = value; }
+
+    /**
+     * <p>The number of times you've redriven an execution. If you have not yet
+     * redriven an execution, the <code>redriveCount</code> is 0. This count is not
+     * updated for redrives that failed to start or are pending to be redriven.</p>
+     */
+    inline ExecutionListItem& WithRedriveCount(int value) { SetRedriveCount(value); return *this;}
+
+
+    /**
+     * <p>The date the execution was last redriven.</p>
+     */
+    inline const Aws::Utils::DateTime& GetRedriveDate() const{ return m_redriveDate; }
+
+    /**
+     * <p>The date the execution was last redriven.</p>
+     */
+    inline bool RedriveDateHasBeenSet() const { return m_redriveDateHasBeenSet; }
+
+    /**
+     * <p>The date the execution was last redriven.</p>
+     */
+    inline void SetRedriveDate(const Aws::Utils::DateTime& value) { m_redriveDateHasBeenSet = true; m_redriveDate = value; }
+
+    /**
+     * <p>The date the execution was last redriven.</p>
+     */
+    inline void SetRedriveDate(Aws::Utils::DateTime&& value) { m_redriveDateHasBeenSet = true; m_redriveDate = std::move(value); }
+
+    /**
+     * <p>The date the execution was last redriven.</p>
+     */
+    inline ExecutionListItem& WithRedriveDate(const Aws::Utils::DateTime& value) { SetRedriveDate(value); return *this;}
+
+    /**
+     * <p>The date the execution was last redriven.</p>
+     */
+    inline ExecutionListItem& WithRedriveDate(Aws::Utils::DateTime&& value) { SetRedriveDate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_executionArn;
@@ -581,6 +641,12 @@ namespace Model
 
     Aws::String m_stateMachineAliasArn;
     bool m_stateMachineAliasArnHasBeenSet = false;
+
+    int m_redriveCount;
+    bool m_redriveCountHasBeenSet = false;
+
+    Aws::Utils::DateTime m_redriveDate;
+    bool m_redriveDateHasBeenSet = false;
   };
 
 } // namespace Model

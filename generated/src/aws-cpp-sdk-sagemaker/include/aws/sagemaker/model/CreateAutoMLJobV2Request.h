@@ -443,7 +443,7 @@ namespace Model
      * cross-entropy loss. After fine-tuning a language model, you can evaluate the
      * quality of its generated text using different metrics. For a list of the
      * available metrics, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/llms-finetuning-models.html">Metrics
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-metrics.html">Metrics
      * for fine-tuning LLMs in Autopilot</a>.</p> </li> </ul> 
      */
     inline const AutoMLJobObjective& GetAutoMLJobObjective() const{ return m_autoMLJobObjective; }
@@ -465,7 +465,7 @@ namespace Model
      * cross-entropy loss. After fine-tuning a language model, you can evaluate the
      * quality of its generated text using different metrics. For a list of the
      * available metrics, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/llms-finetuning-models.html">Metrics
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-metrics.html">Metrics
      * for fine-tuning LLMs in Autopilot</a>.</p> </li> </ul> 
      */
     inline bool AutoMLJobObjectiveHasBeenSet() const { return m_autoMLJobObjectiveHasBeenSet; }
@@ -487,7 +487,7 @@ namespace Model
      * cross-entropy loss. After fine-tuning a language model, you can evaluate the
      * quality of its generated text using different metrics. For a list of the
      * available metrics, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/llms-finetuning-models.html">Metrics
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-metrics.html">Metrics
      * for fine-tuning LLMs in Autopilot</a>.</p> </li> </ul> 
      */
     inline void SetAutoMLJobObjective(const AutoMLJobObjective& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = value; }
@@ -509,7 +509,7 @@ namespace Model
      * cross-entropy loss. After fine-tuning a language model, you can evaluate the
      * quality of its generated text using different metrics. For a list of the
      * available metrics, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/llms-finetuning-models.html">Metrics
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-metrics.html">Metrics
      * for fine-tuning LLMs in Autopilot</a>.</p> </li> </ul> 
      */
     inline void SetAutoMLJobObjective(AutoMLJobObjective&& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = std::move(value); }
@@ -531,7 +531,7 @@ namespace Model
      * cross-entropy loss. After fine-tuning a language model, you can evaluate the
      * quality of its generated text using different metrics. For a list of the
      * available metrics, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/llms-finetuning-models.html">Metrics
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-metrics.html">Metrics
      * for fine-tuning LLMs in Autopilot</a>.</p> </li> </ul> 
      */
     inline CreateAutoMLJobV2Request& WithAutoMLJobObjective(const AutoMLJobObjective& value) { SetAutoMLJobObjective(value); return *this;}
@@ -553,7 +553,7 @@ namespace Model
      * cross-entropy loss. After fine-tuning a language model, you can evaluate the
      * quality of its generated text using different metrics. For a list of the
      * available metrics, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/llms-finetuning-models.html">Metrics
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-metrics.html">Metrics
      * for fine-tuning LLMs in Autopilot</a>.</p> </li> </ul> 
      */
     inline CreateAutoMLJobV2Request& WithAutoMLJobObjective(AutoMLJobObjective&& value) { SetAutoMLJobObjective(std::move(value)); return *this;}

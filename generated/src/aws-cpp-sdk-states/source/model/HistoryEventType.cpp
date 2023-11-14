@@ -79,6 +79,8 @@ namespace Aws
         static const int MapRunFailed_HASH = HashingUtils::HashString("MapRunFailed");
         static const int MapRunStarted_HASH = HashingUtils::HashString("MapRunStarted");
         static const int MapRunSucceeded_HASH = HashingUtils::HashString("MapRunSucceeded");
+        static const int ExecutionRedriven_HASH = HashingUtils::HashString("ExecutionRedriven");
+        static const int MapRunRedriven_HASH = HashingUtils::HashString("MapRunRedriven");
 
 
         HistoryEventType GetHistoryEventTypeForName(const Aws::String& name)
@@ -320,6 +322,14 @@ namespace Aws
           {
             return HistoryEventType::MapRunSucceeded;
           }
+          else if (hashCode == ExecutionRedriven_HASH)
+          {
+            return HistoryEventType::ExecutionRedriven;
+          }
+          else if (hashCode == MapRunRedriven_HASH)
+          {
+            return HistoryEventType::MapRunRedriven;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -454,6 +464,10 @@ namespace Aws
             return "MapRunStarted";
           case HistoryEventType::MapRunSucceeded:
             return "MapRunSucceeded";
+          case HistoryEventType::ExecutionRedriven:
+            return "ExecutionRedriven";
+          case HistoryEventType::MapRunRedriven:
+            return "MapRunRedriven";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

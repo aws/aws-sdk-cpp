@@ -30,6 +30,7 @@
 #include <aws/glue/model/BatchGetDevEndpointsResult.h>
 #include <aws/glue/model/BatchGetJobsResult.h>
 #include <aws/glue/model/BatchGetPartitionResult.h>
+#include <aws/glue/model/BatchGetTableOptimizerResult.h>
 #include <aws/glue/model/BatchGetTriggersResult.h>
 #include <aws/glue/model/BatchGetWorkflowsResult.h>
 #include <aws/glue/model/BatchStopJobRunResult.h>
@@ -57,6 +58,7 @@
 #include <aws/glue/model/CreateSecurityConfigurationResult.h>
 #include <aws/glue/model/CreateSessionResult.h>
 #include <aws/glue/model/CreateTableResult.h>
+#include <aws/glue/model/CreateTableOptimizerResult.h>
 #include <aws/glue/model/CreateTriggerResult.h>
 #include <aws/glue/model/CreateUserDefinedFunctionResult.h>
 #include <aws/glue/model/CreateWorkflowResult.h>
@@ -81,6 +83,7 @@
 #include <aws/glue/model/DeleteSecurityConfigurationResult.h>
 #include <aws/glue/model/DeleteSessionResult.h>
 #include <aws/glue/model/DeleteTableResult.h>
+#include <aws/glue/model/DeleteTableOptimizerResult.h>
 #include <aws/glue/model/DeleteTableVersionResult.h>
 #include <aws/glue/model/DeleteTriggerResult.h>
 #include <aws/glue/model/DeleteUserDefinedFunctionResult.h>
@@ -135,6 +138,7 @@
 #include <aws/glue/model/GetSessionResult.h>
 #include <aws/glue/model/GetStatementResult.h>
 #include <aws/glue/model/GetTableResult.h>
+#include <aws/glue/model/GetTableOptimizerResult.h>
 #include <aws/glue/model/GetTableVersionResult.h>
 #include <aws/glue/model/GetTableVersionsResult.h>
 #include <aws/glue/model/GetTablesResult.h>
@@ -167,6 +171,7 @@
 #include <aws/glue/model/ListSchemasResult.h>
 #include <aws/glue/model/ListSessionsResult.h>
 #include <aws/glue/model/ListStatementsResult.h>
+#include <aws/glue/model/ListTableOptimizerRunsResult.h>
 #include <aws/glue/model/ListTriggersResult.h>
 #include <aws/glue/model/ListWorkflowsResult.h>
 #include <aws/glue/model/PutDataCatalogEncryptionSettingsResult.h>
@@ -217,6 +222,7 @@
 #include <aws/glue/model/UpdateSchemaResult.h>
 #include <aws/glue/model/UpdateSourceControlFromJobResult.h>
 #include <aws/glue/model/UpdateTableResult.h>
+#include <aws/glue/model/UpdateTableOptimizerResult.h>
 #include <aws/glue/model/UpdateTriggerResult.h>
 #include <aws/glue/model/UpdateUserDefinedFunctionResult.h>
 #include <aws/glue/model/UpdateWorkflowResult.h>
@@ -272,6 +278,7 @@ namespace Aws
       class BatchGetDevEndpointsRequest;
       class BatchGetJobsRequest;
       class BatchGetPartitionRequest;
+      class BatchGetTableOptimizerRequest;
       class BatchGetTriggersRequest;
       class BatchGetWorkflowsRequest;
       class BatchStopJobRunRequest;
@@ -299,6 +306,7 @@ namespace Aws
       class CreateSecurityConfigurationRequest;
       class CreateSessionRequest;
       class CreateTableRequest;
+      class CreateTableOptimizerRequest;
       class CreateTriggerRequest;
       class CreateUserDefinedFunctionRequest;
       class CreateWorkflowRequest;
@@ -323,6 +331,7 @@ namespace Aws
       class DeleteSecurityConfigurationRequest;
       class DeleteSessionRequest;
       class DeleteTableRequest;
+      class DeleteTableOptimizerRequest;
       class DeleteTableVersionRequest;
       class DeleteTriggerRequest;
       class DeleteUserDefinedFunctionRequest;
@@ -377,6 +386,7 @@ namespace Aws
       class GetSessionRequest;
       class GetStatementRequest;
       class GetTableRequest;
+      class GetTableOptimizerRequest;
       class GetTableVersionRequest;
       class GetTableVersionsRequest;
       class GetTablesRequest;
@@ -409,6 +419,7 @@ namespace Aws
       class ListSchemasRequest;
       class ListSessionsRequest;
       class ListStatementsRequest;
+      class ListTableOptimizerRunsRequest;
       class ListTriggersRequest;
       class ListWorkflowsRequest;
       class PutDataCatalogEncryptionSettingsRequest;
@@ -459,6 +470,7 @@ namespace Aws
       class UpdateSchemaRequest;
       class UpdateSourceControlFromJobRequest;
       class UpdateTableRequest;
+      class UpdateTableOptimizerRequest;
       class UpdateTriggerRequest;
       class UpdateUserDefinedFunctionRequest;
       class UpdateWorkflowRequest;
@@ -477,6 +489,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<BatchGetDevEndpointsResult, GlueError> BatchGetDevEndpointsOutcome;
       typedef Aws::Utils::Outcome<BatchGetJobsResult, GlueError> BatchGetJobsOutcome;
       typedef Aws::Utils::Outcome<BatchGetPartitionResult, GlueError> BatchGetPartitionOutcome;
+      typedef Aws::Utils::Outcome<BatchGetTableOptimizerResult, GlueError> BatchGetTableOptimizerOutcome;
       typedef Aws::Utils::Outcome<BatchGetTriggersResult, GlueError> BatchGetTriggersOutcome;
       typedef Aws::Utils::Outcome<BatchGetWorkflowsResult, GlueError> BatchGetWorkflowsOutcome;
       typedef Aws::Utils::Outcome<BatchStopJobRunResult, GlueError> BatchStopJobRunOutcome;
@@ -504,6 +517,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateSecurityConfigurationResult, GlueError> CreateSecurityConfigurationOutcome;
       typedef Aws::Utils::Outcome<CreateSessionResult, GlueError> CreateSessionOutcome;
       typedef Aws::Utils::Outcome<CreateTableResult, GlueError> CreateTableOutcome;
+      typedef Aws::Utils::Outcome<CreateTableOptimizerResult, GlueError> CreateTableOptimizerOutcome;
       typedef Aws::Utils::Outcome<CreateTriggerResult, GlueError> CreateTriggerOutcome;
       typedef Aws::Utils::Outcome<CreateUserDefinedFunctionResult, GlueError> CreateUserDefinedFunctionOutcome;
       typedef Aws::Utils::Outcome<CreateWorkflowResult, GlueError> CreateWorkflowOutcome;
@@ -528,6 +542,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteSecurityConfigurationResult, GlueError> DeleteSecurityConfigurationOutcome;
       typedef Aws::Utils::Outcome<DeleteSessionResult, GlueError> DeleteSessionOutcome;
       typedef Aws::Utils::Outcome<DeleteTableResult, GlueError> DeleteTableOutcome;
+      typedef Aws::Utils::Outcome<DeleteTableOptimizerResult, GlueError> DeleteTableOptimizerOutcome;
       typedef Aws::Utils::Outcome<DeleteTableVersionResult, GlueError> DeleteTableVersionOutcome;
       typedef Aws::Utils::Outcome<DeleteTriggerResult, GlueError> DeleteTriggerOutcome;
       typedef Aws::Utils::Outcome<DeleteUserDefinedFunctionResult, GlueError> DeleteUserDefinedFunctionOutcome;
@@ -582,6 +597,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetSessionResult, GlueError> GetSessionOutcome;
       typedef Aws::Utils::Outcome<GetStatementResult, GlueError> GetStatementOutcome;
       typedef Aws::Utils::Outcome<GetTableResult, GlueError> GetTableOutcome;
+      typedef Aws::Utils::Outcome<GetTableOptimizerResult, GlueError> GetTableOptimizerOutcome;
       typedef Aws::Utils::Outcome<GetTableVersionResult, GlueError> GetTableVersionOutcome;
       typedef Aws::Utils::Outcome<GetTableVersionsResult, GlueError> GetTableVersionsOutcome;
       typedef Aws::Utils::Outcome<GetTablesResult, GlueError> GetTablesOutcome;
@@ -614,6 +630,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListSchemasResult, GlueError> ListSchemasOutcome;
       typedef Aws::Utils::Outcome<ListSessionsResult, GlueError> ListSessionsOutcome;
       typedef Aws::Utils::Outcome<ListStatementsResult, GlueError> ListStatementsOutcome;
+      typedef Aws::Utils::Outcome<ListTableOptimizerRunsResult, GlueError> ListTableOptimizerRunsOutcome;
       typedef Aws::Utils::Outcome<ListTriggersResult, GlueError> ListTriggersOutcome;
       typedef Aws::Utils::Outcome<ListWorkflowsResult, GlueError> ListWorkflowsOutcome;
       typedef Aws::Utils::Outcome<PutDataCatalogEncryptionSettingsResult, GlueError> PutDataCatalogEncryptionSettingsOutcome;
@@ -664,6 +681,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateSchemaResult, GlueError> UpdateSchemaOutcome;
       typedef Aws::Utils::Outcome<UpdateSourceControlFromJobResult, GlueError> UpdateSourceControlFromJobOutcome;
       typedef Aws::Utils::Outcome<UpdateTableResult, GlueError> UpdateTableOutcome;
+      typedef Aws::Utils::Outcome<UpdateTableOptimizerResult, GlueError> UpdateTableOptimizerOutcome;
       typedef Aws::Utils::Outcome<UpdateTriggerResult, GlueError> UpdateTriggerOutcome;
       typedef Aws::Utils::Outcome<UpdateUserDefinedFunctionResult, GlueError> UpdateUserDefinedFunctionOutcome;
       typedef Aws::Utils::Outcome<UpdateWorkflowResult, GlueError> UpdateWorkflowOutcome;
@@ -682,6 +700,7 @@ namespace Aws
       typedef std::future<BatchGetDevEndpointsOutcome> BatchGetDevEndpointsOutcomeCallable;
       typedef std::future<BatchGetJobsOutcome> BatchGetJobsOutcomeCallable;
       typedef std::future<BatchGetPartitionOutcome> BatchGetPartitionOutcomeCallable;
+      typedef std::future<BatchGetTableOptimizerOutcome> BatchGetTableOptimizerOutcomeCallable;
       typedef std::future<BatchGetTriggersOutcome> BatchGetTriggersOutcomeCallable;
       typedef std::future<BatchGetWorkflowsOutcome> BatchGetWorkflowsOutcomeCallable;
       typedef std::future<BatchStopJobRunOutcome> BatchStopJobRunOutcomeCallable;
@@ -709,6 +728,7 @@ namespace Aws
       typedef std::future<CreateSecurityConfigurationOutcome> CreateSecurityConfigurationOutcomeCallable;
       typedef std::future<CreateSessionOutcome> CreateSessionOutcomeCallable;
       typedef std::future<CreateTableOutcome> CreateTableOutcomeCallable;
+      typedef std::future<CreateTableOptimizerOutcome> CreateTableOptimizerOutcomeCallable;
       typedef std::future<CreateTriggerOutcome> CreateTriggerOutcomeCallable;
       typedef std::future<CreateUserDefinedFunctionOutcome> CreateUserDefinedFunctionOutcomeCallable;
       typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
@@ -733,6 +753,7 @@ namespace Aws
       typedef std::future<DeleteSecurityConfigurationOutcome> DeleteSecurityConfigurationOutcomeCallable;
       typedef std::future<DeleteSessionOutcome> DeleteSessionOutcomeCallable;
       typedef std::future<DeleteTableOutcome> DeleteTableOutcomeCallable;
+      typedef std::future<DeleteTableOptimizerOutcome> DeleteTableOptimizerOutcomeCallable;
       typedef std::future<DeleteTableVersionOutcome> DeleteTableVersionOutcomeCallable;
       typedef std::future<DeleteTriggerOutcome> DeleteTriggerOutcomeCallable;
       typedef std::future<DeleteUserDefinedFunctionOutcome> DeleteUserDefinedFunctionOutcomeCallable;
@@ -787,6 +808,7 @@ namespace Aws
       typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
       typedef std::future<GetStatementOutcome> GetStatementOutcomeCallable;
       typedef std::future<GetTableOutcome> GetTableOutcomeCallable;
+      typedef std::future<GetTableOptimizerOutcome> GetTableOptimizerOutcomeCallable;
       typedef std::future<GetTableVersionOutcome> GetTableVersionOutcomeCallable;
       typedef std::future<GetTableVersionsOutcome> GetTableVersionsOutcomeCallable;
       typedef std::future<GetTablesOutcome> GetTablesOutcomeCallable;
@@ -819,6 +841,7 @@ namespace Aws
       typedef std::future<ListSchemasOutcome> ListSchemasOutcomeCallable;
       typedef std::future<ListSessionsOutcome> ListSessionsOutcomeCallable;
       typedef std::future<ListStatementsOutcome> ListStatementsOutcomeCallable;
+      typedef std::future<ListTableOptimizerRunsOutcome> ListTableOptimizerRunsOutcomeCallable;
       typedef std::future<ListTriggersOutcome> ListTriggersOutcomeCallable;
       typedef std::future<ListWorkflowsOutcome> ListWorkflowsOutcomeCallable;
       typedef std::future<PutDataCatalogEncryptionSettingsOutcome> PutDataCatalogEncryptionSettingsOutcomeCallable;
@@ -869,6 +892,7 @@ namespace Aws
       typedef std::future<UpdateSchemaOutcome> UpdateSchemaOutcomeCallable;
       typedef std::future<UpdateSourceControlFromJobOutcome> UpdateSourceControlFromJobOutcomeCallable;
       typedef std::future<UpdateTableOutcome> UpdateTableOutcomeCallable;
+      typedef std::future<UpdateTableOptimizerOutcome> UpdateTableOptimizerOutcomeCallable;
       typedef std::future<UpdateTriggerOutcome> UpdateTriggerOutcomeCallable;
       typedef std::future<UpdateUserDefinedFunctionOutcome> UpdateUserDefinedFunctionOutcomeCallable;
       typedef std::future<UpdateWorkflowOutcome> UpdateWorkflowOutcomeCallable;
@@ -890,6 +914,7 @@ namespace Aws
     typedef std::function<void(const GlueClient*, const Model::BatchGetDevEndpointsRequest&, const Model::BatchGetDevEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetDevEndpointsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchGetJobsRequest&, const Model::BatchGetJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetJobsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchGetPartitionRequest&, const Model::BatchGetPartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetPartitionResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::BatchGetTableOptimizerRequest&, const Model::BatchGetTableOptimizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetTableOptimizerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchGetTriggersRequest&, const Model::BatchGetTriggersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetTriggersResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchGetWorkflowsRequest&, const Model::BatchGetWorkflowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetWorkflowsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchStopJobRunRequest&, const Model::BatchStopJobRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchStopJobRunResponseReceivedHandler;
@@ -917,6 +942,7 @@ namespace Aws
     typedef std::function<void(const GlueClient*, const Model::CreateSecurityConfigurationRequest&, const Model::CreateSecurityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSecurityConfigurationResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateSessionRequest&, const Model::CreateSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSessionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateTableRequest&, const Model::CreateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTableResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::CreateTableOptimizerRequest&, const Model::CreateTableOptimizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTableOptimizerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateTriggerRequest&, const Model::CreateTriggerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTriggerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateUserDefinedFunctionRequest&, const Model::CreateUserDefinedFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserDefinedFunctionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateWorkflowRequest&, const Model::CreateWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkflowResponseReceivedHandler;
@@ -941,6 +967,7 @@ namespace Aws
     typedef std::function<void(const GlueClient*, const Model::DeleteSecurityConfigurationRequest&, const Model::DeleteSecurityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSecurityConfigurationResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteSessionRequest&, const Model::DeleteSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSessionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteTableRequest&, const Model::DeleteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTableResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::DeleteTableOptimizerRequest&, const Model::DeleteTableOptimizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTableOptimizerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteTableVersionRequest&, const Model::DeleteTableVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTableVersionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteTriggerRequest&, const Model::DeleteTriggerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTriggerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteUserDefinedFunctionRequest&, const Model::DeleteUserDefinedFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserDefinedFunctionResponseReceivedHandler;
@@ -995,6 +1022,7 @@ namespace Aws
     typedef std::function<void(const GlueClient*, const Model::GetSessionRequest&, const Model::GetSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSessionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetStatementRequest&, const Model::GetStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStatementResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetTableRequest&, const Model::GetTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::GetTableOptimizerRequest&, const Model::GetTableOptimizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableOptimizerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetTableVersionRequest&, const Model::GetTableVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableVersionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetTableVersionsRequest&, const Model::GetTableVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableVersionsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetTablesRequest&, const Model::GetTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTablesResponseReceivedHandler;
@@ -1027,6 +1055,7 @@ namespace Aws
     typedef std::function<void(const GlueClient*, const Model::ListSchemasRequest&, const Model::ListSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSchemasResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListSessionsRequest&, const Model::ListSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSessionsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListStatementsRequest&, const Model::ListStatementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStatementsResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::ListTableOptimizerRunsRequest&, const Model::ListTableOptimizerRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTableOptimizerRunsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListTriggersRequest&, const Model::ListTriggersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTriggersResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListWorkflowsRequest&, const Model::ListWorkflowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkflowsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::PutDataCatalogEncryptionSettingsRequest&, const Model::PutDataCatalogEncryptionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDataCatalogEncryptionSettingsResponseReceivedHandler;
@@ -1077,6 +1106,7 @@ namespace Aws
     typedef std::function<void(const GlueClient*, const Model::UpdateSchemaRequest&, const Model::UpdateSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSchemaResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateSourceControlFromJobRequest&, const Model::UpdateSourceControlFromJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSourceControlFromJobResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateTableRequest&, const Model::UpdateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::UpdateTableOptimizerRequest&, const Model::UpdateTableOptimizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableOptimizerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateTriggerRequest&, const Model::UpdateTriggerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTriggerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateUserDefinedFunctionRequest&, const Model::UpdateUserDefinedFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserDefinedFunctionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateWorkflowRequest&, const Model::UpdateWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkflowResponseReceivedHandler;

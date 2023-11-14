@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pipes/model/RequestedPipeState.h>
 #include <aws/pipes/model/PipeEnrichmentParameters.h>
+#include <aws/pipes/model/PipeLogConfigurationParameters.h>
 #include <aws/pipes/model/UpdatePipeSourceParameters.h>
 #include <aws/pipes/model/PipeTargetParameters.h>
 #include <utility>
@@ -181,6 +182,37 @@ namespace Model
 
 
     /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline const PipeLogConfigurationParameters& GetLogConfiguration() const{ return m_logConfiguration; }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline void SetLogConfiguration(const PipeLogConfigurationParameters& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline void SetLogConfiguration(PipeLogConfigurationParameters&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline UpdatePipeRequest& WithLogConfiguration(const PipeLogConfigurationParameters& value) { SetLogConfiguration(value); return *this;}
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline UpdatePipeRequest& WithLogConfiguration(PipeLogConfigurationParameters&& value) { SetLogConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The name of the pipe.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -335,32 +367,56 @@ namespace Model
 
 
     /**
-     * <p>The parameters required to set up a target for your pipe.</p>
+     * <p>The parameters required to set up a target for your pipe.</p> <p>For more
+     * information about pipe target parameters, including how to use dynamic path
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target
+     * parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline const PipeTargetParameters& GetTargetParameters() const{ return m_targetParameters; }
 
     /**
-     * <p>The parameters required to set up a target for your pipe.</p>
+     * <p>The parameters required to set up a target for your pipe.</p> <p>For more
+     * information about pipe target parameters, including how to use dynamic path
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target
+     * parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline bool TargetParametersHasBeenSet() const { return m_targetParametersHasBeenSet; }
 
     /**
-     * <p>The parameters required to set up a target for your pipe.</p>
+     * <p>The parameters required to set up a target for your pipe.</p> <p>For more
+     * information about pipe target parameters, including how to use dynamic path
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target
+     * parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetTargetParameters(const PipeTargetParameters& value) { m_targetParametersHasBeenSet = true; m_targetParameters = value; }
 
     /**
-     * <p>The parameters required to set up a target for your pipe.</p>
+     * <p>The parameters required to set up a target for your pipe.</p> <p>For more
+     * information about pipe target parameters, including how to use dynamic path
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target
+     * parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetTargetParameters(PipeTargetParameters&& value) { m_targetParametersHasBeenSet = true; m_targetParameters = std::move(value); }
 
     /**
-     * <p>The parameters required to set up a target for your pipe.</p>
+     * <p>The parameters required to set up a target for your pipe.</p> <p>For more
+     * information about pipe target parameters, including how to use dynamic path
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target
+     * parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline UpdatePipeRequest& WithTargetParameters(const PipeTargetParameters& value) { SetTargetParameters(value); return *this;}
 
     /**
-     * <p>The parameters required to set up a target for your pipe.</p>
+     * <p>The parameters required to set up a target for your pipe.</p> <p>For more
+     * information about pipe target parameters, including how to use dynamic path
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target
+     * parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline UpdatePipeRequest& WithTargetParameters(PipeTargetParameters&& value) { SetTargetParameters(std::move(value)); return *this;}
 
@@ -377,6 +433,9 @@ namespace Model
 
     PipeEnrichmentParameters m_enrichmentParameters;
     bool m_enrichmentParametersHasBeenSet = false;
+
+    PipeLogConfigurationParameters m_logConfiguration;
+    bool m_logConfigurationHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

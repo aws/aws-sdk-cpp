@@ -39,7 +39,7 @@ namespace Model
      * prevent the accidental creation of duplicate versions. We recommend that you
      * generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type
-     * value</a> to ensure the uniqueness of your views.</p>
+     * value</a> to ensure the uniqueness of your index.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -48,7 +48,7 @@ namespace Model
      * prevent the accidental creation of duplicate versions. We recommend that you
      * generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type
-     * value</a> to ensure the uniqueness of your views.</p>
+     * value</a> to ensure the uniqueness of your index.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -57,7 +57,7 @@ namespace Model
      * prevent the accidental creation of duplicate versions. We recommend that you
      * generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type
-     * value</a> to ensure the uniqueness of your views.</p>
+     * value</a> to ensure the uniqueness of your index.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -66,7 +66,7 @@ namespace Model
      * prevent the accidental creation of duplicate versions. We recommend that you
      * generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type
-     * value</a> to ensure the uniqueness of your views.</p>
+     * value</a> to ensure the uniqueness of your index.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -75,7 +75,7 @@ namespace Model
      * prevent the accidental creation of duplicate versions. We recommend that you
      * generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type
-     * value</a> to ensure the uniqueness of your views.</p>
+     * value</a> to ensure the uniqueness of your index.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -84,7 +84,7 @@ namespace Model
      * prevent the accidental creation of duplicate versions. We recommend that you
      * generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type
-     * value</a> to ensure the uniqueness of your views.</p>
+     * value</a> to ensure the uniqueness of your index.</p>
      */
     inline CreateIndexRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -93,7 +93,7 @@ namespace Model
      * prevent the accidental creation of duplicate versions. We recommend that you
      * generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type
-     * value</a> to ensure the uniqueness of your views.</p>
+     * value</a> to ensure the uniqueness of your index.</p>
      */
     inline CreateIndexRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -102,7 +102,7 @@ namespace Model
      * prevent the accidental creation of duplicate versions. We recommend that you
      * generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type
-     * value</a> to ensure the uniqueness of your views.</p>
+     * value</a> to ensure the uniqueness of your index.</p>
      */
     inline CreateIndexRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

@@ -44,6 +44,7 @@ static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int INVALID_TOKEN_HASH = HashingUtils::HashString("InvalidToken");
 static const int ACTIVITY_WORKER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ActivityWorkerLimitExceeded");
 static const int INVALID_LOGGING_CONFIGURATION_HASH = HashingUtils::HashString("InvalidLoggingConfiguration");
+static const int EXECUTION_NOT_REDRIVABLE_HASH = HashingUtils::HashString("ExecutionNotRedrivable");
 static const int TASK_TIMED_OUT_HASH = HashingUtils::HashString("TaskTimedOut");
 static const int INVALID_EXECUTION_INPUT_HASH = HashingUtils::HashString("InvalidExecutionInput");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
@@ -86,6 +87,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_LOGGING_CONFIGURATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::INVALID_LOGGING_CONFIGURATION), false);
+  }
+  else if (hashCode == EXECUTION_NOT_REDRIVABLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::EXECUTION_NOT_REDRIVABLE), false);
   }
   else if (hashCode == TASK_TIMED_OUT_HASH)
   {

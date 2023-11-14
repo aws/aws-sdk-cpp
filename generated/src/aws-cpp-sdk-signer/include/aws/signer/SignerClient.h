@@ -16,8 +16,8 @@ namespace Aws
 namespace signer
 {
   /**
-   * <p>AWS Signer is a fully managed code signing service to help you ensure the
-   * trust and integrity of your code. </p> <p>AWS Signer supports the following
+   * <p>AWS Signer is a fully managed code-signing service to help you ensure the
+   * trust and integrity of your code. </p> <p>Signer supports the following
    * applications:</p> <p>With code signing for AWS Lambda, you can sign <a
    * href="http://docs.aws.amazon.com/lambda/latest/dg/">AWS Lambda</a> deployment
    * packages. Integrated support is provided for <a
@@ -33,10 +33,14 @@ namespace signer
    * and <a href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS IoT
    * Device Management</a>, and is integrated with <a
    * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
-   * (ACM)</a>. In order to sign code, you import a third-party code signing
+   * (ACM)</a>. In order to sign code, you import a third-party code-signing
    * certificate using ACM, and use that to sign updates in Amazon FreeRTOS and AWS
-   * IoT Device Management. </p> <p>With code signing for containers …(TBD)</p>
-   * <p>For more information about AWS Signer, see the <a
+   * IoT Device Management. </p> <p>With Signer and the Notation CLI from the <a
+   * href="https://notaryproject.dev/">Notary&#x2028; Project</a>, you can sign
+   * container images stored in a container registry such as Amazon Elastic Container
+   * Registry (ECR). The signatures are stored in the registry alongside the images,
+   * where they are available for verifying image authenticity and integrity.</p>
+   * <p>For more information about Signer, see the <a
    * href="https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS
    * Signer Developer Guide</a>.</p>
    */
@@ -286,13 +290,13 @@ namespace signer
         /**
          * <p>Lists all your signing jobs. You can use the <code>maxResults</code>
          * parameter to limit the number of signing jobs that are returned in the response.
-         * If additional jobs remain to be listed, code signing returns a
+         * If additional jobs remain to be listed, AWS Signer returns a
          * <code>nextToken</code> value. Use this value in subsequent calls to
          * <code>ListSigningJobs</code> to fetch the remaining values. You can continue
          * calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter
-         * and with new values that code signing returns in the <code>nextToken</code>
-         * parameter until all of your signing jobs have been returned. </p><p><h3>See
-         * Also:</h3>   <a
+         * and with new values that Signer returns in the <code>nextToken</code> parameter
+         * until all of your signing jobs have been returned. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningJobs">AWS
          * API Reference</a></p>
          */
@@ -317,14 +321,13 @@ namespace signer
         }
 
         /**
-         * <p>Lists all signing platforms available in code signing that match the request
-         * parameters. If additional jobs remain to be listed, code signing returns a
+         * <p>Lists all signing platforms available in AWS Signer that match the request
+         * parameters. If additional jobs remain to be listed, Signer returns a
          * <code>nextToken</code> value. Use this value in subsequent calls to
          * <code>ListSigningJobs</code> to fetch the remaining values. You can continue
          * calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter
-         * and with new values that code signing returns in the <code>nextToken</code>
-         * parameter until all of your signing jobs have been returned.</p><p><h3>See
-         * Also:</h3>   <a
+         * and with new values that Signer returns in the <code>nextToken</code> parameter
+         * until all of your signing jobs have been returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningPlatforms">AWS
          * API Reference</a></p>
          */
@@ -352,13 +355,12 @@ namespace signer
          * <p>Lists all available signing profiles in your AWS account. Returns only
          * profiles with an <code>ACTIVE</code> status unless the
          * <code>includeCanceled</code> request field is set to <code>true</code>. If
-         * additional jobs remain to be listed, code signing returns a
-         * <code>nextToken</code> value. Use this value in subsequent calls to
-         * <code>ListSigningJobs</code> to fetch the remaining values. You can continue
-         * calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter
-         * and with new values that code signing returns in the <code>nextToken</code>
-         * parameter until all of your signing jobs have been returned.</p><p><h3>See
-         * Also:</h3>   <a
+         * additional jobs remain to be listed, AWS Signer returns a <code>nextToken</code>
+         * value. Use this value in subsequent calls to <code>ListSigningJobs</code> to
+         * fetch the remaining values. You can continue calling
+         * <code>ListSigningJobs</code> with your <code>maxResults</code> parameter and
+         * with new values that Signer returns in the <code>nextToken</code> parameter
+         * until all of your signing jobs have been returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningProfiles">AWS
          * API Reference</a></p>
          */
@@ -409,7 +411,7 @@ namespace signer
         }
 
         /**
-         * <p>Creates a signing profile. A signing profile is a code signing template that
+         * <p>Creates a signing profile. A signing profile is a code-signing template that
          * can be used to carry out a pre-defined signing job. </p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/PutSigningProfile">AWS
@@ -548,14 +550,13 @@ namespace signer
          * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Creating
          * a Bucket</a> in the <i>Amazon S3 Getting Started Guide</i>. </p> </li> <li>
          * <p>Your S3 source bucket must be version enabled.</p> </li> <li> <p>You must
-         * create an S3 destination bucket. Code signing uses your S3 destination bucket to
+         * create an S3 destination bucket. AWS Signer uses your S3 destination bucket to
          * write your signed code.</p> </li> <li> <p>You specify the name of the source and
          * destination buckets when calling the <code>StartSigningJob</code> operation.</p>
          * </li> <li> <p>You must also specify a request token that identifies your request
-         * to code signing.</p> </li> </ul> <p>You can call the <a>DescribeSigningJob</a>
-         * and the <a>ListSigningJobs</a> actions after you call
-         * <code>StartSigningJob</code>.</p> <p>For a Java example that shows how to use
-         * this action, see <a
+         * to Signer.</p> </li> </ul> <p>You can call the <a>DescribeSigningJob</a> and the
+         * <a>ListSigningJobs</a> actions after you call <code>StartSigningJob</code>.</p>
+         * <p>For a Java example that shows how to use this action, see <a
          * href="https://docs.aws.amazon.com/signer/latest/developerguide/api-startsigningjob.html">StartSigningJob</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/StartSigningJob">AWS

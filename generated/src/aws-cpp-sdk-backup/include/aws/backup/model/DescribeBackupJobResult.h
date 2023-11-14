@@ -1046,6 +1046,70 @@ namespace Model
     inline DescribeBackupJobResult& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
 
+    /**
+     * <p>This is the job count for the specified message category.</p> <p>Example
+     * strings may include <code>AccessDenied</code>, <code>Success</code>, and
+     * <code>InvalidParameters</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p>
+     */
+    inline const Aws::String& GetMessageCategory() const{ return m_messageCategory; }
+
+    /**
+     * <p>This is the job count for the specified message category.</p> <p>Example
+     * strings may include <code>AccessDenied</code>, <code>Success</code>, and
+     * <code>InvalidParameters</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p>
+     */
+    inline void SetMessageCategory(const Aws::String& value) { m_messageCategory = value; }
+
+    /**
+     * <p>This is the job count for the specified message category.</p> <p>Example
+     * strings may include <code>AccessDenied</code>, <code>Success</code>, and
+     * <code>InvalidParameters</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p>
+     */
+    inline void SetMessageCategory(Aws::String&& value) { m_messageCategory = std::move(value); }
+
+    /**
+     * <p>This is the job count for the specified message category.</p> <p>Example
+     * strings may include <code>AccessDenied</code>, <code>Success</code>, and
+     * <code>InvalidParameters</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p>
+     */
+    inline void SetMessageCategory(const char* value) { m_messageCategory.assign(value); }
+
+    /**
+     * <p>This is the job count for the specified message category.</p> <p>Example
+     * strings may include <code>AccessDenied</code>, <code>Success</code>, and
+     * <code>InvalidParameters</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p>
+     */
+    inline DescribeBackupJobResult& WithMessageCategory(const Aws::String& value) { SetMessageCategory(value); return *this;}
+
+    /**
+     * <p>This is the job count for the specified message category.</p> <p>Example
+     * strings may include <code>AccessDenied</code>, <code>Success</code>, and
+     * <code>InvalidParameters</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p>
+     */
+    inline DescribeBackupJobResult& WithMessageCategory(Aws::String&& value) { SetMessageCategory(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the job count for the specified message category.</p> <p>Example
+     * strings may include <code>AccessDenied</code>, <code>Success</code>, and
+     * <code>InvalidParameters</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p>
+     */
+    inline DescribeBackupJobResult& WithMessageCategory(const char* value) { SetMessageCategory(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -1118,6 +1182,8 @@ namespace Model
     Aws::Map<BackupJobState, long long> m_childJobsInState;
 
     Aws::String m_resourceName;
+
+    Aws::String m_messageCategory;
 
     Aws::String m_requestId;
   };

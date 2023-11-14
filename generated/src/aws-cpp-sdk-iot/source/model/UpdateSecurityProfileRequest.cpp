@@ -28,7 +28,10 @@ UpdateSecurityProfileRequest::UpdateSecurityProfileRequest() :
     m_deleteAdditionalMetricsToRetain(false),
     m_deleteAdditionalMetricsToRetainHasBeenSet(false),
     m_expectedVersion(0),
-    m_expectedVersionHasBeenSet(false)
+    m_expectedVersionHasBeenSet(false),
+    m_metricsExportConfigHasBeenSet(false),
+    m_deleteMetricsExportConfig(false),
+    m_deleteMetricsExportConfigHasBeenSet(false)
 {
 }
 
@@ -90,6 +93,18 @@ Aws::String UpdateSecurityProfileRequest::SerializePayload() const
   if(m_deleteAdditionalMetricsToRetainHasBeenSet)
   {
    payload.WithBool("deleteAdditionalMetricsToRetain", m_deleteAdditionalMetricsToRetain);
+
+  }
+
+  if(m_metricsExportConfigHasBeenSet)
+  {
+   payload.WithObject("metricsExportConfig", m_metricsExportConfig.Jsonize());
+
+  }
+
+  if(m_deleteMetricsExportConfigHasBeenSet)
+  {
+   payload.WithBool("deleteMetricsExportConfig", m_deleteMetricsExportConfig);
 
   }
 
