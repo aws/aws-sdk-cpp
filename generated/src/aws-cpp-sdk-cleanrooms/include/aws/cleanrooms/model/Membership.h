@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanrooms/model/MembershipQueryLogStatus.h>
 #include <aws/cleanrooms/model/MembershipProtectedQueryResultConfiguration.h>
+#include <aws/cleanrooms/model/MembershipPaymentConfiguration.h>
 #include <aws/cleanrooms/model/MemberAbility.h>
 #include <utility>
 
@@ -401,38 +402,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and
-     * `COLLABORATION_DELETED`.</p>
+     * <p>The status of the membership.</p>
      */
     inline const MembershipStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and
-     * `COLLABORATION_DELETED`.</p>
+     * <p>The status of the membership.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and
-     * `COLLABORATION_DELETED`.</p>
+     * <p>The status of the membership.</p>
      */
     inline void SetStatus(const MembershipStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and
-     * `COLLABORATION_DELETED`.</p>
+     * <p>The status of the membership.</p>
      */
     inline void SetStatus(MembershipStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and
-     * `COLLABORATION_DELETED`.</p>
+     * <p>The status of the membership.</p>
      */
     inline Membership& WithStatus(const MembershipStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and
-     * `COLLABORATION_DELETED`.</p>
+     * <p>The status of the membership.</p>
      */
     inline Membership& WithStatus(MembershipStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -480,37 +475,37 @@ namespace Model
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline const MembershipQueryLogStatus& GetQueryLogStatus() const{ return m_queryLogStatus; }
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline bool QueryLogStatusHasBeenSet() const { return m_queryLogStatusHasBeenSet; }
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline void SetQueryLogStatus(const MembershipQueryLogStatus& value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = value; }
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline void SetQueryLogStatus(MembershipQueryLogStatus&& value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = std::move(value); }
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline Membership& WithQueryLogStatus(const MembershipQueryLogStatus& value) { SetQueryLogStatus(value); return *this;}
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline Membership& WithQueryLogStatus(MembershipQueryLogStatus&& value) { SetQueryLogStatus(std::move(value)); return *this;}
 
@@ -550,6 +545,37 @@ namespace Model
      * who can receive results.</p>
      */
     inline Membership& WithDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { SetDefaultResultConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p>
+     */
+    inline const MembershipPaymentConfiguration& GetPaymentConfiguration() const{ return m_paymentConfiguration; }
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p>
+     */
+    inline bool PaymentConfigurationHasBeenSet() const { return m_paymentConfigurationHasBeenSet; }
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p>
+     */
+    inline void SetPaymentConfiguration(const MembershipPaymentConfiguration& value) { m_paymentConfigurationHasBeenSet = true; m_paymentConfiguration = value; }
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p>
+     */
+    inline void SetPaymentConfiguration(MembershipPaymentConfiguration&& value) { m_paymentConfigurationHasBeenSet = true; m_paymentConfiguration = std::move(value); }
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p>
+     */
+    inline Membership& WithPaymentConfiguration(const MembershipPaymentConfiguration& value) { SetPaymentConfiguration(value); return *this;}
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p>
+     */
+    inline Membership& WithPaymentConfiguration(MembershipPaymentConfiguration&& value) { SetPaymentConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -591,6 +617,9 @@ namespace Model
 
     MembershipProtectedQueryResultConfiguration m_defaultResultConfiguration;
     bool m_defaultResultConfigurationHasBeenSet = false;
+
+    MembershipPaymentConfiguration m_paymentConfiguration;
+    bool m_paymentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

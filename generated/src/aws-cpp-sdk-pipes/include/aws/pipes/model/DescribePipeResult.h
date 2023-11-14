@@ -10,6 +10,7 @@
 #include <aws/pipes/model/PipeState.h>
 #include <aws/pipes/model/RequestedPipeStateDescribeResponse.h>
 #include <aws/pipes/model/PipeEnrichmentParameters.h>
+#include <aws/pipes/model/PipeLogConfiguration.h>
 #include <aws/pipes/model/PipeSourceParameters.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/pipes/model/PipeTargetParameters.h>
@@ -288,6 +289,32 @@ namespace Model
 
 
     /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline const PipeLogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline void SetLogConfiguration(const PipeLogConfiguration& value) { m_logConfiguration = value; }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline void SetLogConfiguration(PipeLogConfiguration&& value) { m_logConfiguration = std::move(value); }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline DescribePipeResult& WithLogConfiguration(const PipeLogConfiguration& value) { SetLogConfiguration(value); return *this;}
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline DescribePipeResult& WithLogConfiguration(PipeLogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The name of the pipe.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -555,27 +582,47 @@ namespace Model
 
 
     /**
-     * <p>The parameters required to set up a target for your pipe.</p>
+     * <p>The parameters required to set up a target for your pipe.</p> <p>For more
+     * information about pipe target parameters, including how to use dynamic path
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target
+     * parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline const PipeTargetParameters& GetTargetParameters() const{ return m_targetParameters; }
 
     /**
-     * <p>The parameters required to set up a target for your pipe.</p>
+     * <p>The parameters required to set up a target for your pipe.</p> <p>For more
+     * information about pipe target parameters, including how to use dynamic path
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target
+     * parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetTargetParameters(const PipeTargetParameters& value) { m_targetParameters = value; }
 
     /**
-     * <p>The parameters required to set up a target for your pipe.</p>
+     * <p>The parameters required to set up a target for your pipe.</p> <p>For more
+     * information about pipe target parameters, including how to use dynamic path
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target
+     * parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetTargetParameters(PipeTargetParameters&& value) { m_targetParameters = std::move(value); }
 
     /**
-     * <p>The parameters required to set up a target for your pipe.</p>
+     * <p>The parameters required to set up a target for your pipe.</p> <p>For more
+     * information about pipe target parameters, including how to use dynamic path
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target
+     * parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline DescribePipeResult& WithTargetParameters(const PipeTargetParameters& value) { SetTargetParameters(value); return *this;}
 
     /**
-     * <p>The parameters required to set up a target for your pipe.</p>
+     * <p>The parameters required to set up a target for your pipe.</p> <p>For more
+     * information about pipe target parameters, including how to use dynamic path
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target
+     * parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline DescribePipeResult& WithTargetParameters(PipeTargetParameters&& value) { SetTargetParameters(std::move(value)); return *this;}
 
@@ -618,6 +665,8 @@ namespace Model
     PipeEnrichmentParameters m_enrichmentParameters;
 
     Aws::Utils::DateTime m_lastModifiedTime;
+
+    PipeLogConfiguration m_logConfiguration;
 
     Aws::String m_name;
 

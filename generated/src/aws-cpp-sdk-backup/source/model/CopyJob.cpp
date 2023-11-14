@@ -43,7 +43,8 @@ CopyJob::CopyJob() :
     m_numberOfChildJobs(0),
     m_numberOfChildJobsHasBeenSet(false),
     m_childJobsInStateHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+    m_resourceNameHasBeenSet(false),
+    m_messageCategoryHasBeenSet(false)
 {
 }
 
@@ -72,7 +73,8 @@ CopyJob::CopyJob(JsonView jsonValue) :
     m_numberOfChildJobs(0),
     m_numberOfChildJobsHasBeenSet(false),
     m_childJobsInStateHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+    m_resourceNameHasBeenSet(false),
+    m_messageCategoryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -229,6 +231,13 @@ CopyJob& CopyJob::operator =(JsonView jsonValue)
     m_resourceNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MessageCategory"))
+  {
+    m_messageCategory = jsonValue.GetString("MessageCategory");
+
+    m_messageCategoryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -361,6 +370,12 @@ JsonValue CopyJob::Jsonize() const
   if(m_resourceNameHasBeenSet)
   {
    payload.WithString("ResourceName", m_resourceName);
+
+  }
+
+  if(m_messageCategoryHasBeenSet)
+  {
+   payload.WithString("MessageCategory", m_messageCategory);
 
   }
 

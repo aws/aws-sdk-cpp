@@ -21,7 +21,8 @@ DescribeMapRunResult::DescribeMapRunResult() :
     m_status(MapRunStatus::NOT_SET),
     m_maxConcurrency(0),
     m_toleratedFailurePercentage(0.0),
-    m_toleratedFailureCount(0)
+    m_toleratedFailureCount(0),
+    m_redriveCount(0)
 {
 }
 
@@ -29,7 +30,8 @@ DescribeMapRunResult::DescribeMapRunResult(const Aws::AmazonWebServiceResult<Jso
     m_status(MapRunStatus::NOT_SET),
     m_maxConcurrency(0),
     m_toleratedFailurePercentage(0.0),
-    m_toleratedFailureCount(0)
+    m_toleratedFailureCount(0),
+    m_redriveCount(0)
 {
   *this = result;
 }
@@ -94,6 +96,18 @@ DescribeMapRunResult& DescribeMapRunResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("executionCounts"))
   {
     m_executionCounts = jsonValue.GetObject("executionCounts");
+
+  }
+
+  if(jsonValue.ValueExists("redriveCount"))
+  {
+    m_redriveCount = jsonValue.GetInteger("redriveCount");
+
+  }
+
+  if(jsonValue.ValueExists("redriveDate"))
+  {
+    m_redriveDate = jsonValue.GetDouble("redriveDate");
 
   }
 

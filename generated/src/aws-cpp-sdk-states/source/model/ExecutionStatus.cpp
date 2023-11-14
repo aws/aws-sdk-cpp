@@ -25,6 +25,7 @@ namespace Aws
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
         static const int ABORTED_HASH = HashingUtils::HashString("ABORTED");
+        static const int PENDING_REDRIVE_HASH = HashingUtils::HashString("PENDING_REDRIVE");
 
 
         ExecutionStatus GetExecutionStatusForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == ABORTED_HASH)
           {
             return ExecutionStatus::ABORTED;
+          }
+          else if (hashCode == PENDING_REDRIVE_HASH)
+          {
+            return ExecutionStatus::PENDING_REDRIVE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "TIMED_OUT";
           case ExecutionStatus::ABORTED:
             return "ABORTED";
+          case ExecutionStatus::PENDING_REDRIVE:
+            return "PENDING_REDRIVE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

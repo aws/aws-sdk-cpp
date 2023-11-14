@@ -188,22 +188,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to return at one time.</p>
+     * <p>The maximum number of results to return at one time. The response might
+     * contain fewer results but will never contain more.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return at one time.</p>
+     * <p>The maximum number of results to return at one time. The response might
+     * contain fewer results but will never contain more.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to return at one time.</p>
+     * <p>The maximum number of results to return at one time. The response might
+     * contain fewer results but will never contain more.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return at one time.</p>
+     * <p>The maximum number of results to return at one time. The response might
+     * contain fewer results but will never contain more.</p>
      */
     inline SearchIndexRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

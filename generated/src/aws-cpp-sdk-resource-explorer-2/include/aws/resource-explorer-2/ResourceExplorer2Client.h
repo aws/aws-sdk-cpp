@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resource-explorer-2/ResourceExplorer2ServiceClientModel.h>
+#include <aws/resource-explorer-2/model/GetAccountLevelServiceConfigurationRequest.h>
 #include <aws/resource-explorer-2/model/GetDefaultViewRequest.h>
 #include <aws/resource-explorer-2/model/DisassociateDefaultViewRequest.h>
 #include <aws/resource-explorer-2/model/GetIndexRequest.h>
@@ -361,6 +362,34 @@ namespace ResourceExplorer2
         }
 
         /**
+         * <p>Retrieves the status of your account's Amazon Web Services service access,
+         * and validates the service linked role required to access the multi-account
+         * search feature. Only the management account or a delegated administrator with
+         * service access enabled can invoke this API call. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetAccountLevelServiceConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccountLevelServiceConfigurationOutcome GetAccountLevelServiceConfiguration(const Model::GetAccountLevelServiceConfigurationRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetAccountLevelServiceConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAccountLevelServiceConfigurationRequestT = Model::GetAccountLevelServiceConfigurationRequest>
+        Model::GetAccountLevelServiceConfigurationOutcomeCallable GetAccountLevelServiceConfigurationCallable(const GetAccountLevelServiceConfigurationRequestT& request = {}) const
+        {
+            return SubmitCallable(&ResourceExplorer2Client::GetAccountLevelServiceConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetAccountLevelServiceConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAccountLevelServiceConfigurationRequestT = Model::GetAccountLevelServiceConfigurationRequest>
+        void GetAccountLevelServiceConfigurationAsync(const GetAccountLevelServiceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountLevelServiceConfigurationRequestT& request = {}) const
+        {
+            return SubmitAsync(&ResourceExplorer2Client::GetAccountLevelServiceConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the Amazon Resource Name (ARN) of the view that is the default for
          * the Amazon Web Services Region in which you call this operation. You can then
          * call <a>GetView</a> to retrieve the details of that view.</p><p><h3>See
@@ -465,6 +494,34 @@ namespace ResourceExplorer2
         void ListIndexesAsync(const ListIndexesRequestT& request, const ListIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ResourceExplorer2Client::ListIndexes, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of a member's indexes in all Amazon Web Services Regions
+         * that are currently collecting resource information for Amazon Web Services
+         * Resource Explorer. Only the management account or a delegated administrator with
+         * service access enabled can invoke this API call. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListIndexesForMembers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIndexesForMembersOutcome ListIndexesForMembers(const Model::ListIndexesForMembersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListIndexesForMembers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListIndexesForMembersRequestT = Model::ListIndexesForMembersRequest>
+        Model::ListIndexesForMembersOutcomeCallable ListIndexesForMembersCallable(const ListIndexesForMembersRequestT& request) const
+        {
+            return SubmitCallable(&ResourceExplorer2Client::ListIndexesForMembers, request);
+        }
+
+        /**
+         * An Async wrapper for ListIndexesForMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListIndexesForMembersRequestT = Model::ListIndexesForMembersRequest>
+        void ListIndexesForMembersAsync(const ListIndexesForMembersRequestT& request, const ListIndexesForMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResourceExplorer2Client::ListIndexesForMembers, request, handler, context);
         }
 
         /**

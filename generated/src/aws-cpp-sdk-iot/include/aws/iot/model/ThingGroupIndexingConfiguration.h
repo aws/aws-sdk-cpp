@@ -75,6 +75,8 @@ namespace Model
      * Fleet Indexing service. This is an optional field. For more information, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
      * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+     *  <p>You can't modify managed fields by updating fleet indexing
+     * configuration.</p> 
      */
     inline const Aws::Vector<Field>& GetManagedFields() const{ return m_managedFields; }
 
@@ -83,6 +85,8 @@ namespace Model
      * Fleet Indexing service. This is an optional field. For more information, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
      * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+     *  <p>You can't modify managed fields by updating fleet indexing
+     * configuration.</p> 
      */
     inline bool ManagedFieldsHasBeenSet() const { return m_managedFieldsHasBeenSet; }
 
@@ -91,6 +95,8 @@ namespace Model
      * Fleet Indexing service. This is an optional field. For more information, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
      * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+     *  <p>You can't modify managed fields by updating fleet indexing
+     * configuration.</p> 
      */
     inline void SetManagedFields(const Aws::Vector<Field>& value) { m_managedFieldsHasBeenSet = true; m_managedFields = value; }
 
@@ -99,6 +105,8 @@ namespace Model
      * Fleet Indexing service. This is an optional field. For more information, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
      * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+     *  <p>You can't modify managed fields by updating fleet indexing
+     * configuration.</p> 
      */
     inline void SetManagedFields(Aws::Vector<Field>&& value) { m_managedFieldsHasBeenSet = true; m_managedFields = std::move(value); }
 
@@ -107,6 +115,8 @@ namespace Model
      * Fleet Indexing service. This is an optional field. For more information, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
      * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+     *  <p>You can't modify managed fields by updating fleet indexing
+     * configuration.</p> 
      */
     inline ThingGroupIndexingConfiguration& WithManagedFields(const Aws::Vector<Field>& value) { SetManagedFields(value); return *this;}
 
@@ -115,6 +125,8 @@ namespace Model
      * Fleet Indexing service. This is an optional field. For more information, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
      * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+     *  <p>You can't modify managed fields by updating fleet indexing
+     * configuration.</p> 
      */
     inline ThingGroupIndexingConfiguration& WithManagedFields(Aws::Vector<Field>&& value) { SetManagedFields(std::move(value)); return *this;}
 
@@ -123,6 +135,8 @@ namespace Model
      * Fleet Indexing service. This is an optional field. For more information, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
      * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+     *  <p>You can't modify managed fields by updating fleet indexing
+     * configuration.</p> 
      */
     inline ThingGroupIndexingConfiguration& AddManagedFields(const Field& value) { m_managedFieldsHasBeenSet = true; m_managedFields.push_back(value); return *this; }
 
@@ -131,6 +145,8 @@ namespace Model
      * Fleet Indexing service. This is an optional field. For more information, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
      * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+     *  <p>You can't modify managed fields by updating fleet indexing
+     * configuration.</p> 
      */
     inline ThingGroupIndexingConfiguration& AddManagedFields(Field&& value) { m_managedFieldsHasBeenSet = true; m_managedFields.push_back(std::move(value)); return *this; }
 

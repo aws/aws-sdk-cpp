@@ -39,32 +39,104 @@ namespace Model
 
 
     /**
-     * <p>Specify whether to wait for the state machine to finish or not.</p>
+     * <p>Specify whether to invoke the Step Functions state machine synchronously or
+     * asynchronously.</p> <ul> <li> <p> <code>REQUEST_RESPONSE</code> (default) -
+     * Invoke synchronously. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartSyncExecution.html">StartSyncExecution</a>
+     * in the <i>Step Functions API Reference</i>.</p>  <p>
+     * <code>REQUEST_RESPONSE</code> is not supported for <code>STANDARD</code> state
+     * machine workflows.</p>  </li> <li> <p> <code>FIRE_AND_FORGET</code> -
+     * Invoke asynchronously. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartExecution.html">StartExecution</a>
+     * in the <i>Step Functions API Reference</i>.</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation
+     * types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline const PipeTargetInvocationType& GetInvocationType() const{ return m_invocationType; }
 
     /**
-     * <p>Specify whether to wait for the state machine to finish or not.</p>
+     * <p>Specify whether to invoke the Step Functions state machine synchronously or
+     * asynchronously.</p> <ul> <li> <p> <code>REQUEST_RESPONSE</code> (default) -
+     * Invoke synchronously. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartSyncExecution.html">StartSyncExecution</a>
+     * in the <i>Step Functions API Reference</i>.</p>  <p>
+     * <code>REQUEST_RESPONSE</code> is not supported for <code>STANDARD</code> state
+     * machine workflows.</p>  </li> <li> <p> <code>FIRE_AND_FORGET</code> -
+     * Invoke asynchronously. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartExecution.html">StartExecution</a>
+     * in the <i>Step Functions API Reference</i>.</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation
+     * types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline bool InvocationTypeHasBeenSet() const { return m_invocationTypeHasBeenSet; }
 
     /**
-     * <p>Specify whether to wait for the state machine to finish or not.</p>
+     * <p>Specify whether to invoke the Step Functions state machine synchronously or
+     * asynchronously.</p> <ul> <li> <p> <code>REQUEST_RESPONSE</code> (default) -
+     * Invoke synchronously. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartSyncExecution.html">StartSyncExecution</a>
+     * in the <i>Step Functions API Reference</i>.</p>  <p>
+     * <code>REQUEST_RESPONSE</code> is not supported for <code>STANDARD</code> state
+     * machine workflows.</p>  </li> <li> <p> <code>FIRE_AND_FORGET</code> -
+     * Invoke asynchronously. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartExecution.html">StartExecution</a>
+     * in the <i>Step Functions API Reference</i>.</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation
+     * types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetInvocationType(const PipeTargetInvocationType& value) { m_invocationTypeHasBeenSet = true; m_invocationType = value; }
 
     /**
-     * <p>Specify whether to wait for the state machine to finish or not.</p>
+     * <p>Specify whether to invoke the Step Functions state machine synchronously or
+     * asynchronously.</p> <ul> <li> <p> <code>REQUEST_RESPONSE</code> (default) -
+     * Invoke synchronously. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartSyncExecution.html">StartSyncExecution</a>
+     * in the <i>Step Functions API Reference</i>.</p>  <p>
+     * <code>REQUEST_RESPONSE</code> is not supported for <code>STANDARD</code> state
+     * machine workflows.</p>  </li> <li> <p> <code>FIRE_AND_FORGET</code> -
+     * Invoke asynchronously. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartExecution.html">StartExecution</a>
+     * in the <i>Step Functions API Reference</i>.</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation
+     * types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetInvocationType(PipeTargetInvocationType&& value) { m_invocationTypeHasBeenSet = true; m_invocationType = std::move(value); }
 
     /**
-     * <p>Specify whether to wait for the state machine to finish or not.</p>
+     * <p>Specify whether to invoke the Step Functions state machine synchronously or
+     * asynchronously.</p> <ul> <li> <p> <code>REQUEST_RESPONSE</code> (default) -
+     * Invoke synchronously. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartSyncExecution.html">StartSyncExecution</a>
+     * in the <i>Step Functions API Reference</i>.</p>  <p>
+     * <code>REQUEST_RESPONSE</code> is not supported for <code>STANDARD</code> state
+     * machine workflows.</p>  </li> <li> <p> <code>FIRE_AND_FORGET</code> -
+     * Invoke asynchronously. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartExecution.html">StartExecution</a>
+     * in the <i>Step Functions API Reference</i>.</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation
+     * types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline PipeTargetStateMachineParameters& WithInvocationType(const PipeTargetInvocationType& value) { SetInvocationType(value); return *this;}
 
     /**
-     * <p>Specify whether to wait for the state machine to finish or not.</p>
+     * <p>Specify whether to invoke the Step Functions state machine synchronously or
+     * asynchronously.</p> <ul> <li> <p> <code>REQUEST_RESPONSE</code> (default) -
+     * Invoke synchronously. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartSyncExecution.html">StartSyncExecution</a>
+     * in the <i>Step Functions API Reference</i>.</p>  <p>
+     * <code>REQUEST_RESPONSE</code> is not supported for <code>STANDARD</code> state
+     * machine workflows.</p>  </li> <li> <p> <code>FIRE_AND_FORGET</code> -
+     * Invoke asynchronously. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartExecution.html">StartExecution</a>
+     * in the <i>Step Functions API Reference</i>.</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation
+     * types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline PipeTargetStateMachineParameters& WithInvocationType(PipeTargetInvocationType&& value) { SetInvocationType(std::move(value)); return *this;}
 

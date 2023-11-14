@@ -239,6 +239,31 @@ namespace Model
      */
     inline Behavior& WithSuppressAlerts(bool value) { SetSuppressAlerts(value); return *this;}
 
+
+    /**
+     * <p>Value indicates exporting metrics related to the behavior when it is
+     * true.</p>
+     */
+    inline bool GetExportMetric() const{ return m_exportMetric; }
+
+    /**
+     * <p>Value indicates exporting metrics related to the behavior when it is
+     * true.</p>
+     */
+    inline bool ExportMetricHasBeenSet() const { return m_exportMetricHasBeenSet; }
+
+    /**
+     * <p>Value indicates exporting metrics related to the behavior when it is
+     * true.</p>
+     */
+    inline void SetExportMetric(bool value) { m_exportMetricHasBeenSet = true; m_exportMetric = value; }
+
+    /**
+     * <p>Value indicates exporting metrics related to the behavior when it is
+     * true.</p>
+     */
+    inline Behavior& WithExportMetric(bool value) { SetExportMetric(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -255,6 +280,9 @@ namespace Model
 
     bool m_suppressAlerts;
     bool m_suppressAlertsHasBeenSet = false;
+
+    bool m_exportMetric;
+    bool m_exportMetricHasBeenSet = false;
   };
 
 } // namespace Model
