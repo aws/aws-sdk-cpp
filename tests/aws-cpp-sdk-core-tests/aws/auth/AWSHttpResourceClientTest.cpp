@@ -813,6 +813,40 @@ namespace
         ASSERT_EQ("http://169.254.169.254/latest/meta-data/iam/security-credentials", mockRequests[3].GetURIString());
         ASSERT_EQ("", cred);
     }
+
+    TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientSkipsV1CallForConfiguration) {
+        clientConfig.disableImdsV1 = true;
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
+
+        // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
+        std::shared_ptr<HttpRequest> tokenRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/api/token"),
+                                                                      HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, tokenRequest);
+        tokenResponse->SetResponseCode(HttpResponseCode::NOT_FOUND);
+        tokenResponse->GetResponseBody() << "error information"; // empty body will be treated as NETWORK_ERROR, hence retryable error.
+        mockHttpClient->AddResponseToReturn(tokenResponse);
+
+        std::shared_ptr<HttpRequest> profileRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials"),
+                                                                       HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, profileRequest);
+        std::shared_ptr<StandardHttpResponse> profileResponseRetry = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, profileRequest);
+        profileResponseRetry->SetResponseCode(HttpResponseCode::SERVICE_UNAVAILABLE);
+        profileResponseRetry->GetResponseBody() << "Throttling";
+        mockHttpClient->AddResponseToReturn(profileResponseRetry);
+        profileResponse->SetResponseCode(HttpResponseCode::OK);
+        profileResponse->GetResponseBody() << "credentials";
+        mockHttpClient->AddResponseToReturn(profileResponse);
+
+        auto cred = ec2MetadataClient->GetDefaultCredentialsSecurely();
+        auto mockRequests = mockHttpClient->GetAllRequestsMade();
+        ASSERT_EQ(6u, mockRequests.size());
+        ASSERT_EQ("http://169.254.169.254/latest/api/token", mockRequests[0].GetURIString());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_PUT, mockRequests[0].GetMethod());
+        ASSERT_EQ("21600", mockRequests[0].GetHeaderValue(EC2_IMDS_TOKEN_TTL_HEADER));
+        for (size_t i = 1; i < mockRequests.size(); ++i) {
+            ASSERT_TRUE(mockRequests[i].HasHeader(EC2_IMDS_TOKEN_HEADER));
+        }
+    }
 #endif
 
     TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithNullResponse)
