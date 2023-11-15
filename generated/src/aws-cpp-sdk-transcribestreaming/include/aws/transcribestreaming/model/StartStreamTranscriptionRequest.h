@@ -1214,9 +1214,10 @@ namespace Model
      * channel, and you've enabled channel identification, automatic language
      * identification identifies the dominant language on each audio channel.</p>
      * <p>Note that you must include either <code>LanguageCode</code> or
-     * <code>IdentifyLanguage</code> in your request. If you include both parameters,
-     * your request fails.</p> <p>Streaming language identification can't be combined
-     * with custom language models or redaction.</p>
+     * <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> in your
+     * request. If you include more than one of these parameters, your transcription
+     * job fails.</p> <p>Streaming language identification can't be combined with
+     * custom language models or redaction.</p>
      */
     inline bool GetIdentifyLanguage() const{ return m_identifyLanguage; }
 
@@ -1232,9 +1233,10 @@ namespace Model
      * channel, and you've enabled channel identification, automatic language
      * identification identifies the dominant language on each audio channel.</p>
      * <p>Note that you must include either <code>LanguageCode</code> or
-     * <code>IdentifyLanguage</code> in your request. If you include both parameters,
-     * your request fails.</p> <p>Streaming language identification can't be combined
-     * with custom language models or redaction.</p>
+     * <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> in your
+     * request. If you include more than one of these parameters, your transcription
+     * job fails.</p> <p>Streaming language identification can't be combined with
+     * custom language models or redaction.</p>
      */
     inline bool IdentifyLanguageHasBeenSet() const { return m_identifyLanguageHasBeenSet; }
 
@@ -1250,9 +1252,10 @@ namespace Model
      * channel, and you've enabled channel identification, automatic language
      * identification identifies the dominant language on each audio channel.</p>
      * <p>Note that you must include either <code>LanguageCode</code> or
-     * <code>IdentifyLanguage</code> in your request. If you include both parameters,
-     * your request fails.</p> <p>Streaming language identification can't be combined
-     * with custom language models or redaction.</p>
+     * <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> in your
+     * request. If you include more than one of these parameters, your transcription
+     * job fails.</p> <p>Streaming language identification can't be combined with
+     * custom language models or redaction.</p>
      */
     inline void SetIdentifyLanguage(bool value) { m_identifyLanguageHasBeenSet = true; m_identifyLanguage = value; }
 
@@ -1268,9 +1271,10 @@ namespace Model
      * channel, and you've enabled channel identification, automatic language
      * identification identifies the dominant language on each audio channel.</p>
      * <p>Note that you must include either <code>LanguageCode</code> or
-     * <code>IdentifyLanguage</code> in your request. If you include both parameters,
-     * your request fails.</p> <p>Streaming language identification can't be combined
-     * with custom language models or redaction.</p>
+     * <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> in your
+     * request. If you include more than one of these parameters, your transcription
+     * job fails.</p> <p>Streaming language identification can't be combined with
+     * custom language models or redaction.</p>
      */
     inline StartStreamTranscriptionRequest& WithIdentifyLanguage(bool value) { SetIdentifyLanguage(value); return *this;}
 
@@ -1443,6 +1447,79 @@ namespace Model
      * in your request.</p>
      */
     inline StartStreamTranscriptionRequest& WithPreferredLanguage(LanguageCode&& value) { SetPreferredLanguage(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Enables automatic multi-language identification in your transcription job
+     * request. Use this parameter if your stream contains more than one language. If
+     * your stream contains only one language, use IdentifyLanguage instead.</p> <p>If
+     * you include <code>IdentifyMultipleLanguages</code>, you can optionally include a
+     * list of language codes, using <code>LanguageOptions</code>, that you think may
+     * be present in your stream. Including <code>LanguageOptions</code> restricts
+     * <code>IdentifyMultipleLanguages</code> to only the language options that you
+     * specify, which can improve transcription accuracy.</p> <p>If you want to apply a
+     * custom vocabulary or a custom vocabulary filter to your automatic multiple
+     * language identification request, include <code>VocabularyNames</code> or
+     * <code>VocabularyFilterNames</code>.</p> <p>Note that you must include one of
+     * <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
+     * <code>IdentifyMultipleLanguages</code> in your request. If you include more than
+     * one of these parameters, your transcription job fails.</p>
+     */
+    inline bool GetIdentifyMultipleLanguages() const{ return m_identifyMultipleLanguages; }
+
+    /**
+     * <p>Enables automatic multi-language identification in your transcription job
+     * request. Use this parameter if your stream contains more than one language. If
+     * your stream contains only one language, use IdentifyLanguage instead.</p> <p>If
+     * you include <code>IdentifyMultipleLanguages</code>, you can optionally include a
+     * list of language codes, using <code>LanguageOptions</code>, that you think may
+     * be present in your stream. Including <code>LanguageOptions</code> restricts
+     * <code>IdentifyMultipleLanguages</code> to only the language options that you
+     * specify, which can improve transcription accuracy.</p> <p>If you want to apply a
+     * custom vocabulary or a custom vocabulary filter to your automatic multiple
+     * language identification request, include <code>VocabularyNames</code> or
+     * <code>VocabularyFilterNames</code>.</p> <p>Note that you must include one of
+     * <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
+     * <code>IdentifyMultipleLanguages</code> in your request. If you include more than
+     * one of these parameters, your transcription job fails.</p>
+     */
+    inline bool IdentifyMultipleLanguagesHasBeenSet() const { return m_identifyMultipleLanguagesHasBeenSet; }
+
+    /**
+     * <p>Enables automatic multi-language identification in your transcription job
+     * request. Use this parameter if your stream contains more than one language. If
+     * your stream contains only one language, use IdentifyLanguage instead.</p> <p>If
+     * you include <code>IdentifyMultipleLanguages</code>, you can optionally include a
+     * list of language codes, using <code>LanguageOptions</code>, that you think may
+     * be present in your stream. Including <code>LanguageOptions</code> restricts
+     * <code>IdentifyMultipleLanguages</code> to only the language options that you
+     * specify, which can improve transcription accuracy.</p> <p>If you want to apply a
+     * custom vocabulary or a custom vocabulary filter to your automatic multiple
+     * language identification request, include <code>VocabularyNames</code> or
+     * <code>VocabularyFilterNames</code>.</p> <p>Note that you must include one of
+     * <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
+     * <code>IdentifyMultipleLanguages</code> in your request. If you include more than
+     * one of these parameters, your transcription job fails.</p>
+     */
+    inline void SetIdentifyMultipleLanguages(bool value) { m_identifyMultipleLanguagesHasBeenSet = true; m_identifyMultipleLanguages = value; }
+
+    /**
+     * <p>Enables automatic multi-language identification in your transcription job
+     * request. Use this parameter if your stream contains more than one language. If
+     * your stream contains only one language, use IdentifyLanguage instead.</p> <p>If
+     * you include <code>IdentifyMultipleLanguages</code>, you can optionally include a
+     * list of language codes, using <code>LanguageOptions</code>, that you think may
+     * be present in your stream. Including <code>LanguageOptions</code> restricts
+     * <code>IdentifyMultipleLanguages</code> to only the language options that you
+     * specify, which can improve transcription accuracy.</p> <p>If you want to apply a
+     * custom vocabulary or a custom vocabulary filter to your automatic multiple
+     * language identification request, include <code>VocabularyNames</code> or
+     * <code>VocabularyFilterNames</code>.</p> <p>Note that you must include one of
+     * <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
+     * <code>IdentifyMultipleLanguages</code> in your request. If you include more than
+     * one of these parameters, your transcription job fails.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithIdentifyMultipleLanguages(bool value) { SetIdentifyMultipleLanguages(value); return *this;}
 
 
     /**
@@ -1754,6 +1831,9 @@ namespace Model
 
     LanguageCode m_preferredLanguage;
     bool m_preferredLanguageHasBeenSet = false;
+
+    bool m_identifyMultipleLanguages;
+    bool m_identifyMultipleLanguagesHasBeenSet = false;
 
     Aws::String m_vocabularyNames;
     bool m_vocabularyNamesHasBeenSet = false;

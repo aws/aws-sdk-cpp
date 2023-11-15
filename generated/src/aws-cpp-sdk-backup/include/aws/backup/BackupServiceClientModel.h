@@ -48,12 +48,14 @@
 #include <aws/backup/model/GetLegalHoldResult.h>
 #include <aws/backup/model/GetRecoveryPointRestoreMetadataResult.h>
 #include <aws/backup/model/GetSupportedResourceTypesResult.h>
+#include <aws/backup/model/ListBackupJobSummariesResult.h>
 #include <aws/backup/model/ListBackupJobsResult.h>
 #include <aws/backup/model/ListBackupPlanTemplatesResult.h>
 #include <aws/backup/model/ListBackupPlanVersionsResult.h>
 #include <aws/backup/model/ListBackupPlansResult.h>
 #include <aws/backup/model/ListBackupSelectionsResult.h>
 #include <aws/backup/model/ListBackupVaultsResult.h>
+#include <aws/backup/model/ListCopyJobSummariesResult.h>
 #include <aws/backup/model/ListCopyJobsResult.h>
 #include <aws/backup/model/ListFrameworksResult.h>
 #include <aws/backup/model/ListLegalHoldsResult.h>
@@ -64,6 +66,7 @@
 #include <aws/backup/model/ListRecoveryPointsByResourceResult.h>
 #include <aws/backup/model/ListReportJobsResult.h>
 #include <aws/backup/model/ListReportPlansResult.h>
+#include <aws/backup/model/ListRestoreJobSummariesResult.h>
 #include <aws/backup/model/ListRestoreJobsResult.h>
 #include <aws/backup/model/ListTagsResult.h>
 #include <aws/backup/model/StartBackupJobResult.h>
@@ -155,12 +158,14 @@ namespace Aws
       class GetLegalHoldRequest;
       class GetRecoveryPointRestoreMetadataRequest;
       class GetSupportedResourceTypesRequest;
+      class ListBackupJobSummariesRequest;
       class ListBackupJobsRequest;
       class ListBackupPlanTemplatesRequest;
       class ListBackupPlanVersionsRequest;
       class ListBackupPlansRequest;
       class ListBackupSelectionsRequest;
       class ListBackupVaultsRequest;
+      class ListCopyJobSummariesRequest;
       class ListCopyJobsRequest;
       class ListFrameworksRequest;
       class ListLegalHoldsRequest;
@@ -171,6 +176,7 @@ namespace Aws
       class ListRecoveryPointsByResourceRequest;
       class ListReportJobsRequest;
       class ListReportPlansRequest;
+      class ListRestoreJobSummariesRequest;
       class ListRestoreJobsRequest;
       class ListTagsRequest;
       class PutBackupVaultAccessPolicyRequest;
@@ -232,12 +238,14 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetLegalHoldResult, BackupError> GetLegalHoldOutcome;
       typedef Aws::Utils::Outcome<GetRecoveryPointRestoreMetadataResult, BackupError> GetRecoveryPointRestoreMetadataOutcome;
       typedef Aws::Utils::Outcome<GetSupportedResourceTypesResult, BackupError> GetSupportedResourceTypesOutcome;
+      typedef Aws::Utils::Outcome<ListBackupJobSummariesResult, BackupError> ListBackupJobSummariesOutcome;
       typedef Aws::Utils::Outcome<ListBackupJobsResult, BackupError> ListBackupJobsOutcome;
       typedef Aws::Utils::Outcome<ListBackupPlanTemplatesResult, BackupError> ListBackupPlanTemplatesOutcome;
       typedef Aws::Utils::Outcome<ListBackupPlanVersionsResult, BackupError> ListBackupPlanVersionsOutcome;
       typedef Aws::Utils::Outcome<ListBackupPlansResult, BackupError> ListBackupPlansOutcome;
       typedef Aws::Utils::Outcome<ListBackupSelectionsResult, BackupError> ListBackupSelectionsOutcome;
       typedef Aws::Utils::Outcome<ListBackupVaultsResult, BackupError> ListBackupVaultsOutcome;
+      typedef Aws::Utils::Outcome<ListCopyJobSummariesResult, BackupError> ListCopyJobSummariesOutcome;
       typedef Aws::Utils::Outcome<ListCopyJobsResult, BackupError> ListCopyJobsOutcome;
       typedef Aws::Utils::Outcome<ListFrameworksResult, BackupError> ListFrameworksOutcome;
       typedef Aws::Utils::Outcome<ListLegalHoldsResult, BackupError> ListLegalHoldsOutcome;
@@ -248,6 +256,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListRecoveryPointsByResourceResult, BackupError> ListRecoveryPointsByResourceOutcome;
       typedef Aws::Utils::Outcome<ListReportJobsResult, BackupError> ListReportJobsOutcome;
       typedef Aws::Utils::Outcome<ListReportPlansResult, BackupError> ListReportPlansOutcome;
+      typedef Aws::Utils::Outcome<ListRestoreJobSummariesResult, BackupError> ListRestoreJobSummariesOutcome;
       typedef Aws::Utils::Outcome<ListRestoreJobsResult, BackupError> ListRestoreJobsOutcome;
       typedef Aws::Utils::Outcome<ListTagsResult, BackupError> ListTagsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> PutBackupVaultAccessPolicyOutcome;
@@ -309,12 +318,14 @@ namespace Aws
       typedef std::future<GetLegalHoldOutcome> GetLegalHoldOutcomeCallable;
       typedef std::future<GetRecoveryPointRestoreMetadataOutcome> GetRecoveryPointRestoreMetadataOutcomeCallable;
       typedef std::future<GetSupportedResourceTypesOutcome> GetSupportedResourceTypesOutcomeCallable;
+      typedef std::future<ListBackupJobSummariesOutcome> ListBackupJobSummariesOutcomeCallable;
       typedef std::future<ListBackupJobsOutcome> ListBackupJobsOutcomeCallable;
       typedef std::future<ListBackupPlanTemplatesOutcome> ListBackupPlanTemplatesOutcomeCallable;
       typedef std::future<ListBackupPlanVersionsOutcome> ListBackupPlanVersionsOutcomeCallable;
       typedef std::future<ListBackupPlansOutcome> ListBackupPlansOutcomeCallable;
       typedef std::future<ListBackupSelectionsOutcome> ListBackupSelectionsOutcomeCallable;
       typedef std::future<ListBackupVaultsOutcome> ListBackupVaultsOutcomeCallable;
+      typedef std::future<ListCopyJobSummariesOutcome> ListCopyJobSummariesOutcomeCallable;
       typedef std::future<ListCopyJobsOutcome> ListCopyJobsOutcomeCallable;
       typedef std::future<ListFrameworksOutcome> ListFrameworksOutcomeCallable;
       typedef std::future<ListLegalHoldsOutcome> ListLegalHoldsOutcomeCallable;
@@ -325,6 +336,7 @@ namespace Aws
       typedef std::future<ListRecoveryPointsByResourceOutcome> ListRecoveryPointsByResourceOutcomeCallable;
       typedef std::future<ListReportJobsOutcome> ListReportJobsOutcomeCallable;
       typedef std::future<ListReportPlansOutcome> ListReportPlansOutcomeCallable;
+      typedef std::future<ListRestoreJobSummariesOutcome> ListRestoreJobSummariesOutcomeCallable;
       typedef std::future<ListRestoreJobsOutcome> ListRestoreJobsOutcomeCallable;
       typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
       typedef std::future<PutBackupVaultAccessPolicyOutcome> PutBackupVaultAccessPolicyOutcomeCallable;
@@ -389,12 +401,14 @@ namespace Aws
     typedef std::function<void(const BackupClient*, const Model::GetLegalHoldRequest&, const Model::GetLegalHoldOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLegalHoldResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::GetRecoveryPointRestoreMetadataRequest&, const Model::GetRecoveryPointRestoreMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecoveryPointRestoreMetadataResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::GetSupportedResourceTypesRequest&, const Model::GetSupportedResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSupportedResourceTypesResponseReceivedHandler;
+    typedef std::function<void(const BackupClient*, const Model::ListBackupJobSummariesRequest&, const Model::ListBackupJobSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupJobSummariesResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListBackupJobsRequest&, const Model::ListBackupJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupJobsResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListBackupPlanTemplatesRequest&, const Model::ListBackupPlanTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupPlanTemplatesResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListBackupPlanVersionsRequest&, const Model::ListBackupPlanVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupPlanVersionsResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListBackupPlansRequest&, const Model::ListBackupPlansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupPlansResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListBackupSelectionsRequest&, const Model::ListBackupSelectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupSelectionsResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListBackupVaultsRequest&, const Model::ListBackupVaultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupVaultsResponseReceivedHandler;
+    typedef std::function<void(const BackupClient*, const Model::ListCopyJobSummariesRequest&, const Model::ListCopyJobSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCopyJobSummariesResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListCopyJobsRequest&, const Model::ListCopyJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCopyJobsResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListFrameworksRequest&, const Model::ListFrameworksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFrameworksResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListLegalHoldsRequest&, const Model::ListLegalHoldsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLegalHoldsResponseReceivedHandler;
@@ -405,6 +419,7 @@ namespace Aws
     typedef std::function<void(const BackupClient*, const Model::ListRecoveryPointsByResourceRequest&, const Model::ListRecoveryPointsByResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecoveryPointsByResourceResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListReportJobsRequest&, const Model::ListReportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReportJobsResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListReportPlansRequest&, const Model::ListReportPlansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReportPlansResponseReceivedHandler;
+    typedef std::function<void(const BackupClient*, const Model::ListRestoreJobSummariesRequest&, const Model::ListRestoreJobSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRestoreJobSummariesResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListRestoreJobsRequest&, const Model::ListRestoreJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRestoreJobsResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::PutBackupVaultAccessPolicyRequest&, const Model::PutBackupVaultAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBackupVaultAccessPolicyResponseReceivedHandler;

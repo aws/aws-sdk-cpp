@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>These are custom parameters to be used when the target is a Amazon Redshift
-   * cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p><p><h3>See
-   * Also:</h3>   <a
+   * cluster to invoke the Amazon Redshift Data API
+   * BatchExecuteStatement.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/PipeTargetRedshiftDataParameters">AWS
    * API Reference</a></p>
    */
@@ -140,49 +140,49 @@ namespace Model
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. Required
-     * when authenticating using SageMaker.</p>
+     * when authenticating using Secrets Manager.</p>
      */
     inline const Aws::String& GetSecretManagerArn() const{ return m_secretManagerArn; }
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. Required
-     * when authenticating using SageMaker.</p>
+     * when authenticating using Secrets Manager.</p>
      */
     inline bool SecretManagerArnHasBeenSet() const { return m_secretManagerArnHasBeenSet; }
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. Required
-     * when authenticating using SageMaker.</p>
+     * when authenticating using Secrets Manager.</p>
      */
     inline void SetSecretManagerArn(const Aws::String& value) { m_secretManagerArnHasBeenSet = true; m_secretManagerArn = value; }
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. Required
-     * when authenticating using SageMaker.</p>
+     * when authenticating using Secrets Manager.</p>
      */
     inline void SetSecretManagerArn(Aws::String&& value) { m_secretManagerArnHasBeenSet = true; m_secretManagerArn = std::move(value); }
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. Required
-     * when authenticating using SageMaker.</p>
+     * when authenticating using Secrets Manager.</p>
      */
     inline void SetSecretManagerArn(const char* value) { m_secretManagerArnHasBeenSet = true; m_secretManagerArn.assign(value); }
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. Required
-     * when authenticating using SageMaker.</p>
+     * when authenticating using Secrets Manager.</p>
      */
     inline PipeTargetRedshiftDataParameters& WithSecretManagerArn(const Aws::String& value) { SetSecretManagerArn(value); return *this;}
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. Required
-     * when authenticating using SageMaker.</p>
+     * when authenticating using Secrets Manager.</p>
      */
     inline PipeTargetRedshiftDataParameters& WithSecretManagerArn(Aws::String&& value) { SetSecretManagerArn(std::move(value)); return *this;}
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. Required
-     * when authenticating using SageMaker.</p>
+     * when authenticating using Secrets Manager.</p>
      */
     inline PipeTargetRedshiftDataParameters& WithSecretManagerArn(const char* value) { SetSecretManagerArn(value); return *this;}
 

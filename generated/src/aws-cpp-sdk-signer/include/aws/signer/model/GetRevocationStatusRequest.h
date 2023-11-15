@@ -198,7 +198,15 @@ namespace Model
      * <p>A list of composite signed hashes that identify certificates.</p> <p>A
      * certificate identifier consists of a subject certificate TBS hash (signed by the
      * parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA).
-     * Root certificates are defined as their own CA.</p>
+     * Root certificates are defined as their own CA.</p> <p>The following example
+     * shows how to calculate a hash for this parameter using OpenSSL commands: </p>
+     * <p> <code>openssl asn1parse -in childCert.pem -strparse 4 -out
+     * childCert.tbs</code> </p> <p> <code>openssl sha384 &lt; childCert.tbs -binary
+     * &gt; childCertTbsHash</code> </p> <p> <code>openssl asn1parse -in parentCert.pem
+     * -strparse 4 -out parentCert.tbs</code> </p> <p> <code>openssl sha384 &lt;
+     * parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt;
+     * certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code>
+     * </p> <p> <code>cat certificateHash.hex | tr -d '\n'</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetCertificateHashes() const{ return m_certificateHashes; }
 
@@ -206,7 +214,15 @@ namespace Model
      * <p>A list of composite signed hashes that identify certificates.</p> <p>A
      * certificate identifier consists of a subject certificate TBS hash (signed by the
      * parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA).
-     * Root certificates are defined as their own CA.</p>
+     * Root certificates are defined as their own CA.</p> <p>The following example
+     * shows how to calculate a hash for this parameter using OpenSSL commands: </p>
+     * <p> <code>openssl asn1parse -in childCert.pem -strparse 4 -out
+     * childCert.tbs</code> </p> <p> <code>openssl sha384 &lt; childCert.tbs -binary
+     * &gt; childCertTbsHash</code> </p> <p> <code>openssl asn1parse -in parentCert.pem
+     * -strparse 4 -out parentCert.tbs</code> </p> <p> <code>openssl sha384 &lt;
+     * parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt;
+     * certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code>
+     * </p> <p> <code>cat certificateHash.hex | tr -d '\n'</code> </p>
      */
     inline bool CertificateHashesHasBeenSet() const { return m_certificateHashesHasBeenSet; }
 
@@ -214,7 +230,15 @@ namespace Model
      * <p>A list of composite signed hashes that identify certificates.</p> <p>A
      * certificate identifier consists of a subject certificate TBS hash (signed by the
      * parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA).
-     * Root certificates are defined as their own CA.</p>
+     * Root certificates are defined as their own CA.</p> <p>The following example
+     * shows how to calculate a hash for this parameter using OpenSSL commands: </p>
+     * <p> <code>openssl asn1parse -in childCert.pem -strparse 4 -out
+     * childCert.tbs</code> </p> <p> <code>openssl sha384 &lt; childCert.tbs -binary
+     * &gt; childCertTbsHash</code> </p> <p> <code>openssl asn1parse -in parentCert.pem
+     * -strparse 4 -out parentCert.tbs</code> </p> <p> <code>openssl sha384 &lt;
+     * parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt;
+     * certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code>
+     * </p> <p> <code>cat certificateHash.hex | tr -d '\n'</code> </p>
      */
     inline void SetCertificateHashes(const Aws::Vector<Aws::String>& value) { m_certificateHashesHasBeenSet = true; m_certificateHashes = value; }
 
@@ -222,7 +246,15 @@ namespace Model
      * <p>A list of composite signed hashes that identify certificates.</p> <p>A
      * certificate identifier consists of a subject certificate TBS hash (signed by the
      * parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA).
-     * Root certificates are defined as their own CA.</p>
+     * Root certificates are defined as their own CA.</p> <p>The following example
+     * shows how to calculate a hash for this parameter using OpenSSL commands: </p>
+     * <p> <code>openssl asn1parse -in childCert.pem -strparse 4 -out
+     * childCert.tbs</code> </p> <p> <code>openssl sha384 &lt; childCert.tbs -binary
+     * &gt; childCertTbsHash</code> </p> <p> <code>openssl asn1parse -in parentCert.pem
+     * -strparse 4 -out parentCert.tbs</code> </p> <p> <code>openssl sha384 &lt;
+     * parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt;
+     * certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code>
+     * </p> <p> <code>cat certificateHash.hex | tr -d '\n'</code> </p>
      */
     inline void SetCertificateHashes(Aws::Vector<Aws::String>&& value) { m_certificateHashesHasBeenSet = true; m_certificateHashes = std::move(value); }
 
@@ -230,7 +262,15 @@ namespace Model
      * <p>A list of composite signed hashes that identify certificates.</p> <p>A
      * certificate identifier consists of a subject certificate TBS hash (signed by the
      * parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA).
-     * Root certificates are defined as their own CA.</p>
+     * Root certificates are defined as their own CA.</p> <p>The following example
+     * shows how to calculate a hash for this parameter using OpenSSL commands: </p>
+     * <p> <code>openssl asn1parse -in childCert.pem -strparse 4 -out
+     * childCert.tbs</code> </p> <p> <code>openssl sha384 &lt; childCert.tbs -binary
+     * &gt; childCertTbsHash</code> </p> <p> <code>openssl asn1parse -in parentCert.pem
+     * -strparse 4 -out parentCert.tbs</code> </p> <p> <code>openssl sha384 &lt;
+     * parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt;
+     * certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code>
+     * </p> <p> <code>cat certificateHash.hex | tr -d '\n'</code> </p>
      */
     inline GetRevocationStatusRequest& WithCertificateHashes(const Aws::Vector<Aws::String>& value) { SetCertificateHashes(value); return *this;}
 
@@ -238,7 +278,15 @@ namespace Model
      * <p>A list of composite signed hashes that identify certificates.</p> <p>A
      * certificate identifier consists of a subject certificate TBS hash (signed by the
      * parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA).
-     * Root certificates are defined as their own CA.</p>
+     * Root certificates are defined as their own CA.</p> <p>The following example
+     * shows how to calculate a hash for this parameter using OpenSSL commands: </p>
+     * <p> <code>openssl asn1parse -in childCert.pem -strparse 4 -out
+     * childCert.tbs</code> </p> <p> <code>openssl sha384 &lt; childCert.tbs -binary
+     * &gt; childCertTbsHash</code> </p> <p> <code>openssl asn1parse -in parentCert.pem
+     * -strparse 4 -out parentCert.tbs</code> </p> <p> <code>openssl sha384 &lt;
+     * parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt;
+     * certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code>
+     * </p> <p> <code>cat certificateHash.hex | tr -d '\n'</code> </p>
      */
     inline GetRevocationStatusRequest& WithCertificateHashes(Aws::Vector<Aws::String>&& value) { SetCertificateHashes(std::move(value)); return *this;}
 
@@ -246,7 +294,15 @@ namespace Model
      * <p>A list of composite signed hashes that identify certificates.</p> <p>A
      * certificate identifier consists of a subject certificate TBS hash (signed by the
      * parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA).
-     * Root certificates are defined as their own CA.</p>
+     * Root certificates are defined as their own CA.</p> <p>The following example
+     * shows how to calculate a hash for this parameter using OpenSSL commands: </p>
+     * <p> <code>openssl asn1parse -in childCert.pem -strparse 4 -out
+     * childCert.tbs</code> </p> <p> <code>openssl sha384 &lt; childCert.tbs -binary
+     * &gt; childCertTbsHash</code> </p> <p> <code>openssl asn1parse -in parentCert.pem
+     * -strparse 4 -out parentCert.tbs</code> </p> <p> <code>openssl sha384 &lt;
+     * parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt;
+     * certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code>
+     * </p> <p> <code>cat certificateHash.hex | tr -d '\n'</code> </p>
      */
     inline GetRevocationStatusRequest& AddCertificateHashes(const Aws::String& value) { m_certificateHashesHasBeenSet = true; m_certificateHashes.push_back(value); return *this; }
 
@@ -254,7 +310,15 @@ namespace Model
      * <p>A list of composite signed hashes that identify certificates.</p> <p>A
      * certificate identifier consists of a subject certificate TBS hash (signed by the
      * parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA).
-     * Root certificates are defined as their own CA.</p>
+     * Root certificates are defined as their own CA.</p> <p>The following example
+     * shows how to calculate a hash for this parameter using OpenSSL commands: </p>
+     * <p> <code>openssl asn1parse -in childCert.pem -strparse 4 -out
+     * childCert.tbs</code> </p> <p> <code>openssl sha384 &lt; childCert.tbs -binary
+     * &gt; childCertTbsHash</code> </p> <p> <code>openssl asn1parse -in parentCert.pem
+     * -strparse 4 -out parentCert.tbs</code> </p> <p> <code>openssl sha384 &lt;
+     * parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt;
+     * certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code>
+     * </p> <p> <code>cat certificateHash.hex | tr -d '\n'</code> </p>
      */
     inline GetRevocationStatusRequest& AddCertificateHashes(Aws::String&& value) { m_certificateHashesHasBeenSet = true; m_certificateHashes.push_back(std::move(value)); return *this; }
 
@@ -262,7 +326,15 @@ namespace Model
      * <p>A list of composite signed hashes that identify certificates.</p> <p>A
      * certificate identifier consists of a subject certificate TBS hash (signed by the
      * parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA).
-     * Root certificates are defined as their own CA.</p>
+     * Root certificates are defined as their own CA.</p> <p>The following example
+     * shows how to calculate a hash for this parameter using OpenSSL commands: </p>
+     * <p> <code>openssl asn1parse -in childCert.pem -strparse 4 -out
+     * childCert.tbs</code> </p> <p> <code>openssl sha384 &lt; childCert.tbs -binary
+     * &gt; childCertTbsHash</code> </p> <p> <code>openssl asn1parse -in parentCert.pem
+     * -strparse 4 -out parentCert.tbs</code> </p> <p> <code>openssl sha384 &lt;
+     * parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt;
+     * certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code>
+     * </p> <p> <code>cat certificateHash.hex | tr -d '\n'</code> </p>
      */
     inline GetRevocationStatusRequest& AddCertificateHashes(const char* value) { m_certificateHashesHasBeenSet = true; m_certificateHashes.push_back(value); return *this; }
 

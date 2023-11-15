@@ -16,9 +16,9 @@ namespace Model
   enum class AcceleratorManufacturer
   {
     NOT_SET,
-    nvidia,
-    amd,
     amazon_web_services,
+    amd,
+    nvidia,
     xilinx
   };
 

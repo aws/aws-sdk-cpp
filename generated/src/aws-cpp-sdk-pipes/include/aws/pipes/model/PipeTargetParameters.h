@@ -35,7 +35,11 @@ namespace Model
 {
 
   /**
-   * <p>The parameters required to set up a target for your pipe.</p><p><h3>See
+   * <p>The parameters required to set up a target for your pipe.</p> <p>For more
+   * information about pipe target parameters, including how to use dynamic path
+   * parameters, see <a
+   * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target
+   * parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/PipeTargetParameters">AWS
    * API Reference</a></p>
@@ -214,7 +218,8 @@ namespace Model
      * <p>Valid JSON text passed to the target. In this case, nothing from the event
      * itself is passed to the target. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
-     * (JSON) Data Interchange Format</a>.</p>
+     * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
+     * an empty string.</p>
      */
     inline const Aws::String& GetInputTemplate() const{ return m_inputTemplate; }
 
@@ -222,7 +227,8 @@ namespace Model
      * <p>Valid JSON text passed to the target. In this case, nothing from the event
      * itself is passed to the target. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
-     * (JSON) Data Interchange Format</a>.</p>
+     * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
+     * an empty string.</p>
      */
     inline bool InputTemplateHasBeenSet() const { return m_inputTemplateHasBeenSet; }
 
@@ -230,7 +236,8 @@ namespace Model
      * <p>Valid JSON text passed to the target. In this case, nothing from the event
      * itself is passed to the target. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
-     * (JSON) Data Interchange Format</a>.</p>
+     * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
+     * an empty string.</p>
      */
     inline void SetInputTemplate(const Aws::String& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = value; }
 
@@ -238,7 +245,8 @@ namespace Model
      * <p>Valid JSON text passed to the target. In this case, nothing from the event
      * itself is passed to the target. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
-     * (JSON) Data Interchange Format</a>.</p>
+     * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
+     * an empty string.</p>
      */
     inline void SetInputTemplate(Aws::String&& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = std::move(value); }
 
@@ -246,7 +254,8 @@ namespace Model
      * <p>Valid JSON text passed to the target. In this case, nothing from the event
      * itself is passed to the target. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
-     * (JSON) Data Interchange Format</a>.</p>
+     * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
+     * an empty string.</p>
      */
     inline void SetInputTemplate(const char* value) { m_inputTemplateHasBeenSet = true; m_inputTemplate.assign(value); }
 
@@ -254,7 +263,8 @@ namespace Model
      * <p>Valid JSON text passed to the target. In this case, nothing from the event
      * itself is passed to the target. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
-     * (JSON) Data Interchange Format</a>.</p>
+     * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
+     * an empty string.</p>
      */
     inline PipeTargetParameters& WithInputTemplate(const Aws::String& value) { SetInputTemplate(value); return *this;}
 
@@ -262,7 +272,8 @@ namespace Model
      * <p>Valid JSON text passed to the target. In this case, nothing from the event
      * itself is passed to the target. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
-     * (JSON) Data Interchange Format</a>.</p>
+     * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
+     * an empty string.</p>
      */
     inline PipeTargetParameters& WithInputTemplate(Aws::String&& value) { SetInputTemplate(std::move(value)); return *this;}
 
@@ -270,38 +281,39 @@ namespace Model
      * <p>Valid JSON text passed to the target. In this case, nothing from the event
      * itself is passed to the target. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
-     * (JSON) Data Interchange Format</a>.</p>
+     * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
+     * an empty string.</p>
      */
     inline PipeTargetParameters& WithInputTemplate(const char* value) { SetInputTemplate(value); return *this;}
 
 
     /**
-     * <p>The parameters for using a Kinesis stream as a source.</p>
+     * <p>The parameters for using a Kinesis stream as a target.</p>
      */
     inline const PipeTargetKinesisStreamParameters& GetKinesisStreamParameters() const{ return m_kinesisStreamParameters; }
 
     /**
-     * <p>The parameters for using a Kinesis stream as a source.</p>
+     * <p>The parameters for using a Kinesis stream as a target.</p>
      */
     inline bool KinesisStreamParametersHasBeenSet() const { return m_kinesisStreamParametersHasBeenSet; }
 
     /**
-     * <p>The parameters for using a Kinesis stream as a source.</p>
+     * <p>The parameters for using a Kinesis stream as a target.</p>
      */
     inline void SetKinesisStreamParameters(const PipeTargetKinesisStreamParameters& value) { m_kinesisStreamParametersHasBeenSet = true; m_kinesisStreamParameters = value; }
 
     /**
-     * <p>The parameters for using a Kinesis stream as a source.</p>
+     * <p>The parameters for using a Kinesis stream as a target.</p>
      */
     inline void SetKinesisStreamParameters(PipeTargetKinesisStreamParameters&& value) { m_kinesisStreamParametersHasBeenSet = true; m_kinesisStreamParameters = std::move(value); }
 
     /**
-     * <p>The parameters for using a Kinesis stream as a source.</p>
+     * <p>The parameters for using a Kinesis stream as a target.</p>
      */
     inline PipeTargetParameters& WithKinesisStreamParameters(const PipeTargetKinesisStreamParameters& value) { SetKinesisStreamParameters(value); return *this;}
 
     /**
-     * <p>The parameters for using a Kinesis stream as a source.</p>
+     * <p>The parameters for using a Kinesis stream as a target.</p>
      */
     inline PipeTargetParameters& WithKinesisStreamParameters(PipeTargetKinesisStreamParameters&& value) { SetKinesisStreamParameters(std::move(value)); return *this;}
 
@@ -339,37 +351,37 @@ namespace Model
 
     /**
      * <p>These are custom parameters to be used when the target is a Amazon Redshift
-     * cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
+     * cluster to invoke the Amazon Redshift Data API BatchExecuteStatement.</p>
      */
     inline const PipeTargetRedshiftDataParameters& GetRedshiftDataParameters() const{ return m_redshiftDataParameters; }
 
     /**
      * <p>These are custom parameters to be used when the target is a Amazon Redshift
-     * cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
+     * cluster to invoke the Amazon Redshift Data API BatchExecuteStatement.</p>
      */
     inline bool RedshiftDataParametersHasBeenSet() const { return m_redshiftDataParametersHasBeenSet; }
 
     /**
      * <p>These are custom parameters to be used when the target is a Amazon Redshift
-     * cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
+     * cluster to invoke the Amazon Redshift Data API BatchExecuteStatement.</p>
      */
     inline void SetRedshiftDataParameters(const PipeTargetRedshiftDataParameters& value) { m_redshiftDataParametersHasBeenSet = true; m_redshiftDataParameters = value; }
 
     /**
      * <p>These are custom parameters to be used when the target is a Amazon Redshift
-     * cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
+     * cluster to invoke the Amazon Redshift Data API BatchExecuteStatement.</p>
      */
     inline void SetRedshiftDataParameters(PipeTargetRedshiftDataParameters&& value) { m_redshiftDataParametersHasBeenSet = true; m_redshiftDataParameters = std::move(value); }
 
     /**
      * <p>These are custom parameters to be used when the target is a Amazon Redshift
-     * cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
+     * cluster to invoke the Amazon Redshift Data API BatchExecuteStatement.</p>
      */
     inline PipeTargetParameters& WithRedshiftDataParameters(const PipeTargetRedshiftDataParameters& value) { SetRedshiftDataParameters(value); return *this;}
 
     /**
      * <p>These are custom parameters to be used when the target is a Amazon Redshift
-     * cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
+     * cluster to invoke the Amazon Redshift Data API BatchExecuteStatement.</p>
      */
     inline PipeTargetParameters& WithRedshiftDataParameters(PipeTargetRedshiftDataParameters&& value) { SetRedshiftDataParameters(std::move(value)); return *this;}
 
@@ -406,32 +418,32 @@ namespace Model
 
 
     /**
-     * <p>The parameters for using a Amazon SQS stream as a source.</p>
+     * <p>The parameters for using a Amazon SQS stream as a target.</p>
      */
     inline const PipeTargetSqsQueueParameters& GetSqsQueueParameters() const{ return m_sqsQueueParameters; }
 
     /**
-     * <p>The parameters for using a Amazon SQS stream as a source.</p>
+     * <p>The parameters for using a Amazon SQS stream as a target.</p>
      */
     inline bool SqsQueueParametersHasBeenSet() const { return m_sqsQueueParametersHasBeenSet; }
 
     /**
-     * <p>The parameters for using a Amazon SQS stream as a source.</p>
+     * <p>The parameters for using a Amazon SQS stream as a target.</p>
      */
     inline void SetSqsQueueParameters(const PipeTargetSqsQueueParameters& value) { m_sqsQueueParametersHasBeenSet = true; m_sqsQueueParameters = value; }
 
     /**
-     * <p>The parameters for using a Amazon SQS stream as a source.</p>
+     * <p>The parameters for using a Amazon SQS stream as a target.</p>
      */
     inline void SetSqsQueueParameters(PipeTargetSqsQueueParameters&& value) { m_sqsQueueParametersHasBeenSet = true; m_sqsQueueParameters = std::move(value); }
 
     /**
-     * <p>The parameters for using a Amazon SQS stream as a source.</p>
+     * <p>The parameters for using a Amazon SQS stream as a target.</p>
      */
     inline PipeTargetParameters& WithSqsQueueParameters(const PipeTargetSqsQueueParameters& value) { SetSqsQueueParameters(value); return *this;}
 
     /**
-     * <p>The parameters for using a Amazon SQS stream as a source.</p>
+     * <p>The parameters for using a Amazon SQS stream as a target.</p>
      */
     inline PipeTargetParameters& WithSqsQueueParameters(PipeTargetSqsQueueParameters&& value) { SetSqsQueueParameters(std::move(value)); return *this;}
 

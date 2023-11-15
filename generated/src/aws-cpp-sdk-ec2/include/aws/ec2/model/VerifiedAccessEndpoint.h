@@ -777,32 +777,32 @@ namespace Model
 
 
     /**
-     * <p> Describes the options in use for server side encryption. </p>
+     * <p>The options in use for server side encryption.</p>
      */
     inline const VerifiedAccessSseSpecificationResponse& GetSseSpecification() const{ return m_sseSpecification; }
 
     /**
-     * <p> Describes the options in use for server side encryption. </p>
+     * <p>The options in use for server side encryption.</p>
      */
     inline bool SseSpecificationHasBeenSet() const { return m_sseSpecificationHasBeenSet; }
 
     /**
-     * <p> Describes the options in use for server side encryption. </p>
+     * <p>The options in use for server side encryption.</p>
      */
     inline void SetSseSpecification(const VerifiedAccessSseSpecificationResponse& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = value; }
 
     /**
-     * <p> Describes the options in use for server side encryption. </p>
+     * <p>The options in use for server side encryption.</p>
      */
     inline void SetSseSpecification(VerifiedAccessSseSpecificationResponse&& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = std::move(value); }
 
     /**
-     * <p> Describes the options in use for server side encryption. </p>
+     * <p>The options in use for server side encryption.</p>
      */
     inline VerifiedAccessEndpoint& WithSseSpecification(const VerifiedAccessSseSpecificationResponse& value) { SetSseSpecification(value); return *this;}
 
     /**
-     * <p> Describes the options in use for server side encryption. </p>
+     * <p>The options in use for server side encryption.</p>
      */
     inline VerifiedAccessEndpoint& WithSseSpecification(VerifiedAccessSseSpecificationResponse&& value) { SetSseSpecification(std::move(value)); return *this;}
 

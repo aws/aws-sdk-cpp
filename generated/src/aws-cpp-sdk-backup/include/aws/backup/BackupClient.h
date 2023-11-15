@@ -1173,6 +1173,36 @@ namespace Backup
         }
 
         /**
+         * <p>This is a request for a summary of backup jobs created or running within the
+         * most recent 30 days. You can include parameters AccountID, State, ResourceType,
+         * MessageCategory, AggregationPeriod, MaxResults, or NextToken to filter
+         * results.</p> <p>This request returns a summary that contains Region, Account,
+         * State, ResourceType, MessageCategory, StartTime, EndTime, and Count of included
+         * jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupJobSummaries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBackupJobSummariesOutcome ListBackupJobSummaries(const Model::ListBackupJobSummariesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListBackupJobSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListBackupJobSummariesRequestT = Model::ListBackupJobSummariesRequest>
+        Model::ListBackupJobSummariesOutcomeCallable ListBackupJobSummariesCallable(const ListBackupJobSummariesRequestT& request) const
+        {
+            return SubmitCallable(&BackupClient::ListBackupJobSummaries, request);
+        }
+
+        /**
+         * An Async wrapper for ListBackupJobSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListBackupJobSummariesRequestT = Model::ListBackupJobSummariesRequest>
+        void ListBackupJobSummariesAsync(const ListBackupJobSummariesRequestT& request, const ListBackupJobSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BackupClient::ListBackupJobSummaries, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of existing backup jobs for an authenticated account for the
          * last 30 days. For a longer period of time, consider using these <a
          * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">monitoring
@@ -1331,6 +1361,36 @@ namespace Backup
         void ListBackupVaultsAsync(const ListBackupVaultsRequestT& request, const ListBackupVaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BackupClient::ListBackupVaults, request, handler, context);
+        }
+
+        /**
+         * <p>This request obtains a list of copy jobs created or running within the the
+         * most recent 30 days. You can include parameters AccountID, State, ResourceType,
+         * MessageCategory, AggregationPeriod, MaxResults, or NextToken to filter
+         * results.</p> <p>This request returns a summary that contains Region, Account,
+         * State, RestourceType, MessageCategory, StartTime, EndTime, and Count of included
+         * jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobSummaries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCopyJobSummariesOutcome ListCopyJobSummaries(const Model::ListCopyJobSummariesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCopyJobSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCopyJobSummariesRequestT = Model::ListCopyJobSummariesRequest>
+        Model::ListCopyJobSummariesOutcomeCallable ListCopyJobSummariesCallable(const ListCopyJobSummariesRequestT& request) const
+        {
+            return SubmitCallable(&BackupClient::ListCopyJobSummaries, request);
+        }
+
+        /**
+         * An Async wrapper for ListCopyJobSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCopyJobSummariesRequestT = Model::ListCopyJobSummariesRequest>
+        void ListCopyJobSummariesAsync(const ListCopyJobSummariesRequestT& request, const ListCopyJobSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BackupClient::ListCopyJobSummaries, request, handler, context);
         }
 
         /**
@@ -1592,6 +1652,36 @@ namespace Backup
         void ListReportPlansAsync(const ListReportPlansRequestT& request, const ListReportPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BackupClient::ListReportPlans, request, handler, context);
+        }
+
+        /**
+         * <p>This request obtains a summary of restore jobs created or running within the
+         * the most recent 30 days. You can include parameters AccountID, State,
+         * ResourceType, AggregationPeriod, MaxResults, or NextToken to filter results.</p>
+         * <p>This request returns a summary that contains Region, Account, State,
+         * RestourceType, MessageCategory, StartTime, EndTime, and Count of included
+         * jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobSummaries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRestoreJobSummariesOutcome ListRestoreJobSummaries(const Model::ListRestoreJobSummariesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRestoreJobSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListRestoreJobSummariesRequestT = Model::ListRestoreJobSummariesRequest>
+        Model::ListRestoreJobSummariesOutcomeCallable ListRestoreJobSummariesCallable(const ListRestoreJobSummariesRequestT& request) const
+        {
+            return SubmitCallable(&BackupClient::ListRestoreJobSummaries, request);
+        }
+
+        /**
+         * An Async wrapper for ListRestoreJobSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListRestoreJobSummariesRequestT = Model::ListRestoreJobSummariesRequest>
+        void ListRestoreJobSummariesAsync(const ListRestoreJobSummariesRequestT& request, const ListRestoreJobSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BackupClient::ListRestoreJobSummaries, request, handler, context);
         }
 
         /**

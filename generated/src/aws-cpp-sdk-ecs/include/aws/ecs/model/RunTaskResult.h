@@ -37,43 +37,43 @@ namespace Model
 
     /**
      * <p>A full description of the tasks that were run. The tasks that were
-     * successfully placed on your cluster are described here.</p>
+     * successfully placed on your cluster are described here.</p> <p/>
      */
     inline const Aws::Vector<Task>& GetTasks() const{ return m_tasks; }
 
     /**
      * <p>A full description of the tasks that were run. The tasks that were
-     * successfully placed on your cluster are described here.</p>
+     * successfully placed on your cluster are described here.</p> <p/>
      */
     inline void SetTasks(const Aws::Vector<Task>& value) { m_tasks = value; }
 
     /**
      * <p>A full description of the tasks that were run. The tasks that were
-     * successfully placed on your cluster are described here.</p>
+     * successfully placed on your cluster are described here.</p> <p/>
      */
     inline void SetTasks(Aws::Vector<Task>&& value) { m_tasks = std::move(value); }
 
     /**
      * <p>A full description of the tasks that were run. The tasks that were
-     * successfully placed on your cluster are described here.</p>
+     * successfully placed on your cluster are described here.</p> <p/>
      */
     inline RunTaskResult& WithTasks(const Aws::Vector<Task>& value) { SetTasks(value); return *this;}
 
     /**
      * <p>A full description of the tasks that were run. The tasks that were
-     * successfully placed on your cluster are described here.</p>
+     * successfully placed on your cluster are described here.</p> <p/>
      */
     inline RunTaskResult& WithTasks(Aws::Vector<Task>&& value) { SetTasks(std::move(value)); return *this;}
 
     /**
      * <p>A full description of the tasks that were run. The tasks that were
-     * successfully placed on your cluster are described here.</p>
+     * successfully placed on your cluster are described here.</p> <p/>
      */
     inline RunTaskResult& AddTasks(const Task& value) { m_tasks.push_back(value); return *this; }
 
     /**
      * <p>A full description of the tasks that were run. The tasks that were
-     * successfully placed on your cluster are described here.</p>
+     * successfully placed on your cluster are described here.</p> <p/>
      */
     inline RunTaskResult& AddTasks(Task&& value) { m_tasks.push_back(std::move(value)); return *this; }
 

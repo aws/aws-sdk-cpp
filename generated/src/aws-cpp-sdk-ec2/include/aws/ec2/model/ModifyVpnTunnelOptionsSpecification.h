@@ -446,26 +446,34 @@ namespace Model
 
 
     /**
-     * <p>The number of seconds after which a DPD timeout occurs.</p> <p>Constraints: A
-     * value greater than or equal to 30.</p> <p>Default: <code>30</code> </p>
+     * <p>The number of seconds after which a DPD timeout occurs. A DPD timeout of 40
+     * seconds means that the VPN endpoint will consider the peer dead 30 seconds after
+     * the first failed keep-alive.</p> <p>Constraints: A value greater than or equal
+     * to 30.</p> <p>Default: <code>40</code> </p>
      */
     inline int GetDPDTimeoutSeconds() const{ return m_dPDTimeoutSeconds; }
 
     /**
-     * <p>The number of seconds after which a DPD timeout occurs.</p> <p>Constraints: A
-     * value greater than or equal to 30.</p> <p>Default: <code>30</code> </p>
+     * <p>The number of seconds after which a DPD timeout occurs. A DPD timeout of 40
+     * seconds means that the VPN endpoint will consider the peer dead 30 seconds after
+     * the first failed keep-alive.</p> <p>Constraints: A value greater than or equal
+     * to 30.</p> <p>Default: <code>40</code> </p>
      */
     inline bool DPDTimeoutSecondsHasBeenSet() const { return m_dPDTimeoutSecondsHasBeenSet; }
 
     /**
-     * <p>The number of seconds after which a DPD timeout occurs.</p> <p>Constraints: A
-     * value greater than or equal to 30.</p> <p>Default: <code>30</code> </p>
+     * <p>The number of seconds after which a DPD timeout occurs. A DPD timeout of 40
+     * seconds means that the VPN endpoint will consider the peer dead 30 seconds after
+     * the first failed keep-alive.</p> <p>Constraints: A value greater than or equal
+     * to 30.</p> <p>Default: <code>40</code> </p>
      */
     inline void SetDPDTimeoutSeconds(int value) { m_dPDTimeoutSecondsHasBeenSet = true; m_dPDTimeoutSeconds = value; }
 
     /**
-     * <p>The number of seconds after which a DPD timeout occurs.</p> <p>Constraints: A
-     * value greater than or equal to 30.</p> <p>Default: <code>30</code> </p>
+     * <p>The number of seconds after which a DPD timeout occurs. A DPD timeout of 40
+     * seconds means that the VPN endpoint will consider the peer dead 30 seconds after
+     * the first failed keep-alive.</p> <p>Constraints: A value greater than or equal
+     * to 30.</p> <p>Default: <code>40</code> </p>
      */
     inline ModifyVpnTunnelOptionsSpecification& WithDPDTimeoutSeconds(int value) { SetDPDTimeoutSeconds(value); return *this;}
 

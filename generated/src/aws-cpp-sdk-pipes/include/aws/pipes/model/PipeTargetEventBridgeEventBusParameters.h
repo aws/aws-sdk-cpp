@@ -91,64 +91,56 @@ namespace Model
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
      * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
-     * <code>abcde.veo</code>.</p>  <p>When using Java, you must include
-     * <code>auth-crt</code> on the class path.</p> 
+     * <code>abcde.veo</code>.</p>
      */
     inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
      * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
-     * <code>abcde.veo</code>.</p>  <p>When using Java, you must include
-     * <code>auth-crt</code> on the class path.</p> 
+     * <code>abcde.veo</code>.</p>
      */
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
      * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
-     * <code>abcde.veo</code>.</p>  <p>When using Java, you must include
-     * <code>auth-crt</code> on the class path.</p> 
+     * <code>abcde.veo</code>.</p>
      */
     inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
      * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
-     * <code>abcde.veo</code>.</p>  <p>When using Java, you must include
-     * <code>auth-crt</code> on the class path.</p> 
+     * <code>abcde.veo</code>.</p>
      */
     inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
      * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
-     * <code>abcde.veo</code>.</p>  <p>When using Java, you must include
-     * <code>auth-crt</code> on the class path.</p> 
+     * <code>abcde.veo</code>.</p>
      */
     inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
      * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
-     * <code>abcde.veo</code>.</p>  <p>When using Java, you must include
-     * <code>auth-crt</code> on the class path.</p> 
+     * <code>abcde.veo</code>.</p>
      */
     inline PipeTargetEventBridgeEventBusParameters& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
      * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
-     * <code>abcde.veo</code>.</p>  <p>When using Java, you must include
-     * <code>auth-crt</code> on the class path.</p> 
+     * <code>abcde.veo</code>.</p>
      */
     inline PipeTargetEventBridgeEventBusParameters& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
      * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
-     * <code>abcde.veo</code>.</p>  <p>When using Java, you must include
-     * <code>auth-crt</code> on the class path.</p> 
+     * <code>abcde.veo</code>.</p>
      */
     inline PipeTargetEventBridgeEventBusParameters& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
 

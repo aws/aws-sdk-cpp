@@ -49,7 +49,8 @@ namespace Model
     ruby3_2,
     python3_11,
     nodejs20_x,
-    provided_al2023
+    provided_al2023,
+    python3_12
   };
 
 namespace RuntimeMapper

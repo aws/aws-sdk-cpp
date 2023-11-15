@@ -16,13 +16,27 @@ AssociateResourceRequest::AssociateResourceRequest() :
     m_applicationHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
-    m_resourceHasBeenSet(false)
+    m_resourceHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
 }
 
 Aws::String AssociateResourceRequest::SerializePayload() const
 {
-  return {};
+  JsonValue payload;
+
+  if(m_optionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> optionsJsonList(m_options.size());
+   for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
+   {
+     optionsJsonList[optionsIndex].AsString(AssociationOptionMapper::GetNameForAssociationOption(m_options[optionsIndex]));
+   }
+   payload.WithArray("options", std::move(optionsJsonList));
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 

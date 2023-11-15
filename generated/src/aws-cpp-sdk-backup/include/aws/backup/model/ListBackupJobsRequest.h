@@ -633,6 +633,79 @@ namespace Model
      */
     inline ListBackupJobsRequest& WithByParentJobId(const char* value) { SetByParentJobId(value); return *this;}
 
+
+    /**
+     * <p>This returns a list of backup jobs for the specified message category.</p>
+     * <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>,
+     * and <code>InvalidParameters</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p>
+     */
+    inline const Aws::String& GetByMessageCategory() const{ return m_byMessageCategory; }
+
+    /**
+     * <p>This returns a list of backup jobs for the specified message category.</p>
+     * <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>,
+     * and <code>InvalidParameters</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p>
+     */
+    inline bool ByMessageCategoryHasBeenSet() const { return m_byMessageCategoryHasBeenSet; }
+
+    /**
+     * <p>This returns a list of backup jobs for the specified message category.</p>
+     * <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>,
+     * and <code>InvalidParameters</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p>
+     */
+    inline void SetByMessageCategory(const Aws::String& value) { m_byMessageCategoryHasBeenSet = true; m_byMessageCategory = value; }
+
+    /**
+     * <p>This returns a list of backup jobs for the specified message category.</p>
+     * <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>,
+     * and <code>InvalidParameters</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p>
+     */
+    inline void SetByMessageCategory(Aws::String&& value) { m_byMessageCategoryHasBeenSet = true; m_byMessageCategory = std::move(value); }
+
+    /**
+     * <p>This returns a list of backup jobs for the specified message category.</p>
+     * <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>,
+     * and <code>InvalidParameters</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p>
+     */
+    inline void SetByMessageCategory(const char* value) { m_byMessageCategoryHasBeenSet = true; m_byMessageCategory.assign(value); }
+
+    /**
+     * <p>This returns a list of backup jobs for the specified message category.</p>
+     * <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>,
+     * and <code>InvalidParameters</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p>
+     */
+    inline ListBackupJobsRequest& WithByMessageCategory(const Aws::String& value) { SetByMessageCategory(value); return *this;}
+
+    /**
+     * <p>This returns a list of backup jobs for the specified message category.</p>
+     * <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>,
+     * and <code>InvalidParameters</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p>
+     */
+    inline ListBackupJobsRequest& WithByMessageCategory(Aws::String&& value) { SetByMessageCategory(std::move(value)); return *this;}
+
+    /**
+     * <p>This returns a list of backup jobs for the specified message category.</p>
+     * <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>,
+     * and <code>InvalidParameters</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p>
+     */
+    inline ListBackupJobsRequest& WithByMessageCategory(const char* value) { SetByMessageCategory(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -670,6 +743,9 @@ namespace Model
 
     Aws::String m_byParentJobId;
     bool m_byParentJobIdHasBeenSet = false;
+
+    Aws::String m_byMessageCategory;
+    bool m_byMessageCategoryHasBeenSet = false;
   };
 
 } // namespace Model

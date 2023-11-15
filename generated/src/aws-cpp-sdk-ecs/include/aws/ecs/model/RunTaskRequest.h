@@ -17,6 +17,7 @@
 #include <aws/ecs/model/PlacementStrategy.h>
 #include <aws/ecs/model/Tag.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -927,7 +928,7 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * 128 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
      * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
@@ -940,7 +941,7 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * 128 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
      * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
@@ -953,7 +954,7 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * 128 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
      * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
@@ -966,7 +967,7 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * 128 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
      * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
@@ -979,7 +980,7 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * 128 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
      * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
@@ -992,7 +993,7 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * 128 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
      * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
@@ -1005,7 +1006,7 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * 128 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
      * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
@@ -1018,7 +1019,7 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * 128 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
      * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
@@ -1403,6 +1404,87 @@ namespace Model
      */
     inline RunTaskRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
+
+    /**
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 64 characters are allowed. The valid
+     * characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 64 characters are allowed. The valid
+     * characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 64 characters are allowed. The valid
+     * characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 64 characters are allowed. The valid
+     * characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 64 characters are allowed. The valid
+     * characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 64 characters are allowed. The valid
+     * characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
+     */
+    inline RunTaskRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 64 characters are allowed. The valid
+     * characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
+     */
+    inline RunTaskRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 64 characters are allowed. The valid
+     * characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
+     */
+    inline RunTaskRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
   private:
 
     Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
@@ -1455,6 +1537,9 @@ namespace Model
 
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

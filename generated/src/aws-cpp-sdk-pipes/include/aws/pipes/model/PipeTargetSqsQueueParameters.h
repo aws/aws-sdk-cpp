@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The parameters for using a Amazon SQS stream as a source.</p><p><h3>See
+   * <p>The parameters for using a Amazon SQS stream as a target.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/PipeTargetSqsQueueParameters">AWS
    * API Reference</a></p>

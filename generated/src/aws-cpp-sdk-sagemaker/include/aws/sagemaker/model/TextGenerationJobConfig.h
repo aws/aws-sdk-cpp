@@ -66,7 +66,7 @@ namespace Model
      * <p>The name of the base model to fine-tune. Autopilot supports fine-tuning a
      * variety of large language models. For information on the list of supported
      * models, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/src/AWSIronmanApiDoc/build/server-root/sagemaker/latest/dg/llms-finetuning-models.html#llms-finetuning-supported-llms">Text
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-models.html#autopilot-llms-finetuning-supported-llms">Text
      * generation models supporting fine-tuning in Autopilot</a>. If no
      * <code>BaseModelName</code> is provided, the default model used is
      * Falcon-7B-Instruct. </p>
@@ -77,7 +77,7 @@ namespace Model
      * <p>The name of the base model to fine-tune. Autopilot supports fine-tuning a
      * variety of large language models. For information on the list of supported
      * models, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/src/AWSIronmanApiDoc/build/server-root/sagemaker/latest/dg/llms-finetuning-models.html#llms-finetuning-supported-llms">Text
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-models.html#autopilot-llms-finetuning-supported-llms">Text
      * generation models supporting fine-tuning in Autopilot</a>. If no
      * <code>BaseModelName</code> is provided, the default model used is
      * Falcon-7B-Instruct. </p>
@@ -88,7 +88,7 @@ namespace Model
      * <p>The name of the base model to fine-tune. Autopilot supports fine-tuning a
      * variety of large language models. For information on the list of supported
      * models, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/src/AWSIronmanApiDoc/build/server-root/sagemaker/latest/dg/llms-finetuning-models.html#llms-finetuning-supported-llms">Text
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-models.html#autopilot-llms-finetuning-supported-llms">Text
      * generation models supporting fine-tuning in Autopilot</a>. If no
      * <code>BaseModelName</code> is provided, the default model used is
      * Falcon-7B-Instruct. </p>
@@ -99,7 +99,7 @@ namespace Model
      * <p>The name of the base model to fine-tune. Autopilot supports fine-tuning a
      * variety of large language models. For information on the list of supported
      * models, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/src/AWSIronmanApiDoc/build/server-root/sagemaker/latest/dg/llms-finetuning-models.html#llms-finetuning-supported-llms">Text
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-models.html#autopilot-llms-finetuning-supported-llms">Text
      * generation models supporting fine-tuning in Autopilot</a>. If no
      * <code>BaseModelName</code> is provided, the default model used is
      * Falcon-7B-Instruct. </p>
@@ -110,7 +110,7 @@ namespace Model
      * <p>The name of the base model to fine-tune. Autopilot supports fine-tuning a
      * variety of large language models. For information on the list of supported
      * models, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/src/AWSIronmanApiDoc/build/server-root/sagemaker/latest/dg/llms-finetuning-models.html#llms-finetuning-supported-llms">Text
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-models.html#autopilot-llms-finetuning-supported-llms">Text
      * generation models supporting fine-tuning in Autopilot</a>. If no
      * <code>BaseModelName</code> is provided, the default model used is
      * Falcon-7B-Instruct. </p>
@@ -121,7 +121,7 @@ namespace Model
      * <p>The name of the base model to fine-tune. Autopilot supports fine-tuning a
      * variety of large language models. For information on the list of supported
      * models, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/src/AWSIronmanApiDoc/build/server-root/sagemaker/latest/dg/llms-finetuning-models.html#llms-finetuning-supported-llms">Text
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-models.html#autopilot-llms-finetuning-supported-llms">Text
      * generation models supporting fine-tuning in Autopilot</a>. If no
      * <code>BaseModelName</code> is provided, the default model used is
      * Falcon-7B-Instruct. </p>
@@ -132,7 +132,7 @@ namespace Model
      * <p>The name of the base model to fine-tune. Autopilot supports fine-tuning a
      * variety of large language models. For information on the list of supported
      * models, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/src/AWSIronmanApiDoc/build/server-root/sagemaker/latest/dg/llms-finetuning-models.html#llms-finetuning-supported-llms">Text
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-models.html#autopilot-llms-finetuning-supported-llms">Text
      * generation models supporting fine-tuning in Autopilot</a>. If no
      * <code>BaseModelName</code> is provided, the default model used is
      * Falcon-7B-Instruct. </p>
@@ -143,7 +143,7 @@ namespace Model
      * <p>The name of the base model to fine-tune. Autopilot supports fine-tuning a
      * variety of large language models. For information on the list of supported
      * models, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/src/AWSIronmanApiDoc/build/server-root/sagemaker/latest/dg/llms-finetuning-models.html#llms-finetuning-supported-llms">Text
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-models.html#autopilot-llms-finetuning-supported-llms">Text
      * generation models supporting fine-tuning in Autopilot</a>. If no
      * <code>BaseModelName</code> is provided, the default model used is
      * Falcon-7B-Instruct. </p>

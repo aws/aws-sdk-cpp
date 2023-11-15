@@ -41,6 +41,7 @@
 #include <aws/states/model/ListStateMachinesResult.h>
 #include <aws/states/model/ListTagsForResourceResult.h>
 #include <aws/states/model/PublishStateMachineVersionResult.h>
+#include <aws/states/model/RedriveExecutionResult.h>
 #include <aws/states/model/SendTaskFailureResult.h>
 #include <aws/states/model/SendTaskHeartbeatResult.h>
 #include <aws/states/model/SendTaskSuccessResult.h>
@@ -115,6 +116,7 @@ namespace Aws
       class ListStateMachinesRequest;
       class ListTagsForResourceRequest;
       class PublishStateMachineVersionRequest;
+      class RedriveExecutionRequest;
       class SendTaskFailureRequest;
       class SendTaskHeartbeatRequest;
       class SendTaskSuccessRequest;
@@ -152,6 +154,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListStateMachinesResult, SFNError> ListStateMachinesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, SFNError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PublishStateMachineVersionResult, SFNError> PublishStateMachineVersionOutcome;
+      typedef Aws::Utils::Outcome<RedriveExecutionResult, SFNError> RedriveExecutionOutcome;
       typedef Aws::Utils::Outcome<SendTaskFailureResult, SFNError> SendTaskFailureOutcome;
       typedef Aws::Utils::Outcome<SendTaskHeartbeatResult, SFNError> SendTaskHeartbeatOutcome;
       typedef Aws::Utils::Outcome<SendTaskSuccessResult, SFNError> SendTaskSuccessOutcome;
@@ -189,6 +192,7 @@ namespace Aws
       typedef std::future<ListStateMachinesOutcome> ListStateMachinesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PublishStateMachineVersionOutcome> PublishStateMachineVersionOutcomeCallable;
+      typedef std::future<RedriveExecutionOutcome> RedriveExecutionOutcomeCallable;
       typedef std::future<SendTaskFailureOutcome> SendTaskFailureOutcomeCallable;
       typedef std::future<SendTaskHeartbeatOutcome> SendTaskHeartbeatOutcomeCallable;
       typedef std::future<SendTaskSuccessOutcome> SendTaskSuccessOutcomeCallable;
@@ -229,6 +233,7 @@ namespace Aws
     typedef std::function<void(const SFNClient*, const Model::ListStateMachinesRequest&, const Model::ListStateMachinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStateMachinesResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::PublishStateMachineVersionRequest&, const Model::PublishStateMachineVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PublishStateMachineVersionResponseReceivedHandler;
+    typedef std::function<void(const SFNClient*, const Model::RedriveExecutionRequest&, const Model::RedriveExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RedriveExecutionResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::SendTaskFailureRequest&, const Model::SendTaskFailureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendTaskFailureResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::SendTaskHeartbeatRequest&, const Model::SendTaskHeartbeatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendTaskHeartbeatResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::SendTaskSuccessRequest&, const Model::SendTaskSuccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendTaskSuccessResponseReceivedHandler;
