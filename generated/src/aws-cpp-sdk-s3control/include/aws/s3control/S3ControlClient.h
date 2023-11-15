@@ -309,6 +309,48 @@ namespace S3Control
         }
 
         /**
+         * <p> Creates a new S3 Storage Lens group and associates it with the specified
+         * Amazon Web Services account ID. An S3 Storage Lens group is a custom grouping of
+         * objects based on prefix, suffix, object tags, object size, object age, or a
+         * combination of these filters. For each Storage Lens group that you’ve created,
+         * you can also optionally add Amazon Web Services resource tags. For more
+         * information about S3 Storage Lens groups, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups-overview.html">Working
+         * with S3 Storage Lens groups</a>.</p> <p>To use this operation, you must have the
+         * permission to perform the <code>s3:CreateStorageLensGroup</code> action. If
+         * you’re trying to create a Storage Lens group with Amazon Web Services resource
+         * tags, you must also have permission to perform the <code>s3:TagResource</code>
+         * action. For more information about the required Storage Lens Groups permissions,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+         * account permissions to use S3 Storage Lens groups</a>.</p> <p>For information
+         * about Storage Lens groups errors, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+         * of Amazon S3 Storage Lens error codes</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateStorageLensGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateStorageLensGroupOutcome CreateStorageLensGroup(const Model::CreateStorageLensGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateStorageLensGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateStorageLensGroupRequestT = Model::CreateStorageLensGroupRequest>
+        Model::CreateStorageLensGroupOutcomeCallable CreateStorageLensGroupCallable(const CreateStorageLensGroupRequestT& request) const
+        {
+            return SubmitCallable(&S3ControlClient::CreateStorageLensGroup, request);
+        }
+
+        /**
+         * An Async wrapper for CreateStorageLensGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateStorageLensGroupRequestT = Model::CreateStorageLensGroupRequest>
+        void CreateStorageLensGroupAsync(const CreateStorageLensGroupRequestT& request, const CreateStorageLensGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3ControlClient::CreateStorageLensGroup, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the specified access point.</p> <p>All Amazon S3 on Outposts REST API
          * requests for this action require an additional parameter of
          * <code>x-amz-outpost-id</code> to be passed with the request. In addition, you
@@ -510,8 +552,8 @@ namespace S3Control
          * lifecycle configuration. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon S3 User Guide</i>.</p> <p>To use this
-         * action, you must have permission to perform the
-         * <code>s3-outposts:DeleteLifecycleConfiguration</code> action. By default, the
+         * operation, you must have permission to perform the
+         * <code>s3-outposts:PutLifecycleConfiguration</code> action. By default, the
          * bucket owner has this permission and the Outposts bucket owner can grant this
          * permission to others.</p> <p>All Amazon S3 on Outposts REST API requests for
          * this action require an additional parameter of <code>x-amz-outpost-id</code> to
@@ -899,6 +941,39 @@ namespace S3Control
         void DeleteStorageLensConfigurationTaggingAsync(const DeleteStorageLensConfigurationTaggingRequestT& request, const DeleteStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&S3ControlClient::DeleteStorageLensConfigurationTagging, request, handler, context);
+        }
+
+        /**
+         * <p> Deletes an existing S3 Storage Lens group.</p> <p>To use this operation, you
+         * must have the permission to perform the <code>s3:DeleteStorageLensGroup</code>
+         * action. For more information about the required Storage Lens Groups permissions,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+         * account permissions to use S3 Storage Lens groups</a>.</p> <p>For information
+         * about Storage Lens groups errors, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+         * of Amazon S3 Storage Lens error codes</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteStorageLensGroupOutcome DeleteStorageLensGroup(const Model::DeleteStorageLensGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteStorageLensGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteStorageLensGroupRequestT = Model::DeleteStorageLensGroupRequest>
+        Model::DeleteStorageLensGroupOutcomeCallable DeleteStorageLensGroupCallable(const DeleteStorageLensGroupRequestT& request) const
+        {
+            return SubmitCallable(&S3ControlClient::DeleteStorageLensGroup, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteStorageLensGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteStorageLensGroupRequestT = Model::DeleteStorageLensGroupRequest>
+        void DeleteStorageLensGroupAsync(const DeleteStorageLensGroupRequestT& request, const DeleteStorageLensGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3ControlClient::DeleteStorageLensGroup, request, handler, context);
         }
 
         /**
@@ -1826,6 +1901,39 @@ namespace S3Control
         }
 
         /**
+         * <p> Retrieves the Storage Lens group configuration details.</p> <p>To use this
+         * operation, you must have the permission to perform the
+         * <code>s3:GetStorageLensGroup</code> action. For more information about the
+         * required Storage Lens Groups permissions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+         * account permissions to use S3 Storage Lens groups</a>.</p> <p>For information
+         * about Storage Lens groups errors, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+         * of Amazon S3 Storage Lens error codes</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetStorageLensGroupOutcome GetStorageLensGroup(const Model::GetStorageLensGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetStorageLensGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetStorageLensGroupRequestT = Model::GetStorageLensGroupRequest>
+        Model::GetStorageLensGroupOutcomeCallable GetStorageLensGroupCallable(const GetStorageLensGroupRequestT& request) const
+        {
+            return SubmitCallable(&S3ControlClient::GetStorageLensGroup, request);
+        }
+
+        /**
+         * An Async wrapper for GetStorageLensGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetStorageLensGroupRequestT = Model::GetStorageLensGroupRequest>
+        void GetStorageLensGroupAsync(const GetStorageLensGroupRequestT& request, const GetStorageLensGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3ControlClient::GetStorageLensGroup, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of the access points that are owned by the current account
          * that's associated with the specified bucket. You can retrieve up to 1000 access
          * points per call. If the specified bucket has more than 1,000 access points (or
@@ -2050,6 +2158,75 @@ namespace S3Control
         void ListStorageLensConfigurationsAsync(const ListStorageLensConfigurationsRequestT& request, const ListStorageLensConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&S3ControlClient::ListStorageLensConfigurations, request, handler, context);
+        }
+
+        /**
+         * <p> Lists all the Storage Lens groups in the specified home Region. </p> <p>To
+         * use this operation, you must have the permission to perform the
+         * <code>s3:ListStorageLensGroups</code> action. For more information about the
+         * required Storage Lens Groups permissions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+         * account permissions to use S3 Storage Lens groups</a>.</p> <p>For information
+         * about Storage Lens groups errors, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+         * of Amazon S3 Storage Lens error codes</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStorageLensGroupsOutcome ListStorageLensGroups(const Model::ListStorageLensGroupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListStorageLensGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListStorageLensGroupsRequestT = Model::ListStorageLensGroupsRequest>
+        Model::ListStorageLensGroupsOutcomeCallable ListStorageLensGroupsCallable(const ListStorageLensGroupsRequestT& request) const
+        {
+            return SubmitCallable(&S3ControlClient::ListStorageLensGroups, request);
+        }
+
+        /**
+         * An Async wrapper for ListStorageLensGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListStorageLensGroupsRequestT = Model::ListStorageLensGroupsRequest>
+        void ListStorageLensGroupsAsync(const ListStorageLensGroupsRequestT& request, const ListStorageLensGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3ControlClient::ListStorageLensGroups, request, handler, context);
+        }
+
+        /**
+         * <p> This operation allows you to list all the Amazon Web Services resource tags
+         * for the specified resource. </p> <p>To use this operation, you must have the
+         * permission to perform the <code>s3:ListTagsForResource</code> action. For more
+         * information about the required Storage Lens Groups permissions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+         * account permissions to use S3 Storage Lens groups</a>.</p> <p>For information
+         * about S3 Tagging errors, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
+         * of Amazon S3 Tagging error codes</a>.</p>  <p>This operation is only
+         * supported for <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+         * Storage Lens groups</a>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&S3ControlClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3ControlClient::ListTagsForResource, request, handler, context);
         }
 
         /**
@@ -2747,6 +2924,79 @@ namespace S3Control
         }
 
         /**
+         * <p> Creates a new Amazon Web Services resource tag or updates an existing
+         * resource tag. You can add up to 50 Amazon Web Services resource tags for each S3
+         * resource. </p> <p>To use this operation, you must have the permission to perform
+         * the <code>s3:TagResource</code> action. For more information about the required
+         * Storage Lens Groups permissions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+         * account permissions to use S3 Storage Lens groups</a>.</p> <p>For information
+         * about S3 Tagging errors, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
+         * of Amazon S3 Tagging error codes</a>.</p>  <p>This operation is only
+         * supported for <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+         * Storage Lens groups</a>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&S3ControlClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3ControlClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p> This operation removes the specified Amazon Web Services resource tags from
+         * an S3 resource. </p> <p>To use this operation, you must have the permission to
+         * perform the <code>s3:UntagResource</code> action. For more information about the
+         * required Storage Lens Groups permissions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+         * account permissions to use S3 Storage Lens groups</a>.</p> <p>For information
+         * about S3 Tagging errors, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
+         * of Amazon S3 Tagging error codes</a>.</p>  <p>This operation is only
+         * supported for <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+         * Storage Lens groups</a>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&S3ControlClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3ControlClient::UntagResource, request, handler, context);
+        }
+
+        /**
          * <p>Updates an existing S3 Batch Operations job's priority. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
@@ -2818,6 +3068,39 @@ namespace S3Control
         void UpdateJobStatusAsync(const UpdateJobStatusRequestT& request, const UpdateJobStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&S3ControlClient::UpdateJobStatus, request, handler, context);
+        }
+
+        /**
+         * <p> Updates the existing Storage Lens group.</p> <p>To use this operation, you
+         * must have the permission to perform the <code>s3:UpdateStorageLensGroup</code>
+         * action. For more information about the required Storage Lens Groups permissions,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+         * account permissions to use S3 Storage Lens groups</a>.</p> <p>For information
+         * about Storage Lens groups errors, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+         * of Amazon S3 Storage Lens error codes</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateStorageLensGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateStorageLensGroupOutcome UpdateStorageLensGroup(const Model::UpdateStorageLensGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateStorageLensGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateStorageLensGroupRequestT = Model::UpdateStorageLensGroupRequest>
+        Model::UpdateStorageLensGroupOutcomeCallable UpdateStorageLensGroupCallable(const UpdateStorageLensGroupRequestT& request) const
+        {
+            return SubmitCallable(&S3ControlClient::UpdateStorageLensGroup, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateStorageLensGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateStorageLensGroupRequestT = Model::UpdateStorageLensGroupRequest>
+        void UpdateStorageLensGroupAsync(const UpdateStorageLensGroupRequestT& request, const UpdateStorageLensGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3ControlClient::UpdateStorageLensGroup, request, handler, context);
         }
 
 

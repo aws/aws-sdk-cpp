@@ -22,7 +22,8 @@ CreateEventDataStoreResult::CreateEventDataStoreResult() :
     m_multiRegionEnabled(false),
     m_organizationEnabled(false),
     m_retentionPeriod(0),
-    m_terminationProtectionEnabled(false)
+    m_terminationProtectionEnabled(false),
+    m_billingMode(BillingMode::NOT_SET)
 {
 }
 
@@ -31,7 +32,8 @@ CreateEventDataStoreResult::CreateEventDataStoreResult(const Aws::AmazonWebServi
     m_multiRegionEnabled(false),
     m_organizationEnabled(false),
     m_retentionPeriod(0),
-    m_terminationProtectionEnabled(false)
+    m_terminationProtectionEnabled(false),
+    m_billingMode(BillingMode::NOT_SET)
 {
   *this = result;
 }
@@ -114,6 +116,12 @@ CreateEventDataStoreResult& CreateEventDataStoreResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+  }
+
+  if(jsonValue.ValueExists("BillingMode"))
+  {
+    m_billingMode = BillingModeMapper::GetBillingModeForName(jsonValue.GetString("BillingMode"));
 
   }
 

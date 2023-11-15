@@ -737,7 +737,7 @@ namespace Model
     /**
      * <p>Indicates the algorithm that you want Amazon S3 to use to create the
      * checksum. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const S3ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
@@ -745,7 +745,7 @@ namespace Model
     /**
      * <p>Indicates the algorithm that you want Amazon S3 to use to create the
      * checksum. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
@@ -753,7 +753,7 @@ namespace Model
     /**
      * <p>Indicates the algorithm that you want Amazon S3 to use to create the
      * checksum. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetChecksumAlgorithm(const S3ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
@@ -761,7 +761,7 @@ namespace Model
     /**
      * <p>Indicates the algorithm that you want Amazon S3 to use to create the
      * checksum. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetChecksumAlgorithm(S3ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
@@ -769,7 +769,7 @@ namespace Model
     /**
      * <p>Indicates the algorithm that you want Amazon S3 to use to create the
      * checksum. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline S3CopyObjectOperation& WithChecksumAlgorithm(const S3ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
@@ -777,7 +777,7 @@ namespace Model
     /**
      * <p>Indicates the algorithm that you want Amazon S3 to use to create the
      * checksum. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline S3CopyObjectOperation& WithChecksumAlgorithm(S3ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}

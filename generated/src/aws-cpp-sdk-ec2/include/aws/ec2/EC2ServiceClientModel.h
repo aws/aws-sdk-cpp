@@ -279,6 +279,7 @@
 #include <aws/ec2/model/DescribeLocalGatewayVirtualInterfaceGroupsResponse.h>
 #include <aws/ec2/model/DescribeLocalGatewayVirtualInterfacesResponse.h>
 #include <aws/ec2/model/DescribeLocalGatewaysResponse.h>
+#include <aws/ec2/model/DescribeLockedSnapshotsResponse.h>
 #include <aws/ec2/model/DescribeManagedPrefixListsResponse.h>
 #include <aws/ec2/model/DescribeMovingAddressesResponse.h>
 #include <aws/ec2/model/DescribeNatGatewaysResponse.h>
@@ -457,6 +458,7 @@
 #include <aws/ec2/model/ImportVolumeResponse.h>
 #include <aws/ec2/model/ListImagesInRecycleBinResponse.h>
 #include <aws/ec2/model/ListSnapshotsInRecycleBinResponse.h>
+#include <aws/ec2/model/LockSnapshotResponse.h>
 #include <aws/ec2/model/ModifyAddressAttributeResponse.h>
 #include <aws/ec2/model/ModifyAvailabilityZoneGroupResponse.h>
 #include <aws/ec2/model/ModifyCapacityReservationResponse.h>
@@ -565,6 +567,7 @@
 #include <aws/ec2/model/TerminateInstancesResponse.h>
 #include <aws/ec2/model/UnassignIpv6AddressesResponse.h>
 #include <aws/ec2/model/UnassignPrivateNatGatewayAddressResponse.h>
+#include <aws/ec2/model/UnlockSnapshotResponse.h>
 #include <aws/ec2/model/UnmonitorInstancesResponse.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressResponse.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsIngressResponse.h>
@@ -898,6 +901,7 @@ namespace Aws
       class DescribeLocalGatewayVirtualInterfaceGroupsRequest;
       class DescribeLocalGatewayVirtualInterfacesRequest;
       class DescribeLocalGatewaysRequest;
+      class DescribeLockedSnapshotsRequest;
       class DescribeManagedPrefixListsRequest;
       class DescribeMovingAddressesRequest;
       class DescribeNatGatewaysRequest;
@@ -1084,6 +1088,7 @@ namespace Aws
       class ImportVolumeRequest;
       class ListImagesInRecycleBinRequest;
       class ListSnapshotsInRecycleBinRequest;
+      class LockSnapshotRequest;
       class ModifyAddressAttributeRequest;
       class ModifyAvailabilityZoneGroupRequest;
       class ModifyCapacityReservationRequest;
@@ -1212,6 +1217,7 @@ namespace Aws
       class UnassignIpv6AddressesRequest;
       class UnassignPrivateIpAddressesRequest;
       class UnassignPrivateNatGatewayAddressRequest;
+      class UnlockSnapshotRequest;
       class UnmonitorInstancesRequest;
       class UpdateSecurityGroupRuleDescriptionsEgressRequest;
       class UpdateSecurityGroupRuleDescriptionsIngressRequest;
@@ -1507,6 +1513,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeLocalGatewayVirtualInterfaceGroupsResponse, EC2Error> DescribeLocalGatewayVirtualInterfaceGroupsOutcome;
       typedef Aws::Utils::Outcome<DescribeLocalGatewayVirtualInterfacesResponse, EC2Error> DescribeLocalGatewayVirtualInterfacesOutcome;
       typedef Aws::Utils::Outcome<DescribeLocalGatewaysResponse, EC2Error> DescribeLocalGatewaysOutcome;
+      typedef Aws::Utils::Outcome<DescribeLockedSnapshotsResponse, EC2Error> DescribeLockedSnapshotsOutcome;
       typedef Aws::Utils::Outcome<DescribeManagedPrefixListsResponse, EC2Error> DescribeManagedPrefixListsOutcome;
       typedef Aws::Utils::Outcome<DescribeMovingAddressesResponse, EC2Error> DescribeMovingAddressesOutcome;
       typedef Aws::Utils::Outcome<DescribeNatGatewaysResponse, EC2Error> DescribeNatGatewaysOutcome;
@@ -1693,6 +1700,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ImportVolumeResponse, EC2Error> ImportVolumeOutcome;
       typedef Aws::Utils::Outcome<ListImagesInRecycleBinResponse, EC2Error> ListImagesInRecycleBinOutcome;
       typedef Aws::Utils::Outcome<ListSnapshotsInRecycleBinResponse, EC2Error> ListSnapshotsInRecycleBinOutcome;
+      typedef Aws::Utils::Outcome<LockSnapshotResponse, EC2Error> LockSnapshotOutcome;
       typedef Aws::Utils::Outcome<ModifyAddressAttributeResponse, EC2Error> ModifyAddressAttributeOutcome;
       typedef Aws::Utils::Outcome<ModifyAvailabilityZoneGroupResponse, EC2Error> ModifyAvailabilityZoneGroupOutcome;
       typedef Aws::Utils::Outcome<ModifyCapacityReservationResponse, EC2Error> ModifyCapacityReservationOutcome;
@@ -1821,6 +1829,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UnassignIpv6AddressesResponse, EC2Error> UnassignIpv6AddressesOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> UnassignPrivateIpAddressesOutcome;
       typedef Aws::Utils::Outcome<UnassignPrivateNatGatewayAddressResponse, EC2Error> UnassignPrivateNatGatewayAddressOutcome;
+      typedef Aws::Utils::Outcome<UnlockSnapshotResponse, EC2Error> UnlockSnapshotOutcome;
       typedef Aws::Utils::Outcome<UnmonitorInstancesResponse, EC2Error> UnmonitorInstancesOutcome;
       typedef Aws::Utils::Outcome<UpdateSecurityGroupRuleDescriptionsEgressResponse, EC2Error> UpdateSecurityGroupRuleDescriptionsEgressOutcome;
       typedef Aws::Utils::Outcome<UpdateSecurityGroupRuleDescriptionsIngressResponse, EC2Error> UpdateSecurityGroupRuleDescriptionsIngressOutcome;
@@ -2116,6 +2125,7 @@ namespace Aws
       typedef std::future<DescribeLocalGatewayVirtualInterfaceGroupsOutcome> DescribeLocalGatewayVirtualInterfaceGroupsOutcomeCallable;
       typedef std::future<DescribeLocalGatewayVirtualInterfacesOutcome> DescribeLocalGatewayVirtualInterfacesOutcomeCallable;
       typedef std::future<DescribeLocalGatewaysOutcome> DescribeLocalGatewaysOutcomeCallable;
+      typedef std::future<DescribeLockedSnapshotsOutcome> DescribeLockedSnapshotsOutcomeCallable;
       typedef std::future<DescribeManagedPrefixListsOutcome> DescribeManagedPrefixListsOutcomeCallable;
       typedef std::future<DescribeMovingAddressesOutcome> DescribeMovingAddressesOutcomeCallable;
       typedef std::future<DescribeNatGatewaysOutcome> DescribeNatGatewaysOutcomeCallable;
@@ -2302,6 +2312,7 @@ namespace Aws
       typedef std::future<ImportVolumeOutcome> ImportVolumeOutcomeCallable;
       typedef std::future<ListImagesInRecycleBinOutcome> ListImagesInRecycleBinOutcomeCallable;
       typedef std::future<ListSnapshotsInRecycleBinOutcome> ListSnapshotsInRecycleBinOutcomeCallable;
+      typedef std::future<LockSnapshotOutcome> LockSnapshotOutcomeCallable;
       typedef std::future<ModifyAddressAttributeOutcome> ModifyAddressAttributeOutcomeCallable;
       typedef std::future<ModifyAvailabilityZoneGroupOutcome> ModifyAvailabilityZoneGroupOutcomeCallable;
       typedef std::future<ModifyCapacityReservationOutcome> ModifyCapacityReservationOutcomeCallable;
@@ -2430,6 +2441,7 @@ namespace Aws
       typedef std::future<UnassignIpv6AddressesOutcome> UnassignIpv6AddressesOutcomeCallable;
       typedef std::future<UnassignPrivateIpAddressesOutcome> UnassignPrivateIpAddressesOutcomeCallable;
       typedef std::future<UnassignPrivateNatGatewayAddressOutcome> UnassignPrivateNatGatewayAddressOutcomeCallable;
+      typedef std::future<UnlockSnapshotOutcome> UnlockSnapshotOutcomeCallable;
       typedef std::future<UnmonitorInstancesOutcome> UnmonitorInstancesOutcomeCallable;
       typedef std::future<UpdateSecurityGroupRuleDescriptionsEgressOutcome> UpdateSecurityGroupRuleDescriptionsEgressOutcomeCallable;
       typedef std::future<UpdateSecurityGroupRuleDescriptionsIngressOutcome> UpdateSecurityGroupRuleDescriptionsIngressOutcomeCallable;
@@ -2728,6 +2740,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest&, const Model::DescribeLocalGatewayVirtualInterfaceGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocalGatewayVirtualInterfaceGroupsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeLocalGatewayVirtualInterfacesRequest&, const Model::DescribeLocalGatewayVirtualInterfacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocalGatewayVirtualInterfacesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeLocalGatewaysRequest&, const Model::DescribeLocalGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocalGatewaysResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeLockedSnapshotsRequest&, const Model::DescribeLockedSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLockedSnapshotsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeManagedPrefixListsRequest&, const Model::DescribeManagedPrefixListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeManagedPrefixListsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeMovingAddressesRequest&, const Model::DescribeMovingAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMovingAddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeNatGatewaysRequest&, const Model::DescribeNatGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNatGatewaysResponseReceivedHandler;
@@ -2914,6 +2927,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::ImportVolumeRequest&, const Model::ImportVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportVolumeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ListImagesInRecycleBinRequest&, const Model::ListImagesInRecycleBinOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagesInRecycleBinResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ListSnapshotsInRecycleBinRequest&, const Model::ListSnapshotsInRecycleBinOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSnapshotsInRecycleBinResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::LockSnapshotRequest&, const Model::LockSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > LockSnapshotResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyAddressAttributeRequest&, const Model::ModifyAddressAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAddressAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyAvailabilityZoneGroupRequest&, const Model::ModifyAvailabilityZoneGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAvailabilityZoneGroupResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyCapacityReservationRequest&, const Model::ModifyCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCapacityReservationResponseReceivedHandler;
@@ -3042,6 +3056,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::UnassignIpv6AddressesRequest&, const Model::UnassignIpv6AddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnassignIpv6AddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UnassignPrivateIpAddressesRequest&, const Model::UnassignPrivateIpAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnassignPrivateIpAddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UnassignPrivateNatGatewayAddressRequest&, const Model::UnassignPrivateNatGatewayAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnassignPrivateNatGatewayAddressResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::UnlockSnapshotRequest&, const Model::UnlockSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnlockSnapshotResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UnmonitorInstancesRequest&, const Model::UnmonitorInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnmonitorInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest&, const Model::UpdateSecurityGroupRuleDescriptionsEgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityGroupRuleDescriptionsEgressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest&, const Model::UpdateSecurityGroupRuleDescriptionsIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler;

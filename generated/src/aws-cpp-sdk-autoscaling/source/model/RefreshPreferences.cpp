@@ -36,7 +36,9 @@ RefreshPreferences::RefreshPreferences() :
     m_scaleInProtectedInstancesHasBeenSet(false),
     m_standbyInstances(StandbyInstances::NOT_SET),
     m_standbyInstancesHasBeenSet(false),
-    m_alarmSpecificationHasBeenSet(false)
+    m_alarmSpecificationHasBeenSet(false),
+    m_maxHealthyPercentage(0),
+    m_maxHealthyPercentageHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ RefreshPreferences::RefreshPreferences(const XmlNode& xmlNode) :
     m_scaleInProtectedInstancesHasBeenSet(false),
     m_standbyInstances(StandbyInstances::NOT_SET),
     m_standbyInstancesHasBeenSet(false),
-    m_alarmSpecificationHasBeenSet(false)
+    m_alarmSpecificationHasBeenSet(false),
+    m_maxHealthyPercentage(0),
+    m_maxHealthyPercentageHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -127,6 +131,12 @@ RefreshPreferences& RefreshPreferences::operator =(const XmlNode& xmlNode)
       m_alarmSpecification = alarmSpecificationNode;
       m_alarmSpecificationHasBeenSet = true;
     }
+    XmlNode maxHealthyPercentageNode = resultNode.FirstChild("MaxHealthyPercentage");
+    if(!maxHealthyPercentageNode.IsNull())
+    {
+      m_maxHealthyPercentage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxHealthyPercentageNode.GetText()).c_str()).c_str());
+      m_maxHealthyPercentageHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -185,6 +195,11 @@ void RefreshPreferences::OutputToStream(Aws::OStream& oStream, const char* locat
       m_alarmSpecification.OutputToStream(oStream, alarmSpecificationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_maxHealthyPercentageHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MaxHealthyPercentage=" << m_maxHealthyPercentage << "&";
+  }
+
 }
 
 void RefreshPreferences::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -230,6 +245,10 @@ void RefreshPreferences::OutputToStream(Aws::OStream& oStream, const char* locat
       Aws::String alarmSpecificationLocationAndMember(location);
       alarmSpecificationLocationAndMember += ".AlarmSpecification";
       m_alarmSpecification.OutputToStream(oStream, alarmSpecificationLocationAndMember.c_str());
+  }
+  if(m_maxHealthyPercentageHasBeenSet)
+  {
+      oStream << location << ".MaxHealthyPercentage=" << m_maxHealthyPercentage << "&";
   }
 }
 

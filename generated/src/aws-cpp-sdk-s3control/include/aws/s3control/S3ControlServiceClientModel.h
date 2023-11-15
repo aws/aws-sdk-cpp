@@ -49,16 +49,21 @@
 #include <aws/s3control/model/GetPublicAccessBlockResult.h>
 #include <aws/s3control/model/GetStorageLensConfigurationResult.h>
 #include <aws/s3control/model/GetStorageLensConfigurationTaggingResult.h>
+#include <aws/s3control/model/GetStorageLensGroupResult.h>
 #include <aws/s3control/model/ListAccessPointsResult.h>
 #include <aws/s3control/model/ListAccessPointsForObjectLambdaResult.h>
 #include <aws/s3control/model/ListJobsResult.h>
 #include <aws/s3control/model/ListMultiRegionAccessPointsResult.h>
 #include <aws/s3control/model/ListRegionalBucketsResult.h>
 #include <aws/s3control/model/ListStorageLensConfigurationsResult.h>
+#include <aws/s3control/model/ListStorageLensGroupsResult.h>
+#include <aws/s3control/model/ListTagsForResourceResult.h>
 #include <aws/s3control/model/PutJobTaggingResult.h>
 #include <aws/s3control/model/PutMultiRegionAccessPointPolicyResult.h>
 #include <aws/s3control/model/PutStorageLensConfigurationTaggingResult.h>
 #include <aws/s3control/model/SubmitMultiRegionAccessPointRoutesResult.h>
+#include <aws/s3control/model/TagResourceResult.h>
+#include <aws/s3control/model/UntagResourceResult.h>
 #include <aws/s3control/model/UpdateJobPriorityResult.h>
 #include <aws/s3control/model/UpdateJobStatusResult.h>
 #include <aws/core/NoResult.h>
@@ -106,6 +111,7 @@ namespace Aws
       class CreateBucketRequest;
       class CreateJobRequest;
       class CreateMultiRegionAccessPointRequest;
+      class CreateStorageLensGroupRequest;
       class DeleteAccessPointRequest;
       class DeleteAccessPointForObjectLambdaRequest;
       class DeleteAccessPointPolicyRequest;
@@ -120,6 +126,7 @@ namespace Aws
       class DeletePublicAccessBlockRequest;
       class DeleteStorageLensConfigurationRequest;
       class DeleteStorageLensConfigurationTaggingRequest;
+      class DeleteStorageLensGroupRequest;
       class DescribeJobRequest;
       class DescribeMultiRegionAccessPointOperationRequest;
       class GetAccessPointRequest;
@@ -143,12 +150,15 @@ namespace Aws
       class GetPublicAccessBlockRequest;
       class GetStorageLensConfigurationRequest;
       class GetStorageLensConfigurationTaggingRequest;
+      class GetStorageLensGroupRequest;
       class ListAccessPointsRequest;
       class ListAccessPointsForObjectLambdaRequest;
       class ListJobsRequest;
       class ListMultiRegionAccessPointsRequest;
       class ListRegionalBucketsRequest;
       class ListStorageLensConfigurationsRequest;
+      class ListStorageLensGroupsRequest;
+      class ListTagsForResourceRequest;
       class PutAccessPointConfigurationForObjectLambdaRequest;
       class PutAccessPointPolicyRequest;
       class PutAccessPointPolicyForObjectLambdaRequest;
@@ -163,8 +173,11 @@ namespace Aws
       class PutStorageLensConfigurationRequest;
       class PutStorageLensConfigurationTaggingRequest;
       class SubmitMultiRegionAccessPointRoutesRequest;
+      class TagResourceRequest;
+      class UntagResourceRequest;
       class UpdateJobPriorityRequest;
       class UpdateJobStatusRequest;
+      class UpdateStorageLensGroupRequest;
       /* End of service model forward declarations required in S3ControlClient header */
 
       /* Service model Outcome class definitions */
@@ -173,6 +186,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateBucketResult, S3ControlError> CreateBucketOutcome;
       typedef Aws::Utils::Outcome<CreateJobResult, S3ControlError> CreateJobOutcome;
       typedef Aws::Utils::Outcome<CreateMultiRegionAccessPointResult, S3ControlError> CreateMultiRegionAccessPointOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> CreateStorageLensGroupOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteAccessPointOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteAccessPointForObjectLambdaOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteAccessPointPolicyOutcome;
@@ -187,6 +201,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeletePublicAccessBlockOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteStorageLensConfigurationOutcome;
       typedef Aws::Utils::Outcome<DeleteStorageLensConfigurationTaggingResult, S3ControlError> DeleteStorageLensConfigurationTaggingOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteStorageLensGroupOutcome;
       typedef Aws::Utils::Outcome<DescribeJobResult, S3ControlError> DescribeJobOutcome;
       typedef Aws::Utils::Outcome<DescribeMultiRegionAccessPointOperationResult, S3ControlError> DescribeMultiRegionAccessPointOperationOutcome;
       typedef Aws::Utils::Outcome<GetAccessPointResult, S3ControlError> GetAccessPointOutcome;
@@ -210,12 +225,15 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetPublicAccessBlockResult, S3ControlError> GetPublicAccessBlockOutcome;
       typedef Aws::Utils::Outcome<GetStorageLensConfigurationResult, S3ControlError> GetStorageLensConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetStorageLensConfigurationTaggingResult, S3ControlError> GetStorageLensConfigurationTaggingOutcome;
+      typedef Aws::Utils::Outcome<GetStorageLensGroupResult, S3ControlError> GetStorageLensGroupOutcome;
       typedef Aws::Utils::Outcome<ListAccessPointsResult, S3ControlError> ListAccessPointsOutcome;
       typedef Aws::Utils::Outcome<ListAccessPointsForObjectLambdaResult, S3ControlError> ListAccessPointsForObjectLambdaOutcome;
       typedef Aws::Utils::Outcome<ListJobsResult, S3ControlError> ListJobsOutcome;
       typedef Aws::Utils::Outcome<ListMultiRegionAccessPointsResult, S3ControlError> ListMultiRegionAccessPointsOutcome;
       typedef Aws::Utils::Outcome<ListRegionalBucketsResult, S3ControlError> ListRegionalBucketsOutcome;
       typedef Aws::Utils::Outcome<ListStorageLensConfigurationsResult, S3ControlError> ListStorageLensConfigurationsOutcome;
+      typedef Aws::Utils::Outcome<ListStorageLensGroupsResult, S3ControlError> ListStorageLensGroupsOutcome;
+      typedef Aws::Utils::Outcome<ListTagsForResourceResult, S3ControlError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutAccessPointConfigurationForObjectLambdaOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutAccessPointPolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutAccessPointPolicyForObjectLambdaOutcome;
@@ -230,8 +248,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutStorageLensConfigurationOutcome;
       typedef Aws::Utils::Outcome<PutStorageLensConfigurationTaggingResult, S3ControlError> PutStorageLensConfigurationTaggingOutcome;
       typedef Aws::Utils::Outcome<SubmitMultiRegionAccessPointRoutesResult, S3ControlError> SubmitMultiRegionAccessPointRoutesOutcome;
+      typedef Aws::Utils::Outcome<TagResourceResult, S3ControlError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<UntagResourceResult, S3ControlError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateJobPriorityResult, S3ControlError> UpdateJobPriorityOutcome;
       typedef Aws::Utils::Outcome<UpdateJobStatusResult, S3ControlError> UpdateJobStatusOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> UpdateStorageLensGroupOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -240,6 +261,7 @@ namespace Aws
       typedef std::future<CreateBucketOutcome> CreateBucketOutcomeCallable;
       typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
       typedef std::future<CreateMultiRegionAccessPointOutcome> CreateMultiRegionAccessPointOutcomeCallable;
+      typedef std::future<CreateStorageLensGroupOutcome> CreateStorageLensGroupOutcomeCallable;
       typedef std::future<DeleteAccessPointOutcome> DeleteAccessPointOutcomeCallable;
       typedef std::future<DeleteAccessPointForObjectLambdaOutcome> DeleteAccessPointForObjectLambdaOutcomeCallable;
       typedef std::future<DeleteAccessPointPolicyOutcome> DeleteAccessPointPolicyOutcomeCallable;
@@ -254,6 +276,7 @@ namespace Aws
       typedef std::future<DeletePublicAccessBlockOutcome> DeletePublicAccessBlockOutcomeCallable;
       typedef std::future<DeleteStorageLensConfigurationOutcome> DeleteStorageLensConfigurationOutcomeCallable;
       typedef std::future<DeleteStorageLensConfigurationTaggingOutcome> DeleteStorageLensConfigurationTaggingOutcomeCallable;
+      typedef std::future<DeleteStorageLensGroupOutcome> DeleteStorageLensGroupOutcomeCallable;
       typedef std::future<DescribeJobOutcome> DescribeJobOutcomeCallable;
       typedef std::future<DescribeMultiRegionAccessPointOperationOutcome> DescribeMultiRegionAccessPointOperationOutcomeCallable;
       typedef std::future<GetAccessPointOutcome> GetAccessPointOutcomeCallable;
@@ -277,12 +300,15 @@ namespace Aws
       typedef std::future<GetPublicAccessBlockOutcome> GetPublicAccessBlockOutcomeCallable;
       typedef std::future<GetStorageLensConfigurationOutcome> GetStorageLensConfigurationOutcomeCallable;
       typedef std::future<GetStorageLensConfigurationTaggingOutcome> GetStorageLensConfigurationTaggingOutcomeCallable;
+      typedef std::future<GetStorageLensGroupOutcome> GetStorageLensGroupOutcomeCallable;
       typedef std::future<ListAccessPointsOutcome> ListAccessPointsOutcomeCallable;
       typedef std::future<ListAccessPointsForObjectLambdaOutcome> ListAccessPointsForObjectLambdaOutcomeCallable;
       typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
       typedef std::future<ListMultiRegionAccessPointsOutcome> ListMultiRegionAccessPointsOutcomeCallable;
       typedef std::future<ListRegionalBucketsOutcome> ListRegionalBucketsOutcomeCallable;
       typedef std::future<ListStorageLensConfigurationsOutcome> ListStorageLensConfigurationsOutcomeCallable;
+      typedef std::future<ListStorageLensGroupsOutcome> ListStorageLensGroupsOutcomeCallable;
+      typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutAccessPointConfigurationForObjectLambdaOutcome> PutAccessPointConfigurationForObjectLambdaOutcomeCallable;
       typedef std::future<PutAccessPointPolicyOutcome> PutAccessPointPolicyOutcomeCallable;
       typedef std::future<PutAccessPointPolicyForObjectLambdaOutcome> PutAccessPointPolicyForObjectLambdaOutcomeCallable;
@@ -297,8 +323,11 @@ namespace Aws
       typedef std::future<PutStorageLensConfigurationOutcome> PutStorageLensConfigurationOutcomeCallable;
       typedef std::future<PutStorageLensConfigurationTaggingOutcome> PutStorageLensConfigurationTaggingOutcomeCallable;
       typedef std::future<SubmitMultiRegionAccessPointRoutesOutcome> SubmitMultiRegionAccessPointRoutesOutcomeCallable;
+      typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateJobPriorityOutcome> UpdateJobPriorityOutcomeCallable;
       typedef std::future<UpdateJobStatusOutcome> UpdateJobStatusOutcomeCallable;
+      typedef std::future<UpdateStorageLensGroupOutcome> UpdateStorageLensGroupOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -310,6 +339,7 @@ namespace Aws
     typedef std::function<void(const S3ControlClient*, const Model::CreateBucketRequest&, const Model::CreateBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBucketResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::CreateMultiRegionAccessPointRequest&, const Model::CreateMultiRegionAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMultiRegionAccessPointResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::CreateStorageLensGroupRequest&, const Model::CreateStorageLensGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStorageLensGroupResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteAccessPointRequest&, const Model::DeleteAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteAccessPointForObjectLambdaRequest&, const Model::DeleteAccessPointForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteAccessPointPolicyRequest&, const Model::DeleteAccessPointPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointPolicyResponseReceivedHandler;
@@ -324,6 +354,7 @@ namespace Aws
     typedef std::function<void(const S3ControlClient*, const Model::DeletePublicAccessBlockRequest&, const Model::DeletePublicAccessBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePublicAccessBlockResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteStorageLensConfigurationRequest&, const Model::DeleteStorageLensConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStorageLensConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteStorageLensConfigurationTaggingRequest&, const Model::DeleteStorageLensConfigurationTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStorageLensConfigurationTaggingResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::DeleteStorageLensGroupRequest&, const Model::DeleteStorageLensGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStorageLensGroupResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DescribeJobRequest&, const Model::DescribeJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DescribeMultiRegionAccessPointOperationRequest&, const Model::DescribeMultiRegionAccessPointOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMultiRegionAccessPointOperationResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointRequest&, const Model::GetAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointResponseReceivedHandler;
@@ -347,12 +378,15 @@ namespace Aws
     typedef std::function<void(const S3ControlClient*, const Model::GetPublicAccessBlockRequest&, const Model::GetPublicAccessBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPublicAccessBlockResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetStorageLensConfigurationRequest&, const Model::GetStorageLensConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStorageLensConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetStorageLensConfigurationTaggingRequest&, const Model::GetStorageLensConfigurationTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStorageLensConfigurationTaggingResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::GetStorageLensGroupRequest&, const Model::GetStorageLensGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStorageLensGroupResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListAccessPointsRequest&, const Model::ListAccessPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPointsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListAccessPointsForObjectLambdaRequest&, const Model::ListAccessPointsForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPointsForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListMultiRegionAccessPointsRequest&, const Model::ListMultiRegionAccessPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMultiRegionAccessPointsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListRegionalBucketsRequest&, const Model::ListRegionalBucketsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRegionalBucketsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListStorageLensConfigurationsRequest&, const Model::ListStorageLensConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStorageLensConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::ListStorageLensGroupsRequest&, const Model::ListStorageLensGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStorageLensGroupsResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutAccessPointConfigurationForObjectLambdaRequest&, const Model::PutAccessPointConfigurationForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccessPointConfigurationForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutAccessPointPolicyRequest&, const Model::PutAccessPointPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccessPointPolicyResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutAccessPointPolicyForObjectLambdaRequest&, const Model::PutAccessPointPolicyForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccessPointPolicyForObjectLambdaResponseReceivedHandler;
@@ -367,8 +401,11 @@ namespace Aws
     typedef std::function<void(const S3ControlClient*, const Model::PutStorageLensConfigurationRequest&, const Model::PutStorageLensConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutStorageLensConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutStorageLensConfigurationTaggingRequest&, const Model::PutStorageLensConfigurationTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutStorageLensConfigurationTaggingResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::SubmitMultiRegionAccessPointRoutesRequest&, const Model::SubmitMultiRegionAccessPointRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitMultiRegionAccessPointRoutesResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::UpdateJobPriorityRequest&, const Model::UpdateJobPriorityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobPriorityResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::UpdateJobStatusRequest&, const Model::UpdateJobStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobStatusResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::UpdateStorageLensGroupRequest&, const Model::UpdateStorageLensGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStorageLensGroupResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace S3Control
 } // namespace Aws

@@ -791,6 +791,7 @@ namespace Aws
         static const int r7i_16xlarge_HASH = HashingUtils::HashString("r7i.16xlarge");
         static const int r7i_24xlarge_HASH = HashingUtils::HashString("r7i.24xlarge");
         static const int r7i_48xlarge_HASH = HashingUtils::HashString("r7i.48xlarge");
+        static const int dl2q_24xlarge_HASH = HashingUtils::HashString("dl2q.24xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -4678,6 +4679,11 @@ namespace Aws
             enumValue = InstanceType::r7i_48xlarge;
             return true;
           }
+          else if (hashCode == dl2q_24xlarge_HASH)
+          {
+            enumValue = InstanceType::dl2q_24xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -7045,6 +7051,9 @@ namespace Aws
             return true;
           case InstanceType::r7i_48xlarge:
             value = "r7i.48xlarge";
+            return true;
+          case InstanceType::dl2q_24xlarge:
+            value = "dl2q.24xlarge";
             return true;
           default:
             return false;

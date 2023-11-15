@@ -16,6 +16,8 @@ CreateEnvironmentRequest::CreateEnvironmentRequest() :
     m_airflowConfigurationOptionsHasBeenSet(false),
     m_airflowVersionHasBeenSet(false),
     m_dagS3PathHasBeenSet(false),
+    m_endpointManagement(EndpointManagement::NOT_SET),
+    m_endpointManagementHasBeenSet(false),
     m_environmentClassHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
     m_kmsKeyHasBeenSet(false),
@@ -67,6 +69,11 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
   {
    payload.WithString("DagS3Path", m_dagS3Path);
 
+  }
+
+  if(m_endpointManagementHasBeenSet)
+  {
+   payload.WithString("EndpointManagement", EndpointManagementMapper::GetNameForEndpointManagement(m_endpointManagement));
   }
 
   if(m_environmentClassHasBeenSet)

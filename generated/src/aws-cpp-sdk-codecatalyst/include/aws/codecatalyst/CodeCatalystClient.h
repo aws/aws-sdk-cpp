@@ -25,7 +25,7 @@ namespace CodeCatalyst
    * space.</p> </li> <li> <p> <a>GetSubscription</a>, which returns information
    * about the Amazon Web Services account used for billing purposes and the billing
    * plan for the space.</p> </li> <li> <p> <a>ListSpaces</a>, which retrieves a list
-   * of spaces.</p> </li> <li> <p> <a>UpdateSpace</a>, which hanges one or more
+   * of spaces.</p> </li> <li> <p> <a>UpdateSpace</a>, which changes one or more
    * values for a space.</p> </li> </ul> <p>Projects, by calling the following:</p>
    * <ul> <li> <p> <a>CreateProject</a> which creates a project in a specified
    * space.</p> </li> <li> <p> <a>GetProject</a>, which returns information about a
@@ -61,8 +61,15 @@ namespace CodeCatalyst
    * into an stopped state.</p> </li> <li> <p> <a>StopDevEnvironmentSession</a>,
    * which stops a session for a specified Dev Environment.</p> </li> <li> <p>
    * <a>UpdateDevEnvironment</a>, which changes one or more values for a Dev
-   * Environment.</p> </li> </ul> <p>Security, activity, and resource management in
-   * Amazon CodeCatalyst, by calling the following:</p> <ul> <li> <p>
+   * Environment.</p> </li> </ul> <p>Workflows, by calling the following:</p> <ul>
+   * <li> <p> <a>GetWorkflow</a>, which returns information about a workflow.</p>
+   * </li> <li> <p> <a>GetWorkflowRun</a>, which returns information about a
+   * specified run of a workflow.</p> </li> <li> <p> <a>ListWorkflowRuns</a>, which
+   * retrieves a list of runs of a specified workflow.</p> </li> <li> <p>
+   * <a>ListWorkflows</a>, which retrieves a list of workflows in a specified
+   * project.</p> </li> <li> <p> <a>StartWorkflowRun</a>, which starts a run of a
+   * specified workflow.</p> </li> </ul> <p>Security, activity, and resource
+   * management in Amazon CodeCatalyst, by calling the following:</p> <ul> <li> <p>
    * <a>CreateAccessToken</a>, which creates a personal access token (PAT) for the
    * current user.</p> </li> <li> <p> <a>DeleteAccessToken</a>, which deletes a
    * specified personal access token (PAT).</p> </li> <li> <p>
@@ -560,6 +567,57 @@ namespace CodeCatalyst
         }
 
         /**
+         * <p>Returns information about a workflow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetWorkflow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetWorkflowOutcome GetWorkflow(const Model::GetWorkflowRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetWorkflowRequestT = Model::GetWorkflowRequest>
+        Model::GetWorkflowOutcomeCallable GetWorkflowCallable(const GetWorkflowRequestT& request) const
+        {
+            return SubmitCallable(&CodeCatalystClient::GetWorkflow, request);
+        }
+
+        /**
+         * An Async wrapper for GetWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetWorkflowRequestT = Model::GetWorkflowRequest>
+        void GetWorkflowAsync(const GetWorkflowRequestT& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeCatalystClient::GetWorkflow, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about a specified run of a workflow.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetWorkflowRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetWorkflowRunOutcome GetWorkflowRun(const Model::GetWorkflowRunRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetWorkflowRun that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetWorkflowRunRequestT = Model::GetWorkflowRunRequest>
+        Model::GetWorkflowRunOutcomeCallable GetWorkflowRunCallable(const GetWorkflowRunRequestT& request) const
+        {
+            return SubmitCallable(&CodeCatalystClient::GetWorkflowRun, request);
+        }
+
+        /**
+         * An Async wrapper for GetWorkflowRun that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetWorkflowRunRequestT = Model::GetWorkflowRunRequest>
+        void GetWorkflowRunAsync(const GetWorkflowRunRequestT& request, const GetWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeCatalystClient::GetWorkflowRun, request, handler, context);
+        }
+
+        /**
          * <p>Lists all personal access tokens (PATs) associated with the user who calls
          * the API. You can only list PATs associated with your Amazon Web Services Builder
          * ID.</p><p><h3>See Also:</h3>   <a
@@ -639,9 +697,20 @@ namespace CodeCatalyst
         }
 
         /**
-         * <p>Retrieves a list of events that occurred during a specified time period in a
-         * space. You can use these events to audit user and system activity in a
-         * space.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of events that occurred during a specific time in a space.
+         * You can use these events to audit user and system activity in a space. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/ipa-monitoring.html">Monitoring</a>
+         * in the <i>Amazon CodeCatalyst User Guide</i>.</p>  <p>ListEventLogs
+         * guarantees events for the last 30 days in a given space. You can also view and
+         * retrieve a list of management events over the last 90 days for Amazon
+         * CodeCatalyst in the CloudTrail console by viewing Event history, or by creating
+         * a trail to create and maintain a record of events that extends past 90 days. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html">Working
+         * with CloudTrail Event History</a> and <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-getting-started.html">Working
+         * with CloudTrail trails</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListEventLogs">AWS
          * API Reference</a></p>
          */
@@ -768,6 +837,58 @@ namespace CodeCatalyst
         }
 
         /**
+         * <p>Retrieves a list of workflow runs of a specified workflow.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListWorkflowRuns">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListWorkflowRunsOutcome ListWorkflowRuns(const Model::ListWorkflowRunsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListWorkflowRuns that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListWorkflowRunsRequestT = Model::ListWorkflowRunsRequest>
+        Model::ListWorkflowRunsOutcomeCallable ListWorkflowRunsCallable(const ListWorkflowRunsRequestT& request) const
+        {
+            return SubmitCallable(&CodeCatalystClient::ListWorkflowRuns, request);
+        }
+
+        /**
+         * An Async wrapper for ListWorkflowRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListWorkflowRunsRequestT = Model::ListWorkflowRunsRequest>
+        void ListWorkflowRunsAsync(const ListWorkflowRunsRequestT& request, const ListWorkflowRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeCatalystClient::ListWorkflowRuns, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of workflows in a specified project.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListWorkflows">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListWorkflowsOutcome ListWorkflows(const Model::ListWorkflowsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListWorkflows that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListWorkflowsRequestT = Model::ListWorkflowsRequest>
+        Model::ListWorkflowsOutcomeCallable ListWorkflowsCallable(const ListWorkflowsRequestT& request) const
+        {
+            return SubmitCallable(&CodeCatalystClient::ListWorkflows, request);
+        }
+
+        /**
+         * An Async wrapper for ListWorkflows that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListWorkflowsRequestT = Model::ListWorkflowsRequest>
+        void ListWorkflowsAsync(const ListWorkflowsRequestT& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeCatalystClient::ListWorkflows, request, handler, context);
+        }
+
+        /**
          * <p>Starts a specified Dev Environment and puts it into an active state.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StartDevEnvironment">AWS
@@ -817,6 +938,31 @@ namespace CodeCatalyst
         void StartDevEnvironmentSessionAsync(const StartDevEnvironmentSessionRequestT& request, const StartDevEnvironmentSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CodeCatalystClient::StartDevEnvironmentSession, request, handler, context);
+        }
+
+        /**
+         * <p>Begins a run of a specified workflow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StartWorkflowRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartWorkflowRunOutcome StartWorkflowRun(const Model::StartWorkflowRunRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartWorkflowRun that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartWorkflowRunRequestT = Model::StartWorkflowRunRequest>
+        Model::StartWorkflowRunOutcomeCallable StartWorkflowRunCallable(const StartWorkflowRunRequestT& request) const
+        {
+            return SubmitCallable(&CodeCatalystClient::StartWorkflowRun, request);
+        }
+
+        /**
+         * An Async wrapper for StartWorkflowRun that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartWorkflowRunRequestT = Model::StartWorkflowRunRequest>
+        void StartWorkflowRunAsync(const StartWorkflowRunRequestT& request, const StartWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeCatalystClient::StartWorkflowRun, request, handler, context);
         }
 
         /**

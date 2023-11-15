@@ -9,6 +9,7 @@
 #include <aws/cloudtrail/model/EventDataStoreStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/cloudtrail/model/BillingMode.h>
 #include <aws/cloudtrail/model/AdvancedEventSelector.h>
 #include <utility>
 
@@ -362,6 +363,32 @@ namespace Model
     inline UpdateEventDataStoreResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
+    /**
+     * <p>The billing mode for the event data store.</p>
+     */
+    inline const BillingMode& GetBillingMode() const{ return m_billingMode; }
+
+    /**
+     * <p>The billing mode for the event data store.</p>
+     */
+    inline void SetBillingMode(const BillingMode& value) { m_billingMode = value; }
+
+    /**
+     * <p>The billing mode for the event data store.</p>
+     */
+    inline void SetBillingMode(BillingMode&& value) { m_billingMode = std::move(value); }
+
+    /**
+     * <p>The billing mode for the event data store.</p>
+     */
+    inline UpdateEventDataStoreResult& WithBillingMode(const BillingMode& value) { SetBillingMode(value); return *this;}
+
+    /**
+     * <p>The billing mode for the event data store.</p>
+     */
+    inline UpdateEventDataStoreResult& WithBillingMode(BillingMode&& value) { SetBillingMode(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -406,6 +433,8 @@ namespace Model
     Aws::Utils::DateTime m_updatedTimestamp;
 
     Aws::String m_kmsKeyId;
+
+    BillingMode m_billingMode;
 
     Aws::String m_requestId;
   };
