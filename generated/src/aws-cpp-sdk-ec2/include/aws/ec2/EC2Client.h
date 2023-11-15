@@ -8829,6 +8829,31 @@ namespace EC2
         }
 
         /**
+         * <p>Describes the lock status for a snapshot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLockedSnapshots">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLockedSnapshotsOutcome DescribeLockedSnapshots(const Model::DescribeLockedSnapshotsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeLockedSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeLockedSnapshotsRequestT = Model::DescribeLockedSnapshotsRequest>
+        Model::DescribeLockedSnapshotsOutcomeCallable DescribeLockedSnapshotsCallable(const DescribeLockedSnapshotsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DescribeLockedSnapshots, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeLockedSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeLockedSnapshotsRequestT = Model::DescribeLockedSnapshotsRequest>
+        void DescribeLockedSnapshotsAsync(const DescribeLockedSnapshotsRequestT& request, const DescribeLockedSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DescribeLockedSnapshots, request, handler, context);
+        }
+
+        /**
          * <p>Describes your managed prefix lists and any Amazon Web Services-managed
          * prefix lists.</p> <p>To view the entries for your prefix list, use
          * <a>GetManagedPrefixListEntries</a>.</p><p><h3>See Also:</h3>   <a
@@ -14289,6 +14314,42 @@ namespace EC2
         }
 
         /**
+         * <p>Locks an Amazon EBS snapshot in either <i>governance</i> or <i>compliance</i>
+         * mode to protect it against accidental or malicious deletions for a specific
+         * duration. A locked snapshot can't be deleted.</p> <p>You can also use this
+         * action to modify the lock settings for a snapshot that is already locked. The
+         * allowed modifications depend on the lock mode and lock state:</p> <ul> <li>
+         * <p>If the snapshot is locked in governance mode, you can modify the lock mode
+         * and the lock duration or lock expiration date.</p> </li> <li> <p>If the snapshot
+         * is locked in compliance mode and it is in the cooling-off period, you can modify
+         * the lock mode and the lock duration or lock expiration date.</p> </li> <li>
+         * <p>If the snapshot is locked in compliance mode and the cooling-off period has
+         * lapsed, you can only increase the lock duration or extend the lock expiration
+         * date.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LockSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::LockSnapshotOutcome LockSnapshot(const Model::LockSnapshotRequest& request) const;
+
+        /**
+         * A Callable wrapper for LockSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename LockSnapshotRequestT = Model::LockSnapshotRequest>
+        Model::LockSnapshotOutcomeCallable LockSnapshotCallable(const LockSnapshotRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::LockSnapshot, request);
+        }
+
+        /**
+         * An Async wrapper for LockSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename LockSnapshotRequestT = Model::LockSnapshotRequest>
+        void LockSnapshotAsync(const LockSnapshotRequestT& request, const LockSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::LockSnapshot, request, handler, context);
+        }
+
+        /**
          * <p>Modifies an attribute of the specified Elastic IP address. For requirements,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
@@ -18397,6 +18458,34 @@ namespace EC2
         void UnassignPrivateNatGatewayAddressAsync(const UnassignPrivateNatGatewayAddressRequestT& request, const UnassignPrivateNatGatewayAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::UnassignPrivateNatGatewayAddress, request, handler, context);
+        }
+
+        /**
+         * <p>Unlocks a snapshot that is locked in governance mode or that is locked in
+         * compliance mode but still in the cooling-off period. You can't unlock a snapshot
+         * that is locked in compliance mode after the cooling-off period has
+         * expired.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnlockSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UnlockSnapshotOutcome UnlockSnapshot(const Model::UnlockSnapshotRequest& request) const;
+
+        /**
+         * A Callable wrapper for UnlockSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UnlockSnapshotRequestT = Model::UnlockSnapshotRequest>
+        Model::UnlockSnapshotOutcomeCallable UnlockSnapshotCallable(const UnlockSnapshotRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::UnlockSnapshot, request);
+        }
+
+        /**
+         * An Async wrapper for UnlockSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UnlockSnapshotRequestT = Model::UnlockSnapshotRequest>
+        void UnlockSnapshotAsync(const UnlockSnapshotRequestT& request, const UnlockSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::UnlockSnapshot, request, handler, context);
         }
 
         /**

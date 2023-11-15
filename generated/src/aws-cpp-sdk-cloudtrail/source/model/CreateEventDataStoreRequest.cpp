@@ -26,7 +26,9 @@ CreateEventDataStoreRequest::CreateEventDataStoreRequest() :
     m_tagsListHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_startIngestion(false),
-    m_startIngestionHasBeenSet(false)
+    m_startIngestionHasBeenSet(false),
+    m_billingMode(BillingMode::NOT_SET),
+    m_billingModeHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,11 @@ Aws::String CreateEventDataStoreRequest::SerializePayload() const
   {
    payload.WithBool("StartIngestion", m_startIngestion);
 
+  }
+
+  if(m_billingModeHasBeenSet)
+  {
+   payload.WithString("BillingMode", BillingModeMapper::GetNameForBillingMode(m_billingMode));
   }
 
   return payload.View().WriteReadable();

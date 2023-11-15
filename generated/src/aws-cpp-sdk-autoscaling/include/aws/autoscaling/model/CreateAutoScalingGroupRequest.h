@@ -10,6 +10,7 @@
 #include <aws/autoscaling/model/LaunchTemplateSpecification.h>
 #include <aws/autoscaling/model/MixedInstancesPolicy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/autoscaling/model/InstanceMaintenancePolicy.h>
 #include <aws/autoscaling/model/LifecycleHookSpecification.h>
 #include <aws/autoscaling/model/Tag.h>
 #include <aws/autoscaling/model/TrafficSourceIdentifier.h>
@@ -1913,6 +1914,55 @@ namespace Model
      */
     inline CreateAutoScalingGroupRequest& AddTrafficSources(TrafficSourceIdentifier&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>An instance maintenance policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set
+     * instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline const InstanceMaintenancePolicy& GetInstanceMaintenancePolicy() const{ return m_instanceMaintenancePolicy; }
+
+    /**
+     * <p>An instance maintenance policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set
+     * instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline bool InstanceMaintenancePolicyHasBeenSet() const { return m_instanceMaintenancePolicyHasBeenSet; }
+
+    /**
+     * <p>An instance maintenance policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set
+     * instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline void SetInstanceMaintenancePolicy(const InstanceMaintenancePolicy& value) { m_instanceMaintenancePolicyHasBeenSet = true; m_instanceMaintenancePolicy = value; }
+
+    /**
+     * <p>An instance maintenance policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set
+     * instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline void SetInstanceMaintenancePolicy(InstanceMaintenancePolicy&& value) { m_instanceMaintenancePolicyHasBeenSet = true; m_instanceMaintenancePolicy = std::move(value); }
+
+    /**
+     * <p>An instance maintenance policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set
+     * instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithInstanceMaintenancePolicy(const InstanceMaintenancePolicy& value) { SetInstanceMaintenancePolicy(value); return *this;}
+
+    /**
+     * <p>An instance maintenance policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set
+     * instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithInstanceMaintenancePolicy(InstanceMaintenancePolicy&& value) { SetInstanceMaintenancePolicy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -1995,6 +2045,9 @@ namespace Model
 
     Aws::Vector<TrafficSourceIdentifier> m_trafficSources;
     bool m_trafficSourcesHasBeenSet = false;
+
+    InstanceMaintenancePolicy m_instanceMaintenancePolicy;
+    bool m_instanceMaintenancePolicyHasBeenSet = false;
   };
 
 } // namespace Model

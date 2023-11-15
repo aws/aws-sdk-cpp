@@ -11,7 +11,8 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 DeleteCustomDomainAssociationRequest::DeleteCustomDomainAssociationRequest() : 
-    m_clusterIdentifierHasBeenSet(false)
+    m_clusterIdentifierHasBeenSet(false),
+    m_customDomainNameHasBeenSet(false)
 {
 }
 
@@ -22,6 +23,11 @@ Aws::String DeleteCustomDomainAssociationRequest::SerializePayload() const
   if(m_clusterIdentifierHasBeenSet)
   {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  }
+
+  if(m_customDomainNameHasBeenSet)
+  {
+    ss << "CustomDomainName=" << StringUtils::URLEncode(m_customDomainName.c_str()) << "&";
   }
 
   ss << "Version=2012-12-01";

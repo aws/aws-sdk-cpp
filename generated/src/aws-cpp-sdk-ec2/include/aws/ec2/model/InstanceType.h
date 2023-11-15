@@ -786,7 +786,8 @@ namespace Model
     r7i_12xlarge,
     r7i_16xlarge,
     r7i_24xlarge,
-    r7i_48xlarge
+    r7i_48xlarge,
+    dl2q_24xlarge
   };
 
 namespace InstanceTypeMapper

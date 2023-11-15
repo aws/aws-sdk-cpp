@@ -46,7 +46,7 @@ namespace Model
    * processes and logs the event.</p> </li> <li> <p>A user uploads an object to an
    * Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.</p> </li> <li> <p>The
    * <code>PutObject</code> API operation occurred for an object in an S3 bucket that
-   * the CloudTrail user didn't specify for the trail. The trail doesn��t log the
+   * the CloudTrail user didn't specify for the trail. The trail doesn’t log the
    * event.</p> </li> </ol> <p>The following example demonstrates how logging works
    * when you configure logging of Lambda data events for a Lambda function named
    * <i>MyLambdaFunction</i>, but not for all Lambda functions.</p> <ol> <li> <p>A
@@ -60,7 +60,7 @@ namespace Model
    * Lambda API. Because the CloudTrail user did not specify logging data events for
    * all Lambda functions, the <code>Invoke</code> operation for
    * <i>MyOtherLambdaFunction</i> does not match the function specified for the
-   * trail. The trail doesn��t log the event. </p> </li> </ol><p><h3>See Also:</h3>  
+   * trail. The trail doesn’t log the event. </p> </li> </ol><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DataResource">AWS
    * API Reference</a></p>
