@@ -325,6 +325,11 @@ namespace Aws
             Aws::Http::Version version = Http::Version::HTTP_VERSION_2TLS;
 
             /**
+             * Disable all internal IMDSV1 Calls
+             */
+            bool disableImdsV1 = false;
+
+            /**
              * A helper function to read config value from env variable or aws profile config
              */
             static Aws::String LoadConfigFromEnvOrProfile(const Aws::String& envKey,

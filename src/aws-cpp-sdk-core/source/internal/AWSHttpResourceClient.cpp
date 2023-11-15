@@ -187,7 +187,8 @@ namespace Aws
             AWSHttpResourceClient(clientConfiguration, EC2_METADATA_CLIENT_LOG_TAG),
             m_endpoint(endpoint),
             m_disableIMDS(clientConfiguration.disableIMDS),
-            m_tokenRequired(true)
+            m_tokenRequired(true),
+            m_disableIMDSV1(clientConfiguration.disableImdsV1)
         {
 
         }
@@ -207,6 +208,10 @@ namespace Aws
         {
             if (m_disableIMDS) {
                 AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Skipping call to IMDS Service");
+                return {};
+            }
+            if (m_disableIMDSV1) {
+                AWS_LOGSTREAM_INFO(m_logtag.c_str(), "Attempting to call IMDSv1 Service while disabled");
                 return {};
             }
             std::unique_lock<std::recursive_mutex> locker(m_tokenMutex);
@@ -259,7 +264,7 @@ namespace Aws
             }
             std::unique_lock<std::recursive_mutex> locker(m_tokenMutex);
 #if !defined(DISABLE_IMDSV1)
-            if (!m_tokenRequired) {
+            if (!m_disableIMDSV1 && !m_tokenRequired) {
                 return GetDefaultCredentials();
             }
 #endif
@@ -280,7 +285,7 @@ namespace Aws
                 return {};
             }
 #if !defined(DISABLE_IMDSV1)
-            else if (result.GetResponseCode() != HttpResponseCode::OK || trimmedTokenString.empty())
+            if (!m_disableIMDSV1 && (result.GetResponseCode() != HttpResponseCode::OK || trimmedTokenString.empty()))
             {
                 m_tokenRequired = false;
                 AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Calling EC2MetadataService to get token failed, falling back to less secure way.");

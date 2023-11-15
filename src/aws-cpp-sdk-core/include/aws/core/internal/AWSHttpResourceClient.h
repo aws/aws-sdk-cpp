@@ -155,6 +155,7 @@ namespace Aws
             mutable Aws::String m_token;
             mutable bool m_tokenRequired;
             mutable Aws::String m_region;
+            bool m_disableIMDSV1 = false;
         };
 
         void AWS_CORE_API InitEC2MetadataClient();
