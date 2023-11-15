@@ -25,6 +25,7 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.polly.PollyCppClient
 import com.amazonaws.util.awsclientgenerator.generators.cpp.rds.RDSCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.s3.S3RestXmlCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.s3control.S3ControlRestXmlCppClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.sqs.SQSJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.sqs.SQSQueryXmlCppClientGenerator;
 
 import java.util.HashMap;
@@ -52,6 +53,7 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-glacier-rest-json", new GlacierRestJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-lambda-rest-json", new LambdaRestJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-sqs-query", new SQSQueryXmlCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-sqs-json", new SQSJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-s3-rest-xml", new S3RestXmlCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-s3-crt-rest-xml", new S3RestXmlCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-s3control-rest-xml", new S3ControlRestXmlCppClientGenerator());
