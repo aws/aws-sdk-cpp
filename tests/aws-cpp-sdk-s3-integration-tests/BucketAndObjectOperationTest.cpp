@@ -2136,7 +2136,10 @@ namespace
         ss.str("");
         ss << "https://myaccesspoint-123456789012.op-01234567890123456." << CUSTOM_ENDPOINT_OVERRIDE;
         ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
-        ASSERT_STREQ("s3-outposts", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+        auto expEndpoint = s3ClientWithVirtualAddressing.accessEndpointProvider()->ResolveEndpoint(listObjectsRequest.GetEndpointContextParams());
+        AWS_EXPECT_SUCCESS(expEndpoint);
+        Aws::String expSigningName = *(expEndpoint.GetResult().GetAttributes()->authScheme.GetSigningName());
+        ASSERT_EQ(expSigningName, TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
 
         // ListBuckets
         auto listBucketsOutcome = s3ClientWithVirtualAddressing.ListBuckets();
