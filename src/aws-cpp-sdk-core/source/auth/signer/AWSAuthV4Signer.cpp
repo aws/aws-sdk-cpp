@@ -218,8 +218,7 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
 
     if (m_signingAlgorithm == AWSSigningAlgorithm::ASYMMETRIC_SIGV4)
     {
-        // Replace m_serviceName with signingServiceName after rebasing on S3 outposts.
-        return SignRequestWithSigV4a(request, signingRegion.c_str(), m_serviceName.c_str(), signBody,
+        return SignRequestWithSigV4a(request, signingRegion.c_str(), signingServiceName.c_str(), signBody,
             0 /* expirationTimeInSeconds doesn't matter for HttpRequestViaHeaders */, Aws::Crt::Auth::SignatureType::HttpRequestViaHeaders);
     }
 
