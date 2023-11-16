@@ -110,6 +110,13 @@ public class C2jModelToGeneratorModelTransformer {
             "GeneratedPolicyResult"
     );
 
+    private static List<String> SHAPE_SDK_RESULT_SUFFIX = ImmutableList.of(
+            "Result", "SdkResult", "CppSdkResult"
+    );
+    private static List<String> SHAPE_SDK_REQUEST_SUFFIX = ImmutableList.of(
+            "Request", "SdkRequest", "CppSdkRequest"
+    );
+
     public C2jModelToGeneratorModelTransformer(C2jServiceModel c2jServiceModel, boolean standalone) {
         this.c2jServiceModel = c2jServiceModel;
         this.standalone = standalone;
@@ -548,8 +555,8 @@ public class C2jModelToGeneratorModelTransformer {
 
         // input
         if (c2jOperation.getInput() != null) {
-            String requestName = c2jOperation.getName() + "Request";
-            Shape requestShape = renameShape(shapes.get(c2jOperation.getInput().getShape()), requestName);
+            Shape requestShape = renameShape(shapes.get(c2jOperation.getInput().getShape()), c2jOperation.getName(), SHAPE_SDK_REQUEST_SUFFIX);
+
             requestShape.setRequest(true);
             requestShape.setReferenced(true);
             requestShape.getReferencedBy().add(c2jOperation.getName());
@@ -562,7 +569,7 @@ public class C2jModelToGeneratorModelTransformer {
             }
             if(requestShape.getLocationName() != null && requestShape.getLocationName().length() > 0 &&
                     (requestShape.getPayload() == null || requestShape.getPayload().length() == 0) ) {
-                requestShape.setPayload(requestName);
+                requestShape.setPayload(requestShape.getName());
             }
 
             requestShape.setSignBody(true);
@@ -597,8 +604,8 @@ public class C2jModelToGeneratorModelTransformer {
 
         // output
         if (c2jOperation.getOutput() != null) {
-            String resultName = c2jOperation.getName() + "Result";
-            Shape resultShape = renameShape(shapes.get(c2jOperation.getOutput().getShape()), resultName);
+            Shape resultShape = renameShape(shapes.get(c2jOperation.getOutput().getShape()), c2jOperation.getName(), SHAPE_SDK_RESULT_SUFFIX);
+
             resultShape.setResult(true);
             resultShape.setReferenced(true);
             resultShape.getReferencedBy().add(c2jOperation.getName());
@@ -651,44 +658,52 @@ public class C2jModelToGeneratorModelTransformer {
         return operation;
     }
 
-    Shape renameShape(Shape shape, String name) {
-        if (shape.getName().equals(name)) {
-            return shape;
-        }
+    Shape renameShape(Shape shape, String baseName, List<String> suffixOptions) {
+        String newName = null;
+        Iterator<String> suffixIt = suffixOptions.iterator();
+        while (suffixIt.hasNext()) {
+            newName = baseName + suffixIt.next();
 
-        // Detect any conflicts with shape name defined by service team, need to rename it if so.
-        Optional<String> conflicted = shapes.keySet().stream()
-                .filter(shapeName -> name.equals(shapeName) ||
-                        (shape.getMembers().keySet().stream().anyMatch(memberName -> memberName.equals(shapeName) ||
-                         shape.getMembers().values().stream().anyMatch(shapeMember -> LEGACY_RENAMED_APIS.contains(shapeMember.getShape().getName()))) &&
-                                        (name.equals("Get" + shapeName) || name.equals("Set" + shapeName)))).findFirst();
-        if (conflicted.isPresent()) {
-            String originalShapeName = conflicted.get();
-            String newShapeName = "";
-            switch(originalShapeName) {
-                case "CopyObjectResult":
+            if (shape.getName().equals(newName)) {
+                return shape;
+            }
+
+            // Detect any conflicts with shape name defined by service team, need to rename it if so.
+            String finalNewName = newName;
+            Optional<String> conflicted = shapes.keySet().stream()
+                    .filter(shapeName -> finalNewName.equals(shapeName) ||
+                            (shape.getMembers().keySet().stream().anyMatch(memberName -> memberName.equals(shapeName) ||
+                                    shape.getMembers().values().stream().anyMatch(shapeMember -> LEGACY_RENAMED_APIS.contains(shapeMember.getShape().getName()))) &&
+                                    (finalNewName.equals("Get" + shapeName) || finalNewName.equals("Set" + shapeName)))).findFirst();
+            if (!conflicted.isPresent()) {
+                break;
+            } else {
+                String originalShapeName = conflicted.get();
+                String newShapeName = "";
+                if (originalShapeName.equals("CopyObjectResult")) {
                     newShapeName = "CopyObjectResultDetails";
                     renameShapeMember(shape, "CopyObjectResult", originalShapeName, newShapeName, newShapeName, true);
                     break;
-                case "BatchUpdateScheduleResult":
+                } else if (originalShapeName.equals("BatchUpdateScheduleResult")) {
                     shapes.remove(originalShapeName);
                     break;
-                case "GeneratedPolicyResult":
+                } else if (originalShapeName.equals("GeneratedPolicyResult")) {
                     newShapeName = "GeneratedPolicyResults";
                     renameShapeMember(shape, "generatedPolicyResult", originalShapeName, newShapeName, newShapeName, false);
                     break;
-                case "SearchResult":
+                } else if (originalShapeName.equals("SearchResult")) {
                     newShapeName = "SearchResultDetails";
                     renameShapeMember(shape, "results", originalShapeName, "results", newShapeName, true);
                     break;
-                default:
-                    throw new RuntimeException("Unhandled shape name conflict: " + name);
+                }
+                if (!suffixIt.hasNext())
+                    throw new RuntimeException("Unhandled shape name conflict: " + newName);
             }
         }
 
         Shape cloned = cloneShape(shape);
-        cloned.setName(name);
-        shapes.put(name, cloned);
+        cloned.setName(newName);
+        shapes.put(newName, cloned);
         return cloned;
     }
 
