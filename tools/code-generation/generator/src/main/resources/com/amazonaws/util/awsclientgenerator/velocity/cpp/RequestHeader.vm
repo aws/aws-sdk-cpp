@@ -137,7 +137,7 @@ namespace Model
     /**
      * Underlying Event Stream Handler which is used to define callback functions.
      */
-    inline ${operation.name}Request& WithEventStreamHandler(const ${operation.name}Handler& value) { SetEventStreamHandler(value); return *this; }
+    inline ${operation.request.shape.name}& WithEventStreamHandler(const ${operation.name}Handler& value) { SetEventStreamHandler(value); return *this; }
 
 #end
 #if($operation.requestCompressionRequired)
