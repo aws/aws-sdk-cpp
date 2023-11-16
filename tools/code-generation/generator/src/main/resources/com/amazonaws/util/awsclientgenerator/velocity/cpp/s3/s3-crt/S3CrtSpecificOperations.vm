@@ -203,11 +203,11 @@ static void ${operation.name}RequestShutdownCallback(void *user_data)
 #end
 #if($operation.request)
 #if($operation.name == "PutObject")
-  userData->putResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const ${operation.name}Request*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
+  userData->putResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const ${operation.request.shape.name}*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
 #elseif($operation.name == "GetObject")
-  userData->getResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const ${operation.name}Request*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
+  userData->getResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const ${operation.request.shape.name}*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
 #elseif($operation.name == "CopyObject")
-  userData->copyResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const ${operation.name}Request*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
+  userData->copyResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const ${operation.request.shape.name}*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
 #end
 #else
   (*handler)(userData->s3CrtClient, outcome, userData->userCallbackContext);
@@ -290,7 +290,7 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
 #else
   InitCommonCrtRequestOption(userData, &options, &request, uri, Aws::Http::HttpMethod::HTTP_${operation.http.method});
 #end
-  options.shutdown_callback = ${operation.name}RequestShutdownCallback;
+  options.shutdown_callback = ${operation.request.shape.name}ShutdownCallback;
 #if($operation.name == "PutObject")
   options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
 #elseif($operation.name == "GetObject")
