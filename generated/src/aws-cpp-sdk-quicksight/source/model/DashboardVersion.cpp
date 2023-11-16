@@ -30,8 +30,7 @@ DashboardVersion::DashboardVersion() :
     m_dataSetArnsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_themeArnHasBeenSet(false),
-    m_sheetsHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+    m_sheetsHasBeenSet(false)
 {
 }
 
@@ -47,8 +46,7 @@ DashboardVersion::DashboardVersion(JsonView jsonValue) :
     m_dataSetArnsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_themeArnHasBeenSet(false),
-    m_sheetsHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+    m_sheetsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -134,13 +132,6 @@ DashboardVersion& DashboardVersion::operator =(JsonView jsonValue)
     m_sheetsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Options"))
-  {
-    m_options = jsonValue.GetObject("Options");
-
-    m_optionsHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -218,12 +209,6 @@ JsonValue DashboardVersion::Jsonize() const
      sheetsJsonList[sheetsIndex].AsObject(m_sheets[sheetsIndex].Jsonize());
    }
    payload.WithArray("Sheets", std::move(sheetsJsonList));
-
-  }
-
-  if(m_optionsHasBeenSet)
-  {
-   payload.WithObject("Options", m_options.Jsonize());
 
   }
 

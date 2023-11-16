@@ -54,49 +54,49 @@ namespace Model
 
 
     /**
-     * <p>The first stage to retrieve. This is used for pagination; see the
+     * <p>The first stage session to retrieve. This is used for pagination; see the
      * <code>nextToken</code> response field.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The first stage to retrieve. This is used for pagination; see the
+     * <p>The first stage session to retrieve. This is used for pagination; see the
      * <code>nextToken</code> response field.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The first stage to retrieve. This is used for pagination; see the
+     * <p>The first stage session to retrieve. This is used for pagination; see the
      * <code>nextToken</code> response field.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The first stage to retrieve. This is used for pagination; see the
+     * <p>The first stage session to retrieve. This is used for pagination; see the
      * <code>nextToken</code> response field.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The first stage to retrieve. This is used for pagination; see the
+     * <p>The first stage session to retrieve. This is used for pagination; see the
      * <code>nextToken</code> response field.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The first stage to retrieve. This is used for pagination; see the
+     * <p>The first stage session to retrieve. This is used for pagination; see the
      * <code>nextToken</code> response field.</p>
      */
     inline ListStageSessionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The first stage to retrieve. This is used for pagination; see the
+     * <p>The first stage session to retrieve. This is used for pagination; see the
      * <code>nextToken</code> response field.</p>
      */
     inline ListStageSessionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The first stage to retrieve. This is used for pagination; see the
+     * <p>The first stage session to retrieve. This is used for pagination; see the
      * <code>nextToken</code> response field.</p>
      */
     inline ListStageSessionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}

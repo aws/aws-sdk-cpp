@@ -548,6 +548,32 @@ namespace QuickSight
         }
 
         /**
+         * <p>Use <code>CreateRoleMembership</code> to add an existing Amazon QuickSight
+         * group to an existing role.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRoleMembership">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRoleMembershipOutcome CreateRoleMembership(const Model::CreateRoleMembershipRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRoleMembership that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateRoleMembershipRequestT = Model::CreateRoleMembershipRequest>
+        Model::CreateRoleMembershipOutcomeCallable CreateRoleMembershipCallable(const CreateRoleMembershipRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::CreateRoleMembership, request);
+        }
+
+        /**
+         * An Async wrapper for CreateRoleMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateRoleMembershipRequestT = Model::CreateRoleMembershipRequest>
+        void CreateRoleMembershipAsync(const CreateRoleMembershipRequestT& request, const CreateRoleMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::CreateRoleMembership, request, handler, context);
+        }
+
+        /**
          * <p>Creates a template either from a <code>TemplateDefinition</code> or from an
          * existing Amazon QuickSight analysis or template. You can use the resulting
          * template to create additional dashboards, templates, or analyses.</p> <p>A
@@ -1112,6 +1138,56 @@ namespace QuickSight
         void DeleteRefreshScheduleAsync(const DeleteRefreshScheduleRequestT& request, const DeleteRefreshScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::DeleteRefreshSchedule, request, handler, context);
+        }
+
+        /**
+         * <p>Removes custom permissions from the role.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRoleCustomPermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRoleCustomPermissionOutcome DeleteRoleCustomPermission(const Model::DeleteRoleCustomPermissionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRoleCustomPermission that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteRoleCustomPermissionRequestT = Model::DeleteRoleCustomPermissionRequest>
+        Model::DeleteRoleCustomPermissionOutcomeCallable DeleteRoleCustomPermissionCallable(const DeleteRoleCustomPermissionRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DeleteRoleCustomPermission, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteRoleCustomPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteRoleCustomPermissionRequestT = Model::DeleteRoleCustomPermissionRequest>
+        void DeleteRoleCustomPermissionAsync(const DeleteRoleCustomPermissionRequestT& request, const DeleteRoleCustomPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DeleteRoleCustomPermission, request, handler, context);
+        }
+
+        /**
+         * <p>Removes a group from a role.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRoleMembership">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRoleMembershipOutcome DeleteRoleMembership(const Model::DeleteRoleMembershipRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRoleMembership that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteRoleMembershipRequestT = Model::DeleteRoleMembershipRequest>
+        Model::DeleteRoleMembershipOutcomeCallable DeleteRoleMembershipCallable(const DeleteRoleMembershipRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DeleteRoleMembership, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteRoleMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteRoleMembershipRequestT = Model::DeleteRoleMembershipRequest>
+        void DeleteRoleMembershipAsync(const DeleteRoleMembershipRequestT& request, const DeleteRoleMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DeleteRoleMembership, request, handler, context);
         }
 
         /**
@@ -2135,6 +2211,32 @@ namespace QuickSight
         }
 
         /**
+         * <p>Describes all custom permissions that are mapped to a role.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRoleCustomPermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRoleCustomPermissionOutcome DescribeRoleCustomPermission(const Model::DescribeRoleCustomPermissionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeRoleCustomPermission that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeRoleCustomPermissionRequestT = Model::DescribeRoleCustomPermissionRequest>
+        Model::DescribeRoleCustomPermissionOutcomeCallable DescribeRoleCustomPermissionCallable(const DescribeRoleCustomPermissionRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DescribeRoleCustomPermission, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeRoleCustomPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeRoleCustomPermissionRequestT = Model::DescribeRoleCustomPermissionRequest>
+        void DescribeRoleCustomPermissionAsync(const DescribeRoleCustomPermissionRequestT& request, const DescribeRoleCustomPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DescribeRoleCustomPermission, request, handler, context);
+        }
+
+        /**
          * <p>Describes a template's metadata.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplate">AWS
          * API Reference</a></p>
@@ -3061,6 +3163,32 @@ namespace QuickSight
         void ListRefreshSchedulesAsync(const ListRefreshSchedulesRequestT& request, const ListRefreshSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::ListRefreshSchedules, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all groups that are associated with a role.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRoleMemberships">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRoleMembershipsOutcome ListRoleMemberships(const Model::ListRoleMembershipsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRoleMemberships that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListRoleMembershipsRequestT = Model::ListRoleMembershipsRequest>
+        Model::ListRoleMembershipsOutcomeCallable ListRoleMembershipsCallable(const ListRoleMembershipsRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::ListRoleMemberships, request);
+        }
+
+        /**
+         * An Async wrapper for ListRoleMemberships that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListRoleMembershipsRequestT = Model::ListRoleMembershipsRequest>
+        void ListRoleMembershipsAsync(const ListRoleMembershipsRequestT& request, const ListRoleMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::ListRoleMemberships, request, handler, context);
         }
 
         /**
@@ -4263,6 +4391,32 @@ namespace QuickSight
         void UpdateRefreshScheduleAsync(const UpdateRefreshScheduleRequestT& request, const UpdateRefreshScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::UpdateRefreshSchedule, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the custom permissions that are associated with a role.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRoleCustomPermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRoleCustomPermissionOutcome UpdateRoleCustomPermission(const Model::UpdateRoleCustomPermissionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateRoleCustomPermission that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateRoleCustomPermissionRequestT = Model::UpdateRoleCustomPermissionRequest>
+        Model::UpdateRoleCustomPermissionOutcomeCallable UpdateRoleCustomPermissionCallable(const UpdateRoleCustomPermissionRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::UpdateRoleCustomPermission, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateRoleCustomPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateRoleCustomPermissionRequestT = Model::UpdateRoleCustomPermissionRequest>
+        void UpdateRoleCustomPermissionAsync(const UpdateRoleCustomPermissionRequestT& request, const UpdateRoleCustomPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::UpdateRoleCustomPermission, request, handler, context);
         }
 
         /**

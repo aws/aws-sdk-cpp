@@ -25,7 +25,8 @@ CreateDashboardRequest::CreateDashboardRequest() :
     m_themeArnHasBeenSet(false),
     m_definitionHasBeenSet(false),
     m_validationStrategyHasBeenSet(false),
-    m_folderArnsHasBeenSet(false)
+    m_folderArnsHasBeenSet(false),
+    m_linkSharingConfigurationHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,12 @@ Aws::String CreateDashboardRequest::SerializePayload() const
      folderArnsJsonList[folderArnsIndex].AsString(m_folderArns[folderArnsIndex]);
    }
    payload.WithArray("FolderArns", std::move(folderArnsJsonList));
+
+  }
+
+  if(m_linkSharingConfigurationHasBeenSet)
+  {
+   payload.WithObject("LinkSharingConfiguration", m_linkSharingConfiguration.Jsonize());
 
   }
 

@@ -108,6 +108,12 @@ ReleasePhoneNumberResult& ReleasePhoneNumberResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("TwoWayChannelRole"))
+  {
+    m_twoWayChannelRole = jsonValue.GetString("TwoWayChannelRole");
+
+  }
+
   if(jsonValue.ValueExists("SelfManagedOptOutsEnabled"))
   {
     m_selfManagedOptOutsEnabled = jsonValue.GetBool("SelfManagedOptOutsEnabled");
@@ -117,6 +123,12 @@ ReleasePhoneNumberResult& ReleasePhoneNumberResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("OptOutListName"))
   {
     m_optOutListName = jsonValue.GetString("OptOutListName");
+
+  }
+
+  if(jsonValue.ValueExists("RegistrationId"))
+  {
+    m_registrationId = jsonValue.GetString("RegistrationId");
 
   }
 

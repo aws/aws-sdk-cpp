@@ -136,7 +136,9 @@ namespace Model
      * Determines the position of some tags in the Media Presentation Description
      * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
      * are included in each Representation.  When set to COMPACT, duplicate elements
-     * are combined and presented at the AdaptationSet level.
+     * are combined and presented at the AdaptationSet level. When set to
+     * DRM_TOP_LEVEL_COMPACT, content protection elements are placed the MPD level and
+     * referenced at the AdaptationSet level.
      */
     inline const ManifestLayout& GetManifestLayout() const{ return m_manifestLayout; }
 
@@ -144,7 +146,9 @@ namespace Model
      * Determines the position of some tags in the Media Presentation Description
      * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
      * are included in each Representation.  When set to COMPACT, duplicate elements
-     * are combined and presented at the AdaptationSet level.
+     * are combined and presented at the AdaptationSet level. When set to
+     * DRM_TOP_LEVEL_COMPACT, content protection elements are placed the MPD level and
+     * referenced at the AdaptationSet level.
      */
     inline bool ManifestLayoutHasBeenSet() const { return m_manifestLayoutHasBeenSet; }
 
@@ -152,7 +156,9 @@ namespace Model
      * Determines the position of some tags in the Media Presentation Description
      * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
      * are included in each Representation.  When set to COMPACT, duplicate elements
-     * are combined and presented at the AdaptationSet level.
+     * are combined and presented at the AdaptationSet level. When set to
+     * DRM_TOP_LEVEL_COMPACT, content protection elements are placed the MPD level and
+     * referenced at the AdaptationSet level.
      */
     inline void SetManifestLayout(const ManifestLayout& value) { m_manifestLayoutHasBeenSet = true; m_manifestLayout = value; }
 
@@ -160,7 +166,9 @@ namespace Model
      * Determines the position of some tags in the Media Presentation Description
      * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
      * are included in each Representation.  When set to COMPACT, duplicate elements
-     * are combined and presented at the AdaptationSet level.
+     * are combined and presented at the AdaptationSet level. When set to
+     * DRM_TOP_LEVEL_COMPACT, content protection elements are placed the MPD level and
+     * referenced at the AdaptationSet level.
      */
     inline void SetManifestLayout(ManifestLayout&& value) { m_manifestLayoutHasBeenSet = true; m_manifestLayout = std::move(value); }
 
@@ -168,7 +176,9 @@ namespace Model
      * Determines the position of some tags in the Media Presentation Description
      * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
      * are included in each Representation.  When set to COMPACT, duplicate elements
-     * are combined and presented at the AdaptationSet level.
+     * are combined and presented at the AdaptationSet level. When set to
+     * DRM_TOP_LEVEL_COMPACT, content protection elements are placed the MPD level and
+     * referenced at the AdaptationSet level.
      */
     inline DashPackage& WithManifestLayout(const ManifestLayout& value) { SetManifestLayout(value); return *this;}
 
@@ -176,7 +186,9 @@ namespace Model
      * Determines the position of some tags in the Media Presentation Description
      * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
      * are included in each Representation.  When set to COMPACT, duplicate elements
-     * are combined and presented at the AdaptationSet level.
+     * are combined and presented at the AdaptationSet level. When set to
+     * DRM_TOP_LEVEL_COMPACT, content protection elements are placed the MPD level and
+     * referenced at the AdaptationSet level.
      */
     inline DashPackage& WithManifestLayout(ManifestLayout&& value) { SetManifestLayout(std::move(value)); return *this;}
 

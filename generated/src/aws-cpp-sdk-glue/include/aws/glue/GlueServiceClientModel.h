@@ -96,6 +96,8 @@
 #include <aws/glue/model/GetClassifiersResult.h>
 #include <aws/glue/model/GetColumnStatisticsForPartitionResult.h>
 #include <aws/glue/model/GetColumnStatisticsForTableResult.h>
+#include <aws/glue/model/GetColumnStatisticsTaskRunResult.h>
+#include <aws/glue/model/GetColumnStatisticsTaskRunsResult.h>
 #include <aws/glue/model/GetConnectionResult.h>
 #include <aws/glue/model/GetConnectionsResult.h>
 #include <aws/glue/model/GetCrawlerResult.h>
@@ -156,6 +158,7 @@
 #include <aws/glue/model/GetWorkflowRunsResult.h>
 #include <aws/glue/model/ImportCatalogToGlueResult.h>
 #include <aws/glue/model/ListBlueprintsResult.h>
+#include <aws/glue/model/ListColumnStatisticsTaskRunsResult.h>
 #include <aws/glue/model/ListCrawlersResult.h>
 #include <aws/glue/model/ListCrawlsResult.h>
 #include <aws/glue/model/ListCustomEntityTypesResult.h>
@@ -186,6 +189,7 @@
 #include <aws/glue/model/RunStatementResult.h>
 #include <aws/glue/model/SearchTablesResult.h>
 #include <aws/glue/model/StartBlueprintRunResult.h>
+#include <aws/glue/model/StartColumnStatisticsTaskRunResult.h>
 #include <aws/glue/model/StartCrawlerResult.h>
 #include <aws/glue/model/StartCrawlerScheduleResult.h>
 #include <aws/glue/model/StartDataQualityRuleRecommendationRunResult.h>
@@ -197,6 +201,7 @@
 #include <aws/glue/model/StartMLLabelingSetGenerationTaskRunResult.h>
 #include <aws/glue/model/StartTriggerResult.h>
 #include <aws/glue/model/StartWorkflowRunResult.h>
+#include <aws/glue/model/StopColumnStatisticsTaskRunResult.h>
 #include <aws/glue/model/StopCrawlerResult.h>
 #include <aws/glue/model/StopCrawlerScheduleResult.h>
 #include <aws/glue/model/StopSessionResult.h>
@@ -344,6 +349,8 @@ namespace Aws
       class GetClassifiersRequest;
       class GetColumnStatisticsForPartitionRequest;
       class GetColumnStatisticsForTableRequest;
+      class GetColumnStatisticsTaskRunRequest;
+      class GetColumnStatisticsTaskRunsRequest;
       class GetConnectionRequest;
       class GetConnectionsRequest;
       class GetCrawlerRequest;
@@ -404,6 +411,7 @@ namespace Aws
       class GetWorkflowRunsRequest;
       class ImportCatalogToGlueRequest;
       class ListBlueprintsRequest;
+      class ListColumnStatisticsTaskRunsRequest;
       class ListCrawlersRequest;
       class ListCrawlsRequest;
       class ListCustomEntityTypesRequest;
@@ -434,6 +442,7 @@ namespace Aws
       class RunStatementRequest;
       class SearchTablesRequest;
       class StartBlueprintRunRequest;
+      class StartColumnStatisticsTaskRunRequest;
       class StartCrawlerRequest;
       class StartCrawlerScheduleRequest;
       class StartDataQualityRuleRecommendationRunRequest;
@@ -445,6 +454,7 @@ namespace Aws
       class StartMLLabelingSetGenerationTaskRunRequest;
       class StartTriggerRequest;
       class StartWorkflowRunRequest;
+      class StopColumnStatisticsTaskRunRequest;
       class StopCrawlerRequest;
       class StopCrawlerScheduleRequest;
       class StopSessionRequest;
@@ -555,6 +565,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetClassifiersResult, GlueError> GetClassifiersOutcome;
       typedef Aws::Utils::Outcome<GetColumnStatisticsForPartitionResult, GlueError> GetColumnStatisticsForPartitionOutcome;
       typedef Aws::Utils::Outcome<GetColumnStatisticsForTableResult, GlueError> GetColumnStatisticsForTableOutcome;
+      typedef Aws::Utils::Outcome<GetColumnStatisticsTaskRunResult, GlueError> GetColumnStatisticsTaskRunOutcome;
+      typedef Aws::Utils::Outcome<GetColumnStatisticsTaskRunsResult, GlueError> GetColumnStatisticsTaskRunsOutcome;
       typedef Aws::Utils::Outcome<GetConnectionResult, GlueError> GetConnectionOutcome;
       typedef Aws::Utils::Outcome<GetConnectionsResult, GlueError> GetConnectionsOutcome;
       typedef Aws::Utils::Outcome<GetCrawlerResult, GlueError> GetCrawlerOutcome;
@@ -615,6 +627,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetWorkflowRunsResult, GlueError> GetWorkflowRunsOutcome;
       typedef Aws::Utils::Outcome<ImportCatalogToGlueResult, GlueError> ImportCatalogToGlueOutcome;
       typedef Aws::Utils::Outcome<ListBlueprintsResult, GlueError> ListBlueprintsOutcome;
+      typedef Aws::Utils::Outcome<ListColumnStatisticsTaskRunsResult, GlueError> ListColumnStatisticsTaskRunsOutcome;
       typedef Aws::Utils::Outcome<ListCrawlersResult, GlueError> ListCrawlersOutcome;
       typedef Aws::Utils::Outcome<ListCrawlsResult, GlueError> ListCrawlsOutcome;
       typedef Aws::Utils::Outcome<ListCustomEntityTypesResult, GlueError> ListCustomEntityTypesOutcome;
@@ -645,6 +658,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<RunStatementResult, GlueError> RunStatementOutcome;
       typedef Aws::Utils::Outcome<SearchTablesResult, GlueError> SearchTablesOutcome;
       typedef Aws::Utils::Outcome<StartBlueprintRunResult, GlueError> StartBlueprintRunOutcome;
+      typedef Aws::Utils::Outcome<StartColumnStatisticsTaskRunResult, GlueError> StartColumnStatisticsTaskRunOutcome;
       typedef Aws::Utils::Outcome<StartCrawlerResult, GlueError> StartCrawlerOutcome;
       typedef Aws::Utils::Outcome<StartCrawlerScheduleResult, GlueError> StartCrawlerScheduleOutcome;
       typedef Aws::Utils::Outcome<StartDataQualityRuleRecommendationRunResult, GlueError> StartDataQualityRuleRecommendationRunOutcome;
@@ -656,6 +670,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StartMLLabelingSetGenerationTaskRunResult, GlueError> StartMLLabelingSetGenerationTaskRunOutcome;
       typedef Aws::Utils::Outcome<StartTriggerResult, GlueError> StartTriggerOutcome;
       typedef Aws::Utils::Outcome<StartWorkflowRunResult, GlueError> StartWorkflowRunOutcome;
+      typedef Aws::Utils::Outcome<StopColumnStatisticsTaskRunResult, GlueError> StopColumnStatisticsTaskRunOutcome;
       typedef Aws::Utils::Outcome<StopCrawlerResult, GlueError> StopCrawlerOutcome;
       typedef Aws::Utils::Outcome<StopCrawlerScheduleResult, GlueError> StopCrawlerScheduleOutcome;
       typedef Aws::Utils::Outcome<StopSessionResult, GlueError> StopSessionOutcome;
@@ -766,6 +781,8 @@ namespace Aws
       typedef std::future<GetClassifiersOutcome> GetClassifiersOutcomeCallable;
       typedef std::future<GetColumnStatisticsForPartitionOutcome> GetColumnStatisticsForPartitionOutcomeCallable;
       typedef std::future<GetColumnStatisticsForTableOutcome> GetColumnStatisticsForTableOutcomeCallable;
+      typedef std::future<GetColumnStatisticsTaskRunOutcome> GetColumnStatisticsTaskRunOutcomeCallable;
+      typedef std::future<GetColumnStatisticsTaskRunsOutcome> GetColumnStatisticsTaskRunsOutcomeCallable;
       typedef std::future<GetConnectionOutcome> GetConnectionOutcomeCallable;
       typedef std::future<GetConnectionsOutcome> GetConnectionsOutcomeCallable;
       typedef std::future<GetCrawlerOutcome> GetCrawlerOutcomeCallable;
@@ -826,6 +843,7 @@ namespace Aws
       typedef std::future<GetWorkflowRunsOutcome> GetWorkflowRunsOutcomeCallable;
       typedef std::future<ImportCatalogToGlueOutcome> ImportCatalogToGlueOutcomeCallable;
       typedef std::future<ListBlueprintsOutcome> ListBlueprintsOutcomeCallable;
+      typedef std::future<ListColumnStatisticsTaskRunsOutcome> ListColumnStatisticsTaskRunsOutcomeCallable;
       typedef std::future<ListCrawlersOutcome> ListCrawlersOutcomeCallable;
       typedef std::future<ListCrawlsOutcome> ListCrawlsOutcomeCallable;
       typedef std::future<ListCustomEntityTypesOutcome> ListCustomEntityTypesOutcomeCallable;
@@ -856,6 +874,7 @@ namespace Aws
       typedef std::future<RunStatementOutcome> RunStatementOutcomeCallable;
       typedef std::future<SearchTablesOutcome> SearchTablesOutcomeCallable;
       typedef std::future<StartBlueprintRunOutcome> StartBlueprintRunOutcomeCallable;
+      typedef std::future<StartColumnStatisticsTaskRunOutcome> StartColumnStatisticsTaskRunOutcomeCallable;
       typedef std::future<StartCrawlerOutcome> StartCrawlerOutcomeCallable;
       typedef std::future<StartCrawlerScheduleOutcome> StartCrawlerScheduleOutcomeCallable;
       typedef std::future<StartDataQualityRuleRecommendationRunOutcome> StartDataQualityRuleRecommendationRunOutcomeCallable;
@@ -867,6 +886,7 @@ namespace Aws
       typedef std::future<StartMLLabelingSetGenerationTaskRunOutcome> StartMLLabelingSetGenerationTaskRunOutcomeCallable;
       typedef std::future<StartTriggerOutcome> StartTriggerOutcomeCallable;
       typedef std::future<StartWorkflowRunOutcome> StartWorkflowRunOutcomeCallable;
+      typedef std::future<StopColumnStatisticsTaskRunOutcome> StopColumnStatisticsTaskRunOutcomeCallable;
       typedef std::future<StopCrawlerOutcome> StopCrawlerOutcomeCallable;
       typedef std::future<StopCrawlerScheduleOutcome> StopCrawlerScheduleOutcomeCallable;
       typedef std::future<StopSessionOutcome> StopSessionOutcomeCallable;
@@ -980,6 +1000,8 @@ namespace Aws
     typedef std::function<void(const GlueClient*, const Model::GetClassifiersRequest&, const Model::GetClassifiersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClassifiersResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetColumnStatisticsForPartitionRequest&, const Model::GetColumnStatisticsForPartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetColumnStatisticsForPartitionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetColumnStatisticsForTableRequest&, const Model::GetColumnStatisticsForTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetColumnStatisticsForTableResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::GetColumnStatisticsTaskRunRequest&, const Model::GetColumnStatisticsTaskRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetColumnStatisticsTaskRunResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::GetColumnStatisticsTaskRunsRequest&, const Model::GetColumnStatisticsTaskRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetColumnStatisticsTaskRunsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetConnectionRequest&, const Model::GetConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConnectionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetConnectionsRequest&, const Model::GetConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConnectionsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetCrawlerRequest&, const Model::GetCrawlerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCrawlerResponseReceivedHandler;
@@ -1040,6 +1062,7 @@ namespace Aws
     typedef std::function<void(const GlueClient*, const Model::GetWorkflowRunsRequest&, const Model::GetWorkflowRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkflowRunsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ImportCatalogToGlueRequest&, const Model::ImportCatalogToGlueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportCatalogToGlueResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListBlueprintsRequest&, const Model::ListBlueprintsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBlueprintsResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::ListColumnStatisticsTaskRunsRequest&, const Model::ListColumnStatisticsTaskRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListColumnStatisticsTaskRunsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListCrawlersRequest&, const Model::ListCrawlersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCrawlersResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListCrawlsRequest&, const Model::ListCrawlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCrawlsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListCustomEntityTypesRequest&, const Model::ListCustomEntityTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomEntityTypesResponseReceivedHandler;
@@ -1070,6 +1093,7 @@ namespace Aws
     typedef std::function<void(const GlueClient*, const Model::RunStatementRequest&, const Model::RunStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunStatementResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::SearchTablesRequest&, const Model::SearchTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchTablesResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StartBlueprintRunRequest&, const Model::StartBlueprintRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBlueprintRunResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::StartColumnStatisticsTaskRunRequest&, const Model::StartColumnStatisticsTaskRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartColumnStatisticsTaskRunResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StartCrawlerRequest&, const Model::StartCrawlerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCrawlerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StartCrawlerScheduleRequest&, const Model::StartCrawlerScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCrawlerScheduleResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StartDataQualityRuleRecommendationRunRequest&, const Model::StartDataQualityRuleRecommendationRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDataQualityRuleRecommendationRunResponseReceivedHandler;
@@ -1081,6 +1105,7 @@ namespace Aws
     typedef std::function<void(const GlueClient*, const Model::StartMLLabelingSetGenerationTaskRunRequest&, const Model::StartMLLabelingSetGenerationTaskRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMLLabelingSetGenerationTaskRunResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StartTriggerRequest&, const Model::StartTriggerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTriggerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StartWorkflowRunRequest&, const Model::StartWorkflowRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartWorkflowRunResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::StopColumnStatisticsTaskRunRequest&, const Model::StopColumnStatisticsTaskRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopColumnStatisticsTaskRunResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StopCrawlerRequest&, const Model::StopCrawlerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopCrawlerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StopCrawlerScheduleRequest&, const Model::StopCrawlerScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopCrawlerScheduleResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StopSessionRequest&, const Model::StopSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopSessionResponseReceivedHandler;

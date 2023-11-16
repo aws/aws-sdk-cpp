@@ -276,6 +276,93 @@ namespace Model
      */
     inline SenderIdInformation& WithMonthlyLeasingPrice(const char* value) { SetMonthlyLeasingPrice(value); return *this;}
 
+
+    /**
+     * <p>By default this is set to false. When set to true the sender ID can't be
+     * deleted.</p>
+     */
+    inline bool GetDeletionProtectionEnabled() const{ return m_deletionProtectionEnabled; }
+
+    /**
+     * <p>By default this is set to false. When set to true the sender ID can't be
+     * deleted.</p>
+     */
+    inline bool DeletionProtectionEnabledHasBeenSet() const { return m_deletionProtectionEnabledHasBeenSet; }
+
+    /**
+     * <p>By default this is set to false. When set to true the sender ID can't be
+     * deleted.</p>
+     */
+    inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabledHasBeenSet = true; m_deletionProtectionEnabled = value; }
+
+    /**
+     * <p>By default this is set to false. When set to true the sender ID can't be
+     * deleted.</p>
+     */
+    inline SenderIdInformation& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
+
+
+    /**
+     * <p>True if the sender ID is registered.</p>
+     */
+    inline bool GetRegistered() const{ return m_registered; }
+
+    /**
+     * <p>True if the sender ID is registered.</p>
+     */
+    inline bool RegisteredHasBeenSet() const { return m_registeredHasBeenSet; }
+
+    /**
+     * <p>True if the sender ID is registered.</p>
+     */
+    inline void SetRegistered(bool value) { m_registeredHasBeenSet = true; m_registered = value; }
+
+    /**
+     * <p>True if the sender ID is registered.</p>
+     */
+    inline SenderIdInformation& WithRegistered(bool value) { SetRegistered(value); return *this;}
+
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline const Aws::String& GetRegistrationId() const{ return m_registrationId; }
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline bool RegistrationIdHasBeenSet() const { return m_registrationIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline void SetRegistrationId(const Aws::String& value) { m_registrationIdHasBeenSet = true; m_registrationId = value; }
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline void SetRegistrationId(Aws::String&& value) { m_registrationIdHasBeenSet = true; m_registrationId = std::move(value); }
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline void SetRegistrationId(const char* value) { m_registrationIdHasBeenSet = true; m_registrationId.assign(value); }
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline SenderIdInformation& WithRegistrationId(const Aws::String& value) { SetRegistrationId(value); return *this;}
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline SenderIdInformation& WithRegistrationId(Aws::String&& value) { SetRegistrationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline SenderIdInformation& WithRegistrationId(const char* value) { SetRegistrationId(value); return *this;}
+
   private:
 
     Aws::String m_senderIdArn;
@@ -292,6 +379,15 @@ namespace Model
 
     Aws::String m_monthlyLeasingPrice;
     bool m_monthlyLeasingPriceHasBeenSet = false;
+
+    bool m_deletionProtectionEnabled;
+    bool m_deletionProtectionEnabledHasBeenSet = false;
+
+    bool m_registered;
+    bool m_registeredHasBeenSet = false;
+
+    Aws::String m_registrationId;
+    bool m_registrationIdHasBeenSet = false;
   };
 
 } // namespace Model

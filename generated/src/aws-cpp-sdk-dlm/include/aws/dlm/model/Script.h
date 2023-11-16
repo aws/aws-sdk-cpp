@@ -27,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p> <b>[Snapshot policies that target instances only]</b> Information about pre
-   * and/or post scripts for a snapshot lifecycle policy that targets instances. For
-   * more information, see <a
+   * <p> <b>[Custom snapshot policies that target instances only]</b> Information
+   * about pre and/or post scripts for a snapshot lifecycle policy that targets
+   * instances. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">
    * Automating application-consistent snapshots with pre and post
    * scripts</a>.</p><p><h3>See Also:</h3>   <a

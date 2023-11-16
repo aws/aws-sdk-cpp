@@ -41,7 +41,7 @@ namespace Model
 
 
     /**
-     * <p>The mode of validation for the asset to be creaed or updated. When you set
+     * <p>The mode of validation for the asset to be created or updated. When you set
      * this value to <code>STRICT</code>, strict validation for every error is
      * enforced. When you set this value to <code>LENIENT</code>, validation is skipped
      * for specific UI errors.</p>
@@ -49,7 +49,7 @@ namespace Model
     inline const ValidationStrategyMode& GetMode() const{ return m_mode; }
 
     /**
-     * <p>The mode of validation for the asset to be creaed or updated. When you set
+     * <p>The mode of validation for the asset to be created or updated. When you set
      * this value to <code>STRICT</code>, strict validation for every error is
      * enforced. When you set this value to <code>LENIENT</code>, validation is skipped
      * for specific UI errors.</p>
@@ -57,7 +57,7 @@ namespace Model
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
-     * <p>The mode of validation for the asset to be creaed or updated. When you set
+     * <p>The mode of validation for the asset to be created or updated. When you set
      * this value to <code>STRICT</code>, strict validation for every error is
      * enforced. When you set this value to <code>LENIENT</code>, validation is skipped
      * for specific UI errors.</p>
@@ -65,7 +65,7 @@ namespace Model
     inline void SetMode(const ValidationStrategyMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
-     * <p>The mode of validation for the asset to be creaed or updated. When you set
+     * <p>The mode of validation for the asset to be created or updated. When you set
      * this value to <code>STRICT</code>, strict validation for every error is
      * enforced. When you set this value to <code>LENIENT</code>, validation is skipped
      * for specific UI errors.</p>
@@ -73,7 +73,7 @@ namespace Model
     inline void SetMode(ValidationStrategyMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
-     * <p>The mode of validation for the asset to be creaed or updated. When you set
+     * <p>The mode of validation for the asset to be created or updated. When you set
      * this value to <code>STRICT</code>, strict validation for every error is
      * enforced. When you set this value to <code>LENIENT</code>, validation is skipped
      * for specific UI errors.</p>
@@ -81,7 +81,7 @@ namespace Model
     inline ValidationStrategy& WithMode(const ValidationStrategyMode& value) { SetMode(value); return *this;}
 
     /**
-     * <p>The mode of validation for the asset to be creaed or updated. When you set
+     * <p>The mode of validation for the asset to be created or updated. When you set
      * this value to <code>STRICT</code>, strict validation for every error is
      * enforced. When you set this value to <code>LENIENT</code>, validation is skipped
      * for specific UI errors.</p>

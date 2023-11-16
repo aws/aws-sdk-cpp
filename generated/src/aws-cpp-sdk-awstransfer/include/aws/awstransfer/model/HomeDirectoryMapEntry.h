@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/awstransfer/model/MapType.h>
 #include <utility>
 
 namespace Aws
@@ -84,51 +85,112 @@ namespace Model
 
     /**
      * <p>Represents the map target that is used in a
-     * <code>HomeDirectorymapEntry</code>.</p>
+     * <code>HomeDirectoryMapEntry</code>.</p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
 
     /**
      * <p>Represents the map target that is used in a
-     * <code>HomeDirectorymapEntry</code>.</p>
+     * <code>HomeDirectoryMapEntry</code>.</p>
      */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
      * <p>Represents the map target that is used in a
-     * <code>HomeDirectorymapEntry</code>.</p>
+     * <code>HomeDirectoryMapEntry</code>.</p>
      */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
      * <p>Represents the map target that is used in a
-     * <code>HomeDirectorymapEntry</code>.</p>
+     * <code>HomeDirectoryMapEntry</code>.</p>
      */
     inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
      * <p>Represents the map target that is used in a
-     * <code>HomeDirectorymapEntry</code>.</p>
+     * <code>HomeDirectoryMapEntry</code>.</p>
      */
     inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
 
     /**
      * <p>Represents the map target that is used in a
-     * <code>HomeDirectorymapEntry</code>.</p>
+     * <code>HomeDirectoryMapEntry</code>.</p>
      */
     inline HomeDirectoryMapEntry& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
 
     /**
      * <p>Represents the map target that is used in a
-     * <code>HomeDirectorymapEntry</code>.</p>
+     * <code>HomeDirectoryMapEntry</code>.</p>
      */
     inline HomeDirectoryMapEntry& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
 
     /**
      * <p>Represents the map target that is used in a
-     * <code>HomeDirectorymapEntry</code>.</p>
+     * <code>HomeDirectoryMapEntry</code>.</p>
      */
     inline HomeDirectoryMapEntry& WithTarget(const char* value) { SetTarget(value); return *this;}
+
+
+    /**
+     * <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want
+     * the mapping to point to a file, or <code>DIRECTORY</code> for the directory to
+     * point to a directory.</p>  <p>By default, home directory mappings have a
+     * <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer Family
+     * server. You would need to explicitly set <code>Type</code> to <code>FILE</code>
+     * if you want a mapping to have a file target.</p> 
+     */
+    inline const MapType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want
+     * the mapping to point to a file, or <code>DIRECTORY</code> for the directory to
+     * point to a directory.</p>  <p>By default, home directory mappings have a
+     * <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer Family
+     * server. You would need to explicitly set <code>Type</code> to <code>FILE</code>
+     * if you want a mapping to have a file target.</p> 
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want
+     * the mapping to point to a file, or <code>DIRECTORY</code> for the directory to
+     * point to a directory.</p>  <p>By default, home directory mappings have a
+     * <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer Family
+     * server. You would need to explicitly set <code>Type</code> to <code>FILE</code>
+     * if you want a mapping to have a file target.</p> 
+     */
+    inline void SetType(const MapType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want
+     * the mapping to point to a file, or <code>DIRECTORY</code> for the directory to
+     * point to a directory.</p>  <p>By default, home directory mappings have a
+     * <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer Family
+     * server. You would need to explicitly set <code>Type</code> to <code>FILE</code>
+     * if you want a mapping to have a file target.</p> 
+     */
+    inline void SetType(MapType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want
+     * the mapping to point to a file, or <code>DIRECTORY</code> for the directory to
+     * point to a directory.</p>  <p>By default, home directory mappings have a
+     * <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer Family
+     * server. You would need to explicitly set <code>Type</code> to <code>FILE</code>
+     * if you want a mapping to have a file target.</p> 
+     */
+    inline HomeDirectoryMapEntry& WithType(const MapType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want
+     * the mapping to point to a file, or <code>DIRECTORY</code> for the directory to
+     * point to a directory.</p>  <p>By default, home directory mappings have a
+     * <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer Family
+     * server. You would need to explicitly set <code>Type</code> to <code>FILE</code>
+     * if you want a mapping to have a file target.</p> 
+     */
+    inline HomeDirectoryMapEntry& WithType(MapType&& value) { SetType(std::move(value)); return *this;}
 
   private:
 
@@ -137,6 +199,9 @@ namespace Model
 
     Aws::String m_target;
     bool m_targetHasBeenSet = false;
+
+    MapType m_type;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,7 +22,9 @@ StoppingCondition::StoppingCondition() :
     m_maxRuntimeInSeconds(0),
     m_maxRuntimeInSecondsHasBeenSet(false),
     m_maxWaitTimeInSeconds(0),
-    m_maxWaitTimeInSecondsHasBeenSet(false)
+    m_maxWaitTimeInSecondsHasBeenSet(false),
+    m_maxPendingTimeInSeconds(0),
+    m_maxPendingTimeInSecondsHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ StoppingCondition::StoppingCondition(JsonView jsonValue) :
     m_maxRuntimeInSeconds(0),
     m_maxRuntimeInSecondsHasBeenSet(false),
     m_maxWaitTimeInSeconds(0),
-    m_maxWaitTimeInSecondsHasBeenSet(false)
+    m_maxWaitTimeInSecondsHasBeenSet(false),
+    m_maxPendingTimeInSeconds(0),
+    m_maxPendingTimeInSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ StoppingCondition& StoppingCondition::operator =(JsonView jsonValue)
     m_maxWaitTimeInSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MaxPendingTimeInSeconds"))
+  {
+    m_maxPendingTimeInSeconds = jsonValue.GetInteger("MaxPendingTimeInSeconds");
+
+    m_maxPendingTimeInSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +78,12 @@ JsonValue StoppingCondition::Jsonize() const
   if(m_maxWaitTimeInSecondsHasBeenSet)
   {
    payload.WithInteger("MaxWaitTimeInSeconds", m_maxWaitTimeInSeconds);
+
+  }
+
+  if(m_maxPendingTimeInSecondsHasBeenSet)
+  {
+   payload.WithInteger("MaxPendingTimeInSeconds", m_maxPendingTimeInSeconds);
 
   }
 

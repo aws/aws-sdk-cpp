@@ -266,6 +266,12 @@ UpdateFunctionCodeResult& UpdateFunctionCodeResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("LoggingConfig"))
+  {
+    m_loggingConfig = jsonValue.GetObject("LoggingConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

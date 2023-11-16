@@ -54,14 +54,17 @@ static const int ILLEGAL_BLUEPRINT_STATE_HASH = HashingUtils::HashString("Illega
 static const int SCHEDULER_RUNNING_HASH = HashingUtils::HashString("SchedulerRunningException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int CRAWLER_RUNNING_HASH = HashingUtils::HashString("CrawlerRunningException");
+static const int COLUMN_STATISTICS_TASK_RUNNING_HASH = HashingUtils::HashString("ColumnStatisticsTaskRunningException");
 static const int GLUE_ENCRYPTION_HASH = HashingUtils::HashString("GlueEncryptionException");
 static const int M_L_TRANSFORM_NOT_READY_HASH = HashingUtils::HashString("MLTransformNotReadyException");
 static const int PERMISSION_TYPE_MISMATCH_HASH = HashingUtils::HashString("PermissionTypeMismatchException");
 static const int RESOURCE_NUMBER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceNumberLimitExceededException");
+static const int COLUMN_STATISTICS_TASK_NOT_RUNNING_HASH = HashingUtils::HashString("ColumnStatisticsTaskNotRunningException");
 static const int OPERATION_TIMEOUT_HASH = HashingUtils::HashString("OperationTimeoutException");
 static const int VERSION_MISMATCH_HASH = HashingUtils::HashString("VersionMismatchException");
 static const int CRAWLER_NOT_RUNNING_HASH = HashingUtils::HashString("CrawlerNotRunningException");
 static const int SCHEDULER_NOT_RUNNING_HASH = HashingUtils::HashString("SchedulerNotRunningException");
+static const int COLUMN_STATISTICS_TASK_STOPPING_HASH = HashingUtils::HashString("ColumnStatisticsTaskStoppingException");
 static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
 static const int CONDITION_CHECK_FAILURE_HASH = HashingUtils::HashString("ConditionCheckFailureException");
@@ -111,6 +114,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::CRAWLER_RUNNING), false);
   }
+  else if (hashCode == COLUMN_STATISTICS_TASK_RUNNING_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::COLUMN_STATISTICS_TASK_RUNNING), false);
+  }
   else if (hashCode == GLUE_ENCRYPTION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::GLUE_ENCRYPTION), false);
@@ -127,6 +134,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::RESOURCE_NUMBER_LIMIT_EXCEEDED), false);
   }
+  else if (hashCode == COLUMN_STATISTICS_TASK_NOT_RUNNING_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::COLUMN_STATISTICS_TASK_NOT_RUNNING), false);
+  }
   else if (hashCode == OPERATION_TIMEOUT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::OPERATION_TIMEOUT), false);
@@ -142,6 +153,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == SCHEDULER_NOT_RUNNING_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::SCHEDULER_NOT_RUNNING), false);
+  }
+  else if (hashCode == COLUMN_STATISTICS_TASK_STOPPING_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::COLUMN_STATISTICS_TASK_STOPPING), false);
   }
   else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH)
   {

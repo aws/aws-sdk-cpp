@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p> <b>[Snapshot and AMI policies only]</b> Specifies a retention rule for
-   * snapshots created by snapshot policies, or for AMIs created by AMI policies.</p>
-   *  <p>For snapshot policies that have an <a
+   * <p> <b>[Custom snapshot and AMI policies only]</b> Specifies a retention rule
+   * for snapshots created by snapshot policies, or for AMIs created by AMI
+   * policies.</p>  <p>For snapshot policies that have an <a
    * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>,
    * this retention rule applies to standard tier retention. When the retention
    * threshold is met, snapshots are moved from the standard to the archive tier.</p>

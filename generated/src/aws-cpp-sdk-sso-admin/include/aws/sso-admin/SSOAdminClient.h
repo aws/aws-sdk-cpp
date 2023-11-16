@@ -193,6 +193,89 @@ namespace SSOAdmin
         }
 
         /**
+         * <p>Creates an application in IAM Identity Center for the given application
+         * provider.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateApplicationRequestT = Model::CreateApplicationRequest>
+        Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const CreateApplicationRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::CreateApplication, request);
+        }
+
+        /**
+         * An Async wrapper for CreateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateApplicationRequestT = Model::CreateApplicationRequest>
+        void CreateApplicationAsync(const CreateApplicationRequestT& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::CreateApplication, request, handler, context);
+        }
+
+        /**
+         * <p>Grant application access to a user or group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplicationAssignment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateApplicationAssignmentOutcome CreateApplicationAssignment(const Model::CreateApplicationAssignmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateApplicationAssignment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateApplicationAssignmentRequestT = Model::CreateApplicationAssignmentRequest>
+        Model::CreateApplicationAssignmentOutcomeCallable CreateApplicationAssignmentCallable(const CreateApplicationAssignmentRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::CreateApplicationAssignment, request);
+        }
+
+        /**
+         * An Async wrapper for CreateApplicationAssignment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateApplicationAssignmentRequestT = Model::CreateApplicationAssignmentRequest>
+        void CreateApplicationAssignmentAsync(const CreateApplicationAssignmentRequestT& request, const CreateApplicationAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::CreateApplicationAssignment, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an instance of IAM Identity Center for a standalone Amazon Web
+         * Services account that is not managed by Organizations or a member Amazon Web
+         * Services account in an organization. You can create only one instance per
+         * account and across all Amazon Web Services Regions.</p> <p>The CreateInstance
+         * request is rejected if the following apply: </p> <ul> <li> <p>The instance is
+         * created within the organization management account.</p> </li> <li> <p>An
+         * instance already exists in the same account.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateInstanceOutcome CreateInstance(const Model::CreateInstanceRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateInstance that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateInstanceRequestT = Model::CreateInstanceRequest>
+        Model::CreateInstanceOutcomeCallable CreateInstanceCallable(const CreateInstanceRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::CreateInstance, request);
+        }
+
+        /**
+         * An Async wrapper for CreateInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateInstanceRequestT = Model::CreateInstanceRequest>
+        void CreateInstanceAsync(const CreateInstanceRequestT& request, const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::CreateInstance, request, handler, context);
+        }
+
+        /**
          * <p>Enables the attributes-based access control (ABAC) feature for the specified
          * IAM Identity Center instance. You can also specify new attributes to add to your
          * ABAC configuration during the enabling process. For more information about ABAC,
@@ -254,6 +337,37 @@ namespace SSOAdmin
         }
 
         /**
+         * <p>Creates a connection to a trusted token issuer in an instance of IAM Identity
+         * Center. A trusted token issuer enables trusted identity propagation to be used
+         * with applications that authenticate outside of Amazon Web Services.</p> <p>This
+         * trusted token issuer describes an external identity provider (IdP) that can
+         * generate claims or assertions in the form of access tokens for a user.
+         * Applications enabled for IAM Identity Center can use these tokens for
+         * authentication. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateTrustedTokenIssuer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTrustedTokenIssuerOutcome CreateTrustedTokenIssuer(const Model::CreateTrustedTokenIssuerRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTrustedTokenIssuer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateTrustedTokenIssuerRequestT = Model::CreateTrustedTokenIssuerRequest>
+        Model::CreateTrustedTokenIssuerOutcomeCallable CreateTrustedTokenIssuerCallable(const CreateTrustedTokenIssuerRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::CreateTrustedTokenIssuer, request);
+        }
+
+        /**
+         * An Async wrapper for CreateTrustedTokenIssuer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateTrustedTokenIssuerRequestT = Model::CreateTrustedTokenIssuerRequest>
+        void CreateTrustedTokenIssuerAsync(const CreateTrustedTokenIssuerRequestT& request, const CreateTrustedTokenIssuerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::CreateTrustedTokenIssuer, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a principal's access from a specified Amazon Web Services account
          * using a specified permission set.</p>  <p>After a successful response,
          * call <code>DescribeAccountAssignmentDeletionStatus</code> to describe the status
@@ -282,6 +396,135 @@ namespace SSOAdmin
         }
 
         /**
+         * <p>Deletes the association with the application. The connected service resource
+         * still exists.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteApplicationRequestT = Model::DeleteApplicationRequest>
+        Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const DeleteApplicationRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::DeleteApplication, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteApplicationRequestT = Model::DeleteApplicationRequest>
+        void DeleteApplicationAsync(const DeleteApplicationRequestT& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::DeleteApplication, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an IAM Identity Center access scope from an
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAccessScope">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteApplicationAccessScopeOutcome DeleteApplicationAccessScope(const Model::DeleteApplicationAccessScopeRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteApplicationAccessScope that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteApplicationAccessScopeRequestT = Model::DeleteApplicationAccessScopeRequest>
+        Model::DeleteApplicationAccessScopeOutcomeCallable DeleteApplicationAccessScopeCallable(const DeleteApplicationAccessScopeRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::DeleteApplicationAccessScope, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteApplicationAccessScope that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteApplicationAccessScopeRequestT = Model::DeleteApplicationAccessScopeRequest>
+        void DeleteApplicationAccessScopeAsync(const DeleteApplicationAccessScopeRequestT& request, const DeleteApplicationAccessScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::DeleteApplicationAccessScope, request, handler, context);
+        }
+
+        /**
+         * <p>Revoke application access to an application by deleting application
+         * assignments for a user or group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAssignment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteApplicationAssignmentOutcome DeleteApplicationAssignment(const Model::DeleteApplicationAssignmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteApplicationAssignment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteApplicationAssignmentRequestT = Model::DeleteApplicationAssignmentRequest>
+        Model::DeleteApplicationAssignmentOutcomeCallable DeleteApplicationAssignmentCallable(const DeleteApplicationAssignmentRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::DeleteApplicationAssignment, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteApplicationAssignment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteApplicationAssignmentRequestT = Model::DeleteApplicationAssignmentRequest>
+        void DeleteApplicationAssignmentAsync(const DeleteApplicationAssignmentRequestT& request, const DeleteApplicationAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::DeleteApplicationAssignment, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an authentication method from an application.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAuthenticationMethod">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteApplicationAuthenticationMethodOutcome DeleteApplicationAuthenticationMethod(const Model::DeleteApplicationAuthenticationMethodRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteApplicationAuthenticationMethod that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteApplicationAuthenticationMethodRequestT = Model::DeleteApplicationAuthenticationMethodRequest>
+        Model::DeleteApplicationAuthenticationMethodOutcomeCallable DeleteApplicationAuthenticationMethodCallable(const DeleteApplicationAuthenticationMethodRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::DeleteApplicationAuthenticationMethod, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteApplicationAuthenticationMethod that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteApplicationAuthenticationMethodRequestT = Model::DeleteApplicationAuthenticationMethodRequest>
+        void DeleteApplicationAuthenticationMethodAsync(const DeleteApplicationAuthenticationMethodRequestT& request, const DeleteApplicationAuthenticationMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::DeleteApplicationAuthenticationMethod, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a grant from an application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationGrant">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteApplicationGrantOutcome DeleteApplicationGrant(const Model::DeleteApplicationGrantRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteApplicationGrant that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteApplicationGrantRequestT = Model::DeleteApplicationGrantRequest>
+        Model::DeleteApplicationGrantOutcomeCallable DeleteApplicationGrantCallable(const DeleteApplicationGrantRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::DeleteApplicationGrant, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteApplicationGrant that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteApplicationGrantRequestT = Model::DeleteApplicationGrantRequest>
+        void DeleteApplicationGrantAsync(const DeleteApplicationGrantRequestT& request, const DeleteApplicationGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::DeleteApplicationGrant, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the inline policy from a specified permission set.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInlinePolicyFromPermissionSet">AWS
@@ -305,6 +548,34 @@ namespace SSOAdmin
         void DeleteInlinePolicyFromPermissionSetAsync(const DeleteInlinePolicyFromPermissionSetRequestT& request, const DeleteInlinePolicyFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SSOAdminClient::DeleteInlinePolicyFromPermissionSet, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the instance of IAM Identity Center. Only the account that owns the
+         * instance can call this API. Neither the delegated administrator nor member
+         * account can delete the organization instance, but those roles can delete their
+         * own instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteInstance that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteInstanceRequestT = Model::DeleteInstanceRequest>
+        Model::DeleteInstanceOutcomeCallable DeleteInstanceCallable(const DeleteInstanceRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::DeleteInstance, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteInstanceRequestT = Model::DeleteInstanceRequest>
+        void DeleteInstanceAsync(const DeleteInstanceRequestT& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::DeleteInstance, request, handler, context);
         }
 
         /**
@@ -391,6 +662,34 @@ namespace SSOAdmin
         }
 
         /**
+         * <p>Deletes a trusted token issuer configuration from an instance of IAM Identity
+         * Center.</p>  <p>Deleting this trusted token issuer configuration will
+         * cause users to lose access to any applications that are configured to use the
+         * trusted token issuer.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteTrustedTokenIssuer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTrustedTokenIssuerOutcome DeleteTrustedTokenIssuer(const Model::DeleteTrustedTokenIssuerRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTrustedTokenIssuer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTrustedTokenIssuerRequestT = Model::DeleteTrustedTokenIssuerRequest>
+        Model::DeleteTrustedTokenIssuerOutcomeCallable DeleteTrustedTokenIssuerCallable(const DeleteTrustedTokenIssuerRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::DeleteTrustedTokenIssuer, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTrustedTokenIssuer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTrustedTokenIssuerRequestT = Model::DeleteTrustedTokenIssuerRequest>
+        void DeleteTrustedTokenIssuerAsync(const DeleteTrustedTokenIssuerRequestT& request, const DeleteTrustedTokenIssuerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::DeleteTrustedTokenIssuer, request, handler, context);
+        }
+
+        /**
          * <p>Describes the status of the assignment creation request.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeAccountAssignmentCreationStatus">AWS
@@ -440,6 +739,122 @@ namespace SSOAdmin
         void DescribeAccountAssignmentDeletionStatusAsync(const DescribeAccountAssignmentDeletionStatusRequestT& request, const DescribeAccountAssignmentDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SSOAdminClient::DescribeAccountAssignmentDeletionStatus, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the details of an application associated with an instance of IAM
+         * Identity Center.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeApplicationOutcome DescribeApplication(const Model::DescribeApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeApplicationRequestT = Model::DescribeApplicationRequest>
+        Model::DescribeApplicationOutcomeCallable DescribeApplicationCallable(const DescribeApplicationRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::DescribeApplication, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeApplicationRequestT = Model::DescribeApplicationRequest>
+        void DescribeApplicationAsync(const DescribeApplicationRequestT& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::DescribeApplication, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a direct assignment of a user or group to an application. If the
+         * user doesn’t have a direct assignment to the application, the user may still
+         * have access to the application through a group. Therefore, don’t use this API to
+         * test access to an application for a user. Instead use
+         * <a>ListApplicationAssignmentsForPrincipal</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationAssignment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeApplicationAssignmentOutcome DescribeApplicationAssignment(const Model::DescribeApplicationAssignmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeApplicationAssignment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeApplicationAssignmentRequestT = Model::DescribeApplicationAssignmentRequest>
+        Model::DescribeApplicationAssignmentOutcomeCallable DescribeApplicationAssignmentCallable(const DescribeApplicationAssignmentRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::DescribeApplicationAssignment, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeApplicationAssignment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeApplicationAssignmentRequestT = Model::DescribeApplicationAssignmentRequest>
+        void DescribeApplicationAssignmentAsync(const DescribeApplicationAssignmentRequestT& request, const DescribeApplicationAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::DescribeApplicationAssignment, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves details about a provider that can be used to connect an Amazon Web
+         * Services managed application or customer managed application to IAM Identity
+         * Center.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationProvider">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeApplicationProviderOutcome DescribeApplicationProvider(const Model::DescribeApplicationProviderRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeApplicationProvider that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeApplicationProviderRequestT = Model::DescribeApplicationProviderRequest>
+        Model::DescribeApplicationProviderOutcomeCallable DescribeApplicationProviderCallable(const DescribeApplicationProviderRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::DescribeApplicationProvider, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeApplicationProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeApplicationProviderRequestT = Model::DescribeApplicationProviderRequest>
+        void DescribeApplicationProviderAsync(const DescribeApplicationProviderRequestT& request, const DescribeApplicationProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::DescribeApplicationProvider, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the details of an instance of IAM Identity Center. The status can be
+         * one of the following:</p> <ul> <li> <p> <code>CREATE_IN_PROGRESS</code> - The
+         * instance is in the process of being created. When the instance is ready for use,
+         * DescribeInstance returns the status of <code>ACTIVE</code>. While the instance
+         * is in the <code>CREATE_IN_PROGRESS</code> state, you can call only
+         * DescribeInstance and DeleteInstance operations.</p> </li> <li> <p>
+         * <code>DELETE_IN_PROGRESS</code> - The instance is being deleted. Returns
+         * <code>AccessDeniedException</code> after the delete operation completes. </p>
+         * </li> <li> <p> <code>ACTIVE</code> - The instance is active.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInstanceOutcome DescribeInstance(const Model::DescribeInstanceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeInstance that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeInstanceRequestT = Model::DescribeInstanceRequest>
+        Model::DescribeInstanceOutcomeCallable DescribeInstanceCallable(const DescribeInstanceRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::DescribeInstance, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeInstanceRequestT = Model::DescribeInstanceRequest>
+        void DescribeInstanceAsync(const DescribeInstanceRequestT& request, const DescribeInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::DescribeInstance, request, handler, context);
         }
 
         /**
@@ -525,6 +940,35 @@ namespace SSOAdmin
         }
 
         /**
+         * <p>Retrieves details about a trusted token issuer configuration stored in an
+         * instance of IAM Identity Center. Details include the name of the trusted token
+         * issuer, the issuer URL, and the path of the source attribute and the destination
+         * attribute for a trusted token issuer configuration. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeTrustedTokenIssuer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTrustedTokenIssuerOutcome DescribeTrustedTokenIssuer(const Model::DescribeTrustedTokenIssuerRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTrustedTokenIssuer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeTrustedTokenIssuerRequestT = Model::DescribeTrustedTokenIssuerRequest>
+        Model::DescribeTrustedTokenIssuerOutcomeCallable DescribeTrustedTokenIssuerCallable(const DescribeTrustedTokenIssuerRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::DescribeTrustedTokenIssuer, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeTrustedTokenIssuer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeTrustedTokenIssuerRequestT = Model::DescribeTrustedTokenIssuerRequest>
+        void DescribeTrustedTokenIssuerAsync(const DescribeTrustedTokenIssuerRequestT& request, const DescribeTrustedTokenIssuerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::DescribeTrustedTokenIssuer, request, handler, context);
+        }
+
+        /**
          * <p>Detaches the specified customer managed policy from the specified
          * <a>PermissionSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachCustomerManagedPolicyReferenceFromPermissionSet">AWS
@@ -574,6 +1018,109 @@ namespace SSOAdmin
         void DetachManagedPolicyFromPermissionSetAsync(const DetachManagedPolicyFromPermissionSetRequestT& request, const DetachManagedPolicyFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SSOAdminClient::DetachManagedPolicyFromPermissionSet, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the authorized targets for an IAM Identity Center access scope for
+         * an application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAccessScope">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetApplicationAccessScopeOutcome GetApplicationAccessScope(const Model::GetApplicationAccessScopeRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetApplicationAccessScope that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetApplicationAccessScopeRequestT = Model::GetApplicationAccessScopeRequest>
+        Model::GetApplicationAccessScopeOutcomeCallable GetApplicationAccessScopeCallable(const GetApplicationAccessScopeRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::GetApplicationAccessScope, request);
+        }
+
+        /**
+         * An Async wrapper for GetApplicationAccessScope that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetApplicationAccessScopeRequestT = Model::GetApplicationAccessScopeRequest>
+        void GetApplicationAccessScopeAsync(const GetApplicationAccessScopeRequestT& request, const GetApplicationAccessScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::GetApplicationAccessScope, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the configuration of
+         * <a>PutApplicationAssignmentConfiguration</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAssignmentConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetApplicationAssignmentConfigurationOutcome GetApplicationAssignmentConfiguration(const Model::GetApplicationAssignmentConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetApplicationAssignmentConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetApplicationAssignmentConfigurationRequestT = Model::GetApplicationAssignmentConfigurationRequest>
+        Model::GetApplicationAssignmentConfigurationOutcomeCallable GetApplicationAssignmentConfigurationCallable(const GetApplicationAssignmentConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::GetApplicationAssignmentConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetApplicationAssignmentConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetApplicationAssignmentConfigurationRequestT = Model::GetApplicationAssignmentConfigurationRequest>
+        void GetApplicationAssignmentConfigurationAsync(const GetApplicationAssignmentConfigurationRequestT& request, const GetApplicationAssignmentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::GetApplicationAssignmentConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves details about an authentication method used by an
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAuthenticationMethod">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetApplicationAuthenticationMethodOutcome GetApplicationAuthenticationMethod(const Model::GetApplicationAuthenticationMethodRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetApplicationAuthenticationMethod that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetApplicationAuthenticationMethodRequestT = Model::GetApplicationAuthenticationMethodRequest>
+        Model::GetApplicationAuthenticationMethodOutcomeCallable GetApplicationAuthenticationMethodCallable(const GetApplicationAuthenticationMethodRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::GetApplicationAuthenticationMethod, request);
+        }
+
+        /**
+         * An Async wrapper for GetApplicationAuthenticationMethod that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetApplicationAuthenticationMethodRequestT = Model::GetApplicationAuthenticationMethodRequest>
+        void GetApplicationAuthenticationMethodAsync(const GetApplicationAuthenticationMethodRequestT& request, const GetApplicationAuthenticationMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::GetApplicationAuthenticationMethod, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves details about an application grant.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationGrant">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetApplicationGrantOutcome GetApplicationGrant(const Model::GetApplicationGrantRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetApplicationGrant that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetApplicationGrantRequestT = Model::GetApplicationGrantRequest>
+        Model::GetApplicationGrantOutcomeCallable GetApplicationGrantCallable(const GetApplicationGrantRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::GetApplicationGrant, request);
+        }
+
+        /**
+         * An Async wrapper for GetApplicationGrant that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetApplicationGrantRequestT = Model::GetApplicationGrantRequest>
+        void GetApplicationGrantAsync(const GetApplicationGrantRequestT& request, const GetApplicationGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::GetApplicationGrant, request, handler, context);
         }
 
         /**
@@ -709,6 +1256,32 @@ namespace SSOAdmin
         }
 
         /**
+         * <p>Retrieves a list of the IAM Identity Center associated Amazon Web Services
+         * accounts that the principal has access to.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentsForPrincipal">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAccountAssignmentsForPrincipalOutcome ListAccountAssignmentsForPrincipal(const Model::ListAccountAssignmentsForPrincipalRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAccountAssignmentsForPrincipal that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAccountAssignmentsForPrincipalRequestT = Model::ListAccountAssignmentsForPrincipalRequest>
+        Model::ListAccountAssignmentsForPrincipalOutcomeCallable ListAccountAssignmentsForPrincipalCallable(const ListAccountAssignmentsForPrincipalRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::ListAccountAssignmentsForPrincipal, request);
+        }
+
+        /**
+         * An Async wrapper for ListAccountAssignmentsForPrincipal that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAccountAssignmentsForPrincipalRequestT = Model::ListAccountAssignmentsForPrincipalRequest>
+        void ListAccountAssignmentsForPrincipalAsync(const ListAccountAssignmentsForPrincipalRequestT& request, const ListAccountAssignmentsForPrincipalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::ListAccountAssignmentsForPrincipal, request, handler, context);
+        }
+
+        /**
          * <p>Lists all the Amazon Web Services accounts where the specified permission set
          * is provisioned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountsForProvisionedPermissionSet">AWS
@@ -732,6 +1305,190 @@ namespace SSOAdmin
         void ListAccountsForProvisionedPermissionSetAsync(const ListAccountsForProvisionedPermissionSetRequestT& request, const ListAccountsForProvisionedPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SSOAdminClient::ListAccountsForProvisionedPermissionSet, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the access scopes and authorized targets associated with an
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAccessScopes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListApplicationAccessScopesOutcome ListApplicationAccessScopes(const Model::ListApplicationAccessScopesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListApplicationAccessScopes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListApplicationAccessScopesRequestT = Model::ListApplicationAccessScopesRequest>
+        Model::ListApplicationAccessScopesOutcomeCallable ListApplicationAccessScopesCallable(const ListApplicationAccessScopesRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::ListApplicationAccessScopes, request);
+        }
+
+        /**
+         * An Async wrapper for ListApplicationAccessScopes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListApplicationAccessScopesRequestT = Model::ListApplicationAccessScopesRequest>
+        void ListApplicationAccessScopesAsync(const ListApplicationAccessScopesRequestT& request, const ListApplicationAccessScopesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::ListApplicationAccessScopes, request, handler, context);
+        }
+
+        /**
+         * <p>Lists Amazon Web Services account users that are assigned to an
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListApplicationAssignmentsOutcome ListApplicationAssignments(const Model::ListApplicationAssignmentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListApplicationAssignments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListApplicationAssignmentsRequestT = Model::ListApplicationAssignmentsRequest>
+        Model::ListApplicationAssignmentsOutcomeCallable ListApplicationAssignmentsCallable(const ListApplicationAssignmentsRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::ListApplicationAssignments, request);
+        }
+
+        /**
+         * An Async wrapper for ListApplicationAssignments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListApplicationAssignmentsRequestT = Model::ListApplicationAssignmentsRequest>
+        void ListApplicationAssignmentsAsync(const ListApplicationAssignmentsRequestT& request, const ListApplicationAssignmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::ListApplicationAssignments, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the applications to which a specified principal is
+         * assigned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignmentsForPrincipal">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListApplicationAssignmentsForPrincipalOutcome ListApplicationAssignmentsForPrincipal(const Model::ListApplicationAssignmentsForPrincipalRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListApplicationAssignmentsForPrincipal that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListApplicationAssignmentsForPrincipalRequestT = Model::ListApplicationAssignmentsForPrincipalRequest>
+        Model::ListApplicationAssignmentsForPrincipalOutcomeCallable ListApplicationAssignmentsForPrincipalCallable(const ListApplicationAssignmentsForPrincipalRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::ListApplicationAssignmentsForPrincipal, request);
+        }
+
+        /**
+         * An Async wrapper for ListApplicationAssignmentsForPrincipal that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListApplicationAssignmentsForPrincipalRequestT = Model::ListApplicationAssignmentsForPrincipalRequest>
+        void ListApplicationAssignmentsForPrincipalAsync(const ListApplicationAssignmentsForPrincipalRequestT& request, const ListApplicationAssignmentsForPrincipalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::ListApplicationAssignmentsForPrincipal, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all of the authentication methods supported by the specified
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAuthenticationMethods">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListApplicationAuthenticationMethodsOutcome ListApplicationAuthenticationMethods(const Model::ListApplicationAuthenticationMethodsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListApplicationAuthenticationMethods that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListApplicationAuthenticationMethodsRequestT = Model::ListApplicationAuthenticationMethodsRequest>
+        Model::ListApplicationAuthenticationMethodsOutcomeCallable ListApplicationAuthenticationMethodsCallable(const ListApplicationAuthenticationMethodsRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::ListApplicationAuthenticationMethods, request);
+        }
+
+        /**
+         * An Async wrapper for ListApplicationAuthenticationMethods that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListApplicationAuthenticationMethodsRequestT = Model::ListApplicationAuthenticationMethodsRequest>
+        void ListApplicationAuthenticationMethodsAsync(const ListApplicationAuthenticationMethodsRequestT& request, const ListApplicationAuthenticationMethodsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::ListApplicationAuthenticationMethods, request, handler, context);
+        }
+
+        /**
+         * <p>List the grants associated with an application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationGrants">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListApplicationGrantsOutcome ListApplicationGrants(const Model::ListApplicationGrantsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListApplicationGrants that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListApplicationGrantsRequestT = Model::ListApplicationGrantsRequest>
+        Model::ListApplicationGrantsOutcomeCallable ListApplicationGrantsCallable(const ListApplicationGrantsRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::ListApplicationGrants, request);
+        }
+
+        /**
+         * An Async wrapper for ListApplicationGrants that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListApplicationGrantsRequestT = Model::ListApplicationGrantsRequest>
+        void ListApplicationGrantsAsync(const ListApplicationGrantsRequestT& request, const ListApplicationGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::ListApplicationGrants, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the application providers configured in the IAM Identity Center
+         * identity store.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationProviders">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListApplicationProvidersOutcome ListApplicationProviders(const Model::ListApplicationProvidersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListApplicationProviders that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListApplicationProvidersRequestT = Model::ListApplicationProvidersRequest>
+        Model::ListApplicationProvidersOutcomeCallable ListApplicationProvidersCallable(const ListApplicationProvidersRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::ListApplicationProviders, request);
+        }
+
+        /**
+         * An Async wrapper for ListApplicationProviders that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListApplicationProvidersRequestT = Model::ListApplicationProvidersRequest>
+        void ListApplicationProvidersAsync(const ListApplicationProvidersRequestT& request, const ListApplicationProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::ListApplicationProviders, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all applications associated with the instance of IAM Identity Center.
+         * When listing applications for an instance in the management account, member
+         * accounts must use the <code>applicationAccount</code> parameter to filter the
+         * list to only applications created from that account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplications">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
+        Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const ListApplicationsRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::ListApplications, request);
+        }
+
+        /**
+         * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
+        void ListApplicationsAsync(const ListApplicationsRequestT& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::ListApplications, request, handler, context);
         }
 
         /**
@@ -761,8 +1518,9 @@ namespace SSOAdmin
         }
 
         /**
-         * <p>Lists the IAM Identity Center instances that the caller has access
-         * to.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the details of the organization and account instances of IAM Identity
+         * Center that were created in or visible to the account calling this API.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListInstances">AWS
          * API Reference</a></p>
          */
@@ -917,6 +1675,32 @@ namespace SSOAdmin
         }
 
         /**
+         * <p>Lists all the trusted token issuers configured in an instance of IAM Identity
+         * Center.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListTrustedTokenIssuers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTrustedTokenIssuersOutcome ListTrustedTokenIssuers(const Model::ListTrustedTokenIssuersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTrustedTokenIssuers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTrustedTokenIssuersRequestT = Model::ListTrustedTokenIssuersRequest>
+        Model::ListTrustedTokenIssuersOutcomeCallable ListTrustedTokenIssuersCallable(const ListTrustedTokenIssuersRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::ListTrustedTokenIssuers, request);
+        }
+
+        /**
+         * An Async wrapper for ListTrustedTokenIssuers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTrustedTokenIssuersRequestT = Model::ListTrustedTokenIssuersRequest>
+        void ListTrustedTokenIssuersAsync(const ListTrustedTokenIssuersRequestT& request, const ListTrustedTokenIssuersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::ListTrustedTokenIssuers, request, handler, context);
+        }
+
+        /**
          * <p>The process by which a specified permission set is provisioned to the
          * specified target.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ProvisionPermissionSet">AWS
@@ -940,6 +1724,117 @@ namespace SSOAdmin
         void ProvisionPermissionSetAsync(const ProvisionPermissionSetRequestT& request, const ProvisionPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SSOAdminClient::ProvisionPermissionSet, request, handler, context);
+        }
+
+        /**
+         * <p>Adds or updates the list of authorized targets for an IAM Identity Center
+         * access scope for an application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAccessScope">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutApplicationAccessScopeOutcome PutApplicationAccessScope(const Model::PutApplicationAccessScopeRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutApplicationAccessScope that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutApplicationAccessScopeRequestT = Model::PutApplicationAccessScopeRequest>
+        Model::PutApplicationAccessScopeOutcomeCallable PutApplicationAccessScopeCallable(const PutApplicationAccessScopeRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::PutApplicationAccessScope, request);
+        }
+
+        /**
+         * An Async wrapper for PutApplicationAccessScope that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutApplicationAccessScopeRequestT = Model::PutApplicationAccessScopeRequest>
+        void PutApplicationAccessScopeAsync(const PutApplicationAccessScopeRequestT& request, const PutApplicationAccessScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::PutApplicationAccessScope, request, handler, context);
+        }
+
+        /**
+         * <p>Configure how users gain access to an application. If
+         * <code>AssignmentsRequired</code> is <code>true</code> (default value), users
+         * don’t have access to the application unless an assignment is created using the
+         * <a
+         * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html">CreateApplicationAssignment
+         * API</a>. If <code>false</code>, all users have access to the application. If an
+         * assignment is created using <a
+         * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html">CreateApplicationAssignment</a>.,
+         * the user retains access if <code>AssignmentsRequired</code> is set to
+         * <code>true</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAssignmentConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutApplicationAssignmentConfigurationOutcome PutApplicationAssignmentConfiguration(const Model::PutApplicationAssignmentConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutApplicationAssignmentConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutApplicationAssignmentConfigurationRequestT = Model::PutApplicationAssignmentConfigurationRequest>
+        Model::PutApplicationAssignmentConfigurationOutcomeCallable PutApplicationAssignmentConfigurationCallable(const PutApplicationAssignmentConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::PutApplicationAssignmentConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for PutApplicationAssignmentConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutApplicationAssignmentConfigurationRequestT = Model::PutApplicationAssignmentConfigurationRequest>
+        void PutApplicationAssignmentConfigurationAsync(const PutApplicationAssignmentConfigurationRequestT& request, const PutApplicationAssignmentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::PutApplicationAssignmentConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Adds or updates an authentication method for an application.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAuthenticationMethod">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutApplicationAuthenticationMethodOutcome PutApplicationAuthenticationMethod(const Model::PutApplicationAuthenticationMethodRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutApplicationAuthenticationMethod that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutApplicationAuthenticationMethodRequestT = Model::PutApplicationAuthenticationMethodRequest>
+        Model::PutApplicationAuthenticationMethodOutcomeCallable PutApplicationAuthenticationMethodCallable(const PutApplicationAuthenticationMethodRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::PutApplicationAuthenticationMethod, request);
+        }
+
+        /**
+         * An Async wrapper for PutApplicationAuthenticationMethod that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutApplicationAuthenticationMethodRequestT = Model::PutApplicationAuthenticationMethodRequest>
+        void PutApplicationAuthenticationMethodAsync(const PutApplicationAuthenticationMethodRequestT& request, const PutApplicationAuthenticationMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::PutApplicationAuthenticationMethod, request, handler, context);
+        }
+
+        /**
+         * <p>Adds a grant to an application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationGrant">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutApplicationGrantOutcome PutApplicationGrant(const Model::PutApplicationGrantRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutApplicationGrant that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutApplicationGrantRequestT = Model::PutApplicationGrantRequest>
+        Model::PutApplicationGrantOutcomeCallable PutApplicationGrantCallable(const PutApplicationGrantRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::PutApplicationGrant, request);
+        }
+
+        /**
+         * An Async wrapper for PutApplicationGrant that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutApplicationGrantRequestT = Model::PutApplicationGrantRequest>
+        void PutApplicationGrantAsync(const PutApplicationGrantRequestT& request, const PutApplicationGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::PutApplicationGrant, request, handler, context);
         }
 
         /**
@@ -1051,6 +1946,57 @@ namespace SSOAdmin
         }
 
         /**
+         * <p>Updates application properties. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateApplicationRequestT = Model::UpdateApplicationRequest>
+        Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const UpdateApplicationRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::UpdateApplication, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateApplicationRequestT = Model::UpdateApplicationRequest>
+        void UpdateApplicationAsync(const UpdateApplicationRequestT& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::UpdateApplication, request, handler, context);
+        }
+
+        /**
+         * <p>Update the details for the instance of IAM Identity Center that is owned by
+         * the Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateInstanceOutcome UpdateInstance(const Model::UpdateInstanceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateInstance that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateInstanceRequestT = Model::UpdateInstanceRequest>
+        Model::UpdateInstanceOutcomeCallable UpdateInstanceCallable(const UpdateInstanceRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::UpdateInstance, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateInstanceRequestT = Model::UpdateInstanceRequest>
+        void UpdateInstanceAsync(const UpdateInstanceRequestT& request, const UpdateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::UpdateInstance, request, handler, context);
+        }
+
+        /**
          * <p>Updates the IAM Identity Center identity store attributes that you can use
          * with the IAM Identity Center instance for attributes-based access control
          * (ABAC). When using an external identity provider as an identity source, you can
@@ -1108,6 +2054,35 @@ namespace SSOAdmin
         void UpdatePermissionSetAsync(const UpdatePermissionSetRequestT& request, const UpdatePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SSOAdminClient::UpdatePermissionSet, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the name of the trusted token issuer, or the path of a source
+         * attribute or destination attribute for a trusted token issuer configuration.</p>
+         *  <p>Updating this trusted token issuer configuration might cause users to
+         * lose access to any applications that are configured to use the trusted token
+         * issuer.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateTrustedTokenIssuer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTrustedTokenIssuerOutcome UpdateTrustedTokenIssuer(const Model::UpdateTrustedTokenIssuerRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateTrustedTokenIssuer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateTrustedTokenIssuerRequestT = Model::UpdateTrustedTokenIssuerRequest>
+        Model::UpdateTrustedTokenIssuerOutcomeCallable UpdateTrustedTokenIssuerCallable(const UpdateTrustedTokenIssuerRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::UpdateTrustedTokenIssuer, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateTrustedTokenIssuer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateTrustedTokenIssuerRequestT = Model::UpdateTrustedTokenIssuerRequest>
+        void UpdateTrustedTokenIssuerAsync(const UpdateTrustedTokenIssuerRequestT& request, const UpdateTrustedTokenIssuerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::UpdateTrustedTokenIssuer, request, handler, context);
         }
 
 

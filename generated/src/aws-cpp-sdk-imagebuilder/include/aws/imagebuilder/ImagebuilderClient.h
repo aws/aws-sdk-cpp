@@ -106,6 +106,32 @@ namespace imagebuilder
         }
 
         /**
+         * <p>Cancel a specific image lifecycle policy runtime instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelLifecycleExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelLifecycleExecutionOutcome CancelLifecycleExecution(const Model::CancelLifecycleExecutionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelLifecycleExecution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CancelLifecycleExecutionRequestT = Model::CancelLifecycleExecutionRequest>
+        Model::CancelLifecycleExecutionOutcomeCallable CancelLifecycleExecutionCallable(const CancelLifecycleExecutionRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::CancelLifecycleExecution, request);
+        }
+
+        /**
+         * An Async wrapper for CancelLifecycleExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CancelLifecycleExecutionRequestT = Model::CancelLifecycleExecutionRequest>
+        void CancelLifecycleExecutionAsync(const CancelLifecycleExecutionRequestT& request, const CancelLifecycleExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::CancelLifecycleExecution, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new component that can be used to build, validate, test, and assess
          * your image. The component is based on a YAML document that you specify using
          * exactly one of the following methods:</p> <ul> <li> <p>Inline, using the
@@ -295,6 +321,31 @@ namespace imagebuilder
         }
 
         /**
+         * <p>Create a lifecycle policy resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateLifecyclePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLifecyclePolicyOutcome CreateLifecyclePolicy(const Model::CreateLifecyclePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLifecyclePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateLifecyclePolicyRequestT = Model::CreateLifecyclePolicyRequest>
+        Model::CreateLifecyclePolicyOutcomeCallable CreateLifecyclePolicyCallable(const CreateLifecyclePolicyRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::CreateLifecyclePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for CreateLifecyclePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateLifecyclePolicyRequestT = Model::CreateLifecyclePolicyRequest>
+        void CreateLifecyclePolicyAsync(const CreateLifecyclePolicyRequestT& request, const CreateLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::CreateLifecyclePolicy, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a component build version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteComponent">AWS
          * API Reference</a></p>
@@ -480,6 +531,31 @@ namespace imagebuilder
         void DeleteInfrastructureConfigurationAsync(const DeleteInfrastructureConfigurationRequestT& request, const DeleteInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ImagebuilderClient::DeleteInfrastructureConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Delete the specified lifecycle policy resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteLifecyclePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLifecyclePolicyOutcome DeleteLifecyclePolicy(const Model::DeleteLifecyclePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLifecyclePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteLifecyclePolicyRequestT = Model::DeleteLifecyclePolicyRequest>
+        Model::DeleteLifecyclePolicyOutcomeCallable DeleteLifecyclePolicyCallable(const DeleteLifecyclePolicyRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::DeleteLifecyclePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteLifecyclePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteLifecyclePolicyRequestT = Model::DeleteLifecyclePolicyRequest>
+        void DeleteLifecyclePolicyAsync(const DeleteLifecyclePolicyRequestT& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::DeleteLifecyclePolicy, request, handler, context);
         }
 
         /**
@@ -755,6 +831,58 @@ namespace imagebuilder
         void GetInfrastructureConfigurationAsync(const GetInfrastructureConfigurationRequestT& request, const GetInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ImagebuilderClient::GetInfrastructureConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Get the runtime information that was logged for a specific runtime instance
+         * of the lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecycleExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLifecycleExecutionOutcome GetLifecycleExecution(const Model::GetLifecycleExecutionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetLifecycleExecution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetLifecycleExecutionRequestT = Model::GetLifecycleExecutionRequest>
+        Model::GetLifecycleExecutionOutcomeCallable GetLifecycleExecutionCallable(const GetLifecycleExecutionRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::GetLifecycleExecution, request);
+        }
+
+        /**
+         * An Async wrapper for GetLifecycleExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetLifecycleExecutionRequestT = Model::GetLifecycleExecutionRequest>
+        void GetLifecycleExecutionAsync(const GetLifecycleExecutionRequestT& request, const GetLifecycleExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::GetLifecycleExecution, request, handler, context);
+        }
+
+        /**
+         * <p>Get details for the specified image lifecycle policy.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecyclePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLifecyclePolicyOutcome GetLifecyclePolicy(const Model::GetLifecyclePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetLifecyclePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetLifecyclePolicyRequestT = Model::GetLifecyclePolicyRequest>
+        Model::GetLifecyclePolicyOutcomeCallable GetLifecyclePolicyCallable(const GetLifecyclePolicyRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::GetLifecyclePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetLifecyclePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetLifecyclePolicyRequestT = Model::GetLifecyclePolicyRequest>
+        void GetLifecyclePolicyAsync(const GetLifecyclePolicyRequestT& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::GetLifecyclePolicy, request, handler, context);
         }
 
         /**
@@ -1230,6 +1358,84 @@ namespace imagebuilder
         }
 
         /**
+         * <p>List resources that the runtime instance of the image lifecycle identified
+         * for lifecycle actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutionResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLifecycleExecutionResourcesOutcome ListLifecycleExecutionResources(const Model::ListLifecycleExecutionResourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListLifecycleExecutionResources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListLifecycleExecutionResourcesRequestT = Model::ListLifecycleExecutionResourcesRequest>
+        Model::ListLifecycleExecutionResourcesOutcomeCallable ListLifecycleExecutionResourcesCallable(const ListLifecycleExecutionResourcesRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::ListLifecycleExecutionResources, request);
+        }
+
+        /**
+         * An Async wrapper for ListLifecycleExecutionResources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListLifecycleExecutionResourcesRequestT = Model::ListLifecycleExecutionResourcesRequest>
+        void ListLifecycleExecutionResourcesAsync(const ListLifecycleExecutionResourcesRequestT& request, const ListLifecycleExecutionResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::ListLifecycleExecutionResources, request, handler, context);
+        }
+
+        /**
+         * <p>Get the lifecycle runtime history for the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLifecycleExecutionsOutcome ListLifecycleExecutions(const Model::ListLifecycleExecutionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListLifecycleExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListLifecycleExecutionsRequestT = Model::ListLifecycleExecutionsRequest>
+        Model::ListLifecycleExecutionsOutcomeCallable ListLifecycleExecutionsCallable(const ListLifecycleExecutionsRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::ListLifecycleExecutions, request);
+        }
+
+        /**
+         * An Async wrapper for ListLifecycleExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListLifecycleExecutionsRequestT = Model::ListLifecycleExecutionsRequest>
+        void ListLifecycleExecutionsAsync(const ListLifecycleExecutionsRequestT& request, const ListLifecycleExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::ListLifecycleExecutions, request, handler, context);
+        }
+
+        /**
+         * <p>Get a list of lifecycle policies in your Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecyclePolicies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLifecyclePoliciesOutcome ListLifecyclePolicies(const Model::ListLifecyclePoliciesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListLifecyclePolicies that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListLifecyclePoliciesRequestT = Model::ListLifecyclePoliciesRequest>
+        Model::ListLifecyclePoliciesOutcomeCallable ListLifecyclePoliciesCallable(const ListLifecyclePoliciesRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::ListLifecyclePolicies, request);
+        }
+
+        /**
+         * An Async wrapper for ListLifecyclePolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListLifecyclePoliciesRequestT = Model::ListLifecyclePoliciesRequest>
+        void ListLifecyclePoliciesAsync(const ListLifecyclePoliciesRequestT& request, const ListLifecyclePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::ListLifecyclePolicies, request, handler, context);
+        }
+
+        /**
          * <p>Returns the list of tags for the specified resource.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListTagsForResource">AWS
@@ -1461,6 +1667,32 @@ namespace imagebuilder
         }
 
         /**
+         * <p>Begin asynchronous resource state update for lifecycle changes to the
+         * specified image resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartResourceStateUpdate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartResourceStateUpdateOutcome StartResourceStateUpdate(const Model::StartResourceStateUpdateRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartResourceStateUpdate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartResourceStateUpdateRequestT = Model::StartResourceStateUpdateRequest>
+        Model::StartResourceStateUpdateOutcomeCallable StartResourceStateUpdateCallable(const StartResourceStateUpdateRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::StartResourceStateUpdate, request);
+        }
+
+        /**
+         * An Async wrapper for StartResourceStateUpdate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartResourceStateUpdateRequestT = Model::StartResourceStateUpdateRequest>
+        void StartResourceStateUpdateAsync(const StartResourceStateUpdateRequestT& request, const StartResourceStateUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::StartResourceStateUpdate, request, handler, context);
+        }
+
+        /**
          * <p>Adds a tag to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/TagResource">AWS
          * API Reference</a></p>
@@ -1590,6 +1822,31 @@ namespace imagebuilder
         void UpdateInfrastructureConfigurationAsync(const UpdateInfrastructureConfigurationRequestT& request, const UpdateInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ImagebuilderClient::UpdateInfrastructureConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Update the specified lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateLifecyclePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLifecyclePolicyOutcome UpdateLifecyclePolicy(const Model::UpdateLifecyclePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateLifecyclePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateLifecyclePolicyRequestT = Model::UpdateLifecyclePolicyRequest>
+        Model::UpdateLifecyclePolicyOutcomeCallable UpdateLifecyclePolicyCallable(const UpdateLifecyclePolicyRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::UpdateLifecyclePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateLifecyclePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateLifecyclePolicyRequestT = Model::UpdateLifecyclePolicyRequest>
+        void UpdateLifecyclePolicyAsync(const UpdateLifecyclePolicyRequestT& request, const UpdateLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::UpdateLifecyclePolicy, request, handler, context);
         }
 
 

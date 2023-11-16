@@ -30,6 +30,7 @@
 #include <aws/quicksight/model/DatabricksParameters.h>
 #include <aws/quicksight/model/StarburstParameters.h>
 #include <aws/quicksight/model/TrinoParameters.h>
+#include <aws/quicksight/model/BigQueryParameters.h>
 #include <utility>
 
 namespace Aws
@@ -837,6 +838,43 @@ namespace Model
      */
     inline DataSourceParameters& WithTrinoParameters(TrinoParameters&& value) { SetTrinoParameters(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The parameters that are required to connect to a Google BigQuery data
+     * source.</p>
+     */
+    inline const BigQueryParameters& GetBigQueryParameters() const{ return m_bigQueryParameters; }
+
+    /**
+     * <p>The parameters that are required to connect to a Google BigQuery data
+     * source.</p>
+     */
+    inline bool BigQueryParametersHasBeenSet() const { return m_bigQueryParametersHasBeenSet; }
+
+    /**
+     * <p>The parameters that are required to connect to a Google BigQuery data
+     * source.</p>
+     */
+    inline void SetBigQueryParameters(const BigQueryParameters& value) { m_bigQueryParametersHasBeenSet = true; m_bigQueryParameters = value; }
+
+    /**
+     * <p>The parameters that are required to connect to a Google BigQuery data
+     * source.</p>
+     */
+    inline void SetBigQueryParameters(BigQueryParameters&& value) { m_bigQueryParametersHasBeenSet = true; m_bigQueryParameters = std::move(value); }
+
+    /**
+     * <p>The parameters that are required to connect to a Google BigQuery data
+     * source.</p>
+     */
+    inline DataSourceParameters& WithBigQueryParameters(const BigQueryParameters& value) { SetBigQueryParameters(value); return *this;}
+
+    /**
+     * <p>The parameters that are required to connect to a Google BigQuery data
+     * source.</p>
+     */
+    inline DataSourceParameters& WithBigQueryParameters(BigQueryParameters&& value) { SetBigQueryParameters(std::move(value)); return *this;}
+
   private:
 
     AmazonElasticsearchParameters m_amazonElasticsearchParameters;
@@ -913,6 +951,9 @@ namespace Model
 
     TrinoParameters m_trinoParameters;
     bool m_trinoParametersHasBeenSet = false;
+
+    BigQueryParameters m_bigQueryParameters;
+    bool m_bigQueryParametersHasBeenSet = false;
   };
 
 } // namespace Model

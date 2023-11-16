@@ -23,6 +23,8 @@ namespace Aws
         static const int sender_id_HASH = HashingUtils::HashString("sender-id");
         static const int iso_country_code_HASH = HashingUtils::HashString("iso-country-code");
         static const int message_type_HASH = HashingUtils::HashString("message-type");
+        static const int deletion_protection_enabled_HASH = HashingUtils::HashString("deletion-protection-enabled");
+        static const int registered_HASH = HashingUtils::HashString("registered");
 
 
         SenderIdFilterName GetSenderIdFilterNameForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           else if (hashCode == message_type_HASH)
           {
             return SenderIdFilterName::message_type;
+          }
+          else if (hashCode == deletion_protection_enabled_HASH)
+          {
+            return SenderIdFilterName::deletion_protection_enabled;
+          }
+          else if (hashCode == registered_HASH)
+          {
+            return SenderIdFilterName::registered;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +72,10 @@ namespace Aws
             return "iso-country-code";
           case SenderIdFilterName::message_type:
             return "message-type";
+          case SenderIdFilterName::deletion_protection_enabled:
+            return "deletion-protection-enabled";
+          case SenderIdFilterName::registered:
+            return "registered";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

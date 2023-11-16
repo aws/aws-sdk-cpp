@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> <b>[Snapshot policies only]</b> Specifies information about the archive
-   * storage tier retention period.</p><p><h3>See Also:</h3>   <a
+   * <p> <b>[Custom snapshot policies only]</b> Specifies information about the
+   * archive storage tier retention period.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/ArchiveRetainRule">AWS
    * API Reference</a></p>
    */

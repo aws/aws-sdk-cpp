@@ -85,6 +85,35 @@ namespace SSMIncidents
         virtual ~SSMIncidentsClient();
 
         /**
+         * <p>Retrieves details about all specified findings for an incident, including
+         * descriptive details about each finding. A finding represents a recent
+         * application environment change made by an CodeDeploy deployment or an
+         * CloudFormation stack creation or update that can be investigated as a potential
+         * cause of the incident.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/BatchGetIncidentFindings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetIncidentFindingsOutcome BatchGetIncidentFindings(const Model::BatchGetIncidentFindingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetIncidentFindings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetIncidentFindingsRequestT = Model::BatchGetIncidentFindingsRequest>
+        Model::BatchGetIncidentFindingsOutcomeCallable BatchGetIncidentFindingsCallable(const BatchGetIncidentFindingsRequestT& request) const
+        {
+            return SubmitCallable(&SSMIncidentsClient::BatchGetIncidentFindings, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetIncidentFindings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetIncidentFindingsRequestT = Model::BatchGetIncidentFindingsRequest>
+        void BatchGetIncidentFindingsAsync(const BatchGetIncidentFindingsRequestT& request, const BatchGetIncidentFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMIncidentsClient::BatchGetIncidentFindings, request, handler, context);
+        }
+
+        /**
          * <p>A replication set replicates and encrypts your data to the provided Regions
          * with the provided KMS key. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/CreateReplicationSet">AWS
@@ -426,6 +455,35 @@ namespace SSMIncidents
         }
 
         /**
+         * <p>Retrieves a list of the IDs of findings, plus their last modified times, that
+         * have been identified for a specified incident. A finding represents a recent
+         * application environment change made by an CloudFormation stack creation or
+         * update or an CodeDeploy deployment that can be investigated as a potential cause
+         * of the incident.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListIncidentFindings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIncidentFindingsOutcome ListIncidentFindings(const Model::ListIncidentFindingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListIncidentFindings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListIncidentFindingsRequestT = Model::ListIncidentFindingsRequest>
+        Model::ListIncidentFindingsOutcomeCallable ListIncidentFindingsCallable(const ListIncidentFindingsRequestT& request) const
+        {
+            return SubmitCallable(&SSMIncidentsClient::ListIncidentFindings, request);
+        }
+
+        /**
+         * An Async wrapper for ListIncidentFindings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListIncidentFindingsRequestT = Model::ListIncidentFindingsRequest>
+        void ListIncidentFindingsAsync(const ListIncidentFindingsRequestT& request, const ListIncidentFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMIncidentsClient::ListIncidentFindings, request, handler, context);
+        }
+
+        /**
          * <p>Lists all incident records in your account. Use this command to retrieve the
          * Amazon Resource Name (ARN) of the incident record you want to update.
          * </p><p><h3>See Also:</h3>   <a
@@ -529,8 +587,8 @@ namespace SSMIncidents
         }
 
         /**
-         * <p>Lists the tags that are attached to the specified response
-         * plan.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags that are attached to the specified response plan or
+         * incident.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListTagsForResource">AWS
          * API Reference</a></p>
          */

@@ -26,9 +26,9 @@ namespace Model
 {
 
   /**
-   * <p> <b>[Snapshot and AMI policies only]</b> Specifies a cross-Region copy rule
-   * for a snapshot and AMI policies.</p>  <p>To specify a cross-Region copy
-   * action for event-based polices, use <a
+   * <p> <b>[Custom snapshot and AMI policies only]</b> Specifies a cross-Region copy
+   * rule for a snapshot and AMI policies.</p>  <p>To specify a cross-Region
+   * copy action for event-based polices, use <a
    * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_CrossRegionCopyAction.html">CrossRegionCopyAction</a>.</p>
    * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CrossRegionCopyRule">AWS
@@ -47,9 +47,9 @@ namespace Model
      *  <p>Use this parameter for AMI policies only. For snapshot policies, use
      * <b>Target</b> instead. For snapshot policies created before the <b>Target</b>
      * parameter was introduced, this parameter indicates the target Region for
-     * snapshot copies.</p> <p/>  <p> <b>[AMI policies only]</b> The target
-     * Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot
-     * copies.</p>
+     * snapshot copies.</p> <p/>  <p> <b>[Custom AMI policies only]</b> The
+     * target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+     * snapshot copies.</p>
      */
     inline const Aws::String& GetTargetRegion() const{ return m_targetRegion; }
 
@@ -57,9 +57,9 @@ namespace Model
      *  <p>Use this parameter for AMI policies only. For snapshot policies, use
      * <b>Target</b> instead. For snapshot policies created before the <b>Target</b>
      * parameter was introduced, this parameter indicates the target Region for
-     * snapshot copies.</p> <p/>  <p> <b>[AMI policies only]</b> The target
-     * Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot
-     * copies.</p>
+     * snapshot copies.</p> <p/>  <p> <b>[Custom AMI policies only]</b> The
+     * target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+     * snapshot copies.</p>
      */
     inline bool TargetRegionHasBeenSet() const { return m_targetRegionHasBeenSet; }
 
@@ -67,9 +67,9 @@ namespace Model
      *  <p>Use this parameter for AMI policies only. For snapshot policies, use
      * <b>Target</b> instead. For snapshot policies created before the <b>Target</b>
      * parameter was introduced, this parameter indicates the target Region for
-     * snapshot copies.</p> <p/>  <p> <b>[AMI policies only]</b> The target
-     * Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot
-     * copies.</p>
+     * snapshot copies.</p> <p/>  <p> <b>[Custom AMI policies only]</b> The
+     * target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+     * snapshot copies.</p>
      */
     inline void SetTargetRegion(const Aws::String& value) { m_targetRegionHasBeenSet = true; m_targetRegion = value; }
 
@@ -77,9 +77,9 @@ namespace Model
      *  <p>Use this parameter for AMI policies only. For snapshot policies, use
      * <b>Target</b> instead. For snapshot policies created before the <b>Target</b>
      * parameter was introduced, this parameter indicates the target Region for
-     * snapshot copies.</p> <p/>  <p> <b>[AMI policies only]</b> The target
-     * Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot
-     * copies.</p>
+     * snapshot copies.</p> <p/>  <p> <b>[Custom AMI policies only]</b> The
+     * target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+     * snapshot copies.</p>
      */
     inline void SetTargetRegion(Aws::String&& value) { m_targetRegionHasBeenSet = true; m_targetRegion = std::move(value); }
 
@@ -87,9 +87,9 @@ namespace Model
      *  <p>Use this parameter for AMI policies only. For snapshot policies, use
      * <b>Target</b> instead. For snapshot policies created before the <b>Target</b>
      * parameter was introduced, this parameter indicates the target Region for
-     * snapshot copies.</p> <p/>  <p> <b>[AMI policies only]</b> The target
-     * Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot
-     * copies.</p>
+     * snapshot copies.</p> <p/>  <p> <b>[Custom AMI policies only]</b> The
+     * target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+     * snapshot copies.</p>
      */
     inline void SetTargetRegion(const char* value) { m_targetRegionHasBeenSet = true; m_targetRegion.assign(value); }
 
@@ -97,9 +97,9 @@ namespace Model
      *  <p>Use this parameter for AMI policies only. For snapshot policies, use
      * <b>Target</b> instead. For snapshot policies created before the <b>Target</b>
      * parameter was introduced, this parameter indicates the target Region for
-     * snapshot copies.</p> <p/>  <p> <b>[AMI policies only]</b> The target
-     * Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot
-     * copies.</p>
+     * snapshot copies.</p> <p/>  <p> <b>[Custom AMI policies only]</b> The
+     * target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+     * snapshot copies.</p>
      */
     inline CrossRegionCopyRule& WithTargetRegion(const Aws::String& value) { SetTargetRegion(value); return *this;}
 
@@ -107,9 +107,9 @@ namespace Model
      *  <p>Use this parameter for AMI policies only. For snapshot policies, use
      * <b>Target</b> instead. For snapshot policies created before the <b>Target</b>
      * parameter was introduced, this parameter indicates the target Region for
-     * snapshot copies.</p> <p/>  <p> <b>[AMI policies only]</b> The target
-     * Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot
-     * copies.</p>
+     * snapshot copies.</p> <p/>  <p> <b>[Custom AMI policies only]</b> The
+     * target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+     * snapshot copies.</p>
      */
     inline CrossRegionCopyRule& WithTargetRegion(Aws::String&& value) { SetTargetRegion(std::move(value)); return *this;}
 
@@ -117,74 +117,74 @@ namespace Model
      *  <p>Use this parameter for AMI policies only. For snapshot policies, use
      * <b>Target</b> instead. For snapshot policies created before the <b>Target</b>
      * parameter was introduced, this parameter indicates the target Region for
-     * snapshot copies.</p> <p/>  <p> <b>[AMI policies only]</b> The target
-     * Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot
-     * copies.</p>
+     * snapshot copies.</p> <p/>  <p> <b>[Custom AMI policies only]</b> The
+     * target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+     * snapshot copies.</p>
      */
     inline CrossRegionCopyRule& WithTargetRegion(const char* value) { SetTargetRegion(value); return *this;}
 
 
     /**
      *  <p>Use this parameter for snapshot policies only. For AMI policies, use
-     * <b>TargetRegion</b> instead.</p>  <p> <b>[Snapshot policies only]</b> The
-     * target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-     * snapshot copies.</p>
+     * <b>TargetRegion</b> instead.</p>  <p> <b>[Custom snapshot policies
+     * only]</b> The target Region or the Amazon Resource Name (ARN) of the target
+     * Outpost for the snapshot copies.</p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
 
     /**
      *  <p>Use this parameter for snapshot policies only. For AMI policies, use
-     * <b>TargetRegion</b> instead.</p>  <p> <b>[Snapshot policies only]</b> The
-     * target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-     * snapshot copies.</p>
+     * <b>TargetRegion</b> instead.</p>  <p> <b>[Custom snapshot policies
+     * only]</b> The target Region or the Amazon Resource Name (ARN) of the target
+     * Outpost for the snapshot copies.</p>
      */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
      *  <p>Use this parameter for snapshot policies only. For AMI policies, use
-     * <b>TargetRegion</b> instead.</p>  <p> <b>[Snapshot policies only]</b> The
-     * target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-     * snapshot copies.</p>
+     * <b>TargetRegion</b> instead.</p>  <p> <b>[Custom snapshot policies
+     * only]</b> The target Region or the Amazon Resource Name (ARN) of the target
+     * Outpost for the snapshot copies.</p>
      */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
      *  <p>Use this parameter for snapshot policies only. For AMI policies, use
-     * <b>TargetRegion</b> instead.</p>  <p> <b>[Snapshot policies only]</b> The
-     * target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-     * snapshot copies.</p>
+     * <b>TargetRegion</b> instead.</p>  <p> <b>[Custom snapshot policies
+     * only]</b> The target Region or the Amazon Resource Name (ARN) of the target
+     * Outpost for the snapshot copies.</p>
      */
     inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
      *  <p>Use this parameter for snapshot policies only. For AMI policies, use
-     * <b>TargetRegion</b> instead.</p>  <p> <b>[Snapshot policies only]</b> The
-     * target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-     * snapshot copies.</p>
+     * <b>TargetRegion</b> instead.</p>  <p> <b>[Custom snapshot policies
+     * only]</b> The target Region or the Amazon Resource Name (ARN) of the target
+     * Outpost for the snapshot copies.</p>
      */
     inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
 
     /**
      *  <p>Use this parameter for snapshot policies only. For AMI policies, use
-     * <b>TargetRegion</b> instead.</p>  <p> <b>[Snapshot policies only]</b> The
-     * target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-     * snapshot copies.</p>
+     * <b>TargetRegion</b> instead.</p>  <p> <b>[Custom snapshot policies
+     * only]</b> The target Region or the Amazon Resource Name (ARN) of the target
+     * Outpost for the snapshot copies.</p>
      */
     inline CrossRegionCopyRule& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
 
     /**
      *  <p>Use this parameter for snapshot policies only. For AMI policies, use
-     * <b>TargetRegion</b> instead.</p>  <p> <b>[Snapshot policies only]</b> The
-     * target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-     * snapshot copies.</p>
+     * <b>TargetRegion</b> instead.</p>  <p> <b>[Custom snapshot policies
+     * only]</b> The target Region or the Amazon Resource Name (ARN) of the target
+     * Outpost for the snapshot copies.</p>
      */
     inline CrossRegionCopyRule& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
 
     /**
      *  <p>Use this parameter for snapshot policies only. For AMI policies, use
-     * <b>TargetRegion</b> instead.</p>  <p> <b>[Snapshot policies only]</b> The
-     * target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-     * snapshot copies.</p>
+     * <b>TargetRegion</b> instead.</p>  <p> <b>[Custom snapshot policies
+     * only]</b> The target Region or the Amazon Resource Name (ARN) of the target
+     * Outpost for the snapshot copies.</p>
      */
     inline CrossRegionCopyRule& WithTarget(const char* value) { SetTarget(value); return *this;}
 
@@ -342,38 +342,38 @@ namespace Model
 
 
     /**
-     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI
-     * copies created by the rule.</p>
+     * <p> <b>[Custom AMI policies only]</b> The AMI deprecation rule for cross-Region
+     * AMI copies created by the rule.</p>
      */
     inline const CrossRegionCopyDeprecateRule& GetDeprecateRule() const{ return m_deprecateRule; }
 
     /**
-     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI
-     * copies created by the rule.</p>
+     * <p> <b>[Custom AMI policies only]</b> The AMI deprecation rule for cross-Region
+     * AMI copies created by the rule.</p>
      */
     inline bool DeprecateRuleHasBeenSet() const { return m_deprecateRuleHasBeenSet; }
 
     /**
-     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI
-     * copies created by the rule.</p>
+     * <p> <b>[Custom AMI policies only]</b> The AMI deprecation rule for cross-Region
+     * AMI copies created by the rule.</p>
      */
     inline void SetDeprecateRule(const CrossRegionCopyDeprecateRule& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = value; }
 
     /**
-     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI
-     * copies created by the rule.</p>
+     * <p> <b>[Custom AMI policies only]</b> The AMI deprecation rule for cross-Region
+     * AMI copies created by the rule.</p>
      */
     inline void SetDeprecateRule(CrossRegionCopyDeprecateRule&& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = std::move(value); }
 
     /**
-     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI
-     * copies created by the rule.</p>
+     * <p> <b>[Custom AMI policies only]</b> The AMI deprecation rule for cross-Region
+     * AMI copies created by the rule.</p>
      */
     inline CrossRegionCopyRule& WithDeprecateRule(const CrossRegionCopyDeprecateRule& value) { SetDeprecateRule(value); return *this;}
 
     /**
-     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI
-     * copies created by the rule.</p>
+     * <p> <b>[Custom AMI policies only]</b> The AMI deprecation rule for cross-Region
+     * AMI copies created by the rule.</p>
      */
     inline CrossRegionCopyRule& WithDeprecateRule(CrossRegionCopyDeprecateRule&& value) { SetDeprecateRule(std::move(value)); return *this;}
 

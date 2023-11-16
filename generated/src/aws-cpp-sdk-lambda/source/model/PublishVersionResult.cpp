@@ -266,6 +266,12 @@ PublishVersionResult& PublishVersionResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("LoggingConfig"))
+  {
+    m_loggingConfig = jsonValue.GetObject("LoggingConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

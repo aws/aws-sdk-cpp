@@ -33,7 +33,8 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_fileSystemConfigsHasBeenSet(false),
     m_imageConfigHasBeenSet(false),
     m_ephemeralStorageHasBeenSet(false),
-    m_snapStartHasBeenSet(false)
+    m_snapStartHasBeenSet(false),
+    m_loggingConfigHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,12 @@ Aws::String UpdateFunctionConfigurationRequest::SerializePayload() const
   if(m_snapStartHasBeenSet)
   {
    payload.WithObject("SnapStart", m_snapStart.Jsonize());
+
+  }
+
+  if(m_loggingConfigHasBeenSet)
+  {
+   payload.WithObject("LoggingConfig", m_loggingConfig.Jsonize());
 
   }
 
