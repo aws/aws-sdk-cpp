@@ -1473,6 +1473,7 @@ namespace FSx
          * <code>DataCompressionType</code> </p> </li> <li> <p>
          * <code>LogConfiguration</code> </p> </li> <li> <p>
          * <code>LustreRootSquashConfiguration</code> </p> </li> <li> <p>
+         * <code>PerUnitStorageThroughput</code> </p> </li> <li> <p>
          * <code>StorageCapacity</code> </p> </li> <li> <p>
          * <code>WeeklyMaintenanceStartTime</code> </p> </li> </ul> <p>For FSx for ONTAP
          * file systems, you can update the following properties:</p> <ul> <li> <p>

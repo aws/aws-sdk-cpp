@@ -7,6 +7,7 @@
 #include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/macie2/Macie2Request.h>
 #include <aws/macie2/model/RevealConfiguration.h>
+#include <aws/macie2/model/UpdateRetrievalConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -33,45 +34,79 @@ namespace Model
 
 
     /**
-     * <p>The new configuration settings and the status of the configuration for the
-     * account.</p>
+     * <p>The KMS key to use to encrypt the sensitive data, and the status of the
+     * configuration for the Amazon Macie account.</p>
      */
     inline const RevealConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>The new configuration settings and the status of the configuration for the
-     * account.</p>
+     * <p>The KMS key to use to encrypt the sensitive data, and the status of the
+     * configuration for the Amazon Macie account.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p>The new configuration settings and the status of the configuration for the
-     * account.</p>
+     * <p>The KMS key to use to encrypt the sensitive data, and the status of the
+     * configuration for the Amazon Macie account.</p>
      */
     inline void SetConfiguration(const RevealConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p>The new configuration settings and the status of the configuration for the
-     * account.</p>
+     * <p>The KMS key to use to encrypt the sensitive data, and the status of the
+     * configuration for the Amazon Macie account.</p>
      */
     inline void SetConfiguration(RevealConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p>The new configuration settings and the status of the configuration for the
-     * account.</p>
+     * <p>The KMS key to use to encrypt the sensitive data, and the status of the
+     * configuration for the Amazon Macie account.</p>
      */
     inline UpdateRevealConfigurationRequest& WithConfiguration(const RevealConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>The new configuration settings and the status of the configuration for the
-     * account.</p>
+     * <p>The KMS key to use to encrypt the sensitive data, and the status of the
+     * configuration for the Amazon Macie account.</p>
      */
     inline UpdateRevealConfigurationRequest& WithConfiguration(RevealConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The access method and settings to use to retrieve the sensitive data.</p>
+     */
+    inline const UpdateRetrievalConfiguration& GetRetrievalConfiguration() const{ return m_retrievalConfiguration; }
+
+    /**
+     * <p>The access method and settings to use to retrieve the sensitive data.</p>
+     */
+    inline bool RetrievalConfigurationHasBeenSet() const { return m_retrievalConfigurationHasBeenSet; }
+
+    /**
+     * <p>The access method and settings to use to retrieve the sensitive data.</p>
+     */
+    inline void SetRetrievalConfiguration(const UpdateRetrievalConfiguration& value) { m_retrievalConfigurationHasBeenSet = true; m_retrievalConfiguration = value; }
+
+    /**
+     * <p>The access method and settings to use to retrieve the sensitive data.</p>
+     */
+    inline void SetRetrievalConfiguration(UpdateRetrievalConfiguration&& value) { m_retrievalConfigurationHasBeenSet = true; m_retrievalConfiguration = std::move(value); }
+
+    /**
+     * <p>The access method and settings to use to retrieve the sensitive data.</p>
+     */
+    inline UpdateRevealConfigurationRequest& WithRetrievalConfiguration(const UpdateRetrievalConfiguration& value) { SetRetrievalConfiguration(value); return *this;}
+
+    /**
+     * <p>The access method and settings to use to retrieve the sensitive data.</p>
+     */
+    inline UpdateRevealConfigurationRequest& WithRetrievalConfiguration(UpdateRetrievalConfiguration&& value) { SetRetrievalConfiguration(std::move(value)); return *this;}
 
   private:
 
     RevealConfiguration m_configuration;
     bool m_configurationHasBeenSet = false;
+
+    UpdateRetrievalConfiguration m_retrievalConfiguration;
+    bool m_retrievalConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

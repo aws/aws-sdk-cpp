@@ -13,6 +13,7 @@
 #include <aws/awstransfer/model/IdentityProviderDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/awstransfer/model/WorkflowDetails.h>
+#include <aws/awstransfer/model/S3StorageOptions.h>
 #include <aws/awstransfer/model/Protocol.h>
 #include <utility>
 
@@ -1531,6 +1532,67 @@ namespace Model
      */
     inline UpdateServerRequest& AddStructuredLogDestinations(const char* value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations.push_back(value); return *this; }
 
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline const S3StorageOptions& GetS3StorageOptions() const{ return m_s3StorageOptions; }
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline bool S3StorageOptionsHasBeenSet() const { return m_s3StorageOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline void SetS3StorageOptions(const S3StorageOptions& value) { m_s3StorageOptionsHasBeenSet = true; m_s3StorageOptions = value; }
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline void SetS3StorageOptions(S3StorageOptions&& value) { m_s3StorageOptionsHasBeenSet = true; m_s3StorageOptions = std::move(value); }
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline UpdateServerRequest& WithS3StorageOptions(const S3StorageOptions& value) { SetS3StorageOptions(value); return *this;}
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline UpdateServerRequest& WithS3StorageOptions(S3StorageOptions&& value) { SetS3StorageOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_certificate;
@@ -1574,6 +1636,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_structuredLogDestinations;
     bool m_structuredLogDestinationsHasBeenSet = false;
+
+    S3StorageOptions m_s3StorageOptions;
+    bool m_s3StorageOptionsHasBeenSet = false;
   };
 
 } // namespace Model

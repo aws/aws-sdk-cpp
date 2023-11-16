@@ -167,32 +167,32 @@ namespace Model
 
 
     /**
-     * <p>The time that Incident Manager created the incident record.</p>
+     * <p>The timestamp for when Incident Manager created the incident record.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The time that Incident Manager created the incident record.</p>
+     * <p>The timestamp for when Incident Manager created the incident record.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>The time that Incident Manager created the incident record.</p>
+     * <p>The timestamp for when Incident Manager created the incident record.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The time that Incident Manager created the incident record.</p>
+     * <p>The timestamp for when Incident Manager created the incident record.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The time that Incident Manager created the incident record.</p>
+     * <p>The timestamp for when Incident Manager created the incident record.</p>
      */
     inline IncidentRecord& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The time that Incident Manager created the incident record.</p>
+     * <p>The timestamp for when Incident Manager created the incident record.</p>
      */
     inline IncidentRecord& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
@@ -247,22 +247,38 @@ namespace Model
 
 
     /**
-     * <p>The impact of the incident on customers and applications.</p>
+     * <p>The impact of the incident on customers and applications.</p> <p
+     * class="title"> <b>Supported impact codes</b> </p> <ul> <li> <p> <code>1</code> -
+     * Critical</p> </li> <li> <p> <code>2</code> - High</p> </li> <li> <p>
+     * <code>3</code> - Medium</p> </li> <li> <p> <code>4</code> - Low</p> </li> <li>
+     * <p> <code>5</code> - No Impact</p> </li> </ul>
      */
     inline int GetImpact() const{ return m_impact; }
 
     /**
-     * <p>The impact of the incident on customers and applications.</p>
+     * <p>The impact of the incident on customers and applications.</p> <p
+     * class="title"> <b>Supported impact codes</b> </p> <ul> <li> <p> <code>1</code> -
+     * Critical</p> </li> <li> <p> <code>2</code> - High</p> </li> <li> <p>
+     * <code>3</code> - Medium</p> </li> <li> <p> <code>4</code> - Low</p> </li> <li>
+     * <p> <code>5</code> - No Impact</p> </li> </ul>
      */
     inline bool ImpactHasBeenSet() const { return m_impactHasBeenSet; }
 
     /**
-     * <p>The impact of the incident on customers and applications.</p>
+     * <p>The impact of the incident on customers and applications.</p> <p
+     * class="title"> <b>Supported impact codes</b> </p> <ul> <li> <p> <code>1</code> -
+     * Critical</p> </li> <li> <p> <code>2</code> - High</p> </li> <li> <p>
+     * <code>3</code> - Medium</p> </li> <li> <p> <code>4</code> - Low</p> </li> <li>
+     * <p> <code>5</code> - No Impact</p> </li> </ul>
      */
     inline void SetImpact(int value) { m_impactHasBeenSet = true; m_impact = value; }
 
     /**
-     * <p>The impact of the incident on customers and applications.</p>
+     * <p>The impact of the incident on customers and applications.</p> <p
+     * class="title"> <b>Supported impact codes</b> </p> <ul> <li> <p> <code>1</code> -
+     * Critical</p> </li> <li> <p> <code>2</code> - High</p> </li> <li> <p>
+     * <code>3</code> - Medium</p> </li> <li> <p> <code>4</code> - Low</p> </li> <li>
+     * <p> <code>5</code> - No Impact</p> </li> </ul>
      */
     inline IncidentRecord& WithImpact(int value) { SetImpact(value); return *this;}
 
@@ -340,32 +356,32 @@ namespace Model
 
 
     /**
-     * <p>The time at which the incident was most recently modified.</p>
+     * <p>The timestamp for when the incident was most recently modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The time at which the incident was most recently modified.</p>
+     * <p>The timestamp for when the incident was most recently modified.</p>
      */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
-     * <p>The time at which the incident was most recently modified.</p>
+     * <p>The timestamp for when the incident was most recently modified.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * <p>The time at which the incident was most recently modified.</p>
+     * <p>The timestamp for when the incident was most recently modified.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The time at which the incident was most recently modified.</p>
+     * <p>The timestamp for when the incident was most recently modified.</p>
      */
     inline IncidentRecord& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The time at which the incident was most recently modified.</p>
+     * <p>The timestamp for when the incident was most recently modified.</p>
      */
     inline IncidentRecord& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
@@ -420,37 +436,37 @@ namespace Model
 
 
     /**
-     * <p>The time at which the incident was resolved. This appears as a timeline
+     * <p>The timestamp for when the incident was resolved. This appears as a timeline
      * event.</p>
      */
     inline const Aws::Utils::DateTime& GetResolvedTime() const{ return m_resolvedTime; }
 
     /**
-     * <p>The time at which the incident was resolved. This appears as a timeline
+     * <p>The timestamp for when the incident was resolved. This appears as a timeline
      * event.</p>
      */
     inline bool ResolvedTimeHasBeenSet() const { return m_resolvedTimeHasBeenSet; }
 
     /**
-     * <p>The time at which the incident was resolved. This appears as a timeline
+     * <p>The timestamp for when the incident was resolved. This appears as a timeline
      * event.</p>
      */
     inline void SetResolvedTime(const Aws::Utils::DateTime& value) { m_resolvedTimeHasBeenSet = true; m_resolvedTime = value; }
 
     /**
-     * <p>The time at which the incident was resolved. This appears as a timeline
+     * <p>The timestamp for when the incident was resolved. This appears as a timeline
      * event.</p>
      */
     inline void SetResolvedTime(Aws::Utils::DateTime&& value) { m_resolvedTimeHasBeenSet = true; m_resolvedTime = std::move(value); }
 
     /**
-     * <p>The time at which the incident was resolved. This appears as a timeline
+     * <p>The timestamp for when the incident was resolved. This appears as a timeline
      * event.</p>
      */
     inline IncidentRecord& WithResolvedTime(const Aws::Utils::DateTime& value) { SetResolvedTime(value); return *this;}
 
     /**
-     * <p>The time at which the incident was resolved. This appears as a timeline
+     * <p>The timestamp for when the incident was resolved. This appears as a timeline
      * event.</p>
      */
     inline IncidentRecord& WithResolvedTime(Aws::Utils::DateTime&& value) { SetResolvedTime(std::move(value)); return *this;}

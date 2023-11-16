@@ -19,7 +19,8 @@ namespace Model
     SHORT_CODE,
     LONG_CODE,
     TOLL_FREE,
-    TEN_DLC
+    TEN_DLC,
+    SIMULATOR
   };
 
 namespace NumberTypeMapper

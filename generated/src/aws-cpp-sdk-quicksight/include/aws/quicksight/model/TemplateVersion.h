@@ -9,7 +9,6 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/ResourceStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/quicksight/model/AssetOptions.h>
 #include <aws/quicksight/model/TemplateError.h>
 #include <aws/quicksight/model/DataSetConfiguration.h>
 #include <aws/quicksight/model/Sheet.h>
@@ -440,25 +439,6 @@ namespace Model
      */
     inline TemplateVersion& AddSheets(Sheet&& value) { m_sheetsHasBeenSet = true; m_sheets.push_back(std::move(value)); return *this; }
 
-
-    
-    inline const AssetOptions& GetOptions() const{ return m_options; }
-
-    
-    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    
-    inline void SetOptions(const AssetOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    
-    inline void SetOptions(AssetOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    
-    inline TemplateVersion& WithOptions(const AssetOptions& value) { SetOptions(value); return *this;}
-
-    
-    inline TemplateVersion& WithOptions(AssetOptions&& value) { SetOptions(std::move(value)); return *this;}
-
   private:
 
     Aws::Utils::DateTime m_createdTime;
@@ -487,9 +467,6 @@ namespace Model
 
     Aws::Vector<Sheet> m_sheets;
     bool m_sheetsHasBeenSet = false;
-
-    AssetOptions m_options;
-    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

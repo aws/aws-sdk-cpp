@@ -13,6 +13,7 @@ using namespace Aws::Utils;
 ModifyVerifiedAccessTrustProviderRequest::ModifyVerifiedAccessTrustProviderRequest() : 
     m_verifiedAccessTrustProviderIdHasBeenSet(false),
     m_oidcOptionsHasBeenSet(false),
+    m_deviceOptionsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
@@ -34,6 +35,11 @@ Aws::String ModifyVerifiedAccessTrustProviderRequest::SerializePayload() const
   if(m_oidcOptionsHasBeenSet)
   {
     m_oidcOptions.OutputToStream(ss, "OidcOptions");
+  }
+
+  if(m_deviceOptionsHasBeenSet)
+  {
+    m_deviceOptions.OutputToStream(ss, "DeviceOptions");
   }
 
   if(m_descriptionHasBeenSet)

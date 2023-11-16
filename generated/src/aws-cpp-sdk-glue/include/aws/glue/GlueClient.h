@@ -2189,6 +2189,58 @@ namespace Glue
         }
 
         /**
+         * <p>Get the associated metadata/information for a task run, given a task run
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetColumnStatisticsTaskRunOutcome GetColumnStatisticsTaskRun(const Model::GetColumnStatisticsTaskRunRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetColumnStatisticsTaskRun that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetColumnStatisticsTaskRunRequestT = Model::GetColumnStatisticsTaskRunRequest>
+        Model::GetColumnStatisticsTaskRunOutcomeCallable GetColumnStatisticsTaskRunCallable(const GetColumnStatisticsTaskRunRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::GetColumnStatisticsTaskRun, request);
+        }
+
+        /**
+         * An Async wrapper for GetColumnStatisticsTaskRun that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetColumnStatisticsTaskRunRequestT = Model::GetColumnStatisticsTaskRunRequest>
+        void GetColumnStatisticsTaskRunAsync(const GetColumnStatisticsTaskRunRequestT& request, const GetColumnStatisticsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::GetColumnStatisticsTaskRun, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about all runs associated with the specified
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRuns">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetColumnStatisticsTaskRunsOutcome GetColumnStatisticsTaskRuns(const Model::GetColumnStatisticsTaskRunsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetColumnStatisticsTaskRuns that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetColumnStatisticsTaskRunsRequestT = Model::GetColumnStatisticsTaskRunsRequest>
+        Model::GetColumnStatisticsTaskRunsOutcomeCallable GetColumnStatisticsTaskRunsCallable(const GetColumnStatisticsTaskRunsRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::GetColumnStatisticsTaskRuns, request);
+        }
+
+        /**
+         * An Async wrapper for GetColumnStatisticsTaskRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetColumnStatisticsTaskRunsRequestT = Model::GetColumnStatisticsTaskRunsRequest>
+        void GetColumnStatisticsTaskRunsAsync(const GetColumnStatisticsTaskRunsRequestT& request, const GetColumnStatisticsTaskRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::GetColumnStatisticsTaskRuns, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a connection definition from the Data Catalog.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnection">AWS
@@ -3771,6 +3823,31 @@ namespace Glue
         }
 
         /**
+         * <p>List all task runs for a particular account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListColumnStatisticsTaskRuns">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListColumnStatisticsTaskRunsOutcome ListColumnStatisticsTaskRuns(const Model::ListColumnStatisticsTaskRunsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListColumnStatisticsTaskRuns that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListColumnStatisticsTaskRunsRequestT = Model::ListColumnStatisticsTaskRunsRequest>
+        Model::ListColumnStatisticsTaskRunsOutcomeCallable ListColumnStatisticsTaskRunsCallable(const ListColumnStatisticsTaskRunsRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::ListColumnStatisticsTaskRuns, request);
+        }
+
+        /**
+         * An Async wrapper for ListColumnStatisticsTaskRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListColumnStatisticsTaskRunsRequestT = Model::ListColumnStatisticsTaskRunsRequest>
+        void ListColumnStatisticsTaskRunsAsync(const ListColumnStatisticsTaskRunsRequestT& request, const ListColumnStatisticsTaskRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::ListColumnStatisticsTaskRuns, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the names of all crawler resources in this Amazon Web Services
          * account, or the resources with the specified tag. This operation allows you to
          * see which resources are available in your account, and their names.</p> <p>This
@@ -4613,6 +4690,32 @@ namespace Glue
         }
 
         /**
+         * <p>Starts a column statistics task run, for a specified table and
+         * columns.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartColumnStatisticsTaskRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartColumnStatisticsTaskRunOutcome StartColumnStatisticsTaskRun(const Model::StartColumnStatisticsTaskRunRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartColumnStatisticsTaskRun that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartColumnStatisticsTaskRunRequestT = Model::StartColumnStatisticsTaskRunRequest>
+        Model::StartColumnStatisticsTaskRunOutcomeCallable StartColumnStatisticsTaskRunCallable(const StartColumnStatisticsTaskRunRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::StartColumnStatisticsTaskRun, request);
+        }
+
+        /**
+         * An Async wrapper for StartColumnStatisticsTaskRun that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartColumnStatisticsTaskRunRequestT = Model::StartColumnStatisticsTaskRunRequest>
+        void StartColumnStatisticsTaskRunAsync(const StartColumnStatisticsTaskRunRequestT& request, const StartColumnStatisticsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::StartColumnStatisticsTaskRun, request, handler, context);
+        }
+
+        /**
          * <p>Starts a crawl using the specified crawler, regardless of what is scheduled.
          * If the crawler is already running, returns a <a
          * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException">CrawlerRunningException</a>.</p><p><h3>See
@@ -4949,6 +5052,31 @@ namespace Glue
         void StartWorkflowRunAsync(const StartWorkflowRunRequestT& request, const StartWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::StartWorkflowRun, request, handler, context);
+        }
+
+        /**
+         * <p>Stops a task run for the specified table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopColumnStatisticsTaskRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopColumnStatisticsTaskRunOutcome StopColumnStatisticsTaskRun(const Model::StopColumnStatisticsTaskRunRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopColumnStatisticsTaskRun that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopColumnStatisticsTaskRunRequestT = Model::StopColumnStatisticsTaskRunRequest>
+        Model::StopColumnStatisticsTaskRunOutcomeCallable StopColumnStatisticsTaskRunCallable(const StopColumnStatisticsTaskRunRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::StopColumnStatisticsTaskRun, request);
+        }
+
+        /**
+         * An Async wrapper for StopColumnStatisticsTaskRun that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopColumnStatisticsTaskRunRequestT = Model::StopColumnStatisticsTaskRunRequest>
+        void StopColumnStatisticsTaskRunAsync(const StopColumnStatisticsTaskRunRequestT& request, const StopColumnStatisticsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::StopColumnStatisticsTaskRun, request, handler, context);
         }
 
         /**

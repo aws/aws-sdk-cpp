@@ -1452,6 +1452,67 @@ namespace Model
      */
     inline AutomationExecution& WithChangeRequestName(const char* value) { SetChangeRequestName(value); return *this;}
 
+
+    /**
+     * <p>Variables defined for the automation.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetVariables() const{ return m_variables; }
+
+    /**
+     * <p>Variables defined for the automation.</p>
+     */
+    inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
+
+    /**
+     * <p>Variables defined for the automation.</p>
+     */
+    inline void SetVariables(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_variablesHasBeenSet = true; m_variables = value; }
+
+    /**
+     * <p>Variables defined for the automation.</p>
+     */
+    inline void SetVariables(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
+
+    /**
+     * <p>Variables defined for the automation.</p>
+     */
+    inline AutomationExecution& WithVariables(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetVariables(value); return *this;}
+
+    /**
+     * <p>Variables defined for the automation.</p>
+     */
+    inline AutomationExecution& WithVariables(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetVariables(std::move(value)); return *this;}
+
+    /**
+     * <p>Variables defined for the automation.</p>
+     */
+    inline AutomationExecution& AddVariables(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
+
+    /**
+     * <p>Variables defined for the automation.</p>
+     */
+    inline AutomationExecution& AddVariables(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Variables defined for the automation.</p>
+     */
+    inline AutomationExecution& AddVariables(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Variables defined for the automation.</p>
+     */
+    inline AutomationExecution& AddVariables(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Variables defined for the automation.</p>
+     */
+    inline AutomationExecution& AddVariables(const char* key, Aws::Vector<Aws::String>&& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Variables defined for the automation.</p>
+     */
+    inline AutomationExecution& AddVariables(const char* key, const Aws::Vector<Aws::String>& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_automationExecutionId;
@@ -1552,6 +1613,9 @@ namespace Model
 
     Aws::String m_changeRequestName;
     bool m_changeRequestNameHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_variables;
+    bool m_variablesHasBeenSet = false;
   };
 
 } // namespace Model

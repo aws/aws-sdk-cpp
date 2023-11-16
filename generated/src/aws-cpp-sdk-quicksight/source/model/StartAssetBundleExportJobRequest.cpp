@@ -20,7 +20,12 @@ StartAssetBundleExportJobRequest::StartAssetBundleExportJobRequest() :
     m_includeAllDependenciesHasBeenSet(false),
     m_exportFormat(AssetBundleExportFormat::NOT_SET),
     m_exportFormatHasBeenSet(false),
-    m_cloudFormationOverridePropertyConfigurationHasBeenSet(false)
+    m_cloudFormationOverridePropertyConfigurationHasBeenSet(false),
+    m_includePermissions(false),
+    m_includePermissionsHasBeenSet(false),
+    m_includeTags(false),
+    m_includeTagsHasBeenSet(false),
+    m_validationStrategyHasBeenSet(false)
 {
 }
 
@@ -59,6 +64,24 @@ Aws::String StartAssetBundleExportJobRequest::SerializePayload() const
   if(m_cloudFormationOverridePropertyConfigurationHasBeenSet)
   {
    payload.WithObject("CloudFormationOverridePropertyConfiguration", m_cloudFormationOverridePropertyConfiguration.Jsonize());
+
+  }
+
+  if(m_includePermissionsHasBeenSet)
+  {
+   payload.WithBool("IncludePermissions", m_includePermissions);
+
+  }
+
+  if(m_includeTagsHasBeenSet)
+  {
+   payload.WithBool("IncludeTags", m_includeTags);
+
+  }
+
+  if(m_validationStrategyHasBeenSet)
+  {
+   payload.WithObject("ValidationStrategy", m_validationStrategy.Jsonize());
 
   }
 

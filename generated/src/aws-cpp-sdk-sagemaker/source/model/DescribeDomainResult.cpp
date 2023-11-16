@@ -67,6 +67,12 @@ DescribeDomainResult& DescribeDomainResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("SingleSignOnApplicationArn"))
+  {
+    m_singleSignOnApplicationArn = jsonValue.GetString("SingleSignOnApplicationArn");
+
+  }
+
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DomainStatusMapper::GetDomainStatusForName(jsonValue.GetString("Status"));

@@ -20,6 +20,7 @@
 #include <aws/imagebuilder/model/ImageSource.h>
 #include <aws/imagebuilder/model/ImageScanState.h>
 #include <aws/imagebuilder/model/ImageScanningConfiguration.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -1066,6 +1067,92 @@ namespace Model
      */
     inline Image& WithImageScanningConfiguration(ImageScanningConfiguration&& value) { SetImageScanningConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The time when deprecation occurs for an image resource. This can be a past or
+     * future date.</p>
+     */
+    inline const Aws::Utils::DateTime& GetDeprecationTime() const{ return m_deprecationTime; }
+
+    /**
+     * <p>The time when deprecation occurs for an image resource. This can be a past or
+     * future date.</p>
+     */
+    inline bool DeprecationTimeHasBeenSet() const { return m_deprecationTimeHasBeenSet; }
+
+    /**
+     * <p>The time when deprecation occurs for an image resource. This can be a past or
+     * future date.</p>
+     */
+    inline void SetDeprecationTime(const Aws::Utils::DateTime& value) { m_deprecationTimeHasBeenSet = true; m_deprecationTime = value; }
+
+    /**
+     * <p>The time when deprecation occurs for an image resource. This can be a past or
+     * future date.</p>
+     */
+    inline void SetDeprecationTime(Aws::Utils::DateTime&& value) { m_deprecationTimeHasBeenSet = true; m_deprecationTime = std::move(value); }
+
+    /**
+     * <p>The time when deprecation occurs for an image resource. This can be a past or
+     * future date.</p>
+     */
+    inline Image& WithDeprecationTime(const Aws::Utils::DateTime& value) { SetDeprecationTime(value); return *this;}
+
+    /**
+     * <p>The time when deprecation occurs for an image resource. This can be a past or
+     * future date.</p>
+     */
+    inline Image& WithDeprecationTime(Aws::Utils::DateTime&& value) { SetDeprecationTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Identifies the last runtime instance of the lifecycle policy to take action
+     * on the image.</p>
+     */
+    inline const Aws::String& GetLifecycleExecutionId() const{ return m_lifecycleExecutionId; }
+
+    /**
+     * <p>Identifies the last runtime instance of the lifecycle policy to take action
+     * on the image.</p>
+     */
+    inline bool LifecycleExecutionIdHasBeenSet() const { return m_lifecycleExecutionIdHasBeenSet; }
+
+    /**
+     * <p>Identifies the last runtime instance of the lifecycle policy to take action
+     * on the image.</p>
+     */
+    inline void SetLifecycleExecutionId(const Aws::String& value) { m_lifecycleExecutionIdHasBeenSet = true; m_lifecycleExecutionId = value; }
+
+    /**
+     * <p>Identifies the last runtime instance of the lifecycle policy to take action
+     * on the image.</p>
+     */
+    inline void SetLifecycleExecutionId(Aws::String&& value) { m_lifecycleExecutionIdHasBeenSet = true; m_lifecycleExecutionId = std::move(value); }
+
+    /**
+     * <p>Identifies the last runtime instance of the lifecycle policy to take action
+     * on the image.</p>
+     */
+    inline void SetLifecycleExecutionId(const char* value) { m_lifecycleExecutionIdHasBeenSet = true; m_lifecycleExecutionId.assign(value); }
+
+    /**
+     * <p>Identifies the last runtime instance of the lifecycle policy to take action
+     * on the image.</p>
+     */
+    inline Image& WithLifecycleExecutionId(const Aws::String& value) { SetLifecycleExecutionId(value); return *this;}
+
+    /**
+     * <p>Identifies the last runtime instance of the lifecycle policy to take action
+     * on the image.</p>
+     */
+    inline Image& WithLifecycleExecutionId(Aws::String&& value) { SetLifecycleExecutionId(std::move(value)); return *this;}
+
+    /**
+     * <p>Identifies the last runtime instance of the lifecycle policy to take action
+     * on the image.</p>
+     */
+    inline Image& WithLifecycleExecutionId(const char* value) { SetLifecycleExecutionId(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -1133,6 +1220,12 @@ namespace Model
 
     ImageScanningConfiguration m_imageScanningConfiguration;
     bool m_imageScanningConfigurationHasBeenSet = false;
+
+    Aws::Utils::DateTime m_deprecationTime;
+    bool m_deprecationTimeHasBeenSet = false;
+
+    Aws::String m_lifecycleExecutionId;
+    bool m_lifecycleExecutionIdHasBeenSet = false;
   };
 
 } // namespace Model

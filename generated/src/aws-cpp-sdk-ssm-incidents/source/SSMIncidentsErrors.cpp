@@ -7,8 +7,8 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/ssm-incidents/SSMIncidentsErrors.h>
 #include <aws/ssm-incidents/model/ConflictException.h>
-#include <aws/ssm-incidents/model/ServiceQuotaExceededException.h>
 #include <aws/ssm-incidents/model/ThrottlingException.h>
+#include <aws/ssm-incidents/model/ServiceQuotaExceededException.h>
 #include <aws/ssm-incidents/model/ResourceNotFoundException.h>
 
 using namespace Aws::Client;
@@ -26,16 +26,16 @@ template<> AWS_SSMINCIDENTS_API ConflictException SSMIncidentsError::GetModeledE
   return ConflictException(this->GetJsonPayload().View());
 }
 
-template<> AWS_SSMINCIDENTS_API ServiceQuotaExceededException SSMIncidentsError::GetModeledError()
-{
-  assert(this->GetErrorType() == SSMIncidentsErrors::SERVICE_QUOTA_EXCEEDED);
-  return ServiceQuotaExceededException(this->GetJsonPayload().View());
-}
-
 template<> AWS_SSMINCIDENTS_API ThrottlingException SSMIncidentsError::GetModeledError()
 {
   assert(this->GetErrorType() == SSMIncidentsErrors::THROTTLING);
   return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSMINCIDENTS_API ServiceQuotaExceededException SSMIncidentsError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMIncidentsErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
 }
 
 template<> AWS_SSMINCIDENTS_API ResourceNotFoundException SSMIncidentsError::GetModeledError()

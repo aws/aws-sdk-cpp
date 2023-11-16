@@ -43,7 +43,8 @@ DataSourceParameters::DataSourceParameters() :
     m_exasolParametersHasBeenSet(false),
     m_databricksParametersHasBeenSet(false),
     m_starburstParametersHasBeenSet(false),
-    m_trinoParametersHasBeenSet(false)
+    m_trinoParametersHasBeenSet(false),
+    m_bigQueryParametersHasBeenSet(false)
 {
 }
 
@@ -72,7 +73,8 @@ DataSourceParameters::DataSourceParameters(JsonView jsonValue) :
     m_exasolParametersHasBeenSet(false),
     m_databricksParametersHasBeenSet(false),
     m_starburstParametersHasBeenSet(false),
-    m_trinoParametersHasBeenSet(false)
+    m_trinoParametersHasBeenSet(false),
+    m_bigQueryParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -254,6 +256,13 @@ DataSourceParameters& DataSourceParameters::operator =(JsonView jsonValue)
     m_trinoParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BigQueryParameters"))
+  {
+    m_bigQueryParameters = jsonValue.GetObject("BigQueryParameters");
+
+    m_bigQueryParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -408,6 +417,12 @@ JsonValue DataSourceParameters::Jsonize() const
   if(m_trinoParametersHasBeenSet)
   {
    payload.WithObject("TrinoParameters", m_trinoParameters.Jsonize());
+
+  }
+
+  if(m_bigQueryParametersHasBeenSet)
+  {
+   payload.WithObject("BigQueryParameters", m_bigQueryParameters.Jsonize());
 
   }
 

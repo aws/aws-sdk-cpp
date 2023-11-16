@@ -214,49 +214,49 @@ namespace Model
 
     /**
      * <p>The name of the OptOutList to associate with the phone number. You can use
-     * the OutOutListName or OptPutListArn.</p>
+     * the OptOutListName or OptOutListArn.</p>
      */
     inline const Aws::String& GetOptOutListName() const{ return m_optOutListName; }
 
     /**
      * <p>The name of the OptOutList to associate with the phone number. You can use
-     * the OutOutListName or OptPutListArn.</p>
+     * the OptOutListName or OptOutListArn.</p>
      */
     inline bool OptOutListNameHasBeenSet() const { return m_optOutListNameHasBeenSet; }
 
     /**
      * <p>The name of the OptOutList to associate with the phone number. You can use
-     * the OutOutListName or OptPutListArn.</p>
+     * the OptOutListName or OptOutListArn.</p>
      */
     inline void SetOptOutListName(const Aws::String& value) { m_optOutListNameHasBeenSet = true; m_optOutListName = value; }
 
     /**
      * <p>The name of the OptOutList to associate with the phone number. You can use
-     * the OutOutListName or OptPutListArn.</p>
+     * the OptOutListName or OptOutListArn.</p>
      */
     inline void SetOptOutListName(Aws::String&& value) { m_optOutListNameHasBeenSet = true; m_optOutListName = std::move(value); }
 
     /**
      * <p>The name of the OptOutList to associate with the phone number. You can use
-     * the OutOutListName or OptPutListArn.</p>
+     * the OptOutListName or OptOutListArn.</p>
      */
     inline void SetOptOutListName(const char* value) { m_optOutListNameHasBeenSet = true; m_optOutListName.assign(value); }
 
     /**
      * <p>The name of the OptOutList to associate with the phone number. You can use
-     * the OutOutListName or OptPutListArn.</p>
+     * the OptOutListName or OptOutListArn.</p>
      */
     inline RequestPhoneNumberRequest& WithOptOutListName(const Aws::String& value) { SetOptOutListName(value); return *this;}
 
     /**
      * <p>The name of the OptOutList to associate with the phone number. You can use
-     * the OutOutListName or OptPutListArn.</p>
+     * the OptOutListName or OptOutListArn.</p>
      */
     inline RequestPhoneNumberRequest& WithOptOutListName(Aws::String&& value) { SetOptOutListName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the OptOutList to associate with the phone number. You can use
-     * the OutOutListName or OptPutListArn.</p>
+     * the OptOutListName or OptOutListArn.</p>
      */
     inline RequestPhoneNumberRequest& WithOptOutListName(const char* value) { SetOptOutListName(value); return *this;}
 

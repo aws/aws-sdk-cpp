@@ -219,6 +219,47 @@ namespace Model
      */
     inline OriginationIdentityMetadata& AddNumberCapabilities(NumberCapability&& value) { m_numberCapabilitiesHasBeenSet = true; m_numberCapabilities.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The phone number in E.164 format.</p>
+     */
+    inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
+
+    /**
+     * <p>The phone number in E.164 format.</p>
+     */
+    inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
+
+    /**
+     * <p>The phone number in E.164 format.</p>
+     */
+    inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
+
+    /**
+     * <p>The phone number in E.164 format.</p>
+     */
+    inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::move(value); }
+
+    /**
+     * <p>The phone number in E.164 format.</p>
+     */
+    inline void SetPhoneNumber(const char* value) { m_phoneNumberHasBeenSet = true; m_phoneNumber.assign(value); }
+
+    /**
+     * <p>The phone number in E.164 format.</p>
+     */
+    inline OriginationIdentityMetadata& WithPhoneNumber(const Aws::String& value) { SetPhoneNumber(value); return *this;}
+
+    /**
+     * <p>The phone number in E.164 format.</p>
+     */
+    inline OriginationIdentityMetadata& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(std::move(value)); return *this;}
+
+    /**
+     * <p>The phone number in E.164 format.</p>
+     */
+    inline OriginationIdentityMetadata& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
+
   private:
 
     Aws::String m_originationIdentityArn;
@@ -232,6 +273,9 @@ namespace Model
 
     Aws::Vector<NumberCapability> m_numberCapabilities;
     bool m_numberCapabilitiesHasBeenSet = false;
+
+    Aws::String m_phoneNumber;
+    bool m_phoneNumberHasBeenSet = false;
   };
 
 } // namespace Model

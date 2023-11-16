@@ -8,6 +8,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ModifyVerifiedAccessTrustProviderOidcOptions.h>
+#include <aws/ec2/model/ModifyVerifiedAccessTrustProviderDeviceOptions.h>
 #include <aws/ec2/model/VerifiedAccessSseSpecificationRequest.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -115,6 +116,43 @@ namespace Model
      * provider.</p>
      */
     inline ModifyVerifiedAccessTrustProviderRequest& WithOidcOptions(ModifyVerifiedAccessTrustProviderOidcOptions&& value) { SetOidcOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
+     */
+    inline const ModifyVerifiedAccessTrustProviderDeviceOptions& GetDeviceOptions() const{ return m_deviceOptions; }
+
+    /**
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
+     */
+    inline bool DeviceOptionsHasBeenSet() const { return m_deviceOptionsHasBeenSet; }
+
+    /**
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
+     */
+    inline void SetDeviceOptions(const ModifyVerifiedAccessTrustProviderDeviceOptions& value) { m_deviceOptionsHasBeenSet = true; m_deviceOptions = value; }
+
+    /**
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
+     */
+    inline void SetDeviceOptions(ModifyVerifiedAccessTrustProviderDeviceOptions&& value) { m_deviceOptionsHasBeenSet = true; m_deviceOptions = std::move(value); }
+
+    /**
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
+     */
+    inline ModifyVerifiedAccessTrustProviderRequest& WithDeviceOptions(const ModifyVerifiedAccessTrustProviderDeviceOptions& value) { SetDeviceOptions(value); return *this;}
+
+    /**
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
+     */
+    inline ModifyVerifiedAccessTrustProviderRequest& WithDeviceOptions(ModifyVerifiedAccessTrustProviderDeviceOptions&& value) { SetDeviceOptions(std::move(value)); return *this;}
 
 
     /**
@@ -293,6 +331,9 @@ namespace Model
 
     ModifyVerifiedAccessTrustProviderOidcOptions m_oidcOptions;
     bool m_oidcOptionsHasBeenSet = false;
+
+    ModifyVerifiedAccessTrustProviderDeviceOptions m_deviceOptions;
+    bool m_deviceOptionsHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

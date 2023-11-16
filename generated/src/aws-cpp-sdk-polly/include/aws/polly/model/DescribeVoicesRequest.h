@@ -41,38 +41,44 @@ namespace Model
 
 
     /**
-     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by
-     * Amazon Polly when processing input text for speech synthesis. </p>
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) used by Amazon Polly when processing input text for
+     * speech synthesis. </p>
      */
     inline const Engine& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by
-     * Amazon Polly when processing input text for speech synthesis. </p>
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) used by Amazon Polly when processing input text for
+     * speech synthesis. </p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by
-     * Amazon Polly when processing input text for speech synthesis. </p>
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) used by Amazon Polly when processing input text for
+     * speech synthesis. </p>
      */
     inline void SetEngine(const Engine& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by
-     * Amazon Polly when processing input text for speech synthesis. </p>
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) used by Amazon Polly when processing input text for
+     * speech synthesis. </p>
      */
     inline void SetEngine(Engine&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by
-     * Amazon Polly when processing input text for speech synthesis. </p>
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) used by Amazon Polly when processing input text for
+     * speech synthesis. </p>
      */
     inline DescribeVoicesRequest& WithEngine(const Engine& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by
-     * Amazon Polly when processing input text for speech synthesis. </p>
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) used by Amazon Polly when processing input text for
+     * speech synthesis. </p>
      */
     inline DescribeVoicesRequest& WithEngine(Engine&& value) { SetEngine(std::move(value)); return *this;}
 

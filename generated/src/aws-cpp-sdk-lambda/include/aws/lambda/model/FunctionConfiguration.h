@@ -21,6 +21,7 @@
 #include <aws/lambda/model/EphemeralStorage.h>
 #include <aws/lambda/model/SnapStartResponse.h>
 #include <aws/lambda/model/RuntimeVersionConfig.h>
+#include <aws/lambda/model/LoggingConfig.h>
 #include <aws/lambda/model/Layer.h>
 #include <aws/lambda/model/FileSystemConfig.h>
 #include <aws/lambda/model/Architecture.h>
@@ -1372,56 +1373,38 @@ namespace Model
 
 
     /**
-     * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
-     * ephemeral storage (console)</a>.</p>
+     * <p>The size of the function’s <code>/tmp</code> directory in MB. The default
+     * value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
      */
     inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
 
     /**
-     * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
-     * ephemeral storage (console)</a>.</p>
+     * <p>The size of the function’s <code>/tmp</code> directory in MB. The default
+     * value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
      */
     inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
 
     /**
-     * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
-     * ephemeral storage (console)</a>.</p>
+     * <p>The size of the function’s <code>/tmp</code> directory in MB. The default
+     * value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
      */
     inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
 
     /**
-     * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
-     * ephemeral storage (console)</a>.</p>
+     * <p>The size of the function’s <code>/tmp</code> directory in MB. The default
+     * value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
      */
     inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
 
     /**
-     * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
-     * ephemeral storage (console)</a>.</p>
+     * <p>The size of the function’s <code>/tmp</code> directory in MB. The default
+     * value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
      */
     inline FunctionConfiguration& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
 
     /**
-     * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
-     * ephemeral storage (console)</a>.</p>
+     * <p>The size of the function’s <code>/tmp</code> directory in MB. The default
+     * value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
      */
     inline FunctionConfiguration& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
 
@@ -1510,6 +1493,37 @@ namespace Model
      * <p>The ARN of the runtime and any errors that occured.</p>
      */
     inline FunctionConfiguration& WithRuntimeVersionConfig(RuntimeVersionConfig&& value) { SetRuntimeVersionConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline const LoggingConfig& GetLoggingConfig() const{ return m_loggingConfig; }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline bool LoggingConfigHasBeenSet() const { return m_loggingConfigHasBeenSet; }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline void SetLoggingConfig(const LoggingConfig& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = value; }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline void SetLoggingConfig(LoggingConfig&& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = std::move(value); }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline FunctionConfiguration& WithLoggingConfig(const LoggingConfig& value) { SetLoggingConfig(value); return *this;}
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline FunctionConfiguration& WithLoggingConfig(LoggingConfig&& value) { SetLoggingConfig(std::move(value)); return *this;}
 
 
     
@@ -1642,6 +1656,9 @@ namespace Model
 
     RuntimeVersionConfig m_runtimeVersionConfig;
     bool m_runtimeVersionConfigHasBeenSet = false;
+
+    LoggingConfig m_loggingConfig;
+    bool m_loggingConfigHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p> <b>[Snapshot and AMI policies only]</b> Specifies a schedule for a snapshot
-   * or AMI lifecycle policy.</p><p><h3>See Also:</h3>   <a
+   * <p> <b>[Custom snapshot and AMI policies only]</b> Specifies a schedule for a
+   * snapshot or AMI lifecycle policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/Schedule">AWS API
    * Reference</a></p>
    */
@@ -306,37 +306,37 @@ namespace Model
 
 
     /**
-     * <p> <b>[Snapshot policies only]</b> The rule for enabling fast snapshot
+     * <p> <b>[Custom snapshot policies only]</b> The rule for enabling fast snapshot
      * restore.</p>
      */
     inline const FastRestoreRule& GetFastRestoreRule() const{ return m_fastRestoreRule; }
 
     /**
-     * <p> <b>[Snapshot policies only]</b> The rule for enabling fast snapshot
+     * <p> <b>[Custom snapshot policies only]</b> The rule for enabling fast snapshot
      * restore.</p>
      */
     inline bool FastRestoreRuleHasBeenSet() const { return m_fastRestoreRuleHasBeenSet; }
 
     /**
-     * <p> <b>[Snapshot policies only]</b> The rule for enabling fast snapshot
+     * <p> <b>[Custom snapshot policies only]</b> The rule for enabling fast snapshot
      * restore.</p>
      */
     inline void SetFastRestoreRule(const FastRestoreRule& value) { m_fastRestoreRuleHasBeenSet = true; m_fastRestoreRule = value; }
 
     /**
-     * <p> <b>[Snapshot policies only]</b> The rule for enabling fast snapshot
+     * <p> <b>[Custom snapshot policies only]</b> The rule for enabling fast snapshot
      * restore.</p>
      */
     inline void SetFastRestoreRule(FastRestoreRule&& value) { m_fastRestoreRuleHasBeenSet = true; m_fastRestoreRule = std::move(value); }
 
     /**
-     * <p> <b>[Snapshot policies only]</b> The rule for enabling fast snapshot
+     * <p> <b>[Custom snapshot policies only]</b> The rule for enabling fast snapshot
      * restore.</p>
      */
     inline Schedule& WithFastRestoreRule(const FastRestoreRule& value) { SetFastRestoreRule(value); return *this;}
 
     /**
-     * <p> <b>[Snapshot policies only]</b> The rule for enabling fast snapshot
+     * <p> <b>[Custom snapshot policies only]</b> The rule for enabling fast snapshot
      * restore.</p>
      */
     inline Schedule& WithFastRestoreRule(FastRestoreRule&& value) { SetFastRestoreRule(std::move(value)); return *this;}
@@ -408,89 +408,95 @@ namespace Model
 
 
     /**
-     * <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other
-     * Amazon Web Services accounts.</p>
+     * <p> <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with
+     * other Amazon Web Services accounts.</p>
      */
     inline const Aws::Vector<ShareRule>& GetShareRules() const{ return m_shareRules; }
 
     /**
-     * <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other
-     * Amazon Web Services accounts.</p>
+     * <p> <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with
+     * other Amazon Web Services accounts.</p>
      */
     inline bool ShareRulesHasBeenSet() const { return m_shareRulesHasBeenSet; }
 
     /**
-     * <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other
-     * Amazon Web Services accounts.</p>
+     * <p> <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with
+     * other Amazon Web Services accounts.</p>
      */
     inline void SetShareRules(const Aws::Vector<ShareRule>& value) { m_shareRulesHasBeenSet = true; m_shareRules = value; }
 
     /**
-     * <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other
-     * Amazon Web Services accounts.</p>
+     * <p> <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with
+     * other Amazon Web Services accounts.</p>
      */
     inline void SetShareRules(Aws::Vector<ShareRule>&& value) { m_shareRulesHasBeenSet = true; m_shareRules = std::move(value); }
 
     /**
-     * <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other
-     * Amazon Web Services accounts.</p>
+     * <p> <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with
+     * other Amazon Web Services accounts.</p>
      */
     inline Schedule& WithShareRules(const Aws::Vector<ShareRule>& value) { SetShareRules(value); return *this;}
 
     /**
-     * <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other
-     * Amazon Web Services accounts.</p>
+     * <p> <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with
+     * other Amazon Web Services accounts.</p>
      */
     inline Schedule& WithShareRules(Aws::Vector<ShareRule>&& value) { SetShareRules(std::move(value)); return *this;}
 
     /**
-     * <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other
-     * Amazon Web Services accounts.</p>
+     * <p> <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with
+     * other Amazon Web Services accounts.</p>
      */
     inline Schedule& AddShareRules(const ShareRule& value) { m_shareRulesHasBeenSet = true; m_shareRules.push_back(value); return *this; }
 
     /**
-     * <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other
-     * Amazon Web Services accounts.</p>
+     * <p> <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with
+     * other Amazon Web Services accounts.</p>
      */
     inline Schedule& AddShareRules(ShareRule&& value) { m_shareRulesHasBeenSet = true; m_shareRules.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
+     * <p> <b>[Custom AMI policies only]</b> The AMI deprecation rule for the
+     * schedule.</p>
      */
     inline const DeprecateRule& GetDeprecateRule() const{ return m_deprecateRule; }
 
     /**
-     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
+     * <p> <b>[Custom AMI policies only]</b> The AMI deprecation rule for the
+     * schedule.</p>
      */
     inline bool DeprecateRuleHasBeenSet() const { return m_deprecateRuleHasBeenSet; }
 
     /**
-     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
+     * <p> <b>[Custom AMI policies only]</b> The AMI deprecation rule for the
+     * schedule.</p>
      */
     inline void SetDeprecateRule(const DeprecateRule& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = value; }
 
     /**
-     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
+     * <p> <b>[Custom AMI policies only]</b> The AMI deprecation rule for the
+     * schedule.</p>
      */
     inline void SetDeprecateRule(DeprecateRule&& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = std::move(value); }
 
     /**
-     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
+     * <p> <b>[Custom AMI policies only]</b> The AMI deprecation rule for the
+     * schedule.</p>
      */
     inline Schedule& WithDeprecateRule(const DeprecateRule& value) { SetDeprecateRule(value); return *this;}
 
     /**
-     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
+     * <p> <b>[Custom AMI policies only]</b> The AMI deprecation rule for the
+     * schedule.</p>
      */
     inline Schedule& WithDeprecateRule(DeprecateRule&& value) { SetDeprecateRule(std::move(value)); return *this;}
 
 
     /**
-     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
-     * rule for the schedule. When you specify an archiving rule, snapshots are
-     * automatically moved from the standard tier to the archive tier once the
+     * <p> <b>[Custom snapshot policies that target volumes only]</b> The snapshot
+     * archiving rule for the schedule. When you specify an archiving rule, snapshots
+     * are automatically moved from the standard tier to the archive tier once the
      * schedule's retention threshold is met. Snapshots are then retained in the
      * archive tier for the archive retention period that you specify. </p> <p>For more
      * information about using snapshot archiving, see <a
@@ -500,9 +506,9 @@ namespace Model
     inline const ArchiveRule& GetArchiveRule() const{ return m_archiveRule; }
 
     /**
-     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
-     * rule for the schedule. When you specify an archiving rule, snapshots are
-     * automatically moved from the standard tier to the archive tier once the
+     * <p> <b>[Custom snapshot policies that target volumes only]</b> The snapshot
+     * archiving rule for the schedule. When you specify an archiving rule, snapshots
+     * are automatically moved from the standard tier to the archive tier once the
      * schedule's retention threshold is met. Snapshots are then retained in the
      * archive tier for the archive retention period that you specify. </p> <p>For more
      * information about using snapshot archiving, see <a
@@ -512,9 +518,9 @@ namespace Model
     inline bool ArchiveRuleHasBeenSet() const { return m_archiveRuleHasBeenSet; }
 
     /**
-     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
-     * rule for the schedule. When you specify an archiving rule, snapshots are
-     * automatically moved from the standard tier to the archive tier once the
+     * <p> <b>[Custom snapshot policies that target volumes only]</b> The snapshot
+     * archiving rule for the schedule. When you specify an archiving rule, snapshots
+     * are automatically moved from the standard tier to the archive tier once the
      * schedule's retention threshold is met. Snapshots are then retained in the
      * archive tier for the archive retention period that you specify. </p> <p>For more
      * information about using snapshot archiving, see <a
@@ -524,9 +530,9 @@ namespace Model
     inline void SetArchiveRule(const ArchiveRule& value) { m_archiveRuleHasBeenSet = true; m_archiveRule = value; }
 
     /**
-     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
-     * rule for the schedule. When you specify an archiving rule, snapshots are
-     * automatically moved from the standard tier to the archive tier once the
+     * <p> <b>[Custom snapshot policies that target volumes only]</b> The snapshot
+     * archiving rule for the schedule. When you specify an archiving rule, snapshots
+     * are automatically moved from the standard tier to the archive tier once the
      * schedule's retention threshold is met. Snapshots are then retained in the
      * archive tier for the archive retention period that you specify. </p> <p>For more
      * information about using snapshot archiving, see <a
@@ -536,9 +542,9 @@ namespace Model
     inline void SetArchiveRule(ArchiveRule&& value) { m_archiveRuleHasBeenSet = true; m_archiveRule = std::move(value); }
 
     /**
-     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
-     * rule for the schedule. When you specify an archiving rule, snapshots are
-     * automatically moved from the standard tier to the archive tier once the
+     * <p> <b>[Custom snapshot policies that target volumes only]</b> The snapshot
+     * archiving rule for the schedule. When you specify an archiving rule, snapshots
+     * are automatically moved from the standard tier to the archive tier once the
      * schedule's retention threshold is met. Snapshots are then retained in the
      * archive tier for the archive retention period that you specify. </p> <p>For more
      * information about using snapshot archiving, see <a
@@ -548,9 +554,9 @@ namespace Model
     inline Schedule& WithArchiveRule(const ArchiveRule& value) { SetArchiveRule(value); return *this;}
 
     /**
-     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
-     * rule for the schedule. When you specify an archiving rule, snapshots are
-     * automatically moved from the standard tier to the archive tier once the
+     * <p> <b>[Custom snapshot policies that target volumes only]</b> The snapshot
+     * archiving rule for the schedule. When you specify an archiving rule, snapshots
+     * are automatically moved from the standard tier to the archive tier once the
      * schedule's retention threshold is met. Snapshots are then retained in the
      * archive tier for the archive retention period that you specify. </p> <p>For more
      * information about using snapshot archiving, see <a

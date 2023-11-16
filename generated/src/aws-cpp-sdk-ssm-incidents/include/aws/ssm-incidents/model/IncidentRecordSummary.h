@@ -82,32 +82,32 @@ namespace Model
 
 
     /**
-     * <p>The time the incident was created.</p>
+     * <p>The timestamp for when the incident was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The time the incident was created.</p>
+     * <p>The timestamp for when the incident was created.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>The time the incident was created.</p>
+     * <p>The timestamp for when the incident was created.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The time the incident was created.</p>
+     * <p>The timestamp for when the incident was created.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The time the incident was created.</p>
+     * <p>The timestamp for when the incident was created.</p>
      */
     inline IncidentRecordSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The time the incident was created.</p>
+     * <p>The timestamp for when the incident was created.</p>
      */
     inline IncidentRecordSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
@@ -165,32 +165,32 @@ namespace Model
 
 
     /**
-     * <p>The time the incident was resolved.</p>
+     * <p>The timestamp for when the incident was resolved.</p>
      */
     inline const Aws::Utils::DateTime& GetResolvedTime() const{ return m_resolvedTime; }
 
     /**
-     * <p>The time the incident was resolved.</p>
+     * <p>The timestamp for when the incident was resolved.</p>
      */
     inline bool ResolvedTimeHasBeenSet() const { return m_resolvedTimeHasBeenSet; }
 
     /**
-     * <p>The time the incident was resolved.</p>
+     * <p>The timestamp for when the incident was resolved.</p>
      */
     inline void SetResolvedTime(const Aws::Utils::DateTime& value) { m_resolvedTimeHasBeenSet = true; m_resolvedTime = value; }
 
     /**
-     * <p>The time the incident was resolved.</p>
+     * <p>The timestamp for when the incident was resolved.</p>
      */
     inline void SetResolvedTime(Aws::Utils::DateTime&& value) { m_resolvedTimeHasBeenSet = true; m_resolvedTime = std::move(value); }
 
     /**
-     * <p>The time the incident was resolved.</p>
+     * <p>The timestamp for when the incident was resolved.</p>
      */
     inline IncidentRecordSummary& WithResolvedTime(const Aws::Utils::DateTime& value) { SetResolvedTime(value); return *this;}
 
     /**
-     * <p>The time the incident was resolved.</p>
+     * <p>The timestamp for when the incident was resolved.</p>
      */
     inline IncidentRecordSummary& WithResolvedTime(Aws::Utils::DateTime&& value) { SetResolvedTime(std::move(value)); return *this;}
 

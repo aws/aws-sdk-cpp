@@ -151,42 +151,50 @@ namespace Model
 
 
     /**
-     * <p>An array of event types that determine which events to log.</p>
+     * <p>An array of event types that determine which events to log.</p>  <p>The
+     * <code>TEXT_SENT</code> event type is not supported.</p> 
      */
     inline const Aws::Vector<EventType>& GetMatchingEventTypes() const{ return m_matchingEventTypes; }
 
     /**
-     * <p>An array of event types that determine which events to log.</p>
+     * <p>An array of event types that determine which events to log.</p>  <p>The
+     * <code>TEXT_SENT</code> event type is not supported.</p> 
      */
     inline bool MatchingEventTypesHasBeenSet() const { return m_matchingEventTypesHasBeenSet; }
 
     /**
-     * <p>An array of event types that determine which events to log.</p>
+     * <p>An array of event types that determine which events to log.</p>  <p>The
+     * <code>TEXT_SENT</code> event type is not supported.</p> 
      */
     inline void SetMatchingEventTypes(const Aws::Vector<EventType>& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes = value; }
 
     /**
-     * <p>An array of event types that determine which events to log.</p>
+     * <p>An array of event types that determine which events to log.</p>  <p>The
+     * <code>TEXT_SENT</code> event type is not supported.</p> 
      */
     inline void SetMatchingEventTypes(Aws::Vector<EventType>&& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes = std::move(value); }
 
     /**
-     * <p>An array of event types that determine which events to log.</p>
+     * <p>An array of event types that determine which events to log.</p>  <p>The
+     * <code>TEXT_SENT</code> event type is not supported.</p> 
      */
     inline UpdateEventDestinationRequest& WithMatchingEventTypes(const Aws::Vector<EventType>& value) { SetMatchingEventTypes(value); return *this;}
 
     /**
-     * <p>An array of event types that determine which events to log.</p>
+     * <p>An array of event types that determine which events to log.</p>  <p>The
+     * <code>TEXT_SENT</code> event type is not supported.</p> 
      */
     inline UpdateEventDestinationRequest& WithMatchingEventTypes(Aws::Vector<EventType>&& value) { SetMatchingEventTypes(std::move(value)); return *this;}
 
     /**
-     * <p>An array of event types that determine which events to log.</p>
+     * <p>An array of event types that determine which events to log.</p>  <p>The
+     * <code>TEXT_SENT</code> event type is not supported.</p> 
      */
     inline UpdateEventDestinationRequest& AddMatchingEventTypes(const EventType& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes.push_back(value); return *this; }
 
     /**
-     * <p>An array of event types that determine which events to log.</p>
+     * <p>An array of event types that determine which events to log.</p>  <p>The
+     * <code>TEXT_SENT</code> event type is not supported.</p> 
      */
     inline UpdateEventDestinationRequest& AddMatchingEventTypes(EventType&& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes.push_back(std::move(value)); return *this; }
 

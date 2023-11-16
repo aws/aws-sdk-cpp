@@ -405,6 +405,49 @@ namespace Model
 
 
     /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline const Aws::String& GetTwoWayChannelRole() const{ return m_twoWayChannelRole; }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline void SetTwoWayChannelRole(const Aws::String& value) { m_twoWayChannelRole = value; }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline void SetTwoWayChannelRole(Aws::String&& value) { m_twoWayChannelRole = std::move(value); }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline void SetTwoWayChannelRole(const char* value) { m_twoWayChannelRole.assign(value); }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline UpdatePhoneNumberResult& WithTwoWayChannelRole(const Aws::String& value) { SetTwoWayChannelRole(value); return *this;}
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline UpdatePhoneNumberResult& WithTwoWayChannelRole(Aws::String&& value) { SetTwoWayChannelRole(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline UpdatePhoneNumberResult& WithTwoWayChannelRole(const char* value) { SetTwoWayChannelRole(value); return *this;}
+
+
+    /**
      * <p>This is true if self managed opt-out are enabled.</p>
      */
     inline bool GetSelfManagedOptOutsEnabled() const{ return m_selfManagedOptOutsEnabled; }
@@ -470,6 +513,42 @@ namespace Model
      * <p>When set to true the phone number can't be deleted.</p>
      */
     inline UpdatePhoneNumberResult& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
+
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline const Aws::String& GetRegistrationId() const{ return m_registrationId; }
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline void SetRegistrationId(const Aws::String& value) { m_registrationId = value; }
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline void SetRegistrationId(Aws::String&& value) { m_registrationId = std::move(value); }
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline void SetRegistrationId(const char* value) { m_registrationId.assign(value); }
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline UpdatePhoneNumberResult& WithRegistrationId(const Aws::String& value) { SetRegistrationId(value); return *this;}
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline UpdatePhoneNumberResult& WithRegistrationId(Aws::String&& value) { SetRegistrationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline UpdatePhoneNumberResult& WithRegistrationId(const char* value) { SetRegistrationId(value); return *this;}
 
 
     /**
@@ -548,11 +627,15 @@ namespace Model
 
     Aws::String m_twoWayChannelArn;
 
+    Aws::String m_twoWayChannelRole;
+
     bool m_selfManagedOptOutsEnabled;
 
     Aws::String m_optOutListName;
 
     bool m_deletionProtectionEnabled;
+
+    Aws::String m_registrationId;
 
     Aws::Utils::DateTime m_createdTimestamp;
 

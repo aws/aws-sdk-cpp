@@ -28,7 +28,9 @@ UpdateFileSystemLustreConfiguration::UpdateFileSystemLustreConfiguration() :
     m_dataCompressionType(DataCompressionType::NOT_SET),
     m_dataCompressionTypeHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
-    m_rootSquashConfigurationHasBeenSet(false)
+    m_rootSquashConfigurationHasBeenSet(false),
+    m_perUnitStorageThroughput(0),
+    m_perUnitStorageThroughputHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ UpdateFileSystemLustreConfiguration::UpdateFileSystemLustreConfiguration(JsonVie
     m_dataCompressionType(DataCompressionType::NOT_SET),
     m_dataCompressionTypeHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
-    m_rootSquashConfigurationHasBeenSet(false)
+    m_rootSquashConfigurationHasBeenSet(false),
+    m_perUnitStorageThroughput(0),
+    m_perUnitStorageThroughputHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +102,13 @@ UpdateFileSystemLustreConfiguration& UpdateFileSystemLustreConfiguration::operat
     m_rootSquashConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PerUnitStorageThroughput"))
+  {
+    m_perUnitStorageThroughput = jsonValue.GetInteger("PerUnitStorageThroughput");
+
+    m_perUnitStorageThroughputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -142,6 +153,12 @@ JsonValue UpdateFileSystemLustreConfiguration::Jsonize() const
   if(m_rootSquashConfigurationHasBeenSet)
   {
    payload.WithObject("RootSquashConfiguration", m_rootSquashConfiguration.Jsonize());
+
+  }
+
+  if(m_perUnitStorageThroughputHasBeenSet)
+  {
+   payload.WithInteger("PerUnitStorageThroughput", m_perUnitStorageThroughput);
 
   }
 

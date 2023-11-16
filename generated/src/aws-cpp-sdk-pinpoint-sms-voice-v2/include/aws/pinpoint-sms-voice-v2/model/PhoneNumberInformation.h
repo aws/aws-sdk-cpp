@@ -30,8 +30,8 @@ namespace Model
 {
 
   /**
-   * <p>The information for a phone number in an Amazon Web Services
-   * account.</p><p><h3>See Also:</h3>   <a
+   * <p>The information for a phone number, in E.164 format, in an Amazon Web
+   * Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PhoneNumberInformation">AWS
    * API Reference</a></p>
    */
@@ -478,6 +478,55 @@ namespace Model
 
 
     /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline const Aws::String& GetTwoWayChannelRole() const{ return m_twoWayChannelRole; }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline bool TwoWayChannelRoleHasBeenSet() const { return m_twoWayChannelRoleHasBeenSet; }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline void SetTwoWayChannelRole(const Aws::String& value) { m_twoWayChannelRoleHasBeenSet = true; m_twoWayChannelRole = value; }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline void SetTwoWayChannelRole(Aws::String&& value) { m_twoWayChannelRoleHasBeenSet = true; m_twoWayChannelRole = std::move(value); }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline void SetTwoWayChannelRole(const char* value) { m_twoWayChannelRoleHasBeenSet = true; m_twoWayChannelRole.assign(value); }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline PhoneNumberInformation& WithTwoWayChannelRole(const Aws::String& value) { SetTwoWayChannelRole(value); return *this;}
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline PhoneNumberInformation& WithTwoWayChannelRole(Aws::String&& value) { SetTwoWayChannelRole(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline PhoneNumberInformation& WithTwoWayChannelRole(const char* value) { SetTwoWayChannelRole(value); return *this;}
+
+
+    /**
      * <p>When set to false an end recipient sends a message that begins with HELP or
      * STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies
      * with a customizable message and adds the end recipient to the OptOutList. When
@@ -630,6 +679,47 @@ namespace Model
 
 
     /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline const Aws::String& GetRegistrationId() const{ return m_registrationId; }
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline bool RegistrationIdHasBeenSet() const { return m_registrationIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline void SetRegistrationId(const Aws::String& value) { m_registrationIdHasBeenSet = true; m_registrationId = value; }
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline void SetRegistrationId(Aws::String&& value) { m_registrationIdHasBeenSet = true; m_registrationId = std::move(value); }
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline void SetRegistrationId(const char* value) { m_registrationIdHasBeenSet = true; m_registrationId.assign(value); }
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline PhoneNumberInformation& WithRegistrationId(const Aws::String& value) { SetRegistrationId(value); return *this;}
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline PhoneNumberInformation& WithRegistrationId(Aws::String&& value) { SetRegistrationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier for the registration.</p>
+     */
+    inline PhoneNumberInformation& WithRegistrationId(const char* value) { SetRegistrationId(value); return *this;}
+
+
+    /**
      * <p>The time when the phone number was created, in <a
      * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
@@ -700,6 +790,9 @@ namespace Model
     Aws::String m_twoWayChannelArn;
     bool m_twoWayChannelArnHasBeenSet = false;
 
+    Aws::String m_twoWayChannelRole;
+    bool m_twoWayChannelRoleHasBeenSet = false;
+
     bool m_selfManagedOptOutsEnabled;
     bool m_selfManagedOptOutsEnabledHasBeenSet = false;
 
@@ -711,6 +804,9 @@ namespace Model
 
     Aws::String m_poolId;
     bool m_poolIdHasBeenSet = false;
+
+    Aws::String m_registrationId;
+    bool m_registrationIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
     bool m_createdTimestampHasBeenSet = false;

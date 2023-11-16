@@ -13,6 +13,7 @@
 #include <aws/quicksight/model/DashboardPublishOptions.h>
 #include <aws/quicksight/model/DashboardVersionDefinition.h>
 #include <aws/quicksight/model/ValidationStrategy.h>
+#include <aws/quicksight/model/LinkSharingConfiguration.h>
 #include <aws/quicksight/model/ResourcePermission.h>
 #include <aws/quicksight/model/Tag.h>
 #include <utility>
@@ -804,6 +805,43 @@ namespace Model
      */
     inline CreateDashboardRequest& AddFolderArns(const char* value) { m_folderArnsHasBeenSet = true; m_folderArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>A structure that contains the permissions of a shareable link to the
+     * dashboard.</p>
+     */
+    inline const LinkSharingConfiguration& GetLinkSharingConfiguration() const{ return m_linkSharingConfiguration; }
+
+    /**
+     * <p>A structure that contains the permissions of a shareable link to the
+     * dashboard.</p>
+     */
+    inline bool LinkSharingConfigurationHasBeenSet() const { return m_linkSharingConfigurationHasBeenSet; }
+
+    /**
+     * <p>A structure that contains the permissions of a shareable link to the
+     * dashboard.</p>
+     */
+    inline void SetLinkSharingConfiguration(const LinkSharingConfiguration& value) { m_linkSharingConfigurationHasBeenSet = true; m_linkSharingConfiguration = value; }
+
+    /**
+     * <p>A structure that contains the permissions of a shareable link to the
+     * dashboard.</p>
+     */
+    inline void SetLinkSharingConfiguration(LinkSharingConfiguration&& value) { m_linkSharingConfigurationHasBeenSet = true; m_linkSharingConfiguration = std::move(value); }
+
+    /**
+     * <p>A structure that contains the permissions of a shareable link to the
+     * dashboard.</p>
+     */
+    inline CreateDashboardRequest& WithLinkSharingConfiguration(const LinkSharingConfiguration& value) { SetLinkSharingConfiguration(value); return *this;}
+
+    /**
+     * <p>A structure that contains the permissions of a shareable link to the
+     * dashboard.</p>
+     */
+    inline CreateDashboardRequest& WithLinkSharingConfiguration(LinkSharingConfiguration&& value) { SetLinkSharingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_awsAccountId;
@@ -844,6 +882,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_folderArns;
     bool m_folderArnsHasBeenSet = false;
+
+    LinkSharingConfiguration m_linkSharingConfiguration;
+    bool m_linkSharingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

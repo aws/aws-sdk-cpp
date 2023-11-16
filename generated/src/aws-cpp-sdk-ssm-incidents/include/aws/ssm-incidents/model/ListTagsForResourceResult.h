@@ -34,62 +34,62 @@ namespace Model
 
 
     /**
-     * <p>A list of tags for the response plan.</p>
+     * <p>A list of tags for the response plan or incident.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of tags for the response plan.</p>
+     * <p>A list of tags for the response plan or incident.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>A list of tags for the response plan.</p>
+     * <p>A list of tags for the response plan or incident.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>A list of tags for the response plan.</p>
+     * <p>A list of tags for the response plan or incident.</p>
      */
     inline ListTagsForResourceResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of tags for the response plan.</p>
+     * <p>A list of tags for the response plan or incident.</p>
      */
     inline ListTagsForResourceResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of tags for the response plan.</p>
+     * <p>A list of tags for the response plan or incident.</p>
      */
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A list of tags for the response plan.</p>
+     * <p>A list of tags for the response plan or incident.</p>
      */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of tags for the response plan.</p>
+     * <p>A list of tags for the response plan or incident.</p>
      */
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of tags for the response plan.</p>
+     * <p>A list of tags for the response plan or incident.</p>
      */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A list of tags for the response plan.</p>
+     * <p>A list of tags for the response plan or incident.</p>
      */
     inline ListTagsForResourceResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of tags for the response plan.</p>
+     * <p>A list of tags for the response plan or incident.</p>
      */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of tags for the response plan.</p>
+     * <p>A list of tags for the response plan or incident.</p>
      */
     inline ListTagsForResourceResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 

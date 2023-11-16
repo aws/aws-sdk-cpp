@@ -456,10 +456,11 @@ namespace Model
      * a value for this property, the job uses the recommended set of managed data
      * identifiers.</p> <p>If the job is a recurring job and you specify ALL or
      * EXCLUDE, each job run automatically uses new managed data identifiers that are
-     * released. If you specify RECOMMENDED for a recurring job, each job run
-     * automatically uses all the managed data identifiers that are in the recommended
-     * set when the run starts.</p> <p>For information about individual managed data
-     * identifiers or to determine which ones are in the recommended set, see <a
+     * released. If you don't specify a value for this property or you specify
+     * RECOMMENDED for a recurring job, each job run automatically uses all the managed
+     * data identifiers that are in the recommended set when the run starts.</p> <p>For
+     * information about individual managed data identifiers or to determine which ones
+     * are in the recommended set, see <a
      * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
      * managed data identifiers</a> and <a
      * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
@@ -484,10 +485,11 @@ namespace Model
      * a value for this property, the job uses the recommended set of managed data
      * identifiers.</p> <p>If the job is a recurring job and you specify ALL or
      * EXCLUDE, each job run automatically uses new managed data identifiers that are
-     * released. If you specify RECOMMENDED for a recurring job, each job run
-     * automatically uses all the managed data identifiers that are in the recommended
-     * set when the run starts.</p> <p>For information about individual managed data
-     * identifiers or to determine which ones are in the recommended set, see <a
+     * released. If you don't specify a value for this property or you specify
+     * RECOMMENDED for a recurring job, each job run automatically uses all the managed
+     * data identifiers that are in the recommended set when the run starts.</p> <p>For
+     * information about individual managed data identifiers or to determine which ones
+     * are in the recommended set, see <a
      * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
      * managed data identifiers</a> and <a
      * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
@@ -512,10 +514,11 @@ namespace Model
      * a value for this property, the job uses the recommended set of managed data
      * identifiers.</p> <p>If the job is a recurring job and you specify ALL or
      * EXCLUDE, each job run automatically uses new managed data identifiers that are
-     * released. If you specify RECOMMENDED for a recurring job, each job run
-     * automatically uses all the managed data identifiers that are in the recommended
-     * set when the run starts.</p> <p>For information about individual managed data
-     * identifiers or to determine which ones are in the recommended set, see <a
+     * released. If you don't specify a value for this property or you specify
+     * RECOMMENDED for a recurring job, each job run automatically uses all the managed
+     * data identifiers that are in the recommended set when the run starts.</p> <p>For
+     * information about individual managed data identifiers or to determine which ones
+     * are in the recommended set, see <a
      * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
      * managed data identifiers</a> and <a
      * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
@@ -540,10 +543,11 @@ namespace Model
      * a value for this property, the job uses the recommended set of managed data
      * identifiers.</p> <p>If the job is a recurring job and you specify ALL or
      * EXCLUDE, each job run automatically uses new managed data identifiers that are
-     * released. If you specify RECOMMENDED for a recurring job, each job run
-     * automatically uses all the managed data identifiers that are in the recommended
-     * set when the run starts.</p> <p>For information about individual managed data
-     * identifiers or to determine which ones are in the recommended set, see <a
+     * released. If you don't specify a value for this property or you specify
+     * RECOMMENDED for a recurring job, each job run automatically uses all the managed
+     * data identifiers that are in the recommended set when the run starts.</p> <p>For
+     * information about individual managed data identifiers or to determine which ones
+     * are in the recommended set, see <a
      * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
      * managed data identifiers</a> and <a
      * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
@@ -568,10 +572,11 @@ namespace Model
      * a value for this property, the job uses the recommended set of managed data
      * identifiers.</p> <p>If the job is a recurring job and you specify ALL or
      * EXCLUDE, each job run automatically uses new managed data identifiers that are
-     * released. If you specify RECOMMENDED for a recurring job, each job run
-     * automatically uses all the managed data identifiers that are in the recommended
-     * set when the run starts.</p> <p>For information about individual managed data
-     * identifiers or to determine which ones are in the recommended set, see <a
+     * released. If you don't specify a value for this property or you specify
+     * RECOMMENDED for a recurring job, each job run automatically uses all the managed
+     * data identifiers that are in the recommended set when the run starts.</p> <p>For
+     * information about individual managed data identifiers or to determine which ones
+     * are in the recommended set, see <a
      * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
      * managed data identifiers</a> and <a
      * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
@@ -596,10 +601,11 @@ namespace Model
      * a value for this property, the job uses the recommended set of managed data
      * identifiers.</p> <p>If the job is a recurring job and you specify ALL or
      * EXCLUDE, each job run automatically uses new managed data identifiers that are
-     * released. If you specify RECOMMENDED for a recurring job, each job run
-     * automatically uses all the managed data identifiers that are in the recommended
-     * set when the run starts.</p> <p>For information about individual managed data
-     * identifiers or to determine which ones are in the recommended set, see <a
+     * released. If you don't specify a value for this property or you specify
+     * RECOMMENDED for a recurring job, each job run automatically uses all the managed
+     * data identifiers that are in the recommended set when the run starts.</p> <p>For
+     * information about individual managed data identifiers or to determine which ones
+     * are in the recommended set, see <a
      * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
      * managed data identifiers</a> and <a
      * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
