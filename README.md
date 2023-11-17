@@ -24,7 +24,7 @@ the development efforts by submitting pull requests and sending us feedback and 
   * Amazon Linux
   * Windows
   * Mac
-  
+
 ### Building From Source:
 
 #### To create an **out-of-source build**:
@@ -42,11 +42,12 @@ the development efforts by submitting pull requests and sending us feedback and 
    cd <BUILD_DIR>
    cmake <path-to-root-of-this-source-code> \
     -DCMAKE_BUILD_TYPE=Debug \
-    -DCMAKE_PREFIX_PATH=<path-to-install> \
+    -DCMAKE_INSTALL_PREFIX=<path-to-install> \
     -DBUILD_ONLY="s3"
    cmake --build . --config=Debug
    cmake --install . --config=Debug
    ```
+
    **_NOTE:_** BUILD_ONLY is an optional flag used to list only the services you are using. Building the whole sdk can take a long time. Also check out the list of [CMake parameters](./docs/CMake_Parameters.md)
 
 #### Other Dependencies:
