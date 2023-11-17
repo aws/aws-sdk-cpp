@@ -58,7 +58,7 @@ protected:
             // kick-in in plenty of time.
             bool retValue = Aws::Crt::Io::StdIOStreamInputStream::ReadImpl(buffer);
             size_t newPos = buffer.len;
-            AWS_ASSERT(newPos >= currentPos && !"the buffer length should not have decreased in value.");
+            AWS_ASSERT(newPos >= currentPos && "the buffer length should not have decreased in value.");
 
             if (retValue && m_isStreaming)
             {
