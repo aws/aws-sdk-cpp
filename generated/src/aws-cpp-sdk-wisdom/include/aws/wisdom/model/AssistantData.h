@@ -240,11 +240,12 @@ namespace Model
     /**
      * <p>The configuration information for the customer managed key used for
      * encryption. </p> <p>This KMS key must have a policy that allows
-     * <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the
-     * IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key
-     * policy must also allow <code>kms:Decrypt</code>,
-     * <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions
-     * to the <code>connect.amazonaws.com</code> service principal. </p> <p>For more
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, and
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. To use Wisdom with chat, the key policy must
+     * also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and
+     * <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal. </p> <p>For more
      * information about setting up a customer managed key for Wisdom, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
      * Amazon Connect Wisdom for your instance</a>.</p>
@@ -254,11 +255,12 @@ namespace Model
     /**
      * <p>The configuration information for the customer managed key used for
      * encryption. </p> <p>This KMS key must have a policy that allows
-     * <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the
-     * IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key
-     * policy must also allow <code>kms:Decrypt</code>,
-     * <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions
-     * to the <code>connect.amazonaws.com</code> service principal. </p> <p>For more
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, and
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. To use Wisdom with chat, the key policy must
+     * also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and
+     * <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal. </p> <p>For more
      * information about setting up a customer managed key for Wisdom, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
      * Amazon Connect Wisdom for your instance</a>.</p>
@@ -268,11 +270,12 @@ namespace Model
     /**
      * <p>The configuration information for the customer managed key used for
      * encryption. </p> <p>This KMS key must have a policy that allows
-     * <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the
-     * IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key
-     * policy must also allow <code>kms:Decrypt</code>,
-     * <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions
-     * to the <code>connect.amazonaws.com</code> service principal. </p> <p>For more
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, and
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. To use Wisdom with chat, the key policy must
+     * also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and
+     * <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal. </p> <p>For more
      * information about setting up a customer managed key for Wisdom, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
      * Amazon Connect Wisdom for your instance</a>.</p>
@@ -282,11 +285,12 @@ namespace Model
     /**
      * <p>The configuration information for the customer managed key used for
      * encryption. </p> <p>This KMS key must have a policy that allows
-     * <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the
-     * IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key
-     * policy must also allow <code>kms:Decrypt</code>,
-     * <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions
-     * to the <code>connect.amazonaws.com</code> service principal. </p> <p>For more
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, and
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. To use Wisdom with chat, the key policy must
+     * also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and
+     * <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal. </p> <p>For more
      * information about setting up a customer managed key for Wisdom, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
      * Amazon Connect Wisdom for your instance</a>.</p>
@@ -296,11 +300,12 @@ namespace Model
     /**
      * <p>The configuration information for the customer managed key used for
      * encryption. </p> <p>This KMS key must have a policy that allows
-     * <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the
-     * IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key
-     * policy must also allow <code>kms:Decrypt</code>,
-     * <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions
-     * to the <code>connect.amazonaws.com</code> service principal. </p> <p>For more
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, and
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. To use Wisdom with chat, the key policy must
+     * also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and
+     * <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal. </p> <p>For more
      * information about setting up a customer managed key for Wisdom, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
      * Amazon Connect Wisdom for your instance</a>.</p>
@@ -310,11 +315,12 @@ namespace Model
     /**
      * <p>The configuration information for the customer managed key used for
      * encryption. </p> <p>This KMS key must have a policy that allows
-     * <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the
-     * IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key
-     * policy must also allow <code>kms:Decrypt</code>,
-     * <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions
-     * to the <code>connect.amazonaws.com</code> service principal. </p> <p>For more
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, and
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. To use Wisdom with chat, the key policy must
+     * also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and
+     * <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal. </p> <p>For more
      * information about setting up a customer managed key for Wisdom, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
      * Amazon Connect Wisdom for your instance</a>.</p>

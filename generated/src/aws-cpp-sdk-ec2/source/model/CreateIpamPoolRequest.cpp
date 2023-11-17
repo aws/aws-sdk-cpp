@@ -36,7 +36,8 @@ CreateIpamPoolRequest::CreateIpamPoolRequest() :
     m_awsService(IpamPoolAwsService::NOT_SET),
     m_awsServiceHasBeenSet(false),
     m_publicIpSource(IpamPoolPublicIpSource::NOT_SET),
-    m_publicIpSourceHasBeenSet(false)
+    m_publicIpSourceHasBeenSet(false),
+    m_sourceResourceHasBeenSet(false)
 {
 }
 
@@ -132,6 +133,11 @@ Aws::String CreateIpamPoolRequest::SerializePayload() const
   if(m_publicIpSourceHasBeenSet)
   {
     ss << "PublicIpSource=" << IpamPoolPublicIpSourceMapper::GetNameForIpamPoolPublicIpSource(m_publicIpSource) << "&";
+  }
+
+  if(m_sourceResourceHasBeenSet)
+  {
+    m_sourceResource.OutputToStream(ss, "SourceResource");
   }
 
   ss << "Version=2016-11-15";

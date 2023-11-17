@@ -74,52 +74,85 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it. Can be
+     * either the ID or the ARN. URLs cannot contain the ARN.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
 
     /**
-     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it. Can be
+     * either the ID or the ARN. URLs cannot contain the ARN.</p>
      */
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it. Can be
+     * either the ID or the ARN. URLs cannot contain the ARN.</p>
      */
     inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
 
     /**
-     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it. Can be
+     * either the ID or the ARN. URLs cannot contain the ARN.</p>
      */
     inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
 
     /**
-     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it. Can be
+     * either the ID or the ARN. URLs cannot contain the ARN.</p>
      */
     inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
 
     /**
-     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it. Can be
+     * either the ID or the ARN. URLs cannot contain the ARN.</p>
      */
     inline StartContentUploadRequest& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
 
     /**
-     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it. Can be
+     * either the ID or the ARN. URLs cannot contain the ARN.</p>
      */
     inline StartContentUploadRequest& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it. Can be
+     * either the ID or the ARN. URLs cannot contain the ARN.</p>
      */
     inline StartContentUploadRequest& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
+
+
+    /**
+     * <p>The expected expiration time of the generated presigned URL, specified in
+     * minutes.</p>
+     */
+    inline int GetPresignedUrlTimeToLive() const{ return m_presignedUrlTimeToLive; }
+
+    /**
+     * <p>The expected expiration time of the generated presigned URL, specified in
+     * minutes.</p>
+     */
+    inline bool PresignedUrlTimeToLiveHasBeenSet() const { return m_presignedUrlTimeToLiveHasBeenSet; }
+
+    /**
+     * <p>The expected expiration time of the generated presigned URL, specified in
+     * minutes.</p>
+     */
+    inline void SetPresignedUrlTimeToLive(int value) { m_presignedUrlTimeToLiveHasBeenSet = true; m_presignedUrlTimeToLive = value; }
+
+    /**
+     * <p>The expected expiration time of the generated presigned URL, specified in
+     * minutes.</p>
+     */
+    inline StartContentUploadRequest& WithPresignedUrlTimeToLive(int value) { SetPresignedUrlTimeToLive(value); return *this;}
 
   private:
 
@@ -128,6 +161,9 @@ namespace Model
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
+
+    int m_presignedUrlTimeToLive;
+    bool m_presignedUrlTimeToLiveHasBeenSet = false;
   };
 
 } // namespace Model

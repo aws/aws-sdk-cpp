@@ -521,6 +521,55 @@ namespace Model
 
 
     /**
+     * <p>The ARN for the Redshift application that integrates with IAM Identity
+     * Center.</p>
+     */
+    inline const Aws::String& GetRedshiftIdcApplicationArn() const{ return m_redshiftIdcApplicationArn; }
+
+    /**
+     * <p>The ARN for the Redshift application that integrates with IAM Identity
+     * Center.</p>
+     */
+    inline bool RedshiftIdcApplicationArnHasBeenSet() const { return m_redshiftIdcApplicationArnHasBeenSet; }
+
+    /**
+     * <p>The ARN for the Redshift application that integrates with IAM Identity
+     * Center.</p>
+     */
+    inline void SetRedshiftIdcApplicationArn(const Aws::String& value) { m_redshiftIdcApplicationArnHasBeenSet = true; m_redshiftIdcApplicationArn = value; }
+
+    /**
+     * <p>The ARN for the Redshift application that integrates with IAM Identity
+     * Center.</p>
+     */
+    inline void SetRedshiftIdcApplicationArn(Aws::String&& value) { m_redshiftIdcApplicationArnHasBeenSet = true; m_redshiftIdcApplicationArn = std::move(value); }
+
+    /**
+     * <p>The ARN for the Redshift application that integrates with IAM Identity
+     * Center.</p>
+     */
+    inline void SetRedshiftIdcApplicationArn(const char* value) { m_redshiftIdcApplicationArnHasBeenSet = true; m_redshiftIdcApplicationArn.assign(value); }
+
+    /**
+     * <p>The ARN for the Redshift application that integrates with IAM Identity
+     * Center.</p>
+     */
+    inline CreateNamespaceRequest& WithRedshiftIdcApplicationArn(const Aws::String& value) { SetRedshiftIdcApplicationArn(value); return *this;}
+
+    /**
+     * <p>The ARN for the Redshift application that integrates with IAM Identity
+     * Center.</p>
+     */
+    inline CreateNamespaceRequest& WithRedshiftIdcApplicationArn(Aws::String&& value) { SetRedshiftIdcApplicationArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN for the Redshift application that integrates with IAM Identity
+     * Center.</p>
+     */
+    inline CreateNamespaceRequest& WithRedshiftIdcApplicationArn(const char* value) { SetRedshiftIdcApplicationArn(value); return *this;}
+
+
+    /**
      * <p>A list of tag instances.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -591,6 +640,9 @@ namespace Model
 
     Aws::String m_namespaceName;
     bool m_namespaceNameHasBeenSet = false;
+
+    Aws::String m_redshiftIdcApplicationArn;
+    bool m_redshiftIdcApplicationArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

@@ -788,6 +788,40 @@ namespace EC2
         }
 
         /**
+         * <p>Associates your Autonomous System Number (ASN) with a BYOIP CIDR that you own
+         * in the same Amazon Web Services Region. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+         * Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.</p> <p>After the
+         * association succeeds, the ASN is eligible for advertisement. You can view the
+         * association with <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeByoipCidrs.html">DescribeByoipCidrs</a>.
+         * You can advertise the CIDR with <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AdvertiseByoipCidr.html">AdvertiseByoipCidr</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamByoasn">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateIpamByoasnOutcome AssociateIpamByoasn(const Model::AssociateIpamByoasnRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateIpamByoasn that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateIpamByoasnRequestT = Model::AssociateIpamByoasnRequest>
+        Model::AssociateIpamByoasnOutcomeCallable AssociateIpamByoasnCallable(const AssociateIpamByoasnRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::AssociateIpamByoasn, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateIpamByoasn that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateIpamByoasnRequestT = Model::AssociateIpamByoasnRequest>
+        void AssociateIpamByoasnAsync(const AssociateIpamByoasnRequestT& request, const AssociateIpamByoasnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::AssociateIpamByoasn, request, handler, context);
+        }
+
+        /**
          * <p>Associates an IPAM resource discovery with an Amazon VPC IPAM. A resource
          * discovery is an IPAM component that enables IPAM to manage and monitor resources
          * that belong to the owning account.</p><p><h3>See Also:</h3>   <a
@@ -891,8 +925,7 @@ namespace EC2
 
         /**
          * <p>Associates a CIDR block with your subnet. You can only associate a single
-         * IPv6 CIDR block with your subnet. An IPv6 CIDR block must have a prefix length
-         * of /64.</p><p><h3>See Also:</h3>   <a
+         * IPv6 CIDR block with your subnet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSubnetCidrBlock">AWS
          * API Reference</a></p>
          */
@@ -999,8 +1032,6 @@ namespace EC2
         }
 
         /**
-         *  <p>This API action is currently in <b>limited preview only</b>. If you
-         * are interested in using this feature, contact your account manager.</p> 
          * <p>Associates a branch network interface with a trunk network interface.</p>
          * <p>Before you create the association, run the <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">create-network-interface</a>
@@ -1035,10 +1066,10 @@ namespace EC2
          * CIDR block, an Amazon-provided IPv6 CIDR block, or an IPv6 CIDR block from an
          * IPv6 address pool that you provisioned through bring your own IP addresses (<a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
-         * The IPv6 CIDR block size is fixed at /56.</p> <p>You must specify one of the
-         * following in the request: an IPv4 CIDR block, an IPv6 pool, or an
-         * Amazon-provided IPv6 CIDR block.</p> <p>For more information about associating
-         * CIDR blocks with your VPC and applicable restrictions, see <a
+         * </p> <p>You must specify one of the following in the request: an IPv4 CIDR
+         * block, an IPv6 pool, or an Amazon-provided IPv6 CIDR block.</p> <p>For more
+         * information about associating CIDR blocks with your VPC and applicable
+         * restrictions, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP
          * addressing for your VPCs and subnets</a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3543,12 +3574,12 @@ namespace EC2
          * reserves both the first four and the last IPv4 address in each subnet's CIDR
          * block. They're not available for your use.</p> <p>If you've associated an IPv6
          * CIDR block with your VPC, you can associate an IPv6 CIDR block with a subnet
-         * when you create it. The allowed block size for an IPv6 subnet is a /64
-         * netmask.</p> <p>If you add more than one subnet to a VPC, they're set up in a
-         * star topology with a logical router in the middle.</p> <p>When you stop an
-         * instance in a subnet, it retains its private IPv4 address. It's therefore
-         * possible to have a subnet with no running instances (they're all stopped), but
-         * no remaining IP addresses available.</p> <p>For more information, see <a
+         * when you create it. </p> <p>If you add more than one subnet to a VPC, they're
+         * set up in a star topology with a logical router in the middle.</p> <p>When you
+         * stop an instance in a subnet, it retains its private IPv4 address. It's
+         * therefore possible to have a subnet with no running instances (they're all
+         * stopped), but no remaining IP addresses available.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a>
          * in the <i>Amazon VPC User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">AWS
@@ -4243,7 +4274,7 @@ namespace EC2
          * addressing for your VPCs and subnets</a> in the <i>Amazon VPC User
          * Guide</i>.</p> <p>You can optionally request an IPv6 CIDR block for the VPC. You
          * can request an Amazon-provided IPv6 CIDR block from Amazon's pool of IPv6
-         * addresses, or an IPv6 CIDR block from an IPv6 address pool that you provisioned
+         * addresses or an IPv6 CIDR block from an IPv6 address pool that you provisioned
          * through bring your own IP addresses (<a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).</p>
          * <p>By default, each instance that you launch in the VPC has the default DHCP
@@ -6571,6 +6602,38 @@ namespace EC2
         }
 
         /**
+         * <p>Deprovisions your Autonomous System Number (ASN) from your Amazon Web
+         * Services account. This action can only be called after any BYOIP CIDR
+         * associations are removed from your Amazon Web Services account with <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIpamByoasn.html">DisassociateIpamByoasn</a>.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+         * Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamByoasn">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeprovisionIpamByoasnOutcome DeprovisionIpamByoasn(const Model::DeprovisionIpamByoasnRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeprovisionIpamByoasn that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeprovisionIpamByoasnRequestT = Model::DeprovisionIpamByoasnRequest>
+        Model::DeprovisionIpamByoasnOutcomeCallable DeprovisionIpamByoasnCallable(const DeprovisionIpamByoasnRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DeprovisionIpamByoasn, request);
+        }
+
+        /**
+         * An Async wrapper for DeprovisionIpamByoasn that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeprovisionIpamByoasnRequestT = Model::DeprovisionIpamByoasnRequest>
+        void DeprovisionIpamByoasnAsync(const DeprovisionIpamByoasnRequestT& request, const DeprovisionIpamByoasnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DeprovisionIpamByoasn, request, handler, context);
+        }
+
+        /**
          * <p>Deprovision a CIDR provisioned from an IPAM pool. If you deprovision a CIDR
          * from a pool that has a source pool, the CIDR is recycled back into the source
          * pool. For more information, see <a
@@ -8429,6 +8492,35 @@ namespace EC2
         void DescribeInternetGatewaysAsync(const DescribeInternetGatewaysRequestT& request, const DescribeInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DescribeInternetGateways, request, handler, context);
+        }
+
+        /**
+         * <p>Describes your Autonomous System Numbers (ASNs), their provisioning statuses,
+         * and the BYOIP CIDRs with which they are associated. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+         * Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamByoasn">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeIpamByoasnOutcome DescribeIpamByoasn(const Model::DescribeIpamByoasnRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeIpamByoasn that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeIpamByoasnRequestT = Model::DescribeIpamByoasnRequest>
+        Model::DescribeIpamByoasnOutcomeCallable DescribeIpamByoasnCallable(const DescribeIpamByoasnRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DescribeIpamByoasn, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeIpamByoasn that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeIpamByoasnRequestT = Model::DescribeIpamByoasnRequest>
+        void DescribeIpamByoasnAsync(const DescribeIpamByoasnRequestT& request, const DescribeIpamByoasnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DescribeIpamByoasn, request, handler, context);
         }
 
         /**
@@ -10399,8 +10491,6 @@ namespace EC2
         }
 
         /**
-         *  <p>This API action is currently in <b>limited preview only</b>. If you
-         * are interested in using this feature, contact your account manager.</p> 
          * <p>Describes one or more network interface trunk associations.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrunkInterfaceAssociations">AWS
@@ -11826,6 +11916,36 @@ namespace EC2
         }
 
         /**
+         * <p>Remove the association between your Autonomous System Number (ASN) and your
+         * BYOIP CIDR. You may want to use this action to disassociate an ASN from a CIDR
+         * or if you want to swap ASNs. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+         * Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamByoasn">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateIpamByoasnOutcome DisassociateIpamByoasn(const Model::DisassociateIpamByoasnRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateIpamByoasn that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateIpamByoasnRequestT = Model::DisassociateIpamByoasnRequest>
+        Model::DisassociateIpamByoasnOutcomeCallable DisassociateIpamByoasnCallable(const DisassociateIpamByoasnRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DisassociateIpamByoasn, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateIpamByoasn that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateIpamByoasnRequestT = Model::DisassociateIpamByoasnRequest>
+        void DisassociateIpamByoasnAsync(const DisassociateIpamByoasnRequestT& request, const DisassociateIpamByoasnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DisassociateIpamByoasn, request, handler, context);
+        }
+
+        /**
          * <p>Disassociates a resource discovery from an Amazon VPC IPAM. A resource
          * discovery is an IPAM component that enables IPAM to manage and monitor resources
          * that belong to the owning account.</p><p><h3>See Also:</h3>   <a
@@ -12025,8 +12145,6 @@ namespace EC2
         }
 
         /**
-         *  <p>This API action is currently in <b>limited preview only</b>. If you
-         * are interested in using this feature, contact your account manager.</p> 
          * <p>Removes an association between a branch network interface with a trunk
          * network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTrunkInterface">AWS
@@ -13265,6 +13383,32 @@ namespace EC2
         void GetIpamDiscoveredAccountsAsync(const GetIpamDiscoveredAccountsRequestT& request, const GetIpamDiscoveredAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::GetIpamDiscoveredAccounts, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the public IP addresses that have been discovered by IPAM.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredPublicAddresses">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetIpamDiscoveredPublicAddressesOutcome GetIpamDiscoveredPublicAddresses(const Model::GetIpamDiscoveredPublicAddressesRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetIpamDiscoveredPublicAddresses that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetIpamDiscoveredPublicAddressesRequestT = Model::GetIpamDiscoveredPublicAddressesRequest>
+        Model::GetIpamDiscoveredPublicAddressesOutcomeCallable GetIpamDiscoveredPublicAddressesCallable(const GetIpamDiscoveredPublicAddressesRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetIpamDiscoveredPublicAddresses, request);
+        }
+
+        /**
+         * An Async wrapper for GetIpamDiscoveredPublicAddresses that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetIpamDiscoveredPublicAddressesRequestT = Model::GetIpamDiscoveredPublicAddressesRequest>
+        void GetIpamDiscoveredPublicAddressesAsync(const GetIpamDiscoveredPublicAddressesRequestT& request, const GetIpamDiscoveredPublicAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetIpamDiscoveredPublicAddresses, request, handler, context);
         }
 
         /**
@@ -16488,6 +16632,36 @@ namespace EC2
         void ProvisionByoipCidrAsync(const ProvisionByoipCidrRequestT& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::ProvisionByoipCidr, request, handler, context);
+        }
+
+        /**
+         * <p>Provisions your Autonomous System Number (ASN) for use in your Amazon Web
+         * Services account. This action requires authorization context for Amazon to bring
+         * the ASN to an Amazon Web Services account. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+         * Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamByoasn">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ProvisionIpamByoasnOutcome ProvisionIpamByoasn(const Model::ProvisionIpamByoasnRequest& request) const;
+
+        /**
+         * A Callable wrapper for ProvisionIpamByoasn that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ProvisionIpamByoasnRequestT = Model::ProvisionIpamByoasnRequest>
+        Model::ProvisionIpamByoasnOutcomeCallable ProvisionIpamByoasnCallable(const ProvisionIpamByoasnRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::ProvisionIpamByoasn, request);
+        }
+
+        /**
+         * An Async wrapper for ProvisionIpamByoasn that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ProvisionIpamByoasnRequestT = Model::ProvisionIpamByoasnRequest>
+        void ProvisionIpamByoasnAsync(const ProvisionIpamByoasnRequestT& request, const ProvisionIpamByoasnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::ProvisionIpamByoasn, request, handler, context);
         }
 
         /**

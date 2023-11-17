@@ -7,7 +7,9 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ByoipCidrState.h>
+#include <aws/ec2/model/AsnAssociation.h>
 #include <utility>
 
 namespace Aws
@@ -125,6 +127,47 @@ namespace Model
 
 
     /**
+     * <p>The BYOIP CIDR associations with ASNs.</p>
+     */
+    inline const Aws::Vector<AsnAssociation>& GetAsnAssociations() const{ return m_asnAssociations; }
+
+    /**
+     * <p>The BYOIP CIDR associations with ASNs.</p>
+     */
+    inline bool AsnAssociationsHasBeenSet() const { return m_asnAssociationsHasBeenSet; }
+
+    /**
+     * <p>The BYOIP CIDR associations with ASNs.</p>
+     */
+    inline void SetAsnAssociations(const Aws::Vector<AsnAssociation>& value) { m_asnAssociationsHasBeenSet = true; m_asnAssociations = value; }
+
+    /**
+     * <p>The BYOIP CIDR associations with ASNs.</p>
+     */
+    inline void SetAsnAssociations(Aws::Vector<AsnAssociation>&& value) { m_asnAssociationsHasBeenSet = true; m_asnAssociations = std::move(value); }
+
+    /**
+     * <p>The BYOIP CIDR associations with ASNs.</p>
+     */
+    inline ByoipCidr& WithAsnAssociations(const Aws::Vector<AsnAssociation>& value) { SetAsnAssociations(value); return *this;}
+
+    /**
+     * <p>The BYOIP CIDR associations with ASNs.</p>
+     */
+    inline ByoipCidr& WithAsnAssociations(Aws::Vector<AsnAssociation>&& value) { SetAsnAssociations(std::move(value)); return *this;}
+
+    /**
+     * <p>The BYOIP CIDR associations with ASNs.</p>
+     */
+    inline ByoipCidr& AddAsnAssociations(const AsnAssociation& value) { m_asnAssociationsHasBeenSet = true; m_asnAssociations.push_back(value); return *this; }
+
+    /**
+     * <p>The BYOIP CIDR associations with ASNs.</p>
+     */
+    inline ByoipCidr& AddAsnAssociations(AsnAssociation&& value) { m_asnAssociationsHasBeenSet = true; m_asnAssociations.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Upon success, contains the ID of the address pool. Otherwise, contains an
      * error message.</p>
      */
@@ -210,6 +253,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::Vector<AsnAssociation> m_asnAssociations;
+    bool m_asnAssociationsHasBeenSet = false;
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;

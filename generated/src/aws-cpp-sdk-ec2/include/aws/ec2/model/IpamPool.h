@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/IpamPoolAwsService.h>
 #include <aws/ec2/model/IpamPoolPublicIpSource.h>
+#include <aws/ec2/model/IpamPoolSourceResource.h>
 #include <aws/ec2/model/IpamResourceTag.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
@@ -569,42 +570,42 @@ namespace Model
 
 
     /**
-     * <p>A message related to the failed creation of an IPAM pool.</p>
+     * <p>The state message.</p>
      */
     inline const Aws::String& GetStateMessage() const{ return m_stateMessage; }
 
     /**
-     * <p>A message related to the failed creation of an IPAM pool.</p>
+     * <p>The state message.</p>
      */
     inline bool StateMessageHasBeenSet() const { return m_stateMessageHasBeenSet; }
 
     /**
-     * <p>A message related to the failed creation of an IPAM pool.</p>
+     * <p>The state message.</p>
      */
     inline void SetStateMessage(const Aws::String& value) { m_stateMessageHasBeenSet = true; m_stateMessage = value; }
 
     /**
-     * <p>A message related to the failed creation of an IPAM pool.</p>
+     * <p>The state message.</p>
      */
     inline void SetStateMessage(Aws::String&& value) { m_stateMessageHasBeenSet = true; m_stateMessage = std::move(value); }
 
     /**
-     * <p>A message related to the failed creation of an IPAM pool.</p>
+     * <p>The state message.</p>
      */
     inline void SetStateMessage(const char* value) { m_stateMessageHasBeenSet = true; m_stateMessage.assign(value); }
 
     /**
-     * <p>A message related to the failed creation of an IPAM pool.</p>
+     * <p>The state message.</p>
      */
     inline IpamPool& WithStateMessage(const Aws::String& value) { SetStateMessage(value); return *this;}
 
     /**
-     * <p>A message related to the failed creation of an IPAM pool.</p>
+     * <p>The state message.</p>
      */
     inline IpamPool& WithStateMessage(Aws::String&& value) { SetStateMessage(std::move(value)); return *this;}
 
     /**
-     * <p>A message related to the failed creation of an IPAM pool.</p>
+     * <p>The state message.</p>
      */
     inline IpamPool& WithStateMessage(const char* value) { SetStateMessage(value); return *this;}
 
@@ -1125,6 +1126,25 @@ namespace Model
      */
     inline IpamPool& WithPublicIpSource(IpamPoolPublicIpSource&& value) { SetPublicIpSource(std::move(value)); return *this;}
 
+
+    
+    inline const IpamPoolSourceResource& GetSourceResource() const{ return m_sourceResource; }
+
+    
+    inline bool SourceResourceHasBeenSet() const { return m_sourceResourceHasBeenSet; }
+
+    
+    inline void SetSourceResource(const IpamPoolSourceResource& value) { m_sourceResourceHasBeenSet = true; m_sourceResource = value; }
+
+    
+    inline void SetSourceResource(IpamPoolSourceResource&& value) { m_sourceResourceHasBeenSet = true; m_sourceResource = std::move(value); }
+
+    
+    inline IpamPool& WithSourceResource(const IpamPoolSourceResource& value) { SetSourceResource(value); return *this;}
+
+    
+    inline IpamPool& WithSourceResource(IpamPoolSourceResource&& value) { SetSourceResource(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ownerId;
@@ -1195,6 +1215,9 @@ namespace Model
 
     IpamPoolPublicIpSource m_publicIpSource;
     bool m_publicIpSourceHasBeenSet = false;
+
+    IpamPoolSourceResource m_sourceResource;
+    bool m_sourceResourceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -60,7 +60,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_masterPasswordSecretKmsKeyIdHasBeenSet(false),
     m_ipAddressTypeHasBeenSet(false),
     m_multiAZ(false),
-    m_multiAZHasBeenSet(false)
+    m_multiAZHasBeenSet(false),
+    m_redshiftIdcApplicationArnHasBeenSet(false)
 {
 }
 
@@ -279,6 +280,11 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_multiAZHasBeenSet)
   {
     ss << "MultiAZ=" << std::boolalpha << m_multiAZ << "&";
+  }
+
+  if(m_redshiftIdcApplicationArnHasBeenSet)
+  {
+    ss << "RedshiftIdcApplicationArn=" << StringUtils::URLEncode(m_redshiftIdcApplicationArn.c_str()) << "&";
   }
 
   ss << "Version=2012-12-01";

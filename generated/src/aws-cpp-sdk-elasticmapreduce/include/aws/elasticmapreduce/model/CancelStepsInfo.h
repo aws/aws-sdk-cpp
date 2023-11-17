@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Specification of the status of a CancelSteps request. Available only in
-   * Amazon EMR version 4.8.0 and higher, excluding version 5.0.0.</p><p><h3>See
+   * Amazon EMR version 4.8.0 and later, excluding version 5.0.0.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CancelStepsInfo">AWS
    * API Reference</a></p>

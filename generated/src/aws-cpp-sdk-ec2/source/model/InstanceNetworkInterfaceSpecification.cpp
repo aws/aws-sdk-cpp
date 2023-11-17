@@ -51,7 +51,8 @@ InstanceNetworkInterfaceSpecification::InstanceNetworkInterfaceSpecification() :
     m_ipv6PrefixCountHasBeenSet(false),
     m_primaryIpv6(false),
     m_primaryIpv6HasBeenSet(false),
-    m_enaSrdSpecificationHasBeenSet(false)
+    m_enaSrdSpecificationHasBeenSet(false),
+    m_connectionTrackingSpecificationHasBeenSet(false)
 {
 }
 
@@ -86,7 +87,8 @@ InstanceNetworkInterfaceSpecification::InstanceNetworkInterfaceSpecification(con
     m_ipv6PrefixCountHasBeenSet(false),
     m_primaryIpv6(false),
     m_primaryIpv6HasBeenSet(false),
-    m_enaSrdSpecificationHasBeenSet(false)
+    m_enaSrdSpecificationHasBeenSet(false),
+    m_connectionTrackingSpecificationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -253,6 +255,12 @@ InstanceNetworkInterfaceSpecification& InstanceNetworkInterfaceSpecification::op
       m_enaSrdSpecification = enaSrdSpecificationNode;
       m_enaSrdSpecificationHasBeenSet = true;
     }
+    XmlNode connectionTrackingSpecificationNode = resultNode.FirstChild("ConnectionTrackingSpecification");
+    if(!connectionTrackingSpecificationNode.IsNull())
+    {
+      m_connectionTrackingSpecification = connectionTrackingSpecificationNode;
+      m_connectionTrackingSpecificationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -395,6 +403,13 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
       m_enaSrdSpecification.OutputToStream(oStream, enaSrdSpecificationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_connectionTrackingSpecificationHasBeenSet)
+  {
+      Aws::StringStream connectionTrackingSpecificationLocationAndMemberSs;
+      connectionTrackingSpecificationLocationAndMemberSs << location << index << locationValue << ".ConnectionTrackingSpecification";
+      m_connectionTrackingSpecification.OutputToStream(oStream, connectionTrackingSpecificationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -512,6 +527,12 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
       Aws::String enaSrdSpecificationLocationAndMember(location);
       enaSrdSpecificationLocationAndMember += ".EnaSrdSpecification";
       m_enaSrdSpecification.OutputToStream(oStream, enaSrdSpecificationLocationAndMember.c_str());
+  }
+  if(m_connectionTrackingSpecificationHasBeenSet)
+  {
+      Aws::String connectionTrackingSpecificationLocationAndMember(location);
+      connectionTrackingSpecificationLocationAndMember += ".ConnectionTrackingSpecification";
+      m_connectionTrackingSpecification.OutputToStream(oStream, connectionTrackingSpecificationLocationAndMember.c_str());
   }
 }
 

@@ -632,7 +632,7 @@ namespace MediaLive
         }
 
         /**
-         * Get account configuration<p><h3>See Also:</h3>   <a
+         * Describe account configuration<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeAccountConfiguration">AWS
          * API Reference</a></p>
          */

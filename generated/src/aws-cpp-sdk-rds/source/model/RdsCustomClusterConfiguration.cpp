@@ -22,13 +22,17 @@ namespace Model
 
 RdsCustomClusterConfiguration::RdsCustomClusterConfiguration() : 
     m_interconnectSubnetIdHasBeenSet(false),
-    m_transitGatewayMulticastDomainIdHasBeenSet(false)
+    m_transitGatewayMulticastDomainIdHasBeenSet(false),
+    m_replicaMode(ReplicaMode::NOT_SET),
+    m_replicaModeHasBeenSet(false)
 {
 }
 
 RdsCustomClusterConfiguration::RdsCustomClusterConfiguration(const XmlNode& xmlNode) : 
     m_interconnectSubnetIdHasBeenSet(false),
-    m_transitGatewayMulticastDomainIdHasBeenSet(false)
+    m_transitGatewayMulticastDomainIdHasBeenSet(false),
+    m_replicaMode(ReplicaMode::NOT_SET),
+    m_replicaModeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,6 +55,12 @@ RdsCustomClusterConfiguration& RdsCustomClusterConfiguration::operator =(const X
       m_transitGatewayMulticastDomainId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayMulticastDomainIdNode.GetText());
       m_transitGatewayMulticastDomainIdHasBeenSet = true;
     }
+    XmlNode replicaModeNode = resultNode.FirstChild("ReplicaMode");
+    if(!replicaModeNode.IsNull())
+    {
+      m_replicaMode = ReplicaModeMapper::GetReplicaModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicaModeNode.GetText()).c_str()).c_str());
+      m_replicaModeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -68,6 +78,11 @@ void RdsCustomClusterConfiguration::OutputToStream(Aws::OStream& oStream, const 
       oStream << location << index << locationValue << ".TransitGatewayMulticastDomainId=" << StringUtils::URLEncode(m_transitGatewayMulticastDomainId.c_str()) << "&";
   }
 
+  if(m_replicaModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReplicaMode=" << ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode) << "&";
+  }
+
 }
 
 void RdsCustomClusterConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -79,6 +94,10 @@ void RdsCustomClusterConfiguration::OutputToStream(Aws::OStream& oStream, const 
   if(m_transitGatewayMulticastDomainIdHasBeenSet)
   {
       oStream << location << ".TransitGatewayMulticastDomainId=" << StringUtils::URLEncode(m_transitGatewayMulticastDomainId.c_str()) << "&";
+  }
+  if(m_replicaModeHasBeenSet)
+  {
+      oStream << location << ".ReplicaMode=" << ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode) << "&";
   }
 }
 

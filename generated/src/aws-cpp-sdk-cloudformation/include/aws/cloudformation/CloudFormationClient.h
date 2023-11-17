@@ -627,8 +627,8 @@ namespace CloudFormation
          * CloudFormation will make if you execute the change set. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Updating
-         * Stacks Using Change Sets</a> in the CloudFormation User Guide.</p><p><h3>See
-         * Also:</h3>   <a
+         * Stacks Using Change Sets</a> in the <i>CloudFormation User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet">AWS
          * API Reference</a></p>
          */
@@ -785,9 +785,9 @@ namespace CloudFormation
          * chronological order. For more information about a stack's event history, go to
          * <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
-         * in the CloudFormation User Guide.</p>  <p>You can list events for stacks
-         * that have failed to create or have been deleted by specifying the unique stack
-         * identifier (stack ID).</p> <p><h3>See Also:</h3>   <a
+         * in the <i>CloudFormation User Guide</i>.</p>  <p>You can list events for
+         * stacks that have failed to create or have been deleted by specifying the unique
+         * stack identifier (stack ID).</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">AWS
          * API Reference</a></p>
          */

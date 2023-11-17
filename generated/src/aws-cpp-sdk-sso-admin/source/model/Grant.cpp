@@ -20,13 +20,17 @@ namespace Model
 
 Grant::Grant() : 
     m_authorizationCodeHasBeenSet(false),
-    m_jwtBearerHasBeenSet(false)
+    m_jwtBearerHasBeenSet(false),
+    m_refreshTokenHasBeenSet(false),
+    m_tokenExchangeHasBeenSet(false)
 {
 }
 
 Grant::Grant(JsonView jsonValue) : 
     m_authorizationCodeHasBeenSet(false),
-    m_jwtBearerHasBeenSet(false)
+    m_jwtBearerHasBeenSet(false),
+    m_refreshTokenHasBeenSet(false),
+    m_tokenExchangeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,20 @@ Grant& Grant::operator =(JsonView jsonValue)
     m_jwtBearerHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RefreshToken"))
+  {
+    m_refreshToken = jsonValue.GetObject("RefreshToken");
+
+    m_refreshTokenHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TokenExchange"))
+  {
+    m_tokenExchange = jsonValue.GetObject("TokenExchange");
+
+    m_tokenExchangeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +81,18 @@ JsonValue Grant::Jsonize() const
   if(m_jwtBearerHasBeenSet)
   {
    payload.WithObject("JwtBearer", m_jwtBearer.Jsonize());
+
+  }
+
+  if(m_refreshTokenHasBeenSet)
+  {
+   payload.WithObject("RefreshToken", m_refreshToken.Jsonize());
+
+  }
+
+  if(m_tokenExchangeHasBeenSet)
+  {
+   payload.WithObject("TokenExchange", m_tokenExchange.Jsonize());
 
   }
 

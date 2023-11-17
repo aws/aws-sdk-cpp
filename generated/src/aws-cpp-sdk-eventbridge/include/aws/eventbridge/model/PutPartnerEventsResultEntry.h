@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents an event that a partner tried to generate, but
-   * failed.</p><p><h3>See Also:</h3>   <a
+   * <p>The result of an event entry the partner submitted in this request. If the
+   * event was successfully submitted, the entry has the event ID in it. Otherwise,
+   * you can use the error code and error message to identify the problem with the
+   * entry.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutPartnerEventsResultEntry">AWS
    * API Reference</a></p>
    */

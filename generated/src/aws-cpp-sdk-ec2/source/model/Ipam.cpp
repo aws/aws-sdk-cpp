@@ -37,7 +37,10 @@ Ipam::Ipam() :
     m_defaultResourceDiscoveryIdHasBeenSet(false),
     m_defaultResourceDiscoveryAssociationIdHasBeenSet(false),
     m_resourceDiscoveryAssociationCount(0),
-    m_resourceDiscoveryAssociationCountHasBeenSet(false)
+    m_resourceDiscoveryAssociationCountHasBeenSet(false),
+    m_stateMessageHasBeenSet(false),
+    m_tier(IpamTier::NOT_SET),
+    m_tierHasBeenSet(false)
 {
 }
 
@@ -58,7 +61,10 @@ Ipam::Ipam(const XmlNode& xmlNode) :
     m_defaultResourceDiscoveryIdHasBeenSet(false),
     m_defaultResourceDiscoveryAssociationIdHasBeenSet(false),
     m_resourceDiscoveryAssociationCount(0),
-    m_resourceDiscoveryAssociationCountHasBeenSet(false)
+    m_resourceDiscoveryAssociationCountHasBeenSet(false),
+    m_stateMessageHasBeenSet(false),
+    m_tier(IpamTier::NOT_SET),
+    m_tierHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -165,6 +171,18 @@ Ipam& Ipam::operator =(const XmlNode& xmlNode)
       m_resourceDiscoveryAssociationCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceDiscoveryAssociationCountNode.GetText()).c_str()).c_str());
       m_resourceDiscoveryAssociationCountHasBeenSet = true;
     }
+    XmlNode stateMessageNode = resultNode.FirstChild("stateMessage");
+    if(!stateMessageNode.IsNull())
+    {
+      m_stateMessage = Aws::Utils::Xml::DecodeEscapedXmlText(stateMessageNode.GetText());
+      m_stateMessageHasBeenSet = true;
+    }
+    XmlNode tierNode = resultNode.FirstChild("tier");
+    if(!tierNode.IsNull())
+    {
+      m_tier = IpamTierMapper::GetIpamTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tierNode.GetText()).c_str()).c_str());
+      m_tierHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -254,6 +272,16 @@ void Ipam::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       oStream << location << index << locationValue << ".ResourceDiscoveryAssociationCount=" << m_resourceDiscoveryAssociationCount << "&";
   }
 
+  if(m_stateMessageHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StateMessage=" << StringUtils::URLEncode(m_stateMessage.c_str()) << "&";
+  }
+
+  if(m_tierHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Tier=" << IpamTierMapper::GetNameForIpamTier(m_tier) << "&";
+  }
+
 }
 
 void Ipam::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -325,6 +353,14 @@ void Ipam::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_resourceDiscoveryAssociationCountHasBeenSet)
   {
       oStream << location << ".ResourceDiscoveryAssociationCount=" << m_resourceDiscoveryAssociationCount << "&";
+  }
+  if(m_stateMessageHasBeenSet)
+  {
+      oStream << location << ".StateMessage=" << StringUtils::URLEncode(m_stateMessage.c_str()) << "&";
+  }
+  if(m_tierHasBeenSet)
+  {
+      oStream << location << ".Tier=" << IpamTierMapper::GetNameForIpamTier(m_tier) << "&";
   }
 }
 

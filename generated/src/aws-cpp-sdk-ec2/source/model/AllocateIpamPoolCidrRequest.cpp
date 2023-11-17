@@ -22,6 +22,7 @@ AllocateIpamPoolCidrRequest::AllocateIpamPoolCidrRequest() :
     m_descriptionHasBeenSet(false),
     m_previewNextCidr(false),
     m_previewNextCidrHasBeenSet(false),
+    m_allowedCidrsHasBeenSet(false),
     m_disallowedCidrsHasBeenSet(false)
 {
 }
@@ -63,6 +64,17 @@ Aws::String AllocateIpamPoolCidrRequest::SerializePayload() const
   if(m_previewNextCidrHasBeenSet)
   {
     ss << "PreviewNextCidr=" << std::boolalpha << m_previewNextCidr << "&";
+  }
+
+  if(m_allowedCidrsHasBeenSet)
+  {
+    unsigned allowedCidrsCount = 1;
+    for(auto& item : m_allowedCidrs)
+    {
+      ss << "AllowedCidr." << allowedCidrsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      allowedCidrsCount++;
+    }
   }
 
   if(m_disallowedCidrsHasBeenSet)

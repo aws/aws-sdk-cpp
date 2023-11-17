@@ -365,7 +365,10 @@ namespace Aws
         }
 
         /**
-         * <p>Copies the specified DB cluster parameter group.</p><p><h3>See Also:</h3>  
+         * <p>Copies the specified DB cluster parameter group.</p>  <p>You can't copy
+         * a default DB cluster parameter group. Instead, create a new custom DB cluster
+         * parameter group, which copies the default parameters and values for the
+         * specified DB cluster parameter group family.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -449,7 +452,10 @@ namespace Aws
         }
 
         /**
-         * <p>Copies the specified DB parameter group.</p><p><h3>See Also:</h3>   <a
+         * <p>Copies the specified DB parameter group.</p>  <p>You can't copy a
+         * default DB parameter group. Instead, create a new custom DB parameter group,
+         * which copies the default parameters and values for the specified DB parameter
+         * group family.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBParameterGroup">AWS
          * API Reference</a></p>
          */

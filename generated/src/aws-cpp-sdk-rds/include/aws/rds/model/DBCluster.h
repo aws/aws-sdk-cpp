@@ -19,6 +19,7 @@
 #include <aws/rds/model/MasterUserSecret.h>
 #include <aws/rds/model/LocalWriteForwardingStatus.h>
 #include <aws/rds/model/DBClusterOptionGroupStatus.h>
+#include <aws/rds/model/DBClusterStatusInfo.h>
 #include <aws/rds/model/DBClusterMember.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
 #include <aws/rds/model/DBClusterRole.h>
@@ -1227,6 +1228,47 @@ namespace Model
      * cluster.</p>
      */
     inline DBCluster& AddReadReplicaIdentifiers(const char* value) { m_readReplicaIdentifiersHasBeenSet = true; m_readReplicaIdentifiers.push_back(value); return *this; }
+
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const Aws::Vector<DBClusterStatusInfo>& GetStatusInfos() const{ return m_statusInfos; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool StatusInfosHasBeenSet() const { return m_statusInfosHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetStatusInfos(const Aws::Vector<DBClusterStatusInfo>& value) { m_statusInfosHasBeenSet = true; m_statusInfos = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetStatusInfos(Aws::Vector<DBClusterStatusInfo>&& value) { m_statusInfosHasBeenSet = true; m_statusInfos = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& WithStatusInfos(const Aws::Vector<DBClusterStatusInfo>& value) { SetStatusInfos(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& WithStatusInfos(Aws::Vector<DBClusterStatusInfo>&& value) { SetStatusInfos(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& AddStatusInfos(const DBClusterStatusInfo& value) { m_statusInfosHasBeenSet = true; m_statusInfos.push_back(value); return *this; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& AddStatusInfos(DBClusterStatusInfo&& value) { m_statusInfosHasBeenSet = true; m_statusInfos.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -3353,6 +3395,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_readReplicaIdentifiers;
     bool m_readReplicaIdentifiersHasBeenSet = false;
+
+    Aws::Vector<DBClusterStatusInfo> m_statusInfos;
+    bool m_statusInfosHasBeenSet = false;
 
     Aws::Vector<DBClusterMember> m_dBClusterMembers;
     bool m_dBClusterMembersHasBeenSet = false;

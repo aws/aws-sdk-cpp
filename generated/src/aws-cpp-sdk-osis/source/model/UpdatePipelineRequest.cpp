@@ -19,7 +19,9 @@ UpdatePipelineRequest::UpdatePipelineRequest() :
     m_maxUnits(0),
     m_maxUnitsHasBeenSet(false),
     m_pipelineConfigurationBodyHasBeenSet(false),
-    m_logPublishingOptionsHasBeenSet(false)
+    m_logPublishingOptionsHasBeenSet(false),
+    m_bufferOptionsHasBeenSet(false),
+    m_encryptionAtRestOptionsHasBeenSet(false)
 {
 }
 
@@ -48,6 +50,18 @@ Aws::String UpdatePipelineRequest::SerializePayload() const
   if(m_logPublishingOptionsHasBeenSet)
   {
    payload.WithObject("LogPublishingOptions", m_logPublishingOptions.Jsonize());
+
+  }
+
+  if(m_bufferOptionsHasBeenSet)
+  {
+   payload.WithObject("BufferOptions", m_bufferOptions.Jsonize());
+
+  }
+
+  if(m_encryptionAtRestOptionsHasBeenSet)
+  {
+   payload.WithObject("EncryptionAtRestOptions", m_encryptionAtRestOptions.Jsonize());
 
   }
 

@@ -299,58 +299,50 @@ namespace Model
 
 
     /**
-     * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
-     * use a /64 prefix length.</p> <p>This parameter is required for an IPv6 only
-     * subnet.</p>
+     * <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is
+     * required for an IPv6 only subnet.</p>
      */
     inline const Aws::String& GetIpv6CidrBlock() const{ return m_ipv6CidrBlock; }
 
     /**
-     * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
-     * use a /64 prefix length.</p> <p>This parameter is required for an IPv6 only
-     * subnet.</p>
+     * <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is
+     * required for an IPv6 only subnet.</p>
      */
     inline bool Ipv6CidrBlockHasBeenSet() const { return m_ipv6CidrBlockHasBeenSet; }
 
     /**
-     * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
-     * use a /64 prefix length.</p> <p>This parameter is required for an IPv6 only
-     * subnet.</p>
+     * <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is
+     * required for an IPv6 only subnet.</p>
      */
     inline void SetIpv6CidrBlock(const Aws::String& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
 
     /**
-     * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
-     * use a /64 prefix length.</p> <p>This parameter is required for an IPv6 only
-     * subnet.</p>
+     * <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is
+     * required for an IPv6 only subnet.</p>
      */
     inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = std::move(value); }
 
     /**
-     * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
-     * use a /64 prefix length.</p> <p>This parameter is required for an IPv6 only
-     * subnet.</p>
+     * <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is
+     * required for an IPv6 only subnet.</p>
      */
     inline void SetIpv6CidrBlock(const char* value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock.assign(value); }
 
     /**
-     * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
-     * use a /64 prefix length.</p> <p>This parameter is required for an IPv6 only
-     * subnet.</p>
+     * <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is
+     * required for an IPv6 only subnet.</p>
      */
     inline CreateSubnetRequest& WithIpv6CidrBlock(const Aws::String& value) { SetIpv6CidrBlock(value); return *this;}
 
     /**
-     * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
-     * use a /64 prefix length.</p> <p>This parameter is required for an IPv6 only
-     * subnet.</p>
+     * <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is
+     * required for an IPv6 only subnet.</p>
      */
     inline CreateSubnetRequest& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(std::move(value)); return *this;}
 
     /**
-     * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
-     * use a /64 prefix length.</p> <p>This parameter is required for an IPv6 only
-     * subnet.</p>
+     * <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is
+     * required for an IPv6 only subnet.</p>
      */
     inline CreateSubnetRequest& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
 
@@ -498,6 +490,130 @@ namespace Model
      */
     inline CreateSubnetRequest& WithIpv6Native(bool value) { SetIpv6Native(value); return *this;}
 
+
+    /**
+     * <p>An IPv4 IPAM pool ID for the subnet.</p>
+     */
+    inline const Aws::String& GetIpv4IpamPoolId() const{ return m_ipv4IpamPoolId; }
+
+    /**
+     * <p>An IPv4 IPAM pool ID for the subnet.</p>
+     */
+    inline bool Ipv4IpamPoolIdHasBeenSet() const { return m_ipv4IpamPoolIdHasBeenSet; }
+
+    /**
+     * <p>An IPv4 IPAM pool ID for the subnet.</p>
+     */
+    inline void SetIpv4IpamPoolId(const Aws::String& value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId = value; }
+
+    /**
+     * <p>An IPv4 IPAM pool ID for the subnet.</p>
+     */
+    inline void SetIpv4IpamPoolId(Aws::String&& value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId = std::move(value); }
+
+    /**
+     * <p>An IPv4 IPAM pool ID for the subnet.</p>
+     */
+    inline void SetIpv4IpamPoolId(const char* value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId.assign(value); }
+
+    /**
+     * <p>An IPv4 IPAM pool ID for the subnet.</p>
+     */
+    inline CreateSubnetRequest& WithIpv4IpamPoolId(const Aws::String& value) { SetIpv4IpamPoolId(value); return *this;}
+
+    /**
+     * <p>An IPv4 IPAM pool ID for the subnet.</p>
+     */
+    inline CreateSubnetRequest& WithIpv4IpamPoolId(Aws::String&& value) { SetIpv4IpamPoolId(std::move(value)); return *this;}
+
+    /**
+     * <p>An IPv4 IPAM pool ID for the subnet.</p>
+     */
+    inline CreateSubnetRequest& WithIpv4IpamPoolId(const char* value) { SetIpv4IpamPoolId(value); return *this;}
+
+
+    /**
+     * <p>An IPv4 netmask length for the subnet.</p>
+     */
+    inline int GetIpv4NetmaskLength() const{ return m_ipv4NetmaskLength; }
+
+    /**
+     * <p>An IPv4 netmask length for the subnet.</p>
+     */
+    inline bool Ipv4NetmaskLengthHasBeenSet() const { return m_ipv4NetmaskLengthHasBeenSet; }
+
+    /**
+     * <p>An IPv4 netmask length for the subnet.</p>
+     */
+    inline void SetIpv4NetmaskLength(int value) { m_ipv4NetmaskLengthHasBeenSet = true; m_ipv4NetmaskLength = value; }
+
+    /**
+     * <p>An IPv4 netmask length for the subnet.</p>
+     */
+    inline CreateSubnetRequest& WithIpv4NetmaskLength(int value) { SetIpv4NetmaskLength(value); return *this;}
+
+
+    /**
+     * <p>An IPv6 IPAM pool ID for the subnet.</p>
+     */
+    inline const Aws::String& GetIpv6IpamPoolId() const{ return m_ipv6IpamPoolId; }
+
+    /**
+     * <p>An IPv6 IPAM pool ID for the subnet.</p>
+     */
+    inline bool Ipv6IpamPoolIdHasBeenSet() const { return m_ipv6IpamPoolIdHasBeenSet; }
+
+    /**
+     * <p>An IPv6 IPAM pool ID for the subnet.</p>
+     */
+    inline void SetIpv6IpamPoolId(const Aws::String& value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId = value; }
+
+    /**
+     * <p>An IPv6 IPAM pool ID for the subnet.</p>
+     */
+    inline void SetIpv6IpamPoolId(Aws::String&& value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId = std::move(value); }
+
+    /**
+     * <p>An IPv6 IPAM pool ID for the subnet.</p>
+     */
+    inline void SetIpv6IpamPoolId(const char* value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId.assign(value); }
+
+    /**
+     * <p>An IPv6 IPAM pool ID for the subnet.</p>
+     */
+    inline CreateSubnetRequest& WithIpv6IpamPoolId(const Aws::String& value) { SetIpv6IpamPoolId(value); return *this;}
+
+    /**
+     * <p>An IPv6 IPAM pool ID for the subnet.</p>
+     */
+    inline CreateSubnetRequest& WithIpv6IpamPoolId(Aws::String&& value) { SetIpv6IpamPoolId(std::move(value)); return *this;}
+
+    /**
+     * <p>An IPv6 IPAM pool ID for the subnet.</p>
+     */
+    inline CreateSubnetRequest& WithIpv6IpamPoolId(const char* value) { SetIpv6IpamPoolId(value); return *this;}
+
+
+    /**
+     * <p>An IPv6 netmask length for the subnet.</p>
+     */
+    inline int GetIpv6NetmaskLength() const{ return m_ipv6NetmaskLength; }
+
+    /**
+     * <p>An IPv6 netmask length for the subnet.</p>
+     */
+    inline bool Ipv6NetmaskLengthHasBeenSet() const { return m_ipv6NetmaskLengthHasBeenSet; }
+
+    /**
+     * <p>An IPv6 netmask length for the subnet.</p>
+     */
+    inline void SetIpv6NetmaskLength(int value) { m_ipv6NetmaskLengthHasBeenSet = true; m_ipv6NetmaskLength = value; }
+
+    /**
+     * <p>An IPv6 netmask length for the subnet.</p>
+     */
+    inline CreateSubnetRequest& WithIpv6NetmaskLength(int value) { SetIpv6NetmaskLength(value); return *this;}
+
   private:
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
@@ -526,6 +642,18 @@ namespace Model
 
     bool m_ipv6Native;
     bool m_ipv6NativeHasBeenSet = false;
+
+    Aws::String m_ipv4IpamPoolId;
+    bool m_ipv4IpamPoolIdHasBeenSet = false;
+
+    int m_ipv4NetmaskLength;
+    bool m_ipv4NetmaskLengthHasBeenSet = false;
+
+    Aws::String m_ipv6IpamPoolId;
+    bool m_ipv6IpamPoolIdHasBeenSet = false;
+
+    int m_ipv6NetmaskLength;
+    bool m_ipv6NetmaskLengthHasBeenSet = false;
   };
 
 } // namespace Model

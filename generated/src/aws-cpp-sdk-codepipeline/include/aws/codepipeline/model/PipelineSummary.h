@@ -115,7 +115,12 @@ namespace Model
      * <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
      * information about which type of pipeline to choose, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
-     * type of pipeline is right for me?</a>.</p>
+     * type of pipeline is right for me?</a>.</p>  <p>V2 type pipelines, along
+     * with triggers on Git tags and pipeline-level variables, are not currently
+     * supported for CloudFormation and CDK resources in CodePipeline. For more
+     * information about V2 type pipelines, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
+     * types</a> in the <i>CodePipeline User Guide</i>.</p> 
      */
     inline const PipelineType& GetPipelineType() const{ return m_pipelineType; }
 
@@ -133,7 +138,12 @@ namespace Model
      * <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
      * information about which type of pipeline to choose, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
-     * type of pipeline is right for me?</a>.</p>
+     * type of pipeline is right for me?</a>.</p>  <p>V2 type pipelines, along
+     * with triggers on Git tags and pipeline-level variables, are not currently
+     * supported for CloudFormation and CDK resources in CodePipeline. For more
+     * information about V2 type pipelines, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
+     * types</a> in the <i>CodePipeline User Guide</i>.</p> 
      */
     inline bool PipelineTypeHasBeenSet() const { return m_pipelineTypeHasBeenSet; }
 
@@ -151,7 +161,12 @@ namespace Model
      * <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
      * information about which type of pipeline to choose, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
-     * type of pipeline is right for me?</a>.</p>
+     * type of pipeline is right for me?</a>.</p>  <p>V2 type pipelines, along
+     * with triggers on Git tags and pipeline-level variables, are not currently
+     * supported for CloudFormation and CDK resources in CodePipeline. For more
+     * information about V2 type pipelines, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
+     * types</a> in the <i>CodePipeline User Guide</i>.</p> 
      */
     inline void SetPipelineType(const PipelineType& value) { m_pipelineTypeHasBeenSet = true; m_pipelineType = value; }
 
@@ -169,7 +184,12 @@ namespace Model
      * <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
      * information about which type of pipeline to choose, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
-     * type of pipeline is right for me?</a>.</p>
+     * type of pipeline is right for me?</a>.</p>  <p>V2 type pipelines, along
+     * with triggers on Git tags and pipeline-level variables, are not currently
+     * supported for CloudFormation and CDK resources in CodePipeline. For more
+     * information about V2 type pipelines, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
+     * types</a> in the <i>CodePipeline User Guide</i>.</p> 
      */
     inline void SetPipelineType(PipelineType&& value) { m_pipelineTypeHasBeenSet = true; m_pipelineType = std::move(value); }
 
@@ -187,7 +207,12 @@ namespace Model
      * <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
      * information about which type of pipeline to choose, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
-     * type of pipeline is right for me?</a>.</p>
+     * type of pipeline is right for me?</a>.</p>  <p>V2 type pipelines, along
+     * with triggers on Git tags and pipeline-level variables, are not currently
+     * supported for CloudFormation and CDK resources in CodePipeline. For more
+     * information about V2 type pipelines, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
+     * types</a> in the <i>CodePipeline User Guide</i>.</p> 
      */
     inline PipelineSummary& WithPipelineType(const PipelineType& value) { SetPipelineType(value); return *this;}
 
@@ -205,7 +230,12 @@ namespace Model
      * <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
      * information about which type of pipeline to choose, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
-     * type of pipeline is right for me?</a>.</p>
+     * type of pipeline is right for me?</a>.</p>  <p>V2 type pipelines, along
+     * with triggers on Git tags and pipeline-level variables, are not currently
+     * supported for CloudFormation and CDK resources in CodePipeline. For more
+     * information about V2 type pipelines, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
+     * types</a> in the <i>CodePipeline User Guide</i>.</p> 
      */
     inline PipelineSummary& WithPipelineType(PipelineType&& value) { SetPipelineType(std::move(value)); return *this;}
 

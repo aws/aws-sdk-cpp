@@ -23,6 +23,7 @@ namespace Model
 ByoipCidr::ByoipCidr() : 
     m_cidrHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_asnAssociationsHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_state(ByoipCidrState::NOT_SET),
     m_stateHasBeenSet(false)
@@ -32,6 +33,7 @@ ByoipCidr::ByoipCidr() :
 ByoipCidr::ByoipCidr(const XmlNode& xmlNode) : 
     m_cidrHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_asnAssociationsHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_state(ByoipCidrState::NOT_SET),
     m_stateHasBeenSet(false)
@@ -56,6 +58,18 @@ ByoipCidr& ByoipCidr::operator =(const XmlNode& xmlNode)
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+    }
+    XmlNode asnAssociationsNode = resultNode.FirstChild("asnAssociationSet");
+    if(!asnAssociationsNode.IsNull())
+    {
+      XmlNode asnAssociationsMember = asnAssociationsNode.FirstChild("item");
+      while(!asnAssociationsMember.IsNull())
+      {
+        m_asnAssociations.push_back(asnAssociationsMember);
+        asnAssociationsMember = asnAssociationsMember.NextNode("item");
+      }
+
+      m_asnAssociationsHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
@@ -86,6 +100,17 @@ void ByoipCidr::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
+  if(m_asnAssociationsHasBeenSet)
+  {
+      unsigned asnAssociationsIdx = 1;
+      for(auto& item : m_asnAssociations)
+      {
+        Aws::StringStream asnAssociationsSs;
+        asnAssociationsSs << location << index << locationValue << ".AsnAssociationSet." << asnAssociationsIdx++;
+        item.OutputToStream(oStream, asnAssociationsSs.str().c_str());
+      }
+  }
+
   if(m_statusMessageHasBeenSet)
   {
       oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
@@ -107,6 +132,16 @@ void ByoipCidr::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_descriptionHasBeenSet)
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if(m_asnAssociationsHasBeenSet)
+  {
+      unsigned asnAssociationsIdx = 1;
+      for(auto& item : m_asnAssociations)
+      {
+        Aws::StringStream asnAssociationsSs;
+        asnAssociationsSs << location <<  ".AsnAssociationSet." << asnAssociationsIdx++;
+        item.OutputToStream(oStream, asnAssociationsSs.str().c_str());
+      }
   }
   if(m_statusMessageHasBeenSet)
   {

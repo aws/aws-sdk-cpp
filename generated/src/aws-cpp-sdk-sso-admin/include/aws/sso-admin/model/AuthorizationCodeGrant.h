@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>~~~[ TODO: ADD DESCRIPTION HERE ]~~~</p><p><h3>See Also:</h3>   <a
+   * <p>A structure that defines configuration settings for an application that
+   * supports the OAuth 2.0 Authorization Code Grant.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AuthorizationCodeGrant">AWS
    * API Reference</a></p>
    */
@@ -39,47 +40,56 @@ namespace Model
 
 
     /**
-     * <p>~~~[ TODO: ADD DESCRIPTION HERE ]~~~</p>
+     * <p>A list of URIs that are valid locations to redirect a user's browser after
+     * the user is authorized.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRedirectUris() const{ return m_redirectUris; }
 
     /**
-     * <p>~~~[ TODO: ADD DESCRIPTION HERE ]~~~</p>
+     * <p>A list of URIs that are valid locations to redirect a user's browser after
+     * the user is authorized.</p>
      */
     inline bool RedirectUrisHasBeenSet() const { return m_redirectUrisHasBeenSet; }
 
     /**
-     * <p>~~~[ TODO: ADD DESCRIPTION HERE ]~~~</p>
+     * <p>A list of URIs that are valid locations to redirect a user's browser after
+     * the user is authorized.</p>
      */
     inline void SetRedirectUris(const Aws::Vector<Aws::String>& value) { m_redirectUrisHasBeenSet = true; m_redirectUris = value; }
 
     /**
-     * <p>~~~[ TODO: ADD DESCRIPTION HERE ]~~~</p>
+     * <p>A list of URIs that are valid locations to redirect a user's browser after
+     * the user is authorized.</p>
      */
     inline void SetRedirectUris(Aws::Vector<Aws::String>&& value) { m_redirectUrisHasBeenSet = true; m_redirectUris = std::move(value); }
 
     /**
-     * <p>~~~[ TODO: ADD DESCRIPTION HERE ]~~~</p>
+     * <p>A list of URIs that are valid locations to redirect a user's browser after
+     * the user is authorized.</p>
      */
     inline AuthorizationCodeGrant& WithRedirectUris(const Aws::Vector<Aws::String>& value) { SetRedirectUris(value); return *this;}
 
     /**
-     * <p>~~~[ TODO: ADD DESCRIPTION HERE ]~~~</p>
+     * <p>A list of URIs that are valid locations to redirect a user's browser after
+     * the user is authorized.</p>
      */
     inline AuthorizationCodeGrant& WithRedirectUris(Aws::Vector<Aws::String>&& value) { SetRedirectUris(std::move(value)); return *this;}
 
     /**
-     * <p>~~~[ TODO: ADD DESCRIPTION HERE ]~~~</p>
+     * <p>A list of URIs that are valid locations to redirect a user's browser after
+     * the user is authorized.</p>
      */
     inline AuthorizationCodeGrant& AddRedirectUris(const Aws::String& value) { m_redirectUrisHasBeenSet = true; m_redirectUris.push_back(value); return *this; }
 
     /**
-     * <p>~~~[ TODO: ADD DESCRIPTION HERE ]~~~</p>
+     * <p>A list of URIs that are valid locations to redirect a user's browser after
+     * the user is authorized.</p>
      */
     inline AuthorizationCodeGrant& AddRedirectUris(Aws::String&& value) { m_redirectUrisHasBeenSet = true; m_redirectUris.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>~~~[ TODO: ADD DESCRIPTION HERE ]~~~</p>
+     * <p>A list of URIs that are valid locations to redirect a user's browser after
+     * the user is authorized.</p>
      */
     inline AuthorizationCodeGrant& AddRedirectUris(const char* value) { m_redirectUrisHasBeenSet = true; m_redirectUris.push_back(value); return *this; }
 

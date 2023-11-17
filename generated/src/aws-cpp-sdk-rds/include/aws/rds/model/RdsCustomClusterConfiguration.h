@@ -7,6 +7,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds/model/ReplicaMode.h>
 #include <utility>
 
 namespace Aws
@@ -120,6 +121,37 @@ namespace Model
      */
     inline RdsCustomClusterConfiguration& WithTransitGatewayMulticastDomainId(const char* value) { SetTransitGatewayMulticastDomainId(value); return *this;}
 
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const ReplicaMode& GetReplicaMode() const{ return m_replicaMode; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool ReplicaModeHasBeenSet() const { return m_replicaModeHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetReplicaMode(const ReplicaMode& value) { m_replicaModeHasBeenSet = true; m_replicaMode = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetReplicaMode(ReplicaMode&& value) { m_replicaModeHasBeenSet = true; m_replicaMode = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline RdsCustomClusterConfiguration& WithReplicaMode(const ReplicaMode& value) { SetReplicaMode(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline RdsCustomClusterConfiguration& WithReplicaMode(ReplicaMode&& value) { SetReplicaMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_interconnectSubnetId;
@@ -127,6 +159,9 @@ namespace Model
 
     Aws::String m_transitGatewayMulticastDomainId;
     bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
+
+    ReplicaMode m_replicaMode;
+    bool m_replicaModeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,6 +21,8 @@ namespace Model
 QueryRuntimeStatisticsTimeline::QueryRuntimeStatisticsTimeline() : 
     m_queryQueueTimeInMillis(0),
     m_queryQueueTimeInMillisHasBeenSet(false),
+    m_servicePreProcessingTimeInMillis(0),
+    m_servicePreProcessingTimeInMillisHasBeenSet(false),
     m_queryPlanningTimeInMillis(0),
     m_queryPlanningTimeInMillisHasBeenSet(false),
     m_engineExecutionTimeInMillis(0),
@@ -35,6 +37,8 @@ QueryRuntimeStatisticsTimeline::QueryRuntimeStatisticsTimeline() :
 QueryRuntimeStatisticsTimeline::QueryRuntimeStatisticsTimeline(JsonView jsonValue) : 
     m_queryQueueTimeInMillis(0),
     m_queryQueueTimeInMillisHasBeenSet(false),
+    m_servicePreProcessingTimeInMillis(0),
+    m_servicePreProcessingTimeInMillisHasBeenSet(false),
     m_queryPlanningTimeInMillis(0),
     m_queryPlanningTimeInMillisHasBeenSet(false),
     m_engineExecutionTimeInMillis(0),
@@ -54,6 +58,13 @@ QueryRuntimeStatisticsTimeline& QueryRuntimeStatisticsTimeline::operator =(JsonV
     m_queryQueueTimeInMillis = jsonValue.GetInt64("QueryQueueTimeInMillis");
 
     m_queryQueueTimeInMillisHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServicePreProcessingTimeInMillis"))
+  {
+    m_servicePreProcessingTimeInMillis = jsonValue.GetInt64("ServicePreProcessingTimeInMillis");
+
+    m_servicePreProcessingTimeInMillisHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("QueryPlanningTimeInMillis"))
@@ -94,6 +105,12 @@ JsonValue QueryRuntimeStatisticsTimeline::Jsonize() const
   if(m_queryQueueTimeInMillisHasBeenSet)
   {
    payload.WithInt64("QueryQueueTimeInMillis", m_queryQueueTimeInMillis);
+
+  }
+
+  if(m_servicePreProcessingTimeInMillisHasBeenSet)
+  {
+   payload.WithInt64("ServicePreProcessingTimeInMillis", m_servicePreProcessingTimeInMillis);
 
   }
 

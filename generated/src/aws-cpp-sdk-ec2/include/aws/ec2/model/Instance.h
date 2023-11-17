@@ -392,32 +392,38 @@ namespace Model
 
 
     /**
-     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+     * <p>The platform. This value is <code>windows</code> for Windows instances;
+     * otherwise, it is empty.</p>
      */
     inline const PlatformValues& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+     * <p>The platform. This value is <code>windows</code> for Windows instances;
+     * otherwise, it is empty.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+     * <p>The platform. This value is <code>windows</code> for Windows instances;
+     * otherwise, it is empty.</p>
      */
     inline void SetPlatform(const PlatformValues& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+     * <p>The platform. This value is <code>windows</code> for Windows instances;
+     * otherwise, it is empty.</p>
      */
     inline void SetPlatform(PlatformValues&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+     * <p>The platform. This value is <code>windows</code> for Windows instances;
+     * otherwise, it is empty.</p>
      */
     inline Instance& WithPlatform(const PlatformValues& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+     * <p>The platform. This value is <code>windows</code> for Windows instances;
+     * otherwise, it is empty.</p>
      */
     inline Instance& WithPlatform(PlatformValues&& value) { SetPlatform(std::move(value)); return *this;}
 

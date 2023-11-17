@@ -361,42 +361,50 @@ namespace Model
 
 
     /**
-     * <p>Role used in a session for accessing the user's resources.</p>
+     * <p>Role used in a Spark session for accessing the user's resources. This
+     * property applies only to Spark-enabled workgroups.</p>
      */
     inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
 
     /**
-     * <p>Role used in a session for accessing the user's resources.</p>
+     * <p>Role used in a Spark session for accessing the user's resources. This
+     * property applies only to Spark-enabled workgroups.</p>
      */
     inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
 
     /**
-     * <p>Role used in a session for accessing the user's resources.</p>
+     * <p>Role used in a Spark session for accessing the user's resources. This
+     * property applies only to Spark-enabled workgroups.</p>
      */
     inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
 
     /**
-     * <p>Role used in a session for accessing the user's resources.</p>
+     * <p>Role used in a Spark session for accessing the user's resources. This
+     * property applies only to Spark-enabled workgroups.</p>
      */
     inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
 
     /**
-     * <p>Role used in a session for accessing the user's resources.</p>
+     * <p>Role used in a Spark session for accessing the user's resources. This
+     * property applies only to Spark-enabled workgroups.</p>
      */
     inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
 
     /**
-     * <p>Role used in a session for accessing the user's resources.</p>
+     * <p>Role used in a Spark session for accessing the user's resources. This
+     * property applies only to Spark-enabled workgroups.</p>
      */
     inline WorkGroupConfiguration& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
 
     /**
-     * <p>Role used in a session for accessing the user's resources.</p>
+     * <p>Role used in a Spark session for accessing the user's resources. This
+     * property applies only to Spark-enabled workgroups.</p>
      */
     inline WorkGroupConfiguration& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
 
     /**
-     * <p>Role used in a session for accessing the user's resources.</p>
+     * <p>Role used in a Spark session for accessing the user's resources. This
+     * property applies only to Spark-enabled workgroups.</p>
      */
     inline WorkGroupConfiguration& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
 

@@ -24,6 +24,7 @@ CreateNamespaceRequest::CreateNamespaceRequest() :
     m_manageAdminPassword(false),
     m_manageAdminPasswordHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
+    m_redshiftIdcApplicationArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -99,6 +100,12 @@ Aws::String CreateNamespaceRequest::SerializePayload() const
   if(m_namespaceNameHasBeenSet)
   {
    payload.WithString("namespaceName", m_namespaceName);
+
+  }
+
+  if(m_redshiftIdcApplicationArnHasBeenSet)
+  {
+   payload.WithString("redshiftIdcApplicationArn", m_redshiftIdcApplicationArn);
 
   }
 

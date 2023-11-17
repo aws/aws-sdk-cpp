@@ -82,7 +82,7 @@ namespace EMR
 
         /**
          * <p>Adds an instance fleet to a running cluster.</p>  <p>The instance fleet
-         * configuration is available only in Amazon EMR releases 4.8.0 and higher,
+         * configuration is available only in Amazon EMR releases 4.8.0 and later,
          * excluding 5.0.x.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceFleet">AWS
          * API Reference</a></p>
@@ -206,11 +206,11 @@ namespace EMR
 
         /**
          * <p>Cancels a pending step or steps in a running cluster. Available only in
-         * Amazon EMR versions 4.8.0 and higher, excluding version 5.0.0. A maximum of 256
+         * Amazon EMR versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256
          * steps are allowed in each CancelSteps request. CancelSteps is idempotent but
          * asynchronous; it does not guarantee that a step will be canceled, even if the
          * request is successfully submitted. When you use Amazon EMR releases 5.28.0 and
-         * higher, you can cancel steps that are in a <code>PENDING</code> or
+         * later, you can cancel steps that are in a <code>PENDING</code> or
          * <code>RUNNING</code> state. In earlier versions of Amazon EMR, you can only
          * cancel steps that are in a <code>PENDING</code> state. </p><p><h3>See Also:</h3>
          * <a
@@ -747,7 +747,7 @@ namespace EMR
         /**
          * <p>Lists all available details about the instance fleets in a cluster.</p>
          *  <p>The instance fleet configuration is available only in Amazon EMR
-         * releases 4.8.0 and higher, excluding 5.0.x versions.</p> <p><h3>See
+         * releases 4.8.0 and later, excluding 5.0.x versions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets">AWS
          * API Reference</a></p>
@@ -1052,7 +1052,7 @@ namespace EMR
          * fleet with the specified InstanceFleetID within the cluster specified using
          * ClusterID. The call either succeeds or fails atomically.</p>  <p>The
          * instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
-         * higher, excluding 5.0.x versions.</p> <p><h3>See Also:</h3>   <a
+         * later, excluding 5.0.x versions.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceFleet">AWS
          * API Reference</a></p>
          */
@@ -1135,7 +1135,7 @@ namespace EMR
 
         /**
          *  <p>Auto-termination is supported in Amazon EMR releases 5.30.0 and 6.1.0
-         * and higher. For more information, see <a
+         * and later. For more information, see <a
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-auto-termination-policy.html">Using
          * an auto-termination policy</a>.</p>  <p>Creates or updates an
          * auto-termination policy for an Amazon EMR cluster. An auto-termination policy
@@ -1351,7 +1351,7 @@ namespace EMR
          * submitting queries directly to the software running on the master node, such as
          * Hive and Hadoop.</p> <p>For long-running clusters, we recommend that you
          * periodically store your results.</p>  <p>The instance fleets configuration
-         * is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x
+         * is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
          * versions. The RunJobFlow request can contain InstanceFleets parameters or
          * InstanceGroups parameters, but not both.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow">AWS

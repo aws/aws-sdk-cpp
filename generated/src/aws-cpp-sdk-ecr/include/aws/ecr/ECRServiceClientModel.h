@@ -58,7 +58,9 @@
 #include <aws/ecr/model/StartLifecyclePolicyPreviewResult.h>
 #include <aws/ecr/model/TagResourceResult.h>
 #include <aws/ecr/model/UntagResourceResult.h>
+#include <aws/ecr/model/UpdatePullThroughCacheRuleResult.h>
 #include <aws/ecr/model/UploadLayerPartResult.h>
+#include <aws/ecr/model/ValidatePullThroughCacheRuleResult.h>
 /* End of service model headers required in ECRClient header */
 
 namespace Aws
@@ -139,7 +141,9 @@ namespace Aws
       class StartLifecyclePolicyPreviewRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
+      class UpdatePullThroughCacheRuleRequest;
       class UploadLayerPartRequest;
+      class ValidatePullThroughCacheRuleRequest;
       /* End of service model forward declarations required in ECRClient header */
 
       /* Service model Outcome class definitions */
@@ -183,7 +187,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<StartLifecyclePolicyPreviewResult, ECRError> StartLifecyclePolicyPreviewOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, ECRError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, ECRError> UntagResourceOutcome;
+      typedef Aws::Utils::Outcome<UpdatePullThroughCacheRuleResult, ECRError> UpdatePullThroughCacheRuleOutcome;
       typedef Aws::Utils::Outcome<UploadLayerPartResult, ECRError> UploadLayerPartOutcome;
+      typedef Aws::Utils::Outcome<ValidatePullThroughCacheRuleResult, ECRError> ValidatePullThroughCacheRuleOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -227,7 +233,9 @@ namespace Aws
       typedef std::future<StartLifecyclePolicyPreviewOutcome> StartLifecyclePolicyPreviewOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+      typedef std::future<UpdatePullThroughCacheRuleOutcome> UpdatePullThroughCacheRuleOutcomeCallable;
       typedef std::future<UploadLayerPartOutcome> UploadLayerPartOutcomeCallable;
+      typedef std::future<ValidatePullThroughCacheRuleOutcome> ValidatePullThroughCacheRuleOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -274,7 +282,9 @@ namespace Aws
     typedef std::function<void(const ECRClient*, const Model::StartLifecyclePolicyPreviewRequest&, const Model::StartLifecyclePolicyPreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartLifecyclePolicyPreviewResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::UpdatePullThroughCacheRuleRequest&, const Model::UpdatePullThroughCacheRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePullThroughCacheRuleResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::UploadLayerPartRequest&, const Model::UploadLayerPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadLayerPartResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::ValidatePullThroughCacheRuleRequest&, const Model::ValidatePullThroughCacheRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidatePullThroughCacheRuleResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace ECR
 } // namespace Aws

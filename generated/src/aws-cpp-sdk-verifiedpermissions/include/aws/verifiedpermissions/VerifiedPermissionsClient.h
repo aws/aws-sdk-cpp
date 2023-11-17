@@ -124,6 +124,47 @@ namespace VerifiedPermissions
         virtual ~VerifiedPermissionsClient();
 
         /**
+         * <p>Makes a series of decisions about multiple authorization requests for one
+         * principal or resource. Each request contains the equivalent content of an
+         * <code>IsAuthorized</code> request: principal, action, resource, and context.
+         * Either the <code>principal</code> or the <code>resource</code> parameter must be
+         * identical across all requests. For example, Verified Permissions won't evaluate
+         * a pair of requests where <code>bob</code> views <code>photo1</code> and
+         * <code>alice</code> views <code>photo2</code>. Authorization of <code>bob</code>
+         * to view <code>photo1</code> and <code>photo2</code>, or <code>bob</code> and
+         * <code>alice</code> to view <code>photo1</code>, are valid batches. </p> <p>The
+         * request is evaluated against all policies in the specified policy store that
+         * match the entities that you declare. The result of the decisions is a series of
+         * <code>Allow</code> or <code>Deny</code> responses, along with the IDs of the
+         * policies that produced each decision.</p> <p>The <code>entities</code> of a
+         * <code>BatchIsAuthorized</code> API request can contain up to 100 principals and
+         * up to 100 resources. The <code>requests</code> of a
+         * <code>BatchIsAuthorized</code> API request can contain up to 30
+         * requests.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchIsAuthorized">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchIsAuthorizedOutcome BatchIsAuthorized(const Model::BatchIsAuthorizedRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchIsAuthorized that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchIsAuthorizedRequestT = Model::BatchIsAuthorizedRequest>
+        Model::BatchIsAuthorizedOutcomeCallable BatchIsAuthorizedCallable(const BatchIsAuthorizedRequestT& request) const
+        {
+            return SubmitCallable(&VerifiedPermissionsClient::BatchIsAuthorized, request);
+        }
+
+        /**
+         * An Async wrapper for BatchIsAuthorized that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchIsAuthorizedRequestT = Model::BatchIsAuthorizedRequest>
+        void BatchIsAuthorizedAsync(const BatchIsAuthorizedRequestT& request, const BatchIsAuthorizedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&VerifiedPermissionsClient::BatchIsAuthorized, request, handler, context);
+        }
+
+        /**
          * <p>Creates a reference to an Amazon Cognito user pool as an external identity
          * provider (IdP). </p> <p>After you create an identity source, you can use the
          * identities provided by the IdP as proxies for the principal in authorization

@@ -2361,6 +2361,55 @@ namespace Model
      */
     inline CreateClusterRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center
+     * application.</p>
+     */
+    inline const Aws::String& GetRedshiftIdcApplicationArn() const{ return m_redshiftIdcApplicationArn; }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center
+     * application.</p>
+     */
+    inline bool RedshiftIdcApplicationArnHasBeenSet() const { return m_redshiftIdcApplicationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center
+     * application.</p>
+     */
+    inline void SetRedshiftIdcApplicationArn(const Aws::String& value) { m_redshiftIdcApplicationArnHasBeenSet = true; m_redshiftIdcApplicationArn = value; }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center
+     * application.</p>
+     */
+    inline void SetRedshiftIdcApplicationArn(Aws::String&& value) { m_redshiftIdcApplicationArnHasBeenSet = true; m_redshiftIdcApplicationArn = std::move(value); }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center
+     * application.</p>
+     */
+    inline void SetRedshiftIdcApplicationArn(const char* value) { m_redshiftIdcApplicationArnHasBeenSet = true; m_redshiftIdcApplicationArn.assign(value); }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center
+     * application.</p>
+     */
+    inline CreateClusterRequest& WithRedshiftIdcApplicationArn(const Aws::String& value) { SetRedshiftIdcApplicationArn(value); return *this;}
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center
+     * application.</p>
+     */
+    inline CreateClusterRequest& WithRedshiftIdcApplicationArn(Aws::String&& value) { SetRedshiftIdcApplicationArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center
+     * application.</p>
+     */
+    inline CreateClusterRequest& WithRedshiftIdcApplicationArn(const char* value) { SetRedshiftIdcApplicationArn(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -2476,6 +2525,9 @@ namespace Model
 
     bool m_multiAZ;
     bool m_multiAZHasBeenSet = false;
+
+    Aws::String m_redshiftIdcApplicationArn;
+    bool m_redshiftIdcApplicationArnHasBeenSet = false;
   };
 
 } // namespace Model

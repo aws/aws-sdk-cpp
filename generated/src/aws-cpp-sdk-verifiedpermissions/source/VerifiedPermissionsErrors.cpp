@@ -7,8 +7,8 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsErrors.h>
 #include <aws/verifiedpermissions/model/ConflictException.h>
-#include <aws/verifiedpermissions/model/ServiceQuotaExceededException.h>
 #include <aws/verifiedpermissions/model/ThrottlingException.h>
+#include <aws/verifiedpermissions/model/ServiceQuotaExceededException.h>
 #include <aws/verifiedpermissions/model/ResourceNotFoundException.h>
 #include <aws/verifiedpermissions/model/ValidationException.h>
 
@@ -27,16 +27,16 @@ template<> AWS_VERIFIEDPERMISSIONS_API ConflictException VerifiedPermissionsErro
   return ConflictException(this->GetJsonPayload().View());
 }
 
-template<> AWS_VERIFIEDPERMISSIONS_API ServiceQuotaExceededException VerifiedPermissionsError::GetModeledError()
-{
-  assert(this->GetErrorType() == VerifiedPermissionsErrors::SERVICE_QUOTA_EXCEEDED);
-  return ServiceQuotaExceededException(this->GetJsonPayload().View());
-}
-
 template<> AWS_VERIFIEDPERMISSIONS_API ThrottlingException VerifiedPermissionsError::GetModeledError()
 {
   assert(this->GetErrorType() == VerifiedPermissionsErrors::THROTTLING);
   return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_VERIFIEDPERMISSIONS_API ServiceQuotaExceededException VerifiedPermissionsError::GetModeledError()
+{
+  assert(this->GetErrorType() == VerifiedPermissionsErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
 }
 
 template<> AWS_VERIFIEDPERMISSIONS_API ResourceNotFoundException VerifiedPermissionsError::GetModeledError()

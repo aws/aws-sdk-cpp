@@ -200,7 +200,7 @@ namespace Model
 
     /**
      *  <p>The instance fleet configuration is available only in Amazon EMR
-     * releases 4.8.0 and higher, excluding 5.0.x versions.</p>  <p>The instance
+     * releases 4.8.0 and later, excluding 5.0.x versions.</p>  <p>The instance
      * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
      * indicates a uniform instance group configuration. A value of
      * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
@@ -209,7 +209,7 @@ namespace Model
 
     /**
      *  <p>The instance fleet configuration is available only in Amazon EMR
-     * releases 4.8.0 and higher, excluding 5.0.x versions.</p>  <p>The instance
+     * releases 4.8.0 and later, excluding 5.0.x versions.</p>  <p>The instance
      * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
      * indicates a uniform instance group configuration. A value of
      * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
@@ -218,7 +218,7 @@ namespace Model
 
     /**
      *  <p>The instance fleet configuration is available only in Amazon EMR
-     * releases 4.8.0 and higher, excluding 5.0.x versions.</p>  <p>The instance
+     * releases 4.8.0 and later, excluding 5.0.x versions.</p>  <p>The instance
      * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
      * indicates a uniform instance group configuration. A value of
      * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
@@ -227,7 +227,7 @@ namespace Model
 
     /**
      *  <p>The instance fleet configuration is available only in Amazon EMR
-     * releases 4.8.0 and higher, excluding 5.0.x versions.</p>  <p>The instance
+     * releases 4.8.0 and later, excluding 5.0.x versions.</p>  <p>The instance
      * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
      * indicates a uniform instance group configuration. A value of
      * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
@@ -236,7 +236,7 @@ namespace Model
 
     /**
      *  <p>The instance fleet configuration is available only in Amazon EMR
-     * releases 4.8.0 and higher, excluding 5.0.x versions.</p>  <p>The instance
+     * releases 4.8.0 and later, excluding 5.0.x versions.</p>  <p>The instance
      * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
      * indicates a uniform instance group configuration. A value of
      * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
@@ -245,7 +245,7 @@ namespace Model
 
     /**
      *  <p>The instance fleet configuration is available only in Amazon EMR
-     * releases 4.8.0 and higher, excluding 5.0.x versions.</p>  <p>The instance
+     * releases 4.8.0 and later, excluding 5.0.x versions.</p>  <p>The instance
      * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
      * indicates a uniform instance group configuration. A value of
      * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
@@ -304,49 +304,49 @@ namespace Model
 
     /**
      * <p> The KMS key used for encrypting log files. This attribute is only available
-     * with Amazon EMR 5.30.0 and higher, excluding Amazon EMR 6.0.0. </p>
+     * with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
      */
     inline const Aws::String& GetLogEncryptionKmsKeyId() const{ return m_logEncryptionKmsKeyId; }
 
     /**
      * <p> The KMS key used for encrypting log files. This attribute is only available
-     * with Amazon EMR 5.30.0 and higher, excluding Amazon EMR 6.0.0. </p>
+     * with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
      */
     inline bool LogEncryptionKmsKeyIdHasBeenSet() const { return m_logEncryptionKmsKeyIdHasBeenSet; }
 
     /**
      * <p> The KMS key used for encrypting log files. This attribute is only available
-     * with Amazon EMR 5.30.0 and higher, excluding Amazon EMR 6.0.0. </p>
+     * with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
      */
     inline void SetLogEncryptionKmsKeyId(const Aws::String& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = value; }
 
     /**
      * <p> The KMS key used for encrypting log files. This attribute is only available
-     * with Amazon EMR 5.30.0 and higher, excluding Amazon EMR 6.0.0. </p>
+     * with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
      */
     inline void SetLogEncryptionKmsKeyId(Aws::String&& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = std::move(value); }
 
     /**
      * <p> The KMS key used for encrypting log files. This attribute is only available
-     * with Amazon EMR 5.30.0 and higher, excluding Amazon EMR 6.0.0. </p>
+     * with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
      */
     inline void SetLogEncryptionKmsKeyId(const char* value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId.assign(value); }
 
     /**
      * <p> The KMS key used for encrypting log files. This attribute is only available
-     * with Amazon EMR 5.30.0 and higher, excluding Amazon EMR 6.0.0. </p>
+     * with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
      */
     inline Cluster& WithLogEncryptionKmsKeyId(const Aws::String& value) { SetLogEncryptionKmsKeyId(value); return *this;}
 
     /**
      * <p> The KMS key used for encrypting log files. This attribute is only available
-     * with Amazon EMR 5.30.0 and higher, excluding Amazon EMR 6.0.0. </p>
+     * with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
      */
     inline Cluster& WithLogEncryptionKmsKeyId(Aws::String&& value) { SetLogEncryptionKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p> The KMS key used for encrypting log files. This attribute is only available
-     * with Amazon EMR 5.30.0 and higher, excluding Amazon EMR 6.0.0. </p>
+     * with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
      */
     inline Cluster& WithLogEncryptionKmsKeyId(const char* value) { SetLogEncryptionKmsKeyId(value); return *this;}
 
@@ -440,7 +440,7 @@ namespace Model
      * <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
      * and included application versions and features, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
-     * The release label applies only to Amazon EMR releases version 4.0 and higher.
+     * The release label applies only to Amazon EMR releases version 4.0 and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
@@ -452,7 +452,7 @@ namespace Model
      * <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
      * and included application versions and features, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
-     * The release label applies only to Amazon EMR releases version 4.0 and higher.
+     * The release label applies only to Amazon EMR releases version 4.0 and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline bool ReleaseLabelHasBeenSet() const { return m_releaseLabelHasBeenSet; }
@@ -464,7 +464,7 @@ namespace Model
      * <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
      * and included application versions and features, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
-     * The release label applies only to Amazon EMR releases version 4.0 and higher.
+     * The release label applies only to Amazon EMR releases version 4.0 and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
@@ -476,7 +476,7 @@ namespace Model
      * <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
      * and included application versions and features, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
-     * The release label applies only to Amazon EMR releases version 4.0 and higher.
+     * The release label applies only to Amazon EMR releases version 4.0 and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
@@ -488,7 +488,7 @@ namespace Model
      * <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
      * and included application versions and features, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
-     * The release label applies only to Amazon EMR releases version 4.0 and higher.
+     * The release label applies only to Amazon EMR releases version 4.0 and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline void SetReleaseLabel(const char* value) { m_releaseLabelHasBeenSet = true; m_releaseLabel.assign(value); }
@@ -500,7 +500,7 @@ namespace Model
      * <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
      * and included application versions and features, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
-     * The release label applies only to Amazon EMR releases version 4.0 and higher.
+     * The release label applies only to Amazon EMR releases version 4.0 and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline Cluster& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
@@ -512,7 +512,7 @@ namespace Model
      * <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
      * and included application versions and features, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
-     * The release label applies only to Amazon EMR releases version 4.0 and higher.
+     * The release label applies only to Amazon EMR releases version 4.0 and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline Cluster& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
@@ -524,7 +524,7 @@ namespace Model
      * <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
      * and included application versions and features, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
-     * The release label applies only to Amazon EMR releases version 4.0 and higher.
+     * The release label applies only to Amazon EMR releases version 4.0 and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline Cluster& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
@@ -867,50 +867,50 @@ namespace Model
 
 
     /**
-     * <p>Applies only to Amazon EMR releases 4.x and higher. The list of
-     * configurations that are supplied to the Amazon EMR cluster.</p>
+     * <p>Applies only to Amazon EMR releases 4.x and later. The list of configurations
+     * that are supplied to the Amazon EMR cluster.</p>
      */
     inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
 
     /**
-     * <p>Applies only to Amazon EMR releases 4.x and higher. The list of
-     * configurations that are supplied to the Amazon EMR cluster.</p>
+     * <p>Applies only to Amazon EMR releases 4.x and later. The list of configurations
+     * that are supplied to the Amazon EMR cluster.</p>
      */
     inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
 
     /**
-     * <p>Applies only to Amazon EMR releases 4.x and higher. The list of
-     * configurations that are supplied to the Amazon EMR cluster.</p>
+     * <p>Applies only to Amazon EMR releases 4.x and later. The list of configurations
+     * that are supplied to the Amazon EMR cluster.</p>
      */
     inline void SetConfigurations(const Aws::Vector<Configuration>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
 
     /**
-     * <p>Applies only to Amazon EMR releases 4.x and higher. The list of
-     * configurations that are supplied to the Amazon EMR cluster.</p>
+     * <p>Applies only to Amazon EMR releases 4.x and later. The list of configurations
+     * that are supplied to the Amazon EMR cluster.</p>
      */
     inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
 
     /**
-     * <p>Applies only to Amazon EMR releases 4.x and higher. The list of
-     * configurations that are supplied to the Amazon EMR cluster.</p>
+     * <p>Applies only to Amazon EMR releases 4.x and later. The list of configurations
+     * that are supplied to the Amazon EMR cluster.</p>
      */
     inline Cluster& WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
 
     /**
-     * <p>Applies only to Amazon EMR releases 4.x and higher. The list of
-     * configurations that are supplied to the Amazon EMR cluster.</p>
+     * <p>Applies only to Amazon EMR releases 4.x and later. The list of configurations
+     * that are supplied to the Amazon EMR cluster.</p>
      */
     inline Cluster& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Applies only to Amazon EMR releases 4.x and higher. The list of
-     * configurations that are supplied to the Amazon EMR cluster.</p>
+     * <p>Applies only to Amazon EMR releases 4.x and later. The list of configurations
+     * that are supplied to the Amazon EMR cluster.</p>
      */
     inline Cluster& AddConfigurations(const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
 
     /**
-     * <p>Applies only to Amazon EMR releases 4.x and higher. The list of
-     * configurations that are supplied to the Amazon EMR cluster.</p>
+     * <p>Applies only to Amazon EMR releases 4.x and later. The list of configurations
+     * that are supplied to the Amazon EMR cluster.</p>
      */
     inline Cluster& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
@@ -1027,14 +1027,14 @@ namespace Model
      * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
-     * and higher and is the default for clusters created using that version.
+     * and later and is the default for clusters created using that version.
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
      * to a deny list and drains tasks from nodes before terminating the Amazon EC2
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * is available only in Amazon EMR releases 4.1.0 and higher, and is the default
-     * for versions of Amazon EMR earlier than 5.1.0.</p>
+     * is available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline const ScaleDownBehavior& GetScaleDownBehavior() const{ return m_scaleDownBehavior; }
 
@@ -1044,14 +1044,14 @@ namespace Model
      * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
-     * and higher and is the default for clusters created using that version.
+     * and later and is the default for clusters created using that version.
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
      * to a deny list and drains tasks from nodes before terminating the Amazon EC2
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * is available only in Amazon EMR releases 4.1.0 and higher, and is the default
-     * for versions of Amazon EMR earlier than 5.1.0.</p>
+     * is available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline bool ScaleDownBehaviorHasBeenSet() const { return m_scaleDownBehaviorHasBeenSet; }
 
@@ -1061,14 +1061,14 @@ namespace Model
      * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
-     * and higher and is the default for clusters created using that version.
+     * and later and is the default for clusters created using that version.
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
      * to a deny list and drains tasks from nodes before terminating the Amazon EC2
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * is available only in Amazon EMR releases 4.1.0 and higher, and is the default
-     * for versions of Amazon EMR earlier than 5.1.0.</p>
+     * is available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline void SetScaleDownBehavior(const ScaleDownBehavior& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
 
@@ -1078,14 +1078,14 @@ namespace Model
      * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
-     * and higher and is the default for clusters created using that version.
+     * and later and is the default for clusters created using that version.
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
      * to a deny list and drains tasks from nodes before terminating the Amazon EC2
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * is available only in Amazon EMR releases 4.1.0 and higher, and is the default
-     * for versions of Amazon EMR earlier than 5.1.0.</p>
+     * is available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline void SetScaleDownBehavior(ScaleDownBehavior&& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = std::move(value); }
 
@@ -1095,14 +1095,14 @@ namespace Model
      * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
-     * and higher and is the default for clusters created using that version.
+     * and later and is the default for clusters created using that version.
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
      * to a deny list and drains tasks from nodes before terminating the Amazon EC2
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * is available only in Amazon EMR releases 4.1.0 and higher, and is the default
-     * for versions of Amazon EMR earlier than 5.1.0.</p>
+     * is available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline Cluster& WithScaleDownBehavior(const ScaleDownBehavior& value) { SetScaleDownBehavior(value); return *this;}
 
@@ -1112,92 +1112,92 @@ namespace Model
      * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
-     * and higher and is the default for clusters created using that version.
+     * and later and is the default for clusters created using that version.
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
      * to a deny list and drains tasks from nodes before terminating the Amazon EC2
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * is available only in Amazon EMR releases 4.1.0 and higher, and is the default
-     * for versions of Amazon EMR earlier than 5.1.0.</p>
+     * is available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline Cluster& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(std::move(value)); return *this;}
 
 
     /**
-     * <p>Available only in Amazon EMR releases 5.7.0 and higher. The ID of a custom
+     * <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom
      * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
      */
     inline const Aws::String& GetCustomAmiId() const{ return m_customAmiId; }
 
     /**
-     * <p>Available only in Amazon EMR releases 5.7.0 and higher. The ID of a custom
+     * <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom
      * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
      */
     inline bool CustomAmiIdHasBeenSet() const { return m_customAmiIdHasBeenSet; }
 
     /**
-     * <p>Available only in Amazon EMR releases 5.7.0 and higher. The ID of a custom
+     * <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom
      * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
      */
     inline void SetCustomAmiId(const Aws::String& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = value; }
 
     /**
-     * <p>Available only in Amazon EMR releases 5.7.0 and higher. The ID of a custom
+     * <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom
      * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
      */
     inline void SetCustomAmiId(Aws::String&& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = std::move(value); }
 
     /**
-     * <p>Available only in Amazon EMR releases 5.7.0 and higher. The ID of a custom
+     * <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom
      * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
      */
     inline void SetCustomAmiId(const char* value) { m_customAmiIdHasBeenSet = true; m_customAmiId.assign(value); }
 
     /**
-     * <p>Available only in Amazon EMR releases 5.7.0 and higher. The ID of a custom
+     * <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom
      * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
      */
     inline Cluster& WithCustomAmiId(const Aws::String& value) { SetCustomAmiId(value); return *this;}
 
     /**
-     * <p>Available only in Amazon EMR releases 5.7.0 and higher. The ID of a custom
+     * <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom
      * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
      */
     inline Cluster& WithCustomAmiId(Aws::String&& value) { SetCustomAmiId(std::move(value)); return *this;}
 
     /**
-     * <p>Available only in Amazon EMR releases 5.7.0 and higher. The ID of a custom
+     * <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom
      * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
      */
     inline Cluster& WithCustomAmiId(const char* value) { SetCustomAmiId(value); return *this;}
 
 
     /**
-     * <p>The size, in GiB, of the Amazon EBS root device volume for the Linux AMI that
-     * each Amazon EC2 instance uses. Available in Amazon EMR releases 4.x and
-     * higher.</p>
+     * <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that
+     * is used for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and
+     * later.</p>
      */
     inline int GetEbsRootVolumeSize() const{ return m_ebsRootVolumeSize; }
 
     /**
-     * <p>The size, in GiB, of the Amazon EBS root device volume for the Linux AMI that
-     * each Amazon EC2 instance uses. Available in Amazon EMR releases 4.x and
-     * higher.</p>
+     * <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that
+     * is used for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and
+     * later.</p>
      */
     inline bool EbsRootVolumeSizeHasBeenSet() const { return m_ebsRootVolumeSizeHasBeenSet; }
 
     /**
-     * <p>The size, in GiB, of the Amazon EBS root device volume for the Linux AMI that
-     * each Amazon EC2 instance uses. Available in Amazon EMR releases 4.x and
-     * higher.</p>
+     * <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that
+     * is used for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and
+     * later.</p>
      */
     inline void SetEbsRootVolumeSize(int value) { m_ebsRootVolumeSizeHasBeenSet = true; m_ebsRootVolumeSize = value; }
 
     /**
-     * <p>The size, in GiB, of the Amazon EBS root device volume for the Linux AMI that
-     * each Amazon EC2 instance uses. Available in Amazon EMR releases 4.x and
-     * higher.</p>
+     * <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that
+     * is used for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and
+     * later.</p>
      */
     inline Cluster& WithEbsRootVolumeSize(int value) { SetEbsRootVolumeSize(value); return *this;}
 
@@ -1504,59 +1504,59 @@ namespace Model
 
 
     /**
-     * <p>The IOPS, of the Amazon EBS root device volume for the Linux AMI that each
-     * Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0 and
-     * higher.</p>
+     * <p>The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used
+     * for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and
+     * later.</p>
      */
     inline int GetEbsRootVolumeIops() const{ return m_ebsRootVolumeIops; }
 
     /**
-     * <p>The IOPS, of the Amazon EBS root device volume for the Linux AMI that each
-     * Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0 and
-     * higher.</p>
+     * <p>The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used
+     * for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and
+     * later.</p>
      */
     inline bool EbsRootVolumeIopsHasBeenSet() const { return m_ebsRootVolumeIopsHasBeenSet; }
 
     /**
-     * <p>The IOPS, of the Amazon EBS root device volume for the Linux AMI that each
-     * Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0 and
-     * higher.</p>
+     * <p>The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used
+     * for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and
+     * later.</p>
      */
     inline void SetEbsRootVolumeIops(int value) { m_ebsRootVolumeIopsHasBeenSet = true; m_ebsRootVolumeIops = value; }
 
     /**
-     * <p>The IOPS, of the Amazon EBS root device volume for the Linux AMI that each
-     * Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0 and
-     * higher.</p>
+     * <p>The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used
+     * for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and
+     * later.</p>
      */
     inline Cluster& WithEbsRootVolumeIops(int value) { SetEbsRootVolumeIops(value); return *this;}
 
 
     /**
-     * <p>The throughput, in MiB/s, of the Amazon EBS root device volume for the Linux
-     * AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0
-     * and higher.</p>
+     * <p>The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux
+     * AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases
+     * 6.15.0 and later.</p>
      */
     inline int GetEbsRootVolumeThroughput() const{ return m_ebsRootVolumeThroughput; }
 
     /**
-     * <p>The throughput, in MiB/s, of the Amazon EBS root device volume for the Linux
-     * AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0
-     * and higher.</p>
+     * <p>The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux
+     * AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases
+     * 6.15.0 and later.</p>
      */
     inline bool EbsRootVolumeThroughputHasBeenSet() const { return m_ebsRootVolumeThroughputHasBeenSet; }
 
     /**
-     * <p>The throughput, in MiB/s, of the Amazon EBS root device volume for the Linux
-     * AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0
-     * and higher.</p>
+     * <p>The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux
+     * AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases
+     * 6.15.0 and later.</p>
      */
     inline void SetEbsRootVolumeThroughput(int value) { m_ebsRootVolumeThroughputHasBeenSet = true; m_ebsRootVolumeThroughput = value; }
 
     /**
-     * <p>The throughput, in MiB/s, of the Amazon EBS root device volume for the Linux
-     * AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0
-     * and higher.</p>
+     * <p>The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux
+     * AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases
+     * 6.15.0 and later.</p>
      */
     inline Cluster& WithEbsRootVolumeThroughput(int value) { SetEbsRootVolumeThroughput(value); return *this;}
 

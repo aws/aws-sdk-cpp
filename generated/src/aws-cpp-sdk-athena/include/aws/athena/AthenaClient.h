@@ -29,10 +29,7 @@ namespace Athena
    * Amazon Athena API. Earlier version drivers do not support the API. For more
    * information and to download the driver, see <a
    * href="https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html">Accessing
-   * Amazon Athena with JDBC</a>.</p> <p>For code samples using the Amazon Web
-   * Services SDK for Java, see <a
-   * href="https://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-   * and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
+   * Amazon Athena with JDBC</a>.</p>
    */
   class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AthenaClient>
   {
@@ -271,11 +268,7 @@ namespace Athena
 
         /**
          * <p>Creates a named query in the specified workgroup. Requires that you have
-         * access to the workgroup.</p> <p>For code samples using the Amazon Web Services
-         * SDK for Java, see <a
-         * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-         * and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * access to the workgroup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNamedQuery">AWS
          * API Reference</a></p>
          */
@@ -466,11 +459,7 @@ namespace Athena
 
         /**
          * <p>Deletes the named query if you have access to the workgroup in which the
-         * query was saved.</p> <p>For code samples using the Amazon Web Services SDK for
-         * Java, see <a
-         * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-         * and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * query was saved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNamedQuery">AWS
          * API Reference</a></p>
          */
@@ -1274,11 +1263,7 @@ namespace Athena
          * <p>Provides a list of available query IDs only for queries saved in the
          * specified workgroup. Requires that you have access to the specified workgroup.
          * If a workgroup is not specified, lists the saved queries for the primary
-         * workgroup.</p> <p>For code samples using the Amazon Web Services SDK for Java,
-         * see <a
-         * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-         * and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * workgroup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNamedQueries">AWS
          * API Reference</a></p>
          */
@@ -1384,13 +1369,10 @@ namespace Athena
 
         /**
          * <p>Provides a list of available query execution IDs for the queries in the
-         * specified workgroup. If a workgroup is not specified, returns a list of query
-         * execution IDs for the primary workgroup. Requires you to have access to the
-         * workgroup in which the queries ran.</p> <p>For code samples using the Amazon Web
-         * Services SDK for Java, see <a
-         * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-         * and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * specified workgroup. Athena keeps a query history for 45 days. If a workgroup is
+         * not specified, returns a list of query execution IDs for the primary workgroup.
+         * Requires you to have access to the workgroup in which the queries
+         * ran.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListQueryExecutions">AWS
          * API Reference</a></p>
          */
@@ -1549,7 +1531,12 @@ namespace Athena
 
         /**
          * <p>Submits calculations for execution within a session. You can supply the code
-         * to run as an inline code block within the request.</p><p><h3>See Also:</h3>   <a
+         * to run as an inline code block within the request.</p>  <p>The request
+         * syntax requires the <a>StartCalculationExecutionRequest$CodeBlock</a> parameter
+         * or the <a>CalculationConfiguration$CodeBlock</a> parameter, but not both.
+         * Because <a>CalculationConfiguration$CodeBlock</a> is deprecated, use the
+         * <a>StartCalculationExecutionRequest$CodeBlock</a> parameter instead.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartCalculationExecution">AWS
          * API Reference</a></p>
          */
@@ -1665,11 +1652,7 @@ namespace Athena
 
         /**
          * <p>Stops a query execution. Requires you to have access to the workgroup in
-         * which the query ran.</p> <p>For code samples using the Amazon Web Services SDK
-         * for Java, see <a
-         * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-         * and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * which the query ran.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopQueryExecution">AWS
          * API Reference</a></p>
          */

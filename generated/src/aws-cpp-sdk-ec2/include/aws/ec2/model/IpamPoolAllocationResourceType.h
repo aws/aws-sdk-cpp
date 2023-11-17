@@ -19,7 +19,8 @@ namespace Model
     ipam_pool,
     vpc,
     ec2_public_ipv4_pool,
-    custom
+    custom,
+    subnet
   };
 
 namespace IpamPoolAllocationResourceTypeMapper

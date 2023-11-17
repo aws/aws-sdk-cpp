@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ENABLED,
-    DISABLED
+    DISABLED,
+    ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS
   };
 
 namespace RuleStateMapper

@@ -8,15 +8,16 @@
 #include <aws/sso-oidc/SSOOIDCErrors.h>
 #include <aws/sso-oidc/model/InvalidGrantException.h>
 #include <aws/sso-oidc/model/InvalidScopeException.h>
+#include <aws/sso-oidc/model/InvalidRequestRegionException.h>
 #include <aws/sso-oidc/model/InternalServerException.h>
 #include <aws/sso-oidc/model/AuthorizationPendingException.h>
-#include <aws/sso-oidc/model/UnsupportedGrantTypeException.h>
-#include <aws/sso-oidc/model/AccessDeniedException.h>
 #include <aws/sso-oidc/model/ExpiredTokenException.h>
 #include <aws/sso-oidc/model/SlowDownException.h>
 #include <aws/sso-oidc/model/UnauthorizedClientException.h>
-#include <aws/sso-oidc/model/InvalidClientException.h>
 #include <aws/sso-oidc/model/InvalidClientMetadataException.h>
+#include <aws/sso-oidc/model/UnsupportedGrantTypeException.h>
+#include <aws/sso-oidc/model/AccessDeniedException.h>
+#include <aws/sso-oidc/model/InvalidClientException.h>
 #include <aws/sso-oidc/model/InvalidRequestException.h>
 
 using namespace Aws::Client;
@@ -40,6 +41,12 @@ template<> AWS_SSOOIDC_API InvalidScopeException SSOOIDCError::GetModeledError()
   return InvalidScopeException(this->GetJsonPayload().View());
 }
 
+template<> AWS_SSOOIDC_API InvalidRequestRegionException SSOOIDCError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSOOIDCErrors::INVALID_REQUEST_REGION);
+  return InvalidRequestRegionException(this->GetJsonPayload().View());
+}
+
 template<> AWS_SSOOIDC_API InternalServerException SSOOIDCError::GetModeledError()
 {
   assert(this->GetErrorType() == SSOOIDCErrors::INTERNAL_SERVER);
@@ -50,18 +57,6 @@ template<> AWS_SSOOIDC_API AuthorizationPendingException SSOOIDCError::GetModele
 {
   assert(this->GetErrorType() == SSOOIDCErrors::AUTHORIZATION_PENDING);
   return AuthorizationPendingException(this->GetJsonPayload().View());
-}
-
-template<> AWS_SSOOIDC_API UnsupportedGrantTypeException SSOOIDCError::GetModeledError()
-{
-  assert(this->GetErrorType() == SSOOIDCErrors::UNSUPPORTED_GRANT_TYPE);
-  return UnsupportedGrantTypeException(this->GetJsonPayload().View());
-}
-
-template<> AWS_SSOOIDC_API AccessDeniedException SSOOIDCError::GetModeledError()
-{
-  assert(this->GetErrorType() == SSOOIDCErrors::ACCESS_DENIED);
-  return AccessDeniedException(this->GetJsonPayload().View());
 }
 
 template<> AWS_SSOOIDC_API ExpiredTokenException SSOOIDCError::GetModeledError()
@@ -82,16 +77,28 @@ template<> AWS_SSOOIDC_API UnauthorizedClientException SSOOIDCError::GetModeledE
   return UnauthorizedClientException(this->GetJsonPayload().View());
 }
 
-template<> AWS_SSOOIDC_API InvalidClientException SSOOIDCError::GetModeledError()
-{
-  assert(this->GetErrorType() == SSOOIDCErrors::INVALID_CLIENT);
-  return InvalidClientException(this->GetJsonPayload().View());
-}
-
 template<> AWS_SSOOIDC_API InvalidClientMetadataException SSOOIDCError::GetModeledError()
 {
   assert(this->GetErrorType() == SSOOIDCErrors::INVALID_CLIENT_METADATA);
   return InvalidClientMetadataException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSOOIDC_API UnsupportedGrantTypeException SSOOIDCError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSOOIDCErrors::UNSUPPORTED_GRANT_TYPE);
+  return UnsupportedGrantTypeException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSOOIDC_API AccessDeniedException SSOOIDCError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSOOIDCErrors::ACCESS_DENIED);
+  return AccessDeniedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSOOIDC_API InvalidClientException SSOOIDCError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSOOIDCErrors::INVALID_CLIENT);
+  return InvalidClientException(this->GetJsonPayload().View());
 }
 
 template<> AWS_SSOOIDC_API InvalidRequestException SSOOIDCError::GetModeledError()
@@ -105,6 +112,7 @@ namespace SSOOIDCErrorMapper
 
 static const int INVALID_GRANT_HASH = HashingUtils::HashString("InvalidGrantException");
 static const int INVALID_SCOPE_HASH = HashingUtils::HashString("InvalidScopeException");
+static const int INVALID_REQUEST_REGION_HASH = HashingUtils::HashString("InvalidRequestRegionException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int AUTHORIZATION_PENDING_HASH = HashingUtils::HashString("AuthorizationPendingException");
 static const int UNSUPPORTED_GRANT_TYPE_HASH = HashingUtils::HashString("UnsupportedGrantTypeException");
@@ -126,6 +134,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_SCOPE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::INVALID_SCOPE), false);
+  }
+  else if (hashCode == INVALID_REQUEST_REGION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::INVALID_REQUEST_REGION), false);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {

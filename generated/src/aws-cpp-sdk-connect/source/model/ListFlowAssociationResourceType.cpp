@@ -20,18 +20,13 @@ namespace Aws
       namespace ListFlowAssociationResourceTypeMapper
       {
 
-        static const int SMS_PHONE_NUMBER_HASH = HashingUtils::HashString("SMS_PHONE_NUMBER");
         static const int VOICE_PHONE_NUMBER_HASH = HashingUtils::HashString("VOICE_PHONE_NUMBER");
 
 
         ListFlowAssociationResourceType GetListFlowAssociationResourceTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == SMS_PHONE_NUMBER_HASH)
-          {
-            return ListFlowAssociationResourceType::SMS_PHONE_NUMBER;
-          }
-          else if (hashCode == VOICE_PHONE_NUMBER_HASH)
+          if (hashCode == VOICE_PHONE_NUMBER_HASH)
           {
             return ListFlowAssociationResourceType::VOICE_PHONE_NUMBER;
           }
@@ -51,8 +46,6 @@ namespace Aws
           {
           case ListFlowAssociationResourceType::NOT_SET:
             return {};
-          case ListFlowAssociationResourceType::SMS_PHONE_NUMBER:
-            return "SMS_PHONE_NUMBER";
           case ListFlowAssociationResourceType::VOICE_PHONE_NUMBER:
             return "VOICE_PHONE_NUMBER";
           default:
