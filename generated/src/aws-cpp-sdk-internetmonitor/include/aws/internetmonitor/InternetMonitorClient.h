@@ -233,6 +233,70 @@ namespace InternetMonitor
         }
 
         /**
+         * <p>Return the data for a query with the Amazon CloudWatch Internet Monitor query
+         * interface. Specify the query that you want to return results for by providing a
+         * <code>QueryId</code> and a monitor name.</p> <p>For more information about using
+         * the query interface, including examples, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-view-cw-tools-cwim-query.html">Using
+         * the Amazon CloudWatch Internet Monitor query interface</a> in the Amazon
+         * CloudWatch Internet Monitor User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetQueryResults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetQueryResultsOutcome GetQueryResults(const Model::GetQueryResultsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetQueryResults that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetQueryResultsRequestT = Model::GetQueryResultsRequest>
+        Model::GetQueryResultsOutcomeCallable GetQueryResultsCallable(const GetQueryResultsRequestT& request) const
+        {
+            return SubmitCallable(&InternetMonitorClient::GetQueryResults, request);
+        }
+
+        /**
+         * An Async wrapper for GetQueryResults that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetQueryResultsRequestT = Model::GetQueryResultsRequest>
+        void GetQueryResultsAsync(const GetQueryResultsRequestT& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&InternetMonitorClient::GetQueryResults, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the current status of a query for the Amazon CloudWatch Internet
+         * Monitor query interface, for a specified query ID and monitor. When you run a
+         * query, check the status to make sure that the query has <code>SUCCEEDED</code>
+         * before you review the results.</p> <ul> <li> <p> <code>QUEUED</code>: The query
+         * is scheduled to run.</p> </li> <li> <p> <code>RUNNING</code>: The query is in
+         * progress but not complete.</p> </li> <li> <p> <code>SUCCEEDED</code>: The query
+         * completed sucessfully.</p> </li> <li> <p> <code>FAILED</code>: The query failed
+         * due to an error.</p> </li> <li> <p> <code>CANCELED</code>: The query was
+         * canceled.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetQueryStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetQueryStatusOutcome GetQueryStatus(const Model::GetQueryStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetQueryStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetQueryStatusRequestT = Model::GetQueryStatusRequest>
+        Model::GetQueryStatusOutcomeCallable GetQueryStatusCallable(const GetQueryStatusRequestT& request) const
+        {
+            return SubmitCallable(&InternetMonitorClient::GetQueryStatus, request);
+        }
+
+        /**
+         * An Async wrapper for GetQueryStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetQueryStatusRequestT = Model::GetQueryStatusRequest>
+        void GetQueryStatusAsync(const GetQueryStatusRequestT& request, const GetQueryStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&InternetMonitorClient::GetQueryStatus, request, handler, context);
+        }
+
+        /**
          * <p>Lists all health events for a monitor in Amazon CloudWatch Internet Monitor.
          * Returns information for health events including the event start and end time and
          * the status.</p>  <p>Health events that have start times during the time
@@ -312,6 +376,65 @@ namespace InternetMonitor
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&InternetMonitorClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Start a query to return data for a specific query type for the Amazon
+         * CloudWatch Internet Monitor query interface. Specify a time period for the data
+         * that you want returned by using <code>StartTime</code> and <code>EndTime</code>.
+         * You filter the query results to return by providing parameters that you specify
+         * with <code>FilterParameters</code>.</p> <p>For more information about using the
+         * query interface, including examples, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-view-cw-tools-cwim-query.html">Using
+         * the Amazon CloudWatch Internet Monitor query interface</a> in the Amazon
+         * CloudWatch Internet Monitor User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/StartQuery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartQueryOutcome StartQuery(const Model::StartQueryRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartQuery that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartQueryRequestT = Model::StartQueryRequest>
+        Model::StartQueryOutcomeCallable StartQueryCallable(const StartQueryRequestT& request) const
+        {
+            return SubmitCallable(&InternetMonitorClient::StartQuery, request);
+        }
+
+        /**
+         * An Async wrapper for StartQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartQueryRequestT = Model::StartQueryRequest>
+        void StartQueryAsync(const StartQueryRequestT& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&InternetMonitorClient::StartQuery, request, handler, context);
+        }
+
+        /**
+         * <p>Stop a query that is progress for a specific monitor.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/StopQuery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopQueryOutcome StopQuery(const Model::StopQueryRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopQuery that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopQueryRequestT = Model::StopQueryRequest>
+        Model::StopQueryOutcomeCallable StopQueryCallable(const StopQueryRequestT& request) const
+        {
+            return SubmitCallable(&InternetMonitorClient::StopQuery, request);
+        }
+
+        /**
+         * An Async wrapper for StopQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopQueryRequestT = Model::StopQueryRequest>
+        void StopQueryAsync(const StopQueryRequestT& request, const StopQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&InternetMonitorClient::StopQuery, request, handler, context);
         }
 
         /**

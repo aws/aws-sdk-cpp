@@ -378,6 +378,61 @@ namespace Model
 
 
     /**
+     * <p>Include a particular CIDR range that can be returned by the pool. Allowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAllowedCidrs() const{ return m_allowedCidrs; }
+
+    /**
+     * <p>Include a particular CIDR range that can be returned by the pool. Allowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
+     */
+    inline bool AllowedCidrsHasBeenSet() const { return m_allowedCidrsHasBeenSet; }
+
+    /**
+     * <p>Include a particular CIDR range that can be returned by the pool. Allowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
+     */
+    inline void SetAllowedCidrs(const Aws::Vector<Aws::String>& value) { m_allowedCidrsHasBeenSet = true; m_allowedCidrs = value; }
+
+    /**
+     * <p>Include a particular CIDR range that can be returned by the pool. Allowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
+     */
+    inline void SetAllowedCidrs(Aws::Vector<Aws::String>&& value) { m_allowedCidrsHasBeenSet = true; m_allowedCidrs = std::move(value); }
+
+    /**
+     * <p>Include a particular CIDR range that can be returned by the pool. Allowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
+     */
+    inline AllocateIpamPoolCidrRequest& WithAllowedCidrs(const Aws::Vector<Aws::String>& value) { SetAllowedCidrs(value); return *this;}
+
+    /**
+     * <p>Include a particular CIDR range that can be returned by the pool. Allowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
+     */
+    inline AllocateIpamPoolCidrRequest& WithAllowedCidrs(Aws::Vector<Aws::String>&& value) { SetAllowedCidrs(std::move(value)); return *this;}
+
+    /**
+     * <p>Include a particular CIDR range that can be returned by the pool. Allowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
+     */
+    inline AllocateIpamPoolCidrRequest& AddAllowedCidrs(const Aws::String& value) { m_allowedCidrsHasBeenSet = true; m_allowedCidrs.push_back(value); return *this; }
+
+    /**
+     * <p>Include a particular CIDR range that can be returned by the pool. Allowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
+     */
+    inline AllocateIpamPoolCidrRequest& AddAllowedCidrs(Aws::String&& value) { m_allowedCidrsHasBeenSet = true; m_allowedCidrs.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Include a particular CIDR range that can be returned by the pool. Allowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
+     */
+    inline AllocateIpamPoolCidrRequest& AddAllowedCidrs(const char* value) { m_allowedCidrsHasBeenSet = true; m_allowedCidrs.push_back(value); return *this; }
+
+
+    /**
      * <p>Exclude a particular CIDR range from being returned by the pool. Disallowed
      * CIDRs are only allowed if using netmask length for allocation.</p>
      */
@@ -453,6 +508,9 @@ namespace Model
 
     bool m_previewNextCidr;
     bool m_previewNextCidrHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_allowedCidrs;
+    bool m_allowedCidrsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_disallowedCidrs;
     bool m_disallowedCidrsHasBeenSet = false;

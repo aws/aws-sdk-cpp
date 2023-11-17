@@ -86,6 +86,47 @@ namespace Model
 
 
     /**
+     * <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
+     */
+    inline const Aws::String& GetAsn() const{ return m_asn; }
+
+    /**
+     * <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
+     */
+    inline bool AsnHasBeenSet() const { return m_asnHasBeenSet; }
+
+    /**
+     * <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
+     */
+    inline void SetAsn(const Aws::String& value) { m_asnHasBeenSet = true; m_asn = value; }
+
+    /**
+     * <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
+     */
+    inline void SetAsn(Aws::String&& value) { m_asnHasBeenSet = true; m_asn = std::move(value); }
+
+    /**
+     * <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
+     */
+    inline void SetAsn(const char* value) { m_asnHasBeenSet = true; m_asn.assign(value); }
+
+    /**
+     * <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
+     */
+    inline AdvertiseByoipCidrRequest& WithAsn(const Aws::String& value) { SetAsn(value); return *this;}
+
+    /**
+     * <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
+     */
+    inline AdvertiseByoipCidrRequest& WithAsn(Aws::String&& value) { SetAsn(std::move(value)); return *this;}
+
+    /**
+     * <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
+     */
+    inline AdvertiseByoipCidrRequest& WithAsn(const char* value) { SetAsn(value); return *this;}
+
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -121,6 +162,9 @@ namespace Model
 
     Aws::String m_cidr;
     bool m_cidrHasBeenSet = false;
+
+    Aws::String m_asn;
+    bool m_asnHasBeenSet = false;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;

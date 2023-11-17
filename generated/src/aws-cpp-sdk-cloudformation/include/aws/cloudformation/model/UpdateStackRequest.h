@@ -89,8 +89,8 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -100,8 +100,8 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -111,8 +111,8 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -122,8 +122,8 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -133,8 +133,8 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -144,8 +144,8 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -155,8 +155,8 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -166,8 +166,8 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -179,8 +179,8 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -191,8 +191,8 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -203,8 +203,8 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -215,8 +215,8 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -227,8 +227,8 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -239,8 +239,8 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -251,8 +251,8 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -263,8 +263,8 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */

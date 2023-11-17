@@ -95,42 +95,82 @@ namespace Model
 
 
     /**
-     * <p>The source of the event.</p>
+     * <p>The source of the event.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
-     * <p>The source of the event.</p>
+     * <p>The source of the event.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
-     * <p>The source of the event.</p>
+     * <p>The source of the event.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>The source of the event.</p>
+     * <p>The source of the event.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p>The source of the event.</p>
+     * <p>The source of the event.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
-     * <p>The source of the event.</p>
+     * <p>The source of the event.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline PutEventsRequestEntry& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
-     * <p>The source of the event.</p>
+     * <p>The source of the event.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline PutEventsRequestEntry& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
-     * <p>The source of the event.</p>
+     * <p>The source of the event.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline PutEventsRequestEntry& WithSource(const char* value) { SetSource(value); return *this;}
 
@@ -201,98 +241,178 @@ namespace Model
 
     /**
      * <p>Free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>
+     * fields to expect in the event detail.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline const Aws::String& GetDetailType() const{ return m_detailType; }
 
     /**
      * <p>Free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>
+     * fields to expect in the event detail.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline bool DetailTypeHasBeenSet() const { return m_detailTypeHasBeenSet; }
 
     /**
      * <p>Free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>
+     * fields to expect in the event detail.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline void SetDetailType(const Aws::String& value) { m_detailTypeHasBeenSet = true; m_detailType = value; }
 
     /**
      * <p>Free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>
+     * fields to expect in the event detail.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline void SetDetailType(Aws::String&& value) { m_detailTypeHasBeenSet = true; m_detailType = std::move(value); }
 
     /**
      * <p>Free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>
+     * fields to expect in the event detail.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline void SetDetailType(const char* value) { m_detailTypeHasBeenSet = true; m_detailType.assign(value); }
 
     /**
      * <p>Free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>
+     * fields to expect in the event detail.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline PutEventsRequestEntry& WithDetailType(const Aws::String& value) { SetDetailType(value); return *this;}
 
     /**
      * <p>Free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>
+     * fields to expect in the event detail.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline PutEventsRequestEntry& WithDetailType(Aws::String&& value) { SetDetailType(std::move(value)); return *this;}
 
     /**
      * <p>Free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>
+     * fields to expect in the event detail.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline PutEventsRequestEntry& WithDetailType(const char* value) { SetDetailType(value); return *this;}
 
 
     /**
      * <p>A valid JSON object. There is no other schema imposed. The JSON object may
-     * contain fields and nested subobjects.</p>
+     * contain fields and nested sub-objects.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline const Aws::String& GetDetail() const{ return m_detail; }
 
     /**
      * <p>A valid JSON object. There is no other schema imposed. The JSON object may
-     * contain fields and nested subobjects.</p>
+     * contain fields and nested sub-objects.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
 
     /**
      * <p>A valid JSON object. There is no other schema imposed. The JSON object may
-     * contain fields and nested subobjects.</p>
+     * contain fields and nested sub-objects.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline void SetDetail(const Aws::String& value) { m_detailHasBeenSet = true; m_detail = value; }
 
     /**
      * <p>A valid JSON object. There is no other schema imposed. The JSON object may
-     * contain fields and nested subobjects.</p>
+     * contain fields and nested sub-objects.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline void SetDetail(Aws::String&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
 
     /**
      * <p>A valid JSON object. There is no other schema imposed. The JSON object may
-     * contain fields and nested subobjects.</p>
+     * contain fields and nested sub-objects.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline void SetDetail(const char* value) { m_detailHasBeenSet = true; m_detail.assign(value); }
 
     /**
      * <p>A valid JSON object. There is no other schema imposed. The JSON object may
-     * contain fields and nested subobjects.</p>
+     * contain fields and nested sub-objects.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline PutEventsRequestEntry& WithDetail(const Aws::String& value) { SetDetail(value); return *this;}
 
     /**
      * <p>A valid JSON object. There is no other schema imposed. The JSON object may
-     * contain fields and nested subobjects.</p>
+     * contain fields and nested sub-objects.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline PutEventsRequestEntry& WithDetail(Aws::String&& value) { SetDetail(std::move(value)); return *this;}
 
     /**
      * <p>A valid JSON object. There is no other schema imposed. The JSON object may
-     * contain fields and nested subobjects.</p>
+     * contain fields and nested sub-objects.</p>  <p> <code>Detail</code>,
+     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a
+     * request that do not include each of those properties, EventBridge fails that
+     * entry. If you submit a request in which <i>none</i> of the entries have each of
+     * these properties, EventBridge fails the entire request. </p> 
      */
     inline PutEventsRequestEntry& WithDetail(const char* value) { SetDetail(value); return *this;}
 
@@ -301,10 +421,11 @@ namespace Model
      * <p>The name or ARN of the event bus to receive the event. Only the rules that
      * are associated with this event bus are used to match the event. If you omit
      * this, the default event bus is used.</p>  <p>If you're using a global
-     * endpoint with a custom bus, you must enter the name, not the ARN, of the event
-     * bus in either the primary or secondary Region here and the corresponding event
-     * bus in the other Region will be determined based on the endpoint referenced by
-     * the <code>EndpointId</code>.</p> 
+     * endpoint with a custom bus, you can enter either the name or Amazon Resource
+     * Name (ARN) of the event bus in either the primary or secondary Region here.
+     * EventBridge then determines the corresponding event bus in the other Region
+     * based on the endpoint referenced by the <code>EndpointId</code>. Specifying the
+     * event bus ARN is preferred.</p> 
      */
     inline const Aws::String& GetEventBusName() const{ return m_eventBusName; }
 
@@ -312,10 +433,11 @@ namespace Model
      * <p>The name or ARN of the event bus to receive the event. Only the rules that
      * are associated with this event bus are used to match the event. If you omit
      * this, the default event bus is used.</p>  <p>If you're using a global
-     * endpoint with a custom bus, you must enter the name, not the ARN, of the event
-     * bus in either the primary or secondary Region here and the corresponding event
-     * bus in the other Region will be determined based on the endpoint referenced by
-     * the <code>EndpointId</code>.</p> 
+     * endpoint with a custom bus, you can enter either the name or Amazon Resource
+     * Name (ARN) of the event bus in either the primary or secondary Region here.
+     * EventBridge then determines the corresponding event bus in the other Region
+     * based on the endpoint referenced by the <code>EndpointId</code>. Specifying the
+     * event bus ARN is preferred.</p> 
      */
     inline bool EventBusNameHasBeenSet() const { return m_eventBusNameHasBeenSet; }
 
@@ -323,10 +445,11 @@ namespace Model
      * <p>The name or ARN of the event bus to receive the event. Only the rules that
      * are associated with this event bus are used to match the event. If you omit
      * this, the default event bus is used.</p>  <p>If you're using a global
-     * endpoint with a custom bus, you must enter the name, not the ARN, of the event
-     * bus in either the primary or secondary Region here and the corresponding event
-     * bus in the other Region will be determined based on the endpoint referenced by
-     * the <code>EndpointId</code>.</p> 
+     * endpoint with a custom bus, you can enter either the name or Amazon Resource
+     * Name (ARN) of the event bus in either the primary or secondary Region here.
+     * EventBridge then determines the corresponding event bus in the other Region
+     * based on the endpoint referenced by the <code>EndpointId</code>. Specifying the
+     * event bus ARN is preferred.</p> 
      */
     inline void SetEventBusName(const Aws::String& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = value; }
 
@@ -334,10 +457,11 @@ namespace Model
      * <p>The name or ARN of the event bus to receive the event. Only the rules that
      * are associated with this event bus are used to match the event. If you omit
      * this, the default event bus is used.</p>  <p>If you're using a global
-     * endpoint with a custom bus, you must enter the name, not the ARN, of the event
-     * bus in either the primary or secondary Region here and the corresponding event
-     * bus in the other Region will be determined based on the endpoint referenced by
-     * the <code>EndpointId</code>.</p> 
+     * endpoint with a custom bus, you can enter either the name or Amazon Resource
+     * Name (ARN) of the event bus in either the primary or secondary Region here.
+     * EventBridge then determines the corresponding event bus in the other Region
+     * based on the endpoint referenced by the <code>EndpointId</code>. Specifying the
+     * event bus ARN is preferred.</p> 
      */
     inline void SetEventBusName(Aws::String&& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = std::move(value); }
 
@@ -345,10 +469,11 @@ namespace Model
      * <p>The name or ARN of the event bus to receive the event. Only the rules that
      * are associated with this event bus are used to match the event. If you omit
      * this, the default event bus is used.</p>  <p>If you're using a global
-     * endpoint with a custom bus, you must enter the name, not the ARN, of the event
-     * bus in either the primary or secondary Region here and the corresponding event
-     * bus in the other Region will be determined based on the endpoint referenced by
-     * the <code>EndpointId</code>.</p> 
+     * endpoint with a custom bus, you can enter either the name or Amazon Resource
+     * Name (ARN) of the event bus in either the primary or secondary Region here.
+     * EventBridge then determines the corresponding event bus in the other Region
+     * based on the endpoint referenced by the <code>EndpointId</code>. Specifying the
+     * event bus ARN is preferred.</p> 
      */
     inline void SetEventBusName(const char* value) { m_eventBusNameHasBeenSet = true; m_eventBusName.assign(value); }
 
@@ -356,10 +481,11 @@ namespace Model
      * <p>The name or ARN of the event bus to receive the event. Only the rules that
      * are associated with this event bus are used to match the event. If you omit
      * this, the default event bus is used.</p>  <p>If you're using a global
-     * endpoint with a custom bus, you must enter the name, not the ARN, of the event
-     * bus in either the primary or secondary Region here and the corresponding event
-     * bus in the other Region will be determined based on the endpoint referenced by
-     * the <code>EndpointId</code>.</p> 
+     * endpoint with a custom bus, you can enter either the name or Amazon Resource
+     * Name (ARN) of the event bus in either the primary or secondary Region here.
+     * EventBridge then determines the corresponding event bus in the other Region
+     * based on the endpoint referenced by the <code>EndpointId</code>. Specifying the
+     * event bus ARN is preferred.</p> 
      */
     inline PutEventsRequestEntry& WithEventBusName(const Aws::String& value) { SetEventBusName(value); return *this;}
 
@@ -367,10 +493,11 @@ namespace Model
      * <p>The name or ARN of the event bus to receive the event. Only the rules that
      * are associated with this event bus are used to match the event. If you omit
      * this, the default event bus is used.</p>  <p>If you're using a global
-     * endpoint with a custom bus, you must enter the name, not the ARN, of the event
-     * bus in either the primary or secondary Region here and the corresponding event
-     * bus in the other Region will be determined based on the endpoint referenced by
-     * the <code>EndpointId</code>.</p> 
+     * endpoint with a custom bus, you can enter either the name or Amazon Resource
+     * Name (ARN) of the event bus in either the primary or secondary Region here.
+     * EventBridge then determines the corresponding event bus in the other Region
+     * based on the endpoint referenced by the <code>EndpointId</code>. Specifying the
+     * event bus ARN is preferred.</p> 
      */
     inline PutEventsRequestEntry& WithEventBusName(Aws::String&& value) { SetEventBusName(std::move(value)); return *this;}
 
@@ -378,10 +505,11 @@ namespace Model
      * <p>The name or ARN of the event bus to receive the event. Only the rules that
      * are associated with this event bus are used to match the event. If you omit
      * this, the default event bus is used.</p>  <p>If you're using a global
-     * endpoint with a custom bus, you must enter the name, not the ARN, of the event
-     * bus in either the primary or secondary Region here and the corresponding event
-     * bus in the other Region will be determined based on the endpoint referenced by
-     * the <code>EndpointId</code>.</p> 
+     * endpoint with a custom bus, you can enter either the name or Amazon Resource
+     * Name (ARN) of the event bus in either the primary or secondary Region here.
+     * EventBridge then determines the corresponding event bus in the other Region
+     * based on the endpoint referenced by the <code>EndpointId</code>. Specifying the
+     * event bus ARN is preferred.</p> 
      */
     inline PutEventsRequestEntry& WithEventBusName(const char* value) { SetEventBusName(value); return *this;}
 

@@ -32,7 +32,8 @@ namespace Model
    * CloudWatch Internet Monitor creates a health event. Also defines whether a local
    * threshold is enabled or disabled, and the minimum percentage of overall traffic
    * that must be impacted by an issue before Internet Monitor creates an event when
-   * a threshold is crossed for a local health score.</p> <p>For more information,
+   * a threshold is crossed for a local health score.</p> <p>If you don't set a local
+   * health event threshold, the default value is 60%.</p> <p>For more information,
    * see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview">
    * Change health event thresholds</a> in the Internet Monitor section of the
@@ -116,28 +117,32 @@ namespace Model
     /**
      * <p>The minimum percentage of overall traffic for an application that must be
      * impacted by an issue before Internet Monitor creates an event when a threshold
-     * is crossed for a local health score.</p>
+     * is crossed for a local health score.</p> <p>If you don't set a minimum traffic
+     * impact threshold, the default value is 0.01%.</p>
      */
     inline double GetMinTrafficImpact() const{ return m_minTrafficImpact; }
 
     /**
      * <p>The minimum percentage of overall traffic for an application that must be
      * impacted by an issue before Internet Monitor creates an event when a threshold
-     * is crossed for a local health score.</p>
+     * is crossed for a local health score.</p> <p>If you don't set a minimum traffic
+     * impact threshold, the default value is 0.01%.</p>
      */
     inline bool MinTrafficImpactHasBeenSet() const { return m_minTrafficImpactHasBeenSet; }
 
     /**
      * <p>The minimum percentage of overall traffic for an application that must be
      * impacted by an issue before Internet Monitor creates an event when a threshold
-     * is crossed for a local health score.</p>
+     * is crossed for a local health score.</p> <p>If you don't set a minimum traffic
+     * impact threshold, the default value is 0.01%.</p>
      */
     inline void SetMinTrafficImpact(double value) { m_minTrafficImpactHasBeenSet = true; m_minTrafficImpact = value; }
 
     /**
      * <p>The minimum percentage of overall traffic for an application that must be
      * impacted by an issue before Internet Monitor creates an event when a threshold
-     * is crossed for a local health score.</p>
+     * is crossed for a local health score.</p> <p>If you don't set a minimum traffic
+     * impact threshold, the default value is 0.01%.</p>
      */
     inline LocalHealthEventsConfig& WithMinTrafficImpact(double value) { SetMinTrafficImpact(value); return *this;}
 

@@ -208,7 +208,8 @@ namespace Model
 
     /**
      * <p>Indicates the service used to execute the pre and/or post scripts.</p> <ul>
-     * <li> <p>If you are using custom SSM documents, specify
+     * <li> <p>If you are using custom SSM documents or automating
+     * application-consistent snapshots of SAP HANA workloads, specify
      * <code>AWS_SYSTEMS_MANAGER</code>.</p> </li> <li> <p>If you are automating VSS
      * Backups, omit this parameter.</p> </li> </ul> <p>Default:
      * AWS_SYSTEMS_MANAGER</p>
@@ -217,7 +218,8 @@ namespace Model
 
     /**
      * <p>Indicates the service used to execute the pre and/or post scripts.</p> <ul>
-     * <li> <p>If you are using custom SSM documents, specify
+     * <li> <p>If you are using custom SSM documents or automating
+     * application-consistent snapshots of SAP HANA workloads, specify
      * <code>AWS_SYSTEMS_MANAGER</code>.</p> </li> <li> <p>If you are automating VSS
      * Backups, omit this parameter.</p> </li> </ul> <p>Default:
      * AWS_SYSTEMS_MANAGER</p>
@@ -226,7 +228,8 @@ namespace Model
 
     /**
      * <p>Indicates the service used to execute the pre and/or post scripts.</p> <ul>
-     * <li> <p>If you are using custom SSM documents, specify
+     * <li> <p>If you are using custom SSM documents or automating
+     * application-consistent snapshots of SAP HANA workloads, specify
      * <code>AWS_SYSTEMS_MANAGER</code>.</p> </li> <li> <p>If you are automating VSS
      * Backups, omit this parameter.</p> </li> </ul> <p>Default:
      * AWS_SYSTEMS_MANAGER</p>
@@ -235,7 +238,8 @@ namespace Model
 
     /**
      * <p>Indicates the service used to execute the pre and/or post scripts.</p> <ul>
-     * <li> <p>If you are using custom SSM documents, specify
+     * <li> <p>If you are using custom SSM documents or automating
+     * application-consistent snapshots of SAP HANA workloads, specify
      * <code>AWS_SYSTEMS_MANAGER</code>.</p> </li> <li> <p>If you are automating VSS
      * Backups, omit this parameter.</p> </li> </ul> <p>Default:
      * AWS_SYSTEMS_MANAGER</p>
@@ -244,7 +248,8 @@ namespace Model
 
     /**
      * <p>Indicates the service used to execute the pre and/or post scripts.</p> <ul>
-     * <li> <p>If you are using custom SSM documents, specify
+     * <li> <p>If you are using custom SSM documents or automating
+     * application-consistent snapshots of SAP HANA workloads, specify
      * <code>AWS_SYSTEMS_MANAGER</code>.</p> </li> <li> <p>If you are automating VSS
      * Backups, omit this parameter.</p> </li> </ul> <p>Default:
      * AWS_SYSTEMS_MANAGER</p>
@@ -253,7 +258,8 @@ namespace Model
 
     /**
      * <p>Indicates the service used to execute the pre and/or post scripts.</p> <ul>
-     * <li> <p>If you are using custom SSM documents, specify
+     * <li> <p>If you are using custom SSM documents or automating
+     * application-consistent snapshots of SAP HANA workloads, specify
      * <code>AWS_SYSTEMS_MANAGER</code>.</p> </li> <li> <p>If you are automating VSS
      * Backups, omit this parameter.</p> </li> </ul> <p>Default:
      * AWS_SYSTEMS_MANAGER</p>
@@ -266,9 +272,11 @@ namespace Model
      * <li> <p>If you are automating VSS backups, specify <code>AWS_VSS_BACKUP</code>.
      * In this case, Amazon Data Lifecycle Manager automatically uses the
      * <code>AWSEC2-CreateVssSnapshot</code> SSM document.</p> </li> <li> <p>If you are
-     * using a custom SSM document that you own, specify either the name or ARN of the
-     * SSM document. If you are using a custom SSM document that is shared with you,
-     * specify the ARN of the SSM document.</p> </li> </ul>
+     * automating application-consistent snapshots for SAP HANA workloads, specify
+     * <code>AWSSystemsManagerSAP-CreateDLMSnapshotForSAPHANA</code>.</p> </li> <li>
+     * <p>If you are using a custom SSM document that you own, specify either the name
+     * or ARN of the SSM document. If you are using a custom SSM document that is
+     * shared with you, specify the ARN of the SSM document.</p> </li> </ul>
      */
     inline const Aws::String& GetExecutionHandler() const{ return m_executionHandler; }
 
@@ -277,9 +285,11 @@ namespace Model
      * <li> <p>If you are automating VSS backups, specify <code>AWS_VSS_BACKUP</code>.
      * In this case, Amazon Data Lifecycle Manager automatically uses the
      * <code>AWSEC2-CreateVssSnapshot</code> SSM document.</p> </li> <li> <p>If you are
-     * using a custom SSM document that you own, specify either the name or ARN of the
-     * SSM document. If you are using a custom SSM document that is shared with you,
-     * specify the ARN of the SSM document.</p> </li> </ul>
+     * automating application-consistent snapshots for SAP HANA workloads, specify
+     * <code>AWSSystemsManagerSAP-CreateDLMSnapshotForSAPHANA</code>.</p> </li> <li>
+     * <p>If you are using a custom SSM document that you own, specify either the name
+     * or ARN of the SSM document. If you are using a custom SSM document that is
+     * shared with you, specify the ARN of the SSM document.</p> </li> </ul>
      */
     inline bool ExecutionHandlerHasBeenSet() const { return m_executionHandlerHasBeenSet; }
 
@@ -288,9 +298,11 @@ namespace Model
      * <li> <p>If you are automating VSS backups, specify <code>AWS_VSS_BACKUP</code>.
      * In this case, Amazon Data Lifecycle Manager automatically uses the
      * <code>AWSEC2-CreateVssSnapshot</code> SSM document.</p> </li> <li> <p>If you are
-     * using a custom SSM document that you own, specify either the name or ARN of the
-     * SSM document. If you are using a custom SSM document that is shared with you,
-     * specify the ARN of the SSM document.</p> </li> </ul>
+     * automating application-consistent snapshots for SAP HANA workloads, specify
+     * <code>AWSSystemsManagerSAP-CreateDLMSnapshotForSAPHANA</code>.</p> </li> <li>
+     * <p>If you are using a custom SSM document that you own, specify either the name
+     * or ARN of the SSM document. If you are using a custom SSM document that is
+     * shared with you, specify the ARN of the SSM document.</p> </li> </ul>
      */
     inline void SetExecutionHandler(const Aws::String& value) { m_executionHandlerHasBeenSet = true; m_executionHandler = value; }
 
@@ -299,9 +311,11 @@ namespace Model
      * <li> <p>If you are automating VSS backups, specify <code>AWS_VSS_BACKUP</code>.
      * In this case, Amazon Data Lifecycle Manager automatically uses the
      * <code>AWSEC2-CreateVssSnapshot</code> SSM document.</p> </li> <li> <p>If you are
-     * using a custom SSM document that you own, specify either the name or ARN of the
-     * SSM document. If you are using a custom SSM document that is shared with you,
-     * specify the ARN of the SSM document.</p> </li> </ul>
+     * automating application-consistent snapshots for SAP HANA workloads, specify
+     * <code>AWSSystemsManagerSAP-CreateDLMSnapshotForSAPHANA</code>.</p> </li> <li>
+     * <p>If you are using a custom SSM document that you own, specify either the name
+     * or ARN of the SSM document. If you are using a custom SSM document that is
+     * shared with you, specify the ARN of the SSM document.</p> </li> </ul>
      */
     inline void SetExecutionHandler(Aws::String&& value) { m_executionHandlerHasBeenSet = true; m_executionHandler = std::move(value); }
 
@@ -310,9 +324,11 @@ namespace Model
      * <li> <p>If you are automating VSS backups, specify <code>AWS_VSS_BACKUP</code>.
      * In this case, Amazon Data Lifecycle Manager automatically uses the
      * <code>AWSEC2-CreateVssSnapshot</code> SSM document.</p> </li> <li> <p>If you are
-     * using a custom SSM document that you own, specify either the name or ARN of the
-     * SSM document. If you are using a custom SSM document that is shared with you,
-     * specify the ARN of the SSM document.</p> </li> </ul>
+     * automating application-consistent snapshots for SAP HANA workloads, specify
+     * <code>AWSSystemsManagerSAP-CreateDLMSnapshotForSAPHANA</code>.</p> </li> <li>
+     * <p>If you are using a custom SSM document that you own, specify either the name
+     * or ARN of the SSM document. If you are using a custom SSM document that is
+     * shared with you, specify the ARN of the SSM document.</p> </li> </ul>
      */
     inline void SetExecutionHandler(const char* value) { m_executionHandlerHasBeenSet = true; m_executionHandler.assign(value); }
 
@@ -321,9 +337,11 @@ namespace Model
      * <li> <p>If you are automating VSS backups, specify <code>AWS_VSS_BACKUP</code>.
      * In this case, Amazon Data Lifecycle Manager automatically uses the
      * <code>AWSEC2-CreateVssSnapshot</code> SSM document.</p> </li> <li> <p>If you are
-     * using a custom SSM document that you own, specify either the name or ARN of the
-     * SSM document. If you are using a custom SSM document that is shared with you,
-     * specify the ARN of the SSM document.</p> </li> </ul>
+     * automating application-consistent snapshots for SAP HANA workloads, specify
+     * <code>AWSSystemsManagerSAP-CreateDLMSnapshotForSAPHANA</code>.</p> </li> <li>
+     * <p>If you are using a custom SSM document that you own, specify either the name
+     * or ARN of the SSM document. If you are using a custom SSM document that is
+     * shared with you, specify the ARN of the SSM document.</p> </li> </ul>
      */
     inline Script& WithExecutionHandler(const Aws::String& value) { SetExecutionHandler(value); return *this;}
 
@@ -332,9 +350,11 @@ namespace Model
      * <li> <p>If you are automating VSS backups, specify <code>AWS_VSS_BACKUP</code>.
      * In this case, Amazon Data Lifecycle Manager automatically uses the
      * <code>AWSEC2-CreateVssSnapshot</code> SSM document.</p> </li> <li> <p>If you are
-     * using a custom SSM document that you own, specify either the name or ARN of the
-     * SSM document. If you are using a custom SSM document that is shared with you,
-     * specify the ARN of the SSM document.</p> </li> </ul>
+     * automating application-consistent snapshots for SAP HANA workloads, specify
+     * <code>AWSSystemsManagerSAP-CreateDLMSnapshotForSAPHANA</code>.</p> </li> <li>
+     * <p>If you are using a custom SSM document that you own, specify either the name
+     * or ARN of the SSM document. If you are using a custom SSM document that is
+     * shared with you, specify the ARN of the SSM document.</p> </li> </ul>
      */
     inline Script& WithExecutionHandler(Aws::String&& value) { SetExecutionHandler(std::move(value)); return *this;}
 
@@ -343,9 +363,11 @@ namespace Model
      * <li> <p>If you are automating VSS backups, specify <code>AWS_VSS_BACKUP</code>.
      * In this case, Amazon Data Lifecycle Manager automatically uses the
      * <code>AWSEC2-CreateVssSnapshot</code> SSM document.</p> </li> <li> <p>If you are
-     * using a custom SSM document that you own, specify either the name or ARN of the
-     * SSM document. If you are using a custom SSM document that is shared with you,
-     * specify the ARN of the SSM document.</p> </li> </ul>
+     * automating application-consistent snapshots for SAP HANA workloads, specify
+     * <code>AWSSystemsManagerSAP-CreateDLMSnapshotForSAPHANA</code>.</p> </li> <li>
+     * <p>If you are using a custom SSM document that you own, specify either the name
+     * or ARN of the SSM document. If you are using a custom SSM document that is
+     * shared with you, specify the ARN of the SSM document.</p> </li> </ul>
      */
     inline Script& WithExecutionHandler(const char* value) { SetExecutionHandler(value); return *this;}
 

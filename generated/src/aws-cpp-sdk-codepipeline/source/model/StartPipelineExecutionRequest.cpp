@@ -16,7 +16,8 @@ StartPipelineExecutionRequest::StartPipelineExecutionRequest() :
     m_nameHasBeenSet(false),
     m_variablesHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
+    m_clientRequestTokenHasBeenSet(true),
+    m_sourceRevisionsHasBeenSet(false)
 {
 }
 
@@ -44,6 +45,17 @@ Aws::String StartPipelineExecutionRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("clientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_sourceRevisionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> sourceRevisionsJsonList(m_sourceRevisions.size());
+   for(unsigned sourceRevisionsIndex = 0; sourceRevisionsIndex < sourceRevisionsJsonList.GetLength(); ++sourceRevisionsIndex)
+   {
+     sourceRevisionsJsonList[sourceRevisionsIndex].AsObject(m_sourceRevisions[sourceRevisionsIndex].Jsonize());
+   }
+   payload.WithArray("sourceRevisions", std::move(sourceRevisionsJsonList));
 
   }
 

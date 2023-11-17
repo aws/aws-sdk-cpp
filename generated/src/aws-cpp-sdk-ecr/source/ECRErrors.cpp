@@ -36,8 +36,10 @@ namespace ECRErrorMapper
 static const int IMAGE_DIGEST_DOES_NOT_MATCH_HASH = HashingUtils::HashString("ImageDigestDoesNotMatchException");
 static const int IMAGE_TAG_ALREADY_EXISTS_HASH = HashingUtils::HashString("ImageTagAlreadyExistsException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int SECRET_NOT_FOUND_HASH = HashingUtils::HashString("SecretNotFoundException");
 static const int LAYER_INACCESSIBLE_HASH = HashingUtils::HashString("LayerInaccessibleException");
 static const int UNSUPPORTED_UPSTREAM_REGISTRY_HASH = HashingUtils::HashString("UnsupportedUpstreamRegistryException");
+static const int UNABLE_TO_ACCESS_SECRET_HASH = HashingUtils::HashString("UnableToAccessSecretException");
 static const int REPOSITORY_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("RepositoryPolicyNotFoundException");
 static const int SCAN_NOT_FOUND_HASH = HashingUtils::HashString("ScanNotFoundException");
 static const int LAYER_PART_TOO_SMALL_HASH = HashingUtils::HashString("LayerPartTooSmallException");
@@ -58,8 +60,11 @@ static const int LIFECYCLE_POLICY_PREVIEW_IN_PROGRESS_HASH = HashingUtils::HashS
 static const int EMPTY_UPLOAD_HASH = HashingUtils::HashString("EmptyUploadException");
 static const int REPOSITORY_ALREADY_EXISTS_HASH = HashingUtils::HashString("RepositoryAlreadyExistsException");
 static const int UNSUPPORTED_IMAGE_TYPE_HASH = HashingUtils::HashString("UnsupportedImageTypeException");
+static const int UNABLE_TO_GET_UPSTREAM_LAYER_HASH = HashingUtils::HashString("UnableToGetUpstreamLayerException");
 static const int KMS_HASH = HashingUtils::HashString("KmsException");
+static const int UNABLE_TO_DECRYPT_SECRET_VALUE_HASH = HashingUtils::HashString("UnableToDecryptSecretValueException");
 static const int IMAGE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ImageAlreadyExistsException");
+static const int UNABLE_TO_GET_UPSTREAM_IMAGE_HASH = HashingUtils::HashString("UnableToGetUpstreamImageException");
 static const int LAYER_ALREADY_EXISTS_HASH = HashingUtils::HashString("LayerAlreadyExistsException");
 static const int PULL_THROUGH_CACHE_RULE_ALREADY_EXISTS_HASH = HashingUtils::HashString("PullThroughCacheRuleAlreadyExistsException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
@@ -83,6 +88,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LIMIT_EXCEEDED), true);
   }
+  else if (hashCode == SECRET_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::SECRET_NOT_FOUND), false);
+  }
   else if (hashCode == LAYER_INACCESSIBLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LAYER_INACCESSIBLE), false);
@@ -90,6 +99,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == UNSUPPORTED_UPSTREAM_REGISTRY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::UNSUPPORTED_UPSTREAM_REGISTRY), false);
+  }
+  else if (hashCode == UNABLE_TO_ACCESS_SECRET_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::UNABLE_TO_ACCESS_SECRET), false);
   }
   else if (hashCode == REPOSITORY_POLICY_NOT_FOUND_HASH)
   {
@@ -171,13 +184,25 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::UNSUPPORTED_IMAGE_TYPE), false);
   }
+  else if (hashCode == UNABLE_TO_GET_UPSTREAM_LAYER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::UNABLE_TO_GET_UPSTREAM_LAYER), false);
+  }
   else if (hashCode == KMS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::KMS), false);
   }
+  else if (hashCode == UNABLE_TO_DECRYPT_SECRET_VALUE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::UNABLE_TO_DECRYPT_SECRET_VALUE), false);
+  }
   else if (hashCode == IMAGE_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::IMAGE_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == UNABLE_TO_GET_UPSTREAM_IMAGE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::UNABLE_TO_GET_UPSTREAM_IMAGE), false);
   }
   else if (hashCode == LAYER_ALREADY_EXISTS_HASH)
   {

@@ -51,6 +51,7 @@ DBCluster::DBCluster() :
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_replicationSourceIdentifierHasBeenSet(false),
     m_readReplicaIdentifiersHasBeenSet(false),
+    m_statusInfosHasBeenSet(false),
     m_dBClusterMembersHasBeenSet(false),
     m_vpcSecurityGroupsHasBeenSet(false),
     m_hostedZoneIdHasBeenSet(false),
@@ -154,6 +155,7 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_replicationSourceIdentifierHasBeenSet(false),
     m_readReplicaIdentifiersHasBeenSet(false),
+    m_statusInfosHasBeenSet(false),
     m_dBClusterMembersHasBeenSet(false),
     m_vpcSecurityGroupsHasBeenSet(false),
     m_hostedZoneIdHasBeenSet(false),
@@ -412,6 +414,18 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       }
 
       m_readReplicaIdentifiersHasBeenSet = true;
+    }
+    XmlNode statusInfosNode = resultNode.FirstChild("StatusInfos");
+    if(!statusInfosNode.IsNull())
+    {
+      XmlNode statusInfosMember = statusInfosNode.FirstChild("DBClusterStatusInfo");
+      while(!statusInfosMember.IsNull())
+      {
+        m_statusInfos.push_back(statusInfosMember);
+        statusInfosMember = statusInfosMember.NextNode("DBClusterStatusInfo");
+      }
+
+      m_statusInfosHasBeenSet = true;
     }
     XmlNode dBClusterMembersNode = resultNode.FirstChild("DBClusterMembers");
     if(!dBClusterMembersNode.IsNull())
@@ -898,6 +912,17 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       }
   }
 
+  if(m_statusInfosHasBeenSet)
+  {
+      unsigned statusInfosIdx = 1;
+      for(auto& item : m_statusInfos)
+      {
+        Aws::StringStream statusInfosSs;
+        statusInfosSs << location << index << locationValue << ".DBClusterStatusInfo." << statusInfosIdx++;
+        item.OutputToStream(oStream, statusInfosSs.str().c_str());
+      }
+  }
+
   if(m_dBClusterMembersHasBeenSet)
   {
       unsigned dBClusterMembersIdx = 1;
@@ -1311,6 +1336,16 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_readReplicaIdentifiers)
       {
         oStream << location << ".ReadReplicaIdentifier." << readReplicaIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_statusInfosHasBeenSet)
+  {
+      unsigned statusInfosIdx = 1;
+      for(auto& item : m_statusInfos)
+      {
+        Aws::StringStream statusInfosSs;
+        statusInfosSs << location <<  ".DBClusterStatusInfo." << statusInfosIdx++;
+        item.OutputToStream(oStream, statusInfosSs.str().c_str());
       }
   }
   if(m_dBClusterMembersHasBeenSet)

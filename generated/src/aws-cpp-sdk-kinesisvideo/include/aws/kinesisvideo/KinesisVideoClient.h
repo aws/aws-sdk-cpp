@@ -311,12 +311,9 @@ namespace KinesisVideo
         }
 
         /**
-         *  <p>This API is related to <a
-         * href="https://docs.aws.amazon.com/kinesisvideostreams-webrtc-dg/latest/devguide/webrtc-ingestion.html">WebRTC
-         * Ingestion</a> and is only available in the <code>us-west-2</code> region.</p>
-         *  <p>Returns the most current information about the channel. Specify
-         * the <code>ChannelName</code> or <code>ChannelARN</code> in the
-         * input.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the most current information about the channel. Specify the
+         * <code>ChannelName</code> or <code>ChannelARN</code> in the input.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMediaStorageConfiguration">AWS
          * API Reference</a></p>
          */
@@ -787,17 +784,16 @@ namespace KinesisVideo
         }
 
         /**
-         * <p> Increases or decreases the stream's data retention period by the value that
+         * <p>Increases or decreases the stream's data retention period by the value that
          * you specify. To indicate whether you want to increase or decrease the data
          * retention period, specify the <code>Operation</code> parameter in the request
          * body. In the request, you must specify either the <code>StreamName</code> or the
-         * <code>StreamARN</code>. </p>  <p>The retention period that you specify
-         * replaces the current value.</p>  <p>This operation requires permission
-         * for the <code>KinesisVideo:UpdateDataRetention</code> action.</p> <p>Changing
-         * the data retention period affects the data in the stream as follows:</p> <ul>
-         * <li> <p>If the data retention period is increased, existing data is retained for
-         * the new retention period. For example, if the data retention period is increased
-         * from one hour to seven hours, all existing data is retained for seven hours.</p>
+         * <code>StreamARN</code>. </p> <p>This operation requires permission for the
+         * <code>KinesisVideo:UpdateDataRetention</code> action.</p> <p>Changing the data
+         * retention period affects the data in the stream as follows:</p> <ul> <li> <p>If
+         * the data retention period is increased, existing data is retained for the new
+         * retention period. For example, if the data retention period is increased from
+         * one hour to seven hours, all existing data is retained for seven hours.</p>
          * </li> <li> <p>If the data retention period is decreased, existing data is
          * retained for the new retention period. For example, if the data retention period
          * is decreased from seven hours to one hour, all existing data is retained for one
@@ -853,20 +849,18 @@ namespace KinesisVideo
         }
 
         /**
-         *  <p>This API is related to <a
-         * href="https://docs.aws.amazon.com/kinesisvideostreams-webrtc-dg/latest/devguide/webrtc-ingestion.html">WebRTC
-         * Ingestion</a> and is only available in the <code>us-west-2</code> region.</p>
-         *  <p>Associates a <code>SignalingChannel</code> to a stream to store
-         * the media. There are two signaling modes that can specified :</p> <ul> <li>
-         * <p>If the <code>StorageStatus</code> is disabled, no data will be stored, and
-         * the <code>StreamARN</code> parameter will not be needed. </p> </li> <li> <p>If
-         * the <code>StorageStatus</code> is enabled, the data will be stored in the
-         * <code>StreamARN</code> provided. </p> </li> </ul>  <p>If
-         * <code>StorageStatus</code> is enabled, direct peer-to-peer (master-viewer)
-         * connections no longer occur. Peers connect directly to the storage session. You
-         * must call the <code>JoinStorageSession</code> API to trigger an SDP offer send
-         * and establish a connection between a peer and the storage session. </p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Associates a <code>SignalingChannel</code> to a stream to store the media.
+         * There are two signaling modes that you can specify :</p> <ul> <li> <p>If
+         * <code>StorageStatus</code> is enabled, the data will be stored in the
+         * <code>StreamARN</code> provided. In order for WebRTC Ingestion to work, the
+         * stream must have data retention enabled.</p> </li> <li> <p>If
+         * <code>StorageStatus</code> is disabled, no data will be stored, and the
+         * <code>StreamARN</code> parameter will not be needed. </p> </li> </ul>
+         *  <p>If <code>StorageStatus</code> is enabled, direct peer-to-peer
+         * (master-viewer) connections no longer occur. Peers connect directly to the
+         * storage session. You must call the <code>JoinStorageSession</code> API to
+         * trigger an SDP offer send and establish a connection between a peer and the
+         * storage session. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateMediaStorageConfiguration">AWS
          * API Reference</a></p>
          */

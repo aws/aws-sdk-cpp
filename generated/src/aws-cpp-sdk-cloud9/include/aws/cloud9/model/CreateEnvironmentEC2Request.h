@@ -293,7 +293,7 @@ namespace Model
     /**
      * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
      * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
-     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>From November 20,
+     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>From December 04,
      * 2023, you will be required to include the <code>imageId</code> parameter for the
      * <code>CreateEnvironmentEC2</code> action. This change will be reflected across
      * all direct methods of communicating with the API, such as Amazon Web Services
@@ -306,13 +306,12 @@ namespace Model
      * as it is fully supported. This change will only affect direct API consumers, and
      * not Cloud9 console users.</p> <p>Since Ubuntu 18.04 has ended standard support
      * as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p> <p> <b>AMI aliases
-     * </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
-     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
-     * <li> <p> <b>Amazon Linux (default):
-     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
+     * </b> </p> <ul> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code>
+     * </p> </li> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu
+     * 22.04: <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b>
+     * </p> <ul> <li> <p>Amazon Linux (default):
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
@@ -326,7 +325,7 @@ namespace Model
     /**
      * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
      * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
-     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>From November 20,
+     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>From December 04,
      * 2023, you will be required to include the <code>imageId</code> parameter for the
      * <code>CreateEnvironmentEC2</code> action. This change will be reflected across
      * all direct methods of communicating with the API, such as Amazon Web Services
@@ -339,13 +338,12 @@ namespace Model
      * as it is fully supported. This change will only affect direct API consumers, and
      * not Cloud9 console users.</p> <p>Since Ubuntu 18.04 has ended standard support
      * as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p> <p> <b>AMI aliases
-     * </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
-     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
-     * <li> <p> <b>Amazon Linux (default):
-     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
+     * </b> </p> <ul> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code>
+     * </p> </li> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu
+     * 22.04: <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b>
+     * </p> <ul> <li> <p>Amazon Linux (default):
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
@@ -359,7 +357,7 @@ namespace Model
     /**
      * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
      * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
-     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>From November 20,
+     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>From December 04,
      * 2023, you will be required to include the <code>imageId</code> parameter for the
      * <code>CreateEnvironmentEC2</code> action. This change will be reflected across
      * all direct methods of communicating with the API, such as Amazon Web Services
@@ -372,13 +370,12 @@ namespace Model
      * as it is fully supported. This change will only affect direct API consumers, and
      * not Cloud9 console users.</p> <p>Since Ubuntu 18.04 has ended standard support
      * as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p> <p> <b>AMI aliases
-     * </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
-     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
-     * <li> <p> <b>Amazon Linux (default):
-     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
+     * </b> </p> <ul> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code>
+     * </p> </li> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu
+     * 22.04: <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b>
+     * </p> <ul> <li> <p>Amazon Linux (default):
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
@@ -392,7 +389,7 @@ namespace Model
     /**
      * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
      * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
-     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>From November 20,
+     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>From December 04,
      * 2023, you will be required to include the <code>imageId</code> parameter for the
      * <code>CreateEnvironmentEC2</code> action. This change will be reflected across
      * all direct methods of communicating with the API, such as Amazon Web Services
@@ -405,13 +402,12 @@ namespace Model
      * as it is fully supported. This change will only affect direct API consumers, and
      * not Cloud9 console users.</p> <p>Since Ubuntu 18.04 has ended standard support
      * as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p> <p> <b>AMI aliases
-     * </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
-     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
-     * <li> <p> <b>Amazon Linux (default):
-     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
+     * </b> </p> <ul> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code>
+     * </p> </li> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu
+     * 22.04: <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b>
+     * </p> <ul> <li> <p>Amazon Linux (default):
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
@@ -425,7 +421,7 @@ namespace Model
     /**
      * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
      * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
-     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>From November 20,
+     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>From December 04,
      * 2023, you will be required to include the <code>imageId</code> parameter for the
      * <code>CreateEnvironmentEC2</code> action. This change will be reflected across
      * all direct methods of communicating with the API, such as Amazon Web Services
@@ -438,13 +434,12 @@ namespace Model
      * as it is fully supported. This change will only affect direct API consumers, and
      * not Cloud9 console users.</p> <p>Since Ubuntu 18.04 has ended standard support
      * as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p> <p> <b>AMI aliases
-     * </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
-     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
-     * <li> <p> <b>Amazon Linux (default):
-     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
+     * </b> </p> <ul> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code>
+     * </p> </li> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu
+     * 22.04: <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b>
+     * </p> <ul> <li> <p>Amazon Linux (default):
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
@@ -458,7 +453,7 @@ namespace Model
     /**
      * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
      * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
-     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>From November 20,
+     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>From December 04,
      * 2023, you will be required to include the <code>imageId</code> parameter for the
      * <code>CreateEnvironmentEC2</code> action. This change will be reflected across
      * all direct methods of communicating with the API, such as Amazon Web Services
@@ -471,13 +466,12 @@ namespace Model
      * as it is fully supported. This change will only affect direct API consumers, and
      * not Cloud9 console users.</p> <p>Since Ubuntu 18.04 has ended standard support
      * as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p> <p> <b>AMI aliases
-     * </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
-     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
-     * <li> <p> <b>Amazon Linux (default):
-     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
+     * </b> </p> <ul> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code>
+     * </p> </li> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu
+     * 22.04: <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b>
+     * </p> <ul> <li> <p>Amazon Linux (default):
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
@@ -491,7 +485,7 @@ namespace Model
     /**
      * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
      * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
-     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>From November 20,
+     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>From December 04,
      * 2023, you will be required to include the <code>imageId</code> parameter for the
      * <code>CreateEnvironmentEC2</code> action. This change will be reflected across
      * all direct methods of communicating with the API, such as Amazon Web Services
@@ -504,13 +498,12 @@ namespace Model
      * as it is fully supported. This change will only affect direct API consumers, and
      * not Cloud9 console users.</p> <p>Since Ubuntu 18.04 has ended standard support
      * as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p> <p> <b>AMI aliases
-     * </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
-     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
-     * <li> <p> <b>Amazon Linux (default):
-     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
+     * </b> </p> <ul> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code>
+     * </p> </li> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu
+     * 22.04: <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b>
+     * </p> <ul> <li> <p>Amazon Linux (default):
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
@@ -524,7 +517,7 @@ namespace Model
     /**
      * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
      * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
-     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>From November 20,
+     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>From December 04,
      * 2023, you will be required to include the <code>imageId</code> parameter for the
      * <code>CreateEnvironmentEC2</code> action. This change will be reflected across
      * all direct methods of communicating with the API, such as Amazon Web Services
@@ -537,13 +530,12 @@ namespace Model
      * as it is fully supported. This change will only affect direct API consumers, and
      * not Cloud9 console users.</p> <p>Since Ubuntu 18.04 has ended standard support
      * as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p> <p> <b>AMI aliases
-     * </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
-     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
-     * <li> <p> <b>Amazon Linux (default):
-     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
+     * </b> </p> <ul> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code>
+     * </p> </li> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu
+     * 22.04: <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b>
+     * </p> <ul> <li> <p>Amazon Linux (default):
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:

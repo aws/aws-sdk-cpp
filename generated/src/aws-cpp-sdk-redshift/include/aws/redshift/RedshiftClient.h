@@ -771,6 +771,32 @@ namespace Redshift
         }
 
         /**
+         * <p>Creates an Amazon Redshift application for use with IAM Identity
+         * Center.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateRedshiftIdcApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRedshiftIdcApplicationOutcome CreateRedshiftIdcApplication(const Model::CreateRedshiftIdcApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRedshiftIdcApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateRedshiftIdcApplicationRequestT = Model::CreateRedshiftIdcApplicationRequest>
+        Model::CreateRedshiftIdcApplicationOutcomeCallable CreateRedshiftIdcApplicationCallable(const CreateRedshiftIdcApplicationRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::CreateRedshiftIdcApplication, request);
+        }
+
+        /**
+         * An Async wrapper for CreateRedshiftIdcApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateRedshiftIdcApplicationRequestT = Model::CreateRedshiftIdcApplicationRequest>
+        void CreateRedshiftIdcApplicationAsync(const CreateRedshiftIdcApplicationRequestT& request, const CreateRedshiftIdcApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::CreateRedshiftIdcApplication, request, handler, context);
+        }
+
+        /**
          * <p>Creates a scheduled action. A scheduled action contains a schedule and an
          * Amazon Redshift API action. For example, you can create a schedule of when to
          * run the <code>ResizeCluster</code> API operation. </p><p><h3>See Also:</h3>   <a
@@ -1270,6 +1296,32 @@ namespace Redshift
         void DeletePartnerAsync(const DeletePartnerRequestT& request, const DeletePartnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RedshiftClient::DeletePartner, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an Amazon Redshift IAM Identity Center application.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteRedshiftIdcApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRedshiftIdcApplicationOutcome DeleteRedshiftIdcApplication(const Model::DeleteRedshiftIdcApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRedshiftIdcApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteRedshiftIdcApplicationRequestT = Model::DeleteRedshiftIdcApplicationRequest>
+        Model::DeleteRedshiftIdcApplicationOutcomeCallable DeleteRedshiftIdcApplicationCallable(const DeleteRedshiftIdcApplicationRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::DeleteRedshiftIdcApplication, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteRedshiftIdcApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteRedshiftIdcApplicationRequestT = Model::DeleteRedshiftIdcApplicationRequest>
+        void DeleteRedshiftIdcApplicationAsync(const DeleteRedshiftIdcApplicationRequestT& request, const DeleteRedshiftIdcApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::DeleteRedshiftIdcApplication, request, handler, context);
         }
 
         /**
@@ -2268,6 +2320,32 @@ namespace Redshift
         void DescribePartnersAsync(const DescribePartnersRequestT& request, const DescribePartnersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RedshiftClient::DescribePartners, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the Amazon Redshift IAM Identity Center applications.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeRedshiftIdcApplications">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRedshiftIdcApplicationsOutcome DescribeRedshiftIdcApplications(const Model::DescribeRedshiftIdcApplicationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeRedshiftIdcApplications that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeRedshiftIdcApplicationsRequestT = Model::DescribeRedshiftIdcApplicationsRequest>
+        Model::DescribeRedshiftIdcApplicationsOutcomeCallable DescribeRedshiftIdcApplicationsCallable(const DescribeRedshiftIdcApplicationsRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::DescribeRedshiftIdcApplications, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeRedshiftIdcApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeRedshiftIdcApplicationsRequestT = Model::DescribeRedshiftIdcApplicationsRequest>
+        void DescribeRedshiftIdcApplicationsAsync(const DescribeRedshiftIdcApplicationsRequestT& request, const DescribeRedshiftIdcApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::DescribeRedshiftIdcApplications, request, handler, context);
         }
 
         /**
@@ -3280,6 +3358,32 @@ namespace Redshift
         void ModifyEventSubscriptionAsync(const ModifyEventSubscriptionRequestT& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RedshiftClient::ModifyEventSubscription, request, handler, context);
+        }
+
+        /**
+         * <p>Changes an existing Amazon Redshift IAM Identity Center
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyRedshiftIdcApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyRedshiftIdcApplicationOutcome ModifyRedshiftIdcApplication(const Model::ModifyRedshiftIdcApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyRedshiftIdcApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyRedshiftIdcApplicationRequestT = Model::ModifyRedshiftIdcApplicationRequest>
+        Model::ModifyRedshiftIdcApplicationOutcomeCallable ModifyRedshiftIdcApplicationCallable(const ModifyRedshiftIdcApplicationRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::ModifyRedshiftIdcApplication, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyRedshiftIdcApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyRedshiftIdcApplicationRequestT = Model::ModifyRedshiftIdcApplicationRequest>
+        void ModifyRedshiftIdcApplicationAsync(const ModifyRedshiftIdcApplicationRequestT& request, const ModifyRedshiftIdcApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::ModifyRedshiftIdcApplication, request, handler, context);
         }
 
         /**

@@ -33,7 +33,11 @@ Pipeline::Pipeline() :
     m_lastUpdatedAtHasBeenSet(false),
     m_ingestEndpointUrlsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
-    m_vpcEndpointsHasBeenSet(false)
+    m_vpcEndpointsHasBeenSet(false),
+    m_bufferOptionsHasBeenSet(false),
+    m_encryptionAtRestOptionsHasBeenSet(false),
+    m_serviceVpcEndpointsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -52,7 +56,11 @@ Pipeline::Pipeline(JsonView jsonValue) :
     m_lastUpdatedAtHasBeenSet(false),
     m_ingestEndpointUrlsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
-    m_vpcEndpointsHasBeenSet(false)
+    m_vpcEndpointsHasBeenSet(false),
+    m_bufferOptionsHasBeenSet(false),
+    m_encryptionAtRestOptionsHasBeenSet(false),
+    m_serviceVpcEndpointsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -149,6 +157,40 @@ Pipeline& Pipeline::operator =(JsonView jsonValue)
     m_vpcEndpointsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BufferOptions"))
+  {
+    m_bufferOptions = jsonValue.GetObject("BufferOptions");
+
+    m_bufferOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EncryptionAtRestOptions"))
+  {
+    m_encryptionAtRestOptions = jsonValue.GetObject("EncryptionAtRestOptions");
+
+    m_encryptionAtRestOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServiceVpcEndpoints"))
+  {
+    Aws::Utils::Array<JsonView> serviceVpcEndpointsJsonList = jsonValue.GetArray("ServiceVpcEndpoints");
+    for(unsigned serviceVpcEndpointsIndex = 0; serviceVpcEndpointsIndex < serviceVpcEndpointsJsonList.GetLength(); ++serviceVpcEndpointsIndex)
+    {
+      m_serviceVpcEndpoints.push_back(serviceVpcEndpointsJsonList[serviceVpcEndpointsIndex].AsObject());
+    }
+    m_serviceVpcEndpointsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -232,6 +274,40 @@ JsonValue Pipeline::Jsonize() const
      vpcEndpointsJsonList[vpcEndpointsIndex].AsObject(m_vpcEndpoints[vpcEndpointsIndex].Jsonize());
    }
    payload.WithArray("VpcEndpoints", std::move(vpcEndpointsJsonList));
+
+  }
+
+  if(m_bufferOptionsHasBeenSet)
+  {
+   payload.WithObject("BufferOptions", m_bufferOptions.Jsonize());
+
+  }
+
+  if(m_encryptionAtRestOptionsHasBeenSet)
+  {
+   payload.WithObject("EncryptionAtRestOptions", m_encryptionAtRestOptions.Jsonize());
+
+  }
+
+  if(m_serviceVpcEndpointsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> serviceVpcEndpointsJsonList(m_serviceVpcEndpoints.size());
+   for(unsigned serviceVpcEndpointsIndex = 0; serviceVpcEndpointsIndex < serviceVpcEndpointsJsonList.GetLength(); ++serviceVpcEndpointsIndex)
+   {
+     serviceVpcEndpointsJsonList[serviceVpcEndpointsIndex].AsObject(m_serviceVpcEndpoints[serviceVpcEndpointsIndex].Jsonize());
+   }
+   payload.WithArray("ServiceVpcEndpoints", std::move(serviceVpcEndpointsJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

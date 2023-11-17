@@ -35,7 +35,7 @@ namespace Model
    * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-fleet.html">Configure
    * Instance Fleets</a>. Without an allocation strategy, you may specify a maximum
    * of five instance type configurations for a fleet.</p>  <p>The instance
-   * fleet configuration is available only in Amazon EMR releases 4.8.0 and higher,
+   * fleet configuration is available only in Amazon EMR releases 4.8.0 and later,
    * excluding 5.0.x versions.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceTypeConfig">AWS
    * API Reference</a></p>

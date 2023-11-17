@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>A structure that describes the options for the access portal associated with
+   * an application that can be updated.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateApplicationPortalOptions">AWS
    * API Reference</a></p>
    */

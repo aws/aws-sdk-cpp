@@ -30,7 +30,13 @@ namespace Model
    * trigger.</p>  <p>This is only supported for the
    * <code>CodeStarSourceConnection</code> action type.</p>   <p>When a
    * trigger configuration is specified, default change detection for repository and
-   * branch commits is disabled.</p> <p><h3>See Also:</h3>   <a
+   * branch commits is disabled.</p>   <p>V2 type pipelines, along with
+   * triggers on Git tags and pipeline-level variables, are not currently supported
+   * for CloudFormation and CDK resources in CodePipeline. For more information about
+   * V2 type pipelines, see <a
+   * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
+   * types</a> in the <i>CodePipeline User Guide</i>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PipelineTriggerDeclaration">AWS
    * API Reference</a></p>
    */

@@ -74,37 +74,37 @@ namespace Model
 
 
     /**
-     * <p>The internally generated identifier of a health event.</p>
+     * <p>The internally-generated identifier of a health event.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
 
     /**
-     * <p>The internally generated identifier of a health event.</p>
+     * <p>The internally-generated identifier of a health event.</p>
      */
     inline void SetEventId(const Aws::String& value) { m_eventId = value; }
 
     /**
-     * <p>The internally generated identifier of a health event.</p>
+     * <p>The internally-generated identifier of a health event.</p>
      */
     inline void SetEventId(Aws::String&& value) { m_eventId = std::move(value); }
 
     /**
-     * <p>The internally generated identifier of a health event.</p>
+     * <p>The internally-generated identifier of a health event.</p>
      */
     inline void SetEventId(const char* value) { m_eventId.assign(value); }
 
     /**
-     * <p>The internally generated identifier of a health event.</p>
+     * <p>The internally-generated identifier of a health event.</p>
      */
     inline GetHealthEventResult& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
 
     /**
-     * <p>The internally generated identifier of a health event.</p>
+     * <p>The internally-generated identifier of a health event.</p>
      */
     inline GetHealthEventResult& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
 
     /**
-     * <p>The internally generated identifier of a health event.</p>
+     * <p>The internally-generated identifier of a health event.</p>
      */
     inline GetHealthEventResult& WithEventId(const char* value) { SetEventId(value); return *this;}
 

@@ -16,7 +16,6 @@ namespace Model
   enum class ListFlowAssociationResourceType
   {
     NOT_SET,
-    SMS_PHONE_NUMBER,
     VOICE_PHONE_NUMBER
   };
 

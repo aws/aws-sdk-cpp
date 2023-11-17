@@ -54,7 +54,8 @@ IpamPool::IpamPool() :
     m_awsService(IpamPoolAwsService::NOT_SET),
     m_awsServiceHasBeenSet(false),
     m_publicIpSource(IpamPoolPublicIpSource::NOT_SET),
-    m_publicIpSourceHasBeenSet(false)
+    m_publicIpSourceHasBeenSet(false),
+    m_sourceResourceHasBeenSet(false)
 {
 }
 
@@ -92,7 +93,8 @@ IpamPool::IpamPool(const XmlNode& xmlNode) :
     m_awsService(IpamPoolAwsService::NOT_SET),
     m_awsServiceHasBeenSet(false),
     m_publicIpSource(IpamPoolPublicIpSource::NOT_SET),
-    m_publicIpSourceHasBeenSet(false)
+    m_publicIpSourceHasBeenSet(false),
+    m_sourceResourceHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -253,6 +255,12 @@ IpamPool& IpamPool::operator =(const XmlNode& xmlNode)
       m_publicIpSource = IpamPoolPublicIpSourceMapper::GetIpamPoolPublicIpSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publicIpSourceNode.GetText()).c_str()).c_str());
       m_publicIpSourceHasBeenSet = true;
     }
+    XmlNode sourceResourceNode = resultNode.FirstChild("sourceResource");
+    if(!sourceResourceNode.IsNull())
+    {
+      m_sourceResource = sourceResourceNode;
+      m_sourceResourceHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -387,6 +395,13 @@ void IpamPool::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".PublicIpSource=" << IpamPoolPublicIpSourceMapper::GetNameForIpamPoolPublicIpSource(m_publicIpSource) << "&";
   }
 
+  if(m_sourceResourceHasBeenSet)
+  {
+      Aws::StringStream sourceResourceLocationAndMemberSs;
+      sourceResourceLocationAndMemberSs << location << index << locationValue << ".SourceResource";
+      m_sourceResource.OutputToStream(oStream, sourceResourceLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void IpamPool::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -494,6 +509,12 @@ void IpamPool::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_publicIpSourceHasBeenSet)
   {
       oStream << location << ".PublicIpSource=" << IpamPoolPublicIpSourceMapper::GetNameForIpamPoolPublicIpSource(m_publicIpSource) << "&";
+  }
+  if(m_sourceResourceHasBeenSet)
+  {
+      Aws::String sourceResourceLocationAndMember(location);
+      sourceResourceLocationAndMember += ".SourceResource";
+      m_sourceResource.OutputToStream(oStream, sourceResourceLocationAndMember.c_str());
   }
 }
 

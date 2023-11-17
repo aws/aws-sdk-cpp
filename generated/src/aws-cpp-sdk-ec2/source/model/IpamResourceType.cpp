@@ -25,6 +25,7 @@ namespace Aws
         static const int eip_HASH = HashingUtils::HashString("eip");
         static const int public_ipv4_pool_HASH = HashingUtils::HashString("public-ipv4-pool");
         static const int ipv6_pool_HASH = HashingUtils::HashString("ipv6-pool");
+        static const int eni_HASH = HashingUtils::HashString("eni");
 
 
         IpamResourceType GetIpamResourceTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == ipv6_pool_HASH)
           {
             return IpamResourceType::ipv6_pool;
+          }
+          else if (hashCode == eni_HASH)
+          {
+            return IpamResourceType::eni;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "public-ipv4-pool";
           case IpamResourceType::ipv6_pool:
             return "ipv6-pool";
+          case IpamResourceType::eni:
+            return "eni";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

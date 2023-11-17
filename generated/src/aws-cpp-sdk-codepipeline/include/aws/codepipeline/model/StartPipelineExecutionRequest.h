@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codepipeline/model/PipelineVariable.h>
+#include <aws/codepipeline/model/SourceRevisionOverride.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -187,6 +188,71 @@ namespace Model
      */
     inline StartPipelineExecutionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>A list that allows you to specify, or override, the source revision for a
+     * pipeline execution that's being started. A source revision is the version with
+     * all the changes to your application code, or source artifact, for the pipeline
+     * execution.</p>
+     */
+    inline const Aws::Vector<SourceRevisionOverride>& GetSourceRevisions() const{ return m_sourceRevisions; }
+
+    /**
+     * <p>A list that allows you to specify, or override, the source revision for a
+     * pipeline execution that's being started. A source revision is the version with
+     * all the changes to your application code, or source artifact, for the pipeline
+     * execution.</p>
+     */
+    inline bool SourceRevisionsHasBeenSet() const { return m_sourceRevisionsHasBeenSet; }
+
+    /**
+     * <p>A list that allows you to specify, or override, the source revision for a
+     * pipeline execution that's being started. A source revision is the version with
+     * all the changes to your application code, or source artifact, for the pipeline
+     * execution.</p>
+     */
+    inline void SetSourceRevisions(const Aws::Vector<SourceRevisionOverride>& value) { m_sourceRevisionsHasBeenSet = true; m_sourceRevisions = value; }
+
+    /**
+     * <p>A list that allows you to specify, or override, the source revision for a
+     * pipeline execution that's being started. A source revision is the version with
+     * all the changes to your application code, or source artifact, for the pipeline
+     * execution.</p>
+     */
+    inline void SetSourceRevisions(Aws::Vector<SourceRevisionOverride>&& value) { m_sourceRevisionsHasBeenSet = true; m_sourceRevisions = std::move(value); }
+
+    /**
+     * <p>A list that allows you to specify, or override, the source revision for a
+     * pipeline execution that's being started. A source revision is the version with
+     * all the changes to your application code, or source artifact, for the pipeline
+     * execution.</p>
+     */
+    inline StartPipelineExecutionRequest& WithSourceRevisions(const Aws::Vector<SourceRevisionOverride>& value) { SetSourceRevisions(value); return *this;}
+
+    /**
+     * <p>A list that allows you to specify, or override, the source revision for a
+     * pipeline execution that's being started. A source revision is the version with
+     * all the changes to your application code, or source artifact, for the pipeline
+     * execution.</p>
+     */
+    inline StartPipelineExecutionRequest& WithSourceRevisions(Aws::Vector<SourceRevisionOverride>&& value) { SetSourceRevisions(std::move(value)); return *this;}
+
+    /**
+     * <p>A list that allows you to specify, or override, the source revision for a
+     * pipeline execution that's being started. A source revision is the version with
+     * all the changes to your application code, or source artifact, for the pipeline
+     * execution.</p>
+     */
+    inline StartPipelineExecutionRequest& AddSourceRevisions(const SourceRevisionOverride& value) { m_sourceRevisionsHasBeenSet = true; m_sourceRevisions.push_back(value); return *this; }
+
+    /**
+     * <p>A list that allows you to specify, or override, the source revision for a
+     * pipeline execution that's being started. A source revision is the version with
+     * all the changes to your application code, or source artifact, for the pipeline
+     * execution.</p>
+     */
+    inline StartPipelineExecutionRequest& AddSourceRevisions(SourceRevisionOverride&& value) { m_sourceRevisionsHasBeenSet = true; m_sourceRevisions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -197,6 +263,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
+
+    Aws::Vector<SourceRevisionOverride> m_sourceRevisions;
+    bool m_sourceRevisionsHasBeenSet = false;
   };
 
 } // namespace Model

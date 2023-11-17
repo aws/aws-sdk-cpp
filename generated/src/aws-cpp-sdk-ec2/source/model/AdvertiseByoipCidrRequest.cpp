@@ -12,6 +12,7 @@ using namespace Aws::Utils;
 
 AdvertiseByoipCidrRequest::AdvertiseByoipCidrRequest() : 
     m_cidrHasBeenSet(false),
+    m_asnHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -24,6 +25,11 @@ Aws::String AdvertiseByoipCidrRequest::SerializePayload() const
   if(m_cidrHasBeenSet)
   {
     ss << "Cidr=" << StringUtils::URLEncode(m_cidr.c_str()) << "&";
+  }
+
+  if(m_asnHasBeenSet)
+  {
+    ss << "Asn=" << StringUtils::URLEncode(m_asn.c_str()) << "&";
   }
 
   if(m_dryRunHasBeenSet)

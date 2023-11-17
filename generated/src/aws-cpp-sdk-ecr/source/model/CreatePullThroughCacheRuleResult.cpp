@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePullThroughCacheRuleResult::CreatePullThroughCacheRuleResult()
+CreatePullThroughCacheRuleResult::CreatePullThroughCacheRuleResult() : 
+    m_upstreamRegistry(UpstreamRegistry::NOT_SET)
 {
 }
 
-CreatePullThroughCacheRuleResult::CreatePullThroughCacheRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+CreatePullThroughCacheRuleResult::CreatePullThroughCacheRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_upstreamRegistry(UpstreamRegistry::NOT_SET)
 {
   *this = result;
 }
@@ -50,6 +52,18 @@ CreatePullThroughCacheRuleResult& CreatePullThroughCacheRuleResult::operator =(c
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
+
+  }
+
+  if(jsonValue.ValueExists("upstreamRegistry"))
+  {
+    m_upstreamRegistry = UpstreamRegistryMapper::GetUpstreamRegistryForName(jsonValue.GetString("upstreamRegistry"));
+
+  }
+
+  if(jsonValue.ValueExists("credentialArn"))
+  {
+    m_credentialArn = jsonValue.GetString("credentialArn");
 
   }
 
