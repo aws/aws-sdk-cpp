@@ -24,6 +24,7 @@ if(AWSSDK_FOUND)
     return()
 endif()
 
+include(${CMAKE_CURRENT_LIST_DIR}/AWSSDKConfigVersion.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/sdksCommon.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/platformDeps.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/compiler_settings.cmake)
