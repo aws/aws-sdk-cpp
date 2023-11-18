@@ -526,7 +526,7 @@ namespace Aws
             TriggerTransferStatusUpdatedCallback(handle);
 
             auto putObjectRequest = m_transferConfig.putObjectTemplate
-                .WithChecksumAlgorithm(m_transferConfig.checksumAlgorithm)
+                .WithChecksumAlgorithm(m_transferConfig.computeContentMD5 ? S3::Model::ChecksumAlgorithm::NOT_SET : m_transferConfig.checksumAlgorithm)
                 .WithBucket(handle->GetBucketName())
                 .WithKey(handle->GetKey())
                 .WithContentLength(static_cast<long long>(handle->GetBytesTotalSize()))
