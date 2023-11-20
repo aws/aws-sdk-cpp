@@ -214,44 +214,28 @@ namespace Model
     inline CreateHostRequest& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 
 
-    /**
-     * <p>Tags for the host to be created.</p>
-     */
+    
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    /**
-     * <p>Tags for the host to be created.</p>
-     */
+    
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
-    /**
-     * <p>Tags for the host to be created.</p>
-     */
+    
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /**
-     * <p>Tags for the host to be created.</p>
-     */
+    
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
-    /**
-     * <p>Tags for the host to be created.</p>
-     */
+    
     inline CreateHostRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    /**
-     * <p>Tags for the host to be created.</p>
-     */
+    
     inline CreateHostRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
-    /**
-     * <p>Tags for the host to be created.</p>
-     */
+    
     inline CreateHostRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    /**
-     * <p>Tags for the host to be created.</p>
-     */
+    
     inline CreateHostRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:

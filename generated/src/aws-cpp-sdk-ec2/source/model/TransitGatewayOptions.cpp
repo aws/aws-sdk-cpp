@@ -36,6 +36,8 @@ TransitGatewayOptions::TransitGatewayOptions() :
     m_vpnEcmpSupportHasBeenSet(false),
     m_dnsSupport(DnsSupportValue::NOT_SET),
     m_dnsSupportHasBeenSet(false),
+    m_securityGroupReferencingSupport(SecurityGroupReferencingSupportValue::NOT_SET),
+    m_securityGroupReferencingSupportHasBeenSet(false),
     m_multicastSupport(MulticastSupportValue::NOT_SET),
     m_multicastSupportHasBeenSet(false)
 {
@@ -57,6 +59,8 @@ TransitGatewayOptions::TransitGatewayOptions(const XmlNode& xmlNode) :
     m_vpnEcmpSupportHasBeenSet(false),
     m_dnsSupport(DnsSupportValue::NOT_SET),
     m_dnsSupportHasBeenSet(false),
+    m_securityGroupReferencingSupport(SecurityGroupReferencingSupportValue::NOT_SET),
+    m_securityGroupReferencingSupportHasBeenSet(false),
     m_multicastSupport(MulticastSupportValue::NOT_SET),
     m_multicastSupportHasBeenSet(false)
 {
@@ -129,6 +133,12 @@ TransitGatewayOptions& TransitGatewayOptions::operator =(const XmlNode& xmlNode)
       m_dnsSupport = DnsSupportValueMapper::GetDnsSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dnsSupportNode.GetText()).c_str()).c_str());
       m_dnsSupportHasBeenSet = true;
     }
+    XmlNode securityGroupReferencingSupportNode = resultNode.FirstChild("securityGroupReferencingSupport");
+    if(!securityGroupReferencingSupportNode.IsNull())
+    {
+      m_securityGroupReferencingSupport = SecurityGroupReferencingSupportValueMapper::GetSecurityGroupReferencingSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(securityGroupReferencingSupportNode.GetText()).c_str()).c_str());
+      m_securityGroupReferencingSupportHasBeenSet = true;
+    }
     XmlNode multicastSupportNode = resultNode.FirstChild("multicastSupport");
     if(!multicastSupportNode.IsNull())
     {
@@ -191,6 +201,11 @@ void TransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".DnsSupport=" << DnsSupportValueMapper::GetNameForDnsSupportValue(m_dnsSupport) << "&";
   }
 
+  if(m_securityGroupReferencingSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SecurityGroupReferencingSupport=" << SecurityGroupReferencingSupportValueMapper::GetNameForSecurityGroupReferencingSupportValue(m_securityGroupReferencingSupport) << "&";
+  }
+
   if(m_multicastSupportHasBeenSet)
   {
       oStream << location << index << locationValue << ".MulticastSupport=" << MulticastSupportValueMapper::GetNameForMulticastSupportValue(m_multicastSupport) << "&";
@@ -239,6 +254,10 @@ void TransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_dnsSupportHasBeenSet)
   {
       oStream << location << ".DnsSupport=" << DnsSupportValueMapper::GetNameForDnsSupportValue(m_dnsSupport) << "&";
+  }
+  if(m_securityGroupReferencingSupportHasBeenSet)
+  {
+      oStream << location << ".SecurityGroupReferencingSupport=" << SecurityGroupReferencingSupportValueMapper::GetNameForSecurityGroupReferencingSupportValue(m_securityGroupReferencingSupport) << "&";
   }
   if(m_multicastSupportHasBeenSet)
   {

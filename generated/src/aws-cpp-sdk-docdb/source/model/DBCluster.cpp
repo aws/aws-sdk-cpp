@@ -57,7 +57,8 @@ DBCluster::DBCluster() :
     m_clusterCreateTimeHasBeenSet(false),
     m_enabledCloudwatchLogsExportsHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -98,7 +99,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_clusterCreateTimeHasBeenSet(false),
     m_enabledCloudwatchLogsExportsHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -337,6 +339,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_deletionProtection = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionProtectionNode.GetText()).c_str()).c_str());
       m_deletionProtectionHasBeenSet = true;
     }
+    XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
+    if(!storageTypeNode.IsNull())
+    {
+      m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
+      m_storageTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -534,6 +542,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
   }
 
+  if(m_storageTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -695,6 +708,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_deletionProtectionHasBeenSet)
   {
       oStream << location << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+  if(m_storageTypeHasBeenSet)
+  {
+      oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 }
 
