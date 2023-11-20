@@ -1325,7 +1325,12 @@ namespace EC2
          * possible. However, a small delay might occur.</p> <p>For information about VPC
          * security group quotas, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
-         * VPC quotas</a>.</p><p><h3>See Also:</h3>   <a
+         * VPC quotas</a>.</p>  <p>If you want to reference a security group across
+         * VPCs attached to a transit gateway using the <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">security
+         * group referencing feature</a>, note that you can only reference security groups
+         * for ingress rules. You cannot reference a security group for egress rules.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">AWS
          * API Reference</a></p>
          */
@@ -9647,9 +9652,9 @@ namespace EC2
         }
 
         /**
-         * <p>Describes the VPCs on the other side of a VPC peering connection that are
-         * referencing the security groups you've specified in this request.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the VPCs on the other side of a VPC peering connection or the VPCs
+         * attached to a transit gateway that are referencing the security groups you've
+         * specified in this request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupReferences">AWS
          * API Reference</a></p>
          */
@@ -10029,8 +10034,12 @@ namespace EC2
         /**
          * <p>Describes the stale security group rules for security groups in a specified
          * VPC. Rules are stale when they reference a deleted security group in the same
-         * VPC or in a peer VPC, or if they reference a security group in a peer VPC for
-         * which the VPC peering connection has been deleted.</p><p><h3>See Also:</h3>   <a
+         * VPC, peered VPC, or in separate VPCs attached to a transit gateway (with <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">security
+         * group referencing support</a> enabled). Rules can also be stale if they
+         * reference a security group in a peer VPC for which the VPC peering connection
+         * has been deleted or if they reference a security group in a VPC that has been
+         * detached from a transit gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStaleSecurityGroups">AWS
          * API Reference</a></p>
          */

@@ -47,20 +47,10 @@ enum class CodeStarconnectionsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  CONDITIONAL_CHECK_FAILED,
-  CONFLICT,
-  INTERNAL_SERVER,
-  INVALID_INPUT,
+  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   LIMIT_EXCEEDED,
-  RESOURCE_ALREADY_EXISTS,
   RESOURCE_UNAVAILABLE,
-  RETRY_LATEST_COMMIT_FAILED,
-  SYNC_BLOCKER_DOES_NOT_EXIST,
-  SYNC_CONFIGURATION_STILL_EXISTS,
-  UNSUPPORTED_OPERATION,
-  UNSUPPORTED_PROVIDER_TYPE,
-  UPDATE_OUT_OF_SYNC
+  UNSUPPORTED_OPERATION
 };
 
 class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsError : public Aws::Client::AWSError<CodeStarconnectionsErrors>

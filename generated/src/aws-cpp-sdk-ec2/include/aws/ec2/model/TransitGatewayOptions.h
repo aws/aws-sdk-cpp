@@ -13,6 +13,7 @@
 #include <aws/ec2/model/DefaultRouteTablePropagationValue.h>
 #include <aws/ec2/model/VpnEcmpSupportValue.h>
 #include <aws/ec2/model/DnsSupportValue.h>
+#include <aws/ec2/model/SecurityGroupReferencingSupportValue.h>
 #include <aws/ec2/model/MulticastSupportValue.h>
 #include <utility>
 
@@ -371,6 +372,97 @@ namespace Model
 
 
     /**
+     * <p>Enables you to reference a security group across VPCs attached to a transit
+     * gateway (TGW). Use this option to simplify security group management and control
+     * of instance-to-instance traffic across VPCs that are connected by transit
+     * gateway. You can also use this option to migrate from VPC peering (which was the
+     * only option that supported security group referencing) to transit gateways
+     * (which now also support security group referencing). This option is disabled by
+     * default and there are no additional costs to use this feature.</p> <p>For
+     * important information about this feature, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">Create
+     * a transit gateway</a> in the <i>Amazon Web Services Transit Gateway
+     * Guide</i>.</p>
+     */
+    inline const SecurityGroupReferencingSupportValue& GetSecurityGroupReferencingSupport() const{ return m_securityGroupReferencingSupport; }
+
+    /**
+     * <p>Enables you to reference a security group across VPCs attached to a transit
+     * gateway (TGW). Use this option to simplify security group management and control
+     * of instance-to-instance traffic across VPCs that are connected by transit
+     * gateway. You can also use this option to migrate from VPC peering (which was the
+     * only option that supported security group referencing) to transit gateways
+     * (which now also support security group referencing). This option is disabled by
+     * default and there are no additional costs to use this feature.</p> <p>For
+     * important information about this feature, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">Create
+     * a transit gateway</a> in the <i>Amazon Web Services Transit Gateway
+     * Guide</i>.</p>
+     */
+    inline bool SecurityGroupReferencingSupportHasBeenSet() const { return m_securityGroupReferencingSupportHasBeenSet; }
+
+    /**
+     * <p>Enables you to reference a security group across VPCs attached to a transit
+     * gateway (TGW). Use this option to simplify security group management and control
+     * of instance-to-instance traffic across VPCs that are connected by transit
+     * gateway. You can also use this option to migrate from VPC peering (which was the
+     * only option that supported security group referencing) to transit gateways
+     * (which now also support security group referencing). This option is disabled by
+     * default and there are no additional costs to use this feature.</p> <p>For
+     * important information about this feature, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">Create
+     * a transit gateway</a> in the <i>Amazon Web Services Transit Gateway
+     * Guide</i>.</p>
+     */
+    inline void SetSecurityGroupReferencingSupport(const SecurityGroupReferencingSupportValue& value) { m_securityGroupReferencingSupportHasBeenSet = true; m_securityGroupReferencingSupport = value; }
+
+    /**
+     * <p>Enables you to reference a security group across VPCs attached to a transit
+     * gateway (TGW). Use this option to simplify security group management and control
+     * of instance-to-instance traffic across VPCs that are connected by transit
+     * gateway. You can also use this option to migrate from VPC peering (which was the
+     * only option that supported security group referencing) to transit gateways
+     * (which now also support security group referencing). This option is disabled by
+     * default and there are no additional costs to use this feature.</p> <p>For
+     * important information about this feature, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">Create
+     * a transit gateway</a> in the <i>Amazon Web Services Transit Gateway
+     * Guide</i>.</p>
+     */
+    inline void SetSecurityGroupReferencingSupport(SecurityGroupReferencingSupportValue&& value) { m_securityGroupReferencingSupportHasBeenSet = true; m_securityGroupReferencingSupport = std::move(value); }
+
+    /**
+     * <p>Enables you to reference a security group across VPCs attached to a transit
+     * gateway (TGW). Use this option to simplify security group management and control
+     * of instance-to-instance traffic across VPCs that are connected by transit
+     * gateway. You can also use this option to migrate from VPC peering (which was the
+     * only option that supported security group referencing) to transit gateways
+     * (which now also support security group referencing). This option is disabled by
+     * default and there are no additional costs to use this feature.</p> <p>For
+     * important information about this feature, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">Create
+     * a transit gateway</a> in the <i>Amazon Web Services Transit Gateway
+     * Guide</i>.</p>
+     */
+    inline TransitGatewayOptions& WithSecurityGroupReferencingSupport(const SecurityGroupReferencingSupportValue& value) { SetSecurityGroupReferencingSupport(value); return *this;}
+
+    /**
+     * <p>Enables you to reference a security group across VPCs attached to a transit
+     * gateway (TGW). Use this option to simplify security group management and control
+     * of instance-to-instance traffic across VPCs that are connected by transit
+     * gateway. You can also use this option to migrate from VPC peering (which was the
+     * only option that supported security group referencing) to transit gateways
+     * (which now also support security group referencing). This option is disabled by
+     * default and there are no additional costs to use this feature.</p> <p>For
+     * important information about this feature, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">Create
+     * a transit gateway</a> in the <i>Amazon Web Services Transit Gateway
+     * Guide</i>.</p>
+     */
+    inline TransitGatewayOptions& WithSecurityGroupReferencingSupport(SecurityGroupReferencingSupportValue&& value) { SetSecurityGroupReferencingSupport(std::move(value)); return *this;}
+
+
+    /**
      * <p>Indicates whether multicast is enabled on the transit gateway</p>
      */
     inline const MulticastSupportValue& GetMulticastSupport() const{ return m_multicastSupport; }
@@ -428,6 +520,9 @@ namespace Model
 
     DnsSupportValue m_dnsSupport;
     bool m_dnsSupportHasBeenSet = false;
+
+    SecurityGroupReferencingSupportValue m_securityGroupReferencingSupport;
+    bool m_securityGroupReferencingSupportHasBeenSet = false;
 
     MulticastSupportValue m_multicastSupport;
     bool m_multicastSupportHasBeenSet = false;
