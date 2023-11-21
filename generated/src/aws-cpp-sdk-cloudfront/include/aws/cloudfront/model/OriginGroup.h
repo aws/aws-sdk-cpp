@@ -28,7 +28,7 @@ namespace Model
    * <p>An origin group includes two origins (a primary origin and a second origin to
    * failover to) and a failover criteria that you specify. You create an origin
    * group to support origin failover in CloudFront. When you create or update a
-   * distribution, you can specifiy the origin group instead of a single origin, and
+   * distribution, you can specify the origin group instead of a single origin, and
    * CloudFront will failover from the primary origin to the second origin under the
    * failover conditions that you've chosen.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginGroup">AWS

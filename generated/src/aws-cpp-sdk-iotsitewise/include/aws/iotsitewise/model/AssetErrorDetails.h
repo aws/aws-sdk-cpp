@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline const Aws::String& GetAssetId() const{ return m_assetId; }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline AssetErrorDetails& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline AssetErrorDetails& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline AssetErrorDetails& WithAssetId(const char* value) { SetAssetId(value); return *this;}
 

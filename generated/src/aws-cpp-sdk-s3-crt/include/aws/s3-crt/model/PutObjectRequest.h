@@ -1919,7 +1919,8 @@ namespace Model
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
      * JSON with the encryption context key-value pairs. This value is stored as object
      * metadata and automatically gets passed on to Amazon Web Services KMS for future
-     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
+     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.
+     * This value must be explicitly added during CopyObject operations.</p>
      */
     inline const Aws::String& GetSSEKMSEncryptionContext() const{ return m_sSEKMSEncryptionContext; }
 
@@ -1928,7 +1929,8 @@ namespace Model
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
      * JSON with the encryption context key-value pairs. This value is stored as object
      * metadata and automatically gets passed on to Amazon Web Services KMS for future
-     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
+     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.
+     * This value must be explicitly added during CopyObject operations.</p>
      */
     inline bool SSEKMSEncryptionContextHasBeenSet() const { return m_sSEKMSEncryptionContextHasBeenSet; }
 
@@ -1937,7 +1939,8 @@ namespace Model
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
      * JSON with the encryption context key-value pairs. This value is stored as object
      * metadata and automatically gets passed on to Amazon Web Services KMS for future
-     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
+     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.
+     * This value must be explicitly added during CopyObject operations.</p>
      */
     inline void SetSSEKMSEncryptionContext(const Aws::String& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = value; }
 
@@ -1946,7 +1949,8 @@ namespace Model
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
      * JSON with the encryption context key-value pairs. This value is stored as object
      * metadata and automatically gets passed on to Amazon Web Services KMS for future
-     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
+     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.
+     * This value must be explicitly added during CopyObject operations.</p>
      */
     inline void SetSSEKMSEncryptionContext(Aws::String&& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = std::move(value); }
 
@@ -1955,7 +1959,8 @@ namespace Model
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
      * JSON with the encryption context key-value pairs. This value is stored as object
      * metadata and automatically gets passed on to Amazon Web Services KMS for future
-     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
+     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.
+     * This value must be explicitly added during CopyObject operations.</p>
      */
     inline void SetSSEKMSEncryptionContext(const char* value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext.assign(value); }
 
@@ -1964,7 +1969,8 @@ namespace Model
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
      * JSON with the encryption context key-value pairs. This value is stored as object
      * metadata and automatically gets passed on to Amazon Web Services KMS for future
-     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
+     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.
+     * This value must be explicitly added during CopyObject operations.</p>
      */
     inline PutObjectRequest& WithSSEKMSEncryptionContext(const Aws::String& value) { SetSSEKMSEncryptionContext(value); return *this;}
 
@@ -1973,7 +1979,8 @@ namespace Model
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
      * JSON with the encryption context key-value pairs. This value is stored as object
      * metadata and automatically gets passed on to Amazon Web Services KMS for future
-     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
+     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.
+     * This value must be explicitly added during CopyObject operations.</p>
      */
     inline PutObjectRequest& WithSSEKMSEncryptionContext(Aws::String&& value) { SetSSEKMSEncryptionContext(std::move(value)); return *this;}
 
@@ -1982,7 +1989,8 @@ namespace Model
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
      * JSON with the encryption context key-value pairs. This value is stored as object
      * metadata and automatically gets passed on to Amazon Web Services KMS for future
-     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
+     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.
+     * This value must be explicitly added during CopyObject operations.</p>
      */
     inline PutObjectRequest& WithSSEKMSEncryptionContext(const char* value) { SetSSEKMSEncryptionContext(value); return *this;}
 

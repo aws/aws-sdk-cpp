@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAssetModelResult::DescribeAssetModelResult()
+DescribeAssetModelResult::DescribeAssetModelResult() : 
+    m_assetModelType(AssetModelType::NOT_SET)
 {
 }
 
-DescribeAssetModelResult::DescribeAssetModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeAssetModelResult::DescribeAssetModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_assetModelType(AssetModelType::NOT_SET)
 {
   *this = result;
 }
@@ -95,6 +97,27 @@ DescribeAssetModelResult& DescribeAssetModelResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("assetModelStatus"))
   {
     m_assetModelStatus = jsonValue.GetObject("assetModelStatus");
+
+  }
+
+  if(jsonValue.ValueExists("assetModelType"))
+  {
+    m_assetModelType = AssetModelTypeMapper::GetAssetModelTypeForName(jsonValue.GetString("assetModelType"));
+
+  }
+
+  if(jsonValue.ValueExists("assetModelCompositeModelSummaries"))
+  {
+    Aws::Utils::Array<JsonView> assetModelCompositeModelSummariesJsonList = jsonValue.GetArray("assetModelCompositeModelSummaries");
+    for(unsigned assetModelCompositeModelSummariesIndex = 0; assetModelCompositeModelSummariesIndex < assetModelCompositeModelSummariesJsonList.GetLength(); ++assetModelCompositeModelSummariesIndex)
+    {
+      m_assetModelCompositeModelSummaries.push_back(assetModelCompositeModelSummariesJsonList[assetModelCompositeModelSummariesIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("assetModelExternalId"))
+  {
+    m_assetModelExternalId = jsonValue.GetString("assetModelExternalId");
 
   }
 

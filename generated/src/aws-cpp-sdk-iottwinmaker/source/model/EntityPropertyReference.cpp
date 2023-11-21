@@ -20,6 +20,7 @@ namespace Model
 
 EntityPropertyReference::EntityPropertyReference() : 
     m_componentNameHasBeenSet(false),
+    m_componentPathHasBeenSet(false),
     m_externalIdPropertyHasBeenSet(false),
     m_entityIdHasBeenSet(false),
     m_propertyNameHasBeenSet(false)
@@ -28,6 +29,7 @@ EntityPropertyReference::EntityPropertyReference() :
 
 EntityPropertyReference::EntityPropertyReference(JsonView jsonValue) : 
     m_componentNameHasBeenSet(false),
+    m_componentPathHasBeenSet(false),
     m_externalIdPropertyHasBeenSet(false),
     m_entityIdHasBeenSet(false),
     m_propertyNameHasBeenSet(false)
@@ -42,6 +44,13 @@ EntityPropertyReference& EntityPropertyReference::operator =(JsonView jsonValue)
     m_componentName = jsonValue.GetString("componentName");
 
     m_componentNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("componentPath"))
+  {
+    m_componentPath = jsonValue.GetString("componentPath");
+
+    m_componentPathHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("externalIdProperty"))
@@ -78,6 +87,12 @@ JsonValue EntityPropertyReference::Jsonize() const
   if(m_componentNameHasBeenSet)
   {
    payload.WithString("componentName", m_componentName);
+
+  }
+
+  if(m_componentPathHasBeenSet)
+  {
+   payload.WithString("componentPath", m_componentPath);
 
   }
 

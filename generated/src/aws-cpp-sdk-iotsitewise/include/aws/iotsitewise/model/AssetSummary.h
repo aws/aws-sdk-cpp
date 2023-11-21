@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline AssetSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline AssetSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline AssetSummary& WithId(const char* value) { SetId(value); return *this;}
 
@@ -419,6 +419,63 @@ namespace Model
      */
     inline AssetSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The external ID of the asset. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+
+    /**
+     * <p>The external ID of the asset. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
+
+    /**
+     * <p>The external ID of the asset. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
+
+    /**
+     * <p>The external ID of the asset. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
+
+    /**
+     * <p>The external ID of the asset. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
+
+    /**
+     * <p>The external ID of the asset. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetSummary& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
+
+    /**
+     * <p>The external ID of the asset. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetSummary& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
+
+    /**
+     * <p>The external ID of the asset. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetSummary& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -447,6 +504,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::String m_externalId;
+    bool m_externalIdHasBeenSet = false;
   };
 
 } // namespace Model

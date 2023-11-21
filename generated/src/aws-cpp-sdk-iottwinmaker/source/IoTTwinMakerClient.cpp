@@ -22,8 +22,10 @@
 #include <aws/iottwinmaker/IoTTwinMakerErrorMarshaller.h>
 #include <aws/iottwinmaker/IoTTwinMakerEndpointProvider.h>
 #include <aws/iottwinmaker/model/BatchPutPropertyValuesRequest.h>
+#include <aws/iottwinmaker/model/CancelMetadataTransferJobRequest.h>
 #include <aws/iottwinmaker/model/CreateComponentTypeRequest.h>
 #include <aws/iottwinmaker/model/CreateEntityRequest.h>
+#include <aws/iottwinmaker/model/CreateMetadataTransferJobRequest.h>
 #include <aws/iottwinmaker/model/CreateSceneRequest.h>
 #include <aws/iottwinmaker/model/CreateSyncJobRequest.h>
 #include <aws/iottwinmaker/model/CreateWorkspaceRequest.h>
@@ -35,6 +37,7 @@
 #include <aws/iottwinmaker/model/ExecuteQueryRequest.h>
 #include <aws/iottwinmaker/model/GetComponentTypeRequest.h>
 #include <aws/iottwinmaker/model/GetEntityRequest.h>
+#include <aws/iottwinmaker/model/GetMetadataTransferJobRequest.h>
 #include <aws/iottwinmaker/model/GetPricingPlanRequest.h>
 #include <aws/iottwinmaker/model/GetPropertyValueRequest.h>
 #include <aws/iottwinmaker/model/GetPropertyValueHistoryRequest.h>
@@ -42,7 +45,10 @@
 #include <aws/iottwinmaker/model/GetSyncJobRequest.h>
 #include <aws/iottwinmaker/model/GetWorkspaceRequest.h>
 #include <aws/iottwinmaker/model/ListComponentTypesRequest.h>
+#include <aws/iottwinmaker/model/ListComponentsRequest.h>
 #include <aws/iottwinmaker/model/ListEntitiesRequest.h>
+#include <aws/iottwinmaker/model/ListMetadataTransferJobsRequest.h>
+#include <aws/iottwinmaker/model/ListPropertiesRequest.h>
 #include <aws/iottwinmaker/model/ListScenesRequest.h>
 #include <aws/iottwinmaker/model/ListSyncJobsRequest.h>
 #include <aws/iottwinmaker/model/ListSyncResourcesRequest.h>
@@ -224,6 +230,42 @@ BatchPutPropertyValuesOutcome IoTTwinMakerClient::BatchPutPropertyValues(const B
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CancelMetadataTransferJobOutcome IoTTwinMakerClient::CancelMetadataTransferJob(const CancelMetadataTransferJobRequest& request) const
+{
+  AWS_OPERATION_GUARD(CancelMetadataTransferJob);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelMetadataTransferJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MetadataTransferJobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelMetadataTransferJob", "Required field: MetadataTransferJobId, is not set");
+    return CancelMetadataTransferJobOutcome(Aws::Client::AWSError<IoTTwinMakerErrors>(IoTTwinMakerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MetadataTransferJobId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CancelMetadataTransferJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CancelMetadataTransferJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CancelMetadataTransferJob",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CancelMetadataTransferJobOutcome>(
+    [&]()-> CancelMetadataTransferJobOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelMetadataTransferJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CancelMetadataTransferJobOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/metadata-transfer-jobs/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMetadataTransferJobId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
+      return CancelMetadataTransferJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateComponentTypeOutcome IoTTwinMakerClient::CreateComponentType(const CreateComponentTypeRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateComponentType);
@@ -296,6 +338,35 @@ CreateEntityOutcome IoTTwinMakerClient::CreateEntity(const CreateEntityRequest& 
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/entities");
       return CreateEntityOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateMetadataTransferJobOutcome IoTTwinMakerClient::CreateMetadataTransferJob(const CreateMetadataTransferJobRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateMetadataTransferJob);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMetadataTransferJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateMetadataTransferJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateMetadataTransferJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateMetadataTransferJob",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateMetadataTransferJobOutcome>(
+    [&]()-> CreateMetadataTransferJobOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMetadataTransferJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateMetadataTransferJobOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/metadata-transfer-jobs");
+      return CreateMetadataTransferJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -731,6 +802,41 @@ GetEntityOutcome IoTTwinMakerClient::GetEntity(const GetEntityRequest& request) 
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetMetadataTransferJobOutcome IoTTwinMakerClient::GetMetadataTransferJob(const GetMetadataTransferJobRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetMetadataTransferJob);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMetadataTransferJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MetadataTransferJobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMetadataTransferJob", "Required field: MetadataTransferJobId, is not set");
+    return GetMetadataTransferJobOutcome(Aws::Client::AWSError<IoTTwinMakerErrors>(IoTTwinMakerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MetadataTransferJobId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetMetadataTransferJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetMetadataTransferJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetMetadataTransferJob",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetMetadataTransferJobOutcome>(
+    [&]()-> GetMetadataTransferJobOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMetadataTransferJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetMetadataTransferJobOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/metadata-transfer-jobs/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMetadataTransferJobId());
+      return GetMetadataTransferJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetPricingPlanOutcome IoTTwinMakerClient::GetPricingPlan(const GetPricingPlanRequest& request) const
 {
   AWS_OPERATION_GUARD(GetPricingPlan);
@@ -980,6 +1086,49 @@ ListComponentTypesOutcome IoTTwinMakerClient::ListComponentTypes(const ListCompo
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListComponentsOutcome IoTTwinMakerClient::ListComponents(const ListComponentsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListComponents);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListComponents", "Required field: WorkspaceId, is not set");
+    return ListComponentsOutcome(Aws::Client::AWSError<IoTTwinMakerErrors>(IoTTwinMakerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  if (!request.EntityIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListComponents", "Required field: EntityId, is not set");
+    return ListComponentsOutcome(Aws::Client::AWSError<IoTTwinMakerErrors>(IoTTwinMakerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EntityId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListComponents, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListComponents, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListComponents",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListComponentsOutcome>(
+    [&]()-> ListComponentsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListComponentsOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/entities/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEntityId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/components-list");
+      return ListComponentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListEntitiesOutcome IoTTwinMakerClient::ListEntities(const ListEntitiesRequest& request) const
 {
   AWS_OPERATION_GUARD(ListEntities);
@@ -1010,6 +1159,71 @@ ListEntitiesOutcome IoTTwinMakerClient::ListEntities(const ListEntitiesRequest& 
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/entities-list");
       return ListEntitiesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListMetadataTransferJobsOutcome IoTTwinMakerClient::ListMetadataTransferJobs(const ListMetadataTransferJobsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListMetadataTransferJobs);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMetadataTransferJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListMetadataTransferJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListMetadataTransferJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListMetadataTransferJobs",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListMetadataTransferJobsOutcome>(
+    [&]()-> ListMetadataTransferJobsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMetadataTransferJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListMetadataTransferJobsOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/metadata-transfer-jobs-list");
+      return ListMetadataTransferJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListPropertiesOutcome IoTTwinMakerClient::ListProperties(const ListPropertiesRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListProperties);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProperties, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListProperties", "Required field: WorkspaceId, is not set");
+    return ListPropertiesOutcome(Aws::Client::AWSError<IoTTwinMakerErrors>(IoTTwinMakerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListProperties, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListProperties, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListProperties",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListPropertiesOutcome>(
+    [&]()-> ListPropertiesOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProperties, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListPropertiesOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/properties-list");
+      return ListPropertiesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

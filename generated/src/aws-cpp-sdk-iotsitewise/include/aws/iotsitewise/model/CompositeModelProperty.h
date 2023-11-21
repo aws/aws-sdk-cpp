@@ -180,6 +180,71 @@ namespace Model
      */
     inline CompositeModelProperty& WithId(const char* value) { SetId(value); return *this;}
 
+
+    /**
+     * <p>The external ID of the composite model that contains the property. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+
+    /**
+     * <p>The external ID of the composite model that contains the property. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
+
+    /**
+     * <p>The external ID of the composite model that contains the property. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
+
+    /**
+     * <p>The external ID of the composite model that contains the property. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
+
+    /**
+     * <p>The external ID of the composite model that contains the property. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
+
+    /**
+     * <p>The external ID of the composite model that contains the property. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline CompositeModelProperty& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
+
+    /**
+     * <p>The external ID of the composite model that contains the property. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline CompositeModelProperty& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
+
+    /**
+     * <p>The external ID of the composite model that contains the property. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline CompositeModelProperty& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -193,6 +258,9 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_externalId;
+    bool m_externalIdHasBeenSet = false;
   };
 
 } // namespace Model

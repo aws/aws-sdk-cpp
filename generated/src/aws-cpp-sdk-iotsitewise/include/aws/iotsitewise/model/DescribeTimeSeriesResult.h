@@ -71,37 +71,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property, in UUID format.</p>
      */
     inline const Aws::String& GetPropertyId() const{ return m_propertyId; }
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property, in UUID format.</p>
      */
     inline void SetPropertyId(const Aws::String& value) { m_propertyId = value; }
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property, in UUID format.</p>
      */
     inline void SetPropertyId(Aws::String&& value) { m_propertyId = std::move(value); }
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property, in UUID format.</p>
      */
     inline void SetPropertyId(const char* value) { m_propertyId.assign(value); }
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property, in UUID format.</p>
      */
     inline DescribeTimeSeriesResult& WithPropertyId(const Aws::String& value) { SetPropertyId(value); return *this;}
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property, in UUID format.</p>
      */
     inline DescribeTimeSeriesResult& WithPropertyId(Aws::String&& value) { SetPropertyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property, in UUID format.</p>
      */
     inline DescribeTimeSeriesResult& WithPropertyId(const char* value) { SetPropertyId(value); return *this;}
 

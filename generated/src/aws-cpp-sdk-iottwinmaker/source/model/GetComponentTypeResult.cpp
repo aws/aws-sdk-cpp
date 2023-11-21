@@ -143,6 +143,15 @@ GetComponentTypeResult& GetComponentTypeResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("compositeComponentTypes"))
+  {
+    Aws::Map<Aws::String, JsonView> compositeComponentTypesJsonMap = jsonValue.GetObject("compositeComponentTypes").GetAllObjects();
+    for(auto& compositeComponentTypesItem : compositeComponentTypesJsonMap)
+    {
+      m_compositeComponentTypes[compositeComponentTypesItem.first] = compositeComponentTypesItem.second.AsObject();
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

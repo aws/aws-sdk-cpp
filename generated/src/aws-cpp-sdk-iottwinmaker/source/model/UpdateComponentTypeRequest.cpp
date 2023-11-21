@@ -22,7 +22,8 @@ UpdateComponentTypeRequest::UpdateComponentTypeRequest() :
     m_extendsFromHasBeenSet(false),
     m_functionsHasBeenSet(false),
     m_propertyGroupsHasBeenSet(false),
-    m_componentTypeNameHasBeenSet(false)
+    m_componentTypeNameHasBeenSet(false),
+    m_compositeComponentTypesHasBeenSet(false)
 {
 }
 
@@ -89,6 +90,17 @@ Aws::String UpdateComponentTypeRequest::SerializePayload() const
   if(m_componentTypeNameHasBeenSet)
   {
    payload.WithString("componentTypeName", m_componentTypeName);
+
+  }
+
+  if(m_compositeComponentTypesHasBeenSet)
+  {
+   JsonValue compositeComponentTypesJsonMap;
+   for(auto& compositeComponentTypesItem : m_compositeComponentTypes)
+   {
+     compositeComponentTypesJsonMap.WithObject(compositeComponentTypesItem.first, compositeComponentTypesItem.second.Jsonize());
+   }
+   payload.WithObject("compositeComponentTypes", std::move(compositeComponentTypesJsonMap));
 
   }
 

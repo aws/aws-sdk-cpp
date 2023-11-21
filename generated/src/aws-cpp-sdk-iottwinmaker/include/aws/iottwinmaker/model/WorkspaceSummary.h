@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -163,6 +164,52 @@ namespace Model
 
 
     /**
+     * <p>A list of services that are linked to the workspace.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLinkedServices() const{ return m_linkedServices; }
+
+    /**
+     * <p>A list of services that are linked to the workspace.</p>
+     */
+    inline bool LinkedServicesHasBeenSet() const { return m_linkedServicesHasBeenSet; }
+
+    /**
+     * <p>A list of services that are linked to the workspace.</p>
+     */
+    inline void SetLinkedServices(const Aws::Vector<Aws::String>& value) { m_linkedServicesHasBeenSet = true; m_linkedServices = value; }
+
+    /**
+     * <p>A list of services that are linked to the workspace.</p>
+     */
+    inline void SetLinkedServices(Aws::Vector<Aws::String>&& value) { m_linkedServicesHasBeenSet = true; m_linkedServices = std::move(value); }
+
+    /**
+     * <p>A list of services that are linked to the workspace.</p>
+     */
+    inline WorkspaceSummary& WithLinkedServices(const Aws::Vector<Aws::String>& value) { SetLinkedServices(value); return *this;}
+
+    /**
+     * <p>A list of services that are linked to the workspace.</p>
+     */
+    inline WorkspaceSummary& WithLinkedServices(Aws::Vector<Aws::String>&& value) { SetLinkedServices(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of services that are linked to the workspace.</p>
+     */
+    inline WorkspaceSummary& AddLinkedServices(const Aws::String& value) { m_linkedServicesHasBeenSet = true; m_linkedServices.push_back(value); return *this; }
+
+    /**
+     * <p>A list of services that are linked to the workspace.</p>
+     */
+    inline WorkspaceSummary& AddLinkedServices(Aws::String&& value) { m_linkedServicesHasBeenSet = true; m_linkedServices.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of services that are linked to the workspace.</p>
+     */
+    inline WorkspaceSummary& AddLinkedServices(const char* value) { m_linkedServicesHasBeenSet = true; m_linkedServices.push_back(value); return *this; }
+
+
+    /**
      * <p>The date and time when the workspace was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
@@ -233,6 +280,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_linkedServices;
+    bool m_linkedServicesHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
     bool m_creationDateTimeHasBeenSet = false;
