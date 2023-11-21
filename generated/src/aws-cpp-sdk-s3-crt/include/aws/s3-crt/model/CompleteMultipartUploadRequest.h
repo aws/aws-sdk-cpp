@@ -724,72 +724,80 @@ namespace Model
 
     /**
      * <p>The server-side encryption (SSE) algorithm used to encrypt the object. This
-     * parameter is needed only when the object was created using a checksum algorithm.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * parameter is required only when the object was created using a checksum
+     * algorithm or if your bucket policy requires the use of SSE-C. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html#ssec-require-condition-key">Protecting
      * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
 
     /**
      * <p>The server-side encryption (SSE) algorithm used to encrypt the object. This
-     * parameter is needed only when the object was created using a checksum algorithm.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * parameter is required only when the object was created using a checksum
+     * algorithm or if your bucket policy requires the use of SSE-C. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html#ssec-require-condition-key">Protecting
      * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
 
     /**
      * <p>The server-side encryption (SSE) algorithm used to encrypt the object. This
-     * parameter is needed only when the object was created using a checksum algorithm.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * parameter is required only when the object was created using a checksum
+     * algorithm or if your bucket policy requires the use of SSE-C. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html#ssec-require-condition-key">Protecting
      * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = value; }
 
     /**
      * <p>The server-side encryption (SSE) algorithm used to encrypt the object. This
-     * parameter is needed only when the object was created using a checksum algorithm.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * parameter is required only when the object was created using a checksum
+     * algorithm or if your bucket policy requires the use of SSE-C. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html#ssec-require-condition-key">Protecting
      * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = std::move(value); }
 
     /**
      * <p>The server-side encryption (SSE) algorithm used to encrypt the object. This
-     * parameter is needed only when the object was created using a checksum algorithm.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * parameter is required only when the object was created using a checksum
+     * algorithm or if your bucket policy requires the use of SSE-C. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html#ssec-require-condition-key">Protecting
      * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm.assign(value); }
 
     /**
      * <p>The server-side encryption (SSE) algorithm used to encrypt the object. This
-     * parameter is needed only when the object was created using a checksum algorithm.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * parameter is required only when the object was created using a checksum
+     * algorithm or if your bucket policy requires the use of SSE-C. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html#ssec-require-condition-key">Protecting
      * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CompleteMultipartUploadRequest& WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
 
     /**
      * <p>The server-side encryption (SSE) algorithm used to encrypt the object. This
-     * parameter is needed only when the object was created using a checksum algorithm.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * parameter is required only when the object was created using a checksum
+     * algorithm or if your bucket policy requires the use of SSE-C. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html#ssec-require-condition-key">Protecting
      * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CompleteMultipartUploadRequest& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
      * <p>The server-side encryption (SSE) algorithm used to encrypt the object. This
-     * parameter is needed only when the object was created using a checksum algorithm.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * parameter is required only when the object was created using a checksum
+     * algorithm or if your bucket policy requires the use of SSE-C. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html#ssec-require-condition-key">Protecting
      * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CompleteMultipartUploadRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}

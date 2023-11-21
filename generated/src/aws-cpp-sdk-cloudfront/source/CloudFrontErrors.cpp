@@ -26,6 +26,7 @@ static const int NO_SUCH_ORIGIN_HASH = HashingUtils::HashString("NoSuchOrigin");
 static const int NO_SUCH_RESOURCE_HASH = HashingUtils::HashString("NoSuchResource");
 static const int TOO_MANY_ORIGIN_REQUEST_POLICIES_HASH = HashingUtils::HashString("TooManyOriginRequestPolicies");
 static const int FIELD_LEVEL_ENCRYPTION_CONFIG_ALREADY_EXISTS_HASH = HashingUtils::HashString("FieldLevelEncryptionConfigAlreadyExists");
+static const int ENTITY_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("EntitySizeLimitExceeded");
 static const int TOO_MANY_HEADERS_IN_FORWARDED_VALUES_HASH = HashingUtils::HashString("TooManyHeadersInForwardedValues");
 static const int TOO_MANY_ORIGIN_ACCESS_CONTROLS_HASH = HashingUtils::HashString("TooManyOriginAccessControls");
 static const int INCONSISTENT_QUANTITIES_HASH = HashingUtils::HashString("InconsistentQuantities");
@@ -34,6 +35,7 @@ static const int INVALID_IF_MATCH_VERSION_HASH = HashingUtils::HashString("Inval
 static const int FUNCTION_ALREADY_EXISTS_HASH = HashingUtils::HashString("FunctionAlreadyExists");
 static const int INVALID_TAGGING_HASH = HashingUtils::HashString("InvalidTagging");
 static const int NO_SUCH_FUNCTION_EXISTS_HASH = HashingUtils::HashString("NoSuchFunctionExists");
+static const int ENTITY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("EntityLimitExceeded");
 static const int REALTIME_LOG_CONFIG_OWNER_MISMATCH_HASH = HashingUtils::HashString("RealtimeLogConfigOwnerMismatch");
 static const int TOO_MANY_DISTRIBUTIONS_HASH = HashingUtils::HashString("TooManyDistributions");
 static const int CACHE_POLICY_IN_USE_HASH = HashingUtils::HashString("CachePolicyInUse");
@@ -52,6 +54,7 @@ static const int NO_SUCH_CACHE_POLICY_HASH = HashingUtils::HashString("NoSuchCac
 static const int NO_SUCH_FIELD_LEVEL_ENCRYPTION_PROFILE_HASH = HashingUtils::HashString("NoSuchFieldLevelEncryptionProfile");
 static const int INVALID_ORIGIN_READ_TIMEOUT_HASH = HashingUtils::HashString("InvalidOriginReadTimeout");
 static const int INVALID_ORIGIN_KEEPALIVE_TIMEOUT_HASH = HashingUtils::HashString("InvalidOriginKeepaliveTimeout");
+static const int ENTITY_ALREADY_EXISTS_HASH = HashingUtils::HashString("EntityAlreadyExists");
 static const int TOO_MANY_CLOUD_FRONT_ORIGIN_ACCESS_IDENTITIES_HASH = HashingUtils::HashString("TooManyCloudFrontOriginAccessIdentities");
 static const int INVALID_HEADERS_FOR_S3_ORIGIN_HASH = HashingUtils::HashString("InvalidHeadersForS3Origin");
 static const int FIELD_LEVEL_ENCRYPTION_PROFILE_ALREADY_EXISTS_HASH = HashingUtils::HashString("FieldLevelEncryptionProfileAlreadyExists");
@@ -124,6 +127,7 @@ static const int INVALID_FORWARD_COOKIES_HASH = HashingUtils::HashString("Invali
 static const int TRUSTED_KEY_GROUP_DOES_NOT_EXIST_HASH = HashingUtils::HashString("TrustedKeyGroupDoesNotExist");
 static const int ILLEGAL_ORIGIN_ACCESS_CONFIGURATION_HASH = HashingUtils::HashString("IllegalOriginAccessConfiguration");
 static const int QUERY_ARG_PROFILE_EMPTY_HASH = HashingUtils::HashString("QueryArgProfileEmpty");
+static const int ENTITY_NOT_FOUND_HASH = HashingUtils::HashString("EntityNotFound");
 static const int PRECONDITION_FAILED_HASH = HashingUtils::HashString("PreconditionFailed");
 static const int TOO_MANY_DISTRIBUTIONS_ASSOCIATED_TO_CACHE_POLICY_HASH = HashingUtils::HashString("TooManyDistributionsAssociatedToCachePolicy");
 static const int NO_SUCH_ORIGIN_ACCESS_CONTROL_HASH = HashingUtils::HashString("NoSuchOriginAccessControl");
@@ -135,6 +139,7 @@ static const int TOO_MANY_FIELD_LEVEL_ENCRYPTION_CONTENT_TYPE_PROFILES_HASH = Ha
 static const int TOO_MANY_FIELD_LEVEL_ENCRYPTION_ENCRYPTION_ENTITIES_HASH = HashingUtils::HashString("TooManyFieldLevelEncryptionEncryptionEntities");
 static const int INVALID_QUERY_STRING_PARAMETERS_HASH = HashingUtils::HashString("InvalidQueryStringParameters");
 static const int INVALID_PROTOCOL_SETTINGS_HASH = HashingUtils::HashString("InvalidProtocolSettings");
+static const int CANNOT_DELETE_ENTITY_WHILE_IN_USE_HASH = HashingUtils::HashString("CannotDeleteEntityWhileInUse");
 static const int BATCH_TOO_LARGE_HASH = HashingUtils::HashString("BatchTooLarge");
 static const int INVALID_ORIGIN_ACCESS_IDENTITY_HASH = HashingUtils::HashString("InvalidOriginAccessIdentity");
 static const int INVALID_MINIMUM_PROTOCOL_VERSION_HASH = HashingUtils::HashString("InvalidMinimumProtocolVersion");
@@ -211,6 +216,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::FIELD_LEVEL_ENCRYPTION_CONFIG_ALREADY_EXISTS), false);
     return true;
   }
+  else if (hashCode == ENTITY_SIZE_LIMIT_EXCEEDED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::ENTITY_SIZE_LIMIT_EXCEEDED), false);
+    return true;
+  }
   else if (hashCode == TOO_MANY_HEADERS_IN_FORWARDED_VALUES_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_HEADERS_IN_FORWARDED_VALUES), false);
@@ -249,6 +259,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == NO_SUCH_FUNCTION_EXISTS_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::NO_SUCH_FUNCTION_EXISTS), false);
+    return true;
+  }
+  else if (hashCode == ENTITY_LIMIT_EXCEEDED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::ENTITY_LIMIT_EXCEEDED), false);
     return true;
   }
   else if (hashCode == REALTIME_LOG_CONFIG_OWNER_MISMATCH_HASH)
@@ -339,6 +354,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == INVALID_ORIGIN_KEEPALIVE_TIMEOUT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::INVALID_ORIGIN_KEEPALIVE_TIMEOUT), false);
+    return true;
+  }
+  else if (hashCode == ENTITY_ALREADY_EXISTS_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::ENTITY_ALREADY_EXISTS), false);
     return true;
   }
   else if (hashCode == TOO_MANY_CLOUD_FRONT_ORIGIN_ACCESS_IDENTITIES_HASH)
@@ -701,6 +721,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::QUERY_ARG_PROFILE_EMPTY), false);
     return true;
   }
+  else if (hashCode == ENTITY_NOT_FOUND_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::ENTITY_NOT_FOUND), false);
+    return true;
+  }
   else if (hashCode == PRECONDITION_FAILED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::PRECONDITION_FAILED), false);
@@ -756,7 +781,17 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::INVALID_PROTOCOL_SETTINGS), false);
     return true;
   }
-  else if (hashCode == BATCH_TOO_LARGE_HASH)
+  else if (hashCode == CANNOT_DELETE_ENTITY_WHILE_IN_USE_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::CANNOT_DELETE_ENTITY_WHILE_IN_USE), false);
+    return true;
+  }
+  return false;
+}
+
+static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+{
+  if (hashCode == BATCH_TOO_LARGE_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::BATCH_TOO_LARGE), false);
     return true;
@@ -781,12 +816,7 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_DISTRIBUTIONS_ASSOCIATED_TO_KEY_GROUP), false);
     return true;
   }
-  return false;
-}
-
-static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
-{
-  if (hashCode == STREAMING_DISTRIBUTION_ALREADY_EXISTS_HASH)
+  else if (hashCode == STREAMING_DISTRIBUTION_ALREADY_EXISTS_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::STREAMING_DISTRIBUTION_ALREADY_EXISTS), false);
     return true;

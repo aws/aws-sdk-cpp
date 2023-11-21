@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains a job summary information.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the job summary information.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/JobSummary">AWS
    * API Reference</a></p>
    */
@@ -121,7 +121,7 @@ namespace Model
 
 
     /**
-     * <p>The status of the bulk import job can be one of following values.</p> <ul>
+     * <p>The status of the bulk import job can be one of following values:</p> <ul>
      * <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk
      * import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk
      * import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT
@@ -138,7 +138,7 @@ namespace Model
     inline const JobStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the bulk import job can be one of following values.</p> <ul>
+     * <p>The status of the bulk import job can be one of following values:</p> <ul>
      * <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk
      * import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk
      * import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT
@@ -155,7 +155,7 @@ namespace Model
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the bulk import job can be one of following values.</p> <ul>
+     * <p>The status of the bulk import job can be one of following values:</p> <ul>
      * <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk
      * import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk
      * import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT
@@ -172,7 +172,7 @@ namespace Model
     inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the bulk import job can be one of following values.</p> <ul>
+     * <p>The status of the bulk import job can be one of following values:</p> <ul>
      * <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk
      * import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk
      * import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT
@@ -189,7 +189,7 @@ namespace Model
     inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the bulk import job can be one of following values.</p> <ul>
+     * <p>The status of the bulk import job can be one of following values:</p> <ul>
      * <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk
      * import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk
      * import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT
@@ -206,7 +206,7 @@ namespace Model
     inline JobSummary& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the bulk import job can be one of following values.</p> <ul>
+     * <p>The status of the bulk import job can be one of following values:</p> <ul>
      * <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk
      * import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk
      * import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT

@@ -1859,56 +1859,64 @@ namespace Model
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value must be explicitly
+     * added to specify encryption context for CopyObject requests.</p>
      */
     inline const Aws::String& GetSSEKMSEncryptionContext() const{ return m_sSEKMSEncryptionContext; }
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value must be explicitly
+     * added to specify encryption context for CopyObject requests.</p>
      */
     inline bool SSEKMSEncryptionContextHasBeenSet() const { return m_sSEKMSEncryptionContextHasBeenSet; }
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value must be explicitly
+     * added to specify encryption context for CopyObject requests.</p>
      */
     inline void SetSSEKMSEncryptionContext(const Aws::String& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = value; }
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value must be explicitly
+     * added to specify encryption context for CopyObject requests.</p>
      */
     inline void SetSSEKMSEncryptionContext(Aws::String&& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = std::move(value); }
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value must be explicitly
+     * added to specify encryption context for CopyObject requests.</p>
      */
     inline void SetSSEKMSEncryptionContext(const char* value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext.assign(value); }
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value must be explicitly
+     * added to specify encryption context for CopyObject requests.</p>
      */
     inline CopyObjectRequest& WithSSEKMSEncryptionContext(const Aws::String& value) { SetSSEKMSEncryptionContext(value); return *this;}
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value must be explicitly
+     * added to specify encryption context for CopyObject requests.</p>
      */
     inline CopyObjectRequest& WithSSEKMSEncryptionContext(Aws::String&& value) { SetSSEKMSEncryptionContext(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value must be explicitly
+     * added to specify encryption context for CopyObject requests.</p>
      */
     inline CopyObjectRequest& WithSSEKMSEncryptionContext(const char* value) { SetSSEKMSEncryptionContext(value); return *this;}
 

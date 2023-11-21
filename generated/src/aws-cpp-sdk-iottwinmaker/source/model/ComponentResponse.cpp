@@ -26,7 +26,12 @@ ComponentResponse::ComponentResponse() :
     m_definedInHasBeenSet(false),
     m_propertiesHasBeenSet(false),
     m_propertyGroupsHasBeenSet(false),
-    m_syncSourceHasBeenSet(false)
+    m_syncSourceHasBeenSet(false),
+    m_areAllPropertiesReturned(false),
+    m_areAllPropertiesReturnedHasBeenSet(false),
+    m_compositeComponentsHasBeenSet(false),
+    m_areAllCompositeComponentsReturned(false),
+    m_areAllCompositeComponentsReturnedHasBeenSet(false)
 {
 }
 
@@ -38,7 +43,12 @@ ComponentResponse::ComponentResponse(JsonView jsonValue) :
     m_definedInHasBeenSet(false),
     m_propertiesHasBeenSet(false),
     m_propertyGroupsHasBeenSet(false),
-    m_syncSourceHasBeenSet(false)
+    m_syncSourceHasBeenSet(false),
+    m_areAllPropertiesReturned(false),
+    m_areAllPropertiesReturnedHasBeenSet(false),
+    m_compositeComponentsHasBeenSet(false),
+    m_areAllCompositeComponentsReturned(false),
+    m_areAllCompositeComponentsReturnedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +117,30 @@ ComponentResponse& ComponentResponse::operator =(JsonView jsonValue)
     m_syncSourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("areAllPropertiesReturned"))
+  {
+    m_areAllPropertiesReturned = jsonValue.GetBool("areAllPropertiesReturned");
+
+    m_areAllPropertiesReturnedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("compositeComponents"))
+  {
+    Aws::Map<Aws::String, JsonView> compositeComponentsJsonMap = jsonValue.GetObject("compositeComponents").GetAllObjects();
+    for(auto& compositeComponentsItem : compositeComponentsJsonMap)
+    {
+      m_compositeComponents[compositeComponentsItem.first] = compositeComponentsItem.second.AsObject();
+    }
+    m_compositeComponentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("areAllCompositeComponentsReturned"))
+  {
+    m_areAllCompositeComponentsReturned = jsonValue.GetBool("areAllCompositeComponentsReturned");
+
+    m_areAllCompositeComponentsReturnedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -169,6 +203,29 @@ JsonValue ComponentResponse::Jsonize() const
   if(m_syncSourceHasBeenSet)
   {
    payload.WithString("syncSource", m_syncSource);
+
+  }
+
+  if(m_areAllPropertiesReturnedHasBeenSet)
+  {
+   payload.WithBool("areAllPropertiesReturned", m_areAllPropertiesReturned);
+
+  }
+
+  if(m_compositeComponentsHasBeenSet)
+  {
+   JsonValue compositeComponentsJsonMap;
+   for(auto& compositeComponentsItem : m_compositeComponents)
+   {
+     compositeComponentsJsonMap.WithObject(compositeComponentsItem.first, compositeComponentsItem.second.Jsonize());
+   }
+   payload.WithObject("compositeComponents", std::move(compositeComponentsJsonMap));
+
+  }
+
+  if(m_areAllCompositeComponentsReturnedHasBeenSet)
+  {
+   payload.WithBool("areAllCompositeComponentsReturned", m_areAllCompositeComponentsReturned);
 
   }
 

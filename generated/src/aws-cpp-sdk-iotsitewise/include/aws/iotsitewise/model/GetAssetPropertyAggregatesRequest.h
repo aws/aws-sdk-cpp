@@ -44,83 +44,83 @@ namespace Model
 
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline const Aws::String& GetAssetId() const{ return m_assetId; }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline GetAssetPropertyAggregatesRequest& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline GetAssetPropertyAggregatesRequest& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline GetAssetPropertyAggregatesRequest& WithAssetId(const char* value) { SetAssetId(value); return *this;}
 
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property, in UUID format.</p>
      */
     inline const Aws::String& GetPropertyId() const{ return m_propertyId; }
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property, in UUID format.</p>
      */
     inline bool PropertyIdHasBeenSet() const { return m_propertyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property, in UUID format.</p>
      */
     inline void SetPropertyId(const Aws::String& value) { m_propertyIdHasBeenSet = true; m_propertyId = value; }
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property, in UUID format.</p>
      */
     inline void SetPropertyId(Aws::String&& value) { m_propertyIdHasBeenSet = true; m_propertyId = std::move(value); }
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property, in UUID format.</p>
      */
     inline void SetPropertyId(const char* value) { m_propertyIdHasBeenSet = true; m_propertyId.assign(value); }
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property, in UUID format.</p>
      */
     inline GetAssetPropertyAggregatesRequest& WithPropertyId(const Aws::String& value) { SetPropertyId(value); return *this;}
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property, in UUID format.</p>
      */
     inline GetAssetPropertyAggregatesRequest& WithPropertyId(Aws::String&& value) { SetPropertyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property, in UUID format.</p>
      */
     inline GetAssetPropertyAggregatesRequest& WithPropertyId(const char* value) { SetPropertyId(value); return *this;}
 
@@ -486,7 +486,7 @@ namespace Model
      * set is returned in the two cases, whichever occurs first.</p> <ul> <li> <p>The
      * size of the result set is equal to 1 MB.</p> </li> <li> <p>The number of data
      * points in the result set is equal to the value of <code>maxResults</code>. The
-     * maximum value of <code>maxResults</code> is 250.</p> </li> </ul>
+     * maximum value of <code>maxResults</code> is 2500.</p> </li> </ul>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -495,7 +495,7 @@ namespace Model
      * set is returned in the two cases, whichever occurs first.</p> <ul> <li> <p>The
      * size of the result set is equal to 1 MB.</p> </li> <li> <p>The number of data
      * points in the result set is equal to the value of <code>maxResults</code>. The
-     * maximum value of <code>maxResults</code> is 250.</p> </li> </ul>
+     * maximum value of <code>maxResults</code> is 2500.</p> </li> </ul>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -504,7 +504,7 @@ namespace Model
      * set is returned in the two cases, whichever occurs first.</p> <ul> <li> <p>The
      * size of the result set is equal to 1 MB.</p> </li> <li> <p>The number of data
      * points in the result set is equal to the value of <code>maxResults</code>. The
-     * maximum value of <code>maxResults</code> is 250.</p> </li> </ul>
+     * maximum value of <code>maxResults</code> is 2500.</p> </li> </ul>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -513,7 +513,7 @@ namespace Model
      * set is returned in the two cases, whichever occurs first.</p> <ul> <li> <p>The
      * size of the result set is equal to 1 MB.</p> </li> <li> <p>The number of data
      * points in the result set is equal to the value of <code>maxResults</code>. The
-     * maximum value of <code>maxResults</code> is 250.</p> </li> </ul>
+     * maximum value of <code>maxResults</code> is 2500.</p> </li> </ul>
      */
     inline GetAssetPropertyAggregatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -466,6 +466,34 @@ namespace CloudFront
         }
 
         /**
+         * <p>Specifies the Key Value Store resource to add to your account. In your
+         * account, the Key Value Store names must be unique. You can also import Key Value
+         * Store data in JSON format from an S3 bucket by providing a valid
+         * <code>ImportSource</code> that you own.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyValueStore2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateKeyValueStore2020_05_31Outcome CreateKeyValueStore2020_05_31(const Model::CreateKeyValueStore2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for CreateKeyValueStore2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateKeyValueStore2020_05_31RequestT = Model::CreateKeyValueStore2020_05_31Request>
+        Model::CreateKeyValueStore2020_05_31OutcomeCallable CreateKeyValueStore2020_05_31Callable(const CreateKeyValueStore2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::CreateKeyValueStore2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for CreateKeyValueStore2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateKeyValueStore2020_05_31RequestT = Model::CreateKeyValueStore2020_05_31Request>
+        void CreateKeyValueStore2020_05_31Async(const CreateKeyValueStore2020_05_31RequestT& request, const CreateKeyValueStore2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::CreateKeyValueStore2020_05_31, request, handler, context);
+        }
+
+        /**
          * <p>Enables additional CloudWatch metrics for the specified CloudFront
          * distribution. The additional metrics incur an additional cost.</p> <p>For more
          * information, see <a
@@ -946,6 +974,31 @@ namespace CloudFront
         }
 
         /**
+         * <p>Specifies the Key Value Store to delete.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyValueStore2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteKeyValueStore2020_05_31Outcome DeleteKeyValueStore2020_05_31(const Model::DeleteKeyValueStore2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for DeleteKeyValueStore2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteKeyValueStore2020_05_31RequestT = Model::DeleteKeyValueStore2020_05_31Request>
+        Model::DeleteKeyValueStore2020_05_31OutcomeCallable DeleteKeyValueStore2020_05_31Callable(const DeleteKeyValueStore2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::DeleteKeyValueStore2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteKeyValueStore2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteKeyValueStore2020_05_31RequestT = Model::DeleteKeyValueStore2020_05_31Request>
+        void DeleteKeyValueStore2020_05_31Async(const DeleteKeyValueStore2020_05_31RequestT& request, const DeleteKeyValueStore2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::DeleteKeyValueStore2020_05_31, request, handler, context);
+        }
+
+        /**
          * <p>Disables additional CloudWatch metrics for the specified CloudFront
          * distribution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription2020_05_31">AWS
@@ -1199,6 +1252,32 @@ namespace CloudFront
         void DescribeFunction2020_05_31Async(const DescribeFunction2020_05_31RequestT& request, const DescribeFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFrontClient::DescribeFunction2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Specifies the Key Value Store and its configuration.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeKeyValueStore2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeKeyValueStore2020_05_31Outcome DescribeKeyValueStore2020_05_31(const Model::DescribeKeyValueStore2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for DescribeKeyValueStore2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeKeyValueStore2020_05_31RequestT = Model::DescribeKeyValueStore2020_05_31Request>
+        Model::DescribeKeyValueStore2020_05_31OutcomeCallable DescribeKeyValueStore2020_05_31Callable(const DescribeKeyValueStore2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::DescribeKeyValueStore2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeKeyValueStore2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeKeyValueStore2020_05_31RequestT = Model::DescribeKeyValueStore2020_05_31Request>
+        void DescribeKeyValueStore2020_05_31Async(const DescribeKeyValueStore2020_05_31RequestT& request, const DescribeKeyValueStore2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::DescribeKeyValueStore2020_05_31, request, handler, context);
         }
 
         /**
@@ -2471,6 +2550,31 @@ namespace CloudFront
         }
 
         /**
+         * <p>Specifies the Key Value Stores to list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyValueStores2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListKeyValueStores2020_05_31Outcome ListKeyValueStores2020_05_31(const Model::ListKeyValueStores2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for ListKeyValueStores2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListKeyValueStores2020_05_31RequestT = Model::ListKeyValueStores2020_05_31Request>
+        Model::ListKeyValueStores2020_05_31OutcomeCallable ListKeyValueStores2020_05_31Callable(const ListKeyValueStores2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::ListKeyValueStores2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for ListKeyValueStores2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListKeyValueStores2020_05_31RequestT = Model::ListKeyValueStores2020_05_31Request>
+        void ListKeyValueStores2020_05_31Async(const ListKeyValueStores2020_05_31RequestT& request, const ListKeyValueStores2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::ListKeyValueStores2020_05_31, request, handler, context);
+        }
+
+        /**
          * <p>Gets the list of CloudFront origin access controls in this Amazon Web
          * Services account.</p> <p>You can optionally specify the maximum number of items
          * to receive in the response. If the total number of items in the list exceeds the
@@ -3084,6 +3188,31 @@ namespace CloudFront
         void UpdateKeyGroup2020_05_31Async(const UpdateKeyGroup2020_05_31RequestT& request, const UpdateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFrontClient::UpdateKeyGroup2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Specifies the Key Value Store to update.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyValueStore2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateKeyValueStore2020_05_31Outcome UpdateKeyValueStore2020_05_31(const Model::UpdateKeyValueStore2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for UpdateKeyValueStore2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateKeyValueStore2020_05_31RequestT = Model::UpdateKeyValueStore2020_05_31Request>
+        Model::UpdateKeyValueStore2020_05_31OutcomeCallable UpdateKeyValueStore2020_05_31Callable(const UpdateKeyValueStore2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::UpdateKeyValueStore2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateKeyValueStore2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateKeyValueStore2020_05_31RequestT = Model::UpdateKeyValueStore2020_05_31Request>
+        void UpdateKeyValueStore2020_05_31Async(const UpdateKeyValueStore2020_05_31RequestT& request, const UpdateKeyValueStore2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::UpdateKeyValueStore2020_05_31, request, handler, context);
         }
 
         /**

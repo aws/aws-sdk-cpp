@@ -2353,7 +2353,7 @@ namespace Aws
          * ("access denied") error.</p> </dd> <dt>Versioning</dt> <dd> <p>By default, the
          * <code>GET</code> action returns the current version of an object. To return a
          * different version, use the <code>versionId</code> subresource.</p>  <ul>
-         * <li> <p> If you supply a <code>versionId</code>, you need the
+         * <li> <p>If you supply a <code>versionId</code>, you need the
          * <code>s3:GetObjectVersion</code> permission to access a specific version of an
          * object. If you request a specific version, you do not need to have the
          * <code>s3:GetObject</code> permission. If you request the current version without
@@ -2361,8 +2361,10 @@ namespace Aws
          * <code>s3:GetObjectVersion</code> permission won't be required.</p> </li> <li>
          * <p>If the current version of the object is a delete marker, Amazon S3 behaves as
          * if the object was deleted and includes <code>x-amz-delete-marker: true</code> in
-         * the response.</p> </li> </ul>  <p>For more information about versioning,
-         * see <a
+         * the response.</p> </li> <li> <p>If the specified version is a delete marker, the
+         * response returns a 405 (Method Not Allowed) error and the <code>Last-Modified:
+         * timestamp</code> response header.</p> </li> </ul>  <p>For more
+         * information about versioning, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
          * </p> </dd> <dt>Overriding Response Header Values</dt> <dd> <p>There are times
          * when you want to override certain response header values in a <code>GET</code>
@@ -2833,12 +2835,13 @@ namespace Aws
          * <code>GET</code> action on an object. The response is identical to the
          * <code>GET</code> response except that there is no response body. Because of
          * this, if the <code>HEAD</code> request generates an error, it returns a generic
-         * <code>400 Bad Request</code>, <code>403 Forbidden</code> or <code>404 Not
-         * Found</code> code. It is not possible to retrieve the exact exception beyond
-         * these error codes.</p> <p>If you encrypt an object by using server-side
-         * encryption with customer-provided encryption keys (SSE-C) when you store the
-         * object in Amazon S3, then when you retrieve the metadata from the object, you
-         * must use the following headers:</p> <ul> <li> <p>
+         * code, such as <code>400 Bad Request</code>, <code>403 Forbidden</code>,
+         * <code>404 Not Found</code>, <code>405 Method Not Allowed</code>, <code>412
+         * Precondition Failed</code>, or <code>304 Not Modified</code>. It's not possible
+         * to retrieve the exact exception of these error codes.</p> <p>If you encrypt an
+         * object by using server-side encryption with customer-provided encryption keys
+         * (SSE-C) when you store the object in Amazon S3, then when you retrieve the
+         * metadata from the object, you must use the following headers:</p> <ul> <li> <p>
          * <code>x-amz-server-side-encryption-customer-algorithm</code> </p> </li> <li> <p>
          * <code>x-amz-server-side-encryption-customer-key</code> </p> </li> <li> <p>
          * <code>x-amz-server-side-encryption-customer-key-MD5</code> </p> </li> </ul>
@@ -2879,8 +2882,13 @@ namespace Aws
          * <code>s3:ListBucket</code> permission on the bucket, Amazon S3 returns an HTTP
          * status code 404 error.</p> </li> <li> <p>If you don’t have the
          * <code>s3:ListBucket</code> permission, Amazon S3 returns an HTTP status code 403
-         * error.</p> </li> </ul> </dd> </dl> <p>The following actions are related to
-         * <code>HeadObject</code>:</p> <ul> <li> <p> <a
+         * error.</p> </li> </ul> </dd> <dt>Versioning</dt> <dd> <ul> <li> <p>If the
+         * current version of the object is a delete marker, Amazon S3 behaves as if the
+         * object was deleted and includes <code>x-amz-delete-marker: true</code> in the
+         * response.</p> </li> <li> <p>If the specified version is a delete marker, the
+         * response returns a 405 (Method Not Allowed) error and the <code>Last-Modified:
+         * timestamp</code> response header.</p> </li> </ul> </dd> </dl> <p>The following
+         * actions are related to <code>HeadObject</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
@@ -3204,9 +3212,9 @@ namespace Aws
          * aware of the name difference. </p>   <p> A <code>200 OK</code>
          * response can contain valid or invalid XML. Make sure to design your application
          * to parse the contents of the response and handle it appropriately.</p> 
-         * <p>To use this operation, you must have READ access to the bucket.</p> <p>This
-         * action is not supported by Amazon S3 on Outposts.</p> <p>The following
-         * operations are related to <code>ListObjectVersions</code>:</p> <ul> <li> <p> <a
+         * <p>To use this operation, you must have READ access to the bucket.</p> <p>The
+         * following operations are related to <code>ListObjectVersions</code>:</p> <ul>
+         * <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>

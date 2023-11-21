@@ -33,6 +33,7 @@
 #include <aws/cloudfront/model/CreateFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateInvalidation2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateKeyGroup2020_05_31Request.h>
+#include <aws/cloudfront/model/CreateKeyValueStore2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateMonitoringSubscription2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateOriginAccessControl2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateOriginRequestPolicy2020_05_31Request.h>
@@ -49,6 +50,7 @@
 #include <aws/cloudfront/model/DeleteFieldLevelEncryptionProfile2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteKeyGroup2020_05_31Request.h>
+#include <aws/cloudfront/model/DeleteKeyValueStore2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteMonitoringSubscription2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteOriginAccessControl2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteOriginRequestPolicy2020_05_31Request.h>
@@ -57,6 +59,7 @@
 #include <aws/cloudfront/model/DeleteResponseHeadersPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteStreamingDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/DescribeFunction2020_05_31Request.h>
+#include <aws/cloudfront/model/DescribeKeyValueStore2020_05_31Request.h>
 #include <aws/cloudfront/model/GetCachePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/GetCachePolicyConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentity2020_05_31Request.h>
@@ -101,6 +104,7 @@
 #include <aws/cloudfront/model/ListFunctions2020_05_31Request.h>
 #include <aws/cloudfront/model/ListInvalidations2020_05_31Request.h>
 #include <aws/cloudfront/model/ListKeyGroups2020_05_31Request.h>
+#include <aws/cloudfront/model/ListKeyValueStores2020_05_31Request.h>
 #include <aws/cloudfront/model/ListOriginAccessControls2020_05_31Request.h>
 #include <aws/cloudfront/model/ListOriginRequestPolicies2020_05_31Request.h>
 #include <aws/cloudfront/model/ListPublicKeys2020_05_31Request.h>
@@ -121,6 +125,7 @@
 #include <aws/cloudfront/model/UpdateFieldLevelEncryptionProfile2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateKeyGroup2020_05_31Request.h>
+#include <aws/cloudfront/model/UpdateKeyValueStore2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateOriginAccessControl2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdatePublicKey2020_05_31Request.h>
@@ -608,6 +613,33 @@ CreateKeyGroup2020_05_31Outcome CloudFrontClient::CreateKeyGroup2020_05_31(const
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateKeyGroup2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-group");
       return CreateKeyGroup2020_05_31Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateKeyValueStore2020_05_31Outcome CloudFrontClient::CreateKeyValueStore2020_05_31(const CreateKeyValueStore2020_05_31Request& request) const
+{
+  AWS_OPERATION_GUARD(CreateKeyValueStore2020_05_31);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateKeyValueStore2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateKeyValueStore2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateKeyValueStore2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateKeyValueStore2020_05_31Outcome>(
+    [&]()-> CreateKeyValueStore2020_05_31Outcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateKeyValueStore2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-value-store/");
+      return CreateKeyValueStore2020_05_31Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1109,6 +1141,44 @@ DeleteKeyGroup2020_05_31Outcome CloudFrontClient::DeleteKeyGroup2020_05_31(const
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteKeyValueStore2020_05_31Outcome CloudFrontClient::DeleteKeyValueStore2020_05_31(const DeleteKeyValueStore2020_05_31Request& request) const
+{
+  AWS_OPERATION_GUARD(DeleteKeyValueStore2020_05_31);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteKeyValueStore2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteKeyValueStore2020_05_31", "Required field: Name, is not set");
+    return DeleteKeyValueStore2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.IfMatchHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteKeyValueStore2020_05_31", "Required field: IfMatch, is not set");
+    return DeleteKeyValueStore2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IfMatch]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteKeyValueStore2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteKeyValueStore2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteKeyValueStore2020_05_31Outcome>(
+    [&]()-> DeleteKeyValueStore2020_05_31Outcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteKeyValueStore2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-value-store/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+      return DeleteKeyValueStore2020_05_31Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteMonitoringSubscription2020_05_31Outcome CloudFrontClient::DeleteMonitoringSubscription2020_05_31(const DeleteMonitoringSubscription2020_05_31Request& request) const
 {
   AWS_OPERATION_GUARD(DeleteMonitoringSubscription2020_05_31);
@@ -1363,6 +1433,39 @@ DescribeFunction2020_05_31Outcome CloudFrontClient::DescribeFunction2020_05_31(c
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
       endpointResolutionOutcome.GetResult().AddPathSegments("/describe");
       return DescribeFunction2020_05_31Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeKeyValueStore2020_05_31Outcome CloudFrontClient::DescribeKeyValueStore2020_05_31(const DescribeKeyValueStore2020_05_31Request& request) const
+{
+  AWS_OPERATION_GUARD(DescribeKeyValueStore2020_05_31);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeKeyValueStore2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeKeyValueStore2020_05_31", "Required field: Name, is not set");
+    return DescribeKeyValueStore2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeKeyValueStore2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeKeyValueStore2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeKeyValueStore2020_05_31Outcome>(
+    [&]()-> DescribeKeyValueStore2020_05_31Outcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeKeyValueStore2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-value-store/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+      return DescribeKeyValueStore2020_05_31Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2786,6 +2889,33 @@ ListKeyGroups2020_05_31Outcome CloudFrontClient::ListKeyGroups2020_05_31(const L
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListKeyValueStores2020_05_31Outcome CloudFrontClient::ListKeyValueStores2020_05_31(const ListKeyValueStores2020_05_31Request& request) const
+{
+  AWS_OPERATION_GUARD(ListKeyValueStores2020_05_31);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListKeyValueStores2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListKeyValueStores2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListKeyValueStores2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListKeyValueStores2020_05_31Outcome>(
+    [&]()-> ListKeyValueStores2020_05_31Outcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListKeyValueStores2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-value-store");
+      return ListKeyValueStores2020_05_31Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListOriginAccessControls2020_05_31Outcome CloudFrontClient::ListOriginAccessControls2020_05_31(const ListOriginAccessControls2020_05_31Request& request) const
 {
   AWS_OPERATION_GUARD(ListOriginAccessControls2020_05_31);
@@ -3429,6 +3559,44 @@ UpdateKeyGroup2020_05_31Outcome CloudFrontClient::UpdateKeyGroup2020_05_31(const
       endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-group/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
       return UpdateKeyGroup2020_05_31Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateKeyValueStore2020_05_31Outcome CloudFrontClient::UpdateKeyValueStore2020_05_31(const UpdateKeyValueStore2020_05_31Request& request) const
+{
+  AWS_OPERATION_GUARD(UpdateKeyValueStore2020_05_31);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateKeyValueStore2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateKeyValueStore2020_05_31", "Required field: Name, is not set");
+    return UpdateKeyValueStore2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.IfMatchHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateKeyValueStore2020_05_31", "Required field: IfMatch, is not set");
+    return UpdateKeyValueStore2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IfMatch]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateKeyValueStore2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateKeyValueStore2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateKeyValueStore2020_05_31Outcome>(
+    [&]()-> UpdateKeyValueStore2020_05_31Outcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateKeyValueStore2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-value-store/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+      return UpdateKeyValueStore2020_05_31Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
