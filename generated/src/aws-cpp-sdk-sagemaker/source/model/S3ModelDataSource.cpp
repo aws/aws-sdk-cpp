@@ -23,7 +23,8 @@ S3ModelDataSource::S3ModelDataSource() :
     m_s3DataType(S3ModelDataType::NOT_SET),
     m_s3DataTypeHasBeenSet(false),
     m_compressionType(ModelCompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false)
+    m_compressionTypeHasBeenSet(false),
+    m_modelAccessConfigHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ S3ModelDataSource::S3ModelDataSource(JsonView jsonValue) :
     m_s3DataType(S3ModelDataType::NOT_SET),
     m_s3DataTypeHasBeenSet(false),
     m_compressionType(ModelCompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false)
+    m_compressionTypeHasBeenSet(false),
+    m_modelAccessConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +62,13 @@ S3ModelDataSource& S3ModelDataSource::operator =(JsonView jsonValue)
     m_compressionTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelAccessConfig"))
+  {
+    m_modelAccessConfig = jsonValue.GetObject("ModelAccessConfig");
+
+    m_modelAccessConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +90,12 @@ JsonValue S3ModelDataSource::Jsonize() const
   if(m_compressionTypeHasBeenSet)
   {
    payload.WithString("CompressionType", ModelCompressionTypeMapper::GetNameForModelCompressionType(m_compressionType));
+  }
+
+  if(m_modelAccessConfigHasBeenSet)
+  {
+   payload.WithObject("ModelAccessConfig", m_modelAccessConfig.Jsonize());
+
   }
 
   return payload;

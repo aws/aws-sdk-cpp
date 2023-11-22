@@ -222,44 +222,44 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the associated Amazon Web Services Single Sign-On application for
-     * this Domain.</p>
+     * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
+     * value is only returned for domains created after September 19, 2023.</p>
      */
     inline const Aws::String& GetSingleSignOnApplicationArn() const{ return m_singleSignOnApplicationArn; }
 
     /**
-     * <p>The ARN of the associated Amazon Web Services Single Sign-On application for
-     * this Domain.</p>
+     * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
+     * value is only returned for domains created after September 19, 2023.</p>
      */
     inline void SetSingleSignOnApplicationArn(const Aws::String& value) { m_singleSignOnApplicationArn = value; }
 
     /**
-     * <p>The ARN of the associated Amazon Web Services Single Sign-On application for
-     * this Domain.</p>
+     * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
+     * value is only returned for domains created after September 19, 2023.</p>
      */
     inline void SetSingleSignOnApplicationArn(Aws::String&& value) { m_singleSignOnApplicationArn = std::move(value); }
 
     /**
-     * <p>The ARN of the associated Amazon Web Services Single Sign-On application for
-     * this Domain.</p>
+     * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
+     * value is only returned for domains created after September 19, 2023.</p>
      */
     inline void SetSingleSignOnApplicationArn(const char* value) { m_singleSignOnApplicationArn.assign(value); }
 
     /**
-     * <p>The ARN of the associated Amazon Web Services Single Sign-On application for
-     * this Domain.</p>
+     * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
+     * value is only returned for domains created after September 19, 2023.</p>
      */
     inline DescribeDomainResult& WithSingleSignOnApplicationArn(const Aws::String& value) { SetSingleSignOnApplicationArn(value); return *this;}
 
     /**
-     * <p>The ARN of the associated Amazon Web Services Single Sign-On application for
-     * this Domain.</p>
+     * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
+     * value is only returned for domains created after September 19, 2023.</p>
      */
     inline DescribeDomainResult& WithSingleSignOnApplicationArn(Aws::String&& value) { SetSingleSignOnApplicationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the associated Amazon Web Services Single Sign-On application for
-     * this Domain.</p>
+     * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
+     * value is only returned for domains created after September 19, 2023.</p>
      */
     inline DescribeDomainResult& WithSingleSignOnApplicationArn(const char* value) { SetSingleSignOnApplicationArn(value); return *this;}
 
