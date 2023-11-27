@@ -686,65 +686,74 @@ namespace Model
 
 
     /**
-     * <p>The database name for the restored DB instance.</p>  <p>This parameter
-     * isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS
-     * Custom.</p> 
+     * <p>The database name for the restored DB instance.</p> <p>This parameter doesn't
+     * apply to the following DB instances:</p> <ul> <li> <p>RDS Custom</p> </li> <li>
+     * <p>RDS for Db2</p> </li> <li> <p>RDS for MariaDB</p> </li> <li> <p>RDS for
+     * MySQL</p> </li> </ul>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
     /**
-     * <p>The database name for the restored DB instance.</p>  <p>This parameter
-     * isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS
-     * Custom.</p> 
+     * <p>The database name for the restored DB instance.</p> <p>This parameter doesn't
+     * apply to the following DB instances:</p> <ul> <li> <p>RDS Custom</p> </li> <li>
+     * <p>RDS for Db2</p> </li> <li> <p>RDS for MariaDB</p> </li> <li> <p>RDS for
+     * MySQL</p> </li> </ul>
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
     /**
-     * <p>The database name for the restored DB instance.</p>  <p>This parameter
-     * isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS
-     * Custom.</p> 
+     * <p>The database name for the restored DB instance.</p> <p>This parameter doesn't
+     * apply to the following DB instances:</p> <ul> <li> <p>RDS Custom</p> </li> <li>
+     * <p>RDS for Db2</p> </li> <li> <p>RDS for MariaDB</p> </li> <li> <p>RDS for
+     * MySQL</p> </li> </ul>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /**
-     * <p>The database name for the restored DB instance.</p>  <p>This parameter
-     * isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS
-     * Custom.</p> 
+     * <p>The database name for the restored DB instance.</p> <p>This parameter doesn't
+     * apply to the following DB instances:</p> <ul> <li> <p>RDS Custom</p> </li> <li>
+     * <p>RDS for Db2</p> </li> <li> <p>RDS for MariaDB</p> </li> <li> <p>RDS for
+     * MySQL</p> </li> </ul>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
     /**
-     * <p>The database name for the restored DB instance.</p>  <p>This parameter
-     * isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS
-     * Custom.</p> 
+     * <p>The database name for the restored DB instance.</p> <p>This parameter doesn't
+     * apply to the following DB instances:</p> <ul> <li> <p>RDS Custom</p> </li> <li>
+     * <p>RDS for Db2</p> </li> <li> <p>RDS for MariaDB</p> </li> <li> <p>RDS for
+     * MySQL</p> </li> </ul>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
     /**
-     * <p>The database name for the restored DB instance.</p>  <p>This parameter
-     * isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS
-     * Custom.</p> 
+     * <p>The database name for the restored DB instance.</p> <p>This parameter doesn't
+     * apply to the following DB instances:</p> <ul> <li> <p>RDS Custom</p> </li> <li>
+     * <p>RDS for Db2</p> </li> <li> <p>RDS for MariaDB</p> </li> <li> <p>RDS for
+     * MySQL</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
     /**
-     * <p>The database name for the restored DB instance.</p>  <p>This parameter
-     * isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS
-     * Custom.</p> 
+     * <p>The database name for the restored DB instance.</p> <p>This parameter doesn't
+     * apply to the following DB instances:</p> <ul> <li> <p>RDS Custom</p> </li> <li>
+     * <p>RDS for Db2</p> </li> <li> <p>RDS for MariaDB</p> </li> <li> <p>RDS for
+     * MySQL</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
     /**
-     * <p>The database name for the restored DB instance.</p>  <p>This parameter
-     * isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS
-     * Custom.</p> 
+     * <p>The database name for the restored DB instance.</p> <p>This parameter doesn't
+     * apply to the following DB instances:</p> <ul> <li> <p>RDS Custom</p> </li> <li>
+     * <p>RDS for Db2</p> </li> <li> <p>RDS for MariaDB</p> </li> <li> <p>RDS for
+     * MySQL</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
 
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>This setting doesn't
-     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code>
+     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>db2-ae</code>
+     * </p> </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code>
      * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
      * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
      * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
@@ -759,7 +768,8 @@ namespace Model
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>This setting doesn't
-     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code>
+     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>db2-ae</code>
+     * </p> </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code>
      * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
      * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
      * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
@@ -774,7 +784,8 @@ namespace Model
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>This setting doesn't
-     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code>
+     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>db2-ae</code>
+     * </p> </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code>
      * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
      * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
      * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
@@ -789,7 +800,8 @@ namespace Model
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>This setting doesn't
-     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code>
+     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>db2-ae</code>
+     * </p> </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code>
      * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
      * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
      * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
@@ -804,7 +816,8 @@ namespace Model
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>This setting doesn't
-     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code>
+     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>db2-ae</code>
+     * </p> </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code>
      * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
      * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
      * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
@@ -819,7 +832,8 @@ namespace Model
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>This setting doesn't
-     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code>
+     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>db2-ae</code>
+     * </p> </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code>
      * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
      * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
      * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
@@ -834,7 +848,8 @@ namespace Model
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>This setting doesn't
-     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code>
+     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>db2-ae</code>
+     * </p> </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code>
      * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
      * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
      * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
@@ -849,7 +864,8 @@ namespace Model
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>This setting doesn't
-     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code>
+     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>db2-ae</code>
+     * </p> </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code>
      * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
      * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
      * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
@@ -2367,10 +2383,11 @@ namespace Model
 
 
     /**
-     * <p>Specifies where automated backups and manual snapshots are stored for the
-     * restored DB instance.</p> <p>Possible values are <code>outposts</code> (Amazon
-     * Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The
-     * default is <code>region</code>.</p> <p>For more information, see <a
+     * <p>The location for storing automated backups and manual snapshots for the
+     * restored DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>outposts</code> (Amazon Web Services Outposts)</p> </li> <li> <p>
+     * <code>region</code> (Amazon Web Services Region)</p> </li> </ul> <p>Default:
+     * <code>region</code> </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p>
@@ -2378,10 +2395,11 @@ namespace Model
     inline const Aws::String& GetBackupTarget() const{ return m_backupTarget; }
 
     /**
-     * <p>Specifies where automated backups and manual snapshots are stored for the
-     * restored DB instance.</p> <p>Possible values are <code>outposts</code> (Amazon
-     * Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The
-     * default is <code>region</code>.</p> <p>For more information, see <a
+     * <p>The location for storing automated backups and manual snapshots for the
+     * restored DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>outposts</code> (Amazon Web Services Outposts)</p> </li> <li> <p>
+     * <code>region</code> (Amazon Web Services Region)</p> </li> </ul> <p>Default:
+     * <code>region</code> </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p>
@@ -2389,10 +2407,11 @@ namespace Model
     inline bool BackupTargetHasBeenSet() const { return m_backupTargetHasBeenSet; }
 
     /**
-     * <p>Specifies where automated backups and manual snapshots are stored for the
-     * restored DB instance.</p> <p>Possible values are <code>outposts</code> (Amazon
-     * Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The
-     * default is <code>region</code>.</p> <p>For more information, see <a
+     * <p>The location for storing automated backups and manual snapshots for the
+     * restored DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>outposts</code> (Amazon Web Services Outposts)</p> </li> <li> <p>
+     * <code>region</code> (Amazon Web Services Region)</p> </li> </ul> <p>Default:
+     * <code>region</code> </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p>
@@ -2400,10 +2419,11 @@ namespace Model
     inline void SetBackupTarget(const Aws::String& value) { m_backupTargetHasBeenSet = true; m_backupTarget = value; }
 
     /**
-     * <p>Specifies where automated backups and manual snapshots are stored for the
-     * restored DB instance.</p> <p>Possible values are <code>outposts</code> (Amazon
-     * Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The
-     * default is <code>region</code>.</p> <p>For more information, see <a
+     * <p>The location for storing automated backups and manual snapshots for the
+     * restored DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>outposts</code> (Amazon Web Services Outposts)</p> </li> <li> <p>
+     * <code>region</code> (Amazon Web Services Region)</p> </li> </ul> <p>Default:
+     * <code>region</code> </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p>
@@ -2411,10 +2431,11 @@ namespace Model
     inline void SetBackupTarget(Aws::String&& value) { m_backupTargetHasBeenSet = true; m_backupTarget = std::move(value); }
 
     /**
-     * <p>Specifies where automated backups and manual snapshots are stored for the
-     * restored DB instance.</p> <p>Possible values are <code>outposts</code> (Amazon
-     * Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The
-     * default is <code>region</code>.</p> <p>For more information, see <a
+     * <p>The location for storing automated backups and manual snapshots for the
+     * restored DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>outposts</code> (Amazon Web Services Outposts)</p> </li> <li> <p>
+     * <code>region</code> (Amazon Web Services Region)</p> </li> </ul> <p>Default:
+     * <code>region</code> </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p>
@@ -2422,10 +2443,11 @@ namespace Model
     inline void SetBackupTarget(const char* value) { m_backupTargetHasBeenSet = true; m_backupTarget.assign(value); }
 
     /**
-     * <p>Specifies where automated backups and manual snapshots are stored for the
-     * restored DB instance.</p> <p>Possible values are <code>outposts</code> (Amazon
-     * Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The
-     * default is <code>region</code>.</p> <p>For more information, see <a
+     * <p>The location for storing automated backups and manual snapshots for the
+     * restored DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>outposts</code> (Amazon Web Services Outposts)</p> </li> <li> <p>
+     * <code>region</code> (Amazon Web Services Region)</p> </li> </ul> <p>Default:
+     * <code>region</code> </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p>
@@ -2433,10 +2455,11 @@ namespace Model
     inline RestoreDBInstanceToPointInTimeRequest& WithBackupTarget(const Aws::String& value) { SetBackupTarget(value); return *this;}
 
     /**
-     * <p>Specifies where automated backups and manual snapshots are stored for the
-     * restored DB instance.</p> <p>Possible values are <code>outposts</code> (Amazon
-     * Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The
-     * default is <code>region</code>.</p> <p>For more information, see <a
+     * <p>The location for storing automated backups and manual snapshots for the
+     * restored DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>outposts</code> (Amazon Web Services Outposts)</p> </li> <li> <p>
+     * <code>region</code> (Amazon Web Services Region)</p> </li> </ul> <p>Default:
+     * <code>region</code> </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p>
@@ -2444,10 +2467,11 @@ namespace Model
     inline RestoreDBInstanceToPointInTimeRequest& WithBackupTarget(Aws::String&& value) { SetBackupTarget(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies where automated backups and manual snapshots are stored for the
-     * restored DB instance.</p> <p>Possible values are <code>outposts</code> (Amazon
-     * Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The
-     * default is <code>region</code>.</p> <p>For more information, see <a
+     * <p>The location for storing automated backups and manual snapshots for the
+     * restored DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>outposts</code> (Amazon Web Services Outposts)</p> </li> <li> <p>
+     * <code>region</code> (Amazon Web Services Region)</p> </li> </ul> <p>Default:
+     * <code>region</code> </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p>

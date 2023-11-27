@@ -283,87 +283,87 @@ namespace Model
 
 
     /**
-     * <p> The last time that a control's enablement status in a specified standard was
-     * updated. </p>
+     * <p>The last time that a control's enablement status in a specified standard was
+     * updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p> The last time that a control's enablement status in a specified standard was
-     * updated. </p>
+     * <p>The last time that a control's enablement status in a specified standard was
+     * updated.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p> The last time that a control's enablement status in a specified standard was
-     * updated. </p>
+     * <p>The last time that a control's enablement status in a specified standard was
+     * updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p> The last time that a control's enablement status in a specified standard was
-     * updated. </p>
+     * <p>The last time that a control's enablement status in a specified standard was
+     * updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p> The last time that a control's enablement status in a specified standard was
-     * updated. </p>
+     * <p>The last time that a control's enablement status in a specified standard was
+     * updated.</p>
      */
     inline StandardsControlAssociationSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p> The last time that a control's enablement status in a specified standard was
-     * updated. </p>
+     * <p>The last time that a control's enablement status in a specified standard was
+     * updated.</p>
      */
     inline StandardsControlAssociationSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p> The reason for updating the control's enablement status in a specified
-     * standard. </p>
+     * <p>The reason for updating a control's enablement status in a specified
+     * standard.</p>
      */
     inline const Aws::String& GetUpdatedReason() const{ return m_updatedReason; }
 
     /**
-     * <p> The reason for updating the control's enablement status in a specified
-     * standard. </p>
+     * <p>The reason for updating a control's enablement status in a specified
+     * standard.</p>
      */
     inline bool UpdatedReasonHasBeenSet() const { return m_updatedReasonHasBeenSet; }
 
     /**
-     * <p> The reason for updating the control's enablement status in a specified
-     * standard. </p>
+     * <p>The reason for updating a control's enablement status in a specified
+     * standard.</p>
      */
     inline void SetUpdatedReason(const Aws::String& value) { m_updatedReasonHasBeenSet = true; m_updatedReason = value; }
 
     /**
-     * <p> The reason for updating the control's enablement status in a specified
-     * standard. </p>
+     * <p>The reason for updating a control's enablement status in a specified
+     * standard.</p>
      */
     inline void SetUpdatedReason(Aws::String&& value) { m_updatedReasonHasBeenSet = true; m_updatedReason = std::move(value); }
 
     /**
-     * <p> The reason for updating the control's enablement status in a specified
-     * standard. </p>
+     * <p>The reason for updating a control's enablement status in a specified
+     * standard.</p>
      */
     inline void SetUpdatedReason(const char* value) { m_updatedReasonHasBeenSet = true; m_updatedReason.assign(value); }
 
     /**
-     * <p> The reason for updating the control's enablement status in a specified
-     * standard. </p>
+     * <p>The reason for updating a control's enablement status in a specified
+     * standard.</p>
      */
     inline StandardsControlAssociationSummary& WithUpdatedReason(const Aws::String& value) { SetUpdatedReason(value); return *this;}
 
     /**
-     * <p> The reason for updating the control's enablement status in a specified
-     * standard. </p>
+     * <p>The reason for updating a control's enablement status in a specified
+     * standard.</p>
      */
     inline StandardsControlAssociationSummary& WithUpdatedReason(Aws::String&& value) { SetUpdatedReason(std::move(value)); return *this;}
 
     /**
-     * <p> The reason for updating the control's enablement status in a specified
-     * standard. </p>
+     * <p>The reason for updating a control's enablement status in a specified
+     * standard.</p>
      */
     inline StandardsControlAssociationSummary& WithUpdatedReason(const char* value) { SetUpdatedReason(value); return *this;}
 

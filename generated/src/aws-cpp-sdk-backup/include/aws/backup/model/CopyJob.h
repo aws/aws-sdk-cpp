@@ -964,8 +964,8 @@ namespace Model
 
     /**
      * <p>This parameter is the job count for the specified message category.</p>
-     * <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and
-     * <code>InvalidParameters</code>. See <a
+     * <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>. See <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
      * for a list of MessageCategory strings.</p> <p>The the value ANY returns count of
      * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts
@@ -975,8 +975,8 @@ namespace Model
 
     /**
      * <p>This parameter is the job count for the specified message category.</p>
-     * <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and
-     * <code>InvalidParameters</code>. See <a
+     * <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>. See <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
      * for a list of MessageCategory strings.</p> <p>The the value ANY returns count of
      * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts
@@ -986,8 +986,8 @@ namespace Model
 
     /**
      * <p>This parameter is the job count for the specified message category.</p>
-     * <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and
-     * <code>InvalidParameters</code>. See <a
+     * <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>. See <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
      * for a list of MessageCategory strings.</p> <p>The the value ANY returns count of
      * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts
@@ -997,8 +997,8 @@ namespace Model
 
     /**
      * <p>This parameter is the job count for the specified message category.</p>
-     * <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and
-     * <code>InvalidParameters</code>. See <a
+     * <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>. See <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
      * for a list of MessageCategory strings.</p> <p>The the value ANY returns count of
      * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts
@@ -1008,8 +1008,8 @@ namespace Model
 
     /**
      * <p>This parameter is the job count for the specified message category.</p>
-     * <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and
-     * <code>InvalidParameters</code>. See <a
+     * <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>. See <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
      * for a list of MessageCategory strings.</p> <p>The the value ANY returns count of
      * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts
@@ -1019,8 +1019,8 @@ namespace Model
 
     /**
      * <p>This parameter is the job count for the specified message category.</p>
-     * <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and
-     * <code>InvalidParameters</code>. See <a
+     * <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>. See <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
      * for a list of MessageCategory strings.</p> <p>The the value ANY returns count of
      * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts
@@ -1030,8 +1030,8 @@ namespace Model
 
     /**
      * <p>This parameter is the job count for the specified message category.</p>
-     * <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and
-     * <code>InvalidParameters</code>. See <a
+     * <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>. See <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
      * for a list of MessageCategory strings.</p> <p>The the value ANY returns count of
      * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts
@@ -1041,8 +1041,8 @@ namespace Model
 
     /**
      * <p>This parameter is the job count for the specified message category.</p>
-     * <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and
-     * <code>InvalidParameters</code>. See <a
+     * <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>. See <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
      * for a list of MessageCategory strings.</p> <p>The the value ANY returns count of
      * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts

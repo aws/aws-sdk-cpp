@@ -115,7 +115,10 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters() :
     m_vulnerabilitiesExploitAvailableHasBeenSet(false),
     m_vulnerabilitiesFixAvailableHasBeenSet(false),
     m_complianceSecurityControlParametersNameHasBeenSet(false),
-    m_complianceSecurityControlParametersValueHasBeenSet(false)
+    m_complianceSecurityControlParametersValueHasBeenSet(false),
+    m_awsAccountNameHasBeenSet(false),
+    m_resourceApplicationNameHasBeenSet(false),
+    m_resourceApplicationArnHasBeenSet(false)
 {
 }
 
@@ -216,7 +219,10 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters(JsonView jsonValue) :
     m_vulnerabilitiesExploitAvailableHasBeenSet(false),
     m_vulnerabilitiesFixAvailableHasBeenSet(false),
     m_complianceSecurityControlParametersNameHasBeenSet(false),
-    m_complianceSecurityControlParametersValueHasBeenSet(false)
+    m_complianceSecurityControlParametersValueHasBeenSet(false),
+    m_awsAccountNameHasBeenSet(false),
+    m_resourceApplicationNameHasBeenSet(false),
+    m_resourceApplicationArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -1191,6 +1197,36 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
       m_complianceSecurityControlParametersValue.push_back(complianceSecurityControlParametersValueJsonList[complianceSecurityControlParametersValueIndex].AsObject());
     }
     m_complianceSecurityControlParametersValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsAccountName"))
+  {
+    Aws::Utils::Array<JsonView> awsAccountNameJsonList = jsonValue.GetArray("AwsAccountName");
+    for(unsigned awsAccountNameIndex = 0; awsAccountNameIndex < awsAccountNameJsonList.GetLength(); ++awsAccountNameIndex)
+    {
+      m_awsAccountName.push_back(awsAccountNameJsonList[awsAccountNameIndex].AsObject());
+    }
+    m_awsAccountNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceApplicationName"))
+  {
+    Aws::Utils::Array<JsonView> resourceApplicationNameJsonList = jsonValue.GetArray("ResourceApplicationName");
+    for(unsigned resourceApplicationNameIndex = 0; resourceApplicationNameIndex < resourceApplicationNameJsonList.GetLength(); ++resourceApplicationNameIndex)
+    {
+      m_resourceApplicationName.push_back(resourceApplicationNameJsonList[resourceApplicationNameIndex].AsObject());
+    }
+    m_resourceApplicationNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceApplicationArn"))
+  {
+    Aws::Utils::Array<JsonView> resourceApplicationArnJsonList = jsonValue.GetArray("ResourceApplicationArn");
+    for(unsigned resourceApplicationArnIndex = 0; resourceApplicationArnIndex < resourceApplicationArnJsonList.GetLength(); ++resourceApplicationArnIndex)
+    {
+      m_resourceApplicationArn.push_back(resourceApplicationArnJsonList[resourceApplicationArnIndex].AsObject());
+    }
+    m_resourceApplicationArnHasBeenSet = true;
   }
 
   return *this;
@@ -2264,6 +2300,39 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
      complianceSecurityControlParametersValueJsonList[complianceSecurityControlParametersValueIndex].AsObject(m_complianceSecurityControlParametersValue[complianceSecurityControlParametersValueIndex].Jsonize());
    }
    payload.WithArray("ComplianceSecurityControlParametersValue", std::move(complianceSecurityControlParametersValueJsonList));
+
+  }
+
+  if(m_awsAccountNameHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> awsAccountNameJsonList(m_awsAccountName.size());
+   for(unsigned awsAccountNameIndex = 0; awsAccountNameIndex < awsAccountNameJsonList.GetLength(); ++awsAccountNameIndex)
+   {
+     awsAccountNameJsonList[awsAccountNameIndex].AsObject(m_awsAccountName[awsAccountNameIndex].Jsonize());
+   }
+   payload.WithArray("AwsAccountName", std::move(awsAccountNameJsonList));
+
+  }
+
+  if(m_resourceApplicationNameHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> resourceApplicationNameJsonList(m_resourceApplicationName.size());
+   for(unsigned resourceApplicationNameIndex = 0; resourceApplicationNameIndex < resourceApplicationNameJsonList.GetLength(); ++resourceApplicationNameIndex)
+   {
+     resourceApplicationNameJsonList[resourceApplicationNameIndex].AsObject(m_resourceApplicationName[resourceApplicationNameIndex].Jsonize());
+   }
+   payload.WithArray("ResourceApplicationName", std::move(resourceApplicationNameJsonList));
+
+  }
+
+  if(m_resourceApplicationArnHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> resourceApplicationArnJsonList(m_resourceApplicationArn.size());
+   for(unsigned resourceApplicationArnIndex = 0; resourceApplicationArnIndex < resourceApplicationArnJsonList.GetLength(); ++resourceApplicationArnIndex)
+   {
+     resourceApplicationArnJsonList[resourceApplicationArnIndex].AsObject(m_resourceApplicationArn[resourceApplicationArnIndex].Jsonize());
+   }
+   payload.WithArray("ResourceApplicationArn", std::move(resourceApplicationArnJsonList));
 
   }
 

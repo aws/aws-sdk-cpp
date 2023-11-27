@@ -20,14 +20,18 @@ using namespace Aws;
 DescribeRestoreJobResult::DescribeRestoreJobResult() : 
     m_status(RestoreJobStatus::NOT_SET),
     m_backupSizeInBytes(0),
-    m_expectedCompletionTimeMinutes(0)
+    m_expectedCompletionTimeMinutes(0),
+    m_validationStatus(RestoreValidationStatus::NOT_SET),
+    m_deletionStatus(RestoreDeletionStatus::NOT_SET)
 {
 }
 
 DescribeRestoreJobResult::DescribeRestoreJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(RestoreJobStatus::NOT_SET),
     m_backupSizeInBytes(0),
-    m_expectedCompletionTimeMinutes(0)
+    m_expectedCompletionTimeMinutes(0),
+    m_validationStatus(RestoreValidationStatus::NOT_SET),
+    m_deletionStatus(RestoreDeletionStatus::NOT_SET)
 {
   *this = result;
 }
@@ -110,6 +114,42 @@ DescribeRestoreJobResult& DescribeRestoreJobResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
+
+  }
+
+  if(jsonValue.ValueExists("RecoveryPointCreationDate"))
+  {
+    m_recoveryPointCreationDate = jsonValue.GetDouble("RecoveryPointCreationDate");
+
+  }
+
+  if(jsonValue.ValueExists("CreatedBy"))
+  {
+    m_createdBy = jsonValue.GetObject("CreatedBy");
+
+  }
+
+  if(jsonValue.ValueExists("ValidationStatus"))
+  {
+    m_validationStatus = RestoreValidationStatusMapper::GetRestoreValidationStatusForName(jsonValue.GetString("ValidationStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("ValidationStatusMessage"))
+  {
+    m_validationStatusMessage = jsonValue.GetString("ValidationStatusMessage");
+
+  }
+
+  if(jsonValue.ValueExists("DeletionStatus"))
+  {
+    m_deletionStatus = RestoreDeletionStatusMapper::GetRestoreDeletionStatusForName(jsonValue.GetString("DeletionStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("DeletionStatusMessage"))
+  {
+    m_deletionStatusMessage = jsonValue.GetString("DeletionStatusMessage");
 
   }
 

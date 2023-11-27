@@ -235,9 +235,9 @@ namespace Model
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": { "ConditionKey":
-     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
-     * operators are case sensitive.</p> <p> <code>ListOfTags</code> differs from
+     * using tags. For example, <code>"StringEquals": { "Key":
+     * "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.</p> <p> <code>ListOfTags</code> differs from
      * <code>Conditions</code> as follows:</p> <ul> <li> <p>When you specify more than
      * one condition, you assign all resources that match AT LEAST ONE condition (using
      * OR logic).</p> </li> <li> <p> <code>ListOfTags</code> only supports
@@ -249,9 +249,9 @@ namespace Model
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": { "ConditionKey":
-     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
-     * operators are case sensitive.</p> <p> <code>ListOfTags</code> differs from
+     * using tags. For example, <code>"StringEquals": { "Key":
+     * "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.</p> <p> <code>ListOfTags</code> differs from
      * <code>Conditions</code> as follows:</p> <ul> <li> <p>When you specify more than
      * one condition, you assign all resources that match AT LEAST ONE condition (using
      * OR logic).</p> </li> <li> <p> <code>ListOfTags</code> only supports
@@ -263,9 +263,9 @@ namespace Model
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": { "ConditionKey":
-     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
-     * operators are case sensitive.</p> <p> <code>ListOfTags</code> differs from
+     * using tags. For example, <code>"StringEquals": { "Key":
+     * "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.</p> <p> <code>ListOfTags</code> differs from
      * <code>Conditions</code> as follows:</p> <ul> <li> <p>When you specify more than
      * one condition, you assign all resources that match AT LEAST ONE condition (using
      * OR logic).</p> </li> <li> <p> <code>ListOfTags</code> only supports
@@ -277,9 +277,9 @@ namespace Model
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": { "ConditionKey":
-     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
-     * operators are case sensitive.</p> <p> <code>ListOfTags</code> differs from
+     * using tags. For example, <code>"StringEquals": { "Key":
+     * "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.</p> <p> <code>ListOfTags</code> differs from
      * <code>Conditions</code> as follows:</p> <ul> <li> <p>When you specify more than
      * one condition, you assign all resources that match AT LEAST ONE condition (using
      * OR logic).</p> </li> <li> <p> <code>ListOfTags</code> only supports
@@ -291,9 +291,9 @@ namespace Model
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": { "ConditionKey":
-     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
-     * operators are case sensitive.</p> <p> <code>ListOfTags</code> differs from
+     * using tags. For example, <code>"StringEquals": { "Key":
+     * "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.</p> <p> <code>ListOfTags</code> differs from
      * <code>Conditions</code> as follows:</p> <ul> <li> <p>When you specify more than
      * one condition, you assign all resources that match AT LEAST ONE condition (using
      * OR logic).</p> </li> <li> <p> <code>ListOfTags</code> only supports
@@ -305,9 +305,9 @@ namespace Model
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": { "ConditionKey":
-     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
-     * operators are case sensitive.</p> <p> <code>ListOfTags</code> differs from
+     * using tags. For example, <code>"StringEquals": { "Key":
+     * "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.</p> <p> <code>ListOfTags</code> differs from
      * <code>Conditions</code> as follows:</p> <ul> <li> <p>When you specify more than
      * one condition, you assign all resources that match AT LEAST ONE condition (using
      * OR logic).</p> </li> <li> <p> <code>ListOfTags</code> only supports
@@ -319,9 +319,9 @@ namespace Model
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": { "ConditionKey":
-     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
-     * operators are case sensitive.</p> <p> <code>ListOfTags</code> differs from
+     * using tags. For example, <code>"StringEquals": { "Key":
+     * "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.</p> <p> <code>ListOfTags</code> differs from
      * <code>Conditions</code> as follows:</p> <ul> <li> <p>When you specify more than
      * one condition, you assign all resources that match AT LEAST ONE condition (using
      * OR logic).</p> </li> <li> <p> <code>ListOfTags</code> only supports
@@ -333,9 +333,9 @@ namespace Model
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": { "ConditionKey":
-     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
-     * operators are case sensitive.</p> <p> <code>ListOfTags</code> differs from
+     * using tags. For example, <code>"StringEquals": { "Key":
+     * "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.</p> <p> <code>ListOfTags</code> differs from
      * <code>Conditions</code> as follows:</p> <ul> <li> <p>When you specify more than
      * one condition, you assign all resources that match AT LEAST ONE condition (using
      * OR logic).</p> </li> <li> <p> <code>ListOfTags</code> only supports
@@ -430,9 +430,9 @@ namespace Model
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": { "ConditionKey":
-     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
-     * operators are case sensitive.</p> <p> <code>Conditions</code> differs from
+     * using tags. For example, <code>"StringEquals": { "Key":
+     * "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.</p> <p> <code>Conditions</code> differs from
      * <code>ListOfTags</code> as follows:</p> <ul> <li> <p>When you specify more than
      * one condition, you only assign the resources that match ALL conditions (using
      * AND logic).</p> </li> <li> <p> <code>Conditions</code> supports
@@ -444,9 +444,9 @@ namespace Model
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": { "ConditionKey":
-     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
-     * operators are case sensitive.</p> <p> <code>Conditions</code> differs from
+     * using tags. For example, <code>"StringEquals": { "Key":
+     * "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.</p> <p> <code>Conditions</code> differs from
      * <code>ListOfTags</code> as follows:</p> <ul> <li> <p>When you specify more than
      * one condition, you only assign the resources that match ALL conditions (using
      * AND logic).</p> </li> <li> <p> <code>Conditions</code> supports
@@ -458,9 +458,9 @@ namespace Model
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": { "ConditionKey":
-     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
-     * operators are case sensitive.</p> <p> <code>Conditions</code> differs from
+     * using tags. For example, <code>"StringEquals": { "Key":
+     * "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.</p> <p> <code>Conditions</code> differs from
      * <code>ListOfTags</code> as follows:</p> <ul> <li> <p>When you specify more than
      * one condition, you only assign the resources that match ALL conditions (using
      * AND logic).</p> </li> <li> <p> <code>Conditions</code> supports
@@ -472,9 +472,9 @@ namespace Model
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": { "ConditionKey":
-     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
-     * operators are case sensitive.</p> <p> <code>Conditions</code> differs from
+     * using tags. For example, <code>"StringEquals": { "Key":
+     * "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.</p> <p> <code>Conditions</code> differs from
      * <code>ListOfTags</code> as follows:</p> <ul> <li> <p>When you specify more than
      * one condition, you only assign the resources that match ALL conditions (using
      * AND logic).</p> </li> <li> <p> <code>Conditions</code> supports
@@ -486,9 +486,9 @@ namespace Model
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": { "ConditionKey":
-     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
-     * operators are case sensitive.</p> <p> <code>Conditions</code> differs from
+     * using tags. For example, <code>"StringEquals": { "Key":
+     * "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.</p> <p> <code>Conditions</code> differs from
      * <code>ListOfTags</code> as follows:</p> <ul> <li> <p>When you specify more than
      * one condition, you only assign the resources that match ALL conditions (using
      * AND logic).</p> </li> <li> <p> <code>Conditions</code> supports
@@ -500,9 +500,9 @@ namespace Model
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": { "ConditionKey":
-     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
-     * operators are case sensitive.</p> <p> <code>Conditions</code> differs from
+     * using tags. For example, <code>"StringEquals": { "Key":
+     * "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.</p> <p> <code>Conditions</code> differs from
      * <code>ListOfTags</code> as follows:</p> <ul> <li> <p>When you specify more than
      * one condition, you only assign the resources that match ALL conditions (using
      * AND logic).</p> </li> <li> <p> <code>Conditions</code> supports

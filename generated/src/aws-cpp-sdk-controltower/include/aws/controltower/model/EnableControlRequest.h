@@ -7,7 +7,9 @@
 #include <aws/controltower/ControlTower_EXPORTS.h>
 #include <aws/controltower/ControlTowerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/controltower/model/EnabledControlParameter.h>
 #include <utility>
 
 namespace Aws
@@ -35,8 +37,9 @@ namespace Model
 
     /**
      * <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b>
-     * controls are permitted, with the exception of the <b>Region deny</b> control.
-     * For information on how to find the <code>controlIdentifier</code>, see <a
+     * controls are permitted, with the exception of the <b>landing zone Region
+     * deny</b> control. For information on how to find the
+     * <code>controlIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
      * overview page</a>.</p>
      */
@@ -44,8 +47,9 @@ namespace Model
 
     /**
      * <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b>
-     * controls are permitted, with the exception of the <b>Region deny</b> control.
-     * For information on how to find the <code>controlIdentifier</code>, see <a
+     * controls are permitted, with the exception of the <b>landing zone Region
+     * deny</b> control. For information on how to find the
+     * <code>controlIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
      * overview page</a>.</p>
      */
@@ -53,8 +57,9 @@ namespace Model
 
     /**
      * <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b>
-     * controls are permitted, with the exception of the <b>Region deny</b> control.
-     * For information on how to find the <code>controlIdentifier</code>, see <a
+     * controls are permitted, with the exception of the <b>landing zone Region
+     * deny</b> control. For information on how to find the
+     * <code>controlIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
      * overview page</a>.</p>
      */
@@ -62,8 +67,9 @@ namespace Model
 
     /**
      * <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b>
-     * controls are permitted, with the exception of the <b>Region deny</b> control.
-     * For information on how to find the <code>controlIdentifier</code>, see <a
+     * controls are permitted, with the exception of the <b>landing zone Region
+     * deny</b> control. For information on how to find the
+     * <code>controlIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
      * overview page</a>.</p>
      */
@@ -71,8 +77,9 @@ namespace Model
 
     /**
      * <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b>
-     * controls are permitted, with the exception of the <b>Region deny</b> control.
-     * For information on how to find the <code>controlIdentifier</code>, see <a
+     * controls are permitted, with the exception of the <b>landing zone Region
+     * deny</b> control. For information on how to find the
+     * <code>controlIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
      * overview page</a>.</p>
      */
@@ -80,8 +87,9 @@ namespace Model
 
     /**
      * <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b>
-     * controls are permitted, with the exception of the <b>Region deny</b> control.
-     * For information on how to find the <code>controlIdentifier</code>, see <a
+     * controls are permitted, with the exception of the <b>landing zone Region
+     * deny</b> control. For information on how to find the
+     * <code>controlIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
      * overview page</a>.</p>
      */
@@ -89,8 +97,9 @@ namespace Model
 
     /**
      * <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b>
-     * controls are permitted, with the exception of the <b>Region deny</b> control.
-     * For information on how to find the <code>controlIdentifier</code>, see <a
+     * controls are permitted, with the exception of the <b>landing zone Region
+     * deny</b> control. For information on how to find the
+     * <code>controlIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
      * overview page</a>.</p>
      */
@@ -98,12 +107,54 @@ namespace Model
 
     /**
      * <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b>
-     * controls are permitted, with the exception of the <b>Region deny</b> control.
-     * For information on how to find the <code>controlIdentifier</code>, see <a
+     * controls are permitted, with the exception of the <b>landing zone Region
+     * deny</b> control. For information on how to find the
+     * <code>controlIdentifier</code>, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
      * overview page</a>.</p>
      */
     inline EnableControlRequest& WithControlIdentifier(const char* value) { SetControlIdentifier(value); return *this;}
+
+
+    /**
+     * <p>An array of <code>EnabledControlParameter</code> objects</p>
+     */
+    inline const Aws::Vector<EnabledControlParameter>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>An array of <code>EnabledControlParameter</code> objects</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p>An array of <code>EnabledControlParameter</code> objects</p>
+     */
+    inline void SetParameters(const Aws::Vector<EnabledControlParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+
+    /**
+     * <p>An array of <code>EnabledControlParameter</code> objects</p>
+     */
+    inline void SetParameters(Aws::Vector<EnabledControlParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
+
+    /**
+     * <p>An array of <code>EnabledControlParameter</code> objects</p>
+     */
+    inline EnableControlRequest& WithParameters(const Aws::Vector<EnabledControlParameter>& value) { SetParameters(value); return *this;}
+
+    /**
+     * <p>An array of <code>EnabledControlParameter</code> objects</p>
+     */
+    inline EnableControlRequest& WithParameters(Aws::Vector<EnabledControlParameter>&& value) { SetParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of <code>EnabledControlParameter</code> objects</p>
+     */
+    inline EnableControlRequest& AddParameters(const EnabledControlParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
+
+    /**
+     * <p>An array of <code>EnabledControlParameter</code> objects</p>
+     */
+    inline EnableControlRequest& AddParameters(EnabledControlParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -240,6 +291,9 @@ namespace Model
 
     Aws::String m_controlIdentifier;
     bool m_controlIdentifierHasBeenSet = false;
+
+    Aws::Vector<EnabledControlParameter> m_parameters;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

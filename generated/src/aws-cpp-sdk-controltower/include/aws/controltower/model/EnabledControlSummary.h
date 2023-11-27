@@ -185,42 +185,42 @@ namespace Model
 
 
     /**
-     * <p> The ARN of the organizational unit. </p>
+     * <p>The ARN of the organizational unit.</p>
      */
     inline const Aws::String& GetTargetIdentifier() const{ return m_targetIdentifier; }
 
     /**
-     * <p> The ARN of the organizational unit. </p>
+     * <p>The ARN of the organizational unit.</p>
      */
     inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
 
     /**
-     * <p> The ARN of the organizational unit. </p>
+     * <p>The ARN of the organizational unit.</p>
      */
     inline void SetTargetIdentifier(const Aws::String& value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier = value; }
 
     /**
-     * <p> The ARN of the organizational unit. </p>
+     * <p>The ARN of the organizational unit.</p>
      */
     inline void SetTargetIdentifier(Aws::String&& value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier = std::move(value); }
 
     /**
-     * <p> The ARN of the organizational unit. </p>
+     * <p>The ARN of the organizational unit.</p>
      */
     inline void SetTargetIdentifier(const char* value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier.assign(value); }
 
     /**
-     * <p> The ARN of the organizational unit. </p>
+     * <p>The ARN of the organizational unit.</p>
      */
     inline EnabledControlSummary& WithTargetIdentifier(const Aws::String& value) { SetTargetIdentifier(value); return *this;}
 
     /**
-     * <p> The ARN of the organizational unit. </p>
+     * <p>The ARN of the organizational unit.</p>
      */
     inline EnabledControlSummary& WithTargetIdentifier(Aws::String&& value) { SetTargetIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> The ARN of the organizational unit. </p>
+     * <p>The ARN of the organizational unit.</p>
      */
     inline EnabledControlSummary& WithTargetIdentifier(const char* value) { SetTargetIdentifier(value); return *this;}
 

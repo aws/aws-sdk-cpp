@@ -48,6 +48,7 @@
 #include <aws/elasticfilesystem/model/TagResourceRequest.h>
 #include <aws/elasticfilesystem/model/UntagResourceRequest.h>
 #include <aws/elasticfilesystem/model/UpdateFileSystemRequest.h>
+#include <aws/elasticfilesystem/model/UpdateFileSystemProtectionRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
 
@@ -1028,6 +1029,40 @@ UpdateFileSystemOutcome EFSClient::UpdateFileSystem(const UpdateFileSystemReques
       endpointResolutionOutcome.GetResult().AddPathSegments("/2015-02-01/file-systems/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFileSystemId());
       return UpdateFileSystemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateFileSystemProtectionOutcome EFSClient::UpdateFileSystemProtection(const UpdateFileSystemProtectionRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateFileSystemProtection);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFileSystemProtection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFileSystemProtection", "Required field: FileSystemId, is not set");
+    return UpdateFileSystemProtectionOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateFileSystemProtection, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateFileSystemProtection, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateFileSystemProtection",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateFileSystemProtectionOutcome>(
+    [&]()-> UpdateFileSystemProtectionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateFileSystemProtection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/2015-02-01/file-systems/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFileSystemId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/protection");
+      return UpdateFileSystemProtectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

@@ -241,7 +241,7 @@ namespace Model
 
     /**
      * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-     * <p>If you don't specify the media sample rate, Amazon Transcribe determines it
+     * <p>If you do not specify the media sample rate, Amazon Transcribe determines it
      * for you. If you specify the sample rate, it must match the rate detected by
      * Amazon Transcribe. If there's a mismatch between the value that you specify and
      * the value detected, your job fails. In most cases, you can omit
@@ -252,7 +252,7 @@ namespace Model
 
     /**
      * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-     * <p>If you don't specify the media sample rate, Amazon Transcribe determines it
+     * <p>If you do not specify the media sample rate, Amazon Transcribe determines it
      * for you. If you specify the sample rate, it must match the rate detected by
      * Amazon Transcribe. If there's a mismatch between the value that you specify and
      * the value detected, your job fails. In most cases, you can omit
@@ -263,7 +263,7 @@ namespace Model
 
     /**
      * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-     * <p>If you don't specify the media sample rate, Amazon Transcribe determines it
+     * <p>If you do not specify the media sample rate, Amazon Transcribe determines it
      * for you. If you specify the sample rate, it must match the rate detected by
      * Amazon Transcribe. If there's a mismatch between the value that you specify and
      * the value detected, your job fails. In most cases, you can omit
@@ -274,7 +274,7 @@ namespace Model
 
     /**
      * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-     * <p>If you don't specify the media sample rate, Amazon Transcribe determines it
+     * <p>If you do not specify the media sample rate, Amazon Transcribe determines it
      * for you. If you specify the sample rate, it must match the rate detected by
      * Amazon Transcribe. If there's a mismatch between the value that you specify and
      * the value detected, your job fails. In most cases, you can omit
@@ -369,7 +369,7 @@ namespace Model
      * href="https://console.aws.amazon.com/s3">Amazon Web Services Management
      * Console</a>. See also <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't specify
+     * Required for IAM User Roles</a>.</p> <p>If you do not specify
      * <code>OutputBucketName</code>, your transcript is placed in a service-managed
      * Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
      */
@@ -392,7 +392,7 @@ namespace Model
      * href="https://console.aws.amazon.com/s3">Amazon Web Services Management
      * Console</a>. See also <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't specify
+     * Required for IAM User Roles</a>.</p> <p>If you do not specify
      * <code>OutputBucketName</code>, your transcript is placed in a service-managed
      * Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
      */
@@ -415,7 +415,7 @@ namespace Model
      * href="https://console.aws.amazon.com/s3">Amazon Web Services Management
      * Console</a>. See also <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't specify
+     * Required for IAM User Roles</a>.</p> <p>If you do not specify
      * <code>OutputBucketName</code>, your transcript is placed in a service-managed
      * Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
      */
@@ -438,7 +438,7 @@ namespace Model
      * href="https://console.aws.amazon.com/s3">Amazon Web Services Management
      * Console</a>. See also <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't specify
+     * Required for IAM User Roles</a>.</p> <p>If you do not specify
      * <code>OutputBucketName</code>, your transcript is placed in a service-managed
      * Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
      */
@@ -461,7 +461,7 @@ namespace Model
      * href="https://console.aws.amazon.com/s3">Amazon Web Services Management
      * Console</a>. See also <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't specify
+     * Required for IAM User Roles</a>.</p> <p>If you do not specify
      * <code>OutputBucketName</code>, your transcript is placed in a service-managed
      * Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
      */
@@ -484,7 +484,7 @@ namespace Model
      * href="https://console.aws.amazon.com/s3">Amazon Web Services Management
      * Console</a>. See also <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't specify
+     * Required for IAM User Roles</a>.</p> <p>If you do not specify
      * <code>OutputBucketName</code>, your transcript is placed in a service-managed
      * Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
      */
@@ -507,7 +507,7 @@ namespace Model
      * href="https://console.aws.amazon.com/s3">Amazon Web Services Management
      * Console</a>. See also <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't specify
+     * Required for IAM User Roles</a>.</p> <p>If you do not specify
      * <code>OutputBucketName</code>, your transcript is placed in a service-managed
      * Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
      */
@@ -530,7 +530,7 @@ namespace Model
      * href="https://console.aws.amazon.com/s3">Amazon Web Services Management
      * Console</a>. See also <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't specify
+     * Required for IAM User Roles</a>.</p> <p>If you do not specify
      * <code>OutputBucketName</code>, your transcript is placed in a service-managed
      * Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
      */
@@ -779,7 +779,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -804,7 +804,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -829,7 +829,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -854,7 +854,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -879,7 +879,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -904,7 +904,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -929,7 +929,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -954,7 +954,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -1329,48 +1329,66 @@ namespace Model
     /**
      * <p>Makes it possible to redact or flag specified personally identifiable
      * information (PII) in your transcript. If you use <code>ContentRedaction</code>,
-     * you must also include the sub-parameters: <code>PiiEntityTypes</code>,
-     * <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+     * you must also include the sub-parameters: <code>RedactionOutput</code> and
+     * <code>RedactionType</code>. You can optionally include
+     * <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If
+     * you do not include <code>PiiEntityTypes</code> in your request, all PII is
+     * redacted.</p>
      */
     inline const ContentRedaction& GetContentRedaction() const{ return m_contentRedaction; }
 
     /**
      * <p>Makes it possible to redact or flag specified personally identifiable
      * information (PII) in your transcript. If you use <code>ContentRedaction</code>,
-     * you must also include the sub-parameters: <code>PiiEntityTypes</code>,
-     * <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+     * you must also include the sub-parameters: <code>RedactionOutput</code> and
+     * <code>RedactionType</code>. You can optionally include
+     * <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If
+     * you do not include <code>PiiEntityTypes</code> in your request, all PII is
+     * redacted.</p>
      */
     inline bool ContentRedactionHasBeenSet() const { return m_contentRedactionHasBeenSet; }
 
     /**
      * <p>Makes it possible to redact or flag specified personally identifiable
      * information (PII) in your transcript. If you use <code>ContentRedaction</code>,
-     * you must also include the sub-parameters: <code>PiiEntityTypes</code>,
-     * <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+     * you must also include the sub-parameters: <code>RedactionOutput</code> and
+     * <code>RedactionType</code>. You can optionally include
+     * <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If
+     * you do not include <code>PiiEntityTypes</code> in your request, all PII is
+     * redacted.</p>
      */
     inline void SetContentRedaction(const ContentRedaction& value) { m_contentRedactionHasBeenSet = true; m_contentRedaction = value; }
 
     /**
      * <p>Makes it possible to redact or flag specified personally identifiable
      * information (PII) in your transcript. If you use <code>ContentRedaction</code>,
-     * you must also include the sub-parameters: <code>PiiEntityTypes</code>,
-     * <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+     * you must also include the sub-parameters: <code>RedactionOutput</code> and
+     * <code>RedactionType</code>. You can optionally include
+     * <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If
+     * you do not include <code>PiiEntityTypes</code> in your request, all PII is
+     * redacted.</p>
      */
     inline void SetContentRedaction(ContentRedaction&& value) { m_contentRedactionHasBeenSet = true; m_contentRedaction = std::move(value); }
 
     /**
      * <p>Makes it possible to redact or flag specified personally identifiable
      * information (PII) in your transcript. If you use <code>ContentRedaction</code>,
-     * you must also include the sub-parameters: <code>PiiEntityTypes</code>,
-     * <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+     * you must also include the sub-parameters: <code>RedactionOutput</code> and
+     * <code>RedactionType</code>. You can optionally include
+     * <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If
+     * you do not include <code>PiiEntityTypes</code> in your request, all PII is
+     * redacted.</p>
      */
     inline StartTranscriptionJobRequest& WithContentRedaction(const ContentRedaction& value) { SetContentRedaction(value); return *this;}
 
     /**
      * <p>Makes it possible to redact or flag specified personally identifiable
      * information (PII) in your transcript. If you use <code>ContentRedaction</code>,
-     * you must also include the sub-parameters: <code>PiiEntityTypes</code>,
-     * <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+     * you must also include the sub-parameters: <code>RedactionOutput</code> and
+     * <code>RedactionType</code>. You can optionally include
+     * <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If
+     * you do not include <code>PiiEntityTypes</code> in your request, all PII is
+     * redacted.</p>
      */
     inline StartTranscriptionJobRequest& WithContentRedaction(ContentRedaction&& value) { SetContentRedaction(std::move(value)); return *this;}
 

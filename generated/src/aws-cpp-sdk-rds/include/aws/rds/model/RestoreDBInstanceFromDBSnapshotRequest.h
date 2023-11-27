@@ -43,82 +43,82 @@ namespace Model
   public:
 
     /**
-     * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * numbers, letters, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     * <p>The name of the DB instance to create from the DB snapshot. This parameter
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
+     * to 63 numbers, letters, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
 
     /**
-     * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * numbers, letters, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     * <p>The name of the DB instance to create from the DB snapshot. This parameter
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
+     * to 63 numbers, letters, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
 
     /**
-     * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * numbers, letters, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     * <p>The name of the DB instance to create from the DB snapshot. This parameter
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
+     * to 63 numbers, letters, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
-     * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * numbers, letters, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     * <p>The name of the DB instance to create from the DB snapshot. This parameter
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
+     * to 63 numbers, letters, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
-     * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * numbers, letters, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     * <p>The name of the DB instance to create from the DB snapshot. This parameter
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
+     * to 63 numbers, letters, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /**
-     * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * numbers, letters, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     * <p>The name of the DB instance to create from the DB snapshot. This parameter
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
+     * to 63 numbers, letters, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
-     * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * numbers, letters, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     * <p>The name of the DB instance to create from the DB snapshot. This parameter
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
+     * to 63 numbers, letters, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * numbers, letters, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     * <p>The name of the DB instance to create from the DB snapshot. This parameter
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
+     * to 63 numbers, letters, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
 
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li> <li>
-     * <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
+     * <ul> <li> <p>Must match the identifier of an existing DB snapshot.</p> </li>
+     * <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
      * specified.</p> </li> <li> <p>Must be specified when
      * <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li> <li> <p>If
      * you are restoring from a shared manual DB snapshot, the
@@ -129,8 +129,8 @@ namespace Model
 
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li> <li>
-     * <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
+     * <ul> <li> <p>Must match the identifier of an existing DB snapshot.</p> </li>
+     * <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
      * specified.</p> </li> <li> <p>Must be specified when
      * <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li> <li> <p>If
      * you are restoring from a shared manual DB snapshot, the
@@ -141,8 +141,8 @@ namespace Model
 
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li> <li>
-     * <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
+     * <ul> <li> <p>Must match the identifier of an existing DB snapshot.</p> </li>
+     * <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
      * specified.</p> </li> <li> <p>Must be specified when
      * <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li> <li> <p>If
      * you are restoring from a shared manual DB snapshot, the
@@ -153,8 +153,8 @@ namespace Model
 
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li> <li>
-     * <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
+     * <ul> <li> <p>Must match the identifier of an existing DB snapshot.</p> </li>
+     * <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
      * specified.</p> </li> <li> <p>Must be specified when
      * <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li> <li> <p>If
      * you are restoring from a shared manual DB snapshot, the
@@ -165,8 +165,8 @@ namespace Model
 
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li> <li>
-     * <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
+     * <ul> <li> <p>Must match the identifier of an existing DB snapshot.</p> </li>
+     * <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
      * specified.</p> </li> <li> <p>Must be specified when
      * <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li> <li> <p>If
      * you are restoring from a shared manual DB snapshot, the
@@ -177,8 +177,8 @@ namespace Model
 
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li> <li>
-     * <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
+     * <ul> <li> <p>Must match the identifier of an existing DB snapshot.</p> </li>
+     * <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
      * specified.</p> </li> <li> <p>Must be specified when
      * <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li> <li> <p>If
      * you are restoring from a shared manual DB snapshot, the
@@ -189,8 +189,8 @@ namespace Model
 
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li> <li>
-     * <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
+     * <ul> <li> <p>Must match the identifier of an existing DB snapshot.</p> </li>
+     * <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
      * specified.</p> </li> <li> <p>Must be specified when
      * <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li> <li> <p>If
      * you are restoring from a shared manual DB snapshot, the
@@ -201,8 +201,8 @@ namespace Model
 
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li> <li>
-     * <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
+     * <ul> <li> <p>Must match the identifier of an existing DB snapshot.</p> </li>
+     * <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
      * specified.</p> </li> <li> <p>Must be specified when
      * <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li> <li> <p>If
      * you are restoring from a shared manual DB snapshot, the
@@ -396,58 +396,58 @@ namespace Model
 
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
-     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>The name of the DB subnet group to use for the new instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
+     * DB subnet group.</p> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
-     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>The name of the DB subnet group to use for the new instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
+     * DB subnet group.</p> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
-     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>The name of the DB subnet group to use for the new instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
+     * DB subnet group.</p> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
-     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>The name of the DB subnet group to use for the new instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
+     * DB subnet group.</p> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
-     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>The name of the DB subnet group to use for the new instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
+     * DB subnet group.</p> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
-     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>The name of the DB subnet group to use for the new instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
+     * DB subnet group.</p> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
-     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>The name of the DB subnet group to use for the new instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
+     * DB subnet group.</p> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
-     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>The name of the DB subnet group to use for the new instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
+     * DB subnet group.</p> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -637,58 +637,58 @@ namespace Model
 
 
     /**
-     * <p>The database name for the restored DB instance.</p> <p>This parameter doesn't
-     * apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS
-     * Custom DB instances.</p>
+     * <p>The name of the database for the restored DB instance.</p> <p>This parameter
+     * only applies to RDS for Oracle and RDS for SQL Server DB instances. It doesn't
+     * apply to the other engines or to RDS Custom DB instances.</p>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
     /**
-     * <p>The database name for the restored DB instance.</p> <p>This parameter doesn't
-     * apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS
-     * Custom DB instances.</p>
+     * <p>The name of the database for the restored DB instance.</p> <p>This parameter
+     * only applies to RDS for Oracle and RDS for SQL Server DB instances. It doesn't
+     * apply to the other engines or to RDS Custom DB instances.</p>
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
     /**
-     * <p>The database name for the restored DB instance.</p> <p>This parameter doesn't
-     * apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS
-     * Custom DB instances.</p>
+     * <p>The name of the database for the restored DB instance.</p> <p>This parameter
+     * only applies to RDS for Oracle and RDS for SQL Server DB instances. It doesn't
+     * apply to the other engines or to RDS Custom DB instances.</p>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /**
-     * <p>The database name for the restored DB instance.</p> <p>This parameter doesn't
-     * apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS
-     * Custom DB instances.</p>
+     * <p>The name of the database for the restored DB instance.</p> <p>This parameter
+     * only applies to RDS for Oracle and RDS for SQL Server DB instances. It doesn't
+     * apply to the other engines or to RDS Custom DB instances.</p>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
     /**
-     * <p>The database name for the restored DB instance.</p> <p>This parameter doesn't
-     * apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS
-     * Custom DB instances.</p>
+     * <p>The name of the database for the restored DB instance.</p> <p>This parameter
+     * only applies to RDS for Oracle and RDS for SQL Server DB instances. It doesn't
+     * apply to the other engines or to RDS Custom DB instances.</p>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
     /**
-     * <p>The database name for the restored DB instance.</p> <p>This parameter doesn't
-     * apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS
-     * Custom DB instances.</p>
+     * <p>The name of the database for the restored DB instance.</p> <p>This parameter
+     * only applies to RDS for Oracle and RDS for SQL Server DB instances. It doesn't
+     * apply to the other engines or to RDS Custom DB instances.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
     /**
-     * <p>The database name for the restored DB instance.</p> <p>This parameter doesn't
-     * apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS
-     * Custom DB instances.</p>
+     * <p>The name of the database for the restored DB instance.</p> <p>This parameter
+     * only applies to RDS for Oracle and RDS for SQL Server DB instances. It doesn't
+     * apply to the other engines or to RDS Custom DB instances.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
     /**
-     * <p>The database name for the restored DB instance.</p> <p>This parameter doesn't
-     * apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS
-     * Custom DB instances.</p>
+     * <p>The name of the database for the restored DB instance.</p> <p>This parameter
+     * only applies to RDS for Oracle and RDS for SQL Server DB instances. It doesn't
+     * apply to the other engines or to RDS Custom DB instances.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
 
@@ -698,7 +698,8 @@ namespace Model
      * apply to RDS Custom.</p> <p>Default: The same as source</p> <p>Constraint: Must
      * be compatible with the engine of the source. For example, you can restore a
      * MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p> <p>Valid Values:</p>
-     * <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * <ul> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code> </p>
+     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
      * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
      * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
@@ -713,7 +714,8 @@ namespace Model
      * apply to RDS Custom.</p> <p>Default: The same as source</p> <p>Constraint: Must
      * be compatible with the engine of the source. For example, you can restore a
      * MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p> <p>Valid Values:</p>
-     * <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * <ul> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code> </p>
+     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
      * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
      * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
@@ -728,7 +730,8 @@ namespace Model
      * apply to RDS Custom.</p> <p>Default: The same as source</p> <p>Constraint: Must
      * be compatible with the engine of the source. For example, you can restore a
      * MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p> <p>Valid Values:</p>
-     * <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * <ul> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code> </p>
+     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
      * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
      * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
@@ -743,7 +746,8 @@ namespace Model
      * apply to RDS Custom.</p> <p>Default: The same as source</p> <p>Constraint: Must
      * be compatible with the engine of the source. For example, you can restore a
      * MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p> <p>Valid Values:</p>
-     * <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * <ul> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code> </p>
+     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
      * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
      * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
@@ -758,7 +762,8 @@ namespace Model
      * apply to RDS Custom.</p> <p>Default: The same as source</p> <p>Constraint: Must
      * be compatible with the engine of the source. For example, you can restore a
      * MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p> <p>Valid Values:</p>
-     * <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * <ul> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code> </p>
+     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
      * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
      * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
@@ -773,7 +778,8 @@ namespace Model
      * apply to RDS Custom.</p> <p>Default: The same as source</p> <p>Constraint: Must
      * be compatible with the engine of the source. For example, you can restore a
      * MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p> <p>Valid Values:</p>
-     * <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * <ul> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code> </p>
+     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
      * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
      * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
@@ -788,7 +794,8 @@ namespace Model
      * apply to RDS Custom.</p> <p>Default: The same as source</p> <p>Constraint: Must
      * be compatible with the engine of the source. For example, you can restore a
      * MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p> <p>Valid Values:</p>
-     * <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * <ul> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code> </p>
+     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
      * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
      * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
@@ -803,7 +810,8 @@ namespace Model
      * apply to RDS Custom.</p> <p>Default: The same as source</p> <p>Constraint: Must
      * be compatible with the engine of the source. For example, you can restore a
      * MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p> <p>Valid Values:</p>
-     * <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * <ul> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code> </p>
+     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
      * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
      * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
@@ -1205,8 +1213,8 @@ namespace Model
 
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB instance in. The
-     * domain/ must be created prior to this operation. Currently, you can create only
+     * <p>The Active Directory directory ID to restore the DB instance in. The domain/
+     * must be created prior to this operation. Currently, you can create only Db2,
      * MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active
      * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
@@ -1216,8 +1224,8 @@ namespace Model
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB instance in. The
-     * domain/ must be created prior to this operation. Currently, you can create only
+     * <p>The Active Directory directory ID to restore the DB instance in. The domain/
+     * must be created prior to this operation. Currently, you can create only Db2,
      * MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active
      * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
@@ -1227,8 +1235,8 @@ namespace Model
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB instance in. The
-     * domain/ must be created prior to this operation. Currently, you can create only
+     * <p>The Active Directory directory ID to restore the DB instance in. The domain/
+     * must be created prior to this operation. Currently, you can create only Db2,
      * MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active
      * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
@@ -1238,8 +1246,8 @@ namespace Model
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB instance in. The
-     * domain/ must be created prior to this operation. Currently, you can create only
+     * <p>The Active Directory directory ID to restore the DB instance in. The domain/
+     * must be created prior to this operation. Currently, you can create only Db2,
      * MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active
      * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
@@ -1249,8 +1257,8 @@ namespace Model
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB instance in. The
-     * domain/ must be created prior to this operation. Currently, you can create only
+     * <p>The Active Directory directory ID to restore the DB instance in. The domain/
+     * must be created prior to this operation. Currently, you can create only Db2,
      * MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active
      * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
@@ -1260,8 +1268,8 @@ namespace Model
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB instance in. The
-     * domain/ must be created prior to this operation. Currently, you can create only
+     * <p>The Active Directory directory ID to restore the DB instance in. The domain/
+     * must be created prior to this operation. Currently, you can create only Db2,
      * MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active
      * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
@@ -1271,8 +1279,8 @@ namespace Model
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB instance in. The
-     * domain/ must be created prior to this operation. Currently, you can create only
+     * <p>The Active Directory directory ID to restore the DB instance in. The domain/
+     * must be created prior to this operation. Currently, you can create only Db2,
      * MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active
      * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
@@ -1282,8 +1290,8 @@ namespace Model
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB instance in. The
-     * domain/ must be created prior to this operation. Currently, you can create only
+     * <p>The Active Directory directory ID to restore the DB instance in. The domain/
+     * must be created prior to this operation. Currently, you can create only Db2,
      * MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active
      * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
@@ -1726,9 +1734,8 @@ namespace Model
 
 
     /**
-     * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * <p>The list of logs for the restored DB instance to export to CloudWatch Logs.
+     * The values in the list depend on the DB engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
@@ -1736,9 +1743,8 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
 
     /**
-     * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * <p>The list of logs for the restored DB instance to export to CloudWatch Logs.
+     * The values in the list depend on the DB engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
@@ -1746,9 +1752,8 @@ namespace Model
     inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
     /**
-     * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * <p>The list of logs for the restored DB instance to export to CloudWatch Logs.
+     * The values in the list depend on the DB engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
@@ -1756,9 +1761,8 @@ namespace Model
     inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
 
     /**
-     * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * <p>The list of logs for the restored DB instance to export to CloudWatch Logs.
+     * The values in the list depend on the DB engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
@@ -1766,9 +1770,8 @@ namespace Model
     inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
 
     /**
-     * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * <p>The list of logs for the restored DB instance to export to CloudWatch Logs.
+     * The values in the list depend on the DB engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
@@ -1776,9 +1779,8 @@ namespace Model
     inline RestoreDBInstanceFromDBSnapshotRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
 
     /**
-     * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * <p>The list of logs for the restored DB instance to export to CloudWatch Logs.
+     * The values in the list depend on the DB engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
@@ -1786,9 +1788,8 @@ namespace Model
     inline RestoreDBInstanceFromDBSnapshotRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
 
     /**
-     * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * <p>The list of logs for the restored DB instance to export to CloudWatch Logs.
+     * The values in the list depend on the DB engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
@@ -1796,9 +1797,8 @@ namespace Model
     inline RestoreDBInstanceFromDBSnapshotRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
     /**
-     * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * <p>The list of logs for the restored DB instance to export to CloudWatch Logs.
+     * The values in the list depend on the DB engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
@@ -1806,9 +1806,8 @@ namespace Model
     inline RestoreDBInstanceFromDBSnapshotRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * <p>The list of logs for the restored DB instance to export to CloudWatch Logs.
+     * The values in the list depend on the DB engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
@@ -1903,7 +1902,7 @@ namespace Model
      * <p>If you don't specify a value for <code>DBParameterGroupName</code>, then RDS
      * uses the default <code>DBParameterGroup</code> for the specified DB engine.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+     * <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
      * <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
@@ -1915,7 +1914,7 @@ namespace Model
      * <p>If you don't specify a value for <code>DBParameterGroupName</code>, then RDS
      * uses the default <code>DBParameterGroup</code> for the specified DB engine.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+     * <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
      * <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
@@ -1927,7 +1926,7 @@ namespace Model
      * <p>If you don't specify a value for <code>DBParameterGroupName</code>, then RDS
      * uses the default <code>DBParameterGroup</code> for the specified DB engine.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+     * <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
      * <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
@@ -1939,7 +1938,7 @@ namespace Model
      * <p>If you don't specify a value for <code>DBParameterGroupName</code>, then RDS
      * uses the default <code>DBParameterGroup</code> for the specified DB engine.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+     * <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
      * <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
@@ -1951,7 +1950,7 @@ namespace Model
      * <p>If you don't specify a value for <code>DBParameterGroupName</code>, then RDS
      * uses the default <code>DBParameterGroup</code> for the specified DB engine.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+     * <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
      * <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
@@ -1963,7 +1962,7 @@ namespace Model
      * <p>If you don't specify a value for <code>DBParameterGroupName</code>, then RDS
      * uses the default <code>DBParameterGroup</code> for the specified DB engine.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+     * <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
      * <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
@@ -1975,7 +1974,7 @@ namespace Model
      * <p>If you don't specify a value for <code>DBParameterGroupName</code>, then RDS
      * uses the default <code>DBParameterGroup</code> for the specified DB engine.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+     * <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
      * <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
@@ -1987,7 +1986,7 @@ namespace Model
      * <p>If you don't specify a value for <code>DBParameterGroupName</code>, then RDS
      * uses the default <code>DBParameterGroup</code> for the specified DB engine.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+     * <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
      * <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>

@@ -28,6 +28,7 @@
 #include <aws/transcribe/model/DescribeLanguageModelResult.h>
 #include <aws/transcribe/model/GetCallAnalyticsCategoryResult.h>
 #include <aws/transcribe/model/GetCallAnalyticsJobResult.h>
+#include <aws/transcribe/model/GetMedicalScribeJobResult.h>
 #include <aws/transcribe/model/GetMedicalTranscriptionJobResult.h>
 #include <aws/transcribe/model/GetMedicalVocabularyResult.h>
 #include <aws/transcribe/model/GetTranscriptionJobResult.h>
@@ -36,6 +37,7 @@
 #include <aws/transcribe/model/ListCallAnalyticsCategoriesResult.h>
 #include <aws/transcribe/model/ListCallAnalyticsJobsResult.h>
 #include <aws/transcribe/model/ListLanguageModelsResult.h>
+#include <aws/transcribe/model/ListMedicalScribeJobsResult.h>
 #include <aws/transcribe/model/ListMedicalTranscriptionJobsResult.h>
 #include <aws/transcribe/model/ListMedicalVocabulariesResult.h>
 #include <aws/transcribe/model/ListTagsForResourceResult.h>
@@ -43,6 +45,7 @@
 #include <aws/transcribe/model/ListVocabulariesResult.h>
 #include <aws/transcribe/model/ListVocabularyFiltersResult.h>
 #include <aws/transcribe/model/StartCallAnalyticsJobResult.h>
+#include <aws/transcribe/model/StartMedicalScribeJobResult.h>
 #include <aws/transcribe/model/StartMedicalTranscriptionJobResult.h>
 #include <aws/transcribe/model/StartTranscriptionJobResult.h>
 #include <aws/transcribe/model/TagResourceResult.h>
@@ -100,6 +103,7 @@ namespace Aws
       class DeleteCallAnalyticsCategoryRequest;
       class DeleteCallAnalyticsJobRequest;
       class DeleteLanguageModelRequest;
+      class DeleteMedicalScribeJobRequest;
       class DeleteMedicalTranscriptionJobRequest;
       class DeleteMedicalVocabularyRequest;
       class DeleteTranscriptionJobRequest;
@@ -108,6 +112,7 @@ namespace Aws
       class DescribeLanguageModelRequest;
       class GetCallAnalyticsCategoryRequest;
       class GetCallAnalyticsJobRequest;
+      class GetMedicalScribeJobRequest;
       class GetMedicalTranscriptionJobRequest;
       class GetMedicalVocabularyRequest;
       class GetTranscriptionJobRequest;
@@ -116,6 +121,7 @@ namespace Aws
       class ListCallAnalyticsCategoriesRequest;
       class ListCallAnalyticsJobsRequest;
       class ListLanguageModelsRequest;
+      class ListMedicalScribeJobsRequest;
       class ListMedicalTranscriptionJobsRequest;
       class ListMedicalVocabulariesRequest;
       class ListTagsForResourceRequest;
@@ -123,6 +129,7 @@ namespace Aws
       class ListVocabulariesRequest;
       class ListVocabularyFiltersRequest;
       class StartCallAnalyticsJobRequest;
+      class StartMedicalScribeJobRequest;
       class StartMedicalTranscriptionJobRequest;
       class StartTranscriptionJobRequest;
       class TagResourceRequest;
@@ -142,6 +149,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteCallAnalyticsCategoryResult, TranscribeServiceError> DeleteCallAnalyticsCategoryOutcome;
       typedef Aws::Utils::Outcome<DeleteCallAnalyticsJobResult, TranscribeServiceError> DeleteCallAnalyticsJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, TranscribeServiceError> DeleteLanguageModelOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, TranscribeServiceError> DeleteMedicalScribeJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, TranscribeServiceError> DeleteMedicalTranscriptionJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, TranscribeServiceError> DeleteMedicalVocabularyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, TranscribeServiceError> DeleteTranscriptionJobOutcome;
@@ -150,6 +158,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeLanguageModelResult, TranscribeServiceError> DescribeLanguageModelOutcome;
       typedef Aws::Utils::Outcome<GetCallAnalyticsCategoryResult, TranscribeServiceError> GetCallAnalyticsCategoryOutcome;
       typedef Aws::Utils::Outcome<GetCallAnalyticsJobResult, TranscribeServiceError> GetCallAnalyticsJobOutcome;
+      typedef Aws::Utils::Outcome<GetMedicalScribeJobResult, TranscribeServiceError> GetMedicalScribeJobOutcome;
       typedef Aws::Utils::Outcome<GetMedicalTranscriptionJobResult, TranscribeServiceError> GetMedicalTranscriptionJobOutcome;
       typedef Aws::Utils::Outcome<GetMedicalVocabularyResult, TranscribeServiceError> GetMedicalVocabularyOutcome;
       typedef Aws::Utils::Outcome<GetTranscriptionJobResult, TranscribeServiceError> GetTranscriptionJobOutcome;
@@ -158,6 +167,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListCallAnalyticsCategoriesResult, TranscribeServiceError> ListCallAnalyticsCategoriesOutcome;
       typedef Aws::Utils::Outcome<ListCallAnalyticsJobsResult, TranscribeServiceError> ListCallAnalyticsJobsOutcome;
       typedef Aws::Utils::Outcome<ListLanguageModelsResult, TranscribeServiceError> ListLanguageModelsOutcome;
+      typedef Aws::Utils::Outcome<ListMedicalScribeJobsResult, TranscribeServiceError> ListMedicalScribeJobsOutcome;
       typedef Aws::Utils::Outcome<ListMedicalTranscriptionJobsResult, TranscribeServiceError> ListMedicalTranscriptionJobsOutcome;
       typedef Aws::Utils::Outcome<ListMedicalVocabulariesResult, TranscribeServiceError> ListMedicalVocabulariesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, TranscribeServiceError> ListTagsForResourceOutcome;
@@ -165,6 +175,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListVocabulariesResult, TranscribeServiceError> ListVocabulariesOutcome;
       typedef Aws::Utils::Outcome<ListVocabularyFiltersResult, TranscribeServiceError> ListVocabularyFiltersOutcome;
       typedef Aws::Utils::Outcome<StartCallAnalyticsJobResult, TranscribeServiceError> StartCallAnalyticsJobOutcome;
+      typedef Aws::Utils::Outcome<StartMedicalScribeJobResult, TranscribeServiceError> StartMedicalScribeJobOutcome;
       typedef Aws::Utils::Outcome<StartMedicalTranscriptionJobResult, TranscribeServiceError> StartMedicalTranscriptionJobOutcome;
       typedef Aws::Utils::Outcome<StartTranscriptionJobResult, TranscribeServiceError> StartTranscriptionJobOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, TranscribeServiceError> TagResourceOutcome;
@@ -184,6 +195,7 @@ namespace Aws
       typedef std::future<DeleteCallAnalyticsCategoryOutcome> DeleteCallAnalyticsCategoryOutcomeCallable;
       typedef std::future<DeleteCallAnalyticsJobOutcome> DeleteCallAnalyticsJobOutcomeCallable;
       typedef std::future<DeleteLanguageModelOutcome> DeleteLanguageModelOutcomeCallable;
+      typedef std::future<DeleteMedicalScribeJobOutcome> DeleteMedicalScribeJobOutcomeCallable;
       typedef std::future<DeleteMedicalTranscriptionJobOutcome> DeleteMedicalTranscriptionJobOutcomeCallable;
       typedef std::future<DeleteMedicalVocabularyOutcome> DeleteMedicalVocabularyOutcomeCallable;
       typedef std::future<DeleteTranscriptionJobOutcome> DeleteTranscriptionJobOutcomeCallable;
@@ -192,6 +204,7 @@ namespace Aws
       typedef std::future<DescribeLanguageModelOutcome> DescribeLanguageModelOutcomeCallable;
       typedef std::future<GetCallAnalyticsCategoryOutcome> GetCallAnalyticsCategoryOutcomeCallable;
       typedef std::future<GetCallAnalyticsJobOutcome> GetCallAnalyticsJobOutcomeCallable;
+      typedef std::future<GetMedicalScribeJobOutcome> GetMedicalScribeJobOutcomeCallable;
       typedef std::future<GetMedicalTranscriptionJobOutcome> GetMedicalTranscriptionJobOutcomeCallable;
       typedef std::future<GetMedicalVocabularyOutcome> GetMedicalVocabularyOutcomeCallable;
       typedef std::future<GetTranscriptionJobOutcome> GetTranscriptionJobOutcomeCallable;
@@ -200,6 +213,7 @@ namespace Aws
       typedef std::future<ListCallAnalyticsCategoriesOutcome> ListCallAnalyticsCategoriesOutcomeCallable;
       typedef std::future<ListCallAnalyticsJobsOutcome> ListCallAnalyticsJobsOutcomeCallable;
       typedef std::future<ListLanguageModelsOutcome> ListLanguageModelsOutcomeCallable;
+      typedef std::future<ListMedicalScribeJobsOutcome> ListMedicalScribeJobsOutcomeCallable;
       typedef std::future<ListMedicalTranscriptionJobsOutcome> ListMedicalTranscriptionJobsOutcomeCallable;
       typedef std::future<ListMedicalVocabulariesOutcome> ListMedicalVocabulariesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -207,6 +221,7 @@ namespace Aws
       typedef std::future<ListVocabulariesOutcome> ListVocabulariesOutcomeCallable;
       typedef std::future<ListVocabularyFiltersOutcome> ListVocabularyFiltersOutcomeCallable;
       typedef std::future<StartCallAnalyticsJobOutcome> StartCallAnalyticsJobOutcomeCallable;
+      typedef std::future<StartMedicalScribeJobOutcome> StartMedicalScribeJobOutcomeCallable;
       typedef std::future<StartMedicalTranscriptionJobOutcome> StartMedicalTranscriptionJobOutcomeCallable;
       typedef std::future<StartTranscriptionJobOutcome> StartTranscriptionJobOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -229,6 +244,7 @@ namespace Aws
     typedef std::function<void(const TranscribeServiceClient*, const Model::DeleteCallAnalyticsCategoryRequest&, const Model::DeleteCallAnalyticsCategoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCallAnalyticsCategoryResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::DeleteCallAnalyticsJobRequest&, const Model::DeleteCallAnalyticsJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCallAnalyticsJobResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::DeleteLanguageModelRequest&, const Model::DeleteLanguageModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLanguageModelResponseReceivedHandler;
+    typedef std::function<void(const TranscribeServiceClient*, const Model::DeleteMedicalScribeJobRequest&, const Model::DeleteMedicalScribeJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMedicalScribeJobResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::DeleteMedicalTranscriptionJobRequest&, const Model::DeleteMedicalTranscriptionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMedicalTranscriptionJobResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::DeleteMedicalVocabularyRequest&, const Model::DeleteMedicalVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMedicalVocabularyResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::DeleteTranscriptionJobRequest&, const Model::DeleteTranscriptionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTranscriptionJobResponseReceivedHandler;
@@ -237,6 +253,7 @@ namespace Aws
     typedef std::function<void(const TranscribeServiceClient*, const Model::DescribeLanguageModelRequest&, const Model::DescribeLanguageModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLanguageModelResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::GetCallAnalyticsCategoryRequest&, const Model::GetCallAnalyticsCategoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCallAnalyticsCategoryResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::GetCallAnalyticsJobRequest&, const Model::GetCallAnalyticsJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCallAnalyticsJobResponseReceivedHandler;
+    typedef std::function<void(const TranscribeServiceClient*, const Model::GetMedicalScribeJobRequest&, const Model::GetMedicalScribeJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMedicalScribeJobResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::GetMedicalTranscriptionJobRequest&, const Model::GetMedicalTranscriptionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMedicalTranscriptionJobResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::GetMedicalVocabularyRequest&, const Model::GetMedicalVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMedicalVocabularyResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::GetTranscriptionJobRequest&, const Model::GetTranscriptionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTranscriptionJobResponseReceivedHandler;
@@ -245,6 +262,7 @@ namespace Aws
     typedef std::function<void(const TranscribeServiceClient*, const Model::ListCallAnalyticsCategoriesRequest&, const Model::ListCallAnalyticsCategoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCallAnalyticsCategoriesResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::ListCallAnalyticsJobsRequest&, const Model::ListCallAnalyticsJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCallAnalyticsJobsResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::ListLanguageModelsRequest&, const Model::ListLanguageModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLanguageModelsResponseReceivedHandler;
+    typedef std::function<void(const TranscribeServiceClient*, const Model::ListMedicalScribeJobsRequest&, const Model::ListMedicalScribeJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMedicalScribeJobsResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::ListMedicalTranscriptionJobsRequest&, const Model::ListMedicalTranscriptionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMedicalTranscriptionJobsResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::ListMedicalVocabulariesRequest&, const Model::ListMedicalVocabulariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMedicalVocabulariesResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -252,6 +270,7 @@ namespace Aws
     typedef std::function<void(const TranscribeServiceClient*, const Model::ListVocabulariesRequest&, const Model::ListVocabulariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVocabulariesResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::ListVocabularyFiltersRequest&, const Model::ListVocabularyFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVocabularyFiltersResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::StartCallAnalyticsJobRequest&, const Model::StartCallAnalyticsJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCallAnalyticsJobResponseReceivedHandler;
+    typedef std::function<void(const TranscribeServiceClient*, const Model::StartMedicalScribeJobRequest&, const Model::StartMedicalScribeJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMedicalScribeJobResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::StartMedicalTranscriptionJobRequest&, const Model::StartMedicalTranscriptionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMedicalTranscriptionJobResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::StartTranscriptionJobRequest&, const Model::StartTranscriptionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTranscriptionJobResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

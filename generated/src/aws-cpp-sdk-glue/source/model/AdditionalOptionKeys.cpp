@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int performanceTuning_caching_HASH = HashingUtils::HashString("performanceTuning.caching");
+        static const int observations_scope_HASH = HashingUtils::HashString("observations.scope");
 
 
         AdditionalOptionKeys GetAdditionalOptionKeysForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == performanceTuning_caching_HASH)
           {
             return AdditionalOptionKeys::performanceTuning_caching;
+          }
+          else if (hashCode == observations_scope_HASH)
+          {
+            return AdditionalOptionKeys::observations_scope;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case AdditionalOptionKeys::performanceTuning_caching:
             return "performanceTuning.caching";
+          case AdditionalOptionKeys::observations_scope:
+            return "observations.scope";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

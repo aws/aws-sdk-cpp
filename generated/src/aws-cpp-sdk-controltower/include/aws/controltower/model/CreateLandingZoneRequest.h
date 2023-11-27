@@ -150,42 +150,42 @@ namespace Model
 
 
     /**
-     * <p>The landing zone version. </p>
+     * <p>The landing zone version, for example, 3.0.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The landing zone version. </p>
+     * <p>The landing zone version, for example, 3.0.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>The landing zone version. </p>
+     * <p>The landing zone version, for example, 3.0.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The landing zone version. </p>
+     * <p>The landing zone version, for example, 3.0.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The landing zone version. </p>
+     * <p>The landing zone version, for example, 3.0.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The landing zone version. </p>
+     * <p>The landing zone version, for example, 3.0.</p>
      */
     inline CreateLandingZoneRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The landing zone version. </p>
+     * <p>The landing zone version, for example, 3.0.</p>
      */
     inline CreateLandingZoneRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The landing zone version. </p>
+     * <p>The landing zone version, for example, 3.0.</p>
      */
     inline CreateLandingZoneRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 

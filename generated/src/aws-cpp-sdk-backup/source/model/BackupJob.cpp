@@ -46,6 +46,7 @@ BackupJob::BackupJob() :
     m_isParent(false),
     m_isParentHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
+    m_initiationDateHasBeenSet(false),
     m_messageCategoryHasBeenSet(false)
 {
 }
@@ -78,6 +79,7 @@ BackupJob::BackupJob(JsonView jsonValue) :
     m_isParent(false),
     m_isParentHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
+    m_initiationDateHasBeenSet(false),
     m_messageCategoryHasBeenSet(false)
 {
   *this = jsonValue;
@@ -249,6 +251,13 @@ BackupJob& BackupJob::operator =(JsonView jsonValue)
     m_resourceNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InitiationDate"))
+  {
+    m_initiationDate = jsonValue.GetDouble("InitiationDate");
+
+    m_initiationDateHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("MessageCategory"))
   {
     m_messageCategory = jsonValue.GetString("MessageCategory");
@@ -399,6 +408,11 @@ JsonValue BackupJob::Jsonize() const
   {
    payload.WithString("ResourceName", m_resourceName);
 
+  }
+
+  if(m_initiationDateHasBeenSet)
+  {
+   payload.WithDouble("InitiationDate", m_initiationDate.SecondsWithMSPrecision());
   }
 
   if(m_messageCategoryHasBeenSet)

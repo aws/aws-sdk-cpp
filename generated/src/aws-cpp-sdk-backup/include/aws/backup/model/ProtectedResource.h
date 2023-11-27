@@ -250,6 +250,96 @@ namespace Model
      */
     inline ProtectedResource& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the
+     * most recent backup recovery point.</p>
+     */
+    inline const Aws::String& GetLastBackupVaultArn() const{ return m_lastBackupVaultArn; }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the
+     * most recent backup recovery point.</p>
+     */
+    inline bool LastBackupVaultArnHasBeenSet() const { return m_lastBackupVaultArnHasBeenSet; }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the
+     * most recent backup recovery point.</p>
+     */
+    inline void SetLastBackupVaultArn(const Aws::String& value) { m_lastBackupVaultArnHasBeenSet = true; m_lastBackupVaultArn = value; }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the
+     * most recent backup recovery point.</p>
+     */
+    inline void SetLastBackupVaultArn(Aws::String&& value) { m_lastBackupVaultArnHasBeenSet = true; m_lastBackupVaultArn = std::move(value); }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the
+     * most recent backup recovery point.</p>
+     */
+    inline void SetLastBackupVaultArn(const char* value) { m_lastBackupVaultArnHasBeenSet = true; m_lastBackupVaultArn.assign(value); }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the
+     * most recent backup recovery point.</p>
+     */
+    inline ProtectedResource& WithLastBackupVaultArn(const Aws::String& value) { SetLastBackupVaultArn(value); return *this;}
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the
+     * most recent backup recovery point.</p>
+     */
+    inline ProtectedResource& WithLastBackupVaultArn(Aws::String&& value) { SetLastBackupVaultArn(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the
+     * most recent backup recovery point.</p>
+     */
+    inline ProtectedResource& WithLastBackupVaultArn(const char* value) { SetLastBackupVaultArn(value); return *this;}
+
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+     */
+    inline const Aws::String& GetLastRecoveryPointArn() const{ return m_lastRecoveryPointArn; }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+     */
+    inline bool LastRecoveryPointArnHasBeenSet() const { return m_lastRecoveryPointArnHasBeenSet; }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+     */
+    inline void SetLastRecoveryPointArn(const Aws::String& value) { m_lastRecoveryPointArnHasBeenSet = true; m_lastRecoveryPointArn = value; }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+     */
+    inline void SetLastRecoveryPointArn(Aws::String&& value) { m_lastRecoveryPointArnHasBeenSet = true; m_lastRecoveryPointArn = std::move(value); }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+     */
+    inline void SetLastRecoveryPointArn(const char* value) { m_lastRecoveryPointArnHasBeenSet = true; m_lastRecoveryPointArn.assign(value); }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+     */
+    inline ProtectedResource& WithLastRecoveryPointArn(const Aws::String& value) { SetLastRecoveryPointArn(value); return *this;}
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+     */
+    inline ProtectedResource& WithLastRecoveryPointArn(Aws::String&& value) { SetLastRecoveryPointArn(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+     */
+    inline ProtectedResource& WithLastRecoveryPointArn(const char* value) { SetLastRecoveryPointArn(value); return *this;}
+
   private:
 
     Aws::String m_resourceArn;
@@ -263,6 +353,12 @@ namespace Model
 
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet = false;
+
+    Aws::String m_lastBackupVaultArn;
+    bool m_lastBackupVaultArnHasBeenSet = false;
+
+    Aws::String m_lastRecoveryPointArn;
+    bool m_lastRecoveryPointArnHasBeenSet = false;
   };
 
 } // namespace Model

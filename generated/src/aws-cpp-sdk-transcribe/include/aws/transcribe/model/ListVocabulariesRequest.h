@@ -111,71 +111,77 @@ namespace Model
     /**
      * <p>The maximum number of custom vocabularies to return in each page of results.
      * If there are fewer results than the value that you specify, only the actual
-     * results are returned. If you don't specify a value, a default of 5 is used.</p>
+     * results are returned. If you do not specify a value, a default of 5 is used.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of custom vocabularies to return in each page of results.
      * If there are fewer results than the value that you specify, only the actual
-     * results are returned. If you don't specify a value, a default of 5 is used.</p>
+     * results are returned. If you do not specify a value, a default of 5 is used.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of custom vocabularies to return in each page of results.
      * If there are fewer results than the value that you specify, only the actual
-     * results are returned. If you don't specify a value, a default of 5 is used.</p>
+     * results are returned. If you do not specify a value, a default of 5 is used.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of custom vocabularies to return in each page of results.
      * If there are fewer results than the value that you specify, only the actual
-     * results are returned. If you don't specify a value, a default of 5 is used.</p>
+     * results are returned. If you do not specify a value, a default of 5 is used.</p>
      */
     inline ListVocabulariesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
      * <p>Returns only custom vocabularies with the specified state. Vocabularies are
-     * ordered by creation date, with the newest vocabulary first. If you don't include
-     * <code>StateEquals</code>, all custom medical vocabularies are returned.</p>
+     * ordered by creation date, with the newest vocabulary first. If you do not
+     * include <code>StateEquals</code>, all custom medical vocabularies are
+     * returned.</p>
      */
     inline const VocabularyState& GetStateEquals() const{ return m_stateEquals; }
 
     /**
      * <p>Returns only custom vocabularies with the specified state. Vocabularies are
-     * ordered by creation date, with the newest vocabulary first. If you don't include
-     * <code>StateEquals</code>, all custom medical vocabularies are returned.</p>
+     * ordered by creation date, with the newest vocabulary first. If you do not
+     * include <code>StateEquals</code>, all custom medical vocabularies are
+     * returned.</p>
      */
     inline bool StateEqualsHasBeenSet() const { return m_stateEqualsHasBeenSet; }
 
     /**
      * <p>Returns only custom vocabularies with the specified state. Vocabularies are
-     * ordered by creation date, with the newest vocabulary first. If you don't include
-     * <code>StateEquals</code>, all custom medical vocabularies are returned.</p>
+     * ordered by creation date, with the newest vocabulary first. If you do not
+     * include <code>StateEquals</code>, all custom medical vocabularies are
+     * returned.</p>
      */
     inline void SetStateEquals(const VocabularyState& value) { m_stateEqualsHasBeenSet = true; m_stateEquals = value; }
 
     /**
      * <p>Returns only custom vocabularies with the specified state. Vocabularies are
-     * ordered by creation date, with the newest vocabulary first. If you don't include
-     * <code>StateEquals</code>, all custom medical vocabularies are returned.</p>
+     * ordered by creation date, with the newest vocabulary first. If you do not
+     * include <code>StateEquals</code>, all custom medical vocabularies are
+     * returned.</p>
      */
     inline void SetStateEquals(VocabularyState&& value) { m_stateEqualsHasBeenSet = true; m_stateEquals = std::move(value); }
 
     /**
      * <p>Returns only custom vocabularies with the specified state. Vocabularies are
-     * ordered by creation date, with the newest vocabulary first. If you don't include
-     * <code>StateEquals</code>, all custom medical vocabularies are returned.</p>
+     * ordered by creation date, with the newest vocabulary first. If you do not
+     * include <code>StateEquals</code>, all custom medical vocabularies are
+     * returned.</p>
      */
     inline ListVocabulariesRequest& WithStateEquals(const VocabularyState& value) { SetStateEquals(value); return *this;}
 
     /**
      * <p>Returns only custom vocabularies with the specified state. Vocabularies are
-     * ordered by creation date, with the newest vocabulary first. If you don't include
-     * <code>StateEquals</code>, all custom medical vocabularies are returned.</p>
+     * ordered by creation date, with the newest vocabulary first. If you do not
+     * include <code>StateEquals</code>, all custom medical vocabularies are
+     * returned.</p>
      */
     inline ListVocabulariesRequest& WithStateEquals(VocabularyState&& value) { SetStateEquals(std::move(value)); return *this;}
 

@@ -34,50 +34,50 @@ namespace Model
 
     /**
      * <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation.
-     * You can use this identifier as an input of <code>GetLandingZoneOperation</code>
-     * to check the operation's status.</p>
+     * You can use this identifier as an input parameter of
+     * <code>GetLandingZoneOperation</code> to check the operation's status.</p>
      */
     inline const Aws::String& GetOperationIdentifier() const{ return m_operationIdentifier; }
 
     /**
      * <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation.
-     * You can use this identifier as an input of <code>GetLandingZoneOperation</code>
-     * to check the operation's status.</p>
+     * You can use this identifier as an input parameter of
+     * <code>GetLandingZoneOperation</code> to check the operation's status.</p>
      */
     inline void SetOperationIdentifier(const Aws::String& value) { m_operationIdentifier = value; }
 
     /**
      * <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation.
-     * You can use this identifier as an input of <code>GetLandingZoneOperation</code>
-     * to check the operation's status.</p>
+     * You can use this identifier as an input parameter of
+     * <code>GetLandingZoneOperation</code> to check the operation's status.</p>
      */
     inline void SetOperationIdentifier(Aws::String&& value) { m_operationIdentifier = std::move(value); }
 
     /**
      * <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation.
-     * You can use this identifier as an input of <code>GetLandingZoneOperation</code>
-     * to check the operation's status.</p>
+     * You can use this identifier as an input parameter of
+     * <code>GetLandingZoneOperation</code> to check the operation's status.</p>
      */
     inline void SetOperationIdentifier(const char* value) { m_operationIdentifier.assign(value); }
 
     /**
      * <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation.
-     * You can use this identifier as an input of <code>GetLandingZoneOperation</code>
-     * to check the operation's status.</p>
+     * You can use this identifier as an input parameter of
+     * <code>GetLandingZoneOperation</code> to check the operation's status.</p>
      */
     inline ResetLandingZoneResult& WithOperationIdentifier(const Aws::String& value) { SetOperationIdentifier(value); return *this;}
 
     /**
      * <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation.
-     * You can use this identifier as an input of <code>GetLandingZoneOperation</code>
-     * to check the operation's status.</p>
+     * You can use this identifier as an input parameter of
+     * <code>GetLandingZoneOperation</code> to check the operation's status.</p>
      */
     inline ResetLandingZoneResult& WithOperationIdentifier(Aws::String&& value) { SetOperationIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation.
-     * You can use this identifier as an input of <code>GetLandingZoneOperation</code>
-     * to check the operation's status.</p>
+     * You can use this identifier as an input parameter of
+     * <code>GetLandingZoneOperation</code> to check the operation's status.</p>
      */
     inline ResetLandingZoneResult& WithOperationIdentifier(const char* value) { SetOperationIdentifier(value); return *this;}
 

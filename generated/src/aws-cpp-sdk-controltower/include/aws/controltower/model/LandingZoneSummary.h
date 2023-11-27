@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Returns a summary of information about a landing zone. </p><p><h3>See
+   * <p>Returns a summary of information about a landing zone.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/LandingZoneSummary">AWS
    * API Reference</a></p>
@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the landing zone. </p>
+     * <p>The ARN of the landing zone.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the landing zone. </p>
+     * <p>The ARN of the landing zone.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The ARN of the landing zone. </p>
+     * <p>The ARN of the landing zone.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The ARN of the landing zone. </p>
+     * <p>The ARN of the landing zone.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the landing zone. </p>
+     * <p>The ARN of the landing zone.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the landing zone. </p>
+     * <p>The ARN of the landing zone.</p>
      */
     inline LandingZoneSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the landing zone. </p>
+     * <p>The ARN of the landing zone.</p>
      */
     inline LandingZoneSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the landing zone. </p>
+     * <p>The ARN of the landing zone.</p>
      */
     inline LandingZoneSummary& WithArn(const char* value) { SetArn(value); return *this;}
 

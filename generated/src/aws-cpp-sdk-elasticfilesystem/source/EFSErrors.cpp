@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/elasticfilesystem/EFSErrors.h>
 #include <aws/elasticfilesystem/model/SecurityGroupLimitExceeded.h>
+#include <aws/elasticfilesystem/model/ConflictException.h>
 #include <aws/elasticfilesystem/model/SecurityGroupNotFound.h>
 #include <aws/elasticfilesystem/model/AccessPointAlreadyExists.h>
 #include <aws/elasticfilesystem/model/NoFreeAddressesInSubnet.h>
@@ -30,6 +31,7 @@
 #include <aws/elasticfilesystem/model/MountTargetConflict.h>
 #include <aws/elasticfilesystem/model/InvalidPolicyException.h>
 #include <aws/elasticfilesystem/model/ThroughputLimitExceeded.h>
+#include <aws/elasticfilesystem/model/ReplicationAlreadyExists.h>
 #include <aws/elasticfilesystem/model/ThrottlingException.h>
 #include <aws/elasticfilesystem/model/FileSystemInUse.h>
 #include <aws/elasticfilesystem/model/NetworkInterfaceLimitExceeded.h>
@@ -50,6 +52,12 @@ template<> AWS_EFS_API SecurityGroupLimitExceeded EFSError::GetModeledError()
 {
   assert(this->GetErrorType() == EFSErrors::SECURITY_GROUP_LIMIT_EXCEEDED);
   return SecurityGroupLimitExceeded(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API ConflictException EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
 }
 
 template<> AWS_EFS_API SecurityGroupNotFound EFSError::GetModeledError()
@@ -190,6 +198,12 @@ template<> AWS_EFS_API ThroughputLimitExceeded EFSError::GetModeledError()
   return ThroughputLimitExceeded(this->GetJsonPayload().View());
 }
 
+template<> AWS_EFS_API ReplicationAlreadyExists EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::REPLICATION_ALREADY_EXISTS);
+  return ReplicationAlreadyExists(this->GetJsonPayload().View());
+}
+
 template<> AWS_EFS_API ThrottlingException EFSError::GetModeledError()
 {
   assert(this->GetErrorType() == EFSErrors::THROTTLING);
@@ -230,6 +244,7 @@ namespace EFSErrorMapper
 {
 
 static const int SECURITY_GROUP_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SecurityGroupLimitExceeded");
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SECURITY_GROUP_NOT_FOUND_HASH = HashingUtils::HashString("SecurityGroupNotFound");
 static const int ACCESS_POINT_ALREADY_EXISTS_HASH = HashingUtils::HashString("AccessPointAlreadyExists");
 static const int NO_FREE_ADDRESSES_IN_SUBNET_HASH = HashingUtils::HashString("NoFreeAddressesInSubnet");
@@ -251,6 +266,7 @@ static const int AVAILABILITY_ZONES_MISMATCH_HASH = HashingUtils::HashString("Av
 static const int MOUNT_TARGET_CONFLICT_HASH = HashingUtils::HashString("MountTargetConflict");
 static const int INVALID_POLICY_HASH = HashingUtils::HashString("InvalidPolicyException");
 static const int THROUGHPUT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ThroughputLimitExceeded");
+static const int REPLICATION_ALREADY_EXISTS_HASH = HashingUtils::HashString("ReplicationAlreadyExists");
 static const int FILE_SYSTEM_IN_USE_HASH = HashingUtils::HashString("FileSystemInUse");
 static const int NETWORK_INTERFACE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("NetworkInterfaceLimitExceeded");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequests");
@@ -265,6 +281,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == SECURITY_GROUP_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::SECURITY_GROUP_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::CONFLICT), false);
   }
   else if (hashCode == SECURITY_GROUP_NOT_FOUND_HASH)
   {
@@ -349,6 +369,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == THROUGHPUT_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::THROUGHPUT_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == REPLICATION_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::REPLICATION_ALREADY_EXISTS), false);
   }
   else if (hashCode == FILE_SYSTEM_IN_USE_HASH)
   {

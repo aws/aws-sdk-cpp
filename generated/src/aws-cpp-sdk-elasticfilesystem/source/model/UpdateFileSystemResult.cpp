@@ -146,6 +146,12 @@ UpdateFileSystemResult& UpdateFileSystemResult::operator =(const Aws::AmazonWebS
     }
   }
 
+  if(jsonValue.ValueExists("FileSystemProtection"))
+  {
+    m_fileSystemProtection = jsonValue.GetObject("FileSystemProtection");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
