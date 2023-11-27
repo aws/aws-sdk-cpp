@@ -42,7 +42,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -50,7 +50,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -58,7 +58,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -66,7 +66,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -74,7 +74,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -82,7 +82,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -90,7 +90,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -98,7 +98,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -635,74 +635,98 @@ namespace Model
 
 
     /**
-     * <p>This returns a list of backup jobs for the specified message category.</p>
-     * <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>,
-     * and <code>InvalidParameters</code>. See <a
+     * <p>This is an optional parameter that can be used to filter out jobs with a
+     * MessageCategory which matches the value you input.</p> <p>Example strings may
+     * include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>.</p> <p>View <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
-     * for a list of MessageCategory strings.</p>
+     * </p> <p>The wildcard () returns count of all message categories.</p> <p>
+     * <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and
+     * returns the sum.</p>
      */
     inline const Aws::String& GetByMessageCategory() const{ return m_byMessageCategory; }
 
     /**
-     * <p>This returns a list of backup jobs for the specified message category.</p>
-     * <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>,
-     * and <code>InvalidParameters</code>. See <a
+     * <p>This is an optional parameter that can be used to filter out jobs with a
+     * MessageCategory which matches the value you input.</p> <p>Example strings may
+     * include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>.</p> <p>View <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
-     * for a list of MessageCategory strings.</p>
+     * </p> <p>The wildcard () returns count of all message categories.</p> <p>
+     * <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and
+     * returns the sum.</p>
      */
     inline bool ByMessageCategoryHasBeenSet() const { return m_byMessageCategoryHasBeenSet; }
 
     /**
-     * <p>This returns a list of backup jobs for the specified message category.</p>
-     * <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>,
-     * and <code>InvalidParameters</code>. See <a
+     * <p>This is an optional parameter that can be used to filter out jobs with a
+     * MessageCategory which matches the value you input.</p> <p>Example strings may
+     * include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>.</p> <p>View <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
-     * for a list of MessageCategory strings.</p>
+     * </p> <p>The wildcard () returns count of all message categories.</p> <p>
+     * <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and
+     * returns the sum.</p>
      */
     inline void SetByMessageCategory(const Aws::String& value) { m_byMessageCategoryHasBeenSet = true; m_byMessageCategory = value; }
 
     /**
-     * <p>This returns a list of backup jobs for the specified message category.</p>
-     * <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>,
-     * and <code>InvalidParameters</code>. See <a
+     * <p>This is an optional parameter that can be used to filter out jobs with a
+     * MessageCategory which matches the value you input.</p> <p>Example strings may
+     * include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>.</p> <p>View <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
-     * for a list of MessageCategory strings.</p>
+     * </p> <p>The wildcard () returns count of all message categories.</p> <p>
+     * <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and
+     * returns the sum.</p>
      */
     inline void SetByMessageCategory(Aws::String&& value) { m_byMessageCategoryHasBeenSet = true; m_byMessageCategory = std::move(value); }
 
     /**
-     * <p>This returns a list of backup jobs for the specified message category.</p>
-     * <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>,
-     * and <code>InvalidParameters</code>. See <a
+     * <p>This is an optional parameter that can be used to filter out jobs with a
+     * MessageCategory which matches the value you input.</p> <p>Example strings may
+     * include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>.</p> <p>View <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
-     * for a list of MessageCategory strings.</p>
+     * </p> <p>The wildcard () returns count of all message categories.</p> <p>
+     * <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and
+     * returns the sum.</p>
      */
     inline void SetByMessageCategory(const char* value) { m_byMessageCategoryHasBeenSet = true; m_byMessageCategory.assign(value); }
 
     /**
-     * <p>This returns a list of backup jobs for the specified message category.</p>
-     * <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>,
-     * and <code>InvalidParameters</code>. See <a
+     * <p>This is an optional parameter that can be used to filter out jobs with a
+     * MessageCategory which matches the value you input.</p> <p>Example strings may
+     * include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>.</p> <p>View <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
-     * for a list of MessageCategory strings.</p>
+     * </p> <p>The wildcard () returns count of all message categories.</p> <p>
+     * <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and
+     * returns the sum.</p>
      */
     inline ListBackupJobsRequest& WithByMessageCategory(const Aws::String& value) { SetByMessageCategory(value); return *this;}
 
     /**
-     * <p>This returns a list of backup jobs for the specified message category.</p>
-     * <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>,
-     * and <code>InvalidParameters</code>. See <a
+     * <p>This is an optional parameter that can be used to filter out jobs with a
+     * MessageCategory which matches the value you input.</p> <p>Example strings may
+     * include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>.</p> <p>View <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
-     * for a list of MessageCategory strings.</p>
+     * </p> <p>The wildcard () returns count of all message categories.</p> <p>
+     * <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and
+     * returns the sum.</p>
      */
     inline ListBackupJobsRequest& WithByMessageCategory(Aws::String&& value) { SetByMessageCategory(std::move(value)); return *this;}
 
     /**
-     * <p>This returns a list of backup jobs for the specified message category.</p>
-     * <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>,
-     * and <code>InvalidParameters</code>. See <a
+     * <p>This is an optional parameter that can be used to filter out jobs with a
+     * MessageCategory which matches the value you input.</p> <p>Example strings may
+     * include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>.</p> <p>View <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
-     * for a list of MessageCategory strings.</p>
+     * </p> <p>The wildcard () returns count of all message categories.</p> <p>
+     * <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and
+     * returns the sum.</p>
      */
     inline ListBackupJobsRequest& WithByMessageCategory(const char* value) { SetByMessageCategory(value); return *this;}
 

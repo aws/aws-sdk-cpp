@@ -22,6 +22,7 @@ EnabledControlDetails::EnabledControlDetails() :
     m_arnHasBeenSet(false),
     m_controlIdentifierHasBeenSet(false),
     m_driftStatusSummaryHasBeenSet(false),
+    m_parametersHasBeenSet(false),
     m_statusSummaryHasBeenSet(false),
     m_targetIdentifierHasBeenSet(false),
     m_targetRegionsHasBeenSet(false)
@@ -32,6 +33,7 @@ EnabledControlDetails::EnabledControlDetails(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_controlIdentifierHasBeenSet(false),
     m_driftStatusSummaryHasBeenSet(false),
+    m_parametersHasBeenSet(false),
     m_statusSummaryHasBeenSet(false),
     m_targetIdentifierHasBeenSet(false),
     m_targetRegionsHasBeenSet(false)
@@ -60,6 +62,16 @@ EnabledControlDetails& EnabledControlDetails::operator =(JsonView jsonValue)
     m_driftStatusSummary = jsonValue.GetObject("driftStatusSummary");
 
     m_driftStatusSummaryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("parameters"))
+  {
+    Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
+    for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
+    {
+      m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
+    }
+    m_parametersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("statusSummary"))
@@ -108,6 +120,17 @@ JsonValue EnabledControlDetails::Jsonize() const
   if(m_driftStatusSummaryHasBeenSet)
   {
    payload.WithObject("driftStatusSummary", m_driftStatusSummary.Jsonize());
+
+  }
+
+  if(m_parametersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
+   for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
+   {
+     parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
+   }
+   payload.WithArray("parameters", std::move(parametersJsonList));
 
   }
 

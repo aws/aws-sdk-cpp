@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>Information about the landing zone. </p>
+     * <p>Information about the landing zone.</p>
      */
     inline const LandingZoneDetail& GetLandingZone() const{ return m_landingZone; }
 
     /**
-     * <p>Information about the landing zone. </p>
+     * <p>Information about the landing zone.</p>
      */
     inline void SetLandingZone(const LandingZoneDetail& value) { m_landingZone = value; }
 
     /**
-     * <p>Information about the landing zone. </p>
+     * <p>Information about the landing zone.</p>
      */
     inline void SetLandingZone(LandingZoneDetail&& value) { m_landingZone = std::move(value); }
 
     /**
-     * <p>Information about the landing zone. </p>
+     * <p>Information about the landing zone.</p>
      */
     inline GetLandingZoneResult& WithLandingZone(const LandingZoneDetail& value) { SetLandingZone(value); return *this;}
 
     /**
-     * <p>Information about the landing zone. </p>
+     * <p>Information about the landing zone.</p>
      */
     inline GetLandingZoneResult& WithLandingZone(LandingZoneDetail&& value) { SetLandingZone(std::move(value)); return *this;}
 

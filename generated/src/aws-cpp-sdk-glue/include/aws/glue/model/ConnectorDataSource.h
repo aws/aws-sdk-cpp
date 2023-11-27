@@ -85,56 +85,80 @@ namespace Model
     /**
      * <p>The <code>connectionType</code>, as provided to the underlying Glue library.
      * This node type supports the following connection types: </p> <ul> <li> <p>
-     * <code>bigquery</code> </p> </li> </ul>
+     * <code>opensearch</code> </p> </li> <li> <p> <code>azuresql</code> </p> </li>
+     * <li> <p> <code>azurecosmos</code> </p> </li> <li> <p> <code>bigquery</code> </p>
+     * </li> <li> <p> <code>saphana</code> </p> </li> <li> <p> <code>teradata</code>
+     * </p> </li> <li> <p> <code>vertica</code> </p> </li> </ul>
      */
     inline const Aws::String& GetConnectionType() const{ return m_connectionType; }
 
     /**
      * <p>The <code>connectionType</code>, as provided to the underlying Glue library.
      * This node type supports the following connection types: </p> <ul> <li> <p>
-     * <code>bigquery</code> </p> </li> </ul>
+     * <code>opensearch</code> </p> </li> <li> <p> <code>azuresql</code> </p> </li>
+     * <li> <p> <code>azurecosmos</code> </p> </li> <li> <p> <code>bigquery</code> </p>
+     * </li> <li> <p> <code>saphana</code> </p> </li> <li> <p> <code>teradata</code>
+     * </p> </li> <li> <p> <code>vertica</code> </p> </li> </ul>
      */
     inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
 
     /**
      * <p>The <code>connectionType</code>, as provided to the underlying Glue library.
      * This node type supports the following connection types: </p> <ul> <li> <p>
-     * <code>bigquery</code> </p> </li> </ul>
+     * <code>opensearch</code> </p> </li> <li> <p> <code>azuresql</code> </p> </li>
+     * <li> <p> <code>azurecosmos</code> </p> </li> <li> <p> <code>bigquery</code> </p>
+     * </li> <li> <p> <code>saphana</code> </p> </li> <li> <p> <code>teradata</code>
+     * </p> </li> <li> <p> <code>vertica</code> </p> </li> </ul>
      */
     inline void SetConnectionType(const Aws::String& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
 
     /**
      * <p>The <code>connectionType</code>, as provided to the underlying Glue library.
      * This node type supports the following connection types: </p> <ul> <li> <p>
-     * <code>bigquery</code> </p> </li> </ul>
+     * <code>opensearch</code> </p> </li> <li> <p> <code>azuresql</code> </p> </li>
+     * <li> <p> <code>azurecosmos</code> </p> </li> <li> <p> <code>bigquery</code> </p>
+     * </li> <li> <p> <code>saphana</code> </p> </li> <li> <p> <code>teradata</code>
+     * </p> </li> <li> <p> <code>vertica</code> </p> </li> </ul>
      */
     inline void SetConnectionType(Aws::String&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
 
     /**
      * <p>The <code>connectionType</code>, as provided to the underlying Glue library.
      * This node type supports the following connection types: </p> <ul> <li> <p>
-     * <code>bigquery</code> </p> </li> </ul>
+     * <code>opensearch</code> </p> </li> <li> <p> <code>azuresql</code> </p> </li>
+     * <li> <p> <code>azurecosmos</code> </p> </li> <li> <p> <code>bigquery</code> </p>
+     * </li> <li> <p> <code>saphana</code> </p> </li> <li> <p> <code>teradata</code>
+     * </p> </li> <li> <p> <code>vertica</code> </p> </li> </ul>
      */
     inline void SetConnectionType(const char* value) { m_connectionTypeHasBeenSet = true; m_connectionType.assign(value); }
 
     /**
      * <p>The <code>connectionType</code>, as provided to the underlying Glue library.
      * This node type supports the following connection types: </p> <ul> <li> <p>
-     * <code>bigquery</code> </p> </li> </ul>
+     * <code>opensearch</code> </p> </li> <li> <p> <code>azuresql</code> </p> </li>
+     * <li> <p> <code>azurecosmos</code> </p> </li> <li> <p> <code>bigquery</code> </p>
+     * </li> <li> <p> <code>saphana</code> </p> </li> <li> <p> <code>teradata</code>
+     * </p> </li> <li> <p> <code>vertica</code> </p> </li> </ul>
      */
     inline ConnectorDataSource& WithConnectionType(const Aws::String& value) { SetConnectionType(value); return *this;}
 
     /**
      * <p>The <code>connectionType</code>, as provided to the underlying Glue library.
      * This node type supports the following connection types: </p> <ul> <li> <p>
-     * <code>bigquery</code> </p> </li> </ul>
+     * <code>opensearch</code> </p> </li> <li> <p> <code>azuresql</code> </p> </li>
+     * <li> <p> <code>azurecosmos</code> </p> </li> <li> <p> <code>bigquery</code> </p>
+     * </li> <li> <p> <code>saphana</code> </p> </li> <li> <p> <code>teradata</code>
+     * </p> </li> <li> <p> <code>vertica</code> </p> </li> </ul>
      */
     inline ConnectorDataSource& WithConnectionType(Aws::String&& value) { SetConnectionType(std::move(value)); return *this;}
 
     /**
      * <p>The <code>connectionType</code>, as provided to the underlying Glue library.
      * This node type supports the following connection types: </p> <ul> <li> <p>
-     * <code>bigquery</code> </p> </li> </ul>
+     * <code>opensearch</code> </p> </li> <li> <p> <code>azuresql</code> </p> </li>
+     * <li> <p> <code>azurecosmos</code> </p> </li> <li> <p> <code>bigquery</code> </p>
+     * </li> <li> <p> <code>saphana</code> </p> </li> <li> <p> <code>teradata</code>
+     * </p> </li> <li> <p> <code>vertica</code> </p> </li> </ul>
      */
     inline ConnectorDataSource& WithConnectionType(const char* value) { SetConnectionType(value); return *this;}
 

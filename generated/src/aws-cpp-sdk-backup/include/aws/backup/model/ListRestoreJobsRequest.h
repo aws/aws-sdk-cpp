@@ -42,7 +42,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -50,7 +50,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -58,7 +58,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -66,7 +66,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -74,7 +74,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -82,7 +82,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -90,7 +90,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -98,7 +98,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -341,6 +341,55 @@ namespace Model
      */
     inline ListRestoreJobsRequest& WithByCompleteAfter(Aws::Utils::DateTime&& value) { SetByCompleteAfter(std::move(value)); return *this;}
 
+
+    /**
+     * <p>This returns only restore testing jobs that match the specified resource
+     * Amazon Resource Name (ARN).</p>
+     */
+    inline const Aws::String& GetByRestoreTestingPlanArn() const{ return m_byRestoreTestingPlanArn; }
+
+    /**
+     * <p>This returns only restore testing jobs that match the specified resource
+     * Amazon Resource Name (ARN).</p>
+     */
+    inline bool ByRestoreTestingPlanArnHasBeenSet() const { return m_byRestoreTestingPlanArnHasBeenSet; }
+
+    /**
+     * <p>This returns only restore testing jobs that match the specified resource
+     * Amazon Resource Name (ARN).</p>
+     */
+    inline void SetByRestoreTestingPlanArn(const Aws::String& value) { m_byRestoreTestingPlanArnHasBeenSet = true; m_byRestoreTestingPlanArn = value; }
+
+    /**
+     * <p>This returns only restore testing jobs that match the specified resource
+     * Amazon Resource Name (ARN).</p>
+     */
+    inline void SetByRestoreTestingPlanArn(Aws::String&& value) { m_byRestoreTestingPlanArnHasBeenSet = true; m_byRestoreTestingPlanArn = std::move(value); }
+
+    /**
+     * <p>This returns only restore testing jobs that match the specified resource
+     * Amazon Resource Name (ARN).</p>
+     */
+    inline void SetByRestoreTestingPlanArn(const char* value) { m_byRestoreTestingPlanArnHasBeenSet = true; m_byRestoreTestingPlanArn.assign(value); }
+
+    /**
+     * <p>This returns only restore testing jobs that match the specified resource
+     * Amazon Resource Name (ARN).</p>
+     */
+    inline ListRestoreJobsRequest& WithByRestoreTestingPlanArn(const Aws::String& value) { SetByRestoreTestingPlanArn(value); return *this;}
+
+    /**
+     * <p>This returns only restore testing jobs that match the specified resource
+     * Amazon Resource Name (ARN).</p>
+     */
+    inline ListRestoreJobsRequest& WithByRestoreTestingPlanArn(Aws::String&& value) { SetByRestoreTestingPlanArn(std::move(value)); return *this;}
+
+    /**
+     * <p>This returns only restore testing jobs that match the specified resource
+     * Amazon Resource Name (ARN).</p>
+     */
+    inline ListRestoreJobsRequest& WithByRestoreTestingPlanArn(const char* value) { SetByRestoreTestingPlanArn(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -366,6 +415,9 @@ namespace Model
 
     Aws::Utils::DateTime m_byCompleteAfter;
     bool m_byCompleteAfterHasBeenSet = false;
+
+    Aws::String m_byRestoreTestingPlanArn;
+    bool m_byRestoreTestingPlanArnHasBeenSet = false;
   };
 
 } // namespace Model

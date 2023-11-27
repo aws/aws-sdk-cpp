@@ -195,6 +195,12 @@ DescribeBackupJobResult& DescribeBackupJobResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("InitiationDate"))
+  {
+    m_initiationDate = jsonValue.GetDouble("InitiationDate");
+
+  }
+
   if(jsonValue.ValueExists("MessageCategory"))
   {
     m_messageCategory = jsonValue.GetString("MessageCategory");

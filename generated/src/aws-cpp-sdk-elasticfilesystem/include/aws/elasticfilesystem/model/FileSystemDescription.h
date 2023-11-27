@@ -12,6 +12,7 @@
 #include <aws/elasticfilesystem/model/PerformanceMode.h>
 #include <aws/elasticfilesystem/model/ThroughputMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticfilesystem/model/FileSystemProtectionDescription.h>
 #include <aws/elasticfilesystem/model/Tag.h>
 #include <utility>
 
@@ -839,6 +840,37 @@ namespace Model
     inline FileSystemDescription& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>Describes the protection on the file system. </p>
+     */
+    inline const FileSystemProtectionDescription& GetFileSystemProtection() const{ return m_fileSystemProtection; }
+
+    /**
+     * <p>Describes the protection on the file system. </p>
+     */
+    inline bool FileSystemProtectionHasBeenSet() const { return m_fileSystemProtectionHasBeenSet; }
+
+    /**
+     * <p>Describes the protection on the file system. </p>
+     */
+    inline void SetFileSystemProtection(const FileSystemProtectionDescription& value) { m_fileSystemProtectionHasBeenSet = true; m_fileSystemProtection = value; }
+
+    /**
+     * <p>Describes the protection on the file system. </p>
+     */
+    inline void SetFileSystemProtection(FileSystemProtectionDescription&& value) { m_fileSystemProtectionHasBeenSet = true; m_fileSystemProtection = std::move(value); }
+
+    /**
+     * <p>Describes the protection on the file system. </p>
+     */
+    inline FileSystemDescription& WithFileSystemProtection(const FileSystemProtectionDescription& value) { SetFileSystemProtection(value); return *this;}
+
+    /**
+     * <p>Describes the protection on the file system. </p>
+     */
+    inline FileSystemDescription& WithFileSystemProtection(FileSystemProtectionDescription&& value) { SetFileSystemProtection(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -915,6 +947,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    FileSystemProtectionDescription m_fileSystemProtection;
+    bool m_fileSystemProtectionHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

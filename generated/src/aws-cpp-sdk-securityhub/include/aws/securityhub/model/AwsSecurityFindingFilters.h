@@ -103,42 +103,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline const Aws::Vector<StringFilter>& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline void SetAwsAccountId(const Aws::Vector<StringFilter>& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline void SetAwsAccountId(Aws::Vector<StringFilter>&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline AwsSecurityFindingFilters& WithAwsAccountId(const Aws::Vector<StringFilter>& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline AwsSecurityFindingFilters& WithAwsAccountId(Aws::Vector<StringFilter>&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline AwsSecurityFindingFilters& AddAwsAccountId(const StringFilter& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline AwsSecurityFindingFilters& AddAwsAccountId(StringFilter&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.push_back(std::move(value)); return *this; }
 
@@ -4973,6 +4973,137 @@ namespace Model
      */
     inline AwsSecurityFindingFilters& AddComplianceSecurityControlParametersValue(StringFilter&& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetAwsAccountName() const{ return m_awsAccountName; }
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline bool AwsAccountNameHasBeenSet() const { return m_awsAccountNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline void SetAwsAccountName(const Aws::Vector<StringFilter>& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName = value; }
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline void SetAwsAccountName(Aws::Vector<StringFilter>&& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName = std::move(value); }
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline AwsSecurityFindingFilters& WithAwsAccountName(const Aws::Vector<StringFilter>& value) { SetAwsAccountName(value); return *this;}
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline AwsSecurityFindingFilters& WithAwsAccountName(Aws::Vector<StringFilter>&& value) { SetAwsAccountName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline AwsSecurityFindingFilters& AddAwsAccountName(const StringFilter& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName.push_back(value); return *this; }
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline AwsSecurityFindingFilters& AddAwsAccountName(StringFilter&& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetResourceApplicationName() const{ return m_resourceApplicationName; }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline bool ResourceApplicationNameHasBeenSet() const { return m_resourceApplicationNameHasBeenSet; }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline void SetResourceApplicationName(const Aws::Vector<StringFilter>& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName = value; }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline void SetResourceApplicationName(Aws::Vector<StringFilter>&& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName = std::move(value); }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& WithResourceApplicationName(const Aws::Vector<StringFilter>& value) { SetResourceApplicationName(value); return *this;}
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& WithResourceApplicationName(Aws::Vector<StringFilter>&& value) { SetResourceApplicationName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& AddResourceApplicationName(const StringFilter& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName.push_back(value); return *this; }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& AddResourceApplicationName(StringFilter&& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetResourceApplicationArn() const{ return m_resourceApplicationArn; }
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline bool ResourceApplicationArnHasBeenSet() const { return m_resourceApplicationArnHasBeenSet; }
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline void SetResourceApplicationArn(const Aws::Vector<StringFilter>& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn = value; }
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline void SetResourceApplicationArn(Aws::Vector<StringFilter>&& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn = std::move(value); }
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& WithResourceApplicationArn(const Aws::Vector<StringFilter>& value) { SetResourceApplicationArn(value); return *this;}
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& WithResourceApplicationArn(Aws::Vector<StringFilter>&& value) { SetResourceApplicationArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& AddResourceApplicationArn(const StringFilter& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn.push_back(value); return *this; }
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& AddResourceApplicationArn(StringFilter&& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<StringFilter> m_productArn;
@@ -5265,6 +5396,15 @@ namespace Model
 
     Aws::Vector<StringFilter> m_complianceSecurityControlParametersValue;
     bool m_complianceSecurityControlParametersValueHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_awsAccountName;
+    bool m_awsAccountNameHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_resourceApplicationName;
+    bool m_resourceApplicationNameHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_resourceApplicationArn;
+    bool m_resourceApplicationArnHasBeenSet = false;
   };
 
 } // namespace Model

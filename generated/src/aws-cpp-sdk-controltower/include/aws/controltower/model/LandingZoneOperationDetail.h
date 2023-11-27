@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about a landing zone operation. </p><p><h3>See Also:</h3>   <a
+   * <p>Information about a landing zone operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/LandingZoneOperationDetail">AWS
    * API Reference</a></p>
    */
@@ -41,32 +41,32 @@ namespace Model
 
 
     /**
-     * <p>The landing zone operation end time. </p>
+     * <p>The landing zone operation end time.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The landing zone operation end time. </p>
+     * <p>The landing zone operation end time.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The landing zone operation end time. </p>
+     * <p>The landing zone operation end time.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The landing zone operation end time. </p>
+     * <p>The landing zone operation end time.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The landing zone operation end time. </p>
+     * <p>The landing zone operation end time.</p>
      */
     inline LandingZoneOperationDetail& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The landing zone operation end time. </p>
+     * <p>The landing zone operation end time.</p>
      */
     inline LandingZoneOperationDetail& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -133,136 +133,130 @@ namespace Model
 
 
     /**
-     * <p>The landing zone operation start time. </p>
+     * <p>The landing zone operation start time.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The landing zone operation start time. </p>
+     * <p>The landing zone operation start time.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The landing zone operation start time. </p>
+     * <p>The landing zone operation start time.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The landing zone operation start time. </p>
+     * <p>The landing zone operation start time.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The landing zone operation start time. </p>
+     * <p>The landing zone operation start time.</p>
      */
     inline LandingZoneOperationDetail& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The landing zone operation start time. </p>
+     * <p>The landing zone operation start time.</p>
      */
     inline LandingZoneOperationDetail& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The landing zone operation status. </p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>SUCCEEDED</code>: The landing zone operation succeeded. </p> </li> <li>
-     * <p> <code>IN_PROGRESS</code>: The landing zone operation is in progress. </p>
-     * </li> <li> <p> <code>FAILED</code>: The landing zone operation failed. </p>
-     * </li> </ul>
+     * <p>Valid values:</p> <ul> <li> <p> <code>SUCCEEDED</code>: The landing zone
+     * operation succeeded. </p> </li> <li> <p> <code>IN_PROGRESS</code>: The landing
+     * zone operation is in progress. </p> </li> <li> <p> <code>FAILED</code>: The
+     * landing zone operation failed. </p> </li> </ul>
      */
     inline const LandingZoneOperationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The landing zone operation status. </p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>SUCCEEDED</code>: The landing zone operation succeeded. </p> </li> <li>
-     * <p> <code>IN_PROGRESS</code>: The landing zone operation is in progress. </p>
-     * </li> <li> <p> <code>FAILED</code>: The landing zone operation failed. </p>
-     * </li> </ul>
+     * <p>Valid values:</p> <ul> <li> <p> <code>SUCCEEDED</code>: The landing zone
+     * operation succeeded. </p> </li> <li> <p> <code>IN_PROGRESS</code>: The landing
+     * zone operation is in progress. </p> </li> <li> <p> <code>FAILED</code>: The
+     * landing zone operation failed. </p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The landing zone operation status. </p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>SUCCEEDED</code>: The landing zone operation succeeded. </p> </li> <li>
-     * <p> <code>IN_PROGRESS</code>: The landing zone operation is in progress. </p>
-     * </li> <li> <p> <code>FAILED</code>: The landing zone operation failed. </p>
-     * </li> </ul>
+     * <p>Valid values:</p> <ul> <li> <p> <code>SUCCEEDED</code>: The landing zone
+     * operation succeeded. </p> </li> <li> <p> <code>IN_PROGRESS</code>: The landing
+     * zone operation is in progress. </p> </li> <li> <p> <code>FAILED</code>: The
+     * landing zone operation failed. </p> </li> </ul>
      */
     inline void SetStatus(const LandingZoneOperationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The landing zone operation status. </p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>SUCCEEDED</code>: The landing zone operation succeeded. </p> </li> <li>
-     * <p> <code>IN_PROGRESS</code>: The landing zone operation is in progress. </p>
-     * </li> <li> <p> <code>FAILED</code>: The landing zone operation failed. </p>
-     * </li> </ul>
+     * <p>Valid values:</p> <ul> <li> <p> <code>SUCCEEDED</code>: The landing zone
+     * operation succeeded. </p> </li> <li> <p> <code>IN_PROGRESS</code>: The landing
+     * zone operation is in progress. </p> </li> <li> <p> <code>FAILED</code>: The
+     * landing zone operation failed. </p> </li> </ul>
      */
     inline void SetStatus(LandingZoneOperationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The landing zone operation status. </p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>SUCCEEDED</code>: The landing zone operation succeeded. </p> </li> <li>
-     * <p> <code>IN_PROGRESS</code>: The landing zone operation is in progress. </p>
-     * </li> <li> <p> <code>FAILED</code>: The landing zone operation failed. </p>
-     * </li> </ul>
+     * <p>Valid values:</p> <ul> <li> <p> <code>SUCCEEDED</code>: The landing zone
+     * operation succeeded. </p> </li> <li> <p> <code>IN_PROGRESS</code>: The landing
+     * zone operation is in progress. </p> </li> <li> <p> <code>FAILED</code>: The
+     * landing zone operation failed. </p> </li> </ul>
      */
     inline LandingZoneOperationDetail& WithStatus(const LandingZoneOperationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The landing zone operation status. </p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>SUCCEEDED</code>: The landing zone operation succeeded. </p> </li> <li>
-     * <p> <code>IN_PROGRESS</code>: The landing zone operation is in progress. </p>
-     * </li> <li> <p> <code>FAILED</code>: The landing zone operation failed. </p>
-     * </li> </ul>
+     * <p>Valid values:</p> <ul> <li> <p> <code>SUCCEEDED</code>: The landing zone
+     * operation succeeded. </p> </li> <li> <p> <code>IN_PROGRESS</code>: The landing
+     * zone operation is in progress. </p> </li> <li> <p> <code>FAILED</code>: The
+     * landing zone operation failed. </p> </li> </ul>
      */
     inline LandingZoneOperationDetail& WithStatus(LandingZoneOperationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
      * <p>If the operation result is FAILED, this string contains a message explaining
-     * why the operation failed. </p>
+     * why the operation failed.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
     /**
      * <p>If the operation result is FAILED, this string contains a message explaining
-     * why the operation failed. </p>
+     * why the operation failed.</p>
      */
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>If the operation result is FAILED, this string contains a message explaining
-     * why the operation failed. </p>
+     * why the operation failed.</p>
      */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
 
     /**
      * <p>If the operation result is FAILED, this string contains a message explaining
-     * why the operation failed. </p>
+     * why the operation failed.</p>
      */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
 
     /**
      * <p>If the operation result is FAILED, this string contains a message explaining
-     * why the operation failed. </p>
+     * why the operation failed.</p>
      */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
 
     /**
      * <p>If the operation result is FAILED, this string contains a message explaining
-     * why the operation failed. </p>
+     * why the operation failed.</p>
      */
     inline LandingZoneOperationDetail& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
     /**
      * <p>If the operation result is FAILED, this string contains a message explaining
-     * why the operation failed. </p>
+     * why the operation failed.</p>
      */
     inline LandingZoneOperationDetail& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
      * <p>If the operation result is FAILED, this string contains a message explaining
-     * why the operation failed. </p>
+     * why the operation failed.</p>
      */
     inline LandingZoneOperationDetail& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 

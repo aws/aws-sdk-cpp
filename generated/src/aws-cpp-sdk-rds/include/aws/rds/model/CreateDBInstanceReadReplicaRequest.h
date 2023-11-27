@@ -101,7 +101,7 @@ namespace Model
      * <p>The identifier of the DB instance that will act as the source for the read
      * replica. Each DB instance can have up to 15 read replicas, with the exception of
      * Oracle and SQL Server, which can have up to five.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be the identifier of an existing MySQL, MariaDB, Oracle,
+     * <li> <p>Must be the identifier of an existing Db2, MariaDB, MySQL, Oracle,
      * PostgreSQL, or SQL Server DB instance.</p> </li> <li> <p>Can't be specified if
      * the <code>SourceDBClusterIdentifier</code> parameter is also specified.</p>
      * </li> <li> <p>For the limitations of Oracle read replicas, see <a
@@ -128,7 +128,7 @@ namespace Model
      * <p>The identifier of the DB instance that will act as the source for the read
      * replica. Each DB instance can have up to 15 read replicas, with the exception of
      * Oracle and SQL Server, which can have up to five.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be the identifier of an existing MySQL, MariaDB, Oracle,
+     * <li> <p>Must be the identifier of an existing Db2, MariaDB, MySQL, Oracle,
      * PostgreSQL, or SQL Server DB instance.</p> </li> <li> <p>Can't be specified if
      * the <code>SourceDBClusterIdentifier</code> parameter is also specified.</p>
      * </li> <li> <p>For the limitations of Oracle read replicas, see <a
@@ -155,7 +155,7 @@ namespace Model
      * <p>The identifier of the DB instance that will act as the source for the read
      * replica. Each DB instance can have up to 15 read replicas, with the exception of
      * Oracle and SQL Server, which can have up to five.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be the identifier of an existing MySQL, MariaDB, Oracle,
+     * <li> <p>Must be the identifier of an existing Db2, MariaDB, MySQL, Oracle,
      * PostgreSQL, or SQL Server DB instance.</p> </li> <li> <p>Can't be specified if
      * the <code>SourceDBClusterIdentifier</code> parameter is also specified.</p>
      * </li> <li> <p>For the limitations of Oracle read replicas, see <a
@@ -182,7 +182,7 @@ namespace Model
      * <p>The identifier of the DB instance that will act as the source for the read
      * replica. Each DB instance can have up to 15 read replicas, with the exception of
      * Oracle and SQL Server, which can have up to five.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be the identifier of an existing MySQL, MariaDB, Oracle,
+     * <li> <p>Must be the identifier of an existing Db2, MariaDB, MySQL, Oracle,
      * PostgreSQL, or SQL Server DB instance.</p> </li> <li> <p>Can't be specified if
      * the <code>SourceDBClusterIdentifier</code> parameter is also specified.</p>
      * </li> <li> <p>For the limitations of Oracle read replicas, see <a
@@ -209,7 +209,7 @@ namespace Model
      * <p>The identifier of the DB instance that will act as the source for the read
      * replica. Each DB instance can have up to 15 read replicas, with the exception of
      * Oracle and SQL Server, which can have up to five.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be the identifier of an existing MySQL, MariaDB, Oracle,
+     * <li> <p>Must be the identifier of an existing Db2, MariaDB, MySQL, Oracle,
      * PostgreSQL, or SQL Server DB instance.</p> </li> <li> <p>Can't be specified if
      * the <code>SourceDBClusterIdentifier</code> parameter is also specified.</p>
      * </li> <li> <p>For the limitations of Oracle read replicas, see <a
@@ -236,7 +236,7 @@ namespace Model
      * <p>The identifier of the DB instance that will act as the source for the read
      * replica. Each DB instance can have up to 15 read replicas, with the exception of
      * Oracle and SQL Server, which can have up to five.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be the identifier of an existing MySQL, MariaDB, Oracle,
+     * <li> <p>Must be the identifier of an existing Db2, MariaDB, MySQL, Oracle,
      * PostgreSQL, or SQL Server DB instance.</p> </li> <li> <p>Can't be specified if
      * the <code>SourceDBClusterIdentifier</code> parameter is also specified.</p>
      * </li> <li> <p>For the limitations of Oracle read replicas, see <a
@@ -263,7 +263,7 @@ namespace Model
      * <p>The identifier of the DB instance that will act as the source for the read
      * replica. Each DB instance can have up to 15 read replicas, with the exception of
      * Oracle and SQL Server, which can have up to five.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be the identifier of an existing MySQL, MariaDB, Oracle,
+     * <li> <p>Must be the identifier of an existing Db2, MariaDB, MySQL, Oracle,
      * PostgreSQL, or SQL Server DB instance.</p> </li> <li> <p>Can't be specified if
      * the <code>SourceDBClusterIdentifier</code> parameter is also specified.</p>
      * </li> <li> <p>For the limitations of Oracle read replicas, see <a
@@ -290,7 +290,7 @@ namespace Model
      * <p>The identifier of the DB instance that will act as the source for the read
      * replica. Each DB instance can have up to 15 read replicas, with the exception of
      * Oracle and SQL Server, which can have up to five.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be the identifier of an existing MySQL, MariaDB, Oracle,
+     * <li> <p>Must be the identifier of an existing Db2, MariaDB, MySQL, Oracle,
      * PostgreSQL, or SQL Server DB instance.</p> </li> <li> <p>Can't be specified if
      * the <code>SourceDBClusterIdentifier</code> parameter is also specified.</p>
      * </li> <li> <p>For the limitations of Oracle read replicas, see <a

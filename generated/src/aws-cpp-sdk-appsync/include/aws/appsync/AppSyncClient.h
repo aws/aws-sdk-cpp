@@ -803,6 +803,34 @@ namespace AppSync
         }
 
         /**
+         * <p>Retrieves the record of an existing introspection. If the retrieval is
+         * successful, the result of the instrospection will also be returned. If the
+         * retrieval fails the operation, an error message will be returned
+         * instead.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetDataSourceIntrospection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDataSourceIntrospectionOutcome GetDataSourceIntrospection(const Model::GetDataSourceIntrospectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDataSourceIntrospection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDataSourceIntrospectionRequestT = Model::GetDataSourceIntrospectionRequest>
+        Model::GetDataSourceIntrospectionOutcomeCallable GetDataSourceIntrospectionCallable(const GetDataSourceIntrospectionRequestT& request) const
+        {
+            return SubmitCallable(&AppSyncClient::GetDataSourceIntrospection, request);
+        }
+
+        /**
+         * An Async wrapper for GetDataSourceIntrospection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDataSourceIntrospectionRequestT = Model::GetDataSourceIntrospectionRequest>
+        void GetDataSourceIntrospectionAsync(const GetDataSourceIntrospectionRequestT& request, const GetDataSourceIntrospectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppSyncClient::GetDataSourceIntrospection, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a custom <code>DomainName</code> object.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetDomainName">AWS
@@ -1286,6 +1314,32 @@ namespace AppSync
         void ListTypesByAssociationAsync(const ListTypesByAssociationRequestT& request, const ListTypesByAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AppSyncClient::ListTypesByAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new introspection. Returns the <code>introspectionId</code> of the
+         * new introspection after its creation. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartDataSourceIntrospection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartDataSourceIntrospectionOutcome StartDataSourceIntrospection(const Model::StartDataSourceIntrospectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartDataSourceIntrospection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartDataSourceIntrospectionRequestT = Model::StartDataSourceIntrospectionRequest>
+        Model::StartDataSourceIntrospectionOutcomeCallable StartDataSourceIntrospectionCallable(const StartDataSourceIntrospectionRequestT& request) const
+        {
+            return SubmitCallable(&AppSyncClient::StartDataSourceIntrospection, request);
+        }
+
+        /**
+         * An Async wrapper for StartDataSourceIntrospection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartDataSourceIntrospectionRequestT = Model::StartDataSourceIntrospectionRequest>
+        void StartDataSourceIntrospectionAsync(const StartDataSourceIntrospectionRequestT& request, const StartDataSourceIntrospectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppSyncClient::StartDataSourceIntrospection, request, handler, context);
         }
 
         /**

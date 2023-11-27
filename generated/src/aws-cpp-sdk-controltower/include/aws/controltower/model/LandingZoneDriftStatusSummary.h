@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>The drift status summary of the landing zone. </p> <p>If the landing zone
    * differs from the expected configuration, it is defined to be in a state of
-   * drift. You can repair this drift by resetting the landing zone. </p><p><h3>See
+   * drift. You can repair this drift by resetting the landing zone.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/LandingZoneDriftStatusSummary">AWS
    * API Reference</a></p>

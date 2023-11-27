@@ -42,6 +42,7 @@ namespace Model
      * <p>The database engine to return version details for.</p> <p>Valid Values:</p>
      * <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
      * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
      * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
@@ -56,6 +57,7 @@ namespace Model
      * <p>The database engine to return version details for.</p> <p>Valid Values:</p>
      * <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
      * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
      * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
@@ -70,6 +72,7 @@ namespace Model
      * <p>The database engine to return version details for.</p> <p>Valid Values:</p>
      * <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
      * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
      * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
@@ -84,6 +87,7 @@ namespace Model
      * <p>The database engine to return version details for.</p> <p>Valid Values:</p>
      * <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
      * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
      * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
@@ -98,6 +102,7 @@ namespace Model
      * <p>The database engine to return version details for.</p> <p>Valid Values:</p>
      * <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
      * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
      * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
@@ -112,6 +117,7 @@ namespace Model
      * <p>The database engine to return version details for.</p> <p>Valid Values:</p>
      * <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
      * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
      * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
@@ -126,6 +132,7 @@ namespace Model
      * <p>The database engine to return version details for.</p> <p>Valid Values:</p>
      * <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
      * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
      * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
@@ -140,6 +147,7 @@ namespace Model
      * <p>The database engine to return version details for.</p> <p>Valid Values:</p>
      * <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
      * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
      * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>

@@ -7,8 +7,9 @@
 #include <aws/controltower/ControlTower_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/controltower/model/DriftStatusSummary.h>
-#include <aws/controltower/model/EnablementStatusSummary.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/controltower/model/EnablementStatusSummary.h>
+#include <aws/controltower/model/EnabledControlParameterSummary.h>
 #include <aws/controltower/model/Region.h>
 #include <utility>
 
@@ -179,6 +180,47 @@ namespace Model
 
 
     /**
+     * <p>Array of <code>EnabledControlParameter</code> objects.</p>
+     */
+    inline const Aws::Vector<EnabledControlParameterSummary>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>Array of <code>EnabledControlParameter</code> objects.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p>Array of <code>EnabledControlParameter</code> objects.</p>
+     */
+    inline void SetParameters(const Aws::Vector<EnabledControlParameterSummary>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+
+    /**
+     * <p>Array of <code>EnabledControlParameter</code> objects.</p>
+     */
+    inline void SetParameters(Aws::Vector<EnabledControlParameterSummary>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
+
+    /**
+     * <p>Array of <code>EnabledControlParameter</code> objects.</p>
+     */
+    inline EnabledControlDetails& WithParameters(const Aws::Vector<EnabledControlParameterSummary>& value) { SetParameters(value); return *this;}
+
+    /**
+     * <p>Array of <code>EnabledControlParameter</code> objects.</p>
+     */
+    inline EnabledControlDetails& WithParameters(Aws::Vector<EnabledControlParameterSummary>&& value) { SetParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>Array of <code>EnabledControlParameter</code> objects.</p>
+     */
+    inline EnabledControlDetails& AddParameters(const EnabledControlParameterSummary& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
+
+    /**
+     * <p>Array of <code>EnabledControlParameter</code> objects.</p>
+     */
+    inline EnabledControlDetails& AddParameters(EnabledControlParameterSummary&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The deployment summary of the enabled control.</p>
      */
     inline const EnablementStatusSummary& GetStatusSummary() const{ return m_statusSummary; }
@@ -324,6 +366,9 @@ namespace Model
 
     DriftStatusSummary m_driftStatusSummary;
     bool m_driftStatusSummaryHasBeenSet = false;
+
+    Aws::Vector<EnabledControlParameterSummary> m_parameters;
+    bool m_parametersHasBeenSet = false;
 
     EnablementStatusSummary m_statusSummary;
     bool m_statusSummaryHasBeenSet = false;

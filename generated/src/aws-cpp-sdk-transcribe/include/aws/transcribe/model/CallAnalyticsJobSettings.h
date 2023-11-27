@@ -215,7 +215,7 @@ namespace Model
      * Call Analytics job. Note that custom language model names are case
      * sensitive.</p> <p>The language of the specified custom language model must match
      * the language code that you specify in your transcription request. If the
-     * languages don't match, the custom language model isn't applied. There are no
+     * languages do not match, the custom language model isn't applied. There are no
      * errors or warnings associated with a language mismatch.</p>
      */
     inline const Aws::String& GetLanguageModelName() const{ return m_languageModelName; }
@@ -225,7 +225,7 @@ namespace Model
      * Call Analytics job. Note that custom language model names are case
      * sensitive.</p> <p>The language of the specified custom language model must match
      * the language code that you specify in your transcription request. If the
-     * languages don't match, the custom language model isn't applied. There are no
+     * languages do not match, the custom language model isn't applied. There are no
      * errors or warnings associated with a language mismatch.</p>
      */
     inline bool LanguageModelNameHasBeenSet() const { return m_languageModelNameHasBeenSet; }
@@ -235,7 +235,7 @@ namespace Model
      * Call Analytics job. Note that custom language model names are case
      * sensitive.</p> <p>The language of the specified custom language model must match
      * the language code that you specify in your transcription request. If the
-     * languages don't match, the custom language model isn't applied. There are no
+     * languages do not match, the custom language model isn't applied. There are no
      * errors or warnings associated with a language mismatch.</p>
      */
     inline void SetLanguageModelName(const Aws::String& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = value; }
@@ -245,7 +245,7 @@ namespace Model
      * Call Analytics job. Note that custom language model names are case
      * sensitive.</p> <p>The language of the specified custom language model must match
      * the language code that you specify in your transcription request. If the
-     * languages don't match, the custom language model isn't applied. There are no
+     * languages do not match, the custom language model isn't applied. There are no
      * errors or warnings associated with a language mismatch.</p>
      */
     inline void SetLanguageModelName(Aws::String&& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = std::move(value); }
@@ -255,7 +255,7 @@ namespace Model
      * Call Analytics job. Note that custom language model names are case
      * sensitive.</p> <p>The language of the specified custom language model must match
      * the language code that you specify in your transcription request. If the
-     * languages don't match, the custom language model isn't applied. There are no
+     * languages do not match, the custom language model isn't applied. There are no
      * errors or warnings associated with a language mismatch.</p>
      */
     inline void SetLanguageModelName(const char* value) { m_languageModelNameHasBeenSet = true; m_languageModelName.assign(value); }
@@ -265,7 +265,7 @@ namespace Model
      * Call Analytics job. Note that custom language model names are case
      * sensitive.</p> <p>The language of the specified custom language model must match
      * the language code that you specify in your transcription request. If the
-     * languages don't match, the custom language model isn't applied. There are no
+     * languages do not match, the custom language model isn't applied. There are no
      * errors or warnings associated with a language mismatch.</p>
      */
     inline CallAnalyticsJobSettings& WithLanguageModelName(const Aws::String& value) { SetLanguageModelName(value); return *this;}
@@ -275,7 +275,7 @@ namespace Model
      * Call Analytics job. Note that custom language model names are case
      * sensitive.</p> <p>The language of the specified custom language model must match
      * the language code that you specify in your transcription request. If the
-     * languages don't match, the custom language model isn't applied. There are no
+     * languages do not match, the custom language model isn't applied. There are no
      * errors or warnings associated with a language mismatch.</p>
      */
     inline CallAnalyticsJobSettings& WithLanguageModelName(Aws::String&& value) { SetLanguageModelName(std::move(value)); return *this;}
@@ -285,7 +285,7 @@ namespace Model
      * Call Analytics job. Note that custom language model names are case
      * sensitive.</p> <p>The language of the specified custom language model must match
      * the language code that you specify in your transcription request. If the
-     * languages don't match, the custom language model isn't applied. There are no
+     * languages do not match, the custom language model isn't applied. There are no
      * errors or warnings associated with a language mismatch.</p>
      */
     inline CallAnalyticsJobSettings& WithLanguageModelName(const char* value) { SetLanguageModelName(value); return *this;}

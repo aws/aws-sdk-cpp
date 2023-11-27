@@ -23,7 +23,8 @@ namespace Model
     cancelled,
     stopping,
     stopped,
-    failed
+    failed,
+    skipped
   };
 
 namespace ExperimentActionStatusMapper

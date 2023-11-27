@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeProtectedResourceResult::DescribeProtectedResourceResult()
+DescribeProtectedResourceResult::DescribeProtectedResourceResult() : 
+    m_latestRestoreExecutionTimeMinutes(0)
 {
 }
 
-DescribeProtectedResourceResult::DescribeProtectedResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeProtectedResourceResult::DescribeProtectedResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_latestRestoreExecutionTimeMinutes(0)
 {
   *this = result;
 }
@@ -50,6 +52,36 @@ DescribeProtectedResourceResult& DescribeProtectedResourceResult::operator =(con
   if(jsonValue.ValueExists("ResourceName"))
   {
     m_resourceName = jsonValue.GetString("ResourceName");
+
+  }
+
+  if(jsonValue.ValueExists("LastBackupVaultArn"))
+  {
+    m_lastBackupVaultArn = jsonValue.GetString("LastBackupVaultArn");
+
+  }
+
+  if(jsonValue.ValueExists("LastRecoveryPointArn"))
+  {
+    m_lastRecoveryPointArn = jsonValue.GetString("LastRecoveryPointArn");
+
+  }
+
+  if(jsonValue.ValueExists("LatestRestoreExecutionTimeMinutes"))
+  {
+    m_latestRestoreExecutionTimeMinutes = jsonValue.GetInt64("LatestRestoreExecutionTimeMinutes");
+
+  }
+
+  if(jsonValue.ValueExists("LatestRestoreJobCreationDate"))
+  {
+    m_latestRestoreJobCreationDate = jsonValue.GetDouble("LatestRestoreJobCreationDate");
+
+  }
+
+  if(jsonValue.ValueExists("LatestRestoreRecoveryPointCreationDate"))
+  {
+    m_latestRestoreRecoveryPointCreationDate = jsonValue.GetDouble("LatestRestoreRecoveryPointCreationDate");
 
   }
 

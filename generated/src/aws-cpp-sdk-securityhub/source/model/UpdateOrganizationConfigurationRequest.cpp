@@ -16,7 +16,8 @@ UpdateOrganizationConfigurationRequest::UpdateOrganizationConfigurationRequest()
     m_autoEnable(false),
     m_autoEnableHasBeenSet(false),
     m_autoEnableStandards(AutoEnableStandards::NOT_SET),
-    m_autoEnableStandardsHasBeenSet(false)
+    m_autoEnableStandardsHasBeenSet(false),
+    m_organizationConfigurationHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,12 @@ Aws::String UpdateOrganizationConfigurationRequest::SerializePayload() const
   if(m_autoEnableStandardsHasBeenSet)
   {
    payload.WithString("AutoEnableStandards", AutoEnableStandardsMapper::GetNameForAutoEnableStandards(m_autoEnableStandards));
+  }
+
+  if(m_organizationConfigurationHasBeenSet)
+  {
+   payload.WithObject("OrganizationConfiguration", m_organizationConfiguration.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

@@ -402,106 +402,122 @@ namespace Model
 
 
     /**
-     * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Constraints: Can't be specified
-     * if <code>ManageMasterUserPassword</code> is turned on.</p> <p> <b>MariaDB</b>
-     * </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft
-     * SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
-     * <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
-     * <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p>
-     * <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
-     * characters.</p>
+     * <p>The password for the master user.</p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+     * <li> <p>Can include any printable ASCII character except "/", """, or "@". For
+     * RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for Db2 -
+     * Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MariaDB - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server
+     * - Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain
+     * from 8 to 30 characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain
+     * from 8 to 128 characters.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Constraints: Can't be specified
-     * if <code>ManageMasterUserPassword</code> is turned on.</p> <p> <b>MariaDB</b>
-     * </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft
-     * SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
-     * <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
-     * <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p>
-     * <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
-     * characters.</p>
+     * <p>The password for the master user.</p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+     * <li> <p>Can include any printable ASCII character except "/", """, or "@". For
+     * RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for Db2 -
+     * Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MariaDB - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server
+     * - Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain
+     * from 8 to 30 characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain
+     * from 8 to 128 characters.</p> </li> </ul>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
-     * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Constraints: Can't be specified
-     * if <code>ManageMasterUserPassword</code> is turned on.</p> <p> <b>MariaDB</b>
-     * </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft
-     * SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
-     * <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
-     * <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p>
-     * <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
-     * characters.</p>
+     * <p>The password for the master user.</p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+     * <li> <p>Can include any printable ASCII character except "/", """, or "@". For
+     * RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for Db2 -
+     * Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MariaDB - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server
+     * - Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain
+     * from 8 to 30 characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain
+     * from 8 to 128 characters.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Constraints: Can't be specified
-     * if <code>ManageMasterUserPassword</code> is turned on.</p> <p> <b>MariaDB</b>
-     * </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft
-     * SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
-     * <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
-     * <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p>
-     * <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
-     * characters.</p>
+     * <p>The password for the master user.</p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+     * <li> <p>Can include any printable ASCII character except "/", """, or "@". For
+     * RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for Db2 -
+     * Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MariaDB - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server
+     * - Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain
+     * from 8 to 30 characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain
+     * from 8 to 128 characters.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Constraints: Can't be specified
-     * if <code>ManageMasterUserPassword</code> is turned on.</p> <p> <b>MariaDB</b>
-     * </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft
-     * SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
-     * <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
-     * <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p>
-     * <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
-     * characters.</p>
+     * <p>The password for the master user.</p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+     * <li> <p>Can include any printable ASCII character except "/", """, or "@". For
+     * RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for Db2 -
+     * Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MariaDB - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server
+     * - Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain
+     * from 8 to 30 characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain
+     * from 8 to 128 characters.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Constraints: Can't be specified
-     * if <code>ManageMasterUserPassword</code> is turned on.</p> <p> <b>MariaDB</b>
-     * </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft
-     * SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
-     * <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
-     * <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p>
-     * <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
-     * characters.</p>
+     * <p>The password for the master user.</p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+     * <li> <p>Can include any printable ASCII character except "/", """, or "@". For
+     * RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for Db2 -
+     * Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MariaDB - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server
+     * - Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain
+     * from 8 to 30 characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain
+     * from 8 to 128 characters.</p> </li> </ul>
      */
     inline RestoreDBInstanceFromS3Request& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Constraints: Can't be specified
-     * if <code>ManageMasterUserPassword</code> is turned on.</p> <p> <b>MariaDB</b>
-     * </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft
-     * SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
-     * <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
-     * <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p>
-     * <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
-     * characters.</p>
+     * <p>The password for the master user.</p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+     * <li> <p>Can include any printable ASCII character except "/", """, or "@". For
+     * RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for Db2 -
+     * Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MariaDB - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server
+     * - Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain
+     * from 8 to 30 characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain
+     * from 8 to 128 characters.</p> </li> </ul>
      */
     inline RestoreDBInstanceFromS3Request& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Constraints: Can't be specified
-     * if <code>ManageMasterUserPassword</code> is turned on.</p> <p> <b>MariaDB</b>
-     * </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft
-     * SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
-     * <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
-     * <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p>
-     * <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
-     * characters.</p>
+     * <p>The password for the master user.</p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+     * <li> <p>Can include any printable ASCII character except "/", """, or "@". For
+     * RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for Db2 -
+     * Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MariaDB - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server
+     * - Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain
+     * from 8 to 30 characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain
+     * from 8 to 128 characters.</p> </li> </ul>
      */
     inline RestoreDBInstanceFromS3Request& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 

@@ -12,6 +12,7 @@
 #include <aws/elasticfilesystem/model/PerformanceMode.h>
 #include <aws/elasticfilesystem/model/ThroughputMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticfilesystem/model/FileSystemProtectionDescription.h>
 #include <aws/elasticfilesystem/model/Tag.h>
 #include <utility>
 
@@ -723,6 +724,32 @@ namespace Model
     inline CreateFileSystemResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>Describes the protection on the file system. </p>
+     */
+    inline const FileSystemProtectionDescription& GetFileSystemProtection() const{ return m_fileSystemProtection; }
+
+    /**
+     * <p>Describes the protection on the file system. </p>
+     */
+    inline void SetFileSystemProtection(const FileSystemProtectionDescription& value) { m_fileSystemProtection = value; }
+
+    /**
+     * <p>Describes the protection on the file system. </p>
+     */
+    inline void SetFileSystemProtection(FileSystemProtectionDescription&& value) { m_fileSystemProtection = std::move(value); }
+
+    /**
+     * <p>Describes the protection on the file system. </p>
+     */
+    inline CreateFileSystemResult& WithFileSystemProtection(const FileSystemProtectionDescription& value) { SetFileSystemProtection(value); return *this;}
+
+    /**
+     * <p>Describes the protection on the file system. </p>
+     */
+    inline CreateFileSystemResult& WithFileSystemProtection(FileSystemProtectionDescription&& value) { SetFileSystemProtection(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -779,6 +806,8 @@ namespace Model
     Aws::String m_availabilityZoneId;
 
     Aws::Vector<Tag> m_tags;
+
+    FileSystemProtectionDescription m_fileSystemProtection;
 
     Aws::String m_requestId;
   };

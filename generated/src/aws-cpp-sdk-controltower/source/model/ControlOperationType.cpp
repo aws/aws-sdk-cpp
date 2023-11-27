@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ENABLE_CONTROL_HASH = HashingUtils::HashString("ENABLE_CONTROL");
         static const int DISABLE_CONTROL_HASH = HashingUtils::HashString("DISABLE_CONTROL");
+        static const int UPDATE_ENABLED_CONTROL_HASH = HashingUtils::HashString("UPDATE_ENABLED_CONTROL");
 
 
         ControlOperationType GetControlOperationTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == DISABLE_CONTROL_HASH)
           {
             return ControlOperationType::DISABLE_CONTROL;
+          }
+          else if (hashCode == UPDATE_ENABLED_CONTROL_HASH)
+          {
+            return ControlOperationType::UPDATE_ENABLED_CONTROL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "ENABLE_CONTROL";
           case ControlOperationType::DISABLE_CONTROL:
             return "DISABLE_CONTROL";
+          case ControlOperationType::UPDATE_ENABLED_CONTROL:
+            return "UPDATE_ENABLED_CONTROL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

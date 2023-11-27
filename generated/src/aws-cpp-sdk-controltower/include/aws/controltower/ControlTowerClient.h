@@ -24,12 +24,12 @@ namespace ControlTower
    * targeting.</p> </li> <li> <p>the ARN associated with the target organizational
    * unit (OU), which we call the <code>targetIdentifier</code>.</p> </li> <li>
    * <p>the ARN associated with a resource that you wish to tag or untag.</p> </li>
-   * </ul> <p> <b>To get the <code>controlIdentifier</code> for your AWS Control
-   * Tower control:</b> </p> <p>The <code>controlIdentifier</code> is an ARN that is
-   * specified for each control. You can view the <code>controlIdentifier</code> in
-   * the console on the <b>Control details</b> page, as well as in the
-   * documentation.</p> <p>The <code>controlIdentifier</code> is unique in each
-   * Amazon Web Services Region for each control. You can find the
+   * </ul> <p> <b>To get the <code>controlIdentifier</code> for your Amazon Web
+   * Services Control Tower control:</b> </p> <p>The <code>controlIdentifier</code>
+   * is an ARN that is specified for each control. You can view the
+   * <code>controlIdentifier</code> in the console on the <b>Control details</b>
+   * page, as well as in the documentation.</p> <p>The <code>controlIdentifier</code>
+   * is unique in each Amazon Web Services Region for each control. You can find the
    * <code>controlIdentifier</code> for each Region and control in the <a
    * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-metadata-tables.html">Tables
    * of control metadata</a> in the <i>Amazon Web Services Control Tower User
@@ -141,9 +141,9 @@ namespace ControlTower
         virtual ~ControlTowerClient();
 
         /**
-         * <p>Creates a new landing zone. This starts an asynchronous operation that
-         * creates and configures a landing zone based on the parameters specified in the
-         * manifest JSON file. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new landing zone. This API call starts an asynchronous operation
+         * that creates and configures a landing zone, based on the parameters specified in
+         * the manifest JSON file.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/CreateLandingZone">AWS
          * API Reference</a></p>
          */
@@ -168,9 +168,9 @@ namespace ControlTower
         }
 
         /**
-         * <p>This decommissions a landing zone. This starts an asynchronous operation that
-         * deletes Amazon Web Services Control Tower resources deployed in Amazon Web
-         * Services Control Tower managed accounts. </p><p><h3>See Also:</h3>   <a
+         * <p>Decommissions a landing zone. This API call starts an asynchronous operation
+         * that deletes Amazon Web Services Control Tower resources deployed in accounts
+         * managed by Amazon Web Services Control Tower.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DeleteLandingZone">AWS
          * API Reference</a></p>
          */
@@ -315,8 +315,8 @@ namespace ControlTower
         }
 
         /**
-         * <p>Returns details about the landing zone. Displays a message in case of error.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Returns details about the landing zone. Displays a message in case of
+         * error.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetLandingZone">AWS
          * API Reference</a></p>
          */
@@ -342,7 +342,7 @@ namespace ControlTower
 
         /**
          * <p>Returns the status of the specified landing zone operation. Details for an
-         * operation are available for X days. </p><p><h3>See Also:</h3>   <a
+         * operation are available for 60 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetLandingZoneOperation">AWS
          * API Reference</a></p>
          */
@@ -399,8 +399,8 @@ namespace ControlTower
         /**
          * <p>Returns the landing zone ARN for the landing zone deployed in your managed
          * account. This API also creates an ARN for existing accounts that do not yet have
-         * a landing zone ARN. </p> <p>The return limit is one landing zone ARN.
-         * </p><p><h3>See Also:</h3>   <a
+         * a landing zone ARN. </p> <p>Returns one landing zone ARN.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListLandingZones">AWS
          * API Reference</a></p>
          */
@@ -456,7 +456,7 @@ namespace ControlTower
         /**
          * <p>This API call resets a landing zone. It starts an asynchronous operation that
          * resets the landing zone to the parameters specified in its original
-         * configuration. </p><p><h3>See Also:</h3>   <a
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetLandingZone">AWS
          * API Reference</a></p>
          */
@@ -537,9 +537,47 @@ namespace ControlTower
         }
 
         /**
+         * <p> Updates the configuration of an already enabled control.</p> <p>If the
+         * enabled control shows an <code>EnablementStatus</code> of SUCCEEDED, supply
+         * parameters that are different from the currently configured parameters.
+         * Otherwise, Amazon Web Services Control Tower will not accept the request.</p>
+         * <p>If the enabled control shows an <code>EnablementStatus</code> of FAILED,
+         * Amazon Web Services Control Tower will update the control to match any valid
+         * parameters that you supply.</p> <p>If the <code>DriftSummary</code> status for
+         * the control shows as DRIFTED, you cannot call this API. Instead, you can update
+         * the control by calling <code>DisableControl</code> and again calling
+         * <code>EnableControl</code>, or you can run an extending governance operation.
+         * For usage examples, see <a
+         * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+         * <i>the Amazon Web Services Control Tower User Guide</i> </a> </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateEnabledControl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEnabledControlOutcome UpdateEnabledControl(const Model::UpdateEnabledControlRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateEnabledControl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateEnabledControlRequestT = Model::UpdateEnabledControlRequest>
+        Model::UpdateEnabledControlOutcomeCallable UpdateEnabledControlCallable(const UpdateEnabledControlRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::UpdateEnabledControl, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateEnabledControl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateEnabledControlRequestT = Model::UpdateEnabledControlRequest>
+        void UpdateEnabledControlAsync(const UpdateEnabledControlRequestT& request, const UpdateEnabledControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::UpdateEnabledControl, request, handler, context);
+        }
+
+        /**
          * <p>This API call updates the landing zone. It starts an asynchronous operation
-         * that updates the landing zone based on the new landing zone version or the
-         * updated parameters specified in the updated manifest file. </p><p><h3>See
+         * that updates the landing zone based on the new landing zone version, or on the
+         * changed parameters specified in the updated manifest file. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateLandingZone">AWS
          * API Reference</a></p>
