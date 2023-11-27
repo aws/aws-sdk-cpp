@@ -80,6 +80,12 @@ namespace Aws
         static const int UtilizationMetricsGpuMemoryPercentageMaximum_HASH = HashingUtils::HashString("UtilizationMetricsGpuMemoryPercentageMaximum");
         static const int RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum");
         static const int RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum");
+        static const int EffectiveRecommendationPreferencesSavingsEstimationMode_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesSavingsEstimationMode");
+        static const int RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage_HASH = HashingUtils::HashString("RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage");
+        static const int RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts");
+        static const int RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts");
+        static const int EffectiveRecommendationPreferencesPreferredResources_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesPreferredResources");
+        static const int EffectiveRecommendationPreferencesLookBackPeriod_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesLookBackPeriod");
 
 
         ExportableAutoScalingGroupField GetExportableAutoScalingGroupFieldForName(const Aws::String& name)
@@ -325,6 +331,30 @@ namespace Aws
           {
             return ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum;
           }
+          else if (hashCode == EffectiveRecommendationPreferencesSavingsEstimationMode_HASH)
+          {
+            return ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesSavingsEstimationMode;
+          }
+          else if (hashCode == RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts;
+          }
+          else if (hashCode == EffectiveRecommendationPreferencesPreferredResources_HASH)
+          {
+            return ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesPreferredResources;
+          }
+          else if (hashCode == EffectiveRecommendationPreferencesLookBackPeriod_HASH)
+          {
+            return ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesLookBackPeriod;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -461,6 +491,18 @@ namespace Aws
             return "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum";
           case ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum:
             return "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum";
+          case ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesSavingsEstimationMode:
+            return "EffectiveRecommendationPreferencesSavingsEstimationMode";
+          case ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage:
+            return "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage";
+          case ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts:
+            return "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts";
+          case ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts:
+            return "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts";
+          case ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesPreferredResources:
+            return "EffectiveRecommendationPreferencesPreferredResources";
+          case ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesLookBackPeriod:
+            return "EffectiveRecommendationPreferencesLookBackPeriod";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

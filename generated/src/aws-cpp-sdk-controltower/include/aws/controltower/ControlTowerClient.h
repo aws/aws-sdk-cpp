@@ -16,38 +16,40 @@ namespace Aws
 namespace ControlTower
 {
   /**
-   * <p>These interfaces allow you to apply the AWS library of pre-defined
-   * <i>controls</i> to your organizational units, programmatically. In AWS Control
-   * Tower, the terms "control" and "guardrail" are synonyms.</p> <p>To call these
-   * APIs, you'll need to know:</p> <ul> <li> <p>the <code>controlIdentifier</code>
-   * for the control--or guardrail--you are targeting.</p> </li> <li> <p>the ARN
-   * associated with the target organizational unit (OU), which we call the
-   * <code>targetIdentifier</code>.</p> </li> <li> <p>the ARN associated with a
-   * resource that you wish to tag or untag.</p> </li> </ul> <p> <b>To get the
-   * <code>controlIdentifier</code> for your AWS Control Tower control:</b> </p>
-   * <p>The <code>controlIdentifier</code> is an ARN that is specified for each
-   * control. You can view the <code>controlIdentifier</code> in the console on the
-   * <b>Control details</b> page, as well as in the documentation.</p> <p>The
-   * <code>controlIdentifier</code> is unique in each AWS Region for each control.
-   * You can find the <code>controlIdentifier</code> for each Region and control in
-   * the <a
+   * <p>These interfaces allow you to apply the Amazon Web Services library of
+   * pre-defined <i>controls</i> to your organizational units, programmatically. In
+   * Amazon Web Services Control Tower, the terms "control" and "guardrail" are
+   * synonyms.</p> <p>To call these APIs, you'll need to know:</p> <ul> <li> <p>the
+   * <code>controlIdentifier</code> for the control--or guardrail--you are
+   * targeting.</p> </li> <li> <p>the ARN associated with the target organizational
+   * unit (OU), which we call the <code>targetIdentifier</code>.</p> </li> <li>
+   * <p>the ARN associated with a resource that you wish to tag or untag.</p> </li>
+   * </ul> <p> <b>To get the <code>controlIdentifier</code> for your AWS Control
+   * Tower control:</b> </p> <p>The <code>controlIdentifier</code> is an ARN that is
+   * specified for each control. You can view the <code>controlIdentifier</code> in
+   * the console on the <b>Control details</b> page, as well as in the
+   * documentation.</p> <p>The <code>controlIdentifier</code> is unique in each
+   * Amazon Web Services Region for each control. You can find the
+   * <code>controlIdentifier</code> for each Region and control in the <a
    * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-metadata-tables.html">Tables
-   * of control metadata</a> in the <i>AWS Control Tower User Guide.</i> </p> <p>A
-   * quick-reference list of control identifers for the AWS Control Tower legacy
-   * <i>Strongly recommended</i> and <i>Elective</i> controls is given in <a
+   * of control metadata</a> in the <i>Amazon Web Services Control Tower User
+   * Guide.</i> </p> <p>A quick-reference list of control identifers for the Amazon
+   * Web Services Control Tower legacy <i>Strongly recommended</i> and
+   * <i>Elective</i> controls is given in <a
    * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html.html">Resource
    * identifiers for APIs and controls</a> in the <a
    * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html">Controls
-   * reference guide section</a> of the <i>AWS Control Tower User Guide</i>. Remember
-   * that <i>Mandatory</i> controls cannot be added or removed.</p>  <p> <b>ARN
-   * format:</b> <code>arn:aws:controltower:{REGION}::control/{CONTROL_NAME}</code>
-   * </p> <p> <b>Example:</b> </p> <p>
+   * reference guide section</a> of the <i>Amazon Web Services Control Tower User
+   * Guide</i>. Remember that <i>Mandatory</i> controls cannot be added or
+   * removed.</p>  <p> <b>ARN format:</b>
+   * <code>arn:aws:controltower:{REGION}::control/{CONTROL_NAME}</code> </p> <p>
+   * <b>Example:</b> </p> <p>
    * <code>arn:aws:controltower:us-west-2::control/AWS-GR_AUTOSCALING_LAUNCH_CONFIG_PUBLIC_IP_DISABLED</code>
    * </p>  <p> <b>To get the <code>targetIdentifier</code>:</b> </p> <p>The
-   * <code>targetIdentifier</code> is the ARN for an OU.</p> <p>In the AWS
-   * Organizations console, you can find the ARN for the OU on the <b>Organizational
-   * unit details</b> page associated with that OU.</p>  <p> <b>OU ARN
-   * format:</b> </p> <p>
+   * <code>targetIdentifier</code> is the ARN for an OU.</p> <p>In the Amazon Web
+   * Services Organizations console, you can find the ARN for the OU on the
+   * <b>Organizational unit details</b> page associated with that OU.</p>  <p>
+   * <b>OU ARN format:</b> </p> <p>
    * <code>arn:${Partition}:organizations::${MasterAccountId}:ou/o-${OrganizationId}/ou-${OrganizationalUnitId}</code>
    * </p>  <p class="title"> <b>Details and examples</b> </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">Control
@@ -63,19 +65,22 @@ namespace ControlTower
    * href="https://docs.aws.amazon.com/controltower/latest/userguide/controls-reference.html">Controls
    * library groupings</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/controltower/latest/userguide/creating-resources-with-cloudformation.html">Creating
-   * AWS Control Tower resources with AWS CloudFormation</a> </p> </li> </ul> <p>To
-   * view the open source resource repository on GitHub, see <a
+   * Amazon Web Services Control Tower resources with Amazon Web Services
+   * CloudFormation</a> </p> </li> </ul> <p>To view the open source resource
+   * repository on GitHub, see <a
    * href="https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-controltower">aws-cloudformation/aws-cloudformation-resource-providers-controltower</a>
-   * </p> <p> <b>Recording API Requests</b> </p> <p>AWS Control Tower supports AWS
-   * CloudTrail, a service that records AWS API calls for your AWS account and
-   * delivers log files to an Amazon S3 bucket. By using information collected by
-   * CloudTrail, you can determine which requests the AWS Control Tower service
-   * received, who made the request and when, and so on. For more about AWS Control
-   * Tower and its support for CloudTrail, see <a
+   * </p> <p> <b>Recording API Requests</b> </p> <p>Amazon Web Services Control Tower
+   * supports Amazon Web Services CloudTrail, a service that records Amazon Web
+   * Services API calls for your Amazon Web Services account and delivers log files
+   * to an Amazon S3 bucket. By using information collected by CloudTrail, you can
+   * determine which requests the Amazon Web Services Control Tower service received,
+   * who made the request and when, and so on. For more about Amazon Web Services
+   * Control Tower and its support for CloudTrail, see <a
    * href="https://docs.aws.amazon.com/controltower/latest/userguide/logging-using-cloudtrail.html">Logging
-   * AWS Control Tower Actions with AWS CloudTrail</a> in the AWS Control Tower User
-   * Guide. To learn more about CloudTrail, including how to turn it on and find your
-   * log files, see the AWS CloudTrail User Guide.</p>
+   * Amazon Web Services Control Tower Actions with Amazon Web Services
+   * CloudTrail</a> in the Amazon Web Services Control Tower User Guide. To learn
+   * more about CloudTrail, including how to turn it on and find your log files, see
+   * the Amazon Web Services CloudTrail User Guide.</p>
    */
   class AWS_CONTROLTOWER_API ControlTowerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ControlTowerClient>
   {
@@ -136,12 +141,67 @@ namespace ControlTower
         virtual ~ControlTowerClient();
 
         /**
+         * <p>Creates a new landing zone. This starts an asynchronous operation that
+         * creates and configures a landing zone based on the parameters specified in the
+         * manifest JSON file. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/CreateLandingZone">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLandingZoneOutcome CreateLandingZone(const Model::CreateLandingZoneRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLandingZone that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateLandingZoneRequestT = Model::CreateLandingZoneRequest>
+        Model::CreateLandingZoneOutcomeCallable CreateLandingZoneCallable(const CreateLandingZoneRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::CreateLandingZone, request);
+        }
+
+        /**
+         * An Async wrapper for CreateLandingZone that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateLandingZoneRequestT = Model::CreateLandingZoneRequest>
+        void CreateLandingZoneAsync(const CreateLandingZoneRequestT& request, const CreateLandingZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::CreateLandingZone, request, handler, context);
+        }
+
+        /**
+         * <p>This decommissions a landing zone. This starts an asynchronous operation that
+         * deletes Amazon Web Services Control Tower resources deployed in Amazon Web
+         * Services Control Tower managed accounts. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DeleteLandingZone">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLandingZoneOutcome DeleteLandingZone(const Model::DeleteLandingZoneRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLandingZone that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteLandingZoneRequestT = Model::DeleteLandingZoneRequest>
+        Model::DeleteLandingZoneOutcomeCallable DeleteLandingZoneCallable(const DeleteLandingZoneRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::DeleteLandingZone, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteLandingZone that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteLandingZoneRequestT = Model::DeleteLandingZoneRequest>
+        void DeleteLandingZoneAsync(const DeleteLandingZoneRequestT& request, const DeleteLandingZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::DeleteLandingZone, request, handler, context);
+        }
+
+        /**
          * <p>This API call turns off a control. It starts an asynchronous operation that
-         * deletes AWS resources on the specified organizational unit and the accounts it
-         * contains. The resources will vary according to the control that you specify. For
-         * usage examples, see <a
+         * deletes Amazon Web Services resources on the specified organizational unit and
+         * the accounts it contains. The resources will vary according to the control that
+         * you specify. For usage examples, see <a
          * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-         * <i>the AWS Control Tower User Guide</i> </a>.</p><p><h3>See Also:</h3>   <a
+         * <i>the Amazon Web Services Control Tower User Guide</i> </a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DisableControl">AWS
          * API Reference</a></p>
          */
@@ -167,11 +227,12 @@ namespace ControlTower
 
         /**
          * <p>This API call activates a control. It starts an asynchronous operation that
-         * creates AWS resources on the specified organizational unit and the accounts it
-         * contains. The resources created will vary according to the control that you
-         * specify. For usage examples, see <a
+         * creates Amazon Web Services resources on the specified organizational unit and
+         * the accounts it contains. The resources created will vary according to the
+         * control that you specify. For usage examples, see <a
          * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-         * <i>the AWS Control Tower User Guide</i> </a>.</p><p><h3>See Also:</h3>   <a
+         * <i>the Amazon Web Services Control Tower User Guide</i> </a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnableControl">AWS
          * API Reference</a></p>
          */
@@ -200,7 +261,8 @@ namespace ControlTower
          * <code>DisableControl</code> operation. Displays a message in case of error.
          * Details for an operation are available for 90 days. For usage examples, see <a
          * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-         * <i>the AWS Control Tower User Guide</i> </a>.</p><p><h3>See Also:</h3>   <a
+         * <i>the Amazon Web Services Control Tower User Guide</i> </a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetControlOperation">AWS
          * API Reference</a></p>
          */
@@ -227,7 +289,8 @@ namespace ControlTower
         /**
          * <p>Retrieves details about an enabled control. For usage examples, see <a
          * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-         * <i>the AWS Control Tower User Guide</i> </a>.</p><p><h3>See Also:</h3>   <a
+         * <i>the Amazon Web Services Control Tower User Guide</i> </a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetEnabledControl">AWS
          * API Reference</a></p>
          */
@@ -252,10 +315,64 @@ namespace ControlTower
         }
 
         /**
-         * <p>Lists the controls enabled by AWS Control Tower on the specified
-         * organizational unit and the accounts it contains. For usage examples, see <a
+         * <p>Returns details about the landing zone. Displays a message in case of error.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetLandingZone">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLandingZoneOutcome GetLandingZone(const Model::GetLandingZoneRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetLandingZone that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetLandingZoneRequestT = Model::GetLandingZoneRequest>
+        Model::GetLandingZoneOutcomeCallable GetLandingZoneCallable(const GetLandingZoneRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::GetLandingZone, request);
+        }
+
+        /**
+         * An Async wrapper for GetLandingZone that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetLandingZoneRequestT = Model::GetLandingZoneRequest>
+        void GetLandingZoneAsync(const GetLandingZoneRequestT& request, const GetLandingZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::GetLandingZone, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the status of the specified landing zone operation. Details for an
+         * operation are available for X days. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetLandingZoneOperation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLandingZoneOperationOutcome GetLandingZoneOperation(const Model::GetLandingZoneOperationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetLandingZoneOperation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetLandingZoneOperationRequestT = Model::GetLandingZoneOperationRequest>
+        Model::GetLandingZoneOperationOutcomeCallable GetLandingZoneOperationCallable(const GetLandingZoneOperationRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::GetLandingZoneOperation, request);
+        }
+
+        /**
+         * An Async wrapper for GetLandingZoneOperation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetLandingZoneOperationRequestT = Model::GetLandingZoneOperationRequest>
+        void GetLandingZoneOperationAsync(const GetLandingZoneOperationRequestT& request, const GetLandingZoneOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::GetLandingZoneOperation, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the controls enabled by Amazon Web Services Control Tower on the
+         * specified organizational unit and the accounts it contains. For usage examples,
+         * see <a
          * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-         * <i>the AWS Control Tower User Guide</i> </a>.</p><p><h3>See Also:</h3>   <a
+         * <i>the Amazon Web Services Control Tower User Guide</i> </a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListEnabledControls">AWS
          * API Reference</a></p>
          */
@@ -280,10 +397,39 @@ namespace ControlTower
         }
 
         /**
+         * <p>Returns the landing zone ARN for the landing zone deployed in your managed
+         * account. This API also creates an ARN for existing accounts that do not yet have
+         * a landing zone ARN. </p> <p>The return limit is one landing zone ARN.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListLandingZones">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLandingZonesOutcome ListLandingZones(const Model::ListLandingZonesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListLandingZones that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListLandingZonesRequestT = Model::ListLandingZonesRequest>
+        Model::ListLandingZonesOutcomeCallable ListLandingZonesCallable(const ListLandingZonesRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::ListLandingZones, request);
+        }
+
+        /**
+         * An Async wrapper for ListLandingZones that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListLandingZonesRequestT = Model::ListLandingZonesRequest>
+        void ListLandingZonesAsync(const ListLandingZonesRequestT& request, const ListLandingZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::ListLandingZones, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of tags associated with the resource. For usage examples, see
          * <a
          * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-         * <i>the AWS Control Tower User Guide</i> </a>.</p><p><h3>See Also:</h3>   <a
+         * <i>the Amazon Web Services Control Tower User Guide</i> </a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -308,9 +454,37 @@ namespace ControlTower
         }
 
         /**
+         * <p>This API call resets a landing zone. It starts an asynchronous operation that
+         * resets the landing zone to the parameters specified in its original
+         * configuration. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetLandingZone">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetLandingZoneOutcome ResetLandingZone(const Model::ResetLandingZoneRequest& request) const;
+
+        /**
+         * A Callable wrapper for ResetLandingZone that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ResetLandingZoneRequestT = Model::ResetLandingZoneRequest>
+        Model::ResetLandingZoneOutcomeCallable ResetLandingZoneCallable(const ResetLandingZoneRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::ResetLandingZone, request);
+        }
+
+        /**
+         * An Async wrapper for ResetLandingZone that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ResetLandingZoneRequestT = Model::ResetLandingZoneRequest>
+        void ResetLandingZoneAsync(const ResetLandingZoneRequestT& request, const ResetLandingZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::ResetLandingZone, request, handler, context);
+        }
+
+        /**
          * <p>Applies tags to a resource. For usage examples, see <a
          * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-         * <i>the AWS Control Tower User Guide</i> </a>.</p><p><h3>See Also:</h3>   <a
+         * <i>the Amazon Web Services Control Tower User Guide</i> </a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/TagResource">AWS
          * API Reference</a></p>
          */
@@ -337,7 +511,8 @@ namespace ControlTower
         /**
          * <p>Removes tags from a resource. For usage examples, see <a
          * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-         * <i>the AWS Control Tower User Guide</i> </a>.</p><p><h3>See Also:</h3>   <a
+         * <i>the Amazon Web Services Control Tower User Guide</i> </a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -359,6 +534,34 @@ namespace ControlTower
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ControlTowerClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>This API call updates the landing zone. It starts an asynchronous operation
+         * that updates the landing zone based on the new landing zone version or the
+         * updated parameters specified in the updated manifest file. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateLandingZone">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLandingZoneOutcome UpdateLandingZone(const Model::UpdateLandingZoneRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateLandingZone that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateLandingZoneRequestT = Model::UpdateLandingZoneRequest>
+        Model::UpdateLandingZoneOutcomeCallable UpdateLandingZoneCallable(const UpdateLandingZoneRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::UpdateLandingZone, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateLandingZone that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateLandingZoneRequestT = Model::UpdateLandingZoneRequest>
+        void UpdateLandingZoneAsync(const UpdateLandingZoneRequestT& request, const UpdateLandingZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::UpdateLandingZone, request, handler, context);
         }
 
 

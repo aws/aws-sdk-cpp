@@ -22,7 +22,10 @@ CreateBatchInferenceJobRequest::CreateBatchInferenceJobRequest() :
     m_jobOutputHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_batchInferenceJobConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_batchInferenceJobMode(BatchInferenceJobMode::NOT_SET),
+    m_batchInferenceJobModeHasBeenSet(false),
+    m_themeGenerationConfigHasBeenSet(false)
 {
 }
 
@@ -86,6 +89,17 @@ Aws::String CreateBatchInferenceJobRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_batchInferenceJobModeHasBeenSet)
+  {
+   payload.WithString("batchInferenceJobMode", BatchInferenceJobModeMapper::GetNameForBatchInferenceJobMode(m_batchInferenceJobMode));
+  }
+
+  if(m_themeGenerationConfigHasBeenSet)
+  {
+   payload.WithObject("themeGenerationConfig", m_themeGenerationConfig.Jsonize());
 
   }
 

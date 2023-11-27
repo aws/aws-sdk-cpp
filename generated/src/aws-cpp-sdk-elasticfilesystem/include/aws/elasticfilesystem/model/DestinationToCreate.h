@@ -88,50 +88,50 @@ namespace Model
 
 
     /**
-     * <p>To create a file system that uses EFS One Zone storage, specify the name of
-     * the Availability Zone in which to create the destination file system.</p>
+     * <p>To create a file system that uses One Zone storage, specify the name of the
+     * Availability Zone in which to create the destination file system.</p>
      */
     inline const Aws::String& GetAvailabilityZoneName() const{ return m_availabilityZoneName; }
 
     /**
-     * <p>To create a file system that uses EFS One Zone storage, specify the name of
-     * the Availability Zone in which to create the destination file system.</p>
+     * <p>To create a file system that uses One Zone storage, specify the name of the
+     * Availability Zone in which to create the destination file system.</p>
      */
     inline bool AvailabilityZoneNameHasBeenSet() const { return m_availabilityZoneNameHasBeenSet; }
 
     /**
-     * <p>To create a file system that uses EFS One Zone storage, specify the name of
-     * the Availability Zone in which to create the destination file system.</p>
+     * <p>To create a file system that uses One Zone storage, specify the name of the
+     * Availability Zone in which to create the destination file system.</p>
      */
     inline void SetAvailabilityZoneName(const Aws::String& value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName = value; }
 
     /**
-     * <p>To create a file system that uses EFS One Zone storage, specify the name of
-     * the Availability Zone in which to create the destination file system.</p>
+     * <p>To create a file system that uses One Zone storage, specify the name of the
+     * Availability Zone in which to create the destination file system.</p>
      */
     inline void SetAvailabilityZoneName(Aws::String&& value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName = std::move(value); }
 
     /**
-     * <p>To create a file system that uses EFS One Zone storage, specify the name of
-     * the Availability Zone in which to create the destination file system.</p>
+     * <p>To create a file system that uses One Zone storage, specify the name of the
+     * Availability Zone in which to create the destination file system.</p>
      */
     inline void SetAvailabilityZoneName(const char* value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName.assign(value); }
 
     /**
-     * <p>To create a file system that uses EFS One Zone storage, specify the name of
-     * the Availability Zone in which to create the destination file system.</p>
+     * <p>To create a file system that uses One Zone storage, specify the name of the
+     * Availability Zone in which to create the destination file system.</p>
      */
     inline DestinationToCreate& WithAvailabilityZoneName(const Aws::String& value) { SetAvailabilityZoneName(value); return *this;}
 
     /**
-     * <p>To create a file system that uses EFS One Zone storage, specify the name of
-     * the Availability Zone in which to create the destination file system.</p>
+     * <p>To create a file system that uses One Zone storage, specify the name of the
+     * Availability Zone in which to create the destination file system.</p>
      */
     inline DestinationToCreate& WithAvailabilityZoneName(Aws::String&& value) { SetAvailabilityZoneName(std::move(value)); return *this;}
 
     /**
-     * <p>To create a file system that uses EFS One Zone storage, specify the name of
-     * the Availability Zone in which to create the destination file system.</p>
+     * <p>To create a file system that uses One Zone storage, specify the name of the
+     * Availability Zone in which to create the destination file system.</p>
      */
     inline DestinationToCreate& WithAvailabilityZoneName(const char* value) { SetAvailabilityZoneName(value); return *this;}
 

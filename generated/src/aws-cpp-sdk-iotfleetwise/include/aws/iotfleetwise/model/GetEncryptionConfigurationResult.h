@@ -98,42 +98,42 @@ namespace Model
 
 
     /**
-     * <p>The type of encryption. Set to <code>KMS_BASED_ENCRYPTION</code> to use an
-     * KMS key that you own and manage. Set to
-     * <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to use an Amazon Web Services managed
-     * key that is owned by the Amazon Web Services IoT FleetWise service account.</p>
+     * <p>The type of encryption. Set to <code>KMS_BASED_ENCRYPTION</code> to use a KMS
+     * key that you own and manage. Set to <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to
+     * use an Amazon Web Services managed key that is owned by the Amazon Web Services
+     * IoT FleetWise service account.</p>
      */
     inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
 
     /**
-     * <p>The type of encryption. Set to <code>KMS_BASED_ENCRYPTION</code> to use an
-     * KMS key that you own and manage. Set to
-     * <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to use an Amazon Web Services managed
-     * key that is owned by the Amazon Web Services IoT FleetWise service account.</p>
+     * <p>The type of encryption. Set to <code>KMS_BASED_ENCRYPTION</code> to use a KMS
+     * key that you own and manage. Set to <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to
+     * use an Amazon Web Services managed key that is owned by the Amazon Web Services
+     * IoT FleetWise service account.</p>
      */
     inline void SetEncryptionType(const EncryptionType& value) { m_encryptionType = value; }
 
     /**
-     * <p>The type of encryption. Set to <code>KMS_BASED_ENCRYPTION</code> to use an
-     * KMS key that you own and manage. Set to
-     * <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to use an Amazon Web Services managed
-     * key that is owned by the Amazon Web Services IoT FleetWise service account.</p>
+     * <p>The type of encryption. Set to <code>KMS_BASED_ENCRYPTION</code> to use a KMS
+     * key that you own and manage. Set to <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to
+     * use an Amazon Web Services managed key that is owned by the Amazon Web Services
+     * IoT FleetWise service account.</p>
      */
     inline void SetEncryptionType(EncryptionType&& value) { m_encryptionType = std::move(value); }
 
     /**
-     * <p>The type of encryption. Set to <code>KMS_BASED_ENCRYPTION</code> to use an
-     * KMS key that you own and manage. Set to
-     * <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to use an Amazon Web Services managed
-     * key that is owned by the Amazon Web Services IoT FleetWise service account.</p>
+     * <p>The type of encryption. Set to <code>KMS_BASED_ENCRYPTION</code> to use a KMS
+     * key that you own and manage. Set to <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to
+     * use an Amazon Web Services managed key that is owned by the Amazon Web Services
+     * IoT FleetWise service account.</p>
      */
     inline GetEncryptionConfigurationResult& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
 
     /**
-     * <p>The type of encryption. Set to <code>KMS_BASED_ENCRYPTION</code> to use an
-     * KMS key that you own and manage. Set to
-     * <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to use an Amazon Web Services managed
-     * key that is owned by the Amazon Web Services IoT FleetWise service account.</p>
+     * <p>The type of encryption. Set to <code>KMS_BASED_ENCRYPTION</code> to use a KMS
+     * key that you own and manage. Set to <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to
+     * use an Amazon Web Services managed key that is owned by the Amazon Web Services
+     * IoT FleetWise service account.</p>
      */
     inline GetEncryptionConfigurationResult& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
 

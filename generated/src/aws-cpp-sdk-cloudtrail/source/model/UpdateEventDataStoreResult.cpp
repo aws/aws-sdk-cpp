@@ -23,7 +23,8 @@ UpdateEventDataStoreResult::UpdateEventDataStoreResult() :
     m_organizationEnabled(false),
     m_retentionPeriod(0),
     m_terminationProtectionEnabled(false),
-    m_billingMode(BillingMode::NOT_SET)
+    m_billingMode(BillingMode::NOT_SET),
+    m_federationStatus(FederationStatus::NOT_SET)
 {
 }
 
@@ -33,7 +34,8 @@ UpdateEventDataStoreResult::UpdateEventDataStoreResult(const Aws::AmazonWebServi
     m_organizationEnabled(false),
     m_retentionPeriod(0),
     m_terminationProtectionEnabled(false),
-    m_billingMode(BillingMode::NOT_SET)
+    m_billingMode(BillingMode::NOT_SET),
+    m_federationStatus(FederationStatus::NOT_SET)
 {
   *this = result;
 }
@@ -113,6 +115,18 @@ UpdateEventDataStoreResult& UpdateEventDataStoreResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("BillingMode"))
   {
     m_billingMode = BillingModeMapper::GetBillingModeForName(jsonValue.GetString("BillingMode"));
+
+  }
+
+  if(jsonValue.ValueExists("FederationStatus"))
+  {
+    m_federationStatus = FederationStatusMapper::GetFederationStatusForName(jsonValue.GetString("FederationStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("FederationRoleArn"))
+  {
+    m_federationRoleArn = jsonValue.GetString("FederationRoleArn");
 
   }
 

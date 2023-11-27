@@ -10,6 +10,7 @@
 #include <aws/transcribe/model/ContentRedaction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/transcribe/model/Summarization.h>
 #include <aws/transcribe/model/LanguageCode.h>
 #include <aws/transcribe/model/LanguageIdSettings.h>
 #include <utility>
@@ -712,6 +713,49 @@ namespace Model
      */
     inline CallAnalyticsJobSettings& AddLanguageIdSettings(LanguageCode&& key, LanguageIdSettings&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(std::move(key), std::move(value)); return *this; }
 
+
+    /**
+     * <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required
+     * parameter if you want to enable Generative call summarization in your Call
+     * Analytics request.</p>
+     */
+    inline const Summarization& GetSummarization() const{ return m_summarization; }
+
+    /**
+     * <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required
+     * parameter if you want to enable Generative call summarization in your Call
+     * Analytics request.</p>
+     */
+    inline bool SummarizationHasBeenSet() const { return m_summarizationHasBeenSet; }
+
+    /**
+     * <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required
+     * parameter if you want to enable Generative call summarization in your Call
+     * Analytics request.</p>
+     */
+    inline void SetSummarization(const Summarization& value) { m_summarizationHasBeenSet = true; m_summarization = value; }
+
+    /**
+     * <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required
+     * parameter if you want to enable Generative call summarization in your Call
+     * Analytics request.</p>
+     */
+    inline void SetSummarization(Summarization&& value) { m_summarizationHasBeenSet = true; m_summarization = std::move(value); }
+
+    /**
+     * <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required
+     * parameter if you want to enable Generative call summarization in your Call
+     * Analytics request.</p>
+     */
+    inline CallAnalyticsJobSettings& WithSummarization(const Summarization& value) { SetSummarization(value); return *this;}
+
+    /**
+     * <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required
+     * parameter if you want to enable Generative call summarization in your Call
+     * Analytics request.</p>
+     */
+    inline CallAnalyticsJobSettings& WithSummarization(Summarization&& value) { SetSummarization(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_vocabularyName;
@@ -734,6 +778,9 @@ namespace Model
 
     Aws::Map<LanguageCode, LanguageIdSettings> m_languageIdSettings;
     bool m_languageIdSettingsHasBeenSet = false;
+
+    Summarization m_summarization;
+    bool m_summarizationHasBeenSet = false;
   };
 
 } // namespace Model

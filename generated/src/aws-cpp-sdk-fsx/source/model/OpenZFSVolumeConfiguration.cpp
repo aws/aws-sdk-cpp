@@ -40,7 +40,11 @@ OpenZFSVolumeConfiguration::OpenZFSVolumeConfiguration() :
     m_deleteIntermediateSnaphots(false),
     m_deleteIntermediateSnaphotsHasBeenSet(false),
     m_deleteClonedVolumes(false),
-    m_deleteClonedVolumesHasBeenSet(false)
+    m_deleteClonedVolumesHasBeenSet(false),
+    m_deleteIntermediateData(false),
+    m_deleteIntermediateDataHasBeenSet(false),
+    m_sourceSnapshotARNHasBeenSet(false),
+    m_destinationSnapshotHasBeenSet(false)
 {
 }
 
@@ -66,7 +70,11 @@ OpenZFSVolumeConfiguration::OpenZFSVolumeConfiguration(JsonView jsonValue) :
     m_deleteIntermediateSnaphots(false),
     m_deleteIntermediateSnaphotsHasBeenSet(false),
     m_deleteClonedVolumes(false),
-    m_deleteClonedVolumesHasBeenSet(false)
+    m_deleteClonedVolumesHasBeenSet(false),
+    m_deleteIntermediateData(false),
+    m_deleteIntermediateDataHasBeenSet(false),
+    m_sourceSnapshotARNHasBeenSet(false),
+    m_destinationSnapshotHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -177,6 +185,27 @@ OpenZFSVolumeConfiguration& OpenZFSVolumeConfiguration::operator =(JsonView json
     m_deleteClonedVolumesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeleteIntermediateData"))
+  {
+    m_deleteIntermediateData = jsonValue.GetBool("DeleteIntermediateData");
+
+    m_deleteIntermediateDataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceSnapshotARN"))
+  {
+    m_sourceSnapshotARN = jsonValue.GetString("SourceSnapshotARN");
+
+    m_sourceSnapshotARNHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DestinationSnapshot"))
+  {
+    m_destinationSnapshot = jsonValue.GetString("DestinationSnapshot");
+
+    m_destinationSnapshotHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -274,6 +303,24 @@ JsonValue OpenZFSVolumeConfiguration::Jsonize() const
   if(m_deleteClonedVolumesHasBeenSet)
   {
    payload.WithBool("DeleteClonedVolumes", m_deleteClonedVolumes);
+
+  }
+
+  if(m_deleteIntermediateDataHasBeenSet)
+  {
+   payload.WithBool("DeleteIntermediateData", m_deleteIntermediateData);
+
+  }
+
+  if(m_sourceSnapshotARNHasBeenSet)
+  {
+   payload.WithString("SourceSnapshotARN", m_sourceSnapshotARN);
+
+  }
+
+  if(m_destinationSnapshotHasBeenSet)
+  {
+   payload.WithString("DestinationSnapshot", m_destinationSnapshot);
 
   }
 

@@ -49,6 +49,7 @@
 #include <aws/states/model/StartSyncExecutionResult.h>
 #include <aws/states/model/StopExecutionResult.h>
 #include <aws/states/model/TagResourceResult.h>
+#include <aws/states/model/TestStateResult.h>
 #include <aws/states/model/UntagResourceResult.h>
 #include <aws/states/model/UpdateMapRunResult.h>
 #include <aws/states/model/UpdateStateMachineResult.h>
@@ -124,6 +125,7 @@ namespace Aws
       class StartSyncExecutionRequest;
       class StopExecutionRequest;
       class TagResourceRequest;
+      class TestStateRequest;
       class UntagResourceRequest;
       class UpdateMapRunRequest;
       class UpdateStateMachineRequest;
@@ -162,6 +164,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StartSyncExecutionResult, SFNError> StartSyncExecutionOutcome;
       typedef Aws::Utils::Outcome<StopExecutionResult, SFNError> StopExecutionOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, SFNError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<TestStateResult, SFNError> TestStateOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, SFNError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateMapRunResult, SFNError> UpdateMapRunOutcome;
       typedef Aws::Utils::Outcome<UpdateStateMachineResult, SFNError> UpdateStateMachineOutcome;
@@ -200,6 +203,7 @@ namespace Aws
       typedef std::future<StartSyncExecutionOutcome> StartSyncExecutionOutcomeCallable;
       typedef std::future<StopExecutionOutcome> StopExecutionOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<TestStateOutcome> TestStateOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateMapRunOutcome> UpdateMapRunOutcomeCallable;
       typedef std::future<UpdateStateMachineOutcome> UpdateStateMachineOutcomeCallable;
@@ -241,6 +245,7 @@ namespace Aws
     typedef std::function<void(const SFNClient*, const Model::StartSyncExecutionRequest&, const Model::StartSyncExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSyncExecutionResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::StopExecutionRequest&, const Model::StopExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopExecutionResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const SFNClient*, const Model::TestStateRequest&, const Model::TestStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestStateResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::UpdateMapRunRequest&, const Model::UpdateMapRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMapRunResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::UpdateStateMachineRequest&, const Model::UpdateStateMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStateMachineResponseReceivedHandler;

@@ -9,6 +9,7 @@
 #include <aws/elasticloadbalancingv2/model/TargetDescription.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticloadbalancingv2/model/TargetHealth.h>
+#include <aws/elasticloadbalancingv2/model/AnomalyDetection.h>
 #include <utility>
 
 namespace Aws
@@ -143,6 +144,49 @@ namespace Model
      */
     inline TargetHealthDescription& WithTargetHealth(TargetHealth&& value) { SetTargetHealth(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The anomaly detection result for the target.</p> <p>If no anomalies were
+     * detected, the result is <code>normal</code>.</p> <p>If anomalies were detected,
+     * the result is <code>anomalous</code>.</p>
+     */
+    inline const AnomalyDetection& GetAnomalyDetection() const{ return m_anomalyDetection; }
+
+    /**
+     * <p>The anomaly detection result for the target.</p> <p>If no anomalies were
+     * detected, the result is <code>normal</code>.</p> <p>If anomalies were detected,
+     * the result is <code>anomalous</code>.</p>
+     */
+    inline bool AnomalyDetectionHasBeenSet() const { return m_anomalyDetectionHasBeenSet; }
+
+    /**
+     * <p>The anomaly detection result for the target.</p> <p>If no anomalies were
+     * detected, the result is <code>normal</code>.</p> <p>If anomalies were detected,
+     * the result is <code>anomalous</code>.</p>
+     */
+    inline void SetAnomalyDetection(const AnomalyDetection& value) { m_anomalyDetectionHasBeenSet = true; m_anomalyDetection = value; }
+
+    /**
+     * <p>The anomaly detection result for the target.</p> <p>If no anomalies were
+     * detected, the result is <code>normal</code>.</p> <p>If anomalies were detected,
+     * the result is <code>anomalous</code>.</p>
+     */
+    inline void SetAnomalyDetection(AnomalyDetection&& value) { m_anomalyDetectionHasBeenSet = true; m_anomalyDetection = std::move(value); }
+
+    /**
+     * <p>The anomaly detection result for the target.</p> <p>If no anomalies were
+     * detected, the result is <code>normal</code>.</p> <p>If anomalies were detected,
+     * the result is <code>anomalous</code>.</p>
+     */
+    inline TargetHealthDescription& WithAnomalyDetection(const AnomalyDetection& value) { SetAnomalyDetection(value); return *this;}
+
+    /**
+     * <p>The anomaly detection result for the target.</p> <p>If no anomalies were
+     * detected, the result is <code>normal</code>.</p> <p>If anomalies were detected,
+     * the result is <code>anomalous</code>.</p>
+     */
+    inline TargetHealthDescription& WithAnomalyDetection(AnomalyDetection&& value) { SetAnomalyDetection(std::move(value)); return *this;}
+
   private:
 
     TargetDescription m_target;
@@ -153,6 +197,9 @@ namespace Model
 
     TargetHealth m_targetHealth;
     bool m_targetHealthHasBeenSet = false;
+
+    AnomalyDetection m_anomalyDetection;
+    bool m_anomalyDetectionHasBeenSet = false;
   };
 
 } // namespace Model

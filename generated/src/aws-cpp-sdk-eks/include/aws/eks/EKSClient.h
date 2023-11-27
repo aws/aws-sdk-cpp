@@ -192,10 +192,26 @@ namespace EKS
          * exec</code>, <code>logs</code>, and <code>proxy</code> data flows).</p>
          * <p>Amazon EKS nodes run in your Amazon Web Services account and connect to your
          * cluster's control plane over the Kubernetes API server endpoint and a
-         * certificate file that is created for your cluster.</p> <p>In most cases, it
-         * takes several minutes to create a cluster. After you create an Amazon EKS
-         * cluster, you must configure your Kubernetes tooling to communicate with the API
-         * server and launch nodes into your cluster. For more information, see <a
+         * certificate file that is created for your cluster.</p> <p>You can use the
+         * <code>endpointPublicAccess</code> and <code>endpointPrivateAccess</code>
+         * parameters to enable or disable public and private access to your cluster's
+         * Kubernetes API server endpoint. By default, public access is enabled, and
+         * private access is disabled. For more information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+         * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+         * </i>. </p> <p>You can use the <code>logging</code> parameter to enable or
+         * disable exporting the Kubernetes control plane logs for your cluster to
+         * CloudWatch Logs. By default, cluster control plane logs aren't exported to
+         * CloudWatch Logs. For more information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+         * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
+         * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
+         * scanning rates apply to exported control plane logs. For more information, see
+         * <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+         *  <p>In most cases, it takes several minutes to create a cluster. After
+         * you create an Amazon EKS cluster, you must configure your Kubernetes tooling to
+         * communicate with the API server and launch nodes into your cluster. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
          * Cluster Authentication</a> and <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
@@ -339,6 +355,43 @@ namespace EKS
         }
 
         /**
+         * <p>Creates an EKS Pod Identity association between a service account in an
+         * Amazon EKS cluster and an IAM role with <i>EKS Pod Identity</i>. Use EKS Pod
+         * Identity to give temporary IAM credentials to pods and the credentials are
+         * rotated automatically.</p> <p>Amazon EKS Pod Identity associations provide the
+         * ability to manage credentials for your applications, similar to the way that
+         * 7EC2l instance profiles provide credentials to Amazon EC2 instances.</p> <p>If a
+         * pod uses a service account that has an association, Amazon EKS sets environment
+         * variables in the containers of the pod. The environment variables configure the
+         * Amazon Web Services SDKs, including the Command Line Interface, to use the EKS
+         * Pod Identity credentials.</p> <p>Pod Identity is a simpler method than <i>IAM
+         * roles for service accounts</i>, as this method doesn't use OIDC identity
+         * providers. Additionally, you can configure a role for Pod Identity once, and
+         * reuse it across clusters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreatePodIdentityAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePodIdentityAssociationOutcome CreatePodIdentityAssociation(const Model::CreatePodIdentityAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePodIdentityAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePodIdentityAssociationRequestT = Model::CreatePodIdentityAssociationRequest>
+        Model::CreatePodIdentityAssociationOutcomeCallable CreatePodIdentityAssociationCallable(const CreatePodIdentityAssociationRequestT& request) const
+        {
+            return SubmitCallable(&EKSClient::CreatePodIdentityAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePodIdentityAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePodIdentityAssociationRequestT = Model::CreatePodIdentityAssociationRequest>
+        void CreatePodIdentityAssociationAsync(const CreatePodIdentityAssociationRequestT& request, const CreatePodIdentityAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EKSClient::CreatePodIdentityAssociation, request, handler, context);
+        }
+
+        /**
          * <p>Delete an Amazon EKS add-on.</p> <p>When you remove the add-on, it will also
          * be deleted from the cluster. You can always manually start an add-on on the
          * cluster using the Kubernetes API.</p><p><h3>See Also:</h3>   <a
@@ -400,10 +453,10 @@ namespace EKS
         }
 
         /**
-         * <p>Deletes an expired / inactive subscription. Deleting inactive subscriptions
+         * <p>Deletes an expired or inactive subscription. Deleting inactive subscriptions
          * removes them from the Amazon Web Services Management Console view and from
          * list/describe API responses. Subscriptions can only be cancelled within 7 days
-         * of creation, and are cancelled by creating a ticket in the Amazon Web Services
+         * of creation and are cancelled by creating a ticket in the Amazon Web Services
          * Support Center. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteEksAnywhereSubscription">AWS
          * API Reference</a></p>
@@ -483,6 +536,35 @@ namespace EKS
         void DeleteNodegroupAsync(const DeleteNodegroupRequestT& request, const DeleteNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EKSClient::DeleteNodegroup, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a EKS Pod Identity association.</p> <p>The temporary Amazon Web
+         * Services credentials from the previous IAM role session might still be valid
+         * until the session expiry. If you need to immediately revoke the temporary
+         * session credentials, then go to the role in the IAM console.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeletePodIdentityAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePodIdentityAssociationOutcome DeletePodIdentityAssociation(const Model::DeletePodIdentityAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeletePodIdentityAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeletePodIdentityAssociationRequestT = Model::DeletePodIdentityAssociationRequest>
+        Model::DeletePodIdentityAssociationOutcomeCallable DeletePodIdentityAssociationCallable(const DeletePodIdentityAssociationRequestT& request) const
+        {
+            return SubmitCallable(&EKSClient::DeletePodIdentityAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for DeletePodIdentityAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeletePodIdentityAssociationRequestT = Model::DeletePodIdentityAssociationRequest>
+        void DeletePodIdentityAssociationAsync(const DeletePodIdentityAssociationRequestT& request, const DeletePodIdentityAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EKSClient::DeletePodIdentityAssociation, request, handler, context);
         }
 
         /**
@@ -726,6 +808,36 @@ namespace EKS
         }
 
         /**
+         * <p>Returns descriptive information about an EKS Pod Identity association.</p>
+         * <p>This action requires the ID of the association. You can get the ID from the
+         * response to the <code>CreatePodIdentityAssocation</code> for newly created
+         * associations. Or, you can list the IDs for associations with
+         * <code>ListPodIdentityAssociations</code> and filter the list by namespace or
+         * service account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribePodIdentityAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribePodIdentityAssociationOutcome DescribePodIdentityAssociation(const Model::DescribePodIdentityAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribePodIdentityAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribePodIdentityAssociationRequestT = Model::DescribePodIdentityAssociationRequest>
+        Model::DescribePodIdentityAssociationOutcomeCallable DescribePodIdentityAssociationCallable(const DescribePodIdentityAssociationRequestT& request) const
+        {
+            return SubmitCallable(&EKSClient::DescribePodIdentityAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for DescribePodIdentityAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribePodIdentityAssociationRequestT = Model::DescribePodIdentityAssociationRequest>
+        void DescribePodIdentityAssociationAsync(const DescribePodIdentityAssociationRequestT& request, const DescribePodIdentityAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EKSClient::DescribePodIdentityAssociation, request, handler, context);
+        }
+
+        /**
          * <p>Returns descriptive information about an update against your Amazon EKS
          * cluster or associated managed node group or Amazon EKS add-on.</p> <p>When the
          * status of the update is <code>Succeeded</code>, the update is complete. If an
@@ -941,6 +1053,33 @@ namespace EKS
         }
 
         /**
+         * <p>List the EKS Pod Identity associations in a cluster. You can filter the list
+         * by the namespace that the association is in or the service account that the
+         * association uses.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListPodIdentityAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPodIdentityAssociationsOutcome ListPodIdentityAssociations(const Model::ListPodIdentityAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListPodIdentityAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPodIdentityAssociationsRequestT = Model::ListPodIdentityAssociationsRequest>
+        Model::ListPodIdentityAssociationsOutcomeCallable ListPodIdentityAssociationsCallable(const ListPodIdentityAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&EKSClient::ListPodIdentityAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListPodIdentityAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPodIdentityAssociationsRequestT = Model::ListPodIdentityAssociationsRequest>
+        void ListPodIdentityAssociationsAsync(const ListPodIdentityAssociationsRequestT& request, const ListPodIdentityAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EKSClient::ListPodIdentityAssociations, request, handler, context);
+        }
+
+        /**
          * <p>List the tags for an Amazon EKS resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1130,12 +1269,17 @@ namespace EKS
          * see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
          * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>. </p>  <p>You can't update the subnets or security group IDs for
-         * an existing cluster.</p>  <p>Cluster updates are asynchronous, and
-         * they should finish within a few minutes. During an update, the cluster status
-         * moves to <code>UPDATING</code> (this status transition is eventually
-         * consistent). When the update is complete (either <code>Failed</code> or
-         * <code>Successful</code>), the cluster status moves to
+         * </i>.</p> <p>You can also use this API operation to choose different subnets and
+         * security groups for the cluster. You must specify at least two subnets that are
+         * in different Availability Zones. You can't change which VPC the subnets are
+         * from, the subnets must be in the same VPC as the subnets that the cluster was
+         * created with. For more information about the VPC requirements, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html</a>
+         * in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <p>Cluster updates are
+         * asynchronous, and they should finish within a few minutes. During an update, the
+         * cluster status moves to <code>UPDATING</code> (this status transition is
+         * eventually consistent). When the update is complete (either <code>Failed</code>
+         * or <code>Successful</code>), the cluster status moves to
          * <code>Active</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig">AWS
          * API Reference</a></p>
@@ -1296,6 +1440,35 @@ namespace EKS
         void UpdateNodegroupVersionAsync(const UpdateNodegroupVersionRequestT& request, const UpdateNodegroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EKSClient::UpdateNodegroupVersion, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a EKS Pod Identity association. Only the IAM role can be changed; an
+         * association can't be moved between clusters, namespaces, or service accounts. If
+         * you need to edit the namespace or service account, you need to remove the
+         * association and then create a new association with your desired
+         * settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdatePodIdentityAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePodIdentityAssociationOutcome UpdatePodIdentityAssociation(const Model::UpdatePodIdentityAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePodIdentityAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdatePodIdentityAssociationRequestT = Model::UpdatePodIdentityAssociationRequest>
+        Model::UpdatePodIdentityAssociationOutcomeCallable UpdatePodIdentityAssociationCallable(const UpdatePodIdentityAssociationRequestT& request) const
+        {
+            return SubmitCallable(&EKSClient::UpdatePodIdentityAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for UpdatePodIdentityAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdatePodIdentityAssociationRequestT = Model::UpdatePodIdentityAssociationRequest>
+        void UpdatePodIdentityAssociationAsync(const UpdatePodIdentityAssociationRequestT& request, const UpdatePodIdentityAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EKSClient::UpdatePodIdentityAssociation, request, handler, context);
         }
 
 

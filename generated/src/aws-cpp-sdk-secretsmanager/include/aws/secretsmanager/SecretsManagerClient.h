@@ -108,6 +108,52 @@ namespace SecretsManager
         virtual ~SecretsManagerClient();
 
         /**
+         * <p>Retrieves the contents of the encrypted fields <code>SecretString</code> or
+         * <code>SecretBinary</code> for up to 20 secrets. To retrieve a single secret,
+         * call <a>GetSecretValue</a>. </p> <p>To choose which secrets to retrieve, you can
+         * specify a list of secrets by name or ARN, or you can use filters. If Secrets
+         * Manager encounters errors such as <code>AccessDeniedException</code> while
+         * attempting to retrieve any of the secrets, you can see the errors in
+         * <code>Errors</code> in the response.</p> <p>Secrets Manager generates CloudTrail
+         * <code>GetSecretValue</code> log entries for each secret you request when you
+         * call this action. Do not include sensitive information in request parameters
+         * because it might be logged. For more information, see <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+         * Secrets Manager events with CloudTrail</a>.</p> <p> <b>Required permissions:
+         * </b> <code>secretsmanager:BatchGetSecretValue</code>, and you must have
+         * <code>secretsmanager:GetSecretValue</code> for each secret. If you use filters,
+         * you must also have <code>secretsmanager:ListSecrets</code>. If the secrets are
+         * encrypted using customer-managed keys instead of the Amazon Web Services managed
+         * key <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code>
+         * permissions for the keys. For more information, see <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/BatchGetSecretValue">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetSecretValueOutcome BatchGetSecretValue(const Model::BatchGetSecretValueRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetSecretValue that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetSecretValueRequestT = Model::BatchGetSecretValueRequest>
+        Model::BatchGetSecretValueOutcomeCallable BatchGetSecretValueCallable(const BatchGetSecretValueRequestT& request) const
+        {
+            return SubmitCallable(&SecretsManagerClient::BatchGetSecretValue, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetSecretValue that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetSecretValueRequestT = Model::BatchGetSecretValueRequest>
+        void BatchGetSecretValueAsync(const BatchGetSecretValueRequestT& request, const BatchGetSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecretsManagerClient::BatchGetSecretValue, request, handler, context);
+        }
+
+        /**
          * <p>Turns off automatic rotation, and if a rotation is currently in progress,
          * cancels the rotation.</p> <p>If you cancel a rotation in progress, it can leave
          * the <code>VersionStage</code> labels in an unexpected state. You might need to
@@ -433,9 +479,10 @@ namespace SecretsManager
         /**
          * <p>Retrieves the contents of the encrypted fields <code>SecretString</code> or
          * <code>SecretBinary</code> from the specified version of a secret, whichever
-         * contains content.</p> <p>We recommend that you cache your secret values by using
-         * client-side caching. Caching secrets improves speed and reduces your costs. For
-         * more information, see <a
+         * contains content.</p> <p>To retrieve the values for a group of secrets, call
+         * <a>BatchGetSecretValue</a>.</p> <p>We recommend that you cache your secret
+         * values by using client-side caching. Caching secrets improves speed and reduces
+         * your costs. For more information, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Cache
          * secrets for your applications</a>.</p> <p>To retrieve the previous version of a
          * secret, use <code>VersionStage</code> and specify AWSPREVIOUS. To revert to the
@@ -523,10 +570,9 @@ namespace SecretsManager
          * is eventually consistent, however it might not reflect changes from the last
          * five minutes. To get the latest information for a specific secret, use
          * <a>DescribeSecret</a>.</p> <p>To list the versions of a secret, use
-         * <a>ListSecretVersionIds</a>.</p> <p>To get the secret value from
-         * <code>SecretString</code> or <code>SecretBinary</code>, call
-         * <a>GetSecretValue</a>.</p> <p>For information about finding secrets in the
-         * console, see <a
+         * <a>ListSecretVersionIds</a>.</p> <p>To retrieve the values for the secrets, call
+         * <a>BatchGetSecretValue</a> or <a>GetSecretValue</a>.</p> <p>For information
+         * about finding secrets in the console, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Find
          * secrets in Secrets Manager</a>.</p> <p>Secrets Manager generates a CloudTrail
          * log entry when you call this action. Do not include sensitive information in

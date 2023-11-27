@@ -227,25 +227,25 @@ namespace Model
 
     /**
      * <p>The number of licenses included in a subscription. Valid values are between 1
-     * and 1000.</p>
+     * and 100.</p>
      */
     inline int GetLicenseQuantity() const{ return m_licenseQuantity; }
 
     /**
      * <p>The number of licenses included in a subscription. Valid values are between 1
-     * and 1000.</p>
+     * and 100.</p>
      */
     inline bool LicenseQuantityHasBeenSet() const { return m_licenseQuantityHasBeenSet; }
 
     /**
      * <p>The number of licenses included in a subscription. Valid values are between 1
-     * and 1000.</p>
+     * and 100.</p>
      */
     inline void SetLicenseQuantity(int value) { m_licenseQuantityHasBeenSet = true; m_licenseQuantity = value; }
 
     /**
      * <p>The number of licenses included in a subscription. Valid values are between 1
-     * and 1000.</p>
+     * and 100.</p>
      */
     inline EksAnywhereSubscription& WithLicenseQuantity(int value) { SetLicenseQuantity(value); return *this;}
 
@@ -391,47 +391,47 @@ namespace Model
 
 
     /**
-     * <p>License Manager License ARNs associated with the subscription.</p>
+     * <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLicenseArns() const{ return m_licenseArns; }
 
     /**
-     * <p>License Manager License ARNs associated with the subscription.</p>
+     * <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
      */
     inline bool LicenseArnsHasBeenSet() const { return m_licenseArnsHasBeenSet; }
 
     /**
-     * <p>License Manager License ARNs associated with the subscription.</p>
+     * <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
      */
     inline void SetLicenseArns(const Aws::Vector<Aws::String>& value) { m_licenseArnsHasBeenSet = true; m_licenseArns = value; }
 
     /**
-     * <p>License Manager License ARNs associated with the subscription.</p>
+     * <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
      */
     inline void SetLicenseArns(Aws::Vector<Aws::String>&& value) { m_licenseArnsHasBeenSet = true; m_licenseArns = std::move(value); }
 
     /**
-     * <p>License Manager License ARNs associated with the subscription.</p>
+     * <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
      */
     inline EksAnywhereSubscription& WithLicenseArns(const Aws::Vector<Aws::String>& value) { SetLicenseArns(value); return *this;}
 
     /**
-     * <p>License Manager License ARNs associated with the subscription.</p>
+     * <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
      */
     inline EksAnywhereSubscription& WithLicenseArns(Aws::Vector<Aws::String>&& value) { SetLicenseArns(std::move(value)); return *this;}
 
     /**
-     * <p>License Manager License ARNs associated with the subscription.</p>
+     * <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
      */
     inline EksAnywhereSubscription& AddLicenseArns(const Aws::String& value) { m_licenseArnsHasBeenSet = true; m_licenseArns.push_back(value); return *this; }
 
     /**
-     * <p>License Manager License ARNs associated with the subscription.</p>
+     * <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
      */
     inline EksAnywhereSubscription& AddLicenseArns(Aws::String&& value) { m_licenseArnsHasBeenSet = true; m_licenseArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>License Manager License ARNs associated with the subscription.</p>
+     * <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
      */
     inline EksAnywhereSubscription& AddLicenseArns(const char* value) { m_licenseArnsHasBeenSet = true; m_licenseArns.push_back(value); return *this; }
 

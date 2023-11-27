@@ -32,6 +32,8 @@ namespace Aws
         static const int IOPS_OPTIMIZATION_HASH = HashingUtils::HashString("IOPS_OPTIMIZATION");
         static const int STORAGE_TYPE_OPTIMIZATION_HASH = HashingUtils::HashString("STORAGE_TYPE_OPTIMIZATION");
         static const int MISCONFIGURED_STATE_RECOVERY_HASH = HashingUtils::HashString("MISCONFIGURED_STATE_RECOVERY");
+        static const int VOLUME_UPDATE_WITH_SNAPSHOT_HASH = HashingUtils::HashString("VOLUME_UPDATE_WITH_SNAPSHOT");
+        static const int VOLUME_INITIALIZE_WITH_SNAPSHOT_HASH = HashingUtils::HashString("VOLUME_INITIALIZE_WITH_SNAPSHOT");
 
 
         AdministrativeActionType GetAdministrativeActionTypeForName(const Aws::String& name)
@@ -85,6 +87,14 @@ namespace Aws
           {
             return AdministrativeActionType::MISCONFIGURED_STATE_RECOVERY;
           }
+          else if (hashCode == VOLUME_UPDATE_WITH_SNAPSHOT_HASH)
+          {
+            return AdministrativeActionType::VOLUME_UPDATE_WITH_SNAPSHOT;
+          }
+          else if (hashCode == VOLUME_INITIALIZE_WITH_SNAPSHOT_HASH)
+          {
+            return AdministrativeActionType::VOLUME_INITIALIZE_WITH_SNAPSHOT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -125,6 +135,10 @@ namespace Aws
             return "STORAGE_TYPE_OPTIMIZATION";
           case AdministrativeActionType::MISCONFIGURED_STATE_RECOVERY:
             return "MISCONFIGURED_STATE_RECOVERY";
+          case AdministrativeActionType::VOLUME_UPDATE_WITH_SNAPSHOT:
+            return "VOLUME_UPDATE_WITH_SNAPSHOT";
+          case AdministrativeActionType::VOLUME_INITIALIZE_WITH_SNAPSHOT:
+            return "VOLUME_INITIALIZE_WITH_SNAPSHOT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

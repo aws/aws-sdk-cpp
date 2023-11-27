@@ -42,98 +42,106 @@ namespace Model
 
     /**
      * <p> The Amazon Web Services account ID that created the S3 resource that you're
-     * trying to add tags to. </p>
+     * trying to add tags to or the requester's account ID. </p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
      * <p> The Amazon Web Services account ID that created the S3 resource that you're
-     * trying to add tags to. </p>
+     * trying to add tags to or the requester's account ID. </p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
      * <p> The Amazon Web Services account ID that created the S3 resource that you're
-     * trying to add tags to. </p>
+     * trying to add tags to or the requester's account ID. </p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
      * <p> The Amazon Web Services account ID that created the S3 resource that you're
-     * trying to add tags to. </p>
+     * trying to add tags to or the requester's account ID. </p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p> The Amazon Web Services account ID that created the S3 resource that you're
-     * trying to add tags to. </p>
+     * trying to add tags to or the requester's account ID. </p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
      * <p> The Amazon Web Services account ID that created the S3 resource that you're
-     * trying to add tags to. </p>
+     * trying to add tags to or the requester's account ID. </p>
      */
     inline TagResourceRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
      * <p> The Amazon Web Services account ID that created the S3 resource that you're
-     * trying to add tags to. </p>
+     * trying to add tags to or the requester's account ID. </p>
      */
     inline TagResourceRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p> The Amazon Web Services account ID that created the S3 resource that you're
-     * trying to add tags to. </p>
+     * trying to add tags to or the requester's account ID. </p>
      */
     inline TagResourceRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the S3 resource that you're trying to add
-     * tags to. </p>
+     * <p>The Amazon Resource Name (ARN) of the S3 resource that you're trying to add
+     * tags to. The tagged resource can be an S3 Storage Lens group or S3 Access Grants
+     * instance, registered location, or grant.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the S3 resource that you're trying to add
-     * tags to. </p>
+     * <p>The Amazon Resource Name (ARN) of the S3 resource that you're trying to add
+     * tags to. The tagged resource can be an S3 Storage Lens group or S3 Access Grants
+     * instance, registered location, or grant.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the S3 resource that you're trying to add
-     * tags to. </p>
+     * <p>The Amazon Resource Name (ARN) of the S3 resource that you're trying to add
+     * tags to. The tagged resource can be an S3 Storage Lens group or S3 Access Grants
+     * instance, registered location, or grant.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the S3 resource that you're trying to add
-     * tags to. </p>
+     * <p>The Amazon Resource Name (ARN) of the S3 resource that you're trying to add
+     * tags to. The tagged resource can be an S3 Storage Lens group or S3 Access Grants
+     * instance, registered location, or grant.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the S3 resource that you're trying to add
-     * tags to. </p>
+     * <p>The Amazon Resource Name (ARN) of the S3 resource that you're trying to add
+     * tags to. The tagged resource can be an S3 Storage Lens group or S3 Access Grants
+     * instance, registered location, or grant.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the S3 resource that you're trying to add
-     * tags to. </p>
+     * <p>The Amazon Resource Name (ARN) of the S3 resource that you're trying to add
+     * tags to. The tagged resource can be an S3 Storage Lens group or S3 Access Grants
+     * instance, registered location, or grant.</p>
      */
     inline TagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the S3 resource that you're trying to add
-     * tags to. </p>
+     * <p>The Amazon Resource Name (ARN) of the S3 resource that you're trying to add
+     * tags to. The tagged resource can be an S3 Storage Lens group or S3 Access Grants
+     * instance, registered location, or grant.</p>
      */
     inline TagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the S3 resource that you're trying to add
-     * tags to. </p>
+     * <p>The Amazon Resource Name (ARN) of the S3 resource that you're trying to add
+     * tags to. The tagged resource can be an S3 Storage Lens group or S3 Access Grants
+     * instance, registered location, or grant.</p>
      */
     inline TagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

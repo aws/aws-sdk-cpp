@@ -26,12 +26,15 @@
 #include <aws/lakeformation/model/CommitTransactionResult.h>
 #include <aws/lakeformation/model/CreateDataCellsFilterResult.h>
 #include <aws/lakeformation/model/CreateLFTagResult.h>
+#include <aws/lakeformation/model/CreateLakeFormationIdentityCenterConfigurationResult.h>
 #include <aws/lakeformation/model/CreateLakeFormationOptInResult.h>
 #include <aws/lakeformation/model/DeleteDataCellsFilterResult.h>
 #include <aws/lakeformation/model/DeleteLFTagResult.h>
+#include <aws/lakeformation/model/DeleteLakeFormationIdentityCenterConfigurationResult.h>
 #include <aws/lakeformation/model/DeleteLakeFormationOptInResult.h>
 #include <aws/lakeformation/model/DeleteObjectsOnCancelResult.h>
 #include <aws/lakeformation/model/DeregisterResourceResult.h>
+#include <aws/lakeformation/model/DescribeLakeFormationIdentityCenterConfigurationResult.h>
 #include <aws/lakeformation/model/DescribeResourceResult.h>
 #include <aws/lakeformation/model/DescribeTransactionResult.h>
 #include <aws/lakeformation/model/ExtendTransactionResult.h>
@@ -65,6 +68,7 @@
 #include <aws/lakeformation/model/StartTransactionResult.h>
 #include <aws/lakeformation/model/UpdateDataCellsFilterResult.h>
 #include <aws/lakeformation/model/UpdateLFTagResult.h>
+#include <aws/lakeformation/model/UpdateLakeFormationIdentityCenterConfigurationResult.h>
 #include <aws/lakeformation/model/UpdateResourceResult.h>
 #include <aws/lakeformation/model/UpdateTableObjectsResult.h>
 #include <aws/lakeformation/model/UpdateTableStorageOptimizerResult.h>
@@ -116,12 +120,15 @@ namespace Aws
       class CommitTransactionRequest;
       class CreateDataCellsFilterRequest;
       class CreateLFTagRequest;
+      class CreateLakeFormationIdentityCenterConfigurationRequest;
       class CreateLakeFormationOptInRequest;
       class DeleteDataCellsFilterRequest;
       class DeleteLFTagRequest;
+      class DeleteLakeFormationIdentityCenterConfigurationRequest;
       class DeleteLakeFormationOptInRequest;
       class DeleteObjectsOnCancelRequest;
       class DeregisterResourceRequest;
+      class DescribeLakeFormationIdentityCenterConfigurationRequest;
       class DescribeResourceRequest;
       class DescribeTransactionRequest;
       class ExtendTransactionRequest;
@@ -155,6 +162,7 @@ namespace Aws
       class StartTransactionRequest;
       class UpdateDataCellsFilterRequest;
       class UpdateLFTagRequest;
+      class UpdateLakeFormationIdentityCenterConfigurationRequest;
       class UpdateResourceRequest;
       class UpdateTableObjectsRequest;
       class UpdateTableStorageOptimizerRequest;
@@ -169,12 +177,15 @@ namespace Aws
       typedef Aws::Utils::Outcome<CommitTransactionResult, LakeFormationError> CommitTransactionOutcome;
       typedef Aws::Utils::Outcome<CreateDataCellsFilterResult, LakeFormationError> CreateDataCellsFilterOutcome;
       typedef Aws::Utils::Outcome<CreateLFTagResult, LakeFormationError> CreateLFTagOutcome;
+      typedef Aws::Utils::Outcome<CreateLakeFormationIdentityCenterConfigurationResult, LakeFormationError> CreateLakeFormationIdentityCenterConfigurationOutcome;
       typedef Aws::Utils::Outcome<CreateLakeFormationOptInResult, LakeFormationError> CreateLakeFormationOptInOutcome;
       typedef Aws::Utils::Outcome<DeleteDataCellsFilterResult, LakeFormationError> DeleteDataCellsFilterOutcome;
       typedef Aws::Utils::Outcome<DeleteLFTagResult, LakeFormationError> DeleteLFTagOutcome;
+      typedef Aws::Utils::Outcome<DeleteLakeFormationIdentityCenterConfigurationResult, LakeFormationError> DeleteLakeFormationIdentityCenterConfigurationOutcome;
       typedef Aws::Utils::Outcome<DeleteLakeFormationOptInResult, LakeFormationError> DeleteLakeFormationOptInOutcome;
       typedef Aws::Utils::Outcome<DeleteObjectsOnCancelResult, LakeFormationError> DeleteObjectsOnCancelOutcome;
       typedef Aws::Utils::Outcome<DeregisterResourceResult, LakeFormationError> DeregisterResourceOutcome;
+      typedef Aws::Utils::Outcome<DescribeLakeFormationIdentityCenterConfigurationResult, LakeFormationError> DescribeLakeFormationIdentityCenterConfigurationOutcome;
       typedef Aws::Utils::Outcome<DescribeResourceResult, LakeFormationError> DescribeResourceOutcome;
       typedef Aws::Utils::Outcome<DescribeTransactionResult, LakeFormationError> DescribeTransactionOutcome;
       typedef Aws::Utils::Outcome<ExtendTransactionResult, LakeFormationError> ExtendTransactionOutcome;
@@ -208,6 +219,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StartTransactionResult, LakeFormationError> StartTransactionOutcome;
       typedef Aws::Utils::Outcome<UpdateDataCellsFilterResult, LakeFormationError> UpdateDataCellsFilterOutcome;
       typedef Aws::Utils::Outcome<UpdateLFTagResult, LakeFormationError> UpdateLFTagOutcome;
+      typedef Aws::Utils::Outcome<UpdateLakeFormationIdentityCenterConfigurationResult, LakeFormationError> UpdateLakeFormationIdentityCenterConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateResourceResult, LakeFormationError> UpdateResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateTableObjectsResult, LakeFormationError> UpdateTableObjectsOutcome;
       typedef Aws::Utils::Outcome<UpdateTableStorageOptimizerResult, LakeFormationError> UpdateTableStorageOptimizerOutcome;
@@ -222,12 +234,15 @@ namespace Aws
       typedef std::future<CommitTransactionOutcome> CommitTransactionOutcomeCallable;
       typedef std::future<CreateDataCellsFilterOutcome> CreateDataCellsFilterOutcomeCallable;
       typedef std::future<CreateLFTagOutcome> CreateLFTagOutcomeCallable;
+      typedef std::future<CreateLakeFormationIdentityCenterConfigurationOutcome> CreateLakeFormationIdentityCenterConfigurationOutcomeCallable;
       typedef std::future<CreateLakeFormationOptInOutcome> CreateLakeFormationOptInOutcomeCallable;
       typedef std::future<DeleteDataCellsFilterOutcome> DeleteDataCellsFilterOutcomeCallable;
       typedef std::future<DeleteLFTagOutcome> DeleteLFTagOutcomeCallable;
+      typedef std::future<DeleteLakeFormationIdentityCenterConfigurationOutcome> DeleteLakeFormationIdentityCenterConfigurationOutcomeCallable;
       typedef std::future<DeleteLakeFormationOptInOutcome> DeleteLakeFormationOptInOutcomeCallable;
       typedef std::future<DeleteObjectsOnCancelOutcome> DeleteObjectsOnCancelOutcomeCallable;
       typedef std::future<DeregisterResourceOutcome> DeregisterResourceOutcomeCallable;
+      typedef std::future<DescribeLakeFormationIdentityCenterConfigurationOutcome> DescribeLakeFormationIdentityCenterConfigurationOutcomeCallable;
       typedef std::future<DescribeResourceOutcome> DescribeResourceOutcomeCallable;
       typedef std::future<DescribeTransactionOutcome> DescribeTransactionOutcomeCallable;
       typedef std::future<ExtendTransactionOutcome> ExtendTransactionOutcomeCallable;
@@ -261,6 +276,7 @@ namespace Aws
       typedef std::future<StartTransactionOutcome> StartTransactionOutcomeCallable;
       typedef std::future<UpdateDataCellsFilterOutcome> UpdateDataCellsFilterOutcomeCallable;
       typedef std::future<UpdateLFTagOutcome> UpdateLFTagOutcomeCallable;
+      typedef std::future<UpdateLakeFormationIdentityCenterConfigurationOutcome> UpdateLakeFormationIdentityCenterConfigurationOutcomeCallable;
       typedef std::future<UpdateResourceOutcome> UpdateResourceOutcomeCallable;
       typedef std::future<UpdateTableObjectsOutcome> UpdateTableObjectsOutcomeCallable;
       typedef std::future<UpdateTableStorageOptimizerOutcome> UpdateTableStorageOptimizerOutcomeCallable;
@@ -278,12 +294,15 @@ namespace Aws
     typedef std::function<void(const LakeFormationClient*, const Model::CommitTransactionRequest&, const Model::CommitTransactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CommitTransactionResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::CreateDataCellsFilterRequest&, const Model::CreateDataCellsFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataCellsFilterResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::CreateLFTagRequest&, const Model::CreateLFTagOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLFTagResponseReceivedHandler;
+    typedef std::function<void(const LakeFormationClient*, const Model::CreateLakeFormationIdentityCenterConfigurationRequest&, const Model::CreateLakeFormationIdentityCenterConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLakeFormationIdentityCenterConfigurationResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::CreateLakeFormationOptInRequest&, const Model::CreateLakeFormationOptInOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLakeFormationOptInResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::DeleteDataCellsFilterRequest&, const Model::DeleteDataCellsFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataCellsFilterResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::DeleteLFTagRequest&, const Model::DeleteLFTagOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLFTagResponseReceivedHandler;
+    typedef std::function<void(const LakeFormationClient*, const Model::DeleteLakeFormationIdentityCenterConfigurationRequest&, const Model::DeleteLakeFormationIdentityCenterConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLakeFormationIdentityCenterConfigurationResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::DeleteLakeFormationOptInRequest&, const Model::DeleteLakeFormationOptInOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLakeFormationOptInResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::DeleteObjectsOnCancelRequest&, const Model::DeleteObjectsOnCancelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteObjectsOnCancelResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::DeregisterResourceRequest&, const Model::DeregisterResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterResourceResponseReceivedHandler;
+    typedef std::function<void(const LakeFormationClient*, const Model::DescribeLakeFormationIdentityCenterConfigurationRequest&, const Model::DescribeLakeFormationIdentityCenterConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLakeFormationIdentityCenterConfigurationResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::DescribeResourceRequest&, const Model::DescribeResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourceResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::DescribeTransactionRequest&, const Model::DescribeTransactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransactionResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::ExtendTransactionRequest&, const Model::ExtendTransactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExtendTransactionResponseReceivedHandler;
@@ -317,6 +336,7 @@ namespace Aws
     typedef std::function<void(const LakeFormationClient*, const Model::StartTransactionRequest&, const Model::StartTransactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTransactionResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::UpdateDataCellsFilterRequest&, const Model::UpdateDataCellsFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataCellsFilterResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::UpdateLFTagRequest&, const Model::UpdateLFTagOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLFTagResponseReceivedHandler;
+    typedef std::function<void(const LakeFormationClient*, const Model::UpdateLakeFormationIdentityCenterConfigurationRequest&, const Model::UpdateLakeFormationIdentityCenterConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLakeFormationIdentityCenterConfigurationResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::UpdateResourceRequest&, const Model::UpdateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::UpdateTableObjectsRequest&, const Model::UpdateTableObjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableObjectsResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::UpdateTableStorageOptimizerRequest&, const Model::UpdateTableStorageOptimizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableStorageOptimizerResponseReceivedHandler;

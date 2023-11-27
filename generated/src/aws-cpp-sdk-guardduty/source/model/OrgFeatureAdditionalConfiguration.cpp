@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int EKS_ADDON_MANAGEMENT_HASH = HashingUtils::HashString("EKS_ADDON_MANAGEMENT");
+        static const int ECS_FARGATE_AGENT_MANAGEMENT_HASH = HashingUtils::HashString("ECS_FARGATE_AGENT_MANAGEMENT");
 
 
         OrgFeatureAdditionalConfiguration GetOrgFeatureAdditionalConfigurationForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == EKS_ADDON_MANAGEMENT_HASH)
           {
             return OrgFeatureAdditionalConfiguration::EKS_ADDON_MANAGEMENT;
+          }
+          else if (hashCode == ECS_FARGATE_AGENT_MANAGEMENT_HASH)
+          {
+            return OrgFeatureAdditionalConfiguration::ECS_FARGATE_AGENT_MANAGEMENT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case OrgFeatureAdditionalConfiguration::EKS_ADDON_MANAGEMENT:
             return "EKS_ADDON_MANAGEMENT";
+          case OrgFeatureAdditionalConfiguration::ECS_FARGATE_AGENT_MANAGEMENT:
+            return "ECS_FARGATE_AGENT_MANAGEMENT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

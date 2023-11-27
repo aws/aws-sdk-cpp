@@ -27,6 +27,10 @@ namespace Aws
         static const int ADDON_VERSION_HASH = HashingUtils::HashString("ADDON_VERSION");
         static const int MANAGEMENT_TYPE_HASH = HashingUtils::HashString("MANAGEMENT_TYPE");
         static const int EKS_CLUSTER_NAME_HASH = HashingUtils::HashString("EKS_CLUSTER_NAME");
+        static const int ECS_CLUSTER_NAME_HASH = HashingUtils::HashString("ECS_CLUSTER_NAME");
+        static const int AGENT_VERSION_HASH = HashingUtils::HashString("AGENT_VERSION");
+        static const int INSTANCE_ID_HASH = HashingUtils::HashString("INSTANCE_ID");
+        static const int CLUSTER_ARN_HASH = HashingUtils::HashString("CLUSTER_ARN");
 
 
         CoverageFilterCriterionKey GetCoverageFilterCriterionKeyForName(const Aws::String& name)
@@ -60,6 +64,22 @@ namespace Aws
           {
             return CoverageFilterCriterionKey::EKS_CLUSTER_NAME;
           }
+          else if (hashCode == ECS_CLUSTER_NAME_HASH)
+          {
+            return CoverageFilterCriterionKey::ECS_CLUSTER_NAME;
+          }
+          else if (hashCode == AGENT_VERSION_HASH)
+          {
+            return CoverageFilterCriterionKey::AGENT_VERSION;
+          }
+          else if (hashCode == INSTANCE_ID_HASH)
+          {
+            return CoverageFilterCriterionKey::INSTANCE_ID;
+          }
+          else if (hashCode == CLUSTER_ARN_HASH)
+          {
+            return CoverageFilterCriterionKey::CLUSTER_ARN;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +110,14 @@ namespace Aws
             return "MANAGEMENT_TYPE";
           case CoverageFilterCriterionKey::EKS_CLUSTER_NAME:
             return "EKS_CLUSTER_NAME";
+          case CoverageFilterCriterionKey::ECS_CLUSTER_NAME:
+            return "ECS_CLUSTER_NAME";
+          case CoverageFilterCriterionKey::AGENT_VERSION:
+            return "AGENT_VERSION";
+          case CoverageFilterCriterionKey::INSTANCE_ID:
+            return "INSTANCE_ID";
+          case CoverageFilterCriterionKey::CLUSTER_ARN:
+            return "CLUSTER_ARN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -141,6 +141,27 @@ namespace Model
      */
     inline AuthorizeDataShareRequest& WithConsumerIdentifier(const char* value) { SetConsumerIdentifier(value); return *this;}
 
+
+    /**
+     * <p>If set to true, allows write operations for a datashare.</p>
+     */
+    inline bool GetAllowWrites() const{ return m_allowWrites; }
+
+    /**
+     * <p>If set to true, allows write operations for a datashare.</p>
+     */
+    inline bool AllowWritesHasBeenSet() const { return m_allowWritesHasBeenSet; }
+
+    /**
+     * <p>If set to true, allows write operations for a datashare.</p>
+     */
+    inline void SetAllowWrites(bool value) { m_allowWritesHasBeenSet = true; m_allowWrites = value; }
+
+    /**
+     * <p>If set to true, allows write operations for a datashare.</p>
+     */
+    inline AuthorizeDataShareRequest& WithAllowWrites(bool value) { SetAllowWrites(value); return *this;}
+
   private:
 
     Aws::String m_dataShareArn;
@@ -148,6 +169,9 @@ namespace Model
 
     Aws::String m_consumerIdentifier;
     bool m_consumerIdentifierHasBeenSet = false;
+
+    bool m_allowWrites;
+    bool m_allowWritesHasBeenSet = false;
   };
 
 } // namespace Model

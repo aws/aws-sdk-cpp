@@ -131,42 +131,42 @@ namespace Model
     /**
      * <p>Determines whether the vote percentage must be greater than the
      * <code>ThresholdPercentage</code> or must be greater than or equal to the
-     * <code>ThreholdPercentage</code> to be approved.</p>
+     * <code>ThresholdPercentage</code> to be approved.</p>
      */
     inline const ThresholdComparator& GetThresholdComparator() const{ return m_thresholdComparator; }
 
     /**
      * <p>Determines whether the vote percentage must be greater than the
      * <code>ThresholdPercentage</code> or must be greater than or equal to the
-     * <code>ThreholdPercentage</code> to be approved.</p>
+     * <code>ThresholdPercentage</code> to be approved.</p>
      */
     inline bool ThresholdComparatorHasBeenSet() const { return m_thresholdComparatorHasBeenSet; }
 
     /**
      * <p>Determines whether the vote percentage must be greater than the
      * <code>ThresholdPercentage</code> or must be greater than or equal to the
-     * <code>ThreholdPercentage</code> to be approved.</p>
+     * <code>ThresholdPercentage</code> to be approved.</p>
      */
     inline void SetThresholdComparator(const ThresholdComparator& value) { m_thresholdComparatorHasBeenSet = true; m_thresholdComparator = value; }
 
     /**
      * <p>Determines whether the vote percentage must be greater than the
      * <code>ThresholdPercentage</code> or must be greater than or equal to the
-     * <code>ThreholdPercentage</code> to be approved.</p>
+     * <code>ThresholdPercentage</code> to be approved.</p>
      */
     inline void SetThresholdComparator(ThresholdComparator&& value) { m_thresholdComparatorHasBeenSet = true; m_thresholdComparator = std::move(value); }
 
     /**
      * <p>Determines whether the vote percentage must be greater than the
      * <code>ThresholdPercentage</code> or must be greater than or equal to the
-     * <code>ThreholdPercentage</code> to be approved.</p>
+     * <code>ThresholdPercentage</code> to be approved.</p>
      */
     inline ApprovalThresholdPolicy& WithThresholdComparator(const ThresholdComparator& value) { SetThresholdComparator(value); return *this;}
 
     /**
      * <p>Determines whether the vote percentage must be greater than the
      * <code>ThresholdPercentage</code> or must be greater than or equal to the
-     * <code>ThreholdPercentage</code> to be approved.</p>
+     * <code>ThresholdPercentage</code> to be approved.</p>
      */
     inline ApprovalThresholdPolicy& WithThresholdComparator(ThresholdComparator&& value) { SetThresholdComparator(std::move(value)); return *this;}
 

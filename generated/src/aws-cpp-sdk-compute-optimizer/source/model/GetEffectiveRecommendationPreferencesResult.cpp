@@ -18,12 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetEffectiveRecommendationPreferencesResult::GetEffectiveRecommendationPreferencesResult() : 
-    m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET)
+    m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
+    m_lookBackPeriod(LookBackPeriodPreference::NOT_SET)
 {
 }
 
 GetEffectiveRecommendationPreferencesResult::GetEffectiveRecommendationPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET)
+    m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
+    m_lookBackPeriod(LookBackPeriodPreference::NOT_SET)
 {
   *this = result;
 }
@@ -41,6 +43,30 @@ GetEffectiveRecommendationPreferencesResult& GetEffectiveRecommendationPreferenc
   {
     m_externalMetricsPreference = jsonValue.GetObject("externalMetricsPreference");
 
+  }
+
+  if(jsonValue.ValueExists("lookBackPeriod"))
+  {
+    m_lookBackPeriod = LookBackPeriodPreferenceMapper::GetLookBackPeriodPreferenceForName(jsonValue.GetString("lookBackPeriod"));
+
+  }
+
+  if(jsonValue.ValueExists("utilizationPreferences"))
+  {
+    Aws::Utils::Array<JsonView> utilizationPreferencesJsonList = jsonValue.GetArray("utilizationPreferences");
+    for(unsigned utilizationPreferencesIndex = 0; utilizationPreferencesIndex < utilizationPreferencesJsonList.GetLength(); ++utilizationPreferencesIndex)
+    {
+      m_utilizationPreferences.push_back(utilizationPreferencesJsonList[utilizationPreferencesIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("preferredResources"))
+  {
+    Aws::Utils::Array<JsonView> preferredResourcesJsonList = jsonValue.GetArray("preferredResources");
+    for(unsigned preferredResourcesIndex = 0; preferredResourcesIndex < preferredResourcesJsonList.GetLength(); ++preferredResourcesIndex)
+    {
+      m_preferredResources.push_back(preferredResourcesJsonList[preferredResourcesIndex].AsObject());
+    }
   }
 
 

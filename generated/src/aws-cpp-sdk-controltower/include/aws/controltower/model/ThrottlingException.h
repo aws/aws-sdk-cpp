@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> Request was denied due to request throttling.</p><p><h3>See Also:</h3>   <a
+   * <p>Request was denied due to request throttling.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ThrottlingException">AWS
    * API Reference</a></p>
    */

@@ -198,8 +198,7 @@ namespace CloudWatchLogs
          * already created.</p> <p>Only some Amazon Web Services services support being
          * configured as a delivery source using this operation. These services are listed
          * as <b>Supported [V2 Permissions]</b> in the table at <a
-         * href="https://docs.aws.amazon.com/
-         * AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
          * logging from Amazon Web Services services.</a> </p> <p>A delivery destination
          * can represent a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery
          * stream in Kinesis Data Firehose.</p> <p>To configure logs delivery between a
@@ -288,6 +287,53 @@ namespace CloudWatchLogs
         void CreateExportTaskAsync(const CreateExportTaskRequestT& request, const CreateExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudWatchLogsClient::CreateExportTask, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an <i>anomaly detector</i> that regularly scans one or more log
+         * groups and look for patterns and anomalies in the logs.</p> <p>An anomaly
+         * detector can help surface issues by automatically discovering anomalies in your
+         * log event traffic. An anomaly detector uses machine learning algorithms to scan
+         * log events and find <i>patterns</i>. A pattern is a shared text structure that
+         * recurs among your log fields. Patterns provide a useful tool for analyzing large
+         * sets of logs because a large number of log events can often be compressed into a
+         * few patterns.</p> <p>The anomaly detector uses pattern recognition to find
+         * <code>anomalies</code>, which are unusual log events. It uses the
+         * <code>evaluationFrequency</code> to compare current log events and patterns with
+         * trained baselines. </p> <p>Fields within a pattern are called <i>tokens</i>.
+         * Fields that vary within a pattern, such as a request ID or timestamp, are
+         * referred to as <i>dynamic tokens</i> and represented by <code>&lt;*&gt;</code>.
+         * </p> <p>The following is an example of a pattern:</p> <p> <code>[INFO] Request
+         * time: &lt;*&gt; ms</code> </p> <p>This pattern represents log events like
+         * <code>[INFO] Request time: 327 ms</code> and other similar log events that
+         * differ only by the number, in this csse 327. When the pattern is displayed, the
+         * different numbers are replaced by <code>&lt;*&gt;</code> </p>  <p>Any
+         * parts of log events that are masked as sensitive data are not scanned for
+         * anomalies. For more information about masking sensitive data, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Help
+         * protect sensitive log data with masking</a>. </p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogAnomalyDetector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLogAnomalyDetectorOutcome CreateLogAnomalyDetector(const Model::CreateLogAnomalyDetectorRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLogAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateLogAnomalyDetectorRequestT = Model::CreateLogAnomalyDetectorRequest>
+        Model::CreateLogAnomalyDetectorOutcomeCallable CreateLogAnomalyDetectorCallable(const CreateLogAnomalyDetectorRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::CreateLogAnomalyDetector, request);
+        }
+
+        /**
+         * An Async wrapper for CreateLogAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateLogAnomalyDetectorRequestT = Model::CreateLogAnomalyDetectorRequest>
+        void CreateLogAnomalyDetectorAsync(const CreateLogAnomalyDetectorRequestT& request, const CreateLogAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::CreateLogAnomalyDetector, request, handler, context);
         }
 
         /**
@@ -571,6 +617,32 @@ namespace CloudWatchLogs
         void DeleteDestinationAsync(const DeleteDestinationRequestT& request, const DeleteDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudWatchLogsClient::DeleteDestination, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified CloudWatch Logs anomaly detector.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogAnomalyDetector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLogAnomalyDetectorOutcome DeleteLogAnomalyDetector(const Model::DeleteLogAnomalyDetectorRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLogAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteLogAnomalyDetectorRequestT = Model::DeleteLogAnomalyDetectorRequest>
+        Model::DeleteLogAnomalyDetectorOutcomeCallable DeleteLogAnomalyDetectorCallable(const DeleteLogAnomalyDetectorRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::DeleteLogAnomalyDetector, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteLogAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteLogAnomalyDetectorRequestT = Model::DeleteLogAnomalyDetectorRequest>
+        void DeleteLogAnomalyDetectorAsync(const DeleteLogAnomalyDetectorRequestT& request, const DeleteLogAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::DeleteLogAnomalyDetector, request, handler, context);
         }
 
         /**
@@ -1350,6 +1422,32 @@ namespace CloudWatchLogs
         }
 
         /**
+         * <p>Retrieves information about the log anomaly detector that you
+         * specify.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogAnomalyDetector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLogAnomalyDetectorOutcome GetLogAnomalyDetector(const Model::GetLogAnomalyDetectorRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetLogAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetLogAnomalyDetectorRequestT = Model::GetLogAnomalyDetectorRequest>
+        Model::GetLogAnomalyDetectorOutcomeCallable GetLogAnomalyDetectorCallable(const GetLogAnomalyDetectorRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::GetLogAnomalyDetector, request);
+        }
+
+        /**
+         * An Async wrapper for GetLogAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetLogAnomalyDetectorRequestT = Model::GetLogAnomalyDetectorRequest>
+        void GetLogAnomalyDetectorAsync(const GetLogAnomalyDetectorRequestT& request, const GetLogAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::GetLogAnomalyDetector, request, handler, context);
+        }
+
+        /**
          * <p>Lists log events from the specified log stream. You can list all of the log
          * events or filter using a time range.</p> <p>By default, this operation returns
          * as many log events as can fit in a response size of 1MB (up to 10,000 log
@@ -1498,6 +1596,59 @@ namespace CloudWatchLogs
         void GetQueryResultsAsync(const GetQueryResultsRequestT& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudWatchLogsClient::GetQueryResults, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of anomalies that log anomaly detectors have found. For
+         * details about the structure format of each anomaly object that is returned, see
+         * the example in this section.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListAnomalies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAnomaliesOutcome ListAnomalies(const Model::ListAnomaliesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAnomalies that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAnomaliesRequestT = Model::ListAnomaliesRequest>
+        Model::ListAnomaliesOutcomeCallable ListAnomaliesCallable(const ListAnomaliesRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::ListAnomalies, request);
+        }
+
+        /**
+         * An Async wrapper for ListAnomalies that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAnomaliesRequestT = Model::ListAnomaliesRequest>
+        void ListAnomaliesAsync(const ListAnomaliesRequestT& request, const ListAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::ListAnomalies, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of the log anomaly detectors in the account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListLogAnomalyDetectors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLogAnomalyDetectorsOutcome ListLogAnomalyDetectors(const Model::ListLogAnomalyDetectorsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListLogAnomalyDetectors that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListLogAnomalyDetectorsRequestT = Model::ListLogAnomalyDetectorsRequest>
+        Model::ListLogAnomalyDetectorsOutcomeCallable ListLogAnomalyDetectorsCallable(const ListLogAnomalyDetectorsRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::ListLogAnomalyDetectors, request);
+        }
+
+        /**
+         * An Async wrapper for ListLogAnomalyDetectors that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListLogAnomalyDetectorsRequestT = Model::ListLogAnomalyDetectorsRequest>
+        void ListLogAnomalyDetectorsAsync(const ListLogAnomalyDetectorsRequestT& request, const ListLogAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::ListLogAnomalyDetectors, request, handler, context);
         }
 
         /**
@@ -1662,8 +1813,8 @@ namespace CloudWatchLogs
          * multiple deliveries to configure multiple delivery sources to send logs to the
          * same delivery destination.</p> <p>Only some Amazon Web Services services support
          * being configured as a delivery source. These services are listed as <b>Supported
-         * [V2 Permissions]</b> in the table at <a href="https://docs.aws.amazon.com/
-         * AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+         * [V2 Permissions]</b> in the table at <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
          * logging from Amazon Web Services services.</a> </p> <p>If you use this operation
          * to update an existing delivery destination, all the current delivery destination
          * parameters are overwritten with the new parameter values that you
@@ -1710,8 +1861,8 @@ namespace CloudWatchLogs
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.</p>
          * </li> </ul> <p>Only some Amazon Web Services services support being configured
          * as a delivery source. These services are listed as <b>Supported [V2
-         * Permissions]</b> in the table at <a href="https://docs.aws.amazon.com/
-         * AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+         * Permissions]</b> in the table at <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
          * logging from Amazon Web Services services.</a> </p> <p>The contents of the
          * policy must include two statements. One statement enables general logs delivery,
          * and the other allows delivery to the chosen destination. See the examples for
@@ -1764,8 +1915,8 @@ namespace CloudWatchLogs
          * multiple deliveries to configure multiple delivery sources to send logs to the
          * same delivery destination.</p> <p>Only some Amazon Web Services services support
          * being configured as a delivery source. These services are listed as <b>Supported
-         * [V2 Permissions]</b> in the table at <a href="https://docs.aws.amazon.com/
-         * AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+         * [V2 Permissions]</b> in the table at <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
          * logging from Amazon Web Services services.</a> </p> <p>If you use this operation
          * to update an existing delivery source, all the current delivery source
          * parameters are overwritten with the new parameter values that you
@@ -2273,6 +2424,66 @@ namespace CloudWatchLogs
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudWatchLogsClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Use this operation to <i>suppress</i> anomaly detection for a specified
+         * anomaly or pattern. If you suppress an anomaly, CloudWatch Logs won’t report new
+         * occurrences of that anomaly and won't update that anomaly with new data. If you
+         * suppress a pattern, CloudWatch Logs won’t report any anomalies related to that
+         * pattern.</p> <p>You must specify either <code>anomalyId</code> or
+         * <code>patternId</code>, but you can't specify both parameters in the same
+         * operation.</p> <p>If you have previously used this operation to suppress
+         * detection of a pattern or anomaly, you can use it again to cause CloudWatch Logs
+         * to end the suppression. To do this, use this operation and specify the anomaly
+         * or pattern to stop suppressing, and omit the <code>suppressionType</code> and
+         * <code>suppressionPeriod</code> parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateAnomaly">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAnomalyOutcome UpdateAnomaly(const Model::UpdateAnomalyRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAnomaly that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAnomalyRequestT = Model::UpdateAnomalyRequest>
+        Model::UpdateAnomalyOutcomeCallable UpdateAnomalyCallable(const UpdateAnomalyRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::UpdateAnomaly, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAnomaly that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAnomalyRequestT = Model::UpdateAnomalyRequest>
+        void UpdateAnomalyAsync(const UpdateAnomalyRequestT& request, const UpdateAnomalyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::UpdateAnomaly, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an existing log anomaly detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateLogAnomalyDetector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLogAnomalyDetectorOutcome UpdateLogAnomalyDetector(const Model::UpdateLogAnomalyDetectorRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateLogAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateLogAnomalyDetectorRequestT = Model::UpdateLogAnomalyDetectorRequest>
+        Model::UpdateLogAnomalyDetectorOutcomeCallable UpdateLogAnomalyDetectorCallable(const UpdateLogAnomalyDetectorRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::UpdateLogAnomalyDetector, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateLogAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateLogAnomalyDetectorRequestT = Model::UpdateLogAnomalyDetectorRequest>
+        void UpdateLogAnomalyDetectorAsync(const UpdateLogAnomalyDetectorRequestT& request, const UpdateLogAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::UpdateLogAnomalyDetector, request, handler, context);
         }
 
 

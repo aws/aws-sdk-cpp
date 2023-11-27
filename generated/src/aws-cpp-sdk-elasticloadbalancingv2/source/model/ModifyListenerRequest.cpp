@@ -19,7 +19,8 @@ ModifyListenerRequest::ModifyListenerRequest() :
     m_sslPolicyHasBeenSet(false),
     m_certificatesHasBeenSet(false),
     m_defaultActionsHasBeenSet(false),
-    m_alpnPolicyHasBeenSet(false)
+    m_alpnPolicyHasBeenSet(false),
+    m_mutualAuthenticationHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,11 @@ Aws::String ModifyListenerRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       alpnPolicyCount++;
     }
+  }
+
+  if(m_mutualAuthenticationHasBeenSet)
+  {
+    m_mutualAuthentication.OutputToStream(ss, "MutualAuthentication");
   }
 
   ss << "Version=2015-12-01";

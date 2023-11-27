@@ -598,6 +598,109 @@ namespace Model
      */
     inline OpenZFSVolumeConfiguration& WithDeleteClonedVolumes(bool value) { SetDeleteClonedVolumes(value); return *this;}
 
+
+    /**
+     * <p>A Boolean value indicating whether snapshot data that differs between the
+     * current state and the specified snapshot should be overwritten when a volume is
+     * restored from a snapshot.</p>
+     */
+    inline bool GetDeleteIntermediateData() const{ return m_deleteIntermediateData; }
+
+    /**
+     * <p>A Boolean value indicating whether snapshot data that differs between the
+     * current state and the specified snapshot should be overwritten when a volume is
+     * restored from a snapshot.</p>
+     */
+    inline bool DeleteIntermediateDataHasBeenSet() const { return m_deleteIntermediateDataHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating whether snapshot data that differs between the
+     * current state and the specified snapshot should be overwritten when a volume is
+     * restored from a snapshot.</p>
+     */
+    inline void SetDeleteIntermediateData(bool value) { m_deleteIntermediateDataHasBeenSet = true; m_deleteIntermediateData = value; }
+
+    /**
+     * <p>A Boolean value indicating whether snapshot data that differs between the
+     * current state and the specified snapshot should be overwritten when a volume is
+     * restored from a snapshot.</p>
+     */
+    inline OpenZFSVolumeConfiguration& WithDeleteIntermediateData(bool value) { SetDeleteIntermediateData(value); return *this;}
+
+
+    
+    inline const Aws::String& GetSourceSnapshotARN() const{ return m_sourceSnapshotARN; }
+
+    
+    inline bool SourceSnapshotARNHasBeenSet() const { return m_sourceSnapshotARNHasBeenSet; }
+
+    
+    inline void SetSourceSnapshotARN(const Aws::String& value) { m_sourceSnapshotARNHasBeenSet = true; m_sourceSnapshotARN = value; }
+
+    
+    inline void SetSourceSnapshotARN(Aws::String&& value) { m_sourceSnapshotARNHasBeenSet = true; m_sourceSnapshotARN = std::move(value); }
+
+    
+    inline void SetSourceSnapshotARN(const char* value) { m_sourceSnapshotARNHasBeenSet = true; m_sourceSnapshotARN.assign(value); }
+
+    
+    inline OpenZFSVolumeConfiguration& WithSourceSnapshotARN(const Aws::String& value) { SetSourceSnapshotARN(value); return *this;}
+
+    
+    inline OpenZFSVolumeConfiguration& WithSourceSnapshotARN(Aws::String&& value) { SetSourceSnapshotARN(std::move(value)); return *this;}
+
+    
+    inline OpenZFSVolumeConfiguration& WithSourceSnapshotARN(const char* value) { SetSourceSnapshotARN(value); return *this;}
+
+
+    /**
+     * <p>The ID of the snapshot that's being copied or was most recently copied to the
+     * destination volume.</p>
+     */
+    inline const Aws::String& GetDestinationSnapshot() const{ return m_destinationSnapshot; }
+
+    /**
+     * <p>The ID of the snapshot that's being copied or was most recently copied to the
+     * destination volume.</p>
+     */
+    inline bool DestinationSnapshotHasBeenSet() const { return m_destinationSnapshotHasBeenSet; }
+
+    /**
+     * <p>The ID of the snapshot that's being copied or was most recently copied to the
+     * destination volume.</p>
+     */
+    inline void SetDestinationSnapshot(const Aws::String& value) { m_destinationSnapshotHasBeenSet = true; m_destinationSnapshot = value; }
+
+    /**
+     * <p>The ID of the snapshot that's being copied or was most recently copied to the
+     * destination volume.</p>
+     */
+    inline void SetDestinationSnapshot(Aws::String&& value) { m_destinationSnapshotHasBeenSet = true; m_destinationSnapshot = std::move(value); }
+
+    /**
+     * <p>The ID of the snapshot that's being copied or was most recently copied to the
+     * destination volume.</p>
+     */
+    inline void SetDestinationSnapshot(const char* value) { m_destinationSnapshotHasBeenSet = true; m_destinationSnapshot.assign(value); }
+
+    /**
+     * <p>The ID of the snapshot that's being copied or was most recently copied to the
+     * destination volume.</p>
+     */
+    inline OpenZFSVolumeConfiguration& WithDestinationSnapshot(const Aws::String& value) { SetDestinationSnapshot(value); return *this;}
+
+    /**
+     * <p>The ID of the snapshot that's being copied or was most recently copied to the
+     * destination volume.</p>
+     */
+    inline OpenZFSVolumeConfiguration& WithDestinationSnapshot(Aws::String&& value) { SetDestinationSnapshot(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the snapshot that's being copied or was most recently copied to the
+     * destination volume.</p>
+     */
+    inline OpenZFSVolumeConfiguration& WithDestinationSnapshot(const char* value) { SetDestinationSnapshot(value); return *this;}
+
   private:
 
     Aws::String m_parentVolumeId;
@@ -641,6 +744,15 @@ namespace Model
 
     bool m_deleteClonedVolumes;
     bool m_deleteClonedVolumesHasBeenSet = false;
+
+    bool m_deleteIntermediateData;
+    bool m_deleteIntermediateDataHasBeenSet = false;
+
+    Aws::String m_sourceSnapshotARN;
+    bool m_sourceSnapshotARNHasBeenSet = false;
+
+    Aws::String m_destinationSnapshot;
+    bool m_destinationSnapshotHasBeenSet = false;
   };
 
 } // namespace Model

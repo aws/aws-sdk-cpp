@@ -23,7 +23,8 @@ namespace Model
     containerInsights,
     fargateFIPSMode,
     tagResourceAuthorization,
-    fargateTaskRetirementWaitPeriod
+    fargateTaskRetirementWaitPeriod,
+    guardDutyActivate
   };
 
 namespace SettingNameMapper

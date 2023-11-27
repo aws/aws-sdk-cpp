@@ -87,22 +87,50 @@ namespace Model
 
 
     /**
-     * <p>The total number of SSD IOPS provisioned for the file system.</p>
+     * <p>The total number of SSD IOPS provisioned for the file system.</p> <p>The
+     * minimum and maximum values for this property depend on the value of
+     * <code>HAPairs</code> and <code>StorageCapacity</code>. The minimum value is
+     * calculated as <code>StorageCapacity</code> * 3 * <code>HAPairs</code> (3 IOPS
+     * per GB of <code>StorageCapacity</code>). The maximum value is calculated as
+     * 200,000 * <code>HAPairs</code>.</p> <p>Amazon FSx responds with an HTTP status
+     * code 400 (Bad Request) if the value of <code>Iops</code> is outside of the
+     * minimum or maximum values.</p>
      */
     inline long long GetIops() const{ return m_iops; }
 
     /**
-     * <p>The total number of SSD IOPS provisioned for the file system.</p>
+     * <p>The total number of SSD IOPS provisioned for the file system.</p> <p>The
+     * minimum and maximum values for this property depend on the value of
+     * <code>HAPairs</code> and <code>StorageCapacity</code>. The minimum value is
+     * calculated as <code>StorageCapacity</code> * 3 * <code>HAPairs</code> (3 IOPS
+     * per GB of <code>StorageCapacity</code>). The maximum value is calculated as
+     * 200,000 * <code>HAPairs</code>.</p> <p>Amazon FSx responds with an HTTP status
+     * code 400 (Bad Request) if the value of <code>Iops</code> is outside of the
+     * minimum or maximum values.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
-     * <p>The total number of SSD IOPS provisioned for the file system.</p>
+     * <p>The total number of SSD IOPS provisioned for the file system.</p> <p>The
+     * minimum and maximum values for this property depend on the value of
+     * <code>HAPairs</code> and <code>StorageCapacity</code>. The minimum value is
+     * calculated as <code>StorageCapacity</code> * 3 * <code>HAPairs</code> (3 IOPS
+     * per GB of <code>StorageCapacity</code>). The maximum value is calculated as
+     * 200,000 * <code>HAPairs</code>.</p> <p>Amazon FSx responds with an HTTP status
+     * code 400 (Bad Request) if the value of <code>Iops</code> is outside of the
+     * minimum or maximum values.</p>
      */
     inline void SetIops(long long value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
-     * <p>The total number of SSD IOPS provisioned for the file system.</p>
+     * <p>The total number of SSD IOPS provisioned for the file system.</p> <p>The
+     * minimum and maximum values for this property depend on the value of
+     * <code>HAPairs</code> and <code>StorageCapacity</code>. The minimum value is
+     * calculated as <code>StorageCapacity</code> * 3 * <code>HAPairs</code> (3 IOPS
+     * per GB of <code>StorageCapacity</code>). The maximum value is calculated as
+     * 200,000 * <code>HAPairs</code>.</p> <p>Amazon FSx responds with an HTTP status
+     * code 400 (Bad Request) if the value of <code>Iops</code> is outside of the
+     * minimum or maximum values.</p>
      */
     inline DiskIopsConfiguration& WithIops(long long value) { SetIops(value); return *this;}
 

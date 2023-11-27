@@ -59,18 +59,24 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in PersonalizeEventsClient header */
+      class PutActionInteractionsRequest;
+      class PutActionsRequest;
       class PutEventsRequest;
       class PutItemsRequest;
       class PutUsersRequest;
       /* End of service model forward declarations required in PersonalizeEventsClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeEventsError> PutActionInteractionsOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeEventsError> PutActionsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeEventsError> PutEventsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeEventsError> PutItemsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeEventsError> PutUsersOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<PutActionInteractionsOutcome> PutActionInteractionsOutcomeCallable;
+      typedef std::future<PutActionsOutcome> PutActionsOutcomeCallable;
       typedef std::future<PutEventsOutcome> PutEventsOutcomeCallable;
       typedef std::future<PutItemsOutcome> PutItemsOutcomeCallable;
       typedef std::future<PutUsersOutcome> PutUsersOutcomeCallable;
@@ -80,6 +86,8 @@ namespace Aws
     class PersonalizeEventsClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const PersonalizeEventsClient*, const Model::PutActionInteractionsRequest&, const Model::PutActionInteractionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutActionInteractionsResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeEventsClient*, const Model::PutActionsRequest&, const Model::PutActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutActionsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeEventsClient*, const Model::PutEventsRequest&, const Model::PutEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeEventsClient*, const Model::PutItemsRequest&, const Model::PutItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutItemsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeEventsClient*, const Model::PutUsersRequest&, const Model::PutUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutUsersResponseReceivedHandler;

@@ -7,6 +7,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/SettingName.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/model/SettingType.h>
 #include <utility>
 
 namespace Aws
@@ -166,6 +167,61 @@ namespace Model
      */
     inline Setting& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether Amazon Web Services manages the account setting, or if the
+     * user manages it.</p> <p> <code>aws_managed</code> account settings are
+     * read-only, as Amazon Web Services manages such on the customer's behalf.
+     * Currently, the <code>guardDutyActivate</code> account setting is the only one
+     * Amazon Web Services manages.</p>
+     */
+    inline const SettingType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Indicates whether Amazon Web Services manages the account setting, or if the
+     * user manages it.</p> <p> <code>aws_managed</code> account settings are
+     * read-only, as Amazon Web Services manages such on the customer's behalf.
+     * Currently, the <code>guardDutyActivate</code> account setting is the only one
+     * Amazon Web Services manages.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Amazon Web Services manages the account setting, or if the
+     * user manages it.</p> <p> <code>aws_managed</code> account settings are
+     * read-only, as Amazon Web Services manages such on the customer's behalf.
+     * Currently, the <code>guardDutyActivate</code> account setting is the only one
+     * Amazon Web Services manages.</p>
+     */
+    inline void SetType(const SettingType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Indicates whether Amazon Web Services manages the account setting, or if the
+     * user manages it.</p> <p> <code>aws_managed</code> account settings are
+     * read-only, as Amazon Web Services manages such on the customer's behalf.
+     * Currently, the <code>guardDutyActivate</code> account setting is the only one
+     * Amazon Web Services manages.</p>
+     */
+    inline void SetType(SettingType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Indicates whether Amazon Web Services manages the account setting, or if the
+     * user manages it.</p> <p> <code>aws_managed</code> account settings are
+     * read-only, as Amazon Web Services manages such on the customer's behalf.
+     * Currently, the <code>guardDutyActivate</code> account setting is the only one
+     * Amazon Web Services manages.</p>
+     */
+    inline Setting& WithType(const SettingType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Indicates whether Amazon Web Services manages the account setting, or if the
+     * user manages it.</p> <p> <code>aws_managed</code> account settings are
+     * read-only, as Amazon Web Services manages such on the customer's behalf.
+     * Currently, the <code>guardDutyActivate</code> account setting is the only one
+     * Amazon Web Services manages.</p>
+     */
+    inline Setting& WithType(SettingType&& value) { SetType(std::move(value)); return *this;}
+
   private:
 
     SettingName m_name;
@@ -176,6 +232,9 @@ namespace Model
 
     Aws::String m_principalArn;
     bool m_principalArnHasBeenSet = false;
+
+    SettingType m_type;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

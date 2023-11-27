@@ -394,92 +394,92 @@ namespace Model
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

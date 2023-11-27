@@ -83,49 +83,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services Region in which the source Amazon EFS file system is
+     * <p>The Amazon Web Services Region in which the source EFS file system is
      * located.</p>
      */
     inline const Aws::String& GetSourceFileSystemRegion() const{ return m_sourceFileSystemRegion; }
 
     /**
-     * <p>The Amazon Web Services Region in which the source Amazon EFS file system is
+     * <p>The Amazon Web Services Region in which the source EFS file system is
      * located.</p>
      */
     inline bool SourceFileSystemRegionHasBeenSet() const { return m_sourceFileSystemRegionHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services Region in which the source Amazon EFS file system is
+     * <p>The Amazon Web Services Region in which the source EFS file system is
      * located.</p>
      */
     inline void SetSourceFileSystemRegion(const Aws::String& value) { m_sourceFileSystemRegionHasBeenSet = true; m_sourceFileSystemRegion = value; }
 
     /**
-     * <p>The Amazon Web Services Region in which the source Amazon EFS file system is
+     * <p>The Amazon Web Services Region in which the source EFS file system is
      * located.</p>
      */
     inline void SetSourceFileSystemRegion(Aws::String&& value) { m_sourceFileSystemRegionHasBeenSet = true; m_sourceFileSystemRegion = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services Region in which the source Amazon EFS file system is
+     * <p>The Amazon Web Services Region in which the source EFS file system is
      * located.</p>
      */
     inline void SetSourceFileSystemRegion(const char* value) { m_sourceFileSystemRegionHasBeenSet = true; m_sourceFileSystemRegion.assign(value); }
 
     /**
-     * <p>The Amazon Web Services Region in which the source Amazon EFS file system is
+     * <p>The Amazon Web Services Region in which the source EFS file system is
      * located.</p>
      */
     inline ReplicationConfigurationDescription& WithSourceFileSystemRegion(const Aws::String& value) { SetSourceFileSystemRegion(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services Region in which the source Amazon EFS file system is
+     * <p>The Amazon Web Services Region in which the source EFS file system is
      * located.</p>
      */
     inline ReplicationConfigurationDescription& WithSourceFileSystemRegion(Aws::String&& value) { SetSourceFileSystemRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services Region in which the source Amazon EFS file system is
+     * <p>The Amazon Web Services Region in which the source EFS file system is
      * located.</p>
      */
     inline ReplicationConfigurationDescription& WithSourceFileSystemRegion(const char* value) { SetSourceFileSystemRegion(value); return *this;}
@@ -181,50 +181,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system
-     * in the replication configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the original source EFS file system in the
+     * replication configuration.</p>
      */
     inline const Aws::String& GetOriginalSourceFileSystemArn() const{ return m_originalSourceFileSystemArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system
-     * in the replication configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the original source EFS file system in the
+     * replication configuration.</p>
      */
     inline bool OriginalSourceFileSystemArnHasBeenSet() const { return m_originalSourceFileSystemArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system
-     * in the replication configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the original source EFS file system in the
+     * replication configuration.</p>
      */
     inline void SetOriginalSourceFileSystemArn(const Aws::String& value) { m_originalSourceFileSystemArnHasBeenSet = true; m_originalSourceFileSystemArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system
-     * in the replication configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the original source EFS file system in the
+     * replication configuration.</p>
      */
     inline void SetOriginalSourceFileSystemArn(Aws::String&& value) { m_originalSourceFileSystemArnHasBeenSet = true; m_originalSourceFileSystemArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system
-     * in the replication configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the original source EFS file system in the
+     * replication configuration.</p>
      */
     inline void SetOriginalSourceFileSystemArn(const char* value) { m_originalSourceFileSystemArnHasBeenSet = true; m_originalSourceFileSystemArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system
-     * in the replication configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the original source EFS file system in the
+     * replication configuration.</p>
      */
     inline ReplicationConfigurationDescription& WithOriginalSourceFileSystemArn(const Aws::String& value) { SetOriginalSourceFileSystemArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system
-     * in the replication configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the original source EFS file system in the
+     * replication configuration.</p>
      */
     inline ReplicationConfigurationDescription& WithOriginalSourceFileSystemArn(Aws::String&& value) { SetOriginalSourceFileSystemArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system
-     * in the replication configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the original source EFS file system in the
+     * replication configuration.</p>
      */
     inline ReplicationConfigurationDescription& WithOriginalSourceFileSystemArn(const char* value) { SetOriginalSourceFileSystemArn(value); return *this;}
 

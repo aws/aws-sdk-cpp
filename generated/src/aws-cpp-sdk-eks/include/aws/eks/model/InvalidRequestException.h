@@ -120,28 +120,52 @@ namespace Model
     inline InvalidRequestException& WithNodegroupName(const char* value) { SetNodegroupName(value); return *this;}
 
 
-    
+    /**
+     * <p>The request is invalid given the state of the add-on name. Check the state of
+     * the cluster and the associated operations.</p>
+     */
     inline const Aws::String& GetAddonName() const{ return m_addonName; }
 
-    
+    /**
+     * <p>The request is invalid given the state of the add-on name. Check the state of
+     * the cluster and the associated operations.</p>
+     */
     inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
 
-    
+    /**
+     * <p>The request is invalid given the state of the add-on name. Check the state of
+     * the cluster and the associated operations.</p>
+     */
     inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
 
-    
+    /**
+     * <p>The request is invalid given the state of the add-on name. Check the state of
+     * the cluster and the associated operations.</p>
+     */
     inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
 
-    
+    /**
+     * <p>The request is invalid given the state of the add-on name. Check the state of
+     * the cluster and the associated operations.</p>
+     */
     inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
 
-    
+    /**
+     * <p>The request is invalid given the state of the add-on name. Check the state of
+     * the cluster and the associated operations.</p>
+     */
     inline InvalidRequestException& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
 
-    
+    /**
+     * <p>The request is invalid given the state of the add-on name. Check the state of
+     * the cluster and the associated operations.</p>
+     */
     inline InvalidRequestException& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The request is invalid given the state of the add-on name. Check the state of
+     * the cluster and the associated operations.</p>
+     */
     inline InvalidRequestException& WithAddonName(const char* value) { SetAddonName(value); return *this;}
 
 
@@ -186,28 +210,44 @@ namespace Model
     inline InvalidRequestException& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
 
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline InvalidRequestException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline InvalidRequestException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline InvalidRequestException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:

@@ -10,6 +10,7 @@
 #include <aws/lexv2-models/model/BotLocaleStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lexv2-models/model/GenerativeAISettings.h>
 #include <utility>
 
 namespace Aws
@@ -458,6 +459,37 @@ namespace Model
     inline UpdateBotLocaleResult& AddRecommendedActions(const char* value) { m_recommendedActions.push_back(value); return *this; }
 
 
+    /**
+     * <p>Contains settings for generative AI features powered by Amazon Bedrock for
+     * your bot locale.</p>
+     */
+    inline const GenerativeAISettings& GetGenerativeAISettings() const{ return m_generativeAISettings; }
+
+    /**
+     * <p>Contains settings for generative AI features powered by Amazon Bedrock for
+     * your bot locale.</p>
+     */
+    inline void SetGenerativeAISettings(const GenerativeAISettings& value) { m_generativeAISettings = value; }
+
+    /**
+     * <p>Contains settings for generative AI features powered by Amazon Bedrock for
+     * your bot locale.</p>
+     */
+    inline void SetGenerativeAISettings(GenerativeAISettings&& value) { m_generativeAISettings = std::move(value); }
+
+    /**
+     * <p>Contains settings for generative AI features powered by Amazon Bedrock for
+     * your bot locale.</p>
+     */
+    inline UpdateBotLocaleResult& WithGenerativeAISettings(const GenerativeAISettings& value) { SetGenerativeAISettings(value); return *this;}
+
+    /**
+     * <p>Contains settings for generative AI features powered by Amazon Bedrock for
+     * your bot locale.</p>
+     */
+    inline UpdateBotLocaleResult& WithGenerativeAISettings(GenerativeAISettings&& value) { SetGenerativeAISettings(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -504,6 +536,8 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdatedDateTime;
 
     Aws::Vector<Aws::String> m_recommendedActions;
+
+    GenerativeAISettings m_generativeAISettings;
 
     Aws::String m_requestId;
   };

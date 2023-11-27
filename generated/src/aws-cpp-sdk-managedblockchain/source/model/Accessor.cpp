@@ -27,7 +27,9 @@ Accessor::Accessor() :
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_networkType(AccessorNetworkType::NOT_SET),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ Accessor::Accessor(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_networkType(AccessorNetworkType::NOT_SET),
+    m_networkTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,6 +103,13 @@ Accessor& Accessor::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NetworkType"))
+  {
+    m_networkType = AccessorNetworkTypeMapper::GetAccessorNetworkTypeForName(jsonValue.GetString("NetworkType"));
+
+    m_networkTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +159,11 @@ JsonValue Accessor::Jsonize() const
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("NetworkType", AccessorNetworkTypeMapper::GetNameForAccessorNetworkType(m_networkType));
   }
 
   return payload;

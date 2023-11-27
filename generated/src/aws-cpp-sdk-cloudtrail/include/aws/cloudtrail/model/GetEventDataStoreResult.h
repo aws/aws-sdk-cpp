@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/cloudtrail/model/BillingMode.h>
+#include <aws/cloudtrail/model/FederationStatus.h>
 #include <aws/cloudtrail/model/AdvancedEventSelector.h>
 #include <utility>
 
@@ -386,6 +387,100 @@ namespace Model
     inline GetEventDataStoreResult& WithBillingMode(BillingMode&& value) { SetBillingMode(std::move(value)); return *this;}
 
 
+    /**
+     * <p> Indicates the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake
+     * query federation</a> status. The status is <code>ENABLED</code> if Lake query
+     * federation is enabled, or <code>DISABLED</code> if Lake query federation is
+     * disabled. You cannot delete an event data store if the
+     * <code>FederationStatus</code> is <code>ENABLED</code>. </p>
+     */
+    inline const FederationStatus& GetFederationStatus() const{ return m_federationStatus; }
+
+    /**
+     * <p> Indicates the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake
+     * query federation</a> status. The status is <code>ENABLED</code> if Lake query
+     * federation is enabled, or <code>DISABLED</code> if Lake query federation is
+     * disabled. You cannot delete an event data store if the
+     * <code>FederationStatus</code> is <code>ENABLED</code>. </p>
+     */
+    inline void SetFederationStatus(const FederationStatus& value) { m_federationStatus = value; }
+
+    /**
+     * <p> Indicates the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake
+     * query federation</a> status. The status is <code>ENABLED</code> if Lake query
+     * federation is enabled, or <code>DISABLED</code> if Lake query federation is
+     * disabled. You cannot delete an event data store if the
+     * <code>FederationStatus</code> is <code>ENABLED</code>. </p>
+     */
+    inline void SetFederationStatus(FederationStatus&& value) { m_federationStatus = std::move(value); }
+
+    /**
+     * <p> Indicates the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake
+     * query federation</a> status. The status is <code>ENABLED</code> if Lake query
+     * federation is enabled, or <code>DISABLED</code> if Lake query federation is
+     * disabled. You cannot delete an event data store if the
+     * <code>FederationStatus</code> is <code>ENABLED</code>. </p>
+     */
+    inline GetEventDataStoreResult& WithFederationStatus(const FederationStatus& value) { SetFederationStatus(value); return *this;}
+
+    /**
+     * <p> Indicates the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake
+     * query federation</a> status. The status is <code>ENABLED</code> if Lake query
+     * federation is enabled, or <code>DISABLED</code> if Lake query federation is
+     * disabled. You cannot delete an event data store if the
+     * <code>FederationStatus</code> is <code>ENABLED</code>. </p>
+     */
+    inline GetEventDataStoreResult& WithFederationStatus(FederationStatus&& value) { SetFederationStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p> If Lake query federation is enabled, provides the ARN of the federation role
+     * used to access the resources for the federated event data store. </p>
+     */
+    inline const Aws::String& GetFederationRoleArn() const{ return m_federationRoleArn; }
+
+    /**
+     * <p> If Lake query federation is enabled, provides the ARN of the federation role
+     * used to access the resources for the federated event data store. </p>
+     */
+    inline void SetFederationRoleArn(const Aws::String& value) { m_federationRoleArn = value; }
+
+    /**
+     * <p> If Lake query federation is enabled, provides the ARN of the federation role
+     * used to access the resources for the federated event data store. </p>
+     */
+    inline void SetFederationRoleArn(Aws::String&& value) { m_federationRoleArn = std::move(value); }
+
+    /**
+     * <p> If Lake query federation is enabled, provides the ARN of the federation role
+     * used to access the resources for the federated event data store. </p>
+     */
+    inline void SetFederationRoleArn(const char* value) { m_federationRoleArn.assign(value); }
+
+    /**
+     * <p> If Lake query federation is enabled, provides the ARN of the federation role
+     * used to access the resources for the federated event data store. </p>
+     */
+    inline GetEventDataStoreResult& WithFederationRoleArn(const Aws::String& value) { SetFederationRoleArn(value); return *this;}
+
+    /**
+     * <p> If Lake query federation is enabled, provides the ARN of the federation role
+     * used to access the resources for the federated event data store. </p>
+     */
+    inline GetEventDataStoreResult& WithFederationRoleArn(Aws::String&& value) { SetFederationRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p> If Lake query federation is enabled, provides the ARN of the federation role
+     * used to access the resources for the federated event data store. </p>
+     */
+    inline GetEventDataStoreResult& WithFederationRoleArn(const char* value) { SetFederationRoleArn(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -432,6 +527,10 @@ namespace Model
     Aws::String m_kmsKeyId;
 
     BillingMode m_billingMode;
+
+    FederationStatus m_federationStatus;
+
+    Aws::String m_federationRoleArn;
 
     Aws::String m_requestId;
   };

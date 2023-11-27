@@ -166,28 +166,28 @@ namespace Model
 
     /**
      * <p>The number of licenses to purchase with the subscription. Valid values are
-     * between 1 and 1000. This value cannot be changed after creating the
+     * between 1 and 100. This value can't be changed after creating the
      * subscription.</p>
      */
     inline int GetLicenseQuantity() const{ return m_licenseQuantity; }
 
     /**
      * <p>The number of licenses to purchase with the subscription. Valid values are
-     * between 1 and 1000. This value cannot be changed after creating the
+     * between 1 and 100. This value can't be changed after creating the
      * subscription.</p>
      */
     inline bool LicenseQuantityHasBeenSet() const { return m_licenseQuantityHasBeenSet; }
 
     /**
      * <p>The number of licenses to purchase with the subscription. Valid values are
-     * between 1 and 1000. This value cannot be changed after creating the
+     * between 1 and 100. This value can't be changed after creating the
      * subscription.</p>
      */
     inline void SetLicenseQuantity(int value) { m_licenseQuantityHasBeenSet = true; m_licenseQuantity = value; }
 
     /**
      * <p>The number of licenses to purchase with the subscription. Valid values are
-     * between 1 and 1000. This value cannot be changed after creating the
+     * between 1 and 100. This value can't be changed after creating the
      * subscription.</p>
      */
     inline CreateEksAnywhereSubscriptionRequest& WithLicenseQuantity(int value) { SetLicenseQuantity(value); return *this;}
@@ -313,7 +313,7 @@ namespace Model
     /**
      * <p>The metadata for a subscription to assist with categorization and
      * organization. Each tag consists of a key and an optional value. Subscription
-     * tags do not propagate to any other resources associated with the
+     * tags don't propagate to any other resources associated with the
      * subscription.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -321,7 +321,7 @@ namespace Model
     /**
      * <p>The metadata for a subscription to assist with categorization and
      * organization. Each tag consists of a key and an optional value. Subscription
-     * tags do not propagate to any other resources associated with the
+     * tags don't propagate to any other resources associated with the
      * subscription.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -329,7 +329,7 @@ namespace Model
     /**
      * <p>The metadata for a subscription to assist with categorization and
      * organization. Each tag consists of a key and an optional value. Subscription
-     * tags do not propagate to any other resources associated with the
+     * tags don't propagate to any other resources associated with the
      * subscription.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -337,7 +337,7 @@ namespace Model
     /**
      * <p>The metadata for a subscription to assist with categorization and
      * organization. Each tag consists of a key and an optional value. Subscription
-     * tags do not propagate to any other resources associated with the
+     * tags don't propagate to any other resources associated with the
      * subscription.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
@@ -345,7 +345,7 @@ namespace Model
     /**
      * <p>The metadata for a subscription to assist with categorization and
      * organization. Each tag consists of a key and an optional value. Subscription
-     * tags do not propagate to any other resources associated with the
+     * tags don't propagate to any other resources associated with the
      * subscription.</p>
      */
     inline CreateEksAnywhereSubscriptionRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
@@ -353,7 +353,7 @@ namespace Model
     /**
      * <p>The metadata for a subscription to assist with categorization and
      * organization. Each tag consists of a key and an optional value. Subscription
-     * tags do not propagate to any other resources associated with the
+     * tags don't propagate to any other resources associated with the
      * subscription.</p>
      */
     inline CreateEksAnywhereSubscriptionRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
@@ -361,7 +361,7 @@ namespace Model
     /**
      * <p>The metadata for a subscription to assist with categorization and
      * organization. Each tag consists of a key and an optional value. Subscription
-     * tags do not propagate to any other resources associated with the
+     * tags don't propagate to any other resources associated with the
      * subscription.</p>
      */
     inline CreateEksAnywhereSubscriptionRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
@@ -369,7 +369,7 @@ namespace Model
     /**
      * <p>The metadata for a subscription to assist with categorization and
      * organization. Each tag consists of a key and an optional value. Subscription
-     * tags do not propagate to any other resources associated with the
+     * tags don't propagate to any other resources associated with the
      * subscription.</p>
      */
     inline CreateEksAnywhereSubscriptionRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
@@ -377,7 +377,7 @@ namespace Model
     /**
      * <p>The metadata for a subscription to assist with categorization and
      * organization. Each tag consists of a key and an optional value. Subscription
-     * tags do not propagate to any other resources associated with the
+     * tags don't propagate to any other resources associated with the
      * subscription.</p>
      */
     inline CreateEksAnywhereSubscriptionRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
@@ -385,7 +385,7 @@ namespace Model
     /**
      * <p>The metadata for a subscription to assist with categorization and
      * organization. Each tag consists of a key and an optional value. Subscription
-     * tags do not propagate to any other resources associated with the
+     * tags don't propagate to any other resources associated with the
      * subscription.</p>
      */
     inline CreateEksAnywhereSubscriptionRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
@@ -393,7 +393,7 @@ namespace Model
     /**
      * <p>The metadata for a subscription to assist with categorization and
      * organization. Each tag consists of a key and an optional value. Subscription
-     * tags do not propagate to any other resources associated with the
+     * tags don't propagate to any other resources associated with the
      * subscription.</p>
      */
     inline CreateEksAnywhereSubscriptionRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
@@ -401,7 +401,7 @@ namespace Model
     /**
      * <p>The metadata for a subscription to assist with categorization and
      * organization. Each tag consists of a key and an optional value. Subscription
-     * tags do not propagate to any other resources associated with the
+     * tags don't propagate to any other resources associated with the
      * subscription.</p>
      */
     inline CreateEksAnywhereSubscriptionRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
@@ -409,7 +409,7 @@ namespace Model
     /**
      * <p>The metadata for a subscription to assist with categorization and
      * organization. Each tag consists of a key and an optional value. Subscription
-     * tags do not propagate to any other resources associated with the
+     * tags don't propagate to any other resources associated with the
      * subscription.</p>
      */
     inline CreateEksAnywhereSubscriptionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }

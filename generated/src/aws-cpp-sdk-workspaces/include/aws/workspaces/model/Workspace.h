@@ -9,8 +9,10 @@
 #include <aws/workspaces/model/WorkspaceState.h>
 #include <aws/workspaces/model/WorkspaceProperties.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/workspaces/model/DataReplicationSettings.h>
 #include <aws/workspaces/model/ModificationState.h>
 #include <aws/workspaces/model/RelatedWorkspaceProperties.h>
+#include <aws/workspaces/model/StandbyWorkspacesProperties.h>
 #include <utility>
 
 namespace Aws
@@ -727,6 +729,78 @@ namespace Model
      */
     inline Workspace& AddRelatedWorkspaces(RelatedWorkspaceProperties&& value) { m_relatedWorkspacesHasBeenSet = true; m_relatedWorkspaces.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates the settings of the data replication.</p>
+     */
+    inline const DataReplicationSettings& GetDataReplicationSettings() const{ return m_dataReplicationSettings; }
+
+    /**
+     * <p>Indicates the settings of the data replication.</p>
+     */
+    inline bool DataReplicationSettingsHasBeenSet() const { return m_dataReplicationSettingsHasBeenSet; }
+
+    /**
+     * <p>Indicates the settings of the data replication.</p>
+     */
+    inline void SetDataReplicationSettings(const DataReplicationSettings& value) { m_dataReplicationSettingsHasBeenSet = true; m_dataReplicationSettings = value; }
+
+    /**
+     * <p>Indicates the settings of the data replication.</p>
+     */
+    inline void SetDataReplicationSettings(DataReplicationSettings&& value) { m_dataReplicationSettingsHasBeenSet = true; m_dataReplicationSettings = std::move(value); }
+
+    /**
+     * <p>Indicates the settings of the data replication.</p>
+     */
+    inline Workspace& WithDataReplicationSettings(const DataReplicationSettings& value) { SetDataReplicationSettings(value); return *this;}
+
+    /**
+     * <p>Indicates the settings of the data replication.</p>
+     */
+    inline Workspace& WithDataReplicationSettings(DataReplicationSettings&& value) { SetDataReplicationSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The properties of the standby WorkSpace</p>
+     */
+    inline const Aws::Vector<StandbyWorkspacesProperties>& GetStandbyWorkspacesProperties() const{ return m_standbyWorkspacesProperties; }
+
+    /**
+     * <p>The properties of the standby WorkSpace</p>
+     */
+    inline bool StandbyWorkspacesPropertiesHasBeenSet() const { return m_standbyWorkspacesPropertiesHasBeenSet; }
+
+    /**
+     * <p>The properties of the standby WorkSpace</p>
+     */
+    inline void SetStandbyWorkspacesProperties(const Aws::Vector<StandbyWorkspacesProperties>& value) { m_standbyWorkspacesPropertiesHasBeenSet = true; m_standbyWorkspacesProperties = value; }
+
+    /**
+     * <p>The properties of the standby WorkSpace</p>
+     */
+    inline void SetStandbyWorkspacesProperties(Aws::Vector<StandbyWorkspacesProperties>&& value) { m_standbyWorkspacesPropertiesHasBeenSet = true; m_standbyWorkspacesProperties = std::move(value); }
+
+    /**
+     * <p>The properties of the standby WorkSpace</p>
+     */
+    inline Workspace& WithStandbyWorkspacesProperties(const Aws::Vector<StandbyWorkspacesProperties>& value) { SetStandbyWorkspacesProperties(value); return *this;}
+
+    /**
+     * <p>The properties of the standby WorkSpace</p>
+     */
+    inline Workspace& WithStandbyWorkspacesProperties(Aws::Vector<StandbyWorkspacesProperties>&& value) { SetStandbyWorkspacesProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>The properties of the standby WorkSpace</p>
+     */
+    inline Workspace& AddStandbyWorkspacesProperties(const StandbyWorkspacesProperties& value) { m_standbyWorkspacesPropertiesHasBeenSet = true; m_standbyWorkspacesProperties.push_back(value); return *this; }
+
+    /**
+     * <p>The properties of the standby WorkSpace</p>
+     */
+    inline Workspace& AddStandbyWorkspacesProperties(StandbyWorkspacesProperties&& value) { m_standbyWorkspacesPropertiesHasBeenSet = true; m_standbyWorkspacesProperties.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_workspaceId;
@@ -776,6 +850,12 @@ namespace Model
 
     Aws::Vector<RelatedWorkspaceProperties> m_relatedWorkspaces;
     bool m_relatedWorkspacesHasBeenSet = false;
+
+    DataReplicationSettings m_dataReplicationSettings;
+    bool m_dataReplicationSettingsHasBeenSet = false;
+
+    Aws::Vector<StandbyWorkspacesProperties> m_standbyWorkspacesProperties;
+    bool m_standbyWorkspacesPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

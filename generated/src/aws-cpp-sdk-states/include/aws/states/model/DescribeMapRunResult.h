@@ -324,22 +324,22 @@ namespace Model
 
     /**
      * <p>The number of times you've redriven a Map Run. If you have not yet redriven a
-     * Map Run, the <code>redriveCount</code> is 0. This count is not updated for
-     * redrives that failed to start or are pending to be redriven.</p>
+     * Map Run, the <code>redriveCount</code> is 0. This count is only updated if you
+     * successfully redrive a Map Run.</p>
      */
     inline int GetRedriveCount() const{ return m_redriveCount; }
 
     /**
      * <p>The number of times you've redriven a Map Run. If you have not yet redriven a
-     * Map Run, the <code>redriveCount</code> is 0. This count is not updated for
-     * redrives that failed to start or are pending to be redriven.</p>
+     * Map Run, the <code>redriveCount</code> is 0. This count is only updated if you
+     * successfully redrive a Map Run.</p>
      */
     inline void SetRedriveCount(int value) { m_redriveCount = value; }
 
     /**
      * <p>The number of times you've redriven a Map Run. If you have not yet redriven a
-     * Map Run, the <code>redriveCount</code> is 0. This count is not updated for
-     * redrives that failed to start or are pending to be redriven.</p>
+     * Map Run, the <code>redriveCount</code> is 0. This count is only updated if you
+     * successfully redrive a Map Run.</p>
      */
     inline DescribeMapRunResult& WithRedriveCount(int value) { SetRedriveCount(value); return *this;}
 

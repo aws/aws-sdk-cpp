@@ -111,7 +111,11 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters() :
     m_findingProviderFieldsTypesHasBeenSet(false),
     m_sampleHasBeenSet(false),
     m_complianceSecurityControlIdHasBeenSet(false),
-    m_complianceAssociatedStandardsIdHasBeenSet(false)
+    m_complianceAssociatedStandardsIdHasBeenSet(false),
+    m_vulnerabilitiesExploitAvailableHasBeenSet(false),
+    m_vulnerabilitiesFixAvailableHasBeenSet(false),
+    m_complianceSecurityControlParametersNameHasBeenSet(false),
+    m_complianceSecurityControlParametersValueHasBeenSet(false)
 {
 }
 
@@ -208,7 +212,11 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters(JsonView jsonValue) :
     m_findingProviderFieldsTypesHasBeenSet(false),
     m_sampleHasBeenSet(false),
     m_complianceSecurityControlIdHasBeenSet(false),
-    m_complianceAssociatedStandardsIdHasBeenSet(false)
+    m_complianceAssociatedStandardsIdHasBeenSet(false),
+    m_vulnerabilitiesExploitAvailableHasBeenSet(false),
+    m_vulnerabilitiesFixAvailableHasBeenSet(false),
+    m_complianceSecurityControlParametersNameHasBeenSet(false),
+    m_complianceSecurityControlParametersValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -1143,6 +1151,46 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
       m_complianceAssociatedStandardsId.push_back(complianceAssociatedStandardsIdJsonList[complianceAssociatedStandardsIdIndex].AsObject());
     }
     m_complianceAssociatedStandardsIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VulnerabilitiesExploitAvailable"))
+  {
+    Aws::Utils::Array<JsonView> vulnerabilitiesExploitAvailableJsonList = jsonValue.GetArray("VulnerabilitiesExploitAvailable");
+    for(unsigned vulnerabilitiesExploitAvailableIndex = 0; vulnerabilitiesExploitAvailableIndex < vulnerabilitiesExploitAvailableJsonList.GetLength(); ++vulnerabilitiesExploitAvailableIndex)
+    {
+      m_vulnerabilitiesExploitAvailable.push_back(vulnerabilitiesExploitAvailableJsonList[vulnerabilitiesExploitAvailableIndex].AsObject());
+    }
+    m_vulnerabilitiesExploitAvailableHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VulnerabilitiesFixAvailable"))
+  {
+    Aws::Utils::Array<JsonView> vulnerabilitiesFixAvailableJsonList = jsonValue.GetArray("VulnerabilitiesFixAvailable");
+    for(unsigned vulnerabilitiesFixAvailableIndex = 0; vulnerabilitiesFixAvailableIndex < vulnerabilitiesFixAvailableJsonList.GetLength(); ++vulnerabilitiesFixAvailableIndex)
+    {
+      m_vulnerabilitiesFixAvailable.push_back(vulnerabilitiesFixAvailableJsonList[vulnerabilitiesFixAvailableIndex].AsObject());
+    }
+    m_vulnerabilitiesFixAvailableHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ComplianceSecurityControlParametersName"))
+  {
+    Aws::Utils::Array<JsonView> complianceSecurityControlParametersNameJsonList = jsonValue.GetArray("ComplianceSecurityControlParametersName");
+    for(unsigned complianceSecurityControlParametersNameIndex = 0; complianceSecurityControlParametersNameIndex < complianceSecurityControlParametersNameJsonList.GetLength(); ++complianceSecurityControlParametersNameIndex)
+    {
+      m_complianceSecurityControlParametersName.push_back(complianceSecurityControlParametersNameJsonList[complianceSecurityControlParametersNameIndex].AsObject());
+    }
+    m_complianceSecurityControlParametersNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ComplianceSecurityControlParametersValue"))
+  {
+    Aws::Utils::Array<JsonView> complianceSecurityControlParametersValueJsonList = jsonValue.GetArray("ComplianceSecurityControlParametersValue");
+    for(unsigned complianceSecurityControlParametersValueIndex = 0; complianceSecurityControlParametersValueIndex < complianceSecurityControlParametersValueJsonList.GetLength(); ++complianceSecurityControlParametersValueIndex)
+    {
+      m_complianceSecurityControlParametersValue.push_back(complianceSecurityControlParametersValueJsonList[complianceSecurityControlParametersValueIndex].AsObject());
+    }
+    m_complianceSecurityControlParametersValueHasBeenSet = true;
   }
 
   return *this;
@@ -2172,6 +2220,50 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
      complianceAssociatedStandardsIdJsonList[complianceAssociatedStandardsIdIndex].AsObject(m_complianceAssociatedStandardsId[complianceAssociatedStandardsIdIndex].Jsonize());
    }
    payload.WithArray("ComplianceAssociatedStandardsId", std::move(complianceAssociatedStandardsIdJsonList));
+
+  }
+
+  if(m_vulnerabilitiesExploitAvailableHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> vulnerabilitiesExploitAvailableJsonList(m_vulnerabilitiesExploitAvailable.size());
+   for(unsigned vulnerabilitiesExploitAvailableIndex = 0; vulnerabilitiesExploitAvailableIndex < vulnerabilitiesExploitAvailableJsonList.GetLength(); ++vulnerabilitiesExploitAvailableIndex)
+   {
+     vulnerabilitiesExploitAvailableJsonList[vulnerabilitiesExploitAvailableIndex].AsObject(m_vulnerabilitiesExploitAvailable[vulnerabilitiesExploitAvailableIndex].Jsonize());
+   }
+   payload.WithArray("VulnerabilitiesExploitAvailable", std::move(vulnerabilitiesExploitAvailableJsonList));
+
+  }
+
+  if(m_vulnerabilitiesFixAvailableHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> vulnerabilitiesFixAvailableJsonList(m_vulnerabilitiesFixAvailable.size());
+   for(unsigned vulnerabilitiesFixAvailableIndex = 0; vulnerabilitiesFixAvailableIndex < vulnerabilitiesFixAvailableJsonList.GetLength(); ++vulnerabilitiesFixAvailableIndex)
+   {
+     vulnerabilitiesFixAvailableJsonList[vulnerabilitiesFixAvailableIndex].AsObject(m_vulnerabilitiesFixAvailable[vulnerabilitiesFixAvailableIndex].Jsonize());
+   }
+   payload.WithArray("VulnerabilitiesFixAvailable", std::move(vulnerabilitiesFixAvailableJsonList));
+
+  }
+
+  if(m_complianceSecurityControlParametersNameHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> complianceSecurityControlParametersNameJsonList(m_complianceSecurityControlParametersName.size());
+   for(unsigned complianceSecurityControlParametersNameIndex = 0; complianceSecurityControlParametersNameIndex < complianceSecurityControlParametersNameJsonList.GetLength(); ++complianceSecurityControlParametersNameIndex)
+   {
+     complianceSecurityControlParametersNameJsonList[complianceSecurityControlParametersNameIndex].AsObject(m_complianceSecurityControlParametersName[complianceSecurityControlParametersNameIndex].Jsonize());
+   }
+   payload.WithArray("ComplianceSecurityControlParametersName", std::move(complianceSecurityControlParametersNameJsonList));
+
+  }
+
+  if(m_complianceSecurityControlParametersValueHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> complianceSecurityControlParametersValueJsonList(m_complianceSecurityControlParametersValue.size());
+   for(unsigned complianceSecurityControlParametersValueIndex = 0; complianceSecurityControlParametersValueIndex < complianceSecurityControlParametersValueJsonList.GetLength(); ++complianceSecurityControlParametersValueIndex)
+   {
+     complianceSecurityControlParametersValueJsonList[complianceSecurityControlParametersValueIndex].AsObject(m_complianceSecurityControlParametersValue[complianceSecurityControlParametersValueIndex].Jsonize());
+   }
+   payload.WithArray("ComplianceSecurityControlParametersValue", std::move(complianceSecurityControlParametersValueJsonList));
 
   }
 

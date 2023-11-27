@@ -201,6 +201,35 @@ namespace FSx
         }
 
         /**
+         * <p>Updates an existing volume by using a snapshot from another Amazon FSx for
+         * OpenZFS file system. For more information, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html">on-demand
+         * data replication</a> in the Amazon FSx for OpenZFS User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopySnapshotAndUpdateVolume">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CopySnapshotAndUpdateVolumeOutcome CopySnapshotAndUpdateVolume(const Model::CopySnapshotAndUpdateVolumeRequest& request) const;
+
+        /**
+         * A Callable wrapper for CopySnapshotAndUpdateVolume that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CopySnapshotAndUpdateVolumeRequestT = Model::CopySnapshotAndUpdateVolumeRequest>
+        Model::CopySnapshotAndUpdateVolumeOutcomeCallable CopySnapshotAndUpdateVolumeCallable(const CopySnapshotAndUpdateVolumeRequestT& request) const
+        {
+            return SubmitCallable(&FSxClient::CopySnapshotAndUpdateVolume, request);
+        }
+
+        /**
+         * An Async wrapper for CopySnapshotAndUpdateVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CopySnapshotAndUpdateVolumeRequestT = Model::CopySnapshotAndUpdateVolumeRequest>
+        void CopySnapshotAndUpdateVolumeAsync(const CopySnapshotAndUpdateVolumeRequestT& request, const CopySnapshotAndUpdateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FSxClient::CopySnapshotAndUpdateVolume, request, handler, context);
+        }
+
+        /**
          * <p>Creates a backup of an existing Amazon FSx for Windows File Server file
          * system, Amazon FSx for Lustre file system, Amazon FSx for NetApp ONTAP volume,
          * or Amazon FSx for OpenZFS file system. We recommend creating regular backups so
@@ -1099,6 +1128,35 @@ namespace FSx
         }
 
         /**
+         * <p>Indicates whether participant accounts in your organization can create Amazon
+         * FSx for NetApp ONTAP Multi-AZ file systems in subnets that are shared by a
+         * virtual private cloud (VPC) owner. For more information, see the <a
+         * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/maz-shared-vpc.html">Amazon
+         * FSx for NetApp ONTAP User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSharedVpcConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeSharedVpcConfigurationOutcome DescribeSharedVpcConfiguration(const Model::DescribeSharedVpcConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeSharedVpcConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeSharedVpcConfigurationRequestT = Model::DescribeSharedVpcConfigurationRequest>
+        Model::DescribeSharedVpcConfigurationOutcomeCallable DescribeSharedVpcConfigurationCallable(const DescribeSharedVpcConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&FSxClient::DescribeSharedVpcConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeSharedVpcConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeSharedVpcConfigurationRequestT = Model::DescribeSharedVpcConfigurationRequest>
+        void DescribeSharedVpcConfigurationAsync(const DescribeSharedVpcConfigurationRequestT& request, const DescribeSharedVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FSxClient::DescribeSharedVpcConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Returns the description of specific Amazon FSx for OpenZFS snapshots, if a
          * <code>SnapshotIds</code> value is provided. Otherwise, this operation returns
          * all snapshots owned by your Amazon Web Services account in the Amazon Web
@@ -1198,7 +1256,8 @@ namespace FSx
          * <p>Use this action to disassociate, or remove, one or more Domain Name Service
          * (DNS) aliases from an Amazon FSx for Windows File Server file system. If you
          * attempt to disassociate a DNS alias that is not associated with the file system,
-         * Amazon FSx responds with a 400 Bad Request. For more information, see <a
+         * Amazon FSx responds with an HTTP status code 400 (Bad Request). For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
          * with DNS Aliases</a>.</p> <p>The system generated response showing the DNS
          * aliases that Amazon FSx is attempting to disassociate from the file system. Use
@@ -1481,12 +1540,13 @@ namespace FSx
          * <code>AutomaticBackupRetentionDays</code> </p> </li> <li> <p>
          * <code>DailyAutomaticBackupStartTime</code> </p> </li> <li> <p>
          * <code>DiskIopsConfiguration</code> </p> </li> <li> <p>
-         * <code>FsxAdminPassword</code> </p> </li> <li> <p>
-         * <code>RemoveRouteTableIds</code> </p> </li> <li> <p>
+         * <code>FsxAdminPassword</code> </p> </li> <li> <p> <code>HAPairs</code> </p>
+         * </li> <li> <p> <code>RemoveRouteTableIds</code> </p> </li> <li> <p>
          * <code>StorageCapacity</code> </p> </li> <li> <p> <code>ThroughputCapacity</code>
-         * </p> </li> <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li> </ul>
-         * <p>For FSx for OpenZFS file systems, you can update the following
-         * properties:</p> <ul> <li> <p> <code>AddRouteTableIds</code> </p> </li> <li> <p>
+         * </p> </li> <li> <p> <code>ThroughputCapacityPerHAPair</code> </p> </li> <li> <p>
+         * <code>WeeklyMaintenanceStartTime</code> </p> </li> </ul> <p>For FSx for OpenZFS
+         * file systems, you can update the following properties:</p> <ul> <li> <p>
+         * <code>AddRouteTableIds</code> </p> </li> <li> <p>
          * <code>AutomaticBackupRetentionDays</code> </p> </li> <li> <p>
          * <code>CopyTagsToBackups</code> </p> </li> <li> <p>
          * <code>CopyTagsToVolumes</code> </p> </li> <li> <p>
@@ -1517,6 +1577,42 @@ namespace FSx
         void UpdateFileSystemAsync(const UpdateFileSystemRequestT& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&FSxClient::UpdateFileSystem, request, handler, context);
+        }
+
+        /**
+         * <p>Configures whether participant accounts in your organization can create
+         * Amazon FSx for NetApp ONTAP Multi-AZ file systems in subnets that are shared by
+         * a virtual private cloud (VPC) owner. For more information, see the <a
+         * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/maz-shared-vpc.html">Amazon
+         * FSx for NetApp ONTAP User Guide</a>.</p>  <p>We strongly recommend that
+         * participant-created Multi-AZ file systems in the shared VPC are deleted before
+         * you disable this feature. Once the feature is disabled, these file systems will
+         * enter a <code>MISCONFIGURED</code> state and behave like Single-AZ file systems.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/maz-shared-vpc.html#disabling-maz-vpc-sharing">Important
+         * considerations before disabling shared VPC support for Multi-AZ file
+         * systems</a>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSharedVpcConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSharedVpcConfigurationOutcome UpdateSharedVpcConfiguration(const Model::UpdateSharedVpcConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSharedVpcConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSharedVpcConfigurationRequestT = Model::UpdateSharedVpcConfigurationRequest>
+        Model::UpdateSharedVpcConfigurationOutcomeCallable UpdateSharedVpcConfigurationCallable(const UpdateSharedVpcConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&FSxClient::UpdateSharedVpcConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSharedVpcConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSharedVpcConfigurationRequestT = Model::UpdateSharedVpcConfigurationRequest>
+        void UpdateSharedVpcConfigurationAsync(const UpdateSharedVpcConfigurationRequestT& request, const UpdateSharedVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FSxClient::UpdateSharedVpcConfiguration, request, handler, context);
         }
 
         /**

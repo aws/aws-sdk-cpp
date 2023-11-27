@@ -30,6 +30,9 @@ BatchInferenceJob::BatchInferenceJob() :
     m_jobOutputHasBeenSet(false),
     m_batchInferenceJobConfigHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_batchInferenceJobMode(BatchInferenceJobMode::NOT_SET),
+    m_batchInferenceJobModeHasBeenSet(false),
+    m_themeGenerationConfigHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
     m_lastUpdatedDateTimeHasBeenSet(false)
@@ -48,6 +51,9 @@ BatchInferenceJob::BatchInferenceJob(JsonView jsonValue) :
     m_jobOutputHasBeenSet(false),
     m_batchInferenceJobConfigHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_batchInferenceJobMode(BatchInferenceJobMode::NOT_SET),
+    m_batchInferenceJobModeHasBeenSet(false),
+    m_themeGenerationConfigHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
     m_lastUpdatedDateTimeHasBeenSet(false)
@@ -125,6 +131,20 @@ BatchInferenceJob& BatchInferenceJob::operator =(JsonView jsonValue)
     m_roleArn = jsonValue.GetString("roleArn");
 
     m_roleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("batchInferenceJobMode"))
+  {
+    m_batchInferenceJobMode = BatchInferenceJobModeMapper::GetBatchInferenceJobModeForName(jsonValue.GetString("batchInferenceJobMode"));
+
+    m_batchInferenceJobModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("themeGenerationConfig"))
+  {
+    m_themeGenerationConfig = jsonValue.GetObject("themeGenerationConfig");
+
+    m_themeGenerationConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -212,6 +232,17 @@ JsonValue BatchInferenceJob::Jsonize() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_batchInferenceJobModeHasBeenSet)
+  {
+   payload.WithString("batchInferenceJobMode", BatchInferenceJobModeMapper::GetNameForBatchInferenceJobMode(m_batchInferenceJobMode));
+  }
+
+  if(m_themeGenerationConfigHasBeenSet)
+  {
+   payload.WithObject("themeGenerationConfig", m_themeGenerationConfig.Jsonize());
 
   }
 

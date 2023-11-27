@@ -263,11 +263,11 @@ namespace LexModelsV2
         }
 
         /**
-         * <p>Creates a new version of the bot based on the <code>DRAFT</code> version. If
-         * the <code>DRAFT</code> version of this resource hasn't changed since you created
-         * the last version, Amazon Lex doesn't create a new version, it returns the last
-         * created version.</p> <p>When you create the first version of a bot, Amazon Lex
-         * sets the version to 1. Subsequent versions increment by 1.</p><p><h3>See
+         * <p>Creates an immutable version of the bot. When you create the first version of
+         * a bot, Amazon Lex sets the version number to 1. Subsequent bot versions increase
+         * in an increment of 1. The version number will always represent the total number
+         * of versions created of the bot, not the current number of versions. If a bot
+         * version is deleted, that bot version number will not be reused.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateBotVersion">AWS
          * API Reference</a></p>
@@ -1017,6 +1017,35 @@ namespace LexModelsV2
         }
 
         /**
+         * <p>Returns information about a request to generate a bot through natural
+         * language description, made through the <code>StartBotResource</code> API. Use
+         * the <code>generatedBotLocaleUrl</code> to retrieve the Amazon S3 object
+         * containing the bot locale configuration. You can then modify and import this
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotResourceGeneration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBotResourceGenerationOutcome DescribeBotResourceGeneration(const Model::DescribeBotResourceGenerationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeBotResourceGeneration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeBotResourceGenerationRequestT = Model::DescribeBotResourceGenerationRequest>
+        Model::DescribeBotResourceGenerationOutcomeCallable DescribeBotResourceGenerationCallable(const DescribeBotResourceGenerationRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::DescribeBotResourceGeneration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeBotResourceGeneration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeBotResourceGenerationRequestT = Model::DescribeBotResourceGenerationRequest>
+        void DescribeBotResourceGenerationAsync(const DescribeBotResourceGenerationRequestT& request, const DescribeBotResourceGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::DescribeBotResourceGeneration, request, handler, context);
+        }
+
+        /**
          * <p>Provides metadata about a version of a bot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotVersion">AWS
          * API Reference</a></p>
@@ -1322,6 +1351,31 @@ namespace LexModelsV2
         }
 
         /**
+         * <p>Generates sample utterances for an intent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GenerateBotElement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GenerateBotElementOutcome GenerateBotElement(const Model::GenerateBotElementRequest& request) const;
+
+        /**
+         * A Callable wrapper for GenerateBotElement that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GenerateBotElementRequestT = Model::GenerateBotElementRequest>
+        Model::GenerateBotElementOutcomeCallable GenerateBotElementCallable(const GenerateBotElementRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::GenerateBotElement, request);
+        }
+
+        /**
+         * An Async wrapper for GenerateBotElement that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GenerateBotElementRequestT = Model::GenerateBotElementRequest>
+        void GenerateBotElementAsync(const GenerateBotElementRequestT& request, const GenerateBotElementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::GenerateBotElement, request, handler, context);
+        }
+
+        /**
          * <p>The pre-signed Amazon S3 URL to download the test execution result
          * artifacts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GetTestExecutionArtifactsUrl">AWS
@@ -1458,6 +1512,32 @@ namespace LexModelsV2
         void ListBotRecommendationsAsync(const ListBotRecommendationsRequestT& request, const ListBotRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LexModelsV2Client::ListBotRecommendations, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the generation requests made for a bot locale.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotResourceGenerations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBotResourceGenerationsOutcome ListBotResourceGenerations(const Model::ListBotResourceGenerationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListBotResourceGenerations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListBotResourceGenerationsRequestT = Model::ListBotResourceGenerationsRequest>
+        Model::ListBotResourceGenerationsOutcomeCallable ListBotResourceGenerationsCallable(const ListBotResourceGenerationsRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListBotResourceGenerations, request);
+        }
+
+        /**
+         * An Async wrapper for ListBotResourceGenerations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListBotResourceGenerationsRequestT = Model::ListBotResourceGenerationsRequest>
+        void ListBotResourceGenerationsAsync(const ListBotResourceGenerationsRequestT& request, const ListBotResourceGenerationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListBotResourceGenerations, request, handler, context);
         }
 
         /**
@@ -2226,6 +2306,37 @@ namespace LexModelsV2
         void StartBotRecommendationAsync(const StartBotRecommendationRequestT& request, const StartBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LexModelsV2Client::StartBotRecommendation, request, handler, context);
+        }
+
+        /**
+         * <p>Starts a request for the descriptive bot builder to generate a bot locale
+         * configuration based on the prompt you provide it. After you make this call, use
+         * the <code>DescribeBotResourceGeneration</code> operation to check on the status
+         * of the generation and for the <code>generatedBotLocaleUrl</code> when the
+         * generation is complete. Use that value to retrieve the Amazon S3 object
+         * containing the bot locale configuration. You can then modify and import this
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotResourceGeneration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartBotResourceGenerationOutcome StartBotResourceGeneration(const Model::StartBotResourceGenerationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartBotResourceGeneration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartBotResourceGenerationRequestT = Model::StartBotResourceGenerationRequest>
+        Model::StartBotResourceGenerationOutcomeCallable StartBotResourceGenerationCallable(const StartBotResourceGenerationRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::StartBotResourceGeneration, request);
+        }
+
+        /**
+         * An Async wrapper for StartBotResourceGeneration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartBotResourceGenerationRequestT = Model::StartBotResourceGenerationRequest>
+        void StartBotResourceGenerationAsync(const StartBotResourceGenerationRequestT& request, const StartBotResourceGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::StartBotResourceGeneration, request, handler, context);
         }
 
         /**

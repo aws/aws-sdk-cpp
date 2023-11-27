@@ -414,27 +414,27 @@ namespace Model
 
 
     /**
-     * <p>The performance mode of the file system.</p>
+     * <p>The Performance mode of the file system.</p>
      */
     inline const PerformanceMode& GetPerformanceMode() const{ return m_performanceMode; }
 
     /**
-     * <p>The performance mode of the file system.</p>
+     * <p>The Performance mode of the file system.</p>
      */
     inline void SetPerformanceMode(const PerformanceMode& value) { m_performanceMode = value; }
 
     /**
-     * <p>The performance mode of the file system.</p>
+     * <p>The Performance mode of the file system.</p>
      */
     inline void SetPerformanceMode(PerformanceMode&& value) { m_performanceMode = std::move(value); }
 
     /**
-     * <p>The performance mode of the file system.</p>
+     * <p>The Performance mode of the file system.</p>
      */
     inline UpdateFileSystemResult& WithPerformanceMode(const PerformanceMode& value) { SetPerformanceMode(value); return *this;}
 
     /**
-     * <p>The performance mode of the file system.</p>
+     * <p>The Performance mode of the file system.</p>
      */
     inline UpdateFileSystemResult& WithPerformanceMode(PerformanceMode&& value) { SetPerformanceMode(std::move(value)); return *this;}
 
@@ -554,8 +554,8 @@ namespace Model
 
     /**
      * <p>Describes the Amazon Web Services Availability Zone in which the file system
-     * is located, and is valid only for file systems using One Zone storage classes.
-     * For more information, see <a
+     * is located, and is valid only for One Zone file systems. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
@@ -563,8 +563,8 @@ namespace Model
 
     /**
      * <p>Describes the Amazon Web Services Availability Zone in which the file system
-     * is located, and is valid only for file systems using One Zone storage classes.
-     * For more information, see <a
+     * is located, and is valid only for One Zone file systems. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
@@ -572,8 +572,8 @@ namespace Model
 
     /**
      * <p>Describes the Amazon Web Services Availability Zone in which the file system
-     * is located, and is valid only for file systems using One Zone storage classes.
-     * For more information, see <a
+     * is located, and is valid only for One Zone file systems. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
@@ -581,8 +581,8 @@ namespace Model
 
     /**
      * <p>Describes the Amazon Web Services Availability Zone in which the file system
-     * is located, and is valid only for file systems using One Zone storage classes.
-     * For more information, see <a
+     * is located, and is valid only for One Zone file systems. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
@@ -590,8 +590,8 @@ namespace Model
 
     /**
      * <p>Describes the Amazon Web Services Availability Zone in which the file system
-     * is located, and is valid only for file systems using One Zone storage classes.
-     * For more information, see <a
+     * is located, and is valid only for One Zone file systems. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
@@ -599,8 +599,8 @@ namespace Model
 
     /**
      * <p>Describes the Amazon Web Services Availability Zone in which the file system
-     * is located, and is valid only for file systems using One Zone storage classes.
-     * For more information, see <a
+     * is located, and is valid only for One Zone file systems. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
@@ -608,8 +608,8 @@ namespace Model
 
     /**
      * <p>Describes the Amazon Web Services Availability Zone in which the file system
-     * is located, and is valid only for file systems using One Zone storage classes.
-     * For more information, see <a
+     * is located, and is valid only for One Zone file systems. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
@@ -618,57 +618,64 @@ namespace Model
 
     /**
      * <p>The unique and consistent identifier of the Availability Zone in which the
-     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
-     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
-     * has the same location in every Amazon Web Services account.</p>
+     * file system is located, and is valid only for One Zone file systems. For
+     * example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1
+     * Amazon Web Services Region, and it has the same location in every Amazon Web
+     * Services account.</p>
      */
     inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
 
     /**
      * <p>The unique and consistent identifier of the Availability Zone in which the
-     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
-     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
-     * has the same location in every Amazon Web Services account.</p>
+     * file system is located, and is valid only for One Zone file systems. For
+     * example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1
+     * Amazon Web Services Region, and it has the same location in every Amazon Web
+     * Services account.</p>
      */
     inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneId = value; }
 
     /**
      * <p>The unique and consistent identifier of the Availability Zone in which the
-     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
-     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
-     * has the same location in every Amazon Web Services account.</p>
+     * file system is located, and is valid only for One Zone file systems. For
+     * example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1
+     * Amazon Web Services Region, and it has the same location in every Amazon Web
+     * Services account.</p>
      */
     inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneId = std::move(value); }
 
     /**
      * <p>The unique and consistent identifier of the Availability Zone in which the
-     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
-     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
-     * has the same location in every Amazon Web Services account.</p>
+     * file system is located, and is valid only for One Zone file systems. For
+     * example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1
+     * Amazon Web Services Region, and it has the same location in every Amazon Web
+     * Services account.</p>
      */
     inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneId.assign(value); }
 
     /**
      * <p>The unique and consistent identifier of the Availability Zone in which the
-     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
-     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
-     * has the same location in every Amazon Web Services account.</p>
+     * file system is located, and is valid only for One Zone file systems. For
+     * example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1
+     * Amazon Web Services Region, and it has the same location in every Amazon Web
+     * Services account.</p>
      */
     inline UpdateFileSystemResult& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
 
     /**
      * <p>The unique and consistent identifier of the Availability Zone in which the
-     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
-     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
-     * has the same location in every Amazon Web Services account.</p>
+     * file system is located, and is valid only for One Zone file systems. For
+     * example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1
+     * Amazon Web Services Region, and it has the same location in every Amazon Web
+     * Services account.</p>
      */
     inline UpdateFileSystemResult& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
 
     /**
      * <p>The unique and consistent identifier of the Availability Zone in which the
-     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
-     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
-     * has the same location in every Amazon Web Services account.</p>
+     * file system is located, and is valid only for One Zone file systems. For
+     * example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1
+     * Amazon Web Services Region, and it has the same location in every Amazon Web
+     * Services account.</p>
      */
     inline UpdateFileSystemResult& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
 
