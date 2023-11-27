@@ -30,11 +30,9 @@ namespace Model
 {
 
   /**
-   * <p>A collection of attributes that are applied to all active Security
-   * Hub-aggregated findings and that result in a subset of findings that are
-   * included in this insight.</p> <p>You can filter by up to 10 finding attributes.
-   * For each attribute, you can provide up to 20 filter values.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A collection of filters that are applied to all active findings aggregated by
+   * Security Hub.</p> <p>You can filter by up to ten finding attributes. For each
+   * attribute, you can provide up to 20 filter values.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFindingFilters">AWS
    * API Reference</a></p>
    */
@@ -4779,6 +4777,202 @@ namespace Model
      */
     inline AwsSecurityFindingFilters& AddComplianceAssociatedStandardsId(StringFilter&& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetVulnerabilitiesExploitAvailable() const{ return m_vulnerabilitiesExploitAvailable; }
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline bool VulnerabilitiesExploitAvailableHasBeenSet() const { return m_vulnerabilitiesExploitAvailableHasBeenSet; }
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline void SetVulnerabilitiesExploitAvailable(const Aws::Vector<StringFilter>& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable = value; }
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline void SetVulnerabilitiesExploitAvailable(Aws::Vector<StringFilter>&& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable = std::move(value); }
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& WithVulnerabilitiesExploitAvailable(const Aws::Vector<StringFilter>& value) { SetVulnerabilitiesExploitAvailable(value); return *this;}
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& WithVulnerabilitiesExploitAvailable(Aws::Vector<StringFilter>&& value) { SetVulnerabilitiesExploitAvailable(std::move(value)); return *this;}
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& AddVulnerabilitiesExploitAvailable(const StringFilter& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable.push_back(value); return *this; }
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& AddVulnerabilitiesExploitAvailable(StringFilter&& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetVulnerabilitiesFixAvailable() const{ return m_vulnerabilitiesFixAvailable; }
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline bool VulnerabilitiesFixAvailableHasBeenSet() const { return m_vulnerabilitiesFixAvailableHasBeenSet; }
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline void SetVulnerabilitiesFixAvailable(const Aws::Vector<StringFilter>& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable = value; }
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline void SetVulnerabilitiesFixAvailable(Aws::Vector<StringFilter>&& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable = std::move(value); }
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& WithVulnerabilitiesFixAvailable(const Aws::Vector<StringFilter>& value) { SetVulnerabilitiesFixAvailable(value); return *this;}
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& WithVulnerabilitiesFixAvailable(Aws::Vector<StringFilter>&& value) { SetVulnerabilitiesFixAvailable(std::move(value)); return *this;}
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& AddVulnerabilitiesFixAvailable(const StringFilter& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable.push_back(value); return *this; }
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& AddVulnerabilitiesFixAvailable(StringFilter&& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetComplianceSecurityControlParametersName() const{ return m_complianceSecurityControlParametersName; }
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline bool ComplianceSecurityControlParametersNameHasBeenSet() const { return m_complianceSecurityControlParametersNameHasBeenSet; }
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline void SetComplianceSecurityControlParametersName(const Aws::Vector<StringFilter>& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName = value; }
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline void SetComplianceSecurityControlParametersName(Aws::Vector<StringFilter>&& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName = std::move(value); }
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& WithComplianceSecurityControlParametersName(const Aws::Vector<StringFilter>& value) { SetComplianceSecurityControlParametersName(value); return *this;}
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& WithComplianceSecurityControlParametersName(Aws::Vector<StringFilter>&& value) { SetComplianceSecurityControlParametersName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& AddComplianceSecurityControlParametersName(const StringFilter& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName.push_back(value); return *this; }
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& AddComplianceSecurityControlParametersName(StringFilter&& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetComplianceSecurityControlParametersValue() const{ return m_complianceSecurityControlParametersValue; }
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline bool ComplianceSecurityControlParametersValueHasBeenSet() const { return m_complianceSecurityControlParametersValueHasBeenSet; }
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline void SetComplianceSecurityControlParametersValue(const Aws::Vector<StringFilter>& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue = value; }
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline void SetComplianceSecurityControlParametersValue(Aws::Vector<StringFilter>&& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue = std::move(value); }
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& WithComplianceSecurityControlParametersValue(const Aws::Vector<StringFilter>& value) { SetComplianceSecurityControlParametersValue(value); return *this;}
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& WithComplianceSecurityControlParametersValue(Aws::Vector<StringFilter>&& value) { SetComplianceSecurityControlParametersValue(std::move(value)); return *this;}
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& AddComplianceSecurityControlParametersValue(const StringFilter& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue.push_back(value); return *this; }
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& AddComplianceSecurityControlParametersValue(StringFilter&& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<StringFilter> m_productArn;
@@ -5059,6 +5253,18 @@ namespace Model
 
     Aws::Vector<StringFilter> m_complianceAssociatedStandardsId;
     bool m_complianceAssociatedStandardsIdHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_vulnerabilitiesExploitAvailable;
+    bool m_vulnerabilitiesExploitAvailableHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_vulnerabilitiesFixAvailable;
+    bool m_vulnerabilitiesFixAvailableHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_complianceSecurityControlParametersName;
+    bool m_complianceSecurityControlParametersNameHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_complianceSecurityControlParametersValue;
+    bool m_complianceSecurityControlParametersValueHasBeenSet = false;
   };
 
 } // namespace Model

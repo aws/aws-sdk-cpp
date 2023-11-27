@@ -63,6 +63,7 @@
 #include <aws/securityhub/model/GetInsightsResult.h>
 #include <aws/securityhub/model/GetInvitationsCountResult.h>
 #include <aws/securityhub/model/GetMembersResult.h>
+#include <aws/securityhub/model/GetSecurityControlDefinitionResult.h>
 #include <aws/securityhub/model/InviteMembersResult.h>
 #include <aws/securityhub/model/ListAutomationRulesResult.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportResult.h>
@@ -80,6 +81,7 @@
 #include <aws/securityhub/model/UpdateFindingsResult.h>
 #include <aws/securityhub/model/UpdateInsightResult.h>
 #include <aws/securityhub/model/UpdateOrganizationConfigurationResult.h>
+#include <aws/securityhub/model/UpdateSecurityControlResult.h>
 #include <aws/securityhub/model/UpdateSecurityHubConfigurationResult.h>
 #include <aws/securityhub/model/UpdateStandardsControlResult.h>
 /* End of service model headers required in SecurityHubClient header */
@@ -167,6 +169,7 @@ namespace Aws
       class GetInsightsRequest;
       class GetInvitationsCountRequest;
       class GetMembersRequest;
+      class GetSecurityControlDefinitionRequest;
       class InviteMembersRequest;
       class ListAutomationRulesRequest;
       class ListEnabledProductsForImportRequest;
@@ -184,6 +187,7 @@ namespace Aws
       class UpdateFindingsRequest;
       class UpdateInsightRequest;
       class UpdateOrganizationConfigurationRequest;
+      class UpdateSecurityControlRequest;
       class UpdateSecurityHubConfigurationRequest;
       class UpdateStandardsControlRequest;
       /* End of service model forward declarations required in SecurityHubClient header */
@@ -234,6 +238,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetInsightsResult, SecurityHubError> GetInsightsOutcome;
       typedef Aws::Utils::Outcome<GetInvitationsCountResult, SecurityHubError> GetInvitationsCountOutcome;
       typedef Aws::Utils::Outcome<GetMembersResult, SecurityHubError> GetMembersOutcome;
+      typedef Aws::Utils::Outcome<GetSecurityControlDefinitionResult, SecurityHubError> GetSecurityControlDefinitionOutcome;
       typedef Aws::Utils::Outcome<InviteMembersResult, SecurityHubError> InviteMembersOutcome;
       typedef Aws::Utils::Outcome<ListAutomationRulesResult, SecurityHubError> ListAutomationRulesOutcome;
       typedef Aws::Utils::Outcome<ListEnabledProductsForImportResult, SecurityHubError> ListEnabledProductsForImportOutcome;
@@ -251,6 +256,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateFindingsResult, SecurityHubError> UpdateFindingsOutcome;
       typedef Aws::Utils::Outcome<UpdateInsightResult, SecurityHubError> UpdateInsightOutcome;
       typedef Aws::Utils::Outcome<UpdateOrganizationConfigurationResult, SecurityHubError> UpdateOrganizationConfigurationOutcome;
+      typedef Aws::Utils::Outcome<UpdateSecurityControlResult, SecurityHubError> UpdateSecurityControlOutcome;
       typedef Aws::Utils::Outcome<UpdateSecurityHubConfigurationResult, SecurityHubError> UpdateSecurityHubConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateStandardsControlResult, SecurityHubError> UpdateStandardsControlOutcome;
       /* End of service model Outcome class definitions */
@@ -301,6 +307,7 @@ namespace Aws
       typedef std::future<GetInsightsOutcome> GetInsightsOutcomeCallable;
       typedef std::future<GetInvitationsCountOutcome> GetInvitationsCountOutcomeCallable;
       typedef std::future<GetMembersOutcome> GetMembersOutcomeCallable;
+      typedef std::future<GetSecurityControlDefinitionOutcome> GetSecurityControlDefinitionOutcomeCallable;
       typedef std::future<InviteMembersOutcome> InviteMembersOutcomeCallable;
       typedef std::future<ListAutomationRulesOutcome> ListAutomationRulesOutcomeCallable;
       typedef std::future<ListEnabledProductsForImportOutcome> ListEnabledProductsForImportOutcomeCallable;
@@ -318,6 +325,7 @@ namespace Aws
       typedef std::future<UpdateFindingsOutcome> UpdateFindingsOutcomeCallable;
       typedef std::future<UpdateInsightOutcome> UpdateInsightOutcomeCallable;
       typedef std::future<UpdateOrganizationConfigurationOutcome> UpdateOrganizationConfigurationOutcomeCallable;
+      typedef std::future<UpdateSecurityControlOutcome> UpdateSecurityControlOutcomeCallable;
       typedef std::future<UpdateSecurityHubConfigurationOutcome> UpdateSecurityHubConfigurationOutcomeCallable;
       typedef std::future<UpdateStandardsControlOutcome> UpdateStandardsControlOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -371,6 +379,7 @@ namespace Aws
     typedef std::function<void(const SecurityHubClient*, const Model::GetInsightsRequest&, const Model::GetInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetInvitationsCountRequest&, const Model::GetInvitationsCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInvitationsCountResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetMembersRequest&, const Model::GetMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMembersResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::GetSecurityControlDefinitionRequest&, const Model::GetSecurityControlDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSecurityControlDefinitionResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::InviteMembersRequest&, const Model::InviteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InviteMembersResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::ListAutomationRulesRequest&, const Model::ListAutomationRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAutomationRulesResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::ListEnabledProductsForImportRequest&, const Model::ListEnabledProductsForImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnabledProductsForImportResponseReceivedHandler;
@@ -388,6 +397,7 @@ namespace Aws
     typedef std::function<void(const SecurityHubClient*, const Model::UpdateFindingsRequest&, const Model::UpdateFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFindingsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::UpdateInsightRequest&, const Model::UpdateInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInsightResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::UpdateOrganizationConfigurationRequest&, const Model::UpdateOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOrganizationConfigurationResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::UpdateSecurityControlRequest&, const Model::UpdateSecurityControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityControlResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::UpdateSecurityHubConfigurationRequest&, const Model::UpdateSecurityHubConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityHubConfigurationResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::UpdateStandardsControlRequest&, const Model::UpdateStandardsControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStandardsControlResponseReceivedHandler;
     /* End of service model async handlers definitions */

@@ -1429,6 +1429,33 @@ namespace SecurityHub
         }
 
         /**
+         * <p> Retrieves the definition of a security control. The definition includes the
+         * control title, description, Region availability, parameter definitions, and
+         * other details. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetSecurityControlDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSecurityControlDefinitionOutcome GetSecurityControlDefinition(const Model::GetSecurityControlDefinitionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSecurityControlDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSecurityControlDefinitionRequestT = Model::GetSecurityControlDefinitionRequest>
+        Model::GetSecurityControlDefinitionOutcomeCallable GetSecurityControlDefinitionCallable(const GetSecurityControlDefinitionRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::GetSecurityControlDefinition, request);
+        }
+
+        /**
+         * An Async wrapper for GetSecurityControlDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSecurityControlDefinitionRequestT = Model::GetSecurityControlDefinitionRequest>
+        void GetSecurityControlDefinitionAsync(const GetSecurityControlDefinitionRequestT& request, const GetSecurityControlDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::GetSecurityControlDefinition, request, handler, context);
+        }
+
+        /**
          * <p>Invites other Amazon Web Services accounts to become member accounts for the
          * Security Hub administrator account that the invitation is sent from.</p> <p>This
          * operation is only used to invite accounts that do not belong to an organization.
@@ -1885,6 +1912,31 @@ namespace SecurityHub
         void UpdateOrganizationConfigurationAsync(const UpdateOrganizationConfigurationRequestT& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::UpdateOrganizationConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p> Updates the properties of a security control. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateSecurityControl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSecurityControlOutcome UpdateSecurityControl(const Model::UpdateSecurityControlRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSecurityControl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSecurityControlRequestT = Model::UpdateSecurityControlRequest>
+        Model::UpdateSecurityControlOutcomeCallable UpdateSecurityControlCallable(const UpdateSecurityControlRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::UpdateSecurityControl, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSecurityControl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSecurityControlRequestT = Model::UpdateSecurityControlRequest>
+        void UpdateSecurityControlAsync(const UpdateSecurityControlRequestT& request, const UpdateSecurityControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::UpdateSecurityControl, request, handler, context);
         }
 
         /**

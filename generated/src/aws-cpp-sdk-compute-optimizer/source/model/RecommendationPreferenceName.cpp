@@ -23,6 +23,9 @@ namespace Aws
         static const int EnhancedInfrastructureMetrics_HASH = HashingUtils::HashString("EnhancedInfrastructureMetrics");
         static const int InferredWorkloadTypes_HASH = HashingUtils::HashString("InferredWorkloadTypes");
         static const int ExternalMetricsPreference_HASH = HashingUtils::HashString("ExternalMetricsPreference");
+        static const int LookBackPeriodPreference_HASH = HashingUtils::HashString("LookBackPeriodPreference");
+        static const int PreferredResources_HASH = HashingUtils::HashString("PreferredResources");
+        static const int UtilizationPreferences_HASH = HashingUtils::HashString("UtilizationPreferences");
 
 
         RecommendationPreferenceName GetRecommendationPreferenceNameForName(const Aws::String& name)
@@ -39,6 +42,18 @@ namespace Aws
           else if (hashCode == ExternalMetricsPreference_HASH)
           {
             return RecommendationPreferenceName::ExternalMetricsPreference;
+          }
+          else if (hashCode == LookBackPeriodPreference_HASH)
+          {
+            return RecommendationPreferenceName::LookBackPeriodPreference;
+          }
+          else if (hashCode == PreferredResources_HASH)
+          {
+            return RecommendationPreferenceName::PreferredResources;
+          }
+          else if (hashCode == UtilizationPreferences_HASH)
+          {
+            return RecommendationPreferenceName::UtilizationPreferences;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +77,12 @@ namespace Aws
             return "InferredWorkloadTypes";
           case RecommendationPreferenceName::ExternalMetricsPreference:
             return "ExternalMetricsPreference";
+          case RecommendationPreferenceName::LookBackPeriodPreference:
+            return "LookBackPeriodPreference";
+          case RecommendationPreferenceName::PreferredResources:
+            return "PreferredResources";
+          case RecommendationPreferenceName::UtilizationPreferences:
+            return "UtilizationPreferences";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

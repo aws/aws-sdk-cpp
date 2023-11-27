@@ -7,6 +7,7 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/compute-optimizer/model/SavingsOpportunity.h>
+#include <aws/compute-optimizer/model/LambdaSavingsOpportunityAfterDiscounts.h>
 #include <aws/compute-optimizer/model/LambdaFunctionMemoryProjectedMetric.h>
 #include <utility>
 
@@ -177,6 +178,49 @@ namespace Model
      */
     inline LambdaFunctionMemoryRecommendationOption& WithSavingsOpportunity(SavingsOpportunity&& value) { SetSavingsOpportunity(std::move(value)); return *this;}
 
+
+    /**
+     * <p> An object that describes the savings opportunity for the Lambda
+     * recommendation option which includes Saving Plans discounts. Savings opportunity
+     * includes the estimated monthly savings and percentage. </p>
+     */
+    inline const LambdaSavingsOpportunityAfterDiscounts& GetSavingsOpportunityAfterDiscounts() const{ return m_savingsOpportunityAfterDiscounts; }
+
+    /**
+     * <p> An object that describes the savings opportunity for the Lambda
+     * recommendation option which includes Saving Plans discounts. Savings opportunity
+     * includes the estimated monthly savings and percentage. </p>
+     */
+    inline bool SavingsOpportunityAfterDiscountsHasBeenSet() const { return m_savingsOpportunityAfterDiscountsHasBeenSet; }
+
+    /**
+     * <p> An object that describes the savings opportunity for the Lambda
+     * recommendation option which includes Saving Plans discounts. Savings opportunity
+     * includes the estimated monthly savings and percentage. </p>
+     */
+    inline void SetSavingsOpportunityAfterDiscounts(const LambdaSavingsOpportunityAfterDiscounts& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = value; }
+
+    /**
+     * <p> An object that describes the savings opportunity for the Lambda
+     * recommendation option which includes Saving Plans discounts. Savings opportunity
+     * includes the estimated monthly savings and percentage. </p>
+     */
+    inline void SetSavingsOpportunityAfterDiscounts(LambdaSavingsOpportunityAfterDiscounts&& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = std::move(value); }
+
+    /**
+     * <p> An object that describes the savings opportunity for the Lambda
+     * recommendation option which includes Saving Plans discounts. Savings opportunity
+     * includes the estimated monthly savings and percentage. </p>
+     */
+    inline LambdaFunctionMemoryRecommendationOption& WithSavingsOpportunityAfterDiscounts(const LambdaSavingsOpportunityAfterDiscounts& value) { SetSavingsOpportunityAfterDiscounts(value); return *this;}
+
+    /**
+     * <p> An object that describes the savings opportunity for the Lambda
+     * recommendation option which includes Saving Plans discounts. Savings opportunity
+     * includes the estimated monthly savings and percentage. </p>
+     */
+    inline LambdaFunctionMemoryRecommendationOption& WithSavingsOpportunityAfterDiscounts(LambdaSavingsOpportunityAfterDiscounts&& value) { SetSavingsOpportunityAfterDiscounts(std::move(value)); return *this;}
+
   private:
 
     int m_rank;
@@ -190,6 +234,9 @@ namespace Model
 
     SavingsOpportunity m_savingsOpportunity;
     bool m_savingsOpportunityHasBeenSet = false;
+
+    LambdaSavingsOpportunityAfterDiscounts m_savingsOpportunityAfterDiscounts;
+    bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
   };
 
 } // namespace Model

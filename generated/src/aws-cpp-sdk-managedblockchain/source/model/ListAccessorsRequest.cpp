@@ -18,7 +18,9 @@ using namespace Aws::Http;
 ListAccessorsRequest::ListAccessorsRequest() : 
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_networkType(AccessorNetworkType::NOT_SET),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,13 @@ void ListAccessorsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_networkTypeHasBeenSet)
+    {
+      ss << AccessorNetworkTypeMapper::GetNameForAccessorNetworkType(m_networkType);
+      uri.AddQueryStringParameter("networkType", ss.str());
       ss.str("");
     }
 

@@ -1289,23 +1289,22 @@ namespace IoTFleetWise
          * information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html">DeleteServiceLinkedRole</a>
          * in the <i>Identity and Access Management API Reference</i>.</p> 
-         * <pre><code> &lt;p&gt;Registers your Amazon Web Services account, IAM, and Amazon
-         * Timestream resources so Amazon Web Services IoT FleetWise can transfer your
-         * vehicle data to the Amazon Web Services Cloud. For more information, including
-         * step-by-step procedures, see &lt;a
-         * href=&quot;https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/setting-up.html&quot;&gt;Setting
-         * up Amazon Web Services IoT FleetWise&lt;/a&gt;. &lt;/p&gt; &lt;note&gt;
-         * &lt;p&gt;An Amazon Web Services account is &lt;b&gt;not&lt;/b&gt; the same thing
-         * as a &quot;user.&quot; An &lt;a
-         * href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_identity-management.html#intro-identity-users&quot;&gt;Amazon
-         * Web Services user&lt;/a&gt; is an identity that you create using Identity and
-         * Access Management (IAM) and takes the form of either an &lt;a
-         * href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html&quot;&gt;IAM
-         * user&lt;/a&gt; or an &lt;a
-         * href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html&quot;&gt;IAM
-         * role, both with credentials&lt;/a&gt;. A single Amazon Web Services account can,
-         * and typically does, contain many users and roles.&lt;/p&gt; &lt;/note&gt;
-         * </code></pre><p><h3>See Also:</h3>   <a
+         * <p>Registers your Amazon Web Services account, IAM, and Amazon Timestream
+         * resources so Amazon Web Services IoT FleetWise can transfer your vehicle data to
+         * the Amazon Web Services Cloud. For more information, including step-by-step
+         * procedures, see <a
+         * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/setting-up.html">Setting
+         * up Amazon Web Services IoT FleetWise</a>. </p>  <p>An Amazon Web Services
+         * account is <b>not</b> the same thing as a "user." An <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_identity-management.html#intro-identity-users">Amazon
+         * Web Services user</a> is an identity that you create using Identity and Access
+         * Management (IAM) and takes the form of either an <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html">IAM
+         * user</a> or an <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM role,
+         * both with credentials</a>. A single Amazon Web Services account can, and
+         * typically does, contain many users and roles.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/RegisterAccount">AWS
          * API Reference</a></p>
          */

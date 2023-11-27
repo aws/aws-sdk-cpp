@@ -80,8 +80,9 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. If you don’t specify a client token, the Amazon Web
      * Services SDK automatically generates a client token and uses it for the request
-     * to ensure idempotency. The API uses one of the last 10 client tokens
-     * provided.</p>
+     * to ensure idempotency. The API will return idempotent responses for the last 10
+     * client tokens used to successfully redrive the execution. These client tokens
+     * are valid for up to 15 minutes after they are first used.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -89,8 +90,9 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. If you don’t specify a client token, the Amazon Web
      * Services SDK automatically generates a client token and uses it for the request
-     * to ensure idempotency. The API uses one of the last 10 client tokens
-     * provided.</p>
+     * to ensure idempotency. The API will return idempotent responses for the last 10
+     * client tokens used to successfully redrive the execution. These client tokens
+     * are valid for up to 15 minutes after they are first used.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -98,8 +100,9 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. If you don’t specify a client token, the Amazon Web
      * Services SDK automatically generates a client token and uses it for the request
-     * to ensure idempotency. The API uses one of the last 10 client tokens
-     * provided.</p>
+     * to ensure idempotency. The API will return idempotent responses for the last 10
+     * client tokens used to successfully redrive the execution. These client tokens
+     * are valid for up to 15 minutes after they are first used.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -107,8 +110,9 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. If you don’t specify a client token, the Amazon Web
      * Services SDK automatically generates a client token and uses it for the request
-     * to ensure idempotency. The API uses one of the last 10 client tokens
-     * provided.</p>
+     * to ensure idempotency. The API will return idempotent responses for the last 10
+     * client tokens used to successfully redrive the execution. These client tokens
+     * are valid for up to 15 minutes after they are first used.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -116,8 +120,9 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. If you don’t specify a client token, the Amazon Web
      * Services SDK automatically generates a client token and uses it for the request
-     * to ensure idempotency. The API uses one of the last 10 client tokens
-     * provided.</p>
+     * to ensure idempotency. The API will return idempotent responses for the last 10
+     * client tokens used to successfully redrive the execution. These client tokens
+     * are valid for up to 15 minutes after they are first used.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -125,8 +130,9 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. If you don’t specify a client token, the Amazon Web
      * Services SDK automatically generates a client token and uses it for the request
-     * to ensure idempotency. The API uses one of the last 10 client tokens
-     * provided.</p>
+     * to ensure idempotency. The API will return idempotent responses for the last 10
+     * client tokens used to successfully redrive the execution. These client tokens
+     * are valid for up to 15 minutes after they are first used.</p>
      */
     inline RedriveExecutionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -134,8 +140,9 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. If you don’t specify a client token, the Amazon Web
      * Services SDK automatically generates a client token and uses it for the request
-     * to ensure idempotency. The API uses one of the last 10 client tokens
-     * provided.</p>
+     * to ensure idempotency. The API will return idempotent responses for the last 10
+     * client tokens used to successfully redrive the execution. These client tokens
+     * are valid for up to 15 minutes after they are first used.</p>
      */
     inline RedriveExecutionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -143,8 +150,9 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. If you don’t specify a client token, the Amazon Web
      * Services SDK automatically generates a client token and uses it for the request
-     * to ensure idempotency. The API uses one of the last 10 client tokens
-     * provided.</p>
+     * to ensure idempotency. The API will return idempotent responses for the last 10
+     * client tokens used to successfully redrive the execution. These client tokens
+     * are valid for up to 15 minutes after they are first used.</p>
      */
     inline RedriveExecutionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

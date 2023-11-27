@@ -375,12 +375,6 @@ static const Aws::Vector<ControlTowerEndpointProviderEndpointTestCase> TEST_CASE
     {}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
-  },
-  /*TEST CASE 42*/
-  {"Partition doesn't support DualStack", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
   }
 };
 

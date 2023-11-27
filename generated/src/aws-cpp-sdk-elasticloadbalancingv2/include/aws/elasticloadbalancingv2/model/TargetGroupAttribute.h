@@ -87,13 +87,17 @@ namespace Model
      * Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
      * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
-     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
-     * which a newly registered target receives an increasing share of the traffic to
-     * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
-     * seconds (disabled).</p> </li> <li> <p>
+     * value is <code>round_robin</code>, <code>least_outstanding_requests</code>, or
+     * <code>weighted_random</code>. The default is <code>round_robin</code>.</p> </li>
+     * <li> <p> <code>load_balancing.algorithm.anomaly_mitigation</code> - Only
+     * available when <code>load_balancing.algorithm.type</code> is
+     * <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
+     * The value is <code>on</code> or <code>off</code>. The default is
+     * <code>off</code>.</p> </li> <li> <p> <code>slow_start.duration_seconds</code> -
+     * The time period, in seconds, during which a newly registered target receives an
+     * increasing share of the traffic to the target group. After this time period
+     * ends, the target receives its full share of traffic. The range is 30-900 seconds
+     * (15 minutes). The default is 0 seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
      * application-based cookie. Names that start with the following prefixes are not
      * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
@@ -201,13 +205,17 @@ namespace Model
      * Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
      * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
-     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
-     * which a newly registered target receives an increasing share of the traffic to
-     * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
-     * seconds (disabled).</p> </li> <li> <p>
+     * value is <code>round_robin</code>, <code>least_outstanding_requests</code>, or
+     * <code>weighted_random</code>. The default is <code>round_robin</code>.</p> </li>
+     * <li> <p> <code>load_balancing.algorithm.anomaly_mitigation</code> - Only
+     * available when <code>load_balancing.algorithm.type</code> is
+     * <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
+     * The value is <code>on</code> or <code>off</code>. The default is
+     * <code>off</code>.</p> </li> <li> <p> <code>slow_start.duration_seconds</code> -
+     * The time period, in seconds, during which a newly registered target receives an
+     * increasing share of the traffic to the target group. After this time period
+     * ends, the target receives its full share of traffic. The range is 30-900 seconds
+     * (15 minutes). The default is 0 seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
      * application-based cookie. Names that start with the following prefixes are not
      * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
@@ -315,13 +323,17 @@ namespace Model
      * Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
      * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
-     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
-     * which a newly registered target receives an increasing share of the traffic to
-     * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
-     * seconds (disabled).</p> </li> <li> <p>
+     * value is <code>round_robin</code>, <code>least_outstanding_requests</code>, or
+     * <code>weighted_random</code>. The default is <code>round_robin</code>.</p> </li>
+     * <li> <p> <code>load_balancing.algorithm.anomaly_mitigation</code> - Only
+     * available when <code>load_balancing.algorithm.type</code> is
+     * <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
+     * The value is <code>on</code> or <code>off</code>. The default is
+     * <code>off</code>.</p> </li> <li> <p> <code>slow_start.duration_seconds</code> -
+     * The time period, in seconds, during which a newly registered target receives an
+     * increasing share of the traffic to the target group. After this time period
+     * ends, the target receives its full share of traffic. The range is 30-900 seconds
+     * (15 minutes). The default is 0 seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
      * application-based cookie. Names that start with the following prefixes are not
      * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
@@ -429,13 +441,17 @@ namespace Model
      * Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
      * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
-     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
-     * which a newly registered target receives an increasing share of the traffic to
-     * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
-     * seconds (disabled).</p> </li> <li> <p>
+     * value is <code>round_robin</code>, <code>least_outstanding_requests</code>, or
+     * <code>weighted_random</code>. The default is <code>round_robin</code>.</p> </li>
+     * <li> <p> <code>load_balancing.algorithm.anomaly_mitigation</code> - Only
+     * available when <code>load_balancing.algorithm.type</code> is
+     * <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
+     * The value is <code>on</code> or <code>off</code>. The default is
+     * <code>off</code>.</p> </li> <li> <p> <code>slow_start.duration_seconds</code> -
+     * The time period, in seconds, during which a newly registered target receives an
+     * increasing share of the traffic to the target group. After this time period
+     * ends, the target receives its full share of traffic. The range is 30-900 seconds
+     * (15 minutes). The default is 0 seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
      * application-based cookie. Names that start with the following prefixes are not
      * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
@@ -543,13 +559,17 @@ namespace Model
      * Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
      * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
-     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
-     * which a newly registered target receives an increasing share of the traffic to
-     * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
-     * seconds (disabled).</p> </li> <li> <p>
+     * value is <code>round_robin</code>, <code>least_outstanding_requests</code>, or
+     * <code>weighted_random</code>. The default is <code>round_robin</code>.</p> </li>
+     * <li> <p> <code>load_balancing.algorithm.anomaly_mitigation</code> - Only
+     * available when <code>load_balancing.algorithm.type</code> is
+     * <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
+     * The value is <code>on</code> or <code>off</code>. The default is
+     * <code>off</code>.</p> </li> <li> <p> <code>slow_start.duration_seconds</code> -
+     * The time period, in seconds, during which a newly registered target receives an
+     * increasing share of the traffic to the target group. After this time period
+     * ends, the target receives its full share of traffic. The range is 30-900 seconds
+     * (15 minutes). The default is 0 seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
      * application-based cookie. Names that start with the following prefixes are not
      * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
@@ -657,13 +677,17 @@ namespace Model
      * Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
      * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
-     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
-     * which a newly registered target receives an increasing share of the traffic to
-     * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
-     * seconds (disabled).</p> </li> <li> <p>
+     * value is <code>round_robin</code>, <code>least_outstanding_requests</code>, or
+     * <code>weighted_random</code>. The default is <code>round_robin</code>.</p> </li>
+     * <li> <p> <code>load_balancing.algorithm.anomaly_mitigation</code> - Only
+     * available when <code>load_balancing.algorithm.type</code> is
+     * <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
+     * The value is <code>on</code> or <code>off</code>. The default is
+     * <code>off</code>.</p> </li> <li> <p> <code>slow_start.duration_seconds</code> -
+     * The time period, in seconds, during which a newly registered target receives an
+     * increasing share of the traffic to the target group. After this time period
+     * ends, the target receives its full share of traffic. The range is 30-900 seconds
+     * (15 minutes). The default is 0 seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
      * application-based cookie. Names that start with the following prefixes are not
      * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
@@ -771,13 +795,17 @@ namespace Model
      * Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
      * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
-     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
-     * which a newly registered target receives an increasing share of the traffic to
-     * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
-     * seconds (disabled).</p> </li> <li> <p>
+     * value is <code>round_robin</code>, <code>least_outstanding_requests</code>, or
+     * <code>weighted_random</code>. The default is <code>round_robin</code>.</p> </li>
+     * <li> <p> <code>load_balancing.algorithm.anomaly_mitigation</code> - Only
+     * available when <code>load_balancing.algorithm.type</code> is
+     * <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
+     * The value is <code>on</code> or <code>off</code>. The default is
+     * <code>off</code>.</p> </li> <li> <p> <code>slow_start.duration_seconds</code> -
+     * The time period, in seconds, during which a newly registered target receives an
+     * increasing share of the traffic to the target group. After this time period
+     * ends, the target receives its full share of traffic. The range is 30-900 seconds
+     * (15 minutes). The default is 0 seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
      * application-based cookie. Names that start with the following prefixes are not
      * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
@@ -885,13 +913,17 @@ namespace Model
      * Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
      * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
-     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
-     * which a newly registered target receives an increasing share of the traffic to
-     * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
-     * seconds (disabled).</p> </li> <li> <p>
+     * value is <code>round_robin</code>, <code>least_outstanding_requests</code>, or
+     * <code>weighted_random</code>. The default is <code>round_robin</code>.</p> </li>
+     * <li> <p> <code>load_balancing.algorithm.anomaly_mitigation</code> - Only
+     * available when <code>load_balancing.algorithm.type</code> is
+     * <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
+     * The value is <code>on</code> or <code>off</code>. The default is
+     * <code>off</code>.</p> </li> <li> <p> <code>slow_start.duration_seconds</code> -
+     * The time period, in seconds, during which a newly registered target receives an
+     * increasing share of the traffic to the target group. After this time period
+     * ends, the target receives its full share of traffic. The range is 30-900 seconds
+     * (15 minutes). The default is 0 seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
      * application-based cookie. Names that start with the following prefixes are not
      * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;

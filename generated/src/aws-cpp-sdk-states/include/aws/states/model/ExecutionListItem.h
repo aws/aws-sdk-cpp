@@ -553,29 +553,29 @@ namespace Model
 
     /**
      * <p>The number of times you've redriven an execution. If you have not yet
-     * redriven an execution, the <code>redriveCount</code> is 0. This count is not
-     * updated for redrives that failed to start or are pending to be redriven.</p>
+     * redriven an execution, the <code>redriveCount</code> is 0. This count is only
+     * updated when you successfully redrive an execution.</p>
      */
     inline int GetRedriveCount() const{ return m_redriveCount; }
 
     /**
      * <p>The number of times you've redriven an execution. If you have not yet
-     * redriven an execution, the <code>redriveCount</code> is 0. This count is not
-     * updated for redrives that failed to start or are pending to be redriven.</p>
+     * redriven an execution, the <code>redriveCount</code> is 0. This count is only
+     * updated when you successfully redrive an execution.</p>
      */
     inline bool RedriveCountHasBeenSet() const { return m_redriveCountHasBeenSet; }
 
     /**
      * <p>The number of times you've redriven an execution. If you have not yet
-     * redriven an execution, the <code>redriveCount</code> is 0. This count is not
-     * updated for redrives that failed to start or are pending to be redriven.</p>
+     * redriven an execution, the <code>redriveCount</code> is 0. This count is only
+     * updated when you successfully redrive an execution.</p>
      */
     inline void SetRedriveCount(int value) { m_redriveCountHasBeenSet = true; m_redriveCount = value; }
 
     /**
      * <p>The number of times you've redriven an execution. If you have not yet
-     * redriven an execution, the <code>redriveCount</code> is 0. This count is not
-     * updated for redrives that failed to start or are pending to be redriven.</p>
+     * redriven an execution, the <code>redriveCount</code> is 0. This count is only
+     * updated when you successfully redrive an execution.</p>
      */
     inline ExecutionListItem& WithRedriveCount(int value) { SetRedriveCount(value); return *this;}
 

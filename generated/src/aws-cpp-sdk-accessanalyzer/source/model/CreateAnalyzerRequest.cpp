@@ -19,7 +19,8 @@ CreateAnalyzerRequest::CreateAnalyzerRequest() :
     m_archiveRulesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_configurationHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,12 @@ Aws::String CreateAnalyzerRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_configurationHasBeenSet)
+  {
+   payload.WithObject("configuration", m_configuration.Jsonize());
 
   }
 

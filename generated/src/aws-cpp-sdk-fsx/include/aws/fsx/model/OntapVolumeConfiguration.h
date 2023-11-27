@@ -11,6 +11,8 @@
 #include <aws/fsx/model/TieringPolicy.h>
 #include <aws/fsx/model/OntapVolumeType.h>
 #include <aws/fsx/model/SnaplockConfiguration.h>
+#include <aws/fsx/model/VolumeStyle.h>
+#include <aws/fsx/model/AggregateConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -517,7 +519,7 @@ namespace Model
      * provide the name of a custom policy that you created with the ONTAP CLI or REST
      * API.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
-     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+     * policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline const Aws::String& GetSnapshotPolicy() const{ return m_snapshotPolicy; }
 
@@ -535,7 +537,7 @@ namespace Model
      * provide the name of a custom policy that you created with the ONTAP CLI or REST
      * API.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
-     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+     * policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline bool SnapshotPolicyHasBeenSet() const { return m_snapshotPolicyHasBeenSet; }
 
@@ -553,7 +555,7 @@ namespace Model
      * provide the name of a custom policy that you created with the ONTAP CLI or REST
      * API.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
-     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+     * policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline void SetSnapshotPolicy(const Aws::String& value) { m_snapshotPolicyHasBeenSet = true; m_snapshotPolicy = value; }
 
@@ -571,7 +573,7 @@ namespace Model
      * provide the name of a custom policy that you created with the ONTAP CLI or REST
      * API.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
-     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+     * policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline void SetSnapshotPolicy(Aws::String&& value) { m_snapshotPolicyHasBeenSet = true; m_snapshotPolicy = std::move(value); }
 
@@ -589,7 +591,7 @@ namespace Model
      * provide the name of a custom policy that you created with the ONTAP CLI or REST
      * API.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
-     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+     * policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline void SetSnapshotPolicy(const char* value) { m_snapshotPolicyHasBeenSet = true; m_snapshotPolicy.assign(value); }
 
@@ -607,7 +609,7 @@ namespace Model
      * provide the name of a custom policy that you created with the ONTAP CLI or REST
      * API.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
-     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+     * policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline OntapVolumeConfiguration& WithSnapshotPolicy(const Aws::String& value) { SetSnapshotPolicy(value); return *this;}
 
@@ -625,7 +627,7 @@ namespace Model
      * provide the name of a custom policy that you created with the ONTAP CLI or REST
      * API.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
-     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+     * policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline OntapVolumeConfiguration& WithSnapshotPolicy(Aws::String&& value) { SetSnapshotPolicy(std::move(value)); return *this;}
 
@@ -643,7 +645,7 @@ namespace Model
      * provide the name of a custom policy that you created with the ONTAP CLI or REST
      * API.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
-     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+     * policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline OntapVolumeConfiguration& WithSnapshotPolicy(const char* value) { SetSnapshotPolicy(value); return *this;}
 
@@ -723,6 +725,113 @@ namespace Model
      */
     inline OntapVolumeConfiguration& WithSnaplockConfiguration(SnaplockConfiguration&& value) { SetSnaplockConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Use to specify the style of an ONTAP volume. For more information about
+     * FlexVols and FlexGroups, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume
+     * types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+     */
+    inline const VolumeStyle& GetVolumeStyle() const{ return m_volumeStyle; }
+
+    /**
+     * <p>Use to specify the style of an ONTAP volume. For more information about
+     * FlexVols and FlexGroups, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume
+     * types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+     */
+    inline bool VolumeStyleHasBeenSet() const { return m_volumeStyleHasBeenSet; }
+
+    /**
+     * <p>Use to specify the style of an ONTAP volume. For more information about
+     * FlexVols and FlexGroups, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume
+     * types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+     */
+    inline void SetVolumeStyle(const VolumeStyle& value) { m_volumeStyleHasBeenSet = true; m_volumeStyle = value; }
+
+    /**
+     * <p>Use to specify the style of an ONTAP volume. For more information about
+     * FlexVols and FlexGroups, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume
+     * types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+     */
+    inline void SetVolumeStyle(VolumeStyle&& value) { m_volumeStyleHasBeenSet = true; m_volumeStyle = std::move(value); }
+
+    /**
+     * <p>Use to specify the style of an ONTAP volume. For more information about
+     * FlexVols and FlexGroups, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume
+     * types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+     */
+    inline OntapVolumeConfiguration& WithVolumeStyle(const VolumeStyle& value) { SetVolumeStyle(value); return *this;}
+
+    /**
+     * <p>Use to specify the style of an ONTAP volume. For more information about
+     * FlexVols and FlexGroups, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume
+     * types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+     */
+    inline OntapVolumeConfiguration& WithVolumeStyle(VolumeStyle&& value) { SetVolumeStyle(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This structure specifies configuration options for a volume’s storage
+     * aggregate or aggregates.</p>
+     */
+    inline const AggregateConfiguration& GetAggregateConfiguration() const{ return m_aggregateConfiguration; }
+
+    /**
+     * <p>This structure specifies configuration options for a volume’s storage
+     * aggregate or aggregates.</p>
+     */
+    inline bool AggregateConfigurationHasBeenSet() const { return m_aggregateConfigurationHasBeenSet; }
+
+    /**
+     * <p>This structure specifies configuration options for a volume’s storage
+     * aggregate or aggregates.</p>
+     */
+    inline void SetAggregateConfiguration(const AggregateConfiguration& value) { m_aggregateConfigurationHasBeenSet = true; m_aggregateConfiguration = value; }
+
+    /**
+     * <p>This structure specifies configuration options for a volume’s storage
+     * aggregate or aggregates.</p>
+     */
+    inline void SetAggregateConfiguration(AggregateConfiguration&& value) { m_aggregateConfigurationHasBeenSet = true; m_aggregateConfiguration = std::move(value); }
+
+    /**
+     * <p>This structure specifies configuration options for a volume’s storage
+     * aggregate or aggregates.</p>
+     */
+    inline OntapVolumeConfiguration& WithAggregateConfiguration(const AggregateConfiguration& value) { SetAggregateConfiguration(value); return *this;}
+
+    /**
+     * <p>This structure specifies configuration options for a volume’s storage
+     * aggregate or aggregates.</p>
+     */
+    inline OntapVolumeConfiguration& WithAggregateConfiguration(AggregateConfiguration&& value) { SetAggregateConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configured size of the volume, in bytes.</p>
+     */
+    inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
+
+    /**
+     * <p>The configured size of the volume, in bytes.</p>
+     */
+    inline bool SizeInBytesHasBeenSet() const { return m_sizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The configured size of the volume, in bytes.</p>
+     */
+    inline void SetSizeInBytes(long long value) { m_sizeInBytesHasBeenSet = true; m_sizeInBytes = value; }
+
+    /**
+     * <p>The configured size of the volume, in bytes.</p>
+     */
+    inline OntapVolumeConfiguration& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
+
   private:
 
     FlexCacheEndpointType m_flexCacheEndpointType;
@@ -763,6 +872,15 @@ namespace Model
 
     SnaplockConfiguration m_snaplockConfiguration;
     bool m_snaplockConfigurationHasBeenSet = false;
+
+    VolumeStyle m_volumeStyle;
+    bool m_volumeStyleHasBeenSet = false;
+
+    AggregateConfiguration m_aggregateConfiguration;
+    bool m_aggregateConfigurationHasBeenSet = false;
+
+    long long m_sizeInBytes;
+    bool m_sizeInBytesHasBeenSet = false;
   };
 
 } // namespace Model

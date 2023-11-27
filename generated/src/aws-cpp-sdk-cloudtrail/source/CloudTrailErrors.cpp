@@ -62,6 +62,7 @@ static const int CHANNEL_A_R_N_INVALID_HASH = HashingUtils::HashString("ChannelA
 static const int INVALID_TOKEN_HASH = HashingUtils::HashString("InvalidTokenException");
 static const int INSUFFICIENT_DEPENDENCY_SERVICE_ACCESS_PERMISSION_HASH = HashingUtils::HashString("InsufficientDependencyServiceAccessPermissionException");
 static const int EVENT_DATA_STORE_TERMINATION_PROTECTED_HASH = HashingUtils::HashString("EventDataStoreTerminationProtectedException");
+static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int EVENT_DATA_STORE_MAX_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("EventDataStoreMaxLimitExceededException");
 static const int INSUFFICIENT_SNS_TOPIC_POLICY_HASH = HashingUtils::HashString("InsufficientSnsTopicPolicyException");
 static const int INVALID_CLOUD_WATCH_LOGS_ROLE_ARN_HASH = HashingUtils::HashString("InvalidCloudWatchLogsRoleArnException");
@@ -89,6 +90,7 @@ static const int INVALID_EVENT_DATA_STORE_CATEGORY_HASH = HashingUtils::HashStri
 static const int ACCOUNT_NOT_REGISTERED_HASH = HashingUtils::HashString("AccountNotRegisteredException");
 static const int INVALID_CLOUD_WATCH_LOGS_LOG_GROUP_ARN_HASH = HashingUtils::HashString("InvalidCloudWatchLogsLogGroupArnException");
 static const int S3_BUCKET_DOES_NOT_EXIST_HASH = HashingUtils::HashString("S3BucketDoesNotExistException");
+static const int EVENT_DATA_STORE_FEDERATION_ENABLED_HASH = HashingUtils::HashString("EventDataStoreFederationEnabledException");
 static const int KMS_HASH = HashingUtils::HashString("KmsException");
 static const int INVALID_SOURCE_HASH = HashingUtils::HashString("InvalidSourceException");
 static const int INVALID_EVENT_CATEGORY_HASH = HashingUtils::HashString("InvalidEventCategoryException");
@@ -277,6 +279,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_TERMINATION_PROTECTED), false);
   }
+  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CONCURRENT_MODIFICATION), false);
+  }
   else if (hashCode == EVENT_DATA_STORE_MAX_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_MAX_LIMIT_EXCEEDED), false);
@@ -384,6 +390,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == S3_BUCKET_DOES_NOT_EXIST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::S3_BUCKET_DOES_NOT_EXIST), false);
+  }
+  else if (hashCode == EVENT_DATA_STORE_FEDERATION_ENABLED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_FEDERATION_ENABLED), false);
   }
   else if (hashCode == KMS_HASH)
   {

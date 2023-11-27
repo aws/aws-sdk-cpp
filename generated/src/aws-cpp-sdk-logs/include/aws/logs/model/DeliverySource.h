@@ -32,8 +32,7 @@ namespace Model
    * Amazon S3, or Kinesis Data Firehose.</p> <p>Only some Amazon Web Services
    * services support being configured as a delivery source. These services are
    * listed as <b>Supported [V2 Permissions]</b> in the table at <a
-   * href="https://docs.aws.amazon.com/
-   * AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
    * logging from Amazon Web Services services.</a> </p> <p>To configure logs
    * delivery between a supported Amazon Web Services service and a destination, you
    * must do the following:</p> <ul> <li> <p>Create a delivery source, which is a

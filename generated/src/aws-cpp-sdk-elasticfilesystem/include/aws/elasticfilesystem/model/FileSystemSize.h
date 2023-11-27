@@ -161,6 +161,31 @@ namespace Model
      */
     inline FileSystemSize& WithValueInStandard(long long value) { SetValueInStandard(value); return *this;}
 
+
+    /**
+     * <p>The latest known metered size (in bytes) of data stored in the Archive
+     * storage class.</p>
+     */
+    inline long long GetValueInArchive() const{ return m_valueInArchive; }
+
+    /**
+     * <p>The latest known metered size (in bytes) of data stored in the Archive
+     * storage class.</p>
+     */
+    inline bool ValueInArchiveHasBeenSet() const { return m_valueInArchiveHasBeenSet; }
+
+    /**
+     * <p>The latest known metered size (in bytes) of data stored in the Archive
+     * storage class.</p>
+     */
+    inline void SetValueInArchive(long long value) { m_valueInArchiveHasBeenSet = true; m_valueInArchive = value; }
+
+    /**
+     * <p>The latest known metered size (in bytes) of data stored in the Archive
+     * storage class.</p>
+     */
+    inline FileSystemSize& WithValueInArchive(long long value) { SetValueInArchive(value); return *this;}
+
   private:
 
     long long m_value;
@@ -174,6 +199,9 @@ namespace Model
 
     long long m_valueInStandard;
     bool m_valueInStandardHasBeenSet = false;
+
+    long long m_valueInArchive;
+    bool m_valueInArchiveHasBeenSet = false;
   };
 
 } // namespace Model

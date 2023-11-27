@@ -238,98 +238,98 @@ namespace Model
 
 
     /**
-     * <p>Specifies the directory on the Amazon EFS file system that the access point
-     * exposes as the root directory of your file system to NFS clients using the
-     * access point. The clients using the access point can only access the root
-     * directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code>
-     * specified does not exist, EFS creates it and applies the
-     * <code>CreationInfo</code> settings when a client connects to an access point.
-     * When specifying a <code>RootDirectory</code>, you must provide the
-     * <code>Path</code>, and the <code>CreationInfo</code>.</p> <p>Amazon EFS creates
-     * a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and
-     * permissions for the directory. If you do not provide this information, Amazon
-     * EFS does not create the root directory. If the root directory does not exist,
-     * attempts to mount using the access point will fail.</p>
+     * <p>Specifies the directory on the EFS file system that the access point exposes
+     * as the root directory of your file system to NFS clients using the access point.
+     * The clients using the access point can only access the root directory and below.
+     * If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not
+     * exist, Amazon EFS creates it and applies the <code>CreationInfo</code> settings
+     * when a client connects to an access point. When specifying a
+     * <code>RootDirectory</code>, you must provide the <code>Path</code>, and the
+     * <code>CreationInfo</code>.</p> <p>Amazon EFS creates a root directory only if
+     * you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the
+     * directory. If you do not provide this information, Amazon EFS does not create
+     * the root directory. If the root directory does not exist, attempts to mount
+     * using the access point will fail.</p>
      */
     inline const RootDirectory& GetRootDirectory() const{ return m_rootDirectory; }
 
     /**
-     * <p>Specifies the directory on the Amazon EFS file system that the access point
-     * exposes as the root directory of your file system to NFS clients using the
-     * access point. The clients using the access point can only access the root
-     * directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code>
-     * specified does not exist, EFS creates it and applies the
-     * <code>CreationInfo</code> settings when a client connects to an access point.
-     * When specifying a <code>RootDirectory</code>, you must provide the
-     * <code>Path</code>, and the <code>CreationInfo</code>.</p> <p>Amazon EFS creates
-     * a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and
-     * permissions for the directory. If you do not provide this information, Amazon
-     * EFS does not create the root directory. If the root directory does not exist,
-     * attempts to mount using the access point will fail.</p>
+     * <p>Specifies the directory on the EFS file system that the access point exposes
+     * as the root directory of your file system to NFS clients using the access point.
+     * The clients using the access point can only access the root directory and below.
+     * If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not
+     * exist, Amazon EFS creates it and applies the <code>CreationInfo</code> settings
+     * when a client connects to an access point. When specifying a
+     * <code>RootDirectory</code>, you must provide the <code>Path</code>, and the
+     * <code>CreationInfo</code>.</p> <p>Amazon EFS creates a root directory only if
+     * you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the
+     * directory. If you do not provide this information, Amazon EFS does not create
+     * the root directory. If the root directory does not exist, attempts to mount
+     * using the access point will fail.</p>
      */
     inline bool RootDirectoryHasBeenSet() const { return m_rootDirectoryHasBeenSet; }
 
     /**
-     * <p>Specifies the directory on the Amazon EFS file system that the access point
-     * exposes as the root directory of your file system to NFS clients using the
-     * access point. The clients using the access point can only access the root
-     * directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code>
-     * specified does not exist, EFS creates it and applies the
-     * <code>CreationInfo</code> settings when a client connects to an access point.
-     * When specifying a <code>RootDirectory</code>, you must provide the
-     * <code>Path</code>, and the <code>CreationInfo</code>.</p> <p>Amazon EFS creates
-     * a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and
-     * permissions for the directory. If you do not provide this information, Amazon
-     * EFS does not create the root directory. If the root directory does not exist,
-     * attempts to mount using the access point will fail.</p>
+     * <p>Specifies the directory on the EFS file system that the access point exposes
+     * as the root directory of your file system to NFS clients using the access point.
+     * The clients using the access point can only access the root directory and below.
+     * If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not
+     * exist, Amazon EFS creates it and applies the <code>CreationInfo</code> settings
+     * when a client connects to an access point. When specifying a
+     * <code>RootDirectory</code>, you must provide the <code>Path</code>, and the
+     * <code>CreationInfo</code>.</p> <p>Amazon EFS creates a root directory only if
+     * you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the
+     * directory. If you do not provide this information, Amazon EFS does not create
+     * the root directory. If the root directory does not exist, attempts to mount
+     * using the access point will fail.</p>
      */
     inline void SetRootDirectory(const RootDirectory& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = value; }
 
     /**
-     * <p>Specifies the directory on the Amazon EFS file system that the access point
-     * exposes as the root directory of your file system to NFS clients using the
-     * access point. The clients using the access point can only access the root
-     * directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code>
-     * specified does not exist, EFS creates it and applies the
-     * <code>CreationInfo</code> settings when a client connects to an access point.
-     * When specifying a <code>RootDirectory</code>, you must provide the
-     * <code>Path</code>, and the <code>CreationInfo</code>.</p> <p>Amazon EFS creates
-     * a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and
-     * permissions for the directory. If you do not provide this information, Amazon
-     * EFS does not create the root directory. If the root directory does not exist,
-     * attempts to mount using the access point will fail.</p>
+     * <p>Specifies the directory on the EFS file system that the access point exposes
+     * as the root directory of your file system to NFS clients using the access point.
+     * The clients using the access point can only access the root directory and below.
+     * If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not
+     * exist, Amazon EFS creates it and applies the <code>CreationInfo</code> settings
+     * when a client connects to an access point. When specifying a
+     * <code>RootDirectory</code>, you must provide the <code>Path</code>, and the
+     * <code>CreationInfo</code>.</p> <p>Amazon EFS creates a root directory only if
+     * you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the
+     * directory. If you do not provide this information, Amazon EFS does not create
+     * the root directory. If the root directory does not exist, attempts to mount
+     * using the access point will fail.</p>
      */
     inline void SetRootDirectory(RootDirectory&& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = std::move(value); }
 
     /**
-     * <p>Specifies the directory on the Amazon EFS file system that the access point
-     * exposes as the root directory of your file system to NFS clients using the
-     * access point. The clients using the access point can only access the root
-     * directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code>
-     * specified does not exist, EFS creates it and applies the
-     * <code>CreationInfo</code> settings when a client connects to an access point.
-     * When specifying a <code>RootDirectory</code>, you must provide the
-     * <code>Path</code>, and the <code>CreationInfo</code>.</p> <p>Amazon EFS creates
-     * a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and
-     * permissions for the directory. If you do not provide this information, Amazon
-     * EFS does not create the root directory. If the root directory does not exist,
-     * attempts to mount using the access point will fail.</p>
+     * <p>Specifies the directory on the EFS file system that the access point exposes
+     * as the root directory of your file system to NFS clients using the access point.
+     * The clients using the access point can only access the root directory and below.
+     * If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not
+     * exist, Amazon EFS creates it and applies the <code>CreationInfo</code> settings
+     * when a client connects to an access point. When specifying a
+     * <code>RootDirectory</code>, you must provide the <code>Path</code>, and the
+     * <code>CreationInfo</code>.</p> <p>Amazon EFS creates a root directory only if
+     * you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the
+     * directory. If you do not provide this information, Amazon EFS does not create
+     * the root directory. If the root directory does not exist, attempts to mount
+     * using the access point will fail.</p>
      */
     inline CreateAccessPointRequest& WithRootDirectory(const RootDirectory& value) { SetRootDirectory(value); return *this;}
 
     /**
-     * <p>Specifies the directory on the Amazon EFS file system that the access point
-     * exposes as the root directory of your file system to NFS clients using the
-     * access point. The clients using the access point can only access the root
-     * directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code>
-     * specified does not exist, EFS creates it and applies the
-     * <code>CreationInfo</code> settings when a client connects to an access point.
-     * When specifying a <code>RootDirectory</code>, you must provide the
-     * <code>Path</code>, and the <code>CreationInfo</code>.</p> <p>Amazon EFS creates
-     * a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and
-     * permissions for the directory. If you do not provide this information, Amazon
-     * EFS does not create the root directory. If the root directory does not exist,
-     * attempts to mount using the access point will fail.</p>
+     * <p>Specifies the directory on the EFS file system that the access point exposes
+     * as the root directory of your file system to NFS clients using the access point.
+     * The clients using the access point can only access the root directory and below.
+     * If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not
+     * exist, Amazon EFS creates it and applies the <code>CreationInfo</code> settings
+     * when a client connects to an access point. When specifying a
+     * <code>RootDirectory</code>, you must provide the <code>Path</code>, and the
+     * <code>CreationInfo</code>.</p> <p>Amazon EFS creates a root directory only if
+     * you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the
+     * directory. If you do not provide this information, Amazon EFS does not create
+     * the root directory. If the root directory does not exist, attempts to mount
+     * using the access point will fail.</p>
      */
     inline CreateAccessPointRequest& WithRootDirectory(RootDirectory&& value) { SetRootDirectory(std::move(value)); return *this;}
 

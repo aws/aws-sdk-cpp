@@ -351,22 +351,30 @@ namespace Model
 
 
     /**
-     * <p>The storage capacity of the file system in gibibytes (GiB).</p>
+     * <p>The storage capacity of the file system in gibibytes (GiB).</p> <p>Amazon FSx
+     * responds with an HTTP status code 400 (Bad Request) if the value of
+     * <code>StorageCapacity</code> is outside of the minimum or maximum values.</p>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
     /**
-     * <p>The storage capacity of the file system in gibibytes (GiB).</p>
+     * <p>The storage capacity of the file system in gibibytes (GiB).</p> <p>Amazon FSx
+     * responds with an HTTP status code 400 (Bad Request) if the value of
+     * <code>StorageCapacity</code> is outside of the minimum or maximum values.</p>
      */
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
 
     /**
-     * <p>The storage capacity of the file system in gibibytes (GiB).</p>
+     * <p>The storage capacity of the file system in gibibytes (GiB).</p> <p>Amazon FSx
+     * responds with an HTTP status code 400 (Bad Request) if the value of
+     * <code>StorageCapacity</code> is outside of the minimum or maximum values.</p>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
     /**
-     * <p>The storage capacity of the file system in gibibytes (GiB).</p>
+     * <p>The storage capacity of the file system in gibibytes (GiB).</p> <p>Amazon FSx
+     * responds with an HTTP status code 400 (Bad Request) if the value of
+     * <code>StorageCapacity</code> is outside of the minimum or maximum values.</p>
      */
     inline FileSystem& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 

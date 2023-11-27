@@ -30,7 +30,7 @@ namespace Model
   /**
    * <p>This structure contains information about one <i>delivery destination</i> in
    * your account. A delivery destination is an Amazon Web Services resource that
-   * represents an shared id="AWS"/&gt; service that logs can be sent to. CloudWatch
+   * represents an Amazon Web Services service that logs can be sent to. CloudWatch
    * Logs, Amazon S3, are supported as Kinesis Data Firehose delivery
    * destinations.</p> <p>To configure logs delivery between a supported Amazon Web
    * Services service and a destination, you must do the following:</p> <ul> <li>

@@ -66,32 +66,32 @@ namespace Model
 
 
     /**
-     * <p>The term unit of the subscription. Valid value is MONTHS.</p>
+     * <p>The term unit of the subscription. Valid value is <code>MONTHS</code>.</p>
      */
     inline const EksAnywhereSubscriptionTermUnit& GetUnit() const{ return m_unit; }
 
     /**
-     * <p>The term unit of the subscription. Valid value is MONTHS.</p>
+     * <p>The term unit of the subscription. Valid value is <code>MONTHS</code>.</p>
      */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
-     * <p>The term unit of the subscription. Valid value is MONTHS.</p>
+     * <p>The term unit of the subscription. Valid value is <code>MONTHS</code>.</p>
      */
     inline void SetUnit(const EksAnywhereSubscriptionTermUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
-     * <p>The term unit of the subscription. Valid value is MONTHS.</p>
+     * <p>The term unit of the subscription. Valid value is <code>MONTHS</code>.</p>
      */
     inline void SetUnit(EksAnywhereSubscriptionTermUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     /**
-     * <p>The term unit of the subscription. Valid value is MONTHS.</p>
+     * <p>The term unit of the subscription. Valid value is <code>MONTHS</code>.</p>
      */
     inline EksAnywhereSubscriptionTerm& WithUnit(const EksAnywhereSubscriptionTermUnit& value) { SetUnit(value); return *this;}
 
     /**
-     * <p>The term unit of the subscription. Valid value is MONTHS.</p>
+     * <p>The term unit of the subscription. Valid value is <code>MONTHS</code>.</p>
      */
     inline EksAnywhereSubscriptionTerm& WithUnit(EksAnywhereSubscriptionTermUnit&& value) { SetUnit(std::move(value)); return *this;}
 

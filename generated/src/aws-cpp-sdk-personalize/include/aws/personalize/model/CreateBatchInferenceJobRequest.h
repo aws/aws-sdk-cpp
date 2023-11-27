@@ -11,6 +11,8 @@
 #include <aws/personalize/model/BatchInferenceJobOutput.h>
 #include <aws/personalize/model/BatchInferenceJobConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/personalize/model/BatchInferenceJobMode.h>
+#include <aws/personalize/model/ThemeGenerationConfig.h>
 #include <aws/personalize/model/Tag.h>
 #include <utility>
 
@@ -427,6 +429,110 @@ namespace Model
      */
     inline CreateBatchInferenceJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The mode of the batch inference job. To generate descriptive themes for
+     * groups of similar items, set the job mode to <code>THEME_GENERATION</code>. If
+     * you don't want to generate themes, use the default
+     * <code>BATCH_INFERENCE</code>.</p> <p> When you get batch recommendations with
+     * themes, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
+     * pricing</a>. </p>
+     */
+    inline const BatchInferenceJobMode& GetBatchInferenceJobMode() const{ return m_batchInferenceJobMode; }
+
+    /**
+     * <p>The mode of the batch inference job. To generate descriptive themes for
+     * groups of similar items, set the job mode to <code>THEME_GENERATION</code>. If
+     * you don't want to generate themes, use the default
+     * <code>BATCH_INFERENCE</code>.</p> <p> When you get batch recommendations with
+     * themes, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
+     * pricing</a>. </p>
+     */
+    inline bool BatchInferenceJobModeHasBeenSet() const { return m_batchInferenceJobModeHasBeenSet; }
+
+    /**
+     * <p>The mode of the batch inference job. To generate descriptive themes for
+     * groups of similar items, set the job mode to <code>THEME_GENERATION</code>. If
+     * you don't want to generate themes, use the default
+     * <code>BATCH_INFERENCE</code>.</p> <p> When you get batch recommendations with
+     * themes, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
+     * pricing</a>. </p>
+     */
+    inline void SetBatchInferenceJobMode(const BatchInferenceJobMode& value) { m_batchInferenceJobModeHasBeenSet = true; m_batchInferenceJobMode = value; }
+
+    /**
+     * <p>The mode of the batch inference job. To generate descriptive themes for
+     * groups of similar items, set the job mode to <code>THEME_GENERATION</code>. If
+     * you don't want to generate themes, use the default
+     * <code>BATCH_INFERENCE</code>.</p> <p> When you get batch recommendations with
+     * themes, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
+     * pricing</a>. </p>
+     */
+    inline void SetBatchInferenceJobMode(BatchInferenceJobMode&& value) { m_batchInferenceJobModeHasBeenSet = true; m_batchInferenceJobMode = std::move(value); }
+
+    /**
+     * <p>The mode of the batch inference job. To generate descriptive themes for
+     * groups of similar items, set the job mode to <code>THEME_GENERATION</code>. If
+     * you don't want to generate themes, use the default
+     * <code>BATCH_INFERENCE</code>.</p> <p> When you get batch recommendations with
+     * themes, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
+     * pricing</a>. </p>
+     */
+    inline CreateBatchInferenceJobRequest& WithBatchInferenceJobMode(const BatchInferenceJobMode& value) { SetBatchInferenceJobMode(value); return *this;}
+
+    /**
+     * <p>The mode of the batch inference job. To generate descriptive themes for
+     * groups of similar items, set the job mode to <code>THEME_GENERATION</code>. If
+     * you don't want to generate themes, use the default
+     * <code>BATCH_INFERENCE</code>.</p> <p> When you get batch recommendations with
+     * themes, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
+     * pricing</a>. </p>
+     */
+    inline CreateBatchInferenceJobRequest& WithBatchInferenceJobMode(BatchInferenceJobMode&& value) { SetBatchInferenceJobMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>For theme generation jobs, specify the name of the column in your Items
+     * dataset that contains each item's name.</p>
+     */
+    inline const ThemeGenerationConfig& GetThemeGenerationConfig() const{ return m_themeGenerationConfig; }
+
+    /**
+     * <p>For theme generation jobs, specify the name of the column in your Items
+     * dataset that contains each item's name.</p>
+     */
+    inline bool ThemeGenerationConfigHasBeenSet() const { return m_themeGenerationConfigHasBeenSet; }
+
+    /**
+     * <p>For theme generation jobs, specify the name of the column in your Items
+     * dataset that contains each item's name.</p>
+     */
+    inline void SetThemeGenerationConfig(const ThemeGenerationConfig& value) { m_themeGenerationConfigHasBeenSet = true; m_themeGenerationConfig = value; }
+
+    /**
+     * <p>For theme generation jobs, specify the name of the column in your Items
+     * dataset that contains each item's name.</p>
+     */
+    inline void SetThemeGenerationConfig(ThemeGenerationConfig&& value) { m_themeGenerationConfigHasBeenSet = true; m_themeGenerationConfig = std::move(value); }
+
+    /**
+     * <p>For theme generation jobs, specify the name of the column in your Items
+     * dataset that contains each item's name.</p>
+     */
+    inline CreateBatchInferenceJobRequest& WithThemeGenerationConfig(const ThemeGenerationConfig& value) { SetThemeGenerationConfig(value); return *this;}
+
+    /**
+     * <p>For theme generation jobs, specify the name of the column in your Items
+     * dataset that contains each item's name.</p>
+     */
+    inline CreateBatchInferenceJobRequest& WithThemeGenerationConfig(ThemeGenerationConfig&& value) { SetThemeGenerationConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobName;
@@ -455,6 +561,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    BatchInferenceJobMode m_batchInferenceJobMode;
+    bool m_batchInferenceJobModeHasBeenSet = false;
+
+    ThemeGenerationConfig m_themeGenerationConfig;
+    bool m_themeGenerationConfigHasBeenSet = false;
   };
 
 } // namespace Model

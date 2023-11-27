@@ -251,40 +251,40 @@ namespace Model
     /**
      * <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or
      * <code>TIMED_OUT</code> child workflow executions that cannot be redriven because
-     * their execution status is terminal. For example, if your execution event history
-     * contains 25,000 entries, or the <code>toleratedFailureCount</code> or
-     * <code>toleratedFailurePercentage</code> for the Distributed Map has
-     * exceeded.</p>
+     * their execution status is terminal. For example, child workflows with an
+     * execution status of <code>FAILED</code>, <code>ABORTED</code>, or
+     * <code>TIMED_OUT</code> and a <code>redriveStatus</code> of
+     * <code>NOT_REDRIVABLE</code>.</p>
      */
     inline long long GetFailuresNotRedrivable() const{ return m_failuresNotRedrivable; }
 
     /**
      * <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or
      * <code>TIMED_OUT</code> child workflow executions that cannot be redriven because
-     * their execution status is terminal. For example, if your execution event history
-     * contains 25,000 entries, or the <code>toleratedFailureCount</code> or
-     * <code>toleratedFailurePercentage</code> for the Distributed Map has
-     * exceeded.</p>
+     * their execution status is terminal. For example, child workflows with an
+     * execution status of <code>FAILED</code>, <code>ABORTED</code>, or
+     * <code>TIMED_OUT</code> and a <code>redriveStatus</code> of
+     * <code>NOT_REDRIVABLE</code>.</p>
      */
     inline bool FailuresNotRedrivableHasBeenSet() const { return m_failuresNotRedrivableHasBeenSet; }
 
     /**
      * <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or
      * <code>TIMED_OUT</code> child workflow executions that cannot be redriven because
-     * their execution status is terminal. For example, if your execution event history
-     * contains 25,000 entries, or the <code>toleratedFailureCount</code> or
-     * <code>toleratedFailurePercentage</code> for the Distributed Map has
-     * exceeded.</p>
+     * their execution status is terminal. For example, child workflows with an
+     * execution status of <code>FAILED</code>, <code>ABORTED</code>, or
+     * <code>TIMED_OUT</code> and a <code>redriveStatus</code> of
+     * <code>NOT_REDRIVABLE</code>.</p>
      */
     inline void SetFailuresNotRedrivable(long long value) { m_failuresNotRedrivableHasBeenSet = true; m_failuresNotRedrivable = value; }
 
     /**
      * <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or
      * <code>TIMED_OUT</code> child workflow executions that cannot be redriven because
-     * their execution status is terminal. For example, if your execution event history
-     * contains 25,000 entries, or the <code>toleratedFailureCount</code> or
-     * <code>toleratedFailurePercentage</code> for the Distributed Map has
-     * exceeded.</p>
+     * their execution status is terminal. For example, child workflows with an
+     * execution status of <code>FAILED</code>, <code>ABORTED</code>, or
+     * <code>TIMED_OUT</code> and a <code>redriveStatus</code> of
+     * <code>NOT_REDRIVABLE</code>.</p>
      */
     inline MapRunExecutionCounts& WithFailuresNotRedrivable(long long value) { SetFailuresNotRedrivable(value); return *this;}
 

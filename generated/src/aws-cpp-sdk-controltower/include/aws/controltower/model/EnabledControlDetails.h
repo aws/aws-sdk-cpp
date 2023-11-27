@@ -275,42 +275,42 @@ namespace Model
 
 
     /**
-     * <p>Target AWS Regions for the enabled control.</p>
+     * <p>Target Amazon Web Services Regions for the enabled control.</p>
      */
     inline const Aws::Vector<Region>& GetTargetRegions() const{ return m_targetRegions; }
 
     /**
-     * <p>Target AWS Regions for the enabled control.</p>
+     * <p>Target Amazon Web Services Regions for the enabled control.</p>
      */
     inline bool TargetRegionsHasBeenSet() const { return m_targetRegionsHasBeenSet; }
 
     /**
-     * <p>Target AWS Regions for the enabled control.</p>
+     * <p>Target Amazon Web Services Regions for the enabled control.</p>
      */
     inline void SetTargetRegions(const Aws::Vector<Region>& value) { m_targetRegionsHasBeenSet = true; m_targetRegions = value; }
 
     /**
-     * <p>Target AWS Regions for the enabled control.</p>
+     * <p>Target Amazon Web Services Regions for the enabled control.</p>
      */
     inline void SetTargetRegions(Aws::Vector<Region>&& value) { m_targetRegionsHasBeenSet = true; m_targetRegions = std::move(value); }
 
     /**
-     * <p>Target AWS Regions for the enabled control.</p>
+     * <p>Target Amazon Web Services Regions for the enabled control.</p>
      */
     inline EnabledControlDetails& WithTargetRegions(const Aws::Vector<Region>& value) { SetTargetRegions(value); return *this;}
 
     /**
-     * <p>Target AWS Regions for the enabled control.</p>
+     * <p>Target Amazon Web Services Regions for the enabled control.</p>
      */
     inline EnabledControlDetails& WithTargetRegions(Aws::Vector<Region>&& value) { SetTargetRegions(std::move(value)); return *this;}
 
     /**
-     * <p>Target AWS Regions for the enabled control.</p>
+     * <p>Target Amazon Web Services Regions for the enabled control.</p>
      */
     inline EnabledControlDetails& AddTargetRegions(const Region& value) { m_targetRegionsHasBeenSet = true; m_targetRegions.push_back(value); return *this; }
 
     /**
-     * <p>Target AWS Regions for the enabled control.</p>
+     * <p>Target Amazon Web Services Regions for the enabled control.</p>
      */
     inline EnabledControlDetails& AddTargetRegions(Region&& value) { m_targetRegionsHasBeenSet = true; m_targetRegions.push_back(std::move(value)); return *this; }
 

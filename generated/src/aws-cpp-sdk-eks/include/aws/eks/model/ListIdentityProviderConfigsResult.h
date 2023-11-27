@@ -71,65 +71,72 @@ namespace Model
 
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code>
-     * was used and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the
-     * <code>nextToken</code> value.</p>
+     * <p>The <code>nextToken</code> value to include in a future
+     * <code>ListIdentityProviderConfigsResponse</code> request. When the results of a
+     * <code>ListIdentityProviderConfigsResponse</code> request exceed
+     * <code>maxResults</code>, you can use this value to retrieve the next page of
+     * results. This value is <code>null</code> when there are no more results to
+     * return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code>
-     * was used and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the
-     * <code>nextToken</code> value.</p>
+     * <p>The <code>nextToken</code> value to include in a future
+     * <code>ListIdentityProviderConfigsResponse</code> request. When the results of a
+     * <code>ListIdentityProviderConfigsResponse</code> request exceed
+     * <code>maxResults</code>, you can use this value to retrieve the next page of
+     * results. This value is <code>null</code> when there are no more results to
+     * return.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code>
-     * was used and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the
-     * <code>nextToken</code> value.</p>
+     * <p>The <code>nextToken</code> value to include in a future
+     * <code>ListIdentityProviderConfigsResponse</code> request. When the results of a
+     * <code>ListIdentityProviderConfigsResponse</code> request exceed
+     * <code>maxResults</code>, you can use this value to retrieve the next page of
+     * results. This value is <code>null</code> when there are no more results to
+     * return.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code>
-     * was used and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the
-     * <code>nextToken</code> value.</p>
+     * <p>The <code>nextToken</code> value to include in a future
+     * <code>ListIdentityProviderConfigsResponse</code> request. When the results of a
+     * <code>ListIdentityProviderConfigsResponse</code> request exceed
+     * <code>maxResults</code>, you can use this value to retrieve the next page of
+     * results. This value is <code>null</code> when there are no more results to
+     * return.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code>
-     * was used and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the
-     * <code>nextToken</code> value.</p>
+     * <p>The <code>nextToken</code> value to include in a future
+     * <code>ListIdentityProviderConfigsResponse</code> request. When the results of a
+     * <code>ListIdentityProviderConfigsResponse</code> request exceed
+     * <code>maxResults</code>, you can use this value to retrieve the next page of
+     * results. This value is <code>null</code> when there are no more results to
+     * return.</p>
      */
     inline ListIdentityProviderConfigsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code>
-     * was used and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the
-     * <code>nextToken</code> value.</p>
+     * <p>The <code>nextToken</code> value to include in a future
+     * <code>ListIdentityProviderConfigsResponse</code> request. When the results of a
+     * <code>ListIdentityProviderConfigsResponse</code> request exceed
+     * <code>maxResults</code>, you can use this value to retrieve the next page of
+     * results. This value is <code>null</code> when there are no more results to
+     * return.</p>
      */
     inline ListIdentityProviderConfigsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code>
-     * was used and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the
-     * <code>nextToken</code> value.</p>
+     * <p>The <code>nextToken</code> value to include in a future
+     * <code>ListIdentityProviderConfigsResponse</code> request. When the results of a
+     * <code>ListIdentityProviderConfigsResponse</code> request exceed
+     * <code>maxResults</code>, you can use this value to retrieve the next page of
+     * results. This value is <code>null</code> when there are no more results to
+     * return.</p>
      */
     inline ListIdentityProviderConfigsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

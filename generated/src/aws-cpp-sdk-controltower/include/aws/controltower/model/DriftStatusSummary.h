@@ -24,11 +24,11 @@ namespace Model
 {
 
   /**
-   * <p> The drift summary of the enabled control.</p> <p>AWS Control Tower expects
-   * the enabled control configuration to include all supported and governed Regions.
-   * If the enabled control differs from the expected configuration, it is defined to
-   * be in a state of drift. You can repair this drift by resetting the enabled
-   * control.</p><p><h3>See Also:</h3>   <a
+   * <p> The drift summary of the enabled control.</p> <p>Amazon Web Services Control
+   * Tower expects the enabled control configuration to include all supported and
+   * governed Regions. If the enabled control differs from the expected
+   * configuration, it is defined to be in a state of drift. You can repair this
+   * drift by resetting the enabled control.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DriftStatusSummary">AWS
    * API Reference</a></p>
    */
@@ -44,78 +44,84 @@ namespace Model
     /**
      * <p> The drift status of the enabled control.</p> <p>Valid values:</p> <ul> <li>
      * <p> <code>DRIFTED</code>: The <code>enabledControl</code> deployed in this
-     * configuration doesn’t match the configuration that AWS Control Tower expected.
-     * </p> </li> <li> <p> <code>IN_SYNC</code>: The <code>enabledControl</code>
-     * deployed in this configuration matches the configuration that AWS Control Tower
-     * expected.</p> </li> <li> <p> <code>NOT_CHECKING</code>: AWS Control Tower does
-     * not check drift for this enabled control. Drift is not supported for the control
-     * type.</p> </li> <li> <p> <code>UNKNOWN</code>: AWS Control Tower is not able to
-     * check the drift status for the enabled control. </p> </li> </ul>
+     * configuration doesn’t match the configuration that Amazon Web Services Control
+     * Tower expected. </p> </li> <li> <p> <code>IN_SYNC</code>: The
+     * <code>enabledControl</code> deployed in this configuration matches the
+     * configuration that Amazon Web Services Control Tower expected.</p> </li> <li>
+     * <p> <code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check
+     * drift for this enabled control. Drift is not supported for the control type.</p>
+     * </li> <li> <p> <code>UNKNOWN</code>: Amazon Web Services Control Tower is not
+     * able to check the drift status for the enabled control. </p> </li> </ul>
      */
     inline const DriftStatus& GetDriftStatus() const{ return m_driftStatus; }
 
     /**
      * <p> The drift status of the enabled control.</p> <p>Valid values:</p> <ul> <li>
      * <p> <code>DRIFTED</code>: The <code>enabledControl</code> deployed in this
-     * configuration doesn’t match the configuration that AWS Control Tower expected.
-     * </p> </li> <li> <p> <code>IN_SYNC</code>: The <code>enabledControl</code>
-     * deployed in this configuration matches the configuration that AWS Control Tower
-     * expected.</p> </li> <li> <p> <code>NOT_CHECKING</code>: AWS Control Tower does
-     * not check drift for this enabled control. Drift is not supported for the control
-     * type.</p> </li> <li> <p> <code>UNKNOWN</code>: AWS Control Tower is not able to
-     * check the drift status for the enabled control. </p> </li> </ul>
+     * configuration doesn’t match the configuration that Amazon Web Services Control
+     * Tower expected. </p> </li> <li> <p> <code>IN_SYNC</code>: The
+     * <code>enabledControl</code> deployed in this configuration matches the
+     * configuration that Amazon Web Services Control Tower expected.</p> </li> <li>
+     * <p> <code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check
+     * drift for this enabled control. Drift is not supported for the control type.</p>
+     * </li> <li> <p> <code>UNKNOWN</code>: Amazon Web Services Control Tower is not
+     * able to check the drift status for the enabled control. </p> </li> </ul>
      */
     inline bool DriftStatusHasBeenSet() const { return m_driftStatusHasBeenSet; }
 
     /**
      * <p> The drift status of the enabled control.</p> <p>Valid values:</p> <ul> <li>
      * <p> <code>DRIFTED</code>: The <code>enabledControl</code> deployed in this
-     * configuration doesn’t match the configuration that AWS Control Tower expected.
-     * </p> </li> <li> <p> <code>IN_SYNC</code>: The <code>enabledControl</code>
-     * deployed in this configuration matches the configuration that AWS Control Tower
-     * expected.</p> </li> <li> <p> <code>NOT_CHECKING</code>: AWS Control Tower does
-     * not check drift for this enabled control. Drift is not supported for the control
-     * type.</p> </li> <li> <p> <code>UNKNOWN</code>: AWS Control Tower is not able to
-     * check the drift status for the enabled control. </p> </li> </ul>
+     * configuration doesn’t match the configuration that Amazon Web Services Control
+     * Tower expected. </p> </li> <li> <p> <code>IN_SYNC</code>: The
+     * <code>enabledControl</code> deployed in this configuration matches the
+     * configuration that Amazon Web Services Control Tower expected.</p> </li> <li>
+     * <p> <code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check
+     * drift for this enabled control. Drift is not supported for the control type.</p>
+     * </li> <li> <p> <code>UNKNOWN</code>: Amazon Web Services Control Tower is not
+     * able to check the drift status for the enabled control. </p> </li> </ul>
      */
     inline void SetDriftStatus(const DriftStatus& value) { m_driftStatusHasBeenSet = true; m_driftStatus = value; }
 
     /**
      * <p> The drift status of the enabled control.</p> <p>Valid values:</p> <ul> <li>
      * <p> <code>DRIFTED</code>: The <code>enabledControl</code> deployed in this
-     * configuration doesn’t match the configuration that AWS Control Tower expected.
-     * </p> </li> <li> <p> <code>IN_SYNC</code>: The <code>enabledControl</code>
-     * deployed in this configuration matches the configuration that AWS Control Tower
-     * expected.</p> </li> <li> <p> <code>NOT_CHECKING</code>: AWS Control Tower does
-     * not check drift for this enabled control. Drift is not supported for the control
-     * type.</p> </li> <li> <p> <code>UNKNOWN</code>: AWS Control Tower is not able to
-     * check the drift status for the enabled control. </p> </li> </ul>
+     * configuration doesn’t match the configuration that Amazon Web Services Control
+     * Tower expected. </p> </li> <li> <p> <code>IN_SYNC</code>: The
+     * <code>enabledControl</code> deployed in this configuration matches the
+     * configuration that Amazon Web Services Control Tower expected.</p> </li> <li>
+     * <p> <code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check
+     * drift for this enabled control. Drift is not supported for the control type.</p>
+     * </li> <li> <p> <code>UNKNOWN</code>: Amazon Web Services Control Tower is not
+     * able to check the drift status for the enabled control. </p> </li> </ul>
      */
     inline void SetDriftStatus(DriftStatus&& value) { m_driftStatusHasBeenSet = true; m_driftStatus = std::move(value); }
 
     /**
      * <p> The drift status of the enabled control.</p> <p>Valid values:</p> <ul> <li>
      * <p> <code>DRIFTED</code>: The <code>enabledControl</code> deployed in this
-     * configuration doesn’t match the configuration that AWS Control Tower expected.
-     * </p> </li> <li> <p> <code>IN_SYNC</code>: The <code>enabledControl</code>
-     * deployed in this configuration matches the configuration that AWS Control Tower
-     * expected.</p> </li> <li> <p> <code>NOT_CHECKING</code>: AWS Control Tower does
-     * not check drift for this enabled control. Drift is not supported for the control
-     * type.</p> </li> <li> <p> <code>UNKNOWN</code>: AWS Control Tower is not able to
-     * check the drift status for the enabled control. </p> </li> </ul>
+     * configuration doesn’t match the configuration that Amazon Web Services Control
+     * Tower expected. </p> </li> <li> <p> <code>IN_SYNC</code>: The
+     * <code>enabledControl</code> deployed in this configuration matches the
+     * configuration that Amazon Web Services Control Tower expected.</p> </li> <li>
+     * <p> <code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check
+     * drift for this enabled control. Drift is not supported for the control type.</p>
+     * </li> <li> <p> <code>UNKNOWN</code>: Amazon Web Services Control Tower is not
+     * able to check the drift status for the enabled control. </p> </li> </ul>
      */
     inline DriftStatusSummary& WithDriftStatus(const DriftStatus& value) { SetDriftStatus(value); return *this;}
 
     /**
      * <p> The drift status of the enabled control.</p> <p>Valid values:</p> <ul> <li>
      * <p> <code>DRIFTED</code>: The <code>enabledControl</code> deployed in this
-     * configuration doesn’t match the configuration that AWS Control Tower expected.
-     * </p> </li> <li> <p> <code>IN_SYNC</code>: The <code>enabledControl</code>
-     * deployed in this configuration matches the configuration that AWS Control Tower
-     * expected.</p> </li> <li> <p> <code>NOT_CHECKING</code>: AWS Control Tower does
-     * not check drift for this enabled control. Drift is not supported for the control
-     * type.</p> </li> <li> <p> <code>UNKNOWN</code>: AWS Control Tower is not able to
-     * check the drift status for the enabled control. </p> </li> </ul>
+     * configuration doesn’t match the configuration that Amazon Web Services Control
+     * Tower expected. </p> </li> <li> <p> <code>IN_SYNC</code>: The
+     * <code>enabledControl</code> deployed in this configuration matches the
+     * configuration that Amazon Web Services Control Tower expected.</p> </li> <li>
+     * <p> <code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check
+     * drift for this enabled control. Drift is not supported for the control type.</p>
+     * </li> <li> <p> <code>UNKNOWN</code>: Amazon Web Services Control Tower is not
+     * able to check the drift status for the enabled control. </p> </li> </ul>
      */
     inline DriftStatusSummary& WithDriftStatus(DriftStatus&& value) { SetDriftStatus(std::move(value)); return *this;}
 

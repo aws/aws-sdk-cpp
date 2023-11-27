@@ -84,49 +84,57 @@ namespace Model
 
     /**
      * <p>A list of DBC files. You can upload only one DBC file for each network
-     * interface and specify up to five (inclusive) files in the list.</p>
+     * interface and specify up to five (inclusive) files in the list. The DBC file can
+     * be a maximum size of 200 MB.</p>
      */
     inline const Aws::Vector<Aws::Utils::ByteBuffer>& GetCanDbcFiles() const{ return m_canDbcFiles; }
 
     /**
      * <p>A list of DBC files. You can upload only one DBC file for each network
-     * interface and specify up to five (inclusive) files in the list.</p>
+     * interface and specify up to five (inclusive) files in the list. The DBC file can
+     * be a maximum size of 200 MB.</p>
      */
     inline bool CanDbcFilesHasBeenSet() const { return m_canDbcFilesHasBeenSet; }
 
     /**
      * <p>A list of DBC files. You can upload only one DBC file for each network
-     * interface and specify up to five (inclusive) files in the list.</p>
+     * interface and specify up to five (inclusive) files in the list. The DBC file can
+     * be a maximum size of 200 MB.</p>
      */
     inline void SetCanDbcFiles(const Aws::Vector<Aws::Utils::ByteBuffer>& value) { m_canDbcFilesHasBeenSet = true; m_canDbcFiles = value; }
 
     /**
      * <p>A list of DBC files. You can upload only one DBC file for each network
-     * interface and specify up to five (inclusive) files in the list.</p>
+     * interface and specify up to five (inclusive) files in the list. The DBC file can
+     * be a maximum size of 200 MB.</p>
      */
     inline void SetCanDbcFiles(Aws::Vector<Aws::Utils::ByteBuffer>&& value) { m_canDbcFilesHasBeenSet = true; m_canDbcFiles = std::move(value); }
 
     /**
      * <p>A list of DBC files. You can upload only one DBC file for each network
-     * interface and specify up to five (inclusive) files in the list.</p>
+     * interface and specify up to five (inclusive) files in the list. The DBC file can
+     * be a maximum size of 200 MB.</p>
      */
     inline CanDbcDefinition& WithCanDbcFiles(const Aws::Vector<Aws::Utils::ByteBuffer>& value) { SetCanDbcFiles(value); return *this;}
 
     /**
      * <p>A list of DBC files. You can upload only one DBC file for each network
-     * interface and specify up to five (inclusive) files in the list.</p>
+     * interface and specify up to five (inclusive) files in the list. The DBC file can
+     * be a maximum size of 200 MB.</p>
      */
     inline CanDbcDefinition& WithCanDbcFiles(Aws::Vector<Aws::Utils::ByteBuffer>&& value) { SetCanDbcFiles(std::move(value)); return *this;}
 
     /**
      * <p>A list of DBC files. You can upload only one DBC file for each network
-     * interface and specify up to five (inclusive) files in the list.</p>
+     * interface and specify up to five (inclusive) files in the list. The DBC file can
+     * be a maximum size of 200 MB.</p>
      */
     inline CanDbcDefinition& AddCanDbcFiles(const Aws::Utils::ByteBuffer& value) { m_canDbcFilesHasBeenSet = true; m_canDbcFiles.push_back(value); return *this; }
 
     /**
      * <p>A list of DBC files. You can upload only one DBC file for each network
-     * interface and specify up to five (inclusive) files in the list.</p>
+     * interface and specify up to five (inclusive) files in the list. The DBC file can
+     * be a maximum size of 200 MB.</p>
      */
     inline CanDbcDefinition& AddCanDbcFiles(Aws::Utils::ByteBuffer&& value) { m_canDbcFilesHasBeenSet = true; m_canDbcFiles.push_back(std::move(value)); return *this; }
 

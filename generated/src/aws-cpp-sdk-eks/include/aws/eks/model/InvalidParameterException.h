@@ -161,28 +161,52 @@ namespace Model
     inline InvalidParameterException& WithFargateProfileName(const char* value) { SetFargateProfileName(value); return *this;}
 
 
-    
+    /**
+     * <p>The specified parameter for the add-on name is invalid. Review the available
+     * parameters for the API request</p>
+     */
     inline const Aws::String& GetAddonName() const{ return m_addonName; }
 
-    
+    /**
+     * <p>The specified parameter for the add-on name is invalid. Review the available
+     * parameters for the API request</p>
+     */
     inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
 
-    
+    /**
+     * <p>The specified parameter for the add-on name is invalid. Review the available
+     * parameters for the API request</p>
+     */
     inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
 
-    
+    /**
+     * <p>The specified parameter for the add-on name is invalid. Review the available
+     * parameters for the API request</p>
+     */
     inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
 
-    
+    /**
+     * <p>The specified parameter for the add-on name is invalid. Review the available
+     * parameters for the API request</p>
+     */
     inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
 
-    
+    /**
+     * <p>The specified parameter for the add-on name is invalid. Review the available
+     * parameters for the API request</p>
+     */
     inline InvalidParameterException& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
 
-    
+    /**
+     * <p>The specified parameter for the add-on name is invalid. Review the available
+     * parameters for the API request</p>
+     */
     inline InvalidParameterException& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The specified parameter for the add-on name is invalid. Review the available
+     * parameters for the API request</p>
+     */
     inline InvalidParameterException& WithAddonName(const char* value) { SetAddonName(value); return *this;}
 
 
@@ -227,28 +251,52 @@ namespace Model
     inline InvalidParameterException& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
 
 
-    
+    /**
+     * <p>The specified parameter is invalid. Review the available parameters for the
+     * API request.</p>
+     */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
-    
+    /**
+     * <p>The specified parameter is invalid. Review the available parameters for the
+     * API request.</p>
+     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
-    
+    /**
+     * <p>The specified parameter is invalid. Review the available parameters for the
+     * API request.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    
+    /**
+     * <p>The specified parameter is invalid. Review the available parameters for the
+     * API request.</p>
+     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
-    
+    /**
+     * <p>The specified parameter is invalid. Review the available parameters for the
+     * API request.</p>
+     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    
+    /**
+     * <p>The specified parameter is invalid. Review the available parameters for the
+     * API request.</p>
+     */
     inline InvalidParameterException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    
+    /**
+     * <p>The specified parameter is invalid. Review the available parameters for the
+     * API request.</p>
+     */
     inline InvalidParameterException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The specified parameter is invalid. Review the available parameters for the
+     * API request.</p>
+     */
     inline InvalidParameterException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:

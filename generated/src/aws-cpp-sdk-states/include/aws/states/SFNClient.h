@@ -953,16 +953,17 @@ namespace SFN
          * href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-parallel-state.html">Parallel</a>
          * state, <code>RedriveExecution</code> API action reschedules and redrives only
          * the iterations and branches that failed or aborted.</p> <p>To redrive a workflow
-         * that includes a Distributed Map state with failed child workflow executions, you
-         * must redrive the <a
+         * that includes a Distributed Map state whose Map Run failed, you must redrive the
+         * <a
          * href="https://docs.aws.amazon.com/step-functions/latest/dg/use-dist-map-orchestrate-large-scale-parallel-workloads.html#dist-map-orchestrate-parallel-workloads-key-terms">parent
          * workflow</a>. The parent workflow redrives all the unsuccessful states,
-         * including Distributed Map.</p>  <p>This API action is not supported by
-         * <code>EXPRESS</code> state machines.</p> <p>However, you can restart the
-         * unsuccessful executions of Express child workflows in a Distributed Map by
-         * redriving its Map Run. When you redrive a Map Run, the Express child workflows
-         * are rerun using the <a>StartExecution</a> API action. For more information, see
-         * <a
+         * including a failed Map Run. If a Map Run was not started in the original
+         * execution attempt, the redriven parent workflow starts the Map Run.</p> 
+         * <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>
+         * <p>However, you can restart the unsuccessful executions of Express child
+         * workflows in a Distributed Map by redriving its Map Run. When you redrive a Map
+         * Run, the Express child workflows are rerun using the <a>StartExecution</a> API
+         * action. For more information, see <a
          * href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html">Redriving
          * Map Runs</a>.</p>  <p>You can redrive executions if your original
          * execution meets the following conditions:</p> <ul> <li> <p>The execution status
@@ -1252,6 +1253,71 @@ namespace SFN
         void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SFNClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Accepts the definition of a single state and executes it. You can test a
+         * state without creating a state machine or updating an existing state machine.
+         * Using this API, you can test the following:</p> <ul> <li> <p>A state's <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-input-output-dataflow">input
+         * and output processing</a> data flow</p> </li> <li> <p>An <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-services.html">Amazon
+         * Web Services service integration</a> request and response</p> </li> <li> <p>An
+         * <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-third-party-apis.html">HTTP
+         * Task</a> request and response</p> </li> </ul> <p>You can call this API on only
+         * one state at a time. The states that you can test include the following:</p>
+         * <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-task-state.html#task-types">All
+         * Task types</a> except <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html">Activity</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-pass-state.html">Pass</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-wait-state.html">Wait</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-choice-state.html">Choice</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-succeed-state.html">Succeed</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-fail-state.html">Fail</a>
+         * </p> </li> </ul> <p>The <code>TestState</code> API assumes an IAM role which
+         * must contain the required IAM permissions for the resources your state is
+         * accessing. For information about the permissions a state might need, see <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-permissions">IAM
+         * permissions to test a state</a>.</p> <p>The <code>TestState</code> API can run
+         * for up to five minutes. If the execution of a state exceeds this duration, it
+         * fails with the <code>States.Timeout</code> error.</p> <p> <code>TestState</code>
+         * doesn't support <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html">Activity
+         * tasks</a>, <code>.sync</code> or <code>.waitForTaskToken</code> <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html">service
+         * integration patterns</a>, <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-parallel-state.html">Parallel</a>,
+         * or <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-map-state.html">Map</a>
+         * states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TestState">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TestStateOutcome TestState(const Model::TestStateRequest& request) const;
+
+        /**
+         * A Callable wrapper for TestState that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TestStateRequestT = Model::TestStateRequest>
+        Model::TestStateOutcomeCallable TestStateCallable(const TestStateRequestT& request) const
+        {
+            return SubmitCallable(&SFNClient::TestState, request);
+        }
+
+        /**
+         * An Async wrapper for TestState that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TestStateRequestT = Model::TestStateRequest>
+        void TestStateAsync(const TestStateRequestT& request, const TestStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SFNClient::TestState, request, handler, context);
         }
 
         /**

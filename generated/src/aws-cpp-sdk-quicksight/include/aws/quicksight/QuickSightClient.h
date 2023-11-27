@@ -1088,6 +1088,34 @@ namespace QuickSight
         }
 
         /**
+         * <p>Deletes all access scopes and authorized targets that are associated with a
+         * service from the Amazon QuickSight IAM Identity Center application.</p> <p>This
+         * operation is only supported for Amazon QuickSight accounts that use IAM Identity
+         * Center.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteIdentityPropagationConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteIdentityPropagationConfigOutcome DeleteIdentityPropagationConfig(const Model::DeleteIdentityPropagationConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteIdentityPropagationConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteIdentityPropagationConfigRequestT = Model::DeleteIdentityPropagationConfigRequest>
+        Model::DeleteIdentityPropagationConfigOutcomeCallable DeleteIdentityPropagationConfigCallable(const DeleteIdentityPropagationConfigRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DeleteIdentityPropagationConfig, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteIdentityPropagationConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteIdentityPropagationConfigRequestT = Model::DeleteIdentityPropagationConfigRequest>
+        void DeleteIdentityPropagationConfigAsync(const DeleteIdentityPropagationConfigRequestT& request, const DeleteIdentityPropagationConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DeleteIdentityPropagationConfig, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a namespace and the users and groups that are associated with the
          * namespace. This is an asynchronous process. Assets including dashboards,
          * analyses, datasets and data sources are not deleted. To delete these assets, you
@@ -3088,6 +3116,34 @@ namespace QuickSight
         }
 
         /**
+         * <p>Lists all services and authorized targets that the Amazon QuickSight IAM
+         * Identity Center application can access.</p> <p>This operation is only supported
+         * for Amazon QuickSight accounts that use IAM Identity Center.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIdentityPropagationConfigs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIdentityPropagationConfigsOutcome ListIdentityPropagationConfigs(const Model::ListIdentityPropagationConfigsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListIdentityPropagationConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListIdentityPropagationConfigsRequestT = Model::ListIdentityPropagationConfigsRequest>
+        Model::ListIdentityPropagationConfigsOutcomeCallable ListIdentityPropagationConfigsCallable(const ListIdentityPropagationConfigsRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::ListIdentityPropagationConfigs, request);
+        }
+
+        /**
+         * An Async wrapper for ListIdentityPropagationConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListIdentityPropagationConfigsRequestT = Model::ListIdentityPropagationConfigsRequest>
+        void ListIdentityPropagationConfigsAsync(const ListIdentityPropagationConfigsRequestT& request, const ListIdentityPropagationConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::ListIdentityPropagationConfigs, request, handler, context);
+        }
+
+        /**
          * <p>Lists the history of SPICE ingestions for a dataset.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIngestions">AWS
@@ -4304,6 +4360,34 @@ namespace QuickSight
         void UpdateIAMPolicyAssignmentAsync(const UpdateIAMPolicyAssignmentRequestT& request, const UpdateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::UpdateIAMPolicyAssignment, request, handler, context);
+        }
+
+        /**
+         * <p>Adds or updates services and authorized targets to configure what the Amazon
+         * QuickSight IAM Identity Center application can access.</p> <p>This operation is
+         * only supported for Amazon QuickSight accounts using IAM Identity
+         * Center</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIdentityPropagationConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateIdentityPropagationConfigOutcome UpdateIdentityPropagationConfig(const Model::UpdateIdentityPropagationConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateIdentityPropagationConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateIdentityPropagationConfigRequestT = Model::UpdateIdentityPropagationConfigRequest>
+        Model::UpdateIdentityPropagationConfigOutcomeCallable UpdateIdentityPropagationConfigCallable(const UpdateIdentityPropagationConfigRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::UpdateIdentityPropagationConfig, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateIdentityPropagationConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateIdentityPropagationConfigRequestT = Model::UpdateIdentityPropagationConfigRequest>
+        void UpdateIdentityPropagationConfigAsync(const UpdateIdentityPropagationConfigRequestT& request, const UpdateIdentityPropagationConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::UpdateIdentityPropagationConfig, request, handler, context);
         }
 
         /**

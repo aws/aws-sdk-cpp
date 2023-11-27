@@ -29,6 +29,8 @@ namespace Aws
         static const int RDS_LOGIN_EVENTS_HASH = HashingUtils::HashString("RDS_LOGIN_EVENTS");
         static const int LAMBDA_NETWORK_LOGS_HASH = HashingUtils::HashString("LAMBDA_NETWORK_LOGS");
         static const int EKS_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EKS_RUNTIME_MONITORING");
+        static const int FARGATE_RUNTIME_MONITORING_HASH = HashingUtils::HashString("FARGATE_RUNTIME_MONITORING");
+        static const int EC2_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EC2_RUNTIME_MONITORING");
 
 
         UsageFeature GetUsageFeatureForName(const Aws::String& name)
@@ -70,6 +72,14 @@ namespace Aws
           {
             return UsageFeature::EKS_RUNTIME_MONITORING;
           }
+          else if (hashCode == FARGATE_RUNTIME_MONITORING_HASH)
+          {
+            return UsageFeature::FARGATE_RUNTIME_MONITORING;
+          }
+          else if (hashCode == EC2_RUNTIME_MONITORING_HASH)
+          {
+            return UsageFeature::EC2_RUNTIME_MONITORING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -104,6 +114,10 @@ namespace Aws
             return "LAMBDA_NETWORK_LOGS";
           case UsageFeature::EKS_RUNTIME_MONITORING:
             return "EKS_RUNTIME_MONITORING";
+          case UsageFeature::FARGATE_RUNTIME_MONITORING:
+            return "FARGATE_RUNTIME_MONITORING";
+          case UsageFeature::EC2_RUNTIME_MONITORING:
+            return "EC2_RUNTIME_MONITORING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -7,6 +7,7 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/compute-optimizer/model/SavingsOpportunity.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/compute-optimizer/model/ECSSavingsOpportunityAfterDiscounts.h>
 #include <aws/compute-optimizer/model/ECSServiceProjectedUtilizationMetric.h>
 #include <aws/compute-optimizer/model/ContainerRecommendation.h>
 #include <utility>
@@ -199,6 +200,55 @@ namespace Model
      */
     inline ECSServiceRecommendationOption& AddContainerRecommendations(ContainerRecommendation&& value) { m_containerRecommendationsHasBeenSet = true; m_containerRecommendations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> Describes the savings opportunity for Amazon ECS service recommendations or
+     * for the recommendation option. </p> <p>Savings opportunity represents the
+     * estimated monthly savings after applying Savings Plans discounts. You can
+     * achieve this by implementing a given Compute Optimizer recommendation.</p>
+     */
+    inline const ECSSavingsOpportunityAfterDiscounts& GetSavingsOpportunityAfterDiscounts() const{ return m_savingsOpportunityAfterDiscounts; }
+
+    /**
+     * <p> Describes the savings opportunity for Amazon ECS service recommendations or
+     * for the recommendation option. </p> <p>Savings opportunity represents the
+     * estimated monthly savings after applying Savings Plans discounts. You can
+     * achieve this by implementing a given Compute Optimizer recommendation.</p>
+     */
+    inline bool SavingsOpportunityAfterDiscountsHasBeenSet() const { return m_savingsOpportunityAfterDiscountsHasBeenSet; }
+
+    /**
+     * <p> Describes the savings opportunity for Amazon ECS service recommendations or
+     * for the recommendation option. </p> <p>Savings opportunity represents the
+     * estimated monthly savings after applying Savings Plans discounts. You can
+     * achieve this by implementing a given Compute Optimizer recommendation.</p>
+     */
+    inline void SetSavingsOpportunityAfterDiscounts(const ECSSavingsOpportunityAfterDiscounts& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = value; }
+
+    /**
+     * <p> Describes the savings opportunity for Amazon ECS service recommendations or
+     * for the recommendation option. </p> <p>Savings opportunity represents the
+     * estimated monthly savings after applying Savings Plans discounts. You can
+     * achieve this by implementing a given Compute Optimizer recommendation.</p>
+     */
+    inline void SetSavingsOpportunityAfterDiscounts(ECSSavingsOpportunityAfterDiscounts&& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = std::move(value); }
+
+    /**
+     * <p> Describes the savings opportunity for Amazon ECS service recommendations or
+     * for the recommendation option. </p> <p>Savings opportunity represents the
+     * estimated monthly savings after applying Savings Plans discounts. You can
+     * achieve this by implementing a given Compute Optimizer recommendation.</p>
+     */
+    inline ECSServiceRecommendationOption& WithSavingsOpportunityAfterDiscounts(const ECSSavingsOpportunityAfterDiscounts& value) { SetSavingsOpportunityAfterDiscounts(value); return *this;}
+
+    /**
+     * <p> Describes the savings opportunity for Amazon ECS service recommendations or
+     * for the recommendation option. </p> <p>Savings opportunity represents the
+     * estimated monthly savings after applying Savings Plans discounts. You can
+     * achieve this by implementing a given Compute Optimizer recommendation.</p>
+     */
+    inline ECSServiceRecommendationOption& WithSavingsOpportunityAfterDiscounts(ECSSavingsOpportunityAfterDiscounts&& value) { SetSavingsOpportunityAfterDiscounts(std::move(value)); return *this;}
+
   private:
 
     int m_memory;
@@ -215,6 +265,9 @@ namespace Model
 
     Aws::Vector<ContainerRecommendation> m_containerRecommendations;
     bool m_containerRecommendationsHasBeenSet = false;
+
+    ECSSavingsOpportunityAfterDiscounts m_savingsOpportunityAfterDiscounts;
+    bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -267,9 +267,11 @@ namespace CloudTrail
          * <code>DeleteEventDataStore</code>, the event data store enters a
          * <code>PENDING_DELETION</code> state, and is automatically deleted after a wait
          * period of seven days. <code>TerminationProtectionEnabled</code> must be set to
-         * <code>False</code> on the event data store; this operation cannot work if
-         * <code>TerminationProtectionEnabled</code> is <code>True</code>.</p> <p>After you
-         * run <code>DeleteEventDataStore</code> on an event data store, you cannot run
+         * <code>False</code> on the event data store and the <code>FederationStatus</code>
+         * must be <code>DISABLED</code>. You cannot delete an event data store if
+         * <code>TerminationProtectionEnabled</code> is <code>True</code> or the
+         * <code>FederationStatus</code> is <code>ENABLED</code>.</p> <p>After you run
+         * <code>DeleteEventDataStore</code> on an event data store, you cannot run
          * <code>ListQueries</code>, <code>DescribeQuery</code>, or
          * <code>GetQueryResults</code> on queries that are using an event data store in a
          * <code>PENDING_DELETION</code> state. An event data store in the
@@ -433,6 +435,76 @@ namespace CloudTrail
         void DescribeTrailsAsync(const DescribeTrailsRequestT& request, const DescribeTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudTrailClient::DescribeTrails, request, handler, context);
+        }
+
+        /**
+         * <p> Disables Lake query federation on the specified event data store. When you
+         * disable federation, CloudTrail removes the metadata associated with the
+         * federated event data store in the Glue Data Catalog and removes registration for
+         * the federation role ARN and event data store in Lake Formation. No CloudTrail
+         * Lake data is deleted when you disable federation. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DisableFederation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableFederationOutcome DisableFederation(const Model::DisableFederationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableFederation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableFederationRequestT = Model::DisableFederationRequest>
+        Model::DisableFederationOutcomeCallable DisableFederationCallable(const DisableFederationRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::DisableFederation, request);
+        }
+
+        /**
+         * An Async wrapper for DisableFederation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableFederationRequestT = Model::DisableFederationRequest>
+        void DisableFederationAsync(const DisableFederationRequestT& request, const DisableFederationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::DisableFederation, request, handler, context);
+        }
+
+        /**
+         * <p> Enables Lake query federation on the specified event data store. Federating
+         * an event data store lets you view the metadata associated with the event data
+         * store in the Glue <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/components-overview.html#data-catalog-intro">Data
+         * Catalog</a> and run SQL queries against your event data using Amazon Athena. The
+         * table metadata stored in the Glue Data Catalog lets the Athena query engine know
+         * how to find, read, and process the data that you want to query.</p> <p>When you
+         * enable Lake query federation, CloudTrail creates a federated database named
+         * <code>aws:cloudtrail</code> (if the database doesn't already exist) and a
+         * federated table in the Glue Data Catalog. The event data store ID is used for
+         * the table name. CloudTrail registers the role ARN and event data store in <a
+         * href="https://docs.aws.amazon.com/lake-formation/latest/dg/how-it-works.html">Lake
+         * Formation</a>, the service responsible for revoking or granting permissions to
+         * the federated resources in the Glue Data Catalog. </p> <p>For more information
+         * about Lake query federation, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Federate
+         * an event data store</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/EnableFederation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableFederationOutcome EnableFederation(const Model::EnableFederationRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableFederation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableFederationRequestT = Model::EnableFederationRequest>
+        Model::EnableFederationOutcomeCallable EnableFederationCallable(const EnableFederationRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::EnableFederation, request);
+        }
+
+        /**
+         * An Async wrapper for EnableFederation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableFederationRequestT = Model::EnableFederationRequest>
+        void EnableFederationAsync(const EnableFederationRequestT& request, const EnableFederationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::EnableFederation, request, handler, context);
         }
 
         /**

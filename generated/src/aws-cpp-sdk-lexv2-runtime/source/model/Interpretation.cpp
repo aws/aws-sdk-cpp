@@ -21,14 +21,18 @@ namespace Model
 Interpretation::Interpretation() : 
     m_nluConfidenceHasBeenSet(false),
     m_sentimentResponseHasBeenSet(false),
-    m_intentHasBeenSet(false)
+    m_intentHasBeenSet(false),
+    m_interpretationSource(InterpretationSource::NOT_SET),
+    m_interpretationSourceHasBeenSet(false)
 {
 }
 
 Interpretation::Interpretation(JsonView jsonValue) : 
     m_nluConfidenceHasBeenSet(false),
     m_sentimentResponseHasBeenSet(false),
-    m_intentHasBeenSet(false)
+    m_intentHasBeenSet(false),
+    m_interpretationSource(InterpretationSource::NOT_SET),
+    m_interpretationSourceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,13 @@ Interpretation& Interpretation::operator =(JsonView jsonValue)
     m_intentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("interpretationSource"))
+  {
+    m_interpretationSource = InterpretationSourceMapper::GetInterpretationSourceForName(jsonValue.GetString("interpretationSource"));
+
+    m_interpretationSourceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +90,11 @@ JsonValue Interpretation::Jsonize() const
   {
    payload.WithObject("intent", m_intent.Jsonize());
 
+  }
+
+  if(m_interpretationSourceHasBeenSet)
+  {
+   payload.WithString("interpretationSource", InterpretationSourceMapper::GetNameForInterpretationSource(m_interpretationSource));
   }
 
   return payload;

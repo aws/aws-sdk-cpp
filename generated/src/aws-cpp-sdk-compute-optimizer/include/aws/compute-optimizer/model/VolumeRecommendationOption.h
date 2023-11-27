@@ -7,6 +7,7 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/compute-optimizer/model/VolumeConfiguration.h>
 #include <aws/compute-optimizer/model/SavingsOpportunity.h>
+#include <aws/compute-optimizer/model/EBSSavingsOpportunityAfterDiscounts.h>
 #include <utility>
 
 namespace Aws
@@ -186,6 +187,49 @@ namespace Model
      */
     inline VolumeRecommendationOption& WithSavingsOpportunity(SavingsOpportunity&& value) { SetSavingsOpportunity(std::move(value)); return *this;}
 
+
+    /**
+     * <p> An object that describes the savings opportunity for the Amazon EBS volume
+     * recommendation option with specific discounts. Savings opportunity includes the
+     * estimated monthly savings and percentage. </p>
+     */
+    inline const EBSSavingsOpportunityAfterDiscounts& GetSavingsOpportunityAfterDiscounts() const{ return m_savingsOpportunityAfterDiscounts; }
+
+    /**
+     * <p> An object that describes the savings opportunity for the Amazon EBS volume
+     * recommendation option with specific discounts. Savings opportunity includes the
+     * estimated monthly savings and percentage. </p>
+     */
+    inline bool SavingsOpportunityAfterDiscountsHasBeenSet() const { return m_savingsOpportunityAfterDiscountsHasBeenSet; }
+
+    /**
+     * <p> An object that describes the savings opportunity for the Amazon EBS volume
+     * recommendation option with specific discounts. Savings opportunity includes the
+     * estimated monthly savings and percentage. </p>
+     */
+    inline void SetSavingsOpportunityAfterDiscounts(const EBSSavingsOpportunityAfterDiscounts& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = value; }
+
+    /**
+     * <p> An object that describes the savings opportunity for the Amazon EBS volume
+     * recommendation option with specific discounts. Savings opportunity includes the
+     * estimated monthly savings and percentage. </p>
+     */
+    inline void SetSavingsOpportunityAfterDiscounts(EBSSavingsOpportunityAfterDiscounts&& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = std::move(value); }
+
+    /**
+     * <p> An object that describes the savings opportunity for the Amazon EBS volume
+     * recommendation option with specific discounts. Savings opportunity includes the
+     * estimated monthly savings and percentage. </p>
+     */
+    inline VolumeRecommendationOption& WithSavingsOpportunityAfterDiscounts(const EBSSavingsOpportunityAfterDiscounts& value) { SetSavingsOpportunityAfterDiscounts(value); return *this;}
+
+    /**
+     * <p> An object that describes the savings opportunity for the Amazon EBS volume
+     * recommendation option with specific discounts. Savings opportunity includes the
+     * estimated monthly savings and percentage. </p>
+     */
+    inline VolumeRecommendationOption& WithSavingsOpportunityAfterDiscounts(EBSSavingsOpportunityAfterDiscounts&& value) { SetSavingsOpportunityAfterDiscounts(std::move(value)); return *this;}
+
   private:
 
     VolumeConfiguration m_configuration;
@@ -199,6 +243,9 @@ namespace Model
 
     SavingsOpportunity m_savingsOpportunity;
     bool m_savingsOpportunityHasBeenSet = false;
+
+    EBSSavingsOpportunityAfterDiscounts m_savingsOpportunityAfterDiscounts;
+    bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
   };
 
 } // namespace Model

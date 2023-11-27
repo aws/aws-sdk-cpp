@@ -22,7 +22,9 @@ Node::Node() :
     m_branchHasBeenSet(false),
     m_sensorHasBeenSet(false),
     m_actuatorHasBeenSet(false),
-    m_attributeHasBeenSet(false)
+    m_attributeHasBeenSet(false),
+    m_structHasBeenSet(false),
+    m_propertyHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ Node::Node(JsonView jsonValue) :
     m_branchHasBeenSet(false),
     m_sensorHasBeenSet(false),
     m_actuatorHasBeenSet(false),
-    m_attributeHasBeenSet(false)
+    m_attributeHasBeenSet(false),
+    m_structHasBeenSet(false),
+    m_propertyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +69,20 @@ Node& Node::operator =(JsonView jsonValue)
     m_attributeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("struct"))
+  {
+    m_struct = jsonValue.GetObject("struct");
+
+    m_structHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("property"))
+  {
+    m_property = jsonValue.GetObject("property");
+
+    m_propertyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +111,18 @@ JsonValue Node::Jsonize() const
   if(m_attributeHasBeenSet)
   {
    payload.WithObject("attribute", m_attribute.Jsonize());
+
+  }
+
+  if(m_structHasBeenSet)
+  {
+   payload.WithObject("struct", m_struct.Jsonize());
+
+  }
+
+  if(m_propertyHasBeenSet)
+  {
+   payload.WithObject("property", m_property.Jsonize());
 
   }
 

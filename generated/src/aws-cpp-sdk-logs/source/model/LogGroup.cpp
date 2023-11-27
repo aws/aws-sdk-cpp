@@ -32,7 +32,9 @@ LogGroup::LogGroup() :
     m_kmsKeyIdHasBeenSet(false),
     m_dataProtectionStatus(DataProtectionStatus::NOT_SET),
     m_dataProtectionStatusHasBeenSet(false),
-    m_inheritedPropertiesHasBeenSet(false)
+    m_inheritedPropertiesHasBeenSet(false),
+    m_logGroupClass(LogGroupClass::NOT_SET),
+    m_logGroupClassHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ LogGroup::LogGroup(JsonView jsonValue) :
     m_kmsKeyIdHasBeenSet(false),
     m_dataProtectionStatus(DataProtectionStatus::NOT_SET),
     m_dataProtectionStatusHasBeenSet(false),
-    m_inheritedPropertiesHasBeenSet(false)
+    m_inheritedPropertiesHasBeenSet(false),
+    m_logGroupClass(LogGroupClass::NOT_SET),
+    m_logGroupClassHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -123,6 +127,13 @@ LogGroup& LogGroup::operator =(JsonView jsonValue)
     m_inheritedPropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("logGroupClass"))
+  {
+    m_logGroupClass = LogGroupClassMapper::GetLogGroupClassForName(jsonValue.GetString("logGroupClass"));
+
+    m_logGroupClassHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -186,6 +197,11 @@ JsonValue LogGroup::Jsonize() const
    }
    payload.WithArray("inheritedProperties", std::move(inheritedPropertiesJsonList));
 
+  }
+
+  if(m_logGroupClassHasBeenSet)
+  {
+   payload.WithString("logGroupClass", LogGroupClassMapper::GetNameForLogGroupClass(m_logGroupClass));
   }
 
   return payload;

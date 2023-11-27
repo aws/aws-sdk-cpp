@@ -30,7 +30,7 @@ namespace ECS
    * resource needs, isolation policies, and availability requirements. With Amazon
    * ECS, you don't need to operate your own cluster management and configuration
    * management systems. You also don't need to worry about scaling your management
-   * infrastructure.</p>
+   * infrastructure. </p>
    */
   class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ECSClient>
   {
@@ -1234,7 +1234,14 @@ namespace ECS
          * <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-maintenance.html">Amazon
          * Web Services Fargate task maintenance</a> in the <i>Amazon ECS Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>The <code>guardDutyActivate</code> parameter is read-only in
+         * Amazon ECS and indicates whether Amazon ECS Runtime Monitoring is enabled or
+         * disabled by your security administrator in your Amazon ECS account. Amazon
+         * GuardDuty controls this account setting on your behalf. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-guard-duty-integration.html">Protecting
+         * Amazon ECS workloads with Amazon ECS Runtime Monitoring</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">AWS
          * API Reference</a></p>
          */

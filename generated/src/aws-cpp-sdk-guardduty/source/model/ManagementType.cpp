@@ -22,6 +22,7 @@ namespace Aws
 
         static const int AUTO_MANAGED_HASH = HashingUtils::HashString("AUTO_MANAGED");
         static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 
         ManagementType GetManagementTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == MANUAL_HASH)
           {
             return ManagementType::MANUAL;
+          }
+          else if (hashCode == DISABLED_HASH)
+          {
+            return ManagementType::DISABLED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "AUTO_MANAGED";
           case ManagementType::MANUAL:
             return "MANUAL";
+          case ManagementType::DISABLED:
+            return "DISABLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
