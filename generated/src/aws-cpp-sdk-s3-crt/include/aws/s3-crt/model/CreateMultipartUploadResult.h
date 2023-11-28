@@ -43,10 +43,11 @@ namespace Model
      * indicates when the initiated multipart upload becomes eligible for an abort
      * operation. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle
-     * Configuration</a>.</p> <p>The response also includes the
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>
+     * in the <i>Amazon S3 User Guide</i>.</p> <p>The response also includes the
      * <code>x-amz-abort-rule-id</code> header that provides the ID of the lifecycle
-     * configuration rule that defines this action.</p>
+     * configuration rule that defines the abort action.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline const Aws::Utils::DateTime& GetAbortDate() const{ return m_abortDate; }
 
@@ -57,10 +58,11 @@ namespace Model
      * indicates when the initiated multipart upload becomes eligible for an abort
      * operation. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle
-     * Configuration</a>.</p> <p>The response also includes the
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>
+     * in the <i>Amazon S3 User Guide</i>.</p> <p>The response also includes the
      * <code>x-amz-abort-rule-id</code> header that provides the ID of the lifecycle
-     * configuration rule that defines this action.</p>
+     * configuration rule that defines the abort action.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline void SetAbortDate(const Aws::Utils::DateTime& value) { m_abortDate = value; }
 
@@ -71,10 +73,11 @@ namespace Model
      * indicates when the initiated multipart upload becomes eligible for an abort
      * operation. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle
-     * Configuration</a>.</p> <p>The response also includes the
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>
+     * in the <i>Amazon S3 User Guide</i>.</p> <p>The response also includes the
      * <code>x-amz-abort-rule-id</code> header that provides the ID of the lifecycle
-     * configuration rule that defines this action.</p>
+     * configuration rule that defines the abort action.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline void SetAbortDate(Aws::Utils::DateTime&& value) { m_abortDate = std::move(value); }
 
@@ -85,10 +88,11 @@ namespace Model
      * indicates when the initiated multipart upload becomes eligible for an abort
      * operation. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle
-     * Configuration</a>.</p> <p>The response also includes the
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>
+     * in the <i>Amazon S3 User Guide</i>.</p> <p>The response also includes the
      * <code>x-amz-abort-rule-id</code> header that provides the ID of the lifecycle
-     * configuration rule that defines this action.</p>
+     * configuration rule that defines the abort action.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithAbortDate(const Aws::Utils::DateTime& value) { SetAbortDate(value); return *this;}
 
@@ -99,10 +103,11 @@ namespace Model
      * indicates when the initiated multipart upload becomes eligible for an abort
      * operation. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle
-     * Configuration</a>.</p> <p>The response also includes the
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>
+     * in the <i>Amazon S3 User Guide</i>.</p> <p>The response also includes the
      * <code>x-amz-abort-rule-id</code> header that provides the ID of the lifecycle
-     * configuration rule that defines this action.</p>
+     * configuration rule that defines the abort action.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithAbortDate(Aws::Utils::DateTime&& value) { SetAbortDate(std::move(value)); return *this;}
 
@@ -110,204 +115,106 @@ namespace Model
     /**
      * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
      * It identifies the applicable lifecycle configuration rule that defines the
-     * action to abort incomplete multipart uploads.</p>
+     * action to abort incomplete multipart uploads.</p>  <p>This functionality
+     * is not supported for directory buckets.</p> 
      */
     inline const Aws::String& GetAbortRuleId() const{ return m_abortRuleId; }
 
     /**
      * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
      * It identifies the applicable lifecycle configuration rule that defines the
-     * action to abort incomplete multipart uploads.</p>
+     * action to abort incomplete multipart uploads.</p>  <p>This functionality
+     * is not supported for directory buckets.</p> 
      */
     inline void SetAbortRuleId(const Aws::String& value) { m_abortRuleId = value; }
 
     /**
      * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
      * It identifies the applicable lifecycle configuration rule that defines the
-     * action to abort incomplete multipart uploads.</p>
+     * action to abort incomplete multipart uploads.</p>  <p>This functionality
+     * is not supported for directory buckets.</p> 
      */
     inline void SetAbortRuleId(Aws::String&& value) { m_abortRuleId = std::move(value); }
 
     /**
      * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
      * It identifies the applicable lifecycle configuration rule that defines the
-     * action to abort incomplete multipart uploads.</p>
+     * action to abort incomplete multipart uploads.</p>  <p>This functionality
+     * is not supported for directory buckets.</p> 
      */
     inline void SetAbortRuleId(const char* value) { m_abortRuleId.assign(value); }
 
     /**
      * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
      * It identifies the applicable lifecycle configuration rule that defines the
-     * action to abort incomplete multipart uploads.</p>
+     * action to abort incomplete multipart uploads.</p>  <p>This functionality
+     * is not supported for directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithAbortRuleId(const Aws::String& value) { SetAbortRuleId(value); return *this;}
 
     /**
      * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
      * It identifies the applicable lifecycle configuration rule that defines the
-     * action to abort incomplete multipart uploads.</p>
+     * action to abort incomplete multipart uploads.</p>  <p>This functionality
+     * is not supported for directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithAbortRuleId(Aws::String&& value) { SetAbortRuleId(std::move(value)); return *this;}
 
     /**
      * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
      * It identifies the applicable lifecycle configuration rule that defines the
-     * action to abort incomplete multipart uploads.</p>
+     * action to abort incomplete multipart uploads.</p>  <p>This functionality
+     * is not supported for directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithAbortRuleId(const char* value) { SetAbortRuleId(value); return *this;}
 
 
     /**
      * <p>The name of the bucket to which the multipart upload was initiated. Does not
-     * return the access point ARN or access point alias if used.</p> <p>When using
-     * this action with an access point, you must direct requests to the access point
-     * hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * return the access point ARN or access point alias if used.</p>  <p>Access
+     * points are not supported by directory buckets.</p> 
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
      * <p>The name of the bucket to which the multipart upload was initiated. Does not
-     * return the access point ARN or access point alias if used.</p> <p>When using
-     * this action with an access point, you must direct requests to the access point
-     * hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * return the access point ARN or access point alias if used.</p>  <p>Access
+     * points are not supported by directory buckets.</p> 
      */
     inline void SetBucket(const Aws::String& value) { m_bucket = value; }
 
     /**
      * <p>The name of the bucket to which the multipart upload was initiated. Does not
-     * return the access point ARN or access point alias if used.</p> <p>When using
-     * this action with an access point, you must direct requests to the access point
-     * hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * return the access point ARN or access point alias if used.</p>  <p>Access
+     * points are not supported by directory buckets.</p> 
      */
     inline void SetBucket(Aws::String&& value) { m_bucket = std::move(value); }
 
     /**
      * <p>The name of the bucket to which the multipart upload was initiated. Does not
-     * return the access point ARN or access point alias if used.</p> <p>When using
-     * this action with an access point, you must direct requests to the access point
-     * hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * return the access point ARN or access point alias if used.</p>  <p>Access
+     * points are not supported by directory buckets.</p> 
      */
     inline void SetBucket(const char* value) { m_bucket.assign(value); }
 
     /**
      * <p>The name of the bucket to which the multipart upload was initiated. Does not
-     * return the access point ARN or access point alias if used.</p> <p>When using
-     * this action with an access point, you must direct requests to the access point
-     * hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * return the access point ARN or access point alias if used.</p>  <p>Access
+     * points are not supported by directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
      * <p>The name of the bucket to which the multipart upload was initiated. Does not
-     * return the access point ARN or access point alias if used.</p> <p>When using
-     * this action with an access point, you must direct requests to the access point
-     * hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * return the access point ARN or access point alias if used.</p>  <p>Access
+     * points are not supported by directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * <p>The name of the bucket to which the multipart upload was initiated. Does not
-     * return the access point ARN or access point alias if used.</p> <p>When using
-     * this action with an access point, you must direct requests to the access point
-     * hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * return the access point ARN or access point alias if used.</p>  <p>Access
+     * points are not supported by directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -385,244 +292,285 @@ namespace Model
 
 
     /**
-     * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>
+     * <p>The server-side encryption algorithm used when you store this object in
+     * Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p> 
+     * <p>For directory buckets, only server-side encryption with Amazon S3 managed
+     * keys (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
-     * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>
+     * <p>The server-side encryption algorithm used when you store this object in
+     * Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p> 
+     * <p>For directory buckets, only server-side encryption with Amazon S3 managed
+     * keys (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryption = value; }
 
     /**
-     * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>
+     * <p>The server-side encryption algorithm used when you store this object in
+     * Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p> 
+     * <p>For directory buckets, only server-side encryption with Amazon S3 managed
+     * keys (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryption = std::move(value); }
 
     /**
-     * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>
+     * <p>The server-side encryption algorithm used when you store this object in
+     * Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p> 
+     * <p>For directory buckets, only server-side encryption with Amazon S3 managed
+     * keys (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline CreateMultipartUploadResult& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
-     * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>
+     * <p>The server-side encryption algorithm used when you store this object in
+     * Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p> 
+     * <p>For directory buckets, only server-side encryption with Amazon S3 managed
+     * keys (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline CreateMultipartUploadResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header confirming the encryption
-     * algorithm used.</p>
+     * requested, the response will include this header to confirm the encryption
+     * algorithm that's used.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header confirming the encryption
-     * algorithm used.</p>
+     * requested, the response will include this header to confirm the encryption
+     * algorithm that's used.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithm = value; }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header confirming the encryption
-     * algorithm used.</p>
+     * requested, the response will include this header to confirm the encryption
+     * algorithm that's used.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithm = std::move(value); }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header confirming the encryption
-     * algorithm used.</p>
+     * requested, the response will include this header to confirm the encryption
+     * algorithm that's used.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithm.assign(value); }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header confirming the encryption
-     * algorithm used.</p>
+     * requested, the response will include this header to confirm the encryption
+     * algorithm that's used.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header confirming the encryption
-     * algorithm used.</p>
+     * requested, the response will include this header to confirm the encryption
+     * algorithm that's used.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header confirming the encryption
-     * algorithm used.</p>
+     * requested, the response will include this header to confirm the encryption
+     * algorithm that's used.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
 
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round-trip message
-     * integrity verification of the customer-provided encryption key.</p>
+     * requested, the response will include this header to provide the round-trip
+     * message integrity verification of the customer-provided encryption key.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round-trip message
-     * integrity verification of the customer-provided encryption key.</p>
+     * requested, the response will include this header to provide the round-trip
+     * message integrity verification of the customer-provided encryption key.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5 = value; }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round-trip message
-     * integrity verification of the customer-provided encryption key.</p>
+     * requested, the response will include this header to provide the round-trip
+     * message integrity verification of the customer-provided encryption key.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5 = std::move(value); }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round-trip message
-     * integrity verification of the customer-provided encryption key.</p>
+     * requested, the response will include this header to provide the round-trip
+     * message integrity verification of the customer-provided encryption key.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5.assign(value); }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round-trip message
-     * integrity verification of the customer-provided encryption key.</p>
+     * requested, the response will include this header to provide the round-trip
+     * message integrity verification of the customer-provided encryption key.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round-trip message
-     * integrity verification of the customer-provided encryption key.</p>
+     * requested, the response will include this header to provide the round-trip
+     * message integrity verification of the customer-provided encryption key.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round-trip message
-     * integrity verification of the customer-provided encryption key.</p>
+     * requested, the response will include this header to provide the round-trip
+     * message integrity verification of the customer-provided encryption key.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
 
     /**
-     * <p>If present, specifies the ID of the Key Management Service (KMS) symmetric
-     * encryption customer managed key that was used for the object.</p>
+     * <p>If present, indicates the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>If present, specifies the ID of the Key Management Service (KMS) symmetric
-     * encryption customer managed key that was used for the object.</p>
+     * <p>If present, indicates the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
 
     /**
-     * <p>If present, specifies the ID of the Key Management Service (KMS) symmetric
-     * encryption customer managed key that was used for the object.</p>
+     * <p>If present, indicates the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>If present, specifies the ID of the Key Management Service (KMS) symmetric
-     * encryption customer managed key that was used for the object.</p>
+     * <p>If present, indicates the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>If present, specifies the ID of the Key Management Service (KMS) symmetric
-     * encryption customer managed key that was used for the object.</p>
+     * <p>If present, indicates the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the Key Management Service (KMS) symmetric
-     * encryption customer managed key that was used for the object.</p>
+     * <p>If present, indicates the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the Key Management Service (KMS) symmetric
-     * encryption customer managed key that was used for the object.</p>
+     * <p>If present, indicates the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
 
     /**
-     * <p>If present, specifies the Amazon Web Services KMS Encryption Context to use
+     * <p>If present, indicates the Amazon Web Services KMS Encryption Context to use
      * for object encryption. The value of this header is a base64-encoded UTF-8 string
-     * holding JSON with the encryption context key-value pairs.</p>
+     * holding JSON with the encryption context key-value pairs.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline const Aws::String& GetSSEKMSEncryptionContext() const{ return m_sSEKMSEncryptionContext; }
 
     /**
-     * <p>If present, specifies the Amazon Web Services KMS Encryption Context to use
+     * <p>If present, indicates the Amazon Web Services KMS Encryption Context to use
      * for object encryption. The value of this header is a base64-encoded UTF-8 string
-     * holding JSON with the encryption context key-value pairs.</p>
+     * holding JSON with the encryption context key-value pairs.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline void SetSSEKMSEncryptionContext(const Aws::String& value) { m_sSEKMSEncryptionContext = value; }
 
     /**
-     * <p>If present, specifies the Amazon Web Services KMS Encryption Context to use
+     * <p>If present, indicates the Amazon Web Services KMS Encryption Context to use
      * for object encryption. The value of this header is a base64-encoded UTF-8 string
-     * holding JSON with the encryption context key-value pairs.</p>
+     * holding JSON with the encryption context key-value pairs.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline void SetSSEKMSEncryptionContext(Aws::String&& value) { m_sSEKMSEncryptionContext = std::move(value); }
 
     /**
-     * <p>If present, specifies the Amazon Web Services KMS Encryption Context to use
+     * <p>If present, indicates the Amazon Web Services KMS Encryption Context to use
      * for object encryption. The value of this header is a base64-encoded UTF-8 string
-     * holding JSON with the encryption context key-value pairs.</p>
+     * holding JSON with the encryption context key-value pairs.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline void SetSSEKMSEncryptionContext(const char* value) { m_sSEKMSEncryptionContext.assign(value); }
 
     /**
-     * <p>If present, specifies the Amazon Web Services KMS Encryption Context to use
+     * <p>If present, indicates the Amazon Web Services KMS Encryption Context to use
      * for object encryption. The value of this header is a base64-encoded UTF-8 string
-     * holding JSON with the encryption context key-value pairs.</p>
+     * holding JSON with the encryption context key-value pairs.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithSSEKMSEncryptionContext(const Aws::String& value) { SetSSEKMSEncryptionContext(value); return *this;}
 
     /**
-     * <p>If present, specifies the Amazon Web Services KMS Encryption Context to use
+     * <p>If present, indicates the Amazon Web Services KMS Encryption Context to use
      * for object encryption. The value of this header is a base64-encoded UTF-8 string
-     * holding JSON with the encryption context key-value pairs.</p>
+     * holding JSON with the encryption context key-value pairs.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithSSEKMSEncryptionContext(Aws::String&& value) { SetSSEKMSEncryptionContext(std::move(value)); return *this;}
 
     /**
-     * <p>If present, specifies the Amazon Web Services KMS Encryption Context to use
+     * <p>If present, indicates the Amazon Web Services KMS Encryption Context to use
      * for object encryption. The value of this header is a base64-encoded UTF-8 string
-     * holding JSON with the encryption context key-value pairs.</p>
+     * holding JSON with the encryption context key-value pairs.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithSSEKMSEncryptionContext(const char* value) { SetSSEKMSEncryptionContext(value); return *this;}
 
 
     /**
      * <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side
-     * encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
+     * encryption with Key Management Service (KMS) keys (SSE-KMS).</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
 
     /**
      * <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side
-     * encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
+     * encryption with Key Management Service (KMS) keys (SSE-KMS).</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabled = value; }
 
     /**
      * <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side
-     * encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
+     * encryption with Key Management Service (KMS) keys (SSE-KMS).</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline CreateMultipartUploadResult& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
 

@@ -61,7 +61,9 @@
 #set($simpleCredentialsProviderParam = "Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)")
 #set($hasEventStreamInputOperation = $serviceModel.hasStreamingRequestShapes())
 #set($signerToMake = "AWSAuthV4Signer")
-#if($serviceModel.hasOnlyBearerAuth())
+#if($metadata.projectName == "s3")
+#set($signerToMake = "Aws::Auth::S3ExpressSignerProvider")
+#elseif($serviceModel.hasOnlyBearerAuth())
     #set($signerToMake = "Aws::Auth::BearerTokenAuthSignerProvider")
 #elseif($hasEventStreamInputOperation || $multiRegionAccessPointSupported)
     #set($signerToMake = "Aws::Auth::DefaultAuthSignerProvider")
@@ -113,6 +115,9 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
   BASECLASS(clientConfiguration,
             Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG,
                             ${signerWSpace}  ${defaultCredentialsProviderChainParam},
+#if($metadata.projectName == "s3")
+                            ${signerWSpace}  Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this),
+#end
                             ${signerWSpace}  SERVICE_NAME,
                             ${signerWSpace}  Aws::Region::ComputeSignerRegion(clientConfiguration.region)#if($signerCtorArgs.isEmpty())#else,
 #end
@@ -151,6 +156,9 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
   BASECLASS(clientConfiguration,
             Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG,
                             ${signerWSpace}  ${simpleCredentialsProviderParam},
+#if($metadata.projectName == "s3")
+                            ${signerWSpace}  Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this),
+#end
                             ${signerWSpace}  SERVICE_NAME,
                             ${signerWSpace}  Aws::Region::ComputeSignerRegion(clientConfiguration.region)#if($signerCtorArgs.isEmpty())#else,
 #end
@@ -189,6 +197,9 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
   BASECLASS(clientConfiguration,
             Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG,
                             ${signerWSpace}  credentialsProvider,
+#if($metadata.projectName == "s3")
+                            ${signerWSpace}  Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this),
+#end
                             ${signerWSpace}  SERVICE_NAME,
                             ${signerWSpace}  Aws::Region::ComputeSignerRegion(clientConfiguration.region)#if($signerCtorArgs.isEmpty())#else,
 #end

@@ -13,25 +13,31 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMe
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppShapeInformation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.RestXmlCppClientGenerator;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import org.apache.commons.lang3.tuple.Pair;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
+public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
 
     private static Set<String> opsThatDoNotSupportVirtualAddressing = new HashSet<>();
     private static Set<String> opsThatDoNotSupportArnEndpoint = new HashSet<>();
     private static Set<String> s3CrtEnabledOps = new HashSet<>(); // All other ops are in fact regular SDK calls
+    private static Set<String> opsThatDoNotSupportFutureInS3CRT = new HashSet<>();
     private static Set<String> bucketLocationConstraints = new HashSet<>();
     private Set<String> functionsWithEmbeddedErrors = ImmutableSet.of(
             "CompleteMultipartUploadRequest",
@@ -39,13 +45,28 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
             "UploadPartCopyRequest"
     );
 
+    private final Set<String> opsThatDoNotSupportBucketArguments = ImmutableSet.of(
+            "ListDirectoryBuckets",
+            "WriteGetObjectResponse"
+    );
+
+    private static final Set<String> OPS_TO_SKIP_CHECKSUMS = ImmutableSet.of(
+            "UploadPart"
+    );
+
+    private static final Set<String> REQUESTS_TO_OVERRIDE_STREAMING = ImmutableSet.of(
+            "PutBucketPolicyRequest"
+    );
+
     static {
         opsThatDoNotSupportVirtualAddressing.add("CreateBucket");
         opsThatDoNotSupportVirtualAddressing.add("ListBuckets");
+        opsThatDoNotSupportVirtualAddressing.add("ListDirectoryBuckets");
         opsThatDoNotSupportVirtualAddressing.add("WriteGetObjectResponse");
 
         opsThatDoNotSupportArnEndpoint.add("CreateBucket");
         opsThatDoNotSupportArnEndpoint.add("ListBuckets");
+        opsThatDoNotSupportArnEndpoint.add("ListDirectoryBuckets");
         opsThatDoNotSupportArnEndpoint.add("WriteGetObjectResponse");
 
         s3CrtEnabledOps.add("GetObject");
@@ -166,6 +187,18 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
                 .filter(shape -> functionsWithEmbeddedErrors.contains(shape.getName()))
                 .forEach(shape -> shape.setEmbeddedErrors(true));
 
+        serviceModel.getOperations().entrySet().stream()
+                .filter(entry -> !opsThatDoNotSupportBucketArguments.contains(entry.getValue().getName()))
+                .forEach(entry -> entry.getValue().setShouldUsePropertyBag(true));
+
+        serviceModel.getOperations().entrySet().stream()
+                .filter(entry -> OPS_TO_SKIP_CHECKSUMS.contains(entry.getValue().getName()))
+                .forEach(entry -> entry.getValue().setShouldSkipChecksum(true));
+
+        serviceModel.getShapes().values().stream()
+                .filter(shape -> REQUESTS_TO_OVERRIDE_STREAMING.contains(shape.getName()))
+                .forEach(shape -> shape.setOverrideStreaming(true));
+
         // Customized Log Information
         Shape logTagKeyShape = new Shape();
         logTagKeyShape.setName("customizedAccessLogTagKey");
@@ -209,11 +242,13 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
             }
         });
 
-        return super.generateSourceFiles(serviceModel);
+        return Stream.concat(generateS3ExpressFiles(serviceModel).stream(),
+                        Arrays.stream(super.generateSourceFiles(serviceModel)))
+                .toArray(SdkFileEntry[]::new);
     }
 
     protected void hackGetObjectOutputResponse(ServiceModel serviceModel) {
-        Shape getObjectResult  = serviceModel.getShapes().get("GetObjectResult");
+        Shape getObjectResult = serviceModel.getShapes().get("GetObjectResult");
         if (getObjectResult == null) return;
 
         Shape id2 = new Shape();
@@ -251,7 +286,7 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         if (getObjectResult.getMembers().get("RequestId") == null) {
             getObjectResult.getMembers().put("RequestId", requestIdShapeMember);
         }
-	}
+    }
 
     @Override
     protected SdkFileEntry generateClientHeaderFile(final ServiceModel serviceModel) throws Exception {
@@ -295,12 +330,44 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         return sourceFiles;
     }
 
+    private List<SdkFileEntry> generateS3ExpressFiles(final ServiceModel serviceModel) {
+        final String projectName = serviceModel.getMetadata().getProjectName();
+        // Only generate S3Express files for s3.
+        if (!ImmutableSet.of("s3", "s3-crt").contains(projectName)) {
+            return ImmutableList.of();
+        }
+        final String vmFilePrefixFormat = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/%s";
+        final String includePath = String.format("include/aws/%s/", projectName);
+        final VelocityContext context = createContext(serviceModel);
+        context.put("CppViewHelper", CppViewHelper.class);
+        Stream<Pair<String, String>> crtAdapters = Optional.of(projectName)
+                .filter("s3-crt"::equals)
+                .map(__ -> Stream.of(Pair.of(includePath + "S3CrtIdentityProviderAdapter.h", String.format(vmFilePrefixFormat, "S3CrtIdentityProviderAdapterHeader.vm")),
+                        Pair.of("source/S3CrtIdentityProviderAdapter.cpp", String.format(vmFilePrefixFormat, "S3CrtIdentityProviderAdapterSource.vm"))))
+                .orElse(Stream.of());
+
+        return Stream.concat(
+                        Stream.of(Pair.of(includePath + "S3ExpressIdentity.h", String.format(vmFilePrefixFormat, "S3ExpressIdentityHeader.vm")),
+                                Pair.of(includePath + "S3ExpressIdentityProvider.h", String.format(vmFilePrefixFormat, "S3ExpressIdentityProviderHeader.vm")),
+                                Pair.of(includePath + "S3ExpressSigner.h", String.format(vmFilePrefixFormat, "S3ExpressSignerHeader.vm")),
+                                Pair.of(includePath + "S3ExpressSignerProvider.h", String.format(vmFilePrefixFormat, "S3ExpressSignerProviderHeader.vm")),
+                                Pair.of("source/S3ExpressIdentityProvider.cpp", String.format(vmFilePrefixFormat, "S3ExpressIdentityProviderSource.vm")),
+                                Pair.of("source/S3ExpressSigner.cpp", String.format(vmFilePrefixFormat, "S3ExpressSignerSource.vm")),
+                                Pair.of("source/S3ExpressSignerProvider.cpp", String.format(vmFilePrefixFormat, "S3ExpressSignerProviderSource.vm"))),
+                        crtAdapters)
+                .map(codeGenPair -> makeFile(velocityEngine.getTemplate(codeGenPair.getValue()),
+                        context,
+                        codeGenPair.getKey(),
+                        true))
+                .collect(Collectors.toList());
+    }
+
     @Override
     protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
         Template template = null;
         String fileName = "";
 
-        switch(shapeEntry.getKey()) {
+        switch (shapeEntry.getKey()) {
             case "GetBucketLocationResult": {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/GetBucketLocationResult.vm", StandardCharsets.UTF_8.name());
                 fileName = "source/model/GetBucketLocationResult.cpp";

@@ -861,7 +861,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::ConnectLatency), static_cast<int64_t>(timep * 1000));
         }
 
-        ret = curl_easy_getinfo(connectionHandle, CURLINFO_APPCONNECT_TIME, &timep); // Ssl Latency
+        ret = curl_easy_getinfo(connectionHandle, CURLINFO_APPCONNECT_TIME_T, &timep); // Ssl Latency
         if (ret == CURLE_OK)
         {
             request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::SslLatency), static_cast<int64_t>(timep * 1000));
@@ -875,7 +875,15 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
 #endif
         if (ret == CURLE_OK)
         {
+            //Record two metric names to preserve backwards compat
             request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::Throughput), static_cast<int64_t>(speed));
+            request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::DownloadSpeed), static_cast<int64_t>(speed));
+        }
+
+        ret = curl_easy_getinfo(connectionHandle, CURLINFO_SPEED_UPLOAD_T, &speed); // Upload Speed
+        if (ret == CURLE_OK)
+        {
+            request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::UploadSpeed), static_cast<int64_t>(speed));
         }
 
         const char* ip = nullptr;

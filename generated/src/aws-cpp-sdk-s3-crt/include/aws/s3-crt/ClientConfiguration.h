@@ -23,6 +23,22 @@ namespace Aws
                 partSize(5 * 1024 * 1024),
                 throughputTargetGbps(2.0) {}
 
+            ClientConfiguration(const S3Crt::ClientConfiguration& other,
+              Client::AWSAuthV4Signer::PayloadSigningPolicy iPayloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::Never,
+              bool iUseVirtualAddressing = true,
+              US_EAST_1_REGIONAL_ENDPOINT_OPTION iUseUSEast1RegionalEndPointOption = US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET):
+            S3CrtClientConfiguration(other, iPayloadSigningPolicy,iUseVirtualAddressing, iUseUSEast1RegionalEndPointOption),
+            clientBootstrap(other.clientBootstrap),
+            partSize(other.partSize),
+            tlsConnectionOptions(other.tlsConnectionOptions),
+            throughputTargetGbps(other.throughputTargetGbps),
+            downloadMemoryUsageWindow(other.downloadMemoryUsageWindow),
+            clientShutdownCallback(other.clientShutdownCallback),
+            shutdownCallbackUserData(other.shutdownCallbackUserData)
+            {}
+
+            ClientConfiguration& operator=(const ClientConfiguration& other) = default;
+
             /** Client bootstrap used for common staples such as event loop group, host resolver, etc..
              *  If this is nullptr, SDK will create a default one for you.
              */

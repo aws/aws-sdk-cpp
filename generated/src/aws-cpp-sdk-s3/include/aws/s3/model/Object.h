@@ -139,7 +139,8 @@ namespace Model
      * ETag is not an MD5 digest, regardless of the method of encryption. If an object
      * is larger than 16 MB, the Amazon Web Services Management Console will upload or
      * copy that object as a Multipart Upload, and therefore the ETag will not be an
-     * MD5 digest.</p> </li> </ul>
+     * MD5 digest.</p> </li> </ul>  <p> <b>Directory buckets</b> - MD5 is not
+     * supported by directory buckets.</p> 
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
@@ -158,7 +159,8 @@ namespace Model
      * ETag is not an MD5 digest, regardless of the method of encryption. If an object
      * is larger than 16 MB, the Amazon Web Services Management Console will upload or
      * copy that object as a Multipart Upload, and therefore the ETag will not be an
-     * MD5 digest.</p> </li> </ul>
+     * MD5 digest.</p> </li> </ul>  <p> <b>Directory buckets</b> - MD5 is not
+     * supported by directory buckets.</p> 
      */
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
 
@@ -177,7 +179,8 @@ namespace Model
      * ETag is not an MD5 digest, regardless of the method of encryption. If an object
      * is larger than 16 MB, the Amazon Web Services Management Console will upload or
      * copy that object as a Multipart Upload, and therefore the ETag will not be an
-     * MD5 digest.</p> </li> </ul>
+     * MD5 digest.</p> </li> </ul>  <p> <b>Directory buckets</b> - MD5 is not
+     * supported by directory buckets.</p> 
      */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
@@ -196,7 +199,8 @@ namespace Model
      * ETag is not an MD5 digest, regardless of the method of encryption. If an object
      * is larger than 16 MB, the Amazon Web Services Management Console will upload or
      * copy that object as a Multipart Upload, and therefore the ETag will not be an
-     * MD5 digest.</p> </li> </ul>
+     * MD5 digest.</p> </li> </ul>  <p> <b>Directory buckets</b> - MD5 is not
+     * supported by directory buckets.</p> 
      */
     inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
 
@@ -215,7 +219,8 @@ namespace Model
      * ETag is not an MD5 digest, regardless of the method of encryption. If an object
      * is larger than 16 MB, the Amazon Web Services Management Console will upload or
      * copy that object as a Multipart Upload, and therefore the ETag will not be an
-     * MD5 digest.</p> </li> </ul>
+     * MD5 digest.</p> </li> </ul>  <p> <b>Directory buckets</b> - MD5 is not
+     * supported by directory buckets.</p> 
      */
     inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
 
@@ -234,7 +239,8 @@ namespace Model
      * ETag is not an MD5 digest, regardless of the method of encryption. If an object
      * is larger than 16 MB, the Amazon Web Services Management Console will upload or
      * copy that object as a Multipart Upload, and therefore the ETag will not be an
-     * MD5 digest.</p> </li> </ul>
+     * MD5 digest.</p> </li> </ul>  <p> <b>Directory buckets</b> - MD5 is not
+     * supported by directory buckets.</p> 
      */
     inline Object& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
@@ -253,7 +259,8 @@ namespace Model
      * ETag is not an MD5 digest, regardless of the method of encryption. If an object
      * is larger than 16 MB, the Amazon Web Services Management Console will upload or
      * copy that object as a Multipart Upload, and therefore the ETag will not be an
-     * MD5 digest.</p> </li> </ul>
+     * MD5 digest.</p> </li> </ul>  <p> <b>Directory buckets</b> - MD5 is not
+     * supported by directory buckets.</p> 
      */
     inline Object& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
@@ -272,7 +279,8 @@ namespace Model
      * ETag is not an MD5 digest, regardless of the method of encryption. If an object
      * is larger than 16 MB, the Amazon Web Services Management Console will upload or
      * copy that object as a Multipart Upload, and therefore the ETag will not be an
-     * MD5 digest.</p> </li> </ul>
+     * MD5 digest.</p> </li> </ul>  <p> <b>Directory buckets</b> - MD5 is not
+     * supported by directory buckets.</p> 
      */
     inline Object& WithETag(const char* value) { SetETag(value); return *this;}
 
@@ -340,63 +348,81 @@ namespace Model
 
 
     /**
-     * <p>The class of storage used to store the object.</p>
+     * <p>The class of storage used to store the object.</p>  <p> <b>Directory
+     * buckets</b> - Only the S3 Express One Zone storage class is supported by
+     * directory buckets to store objects.</p> 
      */
     inline const ObjectStorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * <p>The class of storage used to store the object.</p>
+     * <p>The class of storage used to store the object.</p>  <p> <b>Directory
+     * buckets</b> - Only the S3 Express One Zone storage class is supported by
+     * directory buckets to store objects.</p> 
      */
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
-     * <p>The class of storage used to store the object.</p>
+     * <p>The class of storage used to store the object.</p>  <p> <b>Directory
+     * buckets</b> - Only the S3 Express One Zone storage class is supported by
+     * directory buckets to store objects.</p> 
      */
     inline void SetStorageClass(const ObjectStorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * <p>The class of storage used to store the object.</p>
+     * <p>The class of storage used to store the object.</p>  <p> <b>Directory
+     * buckets</b> - Only the S3 Express One Zone storage class is supported by
+     * directory buckets to store objects.</p> 
      */
     inline void SetStorageClass(ObjectStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * <p>The class of storage used to store the object.</p>
+     * <p>The class of storage used to store the object.</p>  <p> <b>Directory
+     * buckets</b> - Only the S3 Express One Zone storage class is supported by
+     * directory buckets to store objects.</p> 
      */
     inline Object& WithStorageClass(const ObjectStorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * <p>The class of storage used to store the object.</p>
+     * <p>The class of storage used to store the object.</p>  <p> <b>Directory
+     * buckets</b> - Only the S3 Express One Zone storage class is supported by
+     * directory buckets to store objects.</p> 
      */
     inline Object& WithStorageClass(ObjectStorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
 
     /**
-     * <p>The owner of the object</p>
+     * <p>The owner of the object</p>  <p> <b>Directory buckets</b> - The bucket
+     * owner is returned as the object owner.</p> 
      */
     inline const Owner& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The owner of the object</p>
+     * <p>The owner of the object</p>  <p> <b>Directory buckets</b> - The bucket
+     * owner is returned as the object owner.</p> 
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p>The owner of the object</p>
+     * <p>The owner of the object</p>  <p> <b>Directory buckets</b> - The bucket
+     * owner is returned as the object owner.</p> 
      */
     inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The owner of the object</p>
+     * <p>The owner of the object</p>  <p> <b>Directory buckets</b> - The bucket
+     * owner is returned as the object owner.</p> 
      */
     inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The owner of the object</p>
+     * <p>The owner of the object</p>  <p> <b>Directory buckets</b> - The bucket
+     * owner is returned as the object owner.</p> 
      */
     inline Object& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The owner of the object</p>
+     * <p>The owner of the object</p>  <p> <b>Directory buckets</b> - The bucket
+     * owner is returned as the object owner.</p> 
      */
     inline Object& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
@@ -406,7 +432,10 @@ namespace Model
      * classes must be restored before they can be retrieved. For more information
      * about these storage classes and how to work with archived objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
-     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p> 
+     * <p>This functionality is not supported for directory buckets. Only the S3
+     * Express One Zone storage class is supported by directory buckets to store
+     * objects.</p> 
      */
     inline const RestoreStatus& GetRestoreStatus() const{ return m_restoreStatus; }
 
@@ -415,7 +444,10 @@ namespace Model
      * classes must be restored before they can be retrieved. For more information
      * about these storage classes and how to work with archived objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
-     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p> 
+     * <p>This functionality is not supported for directory buckets. Only the S3
+     * Express One Zone storage class is supported by directory buckets to store
+     * objects.</p> 
      */
     inline bool RestoreStatusHasBeenSet() const { return m_restoreStatusHasBeenSet; }
 
@@ -424,7 +456,10 @@ namespace Model
      * classes must be restored before they can be retrieved. For more information
      * about these storage classes and how to work with archived objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
-     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p> 
+     * <p>This functionality is not supported for directory buckets. Only the S3
+     * Express One Zone storage class is supported by directory buckets to store
+     * objects.</p> 
      */
     inline void SetRestoreStatus(const RestoreStatus& value) { m_restoreStatusHasBeenSet = true; m_restoreStatus = value; }
 
@@ -433,7 +468,10 @@ namespace Model
      * classes must be restored before they can be retrieved. For more information
      * about these storage classes and how to work with archived objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
-     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p> 
+     * <p>This functionality is not supported for directory buckets. Only the S3
+     * Express One Zone storage class is supported by directory buckets to store
+     * objects.</p> 
      */
     inline void SetRestoreStatus(RestoreStatus&& value) { m_restoreStatusHasBeenSet = true; m_restoreStatus = std::move(value); }
 
@@ -442,7 +480,10 @@ namespace Model
      * classes must be restored before they can be retrieved. For more information
      * about these storage classes and how to work with archived objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
-     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p> 
+     * <p>This functionality is not supported for directory buckets. Only the S3
+     * Express One Zone storage class is supported by directory buckets to store
+     * objects.</p> 
      */
     inline Object& WithRestoreStatus(const RestoreStatus& value) { SetRestoreStatus(value); return *this;}
 
@@ -451,7 +492,10 @@ namespace Model
      * classes must be restored before they can be retrieved. For more information
      * about these storage classes and how to work with archived objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
-     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p> 
+     * <p>This functionality is not supported for directory buckets. Only the S3
+     * Express One Zone storage class is supported by directory buckets to store
+     * objects.</p> 
      */
     inline Object& WithRestoreStatus(RestoreStatus&& value) { SetRestoreStatus(std::move(value)); return *this;}
 

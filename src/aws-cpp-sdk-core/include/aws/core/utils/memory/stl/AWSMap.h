@@ -30,4 +30,13 @@ struct CompareStrings
 
 template<typename V> using CStringMap = std::map<const char*, V, CompareStrings, Aws::Allocator<std::pair<const char*, V> > >;
 
+template<typename K, typename V>
+V GetWithDefault(const Aws::Map<K,V> &map, const K &key, V &&defaultValue) {
+    typename Aws::Map<K,V>::const_iterator it = map.find(key);
+    if ( it == map.end() ) {
+        return std::forward<V>(defaultValue);
+    }
+    return it->second;
+}
+
 } // namespace Aws

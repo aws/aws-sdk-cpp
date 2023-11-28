@@ -615,7 +615,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return makeFile(template, context, "CMakeLists.txt", false);
     }
 
-    private SdkFileEntry generateSingleSourceFile(final ServiceModel serviceModel, final String templatePath, final String dstFileName) throws IOException {
+    private SdkFileEntry generateSingleSourceFile(final ServiceModel serviceModel, final String templatePath, final String dstFileName) {
         Template template = velocityEngine.getTemplate(templatePath, StandardCharsets.UTF_8.name());
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
@@ -623,7 +623,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return makeFile(template, context, dstFileName, true);
     }
 
-    protected final SdkFileEntry makeFile(Template template, VelocityContext context, String path, boolean needsBOM) throws IOException {
+    protected final SdkFileEntry makeFile(Template template, VelocityContext context, String path, boolean needsBOM) {
         StringWriter sw = new StringWriter();
         template.merge(context, sw);
 

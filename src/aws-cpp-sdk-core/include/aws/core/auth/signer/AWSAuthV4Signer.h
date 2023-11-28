@@ -13,6 +13,8 @@
 #include <aws/core/utils/threading/ReaderWriterLock.h>
 #include <aws/core/utils/crypto/Sha256.h>
 #include <aws/core/utils/crypto/Sha256HMAC.h>
+#include <aws/core/http/HttpRequest.h>
+#include <aws/core/endpoint/internal/AWSEndpointAttribute.h>
 
 #include <aws/crt/auth/Sigv4Signing.h>
 
@@ -163,6 +165,8 @@ namespace Aws
             */
             bool PresignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, long long expirationInSeconds = 0) const override;
 
+            virtual Aws::Auth::AWSCredentials GetCredentials(const Aws::Http::ServiceSpecificParameters &serviceSpecificParameters) const;
+
             Aws::String GetServiceName() const { return m_serviceName; }
             Aws::String GetRegion() const { return m_region; }
             Aws::String GenerateSignature(const Aws::Auth::AWSCredentials& credentials,
@@ -170,6 +174,7 @@ namespace Aws
             bool ShouldSignHeader(const Aws::String& header) const;
 
         protected:
+            virtual bool ServiceRequireUnsignedPayload(const Aws::String& serviceName) const;
             bool m_includeSha256HashHeader;
 
         private:
@@ -179,7 +184,6 @@ namespace Aws
                     const Aws::String& serviceName) const;
 
             Aws::String GenerateSignature(const Aws::String& stringToSign, const Aws::Utils::ByteBuffer& key) const;
-            bool ServiceRequireUnsignedPayload(const Aws::String& serviceName) const;
             Aws::String ComputePayloadHash(Aws::Http::HttpRequest&) const;
             Aws::String GenerateStringToSign(const Aws::String& dateValue, const Aws::String& simpleDate,
                     const Aws::String& canonicalRequestHash, const Aws::String& region,

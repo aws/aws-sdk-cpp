@@ -7,6 +7,8 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/http/HttpClientFactory.h>
 
+#include <utility>
+
 namespace Aws
 {
 namespace Client
@@ -47,54 +49,59 @@ ConvertToRequestForPresigning(const Aws::AmazonWebServiceRequest& request,
 
 Aws::String AWSUrlPresigner::GeneratePresignedUrl(const URI& uri,
                                                   HttpMethod method,
-                                                  long long expirationInSeconds) const
+                                                  long long expirationInSeconds,
+                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
 {
     const char* regionOverride = nullptr;
     const char* serviceNameOverride = nullptr;
     const char* signerName = Aws::Auth::SIGV4_SIGNER;
-    return GeneratePresignedUrl(uri, method, regionOverride, serviceNameOverride, signerName, expirationInSeconds);
+    return GeneratePresignedUrl(uri, method, regionOverride, serviceNameOverride, signerName, expirationInSeconds, serviceSpecificParameters);
 }
 
 Aws::String AWSUrlPresigner::GeneratePresignedUrl(const URI& uri,
                                                   HttpMethod method,
                                                   const Aws::Http::HeaderValueCollection& customizedHeaders,
-                                                  long long expirationInSeconds) const
+                                                  long long expirationInSeconds,
+                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter) const
 {
     const char* regionOverride = nullptr;
     const char* serviceNameOverride = nullptr;
     const char* signerName = Aws::Auth::SIGV4_SIGNER;
-    return GeneratePresignedUrl(uri, method, regionOverride, serviceNameOverride, signerName, customizedHeaders, expirationInSeconds);
+    return GeneratePresignedUrl(uri, method, regionOverride, serviceNameOverride, signerName, customizedHeaders, expirationInSeconds, serviceSpecificParameter);
 }
 
 Aws::String AWSUrlPresigner::GeneratePresignedUrl(const URI& uri,
                                                   HttpMethod method,
                                                   const char* regionOverride,
-                                                  long long expirationInSeconds) const
+                                                  long long expirationInSeconds,
+                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter) const
 {
     const char* serviceNameOverride = nullptr;
     const char* signerName = Aws::Auth::SIGV4_SIGNER;
-    return GeneratePresignedUrl(uri, method, regionOverride, serviceNameOverride, signerName, expirationInSeconds);
+    return GeneratePresignedUrl(uri, method, regionOverride, serviceNameOverride, signerName, expirationInSeconds, serviceSpecificParameter);
 }
 
 Aws::String AWSUrlPresigner::GeneratePresignedUrl(const URI& uri,
                                                   HttpMethod method,
                                                   const char* regionOverride,
                                                   const Aws::Http::HeaderValueCollection& customizedHeaders,
-                                                  long long expirationInSeconds) const
+                                                  long long expirationInSeconds,
+                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter) const
 {
     const char* serviceNameOverride = nullptr;
     const char* signerName = Aws::Auth::SIGV4_SIGNER;
-    return GeneratePresignedUrl(uri, method, regionOverride, serviceNameOverride, signerName, customizedHeaders, expirationInSeconds);
+    return GeneratePresignedUrl(uri, method, regionOverride, serviceNameOverride, signerName, customizedHeaders, expirationInSeconds, serviceSpecificParameter);
 }
 
 Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::Http::URI& uri,
                                                   Aws::Http::HttpMethod method,
                                                   const char* regionOverride,
                                                   const char* serviceNameOverride,
-                                                  long long expirationInSeconds) const
+                                                  long long expirationInSeconds,
+                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter) const
 {
     const char* signerName = Aws::Auth::SIGV4_SIGNER;
-    return GeneratePresignedUrl(uri, method, regionOverride, serviceNameOverride, signerName, expirationInSeconds);
+    return GeneratePresignedUrl(uri, method, regionOverride, serviceNameOverride, signerName, expirationInSeconds, serviceSpecificParameter);
 }
 
 Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::Http::URI& uri,
@@ -102,10 +109,11 @@ Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::Http::URI& uri,
                                                   const char* regionOverride,
                                                   const char* serviceNameOverride,
                                                   const Aws::Http::HeaderValueCollection& customizedHeaders,
-                                                  long long expirationInSeconds) const
+                                                  long long expirationInSeconds,
+                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter) const
 {
     const char* signerName = Aws::Auth::SIGV4_SIGNER;
-    return GeneratePresignedUrl(uri, method, regionOverride, serviceNameOverride, signerName, customizedHeaders, expirationInSeconds);
+    return GeneratePresignedUrl(uri, method, regionOverride, serviceNameOverride, signerName, customizedHeaders, expirationInSeconds, serviceSpecificParameter);
 }
 
 Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::Http::URI& uri,
@@ -113,10 +121,11 @@ Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::Http::URI& uri,
                                                   const char* regionOverride,
                                                   const char* serviceNameOverride,
                                                   const char* signerName,
-                                                  long long expirationInSeconds) const
+                                                  long long expirationInSeconds,
+                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter) const
 {
     const Aws::Http::HeaderValueCollection& customizedHeaders = {};
-    return GeneratePresignedUrl(uri, method, regionOverride, serviceNameOverride, signerName, customizedHeaders, expirationInSeconds);
+    return GeneratePresignedUrl(uri, method, regionOverride, serviceNameOverride, signerName, customizedHeaders, expirationInSeconds, serviceSpecificParameter);
 }
 
 Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::Http::URI& uri,
@@ -125,13 +134,15 @@ Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::Http::URI& uri,
                                                   const char* serviceName,
                                                   const char* signerName,
                                                   const Aws::Http::HeaderValueCollection& customizedHeaders,
-                                                  long long expirationInSeconds) const
+                                                  long long expirationInSeconds,
+                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
 {
     /* a real method implementation */
     if (!signerName) {
         signerName = Aws::Auth::SIGV4_SIGNER;
     }
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    request->SetServiceSpecificParameters(serviceSpecificParameters);
     for (const auto& it: customizedHeaders)
     {
         request->SetHeaderValue(it.first.c_str(), it.second);
@@ -151,7 +162,8 @@ Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoi
                                                  uint64_t expirationInSeconds /* = 0 */,
                                                  const char* signerName /* = Aws::Auth::SIGV4_SIGNER */,
                                                  const char* signerRegionOverride /* = nullptr */,
-                                                 const char* signerServiceNameOverride /* = nullptr */) const
+                                                 const char* signerServiceNameOverride /* = nullptr */,
+                                                 const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
 {
     const Aws::Http::URI& uri = endpoint.GetURI();
     if (endpoint.GetAttributes()) {
@@ -167,7 +179,7 @@ Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoi
         }
     }
 
-    return GeneratePresignedUrl(uri, method, signerRegionOverride, signerServiceNameOverride, signerName, customizedHeaders, expirationInSeconds);
+    return GeneratePresignedUrl(uri, method, signerRegionOverride, signerServiceNameOverride, signerName, customizedHeaders, expirationInSeconds, serviceSpecificParameters);
 }
 
 Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request,
@@ -175,12 +187,13 @@ Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::AmazonWebServiceReq
                                                   Aws::Http::HttpMethod method,
                                                   const char* regionOverride,
                                                   const Aws::Http::QueryStringParameterCollection& extraParams,
-                                                  long long expirationInSeconds) const
+                                                  long long expirationInSeconds,
+                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
 {
     const char* serviceNameOverride = nullptr;
     const char* signerName = Aws::Auth::SIGV4_SIGNER;
 
-    return GeneratePresignedUrl(request, uri, method, regionOverride, serviceNameOverride, signerName, extraParams, expirationInSeconds);
+    return GeneratePresignedUrl(request, uri, method, regionOverride, serviceNameOverride, signerName, extraParams, expirationInSeconds, serviceSpecificParameters);
 }
 
 Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request,
@@ -190,7 +203,8 @@ Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::AmazonWebServiceReq
                                                   const char* serviceNameOverride,
                                                   const char* signerName,
                                                   const Aws::Http::QueryStringParameterCollection& extraParams,
-                                                  long long expirationInSeconds) const
+                                                  long long expirationInSeconds,
+                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
 {
     /* a real method implementation */
     if (!signerName) {
@@ -198,6 +212,7 @@ Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::AmazonWebServiceReq
     }
     std::shared_ptr<HttpRequest> httpRequest =
             ConvertToRequestForPresigning(request, uri, method, extraParams);
+    httpRequest->SetServiceSpecificParameters(serviceSpecificParameters);
     auto signer = GetSignerByName(signerName);
     if (signer->PresignRequest(*httpRequest, regionOverride, serviceNameOverride, expirationInSeconds))
     {
@@ -213,23 +228,25 @@ Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::AmazonWebServiceReq
                                                   const char* regionOverride,
                                                   const char* serviceNameOverride,
                                                   const Aws::Http::QueryStringParameterCollection& extraParams,
-                                                  long long expirationInSeconds) const
+                                                  long long expirationInSeconds,
+                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
 {
     const char* signerName = Aws::Auth::SIGV4_SIGNER;
-    return GeneratePresignedUrl(request, uri, method, regionOverride, serviceNameOverride, signerName, extraParams, expirationInSeconds);
+    return GeneratePresignedUrl(request, uri, method, regionOverride, serviceNameOverride, signerName, extraParams, expirationInSeconds, serviceSpecificParameters);
 }
 
 Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request,
                                                   const Aws::Http::URI& uri,
                                                   Aws::Http::HttpMethod method,
                                                   const Aws::Http::QueryStringParameterCollection& extraParams,
-                                                  long long expirationInSeconds) const
+                                                  long long expirationInSeconds,
+                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
 {
     const char* regionOverride = nullptr;
     const char* serviceNameOverride = nullptr;
     const char* signerName = Aws::Auth::SIGV4_SIGNER;
 
-    return GeneratePresignedUrl(request, uri, method, regionOverride, serviceNameOverride, signerName, extraParams, expirationInSeconds);
+    return GeneratePresignedUrl(request, uri, method, regionOverride, serviceNameOverride, signerName, extraParams, expirationInSeconds, serviceSpecificParameters);
 }
 
 } // namespace Client

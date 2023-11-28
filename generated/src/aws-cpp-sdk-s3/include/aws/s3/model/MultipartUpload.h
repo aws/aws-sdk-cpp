@@ -157,63 +157,87 @@ namespace Model
 
 
     /**
-     * <p>The class of storage used to store the object.</p>
+     * <p>The class of storage used to store the object.</p>  <p> <b>Directory
+     * buckets</b> - Only the S3 Express One Zone storage class is supported by
+     * directory buckets to store objects.</p> 
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * <p>The class of storage used to store the object.</p>
+     * <p>The class of storage used to store the object.</p>  <p> <b>Directory
+     * buckets</b> - Only the S3 Express One Zone storage class is supported by
+     * directory buckets to store objects.</p> 
      */
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
-     * <p>The class of storage used to store the object.</p>
+     * <p>The class of storage used to store the object.</p>  <p> <b>Directory
+     * buckets</b> - Only the S3 Express One Zone storage class is supported by
+     * directory buckets to store objects.</p> 
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * <p>The class of storage used to store the object.</p>
+     * <p>The class of storage used to store the object.</p>  <p> <b>Directory
+     * buckets</b> - Only the S3 Express One Zone storage class is supported by
+     * directory buckets to store objects.</p> 
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * <p>The class of storage used to store the object.</p>
+     * <p>The class of storage used to store the object.</p>  <p> <b>Directory
+     * buckets</b> - Only the S3 Express One Zone storage class is supported by
+     * directory buckets to store objects.</p> 
      */
     inline MultipartUpload& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * <p>The class of storage used to store the object.</p>
+     * <p>The class of storage used to store the object.</p>  <p> <b>Directory
+     * buckets</b> - Only the S3 Express One Zone storage class is supported by
+     * directory buckets to store objects.</p> 
      */
     inline MultipartUpload& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
 
     /**
      * <p>Specifies the owner of the object that is part of the multipart upload. </p>
+     *  <p> <b>Directory buckets</b> - The bucket owner is returned as the object
+     * owner for all the objects.</p> 
      */
     inline const Owner& GetOwner() const{ return m_owner; }
 
     /**
      * <p>Specifies the owner of the object that is part of the multipart upload. </p>
+     *  <p> <b>Directory buckets</b> - The bucket owner is returned as the object
+     * owner for all the objects.</p> 
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p>Specifies the owner of the object that is part of the multipart upload. </p>
+     *  <p> <b>Directory buckets</b> - The bucket owner is returned as the object
+     * owner for all the objects.</p> 
      */
     inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
      * <p>Specifies the owner of the object that is part of the multipart upload. </p>
+     *  <p> <b>Directory buckets</b> - The bucket owner is returned as the object
+     * owner for all the objects.</p> 
      */
     inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
      * <p>Specifies the owner of the object that is part of the multipart upload. </p>
+     *  <p> <b>Directory buckets</b> - The bucket owner is returned as the object
+     * owner for all the objects.</p> 
      */
     inline MultipartUpload& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
     /**
      * <p>Specifies the owner of the object that is part of the multipart upload. </p>
+     *  <p> <b>Directory buckets</b> - The bucket owner is returned as the object
+     * owner for all the objects.</p> 
      */
     inline MultipartUpload& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 

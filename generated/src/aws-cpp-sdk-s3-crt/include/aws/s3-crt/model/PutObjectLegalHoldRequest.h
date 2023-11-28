@@ -52,8 +52,10 @@ namespace Model
 
     /**
      * <p>The bucket name containing the object that you want to place a legal hold on.
-     * </p> <p>When using this action with an access point, you must direct requests to
-     * the access point hostname. The access point hostname takes the form
+     * </p> <p> <b>Access points</b> - When you use this action with an access point,
+     * you must provide the alias of the access point in place of the bucket name or
+     * specify the access point ARN. When using the access point ARN, you must direct
+     * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -65,8 +67,10 @@ namespace Model
 
     /**
      * <p>The bucket name containing the object that you want to place a legal hold on.
-     * </p> <p>When using this action with an access point, you must direct requests to
-     * the access point hostname. The access point hostname takes the form
+     * </p> <p> <b>Access points</b> - When you use this action with an access point,
+     * you must provide the alias of the access point in place of the bucket name or
+     * specify the access point ARN. When using the access point ARN, you must direct
+     * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -78,8 +82,10 @@ namespace Model
 
     /**
      * <p>The bucket name containing the object that you want to place a legal hold on.
-     * </p> <p>When using this action with an access point, you must direct requests to
-     * the access point hostname. The access point hostname takes the form
+     * </p> <p> <b>Access points</b> - When you use this action with an access point,
+     * you must provide the alias of the access point in place of the bucket name or
+     * specify the access point ARN. When using the access point ARN, you must direct
+     * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -91,8 +97,10 @@ namespace Model
 
     /**
      * <p>The bucket name containing the object that you want to place a legal hold on.
-     * </p> <p>When using this action with an access point, you must direct requests to
-     * the access point hostname. The access point hostname takes the form
+     * </p> <p> <b>Access points</b> - When you use this action with an access point,
+     * you must provide the alias of the access point in place of the bucket name or
+     * specify the access point ARN. When using the access point ARN, you must direct
+     * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -104,8 +112,10 @@ namespace Model
 
     /**
      * <p>The bucket name containing the object that you want to place a legal hold on.
-     * </p> <p>When using this action with an access point, you must direct requests to
-     * the access point hostname. The access point hostname takes the form
+     * </p> <p> <b>Access points</b> - When you use this action with an access point,
+     * you must provide the alias of the access point in place of the bucket name or
+     * specify the access point ARN. When using the access point ARN, you must direct
+     * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -117,8 +127,10 @@ namespace Model
 
     /**
      * <p>The bucket name containing the object that you want to place a legal hold on.
-     * </p> <p>When using this action with an access point, you must direct requests to
-     * the access point hostname. The access point hostname takes the form
+     * </p> <p> <b>Access points</b> - When you use this action with an access point,
+     * you must provide the alias of the access point in place of the bucket name or
+     * specify the access point ARN. When using the access point ARN, you must direct
+     * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -130,8 +142,10 @@ namespace Model
 
     /**
      * <p>The bucket name containing the object that you want to place a legal hold on.
-     * </p> <p>When using this action with an access point, you must direct requests to
-     * the access point hostname. The access point hostname takes the form
+     * </p> <p> <b>Access points</b> - When you use this action with an access point,
+     * you must provide the alias of the access point in place of the bucket name or
+     * specify the access point ARN. When using the access point ARN, you must direct
+     * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -143,8 +157,10 @@ namespace Model
 
     /**
      * <p>The bucket name containing the object that you want to place a legal hold on.
-     * </p> <p>When using this action with an access point, you must direct requests to
-     * the access point hostname. The access point hostname takes the form
+     * </p> <p> <b>Access points</b> - When you use this action with an access point,
+     * you must provide the alias of the access point in place of the bucket name or
+     * specify the access point ARN. When using the access point ARN, you must direct
+     * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -351,9 +367,9 @@ namespace Model
 
 
     /**
-     * <p>Indicates the algorithm used to create the checksum for the object when using
-     * the SDK. This header will not provide any additional functionality if not using
-     * the SDK. When sending this header, there must be a corresponding
+     * <p>Indicates the algorithm used to create the checksum for the object when you
+     * use the SDK. This header will not provide any additional functionality if you
+     * don't use the SDK. When you send this header, there must be a corresponding
      * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
      * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
      * Request</code>. For more information, see <a
@@ -365,9 +381,9 @@ namespace Model
     inline const ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
 
     /**
-     * <p>Indicates the algorithm used to create the checksum for the object when using
-     * the SDK. This header will not provide any additional functionality if not using
-     * the SDK. When sending this header, there must be a corresponding
+     * <p>Indicates the algorithm used to create the checksum for the object when you
+     * use the SDK. This header will not provide any additional functionality if you
+     * don't use the SDK. When you send this header, there must be a corresponding
      * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
      * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
      * Request</code>. For more information, see <a
@@ -379,9 +395,9 @@ namespace Model
     inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
 
     /**
-     * <p>Indicates the algorithm used to create the checksum for the object when using
-     * the SDK. This header will not provide any additional functionality if not using
-     * the SDK. When sending this header, there must be a corresponding
+     * <p>Indicates the algorithm used to create the checksum for the object when you
+     * use the SDK. This header will not provide any additional functionality if you
+     * don't use the SDK. When you send this header, there must be a corresponding
      * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
      * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
      * Request</code>. For more information, see <a
@@ -393,9 +409,9 @@ namespace Model
     inline void SetChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
 
     /**
-     * <p>Indicates the algorithm used to create the checksum for the object when using
-     * the SDK. This header will not provide any additional functionality if not using
-     * the SDK. When sending this header, there must be a corresponding
+     * <p>Indicates the algorithm used to create the checksum for the object when you
+     * use the SDK. This header will not provide any additional functionality if you
+     * don't use the SDK. When you send this header, there must be a corresponding
      * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
      * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
      * Request</code>. For more information, see <a
@@ -407,9 +423,9 @@ namespace Model
     inline void SetChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
 
     /**
-     * <p>Indicates the algorithm used to create the checksum for the object when using
-     * the SDK. This header will not provide any additional functionality if not using
-     * the SDK. When sending this header, there must be a corresponding
+     * <p>Indicates the algorithm used to create the checksum for the object when you
+     * use the SDK. This header will not provide any additional functionality if you
+     * don't use the SDK. When you send this header, there must be a corresponding
      * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
      * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
      * Request</code>. For more information, see <a
@@ -421,9 +437,9 @@ namespace Model
     inline PutObjectLegalHoldRequest& WithChecksumAlgorithm(const ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
 
     /**
-     * <p>Indicates the algorithm used to create the checksum for the object when using
-     * the SDK. This header will not provide any additional functionality if not using
-     * the SDK. When sending this header, there must be a corresponding
+     * <p>Indicates the algorithm used to create the checksum for the object when you
+     * use the SDK. This header will not provide any additional functionality if you
+     * don't use the SDK. When you send this header, there must be a corresponding
      * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
      * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
      * Request</code>. For more information, see <a
@@ -436,58 +452,58 @@ namespace Model
 
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline PutObjectLegalHoldRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline PutObjectLegalHoldRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline PutObjectLegalHoldRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
 
